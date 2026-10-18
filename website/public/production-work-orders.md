@@ -94,7 +94,7 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 
 **Related contracts:** [Font artifact validation](asset-validation-contracts.md#6-validate-the-font-artifact-before-testing-localized-screens) and [native GUI evidence limits](engine-operation-contracts.md#native-gui-automation-is-a-separate-evidence-surface).
 
-**Outcome:** reviewed translations compile and display with the intended glyphs, layout and accessible interaction.
+**Outcome:** reviewed translations compile and display with the intended glyphs, layout and accessible interaction. For native Godot UI, first check [semantic activation, deferred actions and platform boundaries](engine-operation-contracts.md#godot-native-semantic-observation-and-action-completion); an inspector-only Auto-mode run can lack active semantic updates.
 
 **Documented surfaces.** [GNU gettext](https://www.gnu.org/software/gettext/manual/gettext.html) documents `msgfmt --check`, including format/header/domain checks. Marked format mismatches block MO generation; `--use-fuzzy` can include unreviewed entries. [HarfBuzz](https://harfbuzz.github.io/what-is-harfbuzz.html) selects and positions glyphs; it is [not a complete layout system](https://harfbuzz.github.io/what-harfbuzz-doesnt-do.html). [FreeType](https://freetype.org/freetype2/docs/index.html) provides font access and glyph images rather than higher-level layout. [MSDF Atlas Generator](https://github.com/Chlumsky/msdf-atlas-gen) defaults to ASCII unless overridden and requires linear sampling of atlas channels. These upstream pages do not license the chosen fonts.
 
