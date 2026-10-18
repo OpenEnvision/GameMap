@@ -1,6 +1,6 @@
 # Gameplay state, narrative checkpoints and durable effects
 
-Sources checked **2026-10-18**; full reproduction not performed. These two complementary investigations separate interpreter state, world state, database transactions and client observations. They extend [production work orders](production-work-orders.md) with source-backed boundaries and explicitly proposed acceptance fixtures.
+Sources checked **2026-10-18**; full reproduction not performed. These complementary investigations separate interpreter state, world state, database transactions, replay reconstruction, physics checkpoints and client observations. They extend [production work orders](production-work-orders.md) with source-backed boundaries and explicitly proposed acceptance fixtures.
 
 ## Narrative checkpoints, cancellation and world-effect transactions
 
@@ -122,3 +122,80 @@ The inspected source files carry Apache-2.0 notices. That does not grant Enterpr
 ### Remaining project obligations
 
 **GameMap editorial guidance:** a future fixture needs stable player/quest/operation identity, schema revision, authority checks, explicit transaction membership, conflict classification, durable reconciliation, notification ownership and recovery after process loss. Use disposable state and preserve expected/observed artifacts. Test old-save migration and duplicate/reordered commands. Narrative cursor restoration, world-object identity and external effects remain separate domains until a project-specific implementation joins them and passes these tests.
+
+
+## Unreal replay: reconstruction, checkpoint fidelity and reset boundaries
+
+Checked **2026-10-18**, documentation-only. This extends gameplay-state contracts with a native replay case rather than another SaveGame summary. Only explicitly selected **Unreal Engine 5.6** pages underpin the findings below. No engine installed, project executed, replay recorded, benchmark measured or private Unreal implementation inspected. Documentation is not a source-code pin or runtime lock.
+
+### Capture scope and compatibility
+
+The [5.6 Replay System guide][R1] describes `DemoNetDriver` recording replication data plus replay-specific fields, including for single-player projects configured to replicate. `StartRecordingReplay`, `StopRecordingReplay`, `PlayReplay` and `GotoTimeInSeconds` provide recording, playback and seeking. This establishes a reconstruction interface, not an arbitrary whole-process snapshot. **Inference:** unreplicated project state, RNG streams, pending asynchronous jobs and external effects require separately demonstrated coverage; apparent visual fidelity does not establish their restoration.
+
+Compatibility is qualified: removed replicated fields can be skipped and added fields defaulted, while overridden `NetSerialize` formats require manual handling. `EngineNetVer`/`GameNetVer` identify serialized versions; network-version override delegates permit application compatibility decisions. **Proposed gate:** retain engine/game/content identities and test old-to-new replay interpretation. An application accepting a version number is not proof of semantic equivalence or of arbitrary cross-version support. [R1]
+
+### Checkpoints and side effects
+
+The [5.6 streamer guide][R2] describes baseline state, periodic net-change checkpoints and intervening object deltas. Reconstruction applies checkpoint data then later changes. A positive `demo.CheckpointSaveMaxMSPerFrame` budget can spread actor capture across frames and introduce visual discrepancies. `SetViewerOverride` changes relevancy/culling/prioritization. Therefore checkpoint scope and temporal consistency need explicit validation.
+
+Replay actors can call functions affecting shared `GameInstance`, `GameState` or `GameMode`; Epic recommends project-specific live/replay checks. Memory replay can hide, yet continue, the live world while showing duplicate levels, then empty their contents. The documented dynamic duplicate levels are unavailable on dedicated servers and in editor mode; use a supported standalone/client configuration for that fixture. This is not live-world rollback. [R2]
+
+Storage also varies: Local File recording is asynchronous into `Saved/Demos/*.replay`; SaveGame streaming adds copying into slots; Memory streaming retains a running window; HTTP streaming needs a custom server. Local File does not read legacy Null-streamer recordings without that streamer. None of these descriptions proves crash durability, atomic publication or remote retention. [R2]
+
+### Completion and reset are separate observations
+
+The [5.6 `UReplaySubsystem` API][R3] documents `RecordReplay` as void and `PlayReplay` as boolean-returning initiation. `RequestCheckpoint()` requests a write only while recording; `IsSavingCheckpoint()` exposes state. `StopReplay()` stops playback/recording, with `bLoadDefaultMapOnStop` controlling default-map reload. `SetExternalDataForObject` permits explicit supplemental object data.
+
+**Proposed gate:** distinguish request issued, native recording/playback state, checkpoint work, stop/map transition and independently reopened replay. The listed API does not establish a durable-write completion callback, timeout semantics, automatic retry safety, reset of application singletons, or a full-world restoration contract. Do not infer successful checkpoint persistence merely from `IsSavingCheckpoint()==false`, or rollback merely from stopping. Exact seek-result/error/cancellation sequencing remains unknown under the verified 5.6 sources; no private implementation behavior is invented. [R3]
+
+### Proposed disposable acceptance fixture
+
+Original GameMap design, **unimplemented and unexecuted**:
+
+- Record a replicated door and a separately observed unreplicated counter. Seek before and after a change; compare explicit observations, not only screenshots
+- Exercise multi-frame checkpoint budgets with two related replicated values; retain their sample times and detect incoherent pairs
+- Give replay presentation a harmless shared-counter side effect. Repeated seek/playback must expose or prevent unintended live-state changes under a declared policy
+- During memory playback, compare live and duplicate-world identities and clocks; verify whether the application intends continuation or rollback
+- Request a checkpoint while stopped, stop during capture, then reopen the persisted replay in a fresh process. Preserve failures and unknown outcomes rather than treating request dispatch as completion
+- Replay after a replicated-schema and custom-serializer change; require an explicit migration/rejection decision and inspect reconstructed values
+
+These fixtures complement the existing narrative-effect and physics/debug-recording distinctions. They do not claim deterministic resimulation, gameplay rollback, transactionality or engine-neutral reset.
+
+[R1]: https://dev.epicgames.com/documentation/en-us/unreal-engine/using-the-replay-system-in-unreal-engine?application_version=5.6
+[R2]: https://dev.epicgames.com/documentation/en-us/unreal-engine/demonetdriver-and-streamers-in-unreal-engine?application_version=5.6
+[R3]: https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/UReplaySubsystem?application_version=5.6
+
+
+## MuJoCo checkpoint inclusion and reset-observation contracts
+
+Checked 2026-10-18. Source inspection only: no MuJoCo install, simulation, checkpoint round-trip or cross-engine equivalence test. Reviewed release 3.3.7, resolved through GitHub's tag API to commit `f1d45bd5422c74beddfb0d1deb590a02583d21de`. These contracts concern native MuJoCo; do not generalize them to MJX, Unity/Unreal physics or arbitrary converted game models.
+
+### Verified API and implementation semantics
+
+1. **Select the checkpoint contents explicitly.** In 3.3.7, `mjSTATE_PHYSICS` includes only `qpos`, `qvel`, `act`. `mjSTATE_FULLPHYSICS` adds `time` and `plugin_state`. `mjSTATE_USER` includes `ctrl`, `qfrc_applied`, `xfrc_applied`, `eq_active`, `mocap_pos`, `mocap_quat`, `userdata`. `mjSTATE_INTEGRATION` is FULLPHYSICS + USER + `qacc_warmstart`. Therefore neither PHYSICS nor FULLPHYSICS means every input required to resume the application. [Pinned enum, lines 27–51](https://github.com/google-deepmind/mujoco/blob/f1d45bd5422c74beddfb0d1deb590a02583d21de/include/mujoco/mjdata.h#L27-L51); [versioned types](https://mujoco.readthedocs.io/en/3.3.7/APIreference/APItypes.html#mjtstate).
+
+2. **A state vector is an unframed, model-dependent array.** `mj_stateSize(m,sig)` returns a count of `mjtNum`, not a byte length. Get/set concatenate selected fields in increasing bit order; equality-activation bytes convert to/from numeric elements. The implementation derives field lengths from the supplied model. `mj_setState` is void, rejects an invalid signature through `mjERROR`, and otherwise copies selected fields. It does not consume or check a buffer-length argument, checkpoint version, checksum or model identity; unselected fields are untouched. It neither resets the whole `mjData` nor calls forward dynamics or plugin reset/copy callbacks. This is implementation evidence, not a transactional storage guarantee. [Pinned support implementation, lines 114–245](https://github.com/google-deepmind/mujoco/blob/f1d45bd5422c74beddfb0d1deb590a02583d21de/src/engine/engine_support.c#L114-L245); [versioned get/set API](https://mujoco.readthedocs.io/en/3.3.7/APIreference/APIfunctions.html#mj-setstate).
+
+3. **Restore inputs before reading derived observations.** `mj_forward` runs forward dynamics without advancing time; it can refresh derived contacts, forces and sensors after restoring inputs. But it is not an application-pure read: the pinned implementation invokes an installed `mjcb_control` when actuation is enabled, then computes actuation, acceleration, constraints and sensors. A callback can overwrite restored controls or advance an external counter/RNG. Skipped stages assume their cached results are already valid. Do not use skipped computation against stale pre-restore caches. [Pinned forward pipeline, lines 1100–1160](https://github.com/google-deepmind/mujoco/blob/f1d45bd5422c74beddfb0d1deb590a02583d21de/src/engine/engine_forward.c#L1100-L1160); [forward API](https://mujoco.readthedocs.io/en/3.3.7/APIreference/APIfunctions.html#mj-forward).
+
+4. **Preserve warmstart and qualify replay claims.** Upstream calls INTEGRATION the inputs to forward dynamics, while full `mjData` also holds derived values. Warmstart acceleration can affect the next numerical result; small differences can grow over a rollout. Upstream limits exact reproducibility to the same version and architecture and warns trajectories can differ across releases/operating systems. Treat matching pictures as insufficient evidence of state equivalence. [Versioned state/reproducibility discussion](https://mujoco.readthedocs.io/en/3.3.7/computation/index.html#the-state); [pinned reproducibility caveats](https://github.com/google-deepmind/mujoco/blob/f1d45bd5422c74beddfb0d1deb590a02583d21de/doc/computation/index.rst#L1788-L1807).
+
+5. **Plugin state is not an opaque-process snapshot.** `plugin_state` contains declared floating-point state. Opaque `plugin_data` is not serialized; the extension contract requires it to be reconstructible from plugin configuration, plugin state and MuJoCo state. `mj_makeData` initializes plugin resources and `mj_copyData` uses the plugin copy callback. The bare setter above does not invoke those callbacks. A plugin relying on hidden mutable payload needs its own correctness review; INTEGRATION does not turn arbitrary plugin memory into serialized state. [Versioned plugin-state contract](https://mujoco.readthedocs.io/en/3.3.7/programming/extension.html#plugin-state).
+
+6. **Model, callback and RNG state remain boundaries.** `mjData` belongs to a particular `mjModel`; upstream warns incompatible pairs have unpredictable behavior. Callback function pointers and arbitrary external callback state are not automatically included. `userdata` helps only when the application actually stores the relevant state there. Changes to model options, assets or parameters are outside this state vector. External gameplay state, RNG state, queues and pending side effects likewise do not appear among the copied fields. [Versioned simulation/model contract](https://mujoco.readthedocs.io/en/3.3.7/programming/simulation.html#initialization); [state/control](https://mujoco.readthedocs.io/en/3.3.7/programming/simulation.html#state-and-control).
+
+**Documentation trap:** the 3.3.7 simulation guide retains an old paragraph about built-in sensor noise and `srand`. The changelog records native sensor-noise removal in 3.1.4. Do not repeat that paragraph as a current 3.3.7 feature; describe RNG as application/plugin responsibility unless separately established. [Pinned removal entry, lines 860–875](https://github.com/google-deepmind/mujoco/blob/f1d45bd5422c74beddfb0d1deb590a02583d21de/doc/changelog.rst#L860-L875).
+
+### Proposed GameMap acceptance fixture (editorial, unimplemented and untested)
+
+- Define a checkpoint boundary between completed steps, including whether controls for the next step have been applied. Envelope the array with exact engine/build/platform, model and asset/configuration hashes, plugin/controller revisions, signature, element count, numeric encoding, and external-state/input-log identity. Reject a mismatch before entering the setter; equal dimensions do not prove model identity.
+- Use a contact-rich fixture with nonzero time, actuator activation, controls/applied forces, warmstart, modified equality flags and mocap pose; include a stateful plugin and callback counter where supported. Snapshot INTEGRATION plus application state, perturb each selected component, restore, and compare a readback before any callback-driven observation refresh. Separately test a deliberately reduced PHYSICS snapshot to demonstrate what the harness must restore or intentionally reset outside that mask.
+- Record the observation-refresh call sequence. Compare a resumed rollout against an uninterrupted control/input sequence over a declared horizon, including callback invocation counts and RNG/event-queue state. Require callbacks to be replay-safe or explicitly include their refresh-time effects in the comparison; do not blindly add an extra `mj_forward` and assume it is side-effect-free. Collect derived observations through the same sequence on both arms, or use isolated diagnostic data with a controlled callback-state strategy.
+- Report numerical/state comparison and observation freshness separately. Declare exact-bit versus tolerance acceptance before running. Test wrong model hash, changed engine version, truncated payload, unknown mask and missing plugin/application-state metadata as harness preflight rejections, not claims of safe rejection by MuJoCo itself.
+
+**Unresolved until implemented:** storage durability/atomicity, migration across models/releases, custom plugin compliance, application side-effect rollback and the actual target build's replay result. No generic acceptance threshold or tested reset helper is supplied by this source review.
+
+
+### Choosing a reset boundary for game-production evaluation
+
+**GameMap editorial synthesis, unimplemented:** a native replay, a physics state vector and a narrative/database checkpoint restore different domains. Choose the baseline and reset mechanism before comparing agent edits. Preserve content/build identity, pending-work ownership, callback policy and the observation sequence; use independent state checks before interpreting a rendered frame as a successful reset. A source edit that changes replicated schemas, model topology or application effects may invalidate an old checkpoint even when a loader accepts it. The existing [Jolt and CVD contracts](production-debugging-contracts.md#physics-recording-contact-and-restoration) cover complementary physics recording and rollback limits; none of these mechanisms supplies universal game-state restoration. Actual round-trip fidelity, callback side effects and evaluation variance require a separately authorized disposable runtime fixture.
