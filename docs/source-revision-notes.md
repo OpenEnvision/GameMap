@@ -2,7 +2,7 @@
 
 Checked **2026-10-18**. Sources checked; full reproduction not performed.
 
-This appendix records 28 exact upstream source or model-card files inspected during the research. Full revisions identify the document/code that supported a claim. They do not identify an installed package, engine environment, downloaded model weights or a successful adapter run. No source pin grants rights beyond the applicable code, weight, data and service terms.
+This appendix records 32 exact upstream source or model-card files inspected during the research. Full revisions identify the document/code that supported a claim. They do not identify an installed package, engine environment, downloaded model weights or a successful adapter run. No source pin grants rights beyond the applicable code, weight, data and service terms.
 
 ## Revision index
 
@@ -36,6 +36,10 @@ This appendix records 28 exact upstream source or model-card files inspected dur
 | [Playwright main source snapshot: test-snapshots-js.md](https://github.com/microsoft/playwright/blob/b335271cdc2b57cac2be8ad37c5dd283ac6b8938/docs/src/test-snapshots-js.md) | `b335271cdc2b57cac2be8ad37c5dd283ac6b8938` | Source file inspected; runtime untested |
 | [Pinned facebook/musicgen-small model card](https://huggingface.co/facebook/musicgen-small/blob/4c8334b02c6ec4e8664a91979669a501ec497792/README.md) | `4c8334b02c6ec4e8664a91979669a501ec497792` | Source file inspected; runtime untested |
 | [Pinned stabilityai/TripoSR model card](https://huggingface.co/stabilityai/TripoSR/blob/5b521936b01fbe1890f6f9baed0254ab6351c04a/README.md) | `5b521936b01fbe1890f6f9baed0254ab6351c04a` | Source file inspected; runtime untested |
+| [Ink story state and background save](https://github.com/inkle/ink/blob/35c63e52f1d36060930dc7ed3cfba38ea224b528/ink-engine-runtime/Story.cs) | `35c63e52f1d36060930dc7ed3cfba38ea224b528` | Source file inspected; runtime untested; [claim scope](gameplay-state-contracts.md) |
+| [Nakama transaction membership](https://github.com/heroiclabs/nakama/blob/cab8af584947ff0d7ebee91d6c33e67d87fd3e47/server/core_multi.go) | `cab8af584947ff0d7ebee91d6c33e67d87fd3e47` | Source file inspected; runtime untested; [claim scope](gameplay-state-contracts.md) |
+| [Nakama database transaction retries](https://github.com/heroiclabs/nakama/blob/cab8af584947ff0d7ebee91d6c33e67d87fd3e47/server/db.go) | `cab8af584947ff0d7ebee91d6c33e67d87fd3e47` | Source file inspected; runtime untested; [claim scope](gameplay-state-contracts.md) |
+| [Nakama JavaScript multiUpdate argument positions](https://github.com/heroiclabs/nakama/blob/cab8af584947ff0d7ebee91d6c33e67d87fd3e47/server/runtime_javascript_nakama.go) | `cab8af584947ff0d7ebee91d6c33e67d87fd3e47` | Source file inspected; runtime untested; [claim scope](gameplay-state-contracts.md) |
 
 ## Checked claims and boundaries
 

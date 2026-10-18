@@ -16,13 +16,16 @@ These notes extend the concise [resource directory](./awesome-list.md) using the
 
 ## Deeper operational evidence
 
+- [Gameplay state and durable effects](gameplay-state-contracts.md): narrative checkpoints, asynchronous commands, database transaction scope and reward reconciliation
+- [Game-development evaluation](game-development-evaluation.md): five additional creation/repair studies with scoring, artifact availability and reproducibility limits
+
 - [Native operation details](native-operation-details.md): 36 operation rows covering engine authoring, DCC batch work and audio middleware lifecycle
 - [Generation delivery contracts](generation-delivery-contracts.md): task reconciliation, artifact expiry, transformations and asset acquisition
 - [Asset validation contracts](asset-validation-contracts.md): seven groups covering interchange, composition, material/texture processing, topology, timelines, fonts and input/network fixtures
 
 - [Production work orders](production-work-orders.md): nine proposed chains with completion, failure, recovery and persistence gates
 - [Studio production cases](studio-production-case-studies.md): eleven historical engineering accounts, separated from editorial acceptance designs
-- [Source revisions](source-revision-notes.md): 28 inspected upstream files with exact revisions and claim boundaries
+- [Source revisions](source-revision-notes.md): 32 inspected upstream files with exact revisions and claim boundaries
 - [Coverage and remaining work](production-coverage-gaps.md): production-stage gaps, interface semantics and a local catalog lookup example
 
 ## From a source to an acceptance test
