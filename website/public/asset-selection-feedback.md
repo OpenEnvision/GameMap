@@ -10,6 +10,8 @@ See also [Visual-feedback mechanisms](visual-feedback-mechanisms.md) for frame s
 
 For the distinction between a fixed candidate-pool comparison and independent repetitions of a complete selection tournament, see [statistical independence and adaptive feedback](benchmark-reproducibility.md#harness-selection-statistical-independence-and-adaptive-feedback).
 
+For fixed-reference render comparisons, [FLIP input/output and display contracts](visual-evidence-research.md#flip-display-aware-render-differences) distinguish raw errors from colorized previews, HDR exposure policy and invalid aggregate sentinels. A perceptual distance remains one diagnostic, not a substitute for the task-specific acceptance evidence below.
+
 ## 1. SceneSmith: semantic retrieval, geometric reranking and first-acceptable validation
 
 ### Source-inspected acquisition interface
