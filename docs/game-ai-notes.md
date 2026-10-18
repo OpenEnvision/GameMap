@@ -56,6 +56,84 @@ See the [Cadle-like repository import](cadle-repositories.md) for the complete r
 
 Unity's interface migration needs a separate distinction. The [official migration guide](https://docs.unity.com/en-us/unity-cli/replace-mcp-server-unity-cli) deprecates the old MCP server inside `com.unity.ai.assistant`. The CLI's `unity mcp` remains supported, and this deprecation does not affect third-party MCP tools. The website should provide both the current official entry point and a separate community bridge entry.
 
+## GAVEL: rule-design search and verdict boundaries
+
+Checked 2026-10-18. Read-only inspection of author source at [1a849c3ba00c3ecb1194c202451a617ef0556b60][gavel-repo] (2024-10-30), [paper v2][gavel-paper] (2024-12-03) and artifact listings. [v1][gavel-v1] is dated 2024-07-12 and is a distinct publication snapshot. No installation, model inference, game/JAR/class execution, archive deserialization or reproduction. The source snapshot is not established as the exact implementation that generated the paper's results. Python invokes bundled `bin` classes; correspondence between inspected Java source and those class files remains unverified.
+
+### Author study, kept separate from inspected implementation
+
+Paper v2 describes CodeLlama-13B fill-in-the-middle mutation of Ludii rules: 574 fine-tuning games, 14 held-out search seeds and 49,968 training tuples. PCA maps 510 concepts to a 40×40 archive, fitted on the complete, pre-filtering Ludii corpus. Three runs each use 500 steps and nine proposals per step. Its six-metric harmonic mean includes coverage; completion means reaching an end state. Novel-cell improvements over baselines are not statistically significant with three runs. Expert screening is preliminary; broad human validation remains future work. [Sections 3–8][gavel-paper]
+
+The 14 seeds are excluded from task-specific fine-tuning, then directly optimized during search. They are not an untouched final evaluation set. This does not establish foundation-model decontamination or human preference validity. [Paper §§4,7–8][gavel-paper]
+
+### Source-inspected candidate and search contract
+
+- **Representation and mutation.** `ArchiveGame` retains the complete rule string, scalar fitness, metric dictionary, ancestor lineage, original game name, generation and epoch. The mutator selects a balanced parenthetical region, excluding the outermost whole-game expression, conditions on its prefix/suffix, and inserts generated text. It requests up to 512 new tokens and strips newlines. Grammar-enforced mutation is an advertised enum/CLI option whose implementation raises `NotImplementedError`. “Recombination” here should not imply a verified two-parent crossover operator. [config.py][gavel-config], [mutators.py, 80–154][gavel-mutator]
+- **Sampling differs from the paper's terse description.** Each selected elite has one mutation location chosen; `num_return_sequences` generates the configured number of alternatives at that location. The saved main configuration selects three elites and three alternatives each. [mutators.py][gavel-mutator], [evolution.py, 262–289, 440–449][gavel-evolution], [run_args.json][gavel-args]
+- **Admission is not a quality pass.** Archive insertion excludes fitness −3 and NaN, but can retain −2 unplayable or −1 uninteresting entries in empty cells. Positive-quality occupancy must therefore be reported separately from total occupancy. The PCA archive loads a cached model and bins compiled concepts; novelty is representation- and reference-population-relative. [archives.py, 96–124, 170–219][gavel-archive]
+- **Novelty population.** The inspected baseline comparison constructs occupied reference cells from the published model dataset's `train ∪ val` splits, then scores final archive entries against that set. It does not load every original Ludii game for this comparison. Its QD calculation adds `fitness + 2` across retained entries, so −1 entries contribute to QD although they fail the quality gate. Do not translate QD or novel-cell counts into a proportion of enjoyable or globally novel games. [compare_against_pure_generation.py, 41–75, 112–152][gavel-compare]
+
+### Compile, playable and sampled-quality gates
+
+The Python two-step evaluator first requests 100 Random-agent trials with a 500-turn setting. It rejects random-play balance below 0.5 or decision-move fraction below 0.5, then requests the selected AI evaluation. Main saved arguments specify UCT, ten trials, 0.25 seconds thinking time and `max_turns=50`. These populations should remain distinct from the separate UCT-versus-Random skill sample. [java_api.py, 169–241][gavel-api], [run_args.json][gavel-args]
+
+The Java standard endpoint returns −1 if compilation produces no game. Evaluation exceptions, an error report, or mean duration below two return −2. Thus “unplayable” is broader than absence of legal moves. The Python fitness layer further rejects completion below 0.2, mean turns below three, decision moves below 0.1 or board coverage below 0.1. [StandardEvaluationEndpoint.java, 64–104][gavel-standard], [fitness_helpers.py, 148–186][gavel-fitness]
+
+For remaining candidates, the inspected default harmonic mean uses **five** scores: balance, completion, decisiveness (`drawishness`), decision moves and trace score. Coverage and duration are excluded from aggregation, although both affect rejection. The CLI permits average/harmonic/min aggregation but does not change this fixed exclusion list. This is a paper/source protocol mismatch to resolve before reuse, not evidence that published results are incorrect. [fitness_helpers.py, 9–38, 148–186][gavel-fitness], [evolution.py, 383–391, 485–493][gavel-evolution]
+
+The inspected `Completion` source counts trials whose winner index is nonzero, excluding draws; it is not a general terminal-state count. Python recomputes balance as one minus the maximum player-win-rate difference, and decisiveness as one minus winner-zero frequency, from returned winner counts. A metric's label alone is insufficient to reconstruct its semantics. [Completion.java, 47–57][gavel-completion], [StandardEvaluationEndpoint.java, 93–99][gavel-standard], [fitness_helpers.py, 119–146][gavel-fitness]
+
+**Skill population:** the Python wrapper requests five trials per player slot. Java puts UCT in each slot in turn against Random opponents and divides UCT wins by `trialsPerGroup × playerCount`; this is ten trials for a two-player candidate, but not universally ten for mutated player counts. It measures this policy/budget matchup, not general strategic depth or human skill. [fitness_helpers.py, 77–84][gavel-fitness], [FastTraceEndpoint.java, 143–196][gavel-trace]
+
+### Failure, timeout and budget accounting
+
+1. **The 300-second setting is not an end-to-end deadline.** It decorates only `two_step_evaluate`; Java evaluator construction occurs before that wrapper, and FastTrace runs afterward with its own 120-second subprocess timeout. Java startup waits for a Ready line without an explicit deadline in the inspected Python method. [fitness_helpers.py, 57–90][gavel-fitness], [java_api.py, 61–86][gavel-api]
+2. **Exception and numeric failure routes differ.** Python-caught exceptions, including wrapper timeout, set both compilable and playable false and attach an error string. FastTrace's Java timeout instead returns numeric −3; other caught trace exceptions return −2. The Python aggregate clamps included metric values to at least 0.01 before its negative-value check, so a numeric trace failure can become a small positive contribution when other gates pass. This is a source-observed path, not an executed failure measurement. [fitness_helpers.py, 77–90, 172–182][gavel-fitness], [FastTraceEndpoint.java, 49–60, 117–139][gavel-trace]
+3. **Early random rejection does not prevent every expensive test.** The random-filter failure object remains compilable/playable, so the surrounding helper still calls FastTrace, although final quality will be −1. [java_api.py, 230–236][gavel-api], [fitness_helpers.py, 77–84][gavel-fitness]
+4. **Aggregation loses diagnostics.** `_get_fitnesses` takes flags from the first grouped evaluation, averages metrics and omits individual errors. With repeated evaluations it concatenates winner-count vectors rather than summing corresponding player bins; do not increase repetitions and assume correct pooled balance/decisiveness. The inspected main saved configuration uses one evaluation. The class initializes and writes `error_logs`, but no append appears in this file; an empty errors file cannot establish an error-free run. [evolution.py, 88–94, 179–228][gavel-evolution], [run_args.json][gavel-args]
+5. **Proposal count is not evaluation cost.** Each step filters unchanged parents and exact same-step duplicates; it does not use the initialized global evaluation cache. Failed, repeated-across-steps and extra trace evaluations consume resources. Saved main arguments request 1,000 epochs, whereas the published directory contains checkpoints through 500 and the comparator selects generation 500. The README command also inherits the 1,000-epoch default. Preserve actual checkpoint and observed steps, rather than infer finished budget from requested arguments. [evolution.py, 262–339, 367–391][gavel-evolution], [run directory][gavel-outputs], [comparison][gavel-compare], [README][gavel-readme]
+
+### Artifacts and rights
+
+The inspected tree contains Python search/training/baseline code, a Ludii fork with Java source and compiled classes, cached PCA pickles, six main/UCB run directories, saved arguments/statistics and selected `.lud` games. One inspected run includes archives through epoch 500 and ten selected game files. Directory presence is not verification of complete trials, paper equivalence or executable reproduction. No GitHub releases were returned by the public releases API during this review. [Pinned tree][gavel-repo], [run directory][gavel-outputs], [selected games][gavel-best], [releases API][gavel-releases]
+
+The author-linked [model file listing][gavel-model-files] exposes three safetensors shards, configs and tokenizer files; the [dataset page][gavel-data] exposes two splits and 574 train rows. No model weights or dataset binaries were downloaded. The [model card][gavel-model] is an unfilled template, including its license field. No root-level GAVEL license was observed in the inspected root listing; the bundled [Ludii LICENSE][gavel-license] declares CC BY-NC-ND 4.0 and expressly restricts commercial use and distribution of modified material without permission. Public availability therefore does not establish permissive production reuse, a license for all root Python code, or clearance of generated variants. Resolve rights separately before integration or redistribution.
+
+### Proposed GameMap / harness-RSI adaptation, not an author result
+
+Use GAVEL as a design-search pattern: mutate a bounded rule/program representation, retain lineage, reject invalid candidates, and explore diverse feasible alternatives. For a game-production fixture:
+
+- Freeze candidate grammar, mutation locations, project assertions, rights scope and evaluator outside the mutable policy
+- Store separate compile errors, invalid play, sampled-quality rejection, infrastructure failures, process timeout, move-cap termination and human rejection; never collapse them into one bad-game score
+- Preserve each playout's seat, opponent, seed, budget, terminal reason and raw counts; declare the actual novelty reference pool and archive projection
+- Count all proposals, deduplications, attempted evaluations, trace trials, retries and wall-clock/model costs; retain the exact selected checkpoint
+- Hold out game families and a final evaluator, then conduct human playtests separately from the proxy score; require rule activation/coverage evidence before describing a newly inserted mechanic as used
+
+This is an unimplemented adaptation specification. It does not establish a general game-design validator, an engine adapter, improved human enjoyment or harness-RSI performance.
+
+[gavel-repo]: https://github.com/gdrtodd/gavel/tree/1a849c3ba00c3ecb1194c202451a617ef0556b60
+[gavel-paper]: https://arxiv.org/html/2407.09388v2
+[gavel-v1]: https://arxiv.org/html/2407.09388v1
+[gavel-config]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/config.py
+[gavel-mutator]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/mutators.py
+[gavel-evolution]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/evolution.py
+[gavel-archive]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/archives.py
+[gavel-api]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/java_api.py
+[gavel-fitness]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/fitness_helpers.py
+[gavel-standard]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/ludii_fork/Generation/src/approaches/symbolic/api/evaluation/StandardEvaluationEndpoint.java
+[gavel-trace]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/ludii_fork/Generation/src/approaches/symbolic/api/evaluation/FastTraceEndpoint.java
+[gavel-completion]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/ludii_fork/Evaluation/src/metrics/single/outcome/Completion.java
+[gavel-compare]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/baselines/compare_against_pure_generation.py
+[gavel-args]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/exp_outputs/main_experiment_seed_1_05_18_24/run_args.json
+[gavel-outputs]: https://github.com/gdrtodd/gavel/tree/1a849c3ba00c3ecb1194c202451a617ef0556b60/exp_outputs/main_experiment_seed_1_05_18_24
+[gavel-best]: https://github.com/gdrtodd/gavel/tree/1a849c3ba00c3ecb1194c202451a617ef0556b60/exp_outputs/main_experiment_seed_1_05_18_24/best_games
+[gavel-readme]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/README.md
+[gavel-releases]: https://api.github.com/repos/gdrtodd/gavel/releases
+[gavel-model]: https://huggingface.co/LudiiLMs/code-llama-13b-fitm-mask-heldout-1-epoch
+[gavel-model-files]: https://huggingface.co/LudiiLMs/code-llama-13b-fitm-mask-heldout-1-epoch/tree/main
+[gavel-data]: https://huggingface.co/datasets/LudiiLMs/code-llama-13b-fitm-mask-heldout-1-epoch-base-data
+[gavel-license]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/ludii_fork/LICENSE
+
 ## Acceptance layers for the Planning Map
 
 1. **Plan:** define the core loop, inputs, win/loss conditions, restart behavior, and progress state. Limit scope to a slice that supports continuous playtesting.

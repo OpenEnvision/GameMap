@@ -284,3 +284,7 @@ Unknowns: safe executable-plan grammar, concrete engine primitive semantics, dep
 [HC-M-readme]: https://github.com/stanford-iris-lab/meta-harness/blob/8123ccabe2b19fa1123090b2e5f1bacc20963ce8/README.md
 [HC-G-paper]: https://arxiv.org/abs/2507.19457v2
 [HC-M-paper]: https://arxiv.org/abs/2603.28052v1
+
+## Rule-design search is a separate evaluation population
+
+The [GAVEL source/paper audit](game-ai-notes.md#gavel-rule-design-search-and-verdict-boundaries) separates Ludii compilation, random-play and UCT samples, archive occupancy, reference-relative novelty and human interest. Selected code and paper protocols differ in fitness aggregation and completion semantics; failure sentinels and requested budgets need explicit interpretation. These board-rule observations do not establish general game-development success or an untouched final-test result.
