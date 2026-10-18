@@ -130,6 +130,78 @@ Checked **2026-10-18**. Sources inspected; no profiler, engine, GPU capture, phy
 **Unknowns.** These prerequisites do not verify the target platform combination, application determinism or compatibility between engine releases.
 
 
+### Joint and articulation observation contracts
+
+Checked 2026-10-18 against Unity 6000.0 official documentation. These version-family pages do not pin an immutable engine patch or PhysX implementation. This supplements [collider shape acceptance](asset-validation-contracts.md#collision-cooking-and-gameplay-shape-acceptance) with connection, drive and constraint observations. No engine or fixture was executed; acceptance designs are **GameMap editorial guidance**.
+
+#### Source-scoped operation contracts
+
+##### 1. Validate the actual connection and coordinate frames
+
+In the ordinary Rigidbody connection path, `Joint.connectedBody` is the endpoint reference; leaving it unset connects to a fixed world point. Unity does not support that connection across a different Scene using a local physics Scene. Moving the connected Rigidbody into a Scene using `LocalPhysicsMode.Physics3D` automatically disconnects it. An intended pair remaining visually adjacent therefore does not establish a surviving connection. [Connected-body API][U1]
+
+`Joint.anchor` uses local coordinates. ConfigurableJoint exposes per-axis linear/angular motion modes, limits, drive mode and target values; `configuredInWorldSpace` changes the target-value frame. Preserve the two endpoint identities, physics-scene identities, anchors, axis basis, motion restrictions and chosen target frame as inputs rather than deriving them from a screenshot. The exposed properties are configuration, not a native motion-completed result. [Anchor API][U2], [ConfigurableJoint API][U3]
+
+ArticulationBody instead describes a reduced-coordinate logical tree. Its `parentAnchorPosition` is relative to the parent **articulation body**, which can differ from the immediate Transform parent when intermediate nodes exist. The revolute axis is the parent anchor's X axis, and rotating that anchor changes the axis in world space. This requires an explicit body/anchor hierarchy map, not only a scene-Transform list. [Articulation API][U4], [Parent-anchor API][U5], [Articulation component reference][U6]
+
+##### 2. Keep requested targets, units and measured motion separate
+
+The articulation component reference describes drives as implicit springs with position-error and velocity-error terms. The force limit caps generated force/torque. Zero stiffness removes position attraction; zero damping does not make the drive stop at its target. A drive target is therefore not a settling or interaction-success signal. [Articulation component reference][U6]
+
+The documented angular units differ by interface: `ArticulationDrive.target` uses **degrees**, while `SetDriveTargets(List<float>)` and `GetJointPositions(List<float>)` use **radians**; their linear quantities use meters. `GetJointVelocities(List<float>)` documents meters/second and radians/second. These are documentation-level contracts requiring exact-build verification, not measured implementation behavior. [Per-drive target][U7], [Bulk target setter][U8], [Position readback][U9], [Velocity readback][U10]
+
+`SetDriveTargets` returns void and addresses the whole hierarchy. `GetDofStartIndices(List<int>)` supplies offsets indexed by each body's `index`; that body's `dofCount` supplies its span. The integer result is the hierarchy's total DOF count, not a success code. Do not assume one float per scene node, infer stable correspondence from equal array lengths, or reuse an old mapping after topology/lock changes without validation. The inspected documentation does not specify malformed-buffer error behavior, transactional application or cancellation. [Bulk target setter][U8], [DOF mapping][U11]
+
+##### 3. Observe constraints without mistaking numerical correction for physical validity
+
+`Joint.currentForce` and `currentTorque` expose solver constraint loads relative to `connectedBody` when assigned, otherwise in world space. Record that frame and its pose with the sample; comparing raw vectors from differently oriented connections is not a common-frame comparison. These API pages establish neither an observation timestamp nor a complete accounting of every external/contact/actuator load. [Force API][U12], [Torque API][U13]
+
+`ArticulationBody.GetDriveForces(List<float>)` fills hierarchy-wide reduced-coordinate drive-force data and returns the DOF count. Use the same body/DOF mapping; this documented drive observation is not a whole-mechanism contact-wrench measurement. [Drive-force readback][U14]
+
+`ConfigurableJoint.projectionMode` can bring violated constraints back into alignment after solver failure, but the correction is nonphysical and can violate momentum conservation and collision geometry. The projection-distance API warns about jitter with very small tolerances and about configurations such as joint cycles where projection may be impossible. A tidy final pose is therefore insufficient acceptance evidence. Retain projection settings and measure constraint errors and motion over time. [Projection mode][U15], [Projection distance][U16]
+
+##### 4. Preserve an explicit break-condition documentation conflict
+
+The 6000.0 `Joint.breakTorque` API says the torque axis must be Locked or Limited, and identifies an unconstrained ConfigurableJoint as unable to break. The same-version Configurable Joint manual says torque breaking can occur for Free, Limited or Locked axes. **These official pages conflict; this research does not resolve their runtime behavior.** An adapter must not silently select one as a universal guarantee. [Break-torque API][U17], [Configurable Joint manual][U18]
+
+`OnJointBreak(float)` reports a break on the same GameObject, passes the break force and precedes automatic removal/deletion of the joint. The callback supplies no joint reference in its signature. For multiple joints on one object, a single callback value alone is insufficient identity evidence; retain component identities and inspect which connection survives. Exact torque-case callback behavior and callback/removal sampling order beyond this documented sequence remain untested. [Break callback][U19]
+
+#### Proposed acceptance and failure handling
+
+**GameMap editorial guidance, unimplemented and unexecuted:** require configuration readback, then bounded dynamic acceptance, then independent persistence/reopen acceptance. None of the cited setters supplies an asynchronous operation handle or an application-level settled/succeeded signal. Define a sampling phase and horizon using the project's existing physics-step owner; capture pose/velocity, anchor separation or forbidden-axis error, target tracking, limit excursions, relevant loads and joint existence. Require an explicit settling tolerance and dwell interval when settling matters. Missing samples, stale topology, unexpected disconnection/breakage, nonfinite data or exceeded project tolerances block promotion. A documented ambiguity remains unresolved until a disposable exact-patch fixture establishes it.
+
+Preserve exact engine/build/platform, scene/content identity, body/constraint identity, physics-scene membership, transform/anchor frames, DOF map, units, initial conditions, mass/inertia and relevant solver/drive/projection settings, applied command history, sampling phase and tolerances. Retry only from a known authored fixture with its original configuration; this supplement establishes no transactional rollback, safe repeated actuation, persisted joint identity, cross-engine equivalence or deterministic simulation guarantee.
+
+#### Unexecuted acceptance fixtures
+
+1. **Connection and frame identity:** build a limited door mechanism with nonidentity parent rotations and an intermediate Transform node in an articulation variant. Verify the chosen world hinge axis and both endpoint identities. In a separate Rigidbody fixture, move the connected body into a different local physics Scene and verify that unexpected disconnection is detected rather than accepted as a world-fixed joint.
+2. **Mixed-unit, mixed-DOF command:** use fixed, prismatic, revolute and spherical links with unique body IDs. Compare a 90-degree per-drive command with its documented pi/2-radian bulk equivalent, then compare measured motion and mapped readback. Change a lock/topology input within valid articulation configurations and require mapping revalidation. The documented constraints prohibit locking a revolute/prismatic joint’s sole DOF or all spherical rotations. A same-length, intentionally permuted adapter map must fail the identity gate before native submission.
+3. **Tracking and stability:** command a target with adequate versus deliberately insufficient drive effort, and with versus without damping. Keep position error and residual velocity separate. Compare projection disabled/enabled under a declared load; a recovered final pose must not hide excessive intermediate separation or unacceptable motion. Include a cyclic ConfigurableJoint graph as a distinct observation case without predicting projection success.
+4. **Break identity and disputed axis case:** compare Free, Limited and Locked rotational modes under the same declared torque protocol, retaining exact patch and diagnostic evidence. Use one joint per object first; add a two-joint object to verify break attribution, event evidence and surviving-component inventory. Treat the free-axis result as resolving only the tested configuration, not rewriting the conflicting source claims globally.
+
+#### Primary sources
+
+[U1]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-connectedBody.html
+[U2]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-anchor.html
+[U3]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ConfigurableJoint.html
+[U4]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.html
+[U5]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody-parentAnchorPosition.html
+[U6]: https://docs.unity3d.com/6000.0/Documentation/Manual/class-ArticulationBody.html
+[U7]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationDrive-target.html
+[U8]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.SetDriveTargets.html
+[U9]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.GetJointPositions.html
+[U10]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.GetJointVelocities.html
+[U11]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.GetDofStartIndices.html
+[U12]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-currentForce.html
+[U13]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-currentTorque.html
+[U14]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.GetDriveForces.html
+[U15]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ConfigurableJoint-projectionMode.html
+[U16]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ConfigurableJoint-projectionDistance.html
+[U17]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-breakTorque.html
+[U18]: https://docs.unity3d.com/6000.0/Documentation/Manual/class-ConfigurableJoint.html
+[U19]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.OnJointBreak.html
+
+
 ## Build artifacts, streaming budgets and delayed timing
 
 ### UnityDataTool: query the shipped bytes before proposing an asset fix

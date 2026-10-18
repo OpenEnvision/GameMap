@@ -328,3 +328,7 @@ The [collision-cooking section](asset-validation-contracts.md#collision-cooking-
 ### Runtime animation observation (2026-10-18)
 
 The [runtime-animation section](engine-operation-contracts.md#runtime-animation-observation-gates) adds six independently reviewed official Unity 6000.0 and Godot 4.4 references. Coverage includes visibility/culling, evaluation clocks, pre-IK movement callbacks, root-motion ownership and reinitialization, immediate pose versus skipped events, completion signals, deferred method calls and animated-node caches. Versioned documentation does not pin an installed engine implementation. Proposed pose/event/movement fixtures remain unexecuted; renderer synchronization, completed application side effects, contact correctness, rollback and deterministic replay are not established.
+
+### Joint and articulation acceptance (2026-10-18)
+
+The [joint-observation section](production-debugging-contracts.md#joint-and-articulation-observation-contracts) adds 19 independently reviewed Unity 6000.0 references. It covers endpoint/physics-scene identity, anchor frames, degree-versus-radian interfaces, body/DOF mapping, drive/solver-load observations, projection limitations and break-event identity. The same-version API/manual conflict on free-axis break torque is preserved explicitly rather than resolved by assumption. Proposed fixtures constrain lock changes to valid configurations and remain unexecuted. Exact-patch behavior, settling/contact success, persisted identity, rollback and simulation determinism remain unverified.

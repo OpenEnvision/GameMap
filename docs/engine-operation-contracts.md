@@ -21,6 +21,8 @@ Sources checked on 2026-10-18; full reproduction not performed. This note comple
 
 ### World, physics, AI, and identity
 
+For powered mechanisms and articulated assemblies, see [joint configuration, units and constraint observations](production-debugging-contracts.md#joint-and-articulation-observation-contracts).
+
 | Operation | Source-backed behavior | Acceptance still needed |
 | --- | --- | --- |
 | Stream a world region | [World Partition](https://dev.epicgames.com/documentation/en-us/unreal-engine/world-partition-in-unreal-engine) distinguishes Loaded and Activated cells | Verify required actor, collision and navigation readiness; [UE-259478](https://issues.unrealengine.com/issue/UE-259478) documents an early completion result for standalone level instances. Target fix 6.0 is not a verified shipped fix |
