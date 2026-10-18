@@ -1,27 +1,92 @@
-# Dependencies
+# Dependencies and local package-manager caches.
+# Keep package-lock.json (and any intentionally adopted lockfile) versioned.
 node_modules/
+.npm/
+.pnpm-store/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/install-state.gz
 
-# Local caches and agent traces
-.vite/
+# Compiled websites: Vite/CI rebuild these from website/ and scripts/.
+# dist/ also matches the obsolete website/dist/ directory.
+dist/
+/build/
+/website/build/
+
+# Generated standalone preview only; website/index.html is a source file.
+/index.html
+
+# TypeScript, Vite, lint, and other disposable tool caches.
 *.tsbuildinfo
-.pi-traces/
+.vite/
+.vite-temp/
+.cache/
+.eslintcache
+.stylelintcache
+.turbo/
 
-# Logs
+# Test coverage and browser-test output, not source test fixtures or media.
+coverage/
+.nyc_output/
+/playwright-report/
+/test-results/
+/blob-report/
+/playwright/.cache/
+
+# Local agent traces and machine-specific agent settings.
+.pi-traces/
+.claude/settings.local.json
+
+# Runtime and package-manager logs.
+logs/
 *.log
+*.log.*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 
-# Local environment configuration (keep example templates)
+# Local environment configuration and secrets; keep example templates visible.
 .env
 .env.*
 !.env.example
+!.env.sample
+!.env.template
 !.env.*.example
+!.env.*.sample
+!.env.*.template
 
-# Operating system metadata
+# Temporary files, editor backups, and merge leftovers.
+/tmp/
+/temp/
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+*~
+*.swp
+*.swo
+
+# Local IDE/workspace state. Shared .vscode JSON configuration stays trackable.
+.idea/
+.history/
+*.code-workspace
+.vscode/*.local.json
+
+# macOS and Windows metadata.
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100/
+.Trashes/
 Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# Keep dist/ and the root index.html versioned: repository checks currently
-# validate dist/ assets, and index.html supports direct file:// previews.
+# Intentionally versioned: README.md, AWESOME.md, docs/, data/, package-lock.json,
+# website/src/, website/index.html, and website/public/ assets/downloads.
+# Some are generated editorial outputs; CI checks that they match their sources.
