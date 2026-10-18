@@ -1,5 +1,7 @@
 # Contributing to GameMap
 
+Website content must follow the [content model and coverage contract](./content-model.md).
+
 Contributions of credible resources, corrected descriptions, repaired links, and evidence-backed engineering experience are welcome. GameMap maps coding agents, engine ecosystems, 2D and 3D development, and world models. Inclusion is not a performance endorsement or a claim of full reproduction.
 
 ## Source of truth and generation workflow

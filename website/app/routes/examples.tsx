@@ -3,6 +3,8 @@ import { ArrowUpRight, Search } from "lucide-react";
 import { learningPaths, foundationPaths } from "../lib/catalog";
 import { ExampleCard } from "../components/example-card";
 import { useClientQuery } from "../lib/client-query";
+import { content } from "../../content/registry";
+import { ContentDocument } from "../components/content";
 
 export default function Examples() {
   const [params, setParams] = useClientQuery();
@@ -108,9 +110,13 @@ export default function Examples() {
         </div>
         <div className="foundation-grid">
           {foundationPaths.map((game) => (
-            <article key={game.id}>
+            <article key={game.id} data-content-ref={`foundation:${game.id}`}>
               <span className="small-label">{game.engine}</span>
-              <h3>{game.title}</h3>
+              <h3>
+                <Link to={content.require("foundation", game.id).url}>
+                  {game.title}
+                </Link>
+              </h3>
               <p>{game.description}</p>
               <div className="example-links">
                 <a href={game.tutorial.url} target="_blank" rel="noreferrer">
@@ -123,6 +129,24 @@ export default function Examples() {
                 </a>
               </div>
             </article>
+          ))}
+        </div>
+      </section>
+      <section className="content-index-section">
+        <div className="section-top">
+          <div>
+            <span className="eyebrow">DISCOVERY, NOT CASE VERIFICATION</span>
+            <h2>Community collections</h2>
+            <p>
+              Broad discovery sources. Inclusion does not establish game
+              relevance, source completeness, or AI authorship for every linked
+              project.
+            </p>
+          </div>
+        </div>
+        <div className="content-grid community-collections">
+          {content.all("collection").map((entry) => (
+            <ContentDocument key={entry.key} entry={entry} heading="h3" />
           ))}
         </div>
       </section>

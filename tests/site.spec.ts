@@ -84,6 +84,9 @@ test("filters, shareable details, bookmarks, persistence, and export", async ({
     .click();
   expect((await download).suggestedFilename()).toBe("gamemap-collection.md");
   await page.goto("resources/?dimension=3d");
+  await expect(
+    page.getByRole("combobox", { name: "Development track" }),
+  ).toHaveValue("3d");
   await page
     .getByRole("combobox", { name: "Development track" })
     .selectOption("all");
@@ -101,7 +104,7 @@ test("project previews are click-to-play and keep source attribution", async ({
 }) => {
   await page.goto("resources/#resource/streamrender-h3");
   const dialog = page.getByRole("dialog");
-  const video = dialog.locator("video");
+  const video = dialog.locator("video:visible");
   await expect(video).toBeVisible();
   await expect(video).toHaveAttribute("preload", "none");
   expect(
@@ -175,14 +178,16 @@ test("documents render on the server and navigate without an API server", async 
   );
 });
 
-test("static full-text search opens a rendered document", async ({ page }) => {
+test("unified full-text search opens a rendered document", async ({ page }) => {
   await page.goto("");
   await page
-    .getByRole("button", { name: "Search guides", exact: true })
+    .getByRole("button", { name: "Search all content", exact: true })
     .click();
   const dialog = page.getByRole("dialog");
   await expect(dialog).toBeVisible();
-  await dialog.getByRole("combobox").fill("Phaser");
+  await dialog
+    .getByRole("combobox")
+    .fill("Define the deliverable before choosing tools");
   const result = dialog.getByRole("option").first();
   await expect(result).toBeVisible({ timeout: 20000 });
   await result.click();

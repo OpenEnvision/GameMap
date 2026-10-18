@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { Link, useHref } from "react-router";
 import { ArrowUpRight, Bookmark, Check, Link2, X } from "lucide-react";
 import type { Resource } from "../../src/types";
-import ResourceIcon, {
-  ResourceAttribution,
-} from "../../src/components/ResourceIcon";
-import { categories, stageLabels, typeLabels } from "../lib/catalog";
-import { projectVideos } from "../../src/data/projectVideos";
-import { projectMedia } from "../../src/data/projectMedia";
+import ResourceIcon from "../../src/components/ResourceIcon";
+import { content } from "../../content/registry";
+import { ContentDocument, RelatedDemos, MediaPreview } from "./content";
 
 export function ResourceDetail({
   resource,
@@ -21,8 +19,12 @@ export function ResourceDetail({
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [copy, setCopy] = useState("");
-  const video = projectVideos[resource.id];
-  const media = projectMedia[resource.id];
+  const entry = content.require("resource", resource.id);
+  const permalink = useHref(entry.url);
+  const demos = content.demosFor(resource.id);
+  const [selected, setSelected] = useState("");
+  const demo = demos.find((entry) => entry.key === selected) || demos[0];
+  const video = demo?.blocks.find((block) => block.type === "video");
   useEffect(() => {
     const node = dialog.current;
     const overflow = document.body.style.overflow;
@@ -37,13 +39,13 @@ export function ResourceDetail({
     <dialog
       ref={dialog}
       className="resource-dialog"
-      aria-labelledby="resource-title"
-      aria-describedby="resource-summary"
+      aria-label={`${resource.name} details`}
       onCancel={(event) => {
         event.preventDefault();
         onClose();
       }}
       onClick={(event) => {
+        if (event.target !== event.currentTarget) return;
         const rect = event.currentTarget.getBoundingClientRect();
         if (
           event.clientX < rect.left ||
@@ -55,12 +57,7 @@ export function ResourceDetail({
       }}
     >
       <div className="detail-toolbar">
-        <span className="eyebrow">
-          {
-            categories.find((category) => category.id === resource.category)
-              ?.label
-          }
-        </span>
+        <span className="eyebrow">PROJECT RECORD</span>
         <button
           className="quiet-icon"
           onClick={onClose}
@@ -69,53 +66,46 @@ export function ResourceDetail({
           <X size={21} />
         </button>
       </div>
-      {(video || media) && (
+      {video?.type === "video" && (
         <figure className="detail-media">
-          {video ? (
-            <video
-              controls
-              playsInline
-              preload="none"
-              src={video.previewSrc}
-              poster={media?.src}
-              aria-label={video.title}
+          <label className="preview-selector">
+            Recording
+            <select
+              aria-label="Project recording"
+              value={demo.key}
+              onChange={(event) => setSelected(event.target.value)}
             >
-              Your browser does not support this preview.
-            </video>
-          ) : (
-            <img src={media.src} alt={media.alt} loading="lazy" />
-          )}
+              {demos.map((entry) => (
+                <option key={entry.key} value={entry.key}>
+                  {entry.title} —{" "}
+                  {entry.data.role === "excerpt"
+                    ? "excerpt"
+                    : "source recording"}
+                </option>
+              ))}
+            </select>
+          </label>
+          <MediaPreview block={video} />
           <figcaption>
-            <a
-              href={video?.source || media.source}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {video?.credit || media.credit}
+            <a href={demo.data.sourceUrl} target="_blank" rel="noreferrer">
+              {demo.data.credit}
               <ArrowUpRight size={12} />
             </a>
-            {video && (
-              <a href={video.src} target="_blank" rel="noreferrer">
-                Original video
-                <ArrowUpRight size={12} />
-              </a>
-            )}
+            <a href={demo.data.originalUrl} target="_blank" rel="noreferrer">
+              Original video
+              <ArrowUpRight size={12} />
+            </a>
           </figcaption>
-          {video && <p>{video.description}</p>}
+          <p>{demo.description}</p>
         </figure>
       )}
       <div className="detail-identity">
         <ResourceIcon resource={resource} size={56} />
-        <span className="small-label">
-          {typeLabels[resource.type]}
-          {resource.year ? ` / ${resource.year}` : ""}
-        </span>
+        <Link className="inline-link" to={entry.url}>
+          Open complete project record
+          <ArrowUpRight size={14} />
+        </Link>
       </div>
-      <h2 id="resource-title">{resource.name}</h2>
-      <ResourceAttribution resource={resource} linked />
-      <p id="resource-summary" className="detail-summary">
-        {resource.summary}
-      </p>
       <div className="detail-actions">
         <a
           className="button button-primary"
@@ -135,74 +125,22 @@ export function ResourceDetail({
           {saved ? "Saved" : "Save resource"}
         </button>
       </div>
-      <section className="detail-section">
-        <h3>Why it belongs here</h3>
-        <p>{resource.detail}</p>
-      </section>
-      {resource.access && (
-        <section className="detail-section">
-          <h3>Tutorial, demo & source</h3>
-          <div className="access-list">
-            {Object.entries(resource.access).map(([kind, access]) => (
-              <div key={kind}>
-                <span className="small-label">
-                  {kind} / {access.kind.replaceAll("-", " ")}
-                </span>
-                {access.url ? (
-                  <a href={access.url} target="_blank" rel="noreferrer">
-                    {access.label}
-                    <ArrowUpRight size={14} />
-                  </a>
-                ) : (
-                  <strong>{access.label}</strong>
-                )}
-                <p>{access.note}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-      <section className="detail-section">
-        <h3>Where it fits</h3>
-        <div className="tag-list">
-          {resource.stages.map((stage) => (
-            <span key={stage}>{stageLabels[stage]}</span>
-          ))}
-          {resource.dimensions.map((track) => (
-            <span key={track}>
-              {track === "world" ? "World models" : track.toUpperCase()}
-            </span>
-          ))}
-        </div>
-      </section>
-      {resource.links?.length ? (
-        <section className="detail-section">
-          <h3>Go a little further</h3>
-          <div className="detail-links">
-            {resource.links.map((link) => (
-              <a
-                key={link.url}
-                href={link.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {link.label}
-                <ArrowUpRight size={14} />
-              </a>
-            ))}
-          </div>
-        </section>
-      ) : null}
+      <ContentDocument entry={entry} heading="h2" />
+      <RelatedDemos resourceId={resource.id} />
       <div className="detail-footer">
         <span>Source reviewed {resource.verified}</span>
         <button
           className="inline-link"
           onClick={async () => {
             try {
-              await navigator.clipboard.writeText(window.location.href);
+              await navigator.clipboard.writeText(
+                new URL(permalink, window.location.origin).href,
+              );
               setCopy("Link copied.");
             } catch {
-              setCopy("Could not copy. Use the address in your browser.");
+              setCopy(
+                "Could not copy. Open the complete record and use its address.",
+              );
             }
           }}
         >

@@ -6,6 +6,8 @@ These notes extend the concise [resource directory](../AWESOME.md) using the rep
 
 ## Find the relevant evidence
 
+For a concrete task, start with the [production-stage routes](production-coverage-gaps.md#production-stage-coverage), then follow the linked interface/artifact contracts and [proposed work orders](production-work-orders.md#common-execution-contract). The route separates upstream API evidence, expected outputs, failure signals and acceptance gates; executable support still requires a verified target environment.
+
 | Need | Dossier | Main distinctions |
 | --- | --- | --- |
 | Drive an engine, DCC application or native UI | [Engine operation contracts](engine-operation-contracts.md) | Editor/runtime scope, completion, cancellation, recovery, persistence, authoritative state and locale/render/accessibility boundaries |
@@ -33,11 +35,11 @@ These notes extend the concise [resource directory](../AWESOME.md) using the rep
 
 - [Native operation details](native-operation-details.md): 36 operation rows covering engine authoring, DCC batch work and audio middleware lifecycle, plus FMOD callback/state/virtualization acceptance boundaries
 - [Generation delivery contracts](generation-delivery-contracts.md): task reconciliation, artifact expiry, transformations and asset acquisition
-- [Asset validation contracts](asset-validation-contracts.md): seven groups covering interchange, composition, material/texture processing, topology, timelines, fonts and input/network fixtures
+- [Asset validation contracts](asset-validation-contracts.md): interchange, composition, material/geometry processing, timelines, fonts, input/network and animation contracts
 
 - [Production work orders](production-work-orders.md): nine proposed chains with completion, failure, recovery and persistence gates
 - [Studio production cases](studio-production-case-studies.md): eleven historical engineering accounts, separated from editorial acceptance designs
-- [Source revisions](source-revision-notes.md): 66 inspected upstream files with exact revisions and claim boundaries
+- [Source revisions](source-revision-notes.md): selected inspected upstream files with exact revisions and claim boundaries; other dossiers retain their own source-pin lists
 - [Coverage and remaining work](production-coverage-gaps.md): production-stage gaps, interface semantics and a local catalog lookup example
 
 ## Maintenance review

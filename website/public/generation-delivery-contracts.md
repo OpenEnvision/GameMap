@@ -31,6 +31,8 @@ The [same-revision image example](https://github.com/Comfy-Org/ComfyUI/blob/c06b
 
 ## Geometry and animation transformations can invalidate earlier work
 
+Continue with [portable-asset validation](asset-validation-contracts.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity), [topology/correspondence gates](asset-validation-contracts.md#4-optimize-retopologize-unwrap-and-regenerate-tangents-without-losing-correspondence) and [animation sampling/compression gates](asset-validation-contracts.md#animation-sampling-and-compression) after acquiring transformed outputs.
+
 | Operation | Source-scoped constraint | Proposed evidence |
 | --- | --- | --- |
 | [Tripo texture](https://docs.tripo3d.ai/texture/texture-model-v3-0-20250812.html) | Supported upstream model versions and mutually exclusive text/image conditioning matter. Appearance-oriented and geometry-oriented alignment have different goals. | Preserve parent task, texture seed, alignment choice and actual returned map set; inspect UV behavior. |
@@ -54,5 +56,7 @@ The [same-revision image example](https://github.com/Comfy-Org/ComfyUI/blob/c06b
 | [Stability API reference](https://platform.stability.ai/docs/api-reference) and [terms page](https://platform.stability.ai/docs/terms-of-service) | The inspected image-control surface supports endpoint-specific image/JSON output, but reference extraction was incomplete. No complete current-schema or agreement determination is claimed; re-read the exact endpoint before implementation. |
 
 ## Proposed acceptance and recovery envelope
+
+Use the [asset-validation contracts](asset-validation-contracts.md) and [export/import work order](production-work-orders.md#1-export-an-authored-asset-import-it-and-audit-dependencies) for the next boundary after delivery; remote terminal status is not validated import.
 
 This is **GameMap editorial guidance**. Preserve originals and parent/derivative relationships; evaluate artifact bytes, format, dimensions/duration, geometry/material/rig properties and target-project behavior separately from remote success. Include late results, expired URLs, duplicate notifications, empty child-job sets, partial outputs and stale project revisions in a future fixture. Reconcile outstanding work before another chargeable submission. Retrying, deleting, regenerating, installing software, creating credentials or accepting terms are not authorized by this document.

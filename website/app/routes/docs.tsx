@@ -7,7 +7,8 @@ import {
   DocsTitle,
 } from "fumadocs-ui/layouts/docs/page";
 import { docs, source } from "../lib/source";
-import { DocumentationLayout, manifest } from "../lib/docs";
+import { DocumentationLayout } from "../lib/docs";
+import { content } from "../../content/registry";
 import { mdxComponents } from "../components/mdx";
 
 export async function loader({ params }: LoaderFunctionArgs) {
@@ -23,19 +24,29 @@ function Document({ path, slug }: { path: string; slug: string }) {
   if (!page) throw new Error("Document is unavailable");
   const { toc } = use(page.load());
   const Content = page.body;
-  const info = manifest.find((page) => page.slug === slug);
+  const record = content.require("document", slug);
+  const info = record.data;
   return (
-    <DocsPage toc={toc} tabIndex={-1}>
+    <DocsPage
+      toc={toc}
+      tabIndex={-1}
+      data-content-key={record.key}
+      data-content-kind="document"
+    >
       <title>{page.title} — GameMap</title>
       <meta name="description" content={page.description} />
-      <DocsTitle>{page.title}</DocsTitle>
-      <DocsDescription className="document-description">
+      <DocsTitle data-content-field="title">{page.title}</DocsTitle>
+      <DocsDescription
+        className="document-description"
+        data-content-field="description"
+      >
         {page.description}
       </DocsDescription>
       {info && (
         <div className="document-source">
           <span>GAMEMAP FIELD NOTES</span>
           <a
+            data-content-field="source"
             href={`https://github.com/OpenEnvision/GameMap/blob/main/${info.source}`}
             target="_blank"
             rel="noreferrer"

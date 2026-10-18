@@ -1,21 +1,17 @@
 import { readFile, writeFile, cp, rm } from "node:fs/promises";
+import { loadContent, contentDigest } from "./lib/content.mjs";
 
 const base = (
   "/" +
   (process.env.PAGES_BASE_PATH || "").split("/").filter(Boolean).join("/") +
   "/"
 ).replace(/\/+/g, "/");
-const docs = JSON.parse(
-  await readFile("website/.content/manifest.json", "utf8"),
-);
-const pages = [
-  "",
-  "resources/",
-  "examples/",
-  "testing/",
-  "docs/",
-  ...docs.map((page) => `docs/${page.slug}/`),
-];
+const context = await loadContent(base);
+const { registry, documents: docs, sources } = context;
+const pages = context
+  .staticPagePaths(registry)
+  .map((path) => path.replace(/^\//, ""));
+const records = context.contentManifest(registry);
 await rm("dist", { recursive: true, force: true });
 await cp(".build/client", "dist", { recursive: true });
 // Prerendered routes include basename on disk, while Vite's assets do not.
@@ -31,6 +27,26 @@ await writeFile(
   "dist/site-manifest.json",
   JSON.stringify(
     { base, pages, docs: docs.map(({ slug, title }) => ({ slug, title })) },
+    null,
+    2,
+  ) + "\n",
+);
+await writeFile(
+  "dist/content-manifest.json",
+  JSON.stringify(
+    {
+      version: 1,
+      sourceDigest: contentDigest({ sources, documents: docs }),
+      contentDigest: contentDigest(records),
+      counts: Object.fromEntries(
+        Object.keys(context.contentKinds).map((kind) => [
+          kind,
+          registry.all(kind).length,
+        ]),
+      ),
+      totalRecords: records.length,
+      records,
+    },
     null,
     2,
   ) + "\n",

@@ -16,6 +16,7 @@ import { FrameworkLink } from "./components/framework-link";
 import { SiteFooter, SiteHeader } from "./components/site-shell";
 import "@fontsource-variable/inter";
 import "./styles.css";
+import { useHydrated } from "./lib/client-query";
 
 function ThemeColor() {
   useEffect(() => {
@@ -64,14 +65,24 @@ export function Layout({ children }: { children: ReactNode }) {
 export default function App() {
   const { pathname } = useLocation();
   const docs = pathname === "/docs" || pathname.startsWith("/docs/");
+  const hydrated = useHydrated();
   return (
     <>
       <a className="skip-link" href={docs ? "#nd-page" : "#main-content"}>
         Skip to content
       </a>
-      {!docs && <SiteHeader />}
-      <Outlet />
-      {!docs && <SiteFooter />}
+      {/* Static reading and native links work immediately. Form controls must wait
+          for hydration so a placeholder query state cannot consume an action. */}
+      <fieldset
+        className="interactive-surface"
+        role="presentation"
+        disabled={!hydrated}
+        data-client-ready={hydrated}
+      >
+        {!docs && <SiteHeader />}
+        <Outlet />
+        {!docs && <SiteFooter />}
+      </fieldset>
     </>
   );
 }

@@ -2,55 +2,52 @@ import type { ReactNode } from "react";
 import type { Root } from "fumadocs-core/page-tree";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { Brand } from "../components/site-shell";
-import configuredGroups from "../../docs.config.json";
-import manifest from "../../.content/manifest.json";
+import { content } from "../../content/registry";
+import { navigation, url } from "../../content/site";
 
-const additional = manifest.filter(
-  (page) =>
-    !configuredGroups.some((group) =>
-      group.pages.some(([slug]) => slug === page.slug),
-    ),
+export const manifest = content.all("document").map((entry) => entry.data);
+export const groups = [...new Set(manifest.map((page) => page.group))].map(
+  (title) => {
+    const documents = manifest.filter((page) => page.group === title);
+    return {
+      title,
+      description: documents[0].description,
+      pages: documents.map(
+        (page) => [page.slug, page.label] as [string, string],
+      ),
+    };
+  },
 );
-export const groups = additional.length
-  ? [
-      ...configuredGroups,
-      {
-        title: "More notes",
-        description: "Additional source-reviewed notes from the atlas.",
-        pages: additional.map((page) => [page.slug, page.label]),
-      },
-    ]
-  : configuredGroups;
-export { manifest };
+// Fumadocs matches normalized route identifiers; the Link adapter restores canonical slashes.
+const navigationPath = (path: string) => path.replace(/\/$/, "");
 export const docTree: Root = {
   name: "Guides & notes",
   children: [
-    { type: "page", name: "Documentation home", url: "/docs" },
+    {
+      type: "page",
+      name: "Documentation home",
+      url: navigationPath(url.page("docs")),
+    },
     ...groups.map((group) => ({
       type: "folder" as const,
       name: group.title,
-      children: group.pages
-        .filter(([slug]) => manifest.some((page) => page.slug === slug))
-        .map(([slug, label]) => ({
-          type: "page" as const,
-          name: label,
-          url: "/docs/" + slug,
-        })),
+      children: group.pages.map(([slug, label]) => ({
+        type: "page" as const,
+        name: label,
+        url: navigationPath(url.document(slug)),
+      })),
     })),
   ],
 };
-
 export function DocumentationLayout({ children }: { children: ReactNode }) {
   return (
     <DocsLayout
       tree={docTree}
       nav={{ title: <Brand />, url: "/" }}
       githubUrl="https://github.com/OpenEnvision/GameMap"
-      links={[
-        { text: "Resources", url: "/resources/" },
-        { text: "Game examples", url: "/examples/" },
-        { text: "Testing library", url: "/testing/" },
-      ]}
+      links={navigation
+        .filter((page) => page.id !== "docs")
+        .map((page) => ({ text: page.title, url: page.path }))}
     >
       {children}
     </DocsLayout>

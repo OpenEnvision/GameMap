@@ -50,7 +50,7 @@ test("warm-neutral themes stay consistent across the site and Fumadocs", async (
     ).toBeGreaterThanOrEqual(4.5);
 
     await page
-      .getByRole("button", { name: "Search guides", exact: true })
+      .getByRole("button", { name: "Search all content", exact: true })
       .click();
     const search = page.getByRole("dialog");
     await expect(search).toBeVisible();

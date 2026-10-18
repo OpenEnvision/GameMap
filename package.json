@@ -3,12 +3,15 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "engines": { "node": ">=22.22.0" },
+  "engines": {
+    "node": ">=22.22.0"
+  },
   "scripts": {
     "dev": "node scripts/generate.mjs && node scripts/prepare-docs.mjs && react-router dev --host 127.0.0.1",
     "build": "node scripts/generate.mjs && node scripts/prepare-docs.mjs && react-router typegen && tsc -b && react-router build && node scripts/finalize-build.mjs",
-    "check": "node scripts/check.mjs",
-    "check:build": "node scripts/check.mjs --built && node scripts/check-web.mjs",
+    "check": "node scripts/check.mjs && node scripts/check-content.mjs && npm run test:content",
+    "check:build": "node scripts/check.mjs --built && node scripts/check-web.mjs && node scripts/check-content.mjs --built",
+    "test:content": "node --test tests/content.test.mjs",
     "preview": "node scripts/preview.mjs",
     "test:web": "playwright test"
   },
@@ -34,6 +37,7 @@
     "@types/react-dom": "^19.2.0",
     "esbuild": "0.25.12",
     "parse5": "^8.0.1",
+    "rehype-raw": "7.0.0",
     "remark-gfm": "^4.0.1",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",

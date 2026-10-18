@@ -22,6 +22,7 @@
   },
   "starterPacks": [
     {
+      "id": "change-a-game",
       "use": "coding",
       "title": "Change a working game.",
       "resources": "Godot demos · SuperTux · Wesnoth",
@@ -29,6 +30,7 @@
       "measure": "Build success, requested behavior, regressions, and repair attempts."
     },
     {
+      "id": "give-an-agent-a-goal",
       "use": "playing",
       "title": "Give an agent a goal.",
       "resources": "MiniGrid · Crafter · ViZDoom",
@@ -36,6 +38,7 @@
       "measure": "Success rate, collisions, path length, resources, and task completion."
     },
     {
+      "id": "asset-through-pipeline",
       "use": "pipeline",
       "title": "Move an asset through the pipeline.",
       "resources": "Kenney · Quaternius Standard · 100STYLE",

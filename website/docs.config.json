@@ -64,11 +64,13 @@
     "title": "About this atlas",
     "description": "Source attribution, contribution standards, and site maintenance.",
     "pages": [
+      ["overview", "Project overview"],
       ["catalog", "Full resource catalog"],
       ["contributing", "Contributing"],
       ["media-sources", "Media sources"],
       ["icon-sources", "Logo sources"],
       ["deployment", "Development & deployment"],
+      ["content-model", "Content model & coverage"],
       ["editorial-art-prompts", "Editorial artwork"],
       ["design/design-system", "Design archive"],
       ["design/v2/design-system", "Design archive / v2"]
