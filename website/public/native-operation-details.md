@@ -161,6 +161,8 @@ Browser-engine observation and export also have separate completion surfaces: [T
 
 [Epic's Behavior Tree overview](https://dev.epicgames.com/documentation/en-us/unreal-engine/behavior-tree-in-unreal-engine---overview), inspected as UE 5.8 documentation, describes observed Blackboard conditions aborting lower-priority branches and Simple Parallel/services organizing behavior. Conceptual parallelism does not establish OS-thread parallelism or a generic cancellation contract.
 
+For runtime content updates, [Godot 4.4 pack activation](production-work-orders.md#godot-44-content-patches-mounting-is-not-dependency-activation) distinguishes mounted pack bytes from cached resource/dependency activation. This is a separate version-specific source contract, not a hot-update execution result.
+
 ## Deliberately retained gaps
 
 None of these rows provides a universal save/reopen driver, cross-engine object identity map, render-completion collector, audio-device observer, console toolchain, license entitlement or deterministic reset fixture. Private studio APIs are not implied. Cancellation and recovery should be validated with disposable projects and owned processes before production use; destructive cleanup, source-control submission, distribution and paid service calls are outside this source-only research.

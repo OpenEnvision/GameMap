@@ -21,6 +21,8 @@ Reviewed **2026-10-18**. This is a qualitative gap map, not a completeness perce
 
 See [native operation details](native-operation-details.md), [generation delivery](generation-delivery-contracts.md) and [asset validation](asset-validation-contracts.md) for concrete completion, failure and artifact constraints. See [work orders](production-work-orders.md) for operational chains, [studio cases](studio-production-case-studies.md) for historical evidence and [source revisions](source-revision-notes.md) for exact inspected files.
 
+For a version-scoped build/delivery example, [Godot 4.4 pack activation](production-work-orders.md#godot-44-content-patches-mounting-is-not-dependency-activation) separates mounted bytes from warm-cache dependency activation; its cold/warm fixtures remain unexecuted.
+
 ## Interface and observation boundaries
 
 - Native API, editor scripting, runtime plugins, CLI, HTTP/WebSocket, MCP, GUI and file exchange have different state and permission boundaries. A community MCP bridge does not inherit every guarantee of the underlying engine.
