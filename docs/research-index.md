@@ -26,9 +26,9 @@ These notes extend the concise [resource directory](../AWESOME.md) using the rep
 
 - [Production debugging](production-debugging-contracts.md): GPU capture and timing completion, shader/device-removal evidence, physics restoration, shipped-asset inspection and streaming budgets
 
-- [Benchmark reproducibility](benchmark-reproducibility.md): public release and isolation matrix, source-inspected OpenGameEval lifecycle/verdicts, and proposed fair piRSI comparisons, including whole-tournament replication, paired uncertainty and protected final evaluation
+- [Benchmark reproducibility](benchmark-reproducibility.md): public release and isolation matrix, source-inspected OpenGameEval lifecycle/verdicts, and proposed fair piRSI comparisons, including whole-tournament replication, paired uncertainty, protected final evaluation and source-pinned GEPA budget/cache/resume boundaries
 
-- [Gameplay state and durable effects](gameplay-state-contracts.md): narrative checkpoints, asynchronous commands, database transactions, native replay reconstruction and physics-state restoration
+- [Gameplay state and durable effects](gameplay-state-contracts.md): narrative checkpoints, asynchronous commands, database transactions, source-pinned Yarn cancellation and variable restoration, native replay reconstruction, physics-state restoration and reward reconciliation
 - [Game-development evaluation](game-development-evaluation.md): five additional creation/repair studies with scoring, artifact availability and reproducibility limits
 
 - [Native operation details](native-operation-details.md): 36 operation rows covering engine authoring, DCC batch work and audio middleware lifecycle
