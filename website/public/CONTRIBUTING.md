@@ -4,6 +4,8 @@ Contributions of credible resources, corrected descriptions, repaired links, and
 
 ## Source of truth and generation workflow
 
+The root `README.md` is a hand-maintained project overview. Keep the full resource catalog in `AWESOME.md` and publishing details in [the deployment guide](./deployment.md).
+
 Edit resource entries only in `data/segments/*.json`. Do not edit these generated files directly:
 
 - `AWESOME.md`
