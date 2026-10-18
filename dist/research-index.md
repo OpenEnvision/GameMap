@@ -14,6 +14,13 @@ These notes extend the concise [resource directory](./awesome-list.md) using the
 | Review provider terms before an experiment | [Generative API boundaries](generative-api-boundaries.md) | Input/output rights, provider training, customer model-evaluation restrictions and expiring downloads |
 | Select visual evidence or improve a tool-using agent | [Visual evidence and harness research](visual-evidence-research.md) | Diagnostic metrics versus gameplay correctness, inferred versus authoritative state, optimization versus final evaluation |
 
+## Deeper operational evidence
+
+- [Production work orders](production-work-orders.md): nine proposed chains with completion, failure, recovery and persistence gates
+- [Studio production cases](studio-production-case-studies.md): eleven historical engineering accounts, separated from editorial acceptance designs
+- [Source revisions](source-revision-notes.md): 28 inspected upstream files with exact revisions and claim boundaries
+- [Coverage and remaining work](production-coverage-gaps.md): production-stage gaps, interface semantics and a local catalog lookup example
+
 ## From a source to an acceptance test
 
 The following is **GameMap editorial guidance**:
