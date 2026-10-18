@@ -1,5 +1,6 @@
 import { test, expect, type APIRequestContext } from "@playwright/test";
 import type { ContentEntry, ContentKind } from "../website/content/models";
+import { agentResourceKinds } from "../website/src/data/agentGameTypes";
 
 type PublishedRecord = Pick<
   ContentEntry,
@@ -125,9 +126,19 @@ test("agent filters distinguish toolkit categories from creator client/model att
   await page
     .getByRole("combobox", { name: "Agent resource kind" })
     .selectOption("bridge");
-  expect(
-    await page.locator('[data-content-ref^="agent:"]').count(),
-  ).toBeLessThan(manifest.counts.agent);
+  const bridges = manifest.records.filter(
+    (entry) =>
+      entry.kind === "agent" &&
+      entry.blocks.some(
+        (block) =>
+          block.field === "kind" &&
+          block.type === "text" &&
+          block.value === agentResourceKinds.bridge,
+      ),
+  );
+  await expect(page.locator('[data-content-ref^="agent:"]')).toHaveCount(
+    bridges.length,
+  );
   await expect(page.locator(".example-card")).toHaveCount(
     manifest.counts.example,
   );
