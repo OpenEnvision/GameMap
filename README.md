@@ -4,7 +4,7 @@
 
 **109 curated primary sources** connecting coding agents, game engines, AI for 2D and 3D development, production tools, and code world models. Main source review date: **October 18, 2026**. This is a research snapshot: reviewing a source does not imply reproducing its results or continuously monitoring it.
 
-- [Interactive GameMap website](https://gamemap-ai-atlas.jiadonghou69.chatgpt.site) (initially published as owner-private)
+- [Interactive GameMap website — GitHub Pages](https://openenvision.github.io/GameMap/)
 - [A practical guide from resources to a working project](docs/practical-guide.md)
 - [Production research: interfaces, evidence and generative-service boundaries](docs/research-index.md)
 - [Tutorials, playable demos, and complete example-game source](docs/tutorials-and-demos.md)
@@ -1140,7 +1140,7 @@ npm run build
 npm run dev
 ```
 
-Use the development URL printed by Vite. The root `index.html` is a preview you can open directly in a browser, with scripts and styles embedded. Keep the `website/public/` folder alongside it for local images, icons, and documents. The development entry is `website/index.html`; application source lives in `website/src/`. Running `npm run build` updates the root preview and generates `dist/` for hosting.
+Use the development URL printed by Vite. Building creates a root `index.html` preview you can open directly in a browser, with scripts and styles embedded. Keep the `website/public/` folder alongside it for local images, icons, and documents. The development entry is `website/index.html`; application source lives in `website/src/`. Running `npm run build` generates the root preview and `dist/` for hosting; these build artifacts are ignored, not committed.
 
 Homepage video previews and posters are bundled locally. Full films, external project pages, and web fonts require an internet connection. No API key is required. Saved resources stay in the current browser and can be exported as Markdown. The website uses React, TypeScript, and Vite, with native SVG and CSS graphics.
 
@@ -1148,6 +1148,26 @@ Homepage video previews and posters are bundled locally. Full films, external pr
 
 Resource edits are regenerated into the website catalog. Research dossiers are copied to `website/public/` and the built `dist/` directory; the website's Field Notes and resource-library footer link to the research index. These links open Markdown documents, not an inline article reader.
 
-The repository currently includes a pull-request validation workflow, `.github/workflows/catalog.yml`, which checks generated outputs, validates the catalog and builds the site. It does not deploy a website. There is no `deploy-pages.yml` workflow in this snapshot. A merged PR or successful build does not update the separately hosted site by itself.
+The publishing target is [GameMap on GitHub Pages](https://openenvision.github.io/GameMap/). This is a static website: no backend, API key, or separate hosted-site service is required. The workflow uploads only the built `dist/` directory, not the repository source or local configuration.
 
-Relative asset and document URLs support repository subpaths. The `dist/` directory is the deployable output; the root `index.html` is for direct preview. Publishing requires a separately configured, authorized hosting workflow. For a future GitHub Pages setup, see the [official workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+### One-time repository setup
+
+1. A repository administrator, maintainer, or someone with permission to manage Pages must open **Settings → Pages** and select **GitHub Actions** as the build and deployment source.
+2. Ensure GitHub Actions is enabled and the `github-pages` environment permits deployments from `main`.
+3. Merge the publishing workflow into `main`. The first deployment runs automatically; subsequent pushes to `main` update the site. It can also be started from **Actions → Deploy GameMap to GitHub Pages → Run workflow** on `main`.
+
+Private repositories require a GitHub plan that supports Pages. Enabling Pages does not change repository visibility, but the published website may be publicly accessible. Do not include credentials or private data in public assets. Until Pages is enabled and the first deployment succeeds, the target URL will not serve this site.
+
+### Versioned content and validation
+
+Source code, `package-lock.json`, editorial documents, public source media, and generated review/download files remain versioned. CI verifies that generated documents match their sources. Dependencies, built `dist/` directories, the generated root preview, caches, test reports, logs, local environment files, and machine-specific state are ignored. Environment example templates and shared editor configuration remain eligible for tracking.
+
+Run `npm run check` to validate sources without needing build output. Run `npm run build` followed by `npm run check:build` to additionally verify deployed documents, media integrity, and the standalone preview. CI always runs the built-output checks before deployment.
+
+### Build and deployment
+
+The pull-request workflow, `.github/workflows/catalog.yml`, validates generated content and builds the site without publishing. The publishing workflow, `.github/workflows/deploy-pages.yml`, installs dependencies with `npm ci`, checks generated sources, builds and validates the static site, uploads `dist/`, and deploys it with the official GitHub Pages actions. Deployment permissions are limited to the deploy job.
+
+The publishing build sets `PAGES_BASE_PATH` from GitHub Pages metadata so scripts, styles, media, and document downloads work under `/GameMap/`. Local builds retain relative URLs, and the root `index.html` remains a direct-file preview. The site uses query parameters and URL hashes rather than server routes, so refreshing a shared link does not require an SPA fallback.
+
+See the [official workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) for repository settings and deployment troubleshooting.

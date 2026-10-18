@@ -7,6 +7,8 @@ import {categories,loadCatalog,validate,renderAwesome,renderReadme} from './cata
 import {loadLearningContent,renderLearningGuide} from './learning.mjs';
 import {loadAgentCodeContent,validateAgentCodeContent,renderAgentCodeGuide} from './agent-code.mjs';
 import {loadTestingContent,validateTestingContent,renderTestingGuide,testingManifest} from './testing.mjs';
+// Source checks work on a clean clone; --built additionally verifies local build output.
+const checkBuilt=process.argv.includes('--built');
 const records=validate(await loadCatalog());
 const expected=JSON.stringify(records,null,2)+'\n';
 for(const path of ['data/resources.json','website/src/data/resources.json','website/public/resources.json'])assert.equal(await readFile(new URL('../'+path,import.meta.url),'utf8'),expected,`Stale generated file: ${path}`);
@@ -57,8 +59,8 @@ console.log(`Agent-code checks passed: ${agentGameResources.length} source-revie
 const testingContent=await loadTestingContent();
 const testingResources=validateTestingContent(testingContent);
 const testingGuide=renderTestingGuide(testingContent),testingJson=testingManifest(testingContent);
-for(const path of ['docs/game-testing-library.md','website/public/game-testing-library.md','dist/game-testing-library.md'])assert.equal(await readFile(new URL('../'+path,import.meta.url),'utf8'),testingGuide,`Regenerate the testing guide: ${path}`);
-for(const path of ['website/public/testing-resources.json','dist/testing-resources.json'])assert.equal(await readFile(new URL('../'+path,import.meta.url),'utf8'),testingJson,`Regenerate the testing manifest: ${path}`);
+for(const path of ['docs/game-testing-library.md','website/public/game-testing-library.md',...(checkBuilt?['dist/game-testing-library.md']:[])])assert.equal(await readFile(new URL('../'+path,import.meta.url),'utf8'),testingGuide,`Regenerate the testing guide: ${path}`);
+for(const path of ['website/public/testing-resources.json',...(checkBuilt?['dist/testing-resources.json']:[])])assert.equal(await readFile(new URL('../'+path,import.meta.url),'utf8'),testingJson,`Regenerate the testing manifest: ${path}`);
 console.log(`Testing-library checks passed: ${testingResources.length} reviewed resources, four resource types, three testing goals, and matched guide/JSON downloads.`);
 
 // Every preview preserves real game pixels, bundled locally with capture/creator provenance.
@@ -124,13 +126,13 @@ for(const path of learningPaths){
  assert.ok(bytes.length>512&&bytes.length<2_000_000,`Keep gameplay screenshot files intact and lightweight: ${path.id}`);
  assert.deepEqual(inspectWebp(bytes,path.id),{width:preview.width,height:preview.height},`Screenshot dimensions must match the image: ${path.id}`);
  assert.deepEqual(provenance,{id:path.id,...preview,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')},`Regenerate gameplay screenshot provenance: ${path.id}`);
- assert.deepEqual(await readFile(new URL('../dist/'+preview.src,import.meta.url)),bytes,`Rebuild deployed gameplay screenshot: ${path.id}`);
+ if(checkBuilt)assert.deepEqual(await readFile(new URL('../dist/'+preview.src,import.meta.url)),bytes,`Rebuild deployed gameplay screenshot: ${path.id}`);
  gameplayPreviewBytes+=bytes.length;
 }
 assert.deepEqual((await readdir(new URL('../website/public/media/learning/',import.meta.url))).filter(name=>name.endsWith('.webp')).sort(),Object.values(learningMedia).map(preview=>preview.src.split('/').at(-1)).sort(),'Record every bundled gameplay screenshot');
-assert.equal(await readFile(new URL('../dist/media/learning/manifest.json',import.meta.url),'utf8'),learningManifestText,'Rebuild deployed gameplay provenance');
+if(checkBuilt)assert.equal(await readFile(new URL('../dist/media/learning/manifest.json',import.meta.url),'utf8'),learningManifestText,'Rebuild deployed gameplay provenance');
 assert.equal(await readFile(new URL('../website/public/media-sources.md',import.meta.url),'utf8'),mediaSources.replaceAll('../website/public/','./'),'Regenerate public media attribution');
-console.log(`Learning-preview checks passed: ${learningPaths.length} real-game screenshots, matched source URLs, 16:9 WebP pixels, public/deployment integrity, ${(gameplayPreviewBytes/1_000_000).toFixed(2)} MB total.`);
+console.log(`Learning-preview checks passed: ${learningPaths.length} real-game screenshots, matched source URLs, 16:9 WebP pixels, ${checkBuilt?'public/deployment':'public'} integrity, ${(gameplayPreviewBytes/1_000_000).toFixed(2)} MB total.`);
 
 // Catch missing assignments, accidental remote dependencies, and damaged assets.
 const identities=JSON.parse(await readFile(new URL('../website/src/data/resourceIdentities.json',import.meta.url),'utf8'));
@@ -307,10 +309,10 @@ async function englishSources(directory){
  const nested=await Promise.all(entries.map(entry=>entry.isDirectory()?englishSources(`${directory}/${entry.name}`):/\.(?:tsx?|json)$/.test(entry.name)?[`${directory}/${entry.name}`]:[]));
  return nested.flat();
 }
-const englishFiles=[...await englishSources('website/src'),'website/index.html','index.html','README.md','AWESOME.md',...(await readdir(new URL('../website/public/',import.meta.url))).filter(name=>/\.(md|json)$/.test(name)).map(name=>'website/public/'+name)];
+const englishFiles=[...await englishSources('website/src'),'website/index.html',...(checkBuilt?['index.html']:[]),'README.md','AWESOME.md',...(await readdir(new URL('../website/public/',import.meta.url))).filter(name=>/\.(md|json)$/.test(name)).map(name=>'website/public/'+name)];
 await Promise.all(englishFiles.map(async path=>{
  const source=await readFile(new URL('../'+path,import.meta.url),'utf8');
  assert.doesNotMatch(source,/\p{Script=Han}/u,`Non-English copy remains in ${path}`);
 }));
-for(const path of ['website/index.html','index.html'])assert.match(await readFile(new URL('../'+path,import.meta.url),'utf8'),/<html lang="en">/,`Set the document language to English: ${path}`);
-console.log(`English-only checks passed: ${englishFiles.length} source, preview, and download files.`);
+for(const path of ['website/index.html',...(checkBuilt?['index.html']:[])])assert.match(await readFile(new URL('../'+path,import.meta.url),'utf8'),/<html lang="en">/,`Set the document language to English: ${path}`);
+console.log(`English-only checks passed: ${englishFiles.length} ${checkBuilt?'source, preview, and download':'source and download'} files.`);
