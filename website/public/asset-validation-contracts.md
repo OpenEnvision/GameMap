@@ -134,6 +134,52 @@ Source: [KHR_texture_basisu](https://github.com/KhronosGroup/glTF/blob/521a91d49
 
 **Version/license scope:** all repository references are rolling. meshoptimizer, xatlas and UVAtlas declare MIT; Draco Apache-2.0. MikkTSpace's permissive notice has origin, altered-source and notice-preservation conditions. Instant Meshes has a [license with supplemental terms](https://raw.githubusercontent.com/wjakob/instant-meshes/master/LICENSE.txt), requiring full review. QuadriFlow is MIT, but its README identifies LGPL sparse-Cholesky dependencies, an MPL2 sparse-LU alternative selected with `BUILD_FREE_LICENSE`, and separate optional Gurobi terms. Selected build dependencies, not the project badge alone, determine the review scope.
 
+### Collision cooking and gameplay-shape acceptance
+
+Sources checked 2026-10-18; full reproduction not performed. These official Unity 6000.0 documentation pages identify a version family, not an immutable engine patch or PhysX implementation. This fills the boundary between imported geometry and the [navigation/traversal gates](engine-operation-contracts.md#navigation-after-procedural-world-edits); no collider cook, engine simulation or fixture was run. Proposed gates below are **GameMap editorial guidance**.
+
+#### Validate geometry before relaxing cooking safeguards
+
+`MeshCollider.cookingOptions` controls conversion into physics query/contact support structures. With validity checks disabled, valid inputs are the caller's responsibility and invalid data can produce undefined behavior. This is a separate operation from visual mesh import or format validation. [cookingOptions](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MeshCollider-cookingOptions.html).
+
+Unity requires an alternative validator if cleaning or vertex welding is disabled: cleaning-off meshes must avoid degenerate triangles, including near-zero/infinite-area examples; welding-off meshes must not contain colocated vertices. Read/write access is required for a negatively scaled convex collider, a skewed/sheared transform (including scaled-parent/rotated-child configurations), or nondefault cooking options. [Prepare meshes](https://docs.unity3d.com/6000.0/Documentation/Manual/prepare-mesh-for-mesh-collider.html).
+
+The component reference describes four flags: `CookForFasterSimulation` trades additional preprocessing/storage for runtime work; `EnableMeshCleaning` attempts to remove degenerates/artifacts; `WeldColocatedVertices` combines equal-position vertices; `UseFastMidphase` selects the fastest available platform midphase, with the legacy algorithm available if problems occur. Convex colliders have a documented 255-triangle limit. `Provides Contacts`, disabled by default, requests ongoing contact generation even without a usual recipient; lack of contact observations therefore needs configuration context. [MeshCollider reference](https://docs.unity3d.com/6000.0/Documentation/Manual/class-MeshCollider.html).
+
+**Proposed gate, not an upstream guarantee:** record geometry revision/hash, units, winding, vertex/index/triangle counts, finite-coordinate checks, area tolerance and colocated-vertex policy. Keep project tolerances explicit; these pages do not define a universal safe epsilon. A render mesh with duplicated UV/normal-seam vertices may need a distinct collision mesh. Retain enabled flags and rejected-input diagnostics. Do not promise that cleaning repairs arbitrary generated geometry.
+
+#### Bake, reuse and invalidate deliberately
+
+`Physics.BakeMesh(meshID, convex, cookingOptions)` returns void; baking runs on the calling thread and stores data on the mesh instance. Player calls need Read/Write enabled, while Editor geometry is available without that setting. Reuse requires identical cooking options, unchanged geometry and a shareable transform: nonnegative, unskewed scaling, or negative scaling for nonconvex colliders. Adding a MeshCollider to an object already carrying a MeshFilter can automatically assign `sharedMesh` and trigger baking. Thread safety does not permit simultaneous bakes of the same mesh; that case is undefined. The documented Job System example completes work before main-thread collider creation. [BakeMesh](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Physics.BakeMesh.html).
+
+Assigning `sharedMesh` after changes to vertices, indices or triangles rebuilds collider shapes. This documents assignment-triggered rebuilding; do not infer that a prior bake covers later mesh mutations. [sharedMesh](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MeshCollider-sharedMesh.html).
+
+**Proposed gate:** keep separate records for input validation, bake return/diagnostics, collider assignment, measured reuse and gameplay acceptance. Deduplicate scheduled mesh IDs and serialize per-mesh cooks; parallelize only distinct meshes. A void return is not a fidelity report. Record target platform, exact engine build, convex choice, flag bitmask and full transform hierarchy. Use diagnostics and profiler evidence to establish actual recooking cost; no portable disk-cache or cross-session reuse contract is established here.
+
+#### Accept the collision shape
+
+Concave MeshColliders are supported as static or kinematic geometry, and collide with convex colliders rather than other concave colliders. Convex conversion fills concavities into a hull. [Mesh collider introduction](https://docs.unity3d.com/6000.0/Documentation/Manual/mesh-colliders-introduction.html).
+
+Convex geometry has no holes/entrances and must have nonzero volume. Unity may thicken a convex plane/quad by up to 0.05 times its longest in-plane dimension. Thus even a visually correct plane or doorway can acquire materially different collision geometry. [convex](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MeshCollider-convex.html).
+
+**Proposed gate:** define allowed doorway clearance, ledge height, wall thickness and hull approximation error before choosing convex versus triangle-mesh/compound representation. Treat the documented triangle limit as a collider constraint, not proof that any source mesh below the limit will cook successfully, or that source polygon count equals final hull count. This research establishes no exact rejection/error-code contract for over-limit hulls.
+
+#### Interpret queries separately from contacts
+
+`Physics.ComputePenetration` reports whether the supplied poses overlap and, when true, a minimum separation translation for collider A. False leaves direction/distance undefined. At least one collider must be a box, sphere, capsule or convex MeshCollider. Supplying hypothetical position/rotation does not move the scene; this operation does not need spatial structures updated first. It ignores backfaced triangles regardless of `queriesHitBackfaces`. [ComputePenetration](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Physics.ComputePenetration.html).
+
+Ordinary physics queries omit back-face hits by default. [queriesHitBackfaces](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Physics-queriesHitBackfaces.html). `Physics.SyncTransforms` manually flushes transform changes, including effects on child colliders, to physics. [SyncTransforms](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Physics.SyncTransforms.html).
+
+**Proposed gate:** retain query type, collider pair, poses/scales, face direction, layer/trigger policy, transform synchronization and simulation-step context. A front-side ray hit does not demonstrate two-sided contact behavior or traversability. A penetration result is not a simulated contact manifold or whole-scene collision proof. Do not generalize ComputePenetration's synchronization exception to broadphase queries.
+
+#### Unexecuted acceptance fixtures
+
+1. **Dirty input versus safe preprocessing:** a valid tetrahedron control, a zero-area triangle and duplicated-position vertices. The proposed preflight must reject invalid inputs before invoking a cleaning/welding-disabled cook. Do not deliberately exercise undefined behavior to seek a stable error code. Compare accepted clean input under recorded flag combinations.
+2. **Reuse and invalidation:** bake once, assign to matching colliders, then separately change flags, geometry and transform hierarchy. Include mirrored convex/nonconvex variants and scaled-parent/rotated-child shear. Record assignment diagnostics and profiler evidence; do not infer reuse from an unchanged screenshot. Verify scheduling rejects duplicate concurrent mesh IDs without actually racing native cooks.
+3. **Shape fidelity:** a concave doorway, a flat quad and known-size solid. Compare triangle-mesh and convex representations against required clearance and thickness. Include near-limit convex complexity and retain actual diagnostic/outcome, without predicting how hull simplification or failure behaves.
+4. **Observation boundary:** query both sides of a known-winding wall, test valid primitive-versus-mesh penetration pairs at specified poses, then separately collect simulated contact evidence with recorded settings. Move a parent and synchronize before ordinary spatial queries. A missing/unsupported observation remains unverified.
+
+
 ## 5. Deliver a timeline bundle that still resolves media
 
 **Documented operations and fields.** [OpenTimelineIO 0.14 file bundles](https://opentimelineio.readthedocs.io/en/v0.14/tutorials/otio-filebundles.html) package timeline data with referenced media. Bundle references can use local relative paths or represent missing media. OTIO does not encode or decode media.
