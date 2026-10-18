@@ -1,13 +1,16 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import { fileURLToPath } from 'node:url';
+import { reactRouter } from "@react-router/dev/vite";
+import tailwindcss from "@tailwindcss/vite";
+import { fumadocsMdx } from "fumadocs-mdx/vite";
+import { defineConfig } from "vite";
+import { fileURLToPath } from "node:url";
+
+const base =
+  "/" +
+  (process.env.PAGES_BASE_PATH || "").split("/").filter(Boolean).join("/") +
+  "/";
 
 export default defineConfig({
-  root: fileURLToPath(new URL('./website', import.meta.url)),
-  base: process.env.PAGES_BASE_PATH || './',
-  plugins: [react()],
-  build: {
-    outDir: fileURLToPath(new URL('./dist', import.meta.url)),
-    emptyOutDir: true,
-  },
+  base: base.replace(/\/+/g, "/"),
+  publicDir: fileURLToPath(new URL("./website/public", import.meta.url)),
+  plugins: [fumadocsMdx(), tailwindcss(), reactRouter()],
 });

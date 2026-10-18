@@ -1,15 +1,33 @@
 # Website development and deployment
 
-GameMap is a static React, TypeScript, and Vite website. Its publishing target is [GitHub Pages](https://openenvision.github.io/GameMap/); no backend, API key, or separate hosted-site service is required.
+GameMap uses **Fumadocs, React Router, React, TypeScript, and Vite**. The publishing target is [GitHub Pages](https://openenvision.github.io/GameMap/). Production consists only of static HTML, CSS, JavaScript, media, and a browser-side search index. No application server or API key is required.
 
 ## Local development
+
+Use Node.js 22.22 or newer:
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open the development URL printed by Vite. The HTML entry is `website/index.html`, application source lives in `website/src/`, and public assets and downloads live in `website/public/`.
+Open the URL printed by React Router. The main routes are:
+
+- `/` — overview and featured game examples.
+- `/resources/` — searchable, filterable resources and browser-local collections.
+- `/examples/` — playable games with creator evidence and project source.
+- `/testing/` — projects, environments, assets, and motion-data references.
+- `/docs/` — rendered guides, research notes, and source attribution.
+
+The application lives in `website/app/`. Existing catalog and case data remain in `website/src/data/`; public source assets remain in `website/public/`.
+
+## Documents and internal links
+
+Markdown under `docs/`, plus `AWESOME.md` and `CONTRIBUTING.md`, is rendered at build time. Articles include navigation, a table of contents, highlighted code, heading links, and full-text search. The original Markdown remains the source of truth and is available through each article's source link.
+
+`scripts/prepare-docs.mjs` creates disposable copies in `website/.content/`. It derives titles, rewrites internal Markdown links to document routes, and stages local documentation images in the ignored `website/public/docs-assets/` directory. Original research text is not rewritten. `website/docs.config.json` controls navigation groups and short labels; ungrouped articles remain available under More notes. After editing source Markdown during development, rerun this preparation script or restart `npm run dev` to refresh the prepared copies.
+
+The document source uses Fumadocs MDX's Vite integration. Article bodies are lazy-loaded on client navigation, but every document also ships as complete HTML, so direct links and reading without JavaScript work. Full-text search loads a static index into the browser; there is no `/api/search` server in production.
 
 ## Build and validate
 
@@ -20,50 +38,49 @@ npm run build
 npm run check:build
 ```
 
-- `generate.mjs` synchronizes the resource catalog and downloadable research documents. It does not overwrite the hand-maintained README.
+- `generate.mjs` synchronizes the resource catalog and downloadable editorial files. It does not overwrite the README.
 - `npm run check` validates source data, public source media, and generated editorial files without requiring build output.
-- `npm run build` regenerates the catalog, checks TypeScript, and creates the deployable `dist/` directory and a standalone root `index.html` preview.
-- `npm run check:build` additionally validates deployed downloads, media integrity, and the standalone preview. Run it after building.
+- `npm run build` prepares documents, checks TypeScript, pre-renders routes, and assembles the static `dist/` directory. Temporary framework output stays in `.build/`.
+- `npm run check:build` also checks deployed documents/media, every rendered article, internal links/assets, the static search index, and the real 404 page.
 
-`dist/`, the obsolete `website/dist/`, and the generated root preview are ignored by Git. Source code, lockfiles, editorial files, and public source assets remain versioned. See [Contributing](./CONTRIBUTING.md#what-belongs-in-git) for the versioning policy.
-
-### Standalone preview
-
-After building, open the root `index.html` directly in a browser. Its scripts and styles are embedded, but `website/public/` must remain alongside it for images, icons, and documents.
-
-Homepage video previews and posters are bundled locally. Full films, external project pages, and web fonts require an internet connection. Saved resources stay in the current browser and can be exported as Markdown.
-
-## GitHub Pages setup
-
-A repository administrator, maintainer, or custom role with Pages management permission must complete this setup:
-
-1. Open **Settings → Pages** and select **GitHub Actions** under **Build and deployment → Source**.
-2. Ensure GitHub Actions is enabled and the `github-pages` environment allows deployments from `main`.
-3. Push or merge a change to `main`, or choose **Actions → Deploy GameMap to GitHub Pages → Run workflow** on `main`.
-
-The target URL will serve this site only after Pages is enabled and a deployment succeeds. Private repositories require a GitHub plan that supports Pages. Enabling Pages does not change repository visibility, but the published website may be publicly accessible; do not include credentials or private data in public assets.
-
-## Deployment workflow
-
-- `.github/workflows/catalog.yml` checks generated content, validates sources, builds the site, and validates build output on pull requests. It does not publish.
-- `.github/workflows/deploy-pages.yml` builds, validates, and publishes on pushes to `main`, or when run manually on `main`.
-- Only `dist/` is uploaded, not repository source or local configuration.
-- Official GitHub Pages actions are pinned to commit SHAs. Pages/OIDC write permissions are scoped to the deployment job.
-
-### Repository subpaths
-
-The publishing workflow sets `PAGES_BASE_PATH` from GitHub Pages metadata. This keeps scripts, styles, media, and downloads under `/GameMap/`. Local builds use relative URLs; the standalone preview keeps its own local asset paths.
-
-To reproduce the publishing base locally:
+To reproduce the GitHub Pages subpath:
 
 ```sh
 PAGES_BASE_PATH=/GameMap/ npm run build
 npm run check:build
-PAGES_BASE_PATH=/GameMap/ npm run preview
+npm run preview
 ```
 
-Use the preview URL printed by Vite and include the `/GameMap/` path. The application uses query parameters and URL hashes rather than server routes, so refreshing a shared link does not require an SPA fallback.
+The preview command reads the base path from the built site and prints the correct URL. It serves static files only, with no SPA fallback, matching GitHub Pages more closely than a development server. **The old root `file://` preview is no longer generated or supported.** Use `npm run preview` for production previews.
 
-Research dossiers are served as downloadable Markdown, not as an inline article reader. Source attribution and media provenance remain bundled with public downloads.
+### Browser tests
 
-For repository settings and deployment troubleshooting, see the [official GitHub Pages workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+```sh
+npx playwright install chromium
+npm run test:web
+```
+
+Tests exercise desktop and mobile layouts, filtering, saved collections, resource dialogs, click-to-play previews, document navigation with and without JavaScript, static search, themes, and 404 behavior against the built static artifact. Pull requests run these checks in CI. `test-results/` and browser reports are ignored.
+
+## GitHub Pages setup
+
+A repository administrator, maintainer, or custom role with Pages management permission must:
+
+1. Open **Settings → Pages** and select **GitHub Actions** under **Build and deployment → Source**.
+2. Enable Actions and allow deployments from `main` in the `github-pages` environment.
+3. Push or merge to `main`, or choose **Actions → Deploy GameMap to GitHub Pages → Run workflow** on `main`.
+
+The URL serves this site only after Pages is enabled and deployment succeeds. Private repositories require a plan that supports Pages. Enabling Pages does not change repository visibility, but the published website may be publicly accessible. Never include credentials or private data in public assets.
+
+## Deployment workflow
+
+- `.github/workflows/catalog.yml` validates generated content, builds with the `/GameMap/` base, checks static output, and tests desktop/mobile interactions on pull requests. It does not publish.
+- `.github/workflows/deploy-pages.yml` builds and validates on `main`, uploads only `dist/`, and publishes with official SHA-pinned Pages actions. Pages/OIDC write permissions are scoped to the deploy job.
+- The publishing build sets `PAGES_BASE_PATH` from Pages metadata. React Router uses the same basename; build finalization flattens pre-rendered routes so the published directory is not nested under a second `GameMap/`.
+- All application and document routes are pre-rendered. Initial route discovery is embedded, so client navigation never depends on a server-side route-manifest API. Unknown paths receive a real 404 page.
+
+Source code, lockfiles, editorial files, and original media stay versioned. Build output, staged document copies/images, caches, and local secrets are ignored; see [the versioning policy](./CONTRIBUTING.md#what-belongs-in-git).
+
+The site includes local Inter fonts. Upstream dependency and font license texts are collected in the built `THIRD-PARTY-NOTICES.txt` file. External creator demos, project pages, and source repositories still require internet access.
+
+For repository settings and troubleshooting, see the [official GitHub Pages workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).

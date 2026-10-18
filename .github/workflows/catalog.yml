@@ -25,7 +25,13 @@ jobs:
           git diff --exit-code -- AWESOME.md data/resources.json website/src/data/resources.json website/public docs
       - name: Validate source catalog and media
         run: npm run check
-      - name: Build website and standalone preview
+      - name: Build static website and documentation
         run: npm run build
+        env:
+          PAGES_BASE_PATH: /GameMap/
       - name: Validate generated build output
         run: npm run check:build
+      - name: Install browser for interaction checks
+        run: npx playwright install --with-deps chromium
+      - name: Check desktop and mobile interactions
+        run: npm run test:web
