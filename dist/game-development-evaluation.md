@@ -11,7 +11,7 @@ Primary sources: [Roblox repository](https://github.com/Roblox/open-game-eval), 
 - **Tasks and evaluation:** The repository describes 84 core tasks, 13 models and 16 attempts per task in the paper. Executable checks cover both an edited Roblox scene and a simulated play session. Passing requires all checks. Observation and editing actions are separated so exploration can be analyzed alongside outcomes.
 - **Available artifacts:** Task Lua files, places, an evaluation plugin and a Python submission script are visible; the repository displays MIT licensing. The documented workflow uses Roblox's hosted evaluation API, a Roblox account/OpenCloud key and the caller's LLM credentials. Public scripts do not establish a fully local, service-independent reproduction.
 - **Concrete annotation caveat:** Empty expected-instance fields mean unannotated dependencies, not zero dependencies. They should not become zeroes in an exploration score.
-- **Lifecycle boundary:** The README lists queued/pending/completed/failed service states and a ten-minute default timeout. Neither timeout nor job completion alone establishes cancellation or a passing task verdict. Custom model endpoint URLs are described as unsupported.
+- **Lifecycle boundary:** The README lists queued/pending/completed/failed service states and a ten-minute default timeout. A subsequent [client-code inspection](benchmark-reproducibility.md) found a 900-second polling budget that excludes request durations, so the README figure is not a verified wall-clock limit. Neither timeout nor job completion alone establishes cancellation or a passing task verdict. Custom model endpoint URLs are described as unsupported.
 
 **Editorial use:** This is a stronger source for “inspect before editing” measurement than anecdotal development transcripts. Retain task/check revision, attempts, observation trace, final check results and service errors separately. A correlation between inspection and success is not a causal guarantee. Before execution, review credential transmission and service permissions rather than assuming repository access grants them.
 
@@ -58,13 +58,15 @@ Primary source: [paper v1, June 18, 2026](https://arxiv.org/html/2606.19830v1).
 - **Tasks and data:** The paper describes 8,133 verified 2D Godot projects, with 300 manually verified benchmark projects and the remainder forming JamSet. Tasks cover theme-driven generation and completion at different code granularities.
 - **Evaluation:** A headless verification pipeline distinguishes compilation, Structural Completeness Score and Behavioral Alignment Score. The paper states model-assisted annotations do not participate in verification itself.
 - **Scope limits:** It evaluates code frameworks, not complete art/audio quality, and does not cover Unity/Unreal. Cross-file dependencies can fail behaviorally despite a structurally complete result.
-- **Availability and rights:** The paper claims all data/code are public and that only open-source-licensed source projects were included. A working official release URL and consolidated downstream license inventory were not verified from the examined source. Preserve “paper claims public availability” separately from “artifact retrieved and verified”; source-project licenses cannot be replaced by a blanket dataset assumption.
+- **Availability and rights:** The abstract claims all data/code are public, but the Ethics/Open-Source Commitment section says they will be released. It says only open-source-licensed source projects were included. A working official release URL and consolidated downstream license inventory were not verified from the examined source. Preserve “paper claims public availability” separately from “artifact retrieved and verified”; source-project licenses cannot be replaced by a blanket dataset assumption.
 
 **Editorial use:** This fills a project-scale engineering gap without relabeling code completeness as polished game quality. A future experiment should record project scale, removed code granularity, imported asset treatment, headless settings and behavioral coverage alongside compilation.
 
 ## Adjacent dataset worth retaining, not an agent leaderboard
 
 [OSSGameBench's author-hosted MSR paper](https://nimmiw.com/papers/MSR_2026_data_and_tool_track.pdf) and [January 24, 2026 Zenodo record](https://zenodo.org/records/18359123) describe linked issues, commits, pull requests and review discussions from 950 repositories, including games and development tools. Earlier records report 970; the paper explains deduplication reduces this to 950. This could seed defect-localization or repair research, but it does not itself establish executable agent tasks or tests. The current record lists analysis/scripts/README/appendix; full data retrieval and license inventory were not verified. Keep the record version rather than merging counts and files from different releases.
+
+See the [reproducibility matrix and concrete client/checker review](benchmark-reproducibility.md) for subsequent availability, memory-isolation and task-verdict findings.
 
 ## Recommended integration and next acceptance gap
 

@@ -2,7 +2,7 @@
 
 Checked **2026-10-18**. Sources checked; full reproduction not performed.
 
-This appendix records 32 exact upstream source or model-card files inspected during the research. Full revisions identify the document/code that supported a claim. They do not identify an installed package, engine environment, downloaded model weights or a successful adapter run. No source pin grants rights beyond the applicable code, weight, data and service terms.
+This appendix records 34 exact upstream source or model-card files inspected during the research. Full revisions identify the document/code that supported a claim. They do not identify an installed package, engine environment, downloaded model weights or a successful adapter run. No source pin grants rights beyond the applicable code, weight, data and service terms.
 
 ## Revision index
 
@@ -40,6 +40,9 @@ This appendix records 32 exact upstream source or model-card files inspected dur
 | [Nakama transaction membership](https://github.com/heroiclabs/nakama/blob/cab8af584947ff0d7ebee91d6c33e67d87fd3e47/server/core_multi.go) | `cab8af584947ff0d7ebee91d6c33e67d87fd3e47` | Source file inspected; runtime untested; [claim scope](gameplay-state-contracts.md) |
 | [Nakama database transaction retries](https://github.com/heroiclabs/nakama/blob/cab8af584947ff0d7ebee91d6c33e67d87fd3e47/server/db.go) | `cab8af584947ff0d7ebee91d6c33e67d87fd3e47` | Source file inspected; runtime untested; [claim scope](gameplay-state-contracts.md) |
 | [Nakama JavaScript multiUpdate argument positions](https://github.com/heroiclabs/nakama/blob/cab8af584947ff0d7ebee91d6c33e67d87fd3e47/server/runtime_javascript_nakama.go) | `cab8af584947ff0d7ebee91d6c33e67d87fd3e47` | Source file inspected; runtime untested; [claim scope](gameplay-state-contracts.md) |
+
+| [GameDevBench reproduction and isolation guide](https://github.com/waynchi/gamedevbench/blob/39952ba6341898380ff1c2c3336101c57c99196b/README.md) | `39952ba6341898380ff1c2c3336101c57c99196b` | Exact file inspected; no benchmark or sandbox execution; [claim scope](benchmark-reproducibility.md) |
+| [GameDevBench license](https://github.com/waynchi/gamedevbench/blob/39952ba6341898380ff1c2c3336101c57c99196b/LICENSE) | `39952ba6341898380ff1c2c3336101c57c99196b` | Exact file inspected; no benchmark or sandbox execution; [claim scope](benchmark-reproducibility.md) |
 
 ## Checked claims and boundaries
 
