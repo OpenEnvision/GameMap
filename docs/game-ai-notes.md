@@ -173,6 +173,76 @@ This is an unimplemented adaptation specification. It does not establish a gener
 [gavel-data]: https://huggingface.co/datasets/LudiiLMs/code-llama-13b-fitm-mask-heldout-1-epoch-base-data
 [gavel-license]: https://github.com/gdrtodd/gavel/blob/1a849c3ba00c3ecb1194c202451a617ef0556b60/ludii_fork/LICENSE
 
+## Designer-facing playtest evidence
+
+The following examples add authored behavioral verdicts and persona-conditioned feedback. They do not turn reachability, completion or utility into a human-enjoyment score. Source-inspected mechanisms and editorial adaptations remain distinct.
+
+### Minecraft GameTest: authored scenarios and explicit behavioral verdicts
+
+**Source scope.** Microsoft's Bedrock sample repository at [`e0d67e171f11faa3ea5ea3be085e3f1992b27b83`](https://github.com/microsoft/minecraft-gametests/tree/e0d67e171f11faa3ea5ea3be085e3f1992b27b83), committed 2024-06-17 and inspected 2026-10-18, combines JavaScript assertions with authored `.mcstructure` environments. Its [README](https://github.com/microsoft/minecraft-gametests/blob/e0d67e171f11faa3ea5ea3be085e3f1992b27b83/README.md) asks for small, self-contained tests with clear outcomes and explicitly allows tagged examples of unexpected failures. This is a concrete developer-authored behavior-testing mechanism, not a released player-enjoyment evaluator or Java Edition API.
+
+The [sample manifest](https://github.com/microsoft/minecraft-gametests/blob/e0d67e171f11faa3ea5ea3be085e3f1992b27b83/js-gametests/behavior_packs/JsGameTests/manifest.json) declares minimum engine 1.21.0 and beta modules `@minecraft/server` 1.13.0-beta and `@minecraft/server-gametest` 1.0.0-beta. These are historical declarations, not verified compatibility with an installed/current game. The [official tutorial](https://learn.microsoft.com/en-us/minecraft/creator/documents/gametestbuildyourfirstgametest?view=minecraft-bedrock-stable), checked as rolling documentation, still warns that GameTest is experimental. It describes Creative-mode structure authoring, a behavior pack, Beta APIs activation and Normal difficulty; escaping entities in the surrounding world can invalidate the intended enclosure. No world, game, binary structure or test was run or inspected dynamically here.
+
+| Inspected test | Actual authored oracle | What a pass does not establish |
+| --- | --- | --- |
+| [Starter fox/chicken](https://github.com/microsoft/minecraft-gametests/blob/e0d67e171f11faa3ea5ea3be085e3f1992b27b83/starterTestsTutorial/behavior_packs/starterTestsTutorial/scripts/StarterTests.js) | Spawn both entities, first assert a chicken is present, then succeed when no chicken remains in the area; maximum 410 ticks and a named glass structure | The script does not assert an attack/death cause or a particular victim identity. Absence alone is not causal proof that the fox performed the intended interaction. |
+| [Zombie/villager chase](https://github.com/microsoft/minecraft-gametests/blob/e0d67e171f11faa3ea5ea3be085e3f1992b27b83/js-gametests/behavior_packs/JsGameTests/scripts/MobBehaviorTests.js) | Build notched walls, spawn both types, then at tick 180 assert a villager is present and succeed; registration allows up to 2,000 ticks | Its name/comment is broader than its assertion. The code does not measure pursuit, path efficiency or survival throughout a longer session. |
+| Iron-golem arena, in the same file | Eventually require no zombies/skeletons and an iron golem present, within 810 ticks | This type-presence conjunction is not a difficulty, fairness, causal kill-credit or human-fun score. |
+| [Minibiomes](https://github.com/microsoft/minecraft-gametests/blob/e0d67e171f11faa3ea5ea3be085e3f1992b27b83/js-gametests/behavior_packs/JsGameTests/scripts/ChallengeTests.js) | Call the minecart rideable component’s `addRider(pig)` without checking its result, then succeed when a pig is present at the target position, within 260 ticks | The terminal assertion does not separately require that the target pig is still riding that cart. Preserve the difference between setup intent and observed terminal state. |
+
+The [current experimental Test reference](https://learn.microsoft.com/en-us/minecraft/creator/scriptapi/minecraft/server-gametest/test?view=minecraft-bedrock-experimental#succeedwhen) defines `succeedWhen` as retrying its callback each tick and succeeding once the callback returns without throwing. `runAtTickTime` schedules relative to the test start. Thus an eventual predicate and a single scheduled checkpoint are different from an invariant maintained over an interval. This documentation corroborates the conceptual distinction; it does not pin the native implementation used by the historical sample. Tick budgets are not independently verified wall-clock deadlines.
+
+**Proposed GameMap adaptation, unimplemented.** Keep a designer-authored scenario, initial state, input/action budget, invariant interval and terminal predicate separate. For a new encounter, record object identities and authoritative event evidence alongside type/count predicates, then correlate visual/audio feedback. Test deliberately invalid controls: an escape route that satisfies absence without the intended combat event, an unconnected interaction, or a target reached without its required carried object. Keep these negative controls isolated from the final held-out task set. Report setup/import failures, timeout, assertion failure and pass separately; a stronger oracle should not be optimized away by the same candidate being evaluated. Automated reachability and mechanic activation can support design iteration, but acceptance criteria for readability, challenge and enjoyment require separately justified evidence. No human-participant data or experiment is introduced by this proposal.
+
+**Availability and rights.** The sample is [MIT-licensed](https://github.com/microsoft/minecraft-gametests/blob/e0d67e171f11faa3ea5ea3be085e3f1992b27b83/LICENSE); this does not supply the Minecraft runtime or grant rights to unrelated game assets/services. The pinned repository includes a `suite:broken` tag for one phantom/cat example; that is a historical source label, not a newly reproduced failure. Actual runtime API compatibility, binary-structure contents, repeated-run reliability, test reset isolation and performance remain unverified.
+
+### MiniDungeons: persona utility can expose design tradeoffs without measuring fun
+
+Reviewed 2026-10-18. This is a source-only addition to GameMap's design/playtest evidence, complementing controller solvability and development-correctness benchmarks. No simulator, JAR, model, game, engine or evaluation service was executed; no participant data was downloaded or collected. The contribution is a concrete connection between a designer's intended playstyle, instrumented behavior and level selection, with a deliberately narrow release claim.
+
+#### Published mechanism and metric population
+
+Liapis, Holmgård, Yannakakis and Togelius (2015) separate three acceptance conditions: fixed feature counts, passable connectivity to every feature, and baseline-persona completion with every monster dealing maximum damage (14 HP). Completion must explore at least 12 tiles. Only then do monster-killer or treasure-collector personas assess level utility, averaged across ten stochastic playthroughs. Thus connectivity is not completion, and completion is not the persona's targeted behavior profile.
+
+A critical negative result is useful for design: maximizing treasure utility produces levels where the critic always collects all seven treasures without dying; maximizing monster-utility variability produces a 0.92 death ratio. These are different optimization targets, neither an enjoyment score. Table 1 summarizes best final levels from 20 evolutionary runs, each replayed ten times; parenthesized deviations are within-level simulation deviations averaged over runs, not uncertainty across independent levels.
+
+The personas were evolved on all ten authored levels; those same levels appear as the comparison baseline. Prior human alignment uses next-action agreement for 38 players on those levels, not enjoyment of the newly generated levels. This is not an untouched final-test study. [Paper §§2.2–4, Table 1][MD-paper]
+
+#### What is actually released
+
+The [author's MiniDungeons project page][MD-project] directly links `sentientdesigns/minidungeons` as a minimal agent simulation. The reviewed source is [commit `298b86cac5624e4b121b4d2e5a2fd3cd93c622f7`][MD-pin], dated 2017-06-07. This establishes author association and exact inspected code, not equivalence to the 2015 experiments.
+
+The [README][MD-readme] explicitly describes a bare-bones MiniDungeons 1 framework, with ten research maps plus tutorial map 0, ASCII presentation and a custom-controller interface. The [complete tree][MD-tree] contains those eleven maps and simple Idle, Random, Roomba, Zombie and Pathfinding controllers. It does not contain the paper's evolved-persona weights or feasible/infeasible evolutionary level-generation implementation. Do not attach the paper's results to this release as a reproduced benchmark, or describe it as the later MiniDungeons 2 MCTS system.
+
+Three source-inspected surfaces make the release useful as a design-instrumentation example:
+
+1. **A behavior vector accompanies the outcome.** `SimulationMode` retains per-run HP, monsters killed, treasures collected, potions consumed, attempted actions and distinct visited tiles, then prints both aggregate and full per-run values. The stock configuration uses ten runs with a 300-action ceiling. Measurements include every run, including deaths and capped runs, rather than filtering to wins. Its counters classify completed as HP > 0 and actions < 300, and uncompleted as actions == 300: completion on action 300 would be counted uncompleted, while death on that action can enter both died and uncompleted. These are implementation counters, not mutually exclusive terminal verdicts. This lets a future comparison preserve the cost of obtaining treasure or combat coverage instead of presenting only a single completion percentage. [SimulationMode, lines 20–142][MD-simulation]
+
+2. **The displayed heatmap has a precise information limit.** `renderHeatmapDungeon` consumes `getAnyVisited()` and marks visited locations with `%`. It is a binary occupancy map, not a visit-frequency map or an ordered action trace. `PlayMap` separately stores visit counts and collision/exit event strings. A designer can inspect where behavior went, but the exported occupancy alone cannot establish when a potion was used, how often a corridor was retraced or which decision preceded death. [PlayVisualizer][MD-visualizer], [PlayMap][MD-playmap]
+
+3. **Controller identity and randomness remain experimental variables.** The stock runner instantiates `PathfindingController`, whose action choice minimizes path distance to the exit; it does not implement the learned treasure/monster personas. `RandomNumberManager` creates a default Java `Random` with no exposed seed-setting method. Choosing a controller, adding seed control and recording exact initial damage draws would therefore be adaptation work, not existing reproduction support. [PathfindingController][MD-controller], [RandomNumberManager][MD-random]
+
+The README says the codebase and bundled `lib/ai_path.jar` use the GNU Lesser General Public License, but gives no explicit numbered version; the inspected tree has no standalone license text. Record that wording without converting it into MIT or a specific LGPL SPDX identifier. The binary was not fetched or inspected. The minimal ASCII release also does not establish rights for separately linked graphics. [README licensing notice][MD-readme], [MD-tree][MD-tree]
+
+#### Proposed GameMap / piRSI adaptation, unimplemented
+
+For an original project-owned dungeon, have the designer state the intended tradeoff before optimizing: for example, optional treasure should require a survivable detour while a safer completion route remains available. Keep mandatory reachability/completion gates separate from persona-specific behavior targets. Do not silently change the design target because a candidate improves an easily optimized statistic.
+
+Use a small development fixture family: an unreachable reward, a connected but lethal route, a safe direct route with trivial rewards, and a meaningful optional detour. Pair each run's native outcome with the behavior vector, ordered event trace and viewable route. Preserve deaths and budget exhaustion beside successful runs. A persona's failure should trigger diagnosis of both controller competence and level design; it does not prove that no player could succeed.
+
+For a recursive harness comparison, freeze persona definitions, observation access, game rules and budgets before evaluating candidate changes. Hold out whole layout families and reserve a final evaluation set that cannot influence controller or harness selection. Report completion and behavior-target attainment separately for each persona, with the full denominator. A faster or more varied synthetic route is useful feedback about these defined agents. Representative human playtesting and designer review remain separate evidence needed to assess clarity, pacing, frustration and enjoyment; neither has been performed here.
+
+[MD-paper]: https://www.um.edu.mt/library/oar/bitstream/123456789/29721/1/Procedural_personas_as_critics_for_dungeon_generation_2015.pdf
+[MD-project]: https://antoniosliapis.com/projects/project_minidungeons.php
+[MD-pin]: https://github.com/sentientdesigns/minidungeons/tree/298b86cac5624e4b121b4d2e5a2fd3cd93c622f7
+[MD-tree]: https://api.github.com/repos/sentientdesigns/minidungeons/git/trees/298b86cac5624e4b121b4d2e5a2fd3cd93c622f7?recursive=1
+[MD-readme]: https://github.com/sentientdesigns/minidungeons/blob/298b86cac5624e4b121b4d2e5a2fd3cd93c622f7/README.md
+[MD-simulation]: https://github.com/sentientdesigns/minidungeons/blob/298b86cac5624e4b121b4d2e5a2fd3cd93c622f7/src/experiment/SimulationMode.java#L20-L142
+[MD-visualizer]: https://github.com/sentientdesigns/minidungeons/blob/298b86cac5624e4b121b4d2e5a2fd3cd93c622f7/src/dungeon/visualization/PlayVisualizer.java#L46-L77
+[MD-playmap]: https://github.com/sentientdesigns/minidungeons/blob/298b86cac5624e4b121b4d2e5a2fd3cd93c622f7/src/dungeon/play/PlayMap.java
+[MD-controller]: https://github.com/sentientdesigns/minidungeons/blob/298b86cac5624e4b121b4d2e5a2fd3cd93c622f7/src/controllers/PathfindingController.java#L24-L46
+[MD-random]: https://github.com/sentientdesigns/minidungeons/blob/298b86cac5624e4b121b4d2e5a2fd3cd93c622f7/src/util/statics/RandomNumberManager.java
+
 ## Acceptance layers for the Planning Map
 
 1. **Plan:** define the core loop, inputs, win/loss conditions, restart behavior, and progress state. Limit scope to a slice that supports continuous playtesting.
