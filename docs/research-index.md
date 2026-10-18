@@ -16,6 +16,10 @@ These notes extend the concise [resource directory](../AWESOME.md) using the rep
 
 ## Deeper operational evidence
 
+- [Asset selection and visual-feedback creation](asset-selection-feedback.md): candidate ranking, first-acceptable validation, multi-view preference models and refinement counterexamples
+
+- [Visual-feedback mechanisms](visual-feedback-mechanisms.md): evidence selection, crop/temporal memory, generated-asset selection and controlled harness comparisons
+
 - [Production debugging](production-debugging-contracts.md): GPU capture and timing completion, shader/device-removal evidence, physics restoration, shipped-asset inspection and streaming budgets
 
 - [Benchmark reproducibility](benchmark-reproducibility.md): public release and isolation matrix, source-inspected OpenGameEval lifecycle/verdicts, and proposed fair piRSI comparisons
@@ -29,7 +33,7 @@ These notes extend the concise [resource directory](../AWESOME.md) using the rep
 
 - [Production work orders](production-work-orders.md): nine proposed chains with completion, failure, recovery and persistence gates
 - [Studio production cases](studio-production-case-studies.md): eleven historical engineering accounts, separated from editorial acceptance designs
-- [Source revisions](source-revision-notes.md): 40 inspected upstream files with exact revisions and claim boundaries
+- [Source revisions](source-revision-notes.md): 66 inspected upstream files with exact revisions and claim boundaries
 - [Coverage and remaining work](production-coverage-gaps.md): production-stage gaps, interface semantics and a local catalog lookup example
 
 ## From a source to an acceptance test
