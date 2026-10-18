@@ -59,6 +59,99 @@ Version scope: Epic sources vary across versioned experimental Python 5.4/5.5/5.
 | **Render offline audio frames**<br>[AudioRenderer](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/AudioRenderer.html) | AudioRenderer capture mutes live output and moves audio work to the main thread; Render must be called every frame even when there are zero samples. Unity 6000.0 excludes Web player builds; Editor capture can work with Web selected. | Completion/cancellation/retry/persistence: full recording outcome not established by this summary. Proposed gate: maintain the frame/sample schedule, detect missing calls and separately archive the captured samples; offline capture is not evidence of physical-device latency. |
 | **Reset synthetic input test state**<br>[Input System testing](https://docs.unity.cn/Packages/com.unity.inputsystem%401.9/manual/Testing.html) | InputTestFixture resets input state; package testables and test-assembly references must be enabled. Custom startup registrations are not automatically included. | Completion/cancellation/retry/persistence: fixture does not establish full game reset. Proposed gate: explicitly register required layouts/processors and distinguish synthetic-input coverage from physical hardware/focus behavior. |
 
+## Input delivery and observation alignment
+
+Sources checked 2026-10-18; full reproduction not performed. This complements [synthetic input and impairment selection](asset-validation-contracts.md#7-select-the-right-impairment-and-input-surface-for-a-regression) and [frame readback ownership](visual-evidence-research.md#engine-frame-readback-and-capture-ownership). No engine, game or fixture was executed.
+
+### Finding and version boundary
+
+An injected event, an input-system update, a gameplay callback and a rendered result are separate observations. Official sources provide useful boundaries for the first transitions; they do **not** establish which project-specific rendered frame contains an intended interaction. That unresolved gap should remain in the research index.
+
+- **Unity Input System 1.9.0:** the existing dossier's package family is retained deliberately, without claiming it is current. Official 1.9 API pages identify 1.9.0. Tag `1.9.0` resolved to `73feff4267461a868fdfc3fa43f112de1f5312c1`; the [pinned package manifest](https://github.com/Unity-Technologies/InputSystem/blob/73feff4267461a868fdfc3fa43f112de1f5312c1/Packages/com.unity.inputsystem/package.json) confirms 1.9.0. This package pin does not identify an installed Unity editor/player, platform backend or project configuration.
+- **Godot 4.5.0 stable:** tag `4.5-stable` resolved to `876b290332ec6f2e6d173d08162a02aa7e6ca46d`; the [pinned version file](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/version.py) confirms 4.5.0 stable. Implementation claims below use this commit; hosted 4.5 documentation remains mutable. Neither a build nor platform-specific focus behavior was tested.
+
+### Unity: queue, update and action are different gates
+
+#### Queue admission is not state consumption
+
+`InputSystem.QueueEvent` copies the event into its buffer and assigns an event ID. In fixed-update mode, a future timestamp can delay processing until the matching update window. `onEvent` is a pre-processing observer: another listener can mark an event handled and prevent its application; disabled devices may still produce this notification. Events are not sorted by timestamp. Record event identity, production order and intended device separately from a later state/action observation. [U1]
+
+Default processing occurs before `MonoBehaviour.Update`; fixed processing occurs before `MonoBehaviour.FixedUpdate`. Before-render updates only consume relevant tracking-device input, so they are not a general keyboard/gamepad flush. Mouse/touch event merging can also change the correspondence between generated events and observed events. Record update mode/type, input-update count, simulation tick and render frame separately. [U2]
+
+`onAfterUpdate` marks completion of an input-system update, not gameplay or rendering. Calling `InputSystem.Update()` manually inserts another complete input-state update; the API discourages this outside tests or manual-update mode. It is not a harmless screenshot synchronization call. [U1]
+
+#### Action observation needs its configuration
+
+Enabled actions monitor their resolved controls. Their `started`, `performed` and `canceled` callbacks occur during the input update, before the corresponding script update. Action type and interactions determine phases; multiple value changes can be observed in one frame. A `performed` callback therefore neither counts a unique rendered action nor proves the game accepted its effect. [U3]
+
+`Disable()` can synchronously invoke `canceled` for an in-progress action. Re-enabling a Value action causes an initial-state check in the next input update and can trigger against an already-actuated control without a new event; Button and PassThrough actions can opt into that behavior. A reset observer must distinguish fresh input from disable/re-enable transitions. [U3]
+
+#### Focus reset is not a release event
+
+With the default background policy, focus loss soft-resets and disables devices that cannot run in the background. Regaining focus re-enables and requests synchronization; unsupported synchronization falls back to a soft reset. Reset cancels associated actions without triggering release-based actions. Editor Game View focus routing adds another policy layer and can treat keyboard/pointer and gamepad input differently. These rules depend on Run In Background and supported platforms; do not infer a built player's behavior from an editor-only test. [U4]
+
+A soft reset excludes controls marked `dontReset`, such as pointer position; a hard reset includes them. Sending default-valued state is different from device reset and can trigger an interaction rather than cleanly cancel it. Neither operation restores character velocity, queued commands, animations or other game-owned state. The last statement is an integration boundary, not an additional Unity reset guarantee. [U5]
+
+#### Failure is not necessarily a deferred event
+
+`maxEventBytesPerUpdate` defaults to 5 MB in the cited API. Exceeding it discards remaining buffered events, logs an error and aborts the update; this is not a promise to process the backlog next frame. The separate default 1,000-event queuing limit applies to events queued *during* an update, preventing callback-driven event loops. Preserve settings and diagnostics alongside the event ledger. A timeout or absent action callback is insufficient evidence that retrying cannot duplicate a game effect. [U6]
+
+### Godot: polling state and routed events are different surfaces
+
+`Input.action_press()` changes action state for polling but does not call `Node._input()`. `Input.parse_input_event()` feeds an event through the event path; it does not simulate OS-side effects such as moving the operating-system pointer. Global `Input` polling state is not changed by `Control.accept_event()` or `Viewport.set_input_as_handled()`, which govern scene propagation. Thus a true global pressed state does not prove that an `_unhandled_input` gameplay handler received the event. [G1]
+
+The documented route permits `_input` or GUI handling to stop propagation before `_unhandled_input`; embedded Windows and SubViewports have distinct routing. Record the target viewport, focused control, intended handler and enabled processing, rather than treating one global event receipt as delivery to every game view. [G4]
+
+#### Buffered injection has a concrete object-lifetime hazard
+
+In the pinned implementation, `parse_input_event()` buffers the event by reference, or accumulates it into the last buffered event, when accumulation or agile flushing is enabled; otherwise it calls the internal parser immediately. A debug check warns against parsing the same event object multiple times in one frame. Use distinct event instances for press and release; do not mutate and re-submit a still-buffered object. `flush_buffered_events()` drains through the internal parser, whose final user-code delivery is asserted to run on the main thread. These are source observations, not a reproduced failure. [G2]
+
+`flush_buffered_events()` sends buffered events to the game loop, not through an entire simulation/render step. The pinned main loop conditionally flushes before each physics step and before process execution when agile flushing is enabled. Different physics-step counts and buffering settings therefore matter to the observation schedule; a single flush is not a fixed simulation-time advance. [G1, G3]
+
+`is_action_just_pressed()` describes the current frame or physics tick and can remain true even after a rapid release. Event-specific action queries are appropriate inside input handling. Record both event-time state and the actual game-consumption phase; do not substitute an end-of-frame held-state poll for the event sequence. [G1]
+
+Godot's internal `release_pressed_events()` first flushes buffered input, then clears several pressed-state collections and releases pressed actions. It is not presented here as a script-facing universal reset API, a platform focus contract or a cancellation/rollback fence. This ordering reinforces the need to account for pending delivery before declaring a fresh trial. [G2]
+
+### Proposed application-owned evidence contract
+
+The following is **GameMap editorial guidance, unimplemented**. Use a disposable owned project with one input-controlled marker and one visible, authoritative state transition. Keep five statuses rather than a single success bit:
+
+1. **Submitted/accepted:** injection surface, call result/exception, event or command identity, target device/action, press/release/value, timestamp and production order
+2. **Input observed/consumed:** observed raw event, update phase/type/count and resulting control/action state; distinguish a pre-processing receipt from state application
+3. **Gameplay consumed:** the intended controller/handler records the trial ID, simulation tick, decision and state revision; explicitly record ignored, GUI-consumed or rejected commands
+4. **Rendered:** the selected camera/viewport renders a marker tied to that state revision, with target/frame provenance and the existing capture-readiness checks
+5. **Artifact retained:** capture identity/hash and the complete input/action/gameplay timeline are saved together
+
+The rendered marker is a proposed corroborating observation, not a universal engine causal guarantee. Asynchronous commands, physics interpolation, animation, multiple cameras and UI routing can each intervene. Define project-specific expected state changes, tolerated delay and stopping conditions before testing. If the handler or state observer is unavailable, report alignment unknown; neither a screenshot nor an action callback fills that missing link alone.
+
+### Unexecuted bounded fixtures
+
+| Fixture | Separate observations and proposed acceptance |
+| --- | --- |
+| Unity dynamic versus fixed input, including a future-timestamp event | Queue ID, update type/count, action phase, game tick and rendered revision; future input must not be declared lost merely because the next render lacks it |
+| Unity raw observer marks an event handled | Raw receipt can exist without control/action/gameplay application; harness must retain that distinction |
+| Unity callback burst against a deliberately small test-only event budget | Record error and absent event outcomes; never label discarded input as merely pending or automatically replay an uncertain effect |
+| Unity held control across disable/re-enable and focus loss/regain | Separate cancellation, initial-state activation, synchronization/reset and actual release; no stale gameplay command enters the next trial |
+| Godot action_press versus a freshly allocated InputEventAction | Polling-only and callback-driven controllers produce intentionally different evidence; report whether the chosen surface exercises the target controller |
+| Godot press/release plus GUI interception, accumulation and multiple physics steps | Distinct event objects, route/handler observations and tick logs; global pressed/just-pressed state cannot substitute for routed gameplay receipt |
+| Reset or scene reload with pending work | Invalidate the prior trial identity, reconcile pending commands and verify neutral input plus application state before admitting a new trial; unknown work prevents a clean-reset verdict |
+
+No fixture pass/fail result, latency measurement, deterministic replay claim or physical-hardware equivalence is established. Project-specific input-to-frame alignment, cancellation of already-started effects, cross-platform focus behavior and complete reset remain open implementation work. This note adds documented distinctions and testable failure hypotheses, not a working agent adapter or permission to operate a production game.
+
+### Primary sources
+
+- **U1:** [InputSystem 1.9 API](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.9/api/UnityEngine.InputSystem.InputSystem.html), corroborated by [pinned InputSystem.cs](https://github.com/Unity-Technologies/InputSystem/blob/73feff4267461a868fdfc3fa43f112de1f5312c1/Packages/com.unity.inputsystem/InputSystem/InputSystem.cs#L2470-L2523) and [pre-application listener handling](https://github.com/Unity-Technologies/InputSystem/blob/73feff4267461a868fdfc3fa43f112de1f5312c1/Packages/com.unity.inputsystem/InputSystem/InputManager.cs#L3341-L3359)
+- **U2:** [Input events 1.9: processing and merging](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.9/manual/Events.html#processing-events)
+- **U3:** [InputAction 1.9 API](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.9/api/UnityEngine.InputSystem.InputAction.html)
+- **U4:** [Input settings 1.9: background and editor focus behavior](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.9/manual/Settings.html#background-behavior)
+- **U5:** [Devices 1.9: resets](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.9/manual/Devices.html#device-resets)
+- **U6:** [InputSettings 1.9: event budgets](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.9/api/UnityEngine.InputSystem.InputSettings.html#UnityEngine_InputSystem_InputSettings_maxEventBytesPerUpdate), corroborated by [pinned InputManager diagnostics](https://github.com/Unity-Technologies/InputSystem/blob/73feff4267461a868fdfc3fa43f112de1f5312c1/Packages/com.unity.inputsystem/InputSystem/InputManager.cs#L3545-L3566)
+- **G1:** [Godot 4.5 Input](https://docs.godotengine.org/en/4.5/classes/class_input.html), corroborated by [pinned Input.xml](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/doc/classes/Input.xml)
+- **G2:** [Pinned input.cpp: injection, flushing and internal release](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/core/input/input.cpp#L1200-L1296); [main-thread delivery assertion](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/core/input/input.cpp#L734-L737)
+- **G3:** [Pinned main loop: physics/process and conditional input flushing](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/main/main.cpp#L4722-L4805)
+- **G4:** [Godot 4.5 event propagation](https://docs.godotengine.org/en/4.5/tutorials/inputs/inputevent.html#how-does-it-work)
+
+
 ## DCC batch transforms and material export
 
 | Operation and primary evidence | Documented behavior | Lifecycle boundary and proposed gate |

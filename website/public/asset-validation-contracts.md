@@ -206,6 +206,8 @@ Ordinary physics queries omit back-face hits by default. [queriesHitBackfaces](h
 
 ## 7. Select the right impairment and input surface for a regression
 
+For engine input queues, action phases, focus/reset behavior and the unresolved rendered-response join, see [input delivery and observation alignment](native-operation-details.md#input-delivery-and-observation-alignment).
+
 **Documented operations and fields.** [Toxiproxy](https://github.com/Shopify/toxiproxy) is an HTTP/CLI-controlled TCP proxy. Latency toxics default downstream; symmetric delay requires configuring both directions. Its unauthenticated control API must not be exposed to untrusted networks. [Linux netem's manual](https://man7.org/linux/man-pages/man8/tc-netem.8.html) documents delay/loss/duplication/corruption and seeded randomness, but timer granularity affects delay/rate fidelity; realistic TCP tests have placement constraints, including receiver ingress guidance.
 
 [GGPO](https://github.com/pond3r/ggpo) uses predicted inputs and speculative execution for rollback; its checked README documents Windows builds and the Vector War sample. [SDL3 virtual joystick attachment](https://wiki.libsdl.org/SDL3/SDL_AttachVirtualJoystick) is available since 3.2.0, can be called from any thread and returns zero on failure. Virtual devices accept program-provided inputs without physical hardware.
