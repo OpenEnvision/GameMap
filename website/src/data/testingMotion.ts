@@ -41,7 +41,7 @@ export const testingMotion: TestingResource[] = [
     aiUseNote: 'Original motion is CC BY 4.0 and requires attribution. Use an independently licensed character; the Geno mesh restriction is not removed by the motion license.',
     testTasks: ['Retarget contrasting walking styles and compare foot contacts and joint limits.', 'Build a motion-matching fixture with held-out styles.'],
     setup: ['Save the original dataset citation and license with the BVH files.', 'Record frame rate, source skeleton and coordinate conversion before processing.'],
-    limitations: 'BVH motion is not a ready-skinned game character. The Geno mesh is not included in the open recommendation; no local retargeting was performed.', reviewed: '2026-10-18',
+    limitations: 'All 100 styles were captured from the same actor, so held-out styles do not test generalization to unseen performers. BVH motion is not a ready-skinned game character. The Geno mesh is not included in the open recommendation; no local retargeting was performed.', reviewed: '2026-10-18',
   },
   {
     id: 'cmu-mocap', title: 'CMU Motion Capture Database', kind: 'motion', uses: ['playing', 'pipeline'], dimensions: ['3d'],

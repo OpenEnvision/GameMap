@@ -105,7 +105,7 @@ Context: Jim Merrill, Riot; 2016-02-26 historical BVS system
 Source: [League replay determinism engineering](https://www.riotgames.com/en/news/determinism-league-legends-implementation)
 Context: Riot engineering; 2017-06-20 historical server system
 
-**Published evidence.** Riot targeted gameplay-essential state rather than all memory. It recorded frame inputs and variable delta times, unified clocks and gameplay PRNG use, and isolated network state. Pointer-based ordering and uninitialized values caused divergences. A seed alone was insufficient.
+**Published evidence.** Riot targeted gameplay-essential state rather than all memory. It recorded frame inputs and variable delta times, unified clocks and gameplay PRNG use, and isolated network state. Pointer-based ordering and uninitialized values caused divergences. A seed alone was insufficient. The reported server kept gameplay updates effectively single-threaded: delayed workers blocked the main thread deterministically, and game data were preloaded to avoid I/O races.
 
 **Proposed agent-ready recipe.** Define the state projection and tolerance before calling a run reproducible. Record input order, initial configuration, clock deltas, RNG state, content/build identity and asynchronous completion policy. Compare per-frame hashes and locate the first divergence. Scope claims to tested platforms and builds; visual similarity is not deterministic replay.
 
