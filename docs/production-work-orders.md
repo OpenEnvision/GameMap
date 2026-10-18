@@ -28,7 +28,7 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 
 ## 2. Transfer a rig and test animation behavior
 
-**Related contracts:** [Animation sampling and compression](asset-validation-contracts.md#animation-sampling-and-compression), including joint identity, partial output and final decoded motion.
+**Related contracts:** [Animation sampling and compression](asset-validation-contracts.md#animation-sampling-and-compression), including joint identity, partial output and final decoded motion. For engine-side culling, evaluation phase, events and movement ownership, see [runtime animation observation gates](engine-operation-contracts.md#runtime-animation-observation-gates).
 
 **Outcome:** a skinned character preserves its rest pose and intended motion, including root transforms and contacts.
 
