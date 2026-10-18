@@ -20,7 +20,7 @@ Primary sources: [Official documentation or repository](https://ldtk.io/json/); 
 
 A pixel-art and animation editor with batch sprite-sheet export. The CLI can export sprite sheets and companion metadata without opening the UI. Option order and layer visibility affect results. Source availability does not mean permissive redistribution: consult the project EULA for binaries and source use.
 
-Primary sources: [Official documentation or repository](https://www.aseprite.org/docs/cli/); [Aseprite licensing](https://github.com/aseprite/aseprite)
+Primary sources: [Official documentation or repository](https://www.aseprite.org/docs/cli/); [Aseprite licensing](https://github.com/aseprite/aseprite). The [sprite delivery contract](asset-validation-contracts.md#sprite-atlas-metadata-and-playback-delivery) adds pinned trimming, atlas, tag, pivot and timing evidence for a proposed restricted importer.
 
 ### Inkscape
 
