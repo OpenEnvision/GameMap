@@ -22,7 +22,7 @@ jobs:
       - name: Generate and check committed source outputs
         run: |
           node scripts/generate.mjs
-          git diff --exit-code -- README.md AWESOME.md data/resources.json website/src/data/resources.json website/public docs
+          git diff --exit-code -- AWESOME.md data/resources.json website/src/data/resources.json website/public docs
       - name: Validate source catalog and media
         run: npm run check
       - name: Build website and standalone preview
