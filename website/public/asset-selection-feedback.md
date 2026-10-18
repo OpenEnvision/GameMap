@@ -22,7 +22,7 @@ The strict validation prompt checks category, explicit style, completeness, plau
 
 ### Feedback, evidence and findings
 
-The paper describes separate designer/critic/orchestrator roles, structured state alongside annotated scene renders, and checkpoint rollback that retains agent context. It reports 63.0% realism and 62.2% faithfulness preference for the full method over NoAssetValidation. Removing scene observation significantly affects realism, but not faithfulness at the reported significance threshold. NoCritic does not significantly differ in human preference, costs 70% less, and produces fewer objects. These are author results, not a demonstration that every added critic improves quality. [Paper v2, Table 1 and Appendix A][SS-paper]
+The paper describes designer/critic/orchestrator roles, structured state plus scene renders, and rollback retaining agent context. Against NoAssetValidation, Table 1 reports 63.0% realism preference (forced choice) and 62.2% faithfulness preference **excluding ties**; these denominators differ. Removing scene observation significantly affects realism, but not faithfulness at the reported threshold. NoCritic's nonsignificant preferences are not an equivalence result: full-system win rates are 51.8% realism and 47.5% faithfulness, with 95% intervals spanning 50%. Its mean cost is $4.24 versus $13.98 per scene over 179 room-level prompts, about 70% lower, with 54.0 versus 71.1 objects. Timings use 25 concurrent scenes on eight L40S GPUs, not optimized single-scene latency. These author results support a cost–density trade-off, not a universal critic benefit. [Paper v2, Table 1 and Appendices N/O.5][SS-paper]
 
 ### Release and integration boundary
 
