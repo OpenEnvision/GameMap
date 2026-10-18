@@ -134,6 +134,43 @@ Primary sources: [Official documentation or repository](https://www.gnu.org/soft
 
 ## World assets
 
+### Infinigen staged generation and export acceptance
+
+Sources checked 2026-10-18; full reproduction not performed. This scoped procedural workflow supplements the [asset transfer work order](production-work-orders.md#1-export-an-authored-asset-import-it-and-audit-dependencies). All proposed acceptance gates are **GameMap editorial guidance, unimplemented and unexecuted**.
+
+#### Pin and version boundary
+
+All repository links below pin inspected main commit [224598d4a2ff95b4fc928e72c222598b7122c698](https://github.com/princeton-vl/infinigen/commit/224598d4a2ff95b4fc928e72c222598b7122c698), committed 2026-10-14. This tree contains both legacy `infinigen` [1.19.1](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/src/infinigen/__init__.py) and `infinigen2` [2.0.0a3](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/src/infinigen2/__init__.py). The contracts below concern the legacy scene manager and `infinigen.tools.export` retained in this commit, not an assertion that the new V2 pipeline shares them.
+
+The [V2 guide](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/docs/source/Infinigen2.md) calls 2.0 a preview, with limited indoor objects/arrangements rather than full old-system asset coverage. Its CLI chains generators and exporters, and its authors recommend fixing an alpha version because interfaces can change. Do not replace legacy commands with the V2 CLI while claiming the same reproduction or export contract.
+
+#### Inputs and reproducibility
+
+Legacy scene generation takes scene seed, ordered scene Gin configs/overrides, and task/input/output paths. Dataset management separately takes pipeline configs/overrides and either explicit scene seeds or a meta-seed for choosing scene seeds. Scene config and scheduler config are distinct inputs. The [configuration guide](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/docs/source/ConfiguringInfinigen.md) explains override order, camera-dependent mesh detail and population, and the coarse → populate → render/ground-truth task split; fine-terrain and render tasks can recur across views/time blocks. Preserve camera/frame/detail settings as generation inputs, not merely presentation settings.
+
+Crucially, the pinned [Hello World guide](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/docs/source/HelloWorld.md) still warns that identical commands may yield differently arranged scenes, runtimes, and memory use on many platforms. This is a documentation warning, not a reproduction experiment performed here. A fixed seed is therefore an identity/provenance field, not proof of bitwise or geometric determinism.
+
+The legacy task entry point explicitly asserts Blender `4.2.0`; the package also pins `bpy==4.2.0`. Record code SHA plus installed version, Blender/Python/dependency versions, platform, hardware, complete command, config contents/ordering, overrides, seed(s), and camera trajectory. These are proposed acceptance records, not a claimed built-in manifest. [Task source](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/src/infinigen/core/execute_tasks.py#L347-L378), [package declaration](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/pyproject.toml).
+
+#### Outputs, reuse, and resume
+
+- The [task implementation](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/src/infinigen/core/execute_tasks.py#L179-L307) writes `scene.blend`, `MaskTag.json`, `version.txt`, and `polycounts.txt` for generation stages. Later tasks load the prior blend/tag files. It can symlink the `assets` directory and `.glb`/`.b_displacement.npy` intermediates across task directories. Copying only a `.blend` is not evidence of a self-contained handoff: resolve and retain linked dependencies.
+- For named tasks the entry point writes `START_<task>`, then `FINISH_<task>` after the task function returns, then `operative_gin_<task>.txt`. A finish marker is task-return evidence; it does not validate material fidelity, file completeness, or engine usability. In particular the operative config write occurs after the finish marker. [Source](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/src/infinigen/core/execute_tasks.py#L347-L378).
+- `--use_existing` is documented in the CLI as best-effort resume. The manager requires `scenes_db.csv`, recovers per-seed scene configs when the configs column is present, skips directories without logs, and treats existing `logs/FINISH_*` markers as successful jobs. This inspected reconstruction does not check artifact hashes or whether those markers correspond to changed source/configs. Preserve the original run and verify artifacts before reusing markers; do not market it as content-addressed caching. [Resume implementation](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/src/infinigen/datagen/manage_jobs.py#L223-L263), [CLI](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/src/infinigen/datagen/manage_jobs.py#L832-L876).
+- Preserve the scene database, logs, configs, intermediate dependency inventory and final artifacts before cleanup. Cleanup modes include `big_files`, `except_logs`, and `all`; upload pipelines can remove files even with cleanup set to `none`. [Manager checks](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/src/infinigen/datagen/manage_jobs.py#L938-L974).
+
+#### Export acceptance
+
+The [official legacy exporter guide](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/docs/source/ExportingToExternalFileFormats.md) describes baking procedural materials/geometry before standard Blender export. It supports OBJ/FBX/STL/PLY/USDC options, texture resolution and individual-object export; vertex colors are restricted to FBX/PLY. Full-scene export is documented as supported only for USDC in this workflow. Other formats realize dense instances and can exhaust memory; trees also contain instances. This is an Infinigen workflow support limit, not a universal claim that no other format can represent instances.
+
+The guide limits material baking to albedo, roughness, normal and metallicity. It warns about transparency, loss of other material parameters, FBX UV failures, and untested/unsupported animation export. Finite texture resolution is lossy. Export existence is not visual equivalence.
+
+Proposed acceptance gate: reopen in the destination engine; verify dependency/texture resolution, transforms and scale, geometry/instance counts, UVs/normals, triangle and texture budgets, and representative appearance against Blender references. Explicitly flag lost transparency/emission/other channels and unsupported animation. Separately qualify collision, LODs, navigation and gameplay. Keep source blend/dependencies alongside a manifest of exported files and hashes. These engine tests remain unperformed here.
+
+#### Rights boundary
+
+The pinned [LICENSE](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/LICENSE) establishes BSD-3-Clause conditions for code/source and binary redistribution. The [README acknowledgements](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/README.md#L231-L264) also discuss dependencies and some procedural code obtained under CC0. Neither inspected passage is an explicit, separate generated-output ownership/license grant. Do not label all exported assets CC0 or inherit BSD automatically from the code label. Record code licensing separately from generated-output rights, added asset provenance, and any pre-generated dataset terms. No separate generated-output terms were located in the inspected official sources; this is a source-coverage limitation, not a finding that use is prohibited or a legal determination.
+
 ### Gaea
 
 A procedural terrain editor with headless build automation. Build Swarm can consume exposed-variable files and mutation seeds for repeatable terrain variants. Validate the graph in the editor before automation; this does not establish arbitrary document rewriting. Build entitlement and activation depend on the selected edition and deployment.

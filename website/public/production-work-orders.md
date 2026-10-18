@@ -12,7 +12,7 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 
 ## 1. Export an authored asset, import it and audit dependencies
 
-**Related contracts:** [Portable-asset validation](asset-validation-contracts.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity) and [composition validation](asset-validation-contracts.md#2-preserve-usd-composition-and-resolve-managed-assets-deliberately); [native import/save boundaries](native-operation-details.md#unreal-authoring-import-and-persistence).
+**Related contracts:** [Portable-asset validation](asset-validation-contracts.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity) and [composition validation](asset-validation-contracts.md#2-preserve-usd-composition-and-resolve-managed-assets-deliberately); [native import/save boundaries](native-operation-details.md#unreal-authoring-import-and-persistence); [Infinigen procedural export and resume](production-research-notes.md#infinigen-staged-generation-and-export-acceptance).
 
 **Outcome:** a named asset survives transfer and fresh reopen with the intended scale, orientation, references and target identity.
 
