@@ -124,7 +124,7 @@ Point-tracking models and benchmark with explicit coordinate semantics.
 
 Frame-capture graphics debugger for diagnosing rendering failures.
 
-- **Documented surface and proposed use:** Upstream includes renderdoccmd; supported capture/replay target and driver must be probed. Python API detail not verified because documentation fetch was blocked.
+- **Documented surface and proposed use:** Upstream includes renderdoccmd; supported capture/replay target and driver must be probed. The later [diagnostic contract review](production-debugging-contracts.md) inspects versioned capture and replay interfaces; no adapter was executed.
 - **Limits:** No Metal support in upstream support matrix. Intended for own programs; capturing own Unreal/Unity projects is supported. Replay is not full gameplay-state restoration.
 - **Source terms:** MIT.
 - **Primary sources:** [RenderDoc README](https://github.com/baldurk/renderdoc)
@@ -142,7 +142,7 @@ Correlates performance traces with instrumented frames.
 
 NVIDIA rendering-performance and shader/ray-tracing diagnosis.
 
-- **Documented surface and proposed use:** NVIDIA-platform GPU profiling/debugging; inspect exact device/driver/platform requirements before scheduling. Automation surface not verified here.
+- **Documented surface and proposed use:** NVIDIA-platform GPU profiling/debugging; inspect exact device/driver/platform requirements before scheduling. The later [diagnostic contract review](production-debugging-contracts.md) covers documented SDK/CLI artifact readiness; no automation was executed.
 - **Limits:** Hardware-specific counters are not portable metrics; no GameMap runtime integration verified.
 - **Source terms:** Vendor license; detailed terms not reviewed.
 - **Primary sources:** [NVIDIA Nsight Graphics](https://developer.nvidia.com/nsight-graphics)

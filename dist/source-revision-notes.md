@@ -2,7 +2,7 @@
 
 Checked **2026-10-18**. Sources checked; full reproduction not performed.
 
-This appendix records 34 exact upstream source or model-card files inspected during the research. Full revisions identify the document/code that supported a claim. They do not identify an installed package, engine environment, downloaded model weights or a successful adapter run. No source pin grants rights beyond the applicable code, weight, data and service terms.
+This appendix records 40 exact upstream source or model-card files inspected during the research. Full revisions identify the document/code that supported a claim. They do not identify an installed package, engine environment, downloaded model weights or a successful adapter run. No source pin grants rights beyond the applicable code, weight, data and service terms.
 
 ## Revision index
 
@@ -43,6 +43,14 @@ This appendix records 34 exact upstream source or model-card files inspected dur
 
 | [GameDevBench reproduction and isolation guide](https://github.com/waynchi/gamedevbench/blob/39952ba6341898380ff1c2c3336101c57c99196b/README.md) | `39952ba6341898380ff1c2c3336101c57c99196b` | Exact file inspected; no benchmark or sandbox execution; [claim scope](benchmark-reproducibility.md) |
 | [GameDevBench license](https://github.com/waynchi/gamedevbench/blob/39952ba6341898380ff1c2c3336101c57c99196b/LICENSE) | `39952ba6341898380ff1c2c3336101c57c99196b` | Exact file inspected; no benchmark or sandbox execution; [claim scope](benchmark-reproducibility.md) |
+
+| [UnityDataTools README.md](https://github.com/Unity-Technologies/UnityDataTools/blob/db19dffbf40008e3a61e7566a5ddd6888eb68717/README.md) | `db19dffbf40008e3a61e7566a5ddd6888eb68717` | Exact documentation inspected; native binary untested; [claim scope](production-debugging-contracts.md) |
+| [UnityDataTools Documentation/agent-guide.md](https://github.com/Unity-Technologies/UnityDataTools/blob/db19dffbf40008e3a61e7566a5ddd6888eb68717/Documentation/agent-guide.md) | `db19dffbf40008e3a61e7566a5ddd6888eb68717` | Exact documentation inspected; native binary untested; [claim scope](production-debugging-contracts.md) |
+| [UnityDataTools Documentation/addressables-build-reports.md](https://github.com/Unity-Technologies/UnityDataTools/blob/db19dffbf40008e3a61e7566a5ddd6888eb68717/Documentation/addressables-build-reports.md) | `db19dffbf40008e3a61e7566a5ddd6888eb68717` | Exact documentation inspected; native binary untested; [claim scope](production-debugging-contracts.md) |
+| [UnityDataTools Documentation/comparing-builds.md](https://github.com/Unity-Technologies/UnityDataTools/blob/db19dffbf40008e3a61e7566a5ddd6888eb68717/Documentation/comparing-builds.md) | `db19dffbf40008e3a61e7566a5ddd6888eb68717` | Exact documentation inspected; native binary untested; [claim scope](production-debugging-contracts.md) |
+
+| [RenderDoc v1.46 docs/in_application_api.rst](https://github.com/baldurk/renderdoc/blob/e4bd23b671d3d5a747ff5221dbe08a63eb6ca200/docs/in_application_api.rst) | `e4bd23b671d3d5a747ff5221dbe08a63eb6ca200` | Exact source inspected; capture/replay unexecuted; [claim scope](production-debugging-contracts.md) |
+| [RenderDoc v1.46 renderdoc/api/replay/renderdoc_replay.h](https://github.com/baldurk/renderdoc/blob/e4bd23b671d3d5a747ff5221dbe08a63eb6ca200/renderdoc/api/replay/renderdoc_replay.h) | `e4bd23b671d3d5a747ff5221dbe08a63eb6ca200` | Exact source inspected; capture/replay unexecuted; [claim scope](production-debugging-contracts.md) |
 
 ## Checked claims and boundaries
 

@@ -16,6 +16,8 @@ These notes extend the concise [resource directory](../AWESOME.md) using the rep
 
 ## Deeper operational evidence
 
+- [Production debugging](production-debugging-contracts.md): GPU capture and timing completion, shader/device-removal evidence, physics restoration, shipped-asset inspection and streaming budgets
+
 - [Benchmark reproducibility](benchmark-reproducibility.md): public release and isolation matrix, source-inspected OpenGameEval lifecycle/verdicts, and proposed fair piRSI comparisons
 
 - [Gameplay state and durable effects](gameplay-state-contracts.md): narrative checkpoints, asynchronous commands, database transaction scope and reward reconciliation
@@ -27,7 +29,7 @@ These notes extend the concise [resource directory](../AWESOME.md) using the rep
 
 - [Production work orders](production-work-orders.md): nine proposed chains with completion, failure, recovery and persistence gates
 - [Studio production cases](studio-production-case-studies.md): eleven historical engineering accounts, separated from editorial acceptance designs
-- [Source revisions](source-revision-notes.md): 34 inspected upstream files with exact revisions and claim boundaries
+- [Source revisions](source-revision-notes.md): 40 inspected upstream files with exact revisions and claim boundaries
 - [Coverage and remaining work](production-coverage-gaps.md): production-stage gaps, interface semantics and a local catalog lookup example
 
 ## From a source to an acceptance test
