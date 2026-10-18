@@ -39,7 +39,7 @@ For a concrete task, start with the [production-stage routes](production-coverag
 - [Generation delivery contracts](generation-delivery-contracts.md): task reconciliation, artifact expiry, transformations and asset acquisition
 - [Asset validation contracts](asset-validation-contracts.md): interchange, composition, material/geometry processing, timelines, fonts, input/network and animation contracts, plus [splat delivery](asset-validation-contracts.md#gaussian-splat-editing-and-delivery), [sprite metadata/playback](asset-validation-contracts.md#sprite-atlas-metadata-and-playback-delivery) and [tile-map transfer](asset-validation-contracts.md#tile-map-identity-geometry-and-runtime-delivery)
 
-- [Production work orders](production-work-orders.md): nine proposed chains with completion, failure, recovery and persistence gates, plus [complete-sample integration](production-work-orders.md#complete-sample-integration-examples)
+- [Production work orders](production-work-orders.md): nine proposed chains with completion, failure, recovery and persistence gates, [versioned asset publication](production-work-orders.md#versioned-asset-publication-and-consuming-scene-ownership), and [complete-sample integration](production-work-orders.md#complete-sample-integration-examples)
 - [Studio production cases](studio-production-case-studies.md): thirteen historical engineering accounts, separated from editorial acceptance designs
 - [Source revisions](source-revision-notes.md): selected inspected upstream files with exact revisions and claim boundaries; other dossiers retain their own source-pin lists
 - [Coverage and remaining work](production-coverage-gaps.md): production-stage gaps, interface semantics and a local catalog lookup example
