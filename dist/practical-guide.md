@@ -72,3 +72,7 @@ These are GameMap editorial recommendations. Set budgets per project, report ave
 For reproduction, record the code commit, base model, weights, dataset version, inputs, seed, precision, GPU count/model/memory, and measurement scope. Official StreamRender-H3 deployment figures use eight GB200 GPUs. Public CWM / World Brain materials cover only inference, LoRAs, and proxy examples; the complete underlying proxy-generation code cannot be redistributed. Keep these conditions when comparing throughput, time to first frame, and interaction latency. [StreamRender-H3](https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/), [CWM reproduction scope](https://github.com/buaacyw/code-world-model/blob/main/ENVIRONMENT.md)
 
 See the [world model research notes](./world-model-notes.md) for detailed reading routes, release status, and terminology.
+
+## Detailed production research
+
+For source-scoped completion, failure, recovery, licensing and evaluation constraints, see the [production research dossiers](research-index.md). The notes distinguish documented interfaces, proposed acceptance fixtures and actual reproduction.
