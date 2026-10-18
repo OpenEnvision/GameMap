@@ -17,9 +17,16 @@ After changing data, run these commands from the repository root in order:
 node scripts/generate.mjs
 npm run check
 npm run build
+npm run check:build
 ```
 
-The generator synchronizes the Awesome List, website data, and downloadable directory. `npm run check` validates the schema and checks generated output consistency; `npm run build` generates the data and builds the website. These checks do not install, train, or play the listed projects. No automated scraping or scheduled updates are configured; entries are maintained by reading sources manually.
+The generator synchronizes the Awesome List, website data, and downloadable directory. `npm run check` validates source data, public source media, and generated editorial files without requiring a built website. `npm run build` generates the data, the deployable `dist/` directory, and the root standalone preview. `npm run check:build` additionally validates built downloads, deployed media, and the standalone preview; always run it after building. These checks do not install, train, or play the listed projects. No automated scraping or scheduled updates are configured; entries are maintained by reading sources manually.
+
+### What belongs in Git
+
+Keep application source, `website/index.html`, `package-lock.json`, `data/`, `docs/`, and source assets/downloads under `website/public/` versioned. Generated editorial files stay committed so reviewers can inspect catalog and documentation changes; CI checks their consistency.
+
+Do not commit dependencies, `dist/` or `website/dist/`, the generated root `index.html`, TypeScript/Vite/lint caches, coverage and browser-test reports, agent traces, logs, temporary files, local environment secrets, or machine-specific editor/OS files. Build outputs are regenerated in CI and only `dist/` is published to GitHub Pages. Keep shareable environment configuration in `.env.example`, `.env.sample`, or `.env.template`, without secrets. The `.gitignore` deliberately does not hide source media, lockfiles, shared VS Code configuration, or environment templates.
 
 ## Entry format
 

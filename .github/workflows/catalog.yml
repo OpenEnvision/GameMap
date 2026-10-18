@@ -23,7 +23,9 @@ jobs:
         run: |
           node scripts/generate.mjs
           git diff --exit-code -- README.md AWESOME.md data/resources.json website/src/data/resources.json website/public docs
-      - name: Validate repository with complete media
+      - name: Validate source catalog and media
         run: npm run check
       - name: Build website and standalone preview
         run: npm run build
+      - name: Validate generated build output
+        run: npm run check:build

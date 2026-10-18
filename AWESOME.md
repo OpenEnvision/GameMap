@@ -4,7 +4,7 @@
 
 **109 curated primary sources** connecting coding agents, game engines, AI for 2D and 3D development, production tools, and code world models. Main source review date: **October 18, 2026**. This is a research snapshot: reviewing a source does not imply reproducing its results or continuously monitoring it.
 
-- [Interactive GameMap website](https://gamemap-ai-atlas.jiadonghou69.chatgpt.site) (initially published as owner-private)
+- [Interactive GameMap website — GitHub Pages](https://openenvision.github.io/GameMap/)
 - [A practical guide from resources to a working project](docs/practical-guide.md)
 - [Production research: interfaces, evidence and generative-service boundaries](docs/research-index.md)
 - [Tutorials, playable demos, and complete example-game source](docs/tutorials-and-demos.md)
