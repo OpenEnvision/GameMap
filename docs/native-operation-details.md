@@ -225,6 +225,43 @@ Accept terminal success, artifact integrity, current scene association, persiste
 
 **Unimplemented fixtures:** polyphony refusal with no STOPPED callback; Studio-real/Core-virtual playback under a constrained software-channel limit; pause while PLAYING; handle invalidation before terminal polling; virtual-to-real restoration. Capture onset and intended tail separately. No fixture, adapter, engine/API/model execution or physical-device measurement was performed.
 
+## Runtime audio observation and capture integrity
+
+**Source-only scope:** checked 2026-10-18. Godot documentation is version 4.5; source is `4.5-stable`, resolved through the [official release](https://github.com/godotengine/godot/releases/tag/4.5-stable) to commit `876b290332ec6f2e6d173d08162a02aa7e6ca46d`. Relevant source ranges were also retrieved at that commit through the GitHub connector. Unreal references are explicitly 5.5; its Python reference is marked Experimental. No engine, model, audio API, capture device or proposed fixture was executed. No runtime compatibility or acoustic fidelity is established.
+
+### 1. Identify the tap, not just the audio filename
+
+Godot's [AudioEffectCapture reference](https://docs.godotengine.org/en/4.5/classes/class_audioeffectcapture.html) describes raw frames copied from its attached audio bus into a ring buffer. Its `get_buffer(n)` returns the requested count or an empty array when insufficient frames are available. Empty reads are not evidence of silent samples. The capture does not encode a finished audio asset.
+
+The pinned [AudioServer mixing path](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/servers/audio_server.cpp#L538-L657) processes enabled effects in sequence before applying that bus's volume and mute/solo attenuation, then sends the result downstream. **Source-derived implication:** a capture effect can contain nonzero input while its own bus is muted. Moving it around an effect chain changes the observed processing stage. A child-bus capture does not automatically include downstream processing or other buses. Even a last effect on Master precedes Master bus gain/mute in this implementation.
+
+The [audio-bus guide](https://docs.godotengine.org/en/4.5/tutorials/audio/audio_buses.html) is marked not yet updated for 4.5 and warns that Web Sample playback does not support these effects; Stream playback is required, with a latency tradeoff when threads are unavailable. The [versioned Web-export guide](https://docs.godotengine.org/en/4.5/tutorials/export/exporting_for_web.html#audio-playback) independently documents the same Sample/Stream limitation without that stale-page banner. Record playback mode rather than treating an unsupported observation route as silence. Keep the initial fixture stereo; surround coverage and channel-pair ownership need separate validation.
+
+### 2. Distinguish observation loss from playback failure
+
+The pinned [capture implementation](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/servers/audio/effects/audio_effect_capture.cpp#L121-L140) copies input to output regardless of ring capacity. It inserts the incoming processing block only when the ring has enough space for the entire block; otherwise it increments `discarded_frames` by that block's frame count. Thus capture loss does not, by itself, prove an audible engine underrun.
+
+The [same implementation's buffer methods](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/servers/audio/effects/audio_effect_capture.cpp#L34-L119) show that `clear_buffer()` advances the read position without resetting pushed/discarded counters. The public reference says buffer-length changes have no effect after initialization. Use counter baselines/deltas and actual reported frame capacity; do not assume that setting a larger duration repaired the current capture. A clear is an explicit observation discontinuity even when the overflow counter stays unchanged. Counter totals alone do not locate each missing interval precisely.
+
+### 3. Separate rendered buffers, export completion and audible output
+
+Unreal's [5.5 mixer overview](https://dev.epicgames.com/documentation/en-us/unreal-engine/audio-mixer-overview-in-unreal-engine?application_version=5.5) describes submix output as a combination of child submixes and registered/sent sources, processed through the submix effect chain. It separately describes rendering future buffers ahead of the buffer currently heard. Capture therefore establishes a selected render-path observation, not physical speaker output.
+
+[ISubmixBufferListener](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/ISubmixBufferListener?application_version=5.5) receives a newly rendered submix buffer with owning submix, sample/channel counts, sample rate and `AudioClock`. Preserve those fields; the inspected reference does not establish a shared clock epoch with game ticks, video timestamps or device presentation, nor a precise pre/post-gain placement for every listener path. Do not manufacture that alignment from parameter names.
+
+[AudioMixerLibrary](https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/AudioMixerLibrary?application_version=5.5) distinguishes pause from finalization and defaults a missing submix selection to master output. [SoundSubmix](https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/SoundSubmix?application_version=5.5) exposes `on_submix_recorded_file_done` for completed file export. Keep stop intent, export notification, independently reopened artifact and acoustic observation as separate outcomes. These pages do not establish cancellation, crash-safe durability or safe overlapping recording requests.
+
+Godot's [AudioServer reference](https://docs.godotengine.org/en/4.5/classes/class_audioserver.html) identifies driver-dependent output latency and warns against querying it every frame. Headless selects the Dummy driver. Its [synchronization tutorial](https://docs.godotengine.org/en/4.5/tutorials/audio/sync_with_audio.html), explicitly marked not yet updated for 4.5, discusses chunked playback position, latency correction, jitter and hardware/system-clock drift. Treat these as estimation guidance, not measured device latency or proof of synchronization.
+
+### Proposed acceptance fixture, unimplemented and unexecuted
+
+**GameMap editorial guidance:** create a disposable stereo scene with known left/right impulses, a visible marker, two routed buses and an identifiable effect. Preserve build/platform, audio driver/device, playback mode, routing/effect order, gain/mute state, sample rate, capture identity, read counts, counter baselines and clock domains.
+
+Compare taps before/after the effect and on Master; mute the source bus; bypass capture; deliberately stall only the collector until overflow; clear the ring mid-run; pause/resume recording; stop and await export notification, then reopen and count samples. Require independently observed markers and explicit gaps. An overflow invalidates continuous-capture acceptance; an absent callback or empty read remains unknown, not success or silence. Never concatenate separated segments as if time were continuous.
+
+Repeat markers across the intended session to separate offset from drift. Device-output claims require an independently characterized loopback or acoustic measurement, including its own latency and uncertainty. Downstream loudness/loop checks should consume only artifacts whose tap and coverage are documented. Keep game correctness, observer integrity and perceptual review as separate verdicts.
+
+
 ## Source scope and migration accounting
 
 The entries below retain version boundaries from inspected source records. This list is not an additional unique-tool count. The Wwise header was independently refetched and pinned to commit `be96b3af20bf27647f458bac10d973a63cd75e02` (January 25, 2018). Its [version header](https://github.com/audiokinetic/WwiseIncludes/blob/be96b3af20bf27647f458bac10d973a63cd75e02/SDK/include/AK/AkWwiseSDKVersion.h) identifies **2017.2.0 build 6500**. Those lifecycle claims are historical source evidence, not current-Wwise or installed-SDK compatibility claims. Movie Render Graph deliberately preserves the corrected fatal-error/cancellation distinction. Niagara CPU overhead remains a performance constraint, not concurrency evidence.

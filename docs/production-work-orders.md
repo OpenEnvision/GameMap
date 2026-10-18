@@ -60,7 +60,7 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 
 ## 4. Measure loudness, peaks, silence and loop boundaries
 
-**Related contracts:** [Audio middleware readiness and ownership](native-operation-details.md#audio-middleware-authoring-readiness-and-ownership); event completion is separate from artifact measurement.
+**Related contracts:** [Audio middleware readiness and ownership](native-operation-details.md#audio-middleware-authoring-readiness-and-ownership); [runtime audio observation and capture integrity](native-operation-details.md#runtime-audio-observation-and-capture-integrity) establishes tap/coverage provenance before artifact measurement. Event completion remains separate.
 
 **Outcome:** a complete audio artifact has reproducible measurements and a separately reviewed loop seam.
 
