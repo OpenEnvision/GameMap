@@ -8,6 +8,8 @@ The existing generative-tools and generation-delivery notes explain producing an
 
 See also [Visual-feedback mechanisms](visual-feedback-mechanisms.md) for frame selection, crop memory and temporal diagnosis. Scene generation is relevant to game production, but is not itself a playable-game result.
 
+For the distinction between a fixed candidate-pool comparison and independent repetitions of a complete selection tournament, see [statistical independence and adaptive feedback](benchmark-reproducibility.md#harness-selection-statistical-independence-and-adaptive-feedback).
+
 ## 1. SceneSmith: semantic retrieval, geometric reranking and first-acceptable validation
 
 ### Source-inspected acquisition interface
