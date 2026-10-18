@@ -38,7 +38,7 @@ For a concrete task, start with the [production-stage routes](production-coverag
 - [Asset validation contracts](asset-validation-contracts.md): interchange, composition, material/geometry processing, timelines, fonts, input/network and animation contracts
 
 - [Production work orders](production-work-orders.md): nine proposed chains with completion, failure, recovery and persistence gates
-- [Studio production cases](studio-production-case-studies.md): eleven historical engineering accounts, separated from editorial acceptance designs
+- [Studio production cases](studio-production-case-studies.md): thirteen historical engineering accounts, separated from editorial acceptance designs
 - [Source revisions](source-revision-notes.md): selected inspected upstream files with exact revisions and claim boundaries; other dossiers retain their own source-pin lists
 - [Coverage and remaining work](production-coverage-gaps.md): production-stage gaps, interface semantics and a local catalog lookup example
 

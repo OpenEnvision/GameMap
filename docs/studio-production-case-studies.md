@@ -109,6 +109,32 @@ Context: Riot engineering; 2017-06-20 historical server system
 
 **Proposed agent-ready recipe.** Define the state projection and tolerance before calling a run reproducible. Record input order, initial configuration, clock deltas, RNG state, content/build identity and asynchronous completion policy. Compare per-frame hashes and locate the first divergence. Scope claims to tested platforms and builds; visual similarity is not deterministic replay.
 
+## Dead Cells: generation must preserve the authored experience
+
+**Primary source and scope.** Sébastien Benard’s firsthand [The Level Design of Dead Cells](https://deepnight.net/tutorial/the-level-design-of-dead-cells-a-hybrid-approach/) displays **2020-02-15** and republishes an earlier post whose link now redirects. Treat this as a republication date, not a game-build date. His [biography](https://deepnight.net/about/) confirms his Motion Twin lead developer/game-designer role.
+
+**Published account.** Benard reports insufficient capacity for full handcrafting, while a procedural prototype refreshed combat but produced incoherent levels. The hybrid retained fixed world progression, biome-specific handmade rooms and authored graphs specifying paths and special rooms. Candidate rooms had to satisfy graph interfaces and purpose; monster placement added quantity and compatibility constraints. A **2022-09-06 author reply** says the brute-force approach changed because of Switch-port difficulties. It does not specify the revised implementation or release version; do not label it verified Wave Function Collapse.
+
+**GameMap editorial adaptation, unimplemented.** Separate visual variety from preservation of design intent. Before assembling rooms, record required progression, room purpose, traversal affordances and encounter constraints. A useful proposed acceptance packet would contain the graph, chosen room IDs, collision/traversal checks and a playable trace with representative views. Evaluate the intended rhythm and biome identity independently of graph validity: a connected map can still be badly paced. Add a contradiction/unsatisfied-room outcome rather than concealing repeated random attempts behind a successful final image.
+
+**Limits.** This is retrospective developer evidence, not a controlled comparison or verified current implementation. An available integration and any AI-creator benefit would need independent evidence.
+
+## Far Cry 5: stale previews and excessive automation can invalidate feedback
+
+**Primary source and scope.** Étienne Carrier, Ubisoft, [Procedural World Generation of Far Cry 5, GDC 2018](https://www.gdcvault.com/play/1025557/Procedural-World-Generation-of-Far), with [145-page primary slide PDF](https://media.gdcvault.com/gdc2018/presentations/ProceduralWorldGeneration.pdf). The event listing establishes **GDC 2018**, not an exact talk day. Findings concern the historical Far Cry 5 pipeline, not a public Houdini/Dunia release. The [SideFX-hosted presentation page](https://www.sidefx.com/community/far-cry-5/) is dated **2018-06-05**.
+
+**Published account, PDF pages 139–143, with nightly rebuilding described on [pages 10–11](https://media.gdcvault.com/gdc2018/presentations/ProceduralWorldGeneration.pdf#page=10).** Gradient biome painting was supported technically but overlapping colors were difficult to debug, and acceptable results did not require gradients. Separately cached terrain data saved some processing but required artists to rebake after terraforming. Missed refreshes made local results differ from the correctly rebuilt nightly world; the team moved terrain-data generation inside consuming tools. Carrier also reports that the art direction’s dense forests obstructed AI and large-animal navigation. The production compromise bounded density by gameplay needs. Artists preferred manually shaping riverbeds despite an available automatic carving feature.
+
+**Supporting design boundary.** Ubisoft’s [2018-03-26 interview with associate level-design directors Alain Greco and Andrejs Verlis](https://news.ubisoft.com/en-us/article/16TjVZmAtD85EWcvHtxHXL/far-cry-5-creating-curiosity-in-a-familiar-world) distinguishes procedural placement of natural assets from the largely handcrafted map. Navigation, player progression and landscape-led wayfinding remained deliberate design concerns.
+
+**GameMap editorial adaptation, unimplemented.** Feedback should identify the dependency generation that produced the viewed scene. A proposed regression fixture changes terrain after caching, compares a local preview with a clean rebuild, and verifies that downstream masks, placement and navigation use the intended revision. Preserve before/after views alongside input hashes and rebuild status; do not interpret a visually appealing stale preview as evidence about the final build. Pair density/style judgments with agent-size-specific navigation and route-readability checks. Review artist overrides as desired controls, not automatically as defects to eliminate. Any automation tradeoff should include user-visible complexity and reproducibility, not only transform runtime.
+
+**Limits.** These are explicit production anecdotes without controlled effect sizes. The reviewed materials do not supply the internal tools, a reproducible benchmark or current engine compatibility. Their lessons motivate proposed checks; they do not demonstrate visual-agent or harness improvements.
+
+
+Reviewed slide-file SHA-256: `6ef919fd07383a56038502a39fb9f73c2c8c7c606da4685958dadac113804c93`. This identifies the inspected document, not an engine build or reproduced workflow.
+
+
 ## Concrete documented surfaces added
 
 - VSM page-area diagnostic console variable: documented in the historical Epic article; availability still requires a version probe.

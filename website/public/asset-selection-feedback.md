@@ -94,6 +94,35 @@ The repository is public, marked archived/read-only, and contains builder, evalu
 
 **Proposed fair comparison:** cross initial-best-of-k on/off with audiovisual critique on/off under matched total model, recording and candidate budgets. Add raw-asset previews as a separate intervention. Grade final gameplay with independent action/state tests and held-out recordings rather than only the selection judge. Keep the self-playing code separate from evidence that real user inputs, controls and failure states work. Record tournament order, A/B reversal, judge version, missing recordings, retained memory and every discarded candidate.
 
+## 6. Mechanism blindness and regressive scene edits
+
+Checked 2026-10-18 from primary papers/project artifacts. These are editable 3D-creation studies, not demonstrated production-game gains. No model, engine, benchmark or evaluator was executed. Paper-described methods and partial releases remain separate from implemented GameMap support.
+
+### SimWorlds / 4DBuildBench: plausible motion can conceal the wrong mechanism
+
+The [paper v1, July 2, 2026](https://arxiv.org/html/2607.01766v1) describes Blender 5.1 construction with stage-specific planning, verification, review and checkpoints. Runtime inspection covers modifiers, baked caches, animation channels and motion phases; previews remain a separate evidence source. Its 50-scene benchmark uses 42 typed mechanism predicates alongside five-frame visual judging for dynamic clips and one still for static scenes. Mechanism Pass Rate averages predicate fractions within actors and scenes, then macro-averages dynamic difficulty/category cells; it is not the fraction of wholly correct scenes.
+
+Reported overall mechanism scores are 0.87 versus VIGA's 0.67, while visual scores are 0.82 versus 0.78. Examples include simulated effects approximated through keyframes, which sampled renders can accept. However, generation budgets differ, and the comparison changes several components. On a separate 15-scene ablation subset, removing verification changes structural score from 0.97 to 0.87, while mechanism score changes only 0.97 to 0.93. This does not isolate a universal visual-feedback benefit. Structural scoring also depends on inferred object grouping for the baseline. Predicate evaluation is deterministic, but an optional actor-matching fallback uses a model. See §§3–4 and Appendices A/C/D.
+
+**Availability discrepancy:** The [official project page](https://dynsimworlds.github.io/) instead reports mechanism scores 0.86/0.71 and names Sonnet 4.6 as visual judge, whereas the paper names GPT-5.5. Keep these conditions separate. Its displayed arXiv and Dataset controls resolved back to the project page during inspection; no executable repository or dataset release was retrieved through the inspected official surfaces. The paper's references to released code are not an independently verified release. Software/data reuse terms and runtime equivalence remain unresolved.
+
+### LEGO-Anything / LEGO-Plugin: refinement can discard a better scene
+
+The [paper v1, September 28, 2026](https://arxiv.org/html/2609.36380v1) studies Blender 5.0.1 reconstruction and evaluates intermediate artifacts. It reports 29.6% score-decreasing edits for GPT-5.6-sol and a final score 3.2 points below its best intermediate scene. In a six-builder/six-judge comparison, self-judging agreement with deterministic geometry-score direction is 45.8%, versus 45.4% cross-model. This is metric-direction agreement on artifact-valid checkpoint pairs, not human preference or gameplay correctness.
+
+The paper-described plugin combines reference-derived initialization, geometric residuals and bounded edit transactions. Transactions declare editable/protected entities; missing hard-check evidence blocks acceptance; later scene changes invalidate validation. Reference masks/depth are inferred observations, and the agent assigns them to scene entities. Private benchmark geometry is withheld. On 42 Office cases the combined plugin improves all six model settings, but this comparison does not separate the three modules' effects or establish transfer beyond that subset. See §5 and Appendices F/G.
+
+**Available evidence is partial:** The [official page](https://lego-anything.com/) says code is coming soon. A public, versioned [ancillary JSON](https://arxiv.org/src/2609.36380v1/anc/appendix_verified_evidence.json) supplies summary counts, confusion matrices and hashes of author-side source files, not those underlying files or an executable evaluator. Its judge matrix contains four builders/four judges and 960 primary judgments, each with Reconstruction/Appearance labels, whereas the manuscript describes six/six and 2,160. That narrower artifact cannot verify the entire manuscript matrix. Its labels include ties and both-bad outcomes, so a universal 50% chance baseline needs qualification. No released plugin implementation, complete benchmark package or code/data license was verified.
+
+### Proposed GameMap acceptance fixtures, unimplemented
+
+1. Require both mechanism evidence and observed outcomes when the brief explicitly demands simulation or interaction. Compare a genuine solver-driven domino chain with a visually similar keyframed sequence, then perturb an initial condition and test the declared response. Keyframes remain legitimate for a brief that requests authored animation.
+2. Track each scene revision, protected entities, actual edits, render/camera settings, validation freshness and rollback result. Add a repair that improves the target object while damaging a previously correct camera or interaction. Retain the best independently accepted revision rather than assuming the final edit is best.
+3. Compare no feedback, visual-only feedback, engine-state feedback and their combination under matched generation/render/verification budgets. Separately ablate transaction protection and initialization. Keep model-derived masks/depth distinct from authoritative state, count all failed attempts, and protect final evaluation from refinement feedback.
+
+These studies justify targeted diagnostics and new experiments. They do not establish a ready-to-install GameMap adapter or justify ranking game-creation systems by their reported scores.
+
+
 ## Shared proposed acceptance record
 
 This section is **GameMap editorial design**, not an implemented piRSI adapter or a result from any paper.
