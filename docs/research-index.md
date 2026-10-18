@@ -16,6 +16,10 @@ These notes extend the concise [resource directory](../AWESOME.md) using the rep
 
 ## Deeper operational evidence
 
+- [Native operation details](native-operation-details.md): 36 operation rows covering engine authoring, DCC batch work and audio middleware lifecycle
+- [Generation delivery contracts](generation-delivery-contracts.md): task reconciliation, artifact expiry, transformations and asset acquisition
+- [Asset validation contracts](asset-validation-contracts.md): seven groups covering interchange, composition, material/texture processing, topology, timelines, fonts and input/network fixtures
+
 - [Production work orders](production-work-orders.md): nine proposed chains with completion, failure, recovery and persistence gates
 - [Studio production cases](studio-production-case-studies.md): eleven historical engineering accounts, separated from editorial acceptance designs
 - [Source revisions](source-revision-notes.md): 28 inspected upstream files with exact revisions and claim boundaries
