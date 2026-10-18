@@ -18,7 +18,7 @@ export default function DocsIndex() {
         />
         <span className="eyebrow">THE READING ROOM</span>
         <DocsTitle>A little direction goes a long way.</DocsTitle>
-        <DocsDescription>
+        <DocsDescription className="document-description">
           Practical guides and source-reviewed notes. Read a workflow,
           understand a tool, or follow the evidence a little further.
         </DocsDescription>

@@ -29,7 +29,9 @@ function Document({ path, slug }: { path: string; slug: string }) {
       <title>{page.title} — GameMap</title>
       <meta name="description" content={page.description} />
       <DocsTitle>{page.title}</DocsTitle>
-      <DocsDescription>{page.description}</DocsDescription>
+      <DocsDescription className="document-description">
+        {page.description}
+      </DocsDescription>
       {info && (
         <div className="document-source">
           <span>GAMEMAP FIELD NOTES</span>
