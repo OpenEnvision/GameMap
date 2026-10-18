@@ -1,11 +1,11 @@
 [
   {
     "id": "unreal-remote-control",
-    "name": "Unreal Engine \u00b7 Remote Control API",
+    "name": "Unreal Engine · Remote Control API",
     "category": "engines",
     "type": "docs",
     "summary": "Exposes reflected editor properties and functions over HTTP for external tooling.",
-    "detail": "Remote Control provides a native engine integration surface distinct from a community MCP bridge. Property writes can request editor transactions and change notifications, but an acknowledged mutation does not establish package-save completion. Enable the appropriate plugin, restrict network exposure, and qualify editor versus packaged-runtime access separately.",
+    "detail": "Remote Control provides a native engine integration surface distinct from a community MCP bridge. Property writes can request editor transactions and change notifications, but an acknowledged mutation does not establish package-save completion. The rolling Epic guide labels this feature Beta and disables it by default in packaged builds and -game. Enable the appropriate plugin, restrict network exposure, and qualify editor versus packaged-runtime access separately.",
     "url": "https://dev.epicgames.com/documentation/unreal-engine/remote-control-for-unreal-engine",
     "links": [
       {
@@ -31,7 +31,7 @@
   },
   {
     "id": "unreal-gauntlet",
-    "name": "Unreal Engine \u00b7 Gauntlet",
+    "name": "Unreal Engine · Gauntlet",
     "category": "production",
     "type": "docs",
     "summary": "Orchestrates game test sessions with multiple processes, roles, devices, and collected logs.",
@@ -55,7 +55,7 @@
   },
   {
     "id": "unity-addressables-scripting",
-    "name": "Unity \u00b7 Addressables Build and Loading APIs",
+    "name": "Unity · Addressables Build and Loading APIs",
     "category": "engines",
     "type": "docs",
     "summary": "Builds addressable content from explicit profiles and loads assets through asynchronous handles.",
@@ -88,7 +88,7 @@
   },
   {
     "id": "windows-ui-automation",
-    "name": "Windows \u00b7 UI Automation and Input Semantics",
+    "name": "Windows · UI Automation and Input Semantics",
     "category": "production",
     "type": "docs",
     "summary": "Provides native accessibility control patterns and a Win32 input bridge for desktop editor automation.",

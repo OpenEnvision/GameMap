@@ -49,7 +49,7 @@ Original artwork is displayed with its aspect ratio and colors intact. Wide word
 | Blender Python · API Quickstart | Blender | brand | [Primary source](https://github.com/blender/blender) | [Original image](https://github.com/blender.png?size=256) | <code>logos/blender-2f115b53a895.png</code> |
 | Khronos · glTF-Blender-IO | Khronos Group | creator | [Primary source](https://github.com/KhronosGroup/glTF-Blender-IO) | [Original image](https://github.com/KhronosGroup.png?size=256) | <code>logos/khronos-group-f784820a94fc.png</code> |
 | Phaser · First Game Guide | Phaser / Phaser Studio | brand | [Primary source](https://github.com/phaserjs/phaser) | [Original image](https://github.com/phaserjs.png?size=256) | <code>logos/phaser-phaser-studio-68512df3fcdf.png</code> |
-| Phaser 3 · Examples | Phaser / Phaser Studio | brand | [Primary source](https://github.com/phaserjs/phaser) | [Original image](https://github.com/phaserjs.png?size=256) | <code>logos/phaser-phaser-studio-68512df3fcdf.png</code> |
+| Phaser · Examples | Phaser / Phaser Studio | brand | [Primary source](https://github.com/phaserjs/phaser) | [Original image](https://github.com/phaserjs.png?size=256) | <code>logos/phaser-phaser-studio-68512df3fcdf.png</code> |
 | Unreal Engine · Remote Control API | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/unreal-engine/remote-control-for-unreal-engine) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
 | Unity · Addressables Build and Loading APIs | Unity | brand | [Primary source](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/build-scripting-start-build.html) | [Original image](https://github.com/Unity-Technologies.png?size=256) | <code>logos/unity-c20a05de0895.png</code> |
 | GameGPT | AutoGame Research | brand | [Primary source](https://arxiv.org/html/2310.08067) | [Original image](https://autogame.ai/images/logo.svg) | <code>logos/autogame-research-e967543b6c83.svg</code> |
@@ -70,7 +70,7 @@ Original artwork is displayed with its aspect ratio and colors intact. Wide word
 | Unity Agent Plugin | Unity Technologies | brand | [Primary source](https://docs.unity.com/en-us/ai/unity-plugin/about-unity-plugin) | [Original image](https://github.com/Unity-Technologies.png) | <code>logos/unity-technologies-84b30ca73d1e.png</code> |
 | MCP Unity Editor | Miguel Tomas · CoderGamester | creator | [Primary source](https://github.com/CoderGamester/mcp-unity) | No published project mark | Maintainer name only |
 | Godot MCP 3D Asset Builder | LuigiDeFacci | creator | [Primary source](https://github.com/LuigiDeFacci/godot-create-3d-assets) | No published project mark | Maintainer name only |
-| Hunyuan3D 2.x | Tencent Hunyuan | brand | [Primary source](https://github.com/Tencent-Hunyuan/Hunyuan3D-2) | [Original image](https://avatars.githubusercontent.com/u/210980732?v=4) | <code>logos/tencent-hunyuan-547abf65938b.png</code> |
+| Hunyuan3D 2.0 | Tencent Hunyuan | brand | [Primary source](https://github.com/Tencent-Hunyuan/Hunyuan3D-2) | [Original image](https://avatars.githubusercontent.com/u/210980732?v=4) | <code>logos/tencent-hunyuan-547abf65938b.png</code> |
 | TRELLIS | Microsoft | brand | [Primary source](https://github.com/microsoft/TRELLIS) | [Original image](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120) | <code>logos/microsoft-f4a787ffde7c.jpg</code> |
 | TripoSR | Tripo AI · VAST | brand | [Primary source](https://github.com/VAST-AI-Research/TripoSR) | [Original image](https://avatars.githubusercontent.com/u/149052137?v=4) | <code>logos/tripo-ai-vast-50f52a476f35.png</code> |
 | Infinigen | Princeton University · Vision & Learning Lab | institution | [Primary source](https://github.com/princeton-vl/infinigen) | [Original image](https://pvl.cs.princeton.edu/pvl-logo-orange.png) | <code>logos/princeton-university-vision-learning-lab-acd2e0b729b5.png</code> |
@@ -284,7 +284,7 @@ Repository ownership confirms the Khronos-maintained glTF importer/exporter. Use
 
 Official framework and examples organization. README explicitly attributes Phaser logo and characters to Phaser Studio Inc. The organization avatar avoids using a version-4 wordmark on Phaser-3 examples.
 
-### Phaser 3 · Examples
+### Phaser · Examples
 
 Official framework and examples organization. README explicitly attributes Phaser logo and characters to Phaser Studio Inc. The organization avatar avoids using a version-4 wordmark on Phaser-3 examples.
 
@@ -368,7 +368,7 @@ The independent repository is maintained by CoderGamester, whose profile names M
 
 The public repository is independently maintained by LuigiDeFacci. Its image files are scene screenshots, with no project or institutional mark found. The account image is a default GitHub identicon, so it must not be used as a logo. Show the maintainer name without inventing an affiliation or reusing the Godot engine logo.
 
-### Hunyuan3D 2.x
+### Hunyuan3D 2.0
 
 The official model repository is owned by Tencent-Hunyuan. That organization links to hy.tencent.com. Use its actual brand image rather than an unrelated 3D icon.
 

@@ -173,7 +173,7 @@
     "category": "production",
     "type": "tool",
     "summary": "Uses visual agents and natural-language tasks to test uploaded game builds.",
-    "detail": "The current commercial service observes screens and sends simulated inputs without requiring an engine SDK. Teams upload a build, describe test tasks, and review captured sessions and bug reports. Its stated coverage includes Android and desktop; timing-critical gameplay remains limited. The current product differs from older SDK-based documentation. Public self-service gameplay, complete product source, and an independent hands-on tutorial were not verified.",
+    "detail": "The current commercial service observes screens and sends simulated inputs without requiring an engine SDK. Teams upload a build, describe test tasks, and review captured sessions and bug reports. Its stated coverage includes Android and desktop; timing-critical gameplay remains limited. The vendor also describes game-specific model training using test-run data; SDK-free does not mean no game-specific preparation. The current product differs from older SDK-based documentation. Public self-service gameplay, complete product source, and an independent hands-on tutorial were not verified.",
     "url": "https://modl.ai/",
     "links": [
       {

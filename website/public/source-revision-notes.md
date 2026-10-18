@@ -2,7 +2,7 @@
 
 Checked **2026-10-18**. Sources checked; full reproduction not performed.
 
-This appendix records 66 exact upstream source or model-card files inspected during the research. Full revisions identify the document/code that supported a claim. They do not identify an installed package, engine environment, downloaded model weights or a successful adapter run. No source pin grants rights beyond the applicable code, weight, data and service terms.
+This appendix records 72 exact upstream source or model-card files inspected during the research. Full revisions identify the document/code that supported a claim. They do not identify an installed package, engine environment, downloaded model weights or a successful adapter run. No source pin grants rights beyond the applicable code, weight, data and service terms.
 
 ## Revision index
 
@@ -74,6 +74,12 @@ This appendix records 66 exact upstream source or model-card files inspected dur
 | [AVR-Eval-Agent video_utils.py](https://github.com/SamsungSAILMontreal/AVR-Eval-Agent/blob/3c91b950caada637c517f0ae158ba31a298d3901/video_utils.py) | `3c91b950caada637c517f0ae158ba31a298d3901` | Source inspected; [asset-feedback scope](asset-selection-feedback.md); unexecuted |
 | [AVR-Eval-Agent README.md](https://github.com/SamsungSAILMontreal/AVR-Eval-Agent/blob/3c91b950caada637c517f0ae158ba31a298d3901/README.md) | `3c91b950caada637c517f0ae158ba31a298d3901` | Source inspected; [asset-feedback scope](asset-selection-feedback.md); unexecuted |
 | [AVR-Eval-Agent LICENSE](https://github.com/SamsungSAILMontreal/AVR-Eval-Agent/blob/3c91b950caada637c517f0ae158ba31a298d3901/LICENSE) | `3c91b950caada637c517f0ae158ba31a298d3901` | Source inspected; [asset-feedback scope](asset-selection-feedback.md); unexecuted |
+| [VideoTree/adaptive_breath_expansion.py](https://github.com/Ziyang412/VideoTree/blob/605ec8e917f9a0f95d37a73a0b50bf0e8cfe076e/adaptive_breath_expansion.py) | `605ec8e917f9a0f95d37a73a0b50bf0e8cfe076e` | Exact source re-read; prior SHA-256 matched; [visual-feedback scope](visual-feedback-mechanisms.md); unexecuted |
+| [VideoTree/depth_expansion.py](https://github.com/Ziyang412/VideoTree/blob/605ec8e917f9a0f95d37a73a0b50bf0e8cfe076e/depth_expansion.py) | `605ec8e917f9a0f95d37a73a0b50bf0e8cfe076e` | Exact source re-read; prior SHA-256 matched; [visual-feedback scope](visual-feedback-mechanisms.md); unexecuted |
+| [VideoTree/prompts.py](https://github.com/Ziyang412/VideoTree/blob/605ec8e917f9a0f95d37a73a0b50bf0e8cfe076e/prompts.py) | `605ec8e917f9a0f95d37a73a0b50bf0e8cfe076e` | Exact source re-read; prior SHA-256 matched; [visual-feedback scope](visual-feedback-mechanisms.md); unexecuted |
+| [vstar/visual_search.py](https://github.com/penghao-wu/vstar/blob/4ede6647959cfb59eeabd09286adf6a5f9478da0/visual_search.py) | `4ede6647959cfb59eeabd09286adf6a5f9478da0` | Exact source re-read; prior SHA-256 matched; [visual-feedback scope](visual-feedback-mechanisms.md); unexecuted |
+| [vstar/app.py](https://github.com/penghao-wu/vstar/blob/4ede6647959cfb59eeabd09286adf6a5f9478da0/app.py) | `4ede6647959cfb59eeabd09286adf6a5f9478da0` | Exact source re-read; prior SHA-256 matched; [visual-feedback scope](visual-feedback-mechanisms.md); unexecuted |
+| [LongVU/longvu/cambrian_arch.py](https://github.com/Vision-CAIR/LongVU/blob/1b0be5cc28614b03a423bbaf129ae364750b5012/longvu/cambrian_arch.py) | `1b0be5cc28614b03a423bbaf129ae364750b5012` | Exact source re-read; prior SHA-256 matched; [visual-feedback scope](visual-feedback-mechanisms.md); unexecuted |
 
 ## Checked claims and boundaries
 

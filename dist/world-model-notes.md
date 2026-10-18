@@ -19,7 +19,7 @@ Reviewed on **2026-10-18**. This is a curated set of research references, not an
 
 Here, Coding World Model mainly means representing an external world in code. Meta FAIR's [CWM: An Open-Weights LLM for Research on Code Generation with World Models](https://arxiv.org/abs/2510.02387) instead learns how code and commands affect Python or container environment state. It is an execution-aware coding model. The meanings are related but should not be classified as the same game world generation architecture. Another easily confused example is [Code2World](https://arxiv.org/abs/2602.09856), which generates renderable code to predict the next GUI state. It is a GUI world model and is not included here as a game world paper.
 
-## Suggested reading order
+## Suggested reading order (GameMap editorial guidance)
 
 1. **Rules and planning:** WorldCoder → GIF-MCTS / CWMB → Code World Models for General Game Playing. Start with why programmatic world models need checks for transitions, legal actions, termination, and rewards.
 2. **Modularity and uncertainty:** FactorSim → PoE-World. The former studies factorization when generating complete simulators from descriptions; the latter combines small programmatic experts to model stochastic dynamics.
@@ -30,15 +30,18 @@ Here, Coding World Model mainly means representing an external world in code. Me
 
 ## Research results versus released artifacts
 
+This pass checked primary source text, artifact listings, interface documentation, and selected license terms. No model or engine was run. Abstract-only checks and individual fetch failures are recorded in the [coverage ledger](catalog-review-coverage.md); they are not full-paper review or reproduction.
+
 - **CWM / World Brain:** the official [environment notes](https://github.com/buaacyw/code-world-model/blob/main/ENVIRONMENT.md) explicitly list MiniMax-H3 Ref2VA inference components, LoRAs, and proxy examples as public. The underlying game code that creates proxies cannot be redistributed. It should not be described as a fully open-source agent world engine.
 - **Programmable World Model:** the [repository](https://github.com/AlayaLab/pwm) currently centers on a README, assets, and a release roadmap. The catalog labels it a paper rather than a fully released framework.
 - **CoDeR:** the [abstract](https://arxiv.org/abs/2609.26458) states that code and model weights will be made publicly available. This establishes a release plan, not a completed release.
-- **SolarRenderer:** the Apache 2.0 code license differs from the model weight license; consult the relevant [model card](https://huggingface.co/Enderfga/SolarRenderer). The authors provide control and four-step LoRAs, corresponding causal versions, and a caption skill. An agent can prepare structural descriptions, a first frame, and prompts. The [usage guide](https://github.com/Junchao-cs/SolarWM/blob/main/docs/solar_renderer.md) records separate environment and GPU requirements.
-- **SolarWM:** the [official repository](https://github.com/Junchao-cs/SolarWM) distinguishes implemented backbone training stages from forthcoming ones. Data annotations, latent data, and raw video access are separate artifacts. Unified backbone support does not mean every stage for every backbone is public.
-- **Oasis:** the [official project](https://oasis-model.github.io/) releases inference code and weights for a 500M model, while describing limitations in precise inventory control, object consistency, long-term memory, and generalization.
+- **SolarRenderer:** [code](https://github.com/Enderfga/SolarRenderer) is Apache-2.0, but [LoRA weights](https://huggingface.co/Enderfga/SolarRenderer/blob/main/LICENSE) use the MiniMax H3 Community License, whose territory excludes the EU, UK, Republic of Korea, and US. The [dataset](https://huggingface.co/datasets/Enderfga/SolarRenderer-Data) mixes licenses: UnrealZoo clips are CC BY-NC 4.0 and held-out engine recordings are research-only. Read component terms before reuse. Control/four-step LoRAs include causal variants; the [usage guide](https://github.com/Junchao-cs/SolarWM/blob/main/docs/solar_renderer.md) specifies separate environments and GPU requirements.
+- **SolarWM:** the [stage matrix](https://github.com/Junchao-cs/SolarWM) lists all three stages for Wan2.2-5B and MiniMax-H3; Wan2.2-14B and LTX-2.5 later stages are forthcoming. Backbones require separate runtimes. The main data repository contains annotations and indexes, with latent payloads in separate repositories and the full processed training-video corpus obtained by reconstruction or approved access. Unified interfaces do not imply stage parity, a bundled raw corpus, or common licenses.
+- **GameFactory:** the [repository](https://github.com/KlingAIResearch/GameFactory) releases GF-Minecraft documentation and detection/visualization utilities. The paper describes action-control modules, but the checked release does not establish a full training/inference pipeline or model weights.
+- **Oasis:** the [project](https://oasis-model.github.io/) distinguishes its larger hosted demo from the MIT-licensed [500M checkpoint](https://huggingface.co/Etched/oasis-500m) and [inference code](https://github.com/etched-ai/open-oasis). The public script uses an initial frame and action sequence; it is not evidence that the complete live demo interface or training pipeline is released.
 - **Marble:** the [official introduction](https://www.worldlabs.ai/blog/marble-world-model) supports splat, visual mesh, and collision mesh export. This provides spatial assets, without establishing that complete rules or quest systems have been generated.
 
-## Questions for the Planning Map
+## Questions for the Planning Map (GameMap editorial guidance)
 
 Choose the intended output first: **a shippable game project, an explorable neural video experience, reusable world assets, or a simulator for training and planning**. Then choose the world representation and agent workflow.
 

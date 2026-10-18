@@ -1144,7 +1144,7 @@ Styled locomotion data for motion matching, gait diversity and cross-skeleton re
 - **Code:** Not a software project
 - **Assets / data:** CC BY 4.0 for original motion data; Geno.fbx in a separate retarget repository is non-commercial research only
 - **AI use:** Original motion is CC BY 4.0 and requires attribution. Use an independently licensed character; the Geno mesh restriction is not removed by the motion license.
-- **Practical limits:** BVH motion is not a ready-skinned game character. The Geno mesh is not included in the open recommendation; no local retargeting was performed.
+- **Practical limits:** All 100 styles were captured from the same actor, so held-out styles do not test generalization to unseen performers. BVH motion is not a ready-skinned game character. The Geno mesh is not included in the open recommendation; no local retargeting was performed.
 - **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
