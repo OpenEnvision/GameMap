@@ -1,0 +1,118 @@
+import type { LearningPath } from './learningTypes'
+
+export const ai3dCases: LearningPath[] = [
+  {
+    id: 'moonlight-mayhem-codex',
+    title: 'Moonlight & Mayhem',
+    description: 'A 3D museum heist made with Codex: rescue two raccoon crewmates, evade security, stack the crew, and steal the Golden Sardine.',
+    engine: 'Three.js · Browser',
+    track: '3d',
+    category: 'ai-assisted',
+    aiUse: 'Simon Willison documents giving Codex the game brief and image-generation access, then requesting a visual bug fix. The published project includes the game, generated textures, and the development transcript.',
+    steps: [
+      'Play the heist and trace crew rescue, security detection, interactions, and escape.',
+      'Read the creator’s build account and compare the original brief with the result.',
+      'Follow the transcript and commit history to study scene construction, generated art, and the visual bug fix.',
+      'Serve the complete repository locally, then study one mechanic and its supporting assets.',
+    ],
+    tutorial: {
+      label: 'Read the creator’s build and fix log',
+      url: 'https://simonwillison.net/2026/Aug/7/moonlight-mayhem/',
+      kind: 'build-log',
+    },
+    demo: {
+      label: 'Play Moonlight & Mayhem',
+      url: 'https://simonw.github.io/raccoon-heist-codex/',
+      kind: 'playable',
+      note: 'Desktop: WASD or arrows to move, E to interact, Space or Shift to dash, Escape to pause. Mobile uses a touch stick and action buttons. Requires a WebGL-capable browser.',
+    },
+    source: {
+      label: 'Open the complete game project',
+      url: 'https://github.com/simonw/raccoon-heist-codex/',
+      scope: 'complete-project',
+      note: 'Actual game source, committed textures, vendored Three.js, build notes, and transcript. No build step is required; use a local static HTTP server to run the repository.',
+    },
+    evidence: {
+      label: 'Read the published Codex transcript',
+      url: 'https://github.com/simonw/raccoon-heist-codex/blob/main/transcript.md',
+      note: 'The creator links this development record from the build account; it accompanies the game source rather than a generator-only repository.',
+    },
+    resourceIds: ['codex', 'threejs', 'codex-browser-games'],
+  },
+  {
+    id: 'raccoon-heist-claude',
+    title: 'Raccoon Heist',
+    description: 'A Claude-built 3D backyard caper: collect loot, avoid flashlight patrols and a guard dog, then bank your haul before dawn.',
+    engine: 'Three.js · Browser',
+    track: '3d',
+    category: 'ai-assisted',
+    aiUse: 'The creator publishes the prompt, Claude Code session, generated textures, and build notes. Claude implemented the game and tested it; the author reviews its strengths and gameplay limitations.',
+    steps: [
+      'Play a night and test movement, loot pickup, carrying limits, banking, and getting caught.',
+      'Read the creator’s walkthrough of the prompt, art generation, and GitHub Pages workflow.',
+      'Use the build notes to study the playable core, mobile rendering fixes, and guard-dog behavior.',
+      'Serve the full game locally and compare its code and assets with the documented decisions.',
+    ],
+    tutorial: {
+      label: 'Read the creator’s full build walkthrough',
+      url: 'https://simonwillison.net/2026/Aug/5/raccoon-heist/',
+      kind: 'build-log',
+    },
+    demo: {
+      label: 'Play Raccoon Heist',
+      url: 'https://simonw.github.io/raccoon-heist/',
+      kind: 'playable',
+      note: 'Press Start the Heist. Use WASD or arrows to move and Space to dash; mobile has a touch stick and Dash button. Collect loot automatically and return to the dumpster to bank it.',
+    },
+    source: {
+      label: 'Open the complete game project',
+      url: 'https://github.com/simonw/raccoon-heist/',
+      scope: 'complete-project',
+      note: 'Game logic, procedural characters and audio, vendored Three.js, generated textures and title art, plus the session transcript. Serve the repository over HTTP; playing uses no generation API.',
+    },
+    evidence: {
+      label: 'Read the agent’s build notes',
+      url: 'https://github.com/simonw/raccoon-heist/blob/main/notes.md',
+      note: 'Documents the implemented game, generated and committed assets, mobile fixes, gameplay checks, and exported Claude Code session.',
+    },
+    resourceIds: ['claude-code', 'threejs', 'playwright-mcp'],
+  },
+  {
+    id: 'tron-exonix-claude',
+    title: 'TRON: EXONIX',
+    description: 'A neon 3D territory-capture game built through Claude Code, Godot MCP, Blender MCP, and generated assets, with human design and playtest feedback.',
+    engine: 'Godot · 3D / Web',
+    track: '3d',
+    category: 'ai-assisted',
+    aiUse: 'The creator documents Claude writing gameplay, shaders, VFX, and UI while a human steers mechanics and materials. The repository includes the actual Godot game, generated assets, and the asset-generation scripts.',
+    steps: [
+      'Play the web build and study territory capture, trail hazards, enemy movement, and sector progression.',
+      'Follow the creator’s tutorial from prototype through materials, audio, effects, and web export.',
+      'Read CLAUDE.md to understand the agent, Godot MCP, Blender review, and asset-generation workflow.',
+      'Open game/project.godot in Godot 4.7 and press F5; study the scripts alongside the included models, textures, and audio.',
+    ],
+    tutorial: {
+      label: 'Follow the creator’s complete workflow',
+      url: 'https://www.top3d.ai/learn/claude-godot-mcp-3d-game',
+      kind: 'tutorial',
+    },
+    demo: {
+      label: 'Play TRON: EXONIX',
+      url: 'https://www.top3d.ai/demo/exonix-build/index.html',
+      kind: 'playable',
+      note: 'Creator-hosted Godot web build. Click to enter the grid, press Space to deploy, use the arrow keys to move, and Escape for the menu. A keyboard and a WebGL-capable browser are recommended.',
+    },
+    source: {
+      label: 'Open the complete Godot game project',
+      url: 'https://github.com/witnesstodark/tron-exonix',
+      scope: 'complete-project',
+      note: 'Includes the Godot project, scripts, shaders, models, textures, audio, and generation scripts. Local play requires Godot 4.7 standard; API access is only needed to regenerate assets.',
+    },
+    evidence: {
+      label: 'Read how the agent workflow was assembled',
+      url: 'https://github.com/witnesstodark/tron-exonix/blob/master/CLAUDE.md',
+      note: 'The creator’s reproducible setup record explains the AI’s implementation work, human material review, generation tools, and local launch requirements.',
+    },
+    resourceIds: ['claude-code', 'godot-engine', 'godot-mcp', 'mcp-for-blender'],
+  },
+]

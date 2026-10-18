@@ -1,0 +1,264 @@
+[
+  {
+    "id": "scenario",
+    "name": "Scenario",
+    "category": "production",
+    "type": "tool",
+    "summary": "Builds consistent game art pipelines with custom style models and batch generation.",
+    "detail": "Train a custom style or character model, generate portraits, item icons, and textures in batches, then deliver assets through an editor or backend workflow. The official integration tutorial connects a job queue, generation API, and asset delivery. Scenario is a hosted commercial service; integration examples and SDK access do not include the platform's model source or a complete game project.",
+    "url": "https://www.scenario.com/",
+    "links": [
+      {
+        "label": "API documentation",
+        "url": "https://docs.scenario.com/"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Consistent game asset pipeline",
+        "url": "https://docs.scenario.com/get-started/documentation/integrating-with-applications-real-world-scenarios#1-game-asset-pipeline--batch-generation-with-style-consistency",
+        "kind": "tutorial",
+        "note": "Official walkthrough for custom style training, batch generation, and asset delivery."
+      },
+      "demo": {
+        "label": "Asset generation app",
+        "url": "https://app.scenario.com/",
+        "kind": "interactive",
+        "note": "Hosted creative tool requiring an account; this is an asset workspace, not a playable game."
+      },
+      "source": {
+        "label": "Unity integration source",
+        "url": "https://github.com/scenario-labs/Scenario-Unity",
+        "kind": "sdk",
+        "note": "Public Unity integration plugin; hosted model source and a complete game project are not included."
+      }
+    },
+    "tags": [
+      "Art direction",
+      "Style consistency",
+      "Character consistency",
+      "Batch assets",
+      "Commercial service"
+    ],
+    "stages": [
+      "assets",
+      "scene"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "meshy",
+    "name": "Meshy API",
+    "category": "production",
+    "type": "tool",
+    "summary": "Connects AI model generation, humanoid rigging, and animation export for game asset workflows.",
+    "detail": "The official animated-character recipe turns a reference image into a textured, rigged character with idle, jump, and attack clips in GLB and FBX. The animation step applies motions from Meshy's library. API rigging works best with standard textured bipeds with clearly separated limbs. Generated assets still need engine import, collision, controls, and performance checks; the public cookbook supplies asset examples rather than complete gameplay.",
+    "url": "https://docs.meshy.ai/en",
+    "links": [
+      {
+        "label": "Rigging requirements",
+        "url": "https://docs.meshy.ai/en/api/rigging"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Image to animated character",
+        "url": "https://www.meshy.ai/developers/cookbook/recipes/animate-3d-character/",
+        "kind": "tutorial",
+        "note": "Official guide with reference files, Python and TypeScript examples, and GLB/FBX outputs. API access uses credits."
+      },
+      "demo": {
+        "label": "3D asset workspace",
+        "url": "https://www.meshy.ai/workspace",
+        "kind": "interactive",
+        "note": "Hosted generation and animation workspace; account access is required to generate assets. This is not a playable game."
+      },
+      "source": {
+        "label": "Cookbook example source",
+        "url": "https://github.com/meshy-dev/meshy-cookbook",
+        "kind": "examples",
+        "note": "Public asset-generation recipes, not Meshy's model source or a complete game project."
+      }
+    },
+    "tags": [
+      "Image-to-3D",
+      "Rigging",
+      "Character animation",
+      "GLB",
+      "FBX",
+      "Commercial service"
+    ],
+    "stages": [
+      "assets",
+      "scene"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "hy-motion",
+    "name": "HY-Motion 1.0",
+    "category": "production",
+    "type": "tool",
+    "summary": "Generates skeletal humanoid motion from text with public inference code and model weights.",
+    "detail": "Tencent's text-to-motion models produce human character animation, with CLI inference, local Gradio visualization, and a hosted model demo. Use the generated motion as an animation-pipeline input and retarget it to the target character. The documented limitations include non-humanoid motion, multi-person interaction, seamless loops, and in-place animation. The release provides a motion implementation, not a controllable game character or full game project.",
+    "url": "https://github.com/Tencent-Hunyuan/HY-Motion-1.0",
+    "links": [
+      {
+        "label": "Official project",
+        "url": "https://hunyuan.tencent.com/motion"
+      },
+      {
+        "label": "Model weights",
+        "url": "https://huggingface.co/tencent/HY-Motion-1.0"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Installation and motion workflow",
+        "url": "https://github.com/Tencent-Hunyuan/HY-Motion-1.0/blob/master/README.md",
+        "kind": "tutorial",
+        "note": "Official setup, CLI inference, local UI, and prompting guidance. Local execution requires the documented GPU resources."
+      },
+      "demo": {
+        "label": "Interactive motion demo",
+        "url": "https://huggingface.co/spaces/tencent/HY-Motion-1.0",
+        "kind": "interactive",
+        "note": "Official text-to-motion model interface; a motion preview rather than playable gameplay. Hosted availability may vary."
+      },
+      "source": {
+        "label": "Motion implementation source",
+        "url": "https://github.com/Tencent-Hunyuan/HY-Motion-1.0",
+        "kind": "model",
+        "note": "Public inference and visualization implementation with separately linked weights; no complete game project."
+      }
+    },
+    "tags": [
+      "Text-to-motion",
+      "Skeletal animation",
+      "Humanoid",
+      "Model weights",
+      "Local inference"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "elevenlabs-sfx",
+    "name": "ElevenLabs Sound Effects",
+    "category": "production",
+    "type": "tool",
+    "summary": "Generates game sound effects, Foley, and looping ambience from text through a web app or API.",
+    "detail": "Describe footsteps, impacts, UI feedback, or environmental sounds, control duration, and export audio for a game engine. Effects can loop seamlessly; a single generation is limited to 30 seconds. MP3 is supported, with 48 kHz WAV for non-looping effects. This is a hosted audio service. The public SDK connects to its API and does not release the generation model or a complete game project.",
+    "url": "https://elevenlabs.io/docs/overview/capabilities/sound-effects",
+    "links": [
+      {
+        "label": "Product walkthrough",
+        "url": "https://elevenlabs.io/docs/eleven-creative/playground/sound-effects"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Sound Effects quickstart",
+        "url": "https://elevenlabs.io/docs/eleven-api/guides/cookbooks/sound-effects",
+        "kind": "tutorial",
+        "note": "Official API walkthrough with SDK examples; an account and API key are needed for generation."
+      },
+      "demo": {
+        "label": "Sound effects generator",
+        "url": "https://elevenlabs.io/sound-effects",
+        "kind": "interactive",
+        "note": "Official text-to-audio generator and sound examples; this is an audio tool, not a playable game."
+      },
+      "source": {
+        "label": "Official Python SDK",
+        "url": "https://github.com/elevenlabs/elevenlabs-python",
+        "kind": "sdk",
+        "note": "API client source only; generation model and complete game source are not included."
+      }
+    },
+    "tags": [
+      "Sound effects",
+      "Foley",
+      "Ambience",
+      "Audio loops",
+      "API",
+      "Commercial service"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "stable-audio-open",
+    "name": "Stable Audio Open 1.0",
+    "category": "production",
+    "type": "tool",
+    "summary": "Provides downloadable text-to-audio weights and local tools for sound effects and field recordings.",
+    "detail": "Generates up to 47 seconds of stereo audio at 44.1 kHz, with examples for local inference and WAV export. The official audio-tools repository includes a local Gradio interface. The model works best with English descriptions, is stronger at sound effects and field recordings than music, and cannot produce realistic vocals. Model download requires accepting its terms; this resource is an audio pipeline rather than a complete soundtrack or game generator.",
+    "url": "https://huggingface.co/stabilityai/stable-audio-open-1.0",
+    "links": [
+      {
+        "label": "Local demo setup",
+        "url": "https://github.com/Stability-AI/stable-audio-tools#interface"
+      },
+      {
+        "label": "Research paper",
+        "url": "https://arxiv.org/abs/2407.14358"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Local inference and WAV export",
+        "url": "https://huggingface.co/stabilityai/stable-audio-open-1.0#usage",
+        "kind": "tutorial",
+        "note": "Official model usage examples for stable-audio-tools and Diffusers."
+      },
+      "demo": {
+        "label": "Local audio demo setup",
+        "url": "https://github.com/Stability-AI/stable-audio-tools#interface",
+        "kind": "local-tool",
+        "note": "Download and run the official Gradio audio interface locally; this link is setup guidance, not a hosted playable game."
+      },
+      "source": {
+        "label": "Audio tools source",
+        "url": "https://github.com/Stability-AI/stable-audio-tools",
+        "kind": "model",
+        "note": "Public training and inference tools with separately downloadable model weights; no complete game project."
+      }
+    },
+    "tags": [
+      "Text-to-audio",
+      "Sound effects",
+      "Field recordings",
+      "Model weights",
+      "Local inference"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  }
+]

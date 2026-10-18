@@ -1,0 +1,677 @@
+[
+  {
+    "id": "solarrenderer",
+    "name": "SolarRenderer",
+    "category": "world",
+    "type": "paper",
+    "summary": "Turns engine- or agent-generated structure videos into styled final visuals.",
+    "detail": "Few-Step Generative Reference Rendering conditions MiniMax-H3 on semantic maps, grayboxes, skeletons, depth, and other structures, with an optional first frame and text. Control and four-step LoRAs generate video, with a block-causal streaming version also available. It handles visual presentation; upstream programs must maintain world state and gameplay rules. Four-step sampling alone does not establish real-time interaction on consumer hardware.",
+    "url": "https://enderfga.cn/SolarRenderer/",
+    "links": [
+      {
+        "label": "Code",
+        "url": "https://github.com/Enderfga/SolarRenderer"
+      },
+      {
+        "label": "Paper PDF",
+        "url": "https://enderfga.cn/data/solarrenderer.pdf"
+      },
+      {
+        "label": "Weights",
+        "url": "https://huggingface.co/Enderfga/SolarRenderer"
+      },
+      {
+        "label": "Data and evaluation",
+        "url": "https://huggingface.co/datasets/Enderfga/SolarRenderer-Data"
+      },
+      {
+        "label": "Usage guide",
+        "url": "https://github.com/Junchao-cs/SolarWM/blob/main/docs/solar_renderer.md"
+      }
+    ],
+    "tags": [
+      "hybrid-renderer",
+      "structure-conditioning",
+      "streaming",
+      "MiniMax-H3",
+      "LoRA",
+      "released-code"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "streamrender-h3",
+    "name": "StreamRender-H3",
+    "category": "world",
+    "type": "framework",
+    "summary": "A code engine maintains the world while streaming diffusion renders its semantic maps.",
+    "detail": "NVIDIA Sol-Engine's Interactive Coding Worlds system uses a three.js racing game as its example. The engine handles the map, physics, collision, and player input, while a two-step streaming MiniMax-H3 model generates appearance from semantic video, a first frame, and a prompt. Official performance results depend on eight GB200 GPUs. Rendering throughput and end-to-end input-to-display latency need separate evaluation.",
+    "url": "https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/",
+    "links": [
+      {
+        "label": "Sol-Engine",
+        "url": "https://nvlabs.github.io/Sana/Sol-Engine/"
+      },
+      {
+        "label": "Agent workflow",
+        "url": "https://nvlabs.github.io/Sana/Sol-Engine/docs/agent-workflow/"
+      }
+    ],
+    "tags": [
+      "hybrid-renderer",
+      "executable-state",
+      "streaming",
+      "three.js",
+      "MiniMax-H3",
+      "NVIDIA"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "code-world-model-brain",
+    "name": "Code World Model: Coding Agent as World Brain",
+    "category": "world",
+    "type": "paper",
+    "summary": "A coding agent writes executable rules and persistent state to drive a video world.",
+    "detail": "Separates world evolution from visual generation. An agent writes, calls, and modifies code to maintain state; a compiler converts that state into proxy video and prompts for a fine-tuned MiniMax-H3 renderer. The public repository includes inference code, LoRAs, and conditioning examples. The underlying game code used to generate proxies cannot be redistributed, so the complete agent-to-engine pipeline cannot be reproduced unchanged from public materials.",
+    "url": "https://arxiv.org/abs/2608.25927",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://buaacyw.github.io/cwm/"
+      },
+      {
+        "label": "Inference code",
+        "url": "https://github.com/buaacyw/code-world-model"
+      },
+      {
+        "label": "Reproduction scope",
+        "url": "https://github.com/buaacyw/code-world-model/blob/main/ENVIRONMENT.md"
+      }
+    ],
+    "tags": [
+      "code-world-model",
+      "coding-agent",
+      "executable-state",
+      "hybrid-renderer",
+      "MiniMax-H3",
+      "partial-release"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "programmable-world-model",
+    "name": "Programmable World Model",
+    "category": "world",
+    "type": "paper",
+    "summary": "Explicit global state and programmable rules preserve entities outside the camera view.",
+    "detail": "An agent converts instructions into entity states and state-transition programs. A lightweight engine maintains global state, then compiles stateful 3D oriented bounding boxes and camera trajectories into video model controls. The paper introduces CombatStateBench to check entity counts and irreversible states. The public repository currently centers on project documentation, which does not establish that complete inference code and weights are available.",
+    "url": "https://arxiv.org/abs/2609.10540",
+    "links": [
+      {
+        "label": "Project and release progress",
+        "url": "https://github.com/AlayaLab/pwm"
+      }
+    ],
+    "tags": [
+      "code-world-model",
+      "executable-state",
+      "hybrid-renderer",
+      "persistent-state",
+      "CombatStateBench"
+    ],
+    "stages": [
+      "code",
+      "test",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "coder-world-model",
+    "name": "CoDeR — Code Plans, Diffusion Renders",
+    "category": "world",
+    "type": "paper",
+    "summary": "Collaborating agents build executable worlds, with diffusion models rendering observations.",
+    "detail": "Code Plans, Diffusion Renders: Open-Ended Generative World Modeling uses five collaborating roles to turn concepts into rules, code, and observations, allowing entities to keep evolving outside the current view. The paper studies long-term memory, open-ended interaction, and multi-agent worlds. Its abstract says code and weights will be released; distinguish reported results from artifacts already available.",
+    "url": "https://arxiv.org/abs/2609.26458",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://becauseimbatman0.github.io/CoDeR"
+      }
+    ],
+    "tags": [
+      "code-world-model",
+      "multi-agent",
+      "hybrid-renderer",
+      "persistent-state",
+      "research"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "magpie-renderer",
+    "name": "Magpie: Real-Time World Renderer for Interactive Games",
+    "category": "world",
+    "type": "paper",
+    "summary": "A game engine runs gameplay while a separate Render Server generates final visuals.",
+    "detail": "Designers define scenes and rules in a conventional game engine. At runtime, the engine processes player actions and maintains state, while a rendering service transforms engine-produced whitebox frames into final visuals. It demonstrates a division between generative rendering and reproducible gameplay, primarily reducing prototype dependence on complete art assets.",
+    "url": "https://arxiv.org/abs/2608.27168",
+    "tags": [
+      "hybrid-renderer",
+      "executable-state",
+      "game-engine",
+      "render-server",
+      "research"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "solarwm",
+    "name": "SolarWM",
+    "category": "world",
+    "type": "paper",
+    "summary": "An interactive video world model framework for open data, training, and long-horizon inference.",
+    "detail": "Open Data and Scalable Training for Long-Horizon Video World Models unifies data, training, and inference interfaces for backbones including Wan, LTX, and MiniMax-H3. It uses bidirectional adaptation, teacher forcing, and distribution matching distillation to train camera-controlled streaming models. This provides world model infrastructure. Camera-controlled video continuation differs from a code world with queryable entity state.",
+    "url": "https://arxiv.org/abs/2609.02886",
+    "links": [
+      {
+        "label": "Code and documentation",
+        "url": "https://github.com/Junchao-cs/SolarWM"
+      },
+      {
+        "label": "Project",
+        "url": "https://junchao-cs.github.io/SolarWM-Web/"
+      }
+    ],
+    "tags": [
+      "interactive-video",
+      "training-framework",
+      "camera-control",
+      "streaming",
+      "released-code"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "worldcoder",
+    "name": "WorldCoder",
+    "category": "world",
+    "type": "paper",
+    "summary": "Induces Python world models from environment interactions, then plans within them.",
+    "detail": "WorldCoder, a Model-Based LLM Agent represents knowledge of a world as executable Python programs. Interaction records constrain those programs, and planning searches for potential rewards. This NeurIPS 2024 work is primarily evaluated on gridworlds and task planning. It supports study of rule discovery and model repair rather than complete visual game generation.",
+    "url": "https://arxiv.org/abs/2402.12275",
+    "tags": [
+      "code-world-model",
+      "program-synthesis",
+      "model-based-planning",
+      "gridworld",
+      "NeurIPS-2024"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gif-mcts-cwm",
+    "name": "GIF-MCTS / Code World Models Benchmark",
+    "category": "world",
+    "type": "paper",
+    "summary": "Synthesizes runnable environment models through generate, improve, and fix tree search.",
+    "detail": "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search encodes transition, reward, and termination logic in Python. Trajectories and test feedback guide GIF-MCTS search. The paper also releases CWMB, covering 18 reinforcement learning environments, to evaluate model correctness and downstream planning. It is a foundational reading and evaluation reference for code world models.",
+    "url": "https://arxiv.org/abs/2405.15383",
+    "links": [
+      {
+        "label": "Code and CWMB",
+        "url": "https://github.com/nicoladainese96/code-world-models"
+      },
+      {
+        "label": "Project",
+        "url": "https://sites.google.com/view/code-world-models/home"
+      }
+    ],
+    "tags": [
+      "code-world-model",
+      "program-synthesis",
+      "MCTS",
+      "benchmark",
+      "CWMB",
+      "NeurIPS-2024"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "cwm-general-game-playing",
+    "name": "Code World Models for General Game Playing",
+    "category": "world",
+    "type": "paper",
+    "summary": "Compiles natural-language game rules into verifiable simulators for MCTS planning.",
+    "detail": "Generates Python state-transition, legal-action, and termination functions from rules and game trajectories, plus heuristic value and hidden-state inference functions for planning. The paper evaluates 10 fully or partially observable games, including board and card games. Avoiding illegal actions depends on the synthesized rules being correct, so model validation remains necessary.",
+    "url": "https://arxiv.org/abs/2510.04542",
+    "tags": [
+      "code-world-model",
+      "game-rules",
+      "MCTS",
+      "formal-simulator",
+      "imperfect-information"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "world"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "poe-world",
+    "name": "PoE-World",
+    "category": "world",
+    "type": "paper",
+    "summary": "Combines small programmatic experts to model stochastic world dynamics.",
+    "detail": "Compositional World Modeling with Products of Programmatic Experts combines LLM-synthesized programs in an exponentially weighted product of experts, learning complex stochastic world models from few observations. The paper connects these models to planners in Pong and Montezuma's Revenge to demonstrate sample efficiency and generalization to new levels. This is programmatic dynamics modeling rather than an art generation tool.",
+    "url": "https://arxiv.org/abs/2505.10819",
+    "links": [
+      {
+        "label": "Code",
+        "url": "https://github.com/topwasu/poe-world"
+      },
+      {
+        "label": "Project",
+        "url": "https://topwasu.github.io/poe-world"
+      }
+    ],
+    "tags": [
+      "code-world-model",
+      "program-synthesis",
+      "stochastic-dynamics",
+      "Atari",
+      "model-based-planning"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "world"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "factorsim",
+    "name": "FactorSim",
+    "category": "world",
+    "type": "paper",
+    "summary": "Generates complete simulation code from language using factorized state representations.",
+    "detail": "Generative Simulation via Factorized Representation uses a factorized POMDP representation to reduce the context needed for each generation step. It aims to generate complete game or robotics simulators for agent training. This NeurIPS 2024 work also provides a generative simulation benchmark and supports study of workflows from design specifications to modular rule code.",
+    "url": "https://arxiv.org/abs/2409.17652",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://cs.stanford.edu/~sunfanyun/factorsim/"
+      }
+    ],
+    "tags": [
+      "code-world-model",
+      "simulation-generation",
+      "POMDP",
+      "benchmark",
+      "NeurIPS-2024"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "genie",
+    "name": "Genie: Generative Interactive Environments",
+    "category": "world",
+    "type": "paper",
+    "summary": "Learns latent-action-controlled 2D worlds from videos without action labels.",
+    "detail": "Combines a spatiotemporal video tokenizer, autoregressive dynamics, and a latent action model into generative interactive environments. Users can begin with an image or sketch and explore frame by frame. The ICML 2024 contribution centers on learning control without ground-truth action labels. Dynamics remain implicit in the model, without editable or queryable game rule programs.",
+    "url": "https://arxiv.org/abs/2402.15391",
+    "tags": [
+      "interactive-video",
+      "latent-actions",
+      "neural-simulator",
+      "2D-platformer",
+      "ICML-2024"
+    ],
+    "stages": [
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "genie-3",
+    "name": "Genie 3 / Project Genie",
+    "category": "world",
+    "type": "tool",
+    "summary": "Generates interactive video worlds from prompts for real-time exploration.",
+    "detail": "Google DeepMind introduced Genie 3 in 2025, demonstrating interactive worlds at 720p and 24 FPS with consistency lasting several minutes, and providing an experience through Project Genie. It represents neural interactive worlds. The official presentation does not imply downloadable engine source, exportable level assets, or deterministic gameplay rules.",
+    "url": "https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/",
+    "tags": [
+      "interactive-video",
+      "neural-simulator",
+      "text-to-world",
+      "Google-DeepMind",
+      "hosted"
+    ],
+    "stages": [
+      "plan",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gamengen",
+    "name": "GameNGen — Diffusion Models Are Real-Time Game Engines",
+    "category": "world",
+    "type": "paper",
+    "summary": "Trains an interactive diffusion simulator from DOOM gameplay trajectories.",
+    "detail": "A reinforcement learning agent first collects game trajectories. A diffusion model then predicts the next frame from visual history and actions, using conditioning noise augmentation to reduce autoregressive error. The paper demonstrates real-time DOOM simulation on a single TPU. This game-specific neural simulation does not automatically provide maintainable general game rules or an asset pipeline.",
+    "url": "https://arxiv.org/abs/2408.14837",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://gamengen.github.io/"
+      }
+    ],
+    "tags": [
+      "neural-simulator",
+      "interactive-video",
+      "diffusion",
+      "DOOM",
+      "ICLR-2025"
+    ],
+    "stages": [
+      "test",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "diamond",
+    "name": "DIAMOND — Diffusion for World Modeling",
+    "category": "world",
+    "type": "paper",
+    "summary": "Trains reinforcement learning agents inside diffusion world models that preserve visual detail.",
+    "detail": "Visual Details Matter in Atari studies diffusion models as environment models in which agents learn from imagined trajectories, analyzing how visual detail affects policies. Alongside the Atari 100k evaluation, the paper trains a playable neural engine on prerecorded CS:GO gameplay. It is relevant to simulation, control, and accumulated prediction error.",
+    "url": "https://arxiv.org/abs/2405.12399",
+    "links": [
+      {
+        "label": "Code and playable models",
+        "url": "https://diamond-wm.github.io/"
+      }
+    ],
+    "tags": [
+      "neural-simulator",
+      "interactive-video",
+      "diffusion",
+      "Atari",
+      "reinforcement-learning",
+      "NeurIPS-2024"
+    ],
+    "stages": [
+      "test",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gamefactory",
+    "name": "GameFactory",
+    "category": "world",
+    "type": "paper",
+    "summary": "Combines open-domain video generation with keyboard and mouse action control.",
+    "detail": "Creating New Games with Generative Interactive Videos provides the action-labeled GF-Minecraft dataset and control modules. Domain adapters separate game style from action learning, with autoregressive continuation supported. It generates action-controlled game video. Visual generalization should be evaluated separately from rule correctness, item persistence, and exportable game projects.",
+    "url": "https://arxiv.org/abs/2501.08325",
+    "links": [
+      {
+        "label": "Code",
+        "url": "https://github.com/KlingAIResearch/GameFactory"
+      }
+    ],
+    "tags": [
+      "interactive-video",
+      "neural-simulator",
+      "action-control",
+      "Minecraft",
+      "dataset",
+      "ICCV-2025"
+    ],
+    "stages": [
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "oasis",
+    "name": "Oasis: A Universe in a Transformer",
+    "category": "world",
+    "type": "framework",
+    "summary": "An open neural game example that generates frames autoregressively from keyboard input.",
+    "detail": "Oasis by Decart and Etched uses a Transformer autoencoder and latent diffusion to generate Minecraft-style interaction, with public inference code and weights for a 500M model. The authors identify limits in long-term memory, precise inventory control, domain generalization, and object consistency. It suits research prototypes and generative inference rather than deterministic gameplay logic.",
+    "url": "https://oasis-model.github.io/",
+    "links": [
+      {
+        "label": "Inference code",
+        "url": "https://github.com/etched-ai/open-oasis"
+      }
+    ],
+    "tags": [
+      "neural-simulator",
+      "interactive-video",
+      "transformer",
+      "Minecraft",
+      "released-code"
+    ],
+    "stages": [
+      "code",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "wonderworld",
+    "name": "WonderWorld",
+    "category": "world",
+    "type": "paper",
+    "summary": "Builds an explorable, expandable explicit 3D scene from a single image.",
+    "detail": "Interactive 3D Scene Generation from a Single Image uses Fast Layered Gaussian Surfels and guided depth diffusion to connect new scenes as the camera moves and prompts change. It provides explicit spatial representation and real-time rendering, primarily addressing geometry and appearance. Interactive gameplay, physics, and persistent dynamic state still require separate implementation.",
+    "url": "https://arxiv.org/abs/2406.09394",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://kovenyu.com/WonderWorld/"
+      }
+    ],
+    "tags": [
+      "scene-generation",
+      "explicit-3d",
+      "Gaussian-surfels",
+      "camera-control",
+      "CVPR-2025"
+    ],
+    "stages": [
+      "assets",
+      "scene",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "marble",
+    "name": "World Labs Marble",
+    "category": "world",
+    "type": "tool",
+    "summary": "Generates persistent, navigable 3D scenes with splat and mesh exports.",
+    "detail": "Marble supports multimodal world creation, exports Gaussian splats, visual meshes, and collision meshes for approximate physics, and renders video along camera paths. Compared with pure video continuation, it produces spatial assets for downstream engines. Developers still need to build character behavior, quest logic, and game loops.",
+    "url": "https://www.worldlabs.ai/blog/marble-world-model",
+    "links": [
+      {
+        "label": "Product",
+        "url": "https://marble.worldlabs.ai/"
+      }
+    ],
+    "tags": [
+      "scene-generation",
+      "explicit-3d",
+      "Gaussian-splatting",
+      "mesh-export",
+      "hosted"
+    ],
+    "stages": [
+      "assets",
+      "scene",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  }
+]

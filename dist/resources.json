@@ -1,0 +1,3249 @@
+[
+  {
+    "id": "codex",
+    "name": "OpenAI Codex",
+    "category": "agents",
+    "type": "agent",
+    "summary": "A general-purpose coding agent for reading, editing, running commands, and reviewing code in a local repository.",
+    "detail": "Useful as the main code execution loop for a game project: break down gameplay, maintain scripts, run builds, and inspect failures. Engine integration still requires a CLI, editor bridge, or MCP server; compiling successfully does not establish that a game is playable.",
+    "url": "https://developers.openai.com/codex/cli",
+    "links": [
+      {
+        "label": "Official game workflow",
+        "url": "https://learn.chatgpt.com/use-cases/browser-games"
+      }
+    ],
+    "tags": [
+      "CLI",
+      "General-purpose agent",
+      "Code review",
+      "MCP",
+      "Skills"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "category": "agents",
+    "type": "agent",
+    "summary": "A coding agent that reads and edits projects, runs tools, and supports skills, hooks, and MCP through terminal and IDE interfaces.",
+    "detail": "Can develop game scripts, migrate architecture, troubleshoot builds, and connect to Unity, Godot, or UE through community MCP servers. Use CLAUDE.md, skills, and editor state together; one MCP demonstration does not establish complete engine automation.",
+    "url": "https://code.claude.com/docs/en/overview",
+    "links": [
+      {
+        "label": "Code and examples",
+        "url": "https://github.com/anthropics/claude-code"
+      }
+    ],
+    "tags": [
+      "CLI",
+      "General-purpose agent",
+      "MCP",
+      "Skills",
+      "Hooks"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gemini-cli",
+    "name": "Gemini CLI",
+    "category": "agents",
+    "type": "agent",
+    "summary": "Google's open-source terminal coding agent with file access, shell tools, extensions, and MCP support.",
+    "detail": "Can help understand game projects, edit scripts, and drive editors through MCP. At the recorded source check, the official repository directed some users to Antigravity CLI and noted differences in support for newer models. Choose an entry point based on your account and the official migration guidance.",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "links": [
+      {
+        "label": "Official documentation",
+        "url": "https://geminicli.com/docs/"
+      }
+    ],
+    "tags": [
+      "CLI",
+      "Google",
+      "MCP",
+      "Open source",
+      "Migration guidance"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "deepseek-agent-integrations",
+    "name": "DeepSeek · Agent Integrations",
+    "category": "agents",
+    "type": "docs",
+    "summary": "Official guidance for using DeepSeek as a model backend within agent harnesses such as Claude Code.",
+    "detail": "The Anthropic API compatibility layer connects DeepSeek to existing tool loops. The chosen harness handles files, tests, and engine connections. Keep the model separate from the execution framework: the compatibility documentation lists ignored or unsupported fields, so equivalent capabilities should not be assumed.",
+    "url": "https://api-docs.deepseek.com/guides/anthropic_api/",
+    "tags": [
+      "DeepSeek",
+      "Model backend",
+      "Harness",
+      "API compatibility",
+      "Scope"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "opencode",
+    "name": "OpenCode",
+    "category": "agents",
+    "type": "agent",
+    "summary": "An open-source coding agent with multiple model providers, Plan / Build modes, and project instructions.",
+    "detail": "Useful for turning game requirements into a plan, then editing C#, GDScript, TypeScript, or C++ projects. Providers and models can be selected independently; launching an editor, inspecting visuals, and validating gameplay still require the appropriate tools.",
+    "url": "https://opencode.ai/docs/",
+    "links": [
+      {
+        "label": "Source code",
+        "url": "https://github.com/anomalyco/opencode"
+      }
+    ],
+    "tags": [
+      "CLI",
+      "Multiple models",
+      "Plan / Build",
+      "Open source",
+      "AGENTS.md"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "cline",
+    "name": "Cline",
+    "category": "agents",
+    "type": "agent",
+    "summary": "An open-source coding agent with multiple models, Plan / Act modes, project rules, and MCP support.",
+    "detail": "Useful for reviewing and editing game code in an IDE or CLI, with build output and MCP editor tools in the feedback loop. Reuse .clinerules and skills to capture engine conventions; editor operations depend on the specific bridge service.",
+    "url": "https://github.com/cline/cline",
+    "links": [
+      {
+        "label": "Documentation",
+        "url": "https://docs.cline.bot/"
+      }
+    ],
+    "tags": [
+      "IDE",
+      "CLI",
+      "Multiple models",
+      "MCP",
+      "Plan / Act"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "aider",
+    "name": "Aider",
+    "category": "agents",
+    "type": "agent",
+    "summary": "A terminal AI pair-programming tool built around repository maps, Git changes, and lint and test feedback.",
+    "detail": "Useful for changes across files, refactoring, and testable logic in existing game projects, with model options including DeepSeek. Its code editing workflow does not directly control Unity, UE, or Blender editors; visual feedback needs a separate setup.",
+    "url": "https://github.com/Aider-AI/aider",
+    "links": [
+      {
+        "label": "User documentation",
+        "url": "https://aider.chat/docs/"
+      }
+    ],
+    "tags": [
+      "CLI",
+      "Git",
+      "Repository map",
+      "Multiple models",
+      "Refactoring"
+    ],
+    "stages": [
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "openhands",
+    "name": "OpenHands · Agent Canvas",
+    "category": "agents",
+    "type": "framework",
+    "summary": "An open-source development console for managing local, remote, and cloud agent environments.",
+    "detail": "Can centralize multi-agent tasks, environments, and execution records for game projects. The repository provides the Agent Canvas frontend and orchestration entry point; the core tool loop and Agent Server live in a separate SDK repository. Game automation still requires engine tools.",
+    "url": "https://github.com/OpenHands/OpenHands",
+    "links": [
+      {
+        "label": "Core SDK",
+        "url": "https://github.com/OpenHands/software-agent-sdk"
+      }
+    ],
+    "tags": [
+      "Agent Canvas",
+      "Environments",
+      "Multi-agent",
+      "Open source",
+      "Orchestration"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "openhands-sdk",
+    "name": "OpenHands Software Agent SDK",
+    "category": "agents",
+    "type": "framework",
+    "summary": "A programmable development framework for agents, tools, conversations, workspaces, and server interfaces.",
+    "detail": "Useful for game development experiments: wrap builds, scene inspections, and tests as tools for a coding agent, and record execution in local or container workspaces. The SDK supports custom workflows and tools; it does not include a semantic layer for every game engine.",
+    "url": "https://github.com/OpenHands/software-agent-sdk",
+    "links": [
+      {
+        "label": "SDK documentation",
+        "url": "https://docs.openhands.dev/sdk"
+      }
+    ],
+    "tags": [
+      "SDK",
+      "Python",
+      "TypeScript",
+      "Workspaces",
+      "Reproducible experiments"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "claude-agent-sdk",
+    "name": "Claude Agent SDK",
+    "category": "agents",
+    "type": "framework",
+    "summary": "Embed Claude Code's tool loop, permissions, sessions, and extensions in Python or TypeScript applications.",
+    "detail": "Can power game-specific code repair, content validation, or engine MCP orchestration services, with hooks recording execution evidence. It serves a different role from the Client SDK for direct model calls; domain tools, scoring rules, and runtime environments must still be supplied.",
+    "url": "https://code.claude.com/docs/en/agent-sdk/overview",
+    "tags": [
+      "SDK",
+      "Python",
+      "TypeScript",
+      "MCP",
+      "Hooks"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "mini-swe-agent",
+    "name": "mini-swe-agent",
+    "category": "agents",
+    "type": "framework",
+    "summary": "A minimal shell-based coding-agent research baseline designed for modification and trace inspection.",
+    "detail": "Useful for isolating model, prompt, and environment effects in game code generation and repair, or wrapping commands such as Godot headless. It is a general software engineering agent rather than a game benchmark; playability, visuals, and physics require additional validation.",
+    "url": "https://github.com/SWE-agent/mini-swe-agent",
+    "links": [
+      {
+        "label": "Predecessor: SWE-agent",
+        "url": "https://github.com/SWE-agent/SWE-agent"
+      }
+    ],
+    "tags": [
+      "Research baseline",
+      "Shell",
+      "Harness",
+      "Traces",
+      "Open source"
+    ],
+    "stages": [
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "agents-md",
+    "name": "AGENTS.md",
+    "category": "agents",
+    "type": "docs",
+    "summary": "An open Markdown format for giving coding agents build commands, test rules, and project conventions.",
+    "detail": "Game projects can record engine versions, launch commands, directory rules, asset import conventions, and acceptance checks to reduce environment guesswork. This is a project instruction format rather than an agent runtime; discovery and configuration vary by client.",
+    "url": "https://agents.md/",
+    "tags": [
+      "Project instructions",
+      "Project conventions",
+      "Open format",
+      "Context"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "agent-skills-format",
+    "name": "Agent Skills",
+    "category": "agents",
+    "type": "docs",
+    "summary": "An open format that packages domain workflows as SKILL.md instructions, scripts, and reference materials.",
+    "detail": "Useful for repeatable game tasks such as sprite normalization, GLB export, scene inspection, and regression testing, with domain knowledge loaded as needed. Skills provide procedures and resources; engine control still requires tools, dependencies, and a compatible client.",
+    "url": "https://agentskills.io/home",
+    "tags": [
+      "Skills",
+      "Open format",
+      "Workflows",
+      "Progressive loading"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "assets",
+      "scene",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "codex-browser-games",
+    "name": "Codex · Create Browser-based Games",
+    "category": "agents",
+    "type": "docs",
+    "summary": "OpenAI's browser game workflow covering planning, project instructions, asset generation, and browser iteration.",
+    "detail": "Define the player goal, core loop, inputs, and win and loss conditions, then implement with PLAN.md and AGENTS.md. Combine image skills and Playwright for visual and interaction feedback. This is a practical guide, not a performance guarantee for every game genre or a research benchmark.",
+    "url": "https://learn.chatgpt.com/use-cases/browser-games",
+    "tags": [
+      "Official workflow",
+      "Browser games",
+      "Planning",
+      "Playwright",
+      "Asset consistency"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "assets",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unity-mcp",
+    "name": "MCP for Unity",
+    "category": "agents",
+    "type": "tool",
+    "summary": "A community MCP bridge connecting general-purpose coding agents to the Unity Editor.",
+    "detail": "Exposes editor operations for scenes, GameObjects, C# scripts, assets, and tests, giving agents access to state that text-only code edits cannot reveal. The project is explicitly independent of Unity Technologies; validate changes with compilation logs, screenshots, and PlayMode tests.",
+    "url": "https://github.com/CoplayDev/unity-mcp",
+    "links": [
+      {
+        "label": "Installation and tool documentation",
+        "url": "https://coplaydev.github.io/unity-mcp/"
+      }
+    ],
+    "tags": [
+      "Unity",
+      "MCP",
+      "Editor bridge",
+      "Community project",
+      "C#"
+    ],
+    "stages": [
+      "code",
+      "assets",
+      "scene",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unity-mcp-skill",
+    "name": "Unity-MCP Operator Guide",
+    "category": "agents",
+    "type": "skill",
+    "summary": "A practical skill in the MCP for Unity repository: inspect editor state, act, wait for compilation, and verify results.",
+    "detail": "Defines a resource-first approach to scene operations, plus compilation waits, console checks, and screenshot verification after script edits. It can serve as a Unity agent operating procedure. The skill requires MCP for Unity; examples and parameters vary with Unity, UI, and input system versions.",
+    "url": "https://github.com/CoplayDev/unity-mcp/blob/main/unity-mcp-skill/SKILL.md",
+    "tags": [
+      "Unity",
+      "Skills",
+      "MCP",
+      "Compilation feedback",
+      "Skill source"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "godot-mcp",
+    "name": "Godot MCP · Coding-Solo",
+    "category": "agents",
+    "type": "tool",
+    "summary": "A community MCP server for launching Godot, running projects, reading logs, and performing basic scene operations.",
+    "detail": "Supports project execution, debug output capture, scene and node creation, Sprite2D texture loading, and some 3D MeshLibrary operations. It can give agents feedback from real projects; these interfaces do not provide complete visual playtesting or every editor feature.",
+    "url": "https://github.com/Coding-Solo/godot-mcp",
+    "tags": [
+      "Godot",
+      "MCP",
+      "GDScript",
+      "Runtime logs",
+      "Scenes"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "mcp-for-blender",
+    "name": "MCP for Blender",
+    "category": "agents",
+    "type": "tool",
+    "summary": "A Blender add-on and MCP server for agent-driven modeling, materials, Python execution, and visual feedback.",
+    "detail": "Useful as a bridge for 3D game asset production and scene prototypes, with viewport feedback for geometry, materials, and layout. Previously named blender-mcp, the repository and package have been renamed. This is a third-party community integration; check topology, scale, UVs, collision, and export compatibility.",
+    "url": "https://github.com/ahujasid/mcp-for-blender",
+    "tags": [
+      "Blender",
+      "MCP",
+      "Python",
+      "3D assets",
+      "Community project"
+    ],
+    "stages": [
+      "code",
+      "assets",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unreal-mcp",
+    "name": "Unreal MCP · chongdashu",
+    "category": "agents",
+    "type": "tool",
+    "summary": "A Python MCP server and UE C++ plugin connecting agents to Actors, Blueprints, and viewport controls.",
+    "detail": "Covers Actor transforms, Blueprint classes and components, some node graphs, and editor camera operations for UE scene and gameplay prototypes. The author explicitly marks it experimental and advises against production use; pin compatible versions and verify the supported operations individually.",
+    "url": "https://github.com/chongdashu/unreal-mcp",
+    "links": [
+      {
+        "label": "Tool documentation",
+        "url": "https://github.com/chongdashu/unreal-mcp/tree/main/Docs"
+      }
+    ],
+    "tags": [
+      "Unreal Engine",
+      "MCP",
+      "Blueprint",
+      "Experimental",
+      "Editor bridge"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "playwright-mcp",
+    "name": "Playwright MCP",
+    "category": "agents",
+    "type": "tool",
+    "summary": "Microsoft's browser automation MCP server for exposing page structure, interactions, and browser feedback to agents.",
+    "detail": "Useful for browser game menus, HUDs, launch flows, and web interactions, combined with screenshots, keyboard input, and game debug interfaces. The default mode relies on structured accessibility trees; internal Canvas and WebGL gameplay state needs additional observation. The project also offers a CLI + Skills workflow.",
+    "url": "https://github.com/microsoft/playwright-mcp",
+    "tags": [
+      "Playwright",
+      "MCP",
+      "Browser testing",
+      "HUD",
+      "Canvas limitations"
+    ],
+    "stages": [
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "godot-engine",
+    "name": "Godot Engine · Official Documentation",
+    "category": "engines",
+    "type": "tool",
+    "summary": "An open-source 2D and 3D game engine that organizes runnable projects through scenes, nodes, resources, and scripts.",
+    "detail": "Provides authoritative context for GDScript, C#, scene, and resource APIs, helping agents connect script changes to running scenes. Pin the engine version and use matching documentation; stable and development branches are not interchangeable.",
+    "url": "https://docs.godotengine.org/en/stable/",
+    "links": [
+      {
+        "label": "Engine source",
+        "url": "https://github.com/godotengine/godot"
+      },
+      {
+        "label": "Official examples",
+        "url": "https://github.com/godotengine/godot-demo-projects"
+      }
+    ],
+    "tags": [
+      "Godot",
+      "GDScript",
+      "Scenes and nodes",
+      "Official documentation",
+      "Open source"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "assets",
+      "scene",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "godot-command-line",
+    "name": "Godot · Command Line Tutorial",
+    "category": "engines",
+    "type": "docs",
+    "summary": "Godot's official CLI reference for headless operation, script checks, asset import, execution, and export.",
+    "detail": "Lets coding agents launch projects, read logs, parse scripts, and export builds through commands, reducing GUI dependence. Supported flags vary by build type; headless checks can validate project logic but cannot replace real rendering and input tests.",
+    "url": "https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html",
+    "tags": [
+      "Godot",
+      "CLI",
+      "Headless",
+      "Builds",
+      "Reproducibility"
+    ],
+    "stages": [
+      "code",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "godot-demo-projects",
+    "name": "Godot Demo Projects",
+    "category": "engines",
+    "type": "docs",
+    "summary": "Official runnable Godot examples covering 2D, 3D, GUI, audio, networking, and rendering.",
+    "detail": "Useful as minimal reference projects and regression tasks for agents, with concrete examples of scenes, scripts, and resources. The repository states that master targets the development engine; choose a matching branch for a stable release to avoid mistaking version conflicts for generation failures.",
+    "url": "https://github.com/godotengine/godot-demo-projects",
+    "tags": [
+      "Godot",
+      "Official examples",
+      "Runnable source",
+      "Version branches",
+      "Reference projects"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "godot-gut",
+    "name": "GUT · Godot Unit Test",
+    "category": "engines",
+    "type": "tool",
+    "summary": "A community Godot testing framework for GDScript assertions, test doubles, and parameterized cases.",
+    "detail": "Provides a CLI and JUnit XML output for automated regression checks on generated game state, damage, inventory, and other logic. GUT and Godot versions have explicit compatibility requirements; passing logic tests still leaves visuals, controls, and scene integration to check.",
+    "url": "https://github.com/bitwes/Gut",
+    "links": [
+      {
+        "label": "Author documentation",
+        "url": "https://gut.readthedocs.io/"
+      }
+    ],
+    "tags": [
+      "Godot",
+      "Unit testing",
+      "GDScript",
+      "CLI",
+      "JUnit"
+    ],
+    "stages": [
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gdquest-first-2d-game",
+    "name": "GDQuest · First 2D Game",
+    "category": "engines",
+    "type": "community",
+    "summary": "A GDQuest tutorial for a Godot 2D survival game, with complete scripts, a project, and troubleshooting notes.",
+    "detail": "Covers movement, aiming, projectiles, enemy spawning, and failure states as a reference for a complete core loop. The author explains sticking caused by grounded / floating modes and an enemy count limit. Code and assets use different licenses; check each before reuse.",
+    "url": "https://www.gdquest.com/library/first_2d_game_godot4_vampire_survivor/",
+    "links": [
+      {
+        "label": "Project source",
+        "url": "https://github.com/gdquest-demos/getting-started-with-godot-4"
+      },
+      {
+        "label": "Tutorial library",
+        "url": "https://www.gdquest.com/library/"
+      }
+    ],
+    "tags": [
+      "Godot",
+      "Community experience",
+      "Complete core loop",
+      "Collision debugging",
+      "2D"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unity-engine",
+    "name": "Unity · Manual",
+    "category": "engines",
+    "type": "tool",
+    "summary": "Official Unity documentation for projects, the editor, scripting, rendering, physics, asset import, and publishing.",
+    "detail": "Provides agents with concrete C# and editor project constraints, plus 2D and 3D workflows and versioned package references. Pin the Editor, render pipeline, and Package Manager versions together; the Unity name alone does not establish API or material compatibility.",
+    "url": "https://docs.unity3d.com/Manual/index.html",
+    "links": [
+      {
+        "label": "Official example source",
+        "url": "https://github.com/Unity-Technologies/2d-techdemos"
+      }
+    ],
+    "tags": [
+      "Unity",
+      "C#",
+      "Official documentation",
+      "Editor",
+      "Package Manager"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "assets",
+      "scene",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unity-test-framework",
+    "name": "Unity Test Framework",
+    "category": "engines",
+    "type": "tool",
+    "summary": "Unity's official testing framework, with Edit mode, Play mode, and command-line execution.",
+    "detail": "Enables ongoing regression checks for generated scripts and scene behavior, using UnityTest across frames to check lifecycles, coroutines, and state changes. Edit mode and Play mode have different execution loops; tests should wait for real frames or conditions rather than only confirming script creation.",
+    "url": "https://docs.unity3d.com/6000.2/Documentation/Manual/test-framework/test-framework-introduction.html",
+    "links": [
+      {
+        "label": "Package and API documentation",
+        "url": "https://docs.unity3d.com/Packages/com.unity.test-framework@latest/"
+      }
+    ],
+    "tags": [
+      "Unity",
+      "Testing",
+      "Edit mode",
+      "Play mode",
+      "CLI"
+    ],
+    "stages": [
+      "code",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unity-2d-techdemos",
+    "name": "Unity · 2D Tech Demos",
+    "category": "engines",
+    "type": "docs",
+    "summary": "Official Unity 2D example source for Tilemaps, Scripted Tiles, brushes, and runtime map changes.",
+    "detail": "Offers concrete references for tile collision lookup, destructible maps, and palette switching so agents can inspect editor configuration. Check project files and package manifests together; older examples may not work with every current Editor and package combination.",
+    "url": "https://github.com/Unity-Technologies/2d-techdemos",
+    "tags": [
+      "Unity",
+      "2D",
+      "Tilemap",
+      "Official examples",
+      "Runnable source"
+    ],
+    "stages": [
+      "code",
+      "assets",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "catlike-coding-movement",
+    "name": "Catlike Coding · Surface Contact",
+    "category": "engines",
+    "type": "community",
+    "summary": "Jasper Flick's Unity movement tutorial explains character control through slopes, steps, and contact timing.",
+    "detail": "The author uses test scenes to reproduce loss of ground contact, ghost collisions, raycasts, and ground snapping, giving agents causal explanations of physics behavior. The tutorial uses an older Unity version; adapt its algorithms, APIs, input, and project configuration to the target version.",
+    "url": "https://catlikecoding.com/unity/tutorials/movement/surface-contact/",
+    "links": [
+      {
+        "label": "Complete movement series",
+        "url": "https://catlikecoding.com/unity/tutorials/movement/"
+      },
+      {
+        "label": "Shader and project tutorials",
+        "url": "https://catlikecoding.com/unity/tutorials/"
+      }
+    ],
+    "tags": [
+      "Unity",
+      "Community experience",
+      "Physics",
+      "Character control",
+      "Debugging"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unreal-engine",
+    "name": "Unreal Engine · Documentation",
+    "category": "engines",
+    "type": "tool",
+    "summary": "Official Epic documentation for UE C++, Blueprints, rendering, animation, physics, and packaging.",
+    "detail": "Provides authoritative context for UE projects and asset systems, with official samples illustrating complex gameplay architecture. Engine source access requires linked Epic and GitHub accounts and the relevant access steps; source availability does not imply an open-source license.",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine",
+    "links": [
+      {
+        "label": "Source access instructions",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/downloading-source-code-in-unreal-engine"
+      },
+      {
+        "label": "Engine source (authorization required)",
+        "url": "https://github.com/EpicGames/UnrealEngine"
+      }
+    ],
+    "tags": [
+      "Unreal Engine",
+      "C++",
+      "Blueprint",
+      "Official documentation",
+      "Authorized source access"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "assets",
+      "scene",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unreal-automation-tests",
+    "name": "Unreal · Automation Test Framework",
+    "category": "engines",
+    "type": "tool",
+    "summary": "UE's official infrastructure for unit, functional, content stress, and screenshot comparison tests.",
+    "detail": "Can bring Blueprint compilation, level loading, simulated input, and visual regression checks into an agent feedback loop, alongside interfaces such as Functional Testing. Tests require the appropriate plugins and state cleanup; the framework runs within the engine.",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/automation-test-framework-in-unreal-engine",
+    "tags": [
+      "Unreal Engine",
+      "Automated testing",
+      "Blueprint",
+      "Visual regression",
+      "Content validation"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unreal-lyra",
+    "name": "Lyra Sample Game",
+    "category": "engines",
+    "type": "docs",
+    "summary": "Epic's modular UE5 sample game, with gameplay plugins, abilities, animation, input, and UI.",
+    "detail": "Useful for learning how Game Feature Plugins, Experiences, and the Gameplay Ability System work together in a real project. Source and content are distributed through Fab / Epic Launcher and require a matching engine version. Lyra is more complex than a minimal prototype, so study it by module.",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/lyra-sample-game-in-unreal-engine",
+    "tags": [
+      "Unreal Engine",
+      "Official sample",
+      "GAS",
+      "Modular design",
+      "Runnable project"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "epic-developer-community",
+    "name": "Epic Developer Community · UE",
+    "category": "engines",
+    "type": "community",
+    "summary": "Epic's UE community hub for author tutorials, learning materials, and version-specific discussions.",
+    "detail": "Useful for practical material, animation, Blueprint, and performance troubleshooting beyond official references. Check each contribution's author, date, engine version, and reproducible project; access to the hub does not establish that every post has been verified.",
+    "url": "https://dev.epicgames.com/community/unreal-engine",
+    "tags": [
+      "Unreal Engine",
+      "Community",
+      "Tutorials",
+      "Practical experience",
+      "Per-source verification"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "assets",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "threejs",
+    "name": "Three.js",
+    "category": "engines",
+    "type": "tool",
+    "summary": "A JavaScript 3D rendering library for browsers, with scenes, cameras, materials, and loaders.",
+    "detail": "Lets agents build browser-testable 3D prototypes directly in TypeScript or JavaScript and inspect APIs through source and examples. Game loops, physics, navigation, saves, and other systems need separate design or integration. Validate WebGL and WebGPU paths individually.",
+    "url": "https://github.com/mrdoob/three.js",
+    "links": [
+      {
+        "label": "Official manual",
+        "url": "https://threejs.org/manual/"
+      },
+      {
+        "label": "Official examples",
+        "url": "https://threejs.org/examples/"
+      }
+    ],
+    "tags": [
+      "Three.js",
+      "JavaScript",
+      "WebGL",
+      "WebGPU",
+      "Rendering library"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "assets",
+      "scene",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "threejs-examples",
+    "name": "Three.js · Examples",
+    "category": "engines",
+    "type": "docs",
+    "summary": "Official runnable Three.js graphics examples with their HTML and JavaScript source.",
+    "detail": "Provides minimal references for loaders, lighting, materials, animation, and rendering techniques to adapt into game scenes. The website and dev branch change continuously; keep source, addons, and runtime on the same release rather than mixing example versions.",
+    "url": "https://threejs.org/examples/",
+    "links": [
+      {
+        "label": "Example source",
+        "url": "https://github.com/mrdoob/three.js/tree/dev/examples"
+      }
+    ],
+    "tags": [
+      "Three.js",
+      "Official examples",
+      "Materials",
+      "Loaders",
+      "Runnable source"
+    ],
+    "stages": [
+      "code",
+      "assets",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "threejs-crowd-experience",
+    "name": "Three.js · Instanced Crowd Engineering",
+    "category": "engines",
+    "type": "community",
+    "summary": "A game author's Three.js forum write-up on a single-draw-call crowd system, instance data, LOD, and staggered updates.",
+    "detail": "Offers explainable performance techniques, with the author's playable demo showing technical and visual tradeoffs. Frame rates are self-reported on the author's hardware, not a benchmark across devices. Measure GPU, CPU, bandwidth, and visual quality after optimization.",
+    "url": "https://discourse.threejs.org/t/one-draw-call-massive-crowd-performance-engineering-in-three-js/89928",
+    "links": [
+      {
+        "label": "Community forum",
+        "url": "https://discourse.threejs.org/"
+      }
+    ],
+    "tags": [
+      "Three.js",
+      "Community experience",
+      "Instancing",
+      "LOD",
+      "Performance"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "react-three-fiber",
+    "name": "React Three Fiber",
+    "category": "engines",
+    "type": "framework",
+    "summary": "A React renderer for Three.js that brings component-based, declarative scenes into the React ecosystem.",
+    "detail": "Useful for combining web HUDs, application state, and 3D scenes, with pmndrs tools for loading, interaction, and debugging. It does not supply every game system; match React, Fiber, and Three.js versions and define clear boundaries for per-frame simulation.",
+    "url": "https://r3f.docs.pmnd.rs/getting-started/introduction",
+    "links": [
+      {
+        "label": "Source code",
+        "url": "https://github.com/pmndrs/react-three-fiber"
+      }
+    ],
+    "tags": [
+      "Three.js",
+      "React",
+      "R3F",
+      "pmndrs",
+      "Declarative scenes"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "blender",
+    "name": "Blender",
+    "category": "engines",
+    "type": "tool",
+    "summary": "An open-source 3D creation suite for modeling, materials, rigging, animation, simulation, and rendering.",
+    "detail": "Primarily supports game asset and scene production, with agent-generated Python scripts for repeatable tasks. Blender is not a game runtime engine; verify scale, coordinates, materials, rigs, and animation after importing into Unity, UE, Godot, or a browser.",
+    "url": "https://github.com/blender/blender",
+    "links": [
+      {
+        "label": "Official main repository",
+        "url": "https://projects.blender.org/blender/blender"
+      },
+      {
+        "label": "Reference manual",
+        "url": "https://docs.blender.org/manual/en/latest/"
+      },
+      {
+        "label": "Python API",
+        "url": "https://docs.blender.org/api/current/"
+      }
+    ],
+    "tags": [
+      "Blender",
+      "DCC",
+      "3D assets",
+      "Animation",
+      "Open source"
+    ],
+    "stages": [
+      "assets",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "blender-python-quickstart",
+    "name": "Blender Python · API Quickstart",
+    "category": "engines",
+    "type": "docs",
+    "summary": "Official Blender API tutorial source covering bpy data, context, operators, and Python operations.",
+    "detail": "Provides authoritative guidance for asset scripts, especially the distinction between direct data access and operations that depend on the current mode, selection, or viewport. bpy.ops poll checks can fail because of context; scripts should inspect actual state and verify outputs, beyond syntax checks.",
+    "url": "https://github.com/blender/blender/blob/main/doc/python_api/rst/info_quickstart.rst",
+    "links": [
+      {
+        "label": "API documentation",
+        "url": "https://docs.blender.org/api/current/"
+      }
+    ],
+    "tags": [
+      "Blender",
+      "Python",
+      "bpy",
+      "Context",
+      "Automation"
+    ],
+    "stages": [
+      "code",
+      "assets",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gltf-blender-io",
+    "name": "Khronos · glTF-Blender-IO",
+    "category": "engines",
+    "type": "tool",
+    "summary": "Khronos's official Blender glTF 2.0 importer and exporter source, including validation and roundtrip tests.",
+    "detail": "Connects Blender asset production to game runtimes and helps diagnose material, mesh, and animation conversion issues. Repository CI validates exports and compares import / export roundtrips. A valid file can still render differently in the target engine, so verify runtime imports.",
+    "url": "https://github.com/KhronosGroup/glTF-Blender-IO",
+    "links": [
+      {
+        "label": "Technical notes",
+        "url": "https://github.com/KhronosGroup/glTF-Blender-IO/blob/main/Technical.md"
+      }
+    ],
+    "tags": [
+      "Blender",
+      "glTF",
+      "GLB",
+      "Asset pipeline",
+      "Roundtrip validation"
+    ],
+    "stages": [
+      "assets",
+      "scene",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "phaser",
+    "name": "Phaser · First Game Guide",
+    "category": "engines",
+    "type": "tool",
+    "summary": "A browser 2D game framework whose official tutorial covers assets, scenes, animation, input, and collisions.",
+    "detail": "Useful for quickly building browser-testable 2D core loops organized around preload / create / update. In the tutorial, scaled static Arcade Physics objects need their collision bodies refreshed. A visible scene alone does not verify input, restart behavior, or lifecycle handling.",
+    "url": "https://docs.phaser.io/phaser/getting-started/making-your-first-phaser-game",
+    "links": [
+      {
+        "label": "Framework source",
+        "url": "https://github.com/phaserjs/phaser"
+      },
+      {
+        "label": "Official documentation",
+        "url": "https://docs.phaser.io/"
+      }
+    ],
+    "tags": [
+      "Phaser",
+      "2D",
+      "JavaScript",
+      "Browser games",
+      "Arcade Physics"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "assets",
+      "scene",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "phaser-examples",
+    "name": "Phaser 3 · Examples",
+    "category": "engines",
+    "type": "docs",
+    "summary": "Official Phaser example source with runnable references for specific APIs and gameplay components.",
+    "detail": "Agents can study animation, cameras, input, physics, and scene transitions individually before combining them into a game. The repository explicitly targets Phaser 3; do not assume compatibility with every major version. Pin dependencies and test in a real browser.",
+    "url": "https://github.com/phaserjs/examples",
+    "tags": [
+      "Phaser",
+      "Official examples",
+      "Runnable source",
+      "2D",
+      "Version scope"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gamegpt",
+    "name": "GameGPT",
+    "category": "2d",
+    "type": "framework",
+    "summary": "Studies automated game development through multi-agent planning and code generation.",
+    "detail": "Planning, review, and implementation agents break down game requirements and generate code, with a focus on hallucination and redundancy. This is an early research framework for game development agents. The linked repository contains only the paper and README; it is not a verified, ready-to-deploy product.",
+    "url": "https://arxiv.org/abs/2310.08067",
+    "links": [
+      {
+        "label": "Author repository",
+        "url": "https://github.com/leyiwo/GameGPT"
+      }
+    ],
+    "tags": [
+      "Multi-agent",
+      "Task planning",
+      "Research prototype"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "year": 2023,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "opengame",
+    "name": "OpenGame",
+    "category": "2d",
+    "type": "agent",
+    "summary": "Generates browser games with templates, debugging skills, and the GameCoder model.",
+    "detail": "Turns natural-language requirements into runnable web projects. Its Game Skill combines Template Skill and Debug Skill for Canvas, Phaser, three.js, and other templates. The paper uses browser execution and visual judging to study build success, usability, and intent alignment. At review, the README still listed the standalone evaluation pipeline as forthcoming, so paper results do not imply a fully reproducible release.",
+    "url": "https://github.com/leigest519/OpenGame",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2604.18394"
+      }
+    ],
+    "tags": [
+      "Browser games",
+      "Game Skill",
+      "Browser feedback",
+      "GameCoder-27B"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "assets",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gamedevbench",
+    "name": "GameDevBench",
+    "category": "2d",
+    "type": "benchmark",
+    "summary": "Evaluates coding agents on development tasks in existing Godot projects.",
+    "detail": "The repository contains 333 tasks across 2D, 3D, UI, and gameplay logic. Agents receive an existing project and a task, then produce changes that can be checked in the engine. Comparable official runs require Godot 4.4.1 and provide image or video feedback. This measures bounded development tasks, not the quality of commercial games created from scratch.",
+    "url": "https://github.com/waynchi/gamedevbench",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2602.11103"
+      }
+    ],
+    "tags": [
+      "Development benchmark",
+      "Godot",
+      "Multimodal",
+      "Visual feedback"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gamexpert-bench",
+    "name": "GameXpert-Bench",
+    "category": "2d",
+    "type": "benchmark",
+    "summary": "Benchmarks game creation, bug fixing, and iterative improvement in three tracks.",
+    "detail": "The paper introduces GameGen, GameFix, and GameOpt using complete development trajectories to study the lifecycle beyond a single generation. At review, the official repository still said data and evaluation code were being prepared for release. Treat it as a paper and protocol reference, not a ready-to-run benchmark.",
+    "url": "https://arxiv.org/abs/2608.21833",
+    "links": [
+      {
+        "label": "Repository and release status",
+        "url": "https://github.com/Kwen-Chen/GameXpert-Bench"
+      }
+    ],
+    "tags": [
+      "Development benchmark",
+      "Bug fixing",
+      "Iterative improvement",
+      "Full release pending"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gamegen-verifier",
+    "name": "GameGen-Verifier",
+    "category": "2d",
+    "type": "framework",
+    "summary": "Verifies generated game behavior through runtime state hooks and focused checks.",
+    "detail": "Breaks game requirements into independently testable checkpoints and checks functionality through browser and runtime adapters. The repository provides GGV-Harness and verifier skills for Codex and Claude. Public code does not include all generated games, run outputs, or private configurations. State hooks also provide observability beyond a purely black-box playtest.",
+    "url": "https://github.com/NetX-lab/GameGen-Verifier",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2605.07442"
+      }
+    ],
+    "tags": [
+      "Functional verification",
+      "Playwright",
+      "Runtime state",
+      "Verifier Skill"
+    ],
+    "stages": [
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "mariogpt",
+    "name": "MarioGPT",
+    "category": "2d",
+    "type": "paper",
+    "summary": "Generates playable Mario-style level layouts from text with a GPT model.",
+    "detail": "Descriptions of enemies, pipes, and elevation become character-grid levels and previews, with an interactive simulator or A* checks available. It generates level content within existing rules and supports research on controllable procedural content generation. Its scope does not include game engines, character art, or complete gameplay code.",
+    "url": "https://github.com/shyamsn97/mario-gpt",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2302.05981"
+      }
+    ],
+    "tags": [
+      "PCG",
+      "Level generation",
+      "Text-to-level",
+      "GPT-2"
+    ],
+    "stages": [
+      "plan",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "year": 2023,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gavel",
+    "name": "GAVEL",
+    "category": "2d",
+    "type": "framework",
+    "summary": "Combines language models and quality-diversity search to create board game rules.",
+    "detail": "Uses Ludii game description code as its representation. A language model mutates and recombines rules, then simulation and search select games. Code, experiments, and related model and data references are public. The outputs are board games within a rule system; these results do not establish general 2D action game development ability.",
+    "url": "https://github.com/gdrtodd/gavel",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2407.09388"
+      }
+    ],
+    "tags": [
+      "Game design",
+      "Ludii",
+      "Evolutionary search",
+      "Rule generation"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "cardiverse",
+    "name": "Cardiverse",
+    "category": "2d",
+    "type": "framework",
+    "summary": "Connects card game design, Python rule code, and playtesting in a prototype pipeline.",
+    "detail": "Uses mechanism graphs and retrieval to generate variants and code from card game descriptions, then iteratively checks rule consistency using generated match records. The repository also includes a gameplay AI arena, but its development contribution centers on rule and code prototypes. Public substitute rule descriptions differ from the original paper inputs, which affects reproducibility.",
+    "url": "https://github.com/danruili/Cardiverse",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2502.07128"
+      }
+    ],
+    "tags": [
+      "Card games",
+      "Mechanism graphs",
+      "Code generation",
+      "Self-play validation"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "agent-game-forge",
+    "name": "Agent Game Forge",
+    "category": "2d",
+    "type": "tool",
+    "summary": "A local 2D game IDE with a scene editor for Codex and Claude Code.",
+    "detail": "Agents, asset workflows, and JSON scene data turn natural-language requests into JS + Canvas games. Users can adjust layout and collision in a visual editor. The README lists web output as the current default, with full Godot and Unity support still on the roadmap. The project describes itself as pre-launch.",
+    "url": "https://github.com/0x0funky/agent-game-forge",
+    "tags": [
+      "2D IDE",
+      "Canvas",
+      "Scene editing",
+      "Prototyping"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "assets",
+      "scene",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "text2game",
+    "name": "Text2Game",
+    "category": "2d",
+    "type": "tool",
+    "summary": "Turns long-form text into world, character, and event data for narrative prototypes.",
+    "detail": "Analyzes text in chunks, merges the results, and generates Twine/Chapbook HTML or Godot visual novel projects. The repository provides a Python pipeline and examples for research on turning narratives into playable prototypes. It offers no general guarantee of generating arbitrary action games.",
+    "url": "https://github.com/boltomli/t2g",
+    "tags": [
+      "Interactive narrative",
+      "Twine",
+      "Godot",
+      "Visual novels"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "scene"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "pixellab",
+    "name": "PixelLab AI Agent Toolkit",
+    "category": "2d",
+    "type": "tool",
+    "summary": "Generates pixel characters, animation, and seamless tilesets through API and MCP tools.",
+    "detail": "Accepts character descriptions, directions, actions, and terrain conditions to produce pixel assets, including four- or eight-direction characters and side-view or top-down tilesets. This is a commercial asset service. MCP connects its asset tools to coding agents; game rules, collision, and asset import still require a project workflow.",
+    "url": "https://www.pixellab.ai/mcp",
+    "links": [
+      {
+        "label": "Documentation",
+        "url": "https://www.pixellab.ai/docs"
+      }
+    ],
+    "tags": [
+      "Pixel art",
+      "Sprite",
+      "Tileset",
+      "MCP",
+      "Commercial service"
+    ],
+    "stages": [
+      "assets",
+      "scene"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "agent-sprite-forge",
+    "name": "Agent Sprite Forge",
+    "category": "2d",
+    "type": "skill",
+    "summary": "Combines reference art, generated animation, and deterministic processing into exportable sprites.",
+    "detail": "Generates motion clips from an approved reference image, then performs background removal, alignment, loop selection, timing correction, and atlas packaging. It offers Godot, Aseprite, and web exports. The README states that some newer editor exports have only passed parse round-trip checks and have not been opened in every target editor. Import and visual acceptance checks remain necessary.",
+    "url": "https://github.com/0x0funky/agent-sprite-forge",
+    "tags": [
+      "Agent Skill",
+      "Sprite pipeline",
+      "Animation",
+      "Asset QA"
+    ],
+    "stages": [
+      "assets",
+      "test"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gamefactory-3a",
+    "name": "3AGameFactory",
+    "category": "3d",
+    "type": "framework",
+    "summary": "Coordinates game assets, gameplay, and UI through skills, model pipelines, and engine adapters.",
+    "detail": "A coding agent routes requirements through image, 3D, motion, audio, and other pipelines to produce assets and engine-native code, with context for UE5, Unity, Godot, Blender, and three.js. Demos mix generated and existing resources. The 3A name is not a verified commercial quality rating. This is a separate project from Kling's GameFactory video world model.",
+    "url": "https://github.com/OpenDCAI/GameFactory-3A",
+    "links": [
+      {
+        "label": "Chinese documentation",
+        "url": "https://github.com/OpenDCAI/GameFactory-3A/blob/main/README_zh.md"
+      }
+    ],
+    "tags": [
+      "Agent Skills",
+      "Asset pipelines",
+      "Multiple engines",
+      "Game generation"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "assets",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gameenginebench",
+    "name": "GameEngineBench",
+    "category": "3d",
+    "type": "benchmark",
+    "summary": "Tests agent-written C++ runtime changes in real Unreal Engine projects.",
+    "detail": "The paper includes 110 tasks from nine projects. Inputs specify a buildable starting point, allowed files, and behavioral requirements; outputs are patches checked by compilation and engine behavior tests. Tasks cover integration issues such as replicated state, lifecycle, and animation. The scope is local C++ implementation, not complete 3D game generation.",
+    "url": "https://arxiv.org/abs/2607.03525",
+    "links": [
+      {
+        "label": "Code repository linked by the paper",
+        "url": "https://github.com/Nitrode-Research/GameEngineBench"
+      }
+    ],
+    "tags": [
+      "Development benchmark",
+      "Unreal Engine",
+      "C++",
+      "Behavior tests"
+    ],
+    "stages": [
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unity-agent-plugin",
+    "name": "Unity Agent Plugin",
+    "category": "3d",
+    "type": "skill",
+    "summary": "Unity-maintained project skills give general coding agents engine-specific context.",
+    "detail": "Provides Claude Code, Codex, and Grok with skills for 2D, UI, rendering, navigation, physics, multiplayer, and other tasks, connected to Unity CLI and MCP controls. Unity requires version 6.0 or later. The current CLI MCP mode replaces MCP in the older assistant package; follow the documentation for the version in use.",
+    "url": "https://docs.unity.com/en-us/ai/unity-plugin/about-unity-plugin",
+    "links": [
+      {
+        "label": "Skill source",
+        "url": "https://github.com/Unity-Technologies/unity-agent-plugin/tree/main/skills"
+      },
+      {
+        "label": "CLI / MCP migration",
+        "url": "https://docs.unity.com/en-us/unity-cli/replace-mcp-server-unity-cli"
+      }
+    ],
+    "tags": [
+      "Official",
+      "Agent Skills",
+      "Unity",
+      "CLI",
+      "MCP"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "scene",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "mcp-unity",
+    "name": "MCP Unity Editor",
+    "category": "3d",
+    "type": "tool",
+    "summary": "A community MCP bridge for querying, editing, and testing Unity projects.",
+    "detail": "Exposes scenes, GameObjects, components, Prefabs, logs, Unity Test Runner, and other editor operations to MCP clients. This third-party tool is maintained by CoderGamester and is separate from Unity's official plugin. Editor automation alone does not establish correct gameplay; compilation, playtesting, and project tests are still needed.",
+    "url": "https://github.com/CoderGamester/mcp-unity",
+    "tags": [
+      "Unity",
+      "MCP",
+      "Editor automation",
+      "Community tool"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "godot-3d-asset-skill",
+    "name": "Godot MCP 3D Asset Builder",
+    "category": "3d",
+    "type": "skill",
+    "summary": "Builds reusable stylized 3D assets with Godot geometry and validation workflows.",
+    "detail": "Takes project style and asset requirements, then uses Godot MCP and deterministic builders to produce PackedScene assets and check grounding, collision, navigation, and screenshots. Designed for Codex and Claude Code, it can reuse existing project resources. It requires compatible MCP capabilities and is not an image-to-mesh generative model.",
+    "url": "https://github.com/LuigiDeFacci/godot-create-3d-assets",
+    "tags": [
+      "Godot",
+      "Agent Skill",
+      "PackedScene",
+      "Asset QA"
+    ],
+    "stages": [
+      "assets",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "hunyuan3d-2",
+    "name": "Hunyuan3D 2.x",
+    "category": "3d",
+    "type": "tool",
+    "summary": "Turns reference images into geometry and textures for 3D asset pipelines.",
+    "detail": "The 2.0 pipeline generates shape with Hunyuan3D-DiT and textures the mesh with Hunyuan3D-Paint. It supports GLB and OBJ export and a Blender addon. This addresses part of individual asset production. Topology, LOD, rigging, collision, and runtime performance still need game pipeline checks, with model versions and licenses tracked separately.",
+    "url": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2",
+    "links": [
+      {
+        "label": "2.0 paper",
+        "url": "https://arxiv.org/abs/2501.12202"
+      },
+      {
+        "label": "2.1 repository",
+        "url": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1"
+      }
+    ],
+    "tags": [
+      "Image-to-3D",
+      "Mesh",
+      "Textures",
+      "Blender"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "trellis",
+    "name": "TRELLIS",
+    "category": "3d",
+    "type": "tool",
+    "summary": "Generates meshes, Gaussians, and radiance fields from structured latent representations.",
+    "detail": "Decodes image or text inputs into several 3D representations. Official examples support textured GLB export and simplification. Conventional game asset pipelines mainly use its mesh branch; Gaussian and radiance field outputs do not themselves include usable collision, animation, or gameplay logic.",
+    "url": "https://github.com/microsoft/TRELLIS",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2412.01506"
+      }
+    ],
+    "tags": [
+      "Image-to-3D",
+      "Text-to-3D",
+      "GLB",
+      "Structured Latents"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "triposr",
+    "name": "TripoSR",
+    "category": "3d",
+    "type": "tool",
+    "summary": "Quickly reconstructs a 3D object from one image for asset prototyping.",
+    "detail": "Uses LRM-style feed-forward reconstruction, with public code, pretrained models, and a demo. An input image becomes an exportable object mesh. It focuses on individual objects; hidden surfaces, topology, and game performance need additional work. It is not a complete scene or playable game generator.",
+    "url": "https://github.com/VAST-AI-Research/TripoSR",
+    "tags": [
+      "Image-to-3D",
+      "Reconstruction",
+      "Mesh",
+      "Prototype assets"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "infinigen",
+    "name": "Infinigen",
+    "category": "3d",
+    "type": "framework",
+    "summary": "Procedurally generates natural and indoor Blender scenes and synthetic data.",
+    "detail": "Random seeds, parameters, and asset generators produce geometry, materials, scenes, and annotations, with export documentation for OBJ, OpenUSD, and other formats. This is a procedural system rather than a language model. It can provide controllable scenes and data for AI development workflows; real-time games still need optimization, collision, and gameplay integration.",
+    "url": "https://github.com/princeton-vl/infinigen",
+    "links": [
+      {
+        "label": "Project and paper",
+        "url": "https://infinigen.org/"
+      }
+    ],
+    "tags": [
+      "Procedural generation",
+      "Blender",
+      "Synthetic data",
+      "Scenes"
+    ],
+    "stages": [
+      "assets",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "year": 2023,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "holodeck",
+    "name": "Holodeck",
+    "category": "3d",
+    "type": "framework",
+    "summary": "Lays out and furnishes interactive 3D indoor environments from text.",
+    "detail": "Combines language planning, asset retrieval, and spatial constraints to turn room requirements into AI2-THOR scenes, with instructions for loading them in Unity. Evaluation primarily targets embodied AI environment generation. It offers ideas for scene layout and semantic interaction, but does not establish complete game level design or commercial release readiness.",
+    "url": "https://github.com/allenai/Holodeck",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2312.09067"
+      }
+    ],
+    "tags": [
+      "Text-to-scene",
+      "AI2-THOR",
+      "Spatial constraints",
+      "Embodied environments"
+    ],
+    "stages": [
+      "plan",
+      "scene"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "video2game",
+    "name": "Video2Game",
+    "category": "3d",
+    "type": "paper",
+    "summary": "Reconstructs real-world video into interactive 3D environments for the browser.",
+    "detail": "Video and camera information pass through reconstruction, mesh extraction, appearance baking, and collision generation into a three.js game environment. The repository also documents UE import. This is an explicit environment reconstruction approach with remaining manual scene setup and physics integration. It should be distinguished from interactive video world models that predict the next frame.",
+    "url": "https://github.com/video2game/video2game",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2404.09833"
+      }
+    ],
+    "tags": [
+      "Video-to-3D",
+      "Reconstruction",
+      "Three.js",
+      "Collision"
+    ],
+    "stages": [
+      "assets",
+      "scene",
+      "world"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "blenderllm",
+    "name": "BlenderLLM / BlendNet / CADBench",
+    "category": "3d",
+    "type": "paper",
+    "summary": "Studies text-to-Blender scripting with a training dataset and modeling benchmark.",
+    "detail": "BlenderLLM generates bpy modeling scripts from user instructions. BlendNet provides about 12K paired samples, and CADBench includes synthetic and forum-sourced tasks. Evaluation focuses on basic CAD-style modeling and instruction following. The README identifies limitations in advanced materials, multimodal input, and multi-turn collaboration; this is not a game creation benchmark.",
+    "url": "https://github.com/FreedomIntelligence/BlenderLLM",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2412.14203"
+      },
+      {
+        "label": "BlendNet dataset",
+        "url": "https://huggingface.co/datasets/FreedomIntelligence/BlendNet"
+      },
+      {
+        "label": "CADBench",
+        "url": "https://huggingface.co/datasets/FreedomIntelligence/CADBench"
+      }
+    ],
+    "tags": [
+      "Text-to-bpy",
+      "CADBench",
+      "Dataset",
+      "Modeling benchmark"
+    ],
+    "stages": [
+      "assets",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "autoue",
+    "name": "AutoUE",
+    "category": "3d",
+    "type": "framework",
+    "summary": "Coordinates agents to build Unreal scenes, gameplay code, interactions, and playtests.",
+    "detail": "A research pipeline for turning a game description into Unreal Engine scenes and C++ gameplay. Its public implementation includes setup instructions, a demonstration video, and a linked dataset of generated games and assets. Reproduction requires Unreal integrations and external model services. The video demonstrates outputs; it is not a hosted playable game.",
+    "url": "https://github.com/Pluto156/AutoUE",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2603.07106"
+      },
+      {
+        "label": "Generated games and asset dataset",
+        "url": "https://huggingface.co/datasets/Pluto156/AutoUE_DataSet"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Setup and usage",
+        "url": "https://github.com/Pluto156/AutoUE#setup-and-usage",
+        "kind": "tutorial",
+        "note": "Author instructions for dependencies, service credentials, and running the Unreal generation pipeline."
+      },
+      "demo": {
+        "label": "Game-generation video",
+        "url": "https://github.com/Pluto156/AutoUE/blob/main/assets/show.mp4",
+        "kind": "video",
+        "note": "Recorded demonstrations of generated Unreal games; no public browser-playable build verified."
+      },
+      "source": {
+        "label": "Pipeline source",
+        "url": "https://github.com/Pluto156/AutoUE",
+        "kind": "pipeline-source",
+        "note": "Public framework implementation; engine setup, model services, and dataset assets remain separate requirements."
+      }
+    },
+    "tags": [
+      "Unreal Engine",
+      "Game generation",
+      "Multi-agent",
+      "Research prototype"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "assets",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unigen",
+    "name": "UniGen",
+    "category": "3d",
+    "type": "framework",
+    "summary": "Plans Unity prototypes, generates scripts, assembles scenes, and supports iterative debugging.",
+    "detail": "A multi-agent research workflow for Unity game creation from natural-language descriptions. The repository publishes its Python pipeline and model connector, with installation guidance and a recorded demonstration. Unity and a model-service account are required. Public pipeline code is available, but a hosted playable build and complete downloadable versions of the benchmark games were not verified.",
+    "url": "https://github.com/yxwan123/UniGen",
+    "links": [
+      {
+        "label": "Paper",
+        "url": "https://arxiv.org/abs/2509.26161"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Installation and usage",
+        "url": "https://github.com/yxwan123/UniGen#-installation",
+        "kind": "tutorial",
+        "note": "README covers prerequisites and the local Unity generation workflow; review paths and project setup before running."
+      },
+      "demo": {
+        "label": "Unity generation video",
+        "url": "https://www.youtube.com/watch?v=xyJjFfnxUx0",
+        "kind": "video",
+        "note": "Author-linked demonstration video, not a browser-playable game."
+      },
+      "source": {
+        "label": "Pipeline source",
+        "url": "https://github.com/yxwan123/UniGen",
+        "kind": "pipeline-source",
+        "note": "Published generator implementation and prompts; this is not a complete release of every benchmark game."
+      }
+    },
+    "tags": [
+      "Unity",
+      "Game generation",
+      "Scene assembly",
+      "Research prototype"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "scenario",
+    "name": "Scenario",
+    "category": "production",
+    "type": "tool",
+    "summary": "Builds consistent game art pipelines with custom style models and batch generation.",
+    "detail": "Train a custom style or character model, generate portraits, item icons, and textures in batches, then deliver assets through an editor or backend workflow. The official integration tutorial connects a job queue, generation API, and asset delivery. Scenario is a hosted commercial service; integration examples and SDK access do not include the platform's model source or a complete game project.",
+    "url": "https://www.scenario.com/",
+    "links": [
+      {
+        "label": "API documentation",
+        "url": "https://docs.scenario.com/"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Consistent game asset pipeline",
+        "url": "https://docs.scenario.com/get-started/documentation/integrating-with-applications-real-world-scenarios#1-game-asset-pipeline--batch-generation-with-style-consistency",
+        "kind": "tutorial",
+        "note": "Official walkthrough for custom style training, batch generation, and asset delivery."
+      },
+      "demo": {
+        "label": "Asset generation app",
+        "url": "https://app.scenario.com/",
+        "kind": "interactive",
+        "note": "Hosted creative tool requiring an account; this is an asset workspace, not a playable game."
+      },
+      "source": {
+        "label": "Unity integration source",
+        "url": "https://github.com/scenario-labs/Scenario-Unity",
+        "kind": "sdk",
+        "note": "Public Unity integration plugin; hosted model source and a complete game project are not included."
+      }
+    },
+    "tags": [
+      "Art direction",
+      "Style consistency",
+      "Character consistency",
+      "Batch assets",
+      "Commercial service"
+    ],
+    "stages": [
+      "assets",
+      "scene"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "meshy",
+    "name": "Meshy API",
+    "category": "production",
+    "type": "tool",
+    "summary": "Connects AI model generation, humanoid rigging, and animation export for game asset workflows.",
+    "detail": "The official animated-character recipe turns a reference image into a textured, rigged character with idle, jump, and attack clips in GLB and FBX. The animation step applies motions from Meshy's library. API rigging works best with standard textured bipeds with clearly separated limbs. Generated assets still need engine import, collision, controls, and performance checks; the public cookbook supplies asset examples rather than complete gameplay.",
+    "url": "https://docs.meshy.ai/en",
+    "links": [
+      {
+        "label": "Rigging requirements",
+        "url": "https://docs.meshy.ai/en/api/rigging"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Image to animated character",
+        "url": "https://www.meshy.ai/developers/cookbook/recipes/animate-3d-character/",
+        "kind": "tutorial",
+        "note": "Official guide with reference files, Python and TypeScript examples, and GLB/FBX outputs. API access uses credits."
+      },
+      "demo": {
+        "label": "3D asset workspace",
+        "url": "https://www.meshy.ai/workspace",
+        "kind": "interactive",
+        "note": "Hosted generation and animation workspace; account access is required to generate assets. This is not a playable game."
+      },
+      "source": {
+        "label": "Cookbook example source",
+        "url": "https://github.com/meshy-dev/meshy-cookbook",
+        "kind": "examples",
+        "note": "Public asset-generation recipes, not Meshy's model source or a complete game project."
+      }
+    },
+    "tags": [
+      "Image-to-3D",
+      "Rigging",
+      "Character animation",
+      "GLB",
+      "FBX",
+      "Commercial service"
+    ],
+    "stages": [
+      "assets",
+      "scene"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "hy-motion",
+    "name": "HY-Motion 1.0",
+    "category": "production",
+    "type": "tool",
+    "summary": "Generates skeletal humanoid motion from text with public inference code and model weights.",
+    "detail": "Tencent's text-to-motion models produce human character animation, with CLI inference, local Gradio visualization, and a hosted model demo. Use the generated motion as an animation-pipeline input and retarget it to the target character. The documented limitations include non-humanoid motion, multi-person interaction, seamless loops, and in-place animation. The release provides a motion implementation, not a controllable game character or full game project.",
+    "url": "https://github.com/Tencent-Hunyuan/HY-Motion-1.0",
+    "links": [
+      {
+        "label": "Official project",
+        "url": "https://hunyuan.tencent.com/motion"
+      },
+      {
+        "label": "Model weights",
+        "url": "https://huggingface.co/tencent/HY-Motion-1.0"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Installation and motion workflow",
+        "url": "https://github.com/Tencent-Hunyuan/HY-Motion-1.0/blob/master/README.md",
+        "kind": "tutorial",
+        "note": "Official setup, CLI inference, local UI, and prompting guidance. Local execution requires the documented GPU resources."
+      },
+      "demo": {
+        "label": "Interactive motion demo",
+        "url": "https://huggingface.co/spaces/tencent/HY-Motion-1.0",
+        "kind": "interactive",
+        "note": "Official text-to-motion model interface; a motion preview rather than playable gameplay. Hosted availability may vary."
+      },
+      "source": {
+        "label": "Motion implementation source",
+        "url": "https://github.com/Tencent-Hunyuan/HY-Motion-1.0",
+        "kind": "model",
+        "note": "Public inference and visualization implementation with separately linked weights; no complete game project."
+      }
+    },
+    "tags": [
+      "Text-to-motion",
+      "Skeletal animation",
+      "Humanoid",
+      "Model weights",
+      "Local inference"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "elevenlabs-sfx",
+    "name": "ElevenLabs Sound Effects",
+    "category": "production",
+    "type": "tool",
+    "summary": "Generates game sound effects, Foley, and looping ambience from text through a web app or API.",
+    "detail": "Describe footsteps, impacts, UI feedback, or environmental sounds, control duration, and export audio for a game engine. Effects can loop seamlessly; a single generation is limited to 30 seconds. MP3 is supported, with 48 kHz WAV for non-looping effects. This is a hosted audio service. The public SDK connects to its API and does not release the generation model or a complete game project.",
+    "url": "https://elevenlabs.io/docs/overview/capabilities/sound-effects",
+    "links": [
+      {
+        "label": "Product walkthrough",
+        "url": "https://elevenlabs.io/docs/eleven-creative/playground/sound-effects"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Sound Effects quickstart",
+        "url": "https://elevenlabs.io/docs/eleven-api/guides/cookbooks/sound-effects",
+        "kind": "tutorial",
+        "note": "Official API walkthrough with SDK examples; an account and API key are needed for generation."
+      },
+      "demo": {
+        "label": "Sound effects generator",
+        "url": "https://elevenlabs.io/sound-effects",
+        "kind": "interactive",
+        "note": "Official text-to-audio generator and sound examples; this is an audio tool, not a playable game."
+      },
+      "source": {
+        "label": "Official Python SDK",
+        "url": "https://github.com/elevenlabs/elevenlabs-python",
+        "kind": "sdk",
+        "note": "API client source only; generation model and complete game source are not included."
+      }
+    },
+    "tags": [
+      "Sound effects",
+      "Foley",
+      "Ambience",
+      "Audio loops",
+      "API",
+      "Commercial service"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "stable-audio-open",
+    "name": "Stable Audio Open 1.0",
+    "category": "production",
+    "type": "tool",
+    "summary": "Provides downloadable text-to-audio weights and local tools for sound effects and field recordings.",
+    "detail": "Generates up to 47 seconds of stereo audio at 44.1 kHz, with examples for local inference and WAV export. The official audio-tools repository includes a local Gradio interface. The model works best with English descriptions, is stronger at sound effects and field recordings than music, and cannot produce realistic vocals. Model download requires accepting its terms; this resource is an audio pipeline rather than a complete soundtrack or game generator.",
+    "url": "https://huggingface.co/stabilityai/stable-audio-open-1.0",
+    "links": [
+      {
+        "label": "Local demo setup",
+        "url": "https://github.com/Stability-AI/stable-audio-tools#interface"
+      },
+      {
+        "label": "Research paper",
+        "url": "https://arxiv.org/abs/2407.14358"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Local inference and WAV export",
+        "url": "https://huggingface.co/stabilityai/stable-audio-open-1.0#usage",
+        "kind": "tutorial",
+        "note": "Official model usage examples for stable-audio-tools and Diffusers."
+      },
+      "demo": {
+        "label": "Local audio demo setup",
+        "url": "https://github.com/Stability-AI/stable-audio-tools#interface",
+        "kind": "local-tool",
+        "note": "Download and run the official Gradio audio interface locally; this link is setup guidance, not a hosted playable game."
+      },
+      "source": {
+        "label": "Audio tools source",
+        "url": "https://github.com/Stability-AI/stable-audio-tools",
+        "kind": "model",
+        "note": "Public training and inference tools with separately downloadable model weights; no complete game project."
+      }
+    },
+    "tags": [
+      "Text-to-audio",
+      "Sound effects",
+      "Field recordings",
+      "Model weights",
+      "Local inference"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "regression-games",
+    "name": "Regression Games",
+    "category": "production",
+    "type": "tool",
+    "summary": "Provides a public Unity SDK for gameplay recording, input replay, and regression-test reference workflows.",
+    "detail": "The public Unity SDK combines gameplay recording, state inspection, input playback, bot logic, and validation workflows. Its official first-test tutorial and Boss Room UI-testing project remain available in GitHub repositories. Treat this as a reference integration: the old documentation domain was unreachable during review, and current hosted-service availability and maintenance were not confirmed. SDK source is public; check compatibility and service requirements before adopting it.",
+    "url": "https://github.com/Regression-Games/RGUnityBots",
+    "links": [
+      {
+        "label": "Unity SDK",
+        "url": "https://github.com/Regression-Games/RGUnityBots"
+      },
+      {
+        "label": "Boss Room UI-testing sample",
+        "url": "https://github.com/Regression-Games/UITest-BossRoom"
+      },
+      {
+        "label": "First-test tutorial repository fallback",
+        "url": "https://github.com/Regression-Games/RegressionDocs/blob/main/docs/getting-started/creating-your-first-automated-test.mdx"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Your first automated test",
+        "url": "https://github.com/Regression-Games/RegressionDocs/blob/main/docs/getting-started/creating-your-first-automated-test.mdx",
+        "kind": "tutorial",
+        "note": "Official first-test walkthrough preserved in the documentation repository. The former live documentation domain was unreachable during review."
+      },
+      "demo": {
+        "label": "Runnable Boss Room sample",
+        "url": "https://github.com/Regression-Games/UITest-BossRoom",
+        "kind": "examples",
+        "note": "A complete Unity sample project with UI tests; download and open locally rather than playing in a browser."
+      },
+      "source": {
+        "label": "Unity testing SDK source",
+        "url": "https://github.com/Regression-Games/RGUnityBots",
+        "kind": "sdk",
+        "note": "Public client SDK source; it does not contain the complete hosted dashboard backend."
+      }
+    },
+    "tags": [
+      "Unity",
+      "Automated playtesting",
+      "Input replay",
+      "Regression testing",
+      "Reference integration"
+    ],
+    "stages": [
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "modl-ai",
+    "name": "modl.ai",
+    "category": "production",
+    "type": "tool",
+    "summary": "Uses visual agents and natural-language tasks to test uploaded game builds.",
+    "detail": "The current commercial service observes screens and sends simulated inputs without requiring an engine SDK. Teams upload a build, describe test tasks, and review captured sessions and bug reports. Its stated coverage includes Android and desktop; timing-critical gameplay remains limited. The current product differs from older SDK-based documentation. Public self-service gameplay, complete product source, and an independent hands-on tutorial were not verified.",
+    "url": "https://modl.ai/",
+    "links": [
+      {
+        "label": "Request a product demonstration",
+        "url": "https://modl.ai/contact"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Workflow overview",
+        "url": "https://modl.ai/",
+        "kind": "service",
+        "note": "Official upload, task-definition, and reporting overview; detailed onboarding is provided through the service."
+      },
+      "demo": {
+        "label": "Book a product demo",
+        "url": "https://modl.ai/contact",
+        "kind": "service",
+        "note": "Commercial demonstration by arrangement; this is not a public playable game or instant sandbox."
+      },
+      "source": {
+        "label": "Full product source unavailable",
+        "kind": "unavailable",
+        "note": "No complete source release for the current hosted testing product was verified; older public samples are not its backend."
+      }
+    },
+    "tags": [
+      "Automated playtesting",
+      "Visual agents",
+      "Commercial service",
+      "Game QA"
+    ],
+    "stages": [
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "convai",
+    "name": "Convai",
+    "category": "production",
+    "type": "tool",
+    "summary": "Adds conversational NPCs with speech, memory, emotion, and in-scene actions.",
+    "detail": "Convai connects game characters to runtime conversation and behavior services through engine integrations. Its Unity guides cover installation, sample scenes, and character setup; public Unreal SDK source is also available. Browser experiences require an account. This provides AI behavior inside an existing game, rather than generating a complete game. Public SDKs do not include the full hosted AI service.",
+    "url": "https://convai.com/",
+    "links": [
+      {
+        "label": "Unity SDK documentation",
+        "url": "https://docs.convai.com/api-docs/plugins-and-integrations/convai-unity-sdk"
+      },
+      {
+        "label": "Unreal SDK source",
+        "url": "https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4"
+      },
+      {
+        "label": "Projects and experiences",
+        "url": "https://convai.com/gallery"
+      }
+    ],
+    "access": {
+      "tutorial": {
+        "label": "Build your first AI character",
+        "url": "https://docs.convai.com/api-docs/plugins-and-integrations/convai-unity-sdk/getting-started",
+        "kind": "tutorial",
+        "note": "Official Unity installation, service setup, sample-scene, and custom-character walkthrough."
+      },
+      "demo": {
+        "label": "Try character experiences",
+        "url": "https://x.convai.com/",
+        "kind": "interactive",
+        "note": "Account-required browser character experiences; these are conversations and role-play, not complete game-generation demos."
+      },
+      "source": {
+        "label": "Unreal engine SDK source",
+        "url": "https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4",
+        "kind": "sdk",
+        "note": "Public engine integration source; the complete cloud conversation service is not included."
+      }
+    },
+    "tags": [
+      "Runtime AI",
+      "NPC dialogue",
+      "Character actions",
+      "Unity / Unreal"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "runtime"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "solarrenderer",
+    "name": "SolarRenderer",
+    "category": "world",
+    "type": "paper",
+    "summary": "Turns engine- or agent-generated structure videos into styled final visuals.",
+    "detail": "Few-Step Generative Reference Rendering conditions MiniMax-H3 on semantic maps, grayboxes, skeletons, depth, and other structures, with an optional first frame and text. Control and four-step LoRAs generate video, with a block-causal streaming version also available. It handles visual presentation; upstream programs must maintain world state and gameplay rules. Four-step sampling alone does not establish real-time interaction on consumer hardware.",
+    "url": "https://enderfga.cn/SolarRenderer/",
+    "links": [
+      {
+        "label": "Code",
+        "url": "https://github.com/Enderfga/SolarRenderer"
+      },
+      {
+        "label": "Paper PDF",
+        "url": "https://enderfga.cn/data/solarrenderer.pdf"
+      },
+      {
+        "label": "Weights",
+        "url": "https://huggingface.co/Enderfga/SolarRenderer"
+      },
+      {
+        "label": "Data and evaluation",
+        "url": "https://huggingface.co/datasets/Enderfga/SolarRenderer-Data"
+      },
+      {
+        "label": "Usage guide",
+        "url": "https://github.com/Junchao-cs/SolarWM/blob/main/docs/solar_renderer.md"
+      }
+    ],
+    "tags": [
+      "hybrid-renderer",
+      "structure-conditioning",
+      "streaming",
+      "MiniMax-H3",
+      "LoRA",
+      "released-code"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "streamrender-h3",
+    "name": "StreamRender-H3",
+    "category": "world",
+    "type": "framework",
+    "summary": "A code engine maintains the world while streaming diffusion renders its semantic maps.",
+    "detail": "NVIDIA Sol-Engine's Interactive Coding Worlds system uses a three.js racing game as its example. The engine handles the map, physics, collision, and player input, while a two-step streaming MiniMax-H3 model generates appearance from semantic video, a first frame, and a prompt. Official performance results depend on eight GB200 GPUs. Rendering throughput and end-to-end input-to-display latency need separate evaluation.",
+    "url": "https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/",
+    "links": [
+      {
+        "label": "Sol-Engine",
+        "url": "https://nvlabs.github.io/Sana/Sol-Engine/"
+      },
+      {
+        "label": "Agent workflow",
+        "url": "https://nvlabs.github.io/Sana/Sol-Engine/docs/agent-workflow/"
+      }
+    ],
+    "tags": [
+      "hybrid-renderer",
+      "executable-state",
+      "streaming",
+      "three.js",
+      "MiniMax-H3",
+      "NVIDIA"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "code-world-model-brain",
+    "name": "Code World Model: Coding Agent as World Brain",
+    "category": "world",
+    "type": "paper",
+    "summary": "A coding agent writes executable rules and persistent state to drive a video world.",
+    "detail": "Separates world evolution from visual generation. An agent writes, calls, and modifies code to maintain state; a compiler converts that state into proxy video and prompts for a fine-tuned MiniMax-H3 renderer. The public repository includes inference code, LoRAs, and conditioning examples. The underlying game code used to generate proxies cannot be redistributed, so the complete agent-to-engine pipeline cannot be reproduced unchanged from public materials.",
+    "url": "https://arxiv.org/abs/2608.25927",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://buaacyw.github.io/cwm/"
+      },
+      {
+        "label": "Inference code",
+        "url": "https://github.com/buaacyw/code-world-model"
+      },
+      {
+        "label": "Reproduction scope",
+        "url": "https://github.com/buaacyw/code-world-model/blob/main/ENVIRONMENT.md"
+      }
+    ],
+    "tags": [
+      "code-world-model",
+      "coding-agent",
+      "executable-state",
+      "hybrid-renderer",
+      "MiniMax-H3",
+      "partial-release"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "programmable-world-model",
+    "name": "Programmable World Model",
+    "category": "world",
+    "type": "paper",
+    "summary": "Explicit global state and programmable rules preserve entities outside the camera view.",
+    "detail": "An agent converts instructions into entity states and state-transition programs. A lightweight engine maintains global state, then compiles stateful 3D oriented bounding boxes and camera trajectories into video model controls. The paper introduces CombatStateBench to check entity counts and irreversible states. The public repository currently centers on project documentation, which does not establish that complete inference code and weights are available.",
+    "url": "https://arxiv.org/abs/2609.10540",
+    "links": [
+      {
+        "label": "Project and release progress",
+        "url": "https://github.com/AlayaLab/pwm"
+      }
+    ],
+    "tags": [
+      "code-world-model",
+      "executable-state",
+      "hybrid-renderer",
+      "persistent-state",
+      "CombatStateBench"
+    ],
+    "stages": [
+      "code",
+      "test",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "coder-world-model",
+    "name": "CoDeR — Code Plans, Diffusion Renders",
+    "category": "world",
+    "type": "paper",
+    "summary": "Collaborating agents build executable worlds, with diffusion models rendering observations.",
+    "detail": "Code Plans, Diffusion Renders: Open-Ended Generative World Modeling uses five collaborating roles to turn concepts into rules, code, and observations, allowing entities to keep evolving outside the current view. The paper studies long-term memory, open-ended interaction, and multi-agent worlds. Its abstract says code and weights will be released; distinguish reported results from artifacts already available.",
+    "url": "https://arxiv.org/abs/2609.26458",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://becauseimbatman0.github.io/CoDeR"
+      }
+    ],
+    "tags": [
+      "code-world-model",
+      "multi-agent",
+      "hybrid-renderer",
+      "persistent-state",
+      "research"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "magpie-renderer",
+    "name": "Magpie: Real-Time World Renderer for Interactive Games",
+    "category": "world",
+    "type": "paper",
+    "summary": "A game engine runs gameplay while a separate Render Server generates final visuals.",
+    "detail": "Designers define scenes and rules in a conventional game engine. At runtime, the engine processes player actions and maintains state, while a rendering service transforms engine-produced whitebox frames into final visuals. It demonstrates a division between generative rendering and reproducible gameplay, primarily reducing prototype dependence on complete art assets.",
+    "url": "https://arxiv.org/abs/2608.27168",
+    "tags": [
+      "hybrid-renderer",
+      "executable-state",
+      "game-engine",
+      "render-server",
+      "research"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "solarwm",
+    "name": "SolarWM",
+    "category": "world",
+    "type": "paper",
+    "summary": "An interactive video world model framework for open data, training, and long-horizon inference.",
+    "detail": "Open Data and Scalable Training for Long-Horizon Video World Models unifies data, training, and inference interfaces for backbones including Wan, LTX, and MiniMax-H3. It uses bidirectional adaptation, teacher forcing, and distribution matching distillation to train camera-controlled streaming models. This provides world model infrastructure. Camera-controlled video continuation differs from a code world with queryable entity state.",
+    "url": "https://arxiv.org/abs/2609.02886",
+    "links": [
+      {
+        "label": "Code and documentation",
+        "url": "https://github.com/Junchao-cs/SolarWM"
+      },
+      {
+        "label": "Project",
+        "url": "https://junchao-cs.github.io/SolarWM-Web/"
+      }
+    ],
+    "tags": [
+      "interactive-video",
+      "training-framework",
+      "camera-control",
+      "streaming",
+      "released-code"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "worldcoder",
+    "name": "WorldCoder",
+    "category": "world",
+    "type": "paper",
+    "summary": "Induces Python world models from environment interactions, then plans within them.",
+    "detail": "WorldCoder, a Model-Based LLM Agent represents knowledge of a world as executable Python programs. Interaction records constrain those programs, and planning searches for potential rewards. This NeurIPS 2024 work is primarily evaluated on gridworlds and task planning. It supports study of rule discovery and model repair rather than complete visual game generation.",
+    "url": "https://arxiv.org/abs/2402.12275",
+    "tags": [
+      "code-world-model",
+      "program-synthesis",
+      "model-based-planning",
+      "gridworld",
+      "NeurIPS-2024"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gif-mcts-cwm",
+    "name": "GIF-MCTS / Code World Models Benchmark",
+    "category": "world",
+    "type": "paper",
+    "summary": "Synthesizes runnable environment models through generate, improve, and fix tree search.",
+    "detail": "Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search encodes transition, reward, and termination logic in Python. Trajectories and test feedback guide GIF-MCTS search. The paper also releases CWMB, covering 18 reinforcement learning environments, to evaluate model correctness and downstream planning. It is a foundational reading and evaluation reference for code world models.",
+    "url": "https://arxiv.org/abs/2405.15383",
+    "links": [
+      {
+        "label": "Code and CWMB",
+        "url": "https://github.com/nicoladainese96/code-world-models"
+      },
+      {
+        "label": "Project",
+        "url": "https://sites.google.com/view/code-world-models/home"
+      }
+    ],
+    "tags": [
+      "code-world-model",
+      "program-synthesis",
+      "MCTS",
+      "benchmark",
+      "CWMB",
+      "NeurIPS-2024"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "cwm-general-game-playing",
+    "name": "Code World Models for General Game Playing",
+    "category": "world",
+    "type": "paper",
+    "summary": "Compiles natural-language game rules into verifiable simulators for MCTS planning.",
+    "detail": "Generates Python state-transition, legal-action, and termination functions from rules and game trajectories, plus heuristic value and hidden-state inference functions for planning. The paper evaluates 10 fully or partially observable games, including board and card games. Avoiding illegal actions depends on the synthesized rules being correct, so model validation remains necessary.",
+    "url": "https://arxiv.org/abs/2510.04542",
+    "tags": [
+      "code-world-model",
+      "game-rules",
+      "MCTS",
+      "formal-simulator",
+      "imperfect-information"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "world"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "poe-world",
+    "name": "PoE-World",
+    "category": "world",
+    "type": "paper",
+    "summary": "Combines small programmatic experts to model stochastic world dynamics.",
+    "detail": "Compositional World Modeling with Products of Programmatic Experts combines LLM-synthesized programs in an exponentially weighted product of experts, learning complex stochastic world models from few observations. The paper connects these models to planners in Pong and Montezuma's Revenge to demonstrate sample efficiency and generalization to new levels. This is programmatic dynamics modeling rather than an art generation tool.",
+    "url": "https://arxiv.org/abs/2505.10819",
+    "links": [
+      {
+        "label": "Code",
+        "url": "https://github.com/topwasu/poe-world"
+      },
+      {
+        "label": "Project",
+        "url": "https://topwasu.github.io/poe-world"
+      }
+    ],
+    "tags": [
+      "code-world-model",
+      "program-synthesis",
+      "stochastic-dynamics",
+      "Atari",
+      "model-based-planning"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "world"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "factorsim",
+    "name": "FactorSim",
+    "category": "world",
+    "type": "paper",
+    "summary": "Generates complete simulation code from language using factorized state representations.",
+    "detail": "Generative Simulation via Factorized Representation uses a factorized POMDP representation to reduce the context needed for each generation step. It aims to generate complete game or robotics simulators for agent training. This NeurIPS 2024 work also provides a generative simulation benchmark and supports study of workflows from design specifications to modular rule code.",
+    "url": "https://arxiv.org/abs/2409.17652",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://cs.stanford.edu/~sunfanyun/factorsim/"
+      }
+    ],
+    "tags": [
+      "code-world-model",
+      "simulation-generation",
+      "POMDP",
+      "benchmark",
+      "NeurIPS-2024"
+    ],
+    "stages": [
+      "plan",
+      "code",
+      "test",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "genie",
+    "name": "Genie: Generative Interactive Environments",
+    "category": "world",
+    "type": "paper",
+    "summary": "Learns latent-action-controlled 2D worlds from videos without action labels.",
+    "detail": "Combines a spatiotemporal video tokenizer, autoregressive dynamics, and a latent action model into generative interactive environments. Users can begin with an image or sketch and explore frame by frame. The ICML 2024 contribution centers on learning control without ground-truth action labels. Dynamics remain implicit in the model, without editable or queryable game rule programs.",
+    "url": "https://arxiv.org/abs/2402.15391",
+    "tags": [
+      "interactive-video",
+      "latent-actions",
+      "neural-simulator",
+      "2D-platformer",
+      "ICML-2024"
+    ],
+    "stages": [
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "genie-3",
+    "name": "Genie 3 / Project Genie",
+    "category": "world",
+    "type": "tool",
+    "summary": "Generates interactive video worlds from prompts for real-time exploration.",
+    "detail": "Google DeepMind introduced Genie 3 in 2025, demonstrating interactive worlds at 720p and 24 FPS with consistency lasting several minutes, and providing an experience through Project Genie. It represents neural interactive worlds. The official presentation does not imply downloadable engine source, exportable level assets, or deterministic gameplay rules.",
+    "url": "https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/",
+    "tags": [
+      "interactive-video",
+      "neural-simulator",
+      "text-to-world",
+      "Google-DeepMind",
+      "hosted"
+    ],
+    "stages": [
+      "plan",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gamengen",
+    "name": "GameNGen — Diffusion Models Are Real-Time Game Engines",
+    "category": "world",
+    "type": "paper",
+    "summary": "Trains an interactive diffusion simulator from DOOM gameplay trajectories.",
+    "detail": "A reinforcement learning agent first collects game trajectories. A diffusion model then predicts the next frame from visual history and actions, using conditioning noise augmentation to reduce autoregressive error. The paper demonstrates real-time DOOM simulation on a single TPU. This game-specific neural simulation does not automatically provide maintainable general game rules or an asset pipeline.",
+    "url": "https://arxiv.org/abs/2408.14837",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://gamengen.github.io/"
+      }
+    ],
+    "tags": [
+      "neural-simulator",
+      "interactive-video",
+      "diffusion",
+      "DOOM",
+      "ICLR-2025"
+    ],
+    "stages": [
+      "test",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "diamond",
+    "name": "DIAMOND — Diffusion for World Modeling",
+    "category": "world",
+    "type": "paper",
+    "summary": "Trains reinforcement learning agents inside diffusion world models that preserve visual detail.",
+    "detail": "Visual Details Matter in Atari studies diffusion models as environment models in which agents learn from imagined trajectories, analyzing how visual detail affects policies. Alongside the Atari 100k evaluation, the paper trains a playable neural engine on prerecorded CS:GO gameplay. It is relevant to simulation, control, and accumulated prediction error.",
+    "url": "https://arxiv.org/abs/2405.12399",
+    "links": [
+      {
+        "label": "Code and playable models",
+        "url": "https://diamond-wm.github.io/"
+      }
+    ],
+    "tags": [
+      "neural-simulator",
+      "interactive-video",
+      "diffusion",
+      "Atari",
+      "reinforcement-learning",
+      "NeurIPS-2024"
+    ],
+    "stages": [
+      "test",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "gamefactory",
+    "name": "GameFactory",
+    "category": "world",
+    "type": "paper",
+    "summary": "Combines open-domain video generation with keyboard and mouse action control.",
+    "detail": "Creating New Games with Generative Interactive Videos provides the action-labeled GF-Minecraft dataset and control modules. Domain adapters separate game style from action learning, with autoregressive continuation supported. It generates action-controlled game video. Visual generalization should be evaluated separately from rule correctness, item persistence, and exportable game projects.",
+    "url": "https://arxiv.org/abs/2501.08325",
+    "links": [
+      {
+        "label": "Code",
+        "url": "https://github.com/KlingAIResearch/GameFactory"
+      }
+    ],
+    "tags": [
+      "interactive-video",
+      "neural-simulator",
+      "action-control",
+      "Minecraft",
+      "dataset",
+      "ICCV-2025"
+    ],
+    "stages": [
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "oasis",
+    "name": "Oasis: A Universe in a Transformer",
+    "category": "world",
+    "type": "framework",
+    "summary": "An open neural game example that generates frames autoregressively from keyboard input.",
+    "detail": "Oasis by Decart and Etched uses a Transformer autoencoder and latent diffusion to generate Minecraft-style interaction, with public inference code and weights for a 500M model. The authors identify limits in long-term memory, precise inventory control, domain generalization, and object consistency. It suits research prototypes and generative inference rather than deterministic gameplay logic.",
+    "url": "https://oasis-model.github.io/",
+    "links": [
+      {
+        "label": "Inference code",
+        "url": "https://github.com/etched-ai/open-oasis"
+      }
+    ],
+    "tags": [
+      "neural-simulator",
+      "interactive-video",
+      "transformer",
+      "Minecraft",
+      "released-code"
+    ],
+    "stages": [
+      "code",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "wonderworld",
+    "name": "WonderWorld",
+    "category": "world",
+    "type": "paper",
+    "summary": "Builds an explorable, expandable explicit 3D scene from a single image.",
+    "detail": "Interactive 3D Scene Generation from a Single Image uses Fast Layered Gaussian Surfels and guided depth diffusion to connect new scenes as the camera moves and prompts change. It provides explicit spatial representation and real-time rendering, primarily addressing geometry and appearance. Interactive gameplay, physics, and persistent dynamic state still require separate implementation.",
+    "url": "https://arxiv.org/abs/2406.09394",
+    "links": [
+      {
+        "label": "Project",
+        "url": "https://kovenyu.com/WonderWorld/"
+      }
+    ],
+    "tags": [
+      "scene-generation",
+      "explicit-3d",
+      "Gaussian-surfels",
+      "camera-control",
+      "CVPR-2025"
+    ],
+    "stages": [
+      "assets",
+      "scene",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2024,
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "marble",
+    "name": "World Labs Marble",
+    "category": "world",
+    "type": "tool",
+    "summary": "Generates persistent, navigable 3D scenes with splat and mesh exports.",
+    "detail": "Marble supports multimodal world creation, exports Gaussian splats, visual meshes, and collision meshes for approximate physics, and renders video along camera paths. Compared with pure video continuation, it produces spatial assets for downstream engines. Developers still need to build character behavior, quest logic, and game loops.",
+    "url": "https://www.worldlabs.ai/blog/marble-world-model",
+    "links": [
+      {
+        "label": "Product",
+        "url": "https://marble.worldlabs.ai/"
+      }
+    ],
+    "tags": [
+      "scene-generation",
+      "explicit-3d",
+      "Gaussian-splatting",
+      "mesh-export",
+      "hosted"
+    ],
+    "stages": [
+      "assets",
+      "scene",
+      "world"
+    ],
+    "dimensions": [
+      "3d",
+      "world"
+    ],
+    "year": 2025,
+    "verified": "2026-10-18"
+  }
+]
