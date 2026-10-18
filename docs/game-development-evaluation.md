@@ -64,7 +64,21 @@ Primary source: [paper v1, June 18, 2026](https://arxiv.org/html/2606.19830v1).
 
 ## Adjacent dataset worth retaining, not an agent leaderboard
 
-[OSSGameBench's author-hosted MSR paper](https://nimmiw.com/papers/MSR_2026_data_and_tool_track.pdf) and [January 24, 2026 Zenodo record](https://zenodo.org/records/18359123) describe linked issues, commits, pull requests and review discussions from 950 repositories, including games and development tools. Earlier records report 970; the paper explains deduplication reduces this to 950. This could seed defect-localization or repair research, but it does not itself establish executable agent tasks or tests. The current record lists analysis/scripts/README/appendix; full data retrieval and license inventory were not verified. Keep the record version rather than merging counts and files from different releases.
+[OSSGameBench's author-hosted MSR paper](https://nimmiw.com/papers/MSR_2026_data_and_tool_track.pdf) explicitly links [Zenodo record 18359123, version v3](https://zenodo.org/records/18359123). Its publication date is **January 23, 2026**; January 24 is the record's technical created/modified date. The paper reports 950 game/tool repositories after deduplicating 970 candidates. These are development-history records, not 950 executable repair tasks.
+
+### Exact release and inspected artifacts
+
+| Surface | Source-backed finding | Boundary |
+| --- | --- | --- |
+| v3 inventory | Four files: analysis.zip, Scripts.zip, README.md and online-appendix.pdf, totaling about 1 MB | The inspected archive inventories contain collection/analysis code and supporting material. Full per-repository mined data retrieval was not established. A separate historical [v2 record](https://zenodo.org/records/17553539) lists a 65.8 GB OSSGameBench.zip; it was not downloaded or inspected. |
+| Record rights | Zenodo metadata declares CC-BY-4.0 | This record-level license does not independently inventory or clear every upstream repository, asset, issue or discussion. |
+| Collection scripts | The README describes retrieval/linking/cleanup. filter_script.py itself filters totalIssues > 10; do not infer that this file also performs every topic-selection step described in the paper | Prior inputs and pipeline order matter. No collector was run. |
+| Link cleanup | pr_cross_repo_fix.py rebuilds issue/PR links from formal same-repository closing references | Earlier regex-only links can be removed on that path. This static observation does not measure errors or omissions in a released dataset. |
+| Pagination | Ordinary issue/PR requests paginate, but inspected nested label/review-thread/review-comment requests use first-10 / first-20 / first-20 limits; PR-commit retrieval does not follow Link pagination | Those source paths require completeness checks before being used to establish complete repair histories. |
+
+The inspected [Scripts.zip](https://zenodo.org/records/18359123/files/Scripts.zip?download=1) matches the record's MD5 `b416d06113d02a7abdccb636508c0c9d`; [analysis.zip](https://zenodo.org/records/18359123/files/analysis.zip?download=1) matches `8c6155a7603b391ded1991caf69ed6b6`. Relevant members are get_issues_pr_data.py, get_pr_commit_links.py, get_remaining_comments.py and pr_cross_repo_fix.py. These checksums identify inspected bytes; they do not validate execution, data completeness or rights. The [appendix](https://zenodo.org/records/18359123/files/online-appendix.pdf?download=1) describes a richer storage schema than the paper's simplified entity diagram. No supplied executable game-repair evaluator, project-held-out split or contamination-control protocol was established in the inspected materials.
+
+**GameMap editorial adaptation:** Before deriving agent tasks, obtain and validate exact data versions, record upstream rights and verify issue/PR/commit linkage. Separate repository families and time periods; withhold target fixes and post-resolution discussion from agent context. Add a reproducible failing fixture, repair acceptance checks and regression tests. None of those proposed gates was implemented or evaluated here.
 
 See the [reproducibility matrix and concrete client/checker review](benchmark-reproducibility.md) for subsequent availability, memory-isolation and task-verdict findings.
 

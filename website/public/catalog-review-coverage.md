@@ -246,3 +246,9 @@ Across two disjoint 22-case passes, all 44 creator-case entries received a bound
 | `tron-exonix-claude` | Attribution/source description retained | [Source](https://github.com/witnesstodark/tron-exonix/blob/e60a7570e63476294163e7729be69f1e2460670c/README.md) |
 | `turbo-kart-rally-claude` | Attribution/source description retained | [Source](https://github.com/bridge-mind/turbo-kart-rally/blob/c52aca3f10c7995884c316810cac6514daa40e9c/README.md) |
 | `vibe-jet-gemini` | Startup refined | [Source](https://github.com/cedrickchee/vibe-jet/blob/ba08f6e0533f757de4a5d0f8b019d15343edde8d/README.md) |
+
+## Focused OSSGameBench release review (2026-10-18)
+
+This follow-up resolves the author-linked release identity left open by BC24. The [evaluation dossier](game-development-evaluation.md#adjacent-dataset-worth-retaining-not-an-agent-leaderboard) now distinguishes Zenodo v3 publication from technical metadata dates, records the four-file inventory and verified archive checksums, and qualifies record-level CC-BY-4.0 rights. Historical v2 separately lists a large dataset archive that was not downloaded.
+
+The paper, release metadata and small collection/analysis artifacts were inspected. Static source review identified nested pagination caps and a link-cleanup path that can discard earlier regex-only links; no completeness defect in the published corpus was measured. Full corpus retrieval, upstream rights inventory, executable repair evaluator, held-out splits and contamination controls remain unverified. Proposed adaptation gates are editorial recommendations, with no benchmark or collector execution. This is a targeted release review, not a fresh audit of every benchmark claim.
