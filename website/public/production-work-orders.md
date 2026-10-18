@@ -44,7 +44,7 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 
 ## 3. Export textures without losing channels or color meaning
 
-**Related contracts:** [Material, color and texture contracts](asset-validation-contracts.md#3-keep-material-graphs-color-processing-and-texture-compression-separate).
+**Related contracts:** [Material, color and texture contracts](asset-validation-contracts.md#3-keep-material-graphs-color-processing-and-texture-compression-separate); [KTX policy, packing and target checks](asset-validation-contracts.md#ktx-validation-policy-normal-map-packing-and-transcode-targets).
 
 **Outcome:** downstream textures preserve required channels/subimages and explicitly declared color interpretation.
 

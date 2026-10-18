@@ -77,6 +77,47 @@ Finally render a controlled fixture in the actual consumer, preserving camera, l
 
 For raw image evidence, retain the [render-pass and matte contracts](visual-evidence-research.md#render-pass-and-matte-artifacts) as well as the beauty preview.
 
+### KTX validation policy, normal-map packing and transcode targets
+
+Sources checked 2026-10-18; full reproduction not performed. This adds command and payload boundaries to the generic texture manifests above and the [texture-export work order](production-work-orders.md#3-export-textures-without-losing-channels-or-color-meaning).
+
+#### Pin before adopting commands
+
+KTX-Software's latest-release URL resolved to **v4.4.2**, while its live generated tool reference identified itself as **5.0.0**. The contracts below are pinned to v4.4.2 source at commit `4d6fc70eaf62ad0558e63e8d97eb9766118327a6` (annotated tag object `936b655d10fe75f900967f524ba31005bebcbb47`). Do not infer that the release supports the live documentation's newer HDR encoders/targets.
+
+Sources: [release](https://github.com/KhronosGroup/KTX-Software/releases/tag/v4.4.2), [live transcode reference](https://github.khronos.org/KTX-Software/ktxtools/ktx_transcode.html).
+
+#### Validation success needs a named policy
+
+For a glTF pipeline, the proposed check is `ktx validate --gltf-basisu --warnings-as-errors --format json asset.ktx2`. This is a documented command proposal, not an executed result. `--gltf-basisu` enables the extension-specific checks; ordinary KTX validation is not the same policy. Warnings are not errors unless requested. When validation reaches report generation, stdout includes `valid` and a `messages` array, with issue IDs, types, messages and details. Preserve stdout and stderr separately, together with version and exit status. Argument, input-opening and early fatal errors need not produce JSON; missing or malformed JSON is a tool/report failure, not an automatic asset verdict.
+
+The documented exit categories are 0 success, 1 argument failure, 2 I/O failure, 3 invalid input, 4 runtime/library failure, 5 unsupported operation/state, and 6 unimplemented feature. Validation failure throws the invalid-input category. **GameMap editorial guidance:** distinguish asset rejection from infrastructure/tool failures instead of labeling every nonzero exit “bad texture.”
+
+Pinned sources: [validator](https://github.com/KhronosGroup/KTX-Software/blob/4d6fc70eaf62ad0558e63e8d97eb9766118327a6/tools/ktx/command_validate.cpp), [exit codes and report formats](https://github.com/KhronosGroup/KTX-Software/blob/4d6fc70eaf62ad0558e63e8d97eb9766118327a6/tools/ktx/command.h).
+
+#### Normal-mode changes the shader contract
+
+`--normal-mode` accepts linear textures with at least two components. Three/four-channel input is treated as XYZ unit normals; the fourth channel is discarded, and XY is repacked as RGB=X, A=Y. The documented reconstruction samples GA and rebuilds positive Z. This is a channel-layout transformation, not just a quality preset. **GameMap editorial guidance:** reject the preset unless the consuming shader explicitly implements that layout; retain a material-slot/encoding/channel-layout record.
+
+`--normalize` on a two-component input normalizes a 2D vector; its documentation explicitly warns against using that result to generate XY normals with `--normal-mode`. Separately, assignment of a transfer function and conversion of pixel values are different operations. Prefer explicit intent and `--fail-on-color-conversions` when unexpected conversion must fail the build.
+
+Pinned sources: [normal-mode contract](https://github.com/KhronosGroup/KTX-Software/blob/4d6fc70eaf62ad0558e63e8d97eb9766118327a6/tools/ktx/encode_utils_common.h), [normalization and transfer-function options](https://github.com/KhronosGroup/KTX-Software/blob/4d6fc70eaf62ad0558e63e8d97eb9766118327a6/tools/ktx/command_create.cpp).
+
+#### Transcodable container is a separate gate
+
+The pinned transcode command requires BasisLZ or a UASTC DFD color model. It explicitly rejects an input that does not need transcoding as invalid input. Merely having a valid `.ktx2` container is insufficient. Without an explicit target, the command chooses uncompressed r8/rg8/rgb8/rgba8 based on channel count. **GameMap editorial guidance:** record the requested target and inspect output format; successful conversion alone does not prove the intended compressed GPU representation was produced.
+
+Pinned source: [transcode implementation and help](https://github.com/KhronosGroup/KTX-Software/blob/4d6fc70eaf62ad0558e63e8d97eb9766118327a6/tools/ktx/command_transcode.cpp). Its embedded raw-only wording conflicts with the implementation's KTX2 writer; do not repeat that wording as an established restriction without a focused upstream clarification/test.
+
+#### glTF usage and payload requirements
+
+The official extension adds concrete gates: identity/absent swizzle, `rd`/absent orientation, 2D material images, base dimensions divisible by four, and usage-specific DFD metadata. Non-color data requires unspecified primaries plus linear transfer; color data requires BT.709 primaries plus sRGB. Premultiplied-alpha flag is forbidden unless the material specification requires it. Full mips are SHOULD, not MUST, for mipmapped or unspecified samplers. For non-color UASTC without ASTC/BC7, the specification recommends uncompressed RGBA to avoid artifacts.
+
+Source: [KHR_texture_basisu](https://github.com/KhronosGroup/glTF/blob/521a91d491f02bb7db7d445b35f591d09d2a64ce/extensions/2.0/Khronos/KHR_texture_basisu/README.md). Source revision: 521a91d491f02bb7db7d445b35f591d09d2a64ce. The extension classifies standard normal maps as RGB textures; GameMap editorial guidance is therefore not to apply a generic XY-in-GA preset to a standard glTF normal slot without an explicit compatible shader/encoding contract. No reviewed source established an alpha-coverage-preserving mip guarantee; do not equate a full pyramid or successful validation with preserved cutout coverage.
+
+
+**Proposed evidence and recovery:** retain source texture/material role, all invocation arguments, tool pin, validation policy/report/exit status, input/output hashes, channel mapping, transfer metadata, dimensions/mip inventory and requested/actual transcode target. Quarantine incomplete candidates and retain the original. Unimplemented negative fixtures include an invalid glTF swizzle/orientation, non-transcodable valid KTX2, a two-component normalization mismatch, an early I/O failure without JSON, and a successful default transcode whose uncompressed output violates the project budget. Target GPU support, alpha-cutout coverage, codec quality and material appearance still require consumer-side tests. Neither these commands nor those fixtures were executed. Exact dependency/input-asset licensing and conversion atomicity are not established by this source review.
+
 ## 4. Optimize, retopologize, unwrap and regenerate tangents without losing correspondence
 
 **Documented operations and fields.** [meshoptimizer](https://github.com/zeux/meshoptimizer) provides GPU-oriented optimization, simplification and compression, with gltfpack and a JavaScript subset. [Draco](https://github.com/google/draco) compresses meshes/point clouds and provides JavaScript/WebAssembly decoders; its documentation recommends version-specific decoder URLs. These operations do not themselves establish a target importer's extension/decoder compatibility.
