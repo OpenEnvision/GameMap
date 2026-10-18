@@ -7,6 +7,7 @@ import {categories,loadCatalog,validate,renderAwesome} from './catalog.mjs';
 import {loadLearningContent,renderLearningGuide} from './learning.mjs';
 import {loadAgentCodeContent,validateAgentCodeContent,renderAgentCodeGuide} from './agent-code.mjs';
 import {loadTestingContent,validateTestingContent,renderTestingGuide,testingManifest} from './testing.mjs';
+import {loadRepositoryResearch,validateRepositoryResearch,renderRepositoryResearch} from './repository-research.mjs';
 // Source checks work on a clean clone; --built additionally verifies local build output.
 const checkBuilt=process.argv.includes('--built');
 const records=validate(await loadCatalog());
@@ -315,3 +316,17 @@ await Promise.all(englishFiles.map(async path=>{
 }));
 for(const path of ['website/app/root.tsx',...(checkBuilt?['dist/index.html']:[])])assert.match(await readFile(new URL('../'+path,import.meta.url),'utf8'),/<html lang="en"[\s>]/,`Set the document language to English: ${path}`);
 console.log(`English-only checks passed: ${englishFiles.length} ${checkBuilt?'source, rendered-site, and download':'source and download'} files.`);
+
+const repositoryResearch=await loadRepositoryResearch();
+const repositoryDocument=renderRepositoryResearch(repositoryResearch);
+assert.equal(await readFile(new URL('../docs/cadle-repositories.md',import.meta.url),'utf8'),repositoryDocument,'Regenerate repository research');
+for(const prefix of ['website/public',...(checkBuilt?['dist']:[])]){
+ assert.equal(await readFile(new URL('../'+prefix+'/cadle-repositories.json',import.meta.url),'utf8'),JSON.stringify(repositoryResearch,null,2)+'\n','Stale repository research download');
+ assert.equal(await readFile(new URL('../'+prefix+'/cadle-repositories.md',import.meta.url),'utf8'),repositoryDocument.replaceAll('](../website/public/','](./'),'Stale repository research document');
+}
+console.log(`Repository import checks passed: ${repositoryResearch.source.indexed_count} indexed candidates plus one reference; complete inventory and generated evidence ledger.`);
+
+for(const mutate of [data=>data.records.pop(),data=>delete data.group_titles.core,data=>data.records[0].limitations=null,data=>data.records[0].source_urls=['javascript:alert(1)']]){
+ const invalid=structuredClone(repositoryResearch);mutate(invalid);
+ assert.throws(()=>validateRepositoryResearch(invalid),'Invalid research inventory must fail validation');
+}

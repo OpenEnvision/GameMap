@@ -2,6 +2,8 @@
 
 Reviewed on **2026-10-18**. These are representative starting points, not an exhaustive catalog or a ranking of the strongest tools. `verified` means a primary project page or paper was reviewed; it does not mean the project was run or reproduced locally. The 24 entries in `data/segments/game-ai.json` have 12 primary 2D classifications and 12 primary 3D classifications. Two additional MCP bridges appear in the agents segment. Cross-dimensional projects retain their `dimensions` values.
 
+See the [Cadle-like repository import](cadle-repositories.md) for the complete requested 212-candidate corpus plus its reference, including existing coverage, renamed projects, restricted licenses and unavailable sources. These research rows are separate from the resource-card and featured-game counts above.
+
 ## Categories and evidence
 
 - **Development agents / frameworks** take requirements or a project and produce code, scenes, rules, or assets. Playable prototypes, local project changes, and complete games are different outcomes.
