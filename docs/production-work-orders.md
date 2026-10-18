@@ -124,7 +124,7 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 
 ## 8. Build a release-bound content update and reconstruct its patch
 
-**Related contracts:** [Shipped-build inspection and comparison](production-debugging-contracts.md#build-artifacts-streaming-budgets-and-delayed-timing).
+**Related contracts:** [Shipped-build inspection and comparison](production-debugging-contracts.md#build-artifacts-streaming-budgets-and-delayed-timing); [allocation lifetime and retained-resource evidence](production-debugging-contracts.md#memory-lifetime-across-repeated-production-cycles) separates runtime ownership from built size and reference-count summaries.
 
 **Outcome:** a candidate update corresponds to the intended released baseline and reconstructs independently verified artifacts.
 

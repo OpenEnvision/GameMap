@@ -11,6 +11,7 @@ Checked **2026-10-18**. Sources inspected; no profiler, engine, GPU capture, phy
 | GPU removal | DRED breadcrumbs and allocation candidates | Exact failing instruction and safe device recovery |
 | Contact or rollback failure | CVD recorded solver stages; Jolt contact/state APIs | Whole-game reset, animation semantics and cross-engine equivalence |
 | Unexpected build size or blurred streamed assets | UnityDataTool content analysis; Addressables reports; UE streaming counters | Runtime memory, project quality targets and complete-world readiness |
+| Memory grows across repeated edit/playtest cycles | [Allocation windows, snapshots and retained references](#memory-lifetime-across-repeated-production-cycles) | Intended cache lifetime, complete native/GPU ownership and an actual leak verdict |
 
 ## Capture, shader and GPU diagnosis
 
@@ -243,6 +244,62 @@ The [Unity 6000.0 FrameTimingManager manual](https://docs.unity.com/en-us/engine
 [GetLatestTimings, Unity 6000.0](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/FrameTimingManager.GetLatestTimings.html) returns the number actually obtained, at most the request; element zero is the latest completed sample, with older samples afterward. Array capacity is the caller's responsibility.
 
 **Proposed gate:** record capture request, actual returned count, sample timestamps, graphics API/device and instrumentation configuration. Do not align a delayed sample with the current screenshot solely by array position, or interpret unavailable data as zero cost. Performance acceptance needs a specified target workload, comparable capture overhead and repeated observations. No frame collector or benchmark was executed here.
+
+## Memory lifetime across repeated production cycles
+
+Sources checked **2026-10-18; full reproduction not performed**. This section adds allocation and retention evidence to the existing capture, timing and streaming-budget contracts. It does not establish an automated leak detector, memory budget or executed adapter.
+
+### Source and version scope
+
+The inspected Epic pages are labeled **Unreal Engine 5.8**. Unity's scripting/manual pages are scoped to **6000.0**; Memory Profiler `@1.1` resolves to **1.1.11**, and Addressables `@1.21` to **1.21.21**. These are documentation versions, not installed binaries or immutable implementation pins. Keep the actual engine, package, target, scripting backend, build configuration and profiling settings with each experiment.
+
+### Unreal: query an allocation's lifetime, not just total growth
+
+**Documented inputs and output.** [Memory Insights](https://dev.epicgames.com/documentation/en-us/unreal-engine/memory-insights-in-unreal-engine) requires memory tracing from process startup; enabling it only through late connection cannot recover the allocation history. Its example uses `-trace=default,memory`; packaged projects must be Development builds. Optional `metadata,assetmetadata` channels support asset/class filtering. The resulting `.utrace` opens in Insights, where allocation queries take a rule and timeline markers. Results include sizes, tags and allocation/free callstacks; readable symbols require the matching `.pdb` or `.elf`.
+
+The **Memory Leaks** rule selects allocations created between A and B and not freed until after C. **Growth** selects allocations created during A–B and surviving B; **Limited Lifetime** finds allocations created during A–B and freed during B–C. Query execution can take substantial time; the allocation table populates after completion. Detailed allocation tracks and LLM summaries have different temporal granularity and startup coverage. [Memory Insights query and recording reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/memory-insights-in-unreal-engine)
+
+**Interpretation:** the rule name is not a project-specific fault verdict. A retained cache can satisfy the same predicate as an accidentally retained object. The application must establish when that allocation should have become unnecessary.
+
+**Recording boundary.** The [Insights reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-insights-reference-in-unreal-engine-5) distinguishes `Memory` (allocation events, callstacks and tags) from `Memory_Light` (without callstacks). It documents file/trace-store destinations, `Trace.Stop`, and the required channels; a disabled channel produces no corresponding events. [Trace status](https://dev.epicgames.com/documentation/en-us/unreal-engine/trace-in-unreal-engine-5#trace-status) reports connection, tracing memory, sent bytes and channel state. The tracing system itself consumes resources. Neither source establishes a crash-durable flush receipt or a universal overhead allowance. Preserve the destination, settings and terminal observation; independently reopen the file and check interval coverage before treating an empty query as evidence.
+
+### Unity: capture target, completion and artifact are separate
+
+[TakeSnapshot, Unity 6000.0](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Unity.Profiling.Memory.MemoryProfiler.TakeSnapshot.html) accepts a path, finish callback, capture flags and optional screenshot callback. The signature/example use `(path, success)`; the parameter prose reverses these arguments. A disconnected Player writes locally. A connected Player streams to the Editor and reports **false locally even when the Editor saved the snapshot**. Editor calls capture the selected connected Player or the Editor itself. Caller-side failure therefore cannot alone classify receiving-side delivery.
+
+Serialize captures until the finish callback. Screenshot completion is separate and only available in Players/Play mode; waiting outside these conditions can hang. The snapshot process blocks execution on the captured host. Unsupported native-callstack flags are ignored. The sample checks a temporary file before renaming it; this is no crash-durability guarantee. No bounded timeout or cancellation contract is documented here.
+
+**Proposed evidence:** retain connection direction, target, requested fields, callback outcomes and received artifact. Verify the receiver rather than converting every false callback into a failed production candidate.
+
+### Snapshot and reference evidence has limits
+
+A snapshot records one capture point, not continuous monitoring. [Snapshot concepts](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/snapshots-concepts.html) describe `.snap` storage and metadata; snapshots can be large. The [capture guide](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/snapshot-capture.html) warns that Editor memory cannot isolate Play mode and recommends checking optimization results in a Player build.
+
+[Comparison](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/snapshots-comparison.html) shows absolute values and differences; unchanged rows are hidden by default. Cross-session conditions can change totals independently of the application change. A positive delta requires diagnosis, not immediate attribution to the edited feature.
+
+The [References panel](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/references-component.html) distinguishes the expandable **Referenced By** chain toward roots from **References To**, which lists direct outgoing references only. A selected object's name still appears when no references are displayed. Treat this as the captured reference surface, not proof that every possible native/GPU owner was collected.
+
+Record observer settings too: the [window reference](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/memory-profiler-window-reference.html) exposes capture flags, screenshots, closing open captures and running garbage collection before Editor captures. Changing these between candidates changes the observation procedure.
+
+### Addressables: relinquishing ownership is not immediate reclamation
+
+[Addressables memory management](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/MemoryManagement.html) requires matched loads/releases. Both assets and bundles have reference counts. Releasing an asset to zero does not necessarily unload it while other assets retain its bundle. The Addressables profiler reflects those counts, not an exact inventory of resident memory; `Resources.UnloadUnusedAssets` can unload eligible objects without updating that reference-count view, and may introduce hitches.
+
+Conversely, immediately reloading a just-unloaded shared dependency causes **asset churn**. Lower retained bytes at one boundary can therefore trade against repeated loading work. Preserve asset/handle identity, bundle dependencies, intended cache lifetime and actual release operations alongside memory evidence. Do not force unloading merely to obtain a smaller score.
+
+Unity's [disabled-domain-reload guidance](https://docs.unity3d.com/6000.0/Documentation/Manual/domain-reloading.html) adds a separate confound: static fields, static-event subscribers and nonserialized values can survive Play sessions, while script-change refreshes can still trigger reload. Reentering Play mode is not an equivalent cold reset.
+
+### Proposed fixed-cycle fixture, unimplemented and unexecuted
+
+**GameMap editorial guidance.** Use one disposable project and a declared cycle: load a fixed asset set, instantiate a scene, run a fixed interaction/capture sequence, destroy cycle-owned objects, release owned handles, then return to a named idle boundary. Freeze cycle count, content, warm-up, cache policy, reset method, observation settings and allowed residual resources before comparing candidates.
+
+1. Record a fresh-process baseline and separate warmed baseline. Mark A before acquisition, B after work, and C after the application's declared release boundary; do not replace lifecycle completion with an arbitrary sleep.
+2. Capture equivalent Unity snapshots or retain the complete UE trace interval. Inspect growth by object/category and retention chain or allocation callstack. Keep shared bundles and intended caches explicit.
+3. Include a deliberately retained fixture object and a correctly released control. Check whether the chosen observation surface distinguishes them; no automatic fault verdict is assumed.
+4. Repeat unchanged cycles without resetting away the suspected accumulation. Separately rerun from a fresh process to distinguish session persistence from reproducible per-cycle retention.
+5. Preserve files, hashes, callback outcomes, query parameters, identities and exclusions. Report incomplete capture, missing fields, timeout and unresolved ownership as inconclusive. Measure normal gameplay timing separately from snapshot-induced pauses.
+
+Cross-platform coverage, native/GPU accounting completeness, safe interrupted-capture recovery and actual retention thresholds remain unverified. A useful result is a reproducible lifetime violation with an identified owner or allocation origin; neither reduced bytes nor successful snapshot creation establishes that result.
 
 ## Remaining practical boundary
 
