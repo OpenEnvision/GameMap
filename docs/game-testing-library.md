@@ -1224,24 +1224,26 @@ Research data and baselines for motion in-betweening, trajectory continuity and 
 - **License group:** Research / custom data terms
 - **Code:** Not a software project (motion dataset); bundled baseline code needs a separate reuse check
 - **Assets / data:** CC BY-NC-ND 4.0 for the motion dataset
-- **AI use:** The data is limited by non-commercial and no-derivatives terms. Do not treat a public research repository as permission to publish retargeted data or use it in a commercial AI test service.
+- **AI use:** The license permits non-commercial adaptations but not sharing Adapted Material; necessary technical format changes are treated separately. Retain attribution and review any retargeted-data release; commercial AI test-service use is not covered.
 - **Practical limits:** Not a generally redistributable commercial animation pack. No dataset download, baseline run or local import was performed.
 - **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
-- Compare transition endpoint error and temporal continuity with the supplied baseline.
+- Compare global quaternion loss (L2Q), normalized global position loss (L2P) and NPSS with the supplied baselines.
 - Check contacts and root trajectories across in-betweened segments.
 
 **Get started**
 
 1. Review the data license against the intended research and distribution.
-2. Fetch the required LFS files and preserve the documented train/test division.
+2. Fetch the required LFS files; preserve 30 fps and the subjects 1-4 training / subject 5 test split.
 
 **Primary evidence**
 
-- [Dataset terms and evaluation instructions](https://github.com/ubisoft/ubisoft-laforge-animation-dataset)
-- [Dataset license text](https://github.com/ubisoft/ubisoft-laforge-animation-dataset/blob/master/license.txt)
+- [Dataset terms and evaluation instructions](https://github.com/ubisoft/ubisoft-laforge-animation-dataset/blob/94084601bacdf9cc3764b5c73daaeccae6035fac/README.md)
+- [Dataset license text](https://github.com/ubisoft/ubisoft-laforge-animation-dataset/blob/94084601bacdf9cc3764b5c73daaeccae6035fac/license.txt)
+- [Performer split and evaluation setup](https://github.com/ubisoft/ubisoft-laforge-animation-dataset/blob/94084601bacdf9cc3764b5c73daaeccae6035fac/evaluate.py)
+- [Transition metrics implementation](https://github.com/ubisoft/ubisoft-laforge-animation-dataset/blob/94084601bacdf9cc3764b5c73daaeccae6035fac/lafan1/benchmarks.py)
 
 ### AMASS
 
@@ -1325,8 +1327,8 @@ A research representation for shape/pose conversion and human-to-game-skeleton p
 
 - **License group:** Research / custom data terms
 - **Code:** Not a software project (model data); supplied tools use the separate SMPL-Model agreement
-- **Assets / data:** Custom SMPL-Model non-commercial terms; commercial licensing is separate
-- **AI use:** Use only within the model agreement or a separately obtained license. The CC BY status of a fixed body subset does not authorize general model/tool use or AMASS data.
+- **Assets / data:** Custom SMPL-Model terms for specified non-commercial uses; no redistribution; commercial licensing is separate
+- **AI use:** The model agreement limits use to non-commercial scientific research, education or artistic projects, bars redistribution and training for commercial use, and is separate from the CC BY body subset and AMASS data terms.
 - **Practical limits:** Not an unrestricted open-source game rig. No model download, tool execution or local import was performed.
 - **Sources reviewed:** 2026-10-18
 
@@ -1337,7 +1339,7 @@ A research representation for shape/pose conversion and human-to-game-skeleton p
 
 **Get started**
 
-1. Review the model/tool agreement and confirm the intended use.
+1. Register for download access, review the model/tool agreement and confirm the intended use.
 2. Version the authorized model files and transformation code without publishing restricted inputs.
 
 **Primary evidence**

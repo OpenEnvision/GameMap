@@ -52,7 +52,7 @@ export const geminiCliCases: LearningPath[] = [
     aiUse: 'The creator explicitly credits Gemini CLI with scaffolding, game logic, debugging, and improvements in the README and game footer. No original conversation or exact model identifier is published; this is a documented assisted build.',
     steps: [
       'Open the author-hosted browser game on a desktop with a keyboard. Press Space once to start, then press Space again to jump over an approaching cactus.',
-      'Watch the score rise, test a collision, and use the restart icon after game over. The live build was smoke-tested for start, jumping, scoring, collision, and restart; the preview was captured during a real jump.',
+      'Watch the score rise, test a collision, and use the restart icon after game over. Earlier catalog notes report a start/jump/score/collision/restart smoke test and a preview captured during a jump. That run was not repeated or independently validated in this source-only review.',
       'To run locally, download the complete dinosaur-game-offline repository and open index.html. Keep style.css, script.js, and public/ beside it. No npm installation, build step, Gemini CLI, or API key is needed to play.',
       'If a browser restricts local files, serve the repository with python3 -m http.server 8080 and open http://localhost:8080. The game board is fixed at 900 pixels wide and targets desktop keyboard play. Its optional Google Fonts stylesheet uses the network.',
       'Read the creator’s disclosure, then inspect script.js for the requestAnimationFrame loop, jump state, obstacle spawning, scoring, collision checks, and restart behavior.',
@@ -66,7 +66,7 @@ export const geminiCliCases: LearningPath[] = [
       label: 'Play Dinosaur Game Offline',
       url: 'https://tonidevvn.github.io/dinosaur-game-offline/',
       kind: 'playable',
-      note: 'Author-hosted browser build, checked in Chromium. Space starts and jumps; after a collision, click the restart icon. Desktop keyboard recommended because the board has a fixed 900-pixel width. The full project can also run locally by opening index.html.',
+      note: 'Author-hosted browser build; earlier catalog notes report a Chromium check, not independently revalidated here. Space starts and jumps; after a collision, click the restart icon. Desktop keyboard recommended because the board has a fixed 900-pixel width. The full project can also run locally by opening index.html.',
     },
     source: {
       label: 'Open the complete dinosaur game source',

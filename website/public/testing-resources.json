@@ -1615,21 +1615,29 @@
       "evidence": [
         {
           "label": "Dataset terms and evaluation instructions",
-          "url": "https://github.com/ubisoft/ubisoft-laforge-animation-dataset"
+          "url": "https://github.com/ubisoft/ubisoft-laforge-animation-dataset/blob/94084601bacdf9cc3764b5c73daaeccae6035fac/README.md"
         },
         {
           "label": "Dataset license text",
-          "url": "https://github.com/ubisoft/ubisoft-laforge-animation-dataset/blob/master/license.txt"
+          "url": "https://github.com/ubisoft/ubisoft-laforge-animation-dataset/blob/94084601bacdf9cc3764b5c73daaeccae6035fac/license.txt"
+        },
+        {
+          "label": "Performer split and evaluation setup",
+          "url": "https://github.com/ubisoft/ubisoft-laforge-animation-dataset/blob/94084601bacdf9cc3764b5c73daaeccae6035fac/evaluate.py"
+        },
+        {
+          "label": "Transition metrics implementation",
+          "url": "https://github.com/ubisoft/ubisoft-laforge-animation-dataset/blob/94084601bacdf9cc3764b5c73daaeccae6035fac/lafan1/benchmarks.py"
         }
       ],
-      "aiUseNote": "The data is limited by non-commercial and no-derivatives terms. Do not treat a public research repository as permission to publish retargeted data or use it in a commercial AI test service.",
+      "aiUseNote": "The license permits non-commercial adaptations but not sharing Adapted Material; necessary technical format changes are treated separately. Retain attribution and review any retargeted-data release; commercial AI test-service use is not covered.",
       "testTasks": [
-        "Compare transition endpoint error and temporal continuity with the supplied baseline.",
+        "Compare global quaternion loss (L2Q), normalized global position loss (L2P) and NPSS with the supplied baselines.",
         "Check contacts and root trajectories across in-betweened segments."
       ],
       "setup": [
         "Review the data license against the intended research and distribution.",
-        "Fetch the required LFS files and preserve the documented train/test division."
+        "Fetch the required LFS files; preserve 30 fps and the subjects 1-4 training / subject 5 test split."
       ],
       "limitations": "Not a generally redistributable commercial animation pack. No dataset download, baseline run or local import was performed.",
       "reviewed": "2026-10-18"
@@ -1742,7 +1750,7 @@
         "note": "Model/tool access and commercial permissions are separate from the CC BY SMPL-Body subset."
       },
       "codeLicense": "Not a software project (model data); supplied tools use the separate SMPL-Model agreement",
-      "assetLicense": "Custom SMPL-Model non-commercial terms; commercial licensing is separate",
+      "assetLicense": "Custom SMPL-Model terms for specified non-commercial uses; no redistribution; commercial licensing is separate",
       "terms": "research",
       "licenseUrl": "https://smpl.is.tue.mpg.de/modellicense.html",
       "evidence": [
@@ -1755,13 +1763,13 @@
           "url": "https://smpl.is.tue.mpg.de/bodylicense.html"
         }
       ],
-      "aiUseNote": "Use only within the model agreement or a separately obtained license. The CC BY status of a fixed body subset does not authorize general model/tool use or AMASS data.",
+      "aiUseNote": "The model agreement limits use to non-commercial scientific research, education or artistic projects, bars redistribution and training for commercial use, and is separate from the CC BY body subset and AMASS data terms.",
       "testTasks": [
         "Compare permitted pose and shape parameter conversion to game joints.",
         "Check topology and skinning consistency under permitted shape changes."
       ],
       "setup": [
-        "Review the model/tool agreement and confirm the intended use.",
+        "Register for download access, review the model/tool agreement and confirm the intended use.",
         "Version the authorized model files and transformation code without publishing restricted inputs."
       ],
       "limitations": "Not an unrestricted open-source game rig. No model download, tool execution or local import was performed.",

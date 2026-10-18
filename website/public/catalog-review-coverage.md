@@ -189,3 +189,60 @@ Twenty game-project/environment entries received bounded source checks; thirteen
 | `unreal-lyra` | Retained | Official documentation acquisition route and compatible-engine requirement; Fab listing Free, UE-Only and Allows usage with AI: No; Existing card appropriately avoids interpreting the AI field as universal prohibition on coding assistance |
 
 The thirty agent-interface resources received primary-source spot checks; ten had deeper execution/permission/verification boundary checks and refinements, while twenty had limited source checks only. The [interface evidence note](agent-interface-evidence.md) maps those ten changes to exact source revisions. No entry received comprehensive claim-by-claim recertification or runtime validation. Static parser/authentication/path observations remain revision-specific source analysis.
+
+## Remaining motion and creator-case follow-through
+
+A follow-through checked the five motion entries outside the earlier four-entry pass. Kenney Animated Characters, Quaternius Universal Animation Library and the explicitly dated Mixamo terms retained their scoped descriptions. LaFAN1 now identifies its supplied transition metrics, 30 fps and performer-held-out split, and distinguishes noncommercial adaptation from sharing adapted data. SMPL-Model now identifies specified permitted purposes, redistribution/commercial-training restrictions and registration. These changes were independently source-reviewed; no motion files were retrieved or retargeted. The earlier CMU source-refresh blocker remains unresolved, and original-data rights do not automatically cover an associated mesh or tool.
+
+The creator-case review separates client/model attribution, source availability and startup instructions from hosted runtime verification. Vibe Jet's local recipe now includes both its static-file server and WebSocket process; a client connection to localhost does not establish a loopback-only server binding. Evidence: [setup README](https://github.com/cedrickchee/vibe-jet/blob/ba08f6e0533f757de4a5d0f8b019d15343edde8d/README.md), [package scripts](https://github.com/cedrickchee/vibe-jet/blob/ba08f6e0533f757de4a5d0f8b019d15343edde8d/package.json), [server](https://github.com/cedrickchee/vibe-jet/blob/ba08f6e0533f757de4a5d0f8b019d15343edde8d/server.js), and [browser client](https://github.com/cedrickchee/vibe-jet/blob/ba08f6e0533f757de4a5d0f8b019d15343edde8d/game.html). Current hosted availability was not established by that source check.
+
+Dinosaur Game Offline retains an explicitly attributed historical catalog report of Chromium smoke testing and jump capture. The [inherited card](https://github.com/OpenEnvision/GameMap/blob/617556b5e193cecbd144bb2f702dc10c82fe8e9e/website/src/data/geminiCliCases.ts) contains that report; the underlying run record was unavailable to this review. Source inspection supports controls and creator attribution, not independent validation of the earlier playtest. No new browser gameplay test was performed.
+
+Across two disjoint 22-case passes, all 44 creator-case entries received a bounded attribution/source/startup review. Existing client-versus-model mappings were retained. Vibe Jet's startup recipe changed, and Dinosaur's historical run report was qualified. This does not verify authorship, autonomous generation, every source file, current hosted playability, or actual gameplay. Four OpenGame cases were checked through gallery evidence and Git LFS archive metadata; their archive contents were not downloaded or inspected. Two hosted text reads (Ombres and FragArena) were inconclusive, with no inferred outage.
+
+| Creator-case ID | Review outcome | Primary evidence sampled |
+| --- | --- | --- |
+| `agent-arcade-copilot` | Attribution/source description retained | [Source](https://github.com/DanWahlin/agent-arcade/blob/99b7466f0d911652aff24843641cfb59e67be38b/README.md) |
+| `bash-fighter-agent` | Attribution/source description retained | [Source](https://github.com/Bash-Entertainment/bash-fighter/blob/ad414e2548ef1255c6fd303965ecfc7dfea5f422/README.md) |
+| `beach-kitty-ai-campaign` | Attribution/source description retained | [Source](https://github.com/matthewod11-stack/CatRunner/blob/1a76234d8ebb4acec2ff2fb954c01ff04f56ed1b/README.md) |
+| `claude-agent-team-tetris` | Attribution/source description retained | [Source](https://github.com/caiguanhao/tetris/blob/b8c0f68017c0d08702027839b42bdafebdb79e93/README.md) |
+| `claude-mini-snake` | Attribution/source description retained | [Source](https://github.com/BizShibe/claude-ai-mini-snake-game/blob/b7859f51c909f1862aa9299451477060ec20a526/README.md) |
+| `claude-tower-defense` | Attribution/source description retained | [Source](https://github.com/mdkess/claude-game/blob/8b02fe3de81755536d8cb7376fc47db093a8ae00/README.md) |
+| `cloud-crush-gemini-cli` | Attribution/source description retained | [Source](https://github.com/GoogleCloudPlatform/devrel-demos/blob/fc49cc3531ec79fb142b6300b0a45fe3693556f9/codelabs/gemini-cli/gemini-cli-match3-golang/README.md) |
+| `cursor-destruction-derby` | Attribution/source description retained | [Source](https://github.com/littleearth/vibe-coded-games/blob/093a84e31a20a55fa896f177eb7dfe1e68ad8a74/README.md) |
+| `cursor-procedural-platformer` | Attribution/source description retained | [Source](https://github.com/commjoen/generated-game-experiment/blob/0f5a0cdaa0742ecdfeb12f1572676d1e82042688/README.md) |
+| `cursor-space-shooter` | Attribution/source description retained | [Source](https://github.com/littleearth/vibe-coded-games/blob/093a84e31a20a55fa896f177eb7dfe1e68ad8a74/README.md) |
+| `deepseek-mini-ksp` | Attribution/source description retained | [Source](https://github.com/BairlyEmei/mini-ksp/blob/de38be79fe88a72e87c4f170bdae76147923c9f0/README.md) |
+| `deepseek-neon-snake` | Attribution/source description retained | [Source](https://github.com/TwitchCaptain/snake/blob/3c7f8e947412598c67d6a0b61ed1a5cc7ed32935/README.md) |
+| `dinosaur-offline-gemini-cli` | Historical test provenance qualified | [Source](https://github.com/tonidevvn/dinosaur-game-offline/blob/e0f3f584751bb80425bd49513fa7b54503f13d62/README.md) |
+| `dragons-reach-claude` | Attribution/source description retained | [Source](https://github.com/jaydemks/ImADragon_onepromptcode_game/blob/e898e72ae95c31391cbe7c046fa5d6f04ba3e438/README.md) |
+| `dunkirk-ai-assisted` | Attribution/source description retained | [Source](https://github.com/Ponloe/dunkirk-godot/blob/fa0858d1647b0a15f6d84d8d6b3b93262e3fb07c/README.md) |
+| `flux-codex-runner` | Attribution/source description retained | [Source](https://github.com/scriptedbyshivam/codex-hackathon-2026/blob/a0df87d73e2a77d9a4c3b88d52e22229a6dc6256/README.md) |
+| `fragarena-copilot` | Attribution/source description retained | [Source](https://github.com/jonnyleigh/fragarena/blob/6487c94ab558fe78ccb7db997004ff7cba00646e/README.md) |
+| `garden-match-agents` | Attribution/source description retained | [Source](https://github.com/kevinchenkai/GameAI/blob/8bb87ee5c2698922f79f9b277d97b1392f38d0e2/README.md) |
+| `gemini-kymograph` | Attribution/source description retained | [Source](https://github.com/JoeySalmons/vibe-coded-games/blob/e62764a6bef23095984f866a15ed646682d6c912/README.md) |
+| `gemini-pirate-fleet` | Attribution/source description retained | [Source](https://github.com/JoeySalmons/vibe-coded-games/blob/e62764a6bef23095984f866a15ed646682d6c912/README.md) |
+| `gemini-pumpkin-hunt` | Attribution/source description retained | [Source](https://github.com/JoeySalmons/vibe-coded-games/blob/e62764a6bef23095984f866a15ed646682d6c912/README.md) |
+| `gothicvania-codex` | Attribution/source description retained | [Source](https://github.com/acatovic/gothicvania-codex-demo/blob/0d53658306f9565bdea20173fd4387e48ca6066c/README.md) |
+| `gravity-birds-grok-cursor` | Attribution/source description retained | [Source](https://github.com/az9713/grokbot-game-dev-demo/blob/c19786fc5a43303ed5183a8563f518ccdfcaa0c0/README.md) |
+| `long-wind-claude` | Attribution/source description retained | [Source](https://github.com/jbang2004/long-wind/blob/1e9c4265ad2a7d06a174c8ac5f3ab64bc18252f3/README.md) |
+| `michi-neko-ai` | Attribution/source description retained | [Source](https://github.com/c1t1zen1/Michi-Neko-The-Cat-Philosophers-Path/blob/4a592079967c711ef2233b0b5fc2f43155922588/README.md) |
+| `moonlight-mayhem-codex` | Attribution/source description retained | [Source](https://github.com/simonw/raccoon-heist-codex/blob/8969afe2141522079792effc0c018d154319ceef/README.md) |
+| `nova-lancer-claude` | Attribution/source description retained | [Source](https://github.com/tanuu5/nova-lancer/blob/dd5d3842609af266c1d3b6179ff03d09d0a66036/README.md) |
+| `ombres-claude` | Attribution/source description retained | [Source](https://github.com/briossant/ombres/blob/403840d83740eee4e264e7a1cc04390b8d346787/README.md) |
+| `opengame-arithmancy-card-battle` | Attribution/source description retained | [Source](https://github.com/leigest519/OpenGame/blob/c9bea37786af524bf3bbe802f2b67d23816fa5c0/README.md) |
+| `opengame-mandalorian-shooter` | Attribution/source description retained | [Source](https://github.com/leigest519/OpenGame/blob/c9bea37786af524bf3bbe802f2b67d23816fa5c0/README.md) |
+| `opengame-marvel-platformer` | Attribution/source description retained | [Source](https://github.com/leigest519/OpenGame/blob/c9bea37786af524bf3bbe802f2b67d23816fa5c0/README.md) |
+| `opengame-tower-defense` | Attribution/source description retained | [Source](https://github.com/leigest519/OpenGame/blob/c9bea37786af524bf3bbe802f2b67d23816fa5c0/README.md) |
+| `operation-naptime-claude` | Attribution/source description retained | [Source](https://github.com/alandaitch/operacion-siesta/blob/8157953526d0ff5a3d7c5b0a543f4c64dbb4c6bf/README.md) |
+| `orb-shooter-ai` | Attribution/source description retained | [Source](https://github.com/theredstapler/orb-shooter/blob/29683f88ebdf304c159683be250be91b47911682/README.md) |
+| `pixel-princess-claude` | Attribution/source description retained | [Source](https://github.com/VTvito/pixel-princess-platformer/blob/ba20bc410b446c970df3c8fc10ad9fc31a425e28/README.md) |
+| `quasar-saz-claude` | Attribution/source description retained | [Source](https://github.com/cleak/quasar-saz/blob/e56e93ea8c72cbe2ff9f1e754eb68f6829e6ae43/README.md) |
+| `raccoon-heist-claude` | Attribution/source description retained | [Source](https://github.com/simonw/raccoon-heist/blob/7f12841301bfb140d9c6b21c0a69fccb94b512bc/README.md) |
+| `running-man-claude-pixellab` | Attribution/source description retained | [Source](https://github.com/balbonits/ai-browser-game-demos/blob/a535c09029986ff62cc68a44fe35dbc29d022b79/README.md) |
+| `slide-rush-opus` | Attribution/source description retained | [Source](https://github.com/KJLKurt/waterslide-game-opus-5.5/blob/03bc5993750ba870f12de3c6086e15877b62de09/README.md) |
+| `the-tithe-claude` | Attribution/source description retained | [Source](https://github.com/miguelsolorio/the-tithe/blob/da42501c6188fd897567b82d28695eb8d947c03c/README.md) |
+| `tower-of-time-ai-build` | Attribution/source description retained | [Source](https://github.com/maciej-trebacz/tower-of-time-game/blob/a2497fb8aaf497c25a9caa306ed7ac7129d2400b/README.md) |
+| `tron-exonix-claude` | Attribution/source description retained | [Source](https://github.com/witnesstodark/tron-exonix/blob/e60a7570e63476294163e7729be69f1e2460670c/README.md) |
+| `turbo-kart-rally-claude` | Attribution/source description retained | [Source](https://github.com/bridge-mind/turbo-kart-rally/blob/c52aca3f10c7995884c316810cac6514daa40e9c/README.md) |
+| `vibe-jet-gemini` | Startup refined | [Source](https://github.com/cedrickchee/vibe-jet/blob/ba08f6e0533f757de4a5d0f8b019d15343edde8d/README.md) |
