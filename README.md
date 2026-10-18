@@ -1144,8 +1144,10 @@ Use the development URL printed by Vite. The root `index.html` is a preview you 
 
 Homepage video previews and posters are bundled locally. Full films, external project pages, and web fonts require an internet connection. No API key is required. Saved resources stay in the current browser and can be exported as Markdown. The website uses React, TypeScript, and Vite, with native SVG and CSS graphics.
 
-## Deploy to GitHub Pages
+## Website builds and publishing
 
-The repository includes `.github/workflows/deploy-pages.yml`. In your GitHub repository, go to **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. A push to `main` installs dependencies, builds the site, checks the catalog, and publishes `dist/`. You can also run the workflow manually from the Actions tab.
+Resource edits are regenerated into the website catalog. Research dossiers are copied to `website/public/` and the built `dist/` directory; the website's Field Notes and resource-library footer link to the research index. These links open Markdown documents, not an inline article reader.
 
-Relative asset and document URLs support repository paths such as `https://<username>.github.io/<repository>/`. The workflow publishes `dist/`; the root `index.html` is for direct preview. Rebuild after editing the source. See the [official GitHub Pages workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+The repository currently includes a pull-request validation workflow, `.github/workflows/catalog.yml`, which checks generated outputs, validates the catalog and builds the site. It does not deploy a website. There is no `deploy-pages.yml` workflow in this snapshot. A merged PR or successful build does not update the separately hosted site by itself.
+
+Relative asset and document URLs support repository subpaths. The `dist/` directory is the deployable output; the root `index.html` is for direct preview. Publishing requires a separately configured, authorized hosting workflow. For a future GitHub Pages setup, see the [official workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
