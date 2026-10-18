@@ -31,7 +31,7 @@ For a concrete task, start with the [production-stage routes](production-coverag
 - [Benchmark reproducibility](benchmark-reproducibility.md): public release and isolation matrix, source-inspected OpenGameEval lifecycle/verdicts, and proposed fair piRSI comparisons, including whole-tournament replication, paired uncertainty, protected final evaluation and source-pinned GEPA budget/cache/resume boundaries
 
 - [Gameplay state and durable effects](gameplay-state-contracts.md): narrative checkpoints, asynchronous commands, database transactions, source-pinned Yarn cancellation and variable restoration, native replay reconstruction, physics-state restoration and reward reconciliation
-- [Game-development evaluation](game-development-evaluation.md): five additional creation/repair studies with scoring, artifact availability and reproducibility limits
+- [Game-development evaluation](game-development-evaluation.md): seven additional creation/repair/QA studies, including GameASG-Bench’s declared testing interface and GBQA’s release/protocol distinctions, with scoring, artifact availability and reproducibility limits
 
 - [Native operation details](native-operation-details.md): 36 operation rows covering engine authoring, DCC batch work and audio middleware lifecycle, plus FMOD callback/state/virtualization acceptance boundaries
 - [Generation delivery contracts](generation-delivery-contracts.md): task reconciliation, artifact expiry, transformations and asset acquisition
