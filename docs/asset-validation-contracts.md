@@ -113,7 +113,7 @@ These source-scoped facts extend the seven groups above. Proposed gates are **Ga
 | Review multimedia redistribution separately from render success | [FFmpeg legal](https://ffmpeg.org/legal.html) describes LGPL 2.1-or-later baseline and optional GPL parts causing GPL to apply to FFmpeg. [FMOD licensing](https://www.fmod.com/licensing) grants game-distribution permission per project and requires commercial project registration; its free indie tier is conditional. | Preserve FFmpeg build configuration/dependency notices and the project's FMOD entitlement before packaging. Neither an executable's name nor successful bank creation establishes redistribution rights. Do not describe LGPL as applying to every FFmpeg binary or free FMOD authoring as universal distribution permission. Account terms, bundled dependencies and actual eligibility require project review. |
 
 
-[PhysX](https://github.com/NVIDIA-Omniverse/PhysX) and [Yarn Spinner](https://docs.yarnspinner.dev/) remain discovery pointers requiring narrower interface research. PhysX directs readers to respective subfolder licenses; Yarn lists engine integration routes without establishing equal capabilities or lifecycle guarantees across them.
+[PhysX](https://github.com/NVIDIA-Omniverse/PhysX) remains a discovery pointer requiring narrower interface research and directs readers to respective subfolder licenses. The broad [Yarn Spinner](https://docs.yarnspinner.dev/) integration directory does not establish cross-engine parity; use the narrower [checked narrative save/stop/project-swap contracts](gameplay-state-contracts.md#narrative-checkpoints-cancellation-and-world-effect-transactions) for documented lifecycle limits.
 
 ## What this migration adds
 

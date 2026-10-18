@@ -12,6 +12,8 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 
 ## 1. Export an authored asset, import it and audit dependencies
 
+**Related contracts:** [Portable-asset validation](asset-validation-contracts.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity) and [composition validation](asset-validation-contracts.md#2-preserve-usd-composition-and-resolve-managed-assets-deliberately); [native import/save boundaries](native-operation-details.md#unreal-authoring-import-and-persistence).
+
 **Outcome:** a named asset survives transfer and fresh reopen with the intended scale, orientation, references and target identity.
 
 **Documented surfaces.** [Maya 2026 file operations](https://help.autodesk.com/cloudhelp/2026/ENU/Maya-Tech-Docs/CommandsPython/file.html) expose scene open/save, references and import/export. [Standalone initialization](https://help.autodesk.com/cloudhelp/2022/CHS/Maya-SDK/Maya-Python-API/PythonOutsideMayaSession.html) is session-sensitive; the 2022 guide is not an installed-version assertion. [Unity GetDependencies](https://docs.unity3d.com/ScriptReference/AssetDatabase.GetDependencies.html), checked as Unity 6000.6, returns asset references; recursive results include the roots, and referenced assets are not necessarily required in a build. [Unreal AssetRegistry 5.6](https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/AssetRegistry?application_version=5.6) dependency queries cover on-disk references. Waiting before full engine initialization can leave unloaded-plugin assets ungathered; `is_loading_assets` describes initial searching, not every gathering operation.
@@ -25,6 +27,8 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 **Unimplemented fixture:** move one referenced texture, leave one scene edit unsaved, interrupt import, and compare the original and fresh-process manifests. The project-specific importer completion observer and save/reopen driver still need implementation.
 
 ## 2. Transfer a rig and test animation behavior
+
+**Related contracts:** [Animation sampling and compression](asset-validation-contracts.md#animation-sampling-and-compression), including joint identity, partial output and final decoded motion.
 
 **Outcome:** a skinned character preserves its rest pose and intended motion, including root transforms and contacts.
 
@@ -40,6 +44,8 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 
 ## 3. Export textures without losing channels or color meaning
 
+**Related contracts:** [Material, color and texture contracts](asset-validation-contracts.md#3-keep-material-graphs-color-processing-and-texture-compression-separate).
+
 **Outcome:** downstream textures preserve required channels/subimages and explicitly declared color interpretation.
 
 **Documented surfaces.** [Substance Painter remote control](https://experienceleague.adobe.com/en/docs/substance-3d-dev/painter-python/tutorials/remote-control) drives a running authoring application; it does not establish a headless bake/export acceptance contract. The [OpenImageIO oiiotool manual](https://openimageio.readthedocs.io/en/latest/oiiotool.html), displayed as 3.3.0 when checked, documents `--info`, `--colorconvert`, `--diff` and `--absdiff`. Most commands normally operate on the first subimage and discard others; `-a` and subimage selection modifiers control broader processing. Named color transforms depend on the selected configuration. This is a rolling manual, not a pinned binary.
@@ -53,6 +59,8 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 **Unimplemented fixture:** a multipart image containing color and normal data, a known ramp, an alpha edge and a deliberately omitted subimage. Require independent file inventory and target-material observation, not just the authoring preview.
 
 ## 4. Measure loudness, peaks, silence and loop boundaries
+
+**Related contracts:** [Audio middleware readiness and ownership](native-operation-details.md#audio-middleware-authoring-readiness-and-ownership); event completion is separate from artifact measurement.
 
 **Outcome:** a complete audio artifact has reproducible measurements and a separately reviewed loop seam.
 
@@ -68,6 +76,8 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 
 ## 5. Verify audio/video timing and spatial playback
 
+**Related contracts:** [Native audio scheduling and ownership](native-operation-details.md#audio-middleware-authoring-readiness-and-ownership).
+
 **Outcome:** observed sound onset and visual events align within declared tolerances, with the intended listener and routing.
 
 **Documented surfaces.** [ffprobe](https://ffmpeg.org/ffprobe.html) exposes stream, packet and frame sections. Interval seeking is inexact; relative duration is measured from the actual seek point. FFmpeg [ashowinfo](https://ffmpeg.org/ffmpeg-filters.html) reports audio PTS in input-timebase units, seconds, sample rate and sample count, while `asetrate` changes speed/pitch without changing PCM. [Unity 6000.0 PlayScheduled](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/AudioSource.PlayScheduled.html) uses the absolute DSP timeline; past times start as soon as possible, with different late-time behavior for AudioRandomContainer. [dspTime](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/AudioSettings-dspTime.html) is sample-based; its example discusses pause/suspension. [AudioListener](https://docs.unity3d.com/6000.0/Documentation/Manual/class-AudioListener.html) specifies one listener per scene; [spatialBlend](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/AudioSource-spatialBlend.html) ranges from 2D to 3D and applies 3D processing after stereo panning.
@@ -81,6 +91,8 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 **Unimplemented fixture:** late schedule, pause/resume, long-run drift, channel swap and additive-scene listener replacement. Requires a clock-alignment collector and manual perceptual review. Do not silently retime audio to hide a failing observation.
 
 ## 6. Compile localization, shape text and inspect accessible UI
+
+**Related contracts:** [Font artifact validation](asset-validation-contracts.md#6-validate-the-font-artifact-before-testing-localized-screens) and [native GUI evidence limits](engine-operation-contracts.md#native-gui-automation-is-a-separate-evidence-surface).
 
 **Outcome:** reviewed translations compile and display with the intended glyphs, layout and accessible interaction.
 
@@ -96,6 +108,8 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 
 ## 7. Exercise multiplayer transport under impairment
 
+**Related contracts:** [Protocol-scoped input/impairment](asset-validation-contracts.md#7-select-the-right-impairment-and-input-surface-for-a-regression) and [server state/transaction boundaries](gameplay-state-contracts.md#server-owned-gameplay-state-and-transaction-boundaries).
+
 **Outcome:** a bounded multiplayer scenario retains authoritative gameplay invariants under declared latency, loss and reconnect conditions.
 
 **Documented surfaces.** [GameNetworkingSockets](https://github.com/ValveSoftware/GameNetworkingSockets) supplies reliable/unreliable messages, latency/loss simulation and statistics; it does not supply entity serialization or delta encoding. Own signaling and service-specific access may be required. The rolling [native interface header](https://github.com/ValveSoftware/GameNetworkingSockets/blob/master/include/steam/isteamnetworkingsockets.h) documents send failures including invalid state, closed connection and queue limits. `RunCallbacks` dispatches queued callbacks when not using Steam's dispatch mechanism. Callback user data reflects when the callback was queued. Closing with linger attempts to flush remaining data; without linger, reliable data is not flushed. Closing a listen socket closes accepted connections ungracefully. These are source contracts, not a tested library revision or durable-delivery guarantee.
@@ -110,6 +124,8 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 
 ## 8. Build a release-bound content update and reconstruct its patch
 
+**Related contracts:** [Shipped-build inspection and comparison](production-debugging-contracts.md#build-artifacts-streaming-budgets-and-delayed-timing).
+
 **Outcome:** a candidate update corresponds to the intended released baseline and reconstructs independently verified artifacts.
 
 **Documented surfaces.** [Addressables 1.21 BuildContentUpdate](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/api/UnityEditor.AddressableAssets.Build.ContentUpdateScript.BuildContentUpdate.html) uses the specified content-state cache version and returns a build result. Its [update settings](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/content-update-build-settings.html) can fall back from unavailable remote state to an existing local cached file; change group Update Restriction during full builds. [Modified-entry gathering](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/api/UnityEditor.AddressableAssets.Build.ContentUpdateScript.html) targets static Addressable dependencies. [butler offline patching](https://itch.io/docs/butler/offline.html) requires staging, resumes an interrupted identical apply command, and otherwise applies in place unless another output directory is selected. Signature checking is optional; in-place unchanged files are not all checked. Independent `verify` detects hash mismatches; healing requires a pristine source.
@@ -123,6 +139,8 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 **Unimplemented fixture:** unavailable remote state with stale local cache; interrupted patch; corrupted unchanged baseline file; wrong-platform content. Requires isolated installer and runtime content-load checks. A complete build still needs platform certification and distribution approval.
 
 ## 9. Compile shader permutations and qualify first-use behavior
+
+**Related contracts:** [Capture and shader diagnostic completion](production-debugging-contracts.md#capture-shader-and-gpu-diagnosis).
 
 **Outcome:** required shader artifacts compile for declared targets and first-use behavior is measured independently of compiler success.
 
