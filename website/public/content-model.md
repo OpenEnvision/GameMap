@@ -34,7 +34,9 @@ Curated excerpts and source-recording records stay distinct even when they refer
 
 Every Markdown file under `docs/` and at the repository root—including the hand-maintained README, full catalog, and contribution guide—is discovered automatically. Configured groups provide labels and order; unconfigured documents appear under More notes. Missing configured sources and duplicate slugs are errors.
 
-The same registry feeds navigation, canonical links, static routes, the complete content index, and global search. Global search includes article bodies and structured fields across all kinds. Collection filters intentionally narrow their own library; the complete index filters titles, summaries, and structured metadata. Source Markdown remains authoritative and is never rewritten by documentation preparation. Reviewed native HTML such as disclosures, summary text, inline code, and explicit anchors is preserved. New raw HTML tags or attributes require an explicit policy rather than being silently discarded or executed.
+The same registry feeds navigation, canonical links, static routes, the complete content index, and global search. Global search includes article bodies and structured fields across all kinds. Collection filters intentionally narrow their own library; the complete index filters titles, summaries, and structured metadata. Client-only form controls remain disabled until hydration restores browser query state; native links, disclosures, and article reading remain available without JavaScript. This prevents an early selection from being consumed by a static placeholder state.
+
+Source Markdown remains authoritative and is never rewritten by documentation preparation. Reviewed native HTML such as disclosures, summary text, inline code, and explicit anchors is preserved. New raw HTML tags or attributes require an explicit policy rather than being silently discarded or executed.
 
 ## Validation layers
 

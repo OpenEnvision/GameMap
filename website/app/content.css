@@ -1,4 +1,11 @@
 /* Registry-backed pages share the same quiet, document-first visual language. */
+.interactive-surface {
+  display: contents;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
 .more-navigation {
   position: relative;
 }

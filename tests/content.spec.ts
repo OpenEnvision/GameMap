@@ -1,6 +1,7 @@
 import { test, expect, type APIRequestContext } from "@playwright/test";
 import type { ContentEntry, ContentKind } from "../website/content/models";
 import { agentResourceKinds } from "../website/src/data/agentGameTypes";
+import { url } from "../website/content/site";
 
 type PublishedRecord = Pick<
   ContentEntry,
@@ -186,7 +187,18 @@ test("all recording records are discoverable and one project can select multiple
   await page.goto("resources/#resource/opengame");
   const dialog = page.getByRole("dialog");
   const selector = dialog.getByRole("combobox", { name: "Project recording" });
-  expect(await selector.locator("option").count()).toBeGreaterThan(1);
+  await expect(dialog).toBeVisible();
+  const recordings = manifest.records.filter(
+    (entry) =>
+      entry.kind === "demo" &&
+      entry.blocks.some(
+        (block) =>
+          block.field === "resourceId" &&
+          block.type === "links" &&
+          block.items.some((item) => item.url === url.resource("opengame")),
+      ),
+  );
+  await expect(selector.locator("option")).toHaveCount(recordings.length);
   await selector.selectOption("demo:opengame-skirmish");
   const demo = manifest.records.find(
     (entry) => entry.key === "demo:opengame-skirmish",
@@ -301,6 +313,9 @@ test("new structured content remains readable without JavaScript", async ({
     page.locator('[data-content-field="deliverable"]').first(),
   ).toBeVisible();
   await page.goto(baseURL + "testing/");
+  await expect(
+    page.getByRole("textbox", { name: "Search testing resources" }),
+  ).toBeDisabled();
   await expect(page.locator('[data-content-kind="testing-pack"]')).toHaveCount(
     3,
   );

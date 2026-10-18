@@ -84,6 +84,9 @@ test("filters, shareable details, bookmarks, persistence, and export", async ({
     .click();
   expect((await download).suggestedFilename()).toBe("gamemap-collection.md");
   await page.goto("resources/?dimension=3d");
+  await expect(
+    page.getByRole("combobox", { name: "Development track" }),
+  ).toHaveValue("3d");
   await page
     .getByRole("combobox", { name: "Development track" })
     .selectOption("all");
