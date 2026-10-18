@@ -111,6 +111,8 @@ The [inspected README at 39952ba6341898380ff1c2c3336101c57c99196b](https://githu
 
 The following is **GameMap editorial guidance**, not an implemented pi integration or a claim that a modified harness reproduces any official benchmark. The existing [pi/GEPA source notes](source-revision-notes.md) describe extension and optimizer surfaces; they do not provide these experimental controls automatically.
 
+For generated interaction regressions, [stateful discovery and failure reduction](gameplay-state-contracts.md#stateful-interaction-discovery-and-failure-reduction) separates adaptive shrinking, clean-state reproduction and fixed regression promotion. Count every reset, attempted step, shrink/replay and cleanup; reduced traces are not independent success-rate trials.
+
 ### Choose the unit of comparison first
 
 - **Official reproduction:** preserve the publisher's exact tasks, evaluator, engine, allowed observations/actions, budgets and run policy. A new pi adapter must meet those conditions before its score is compared with published results.
