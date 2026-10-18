@@ -6,7 +6,7 @@
     "type": "agent",
     "summary": "A general-purpose coding agent for reading, editing, running commands, and reviewing code in a local repository.",
     "detail": "Useful as the main code execution loop for a game project: break down gameplay, maintain scripts, run builds, and inspect failures. Engine integration still requires a CLI, editor bridge, or MCP server; compiling successfully does not establish that a game is playable.",
-    "url": "https://developers.openai.com/codex/cli",
+    "url": "https://learn.chatgpt.com/docs/codex/cli",
     "links": [
       {
         "label": "Official game workflow",
@@ -43,7 +43,7 @@
     "url": "https://code.claude.com/docs/en/overview",
     "links": [
       {
-        "label": "Code and examples",
+        "label": "Official repository and examples",
         "url": "https://github.com/anthropics/claude-code"
       }
     ],
@@ -73,7 +73,7 @@
     "category": "agents",
     "type": "agent",
     "summary": "Google's open-source terminal coding agent with file access, shell tools, extensions, and MCP support.",
-    "detail": "Can help understand game projects, edit scripts, and drive editors through MCP. At the recorded source check, the official repository directed some users to Antigravity CLI and noted differences in support for newer models. Choose an entry point based on your account and the official migration guidance.",
+    "detail": "Can help understand game projects, edit scripts, and drive editors through MCP. The official README states that Antigravity CLI replaced Gemini CLI for unpaid-tier and Google One users on June 18, 2026, and that Gemini CLI is not optimized for the latest Gemini models. Check the account-specific migration guidance before choosing this entry point.",
     "url": "https://github.com/google-gemini/gemini-cli",
     "links": [
       {
@@ -106,7 +106,7 @@
     "category": "agents",
     "type": "docs",
     "summary": "Official guidance for using DeepSeek as a model backend within agent harnesses such as Claude Code.",
-    "detail": "The Anthropic API compatibility layer connects DeepSeek to existing tool loops. The chosen harness handles files, tests, and engine connections. Keep the model separate from the execution framework: the compatibility documentation lists ignored or unsupported fields, so equivalent capabilities should not be assumed.",
+    "detail": "The Anthropic API compatibility layer connects DeepSeek to existing tool loops. The harness handles files, tests, and engine connections. The guide supports ordinary tool calls but ignores the server-side mcp_servers field and does not support MCP-specific content blocks. Client-side MCP tools therefore remain the harness's responsibility; API compatibility does not establish complete feature parity.",
     "url": "https://api-docs.deepseek.com/guides/anthropic_api/",
     "tags": [
       "DeepSeek",
@@ -133,12 +133,16 @@
     "category": "agents",
     "type": "agent",
     "summary": "An open-source coding agent with multiple model providers, Plan / Build modes, and project instructions.",
-    "detail": "Useful for turning game requirements into a plan, then editing C#, GDScript, TypeScript, or C++ projects. Providers and models can be selected independently; launching an editor, inspecting visuals, and validating gameplay still require the appropriate tools.",
+    "detail": "Useful for planning and editing game projects with independently selected providers and models. Pin V1 or V2: the V2 migration guide documents incompatible plugin/server APIs, external-directory access allowed by default, and no running LSP or LSP diagnostics despite accepted configuration. Validate permissions, MCP integrations, and compiler/test feedback for the chosen version; editor and gameplay inspection still require separate tools.",
     "url": "https://opencode.ai/docs/",
     "links": [
       {
         "label": "Source code",
         "url": "https://github.com/anomalyco/opencode"
+      },
+      {
+        "label": "V1 to V2 migration boundaries",
+        "url": "https://opencode.ai/v2/docs/migrate-v1/"
       }
     ],
     "tags": [
@@ -298,7 +302,7 @@
     "category": "agents",
     "type": "framework",
     "summary": "Embed Claude Code's tool loop, permissions, sessions, and extensions in Python or TypeScript applications.",
-    "detail": "Can power game-specific code repair, content validation, or engine MCP orchestration services, with hooks recording execution evidence. It serves a different role from the Client SDK for direct model calls; domain tools, scoring rules, and runtime environments must still be supplied.",
+    "detail": "Runs the Claude Code binary and tool loop inside a process you operate, with Python or TypeScript APIs for permissions, sessions, hooks, and MCP. It can support game-specific repair and validation services, but domain tools, scoring rules, and runtime environments must be supplied. This differs from a Client SDK for direct model calls; the official overview also specifies Anthropic Commercial Terms and separate authentication constraints.",
     "url": "https://code.claude.com/docs/en/agent-sdk/overview",
     "tags": [
       "SDK",
@@ -325,7 +329,7 @@
     "category": "agents",
     "type": "framework",
     "summary": "A minimal shell-based coding-agent research baseline designed for modification and trace inspection.",
-    "detail": "Useful for isolating model, prompt, and environment effects in game code generation and repair, or wrapping commands such as Godot headless. It is a general software engineering agent rather than a game benchmark; playability, visuals, and physics require additional validation.",
+    "detail": "Useful for isolating model, prompt, and environment effects in game code generation and repair, or wrapping headless engine commands. Its minimal loop executes commands in independent subprocesses rather than a persistent shell, so working-directory and environment setup must be carried into each command or script. It is a general software-engineering baseline; playability, visuals, and physics require additional validation.",
     "url": "https://github.com/SWE-agent/mini-swe-agent",
     "links": [
       {
@@ -441,7 +445,7 @@
     "category": "agents",
     "type": "tool",
     "summary": "A community MCP bridge connecting general-purpose coding agents to the Unity Editor.",
-    "detail": "Exposes editor operations for scenes, GameObjects, C# scripts, assets, and tests, giving agents access to state that text-only code edits cannot reveal. The project is explicitly independent of Unity Technologies; validate changes with compilation logs, screenshots, and PlayMode tests.",
+    "detail": "Exposes editor operations for scenes, GameObjects, C# scripts, assets, and tests. The checked v10 installation documentation lists Unity 2021.3 LTS through Unity 6.x, plus Python 3.10+ and uv. These are declared requirements, not versions tested here. The project is independent of Unity Technologies; pin bridge/editor versions and validate compilation, screenshots, and PlayMode tests.",
     "url": "https://github.com/CoplayDev/unity-mcp",
     "links": [
       {
@@ -474,8 +478,8 @@
     "name": "Unity-MCP Operator Guide",
     "category": "agents",
     "type": "skill",
-    "summary": "A practical skill in the MCP for Unity repository: inspect editor state, act, wait for compilation, and verify results.",
-    "detail": "Defines a resource-first approach to scene operations, plus compilation waits, console checks, and screenshot verification after script edits. It can serve as a Unity agent operating procedure. The skill requires MCP for Unity; examples and parameters vary with Unity, UI, and input system versions.",
+    "summary": "A practical MCP for Unity skill: inspect editor state, act, wait for compilation and domain reload, then verify results.",
+    "detail": "Defines resource-first scene operations and requires checking compilation, domain reload, tool readiness, and blocking reasons before further edits. Script changes are followed by console and screenshot checks. This is a procedure source for MCP for Unity, not an installed or tested integration here; examples and parameters depend on bridge, Unity, UI, and input-system versions.",
     "url": "https://github.com/CoplayDev/unity-mcp/blob/main/unity-mcp-skill/SKILL.md",
     "tags": [
       "Unity",
@@ -533,7 +537,7 @@
     "category": "agents",
     "type": "tool",
     "summary": "A Blender add-on and MCP server for agent-driven modeling, materials, Python execution, and visual feedback.",
-    "detail": "Useful as a bridge for 3D game asset production and scene prototypes, with viewport feedback for geometry, materials, and layout. Previously named blender-mcp, the repository and package have been renamed. This is a third-party community integration; check topology, scale, UVs, collision, and export compatibility.",
+    "detail": "Useful for 3D game asset production and scene prototypes, with viewport feedback for geometry, materials, and layout. Previously named blender-mcp, it is a third-party community integration. Its code-execution tool can run arbitrary Python inside Blender; use trusted tasks and saved project copies. Check topology, scale, UVs, collision, and export compatibility separately.",
     "url": "https://github.com/ahujasid/mcp-for-blender",
     "tags": [
       "Blender",
@@ -559,7 +563,7 @@
     "category": "agents",
     "type": "tool",
     "summary": "A Python MCP server and UE C++ plugin connecting agents to Actors, Blueprints, and viewport controls.",
-    "detail": "Covers Actor transforms, Blueprint classes and components, some node graphs, and editor camera operations for UE scene and gameplay prototypes. The author explicitly marks it experimental and advises against production use; pin compatible versions and verify the supported operations individually.",
+    "detail": "Covers Actor transforms, Blueprint classes and components, some node graphs, and editor camera operations. The README declares Unreal Engine 5.5+ and Python 3.12+ and supplies a UE5.5 example; later-version compatibility is not independently tested here. The author marks it experimental and advises against production use. Pin versions and verify supported operations individually.",
     "url": "https://github.com/chongdashu/unreal-mcp",
     "links": [
       {
@@ -590,7 +594,7 @@
     "category": "agents",
     "type": "tool",
     "summary": "Microsoft's browser automation MCP server for exposing page structure, interactions, and browser feedback to agents.",
-    "detail": "Useful for browser game menus, HUDs, launch flows, and web interactions, combined with screenshots, keyboard input, and game debug interfaces. The default mode relies on structured accessibility trees; internal Canvas and WebGL gameplay state needs additional observation. The project also offers a CLI + Skills workflow.",
+    "detail": "Useful for browser game menus, HUDs, launch flows, keyboard input, and screenshots. The default interface uses accessibility trees; coordinate-based mouse tools require the optional vision capability. Neither interface automatically exposes internal Canvas or WebGL state, so game debug instrumentation may be needed. The separate Playwright CLI repository provides a CLI + Skills workflow.",
     "url": "https://github.com/microsoft/playwright-mcp",
     "tags": [
       "Playwright",

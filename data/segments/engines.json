@@ -44,7 +44,7 @@
     "category": "engines",
     "type": "docs",
     "summary": "Godot's official CLI reference for headless operation, script checks, asset import, execution, and export.",
-    "detail": "Lets coding agents launch projects, read logs, parse scripts, and export builds through commands, reducing GUI dependence. Supported flags vary by build type; headless checks can validate project logic but cannot replace real rendering and input tests.",
+    "detail": "Lets coding agents launch projects, read logs, parse scripts, and export builds through commands, reducing GUI dependence. The --check-only flag parses a script supplied with --script; it does not execute gameplay tests. Supported flags vary by build type, and headless runs cannot replace real rendering and input tests.",
     "url": "https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html",
     "tags": [
       "Godot",
@@ -128,7 +128,7 @@
     "category": "engines",
     "type": "community",
     "summary": "A GDQuest tutorial for a Godot 2D survival game, with complete scripts, a project, and troubleshooting notes.",
-    "detail": "Covers movement, aiming, projectiles, enemy spawning, and failure states as a reference for a complete core loop. The author explains sticking caused by grounded / floating modes and an enemy count limit. Code and assets use different licenses; check each before reuse.",
+    "detail": "Covers movement, aiming, projectiles, enemy spawning, and failure states as a reference for a complete core loop. The tutorial was made with Godot 4.1 and updated to 4.6. Its troubleshooting explains grounded / floating modes and an enemy count limit. Code uses MIT while art assets use CC BY-NC-SA 4.0; check reuse conditions separately.",
     "url": "https://www.gdquest.com/library/first_2d_game_godot4_vampire_survivor/",
     "links": [
       {
@@ -261,7 +261,7 @@
     "category": "engines",
     "type": "community",
     "summary": "Jasper Flick's Unity movement tutorial explains character control through slopes, steps, and contact timing.",
-    "detail": "The author uses test scenes to reproduce loss of ground contact, ghost collisions, raycasts, and ground snapping, giving agents causal explanations of physics behavior. The tutorial uses an older Unity version; adapt its algorithms, APIs, input, and project configuration to the target version.",
+    "detail": "The author uses test scenes to reproduce loss of ground contact, ghost collisions, raycasts, and ground snapping, giving agents causal explanations of physics behavior. The tutorial uses Unity 2019.2.14f1 and ProBuilder; adapt its algorithms, APIs, input, and project configuration to the target version.",
     "url": "https://catlikecoding.com/unity/tutorials/movement/surface-contact/",
     "links": [
       {
@@ -296,7 +296,7 @@
     "category": "engines",
     "type": "tool",
     "summary": "Official Epic documentation for UE C++, Blueprints, rendering, animation, physics, and packaging.",
-    "detail": "Provides authoritative context for UE projects and asset systems, with official samples illustrating complex gameplay architecture. Engine source access requires linked Epic and GitHub accounts and the relevant access steps; source availability does not imply an open-source license.",
+    "detail": "Provides authoritative context for UE projects and asset systems, with official samples illustrating complex gameplay architecture. GitHub source access requires linked Epic and GitHub accounts and the relevant authorization steps; Epic also documents a Perforce route for licensees. Source availability does not imply an open-source license.",
     "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine",
     "links": [
       {
@@ -695,11 +695,11 @@
   },
   {
     "id": "phaser-examples",
-    "name": "Phaser 3 · Examples",
+    "name": "Phaser · Examples",
     "category": "engines",
     "type": "docs",
     "summary": "Official Phaser example source with runnable references for specific APIs and gameplay components.",
-    "detail": "Agents can study animation, cameras, input, physics, and scene transitions individually before combining them into a game. The repository explicitly targets Phaser 3; do not assume compatibility with every major version. Pin dependencies and test in a real browser.",
+    "detail": "Official examples for animation, cameras, input, physics, and scene transitions. The current README targets Phaser 4, and the labs site defaults to its latest development build; select and pin the version matching your project. The MIT license covers example code, not bundled art assets. Review asset permissions before reuse and test in a real browser.",
     "url": "https://github.com/phaserjs/examples",
     "tags": [
       "Phaser",

@@ -36,6 +36,10 @@ These notes extend the concise [resource directory](./awesome-list.md) using the
 - [Source revisions](source-revision-notes.md): 66 inspected upstream files with exact revisions and claim boundaries
 - [Coverage and remaining work](production-coverage-gaps.md): production-stage gaps, interface semantics and a local catalog lookup example
 
+## Maintenance review
+
+[Catalog review coverage](catalog-review-coverage.md) records this pass over all 109 existing cards, material corrections, source-read limits, and the remaining dossier audit scope.
+
 ## From a source to an acceptance test
 
 The following is **GameMap editorial guidance**:

@@ -5,7 +5,7 @@
     "category": "world",
     "type": "paper",
     "summary": "Turns engine- or agent-generated structure videos into styled final visuals.",
-    "detail": "Few-Step Generative Reference Rendering conditions MiniMax-H3 on semantic maps, grayboxes, skeletons, depth, and other structures, with an optional first frame and text. Control and four-step LoRAs generate video, with a block-causal streaming version also available. It handles visual presentation; upstream programs must maintain world state and gameplay rules. Four-step sampling alone does not establish real-time interaction on consumer hardware.",
+    "detail": "Few-Step Generative Reference Rendering conditions MiniMax-H3 on semantic maps, grayboxes, skeletons, depth, and other structures, with an optional first frame and text. Control and four-step LoRAs include a block-causal variant. Code is Apache-2.0; weights use the geographically restricted MiniMax H3 Community License, and data has component-specific terms, including noncommercial and research-only portions. Upstream programs must maintain world state and rules. Four-step sampling alone does not establish real-time consumer-hardware interaction.",
     "url": "https://enderfga.cn/SolarRenderer/",
     "links": [
       {
@@ -56,7 +56,7 @@
     "category": "world",
     "type": "framework",
     "summary": "A code engine maintains the world while streaming diffusion renders its semantic maps.",
-    "detail": "NVIDIA Sol-Engine's Interactive Coding Worlds system uses a three.js racing game as its example. The engine handles the map, physics, collision, and player input, while a two-step streaming MiniMax-H3 model generates appearance from semantic video, a first frame, and a prompt. Official performance results depend on eight GB200 GPUs. Rendering throughput and end-to-end input-to-display latency need separate evaluation.",
+    "detail": "NVIDIA Sol-Engine's Interactive Coding Worlds system uses a three.js racing game. The engine handles map, physics, collision, and input, while a two-step streaming MiniMax-H3 model renders semantic video conditioned on a first frame and prompt. Reported training and tests cover that one game and third-person view. Semantic colors identify classes rather than individual objects. Performance results use eight GB200 GPUs; stage throughput does not establish end-to-end input-to-display latency.",
     "url": "https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/",
     "links": [
       {
@@ -94,7 +94,7 @@
     "category": "world",
     "type": "paper",
     "summary": "A coding agent writes executable rules and persistent state to drive a video world.",
-    "detail": "Separates world evolution from visual generation. An agent writes, calls, and modifies code to maintain state; a compiler converts that state into proxy video and prompts for a fine-tuned MiniMax-H3 renderer. The public repository includes inference code, LoRAs, and conditioning examples. The underlying game code used to generate proxies cannot be redistributed, so the complete agent-to-engine pipeline cannot be reproduced unchanged from public materials.",
+    "detail": "Separates world evolution from visual generation. An agent maintains executable state, which is compiled into controls for a fine-tuned MiniMax-H3 renderer. The released inference interface uses an RGB first-frame anchor, per-frame depth and semantic-ID controls, and per-window prompts. Inference code, LoRAs, and examples are public, but the underlying game code that generates proxies cannot be redistributed. The complete agent-to-engine pipeline cannot be reproduced unchanged from those artifacts.",
     "url": "https://arxiv.org/abs/2608.25927",
     "links": [
       {
@@ -229,7 +229,7 @@
     "category": "world",
     "type": "paper",
     "summary": "An interactive video world model framework for open data, training, and long-horizon inference.",
-    "detail": "Open Data and Scalable Training for Long-Horizon Video World Models unifies data, training, and inference interfaces for backbones including Wan, LTX, and MiniMax-H3. It uses bidirectional adaptation, teacher forcing, and distribution matching distillation to train camera-controlled streaming models. This provides world model infrastructure. Camera-controlled video continuation differs from a code world with queryable entity state.",
+    "detail": "Unifies data, training, and inference interfaces for camera-controlled streaming video. The source matrix lists all three stages for Wan2.2-5B and MiniMax-H3, but later stages for Wan2.2-14B and LTX-2.5 remain forthcoming. Backbones require separate runtime environments. The main data release contains annotations and indexes; latent payloads are separate, and the full processed training-video corpus requires reconstruction or approved access. This infrastructure does not provide a code world with queryable entity state.",
     "url": "https://arxiv.org/abs/2609.02886",
     "links": [
       {
@@ -550,12 +550,16 @@
     "category": "world",
     "type": "paper",
     "summary": "Combines open-domain video generation with keyboard and mouse action control.",
-    "detail": "Creating New Games with Generative Interactive Videos provides the action-labeled GF-Minecraft dataset and control modules. Domain adapters separate game style from action learning, with autoregressive continuation supported. It generates action-controlled game video. Visual generalization should be evaluated separately from rule correctness, item persistence, and exportable game projects.",
+    "detail": "Creating New Games with Generative Interactive Videos proposes domain adapters and action-control modules for autoregressive game video. The public GF-Minecraft dataset includes action labels; the checked repository provides dataset documentation and detection/visualization utilities, without establishing a released training/inference pipeline or model weights. Visual generalization should be evaluated separately from rule correctness, item persistence, and exportable game projects.",
     "url": "https://arxiv.org/abs/2501.08325",
     "links": [
       {
-        "label": "Code",
+        "label": "Dataset tools and documentation",
         "url": "https://github.com/KlingAIResearch/GameFactory"
+      },
+      {
+        "label": "GF-Minecraft dataset",
+        "url": "https://huggingface.co/datasets/KlingTeam/GameFactory-Dataset"
       }
     ],
     "tags": [
@@ -581,13 +585,17 @@
     "name": "Oasis: A Universe in a Transformer",
     "category": "world",
     "type": "framework",
-    "summary": "An open neural game example that generates frames autoregressively from keyboard input.",
-    "detail": "Oasis by Decart and Etched uses a Transformer autoencoder and latent diffusion to generate Minecraft-style interaction, with public inference code and weights for a 500M model. The authors identify limits in long-term memory, precise inventory control, domain generalization, and object consistency. It suits research prototypes and generative inference rather than deterministic gameplay logic.",
+    "summary": "A neural game research release that predicts Minecraft-style frames from prior frames and actions.",
+    "detail": "Oasis by Decart and Etched uses a Transformer autoencoder and latent diffusion. Its MIT-licensed inference code and 500M checkpoint are a downsized release, separate from the larger hosted demo. The public script generates video from an initial frame and action sequence; it does not establish a complete live game interface or training pipeline. The authors identify limits in long-term memory, precise inventory control, generalization, and object consistency.",
     "url": "https://oasis-model.github.io/",
     "links": [
       {
         "label": "Inference code",
         "url": "https://github.com/etched-ai/open-oasis"
+      },
+      {
+        "label": "500M model and license",
+        "url": "https://huggingface.co/Etched/oasis-500m"
       }
     ],
     "tags": [

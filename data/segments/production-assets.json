@@ -5,12 +5,20 @@
     "category": "production",
     "type": "tool",
     "summary": "Builds consistent game art pipelines with custom style models and batch generation.",
-    "detail": "Train a custom style or character model, generate portraits, item icons, and textures in batches, then deliver assets through an editor or backend workflow. The official integration tutorial connects a job queue, generation API, and asset delivery. Scenario is a hosted commercial service; integration examples and SDK access do not include the platform's model source or a complete game project.",
+    "detail": "Scenario provides hosted image, video, 3D and audio workflows, custom-model training, a REST API and an official beta MCP interface. Inspect each model schema before submission; MCP model_run can return an unfinished job rather than output assets. The documented job_cancel cannot cancel jobs created by model_run or workflow_run. Integration examples do not include the full hosted service or a complete game project.",
     "url": "https://www.scenario.com/",
     "links": [
       {
         "label": "API documentation",
         "url": "https://docs.scenario.com/"
+      },
+      {
+        "label": "Official beta MCP operations",
+        "url": "https://mcp.scenario.com/docs/tools/model-run"
+      },
+      {
+        "label": "Job cancellation scope",
+        "url": "https://mcp.scenario.com/docs/tools/job-cancel"
       }
     ],
     "access": {
@@ -107,7 +115,7 @@
     "category": "production",
     "type": "tool",
     "summary": "Generates skeletal humanoid motion from text with public inference code and model weights.",
-    "detail": "Tencent's text-to-motion models produce human character animation, with CLI inference, local Gradio visualization, and a hosted model demo. Use the generated motion as an animation-pipeline input and retarget it to the target character. The documented limitations include non-humanoid motion, multi-person interaction, seamless loops, and in-place animation. The release provides a motion implementation, not a controllable game character or full game project.",
+    "detail": "Tencent's text-to-motion models produce human character animation, with CLI inference, local Gradio visualization, and a hosted model demo. Use the generated motion as an animation-pipeline input and retarget it to the target character. The documented limitations include non-humanoid motion, multi-person interaction, seamless loops, and in-place animation. The release provides a motion implementation, not a controllable game character or full game project. Its custom license excludes the EU, UK and South Korea and restricts using the works or outputs to improve other AI models, except HY-Motion and its derivatives. Review the exact license and commercial threshold before adoption.",
     "url": "https://github.com/Tencent-Hunyuan/HY-Motion-1.0",
     "links": [
       {
@@ -117,6 +125,10 @@
       {
         "label": "Model weights",
         "url": "https://huggingface.co/tencent/HY-Motion-1.0"
+      },
+      {
+        "label": "HY-Motion community license",
+        "url": "https://github.com/Tencent-Hunyuan/HY-Motion-1.0/blob/master/License.txt"
       }
     ],
     "access": {
@@ -212,7 +224,7 @@
     "category": "production",
     "type": "tool",
     "summary": "Provides downloadable text-to-audio weights and local tools for sound effects and field recordings.",
-    "detail": "Generates up to 47 seconds of stereo audio at 44.1 kHz, with examples for local inference and WAV export. The official audio-tools repository includes a local Gradio interface. The model works best with English descriptions, is stronger at sound effects and field recordings than music, and cannot produce realistic vocals. Model download requires accepting its terms; this resource is an audio pipeline rather than a complete soundtrack or game generator.",
+    "detail": "Generates up to 47 seconds of stereo audio at 44.1 kHz, with examples for local inference and WAV export. The official audio-tools repository includes a local Gradio interface. The model works best with English descriptions, is stronger at sound effects and field recordings than music, and cannot produce realistic vocals. Model access requires accepting its terms and sharing contact information with the publisher; this resource is an audio pipeline rather than a complete soundtrack or game generator.",
     "url": "https://huggingface.co/stabilityai/stable-audio-open-1.0",
     "links": [
       {
