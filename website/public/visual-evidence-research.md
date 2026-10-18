@@ -355,6 +355,54 @@ Extensible baseline for loading GameMap tools and observation/context policies.
 - **Source terms:** MIT repository.
 - **Primary sources:** [pi extensions](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/docs/extensions.md); [pi repository](https://github.com/earendil-works/pi)
 
+#### Pi evidence lifecycle and interrupted execution
+
+Additional source inspection on 2026-10-18 at the existing pi commit **482c1381a00d8d00bc81697e4a980c593db6803e**, which matched the default branch when checked. This is scoped implementation evidence, not an installed package, model or GameMap adapter. No agent, model call, engine or fixture was executed. The proposed adapter and evaluation controls below are **GameMap editorial guidance**.
+
+##### 1. Resource lifetime and the actual settlement boundary
+
+The extension factory may load without a session. Long-lived processes/watchers belong in session_start or their owning command/tool; cleanup belongs in idempotent session_shutdown. Reload and session replacement invalidate old runtime/context objects. A later withSession callback receives the replacement context. agent_end ends a low-level run; retries, compaction, or queued work can follow. agent_before_settle is the actionable final boundary, while agent_settled is notification-only. [Lifecycle documentation](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/docs/extensions.md#L54-L150), [replacement context](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/docs/extensions.md#L307-L332), [reload implementation](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/agent-session.ts#L3690-L3730)
+
+**Adapter implication, proposed:** an engine connection, capture lease, and evidence recorder need explicit ownership and shutdown/rebind behavior. Do not finalize an evaluation at the first agent_end or continue using a pre-reload engine handle.
+
+##### 2. Cancellation is cooperative; nested signal overrides matter
+
+The core checks cancellation before execution, then awaits tool.execute with the supplied AbortSignal. This path has no forced termination or rollback wrapper. A tool that ignores its signal can continue and return normally. Nested executeTool defaults to its parent's signal, but an explicitly supplied signal **replaces** that default; this call site does not combine signals. [Execution](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/agent/src/agent-loop.ts#L708-L779), [awaited execution and error conversion](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/agent/src/agent-loop.ts#L821-L859), [nested signal selection](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/extensions/runner.ts#L968-L994)
+
+RPC abort waits for idle but does not clear queued messages; clear_queue followed by abort is documented for Esc-like behavior. [RPC contract](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/docs/rpc-commands.md#L94-L128)
+
+**Adapter implication, proposed:** distinguish cancel-requested, engine-acknowledged-stop, completed-after-cancel, and outcome-unknown. Reconcile job IDs and authoritative engine state before retrying a mutation. A timeout signal must preserve intended parent-cancellation semantics explicitly.
+
+##### 3. Original image, persisted result, and request context differ
+
+_afterToolCall runs extension tool_result handlers and then normalizes their image content with the current model's resize profile and image settings. normalizeToolResultImages invokes processImage, can replace bytes/MIME type and add hints, but preserves the original block when processImage returns ok:false; this wrapper does not catch arbitrary thrown exceptions. Disabling resizing still permits unsupported-format conversion. Thus the persisted tool-result image need not equal the original screenshot, and normalization failure does not certify provider compatibility. [Hook ordering](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/agent-session.ts#L684-L726), [normalization](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/utils/tool-result-images.ts), [conversion/resize](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/utils/image-process.ts)
+
+Request-time context processing starts from a structured clone; context handlers receive conversation messages while system state is restored, followed by context_with_system on the full transcript. Separately, a tool_result handler replacing content without structuredContent drops the prior structured result. [Context composition](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/extensions/runner.ts#L1300-L1355), [result composition](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/extensions/runner.ts#L1189-L1247)
+
+**Adapter implication, proposed:** record original artifact hash/dimensions, stored derivative identity, selection transformations, and request-evidence manifest separately. Context compression must not silently destroy the structured manifest needed by nested orchestration. Final provider preprocessing remains an additional boundary, not verified here.
+
+##### 4. Resuming a conversation does not establish engine-job recovery
+
+Session context follows the active branch and latest compaction; older summarized entries are omitted from active context but remain in the session file. The default summary serializer extracts text, not image pixels, and truncates tool-result text longer than 2,000 characters to that prefix plus a marker; shorter text remains unchanged. An image retained in the kept tail differs from an image whose entry was summarized away. [Session projection](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/session-manager.ts#L469-L573), [summary serializer](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/compaction/utils.ts#L90-L155), [default summary request](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/compaction/compaction.ts#L679-L735), [session semantics](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/docs/sessions.md)
+
+Branch-aware state should reconstruct from getBranch; appendEntry stores non-context data, while sendMessage adds model context. This is not evidence of durable continuation of an interrupted JavaScript execution, engine process, or remote job. [State contract](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/docs/extensions.md#L320-L332)
+
+**Adapter implication, proposed:** persist artifact/job identities and authoritative completion status externally; revalidate them on resume. Branch switching must not mix accepted assets or completion records from alternative histories.
+
+##### Fair fixture and RSI question, unexecuted
+
+Question: **Does crop-plus-global evidence retain its benefit after compaction and interrupted execution only when paired with branch-aware manifest rehydration?**
+
+Keep task set, action policy, model, permissions, scoring, and accepted engine mutations fixed. Cross two selection policies (global frame; crop plus global) with two retention policies (normal compacted context; explicit durable manifest plus evidence rehydration). Match visual/token budgets including rehydration and charge all selector/preprocessing/retry costs.
+
+First propose a deterministic mock bridge with numbered mutations and captures, delayed completion, cooperative and noncooperative cancellation, and original/derivative hashes. Script identical interruption locations: before dispatch; after engine acceptance before result; after result before compaction; after compaction before resume. Exercise default versus explicitly overridden nested signals, queued work, reload, and abandoned branches. These are proposed cases, not reproduced Pi bugs.
+
+Require separate assertions for duplicate mutations, wrongly assumed cancellation, stale connection use, branch contamination, missing evidence, original-to-derivative provenance, and final authoritative state. Count failures and unknown outcomes; do not score missing observations as success. A subsequent authorized project-owned engine fixture can test task quality with the same fault schedule. Freeze held-out cases before candidate selection.
+
+Unknowns: actual engine cancellation/transaction semantics, service idempotency, package/runtime compatibility, process-crash durability, provider image transformations, and measured quality/latency. Static source and unexecuted upstream tests cannot resolve them.
+
+
+
 ### GEPA adapter and optimizer
 
 Reflective evolution over named textual candidate components.
