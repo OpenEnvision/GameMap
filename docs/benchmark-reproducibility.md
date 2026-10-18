@@ -130,3 +130,58 @@ Public test material may already be present in a base model's training data. Iso
 Freeze task identifiers and origin groups; content/asset hashes; evaluator and engine versions; solver model and reasoning settings; candidate harness revision; allowed API/GUI/file surfaces; training/selection/test membership; memory provenance; model-token/tool-call/time budgets; seed and fresh-start policy; build and runtime logs; screenshots/video and authoritative checks; final judge configuration; raw terminal outcomes and resource costs. Preserve credential references only, never secrets. Do not configure any credential transmission merely to fill this record.
 
 For each candidate, retain paired baseline/candidate outcomes on the same tasks and report the sampling unit. Separate valid task failures from harness/infrastructure failures and give denominator policy before viewing results. Repeat stochastic runs where justified; a single successful retry is not a robust capability. Run the final held-out evaluation only after selection, and archive the unsuccessful candidates too. None of these fixtures, statistical comparisons or execution permissions has been established by this source-only review.
+
+## Harness selection: statistical independence and adaptive feedback
+
+Checked 2026-10-18. Primary-source inspection only; no installation, benchmark execution or game-performance claim. The proposed protocol below extends the existing candidate-selection and reproducibility records.
+
+### rliable: repeat whole tournaments, preserve the intended comparison
+
+Agarwal et al. assume independent runs per task, each yielding a scalar normalized score. Appendix A.4 treats best-of-N as a distinct stochastic algorithm: one maximum over N candidates supplies only **one run of that selection algorithm**. It therefore needs independent repetition. Stratified bootstrap resamples runs within each task. The Atari coverage study shows nominal 95% CIs under-cover with three runs; percentile intervals perform well around ten for examined aggregate metrics. These empirical results do not establish a universal sample-size guarantee. [Paper v4, §2, §4.1, Fig. 6, Appendix A.4][RL-paper]
+
+At inspected commit `3ccd9f4dea577a04d3d2b557f259aac08badbd81`, `get_interval_estimates` takes method-to-score mappings shaped `(runs, tasks, ...)` plus an aggregate function, returning point estimates and lower/upper CI arrays. Defaults are percentile, 50,000 bootstrap replications and 95% nominal coverage. The single-array route supports `task_bootstrap`: false resamples runs on fixed tasks; true additionally resamples task columns. Tuple/list-valued entries instead use `StratifiedIndependentBootstrap`, independently resampling arrays without `task_bootstrap`. That convenience route is **not a paired A/B effect interval**. For matched mean differences, a pair-aligned difference matrix can use the single-array route; nonlinear contrasts need a verified pair-preserving route. This is an API-path limitation, not a claim that the entire library cannot support paired analysis. [Pinned library][RL-library]
+
+IQM trims 25% from each tail of pooled scores. Probability of improvement averages taskwise Mann–Whitney rank statistics; it is not a posterior probability of being the best system. [Metrics][RL-metrics]
+
+The public code is Apache-2.0; setup declares 1.2.0 and `arch >= 5.3.1, < 8.0`. The repository is archived. Its older README dependency example is not a runtime lock. [Setup][RL-setup], [license][RL-license], [README][RL-readme], [repository][RL-repo]
+
+### Adaptive holdout: an independent evaluator can still leak selection feedback
+
+Dwork et al. distinguish independently fixed candidates from ones adapted using previous holdout feedback; ordinary static multiple-testing treatment does not automatically cover the latter. Thresholdout takes training/holdout datasets, threshold, noise scale and overfitting budget, answering bounded queries `phi: X -> [0,1]`. Below a noisy discrepancy threshold it returns the training mean; otherwise it returns a noisy holdout mean and spends budget. It stops when exhausted. Theorem 9 requires i.i.d. holdout samples, calibrated parameters/sample size and mediated access. This is not a guarantee for unrestricted visual critiques, correlated project variants or unlimited binary feedback. [NeurIPS 2015, §1, §3, Theorem 9][HO-paper]
+
+The inspected release evidence establishes paper/pseudocode, not an official executable package or software license. The arXiv record is v2, September 25, 2015, with a non-exclusive distribution license. [Record][HO-record], [license][HO-license]
+
+### Check the judge before optimizing its score
+
+**Source finding.** MT-Bench v4 (§§3.3–3.4) tests text-answer judging, not game images. It documents order sensitivity and a repetitive-list verbosity probe; its conservative comparison requires the same winner after swapping answer positions. Increased consistency alone is not accuracy. Its self-enhancement investigation is explicitly inconclusive, so it does not establish a universal preference for a judge's own outputs. These historical-model findings motivate controls; their measured rates cannot be transferred to current visual judges. [Paper v4](https://arxiv.org/html/2306.05685v4)
+
+**Inspected interface.** FastChat's pairwise path accepts a question, two answers, a judge and optional reference, calls the judge in both orders, and stores both mapped winners, prompts and judgments. Its loader labels disagreement `inconsistent`; malformed verdicts can remain `error`. This is a text interface, not a released screenshot/video evaluator. Single-answer grading is a separate path and should not be described as an order-swap test. [Pinned common.py](https://github.com/lm-sys/FastChat/blob/587d5cfa1609a43d192cedb8441cac3c17db105d/fastchat/llm_judge/common.py)
+
+The inspected code is [Apache-2.0](https://github.com/lm-sys/FastChat/blob/587d5cfa1609a43d192cedb8441cac3c17db105d/LICENSE). Its [documented hosted-judge flow](https://github.com/lm-sys/FastChat/blob/587d5cfa1609a43d192cedb8441cac3c17db105d/fastchat/llm_judge/README.md) needs model/API access; code licensing does not grant that access or settle dataset/model terms. No call was made.
+
+**GameMap editorial adaptation, unimplemented.** For visual candidate tournaments, freeze the task and exact evidence packets, remove candidate/model identity cues, and compare both presentation orders while retaining within-clip chronology. Record preference, tie, inconsistent judgment and invalid response separately, with their denominators. Audit a blinded human/reference subset for actual task correctness; agreement or order consistency cannot replace engine-state acceptance. Run a control with identical evidence and another with redundant views or verbose self-reports to detect presentation sensitivity before using the judge for selection. These visual probes are proposed experiments, not validated extensions of MT-Bench.
+
+
+### Proposed GameMap protocol, not a source-validated implementation
+
+| Boundary | Proposed requirement |
+|---|---|
+| Sampling/leakage unit | Keep forks, templates, repairs and derivative prompts in their parent-project family across development/final splits. Track project, task, complete production run, pool, candidate, view and judge-repeat IDs. Frames and repeated ratings do not create independent projects or production runs. Declare fixed-suite versus new-family inference; task-column bootstrapping does not automatically preserve project clusters. |
+| Two experiments | Frozen-pool comparisons measure ranking conditional on that pool. Generation-in-the-loop evaluation independently repeats the **whole** generate–render–judge–select–repair tournament. Match budgets; retain discarded candidates, retries, seeds, model revisions, memory resets and stopping rules. |
+| Paired effects | Match task/pool/initial state through explicit trial IDs, not seed-number equality alone. Preserve pairs and any project-family clustering when estimating effects. State weights and normalization beforehand. |
+| Protected final test | Use development cohorts for GEPA/reflection and judge/prompt tuning. Freeze candidate, memory, outcome, budget and stopping rule before final access. Keep final diagnostics out of reflective memory. If feedback informs another revision, treat the exposed cohort as development evidence and obtain fresh final evidence. A separate judge process/model does not repair that dependency. |
+| Denominators | Report accepted outputs over all prespecified production runs, alongside task failures, infrastructure failures, timeouts, abstentions and budget exhaustion. Label quality conditional on completed renders. Count all generation/render/judge/repair costs and predeclare retries/exclusions; trimmed aesthetic metrics cannot replace mandatory gameplay/rights gates. |
+| Decision | Report paired effect intervals and per-family outcomes. Bootstrap repetitions are not additional data. Selecting the largest gain then bootstrapping it does not undo selection bias; repeatedly inspecting a fixed-sample CI is not a protected final test. Few independent units can warrant an inconclusive decision; nonsignificance does not establish equivalence. |
+
+Retain a frozen protocol/split hash, final-access ledger, complete run manifest, independent unit counts, pairing map, failure/cost denominators and the exact uncertainty implementation with each promotion decision.
+
+[RL-paper]: https://arxiv.org/html/2108.13264v4
+[RL-library]: https://github.com/google-research/rliable/blob/3ccd9f4dea577a04d3d2b557f259aac08badbd81/rliable/library.py
+[RL-metrics]: https://github.com/google-research/rliable/blob/3ccd9f4dea577a04d3d2b557f259aac08badbd81/rliable/metrics.py
+[RL-setup]: https://github.com/google-research/rliable/blob/3ccd9f4dea577a04d3d2b557f259aac08badbd81/setup.py
+[RL-readme]: https://github.com/google-research/rliable/blob/3ccd9f4dea577a04d3d2b557f259aac08badbd81/README.md
+[RL-license]: https://github.com/google-research/rliable/blob/3ccd9f4dea577a04d3d2b557f259aac08badbd81/LICENSE
+[RL-repo]: https://github.com/google-research/rliable
+[HO-paper]: https://papers.nips.cc/paper/5993-generalization-in-adaptive-data-analysis-and-holdout-reuse.pdf
+[HO-record]: https://arxiv.org/abs/1506.02629v2
+[HO-license]: https://arxiv.org/licenses/nonexclusive-distrib/1.0/license.html
