@@ -120,6 +120,8 @@ export function renderAgentCodeGuide(resources,cases,caseAgents,labels,kinds){
 
 Resources contain implementation source, agent instructions, or both. A source review does not mean that a resource was installed, executed, or independently reproduced. Review dates and publisher status are recorded per resource. Counts describe collection size, not how many entries were newly added.
 
+For exact source revisions behind selected permission, reset and verification limits, see [agent interface evidence](agent-interface-evidence.md).
+
 ## Read the attribution correctly
 
 Coding-agent clients and harnesses are distinguished from underlying models and web chat. **Gemini CLI** is a coding client; **Gemini model / AI Studio** describes model or web usage and does not establish use of Gemini CLI. Likewise, Claude model / chat and DeepSeek model attributions do not establish a particular coding client. Unspecified agents remain explicitly unspecified. Agent-neutral tools can support a workflow without proving which client a game creator used.

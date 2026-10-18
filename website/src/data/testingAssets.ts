@@ -27,7 +27,7 @@ export const testingAssets: TestingResource[] = [
     aiUseNote: 'Base reuse on the CC0 designation of the downloaded files. A free edition does not establish entitlement to paid source files or unrelated marketplace content.',
     testTasks: ['Import the same model into two engines and compare scale, shading and collision.', 'Replace a character while preserving animation and scene references.'],
     setup: ['Select an explicitly CC0 pack and save its edition and release details.', 'Keep the original archive beside the engine import settings.'],
-    limitations: 'Pack formats and included rigs vary; Standard is not necessarily the complete collection. No local import was performed.', reviewed: '2026-10-18',
+    limitations: 'Pack formats and included rigs vary; Standard is not necessarily the complete collection. The cited Universal Animation Library changelog records Unreal FBX-to-GLB export and rig-name changes in v2.0, a 24-to-30 fps correction in v2.1, and root-motion plus step-phase changes in v3.0; pin the release and root-motion variant for comparable tests. No local import was performed.', reviewed: '2026-10-18',
   },
   {
     id: 'poly-haven', title: 'Poly Haven', kind: 'asset', uses: ['playing', 'pipeline'], dimensions: ['3d'],
@@ -69,7 +69,7 @@ export const testingAssets: TestingResource[] = [
     aiUseNote: 'There is no catalog-wide AI authorization. Select files under a suitable license and assess their attribution, share-alike and any additional rights before publishing a dataset.',
     testTasks: ['Import a tilemap and validate tile sizes, transparency and collision alignment.', 'Generate an attribution manifest from the exact selected entries.'],
     setup: ['Filter by the license required for the intended test and distribution.', 'Archive the selected entry URL, author, license text and original files.'],
-    limitations: 'Free downloads have different licenses and asset quality. No individual asset was locally imported or cleared as part of this catalog review.', reviewed: '2026-10-18',
+    limitations: 'Free downloads have different licenses and asset quality. The FAQ says preview images and audio can have different rights from downloadable assets; do not treat those previews as licensed test-fixture files unless explicitly covered. No individual asset was locally imported or cleared as part of this catalog review.', reviewed: '2026-10-18',
   },
   {
     id: 'fab', title: 'Fab', kind: 'asset', uses: ['pipeline'], dimensions: ['2d', '3d'],
@@ -83,7 +83,7 @@ export const testingAssets: TestingResource[] = [
     aiUseNote: 'Check the listing license and AI-use designation before testing with AI or sharing a dataset. A listing field is not a catalog-wide rule; free pricing is not an open license.',
     testTasks: ['Validate dependencies, LODs and material import for one approved listing.', 'Compare listed engine versions with the actual project import results.'],
     setup: ['Record the exact listing, acquired version, license and AI-use fields.', 'Import only after the intended automated use and distribution are covered.'],
-    limitations: 'The Standard license does not generally permit standalone asset redistribution. Engine-specific content and individual terms require separate review; no local import was performed.', reviewed: '2026-10-18',
+    limitations: 'The Standard license does not generally permit standalone asset redistribution. The official summary says Reference-Only access does not include source-format files, so confirm the acquired tier before planning export or import fixtures. Engine-specific content and individual terms require separate review; no local import was performed.', reviewed: '2026-10-18',
   },
   {
     id: 'unity-asset-store', title: 'Unity Asset Store', kind: 'asset', uses: ['pipeline'], dimensions: ['2d', '3d'],

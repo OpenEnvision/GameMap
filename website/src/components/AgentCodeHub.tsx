@@ -19,7 +19,7 @@ export default function AgentCodeHub() {
   const results = agentGameResources.filter(resource => {
     if (agent !== 'all' && !resource.agents.some(id => id === agent)) return false;
     if (kind !== 'all' && resource.kind !== kind) return false;
-    const text = [resource.title, resource.engine, resource.summary, resource.codeScope, resource.publisher, ...resource.agents.map(id => agentLabels[id])].join(' ').toLocaleLowerCase();
+    const text = [resource.title, resource.engine, resource.summary, resource.codeScope, resource.limitations, resource.publisher, ...resource.agents.map(id => agentLabels[id])].join(' ').toLocaleLowerCase();
     return terms.every(term => text.includes(term));
   });
   const visible = expanded ? results : results.slice(0, 4);
@@ -58,6 +58,7 @@ export default function AgentCodeHub() {
     {results.length === 0 ? <div className="case-empty"><p>No code resources match these filters.</p><button className="outline-button" onClick={reset}>Show all agent resources</button></div> : null}
     {results.length > visible.length ? <button className="outline-button agent-code-show-all" onClick={() => setExpanded(true)}>Show all {results.length} matching resources<ArrowDown size={15}/></button> : null}
     <p className="agent-code-note">Agent names follow documented client integrations. Gemini CLI is labeled separately from Gemini model / AI Studio use in the game cases below. Source review does not imply installation or a successful local run. Shared tools can appear under several agents.</p>
+    <a className="text-link" href={publicAsset('agent-interface-evidence.md')} target="_blank" rel="noreferrer">Read source-pinned interface limits<ArrowUpRight size={14}/></a>
     <a className="text-link" href={publicAsset('coding-agent-game-code.md')} target="_blank" rel="noreferrer">Open the complete agent-to-code guide<ArrowUpRight size={14}/></a>
   </section>;
 }

@@ -4,6 +4,8 @@
 
 Resources contain implementation source, agent instructions, or both. A source review does not mean that a resource was installed, executed, or independently reproduced. Review dates and publisher status are recorded per resource. Counts describe collection size, not how many entries were newly added.
 
+For exact source revisions behind selected permission, reset and verification limits, see [agent interface evidence](agent-interface-evidence.md).
+
 ## Read the attribution correctly
 
 Coding-agent clients and harnesses are distinguished from underlying models and web chat. **Gemini CLI** is a coding client; **Gemini model / AI Studio** describes model or web usage and does not establish use of Gemini CLI. Likewise, Claude model / chat and DeepSeek model attributions do not establish a particular coding client. Unspecified agents remain explicitly unspecified. Agent-neutral tools can support a workflow without proving which client a game creator used.
@@ -48,7 +50,7 @@ OpenAI’s game-development workflow connects a written game plan, project instr
 
 - **Material:** Agent instructions.
 - **Scope:** Official game workflow and the linked Playwright Interactive skill, including persistent-session JavaScript examples for functional and visual checks.
-- **Limitations:** A workflow and skill reference, not a game engine or finished project. The game stack and runtime must be supplied separately. Read the skill’s current environment requirements before use.
+- **Limitations:** A workflow and skill reference, not a game engine or finished project. The linked Playwright Interactive skill currently requires js_repl, a project-local Playwright setup, and sandbox-disabled Codex execution; review that elevated-permission requirement before use. The game stack and runtime are separate dependencies.
 - **Publisher:** OpenAI · Official publisher source · reviewed 2026-10-18.
 
 ### Claude Code Game Toolkit · Canvas engine and templates
@@ -87,7 +89,7 @@ Epic's Claude Code plugin teaches agents to discover Unreal toolsets and operate
 
 - **Material:** Implementation and instructions.
 - **Scope:** Verified public skill/reference files for unreal-mcp, create-toolset, and unreal-skill, plus executable hooks/unreal-context.sh and Claude plugin metadata. This repository contains agent instructions and hook code; Unreal's engine-side ModelContextProtocol/AllToolsets implementation is not bundled.
-- **Limitations:** Requires an Unreal Editor build with ModelContextProtocol and AllToolsets enabled and its server running. Windows session-context hook needs Git Bash or WSL. Only Claude Code is documented by this plugin; MCP transport availability does not establish Codex or Gemini support.
+- **Limitations:** Requires a running Unreal Editor with ModelContextProtocol and AllToolsets enabled. The plugin does not ship static MCP configuration; generate it from the editor. Tool search exposes list_toolsets, describe_toolset, and call_tool by default. The Python execution tool can mutate or delete project content, and localhost does not exclude other same-user processes. Keep client approvals enabled. Windows needs Git Bash or WSL for the session-context hook. Only Claude Code is documented by this plugin.
 - **Publisher:** Epic Games · Official publisher source · reviewed 2026-10-18.
 
 ### Codex Game Studio · local CLI and studio template
@@ -100,7 +102,7 @@ A Codex-native workflow CLI with tracked agent roles, reusable skills, engine re
 
 - **Material:** Implementation and instructions.
 - **Scope:** TypeScript CLI, run lifecycle, task orchestration, validation code, engine configuration, and committed Codex agent/skill/workflow templates were inspected.
-- **Limitations:** The package requires Node 24+ and a separately installed Codex CLI and game engine. It supplies studio workflow structure; it does not bundle a complete engine or establish game quality.
+- **Limitations:** Requires Node 24+, Codex CLI for role execution, and a separate engine project. init prunes listed template-authoring paths and TypeScript/test files unless --keep-template-authoring is passed; inspect the target checkout before initializing. It supplies studio workflow structure rather than an engine, and source review does not establish game quality.
 - **Publisher:** merlinhu1 · Community / independent source · reviewed 2026-10-18.
 
 ### Phaser Game Agent · Coding-Agent Bridge
@@ -191,7 +193,7 @@ Connects Claude Code to Unity through an opt-in local HTTP bridge so the agent c
 
 - **Material:** Implementation source.
 - **Scope:** Reviewed the exact Claude skill, loopback HttpListener implementation, and AssetTools.CreateScript. The skill calls the bridge's live schema, follows script writes with wait_for_compile, and checks capture_game_view.
-- **Limitations:** Requires the Unity plugin and enabled bridge. Script writes depend on the plugin's settings, and domain reload temporarily interrupts the listener. Unity must continue servicing its main thread. Direct image generation is a separate provider/API path.
+- **Limitations:** Requires Unity 2022.3+ and the opt-in, bearer-authenticated local bridge. Script writes, asset deletion, menu execution, Play Mode, and scene switching are permitted by default unless disabled in Settings. Unity Undo does not cover file writes or most AssetDatabase operations. Domain reload temporarily interrupts the listener, and Unity must service its main thread. The Claude Code bridge needs no separate provider API key; in-editor chat and image generation have separate API requirements.
 - **Publisher:** TestcodeInc · Community / independent source · reviewed 2026-10-18.
 
 ### Godot Forge · live editor and runtime bridge (Tann2019)
@@ -204,7 +206,7 @@ An MCP server and Godot add-on for writing scripts, building editable scenes, re
 
 - **Material:** Implementation source.
 - **Scope:** Reviewed script creation/edit/validation/attachment handlers, the runtime command forwarder, and the companion skill. The tree includes a TypeScript MCP bridge, GDScript editor/runtime handlers, and a platformer with a coin-collection test scenario.
-- **Limitations:** Requires its Godot editor add-on and runtime connection; engine-version compatibility matters. Code review confirms implemented tool paths, not successful execution of every exposed operation. This is separate from Coding-Solo/godot-mcp and gregario/godot-forge.
+- **Limitations:** Requires Godot 4.4+ and Node 20+. Live authoring uses the editor add-on; runtime inspection and input need a running game with the debugger connection. Documentation, tests, and export also have separate headless paths. Code review confirms implemented paths, not successful execution of every operation. This is separate from Coding-Solo/godot-mcp and gregario/godot-forge.
 - **Publisher:** Tann2019 · Community / independent source · reviewed 2026-10-18.
 
 ### Godot Forge · code analysis and tests (gregario)
@@ -217,7 +219,7 @@ A focused MCP feedback layer for coding agents: Godot API lookup, GDScript and s
 
 - **Material:** Implementation source.
 - **Scope:** Reviewed MCP test registration, Godot process launch and GUT/GdUnit4 output parsers; also reviewed heuristic script analysis and an LSP client that obtains editor diagnostics. Scene analysis, project launching and screenshots have separate modules.
-- **Limitations:** Heuristic warnings are distinct from compiler diagnostics. Runtime tests need Godot and an installed test framework; LSP diagnostics need the editor. It supplies code feedback, not broad scene authoring.
+- **Limitations:** Heuristic warnings differ from compiler diagnostics. Tests need Godot plus GUT/GdUnit4. At the cited source revision, static source inspection indicates that unrecognized output can produce 'All 0 tests passed' and the result does not incorporate the process exit code. This failure path was not runtime-reproduced; verify expected counts and raw execution evidence before accepting a pass. LSP diagnostics need the editor; screenshots launch a separate Godot process and need a display. It is a feedback layer, not broad scene authoring.
 - **Publisher:** gregario · Community / independent source · reviewed 2026-10-18.
 
 ### Godot CLI · live scene authoring for coding agents
@@ -243,7 +245,7 @@ A CLI, reusable skill, and MCP surface for editing Godot content, validating pro
 
 - **Material:** Implementation source.
 - **Scope:** Verified Python CLI/MCP implementation under src/gda, daemon IPC, and an actual GDScript runtime harness at src/gda/harness/gda_harness.gd. skills/gda/SKILL.md and docs/gda-skill.md provide agent guidance; documented configuration explicitly covers Claude Code, Codex, and Cursor.
-- **Limitations:** Requires Python 3.13+ and a Godot binary: 4.4+ for headless operations, 4.6+ for Live. Runtime screenshots require a display/windowed session. Live mode injects a development harness; exports must respect its stripping/self-disable behavior. Other MCP clients are not individually verified here.
+- **Limitations:** Requires Python 3.13+ and Godot 4.4+ for headless operations or 4.6+ for Live. It assumes a trusted project: even some read-only operations start autoloads, and node get instantiates scene scripts. Runtime screenshots need a windowed/display session. Live mode injects a development harness; exports must respect its stripping/self-disable behavior. Other MCP clients are not individually verified here.
 - **Publisher:** aigengame · Community / independent source · reviewed 2026-10-18.
 
 ### Godot Agent Loop
@@ -256,7 +258,7 @@ A Godot build–run–observe–playtest–verify loop with runtime/editor bridg
 
 - **Material:** Implementation and instructions.
 - **Scope:** Verified TypeScript server/editor bridge, addons/godot_agent_loop/plugin.gd, runtime verification code, cold-model evaluation runners, and an executable launch-demo project. One portable agent bundle exposes build/debug/verify/ship skills and explicit Claude Code, Codex, OpenCode, and Pi adapters.
-- **Limitations:** Godot 4.7+ and matching prerequisites required. Platform support is bounded: Linux CI, portable Windows acceptance, and specific macOS editor workflows are reported separately. The same skill files do not establish identical engine/UI/export coverage on every client or OS.
+- **Limitations:** Requires Godot 4.7+ and Node 22+. The default core tool surface uses godot_catalog and godot_call to reach unlisted tools. Filesystem access is denied without configured roots unless explicitly overridden; runtime reflection and code-execution groups are disabled by default. Those RPC gates do not sandbox project GDScript, which runs with OS-level permissions. Screenshots need a rendering/display context. Linux CI, Windows acceptance, and specific macOS workflows are reported separately, not as equal coverage across clients and platforms.
 - **Publisher:** beremaran · Community / independent source · reviewed 2026-10-18.
 
 ### agent2unity-cli
@@ -269,7 +271,7 @@ A .NET command-line client plus a C# Unity editor daemon that lets coding agents
 
 - **Material:** Implementation source.
 - **Scope:** Verified .NET CLI Program.cs, C# HTTP daemon/main-thread dispatcher, serialized-field and prefab/scene commands, and Unity Test Framework command implementations. Agent integration files explicitly cover Claude Code skills, Codex AGENTS.md, Cursor rules, and Gemini CLI GEMINI.md.
-- **Limitations:** Requires a running Unity Editor/daemon and .NET SDK 8. Tests require Unity Test Framework. It controls documented asset/editor operations, not arbitrary gameplay acceptance. It is a community CLI rather than Unity's official agent integration; client instruction files are not evidence of equal live testing.
+- **Limitations:** Requires a running Unity Editor/daemon and .NET SDK 8; tests additionally need Unity Test Framework. The daemon binds to localhost but has no authentication check in the reviewed request path, so any process that can reach the port can invoke editor commands. Keep it local and stop it when unused. It controls documented editor operations, not arbitrary gameplay acceptance; agent instruction files do not establish equal live testing.
 - **Publisher:** jkpp · Community / independent source · reviewed 2026-10-18.
 
 ### Unity Agent · CLI, Headless, MCP, and Package Skills
@@ -347,7 +349,7 @@ A small community Godot editor plugin that sends prompts from a dock to a Python
 
 - **Material:** Implementation source.
 - **Scope:** Editor-plugin source: gemini_plugin.gd registers the dock, gemini_dock.gd launches Python, and gemini_backend.py runs the gemini executable, parses JSON action blocks, and creates project files. Supporting dock scene and plugin configuration are in the repository.
-- **Limitations:** Prototype bridge, not a complete game or full editor-control MCP server. The backend currently uses the Windows type command; the README requires changing it to cat on macOS/Linux. The dock calls a python executable and expects placement under addons/gemini_assistant/. CLI installation/authentication are prerequisites. No runtime validation was performed.
+- **Limitations:** Prototype bridge, not a complete game or full editor-control MCP server. Returned JSON file actions are applied automatically and existing files are opened in overwrite mode. The backend rejects '..' strings but does not enforce canonical project-root containment, so review it before use on valuable projects. It uses Windows type; macOS/Linux need the documented cat change. The dock expects python and addons/gemini_assistant/. Gemini CLI installation/authentication are separate prerequisites. No runtime validation was performed.
 - **Publisher:** AlexonMorris · Community / independent source · reviewed 2026-10-18.
 
 ### Phaser 4: official coding-agent skills with engine code examples
