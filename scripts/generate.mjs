@@ -43,10 +43,11 @@ outputs['website/public/logo-sources.md']=attribution.replaceAll('<code>website/
 outputs['website/public/media-sources.md']=(await readFile(new URL('../docs/media-sources.md',import.meta.url),'utf8')).replaceAll('../website/public/','./');
 // Public downloads use same-directory paths so links also work on repository subpaths.
 let downloadable=awesome;
-for(const name of ['agents-notes','engines-notes','game-ai-notes','world-model-notes','practical-guide','tutorials-and-demos','coding-agent-game-code','game-testing-library']){
+for(const name of ['agents-notes','engines-notes','game-ai-notes','world-model-notes','practical-guide','tutorials-and-demos','coding-agent-game-code','game-testing-library','research-index','engine-operation-contracts','production-research-notes','generative-tools-research','generative-api-boundaries','visual-evidence-research']){
  const path=`docs/${name}.md`;
  downloadable=downloadable.replaceAll(`](${path})`, `](./${name}.md)`);
  let note=outputs[path]??await readFile(new URL('../'+path,import.meta.url),'utf8');
+ note=note.replaceAll('](../AWESOME.md)', '](./awesome-list.md)');
  note=note.replaceAll('](world-model-notes.md)','](./world-model-notes.md)');
  outputs[`website/public/${name}.md`]=note;
 }

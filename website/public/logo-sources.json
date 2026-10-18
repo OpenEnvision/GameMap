@@ -1045,5 +1045,148 @@
     "asset": null,
     "sha256": null,
     "background": "light"
+  },
+  "xbox-accessibility-guidelines": {
+    "organization": "Microsoft",
+    "kind": "brand",
+    "sourceUrl": "https://learn.microsoft.com/en-us/xbox/accessibility/guidelines",
+    "logoSourceUrl": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120",
+    "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
+    "asset": "logos/microsoft-f4a787ffde7c.jpg",
+    "sha256": "22085429a7aceb666f12e64505268d95c73132d8cd2164b050db30f5e372738a",
+    "background": "light",
+    "wide": false
+  },
+  "msdf-atlas-gen": {
+    "kind": "creator",
+    "asset": null,
+    "logoSourceUrl": null,
+    "sha256": null,
+    "background": "light",
+    "wide": false,
+    "organization": "Chlumsky",
+    "sourceUrl": "https://github.com/Chlumsky/msdf-atlas-gen",
+    "notes": "Official project or publisher attribution is supported by the linked primary source. Independent maintainer attribution is shown as text; no unrelated image is substituted."
+  },
+  "fastnoise-lite": {
+    "kind": "creator",
+    "asset": null,
+    "logoSourceUrl": null,
+    "sha256": null,
+    "background": "light",
+    "wide": false,
+    "organization": "Auburn",
+    "sourceUrl": "https://github.com/Auburn/FastNoiseLite",
+    "notes": "Official project or publisher attribution is supported by the linked primary source. Independent maintainer attribution is shown as text; no unrelated image is substituted."
+  },
+  "directx-shader-compiler": {
+    "organization": "Microsoft",
+    "kind": "brand",
+    "sourceUrl": "https://github.com/microsoft/DirectXShaderCompiler",
+    "logoSourceUrl": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120",
+    "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
+    "asset": "logos/microsoft-f4a787ffde7c.jpg",
+    "sha256": "22085429a7aceb666f12e64505268d95c73132d8cd2164b050db30f5e372738a",
+    "background": "light",
+    "wide": false
+  },
+  "playwright-test": {
+    "organization": "Microsoft / Playwright",
+    "kind": "brand",
+    "sourceUrl": "https://playwright.dev/docs/test-snapshots",
+    "logoSourceUrl": "https://playwright.dev/img/playwright-logo.svg",
+    "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
+    "asset": "logos/microsoft-playwright-42a5ff460d7c.svg",
+    "sha256": "6b0a4367bdeab10995bc239278f04c68c10e48adbec15e799e01909a0d66dcb9",
+    "background": "light",
+    "wide": false
+  },
+  "openai-image-api": {
+    "organization": "OpenAI",
+    "kind": "brand",
+    "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation",
+    "logoSourceUrl": "https://github.com/openai.png?size=256",
+    "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
+    "asset": "logos/openai-cde5d42ad75d.png",
+    "sha256": "6025a4347a8eaed17e31eaebf7834e33ec4af26cc7f59be586ac59ba5157fa1c",
+    "background": "light",
+    "wide": false
+  },
+  "elevenlabs-music": {
+    "organization": "ElevenLabs",
+    "kind": "brand",
+    "sourceUrl": "https://elevenlabs.io/docs/overview/capabilities/music",
+    "logoSourceUrl": "https://github.com/elevenlabs.png?size=256",
+    "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
+    "asset": "logos/elevenlabs-sfx-61d3a1f305ac.png",
+    "sha256": "61d3a1f305ac3cfa29ddac70e78d4f2f3eb2d03cddb7ab0f116fe4f0bfebbb64",
+    "background": "light",
+    "wide": false
+  },
+  "tripo-generation-api": {
+    "organization": "Tripo AI / VAST",
+    "kind": "brand",
+    "sourceUrl": "https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html",
+    "logoSourceUrl": "https://avatars.githubusercontent.com/u/149052137?v=4",
+    "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
+    "asset": "logos/tripo-ai-vast-50f52a476f35.png",
+    "sha256": "a54e88da222f3608f1fe6bc9bcc220727da12f18a0df18eb03282c7ed33b60cd",
+    "background": "dark",
+    "wide": false
+  },
+  "elevenlabs-speech": {
+    "organization": "ElevenLabs",
+    "kind": "brand",
+    "sourceUrl": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert",
+    "logoSourceUrl": "https://github.com/elevenlabs.png?size=256",
+    "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
+    "asset": "logos/elevenlabs-sfx-61d3a1f305ac.png",
+    "sha256": "61d3a1f305ac3cfa29ddac70e78d4f2f3eb2d03cddb7ab0f116fe4f0bfebbb64",
+    "background": "light",
+    "wide": false
+  },
+  "unreal-remote-control": {
+    "organization": "Epic Games / Unreal Engine",
+    "kind": "brand",
+    "sourceUrl": "https://dev.epicgames.com/documentation/unreal-engine/remote-control-for-unreal-engine",
+    "logoSourceUrl": "https://github.com/EpicGames.png?size=256",
+    "notes": "Official documentation identifies the publisher of this interface. The existing bundled mark identifies the same publisher; documented API availability does not establish a working GameMap adapter.",
+    "asset": "logos/epic-games-unreal-engine-e0295cf4837c.png",
+    "sha256": "22a06f67ab790bcef639f5618ae7396b7f0f7a943817ef01efc9c9cb15a0e056",
+    "background": "light",
+    "wide": false
+  },
+  "unreal-gauntlet": {
+    "organization": "Epic Games / Unreal Engine",
+    "kind": "brand",
+    "sourceUrl": "https://dev.epicgames.com/documentation/unreal-engine/gauntlet-automation-framework-overview-in-unreal-engine?lang=en-US",
+    "logoSourceUrl": "https://github.com/EpicGames.png?size=256",
+    "notes": "Official documentation identifies the publisher of this interface. The existing bundled mark identifies the same publisher; documented API availability does not establish a working GameMap adapter.",
+    "asset": "logos/epic-games-unreal-engine-e0295cf4837c.png",
+    "sha256": "22a06f67ab790bcef639f5618ae7396b7f0f7a943817ef01efc9c9cb15a0e056",
+    "background": "light",
+    "wide": false
+  },
+  "unity-addressables-scripting": {
+    "organization": "Unity",
+    "kind": "brand",
+    "sourceUrl": "https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/build-scripting-start-build.html",
+    "logoSourceUrl": "https://github.com/Unity-Technologies.png?size=256",
+    "notes": "Official documentation identifies the publisher of this interface. The existing bundled mark identifies the same publisher; documented API availability does not establish a working GameMap adapter.",
+    "asset": "logos/unity-c20a05de0895.png",
+    "sha256": "300cc9cf57b29fe09b43e587b23f563c390bb67242227524acfcc28fc477f4f7",
+    "background": "light",
+    "wide": false
+  },
+  "windows-ui-automation": {
+    "organization": "Microsoft",
+    "kind": "brand",
+    "sourceUrl": "https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview",
+    "logoSourceUrl": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120",
+    "notes": "Official documentation identifies the publisher of this interface. The existing bundled mark identifies the same publisher; documented API availability does not establish a working GameMap adapter.",
+    "asset": "logos/microsoft-f4a787ffde7c.jpg",
+    "sha256": "22085429a7aceb666f12e64505268d95c73132d8cd2164b050db30f5e372738a",
+    "background": "light",
+    "wide": false
   }
 }

@@ -501,7 +501,7 @@
     "category": "agents",
     "type": "tool",
     "summary": "A community MCP server for launching Godot, running projects, reading logs, and performing basic scene operations.",
-    "detail": "Supports project execution, debug output capture, scene and node creation, Sprite2D texture loading, and some 3D MeshLibrary operations. It can give agents feedback from real projects; these interfaces do not provide complete visual playtesting or every editor feature.",
+    "detail": "Supports project execution, debug output capture, scene and node creation, Sprite2D texture loading, and some 3D MeshLibrary operations. It can give agents feedback from real projects; these interfaces do not provide complete visual playtesting or every editor feature. At the checked commit, the server keeps one active project process and sends kill before spawning another without awaiting prior exit. Stop returns after sending a kill request rather than waiting for process exit; natural exit clears the handle used by get_debug_output. Archive output separately for reliable crash evidence.",
     "url": "https://github.com/Coding-Solo/godot-mcp",
     "tags": [
       "Godot",
@@ -519,7 +519,13 @@
       "2d",
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-18",
+    "links": [
+      {
+        "label": "Pinned implementation and lifecycle limits",
+        "url": "https://github.com/Coding-Solo/godot-mcp/blob/1209744fad78f3998f98c7394fd0f6ef50da5281/src/index.ts#L1053-L1215"
+      }
+    ]
   },
   {
     "id": "mcp-for-blender",
@@ -803,12 +809,16 @@
     "category": "engines",
     "type": "tool",
     "summary": "Unity's official testing framework, with Edit mode, Play mode, and command-line execution.",
-    "detail": "Enables ongoing regression checks for generated scripts and scene behavior, using UnityTest across frames to check lifecycles, coroutines, and state changes. Edit mode and Play mode have different execution loops; tests should wait for real frames or conditions rather than only confirming script creation.",
+    "detail": "Enables ongoing regression checks for generated scripts and scene behavior, using UnityTest across frames to check lifecycles, coroutines, and state changes. Edit mode and Play mode have different execution loops; tests should wait for real frames or conditions rather than only confirming script creation. The separately checked Test Framework 1.4.6 API returns a job GUID and documents multi-frame cancellation cleanup. Active tests become Canceled and remaining tests NotRun; do not equate cancellation with passing or assume compatibility with every Editor package version.",
     "url": "https://docs.unity3d.com/6000.2/Documentation/Manual/test-framework/test-framework-introduction.html",
     "links": [
       {
         "label": "Package and API documentation",
         "url": "https://docs.unity3d.com/Packages/com.unity.test-framework@latest/"
+      },
+      {
+        "label": "Versioned test-job and cancellation API",
+        "url": "https://docs.unity3d.com/Packages/com.unity.test-framework@1.4/api/UnityEditor.TestTools.TestRunner.Api.TestRunnerApi.html"
       }
     ],
     "tags": [
@@ -935,7 +945,7 @@
     "category": "engines",
     "type": "tool",
     "summary": "UE's official infrastructure for unit, functional, content stress, and screenshot comparison tests.",
-    "detail": "Can bring Blueprint compilation, level loading, simulated input, and visual regression checks into an agent feedback loop, alongside interfaces such as Functional Testing. Tests require the appropriate plugins and state cleanup; the framework runs within the engine.",
+    "detail": "Can bring Blueprint compilation, level loading, simulated input, and visual regression checks into an agent feedback loop, alongside interfaces such as Functional Testing. Tests require the appropriate plugins and state cleanup; the framework runs within the engine. ResumeRunTest reads an existing JSON report, resumes NotRun tests, and marks interrupted in-progress tests as failures. Preserve the report and distinguish compatible editor and client test contexts.",
     "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/automation-test-framework-in-unreal-engine",
     "tags": [
       "Unreal Engine",
@@ -954,7 +964,13 @@
       "2d",
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-18",
+    "links": [
+      {
+        "label": "Command-line reports and interrupted-run resumption",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/run-automation-tests-in-unreal-engine"
+      }
+    ]
   },
   {
     "id": "unreal-lyra",
@@ -1313,6 +1329,69 @@
     "verified": "2026-10-18"
   },
   {
+    "id": "unreal-remote-control",
+    "name": "Unreal Engine · Remote Control API",
+    "category": "engines",
+    "type": "docs",
+    "summary": "Exposes reflected editor properties and functions over HTTP for external tooling.",
+    "detail": "Remote Control provides a native engine integration surface distinct from a community MCP bridge. Property writes can request editor transactions and change notifications, but an acknowledged mutation does not establish package-save completion. Enable the appropriate plugin, restrict network exposure, and qualify editor versus packaged-runtime access separately.",
+    "url": "https://dev.epicgames.com/documentation/unreal-engine/remote-control-for-unreal-engine",
+    "links": [
+      {
+        "label": "HTTP API reference",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/remote-control-api-http-reference-for-unreal-engine"
+      }
+    ],
+    "tags": [
+      "Unreal Engine",
+      "HTTP",
+      "Editor automation",
+      "State mutation"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unity-addressables-scripting",
+    "name": "Unity · Addressables Build and Loading APIs",
+    "category": "engines",
+    "type": "docs",
+    "summary": "Builds addressable content from explicit profiles and loads assets through asynchronous handles.",
+    "detail": "The checked Addressables 1.21 documentation separates content builds from executable builds. Build settings, active profile, builder, and content-state file affect outputs. Runtime loading returns a handle whose status and result must be checked and later released. A key matching several assets can select only the first; preserve dependency and cache provenance.",
+    "url": "https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/build-scripting-start-build.html",
+    "links": [
+      {
+        "label": "LoadAssetAsync reference",
+        "url": "https://docs.unity3d.com/kr/Packages/com.unity.addressables%401.21/api/UnityEngine.AddressableAssets.Addressables.LoadAssetAsync.html"
+      }
+    ],
+    "tags": [
+      "Unity",
+      "Addressables",
+      "Asset dependencies",
+      "Async loading",
+      "Content builds"
+    ],
+    "stages": [
+      "assets",
+      "code",
+      "ship",
+      "runtime"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
     "id": "gamegpt",
     "name": "GameGPT",
     "category": "2d",
@@ -1665,6 +1744,27 @@
     ],
     "dimensions": [
       "2d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "openai-image-api",
+    "name": "OpenAI Image Generation",
+    "category": "2d",
+    "type": "tool",
+    "summary": "Generate and edit raster art using image endpoints or a conversational image-generation tool.",
+    "detail": "Generate or edit raster images through the Images API or multi-turn Responses workflows. Save output bytes and request settings; masks guide edits rather than guaranteeing exact boundaries. Sprite consistency and seamless textures need separate checks. The technical guide does not establish output rights or retry billing.",
+    "url": "https://developers.openai.com/api/docs/guides/image-generation",
+    "links": [],
+    "tags": [
+      "asset-generation"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
     ],
     "verified": "2026-10-18"
   },
@@ -2144,6 +2244,31 @@
     "verified": "2026-10-18"
   },
   {
+    "id": "tripo-generation-api",
+    "name": "Tripo Model Generation API",
+    "category": "3d",
+    "type": "tool",
+    "summary": "Versioned text-to-model generation with separate geometry and texture seeds.",
+    "detail": "Versioned text-to-model requests expose geometry/texture seeds and optional PBR controls. Persist model_version and task ID; import only successful outputs and archive URLs promptly. Low-poly generation can fail on complex inputs. Seeds are version-scoped, while output rights, cancellation endpoints and retry charges remain unverified.",
+    "url": "https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html",
+    "links": [
+      {
+        "label": "Tripo task results",
+        "url": "https://docs.tripo3d.ai/task-query/get-your-task-result.html"
+      }
+    ],
+    "tags": [
+      "asset-generation"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
     "id": "scenario",
     "name": "Scenario",
     "category": "production",
@@ -2568,6 +2693,272 @@
     ],
     "dimensions": [
       "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unreal-gauntlet",
+    "name": "Unreal Engine · Gauntlet",
+    "category": "production",
+    "type": "docs",
+    "summary": "Orchestrates game test sessions with multiple processes, roles, devices, and collected logs.",
+    "detail": "Gauntlet consumes prepared cooked builds and launches configured game roles through AutomationTool. Game-specific test nodes define assertions and terminal outcomes; launching a client and server alone does not establish scenario success. Build production, device availability, process cleanup, and parallel-session port allocation remain separate responsibilities.",
+    "url": "https://dev.epicgames.com/documentation/unreal-engine/gauntlet-automation-framework-overview-in-unreal-engine?lang=en-US",
+    "links": [],
+    "tags": [
+      "Unreal Engine",
+      "AutomationTool",
+      "Multi-process testing",
+      "Cooked builds"
+    ],
+    "stages": [
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "windows-ui-automation",
+    "name": "Windows · UI Automation and Input Semantics",
+    "category": "production",
+    "type": "docs",
+    "summary": "Provides native accessibility control patterns and a Win32 input bridge for desktop editor automation.",
+    "detail": "Provider support must be probed per control; no specific game editor is assumed accessible. UIA coordinates are physical pixels, while absolute mouse input uses normalized desktop coordinates. Bounding rectangles may contain occluded points, foreground activation can be refused, and input insertion does not prove application completion. Integrity restrictions must be respected.",
+    "url": "https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview",
+    "links": [
+      {
+        "label": "Properties and occlusion",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-automation-element-propids"
+      },
+      {
+        "label": "Input and integrity limits",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendinput"
+      },
+      {
+        "label": "DPI coordinates",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-screenscaling"
+      },
+      {
+        "label": "Window/display capture and frame lifetime",
+        "url": "https://learn.microsoft.com/en-us/windows/apps/develop/media-authoring-processing/screen-capture"
+      }
+    ],
+    "tags": [
+      "Windows",
+      "Accessibility",
+      "Native GUI",
+      "CUA",
+      "DPI"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "elevenlabs-music",
+    "name": "ElevenLabs Music",
+    "category": "production",
+    "type": "tool",
+    "summary": "Prompted music generation with composition plans, references and section editing.",
+    "detail": "Generate music with composition plans, references and section editing. Music-specific terms distinguish Indie and Studio game uses, so paid API access alone does not clear every game release. The October 2026 use policy restricts AI-development/training datasets unless expressly permitted. Reference audio rights and plan eligibility require review.",
+    "url": "https://elevenlabs.io/docs/overview/capabilities/music",
+    "links": [
+      {
+        "label": "ElevenLabs Music terms",
+        "url": "https://elevenlabs.io/music-terms"
+      },
+      {
+        "label": "Prohibited Use Policy (October 2026)",
+        "url": "https://elevenlabs.io/use-policy"
+      }
+    ],
+    "tags": [
+      "audio-generation"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "elevenlabs-speech",
+    "name": "ElevenLabs Speech Generation",
+    "category": "production",
+    "type": "tool",
+    "summary": "Voice-conditioned speech synthesis with pronunciation dictionaries and neighboring-request continuity controls.",
+    "detail": "The speech endpoint accepts versioned pronunciation dictionaries and previous/next text or request context. Zero-retention mode is enterprise-only and disables history-based continuity features; verify model compatibility. October 2026 policy restricts AI-development/training datasets and requires approval for under-18-directed products. These constraints are distinct from ordinary output-commercial rights and free-plan restrictions.",
+    "url": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert",
+    "links": [
+      {
+        "label": "Prohibited Use Policy (October 2026)",
+        "url": "https://elevenlabs.io/use-policy"
+      },
+      {
+        "label": "Non-EEA general terms (October 2026)",
+        "url": "https://elevenlabs.io/terms-of-use"
+      }
+    ],
+    "tags": [
+      "speech-generation",
+      "audio-generation"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "xbox-accessibility-guidelines",
+    "name": "Xbox Accessibility Guidelines",
+    "category": "production",
+    "type": "docs",
+    "summary": "Game-specific accessibility guidance for designers, developers and test teams.",
+    "detail": "The guidelines cover accessible game experiences and provide criteria for review. They are best-practice guidance, not a legal compliance checklist or certification. Automated scans alone cannot replace manual assessment and testing with disabled players.",
+    "url": "https://learn.microsoft.com/en-us/xbox/accessibility/guidelines",
+    "tags": [
+      "Accessibility",
+      "QA",
+      "Guidelines"
+    ],
+    "stages": [
+      "plan",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "msdf-atlas-gen",
+    "name": "MSDF Atlas Generator",
+    "category": "production",
+    "type": "tool",
+    "summary": "A command-line and library tool for generating distance-field font atlases.",
+    "detail": "Produces glyph textures and layout metadata from fonts. The default character set is ASCII unless overridden, so multilingual coverage must be explicit. Sample atlas color channels as linear data rather than sRGB; font licensing remains independent.",
+    "url": "https://github.com/Chlumsky/msdf-atlas-gen",
+    "tags": [
+      "Fonts",
+      "MSDF",
+      "UI"
+    ],
+    "stages": [
+      "assets",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "fastnoise-lite",
+    "name": "FastNoise Lite",
+    "category": "production",
+    "type": "framework",
+    "summary": "A portable noise library for procedural terrain and material inputs.",
+    "detail": "Provides 2D/3D sampling, fractals and domain warping across multiple languages under MIT. These are generation primitives: meshing, erosion, persistent world state and meaningful level design require additional systems.",
+    "url": "https://github.com/Auburn/FastNoiseLite",
+    "tags": [
+      "Procedural generation",
+      "Noise",
+      "Terrain"
+    ],
+    "stages": [
+      "code",
+      "assets",
+      "world"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "directx-shader-compiler",
+    "name": "DirectX Shader Compiler",
+    "category": "production",
+    "type": "tool",
+    "summary": "HLSL compilation through the dxc command line and compiler APIs.",
+    "detail": "Compiler-call success and shader compilation success are separate: inspect the result status, diagnostics and requested outputs. Target profiles, include dependencies and build configuration matter. A compiled shader does not establish rendering correctness or target-device compatibility.",
+    "url": "https://github.com/microsoft/DirectXShaderCompiler",
+    "links": [
+      {
+        "label": "Compiler API guide",
+        "url": "https://github.com/microsoft/DirectXShaderCompiler/wiki/Using-dxc.exe-and-dxcompiler.dll"
+      }
+    ],
+    "tags": [
+      "Shaders",
+      "HLSL",
+      "Build validation"
+    ],
+    "stages": [
+      "code",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "playwright-test",
+    "name": "Playwright Test",
+    "category": "production",
+    "type": "tool",
+    "summary": "Browser testing with DOM actions, assertions and screenshot comparisons.",
+    "detail": "Screenshot assertions wait for two matching captures before comparison, but stable pixels do not prove application readiness. Record browser, fonts, viewport and capture options: animation disabling, masks and styles can alter evidence. DOM access is a different observation surface from screenshot-only control or Playwright MCP.",
+    "url": "https://playwright.dev/docs/test-snapshots",
+    "links": [
+      {
+        "label": "Actionability",
+        "url": "https://playwright.dev/docs/actionability"
+      },
+      {
+        "label": "Screenshot assertion API",
+        "url": "https://playwright.dev/docs/api/class-pageassertions"
+      }
+    ],
+    "tags": [
+      "Browser testing",
+      "Visual regression",
+      "DOM"
+    ],
+    "stages": [
+      "code",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d",
+      "world"
     ],
     "verified": "2026-10-18"
   },

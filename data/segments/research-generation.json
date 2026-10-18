@@ -1,0 +1,109 @@
+[
+  {
+    "id": "openai-image-api",
+    "name": "OpenAI Image Generation",
+    "category": "2d",
+    "type": "tool",
+    "summary": "Generate and edit raster art using image endpoints or a conversational image-generation tool.",
+    "detail": "Generate or edit raster images through the Images API or multi-turn Responses workflows. Save output bytes and request settings; masks guide edits rather than guaranteeing exact boundaries. Sprite consistency and seamless textures need separate checks. The technical guide does not establish output rights or retry billing.",
+    "url": "https://developers.openai.com/api/docs/guides/image-generation",
+    "links": [],
+    "tags": [
+      "asset-generation"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "elevenlabs-music",
+    "name": "ElevenLabs Music",
+    "category": "production",
+    "type": "tool",
+    "summary": "Prompted music generation with composition plans, references and section editing.",
+    "detail": "Generate music with composition plans, references and section editing. Music-specific terms distinguish Indie and Studio game uses, so paid API access alone does not clear every game release. The October 2026 use policy restricts AI-development/training datasets unless expressly permitted. Reference audio rights and plan eligibility require review.",
+    "url": "https://elevenlabs.io/docs/overview/capabilities/music",
+    "links": [
+      {
+        "label": "ElevenLabs Music terms",
+        "url": "https://elevenlabs.io/music-terms"
+      },
+      {
+        "label": "Prohibited Use Policy (October 2026)",
+        "url": "https://elevenlabs.io/use-policy"
+      }
+    ],
+    "tags": [
+      "audio-generation"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "tripo-generation-api",
+    "name": "Tripo Model Generation API",
+    "category": "3d",
+    "type": "tool",
+    "summary": "Versioned text-to-model generation with separate geometry and texture seeds.",
+    "detail": "Versioned text-to-model requests expose geometry/texture seeds and optional PBR controls. Persist model_version and task ID; import only successful outputs and archive URLs promptly. Low-poly generation can fail on complex inputs. Seeds are version-scoped, while output rights, cancellation endpoints and retry charges remain unverified.",
+    "url": "https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html",
+    "links": [
+      {
+        "label": "Tripo task results",
+        "url": "https://docs.tripo3d.ai/task-query/get-your-task-result.html"
+      }
+    ],
+    "tags": [
+      "asset-generation"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "elevenlabs-speech",
+    "name": "ElevenLabs Speech Generation",
+    "category": "production",
+    "type": "tool",
+    "summary": "Voice-conditioned speech synthesis with pronunciation dictionaries and neighboring-request continuity controls.",
+    "detail": "The speech endpoint accepts versioned pronunciation dictionaries and previous/next text or request context. Zero-retention mode is enterprise-only and disables history-based continuity features; verify model compatibility. October 2026 policy restricts AI-development/training datasets and requires approval for under-18-directed products. These constraints are distinct from ordinary output-commercial rights and free-plan restrictions.",
+    "url": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert",
+    "links": [
+      {
+        "label": "Prohibited Use Policy (October 2026)",
+        "url": "https://elevenlabs.io/use-policy"
+      },
+      {
+        "label": "Non-EEA general terms (October 2026)",
+        "url": "https://elevenlabs.io/terms-of-use"
+      }
+    ],
+    "tags": [
+      "speech-generation",
+      "audio-generation"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  }
+]

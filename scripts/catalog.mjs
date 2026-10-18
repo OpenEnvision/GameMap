@@ -49,6 +49,7 @@ export function renderAwesome(records){
 
 - [Interactive GameMap website](https://gamemap-ai-atlas.jiadonghou69.chatgpt.site) (initially published as owner-private)
 - [A practical guide from resources to a working project](docs/practical-guide.md)
+- [Production research: interfaces, evidence and generative-service boundaries](docs/research-index.md)
 - [Tutorials, playable demos, and complete example-game source](docs/tutorials-and-demos.md)
 - [Coding agents × games: skills, bridges, evaluations, and game code](docs/coding-agent-game-code.md)
 - [Testing library: games, AI environments, assets, rigs, and motion data](docs/game-testing-library.md)
