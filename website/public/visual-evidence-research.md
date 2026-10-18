@@ -408,7 +408,7 @@ Unknowns: actual engine cancellation/transaction semantics, service idempotency,
 Reflective evolution over named textual candidate components.
 
 - **Documented surface and proposed use:** Domain adapter implements evaluate and make_reflective_dataset; optional proposal logic. Candidate maps component names to text.
-- **Limits:** GameMap must build executable policies and independent evaluator. Rich visual artifacts need deliberate reflection-packet conversion; benchmark gains are not game-production evidence. See [execution-control boundaries](benchmark-reproducibility.md#gepa-execution-controls-counts-caches-and-resumed-evidence) for proposal counts, budget admission, cost tracking, cache identity and resumed scores.
+- **Limits:** GameMap must build executable policies and independent evaluator. Rich visual artifacts need deliberate reflection-packet conversion; benchmark gains are not game-production evidence. See [execution-control boundaries](benchmark-reproducibility.md#gepa-execution-controls-counts-caches-and-resumed-evidence) for proposal counts, budget admission, cost tracking, cache identity and resumed scores. See [composition and accounting](benchmark-reproducibility.md#harness-composition-and-evaluation-accounting) for coupled components, whole-text merges and execution-path counter differences.
 - **Source terms:** MIT repository.
 - **Primary sources:** [GEPA adapter protocol](https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/core/adapter.py); [GEPA repository](https://github.com/gepa-ai/gepa); [GEPA paper](https://arxiv.org/abs/2507.19457)
 
@@ -417,7 +417,7 @@ Reflective evolution over named textual candidate components.
 Outer-loop search over code controlling model information access.
 
 - **Documented surface and proposed use:** Use onboarding to specify task, mutable boundary, interface, evaluation splits, baseline, budget and evidence.
-- **Limits:** General harness optimization evidence; transfer to game production remains untested. Do not expose final test data/results through persistent memory.
+- **Limits:** General harness optimization evidence; transfer to game production remains untested. Do not expose final test data/results through persistent memory. The [classification implementation audit](benchmark-reproducibility.md#harness-composition-and-evaluation-accounting) narrows import validation, dataset/seed coverage and character-based cost interpretation.
 - **Source terms:** MIT upstream repository.
 - **Primary sources:** [Meta-Harness onboarding](https://github.com/stanford-iris-lab/meta-harness/blob/8123ccabe2b19fa1123090b2e5f1bacc20963ce8/ONBOARDING.md); [Meta-Harness repository](https://github.com/stanford-iris-lab/meta-harness); [Meta-Harness paper](https://arxiv.org/abs/2603.28052)
 
