@@ -424,7 +424,7 @@ Sources checked 2026-10-18; full reproduction not performed. This section adds t
 
 ### Version and input boundary
 
-Tiled's inspected documentation identifies **1.12.2**. Its immutable [v1.12.2 release](https://github.com/mapeditor/tiled/releases/tag/v1.12.2) resolves to [1fd984638f9898af920103799bcd68b467287295](https://github.com/mapeditor/tiled/commit/1fd984638f9898af920103799bcd68b467287295), whose release notes date it 2026-05-27. Godot references use **4.5** documentation and [4.5-stable source, 876b290332ec6f2e6d173d08162a02aa7e6ca46d](https://github.com/godotengine/godot/commit/876b290332ec6f2e6d173d08162a02aa7e6ca46d), not an installed-engine claim.
+Tiled's inspected documentation identifies **1.12.2**. Its versioned [v1.12.2 release](https://github.com/mapeditor/tiled/releases/tag/v1.12.2) resolves to [1fd984638f9898af920103799bcd68b467287295](https://github.com/mapeditor/tiled/commit/1fd984638f9898af920103799bcd68b467287295), whose release notes date it 2026-05-27. Godot references use **4.5** documentation and [4.5-stable source, 876b290332ec6f2e6d173d08162a02aa7e6ca46d](https://github.com/godotengine/godot/commit/876b290332ec6f2e6d173d08162a02aa7e6ca46d), not an installed-engine claim.
 
 Proposed input manifest: map format/application versions, orientation, grid size, layer hierarchy and offsets, external tileset/image paths and hashes, encoding/compression, importer revision and an explicit supported-feature list. Initially limit conversion to orthogonal maps and declared shapes; reject unsupported orientations/features with diagnostics instead of silently flattening them.
 

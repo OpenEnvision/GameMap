@@ -2,7 +2,7 @@
 
 Checked **2026-10-18**. Sources checked; full reproduction not performed.
 
-This appendix records 72 exact upstream source or model-card files inspected during the research. Full revisions identify the document/code that supported a claim. They do not identify an installed package, engine environment, downloaded model weights or a successful adapter run. No source pin grants rights beyond the applicable code, weight, data and service terms.
+The revision table below lists 72 selected upstream source or model-card files inspected during the research. Additional inspected files are cited in the relevant sections and other dossiers; this table is not an exhaustive inventory of every source cited in GameMap. Full revisions identify the document/code that supported a claim. They do not identify an installed package, engine environment, downloaded model weights or a successful adapter run. No source pin grants rights beyond the applicable code, weight, data and service terms.
 
 ## Revision index
 
