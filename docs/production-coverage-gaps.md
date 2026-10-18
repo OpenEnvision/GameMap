@@ -19,7 +19,7 @@ Reviewed **2026-10-18**. This is a qualitative gap map, not a completeness perce
 | Testing and performance | Test runners, visual baselines, impairments, metrics and agent evaluation | Control leakage, nondeterminism, invalid measurements and cross-project generalization |
 | Build and collaboration | Incremental build, packaging, delivery and revision-integrity cases | Verify platform SDKs, signing, certification, dependency closure and team permissions |
 
-See [work orders](production-work-orders.md) for operational chains, [studio cases](studio-production-case-studies.md) for historical evidence and [source revisions](source-revision-notes.md) for exact inspected files.
+See [native operation details](native-operation-details.md), [generation delivery](generation-delivery-contracts.md) and [asset validation](asset-validation-contracts.md) for concrete completion, failure and artifact constraints. See [work orders](production-work-orders.md) for operational chains, [studio cases](studio-production-case-studies.md) for historical evidence and [source revisions](source-revision-notes.md) for exact inspected files.
 
 ## Interface and observation boundaries
 
