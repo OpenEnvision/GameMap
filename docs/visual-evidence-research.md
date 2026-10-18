@@ -2,6 +2,8 @@
 
 Sources checked on **2026-10-18**. Full reproduction not performed. This dossier complements the [testing library](game-testing-library.md) and [production research notes](production-research-notes.md). It retains operation-level constraints that do not fit concise directory cards; it is not an additional count of unique catalog entries.
 
+For concrete selector, memory, temporal-verification and asset-feedback mechanisms, see the [visual-feedback contract dossier](visual-feedback-mechanisms.md).
+
 ## Reading the evidence
 
 A source check establishes what the cited authors document. It does not establish an installed tool, a working adapter, a reproduced result, or suitability for a target game. Code, weights, datasets and hosted terms can differ. The licensing notes below describe the inspected source, not a complete clearance decision.
