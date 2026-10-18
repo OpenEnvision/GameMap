@@ -22,6 +22,7 @@ export const testingEnvironments: TestingResource[] = [
     evidence: [
       { label: 'Installation and BabyAI tasks', url: 'https://github.com/Farama-Foundation/Minigrid#readme' },
       { label: 'Observation wrappers', url: 'https://minigrid.farama.org/api/wrappers/' },
+      { label: 'Pinned RGB visibility and wrapper implementation', url: 'https://github.com/Farama-Foundation/Minigrid/blob/7f5853792ea7f04f75614661006d87fcf949f26d/minigrid/wrappers.py' },
     ],
     aiUseNote: 'Built for agent research. Preserve license notices; explicitly separate rendered pixels, symbolic observations and mission text in each evaluation.',
     testTasks: [
@@ -32,7 +33,7 @@ export const testingEnvironments: TestingResource[] = [
     setup: [
       'Create a Python 3.11+ environment on Linux or macOS and run pip install minigrid.',
       'Import minigrid and gymnasium; create MiniGrid-Empty-8x8-v0 and call reset(seed=0).',
-      'For visual tests, choose an RGB observation wrapper; log step actions, termination and success.',
+      'Use RGBImgPartialObsWrapper for agent-view RGB; RGBImgObsWrapper reveals the full grid. Record the wrapper, mission-text access, actions, terminated and truncated separately.',
     ],
     limitations: 'Source reviewed, not installed here. Windows is not officially supported; default compact observations are not ordinary RGB screenshots.',
     reviewed: '2026-10-18',
@@ -58,8 +59,10 @@ export const testingEnvironments: TestingResource[] = [
     evidence: [
       { label: 'Observation, actions and recorder', url: 'https://github.com/danijar/crafter#interface' },
       { label: 'Achievement-based evaluation', url: 'https://github.com/danijar/crafter#evaluation' },
+      { label: 'Pinned reset, seed and privileged info contract', url: 'https://github.com/danijar/crafter/blob/e04542a2159f1aad3d4c5ad52e8185717380ee3a/crafter/env.py' },
+      { label: 'Pinned completed-episode recorder contract', url: 'https://github.com/danijar/crafter/blob/e04542a2159f1aad3d4c5ad52e8185717380ee3a/crafter/recorder.py' },
     ],
-    aiUseNote: 'Designed for agent evaluation. Keep published benchmark budgets distinct from a custom VLM or coding-agent protocol.',
+    aiUseNote: 'Designed for agent evaluation. For pixel-only tests, withhold info.semantic, inventory and player_pos from the policy; those expose structured state beyond the RGB observation. Keep published benchmark budgets separate from custom VLM protocols.',
     testTasks: [
       'Measure survival and achievement success over held-out world seeds.',
       'Plan a resource-to-tool sequence with a fixed interaction budget.',
@@ -68,9 +71,9 @@ export const testingEnvironments: TestingResource[] = [
     setup: [
       'Install crafter and pygame in an isolated Python environment.',
       'Run python -m crafter.run_gui for manual controls, then use CrafterReward-v1 for automation.',
-      'Attach crafter.Recorder and save actions, achievement statistics and optional episode video.',
+      'Set the seed when constructing the environment and record the episode index; use crafter.Recorder with a nonempty output directory, save_stats=True and save_episode=True to retain completed-episode statistics and action trajectories.',
     ],
-    limitations: 'Source reviewed, not run here. The documented interface uses classic Gym reset/step conventions; adapt deliberately before using a Gymnasium harness.',
+    limitations: 'Source reviewed, not run here. Classic Gym reset returns only an observation and step returns four values. reset has no seed argument; matching constructor seeds alone is insufficient unless episode/reset order also matches.',
     reviewed: '2026-10-18',
   },
   {
@@ -94,8 +97,9 @@ export const testingEnvironments: TestingResource[] = [
     evidence: [
       { label: 'Installation, API and reset caveats', url: 'https://github.com/MichaelTMatthews/Craftax#readme' },
       { label: 'Game tutorial', url: 'https://github.com/MichaelTMatthews/Craftax/blob/main/tutorial.md' },
+      { label: 'Pinned auto-reset transition implementation', url: 'https://github.com/MichaelTMatthews/Craftax/blob/c3c2e0d038c4e641f9481320c158f457f30c28f3/craftax/environment_base/environment_bases.py' },
     ],
-    aiUseNote: 'Agent research is the intended application. Fix observation mode, PRNG keys, episode handling and dependency versions before comparing results.',
+    aiUseNote: 'Fix observation mode, PRNG keys, episode handling and package version. Version changes affect comparability: 1.5.0 fixes first-planted-plant growth, and 1.6.0 fixes Craftax-Classic death rewards.',
     testTasks: [
       'Compare survival and crafting progress using identical seeded worlds.',
       'Separate image-only policies from symbolic-state policies.',
@@ -104,9 +108,9 @@ export const testingEnvironments: TestingResource[] = [
     setup: [
       'Run pip install craftax in an isolated Python environment.',
       'Run play_craftax or play_craftax_classic for manual play.',
-      'Use the documented factory with auto_reset=True; supply JAX keys to reset and step, and log terminal events.',
+      'Select Craftax-Pixels-v1 or Craftax-Symbolic-v1 explicitly; keep full Craftax and Craftax-Classic separate. Supply distinct JAX keys to reset and step, and record the auto_reset setting.',
     ],
-    limitations: 'Source reviewed, not run here. First-frame JIT compilation is slow. Unwrapped auto_reset=False environments can continue into invalid episode states.',
+    limitations: 'Source reviewed, not run here. JIT startup is slow. With auto_reset=True, a done step returns the next episode observation/state alongside the previous episode reward/done/info. With auto_reset=False, handle termination before stepping again.',
     reviewed: '2026-10-18',
   },
   {
@@ -130,6 +134,7 @@ export const testingEnvironments: TestingResource[] = [
     evidence: [
       { label: 'Package installation and examples', url: 'https://github.com/Farama-Foundation/ViZDoom#python-quick-start' },
       { label: 'Freedoom, WADs and custom scenarios', url: 'https://vizdoom.farama.org/faq/' },
+      { label: 'Pinned Gymnasium timing, seed and timeout contract', url: 'https://github.com/Farama-Foundation/ViZDoom/blob/909e834264e42f136f59f80e72e95d8146f40e21/gymnasium_wrapper/base_gymnasium_env.py' },
     ],
     aiUseNote: 'Built for AI experiments; this does not grant rights to arbitrary WADs. Record which scenario, base assets and licenses an evaluation uses.',
     testTasks: [
@@ -140,9 +145,9 @@ export const testingEnvironments: TestingResource[] = [
     setup: [
       'Install vizdoom in a supported Python environment; check wheel support for your OS and architecture.',
       'Start from the repository Python examples and a bundled basic scenario.',
-      'Set observations, available buttons, seed and episode length; save action logs and outcome metrics.',
+      'For the Gymnasium wrapper, fix config, buffers, button space and frame_skip; use reset(seed=...) and log terminated and truncated separately, including treat_episode_timeout_as_truncation.',
     ],
-    limitations: 'Source reviewed, not run here. Platform wheels differ; unsupported combinations require native build dependencies. WAD licensing remains scenario-specific.',
+    limitations: 'Source reviewed, not run here. ViZDoom 1.3+ macOS wheels require Apple Silicon and macOS 14+; the documented Intel wheel route is 1.2.4. Wrapper timeout handling changed in 1.3.0, so pin the version and timeout option. WAD rights remain scenario-specific.',
     reviewed: '2026-10-18',
   },
   {
@@ -166,6 +171,7 @@ export const testingEnvironments: TestingResource[] = [
     evidence: [
       { label: 'Maintained source, installation and play scripts', url: 'https://github.com/NetHack-LE/nle#readme' },
       { label: 'Archived upstream repository', url: 'https://github.com/facebookresearch/nle' },
+      { label: 'Pinned observation, seed and reset implementation', url: 'https://github.com/NetHack-LE/nle/blob/2319f2989f0035685017e9ea13c83b2546fe477c/nle/env/base.py' },
     ],
     aiUseNote: 'An AI research interface; distinguish terminal rendering, symbols, text messages and internal state so planning results remain comparable.',
     testTasks: [
@@ -176,9 +182,9 @@ export const testingEnvironments: TestingResource[] = [
     setup: [
       'Prepare Python 3.10+, CMake 3.28+ and the platform build prerequisites documented upstream.',
       'Install nle, then run python -m nle.scripts.play --mode random.',
-      'Import nle and gymnasium; create NetHackScore-v0 and record observations, actions and episode outcomes.',
+      'Create NetHackScore-v0 with fixed observation_keys, actions and fix_moon_phase=True; before reset, call env.unwrapped.seed with recorded core, disp, reseed=False and optional lgen values.',
     ],
-    limitations: 'Source reviewed, not run here. Installation can require native tools. Terminal/glyph observations do not represent a modern rendered 3D game.',
+    limitations: 'Source reviewed, not run here. Native tools may be required. In the inspected code, reset(seed=...) seeds Gymnasium but does not set NetHack RNGs; use the explicit seed interface. NetHackChallenge deliberately disallows seed changes. Terminal/glyph observations are not RGB game frames.',
     reviewed: '2026-10-18',
   },
   {
@@ -202,10 +208,11 @@ export const testingEnvironments: TestingResource[] = [
     evidence: [
       { label: 'Editor and exported-game workflow', url: 'https://github.com/edbeeching/godot_rl_agents#quickstart-guide' },
       { label: 'Example asset attribution', url: 'https://github.com/edbeeching/godot_rl_agents#license' },
+      { label: 'Pinned binary-launch and reset seed behavior', url: 'https://github.com/edbeeching/godot_rl_agents/blob/207b6f476f5846f33d08b92c7a350147e7b78bf5/godot_rl/core/godot_env.py' },
     ],
     aiUseNote: 'Designed for learning and automated gameplay testing. Keep imported-model rights and example attributions alongside the MIT toolkit license.',
     testTasks: [
-      'Change movement or reward logic and compare deterministic reset rollouts.',
+      'Change movement or reward logic, establish reset/replay repeatability for that scene, then compare fixed input rollouts.',
       'Test sensors, action scaling and Python-to-game synchronization.',
       'Replace a character or collider and verify that observations and control still work.',
     ],
@@ -214,7 +221,7 @@ export const testingEnvironments: TestingResource[] = [
       'Use the matching Godot 4 .NET editor for the documented editor example; import the project.',
       'Run the repository Stable Baselines 3 example, or adapt its environment interface to a fixed policy.',
     ],
-    limitations: 'Source reviewed, not run here. Downloaded test binaries are documented for Windows/Linux; macOS users can use the editor or make their own export.',
+    limitations: 'Source reviewed, not run here. The inspected bridge sends env_seed when launching a binary, but reset(seed=...) sends only a reset message. Editor runs need scene/plugin seed control; validate reset repeatability rather than assuming the Python argument reseeds Godot.',
     reviewed: '2026-10-18',
   },
   {
@@ -237,6 +244,7 @@ export const testingEnvironments: TestingResource[] = [
     licenseUrl: 'https://github.com/Unity-Technologies/ml-agents/blob/develop/LICENSE.md',
     evidence: [
       { label: 'Official toolkit and release compatibility', url: 'https://github.com/Unity-Technologies/ml-agents#readme' },
+      { label: 'Release 23 low-level decision and terminal contract', url: 'https://github.com/Unity-Technologies/ml-agents/blob/a2777719560e4676be99e2ea128c5eb1fbeb3dbb/com.unity.ml-agents/Documentation~/Python-LLAPI.md' },
       { label: 'Third-party notices', url: 'https://github.com/Unity-Technologies/ml-agents/blob/develop/Third%20Party%20Notices.md' },
       { label: 'Unity editor terms', url: 'https://unity.com/legal/editor-terms-of-service/software' },
     ],
@@ -249,7 +257,7 @@ export const testingEnvironments: TestingResource[] = [
     setup: [
       'Select a release tag, install its supported Unity editor and open the included Project.',
       'Install the matching com.unity.ml-agents package and Python environment package versions.',
-      'Open an example scene; use its heuristic for a smoke test, then connect a Python policy or trainer.',
+      'Open an example scene and connect a policy; route actions by behavior and agent_id, and read both DecisionSteps and TerminalSteps. Python step advances to the next decision, not necessarily one physics frame.',
     ],
     limitations: 'Source reviewed, not run here. Editor eligibility, platform builds and version compatibility need local checks. The develop branch is not a stable evaluation baseline.',
     reviewed: '2026-10-18',

@@ -16,6 +16,8 @@ These notes extend the concise [resource directory](./awesome-list.md) using the
 
 ## Deeper operational evidence
 
+- [Agent interface evidence](agent-interface-evidence.md): source-pinned execution permissions, write/undo boundaries and test-verdict limitations for selected existing bridges
+
 - [Asset selection and visual-feedback creation](asset-selection-feedback.md): candidate ranking, first-acceptable validation, multi-view preference models and refinement counterexamples
 
 - [Visual-feedback mechanisms](visual-feedback-mechanisms.md): evidence selection, crop/temporal memory, generated-asset selection and controlled harness comparisons
