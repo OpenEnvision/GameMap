@@ -417,3 +417,51 @@ Godot's loop setting is Boolean. Aseprite's [tag specification](https://github.c
 4. Capture anchor-relative placement, transparent-frame dwell and final state. Reimport, reopen and repeat. Separately inspect scaled rendering for seams/halos; [AtlasTexture filter clipping](https://docs.godotengine.org/en/4.5/classes/class_atlastexture.html#class-atlastexture-property-filter-clip) addresses surrounding atlas pixels but does not establish the whole sampling configuration.
 
 Fail on missing dwell, timing drift, anchor jitter, reversed ordering, wrong completion behavior, stale textures or changed import output. Passing proves only the tested visual/timing contract. Collision shapes, hitboxes, animation events, character movement and gameplay foot-contact behavior require separate fixtures. No Aseprite export, Godot import, playback, image comparison or runtime test was performed for this note.
+
+## Tile-map identity geometry and runtime delivery
+
+Sources checked 2026-10-18; full reproduction not performed. This section adds tile-map identity, transformed collision geometry, negative-coordinate persistence and runtime-readiness evidence to the authoring/export and sprite-image contracts. It does not identify a native Tiled-to-Godot importer. The adapter and fixture below are **GameMap editorial guidance, unimplemented and unexecuted**.
+
+### Version and input boundary
+
+Tiled's inspected documentation identifies **1.12.2**. Its immutable [v1.12.2 release](https://github.com/mapeditor/tiled/releases/tag/v1.12.2) resolves to [1fd984638f9898af920103799bcd68b467287295](https://github.com/mapeditor/tiled/commit/1fd984638f9898af920103799bcd68b467287295), whose release notes date it 2026-05-27. Godot references use **4.5** documentation and [4.5-stable source, 876b290332ec6f2e6d173d08162a02aa7e6ca46d](https://github.com/godotengine/godot/commit/876b290332ec6f2e6d173d08162a02aa7e6ca46d), not an installed-engine claim.
+
+Proposed input manifest: map format/application versions, orientation, grid size, layer hierarchy and offsets, external tileset/image paths and hashes, encoding/compression, importer revision and an explicit supported-feature list. Initially limit conversion to orthogonal maps and declared shapes; reject unsupported orientations/features with diagnostics instead of silently flattening them.
+
+### 1. Decode identities before mapping engine cells
+
+Tiled GIDs are map-local. The same tile can acquire another GID when tilesets change order. Interpret the value as unsigned 32-bit, extract flags, and clear all four high bits before lookup: horizontal `0x80000000`, vertical `0x40000000`, diagonal/hex-60 `0x20000000`, hex-120 `0x10000000`. Clear the fourth flag even for non-hexagonal maps. Zero denotes an empty cell; otherwise choose the largest `firstgid` not exceeding the stripped value, then subtract it. Orthogonal/isometric transforms apply diagonal swapping before horizontal/vertical flips; hexagonal flags have different semantics. [GID contract](https://doc.mapeditor.org/en/stable/reference/global-tile-ids/), [pinned documentation](https://github.com/mapeditor/tiled/blob/1fd984638f9898af920103799bcd68b467287295/docs/reference/global-tile-ids.rst).
+
+A valid range is insufficient: image-collection tilesets can have gaps, including local IDs above `tilecount`. External TSX files omit map-specific `firstgid`. Verify actual tile existence and preserve tileset identity plus local ID as the transfer key. [TMX tilesets](https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#tileset).
+
+Godot atlas transformations instead use alternative-ID flags `4096`, `8192`, `16384`; raw Tiled GIDs cannot be copied into them. The adapter needs an explicit lookup to source ID, atlas coordinates, alternative ID and normalized transform. Validate all eight orthogonal flip combinations against asymmetric artwork rather than assuming names alone establish equivalence. [Godot atlas flags](https://docs.godotengine.org/en/4.5/classes/class_tilesetatlassource.html#constants).
+
+### 2. Preserve sparse coordinates through serialization
+
+Infinite-map chunks have independent tile-coordinate origins and dimensions; Tiled's official JSON example includes `y: -16`. Proposed output coordinates are chunk origin plus within-chunk position, retaining negative values and sparse gaps. Validate decoded element counts per chunk, not against a finite map rectangle; establish an explicit policy for overlapping chunks. Pixel layer offsets remain a separate transform. [JSON layer/chunk contract](https://doc.mapeditor.org/en/stable/reference/json-map-format/#chunk).
+
+Godot TileMapLayer serializes coordinates within **−32768…32767**, wrapping values outside that range. The pinned writer explicitly casts each coordinate to `int16_t`. A populated in-memory layer therefore does not establish a faithful saved map. Reject out-of-range imports or specify a reversible partition/rebasing scheme before saving; compare logical coordinates after fresh reopen. [4.5 persistence warning](https://docs.godotengine.org/en/4.5/classes/class_tilemaplayer.html#description), [writer, lines 3196–3233](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/2d/tile_map_layer.cpp#L3196-L3233).
+
+### 3. Carry geometry independently of tile images
+
+Tiled distinguishes grid size, image size, drawing offset and tile-object alignment. Larger layer tiles extend above/right of their bottom-left anchor. Unspecified tile-object alignment defaults to bottom-left for orthogonal maps; explicit `objectalignment` can override it. Polygon points are relative to their object, and object rotation is clockwise around its position. Margin/spacing, tile offset and layer offset are separate inputs. [TMX geometry definitions](https://doc.mapeditor.org/en/stable/reference/tmx-map-format/).
+
+The pinned renderer scales tile offsets with rendered dimensions and compensates for rectangular-image dimension swapping during diagonal transforms. Its collision-overlay path composes each object's own rotation with the tile fragment's translation, rotation and scale. This is evidence for authored geometry placement, **not** a physics-engine importer. [Cell rendering, lines 468–523](https://github.com/mapeditor/tiled/blob/1fd984638f9898af920103799bcd68b467287295/src/libtiled/maprenderer.cpp#L468-L523), [collision overlay, lines 631–655](https://github.com/mapeditor/tiled/blob/1fd984638f9898af920103799bcd68b467287295/src/libtiled/maprenderer.cpp#L631-L655).
+
+Godot's `map_to_local()` gives a cell center and ignores the per-tile `texture_origin` drawing offset. Do not use that center as an image-anchor oracle. [Coordinate conversion](https://docs.godotengine.org/en/4.5/classes/class_tilemaplayer.html#class-tilemaplayer-method-map-to-local), [texture origin](https://docs.godotengine.org/en/4.5/classes/class_tiledata.html#class-tiledata-property-texture-origin).
+
+Proposed outputs include image corner positions and separately transformed shape vertices, origins and winding. Reject unsupported curves, degenerate shapes and unimplemented scaling cases. Compare geometry numerically and with overlays; assign physics layers/masks through a declared policy. Visible tile agreement cannot establish collision response or pathfinding.
+
+### 4. Separate cell assignment from runtime observation
+
+Godot's `set_cell` accepts the three-part tile identity; setting source/alternative to `-1` or atlas coordinates to `(-1,-1)` erases the cell. Updates are batched at frame end and queued only inside the scene tree; scene tiles initialize after their parent. `update_internals()` performs internal processing immediately; this is not an independently observed rendering/physics completion fence. [Implementation, lines 3062–3064](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/2d/tile_map_layer.cpp#L3062-L3064). `notify_runtime_tile_data_update()` also defers work, and runtime callback subresources may be shared with the TileSet, requiring duplication before mutation. [TileMapLayer 4.5 API](https://docs.godotengine.org/en/4.5/classes/class_tilemaplayer.html).
+
+A sharper readback boundary appears in source: `_build_runtime_update_tile_data_for_cell` makes the runtime duplicate, whereas `get_cell_tile_data()` retrieves the atlas source's base data. Thus that getter alone cannot attest to the applied runtime override. Record callback inputs/results and observe the affected subsystem independently. [Runtime copy, lines 1693–1738](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/2d/tile_map_layer.cpp#L1693-L1738), [getter, lines 2820–2832](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/2d/tile_map_layer.cpp#L2820-L2832).
+
+### Proposed acceptance fixture, unimplemented and unexecuted
+
+Use a disposable map with two tilesets, a sparse image collection, marked rectangular tiles, all eight flip combinations, negative chunks, nonzero offsets, a rotated polygon and a resized tile object. Include empty cells and coordinate-boundary cases. Record expected identities and transformed reference points independently of adapter output.
+
+Require five separate verdicts: parsed identity; coordinate/geometry agreement; native cell assignment; runtime observation; saved/reopened agreement. Include deliberately invalid IDs, missing dependencies, malformed chunk lengths and unsupported orientation as failure cases. Reordering tilesets should preserve logical content after recalculating GIDs. Out-of-range persistence must fail preflight or preserve the declared reversible mapping.
+
+For the Godot-only runtime extension, test cells sharing one source tile while only one receives an override, deferred versus forced processing, a scene tile and disable/re-enable. Confirm unaffected cells remain unchanged. Capture rendered landmarks and explicit collision probes separately; neither cell counts nor a correct screenshot proves both. Preserve errors, unsupported-feature reports and observer timing alongside artifacts. No importer, fixture, engine run, save/reopen test or gameplay validation was performed here.

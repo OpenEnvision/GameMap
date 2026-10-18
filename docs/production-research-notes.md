@@ -8,7 +8,7 @@ Sources checked on 2026-10-18; full reproduction not performed. This research su
 
 A tile-map editor with JavaScript extensions and command-line export. Extensions can manipulate maps and tilesets; the scripting guide includes TypeScript definitions and CLI evaluation since 1.9. UI-dependent APIs may do nothing or return null in CLI mode, so editor scripts need a headless-path check.
 
-Primary sources: [Official documentation or repository](https://doc.mapeditor.org/en/stable/manual/scripting/); [Tiled COPYING](https://github.com/mapeditor/tiled/blob/master/COPYING)
+Primary sources: [Official documentation or repository](https://doc.mapeditor.org/en/stable/manual/scripting/); [Tiled COPYING](https://github.com/mapeditor/tiled/blob/master/COPYING). The [tile-map transfer contract](asset-validation-contracts.md#tile-map-identity-geometry-and-runtime-delivery) covers map-local IDs, geometry, sparse coordinates and distinct runtime/persistence observations.
 
 ### LDtk
 

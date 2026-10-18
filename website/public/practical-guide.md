@@ -22,7 +22,7 @@ The selection guidance below reflects GameMap's editorial judgment, not a perfor
 1. **Plan:** write a one-page specification for input, state, feedback, and end conditions. Define one minimal level and a reproducible action sequence.
 2. **Code:** use placeholders to complete the loop from start to play, success or failure, and retry. Separate game state, input, and visual updates. Have the agent implement one verifiable mechanic before expanding the levels.
 3. **Assets:** fix the canvas, frame dimensions, action names, frame rates, directions, and foot anchors. Preserve source images, processing scripts, and import configuration. A sprite sheet that looks correct is only part of the deliverable. The [sprite delivery contract](asset-validation-contracts.md#sprite-atlas-metadata-and-playback-delivery) explains trimmed offsets, duplicate/empty-frame dwell, pivots and explicit timebase conversion.
-4. **Scene:** configure collision layers, tile sizes, camera bounds, UI safe areas, volume, and input hints. Check scaling, pausing, switching away from the window, and restarting.
+4. **Scene:** configure collision layers, tile sizes, camera bounds, UI safe areas, volume, and input hints. Check scaling, pausing, switching away from the window, and restarting. For authored tilemaps, preserve [tile identities, transforms and saved coordinates](asset-validation-contracts.md#tile-map-identity-geometry-and-runtime-delivery) before testing collision and traversal.
 5. **Test and ship:** gather evidence by the layers below. Finally, run the full loop in an actual target-platform build, with launch instructions, controls, and known issues included.
 
 ## 3D: Complete a graybox, then establish the asset pipeline
