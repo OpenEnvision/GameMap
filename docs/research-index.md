@@ -16,6 +16,8 @@ These notes extend the concise [resource directory](../AWESOME.md) using the rep
 
 ## Deeper operational evidence
 
+- [Cadle-like repository import](cadle-repositories.md): the complete requested 212-candidate corpus plus its reference, with current repository identity, source scope, reuse limits and existing coverage
+
 - [Agent interface evidence](agent-interface-evidence.md): source-pinned execution permissions, write/undo boundaries and test-verdict limitations for selected existing bridges
 
 - [Asset selection and visual-feedback creation](asset-selection-feedback.md): candidate ranking, first-acceptable validation, multi-view preference models and refinement counterexamples

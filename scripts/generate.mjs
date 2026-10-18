@@ -6,10 +6,14 @@ import {categories,loadCatalog,validate,renderAwesome} from './catalog.mjs';
 import {loadLearningContent,renderLearningGuide} from './learning.mjs';
 import {loadAgentCodeContent,renderAgentCodeGuide} from './agent-code.mjs';
 import {loadTestingContent,validateTestingContent,renderTestingGuide,testingManifest} from './testing.mjs';
+import {loadRepositoryResearch,renderRepositoryResearch} from './repository-research.mjs';
 const records=validate(await loadCatalog());
 const json=JSON.stringify(records,null,2)+'\n';
 const awesome=renderAwesome(records);
 const outputs={'data/resources.json':json,'website/src/data/resources.json':json,'website/public/resources.json':json,'AWESOME.md':awesome};
+const repositoryResearch=await loadRepositoryResearch();
+outputs['docs/cadle-repositories.md']=renderRepositoryResearch(repositoryResearch);
+outputs['website/public/cadle-repositories.json']=JSON.stringify(repositoryResearch,null,2)+'\n';
 const {learningPaths,foundationPaths,communityCollections}=await loadLearningContent();
 outputs['docs/tutorials-and-demos.md']=renderLearningGuide(learningPaths,foundationPaths,records,communityCollections);
 const {agentGameResources,gameCaseAgents,agentLabels,agentResourceKinds}=await loadAgentCodeContent();
@@ -43,10 +47,11 @@ outputs['website/public/logo-sources.md']=attribution.replaceAll('<code>website/
 outputs['website/public/media-sources.md']=(await readFile(new URL('../docs/media-sources.md',import.meta.url),'utf8')).replaceAll('../website/public/','./');
 // Public downloads use same-directory paths so links also work on repository subpaths.
 let downloadable=awesome;
-for(const name of ['deployment','agents-notes','engines-notes','game-ai-notes','world-model-notes','practical-guide','tutorials-and-demos','coding-agent-game-code','agent-interface-evidence','game-testing-library','research-index','catalog-review-coverage','engine-operation-contracts','production-research-notes','generative-tools-research','generative-api-boundaries','visual-evidence-research','production-work-orders','studio-production-case-studies','source-revision-notes','production-coverage-gaps','generation-delivery-contracts','asset-validation-contracts','native-operation-details','gameplay-state-contracts','game-development-evaluation','benchmark-reproducibility','production-debugging-contracts','visual-feedback-mechanisms','asset-selection-feedback']){
+for(const name of ['cadle-repositories','deployment','agents-notes','engines-notes','game-ai-notes','world-model-notes','practical-guide','tutorials-and-demos','coding-agent-game-code','agent-interface-evidence','game-testing-library','research-index','catalog-review-coverage','engine-operation-contracts','production-research-notes','generative-tools-research','generative-api-boundaries','visual-evidence-research','production-work-orders','studio-production-case-studies','source-revision-notes','production-coverage-gaps','generation-delivery-contracts','asset-validation-contracts','native-operation-details','gameplay-state-contracts','game-development-evaluation','benchmark-reproducibility','production-debugging-contracts','visual-feedback-mechanisms','asset-selection-feedback']){
  const path=`docs/${name}.md`;
  downloadable=downloadable.replaceAll(`](${path})`, `](./${name}.md)`);
  let note=outputs[path]??await readFile(new URL('../'+path,import.meta.url),'utf8');
+ note=note.replaceAll('](../website/public/', '](./');
  note=note.replaceAll('](../AWESOME.md)', '](./awesome-list.md)');
  note=note.replaceAll('](../CONTRIBUTING.md', '](./CONTRIBUTING.md');
  note=note.replaceAll('](world-model-notes.md)','](./world-model-notes.md)');

@@ -16,6 +16,7 @@
       ["agents-notes", "Agents, skills & MCP"],
       ["engines-notes", "Game engines"],
       ["game-ai-notes", "2D & 3D development"],
+      ["cadle-repositories", "Cadle-like repositories"],
       ["world-model-notes", "World models"]
     ]
   },

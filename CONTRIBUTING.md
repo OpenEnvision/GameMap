@@ -30,6 +30,8 @@ Keep application source in `website/app/`, catalog/case data in `website/src/`, 
 
 Do not commit dependencies, `dist/` or `website/dist/`, legacy root previews, `.build/`, `.react-router/`, prepared documents in `website/.content/`, copied `website/public/docs-assets/`, TypeScript/Vite/lint caches, coverage and browser-test reports, agent traces, logs, temporary files, local environment secrets, or machine-specific editor/OS files. Build outputs are regenerated in CI and only `dist/` is published to GitHub Pages. Keep shareable environment configuration in `.env.example`, `.env.sample`, or `.env.template`, without secrets. The `.gitignore` deliberately does not hide source media, lockfiles, shared VS Code configuration, or environment templates.
 
+The Cadle-like research inventory is maintained in `data/research/cadle-repositories.json`. Its complete source-candidate membership and review statuses are validated; `docs/cadle-repositories.md` and public Markdown/JSON downloads are generated. These research rows do not automatically become resource cards or featured playable cases.
+
 ## Entry format
 
 Each segment is a JSON array. Every `id` must remain stable and be unique across all segments. Example:
