@@ -16,6 +16,79 @@ Unless explicitly versioned below, sources are rolling documentation or reposito
 
 **Version/license scope:** glTF 2.0 is the format scope; exact specification revision and implementation versions are unpinned. Validator declares Apache-2.0; Assimp documents modified three-clause BSD. glTF Transform's [license at checked commit 8e2a94a](https://github.com/donmccurdy/glTF-Transform/blob/8e2a94a2616d293c4b503d0fb6a4b42e6ec7c62f/LICENSE.md) is MIT; dependency and input-asset terms remain separate. Earlier Validator commit resolution was rate-limited; no immutable revision is invented.
 
+### Gaussian-splat editing and delivery
+
+A spatial Gaussian asset needs a renderer-specific export/import contract. The following inspected behavior complements mesh/interchange validation; no editor, importer or round-trip was executed.
+
+#### Source and version scope
+
+- SuperSplat v3.5.2 resolves through [tag object](https://api.github.com/repos/playcanvas/supersplat/git/tags/477e30f3d31ba95a8afc6b2f2a118a5397e26484) to commit `f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b`. Its [package manifest](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/package.json) declares 3.5.2, splat-transform 3.9.0 and PlayCanvas 2.23.0. Installed/deployed versions were not checked.
+- UnityGaussianSplatting selected commit `2c6fed37da67a217367261fcfcd3316d34c73e76` is a later main-branch snapshot, **not the v1.1.1 tag**. Its [package manifest](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/package.json) still declares 1.1.1 / Unity 2022.3.7f1; the [v1.1.1 tag](https://api.github.com/repos/aras-p/UnityGaussianSplatting/git/ref/tags/v1.1.1) points to different commit `9310dce438da726244ace17eaf6f768826435fa4`. Do not conflate a package version with the tested/source commit.
+
+#### 1. Export a delivery asset, preserve a separate editing project
+
+SuperSplat's ordinary export gathers visible, nonempty scene layers; its default does **not** mean “export selected Gaussians only.” Selection filtering is an optional serializer setting, also used for copy/paste. Deletion removes instances from the live list, with undo records; selected-and-locked instances are excluded from selection-driven deletion. Crop-by-select/invert/delete is therefore different from merely drawing a selection or hiding a whole layer.
+
+Evidence: [visible-layer collection](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/file-handler.ts#L425-L430), [default filter](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L252-L270), [deletion and undo](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/edit-ops.ts#L172-L205), [official cleanup recipe](https://developer.playcanvas.com/user-manual/supersplat/getting-started/).
+
+The `.ssproj` path writes document JSON, camera/view/timeline/pose settings, original resource rows and per-layer instance/palette data. Ordinary splat export instead bakes edits and does not serialize those editor-state records. Importantly, project saving is not an unconditional deleted-data archive: normal compact saves drop rows unreferenced by any layer; an in-place save keeps rows so current-session undo can still access them. Do not infer that undo history survives reopening.
+
+Evidence: [project data and compaction](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/doc.ts#L230-L347), [in-place exception](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/doc.ts#L385-L396), [instance flags/palettes](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/doc-instances.ts#L35-L80).
+
+#### 2. Record transform application, SH bands and irreversible metadata loss
+
+Ordinary SuperSplat export composes a -180° Z rotation (described in code as undoing the load-time convention), the entity world matrix, and the per-instance transform palette. It transforms positions, rotations and scales, rotates retained SH coefficients, and bakes color/transparency grading. The internal `keepWorldTransform=true` option skips the world/PLY-flip part; it does not suppress palette transforms. These facts are a source-specific convention, not a universal axis-conversion recipe.
+
+The export source explicitly declares one LOD, `model: 'default'`, and `extraColumns: []`. Its comment says the editing pipeline does not carry antialiased/2DGS trained-model tags through loading. SH output is capped by the chosen maximum and available data. Therefore an uncompressed export is not proof of preservation of original metadata, LOD structure, arbitrary custom columns or all SH bands.
+
+Evidence: [transform composition](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L76-L160), [export schema and bands](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L330-L383), [attribute/SH/grade baking](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L441-L504).
+
+#### 3. Compression changes membership as well as precision
+
+In this SuperSplat UI path, compressed PLY, SOG and SPZ set minimum opacity to 1/255 and enable the implementation's invalid-data filter; ordinary PLY does not enable those settings. The predicate drops source sigmoid opacity **strictly below** the threshold, before the later grading step. “Invalid” follows the actual attribute-specific predicates, not a blanket rule forbidding every infinite raw log-domain value.
+
+Official rolling documentation distinguishes uncompressed PLY from quantized compressed PLY and lossy SOG; SOG is not merely a lossless zip of the original attributes. Selection count, decoded survivor count and requested SH bands must accompany the file size.
+
+Evidence: [format-specific settings](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/file-handler.ts#L748-L786), [filter predicate](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L219-L296), [import/export formats](https://developer.playcanvas.com/user-manual/supersplat/editor/import-export/), [SOG specification](https://developer.playcanvas.com/user-manual/gaussian-splatting/formats/sog/).
+
+#### 4. “SPZ supported” is not an importer compatibility contract
+
+SuperSplat's pinned serializer exposes SPZ versions 3 and 4, default 4. The selected Unity importer explicitly requires SPZ header version 2 and throws otherwise. This is a statically established version mismatch, not an observed failed import. Changing SuperSplat from SPZ 4 to SPZ 3 does not satisfy that importer.
+
+Unity routes only `.ply` and `.spz`; its PLY reader requires binary little-endian 1.0, and the Gaussian reader requires float-valued position, DC color, opacity, scale and quaternion attributes. General mesh PLY, ASCII PLY, SOG and a filename ending in `.ply` are not substitutes for that schema. Required-field validation does not check complete higher-order SH preservation.
+
+Evidence: [SuperSplat SPZ versions](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/export-options.ts#L10-L24), [default SPZ 4](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/file-handler.ts#L779-L786), [Unity SPZ rejection](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Editor/Utils/SPZFileReader.cs#L20-L49), [PLY encoding](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Editor/Utils/PLYFileReader.cs#L32-L64), [routing/schema](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Editor/Utils/GaussianFileReader.cs#L45-L78).
+
+#### 5. Unity editing/export has its own quality and coordinate boundary
+
+The pinned Unity editing guide advises Very High import quality for editing because lower presets are already quantized/approximated. Export excludes deleted and cutout Gaussians; the documented world-space option bakes transforms and rotates SH. Cutouts are visual inclusion/exclusion volumes, not collision bodies. Manual editing has no Undo; the guide suggests disabling/re-enabling the renderer to revert all edits.
+
+Do not generalize “world-space export” to proven arbitrary hierarchy/scaling fidelity. The implementation passes localRotation/localScale alongside localToWorldMatrix; the shader separately handles axis-sign flips and explicitly limits that handling. Nested transforms, nonuniform scaling and reflections require a fixture rather than an assumed round-trip guarantee.
+
+Evidence: [editing guide](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/docs/splat-editing.md), [export survivor/write path](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Editor/GaussianSplatRendererEditor.cs#L394-L444), [transform arguments](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Runtime/GaussianSplatRenderer.cs#L936-L956), [shader transform](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Shaders/SplatUtilities.compute#L617-L642).
+
+#### 6. Nonempty artifact, bounds and visual observation are separate gates
+
+The checked SuperSplat `writeSplatFile` path returns early without calling a writer when zero Gaussians pass export filtering; the enclosing `scene.write` path can still return true. Consequently the return value alone is not evidence of a nonempty delivered artifact. Browser-file close and abort operations exist, but crash durability and end-user download completion have not been established here.
+
+Its inspected editor bounds reduce transformed **centers**; they are not full Gaussian support extents, collision volume or a walkable mesh. Unity's checked view-color path evaluates stored SH against camera direction and opacity; that is not evidence of reconstruction into relightable PBR materials. Ordinary PLY export also does not promise a camera trajectory: SuperSplat's viewer settings and `.ssproj` store camera information separately; Unity can import a separate `cameras.json`.
+
+Evidence: [zero-survivor source](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L549-L559), [early return](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L632-L650), [success return](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/file-handler.ts#L789-L797), [writer close/abort](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/io/write/browser-file-system.ts#L25-L43), [center bounds](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/data-processor/calc-bound.ts#L59-L80), [view color](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Shaders/SplatUtilities.compute#L240-L248), [viewer camera settings](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/export-options.ts#L55-L118), [Unity camera input](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Editor/GaussianSplatAssetCreator.cs#L1068-L1096).
+
+No inspected splat-export interface produces mesh connectivity, gameplay rules or collision acceptance. Separate collision-generation tools may exist; this note does not claim Gaussian-splat applications can never support collision.
+
+#### Proposed GameMap round-trip fixture, not documented or executed behavior
+
+Keep immutable source bytes, provenance/license, full-precision reference, `.ssproj`, editor/importer commits and a derivative manifest. Declare units/basis, world versus local transform policy, visible/selected/deleted/locked counts, retained SH bands, source model tag/custom fields, loaded LOD, compression/filter settings and expected output schema.
+
+Use a small **synthetic, rights-cleared, asymmetric full-band Gaussian fixture** with axis markers, one rotated anisotropic Gaussian, distinguishable SH response, opacity samples below/at/above 1/255, a hidden layer, selected and locked examples, and a deliberately deleted sample. Compare ordinary PLY and compressed derivatives; reopen the editing project separately. Use a qualified binary little-endian standard Gaussian PLY for the proposed Unity bridge, rather than SPZ 3/4 or a generic “PLY” assertion.
+
+Acceptance needs a newly written artifact with recorded hash and parsed nonzero count/schema, expected survivor inventory, transformed positions/covariances and directional SH observations under fixed camera/render/display settings, plus independently recorded importer result. Include all-filtered/empty export, lower SH bands, corrupt/truncated output, absent camera sidecar, nested-parent transform, nonuniform/reflected scale and compact-save/reopen cases. Exact tolerances and target GPU/render pipeline remain project decisions. Do not promote partial files; keep originals and retry corrected settings into new candidates. Collision, navigation and dynamic interactivity require their own artifacts and gameplay tests.
+
+#### License scope
+
+Pinned [SuperSplat LICENSE](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/LICENSE) and [UnityGaussianSplatting LICENSE](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/LICENSE.md) are MIT software licenses. They do not establish rights in captures, generated scenes, trainer/model outputs or every dependency. The pinned [Unity README license section](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/readme.md#license-and-external-code-used) explicitly warns that upstream training provenance needs separate consideration. This is not a current legal conclusion about every INRIA-trained asset; inspect the exact trainer/model/data terms for the intended use.
+
 ## 2. Preserve USD composition and resolve managed assets deliberately
 
 **Documented operations and fields.** [UsdStage](https://openusd.org/release/api/class_usd_stage.html) exposes composition, variants, payload loading, save and flatten operations. `Save()` excludes session layers; dirty anonymous layers require explicit export. Flattening resolves composition rather than retaining the original editable structure. `GetUsedLayers()` is a snapshot affected by load set and variant selections, not an inventory of every possible configuration. `GetTimeCodesPerSecond()` returns the stage time-code rate, with documented metadata fallback rules. The broader [OpenUSD documentation](https://openusd.org/release/index.html) describes the scene-composition toolset. [Blender 4.4 USD interchange](https://docs.blender.org/manual/en/4.4/files/import_export/usd.html) supports a subset of USD data and documents USDZ limitations including UDIM textures; this is not a claim about later Blender versions.
