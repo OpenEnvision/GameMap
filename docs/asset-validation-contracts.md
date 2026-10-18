@@ -244,6 +244,8 @@ The substantive additions are format/extension validation, USD session and load-
 
 ## Animation sampling and compression
 
+For engine-side culling, evaluation phase, events and root-motion ownership after decoding, see [runtime animation observation gates](engine-operation-contracts.md#runtime-animation-observation-gates).
+
 Checked **2026-10-18** against official ozz-animation **0.17.0**, commit `744eb9d99f606eda849acb0b1204f7a3dc20bca1` (2026-08-01). Source inspection only; no library installation, build or animation execution. This adds runtime sampling/compression gates to existing retargeting and interchange notes. API documentation, static source findings and proposed GameMap gates are distinguished below. [S1]
 
 ### Compact operational chain

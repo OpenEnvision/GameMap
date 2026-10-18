@@ -45,6 +45,43 @@ Sources checked on 2026-10-18; full reproduction not performed. This note comple
 | Transfer a rig | [Unity bind poses](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Mesh-bindposes.html) are indexed inverse base-pose matrices corresponding to bone indices | Preserve indices, weights and mesh-root space; compare rest pose and root-transformed deformation after import |
 | Observe Godot frame phase | [SceneTree signals](https://docs.godotengine.org/en/stable/classes/class_scenetree.html) fire before node process/physics callbacks | A separate rendering barrier and provenance are needed for post-render images |
 
+### Runtime animation observation gates
+
+Sources checked 2026-10-18 against Unity 6000.0 and Godot 4.4 official documentation, not immutable engine implementations. Full reproduction not performed. This supplements [decoded-pose/compression validation](asset-validation-contracts.md#animation-sampling-and-compression) and [frame capture ownership](visual-evidence-research.md#engine-frame-readback-and-capture-ownership): pose application, playback completion, event delivery and actor movement require distinct observations.
+
+#### Unity: observation depends on visibility, update phase and movement owner
+
+- `AlwaysAnimate` includes offscreen animation. `CullUpdateTransforms` suppresses retargeting, IK and Transform writes when renderers are invisible; `CullCompletely` suppresses animation altogether when renderers are not visible. A stale offscreen skeleton therefore cannot alone establish an incorrect clip or graph. [U1]
+- `Normal` updates in Update, `Fixed` in FixedUpdate, and `UnscaledTime` ignores Time.timeScale. Record the mode and relevant clock rather than comparing identical render-frame counts as identical animation progress. [U2]
+- `OnAnimatorMove` occurs after state-machine/animation evaluation but before `OnAnimatorIK`; treating this callback as the final post-IK pose boundary is unsupported. [U3]
+- `applyRootMotion` has no effect when a script implements OnAnimatorMove, and changing it at runtime reinitializes the Animator. Record the movement-owning script; do not treat toggling the property as a harmless observation control or a proven reset/rollback operation. [U4]
+
+**Editorial fixture, unexecuted:** fixed clip/controller/rig with nonzero travel and an IK target; compare visible/offscreen runs for each culling mode. Log animation time, sampled joints, post-IK joints and actor transform separately. Repeat with a movement callback and with timeScale changes under each update mode. Introduce the root-motion toggle as a separate reinitialization case, not between nominally equivalent samples. Pass criteria must name which phase and movement owner they test.
+
+#### Godot: immediate pose, playback completion and side effects differ
+
+`play()` applies animation on the next processing opportunity; `advance(0)` requests the immediate update. `seek(seconds, update=true)` updates the pose while skipping intervening events. Its `update_only=true` suppresses method, audio and animation-playback tracks. Seeking to the end does not emit `animation_finished`; the documented alternative for skipping while emitting completion is `advance()`. These are distinct operations, not interchangeable shortcuts. [G1]
+
+Manual process mode requires `advance()`. `mixer_applied` reports application of blended results to target objects; it is not documented as a rendering/physics fence. Deferred method mode batches calls until after event processing, whereas immediate mode invokes them as reached. Looping animations do not emit `animation_finished`. The transform of a valid configured root-motion bone track of type POSITION_3D, ROTATION_3D or SCALE_3D is visually canceled, so an in-place skeleton is not by itself failed locomotion. Animated-node caches may miss a disappeared node; `clear_caches()` forces refresh. [G2]
+
+**Editorial fixture, unexecuted:** one nonlooping clip with a moving joint, a method marker and completion counter; compare fresh-instance `play` plus `advance(0)`, seek with both update flags, and timed manual advancement. Record target pose, marker count, completion count and callback mode as separate results. Add a looping variant with an explicitly bounded sample interval rather than waiting for completion. Replace an animated target node and test cache refresh separately. For root motion, compare extracted motion and the consuming controller's world transform against the skeleton view; specify exactly one movement owner.
+
+#### Acceptance boundary and unknowns
+
+Proposed evidence record: engine patch version, clip/rig/graph identity, initial state, evaluation clock and step sequence, visibility/culling mode, callback mode, observation phase, joint pose, actor transform and event log. This is an editorial test design, not an implemented harness.
+
+The cited contracts do not establish a universal rendered-frame barrier, completion of deferred application-specific side effects, physics/contact success, safe retries after ambiguous evaluation, rollback, persistence across reload, or cross-platform numerical determinism. Project scripts and exact patch behavior remain untested. Do not infer those guarantees from an evaluation call, pose signal, animation-finished signal or screenshot.
+
+#### Official sources
+
+- [U1: Unity 6000.0 AnimatorCullingMode](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/AnimatorCullingMode.html)
+- [U2: Unity 6000.0 AnimatorUpdateMode](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/AnimatorUpdateMode.html)
+- [U3: Unity 6000.0 OnAnimatorMove](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.OnAnimatorMove.html)
+- [U4: Unity 6000.0 applyRootMotion](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Animator-applyRootMotion.html)
+- [G1: Godot 4.4 AnimationPlayer, play and seek](https://docs.godotengine.org/en/4.4/classes/class_animationplayer.html)
+- [G2: Godot 4.4 AnimationMixer, signals, callback modes, root_motion_track and clear_caches](https://docs.godotengine.org/en/4.4/classes/class_animationmixer.html)
+
+
 ## Native GUI automation is a separate evidence surface
 
 [Windows UI Automation](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview) depends on provider-supported control patterns. It does not establish that Unreal, Unity, or Blender exposes every custom widget or scene object. [Invoke](https://learn.microsoft.com/en-us/windows/win32/api/uiautomationclient/nf-uiautomationclient-iuiautomationinvokepattern-invoke) is intended to return promptly, but provider behavior varies. Neither invocation success nor [SendInput's inserted-event count](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendinput) proves application completion.
