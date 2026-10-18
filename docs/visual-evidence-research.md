@@ -57,6 +57,43 @@ Production image metadata, conversion and numerical difference operations.
 - **Source terms:** Current upstream original code Apache-2.0; third-party components differ; documentation CC-BY-4.0.
 - **Primary sources:** [oiiotool manual](https://openimageio.readthedocs.io/en/latest/oiiotool.html); [OpenImageIO README](https://github.com/AcademySoftwareFoundation/OpenImageIO)
 
+### Engine frame readback and capture ownership
+
+Sources checked 2026-10-18; full reproduction not performed. Unity 6000.0 and Godot 4.5 links identify documentation versions, not immutable engine patch/commit pins or installed runtimes. These ownership/readiness contracts precede [pass-specific artifact inspection](#render-pass-and-matte-artifacts) and visual-quality scoring. They do not establish deterministic pixels, an implemented adapter or measured GPU cost.
+
+#### Unity 6000.0: two separate readiness boundaries
+
+1. **Rendered screenshot → GPU target.** `ScreenCapture.CaptureScreenshotIntoRenderTexture(renderTexture)` captures the game view. The official contract requires completed frame rendering; its example waits for `WaitForEndOfFrame`, allocates a screen-width/height RenderTexture, then requests mip 0 as `TextureFormat.RGBA32`. The asynchronous readback reduces main-thread work; the capture call does not itself return CPU pixels. [ScreenCapture API](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ScreenCapture.CaptureScreenshotIntoRenderTexture.html)
+2. **GPU target → completed CPU readback.** Requests update each frame. Successful data is accessible for only one frame, and Unity disposes the request the following frame. Poll `done`, then require `!hasError` before reading; disposal also makes `hasError` true. Result metadata includes width, height, depth, layer count and bytes per layer. Adapter implication: immediately copy/consume successful data into an evaluator-owned artifact; do not queue a request handle for arbitrary later encoding. [Request lifetime](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rendering.AsyncGPUReadbackRequest.html)
+3. `GetData<T>(layer)` throws `InvalidOperationException` if fulfillment has not occurred or the request was disposed. Its layer parameter selects slices for volume/cube/array textures. Calling `GetData<byte>()` is not a pixel-format conversion API: select the output format at request time and record the selected layer. [GetData](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rendering.AsyncGPUReadbackRequest.GetData.html)
+
+##### Resource and sizing obligations
+
+- `AsyncGPUReadback.Request` automatically converts from GPU storage to a specified destination format. Texture extents are checked against actual source dimensions, including quality-reduced texture sizes. Check format support with `SystemInfo.IsFormatSupported(..., GraphicsFormatUsage.ReadPixels)`. A temporary RenderTexture must not be returned through `ReleaseTemporary` before readback completion. Texture regions use pixel coordinates; buffer size/offset use bytes. [Request format, extent and temporary-target rules](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rendering.AsyncGPUReadback.Request.html)
+- The alternative `RequestIntoNativeArray` writes into caller-supplied storage; neither that array nor its underlying memory may be disposed before completion. This is a separate ownership route, not permission to retain a normal request's borrowed result indefinitely. [Caller-owned output](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rendering.AsyncGPUReadback.RequestIntoNativeArray.html)
+- `WaitForEndOfFrame` can freeze in the Editor when switching from Game to Scene view, and does not run in Editor batch mode. Therefore the documented screenshot coroutine is not a verified headless-CI recipe. Distinguish Editor batch mode from a built player; these documents do not establish all player/headless variants. [WaitForEndOfFrame execution limits](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/WaitForEndOfFrame.html)
+
+**Proposed adapter invariant (inference):** bind each capture ID to target identity, dimensions, mip/layer, destination format and source frame; keep its target leased through completion; copy successful bytes before request expiry; separately mark render-not-ready, readback-error and stale/disposed-result failures. Never reuse a stale success as the next frame. For a chosen single-layer tightly packed RGBA32 byte artifact, validate expected width × height × 4 and actual metadata rather than assuming every request has this layout.
+
+#### Godot 4.5: post-draw is not an asynchronous readback handle
+
+- `RenderingServer.frame_post_draw` fires at frame end after the server updates all viewports. `Viewport.get_texture()` warns that early access, particularly from `_ready()`, may be black or outdated and recommends awaiting that signal before obtaining and saving the image. This is the documented frame readiness boundary. It does not claim the screenshot contains OS/window decorations or other windows. [RenderingServer signal](https://docs.godotengine.org/en/4.5/classes/class_renderingserver.html#class-renderingserver-signal-frame-post-draw), [Viewport texture readiness](https://docs.godotengine.org/en/4.5/classes/class_viewport.html#class-viewport-method-get-texture)
+- `Texture2D.get_image()` creates a new Image copy on each invocation, returns null for an invalid texture, and fetches data from GPU memory. The docs warn against frequent per-frame use, especially for large textures. Unlike Unity's request result, this API's documented return is a copied Image, with no documented one-frame expiry. It is not documented as a nonblocking asynchronous readback API. [CPU image copy and invalid result](https://docs.godotengine.org/en/4.5/classes/class_texture2d.html#class-texture2d-method-get-image)
+- A `ViewportTexture` is scene-local and may return incorrect data before its scene root is ready. With `use_hdr_2d`, its data is HDR in linear space; the docs describe conversion to RGBA8 and linear-to-sRGB for gamma-space display. Do not silently compare that raw HDR image to an sRGB reference. [ViewportTexture scene and color contract](https://docs.godotengine.org/en/4.5/classes/class_viewporttexture.html)
+- A SubViewport's default update policy is `UPDATE_WHEN_VISIBLE`; `UPDATE_ONCE` updates once and then becomes disabled. Its width and height must each be at least two pixels. When its parent is a SubViewportContainer with stretch enabled, the size cannot be changed manually. Thus a global post-draw signal alone does not demonstrate that an invisible/default or disabled target rendered new content. [SubViewport update modes and size](https://docs.godotengine.org/en/4.5/classes/class_subviewport.html)
+
+**Proposed adapter invariant (inference):** identify the exact root/SubViewport and its scene, confirm ready/valid target and intended update policy, await post-draw, retrieve the Image, reject null/empty or wrong-size output, and record actual format/color transformation. For offscreen one-shot capture, explicitly arm `UPDATE_ONCE` rather than relying on visibility. Hold the scene/viewport through capture; retain the resulting Image for subsequent evaluation. The cited contracts do not promise safe concurrent teardown, fixed GPU latency, or pixel determinism.
+
+#### Proposed capture-validity checks
+
+Treat this as a proposed integration test checklist, not tests already run:
+
+1. A rendered marker or known scene-state change distinguishes requested frame N from stale frame N−1; request ID alone is insufficient.
+2. Unity tests cover success copied before expiry, failure before `GetData`, early target release prevention, size change, and unsupported output format; log engine patch, render pipeline and graphics backend.
+3. Godot tests cover an invisible SubViewport, one-shot rearming, scene-not-ready/invalid image, container-driven dimensions and HDR conversion; log engine patch, renderer and viewport path.
+4. Persist image plus provenance: engine/build, capture stage, target, requested/observed dimensions, format, color space/normalization, frame/timestamp, readiness/error status and artifact hash. Evaluate gameplay or aesthetics only after capture validity passes.
+
+
 ### Render-pass and matte artifacts
 
 Sources checked 2026-10-18; full reproduction not performed. Blender evidence is versioned to 4.5 LTS unless explicitly marked 4.2; manual pages remain mutable. This complements [material/compiler acceptance](asset-validation-contracts.md#materialx-graph-generated-code-and-compiler-verdicts), rather than adding an executed renderer or claiming equivalence with game-engine buffers.
