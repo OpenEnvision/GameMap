@@ -13,8 +13,14 @@ dist/
 /build/
 /website/build/
 
-# Generated standalone preview only; website/index.html is a source file.
+# Obsolete standalone preview; the HTML document now lives in website/app/root.tsx.
 /index.html
+
+# React Router output and prepared copies of source documentation.
+/.build/
+/.react-router/
+/website/.content/
+/website/public/docs-assets/
 
 # TypeScript, Vite, lint, and other disposable tool caches.
 *.tsbuildinfo
@@ -88,5 +94,5 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # Intentionally versioned: README.md, AWESOME.md, docs/, data/, package-lock.json,
-# website/src/, website/index.html, and website/public/ assets/downloads.
+# website/app/, website/src/, and website/public/ assets/downloads.
 # Some are generated editorial outputs; CI checks that they match their sources.

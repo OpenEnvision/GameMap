@@ -20,7 +20,7 @@ npm ci
 npm run dev
 ```
 
-Built with React, TypeScript, and Vite. No backend or API key is required.
+Built with Fumadocs, React Router, TypeScript, and Vite. Guides render as full pages; no backend or API key is required.
 
 For production builds and GitHub Pages publishing, see the [deployment guide](docs/deployment.md).
 

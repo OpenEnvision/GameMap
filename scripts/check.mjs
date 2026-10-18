@@ -308,10 +308,10 @@ async function englishSources(directory){
  const nested=await Promise.all(entries.map(entry=>entry.isDirectory()?englishSources(`${directory}/${entry.name}`):/\.(?:tsx?|json)$/.test(entry.name)?[`${directory}/${entry.name}`]:[]));
  return nested.flat();
 }
-const englishFiles=[...await englishSources('website/src'),'website/index.html',...(checkBuilt?['index.html']:[]),'README.md','AWESOME.md',...(await readdir(new URL('../website/public/',import.meta.url))).filter(name=>/\.(md|json)$/.test(name)).map(name=>'website/public/'+name)];
+const englishFiles=[...await englishSources('website/src'),...await englishSources('website/app'),...(checkBuilt?['dist/index.html']:[]),'README.md','AWESOME.md',...(await readdir(new URL('../website/public/',import.meta.url))).filter(name=>/\.(md|json)$/.test(name)).map(name=>'website/public/'+name)];
 await Promise.all(englishFiles.map(async path=>{
  const source=await readFile(new URL('../'+path,import.meta.url),'utf8');
  assert.doesNotMatch(source,/\p{Script=Han}/u,`Non-English copy remains in ${path}`);
 }));
-for(const path of ['website/index.html',...(checkBuilt?['index.html']:[])])assert.match(await readFile(new URL('../'+path,import.meta.url),'utf8'),/<html lang="en">/,`Set the document language to English: ${path}`);
-console.log(`English-only checks passed: ${englishFiles.length} ${checkBuilt?'source, preview, and download':'source and download'} files.`);
+for(const path of ['website/app/root.tsx',...(checkBuilt?['dist/index.html']:[])])assert.match(await readFile(new URL('../'+path,import.meta.url),'utf8'),/<html lang="en"[\s>]/,`Set the document language to English: ${path}`);
+console.log(`English-only checks passed: ${englishFiles.length} ${checkBuilt?'source, rendered-site, and download':'source and download'} files.`);
