@@ -57,6 +57,54 @@ Production image metadata, conversion and numerical difference operations.
 - **Source terms:** Current upstream original code Apache-2.0; third-party components differ; documentation CC-BY-4.0.
 - **Primary sources:** [oiiotool manual](https://openimageio.readthedocs.io/en/latest/oiiotool.html); [OpenImageIO README](https://github.com/AcademySoftwareFoundation/OpenImageIO)
 
+### Render-pass and matte artifacts
+
+Sources checked 2026-10-18; full reproduction not performed. Blender evidence is versioned to 4.5 LTS unless explicitly marked 4.2; manual pages remain mutable. This complements [material/compiler acceptance](asset-validation-contracts.md#materialx-graph-generated-code-and-compiler-verdicts), rather than adding an executed renderer or claiming equivalence with game-engine buffers.
+
+#### Documented pass semantics
+
+From [Blender 4.5 Passes](https://docs.blender.org/manual/en/4.5/render/layers/passes.html):
+
+- Z measures nearest-visible-surface distance; Mist remaps distance to 0–1. Z can be noisy with depth of field or motion blur. Z, Position, Object Index and Material Index lack antialiasing.
+- Position and Normal are world-space. Vector contains two screen-space 2D vectors for adjacent frames and is disabled with motion blur.
+- Cycles Alpha Threshold determines which surfaces write the specified data passes.
+- EEVEE auxiliary passes exclude depth of field/motion blur; Blended surfaces appear only in Combined/Transparent.
+- Cryptomatte supports multiple contributors per pixel, transparency, and Cycles blur/depth of field. Each image stores two ranked contributors. Asset groups by parent, not Blender asset-library identity.
+- AOV names cannot collide with enabled passes. Color holds vectors or colors; Value holds scalars. EEVEE permits 16 of each.
+
+[Blender 4.5 ViewLayer API](https://docs.blender.org/api/4.5/bpy.types.ViewLayer.html) exposes pass_alpha_threshold, pass_cryptomatte_depth (2–16, default 6), pass enable flags, and update_render_passes(). The fields are concrete configuration to record rather than infer from a preview; the method requeries enabled engine passes.
+
+[Blender 4.2 AOV Output](https://docs.blender.org/manual/en/4.2/render/shader_nodes/output/aov.html) documents exact name matching between the output node and the AOV panel, and Material/World shader support. This source is intentionally 4.2, not evidence of untested 4.5 behavior changes.
+
+[Blender 4.5 Cryptomatte Node](https://docs.blender.org/manual/sr/4.5/compositing/types/mask/cryptomatte.html) distinguishes Image, Matte and Pick outputs: Pick is a selection visualization, while Matte is the mask. It accepts multilayer OpenEXR, but does not support sidecar manifests or Volume Objects. The official Serbian-locale page has English body text; the English endpoint failed retrieval.
+
+#### Export and exact-value metadata
+
+[Blender 4.5 image formats, official French locale](https://docs.blender.org/manual/fr/4.5/files/media/image_formats.html) distinguishes half/full floating-point OpenEXR. Save As Render applies display/view transforms to display formats such as PNG, while intermediate OpenEXR uses render-output color space. Do not treat a display screenshot as numeric pass evidence.
+
+[Psyop Cryptomatte Nuke documentation](https://github.com/Psyop/Cryptomatte/blob/968d5e4b6171e29ba5f89d554117132a164e747e/docs/nuke.md) in its Encryptomatte workflow instructs exporting 32-bit EXR with all metadata. It explicitly warns that resampling, lens distortion and proxy processing before matte extraction damage exact encoded values; transform the extracted mask instead. Missing manifest entries can yield numeric selections instead of names. This is strong evidence for inspecting channels, metadata and round-trip selection rather than comparing the colorful preview.
+
+#### Proposed artifact inspection gate
+
+Task: inspect a supplied multilayer render artifact plus configuration manifest, identify which requested downstream operations are valid, and produce a pass-specific diagnostic report. Keep renderer/version-specific semantics separate from universal image checks.
+
+Suggested fixture families:
+
+1. Static foreground silhouette and known world-space reference points: distinguish data-space mistakes from expected hard edges.
+2. Transparent card before an opaque object, varied threshold and render method: detect configuration/visibility mismatches.
+3. Known left/right/up/down movement and camera motion: calibrate channel order, sign, pixel units and frame reference. The cited manual does NOT establish exact XY/ZW order or sign; do not invent those constants.
+4. Overlapping blurred contributors with sufficient/insufficient Cryptomatte ranks: distinguish rank truncation from decoder failures.
+5. Named scalar/vector AOVs with deliberate missing/mistyped names: detect incomplete wiring and type mismatches.
+6. Original EXR versus metadata-stripped, half-converted or resampled derivatives: test artifact integrity and named-selection round trips. These mutations are proposed, not demonstrated here.
+
+Expected evidence bundle: application version, engine, frame/camera, motion/DOF settings, alpha threshold, pass flags, AOV names/types, Cryptomatte depth, channel inventory/dtypes, metadata availability, export transform/compression, original artifact hash, and numeric sample locations. Preserve originals; previews are auxiliary evidence.
+
+Oracle shape: separate unsupported configuration, missing artifact/channel, semantic mismatch and measured discrepancy. Report raw numeric comparisons only after coordinate/frame/encoding contracts are established. Validate decoded masks and named selections independently from beauty-image similarity. No numerical tolerances should be asserted until a fixture establishes them.
+
+#### Limits
+
+No source here proves exact Vector component ordering/sign, background Z sentinel, all engine-specific AOV filtering behavior, or codec-by-codec Cryptomatte safety. Resolve those with version-pinned implementation sources or later authorized fixtures. Psyop's PDF specification was located but could not be retrieved; no claims are attributed to its unread contents. No general equivalence between Blender passes and game-engine buffers is claimed.
+
 ### OpenColorIO
 
 Shared color-management configuration for evidence comparison.

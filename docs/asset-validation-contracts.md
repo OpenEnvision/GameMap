@@ -40,7 +40,42 @@ Unless explicitly versioned below, sources are rolling documentation or reposito
 
 **Unimplemented fixture:** a color ramp, alpha edge, packed data map and normal map across two supported target formats, with declared error tolerances and an engine-rendered observation. This adds compression/graph coverage to the prior texture work order rather than repeating its image-inventory gate.
 
-**Version/license scope:** all three sources are rolling; installed MaterialX node library, OCIO configuration and KTX encoder/transcoder versions are unknown. MaterialX declares Apache-2.0 for its library, not third-party textures. Exact OCIO/KTX dependency/license inventories were not established by these pages. MaterialX commit resolution was previously rate-limited; no source pin is claimed.
+**Version/license scope:** the overview links above are rolling; installed MaterialX node library, OCIO configuration and KTX encoder/transcoder versions are unknown. The focused MaterialX review below now pins a selected version, superseding the earlier unresolved source-pin status. Exact OCIO/KTX dependency/license inventories were not established by these pages.
+
+### MaterialX graph, generated code and compiler verdicts
+
+Sources checked 2026-10-18; full reproduction not performed. This focused addition separates material generation from the [GPU invocation diagnosis](production-debugging-contracts.md#2-complete-a-specific-shader-invocation-diagnosis) already documented.
+
+#### Source and version scope
+
+GitHub's tag endpoint resolves MaterialX v1.39.4 to `270b5cf2ae2be24a3b6ef4b0569f1c93038dda1d`. This is a selected reproducible version, not a claim about the latest release or the user's installed version.
+
+- [Tag reference](https://api.github.com/repos/AcademySoftwareFoundation/MaterialX/git/ref/tags/v1.39.4)
+- [Shader-generation guide](https://github.com/AcademySoftwareFoundation/MaterialX/blob/270b5cf2ae2be24a3b6ef4b0569f1c93038dda1d/documents/DeveloperGuide/ShaderGeneration.md): generation produces source, requires a shading-language compiler and renderer, and needs implementations for the chosen target; renderer variants can require different generators. Host-side uniforms, textures and geometry bindings remain application responsibilities.
+- [Sample script validator wrapper](https://github.com/AcademySoftwareFoundation/MaterialX/blob/270b5cf2ae2be24a3b6ef4b0569f1c93038dda1d/python/Scripts/generateshader.py#L16-L31)
+- [Document validation](https://github.com/AcademySoftwareFoundation/MaterialX/blob/270b5cf2ae2be24a3b6ef4b0569f1c93038dda1d/python/Scripts/generateshader.py#L85-L88)
+- [Generation and verdict path](https://github.com/AcademySoftwareFoundation/MaterialX/blob/270b5cf2ae2be24a3b6ef4b0569f1c93038dda1d/python/Scripts/generateshader.py#L149-L198)
+- [License](https://github.com/AcademySoftwareFoundation/MaterialX/blob/270b5cf2ae2be24a3b6ef4b0569f1c93038dda1d/LICENSE): project software license is Apache-2.0; that does not establish rights in external textures or imported materials.
+
+#### Static findings, not measured failures
+
+1. `doc.validate()` returns a validity flag and diagnostics. The sample prints a warning for false and proceeds into shader generation. A resulting file therefore does not demonstrate document validation passed.
+2. The optional `validateCode` wrapper returns decoded output for both successful subprocess execution and `CalledProcessError`, discarding the latter's return code. The caller labels nonempty output failure and empty output success. Consequently, if a compiler succeeds but emits informational output, it is classified as failed; if a compiler fails silently and the element’s other validation calls also emit no output, the element is classified as passed on this path. These are conditional consequences of inspected control flow, not observed compiler behavior.
+3. With no validator supplied, the wrapper returns empty text, and the caller prints a validation-passed message. This establishes neither external compiler invocation nor target compatibility.
+4. The renderable-element loop can be empty without populating `failedShaders`; the final failure check alone does not establish that any expected material was generated. An expected-output inventory is needed for a harness. This is not a claim that valid production documents normally have no renderables.
+5. Output files are written directly before external validation. The script establishes no atomic all-material transaction or rollback on later failure. Persisting a source artifact and accepting it must be separate records.
+
+#### Proposed acceptance contract
+
+Inputs: material document hash; exact standard/custom node libraries and source search paths; generator/version/target; expected renderable elements and stages; target engine/compiler/driver; textures, units, color interpretation and host bindings.
+
+Maintain independent results: document validity and diagnostics; nonempty expected element/stage coverage; generated-source hashes; compiler invoked flag, exact arguments, exit code and complete logs; target renderer execution and visual evidence. Do not infer these states from one exit code or a human-readable 'passed' line.
+
+Use a new output directory per candidate, quarantine partial output, and compare the output manifest against expected materials before promotion. Changing node libraries, target bindings or textures creates a different candidate. Proposed negative fixtures include malformed graph, missing target implementation, empty renderable set, successful noisy validator, failing silent validator and interrupted multi-material generation. These fixtures have not been implemented or run.
+
+Finally render a controlled fixture in the actual consumer, preserving camera, light, geometry, texture bindings and raw/pass artifacts. Compare intended semantics rather than requiring cross-renderer pixel identity. Compiler success cannot establish correct normal-map/color-space handling, material appearance or GPU performance. Actual importer fidelity, cancellation, atomic persistence and runtime correctness remain unverified; further confidence requires authorized runtime experiments.
+
+For raw image evidence, retain the [render-pass and matte contracts](visual-evidence-research.md#render-pass-and-matte-artifacts) as well as the beauty preview.
 
 ## 4. Optimize, retopologize, unwrap and regenerate tangents without losing correspondence
 
