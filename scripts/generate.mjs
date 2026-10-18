@@ -2,6 +2,7 @@ import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {build} from 'esbuild';
+import {readDocuments} from './lib/documents.mjs';
 import {categories,loadCatalog,validate,renderAwesome} from './catalog.mjs';
 import {loadLearningContent,renderLearningGuide} from './learning.mjs';
 import {loadAgentCodeContent,renderAgentCodeGuide} from './agent-code.mjs';
@@ -47,7 +48,9 @@ outputs['website/public/logo-sources.md']=attribution.replaceAll('<code>website/
 outputs['website/public/media-sources.md']=(await readFile(new URL('../docs/media-sources.md',import.meta.url),'utf8')).replaceAll('../website/public/','./');
 // Public downloads use same-directory paths so links also work on repository subpaths.
 let downloadable=awesome;
-for(const name of ['cadle-repositories','deployment','agents-notes','engines-notes','game-ai-notes','world-model-notes','practical-guide','tutorials-and-demos','coding-agent-game-code','agent-interface-evidence','game-testing-library','research-index','catalog-review-coverage','engine-operation-contracts','production-research-notes','generative-tools-research','generative-api-boundaries','visual-evidence-research','production-work-orders','studio-production-case-studies','source-revision-notes','production-coverage-gaps','generation-delivery-contracts','asset-validation-contracts','native-operation-details','gameplay-state-contracts','game-development-evaluation','benchmark-reproducibility','production-debugging-contracts','visual-feedback-mechanisms','asset-selection-feedback']){
+// Flat source notes also have raw downloads. Nested archives are rendered as documentation.
+const downloadableNotes=(await readDocuments()).filter(page=>/^docs\/[^/]+\.md$/.test(page.source)&&!['media-sources','icon-sources'].includes(page.slug));
+for(const {slug:name} of downloadableNotes){
  const path=`docs/${name}.md`;
  downloadable=downloadable.replaceAll(`](${path})`, `](./${name}.md)`);
  let note=outputs[path]??await readFile(new URL('../'+path,import.meta.url),'utf8');
@@ -55,9 +58,11 @@ for(const name of ['cadle-repositories','deployment','agents-notes','engines-not
  note=note.replaceAll('](../AWESOME.md)', '](./awesome-list.md)');
  note=note.replaceAll('](../CONTRIBUTING.md', '](./CONTRIBUTING.md');
  note=note.replaceAll('](world-model-notes.md)','](./world-model-notes.md)');
- outputs[`website/public/${name}.md`]=note;
+ outputs[`website/public/${name}.md`]=note.trimEnd()+'\n';
 }
-outputs['website/public/CONTRIBUTING.md']=(await readFile(new URL('../CONTRIBUTING.md',import.meta.url),'utf8')).replaceAll('](docs/world-model-notes.md)','](./world-model-notes.md)').replaceAll('](docs/deployment.md)','](./deployment.md)');
+let contributing=await readFile(new URL('../CONTRIBUTING.md',import.meta.url),'utf8');
+for(const {slug} of downloadableNotes)contributing=contributing.replaceAll(`](docs/${slug}.md`, `](./${slug}.md`);
+outputs['website/public/CONTRIBUTING.md']=contributing;
 outputs['website/public/awesome-list.md']=downloadable.replaceAll('](CONTRIBUTING.md)','](./CONTRIBUTING.md)').replaceAll('](data/resources.json)','](./resources.json)');
 for(const [path,value] of Object.entries(outputs)){
  const url=new URL('../'+path,import.meta.url);await mkdir(new URL('.',url),{recursive:true});await writeFile(url,value);

@@ -12,20 +12,14 @@ export default {
   ssr: false,
   routeDiscovery: { mode: "initial" },
   async prerender() {
-    const documents = JSON.parse(
-      await readFile("website/.content/manifest.json", "utf8"),
-    ) as { slug: string }[];
-    const routes = [
-      "/",
-      "/resources",
-      "/examples",
-      "/testing",
-      "/docs",
+    const paths = JSON.parse(
+      await readFile("website/.content/routes.json", "utf8"),
+    ) as string[];
+    // Generated from the typed registry; React Router adds basename itself.
+    return [
+      ...paths.map((path) => (path === "/" ? "/" : path.replace(/\/$/, ""))),
       "/404",
       "/search-index.json",
-      ...documents.map((page) => "/docs/" + page.slug),
     ];
-    // React Router prefixes these paths with basename during prerendering.
-    return routes;
   },
 } satisfies Config;

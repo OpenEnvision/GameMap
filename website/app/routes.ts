@@ -1,12 +1,16 @@
 import { type RouteConfig, index, route } from "@react-router/dev/routes";
-
+import { pages, detailRoutes, systemRoutes } from "../content/site";
+const path = (value: string) => value.replace(/^\/|\/$/g, "");
 export default [
-  index("routes/home.tsx"),
-  route("resources", "routes/resources.tsx"),
-  route("examples", "routes/examples.tsx"),
-  route("testing", "routes/testing.tsx"),
-  route("docs", "routes/docs-index.tsx"),
-  route("docs/*", "routes/docs.tsx"),
-  route("search-index.json", "routes/search-index.ts"),
-  route("*", "routes/not-found.tsx"),
+  ...Object.entries(pages).map(([id, page]) =>
+    page.path === "/"
+      ? index(page.module, { id })
+      : route(path(page.path), page.module, { id }),
+  ),
+  ...detailRoutes.map((page) =>
+    route(path(page.path), page.module, { id: page.id }),
+  ),
+  ...systemRoutes.map((page) =>
+    route(path(page.path), page.module, { id: page.id }),
+  ),
 ] satisfies RouteConfig;

@@ -14,6 +14,7 @@ import ResourceIcon, {
 import { type Dimension, type ResourceType, type Stage } from "../../src/types";
 import { categories, resources, stageLabels, typeLabels } from "../lib/catalog";
 import { ResourceDetail } from "../components/resource-detail";
+import { url } from "../../content/site";
 import { useClientQuery } from "../lib/client-query";
 
 export default function Resources() {
@@ -275,7 +276,11 @@ export default function Resources() {
       {filtered.length ? (
         <div className="resource-grid">
           {filtered.map((resource) => (
-            <article className="resource-tile" key={resource.id}>
+            <article
+              className="resource-tile"
+              key={resource.id}
+              data-content-ref={`resource:${resource.id}`}
+            >
               <div className="resource-card-top">
                 <ResourceIcon resource={resource} size={42} />
                 <button
@@ -298,9 +303,7 @@ export default function Resources() {
                 }
               </span>
               <h2>
-                <button onClick={() => selectResource(resource.id)}>
-                  {resource.name}
-                </button>
+                <Link to={url.resource(resource.id)}>{resource.name}</Link>
               </h2>
               <ResourceAttribution resource={resource} />
               <p className="resource-description">{resource.summary}</p>

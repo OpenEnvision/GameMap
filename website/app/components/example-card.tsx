@@ -1,4 +1,6 @@
 import { ArrowUpRight, Code2 } from "lucide-react";
+import { Link } from "react-router";
+import { content } from "../../content/registry";
 import { learningMedia, publicAsset } from "../lib/catalog";
 import type { LearningPath } from "../../src/data/learningTypes";
 
@@ -10,10 +12,15 @@ export function ExampleCard({
   compact?: boolean;
 }) {
   const media = learningMedia[game.id];
+  const entry = content.require(
+    game.category === "foundation" ? "foundation" : "example",
+    game.id,
+  );
   return (
     <article
       className={`example-card${compact ? " compact" : ""}`}
       id={game.id}
+      data-content-ref={entry.key}
     >
       <a
         className="example-image"
@@ -73,6 +80,10 @@ export function ExampleCard({
           </details>
         )}
         <div className="example-links">
+          <Link to={entry.url}>
+            Complete record
+            <ArrowUpRight size={13} />
+          </Link>
           <a href={game.source.url} target="_blank" rel="noreferrer">
             Project source
             <ArrowUpRight size={13} />

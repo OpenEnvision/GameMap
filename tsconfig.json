@@ -26,6 +26,7 @@
   "include": [
     "website/src",
     "website/app",
+    "website/content",
     ".react-router/types",
     "react-router.config.ts",
     "vite.config.ts"

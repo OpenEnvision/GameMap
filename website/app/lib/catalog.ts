@@ -1,8 +1,10 @@
-import data from "../../src/data/resources.json";
-import { type Resource } from "../../src/types";
-export const resources = data as Resource[];
+import { content, sources } from "../../content/registry";
 export { categories, stageLabels, typeLabels } from "../../src/types";
-export { learningPaths, foundationPaths } from "../../src/data/learningPaths";
-export { learningMedia } from "../../src/data/learningMedia";
-export const publicAsset = (path: string) =>
-  `${import.meta.env.BASE_URL}${path}`;
+export { publicAsset } from "../../src/publicAsset";
+// Compatibility selectors, never separate data sources. All collections are registered first.
+export const resources = content.all("resource").map((entry) => entry.data);
+export const learningPaths = content.all("example").map((entry) => entry.data);
+export const foundationPaths = content
+  .all("foundation")
+  .map((entry) => entry.data);
+export const learningMedia = sources.learningMedia;

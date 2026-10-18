@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router";
 import { ArrowUpRight, Menu, Moon, Search, Sun, X } from "lucide-react";
 import { useSearchContext } from "fumadocs-ui/contexts/search";
 import { useTheme } from "next-themes";
+import { navigation, url } from "../../content/site";
 
 export function Brand() {
   return (
@@ -50,19 +51,34 @@ export function SiteHeader() {
           <Brand />
         </Link>
         <nav className="desktop-navigation" aria-label="Main navigation">
-          <NavLink to="/resources/">Resources</NavLink>
-          <NavLink to="/examples/">Game examples</NavLink>
-          <NavLink to="/docs/">Guides & notes</NavLink>
-          <NavLink to="/testing/">Testing</NavLink>
+          {navigation
+            .filter((page) => page.nav === "primary")
+            .map((page) => (
+              <NavLink key={page.id} to={page.path}>
+                {page.title}
+              </NavLink>
+            ))}
+          <details className="more-navigation" key={location.pathname}>
+            <summary>More</summary>
+            <div>
+              {navigation
+                .filter((page) => page.nav === "secondary")
+                .map((page) => (
+                  <NavLink key={page.id} to={page.path}>
+                    {page.title}
+                  </NavLink>
+                ))}
+            </div>
+          </details>
         </nav>
         <div className="header-controls">
           <button
             className="global-search"
             onClick={() => setOpenSearch(true)}
-            aria-label="Search guides"
+            aria-label="Search all content"
           >
             <Search size={16} />
-            <span>Search docs</span>
+            <span>Search all</span>
             <kbd>⌘ K</kbd>
           </button>
           <button
@@ -105,10 +121,11 @@ export function SiteHeader() {
           id="mobile-navigation"
           aria-label="Mobile navigation"
         >
-          <NavLink to="/resources/">Resources</NavLink>
-          <NavLink to="/examples/">Game examples</NavLink>
-          <NavLink to="/docs/">Guides & notes</NavLink>
-          <NavLink to="/testing/">Testing</NavLink>
+          {navigation.map((page) => (
+            <NavLink key={page.id} to={page.path}>
+              {page.title}
+            </NavLink>
+          ))}
         </nav>
       )}
     </header>
@@ -125,6 +142,8 @@ export function SiteFooter() {
         <p>A little direction for your next playable world.</p>
       </div>
       <div className="footer-links">
+        <Link to={url.page("explore")}>All content</Link>
+        <Link to={url.document("content-model")}>Content model</Link>
         <Link to="/docs/contributing/">Contribute</Link>
         <Link to="/docs/media-sources/">Credits</Link>
         <a href={`${import.meta.env.BASE_URL}resources.json`} download>

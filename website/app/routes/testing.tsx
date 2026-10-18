@@ -1,12 +1,15 @@
 import { Link } from "react-router";
 import { ArrowUpRight, FlaskConical, Search } from "lucide-react";
 import {
-  testingResources,
   testingKinds,
   testingTerms,
   testingUses,
 } from "../../src/data/testingResources";
 import { useClientQuery } from "../lib/client-query";
+import { content } from "../../content/registry";
+import { ContentDocument } from "../components/content";
+const testingEntries = content.all("testing");
+const testingResources = testingEntries.map((entry) => entry.data);
 
 export default function Testing() {
   const [params, setParams] = useClientQuery();
@@ -58,6 +61,14 @@ export default function Testing() {
           </Link>
         </div>
       </header>
+      <section
+        className="testing-starters content-grid"
+        aria-label="Testing starter tasks"
+      >
+        {content.all("testing-pack").map((entry) => (
+          <ContentDocument entry={entry} heading="h2" key={entry.key} />
+        ))}
+      </section>
       <div className="catalog-toolbar">
         <div className="filter-search">
           <Search size={20} />
@@ -127,7 +138,11 @@ export default function Testing() {
       {filtered.length ? (
         <div className="testing-grid">
           {filtered.map((item) => (
-            <article className="testing-card" key={item.id}>
+            <article
+              className="testing-card"
+              key={item.id}
+              data-content-ref={`testing:${item.id}`}
+            >
               <span className="testing-symbol">
                 <FlaskConical size={21} />
               </span>
@@ -186,6 +201,10 @@ export default function Testing() {
                 </span>
               </details>
               <div className="example-links">
+                <Link to={content.require("testing", item.id).url}>
+                  Complete record
+                  <ArrowUpRight size={13} />
+                </Link>
                 <a href={item.access.url} target="_blank" rel="noreferrer">
                   {item.access.label}
                   <ArrowUpRight size={13} />

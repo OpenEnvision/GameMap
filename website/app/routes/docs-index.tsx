@@ -5,7 +5,8 @@ import {
   DocsTitle,
   DocsDescription,
 } from "fumadocs-ui/layouts/docs/page";
-import { DocumentationLayout, groups, manifest } from "../lib/docs";
+import { DocumentationLayout, groups } from "../lib/docs";
+import { content, url } from "../../content/registry";
 
 export default function DocsIndex() {
   return (
@@ -41,16 +42,16 @@ export default function DocsIndex() {
               </h2>
               <p>{group.description}</p>
               <div>
-                {group.pages
-                  .filter(([slug]) =>
-                    manifest.some((page) => page.slug === slug),
-                  )
-                  .map(([slug, title]) => (
-                    <Link key={slug} to={"/docs/" + slug + "/"}>
-                      {title}
-                      <ArrowRight size={15} />
-                    </Link>
-                  ))}
+                {group.pages.map(([slug, title]) => (
+                  <Link
+                    key={slug}
+                    to={url.document(slug)}
+                    data-content-ref={content.require("document", slug).key}
+                  >
+                    {title}
+                    <ArrowRight size={15} />
+                  </Link>
+                ))}
               </div>
             </section>
           ))}

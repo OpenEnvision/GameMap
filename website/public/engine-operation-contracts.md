@@ -149,6 +149,3 @@ Sources checked **2026-10-18**; Unity 6000.0 and Godot 4.5 documentation describ
 - **S11** — [DetourTileCache/Source/DetourTileCache.cpp, lines 359–637](https://github.com/recastnavigation/recastnavigation/blob/9f4ce64458dfae86e1239c525ddc219c4e9e06f1/DetourTileCache/Source/DetourTileCache.cpp#L359-L637) · static implementation inference
 - **S12** — [DetourTileCache/Include/DetourTileCache.h, lines 62–80](https://github.com/recastnavigation/recastnavigation/blob/9f4ce64458dfae86e1239c525ddc219c4e9e06f1/DetourTileCache/Include/DetourTileCache.h#L62-L80) and [queue capacities, lines 244–250](https://github.com/recastnavigation/recastnavigation/blob/9f4ce64458dfae86e1239c525ddc219c4e9e06f1/DetourTileCache/Include/DetourTileCache.h#L244-L250); bounded collection is in [source lines 482–580](https://github.com/recastnavigation/recastnavigation/blob/9f4ce64458dfae86e1239c525ddc219c4e9e06f1/DetourTileCache/Source/DetourTileCache.cpp#L482-L580) · static implementation inference
 - **S13** — [DetourTileCache/Source/DetourTileCache.cpp, lines 727–779](https://github.com/recastnavigation/recastnavigation/blob/9f4ce64458dfae86e1239c525ddc219c4e9e06f1/DetourTileCache/Source/DetourTileCache.cpp#L727-L779) · static implementation inference
-
-
-

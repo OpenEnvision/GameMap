@@ -21,7 +21,7 @@ export default function AtlasSearch(props: SharedProps) {
       <SearchDialogContent>
         <SearchDialogHeader>
           <SearchDialogIcon />
-          <SearchDialogInput placeholder="Search guides and research…" />
+          <SearchDialogInput placeholder="Search every resource, game, guide, and checkpoint…" />
           <SearchDialogClose />
         </SearchDialogHeader>
         <SearchDialogList />

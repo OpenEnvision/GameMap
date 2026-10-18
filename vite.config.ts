@@ -3,6 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { fumadocsMdx } from "fumadocs-mdx/vite";
 import { defineConfig } from "vite";
 import { fileURLToPath } from "node:url";
+import rehypeRaw from "rehype-raw";
 
 const base =
   "/" +
@@ -12,5 +13,29 @@ const base =
 export default defineConfig({
   base: base.replace(/\/+/g, "/"),
   publicDir: fileURLToPath(new URL("./website/public", import.meta.url)),
-  plugins: [fumadocsMdx(), tailwindcss(), reactRouter()],
+  plugins: [
+    fumadocsMdx({
+      globalOptions: {
+        mdxOptions: {
+          rehypePlugins: (plugins) => [
+            [
+              rehypeRaw,
+              {
+                passThrough: [
+                  "mdxjsEsm",
+                  "mdxJsxFlowElement",
+                  "mdxJsxTextElement",
+                  "mdxFlowExpression",
+                  "mdxTextExpression",
+                ],
+              },
+            ],
+            ...plugins,
+          ],
+        },
+      },
+    }),
+    tailwindcss(),
+    reactRouter(),
+  ],
 });
