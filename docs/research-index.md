@@ -8,7 +8,7 @@ These notes extend the concise [resource directory](../AWESOME.md) using the rep
 
 | Need | Dossier | Main distinctions |
 | --- | --- | --- |
-| Drive an engine, DCC application or native UI | [Engine operation contracts](engine-operation-contracts.md) | Editor/runtime scope, completion, cancellation, recovery, persistence and authoritative state |
+| Drive an engine, DCC application or native UI | [Engine operation contracts](engine-operation-contracts.md) | Editor/runtime scope, completion, cancellation, recovery, persistence, authoritative state and locale/render/accessibility boundaries |
 | Author assets, localize, inspect audio or prepare multiplayer/build workflows | [Production research](production-research-notes.md) | Authoring versus runtime formats, rendering versus shaping, measurements versus acceptance criteria |
 | Generate or transform assets through models and hosted APIs | [Generative tools](generative-tools-research.md) | Async receipts versus completed outputs, required postprocessing and export limits |
 | Review provider terms before an experiment | [Generative API boundaries](generative-api-boundaries.md) | Input/output rights, provider training, customer model-evaluation restrictions and expiring downloads |
@@ -28,10 +28,10 @@ These notes extend the concise [resource directory](../AWESOME.md) using the rep
 
 - [Benchmark reproducibility](benchmark-reproducibility.md): public release and isolation matrix, source-inspected OpenGameEval lifecycle/verdicts, and proposed fair piRSI comparisons, including whole-tournament replication, paired uncertainty, protected final evaluation and source-pinned GEPA budget/cache/resume boundaries
 
-- [Gameplay state and durable effects](gameplay-state-contracts.md): narrative checkpoints, asynchronous commands, database transactions, source-pinned Yarn cancellation and variable restoration, native replay reconstruction, physics-state restoration and reward reconciliation
+- [Gameplay state and durable effects](gameplay-state-contracts.md): narrative checkpoints, source-pinned Yarn cancellation and variable restoration, asynchronous commands, database transaction scope, reward reconciliation, native replay reconstruction and physics-state restoration
 - [Game-development evaluation](game-development-evaluation.md): five additional creation/repair studies with scoring, artifact availability and reproducibility limits
 
-- [Native operation details](native-operation-details.md): 36 operation rows covering engine authoring, DCC batch work and audio middleware lifecycle
+- [Native operation details](native-operation-details.md): 36 operation rows covering engine authoring, DCC batch work and audio middleware lifecycle, plus FMOD callback/state/virtualization acceptance boundaries
 - [Generation delivery contracts](generation-delivery-contracts.md): task reconciliation, artifact expiry, transformations and asset acquisition
 - [Asset validation contracts](asset-validation-contracts.md): seven groups covering interchange, composition, material/texture processing, topology, timelines, fonts and input/network fixtures
 
