@@ -87,13 +87,13 @@ Jump a pixel dinosaur over cacti and avoid flying obstacles while the score and 
 
 - [See the creator’s Gemini CLI disclosure](https://github.com/tonidevvn/dinosaur-game-offline#how-gemini-cli-helped) — README, repository description, and the in-game footer explicitly name gemini-cli. This establishes creator attribution rather than independent proof of fully autonomous generation.
 - [Read how Gemini CLI helped](https://github.com/tonidevvn/dinosaur-game-offline#how-gemini-cli-helped)
-- [Play Dinosaur Game Offline](https://tonidevvn.github.io/dinosaur-game-offline/) — Author-hosted browser build, checked in Chromium. Space starts and jumps; after a collision, click the restart icon. Desktop keyboard recommended because the board has a fixed 900-pixel width. The full project can also run locally by opening index.html.
+- [Play Dinosaur Game Offline](https://tonidevvn.github.io/dinosaur-game-offline/) — Author-hosted browser build; earlier catalog notes report a Chromium check, not independently revalidated here. Space starts and jumps; after a collision, click the restart icon. Desktop keyboard recommended because the board has a fixed 900-pixel width. The full project can also run locally by opening index.html.
 - [Open the complete dinosaur game source](https://github.com/tonidevvn/dinosaur-game-offline) — Complete index.html, style.css, script.js, and referenced image/audio assets. Public source is available, but the repository does not declare a code license.
 
 **Study this AI workflow**
 
 1. Open the author-hosted browser game on a desktop with a keyboard. Press Space once to start, then press Space again to jump over an approaching cactus.
-2. Watch the score rise, test a collision, and use the restart icon after game over. The live build was smoke-tested for start, jumping, scoring, collision, and restart; the preview was captured during a real jump.
+2. Watch the score rise, test a collision, and use the restart icon after game over. Earlier catalog notes report a start/jump/score/collision/restart smoke test and a preview captured during a jump. That run was not repeated or independently validated in this source-only review.
 3. To run locally, download the complete dinosaur-game-offline repository and open index.html. Keep style.css, script.js, and public/ beside it. No npm installation, build step, Gemini CLI, or API key is needed to play.
 4. If a browser restricts local files, serve the repository with python3 -m http.server 8080 and open http://localhost:8080. The game board is fixed at 900 pixels wide and targets desktop keyboard play. Its optional Google Fonts stylesheet uses the network.
 5. Read the creator’s disclosure, then inspect script.js for the requestAnimationFrame loop, jump state, obstacle spawning, scoring, collision checks, and restart behavior.
@@ -394,7 +394,7 @@ An arcade flying game with a documented Gemini 2.5 Pro prompting process and a N
 
 - [Read the creator’s development approach](https://github.com/cedrickchee/vibe-jet#my-development-approach) — A creator-authored account and prompt record, not an independently verified claim that every line was generated.
 - [Read the prompt and development journey](https://github.com/cedrickchee/vibe-jet#the-initial-prompt)
-- [Download and run Vibe Jet](https://github.com/cedrickchee/vibe-jet/archive/refs/heads/main.zip) — Published live host did not resolve at review. Download source, install Node.js, run npm install then npm start, and follow the README. Desktop keyboard/mouse required.
+- [Download and run Vibe Jet](https://github.com/cedrickchee/vibe-jet/archive/refs/heads/main.zip) — Current hosted availability was not verified in this source-only pass. With Node.js 18+, run npm install. Start a static server with npx serve, then run npm start in a second terminal; npm start starts only the WebSocket server on port 8080; the browser client connects to ws://localhost:8080. Open /game.html on the static server address. Desktop keyboard/mouse required. These launch instructions were source-checked, not executed.
 - [Open the complete flight-game project](https://github.com/cedrickchee/vibe-jet) — Includes game.html, server.js, package setup, aircraft GLBs, and textures. Three.js and ground texture load online; multiplayer needs the supplied Node server.
 
 **Study this AI workflow**
