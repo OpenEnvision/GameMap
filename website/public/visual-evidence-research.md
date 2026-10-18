@@ -275,7 +275,7 @@ Extensible baseline for loading GameMap tools and observation/context policies.
 Reflective evolution over named textual candidate components.
 
 - **Documented surface and proposed use:** Domain adapter implements evaluate and make_reflective_dataset; optional proposal logic. Candidate maps component names to text.
-- **Limits:** GameMap must build executable policies and independent evaluator. Rich visual artifacts need deliberate reflection-packet conversion; benchmark gains are not game-production evidence.
+- **Limits:** GameMap must build executable policies and independent evaluator. Rich visual artifacts need deliberate reflection-packet conversion; benchmark gains are not game-production evidence. See [execution-control boundaries](benchmark-reproducibility.md#gepa-execution-controls-counts-caches-and-resumed-evidence) for proposal counts, budget admission, cost tracking, cache identity and resumed scores.
 - **Source terms:** MIT repository.
 - **Primary sources:** [GEPA adapter protocol](https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/core/adapter.py); [GEPA repository](https://github.com/gepa-ai/gepa); [GEPA paper](https://arxiv.org/abs/2507.19457)
 

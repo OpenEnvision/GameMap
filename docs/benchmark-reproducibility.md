@@ -185,3 +185,40 @@ Retain a frozen protocol/split hash, final-access ledger, complete run manifest,
 [HO-paper]: https://papers.nips.cc/paper/5993-generalization-in-adaptive-data-analysis-and-holdout-reuse.pdf
 [HO-record]: https://arxiv.org/abs/1506.02629v2
 [HO-license]: https://arxiv.org/licenses/nonexclusive-distrib/1.0/license.html
+
+## GEPA execution controls: counts, caches and resumed evidence
+
+Checked 2026-10-18. Read-only source inspection at `f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819`, the revision already used for the adapter review. No external code, models or evaluations were run. These are code-level boundaries and proposed tests, not reproduced overspending or game-performance findings. The [MIT license][GEPA-license] does not supply model-service or asset rights.
+
+### Count proposal tasks separately from iterations and retained candidates
+
+The [sampling strategies][GEPA-sampling] can produce one, N or P×N parent/minibatch tasks per iteration. However, [MaxCandidateProposalsStopper][GEPA-stoppers] checks `state.i`, which the [main loop][GEPA-engine] increments once per iteration. Equal settings therefore do not guarantee equal actual proposal counts. `MaxTrackedCandidatesStopper` counts the retained candidate pool, not all failed, skipped or discarded proposals. This does not imply every sampled task produces a new candidate. Parent selection is called repeatedly without a distinct-parent constraint in these samplers; the strategy name alone does not establish unique parents.
+
+**Proposed GameMap control:** retain separate iteration, proposal-task, generated-proposal, unique-candidate, admitted-candidate, actual-evaluation and cache-hit counts. Match actual search resources when comparing broader sampling against a better selector, and preserve costs for discarded branches.
+
+### A stop condition is not hard admission control or remote cancellation
+
+[MaxMetricCallsStopper][GEPA-stoppers] compares accumulated evaluation count. On a fresh run, [engine.run][GEPA-engine] evaluates the seed on the validation batch before reaching the main loop's stop check. This static path does not guarantee rejecting an over-budget initial batch before execution. The loop-boundary check does not itself cancel an in-flight model, renderer or evaluator. `TimeoutStopCondition` starts its clock at object construction, not automatically at remote-job submission.
+
+There is a concrete cost-tracking caveat: [optimize][GEPA-api] wraps an ordinary `reflection_lm` callable lacking `total_cost` in [TrackingLM][GEPA-lm]. That wrapper estimates tokens but reports cost `0.0`; a positive `max_reflection_cost` alone cannot trip on that path. The separate custom `reflection_strategy` path has additional cost-capability checks and must not be conflated with it. Even supported reflection-cost accounting does not automatically include task-model, renderer, tool or human costs.
+
+**Proposed GameMap control:** reserve a bounded batch budget before dispatch; independently enforce call, rendering and wall-time limits; record in-flight work and final reconciliation. Probe whether cost measurement is supported rather than interpreting zero as free. Verify executor/service cancellation separately. Use a no-external-call mock adapter for limit tests, not a live paid endpoint.
+
+### Cache hits and resume are not independent repetitions
+
+[EvaluationCache][GEPA-state] keys contain a candidate-text hash, train/val namespace and example ID. Distinct train/val loaders already have separate namespaces; the same loader deliberately shares one. [ListDataLoader][GEPA-loader] uses positions as IDs, not content hashes. The key has no independent model, engine, evaluator, asset, environment or trial identity fields; callers must encode or invalidate those changes themselves.
+
+The [API contract][GEPA-api] and [engine][GEPA-engine] reuse the saved seed's validation evidence when `gepa_state.bin` exists; an identical supplied seed already in the pool causes no extra seed evaluation. A supplied seed absent from that pool is instead evaluated and added before the main stop check, also advancing `state.i`. Migration discards old unnamespaced cache entries but leaves previously recorded validation scores intact. Disabling evaluation caching does not itself erase those candidate scores or start a fresh experiment. Additionally, the engine's full-validation path bypasses cache when `write_agent_state` is enabled so it can capture trajectories: richer recording is not necessarily cost-neutral.
+
+**Proposed GameMap control:** bind data contents/order, model/engine/adapter/evaluator versions, assets and reset policy into an experiment fingerprint. Use a fresh run directory for semantic changes rather than reusing saved scoring state. For independent stochastic trials, use fresh state or explicit trial-aware identities; returning the same cached observation does not add a sample. Record trace/cache settings and distinguish cumulative resumed results from newly executed work. GEPA's valset is used for selection and defaults to trainset when omitted; keep final assessment outside optimization rather than treating that parameter name as a protected test split.
+
+**Unimplemented acceptance fixtures:** zero remaining budget with a larger initial validation batch; actual task/proposal counts under N and P×N sampling; a callable without real cost tracking; rejection of incompatible resume after dataset reordering or evaluator changes; actual evaluation counts with cache/trace settings toggled; and independent repeats of the same candidate. None was executed, and no general vulnerability or capability gain is asserted.
+
+[GEPA-api]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/api.py
+[GEPA-engine]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/core/engine.py
+[GEPA-stoppers]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/utils/stop_condition.py
+[GEPA-state]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/core/state.py
+[GEPA-loader]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/core/data_loader.py
+[GEPA-lm]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/lm.py
+[GEPA-sampling]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/strategies/proposal_sampling.py
+[GEPA-license]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/LICENSE
