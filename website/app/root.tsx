@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import {
   isRouteErrorResponse,
   Links,
@@ -17,13 +17,30 @@ import { SiteFooter, SiteHeader } from "./components/site-shell";
 import "@fontsource-variable/inter";
 import "./styles.css";
 
+function ThemeColor() {
+  useEffect(() => {
+    const root = document.documentElement;
+    const update = () => {
+      const color = getComputedStyle(root).getPropertyValue("--paper").trim();
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", color);
+    };
+    const observer = new MutationObserver(update);
+    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+    update();
+    return () => observer.disconnect();
+  }, []);
+  return null;
+}
+
 export function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#faf9f6" />
+        <meta name="theme-color" content="#fffcfb" />
         <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
         <Meta />
         <Links />
@@ -34,6 +51,7 @@ export function Layout({ children }: { children: ReactNode }) {
           theme={{ defaultTheme: "light" }}
           search={{ SearchDialog: AtlasSearch }}
         >
+          <ThemeColor />
           {children}
         </RootProvider>
         <ScrollRestoration />
