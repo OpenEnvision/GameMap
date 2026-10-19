@@ -56,7 +56,7 @@
     "category": "3d",
     "type": "tool",
     "summary": "Versioned text-to-model generation with separate geometry and texture seeds.",
-    "detail": "Versioned text-to-model requests expose geometry/texture seeds and optional PBR controls. Persist model_version and task ID; import only successful outputs and archive URLs promptly. Low-poly generation can fail on complex inputs. Seeds are version-scoped, while output rights, cancellation endpoints and retry charges remain unverified.",
+    "detail": "H3 text-to-model requests (v3.1-20260211 and v3.0-20250812) expose separate geometry and texture seeds plus PBR controls. Persist model_version and task ID, query with the submitting API key, and download successful output files promptly: their URLs expire after five minutes by default. Low-poly generation can fail on complex inputs. Cross-version reproducibility, output rights, cancellation endpoints and retry charges remain unverified.",
     "url": "https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html",
     "links": [
       {
@@ -73,7 +73,7 @@
     "dimensions": [
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "elevenlabs-speech",

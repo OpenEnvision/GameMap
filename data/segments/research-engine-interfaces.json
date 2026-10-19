@@ -91,7 +91,7 @@
     "name": "Windows · UI Automation and Input Semantics",
     "category": "production",
     "type": "docs",
-    "summary": "Provides native accessibility control patterns and a Win32 input bridge for desktop editor automation.",
+    "summary": "Exposes provider-supported accessibility control patterns for inspecting and manipulating desktop editor controls.",
     "detail": "Provider support must be probed per control; no specific game editor is assumed accessible. UIA coordinates are physical pixels, while absolute mouse input uses normalized desktop coordinates. Bounding rectangles may contain occluded points, foreground activation can be refused, and input insertion does not prove application completion. Integrity restrictions must be respected.",
     "url": "https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview",
     "links": [
@@ -110,6 +110,10 @@
       {
         "label": "Window/display capture and frame lifetime",
         "url": "https://learn.microsoft.com/en-us/windows/apps/develop/media-authoring-processing/screen-capture"
+      },
+      {
+        "label": "GameMap: native UI evidence boundaries",
+        "url": "https://github.com/OpenEnvision/GameMap/blob/main/docs/engine-operation-contracts.md#native-gui-automation-is-a-separate-evidence-surface"
       }
     ],
     "tags": [
@@ -128,6 +132,6 @@
       "2d",
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   }
 ]

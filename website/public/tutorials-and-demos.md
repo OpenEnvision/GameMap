@@ -919,7 +919,7 @@ Provides downloadable text-to-audio weights and local tools for sound effects an
 
 - **Tutorial (tutorial):** [Local inference and WAV export](https://huggingface.co/stabilityai/stable-audio-open-1.0#usage). Official model usage examples for stable-audio-tools and Diffusers.
 - **Demo (local-tool):** [Local audio demo setup](https://github.com/Stability-AI/stable-audio-tools#interface). Download and run the official Gradio audio interface locally; this link is setup guidance, not a hosted playable game.
-- **Source (model):** [Audio tools source](https://github.com/Stability-AI/stable-audio-tools). Public training and inference tools with separately downloadable model weights; no complete game project.
+- **Source (pipeline-source):** [Audio tools source](https://github.com/Stability-AI/stable-audio-tools). MIT-licensed training and inference code; Stable Audio Open 1.0 weights are separately gated and governed by the model's Community License. No complete game project.
 
 ### Regression Games
 

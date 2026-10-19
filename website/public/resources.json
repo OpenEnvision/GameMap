@@ -269,12 +269,16 @@
     "category": "agents",
     "type": "framework",
     "summary": "A programmable development framework for agents, tools, conversations, workspaces, and server interfaces.",
-    "detail": "Useful for game development experiments: wrap builds, scene inspections, and tests as tools for a coding agent, and record execution in local or container workspaces. The SDK supports custom workflows and tools; it does not include a semantic layer for every game engine.",
+    "detail": "Useful for wrapping builds, scene inspections, and tests as agent tools. The Python SDK supports local and remote workspaces; the checked TypeScript client is alpha and supports remote conversations through Agent Server only. Pin client/server versions rather than assuming interface parity. Game-specific tools and acceptance checks still need to be supplied.",
     "url": "https://github.com/OpenHands/software-agent-sdk",
     "links": [
       {
         "label": "SDK documentation",
         "url": "https://docs.openhands.dev/sdk"
+      },
+      {
+        "label": "TypeScript client scope and stability",
+        "url": "https://github.com/OpenHands/software-agent-sdk/blob/3f3294581ebf40f3bbe5b96aec1d28b7fec96226/clients/typescript/README.md#L1-L19"
       }
     ],
     "tags": [
@@ -294,7 +298,7 @@
       "3d",
       "world"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "claude-agent-sdk",
@@ -445,12 +449,16 @@
     "category": "agents",
     "type": "tool",
     "summary": "A community MCP bridge connecting general-purpose coding agents to the Unity Editor.",
-    "detail": "Exposes editor operations for scenes, GameObjects, C# scripts, assets, and tests. The checked v10 installation documentation lists Unity 2021.3 LTS through Unity 6.x, plus Python 3.10+ and uv. These are declared requirements, not versions tested here. The project is independent of Unity Technologies; pin bridge/editor versions and validate compilation, screenshots, and PlayMode tests.",
+    "detail": "Exposes editor operations for scenes, GameObjects, C# scripts, assets, and tests. The checked installation source declares Unity 2021.3 LTS or newer, plus Python 3.10+ and uv. These are declared requirements, not versions tested here. The project is independent of Unity Technologies; pin bridge/editor versions and validate compilation, screenshots, and PlayMode tests.",
     "url": "https://github.com/CoplayDev/unity-mcp",
     "links": [
       {
         "label": "Installation and tool documentation",
         "url": "https://coplaydev.github.io/unity-mcp/"
+      },
+      {
+        "label": "Pinned installation requirements",
+        "url": "https://github.com/CoplayDev/unity-mcp/blob/aa5fc638d623f56178d50329d9ad8c541a57fe66/website/docs/getting-started/install.md#L13-L17"
       }
     ],
     "tags": [
@@ -471,7 +479,7 @@
       "2d",
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "unity-mcp-skill",
@@ -537,7 +545,7 @@
     "category": "agents",
     "type": "tool",
     "summary": "A Blender add-on and MCP server for agent-driven modeling, materials, Python execution, and visual feedback.",
-    "detail": "Useful for 3D game asset production and scene prototypes, with viewport feedback for geometry, materials, and layout. Previously named blender-mcp, it is a third-party community integration. Its code-execution tool can run arbitrary Python inside Blender; use trusted tasks and saved project copies. Check topology, scale, UVs, collision, and export compatibility separately.",
+    "detail": "Useful for 3D game assets and scene prototypes with viewport feedback. Formerly blender-mcp, this community bridge can execute arbitrary Python inside Blender; use trusted tasks and saved copies. The checked documentation distinguishes default minimal usage telemetry from opt-in creative-content collection; DISABLE_TELEMETRY=true disables both. Review the opt-in data terms before enabling content capture. Validate topology, scale, UVs, collision, and exports separately.",
     "url": "https://github.com/ahujasid/mcp-for-blender",
     "tags": [
       "Blender",
@@ -555,7 +563,17 @@
     "dimensions": [
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19",
+    "links": [
+      {
+        "label": "Telemetry defaults and controls",
+        "url": "https://github.com/ahujasid/mcp-for-blender/blob/25e1fe008fc523b1a947c6f3d28510a362a0f06e/README.md#L808-L842"
+      },
+      {
+        "label": "Opt-in content and data terms",
+        "url": "https://github.com/ahujasid/mcp-for-blender/blob/25e1fe008fc523b1a947c6f3d28510a362a0f06e/TERMS_AND_CONDITIONS.md"
+      }
+    ]
   },
   {
     "id": "unreal-mcp",
@@ -594,7 +612,7 @@
     "category": "agents",
     "type": "tool",
     "summary": "Microsoft's browser automation MCP server for exposing page structure, interactions, and browser feedback to agents.",
-    "detail": "Useful for browser game menus, HUDs, launch flows, keyboard input, and screenshots. The default interface uses accessibility trees; coordinate-based mouse tools require the optional vision capability. Neither interface automatically exposes internal Canvas or WebGL state, so game debug instrumentation may be needed. The separate Playwright CLI repository provides a CLI + Skills workflow.",
+    "detail": "Useful for browser game menus, HUDs, launch flows, keyboard input, and screenshots. The default interface uses accessibility trees; coordinate-based mouse tools require the optional vision capability. Neither interface automatically exposes internal Canvas or WebGL state, so game debug instrumentation may be needed. The checked README warns that the server is not a security boundary and documents browser_run_code_unsafe as arbitrary JavaScript execution in the Playwright server process. The separate Playwright CLI repository provides a CLI + Skills workflow.",
     "url": "https://github.com/microsoft/playwright-mcp",
     "tags": [
       "Playwright",
@@ -611,7 +629,17 @@
       "2d",
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19",
+    "links": [
+      {
+        "label": "Pinned tools and security boundaries",
+        "url": "https://github.com/microsoft/playwright-mcp/blob/b8b4183e099f136cbec0388a6088d4aa2f6b9685/README.md#security"
+      },
+      {
+        "label": "Companion CLI + Skills",
+        "url": "https://github.com/microsoft/playwright-cli"
+      }
+    ]
   },
   {
     "id": "godot-engine",
@@ -658,7 +686,7 @@
     "category": "engines",
     "type": "docs",
     "summary": "Godot's official CLI reference for headless operation, script checks, asset import, execution, and export.",
-    "detail": "Lets coding agents launch projects, read logs, parse scripts, and export builds through commands, reducing GUI dependence. The --check-only flag parses a script supplied with --script; it does not execute gameplay tests. Supported flags vary by build type, and headless runs cannot replace real rendering and input tests.",
+    "detail": "Lets coding agents launch projects, read logs, parse scripts, and export builds through commands, reducing GUI dependence. The --check-only flag parses a script supplied with --script; it does not execute gameplay tests. Supported flags vary by build type, and unknown flags are silently ignored; check the selected binary's --help. Headless runs cannot replace real rendering and input tests.",
     "url": "https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html",
     "tags": [
       "Godot",
@@ -676,7 +704,7 @@
       "2d",
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "godot-demo-projects",
@@ -1243,12 +1271,16 @@
     "category": "engines",
     "type": "tool",
     "summary": "Khronos's official Blender glTF 2.0 importer and exporter source, including validation and roundtrip tests.",
-    "detail": "Connects Blender asset production to game runtimes and helps diagnose material, mesh, and animation conversion issues. Repository CI validates exports and compares import / export roundtrips. A valid file can still render differently in the target engine, so verify runtime imports.",
+    "detail": "Connects Blender asset production to game runtimes and helps diagnose material, mesh, and animation conversion issues. Match the addon's release branch to the Blender version; main can target an upcoming Blender release. Repository CI validates exports and compares import / export roundtrips. A valid file can still render differently in the target engine, so verify runtime imports.",
     "url": "https://github.com/KhronosGroup/glTF-Blender-IO",
     "links": [
       {
         "label": "Technical notes",
         "url": "https://github.com/KhronosGroup/glTF-Blender-IO/blob/main/Technical.md"
+      },
+      {
+        "label": "GameMap: asset validity and runtime fidelity",
+        "url": "https://github.com/OpenEnvision/GameMap/blob/main/docs/asset-validation-contracts.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity"
       }
     ],
     "tags": [
@@ -1267,7 +1299,7 @@
     "dimensions": [
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "phaser",
@@ -2083,12 +2115,16 @@
     "category": "3d",
     "type": "paper",
     "summary": "Reconstructs real-world video into interactive 3D environments for the browser.",
-    "detail": "Video and camera information pass through reconstruction, mesh extraction, appearance baking, and collision generation into a three.js game environment. The repository also documents UE import. This is an explicit environment reconstruction approach with remaining manual scene setup and physics integration. It should be distinguished from interactive video world models that predict the next frame.",
+    "detail": "Video and camera information pass through reconstruction, mesh extraction, appearance baking, and collision generation into a three.js game environment. The documented UE route recommends fully diffuse baked meshes, with the baking specular dimension set to zero. This is an explicit environment reconstruction approach with remaining manual scene setup and physics integration. It should be distinguished from interactive video world models that predict the next frame.",
     "url": "https://github.com/video2game/video2game",
     "links": [
       {
         "label": "Paper",
         "url": "https://arxiv.org/abs/2404.09833"
+      },
+      {
+        "label": "Pinned engine-handoff recommendations",
+        "url": "https://github.com/video2game/video2game/blob/7bcf8ae754240b9fd2de75a154eb73c75a146b79/readme.md#L256-L273"
       }
     ],
     "tags": [
@@ -2106,7 +2142,7 @@
       "3d"
     ],
     "year": 2024,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "blenderllm",
@@ -2114,7 +2150,7 @@
     "category": "3d",
     "type": "paper",
     "summary": "Studies text-to-Blender scripting with a training dataset and modeling benchmark.",
-    "detail": "BlenderLLM generates bpy modeling scripts from user instructions. BlendNet provides about 12K paired samples, and CADBench includes synthetic and forum-sourced tasks. Evaluation focuses on basic CAD-style modeling and instruction following. The README identifies limitations in advanced materials, multimodal input, and multi-turn collaboration; this is not a game creation benchmark.",
+    "detail": "BlenderLLM generates bpy modeling scripts from user instructions. The repository and released dataset documentation report about 12K BlendNet pairs, and CADBench includes synthetic and forum-sourced tasks. Evaluation focuses on basic CAD-style modeling and instruction following. The README identifies limitations in advanced materials, multimodal input, and multi-turn collaboration; this is not a game creation benchmark.",
     "url": "https://github.com/FreedomIntelligence/BlenderLLM",
     "links": [
       {
@@ -2128,6 +2164,10 @@
       {
         "label": "CADBench",
         "url": "https://huggingface.co/datasets/FreedomIntelligence/CADBench"
+      },
+      {
+        "label": "Pinned release dataset description",
+        "url": "https://github.com/FreedomIntelligence/BlenderLLM/blob/f778bfd6992ddd675f7615d0eaf965a8576f2879/README.md#L44-L50"
       }
     ],
     "tags": [
@@ -2144,7 +2184,7 @@
       "3d"
     ],
     "year": 2024,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "autoue",
@@ -2152,7 +2192,7 @@
     "category": "3d",
     "type": "framework",
     "summary": "Coordinates agents to build Unreal scenes, gameplay code, interactions, and playtests.",
-    "detail": "A research pipeline for turning a game description into Unreal Engine scenes and C++ gameplay. Its public implementation includes setup instructions, a demonstration video, and a linked dataset of generated games and assets. Reproduction requires Unreal integrations and external model services. The video demonstrates outputs; it is not a hosted playable game.",
+    "detail": "A research pipeline for turning a game description into Unreal Engine scenes and C++ gameplay. Its public implementation includes setup instructions, a demonstration video, and a linked dataset of generated games and assets. Reproduction requires Unreal integrations and external model services. The video demonstrates outputs; it is not a hosted playable game. Static inspection of the pinned evaluation dispatcher shows movement commands skipped and interaction handlers called directly; completion of that script path alone does not establish player navigation success.",
     "url": "https://github.com/Pluto156/AutoUE",
     "links": [
       {
@@ -2162,6 +2202,10 @@
       {
         "label": "Generated games and asset dataset",
         "url": "https://huggingface.co/datasets/Pluto156/AutoUE_DataSet"
+      },
+      {
+        "label": "Pinned evaluation dispatcher",
+        "url": "https://github.com/Pluto156/AutoUE/blob/8686a4d51c19813f2b3368bd73f685a940db7531/PCGGen_UE/Plugins/LLMEditor/Source/LLMEditor/Private/Core/EvaluateExecutor/EvaluateExecutor.cpp#L174-L186"
       }
     ],
     "access": {
@@ -2201,7 +2245,7 @@
       "3d"
     ],
     "year": 2026,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "unigen",
@@ -2261,7 +2305,7 @@
     "category": "3d",
     "type": "tool",
     "summary": "Versioned text-to-model generation with separate geometry and texture seeds.",
-    "detail": "Versioned text-to-model requests expose geometry/texture seeds and optional PBR controls. Persist model_version and task ID; import only successful outputs and archive URLs promptly. Low-poly generation can fail on complex inputs. Seeds are version-scoped, while output rights, cancellation endpoints and retry charges remain unverified.",
+    "detail": "H3 text-to-model requests (v3.1-20260211 and v3.0-20250812) expose separate geometry and texture seeds plus PBR controls. Persist model_version and task ID, query with the submitting API key, and download successful output files promptly: their URLs expire after five minutes by default. Low-poly generation can fail on complex inputs. Cross-version reproducibility, output rights, cancellation endpoints and retry charges remain unverified.",
     "url": "https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html",
     "links": [
       {
@@ -2278,7 +2322,7 @@
     "dimensions": [
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "scenario",
@@ -2454,12 +2498,16 @@
     "category": "production",
     "type": "tool",
     "summary": "Generates game sound effects, Foley, and looping ambience from text through a web app or API.",
-    "detail": "Describe footsteps, impacts, UI feedback, or environmental sounds, control duration, and export audio for a game engine. Effects can loop seamlessly; a single generation is limited to 30 seconds. MP3 is supported, with 48 kHz WAV for non-looping effects. This is a hosted audio service. The public SDK connects to its API and does not release the generation model or a complete game project.",
+    "detail": "Describe footsteps, impacts, UI feedback, or environmental sounds, control duration, and export audio for a game engine. The documentation describes loop-enabled generation for seamless repeat playback and a 30-second maximum per clip. Its overview lists MP3 for all effects and 48 kHz WAV for non-looping effects; API format support and plan requirements should be checked separately. Loop quality still needs validation in the target game. This is a hosted audio service. The public SDK connects to its API and does not release the generation model or a complete game project.",
     "url": "https://elevenlabs.io/docs/overview/capabilities/sound-effects",
     "links": [
       {
         "label": "Product walkthrough",
         "url": "https://elevenlabs.io/docs/eleven-creative/playground/sound-effects"
+      },
+      {
+        "label": "Sound Effects API reference",
+        "url": "https://elevenlabs.io/docs/api-reference/text-to-sound-effects/convert"
       }
     ],
     "access": {
@@ -2497,7 +2545,7 @@
       "2d",
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "stable-audio-open",
@@ -2515,6 +2563,10 @@
       {
         "label": "Research paper",
         "url": "https://arxiv.org/abs/2407.14358"
+      },
+      {
+        "label": "Stable Audio Open model license",
+        "url": "https://huggingface.co/stabilityai/stable-audio-open-1.0/blob/main/LICENSE.md"
       }
     ],
     "access": {
@@ -2533,8 +2585,8 @@
       "source": {
         "label": "Audio tools source",
         "url": "https://github.com/Stability-AI/stable-audio-tools",
-        "kind": "model",
-        "note": "Public training and inference tools with separately downloadable model weights; no complete game project."
+        "kind": "pipeline-source",
+        "note": "MIT-licensed training and inference code; Stable Audio Open 1.0 weights are separately gated and governed by the model's Community License. No complete game project."
       }
     },
     "tags": [
@@ -2552,7 +2604,7 @@
       "3d"
     ],
     "year": 2024,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "regression-games",
@@ -2749,7 +2801,7 @@
     "name": "Windows · UI Automation and Input Semantics",
     "category": "production",
     "type": "docs",
-    "summary": "Provides native accessibility control patterns and a Win32 input bridge for desktop editor automation.",
+    "summary": "Exposes provider-supported accessibility control patterns for inspecting and manipulating desktop editor controls.",
     "detail": "Provider support must be probed per control; no specific game editor is assumed accessible. UIA coordinates are physical pixels, while absolute mouse input uses normalized desktop coordinates. Bounding rectangles may contain occluded points, foreground activation can be refused, and input insertion does not prove application completion. Integrity restrictions must be respected.",
     "url": "https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview",
     "links": [
@@ -2768,6 +2820,10 @@
       {
         "label": "Window/display capture and frame lifetime",
         "url": "https://learn.microsoft.com/en-us/windows/apps/develop/media-authoring-processing/screen-capture"
+      },
+      {
+        "label": "GameMap: native UI evidence boundaries",
+        "url": "https://github.com/OpenEnvision/GameMap/blob/main/docs/engine-operation-contracts.md#native-gui-automation-is-a-separate-evidence-surface"
       }
     ],
     "tags": [
@@ -2786,7 +2842,7 @@
       "2d",
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "elevenlabs-music",
@@ -3043,7 +3099,7 @@
     "category": "world",
     "type": "framework",
     "summary": "A code engine maintains the world while streaming diffusion renders its semantic maps.",
-    "detail": "NVIDIA Sol-Engine's Interactive Coding Worlds system uses a three.js racing game. The engine handles map, physics, collision, and input, while a two-step streaming MiniMax-H3 model renders semantic video conditioned on a first frame and prompt. Reported training and tests cover that one game and third-person view. Semantic colors identify classes rather than individual objects. Performance results use eight GB200 GPUs; stage throughput does not establish end-to-end input-to-display latency.",
+    "detail": "NVIDIA Sol-Engine's Interactive Coding Worlds system uses a three.js racing game. The engine handles map, physics, collision, and input, while a two-step streaming MiniMax-H3 model renders semantic video conditioned on a first frame and prompt. Reported training and tests cover that one game and third-person view. Semantic colors identify classes rather than individual objects. Diffusion-render timings use eight GB200 GPUs; the causal decoder is measured separately on one GB200. Independent stage timings do not establish end-to-end input-to-display latency. Runtime source and a weight bundle are public, with component-specific terms.",
     "url": "https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/",
     "links": [
       {
@@ -3053,6 +3109,14 @@
       {
         "label": "Agent workflow",
         "url": "https://nvlabs.github.io/Sana/Sol-Engine/docs/agent-workflow/"
+      },
+      {
+        "label": "Pinned runtime source",
+        "url": "https://github.com/NVlabs/Sana/tree/0527465fdcbbf27180a76419a4e73643aa1aac73/models/streamrender_h3"
+      },
+      {
+        "label": "Weights and component licenses",
+        "url": "https://huggingface.co/Efficient-Large-Model/StreamRender-H3"
       }
     ],
     "tags": [
@@ -3073,7 +3137,7 @@
       "world"
     ],
     "year": 2026,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "code-world-model-brain",
@@ -3216,7 +3280,7 @@
     "category": "world",
     "type": "paper",
     "summary": "An interactive video world model framework for open data, training, and long-horizon inference.",
-    "detail": "Unifies data, training, and inference interfaces for camera-controlled streaming video. The source matrix lists all three stages for Wan2.2-5B and MiniMax-H3, but later stages for Wan2.2-14B and LTX-2.5 remain forthcoming. Backbones require separate runtime environments. The main data release contains annotations and indexes; latent payloads are separate, and the full processed training-video corpus requires reconstruction or approved access. This infrastructure does not provide a code world with queryable entity state.",
+    "detail": "Unifies data, training, and inference interfaces for camera-controlled streaming video. The source matrix lists all three stages for Wan2.2-5B and MiniMax-H3, but later stages for Wan2.2-14B and LTX-2.5 remain forthcoming. Backbones require separate runtime environments. The main data release contains annotations and indexes; latent payloads are separate, and the full processed training-video corpus requires reconstruction or approved access. The main Hugging Face dataset and H3 model repositories also require agreement to share contact information. This infrastructure does not provide a code world with queryable entity state.",
     "url": "https://arxiv.org/abs/2609.02886",
     "links": [
       {
@@ -3226,6 +3290,14 @@
       {
         "label": "Project",
         "url": "https://junchao-cs.github.io/SolarWM-Web/"
+      },
+      {
+        "label": "Data access",
+        "url": "https://huggingface.co/datasets/junchaoh-cs/SolarWM-Data"
+      },
+      {
+        "label": "H3 weights and access",
+        "url": "https://huggingface.co/junchaoh-cs/SolarWM-H3-33B"
       }
     ],
     "tags": [
@@ -3245,7 +3317,7 @@
       "world"
     ],
     "year": 2026,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "worldcoder",
@@ -3573,7 +3645,7 @@
     "category": "world",
     "type": "framework",
     "summary": "A neural game research release that predicts Minecraft-style frames from prior frames and actions.",
-    "detail": "Oasis by Decart and Etched uses a Transformer autoencoder and latent diffusion. Its MIT-licensed inference code and 500M checkpoint are a downsized release, separate from the larger hosted demo. The public script generates video from an initial frame and action sequence; it does not establish a complete live game interface or training pipeline. The authors identify limits in long-term memory, precise inventory control, generalization, and object consistency.",
+    "detail": "Oasis by Decart and Etched uses a Transformer autoencoder and latent diffusion. Its MIT-licensed inference code and 500M checkpoint are a downsized release, separate from the larger hosted demo. Hugging Face currently gates weight downloads behind agreement to share contact information. The public script generates video from an initial frame and action sequence; it does not establish a complete live game interface or training pipeline. The authors identify limits in long-term memory, precise inventory control, generalization, and object consistency.",
     "url": "https://oasis-model.github.io/",
     "links": [
       {
@@ -3581,7 +3653,7 @@
         "url": "https://github.com/etched-ai/open-oasis"
       },
       {
-        "label": "500M model and license",
+        "label": "500M weights, license and access",
         "url": "https://huggingface.co/Etched/oasis-500m"
       }
     ],
@@ -3601,7 +3673,7 @@
       "world"
     ],
     "year": 2024,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "wonderworld",
