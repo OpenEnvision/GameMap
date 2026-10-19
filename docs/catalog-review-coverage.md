@@ -432,3 +432,8 @@ The [OmniParser contract](visual-feedback-mechanisms.md#6-omniparser-frame-scope
 ### Temporal mask-state and replacement evidence (2026-10-19)
 
 The [SAM 2 lifecycle subsection](visual-evidence-research.md#sam-2-temporal-mask-state-contract) pins official source at 2b90b9f5ceec907a1c18123530e92e794ad901a4. It distinguishes resetting prompts/results from reloading changed clips, original-image coordinate prompts from normalized inputs, correction previews from propagation and session-local IDs from engine identities. Frame ordering/timebase, yielded coverage, mask logits, builder/CLI/variant defaults and asynchronous loading remain explicitly scoped. An optional invalidation-method mismatch is described only as static source evidence, not a reproduced failure. Proposed recapture, mapping, occlusion and correction tests remain unimplemented; no model, checkpoint, video or inference was executed.
+
+
+### Persistent visual-artifact retrieval (2026-10-19)
+
+The [FiftyOne subsection](visual-feedback-mechanisms.md#7-fiftyone-persistent-retrieval-over-capture-evidence) inspects independently resolved FiftyOne aacfc8182fc5353296b5edd7475e63335fedb5cb and Brain ba978a12293fda9953b478f601ac8950d2a35aa4 sources. It separates parent/frame/label identity from immutable pixels, saved view rules from snapshots, sampled-frame reuse from freshness, and query-distance fields from durable query histories. Index membership/reload, annotation writeback and local/remote vector boundaries remain scoped to inspected interfaces. These revisions do not establish a compatible installed bundle, index completeness or retrieval accuracy. No dataset, model, embedding, database or service was run; proposed stale-artifact fixtures remain unimplemented.
