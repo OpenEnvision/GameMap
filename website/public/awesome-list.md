@@ -83,9 +83,9 @@ Tags: `IDE` · `CLI` · `Multiple models` · `MCP` · `Plan / Act`. Source revie
 
 **[Aider](https://github.com/Aider-AI/aider)**
 
-Useful for changes across files, refactoring, and testable logic in existing game projects, with model options including DeepSeek. Its code editing workflow does not directly control Unity, UE, or Blender editors; visual feedback needs a separate setup.
+Useful for changes across files, refactoring, and testable logic in existing game projects, with model options including DeepSeek. It accepts supplied screenshots with a vision-capable model. Its code editing workflow does not directly control Unity, UE, or Blender editors; automated screenshot capture and game interaction need a separate setup.
 
-Tags: `CLI` · `Git` · `Repository map` · `Multiple models` · `Refactoring`. Source reviewed: 2026-10-18. Further reading: [User documentation](https://aider.chat/docs/)
+Tags: `CLI` · `Git` · `Repository map` · `Multiple models` · `Refactoring`. Source reviewed: 2026-10-19. Further reading: [User documentation](https://aider.chat/docs/) · [Screenshot and image input](https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/aider/website/docs/usage/images-urls.md#L11-L27)
 
 </details>
 

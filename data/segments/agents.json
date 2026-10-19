@@ -203,12 +203,16 @@
     "category": "agents",
     "type": "agent",
     "summary": "A terminal AI pair-programming tool built around repository maps, Git changes, and lint and test feedback.",
-    "detail": "Useful for changes across files, refactoring, and testable logic in existing game projects, with model options including DeepSeek. Its code editing workflow does not directly control Unity, UE, or Blender editors; visual feedback needs a separate setup.",
+    "detail": "Useful for changes across files, refactoring, and testable logic in existing game projects, with model options including DeepSeek. It accepts supplied screenshots with a vision-capable model. Its code editing workflow does not directly control Unity, UE, or Blender editors; automated screenshot capture and game interaction need a separate setup.",
     "url": "https://github.com/Aider-AI/aider",
     "links": [
       {
         "label": "User documentation",
         "url": "https://aider.chat/docs/"
+      },
+      {
+        "label": "Screenshot and image input",
+        "url": "https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/aider/website/docs/usage/images-urls.md#L11-L27"
       }
     ],
     "tags": [
@@ -227,7 +231,7 @@
       "3d",
       "world"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "openhands",
