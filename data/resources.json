@@ -203,12 +203,16 @@
     "category": "agents",
     "type": "agent",
     "summary": "A terminal AI pair-programming tool built around repository maps, Git changes, and lint and test feedback.",
-    "detail": "Useful for changes across files, refactoring, and testable logic in existing game projects, with model options including DeepSeek. Its code editing workflow does not directly control Unity, UE, or Blender editors; visual feedback needs a separate setup.",
+    "detail": "Useful for changes across files, refactoring, and testable logic in existing game projects, with model options including DeepSeek. It accepts supplied screenshots with a vision-capable model. Its code editing workflow does not directly control Unity, UE, or Blender editors; automated screenshot capture and game interaction need a separate setup.",
     "url": "https://github.com/Aider-AI/aider",
     "links": [
       {
         "label": "User documentation",
         "url": "https://aider.chat/docs/"
+      },
+      {
+        "label": "Screenshot and image input",
+        "url": "https://github.com/Aider-AI/aider/blob/5dc9490bb35f9729ef2c95d00a19ccd30c26339c/aider/website/docs/usage/images-urls.md#L11-L27"
       }
     ],
     "tags": [
@@ -227,7 +231,7 @@
       "3d",
       "world"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "openhands",
@@ -877,7 +881,7 @@
     "category": "engines",
     "type": "docs",
     "summary": "Official Unity 2D example source for Tilemaps, Scripted Tiles, brushes, and runtime map changes.",
-    "detail": "Offers concrete references for tile collision lookup, destructible maps, and palette switching so agents can inspect editor configuration. Check project files and package manifests together; older examples may not work with every current Editor and package combination.",
+    "detail": "Offers source scenes for tile collision lookup, destructible maps, and palette switching. The inspected project records Unity 6000.3.3f1, URP 17.3.0, and Input System 1.17.0, while the README says 2021.1 onward. Its manifest selects 2d-extras' package_6000.3 Git branch but the committed lockfile records registry 6.0.1; resolve and pin dependencies before testing. Source review did not establish import, playback, or compatibility across Editor versions.",
     "url": "https://github.com/Unity-Technologies/2d-techdemos",
     "tags": [
       "Unity",
@@ -895,7 +899,21 @@
     "dimensions": [
       "2d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19",
+    "links": [
+      {
+        "label": "Pinned editor baseline",
+        "url": "https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/ProjectSettings/ProjectVersion.txt#L1-L2"
+      },
+      {
+        "label": "Pinned package manifest",
+        "url": "https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/Packages/manifest.json#L2-L14"
+      },
+      {
+        "label": "Pinned package lock",
+        "url": "https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/Packages/packages-lock.json#L27-L36"
+      }
+    ]
   },
   {
     "id": "catlike-coding-movement",
@@ -3253,7 +3271,7 @@
     "category": "world",
     "type": "paper",
     "summary": "A game engine runs gameplay while a separate Render Server generates final visuals.",
-    "detail": "Designers define scenes and rules in a conventional game engine. At runtime, the engine processes player actions and maintains state, while a rendering service transforms engine-produced whitebox frames into final visuals. It demonstrates a division between generative rendering and reproducible gameplay, primarily reducing prototype dependence on complete art assets.",
+    "detail": "Designers define scenes and rules in a conventional game engine. At runtime, the engine processes player actions and maintains state, while a rendering service transforms engine-produced whitebox frames into final visuals. It demonstrates a division between generative rendering and reproducible gameplay, primarily reducing prototype dependence on complete art assets. The paper reports chunk-based interaction delay and remaining visual-consistency limitations; it does not establish a production-ready game renderer.",
     "url": "https://arxiv.org/abs/2608.27168",
     "tags": [
       "hybrid-renderer",
@@ -3272,7 +3290,13 @@
       "world"
     ],
     "year": 2026,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19",
+    "links": [
+      {
+        "label": "Paper v1 latency and limitations",
+        "url": "https://arxiv.org/html/2608.27168v1"
+      }
+    ]
   },
   {
     "id": "solarwm",
@@ -3456,13 +3480,17 @@
     "name": "FactorSim",
     "category": "world",
     "type": "paper",
-    "summary": "Generates complete simulation code from language using factorized state representations.",
-    "detail": "Generative Simulation via Factorized Representation uses a factorized POMDP representation to reduce the context needed for each generation step. It aims to generate complete game or robotics simulators for agent training. This NeurIPS 2024 work also provides a generative simulation benchmark and supports study of workflows from design specifications to modular rule code.",
+    "summary": "Generates simulation and task code from language using factorized state representations.",
+    "detail": "Generative Simulation via Factorized Representation uses a factorized POMDP representation to reduce context per generation step. It generates 2D game simulations for agent training. Its robotics experiments generate task code, including object states and reward structure, within the existing CLIPort framework. The game benchmark covers eight Pygame environments; 3D game generation is future work in the NeurIPS 2024 paper. Robotics experiments retain 3D relevance without establishing generation of a complete physics engine.",
     "url": "https://arxiv.org/abs/2409.17652",
     "links": [
       {
         "label": "Project",
         "url": "https://cs.stanford.edu/~sunfanyun/factorsim/"
+      },
+      {
+        "label": "Paper v2 scope",
+        "url": "https://arxiv.org/html/2409.17652v2"
       }
     ],
     "tags": [
@@ -3484,7 +3512,7 @@
       "world"
     ],
     "year": 2024,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "genie",
@@ -3517,7 +3545,7 @@
     "category": "world",
     "type": "tool",
     "summary": "Generates interactive video worlds from prompts for real-time exploration.",
-    "detail": "Google DeepMind introduced Genie 3 in 2025, demonstrating interactive worlds at 720p and 24 FPS with consistency lasting several minutes, and providing an experience through Project Genie. It represents neural interactive worlds. The official presentation does not imply downloadable engine source, exportable level assets, or deterministic gameplay rules.",
+    "detail": "Google DeepMind's August 2025 research demonstration reported interactive worlds at 720p and 24 FPS with consistency lasting several minutes. The separate Project Genie prototype limits exploration to 60 seconds; its current help page requires an eligible personal Google AI Ultra account, age 18+, where Ultra is available. Video download is documented, while downloadable engine source, exportable level assets, and deterministic gameplay rules are not established by these sources.",
     "url": "https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/",
     "tags": [
       "interactive-video",
@@ -3535,7 +3563,13 @@
       "world"
     ],
     "year": 2025,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19",
+    "links": [
+      {
+        "label": "Project Genie access and limits",
+        "url": "https://support.google.com/labs/answer/16875695?hl=en"
+      }
+    ]
   },
   {
     "id": "gamengen",
@@ -3714,12 +3748,16 @@
     "category": "world",
     "type": "tool",
     "summary": "Generates persistent, navigable 3D scenes with splat and mesh exports.",
-    "detail": "Marble supports multimodal world creation, exports Gaussian splats, visual meshes, and collision meshes for approximate physics, and renders video along camera paths. Compared with pure video continuation, it produces spatial assets for downstream engines. Developers still need to build character behavior, quest logic, and game loops.",
+    "detail": "Marble supports multimodal world creation, exports Gaussian splats, visual meshes, and collision meshes for approximate physics, and renders video along camera paths. Compared with pure video continuation, it produces spatial assets for downstream engines. Developers still need to build character behavior, quest logic, and game loops. According to the inspected web-app guide, collider mesh export is included with Standard and high-quality textured GLB export requires Pro.",
     "url": "https://www.worldlabs.ai/blog/marble-world-model",
     "links": [
       {
         "label": "Product",
         "url": "https://marble.worldlabs.ai/"
+      },
+      {
+        "label": "Web-app mesh export",
+        "url": "https://docs.worldlabs.ai/marble/export/mesh"
       }
     ],
     "tags": [
@@ -3739,6 +3777,6 @@
       "world"
     ],
     "year": 2025,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   }
 ]
