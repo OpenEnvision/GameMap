@@ -279,9 +279,9 @@ Tags: `Godot` · `Official examples` · `Runnable source` · `Version branches` 
 
 **[Unity · 2D Tech Demos](https://github.com/Unity-Technologies/2d-techdemos)**
 
-Offers concrete references for tile collision lookup, destructible maps, and palette switching so agents can inspect editor configuration. Check project files and package manifests together; older examples may not work with every current Editor and package combination.
+Offers source scenes for tile collision lookup, destructible maps, and palette switching. The inspected project records Unity 6000.3.3f1, URP 17.3.0, and Input System 1.17.0, while the README says 2021.1 onward. Its manifest selects 2d-extras' package_6000.3 Git branch but the committed lockfile records registry 6.0.1; resolve and pin dependencies before testing. Source review did not establish import, playback, or compatibility across Editor versions.
 
-Tags: `Unity` · `2D` · `Tilemap` · `Official examples` · `Runnable source`. Source reviewed: 2026-10-18.
+Tags: `Unity` · `2D` · `Tilemap` · `Official examples` · `Runnable source`. Source reviewed: 2026-10-19. Further reading: [Pinned editor baseline](https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/ProjectSettings/ProjectVersion.txt#L1-L2) · [Pinned package manifest](https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/Packages/manifest.json#L2-L14) · [Pinned package lock](https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/Packages/packages-lock.json#L27-L36)
 
 **[Lyra Sample Game](https://dev.epicgames.com/documentation/en-us/unreal-engine/lyra-sample-game-in-unreal-engine)**
 
@@ -988,7 +988,7 @@ Tags: `neural-simulator` · `interactive-video` · `transformer` · `Minecraft` 
 | [GIF-MCTS / Code World Models Benchmark](https://arxiv.org/abs/2405.15383) · 2024 | Synthesizes runnable environment models through generate, improve, and fix tree search. | Planning / Coding / Testing / World models |
 | [Code World Models for General Game Playing](https://arxiv.org/abs/2510.04542) · 2025 | Compiles natural-language game rules into verifiable simulators for MCTS planning. | Planning / Coding / Testing / World models |
 | [PoE-World](https://arxiv.org/abs/2505.10819) · 2025 | Combines small programmatic experts to model stochastic world dynamics. | Planning / Coding / World models |
-| [FactorSim](https://arxiv.org/abs/2409.17652) · 2024 | Generates complete simulation code from language using factorized state representations. | Planning / Coding / Testing / World models |
+| [FactorSim](https://arxiv.org/abs/2409.17652) · 2024 | Generates simulation and task code from language using factorized state representations. | Planning / Coding / Testing / World models |
 | [Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391) · 2024 | Learns latent-action-controlled 2D worlds from videos without action labels. | World models |
 | [GameNGen — Diffusion Models Are Real-Time Game Engines](https://arxiv.org/abs/2408.14837) · 2024 | Trains an interactive diffusion simulator from DOOM gameplay trajectories. | Testing / World models |
 | [DIAMOND — Diffusion for World Modeling](https://arxiv.org/abs/2405.12399) · 2024 | Trains reinforcement learning agents inside diffusion world models that preserve visual detail. | Testing / World models |
@@ -1024,9 +1024,9 @@ Tags: `code-world-model` · `multi-agent` · `hybrid-renderer` · `persistent-st
 
 **[Magpie: Real-Time World Renderer for Interactive Games](https://arxiv.org/abs/2608.27168)**
 
-Designers define scenes and rules in a conventional game engine. At runtime, the engine processes player actions and maintains state, while a rendering service transforms engine-produced whitebox frames into final visuals. It demonstrates a division between generative rendering and reproducible gameplay, primarily reducing prototype dependence on complete art assets.
+Designers define scenes and rules in a conventional game engine. At runtime, the engine processes player actions and maintains state, while a rendering service transforms engine-produced whitebox frames into final visuals. It demonstrates a division between generative rendering and reproducible gameplay, primarily reducing prototype dependence on complete art assets. The paper reports chunk-based interaction delay and remaining visual-consistency limitations; it does not establish a production-ready game renderer.
 
-Tags: `hybrid-renderer` · `executable-state` · `game-engine` · `render-server` · `research`. Source reviewed: 2026-10-18.
+Tags: `hybrid-renderer` · `executable-state` · `game-engine` · `render-server` · `research`. Source reviewed: 2026-10-19. Further reading: [Paper v1 latency and limitations](https://arxiv.org/html/2608.27168v1)
 
 **[SolarWM](https://arxiv.org/abs/2609.02886)**
 
@@ -1060,9 +1060,9 @@ Tags: `code-world-model` · `program-synthesis` · `stochastic-dynamics` · `Ata
 
 **[FactorSim](https://arxiv.org/abs/2409.17652)**
 
-Generative Simulation via Factorized Representation uses a factorized POMDP representation to reduce the context needed for each generation step. It aims to generate complete game or robotics simulators for agent training. This NeurIPS 2024 work also provides a generative simulation benchmark and supports study of workflows from design specifications to modular rule code.
+Generative Simulation via Factorized Representation uses a factorized POMDP representation to reduce context per generation step. It generates 2D game simulations for agent training. Its robotics experiments generate task code, including object states and reward structure, within the existing CLIPort framework. The game benchmark covers eight Pygame environments; 3D game generation is future work in the NeurIPS 2024 paper. Robotics experiments retain 3D relevance without establishing generation of a complete physics engine.
 
-Tags: `code-world-model` · `simulation-generation` · `POMDP` · `benchmark` · `NeurIPS-2024`. Source reviewed: 2026-10-18. Further reading: [Project](https://cs.stanford.edu/~sunfanyun/factorsim/)
+Tags: `code-world-model` · `simulation-generation` · `POMDP` · `benchmark` · `NeurIPS-2024`. Source reviewed: 2026-10-19. Further reading: [Project](https://cs.stanford.edu/~sunfanyun/factorsim/) · [Paper v2 scope](https://arxiv.org/html/2409.17652v2)
 
 **[Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391)**
 

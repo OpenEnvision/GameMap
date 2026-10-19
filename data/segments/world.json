@@ -210,7 +210,7 @@
     "category": "world",
     "type": "paper",
     "summary": "A game engine runs gameplay while a separate Render Server generates final visuals.",
-    "detail": "Designers define scenes and rules in a conventional game engine. At runtime, the engine processes player actions and maintains state, while a rendering service transforms engine-produced whitebox frames into final visuals. It demonstrates a division between generative rendering and reproducible gameplay, primarily reducing prototype dependence on complete art assets.",
+    "detail": "Designers define scenes and rules in a conventional game engine. At runtime, the engine processes player actions and maintains state, while a rendering service transforms engine-produced whitebox frames into final visuals. It demonstrates a division between generative rendering and reproducible gameplay, primarily reducing prototype dependence on complete art assets. The paper reports chunk-based interaction delay and remaining visual-consistency limitations; it does not establish a production-ready game renderer.",
     "url": "https://arxiv.org/abs/2608.27168",
     "tags": [
       "hybrid-renderer",
@@ -229,7 +229,13 @@
       "world"
     ],
     "year": 2026,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19",
+    "links": [
+      {
+        "label": "Paper v1 latency and limitations",
+        "url": "https://arxiv.org/html/2608.27168v1"
+      }
+    ]
   },
   {
     "id": "solarwm",
@@ -413,13 +419,17 @@
     "name": "FactorSim",
     "category": "world",
     "type": "paper",
-    "summary": "Generates complete simulation code from language using factorized state representations.",
-    "detail": "Generative Simulation via Factorized Representation uses a factorized POMDP representation to reduce the context needed for each generation step. It aims to generate complete game or robotics simulators for agent training. This NeurIPS 2024 work also provides a generative simulation benchmark and supports study of workflows from design specifications to modular rule code.",
+    "summary": "Generates simulation and task code from language using factorized state representations.",
+    "detail": "Generative Simulation via Factorized Representation uses a factorized POMDP representation to reduce context per generation step. It generates 2D game simulations for agent training. Its robotics experiments generate task code, including object states and reward structure, within the existing CLIPort framework. The game benchmark covers eight Pygame environments; 3D game generation is future work in the NeurIPS 2024 paper. Robotics experiments retain 3D relevance without establishing generation of a complete physics engine.",
     "url": "https://arxiv.org/abs/2409.17652",
     "links": [
       {
         "label": "Project",
         "url": "https://cs.stanford.edu/~sunfanyun/factorsim/"
+      },
+      {
+        "label": "Paper v2 scope",
+        "url": "https://arxiv.org/html/2409.17652v2"
       }
     ],
     "tags": [
@@ -441,7 +451,7 @@
       "world"
     ],
     "year": 2024,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "genie",

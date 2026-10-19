@@ -235,7 +235,7 @@
     "category": "engines",
     "type": "docs",
     "summary": "Official Unity 2D example source for Tilemaps, Scripted Tiles, brushes, and runtime map changes.",
-    "detail": "Offers concrete references for tile collision lookup, destructible maps, and palette switching so agents can inspect editor configuration. Check project files and package manifests together; older examples may not work with every current Editor and package combination.",
+    "detail": "Offers source scenes for tile collision lookup, destructible maps, and palette switching. The inspected project records Unity 6000.3.3f1, URP 17.3.0, and Input System 1.17.0, while the README says 2021.1 onward. Its manifest selects 2d-extras' package_6000.3 Git branch but the committed lockfile records registry 6.0.1; resolve and pin dependencies before testing. Source review did not establish import, playback, or compatibility across Editor versions.",
     "url": "https://github.com/Unity-Technologies/2d-techdemos",
     "tags": [
       "Unity",
@@ -253,7 +253,21 @@
     "dimensions": [
       "2d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19",
+    "links": [
+      {
+        "label": "Pinned editor baseline",
+        "url": "https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/ProjectSettings/ProjectVersion.txt#L1-L2"
+      },
+      {
+        "label": "Pinned package manifest",
+        "url": "https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/Packages/manifest.json#L2-L14"
+      },
+      {
+        "label": "Pinned package lock",
+        "url": "https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/Packages/packages-lock.json#L27-L36"
+      }
+    ]
   },
   {
     "id": "catlike-coding-movement",
