@@ -27,7 +27,7 @@ For a concrete task, start with the [production-stage routes](production-coverag
 
 ## Deeper operational evidence
 
-For first-hand AAA production experience, use the [studio-case reading routes](studio-production-case-studies.md#find-a-production-lesson): worldbuilding and blockouts, character exports and lighting, world-edit composition and acoustic streaming, traversal contacts, early playable iteration, workflow handoffs and test selection. Each case retains its historical source and practical failure/acceptance boundaries.
+For first-hand AAA production experience, use the [studio-case reading routes](studio-production-case-studies.md#find-a-production-lesson): worldbuilding and blockouts, character exports and lighting, world-edit composition and acoustic streaming, traversal contacts, dialogue/localization revisions, accessibility co-development, early playable iteration, workflow handoffs and test selection. Each case retains its historical source and practical failure/acceptance boundaries.
 
 - [Cadle-like repository import](cadle-repositories.md): the complete requested 212-candidate corpus plus its reference, with current repository identity, source scope, reuse limits and existing coverage
 

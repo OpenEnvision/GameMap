@@ -141,6 +141,8 @@ For the selected Godot 4.4 source path, [normalized-key and target-scale accepta
 
 ## 6. Compile localization, shape text and inspect accessible UI
 
+**Production experience:** [Mass Effect 2 revision/context gates](studio-production-case-studies.md#mass-effect-2-carry-revision-and-branch-context-through-localization), [Forza co-development and learnable cues](studio-production-case-studies.md#forza-motorsport-co-develop-alternative-feedback-without-removing-player-decisions), and [Far Cry New Dawn dependency/testing limits](studio-production-case-studies.md#far-cry-new-dawn-accessibility-scope-must-include-dependency-maturity-and-testing-time) complement the technical chain below; these historical accounts do not establish a tested adapter or universal player outcome.
+
 **Related contracts:** [Font artifact validation](asset-validation-contracts.md#6-validate-the-font-artifact-before-testing-localized-screens) and [native GUI evidence limits](engine-operation-contracts.md#native-gui-automation-is-a-separate-evidence-surface).
 
 **Outcome:** reviewed translations compile and display with the intended glyphs, layout and accessible interaction. For native Godot UI, first check [semantic activation, deferred actions and platform boundaries](engine-operation-contracts.md#godot-native-semantic-observation-and-action-completion); an inspector-only Auto-mode run can lack active semantic updates.
