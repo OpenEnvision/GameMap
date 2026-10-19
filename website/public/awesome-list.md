@@ -968,9 +968,9 @@ Tags: `hybrid-renderer` · `executable-state` · `streaming` · `three.js` · `M
 
 **[Oasis: A Universe in a Transformer](https://oasis-model.github.io/)**
 
-Oasis by Decart and Etched uses a Transformer autoencoder and latent diffusion. Its MIT-licensed inference code and 500M checkpoint are a downsized release, separate from the larger hosted demo. The public script generates video from an initial frame and action sequence; it does not establish a complete live game interface or training pipeline. The authors identify limits in long-term memory, precise inventory control, generalization, and object consistency.
+Oasis by Decart and Etched uses a Transformer autoencoder and latent diffusion. Its MIT-licensed inference code and 500M checkpoint are a downsized release, separate from the larger hosted demo. Hugging Face currently gates weight downloads behind agreement to share contact information. The public script generates video from an initial frame and action sequence; it does not establish a complete live game interface or training pipeline. The authors identify limits in long-term memory, precise inventory control, generalization, and object consistency.
 
-Tags: `neural-simulator` · `interactive-video` · `transformer` · `Minecraft` · `released-code`. Source reviewed: 2026-10-18. Further reading: [Inference code](https://github.com/etched-ai/open-oasis) · [500M model and license](https://huggingface.co/Etched/oasis-500m)
+Tags: `neural-simulator` · `interactive-video` · `transformer` · `Minecraft` · `released-code`. Source reviewed: 2026-10-19. Further reading: [Inference code](https://github.com/etched-ai/open-oasis) · [500M weights, license and access](https://huggingface.co/Etched/oasis-500m)
 
 </details>
 

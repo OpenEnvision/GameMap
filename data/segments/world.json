@@ -586,7 +586,7 @@
     "category": "world",
     "type": "framework",
     "summary": "A neural game research release that predicts Minecraft-style frames from prior frames and actions.",
-    "detail": "Oasis by Decart and Etched uses a Transformer autoencoder and latent diffusion. Its MIT-licensed inference code and 500M checkpoint are a downsized release, separate from the larger hosted demo. The public script generates video from an initial frame and action sequence; it does not establish a complete live game interface or training pipeline. The authors identify limits in long-term memory, precise inventory control, generalization, and object consistency.",
+    "detail": "Oasis by Decart and Etched uses a Transformer autoencoder and latent diffusion. Its MIT-licensed inference code and 500M checkpoint are a downsized release, separate from the larger hosted demo. Hugging Face currently gates weight downloads behind agreement to share contact information. The public script generates video from an initial frame and action sequence; it does not establish a complete live game interface or training pipeline. The authors identify limits in long-term memory, precise inventory control, generalization, and object consistency.",
     "url": "https://oasis-model.github.io/",
     "links": [
       {
@@ -594,7 +594,7 @@
         "url": "https://github.com/etched-ai/open-oasis"
       },
       {
-        "label": "500M model and license",
+        "label": "500M weights, license and access",
         "url": "https://huggingface.co/Etched/oasis-500m"
       }
     ],
@@ -614,7 +614,7 @@
       "world"
     ],
     "year": 2024,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "wonderworld",
