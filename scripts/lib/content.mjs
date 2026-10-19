@@ -36,7 +36,7 @@ export async function loadContent(base = "/") {
     .join(",");
   const result = await build({
     stdin: {
-      contents: `${imports.join("\n")}\nexport const sourceModules = {${moduleMap}}; export * from './website/content/registry-core'; export * from './website/content/site'; export * from './website/content/models'; export * from './website/content/matching'; export * from './website/content/doc-language'; export { searchableText } from './website/content/search'; export { sources } from './website/content/source-data';`,
+      contents: `${imports.join("\n")}\nexport const sourceModules = {${moduleMap}}; export * from './website/content/registry-core'; export * from './website/content/site'; export * from './website/content/models'; export * from './website/content/matching'; export * from './website/content/doc-language'; export { blockText, searchableText } from './website/content/search'; export { sources } from './website/content/source-data';`,
       resolveDir: root,
       loader: "ts",
     },

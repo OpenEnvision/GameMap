@@ -66,6 +66,7 @@ if (built) {
   assertSearchCoverage(
     registry,
     JSON.parse(await readFile("dist/search-index.json", "utf8")),
+    context.blockText,
   );
   console.log(
     `Rendered coverage passed: ${result.records} canonical records with field-level proofs, owning collections, complete-index links, ${documents.length} full Markdown bodies, static search, and matching source digests.`,

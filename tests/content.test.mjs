@@ -371,9 +371,41 @@ test("document URL policy preserves rendered routes, source assets, and deployme
   );
 });
 test('static search contains every canonical identity and rejects missing text', () => {
-  const documents=registry.entries.map(entry=>({key:entry.key,url:entry.url,text:entry.title}));
-  assert.doesNotThrow(()=>assertSearchCoverage(registry,{version:2,documents}));
-  assert.throws(()=>assertSearchCoverage(registry,{version:2,documents:documents.slice(1)}),/Search omits/);
+  const documents=registry.entries.map(entry=>({key:entry.key,kind:entry.kind,title:entry.title,url:entry.url,text:[...new Set([
+    entry.title, entry.description,
+    ...entry.blocks.filter(block=>block.section!=='metadata').map(context.blockText),
+    entry.kind==='document' ? 'Article body fixture' : '',
+  ].filter(Boolean))].join('\n')}));
+  assert.doesNotThrow(()=>assertSearchCoverage(registry,{version:2,documents},context.blockText));
+  assert.throws(()=>assertSearchCoverage(registry,{version:2,documents:documents.slice(1)},context.blockText),/Search omits/);
+  for (const [field,value] of [['kind','document'],['title','Wrong title'],['url','/wrong/']]) {
+    const changed=structuredClone(documents);changed[0][field]=value;
+    assert.throws(()=>assertSearchCoverage(registry,{version:2,documents:changed},context.blockText),/mismatch/);
+  }
+});
+test('serialized search rejects leaked metadata and omitted reader provenance', () => {
+  const entry={...registry.require('resource','codex'),title:'Reader title',description:'Reader summary',blocks:[
+    {type:'text',field:'hash',section:'metadata',label:'Audit hash',value:'technical-only-token'},
+    {type:'text',field:'license',section:'provenance',label:'License',value:'Noncommercial only'},
+  ]};
+  const expected='Reader title\nReader summary\nLicense Noncommercial only';
+  const serialized=text=>JSON.parse(JSON.stringify({version:2,documents:[{key:entry.key,kind:entry.kind,title:entry.title,url:entry.url,text}]}));
+  const check=text=>assertSearchCoverage({entries:[entry]},serialized(text),context.blockText);
+  assert.doesNotThrow(()=>check(expected));
+  assert.throws(()=>check(expected+'\nAudit hash technical-only-token'),/exclude source-only metadata/);
+  assert.throws(()=>check('Reader title\nReader summary'),/include reader fields/);
+  assert.equal(entry.blocks[0].value,'technical-only-token');
+});
+test('serialized article search requires its body without censoring legitimate metadata words', () => {
+  const entry={...registry.all('document')[0],title:'Article title',description:'Article summary',blocks:[
+    {type:'text',field:'hash',section:'metadata',label:'Audit hash',value:'technical-only-token'},
+    {type:'text',field:'license',section:'provenance',label:'License',value:'Attribution required'},
+  ]};
+  const fields='Article title\nArticle summary\nLicense Attribution required';
+  const check=text=>assertSearchCoverage({entries:[entry]},JSON.parse(JSON.stringify({version:2,documents:[{key:entry.key,kind:entry.kind,title:entry.title,url:entry.url,text}]})),context.blockText);
+  assert.doesNotThrow(()=>check(fields+'\nArticle explains technical-only-token in its own prose.'));
+  assert.throws(()=>check(fields),/omits article body/);
+  assert.throws(()=>check('Article title\nArticle summary\nAudit hash technical-only-token\nLicense Attribution required\nArticle body'),/article fields differ/);
 });
 test('resource associations cannot be joined against the agent namespace', () => {
   const expected=sources.learningPaths.filter(game=>game.resourceIds.includes('codex')).map(game=>game.id);
