@@ -1,6 +1,6 @@
 # Production debugging and evidence contracts
 
-Checked **2026-10-18**. Sources inspected; no profiler, engine, GPU capture, physics simulation or diagnostic experiment was executed. These operations deepen existing tool entries rather than add duplicate cards. Versioned documentation, mutable vendor pages and exact inspected source revisions retain their separate scopes. All proposed acceptance gates are unimplemented GameMap editorial guidance.
+Choose a profiler or diagnostic surface for the failure you need to isolate. Connect each measurement to a specific game state, capture, and repeatable comparison.
 
 ## Choose the diagnostic evidence
 
@@ -133,7 +133,7 @@ Checked **2026-10-18**. Sources inspected; no profiler, engine, GPU capture, phy
 
 ### Joint and articulation observation contracts
 
-Checked 2026-10-18 against Unity 6000.0 official documentation. These version-family pages do not pin an immutable engine patch or PhysX implementation. This supplements [collider shape acceptance](asset-validation-contracts.md#collision-cooking-and-gameplay-shape-acceptance) with connection, drive and constraint observations. No engine or fixture was executed; acceptance designs are **GameMap editorial guidance**.
+For Unity 6000.0, check connections, drives, and constraints alongside [collider shapes](asset-validation-contracts.md#collision-cooking-and-gameplay-shape-acceptance). Resolve patch-specific behavior against the engine version used by your project.
 
 #### Source-scoped operation contracts
 
@@ -169,7 +169,7 @@ The 6000.0 `Joint.breakTorque` API says the torque axis must be Locked or Limite
 
 #### Proposed acceptance and failure handling
 
-**GameMap editorial guidance, unimplemented and unexecuted:** require configuration readback, then bounded dynamic acceptance, then independent persistence/reopen acceptance. None of the cited setters supplies an asynchronous operation handle or an application-level settled/succeeded signal. Define a sampling phase and horizon using the project's existing physics-step owner; capture pose/velocity, anchor separation or forbidden-axis error, target tracking, limit excursions, relevant loads and joint existence. Require an explicit settling tolerance and dwell interval when settling matters. Missing samples, stale topology, unexpected disconnection/breakage, nonfinite data or exceeded project tolerances block promotion. A documented ambiguity remains unresolved until a disposable exact-patch fixture establishes it.
+**Suggested check:** require configuration readback, then bounded dynamic acceptance, then independent persistence/reopen acceptance. None of the cited setters supplies an asynchronous operation handle or an application-level settled/succeeded signal. Define a sampling phase and horizon using the project's existing physics-step owner; capture pose/velocity, anchor separation or forbidden-axis error, target tracking, limit excursions, relevant loads and joint existence. Require an explicit settling tolerance and dwell interval when settling matters. Missing samples, stale topology, unexpected disconnection/breakage, nonfinite data or exceeded project tolerances block promotion. A documented ambiguity remains unresolved until a disposable exact-patch fixture establishes it.
 
 Preserve exact engine/build/platform, scene/content identity, body/constraint identity, physics-scene membership, transform/anchor frames, DOF map, units, initial conditions, mass/inertia and relevant solver/drive/projection settings, applied command history, sampling phase and tolerances. Retry only from a known authored fixture with its original configuration; this supplement establishes no transactional rollback, safe repeated actuation, persisted joint identity, cross-engine equivalence or deterministic simulation guarantee.
 
@@ -247,7 +247,7 @@ The [Unity 6000.0 FrameTimingManager manual](https://docs.unity.com/en-us/engine
 
 ## Memory lifetime across repeated production cycles
 
-Sources checked **2026-10-18; full reproduction not performed**. This section adds allocation and retention evidence to the existing capture, timing and streaming-budget contracts. It does not establish an automated leak detector, memory budget or executed adapter.
+Measure allocations and retained resources across a repeatable load, interaction, and cleanup cycle. Compare observations at the same idle boundary.
 
 ### Source and version scope
 
@@ -291,7 +291,7 @@ Unity's [disabled-domain-reload guidance](https://docs.unity3d.com/6000.0/Docume
 
 ### Proposed fixed-cycle fixture, unimplemented and unexecuted
 
-**GameMap editorial guidance.** Use one disposable project and a declared cycle: load a fixed asset set, instantiate a scene, run a fixed interaction/capture sequence, destroy cycle-owned objects, release owned handles, then return to a named idle boundary. Freeze cycle count, content, warm-up, cache policy, reset method, observation settings and allowed residual resources before comparing candidates.
+Use one disposable project and a declared cycle: load a fixed asset set, instantiate a scene, run a fixed interaction/capture sequence, destroy cycle-owned objects, release owned handles, then return to a named idle boundary. Freeze cycle count, content, warm-up, cache policy, reset method, observation settings and allowed residual resources before comparing candidates.
 
 1. Record a fresh-process baseline and separate warmed baseline. Mark A before acquisition, B after work, and C after the application's declared release boundary; do not replace lifecycle completion with an arbitrary sleep.
 2. Capture equivalent Unity snapshots or retain the complete UE trace interval. Inspect growth by object/category and retention chain or allocation callstack. Keep shared bundles and intended caches explicit.

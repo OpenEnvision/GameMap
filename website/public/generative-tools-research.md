@@ -1,6 +1,6 @@
 # Generative tools: additional source-reviewed research
 
-Sources checked **2026-10-18**; full reproduction not performed. These resources retain their research value here while official UI identity assets are pending. Inclusion is neither a quality endorsement nor a license determination. See [API and model boundaries](generative-api-boundaries.md) for purpose-specific restrictions and license distinctions.
+Compare generation services by their job lifecycle, downloadable outputs, integration requirements, and usage terms. For research and commercial use, also check the [provider and model terms](generative-api-boundaries.md).
 
 | Resource and primary sources | Scope and integration constraints |
 | --- | --- |

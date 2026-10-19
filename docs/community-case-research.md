@@ -1,8 +1,6 @@
 # Community AI game case review
 
-Reviewed 2026-10-18. The tutorial gallery contains 44 cases (28 2D, 16 3D), expanded from nine. Each case links creator AI evidence and a complete game project; local-run entries are labeled separately. The [case guide](tutorials-and-demos.md) is generated from the website data.
-
-The records below preserve search scope, primary-source inspection, and excluded or deferred candidates. Broad community lists are discovery leads; counted cases require primary author material. This is a reviewed collection, not a claim to have enumerated every community submission.
+Trace game cases back to creator build notes, playable releases, and source projects. Use the candidate records below for discovery, or open the [case guide](tutorials-and-demos.md) to study a complete project.
 
 ## Gemini CLI case addition
 

@@ -1,8 +1,6 @@
 # Asset interchange and validation contracts
 
-Sources checked **2026-10-18**; full reproduction not performed. These notes recover substantive source-backed constraints omitted from the initial directory and nine production work orders. They complement those work orders rather than adding runnable adapters or more product cards. All acceptance fixtures below are **GameMap editorial guidance, unimplemented and unexecuted**.
-
-Unless explicitly versioned below, sources are rolling documentation or repository pages, not immutable source pins. No installed version, compiler configuration, GPU capability, deployment permission or measured result is established. License notes describe the reviewed project scope; dependencies, source assets, fonts and customer content need separate review. Costs and runtime resource requirements have not been measured.
+Check generated assets at each handoff: file format, geometry, materials, animation, dependencies, and engine import. Use the format-specific requirements below to build acceptance checks for your target toolchain.
 
 ## 1. Validate a portable asset without confusing format validity with fidelity
 
@@ -185,13 +183,13 @@ Sources: [release](https://github.com/KhronosGroup/KTX-Software/releases/tag/v4.
 
 For a glTF pipeline, the proposed check is `ktx validate --gltf-basisu --warnings-as-errors --format json asset.ktx2`. This is a documented command proposal, not an executed result. `--gltf-basisu` enables the extension-specific checks; ordinary KTX validation is not the same policy. Warnings are not errors unless requested. When validation reaches report generation, stdout includes `valid` and a `messages` array, with issue IDs, types, messages and details. Preserve stdout and stderr separately, together with version and exit status. Argument, input-opening and early fatal errors need not produce JSON; missing or malformed JSON is a tool/report failure, not an automatic asset verdict.
 
-The documented exit categories are 0 success, 1 argument failure, 2 I/O failure, 3 invalid input, 4 runtime/library failure, 5 unsupported operation/state, and 6 unimplemented feature. Validation failure throws the invalid-input category. **GameMap editorial guidance:** distinguish asset rejection from infrastructure/tool failures instead of labeling every nonzero exit “bad texture.”
+The documented exit categories are 0 success, 1 argument failure, 2 I/O failure, 3 invalid input, 4 runtime/library failure, 5 unsupported operation/state, and 6 unimplemented feature. Validation failure throws the invalid-input category. Distinguish asset rejection from infrastructure/tool failures instead of labeling every nonzero exit “bad texture.”
 
 Pinned sources: [validator](https://github.com/KhronosGroup/KTX-Software/blob/4d6fc70eaf62ad0558e63e8d97eb9766118327a6/tools/ktx/command_validate.cpp), [exit codes and report formats](https://github.com/KhronosGroup/KTX-Software/blob/4d6fc70eaf62ad0558e63e8d97eb9766118327a6/tools/ktx/command.h).
 
 #### Normal-mode changes the shader contract
 
-`--normal-mode` accepts linear textures with at least two components. Three/four-channel input is treated as XYZ unit normals; the fourth channel is discarded, and XY is repacked as RGB=X, A=Y. The documented reconstruction samples GA and rebuilds positive Z. This is a channel-layout transformation, not just a quality preset. **GameMap editorial guidance:** reject the preset unless the consuming shader explicitly implements that layout; retain a material-slot/encoding/channel-layout record.
+`--normal-mode` accepts linear textures with at least two components. Three/four-channel input is treated as XYZ unit normals; the fourth channel is discarded, and XY is repacked as RGB=X, A=Y. The documented reconstruction samples GA and rebuilds positive Z. This is a channel-layout transformation, not just a quality preset. Reject the preset unless the consuming shader explicitly implements that layout; retain a material-slot/encoding/channel-layout record.
 
 `--normalize` on a two-component input normalizes a 2D vector; its documentation explicitly warns against using that result to generate XY normals with `--normal-mode`. Separately, assignment of a transfer function and conversion of pixel values are different operations. Prefer explicit intent and `--fail-on-color-conversions` when unexpected conversion must fail the build.
 
@@ -199,7 +197,7 @@ Pinned sources: [normal-mode contract](https://github.com/KhronosGroup/KTX-Softw
 
 #### Transcodable container is a separate gate
 
-The pinned transcode command requires BasisLZ or a UASTC DFD color model. It explicitly rejects an input that does not need transcoding as invalid input. Merely having a valid `.ktx2` container is insufficient. Without an explicit target, the command chooses uncompressed r8/rg8/rgb8/rgba8 based on channel count. **GameMap editorial guidance:** record the requested target and inspect output format; successful conversion alone does not prove the intended compressed GPU representation was produced.
+The pinned transcode command requires BasisLZ or a UASTC DFD color model. It explicitly rejects an input that does not need transcoding as invalid input. Merely having a valid `.ktx2` container is insufficient. Without an explicit target, the command chooses uncompressed r8/rg8/rgb8/rgba8 based on channel count. Record the requested target and inspect output format; successful conversion alone does not prove the intended compressed GPU representation was produced.
 
 Pinned source: [transcode implementation and help](https://github.com/KhronosGroup/KTX-Software/blob/4d6fc70eaf62ad0558e63e8d97eb9766118327a6/tools/ktx/command_transcode.cpp). Its embedded raw-only wording conflicts with the implementation's KTX2 writer; do not repeat that wording as an established restriction without a focused upstream clarification/test.
 
@@ -207,7 +205,7 @@ Pinned source: [transcode implementation and help](https://github.com/KhronosGro
 
 The official extension adds concrete gates: identity/absent swizzle, `rd`/absent orientation, 2D material images, base dimensions divisible by four, and usage-specific DFD metadata. Non-color data requires unspecified primaries plus linear transfer; color data requires BT.709 primaries plus sRGB. Premultiplied-alpha flag is forbidden unless the material specification requires it. Full mips are SHOULD, not MUST, for mipmapped or unspecified samplers. For non-color UASTC without ASTC/BC7, the specification recommends uncompressed RGBA to avoid artifacts.
 
-Source: [KHR_texture_basisu](https://github.com/KhronosGroup/glTF/blob/521a91d491f02bb7db7d445b35f591d09d2a64ce/extensions/2.0/Khronos/KHR_texture_basisu/README.md). Source revision: 521a91d491f02bb7db7d445b35f591d09d2a64ce. The extension classifies standard normal maps as RGB textures; GameMap editorial guidance is therefore not to apply a generic XY-in-GA preset to a standard glTF normal slot without an explicit compatible shader/encoding contract. No reviewed source established an alpha-coverage-preserving mip guarantee; do not equate a full pyramid or successful validation with preserved cutout coverage.
+Source: [KHR_texture_basisu](https://github.com/KhronosGroup/glTF/blob/521a91d491f02bb7db7d445b35f591d09d2a64ce/extensions/2.0/Khronos/KHR_texture_basisu/README.md). Source revision: 521a91d491f02bb7db7d445b35f591d09d2a64ce. The extension classifies standard normal maps as RGB textures; Use a generic XY-in-GA preset for a standard glTF normal slot only with an explicit compatible shader/encoding contract. No reviewed source established an alpha-coverage-preserving mip guarantee; do not equate a full pyramid or successful validation with preserved cutout coverage.
 
 
 **Proposed evidence and recovery:** retain source texture/material role, all invocation arguments, tool pin, validation policy/report/exit status, input/output hashes, channel mapping, transfer metadata, dimensions/mip inventory and requested/actual transcode target. Quarantine incomplete candidates and retain the original. Unimplemented negative fixtures include an invalid glTF swizzle/orientation, non-transcodable valid KTX2, a two-component normalization mismatch, an early I/O failure without JSON, and a successful default transcode whose uncompressed output violates the project budget. Target GPU support, alpha-cutout coverage, codec quality and material appearance still require consumer-side tests. Neither these commands nor those fixtures were executed. Exact dependency/input-asset licensing and conversion atomicity are not established by this source review.
@@ -235,7 +233,7 @@ The [vertex codec](https://github.com/zeux/meshoptimizer/blob/f0a684f11ead064e17
 
 ### Collision cooking and gameplay-shape acceptance
 
-Sources checked 2026-10-18; full reproduction not performed. These official Unity 6000.0 documentation pages identify a version family, not an immutable engine patch or PhysX implementation. This fills the boundary between imported geometry and the [navigation/traversal gates](engine-operation-contracts.md#navigation-after-procedural-world-edits); no collider cook, engine simulation or fixture was run. Proposed gates below are **GameMap editorial guidance**.
+For Unity 6000.0, check collision geometry after import and before [navigation or traversal testing](engine-operation-contracts.md#navigation-after-procedural-world-edits). Match the checks to the engine patch and physics configuration used by your project.
 
 #### Validate geometry before relaxing cooking safeguards
 
@@ -385,7 +383,7 @@ For engine input queues, action phases, focus/reset behavior and the unresolved 
 
 ## Additional delivery, collaboration and runtime boundaries
 
-These source-scoped facts extend the seven groups above. Proposed gates are **GameMap editorial guidance**, unimplemented and unexecuted. Product pages and rolling documentation do not pin installed software or establish project entitlement.
+The checks below connect authoring tools to the artifacts consumed by the next stage.
 
 | Workflow | Documented fact and exact source | Proposed acceptance, failure/recovery and persistence boundary |
 |---|---|---|
@@ -462,7 +460,7 @@ Checked **2026-10-18** at official ACL commit `3ee568542eca4428e1041908b4a644b98
 | Host transform arithmetic | The default QVV error metric cannot represent shear/skew from composed bone chains. The matrix variant handles scaled object-space composition, but extreme scales/translations can accumulate numerical error. For error measurement, the additive clip is applied to the base clip in local space; object-space additive blending is ignored. [Metric guidance](https://github.com/nfrechette/acl/blob/3ee568542eca4428e1041908b4a644b98e7885bd/docs/error_metrics.md) | Match the actual host's hierarchy, scale and additive convention before interpreting compression fidelity; separately inspect skinning and contact. |
 | Sampling and loop policy | Decoding binds a context, seeks with an explicit rounding policy, and writes through a track writer. Interpolated, floor, ceil, nearest and per-track rounding are distinct. [Decoding guide](https://github.com/nfrechette/acl/blob/3ee568542eca4428e1041908b4a644b98e7885bd/docs/decompressing_a_track_list.md) Wrap playback introduces a synthetic repeat of the first sample and changes duration; full-duration sampling then returns that first sample. This can conflict with absolute root displacement, and wrapping is unsuitable for non-looping clips. [Looping guide](https://github.com/nfrechette/acl/blob/3ee568542eca4428e1041908b4a644b98e7885bd/docs/handling_looping_playback.md) | Record context/clip identity, times, rounding and looping policy. Compare the loop seam and accumulated root trajectory separately; one pose at “clip end” cannot establish total travel. |
 
-**GameMap editorial fixture, unimplemented:** compare original, optimized and decoded clips on an asymmetric hierarchy with a non-identity reference pose, stripped tracks, nonuniform scale, an additive layer and nonzero root displacement. Check authored sample times and between-key times, the loop seam and repeated cycles. Preserve per-joint/world-space observations and the rendered skin; foot sliding, penetration and controller/root-motion application require actual target-project observations, not a library success result or compression ratio.
+**Fixture template:** compare original, optimized and decoded clips on an asymmetric hierarchy with a non-identity reference pose, stripped tracks, nonuniform scale, an additive layer and nonzero root displacement. Check authored sample times and between-key times, the loop seam and repeated cycles. Preserve per-joint/world-space observations and the rendered skin; foot sliding, penetration and controller/root-motion application require actual target-project observations, not a library success result or compression ratio.
 
 ### Godot retargeting: normalized keys are not controller travel
 
@@ -488,7 +486,7 @@ Sources checked on 2026-10-18; full reproduction not performed. This is a source
 
 ### Inputs and a deliberately narrow export profile
 
-**GameMap editorial guidance:** deliver the editable `.aseprite` source, exported PNG, companion JSON, export settings, source/output hashes, exact editor and importer versions, and an expected animation manifest. Record canvas dimensions, visible layers, frame durations, named tags, anchor coordinates, and image-import settings. The manifest should describe intended gameplay meaning separately from what the exporter can encode.
+Deliver the editable `.aseprite` source, exported PNG, companion JSON, export settings, source/output hashes, exact editor and importer versions, and an expected animation manifest. Record canvas dimensions, visible layers, frame durations, named tags, anchor coordinates, and image-import settings. The manifest should describe intended gameplay meaning separately from what the exporter can encode.
 
 For the first adapter, constrain input to one unscaled sprite, its complete timeline, composited visible layers, `json-array`, packed layout, per-frame trimming, zero inner padding, and no crop, grid/layer/tag/slice splitting, or play-subtags mode. Keep empty frames. Explicitly request tag and slice metadata. The [CLI documentation](https://www.aseprite.org/docs/cli/) distinguishes PNG output from JSON output, offers hash/array shapes, and makes metadata inclusion and some layer operations option-dependent. The pinned [CLI options](https://github.com/aseprite/aseprite/blob/331e898ef405d919539c03fd1675691cfa16c3a3/src/app/cli/app_options.cpp) distinguish individual-frame `--trim` for sheets from whole-sprite `--trim-sprite`.
 
@@ -517,7 +515,7 @@ Godot's loop setting is Boolean. Aseprite's [tag specification](https://github.c
 
 ### Proposed round-trip fixture, not executed
 
-**GameMap editorial test design:** author a 32×32 RGBA sprite with four frames lasting 80, 160, 120 and 40 ms. Frames 0 and 1 have identical pixels and bounds; frame 2 changes the silhouette/bounds while retaining a drawn ground-contact point; frame 3 is transparent. Use a constant slice origin `(4,6)` with pivot `(12,22)`, establishing source anchor `(16,28)`. Add `pulse`, frames 0–3, forward, repeat 2, and `rewind`, frames 0–2, reverse, repeat 1. Keep a visible guide layer hidden during export.
+**Test template:** author a 32×32 RGBA sprite with four frames lasting 80, 160, 120 and 40 ms. Frames 0 and 1 have identical pixels and bounds; frame 2 changes the silhouette/bounds while retaining a drawn ground-contact point; frame 3 is transparent. Use a constant slice origin `(4,6)` with pivot `(12,22)`, establishing source anchor `(16,28)`. Add `pulse`, frames 0–3, forward, repeat 2, and `rewind`, frames 0–2, reverse, repeat 1. Keep a visible guide layer hidden during export.
 
 1. Export the restricted profile with tag/slice metadata, two-pixel shape separation and one-pixel edge extrusion. Preserve command/settings and diagnostic output. Do not hard-code packing coordinates.
 2. Check four logical records and exact durations, including the transparent frame. Confirm frames 0 and 1 can share atlas pixels without losing their separate timing. Reconstruct each untrimmed canvas and compare against independently exported source-frame references.
@@ -528,7 +526,7 @@ Fail on missing dwell, timing drift, anchor jitter, reversed ordering, wrong com
 
 ## Tile-map identity geometry and runtime delivery
 
-Sources checked 2026-10-18; full reproduction not performed. This section adds tile-map identity, transformed collision geometry, negative-coordinate persistence and runtime-readiness evidence to the authoring/export and sprite-image contracts. It does not identify a native Tiled-to-Godot importer. The adapter and fixture below are **GameMap editorial guidance, unimplemented and unexecuted**.
+When implementing a Tiled-to-Godot adapter, preserve tile identity, transformed collision geometry, and negative-coordinate persistence. Use the fixture below to check runtime readiness.
 
 ### Version and input boundary
 

@@ -1,10 +1,10 @@
 # Engine operations: completion, recovery, and evidence
 
-Sources checked on 2026-10-18; full reproduction not performed. This note complements the resource directory without treating every engine feature as a separate product. Versioned documentation and immutable source links describe the evidence reviewed, not an installed or tested environment.
+Identify when an engine operation has completed, which artifacts to inspect, and how to recover from failure. Each reference links the relevant API, command, or implementation.
 
 ## How to read an operation
 
-**GameMap editorial guidance:** record the exact tool/engine version, execution mode, project/world identity, requested operation, native result, output artifacts, and acceptance condition. Keep request acceptance, operation completion, persisted output, and fresh-session reopen separate. A tool name or successful process launch does not prove gameplay correctness.
+Record the exact tool/engine version, execution mode, project/world identity, requested operation, native result, output artifacts, and acceptance condition. Keep request acceptance, operation completion, persisted output, and fresh-session reopen separate. A tool name or successful process launch does not prove gameplay correctness.
 
 ### Execution and recovery
 
@@ -49,7 +49,7 @@ For powered mechanisms and articulated assemblies, see [joint configuration, uni
 
 ### Runtime animation observation gates
 
-Sources checked 2026-10-18 against Unity 6000.0 and Godot 4.4 official documentation, not immutable engine implementations. Full reproduction not performed. This supplements [decoded-pose/compression validation](asset-validation-contracts.md#animation-sampling-and-compression) and [frame capture ownership](visual-evidence-research.md#engine-frame-readback-and-capture-ownership): pose application, playback completion, event delivery and actor movement require distinct observations.
+For Unity 6000.0 and Godot 4.4, observe pose application, playback completion, event delivery, and actor movement separately. Pair these checks with [pose and compression validation](asset-validation-contracts.md#animation-sampling-and-compression) and [frame capture ownership](visual-evidence-research.md#engine-frame-readback-and-capture-ownership).
 
 #### Unity: observation depends on visibility, update phase and movement owner
 
@@ -88,7 +88,7 @@ The cited contracts do not establish a universal rendered-frame barrier, complet
 
 [Windows UI Automation](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview) depends on provider-supported control patterns. It does not establish that Unreal, Unity, or Blender exposes every custom widget or scene object. [Invoke](https://learn.microsoft.com/en-us/windows/win32/api/uiautomationclient/nf-uiautomationclient-iuiautomationinvokepattern-invoke) is intended to return promptly, but provider behavior varies. Neither invocation success nor [SendInput's inserted-event count](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendinput) proves application completion.
 
-**GameMap editorial guidance:** bind each GUI action to a current process/window/control observation; retain physical-coordinate and screenshot-transform metadata; verify focus and clickability; stop on permission or integrity failures. Do not use a screenshot of a success message as the sole evidence for asset persistence. The documented [Graphics Capture picker flow](https://learn.microsoft.com/en-us/windows/apps/develop/media-authoring-processing/screen-capture) includes user consent and exposes frame time, size and buffer lifetime. It captures UI pixels rather than an engine simulation checkpoint.
+Bind each GUI action to a current process/window/control observation; retain physical-coordinate and screenshot-transform metadata; verify focus and clickability; stop on permission or integrity failures. Do not use a screenshot of a success message as the sole evidence for asset persistence. The documented [Graphics Capture picker flow](https://learn.microsoft.com/en-us/windows/apps/develop/media-authoring-processing/screen-capture) includes user consent and exposes frame time, size and buffer lifetime. It captures UI pixels rather than an engine simulation checkpoint.
 
 ## Runtime locale changes: separate string delivery, rendering and accessibility
 
@@ -154,7 +154,7 @@ Necessary but currently unimplemented components are a project driver, native se
 
 ## One useful integration fixture
 
-**GameMap editorial guidance:** use a disposable door scene to connect object identification, asset edits, streaming/physics readiness, actual interaction, temporal capture, save and fresh reopen. Include an interrupted action and a stale-reference case. Declare expected world-state transitions and image/geometry tolerances before running. If the project-specific interaction API or event observer is missing, report that gap rather than substituting generic editor dispatch.
+**Suggested check:** use a disposable door scene to connect object identification, asset edits, streaming/physics readiness, actual interaction, temporal capture, save and fresh reopen. Include an interrupted action and a stale-reference case. Declare expected world-state transitions and image/geometry tolerances before running. If the project-specific interaction API or event observer is missing, report that gap rather than substituting generic editor dispatch.
 
 The remaining unknowns include platform-specific renderer behavior, installed plugin compatibility, complete reset ownership, save durability under interruption, and project-specific quest/reward transactions. None of the source checks above supplies those runtime results.
 
@@ -184,7 +184,7 @@ Connects an external process to Painter scripting through its remote-control int
 
 ## Navigation after procedural world edits
 
-Checked 2026-10-18 against official RecastNavigation commit `9f4ce64458dfae86e1239c525ddc219c4e9e06f1` (2026-02-27). Source inspection only: no install, build, execution or route reproduction. This supplements the existing Unity request/build lifecycle notes; it does not transfer upstream Detour semantics to a particular engine binding.
+Reference: RecastNavigation commit `9f4ce64458dfae86e1239c525ddc219c4e9e06f1`. The query semantics below concern upstream Detour; check how your engine binding exposes them.
 
 ### Detour query and rebuild chain
 
@@ -208,7 +208,7 @@ Recast/Detour are available C++ libraries under the zlib license; DetourCrowd is
 
 ### Engine-facing update and arrival boundaries
 
-Sources checked **2026-10-18**; Unity 6000.0 and Godot 4.5 documentation describe different stacks, not a tested interoperability layer. Both cited Godot classes are marked Experimental.
+Unity 6000.0 and Godot 4.5 use separate navigation stacks and operation lifecycles. Both cited Godot classes are marked Experimental.
 
 | Operation | Documented contract | Proposed acceptance boundary |
 |---|---|---|
@@ -218,7 +218,7 @@ Sources checked **2026-10-18**; Unity 6000.0 and Godot 4.5 documentation describ
 | Godot map synchronization | NavigationServer3D changes generally take effect after the next physics frame. A map iteration of zero means never synchronized; IDs increment on synchronized changes and eventually wrap. In **4.5**, `map_force_update` is deprecated and unsupported for asynchronous updates, with single-threaded use at the caller's risk. Avoidance ignores regions and may move an agent outside traversable space. [4.5 API](https://docs.godotengine.org/en/4.5/classes/class_navigationserver3d.html) | Correlate the edited map/region and navigation iteration with the queried world revision; nonzero alone is not proof of the latest edit. Do not copy an older force-update recipe into an asynchronous workflow. Preserve collision/controller checks independently of avoidance velocity. |
 | Godot arrival versus stopping | `navigation_finished` / `is_navigation_finished` can mean reaching the last waypoint of an **unreachable** target. Search limits can yield a route toward the closest polygon found so far. `is_target_reachable` compares the final path position with the target using target_desired_distance. [4.5 Agent API](https://docs.godotengine.org/en/4.5/classes/class_navigationagent3d.html) | Separate stopped, path exhausted, target reachable and target reached; retain search limits and measured endpoint error. A completion signal alone cannot approve a generated doorway/quest route. |
 
-**GameMap editorial fixture, unimplemented:** retain one reachable route and deliberate disconnected-island, wrong-floor, narrow-door and dynamically blocked variants. After an edit, verify update readiness, endpoint projection, full query status and actual character traversal independently. Include cancellation/rebuild interruption and cold-reopen cases; their recovery and persistence behavior remains unknown until exercised in a pinned project. Associate screenshots with geometry revision, navmesh identity, query filters, agent dimensions, path endpoint and controller events. Rendered continuity alone cannot establish traversability.
+**Fixture template:** retain one reachable route and deliberate disconnected-island, wrong-floor, narrow-door and dynamically blocked variants. After an edit, verify update readiness, endpoint projection, full query status and actual character traversal independently. Include cancellation/rebuild interruption and cold-reopen cases; their recovery and persistence behavior remains unknown until exercised in a pinned project. Associate screenshots with geometry revision, navmesh identity, query filters, agent dimensions, path endpoint and controller events. Rendered continuity alone cannot establish traversability.
 
 
 ### Pinned Detour sources

@@ -1,10 +1,10 @@
 # Generation jobs, artifact delivery and asset acquisition
 
-Sources checked **2026-10-18**. Sources checked; full reproduction not performed. These are documented API boundaries and proposed acceptance designs, not implemented adapters. They complement [provider/model terms](generative-api-boundaries.md), [tool summaries](generative-tools-research.md) and [production work orders](production-work-orders.md).
+Follow a generation request from submission through completion, download, and asset validation. Check provider-specific job states, failure responses, and artifact lifetimes before building an adapter. For usage rights, see [provider and model terms](generative-api-boundaries.md).
 
 ## A job ID is not an imported asset
 
-**GameMap editorial guidance:** preserve submission identity, raw provider state, version/model choices, input hashes, output roles and the target project revision. Distinguish transport failure, remote execution failure, missing artifact, expired URL, integration failure and quality rejection. Do not infer create-request idempotency from a correlation ID, or cancellation/refund from a client timeout. Signed URLs belong in controlled operational storage, not public logs.
+Preserve submission identity, raw provider state, version/model choices, input hashes, output roles and the target project revision. Distinguish transport failure, remote execution failure, missing artifact, expired URL, integration failure and quality rejection. Do not infer create-request idempotency from a correlation ID, or cancellation/refund from a client timeout. Signed URLs belong in controlled operational storage, not public logs.
 
 | Surface and primary evidence | Documented boundary | Proposed acceptance or unresolved issue |
 | --- | --- | --- |
@@ -80,4 +80,4 @@ Continue with [portable-asset validation](asset-validation-contracts.md#1-valida
 
 Use the [asset-validation contracts](asset-validation-contracts.md) and [export/import work order](production-work-orders.md#1-export-an-authored-asset-import-it-and-audit-dependencies) for the next boundary after delivery; remote terminal status is not validated import.
 
-This is **GameMap editorial guidance**. Preserve originals and parent/derivative relationships; evaluate artifact bytes, format, dimensions/duration, geometry/material/rig properties and target-project behavior separately from remote success. Include late results, expired URLs, duplicate notifications, empty child-job sets, partial outputs and stale project revisions in a future fixture. Reconcile outstanding work before another chargeable submission. Retrying, deleting, regenerating, installing software, creating credentials or accepting terms are not authorized by this document.
+Preserve originals and parent/derivative relationships; evaluate artifact bytes, format, dimensions/duration, geometry/material/rig properties and target-project behavior separately from remote success. Include late results, expired URLs, duplicate notifications, empty child-job sets, partial outputs and stale project revisions in a future fixture. Reconcile outstanding work before another chargeable submission. Require task approval before deleting artifacts, creating credentials, accepting terms, or making another chargeable submission.

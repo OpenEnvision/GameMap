@@ -1,8 +1,8 @@
 # Catalog review coverage
 
-Source review: **2026-10-18**. Baseline: `5b4735422f7eb22b405f49f6e4b124a9e9bb2143`. All 109 existing cards were read; no cards were added in this pass. **Sources checked; full reproduction not performed.**
+Track corrections to resource descriptions, artifact availability, and usage terms. Each entry records the claim examined, the supporting source, and any remaining question.
 
-This ledger describes a bounded review, not certification. Relevant primary-page sections, artifact listings, and selected terms were checked, with deeper reads on consequential claims. An abstract-level or blocked read is weaker evidence than full documentation or source inspection. Retained means no material correction was identified within that scope; it does not mean every linked claim, release, license, or platform was exhaustively verified. No engines, listed agents, models, or paid APIs were run.
+Review baseline: `5b4735422f7eb22b405f49f6e4b124a9e9bb2143`; 109 resource cards.
 
 ## Material refinements
 
@@ -594,3 +594,7 @@ The [VALORANT case](studio-production-case-studies.md#valorant-specify-the-workl
 ### Authored behavior, pacing proxies and human experience (2026-10-19)
 
 Three [studio cases](studio-production-case-studies.md#find-a-production-lesson) add Orkin's publisher-hosted 2005 pre-release F.E.A.R. architecture account, Booth's official AIIDE 2009 Left 4 Dead deck and Ambinder's March 2009 GDC playtesting deck. Independent review preserves symbolic versus procedural preconditions, sensory freshness and subsystem execution, pacing-frequency versus difficulty-amplitude scope, and the distinction between control proxies and actual player experience. Simulated-example labels are limited to Ambinder's cited p.31 numbers and p.42 questions. Proposed debugging and acceptance fixtures remain unexecuted; no calibrated emotion measurement, universal fun score, current private interface or LLM compatibility is claimed. Existing case bodies remain unchanged, and the thematic reading table links each current case once. No study participants, personal/biometric data, games, models or source programs were used.
+
+### Readable construction and multiple player solutions (2026-10-19)
+
+The [Tears of the Kingdom design case](studio-production-case-studies.md#tears-of-the-kingdom-make-construction-rules-readable-without-prescribing-one-solution) adds Nintendo's complete official launch-era interview Parts 4–5, independently source-reviewed. It documents prototyping from existing mechanisms, component/readiness cues, visibly signaled interaction exceptions and accommodation of simple as well as elaborate player solutions. These developer-reported creative methods are separate from the proposed GameMap observation fixture. The interview establishes no controlled usability effect, exhaustive combinations, numerical physics behavior or public tool availability; the technical physics-validation gap remains open. Existing studio cases and externally contributed Hypothesis coverage qualifications are preserved. No game, physics engine, player study or model was executed, and no Nintendo assets were imported.

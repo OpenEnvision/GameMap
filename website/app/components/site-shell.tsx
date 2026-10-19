@@ -15,7 +15,7 @@ export function Brand() {
         alt=""
       />
       <span>
-        GameMap<span className="brand-period">.</span>
+        GameMap
       </span>
     </span>
   );
@@ -143,22 +143,9 @@ export function SiteFooter() {
       </div>
       <div className="footer-links">
         <Link to={url.page("explore")}>All content</Link>
-        <Link to={url.document("content-model")}>Content model</Link>
         <Link to="/docs/contributing/">Contribute</Link>
         <Link to="/docs/media-sources/">Credits</Link>
-        <a href={`${import.meta.env.BASE_URL}resources.json`} download>
-          Catalog JSON
-          <ArrowUpRight size={13} />
-        </a>
-        <a href="https://fumadocs.dev" target="_blank" rel="noreferrer">
-          Built with Fumadocs
-          <ArrowUpRight size={13} />
-        </a>
       </div>
-      <p className="footer-note">
-        Manually curated sources. Inclusion is not an endorsement or a claim of
-        full reproduction.
-      </p>
     </footer>
   );
 }

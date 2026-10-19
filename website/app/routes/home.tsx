@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate, useLoaderData } from 'react-router';
+import { content, sources } from '../../content/registry.server';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -15,13 +16,9 @@ import {
 } from "lucide-react";
 import {
   categories,
-  learningPaths,
-  learningMedia,
   publicAsset,
-  resources,
 } from "../lib/catalog";
 import { ExampleCard } from "../components/example-card";
-import { manifest } from "../lib/docs";
 
 const categoryIcons = [Code2, Boxes, Gamepad2, Layers3, Sparkles, Orbit];
 const featuredIds = [
@@ -29,14 +26,17 @@ const featuredIds = [
   "opengame-marvel-platformer",
   "tron-exonix-claude",
 ];
-const featured = featuredIds
-  .map((id) => learningPaths.find((game) => game.id === id)!)
-  .filter(Boolean);
-const spotlight =
-  learningPaths.find((game) => game.id === "moonlight-mayhem-codex") ||
-  featured[0];
+export function loader() {
+  const featured = featuredIds.map(id => content.require('example', id).data);
+  return {
+    featured, spotlight: featured[0], media: Object.fromEntries(featured.map(game => [game.id, sources.learningMedia[game.id]])),
+    counts: {resources:content.all('resource').length,examples:content.all('example').length,documents:content.all('document').length},
+    categories: Object.fromEntries(categories.map(category => [category.id, content.all('resource').filter(entry => entry.data.category === category.id).length])),
+  };
+}
 
 export default function Home() {
+  const { featured, spotlight, media: learningMedia, counts, categories: categoryCounts } = useLoaderData<typeof loader>();
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
@@ -90,7 +90,7 @@ export default function Home() {
               event.preventDefault();
               const form = new FormData(event.currentTarget);
               navigate(
-                "/resources/?q=" +
+                "/explore/?q=" +
                   encodeURIComponent(String(form.get("q") || "")),
               );
             }}
@@ -98,10 +98,10 @@ export default function Home() {
             <Search size={20} />
             <input
               name="q"
-              aria-label="Search game development resources"
+              aria-label="Search all game development content"
               placeholder="What would you like to build?"
             />
-            <button type="submit" aria-label="Search resources">
+            <button type="submit" aria-label="Search all content from home">
               <ArrowRight size={20} />
             </button>
           </form>
@@ -117,13 +117,13 @@ export default function Home() {
           </div>
           <div className="hero-proof">
             <span>
-              <strong>{resources.length}</strong> curated resources
+              <strong>{counts.resources}</strong> curated resources
             </span>
             <span>
-              <strong>{learningPaths.length}</strong> game examples
+              <strong>{counts.examples}</strong> game examples
             </span>
             <span>
-              <strong>{manifest.length}</strong> guides & notes
+              <strong>{counts.documents}</strong> guides & notes
             </span>
           </div>
         </div>
@@ -196,11 +196,7 @@ export default function Home() {
                   <small>{category.description}</small>
                 </span>
                 <span className="category-count">
-                  {
-                    resources.filter(
-                      (resource) => resource.category === category.id,
-                    ).length
-                  }
+                  {categoryCounts[category.id]}
                 </span>
               </Link>
             );
@@ -224,7 +220,7 @@ export default function Home() {
         </div>
         <div className="example-grid">
           {featured.map((game) => (
-            <ExampleCard game={game} compact key={game.id} />
+            <ExampleCard game={game} media={learningMedia[game.id]} compact key={game.id} />
           ))}
         </div>
       </section>

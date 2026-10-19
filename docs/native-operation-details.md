@@ -1,8 +1,6 @@
 # Native operation details and lifecycle boundaries
 
-Sources checked **2026-10-18** in the earlier research; this document curates those inspected records and subsequent audit corrections. No new engine, DCC, middleware, model, adapter or command was executed. These are **documented upstream surfaces, not implemented GameMap bindings**. Proposed gates are editorial acceptance requirements, not promises that the API supplies them.
-
-This supplement restores operation-level detail omitted by concise directory cards. It complements the [engine-operation notes](engine-operation-contracts.md#animation-rendering-and-interchange) and nine production work orders rather than restating their end-to-end chains. Source commits and document versions identify evidence only, never installed compatibility.
+Look up the native commands, files, lifecycle events, and failure signals behind a production operation. Pair these details with the [engine-operation reference](engine-operation-contracts.md#animation-rendering-and-interchange) when implementing a work order.
 
 ## How to read lifecycle limits
 
@@ -61,7 +59,7 @@ Version scope: Epic sources vary across versioned experimental Python 5.4/5.5/5.
 
 ## Input delivery and observation alignment
 
-Sources checked 2026-10-18; full reproduction not performed. This complements [synthetic input and impairment selection](asset-validation-contracts.md#7-select-the-right-impairment-and-input-surface-for-a-regression) and [frame readback ownership](visual-evidence-research.md#engine-frame-readback-and-capture-ownership). No engine, game or fixture was executed.
+Connect [synthetic input](asset-validation-contracts.md#7-select-the-right-impairment-and-input-surface-for-a-regression) to [captured frames](visual-evidence-research.md#engine-frame-readback-and-capture-ownership), keeping action delivery and observed state separate.
 
 ### Finding and version boundary
 
@@ -114,7 +112,7 @@ Godot's internal `release_pressed_events()` first flushes buffered input, then c
 
 ### Proposed application-owned evidence contract
 
-The following is **GameMap editorial guidance, unimplemented**. Use a disposable owned project with one input-controlled marker and one visible, authoritative state transition. Keep five statuses rather than a single success bit:
+For a fixture, use a disposable owned project with one input-controlled marker and one visible, authoritative state transition. Keep five statuses rather than a single success bit:
 
 1. **Submitted/accepted:** injection surface, call result/exception, event or command identity, target device/action, press/release/value, timestamp and production order
 2. **Input observed/consumed:** observed raw event, update phase/type/count and resulting control/action state; distinguish a pre-processing receipt from state application
@@ -257,7 +255,7 @@ Godot's [AudioServer reference](https://docs.godotengine.org/en/4.5/classes/clas
 
 ### Proposed acceptance fixture, unimplemented and unexecuted
 
-**GameMap editorial guidance:** create a disposable stereo scene with known left/right impulses, a visible marker, two routed buses and an identifiable effect. Preserve build/platform, audio driver/device, playback mode, routing/effect order, gain/mute state, sample rate, capture identity, read counts, counter baselines and clock domains.
+**Suggested check:** create a disposable stereo scene with known left/right impulses, a visible marker, two routed buses and an identifiable effect. Preserve build/platform, audio driver/device, playback mode, routing/effect order, gain/mute state, sample rate, capture identity, read counts, counter baselines and clock domains.
 
 Compare taps before/after the effect and on Master; mute the source bus; bypass capture; deliberately stall only the collector until overflow; clear the ring mid-run; pause/resume recording; stop and await export notification, then reopen and count samples. Require independently observed markers and explicit gaps. An overflow invalidates continuous-capture acceptance; an absent callback or empty read remains unknown, not success or silence. Never concatenate separated segments as if time were continuous.
 
@@ -344,7 +342,7 @@ None of these rows provides a universal save/reopen driver, cross-engine object 
 
 ## Recorded dialogue and mouth-cue validation
 
-Checked 2026-10-19. This source-only asset-processing contract connects recorded speech to project-owned mouth shapes. It complements [narrative epochs](gameplay-state-contracts.md#narrative-checkpoints-cancellation-and-world-effect-transactions) and the audio observation contracts above; it does not establish perceptual synchronization. No executable, audio, model or engine fixture was run.
+Map recorded speech to project-owned mouth shapes, then check the resulting timing in context. Pair cue processing with [narrative epochs](gameplay-state-contracts.md#narrative-checkpoints-cancellation-and-world-effect-transactions) and audio observations.
 
 ### Source and artifact availability
 Use **Rhubarb v1.14.0**, whose annotated tag resolves to **9b9573cd21b253c9ba58739bbd1aa0b50b991bff**. The official release was published 2025-04-03; it remained the latest release returned by the official API when checked. The release lists Linux, macOS and Windows ZIPs; only release metadata was inspected, not the binaries or their integrity. Asset digests were null. The pinned workflow targets Windows x64, macos-13 and ubuntu-20.04 builds; do not infer a native Apple Silicon release or all current OS support. Runtime recognizers load local resources from the executable-relative res/sphinx directory; packaging copies language/dictionary and acoustic-model resources there. Keep the distribution resources with the executable. (sources R1–R3)
@@ -405,7 +403,7 @@ The pinned LICENSE identifies Rhubarb itself as MIT and supplies separate third-
 
 ## Browser cinematic subtitle and caption delivery
 
-Checked 2026-10-19. Scope: prerecorded cinematics displayed by an HTML video element in a browser game. This closes a delivery-interface gap beside the font/localization and mouth-cue contracts. It does not supply subtitles for engine-native dialogue, Web Audio playback or canvas-rendered scenes. No browser, media, importer or acceptance fixture was executed.
+For prerecorded browser-game cinematics, attach timed text to an HTML video element and check cue delivery. Engine-native dialogue, Web Audio, and canvas scenes need their own subtitle integrations.
 
 **Source pins.** WebVTT [Candidate Recommendation Draft, 2026-05-20](https://www.w3.org/TR/2026/CRD-webvtt1-20260520/) remains a work in progress. HTML was source-inspected at [de953a7cf0523f5873a1904ba2ce010c689dfb66](https://github.com/whatwg/html/blob/de953a7cf0523f5873a1904ba2ce010c689dfb66/source), dated 2026-10-16. These are specification pins, not browser-implementation or compatibility results.
 

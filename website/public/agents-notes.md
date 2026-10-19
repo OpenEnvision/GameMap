@@ -1,6 +1,6 @@
 # Coding agents and game tool integrations: source review notes
 
-Source review date: 2026-10-18. The primary data file, `data/segments/agents.json`, contains 20 entries, each linked to an author repository or official documentation. `verified` records the date a source was read and checked. It does not indicate local installation, a successful run, or compatibility testing across all engine versions.
+Choose the model, execution harness, domain skills, and engine interface separately. The combinations below link to implementation sources and setup instructions.
 
 ## Essential distinctions
 
@@ -38,7 +38,7 @@ Source review date: 2026-10-18. The primary data file, `data/segments/agents.jso
 - The [Continue](https://github.com/continuedev/continue) README marks the repository as no longer actively maintained and read-only. Any future entry should identify that historical status rather than present it as an active tool without explanation.
 - The Antigravity migration note relies on the official Gemini CLI README and explains the original entry's lifecycle. It is not a full review of the separate Antigravity product, so no additional resource entry was created.
 
-## Practical guidance for game development planning (GameMap editorial guidance)
+## Plan a game-development workflow
 
 1. **Choose an observable feedback loop first.** Browser games offer screenshots, input, console output, network inspection, and test feedback. For native engines, establish a working headless, editor, or MCP workflow before asking an agent to expand functionality.
 2. **Treat editor state as data.** Read scene object IDs, components, materials, asset references, and compilation state before modifying them. Object names are not stable identities; prompts should not guess the current scene.

@@ -1,6 +1,7 @@
 import { Link, useLoaderData, type LoaderFunctionArgs } from "react-router";
 import { ArrowLeft } from "lucide-react";
-import { content, contentKinds } from "../../content/registry";
+import { content } from '../../content/registry.server';
+import { contentKinds } from '../../content/models';
 import { detailRoutes, pages, url } from "../../content/site";
 import {
   ContentDocument,
@@ -19,23 +20,16 @@ export function loader({ params }: LoaderFunctionArgs) {
           .find(Boolean)
       : undefined;
   if (!entry) throw new Response("Content not found", { status: 404 });
-  return { key: entry.key };
+  return {
+    entry,
+    steps: entry.kind === 'path' ? content.all('step').filter(step => step.data.track === entry.id) : [],
+    cases: entry.kind === 'resource' ? content.examplesFor({kind:'resource',id:entry.id}) : [],
+    demos: entry.kind === 'resource' ? content.demosFor(entry.id) : [],
+  };
 }
 export default function ContentPage() {
-  const { key } = useLoaderData<typeof loader>();
-  const entry = content.byKey(key);
-  if (!entry) throw new Error(`Missing registered content: ${key}`);
+  const { entry, steps, cases, demos } = useLoaderData<typeof loader>();
   const collection = pages[contentKinds[entry.kind].page];
-  const steps =
-    entry.kind === "path"
-      ? content.all("step").filter((step) => step.data.track === entry.data.id)
-      : [];
-  const cases =
-    entry.kind === "agent"
-      ? content
-          .all("example")
-          .filter((game) => game.data.resourceIds.includes(entry.id))
-      : [];
   return (
     <main id="main-content" className="site-main content-page">
       <title>{entry.title} — GameMap</title>
@@ -53,7 +47,7 @@ export default function ContentPage() {
         </div>
       )}
       <ContentDocument entry={entry} />
-      {entry.kind === "resource" && <RelatedDemos resourceId={entry.id} />}
+      {entry.kind === "resource" && <RelatedDemos demos={demos} />}
       {steps.length > 0 && (
         <section
           className="path-steps"
@@ -83,10 +77,6 @@ export default function ContentPage() {
           </p>
         </section>
       )}
-      <p className="reading-note">
-        Source review is not runtime certification. Follow original licenses,
-        creator credits, and stated limitations.
-      </p>
     </main>
   );
 }

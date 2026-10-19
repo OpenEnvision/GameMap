@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate, useLoaderData } from 'react-router';
+import { content } from '../../content/registry.server';
+import { matchesSearch } from '../../content/matching';
+import { searchableText } from '../../content/search';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -12,12 +15,16 @@ import ResourceIcon, {
   ResourceAttribution,
 } from "../../src/components/ResourceIcon";
 import { type Dimension, type ResourceType, type Stage } from "../../src/types";
-import { categories, resources, stageLabels, typeLabels } from "../lib/catalog";
+import { categories, stageLabels, typeLabels } from "../lib/catalog";
 import { ResourceDetail } from "../components/resource-detail";
 import { url } from "../../content/site";
 import { useClientQuery } from "../lib/client-query";
 
+export function loader() { return { entries: content.all('resource'), demos: content.all('demo') }; }
 export default function Resources() {
+  const { entries, demos } = useLoaderData<typeof loader>();
+  const resources = entries.map(entry => entry.data);
+  const searchText = new Map(entries.map(entry => [entry.id, searchableText(entry)]));
   const [params, setParams, hydrated] = useClientQuery();
   const location = useLocation();
   const navigate = useNavigate();
@@ -75,7 +82,6 @@ export default function Resources() {
       },
       { replace: true, preventScrollReset: true },
     );
-  const tokens = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
   const filtered = resources
     .filter(
       (resource) =>
@@ -84,11 +90,7 @@ export default function Resources() {
         (stage === "all" || resource.stages.includes(stage as Stage)) &&
         (track === "all" || resource.dimensions.includes(track as Dimension)) &&
         (!savedOnly || saved.includes(resource.id)) &&
-        tokens.every((token) =>
-          `${resource.name} ${resource.summary} ${resource.tags.join(" ")}`
-            .toLowerCase()
-            .includes(token),
-        ),
+        matchesSearch(searchText.get(resource.id) || '', query),
     )
     .sort((a, b) =>
       params.get("sort") === "name" ? a.name.localeCompare(b.name) : 0,
@@ -362,7 +364,8 @@ export default function Resources() {
       {active && (
         <ResourceDetail
           key={active.id}
-          resource={active}
+          entry={entries.find(entry => entry.id === active.id)!}
+          demos={demos.filter(demo => demo.data.resourceId === active.id)}
           saved={saved.includes(active.id)}
           onSave={() => toggleSave(active.id)}
           onClose={() => selectResource("")}

@@ -1,5 +1,5 @@
 import resourceData from "../src/data/resources.json";
-import repositoryResearch from "../../data/research/cadle-repositories.json";
+import repositoryResearch from "../../data/segments/repository-research.json";
 import type { Resource } from "../src/types";
 import {
   learningPaths,
@@ -17,8 +17,8 @@ import {
   testingStarterPacks,
 } from "../src/data/testingResources";
 import { plans } from "../src/data/plans";
-import { showcaseCases, showcaseByTrack } from "../src/data/showcase";
-import { projectVideos } from "../src/data/projectVideos";
+import { showcaseByTrack } from '../src/data/showcase';
+import { recordings } from '../src/data/recordings';
 import { projectMedia } from "../src/data/projectMedia";
 import { learningMedia } from "../src/data/learningMedia";
 import { editorial } from "../src/data/editorial";
@@ -38,9 +38,8 @@ export const sources = {
   testingResources,
   testingStarterPacks,
   plans,
-  showcaseCases,
+  recordings,
   showcaseByTrack,
-  projectVideos,
   projectMedia,
   learningMedia,
   editorial,

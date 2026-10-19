@@ -2,7 +2,7 @@
 
 > A planning map for AI game development — from an idea to a playable world.
 
-**109 curated primary sources** connecting coding agents, game engines, AI for 2D and 3D development, production tools, and code world models. Main source review date: **October 18, 2026**. This is a research snapshot: reviewing a source does not imply reproducing its results or continuously monitoring it.
+**110 curated primary sources** connecting coding agents, game engines, AI for 2D and 3D development, production tools, and code world models. Main source review date: **October 18, 2026**. This is a research snapshot: reviewing a source does not imply reproducing its results or continuously monitoring it.
 
 - [Interactive GameMap website — GitHub Pages](https://openenvision.github.io/GameMap/)
 - [A practical guide from resources to a working project](docs/practical-guide.md)
@@ -22,7 +22,7 @@
 | Benchmark | Repeatable development evaluation | Tasks, scoring scripts, environments, and versions |
 | Paper / world model | Executable state, neural simulation, or hybrid rendering | World representation, action interface, long-term consistency, and public availability |
 
-**Editorial notes.** DeepSeek is listed through its model integration documentation, rather than as an official standalone harness. Blender is a DCC application and Three.js is a 3D library; their roles differ from those of full game engines. Development, gameplay, and modeling evaluations are considered separately. SolarRenderer and StreamRender-H3 belong to the structure- or engine-driven hybrid rendering track; pure video world models are labeled separately. The roadmaps and acceptance criteria are GameMap editorial guidance.
+**Tool roles.** DeepSeek is listed through its model integration documentation, rather than as an official standalone harness. Blender is a DCC application and Three.js is a 3D library; their roles differ from those of full game engines. Development, gameplay, and modeling evaluations are considered separately. SolarRenderer and StreamRender-H3 belong to the structure- or engine-driven hybrid rendering track; pure video world models are labeled separately.
 
 ## Contents
 
@@ -30,7 +30,7 @@
 - [2. Game engines, DCC tools, and ecosystems](#engines) — 24 resources
 - [3. AI for 2D game development](#2d) — 13 resources
 - [4. AI for 3D game development](#3d) — 15 resources
-- [5. Game production: art, animation, audio, testing, and runtime AI](#production) — 17 resources
+- [5. Game production: art, animation, audio, testing, and runtime AI](#production) — 18 resources
 - [6. Code world models and interactive worlds](#world) — 20 resources
 
 <a id="agents"></a>
@@ -779,6 +779,27 @@ Tags: `asset-generation`. Source reviewed: 2026-10-19. Further reading: [Tripo t
 Provides 2D/3D sampling, fractals and domain warping across multiple languages under MIT. These are generation primitives: meshing, erosion, persistent world state and meaningful level design require additional systems.
 
 Tags: `Procedural generation` · `Noise` · `Terrain`. Source reviewed: 2026-10-18.
+
+</details>
+
+### Skill
+
+| Resource | Purpose and scope | Stages |
+| --- | --- | --- |
+| [Level Design Book · unofficial design skill](https://github.com/OpenEnvision/GameMap/tree/main/docs/skills/level-design) · 2026 | An unofficial, agent-neutral adaptation of The Level Design Book for level briefs, blockouts, encounters, wayfinding, and evidence-based playtest reviews. | Planning / Scenes / Testing / Shipping |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[Level Design Book · unofficial design skill](https://github.com/OpenEnvision/GameMap/tree/main/docs/skills/level-design)**
+
+The English skill package reorganizes The Level Design Book into task routing, thirteen topical/source references, and three reusable templates. It is primarily for 3D levels; 2D adaptations must state changed assumptions. The package reports a 2026-10-16 source snapshot and maps 94 indexed source pages, including unfinished sections; GameMap has not independently reproduced that reading exercise, run the workflows, or validated design outcomes. Original writing is attributed to Robert Yang and contributors including Andrew Yoder. This is not an official book edition or a pi-maintainer publication. The adaptation is CC BY-NC-SA 4.0: retain attribution and change notices, observe noncommercial/share-alike conditions, and review separate third-party exceptions. Those terms do not automatically license every game output.
+
+Tags: `level-design` · `skill` · `blockout` · `playtesting` · `agent-neutral` · `CC-BY-NC-SA-4.0` · `noncommercial` · `unofficial-adaptation`. Source reviewed: 2026-10-18. Further reading: [The Level Design Book](https://book.leveldesignbook.com/) · [Original authors and contributors](https://book.leveldesignbook.com/appendix/about) · [Book licensing and third-party exceptions](https://book.leveldesignbook.com/appendix/license) · [CC BY-NC-SA 4.0 legal code](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
+
+- **Tutorial · tutorial:** [Read the original book](https://book.leveldesignbook.com/). The underlying book remains authoritative. The skill reorganizes guidance and templates rather than claiming universal design laws or independently measured outcomes.
+- **Demo · unavailable:** Instructions and templates, not a runnable demo. No engine plugin, executable level, benchmark result, or validated playtest is supplied.
+- **Source · full-source:** [Complete skill package and license](https://github.com/OpenEnvision/GameMap/tree/main/docs/skills/level-design). Text-only package with SKILL.md, LICENSE.md, references, and templates. CC BY-NC-SA 4.0 applies to this adaptation directory, not the whole repository; commercial distribution requires appropriate permission.
 
 </details>
 

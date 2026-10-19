@@ -3067,6 +3067,74 @@
     "verified": "2026-10-18"
   },
   {
+    "id": "level-design-book-skill",
+    "name": "Level Design Book · unofficial design skill",
+    "category": "production",
+    "type": "skill",
+    "summary": "An unofficial, agent-neutral adaptation of The Level Design Book for level briefs, blockouts, encounters, wayfinding, and evidence-based playtest reviews.",
+    "detail": "The English skill package reorganizes The Level Design Book into task routing, thirteen topical/source references, and three reusable templates. It is primarily for 3D levels; 2D adaptations must state changed assumptions. The package reports a 2026-10-16 source snapshot and maps 94 indexed source pages, including unfinished sections; GameMap has not independently reproduced that reading exercise, run the workflows, or validated design outcomes. Original writing is attributed to Robert Yang and contributors including Andrew Yoder. This is not an official book edition or a pi-maintainer publication. The adaptation is CC BY-NC-SA 4.0: retain attribution and change notices, observe noncommercial/share-alike conditions, and review separate third-party exceptions. Those terms do not automatically license every game output.",
+    "url": "https://github.com/OpenEnvision/GameMap/tree/main/docs/skills/level-design",
+    "links": [
+      {
+        "label": "The Level Design Book",
+        "url": "https://book.leveldesignbook.com/"
+      },
+      {
+        "label": "Original authors and contributors",
+        "url": "https://book.leveldesignbook.com/appendix/about"
+      },
+      {
+        "label": "Book licensing and third-party exceptions",
+        "url": "https://book.leveldesignbook.com/appendix/license"
+      },
+      {
+        "label": "CC BY-NC-SA 4.0 legal code",
+        "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode"
+      }
+    ],
+    "tags": [
+      "level-design",
+      "skill",
+      "blockout",
+      "playtesting",
+      "agent-neutral",
+      "CC-BY-NC-SA-4.0",
+      "noncommercial",
+      "unofficial-adaptation"
+    ],
+    "stages": [
+      "plan",
+      "scene",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "3d",
+      "2d"
+    ],
+    "year": 2026,
+    "verified": "2026-10-18",
+    "access": {
+      "tutorial": {
+        "label": "Read the original book",
+        "url": "https://book.leveldesignbook.com/",
+        "kind": "tutorial",
+        "note": "The underlying book remains authoritative. The skill reorganizes guidance and templates rather than claiming universal design laws or independently measured outcomes."
+      },
+      "demo": {
+        "label": "Instructions and templates, not a runnable demo",
+        "kind": "unavailable",
+        "note": "No engine plugin, executable level, benchmark result, or validated playtest is supplied."
+      },
+      "source": {
+        "label": "Complete skill package and license",
+        "url": "https://github.com/OpenEnvision/GameMap/tree/main/docs/skills/level-design",
+        "kind": "full-source",
+        "note": "Text-only package with SKILL.md, LICENSE.md, references, and templates. CC BY-NC-SA 4.0 applies to this adaptation directory, not the whole repository; commercial distribution requires appropriate permission."
+      }
+    }
+  },
+  {
     "id": "solarrenderer",
     "name": "SolarRenderer",
     "category": "world",

@@ -1,17 +1,20 @@
-import { Link } from "react-router";
+import { Link, useLoaderData } from 'react-router';
 import { ArrowUpRight, FlaskConical, Search } from "lucide-react";
 import {
   testingKinds,
   testingTerms,
   testingUses,
-} from "../../src/data/testingResources";
+} from '../../src/data/testingTypes';
 import { useClientQuery } from "../lib/client-query";
-import { content } from "../../content/registry";
+import { content } from '../../content/registry.server';
+import { url } from '../../content/site';
+import { matchesSearch } from '../../content/matching';
+import { searchableText } from '../../content/search';
 import { ContentDocument } from "../components/content";
-const testingEntries = content.all("testing");
-const testingResources = testingEntries.map((entry) => entry.data);
-
+export function loader() { return { entries: content.all('testing'), packs: content.all('testing-pack') }; }
 export default function Testing() {
+  const { entries, packs } = useLoaderData<typeof loader>();
+  const testingResources = entries.map(entry => entry.data);
   const [params, setParams] = useClientQuery();
   const query = params.get("q") || "";
   const kind = params.get("kind") || "all";
@@ -32,9 +35,7 @@ export default function Testing() {
       (kind === "all" || item.kind === kind) &&
       (use === "all" || item.uses.some((item) => item === use)) &&
       (terms === "all" || item.terms === terms) &&
-      `${item.title} ${item.summary} ${item.stack}`
-        .toLowerCase()
-        .includes(query.toLowerCase()),
+      matchesSearch(searchableText(entries.find(entry => entry.id === item.id)!), query),
   );
   return (
     <main id="main-content" className="site-main listing-page">
@@ -65,7 +66,7 @@ export default function Testing() {
         className="testing-starters content-grid"
         aria-label="Testing starter tasks"
       >
-        {content.all("testing-pack").map((entry) => (
+        {packs.map((entry) => (
           <ContentDocument entry={entry} heading="h2" key={entry.key} />
         ))}
       </section>
@@ -201,7 +202,7 @@ export default function Testing() {
                 </span>
               </details>
               <div className="example-links">
-                <Link to={content.require("testing", item.id).url}>
+                <Link to={url.testing(item.id)}>
                   Complete record
                   <ArrowUpRight size={13} />
                 </Link>

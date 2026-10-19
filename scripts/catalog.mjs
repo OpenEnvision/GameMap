@@ -1,18 +1,26 @@
 import {readdir, readFile} from 'node:fs/promises';
-export const categories=[['agents','Coding agents and game development bridges'],['engines','Game engines, DCC tools, and ecosystems'],['2d','AI for 2D game development'],['3d','AI for 3D game development'],['production','Game production: art, animation, audio, testing, and runtime AI'],['world','Code world models and interactive worlds']];
-export const types={agent:'Agent',framework:'Framework',skill:'Skill',benchmark:'Benchmark',paper:'Paper',docs:'Documentation',tool:'Tool',community:'Community',dataset:'Dataset'};
-export const stages={plan:'Planning',code:'Coding',assets:'Assets',scene:'Scenes',test:'Testing',ship:'Shipping',runtime:'Runtime AI',world:'World models'};
-const accessKinds=['tutorial','playable','interactive','video','download','full-source','sdk','examples','model','local-tool','pipeline-source','service','unavailable'];
+const taxonomy=JSON.parse(await readFile(new URL('../website/content/taxonomy.json',import.meta.url),'utf8'));
+export const categories=Object.entries(taxonomy.categories).map(([id,{documentLabel}])=>[id,documentLabel]);
+export const types=taxonomy.types;
+export const stages=Object.fromEntries(Object.entries(taxonomy.stages).map(([id,entry])=>[id,entry.documentLabel]));
+const accessKinds=Object.keys(taxonomy.accessKinds);
 export async function loadCatalog(){
  const files=(await readdir(new URL('../data/segments/',import.meta.url))).filter(f=>f.endsWith('.json')).sort();
- const sections=await Promise.all(files.map(f=>readFile(new URL('../data/segments/'+f,import.meta.url),'utf8').then(JSON.parse)));
+ const contracts=JSON.parse(await readFile(new URL('../website/content/sources.config.json',import.meta.url),'utf8'));
+ const sections=await Promise.all(files.map(async f=>{
+  const rule=contracts['data/segments/'+f]?.exports?.default;
+  if(rule&&rule.kind!=='resource')return [];
+  const section=JSON.parse(await readFile(new URL('../data/segments/'+f,import.meta.url),'utf8'));
+  if(!Array.isArray(section))throw Error(`Unclassified segment ${f}: declare its kind in website/content/sources.config.json`);
+  return section;
+ }));
  const all=sections.flat();
  const records=categories.flatMap(([id])=>all.filter(r=>r.category===id));
  if(records.length!==all.length)throw Error('Unknown category in data segments');
  return records;
 }
 export function validate(records){
- const ids=new Set(),urls=new Set();const dimensions=['2d','3d','world'];
+ const ids=new Set(),urls=new Set();const dimensions=Object.keys(taxonomy.dimensions);
  for(const r of records){
   for(const key of ['id','name','category','type','summary','detail','url','verified'])if(typeof r[key]!=='string'||!r[key].trim())throw Error(`Missing ${key}: ${r.id}`);
   if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(r.id))throw Error(`Invalid ID: ${r.id}`);
@@ -65,7 +73,7 @@ export function renderAwesome(records){
 | Benchmark | Repeatable development evaluation | Tasks, scoring scripts, environments, and versions |
 | Paper / world model | Executable state, neural simulation, or hybrid rendering | World representation, action interface, long-term consistency, and public availability |
 
-**Editorial notes.** DeepSeek is listed through its model integration documentation, rather than as an official standalone harness. Blender is a DCC application and Three.js is a 3D library; their roles differ from those of full game engines. Development, gameplay, and modeling evaluations are considered separately. SolarRenderer and StreamRender-H3 belong to the structure- or engine-driven hybrid rendering track; pure video world models are labeled separately. The roadmaps and acceptance criteria are GameMap editorial guidance.
+**Tool roles.** DeepSeek is listed through its model integration documentation, rather than as an official standalone harness. Blender is a DCC application and Three.js is a 3D library; their roles differ from those of full game engines. Development, gameplay, and modeling evaluations are considered separately. SolarRenderer and StreamRender-H3 belong to the structure- or engine-driven hybrid rendering track; pure video world models are labeled separately.
 
 ## Contents
 

@@ -2,7 +2,7 @@
 
 Website content must follow the [content model and coverage contract](docs/content-model.md).
 
-Contributions of credible resources, corrected descriptions, repaired links, and evidence-backed engineering experience are welcome. GameMap maps coding agents, engine ecosystems, 2D and 3D development, and world models. Inclusion is not a performance endorsement or a claim of full reproduction.
+Contributions of credible resources, corrected descriptions, repaired links, and evidence-backed engineering experience are welcome. GameMap maps coding agents, engine ecosystems, 2D and 3D development, and world models.
 
 ## Source of truth and generation workflow
 
@@ -32,7 +32,7 @@ Keep application source in `website/app/`, catalog/case data in `website/src/`, 
 
 Do not commit dependencies, `dist/` or `website/dist/`, legacy root previews, `.build/`, `.react-router/`, prepared documents in `website/.content/`, copied `website/public/docs-assets/`, TypeScript/Vite/lint caches, coverage and browser-test reports, agent traces, logs, temporary files, local environment secrets, or machine-specific editor/OS files. Build outputs are regenerated in CI and only `dist/` is published to GitHub Pages. Keep shareable environment configuration in `.env.example`, `.env.sample`, or `.env.template`, without secrets. The `.gitignore` deliberately does not hide source media, lockfiles, shared VS Code configuration, or environment templates.
 
-The Cadle-like research inventory is maintained in `data/research/cadle-repositories.json`. Its complete source-candidate membership and review statuses are validated; `docs/cadle-repositories.md` and public Markdown/JSON downloads are generated. These research rows do not automatically become resource cards or featured playable cases.
+The Cadle-like research inventory is maintained in `data/segments/repository-research.json`. Its complete source-candidate membership and review statuses are validated; `docs/cadle-repositories.md` and public Markdown/JSON downloads are generated. These research rows do not automatically become resource cards or featured playable cases.
 
 ## Entry format
 
@@ -76,9 +76,18 @@ Prefer author papers, official documentation, project repositories, model cards,
 
 `verified` means a source check. Claim reproduction only after an actual run, with commands, versions, hardware, inputs, results, and the limits of what was tested. Distinguish paper demonstrations, complete open-source implementations, partial inference code, hosted products, and release plans. Code, model weights, and data can have different terms; link to their official guidance rather than generalizing from one repository license label.
 
-Performance numbers require measurement conditions and a primary source. Do not directly rank results from different tasks, resolutions, GPUs, or measurement scopes. Method comparisons should distinguish build success, functional correctness, visual quality, playability, and runtime performance. Label planning guidance or workflow preferences as **GameMap editorial guidance**, rather than presenting them as research findings.
+Performance numbers require measurement conditions and a primary source. Do not directly rank results from different tasks, resolutions, GPUs, or measurement scopes. Method comparisons should distinguish build success, functional correctness, visual quality, playability, and runtime performance. Describe proposed workflows as templates or next steps, rather than reporting them as measured findings.
 
 World model entries should also explain where authoritative state lives: an executable program, an engine, video latents, or explicit 3D assets. Use separate tags for action-conditioned video, neural rendering, and code-based worlds. See the [world model notes](docs/world-model-notes.md).
+
+## Writing for readers
+
+- Start with the task, workflow, or decision the reader needs to make. Use plain, direct language.
+- Omit editorial self-description, collection-size reports, generic no-guarantee disclaimers, review-date preambles, and statements about unscheduled future updates.
+- Put concrete version requirements, unavailable artifacts, licensing conditions, and untested assumptions beside the operation they affect. Keep sources and attribution.
+- Name a proposed check or work-order template as such; do not describe it as a completed integration or measured result.
+- Keep audit timestamps and internal identifiers in source records or maintenance ledgers, not reader-facing introductions.
+- Chinese guides live under `docs/zh/`. Mark links to untranslated material as English. Do not rewrite the separately licensed, preserved skill package to change its tone.
 
 ## Pull requests
 

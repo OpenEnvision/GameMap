@@ -7,7 +7,7 @@ import type {
 } from "../src/data/testingTypes";
 import type { PlanNode } from "../src/data/plans";
 import type { CommunityCollection } from "../src/data/communityResearch";
-import type repositoryResearch from "../../data/research/cadle-repositories.json";
+import type repositoryResearch from "../../data/segments/repository-research.json";
 export type RepositoryResearchRecord =
   (typeof repositoryResearch.records)[number];
 
@@ -29,6 +29,7 @@ export interface StepContent extends PlanNode {
   track: Dimension;
 }
 export interface DemoContent {
+  recordingId: string;
   id: string;
   resourceId: string;
   title: string;
@@ -144,10 +145,12 @@ export type Fact =
 type FactsBlock = { type: "facts"; label: string; items: Fact[] };
 export type BlockValue =
   TextBlock | ListBlock | LinkBlock | ImageBlock | VideoBlock | FactsBlock;
-export type ContentBlock = BlockValue & { field: string };
+export type ContentSection = 'intro' | 'media' | 'guidance' | 'resources' | 'provenance' | 'metadata';
+export type ContentBlock = BlockValue & { field: string; section?: ContentSection };
 export type FieldRule<T, K extends keyof T> =
   | { skip: string }
   | {
+      section?: ContentSection;
       includeNull?: boolean;
       present: (value: T[K], record: T) => BlockValue[];
     };
@@ -173,6 +176,7 @@ export interface ContentRegistry {
   require<K extends ContentKind>(kind: K, id: string): ContentEntry<K>;
   all<K extends ContentKind>(kind: K): ContentEntry<K>[];
   byKey(key: string): ContentEntry | undefined;
+  examplesFor(ref: { kind: 'resource'; id: string }): ContentEntry<'example'>[];
   demosFor(resourceId: string): ContentEntry<"demo">[];
   attributionFor(
     exampleId: string,

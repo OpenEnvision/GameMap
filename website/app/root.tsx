@@ -17,6 +17,7 @@ import { SiteFooter, SiteHeader } from "./components/site-shell";
 import "@fontsource-variable/inter";
 import "./styles.css";
 import { useHydrated } from "./lib/client-query";
+import { localeFromPath, docMessages } from '../content/doc-language';
 
 function ThemeColor() {
   useEffect(() => {
@@ -36,8 +37,9 @@ function ThemeColor() {
 }
 
 export function Layout({ children }: { children: ReactNode }) {
+  const locale=localeFromPath(useLocation().pathname);
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale==='zh'?'zh-CN':'en'} suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -51,6 +53,7 @@ export function Layout({ children }: { children: ReactNode }) {
           components={{ Link: FrameworkLink }}
           theme={{ defaultTheme: "light" }}
           search={{ SearchDialog: AtlasSearch }}
+          i18n={{locale,translations:docMessages(locale).ui}}
         >
           <ThemeColor />
           {children}
@@ -69,7 +72,7 @@ export default function App() {
   return (
     <>
       <a className="skip-link" href={docs ? "#nd-page" : "#main-content"}>
-        Skip to content
+        {docMessages(localeFromPath(pathname)).skip}
       </a>
       {/* Static reading and native links work immediately. Form controls must wait
           for hydration so a placeholder query state cannot consume an action. */}

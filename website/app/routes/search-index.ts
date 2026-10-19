@@ -1,44 +1,19 @@
-import {
-  createSearchAPI,
-  type AdvancedIndex,
-} from "fumadocs-core/search/server";
-import { content, contentKinds } from "../../content/registry";
-import { blockText } from "../../content/search";
-import { source } from "../lib/source";
-import { searchId } from "../../content/site";
+import { content } from '../../content/registry.server';
+import { blockText } from '../../content/search';
+import { source } from '../lib/source';
+import type { SearchIndex } from '../../content/matching';
 
-const search = createSearchAPI("advanced", {
-  language: "english",
-  indexes: async (): Promise<AdvancedIndex[]> =>
-    Promise.all(
-      content.entries.map(async (entry) => {
-        const page =
-          entry.kind === "document"
-            ? source.getPage(entry.id.split("/"))
-            : undefined;
-        const loaded =
-          page && ("load" in page.data ? await page.data.load() : page.data);
-        return {
-          id: searchId(entry.key),
-          title: entry.title,
-          description: entry.description,
-          url: entry.url,
-          breadcrumbs: [contentKinds[entry.kind].plural],
-          structuredData: loaded?.structuredData || {
-            headings: [],
-            contents: entry.blocks
-              .filter(
-                (block) => block.type !== "title" && block.type !== "lead",
-              )
-              .map((block) => ({
-                heading: undefined,
-                content: blockText(block),
-              })),
-          },
-        };
-      }),
-    ),
-});
 export async function loader() {
-  return search.staticGET();
+  const documents = await Promise.all(content.entries.map(async entry => {
+    let body = '';
+    if (entry.kind === 'document') {
+      const page = source.getPage(entry.id.split('/'));
+      if (!page) throw new Error(`Search cannot omit document body: ${entry.id}`);
+      const data = 'load' in page.data ? await page.data.load() : page.data;
+      body = [...data.structuredData.headings.map(item => item.content), ...data.structuredData.contents.map(item => item.content)].join('\n');
+    }
+    const text = [...new Set([entry.title, entry.description, ...entry.blocks.map(blockText), body].filter(Boolean))].join('\n');
+    return { key: entry.key, kind: entry.kind, title: entry.title, url: entry.url, text };
+  }));
+  return Response.json({ version: 2, documents } satisfies SearchIndex);
 }

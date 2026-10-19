@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir, cp, rm } from "node:fs/promises";
+import { readFile, mkdir, rm } from "node:fs/promises";
 import { resolve, relative, dirname } from "node:path";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
@@ -11,8 +11,12 @@ import {
   readDocuments,
   documentLinkResolver,
   assertDocumentHTML,
+  preparedMarkdown,
+  publicSourcePaths,
+  publishablePath,
 } from "./lib/documents.mjs";
 import { loadContent } from "./lib/content.mjs";
+import { writeIfChanged } from './lib/files.mjs';
 
 const docsDir = resolve(root, "docs");
 const contentDir = resolve(root, "website/.content/docs");
@@ -24,19 +28,18 @@ const assetBase = (
 ).replace(/\/+/g, "/");
 const manifest = await readDocuments();
 const rewriteLink = documentLinkResolver(manifest, assetBase);
-await rm(contentDir, { recursive: true, force: true });
-await rm(assetsDir, { recursive: true, force: true });
 await mkdir(contentDir, { recursive: true });
-for (const file of (await walk(docsDir)).filter((file) =>
-  /\.(?:png|jpe?g|gif|webp|svg)$/i.test(file),
-)) {
+const expectedDocs = new Set(manifest.map(page => resolve(contentDir, page.slug + '.md')));
+for (const stale of await walk(contentDir)) if (!expectedDocs.has(stale)) await rm(stale, {force:true});
+const visibleAssets = publicSourcePaths();
+for (const file of (await walk(docsDir)).filter(file => /\.(?:png|jpe?g|gif|webp|svg)$/i.test(file) && publishablePath(relative(root,file),visibleAssets))) {
   const target = resolve(assetsDir, relative(docsDir, file));
   await mkdir(dirname(target), { recursive: true });
-  await cp(file, target);
+  await writeIfChanged(target, await readFile(file));
 }
 for (const page of manifest) {
   const file = resolve(root, page.source);
-  const markdown = (await readFile(file, "utf8")).replace(/^#\s+.+\r?\n/, "");
+  const markdown = preparedMarkdown(await readFile(file, 'utf8'));
   const processor = unified()
     .use(remarkParse)
     .use(remarkGfm)
@@ -50,19 +53,19 @@ for (const page of manifest) {
     .use(remarkStringify, { bullet: "-", fences: true });
   const target = resolve(contentDir, page.slug + ".md");
   await mkdir(dirname(target), { recursive: true });
-  await writeFile(
+  await writeIfChanged(
     target,
     `---\ntitle: ${JSON.stringify(page.title)}\ndescription: ${JSON.stringify(page.description)}\n---\n${String(await processor.process(markdown))}`,
   );
 }
-await writeFile(
+await writeIfChanged(
   resolve(root, "website/.content/manifest.json"),
   JSON.stringify(manifest, null, 2) + "\n",
 );
 const { registry, staticPagePaths } = await loadContent(
   process.env.PAGES_BASE_PATH,
 );
-await writeFile(
+await writeIfChanged(
   resolve(root, "website/.content/routes.json"),
   JSON.stringify(staticPagePaths(registry), null, 2) + "\n",
 );

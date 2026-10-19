@@ -1,14 +1,14 @@
 # Gameplay state, narrative checkpoints and durable effects
 
-Sources checked **2026-10-18**; full reproduction not performed. These complementary investigations separate interpreter state, world state, database transactions, replay reconstruction, physics checkpoints and client observations. They extend [production work orders](production-work-orders.md) with source-backed boundaries and explicitly proposed acceptance fixtures.
+Decide what must survive a save, checkpoint, replay, or retry. The interfaces below separate interpreter state, game-world state, database transactions, physics, and client observations so you can design recovery checks for each.
 
 ## Narrative checkpoints, cancellation and world-effect transactions
 
-Checked **2026-10-18** through public primary documentation and source. No software installed, game/engine run, agreement accepted, save generated or model optimized. This is new source discovery beyond the existing Ink JSON save and external-function summaries. It supplies concrete runtime boundaries, not a working quest adapter or an atomic game-save implementation.
+Keep narrative progress, world state, and external effects distinct when designing a checkpoint. Use the runtime interfaces below to decide where synchronization is needed.
 
 ### Key finding and eligibility gate
 
-A dialogue runtime can persist its variables or interpreter state without persisting the world changes caused by its commands. Stopping dialogue can leave asynchronous game code running. An agent should therefore never translate “dialogue completed,” “variables saved,” or “story reset” directly into “quest transaction committed or rolled back.” The fixture and transaction design below are **GameMap editorial proposals, unimplemented**.
+A dialogue runtime can persist its variables or interpreter state without persisting the world changes caused by its commands. Stopping dialogue can leave asynchronous game code running. An agent should therefore never translate “dialogue completed,” “variables saved,” or “story reset” directly into “quest transaction committed or rolled back.” Use the transaction template below to coordinate these states.
 
 The newly examined Yarn Godot GDScript integration is **Early Access 3.2**, requires the standard **Godot 4.6+** build, and its README advises against shipping yet. The free source is separately available from paid add-ons. Installation docs and README disagree about whether the paid package is currently available, so no purchase or paid-feature availability claim is made. Sources: [installation](https://yarnspinner.dev/docs/godot/gdscript/01-installation/), [official repository](https://github.com/YarnSpinnerTool/YarnSpinner-Godot-GDScript/blob/642e9ad61ff8e7dd01476fd5a89e675d380c3122/README.md).
 
@@ -93,7 +93,7 @@ Fixtures require project-owned observers and declared assertions. No run IDs, me
 
 ## Server-owned gameplay state and transaction boundaries
 
-Sources checked **2026-10-18**; full reproduction not performed. This adds a concrete public backend case to the project-specific quest/reward gap. No server, database, SDK, account, payment or game was installed or operated. Proposed fixtures are **GameMap editorial guidance**, unimplemented and unexecuted.
+For a backend quest or reward, identify the transaction boundary, retry behavior, and durable result before connecting it to narrative progress.
 
 ### Authoritative does not mean automatically persisted or replicated
 
@@ -125,12 +125,12 @@ The inspected source files carry Apache-2.0 notices. That does not grant Enterpr
 
 ### Remaining project obligations
 
-**GameMap editorial guidance:** a future fixture needs stable player/quest/operation identity, schema revision, authority checks, explicit transaction membership, conflict classification, durable reconciliation, notification ownership and recovery after process loss. Use disposable state and preserve expected/observed artifacts. Test old-save migration and duplicate/reordered commands. Narrative cursor restoration, world-object identity and external effects remain separate domains until a project-specific implementation joins them and passes these tests.
+**Fixture template:** include stable player/quest/operation identity, schema revision, authority checks, explicit transaction membership, conflict classification, durable reconciliation, notification ownership and recovery after process loss. Use disposable state and preserve expected/observed artifacts. Test old-save migration and duplicate/reordered commands. Narrative cursor restoration, world-object identity and external effects remain separate domains until a project-specific implementation joins them and passes these tests.
 
 
 ## Unreal replay: reconstruction, checkpoint fidelity and reset boundaries
 
-Checked **2026-10-18**, documentation-only. This extends gameplay-state contracts with a native replay case rather than another SaveGame summary. Only explicitly selected **Unreal Engine 5.6** pages underpin the findings below. No engine installed, project executed, replay recorded, benchmark measured or private Unreal implementation inspected. Documentation is not a source-code pin or runtime lock.
+For **Unreal Engine 5.6**, use the replay interfaces below to distinguish recorded replicated state from a SaveGame checkpoint.
 
 ### Capture scope and compatibility
 
@@ -172,7 +172,7 @@ These fixtures complement the existing narrative-effect and physics/debug-record
 
 ## MuJoCo checkpoint inclusion and reset-observation contracts
 
-Checked 2026-10-18. Source inspection only: no MuJoCo install, simulation, checkpoint round-trip or cross-engine equivalence test. Reviewed release 3.3.7, resolved through GitHub's tag API to commit `f1d45bd5422c74beddfb0d1deb590a02583d21de`. These contracts concern native MuJoCo; do not generalize them to MJX, Unity/Unreal physics or arbitrary converted game models.
+Reference: native **MuJoCo 3.3.7**, commit `f1d45bd5422c74beddfb0d1deb590a02583d21de`. MJX and game-engine physics require separate reset and state checks.
 
 ### Verified API and implementation semantics
 
@@ -202,11 +202,11 @@ Checked 2026-10-18. Source inspection only: no MuJoCo install, simulation, check
 
 ### Choosing a reset boundary for game-production evaluation
 
-**GameMap editorial synthesis, unimplemented:** a native replay, a physics state vector and a narrative/database checkpoint restore different domains. Choose the baseline and reset mechanism before comparing agent edits. Preserve content/build identity, pending-work ownership, callback policy and the observation sequence; use independent state checks before interpreting a rendered frame as a successful reset. A source edit that changes replicated schemas, model topology or application effects may invalidate an old checkpoint even when a loader accepts it. The existing [Jolt and CVD contracts](production-debugging-contracts.md#physics-recording-contact-and-restoration) cover complementary physics recording and rollback limits; none of these mechanisms supplies universal game-state restoration. Actual round-trip fidelity, callback side effects and evaluation variance require a separately authorized disposable runtime fixture.
+A native replay, a physics state vector and a narrative/database checkpoint restore different domains. Choose the baseline and reset mechanism before comparing agent edits. Preserve content/build identity, pending-work ownership, callback policy and the observation sequence; use independent state checks before interpreting a rendered frame as a successful reset. A source edit that changes replicated schemas, model topology or application effects may invalidate an old checkpoint even when a loader accepts it. The existing [Jolt and CVD contracts](production-debugging-contracts.md#physics-recording-contact-and-restoration) cover complementary physics recording and rollback limits; none of these mechanisms supplies universal game-state restoration. Actual round-trip fidelity, callback side effects and evaluation variance require a separately authorized disposable runtime fixture.
 
 ## Stateful interaction discovery and failure reduction
 
-Original documentation review: **2026-10-18**, labelled **Hypothesis 6.170.1**, released 2026-10-16. A **2026-10-19 source follow-up** resolves the official [v6.170.1 release](https://github.com/HypothesisWorks/hypothesis/releases/tag/v6.170.1) to commit `718686d1e392968eb0953c043ef249c5d9d11a59` and inspects the [state-machine implementation](https://github.com/HypothesisWorks/hypothesis/blob/718686d1e392968eb0953c043ef249c5d9d11a59/hypothesis/src/hypothesis/stateful.py). Other linked documentation remains rolling; this pin identifies source evidence, not an installed package or engine environment. This extends reset/replay contracts with action-sequence discovery and reduction. No package, generator, test, game or model was installed or executed. Proposed fixtures and accounting gates are **GameMap editorial guidance**.
+Use stateful testing to discover and reduce action sequences that break an invariant. References below target the [Hypothesis 6.170.1 release](https://github.com/HypothesisWorks/hypothesis/releases/tag/v6.170.1) and [state-machine implementation](https://github.com/HypothesisWorks/hypothesis/blob/718686d1e392968eb0953c043ef249c5d9d11a59/hypothesis/src/hypothesis/stateful.py) at commit `718686d1e392968eb0953c043ef249c5d9d11a59`; see the [changelog](https://hypothesis.readthedocs.io/en/latest/changelog.html) for version changes.
 
 ### What the official evidence establishes
 

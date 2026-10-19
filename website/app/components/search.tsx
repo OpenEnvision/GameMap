@@ -1,4 +1,7 @@
-import { useStaticSearch } from "fumadocs-core/search/client";
+import { experimental_useSearch as useSearch } from 'fumadocs-core/search/client';
+import { dialogSearch } from '../lib/content-search';
+import { useI18n } from 'fumadocs-ui/contexts/i18n';
+import { docMessages } from '../../content/doc-language';
 import {
   SearchDialog,
   SearchDialogClose,
@@ -12,16 +15,15 @@ import {
 } from "fumadocs-ui/components/dialog/search";
 
 export default function AtlasSearch(props: SharedProps) {
-  const search = useStaticSearch({
-    from: `${import.meta.env.BASE_URL}search-index.json`,
-  });
+  const search = useSearch(dialogSearch);
+  const {locale}=useI18n();
   return (
     <SearchDialog {...search} {...props}>
       <SearchDialogOverlay />
       <SearchDialogContent>
         <SearchDialogHeader>
           <SearchDialogIcon />
-          <SearchDialogInput placeholder="Search every resource, game, guide, and checkpoint…" />
+          <SearchDialogInput placeholder={docMessages(locale==='zh'?'zh':'en').searchPlaceholder} />
           <SearchDialogClose />
         </SearchDialogHeader>
         <SearchDialogList />

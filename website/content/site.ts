@@ -7,7 +7,7 @@ export const pages = {
     path: "/explore/",
     module: "routes/explore.tsx",
     title: "All content",
-    nav: "primary",
+    nav: "secondary",
   },
   resources: {
     path: "/resources/",
@@ -51,6 +51,7 @@ export const pages = {
     title: "Testing library",
     nav: "secondary",
   },
+  docsZh: { path:'/docs/zh/', module:'routes/docs-index.tsx', title:'Chinese documentation', nav:'hidden' },
   docs: {
     path: "/docs/",
     module: "routes/docs-index.tsx",
@@ -59,8 +60,6 @@ export const pages = {
   },
 } as const;
 export type PageId = keyof typeof pages;
-/** Fumadocs appends -N to chunk IDs. A terminal / keeps page IDs out of that namespace. */
-export const searchId = (key: string) => `content:${encodeURIComponent(key)}/`;
 export const detailRoutes = [
   {
     id: "resource-detail",

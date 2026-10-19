@@ -1,10 +1,8 @@
 # Cadle-like repository research import
 
-Reviewed **2026-10-18**. Sources checked; full reproduction not performed.
+Find projects for game generation, agents, scene editing, and evaluation. The table tracks repository names, available source, licensing, and related coverage.
 
-This import preserves **212 indexed candidates plus one separate Cadle reference** from the [requested research corpus](https://github.com/OpenEnvision/WorldEngine/blob/305e5139425ed1de26eb25c3ca9a200813501979/docs/research/cadle-like-repositories.md), originally compiled 2026-08-30. The original ranking, feature counts and AI claims are historical discovery context, not current validation. Every indexed repository remains below, including unavailable URLs, forks, redirects and restricted-license examples.
-
-The [machine-readable ledger](../website/public/cadle-repositories.json) preserves the original group membership, requested and current repository identities, evidence links, review scope and disposition. These are research records, not automatically additional resource-directory cards or verified playable cases. No project was installed, built, played or benchmarked.
+Imported from the [Cadle repository corpus](https://github.com/OpenEnvision/WorldEngine/blob/305e5139425ed1de26eb25c3ca9a200813501979/docs/research/cadle-like-repositories.md). For original group membership, historical rankings, and source revisions, use the [machine-readable ledger](../website/public/repository-research.json).
 
 ## Reading the status
 
@@ -13,7 +11,7 @@ The [machine-readable ledger](../website/public/cadle-repositories.json) preserv
 - **qualified**: useful source material with material scope, maturity, licensing, identity or access qualifications
 - **unavailable**: the requested location could not be inspected; this does not prove deletion or global inaccessibility
 
-Disposition totals across all 213 rows: new-research: 112; qualified: 85; unavailable: 8; existing: 8. Source review can mean README/documentation inspection or metadata only, as explicitly recorded. Repository license labels never establish all asset, dependency, trademark, hosted-service or third-party rights. Many README URLs are rolling branch links; recorded README blob IDs identify inspected file content, not a fully pinned repository release or installed version.
+Check code, asset, and service terms separately before adapting a project. For changing repositories, use the recorded README revision to identify the inspected material.
 
 ## Highest-value corrections
 
@@ -291,4 +289,4 @@ Disposition totals across all 213 rows: new-research: 112; qualified: 85; unavai
 
 ## Practical use and remaining evidence
 
-**GameMap editorial guidance:** use the source and identity ledger to choose projects for a declared task, then separately establish a reproducible build, asset rights, browser/engine requirements, state reset and a task-specific functional/visual acceptance fixture. Author-described deterministic simulation, screenshots, gates or passing tests do not independently establish determinism, visual quality or benchmark validity. Unavailable sources remain candidates for later rechecking; no replacement repository is silently treated as an authenticated redirect.
+Use the source and identity ledger to choose projects for a declared task, then separately establish a reproducible build, asset rights, browser/engine requirements, state reset and a task-specific functional/visual acceptance fixture. Author-described deterministic simulation, screenshots, gates or passing tests do not independently establish determinism, visual quality or benchmark validity. Unavailable sources remain candidates for later rechecking; no replacement repository is silently treated as an authenticated redirect.

@@ -181,17 +181,17 @@ svg {
 .atlas-brand {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  font-size: 23px;
-  font-weight: 720;
-  letter-spacing: -0.055em;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.045em;
   color: var(--ink);
   white-space: nowrap;
 }
 .atlas-brand img {
   object-fit: contain;
 }
-.brand-period {
+.hero-copy .brand-period {
   color: var(--accent);
 }
 .desktop-navigation {
@@ -266,8 +266,7 @@ kbd {
 .github-link:hover {
   color: var(--accent);
 }
-.mobile-navigation-button,
-.mobile-navigation {
+.mobile-navigation-button {
   display: none;
 }
 .site-main {
@@ -1364,66 +1363,10 @@ kbd {
 .resource-dialog .resource-affiliation {
   font-size: 12px;
 }
-.detail-summary {
-  color: var(--body);
-  font-size: 15px;
-  line-height: 1.8;
-  margin: 18px 0;
-}
 .detail-actions {
   display: flex;
   gap: 10px;
   margin: 22px 0 27px;
-}
-.detail-section {
-  border-top: 1px solid var(--border);
-  padding: 20px 0;
-}
-.detail-section h3 {
-  font-size: 13px;
-  font-weight: 620;
-  margin-bottom: 12px;
-}
-.detail-section > p,
-.access-list p {
-  font-size: 13px;
-  line-height: 1.9;
-  color: var(--body);
-}
-.access-list {
-  display: grid;
-  gap: 17px;
-}
-.access-list .small-label {
-  font-size: 9px;
-  margin-bottom: 5px;
-}
-.access-list a,
-.access-list strong {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 550;
-}
-.access-list p {
-  margin-top: 6px;
-}
-.detail-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 12px;
-}
-.detail-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-}
-.detail-links a:hover,
-.access-list a:hover {
-  color: var(--accent);
 }
 .detail-footer {
   display: flex;
@@ -1785,20 +1728,6 @@ kbd {
     height: 44px;
     justify-content: center;
   }
-  .mobile-navigation {
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid var(--border);
-    padding: 8px 20px 16px;
-  }
-  .mobile-navigation a {
-    padding: 13px 0;
-    font-size: 14px;
-    border-bottom: 1px solid var(--border);
-  }
-  .mobile-navigation a.active {
-    color: var(--accent);
-  }
   .site-main {
     width: calc(100% - 40px);
   }
@@ -2090,13 +2019,6 @@ kbd {
   }
   .resource-dialog h2 {
     font-size: 29px;
-  }
-  .detail-summary {
-    font-size: 14px;
-  }
-  .detail-section > p,
-  .access-list p {
-    font-size: 13px;
   }
   .detail-footer {
     font-size: 9px;

@@ -1,10 +1,10 @@
 # Production coverage and remaining work
 
-Baseline reviewed **2026-10-18**; operational routes updated **2026-10-19** from the separately dated dossiers. This is a qualitative gap map, not a completeness percentage. A cited tool is not an implemented capability, and multiple tags on one resource do not create multiple independently verified integrations.
+Use this map to move from a production stage to its interface documentation, expected artifacts, and acceptance checks. The final column identifies the next problem to solve.
 
 ## Production-stage coverage
 
-Start with the linked native interface or artifact contract, then follow the proposed work order or validation gate. Each destination retains its source version, failure signals and unknowns. These routes identify documented upstream surfaces, not installed or verified GameMap adapters.
+Start with the native interface or artifact contract, then use its work-order template to plan implementation and validation.
 
 | Stage | Available research | Substantive unresolved acceptance problem |
 | --- | --- | --- |
@@ -47,7 +47,7 @@ For a version-scoped build/delivery example, [Godot 4.4 pack activation](product
 
 ## From collected sources to an executable research system
 
-The following are **GameMap editorial guidance** and remain implementation work:
+Next implementation tasks:
 
 1. Keep resource discovery, normalized operation contracts, local adapters and runtime verification as separate states.
 2. Resolve a work order against a real environment: software/plugin versions, mode, hardware, graphics, authentication, license, budget and filesystem permissions.

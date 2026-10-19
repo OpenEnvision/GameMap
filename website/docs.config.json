@@ -70,10 +70,17 @@
       ["media-sources", "Media sources"],
       ["icon-sources", "Logo sources"],
       ["deployment", "Development & deployment"],
-      ["content-model", "Content model & coverage"],
-      ["editorial-art-prompts", "Editorial artwork"],
-      ["design/design-system", "Design archive"],
-      ["design/v2/design-system", "Design archive / v2"]
+      ["content-model", "Content model & coverage"]
     ]
+  },
+  {
+    "title": "Skills & practice",
+    "description": "Practical skill packages, templates, and their source boundaries.",
+    "pages": [["level-design-skill", "Level design guide"], ["skills/level-design/SKILL", "Level design skill"], ["skills/level-design/LICENSE", "Skill attribution & license"]]
+  },
+  {
+    "title": "中文指南",
+    "description": "面向实际开发的中文入门与主题导读。",
+    "pages": [["zh/reading-guide", "怎样使用资料库"], ["zh/practical-guide", "从想法到可玩的游戏"], ["zh/level-design-skill", "关卡设计 Skill"], ["zh/deployment", "本地运行与部署"]]
   }
 ]

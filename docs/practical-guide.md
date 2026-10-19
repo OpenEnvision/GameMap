@@ -1,12 +1,12 @@
 # From Resource Map to Runnable Game
 
-This page contains **GameMap editorial recommendations** for turning research, tools, and engine references into an executable workflow. It does not promise any agent's success rate. Sources were reviewed through **2026-10-18**; that date records source review, not installation, training, or complete reproduction of every project. No automatic collection or recurring updates are scheduled.
+Start with a small playable loop. Choose the target platform, set a concrete task for the agent, and check the result in the running game before expanding the project.
 
 ## Define the deliverable before choosing tools
 
 Specify the target platform, player actions, core loop, win/loss conditions, art direction, target hardware, and delivery format. A shippable game project, an action-controlled video experience, an importable scene asset, and a simulator for planning or training need different world representations and acceptance methods.
 
-The selection guidance below reflects GameMap's editorial judgment, not a performance or cost ranking. Existing team experience, working templates, and the target platform often matter more to an initial release than demo visuals.
+Choose around your team's experience, working templates, and target platform. Start with a project you can already run.
 
 | Tool | Official scope and boundaries | A suitable starting task |
 | --- | --- | --- |
@@ -33,7 +33,7 @@ The selection guidance below reflects GameMap's editorial judgment, not a perfor
 4. **Scene:** check spawn points, camera obstruction, navigation, lighting, occlusion culling, and asset loading. Replace the graybox after these checks so visual changes do not also alter gameplay decisions.
 5. **Test and ship:** collect frame-time and loading measurements on target hardware. Check asset reimport and clean-environment builds to confirm the editor demo can become a distributable result.
 
-These steps are GameMap engineering recommendations. They do not require one agent to fill every role. Coding agents, asset tools, and playtesting agents should share files and task contracts.
+Give coding agents, asset tools, and playtesting agents shared files and task contracts so each can work on a specific part of the project.
 
 ## Write a task contract for the agent
 
@@ -59,7 +59,7 @@ Asset tasks need the same clarity: "Deliver an eight-frame run animation as tran
 | Playability | A human or agent reaches the objective, recording blockers, failures, and completion routes | Performance on untested devices |
 | Runtime performance | Frame times, loading, and memory on specified devices, resolutions, and scenes | Passing performance on every device |
 
-These are GameMap editorial recommendations. Set budgets per project, report averages and stutter distributions, and avoid showing only the best frame. Browser 3D also needs a distinction between CSS size and drawing-buffer resolution: increasing pixel ratio without a budget increases rendering load. [Three.js responsive rendering](https://threejs.org/manual/pages/responsive.html)
+Set budgets per project, report averages and stutter distributions, and avoid showing only the best frame. Browser 3D also needs a distinction between CSS size and drawing-buffer resolution: increasing pixel ratio without a budget increases rendering load. [Three.js responsive rendering](https://threejs.org/manual/pages/responsive.html)
 
 ## Where world models fit
 

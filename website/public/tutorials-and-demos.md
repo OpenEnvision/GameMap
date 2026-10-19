@@ -1,16 +1,8 @@
-# Real AI game builds: workflows, playable demos, and complete source
+# AI game builds
 
-Primary sources reviewed on 2026-10-18. Featured cases require a creator-provided record of AI involvement, a playable or locally runnable game, and the actual game project. AI contribution is attributed to those records; it is not an independently measured percentage. Study steps are GameMap editorial guidance.
+Play a project, read its creator's build notes, and inspect the game source. Each entry includes a workflow to study and the setup needed to run it.
 
-44 reviewed cases: **28 2D** and **16 3D**; 37 browser links and 7 local downloads.
-
-## Search scope and selection
-
-Discovery covered public GitHub projects, creator sites, itch.io and game-jam pages, Hacker News and Reddit posts, and English, Chinese, and Japanese search terms for AI-built 2D/3D games, Claude Code, Codex, Cursor, Gemini, DeepSeek, and Copilot. Community lists are discovery leads; each counted case links primary author evidence and its actual game source.
-
-A README AI disclosure is labeled separately from a prompt, transcript, development log, or tutorial. Some entries are prototypes. A collection is counted as one case unless its individual games have separately reviewed gameplay and source. Browser access is checked where practical; download entries state their setup requirements, and known unavailable hosts are disclosed. Screenshots identify GameMap captures or creator-published gameplay, with provenance in the media guide. This is a growing reviewed collection, not an exhaustive inventory of every community game or a claim that all games were fully reproduced.
-
-## AI-built games
+## Games and source
 
 | Game | Dimension | AI production record | Play or run | Complete game source |
 | --- | --- | --- | --- | --- |
@@ -945,8 +937,14 @@ Adds conversational NPCs with speech, memory, emotion, and in-scene actions.
 - **Demo (interactive):** [Try character experiences](https://x.convai.com/). Account-required browser character experiences; these are conversations and role-play, not complete game-generation demos.
 - **Source (sdk):** [Unreal engine SDK source](https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4). Public engine integration source; the complete cloud conversation service is not included.
 
+### Level Design Book · unofficial design skill
+
+An unofficial, agent-neutral adaptation of The Level Design Book for level briefs, blockouts, encounters, wayfinding, and evidence-based playtest reviews.
+
+- **Tutorial (tutorial):** [Read the original book](https://book.leveldesignbook.com/). The underlying book remains authoritative. The skill reorganizes guidance and templates rather than claiming universal design laws or independently measured outcomes.
+- **Demo (unavailable):** Instructions and templates, not a runnable demo. No engine plugin, executable level, benchmark result, or validated playtest is supplied.
+- **Source (full-source):** [Complete skill package and license](https://github.com/OpenEnvision/GameMap/tree/main/docs/skills/level-design). Text-only package with SKILL.md, LICENSE.md, references, and templates. CC BY-NC-SA 4.0 applies to this adaptation directory, not the whole repository; commercial distribution requires appropriate permission.
+
 ## Additional asset-to-game workflow
 
 The [Tripo Vibe Gaming Interactive Playbook](https://github.com/TripoGrowthLab/vibe-gaming-interactive-playbook) publishes a staged AI coding and generated-model workflow with playable 3D examples. Its public game code runs with greybox objects because the Tripo model files are not bundled. It is useful production guidance, but is not counted among the featured complete game-and-asset projects above.
-
-Source review and browser smoke testing do not establish full reproduction, complete gameplay coverage, or the availability of every third-party service.

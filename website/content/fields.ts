@@ -4,11 +4,14 @@ import type {
   FieldRules,
   ContentModels,
   Fact,
+  ContentSection,
 } from "./models";
 import type { ResourceAccess } from "../src/types";
 import { categories, stageLabels, typeLabels } from "../src/types";
 import { url } from "./site";
-import repositoryResearch from "../../data/research/cadle-repositories.json";
+import { docLocale, docMessages } from './doc-language';
+import taxonomy from './taxonomy.json';
+import repositoryResearch from "../../data/segments/repository-research.json";
 import { agentLabels, agentResourceKinds } from "../src/data/agentGameTypes";
 import {
   testingKinds,
@@ -51,7 +54,7 @@ export function presentFields<T extends object>(
       throw new Error(
         `${context}.${String(key)} has content but no presentation`,
       );
-    blocks.push(...shown.map((block) => ({ ...block, field: String(key) })));
+    blocks.push(...shown.map(block => ({ ...block, field: String(key), section: rule.section })));
   }
   return blocks;
 }
@@ -73,12 +76,14 @@ const lead = {
     { type: "lead", value: scalar(value) },
   ],
 };
-const text = (label: string) => ({
+const text = (label: string, section: ContentSection = 'guidance') => ({
+  section,
   present: (value: unknown): BlockValue[] => [
     { type: "text", label, value: scalar(value) },
   ],
 });
-const mapped = (label: string, labels: Record<string, string>) => ({
+const mapped = (label: string, labels: Record<string, string>, section: ContentSection = 'metadata') => ({
+  section,
   present: (value: unknown): BlockValue[] => {
     const name = labels[scalar(value)];
     if (!name) throw new Error(`Unknown ${label}: ${String(value)}`);
@@ -116,7 +121,7 @@ const link = (label: string) => ({
     { type: "links", label, items: [{ label, url: scalar(value) }] },
   ],
 });
-const dimensions = { "2d": "2D", "3d": "3D", world: "World models" };
+const dimensions = taxonomy.dimensions;
 const categoryLabels = Object.fromEntries(
   categories.map((category) => [category.id, category.label]),
 );
@@ -212,8 +217,8 @@ export const resourceFields: FieldRules<ContentModels["resource"]> = {
   tags: list("Topics"),
   stages: labeledList("Development stages", stageLabels),
   dimensions: labeledList("Tracks", dimensions),
-  year: text("Year"),
-  verified: text("Source reviewed"),
+  year: text('Year', 'metadata'),
+  verified: text('Source reviewed', 'metadata'),
   access: {
     present: (value) => {
       if (!value) return [];
@@ -238,7 +243,7 @@ export const exampleFields: FieldRules<ContentModels["example"]> = {
     "ai-generated": "AI-generated (creator attribution)",
     "ai-assisted": "AI-assisted (creator attribution)",
     foundation: "Human-authored engine foundation — not an AI-created game",
-  }),
+  }, 'provenance'),
   aiUse: text("AI workflow / foundation context"),
   steps: list("Study this workflow", true),
   tutorial: {
@@ -264,10 +269,11 @@ export const exampleFields: FieldRules<ContentModels["example"]> = {
   },
 };
 export const agentFields: FieldRules<ContentModels["agent"]> = {
+  catalogResourceId: { present: value => value ? [{type:'links',label:'Catalog entity',items:[{label:'Related resource record',url:url.resource(value)}]}] : [] },
   id: skip("Stable identity is included in the content key and canonical URL."),
   title,
   summary: lead,
-  kind: mapped("Toolkit category", agentResourceKinds),
+  kind: mapped('Toolkit category',agentResourceKinds,'guidance'),
   agents: labeledList("Attributed clients / models", agentLabels),
   engine: text("Engine / runtime"),
   sourceUrl: link("Primary source"),
@@ -292,7 +298,7 @@ export const agentFields: FieldRules<ContentModels["agent"]> = {
       },
     ],
   },
-  reviewed: text("Source reviewed"),
+  reviewed: text('Source reviewed', 'metadata'),
 };
 export const testingFields: FieldRules<ContentModels["testing"]> = {
   id: skip("Stable identity is included in the content key and canonical URL."),
@@ -313,14 +319,14 @@ export const testingFields: FieldRules<ContentModels["testing"]> = {
   },
   codeLicense: text("Code license"),
   assetLicense: text("Asset license"),
-  terms: mapped("Terms category", testingTerms),
+  terms: mapped('Terms category',testingTerms,'provenance'),
   licenseUrl: link("Read the terms"),
   evidence: { present: (value) => linkedObjects("Supporting evidence", value) },
   aiUseNote: text("AI use and evaluation boundary"),
   testTasks: list("Try these tasks"),
   setup: list("Setup", true),
   limitations: text("Limitations"),
-  reviewed: text("Source reviewed"),
+  reviewed: text('Source reviewed', 'metadata'),
 };
 export const testingPackFields: FieldRules<ContentModels["testing-pack"]> = {
   id: skip("Stable identity is the canonical testing-page anchor."),
@@ -353,6 +359,7 @@ export const collectionFields: FieldRules<ContentModels["collection"]> = {
   url: link("Browse collection"),
 };
 export const demoFields: FieldRules<ContentModels["demo"]> = {
+  recordingId: skip('Validated original-media identity used to group renditions; canonical presentation URLs remain distinct.'),
   id: skip("Stable identity is included in the content key and canonical URL."),
   title,
   description: lead,
@@ -369,7 +376,7 @@ export const demoFields: FieldRules<ContentModels["demo"]> = {
   role: mapped("Recording type", {
     excerpt: "Curated preview excerpt",
     "source-recording": "Original project recording",
-  }),
+  }, 'provenance'),
   alt: text("Preview description"),
   previewSrc: {
     present: (value, record) => [
@@ -396,8 +403,9 @@ export const demoFields: FieldRules<ContentModels["demo"]> = {
   alternatePreviewUrl: link("Alternate creator preview"),
   prompt: text("Creator prompt"),
 };
-const nullableText = (label: string) => ({
-  includeNull: true,
+const nullableText = (label: string, section: ContentSection = 'metadata', includeNull = false) => ({
+  section,
+  includeNull,
   present: (value: unknown): BlockValue[] => [
     {
       type: "text",
@@ -432,12 +440,10 @@ function objectFacts(
   context: string,
 ): Fact[] {
   assertKeys(value, labels, context);
-  return Object.entries(value).map(([key, value]) =>
-    factValue(labels[key], value),
-  );
+  return Object.entries(value).filter(([,value])=>value !== null && value !== undefined && (!Array.isArray(value)||value.length)).map(([key,value])=>factValue(labels[key],value));
 }
 const factObject = (label: string, labels: Record<string, string>) => ({
-  includeNull: true,
+  includeNull: false,
   present: (value: unknown): BlockValue[] =>
     value === null || typeof value !== "object"
       ? nullableText(label).present(value)
@@ -517,21 +523,21 @@ export const repositoryResearchFields: FieldRules<
 > = {
   requested_repo: title,
   summary: lead,
-  metadata_scope: nullableText("Identity and metadata scope"),
+  metadata_scope: nullableText('Identity and metadata scope','provenance'),
   review_status: mapped("Review scope", {
     "source-reviewed": "Source inspected — not executed",
     "metadata-only": "Metadata only",
     unavailable: "Requested source unavailable to this review",
-  }),
+  }, 'provenance'),
   inspection_scope: text("Inspection performed"),
   execution_validation: mapped("Execution validation", {
     not_run: "Not run — read-only source inspection",
-  }),
+  }, 'provenance'),
   disposition: text(
     "Research disposition (not resource or playable-case status)",
   ),
   availability: text("Recorded availability"),
-  canonical_repo: nullableText("Current identity recorded in the ledger"),
+  canonical_repo: nullableText('Current identity recorded in the ledger','provenance',true),
   group: mapped(
     "Original discovery group (not a capability or authorship claim)",
     repositoryResearch.group_titles,
@@ -539,7 +545,7 @@ export const repositoryResearchFields: FieldRules<
   license_note: text("License and rights boundary"),
   ai_note: text("AI attribution boundary"),
   limitations: list("Qualifications and limitations"),
-  checked_at: text("Source checked"),
+  checked_at: text('Source checked','metadata'),
   source_urls: {
     present: (
       value: ContentModels["repository-research"]["source_urls"],
@@ -554,14 +560,11 @@ export const repositoryResearchFields: FieldRules<
       },
     ],
   },
-  revision: factObject(
-    "Inspected revision — not an installed release",
-    revisionLabels,
-  ),
+  revision: {...factObject('Inspected revision — not an installed release',revisionLabels),section:'metadata'},
   readme_blob_sha: nullableText(
     "Inspected README blob SHA — not a repository release pin",
   ),
-  maintainer: factObject("Recorded maintainer / account", maintainerLabels),
+  maintainer: {...factObject('Recorded maintainer / account',maintainerLabels),section:'metadata'},
   owner_type: nullableText("Recorded owner type"),
   archived: nullableText("Recorded archived flag"),
   is_fork: nullableText("Recorded fork flag"),
@@ -632,13 +635,13 @@ export const documentFields: FieldRules<ContentModels["document"]> = {
   label: skip("Rendered in the registry-generated document navigation."),
   group: skip("Rendered in the registry-generated document navigation."),
   source: {
-    present: (value) => [
+    present: (value,record) => [
       {
         type: "links",
         label: "Markdown source",
         items: [
           {
-            label: "View Markdown source",
+            label: docMessages(docLocale(record.slug)).source,
             url: `https://github.com/OpenEnvision/GameMap/blob/main/${value}`,
           },
         ],

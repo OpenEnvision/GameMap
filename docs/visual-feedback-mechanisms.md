@@ -1,8 +1,6 @@
 # Visual-feedback mechanisms for game-creation harnesses
 
-Sources checked **2026-10-18**. Sources checked; full reproduction not performed. No model, engine, benchmark, generated-asset service or credentialed evaluator was executed.
-
-This dossier extends the [visual evidence inventory](visual-evidence-research.md) with concrete information-selection and feedback mechanisms. It distinguishes game-creation studies, gameplay-video QA, scene-generation systems and transferable general-vision methods. A mechanism that helps answer a video question does not thereby improve a game creator. Source-code inspection establishes implementation behavior, not a reproduced outcome.
+Choose what an agent should inspect, how it should summarize observations, and which changes should trigger another check. The methods below cover game creation, gameplay-video QA, scene generation, and general visual feedback.
 
 ## Choose the intervention before choosing the score
 
@@ -13,8 +11,6 @@ This dossier extends the [visual evidence inventory](visual-evidence-research.md
 | What can fit in context? | Hierarchical selection, learned token compression, compact investigation memory | Omitted evidence versus absence of a defect; black-box context policy versus changed model internals |
 | Is a strange motion actually a defect? | Game-aware context, alternative-explanation debate, temporal grouping | Inferred rules versus project specifications; model confidence versus calibrated accuracy |
 | Which generated asset should be kept? | Retrieval ranking, first-acceptable validation, iterative scene criticism | Appearance versus geometry/material/runtime validity; more candidates versus a better selector |
-
-The sections below retain source-specific availability and limitations. Proposed comparisons are **GameMap editorial guidance**, not published findings or implemented tests.
 
 ## 1. A2Z GameSpec-Bench: trace-guided frame retrieval
 
@@ -174,7 +170,7 @@ Commit resolution: VideoTree `605ec8e917f9a0f95d37a73a0b50bf0e8cfe076e`; V* `4ed
 - **Evaluator discrepancy and denominators:** The paper assigns pairs using semantic score multiplied by temporal IoU; the pinned [evaluator.py](https://github.com/SandyyyZheng/GliDe/blob/0626688f2b2eab5414d8f8e28e682cfaf607c0ab/evaluation/evaluator.py) assigns using semantic score alone, then computes overlap. Its description precision/recall sum matched 0–5 judge scores and divide by `5 × predicted/ground-truth bug count`; this is soft description credit, not thresholded true-positive counting. The paper's printed equations omit that factor of five. Mean IoU averages matched pairs only; unmatched events do not enter that mean, and correct no-bug videos do not increase the description numerator. The dataset loop uses only shared ground-truth/prediction names, so missing predictions are excluded. Description-scoring errors can become zero scores. Matching, normalization, missing-output policy and judge failures must be reconciled before calling a run a paper reproduction.
 - **Release and terms:** Pipeline and evaluator files are public; [code license](https://github.com/SandyyyZheng/GliDe/blob/0626688f2b2eab5414d8f8e28e682cfaf607c0ab/LICENSE) is MIT. The [dataset card](https://huggingface.co/datasets/SandyZheng33/VideoGlitchBench) declares Apache-2.0, 4,717 glitch clips and 521 negative clips, with annotations and game-organized video files. Its viewer's split label is `train`; that does not establish a held-out optimization protocol. Underlying game/video rights and model dependencies still need separate review. No data archive, model or service was run.
 
-**GameMap editorial guidance:** compare uniform-window screening, game-context only, debate only and temporal grouping under both equal call/token budgets and reported wall time. Measure candidate-window recall before downstream analysis; include rare brief failures and legitimate stylized movement. Freeze a complete expected-episode manifest, count absent/error outputs separately, preserve report-to-frame references and state whether matching follows paper or code. Compare compressed judge summaries against raw evidence under the same context budget; keep authoritative project rules separate from model-inferred memory. None of these ablations is implemented here.
+**Comparison template:** compare uniform-window screening, game-context only, debate only and temporal grouping under both equal call/token budgets and reported wall time. Measure candidate-window recall before downstream analysis; include rare brief failures and legitimate stylized movement. Freeze a complete expected-episode manifest, count absent/error outputs separately, preserve report-to-frame references and state whether matching follows paper or code. Compare compressed judge summaries against raw evidence under the same context budget; keep authoritative project rules separate from model-inferred memory. None of these ablations is implemented here.
 
 ## Visual QA tasks as observation checks: VideoGameQA-Bench
 
@@ -182,7 +178,7 @@ The [official project](https://asgaardlab.github.io/videogameqa-bench/) separate
 
 The [artifact page](https://asgaardlab.github.io/videogameqa-bench/artifacts.html) exposes per-model results, error counts and differing evaluated sample totals. The [public dataset card](https://huggingface.co/datasets/taesiri/VideoGameQA-Bench) declares CC-BY-4.0. Those are available evaluation materials; a complete runnable evaluator was not established in this inspection. Retain the exact task version, answer schema, timestamp units, error denominator and source-media rights before reuse.
 
-**GameMap editorial guidance:** use original project-owned controlled scenes to test whether crops, image pairs or temporal packets actually preserve a small prop, HUD value, contact transition or brief anomaly. Score evidence selection separately from the final diagnosis and from the agent's repair. A better-written bug report alone is not a more accurate detector.
+Use original project-owned controlled scenes to test whether crops, image pairs or temporal packets actually preserve a small prop, HUD value, contact transition or brief anomaly. Score evidence selection separately from the final diagnosis and from the agent's repair. A better-written bug report alone is not a more accurate detector.
 
 
 ## Asset feedback and candidate choice
@@ -191,7 +187,7 @@ See [Asset selection and visual-feedback creation](asset-selection-feedback.md) 
 
 ## Proposed controlled harness search
 
-**GameMap editorial guidance.** Treat evidence acquisition as an explicit candidate component alongside the action/tool policy. Keep the game project, model, permissions and task set fixed unless the experiment is expressly about changing them.
+Treat evidence acquisition as an explicit candidate component alongside the action/tool policy. Keep the game project, model, permissions and task set fixed unless the experiment is expressly about changing them.
 
 1. **Observation packet.** Retain original video/images and build ID; record source timestamps or simulation ticks, camera/viewport, crop-to-original mapping, selection query, model-derived masks/labels, selected and rejected candidate IDs, and omitted-frame ranges. A compact packet should point back to original evidence rather than replacing it.
 2. **Matched baselines.** Compare uniform time samples, event-triggered samples and query-adaptive samples at equal frame/pixel budgets; compare full frames versus crop-plus-global-context at equal visual-token budgets. Report selector calls, preprocessing, generation attempts, latency and failures as well as final-model tokens. For learned compression, report the changed checkpoint/architecture separately from prompt/tool-only harness changes.
