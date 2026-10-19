@@ -44,7 +44,7 @@
     "category": "engines",
     "type": "docs",
     "summary": "Godot's official CLI reference for headless operation, script checks, asset import, execution, and export.",
-    "detail": "Lets coding agents launch projects, read logs, parse scripts, and export builds through commands, reducing GUI dependence. The --check-only flag parses a script supplied with --script; it does not execute gameplay tests. Supported flags vary by build type, and headless runs cannot replace real rendering and input tests.",
+    "detail": "Lets coding agents launch projects, read logs, parse scripts, and export builds through commands, reducing GUI dependence. The --check-only flag parses a script supplied with --script; it does not execute gameplay tests. Supported flags vary by build type, and unknown flags are silently ignored; check the selected binary's --help. Headless runs cannot replace real rendering and input tests.",
     "url": "https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html",
     "tags": [
       "Godot",
@@ -62,7 +62,7 @@
       "2d",
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "godot-demo-projects",
@@ -629,12 +629,16 @@
     "category": "engines",
     "type": "tool",
     "summary": "Khronos's official Blender glTF 2.0 importer and exporter source, including validation and roundtrip tests.",
-    "detail": "Connects Blender asset production to game runtimes and helps diagnose material, mesh, and animation conversion issues. Repository CI validates exports and compares import / export roundtrips. A valid file can still render differently in the target engine, so verify runtime imports.",
+    "detail": "Connects Blender asset production to game runtimes and helps diagnose material, mesh, and animation conversion issues. Match the addon's release branch to the Blender version; main can target an upcoming Blender release. Repository CI validates exports and compares import / export roundtrips. A valid file can still render differently in the target engine, so verify runtime imports.",
     "url": "https://github.com/KhronosGroup/glTF-Blender-IO",
     "links": [
       {
         "label": "Technical notes",
         "url": "https://github.com/KhronosGroup/glTF-Blender-IO/blob/main/Technical.md"
+      },
+      {
+        "label": "GameMap: asset validity and runtime fidelity",
+        "url": "https://github.com/OpenEnvision/GameMap/blob/main/docs/asset-validation-contracts.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity"
       }
     ],
     "tags": [
@@ -653,7 +657,7 @@
     "dimensions": [
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "phaser",

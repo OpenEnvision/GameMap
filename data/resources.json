@@ -269,12 +269,16 @@
     "category": "agents",
     "type": "framework",
     "summary": "A programmable development framework for agents, tools, conversations, workspaces, and server interfaces.",
-    "detail": "Useful for game development experiments: wrap builds, scene inspections, and tests as tools for a coding agent, and record execution in local or container workspaces. The SDK supports custom workflows and tools; it does not include a semantic layer for every game engine.",
+    "detail": "Useful for wrapping builds, scene inspections, and tests as agent tools. The Python SDK supports local and remote workspaces; the checked TypeScript client is alpha and supports remote conversations through Agent Server only. Pin client/server versions rather than assuming interface parity. Game-specific tools and acceptance checks still need to be supplied.",
     "url": "https://github.com/OpenHands/software-agent-sdk",
     "links": [
       {
         "label": "SDK documentation",
         "url": "https://docs.openhands.dev/sdk"
+      },
+      {
+        "label": "TypeScript client scope and stability",
+        "url": "https://github.com/OpenHands/software-agent-sdk/blob/3f3294581ebf40f3bbe5b96aec1d28b7fec96226/clients/typescript/README.md#L1-L19"
       }
     ],
     "tags": [
@@ -294,7 +298,7 @@
       "3d",
       "world"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "claude-agent-sdk",
@@ -445,12 +449,16 @@
     "category": "agents",
     "type": "tool",
     "summary": "A community MCP bridge connecting general-purpose coding agents to the Unity Editor.",
-    "detail": "Exposes editor operations for scenes, GameObjects, C# scripts, assets, and tests. The checked v10 installation documentation lists Unity 2021.3 LTS through Unity 6.x, plus Python 3.10+ and uv. These are declared requirements, not versions tested here. The project is independent of Unity Technologies; pin bridge/editor versions and validate compilation, screenshots, and PlayMode tests.",
+    "detail": "Exposes editor operations for scenes, GameObjects, C# scripts, assets, and tests. The checked installation source declares Unity 2021.3 LTS or newer, plus Python 3.10+ and uv. These are declared requirements, not versions tested here. The project is independent of Unity Technologies; pin bridge/editor versions and validate compilation, screenshots, and PlayMode tests.",
     "url": "https://github.com/CoplayDev/unity-mcp",
     "links": [
       {
         "label": "Installation and tool documentation",
         "url": "https://coplaydev.github.io/unity-mcp/"
+      },
+      {
+        "label": "Pinned installation requirements",
+        "url": "https://github.com/CoplayDev/unity-mcp/blob/aa5fc638d623f56178d50329d9ad8c541a57fe66/website/docs/getting-started/install.md#L13-L17"
       }
     ],
     "tags": [
@@ -471,7 +479,7 @@
       "2d",
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "unity-mcp-skill",
@@ -537,7 +545,7 @@
     "category": "agents",
     "type": "tool",
     "summary": "A Blender add-on and MCP server for agent-driven modeling, materials, Python execution, and visual feedback.",
-    "detail": "Useful for 3D game asset production and scene prototypes, with viewport feedback for geometry, materials, and layout. Previously named blender-mcp, it is a third-party community integration. Its code-execution tool can run arbitrary Python inside Blender; use trusted tasks and saved project copies. Check topology, scale, UVs, collision, and export compatibility separately.",
+    "detail": "Useful for 3D game assets and scene prototypes with viewport feedback. Formerly blender-mcp, this community bridge can execute arbitrary Python inside Blender; use trusted tasks and saved copies. The checked documentation distinguishes default minimal usage telemetry from opt-in creative-content collection; DISABLE_TELEMETRY=true disables both. Review the opt-in data terms before enabling content capture. Validate topology, scale, UVs, collision, and exports separately.",
     "url": "https://github.com/ahujasid/mcp-for-blender",
     "tags": [
       "Blender",
@@ -555,7 +563,17 @@
     "dimensions": [
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19",
+    "links": [
+      {
+        "label": "Telemetry defaults and controls",
+        "url": "https://github.com/ahujasid/mcp-for-blender/blob/25e1fe008fc523b1a947c6f3d28510a362a0f06e/README.md#L808-L842"
+      },
+      {
+        "label": "Opt-in content and data terms",
+        "url": "https://github.com/ahujasid/mcp-for-blender/blob/25e1fe008fc523b1a947c6f3d28510a362a0f06e/TERMS_AND_CONDITIONS.md"
+      }
+    ]
   },
   {
     "id": "unreal-mcp",
@@ -594,7 +612,7 @@
     "category": "agents",
     "type": "tool",
     "summary": "Microsoft's browser automation MCP server for exposing page structure, interactions, and browser feedback to agents.",
-    "detail": "Useful for browser game menus, HUDs, launch flows, keyboard input, and screenshots. The default interface uses accessibility trees; coordinate-based mouse tools require the optional vision capability. Neither interface automatically exposes internal Canvas or WebGL state, so game debug instrumentation may be needed. The separate Playwright CLI repository provides a CLI + Skills workflow.",
+    "detail": "Useful for browser game menus, HUDs, launch flows, keyboard input, and screenshots. The default interface uses accessibility trees; coordinate-based mouse tools require the optional vision capability. Neither interface automatically exposes internal Canvas or WebGL state, so game debug instrumentation may be needed. The checked README warns that the server is not a security boundary and documents browser_run_code_unsafe as arbitrary JavaScript execution in the Playwright server process. The separate Playwright CLI repository provides a CLI + Skills workflow.",
     "url": "https://github.com/microsoft/playwright-mcp",
     "tags": [
       "Playwright",
@@ -611,7 +629,17 @@
       "2d",
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19",
+    "links": [
+      {
+        "label": "Pinned tools and security boundaries",
+        "url": "https://github.com/microsoft/playwright-mcp/blob/b8b4183e099f136cbec0388a6088d4aa2f6b9685/README.md#security"
+      },
+      {
+        "label": "Companion CLI + Skills",
+        "url": "https://github.com/microsoft/playwright-cli"
+      }
+    ]
   },
   {
     "id": "godot-engine",
@@ -658,7 +686,7 @@
     "category": "engines",
     "type": "docs",
     "summary": "Godot's official CLI reference for headless operation, script checks, asset import, execution, and export.",
-    "detail": "Lets coding agents launch projects, read logs, parse scripts, and export builds through commands, reducing GUI dependence. The --check-only flag parses a script supplied with --script; it does not execute gameplay tests. Supported flags vary by build type, and headless runs cannot replace real rendering and input tests.",
+    "detail": "Lets coding agents launch projects, read logs, parse scripts, and export builds through commands, reducing GUI dependence. The --check-only flag parses a script supplied with --script; it does not execute gameplay tests. Supported flags vary by build type, and unknown flags are silently ignored; check the selected binary's --help. Headless runs cannot replace real rendering and input tests.",
     "url": "https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html",
     "tags": [
       "Godot",
@@ -676,7 +704,7 @@
       "2d",
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "godot-demo-projects",
@@ -1243,12 +1271,16 @@
     "category": "engines",
     "type": "tool",
     "summary": "Khronos's official Blender glTF 2.0 importer and exporter source, including validation and roundtrip tests.",
-    "detail": "Connects Blender asset production to game runtimes and helps diagnose material, mesh, and animation conversion issues. Repository CI validates exports and compares import / export roundtrips. A valid file can still render differently in the target engine, so verify runtime imports.",
+    "detail": "Connects Blender asset production to game runtimes and helps diagnose material, mesh, and animation conversion issues. Match the addon's release branch to the Blender version; main can target an upcoming Blender release. Repository CI validates exports and compares import / export roundtrips. A valid file can still render differently in the target engine, so verify runtime imports.",
     "url": "https://github.com/KhronosGroup/glTF-Blender-IO",
     "links": [
       {
         "label": "Technical notes",
         "url": "https://github.com/KhronosGroup/glTF-Blender-IO/blob/main/Technical.md"
+      },
+      {
+        "label": "GameMap: asset validity and runtime fidelity",
+        "url": "https://github.com/OpenEnvision/GameMap/blob/main/docs/asset-validation-contracts.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity"
       }
     ],
     "tags": [
@@ -1267,7 +1299,7 @@
     "dimensions": [
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "phaser",
@@ -2749,7 +2781,7 @@
     "name": "Windows · UI Automation and Input Semantics",
     "category": "production",
     "type": "docs",
-    "summary": "Provides native accessibility control patterns and a Win32 input bridge for desktop editor automation.",
+    "summary": "Exposes provider-supported accessibility control patterns for inspecting and manipulating desktop editor controls.",
     "detail": "Provider support must be probed per control; no specific game editor is assumed accessible. UIA coordinates are physical pixels, while absolute mouse input uses normalized desktop coordinates. Bounding rectangles may contain occluded points, foreground activation can be refused, and input insertion does not prove application completion. Integrity restrictions must be respected.",
     "url": "https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview",
     "links": [
@@ -2768,6 +2800,10 @@
       {
         "label": "Window/display capture and frame lifetime",
         "url": "https://learn.microsoft.com/en-us/windows/apps/develop/media-authoring-processing/screen-capture"
+      },
+      {
+        "label": "GameMap: native UI evidence boundaries",
+        "url": "https://github.com/OpenEnvision/GameMap/blob/main/docs/engine-operation-contracts.md#native-gui-automation-is-a-separate-evidence-surface"
       }
     ],
     "tags": [
@@ -2786,7 +2822,7 @@
       "2d",
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "elevenlabs-music",
