@@ -484,7 +484,7 @@
     "category": "world",
     "type": "tool",
     "summary": "Generates interactive video worlds from prompts for real-time exploration.",
-    "detail": "Google DeepMind introduced Genie 3 in 2025, demonstrating interactive worlds at 720p and 24 FPS with consistency lasting several minutes, and providing an experience through Project Genie. It represents neural interactive worlds. The official presentation does not imply downloadable engine source, exportable level assets, or deterministic gameplay rules.",
+    "detail": "Google DeepMind's August 2025 research demonstration reported interactive worlds at 720p and 24 FPS with consistency lasting several minutes. The separate Project Genie prototype limits exploration to 60 seconds; its current help page requires an eligible personal Google AI Ultra account, age 18+, where Ultra is available. Video download is documented, while downloadable engine source, exportable level assets, and deterministic gameplay rules are not established by these sources.",
     "url": "https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/",
     "tags": [
       "interactive-video",
@@ -502,7 +502,13 @@
       "world"
     ],
     "year": 2025,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19",
+    "links": [
+      {
+        "label": "Project Genie access and limits",
+        "url": "https://support.google.com/labs/answer/16875695?hl=en"
+      }
+    ]
   },
   {
     "id": "gamengen",
@@ -681,12 +687,16 @@
     "category": "world",
     "type": "tool",
     "summary": "Generates persistent, navigable 3D scenes with splat and mesh exports.",
-    "detail": "Marble supports multimodal world creation, exports Gaussian splats, visual meshes, and collision meshes for approximate physics, and renders video along camera paths. Compared with pure video continuation, it produces spatial assets for downstream engines. Developers still need to build character behavior, quest logic, and game loops.",
+    "detail": "Marble supports multimodal world creation, exports Gaussian splats, visual meshes, and collision meshes for approximate physics, and renders video along camera paths. Compared with pure video continuation, it produces spatial assets for downstream engines. Developers still need to build character behavior, quest logic, and game loops. According to the inspected web-app guide, collider mesh export is included with Standard and high-quality textured GLB export requires Pro.",
     "url": "https://www.worldlabs.ai/blog/marble-world-model",
     "links": [
       {
         "label": "Product",
         "url": "https://marble.worldlabs.ai/"
+      },
+      {
+        "label": "Web-app mesh export",
+        "url": "https://docs.worldlabs.ai/marble/export/mesh"
       }
     ],
     "tags": [
@@ -706,6 +716,6 @@
       "world"
     ],
     "year": 2025,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   }
 ]
