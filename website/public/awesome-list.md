@@ -755,9 +755,9 @@ Tags: `Image-to-3D` · `Reconstruction` · `Mesh` · `Prototype assets`. Source 
 
 **[Tripo Model Generation API](https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html)**
 
-Versioned text-to-model requests expose geometry/texture seeds and optional PBR controls. Persist model_version and task ID; import only successful outputs and archive URLs promptly. Low-poly generation can fail on complex inputs. Seeds are version-scoped, while output rights, cancellation endpoints and retry charges remain unverified.
+H3 text-to-model requests (v3.1-20260211 and v3.0-20250812) expose separate geometry and texture seeds plus PBR controls. Persist model_version and task ID, query with the submitting API key, and download successful output files promptly: their URLs expire after five minutes by default. Low-poly generation can fail on complex inputs. Cross-version reproducibility, output rights, cancellation endpoints and retry charges remain unverified.
 
-Tags: `asset-generation`. Source reviewed: 2026-10-18. Further reading: [Tripo task results](https://docs.tripo3d.ai/task-query/get-your-task-result.html)
+Tags: `asset-generation`. Source reviewed: 2026-10-19. Further reading: [Tripo task results](https://docs.tripo3d.ai/task-query/get-your-task-result.html)
 
 </details>
 
@@ -866,9 +866,9 @@ Tags: `Text-to-motion` · `Skeletal animation` · `Humanoid` · `Model weights` 
 
 **[ElevenLabs Sound Effects](https://elevenlabs.io/docs/overview/capabilities/sound-effects)**
 
-Describe footsteps, impacts, UI feedback, or environmental sounds, control duration, and export audio for a game engine. Effects can loop seamlessly; a single generation is limited to 30 seconds. MP3 is supported, with 48 kHz WAV for non-looping effects. This is a hosted audio service. The public SDK connects to its API and does not release the generation model or a complete game project.
+Describe footsteps, impacts, UI feedback, or environmental sounds, control duration, and export audio for a game engine. The documentation describes loop-enabled generation for seamless repeat playback and a 30-second maximum per clip. Its overview lists MP3 for all effects and 48 kHz WAV for non-looping effects; API format support and plan requirements should be checked separately. Loop quality still needs validation in the target game. This is a hosted audio service. The public SDK connects to its API and does not release the generation model or a complete game project.
 
-Tags: `Sound effects` · `Foley` · `Ambience` · `Audio loops` · `API` · `Commercial service`. Source reviewed: 2026-10-18. Further reading: [Product walkthrough](https://elevenlabs.io/docs/eleven-creative/playground/sound-effects)
+Tags: `Sound effects` · `Foley` · `Ambience` · `Audio loops` · `API` · `Commercial service`. Source reviewed: 2026-10-19. Further reading: [Product walkthrough](https://elevenlabs.io/docs/eleven-creative/playground/sound-effects) · [Sound Effects API reference](https://elevenlabs.io/docs/api-reference/text-to-sound-effects/convert)
 
 - **Tutorial · tutorial:** [Sound Effects quickstart](https://elevenlabs.io/docs/eleven-api/guides/cookbooks/sound-effects). Official API walkthrough with SDK examples; an account and API key are needed for generation.
 - **Demo · interactive:** [Sound effects generator](https://elevenlabs.io/sound-effects). Official text-to-audio generator and sound examples; this is an audio tool, not a playable game.
@@ -878,11 +878,11 @@ Tags: `Sound effects` · `Foley` · `Ambience` · `Audio loops` · `API` · `Com
 
 Generates up to 47 seconds of stereo audio at 44.1 kHz, with examples for local inference and WAV export. The official audio-tools repository includes a local Gradio interface. The model works best with English descriptions, is stronger at sound effects and field recordings than music, and cannot produce realistic vocals. Model access requires accepting its terms and sharing contact information with the publisher; this resource is an audio pipeline rather than a complete soundtrack or game generator.
 
-Tags: `Text-to-audio` · `Sound effects` · `Field recordings` · `Model weights` · `Local inference`. Source reviewed: 2026-10-18. Further reading: [Local demo setup](https://github.com/Stability-AI/stable-audio-tools#interface) · [Research paper](https://arxiv.org/abs/2407.14358)
+Tags: `Text-to-audio` · `Sound effects` · `Field recordings` · `Model weights` · `Local inference`. Source reviewed: 2026-10-19. Further reading: [Local demo setup](https://github.com/Stability-AI/stable-audio-tools#interface) · [Research paper](https://arxiv.org/abs/2407.14358) · [Stable Audio Open model license](https://huggingface.co/stabilityai/stable-audio-open-1.0/blob/main/LICENSE.md)
 
 - **Tutorial · tutorial:** [Local inference and WAV export](https://huggingface.co/stabilityai/stable-audio-open-1.0#usage). Official model usage examples for stable-audio-tools and Diffusers.
 - **Demo · local-tool:** [Local audio demo setup](https://github.com/Stability-AI/stable-audio-tools#interface). Download and run the official Gradio audio interface locally; this link is setup guidance, not a hosted playable game.
-- **Source · model:** [Audio tools source](https://github.com/Stability-AI/stable-audio-tools). Public training and inference tools with separately downloadable model weights; no complete game project.
+- **Source · pipeline-source:** [Audio tools source](https://github.com/Stability-AI/stable-audio-tools). MIT-licensed training and inference code; Stable Audio Open 1.0 weights are separately gated and governed by the model's Community License. No complete game project.
 
 **[Regression Games](https://github.com/Regression-Games/RGUnityBots)**
 
