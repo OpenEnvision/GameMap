@@ -26,6 +26,8 @@ The acceptance and recovery policies below are editorial proposals. Do not repai
 
 **Unimplemented fixture:** move one referenced texture, leave one scene edit unsaved, interrupt import, and compare the original and fresh-process manifests. The project-specific importer completion observer and save/reopen driver still need implementation.
 
+For USD packages, [dependency-discovery and package-membership boundaries](asset-validation-contracts.md#openusd-packaging-dependency-discovery-is-not-portable-closure) add a selected-version check before declaring portable closure; a discovery or package Boolean alone is insufficient.
+
 ### Versioned asset publication and consuming-scene ownership
 
 Sources checked **2026-10-18**; source/documentation review only. This complements the asset-transfer work order with a concrete Blender → AYON publication → Unreal Editor handoff. No installation, account access, publishing, engine execution or reproduction occurred.
