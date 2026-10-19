@@ -1,6 +1,6 @@
 # Generative API and model boundaries
 
-Sources checked **2026-10-18**; full reproduction not performed. These are source-scoped review notes, not legal eligibility decisions. Commercial output rights, customer research use, provider training, and artifact availability are separate questions. An unresolved permission is not permission, and a purpose-specific restriction is not a ban on every use of a provider.
+Check output rights, research permissions, provider training terms, and artifact availability separately. Use the provider-specific sections below to identify the terms that apply to your intended use.
 
 See also [additional generative tools research](generative-tools-research.md) for source-reviewed tools beyond the catalog cards.
 

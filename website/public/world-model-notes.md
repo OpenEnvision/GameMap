@@ -1,6 +1,6 @@
 # Coding World Models: Categories, Selection, and Research Notes
 
-Reviewed on **2026-10-18**. This is a curated set of research references, not an exhaustive survey. Paper years follow the first preprint; conference years appear separately in tags or descriptions. The presence of a project, code, weights, or data is assessed separately from complete reproducibility.
+Compare executable world models, action-conditioned video, and engine-driven rendering by the state they represent and the outputs they produce. Use the release notes below to find code, weights, and data for each approach.
 
 ## Name clarification
 
@@ -19,7 +19,7 @@ Reviewed on **2026-10-18**. This is a curated set of research references, not an
 
 Here, Coding World Model mainly means representing an external world in code. Meta FAIR's [CWM: An Open-Weights LLM for Research on Code Generation with World Models](https://arxiv.org/abs/2510.02387) instead learns how code and commands affect Python or container environment state. It is an execution-aware coding model. The meanings are related but should not be classified as the same game world generation architecture. Another easily confused example is [Code2World](https://arxiv.org/abs/2602.09856), which generates renderable code to predict the next GUI state. It is a GUI world model and is not included here as a game world paper.
 
-## Suggested reading order (GameMap editorial guidance)
+## Suggested reading order
 
 1. **Rules and planning:** WorldCoder → GIF-MCTS / CWMB → Code World Models for General Game Playing. Start with why programmatic world models need checks for transitions, legal actions, termination, and rewards.
 2. **Modularity and uncertainty:** FactorSim → PoE-World. The former studies factorization when generating complete simulators from descriptions; the latter combines small programmatic experts to model stochastic dynamics.
@@ -49,7 +49,7 @@ A separate 2026-10-19 targeted paper check narrows two production-relevance boun
 
 A targeted 2026-10-19 product check separates Genie 3's [August 2025 research announcement](https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/) from [current Project Genie help](https://support.google.com/labs/answer/16875695?hl=en): research persistence over several minutes is not the prototype's session allowance. The latter documents 60-second exploration, personal-account sign-in, age 18+ and eligible Google AI Ultra access where available. Its video download is not an editable level export. Marble's web-app export tiers above were checked separately from API billing. No account, subscription, session, generation, export or download was tested; rolling product requirements can change.
 
-## Questions for the Planning Map (GameMap editorial guidance)
+## Choose a world representation
 
 Choose the intended output first: **a shippable game project, an explorable neural video experience, reusable world assets, or a simulator for training and planning**. Then choose the world representation and agent workflow.
 

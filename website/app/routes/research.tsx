@@ -1,22 +1,22 @@
-import { Link } from "react-router";
+import { Link, useLoaderData } from 'react-router';
 import { Search, ArrowRight } from "lucide-react";
-import { content, url } from "../../content/registry";
+import { content } from '../../content/registry.server';
+import { url } from '../../content/site';
+import { matchesSearch } from '../../content/matching';
 import { ContentCard } from "../components/content";
 import { useClientQuery } from "../lib/client-query";
 import { searchableText } from "../../content/search";
 
+export function loader() { return { records: content.all('repository-research') }; }
 export default function RepositoryResearch() {
+  const { records } = useLoaderData<typeof loader>();
   const [params, setParams] = useClientQuery();
   const query = params.get("q") || "";
   const status = params.get("status") || "all";
-  const tokens = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
-  const records = content.all("repository-research");
   const filtered = records.filter(
     (entry) =>
       (status === "all" || entry.data.disposition === status) &&
-      tokens.every((token) =>
-        searchableText(entry).toLowerCase().includes(token),
-      ),
+      matchesSearch(searchableText(entry), query),
   );
   const update = (key: string, value: string) =>
     setParams(

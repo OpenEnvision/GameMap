@@ -1,6 +1,6 @@
 # Production tools and acceptance boundaries
 
-Sources checked on 2026-10-18; full reproduction not performed. This research supplements the catalog without asserting engine compatibility, installation or runtime results. Tools below are documented references, not endorsements. Catalog promotion is deferred while official identity assets are reviewed.
+Find production tools for animation, procedural content, audio, rendering, and validation. Use each tool's native artifacts and completion signals to define the handoff to the next stage.
 
 ## Authoring, localization and narrative
 
@@ -136,7 +136,7 @@ Primary sources: [Official documentation or repository](https://www.gnu.org/soft
 
 ### Infinigen staged generation and export acceptance
 
-Sources checked 2026-10-18; full reproduction not performed. This scoped procedural workflow supplements the [asset transfer work order](production-work-orders.md#1-export-an-authored-asset-import-it-and-audit-dependencies). All proposed acceptance gates are **GameMap editorial guidance, unimplemented and unexecuted**.
+Connect procedural generation to the [asset transfer workflow](production-work-orders.md#1-export-an-authored-asset-import-it-and-audit-dependencies), checking output identity and imported behavior at each stage.
 
 #### Pin and version boundary
 
@@ -191,7 +191,7 @@ Primary sources: [Official documentation or repository](https://unity.com/produc
 
 ### Procedural layout constraints and solver verdicts
 
-Checked 2026-10-18 against official pinned source. This supplements staged generation/export and downstream [navigation acceptance](engine-operation-contracts.md#navigation-after-procedural-world-edits). The following WFC/DeBroglie interfaces are separate research surfaces; neither is attributed to Dead Cells. No generator, engine or fixture was executed. Proposed task/acceptance controls are **GameMap editorial guidance**.
+Check generated topology before export and [navigation testing](engine-operation-contracts.md#navigation-after-procedural-world-edits). The WFC and DeBroglie interfaces below are separate approaches, not tooling attributed to Dead Cells.
 
 #### Exact upstream scope
 
@@ -232,7 +232,7 @@ An accessibility testing engine for websites and HTML-based game interfaces. Res
 
 Primary sources: [Official documentation or repository](https://github.com/dequelabs/axe-core); [API at inspected commit](https://github.com/dequelabs/axe-core/blob/f49c1c49b5eafe1f8065e07c314f75968dd91333/doc/API.md)
 
-## GameMap editorial guidance: acceptance checks still needed
+## Acceptance checks to implement
 
 - Audio: preserve the original media hash, decoder/build configuration, channel layout, sample rate and full analyzed span. Measure true peak explicitly; do not relabel extrema counts as clipping. Thresholds depend on delivery requirements. A loop needs wrap-boundary analysis and listening in its actual codec/import path.
 - Timing: retain rational timebases, original timestamps and event identities. A/V synchronization needs common-clock audio and visual markers at multiple points to separate offset from drift. ffprobe metadata and equal durations cannot establish audible synchronization.

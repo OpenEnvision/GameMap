@@ -8,8 +8,10 @@ import {
   assertSearchCoverage,
 } from "./lib/rendered-coverage.mjs";
 import { root } from "./lib/documents.mjs";
+import { checkSkillPackages } from './lib/skill-packages.mjs';
 
 const built = process.argv.includes("--built");
+await checkSkillPackages(built);
 const site = built
   ? JSON.parse(await readFile("dist/site-manifest.json", "utf8"))
   : undefined;
@@ -64,7 +66,6 @@ if (built) {
   assertSearchCoverage(
     registry,
     JSON.parse(await readFile("dist/search-index.json", "utf8")),
-    context.searchId,
   );
   console.log(
     `Rendered coverage passed: ${result.records} canonical records with field-level proofs, owning collections, complete-index links, ${documents.length} full Markdown bodies, static search, and matching source digests.`,

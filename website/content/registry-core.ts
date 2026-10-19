@@ -11,34 +11,10 @@ import { contentKinds } from "./models";
 import { fieldRules, presentFields, assertKeys } from "./fields";
 import { pages, tracks, url, detailRoutes } from "./site";
 import type { Dimension } from "../src/types";
-import type { ProjectVideoData } from "../src/data/projectVideos";
-import type { ShowcaseCase } from "../src/data/showcase";
 import type { LearningMedia } from "../src/data/learningMedia";
 import type { ResourceIdentity } from "../src/data/resourceIdentities";
 import { publicAsset } from "../src/publicAsset";
 
-const videoKeys = {
-  previewSrc: true,
-  heroSrc: true,
-  src: true,
-  title: true,
-  description: true,
-  source: true,
-  credit: true,
-  track: true,
-} satisfies Record<keyof ProjectVideoData, true>;
-const showcaseKeys = {
-  id: true,
-  resourceId: true,
-  name: true,
-  description: true,
-  poster: true,
-  alt: true,
-  video: true,
-  prompt: true,
-  aspectRatio: true,
-  mobilePreview: true,
-} satisfies Record<keyof ShowcaseCase, true>;
 const imageKeys = {
   src: true,
   alt: true,
@@ -74,13 +50,13 @@ const sourcePaths: Record<ContentKind, string> = {
   resource: "website/src/data/resources.json",
   example: "website/src/data/learningPaths.ts",
   foundation: "website/src/data/learningPaths.ts",
-  "repository-research": "data/research/cadle-repositories.json",
+  "repository-research": "data/segments/repository-research.json",
   agent: "website/src/data/agentGameResources.ts",
   testing: "website/src/data/testingResources.ts",
   "testing-pack": "website/src/data/testingResources.ts",
   path: "website/src/data/plans.ts",
   step: "website/src/data/plans.ts",
-  demo: "website/src/data/showcase.ts + projectVideos.ts",
+  demo: 'website/src/data/recordings.ts',
   collection: "website/src/data/communityResearch.ts",
   document: "docs/",
 };
@@ -88,61 +64,19 @@ function check(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
 }
 
-/** No deduplication by resourceId: one project can have several distinct recordings. */
+/** Each original asset has one identity; all authored presentations remain addressable. */
 export function collectDemos(sources: ContentSources): DemoContent[] {
-  const demos: DemoContent[] = [];
-  for (const item of Object.values(sources.showcaseCases)) {
-    assertKeys(item, showcaseKeys, `showcase:${item.id}`);
-    assertKeys(item.video, videoKeys, `showcase:${item.id}.video`);
-    check(
-      item.video.title === item.name &&
-        item.video.description === item.description,
-      `showcase:${item.id}: recording and case descriptions differ; extend the explicit presentation instead of dropping either.`,
-    );
-    if (item.mobilePreview)
-      assertKeys(
-        item.mobilePreview,
-        mobileKeys,
-        `showcase:${item.id}.mobilePreview`,
-      );
-    demos.push({
-      id: item.id,
-      resourceId: item.resourceId,
-      title: item.name,
-      description: item.description,
-      role: "excerpt",
-      alt: item.alt,
-      track: item.video.track,
-      previewSrc: item.video.previewSrc,
-      poster: item.poster,
-      originalUrl: item.video.src,
-      sourceUrl: item.video.source,
-      credit: item.video.credit,
-      alternatePreviewUrl: item.video.heroSrc,
-      aspectRatio: item.aspectRatio,
-      mobilePreview: item.mobilePreview,
-      prompt: item.prompt,
+  const ids = new Set<string>(), originals = new Set<string>();
+  return sources.recordings.flatMap(recording => {
+    assertKeys(recording, { id: true, resourceId: true, originalUrl: true, views: true }, `recording:${recording.id}`);
+    check(!ids.has(recording.id) && !originals.has(recording.originalUrl), `Duplicate original recording: ${recording.id}`);
+    ids.add(recording.id); originals.add(recording.originalUrl);
+    check(recording.views.length, `Recording ${recording.id} needs a presentation`);
+    return recording.views.map(view => {
+      if (view.mobilePreview) assertKeys(view.mobilePreview, mobileKeys, `demo:${view.id}.mobilePreview`);
+      return { ...view, recordingId: recording.id, resourceId: recording.resourceId, originalUrl: recording.originalUrl };
     });
-  }
-  for (const [resourceId, item] of Object.entries(sources.projectVideos)) {
-    assertKeys(item, videoKeys, `projectVideo:${resourceId}`);
-    demos.push({
-      id: "recording-" + resourceId,
-      resourceId,
-      title: item.title,
-      description: item.description,
-      role: "source-recording",
-      track: item.track,
-      previewSrc: item.previewSrc,
-      poster: sources.projectMedia[resourceId]?.src,
-      alt: sources.projectMedia[resourceId]?.alt,
-      originalUrl: item.src,
-      sourceUrl: item.source,
-      credit: item.credit,
-      alternatePreviewUrl: item.heroSrc,
-    });
-  }
-  return demos;
+  });
 }
 
 export function createRegistry(
@@ -152,6 +86,8 @@ export function createRegistry(
   const entries: ContentEntry[] = [];
   const keys = new Map<string, ContentEntry>();
   const resourceIds = new Set(sources.resources.map((resource) => resource.id));
+  const demos = collectDemos(sources);
+  const demoById = new Map(demos.map(demo => [demo.id, demo]));
   function add<K extends ContentKind>(
     kind: K,
     id: string,
@@ -311,8 +247,10 @@ export function createRegistry(
       item,
       url.research(item.requested_repo),
     );
-  for (const item of sources.agentGameResources)
-    add("agent", item.id, item, url.agent(item.id));
+  for (const item of sources.agentGameResources) {
+    if (item.catalogResourceId) check(resourceIds.has(item.catalogResourceId), `Missing catalog reference ${item.catalogResourceId}`);
+    add('agent',item.id,item,url.agent(item.id));
+  }
   for (const item of sources.testingResources)
     add("testing", item.id, item, url.testing(item.id));
   for (const item of sources.testingStarterPacks)
@@ -359,9 +297,9 @@ export function createRegistry(
       field: "previewSelection",
       label: "Selected project previews",
       items: previews.cases.map((id) => {
-        const demo = sources.showcaseCases[id];
+        const demo = demoById.get(id);
         check(demo, `Missing showcase selection ${id}`);
-        return { label: demo.name, url: url.demo(id) };
+        return { label: demo.title, url: url.demo(id) };
       }),
     });
     for (const node of nodes)
@@ -372,7 +310,7 @@ export function createRegistry(
         url.step(track, node.id),
       );
   }
-  for (const item of collectDemos(sources)) {
+  for (const item of demos) {
     check(
       resourceIds.has(item.resourceId),
       `Demo ${item.id} refers to missing resource ${item.resourceId}`,
@@ -381,8 +319,10 @@ export function createRegistry(
   }
   for (const item of sources.communityCollections)
     add("collection", item.id, item, url.collection(item.id));
-  for (const item of documents)
-    add("document", item.slug, item, url.document(item.slug));
+  for (const item of documents) {
+    const entry=add('document',item.slug,item,url.document(item.slug));
+    if(item.slug.startsWith('zh/'))entry.collectionUrl='/docs/zh/';
+  }
   const addresses = new Map<string, ContentEntry>();
   for (const entry of entries) {
     check(!addresses.has(entry.url), `Canonical URL collision: ${entry.url}`);
@@ -408,6 +348,7 @@ export function createRegistry(
     all: <K extends ContentKind>(kind: K) =>
       entries.filter((entry) => entry.kind === kind) as ContentEntry<K>[],
     byKey: (key) => keys.get(key),
+    examplesFor: ref => { check(ref.kind === 'resource' && resourceIds.has(ref.id), `Invalid resource reference: ${ref.kind}:${ref.id}`); return entries.filter(entry => entry.kind === 'example' && entry.data.resourceIds.includes(ref.id)) as ContentEntry<'example'>[]; },
     demosFor: (resourceId) =>
       entries.filter(
         (entry) =>
@@ -438,8 +379,7 @@ export function expectedContentKeys(
       `path:${track}`,
       ...steps.map((step) => `step:${track}/${step.id}`),
     ]),
-    ...Object.keys(sources.showcaseCases).map((id) => `demo:${id}`),
-    ...Object.keys(sources.projectVideos).map((id) => `demo:recording-${id}`),
+    ...sources.recordings.flatMap(recording => recording.views.map(view => `demo:${view.id}`)),
     ...sources.communityCollections.map((item) => `collection:${item.id}`),
     ...documents.map((item) => `document:${item.slug}`),
   ];

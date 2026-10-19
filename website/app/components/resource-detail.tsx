@@ -3,25 +3,26 @@ import { Link, useHref } from "react-router";
 import { ArrowUpRight, Bookmark, Check, Link2, X } from "lucide-react";
 import type { Resource } from "../../src/types";
 import ResourceIcon from "../../src/components/ResourceIcon";
-import { content } from "../../content/registry";
+import type { ContentEntry } from '../../content/models';
 import { ContentDocument, RelatedDemos, MediaPreview } from "./content";
 
 export function ResourceDetail({
-  resource,
+  entry,
+  demos,
   saved,
   onSave,
   onClose,
 }: {
-  resource: Resource;
+  entry: ContentEntry<'resource'>;
+  demos: ContentEntry<'demo'>[];
   saved: boolean;
   onSave: () => void;
   onClose: () => void;
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [copy, setCopy] = useState("");
-  const entry = content.require("resource", resource.id);
+  const resource: Resource = entry.data;
   const permalink = useHref(entry.url);
-  const demos = content.demosFor(resource.id);
   const [selected, setSelected] = useState("");
   const demo = demos.find((entry) => entry.key === selected) || demos[0];
   const video = demo?.blocks.find((block) => block.type === "video");
@@ -126,7 +127,7 @@ export function ResourceDetail({
         </button>
       </div>
       <ContentDocument entry={entry} heading="h2" />
-      <RelatedDemos resourceId={resource.id} />
+      <RelatedDemos demos={demos} />
       <div className="detail-footer">
         <span>Source reviewed {resource.verified}</span>
         <button

@@ -1,6 +1,6 @@
 # Visual evidence and agent-harness research
 
-Sources checked on **2026-10-18**. Full reproduction not performed. This dossier complements the [testing library](game-testing-library.md) and [production research notes](production-research-notes.md). It retains operation-level constraints that do not fit concise directory cards; it is not an additional count of unique catalog entries.
+Use screenshots, video, state inspection, and control traces to check what an agent actually changed. Pair the methods below with a runnable project from the [testing library](game-testing-library.md).
 
 For concrete selector, memory, temporal-verification and asset-feedback mechanisms, see the [visual-feedback contract dossier](visual-feedback-mechanisms.md).
 
@@ -8,7 +8,7 @@ For concrete selector, memory, temporal-verification and asset-feedback mechanis
 
 A source check establishes what the cited authors document. It does not establish an installed tool, a working adapter, a reproduced result, or suitability for a target game. Code, weights, datasets and hosted terms can differ. The licensing notes below describe the inspected source, not a complete clearance decision.
 
-**GameMap editorial guidance:** preserve original artifacts alongside model-facing derivatives. Record source frame/time base, image size and crop, camera/depth conventions, color transform, object IDs and the engine build. A screenshot similarity score cannot prove an interaction succeeded; inferred masks, tracks and depth cannot replace authoritative engine state. Empty observations and missing frames must remain visible failure cases.
+Preserve original artifacts alongside model-facing derivatives. Record source frame/time base, image size and crop, camera/depth conventions, color transform, object IDs and the engine build. A screenshot similarity score cannot prove an interaction succeeded; inferred masks, tracks and depth cannot replace authoritative engine state. Empty observations and missing frames must remain visible failure cases.
 
 ## Visual observation and artifact fidelity
 
@@ -500,7 +500,7 @@ Extensible baseline for loading GameMap tools and observation/context policies.
 
 #### Pi evidence lifecycle and interrupted execution
 
-Additional source inspection on 2026-10-18 at the existing pi commit **482c1381a00d8d00bc81697e4a980c593db6803e**, which matched the default branch when checked. This is scoped implementation evidence, not an installed package, model or GameMap adapter. No agent, model call, engine or fixture was executed. The proposed adapter and evaluation controls below are **GameMap editorial guidance**.
+Use pi's tool and extension surfaces to build a controlled feedback loop. The implementation reference below targets commit **482c1381a00d8d00bc81697e4a980c593db6803e**.
 
 ##### 1. Resource lifetime and the actual settlement boundary
 
@@ -649,7 +649,7 @@ Uncertainty-aware aggregate benchmark analysis.
 
 ## Proposed acceptance and optimization protocol
 
-The following is **GameMap editorial guidance**, not a reproduced experimental result:
+For a controlled comparison:
 
 1. Choose a bounded work order and authoritative state assertions before optimizing prompts or tools. Include a known-good control, deliberately broken project and missing-artifact case.
 2. Separate build success, functional correctness, visual quality, playability, performance and evidence completeness. Do not compress them into an unexplained success score.

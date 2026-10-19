@@ -1,21 +1,20 @@
 import { ArrowUpRight, Code2 } from "lucide-react";
 import { Link } from "react-router";
-import { content } from "../../content/registry";
-import { learningMedia, publicAsset } from "../lib/catalog";
+import { url } from '../../content/site';
+import { publicAsset } from '../lib/catalog';
+import type { LearningMedia } from '../../src/data/learningMedia';
 import type { LearningPath } from "../../src/data/learningTypes";
 
 export function ExampleCard({
   game,
   compact = false,
+  media,
 }: {
   game: LearningPath;
   compact?: boolean;
+  media?: LearningMedia;
 }) {
-  const media = learningMedia[game.id];
-  const entry = content.require(
-    game.category === "foundation" ? "foundation" : "example",
-    game.id,
-  );
+  const entry = { key: `${game.category === 'foundation' ? 'foundation' : 'example'}:${game.id}`, url: url.example(game.id) };
   return (
     <article
       className={`example-card${compact ? " compact" : ""}`}

@@ -1,5 +1,6 @@
 import { type RouteConfig, index, route } from "@react-router/dev/routes";
 import { pages, detailRoutes, systemRoutes } from "../content/site";
+// Include language-specific documentation entrances in the canonical route table.
 const path = (value: string) => value.replace(/^\/|\/$/g, "");
 export default [
   ...Object.entries(pages).map(([id, page]) =>

@@ -5,7 +5,7 @@ import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
 import { resolve } from "node:path";
-import { root, documentLinkResolver } from "./documents.mjs";
+import { root, documentLinkResolver, sourceMarkdown } from "./documents.mjs";
 
 export const attributes = (node) =>
   Object.fromEntries((node.attrs || []).map((attr) => [attr.name, attr.value]));
@@ -88,6 +88,7 @@ export function assertRecordFields(entry, record, base = "/") {
   visible(record, entry.key);
   const nodes = elements(record);
   for (const block of entry.blocks) {
+    if(block.section==='metadata')continue; // Source-only fields remain in the manifest, not the reader interface.
     const fields = nodes.filter(
       (node) => attributes(node)["data-content-field"] === block.field,
     );
@@ -265,6 +266,8 @@ export function assertMarkdownCoverage(
   base = "/",
 ) {
   const page = parsePage(html);
+  const documentElement=page.nodes.find(node=>node.tagName==='html');
+  if(documentElement)assert.equal(attributes(documentElement).lang,metadata.slug.startsWith('zh/')?'zh-CN':'en',`${metadata.slug}: matching document language`);
   const body = page.nodes.find((node) =>
     (attributes(node).class || "").split(/\s+/).includes("prose"),
   );
@@ -272,11 +275,9 @@ export function assertMarkdownCoverage(
   visible(body, metadata.slug);
   const bodyNodes = elements(body);
   const processor = unified().use(remarkParse).use(remarkGfm);
-  const tree = processor.parse(markdown);
-  const first = tree.children.findIndex(
-    (node) => node.type === "heading" && node.depth === 1,
-  );
-  if (first >= 0) tree.children.splice(first, 1); // The first title has its own registry field proof.
+  const { body: sourceBody, frontmatter } = sourceMarkdown(markdown);
+  if (frontmatter) containsText([body], frontmatter, `${metadata.source} frontmatter`);
+  const tree = processor.parse(sourceBody);
   const rewrite = documentLinkResolver(documents, base);
   visit(tree, (node) => {
     if (
@@ -309,22 +310,15 @@ export function assertMarkdownCoverage(
       );
   });
 }
-export function assertSearchCoverage(registry, index, searchId) {
-  const rows = Object.values(index.docs?.docs || {});
-  assert.ok(
-    rows.length,
-    "Unknown or empty static-search export; update the explicit coverage adapter for its format",
-  );
-  const pages = new Map(
-    rows.filter((row) => row.type === "page").map((row) => [row.page_id, row]),
-  );
+export function assertSearchCoverage(registry, index) {
+  assert.equal(index.version, 2, 'Explicit compact search format');
+  const pages = new Map(index.documents.map(document => [document.key, document]));
+  assert.equal(pages.size,index.documents.length,'Search identities must be unique');
   for (const entry of registry.entries) {
-    assert.ok(pages.has(searchId(entry.key)), `Search omits ${entry.key}`);
-    assert.equal(
-      pages.get(searchId(entry.key)).url,
-      entry.url,
-      `Search canonical URL mismatch: ${entry.key}`,
-    );
+    const document = pages.get(entry.key);
+    assert.ok(document, `Search omits ${entry.key}`);
+    assert.equal(document.url, entry.url, `Search canonical URL mismatch: ${entry.key}`);
+    assert.ok(document.text.includes(entry.title),`Search text omits title: ${entry.key}`);
   }
   assert.equal(
     pages.size,

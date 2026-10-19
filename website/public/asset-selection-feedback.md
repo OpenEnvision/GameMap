@@ -1,6 +1,6 @@
 # Asset candidate selection and visual-feedback creation
 
-Source review: **2026-10-18**. Read-only paper, documentation and public-source inspection. No model, game engine, simulator, installer, browser game, paid API, training job or benchmark was executed. The interfaces below are source-observed or paper-described; proposed experiments are explicitly editorial.
+Select assets against a concrete task, compare candidates in context, and use visual feedback to guide revisions. The systems below show different ways to retrieve, rank, edit, and evaluate 3D content.
 
 ## Reading the selection evidence
 
@@ -127,7 +127,7 @@ These studies justify targeted diagnostics and new experiments. They do not esta
 
 ## Shared proposed acceptance record
 
-This section is **GameMap editorial design**, not an implemented piRSI adapter or a result from any paper.
+Use this implementation plan to connect asset selection, visual feedback, and piRSI.
 
 1. **Candidate identity:** requested purpose, original prompt, generation/retrieval source, model/checkpoint, seed, source license and immutable asset hashes. Retain failures and candidates rejected before rendering.
 2. **Evidence packet:** camera extrinsics/intrinsics, units/up/front conventions, lighting/material setup, frame order, image sizes/crops and actual model-facing packet. Preserve original files separately from resized judge images.

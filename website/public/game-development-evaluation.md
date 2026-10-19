@@ -1,8 +1,6 @@
 # Additional evaluation research for agents that create games
 
-Source review: 2026-10-18. This bounded discovery found meaningful additions after checking the current catalog and documentation. GameDevBench, GameCraft-Bench, GameEngineBench, GameXpert-Bench, OpenGame, GameGen-Verifier, GCA, DreamGarden, Holodeck, GEPA/Meta-Harness and pi are already represented and should not get duplicate cards. The following studies evaluate construction, modification, delivery, refinement or defect diagnosis; these are distinct outcomes. A playing agent is relevant here only when its observations evaluate or improve an agent-built artifact.
-
-No code was installed, no game or benchmark was run, no account was created and no provider API was invoked. Paper-described results remain author reports. These are protocol additions, not a combined leaderboard. Paper versions and source revisions are scoped individually below and in the [reproduction review](benchmark-reproducibility.md); websites remain mutable, and no installed version was tested.
+Choose an evaluation around what the agent needs to produce: a playable project, a correct modification, a delivered build, or a diagnosed defect. The studies below use different tasks and success criteria; use the [reproduction reference](benchmark-reproducibility.md) to locate the artifacts needed for each.
 
 ## 1. OpenGameEval: stateful development and exploration
 
@@ -78,7 +76,7 @@ Primary source: [paper v1, June 18, 2026](https://arxiv.org/html/2606.19830v1).
 
 The inspected [Scripts.zip](https://zenodo.org/records/18359123/files/Scripts.zip?download=1) matches the record's MD5 `b416d06113d02a7abdccb636508c0c9d`; [analysis.zip](https://zenodo.org/records/18359123/files/analysis.zip?download=1) matches `8c6155a7603b391ded1991caf69ed6b6`. Relevant members are get_issues_pr_data.py, get_pr_commit_links.py, get_remaining_comments.py and pr_cross_repo_fix.py. These checksums identify inspected bytes; they do not validate execution, data completeness or rights. The [appendix](https://zenodo.org/records/18359123/files/online-appendix.pdf?download=1) describes a richer storage schema than the paper's simplified entity diagram. No supplied executable game-repair evaluator, project-held-out split or contamination-control protocol was established in the inspected materials.
 
-**GameMap editorial adaptation:** Before deriving agent tasks, obtain and validate exact data versions, record upstream rights and verify issue/PR/commit linkage. Separate repository families and time periods; withhold target fixes and post-resolution discussion from agent context. Add a reproducible failing fixture, repair acceptance checks and regression tests. None of those proposed gates was implemented or evaluated here.
+Before deriving agent tasks, obtain and validate exact data versions, record upstream rights and verify issue/PR/commit linkage. Separate repository families and time periods; withhold target fixes and post-resolution discussion from agent context. Add a reproducible failing fixture, repair acceptance checks and regression tests. None of those proposed gates was implemented or evaluated here.
 
 See the [reproducibility matrix and concrete client/checker review](benchmark-reproducibility.md) for subsequent availability, memory-isolation and task-verdict findings.
 

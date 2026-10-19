@@ -1,27 +1,8 @@
-# Game testing library: projects, AI environments, assets, rigs, and motion
+# Game testing library
 
-36 resources reviewed 2026-10-18. This collection supports coding agents changing games, AI players using vision/control/planning, and asset/skeleton/animation pipelines. It is separate from the AI-built game-case gallery and coding-agent integration collection.
+Choose a runnable project, AI environment, or asset set for the behavior you want to test. Start with a task below, then follow the setup and license details for each resource.
 
-Primary source review confirms published material and terms; it does not certify installation, successful builds, imports, model performance, or completed gameplay. Suggested tasks are GameMap editorial guidance. Free access, code, asset/data licenses, AI use, and redistribution are recorded separately. A license-group label is not blanket permission for training, evaluation, or redistribution. Follow the linked material's specific terms.
-
-## Collection coverage
-
-| Resource type | Entries |
-| --- | --- |
-| Games & engine projects | 13 |
-| AI evaluation environments | 7 |
-| Asset libraries | 7 |
-| Rigs & motion data | 9 |
-
-A resource can support several testing goals, so the following counts overlap.
-
-| Test goal | Entries |
-| --- | --- |
-| Coding & automated playtests | 23 |
-| Vision, control & planning | 25 |
-| Asset & animation pipelines | 24 |
-
-## Suggested starter packs
+## Starter packs
 
 ### Coding & automated playtests
 
@@ -107,7 +88,6 @@ Small, separate engine projects for character control, physics, navigation, netw
 - **Assets / data:** Repository MIT license applies unless an individual demo or bundled resource states otherwise; keep local attribution notices.
 - **AI use:** A useful open-license baseline for code editing and automated playtests. Record licenses of any additional assets or plugins rather than treating the demo license as a grant for unrelated data.
 - **Practical limits:** Not installed or run in this research pass. Hosted web demos redeploy from master on every commit, so their URLs are not immutable baselines. Pin a compatible source commit for repeatable tests; the development branch and web renderer can differ from stable desktop behavior.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -144,7 +124,6 @@ A complete platform game for jump timing, collision, level editing and visual/in
 - **Assets / data:** Most game data uses CC BY-SA; individual files and third-party components have additional notices.
 - **AI use:** Code access supports instrumented experiments, but GPL code and CC BY-SA game data carry different obligations. Keep any redistributed screenshots, maps or data exports traceable to their source licenses.
 - **Practical limits:** Not installed or run in this research pass. It has no ready-made Gymnasium evaluation contract; observation, action timing and reset/success detection need a harness.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -181,7 +160,6 @@ A complete space game for navigation, combat, trading and long-horizon mission p
 - **Assets / data:** Multiple artwork and audio licenses; the repository copyright file identifies authors and terms.
 - **AI use:** Use the copyright inventory when selecting artwork or audio for an exported test dataset. A free game download does not combine all of its materials into one license.
 - **Practical limits:** Not installed or run in this research pass. General campaign progress is a broad, variable target; a saved state and bounded scenario are needed for comparable scores.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -218,7 +196,6 @@ A cooperative platform game with grappling, precise movement, maps and replay su
 - **Assets / data:** Game data defaults to CC BY-SA 3.0; fonts and other files have exceptions recorded in license.txt.
 - **AI use:** The client/server source enables instrumentation. Preserve map authorship and data licenses when sharing fixtures or replays; conduct repeatable tests on a local server.
 - **Practical limits:** Not installed or run in this research pass. Fine control is sensitive to timing and server settings; public-server results are not a stable benchmark.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -255,7 +232,6 @@ A turn-based tactics game with editable scenarios and scripting, suitable for pa
 - **Assets / data:** Core artwork/audio uses GPLv2-or-later or CC BY-SA 4.0; copyrights.csv records file-level notices. Add-on artwork/audio may also use Creative Commons NC or ND terms, so audit each add-on separately.
 - **AI use:** Scenarios and scripts provide inspectable tasks, but add-ons and artwork require their own attribution records. Do not assume the engine license covers every downloaded add-on.
 - **Practical limits:** Not installed or run in this research pass. Combat randomness and campaign variation require controlled seeds or repeated trials; the normal UI is not a ready-made agent API.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -294,7 +270,6 @@ A logistics and defense game for production chains, construction, resource plann
 - **Assets / data:** Check repository and bundled third-party notices for the selected release; no blanket CC0 asset grant is asserted here.
 - **AI use:** A useful source-accessible test bed for planning and code changes. Retain license records for extracted assets, maps and plugins rather than inferring unrestricted dataset use from the free download.
 - **Practical limits:** Not installed or run in this research pass. Campaign maps and live servers introduce uncontrolled state; use a dedicated map or local server for comparison.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -331,7 +306,6 @@ A transport simulation for route and rail construction, economic planning, pathf
 - **Assets / data:** Use the separate OpenGFX, OpenSFX and OpenMSX base sets and retain their licenses. Original Transport Tycoon Deluxe data is not an open asset pack.
 - **AI use:** Open source and open base sets can support reproducible scenarios. Keep the base-set and NewGRF licenses separate, especially when exporting visual fixtures or distributing a benchmark bundle.
 - **Practical limits:** Not installed or run in this research pass. Steam is no longer a zero-price acquisition route for new users. Long simulation horizons need a fixed time budget and consistent simulation settings.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -368,7 +342,6 @@ A full racing game for visual steering, continuous control, physics regressions,
 - **Assets / data:** Multiple licenses, including Creative Commons terms; inspect the asset authorship and licensing records.
 - **AI use:** Useful for instrumented driving and asset integration, with a separate license audit for each redistributed track, character or recorded asset collection.
 - **Practical limits:** Not installed or run in this research pass. The source repository alone is not the complete asset download, and screen-based evaluation still needs an input/reset harness.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -406,7 +379,6 @@ An editable voxel sandbox for first-person navigation, digging, placement, craft
 - **Assets / data:** Minetest Game media defaults to CC BY-SA 3.0; inspect each mod README for authors and exceptions. Other ContentDB packages have independent terms.
 - **AI use:** Lua mods are practical instrumentation points. Record the license of every game/mod and asset added to the world; ContentDB availability alone is not a blanket data-use permission.
 - **Practical limits:** Not installed or run in this research pass. Minetest Game is a basic sandbox without a single built-in benchmark goal; custom task design and a controller bridge are required.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -444,7 +416,6 @@ A first-person arena game for aim, navigation, parkour, bot scenarios, real-time
 - **Assets / data:** Game content includes CC BY-SA and other licenses; consult the project license inventory.
 - **AI use:** The open client/server allows controlled instrumentation. Preserve content attribution when sharing maps or visual datasets and evaluate against local bots or a dedicated test server.
 - **Practical limits:** Not installed or run in this research pass. The Steam listing does not offer a macOS build, and normal gameplay needs an external or source-integrated agent harness.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -481,7 +452,6 @@ An RTS for resource planning, construction, unit control, terrain interaction an
 - **Assets / data:** Mixed licenses across models, textures, sound and maps; the game-logic repository is not a blanket asset license.
 - **AI use:** Useful for code instrumentation and RTS planning, but preserve module and asset provenance. A public game-module repository does not establish a single license for the complete installed game.
 - **Practical limits:** Not installed or run in this research pass. This is a larger multi-component setup; cloning the Lua game repository alone does not produce the complete playable game.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -519,7 +489,6 @@ A complete boat-racing sample for buoyancy, waypoint AI, camera control, water r
 - **Assets / data:** Unity Companion License and applicable bundled notices; do not treat sample assets as a general cross-engine asset library.
 - **AI use:** Check the Unity Companion License and applicable Unity terms for the intended tool connection, asset handling and data use. Source availability does not establish unrestricted AI training or dataset redistribution rights.
 - **Practical limits:** Not installed or run in this research pass. This older Unity baseline may need package/platform maintenance; upgrading the editor can change behavior and should be treated as a separate task.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -557,7 +526,6 @@ An official multiplayer starter game for ability systems, input, game-feature pl
 - **Assets / data:** UE-Only content under applicable Epic terms. The reviewed Fab listing displays Allows usage with AI: No.
 - **AI use:** The Fab AI field requires a separate check for the intended asset/data workflow. It should not be expanded into a claim that every coding assistant edit is prohibited, or ignored as blanket permission for AI evaluation or training.
 - **Practical limits:** Not installed or run in this research pass. A comparatively heavy setup with engine-specific content and AI-use conditions; it is not part of the unrestricted open-license starter set.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -594,7 +562,6 @@ Small navigation and language-grounding tasks with keys, doors, objects and part
 - **Assets / data:** Use bundled procedural grid rendering; added images and datasets need their own provenance.
 - **AI use:** Built for agent research. Preserve license notices; explicitly separate rendered pixels, symbolic observations and mission text in each evaluation.
 - **Practical limits:** Source reviewed, not installed here. Windows is not officially supported; default compact observations are not ordinary RGB screenshots.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -631,7 +598,6 @@ A compact survival world combining exploration, health, gathering, construction 
 - **Assets / data:** Repository material under its MIT notice; track any replacement art separately.
 - **AI use:** Designed for agent evaluation. For pixel-only tests, withhold info.semantic, inventory and player_pos from the policy; those expose structured state beyond the RGB observation. Keep published benchmark budgets separate from custom VLM protocols.
 - **Practical limits:** Source reviewed, not run here. Classic Gym reset returns only an observation and step returns four values. reset has no seed argument; matching constructor seeds alone is insufficient unless episode/reset order also matches.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -669,7 +635,6 @@ A survival and crafting environment with vectorized simulation. Useful for longe
 - **Assets / data:** Repository material under its MIT notice; added assets need separate records.
 - **AI use:** Fix observation mode, PRNG keys, episode handling and package version. Version changes affect comparability: 1.5.0 fixes first-planted-plant growth, and 1.6.0 fixes Craftax-Classic death rewards.
 - **Practical limits:** Source reviewed, not run here. JIT startup is slow. With auto_reset=True, a done step returns the next episode observation/state alongside the previous episode reward/done/info. With auto_reset=False, handle termination before stepping again.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -706,7 +671,6 @@ First-person environments for aiming, navigation, combat and memory, with progra
 - **Assets / data:** Freedoom is the default asset set. Original Doom / Doom II WADs are not supplied and require their own rights.
 - **AI use:** Built for AI experiments; this does not grant rights to arbitrary WADs. Record which scenario, base assets and licenses an evaluation uses.
 - **Practical limits:** Source reviewed, not run here. ViZDoom 1.3+ macOS wheels require Apple Silicon and macOS 14+; the documented Intel wheel route is 1.2.4. Wrapper timeout handling changed in 1.3.0, so pin the version and timeout option. WAD rights remain scenario-specific.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -743,7 +707,6 @@ A demanding roguelike interface for exploration, inventory, tactical choices and
 - **Assets / data:** Bundled NetHack data follows repository notices; external tilesets are separate.
 - **AI use:** An AI research interface; distinguish terminal rendering, symbols, text messages and internal state so planning results remain comparable.
 - **Practical limits:** Source reviewed, not run here. Native tools may be required. In the inspected code, reset(seed=...) seeds Gymnasium but does not set NetHack RNGs; use the explicit seed interface. NetHackChallenge deliberately disallows seed changes. Terminal/glyph observations are not RGB game frames.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -780,7 +743,6 @@ Connects editable Godot games to Python agents. Useful for changing gameplay, ex
 - **Assets / data:** Example assets can have separate notices: the Cartoon Plane model is CC BY 4.0.
 - **AI use:** Designed for learning and automated gameplay testing. Keep imported-model rights and example attributions alongside the MIT toolkit license.
 - **Practical limits:** Source reviewed, not run here. The inspected bridge sends env_seed when launching a binary, but reset(seed=...) sends only a reset message. Editor runs need scene/plugin seed control; validate reset repeatability rather than assuming the Python argument reseeds Godot.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -817,7 +779,6 @@ An official toolkit and example scenes for physics, visual control, cooperation 
 - **Assets / data:** Check bundled notices and any added scene assets. The Unity editor and external store assets have separate terms.
 - **AI use:** The toolkit supports agent research and automated testing; its Apache license does not replace editor or third-party asset terms.
 - **Practical limits:** Source reviewed, not run here. Editor eligibility, platform builds and version compatibility need local checks. The develop branch is not a stable evaluation baseline.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -855,7 +816,6 @@ A practical CC0 starting point for small test scenes, asset replacement, collisi
 - **Assets / data:** CC0 for the asset packs
 - **AI use:** Use the CC0 pack files as the basis for a redistributable test fixture. This does not make the website, branding or separately sold software CC0.
 - **Practical limits:** Not every pack contains animation or a humanoid rig. No pack was imported locally in this review.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -888,7 +848,6 @@ CC0 models and characters for repeatable import, material, collision and animati
 - **Assets / data:** CC0 for creator-designated asset packs; check each download
 - **AI use:** Base reuse on the CC0 designation of the downloaded files. A free edition does not establish entitlement to paid source files or unrelated marketplace content.
 - **Practical limits:** Pack formats and included rigs vary; Standard is not necessarily the complete collection. The cited Universal Animation Library changelog records Unreal FBX-to-GLB export and rig-name changes in v2.0, a 24-to-30 fps correction in v2.1, and root-motion plus step-phase changes in v3.0; pin the release and root-motion variant for comparable tests. No local import was performed.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -922,7 +881,6 @@ CC0 realistic assets for material, lighting, dependency and visual-domain regres
 - **Assets / data:** CC0 for downloadable assets; live API service has separate conditions
 - **AI use:** The official API page explicitly includes AI/ML datasets among supported uses. Live API products must identify Poly Haven as the asset source and requests need a unique User-Agent; those conditions are separate from CC0.
 - **Practical limits:** Website copy and example renders are outside the CC0 asset grant. API availability is best effort; no local import was performed.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -956,7 +914,6 @@ A CC0 source for texture-channel, terrain, lighting and material-resolution test
 - **Assets / data:** CC0 for downloadable assets
 - **AI use:** Use the asset CC0 grant rather than the zero price as the basis for reuse. Keep service access conditions and any unrelated third-party content separate.
 - **Practical limits:** Asset formats and available maps vary. This review did not download or import a test material.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -990,7 +947,6 @@ Broad community coverage for 2D content tests, with licensing recorded separatel
 - **Assets / data:** Per-entry licenses, including CC0, CC-BY, CC-BY-SA and GPL variants
 - **AI use:** There is no catalog-wide AI authorization. Select files under a suitable license and assess their attribution, share-alike and any additional rights before publishing a dataset.
 - **Practical limits:** Free downloads have different licenses and asset quality. The FAQ says preview images and audio can have different rights from downloadable assets; do not treat those previews as licensed test-fixture files unless explicitly covered. No individual asset was locally imported or cleared as part of this catalog review.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -1023,7 +979,6 @@ Useful import test content when the exact listing, license and AI-use fields fit
 - **Assets / data:** Listing-specific: Fab Standard, CC-BY or other stated terms; some content is UE-Only
 - **AI use:** Check the listing license and AI-use designation before testing with AI or sharing a dataset. A listing field is not a catalog-wide rule; free pricing is not an open license.
 - **Practical limits:** The Standard license does not generally permit standalone asset redistribution. The official summary says Reference-Only access does not include source-format files, so confirm the acquired tier before planning export or import fixtures. Engine-specific content and individual terms require separate review; no local import was performed.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -1057,7 +1012,6 @@ Package and import regression fixtures when provider rights and the permitted au
 - **Assets / data:** Asset Store EULA or stated restricted/third-party licenses
 - **AI use:** Unity platform agent access and third-party asset authorization are separate checks. The Asset Store terms restrict AI/model-related use without express consent; permitted editor access does not grant asset training or dataset rights.
 - **Practical limits:** Free is not open source. Restricted assets and third-party components may have different terms; no package was downloaded or imported.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -1091,7 +1045,6 @@ Small CC0 characters for first-pass skinning, animation playback and import regr
 - **Assets / data:** CC0
 - **AI use:** The pack asset files use CC0. Preserve provenance in the test fixture and do not extend the grant to site media or separately licensed tools.
 - **Practical limits:** Simplified characters should not be assumed to have a complete standard humanoid skeleton. No local import or retarget test was performed.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -1125,7 +1078,6 @@ A practical CC0 baseline for humanoid retargeting, locomotion blending and root-
 - **Assets / data:** CC0; available files depend on the acquired edition
 - **AI use:** Use the CC0 grant for the files in the downloaded edition. Free Standard access does not include every advertised clip or the paid Blender source.
 - **Practical limits:** The current creator page notes Unreal GLB imports require a version above 5. No local playback or retargeting was performed.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -1159,7 +1111,6 @@ Styled locomotion data for motion matching, gait diversity and cross-skeleton re
 - **Assets / data:** CC BY 4.0 for original motion data; Geno.fbx in a separate retarget repository is non-commercial research only
 - **AI use:** Original motion is CC BY 4.0 and requires attribution. Use an independently licensed character; the Geno mesh restriction is not removed by the motion license.
 - **Practical limits:** All 100 styles were captured from the same actor, so held-out styles do not test generalization to unseen performers. BVH motion is not a ready-skinned game character. The Geno mesh is not included in the open recommendation; no local retargeting was performed.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -1193,7 +1144,6 @@ A broad motion source for skeleton parsing, coordinate conversion and control or
 - **Assets / data:** Custom CMU use terms: research and commercial products allowed; raw or converted data may not be directly resold
 - **AI use:** The site permits research and commercial products under its custom conditions. That is not CC0 or permission to directly resell the source/converted dataset; keep downstream dataset distribution separate.
 - **Practical limits:** Different subjects have different calibrated skeletons; ASF/AMC needs conversion for many engines. No local parsing or import was performed.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -1226,7 +1176,6 @@ Research data and baselines for motion in-betweening, trajectory continuity and 
 - **Assets / data:** CC BY-NC-ND 4.0 for the motion dataset
 - **AI use:** The license permits non-commercial adaptations but not sharing Adapted Material; necessary technical format changes are treated separately. Retain attribution and review any retargeted-data release; commercial AI test-service use is not covered.
 - **Practical limits:** Not a generally redistributable commercial animation pack. No dataset download, baseline run or local import was performed.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -1262,7 +1211,6 @@ Research-scale human motion for pose pipelines and motion models in a common par
 - **Assets / data:** Custom AMASS terms for specified non-commercial research uses; no redistribution
 - **AI use:** The license restricts use to its stated purposes, prohibits redistribution and restricts commercial uses, including training for commercial purposes. Separate SMPL/model terms still apply.
 - **Practical limits:** Not a direct engine-ready clip pack or a public test-dataset redistribution source. No registration, download or local conversion was performed.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -1296,7 +1244,6 @@ The CC BY body subset for testing human mesh, rig, skinning and pose interchange
 - **Assets / data:** CC BY 4.0 for SMPL-Body, excluding shape blendshapes and the tools to create bodies from them
 - **AI use:** Apply CC BY attribution to the covered body subset. It does not grant rights to the parametric model, generation tools or separately licensed AMASS motion.
 - **Practical limits:** The body license excludes the shape-generating components. No body file was obtained or imported locally.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -1330,7 +1277,6 @@ A research representation for shape/pose conversion and human-to-game-skeleton p
 - **Assets / data:** Custom SMPL-Model terms for specified non-commercial uses; no redistribution; commercial licensing is separate
 - **AI use:** The model agreement limits use to non-commercial scientific research, education or artistic projects, bars redistribution and training for commercial use, and is separate from the CC BY body subset and AMASS data terms.
 - **Practical limits:** Not an unrestricted open-source game rig. No model download, tool execution or local import was performed.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 
@@ -1364,7 +1310,6 @@ A common ordinary game-animation workflow whose AI testing permission needs sepa
 - **Assets / data:** Adobe service/content terms; not an open asset license
 - **AI use:** Adobe's published 2021 additional terms expressly cover AI/ML creation, training, testing and improvement restrictions. The current login acceptance flow was not verified, so this is not marked as confirmed permission or a confirmed current blanket prohibition.
 - **Practical limits:** Not included in the default AI evaluation dataset recommendation. No account login, download, auto-rigging or local import was performed.
-- **Sources reviewed:** 2026-10-18
 
 **Suggested test tasks**
 

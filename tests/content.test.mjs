@@ -16,8 +16,11 @@ import {
   documentLinkResolver,
   assertDocumentHTML,
   root,
+  publishablePath,
 } from "../scripts/lib/documents.mjs";
 import { resolve } from "node:path";
+import { readFile } from 'node:fs/promises';
+
 
 const context = await loadContent();
 const {
@@ -27,6 +30,7 @@ const {
   createRegistry,
   assertRegistryCoverage,
   collectDemos,
+  docLocale, docHome, localeFromPath, translationSlug,
 } = context;
 const clone = () => structuredClone(sources);
 const escape = (value) =>
@@ -60,6 +64,12 @@ test("all source kinds, fragments, attachments, and raw exports have registered 
       context.contentKinds,
     ) > registry.entries.length,
   );
+});
+test('ignored and hidden local notes cannot be published as documentation', () => {
+ const visible=new Set(['docs/public.md']);
+ assert.equal(publishablePath('.env.notes.md',visible),false);
+ assert.equal(publishablePath('docs/private.md',visible),false);
+ assert.equal(publishablePath('docs/public.md',visible),true);
 });
 test("unknown data files cannot silently become unexposed side collections", () => {
   assert.throws(
@@ -157,7 +167,7 @@ test("unknown JSON fields require an explicit presentation", () => {
   );
 });
 test("research envelope metadata cannot acquire an undisclosed field", () => {
-  const path = "data/research/cadle-repositories.json";
+  const path = "data/segments/repository-research.json";
   const modules = {
     ...context.sourceModules,
     [path]: {
@@ -211,20 +221,11 @@ test("a missing record or unsupported detail route fails coverage", () => {
   );
 });
 test("every source recording and curated excerpt survives without source mutation", () => {
-  const before = JSON.stringify({
-    videos: sources.projectVideos,
-    media: sources.projectMedia,
-  });
+  const before = JSON.stringify(sources.recordings);
   const demos = collectDemos(sources);
-  assert.equal(
-    demos.length,
-    Object.keys(sources.showcaseCases).length +
-      Object.keys(sources.projectVideos).length,
-  );
-  for (const id of Object.keys(sources.showcaseCases))
-    assert.ok(demos.some((demo) => demo.id === id));
-  for (const id of Object.keys(sources.projectVideos))
-    assert.ok(demos.some((demo) => demo.id === `recording-${id}`));
+  const views = sources.recordings.flatMap(recording => recording.views);
+  assert.equal(demos.length, views.length);
+  for (const view of views) assert.ok(demos.some(demo => demo.id === view.id));
   assert.ok(
     registry
       .demosFor("opengame")
@@ -236,20 +237,14 @@ test("every source recording and curated excerpt survives without source mutatio
       .some((entry) => entry.id === "gamefactory-ue5-rpg"),
   );
   assert.equal(
-    JSON.stringify({
-      videos: sources.projectVideos,
-      media: sources.projectMedia,
-    }),
+    JSON.stringify(sources.recordings),
     before,
   );
 });
 test("another clip on an existing project is not reduced to one resource preview", () => {
   const next = clone();
-  const original = next.showcaseCases["opengame-skirmish"];
-  next.showcaseCases["coverage-only-another-clip"] = {
-    ...original,
-    id: "coverage-only-another-clip",
-  };
+  const original = next.recordings.find(recording => recording.resourceId === 'opengame');
+  next.recordings.push({ ...original, id: 'coverage-only-original', originalUrl: 'https://example.org/another-original.mp4', views: [{...original.views[0], id: 'coverage-only-another-clip'}] });
   assert.equal(
     createRegistry(next, documents).demosFor("opengame").length,
     registry.demosFor("opengame").length + 1,
@@ -310,7 +305,7 @@ test("Markdown coverage detects a dropped qualification or source link", () => {
       assertMarkdownCoverage(
         metadata,
         markdown,
-        '<div class="prose"><p>Shortened body.</p></div>',
+        '<html lang="en"><div class="prose"><p>Shortened body.</p></div></html>',
         documents,
       ),
     /missing visible text/,
@@ -320,11 +315,31 @@ test("Markdown coverage detects a dropped qualification or source link", () => {
       assertMarkdownCoverage(
         metadata,
         markdown,
-        '<div class="prose"><p>This qualification must remain visible.</p><a href="https://wrong.example/">Original source</a></div>',
+        '<html lang="en"><div class="prose"><p>This qualification must remain visible.</p><a href="https://wrong.example/">Original source</a></div></html>',
         documents,
       ),
     /missing href/,
   );
+});
+test('reader guides start with the task, not editorial disclaimers', async () => {
+  for(const document of documents.filter(page=>!page.source.startsWith('docs/skills/'))) {
+    const markdown=await readFile(resolve(root,document.source),'utf8');
+    const introduction=markdown.split(/\r?\n\s*\r?\n/)[1]||'';
+    assert.doesNotMatch(introduction,/^(?:Sources? (?:checked|reviewed)|Source review:|Research checked|Reviewed)\b/i,`${document.source}: lead with the task`);
+    assert.doesNotMatch(markdown,/GameMap editorial|This page contains \*\*GameMap|No automatic collection or recurring updates/,`${document.source}: omit boilerplate`);
+  }
+});
+test('source-only metadata is preserved in blocks but omitted from reader search', () => {
+  const entry={...registry.entries[0],body:undefined,summary:'Reader summary',title:'Reader title',blocks:[{type:'text',field:'hash',section:'metadata',label:'Audit hash',value:'technical-only-token'},{type:'text',field:'limits',section:'provenance',label:'License',value:'Noncommercial only'}]};
+  const text=context.searchableText(entry);
+  assert.ok(!text.includes('technical-only-token'));
+  assert.ok(text.includes('Noncommercial only'));
+});
+test('document language routes preserve English URLs and choose explicit counterparts', () => {
+  assert.equal(docLocale('practical-guide'),'en');assert.equal(docLocale('zh/practical-guide'),'zh');
+  assert.equal(localeFromPath('/GameMap/docs/zh/practical-guide/'),'zh');assert.equal(docHome('zh'),'/docs/zh/');
+  assert.equal(translationSlug('zh/practical-guide','en'),'practical-guide');
+  assert.equal(translationSlug('practical-guide','zh'),'zh/practical-guide');
 });
 test("document URL policy preserves rendered routes, source assets, and deployment base", () => {
   const rewrite = documentLinkResolver(documents, "/GameMap/");
@@ -341,10 +356,10 @@ test("document URL policy preserves rendered routes, source assets, and deployme
   );
   assert.equal(
     rewrite(
-      "../website/public/cadle-repositories.json",
+      "../website/public/repository-research.json",
       resolve(root, "docs/cadle-repositories.md"),
     ),
-    "/GameMap/cadle-repositories.json",
+    "/GameMap/repository-research.json",
   );
   assert.equal(
     rewrite("https://source.example/", resolve(root, "docs/workflow-notes.md")),
@@ -355,34 +370,29 @@ test("document URL policy preserves rendered routes, source assets, and deployme
     /Unregistered Markdown/,
   );
 });
-test("static search must contain every canonical content identity", () => {
-  const rows = Object.fromEntries(
-    registry.entries.map((entry, index) => [
-      index,
-      { type: "page", page_id: context.searchId(entry.key), url: entry.url },
-    ]),
-  );
-  assert.doesNotThrow(() =>
-    assertSearchCoverage(registry, { docs: { docs: rows } }, context.searchId),
-  );
-  delete rows[0];
-  assert.throws(
-    () =>
-      assertSearchCoverage(
-        registry,
-        { docs: { docs: rows } },
-        context.searchId,
-      ),
-    /Search omits/,
-  );
+test('static search contains every canonical identity and rejects missing text', () => {
+  const documents=registry.entries.map(entry=>({key:entry.key,url:entry.url,text:entry.title}));
+  assert.doesNotThrow(()=>assertSearchCoverage(registry,{version:2,documents}));
+  assert.throws(()=>assertSearchCoverage(registry,{version:2,documents:documents.slice(1)}),/Search omits/);
 });
-test("search page identities cannot collide with generated numeric chunk IDs", () => {
-  const ids = new Set(
-    registry.entries.map((entry) => context.searchId(entry.key)),
-  );
-  for (const entry of registry.entries)
-    for (let index = 0; index < entry.blocks.length; index++)
-      assert.ok(!ids.has(`${context.searchId(entry.key)}-${index}`));
+test('resource associations cannot be joined against the agent namespace', () => {
+  const expected=sources.learningPaths.filter(game=>game.resourceIds.includes('codex')).map(game=>game.id);
+  assert.ok(expected.length);
+  assert.deepEqual(registry.examplesFor({kind:'resource',id:'codex'}).map(entry=>entry.id),expected);
+  assert.throws(()=>registry.examplesFor({kind:'agent',id:'codex'}),/Invalid resource reference/);
+});
+test('one original film has multiple presentations, not duplicate asset identities',()=>{
+ const original=sources.recordings.find(record=>record.views.some(view=>view.id==='streamrender-car'));
+ assert.equal(original.views.length,2);
+ assert.ok(original.views.some(view=>view.id==='recording-streamrender-h3'));
+ const duplicate=clone();duplicate.recordings.push({...original,id:'duplicate-original'});
+ assert.throws(()=>createRegistry(duplicate,documents),/Duplicate original recording/);
+});
+test('all search surfaces use normalized token matching and exact-title ranking',()=>{
+ const {matchesSearch,rankDocuments}=context;
+ assert.equal(matchesSearch('Phaser · Level Design','design PHASER'),true);
+ const documents=[{key:'a',kind:'resource',title:'OpenAI Codex',url:'/a/',text:'OpenAI Codex workflow'},{key:'b',kind:'document',title:'Workflow notes',url:'/b/',text:'OpenAI Codex workflow'}];
+ assert.equal(rankDocuments(documents,'OpenAI Codex')[0].key,'a');
 });
 test("source and content digests change when a qualification changes", () => {
   const next = clone();

@@ -48,7 +48,7 @@ for (const path of site.pages) {
     `One clear page title: ${path || "/"}`,
   );
   assert.ok(!html.includes("chatgpt.site"), `Legacy hosting URL in ${path}`);
-  if (path.startsWith("docs/") && path !== "docs/") {
+  if (site.docs.some(document=>path===`docs/${document.slug}/`)) {
     const body = tree.find((node) =>
       node.attrs.some(
         (attr) =>

@@ -8,6 +8,7 @@ type PublishedRecord = Pick<
   "key" | "kind" | "id" | "title" | "url" | "blocks"
 >;
 interface Manifest {
+  recordings: {id:string;views:string[]}[];
   totalRecords: number;
   counts: Record<ContentKind, number>;
   records: PublishedRecord[];
@@ -61,7 +62,7 @@ test("complete index exposes every registered record and finds a deliverable", a
     .getByRole("combobox", { name: "Content type", exact: true })
     .selectOption("step");
   await page
-    .getByRole("textbox", { name: "Filter content index" })
+    .getByRole("textbox", { name: 'Search all content', exact:true })
     .fill(deliverable.value);
   const card = page.locator(`[data-content-ref="${step.key}"]`);
   await expect(card).toBeVisible();
@@ -176,7 +177,7 @@ test("all recording records are discoverable and one project can select multiple
 }) => {
   const manifest = await inventory(request, baseURL);
   await page.goto("showcase/");
-  await expect(page.locator(".demo-card")).toHaveCount(manifest.counts.demo);
+  await expect(page.locator('.demo-card')).toHaveCount(manifest.recordings.length);
   await expect(
     page.locator('[data-content-ref="demo:opengame-skirmish"]'),
   ).toBeVisible();

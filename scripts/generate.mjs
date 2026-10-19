@@ -1,8 +1,10 @@
-import {mkdir,readFile,writeFile} from 'node:fs/promises';
+import {mkdir,readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {build} from 'esbuild';
 import {readDocuments} from './lib/documents.mjs';
+import {generateSkillPackages} from './lib/skill-packages.mjs';
+import {writeIfChanged} from './lib/files.mjs';
 import {categories,loadCatalog,validate,renderAwesome} from './catalog.mjs';
 import {loadLearningContent,renderLearningGuide} from './learning.mjs';
 import {loadAgentCodeContent,renderAgentCodeGuide} from './agent-code.mjs';
@@ -11,10 +13,10 @@ import {loadRepositoryResearch,renderRepositoryResearch} from './repository-rese
 const records=validate(await loadCatalog());
 const json=JSON.stringify(records,null,2)+'\n';
 const awesome=renderAwesome(records);
-const outputs={'data/resources.json':json,'website/src/data/resources.json':json,'website/public/resources.json':json,'AWESOME.md':awesome};
+const outputs={'website/public/favicon.svg':await readFile(new URL('../website/public/brand/gamemap-mark.svg',import.meta.url),'utf8'),'data/resources.json':json,'website/src/data/resources.json':json,'website/public/resources.json':json,'AWESOME.md':awesome};
 const repositoryResearch=await loadRepositoryResearch();
 outputs['docs/cadle-repositories.md']=renderRepositoryResearch(repositoryResearch);
-outputs['website/public/cadle-repositories.json']=JSON.stringify(repositoryResearch,null,2)+'\n';
+outputs['website/public/repository-research.json']=JSON.stringify(repositoryResearch,null,2)+'\n';
 const {learningPaths,foundationPaths,communityCollections}=await loadLearningContent();
 outputs['docs/tutorials-and-demos.md']=renderLearningGuide(learningPaths,foundationPaths,records,communityCollections);
 const {agentGameResources,gameCaseAgents,agentLabels,agentResourceKinds}=await loadAgentCodeContent();
@@ -34,8 +36,7 @@ const learningPreviews=await Promise.all(learningPaths.map(async path=>{
 outputs['website/public/media/learning/manifest.json']=JSON.stringify({kind:'gameplay-screenshots',previews:learningPreviews},null,2)+'\n';
 const identities=JSON.parse(await readFile(new URL('../website/src/data/resourceIdentities.json',import.meta.url),'utf8'));
 outputs['website/public/logo-sources.json']=JSON.stringify(identities,null,2)+'\n';
-const marks=new Set(Object.values(identities).map(identity=>identity.asset).filter(Boolean));
-let attribution=`# GameMap resource logo sources\n\nReviewed October 18, 2026. All ${records.length} resources have an explicit, verified organization, research affiliation, or independent maintainer. ${records.filter(resource=>identities[resource.id].asset).length} resources use ${marks.size} locally bundled original marks.\n\nSchool and institute marks identify a verified author affiliation, not exclusive ownership or endorsement. For collaborative research, the notes below preserve the selection rationale and other affiliations. Official project marks identify their own projects; third-party engine tools do not inherit an engine logo. Independent projects without a publicly verifiable mark show the maintainer name only. No generated logo, generic icon, default identicon, or portrait is used as a substitute.\n\nOriginal artwork is displayed with its aspect ratio and colors intact. Wide wordmarks receive more space. Nonvisual XML declarations and external DTD headers are removed from SVG files; artwork is unchanged. Files are served locally from <code>website/public/logos/</code> and do not require a remote image request. The identity registry records the original image URL, primary affiliation evidence, and a SHA-256 checksum. Legacy files under <code>website/public/icons/</code> are not used for resource identities; their accompanying licenses remain with those files.\n\n| Resource | Verified identity | Role | Evidence | Original mark | Local file |\n| --- | --- | --- | --- | --- | --- |\n`;
+let attribution=`# GameMap resource logo sources\n\nFind the organization, research affiliation, or maintainer behind each resource, along with the source of its bundled mark.\n\nSchool and institute marks identify a verified author affiliation, not exclusive ownership or endorsement. For collaborative research, the notes below preserve the selection rationale and other affiliations. Official project marks identify their own projects; third-party engine tools do not inherit an engine logo. Independent projects without a publicly verifiable mark show the maintainer name only. No generated logo, generic icon, default identicon, or portrait is used as a substitute.\n\nOriginal artwork is displayed with its aspect ratio and colors intact. Wide wordmarks receive more space. Nonvisual XML declarations and external DTD headers are removed from SVG files; artwork is unchanged. Files are served locally from <code>website/public/logos/</code> and do not require a remote image request. The identity registry records the original image URL, primary affiliation evidence, and a SHA-256 checksum. Legacy files under <code>website/public/icons/</code> are not used for resource identities; their accompanying licenses remain with those files.\n\n| Resource | Verified identity | Role | Evidence | Original mark | Local file |\n| --- | --- | --- | --- | --- | --- |\n`;
 for(const resource of records){
  const identity=identities[resource.id];
  attribution+=`| ${resource.name} | ${identity.organization} | ${identity.kind} | [Primary source](${identity.sourceUrl}) | ${identity.logoSourceUrl?`[Original image](${identity.logoSourceUrl})`:'No published project mark'} | ${identity.asset?'<code>'+identity.asset+'</code>':'Maintainer name only'} |\n`;
@@ -65,6 +66,7 @@ for(const {slug} of downloadableNotes)contributing=contributing.replaceAll(`](do
 outputs['website/public/CONTRIBUTING.md']=contributing;
 outputs['website/public/awesome-list.md']=downloadable.replaceAll('](CONTRIBUTING.md)','](./CONTRIBUTING.md)').replaceAll('](data/resources.json)','](./resources.json)');
 for(const [path,value] of Object.entries(outputs)){
- const url=new URL('../'+path,import.meta.url);await mkdir(new URL('.',url),{recursive:true});await writeFile(url,value);
+ const url=new URL('../'+path,import.meta.url);await mkdir(new URL('.',url),{recursive:true});await writeIfChanged(url,value);
 }
+await generateSkillPackages();
 console.log(`Generated awesome list and website data: ${records.length} resources, ${categories.length} categories.`);

@@ -1,4 +1,13 @@
 {
+  "level-design-book-skill": {
+    "organization": "The Level Design Book · unofficial adaptation",
+    "kind": "creator",
+    "asset": null,
+    "sourceUrl": "https://book.leveldesignbook.com/appendix/about",
+    "logoSourceUrl": null,
+    "notes": "Original writing: Robert Yang and contributors including Andrew Yoder. GameMap distributes an unofficial operational adaptation with its original CC BY-NC-SA 4.0 license, attribution, source map, and third-party exceptions. The book authors and pi maintainers have not endorsed this package. No generated logo or maintainer portrait is used.",
+    "sha256": null
+  },
   "codex": {
     "organization": "OpenAI",
     "kind": "brand",

@@ -1,31 +1,31 @@
 # GameMap
 
-A curated atlas for AI-assisted game development — from an idea to a playable world.
+**Tencent IEG · AI Game Development**
 
-Explore coding agents, game engines, 2D/3D tools, production workflows, and world models through practical resources and real game examples.
+A practical map of tools, playable projects, and production knowledge for building games with AI.
 
-**[Explore the website](https://openenvision.github.io/GameMap/)** · [Browse the resource catalog](AWESOME.md)
+[Website](https://openenvision.github.io/GameMap/) · [Resource catalog](AWESOME.md) · [Documentation](docs/practical-guide.md) · [中文指南](docs/zh/reading-guide.md) · [Contributing](CONTRIBUTING.md)
 
-## Guides
+## Explore
 
-- [Tutorials & demos](docs/tutorials-and-demos.md) — playable games, source code, and learning paths.
-- [Practical guide](docs/practical-guide.md) — plan a project and take it through implementation.
-- [Testing library](docs/game-testing-library.md) — games, environments, assets, and evaluation resources.
-- [Research notes](docs/research-index.md) — deeper reviews of tools, interfaces, and production workflows.
+- **[Tools & engines](AWESOME.md)** — coding agents, engine integrations, asset pipelines, and world models.
+- **[Games & workflows](docs/tutorials-and-demos.md)** — playable examples, creator build stories, and project source.
+- **[Production & testing](docs/research-index.md)** — practical interfaces, evaluation methods, and evidence boundaries.
+- **[Level design](docs/level-design-skill.md)** — a complete skill package with references and reusable templates.
 
-## Run locally
+## Development
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Built with Fumadocs, React Router, TypeScript, and Vite. Guides render as full pages; no backend or API key is required.
+Documentation and catalog changes refresh automatically. The website is static, built with Fumadocs, React Router, TypeScript, and Vite; no application backend or API key is required.
 
-For production builds and GitHub Pages publishing, see the [deployment guide](docs/deployment.md).
+See [development & deployment](docs/deployment.md) for production builds and GitHub Pages configuration.
 
-## Contribute
+## Sources & reuse
 
-Add a resource, fix a link, or improve a guide. See [CONTRIBUTING.md](CONTRIBUTING.md) for data formats and checks.
+Original projects and media retain their respective rights. Inclusion is not an endorsement or a claim of independent reproduction.
 
-Resources are manually curated. Inclusion is not an endorsement or a claim of full reproduction.
+The bundled level-design adaptation is **CC BY-NC-SA 4.0**, with noncommercial and share-alike conditions. Read its [attribution and license](docs/skills/level-design/LICENSE.md) before reuse.

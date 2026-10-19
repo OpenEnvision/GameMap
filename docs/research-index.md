@@ -1,8 +1,6 @@
 # Production research dossiers
 
-Baseline sources checked on **2026-10-18**; subsequent review dates are recorded in the individual sections and coverage ledger. Full reproduction was not performed.
-
-These notes extend the concise [resource directory](../AWESOME.md) using the repository's existing categories and contribution rules. They cover native interfaces, asynchronous job semantics, artifact provenance, production tools, visual evidence and generative-service terms. Tools mentioned in notes are not additional directory entries. Neither a directory card nor a source check establishes a working integration.
+Find the interface contracts, asset checks, debugging methods, and service terms needed for a production task. Start with a stage below, then follow the relevant source notes and work-order templates.
 
 ## Find the relevant evidence
 
@@ -56,7 +54,7 @@ For a concrete task, start with the [production-stage routes](production-coverag
 
 ## From a source to an acceptance test
 
-The following is **GameMap editorial guidance**:
+For each integration:
 
 1. State the work order and target project. Select a documented operation and record its source version, prerequisites and editor/runtime context.
 2. Separate request acceptance, job completion, output availability, saved state and cold-reopen persistence. Leave an undocumented transition unknown.

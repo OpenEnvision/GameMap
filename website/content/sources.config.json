@@ -5,7 +5,7 @@
   "data/resources.json": {
     "exports": { "default": { "shape": "array", "kind": "resource" } }
   },
-  "data/research/cadle-repositories.json": {
+  "data/segments/repository-research.json": {
     "exports": {
       "default": {
         "shape": "research",
@@ -178,7 +178,6 @@
   },
   "website/src/data/showcase.ts": {
     "exports": {
-      "showcaseCases": { "shape": "lookup", "kind": "demo" },
       "showcaseByTrack": {
         "shape": "lookup",
         "kind": "path",
@@ -186,8 +185,8 @@
       }
     }
   },
-  "website/src/data/projectVideos.ts": {
-    "exports": { "projectVideos": { "shape": "recordings", "kind": "demo" } }
+  "website/src/data/recordings.ts": {
+    "exports": { "recordings": { "shape": "media", "kind": "demo" } }
   },
   "website/src/data/projectMedia.ts": {
     "exports": {

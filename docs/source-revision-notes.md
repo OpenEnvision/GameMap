@@ -1,8 +1,6 @@
 # Source revision and implementation boundaries
 
-Checked **2026-10-18**. Sources checked; full reproduction not performed.
-
-The revision table below lists 72 selected upstream source or model-card files inspected during the research. Additional inspected files are cited in the relevant sections and other dossiers; this table is not an exhaustive inventory of every source cited in GameMap. Full revisions identify the document/code that supported a claim. They do not identify an installed package, engine environment, downloaded model weights or a successful adapter run. No source pin grants rights beyond the applicable code, weight, data and service terms.
+Use these pinned source files and model cards to locate the implementation behind a documented behavior. Follow the relevant dossier for additional references and version-specific integration requirements.
 
 ## Revision index
 
@@ -339,7 +337,7 @@ The revision table below lists 72 selected upstream source or model-card files i
 
 ## Freshness and promotion policy
 
-The following is **GameMap editorial guidance**:
+When implementing an evaluation loop:
 
 - Re-check service terms, model availability and expiring-output contracts immediately before a hosted experiment. A checked date is not a promise of monitoring.
 - Keep published release documentation separate from a moving default branch. A later source file can show an implementation detail without proving that an installed release contains it.

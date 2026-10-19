@@ -1,6 +1,6 @@
 # GameMap demo media sources
 
-Reviewed October 18, 2026. The six homepage cases are recordings published by the project authors. Their locally bundled excerpts are not live game sessions and no model runs in this browser. GameMap's generated design concepts and legacy editorial artwork are not used as demo footage.
+Homepage previews are excerpts from recordings published by the project authors. The credits below link each clip to its original source.
 
 The previews retain every part of the source frame, including original game interfaces and input/output comparison labels. Only excerpt selection, proportional resizing, frame-rate normalization (maximum 30 fps), H.264 encoding, audio removal, and first-frame WebP poster encoding were applied to the six primary excerpts. Square footage and wide comparisons use a quiet matte instead of cutting off content. Native frame proportions are used in the lower gallery when practical. The mobile comparison variant additionally rearranges the two complete source panels as described below; it does not crop, replace, or generate any scene content.
 

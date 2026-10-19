@@ -1,6 +1,6 @@
 # Engines, rendering libraries, and content tools: sources and scope
 
-Source review date: 2026-10-18. The primary data file, `data/segments/engines.json`, contains 22 entries organized by their actual roles. Godot, Unity, and UE are game engines; Phaser is a browser 2D framework; Three.js is a 3D rendering library; React Three Fiber is a React renderer for Three.js; and Blender is a content creation tool. None should be labeled an end-to-end game agent.
+Choose a game engine for runtime and editing, a rendering library for custom graphics, and a content tool for asset production. Their responsibilities differ: Godot, Unity, and Unreal provide engine workflows; Phaser targets browser 2D games; Three.js and React Three Fiber handle rendering; Blender creates and processes assets.
 
 ## Source status
 

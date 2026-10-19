@@ -1,8 +1,8 @@
 # Catalog review coverage
 
-Source review: **2026-10-18**. Baseline: `5b4735422f7eb22b405f49f6e4b124a9e9bb2143`. All 109 existing cards were read; no cards were added in this pass. **Sources checked; full reproduction not performed.**
+Track corrections to resource descriptions, artifact availability, and usage terms. Each entry records the claim examined, the supporting source, and any remaining question.
 
-This ledger describes a bounded review, not certification. Relevant primary-page sections, artifact listings, and selected terms were checked, with deeper reads on consequential claims. An abstract-level or blocked read is weaker evidence than full documentation or source inspection. Retained means no material correction was identified within that scope; it does not mean every linked claim, release, license, or platform was exhaustively verified. No engines, listed agents, models, or paid APIs were run.
+Review baseline: `5b4735422f7eb22b405f49f6e4b124a9e9bb2143`; 109 resource cards.
 
 ## Material refinements
 

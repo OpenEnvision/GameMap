@@ -1,6 +1,6 @@
 # GameMap resource logo sources
 
-Reviewed October 18, 2026. All 109 resources have an explicit, verified organization, research affiliation, or independent maintainer. 97 resources use 64 locally bundled original marks.
+Find the organization, research affiliation, or maintainer behind each resource, along with the source of its bundled mark.
 
 School and institute marks identify a verified author affiliation, not exclusive ownership or endorsement. For collaborative research, the notes below preserve the selection rationale and other affiliations. Official project marks identify their own projects; third-party engine tools do not inherit an engine logo. Independent projects without a publicly verifiable mark show the maintainer name only. No generated logo, generic icon, default identicon, or portrait is used as a substitute.
 
@@ -97,6 +97,7 @@ Original artwork is displayed with its aspect ratio and colors intact. Wide word
 | FastNoise Lite | Auburn | creator | [Primary source](https://github.com/Auburn/FastNoiseLite) | No published project mark | Maintainer name only |
 | DirectX Shader Compiler | Microsoft | brand | [Primary source](https://github.com/microsoft/DirectXShaderCompiler) | [Original image](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120) | <code>logos/microsoft-f4a787ffde7c.jpg</code> |
 | Playwright Test | Microsoft / Playwright | brand | [Primary source](https://playwright.dev/docs/test-snapshots) | [Original image](https://playwright.dev/img/playwright-logo.svg) | <code>logos/microsoft-playwright-42a5ff460d7c.svg</code> |
+| Level Design Book · unofficial design skill | The Level Design Book · unofficial adaptation | creator | [Primary source](https://book.leveldesignbook.com/appendix/about) | No published project mark | Maintainer name only |
 | SolarRenderer | National University of Singapore | institution | [Primary source](https://enderfga.cn/SolarRenderer/) | [Original image](https://www.comp.nus.edu.sg/wp-content/uploads/2023/09/cropped-favicon-180x180.png) | <code>logos/national-university-of-singapore-208339f730ed.png</code> |
 | StreamRender-H3 | NVIDIA Research | brand | [Primary source](https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/) | [Original image](https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/legal-info/logo-brand-usage/_jcr_content/root/responsivegrid/nv_container_392921705/nv_container/nv_image.coreimg.svg/1776076920288/nvidia-logo-vert.svg) | <code>logos/nvidia-research-eeccd683f64c.svg</code> |
 | Code World Model: Coding Agent as World Brain | Westlake University | institution | [Primary source](https://buaacyw.github.io/cwm/) | [Original image](https://en.westlake.edu.cn/images/header_icon_color.png) | <code>logos/westlake-university-0523b293fb55.png</code> |
@@ -475,6 +476,10 @@ Official project or publisher attribution is supported by the linked primary sou
 ### Playwright Test
 
 Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.
+
+### Level Design Book · unofficial design skill
+
+Original writing: Robert Yang and contributors including Andrew Yoder. GameMap distributes an unofficial operational adaptation with its original CC BY-NC-SA 4.0 license, attribution, source map, and third-party exceptions. The book authors and pi maintainers have not endorsed this package. No generated logo or maintainer portrait is used.
 
 ### SolarRenderer
 

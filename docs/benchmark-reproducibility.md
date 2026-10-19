@@ -1,6 +1,6 @@
-# Benchmark reproducibility and evidence boundaries
+# Reproducing game-development benchmarks
 
-Checked 2026-10-18. Scope: actual public artifact surfaces and evaluation isolation for seven researched game-development and QA studies. This is source inspection, not reproduction or a declaration that unverified artifacts do not exist. No installs, credentials or evaluation requests were used.
+Find the code, data, harness, and evaluation setup needed to reproduce each study. Check split isolation and artifact availability before comparing reported results.
 
 ## Artifact and control matrix
 
@@ -109,7 +109,7 @@ The [inspected README at 39952ba6341898380ff1c2c3336101c57c99196b](https://githu
 
 ## Fair pi-based recursive harness improvement
 
-The following is **GameMap editorial guidance**, not an implemented pi integration or a claim that a modified harness reproduces any official benchmark. The existing [pi/GEPA source notes](source-revision-notes.md) describe extension and optimizer surfaces; they do not provide these experimental controls automatically.
+When adapting a harness, implement the controls below alongside the extension and optimizer surfaces in the [pi/GEPA reference](source-revision-notes.md).
 
 For generated interaction regressions, [stateful discovery and failure reduction](gameplay-state-contracts.md#stateful-interaction-discovery-and-failure-reduction) separates adaptive shrinking, clean-state reproduction and fixed regression promotion. Count every reset, attempted step, shrink/replay and cleanup; reduced traces are not independent success-rate trials.
 
@@ -165,7 +165,7 @@ The inspected release evidence establishes paper/pseudocode, not an official exe
 
 The inspected code is [Apache-2.0](https://github.com/lm-sys/FastChat/blob/587d5cfa1609a43d192cedb8441cac3c17db105d/LICENSE). Its [documented hosted-judge flow](https://github.com/lm-sys/FastChat/blob/587d5cfa1609a43d192cedb8441cac3c17db105d/fastchat/llm_judge/README.md) needs model/API access; code licensing does not grant that access or settle dataset/model terms. No call was made.
 
-**GameMap editorial adaptation, unimplemented.** For visual candidate tournaments, freeze the task and exact evidence packets, remove candidate/model identity cues, and compare both presentation orders while retaining within-clip chronology. Record preference, tie, inconsistent judgment and invalid response separately, with their denominators. Audit a blinded human/reference subset for actual task correctness; agreement or order consistency cannot replace engine-state acceptance. Run a control with identical evidence and another with redundant views or verbose self-reports to detect presentation sensitivity before using the judge for selection. These visual probes are proposed experiments, not validated extensions of MT-Bench.
+**Comparison template.** For visual candidate tournaments, freeze the task and exact evidence packets, remove candidate/model identity cues, and compare both presentation orders while retaining within-clip chronology. Record preference, tie, inconsistent judgment and invalid response separately, with their denominators. Audit a blinded human/reference subset for actual task correctness; agreement or order consistency cannot replace engine-state acceptance. Run a control with identical evidence and another with redundant views or verbose self-reports to detect presentation sensitivity before using the judge for selection. These visual probes are proposed experiments, not validated extensions of MT-Bench.
 
 
 ### Proposed GameMap protocol, not a source-validated implementation
@@ -231,7 +231,7 @@ The [API contract][GEPA-api] and [engine][GEPA-engine] reuse the saved seed's va
 
 ## Harness composition and evaluation accounting
 
-Checked 2026-10-18 against the existing GEPA and Meta-Harness source pins. This extends the preceding execution-control review with composition identity and path-specific accounting. Source inspection only: no candidate import, optimizer, model, benchmark or runtime fixture was executed. All proposed controls and fixtures are **GameMap editorial guidance**. Meta-Harness observations below apply to its named classification implementation, not every possible harness.
+Bind evaluation results to the complete candidate composition and the path that executed it. The GEPA and Meta-Harness references below describe their respective implementations; the Meta-Harness case concerns its classification harness.
 
 ### 1. GEPA: named components are not a typed execution graph
 
@@ -307,13 +307,13 @@ The [October 9 paper, v1](https://arxiv.org/html/2610.14224v1), studies frozen-m
 - [Report implementation](https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/report.py): graded rows form the score denominator, and ungraded rows are separately counted. The module also warns about inherited-harness fallback, selected base/candidate outputs and mixed scoring units. Read these populations before comparing a headline average.
 - [Completion marker](https://github.com/google-research/harness2/blob/1cfe254e8d25b15f37048c3730134686abe60335/harness2/core/runmark.py): the API documents recording after normal runner return, storing a supplied-tree fingerprint or the shared `base` sentinel when no harness directory is supplied. It does not independently verify completion. This is reuse metadata, not evidence of valid game behavior, fresh model sampling or an independently successful task.
 
-**GameMap editorial adaptation, unimplemented:** compare a fixed harness, task-local edits without a library, and the same edits with a project-separated library under equal total budgets. Bind any visual lesson to frame/build/artifact IDs; keep editor/run provenance and invalid verdict counts. Reserve protected project tests and audit the full candidate-to-selected-to-inherited chain. This is a proposed game-production experiment, not a demonstrated benefit or compatible pi integration.
+**Comparison template:** compare a fixed harness, task-local edits without a library, and the same edits with a project-separated library under equal total budgets. Bind any visual lesson to frame/build/artifact IDs; keep editor/run provenance and invalid verdict counts. Reserve protected project tests and audit the full candidate-to-selected-to-inherited chain. This is a proposed game-production experiment, not a demonstrated benefit or compatible pi integration.
 
 ### Audit promotion and inherited state
 
 [Auditing Harness Tampering in Self-Improving Agents, v1](https://arxiv.org/html/2609.00069v1) adds a change-level perspective: obligations can fail during execution, evaluation, selection, recording or propagation. Its constructed dataset inserts matched faulty/benign edits into recorded changes; classification receives target lines, while localization must find them. Construction supplies labels and human inspection covers a subset. The reported natural-run analysis applies a model auditor to released trajectories. Its finding rates are not independently established defect prevalence, and seeded-control false-positive rates do not establish natural-run precision. An ancestor's flagged edit does not prove activation or a causal score gain in its descendants. The reviewed paper/deposited manuscript archive did not establish an author-linked auditor, labeled-data or full-output release; availability remains unverified. Paper licensing does not establish software/data rights. No auditor or alleged defect was executed here.
 
-**GameMap editorial adaptation, unimplemented:** extend existing candidate provenance through promotion and later reuse. Record full diff and relevant pre-state, the frozen allowed-mutation/obligation manifest, suspicious lines, supporting trace IDs and disposition. Keep static suspicion, human-adjudicated defect and reproduced effect separate. Use original paired fixtures to test:
+Extend existing candidate provenance through promotion and later reuse. Record full diff and relevant pre-state, the frozen allowed-mutation/obligation manifest, suspicious lines, supporting trace IDs and disposition. Keep static suspicion, human-adjudicated defect and reproduced effect separate. Use original paired fixtures to test:
 
 - Missing required platform/playthrough results despite excellent remaining scores
 - A previous build's screenshot or asset report substituted for current evidence

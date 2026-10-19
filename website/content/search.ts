@@ -26,5 +26,5 @@ export function blockText(block: ContentBlock): string {
   }
 }
 export function searchableText(entry: ContentEntry) {
-  return `${entry.title} ${contentKinds[entry.kind].plural} ${entry.blocks.map(blockText).join("\n")}`;
+  return `${entry.title} ${contentKinds[entry.kind].plural} ${entry.blocks.filter(block=>block.section!=='metadata').map(blockText).join("\n")}`;
 }

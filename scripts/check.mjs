@@ -223,8 +223,10 @@ function inspectMp4(bytes,label){
 }
 
 const {clips,variants=[],libraryClips=[]}=JSON.parse(await readFile(new URL('../website/public/media/showcase/manifest.json',import.meta.url),'utf8'));
-const bundle=await build({absWorkingDir:fileURLToPath(new URL('../',import.meta.url)),entryPoints:['website/src/data/showcase.ts'],bundle:true,write:false,format:'esm',platform:'node',define:{'import.meta.env.BASE_URL':'"./"'}});
-const {showcaseCases,showcaseByTrack}=await import('data:text/javascript;base64,'+Buffer.from(bundle.outputFiles[0].text).toString('base64'));
+const bundle=await build({absWorkingDir:fileURLToPath(new URL('../',import.meta.url)),entryPoints:['website/src/data/recordings.ts'],bundle:true,write:false,format:'esm',platform:'node',define:{'import.meta.env.BASE_URL':'"./"'}});
+const {recordings}=await import('data:text/javascript;base64,'+Buffer.from(bundle.outputFiles[0].text).toString('base64'));
+const showcaseCases=Object.fromEntries(recordings.flatMap(recording=>recording.views.filter(view=>view.role==='excerpt').map(view=>[view.id,{...view,video:{previewSrc:view.previewSrc,src:recording.originalUrl,source:view.sourceUrl}}])));
+const showcaseByTrack=Object.fromEntries(['2d','3d','world'].map(track=>[track,{cases:Object.values(showcaseCases).filter(view=>view.track===track).map(view=>view.id)}]));
 assert.equal(clips.length,6,'Keep six primary showcase cases; responsive variants are not extra cases');
 assert.deepEqual(clips.map(clip=>clip.id).sort(),Object.keys(showcaseCases).sort(),'Video provenance must match the rendered cases');
 for(const track of ['2d','3d','world']){
@@ -310,22 +312,18 @@ async function englishSources(directory){
  return nested.flat();
 }
 const englishFiles=[...await englishSources('website/src'),...await englishSources('website/app'),...(checkBuilt?['dist/index.html']:[]),'README.md','AWESOME.md',...(await readdir(new URL('../website/public/',import.meta.url))).filter(name=>/\.(md|json)$/.test(name)).map(name=>'website/public/'+name)];
-// Preserve this exact bilingual provenance label from the original art archive.
-// It is quoted source material, not newly authored interface copy.
-const archivalQuotes={'website/public/editorial-art-prompts.md':['原创概念插图']};
 await Promise.all(englishFiles.map(async path=>{
- let source=await readFile(new URL('../'+path,import.meta.url),'utf8');
- for(const quote of archivalQuotes[path]||[])source=source.replaceAll(quote,'');
- assert.doesNotMatch(source,/\p{Script=Han}/u,`Non-English copy remains in ${path}`);
+ const source=(await readFile(new URL('../'+path,import.meta.url),'utf8')).replaceAll(path==='README.md'?'中文指南':'\u0000','');
+ assert.doesNotMatch(source,/\p{Script=Han}/u,`Unlocalized Chinese copy remains in the English interface: ${path}`);
 }));
-for(const path of ['website/app/root.tsx',...(checkBuilt?['dist/index.html']:[])])assert.match(await readFile(new URL('../'+path,import.meta.url),'utf8'),/<html lang="en"[\s>]/,`Set the document language to English: ${path}`);
-console.log(`English-only checks passed: ${englishFiles.length} ${checkBuilt?'source, rendered-site, and download':'source and download'} files.`);
+for(const path of ['website/app/root.tsx',...(checkBuilt?['dist/index.html']:[])])assert.match(await readFile(new URL('../'+path,import.meta.url),'utf8'),/<html lang(?:=|[\s>])/,`Set the document language explicitly: ${path}`);
+console.log(`English-interface checks passed: ${englishFiles.length} ${checkBuilt?'source, rendered-site, and download':'source and download'} files.`);
 
 const repositoryResearch=await loadRepositoryResearch();
 const repositoryDocument=renderRepositoryResearch(repositoryResearch);
 assert.equal(await readFile(new URL('../docs/cadle-repositories.md',import.meta.url),'utf8'),repositoryDocument,'Regenerate repository research');
 for(const prefix of ['website/public',...(checkBuilt?['dist']:[])]){
- assert.equal(await readFile(new URL('../'+prefix+'/cadle-repositories.json',import.meta.url),'utf8'),JSON.stringify(repositoryResearch,null,2)+'\n','Stale repository research download');
+ assert.equal(await readFile(new URL('../'+prefix+'/repository-research.json',import.meta.url),'utf8'),JSON.stringify(repositoryResearch,null,2)+'\n','Stale repository research download');
  assert.equal(await readFile(new URL('../'+prefix+'/cadle-repositories.md',import.meta.url),'utf8'),repositoryDocument.replaceAll('](../website/public/','](./'),'Stale repository research document');
 }
 console.log(`Repository import checks passed: ${repositoryResearch.source.indexed_count} indexed candidates plus one reference; complete inventory and generated evidence ledger.`);

@@ -1,8 +1,6 @@
 # Coding-agent game interfaces: source evidence
 
-Reviewed October 18, 2026. These ten notes explain targeted requirement, permission, and verification refinements in the coding-agent resource guide. They supplement each resource's existing integration evidence.
-
-The cited files are pinned to the revisions inspected. This was a source review: no listed bridge, game, editor, or test harness was installed or executed. Static implementation findings describe the cited code paths, not runtime reproductions. Later versions may change them.
+Check permissions, dependencies, reset behavior, and result verification before connecting a coding agent to a game. Each note points to the relevant implementation at a specific revision.
 
 ## codex-official-browser-game-workflow
 

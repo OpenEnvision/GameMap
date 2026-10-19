@@ -105,8 +105,11 @@ export function assertSourceModuleCoverage(
             }
           }
           break;
-        case "recordings":
-          for (const id of Object.keys(value)) requireEntry(`recording-${id}`);
+        case 'media':
+          for (const recording of value) for (const view of recording.views) {
+            const entry = requireEntry(view.id);
+            assert.deepEqual(entry.data, { ...view, recordingId: recording.id, resourceId: recording.resourceId, originalUrl: recording.originalUrl });
+          }
           break;
         case "research":
           assertMetadataFields(value, rule.metadata, path);

@@ -1,8 +1,9 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from 'react';
 import { Link } from "react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import type { ContentBlock, ContentEntry, Fact } from "../../content/models";
-import { content, contentKinds } from "../../content/registry";
+import { contentKinds } from '../../content/models';
+import { groupRecordings } from '../../content/media';
 
 export function ContentLink({
   href,
@@ -200,17 +201,16 @@ export function ContentDocument({
       data-content-kind={entry.kind}
     >
       <span className="eyebrow">{contentKinds[entry.kind].label}</span>
-      {entry.blocks.map((block, index) => (
-        <Block
-          key={`${block.field}-${index}`}
-          block={block}
-          heading={heading}
-        />
-      ))}
+      {(['intro','media','guidance','resources','provenance'] as const).map(section => {
+        const blocks = entry.blocks.filter(block => (block.type === 'title' || block.type === 'lead' ? 'intro' : block.type === 'image' || block.type === 'video' ? 'media' : block.section || (block.type === 'links' ? 'resources' : 'guidance')) === section);
+        if (!blocks.length) return null;
+        const body = blocks.map((block,index)=><Block key={`${block.field}-${index}`} block={block} heading={heading} />);
+        return <div className={`record-section record-${section}`} key={section}>{body}</div>;
+      })}
     </article>
   );
 }
-export function ContentCard({ entry }: { entry: ContentEntry }) {
+export function ContentCard({ entry }: { entry: Pick<ContentEntry, 'key'|'kind'|'title'|'url'|'description'> }) {
   return (
     <article className="content-card" data-content-ref={entry.key}>
       <span className="small-label">{contentKinds[entry.kind].label}</span>
@@ -221,18 +221,10 @@ export function ContentCard({ entry }: { entry: ContentEntry }) {
         </Link>
       </h3>
       <p>{entry.description}</p>
-      {entry.kind === "demo" && (
-        <span className="source-note">
-          {entry.data.role === "excerpt"
-            ? "Curated preview excerpt"
-            : "Original project recording"}
-        </span>
-      )}
     </article>
   );
 }
-export function RelatedDemos({ resourceId }: { resourceId: string }) {
-  const demos = content.demosFor(resourceId);
+export function RelatedDemos({ demos }: { demos: ContentEntry<'demo'>[] }) {
   if (!demos.length) return null;
   return (
     <section className="related-content">
@@ -241,16 +233,22 @@ export function RelatedDemos({ resourceId }: { resourceId: string }) {
         <span className="count-label">{demos.length}</span>
       </h2>
       <p>
-        Curated excerpts and original project records are listed separately. No
-        recording is selected away.
+        Choose a preview or open the original recording.
       </p>
       <div className="content-grid">
-        {demos.map((entry) => (
-          <ContentCard key={entry.key} entry={entry} />
-        ))}
+        {groupRecordings(demos).map(views => <div className="recording-links" key={views[0].data.recordingId}>{views.map(entry => <ContentCard key={entry.key} entry={entry} />)}</div>)}
       </div>
     </section>
   );
+}
+export function RecordingCard({ views }: { views: ContentEntry<'demo'>[] }) {
+  const [id, setId] = useState(views[0].id);
+  const entry = views.find(view => view.id === id) || views[0];
+  return <div className="recording-container" data-recording-id={entry.data.recordingId}>
+    {views.length > 1 && <label className="preview-selector">View<select aria-label={`View of ${views[0].title}`} value={entry.id} onChange={event => setId(event.target.value)}>{views.map(view => <option key={view.key} value={view.id}>{view.title} · {view.data.role}</option>)}</select></label>}
+    <DemoCard key={entry.key} entry={entry} />
+    {views.length>1&&<nav className="recording-view-links" aria-label="Other recording views">{views.filter(view=>view.key!==entry.key).map(view=><Link key={view.key} data-content-ref={view.key} to={view.url}>{view.data.role==='excerpt'?'Preview details':'Original recording details'}</Link>)}</nav>}
+  </div>;
 }
 export function DemoCard({ entry }: { entry: ContentEntry<"demo"> }) {
   const video = entry.blocks.find((block) => block.type === "video");
@@ -273,10 +271,6 @@ export function DemoCard({ entry }: { entry: ContentEntry<"demo"> }) {
         <p>{entry.description}</p>
         <small>{entry.data.credit}</small>
         <div className="example-links">
-          <Link to={entry.url}>
-            Recording details
-            <ArrowRight size={13} />
-          </Link>
           <a href={entry.data.originalUrl} target="_blank" rel="noreferrer">
             Original video
             <ArrowUpRight size={13} />

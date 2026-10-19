@@ -1,9 +1,11 @@
 import type { AgentGameResource } from './agentGameTypes';
+import { levelDesignToolkit } from '../../content/skill-entry';
 export { agentLabels, agentResourceKinds } from './agentGameTypes';
 export { gameCaseAgents } from './gameCaseAgents';
 
 // Primary source and implementation review: October 18, 2026. No third-party tool installation implied.
 export const agentGameResources: AgentGameResource[] = [
+  levelDesignToolkit(),
   {
     "id": "codex-official-browser-game-workflow",
     "title": "Codex · official browser-game build and playtest workflow",

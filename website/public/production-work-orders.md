@@ -1,10 +1,10 @@
 # Production work orders: artifacts, recovery and acceptance
 
-Sources checked on **2026-10-18**. Full reproduction not performed. All GameMap acceptance chains below are **proposed, not implemented or executed**. The complete-sample section separately describes inspected upstream implementations and their existing test scope. They connect documented operations into acceptance designs; neither a source check nor a successful repository build demonstrates these pipelines. This document is a follow-on to the concise engine, production and visual-evidence notes, not a new resource directory.
+Use these work-order templates to connect asset creation, import, build, testing, and delivery. Each template defines the inputs, expected artifacts, completion checks, failure handling, and evidence to collect when implementing it.
 
 ## Common execution contract
 
-**GameMap editorial guidance.** Each work order needs an isolated workspace, intended target platform, immutable input manifest, source and consuming-tool versions, selected operation/options, native diagnostics, output hashes and an explicit acceptance policy. Record documentation versions separately from installed versions. A rolling URL, versioned documentation URL or source commit does not establish the installed executable or its dependencies.
+Each work order needs an isolated workspace, intended target platform, immutable input manifest, source and consuming-tool versions, selected operation/options, native diagnostics, output hashes and an explicit acceptance policy. Record documentation versions separately from installed versions.
 
 Keep these states distinct: request accepted; native operation terminal; expected artifacts present; artifacts validated; project saved; fresh process reopened; target-runtime acceptance complete. Record **accepted, quality failure, unsupported, infrastructure failure, timeout, cancelled or inconclusive** separately. A timeout is not cancellation, a retry is not necessarily idempotent, and an existing file may belong to an earlier run. Cancellation and power-loss durability remain unknown unless a specific source establishes them.
 
@@ -30,7 +30,7 @@ For USD packages, [dependency-discovery and package-membership boundaries](asset
 
 ### Versioned asset publication and consuming-scene ownership
 
-Sources checked **2026-10-18**; source/documentation review only. This complements the asset-transfer work order with a concrete Blender → AYON publication → Unreal Editor handoff. No installation, account access, publishing, engine execution or reproduction occurred.
+For a Blender → AYON → Unreal Editor handoff, track the published representation, its files, and the actors that consume it.
 
 #### Evidence and prerequisites
 
@@ -68,7 +68,7 @@ Composition remains unestablished: this [Blender layout extractor](https://githu
 
 #### Proposed acceptance and recovery
 
-**GameMap editorial guidance, unimplemented and unexecuted:** freeze the effective bundle, host builds, publish settings, source workfile and dependencies. Publish one asymmetric prop; reconcile product/version/representation IDs with actual files and independent hashes. Load into a disposable Unreal project; verify geometry, material dependencies and container identity. Publish a changed version, update, then independently inspect placed-actor references and fresh-process reopen.
+**Suggested check:** freeze the effective bundle, host builds, publish settings, source workfile and dependencies. Publish one asymmetric prop; reconcile product/version/representation IDs with actual files and independent hashes. Load into a disposable Unreal project; verify geometry, material dependencies and container identity. Publish a changed version, update, then independently inspect placed-actor references and fresh-process reopen.
 
 After failure, retain staging files and diagnostics; reconcile server records, destinations/backups and authoring-scene changes before retry. An empty import, new container or green publisher report cannot substitute for this evidence. Layout replacement needs separate ownership and schema checks; preserve the previous consuming workfile. End-to-end rollback, actor preservation and compatible bundle behavior remain unverified.
 
@@ -189,7 +189,7 @@ For the selected Godot 4.4 source path, [normalized-key and target-scale accepta
 
 ### Godot 4.4 content patches: mounting is not dependency activation
 
-Checked **2026-10-18** against the official **4.4 documentation branch**, not an installed runtime or immutable documentation commit. The cache boundary is additionally supported by official **4.4-stable** source at commit `4c311cbee68c0b66ff8ebb8b0defdd9979dd2a41`; it is not a compatibility claim for Godot 4.5, 4.6 or another release. This fills a gap beyond release-bound patch reconstruction: the correct pack bytes can be present while a consuming process still observes cached resources. No engine, installer, signing operation or credentials were used. All acceptance fixtures below are **GameMap editorial guidance, unimplemented and unexecuted**.
+Check both pack contents and the resources visible to the consuming process: a correct pack can still leave cached resources in use. References below target Godot's **4.4 documentation branch** and **4.4-stable** source at `4c311cbee68c0b66ff8ebb8b0defdd9979dd2a41`; verify cache behavior for other releases separately.
 
 **Documented boundaries.** [ProjectSettings.load_resource_pack](https://docs.godotengine.org/en/4.4/classes/class_projectsettings.html#class-projectsettings-method-load-resource-pack) mounts PCK/ZIP content into `res://` and returns a boolean. Same-path entries replace existing entries by default; `replace_files=false` disables that replacement. The 4.4 reference cautions that `DirAccess` does not show changes to `res://` made by this operation. A directory listing is therefore not the acceptance oracle for newly mounted content.
 

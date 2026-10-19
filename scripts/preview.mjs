@@ -4,16 +4,16 @@ import { readFile, stat } from "node:fs/promises";
 import { resolve, extname, sep } from "node:path";
 
 const root = resolve("dist");
-let base;
+let base, build;
 try {
-  ({ base } = JSON.parse(
-    await readFile(resolve(root, "site-manifest.json"), "utf8"),
-  ));
+  build = JSON.parse(await readFile(resolve(root,'site-manifest.json'),'utf8'));
+  ({base}=build);
 } catch {
   throw new Error(
     "No built site found. Run npm run build before npm run preview.",
   );
 }
+console.log(`Build ${build.commit || 'unknown'} · ${build.builtAt || 'unknown time'}; rebuild after pulling source changes.`);
 const args = process.argv.slice(2);
 const option = (name, fallback) =>
   args.includes(name) ? args[args.indexOf(name) + 1] : fallback;
@@ -32,6 +32,7 @@ const types = {
   ".webp": "image/webp",
   ".gif": "image/gif",
   ".mp4": "video/mp4",
+  ".zip": "application/zip",
   ".woff2": "font/woff2",
   ".md": "text/markdown; charset=utf-8",
   ".xml": "application/xml",

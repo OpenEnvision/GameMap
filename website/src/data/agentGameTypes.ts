@@ -37,6 +37,7 @@ export const agentResourceKinds = {
 
 export interface AgentGameResource {
   id: string;
+  catalogResourceId?: string;
   title: string;
   kind: keyof typeof agentResourceKinds;
   agents: AgentId[];

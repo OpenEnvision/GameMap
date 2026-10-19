@@ -1,12 +1,17 @@
-import { Link } from "react-router";
+import { Link, useLoaderData } from 'react-router';
 import { ArrowUpRight, Search } from "lucide-react";
-import { learningPaths, foundationPaths } from "../lib/catalog";
 import { ExampleCard } from "../components/example-card";
 import { useClientQuery } from "../lib/client-query";
-import { content } from "../../content/registry";
+import { content, sources } from '../../content/registry.server';
+import { url } from '../../content/site';
+import { matchesSearch } from '../../content/matching';
+import { searchableText } from '../../content/search';
 import { ContentDocument } from "../components/content";
 
+export function loader() { return { examples: content.all('example'), foundations: content.all('foundation'), collections: content.all('collection'), media: sources.learningMedia }; }
 export default function Examples() {
+  const { examples, foundations, collections, media } = useLoaderData<typeof loader>();
+  const learningPaths = examples.map(entry => entry.data), foundationPaths = foundations.map(entry => entry.data);
   const [params, setParams] = useClientQuery();
   const query = params.get("q") || "";
   const track = params.get("track") || "all";
@@ -23,9 +28,7 @@ export default function Examples() {
   const games = learningPaths.filter(
     (game) =>
       (track === "all" || game.track === track) &&
-      `${game.title} ${game.engine} ${game.aiUse} ${game.description}`
-        .toLowerCase()
-        .includes(query.toLowerCase()),
+      matchesSearch(searchableText(examples.find(entry => entry.id === game.id)!), query),
   );
   return (
     <main id="main-content" className="site-main listing-page">
@@ -85,7 +88,7 @@ export default function Examples() {
       {games.length ? (
         <div className="example-grid">
           {games.map((game) => (
-            <ExampleCard key={game.id} game={game} />
+            <ExampleCard key={game.id} game={game} media={media[game.id]} />
           ))}
         </div>
       ) : (
@@ -113,7 +116,7 @@ export default function Examples() {
             <article key={game.id} data-content-ref={`foundation:${game.id}`}>
               <span className="small-label">{game.engine}</span>
               <h3>
-                <Link to={content.require("foundation", game.id).url}>
+                <Link to={url.example(game.id)}>
                   {game.title}
                 </Link>
               </h3>
@@ -145,7 +148,7 @@ export default function Examples() {
           </div>
         </div>
         <div className="content-grid community-collections">
-          {content.all("collection").map((entry) => (
+          {collections.map((entry) => (
             <ContentDocument key={entry.key} entry={entry} heading="h3" />
           ))}
         </div>

@@ -17,6 +17,7 @@ export default defineConfig({
     fumadocsMdx({
       globalOptions: {
         mdxOptions: {
+          remarkImageOptions: { useImport: false },
           rehypePlugins: (plugins) => [
             [
               rehypeRaw,

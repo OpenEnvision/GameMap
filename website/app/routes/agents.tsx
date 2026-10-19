@@ -1,6 +1,8 @@
-import { Link } from "react-router";
+import { Link, useLoaderData } from 'react-router';
 import { Search, ArrowRight } from "lucide-react";
-import { content, url } from "../../content/registry";
+import { content, sources } from '../../content/registry.server';
+import { url } from '../../content/site';
+import { matchesSearch } from '../../content/matching';
 import {
   agentLabels,
   agentResourceKinds,
@@ -11,34 +13,15 @@ import { ExampleCard } from "../components/example-card";
 import { useClientQuery } from "../lib/client-query";
 import { searchableText } from "../../content/search";
 
+export function loader() { return { tools: content.all('agent'), examples: content.all('example'), attribution: sources.gameCaseAgents, media: sources.learningMedia }; }
 export default function Agents() {
+  const { tools: allTools, examples, attribution, media } = useLoaderData<typeof loader>();
   const [params, setParams] = useClientQuery();
   const query = params.get("q") || "";
   const client = params.get("client") || "all";
   const kind = params.get("kind") || "all";
-  const tokens = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
-  const tools = content
-    .all("agent")
-    .filter(
-      (entry) =>
-        (kind === "all" || entry.data.kind === kind) &&
-        (client === "all" ||
-          entry.data.agents.includes(client as AgentId) ||
-          entry.data.agents.includes("agent-neutral")) &&
-        tokens.every((token) =>
-          searchableText(entry).toLowerCase().includes(token),
-        ),
-    );
-  const games = content
-    .all("example")
-    .filter(
-      (entry) =>
-        (client === "all" ||
-          content.attributionFor(entry.id).includes(client as AgentId)) &&
-        tokens.every((token) =>
-          searchableText(entry).toLowerCase().includes(token),
-        ),
-    );
+  const tools = allTools.filter(entry => (kind === 'all' || entry.data.kind === kind) && (client === 'all' || entry.data.agents.includes(client as AgentId) || entry.data.agents.includes('agent-neutral')) && matchesSearch(searchableText(entry), query));
+  const games = examples.filter(entry => (client === 'all' || attribution[entry.id].includes(client as AgentId)) && matchesSearch(searchableText(entry), query));
   const change = (key: string, value: string) =>
     setParams(
       (previous) => {
@@ -137,7 +120,7 @@ export default function Agents() {
         </p>
         <div className="example-grid">
           {games.map((entry) => (
-            <ExampleCard key={entry.key} game={entry.data} />
+            <ExampleCard key={entry.key} game={entry.data} media={media[entry.id]} />
           ))}
         </div>
         {!games.length && (

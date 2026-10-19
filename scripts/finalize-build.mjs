@@ -1,4 +1,6 @@
 import { readFile, writeFile, cp, rm } from "node:fs/promises";
+import { execFileSync } from 'node:child_process';
+import { gzipSync } from 'node:zlib';
 import { loadContent, contentDigest } from "./lib/content.mjs";
 
 const base = (
@@ -12,6 +14,8 @@ const pages = context
   .staticPagePaths(registry)
   .map((path) => path.replace(/^\//, ""));
 const records = context.contentManifest(registry);
+let commit='source-archive'; try {commit=execFileSync('git',['rev-parse','--short','HEAD'],{encoding:'utf8'}).trim();}catch{}
+const builtAt=new Date().toISOString();
 await rm("dist", { recursive: true, force: true });
 await cp(".build/client", "dist", { recursive: true });
 // Prerendered routes include basename on disk, while Vite's assets do not.
@@ -26,7 +30,7 @@ await rm("dist/__spa-fallback.html", { force: true });
 await writeFile(
   "dist/site-manifest.json",
   JSON.stringify(
-    { base, pages, docs: docs.map(({ slug, title }) => ({ slug, title })) },
+    { base, pages, commit, builtAt, docs: docs.map(({ slug, title }) => ({ slug, title })) },
     null,
     2,
   ) + "\n",
@@ -45,6 +49,7 @@ await writeFile(
         ]),
       ),
       totalRecords: records.length,
+      recordings: sources.recordings.map(recording=>({id:recording.id,originalUrl:recording.originalUrl,views:recording.views.map(view=>view.id)})),
       records,
     },
     null,
@@ -79,6 +84,8 @@ for (const [directory, dependency] of Object.entries(lock.packages)) {
   }
 }
 await writeFile("dist/THIRD-PARTY-NOTICES.txt", notices.join("\n"));
+const searchBytes=await readFile('dist/search-index.json');
+console.log(`Compact search: ${searchBytes.length} bytes, ${gzipSync(searchBytes).length} bytes gzip.`);
 const site = "https://openenvision.github.io";
 await writeFile(
   "dist/sitemap.xml",
