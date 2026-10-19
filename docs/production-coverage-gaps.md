@@ -1,6 +1,6 @@
 # Production coverage and remaining work
 
-Reviewed **2026-10-18**. This is a qualitative gap map, not a completeness percentage. A cited tool is not an implemented capability, and multiple tags on one resource do not create multiple independently verified integrations.
+Baseline reviewed **2026-10-18**; operational routes updated **2026-10-19** from the separately dated dossiers. This is a qualitative gap map, not a completeness percentage. A cited tool is not an implemented capability, and multiple tags on one resource do not create multiple independently verified integrations.
 
 ## Production-stage coverage
 
@@ -20,6 +20,15 @@ Start with the linked native interface or artifact contract, then follow the pro
 | Generative content | [Job and delivery contracts](generation-delivery-contracts.md#a-job-id-is-not-an-imported-asset) → [acceptance/recovery envelope](generation-delivery-contracts.md#proposed-acceptance-and-recovery-envelope), with [provider terms](generative-api-boundaries.md): job/status records, archived outputs, hashes and import checks | Verify current schemas, terminal states, output availability, failed-job costs and purpose-specific rights |
 | Testing and performance | [Test/process interfaces](native-operation-details.md#unity-process-import-tests-and-render-observations), [diagnostic completion](production-debugging-contracts.md), [memory-lifetime evidence](production-debugging-contracts.md#memory-lifetime-across-repeated-production-cycles) and [evaluation controls](benchmark-reproducibility.md), with [stateful interaction reduction](gameplay-state-contracts.md#stateful-interaction-discovery-and-failure-reduction): native test reports, measurement populations, failures/costs and protected test evidence | Control leakage, nondeterminism, invalid measurements and cross-project generalization |
 | Build and collaboration | [Build/cook interfaces](native-operation-details.md) → [release-update work order](production-work-orders.md#8-build-a-release-bound-content-update-and-reconstruct-its-patch) and [shipped-build inspection](production-debugging-contracts.md#build-artifacts-streaming-budgets-and-delayed-timing): baseline manifests, catalogs, patch hashes and reconstruction evidence | Verify platform SDKs, signing, certification, dependency closure and team permissions |
+
+### Capture, retrieval and dialogue routes
+
+- **New asset → inspection packet:** [BlenderProc multiview capture](visual-evidence-research.md#blenderproc-multiview-capture-contracts) → [FiftyOne stored-frame/patch retrieval](visual-feedback-mechanisms.md#7-fiftyone-persistent-retrieval-over-capture-evidence). Camera coverage, required streams, immutable pixels and index membership each need their own checks.
+- **Editor/HUD capture → selected region:** [OmniParser coordinates and parse-local IDs](visual-feedback-mechanisms.md#6-omniparser-frame-scoped-gui-regions-and-coordinate-contracts) → existing [input/observation gates](native-operation-details.md#input-delivery-and-observation-alignment). A region proposal does not establish current actionability or an engine object identity.
+- **Recorded interaction → temporal masks:** [SAM 2 state lifecycle](visual-evidence-research.md#sam-2-temporal-mask-state-contract). Reload changed captures, preserve frame/time mapping and validate correction/propagation coverage before reusing masks.
+- **Recorded dialogue → mouth animation:** [Rhubarb cue and custom-consumer contracts](native-operation-details.md#recorded-dialogue-and-mouth-cue-validation) → [audio capture integrity](native-operation-details.md#runtime-audio-observation-and-capture-integrity). Cue structure, project-owned shape mapping and measured audiovisual synchronization remain separate gates.
+
+These are documented upstream routes and proposed acceptance joins. No installed composition or runtime effectiveness has been established.
 
 For a connected project rather than an isolated API, see the [complete-sample integration examples](production-work-orders.md#complete-sample-integration-examples). They expose upstream asset/scene/interaction/build/test chains while retaining their actual test coverage and unexecuted GameMap acceptance gates.
 
