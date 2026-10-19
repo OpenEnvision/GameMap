@@ -160,6 +160,8 @@ Use this implementation plan to connect asset selection, visual feedback, and pi
 
 The most defensible first fixture is **selection over an already frozen, rights-cleared candidate pool**. It tests ranking/feedback without confounding generation quality, incurring paid generation calls, or suggesting that this source review granted execution permission. A later generation-in-the-loop study is a separate experiment.
 
+For dialogue drafts, the [Ubisoft authoring research](production-research-notes.md#dialogue-drafting-preserve-preference-edited-acceptance-and-character-references) provides a separate example of why pairwise preference, edited acceptance, character-reference revisions and automatic style scores need distinct records. It does not establish a deployed visual-asset selection method.
+
 ## Revision record
 
 GitHub commit endpoints and contents reads resolved the following revisions. Files cited above were inspected at these hashes. These are code pins, not installed environments, model-weight pins, service snapshots or reproduction certificates. Web-cached `main` pages were used only for discovery/status; source claims use the pinned contents.
