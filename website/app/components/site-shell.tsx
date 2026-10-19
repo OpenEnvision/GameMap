@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router";
+import { useLocation } from "react-router";
 import { ArrowUpRight, Menu, Moon, Search, Sun, X } from "lucide-react";
 import { useSearchContext } from "fumadocs-ui/contexts/search";
 import { useTheme } from "next-themes";
 import { navigation, url } from "../../content/site";
-
+import { Link, NavLink, LanguageSwitcher, useSiteI18n } from "../lib/i18n";
 export function Brand() {
   return (
     <span className="atlas-brand">
@@ -14,25 +14,19 @@ export function Brand() {
         height="29"
         alt=""
       />
-      <span>
-        GameMap
-      </span>
+      <span>GameMap</span>
     </span>
   );
 }
-
 export function SiteHeader() {
-  const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const { setOpenSearch } = useSearchContext();
-  const { resolvedTheme, setTheme } = useTheme();
-  const location = useLocation();
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  useEffect(() => {
-    setOpen(false);
-  }, [location.pathname]);
+  const { t } = useSiteI18n(),
+    [open, setOpen] = useState(false),
+    [mounted, setMounted] = useState(false);
+  const { setOpenSearch } = useSearchContext(),
+    { resolvedTheme, setTheme } = useTheme(),
+    location = useLocation();
+  useEffect(() => setMounted(true), []);
+  useEffect(() => setOpen(false), [location.pathname]);
   useEffect(() => {
     if (!open) return;
     const close = (event: KeyboardEvent) => {
@@ -47,25 +41,25 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link to="/" aria-label="GameMap home">
+        <Link to="/" aria-label={t("GameMap home")}>
           <Brand />
         </Link>
-        <nav className="desktop-navigation" aria-label="Main navigation">
+        <nav className="desktop-navigation" aria-label={t("Main navigation")}>
           {navigation
             .filter((page) => page.nav === "primary")
             .map((page) => (
               <NavLink key={page.id} to={page.path}>
-                {page.title}
+                {t(page.title)}
               </NavLink>
             ))}
           <details className="more-navigation" key={location.pathname}>
-            <summary>More</summary>
+            <summary>{t("More")}</summary>
             <div>
               {navigation
                 .filter((page) => page.nav === "secondary")
                 .map((page) => (
                   <NavLink key={page.id} to={page.path}>
-                    {page.title}
+                    {t(page.title)}
                   </NavLink>
                 ))}
             </div>
@@ -75,15 +69,15 @@ export function SiteHeader() {
           <button
             className="global-search"
             onClick={() => setOpenSearch(true)}
-            aria-label="Search all content"
+            aria-label={t("Search all content")}
           >
             <Search size={16} />
-            <span>Search all</span>
+            <span>{t("Search all")}</span>
             <kbd>⌘ K</kbd>
           </button>
           <button
             className="quiet-icon"
-            aria-label="Toggle color theme"
+            aria-label={t("Toggle color theme")}
             onClick={() =>
               setTheme(resolvedTheme === "dark" ? "light" : "dark")
             }
@@ -94,6 +88,7 @@ export function SiteHeader() {
               <Moon size={18} />
             )}
           </button>
+          <LanguageSwitcher />
           <a
             className="github-link"
             href="https://github.com/OpenEnvision/GameMap"
@@ -106,7 +101,7 @@ export function SiteHeader() {
           <button
             id="mobile-navigation-button"
             className="quiet-icon mobile-navigation-button"
-            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-label={t(open ? "Close navigation" : "Open navigation")}
             aria-expanded={open}
             aria-controls="mobile-navigation"
             onClick={() => setOpen((value) => !value)}
@@ -119,11 +114,11 @@ export function SiteHeader() {
         <nav
           className="mobile-navigation"
           id="mobile-navigation"
-          aria-label="Mobile navigation"
+          aria-label={t("Mobile navigation")}
         >
           {navigation.map((page) => (
             <NavLink key={page.id} to={page.path}>
-              {page.title}
+              {t(page.title)}
             </NavLink>
           ))}
         </nav>
@@ -131,20 +126,20 @@ export function SiteHeader() {
     </header>
   );
 }
-
 export function SiteFooter() {
+  const { t } = useSiteI18n();
   return (
     <footer className="site-footer">
       <div>
         <Link to="/">
           <Brand />
         </Link>
-        <p>A little direction for your next playable world.</p>
+        <p>{t("A little direction for your next playable world.")}</p>
       </div>
       <div className="footer-links">
-        <Link to={url.page("explore")}>All content</Link>
-        <Link to="/docs/contributing/">Contribute</Link>
-        <Link to="/docs/media-sources/">Credits</Link>
+        <Link to={url.page("explore")}>{t("All content")}</Link>
+        <Link to="/docs/contributing/">{t("Contribute")}</Link>
+        <Link to="/docs/media-sources/">{t("Credits")}</Link>
       </div>
     </footer>
   );

@@ -1,6 +1,11 @@
 import { useEffect } from "react";
-import { Link, useLocation, useNavigate, useLoaderData } from 'react-router';
-import { content, sources } from '../../content/registry.server';
+import {
+  useLocation,
+  useLoaderData,
+  type LoaderFunctionArgs,
+} from "react-router";
+import { Link, useNavigate, useSiteI18n } from "../lib/i18n";
+import { contentFor, sources } from "../../content/registry.server";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -14,10 +19,7 @@ import {
   Search,
   Sparkles,
 } from "lucide-react";
-import {
-  categories,
-  publicAsset,
-} from "../lib/catalog";
+import { categories, publicAsset } from "../lib/catalog";
 import { ExampleCard } from "../components/example-card";
 
 const categoryIcons = [Code2, Boxes, Gamepad2, Layers3, Sparkles, Orbit];
@@ -26,17 +28,34 @@ const featuredIds = [
   "opengame-marvel-platformer",
   "tron-exonix-claude",
 ];
-export function loader() {
-  const featured = featuredIds.map(id => content.require('example', id).data);
+export function loader({ request }: LoaderFunctionArgs) {
+  const content = contentFor(request);
+  const featured = featuredIds.map((id) => content.require("example", id).data);
   return {
-    featured, spotlight: featured[0], media: Object.fromEntries(featured.map(game => [game.id, sources.learningMedia[game.id]])),
-    counts: {resources:content.all('resource').length,examples:content.all('example').length,documents:content.all('document').length},
-    categories: Object.fromEntries(categories.map(category => [category.id, content.all('resource').filter(entry => entry.data.category === category.id).length])),
+    featured,
+    spotlight: featured[0],
+    media: Object.fromEntries(
+      featured.map((game) => [game.id, sources.learningMedia[game.id]]),
+    ),
+    categories: Object.fromEntries(
+      categories.map((category) => [
+        category.id,
+        content
+          .all("resource")
+          .filter((entry) => entry.data.category === category.id).length,
+      ]),
+    ),
   };
 }
 
 export default function Home() {
-  const { featured, spotlight, media: learningMedia, counts, categories: categoryCounts } = useLoaderData<typeof loader>();
+  const { t } = useSiteI18n();
+  const {
+    featured,
+    spotlight,
+    media: learningMedia,
+    categories: categoryCounts,
+  } = useLoaderData<typeof loader>();
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
@@ -65,24 +84,29 @@ export default function Home() {
   }, [location.search, location.hash, navigate]);
   return (
     <main id="main-content" className="site-main home-page">
-      <title>GameMap — Find your next playable idea</title>
+      <title>{t("GameMap — Find your next playable idea")}</title>
       <meta
         name="description"
-        content="A curated atlas of AI game-development tools, playable examples, and practical guides. Find a starting point for your next game."
+        content={t(
+          "The tools, working examples, and practical knowledge to build games with AI. Less wandering. More making.",
+        )}
       />
       <section className="home-hero">
         <div className="hero-copy">
           <span className="eyebrow">
-            <span className="status-dot" />A FIELD GUIDE FOR GAME MAKERS
+            <span className="status-dot" />
+            {t("A FIELD GUIDE FOR GAME MAKERS")}
           </span>
           <h1>
-            Small ideas.
+            {t("Small ideas.")}
             <br />
-            Playable worlds<span className="brand-period">.</span>
+            {t("Playable worlds")}
+            <span className="brand-period">.</span>
           </h1>
           <p>
-            The tools, working examples, and practical knowledge to build games
-            with AI. Less wandering. More making.
+            {t(
+              "The tools, working examples, and practical knowledge to build games with AI. Less wandering. More making.",
+            )}
           </p>
           <form
             className="hero-search"
@@ -98,42 +122,36 @@ export default function Home() {
             <Search size={20} />
             <input
               name="q"
-              aria-label="Search all game development content"
-              placeholder="What would you like to build?"
+              aria-label={t("Search all game development content")}
+              placeholder={t("What would you like to build?")}
             />
-            <button type="submit" aria-label="Search all content from home">
+            <button
+              type="submit"
+              aria-label={t("Search all content from home")}
+            >
               <ArrowRight size={20} />
             </button>
           </form>
           <div className="hero-actions">
             <Link className="button button-primary" to="/resources/">
-              Explore the resources
+              {t("Explore the resources")}
               <ArrowRight size={16} />
             </Link>
             <Link className="button button-text" to="/docs/practical-guide/">
-              Find a starting point
+              {t("Find a starting point")}
               <ArrowUpRight size={16} />
             </Link>
-          </div>
-          <div className="hero-proof">
-            <span>
-              <strong>{counts.resources}</strong> curated resources
-            </span>
-            <span>
-              <strong>{counts.examples}</strong> game examples
-            </span>
-            <span>
-              <strong>{counts.documents}</strong> guides & notes
-            </span>
           </div>
         </div>
         <div className="hero-spotlight">
           <div className="spotlight-label">
             <span>
               <Compass size={15} />
-              IN THE FIELD
+              {t("IN THE FIELD")}
             </span>
-            <span>{spotlight.track.toUpperCase()} / CREATOR BUILD</span>
+            <span>
+              {spotlight.track.toUpperCase()} / {t("CREATOR BUILD")}
+            </span>
           </div>
           <a
             className="spotlight-image"
@@ -149,33 +167,31 @@ export default function Home() {
               fetchPriority="high"
             />
             <span>
-              Yes, this is a real game.
+              {t("Play the game")}
               <ArrowUpRight size={15} />
             </span>
           </a>
           <div className="spotlight-caption">
-            <span className="small-label">A PLAYABLE STARTING POINT</span>
+            <span className="small-label">
+              {t("A PLAYABLE STARTING POINT")}
+            </span>
             <h2>{spotlight.title}</h2>
-            <p>Play it. Read the build story. Open the source.</p>
+            <p>{t("Play it. Read the build story. Open the source.")}</p>
             <a href={spotlight.tutorial.url} target="_blank" rel="noreferrer">
-              See how it was made
+              {t("See how it was made")}
               <ArrowUpRight size={15} />
             </a>
-          </div>
-          <div className="spotlight-bottom">
-            <span className="tiny-dot" />
-            Creator-linked AI evidence · Project source included
           </div>
         </div>
       </section>
       <section className="browse-section">
         <div className="section-top">
           <div>
-            <span className="eyebrow">CHOOSE YOUR DIRECTION</span>
-            <h2>A whole toolkit, mapped out.</h2>
+            <span className="eyebrow">{t("CHOOSE YOUR DIRECTION")}</span>
+            <h2>{t("A whole toolkit, mapped out.")}</h2>
           </div>
           <Link className="inline-link" to="/resources/">
-            Browse everything
+            {t("Browse everything")}
             <ArrowRight size={16} />
           </Link>
         </div>
@@ -192,8 +208,8 @@ export default function Home() {
                   <Icon size={23} strokeWidth={1.6} />
                 </span>
                 <span>
-                  <strong>{category.label}</strong>
-                  <small>{category.description}</small>
+                  <strong>{t(category.label)}</strong>
+                  <small>{t(category.description)}</small>
                 </span>
                 <span className="category-count">
                   {categoryCounts[category.id]}
@@ -206,21 +222,27 @@ export default function Home() {
       <section className="featured-section">
         <div className="section-top">
           <div>
-            <span className="eyebrow">LEARN FROM SOMETHING REAL</span>
-            <h2>Made with AI. Ready to explore.</h2>
+            <span className="eyebrow">{t("LEARN FROM SOMETHING REAL")}</span>
+            <h2>{t("Made with AI. Ready to explore.")}</h2>
             <p>
-              Playable games with build stories and project source. Attribution
-              stays with the creators.
+              {t(
+                "Playable games with build stories and project source. Attribution stays with the creators.",
+              )}
             </p>
           </div>
           <Link className="inline-link" to="/examples/">
-            All game examples
+            {t("All game examples")}
             <ArrowRight size={16} />
           </Link>
         </div>
         <div className="example-grid">
           {featured.map((game) => (
-            <ExampleCard game={game} media={learningMedia[game.id]} compact key={game.id} />
+            <ExampleCard
+              game={game}
+              media={learningMedia[game.id]}
+              compact
+              key={game.id}
+            />
           ))}
         </div>
       </section>
@@ -229,14 +251,15 @@ export default function Home() {
           <span className="reading-icon">
             <BookOpen size={25} />
           </span>
-          <span className="eyebrow">LESS GUESSWORK, MORE CONTEXT</span>
-          <h2>There is a guide for that.</h2>
+          <span className="eyebrow">{t("LESS GUESSWORK, MORE CONTEXT")}</span>
+          <h2>{t("There is a guide for that.")}</h2>
           <p>
-            From your first playable loop to asset pipelines and world models.
-            Read the notes without leaving the atlas.
+            {t(
+              "From your first playable loop to asset pipelines and world models. Read the notes without leaving the atlas.",
+            )}
           </p>
           <Link className="inline-link" to="/docs/">
-            Open the reading room
+            {t("Open the reading room")}
             <ArrowRight size={16} />
           </Link>
         </div>
@@ -264,8 +287,8 @@ export default function Home() {
             <Link key={slug} to={"/docs/" + slug + "/"}>
               <span>{number}</span>
               <div>
-                <strong>{title}</strong>
-                <p>{description}</p>
+                <strong>{t(title)}</strong>
+                <p>{t(description)}</p>
               </div>
               <ArrowUpRight size={18} />
             </Link>

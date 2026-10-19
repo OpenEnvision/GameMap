@@ -145,8 +145,13 @@ export type Fact =
 type FactsBlock = { type: "facts"; label: string; items: Fact[] };
 export type BlockValue =
   TextBlock | ListBlock | LinkBlock | ImageBlock | VideoBlock | FactsBlock;
-export type ContentSection = 'intro' | 'media' | 'guidance' | 'resources' | 'provenance' | 'metadata';
-export type ContentBlock = BlockValue & { field: string; section?: ContentSection };
+export type ContentSection =
+  "intro" | "media" | "guidance" | "resources" | "provenance" | "metadata";
+export type ContentBlock = BlockValue & {
+  field: string;
+  section?: ContentSection;
+  language?: import("./locale").Locale;
+};
 export type FieldRule<T, K extends keyof T> =
   | { skip: string }
   | {
@@ -163,6 +168,9 @@ export interface BaseContent<K extends ContentKind> {
   description: string;
   url: string;
   collectionUrl: string;
+  locale?: import("./locale").Locale;
+  originalTitle?: string;
+  descriptionLanguage?: import("./locale").Locale;
   blocks: ContentBlock[];
   source: string;
   data: ContentModels[K];
@@ -176,7 +184,7 @@ export interface ContentRegistry {
   require<K extends ContentKind>(kind: K, id: string): ContentEntry<K>;
   all<K extends ContentKind>(kind: K): ContentEntry<K>[];
   byKey(key: string): ContentEntry | undefined;
-  examplesFor(ref: { kind: 'resource'; id: string }): ContentEntry<'example'>[];
+  examplesFor(ref: { kind: "resource"; id: string }): ContentEntry<"example">[];
   demosFor(resourceId: string): ContentEntry<"demo">[];
   attributionFor(
     exampleId: string,

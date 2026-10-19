@@ -75,7 +75,8 @@ const server = createServer(async (request, response) => {
     if (!info.isFile()) throw new Error("Not a file");
   } catch {
     status = 404;
-    file = resolve(root, "404.html");
+    const relative=path.startsWith(base)?path.slice(base.length):'';
+    file = /^(?:zh(?:\/|$)|docs\/zh(?:\/|$))/.test(relative)?resolve(root,'zh/404/index.html'):resolve(root,'404.html');
     info = await stat(file);
   }
   const headers = {

@@ -8,7 +8,7 @@ import {
   assertSearchCoverage,
 } from "./lib/rendered-coverage.mjs";
 import { root } from "./lib/documents.mjs";
-import { checkSkillPackages } from './lib/skill-packages.mjs';
+import { checkSkillPackages } from "./lib/skill-packages.mjs";
 
 const built = process.argv.includes("--built");
 await checkSkillPackages(built);
@@ -62,11 +62,27 @@ if (built) {
       await readPage("/docs/" + metadata.slug + "/"),
       documents,
       site.base,
+      metadata.slug.startsWith("zh/")
+        ? {
+            link: (url, node) => {
+              const text = (value) =>
+                value.value || (value.children || []).map(text).join("");
+              return context.isEnglishSourceLabel(text(node))
+                ? url
+                : context.localizedPath(
+                    url,
+                    "zh",
+                    context.documentLanguages(documents),
+                  );
+            },
+          }
+        : {},
     );
   assertSearchCoverage(
     registry,
     JSON.parse(await readFile("dist/search-index.json", "utf8")),
     context.blockText,
+    context.localizedRegistry(registry, "zh"),
   );
   console.log(
     `Rendered coverage passed: ${result.records} canonical records with field-level proofs, owning collections, complete-index links, ${documents.length} full Markdown bodies, static search, and matching source digests.`,

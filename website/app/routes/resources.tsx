@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate, useLoaderData } from 'react-router';
-import { content } from '../../content/registry.server';
-import { matchesSearch } from '../../content/matching';
-import { searchableText } from '../../content/search';
+import {
+  useLocation,
+  useLoaderData,
+  type LoaderFunctionArgs,
+} from "react-router";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -11,26 +12,35 @@ import {
   Search,
   SlidersHorizontal,
 } from "lucide-react";
+import { Link, useNavigate, useSiteI18n, SourceLanguage } from "../lib/i18n";
+import { contentFor } from "../../content/registry.server";
+import { matchesSearch } from "../../content/matching";
+import { searchableText } from "../../content/search";
 import ResourceIcon, {
   ResourceAttribution,
 } from "../../src/components/ResourceIcon";
-import { type Dimension, type ResourceType, type Stage } from "../../src/types";
+import { type Dimension, type Stage } from "../../src/types";
 import { categories, stageLabels, typeLabels } from "../lib/catalog";
 import { ResourceDetail } from "../components/resource-detail";
 import { url } from "../../content/site";
 import { useClientQuery } from "../lib/client-query";
-
-export function loader() { return { entries: content.all('resource'), demos: content.all('demo') }; }
+export function loader({ request }: LoaderFunctionArgs) {
+  const content = contentFor(request);
+  return { entries: content.all("resource"), demos: content.all("demo") };
+}
 export default function Resources() {
-  const { entries, demos } = useLoaderData<typeof loader>();
-  const resources = entries.map(entry => entry.data);
-  const searchText = new Map(entries.map(entry => [entry.id, searchableText(entry)]));
-  const [params, setParams, hydrated] = useClientQuery();
-  const location = useLocation();
-  const navigate = useNavigate();
-  const [saved, setSaved] = useState<string[]>([]);
-  const [ready, setReady] = useState(false);
-  const [notice, setNotice] = useState("");
+  const { t } = useSiteI18n(),
+    { entries, demos } = useLoaderData<typeof loader>();
+  const resources = entries.map((entry) => entry.data),
+    searchText = new Map(
+      entries.map((entry) => [entry.id, searchableText(entry)]),
+    );
+  const [params, setParams, hydrated] = useClientQuery(),
+    location = useLocation(),
+    navigate = useNavigate();
+  const [saved, setSaved] = useState<string[]>([]),
+    [ready, setReady] = useState(false),
+    [notice, setNotice] = useState("");
   useEffect(() => {
     try {
       const stored: unknown = JSON.parse(
@@ -65,12 +75,12 @@ export default function Resources() {
         ? previous.filter((item) => item !== id)
         : [...previous, id],
     );
-  const query = params.get("q") || "";
-  const category = params.get("category") || "all";
-  const type = params.get("type") || "all";
-  const stage = params.get("stage") || "all";
-  const track = params.get("track") || params.get("dimension") || "all";
-  const savedOnly = params.get("saved") === "1";
+  const query = params.get("q") || "",
+    category = params.get("category") || "all",
+    type = params.get("type") || "all",
+    stage = params.get("stage") || "all",
+    track = params.get("track") || params.get("dimension") || "all",
+    savedOnly = params.get("saved") === "1";
   const update = (key: string, value: string) =>
     setParams(
       (previous) => {
@@ -90,7 +100,7 @@ export default function Resources() {
         (stage === "all" || resource.stages.includes(stage as Stage)) &&
         (track === "all" || resource.dimensions.includes(track as Dimension)) &&
         (!savedOnly || saved.includes(resource.id)) &&
-        matchesSearch(searchText.get(resource.id) || '', query),
+        matchesSearch(searchText.get(resource.id) || "", query),
     )
     .sort((a, b) =>
       params.get("sort") === "name" ? a.name.localeCompare(b.name) : 0,
@@ -117,35 +127,40 @@ export default function Resources() {
       saved.includes(resource.id),
     );
     const markdown =
-      "# My GameMap collection\n\n" +
+      "# " +
+      t("My GameMap collection") +
+      "\n\n" +
       selected
         .map(
           (resource) =>
             `## [${resource.name}](${resource.url})\n\n${resource.summary}\n\n${resource.detail}\n`,
         )
         .join("\n");
-    const url = URL.createObjectURL(
-      new Blob([markdown], { type: "text/markdown;charset=utf-8" }),
-    );
-    const anchor = document.createElement("a");
-    anchor.href = url;
+    const address = URL.createObjectURL(
+        new Blob([markdown], { type: "text/markdown;charset=utf-8" }),
+      ),
+      anchor = document.createElement("a");
+    anchor.href = address;
     anchor.download = "gamemap-collection.md";
     anchor.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    setTimeout(() => URL.revokeObjectURL(address), 1000);
   };
   return (
     <main id="main-content" className="site-main listing-page">
-      <title>Resource library — GameMap</title>
+      <title>{t("Resource library — GameMap")}</title>
       <meta
         name="description"
-        content="Find coding agents, game engines, production tools, and world models with reviewed primary sources."
+        content={t(
+          "Useful tools, frameworks, and ideas. Clear context about what each one actually does.",
+        )}
       />
       <header className="page-heading">
-        <span className="eyebrow">THE RESOURCE LIBRARY</span>
-        <h1>Your next building block.</h1>
+        <span className="eyebrow">{t("THE RESOURCE LIBRARY")}</span>
+        <h1>{t("Your next building block.")}</h1>
         <p>
-          Useful tools, frameworks, and ideas. Clear context about what each one
-          actually does.
+          {t(
+            "Useful tools, frameworks, and ideas. Clear context about what each one actually does.",
+          )}
         </p>
       </header>
       <div className="catalog-toolbar">
@@ -153,8 +168,8 @@ export default function Resources() {
           <Search size={20} />
           <input
             id="resource-search"
-            aria-label="Search resources"
-            placeholder="Search tools, engines, topics…"
+            aria-label={t("Search resources")}
+            placeholder={t("Search tools, engines, topics…")}
             value={query}
             onChange={(event) => update("q", event.target.value)}
           />
@@ -165,13 +180,14 @@ export default function Resources() {
           onClick={() => update("saved", savedOnly ? "" : "1")}
         >
           <Bookmark size={17} />
-          Saved<span>{saved.length}</span>
+          {t("Saved")}
+          <span>{saved.length}</span>
         </button>
         {savedOnly && saved.length > 0 && (
           <button
             className="quiet-icon"
             onClick={exportSaved}
-            aria-label="Export saved collection as Markdown"
+            aria-label={t("Export saved collection as Markdown")}
           >
             <Download size={19} />
           </button>
@@ -180,13 +196,14 @@ export default function Resources() {
       <div
         className="category-filters"
         role="group"
-        aria-label="Resource category"
+        aria-label={t("Resource category")}
       >
         <button
           aria-pressed={category === "all"}
           onClick={() => update("category", "all")}
         >
-          All resources<span>{resources.length}</span>
+          {t("All resources")}
+          <span>{resources.length}</span>
         </button>
         {categories.map((item) => (
           <button
@@ -194,7 +211,7 @@ export default function Resources() {
             aria-pressed={category === item.id}
             onClick={() => update("category", item.id)}
           >
-            {item.label}
+            {t(item.label)}
             <span>
               {
                 resources.filter((resource) => resource.category === item.id)
@@ -207,165 +224,189 @@ export default function Resources() {
       <div className="secondary-filters">
         <span>
           <SlidersHorizontal size={15} />
-          Narrow it down
+          {t("Narrow it down")}
         </span>
         <label>
-          <span className="sr-only">Resource type</span>
+          <span className="sr-only">{t("Resource type")}</span>
           <select
             value={type}
             onChange={(event) => update("type", event.target.value)}
           >
-            <option value="all">All types</option>
+            <option value="all">{t("All types")}</option>
             {Object.entries(typeLabels).map(([id, label]) => (
-              <option key={id} value={id as ResourceType}>
-                {label}
+              <option key={id} value={id}>
+                {t(label)}
               </option>
             ))}
           </select>
         </label>
         <label>
-          <span className="sr-only">Development stage</span>
+          <span className="sr-only">{t("Development stage")}</span>
           <select
             value={stage}
             onChange={(event) => update("stage", event.target.value)}
           >
-            <option value="all">All stages</option>
+            <option value="all">{t("All stages")}</option>
             {Object.entries(stageLabels).map(([id, label]) => (
               <option key={id} value={id}>
-                {label}
+                {t(label)}
               </option>
             ))}
           </select>
         </label>
         <label>
-          <span className="sr-only">Development track</span>
+          <span className="sr-only">{t("Development track")}</span>
           <select
             value={track}
             onChange={(event) => update("track", event.target.value)}
           >
-            <option value="all">All tracks</option>
+            <option value="all">{t("All tracks")}</option>
             <option value="2d">2D</option>
             <option value="3d">3D</option>
-            <option value="world">World models</option>
+            <option value="world">{t("World models")}</option>
           </select>
         </label>
         <label className="sort-filter">
-          <span className="sr-only">Sort resources</span>
+          <span className="sr-only">{t("Sort resources")}</span>
           <select
             value={params.get("sort") || "curated"}
             onChange={(event) => update("sort", event.target.value)}
           >
-            <option value="curated">Curated order</option>
-            <option value="name">Name: A–Z</option>
+            <option value="curated">{t("Curated order")}</option>
+            <option value="name">{t("Name: A–Z")}</option>
           </select>
         </label>
       </div>
       {notice && (
         <p className="inline-notice" role="status">
-          {notice}
+          {t(notice)}
         </p>
       )}
       <div className="results-meta">
         <span aria-live="polite">
-          {filtered.length} {filtered.length === 1 ? "resource" : "resources"}
-          {savedOnly ? " in your collection" : ""}
+          {t(filtered.length === 1 ? "{count} resource" : "{count} resources", {
+            count: filtered.length,
+          })}
+          {savedOnly ? t(" in your collection") : ""}
         </span>
         <Link to="/docs/catalog-review-coverage/">
-          How we review sources
+          {t("How we review sources")}
           <ArrowUpRight size={13} />
         </Link>
       </div>
       {filtered.length ? (
         <div className="resource-grid">
-          {filtered.map((resource) => (
-            <article
-              className="resource-tile"
-              key={resource.id}
-              data-content-ref={`resource:${resource.id}`}
-            >
-              <div className="resource-card-top">
-                <ResourceIcon resource={resource} size={42} />
-                <button
-                  className="quiet-icon bookmark-button"
-                  aria-label={`${saved.includes(resource.id) ? "Unsave" : "Save"} ${resource.name}`}
-                  aria-pressed={saved.includes(resource.id)}
-                  onClick={() => toggleSave(resource.id)}
-                >
-                  <Bookmark
-                    size={17}
-                    fill={saved.includes(resource.id) ? "currentColor" : "none"}
-                  />
-                </button>
-              </div>
-              <span className="small-label">
-                {
-                  categories.find(
-                    (category) => category.id === resource.category,
-                  )?.label
-                }
-              </span>
-              <h2>
-                <Link to={url.resource(resource.id)}>{resource.name}</Link>
-              </h2>
-              <ResourceAttribution resource={resource} />
-              <p className="resource-description">{resource.summary}</p>
-              <div className="resource-tags">
-                <span>{typeLabels[resource.type]}</span>
-                <span>
-                  {resource.dimensions.length === 3
-                    ? "All tracks"
-                    : resource.dimensions
-                        .map((track) =>
-                          track === "world"
-                            ? "World models"
-                            : track.toUpperCase(),
-                        )
-                        .join(" / ")}
+          {filtered.map((resource) => {
+            const entry = entries.find((entry) => entry.id === resource.id)!;
+            return (
+              <article
+                className="resource-tile"
+                key={resource.id}
+                data-content-ref={entry.key}
+              >
+                <div className="resource-card-top">
+                  <ResourceIcon resource={resource} size={42} />
+                  <button
+                    className="quiet-icon bookmark-button"
+                    aria-label={t(
+                      saved.includes(resource.id)
+                        ? "Unsave {title}"
+                        : "Save {title}",
+                      { title: resource.name },
+                    )}
+                    aria-pressed={saved.includes(resource.id)}
+                    onClick={() => toggleSave(resource.id)}
+                  >
+                    <Bookmark
+                      size={17}
+                      fill={
+                        saved.includes(resource.id) ? "currentColor" : "none"
+                      }
+                    />
+                  </button>
+                </div>
+                <span className="small-label">
+                  {t(
+                    categories.find(
+                      (category) => category.id === resource.category,
+                    )?.label || "",
+                  )}
                 </span>
-              </div>
-              <div className="resource-card-footer">
-                <button onClick={() => selectResource(resource.id)}>
-                  View details
-                  <ArrowRight size={15} />
-                </button>
-                <a
-                  href={resource.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Visit ${resource.name} project`}
+                <SourceLanguage english={entry.descriptionLanguage === "en"} />
+                <h2>
+                  <Link to={url.resource(resource.id)}>{resource.name}</Link>
+                </h2>
+                <ResourceAttribution resource={resource} />
+                <p
+                  className="resource-description"
+                  lang={entry.descriptionLanguage === "en" ? "en" : undefined}
                 >
-                  <ArrowUpRight size={17} />
-                </a>
-              </div>
-            </article>
-          ))}
+                  {resource.summary}
+                </p>
+                <div className="resource-tags">
+                  <span>{t(typeLabels[resource.type])}</span>
+                  <span>
+                    {resource.dimensions.length === 3
+                      ? t("All tracks")
+                      : resource.dimensions
+                          .map((track) =>
+                            track === "world"
+                              ? t("World models")
+                              : track.toUpperCase(),
+                          )
+                          .join(" / ")}
+                  </span>
+                </div>
+                <div className="resource-card-footer">
+                  <button onClick={() => selectResource(resource.id)}>
+                    {t("View details")}
+                    <ArrowRight size={15} />
+                  </button>
+                  <a
+                    href={resource.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={t("Visit {title} project", {
+                      title: resource.name,
+                    })}
+                  >
+                    <ArrowUpRight size={17} />
+                  </a>
+                </div>
+              </article>
+            );
+          })}
         </div>
       ) : (
         <div className="empty-state">
           <Search size={28} />
           <h2>
-            {savedOnly
-              ? "Your collection has room to grow."
-              : "No resources on this path."}
+            {t(
+              savedOnly
+                ? "Your collection has room to grow."
+                : "No resources on this path.",
+            )}
           </h2>
           <p>
-            {savedOnly
-              ? "Save a few useful tools with the bookmark button, then find them here."
-              : "Try another search or loosen the filters a little."}
+            {t(
+              savedOnly
+                ? "Save a few useful tools with the bookmark button, then find them here."
+                : "Try another search or loosen the filters a little.",
+            )}
           </p>
           <button
             className="button button-secondary"
             onClick={() => setParams({})}
           >
-            Browse all resources
+            {t("Browse all resources")}
           </button>
         </div>
       )}
       {active && (
         <ResourceDetail
           key={active.id}
-          entry={entries.find(entry => entry.id === active.id)!}
-          demos={demos.filter(demo => demo.data.resourceId === active.id)}
+          entry={entries.find((entry) => entry.id === active.id)!}
+          demos={demos.filter((demo) => demo.data.resourceId === active.id)}
           saved={saved.includes(active.id)}
           onSave={() => toggleSave(active.id)}
           onClose={() => selectResource("")}

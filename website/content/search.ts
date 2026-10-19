@@ -26,7 +26,18 @@ export function blockText(block: ContentBlock): string {
   }
 }
 export function searchableBlocks(entry: ContentEntry) {
-  return entry.blocks.filter(block => block.section !== 'metadata');
+  return entry.blocks.filter((block) => block.section !== "metadata");
+}
+export function searchFields(entry: ContentEntry) {
+  return [
+    ...new Set(
+      [
+        entry.title,
+        entry.description,
+        ...searchableBlocks(entry).map(blockText),
+      ].filter(Boolean),
+    ),
+  ].join("\n");
 }
 export function searchableText(entry: ContentEntry) {
   return `${entry.title} ${contentKinds[entry.kind].plural} ${searchableBlocks(entry).map(blockText).join("\n")}`;

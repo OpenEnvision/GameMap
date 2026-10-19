@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useHref } from "react-router";
+import { useHref } from "react-router";
+import { Link, useSiteI18n, LanguageSwitcher } from "../lib/i18n";
 import { ArrowUpRight, Bookmark, Check, Link2, X } from "lucide-react";
 import type { Resource } from "../../src/types";
 import ResourceIcon from "../../src/components/ResourceIcon";
-import type { ContentEntry } from '../../content/models';
+import type { ContentEntry } from "../../content/models";
 import { ContentDocument, RelatedDemos, MediaPreview } from "./content";
 
 export function ResourceDetail({
@@ -13,12 +14,13 @@ export function ResourceDetail({
   onSave,
   onClose,
 }: {
-  entry: ContentEntry<'resource'>;
-  demos: ContentEntry<'demo'>[];
+  entry: ContentEntry<"resource">;
+  demos: ContentEntry<"demo">[];
   saved: boolean;
   onSave: () => void;
   onClose: () => void;
 }) {
+  const { t } = useSiteI18n();
   const dialog = useRef<HTMLDialogElement>(null);
   const [copy, setCopy] = useState("");
   const resource: Resource = entry.data;
@@ -40,7 +42,7 @@ export function ResourceDetail({
     <dialog
       ref={dialog}
       className="resource-dialog"
-      aria-label={`${resource.name} details`}
+      aria-label={t("{title} details", { title: resource.name })}
       onCancel={(event) => {
         event.preventDefault();
         onClose();
@@ -58,11 +60,12 @@ export function ResourceDetail({
       }}
     >
       <div className="detail-toolbar">
-        <span className="eyebrow">PROJECT RECORD</span>
+        <span className="eyebrow">{t("PROJECT RECORD")}</span>
+        <LanguageSwitcher />
         <button
           className="quiet-icon"
           onClick={onClose}
-          aria-label="Close resource details"
+          aria-label={t("Close resource details")}
         >
           <X size={21} />
         </button>
@@ -70,18 +73,20 @@ export function ResourceDetail({
       {video?.type === "video" && (
         <figure className="detail-media">
           <label className="preview-selector">
-            Recording
+            {t("Recording")}
             <select
-              aria-label="Project recording"
+              aria-label={t("Project recording")}
               value={demo.key}
               onChange={(event) => setSelected(event.target.value)}
             >
               {demos.map((entry) => (
                 <option key={entry.key} value={entry.key}>
                   {entry.title} —{" "}
-                  {entry.data.role === "excerpt"
-                    ? "excerpt"
-                    : "source recording"}
+                  {t(
+                    entry.data.role === "excerpt"
+                      ? "excerpt"
+                      : "source recording",
+                  )}
                 </option>
               ))}
             </select>
@@ -93,7 +98,7 @@ export function ResourceDetail({
               <ArrowUpRight size={12} />
             </a>
             <a href={demo.data.originalUrl} target="_blank" rel="noreferrer">
-              Original video
+              {t("Original video")}
               <ArrowUpRight size={12} />
             </a>
           </figcaption>
@@ -103,7 +108,7 @@ export function ResourceDetail({
       <div className="detail-identity">
         <ResourceIcon resource={resource} size={56} />
         <Link className="inline-link" to={entry.url}>
-          Open complete project record
+          {t("Open complete project record")}
           <ArrowUpRight size={14} />
         </Link>
       </div>
@@ -114,7 +119,7 @@ export function ResourceDetail({
           target="_blank"
           rel="noreferrer"
         >
-          Visit project
+          {t("Visit project")}
           <ArrowUpRight size={16} />
         </a>
         <button
@@ -123,13 +128,12 @@ export function ResourceDetail({
           onClick={onSave}
         >
           <Bookmark size={16} fill={saved ? "currentColor" : "none"} />
-          {saved ? "Saved" : "Save resource"}
+          {t(saved ? "Saved" : "Save resource")}
         </button>
       </div>
       <ContentDocument entry={entry} heading="h2" />
       <RelatedDemos demos={demos} />
       <div className="detail-footer">
-        <span>Source reviewed {resource.verified}</span>
         <button
           className="inline-link"
           onClick={async () => {
@@ -146,12 +150,12 @@ export function ResourceDetail({
           }}
         >
           {copy === "Link copied." ? <Check size={14} /> : <Link2 size={14} />}
-          Copy link
+          {t("Copy link")}
         </button>
       </div>
       {copy && (
         <p className="copy-notice" role="status">
-          {copy}
+          {t(copy)}
         </p>
       )}
     </dialog>

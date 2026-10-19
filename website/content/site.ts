@@ -1,5 +1,6 @@
 import type { Dimension } from "../src/types";
 
+export const siteOrigin = "https://openenvision.github.io";
 /** The only declaration of routes and navigation. URL helpers use these paths. */
 export const pages = {
   home: { path: "/", module: "routes/home.tsx", title: "Home", nav: "hidden" },
@@ -51,7 +52,12 @@ export const pages = {
     title: "Testing library",
     nav: "secondary",
   },
-  docsZh: { path:'/docs/zh/', module:'routes/docs-index.tsx', title:'Chinese documentation', nav:'hidden' },
+  docsZh: {
+    path: "/docs/zh/",
+    module: "routes/docs-index.tsx",
+    title: "Chinese documentation",
+    nav: "hidden",
+  },
   docs: {
     path: "/docs/",
     module: "routes/docs-index.tsx",

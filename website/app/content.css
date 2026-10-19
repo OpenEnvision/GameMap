@@ -1,4 +1,16 @@
 /* Registry-backed pages share the same quiet, document-first visual language. */
+.site-language { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; white-space: nowrap; }
+.site-language a { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; padding: 4px 6px; border-radius: 5px; }
+.site-language a[aria-current] { display: none; }
+.site-language a:hover { background: var(--surface); color: var(--accent); }
+.site-language a:focus-visible, .documentation-language a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.site-language .language-separator { display: none; }
+.source-language { display: inline-block; margin-inline-start: 8px; color: var(--muted); font-size: 10px; font-weight: 500; letter-spacing: .02em; vertical-align: middle; }
+.document-source-language { display: inline-block; margin: -12px 0 20px; color: var(--muted); font-size: 12px; }
+html[lang='zh-CN'] .page-heading h1, html[lang='zh-CN'] .hero-copy h1 { letter-spacing: -.035em; }
+html[lang='zh-CN'] .hero-copy h1 { font-size: clamp(40px,4.5vw,62px); line-height: 1.2; }
+html[lang='zh-CN'] .resource-description, html[lang='zh-CN'] .content-lead, html[lang='zh-CN'] .example-body > p { line-height: 1.8; }
+
 .documentation-language { display: flex; justify-content: flex-end; align-items: center; gap: 10px; margin-bottom: 20px; font-size: 12px; color: var(--muted); }
 .documentation-language a:hover, .documentation-language a[aria-current] { color: var(--ink); }
 .document-information { margin-top: 42px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 12px; line-height: 1.8; color: var(--muted); }

@@ -14,6 +14,7 @@ import type { Dimension } from "../src/types";
 import type { LearningMedia } from "../src/data/learningMedia";
 import type { ResourceIdentity } from "../src/data/resourceIdentities";
 import { publicAsset } from "../src/publicAsset";
+import { localizedPath, documentLanguages } from "./locale";
 
 const imageKeys = {
   src: true,
@@ -56,7 +57,7 @@ const sourcePaths: Record<ContentKind, string> = {
   "testing-pack": "website/src/data/testingResources.ts",
   path: "website/src/data/plans.ts",
   step: "website/src/data/plans.ts",
-  demo: 'website/src/data/recordings.ts',
+  demo: "website/src/data/recordings.ts",
   collection: "website/src/data/communityResearch.ts",
   document: "docs/",
 };
@@ -66,15 +67,37 @@ function check(condition: unknown, message: string): asserts condition {
 
 /** Each original asset has one identity; all authored presentations remain addressable. */
 export function collectDemos(sources: ContentSources): DemoContent[] {
-  const ids = new Set<string>(), originals = new Set<string>();
-  return sources.recordings.flatMap(recording => {
-    assertKeys(recording, { id: true, resourceId: true, originalUrl: true, views: true }, `recording:${recording.id}`);
-    check(!ids.has(recording.id) && !originals.has(recording.originalUrl), `Duplicate original recording: ${recording.id}`);
-    ids.add(recording.id); originals.add(recording.originalUrl);
-    check(recording.views.length, `Recording ${recording.id} needs a presentation`);
-    return recording.views.map(view => {
-      if (view.mobilePreview) assertKeys(view.mobilePreview, mobileKeys, `demo:${view.id}.mobilePreview`);
-      return { ...view, recordingId: recording.id, resourceId: recording.resourceId, originalUrl: recording.originalUrl };
+  const ids = new Set<string>(),
+    originals = new Set<string>();
+  return sources.recordings.flatMap((recording) => {
+    assertKeys(
+      recording,
+      { id: true, resourceId: true, originalUrl: true, views: true },
+      `recording:${recording.id}`,
+    );
+    check(
+      !ids.has(recording.id) && !originals.has(recording.originalUrl),
+      `Duplicate original recording: ${recording.id}`,
+    );
+    ids.add(recording.id);
+    originals.add(recording.originalUrl);
+    check(
+      recording.views.length,
+      `Recording ${recording.id} needs a presentation`,
+    );
+    return recording.views.map((view) => {
+      if (view.mobilePreview)
+        assertKeys(
+          view.mobilePreview,
+          mobileKeys,
+          `demo:${view.id}.mobilePreview`,
+        );
+      return {
+        ...view,
+        recordingId: recording.id,
+        resourceId: recording.resourceId,
+        originalUrl: recording.originalUrl,
+      };
     });
   });
 }
@@ -87,7 +110,7 @@ export function createRegistry(
   const keys = new Map<string, ContentEntry>();
   const resourceIds = new Set(sources.resources.map((resource) => resource.id));
   const demos = collectDemos(sources);
-  const demoById = new Map(demos.map(demo => [demo.id, demo]));
+  const demoById = new Map(demos.map((demo) => [demo.id, demo]));
   function add<K extends ContentKind>(
     kind: K,
     id: string,
@@ -248,8 +271,12 @@ export function createRegistry(
       url.research(item.requested_repo),
     );
   for (const item of sources.agentGameResources) {
-    if (item.catalogResourceId) check(resourceIds.has(item.catalogResourceId), `Missing catalog reference ${item.catalogResourceId}`);
-    add('agent',item.id,item,url.agent(item.id));
+    if (item.catalogResourceId)
+      check(
+        resourceIds.has(item.catalogResourceId),
+        `Missing catalog reference ${item.catalogResourceId}`,
+      );
+    add("agent", item.id, item, url.agent(item.id));
   }
   for (const item of sources.testingResources)
     add("testing", item.id, item, url.testing(item.id));
@@ -320,8 +347,8 @@ export function createRegistry(
   for (const item of sources.communityCollections)
     add("collection", item.id, item, url.collection(item.id));
   for (const item of documents) {
-    const entry=add('document',item.slug,item,url.document(item.slug));
-    if(item.slug.startsWith('zh/'))entry.collectionUrl='/docs/zh/';
+    const entry = add("document", item.slug, item, url.document(item.slug));
+    if (item.slug.startsWith("zh/")) entry.collectionUrl = "/docs/zh/";
   }
   const addresses = new Map<string, ContentEntry>();
   for (const entry of entries) {
@@ -348,7 +375,16 @@ export function createRegistry(
     all: <K extends ContentKind>(kind: K) =>
       entries.filter((entry) => entry.kind === kind) as ContentEntry<K>[],
     byKey: (key) => keys.get(key),
-    examplesFor: ref => { check(ref.kind === 'resource' && resourceIds.has(ref.id), `Invalid resource reference: ${ref.kind}:${ref.id}`); return entries.filter(entry => entry.kind === 'example' && entry.data.resourceIds.includes(ref.id)) as ContentEntry<'example'>[]; },
+    examplesFor: (ref) => {
+      check(
+        ref.kind === "resource" && resourceIds.has(ref.id),
+        `Invalid resource reference: ${ref.kind}:${ref.id}`,
+      );
+      return entries.filter(
+        (entry) =>
+          entry.kind === "example" && entry.data.resourceIds.includes(ref.id),
+      ) as ContentEntry<"example">[];
+    },
     demosFor: (resourceId) =>
       entries.filter(
         (entry) =>
@@ -379,7 +415,9 @@ export function expectedContentKeys(
       `path:${track}`,
       ...steps.map((step) => `step:${track}/${step.id}`),
     ]),
-    ...sources.recordings.flatMap(recording => recording.views.map(view => `demo:${view.id}`)),
+    ...sources.recordings.flatMap((recording) =>
+      recording.views.map((view) => `demo:${view.id}`),
+    ),
     ...sources.communityCollections.map((item) => `collection:${item.id}`),
     ...documents.map((item) => `document:${item.slug}`),
   ];
@@ -420,10 +458,19 @@ export function assertRegistryCoverage(
   }
 }
 export function staticPagePaths(registry: ContentRegistry) {
+  const original = [
+    ...Object.values(pages).map((page) => page.path),
+    ...registry.entries.map((entry) => entry.url.split("#")[0]),
+  ];
+  const documents = documentLanguages(
+    registry.all("document").map((entry) => entry.data),
+  );
   return [
     ...new Set([
-      ...Object.values(pages).map((page) => page.path),
-      ...registry.entries.map((entry) => entry.url.split("#")[0]),
+      ...original,
+      ...original.map((path) => localizedPath(path, "zh", documents)),
+      "/zh/docs/",
+      "/zh/404/",
     ]),
   ];
 }

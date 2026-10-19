@@ -1,0 +1,267 @@
+{
+  "example:cloud-crush-gemini-cli": {
+    "title": "Cloud Crush：用 Gemini CLI 制作消除游戏",
+    "description": "在 8×8 棋盘上匹配云服务图标，争夺限时高分并创造特殊 Gemini 宝石。Google 公开完整 Go 游戏及 Gemini CLI 开发教程。",
+    "aiUse": "Google 在仓库中将游戏生成归属于 Gemini CLI，官方 codelab 展示人工通过 Plan 模式、引导提示、浏览器适配、测试和子代理组织开发。这是发布方的开发记录，不是独立测量的自主创作比例。"
+  },
+  "example:dinosaur-offline-gemini-cli": {
+    "title": "Dinosaur Game Offline：Gemini CLI 辅助跑酷",
+    "description": "控制像素恐龙跳过仙人掌、躲避飞行障碍，随分数增长体验加速。这个浏览器小游戏包含完整 JavaScript 实现、精灵与音效。",
+    "aiUse": "作者在 README 和游戏页脚明确说明 Gemini CLI 参与了脚手架、玩法逻辑、调试和改进。没有公开原始对话或确切模型标识，应视为有记录的辅助开发。"
+  },
+  "example:moonlight-mayhem-codex": {
+    "description": "用 Codex 制作的 3D 博物馆劫案：救出两只浣熊队友、躲避安保、叠起小队，偷走金色沙丁鱼。",
+    "aiUse": "Simon Willison 记录了向 Codex 提供游戏简报和图像生成权限，再提出视觉缺陷修复的过程。公开项目包含游戏、生成纹理和开发对话。"
+  },
+  "example:tron-exonix-claude": {
+    "description": "通过 Claude Code、Godot MCP、Blender MCP 和生成资产制作的霓虹 3D 占地游戏，由人工提供设计与试玩反馈。",
+    "aiUse": "作者记录 Claude 编写玩法、着色器、视觉特效和 UI，人工引导机制与材质。仓库包含实际 Godot 游戏、生成资产及资产生成脚本。"
+  },
+  "example:claude-agent-team-tetris": {
+    "title": "Tetris：代理团队协作开发",
+    "description": "完整的浏览器俄罗斯方块，作者公开说明三个 Claude Code 队友如何分别负责规则、渲染与控制。",
+    "aiUse": "作者记录了 Claude Opus 4.6 代理团队、共享脚手架、文件职责划分，以及分配给每个队友的具体提示词。"
+  },
+  "example:tower-of-time-ai-build": {
+    "title": "Tower of Time：实现时间回溯机制",
+    "description": "包含时间倒流机制的完整塔防游戏，作者提供了覆盖玩法、调试和打磨的大量提示词记录。",
+    "aiUse": "作者使用 Augment Code 与 Cursor 代理，主要模型为 Claude Sonnet 4，同时也在 Phaser Editor 中手动编辑代码和安排场景。"
+  },
+  "example:raccoon-heist-claude": {
+    "description": "Claude 构建的 3D 后院劫案：收集战利品，躲避手电巡逻和看门犬，在黎明前存好收获。",
+    "aiUse": "创作者公开提示词、Claude Code 会话、生成纹理与开发记录。Claude 实现并测试游戏，作者另行评价其优点和玩法限制。"
+  },
+  "example:opengame-tower-defense": {
+    "description": "猫咪主题塔防，提供原始生成提示词、在线浏览器版本和对应的完整游戏项目。",
+    "aiUse": "作者将其作为 OpenGame 的单次提示生成结果发布。可以对照需求与项目，研究代理如何连接游戏规则、资产和交互。"
+  },
+  "example:opengame-marvel-platformer": {
+    "description": "研究一款生成式动作平台游戏，包含英雄选择、战斗技能和多阶段开发简报。",
+    "aiUse": "这个作者发布的 OpenGame 案例把详细动作游戏提示词、在线结果和生成源码连接起来。应将实现与简报逐项比较，而不把提示词本身当成所有功能正常的证据。"
+  },
+  "example:opengame-arithmancy-card-battle": {
+    "description": "生成式教育卡牌战斗，将数学和科学问题转成施法与连击决策。",
+    "aiUse": "研究作者的知识型战斗提示词如何变成问答、卡牌、回合和连击系统，再通过小范围规则修改观察代理如何维护相互关联的状态。"
+  },
+  "example:opengame-mandalorian-shooter": {
+    "description": "通过原始战斗简报、可玩版本和完整项目，探索一款生成的俯视角射击游戏。",
+    "aiUse": "作者将其作为 OpenGame 生成案例发布。可以比较战斗与移动需求及实际实现，再研究生成的关卡和玩法场景。"
+  },
+  "example:turbo-kart-rally-claude": {
+    "description": "程序化卡丁车竞速，包含漂移、道具战、七名对手，以及有记录的五代理协作开发过程。",
+    "aiUse": "BridgeMind 公开原始提示词，说明五个 Claude Opus 5.5 代理如何分工并整合游戏。"
+  },
+  "example:long-wind-claude": {
+    "description": "中文武侠动作游戏，包含三章、弹反、首领、生成角色和重定向动画。",
+    "aiUse": "作者描述了用中文指挥 Claude Code、试玩改动并提供 Tripo 与 Mixamo 访问权限的过程，README 包含开发时间线。"
+  },
+  "example:nova-lancer-claude": {
+    "description": "穿越海洋、峡谷和要塞的轨道射击游戏，最终挑战机械海龙首领。",
+    "aiUse": "创作者公开日文简报，说明 Claude Code 的实现、两个并行音频与头像代理，以及自动化全流程检查。"
+  },
+  "example:orb-shooter-ai": {
+    "description": "小型第一人称射击游戏，将代理编写的机制与随项目提供的仓库、武器和敌人模型组合起来。",
+    "aiUse": "Red Stapler 表示，Antigravity 配合 Gemini 3.1 Pro 和 Claude Opus 4.6 生成主要机制，人工负责指挥、测试、选取资产和打磨细节。"
+  },
+  "example:operation-naptime-claude": {
+    "description": "婴儿逃出围栏，在被抓住前制造客厅混乱；视觉效果与物理采用程序化制作。",
+    "aiUse": "作者记录了基于照片的简报、Claude Code 子代理、视觉评审、性能调查，并公开会话对话。"
+  },
+  "example:ombres-claude": {
+    "description": "夕阳下，巨鸟用影子为领地着色的 3D 派对游戏，手机也可充当控制器。",
+    "aiUse": "Brieuc Crosson 公开最初简报和多代理 Claude Code 流程，包括研究、接口约定、评审轮次和人工干预。"
+  },
+  "example:dragons-reach-claude": {
+    "description": "程序化龙角色平台游戏，包含浮空岛、滑翔、火焰战斗、可收集龙蛋和最终传送门。",
+    "aiUse": "创作者公开最初提示词、架构约定、人工追加指令，以及对 Claude Code 成果与限制的具体记录。"
+  },
+  "example:vibe-jet-gemini": {
+    "description": "街机飞行游戏，提供 Gemini 2.5 Pro 提示过程记录和 Node / WebSocket 多人服务器。",
+    "aiUse": "Cedric Chee 公开原始 Gemini 提示词、模型回复、开发方法、截图和逐步迭代的项目历史。"
+  },
+  "example:slide-rush-opus": {
+    "description": "面向移动端的滑水道竞速，包含十二名对手、跳跃、捷径、练习模式和程序化角色。",
+    "aiUse": "作者将项目作为 LLM 开发比较，README 记录 Opus 5.5、extra-high 推理强度、耗时和会话用量。"
+  },
+  "example:the-tithe-claude": {
+    "description": "穿越被水淹没的邪教住宅的第一人称恐怖冒险，包含武器、钥匙推进、检查点和最终逃生。",
+    "aiUse": "Miguel Solorio 说明该游戏使用 Opus 5.5 构建。仓库提供实际游戏与技术设计文档，没有公开提示词对话。"
+  },
+  "example:michi-neko-ai": {
+    "description": "京都风格山谷中的早期猫咪探索游戏，包含 NPC 任务、天气、茶屋和进度保存。",
+    "aiUse": "创作者描述人工美术指导与多个 AI 语言模型生成代码相结合，没有指出每个模型或具体提示词。"
+  },
+  "example:fragarena-copilot": {
+    "description": "多人太空竞技场射击，包含六自由度移动、机器人、武器拾取、雷达、计分与重生。",
+    "aiUse": "Jonny Leigh 将游戏开发归属于 GitHub Copilot，并公开游戏、音频和服务器迁移相关的提示词。"
+  },
+  "example:gothicvania-codex": {
+    "title": "GothicVania：用 Codex 制作平台游戏",
+    "description": "可玩的哥特风平台游戏，包含敌人、战斗、菜单和音乐，并有详细的 Codex 迭代开发记录。",
+    "aiUse": "作者报告使用 Codex CLI 编写代码，结合技能包、设计文档和浏览器检查。资产来自人类美术作者，Tiled 关卡由作者制作。"
+  },
+  "example:pixel-princess-claude": {
+    "title": "Pixel Princess：完整街机关卡流程",
+    "description": "在浏览器平台游戏中穿越六个主题世界、击败首领并抵达结局，支持触屏与离线游玩。",
+    "aiUse": "Vito D’Elia 将架构、关卡和首领设计、程序化资产、测试与性能工作归属于 Claude Code，同时保留人工评审和真机测试。"
+  },
+  "example:claude-tower-defense": {
+    "description": "在完整塔防游戏中抵挡敌人波次、购买升级，并在多轮游玩间保留永久进度。",
+    "aiUse": "仓库作者将整个游戏归属于 Claude Code。这是创作者声明，同时提供完整实现和无头平衡模拟器。"
+  },
+  "example:cursor-procedural-platformer": {
+    "title": "Cursor 程序化平台游戏实验",
+    "description": "包含生成关卡、收集品、角色升级和可选多人模式的浏览器横版游戏。",
+    "aiUse": "Jeroen Willemsen 将仓库描述为使用 Cursor 创作游戏的实验，README 提供开发步骤，并引用项目规格与对话记录。"
+  },
+  "example:claude-mini-snake": {
+    "title": "Mini Snake：通过 Claude 对话制作的游戏",
+    "description": "经典贪吃蛇，包含多种食物效果、粒子反馈、本地最高分和触屏输入。",
+    "aiUse": "作者表示游戏完全通过与 Claude AI 对话制作。公开仓库包含独立可运行的游戏，而没有发布聊天记录。"
+  },
+  "example:flux-codex-runner": {
+    "title": "Flux：Codex 重力翻转跑酷",
+    "description": "在地板和天花板间切换以躲避障碍的小型反应游戏，包含合成音频和可选主题。",
+    "aiUse": "Shivam Maurya 记录了七个开发里程碑中的 Codex 迭代，覆盖碰撞、视觉反馈、音频、输入、持久化和界面。"
+  },
+  "example:bash-fighter-agent": {
+    "title": "Bash Fighter：代理开发的多人格斗游戏",
+    "description": "浏览器平台格斗游戏，支持在线对战、机器人和坍塌竞技场，客户端与对局服务器均已公开。",
+    "aiUse": "维护者披露由 AI 代理负责日常开发并编写了仓库的大部分内容，没有指出具体模型或编程客户端。"
+  },
+  "example:running-man-claude-pixellab": {
+    "title": "Running Man：Claude Code 与 PixelLab",
+    "description": "单键跑酷游戏，结合滚动像素世界、角色动画状态、障碍组合和生成音效。",
+    "aiUse": "John Dilig 将代码归属于 Claude Code，将像素美术归属于通过 MCP 接入的 PixelLab，并由人工指导。项目记录说明资产与后续改动。"
+  },
+  "example:garden-match-agents": {
+    "title": "Garden Match：代理实现并评审的消除游戏",
+    "description": "轻松的三消游戏，包含连锁消除、宠物伙伴、进度保存和随通关成长的花园。",
+    "aiUse": "创作者说明人工负责产品方向和 QA，Codex 负责规划与美术，Claude 负责实现和工程，仓库还记录了实现与评审职责的分离。"
+  },
+  "example:dunkirk-ai-assisted": {
+    "title": "Dunkirk：有明确分工记录的辅助开发",
+    "description": "二战风格纵向街机射击，提供公开 Godot 项目，以及 AI 和手工贡献的详细分工。",
+    "aiUse": "创作者说明 Gemini 用于背景生成和构思，ChatGPT 用于规划与调试，Claude 提供少量代码建议，开发者手动集成并测试这些工作。"
+  },
+  "example:gravity-birds-grok-cursor": {
+    "title": "Gravity Birds：Grok Bot 指挥 Cursor",
+    "description": "Godot 网格解谜：成长中的小鸟收集水果、受重力下落并到达出口，包含撤销和原创关卡。",
+    "aiUse": "创作者记录 Grok Bot 助手规划并指挥 Cursor Cloud Agent，之后进行本地试玩、玩法修复及后续美术音频制作。"
+  },
+  "example:quasar-saz-claude": {
+    "title": "Quasar Saz：Claude Code 创作实验",
+    "description": "音乐竞技场射击，包含六个波次、不断演化的乐器武器、程序化画面、合成音频与最终首领。",
+    "aiUse": "Caleb Leak 描述 Claude Code 将一只狗的按键解释为设计方向，再借助验证工具实现代码、画面和声音；推荐发布版本另有人工作出的修复。"
+  },
+  "example:agent-arcade-copilot": {
+    "title": "Agent Arcade：Copilot 制作桌面街机游戏",
+    "description": "包含平台游戏与太空射击的桌面街机集，通过透明跨平台覆盖窗口运行。",
+    "aiUse": "Dan Wahlin 记录使用 GitHub Copilot CLI 完成机制、精灵集成、Tauri 迁移与发布，再结合截图和反复试玩调整行为。"
+  },
+  "example:cursor-space-shooter": {
+    "title": "Space Shooter：家庭 Cursor 实验",
+    "description": "完整俯视角街机射击，包含敌人波次、生命拾取、武器升级和程序化音效。",
+    "aiUse": "Little Earth 明确说明 Cursor AI 参与开发，这是家庭协作记录，没有公开提示词对话。"
+  },
+  "example:cursor-destruction-derby": {
+    "description": "浏览器汽车战斗竞技场，支持本地双人、电脑对手、碰撞与车辆损伤。",
+    "aiUse": "作者将作品集归属于 Cursor AI，并说明这款竞技场游戏是孩子的 AI 辅助创作，没有详细提示词历史。"
+  },
+  "example:beach-kitty-ai-campaign": {
+    "description": "以猫为主角的 Phaser 关卡流程，结合跑酷、平台跳跃、射击和其他街机机制，可选生成猫咪美术。",
+    "aiUse": "创作者说明使用 Claude Code 与 Google Gemini。公开项目包含进展日志、架构记录、场景与资产；Gemini 还为可选猫咪定制提供能力。"
+  },
+  "example:gemini-pirate-fleet": {
+    "description": "驾驶旗舰穿越生成海域，与其他船只战斗，用战利品扩建和升级舰队。",
+    "aiUse": "Joey Salmons 表示作品集从 AI Studio 中的 Gemini 2.5 Pro 与 Claude Sonnet 4.5 开始制作，手工修改仅涉及少量平衡调整；未明确这个版本使用的确切模型。"
+  },
+  "example:gemini-kymograph": {
+    "description": "CRT 风格推理解谜：观察信号、推断隐藏的变换规则，并构造反制信号。",
+    "aiUse": "作者对作品集的总体说明指出，Gemini 与 Claude 用于迭代构思和编程，另有人工作平衡调整，没有这款游戏专属的提示词记录。"
+  },
+  "example:gemini-pumpkin-hunt": {
+    "description": "第一人称森林恐怖游戏：在追踪者逼近时管理手电电量与体力，点亮五个南瓜。",
+    "aiUse": "作者将作品集归属于 Gemini 与 Claude 的迭代开发，并说明做过少量手工平衡调整；此游戏没有独立提示词日志。"
+  },
+  "example:deepseek-neon-snake": {
+    "title": "Snake：霓虹街机版",
+    "description": "霓虹贪吃蛇，包含关卡、变化的速度和网格尺寸、键盘与触屏输入，以及可保存的最高分。",
+    "aiUse": "创作者在仓库描述中明确说明游戏使用 DeepSeek 创建。README 记录游玩和计分方式，没有公开提示词或生成对话。"
+  },
+  "example:deepseek-mini-ksp": {
+    "title": "Mini KSP：中文火箭沙盒",
+    "description": "在中文航天沙盒中组装多级火箭、发射入轨、解锁科技并完成任务。",
+    "aiUse": "创作者在仓库描述中说明使用 DeepSeek Harness。项目提供路线图与开发步骤，没有公开原始模型对话。"
+  },
+  "foundation:godot-2d-dodge": {
+    "title": "第一个 2D 游戏",
+    "description": "躲避敌人、尽量生存并重新开始。这个完整的 Godot 官方项目可作为 AI 辅助开发的基础。"
+  },
+  "foundation:phaser-starshake": {
+    "title": "把浏览器射击游戏带到移动端",
+    "description": "试玩完整太空射击游戏 Starshake，再跟随官方教程适配移动端控制与布局，这条路径基于已有游戏继续开发。"
+  },
+  "foundation:godot-3d-squash": {
+    "title": "制作可玩的 3D 角色游戏",
+    "description": "移动角色、跳踩敌人，并在失败后重试；这个完整的 Godot 项目在小型 3D 场景中教授交互与动画。"
+  },
+  "demo:opengame-portal": {
+    "title": "OpenGame · 平台跑酷",
+    "description": "在生成的像素平台游戏中跳跃、战斗与探索。"
+  },
+  "demo:opengame-skirmish": {
+    "title": "OpenGame · 空间站交战",
+    "description": "在生成的俯视角动作游戏中移动、瞄准与躲避。"
+  },
+  "demo:gamefactory-ue5-combat": {
+    "title": "3AGameFactory · 庭院战斗",
+    "description": "在 Unreal Engine 5 游戏中接近敌人、交换攻击，观察生命值变化。"
+  },
+  "demo:gamefactory-ue5-rpg": {
+    "title": "3AGameFactory · 村庄任务",
+    "description": "穿过风格化村庄，收集宝藏并观察任务推进。"
+  },
+  "demo:streamrender-car": {
+    "title": "StreamRender-H3 · 从引擎到神经渲染",
+    "description": "同步比较引擎输入与相应的神经渲染画面。"
+  },
+  "demo:recording-streamrender-h3": {
+    "title": "StreamRender-H3 · 引擎与神经渲染对照",
+    "description": "官方同步比较：左侧为引擎输出，右侧为流式神经渲染，两幅画面均完整展示。"
+  },
+  "demo:solar-voxel": {
+    "title": "SolarRenderer · 体素世界的视觉转换",
+    "description": "简单体素场景转成风格丰富、持续运动的世界。"
+  },
+  "demo:recording-solarrenderer": {
+    "title": "SolarRenderer · 官方演示片",
+    "description": "先预览官方赛博朋克街景，再观看完整影片中的更多结构控制与生成渲染示例。"
+  },
+  "demo:recording-opengame": {
+    "title": "OpenGame · 猫咪塔防演示",
+    "description": "OpenGame 官方演示，展示生成的像素游戏如何运行。"
+  },
+  "demo:recording-trellis": {
+    "title": "TRELLIS · 3D 资产生成",
+    "description": "Microsoft Research 官方展示生成的 3D 资产，项目资料面向学术与研究用途提供。"
+  },
+  "demo:recording-infinigen": {
+    "title": "Infinigen · 程序化关节资产",
+    "description": "官方演示通过程序化生成制作的关节资产。"
+  },
+  "demo:recording-holodeck": {
+    "title": "Holodeck · 从提示词到房间",
+    "description": "作者发布的生成式波西米亚风客厅导览。"
+  },
+  "collection:awesome-ai-built-games": {
+    "description": "按动作、竞速、冒险、策略、解谜和街机等方向整理的社区游戏集，各项目公开源码的程度不同。"
+  },
+  "collection:open-source-ai-game-jam": {
+    "description": "浏览在代码、资产或玩法中使用 AI 的 Game Jam 作品；活动名称中的开源指 AI 工具，并不保证每个游戏都公开源码。"
+  },
+  "collection:claude-community-use-cases": {
+    "title": "Claude 社区案例",
+    "description": "寻找创作者演示和开发记录；此项目集也包含游戏之外的影片、工具与实验。"
+  }
+}

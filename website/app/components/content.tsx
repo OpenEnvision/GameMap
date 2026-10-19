@@ -1,10 +1,9 @@
-import { useState, type ReactNode } from 'react';
-import { Link } from "react-router";
+import { useState, type ReactNode } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { Link, useSiteI18n, SourceLanguage } from "../lib/i18n";
 import type { ContentBlock, ContentEntry, Fact } from "../../content/models";
-import { contentKinds } from '../../content/models';
-import { groupRecordings } from '../../content/media';
-
+import { contentKinds } from "../../content/models";
+import { groupRecordings } from "../../content/media";
 export function ContentLink({
   href,
   children,
@@ -29,6 +28,7 @@ export function MediaPreview({
 }: {
   block: Extract<ContentBlock, { type: "video" }>;
 }) {
+  const { t } = useSiteI18n();
   return (
     <div
       className={`media-preview${block.mobile ? " has-mobile-preview" : ""}`}
@@ -43,7 +43,7 @@ export function MediaPreview({
         src={block.src}
         aria-label={block.label}
       >
-        Your browser does not support this preview.
+        {t("Your browser does not support this preview.")}
       </video>
       {block.mobile && (
         <video
@@ -54,27 +54,28 @@ export function MediaPreview({
           preload="none"
           poster={block.mobile.poster}
           src={block.mobile.src}
-          aria-label={`${block.label} — mobile preview`}
+          aria-label={`${block.label} — ${t("mobile preview")}`}
         >
-          Your browser does not support this preview.
+          {t("Your browser does not support this preview.")}
         </video>
       )}
     </div>
   );
 }
 function Facts({ items }: { items: Fact[] }) {
+  const { t } = useSiteI18n();
   return (
     <dl className="metadata-facts">
       {items.map((item, index) => (
         <div key={`${item.label}-${index}`}>
-          <dt>{item.label}</dt>
+          <dt>{t(item.label)}</dt>
           <dd>
             {item.type === "group" ? (
               <Facts items={item.items} />
             ) : item.type === "link" ? (
               <ContentLink href={item.url}>{item.url}</ContentLink>
             ) : (
-              item.value
+              t(item.value)
             )}
           </dd>
         </div>
@@ -89,36 +90,46 @@ function Block({
   block: ContentBlock;
   heading?: "h1" | "h2" | "h3";
 }) {
-  const Heading = heading;
-  const Subheading = heading === "h1" ? "h2" : heading === "h2" ? "h3" : "h4";
+  const { t } = useSiteI18n(),
+    Heading = heading,
+    Subheading = heading === "h1" ? "h2" : heading === "h2" ? "h3" : "h4";
+  const language = block.language === "en" ? "en" : undefined;
   switch (block.type) {
     case "title":
       return (
-        <Heading className="content-title" data-content-field={block.field}>
+        <Heading
+          className="content-title"
+          lang={language}
+          data-content-field={block.field}
+        >
           {block.value}
         </Heading>
       );
     case "lead":
       return (
-        <p className="content-lead" data-content-field={block.field}>
+        <p
+          className="content-lead"
+          lang={language}
+          data-content-field={block.field}
+        >
           {block.value}
         </p>
       );
     case "text":
       return (
         <section className="content-field" data-content-field={block.field}>
-          <Subheading>{block.label}</Subheading>
-          <p>{block.value}</p>
+          <Subheading>{t(block.label || "")}</Subheading>
+          <p lang={language}>{t(block.value)}</p>
         </section>
       );
     case "list": {
       const List = block.ordered ? "ol" : "ul";
       return (
         <section className="content-field" data-content-field={block.field}>
-          <Subheading>{block.label}</Subheading>
-          <List>
+          <Subheading>{t(block.label)}</Subheading>
+          <List lang={language}>
             {block.items.map((item, index) => (
-              <li key={`${index}-${item}`}>{item}</li>
+              <li key={`${index}-${item}`}>{t(item)}</li>
             ))}
           </List>
         </section>
@@ -127,15 +138,15 @@ function Block({
     case "links":
       return (
         <section className="content-field" data-content-field={block.field}>
-          <Subheading>{block.label}</Subheading>
+          <Subheading>{t(block.label)}</Subheading>
           <ul className="content-links">
             {block.items.map((item, index) => (
               <li key={`${index}-${item.url}`}>
                 <ContentLink href={item.url}>
-                  {item.label}
+                  {t(item.label)}
                   <ArrowUpRight size={13} />
                 </ContentLink>
-                {item.note && <p>{item.note}</p>}
+                {item.note && <p lang="en">{item.note}</p>}
               </li>
             ))}
           </ul>
@@ -152,10 +163,10 @@ function Block({
             loading="lazy"
           />
           <figcaption>
-            <span>{block.label}</span>
+            <span>{t(block.label)}</span>
             {block.source ? (
               <ContentLink href={block.source}>
-                {block.credit || "Image source"}
+                {block.credit || t("Image source")}
                 <ArrowUpRight size={12} />
               </ContentLink>
             ) : (
@@ -167,7 +178,7 @@ function Block({
     case "facts":
       return (
         <section className="content-field" data-content-field={block.field}>
-          <Subheading>{block.label}</Subheading>
+          <Subheading>{t(block.label)}</Subheading>
           <Facts items={block.items} />
         </section>
       );
@@ -192,7 +203,8 @@ export function ContentDocument({
   entry: ContentEntry;
   heading?: "h1" | "h2" | "h3";
 }) {
-  const anchor = entry.url.split("#")[1];
+  const { t } = useSiteI18n(),
+    anchor = entry.url.split("#")[1];
   return (
     <article
       id={anchor}
@@ -200,67 +212,160 @@ export function ContentDocument({
       data-content-key={entry.key}
       data-content-kind={entry.kind}
     >
-      <span className="eyebrow">{contentKinds[entry.kind].label}</span>
-      {(['intro','media','guidance','resources','provenance'] as const).map(section => {
-        const blocks = entry.blocks.filter(block => (block.type === 'title' || block.type === 'lead' ? 'intro' : block.type === 'image' || block.type === 'video' ? 'media' : block.section || (block.type === 'links' ? 'resources' : 'guidance')) === section);
-        if (!blocks.length) return null;
-        const body = blocks.map((block,index)=><Block key={`${block.field}-${index}`} block={block} heading={heading} />);
-        return <div className={`record-section record-${section}`} key={section}>{body}</div>;
-      })}
+      <span className="eyebrow">{t(contentKinds[entry.kind].label)}</span>
+      <SourceLanguage
+        partial={entry.descriptionLanguage !== "en"}
+        english={
+          entry.descriptionLanguage === "en" ||
+          entry.blocks.some(
+            (block) =>
+              block.section !== "metadata" &&
+              block.language === "en" &&
+              ((block.type === "text" && block.value.length > 60) ||
+                (block.type === "list" &&
+                  block.items.some((item) => item.length > 60))),
+          )
+        }
+      />
+      {(["intro", "media", "guidance", "resources", "provenance"] as const).map(
+        (section) => {
+          const blocks = entry.blocks.filter(
+            (block) =>
+              (block.type === "title" || block.type === "lead"
+                ? "intro"
+                : block.type === "image" || block.type === "video"
+                  ? "media"
+                  : block.section ||
+                    (block.type === "links" ? "resources" : "guidance")) ===
+              section,
+          );
+          return blocks.length ? (
+            <div className={`record-section record-${section}`} key={section}>
+              {blocks.map((block, index) => (
+                <Block
+                  key={`${block.field}-${index}`}
+                  block={block}
+                  heading={heading}
+                />
+              ))}
+            </div>
+          ) : null;
+        },
+      )}
     </article>
   );
 }
-export function ContentCard({ entry }: { entry: Pick<ContentEntry, 'key'|'kind'|'title'|'url'|'description'> }) {
+export function ContentCard({
+  entry,
+}: {
+  entry: Pick<
+    ContentEntry,
+    "key" | "kind" | "title" | "url" | "description" | "descriptionLanguage"
+  >;
+}) {
+  const { t } = useSiteI18n();
+  const nativeChinese = entry.key.startsWith("document:zh/");
+  const descriptionLanguage =
+    entry.descriptionLanguage || (nativeChinese ? "zh" : undefined);
   return (
     <article className="content-card" data-content-ref={entry.key}>
-      <span className="small-label">{contentKinds[entry.kind].label}</span>
-      <h3>
+      <span className="small-label">{t(contentKinds[entry.kind].label)}</span>
+      <SourceLanguage english={entry.descriptionLanguage === "en"} />
+      <h3 lang={nativeChinese ? "zh-CN" : undefined}>
         <Link to={entry.url}>
           {entry.title}
           <ArrowRight size={15} />
         </Link>
       </h3>
-      <p>{entry.description}</p>
+      <p lang={descriptionLanguage === "zh" ? "zh-CN" : descriptionLanguage}>
+        {entry.description}
+      </p>
     </article>
   );
 }
-export function RelatedDemos({ demos }: { demos: ContentEntry<'demo'>[] }) {
+export function RelatedDemos({ demos }: { demos: ContentEntry<"demo">[] }) {
+  const { t } = useSiteI18n();
   if (!demos.length) return null;
   return (
     <section className="related-content">
       <h2>
-        All project recordings{" "}
+        {t("All project recordings")}{" "}
         <span className="count-label">{demos.length}</span>
       </h2>
-      <p>
-        Choose a preview or open the original recording.
-      </p>
+      <p>{t("Choose a preview or open the original recording.")}</p>
       <div className="content-grid">
-        {groupRecordings(demos).map(views => <div className="recording-links" key={views[0].data.recordingId}>{views.map(entry => <ContentCard key={entry.key} entry={entry} />)}</div>)}
+        {groupRecordings(demos).map((views) => (
+          <div className="recording-links" key={views[0].data.recordingId}>
+            {views.map((entry) => (
+              <ContentCard key={entry.key} entry={entry} />
+            ))}
+          </div>
+        ))}
       </div>
     </section>
   );
 }
-export function RecordingCard({ views }: { views: ContentEntry<'demo'>[] }) {
-  const [id, setId] = useState(views[0].id);
-  const entry = views.find(view => view.id === id) || views[0];
-  return <div className="recording-container" data-recording-id={entry.data.recordingId}>
-    {views.length > 1 && <label className="preview-selector">View<select aria-label={`View of ${views[0].title}`} value={entry.id} onChange={event => setId(event.target.value)}>{views.map(view => <option key={view.key} value={view.id}>{view.title} · {view.data.role}</option>)}</select></label>}
-    <DemoCard key={entry.key} entry={entry} />
-    {views.length>1&&<nav className="recording-view-links" aria-label="Other recording views">{views.filter(view=>view.key!==entry.key).map(view=><Link key={view.key} data-content-ref={view.key} to={view.url}>{view.data.role==='excerpt'?'Preview details':'Original recording details'}</Link>)}</nav>}
-  </div>;
+export function RecordingCard({ views }: { views: ContentEntry<"demo">[] }) {
+  const { t } = useSiteI18n(),
+    [id, setId] = useState(views[0].id),
+    entry = views.find((view) => view.id === id) || views[0];
+  return (
+    <div
+      className="recording-container"
+      data-recording-id={entry.data.recordingId}
+    >
+      {views.length > 1 && (
+        <label className="preview-selector">
+          {t("View")}
+          <select
+            aria-label={t("View of {title}", { title: views[0].title })}
+            value={entry.id}
+            onChange={(event) => setId(event.target.value)}
+          >
+            {views.map((view) => (
+              <option key={view.key} value={view.id}>
+                {view.title} · {t(view.data.role)}
+              </option>
+            ))}
+          </select>
+        </label>
+      )}
+      <DemoCard key={entry.key} entry={entry} />
+      {views.length > 1 && (
+        <nav
+          className="recording-view-links"
+          aria-label={t("Other recording views")}
+        >
+          {views
+            .filter((view) => view.key !== entry.key)
+            .map((view) => (
+              <Link key={view.key} data-content-ref={view.key} to={view.url}>
+                {t(
+                  view.data.role === "excerpt"
+                    ? "Preview details"
+                    : "Original recording details",
+                )}
+              </Link>
+            ))}
+        </nav>
+      )}
+    </div>
+  );
 }
 export function DemoCard({ entry }: { entry: ContentEntry<"demo"> }) {
-  const video = entry.blocks.find((block) => block.type === "video");
+  const { t } = useSiteI18n(),
+    video = entry.blocks.find((block) => block.type === "video");
   return (
     <article className="demo-card" data-content-ref={entry.key}>
       {video?.type === "video" && <MediaPreview block={video} />}
       <div className="demo-card-body">
         <span className="small-label">
           {entry.data.track.toUpperCase()} ·{" "}
-          {entry.data.role === "excerpt"
-            ? "CURATED EXCERPT"
-            : "SOURCE RECORDING"}
+          {t(
+            entry.data.role === "excerpt"
+              ? "CURATED EXCERPT"
+              : "SOURCE RECORDING",
+          )}
         </span>
         <h2>
           <Link to={entry.url}>
@@ -268,11 +373,13 @@ export function DemoCard({ entry }: { entry: ContentEntry<"demo"> }) {
             <ArrowRight size={16} />
           </Link>
         </h2>
-        <p>{entry.description}</p>
+        <p lang={entry.descriptionLanguage === "en" ? "en" : undefined}>
+          {entry.description}
+        </p>
         <small>{entry.data.credit}</small>
         <div className="example-links">
           <a href={entry.data.originalUrl} target="_blank" rel="noreferrer">
-            Original video
+            {t("Original video")}
             <ArrowUpRight size={13} />
           </a>
         </div>

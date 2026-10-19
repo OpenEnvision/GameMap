@@ -23,7 +23,10 @@ export async function loadContent(base = "/") {
   );
   const files = await sourceFiles();
   assertKnownSourceFiles(files, contracts);
-  for (const file of files.filter((file) => file.startsWith("data/segments/") && !Object.hasOwn(contracts, file)))
+  for (const file of files.filter(
+    (file) =>
+      file.startsWith("data/segments/") && !Object.hasOwn(contracts, file),
+  ))
     contracts[file] = {
       exports: { default: { shape: "array", kind: "resource" } },
     };
@@ -36,7 +39,7 @@ export async function loadContent(base = "/") {
     .join(",");
   const result = await build({
     stdin: {
-      contents: `${imports.join("\n")}\nexport const sourceModules = {${moduleMap}}; export * from './website/content/registry-core'; export * from './website/content/site'; export * from './website/content/models'; export * from './website/content/matching'; export * from './website/content/doc-language'; export { blockText, searchableText } from './website/content/search'; export { sources } from './website/content/source-data';`,
+      contents: `${imports.join("\n")}\nexport const sourceModules = {${moduleMap}}; export * from './website/content/registry-core'; export * from './website/content/site'; export * from './website/content/models'; export * from './website/content/matching'; export * from './website/content/doc-language'; export * from './website/content/locale'; export * from './website/content/localization.server'; export { blockText, searchableBlocks, searchFields, searchableText } from './website/content/search'; export { sources } from './website/content/source-data';`,
       resolveDir: root,
       loader: "ts",
     },
