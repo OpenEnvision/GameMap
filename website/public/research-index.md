@@ -1,6 +1,6 @@
 # Production research dossiers
 
-Sources checked on **2026-10-18**. Sources checked; full reproduction not performed.
+Baseline sources checked on **2026-10-18**; subsequent review dates are recorded in the individual sections and coverage ledger. Full reproduction was not performed.
 
 These notes extend the concise [resource directory](./awesome-list.md) using the repository's existing categories and contribution rules. They cover native interfaces, asynchronous job semantics, artifact provenance, production tools, visual evidence and generative-service terms. Tools mentioned in notes are not additional directory entries. Neither a directory card nor a source check establishes a working integration.
 
@@ -15,7 +15,7 @@ For a concrete task, start with the [production-stage routes](production-coverag
 | Generate or transform assets through models and hosted APIs | [Generative tools](generative-tools-research.md) | Async receipts versus completed outputs, required postprocessing and export limits |
 | Review provider terms before an experiment | [Generative API boundaries](generative-api-boundaries.md) | Input/output rights, provider training, customer model-evaluation restrictions and expiring downloads |
 | Follow a complete project from authored assets to playtest | [Complete-sample integration](production-work-orders.md#complete-sample-integration-examples) | Pinned project/dependency scope, real scene and interaction wiring, build reports, existing smoke tests and proposed broader acceptance |
-| Evaluate designer goals and playstyle tradeoffs | [Designer-facing playtest evidence](game-ai-notes.md#designer-facing-playtest-evidence) | Authored scenario predicates, persona-conditioned behavior vectors, counter denominators and the limits of enjoyment inference; [production bot integration](studio-production-case-studies.md#ea-autoplayers-learned-locomotion-inside-controlled-test-scenarios) |
+| Evaluate designer goals and playstyle tradeoffs | [Designer-facing playtest evidence](game-ai-notes.md#designer-facing-playtest-evidence) | Authored predicates, persona feedback, [route comparisons](game-ai-notes.md#sonic-trajectory-visualization-comparing-training-populations), [interactive surrogate predictions](game-ai-notes.md#susketch-interactive-surrogate-feedback-with-a-separate-evidence-boundary) and enjoyment-inference limits; [production bot integration](studio-production-case-studies.md#ea-autoplayers-learned-locomotion-inside-controlled-test-scenarios) |
 | Evaluate generated levels or game rules | [Game-AI evidence](game-ai-notes.md#mariogpt-requested-constraints-and-executable-verdicts) and [rule-design search](game-ai-notes.md#gavel-rule-design-search-and-verdict-boundaries) | Requested constraints versus measured output, controller verdicts versus predicted paths, and published results versus released code |
 | Select visual evidence or improve a tool-using agent | [Visual evidence and harness research](visual-evidence-research.md) | Diagnostic metrics versus gameplay correctness, inferred versus authoritative state, optimization versus final evaluation |
 
