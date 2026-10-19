@@ -267,7 +267,6 @@ test("global search also finds a canonical resource rather than only documentati
     .click();
   const search = page.getByRole("dialog");
   await search.getByRole("combobox").fill("OpenAI Codex");
-  // Match the indexed page identity: examples can also mention OpenAI Codex.
   const result = search.locator(
     '[role="option"][id="fd-search-option-content:resource%3Acodex/"]',
   );
