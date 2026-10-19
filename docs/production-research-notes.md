@@ -88,6 +88,18 @@ A visual-novel framework with command-line compilation, linting, testing and bui
 
 Primary sources: [Official documentation or repository](https://www.renpy.org/doc/html/cli.html); [Ren'Py License](https://www.renpy.org/doc/html/license.html)
 
+### Dialogue drafting: preserve preference, edited acceptance and character references
+
+Treat a writer's preferred draft, their edited accepted line and an automatic style score as separate records. A relative choice can still require substantial rewriting or rejection of both alternatives.
+
+**Internal drafting workflow.** Ubisoft's [March 2023 Ghostwriter creator account](https://news.ubisoft.com/en-gb/article/7Cm07zbBGy4Xml6WgYi25d/the-convergence-of-ai-and-creativity-introducing-ghostwriter) describes writers supplying a character and interaction/utterance type, then selecting and editing proposed NPC barks. Pairwise choices also provide preference feedback. The account describes supporting adoption by production teams; it establishes neither a shipped title using the tool nor a measured end-to-end productivity gain. Its Ernestine backend is not documented as a public executable service.
+
+**Separate research evidence.** The [NLP4ConvAI 2023 SASS paper](https://aclanthology.org/2023.nlp4convai-1.11.pdf) proposes holding the trained model fixed while changing a character-specific index of authored lines at inference (§1). Pairwise human comparisons of earlier model versions did not achieve acceptable inter-annotator agreement; subjectivity and lossy character summaries complicated evaluation ([§6.3, printed p.135](https://aclanthology.org/2023.nlp4convai-1.11.pdf#page=7)). No agreement statistic or threshold is reported. Qualitative inspection sometimes found small fluency decreases despite improved perplexity. The authors describe internal integration as future work and state that UBISCENES will not be publicly released ([§7, printed p.136](https://aclanthology.org/2023.nlp4convai-1.11.pdf#page=8)). These findings do not establish that SASS powered the demonstrated Ghostwriter implementation. The [La Forge explanation](https://www.ubisoft.com/en-us/studio/laforge/news/7CCHPeIseXSW1P49L4XZ7l/generating-video-game-scripts-with-style) also identifies narrator text as a poor fit for word-choice style, where game-specific names could bias output.
+
+**Proposed review template.** Start with a frozen, rights-cleared candidate pool and project-owned character material. Preserve the scene facts, character/interaction brief, reference revision, original candidates, relative preference and edited accepted line. Allow rejection of both candidates. Include wrong-voice but lore-consistent lines, fluent but scene-inconsistent lines and narrator cases. Record disagreement and its reasons rather than forcing every pair into a quality ranking.
+
+Review meaning, voice, scene consistency and delivery constraints separately. Carry the accepted revision into [localization and branch checks](production-work-orders.md#6-compile-localization-shape-text-and-inspect-accessible-ui). A later productivity comparison should count reading, discarding, rewriting and downstream rework alongside independent final-quality judgments. This template is unrun; public reading access does not establish executable availability or reuse permissions for Ubisoft's scripts, models or outputs.
+
 ## Build, delivery and networking
 
 ### Nakama
