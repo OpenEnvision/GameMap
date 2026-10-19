@@ -587,6 +587,16 @@ Outer-loop search over code controlling model information access.
 - **Source terms:** MIT upstream repository.
 - **Primary sources:** [Meta-Harness onboarding](https://github.com/stanford-iris-lab/meta-harness/blob/8123ccabe2b19fa1123090b2e5f1bacc20963ce8/ONBOARDING.md); [Meta-Harness repository](https://github.com/stanford-iris-lab/meta-harness); [Meta-Harness paper](https://arxiv.org/abs/2603.28052)
 
+### DiscoveryRSI: preserve the hypothesis through task compilation
+
+**Paper-described mechanism.** A versioned hypothesis combines claim, investigation plan, decision criteria and alternatives. Selected investigations become Harbor packages while retaining those commitments. Replay diagnoses fixed-checkpoint failures; unrecorded alternatives require compatible restored-state execution. Matched development evaluation can retain the incumbent or accept model and harness changes separately or jointly. The reported life-science proposal-quality gains are preliminary: expert calibration remains pending, shared ancestry makes revision observations dependent, and retrospective literature correspondence does not establish causal influence or experimentally confirmed discoveries. [Paper v1, §§3.2–3.5, Appendices A.3–A.4, D–F](https://arxiv.org/html/2610.23839v1)
+
+**Released implementation boundary.** At [revision `8f721486`](https://github.com/Gen-Verse/DiscoveryRSI/tree/8f7214865548bc9b48170aa844e205341d24c4b9), [`core.py`](https://github.com/Gen-Verse/DiscoveryRSI/blob/8f7214865548bc9b48170aa844e205341d24c4b9/src/discovery_rsi/core.py) generates candidates, scores them, selects the maximum and stores selected episodes in JSONL; the no-candidate branch skips that append. Its `ReplayBuffer` appends and reads records; it does not restore execution state. [`harness.py`](https://github.com/Gen-Verse/DiscoveryRSI/blob/8f7214865548bc9b48170aa844e205341d24c4b9/src/discovery_rsi/harness.py) prompts for proposals and critiques. Its generation prompt passes the previous selected identifier, rather than the predecessor's claim and plan. [`role_compiler.md`](https://github.com/Gen-Verse/DiscoveryRSI/blob/8f7214865548bc9b48170aa844e205341d24c4b9/plugins/discovery-rsi/roles/role_compiler.md) supplies instructions, not a Harbor package builder. No compiler, training pipeline or controlled harness-promotion implementation was identified in the [complete pinned tree](https://api.github.com/repos/Gen-Verse/DiscoveryRSI/git/trees/8f7214865548bc9b48170aa844e205341d24c4b9?recursive=1). Public source inspection therefore supports a portable proposal-loop scaffold, not reproduction of the full paper protocol.
+
+**Model and data availability.** The [27B files listing](https://huggingface.co/Gen-Verse/DiscoveryRSI-27B/tree/main), observed at `bf91ea68d49fe162c490f5ece38772fefd1de2d6`, contains only README and Git attributes; weights, tokenizer and configuration were absent. The [model card](https://huggingface.co/Gen-Verse/DiscoveryRSI-27B) anticipates future checkpoint publication and leaves model/base/data terms to that release, despite the code README's released-checkpoint language. Separately, [three task examples](https://huggingface.co/datasets/Gen-Verse/DiscoveryRSI-Hypothesis-Task-Examples), observed at `05d6044bd649a0e25bb3b58b0fbb582adb66b327`, expose instructions, verifiers, provenance, input requirements and a package ZIP. Their fixture/readiness success fields coexist with `scientific_result: not_established`. This is example-artifact availability, not the training corpus or verified scientific execution. Project-owned [code licensing](https://github.com/Gen-Verse/DiscoveryRSI/blob/8f7214865548bc9b48170aa844e205341d24c4b9/LICENSE) declares Apache-2.0; it does not license an absent checkpoint.
+
+**Proposed game-production transfer, unimplemented.** Attach a falsifiable claim to a [production work order](production-work-orders.md): for example, whether a specific collision change removes a reproducible traversal failure while preserving an explicit control route. Compile the claim into fixed project/build inputs, an input sequence, required state/frame evidence, disconfirming outcomes and a stopping rule. Review whether the work order still tests the original claim before execution. Keep the work-order artifact, hypothesis revision and actual execution outcome separately addressable. A successfully emitted or structurally valid test package cannot establish that the mechanic was repaired, and a selected critique score cannot establish cross-project improvement.
+
 ### SWE-agent ACI research
 
 Evidence that agent-facing tool/interface design is an optimization variable.
@@ -604,6 +614,18 @@ Executable skill memory and iterative environment-feedback learning in Minecraft
 - **Limits:** Gameplay learning is not asset-authoring evidence; do not describe its code-skill memory as raw visual memory.
 - **Source terms:** Paper and code rights require separate review.
 - **Primary sources:** [Voyager paper](https://arxiv.org/abs/2305.16291)
+
+### Minecraft teamwork: adjacent execution-harness evidence
+
+The [v1 report](https://arxiv.org/html/2610.22319v1) describes game-playing, not game creation: four coding agents completed one Easy-difficulty Minecraft Java run. It cannot establish reliability across seeds or development quality (§§2, 8).
+
+The Mineflayer interface supplies privileged textual state, including hidden blocks and dragon internals, plus pathfinding. It is not pixel-only play. Programs receive the bot, retain global values between calls and use agent-chosen timeouts. The reported counter that stops leftover timed-out code motivates [separately testing timeout, cancellation and stale effects](gameplay-state-contracts.md); the paper does not publish a cancellation guarantee (§§2.1, 4, 8).
+
+Shared memory preserves coordinates and tool lessons across programs/context compaction. A non-playing Observer checks claims, while the reported win is supported by a server advancement. Team messages alone are not authoritative outcome evidence (§§2.1–2.3, 4–5).
+
+The paper says programs, outputs, chat and server events were recorded. Its HTML provides no linked release of this team's harness, complete logs or world; recording is not artifact availability. Bibliographic repository/dataset links concern other projects (§§5, 7, 9).
+
+Proposed GameMap adaptation, unimplemented: declare observation privileges, memory/reset scope, cancellation ownership and authoritative terminal events before comparing agent runs. No runtime reproduction was performed.
 
 ### Reflexion
 

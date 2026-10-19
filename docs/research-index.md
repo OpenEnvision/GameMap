@@ -52,6 +52,8 @@ For first-hand studio production accounts and related research explanations, use
 - [Source revisions](source-revision-notes.md): selected inspected upstream files with exact revisions and claim boundaries; other dossiers retain their own source-pin lists
 - [Coverage and remaining work](production-coverage-gaps.md): production-stage gaps, interface semantics and a local catalog lookup example
 
+- [Hypothesis-to-work-order fidelity](visual-evidence-research.md#discoveryrsi-preserve-the-hypothesis-through-task-compilation): DiscoveryRSI’s paper protocol versus released scaffold, task examples and checkpoint availability; [Minecraft teamwork](visual-evidence-research.md#minecraft-teamwork-adjacent-execution-harness-evidence) supplies a single-run gameplay example of persistent state, cancellation ownership and authoritative events
+
 ## Maintenance review
 
 [Catalog review coverage](catalog-review-coverage.md) records this pass over all 109 existing cards, material corrections, source-read limits, and the remaining dossier audit scope.
