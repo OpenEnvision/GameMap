@@ -54,6 +54,8 @@ For first-hand studio production accounts and related research explanations, use
 
 - [Hypothesis-to-work-order fidelity](visual-evidence-research.md#discoveryrsi-preserve-the-hypothesis-through-task-compilation): DiscoveryRSI’s paper protocol versus released scaffold, task examples and checkpoint availability; [Minecraft teamwork](visual-evidence-research.md#minecraft-teamwork-adjacent-execution-harness-evidence) supplies a single-run gameplay example of persistent state, cancellation ownership and authoritative events
 
+- [Networked observation and feedback](studio-production-case-studies.md#valorant-separate-predicted-views-from-authoritative-results-and-visible-feedback) and [iteration versus merge readiness](studio-production-case-studies.md#legends-of-runeterra-separate-iteration-success-from-merge-readiness): historical Riot production accounts connecting timing, evidence scope, logical environments and structured failure records
+
 ## Maintenance review
 
 [Catalog review coverage](catalog-review-coverage.md) records this pass over all 109 existing cards, material corrections, source-read limits, and the remaining dossier audit scope.
