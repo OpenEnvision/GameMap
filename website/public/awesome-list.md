@@ -631,9 +631,9 @@ Tags: `Text-to-scene` · `AI2-THOR` · `Spatial constraints` · `Embodied enviro
 
 **[AutoUE](https://github.com/Pluto156/AutoUE)**
 
-A research pipeline for turning a game description into Unreal Engine scenes and C++ gameplay. Its public implementation includes setup instructions, a demonstration video, and a linked dataset of generated games and assets. Reproduction requires Unreal integrations and external model services. The video demonstrates outputs; it is not a hosted playable game.
+A research pipeline for turning a game description into Unreal Engine scenes and C++ gameplay. Its public implementation includes setup instructions, a demonstration video, and a linked dataset of generated games and assets. Reproduction requires Unreal integrations and external model services. The video demonstrates outputs; it is not a hosted playable game. Static inspection of the pinned evaluation dispatcher shows movement commands skipped and interaction handlers called directly; completion of that script path alone does not establish player navigation success.
 
-Tags: `Unreal Engine` · `Game generation` · `Multi-agent` · `Research prototype`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2603.07106) · [Generated games and asset dataset](https://huggingface.co/datasets/Pluto156/AutoUE_DataSet)
+Tags: `Unreal Engine` · `Game generation` · `Multi-agent` · `Research prototype`. Source reviewed: 2026-10-19. Further reading: [Paper](https://arxiv.org/abs/2603.07106) · [Generated games and asset dataset](https://huggingface.co/datasets/Pluto156/AutoUE_DataSet) · [Pinned evaluation dispatcher](https://github.com/Pluto156/AutoUE/blob/8686a4d51c19813f2b3368bd73f685a940db7531/PCGGen_UE/Plugins/LLMEditor/Source/LLMEditor/Private/Core/EvaluateExecutor/EvaluateExecutor.cpp#L174-L186)
 
 - **Tutorial · tutorial:** [Setup and usage](https://github.com/Pluto156/AutoUE#setup-and-usage). Author instructions for dependencies, service credentials, and running the Unreal generation pipeline.
 - **Demo · video:** [Game-generation video](https://github.com/Pluto156/AutoUE/blob/main/assets/show.mp4). Recorded demonstrations of generated Unreal games; no public browser-playable build verified.
@@ -962,9 +962,9 @@ Tags: `Browser testing` · `Visual regression` · `DOM`. Source reviewed: 2026-1
 
 **[StreamRender-H3](https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/)**
 
-NVIDIA Sol-Engine's Interactive Coding Worlds system uses a three.js racing game. The engine handles map, physics, collision, and input, while a two-step streaming MiniMax-H3 model renders semantic video conditioned on a first frame and prompt. Reported training and tests cover that one game and third-person view. Semantic colors identify classes rather than individual objects. Performance results use eight GB200 GPUs; stage throughput does not establish end-to-end input-to-display latency.
+NVIDIA Sol-Engine's Interactive Coding Worlds system uses a three.js racing game. The engine handles map, physics, collision, and input, while a two-step streaming MiniMax-H3 model renders semantic video conditioned on a first frame and prompt. Reported training and tests cover that one game and third-person view. Semantic colors identify classes rather than individual objects. Diffusion-render timings use eight GB200 GPUs; the causal decoder is measured separately on one GB200. Independent stage timings do not establish end-to-end input-to-display latency. Runtime source and a weight bundle are public, with component-specific terms.
 
-Tags: `hybrid-renderer` · `executable-state` · `streaming` · `three.js` · `MiniMax-H3` · `NVIDIA`. Source reviewed: 2026-10-18. Further reading: [Sol-Engine](https://nvlabs.github.io/Sana/Sol-Engine/) · [Agent workflow](https://nvlabs.github.io/Sana/Sol-Engine/docs/agent-workflow/)
+Tags: `hybrid-renderer` · `executable-state` · `streaming` · `three.js` · `MiniMax-H3` · `NVIDIA`. Source reviewed: 2026-10-19. Further reading: [Sol-Engine](https://nvlabs.github.io/Sana/Sol-Engine/) · [Agent workflow](https://nvlabs.github.io/Sana/Sol-Engine/docs/agent-workflow/) · [Pinned runtime source](https://github.com/NVlabs/Sana/tree/0527465fdcbbf27180a76419a4e73643aa1aac73/models/streamrender_h3) · [Weights and component licenses](https://huggingface.co/Efficient-Large-Model/StreamRender-H3)
 
 **[Oasis: A Universe in a Transformer](https://oasis-model.github.io/)**
 
@@ -1030,9 +1030,9 @@ Tags: `hybrid-renderer` · `executable-state` · `game-engine` · `render-server
 
 **[SolarWM](https://arxiv.org/abs/2609.02886)**
 
-Unifies data, training, and inference interfaces for camera-controlled streaming video. The source matrix lists all three stages for Wan2.2-5B and MiniMax-H3, but later stages for Wan2.2-14B and LTX-2.5 remain forthcoming. Backbones require separate runtime environments. The main data release contains annotations and indexes; latent payloads are separate, and the full processed training-video corpus requires reconstruction or approved access. This infrastructure does not provide a code world with queryable entity state.
+Unifies data, training, and inference interfaces for camera-controlled streaming video. The source matrix lists all three stages for Wan2.2-5B and MiniMax-H3, but later stages for Wan2.2-14B and LTX-2.5 remain forthcoming. Backbones require separate runtime environments. The main data release contains annotations and indexes; latent payloads are separate, and the full processed training-video corpus requires reconstruction or approved access. The main Hugging Face dataset and H3 model repositories also require agreement to share contact information. This infrastructure does not provide a code world with queryable entity state.
 
-Tags: `interactive-video` · `training-framework` · `camera-control` · `streaming` · `released-code`. Source reviewed: 2026-10-18. Further reading: [Code and documentation](https://github.com/Junchao-cs/SolarWM) · [Project](https://junchao-cs.github.io/SolarWM-Web/)
+Tags: `interactive-video` · `training-framework` · `camera-control` · `streaming` · `released-code`. Source reviewed: 2026-10-19. Further reading: [Code and documentation](https://github.com/Junchao-cs/SolarWM) · [Project](https://junchao-cs.github.io/SolarWM-Web/) · [Data access](https://huggingface.co/datasets/junchaoh-cs/SolarWM-Data) · [H3 weights and access](https://huggingface.co/junchaoh-cs/SolarWM-H3-33B)
 
 **[WorldCoder](https://arxiv.org/abs/2402.12275)**
 
