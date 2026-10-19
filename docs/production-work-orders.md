@@ -161,6 +161,8 @@ For the selected Godot 4.4 source path, [normalized-key and target-scale accepta
 
 ## 7. Exercise multiplayer transport under impairment
 
+**Load scope:** [VALORANT platform workload](studio-production-case-studies.md#valorant-specify-the-workload-behind-a-concurrency-claim) illustrates why concurrency, duration, scenario mix, mocked components and acceptance bounds must travel together; transport impairment and real-gameplay soak remain separate experiments.
+
 **Failure evidence:** [Bungie distributed crash collection](studio-production-case-studies.md#destiny-a-local-symptom-can-require-a-distributed-evidence-set) and [Valve dump/build provenance](studio-production-case-studies.md#valve-retain-the-build-artifacts-that-make-a-dump-interpretable) distinguish incident linkage, capture completeness and diagnostic eligibility. These historical methods do not establish a tested soak workload or authorize disruptive collection.
 
 **Related contracts:** [Protocol-scoped input/impairment](asset-validation-contracts.md#7-select-the-right-impairment-and-input-surface-for-a-regression) and [server state/transaction boundaries](gameplay-state-contracts.md#server-owned-gameplay-state-and-transaction-boundaries).
