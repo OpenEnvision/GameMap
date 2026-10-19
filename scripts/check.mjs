@@ -312,8 +312,11 @@ async function englishSources(directory){
  return nested.flat();
 }
 const englishFiles=[...await englishSources('website/src'),...await englishSources('website/app'),...(checkBuilt?['dist/index.html']:[]),'README.md','AWESOME.md',...(await readdir(new URL('../website/public/',import.meta.url))).filter(name=>/\.(md|json)$/.test(name)).map(name=>'website/public/'+name)];
+// Preserve the language-switch label and the exact bilingual label in the archived art source.
+const sourceQuotes={'README.md':['中文指南'],'website/public/editorial-art-prompts.md':['原创概念插图']};
 await Promise.all(englishFiles.map(async path=>{
- const source=(await readFile(new URL('../'+path,import.meta.url),'utf8')).replaceAll(path==='README.md'?'中文指南':'\u0000','');
+ let source=await readFile(new URL('../'+path,import.meta.url),'utf8');
+ for(const quote of sourceQuotes[path]||[])source=source.replaceAll(quote,'');
  assert.doesNotMatch(source,/\p{Script=Han}/u,`Unlocalized Chinese copy remains in the English interface: ${path}`);
 }));
 for(const path of ['website/app/root.tsx',...(checkBuilt?['dist/index.html']:[])])assert.match(await readFile(new URL('../'+path,import.meta.url),'utf8'),/<html lang(?:=|[\s>])/,`Set the document language explicitly: ${path}`);

@@ -4,6 +4,8 @@ Use these work-order templates to connect asset creation, import, build, testing
 
 ## Common execution contract
 
+**Design acceptance:** [F.E.A.R. behavior authoring](studio-production-case-studies.md#fear-inspect-the-information-and-constraints-behind-a-characters-plan), [Left 4 Dead pacing controls](studio-production-case-studies.md#left-4-dead-expose-pacing-state-without-treating-it-as-measured-player-emotion) and [Valve playtesting evidence](studio-production-case-studies.md#valve-playtesting-select-evidence-for-the-experience-question-being-asked) distinguish valid plans and policy traces from realized gameplay and human experience. Use them to define separate checks for behavior, pacing, and player understanding.
+
 Each work order needs an isolated workspace, intended target platform, immutable input manifest, source and consuming-tool versions, selected operation/options, native diagnostics, output hashes and an explicit acceptance policy. Record documentation versions separately from installed versions.
 
 Keep these states distinct: request accepted; native operation terminal; expected artifacts present; artifacts validated; project saved; fresh process reopened; target-runtime acceptance complete. Record **accepted, quality failure, unsupported, infrastructure failure, timeout, cancelled or inconclusive** separately. A timeout is not cancellation, a retry is not necessarily idempotent, and an existing file may belong to an earlier run. Cancellation and power-loss durability remain unknown unless a specific source establishes them.
@@ -109,6 +111,8 @@ For the selected Godot 4.4 source path, [normalized-key and target-scale accepta
 
 ## 4. Measure loudness, peaks, silence and loop boundaries
 
+**Production experience:** [Prototype 2 contextual mix acceptance](studio-production-case-studies.md#prototype-2-consistent-source-assets-still-need-contextual-mix-acceptance) and [Overwatch listener-dependent priority](studio-production-case-studies.md#overwatch-sound-priority-depends-on-the-listeners-gameplay-situation) explain why artifact measurements need gameplay-context and perceptual review; neither case supplies a tested external adapter.
+
 **Related contracts:** [Audio middleware readiness and ownership](native-operation-details.md#audio-middleware-authoring-readiness-and-ownership); [runtime audio observation and capture integrity](native-operation-details.md#runtime-audio-observation-and-capture-integrity) establishes tap/coverage provenance before artifact measurement. Event completion remains separate.
 
 **Outcome:** a complete audio artifact has reproducible measurements and a separately reviewed loop seam.
@@ -141,6 +145,8 @@ For the selected Godot 4.4 source path, [normalized-key and target-scale accepta
 
 ## 6. Compile localization, shape text and inspect accessible UI
 
+**Production experience:** [Mass Effect 2 revision/context gates](studio-production-case-studies.md#mass-effect-2-carry-revision-and-branch-context-through-localization), [Forza co-development and learnable cues](studio-production-case-studies.md#forza-motorsport-co-develop-alternative-feedback-without-removing-player-decisions), and [Far Cry New Dawn dependency/testing limits](studio-production-case-studies.md#far-cry-new-dawn-accessibility-scope-must-include-dependency-maturity-and-testing-time) complement the technical chain below; these historical accounts do not establish a tested adapter or universal player outcome.
+
 **Related contracts:** [Font artifact validation](asset-validation-contracts.md#6-validate-the-font-artifact-before-testing-localized-screens) and [native GUI evidence limits](engine-operation-contracts.md#native-gui-automation-is-a-separate-evidence-surface).
 
 **Outcome:** reviewed translations compile and display with the intended glyphs, layout and accessible interaction. For native Godot UI, first check [semantic activation, deferred actions and platform boundaries](engine-operation-contracts.md#godot-native-semantic-observation-and-action-completion); an inspector-only Auto-mode run can lack active semantic updates.
@@ -156,6 +162,10 @@ For the selected Godot 4.4 source path, [normalized-key and target-scale accepta
 **Unimplemented fixture:** plural forms, mixed-direction text, combining marks, missing glyphs, long labels, captions and a hidden focus target. [Xbox Accessibility Guidelines](https://learn.microsoft.com/en-us/xbox/accessibility/guidelines) inform manual review; they are not legal certification. Requires project-specific locale switching and disabled-player testing.
 
 ## 7. Exercise multiplayer transport under impairment
+
+**Load scope:** [VALORANT platform workload](studio-production-case-studies.md#valorant-specify-the-workload-behind-a-concurrency-claim) illustrates why concurrency, duration, scenario mix, mocked components and acceptance bounds must travel together; transport impairment and real-gameplay soak remain separate experiments.
+
+**Failure evidence:** [Bungie distributed crash collection](studio-production-case-studies.md#destiny-a-local-symptom-can-require-a-distributed-evidence-set) and [Valve dump/build provenance](studio-production-case-studies.md#valve-retain-the-build-artifacts-that-make-a-dump-interpretable) distinguish incident linkage, capture completeness and diagnostic eligibility. These historical methods do not establish a tested soak workload or authorize disruptive collection.
 
 **Related contracts:** [Protocol-scoped input/impairment](asset-validation-contracts.md#7-select-the-right-impairment-and-input-surface-for-a-regression) and [server state/transaction boundaries](gameplay-state-contracts.md#server-owned-gameplay-state-and-transaction-boundaries).
 

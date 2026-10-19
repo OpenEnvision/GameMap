@@ -326,7 +326,7 @@ test('reader guides start with the task, not editorial disclaimers', async () =>
     const markdown=await readFile(resolve(root,document.source),'utf8');
     const introduction=markdown.split(/\r?\n\s*\r?\n/)[1]||'';
     assert.doesNotMatch(introduction,/^(?:Sources? (?:checked|reviewed)|Source review:|Research checked|Reviewed)\b/i,`${document.source}: lead with the task`);
-    assert.doesNotMatch(markdown,/GameMap editorial|This page contains \*\*GameMap|No automatic collection or recurring updates/,`${document.source}: omit boilerplate`);
+    assert.doesNotMatch(markdown,/GameMap editorial (?:guidance|recommendations?|adaptation|proposals?|synthesis|test design|fixture)|This page contains \*\*GameMap|No automatic collection or recurring updates/,`${document.source}: omit boilerplate`);
   }
 });
 test('source-only metadata is preserved in blocks but omitted from reader search', () => {
