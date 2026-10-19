@@ -106,7 +106,7 @@ From [Blender 4.5 Passes](https://docs.blender.org/manual/en/4.5/render/layers/p
 - Position and Normal are world-space. Vector contains two screen-space 2D vectors for adjacent frames and is disabled with motion blur.
 - Cycles Alpha Threshold determines which surfaces write the specified data passes.
 - EEVEE auxiliary passes exclude depth of field/motion blur; Blended surfaces appear only in Combined/Transparent.
-- Cryptomatte supports multiple contributors per pixel, transparency, and Cycles blur/depth of field. Each image stores two ranked contributors. Asset groups by parent, not Blender asset-library identity.
+- Cryptomatte supports multiple contributors per pixel, transparency, and Cycles blur/depth of field. Each numbered Cryptomatte RGBA layer stores two ranked ID/coverage pairs per pixel. Asset groups by parent, not Blender asset-library identity.
 - AOV names cannot collide with enabled passes. Color holds vectors or colors; Value holds scalars. EEVEE permits 16 of each.
 
 [Blender 4.5 ViewLayer API](https://docs.blender.org/api/4.5/bpy.types.ViewLayer.html) exposes pass_alpha_threshold, pass_cryptomatte_depth (2–16, default 6), pass enable flags, and update_render_passes(). The fields are concrete configuration to record rather than infer from a preview; the method requeries enabled engine passes.
@@ -120,6 +120,15 @@ From [Blender 4.5 Passes](https://docs.blender.org/manual/en/4.5/render/layers/p
 [Blender 4.5 image formats, official French locale](https://docs.blender.org/manual/fr/4.5/files/media/image_formats.html) distinguishes half/full floating-point OpenEXR. Save As Render applies display/view transforms to display formats such as PNG, while intermediate OpenEXR uses render-output color space. Do not treat a display screenshot as numeric pass evidence.
 
 [Psyop Cryptomatte Nuke documentation](https://github.com/Psyop/Cryptomatte/blob/968d5e4b6171e29ba5f89d554117132a164e747e/docs/nuke.md) in its Encryptomatte workflow instructs exporting 32-bit EXR with all metadata. It explicitly warns that resampling, lens distortion and proxy processing before matte extraction damage exact encoded values; transform the extracted mask instead. Missing manifest entries can yield numeric selections instead of names. This is strong evidence for inspecting channels, metadata and round-trip selection rather than comparing the colorful preview.
+
+**Cryptomatte specification follow-up, 2026-10-19.** The previously inaccessible official [v1.2.0 specification](https://github.com/Psyop/Cryptomatte/blob/968d5e4b6171e29ba5f89d554117132a164e747e/specification/cryptomatte_specification.pdf) was retrieved at the same pinned revision as the Nuke documentation. It defines the exchange format, not tested Blender/Nuke behavior:
+
+- **Packing and previews (p. 2):** each numbered RGBA layer stores two ID/coverage pairs per pixel: R/G for one rank and B/A for the next. More numbered layers retain further ranks. Unnumbered preview channels are deprecated and may be black or absent; their appearance is not a format-validity oracle.
+- **Required metadata versus optional manifests (pp. 2–5):** each Cryptomatte type requires `name`, `hash` and `conversion` metadata. An embedded `manifest` or sidecar `manif_file` is optional; the specification says decoders should not rely on a manifest for accurate matte extraction. Missing names therefore differ from missing required format metadata. The format permits a sidecar path relative to the EXR directory, without a leading `./` or `../`; this does not remove the cited Blender reader's sidecar limitation.
+- **Encoded IDs, not display colors (pp. 5–7):** input strings are hashed as UTF-8 bytes with MurmurHash3's 32-bit x86 variant. The float conversion preserves hash bits except exponent adjustment into 1–254; it is not a numeric integer-to-float cast. Equal input strings intentionally combine into one ID grouping, not separate engine-object identities.
+- **Ranking is not universally coverage-descending (p. 8):** the described filter normalizes each ID's sample weight by total sample weight, then ranks by coverage. The same specification explicitly permits alternative priority criteria. A lower-coverage contributor appearing first does not alone prove an invalid artifact.
+
+These recovered semantics refine the existing artifact checks; no decoder, renderer, EXR round trip or interoperability test was run.
 
 #### Proposed artifact inspection gate
 
@@ -140,7 +149,7 @@ Oracle shape: separate unsupported configuration, missing artifact/channel, sema
 
 #### Limits
 
-No source here proves exact Vector component ordering/sign, background Z sentinel, all engine-specific AOV filtering behavior, or codec-by-codec Cryptomatte safety. Resolve those with version-pinned implementation sources or later authorized fixtures. Psyop's PDF specification was located but could not be retrieved; no claims are attributed to its unread contents. No general equivalence between Blender passes and game-engine buffers is claimed.
+No source here proves exact Vector component ordering/sign, background Z sentinel, all engine-specific AOV filtering behavior, or codec-by-codec Cryptomatte safety. Resolve those with version-pinned implementation sources or later authorized fixtures. The recovered v1.2.0 specification establishes the Cryptomatte exchange format, not renderer-specific support or tested decoder interoperability. No general equivalence between Blender passes and game-engine buffers is claimed.
 
 ### BlenderProc multiview capture contracts
 
