@@ -704,15 +704,15 @@ Tags: `Development benchmark` · `Unreal Engine` · `C++` · `Behavior tests`. S
 
 **[Video2Game](https://github.com/video2game/video2game)**
 
-Video and camera information pass through reconstruction, mesh extraction, appearance baking, and collision generation into a three.js game environment. The repository also documents UE import. This is an explicit environment reconstruction approach with remaining manual scene setup and physics integration. It should be distinguished from interactive video world models that predict the next frame.
+Video and camera information pass through reconstruction, mesh extraction, appearance baking, and collision generation into a three.js game environment. The documented UE route recommends fully diffuse baked meshes, with the baking specular dimension set to zero. This is an explicit environment reconstruction approach with remaining manual scene setup and physics integration. It should be distinguished from interactive video world models that predict the next frame.
 
-Tags: `Video-to-3D` · `Reconstruction` · `Three.js` · `Collision`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2404.09833)
+Tags: `Video-to-3D` · `Reconstruction` · `Three.js` · `Collision`. Source reviewed: 2026-10-19. Further reading: [Paper](https://arxiv.org/abs/2404.09833) · [Pinned engine-handoff recommendations](https://github.com/video2game/video2game/blob/7bcf8ae754240b9fd2de75a154eb73c75a146b79/readme.md#L256-L273)
 
 **[BlenderLLM / BlendNet / CADBench](https://github.com/FreedomIntelligence/BlenderLLM)**
 
-BlenderLLM generates bpy modeling scripts from user instructions. BlendNet provides about 12K paired samples, and CADBench includes synthetic and forum-sourced tasks. Evaluation focuses on basic CAD-style modeling and instruction following. The README identifies limitations in advanced materials, multimodal input, and multi-turn collaboration; this is not a game creation benchmark.
+BlenderLLM generates bpy modeling scripts from user instructions. The repository and released dataset documentation report about 12K BlendNet pairs, and CADBench includes synthetic and forum-sourced tasks. Evaluation focuses on basic CAD-style modeling and instruction following. The README identifies limitations in advanced materials, multimodal input, and multi-turn collaboration; this is not a game creation benchmark.
 
-Tags: `Text-to-bpy` · `CADBench` · `Dataset` · `Modeling benchmark`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2412.14203) · [BlendNet dataset](https://huggingface.co/datasets/FreedomIntelligence/BlendNet) · [CADBench](https://huggingface.co/datasets/FreedomIntelligence/CADBench)
+Tags: `Text-to-bpy` · `CADBench` · `Dataset` · `Modeling benchmark`. Source reviewed: 2026-10-19. Further reading: [Paper](https://arxiv.org/abs/2412.14203) · [BlendNet dataset](https://huggingface.co/datasets/FreedomIntelligence/BlendNet) · [CADBench](https://huggingface.co/datasets/FreedomIntelligence/CADBench) · [Pinned release dataset description](https://github.com/FreedomIntelligence/BlenderLLM/blob/f778bfd6992ddd675f7615d0eaf965a8576f2879/README.md#L44-L50)
 
 </details>
 
