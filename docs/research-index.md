@@ -32,7 +32,7 @@ For a concrete task, start with the [production-stage routes](production-coverag
 
 - [Asset selection and visual-feedback creation](asset-selection-feedback.md): candidate ranking, first-acceptable validation, multi-view preference models and refinement counterexamples
 
-- [Visual-feedback mechanisms](visual-feedback-mechanisms.md): evidence selection, crop/temporal memory, generated-asset selection and controlled harness comparisons
+- [Visual-feedback mechanisms](visual-feedback-mechanisms.md): evidence selection, crop/temporal memory, generated-asset selection and controlled harness comparisons; [active crop inspection](visual-feedback-mechanisms.md#active-visual-inspection-frozen-model-search-versus-learned-tool-use) separates ZoomEye and DeepEyes, while [history and memory controls](visual-feedback-mechanisms.md#visual-history-reuse-external-memory-and-controlled-exposure) cover HistPrune-GUI, MementoGUI and EMemBench
 
 - [Production debugging](production-debugging-contracts.md): GPU capture and timing completion, shader/device-removal evidence, physics restoration, shipped-asset inspection, streaming budgets and [retained-memory diagnosis](production-debugging-contracts.md#memory-lifetime-across-repeated-production-cycles)
 
