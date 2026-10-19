@@ -109,6 +109,8 @@ For the selected Godot 4.4 source path, [normalized-key and target-scale accepta
 
 ## 4. Measure loudness, peaks, silence and loop boundaries
 
+**Production experience:** [Prototype 2 contextual mix acceptance](studio-production-case-studies.md#prototype-2-consistent-source-assets-still-need-contextual-mix-acceptance) and [Overwatch listener-dependent priority](studio-production-case-studies.md#overwatch-sound-priority-depends-on-the-listeners-gameplay-situation) explain why artifact measurements need gameplay-context and perceptual review; neither case supplies a tested external adapter.
+
 **Related contracts:** [Audio middleware readiness and ownership](native-operation-details.md#audio-middleware-authoring-readiness-and-ownership); [runtime audio observation and capture integrity](native-operation-details.md#runtime-audio-observation-and-capture-integrity) establishes tap/coverage provenance before artifact measurement. Event completion remains separate.
 
 **Outcome:** a complete audio artifact has reproducible measurements and a separately reviewed loop seam.
@@ -158,6 +160,8 @@ For the selected Godot 4.4 source path, [normalized-key and target-scale accepta
 **Unimplemented fixture:** plural forms, mixed-direction text, combining marks, missing glyphs, long labels, captions and a hidden focus target. [Xbox Accessibility Guidelines](https://learn.microsoft.com/en-us/xbox/accessibility/guidelines) inform manual review; they are not legal certification. Requires project-specific locale switching and disabled-player testing.
 
 ## 7. Exercise multiplayer transport under impairment
+
+**Failure evidence:** [Bungie distributed crash collection](studio-production-case-studies.md#destiny-a-local-symptom-can-require-a-distributed-evidence-set) and [Valve dump/build provenance](studio-production-case-studies.md#valve-retain-the-build-artifacts-that-make-a-dump-interpretable) distinguish incident linkage, capture completeness and diagnostic eligibility. These historical methods do not establish a tested soak workload or authorize disruptive collection.
 
 **Related contracts:** [Protocol-scoped input/impairment](asset-validation-contracts.md#7-select-the-right-impairment-and-input-surface-for-a-regression) and [server state/transaction boundaries](gameplay-state-contracts.md#server-owned-gameplay-state-and-transaction-boundaries).
 
