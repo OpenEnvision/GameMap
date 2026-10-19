@@ -212,6 +212,54 @@ Promptable image masks and temporally propagated video masklets.
 - **Source terms:** Model checkpoints/training/demo Apache-2.0; optional third-party code/fonts have separate terms.
 - **Primary sources:** [SAM 2 README](https://github.com/facebookresearch/sam2)
 
+#### SAM 2 temporal mask-state contract
+
+This contract distinguishes a correction within one clip from replacement evidence after a creative edit. Source-only inspection on 2026-10-19; no install, model, weights, video download, or inference. All implementation links below pin official `facebookresearch/sam2` commit **2b90b9f5ceec907a1c18123530e92e794ad901a4**, the current `main` returned by GitHub (commit dated 2024-12-16). This is a source pin, not a claim of a newer model release.
+
+##### State and observation lifecycle
+
+1. **Clip identity precedes tracking identity.** `init_state` loads frames, records one original height/width, and caches frame-zero features. `reset_state` removes prompts, results, tracking metadata and object IDs, but retains images, dimensions, constants and cached features. **Inference:** changed renders, replacement frame files, changed crops or changed camera captures require a new state from the new immutable clip, not merely reset. A camera cut already inside the same clip is still image evidence; the predictor provides no authoritative scene/camera identity transition. [Initialization][SAM-init] · [reset/cache][SAM-reset]
+
+2. **Frame index is not source time.** JPEG names are filtered by extension and sorted by integer stem; state indexes their list positions. Missing filename numbers are not represented as missing temporal slots. MP4/bytes use Decord's frame iteration; the loader returns images and dimensions, not FPS/PTS. Both routes stretch frames to the model's square input and normalize RGB. **Adapter implication:** retain index → original filename/PTS/simulation tick plus crop/resize mapping; validate uniform dimensions rather than inferring time from index. [Loader][SAM-load]
+
+3. **Prompt coordinates and mutation are explicit.** `add_new_points_or_box` defaults to `normalize_coords=True`: original-image x/y pixels are divided by width/height, then multiplied by internal image size. With False, supply normalized coordinates, not already-scaled model pixels. Boxes become two corner prompts labeled 2/3 and require `clear_old_points=True`; ordinary labels are 1 positive/0 negative. Default `clear_old_points=True` replaces that object's clicks on that frame; False appends. Point/box input removes its mask input; `add_new_mask` removes its point input. A 2-D mask is resized with bilinear antialiasing and thresholded at 0.5 when its size differs from model input. Keep the complete ordered prompt history, replacement/append flag and coordinate space. [Prompt/mask paths][SAM-prompt] · [label semantics][SAM-base]
+
+4. **Preview correction is not completed temporal evidence.** A never-tracked frame becomes initial conditioning. A point/box correction on a tracked frame uses remembered tracking direction and previous mask logits; mask replacement follows its separate path. New outputs are temporary and memory encoding is deferred to propagation preflight. `add_all_frames_to_correct_as_cond=False` by default; propagation reuses conditioning outputs but recomputes other frames with no direct point/mask inputs. Therefore do not assume an immediate corrected preview will be preserved unchanged in a later propagation. Record the conditioning policy and separately validate corrected-frame and downstream results. Defaults also leave surrounding non-conditioning memory clearing disabled. [Prompt path][SAM-prompt] · [preflight/propagation][SAM-prop]
+
+5. **IDs belong to a session, not the engine.** The current default predictor runs objects independently and permits adding objects after propagation begins. Returned mask rows follow returned `obj_ids`; removing an object compacts internal indices. Clearing prompts on one frame may downgrade its conditioning output and does not delete the object. Reset ends all IDs. **Adapter implication:** serialize an ID snapshot with every output, namespace it by clip/state generation, and keep engine identity as separate evidence. An empty/occluded mask does not prove deletion or correct reidentification. The legacy implementation has different multi-object prompting/addition semantics. [ID mapping][SAM-init] · [removal][SAM-remove] · [release notes][SAM-release]
+
+6. **Coverage and mask type must be recorded.** Propagation defaults to the earliest conditioning frame and forward order, not necessarily frame zero. Reverse is explicit; reverse from zero yields nothing. Its interval includes both endpoints, so a non-clipped `max_frame_num_to_track=N` can yield N+1 frames. The public triple is frame index, IDs and original-resolution mask **logits**, shaped objects × 1 × H × W on the compute device; binary masks require an explicit threshold (official VOS CLI default: >0). Missing-object placeholders can appear in prompt-preview consolidation. Preserve logits/threshold and requested versus yielded coverage; no public triple certifies object presence or functional success. [Output/propagation][SAM-prop] · [CLI][SAM-cli]
+
+##### Defaults, variants and readiness boundaries
+
+- The standard builder defaults to CUDA, eval, `vos_optimized=False`, `apply_postprocessing=True`: stability fallback delta 0.05/threshold 0.98, binarized point-prompt memory and low-resolution hole filling up to area 8. Constructor hole-fill default alone is 0. Output overlap suppression defaults False. The VOS CLI instead defaults postprocessing off and packed-label overlap suppression on. Log actual resolved settings. Hole-filling failures warn and return unprocessed scores. [Builder][SAM-build] · [CLI][SAM-cli] · [postprocessor][SAM-holes]
+- Frame offload, state offload and async loading all default False. JPEG async mode reads frame zero synchronously, starts a daemon that fills a fixed frame list, loads cache misses on access and raises recorded background errors on subsequent access. MP4 loading ignores that async option and stacks the full decoded sequence. This is not a live bounded-memory stream. State offload still leaves image features/object pointers on the compute device; returned masks are moved there. [Initialization][SAM-init] · [loader][SAM-load] · [output storage][SAM-storage]
+- Standard and compiled `SAM2VideoPredictorVOS` are distinct execution modes; release notes warn compilation can change predictions numerically. SAM 2 and SAM 2.1 are separately mapped checkpoint/config families, each tiny/small/base-plus/large; neither family name pins weights. Inspected 2.1-large config uses image size 1024 and seven mask memories; inherited evaluation temporal stride is one. Record checkpoint hash, config and predictor revision independently. [Builder/mapping][SAM-build] · [2.1-large config][SAM-config] · [base][SAM-base] · [release notes][SAM-release]
+- **Scoped static caution:** enabling `clear_non_cond_mem_around_input` in this pinned default class reaches `_clear_obj_non_cond_mem_around_input`, absent from the full predictor, its `SAM2Base(torch.nn.Module)` parent and VOS subclass; the defined helper has a different name. Legacy dispatch differs. This unexecuted source mismatch is not a verified memory-invalidation remedy. [Calls][SAM-prop] · [defined helper/VOS subclass][SAM-helper]
+
+**Proposed creative-agent gate:** bind masks to capture/build/camera and immutable clip hashes; validate mapping and prompt provenance; capture correction preview; explicitly rerun needed forward/reverse intervals; validate reacquisition through occlusion/cuts; reject missing/error frames; compare to engine IDs or authored assertions independently. Retest corrected-frame retention and optional memory-clearing behavior before depending on this revision. These are proposed tests, not measured capability.
+
+**Terms:** inspected source uses Apache-2.0; official README separately licenses model checkpoints/training/demo under Apache-2.0. Optional connected-component code is BSD-3-Clause; demo fonts have separate terms. This does not clear source videos or downstream model/data dependencies. [License][SAM-license] · [component license][SAM-cc] · [README][SAM-readme]
+
+[SAM-init]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L41-L153
+[SAM-reset]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L675-L734
+[SAM-load]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/utils/misc.py#L92-L309
+[SAM-prompt]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L160-L381
+[SAM-base]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/modeling/sam2_base.py
+[SAM-prop]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L383-L630
+[SAM-remove]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L866-L954
+[SAM-release]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/RELEASE_NOTES.md
+[SAM-cli]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/tools/vos_inference.py
+[SAM-build]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/build_sam.py
+[SAM-holes]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/utils/misc.py#L312-L340
+[SAM-storage]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L737-L803
+[SAM-config]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/configs/sam2.1/sam2.1_hiera_l.yaml
+[SAM-helper]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L956-L1011
+[SAM-license]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/LICENSE
+[SAM-cc]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/LICENSE_cctorch
+[SAM-readme]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/README.md#license
+
+
 ### CoTracker3
 
 Point trajectories and visibility estimates for temporal diagnosis.
