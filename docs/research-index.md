@@ -1,6 +1,6 @@
 # Production research dossiers
 
-Sources checked on **2026-10-18**. Sources checked; full reproduction not performed.
+Baseline sources checked on **2026-10-18**; subsequent review dates are recorded in the individual sections and coverage ledger. Full reproduction was not performed.
 
 These notes extend the concise [resource directory](../AWESOME.md) using the repository's existing categories and contribution rules. They cover native interfaces, asynchronous job semantics, artifact provenance, production tools, visual evidence and generative-service terms. Tools mentioned in notes are not additional directory entries. Neither a directory card nor a source check establishes a working integration.
 
@@ -14,6 +14,12 @@ For a concrete task, start with the [production-stage routes](production-coverag
 | Author assets, localize, inspect audio or prepare multiplayer/build workflows | [Production research](production-research-notes.md) | Authoring versus runtime formats, rendering versus shaping, measurements versus acceptance criteria |
 | Generate or transform assets through models and hosted APIs | [Generative tools](generative-tools-research.md) | Async receipts versus completed outputs, required postprocessing and export limits |
 | Review provider terms before an experiment | [Generative API boundaries](generative-api-boundaries.md) | Input/output rights, provider training, customer model-evaluation restrictions and expiring downloads |
+| Follow a complete project from authored assets to playtest | [Complete-sample integration](production-work-orders.md#complete-sample-integration-examples) | Pinned project/dependency scope, real scene and interaction wiring, build reports, existing smoke tests and proposed broader acceptance |
+| Evaluate designer goals and playstyle tradeoffs | [Designer-facing playtest evidence](game-ai-notes.md#designer-facing-playtest-evidence) | Authored predicates, persona feedback, [route comparisons](game-ai-notes.md#sonic-trajectory-visualization-comparing-training-populations), [interactive surrogate predictions](game-ai-notes.md#susketch-interactive-surrogate-feedback-with-a-separate-evidence-boundary) and enjoyment-inference limits; [production bot integration](studio-production-case-studies.md#ea-autoplayers-learned-locomotion-inside-controlled-test-scenarios) |
+| Evaluate generated levels or game rules | [Game-AI evidence](game-ai-notes.md#mariogpt-requested-constraints-and-executable-verdicts) and [rule-design search](game-ai-notes.md#gavel-rule-design-search-and-verdict-boundaries) | Requested constraints versus measured output, controller verdicts versus predicted paths, and published results versus released code |
+| Turn recorded dialogue into mouth animation | [Mouth-cue contracts](native-operation-details.md#recorded-dialogue-and-mouth-cue-validation) | Recognition versus timing categories, artifact completion, project-shape mapping and playback-clock validation |
+| Preserve temporal mask evidence after edits | [SAM 2 state lifecycle](visual-evidence-research.md#sam-2-temporal-mask-state-contract) | Immutable clip identity, prompt replacement, reset versus reload, propagation coverage and logits versus accepted masks |
+| Ground screenshot regions and editor controls | [OmniParser coordinate contract](visual-feedback-mechanisms.md#6-omniparser-frame-scoped-gui-regions-and-coordinate-contracts) | Parse-local IDs, xyxy versus xywh, crop/resize transforms, inferred semantics and independently scoped model terms |
 | Select visual evidence or improve a tool-using agent | [Visual evidence and harness research](visual-evidence-research.md) | Diagnostic metrics versus gameplay correctness, inferred versus authoritative state, optimization versus final evaluation |
 
 ## Deeper operational evidence
@@ -26,19 +32,19 @@ For a concrete task, start with the [production-stage routes](production-coverag
 
 - [Visual-feedback mechanisms](visual-feedback-mechanisms.md): evidence selection, crop/temporal memory, generated-asset selection and controlled harness comparisons
 
-- [Production debugging](production-debugging-contracts.md): GPU capture and timing completion, shader/device-removal evidence, physics restoration, shipped-asset inspection and streaming budgets
+- [Production debugging](production-debugging-contracts.md): GPU capture and timing completion, shader/device-removal evidence, physics restoration, shipped-asset inspection, streaming budgets and [retained-memory diagnosis](production-debugging-contracts.md#memory-lifetime-across-repeated-production-cycles)
 
 - [Benchmark reproducibility](benchmark-reproducibility.md): public release and isolation matrix, source-inspected OpenGameEval lifecycle/verdicts, and proposed fair piRSI comparisons, including whole-tournament replication, paired uncertainty, protected final evaluation and source-pinned GEPA budget/cache/resume boundaries
 
 - [Gameplay state and durable effects](gameplay-state-contracts.md): narrative checkpoints, asynchronous commands, database transactions, source-pinned Yarn cancellation and variable restoration, native replay reconstruction, physics-state restoration and reward reconciliation
 - [Game-development evaluation](game-development-evaluation.md): seven additional creation/repair/QA studies, including GameASG-Bench’s declared testing interface and GBQA’s release/protocol distinctions, with scoring, artifact availability and reproducibility limits
 
-- [Native operation details](native-operation-details.md): 36 operation rows covering engine authoring, DCC batch work and audio middleware lifecycle, plus FMOD callback/state/virtualization acceptance boundaries
+- [Native operation details](native-operation-details.md): 36 operation rows covering engine authoring, DCC batch work and audio middleware lifecycle, plus input delivery, [lighting persistence](native-operation-details.md#lighting-bake-completion-and-persisted-scene-association), FMOD callback/state/virtualization and [audio-capture integrity](native-operation-details.md#runtime-audio-observation-and-capture-integrity)
 - [Generation delivery contracts](generation-delivery-contracts.md): task reconciliation, artifact expiry, transformations and asset acquisition
-- [Asset validation contracts](asset-validation-contracts.md): interchange, composition, material/geometry processing, timelines, fonts, input/network and animation contracts
+- [Asset validation contracts](asset-validation-contracts.md): interchange, composition, material/geometry processing, timelines, fonts, input/network and animation contracts, plus [splat delivery](asset-validation-contracts.md#gaussian-splat-editing-and-delivery), [sprite metadata/playback](asset-validation-contracts.md#sprite-atlas-metadata-and-playback-delivery) and [tile-map transfer](asset-validation-contracts.md#tile-map-identity-geometry-and-runtime-delivery)
 
-- [Production work orders](production-work-orders.md): nine proposed chains with completion, failure, recovery and persistence gates
-- [Studio production cases](studio-production-case-studies.md): eleven historical engineering accounts, separated from editorial acceptance designs
+- [Production work orders](production-work-orders.md): nine proposed chains with completion, failure, recovery and persistence gates, [versioned asset publication](production-work-orders.md#versioned-asset-publication-and-consuming-scene-ownership), and [complete-sample integration](production-work-orders.md#complete-sample-integration-examples)
+- [Studio production cases](studio-production-case-studies.md): fourteen historical engineering accounts, separated from editorial acceptance designs
 - [Source revisions](source-revision-notes.md): selected inspected upstream files with exact revisions and claim boundaries; other dossiers retain their own source-pin lists
 - [Coverage and remaining work](production-coverage-gaps.md): production-stage gaps, interface semantics and a local catalog lookup example
 

@@ -16,6 +16,79 @@ Unless explicitly versioned below, sources are rolling documentation or reposito
 
 **Version/license scope:** glTF 2.0 is the format scope; exact specification revision and implementation versions are unpinned. Validator declares Apache-2.0; Assimp documents modified three-clause BSD. glTF Transform's [license at checked commit 8e2a94a](https://github.com/donmccurdy/glTF-Transform/blob/8e2a94a2616d293c4b503d0fb6a4b42e6ec7c62f/LICENSE.md) is MIT; dependency and input-asset terms remain separate. Earlier Validator commit resolution was rate-limited; no immutable revision is invented.
 
+### Gaussian-splat editing and delivery
+
+A spatial Gaussian asset needs a renderer-specific export/import contract. The following inspected behavior complements mesh/interchange validation; no editor, importer or round-trip was executed.
+
+#### Source and version scope
+
+- SuperSplat v3.5.2 resolves through [tag object](https://api.github.com/repos/playcanvas/supersplat/git/tags/477e30f3d31ba95a8afc6b2f2a118a5397e26484) to commit `f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b`. Its [package manifest](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/package.json) declares 3.5.2, splat-transform 3.9.0 and PlayCanvas 2.23.0. Installed/deployed versions were not checked.
+- UnityGaussianSplatting selected commit `2c6fed37da67a217367261fcfcd3316d34c73e76` is a later main-branch snapshot, **not the v1.1.1 tag**. Its [package manifest](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/package.json) still declares 1.1.1 / Unity 2022.3.7f1; the [v1.1.1 tag](https://api.github.com/repos/aras-p/UnityGaussianSplatting/git/ref/tags/v1.1.1) points to different commit `9310dce438da726244ace17eaf6f768826435fa4`. Do not conflate a package version with the tested/source commit.
+
+#### 1. Export a delivery asset, preserve a separate editing project
+
+SuperSplat's ordinary export gathers visible, nonempty scene layers; its default does **not** mean “export selected Gaussians only.” Selection filtering is an optional serializer setting, also used for copy/paste. Deletion removes instances from the live list, with undo records; selected-and-locked instances are excluded from selection-driven deletion. Crop-by-select/invert/delete is therefore different from merely drawing a selection or hiding a whole layer.
+
+Evidence: [visible-layer collection](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/file-handler.ts#L425-L430), [default filter](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L252-L270), [deletion and undo](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/edit-ops.ts#L172-L205), [official cleanup recipe](https://developer.playcanvas.com/user-manual/supersplat/getting-started/).
+
+The `.ssproj` path writes document JSON, camera/view/timeline/pose settings, original resource rows and per-layer instance/palette data. Ordinary splat export instead bakes edits and does not serialize those editor-state records. Importantly, project saving is not an unconditional deleted-data archive: normal compact saves drop rows unreferenced by any layer; an in-place save keeps rows so current-session undo can still access them. Do not infer that undo history survives reopening.
+
+Evidence: [project data and compaction](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/doc.ts#L230-L347), [in-place exception](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/doc.ts#L385-L396), [instance flags/palettes](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/doc-instances.ts#L35-L80).
+
+#### 2. Record transform application, SH bands and irreversible metadata loss
+
+Ordinary SuperSplat export composes a -180° Z rotation (described in code as undoing the load-time convention), the entity world matrix, and the per-instance transform palette. It transforms positions, rotations and scales, rotates retained SH coefficients, and bakes color/transparency grading. The internal `keepWorldTransform=true` option skips the world/PLY-flip part; it does not suppress palette transforms. These facts are a source-specific convention, not a universal axis-conversion recipe.
+
+The export source explicitly declares one LOD, `model: 'default'`, and `extraColumns: []`. Its comment says the editing pipeline does not carry antialiased/2DGS trained-model tags through loading. SH output is capped by the chosen maximum and available data. Therefore an uncompressed export is not proof of preservation of original metadata, LOD structure, arbitrary custom columns or all SH bands.
+
+Evidence: [transform composition](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L76-L160), [export schema and bands](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L330-L383), [attribute/SH/grade baking](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L441-L504).
+
+#### 3. Compression changes membership as well as precision
+
+In this SuperSplat UI path, compressed PLY, SOG and SPZ set minimum opacity to 1/255 and enable the implementation's invalid-data filter; ordinary PLY does not enable those settings. The predicate drops source sigmoid opacity **strictly below** the threshold, before the later grading step. “Invalid” follows the actual attribute-specific predicates, not a blanket rule forbidding every infinite raw log-domain value.
+
+Official rolling documentation distinguishes uncompressed PLY from quantized compressed PLY and lossy SOG; SOG is not merely a lossless zip of the original attributes. Selection count, decoded survivor count and requested SH bands must accompany the file size.
+
+Evidence: [format-specific settings](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/file-handler.ts#L748-L786), [filter predicate](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L219-L296), [import/export formats](https://developer.playcanvas.com/user-manual/supersplat/editor/import-export/), [SOG specification](https://developer.playcanvas.com/user-manual/gaussian-splatting/formats/sog/).
+
+#### 4. “SPZ supported” is not an importer compatibility contract
+
+SuperSplat's pinned serializer exposes SPZ versions 3 and 4, default 4. The selected Unity importer explicitly requires SPZ header version 2 and throws otherwise. This is a statically established version mismatch, not an observed failed import. Changing SuperSplat from SPZ 4 to SPZ 3 does not satisfy that importer.
+
+Unity routes only `.ply` and `.spz`; its PLY reader requires binary little-endian 1.0, and the Gaussian reader requires float-valued position, DC color, opacity, scale and quaternion attributes. General mesh PLY, ASCII PLY, SOG and a filename ending in `.ply` are not substitutes for that schema. Required-field validation does not check complete higher-order SH preservation.
+
+Evidence: [SuperSplat SPZ versions](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/export-options.ts#L10-L24), [default SPZ 4](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/file-handler.ts#L779-L786), [Unity SPZ rejection](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Editor/Utils/SPZFileReader.cs#L20-L49), [PLY encoding](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Editor/Utils/PLYFileReader.cs#L32-L64), [routing/schema](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Editor/Utils/GaussianFileReader.cs#L45-L78).
+
+#### 5. Unity editing/export has its own quality and coordinate boundary
+
+The pinned Unity editing guide advises Very High import quality for editing because lower presets are already quantized/approximated. Export excludes deleted and cutout Gaussians; the documented world-space option bakes transforms and rotates SH. Cutouts are visual inclusion/exclusion volumes, not collision bodies. Manual editing has no Undo; the guide suggests disabling/re-enabling the renderer to revert all edits.
+
+Do not generalize “world-space export” to proven arbitrary hierarchy/scaling fidelity. The implementation passes localRotation/localScale alongside localToWorldMatrix; the shader separately handles axis-sign flips and explicitly limits that handling. Nested transforms, nonuniform scaling and reflections require a fixture rather than an assumed round-trip guarantee.
+
+Evidence: [editing guide](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/docs/splat-editing.md), [export survivor/write path](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Editor/GaussianSplatRendererEditor.cs#L394-L444), [transform arguments](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Runtime/GaussianSplatRenderer.cs#L936-L956), [shader transform](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Shaders/SplatUtilities.compute#L617-L642).
+
+#### 6. Nonempty artifact, bounds and visual observation are separate gates
+
+The checked SuperSplat `writeSplatFile` path returns early without calling a writer when zero Gaussians pass export filtering; the enclosing `scene.write` path can still return true. Consequently the return value alone is not evidence of a nonempty delivered artifact. Browser-file close and abort operations exist, but crash durability and end-user download completion have not been established here.
+
+Its inspected editor bounds reduce transformed **centers**; they are not full Gaussian support extents, collision volume or a walkable mesh. Unity's checked view-color path evaluates stored SH against camera direction and opacity; that is not evidence of reconstruction into relightable PBR materials. Ordinary PLY export also does not promise a camera trajectory: SuperSplat's viewer settings and `.ssproj` store camera information separately; Unity can import a separate `cameras.json`.
+
+Evidence: [zero-survivor source](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L549-L559), [early return](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L632-L650), [success return](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/file-handler.ts#L789-L797), [writer close/abort](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/io/write/browser-file-system.ts#L25-L43), [center bounds](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/data-processor/calc-bound.ts#L59-L80), [view color](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Shaders/SplatUtilities.compute#L240-L248), [viewer camera settings](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/export-options.ts#L55-L118), [Unity camera input](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Editor/GaussianSplatAssetCreator.cs#L1068-L1096).
+
+No inspected splat-export interface produces mesh connectivity, gameplay rules or collision acceptance. Separate collision-generation tools may exist; this note does not claim Gaussian-splat applications can never support collision.
+
+#### Proposed GameMap round-trip fixture, not documented or executed behavior
+
+Keep immutable source bytes, provenance/license, full-precision reference, `.ssproj`, editor/importer commits and a derivative manifest. Declare units/basis, world versus local transform policy, visible/selected/deleted/locked counts, retained SH bands, source model tag/custom fields, loaded LOD, compression/filter settings and expected output schema.
+
+Use a small **synthetic, rights-cleared, asymmetric full-band Gaussian fixture** with axis markers, one rotated anisotropic Gaussian, distinguishable SH response, opacity samples below/at/above 1/255, a hidden layer, selected and locked examples, and a deliberately deleted sample. Compare ordinary PLY and compressed derivatives; reopen the editing project separately. Use a qualified binary little-endian standard Gaussian PLY for the proposed Unity bridge, rather than SPZ 3/4 or a generic “PLY” assertion.
+
+Acceptance needs a newly written artifact with recorded hash and parsed nonzero count/schema, expected survivor inventory, transformed positions/covariances and directional SH observations under fixed camera/render/display settings, plus independently recorded importer result. Include all-filtered/empty export, lower SH bands, corrupt/truncated output, absent camera sidecar, nested-parent transform, nonuniform/reflected scale and compact-save/reopen cases. Exact tolerances and target GPU/render pipeline remain project decisions. Do not promote partial files; keep originals and retry corrected settings into new candidates. Collision, navigation and dynamic interactivity require their own artifacts and gameplay tests.
+
+#### License scope
+
+Pinned [SuperSplat LICENSE](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/LICENSE) and [UnityGaussianSplatting LICENSE](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/LICENSE.md) are MIT software licenses. They do not establish rights in captures, generated scenes, trainer/model outputs or every dependency. The pinned [Unity README license section](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/readme.md#license-and-external-code-used) explicitly warns that upstream training provenance needs separate consideration. This is not a current legal conclusion about every INRIA-trained asset; inspect the exact trainer/model/data terms for the intended use.
+
 ## 2. Preserve USD composition and resolve managed assets deliberately
 
 **Documented operations and fields.** [UsdStage](https://openusd.org/release/api/class_usd_stage.html) exposes composition, variants, payload loading, save and flatten operations. `Save()` excludes session layers; dirty anonymous layers require explicit export. Flattening resolves composition rather than retaining the original editable structure. `GetUsedLayers()` is a snapshot affected by load set and variant selections, not an inventory of every possible configuration. `GetTimeCodesPerSecond()` returns the stage time-code rate, with documented metadata fallback rules. The broader [OpenUSD documentation](https://openusd.org/release/index.html) describes the scene-composition toolset. [Blender 4.4 USD interchange](https://docs.blender.org/manual/en/4.4/files/import_export/usd.html) supports a subset of USD data and documents USDZ limitations including UDIM textures; this is not a claim about later Blender versions.
@@ -77,6 +150,47 @@ Finally render a controlled fixture in the actual consumer, preserving camera, l
 
 For raw image evidence, retain the [render-pass and matte contracts](visual-evidence-research.md#render-pass-and-matte-artifacts) as well as the beauty preview.
 
+### KTX validation policy, normal-map packing and transcode targets
+
+Sources checked 2026-10-18; full reproduction not performed. This adds command and payload boundaries to the generic texture manifests above and the [texture-export work order](production-work-orders.md#3-export-textures-without-losing-channels-or-color-meaning).
+
+#### Pin before adopting commands
+
+KTX-Software's latest-release URL resolved to **v4.4.2**, while its live generated tool reference identified itself as **5.0.0**. The contracts below are pinned to v4.4.2 source at commit `4d6fc70eaf62ad0558e63e8d97eb9766118327a6` (annotated tag object `936b655d10fe75f900967f524ba31005bebcbb47`). Do not infer that the release supports the live documentation's newer HDR encoders/targets.
+
+Sources: [release](https://github.com/KhronosGroup/KTX-Software/releases/tag/v4.4.2), [live transcode reference](https://github.khronos.org/KTX-Software/ktxtools/ktx_transcode.html).
+
+#### Validation success needs a named policy
+
+For a glTF pipeline, the proposed check is `ktx validate --gltf-basisu --warnings-as-errors --format json asset.ktx2`. This is a documented command proposal, not an executed result. `--gltf-basisu` enables the extension-specific checks; ordinary KTX validation is not the same policy. Warnings are not errors unless requested. When validation reaches report generation, stdout includes `valid` and a `messages` array, with issue IDs, types, messages and details. Preserve stdout and stderr separately, together with version and exit status. Argument, input-opening and early fatal errors need not produce JSON; missing or malformed JSON is a tool/report failure, not an automatic asset verdict.
+
+The documented exit categories are 0 success, 1 argument failure, 2 I/O failure, 3 invalid input, 4 runtime/library failure, 5 unsupported operation/state, and 6 unimplemented feature. Validation failure throws the invalid-input category. **GameMap editorial guidance:** distinguish asset rejection from infrastructure/tool failures instead of labeling every nonzero exit “bad texture.”
+
+Pinned sources: [validator](https://github.com/KhronosGroup/KTX-Software/blob/4d6fc70eaf62ad0558e63e8d97eb9766118327a6/tools/ktx/command_validate.cpp), [exit codes and report formats](https://github.com/KhronosGroup/KTX-Software/blob/4d6fc70eaf62ad0558e63e8d97eb9766118327a6/tools/ktx/command.h).
+
+#### Normal-mode changes the shader contract
+
+`--normal-mode` accepts linear textures with at least two components. Three/four-channel input is treated as XYZ unit normals; the fourth channel is discarded, and XY is repacked as RGB=X, A=Y. The documented reconstruction samples GA and rebuilds positive Z. This is a channel-layout transformation, not just a quality preset. **GameMap editorial guidance:** reject the preset unless the consuming shader explicitly implements that layout; retain a material-slot/encoding/channel-layout record.
+
+`--normalize` on a two-component input normalizes a 2D vector; its documentation explicitly warns against using that result to generate XY normals with `--normal-mode`. Separately, assignment of a transfer function and conversion of pixel values are different operations. Prefer explicit intent and `--fail-on-color-conversions` when unexpected conversion must fail the build.
+
+Pinned sources: [normal-mode contract](https://github.com/KhronosGroup/KTX-Software/blob/4d6fc70eaf62ad0558e63e8d97eb9766118327a6/tools/ktx/encode_utils_common.h), [normalization and transfer-function options](https://github.com/KhronosGroup/KTX-Software/blob/4d6fc70eaf62ad0558e63e8d97eb9766118327a6/tools/ktx/command_create.cpp).
+
+#### Transcodable container is a separate gate
+
+The pinned transcode command requires BasisLZ or a UASTC DFD color model. It explicitly rejects an input that does not need transcoding as invalid input. Merely having a valid `.ktx2` container is insufficient. Without an explicit target, the command chooses uncompressed r8/rg8/rgb8/rgba8 based on channel count. **GameMap editorial guidance:** record the requested target and inspect output format; successful conversion alone does not prove the intended compressed GPU representation was produced.
+
+Pinned source: [transcode implementation and help](https://github.com/KhronosGroup/KTX-Software/blob/4d6fc70eaf62ad0558e63e8d97eb9766118327a6/tools/ktx/command_transcode.cpp). Its embedded raw-only wording conflicts with the implementation's KTX2 writer; do not repeat that wording as an established restriction without a focused upstream clarification/test.
+
+#### glTF usage and payload requirements
+
+The official extension adds concrete gates: identity/absent swizzle, `rd`/absent orientation, 2D material images, base dimensions divisible by four, and usage-specific DFD metadata. Non-color data requires unspecified primaries plus linear transfer; color data requires BT.709 primaries plus sRGB. Premultiplied-alpha flag is forbidden unless the material specification requires it. Full mips are SHOULD, not MUST, for mipmapped or unspecified samplers. For non-color UASTC without ASTC/BC7, the specification recommends uncompressed RGBA to avoid artifacts.
+
+Source: [KHR_texture_basisu](https://github.com/KhronosGroup/glTF/blob/521a91d491f02bb7db7d445b35f591d09d2a64ce/extensions/2.0/Khronos/KHR_texture_basisu/README.md). Source revision: 521a91d491f02bb7db7d445b35f591d09d2a64ce. The extension classifies standard normal maps as RGB textures; GameMap editorial guidance is therefore not to apply a generic XY-in-GA preset to a standard glTF normal slot without an explicit compatible shader/encoding contract. No reviewed source established an alpha-coverage-preserving mip guarantee; do not equate a full pyramid or successful validation with preserved cutout coverage.
+
+
+**Proposed evidence and recovery:** retain source texture/material role, all invocation arguments, tool pin, validation policy/report/exit status, input/output hashes, channel mapping, transfer metadata, dimensions/mip inventory and requested/actual transcode target. Quarantine incomplete candidates and retain the original. Unimplemented negative fixtures include an invalid glTF swizzle/orientation, non-transcodable valid KTX2, a two-component normalization mismatch, an early I/O failure without JSON, and a successful default transcode whose uncompressed output violates the project budget. Target GPU support, alpha-cutout coverage, codec quality and material appearance still require consumer-side tests. Neither these commands nor those fixtures were executed. Exact dependency/input-asset licensing and conversion atomicity are not established by this source review.
+
 ## 4. Optimize, retopologize, unwrap and regenerate tangents without losing correspondence
 
 **Documented operations and fields.** [meshoptimizer](https://github.com/zeux/meshoptimizer) provides GPU-oriented optimization, simplification and compression, with gltfpack and a JavaScript subset. [Draco](https://github.com/google/draco) compresses meshes/point clouds and provides JavaScript/WebAssembly decoders; its documentation recommends version-specific decoder URLs. These operations do not themselves establish a target importer's extension/decoder compatibility.
@@ -92,6 +206,52 @@ For raw image evidence, retain the [render-pass and matte contracts](visual-evid
 **Unimplemented fixture:** mirrored UVs, a seam requiring duplicated vertices, an asymmetric quad with fixed triangulation, a skin-weight boundary and a known silhouette. Evaluate under motion and lighting; compression ratio and quad count are not quality scores.
 
 **Version/license scope:** all repository references are rolling. meshoptimizer, xatlas and UVAtlas declare MIT; Draco Apache-2.0. MikkTSpace's permissive notice has origin, altered-source and notice-preservation conditions. Instant Meshes has a [license with supplemental terms](https://raw.githubusercontent.com/wjakob/instant-meshes/master/LICENSE.txt), requiring full review. QuadriFlow is MIT, but its README identifies LGPL sparse-Cholesky dependencies, an MPL2 sparse-LU alternative selected with `BUILD_FREE_LICENSE`, and separate optional Gurobi terms. Selected build dependencies, not the project badge alone, determine the review scope.
+
+### Collision cooking and gameplay-shape acceptance
+
+Sources checked 2026-10-18; full reproduction not performed. These official Unity 6000.0 documentation pages identify a version family, not an immutable engine patch or PhysX implementation. This fills the boundary between imported geometry and the [navigation/traversal gates](engine-operation-contracts.md#navigation-after-procedural-world-edits); no collider cook, engine simulation or fixture was run. Proposed gates below are **GameMap editorial guidance**.
+
+#### Validate geometry before relaxing cooking safeguards
+
+`MeshCollider.cookingOptions` controls conversion into physics query/contact support structures. With validity checks disabled, valid inputs are the caller's responsibility and invalid data can produce undefined behavior. This is a separate operation from visual mesh import or format validation. [cookingOptions](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MeshCollider-cookingOptions.html).
+
+Unity requires an alternative validator if cleaning or vertex welding is disabled: cleaning-off meshes must avoid degenerate triangles, including near-zero/infinite-area examples; welding-off meshes must not contain colocated vertices. Read/write access is required for a negatively scaled convex collider, a skewed/sheared transform (including scaled-parent/rotated-child configurations), or nondefault cooking options. [Prepare meshes](https://docs.unity3d.com/6000.0/Documentation/Manual/prepare-mesh-for-mesh-collider.html).
+
+The component reference describes four flags: `CookForFasterSimulation` trades additional preprocessing/storage for runtime work; `EnableMeshCleaning` attempts to remove degenerates/artifacts; `WeldColocatedVertices` combines equal-position vertices; `UseFastMidphase` selects the fastest available platform midphase, with the legacy algorithm available if problems occur. Convex colliders have a documented 255-triangle limit. `Provides Contacts`, disabled by default, requests ongoing contact generation even without a usual recipient; lack of contact observations therefore needs configuration context. [MeshCollider reference](https://docs.unity3d.com/6000.0/Documentation/Manual/class-MeshCollider.html).
+
+**Proposed gate, not an upstream guarantee:** record geometry revision/hash, units, winding, vertex/index/triangle counts, finite-coordinate checks, area tolerance and colocated-vertex policy. Keep project tolerances explicit; these pages do not define a universal safe epsilon. A render mesh with duplicated UV/normal-seam vertices may need a distinct collision mesh. Retain enabled flags and rejected-input diagnostics. Do not promise that cleaning repairs arbitrary generated geometry.
+
+#### Bake, reuse and invalidate deliberately
+
+`Physics.BakeMesh(meshID, convex, cookingOptions)` returns void; baking runs on the calling thread and stores data on the mesh instance. Player calls need Read/Write enabled, while Editor geometry is available without that setting. Reuse requires identical cooking options, unchanged geometry and a shareable transform: nonnegative, unskewed scaling, or negative scaling for nonconvex colliders. Adding a MeshCollider to an object already carrying a MeshFilter can automatically assign `sharedMesh` and trigger baking. Thread safety does not permit simultaneous bakes of the same mesh; that case is undefined. The documented Job System example completes work before main-thread collider creation. [BakeMesh](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Physics.BakeMesh.html).
+
+Assigning `sharedMesh` after changes to vertices, indices or triangles rebuilds collider shapes. This documents assignment-triggered rebuilding; do not infer that a prior bake covers later mesh mutations. [sharedMesh](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MeshCollider-sharedMesh.html).
+
+**Proposed gate:** keep separate records for input validation, bake return/diagnostics, collider assignment, measured reuse and gameplay acceptance. Deduplicate scheduled mesh IDs and serialize per-mesh cooks; parallelize only distinct meshes. A void return is not a fidelity report. Record target platform, exact engine build, convex choice, flag bitmask and full transform hierarchy. Use diagnostics and profiler evidence to establish actual recooking cost; no portable disk-cache or cross-session reuse contract is established here.
+
+#### Accept the collision shape
+
+Concave MeshColliders are supported as static or kinematic geometry, and collide with convex colliders rather than other concave colliders. Convex conversion fills concavities into a hull. [Mesh collider introduction](https://docs.unity3d.com/6000.0/Documentation/Manual/mesh-colliders-introduction.html).
+
+Convex geometry has no holes/entrances and must have nonzero volume. Unity may thicken a convex plane/quad by up to 0.05 times its longest in-plane dimension. Thus even a visually correct plane or doorway can acquire materially different collision geometry. [convex](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MeshCollider-convex.html).
+
+**Proposed gate:** define allowed doorway clearance, ledge height, wall thickness and hull approximation error before choosing convex versus triangle-mesh/compound representation. Treat the documented triangle limit as a collider constraint, not proof that any source mesh below the limit will cook successfully, or that source polygon count equals final hull count. This research establishes no exact rejection/error-code contract for over-limit hulls.
+
+#### Interpret queries separately from contacts
+
+`Physics.ComputePenetration` reports whether the supplied poses overlap and, when true, a minimum separation translation for collider A. False leaves direction/distance undefined. At least one collider must be a box, sphere, capsule or convex MeshCollider. Supplying hypothetical position/rotation does not move the scene; this operation does not need spatial structures updated first. It ignores backfaced triangles regardless of `queriesHitBackfaces`. [ComputePenetration](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Physics.ComputePenetration.html).
+
+Ordinary physics queries omit back-face hits by default. [queriesHitBackfaces](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Physics-queriesHitBackfaces.html). `Physics.SyncTransforms` manually flushes transform changes, including effects on child colliders, to physics. [SyncTransforms](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Physics.SyncTransforms.html).
+
+**Proposed gate:** retain query type, collider pair, poses/scales, face direction, layer/trigger policy, transform synchronization and simulation-step context. A front-side ray hit does not demonstrate two-sided contact behavior or traversability. A penetration result is not a simulated contact manifold or whole-scene collision proof. Do not generalize ComputePenetration's synchronization exception to broadphase queries.
+
+#### Unexecuted acceptance fixtures
+
+1. **Dirty input versus safe preprocessing:** a valid tetrahedron control, a zero-area triangle and duplicated-position vertices. The proposed preflight must reject invalid inputs before invoking a cleaning/welding-disabled cook. Do not deliberately exercise undefined behavior to seek a stable error code. Compare accepted clean input under recorded flag combinations.
+2. **Reuse and invalidation:** bake once, assign to matching colliders, then separately change flags, geometry and transform hierarchy. Include mirrored convex/nonconvex variants and scaled-parent/rotated-child shear. Record assignment diagnostics and profiler evidence; do not infer reuse from an unchanged screenshot. Verify scheduling rejects duplicate concurrent mesh IDs without actually racing native cooks.
+3. **Shape fidelity:** a concave doorway, a flat quad and known-size solid. Compare triangle-mesh and convex representations against required clearance and thickness. Include near-limit convex complexity and retain actual diagnostic/outcome, without predicting how hull simplification or failure behaves.
+4. **Observation boundary:** query both sides of a known-winding wall, test valid primitive-versus-mesh penetration pairs at specified poses, then separately collect simulated contact evidence with recorded settings. Move a parent and synchronize before ordinary spatial queries. A missing/unsupported observation remains unverified.
+
 
 ## 5. Deliver a timeline bundle that still resolves media
 
@@ -118,6 +278,8 @@ For raw image evidence, retain the [render-pass and matte contracts](visual-evid
 **Version/license scope:** rolling sources; fontTools README documents Python 3.11+ at review, not an environment probe. Project licenses: fontTools MIT, Font Bakery Apache-2.0, OTS BSD-3-Clause. Font files and optional dependencies have independent terms; Font Bakery is not an official Google-supported product.
 
 ## 7. Select the right impairment and input surface for a regression
+
+For engine input queues, action phases, focus/reset behavior and the unresolved rendered-response join, see [input delivery and observation alignment](native-operation-details.md#input-delivery-and-observation-alignment).
 
 **Documented operations and fields.** [Toxiproxy](https://github.com/Shopify/toxiproxy) is an HTTP/CLI-controlled TCP proxy. Latency toxics default downstream; symmetric delay requires configuring both directions. Its unauthenticated control API must not be exposed to untrusted networks. [Linux netem's manual](https://man7.org/linux/man-pages/man8/tc-netem.8.html) documents delay/loss/duplication/corruption and seeded randomness, but timer granularity affects delay/rate fidelity; realistic TCP tests have placement constraints, including receiver ingress guidance.
 
@@ -156,6 +318,8 @@ The substantive additions are format/extension validation, USD session and load-
 
 
 ## Animation sampling and compression
+
+For engine-side culling, evaluation phase, events and root-motion ownership after decoding, see [runtime animation observation gates](engine-operation-contracts.md#runtime-animation-observation-gates).
 
 Checked **2026-10-18** against official ozz-animation **0.17.0**, commit `744eb9d99f606eda849acb0b1204f7a3dc20bca1` (2026-08-01). Source inspection only; no library installation, build or animation execution. This adds runtime sampling/compression gates to existing retargeting and interchange notes. API documentation, static source findings and proposed GameMap gates are distinguished below. [S1]
 
@@ -210,3 +374,94 @@ Checked **2026-10-18** at official ACL commit `3ee568542eca4428e1041908b4a644b98
 
 **GameMap editorial fixture, unimplemented:** compare original, optimized and decoded clips on an asymmetric hierarchy with a non-identity reference pose, stripped tracks, nonuniform scale, an additive layer and nonzero root displacement. Check authored sample times and between-key times, the loop seam and repeated cycles. Preserve per-joint/world-space observations and the rendered skin; foot sliding, penetration and controller/root-motion application require actual target-project observations, not a library success result or compression ratio.
 
+## Sprite atlas metadata and playback delivery
+
+Sources checked on 2026-10-18; full reproduction not performed. This is a source-reviewed delivery contract and an **unexecuted acceptance fixture**, not a verified importer. Aseprite implementation references are pinned to v1.3.18.6, commit `331e898ef405d919539c03fd1675691cfa16c3a3`; Godot references use 4.5 documentation and the 4.5-stable commit `876b290332ec6f2e6d173d08162a02aa7e6ca46d`. These are explicit inspection targets, not recommendations to upgrade.
+
+### Inputs and a deliberately narrow export profile
+
+**GameMap editorial guidance:** deliver the editable `.aseprite` source, exported PNG, companion JSON, export settings, source/output hashes, exact editor and importer versions, and an expected animation manifest. Record canvas dimensions, visible layers, frame durations, named tags, anchor coordinates, and image-import settings. The manifest should describe intended gameplay meaning separately from what the exporter can encode.
+
+For the first adapter, constrain input to one unscaled sprite, its complete timeline, composited visible layers, `json-array`, packed layout, per-frame trimming, zero inner padding, and no crop, grid/layer/tag/slice splitting, or play-subtags mode. Keep empty frames. Explicitly request tag and slice metadata. The [CLI documentation](https://www.aseprite.org/docs/cli/) distinguishes PNG output from JSON output, offers hash/array shapes, and makes metadata inclusion and some layer operations option-dependent. The pinned [CLI options](https://github.com/aseprite/aseprite/blob/331e898ef405d919539c03fd1675691cfa16c3a3/src/app/cli/app_options.cpp) distinguish individual-frame `--trim` for sheets from whole-sprite `--trim-sprite`.
+
+This restriction is intentional: subset exports, multiple documents and split layers need an explicit source-frame-to-output mapping. Do not assume JSON array positions, filenames, source frame indices and tag ranges remain interchangeable after adding those modes.
+
+### Metadata is part of the asset
+
+The pinned exporter provides these useful implementation boundaries:
+
+- `frame` identifies atlas pixels; `spriteSourceSize` records trimmed bounds; `sourceSize` preserves original dimensions; `duration` comes from the source frame. The writer emits `rotated: false`. Its serialized `frame` excludes the extrusion border; use that rectangle directly rather than subtracting extrusion again. [Frame serialization](https://github.com/aseprite/aseprite/blob/331e898ef405d919539c03fd1675691cfa16c3a3/src/app/doc_exporter.cpp#L1443-L1528)
+- Packed layout can assign duplicate rendered images the same rectangle. JSON still iterates every sample and writes its duration. Deduplicating rectangles must not collapse animation occurrences. [Packing](https://github.com/aseprite/aseprite/blob/331e898ef405d919539c03fd1675691cfa16c3a3/src/app/doc_exporter.cpp#L650-L708), [serialization](https://github.com/aseprite/aseprite/blob/331e898ef405d919539c03fd1675691cfa16c3a3/src/app/doc_exporter.cpp#L1476-L1511)
+- With trimming and without ignoring empties, a fully transparent frame receives a 1×1 entry that retains timing. Ignoring empties removes that sample. [Empty-frame branch](https://github.com/aseprite/aseprite/blob/331e898ef405d919539c03fd1675691cfa16c3a3/src/app/doc_exporter.cpp#L1124-L1163)
+- Tag metadata uses source `from`/`to`, direction and, when positive, a string-valued `repeat`; slices expose frame-keyed bounds and optional pivots. [Tags](https://github.com/aseprite/aseprite/blob/331e898ef405d919539c03fd1675691cfa16c3a3/src/app/doc_exporter.cpp#L1530-L1579), [slices](https://github.com/aseprite/aseprite/blob/331e898ef405d919539c03fd1675691cfa16c3a3/src/app/doc_exporter.cpp#L1683-L1756)
+
+**Editorial acceptance:** reject unsupported rotation, inconsistent dimensions, out-of-bounds atlas rectangles, duplicate logical names, invalid tag references, nonpositive durations, missing required slices, or unexpected frame counts. Report unsupported features rather than silently substituting defaults. Validate decoded PNG dimensions against metadata, and resolve the image dependency from the delivered package rather than an author's machine path.
+
+### Preserve coordinate systems and time units
+
+The [Aseprite file specification](https://github.com/aseprite/aseprite/blob/331e898ef405d919539c03fd1675691cfa16c3a3/docs/ase-file-specs.md#slice-chunk-0x2022) defines slice pivots relative to the slice origin. For an unscaled frame, derive the source-canvas anchor as `slice.bounds.position + slice.pivot`; its trimmed-image coordinate is that anchor minus `spriteSourceSize.position`. A pivot without its slice origin is insufficient. Specify the active slice key for each frame and an explicit fallback or rejection when no pivot exists.
+
+A proposed Godot adapter can reconstruct the canvas with an `AtlasTexture`: `region = frame`, `margin.position = spriteSourceSize.position`, and `margin.size = sourceSize - frame.size`. This is a derivation for the restricted profile above: the pinned [AtlasTexture implementation](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/resources/atlas_texture.cpp#L33-L53) adds margin size to region size, and [drawing](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/resources/atlas_texture.cpp#L157-L220) applies margin position. The pinned [packing implementation](https://github.com/aseprite/laf/blob/500768cccc6447e3b7816bedbfcb378a5c5222e5/gfx/packing_rects.cpp#L104-L126) uses shape padding for placement without enlarging the returned rectangle; the exported frame already excludes extrusion. This reconstruction remains untested here. For an unflipped node with a constant source anchor, `AnimatedSprite2D.centered = false` and `offset = -anchor` is a candidate placement convention; its [documented properties](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/doc/classes/AnimatedSprite2D.xml#L83-L101) distinguish centering from drawing offset. The [draw implementation](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/2d/animated_sprite_2d.cpp#L269-L300) confirms this offset path. Changing anchors or flips require additional handling.
+
+Aseprite frame durations are milliseconds in the [frame specification](https://github.com/aseprite/aseprite/blob/331e898ef405d919539c03fd1675691cfa16c3a3/docs/ase-file-specs.md#frames). Godot's [SpriteFrames contract](https://docs.godotengine.org/en/4.5/classes/class_spriteframes.html#class-spriteframes-method-get-frame-duration) uses relative durations: seconds equal relative duration divided by animation FPS and absolute playing speed. At baseline playing speed 1, convert milliseconds `d` to `d × FPS / 1000`. Thus 80 ms at 10 FPS becomes 0.8. Copying milliseconds directly is valid only with a matching timebase, such as 1000 FPS at speed 1. Record subsequent playback-speed changes separately.
+
+Godot's loop setting is Boolean. Aseprite's [tag specification](https://github.com/aseprite/aseprite/blob/331e898ef405d919539c03fd1675691cfa16c3a3/docs/ase-file-specs.md#tags-chunk-0x2018) also defines finite repetition and direction; zero repeat is unspecified and differs between UI and export playback. Declare how finite repeats, reverse and ping-pong are translated, or reject them. Never infer identical playback from matching tag names.
+
+### Proposed round-trip fixture, not executed
+
+**GameMap editorial test design:** author a 32×32 RGBA sprite with four frames lasting 80, 160, 120 and 40 ms. Frames 0 and 1 have identical pixels and bounds; frame 2 changes the silhouette/bounds while retaining a drawn ground-contact point; frame 3 is transparent. Use a constant slice origin `(4,6)` with pivot `(12,22)`, establishing source anchor `(16,28)`. Add `pulse`, frames 0–3, forward, repeat 2, and `rewind`, frames 0–2, reverse, repeat 1. Keep a visible guide layer hidden during export.
+
+1. Export the restricted profile with tag/slice metadata, two-pixel shape separation and one-pixel edge extrusion. Preserve command/settings and diagnostic output. Do not hard-code packing coordinates.
+2. Check four logical records and exact durations, including the transparent frame. Confirm frames 0 and 1 can share atlas pixels without losing their separate timing. Reconstruct each untrimmed canvas and compare against independently exported source-frame references.
+3. Load through the proposed adapter in a pinned Godot project. At 10 FPS and speed 1, expect relative durations 0.8, 1.6, 1.2 and 0.4. A forward traversal totals 400 ms; two traversals total 800 ms. Reverse order 2,1,0 totals 360 ms. Measure completion with a declared tolerance rather than claiming wall-clock exactness from arithmetic.
+4. Capture anchor-relative placement, transparent-frame dwell and final state. Reimport, reopen and repeat. Separately inspect scaled rendering for seams/halos; [AtlasTexture filter clipping](https://docs.godotengine.org/en/4.5/classes/class_atlastexture.html#class-atlastexture-property-filter-clip) addresses surrounding atlas pixels but does not establish the whole sampling configuration.
+
+Fail on missing dwell, timing drift, anchor jitter, reversed ordering, wrong completion behavior, stale textures or changed import output. Passing proves only the tested visual/timing contract. Collision shapes, hitboxes, animation events, character movement and gameplay foot-contact behavior require separate fixtures. No Aseprite export, Godot import, playback, image comparison or runtime test was performed for this note.
+
+## Tile-map identity geometry and runtime delivery
+
+Sources checked 2026-10-18; full reproduction not performed. This section adds tile-map identity, transformed collision geometry, negative-coordinate persistence and runtime-readiness evidence to the authoring/export and sprite-image contracts. It does not identify a native Tiled-to-Godot importer. The adapter and fixture below are **GameMap editorial guidance, unimplemented and unexecuted**.
+
+### Version and input boundary
+
+Tiled's inspected documentation identifies **1.12.2**. Its versioned [v1.12.2 release](https://github.com/mapeditor/tiled/releases/tag/v1.12.2) resolves to [1fd984638f9898af920103799bcd68b467287295](https://github.com/mapeditor/tiled/commit/1fd984638f9898af920103799bcd68b467287295), whose release notes date it 2026-05-27. Godot references use **4.5** documentation and [4.5-stable source, 876b290332ec6f2e6d173d08162a02aa7e6ca46d](https://github.com/godotengine/godot/commit/876b290332ec6f2e6d173d08162a02aa7e6ca46d), not an installed-engine claim.
+
+Proposed input manifest: map format/application versions, orientation, grid size, layer hierarchy and offsets, external tileset/image paths and hashes, encoding/compression, importer revision and an explicit supported-feature list. Initially limit conversion to orthogonal maps and declared shapes; reject unsupported orientations/features with diagnostics instead of silently flattening them.
+
+### 1. Decode identities before mapping engine cells
+
+Tiled GIDs are map-local. The same tile can acquire another GID when tilesets change order. Interpret the value as unsigned 32-bit, extract flags, and clear all four high bits before lookup: horizontal `0x80000000`, vertical `0x40000000`, diagonal/hex-60 `0x20000000`, hex-120 `0x10000000`. Clear the fourth flag even for non-hexagonal maps. Zero denotes an empty cell; otherwise choose the largest `firstgid` not exceeding the stripped value, then subtract it. Orthogonal/isometric transforms apply diagonal swapping before horizontal/vertical flips; hexagonal flags have different semantics. [GID contract](https://doc.mapeditor.org/en/stable/reference/global-tile-ids/), [pinned documentation](https://github.com/mapeditor/tiled/blob/1fd984638f9898af920103799bcd68b467287295/docs/reference/global-tile-ids.rst).
+
+A valid range is insufficient: image-collection tilesets can have gaps, including local IDs above `tilecount`. External TSX files omit map-specific `firstgid`. Verify actual tile existence and preserve tileset identity plus local ID as the transfer key. [TMX tilesets](https://doc.mapeditor.org/en/stable/reference/tmx-map-format/#tileset).
+
+Godot atlas transformations instead use alternative-ID flags `4096`, `8192`, `16384`; raw Tiled GIDs cannot be copied into them. The adapter needs an explicit lookup to source ID, atlas coordinates, alternative ID and normalized transform. Validate all eight orthogonal flip combinations against asymmetric artwork rather than assuming names alone establish equivalence. [Godot atlas flags](https://docs.godotengine.org/en/4.5/classes/class_tilesetatlassource.html#constants).
+
+### 2. Preserve sparse coordinates through serialization
+
+Infinite-map chunks have independent tile-coordinate origins and dimensions; Tiled's official JSON example includes `y: -16`. Proposed output coordinates are chunk origin plus within-chunk position, retaining negative values and sparse gaps. Validate decoded element counts per chunk, not against a finite map rectangle; establish an explicit policy for overlapping chunks. Pixel layer offsets remain a separate transform. [JSON layer/chunk contract](https://doc.mapeditor.org/en/stable/reference/json-map-format/#chunk).
+
+Godot TileMapLayer serializes coordinates within **−32768…32767**, wrapping values outside that range. The pinned writer explicitly casts each coordinate to `int16_t`. A populated in-memory layer therefore does not establish a faithful saved map. Reject out-of-range imports or specify a reversible partition/rebasing scheme before saving; compare logical coordinates after fresh reopen. [4.5 persistence warning](https://docs.godotengine.org/en/4.5/classes/class_tilemaplayer.html#description), [writer, lines 3196–3233](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/2d/tile_map_layer.cpp#L3196-L3233).
+
+### 3. Carry geometry independently of tile images
+
+Tiled distinguishes grid size, image size, drawing offset and tile-object alignment. Larger layer tiles extend above/right of their bottom-left anchor. Unspecified tile-object alignment defaults to bottom-left for orthogonal maps; explicit `objectalignment` can override it. Polygon points are relative to their object, and object rotation is clockwise around its position. Margin/spacing, tile offset and layer offset are separate inputs. [TMX geometry definitions](https://doc.mapeditor.org/en/stable/reference/tmx-map-format/).
+
+The pinned renderer scales tile offsets with rendered dimensions and compensates for rectangular-image dimension swapping during diagonal transforms. Its collision-overlay path composes each object's own rotation with the tile fragment's translation, rotation and scale. This is evidence for authored geometry placement, **not** a physics-engine importer. [Cell rendering, lines 468–523](https://github.com/mapeditor/tiled/blob/1fd984638f9898af920103799bcd68b467287295/src/libtiled/maprenderer.cpp#L468-L523), [collision overlay, lines 631–655](https://github.com/mapeditor/tiled/blob/1fd984638f9898af920103799bcd68b467287295/src/libtiled/maprenderer.cpp#L631-L655).
+
+Godot's `map_to_local()` gives a cell center and ignores the per-tile `texture_origin` drawing offset. Do not use that center as an image-anchor oracle. [Coordinate conversion](https://docs.godotengine.org/en/4.5/classes/class_tilemaplayer.html#class-tilemaplayer-method-map-to-local), [texture origin](https://docs.godotengine.org/en/4.5/classes/class_tiledata.html#class-tiledata-property-texture-origin).
+
+Proposed outputs include image corner positions and separately transformed shape vertices, origins and winding. Reject unsupported curves, degenerate shapes and unimplemented scaling cases. Compare geometry numerically and with overlays; assign physics layers/masks through a declared policy. Visible tile agreement cannot establish collision response or pathfinding.
+
+### 4. Separate cell assignment from runtime observation
+
+Godot's `set_cell` accepts the three-part tile identity; setting source/alternative to `-1` or atlas coordinates to `(-1,-1)` erases the cell. Updates are batched at frame end and queued only inside the scene tree; scene tiles initialize after their parent. `update_internals()` performs internal processing immediately; this is not an independently observed rendering/physics completion fence. [Implementation, lines 3062–3064](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/2d/tile_map_layer.cpp#L3062-L3064). `notify_runtime_tile_data_update()` also defers work, and runtime callback subresources may be shared with the TileSet, requiring duplication before mutation. [TileMapLayer 4.5 API](https://docs.godotengine.org/en/4.5/classes/class_tilemaplayer.html).
+
+A sharper readback boundary appears in source: `_build_runtime_update_tile_data_for_cell` makes the runtime duplicate, whereas `get_cell_tile_data()` retrieves the atlas source's base data. Thus that getter alone cannot attest to the applied runtime override. Record callback inputs/results and observe the affected subsystem independently. [Runtime copy, lines 1693–1738](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/2d/tile_map_layer.cpp#L1693-L1738), [getter, lines 2820–2832](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/2d/tile_map_layer.cpp#L2820-L2832).
+
+### Proposed acceptance fixture, unimplemented and unexecuted
+
+Use a disposable map with two tilesets, a sparse image collection, marked rectangular tiles, all eight flip combinations, negative chunks, nonzero offsets, a rotated polygon and a resized tile object. Include empty cells and coordinate-boundary cases. Record expected identities and transformed reference points independently of adapter output.
+
+Require five separate verdicts: parsed identity; coordinate/geometry agreement; native cell assignment; runtime observation; saved/reopened agreement. Include deliberately invalid IDs, missing dependencies, malformed chunk lengths and unsupported orientation as failure cases. Reordering tilesets should preserve logical content after recalculating GIDs. Out-of-range persistence must fail preflight or preserve the declared reversible mapping.
+
+For the Godot-only runtime extension, test cells sharing one source tile while only one receives an override, deferred versus forced processing, a scene tile and disable/re-enable. Confirm unaffected cells remain unchanged. Capture rendered landmarks and explicit collision probes separately; neither cell counts nor a correct screenshot proves both. Preserve errors, unsupported-feature reports and observer timing alongside artifacts. No importer, fixture, engine run, save/reopen test or gameplay validation was performed here.

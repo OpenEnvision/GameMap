@@ -57,6 +57,43 @@ Production image metadata, conversion and numerical difference operations.
 - **Source terms:** Current upstream original code Apache-2.0; third-party components differ; documentation CC-BY-4.0.
 - **Primary sources:** [oiiotool manual](https://openimageio.readthedocs.io/en/latest/oiiotool.html); [OpenImageIO README](https://github.com/AcademySoftwareFoundation/OpenImageIO)
 
+### Engine frame readback and capture ownership
+
+Sources checked 2026-10-18; full reproduction not performed. Unity 6000.0 and Godot 4.5 links identify documentation versions, not immutable engine patch/commit pins or installed runtimes. These ownership/readiness contracts precede [pass-specific artifact inspection](#render-pass-and-matte-artifacts) and visual-quality scoring. They do not establish deterministic pixels, an implemented adapter or measured GPU cost.
+
+#### Unity 6000.0: two separate readiness boundaries
+
+1. **Rendered screenshot → GPU target.** `ScreenCapture.CaptureScreenshotIntoRenderTexture(renderTexture)` captures the game view. The official contract requires completed frame rendering; its example waits for `WaitForEndOfFrame`, allocates a screen-width/height RenderTexture, then requests mip 0 as `TextureFormat.RGBA32`. The asynchronous readback reduces main-thread work; the capture call does not itself return CPU pixels. [ScreenCapture API](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ScreenCapture.CaptureScreenshotIntoRenderTexture.html)
+2. **GPU target → completed CPU readback.** Requests update each frame. Successful data is accessible for only one frame, and Unity disposes the request the following frame. Poll `done`, then require `!hasError` before reading; disposal also makes `hasError` true. Result metadata includes width, height, depth, layer count and bytes per layer. Adapter implication: immediately copy/consume successful data into an evaluator-owned artifact; do not queue a request handle for arbitrary later encoding. [Request lifetime](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rendering.AsyncGPUReadbackRequest.html)
+3. `GetData<T>(layer)` throws `InvalidOperationException` if fulfillment has not occurred or the request was disposed. Its layer parameter selects slices for volume/cube/array textures. Calling `GetData<byte>()` is not a pixel-format conversion API: select the output format at request time and record the selected layer. [GetData](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rendering.AsyncGPUReadbackRequest.GetData.html)
+
+##### Resource and sizing obligations
+
+- `AsyncGPUReadback.Request` automatically converts from GPU storage to a specified destination format. Texture extents are checked against actual source dimensions, including quality-reduced texture sizes. Check format support with `SystemInfo.IsFormatSupported(..., GraphicsFormatUsage.ReadPixels)`. A temporary RenderTexture must not be returned through `ReleaseTemporary` before readback completion. Texture regions use pixel coordinates; buffer size/offset use bytes. [Request format, extent and temporary-target rules](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rendering.AsyncGPUReadback.Request.html)
+- The alternative `RequestIntoNativeArray` writes into caller-supplied storage; neither that array nor its underlying memory may be disposed before completion. This is a separate ownership route, not permission to retain a normal request's borrowed result indefinitely. [Caller-owned output](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rendering.AsyncGPUReadback.RequestIntoNativeArray.html)
+- `WaitForEndOfFrame` can freeze in the Editor when switching from Game to Scene view, and does not run in Editor batch mode. Therefore the documented screenshot coroutine is not a verified headless-CI recipe. Distinguish Editor batch mode from a built player; these documents do not establish all player/headless variants. [WaitForEndOfFrame execution limits](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/WaitForEndOfFrame.html)
+
+**Proposed adapter invariant (inference):** bind each capture ID to target identity, dimensions, mip/layer, destination format and source frame; keep its target leased through completion; copy successful bytes before request expiry; separately mark render-not-ready, readback-error and stale/disposed-result failures. Never reuse a stale success as the next frame. For a chosen single-layer tightly packed RGBA32 byte artifact, validate expected width × height × 4 and actual metadata rather than assuming every request has this layout.
+
+#### Godot 4.5: post-draw is not an asynchronous readback handle
+
+- `RenderingServer.frame_post_draw` fires at frame end after the server updates all viewports. `Viewport.get_texture()` warns that early access, particularly from `_ready()`, may be black or outdated and recommends awaiting that signal before obtaining and saving the image. This is the documented frame readiness boundary. It does not claim the screenshot contains OS/window decorations or other windows. [RenderingServer signal](https://docs.godotengine.org/en/4.5/classes/class_renderingserver.html#class-renderingserver-signal-frame-post-draw), [Viewport texture readiness](https://docs.godotengine.org/en/4.5/classes/class_viewport.html#class-viewport-method-get-texture)
+- `Texture2D.get_image()` creates a new Image copy on each invocation, returns null for an invalid texture, and fetches data from GPU memory. The docs warn against frequent per-frame use, especially for large textures. Unlike Unity's request result, this API's documented return is a copied Image, with no documented one-frame expiry. It is not documented as a nonblocking asynchronous readback API. [CPU image copy and invalid result](https://docs.godotengine.org/en/4.5/classes/class_texture2d.html#class-texture2d-method-get-image)
+- A `ViewportTexture` is scene-local and may return incorrect data before its scene root is ready. With `use_hdr_2d`, its data is HDR in linear space; the docs describe conversion to RGBA8 and linear-to-sRGB for gamma-space display. Do not silently compare that raw HDR image to an sRGB reference. [ViewportTexture scene and color contract](https://docs.godotengine.org/en/4.5/classes/class_viewporttexture.html)
+- A SubViewport's default update policy is `UPDATE_WHEN_VISIBLE`; `UPDATE_ONCE` updates once and then becomes disabled. Its width and height must each be at least two pixels. When its parent is a SubViewportContainer with stretch enabled, the size cannot be changed manually. Thus a global post-draw signal alone does not demonstrate that an invisible/default or disabled target rendered new content. [SubViewport update modes and size](https://docs.godotengine.org/en/4.5/classes/class_subviewport.html)
+
+**Proposed adapter invariant (inference):** identify the exact root/SubViewport and its scene, confirm ready/valid target and intended update policy, await post-draw, retrieve the Image, reject null/empty or wrong-size output, and record actual format/color transformation. For offscreen one-shot capture, explicitly arm `UPDATE_ONCE` rather than relying on visibility. Hold the scene/viewport through capture; retain the resulting Image for subsequent evaluation. The cited contracts do not promise safe concurrent teardown, fixed GPU latency, or pixel determinism.
+
+#### Proposed capture-validity checks
+
+Treat this as a proposed integration test checklist, not tests already run:
+
+1. A rendered marker or known scene-state change distinguishes requested frame N from stale frame N−1; request ID alone is insufficient.
+2. Unity tests cover success copied before expiry, failure before `GetData`, early target release prevention, size change, and unsupported output format; log engine patch, render pipeline and graphics backend.
+3. Godot tests cover an invisible SubViewport, one-shot rearming, scene-not-ready/invalid image, container-driven dimensions and HDR conversion; log engine patch, renderer and viewport path.
+4. Persist image plus provenance: engine/build, capture stage, target, requested/observed dimensions, format, color space/normalization, frame/timestamp, readiness/error status and artifact hash. Evaluate gameplay or aesthetics only after capture validity passes.
+
+
 ### Render-pass and matte artifacts
 
 Sources checked 2026-10-18; full reproduction not performed. Blender evidence is versioned to 4.5 LTS unless explicitly marked 4.2; manual pages remain mutable. This complements [material/compiler acceptance](asset-validation-contracts.md#materialx-graph-generated-code-and-compiler-verdicts), rather than adding an executed renderer or claiming equivalence with game-engine buffers.
@@ -123,6 +160,49 @@ Learned perceptual distance as a secondary visual-regression signal.
 - **Source terms:** BSD-2-Clause repository; audit model/data rights separately before redistribution.
 - **Primary sources:** [LPIPS README](https://github.com/richzhang/PerceptualSimilarity)
 
+### FLIP: display-aware render differences
+
+FLIP is a materially complementary **full-reference render-difference diagnostic**: viewing-dependent color/edge/point error maps, plus an HDR exposure sweep. It can help compare render candidates against an approved target under a fixed capture contract. It cannot establish that a game action worked, that UI content is correct, or that a temporal artifact is absent. Treat selection based on FLIP as a proposed GameMap fixture, not a result demonstrated by the papers.
+
+#### Exact inspected implementation
+
+NVlabs/flip implementation declaring v1.7 at commit **b475eb4bf394ab877c42166c9eb0a84a02cc5b14**. This pins the inspected source, not a resolved release tag or installed package. Scope below is the Python `flip_evaluator.evaluate(reference, test, dynamicRangeString, inputsRGB=True, applyMagma=True, computeMeanError=True, parameters={})` wrapper and its nanobind/C++ path. The separate PyTorch loss has a different argument order: test first, reference second. Do not transplant its calling convention. [PyTorch contract][flip-pytorch]
+
+#### Contracts that can reverse candidate ordering
+
+- **Color is an input contract, not inferred from file contents.** The Python wrapper defaults LDR to encoded sRGB, subsequently decoded by the binding; `inputsRGB=False` is needed for already-linear LDR arrays. HDR forcibly sets `inputsRGB=False`, expecting nonnegative linear-sRGB RGB. Passing a display screenshot as HDR, double-decoding linear RGB, feeding ACEScg without a primaries conversion, or treating LPIPS's [-1,1] normalization as reusable changes the question being measured. The LDR C++ path clamps to [0,1]; validate ranges before that silent information loss. [Wrapper, lines 36–100][flip-api]; [binding, lines 218–228][flip-binding]; [core, lines 2399–2403][flip-core]
+- **Reference identity and exposure policy matter.** Unspecified HDR start/stop exposures are calculated from the reference's maximum/median luminance. The default count is max(2, ceil(stop-start)); both images receive each shared exposure factor 2^c, the selected tone mapper, and a clamp before LDR-FLIP. The final map retains the **maximum error at each pixel over exposures**, not their average. Swapping reference/test can therefore change automatic exposures; changing candidate-dependent references, exposure ranges/counts, or tone mappers invalidates a shared ranking. Store the resolved parameters. The richer C++ interface exposes the winning-exposure map and intermediate images; the Python tuple does not. [Core, lines 2186–2234, 2314–2404][flip-core]
+- **Tone-mapper spelling is a pinned API trap.** The wrapper validates `parameters['tonemapper'].lower()` but passes the original string through. The inspected C++ implementation compares exact lowercase `aces`, `hable`, `reinhard`, with ACES as fallback. Thus the documented title-case `Hable`/`Reinhard` can select ACES in this Python path. Canonicalize and persist lowercase values. This is a static code-path finding, not an executed reproduction; the CLI separately lowercases its input. [Wrapper, lines 82–100][flip-api]; [binding, lines 148–151][flip-binding]; [core, lines 1395–1435 and 2186–2199][flip-core]; [CLI, lines 122–132][flip-cli]
+- **PPD is part of the measurement.** The core computes distance_m × display_width_px / display_width_m × pi/180; defaults are 0.7 m, 3840 px, 0.7 m (about 67 PPD). Supply either `ppd` or `vc`, never both, and preserve image scaling/viewing assumptions. Resizing a capture and retaining the old physical interpretation is not a neutral optimization. Cropping before evaluation also changes spatial-filter context and, for automatic HDR, the reference statistics; pooling a region from a full-frame map answers a different question. [Core, lines 110–123][flip-core]; [wrapper, lines 48–80][flip-api]
+- **Raw map, preview, and aggregate are distinct artifacts.** The Python return is `(map, mean, resolved_parameters)`. Default `applyMagma=True` yields H×W×3 display colors, not three independent error channels; use `False` for H×W×1 numerical errors. The returned mean is the arithmetic mean of the scalar map before colorization. With `computeMeanError=False`, the Python path returns **-1**, which must never win a lower-is-better selector. Persist the raw map separately from its preview and retain region/tail evidence for small critical defects. NVIDIA's publication page now recommends the mean rather than the original paper's weighted median when one number is needed. [Binding, lines 185–238][flip-binding]; [core, lines 2444–2489][flip-core]; [author hindsight][flip-ldrpage]
+
+#### Harness-side validity gate, before evaluation
+
+Canonicalize equal, nonempty H×W×3 RGB arrays with explicit float32/contiguous CPU storage, finite samples, defined range, color transform, crop/registration and alpha treatment. The nanobind signature is a three-dimensional float/CPU/contiguous array; its explicit checks cover dimensionality and H/W agreement, **not shape(2)==3**, before copying three floats per pixel. This missing check is a source observation, not a reproduced memory-safety failure. File input is different: the LDR loader uses three-channel 8-bit `stbi_load` divided by 255, and EXR uses plain channel-name recognition; these routes do not preserve an RGBA validation contract or perform a documented alpha composite. Composite deterministically upstream and validate alpha separately. [Binding, lines 61–100 and 185–216][flip-binding]; [loader, lines 65–88 and 133–217][flip-loader]
+
+Validate recognized keys, types, finite positive PPD/viewing values, lowercase tone mapper, finite ordered HDR exposure bounds, and an integer exposure count >=2 under a resource budget. In this Python path unknown parameter keys print a message rather than fail. With valid finite explicit exposure bounds, the simplified API initializes a zero map and a supplied zero count skips the HDR loop; a count of one reaches division by count-minus-one. These are static paths that justify rejection, not measured outputs or claims about every CLI/error path. v1.7 clamps a zero median to epsilon, but maximum luminance still divides into the automatic start-exposure calculation: an all-black reference needs an explicit exposure policy or an invalid-result outcome, rather than assuming the median fix covers it. [Binding, lines 115–161][flip-binding]; [core, lines 2210–2233, 2357–2397, 2448–2454][flip-core]
+
+Separate invalid-input/configuration, process/API failure, missing/nonfinite output, and valid measured discrepancy. Some checks exit the process rather than raise a recoverable exception. Require finite [0,1] raw output of the expected dimensions and a valid mean; compare exact metric build/backend/platform because upstream documents small floating-point differences. Proposed unexecuted measurement fixtures: identity pair; one-pixel/UI defect; dark/highlight defect; alpha-only change after explicit compositing; swapped reference; full-frame versus cropped HDR; and all-black reference under a declared valid exposure policy. Separately test wrapper canonicalization of tone-mapper names and **preflight rejection** of malformed/empty/channel-mismatched arrays, NaN/Inf and zero/one exposure counts; do not pass these rejected cases into the unchecked native path. No acceptance threshold is asserted. [Precision note][flip-precision]
+
+#### Paper evidence and rights limits
+
+The 2020 LDR paper's study assessed correspondence of error maps to differences seen while flipping image pairs, using a 0.5 s period, 21 pairs and 42 participants, at instructed 67 PPD. It reports favorable average correspondence; participants were mainly experts, without controlled display calibration. That is not a validation of automated game-candidate selection, a universal threshold, or temporal quality. Its stated limitations include masking, which can cause overestimation. The original paper addresses LDR; the 2021 HDR publication describes a composite over exposure-compensated, tone-mapped pairs. The HDR full PDF exceeded retrieval size limits, so detailed HDR mechanics above are attributed to pinned code, not an unread paper. [LDR paper, §§2 and 6.2][flip-ldrpaper]; [HDR publication][flip-hdrpage]
+
+Inspected repository code is BSD-3-Clause; bundled TinyEXR and stb have separate notices in the third-party license file. This does not grant blanket rights to papers, research-study images, engine captures, or game assets. Link rather than redistribute the paper/image corpus; use independently cleared fixture images. No learned weights or dataset acquisition are needed for this proposed source-based contract. [Code license][flip-license]; [third-party notices][flip-thirdparty]
+
+[flip-api]: https://github.com/NVlabs/flip/blob/b475eb4bf394ab877c42166c9eb0a84a02cc5b14/src/flip_evaluator/flip_python_api.py
+[flip-binding]: https://github.com/NVlabs/flip/blob/b475eb4bf394ab877c42166c9eb0a84a02cc5b14/src/nanobindFLIP.cpp
+[flip-core]: https://github.com/NVlabs/flip/blob/b475eb4bf394ab877c42166c9eb0a84a02cc5b14/src/cpp/FLIP.h
+[flip-cli]: https://github.com/NVlabs/flip/blob/b475eb4bf394ab877c42166c9eb0a84a02cc5b14/src/cpp/tool/FLIPToolHelpers.h
+[flip-loader]: https://github.com/NVlabs/flip/blob/b475eb4bf394ab877c42166c9eb0a84a02cc5b14/src/cpp/tool/imagehelpers.h
+[flip-precision]: https://github.com/NVlabs/flip/blob/b475eb4bf394ab877c42166c9eb0a84a02cc5b14/misc/precision.md
+[flip-pytorch]: https://github.com/NVlabs/flip/blob/b475eb4bf394ab877c42166c9eb0a84a02cc5b14/src/pytorch/README.md
+[flip-license]: https://github.com/NVlabs/flip/blob/b475eb4bf394ab877c42166c9eb0a84a02cc5b14/LICENSE
+[flip-thirdparty]: https://github.com/NVlabs/flip/blob/b475eb4bf394ab877c42166c9eb0a84a02cc5b14/misc/LICENSE-third-party.md
+[flip-ldrpage]: https://research.nvidia.com/publication/flip
+[flip-ldrpaper]: https://developer-blogs.nvidia.com/wp-content/uploads/2020/07/flip-author-version-reduced-file-size.pdf
+[flip-hdrpage]: https://research.nvidia.com/publication/2021-05_visualizing-errors-rendered-high-dynamic-range-images
+
 ### SAM 2
 
 Promptable image masks and temporally propagated video masklets.
@@ -131,6 +211,54 @@ Promptable image masks and temporally propagated video masklets.
 - **Limits:** Predicted masks are inferred evidence, not engine object IDs. Track prompt history, checkpoint, frame indices and inference-state resets.
 - **Source terms:** Model checkpoints/training/demo Apache-2.0; optional third-party code/fonts have separate terms.
 - **Primary sources:** [SAM 2 README](https://github.com/facebookresearch/sam2)
+
+#### SAM 2 temporal mask-state contract
+
+This contract distinguishes a correction within one clip from replacement evidence after a creative edit. Source-only inspection on 2026-10-19; no install, model, weights, video download, or inference. All implementation links below pin official `facebookresearch/sam2` commit **2b90b9f5ceec907a1c18123530e92e794ad901a4**, the current `main` returned by GitHub (commit dated 2024-12-16). This is a source pin, not a claim of a newer model release.
+
+##### State and observation lifecycle
+
+1. **Clip identity precedes tracking identity.** `init_state` loads frames, records one original height/width, and caches frame-zero features. `reset_state` removes prompts, results, tracking metadata and object IDs, but retains images, dimensions, constants and cached features. **Inference:** changed renders, replacement frame files, changed crops or changed camera captures require a new state from the new immutable clip, not merely reset. A camera cut already inside the same clip is still image evidence; the predictor provides no authoritative scene/camera identity transition. [Initialization][SAM-init] · [reset/cache][SAM-reset]
+
+2. **Frame index is not source time.** JPEG names are filtered by extension and sorted by integer stem; state indexes their list positions. Missing filename numbers are not represented as missing temporal slots. MP4/bytes use Decord's frame iteration; the loader returns images and dimensions, not FPS/PTS. Both routes stretch frames to the model's square input and normalize RGB. **Adapter implication:** retain index → original filename/PTS/simulation tick plus crop/resize mapping; validate uniform dimensions rather than inferring time from index. [Loader][SAM-load]
+
+3. **Prompt coordinates and mutation are explicit.** `add_new_points_or_box` defaults to `normalize_coords=True`: original-image x/y pixels are divided by width/height, then multiplied by internal image size. With False, supply normalized coordinates, not already-scaled model pixels. Boxes become two corner prompts labeled 2/3 and require `clear_old_points=True`; ordinary labels are 1 positive/0 negative. Default `clear_old_points=True` replaces that object's clicks on that frame; False appends. Point/box input removes its mask input; `add_new_mask` removes its point input. A 2-D mask is resized with bilinear antialiasing and thresholded at 0.5 when its size differs from model input. Keep the complete ordered prompt history, replacement/append flag and coordinate space. [Prompt/mask paths][SAM-prompt] · [label semantics][SAM-base]
+
+4. **Preview correction is not completed temporal evidence.** A never-tracked frame becomes initial conditioning. A point/box correction on a tracked frame uses remembered tracking direction and previous mask logits; mask replacement follows its separate path. New outputs are temporary and memory encoding is deferred to propagation preflight. `add_all_frames_to_correct_as_cond=False` by default; propagation reuses conditioning outputs but recomputes other frames with no direct point/mask inputs. Therefore do not assume an immediate corrected preview will be preserved unchanged in a later propagation. Record the conditioning policy and separately validate corrected-frame and downstream results. Defaults also leave surrounding non-conditioning memory clearing disabled. [Prompt path][SAM-prompt] · [preflight/propagation][SAM-prop]
+
+5. **IDs belong to a session, not the engine.** The current default predictor runs objects independently and permits adding objects after propagation begins. Returned mask rows follow returned `obj_ids`; removing an object compacts internal indices. Clearing prompts on one frame may downgrade its conditioning output and does not delete the object. Reset ends all IDs. **Adapter implication:** serialize an ID snapshot with every output, namespace it by clip/state generation, and keep engine identity as separate evidence. An empty/occluded mask does not prove deletion or correct reidentification. The legacy implementation has different multi-object prompting/addition semantics. [ID mapping][SAM-init] · [removal][SAM-remove] · [release notes][SAM-release]
+
+6. **Coverage and mask type must be recorded.** Propagation defaults to the earliest conditioning frame and forward order, not necessarily frame zero. Reverse is explicit; reverse from zero yields nothing. Its interval includes both endpoints, so a non-clipped `max_frame_num_to_track=N` can yield N+1 frames. The public triple is frame index, IDs and original-resolution mask **logits**, shaped objects × 1 × H × W on the compute device; binary masks require an explicit threshold (official VOS CLI default: >0). Missing-object placeholders can appear in prompt-preview consolidation. Preserve logits/threshold and requested versus yielded coverage; no public triple certifies object presence or functional success. [Output/propagation][SAM-prop] · [CLI][SAM-cli]
+
+##### Defaults, variants and readiness boundaries
+
+- The standard builder defaults to CUDA, eval, `vos_optimized=False`, `apply_postprocessing=True`: stability fallback delta 0.05/threshold 0.98, binarized point-prompt memory and low-resolution hole filling up to area 8. Constructor hole-fill default alone is 0. Output overlap suppression defaults False. The VOS CLI instead defaults postprocessing off and packed-label overlap suppression on. Log actual resolved settings. Hole-filling failures warn and return unprocessed scores. [Builder][SAM-build] · [CLI][SAM-cli] · [postprocessor][SAM-holes]
+- Frame offload, state offload and async loading all default False. JPEG async mode reads frame zero synchronously, starts a daemon that fills a fixed frame list, loads cache misses on access and raises recorded background errors on subsequent access. MP4 loading ignores that async option and stacks the full decoded sequence. This is not a live bounded-memory stream. State offload still leaves image features/object pointers on the compute device; returned masks are moved there. [Initialization][SAM-init] · [loader][SAM-load] · [output storage][SAM-storage]
+- Standard and compiled `SAM2VideoPredictorVOS` are distinct execution modes; release notes warn compilation can change predictions numerically. SAM 2 and SAM 2.1 are separately mapped checkpoint/config families, each tiny/small/base-plus/large; neither family name pins weights. Inspected 2.1-large config uses image size 1024 and seven mask memories; inherited evaluation temporal stride is one. Record checkpoint hash, config and predictor revision independently. [Builder/mapping][SAM-build] · [2.1-large config][SAM-config] · [base][SAM-base] · [release notes][SAM-release]
+- **Scoped static caution:** enabling `clear_non_cond_mem_around_input` in this pinned default class reaches `_clear_obj_non_cond_mem_around_input`, absent from the full predictor, its `SAM2Base(torch.nn.Module)` parent and VOS subclass; the defined helper has a different name. Legacy dispatch differs. This unexecuted source mismatch is not a verified memory-invalidation remedy. [Calls][SAM-prop] · [defined helper/VOS subclass][SAM-helper]
+
+**Proposed creative-agent gate:** bind masks to capture/build/camera and immutable clip hashes; validate mapping and prompt provenance; capture correction preview; explicitly rerun needed forward/reverse intervals; validate reacquisition through occlusion/cuts; reject missing/error frames; compare to engine IDs or authored assertions independently. Retest corrected-frame retention and optional memory-clearing behavior before depending on this revision. These are proposed tests, not measured capability.
+
+**Terms:** inspected source uses Apache-2.0; official README separately licenses model checkpoints/training/demo under Apache-2.0. Optional connected-component code is BSD-3-Clause; demo fonts have separate terms. This does not clear source videos or downstream model/data dependencies. [License][SAM-license] · [component license][SAM-cc] · [README][SAM-readme]
+
+[SAM-init]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L41-L153
+[SAM-reset]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L675-L734
+[SAM-load]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/utils/misc.py#L92-L309
+[SAM-prompt]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L160-L381
+[SAM-base]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/modeling/sam2_base.py
+[SAM-prop]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L383-L630
+[SAM-remove]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L866-L954
+[SAM-release]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/RELEASE_NOTES.md
+[SAM-cli]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/tools/vos_inference.py
+[SAM-build]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/build_sam.py
+[SAM-holes]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/utils/misc.py#L312-L340
+[SAM-storage]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L737-L803
+[SAM-config]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/configs/sam2.1/sam2.1_hiera_l.yaml
+[SAM-helper]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/sam2/sam2_video_predictor.py#L956-L1011
+[SAM-license]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/LICENSE
+[SAM-cc]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/LICENSE_cctorch
+[SAM-readme]: https://github.com/facebookresearch/sam2/blob/2b90b9f5ceec907a1c18123530e92e794ad901a4/README.md#license
+
 
 ### CoTracker3
 
@@ -318,12 +446,60 @@ Extensible baseline for loading GameMap tools and observation/context policies.
 - **Source terms:** MIT repository.
 - **Primary sources:** [pi extensions](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/docs/extensions.md); [pi repository](https://github.com/earendil-works/pi)
 
+#### Pi evidence lifecycle and interrupted execution
+
+Additional source inspection on 2026-10-18 at the existing pi commit **482c1381a00d8d00bc81697e4a980c593db6803e**, which matched the default branch when checked. This is scoped implementation evidence, not an installed package, model or GameMap adapter. No agent, model call, engine or fixture was executed. The proposed adapter and evaluation controls below are **GameMap editorial guidance**.
+
+##### 1. Resource lifetime and the actual settlement boundary
+
+The extension factory may load without a session. Long-lived processes/watchers belong in session_start or their owning command/tool; cleanup belongs in idempotent session_shutdown. Reload and session replacement invalidate old runtime/context objects. A later withSession callback receives the replacement context. agent_end ends a low-level run; retries, compaction, or queued work can follow. agent_before_settle is the actionable final boundary, while agent_settled is notification-only. [Lifecycle documentation](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/docs/extensions.md#L54-L150), [replacement context](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/docs/extensions.md#L307-L332), [reload implementation](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/agent-session.ts#L3690-L3730)
+
+**Adapter implication, proposed:** an engine connection, capture lease, and evidence recorder need explicit ownership and shutdown/rebind behavior. Do not finalize an evaluation at the first agent_end or continue using a pre-reload engine handle.
+
+##### 2. Cancellation is cooperative; nested signal overrides matter
+
+The core checks cancellation before execution, then awaits tool.execute with the supplied AbortSignal. This path has no forced termination or rollback wrapper. A tool that ignores its signal can continue and return normally. Nested executeTool defaults to its parent's signal, but an explicitly supplied signal **replaces** that default; this call site does not combine signals. [Execution](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/agent/src/agent-loop.ts#L708-L779), [awaited execution and error conversion](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/agent/src/agent-loop.ts#L821-L859), [nested signal selection](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/extensions/runner.ts#L968-L994)
+
+RPC abort waits for idle but does not clear queued messages; clear_queue followed by abort is documented for Esc-like behavior. [RPC contract](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/docs/rpc-commands.md#L94-L128)
+
+**Adapter implication, proposed:** distinguish cancel-requested, engine-acknowledged-stop, completed-after-cancel, and outcome-unknown. Reconcile job IDs and authoritative engine state before retrying a mutation. A timeout signal must preserve intended parent-cancellation semantics explicitly.
+
+##### 3. Original image, persisted result, and request context differ
+
+_afterToolCall runs extension tool_result handlers and then normalizes their image content with the current model's resize profile and image settings. normalizeToolResultImages invokes processImage, can replace bytes/MIME type and add hints, but preserves the original block when processImage returns ok:false; this wrapper does not catch arbitrary thrown exceptions. Disabling resizing still permits unsupported-format conversion. Thus the persisted tool-result image need not equal the original screenshot, and normalization failure does not certify provider compatibility. [Hook ordering](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/agent-session.ts#L684-L726), [normalization](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/utils/tool-result-images.ts), [conversion/resize](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/utils/image-process.ts)
+
+Request-time context processing starts from a structured clone; context handlers receive conversation messages while system state is restored, followed by context_with_system on the full transcript. Separately, a tool_result handler replacing content without structuredContent drops the prior structured result. [Context composition](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/extensions/runner.ts#L1300-L1355), [result composition](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/extensions/runner.ts#L1189-L1247)
+
+**Adapter implication, proposed:** record original artifact hash/dimensions, stored derivative identity, selection transformations, and request-evidence manifest separately. Context compression must not silently destroy the structured manifest needed by nested orchestration. Final provider preprocessing remains an additional boundary, not verified here.
+
+##### 4. Resuming a conversation does not establish engine-job recovery
+
+Session context follows the active branch and latest compaction; older summarized entries are omitted from active context but remain in the session file. The default summary serializer extracts text, not image pixels, and truncates tool-result text longer than 2,000 characters to that prefix plus a marker; shorter text remains unchanged. An image retained in the kept tail differs from an image whose entry was summarized away. [Session projection](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/session-manager.ts#L469-L573), [summary serializer](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/compaction/utils.ts#L90-L155), [default summary request](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/compaction/compaction.ts#L679-L735), [session semantics](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/docs/sessions.md)
+
+Branch-aware state should reconstruct from getBranch; appendEntry stores non-context data, while sendMessage adds model context. This is not evidence of durable continuation of an interrupted JavaScript execution, engine process, or remote job. [State contract](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/docs/extensions.md#L320-L332)
+
+**Adapter implication, proposed:** persist artifact/job identities and authoritative completion status externally; revalidate them on resume. Branch switching must not mix accepted assets or completion records from alternative histories.
+
+##### Fair fixture and RSI question, unexecuted
+
+Question: **Does crop-plus-global evidence retain its benefit after compaction and interrupted execution only when paired with branch-aware manifest rehydration?**
+
+Keep task set, action policy, model, permissions, scoring, and accepted engine mutations fixed. Cross two selection policies (global frame; crop plus global) with two retention policies (normal compacted context; explicit durable manifest plus evidence rehydration). Match visual/token budgets including rehydration and charge all selector/preprocessing/retry costs.
+
+First propose a deterministic mock bridge with numbered mutations and captures, delayed completion, cooperative and noncooperative cancellation, and original/derivative hashes. Script identical interruption locations: before dispatch; after engine acceptance before result; after result before compaction; after compaction before resume. Exercise default versus explicitly overridden nested signals, queued work, reload, and abandoned branches. These are proposed cases, not reproduced Pi bugs.
+
+Require separate assertions for duplicate mutations, wrongly assumed cancellation, stale connection use, branch contamination, missing evidence, original-to-derivative provenance, and final authoritative state. Count failures and unknown outcomes; do not score missing observations as success. A subsequent authorized project-owned engine fixture can test task quality with the same fault schedule. Freeze held-out cases before candidate selection.
+
+Unknowns: actual engine cancellation/transaction semantics, service idempotency, package/runtime compatibility, process-crash durability, provider image transformations, and measured quality/latency. Static source and unexecuted upstream tests cannot resolve them.
+
+
+
 ### GEPA adapter and optimizer
 
 Reflective evolution over named textual candidate components.
 
 - **Documented surface and proposed use:** Domain adapter implements evaluate and make_reflective_dataset; optional proposal logic. Candidate maps component names to text.
-- **Limits:** GameMap must build executable policies and independent evaluator. Rich visual artifacts need deliberate reflection-packet conversion; benchmark gains are not game-production evidence. See [execution-control boundaries](benchmark-reproducibility.md#gepa-execution-controls-counts-caches-and-resumed-evidence) for proposal counts, budget admission, cost tracking, cache identity and resumed scores.
+- **Limits:** GameMap must build executable policies and independent evaluator. Rich visual artifacts need deliberate reflection-packet conversion; benchmark gains are not game-production evidence. See [execution-control boundaries](benchmark-reproducibility.md#gepa-execution-controls-counts-caches-and-resumed-evidence) for proposal counts, budget admission, cost tracking, cache identity and resumed scores. See [composition and accounting](benchmark-reproducibility.md#harness-composition-and-evaluation-accounting) for coupled components, whole-text merges and execution-path counter differences.
 - **Source terms:** MIT repository.
 - **Primary sources:** [GEPA adapter protocol](https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/core/adapter.py); [GEPA repository](https://github.com/gepa-ai/gepa); [GEPA paper](https://arxiv.org/abs/2507.19457)
 
@@ -332,7 +508,7 @@ Reflective evolution over named textual candidate components.
 Outer-loop search over code controlling model information access.
 
 - **Documented surface and proposed use:** Use onboarding to specify task, mutable boundary, interface, evaluation splits, baseline, budget and evidence.
-- **Limits:** General harness optimization evidence; transfer to game production remains untested. Do not expose final test data/results through persistent memory.
+- **Limits:** General harness optimization evidence; transfer to game production remains untested. Do not expose final test data/results through persistent memory. The [classification implementation audit](benchmark-reproducibility.md#harness-composition-and-evaluation-accounting) narrows import validation, dataset/seed coverage and character-based cost interpretation.
 - **Source terms:** MIT upstream repository.
 - **Primary sources:** [Meta-Harness onboarding](https://github.com/stanford-iris-lab/meta-harness/blob/8123ccabe2b19fa1123090b2e5f1bacc20963ce8/ONBOARDING.md); [Meta-Harness repository](https://github.com/stanford-iris-lab/meta-harness); [Meta-Harness paper](https://arxiv.org/abs/2603.28052)
 

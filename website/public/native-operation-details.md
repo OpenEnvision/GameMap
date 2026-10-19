@@ -59,6 +59,99 @@ Version scope: Epic sources vary across versioned experimental Python 5.4/5.5/5.
 | **Render offline audio frames**<br>[AudioRenderer](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/AudioRenderer.html) | AudioRenderer capture mutes live output and moves audio work to the main thread; Render must be called every frame even when there are zero samples. Unity 6000.0 excludes Web player builds; Editor capture can work with Web selected. | Completion/cancellation/retry/persistence: full recording outcome not established by this summary. Proposed gate: maintain the frame/sample schedule, detect missing calls and separately archive the captured samples; offline capture is not evidence of physical-device latency. |
 | **Reset synthetic input test state**<br>[Input System testing](https://docs.unity.cn/Packages/com.unity.inputsystem%401.9/manual/Testing.html) | InputTestFixture resets input state; package testables and test-assembly references must be enabled. Custom startup registrations are not automatically included. | Completion/cancellation/retry/persistence: fixture does not establish full game reset. Proposed gate: explicitly register required layouts/processors and distinguish synthetic-input coverage from physical hardware/focus behavior. |
 
+## Input delivery and observation alignment
+
+Sources checked 2026-10-18; full reproduction not performed. This complements [synthetic input and impairment selection](asset-validation-contracts.md#7-select-the-right-impairment-and-input-surface-for-a-regression) and [frame readback ownership](visual-evidence-research.md#engine-frame-readback-and-capture-ownership). No engine, game or fixture was executed.
+
+### Finding and version boundary
+
+An injected event, an input-system update, a gameplay callback and a rendered result are separate observations. Official sources provide useful boundaries for the first transitions; they do **not** establish which project-specific rendered frame contains an intended interaction. That unresolved gap should remain in the research index.
+
+- **Unity Input System 1.9.0:** the existing dossier's package family is retained deliberately, without claiming it is current. Official 1.9 API pages identify 1.9.0. Tag `1.9.0` resolved to `73feff4267461a868fdfc3fa43f112de1f5312c1`; the [pinned package manifest](https://github.com/Unity-Technologies/InputSystem/blob/73feff4267461a868fdfc3fa43f112de1f5312c1/Packages/com.unity.inputsystem/package.json) confirms 1.9.0. This package pin does not identify an installed Unity editor/player, platform backend or project configuration.
+- **Godot 4.5.0 stable:** tag `4.5-stable` resolved to `876b290332ec6f2e6d173d08162a02aa7e6ca46d`; the [pinned version file](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/version.py) confirms 4.5.0 stable. Implementation claims below use this commit; hosted 4.5 documentation remains mutable. Neither a build nor platform-specific focus behavior was tested.
+
+### Unity: queue, update and action are different gates
+
+#### Queue admission is not state consumption
+
+`InputSystem.QueueEvent` copies the event into its buffer and assigns an event ID. In fixed-update mode, a future timestamp can delay processing until the matching update window. `onEvent` is a pre-processing observer: another listener can mark an event handled and prevent its application; disabled devices may still produce this notification. Events are not sorted by timestamp. Record event identity, production order and intended device separately from a later state/action observation. [U1]
+
+Default processing occurs before `MonoBehaviour.Update`; fixed processing occurs before `MonoBehaviour.FixedUpdate`. Before-render updates only consume relevant tracking-device input, so they are not a general keyboard/gamepad flush. Mouse/touch event merging can also change the correspondence between generated events and observed events. Record update mode/type, input-update count, simulation tick and render frame separately. [U2]
+
+`onAfterUpdate` marks completion of an input-system update, not gameplay or rendering. Calling `InputSystem.Update()` manually inserts another complete input-state update; the API discourages this outside tests or manual-update mode. It is not a harmless screenshot synchronization call. [U1]
+
+#### Action observation needs its configuration
+
+Enabled actions monitor their resolved controls. Their `started`, `performed` and `canceled` callbacks occur during the input update, before the corresponding script update. Action type and interactions determine phases; multiple value changes can be observed in one frame. A `performed` callback therefore neither counts a unique rendered action nor proves the game accepted its effect. [U3]
+
+`Disable()` can synchronously invoke `canceled` for an in-progress action. Re-enabling a Value action causes an initial-state check in the next input update and can trigger against an already-actuated control without a new event; Button and PassThrough actions can opt into that behavior. A reset observer must distinguish fresh input from disable/re-enable transitions. [U3]
+
+#### Focus reset is not a release event
+
+With the default background policy, focus loss soft-resets and disables devices that cannot run in the background. Regaining focus re-enables and requests synchronization; unsupported synchronization falls back to a soft reset. Reset cancels associated actions without triggering release-based actions. Editor Game View focus routing adds another policy layer and can treat keyboard/pointer and gamepad input differently. These rules depend on Run In Background and supported platforms; do not infer a built player's behavior from an editor-only test. [U4]
+
+A soft reset excludes controls marked `dontReset`, such as pointer position; a hard reset includes them. Sending default-valued state is different from device reset and can trigger an interaction rather than cleanly cancel it. Neither operation restores character velocity, queued commands, animations or other game-owned state. The last statement is an integration boundary, not an additional Unity reset guarantee. [U5]
+
+#### Failure is not necessarily a deferred event
+
+`maxEventBytesPerUpdate` defaults to 5 MB in the cited API. Exceeding it discards remaining buffered events, logs an error and aborts the update; this is not a promise to process the backlog next frame. The separate default 1,000-event queuing limit applies to events queued *during* an update, preventing callback-driven event loops. Preserve settings and diagnostics alongside the event ledger. A timeout or absent action callback is insufficient evidence that retrying cannot duplicate a game effect. [U6]
+
+### Godot: polling state and routed events are different surfaces
+
+`Input.action_press()` changes action state for polling but does not call `Node._input()`. `Input.parse_input_event()` feeds an event through the event path; it does not simulate OS-side effects such as moving the operating-system pointer. Global `Input` polling state is not changed by `Control.accept_event()` or `Viewport.set_input_as_handled()`, which govern scene propagation. Thus a true global pressed state does not prove that an `_unhandled_input` gameplay handler received the event. [G1]
+
+The documented route permits `_input` or GUI handling to stop propagation before `_unhandled_input`; embedded Windows and SubViewports have distinct routing. Record the target viewport, focused control, intended handler and enabled processing, rather than treating one global event receipt as delivery to every game view. [G4]
+
+#### Buffered injection has a concrete object-lifetime hazard
+
+In the pinned implementation, `parse_input_event()` buffers the event by reference, or accumulates it into the last buffered event, when accumulation or agile flushing is enabled; otherwise it calls the internal parser immediately. A debug check warns against parsing the same event object multiple times in one frame. Use distinct event instances for press and release; do not mutate and re-submit a still-buffered object. `flush_buffered_events()` drains through the internal parser, whose final user-code delivery is asserted to run on the main thread. These are source observations, not a reproduced failure. [G2]
+
+`flush_buffered_events()` sends buffered events to the game loop, not through an entire simulation/render step. The pinned main loop conditionally flushes before each physics step and before process execution when agile flushing is enabled. Different physics-step counts and buffering settings therefore matter to the observation schedule; a single flush is not a fixed simulation-time advance. [G1, G3]
+
+`is_action_just_pressed()` describes the current frame or physics tick and can remain true even after a rapid release. Event-specific action queries are appropriate inside input handling. Record both event-time state and the actual game-consumption phase; do not substitute an end-of-frame held-state poll for the event sequence. [G1]
+
+Godot's internal `release_pressed_events()` first flushes buffered input, then clears several pressed-state collections and releases pressed actions. It is not presented here as a script-facing universal reset API, a platform focus contract or a cancellation/rollback fence. This ordering reinforces the need to account for pending delivery before declaring a fresh trial. [G2]
+
+### Proposed application-owned evidence contract
+
+The following is **GameMap editorial guidance, unimplemented**. Use a disposable owned project with one input-controlled marker and one visible, authoritative state transition. Keep five statuses rather than a single success bit:
+
+1. **Submitted/accepted:** injection surface, call result/exception, event or command identity, target device/action, press/release/value, timestamp and production order
+2. **Input observed/consumed:** observed raw event, update phase/type/count and resulting control/action state; distinguish a pre-processing receipt from state application
+3. **Gameplay consumed:** the intended controller/handler records the trial ID, simulation tick, decision and state revision; explicitly record ignored, GUI-consumed or rejected commands
+4. **Rendered:** the selected camera/viewport renders a marker tied to that state revision, with target/frame provenance and the existing capture-readiness checks
+5. **Artifact retained:** capture identity/hash and the complete input/action/gameplay timeline are saved together
+
+The rendered marker is a proposed corroborating observation, not a universal engine causal guarantee. Asynchronous commands, physics interpolation, animation, multiple cameras and UI routing can each intervene. Define project-specific expected state changes, tolerated delay and stopping conditions before testing. If the handler or state observer is unavailable, report alignment unknown; neither a screenshot nor an action callback fills that missing link alone.
+
+### Unexecuted bounded fixtures
+
+| Fixture | Separate observations and proposed acceptance |
+| --- | --- |
+| Unity dynamic versus fixed input, including a future-timestamp event | Queue ID, update type/count, action phase, game tick and rendered revision; future input must not be declared lost merely because the next render lacks it |
+| Unity raw observer marks an event handled | Raw receipt can exist without control/action/gameplay application; harness must retain that distinction |
+| Unity callback burst against a deliberately small test-only event budget | Record error and absent event outcomes; never label discarded input as merely pending or automatically replay an uncertain effect |
+| Unity held control across disable/re-enable and focus loss/regain | Separate cancellation, initial-state activation, synchronization/reset and actual release; no stale gameplay command enters the next trial |
+| Godot action_press versus a freshly allocated InputEventAction | Polling-only and callback-driven controllers produce intentionally different evidence; report whether the chosen surface exercises the target controller |
+| Godot press/release plus GUI interception, accumulation and multiple physics steps | Distinct event objects, route/handler observations and tick logs; global pressed/just-pressed state cannot substitute for routed gameplay receipt |
+| Reset or scene reload with pending work | Invalidate the prior trial identity, reconcile pending commands and verify neutral input plus application state before admitting a new trial; unknown work prevents a clean-reset verdict |
+
+No fixture pass/fail result, latency measurement, deterministic replay claim or physical-hardware equivalence is established. Project-specific input-to-frame alignment, cancellation of already-started effects, cross-platform focus behavior and complete reset remain open implementation work. This note adds documented distinctions and testable failure hypotheses, not a working agent adapter or permission to operate a production game.
+
+### Primary sources
+
+- **U1:** [InputSystem 1.9 API](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.9/api/UnityEngine.InputSystem.InputSystem.html), corroborated by [pinned InputSystem.cs](https://github.com/Unity-Technologies/InputSystem/blob/73feff4267461a868fdfc3fa43f112de1f5312c1/Packages/com.unity.inputsystem/InputSystem/InputSystem.cs#L2470-L2523) and [pre-application listener handling](https://github.com/Unity-Technologies/InputSystem/blob/73feff4267461a868fdfc3fa43f112de1f5312c1/Packages/com.unity.inputsystem/InputSystem/InputManager.cs#L3341-L3359)
+- **U2:** [Input events 1.9: processing and merging](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.9/manual/Events.html#processing-events)
+- **U3:** [InputAction 1.9 API](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.9/api/UnityEngine.InputSystem.InputAction.html)
+- **U4:** [Input settings 1.9: background and editor focus behavior](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.9/manual/Settings.html#background-behavior)
+- **U5:** [Devices 1.9: resets](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.9/manual/Devices.html#device-resets)
+- **U6:** [InputSettings 1.9: event budgets](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.9/api/UnityEngine.InputSystem.InputSettings.html#UnityEngine_InputSystem_InputSettings_maxEventBytesPerUpdate), corroborated by [pinned InputManager diagnostics](https://github.com/Unity-Technologies/InputSystem/blob/73feff4267461a868fdfc3fa43f112de1f5312c1/Packages/com.unity.inputsystem/InputSystem/InputManager.cs#L3545-L3566)
+- **G1:** [Godot 4.5 Input](https://docs.godotengine.org/en/4.5/classes/class_input.html), corroborated by [pinned Input.xml](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/doc/classes/Input.xml)
+- **G2:** [Pinned input.cpp: injection, flushing and internal release](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/core/input/input.cpp#L1200-L1296); [main-thread delivery assertion](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/core/input/input.cpp#L734-L737)
+- **G3:** [Pinned main loop: physics/process and conditional input flushing](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/main/main.cpp#L4722-L4805)
+- **G4:** [Godot 4.5 event propagation](https://docs.godotengine.org/en/4.5/tutorials/inputs/inputevent.html#how-does-it-work)
+
+
 ## DCC batch transforms and material export
 
 | Operation and primary evidence | Documented behavior | Lifecycle boundary and proposed gate |
@@ -66,6 +159,48 @@ Version scope: Epic sources vary across versioned experimental Python 5.4/5.5/5.
 | **Run 3ds Max batch and Python**<br>[3ds Max Batch](https://help.autodesk.com/cloudhelp/2024/ENU/3DSMax-Batch/files/GUID-48A78515-C24B-4E46-AC5F-884FBCF40D59.htm); [3ds Max Python threading](https://help.autodesk.com/cloudhelp/2024/ENU/MAXDEV-Python/files/MAXDEV_Python_threading_html.html) | 3dsmaxbatch.exe runs Python/MAXScript, optionally loads a scene, then exits; listener logging requires explicit configuration. The 2024 threading documentation disallows pymxs calls and pymxs-created objects on worker threads; mxstoken is deprecated and ineffective. | Completion/cancellation/retry/persistence: not established beyond script/log surface. Proposed gate: collect both logs and independently inspect saved outputs; queue scene mutation on the main thread rather than parallelizing calls into one scene. |
 | **Separate Substance toolkit transforms**<br>[Substance Automation Toolkit command lines](https://adobedocs.github.io/substance-automation-toolkit/pysbs/sat_commandlines/sat_commandlines.html) | Baker creates geometry-derived maps; Cooker converts SBS graphs to SBSAR; Mutator specializes graph content; Renderer evaluates SBSAR into maps; Updater upgrades document versions. | Completion/cancellation/retry/persistence guarantees: not established by command-line inventory. Proposed gate: record exact tool/version/backend and intermediate artifact hashes; cook, render and document migration are distinct operations with different outputs. |
 | **Export Painter Texture Set channels**<br>[Painter Python API](https://experienceleague.adobe.com/en/docs/substance-3d-dev/painter-python/substance-3d-painter-python) | Official Python tutorial demonstrates exporting Texture Set channels using a specified export preset. | Completion/cancellation/retry/persistence: not established here. Proposed gate: preserve project/preset/channel inventory and independently validate exports; the existing texture work order supplies color and subimage acceptance, not an implemented Painter job observer. |
+
+## Lighting bake completion and persisted scene association
+
+Source inspection on 2026-10-18: Blender `v4.5.0` resolves to `8cb6b388974a817afedf1317ce26f0c75aa5f181`; Godot `4.5-stable` is the existing `876b290332ec6f2e6d173d08162a02aa7e6ca46d` pin. These are selected source versions, not installed builds. No bake, GPU job, image save, failure or reopen fixture was executed. Blender manual/API retrieval was unavailable during this check; the Blender claims below use inspected implementation and RNA definitions.
+
+### Blender: target mutation is separate from image delivery
+
+The RNA target definitions distinguish image data-blocks associated with active material image-texture nodes from active mesh color attributes. The image-target validation checks UV presence and image initialization. A material slot without an active image can produce an informational report and continue, so the intended target inventory needs its own check; do not infer every material received a result from one operator status. [Target definitions][light-blender-rna], [validation, lines 499–589][light-blender-bake]
+
+The operator exposes an external filepath and save-mode enum, but the inspected initialization explicitly rewrites EXTERNAL to INTERNAL. Thus supplying a filepath does not establish a written texture in this version. Image output is marked dirty. An explicit `Image.save` path reports save failures; `Image.pack` can package dirty image data in memory. Packing alone does not save the containing `.blend` to disk. These are available persistence routes, not a claim that every alternative is invalid. Retain output reports, saved bytes and a cold-reopen observation rather than accepting an in-memory preview. [Advertised modes, lines 446–453][light-blender-rna], [forced mode, lines 1918–1922; filepath, 2253–2257; dirty image, 331][light-blender-bake], [image save/pack, lines 91–145 and 303–329][light-blender-image]
+
+The invoke path, when no bake job is already running, launches a job and returns RUNNING_MODAL; an existing bake job instead returns CANCELLED. The modal handler reports FINISHED once that job no longer exists; this condition alone does not distinguish successful baking from cancellation or failure. The synchronous execution path returns a bake result, but its non-selected-to-active batch loop assigns the result repeatedly and returns the last value. **Adapter implication:** record dispatch mode, target/object inventory, per-object reports, output changes and persistence independently. No failed-batch or cancellation behavior was reproduced. [Invocation, lines 2171–2220; modal, 139–151; synchronous path, 1931–1989][light-blender-bake]
+
+### Godot: native editor operation, atlas resources and scene identities
+
+The inspected stock script binding leaves `LightmapGI::bake` commented out. The editor plugin calls that native method, choosing the edited root or the lightmap's parent as the scan root. This establishes an editor/native path, not a callable GDScript bake method or an implemented GameMap adapter. Custom native integrations are not ruled out. The pinned class documentation says exported projects cannot bake lightmaps and qualifies the Forward+/Mobile-capable-device requirement with “if no custom lightmappers are installed.” Rendering already baked lightmaps is a separate capability. [Binding, line 1893][light-godot-core], [editor dispatch, lines 39–78][light-godot-editor], [class scope, lines 7–13][light-godot-class]
+
+For ordinary MeshInstance3D collection, the source requires visible Static-GI meshes and triangle surfaces with UV2 and normals, and records transforms relative to the LightmapGI. Native bake rejects a missing save path, missing eligible meshes or a computed lightmap dimension of zero. A `(0,0)` mesh size hint receives a 64×64 fallback before scaling. The versioned tutorial additionally warns that hiding a Light does not remove its contribution: use its Disabled bake mode. Fully baked static-surface lighting does not update merely because a light is moved or recolored. UV2/import state and bake generation therefore belong in the evidence record. [Collection, lines 373–415; initial gates, 885–951][light-godot-core], [4.5 workflow and light modes][light-godot-guide]
+
+The native save path writes EXR lightmap atlases and optional PNG shadowmask atlases plus import configuration, reimports them, and requires loaded texture resources. It then records each baked user's NodePath, atlas UV scale, slice and sub-instance index in LightmapGIData, saves that resource, and assigns it to the live node. Later assignment resolves the paths and warns when previously baked nodes are missing. Image files alone do not establish that the current scene uses the intended bake. The inspected editor functions do not save a PackedScene as part of this operation. [Atlas persistence, lines 808–882; user associations, 1322–1333; final save/assignment, 1469–1479; path resolution, 1510–1543][light-godot-core]
+
+Two completion/recovery boundaries matter. First, the editor calls its end-of-bake routine before inspecting the returned error; that routine prints “Done baking lightmaps” regardless of that result. Second, the native path saves atlas files, then detaches and clears existing LightmapGIData before its final resource save. A later save error returns before reassigning it. These source paths do not establish atomic replacement or rollback, and no corruption was observed. Keep a recoverable previous generation and validate artifacts, native result, scene association and fresh reopen separately. [Editor completion/error ordering, lines 69–124 and 163–174][light-godot-editor], [replacement ordering, lines 1281–1308 and 1469–1479][light-godot-core]
+
+**Documentation discrepancy to preserve:** the pinned LightmapGI class note says PrimitiveMesh cannot bake because it cannot store UV2, while the versioned 4.5 tutorial describes primitive Add UV2 support. The tutorial separately provides a CSG-to-MeshInstance conversion route; that workaround changes representation and is not itself a contradiction of unsupported direct CSG baking. Do not turn the broad PrimitiveMesh statement into an unconditional eligibility rule. Inspect the actual generated mesh, UV2, normals, size hints and selected build; the conversion/import/reopen fixture remains unrun. [Class note][light-godot-class], [primitive/CSG workflows][light-godot-guide]
+
+### Proposed acceptance fixture, unimplemented and unexecuted
+
+Use a small rights-cleared room, an emissive surface, a static light, a dynamic light and an intentionally excluded object. Freeze geometry/material/light transforms, UV layers, engine and renderer, bake settings, color/exposure interpretation, source revision, scene generation and intended receiver inventory.
+
+For Blender, record exact active image/color targets, pass/filter and selected-to-active settings. Compare the image buffer, explicit saved texture or packed-and-saved project, and cold-reopened data. Include a missing material target and a canceled operation; neither a status string nor a changed preview certifies every output.
+
+For Godot, retain atlas/import/resource hashes and per-node UV/slice associations. Save the project-owned scene after the bake through a separately verified route, reopen in a fresh process and compare a fixed camera under recorded display settings. Test a missing UV2 receiver, renamed/reparented baked node, hidden versus Disabled light, and geometry/light changes without rebaking. Treat changed source inputs as a stale-generation condition even when old lighting still looks plausible. Exercise interrupted or failed saves only in disposable copies; keep previous artifacts rather than overwriting the sole recoverable baseline.
+
+Accept terminal success, artifact integrity, current scene association, persistence and rendered appearance as separate gates. Seam/noise/leakage tolerances, GPU/device compatibility, cancellation recovery, crash durability and actual target-build behavior need runtime evidence; the sources do not supply those results.
+
+[light-blender-rna]: https://github.com/blender/blender/blob/8cb6b388974a817afedf1317ce26f0c75aa5f181/source/blender/makesrna/intern/rna_scene.cc#L432-L453
+[light-blender-bake]: https://github.com/blender/blender/blob/8cb6b388974a817afedf1317ce26f0c75aa5f181/source/blender/editors/object/object_bake_api.cc
+[light-blender-image]: https://github.com/blender/blender/blob/8cb6b388974a817afedf1317ce26f0c75aa5f181/source/blender/makesrna/intern/rna_image_api.cc
+[light-godot-core]: https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/3d/lightmap_gi.cpp
+[light-godot-editor]: https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/editor/scene/3d/lightmap_gi_editor_plugin.cpp
+[light-godot-class]: https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/doc/classes/LightmapGI.xml
+[light-godot-guide]: https://docs.godotengine.org/en/4.5/tutorials/3d/global_illumination/using_lightmap_gi.html
 
 ## Audio middleware: authoring, readiness and ownership
 
@@ -91,6 +226,43 @@ For the separate Wwise Authoring output boundary, [SoundBank generation and arti
 **Proposed acceptance contract.** Record instance identity, API result, callback type, playback enum, pause state, event virtualization, applicable Core voice limits and stop intent separately. Join these observations to the existing captured-output evidence. Distinguish refusal, invalidated observation, normal native stop and verified audible completion. Neither STOPPED nor PLAYING nor event-level nonvirtual status is a standalone audible-success gate. Reconcile uncertain starts before retrying.
 
 **Unimplemented fixtures:** polyphony refusal with no STOPPED callback; Studio-real/Core-virtual playback under a constrained software-channel limit; pause while PLAYING; handle invalidation before terminal polling; virtual-to-real restoration. Capture onset and intended tail separately. No fixture, adapter, engine/API/model execution or physical-device measurement was performed.
+
+## Runtime audio observation and capture integrity
+
+**Source-only scope:** checked 2026-10-18. Godot documentation is version 4.5; source is `4.5-stable`, resolved through the [official release](https://github.com/godotengine/godot/releases/tag/4.5-stable) to commit `876b290332ec6f2e6d173d08162a02aa7e6ca46d`. Relevant source ranges were also retrieved at that commit through the GitHub connector. Unreal references are explicitly 5.5; its Python reference is marked Experimental. No engine, model, audio API, capture device or proposed fixture was executed. No runtime compatibility or acoustic fidelity is established.
+
+### 1. Identify the tap, not just the audio filename
+
+Godot's [AudioEffectCapture reference](https://docs.godotengine.org/en/4.5/classes/class_audioeffectcapture.html) describes raw frames copied from its attached audio bus into a ring buffer. Its `get_buffer(n)` returns the requested count or an empty array when insufficient frames are available. Empty reads are not evidence of silent samples. The capture does not encode a finished audio asset.
+
+The pinned [AudioServer mixing path](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/servers/audio_server.cpp#L538-L657) processes enabled effects in sequence before applying that bus's volume and mute/solo attenuation, then sends the result downstream. **Source-derived implication:** a capture effect can contain nonzero input while its own bus is muted. Moving it around an effect chain changes the observed processing stage. A child-bus capture does not automatically include downstream processing or other buses. Even a last effect on Master precedes Master bus gain/mute in this implementation.
+
+The [audio-bus guide](https://docs.godotengine.org/en/4.5/tutorials/audio/audio_buses.html) is marked not yet updated for 4.5 and warns that Web Sample playback does not support these effects; Stream playback is required, with a latency tradeoff when threads are unavailable. The [versioned Web-export guide](https://docs.godotengine.org/en/4.5/tutorials/export/exporting_for_web.html#audio-playback) independently documents the same Sample/Stream limitation without that stale-page banner. Record playback mode rather than treating an unsupported observation route as silence. Keep the initial fixture stereo; surround coverage and channel-pair ownership need separate validation.
+
+### 2. Distinguish observation loss from playback failure
+
+The pinned [capture implementation](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/servers/audio/effects/audio_effect_capture.cpp#L121-L140) copies input to output regardless of ring capacity. It inserts the incoming processing block only when the ring has enough space for the entire block; otherwise it increments `discarded_frames` by that block's frame count. Thus capture loss does not, by itself, prove an audible engine underrun.
+
+The [same implementation's buffer methods](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/servers/audio/effects/audio_effect_capture.cpp#L34-L119) show that `clear_buffer()` advances the read position without resetting pushed/discarded counters. The public reference says buffer-length changes have no effect after initialization. Use counter baselines/deltas and actual reported frame capacity; do not assume that setting a larger duration repaired the current capture. A clear is an explicit observation discontinuity even when the overflow counter stays unchanged. Counter totals alone do not locate each missing interval precisely.
+
+### 3. Separate rendered buffers, export completion and audible output
+
+Unreal's [5.5 mixer overview](https://dev.epicgames.com/documentation/en-us/unreal-engine/audio-mixer-overview-in-unreal-engine?application_version=5.5) describes submix output as a combination of child submixes and registered/sent sources, processed through the submix effect chain. It separately describes rendering future buffers ahead of the buffer currently heard. Capture therefore establishes a selected render-path observation, not physical speaker output.
+
+[ISubmixBufferListener](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Engine/ISubmixBufferListener?application_version=5.5) receives a newly rendered submix buffer with owning submix, sample/channel counts, sample rate and `AudioClock`. Preserve those fields; the inspected reference does not establish a shared clock epoch with game ticks, video timestamps or device presentation, nor a precise pre/post-gain placement for every listener path. Do not manufacture that alignment from parameter names.
+
+[AudioMixerLibrary](https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/AudioMixerLibrary?application_version=5.5) distinguishes pause from finalization and defaults a missing submix selection to master output. [SoundSubmix](https://dev.epicgames.com/documentation/en-us/unreal-engine/python-api/class/SoundSubmix?application_version=5.5) exposes `on_submix_recorded_file_done` for completed file export. Keep stop intent, export notification, independently reopened artifact and acoustic observation as separate outcomes. These pages do not establish cancellation, crash-safe durability or safe overlapping recording requests.
+
+Godot's [AudioServer reference](https://docs.godotengine.org/en/4.5/classes/class_audioserver.html) identifies driver-dependent output latency and warns against querying it every frame. Headless selects the Dummy driver. Its [synchronization tutorial](https://docs.godotengine.org/en/4.5/tutorials/audio/sync_with_audio.html), explicitly marked not yet updated for 4.5, discusses chunked playback position, latency correction, jitter and hardware/system-clock drift. Treat these as estimation guidance, not measured device latency or proof of synchronization.
+
+### Proposed acceptance fixture, unimplemented and unexecuted
+
+**GameMap editorial guidance:** create a disposable stereo scene with known left/right impulses, a visible marker, two routed buses and an identifiable effect. Preserve build/platform, audio driver/device, playback mode, routing/effect order, gain/mute state, sample rate, capture identity, read counts, counter baselines and clock domains.
+
+Compare taps before/after the effect and on Master; mute the source bus; bypass capture; deliberately stall only the collector until overflow; clear the ring mid-run; pause/resume recording; stop and await export notification, then reopen and count samples. Require independently observed markers and explicit gaps. An overflow invalidates continuous-capture acceptance; an absent callback or empty read remains unknown, not success or silence. Never concatenate separated segments as if time were continuous.
+
+Repeat markers across the intended session to separate offset from drift. Device-output claims require an independently characterized loopback or acoustic measurement, including its own latency and uncertainty. Downstream loudness/loop checks should consume only artifacts whose tap and coverage are documented. Keep game correctness, observer integrity and perceptual review as separate verdicts.
+
 
 ## Source scope and migration accounting
 
@@ -168,3 +340,64 @@ For runtime content updates, [Godot 4.4 pack activation](production-work-orders.
 ## Deliberately retained gaps
 
 None of these rows provides a universal save/reopen driver, cross-engine object identity map, render-completion collector, audio-device observer, console toolchain, license entitlement or deterministic reset fixture. Private studio APIs are not implied. Cancellation and recovery should be validated with disposable projects and owned processes before production use; destructive cleanup, source-control submission, distribution and paid service calls are outside this source-only research.
+
+
+## Recorded dialogue and mouth-cue validation
+
+Checked 2026-10-19. This source-only asset-processing contract connects recorded speech to project-owned mouth shapes. It complements [narrative epochs](gameplay-state-contracts.md#narrative-checkpoints-cancellation-and-world-effect-transactions) and the audio observation contracts above; it does not establish perceptual synchronization. No executable, audio, model or engine fixture was run.
+
+### Source and artifact availability
+Use **Rhubarb v1.14.0**, whose annotated tag resolves to **9b9573cd21b253c9ba58739bbd1aa0b50b991bff**. The official release was published 2025-04-03; it remained the latest release returned by the official API when checked. The release lists Linux, macOS and Windows ZIPs; only release metadata was inspected, not the binaries or their integrity. Asset digests were null. The pinned workflow targets Windows x64, macos-13 and ubuntu-20.04 builds; do not infer a native Apple Silicon release or all current OS support. Runtime recognizers load local resources from the executable-relative res/sphinx directory; packaging copies language/dictionary and acoustic-model resources there. Keep the distribution resources with the executable. (sources R1–R3)
+
+### Exact input and recognition boundary
+Proposed CLI shape, **not executed**:
+```text
+rhubarb --machineReadable --recognizer pocketSphinx --exportFormat json --extendedShapes GHX --dialogFile line.txt --output line.cues.candidate.json line.wav
+```
+
+The input is last. Default recognizer is pocketSphinx, default export is TSV; JSON must be selected. --output overwrites an existing destination; omit it and results go to stdout. Use a fresh candidate path, separate from source audio and accepted cues. (sources R4, R5)
+
+The pinned file factory selects .wav or .ogg case-insensitively, rejecting other extensions. WAV decoding expects little-endian RIFF/WAVE and uncompressed PCM or IEEE float, including supported extensible subformats: ordinary 8/16/24/32-bit PCM and 32/64-bit float are covered by the reader; it rejects unsupported codec/sample organization. .ogg means Ogg **Vorbis**, not every codec in an Ogg container. Both readers average channels into mono. Recognition resamples segments internally to 16 kHz and a 16-bit buffer: “input must already be 16-kHz mono PCM” would be incorrect. Source does not establish a general maximum file length or universal decoder robustness. A clean single-speaker mono delivery file is a proposed fixture choice, not a CLI requirement. Multichannel averaging can cancel opposite-polarity speech or mix speakers, so validate the actual analysis signal. (sources R6–R8)
+
+pocketSphinx is intended for English; --dialogFile supplies ASCII/UTF-8 text to bias its word model rather than forcing an exact transcript. The source combines ordinary and dialogue-biased language models, then aligns recognized words’ phones. phonetic is documented for non-English/language-independent use, with lower typical precision; the pinned implementation still uses the packaged acoustic/phone models and **ignores dialogue for recognition** (the CLI still reads a supplied --dialogFile). Do not promise text-assisted non-English alignment. (sources R4, R7, R9)
+
+### Cue semantics and completion
+JSON contains metadata.soundFile (absolute source path), metadata.duration, and mouthCues entries with start, end and value. Times are seconds relative to the recording. Internally the timeline is integer centiseconds; duration is truncated downward to a 0.01-second boundary. This is not sample accuracy, game-frame timing, subtitle text or a confidence score. Adjacent intervals share boundaries. The JSON exporter also emits a zero-length idle fallback when animation is empty, so mere nonempty mouthCues does not establish usable speech. (sources R10)
+
+Labels are A–F plus selected G/H/X: A closes lips; B slightly open with clenched teeth; C open; D wide-open; E rounded; F puckered; G lower-lip/upper-teeth; H tongue-up; X rest. A–F are mandatory in the tool’s target shape set; --extendedShapes defaults to GHX and an empty string disables all three. These are animation categories, not engine blend-shape names or one-to-one phoneme IDs. The animation pipeline applies timing optimization, pauses, tween insertion and shape-set conversion after recognition. A cue boundary therefore need not equal a raw phoneme boundary. (sources R4, R11)
+
+--machineReadable emits newline-delimited JSON status on stderr: start, progress, success, failure (with reason), and log. Preserve unknown event types/fields rather than failing future-compatible input. Source caveats:
+- CLI parsing happens before the machine-readable sink is installed; malformed arguments can produce ordinary text
+- --quiet takes precedence over --machineReadable in sink selection
+- Success is emitted after export returns but before the local output stream is destroyed; no explicit durable-file flush/readback contract is established. This is static source reasoning, not a reproduced truncation or write failure
+- Normal generation returns 0; handled errors return 1. Help/version also return 0, so exit status alone does not prove generated cues
+
+Use actual process termination + expected success status for a generation invocation + independently reopened/parsed artifact. Retain stderr and exit/signal outcome. Progress 1.0 is not completion. No resumable/cancellation/atomic replacement contract was established; a killed process or missing terminal event is an uncertain/failed candidate, never an accepted asset. (sources R5, R12)
+
+### Project-owned mapping and one engine interface
+**Proposed GameMap adapter, unimplemented:** version a map from every enabled cue label to project-owned sprite frame/attachment, rig pose, or blend-weight vector. Require asset/mesh identity, explicit neutral pose and transition policy; reject unmapped labels instead of guessing an ARKit/other naming convention. Map seconds using the actual audio instance and seek/playback position, with declared lead/lag and latency treatment. Treat pause, resume, pitch/rate change, seek, loop, skip and stop as clock/state transitions. On restart invalidate the old dialogue/audio epoch; recompute the current shape after seek rather than replaying stale cue events. The <0.01-second truncated tail requires a declared end/neutral policy. No universal sample-to-game-clock alignment is supplied by Rhubarb.
+
+One official engine API usable by a custom consumer is **Godot 4.5 MeshInstance3D**: find_blend_shape_by_name returns -1 when absent (including null mesh), set_blend_shape_value applies a weight at a valid index, and get_blend_shape_value reads it. An invalid get can return 0.0 with an error, so zero alone is not a successful neutral-pose check. Resolve and validate names against the particular mesh before writing/reading. This is an engine API building block, **not an official Rhubarb integration** or proof that weights look correct or remain in sync. Existing GameMap audio-clock/capture contracts still apply. (sources R13)
+
+### Acceptance fixture and rights
+**Unimplemented acceptance proposal:** archive tool/build/resource identity, recognizer/options, input hash, source audio duration/rate/channels, transcript hash where used, cue bytes, mapping version, engine/importer identity and audio-instance/session epoch. Validate finite sorted contiguous cue intervals within the truncated duration, enabled labels, positive usable clip length and matching source identity; bind by content hash rather than metadata path alone. Preserve the original output when stripping a private absolute path for distribution.
+
+Use owned short recordings with speech onsets/closures, pauses and a non-centisecond end; include silence/sub-10-ms input, wrong-language/script conditions, stereo phase cancellation, absent models, bad input and interrupted output. In a disposable consuming scene inspect actual mapped shapes alongside captured audio/video through pause/seek/restart and locale/audio replacement. Keep three outcomes separate: structurally accepted cue artifact, correct mapping/playback clock behavior, and human/perceptual lip-sync quality. No measured recognition accuracy, latency, repeatability or perceptual quality was established.
+
+The pinned LICENSE identifies Rhubarb itself as MIT and supplies separate third-party notices, including the CMU Sphinx US-English acoustic model’s BSD terms. Its nonbinding summary says generated lip-sync data belongs to the user and distinguishes production-only use from shipping lip-sync functionality. Retain applicable notices when redistributing software/resources; none of this clears the recording, performer, voice-clone or project-art rights. (sources R14)
+
+### Rhubarb primary evidence
+- **R1.** [Official v1.14.0 release](https://github.com/DanielSWolf/rhubarb-lip-sync/releases/tag/v1.14.0), [release API](https://api.github.com/repos/DanielSWolf/rhubarb-lip-sync/releases/209157788), [annotated tag](https://api.github.com/repos/DanielSWolf/rhubarb-lip-sync/git/tags/7368d255aada0a35d76b0ee6d1b0a76d91412d1c)
+- **R2.** [Pinned build workflow](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/.github/workflows/ci.yml)
+- **R3.** [Packaged resources](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/CMakeLists.txt#L544-L596), [local model path](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/recognition/pocketSphinxTools.cpp#L171-L174)
+- **R4.** [Pinned README](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/README.adoc)
+- **R5.** [CLI setup, export and exits](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/rhubarb/main.cpp#L120-L308)
+- **R6.** [File dispatch](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/audio/audioFileReading.cpp), [WAV decoding/downmix](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/audio/WaveFileReader.cpp#L42-L248), [Vorbis decoding/downmix](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/audio/OggVorbisFileReader.cpp)
+- **R7.** [English model bias, resampling and alignment](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/recognition/PocketSphinxRecognizer.cpp)
+- **R8.** [16-kHz recognition constant](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/recognition/pocketSphinxTools.h)
+- **R9.** [Phonetic recognizer ignores dialogue](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/recognition/PhoneticRecognizer.cpp#L13-L36)
+- **R10.** [JSON exporter](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/exporters/JsonExporter.cpp), [truncated duration](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/audio/AudioClip.cpp#L6-L8), [centiseconds](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/time/centiseconds.h), [empty fallback](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/exporters/exporterTools.cpp)
+- **R11.** [Shape labels](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/core/Shape.h), [animation stages](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/animation/mouthAnimation.cpp)
+- **R12.** [Machine-readable sink](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/rhubarb/src/rhubarb/sinks/MachineReadableStderrSink.cpp)
+- **R13.** [Godot 4.5 MeshInstance3D reference](https://docs.godotengine.org/en/4.5/classes/class_meshinstance3d.html), [pinned matching class docs](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/doc/classes/MeshInstance3D.xml#L61-L119)
+- **R14.** [Pinned LICENSE and dependency/model notices](https://github.com/DanielSWolf/rhubarb-lip-sync/blob/9b9573cd21b253c9ba58739bbd1aa0b50b991bff/LICENSE.md)
