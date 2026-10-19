@@ -135,6 +135,16 @@ Context: Riot engineering; 2017-06-20 historical server system
 Reviewed slide-file SHA-256: `6ef919fd07383a56038502a39fb9f73c2c8c7c606da4685958dadac113804c93`. This identifies the inspected document, not an engine build or reproduced workflow.
 
 
+## EA AutoPlayers: learned locomotion inside controlled test scenarios
+
+**Primary source and scope.** EA/SEED's [CoG 2023 publication page](https://www.ea.com/seed/news/cog23-challenges-deploying-rl-agents-game-testing) identifies a production-integration experiment in Battlefield 2042 and Dead Space (2023). The [paper, arXiv v1 dated 2023-07-19](https://arxiv.org/html/2307.11105v1), describes historical internal systems, not a downloadable GameMap adapter. Checked 2026-10-19.
+
+**Published engineering observations, §§II–V, VII.** Existing scripted AutoPlayers retained test objectives while learned controllers handled helicopter and zero-gravity locomotion. Exported ONNX models were packaged with game data; deployed inference reused training's observation-collection code. Structured state avoided per-agent rendering cost and sensitivity to graphical changes. The authors distinguish prototype, stripped test-range and production environments, explicitly warning that removing visual content changes image-based observations. Accelerating simulation caused parked helicopters to fall through the ground in their experiment. They recommend a stable game revision, continued testing of the training setup as production changes, and retaining scripted control where it already works. These are integration lessons, not a controlled estimate of improved bug yield, coverage or player enjoyment.
+
+**Release and transfer boundary.** The inspected paper and EA publication page do not establish a public release of the in-house trainer, AutoPlayers integration, game projects or trained models. An ONNX output format is not sufficient to reproduce their observation schema, game-side controls or proprietary runtime. No current installation or asset/model entitlement was verified.
+
+**GameMap editorial adaptation, unimplemented.** Compare a scripted baseline with replacement of one explicitly identified controller, keeping scenario objectives and failure oracles fixed. Record game revision, observation/action schema, model identity, timestep and test-range/production differences. Retain structured transitions alongside visual evidence when inspecting generated scenes. Before using stripped assets or faster simulation to reduce evaluation cost, verify the intended visual and collision observations separately; count invalid simulations and retraining costs rather than silently dropping them. Keep route completion, explored behavior, triaged defects and designer/player judgments as separate outcomes. This proposed test design has not been implemented or evaluated.
+
 ## Concrete documented surfaces added
 
 - VSM page-area diagnostic console variable: documented in the historical Epic article; availability still requires a version probe.
