@@ -1,5 +1,5 @@
 import { content } from '../../content/registry.server';
-import { blockText } from '../../content/search';
+import { blockText, searchableBlocks } from '../../content/search';
 import { source } from '../lib/source';
 import type { SearchIndex } from '../../content/matching';
 
@@ -12,7 +12,7 @@ export async function loader() {
       const data = 'load' in page.data ? await page.data.load() : page.data;
       body = [...data.structuredData.headings.map(item => item.content), ...data.structuredData.contents.map(item => item.content)].join('\n');
     }
-    const text = [...new Set([entry.title, entry.description, ...entry.blocks.map(blockText), body].filter(Boolean))].join('\n');
+    const text = [...new Set([entry.title, entry.description, ...searchableBlocks(entry).map(blockText), body].filter(Boolean))].join('\n');
     return { key: entry.key, kind: entry.kind, title: entry.title, url: entry.url, text };
   }));
   return Response.json({ version: 2, documents } satisfies SearchIndex);

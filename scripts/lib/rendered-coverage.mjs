@@ -310,15 +310,30 @@ export function assertMarkdownCoverage(
       );
   });
 }
-export function assertSearchCoverage(registry, index) {
+export function assertSearchCoverage(registry, index, blockText) {
   assert.equal(index.version, 2, 'Explicit compact search format');
   const pages = new Map(index.documents.map(document => [document.key, document]));
   assert.equal(pages.size,index.documents.length,'Search identities must be unique');
   for (const entry of registry.entries) {
     const document = pages.get(entry.key);
     assert.ok(document, `Search omits ${entry.key}`);
+    assert.equal(document.kind, entry.kind, `Search kind mismatch: ${entry.key}`);
+    assert.equal(document.title, entry.title, `Search title mismatch: ${entry.key}`);
     assert.equal(document.url, entry.url, `Search canonical URL mismatch: ${entry.key}`);
     assert.ok(document.text.includes(entry.title),`Search text omits title: ${entry.key}`);
+    // Check the serialized export independently of the route's block selection.
+    // Metadata may legitimately recur in article prose, so do not strip body text.
+    const fields = [...new Set([
+      entry.title,
+      entry.description,
+      ...entry.blocks.filter(block => block.section !== 'metadata').map(blockText),
+    ].filter(Boolean))].join('\n');
+    if (entry.kind === 'document') {
+      assert.ok(document.text === fields || document.text.startsWith(fields + '\n'), `Search article fields differ: ${entry.key}`);
+      assert.ok(document.text.slice(fields.length).trim(), `Search omits article body: ${entry.key}`);
+    } else {
+      assert.equal(document.text, fields, `Search must include reader fields and exclude source-only metadata: ${entry.key}`);
+    }
   }
   assert.equal(
     pages.size,
