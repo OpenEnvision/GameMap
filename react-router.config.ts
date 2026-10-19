@@ -20,6 +20,7 @@ export default {
       ...paths.map((path) => (path === "/" ? "/" : path.replace(/\/$/, ""))),
       "/404",
       "/search-index.json",
+      "/zh/search-index.json",
     ];
   },
 } satisfies Config;

@@ -41,6 +41,8 @@ await writeFile(
     {
       version: 1,
       sourceDigest: contentDigest({ sources, documents: docs }),
+      localizationDigest: contentDigest(context.localizationSnapshot),
+      locales: context.locales,
       contentDigest: contentDigest(records),
       counts: Object.fromEntries(
         Object.keys(context.contentKinds).map((kind) => [
@@ -86,7 +88,7 @@ for (const [directory, dependency] of Object.entries(lock.packages)) {
 await writeFile("dist/THIRD-PARTY-NOTICES.txt", notices.join("\n"));
 const searchBytes=await readFile('dist/search-index.json');
 console.log(`Compact search: ${searchBytes.length} bytes, ${gzipSync(searchBytes).length} bytes gzip.`);
-const site = "https://openenvision.github.io";
+const site = context.siteOrigin;
 await writeFile(
   "dist/sitemap.xml",
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${pages.map((path) => `<url><loc>${site}${base}${path}</loc></url>`).join("")}</urlset>\n`,

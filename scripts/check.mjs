@@ -3,6 +3,7 @@ import {readFile,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {build} from 'esbuild';
+import {parse} from 'parse5';
 import {categories,loadCatalog,validate,renderAwesome} from './catalog.mjs';
 import {loadLearningContent,renderLearningGuide} from './learning.mjs';
 import {loadAgentCodeContent,validateAgentCodeContent,renderAgentCodeGuide} from './agent-code.mjs';
@@ -314,9 +315,16 @@ async function englishSources(directory){
 const englishFiles=[...await englishSources('website/src'),...await englishSources('website/app'),...(checkBuilt?['dist/index.html']:[]),'README.md','AWESOME.md',...(await readdir(new URL('../website/public/',import.meta.url))).filter(name=>/\.(md|json)$/.test(name)).map(name=>'website/public/'+name)];
 // Preserve the language-switch label and the exact bilingual label in the archived art source.
 const sourceQuotes={'README.md':['中文指南'],'website/public/editorial-art-prompts.md':['原创概念插图']};
+function englishRenderedCopy(node,inherited='en'){
+ if(['script','style'].includes(node.tagName))return '';
+ const language=node.attrs?.find(attr=>attr.name==='lang')?.value||inherited;
+ if(node.nodeName==='#text')return language.startsWith('en')?node.value:'';
+ return (node.childNodes||[]).map(child=>englishRenderedCopy(child,language)).join(' ');
+}
 await Promise.all(englishFiles.map(async path=>{
  let source=await readFile(new URL('../'+path,import.meta.url),'utf8');
  for(const quote of sourceQuotes[path]||[])source=source.replaceAll(quote,'');
+ if(path==='dist/index.html')source=englishRenderedCopy(parse(source));
  assert.doesNotMatch(source,/\p{Script=Han}/u,`Unlocalized Chinese copy remains in the English interface: ${path}`);
 }));
 for(const path of ['website/app/root.tsx',...(checkBuilt?['dist/index.html']:[])])assert.match(await readFile(new URL('../'+path,import.meta.url),'utf8'),/<html lang(?:=|[\s>])/,`Set the document language explicitly: ${path}`);

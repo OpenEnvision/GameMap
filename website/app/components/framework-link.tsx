@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import { Link } from "react-router";
+import { Link } from "../lib/i18n";
 
 // Keep Fumadocs' active-page styling and expose the same state to assistive tech.
 export function FrameworkLink({

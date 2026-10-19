@@ -26,7 +26,7 @@ For a concrete task, start with the [production-stage routes](production-coverag
 
 ## Deeper operational evidence
 
-For first-hand studio production accounts and related research explanations, use the [studio-case reading routes](studio-production-case-studies.md#find-a-production-lesson): authored-world revisions, requested environmental direction cues and readable player construction, playable iteration and handoffs, streaming readiness, rendering budgets, creature development and character/traversal behavior, place histories, optional mission guidance and narrative/dialogue revisions, accessibility, test verdicts, contextual audio, failure reconstruction, authored behavior, combat readability and player experience. Each case retains its historical source context and failure/acceptance boundaries; proposed recipes are not runnable integrations.
+For first-hand studio production accounts and related research explanations, use the [studio-case reading routes](studio-production-case-studies.md#find-a-production-lesson): authored-world revisions, requested environmental direction cues, readable player construction and authored destruction, playable iteration and handoffs, streaming readiness, rendering budgets, creature development and character/traversal behavior, place histories, optional mission guidance and narrative/dialogue revisions, accessibility, test verdicts, contextual audio, failure reconstruction, authored behavior, combat readability and player experience. Each case retains its historical source context and failure/acceptance boundaries; proposed recipes are not runnable integrations.
 
 - [Cadle-like repository import](cadle-repositories.md): the complete requested 212-candidate corpus plus its reference, with current repository identity, source scope, reuse limits and existing coverage
 
@@ -75,3 +75,5 @@ For each integration:
 No engine, DCC application, paid generative API or full game-production work order was executed for this collection. Project-specific quest side effects, input-to-frame alignment, durable cancellation, asset dependency repair, platform certification and commercial-use clearance remain unresolved unless a dossier cites a narrower documented result. Mutable documentation and service terms require a fresh check at implementation time.
 
 The first directory additions reuse verified existing publisher marks or identify independent maintainers as text. Other researched tools remain accessible in the linked dossiers while official branding evidence is curated. The repository's logo and provenance checks have not been relaxed.
+
+- [Destructible surface authoring](studio-production-case-studies.md#rainbow-six-siege-author-destruction-as-a-gameplay-surface-with-material-rules): historical Siege material/cutter controls and separate visual, collision, gameplay and damage observations

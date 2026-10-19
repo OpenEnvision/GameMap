@@ -9,8 +9,8 @@
   "scripts": {
     "dev": "node scripts/dev.mjs",
     "build": "node scripts/generate.mjs && node scripts/prepare-docs.mjs && react-router typegen && tsc -b && react-router build && node scripts/finalize-build.mjs",
-    "check": "node scripts/check.mjs && node scripts/check-content.mjs && npm run test:content",
-    "check:build": "node scripts/check.mjs --built && node scripts/check-web.mjs && node scripts/check-content.mjs --built",
+    "check": "node scripts/check.mjs && node scripts/check-content.mjs && node scripts/check-locales.mjs && npm run test:content",
+    "check:build": "node scripts/check.mjs --built && node scripts/check-web.mjs && node scripts/check-content.mjs --built && node scripts/check-locales.mjs --built",
     "test:content": "node --test tests/content.test.mjs",
     "preview": "node scripts/preview.mjs",
     "test:web": "playwright test"

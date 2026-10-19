@@ -62,7 +62,11 @@ Catalog arrays and the repository research ledger share `data/segments/`, with e
 
 ## Documentation languages
 
-English article URLs remain unchanged. Chinese guides use `docs/zh/` and `/docs/zh/` with a locale-specific navigation tree and `zh-CN` document language. Matching slugs provide language counterparts; when none exists, the language link returns to the corresponding documentation home. Untranslated research stays explicitly English. New guides are discovered by the existing source and rendered-body checks.
+English URLs remain unchanged. Chinese application views use `/zh/`; the existing `/docs/zh/` guides retain their addresses. Language links preserve collection filters and detail anchors. Matching document slugs select the actual Chinese guide; untranslated articles are readable under `/zh/docs/` with Chinese navigation, an English-source label, and an English-language article body. A Chinese reading index prefers translated counterparts without duplicating the same article.
+
+Interface messages live under `website/content/i18n/`. Content translations are server-only overlays keyed by the original `kind:id` and source text field. They do not create resource records or change IDs, enum values, source URLs, creator credits, or licenses. Each translated field has a reviewed English-source fingerprint; a changed source falls back to English and fails locale validation until reviewed. The level-design toolkit view inherits its translated title and summary from the catalog entity.
+
+Both locales are pre-rendered and checked for visible fields, owning collections, complete-index discovery, Markdown bodies, language-aware internal links, source-language markers, and static search. A localization digest prevents a stale build from passing after translation changes. Native language links and reading work without JavaScript.
 
 ## Adding content
 

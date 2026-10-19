@@ -19,8 +19,7 @@ import {
   publishablePath,
 } from "../scripts/lib/documents.mjs";
 import { resolve } from "node:path";
-import { readFile } from 'node:fs/promises';
-
+import { readFile } from "node:fs/promises";
 
 const context = await loadContent();
 const {
@@ -30,7 +29,10 @@ const {
   createRegistry,
   assertRegistryCoverage,
   collectDemos,
-  docLocale, docHome, localeFromPath, translationSlug,
+  docLocale,
+  docHome,
+  localeFromPath,
+  translationSlug,
 } = context;
 const clone = () => structuredClone(sources);
 const escape = (value) =>
@@ -65,11 +67,11 @@ test("all source kinds, fragments, attachments, and raw exports have registered 
     ) > registry.entries.length,
   );
 });
-test('ignored and hidden local notes cannot be published as documentation', () => {
- const visible=new Set(['docs/public.md']);
- assert.equal(publishablePath('.env.notes.md',visible),false);
- assert.equal(publishablePath('docs/private.md',visible),false);
- assert.equal(publishablePath('docs/public.md',visible),true);
+test("ignored and hidden local notes cannot be published as documentation", () => {
+  const visible = new Set(["docs/public.md"]);
+  assert.equal(publishablePath(".env.notes.md", visible), false);
+  assert.equal(publishablePath("docs/private.md", visible), false);
+  assert.equal(publishablePath("docs/public.md", visible), true);
 });
 test("unknown data files cannot silently become unexposed side collections", () => {
   assert.throws(
@@ -223,9 +225,10 @@ test("a missing record or unsupported detail route fails coverage", () => {
 test("every source recording and curated excerpt survives without source mutation", () => {
   const before = JSON.stringify(sources.recordings);
   const demos = collectDemos(sources);
-  const views = sources.recordings.flatMap(recording => recording.views);
+  const views = sources.recordings.flatMap((recording) => recording.views);
   assert.equal(demos.length, views.length);
-  for (const view of views) assert.ok(demos.some(demo => demo.id === view.id));
+  for (const view of views)
+    assert.ok(demos.some((demo) => demo.id === view.id));
   assert.ok(
     registry
       .demosFor("opengame")
@@ -236,15 +239,19 @@ test("every source recording and curated excerpt survives without source mutatio
       .demosFor("gamefactory-3a")
       .some((entry) => entry.id === "gamefactory-ue5-rpg"),
   );
-  assert.equal(
-    JSON.stringify(sources.recordings),
-    before,
-  );
+  assert.equal(JSON.stringify(sources.recordings), before);
 });
 test("another clip on an existing project is not reduced to one resource preview", () => {
   const next = clone();
-  const original = next.recordings.find(recording => recording.resourceId === 'opengame');
-  next.recordings.push({ ...original, id: 'coverage-only-original', originalUrl: 'https://example.org/another-original.mp4', views: [{...original.views[0], id: 'coverage-only-another-clip'}] });
+  const original = next.recordings.find(
+    (recording) => recording.resourceId === "opengame",
+  );
+  next.recordings.push({
+    ...original,
+    id: "coverage-only-original",
+    originalUrl: "https://example.org/another-original.mp4",
+    views: [{ ...original.views[0], id: "coverage-only-another-clip" }],
+  });
   assert.equal(
     createRegistry(next, documents).demosFor("opengame").length,
     registry.demosFor("opengame").length + 1,
@@ -321,25 +328,190 @@ test("Markdown coverage detects a dropped qualification or source link", () => {
     /missing href/,
   );
 });
-test('reader guides start with the task, not editorial disclaimers', async () => {
-  for(const document of documents.filter(page=>!page.source.startsWith('docs/skills/'))) {
-    const markdown=await readFile(resolve(root,document.source),'utf8');
-    const introduction=markdown.split(/\r?\n\s*\r?\n/)[1]||'';
-    assert.doesNotMatch(introduction,/^(?:Sources? (?:checked|reviewed)|Source review:|Research checked|Reviewed)\b/i,`${document.source}: lead with the task`);
-    assert.doesNotMatch(markdown,/GameMap editorial (?:guidance|recommendations?|adaptation|proposals?|synthesis|test design|fixture)|This page contains \*\*GameMap|No automatic collection or recurring updates/,`${document.source}: omit boilerplate`);
+test("reader guides start with the task, not editorial disclaimers", async () => {
+  for (const document of documents.filter(
+    (page) => !page.source.startsWith("docs/skills/"),
+  )) {
+    const markdown = await readFile(resolve(root, document.source), "utf8");
+    const introduction = markdown.split(/\r?\n\s*\r?\n/)[1] || "";
+    assert.doesNotMatch(
+      introduction,
+      /^(?:Sources? (?:checked|reviewed)|Source review:|Research checked|Reviewed)\b/i,
+      `${document.source}: lead with the task`,
+    );
+    assert.doesNotMatch(
+      markdown,
+      /GameMap editorial (?:guidance|recommendations?|adaptation|proposals?|synthesis|test design|fixture)|This page contains \*\*GameMap|No automatic collection or recurring updates/,
+      `${document.source}: omit boilerplate`,
+    );
   }
 });
-test('source-only metadata is preserved in blocks but omitted from reader search', () => {
-  const entry={...registry.entries[0],body:undefined,summary:'Reader summary',title:'Reader title',blocks:[{type:'text',field:'hash',section:'metadata',label:'Audit hash',value:'technical-only-token'},{type:'text',field:'limits',section:'provenance',label:'License',value:'Noncommercial only'}]};
-  const text=context.searchableText(entry);
-  assert.ok(!text.includes('technical-only-token'));
-  assert.ok(text.includes('Noncommercial only'));
+test("source-only metadata is preserved in blocks but omitted from reader search", () => {
+  const entry = {
+    ...registry.entries[0],
+    body: undefined,
+    summary: "Reader summary",
+    title: "Reader title",
+    blocks: [
+      {
+        type: "text",
+        field: "hash",
+        section: "metadata",
+        label: "Audit hash",
+        value: "technical-only-token",
+      },
+      {
+        type: "text",
+        field: "limits",
+        section: "provenance",
+        label: "License",
+        value: "Noncommercial only",
+      },
+    ],
+  };
+  const text = context.searchableText(entry);
+  assert.ok(!text.includes("technical-only-token"));
+  assert.ok(text.includes("Noncommercial only"));
 });
-test('document language routes preserve English URLs and choose explicit counterparts', () => {
-  assert.equal(docLocale('practical-guide'),'en');assert.equal(docLocale('zh/practical-guide'),'zh');
-  assert.equal(localeFromPath('/GameMap/docs/zh/practical-guide/'),'zh');assert.equal(docHome('zh'),'/docs/zh/');
-  assert.equal(translationSlug('zh/practical-guide','en'),'practical-guide');
-  assert.equal(translationSlug('practical-guide','zh'),'zh/practical-guide');
+test("document language routes preserve English URLs and choose explicit counterparts", () => {
+  assert.equal(docLocale("practical-guide"), "en");
+  assert.equal(docLocale("zh/practical-guide"), "zh");
+  assert.equal(
+    localeFromPath("/GameMap/docs/zh/practical-guide/", "/GameMap/"),
+    "zh",
+  );
+  assert.equal(docHome("zh"), "/docs/zh/");
+  assert.equal(translationSlug("zh/practical-guide", "en"), "practical-guide");
+  assert.equal(translationSlug("practical-guide", "zh"), "zh/practical-guide");
+});
+test("site language links preserve filters, anchors and explicit document counterparts", () => {
+  const languages = context.documentLanguages(documents);
+  assert.equal(
+    context.localizedPath(
+      "/resources/?category=engines&q=godot#resource/godot-engine",
+      "zh",
+      languages,
+    ),
+    "/zh/resources/?category=engines&q=godot#resource/godot-engine",
+  );
+  assert.equal(
+    context.localizedPath("/zh/resources/?saved=1", "en", languages),
+    "/resources/?saved=1",
+  );
+  assert.equal(
+    context.localizedPath("/docs/practical-guide/", "zh", languages),
+    "/docs/zh/practical-guide/",
+  );
+  assert.equal(
+    context.localizedPath("/docs/zh/reading-guide/", "en", languages),
+    "/docs/",
+  );
+  assert.equal(
+    context.localizedPath("/docs/agents-notes/", "zh", languages),
+    "/zh/docs/agents-notes/",
+  );
+  assert.equal(
+    context.localizedPath("/media/source.webm", "zh", languages),
+    "/media/source.webm",
+  );
+  assert.equal(
+    context.localizedPath("https://source.example/docs/", "zh", languages),
+    "https://source.example/docs/",
+  );
+  assert.equal(
+    context.localeFromPath("/GameMap/zh/resources/", "/GameMap/"),
+    "zh",
+  );
+  assert.equal(context.localeFromPath("/research/zh/project/"), "en");
+});
+test("Chinese views preserve identifiers, URLs, source data and complete curated descriptions", () => {
+  const before = contentDigest(registry.entries),
+    zh = context.localizedRegistry(registry, "zh");
+  for (const kind of [
+    "resource",
+    "example",
+    "agent",
+    "testing",
+    "path",
+    "step",
+    "demo",
+  ])
+    for (const entry of zh.all(kind)) {
+      const original = registry.byKey(entry.key);
+      assert.ok(original);
+      assert.equal(
+        entry.descriptionLanguage,
+        "zh",
+        `${entry.key}: translated introduction`,
+      );
+      assert.equal(entry.id, original.id);
+      assert.equal(entry.kind, original.kind);
+      const sourceUrls = original.blocks
+        .filter((block) => block.type === "links")
+        .flatMap((block) => block.items.map((item) => item.url));
+      const translatedUrls = entry.blocks
+        .filter((block) => block.type === "links")
+        .flatMap((block) => block.items.map((item) => item.url));
+      assert.deepEqual(
+        translatedUrls,
+        sourceUrls.map((url) =>
+          context.localizedPath(
+            url,
+            "zh",
+            context.documentLanguages(documents),
+          ),
+        ),
+        `${entry.key}: external sources stay intact; internal references keep the locale`,
+      );
+    }
+  assert.equal(
+    contentDigest(registry.entries),
+    before,
+    "Translating must not mutate the English registry",
+  );
+  assert.equal(
+    zh.require("document", "practical-guide").id,
+    "zh/practical-guide",
+  );
+  assert.ok(
+    zh
+      .all("document")
+      .every(
+        (entry) =>
+          entry.id.startsWith("zh/") ||
+          !context.documentLanguages(documents).zh.includes(entry.id),
+      ),
+  );
+  const skill = zh
+    .all("agent")
+    .find(
+      (entry) => entry.data.catalogResourceId === "level-design-book-skill",
+    );
+  assert.equal(
+    skill.title,
+    zh.require("resource", "level-design-book-skill").title,
+    "Derived toolkit text uses the catalog translation",
+  );
+});
+test("a changed source field falls back instead of silently using an old translation", () => {
+  const original = structuredClone(registry.require("resource", "codex"));
+  original.data.summary = "A materially changed English description.";
+  original.description = original.data.summary;
+  original.blocks = original.blocks.map((block) =>
+    block.field === "summary" && block.type === "lead"
+      ? { ...block, value: original.description }
+      : block,
+  );
+  const entry = context.localizeEntry(
+    original,
+    "zh",
+    context.documentLanguages(documents),
+  );
+  assert.equal(entry.description, original.description);
+  assert.equal(entry.descriptionLanguage, "en");
+  assert.equal(context.canTranslate(original, "url"), false);
+  assert.equal(context.canTranslate(original, "id"), false);
+  assert.equal(context.canTranslate(original, "category"), false);
 });
 test("document URL policy preserves rendered routes, source assets, and deployment base", () => {
   const rewrite = documentLinkResolver(documents, "/GameMap/");
@@ -370,61 +542,316 @@ test("document URL policy preserves rendered routes, source assets, and deployme
     /Unregistered Markdown/,
   );
 });
-test('static search contains every canonical identity and rejects missing text', () => {
-  const documents=registry.entries.map(entry=>({key:entry.key,kind:entry.kind,title:entry.title,url:entry.url,text:[...new Set([
-    entry.title, entry.description,
-    ...entry.blocks.filter(block=>block.section!=='metadata').map(context.blockText),
-    entry.kind==='document' ? 'Article body fixture' : '',
-  ].filter(Boolean))].join('\n')}));
-  assert.doesNotThrow(()=>assertSearchCoverage(registry,{version:2,documents},context.blockText));
-  assert.throws(()=>assertSearchCoverage(registry,{version:2,documents:documents.slice(1)},context.blockText),/Search omits/);
-  for (const [field,value] of [['kind','document'],['title','Wrong title'],['url','/wrong/']]) {
-    const changed=structuredClone(documents);changed[0][field]=value;
-    assert.throws(()=>assertSearchCoverage(registry,{version:2,documents:changed},context.blockText),/mismatch/);
+test("static search contains every canonical identity and rejects missing text", () => {
+  const documents = registry.entries.map((entry) => ({
+    key: entry.key,
+    kind: entry.kind,
+    title: entry.title,
+    url: entry.url,
+    text: [
+      ...new Set(
+        [
+          entry.title,
+          entry.description,
+          ...entry.blocks
+            .filter((block) => block.section !== "metadata")
+            .map(context.blockText),
+          entry.kind === "document" ? "Article body fixture" : "",
+        ].filter(Boolean),
+      ),
+    ].join("\n"),
+  }));
+  assert.doesNotThrow(() =>
+    assertSearchCoverage(
+      registry,
+      { version: 2, documents },
+      context.blockText,
+    ),
+  );
+  assert.throws(
+    () =>
+      assertSearchCoverage(
+        registry,
+        { version: 2, documents: documents.slice(1) },
+        context.blockText,
+      ),
+    /Search omits/,
+  );
+  for (const [field, value] of [
+    ["kind", "document"],
+    ["title", "Wrong title"],
+    ["url", "/wrong/"],
+  ]) {
+    const changed = structuredClone(documents);
+    changed[0][field] = value;
+    assert.throws(
+      () =>
+        assertSearchCoverage(
+          registry,
+          { version: 2, documents: changed },
+          context.blockText,
+        ),
+      /mismatch/,
+    );
   }
 });
-test('serialized search rejects leaked metadata and omitted reader provenance', () => {
-  const entry={...registry.require('resource','codex'),title:'Reader title',description:'Reader summary',blocks:[
-    {type:'text',field:'hash',section:'metadata',label:'Audit hash',value:'technical-only-token'},
-    {type:'text',field:'license',section:'provenance',label:'License',value:'Noncommercial only'},
-  ]};
-  const expected='Reader title\nReader summary\nLicense Noncommercial only';
-  const serialized=text=>JSON.parse(JSON.stringify({version:2,documents:[{key:entry.key,kind:entry.kind,title:entry.title,url:entry.url,text}]}));
-  const check=text=>assertSearchCoverage({entries:[entry]},serialized(text),context.blockText);
-  assert.doesNotThrow(()=>check(expected));
-  assert.throws(()=>check(expected+'\nAudit hash technical-only-token'),/exclude source-only metadata/);
-  assert.throws(()=>check('Reader title\nReader summary'),/include reader fields/);
-  assert.equal(entry.blocks[0].value,'technical-only-token');
+test("serialized search rejects leaked metadata and omitted reader provenance", () => {
+  const entry = {
+    ...registry.require("resource", "codex"),
+    title: "Reader title",
+    description: "Reader summary",
+    blocks: [
+      {
+        type: "text",
+        field: "hash",
+        section: "metadata",
+        label: "Audit hash",
+        value: "technical-only-token",
+      },
+      {
+        type: "text",
+        field: "license",
+        section: "provenance",
+        label: "License",
+        value: "Noncommercial only",
+      },
+    ],
+  };
+  const expected = "Reader title\nReader summary\nLicense Noncommercial only";
+  const serialized = (text) =>
+    JSON.parse(
+      JSON.stringify({
+        version: 2,
+        documents: [
+          {
+            key: entry.key,
+            kind: entry.kind,
+            title: entry.title,
+            url: entry.url,
+            text,
+          },
+        ],
+      }),
+    );
+  const check = (text) =>
+    assertSearchCoverage(
+      { entries: [entry] },
+      serialized(text),
+      context.blockText,
+    );
+  assert.doesNotThrow(() => check(expected));
+  assert.throws(
+    () => check(expected + "\nAudit hash technical-only-token"),
+    /exclude source-only metadata/,
+  );
+  assert.throws(
+    () => check("Reader title\nReader summary"),
+    /include reader fields/,
+  );
+  assert.equal(entry.blocks[0].value, "technical-only-token");
 });
-test('serialized article search requires its body without censoring legitimate metadata words', () => {
-  const entry={...registry.all('document')[0],title:'Article title',description:'Article summary',blocks:[
-    {type:'text',field:'hash',section:'metadata',label:'Audit hash',value:'technical-only-token'},
-    {type:'text',field:'license',section:'provenance',label:'License',value:'Attribution required'},
-  ]};
-  const fields='Article title\nArticle summary\nLicense Attribution required';
-  const check=text=>assertSearchCoverage({entries:[entry]},JSON.parse(JSON.stringify({version:2,documents:[{key:entry.key,kind:entry.kind,title:entry.title,url:entry.url,text}]})),context.blockText);
-  assert.doesNotThrow(()=>check(fields+'\nArticle explains technical-only-token in its own prose.'));
-  assert.throws(()=>check(fields),/omits article body/);
-  assert.throws(()=>check('Article title\nArticle summary\nAudit hash technical-only-token\nLicense Attribution required\nArticle body'),/article fields differ/);
+test("serialized article search requires its body without censoring legitimate metadata words", () => {
+  const entry = {
+    ...registry.all("document")[0],
+    title: "Article title",
+    description: "Article summary",
+    blocks: [
+      {
+        type: "text",
+        field: "hash",
+        section: "metadata",
+        label: "Audit hash",
+        value: "technical-only-token",
+      },
+      {
+        type: "text",
+        field: "license",
+        section: "provenance",
+        label: "License",
+        value: "Attribution required",
+      },
+    ],
+  };
+  const fields = "Article title\nArticle summary\nLicense Attribution required";
+  const check = (text) =>
+    assertSearchCoverage(
+      { entries: [entry] },
+      JSON.parse(
+        JSON.stringify({
+          version: 2,
+          documents: [
+            {
+              key: entry.key,
+              kind: entry.kind,
+              title: entry.title,
+              url: entry.url,
+              text,
+            },
+          ],
+        }),
+      ),
+      context.blockText,
+    );
+  assert.doesNotThrow(() =>
+    check(fields + "\nArticle explains technical-only-token in its own prose."),
+  );
+  assert.throws(() => check(fields), /omits article body/);
+  assert.throws(
+    () =>
+      check(
+        "Article title\nArticle summary\nAudit hash technical-only-token\nLicense Attribution required\nArticle body",
+      ),
+    /article fields differ/,
+  );
 });
-test('resource associations cannot be joined against the agent namespace', () => {
-  const expected=sources.learningPaths.filter(game=>game.resourceIds.includes('codex')).map(game=>game.id);
+test("alternate-language search preserves reader fields without leaking metadata", () => {
+  const entry = {
+    ...registry.require("resource", "codex"),
+    title: "Reader title",
+    description: "Reader summary",
+    blocks: [
+      {
+        type: "text",
+        field: "hash",
+        section: "metadata",
+        label: "Audit hash",
+        value: "technical-only-token",
+      },
+      {
+        type: "text",
+        field: "license",
+        section: "provenance",
+        label: "License",
+        value: "Noncommercial only",
+      },
+    ],
+  };
+  const alternate = {
+    ...entry,
+    title: "中文标题",
+    description: "中文简介",
+    blocks: [
+      entry.blocks[0],
+      {
+        type: "text",
+        field: "license",
+        section: "provenance",
+        label: "许可",
+        value: "仅限非商业使用",
+      },
+    ],
+  };
+  const fields = "Reader title\nReader summary\nLicense Noncommercial only",
+    otherFields = "中文标题\n中文简介\n许可 仅限非商业使用";
+  const serialized = (alternateText) => ({
+    version: 2,
+    documents: [
+      {
+        key: entry.key,
+        kind: entry.kind,
+        title: entry.title,
+        url: entry.url,
+        text: fields,
+        alternateText,
+      },
+    ],
+  });
+  const target = {
+    byKey: (key) => (key === entry.key ? alternate : undefined),
+  };
+  assert.doesNotThrow(() =>
+    assertSearchCoverage(
+      { entries: [entry] },
+      serialized(otherFields),
+      context.blockText,
+      target,
+    ),
+  );
+  assert.throws(
+    () =>
+      assertSearchCoverage(
+        { entries: [entry] },
+        serialized(otherFields + "\nAudit hash technical-only-token"),
+        context.blockText,
+        target,
+      ),
+    /exclude source-only metadata/,
+  );
+  assert.throws(
+    () =>
+      assertSearchCoverage(
+        { entries: [entry] },
+        serialized("中文标题\n中文简介"),
+        context.blockText,
+        target,
+      ),
+    /alternate reader fields/,
+  );
+  assert.throws(
+    () =>
+      assertSearchCoverage(
+        { entries: [entry] },
+        serialized(otherFields),
+        context.blockText,
+      ),
+    /explicit source registry/,
+  );
+  assert.equal(
+    context.rankDocuments(serialized(otherFields).documents, "非商业")[0].key,
+    entry.key,
+  );
+});
+test("resource associations cannot be joined against the agent namespace", () => {
+  const expected = sources.learningPaths
+    .filter((game) => game.resourceIds.includes("codex"))
+    .map((game) => game.id);
   assert.ok(expected.length);
-  assert.deepEqual(registry.examplesFor({kind:'resource',id:'codex'}).map(entry=>entry.id),expected);
-  assert.throws(()=>registry.examplesFor({kind:'agent',id:'codex'}),/Invalid resource reference/);
+  assert.deepEqual(
+    registry
+      .examplesFor({ kind: "resource", id: "codex" })
+      .map((entry) => entry.id),
+    expected,
+  );
+  assert.throws(
+    () => registry.examplesFor({ kind: "agent", id: "codex" }),
+    /Invalid resource reference/,
+  );
 });
-test('one original film has multiple presentations, not duplicate asset identities',()=>{
- const original=sources.recordings.find(record=>record.views.some(view=>view.id==='streamrender-car'));
- assert.equal(original.views.length,2);
- assert.ok(original.views.some(view=>view.id==='recording-streamrender-h3'));
- const duplicate=clone();duplicate.recordings.push({...original,id:'duplicate-original'});
- assert.throws(()=>createRegistry(duplicate,documents),/Duplicate original recording/);
+test("one original film has multiple presentations, not duplicate asset identities", () => {
+  const original = sources.recordings.find((record) =>
+    record.views.some((view) => view.id === "streamrender-car"),
+  );
+  assert.equal(original.views.length, 2);
+  assert.ok(
+    original.views.some((view) => view.id === "recording-streamrender-h3"),
+  );
+  const duplicate = clone();
+  duplicate.recordings.push({ ...original, id: "duplicate-original" });
+  assert.throws(
+    () => createRegistry(duplicate, documents),
+    /Duplicate original recording/,
+  );
 });
-test('all search surfaces use normalized token matching and exact-title ranking',()=>{
- const {matchesSearch,rankDocuments}=context;
- assert.equal(matchesSearch('Phaser · Level Design','design PHASER'),true);
- const documents=[{key:'a',kind:'resource',title:'OpenAI Codex',url:'/a/',text:'OpenAI Codex workflow'},{key:'b',kind:'document',title:'Workflow notes',url:'/b/',text:'OpenAI Codex workflow'}];
- assert.equal(rankDocuments(documents,'OpenAI Codex')[0].key,'a');
+test("all search surfaces use normalized token matching and exact-title ranking", () => {
+  const { matchesSearch, rankDocuments } = context;
+  assert.equal(matchesSearch("Phaser · Level Design", "design PHASER"), true);
+  const documents = [
+    {
+      key: "a",
+      kind: "resource",
+      title: "OpenAI Codex",
+      url: "/a/",
+      text: "OpenAI Codex workflow",
+    },
+    {
+      key: "b",
+      kind: "document",
+      title: "Workflow notes",
+      url: "/b/",
+      text: "OpenAI Codex workflow",
+    },
+  ];
+  assert.equal(rankDocuments(documents, "OpenAI Codex")[0].key, "a");
 });
 test("source and content digests change when a qualification changes", () => {
   const next = clone();

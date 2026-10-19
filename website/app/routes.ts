@@ -11,6 +11,17 @@ export default [
   ...detailRoutes.map((page) =>
     route(path(page.path), page.module, { id: page.id }),
   ),
+  ...Object.entries(pages)
+    .filter(([id]) => id !== "docsZh")
+    .map(([id, page]) =>
+      route("zh/" + path(page.path), page.module, { id: `zh-${id}` }),
+    ),
+  ...detailRoutes.map((page) =>
+    route("zh/" + path(page.path), page.module, { id: `zh-${page.id}` }),
+  ),
+  ...systemRoutes.map((page) =>
+    route("zh/" + path(page.path), page.module, { id: `zh-${page.id}` }),
+  ),
   ...systemRoutes.map((page) =>
     route(path(page.path), page.module, { id: page.id }),
   ),

@@ -88,7 +88,7 @@ export function assertRecordFields(entry, record, base = "/") {
   visible(record, entry.key);
   const nodes = elements(record);
   for (const block of entry.blocks) {
-    if(block.section==='metadata')continue; // Source-only fields remain in the manifest, not the reader interface.
+    if (block.section === "metadata") continue; // Source-only fields remain in the manifest, not the reader interface.
     const fields = nodes.filter(
       (node) => attributes(node)["data-content-field"] === block.field,
     );
@@ -190,14 +190,19 @@ export function assertRecordFields(entry, record, base = "/") {
     }
   }
 }
-export async function assertRenderedCoverage(registry, readPage, base = "/") {
+export async function assertRenderedCoverage(
+  registry,
+  readPage,
+  base = "/",
+  indexUrl = "/explore/",
+) {
   const cache = new Map();
   const page = async (url) => {
     const path = url.split("#")[0];
     if (!cache.has(path)) cache.set(path, parsePage(await readPage(path)));
     return cache.get(path);
   };
-  const index = await page("/explore/");
+  const index = await page(indexUrl);
   for (const entry of registry.entries) {
     const canonical = await page(entry.url);
     const records = canonical.nodes.filter(
@@ -230,7 +235,7 @@ export async function assertRenderedCoverage(registry, readPage, base = "/") {
       entry.url,
       `Index discovery ${entry.key}`,
       base,
-      "/explore/",
+      indexUrl,
     );
     const collection = await page(entry.collectionUrl);
     const owners = collection.nodes.filter(
@@ -264,10 +269,16 @@ export function assertMarkdownCoverage(
   html,
   documents,
   base = "/",
+  options = {},
 ) {
   const page = parsePage(html);
-  const documentElement=page.nodes.find(node=>node.tagName==='html');
-  if(documentElement)assert.equal(attributes(documentElement).lang,metadata.slug.startsWith('zh/')?'zh-CN':'en',`${metadata.slug}: matching document language`);
+  const documentElement = page.nodes.find((node) => node.tagName === "html");
+  if (documentElement)
+    assert.equal(
+      attributes(documentElement).lang,
+      options.language || (metadata.slug.startsWith("zh/") ? "zh-CN" : "en"),
+      `${metadata.slug}: matching document language`,
+    );
   const body = page.nodes.find((node) =>
     (attributes(node).class || "").split(/\s+/).includes("prose"),
   );
@@ -276,7 +287,8 @@ export function assertMarkdownCoverage(
   const bodyNodes = elements(body);
   const processor = unified().use(remarkParse).use(remarkGfm);
   const { body: sourceBody, frontmatter } = sourceMarkdown(markdown);
-  if (frontmatter) containsText([body], frontmatter, `${metadata.source} frontmatter`);
+  if (frontmatter)
+    containsText([body], frontmatter, `${metadata.source} frontmatter`);
   const tree = processor.parse(sourceBody);
   const rewrite = documentLinkResolver(documents, base);
   visit(tree, (node) => {
@@ -294,7 +306,12 @@ export function assertMarkdownCoverage(
     } else if (node.type === "link" || node.type === "definition")
       containsURL(
         bodyNodes,
-        rewrite(node.url, resolve(root, metadata.source)),
+        options.link
+          ? options.link(
+              rewrite(node.url, resolve(root, metadata.source)),
+              node,
+            )
+          : rewrite(node.url, resolve(root, metadata.source)),
         metadata.source,
         base,
         "/docs/" + metadata.slug + "/",
@@ -310,29 +327,97 @@ export function assertMarkdownCoverage(
       );
   });
 }
-export function assertSearchCoverage(registry, index, blockText) {
-  assert.equal(index.version, 2, 'Explicit compact search format');
-  const pages = new Map(index.documents.map(document => [document.key, document]));
-  assert.equal(pages.size,index.documents.length,'Search identities must be unique');
+export function assertSearchCoverage(
+  registry,
+  index,
+  blockText,
+  alternateRegistry,
+) {
+  assert.equal(index.version, 2, "Explicit compact search format");
+  const pages = new Map(
+    index.documents.map((document) => [document.key, document]),
+  );
+  assert.equal(
+    pages.size,
+    index.documents.length,
+    "Search identities must be unique",
+  );
   for (const entry of registry.entries) {
     const document = pages.get(entry.key);
     assert.ok(document, `Search omits ${entry.key}`);
-    assert.equal(document.kind, entry.kind, `Search kind mismatch: ${entry.key}`);
-    assert.equal(document.title, entry.title, `Search title mismatch: ${entry.key}`);
-    assert.equal(document.url, entry.url, `Search canonical URL mismatch: ${entry.key}`);
-    assert.ok(document.text.includes(entry.title),`Search text omits title: ${entry.key}`);
+    assert.equal(
+      document.kind,
+      entry.kind,
+      `Search kind mismatch: ${entry.key}`,
+    );
+    assert.equal(
+      document.title,
+      entry.title,
+      `Search title mismatch: ${entry.key}`,
+    );
+    assert.equal(
+      document.url,
+      entry.url,
+      `Search canonical URL mismatch: ${entry.key}`,
+    );
+    assert.ok(
+      document.text.includes(entry.title),
+      `Search text omits title: ${entry.key}`,
+    );
     // Check the serialized export independently of the route's block selection.
     // Metadata may legitimately recur in article prose, so do not strip body text.
-    const fields = [...new Set([
-      entry.title,
-      entry.description,
-      ...entry.blocks.filter(block => block.section !== 'metadata').map(blockText),
-    ].filter(Boolean))].join('\n');
-    if (entry.kind === 'document') {
-      assert.ok(document.text === fields || document.text.startsWith(fields + '\n'), `Search article fields differ: ${entry.key}`);
-      assert.ok(document.text.slice(fields.length).trim(), `Search omits article body: ${entry.key}`);
+    const fields = [
+      ...new Set(
+        [
+          entry.title,
+          entry.description,
+          ...entry.blocks
+            .filter((block) => block.section !== "metadata")
+            .map(blockText),
+        ].filter(Boolean),
+      ),
+    ].join("\n");
+    if (entry.kind === "document") {
+      assert.ok(
+        document.text === fields || document.text.startsWith(fields + "\n"),
+        `Search article fields differ: ${entry.key}`,
+      );
+      assert.ok(
+        document.text.slice(fields.length).trim(),
+        `Search omits article body: ${entry.key}`,
+      );
     } else {
-      assert.equal(document.text, fields, `Search must include reader fields and exclude source-only metadata: ${entry.key}`);
+      assert.equal(
+        document.text,
+        fields,
+        `Search must include reader fields and exclude source-only metadata: ${entry.key}`,
+      );
+    }
+    if (alternateRegistry) {
+      const other = alternateRegistry.byKey(entry.key);
+      assert.ok(other, `Search alternate language omits ${entry.key}`);
+      const otherFields = [
+        ...new Set(
+          [
+            other.title,
+            other.description,
+            ...other.blocks
+              .filter((block) => block.section !== "metadata")
+              .map(blockText),
+          ].filter(Boolean),
+        ),
+      ].join("\n");
+      assert.equal(
+        document.alternateText || "",
+        otherFields === fields ? "" : otherFields,
+        `Search alternate reader fields must exclude source-only metadata: ${entry.key}`,
+      );
+    } else {
+      assert.equal(
+        document.alternateText,
+        undefined,
+        `Search alternate fields need an explicit source registry: ${entry.key}`,
+      );
     }
   }
   assert.equal(

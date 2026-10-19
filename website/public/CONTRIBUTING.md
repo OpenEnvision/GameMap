@@ -89,6 +89,15 @@ World model entries should also explain where authoritative state lives: an exec
 - Keep audit timestamps and internal identifiers in source records or maintenance ledgers, not reader-facing introductions.
 - Chinese guides live under `docs/zh/`. Mark links to untranslated material as English. Do not rewrite the separately licensed, preserved skill package to change its tone.
 
+## Translations
+
+- Keep canonical source data in English. Put Chinese interface messages in `website/content/i18n/zh.json` or `docs.zh.json`, and reader-text overlays in `website/content/i18n/content/` using stable `kind:id` keys.
+- Translate the complete field, including material conditions. Preserve project names, source URLs, creator attribution, licensing, list items, and the difference between proposed work and measured results.
+- Run `node scripts/check-locales.mjs --approve-new` to record fingerprints for newly translated fields. It does not approve changed source text. Review an existing translation before updating its source fingerprint; never automatically refresh all hashes.
+- Add full Chinese articles under `docs/zh/`. Mark deliberate links to English originals as `(English)` or with the existing Chinese language marker. Other internal links keep the selected interface language.
+- Keep untranslated passages explicitly English. Do not replace third-party source files, or present a translated title as a translated article.
+- Run `npm run check`, rebuild, and run `npm run check:build` and `npm run test:web` for both locales.
+
 ## Pull requests
 
 Briefly describe additions or corrections, primary sources, the actual review date, and repository checks run. If only web pages were checked, state: “Sources checked; full reproduction not performed.” After fixing data, regenerate and include the affected outputs. Documentation-only changes can use the relevant formatting or link checks. Do not automatically download large models or datasets, or execute external project scripts just to validate links.
