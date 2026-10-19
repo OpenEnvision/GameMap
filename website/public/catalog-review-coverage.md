@@ -437,3 +437,8 @@ The [SAM 2 lifecycle subsection](visual-evidence-research.md#sam-2-temporal-mask
 ### Persistent visual-artifact retrieval (2026-10-19)
 
 The [FiftyOne subsection](visual-feedback-mechanisms.md#7-fiftyone-persistent-retrieval-over-capture-evidence) inspects independently resolved FiftyOne aacfc8182fc5353296b5edd7475e63335fedb5cb and Brain ba978a12293fda9953b478f601ac8950d2a35aa4 sources. It separates parent/frame/label identity from immutable pixels, saved view rules from snapshots, sampled-frame reuse from freshness, and query-distance fields from durable query histories. Index membership/reload, annotation writeback and local/remote vector boundaries remain scoped to inspected interfaces. These revisions do not establish a compatible installed bundle, index completeness or retrieval accuracy. No dataset, model, embedding, database or service was run; proposed stale-artifact fixtures remain unimplemented.
+
+
+### Multiview capture and persisted-stream association (2026-10-19)
+
+The [BlenderProc subsection](visual-evidence-research.md#blenderproc-multiview-capture-contracts) inspects source 76bd8b82ee19489843578ff045298642197bf883, keeping its main snapshot, package version, release tag and default Blender runtime distinct. Camera frames, sampled visibility, depth conversion, renderer-local instance associations and output loading/writing are separate contracts. Sampling and sparse ray hits do not establish complete inspection; HDF5 output requires caller-declared stream and manifest validation. Unequal-focal conversion and partial-output observations remain source-level caveats, not reproduced defects. No Blender, renderer, installer, asset dataset or acceptance fixture was executed.
