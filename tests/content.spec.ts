@@ -267,10 +267,11 @@ test("global search also finds a canonical resource rather than only documentati
     .click();
   const search = page.getByRole("dialog");
   await search.getByRole("combobox").fill("OpenAI Codex");
-  const result = search
-    .getByRole("option")
-    .and(search.locator('[id="fd-search-option-content:resource%3Acodex/"]'));
+  const result = search.locator(
+    '[role="option"][id="fd-search-option-content:resource%3Acodex/"]',
+  );
   await expect(result).toBeVisible({ timeout: 20000 });
+  await expect(result).toContainText("OpenAI Codex");
   await result.click();
   await expect(page).toHaveURL(/\/resources\/codex\/$/);
   await expect(
