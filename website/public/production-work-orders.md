@@ -4,6 +4,8 @@ Sources checked on **2026-10-18**. Full reproduction not performed. All GameMap 
 
 ## Common execution contract
 
+**Design acceptance:** [F.E.A.R. behavior authoring](studio-production-case-studies.md#fear-inspect-the-information-and-constraints-behind-a-characters-plan), [Left 4 Dead pacing controls](studio-production-case-studies.md#left-4-dead-expose-pacing-state-without-treating-it-as-measured-player-emotion) and [Valve playtesting evidence](studio-production-case-studies.md#valve-playtesting-select-evidence-for-the-experience-question-being-asked) distinguish valid plans and policy traces from realized gameplay and human experience. These historical methods complement the proposed contracts; they do not certify enjoyable play.
+
 **GameMap editorial guidance.** Each work order needs an isolated workspace, intended target platform, immutable input manifest, source and consuming-tool versions, selected operation/options, native diagnostics, output hashes and an explicit acceptance policy. Record documentation versions separately from installed versions. A rolling URL, versioned documentation URL or source commit does not establish the installed executable or its dependencies.
 
 Keep these states distinct: request accepted; native operation terminal; expected artifacts present; artifacts validated; project saved; fresh process reopened; target-runtime acceptance complete. Record **accepted, quality failure, unsupported, infrastructure failure, timeout, cancelled or inconclusive** separately. A timeout is not cancellation, a retry is not necessarily idempotent, and an existing file may belong to an earlier run. Cancellation and power-loss durability remain unknown unless a specific source establishes them.
