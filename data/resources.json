@@ -1028,7 +1028,7 @@
     "category": "engines",
     "type": "docs",
     "summary": "Epic's modular UE5 sample game, with gameplay plugins, abilities, animation, input, and UI.",
-    "detail": "Useful for learning how Game Feature Plugins, Experiences, and the Gameplay Ability System work together in a real project. Source and content are distributed through Fab / Epic Launcher and require a matching engine version. Lyra is more complex than a minimal prototype, so study it by module.",
+    "detail": "Useful for learning how Game Feature Plugins, Experiences, and the Gameplay Ability System work together in a real project. Source and content are distributed through Fab / Epic Launcher and require a matching engine version. Lyra is more complex than a minimal prototype, so study it by module. The official Fab listing marks its content for use only with Unreal Engine-based products.",
     "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/lyra-sample-game-in-unreal-engine",
     "tags": [
       "Unreal Engine",
@@ -1046,7 +1046,13 @@
     "dimensions": [
       "3d"
     ],
-    "verified": "2026-10-18"
+    "verified": "2026-10-19",
+    "links": [
+      {
+        "label": "Official Fab listing",
+        "url": "https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0?lang=en"
+      }
+    ]
   },
   {
     "id": "epic-developer-community",

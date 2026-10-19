@@ -285,9 +285,9 @@ Tags: `Unity` · `2D` · `Tilemap` · `Official examples` · `Runnable source`. 
 
 **[Lyra Sample Game](https://dev.epicgames.com/documentation/en-us/unreal-engine/lyra-sample-game-in-unreal-engine)**
 
-Useful for learning how Game Feature Plugins, Experiences, and the Gameplay Ability System work together in a real project. Source and content are distributed through Fab / Epic Launcher and require a matching engine version. Lyra is more complex than a minimal prototype, so study it by module.
+Useful for learning how Game Feature Plugins, Experiences, and the Gameplay Ability System work together in a real project. Source and content are distributed through Fab / Epic Launcher and require a matching engine version. Lyra is more complex than a minimal prototype, so study it by module. The official Fab listing marks its content for use only with Unreal Engine-based products.
 
-Tags: `Unreal Engine` · `Official sample` · `GAS` · `Modular design` · `Runnable project`. Source reviewed: 2026-10-18.
+Tags: `Unreal Engine` · `Official sample` · `GAS` · `Modular design` · `Runnable project`. Source reviewed: 2026-10-19. Further reading: [Official Fab listing](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0?lang=en)
 
 **[Three.js · Examples](https://threejs.org/examples/)**
 
