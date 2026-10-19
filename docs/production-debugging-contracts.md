@@ -11,6 +11,7 @@ Checked **2026-10-18**. Sources inspected; no profiler, engine, GPU capture, phy
 | GPU removal | DRED breadcrumbs and allocation candidates | Exact failing instruction and safe device recovery |
 | Contact or rollback failure | CVD recorded solver stages; Jolt contact/state APIs | Whole-game reset, animation semantics and cross-engine equivalence |
 | Unexpected build size or blurred streamed assets | UnityDataTool content analysis; Addressables reports; UE streaming counters | Runtime memory, project quality targets and complete-world readiness |
+| Memory grows across repeated edit/playtest cycles | [Allocation windows, snapshots and retained references](#memory-lifetime-across-repeated-production-cycles) | Intended cache lifetime, complete native/GPU ownership and an actual leak verdict |
 
 ## Capture, shader and GPU diagnosis
 
@@ -130,6 +131,78 @@ Checked **2026-10-18**. Sources inspected; no profiler, engine, GPU capture, phy
 **Unknowns.** These prerequisites do not verify the target platform combination, application determinism or compatibility between engine releases.
 
 
+### Joint and articulation observation contracts
+
+Checked 2026-10-18 against Unity 6000.0 official documentation. These version-family pages do not pin an immutable engine patch or PhysX implementation. This supplements [collider shape acceptance](asset-validation-contracts.md#collision-cooking-and-gameplay-shape-acceptance) with connection, drive and constraint observations. No engine or fixture was executed; acceptance designs are **GameMap editorial guidance**.
+
+#### Source-scoped operation contracts
+
+##### 1. Validate the actual connection and coordinate frames
+
+In the ordinary Rigidbody connection path, `Joint.connectedBody` is the endpoint reference; leaving it unset connects to a fixed world point. Unity does not support that connection across a different Scene using a local physics Scene. Moving the connected Rigidbody into a Scene using `LocalPhysicsMode.Physics3D` automatically disconnects it. An intended pair remaining visually adjacent therefore does not establish a surviving connection. [Connected-body API][U1]
+
+`Joint.anchor` uses local coordinates. ConfigurableJoint exposes per-axis linear/angular motion modes, limits, drive mode and target values; `configuredInWorldSpace` changes the target-value frame. Preserve the two endpoint identities, physics-scene identities, anchors, axis basis, motion restrictions and chosen target frame as inputs rather than deriving them from a screenshot. The exposed properties are configuration, not a native motion-completed result. [Anchor API][U2], [ConfigurableJoint API][U3]
+
+ArticulationBody instead describes a reduced-coordinate logical tree. Its `parentAnchorPosition` is relative to the parent **articulation body**, which can differ from the immediate Transform parent when intermediate nodes exist. The revolute axis is the parent anchor's X axis, and rotating that anchor changes the axis in world space. This requires an explicit body/anchor hierarchy map, not only a scene-Transform list. [Articulation API][U4], [Parent-anchor API][U5], [Articulation component reference][U6]
+
+##### 2. Keep requested targets, units and measured motion separate
+
+The articulation component reference describes drives as implicit springs with position-error and velocity-error terms. The force limit caps generated force/torque. Zero stiffness removes position attraction; zero damping does not make the drive stop at its target. A drive target is therefore not a settling or interaction-success signal. [Articulation component reference][U6]
+
+The documented angular units differ by interface: `ArticulationDrive.target` uses **degrees**, while `SetDriveTargets(List<float>)` and `GetJointPositions(List<float>)` use **radians**; their linear quantities use meters. `GetJointVelocities(List<float>)` documents meters/second and radians/second. These are documentation-level contracts requiring exact-build verification, not measured implementation behavior. [Per-drive target][U7], [Bulk target setter][U8], [Position readback][U9], [Velocity readback][U10]
+
+`SetDriveTargets` returns void and addresses the whole hierarchy. `GetDofStartIndices(List<int>)` supplies offsets indexed by each body's `index`; that body's `dofCount` supplies its span. The integer result is the hierarchy's total DOF count, not a success code. Do not assume one float per scene node, infer stable correspondence from equal array lengths, or reuse an old mapping after topology/lock changes without validation. The inspected documentation does not specify malformed-buffer error behavior, transactional application or cancellation. [Bulk target setter][U8], [DOF mapping][U11]
+
+##### 3. Observe constraints without mistaking numerical correction for physical validity
+
+`Joint.currentForce` and `currentTorque` expose solver constraint loads relative to `connectedBody` when assigned, otherwise in world space. Record that frame and its pose with the sample; comparing raw vectors from differently oriented connections is not a common-frame comparison. These API pages establish neither an observation timestamp nor a complete accounting of every external/contact/actuator load. [Force API][U12], [Torque API][U13]
+
+`ArticulationBody.GetDriveForces(List<float>)` fills hierarchy-wide reduced-coordinate drive-force data and returns the DOF count. Use the same body/DOF mapping; this documented drive observation is not a whole-mechanism contact-wrench measurement. [Drive-force readback][U14]
+
+`ConfigurableJoint.projectionMode` can bring violated constraints back into alignment after solver failure, but the correction is nonphysical and can violate momentum conservation and collision geometry. The projection-distance API warns about jitter with very small tolerances and about configurations such as joint cycles where projection may be impossible. A tidy final pose is therefore insufficient acceptance evidence. Retain projection settings and measure constraint errors and motion over time. [Projection mode][U15], [Projection distance][U16]
+
+##### 4. Preserve an explicit break-condition documentation conflict
+
+The 6000.0 `Joint.breakTorque` API says the torque axis must be Locked or Limited, and identifies an unconstrained ConfigurableJoint as unable to break. The same-version Configurable Joint manual says torque breaking can occur for Free, Limited or Locked axes. **These official pages conflict; this research does not resolve their runtime behavior.** An adapter must not silently select one as a universal guarantee. [Break-torque API][U17], [Configurable Joint manual][U18]
+
+`OnJointBreak(float)` reports a break on the same GameObject, passes the break force and precedes automatic removal/deletion of the joint. The callback supplies no joint reference in its signature. For multiple joints on one object, a single callback value alone is insufficient identity evidence; retain component identities and inspect which connection survives. Exact torque-case callback behavior and callback/removal sampling order beyond this documented sequence remain untested. [Break callback][U19]
+
+#### Proposed acceptance and failure handling
+
+**GameMap editorial guidance, unimplemented and unexecuted:** require configuration readback, then bounded dynamic acceptance, then independent persistence/reopen acceptance. None of the cited setters supplies an asynchronous operation handle or an application-level settled/succeeded signal. Define a sampling phase and horizon using the project's existing physics-step owner; capture pose/velocity, anchor separation or forbidden-axis error, target tracking, limit excursions, relevant loads and joint existence. Require an explicit settling tolerance and dwell interval when settling matters. Missing samples, stale topology, unexpected disconnection/breakage, nonfinite data or exceeded project tolerances block promotion. A documented ambiguity remains unresolved until a disposable exact-patch fixture establishes it.
+
+Preserve exact engine/build/platform, scene/content identity, body/constraint identity, physics-scene membership, transform/anchor frames, DOF map, units, initial conditions, mass/inertia and relevant solver/drive/projection settings, applied command history, sampling phase and tolerances. Retry only from a known authored fixture with its original configuration; this supplement establishes no transactional rollback, safe repeated actuation, persisted joint identity, cross-engine equivalence or deterministic simulation guarantee.
+
+#### Unexecuted acceptance fixtures
+
+1. **Connection and frame identity:** build a limited door mechanism with nonidentity parent rotations and an intermediate Transform node in an articulation variant. Verify the chosen world hinge axis and both endpoint identities. In a separate Rigidbody fixture, move the connected body into a different local physics Scene and verify that unexpected disconnection is detected rather than accepted as a world-fixed joint.
+2. **Mixed-unit, mixed-DOF command:** use fixed, prismatic, revolute and spherical links with unique body IDs. Compare a 90-degree per-drive command with its documented pi/2-radian bulk equivalent, then compare measured motion and mapped readback. Change a lock/topology input within valid articulation configurations and require mapping revalidation. The documented constraints prohibit locking a revolute/prismatic joint’s sole DOF or all spherical rotations. A same-length, intentionally permuted adapter map must fail the identity gate before native submission.
+3. **Tracking and stability:** command a target with adequate versus deliberately insufficient drive effort, and with versus without damping. Keep position error and residual velocity separate. Compare projection disabled/enabled under a declared load; a recovered final pose must not hide excessive intermediate separation or unacceptable motion. Include a cyclic ConfigurableJoint graph as a distinct observation case without predicting projection success.
+4. **Break identity and disputed axis case:** compare Free, Limited and Locked rotational modes under the same declared torque protocol, retaining exact patch and diagnostic evidence. Use one joint per object first; add a two-joint object to verify break attribution, event evidence and surviving-component inventory. Treat the free-axis result as resolving only the tested configuration, not rewriting the conflicting source claims globally.
+
+#### Primary sources
+
+[U1]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-connectedBody.html
+[U2]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-anchor.html
+[U3]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ConfigurableJoint.html
+[U4]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.html
+[U5]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody-parentAnchorPosition.html
+[U6]: https://docs.unity3d.com/6000.0/Documentation/Manual/class-ArticulationBody.html
+[U7]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationDrive-target.html
+[U8]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.SetDriveTargets.html
+[U9]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.GetJointPositions.html
+[U10]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.GetJointVelocities.html
+[U11]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.GetDofStartIndices.html
+[U12]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-currentForce.html
+[U13]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-currentTorque.html
+[U14]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.GetDriveForces.html
+[U15]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ConfigurableJoint-projectionMode.html
+[U16]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ConfigurableJoint-projectionDistance.html
+[U17]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-breakTorque.html
+[U18]: https://docs.unity3d.com/6000.0/Documentation/Manual/class-ConfigurableJoint.html
+[U19]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.OnJointBreak.html
+
+
 ## Build artifacts, streaming budgets and delayed timing
 
 ### UnityDataTool: query the shipped bytes before proposing an asset fix
@@ -171,6 +244,62 @@ The [Unity 6000.0 FrameTimingManager manual](https://docs.unity.com/en-us/engine
 [GetLatestTimings, Unity 6000.0](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/FrameTimingManager.GetLatestTimings.html) returns the number actually obtained, at most the request; element zero is the latest completed sample, with older samples afterward. Array capacity is the caller's responsibility.
 
 **Proposed gate:** record capture request, actual returned count, sample timestamps, graphics API/device and instrumentation configuration. Do not align a delayed sample with the current screenshot solely by array position, or interpret unavailable data as zero cost. Performance acceptance needs a specified target workload, comparable capture overhead and repeated observations. No frame collector or benchmark was executed here.
+
+## Memory lifetime across repeated production cycles
+
+Sources checked **2026-10-18; full reproduction not performed**. This section adds allocation and retention evidence to the existing capture, timing and streaming-budget contracts. It does not establish an automated leak detector, memory budget or executed adapter.
+
+### Source and version scope
+
+The inspected Epic pages are labeled **Unreal Engine 5.8**. Unity's scripting/manual pages are scoped to **6000.0**; Memory Profiler `@1.1` resolves to **1.1.11**, and Addressables `@1.21` to **1.21.21**. These are documentation versions, not installed binaries or immutable implementation pins. Keep the actual engine, package, target, scripting backend, build configuration and profiling settings with each experiment.
+
+### Unreal: query an allocation's lifetime, not just total growth
+
+**Documented inputs and output.** [Memory Insights](https://dev.epicgames.com/documentation/en-us/unreal-engine/memory-insights-in-unreal-engine) requires memory tracing from process startup; enabling it only through late connection cannot recover the allocation history. Its example uses `-trace=default,memory`; packaged projects must be Development builds. Optional `metadata,assetmetadata` channels support asset/class filtering. The resulting `.utrace` opens in Insights, where allocation queries take a rule and timeline markers. Results include sizes, tags and allocation/free callstacks; readable symbols require the matching `.pdb` or `.elf`.
+
+The **Memory Leaks** rule selects allocations created between A and B and not freed until after C. **Growth** selects allocations created during A–B and surviving B; **Limited Lifetime** finds allocations created during A–B and freed during B–C. Query execution can take substantial time; the allocation table populates after completion. Detailed allocation tracks and LLM summaries have different temporal granularity and startup coverage. [Memory Insights query and recording reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/memory-insights-in-unreal-engine)
+
+**Interpretation:** the rule name is not a project-specific fault verdict. A retained cache can satisfy the same predicate as an accidentally retained object. The application must establish when that allocation should have become unnecessary.
+
+**Recording boundary.** The [Insights reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-insights-reference-in-unreal-engine-5) distinguishes `Memory` (allocation events, callstacks and tags) from `Memory_Light` (without callstacks). It documents file/trace-store destinations, `Trace.Stop`, and the required channels; a disabled channel produces no corresponding events. [Trace status](https://dev.epicgames.com/documentation/en-us/unreal-engine/trace-in-unreal-engine-5#trace-status) reports connection, tracing memory, sent bytes and channel state. The tracing system itself consumes resources. Neither source establishes a crash-durable flush receipt or a universal overhead allowance. Preserve the destination, settings and terminal observation; independently reopen the file and check interval coverage before treating an empty query as evidence.
+
+### Unity: capture target, completion and artifact are separate
+
+[TakeSnapshot, Unity 6000.0](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Unity.Profiling.Memory.MemoryProfiler.TakeSnapshot.html) accepts a path, finish callback, capture flags and optional screenshot callback. The signature/example use `(path, success)`; the parameter prose reverses these arguments. A disconnected Player writes locally. A connected Player streams to the Editor and reports **false locally even when the Editor saved the snapshot**. Editor calls capture the selected connected Player or the Editor itself. Caller-side failure therefore cannot alone classify receiving-side delivery.
+
+Serialize captures until the finish callback. Screenshot completion is separate and only available in Players/Play mode; waiting outside these conditions can hang. The snapshot process blocks execution on the captured host. Unsupported native-callstack flags are ignored. The sample checks a temporary file before renaming it; this is no crash-durability guarantee. No bounded timeout or cancellation contract is documented here.
+
+**Proposed evidence:** retain connection direction, target, requested fields, callback outcomes and received artifact. Verify the receiver rather than converting every false callback into a failed production candidate.
+
+### Snapshot and reference evidence has limits
+
+A snapshot records one capture point, not continuous monitoring. [Snapshot concepts](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/snapshots-concepts.html) describe `.snap` storage and metadata; snapshots can be large. The [capture guide](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/snapshot-capture.html) warns that Editor memory cannot isolate Play mode and recommends checking optimization results in a Player build.
+
+[Comparison](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/snapshots-comparison.html) shows absolute values and differences; unchanged rows are hidden by default. Cross-session conditions can change totals independently of the application change. A positive delta requires diagnosis, not immediate attribution to the edited feature.
+
+The [References panel](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/references-component.html) distinguishes the expandable **Referenced By** chain toward roots from **References To**, which lists direct outgoing references only. A selected object's name still appears when no references are displayed. Treat this as the captured reference surface, not proof that every possible native/GPU owner was collected.
+
+Record observer settings too: the [window reference](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/memory-profiler-window-reference.html) exposes capture flags, screenshots, closing open captures and running garbage collection before Editor captures. Changing these between candidates changes the observation procedure.
+
+### Addressables: relinquishing ownership is not immediate reclamation
+
+[Addressables memory management](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/MemoryManagement.html) requires matched loads/releases. Both assets and bundles have reference counts. Releasing an asset to zero does not necessarily unload it while other assets retain its bundle. The Addressables profiler reflects those counts, not an exact inventory of resident memory; `Resources.UnloadUnusedAssets` can unload eligible objects without updating that reference-count view, and may introduce hitches.
+
+Conversely, immediately reloading a just-unloaded shared dependency causes **asset churn**. Lower retained bytes at one boundary can therefore trade against repeated loading work. Preserve asset/handle identity, bundle dependencies, intended cache lifetime and actual release operations alongside memory evidence. Do not force unloading merely to obtain a smaller score.
+
+Unity's [disabled-domain-reload guidance](https://docs.unity3d.com/6000.0/Documentation/Manual/domain-reloading.html) adds a separate confound: static fields, static-event subscribers and nonserialized values can survive Play sessions, while script-change refreshes can still trigger reload. Reentering Play mode is not an equivalent cold reset.
+
+### Proposed fixed-cycle fixture, unimplemented and unexecuted
+
+**GameMap editorial guidance.** Use one disposable project and a declared cycle: load a fixed asset set, instantiate a scene, run a fixed interaction/capture sequence, destroy cycle-owned objects, release owned handles, then return to a named idle boundary. Freeze cycle count, content, warm-up, cache policy, reset method, observation settings and allowed residual resources before comparing candidates.
+
+1. Record a fresh-process baseline and separate warmed baseline. Mark A before acquisition, B after work, and C after the application's declared release boundary; do not replace lifecycle completion with an arbitrary sleep.
+2. Capture equivalent Unity snapshots or retain the complete UE trace interval. Inspect growth by object/category and retention chain or allocation callstack. Keep shared bundles and intended caches explicit.
+3. Include a deliberately retained fixture object and a correctly released control. Check whether the chosen observation surface distinguishes them; no automatic fault verdict is assumed.
+4. Repeat unchanged cycles without resetting away the suspected accumulation. Separately rerun from a fresh process to distinguish session persistence from reproducible per-cycle retention.
+5. Preserve files, hashes, callback outcomes, query parameters, identities and exclusions. Report incomplete capture, missing fields, timeout and unresolved ownership as inconclusive. Measure normal gameplay timing separately from snapshot-induced pauses.
+
+Cross-platform coverage, native/GPU accounting completeness, safe interrupted-capture recovery and actual retention thresholds remain unverified. A useful result is a reproducible lifetime violation with an identified owner or allocation origin; neither reduced bytes nor successful snapshot creation establishes that result.
 
 ## Remaining practical boundary
 

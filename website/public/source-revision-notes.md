@@ -2,7 +2,7 @@
 
 Checked **2026-10-18**. Sources checked; full reproduction not performed.
 
-This appendix records 72 exact upstream source or model-card files inspected during the research. Full revisions identify the document/code that supported a claim. They do not identify an installed package, engine environment, downloaded model weights or a successful adapter run. No source pin grants rights beyond the applicable code, weight, data and service terms.
+The revision table below lists 72 selected upstream source or model-card files inspected during the research. Additional inspected files are cited in the relevant sections and other dossiers; this table is not an exhaustive inventory of every source cited in GameMap. Full revisions identify the document/code that supported a claim. They do not identify an installed package, engine environment, downloaded model weights or a successful adapter run. No source pin grants rights beyond the applicable code, weight, data and service terms.
 
 ## Revision index
 
@@ -184,6 +184,7 @@ This appendix records 72 exact upstream source or model-card files inspected dur
 - Custom tools define schemas and execute; results separate model content from details/structured content.
 - Nested executeTool calls emit events but do not automatically create transcript entries; the calling tool can report them. Stored nested-call metadata omits results.
 - Sibling tool calls can run in parallel.
+- Further [evidence-lifecycle inspection](visual-evidence-research.md#pi-evidence-lifecycle-and-interrupted-execution) at the same commit covers [session hooks and normalization](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/agent-session.ts), [cooperative tool execution](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/agent/src/agent-loop.ts), [nested signals and context composition](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/extensions/runner.ts), [active-branch session projection](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/session-manager.ts) and [text-only summary serialization](https://github.com/earendil-works/pi/blob/482c1381a00d8d00bc81697e4a980c593db6803e/packages/coding-agent/src/core/compaction/utils.ts). The linked subsection preserves supporting image/RPC documentation and exact claim boundaries; cancellation and conversation resume do not establish engine rollback or job recovery.
 
 **Limits:** Exact source file re-read at the recorded commit on 2026-10-18. Source revision does not pin an installed package, model, dependency environment or GameMap adapter. No software executed.
 

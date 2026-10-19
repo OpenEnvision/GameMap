@@ -129,3 +129,7 @@ See [Asset selection and visual-feedback creation](asset-selection-feedback.md) 
 6. **Pin and audit.** Preserve source and model revisions, service names, raw tool results, compressed context and exact score implementation. Paper/code discrepancies need an explicit protocol choice before execution. Purpose-specific code, weight, data and service permissions remain a separate gate.
 
 **Remaining boundary:** the collection supports a bounded experiment design, but cannot select a universally best visual harness. That requires a chosen target game/project family, an authorized runtime, owned or cleared assets, calibrated acceptance assertions and a compute/latency budget. No such experiment is claimed here.
+
+## Complementary failure evidence
+
+[Mechanism blindness and regressive scene edits](asset-selection-feedback.md#6-mechanism-blindness-and-regressive-scene-edits) distinguish sampled visual plausibility from requested solver behavior, and final revisions from best independently accepted revisions. [Dead Cells authored constraints](studio-production-case-studies.md#dead-cells-generation-must-preserve-the-authored-experience) and [Far Cry 5 stale-preview tradeoffs](studio-production-case-studies.md#far-cry-5-stale-previews-and-excessive-automation-can-invalidate-feedback) provide historical developer evidence for design intent, dependency freshness and gameplay-constrained art direction. The linked notes preserve paper/artifact discrepancies, historical scope and unexecuted transfer hypotheses.

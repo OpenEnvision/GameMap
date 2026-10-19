@@ -111,6 +111,8 @@ The [inspected README at 39952ba6341898380ff1c2c3336101c57c99196b](https://githu
 
 The following is **GameMap editorial guidance**, not an implemented pi integration or a claim that a modified harness reproduces any official benchmark. The existing [pi/GEPA source notes](source-revision-notes.md) describe extension and optimizer surfaces; they do not provide these experimental controls automatically.
 
+For generated interaction regressions, [stateful discovery and failure reduction](gameplay-state-contracts.md#stateful-interaction-discovery-and-failure-reduction) separates adaptive shrinking, clean-state reproduction and fixed regression promotion. Count every reset, attempted step, shrink/replay and cleanup; reduced traces are not independent success-rate trials.
+
 ### Choose the unit of comparison first
 
 - **Official reproduction:** preserve the publisher's exact tasks, evaluator, engine, allowed observations/actions, budgets and run policy. A new pi adapter must meet those conditions before its score is compared with published results.
@@ -226,3 +228,63 @@ The [API contract][GEPA-api] and [engine][GEPA-engine] reuse the saved seed's va
 [GEPA-lm]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/lm.py
 [GEPA-sampling]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/strategies/proposal_sampling.py
 [GEPA-license]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/LICENSE
+
+## Harness composition and evaluation accounting
+
+Checked 2026-10-18 against the existing GEPA and Meta-Harness source pins. This extends the preceding execution-control review with composition identity and path-specific accounting. Source inspection only: no candidate import, optimizer, model, benchmark or runtime fixture was executed. All proposed controls and fixtures are **GameMap editorial guidance**. Meta-Harness observations below apply to its named classification implementation, not every possible harness.
+
+### 1. GEPA: named components are not a typed execution graph
+
+At **f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819**, [adapter.py][HC-G-adapter] defines Candidate as dict[str,str]. evaluate(batch,candidate,capture_traces) must construct the system and return aligned outputs/scores and, when requested, trajectories; make_reflective_dataset returns per-component JSON-serializable records. ProposalFn explicitly permits coupled updates. [Component selection][HC-G-components] offers one component in round-robin order or all keys.
+
+The [mutation implementation][HC-G-reflect] copies the parent and asserts each returned replacement key already exists (585–588); this assignment does not itself check membership in components_to_update or enforce semantic dependencies. [Merge][HC-G-merge] requires identical component-key sets and takes whole component texts from descendants sharing an ancestor. When both descendants changed a component, executable code chooses the higher aggregate-score descendant, randomly breaking ties (159–190), despite an adjacent comment describing proportional random selection. It does not synthesize or type-check their combined workflow.
+
+[Candidate hashing][HC-G-state] is SHA-256 over JSON-serialized sorted candidate items (37–39). This identifies text, not the builder, tool implementation, operation authority or external runtime. Existing cache warnings remain correct.
+
+**Proposed GameMap adaptation, unimplemented:** retain the GEPA map, e.g. tool_schema, workflow and evidence_policy, rather than claim GEPA supplies a graph language. Freeze a builder interface: validate_and_build(candidate, frozen_contract) returns either a plan or structured invalid_candidate reasons. Declare primitive operation IDs, argument/result schemas, dependency edges, sequential/parallel execution, bounded retries and error branches. Validate the mutation mask and coupled-schema compatibility before evaluation. Keep evaluator/permissions outside candidate text. Identify an executable candidate with component-text hash plus builder revision, primitive/schema manifest, dependency lock and fixed authority hash; keep experiment/trial identity separate. Store parent IDs and the chosen component provenance for merges.
+
+### 2. GEPA: “metric calls” depend on the execution path
+
+EvaluationBatch has optional num_metric_calls. [Reflective evaluation][HC-G-reflect] honors it for parents and children, falling back to batch length (372–376, 638–642). [Full validation][HC-G-engine] instead charges len(val_ids) with traces and len(uncached) otherwise (287–368). The [merge/cache evaluator][HC-G-state] likewise returns requested/cache-miss example counts. Therefore num_metric_calls is not a universal accounting override for nested model calls or retries.
+
+Reflective batch counts are incremented after a batch returns. The default [batch adapter][HC-G-adapter] evaluates pairs sequentially; if a later call raises after earlier external work, that path does not provide a complete spent-resource count. Batched reflection failure also triggers per-task retries ([245–272][HC-G-reflect]); additional attempted work must be retained. These are static paths, not reproduced overspending.
+
+**Proposed control:** maintain an append-only dispatch/settlement ledger outside optimizer scores: candidate/trial/task/operation IDs; phase; reserved budget; attempts; observed model tokens, tool/render calls and wall time; charged/estimated/unknown cost; terminal status. Reconcile cancellation and late results. Keep valid task failure, invalid candidate, infrastructure failure, timeout, abstention and unknown outcome distinct, even if a declared optimization metric assigns some the same failure score. A missing usage report is unknown, not zero. Budget admission and total-cost reconciliation remain adapter/executor responsibilities.
+
+### 3. Meta-Harness: a concrete interface and incomplete-coverage boundary
+
+At **8123ccabe2b19fa1123090b2e5f1bacc20963ce8**, the classification example’s [MemorySystem][HC-M-memory] requires predict(input) → (answer,metadata), learn_from_batch(results), get_state() → serialized string and set_state(state). Its [loader][HC-M-inner] imports a module and instantiates the first inspected MemorySystem subclass (479–504). The outer [validation][HC-M-loop] checks zero process exit status plus stdout containing OK when importing the candidate (192–215); that is narrower than validating the runtime interface and is already code execution, not safe static inspection.
+
+[benchmark.py][HC-M-bench] requires complete configured seed groups per model/dataset/candidate (179–239), but aggregate-frontier construction averages accuracy over the dataset groups actually loaded, without requiring every configured dataset for each candidate (675–688). Its context-character axis instead averages only strictly positive context lengths and then truncates to an integer; these axes therefore use different inclusion rules. The [outer summary][HC-M-loop] similarly averages available datasets (529–540). Zero score is labeled “failed”; invalid imports disappear from the normal summary when other candidates are valid (232–244, 490–560). Preserve a complete manifest rather than treating those summaries as exhaustive failure denominators.
+
+The Pareto axis is memory_context_chars, not total model cost. [MemorySystem][HC-M-memory] tracks the last prompt per thread and defines context length in characters. The actual classification evaluation uses the last tracked call_llm prompt length minus test-input length, clamped to zero and integer-averaged ([inner_loop.py 439–469][HC-M-inner]); this includes template text as well as memory, rather than serialized-state size or all prompts. Its evaluated metric does not call the default get_context_length path. [benchmark.py][HC-M-bench] separately sums available runtime, call and token fields, with missing fields defaulting to zero. Do not rename character efficiency as token or spending efficiency.
+
+**Proposed control:** content-address candidate code plus dependencies/configuration; record the exact exported class instead of relying on module names. Require complete prespecified dataset/seed coverage for promotion, report coverage separately, and retain every proposal/import/evaluation attempt. Validate interfaces without importing untrusted candidates; later runtime validation requires a separately authorized isolated environment.
+
+### 4. Small acceptance fixtures, not executed
+
+1. Merge incompatible workflow/schema versions: reject before dispatch; accept a jointly consistent update; record each inherited component.
+2. Return num_metric_calls=7 for two examples: compare reflective, full-validation and merge counters against an independent mock ledger; never interpret inconsistent units as equal budgets.
+3. A two-item batch completes one item then raises; reflection partially completes then retries. Retain all attempts and mark unresolved costs unknown.
+4. Two datasets/two seeds: omit one candidate’s entire dataset, then one seed. Assert no complete-suite promotion; a genuine zero score remains distinguishable from missing/invalid output.
+5. Reuse a candidate module name with changed source. Reject stale result reuse unless the full execution fingerprint matches.
+
+Unknowns: safe executable-plan grammar, concrete engine primitive semantics, dependency locks, enforcement/cancellation and measured costs. These require a chosen authorized runtime. [GEPA v2][HC-G-paper] and [Meta-Harness v1][HC-M-paper] report their own experimental findings; the source-path observations above neither reproduce those results nor demonstrate game-production gains. Meta-Harness’s [README][HC-M-readme] explicitly describes a cleaned-up release, so do not equate its current defaults with the paper’s experimental lock.
+
+[HC-G-adapter]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/core/adapter.py
+[HC-G-components]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/strategies/component_selector.py
+[HC-G-reflect]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/proposer/reflective_mutation/reflective_mutation.py
+[HC-G-merge]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/proposer/merge.py
+[HC-G-state]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/core/state.py
+[HC-G-engine]: https://github.com/gepa-ai/gepa/blob/f1cfdee2856e9dc4b5b4dc5cc2e391d0aa20d819/src/gepa/core/engine.py
+[HC-M-memory]: https://github.com/stanford-iris-lab/meta-harness/blob/8123ccabe2b19fa1123090b2e5f1bacc20963ce8/reference_examples/text_classification/memory_system.py
+[HC-M-inner]: https://github.com/stanford-iris-lab/meta-harness/blob/8123ccabe2b19fa1123090b2e5f1bacc20963ce8/reference_examples/text_classification/inner_loop.py
+[HC-M-loop]: https://github.com/stanford-iris-lab/meta-harness/blob/8123ccabe2b19fa1123090b2e5f1bacc20963ce8/reference_examples/text_classification/meta_harness.py
+[HC-M-bench]: https://github.com/stanford-iris-lab/meta-harness/blob/8123ccabe2b19fa1123090b2e5f1bacc20963ce8/reference_examples/text_classification/benchmark.py
+[HC-M-readme]: https://github.com/stanford-iris-lab/meta-harness/blob/8123ccabe2b19fa1123090b2e5f1bacc20963ce8/README.md
+[HC-G-paper]: https://arxiv.org/abs/2507.19457v2
+[HC-M-paper]: https://arxiv.org/abs/2603.28052v1
+
+## Rule-design search is a separate evaluation population
+
+The [GAVEL source/paper audit](game-ai-notes.md#gavel-rule-design-search-and-verdict-boundaries) separates Ludii compilation, random-play and UCT samples, archive occupancy, reference-relative novelty and human interest. Selected code and paper protocols differ in fitness aggregation and completion semantics; failure sentinels and requested budgets need explicit interpretation. These board-rule observations do not establish general game-development success or an untouched final-test result.

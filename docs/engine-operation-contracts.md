@@ -21,6 +21,8 @@ Sources checked on 2026-10-18; full reproduction not performed. This note comple
 
 ### World, physics, AI, and identity
 
+For powered mechanisms and articulated assemblies, see [joint configuration, units and constraint observations](production-debugging-contracts.md#joint-and-articulation-observation-contracts).
+
 | Operation | Source-backed behavior | Acceptance still needed |
 | --- | --- | --- |
 | Stream a world region | [World Partition](https://dev.epicgames.com/documentation/en-us/unreal-engine/world-partition-in-unreal-engine) distinguishes Loaded and Activated cells | Verify required actor, collision and navigation readiness; [UE-259478](https://issues.unrealengine.com/issue/UE-259478) documents an early completion result for standalone level instances. Target fix 6.0 is not a verified shipped fix |
@@ -45,6 +47,43 @@ Sources checked on 2026-10-18; full reproduction not performed. This note comple
 | Transfer a rig | [Unity bind poses](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Mesh-bindposes.html) are indexed inverse base-pose matrices corresponding to bone indices | Preserve indices, weights and mesh-root space; compare rest pose and root-transformed deformation after import |
 | Observe Godot frame phase | [SceneTree signals](https://docs.godotengine.org/en/stable/classes/class_scenetree.html) fire before node process/physics callbacks | A separate rendering barrier and provenance are needed for post-render images |
 
+### Runtime animation observation gates
+
+Sources checked 2026-10-18 against Unity 6000.0 and Godot 4.4 official documentation, not immutable engine implementations. Full reproduction not performed. This supplements [decoded-pose/compression validation](asset-validation-contracts.md#animation-sampling-and-compression) and [frame capture ownership](visual-evidence-research.md#engine-frame-readback-and-capture-ownership): pose application, playback completion, event delivery and actor movement require distinct observations.
+
+#### Unity: observation depends on visibility, update phase and movement owner
+
+- `AlwaysAnimate` includes offscreen animation. `CullUpdateTransforms` suppresses retargeting, IK and Transform writes when renderers are invisible; `CullCompletely` suppresses animation altogether when renderers are not visible. A stale offscreen skeleton therefore cannot alone establish an incorrect clip or graph. [U1]
+- `Normal` updates in Update, `Fixed` in FixedUpdate, and `UnscaledTime` ignores Time.timeScale. Record the mode and relevant clock rather than comparing identical render-frame counts as identical animation progress. [U2]
+- `OnAnimatorMove` occurs after state-machine/animation evaluation but before `OnAnimatorIK`; treating this callback as the final post-IK pose boundary is unsupported. [U3]
+- `applyRootMotion` has no effect when a script implements OnAnimatorMove, and changing it at runtime reinitializes the Animator. Record the movement-owning script; do not treat toggling the property as a harmless observation control or a proven reset/rollback operation. [U4]
+
+**Editorial fixture, unexecuted:** fixed clip/controller/rig with nonzero travel and an IK target; compare visible/offscreen runs for each culling mode. Log animation time, sampled joints, post-IK joints and actor transform separately. Repeat with a movement callback and with timeScale changes under each update mode. Introduce the root-motion toggle as a separate reinitialization case, not between nominally equivalent samples. Pass criteria must name which phase and movement owner they test.
+
+#### Godot: immediate pose, playback completion and side effects differ
+
+`play()` applies animation on the next processing opportunity; `advance(0)` requests the immediate update. `seek(seconds, update=true)` updates the pose while skipping intervening events. Its `update_only=true` suppresses method, audio and animation-playback tracks. Seeking to the end does not emit `animation_finished`; the documented alternative for skipping while emitting completion is `advance()`. These are distinct operations, not interchangeable shortcuts. [G1]
+
+Manual process mode requires `advance()`. `mixer_applied` reports application of blended results to target objects; it is not documented as a rendering/physics fence. Deferred method mode batches calls until after event processing, whereas immediate mode invokes them as reached. Looping animations do not emit `animation_finished`. The transform of a valid configured root-motion bone track of type POSITION_3D, ROTATION_3D or SCALE_3D is visually canceled, so an in-place skeleton is not by itself failed locomotion. Animated-node caches may miss a disappeared node; `clear_caches()` forces refresh. [G2]
+
+**Editorial fixture, unexecuted:** one nonlooping clip with a moving joint, a method marker and completion counter; compare fresh-instance `play` plus `advance(0)`, seek with both update flags, and timed manual advancement. Record target pose, marker count, completion count and callback mode as separate results. Add a looping variant with an explicitly bounded sample interval rather than waiting for completion. Replace an animated target node and test cache refresh separately. For root motion, compare extracted motion and the consuming controller's world transform against the skeleton view; specify exactly one movement owner.
+
+#### Acceptance boundary and unknowns
+
+Proposed evidence record: engine patch version, clip/rig/graph identity, initial state, evaluation clock and step sequence, visibility/culling mode, callback mode, observation phase, joint pose, actor transform and event log. This is an editorial test design, not an implemented harness.
+
+The cited contracts do not establish a universal rendered-frame barrier, completion of deferred application-specific side effects, physics/contact success, safe retries after ambiguous evaluation, rollback, persistence across reload, or cross-platform numerical determinism. Project scripts and exact patch behavior remain untested. Do not infer those guarantees from an evaluation call, pose signal, animation-finished signal or screenshot.
+
+#### Official sources
+
+- [U1: Unity 6000.0 AnimatorCullingMode](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/AnimatorCullingMode.html)
+- [U2: Unity 6000.0 AnimatorUpdateMode](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/AnimatorUpdateMode.html)
+- [U3: Unity 6000.0 OnAnimatorMove](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.OnAnimatorMove.html)
+- [U4: Unity 6000.0 applyRootMotion](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Animator-applyRootMotion.html)
+- [G1: Godot 4.4 AnimationPlayer, play and seek](https://docs.godotengine.org/en/4.4/classes/class_animationplayer.html)
+- [G2: Godot 4.4 AnimationMixer, signals, callback modes, root_motion_track and clear_caches](https://docs.godotengine.org/en/4.4/classes/class_animationmixer.html)
+
+
 ## Native GUI automation is a separate evidence surface
 
 [Windows UI Automation](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview) depends on provider-supported control patterns. It does not establish that Unreal, Unity, or Blender exposes every custom widget or scene object. [Invoke](https://learn.microsoft.com/en-us/windows/win32/api/uiautomationclient/nf-uiautomationclient-iuiautomationinvokepattern-invoke) is intended to return promptly, but provider behavior varies. Neither invocation success nor [SendInput's inserted-event count](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendinput) proves application completion.
@@ -64,6 +103,54 @@ Sources checked on 2026-10-18; full reproduction not performed. This note comple
 **Failure/recovery fixture.** Change locale while a string is loading, alter a dynamic argument, then change locale again. Record ignored refreshes and apply a bounded application retry only after the relevant operation settles; accept only evidence matching the intended final locale and inputs. Include an expanded or RTL label, an icon-only button, and a button whose explicit accessible name differs from translated text. Check clipping, shaping/fallback, focus continuity, semantic naming and announced updates independently. Missing semantic/assistive-technology evidence remains unverified, even when screenshots pass.
 
 **Version boundary.** Unity’s `@1.5` URL is a version-family documentation route, not an immutable package pin. Godot `4.5-stable` was resolved to inspected commit `876b290332ec6f2e6d173d08162a02aa7e6ca46d`; this pins source, not a measured installed build. No cross-platform screen-reader coverage, timing guarantee or rendering/accessibility synchronization guarantee is established.
+
+## Godot native semantic observation and action completion
+
+Native accessibility adds a semantic observation/action surface alongside pixels and authoritative project state. The following source-inspected contract complements the locale/name behavior above; it does not establish an installed observer or assistive-technology test.
+
+### Source and version scope
+
+The inspected Godot `4.5-stable` tag resolves to commit `876b290332ec6f2e6d173d08162a02aa7e6ca46d`, verified through the official GitHub ref API. This is historical, version-specific source evidence, not a claim about all later Godot releases. Its third-party inventory identifies **accesskit-c 0.17.0**, upstream revision `f69571eca23151be07a41bf493ca48a2b44b6a8b`, MIT. That inventory identifies vendored headers, not an installed dynamic library. [Tag](https://api.github.com/repos/godotengine/godot/git/refs/tags/4.5-stable), [inventory](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/thirdparty/README.md#L8-L17).
+
+Godot's release announcement calls the 4.5 integration experimental and describes incomplete editor support. Do not translate that launch statement into a current-release limitation without checking the target release. [Official announcement](https://godotengine.org/releases/4.5/).
+
+### Activation is an input, not an empty-tree verdict
+
+The 4.5 project setting `accessibility/general/accessibility_support` has Auto=0, Always Active=1, Disabled=2. Auto processes information updates only when an assistive application is active. Accessibility inspectors do not count; the documented inspector-testing mode is Always Active. The update-rate setting defaults to 60 per second. [4.5 ProjectSettings](https://docs.godotengine.org/en/4.5/classes/class_projectsettings.html#class-projectsettings-property-accessibility-general-accessibility-support).
+
+`DisplayServer.accessibility_screen_reader_active()` returns 1 for active, 0 for inactive and −1 for unknown. Source distinguishes supported from enabled: both require the display capability and a non-disabled mode, while enabled also requires exactly 1 in Auto. Thus unsupported, disabled, inactive and unknown must remain separate outcomes. [Pinned API](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/doc/classes/DisplayServer.xml#L77-L83), [gating](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/main/scene_tree.cpp#L205-L228).
+
+### Update, focus and action completion
+
+`queue_accessibility_update()` returns no completion token; it queues only an in-tree node outside the edited scene. `get_accessibility_element()` is documented for use during `NOTIFICATION_ACCESSIBILITY_UPDATE`, not as a general snapshot query. Ordinary Node elements begin as containers with node names/children. Exit/invalidation frees the RID, so it is not a persistent project object identifier. [Node API](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/doc/classes/Node.xml#L323-L329), [queue/element creation](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/main/node.cpp#L3678-L3704), [default semantics](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/main/node.cpp#L51-L80), [exit](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/main/node.cpp#L178-L193).
+
+The changed-node queue is a set of object IDs, so repeated pre-flush queue requests coalesce. Processing is window-specific, skips invalid/non-visible-window nodes, and calculates semantic focus from the window/control focus owner, including embedded windows and popups. Flushing is enabled-gated and rate-limited unless forced. These operations are not rendering or assistive-announcement fences. [Update/focus/flush implementation](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/main/scene_tree.cpp#L230-L310).
+
+`FOCUS_ACCESSIBILITY` eligibility depends on accessibility-enabled state and visibility. An Always Active inspector test can therefore change the focusable set compared with inactive Auto. Source also registers focus/blur callbacks that call `grab_focus()`/`release_focus()`. [Eligibility](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/gui/control.cpp#L2271-L2274), [callbacks](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/gui/control.cpp#L3659-L3665), [registration](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/gui/control.cpp#L3720-L3724).
+
+Accessibility actions advertise a supported action and register a callback receiving one action-dependent Variant. The AccessKit bridge validates the target, converts request data and invokes a valid registered callback with `call_deferred`; receipt is not effect completion. Semantic setters and action registration are update-phase gated. A Button's accessibility click changes toggle state/emits callbacks, then separately queues semantic update and redraw. [Action API](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/doc/classes/DisplayServer.xml#L127-L152), [deferred bridge](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/drivers/accesskit/accessibility_driver_accesskit.cpp#L109-L197), [registration gate](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/drivers/accesskit/accessibility_driver_accesskit.cpp#L938-L964), [Button effect](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/gui/base_button.cpp#L87-L118).
+
+**Adapter implication:** record action delivery, callback execution, project-authoritative effect, refreshed native semantic observation, rendered frame and actual assistive behavior independently. Do not retry a potentially non-idempotent action merely because speech or tree refresh is late.
+
+### Custom gameplay and platform limits
+
+**Adapter implication:** custom-drawn controls/gameplay need project-authored semantic mappings appropriate to the intended roles, descriptions, state/value and actions; default names/hierarchy are not automatic interpretation of pixels, collision, quest completion or spatial playability. The low-level 4.5 DisplayServer API supports this semantic authoring, including sub-elements; it does not supply an external scene-state oracle. [Pinned DisplayServer API](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/doc/classes/DisplayServer.xml).
+
+The 4.5 documented screen-reader capability covers Windows, macOS and Linux X11/Wayland. Verify the actual build's capability: Windows source conditions it on a live accessibility driver, and initialization failure clears that driver. Do not infer mobile/Web delivery from the engine's export list. [4.5 capability](https://docs.godotengine.org/en/4.5/classes/class_displayserver.html#class-displayserver-constant-feature-accessibility-screen-reader), [Windows capability](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/platform/windows/display_server_windows.cpp#L157-L165), [driver initialization](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/platform/windows/display_server_windows.cpp#L6806-L6817).
+
+Pinned `DisplayServerHeadless::has_feature()` always returns false. Combined with the initial capability check in `SceneTree::is_accessibility_enabled()` and its flush guard, this gates off the normal SceneTree→native-driver update path even in Always Active. This does not rule out a synthetic/custom unit-test tree; such a test still would not prove native OS delivery or assistive usability. [Headless](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/servers/display_server_headless.h#L68-L70), [enabled/flush gates](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/scene/main/scene_tree.cpp#L205-L310).
+
+### Proposed acceptance fixture: explicitly unimplemented and unexecuted
+
+Use a disposable project-owned screen with a toggle action, a custom-drawn status indicator backed by independently observable state, an accessibility-only focus target, and a popup. Freeze the expected semantic contract and action effect before execution.
+
+- Record exact engine/template and AccessKit build, OS/display driver, mode/override, configured update rate, native observer and assistive-technology versions, process/window identity, scene generation, transient element mapping and request timestamps
+- Compare Auto with absent/present assistive technology against Always Active inspector observation; preserve inactive/unknown/unsupported distinctly. Use headless only as a negative capability case
+- Change the custom state repeatedly before a flush and test final-generation semantics without demanding an event for every coalesced request. Deliberately omit its semantic update while changing pixels/state; the collector must detect stale semantics
+- Invoke the advertised action and observe callback, authoritative state, native tree and pixels separately. Exercise popup focus, hide/reveal, and removal/recreation to reject stale element identities. Recheck before any retry
+- Acceptance requires matching intended state/generation on each claimed surface within a declared observation timeout. A timeout is incomplete evidence, not automatic action failure or permission to repeat it. Actual screen-reader interaction and disabled-player review remain separate; no automated accessibility or legal certification is established
+
+Necessary but currently unimplemented components are a project driver, native semantic observer, action/effect correlation and platform-specific assistive review. The proposal neither claims those collectors already exist nor replaces existing visual and authoritative-state checks.
 
 ## One useful integration fixture
 

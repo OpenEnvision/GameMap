@@ -26,7 +26,7 @@ Here, Coding World Model mainly means representing an external world in code. Me
 3. **Persistent visual worlds:** Code World Model: Coding Agent as World Brain → Programmable World Model → CoDeR. Compare who maintains state, how events outside the camera view are handled, and how state becomes rendering controls.
 4. **Deployable hybrid rendering interfaces:** Magpie → SolarRenderer → StreamRender-H3. Record input structure, first-frame and prompt requirements, chunks, history caches, hardware, and interaction latency.
 5. **Comparisons:** Genie, GameNGen, DIAMOND, GameFactory, Oasis, and Genie 3. They help explain visual dynamics and action control, without automatically providing editable code worlds.
-6. **Exportable spatial assets:** WonderWorld and Marble. Assess the mesh, collision, and interaction work needed for pipelines in Blender, Three.js, Unity, UE, and other tools.
+6. **Exportable spatial assets:** WonderWorld and Marble. Assess the mesh, collision, and interaction work needed for pipelines in Blender, Three.js, Unity, UE, and other tools. For splat-based delivery, inspect [source-pinned edit/export/import boundaries](asset-validation-contracts.md#gaussian-splat-editing-and-delivery): preserved project state, baked transforms, actual format versions and separate collision acceptance.
 
 ## Research results versus released artifacts
 
