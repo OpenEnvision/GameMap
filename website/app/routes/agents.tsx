@@ -129,15 +129,7 @@ export default function Agents() {
           {t("Agent-neutral tools remain included when filtering a client.")}
         </span>
       </div>
-      <nav className="discovery-jump-links" aria-label={t("Agent page sections")}>
-        <Link to={{ pathname: "/agents/", hash: "#agent-tools", search: params.toString() }}>
-          {t("Tools ({count})", { count: tools.length })}
-        </Link>
-        <Link to={{ pathname: "/agents/", hash: "#agent-games", search: params.toString() }}>
-          {t("Game examples ({count})", { count: games.length })}
-        </Link>
-      </nav>
-      <section className="content-index-section" id="agent-tools">
+      <section className="content-index-section">
         <h2>{t("Skills, bridges & development tools")}</h2>
         <div className="content-grid">
           {tools.map((entry) => (
@@ -152,7 +144,7 @@ export default function Agents() {
           </p>
         )}
       </section>
-      <section className="content-index-section" id="agent-games">
+      <section className="content-index-section">
         <h2>{t("Creator-attributed game examples")}</h2>
         <p className="reading-note">
           {t(

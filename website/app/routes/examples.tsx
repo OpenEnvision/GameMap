@@ -1,6 +1,5 @@
-import { useMemo } from "react";
 import { useLoaderData, type LoaderFunctionArgs } from "react-router";
-import { ArrowUpRight, ChevronDown, Layers3, Search } from "lucide-react";
+import { ArrowUpRight, Search } from "lucide-react";
 import { ExampleCard } from "../components/example-card";
 import { useClientQuery } from "../lib/client-query";
 import { contentFor, sources } from "../../content/registry.server";
@@ -8,13 +7,6 @@ import { matchesSearch } from "../../content/matching";
 import { searchableText } from "../../content/search";
 import { ContentDocument } from "../components/content";
 import { Link, useSiteI18n } from "../lib/i18n";
-import { gameEngineFamilies, gameEngineFamilyIds } from "../lib/game-engines";
-import ResourceIcon from "../../src/components/ResourceIcon";
-import {
-  gameAccessFilterIds,
-  gameAccessOptions,
-  hasCompleteProjectSource,
-} from "../../content/game-platforms";
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
   return {
@@ -22,40 +14,15 @@ export function loader({ request }: LoaderFunctionArgs) {
     foundations: content.all("foundation"),
     collections: content.all("collection"),
     media: sources.learningMedia,
-    platforms: ["steamworks", "itch-io", "epic-games-store", "gog", "crazygames"]
-      .map((id) => content.require("resource", id)),
   };
 }
 export default function Examples() {
   const { t } = useSiteI18n(),
-    { examples, foundations, collections, media, platforms } =
+    { examples, foundations, collections, media } =
       useLoaderData<typeof loader>(),
     [params, setParams] = useClientQuery();
-  const { engineEntries, engineOptions } = useMemo(() => {
-    const engineEntries = examples.map((entry) => ({
-      entry,
-      families: gameEngineFamilyIds(entry.data.engine),
-      accessIds: gameAccessFilterIds(entry.data),
-      searchText: searchableText(entry),
-    }));
-    const usedFamilies = new Set(engineEntries.flatMap(({ families }) => families));
-    return {
-      engineEntries,
-      engineOptions: gameEngineFamilies.filter(({ id }) => usedFamilies.has(id)),
-    };
-  }, [examples]);
   const query = params.get("q") || "",
-    requestedTrack = params.get("track") || "all",
-    track = requestedTrack === "2d" || requestedTrack === "3d" ? requestedTrack : "all",
-    requestedEngine = params.get("engine") || "all",
-    engine = engineOptions.some(({ id }) => id === requestedEngine)
-      ? requestedEngine
-      : "all",
-    access = gameAccessOptions.find(({ id }) => id === params.get("access"))?.id || "all",
-    sourceScope = params.get("source") === "complete-project" ? "complete-project" : "all";
-  const engineLabel = t(
-    engineOptions.find(({ id }) => id === engine)?.label || "All engines",
-  );
+    track = params.get("track") || "all";
   const update = (key: string, value: string) =>
     setParams(
       (previous) => {
@@ -66,16 +33,11 @@ export default function Examples() {
       },
       { replace: true, preventScrollReset: true },
     );
-  const games = engineEntries
-    .filter(
-      ({ entry, families, accessIds, searchText }) =>
-        (track === "all" || entry.data.track === track) &&
-        (engine === "all" || families.some((id) => id === engine)) &&
-        (access === "all" || accessIds.includes(access)) &&
-        (sourceScope === "all" || hasCompleteProjectSource(entry.data.source)) &&
-        matchesSearch(searchText, query),
-    )
-    .map(({ entry }) => entry);
+  const games = examples.filter(
+    (entry) =>
+      (track === "all" || entry.data.track === track) &&
+      matchesSearch(searchableText(entry), query),
+  );
   return (
     <main id="main-content" className="site-main listing-page">
       <title>{t("Game examples — GameMap")}</title>
@@ -104,34 +66,6 @@ export default function Examples() {
           </Link>
         </div>
       </header>
-      <section className="publishing-platforms" aria-label={t("Game stores and publishing platforms")}>
-        <div className="platforms-heading">
-          <div>
-            <span className="eyebrow">{t("DISCOVER & PUBLISH")}</span>
-            <h2>{t("Find your next platform.")}</h2>
-            <p>{t("Browse games and find the official publishing tools for your own release.")}</p>
-          </div>
-          <Link to="/docs/publishing-platforms/">{t("Publishing guide")}<ArrowUpRight size={13} /></Link>
-        </div>
-        <div className="platforms-grid">
-          {platforms.map((entry) => {
-            const browseUrl = entry.data.access?.demo.url || entry.data.url;
-            return (
-              <article className="platform-resource" key={entry.id} data-content-ref={entry.key}>
-                <ResourceIcon resource={entry.data} size={26} />
-                <div>
-                  <h3><a href={browseUrl} target="_blank" rel="noreferrer">
-                    {entry.data.name}<ArrowUpRight size={12} />
-                  </a></h3>
-                  <a className="platform-publish-link" href={entry.data.url} target="_blank" rel="noreferrer">
-                    {t("Publish a game")}<ArrowUpRight size={11} />
-                  </a>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </section>
       <div className="catalog-toolbar">
         <div className="filter-search">
           <Search size={19} />
@@ -141,27 +75,6 @@ export default function Examples() {
             value={query}
             onChange={(event) => update("q", event.target.value)}
           />
-        </div>
-        <div className="example-engine-control" data-active={engine !== "all"}>
-          <span className="example-engine-size" aria-hidden="true">{engineLabel}</span>
-          <span className="example-engine-icon" aria-hidden="true">
-            <Layers3 size={15} strokeWidth={1.7} />
-          </span>
-          <select
-            className="example-engine-filter"
-            aria-label={t("Game engine or renderer")}
-            title={engineLabel}
-            value={engine}
-            onChange={(event) => update("engine", event.target.value)}
-          >
-            <option value="all">{t("All engines")}</option>
-            {engineOptions.map(({ id, label }) => (
-              <option key={id} value={id}>
-                {t(label)}
-              </option>
-            ))}
-          </select>
-          <ChevronDown className="example-engine-chevron" size={14} aria-hidden="true" />
         </div>
         <div className="segmented-control" aria-label={t("Game dimension")}>
           {[
@@ -179,37 +92,11 @@ export default function Examples() {
           ))}
         </div>
       </div>
-      <div className="secondary-filters example-access-filters" role="group" aria-label={t("Play and source filters")}>
-        <label>
-          <span>{t("Play or run access")}</span>
-          <select aria-label={t("Play or run access")} value={access}
-            aria-describedby="example-access-help"
-            onChange={(event) => update("access", event.target.value)}>
-            <option value="all">{t("All access types")}</option>
-            {gameAccessOptions.map(({ id, label }) => (
-              <option key={id} value={id}>{t(label)}</option>
-            ))}
-          </select>
-        </label>
-        <label>
-          <span>{t("Source scope")}</span>
-          <select aria-label={t("Source scope")} value={sourceScope}
-            aria-describedby="example-source-help"
-            onChange={(event) => update("source", event.target.value)}>
-            <option value="all">{t("All source scopes")}</option>
-            <option value="complete-project">{t("Complete project source only")}</option>
-          </select>
-        </label>
-      </div>
-      <div className="example-filter-help">
-        <p id="example-access-help">{t("Access filters include additional creator-linked editions.")}</p>
-        <p id="example-source-help">{t("Complete project source describes the files, not the license or playtest coverage.")}</p>
-      </div>
       <div className="results-meta">
         <span aria-live="polite">
           {t("{count} game examples", { count: games.length })}
         </span>
-        <span>{t("Creator evidence · Play & run links · Project source")}</span>
+        <span>{t("Creator evidence · Playable builds · Project source")}</span>
       </div>
       {games.length ? (
         <div className="example-grid">

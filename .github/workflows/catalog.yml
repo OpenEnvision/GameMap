@@ -11,24 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, checked 2026-10-18
         with:
           persist-credentials: false
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4, checked 2026-10-18
         with:
           node-version: '22'
           cache: npm
       - run: npm ci
       - name: Generate and check committed source outputs
         run: |
-          git ls-files --error-unmatch -- index.html .nojekyll .gamemap-static.json AWESOME.md data/resources.json website/src/data/resources.json website/content/paper-catalog.json website/public/papers.json website/public/papers-provenance.json
-          npm run sync:papers
           node scripts/generate.mjs
-          git diff --exit-code -- AWESOME.md data/resources.json website/src/data/resources.json website/content/paper-catalog.json \
-            docs/cadle-repositories.md docs/tutorials-and-demos.md docs/coding-agent-game-code.md docs/game-testing-library.md docs/icon-sources.md \
-            website/public/assets/brand/favicon.svg website/public/resources.json website/public/papers.json website/public/papers-provenance.json \
-            website/public/repository-research.json website/public/testing-resources.json website/public/logo-sources.json \
-            website/public/assets/media/learning/manifest.json ':(glob)website/public/*.md'
+          git diff --exit-code -- AWESOME.md data/resources.json website/src/data/resources.json website/public docs
       - name: Validate source catalog and media
         run: npm run check
       - name: Build static website and documentation
@@ -37,8 +31,6 @@ jobs:
           PAGES_BASE_PATH: /GameMap/
       - name: Validate generated build output
         run: npm run check:build
-      - name: Validate complete root website and deployable artifact
-        run: npm run check:release
       - name: Install browser for interaction checks
         run: npx playwright install --with-deps chromium
       - name: Check desktop and mobile interactions

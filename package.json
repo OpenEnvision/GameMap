@@ -8,16 +8,12 @@
   },
   "scripts": {
     "dev": "node scripts/dev.mjs",
-    "build": "node scripts/build.mjs",
-    "check": "node scripts/check-assets.mjs && node scripts/check-entry.mjs && node scripts/check.mjs && node scripts/check-content.mjs && node scripts/check-papers.mjs && node scripts/check-locales.mjs && npm run test:content",
-    "check:build": "node scripts/check-assets.mjs --built && node scripts/check.mjs --built && node scripts/check-web.mjs && node scripts/check-content.mjs --built && node scripts/check-papers.mjs && node scripts/check-locales.mjs --built && node scripts/check-entry.mjs && node scripts/check-web.mjs --root .",
-    "test:content": "node --test tests/*.test.mjs",
+    "build": "node scripts/generate.mjs && node scripts/prepare-docs.mjs && react-router typegen && tsc -b && react-router build && node scripts/finalize-build.mjs",
+    "check": "node scripts/check.mjs && node scripts/check-content.mjs && node scripts/check-locales.mjs && npm run test:content",
+    "check:build": "node scripts/check.mjs --built && node scripts/check-web.mjs && node scripts/check-content.mjs --built && node scripts/check-locales.mjs --built",
+    "test:content": "node --test tests/content.test.mjs",
     "preview": "node scripts/preview.mjs",
-    "test:web": "playwright test",
-    "sync:papers": "node scripts/sync-papers.mjs",
-    "generate:entry": "node scripts/generate-entry.mjs",
-    "check:release": "node scripts/check-release.mjs",
-    "package:pages": "node scripts/package-pages.mjs"
+    "test:web": "playwright test"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.3.0",

@@ -12,6 +12,7 @@ import {
   BookOpen,
   Boxes,
   Code2,
+  Compass,
   Gamepad2,
   Layers3,
   Orbit,
@@ -20,8 +21,6 @@ import {
 } from "lucide-react";
 import { categories, publicAsset } from "../lib/catalog";
 import { ExampleCard } from "../components/example-card";
-import { HomeShowreel, type HomeShowreelCase } from "../components/home-showreel";
-import showreelManifest from "../../public/assets/media/promo/manifest.json";
 
 const categoryIcons = [Code2, Boxes, Gamepad2, Layers3, Sparkles, Orbit];
 const featuredIds = [
@@ -29,43 +28,12 @@ const featuredIds = [
   "opengame-marvel-platformer",
   "tron-exonix-claude",
 ];
-function movieChapter(id: HomeShowreelCase["id"]) {
-  const chapter = showreelManifest.chapters.find((entry) => entry.id === id);
-  if (!chapter) throw new Error(`Missing showreel chapter: ${id}`);
-  return {
-    sourceUrl: chapter.sourceUrl,
-    poster: publicAsset(chapter.poster),
-    startSeconds: chapter.startSeconds,
-    endSeconds: chapter.endSeconds,
-    seekSeconds: chapter.seekSeconds,
-  };
-}
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
   const featured = featuredIds.map((id) => content.require("example", id).data);
-  const portal = content.require("example", "opengame-marvel-platformer");
-  const pelican = content.require("example", "pelican-bike-claude");
-  const world = content.require("resource", "code-world-model-brain");
-  const showreelCases: HomeShowreelCase[] = [
-    {
-      id: "2d", label: "2D Game", title: portal.data.title,
-      subtitle: "OpenGame · Phaser", href: portal.url,
-      ...movieChapter("2d"),
-    },
-    {
-      id: "3d", label: "3D Game", title: pelican.data.title,
-      subtitle: "Claude Code · Three.js", href: pelican.url,
-      ...movieChapter("3d"),
-    },
-    {
-      id: "world", label: "Code World Model", title: "Code World Model",
-      subtitle: "MiniMax-H3", href: world.url,
-      ...movieChapter("world"), research: true,
-    },
-  ];
   return {
     featured,
-    showreelCases,
+    spotlight: featured[0],
     media: Object.fromEntries(
       featured.map((game) => [game.id, sources.learningMedia[game.id]]),
     ),
@@ -81,10 +49,10 @@ export function loader({ request }: LoaderFunctionArgs) {
 }
 
 export default function Home() {
-  const { t, locale } = useSiteI18n();
+  const { t } = useSiteI18n();
   const {
     featured,
-    showreelCases,
+    spotlight,
     media: learningMedia,
     categories: categoryCounts,
   } = useLoaderData<typeof loader>();
@@ -125,18 +93,21 @@ export default function Home() {
       />
       <section className="home-hero">
         <div className="hero-copy">
-          <h1 className={locale === "zh" ? "hero-title-zh" : undefined}>
-            {locale === "zh" ? <>
-              <span className="hero-title-line">{t("Build your")}</span>
-              <span className="hero-title-line">{t("next world")}<span className="brand-period">.</span></span>
-            </> : <>{t("Build your next world")}<span className="brand-period">.</span></>}
+          <span className="eyebrow">
+            <span className="status-dot" />
+            {t("A FIELD GUIDE FOR GAME MAKERS")}
+          </span>
+          <h1>
+            {t("Small ideas.")}
+            <br />
+            {t("Playable worlds")}
+            <span className="brand-period">.</span>
           </h1>
           <p>
             {t(
               "The tools, working examples, and practical knowledge to build games with AI. Less wandering. More making.",
             )}
           </p>
-          <hr className="hero-divider" aria-hidden="true" />
           <form
             className="hero-search"
             onSubmit={(event) => {
@@ -166,13 +137,52 @@ export default function Home() {
               {t("Explore the resources")}
               <ArrowRight size={16} />
             </Link>
-            <Link className="button button-text" to="/docs/practical-guide/#first-playable-loop">
+            <Link className="button button-text" to="/docs/practical-guide/">
               {t("Find a starting point")}
               <ArrowUpRight size={16} />
             </Link>
           </div>
         </div>
-        <HomeShowreel cases={showreelCases} />
+        <div className="hero-spotlight">
+          <div className="spotlight-label">
+            <span>
+              <Compass size={15} />
+              {t("IN THE FIELD")}
+            </span>
+            <span>
+              {spotlight.track.toUpperCase()} / {t("CREATOR BUILD")}
+            </span>
+          </div>
+          <a
+            className="spotlight-image"
+            href={spotlight.demo.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={publicAsset(learningMedia[spotlight.id].src)}
+              alt={learningMedia[spotlight.id].alt}
+              width={1280}
+              height={720}
+              fetchPriority="high"
+            />
+            <span>
+              {t("Play the game")}
+              <ArrowUpRight size={15} />
+            </span>
+          </a>
+          <div className="spotlight-caption">
+            <span className="small-label">
+              {t("A PLAYABLE STARTING POINT")}
+            </span>
+            <h2>{spotlight.title}</h2>
+            <p>{t("Play it. Read the build story. Open the source.")}</p>
+            <a href={spotlight.tutorial.url} target="_blank" rel="noreferrer">
+              {t("See how it was made")}
+              <ArrowUpRight size={15} />
+            </a>
+          </div>
+        </div>
       </section>
       <section className="browse-section">
         <div className="section-top">

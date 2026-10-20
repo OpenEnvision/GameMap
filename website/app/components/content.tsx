@@ -3,32 +3,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link, useSiteI18n, SourceLanguage } from "../lib/i18n";
 import type { ContentBlock, ContentEntry, Fact } from "../../content/models";
 import { contentKinds } from "../../content/models";
-import { demoTypeLabels, groupRecordings } from "../../content/media";
-import { url } from "../../content/site";
-import { gameDestination } from "../../content/game-platforms";
-import { getExampleSourceStatus } from "../../content/example-source-status";
-import { PaperQuickActions } from "./paper-quick-actions";
-
-function ExampleQuickActions({ entry }: { entry: ContentEntry<"example"> | ContentEntry<"foundation"> }) {
-  const { t } = useSiteI18n();
-  const game = entry.data;
-  const mode = gameDestination(game.demo).mode;
-  const action = mode === "browser" ? "Play the game" : mode === "store" ? "View store page"
-    : mode === "source" ? "Get source & run" : mode === "setup" ? "Run locally" : "Get the game";
-  const status = getExampleSourceStatus(game.id);
-  return <div className="record-project-start">
-    <nav className="record-quick-actions" aria-label={t("Try this project")}>
-      <a className="button button-primary" href={game.demo.url} target="_blank" rel="noreferrer">{t(action)}<ArrowUpRight size={15} /></a>
-      <a className="button button-secondary" href={game.source.url} target="_blank" rel="noreferrer">{t("Project source")}<ArrowUpRight size={15} /></a>
-      <a className="button button-text" href={game.tutorial.url} target="_blank" rel="noreferrer">{t("Build story")}<ArrowUpRight size={15} /></a>
-    </nav>
-    <p className="record-project-context">{game.engine} · {t(gameDestination(game.demo).platform)}{game.source.scope === "complete-project" && <> · {t("Complete project source")}</>}</p>
-    {status && <details className="example-review-notes">
-      <summary>{t("Source & review notes")}</summary>
-      <dl>{([status.verification, status.version, status.license].filter(Boolean)).map((fact) => fact && <div key={fact.label}><dt>{t(fact.label)}</dt><dd>{t(fact.note)}</dd></div>)}</dl>
-    </details>}
-  </div>;
-}
+import { groupRecordings } from "../../content/media";
 export function ContentLink({
   href,
   children,
@@ -273,8 +248,6 @@ export function ContentDocument({
                   heading={heading}
                 />
               ))}
-              {section === "intro" && (entry.kind === "example" || entry.kind === "foundation") && <ExampleQuickActions entry={entry} />}
-              {section === "intro" && entry.kind === "paper" && <PaperQuickActions paper={entry.data} />}
             </div>
           ) : null;
         },
@@ -332,12 +305,9 @@ export function RelatedDemos({ demos }: { demos: ContentEntry<"demo">[] }) {
     </section>
   );
 }
-export function RecordingCard({ views, preferredViewId }: {
-  views: ContentEntry<"demo">[];
-  preferredViewId?: string;
-}) {
+export function RecordingCard({ views }: { views: ContentEntry<"demo">[] }) {
   const { t } = useSiteI18n(),
-    [id, setId] = useState(preferredViewId || views[0].id),
+    [id, setId] = useState(views[0].id),
     entry = views.find((view) => view.id === id) || views[0];
   return (
     <div
@@ -384,23 +354,19 @@ export function RecordingCard({ views, preferredViewId }: {
 }
 export function DemoCard({ entry }: { entry: ContentEntry<"demo"> }) {
   const { t } = useSiteI18n(),
-    video = entry.blocks.find((block) => block.type === "video"),
-    demoType = entry.data.demoType ? demoTypeLabels[entry.data.demoType] : undefined;
+    video = entry.blocks.find((block) => block.type === "video");
   return (
     <article className="demo-card" data-content-ref={entry.key}>
       {video?.type === "video" && <MediaPreview block={video} />}
       <div className="demo-card-body">
-        <div className="demo-card-meta">
-          <span className="small-label">
-            {entry.data.track.toUpperCase()} ·{" "}
-            {t(
-              entry.data.role === "excerpt"
-                ? "CURATED EXCERPT"
-                : "SOURCE RECORDING",
-            )}
-          </span>
-          {demoType && <span className="demo-type-label">{t(demoType)}</span>}
-        </div>
+        <span className="small-label">
+          {entry.data.track.toUpperCase()} ·{" "}
+          {t(
+            entry.data.role === "excerpt"
+              ? "CURATED EXCERPT"
+              : "SOURCE RECORDING",
+          )}
+        </span>
         <h2>
           <Link to={entry.url}>
             {entry.title}
@@ -410,30 +376,12 @@ export function DemoCard({ entry }: { entry: ContentEntry<"demo"> }) {
         <p lang={entry.descriptionLanguage === "en" ? "en" : undefined}>
           {entry.description}
         </p>
-        {entry.data.engine && <p className="demo-engine">
-          <span>{t("Engine / renderer")}</span> {entry.data.engine}
-        </p>}
-        {entry.data.limitations && <details className="demo-limitations">
-          <summary>{t("What this recording shows")}</summary>
-          <p lang={entry.blocks.find((block) => block.field === "limitations")?.language || "en"}>
-            {entry.data.limitations}
-          </p>
-        </details>}
         <small>{entry.data.credit}</small>
-        <div className="example-links demo-card-links">
-          <Link to={entry.url}>
-            {t("Recording details")}<ArrowUpRight size={13} />
-          </Link>
-          <a href={entry.data.sourceUrl} target="_blank" rel="noreferrer">
-            {t("Source page")}<ArrowUpRight size={13} />
-          </a>
+        <div className="example-links">
           <a href={entry.data.originalUrl} target="_blank" rel="noreferrer">
-            {t("Original recording")}
+            {t("Original video")}
             <ArrowUpRight size={13} />
           </a>
-          {entry.data.exampleId && <Link to={url.example(entry.data.exampleId)}>
-            {t("Game & source")}<ArrowUpRight size={13} />
-          </Link>}
         </div>
       </div>
     </article>

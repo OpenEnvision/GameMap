@@ -1,7 +1,6 @@
 export const agentLabels = {
   codex: 'Codex',
   'claude-code': 'Claude Code',
-  'claude-cowork': 'Claude Cowork',
   'gemini-cli': 'Gemini CLI',
   antigravity: 'Antigravity',
   cursor: 'Cursor',
@@ -9,7 +8,6 @@ export const agentLabels = {
   opencode: 'OpenCode',
   aider: 'Aider',
   cline: 'Cline',
-  'roo-code': 'Roo Code',
   windsurf: 'Windsurf',
   kiro: 'Kiro',
   pi: 'Pi',

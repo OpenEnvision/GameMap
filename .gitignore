@@ -1,27 +1,25 @@
 # Dependencies and local package-manager caches.
 # Keep package-lock.json (and any intentionally adopted lockfile) versioned.
-node_modules
+node_modules/
 .npm/
 .pnpm-store/
 .yarn/cache/
 .yarn/unplugged/
 .yarn/install-state.gz
 
-# Disposable build copies; the complete published website at the repository root is versioned.
+# Compiled websites: Vite/CI rebuild these from website/ and scripts/.
 # dist/ also matches the obsolete website/dist/ directory.
 dist/
 /build/
 /website/build/
 
-# Release ZIPs are reproducible from the complete static website.
-/release/
+# Obsolete standalone preview; the HTML document now lives in website/app/root.tsx.
+/index.html
 
 # React Router output and prepared copies of source documentation.
 /.build/
 /.react-router/
 /website/.content/
-/website/public/assets/docs/
-# Previous generated image cache (cleaned by prepare-docs.mjs).
 /website/public/docs-assets/
 
 # TypeScript, Vite, lint, and other disposable tool caches.
@@ -66,8 +64,6 @@ lerna-debug.log*
 !.env.*.template
 
 # Temporary files, editor backups, and merge leftovers.
-# Video encoder safe-save remnants are never website assets.
-*.mp4.sb-*
 /tmp/
 /temp/
 *.tmp
@@ -100,8 +96,6 @@ $RECYCLE.BIN/
 # Skill distribution archives are reproducibly generated from docs/skills/.
 /website/public/skills/
 
-# Intentionally versioned: the complete root website (index.html, .nojekyll,
-# .gamemap-static.json, assets/, media/, and generated page folders), plus README.md,
-# AWESOME.md, docs/, data/, package-lock.json, website/app/, website/src/, and
-# website/public/ source assets/downloads. CI validates generated source outputs and
-# the complete static publication; do not ignore the root publishing files.
+# Intentionally versioned: README.md, AWESOME.md, docs/, data/, package-lock.json,
+# website/app/, website/src/, and website/public/ assets/downloads.
+# Some are generated editorial outputs; CI checks that they match their sources.

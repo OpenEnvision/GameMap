@@ -88,7 +88,6 @@ export function languageAlternates(
 }
 export function isEnglishSourceLabel(label: string) {
   return (
-    label.trim().startsWith("英文") ||
     label.includes(chineseMessages["English link marker"] || "\u0000") ||
     /\(English\)/.test(label)
   );

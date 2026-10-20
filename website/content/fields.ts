@@ -9,10 +9,6 @@ import type {
 import type { ResourceAccess } from "../src/types";
 import { categories, stageLabels, typeLabels } from "../src/types";
 import { url } from "./site";
-import { gameDestination } from "./game-platforms";
-import { demoTypeLabels } from "./media";
-import { paperRoles, paperTypes } from "./papers";
-import { paperCodeStatuses, paperRepositoryKinds, paperLicenseStatuses, paperDemoKinds, paperDemoAccess, type PaperAccess } from "./paper-access";
 import { docLocale, docMessages } from './doc-language';
 import taxonomy from './taxonomy.json';
 import repositoryResearch from "../../data/segments/repository-research.json";
@@ -197,13 +193,13 @@ function describedLink(
   if (item.kind)
     blocks.push({
       type: "text",
-      label: label === "Build story / tutorial" ? "Guide format" : "Access type",
+      label: `${label} kind`,
       value: item.kind.replaceAll("-", " "),
     });
   if (item.scope)
     blocks.push({
       type: "text",
-      label: "Source contents",
+      label: `${label} source scope`,
       value: item.scope.replaceAll("-", " "),
     });
   return blocks;
@@ -242,7 +238,6 @@ export const exampleFields: FieldRules<ContentModels["example"]> = {
   title,
   description: lead,
   engine: text("Engine"),
-  assetTools: list("Asset creation tools"),
   track: mapped("Track", dimensions),
   category: mapped("Creation category", {
     "ai-generated": "AI-generated (creator attribution)",
@@ -255,24 +250,7 @@ export const exampleFields: FieldRules<ContentModels["example"]> = {
     present: (value) =>
       describedLink("Build story / tutorial", value, tutorialKeys),
   },
-  demo: {
-    present: (value) => [
-      { type: "text", label: "Game platform", value: gameDestination(value).platform },
-      ...describedLink("Play or run", value, demoKeys),
-    ],
-  },
-  distribution: {
-    present: (value) => value?.length ? [{
-      type: "links",
-      label: "More ways to play",
-      items: value.map((item) => {
-        assertKeys(item, { platform: true, url: true, kind: true, note: true }, "Game distribution");
-        const access = { playable: "Browser play", download: "Download", store: "Store page" }[item.kind];
-        if (!access) throw new Error(`Unknown game distribution kind: ${item.kind}`);
-        return { label: item.platform, url: item.url, note: `${access} — ${item.note}` };
-      }),
-    }] : [],
-  },
+  demo: { present: (value) => describedLink("Play or run", value, demoKeys) },
   source: {
     present: (value) => describedLink("Project source", value, sourceKeys),
   },
@@ -305,7 +283,7 @@ export const agentFields: FieldRules<ContentModels["agent"]> = {
     implementation: "Implementation",
     instructions: "Instructions",
     mixed: "Mixed implementation and instructions",
-  }, "guidance"),
+  }),
   codeScope: text("What the source actually contains"),
   limitations: text("Limitations"),
   publisher: text("Publisher"),
@@ -357,11 +335,6 @@ export const testingPackFields: FieldRules<ContentModels["testing-pack"]> = {
   resources: lead,
   task: text("Task"),
   measure: text("Measure"),
-  testingIds: {
-    present: (value) => [{ type: "links", label: "Recommended starting projects",
-      items: value.map((id) => ({ label: id, url: url.testing(id) })) }],
-  },
-  check: text("Success checkpoint"),
 };
 export const pathFields: FieldRules<ContentModels["path"]> = {
   id: skip("Track identity is the canonical route."),
@@ -378,10 +351,6 @@ export const stepFields: FieldRules<ContentModels["step"]> = {
   description: lead,
   deliverable: text("Deliverable"),
   check: text("Checkpoint"),
-  resourceIds: {
-    present: (value) => [{ type: "links", label: "Recommended tools",
-      items: value.map((id) => ({ label: id, url: url.resource(id) })) }],
-  },
 };
 export const collectionFields: FieldRules<ContentModels["collection"]> = {
   id: skip("Stable identity is the canonical anchor."),
@@ -394,15 +363,6 @@ export const demoFields: FieldRules<ContentModels["demo"]> = {
   id: skip("Stable identity is included in the content key and canonical URL."),
   title,
   description: lead,
-  demoType: mapped("Demo category", demoTypeLabels, "guidance"),
-  engine: text("Engine / renderer"),
-  exampleId: {
-    present: (value) => value ? [{
-      type: "links", label: "Game & source",
-      items: [{ label: "Game & source", url: url.example(value) }],
-    }] : [],
-  },
-  limitations: text("What this recording shows"),
   resourceId: {
     present: (value) => [
       {
@@ -437,7 +397,7 @@ export const demoFields: FieldRules<ContentModels["demo"]> = {
   mobilePreview: skip(
     "Rendered by the responsive video component; URLs are included in the coverage proof.",
   ),
-  originalUrl: link("Original recording"),
+  originalUrl: link("Original video"),
   sourceUrl: link("Creator / project source"),
   credit: text("Video credit"),
   alternatePreviewUrl: link("Alternate creator preview"),
@@ -692,63 +652,9 @@ export const documentFields: FieldRules<ContentModels["document"]> = {
     "Checked against the source Markdown by source/build validation.",
   ),
 };
-function paperAccessBlocks(access: PaperAccess): BlockValue[] {
-  assertKeys(access, { codeStatus: true, repositories: true, projects: true, demos: true, reviewStatus: true, checkedAt: true, evidence: true, notes: true }, "Paper access");
-  const blocks: BlockValue[] = [{ type: "text", label: "Code availability", value: paperCodeStatuses[access.codeStatus] }];
-  if (access.repositories.length) blocks.push({ type: "facts", label: "Repositories & licenses", items: access.repositories.map((repository) => {
-    assertKeys(repository, { label: true, url: true, kind: true, license: true }, "Paper repository");
-    assertKeys(repository.license, { status: true, name: true, url: true }, "Repository license");
-    return { type: "group", label: repository.label, items: [
-      { type: "link", label: "Repository", url: repository.url },
-      { type: "text", label: "Implementation scope", value: paperRepositoryKinds[repository.kind] },
-      { type: "text", label: "License status", value: paperLicenseStatuses[repository.license.status] },
-      { type: "text", label: "Code license", value: repository.license.name },
-      ...(repository.license.url ? [{ type: "link" as const, label: "License source", url: repository.license.url }] : []),
-    ] };
-  }) });
-  if (access.projects.length) blocks.push(...linkedObjects("Project pages", access.projects));
-  if (access.demos.length) blocks.push({ type: "facts", label: "Demos & setup", items: access.demos.map((demo) => {
-    assertKeys(demo, { label: true, url: true, kind: true, access: true, note: true }, "Paper demo");
-    return { type: "group", label: demo.label, items: [
-      { type: "link", label: "Demo / setup instructions", url: demo.url },
-      { type: "text", label: "Experience type", value: paperDemoKinds[demo.kind] },
-      { type: "text", label: "Access conditions", value: paperDemoAccess[demo.access] },
-      { type: "text", label: "Usage notes", value: demo.note },
-    ] };
-  }) });
-  if (access.notes.length) blocks.push({ type: "list", label: "Practical use notes", items: access.notes });
-  blocks.push({ type: "facts", label: "Artifact review", items: [
-    { type: "text", label: "Review status", value: access.reviewStatus === "source-reviewed" ? "Source reviewed" : "Unverified" },
-    { type: "text", label: "Last checked", value: access.checkedAt || "Not recorded / not established" },
-  ] });
-  if (access.evidence.length) blocks.push(...linkedObjects("Code, project & demo evidence", access.evidence));
-  return blocks;
-}
-export const paperFields: FieldRules<ContentModels["paper"]> = {
-  id: skip("Stable bibliography identity is the canonical paper URL."),
-  title,
-  description: lead,
-  authors: text("Authors"),
-  year: text("Publication year"),
-  publication: text("Publication / source"),
-  referenceType: mapped("Publication type", paperTypes, "guidance"),
-  primaryRole: mapped("Primary research role", Object.fromEntries(Object.entries(paperRoles).map(([id,role]) => [id,role.label])), "guidance"),
-  roles: labeledList("Research roles", Object.fromEntries(Object.entries(paperRoles).map(([id,role]) => [id,role.label]))),
-  topics: list("Research topics"),
-  url: link("Original publication"),
-  pdfUrl: link("PDF"),
-  arxivId: text("arXiv ID"),
-  doi: text("DOI"),
-  resourceIds: { present: value => [{type:"links",label:"Related resources",items:value.map(id=>({label:id,url:url.resource(id)}))}] },
-  origins: { section: "provenance", present: value => linkedObjects("Bibliographic sources",value) },
-  citedSections: { section: "provenance", present: value => linkedObjects("Cited in the survey",value) },
-  classification: text("Classification context", "provenance"),
-  access: { section: "guidance", present: value => value ? paperAccessBlocks(value) : [] },
-};
 export const fieldRules: {
   [K in keyof ContentModels]: FieldRules<ContentModels[K]>;
 } = {
-  paper: paperFields,
   resource: resourceFields,
   example: exampleFields,
   foundation: exampleFields,

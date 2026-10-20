@@ -23,7 +23,7 @@ test.afterEach(async ({ page }) => {
 test("home search leads to usable filtered resources", async ({ page }) => {
   await page.goto("");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Build your next world.",
+    "Playable worlds",
   );
   await expect(page.locator("video[autoplay]")).toHaveCount(0);
   await page
@@ -123,7 +123,7 @@ test("project previews are click-to-play and keep source attribution", async ({
     ),
   ).toBeTruthy();
   await expect(
-    dialog.getByRole("link", { name: "Original recording" }),
+    dialog.getByRole("link", { name: "Original video" }),
   ).toHaveAttribute("href", /^https:/);
   await page.keyboard.press("Escape");
   await expect(page.locator("video")).toHaveCount(0);
@@ -144,7 +144,7 @@ test("examples and test-library filters retain source details", async ({
   await page.getByRole("button", { name: "2D", exact: true }).click();
   await expect(page).toHaveURL(/track=2d/);
   const card = page.locator(".example-card").first();
-  await card.locator(".build-notes summary").click();
+  await card.locator("summary").click();
   await expect(card.locator(".build-notes")).toHaveAttribute("open", "");
   await expect(
     card.getByRole("link", { name: "Project source", exact: true }),
@@ -224,12 +224,8 @@ test("responsive layout, theme toggle, and navigation", async ({
       () => document.documentElement.scrollWidth <= window.innerWidth,
     ),
   ).toBeTruthy();
-  await expect(page.locator("html")).toHaveClass(/\bdark\b/);
-  const displayMode = page.getByRole("button", { name: "Switch display mode", exact: true });
-  await expect(displayMode).toHaveAttribute("aria-pressed", "true");
-  await displayMode.click();
-  await expect(displayMode).toHaveAttribute("aria-pressed", "false");
-  await expect(page.locator("html")).toHaveClass(/\blight\b/);
+  await page.getByRole("button", { name: "Toggle color theme" }).click();
+  await expect(page.locator("html")).toHaveClass(/dark/);
   if (isMobile) {
     await page
       .getByRole("button", { name: "Open navigation", exact: true })

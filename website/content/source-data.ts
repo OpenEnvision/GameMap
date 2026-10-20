@@ -1,6 +1,4 @@
 import resourceData from "../src/data/resources.json";
-import paperData from "../../data/papers.json";
-import type { PaperReference } from "./papers";
 import repositoryResearch from "../../data/segments/repository-research.json";
 import type { Resource } from "../src/types";
 import {
@@ -28,7 +26,6 @@ import identities from "../src/data/resourceIdentities.json";
 
 /** Raw collections only: no presentation filtering or last-write-wins media selection. */
 export const sources = {
-  papers: paperData as PaperReference[],
   resources: resourceData as Resource[],
   repositoryResearch,
   learningPaths,

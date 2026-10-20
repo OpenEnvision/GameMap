@@ -4,7 +4,6 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {build} from 'esbuild';
 import {parse} from 'parse5';
-import {assetFile,publicAssetPath} from './lib/assets.mjs';
 import {categories,loadCatalog,validate,renderAwesome} from './catalog.mjs';
 import {loadLearningContent,renderLearningGuide} from './learning.mjs';
 import {loadAgentCodeContent,validateAgentCodeContent,renderAgentCodeGuide} from './agent-code.mjs';
@@ -22,10 +21,10 @@ const summary=Object.fromEntries(categories.map(([c])=>[c,records.filter(r=>r.ca
 console.log(`Catalog checks passed: ${records.length} unique entries. ${JSON.stringify(summary)}`);
 
 // Keep every starter path connected to a tutorial, real game build, and complete project.
-const {learningPaths,foundationPaths,communityCollections,gameDestination}=await loadLearningContent();
+const {learningPaths,foundationPaths,communityCollections}=await loadLearningContent();
 const pathIds=new Set();
 const learningGuide=await readFile(new URL('../docs/tutorials-and-demos.md',import.meta.url),'utf8');
-assert.equal(learningGuide,renderLearningGuide(learningPaths,foundationPaths,records,communityCollections,gameDestination),'Regenerate the AI game-build guide');
+assert.equal(learningGuide,renderLearningGuide(learningPaths,foundationPaths,records,communityCollections),'Regenerate the AI game-build guide');
 for(const path of [...learningPaths,...foundationPaths]){
  assert.ok(!pathIds.has(path.id),`Duplicate learning path: ${path.id}`);pathIds.add(path.id);
  for(const field of ['title','description','engine','aiUse'])assert.ok(path[field]?.trim(),`Missing learning path ${field}: ${path.id}`);
@@ -37,15 +36,6 @@ for(const path of [...learningPaths,...foundationPaths]){
  }
  assert.ok(['playable','download'].includes(path.demo.kind),`A starter demo must be a real game, not a video or tool: ${path.id}`);
  assert.ok(path.demo.note?.trim()&&path.source.note?.trim(),`Explain game and source availability: ${path.id}`);
- const distributionUrls=new Set([path.demo.url]);
- for(const item of path.distribution??[]){
-  assert.ok(item.platform?.trim()&&item.note?.trim(),`Explain the additional platform: ${path.id}`);
-  assert.equal(new URL(item.url).protocol,'https:',`Use HTTPS: ${path.id}/distribution`);
-  assert.ok(['playable','download','store'].includes(item.kind),`Invalid platform access: ${path.id}`);
-  assert.ok(!distributionUrls.has(item.url),`Duplicate game destination: ${path.id}/${item.url}`);
-  distributionUrls.add(item.url);
-  assert.ok(learningGuide.includes(item.url),`Missing platform from downloadable guide: ${path.id}`);
- }
  assert.ok(Array.isArray(path.resourceIds)&&path.resourceIds.every(id=>records.some(resource=>resource.id===id)),`Unknown related resource: ${path.id}`);
  assert.ok(['2d','3d'].includes(path.track),`Missing learning track: ${path.id}`);
 }
@@ -107,7 +97,7 @@ function inspectWebp(bytes,label){
 const learningMediaBundle=await build({absWorkingDir:fileURLToPath(new URL('../',import.meta.url)),entryPoints:['website/src/data/learningMedia.ts'],bundle:true,write:false,format:'esm',platform:'node'});
 const {learningMedia}=await import('data:text/javascript;base64,'+Buffer.from(learningMediaBundle.outputFiles[0].text).toString('base64'));
 assert.deepEqual(Object.keys(learningMedia).sort(),learningPaths.map(path=>path.id).sort(),'Every featured AI game needs one real screenshot; engine foundations are excluded');
-const learningManifestText=await readFile(assetFile(publicAssetPath('media/learning/manifest.json')),'utf8');
+const learningManifestText=await readFile(new URL('../website/public/media/learning/manifest.json',import.meta.url),'utf8');
 const learningManifest=JSON.parse(learningManifestText);
 assert.equal(learningManifest.kind,'gameplay-screenshots');
 assert.deepEqual(learningManifest.previews.map(preview=>preview.id),learningPaths.map(path=>path.id),'Gameplay provenance must follow the rendered cases');
@@ -115,7 +105,7 @@ const mediaSources=await readFile(new URL('../docs/media-sources.md',import.meta
 let gameplayPreviewBytes=0;
 for(const path of learningPaths){
  const preview=learningMedia[path.id],provenance=learningManifest.previews.find(item=>item.id===path.id);
- assert.equal(preview.src,publicAssetPath(`media/learning/${path.id}.webp`),`Gameplay screenshots must be bundled locally: ${path.id}`);
+ assert.equal(preview.src,`media/learning/${path.id}.webp`,`Gameplay screenshots must be bundled locally: ${path.id}`);
  for(const field of ['alt','caption'])assert.ok(preview[field]?.trim(),`Missing gameplay screenshot ${field}: ${path.id}`);
  assert.equal(new URL(preview.sourceUrl).protocol,'https:');
  const creatorScreenshot=preview.origin==='creator-screenshot';
@@ -126,7 +116,7 @@ for(const path of learningPaths){
   assert.ok(!preview.capturedAt,`Do not claim a GameMap capture date for creator images: ${path.id}`);
  }else if(preview.origin==='local-capture'){
   assert.equal(preview.sourceUrl,path.source.url,`Identify the locally captured source project: ${path.id}`);
- }else assert.ok([path.demo.url,...(path.distribution??[]).filter(item=>item.kind==='playable').map(item=>item.url)].includes(preview.sourceUrl),`Capture an actual linked playable edition: ${path.id}`);
+ }else assert.equal(preview.sourceUrl,path.demo.url,`Capture the actual linked game: ${path.id}`);
  const screenshotDate=creatorScreenshot?preview.reviewedAt:preview.capturedAt;
  assert.match(screenshotDate,/^\d{4}-\d{2}-\d{2}(?:T.*)?$/,`Missing screenshot review/capture date: ${path.id}`);
  assert.ok(Number.isFinite(Date.parse(screenshotDate)),`Invalid screenshot review/capture date: ${path.id}`);
@@ -140,8 +130,8 @@ for(const path of learningPaths){
  if(checkBuilt)assert.deepEqual(await readFile(new URL('../dist/'+preview.src,import.meta.url)),bytes,`Rebuild deployed gameplay screenshot: ${path.id}`);
  gameplayPreviewBytes+=bytes.length;
 }
-assert.deepEqual((await readdir(assetFile(publicAssetPath('media/learning/')))).filter(name=>name.endsWith('.webp')).sort(),Object.values(learningMedia).map(preview=>preview.src.split('/').at(-1)).sort(),'Record every bundled gameplay screenshot');
-if(checkBuilt)assert.equal(await readFile(new URL('../dist/'+publicAssetPath('media/learning/manifest.json'),import.meta.url),'utf8'),learningManifestText,'Rebuild deployed gameplay provenance');
+assert.deepEqual((await readdir(new URL('../website/public/media/learning/',import.meta.url))).filter(name=>name.endsWith('.webp')).sort(),Object.values(learningMedia).map(preview=>preview.src.split('/').at(-1)).sort(),'Record every bundled gameplay screenshot');
+if(checkBuilt)assert.equal(await readFile(new URL('../dist/media/learning/manifest.json',import.meta.url),'utf8'),learningManifestText,'Rebuild deployed gameplay provenance');
 assert.equal(await readFile(new URL('../website/public/media-sources.md',import.meta.url),'utf8'),mediaSources.replaceAll('../website/public/','./'),'Regenerate public media attribution');
 console.log(`Learning-preview checks passed: ${learningPaths.length} real-game screenshots, matched source URLs, 16:9 WebP pixels, ${checkBuilt?'public/deployment':'public'} integrity, ${(gameplayPreviewBytes/1_000_000).toFixed(2)} MB total.`);
 
@@ -163,7 +153,7 @@ for(const resource of records){
   textOnly.push(resource.id);
   continue;
  }
- assert.match(identity.asset,/^assets\/logos\/[a-z0-9-]+\.(png|jpg|svg|webp|ico|gif)$/,`Logo must be bundled locally: ${resource.id}`);
+ assert.match(identity.asset,/^logos\/[a-z0-9-]+\.(png|jpg|svg|webp|ico|gif)$/,`Logo must be bundled locally: ${resource.id}`);
  assert.equal(new URL(identity.logoSourceUrl).protocol,'https:');
  const bytes=await readFile(new URL('../website/public/'+identity.asset,import.meta.url));
  assert.equal(createHash('sha256').update(bytes).digest('hex'),identity.sha256,`Logo integrity mismatch: ${resource.id}`);
@@ -212,11 +202,6 @@ function inspectMp4(bytes,label){
  const videos=tracks.filter(track=>track.handler==='vide');
  assert.equal(videos.length,1,`One video track required: ${label}`);
  const video=videos[0],tkhd=required(video.trackBoxes,'tkhd'),mdhd=required(video.mediaBoxes,'mdhd');
- // Presentation duration uses the movie timeline, including edit-list trimming.
- // A VFR track can retain additional decode samples before/after that interval.
- const mvhd=required(children(moov),'mvhd'),movieVersion=bytes[mvhd.body],trackVersion=bytes[tkhd.body];
- const movieTimescale=bytes.readUInt32BE(mvhd.body+(movieVersion===1?20:12));
- const presentationTicks=trackVersion===1?Number(bytes.readBigUInt64BE(tkhd.body+28)):bytes.readUInt32BE(tkhd.body+20);
  const version=bytes[mdhd.body];
  assert.ok(version===0||version===1,`Unsupported media header: ${label}`);
  const timescale=bytes.readUInt32BE(mdhd.body+(version===1?20:12));
@@ -235,14 +220,13 @@ function inspectMp4(bytes,label){
   samples+=count;ticks+=count*delta;
  }
  assert.ok(samples>0&&ticks>0);
- return {width:bytes.readUInt32BE(tkhd.end-8)/65536,height:bytes.readUInt32BE(tkhd.end-4)/65536,durationSeconds:presentationTicks/movieTimescale,frameRate:samples/(ticks/timescale),audioTracks:tracks.filter(track=>track.handler==='soun').length,codec:sampleEntries[0].type};
+ return {width:bytes.readUInt32BE(tkhd.end-8)/65536,height:bytes.readUInt32BE(tkhd.end-4)/65536,durationSeconds:duration/timescale,frameRate:samples/(ticks/timescale),audioTracks:tracks.filter(track=>track.handler==='soun').length,codec:sampleEntries[0].type};
 }
 
-const {clips,variants=[],libraryClips=[],remoteRecordings=[]}=JSON.parse(await readFile(assetFile(publicAssetPath('media/showcase/manifest.json')),'utf8'));
+const {clips,variants=[],libraryClips=[]}=JSON.parse(await readFile(new URL('../website/public/media/showcase/manifest.json',import.meta.url),'utf8'));
 const bundle=await build({absWorkingDir:fileURLToPath(new URL('../',import.meta.url)),entryPoints:['website/src/data/recordings.ts'],bundle:true,write:false,format:'esm',platform:'node',define:{'import.meta.env.BASE_URL':'"./"'}});
 const {recordings}=await import('data:text/javascript;base64,'+Buffer.from(bundle.outputFiles[0].text).toString('base64'));
-const primaryClipIds=new Set(clips.map(clip=>clip.id));
-const showcaseCases=Object.fromEntries(recordings.flatMap(recording=>recording.views.filter(view=>primaryClipIds.has(view.id)).map(view=>[view.id,{...view,video:{previewSrc:view.previewSrc,src:recording.originalUrl,source:view.sourceUrl}}])));
+const showcaseCases=Object.fromEntries(recordings.flatMap(recording=>recording.views.filter(view=>view.role==='excerpt').map(view=>[view.id,{...view,video:{previewSrc:view.previewSrc,src:recording.originalUrl,source:view.sourceUrl}}])));
 const showcaseByTrack=Object.fromEntries(['2d','3d','world'].map(track=>[track,{cases:Object.values(showcaseCases).filter(view=>view.track===track).map(view=>view.id)}]));
 assert.equal(clips.length,6,'Keep six primary showcase cases; responsive variants are not extra cases');
 assert.deepEqual(clips.map(clip=>clip.id).sort(),Object.keys(showcaseCases).sort(),'Video provenance must match the rendered cases');
@@ -253,11 +237,11 @@ for(const track of ['2d','3d','world']){
 assert.equal(new Set([...clips,...variants,...libraryClips].map(clip=>clip.id)).size,clips.length+variants.length+libraryClips.length,'Duplicate media provenance IDs');
 assert.equal(new Set([...clips,...variants,...libraryClips].map(clip=>clip.asset)).size,clips.length+variants.length+libraryClips.length,'Each media record must name its own asset');
 const declaredMedia=[...clips,...variants,...libraryClips].flatMap(clip=>[clip.asset.split('/').at(-1),clip.poster.split('/').at(-1)]).sort();
-const bundledMedia=(await readdir(assetFile(publicAssetPath('media/showcase/')))).filter(name=>/\.(?:mp4|webp)$/.test(name)).sort();
+const bundledMedia=(await readdir(new URL('../website/public/media/showcase/',import.meta.url))).filter(name=>/\.(?:mp4|webp)$/.test(name)).sort();
 assert.deepEqual(bundledMedia,declaredMedia,'Remove unused demo files and record every bundled video/poster in provenance');
 async function checkLocalPreview(clip){
- assert.match(clip.asset,/^assets\/media\/showcase\/[a-z0-9-]+\.mp4$/);
- assert.match(clip.poster,/^assets\/media\/showcase\/[a-z0-9-]+\.webp$/);
+ assert.match(clip.asset,/^media\/showcase\/[a-z0-9-]+\.mp4$/);
+ assert.match(clip.poster,/^media\/showcase\/[a-z0-9-]+\.webp$/);
  const mp4=await readFile(new URL('../website/public/'+clip.asset,import.meta.url));
  const poster=await readFile(new URL('../website/public/'+clip.poster,import.meta.url));
  assert.equal(mp4.length,clip.bytes,`Video size: ${clip.id}`);
@@ -278,7 +262,6 @@ async function checkLocalPreview(clip){
 }
 for(const clip of clips){
  const demo=showcaseCases[clip.id];
- assert.equal(demo.role,'excerpt',`Primary edited preview must be labeled as an excerpt: ${clip.id}`);
  assert.ok(records.some(resource=>resource.id===clip.resourceId&&resource.dimensions.includes(clip.track)),`Missing source resource: ${clip.id}`);
  assert.equal(demo.video.previewSrc,'./'+clip.asset);
  assert.equal(demo.poster,'./'+clip.poster);
@@ -288,41 +271,14 @@ for(const clip of clips){
  await checkLocalPreview(clip);
  assert.ok(Math.abs(clip.width/clip.height-clip.sourceWidth/clip.sourceHeight)<.01,`Preserve the full source frame: ${clip.id}`);
 }
-const allViews=recordings.flatMap(recording=>recording.views.map(view=>({...view,recordingId:recording.id,resourceId:recording.resourceId,originalUrl:recording.originalUrl})));
-const localSourceViews=allViews.filter(view=>!primaryClipIds.has(view.id)&&view.previewSrc.startsWith('./'+publicAssetPath('media/showcase/')));
-assert.deepEqual(libraryClips.map(clip=>'./'+clip.asset).sort(),localSourceViews.map(view=>view.previewSrc).sort(),'Every local library preview, full or excerpted, must have provenance');
+assert.deepEqual(libraryClips.map(clip=>clip.id),['holodeck-living'],'Keep the reviewed Holodeck room clip in the resource library only');
 for(const clip of libraryClips){
- const view=localSourceViews.find(view=>view.previewSrc==='./'+clip.asset);
- assert.ok(view,`Missing recording view for local preview: ${clip.id}`);
- if(clip.startSeconds>0) assert.equal(view.role,'excerpt',`A preview cut from inside an original must be labeled as an excerpt: ${clip.id}`);
- if(clip.viewId) assert.equal(clip.viewId,view.id);
- assert.equal(view.resourceId,clip.resourceId);
- assert.equal(view.poster,'./'+clip.poster);
- assert.equal(view.originalUrl,clip.originalVideoUrl);
- assert.equal(view.sourceUrl,clip.sourceUrl);
  assert.ok(records.some(resource=>resource.id===clip.resourceId&&resource.dimensions.includes(clip.track)),`Missing library source resource: ${clip.id}`);
  assert.ok(!Object.hasOwn(showcaseCases,clip.id),`Library clip must not become a homepage case: ${clip.id}`);
  assert.equal(new URL(clip.sourceUrl).protocol,'https:');
  assert.equal(new URL(clip.originalVideoUrl).protocol,'https:');
  await checkLocalPreview(clip);
  assert.ok(Math.abs(clip.width/clip.height-clip.sourceWidth/clip.sourceHeight)<.01,`Preserve the library source frame: ${clip.id}`);
-}
-const remoteViews=allViews.filter(view=>view.previewSrc.startsWith('https://'));
-assert.deepEqual(remoteRecordings.map(item=>item.viewId).sort(),remoteViews.map(view=>view.id).sort(),'Every remote preview must have poster and source provenance');
-for(const item of remoteRecordings){
- const view=remoteViews.find(view=>view.id===item.viewId);
- assert.equal(item.recordingId,view.recordingId);
- assert.equal(item.resourceId,view.resourceId);
- assert.equal(item.previewUrl,view.previewSrc);
- assert.equal(item.originalVideoUrl,view.originalUrl);
- assert.equal(item.sourceUrl,view.sourceUrl);
- assert.equal(view.poster,'./'+item.poster);
- assert.match(item.poster,/^assets\/media\/demos\/[a-z0-9-]+\.webp$/);
- const poster=await readFile(new URL('../website/public/'+item.poster,import.meta.url));
- assert.equal(poster.length,item.posterBytes,`Remote poster size: ${item.viewId}`);
- assert.equal(createHash('sha256').update(poster).digest('hex'),item.posterSha256,`Remote poster checksum: ${item.viewId}`);
- assert.equal(item.loading,'remote-on-user-play');
- assert.equal(item.videoStoredLocally,false);
 }
 const mobileCases=Object.values(showcaseCases).filter(demo=>demo.mobilePreview);
 assert.deepEqual(variants.map(variant=>variant.parentId).sort(),mobileCases.map(demo=>demo.id).sort(),'Every runtime mobile preview needs one provenance variant');
@@ -357,9 +313,8 @@ async function englishSources(directory){
  return nested.flat();
 }
 const englishFiles=[...await englishSources('website/src'),...await englishSources('website/app'),...(checkBuilt?['dist/index.html']:[]),'README.md','AWESOME.md',...(await readdir(new URL('../website/public/',import.meta.url))).filter(name=>/\.(md|json)$/.test(name)).map(name=>'website/public/'+name)];
-// Preserve intentional Chinese navigation labels in the bilingual README, plus
-// the exact bilingual label in the archived art source. English UI stays checked.
-const sourceQuotes={'README.md':['中文指南','中文网站','中文阅读','阅读入口','从想法到可玩原型','关卡设计技能','发布平台','部署指南'],'website/public/editorial-art-prompts.md':['原创概念插图']};
+// Preserve the language-switch label and the exact bilingual label in the archived art source.
+const sourceQuotes={'README.md':['中文指南'],'website/public/editorial-art-prompts.md':['原创概念插图']};
 function englishRenderedCopy(node,inherited='en'){
  if(['script','style'].includes(node.tagName))return '';
  const language=node.attrs?.find(attr=>attr.name==='lang')?.value||inherited;

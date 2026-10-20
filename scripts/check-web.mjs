@@ -2,16 +2,11 @@ import assert from "node:assert/strict";
 import { readFile, stat, access } from "node:fs/promises";
 import { resolve, sep } from "node:path";
 import { parse } from "parse5";
-import { loadContent } from "./lib/content.mjs";
-import { assertSiteMetadata, assertSitemapAndRobots } from "./lib/site-hosting.mjs";
 
-const args = process.argv.slice(2);
-const root = resolve(args.includes('--root') ? args[args.indexOf('--root') + 1] : 'dist');
+const root = resolve("dist");
 const site = JSON.parse(
   await readFile(resolve(root, "site-manifest.json"), "utf8"),
 );
-const { siteOrigin } = await loadContent(site.base);
-const hosting = { siteOrigin, base: site.base };
 const origin = "https://static.test";
 const missing = new Set();
 let checked = 0;
@@ -52,7 +47,7 @@ for (const path of site.pages) {
     1,
     `One clear page title: ${path || "/"}`,
   );
-  assertSiteMetadata(tree, { ...hosting, label: path || "/" });
+  assert.ok(!html.includes("chatgpt.site"), `Legacy hosting URL in ${path}`);
   if (site.docs.some(document=>path===`docs/${document.slug}/`)) {
     const body = tree.find((node) =>
       node.attrs.some(
@@ -98,11 +93,6 @@ for (const path of site.pages) {
       missing.add(`${path || "/"} → missing: ${href}`);
   }
 }
-const [sitemap, robots] = await Promise.all([
-  readFile(resolve(root, "sitemap.xml"), "utf8"),
-  readFile(resolve(root, "robots.txt"), "utf8"),
-]);
-assertSitemapAndRobots(sitemap, robots, hosting);
 const search = JSON.parse(
   await readFile(resolve(root, "search-index.json"), "utf8"),
 );

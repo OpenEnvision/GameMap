@@ -141,32 +141,16 @@
     "title": "修改一个可运行的游戏。",
     "resources": "Godot 官方示例 · SuperTux · Wesnoth",
     "task": "先构建基线，再修改一个机制，并回放同一段输入序列。",
-    "measure": "构建是否成功、目标行为是否实现、出现哪些回归，以及修复尝试。",
-    "check": "原版与改动版都能启动，固定输入回放呈现目标机制改动且重开正常。"
+    "measure": "构建是否成功、目标行为是否实现、出现哪些回归，以及修复尝试。"
   },
   "testing-pack:give-an-agent-a-goal": {
     "title": "给代理一个明确目标。",
     "task": "固定任务、随机种子、动作频率、观察来源和每轮预算。",
-    "measure": "成功率、碰撞次数、路径长度、资源消耗和任务完成情况。",
-    "check": "完成一个基准回合，记录种子、观察来源、动作预算、终止原因与成功结果。"
+    "measure": "成功率、碰撞次数、路径长度、资源消耗和任务完成情况。"
   },
   "testing-pack:asset-through-pipeline": {
     "title": "让一个资产走完整条流程。",
     "task": "导入角色，映射骨骼，并播放一段具有适用许可的动作。",
-    "measure": "纹理缺失、比例、蒙皮、脚底滑动、根运动和循环接缝。",
-    "resources": "Kenney Animated Characters · Quaternius UAL · 100STYLE",
-    "check": "一个角色正确播放一个导入动画，比例、贴图与循环正常，角色和动作许可分别留档。"
-  },
-  "collection:vibe-jam-games": {
-    "title": "Vibe Jam 游戏作品",
-    "description": "浏览以 AI 编写主要代码为参赛条件的浏览器游戏。具体作品的工具归属与完整源码仍需逐项核对。"
-  },
-  "collection:ai-browser-game-jams": {
-    "title": "AI 浏览器游戏创作赛",
-    "description": "从历届 AI Browser Game Jam 发现短篇浏览器游戏及作者的工具、素材说明；参赛页面并不保证提供完整游戏源码。"
-  },
-  "collection:astra-game-source-collection": {
-    "title": "Astra 游戏源码合集",
-    "description": "按题材发现带试玩、源码和作者证据的游戏；具体编码客户端、生成范围与运行要求需查看每款作品的原始记录。"
+    "measure": "纹理缺失、比例、蒙皮、脚底滑动、根运动和循环接缝。"
   }
 }

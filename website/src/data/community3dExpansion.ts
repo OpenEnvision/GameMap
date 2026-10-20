@@ -7,7 +7,7 @@ export const community3dExpansion: LearningPath[] = [
     id: 'turbo-kart-rally-claude',
     title: 'Turbo Kart Rally',
     description: 'A procedural kart racer with drifting, item battles, seven opponents, and a documented five-agent build.',
-    engine: "Three.js · JavaScript", track: '3d', category: 'ai-generated',
+    engine: 'Three.js · Browser', track: '3d', category: 'ai-generated',
     aiUse: 'BridgeMind publishes the original prompt and explains how five Claude Opus 5.5 agents divided and integrated the game.',
     steps: [
       'Race a circuit and compare drifting, items, and opponent behavior.',
@@ -25,8 +25,7 @@ export const community3dExpansion: LearningPath[] = [
     id: 'long-wind-claude',
     title: 'Long Wind',
     description: 'A Chinese-language wuxia action game with three chapters, parries, bosses, generated characters, and retargeted animation.',
-    engine: "Three.js · JavaScript", track: '3d', category: 'ai-assisted',
-    assetTools: ["Tripo", "Adobe Mixamo"],
+    engine: 'Three.js · Browser', track: '3d', category: 'ai-assisted',
     aiUse: 'The author describes directing Claude Code in Chinese, playtesting its changes, and supplying Tripo and Mixamo access. The README includes a development timeline.',
     steps: [
       'Try movement, guarding, dodging, and the opening boss.',
@@ -44,7 +43,7 @@ export const community3dExpansion: LearningPath[] = [
     id: 'nova-lancer-claude',
     title: 'NOVA LANCER',
     description: 'A rail shooter crossing ocean, canyon, and fortress environments before a mechanical sea-dragon boss.',
-    engine: "Three.js · JavaScript", track: '3d', category: 'ai-generated',
+    engine: 'Three.js · Browser', track: '3d', category: 'ai-generated',
     aiUse: 'The creator publishes the Japanese brief and explains Claude Code’s implementation, two parallel audio/portrait agents, and automated full-run checks.',
     steps: [
       'Play a mission and try charge shots, rolls, and bombs.',
@@ -62,7 +61,7 @@ export const community3dExpansion: LearningPath[] = [
     id: 'orb-shooter-ai',
     title: 'Orb Shooter',
     description: 'A small first-person shooter combining agent-written mechanics with included warehouse, weapon, and enemy models.',
-    engine: "Three.js · JavaScript", track: '3d', category: 'ai-assisted',
+    engine: 'Three.js · Browser', track: '3d', category: 'ai-assisted',
     aiUse: 'Red Stapler says Antigravity with Gemini 3.1 Pro and Claude Opus 4.6 generated the main mechanics; the human directed, tested, selected assets, and polished details.',
     steps: [
       'Try movement, jumping, and shooting the orb enemies.',
@@ -80,7 +79,7 @@ export const community3dExpansion: LearningPath[] = [
     id: 'operation-naptime-claude',
     title: 'Operation Naptime · Operación Siesta',
     description: 'A baby escapes a playpen and causes living-room chaos before being caught, with fully procedural visuals and physics.',
-    engine: "Three.js + Rapier · JavaScript", track: '3d', category: 'ai-assisted',
+    engine: 'Three.js + Rapier · Browser', track: '3d', category: 'ai-assisted',
     aiUse: 'The author documents a photograph-based brief, Claude Code subagents, visual reviewers, performance investigations, and a published session transcript.',
     steps: [
       'Start a round and explore the interactable room.',
@@ -98,7 +97,7 @@ export const community3dExpansion: LearningPath[] = [
     id: 'ombres-claude',
     title: 'Ombres',
     description: 'A 3D party game where giant birds paint territory with their shadows as the sun sets; phones can act as controllers.',
-    engine: "React Three Fiber · TypeScript", track: '3d', category: 'ai-assisted',
+    engine: 'React Three Fiber · Browser', track: '3d', category: 'ai-assisted',
     aiUse: 'Brieuc Crosson publishes the original brief and a multi-agent Claude Code workflow, including research, contracts, critique rounds, and human interventions.',
     steps: [
       'Join with a phone or keyboard and play against bots.',
@@ -116,7 +115,7 @@ export const community3dExpansion: LearningPath[] = [
     id: 'dragons-reach-claude',
     title: 'Dragon’s Reach',
     description: 'A procedural dragon platformer with floating islands, gliding, flame combat, collectible eggs, and a final portal.',
-    engine: "Three.js · JavaScript", track: '3d', category: 'ai-generated',
+    engine: 'Three.js · Browser', track: '3d', category: 'ai-generated',
     aiUse: 'The creator publishes the initial prompt, architecture contracts, human follow-ups, and an honest account of Claude Code’s successes and limitations.',
     steps: [
       'Explore an island and practice jumping and gliding.',
@@ -129,21 +128,12 @@ export const community3dExpansion: LearningPath[] = [
     source: { label: 'Open the complete platformer project', url: 'https://github.com/jaydemks/ImADragon_onepromptcode_game', scope: 'complete-project', note: 'Full source, procedural world and rig, and Vite setup. The README lists unfinished audio and other limitations; this remains a prototype.' },
     evidence: { label: 'Read the creator’s build postmortem', url: 'https://github.com/jaydemks/ImADragon_onepromptcode_game#what-this-is', note: 'Creator account names Claude Opus 5 and distinguishes the original brief from three follow-ups. Session statistics are reported, not a published transcript.' },
     resourceIds: ['claude-code', 'threejs'],
-
-    distribution: [
-      {
-        "platform": "GitHub Releases",
-        "url": "https://github.com/jaydemks/ImADragon_onepromptcode_game/releases/tag/v0.1.0",
-        "kind": "download",
-        "note": "Prebuilt Web ZIP, not a native desktop executable. Its absolute /ImADragon_onepromptcode_game/assets/ paths require hosting under that prefix or updating the paths. Archive contents were inspected; local hosting was not tested."
-      }
-    ],
   },
   {
     id: 'vibe-jet-gemini',
     title: 'Vibe Jet',
     description: 'An arcade flying game with a documented Gemini 2.5 Pro prompting process and a Node/WebSocket multiplayer server.',
-    engine: "Three.js · JavaScript", track: '3d', category: 'ai-assisted',
+    engine: 'Three.js · Browser / Node.js', track: '3d', category: 'ai-assisted',
     aiUse: 'Cedric Chee publishes the original Gemini prompt, model response, development approach, screenshots, and the incremental project history.',
     steps: [
       'Try the aircraft controls and flying environment.',
@@ -161,7 +151,7 @@ export const community3dExpansion: LearningPath[] = [
     id: 'slide-rush-opus',
     title: 'Slide Rush',
     description: 'A mobile-friendly waterslide race against twelve rivals, with jumps, shortcuts, practice mode, and procedural characters.',
-    engine: "Three.js · JavaScript", track: '3d', category: 'ai-generated',
+    engine: 'Three.js · Browser / PWA', track: '3d', category: 'ai-generated',
     aiUse: 'The author presents the project as an LLM build comparison and records Opus 5.5, extra-high effort, elapsed time, and session usage in the README.',
     steps: [
       'Race the slide and compare race and practice modes.',
@@ -179,7 +169,7 @@ export const community3dExpansion: LearningPath[] = [
     id: 'the-tithe-claude',
     title: 'The Tithe',
     description: 'A first-person horror adventure through a flooded cult house, with weapons, keyed progression, checkpoints, and a final escape.',
-    engine: "Three.js · JavaScript", track: '3d', category: 'ai-assisted',
+    engine: 'Three.js · Browser', track: '3d', category: 'ai-assisted',
     aiUse: 'Miguel Solorio identifies this as a game built with Opus 5.5. The repository provides the actual game and technical design documents, without a public prompt transcript.',
     steps: [
       'Begin in the field and follow the phone toward the cabin.',
@@ -197,7 +187,7 @@ export const community3dExpansion: LearningPath[] = [
     id: 'michi-neko-ai',
     title: 'Michi-Neko · The Cat Philosopher’s Path',
     description: 'An early cat-exploration game in a Kyoto-inspired valley with NPC quests, weather, a tea house, and saved progression.',
-    engine: "Three.js · JavaScript", track: '3d', category: 'ai-assisted',
+    engine: 'Three.js · Browser', track: '3d', category: 'ai-assisted',
     aiUse: 'The creator describes human art direction combined with code generation from several AI language models; individual models and prompts are not identified.',
     steps: [
       'Explore the valley and try an NPC interaction.',
@@ -215,7 +205,7 @@ export const community3dExpansion: LearningPath[] = [
     id: 'fragarena-copilot',
     title: 'FragArena',
     description: 'A multiplayer space arena shooter with six-degree movement, bots, weapon pickups, radar, scoring, and respawning.',
-    engine: "Three.js · JavaScript", track: '3d', category: 'ai-assisted',
+    engine: 'Three.js · Browser / Node.js', track: '3d', category: 'ai-assisted',
     aiUse: 'Jonny Leigh identifies the game as built through GitHub Copilot and publishes prompts for the game, audio, and server migration.',
     steps: [
       'Join an arena and try movement, aiming, and pickups.',

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+  <title>GameMap — folded atlas</title>
+  <style>.fold{stroke:#292524}.point{fill:#d55816}@media(prefers-color-scheme:dark){.fold{stroke:#f7f3ef}.point{fill:#f08a50}}</style>
+  <g class="fold" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+    <path d="m4.5 9.5 8.5-4 10 4 8.5-4v21L23 30.5l-10-4-8.5 4Z"/>
+    <path d="M13 5.5v21M23 13v17.5"/>
+  </g>
+  <circle class="point" cx="23" cy="9.5" r="3.1"/>
+</svg>

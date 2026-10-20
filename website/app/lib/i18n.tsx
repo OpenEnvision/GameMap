@@ -93,8 +93,6 @@ export function LanguageSwitcher({
 }) {
   const { locale, documents, t } = useSiteI18n(),
     location = useLocation();
-  const pathname = location.pathname.replace(/\/+$/, "") + "/";
-  const query = new URLSearchParams(location.search).toString();
   return (
     <nav className={className} aria-label={t("Switch language")}>
       {(["zh", "en"] as const).map((language, index) => (
@@ -106,7 +104,7 @@ export function LanguageSwitcher({
           )}
           <RouterLink
             to={localizedPath(
-              pathname + (query ? "?" + query : "") + location.hash,
+              location.pathname + location.search + location.hash,
               language,
               documents,
             )}

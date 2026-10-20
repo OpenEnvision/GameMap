@@ -1,6 +1,4 @@
-import { publishingGameCases } from './publishingGameCases'
 import type { LearningPath } from './learningTypes'
-import { researchedGameCases } from './researchedGameCases'
 import { ai3dCases } from './ai3dCases'
 import { aiCommunityCases } from './aiCommunityCases'
 import { openGameCases } from './openGameCases'
@@ -13,8 +11,6 @@ export type { LearningPath } from './learningTypes'
 
 // AI-built games lead the page. Engine references stay in the optional section.
 export const learningPaths:LearningPath[] = [
-  ...publishingGameCases,
-  ...researchedGameCases,
   ...geminiCliCases,
   ai3dCases[0], ai3dCases[2], ...aiCommunityCases, ai3dCases[1], ...openGameCases,
   ...community3dExpansion, ...community2dExpansion, ...diverseCommunityCases,

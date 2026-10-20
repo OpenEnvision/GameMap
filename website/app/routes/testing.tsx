@@ -72,16 +72,7 @@ export default function Testing() {
           </Link>
         </div>
       </header>
-      <nav className="discovery-jump-links" aria-label={t("Testing page sections")}>
-        <Link to={{ pathname: "/testing/", hash: "#testing-resources", search: params.toString() }}>
-          {t("Find resources ({count})", { count: filtered.length })}
-        </Link>
-        <Link to={{ pathname: "/testing/", hash: "#testing-starters", search: params.toString() }}>
-          {t("Starter tasks ({count})", { count: packs.length })}
-        </Link>
-      </nav>
       <section
-        id="testing-starters"
         className="testing-starters content-grid"
         aria-label={t("Testing starter tasks")}
       >
@@ -89,7 +80,7 @@ export default function Testing() {
           <ContentDocument entry={entry} heading="h2" key={entry.key} />
         ))}
       </section>
-      <div className="catalog-toolbar" id="testing-resources">
+      <div className="catalog-toolbar">
         <div className="filter-search">
           <Search size={20} />
           <input

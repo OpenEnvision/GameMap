@@ -2,441 +2,29 @@ import type { LearningMedia } from './learningMedia'
 
 // Primary screenshot sources are recorded in docs/media-sources.md.
 export const communityMedia: Record<string, LearningMedia> = {
-  "eight-second-crew-codex": {
-    "src": "assets/media/learning/eight-second-crew-codex.webp",
-    "alt": "A duck thief and its recorded clone in the opening museum, with key, guard sight cone and eight-second HUD.",
-    "caption": "The author-hosted game after recording the first clone.",
-    "sourceUrl": "https://sdj3261.github.io/openai_game_2026/",
-    "origin": "browser-capture",
-    "width": 1280,
-    "height": 720,
-    "capturedAt": "2026-10-20"
+  'cloud-crush-gemini-cli': {
+    src: 'media/learning/cloud-crush-gemini-cli.webp',
+    alt: 'Cloud Crush gameplay with an eight-by-eight match-3 board, score, countdown, mobile QR code, and the original browser automation status bar.',
+    caption: 'The publisher’s browser gameplay screenshot, with the match board, timer, and score panel.',
+    sourceUrl: 'https://github.com/GoogleCloudPlatform/devrel-demos/blob/cdded29daeb83a24d37dc5c7ead5c85d8a08ff89/codelabs/gemini-cli/gemini-cli-match3-golang/screenshots/09_gameplay.png',
+    origin: 'creator-screenshot',
+    reviewedAt: '2026-10-18',
+    originalImageUrl: 'https://raw.githubusercontent.com/GoogleCloudPlatform/devrel-demos/cdded29daeb83a24d37dc5c7ead5c85d8a08ff89/codelabs/gemini-cli/gemini-cli-match3-golang/screenshots/09_gameplay.png',
+    width: 1280,
+    height: 720,
   },
-  "core-business-claude": {
-    "src": "assets/media/learning/core-business-claude.webp",
-    "alt": "The Core Business mining vehicle in a three-dimensional side-view Mars scene, with fuel, hull, cargo, money and depth indicators.",
-    "caption": "The running author-hosted mining tech demo, captured with the Metal rendering backend.",
-    "sourceUrl": "https://leichtbier.github.io/core-business/",
-    "origin": "browser-capture",
-    "width": 1280,
-    "height": 720,
-    "capturedAt": "2026-10-20"
-  },
-  "vibe-golf-bevy": {
-    "src": "assets/media/learning/vibe-golf-bevy.webp",
-    "alt": "Vibe Golf active gameplay with an orange ball, trees and mushrooms on hilly terrain, speed and target-distance HUD.",
-    "caption": "GameMap browser capture after Play and an ordinary mouse charge/release action.",
-    "sourceUrl": "https://ahammer.github.io/vibe_golf/",
-    "origin": "browser-capture",
-    "width": 1280,
-    "height": 720,
-    "capturedAt": "2026-10-20"
-  },
-  "fang-fox-gbc-claude": {
-    "src": "assets/media/learning/fang-fox-gbc-claude.webp",
-    "alt": "Fang faces the crowned Goo King and slimes in the Game Boy Color edition, with health and level HUD.",
-    "caption": "Creator-published gameplay image from the Game Boy Color release page.",
-    "sourceUrl": "https://tinybitadventures.com/games/fang-the-fox-gbc/",
-    "origin": "creator-screenshot",
-    "width": 1280,
-    "height": 720,
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://tinybitadventures.com/content/11/uploads/2026/09/fang-gbc-goo-king.png"
-  },
-  "three-kingdoms-codex": {
-    "src": "assets/media/learning/three-kingdoms-codex.webp",
-    "alt": "Fifteen-city Three Kingdoms map, Liu Bei resources, Chengdu development commands and the end-turn control.",
-    "caption": "The creator’s running v0.2.0 strategy-map screenshot.",
-    "sourceUrl": "https://github.com/MartinDelophy/awesome-gpt-6-astra/blob/ed10f435bfd298df8f88175c5cdb6405842a0da0/assets/screenshots/three-kingdoms/gameplay.jpg",
-    "origin": "creator-screenshot",
-    "width": 1280,
-    "height": 720,
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/MartinDelophy/awesome-gpt-6-astra/ed10f435bfd298df8f88175c5cdb6405842a0da0/assets/screenshots/three-kingdoms/gameplay.jpg"
-  },
-  "pelican-bike-claude": {
-    "src": "assets/media/learning/pelican-bike-claude.webp",
-    "alt": "A white pelican riding a bicycle along a three-dimensional coast, with speed, distance, fish and achievement HUD.",
-    "caption": "The live coastal ride after acceleration, a first jump and a camera change.",
-    "sourceUrl": "https://claude-opus-5-5.riba2534.cn/",
-    "origin": "browser-capture",
-    "width": 1280,
-    "height": 720,
-    "capturedAt": "2026-10-20"
-  },
-  "fishslop-claude": {
-    "src": "assets/media/learning/fishslop-claude.webp",
-    "alt": "A submarine in a three-dimensional reef with ruins, fish, feeding particles, coins and a recharging sonar display.",
-    "caption": "The live reef after steering, feeding, coin feedback and sonar, using the low-quality preset.",
-    "sourceUrl": "https://vasu-devs.github.io/FishSlop_Opus5.5/",
-    "origin": "browser-capture",
-    "width": 1280,
-    "height": 720,
-    "capturedAt": "2026-10-20"
-  },
-  "clockout-unseen-codex": {
-    "src": "assets/media/learning/clockout-unseen-codex.webp",
-    "alt": "Office-stealth gameplay with the player behind desks, a coworker, a minimap and 149 seconds remaining.",
-    "caption": "The public Bilibili Toy build during an opening Normal-mode movement check.",
-    "sourceUrl": "https://www.bilibili.com/toy/clockout-unseen/index.html",
-    "origin": "browser-capture",
-    "width": 1280,
-    "height": 720,
-    "capturedAt": "2026-10-20"
-  },
-  "nagi-home-cowork": {
-    "src": "assets/media/learning/nagi-home-cowork.webp",
-    "alt": "Nagi the blue crab in a furnished three-dimensional home, with daily needs, food placement feedback and the ball activity.",
-    "caption": "The live Cowork-created simulation after placing food on the floor and throwing a ball.",
-    "sourceUrl": "https://tanuu5.github.io/nagi-home/",
-    "origin": "browser-capture",
-    "width": 1280,
-    "height": 720,
-    "capturedAt": "2026-10-20"
-  },
-  "thunderfall-astra": {
-    "src": "assets/media/learning/thunderfall-astra.webp",
-    "alt": "THUNDERFALL fighter dodging lasers and bullets in the Molten Foundry, with weapon and flight HUD.",
-    "caption": "The creator-published Molten Foundry practice screenshot.",
-    "sourceUrl": "https://github.com/MartinDelophy/awesome-gpt-6-astra/blob/ed10f435bfd298df8f88175c5cdb6405842a0da0/assets/screenshots/thunderfall/gameplay.jpg",
-    "origin": "creator-screenshot",
-    "width": 1280,
-    "height": 720,
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/MartinDelophy/awesome-gpt-6-astra/ed10f435bfd298df8f88175c5cdb6405842a0da0/assets/screenshots/thunderfall/gameplay.jpg"
-  },
-  "fruit-ninja-dojo-astra": {
-    "src": "assets/media/learning/fruit-ninja-dojo-astra.webp",
-    "alt": "Zen mode with split fruit, a visible slicing trail, score 8 and a four-hit combo.",
-    "caption": "The author-hosted game after a normal mouse-drag slice.",
-    "sourceUrl": "https://fruit-ninja-dojo-20260905.yongqixue666.chatgpt.site/",
-    "origin": "browser-capture",
-    "width": 1280,
-    "height": 720,
-    "capturedAt": "2026-10-20"
-  },
-  "pixel-orchard-astra": {
-    "src": "assets/media/learning/pixel-orchard-astra.webp",
-    "alt": "Two revealed seed-packet symbols on a twelve-card memory board, with one move and zero matched pairs.",
-    "caption": "The author-hosted memory game after revealing two cards.",
-    "sourceUrl": "https://miaai-lab.github.io/GPT-6-Astra-100-HTML-Files/013-pixel-orchard.html",
-    "origin": "browser-capture",
-    "width": 1280,
-    "height": 720,
-    "capturedAt": "2026-10-20"
-  },
-  "butch-graves-j2me": {
-    "src": "assets/media/learning/butch-graves-j2me.webp",
-    "alt": "Butch Graves 3D gameplay showing a ghoul approaching the first-person revolver with the phone-sized health and ammo HUD.",
-    "caption": "Creator screenshot rendered by the real game engine through its desktop test simulator.",
-    "sourceUrl": "https://github.com/WollyMonjac/ButchGraves3D",
-    "origin": "creator-screenshot",
-    "width": 1280,
-    "height": 720,
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/WollyMonjac/ButchGraves3D/main/screenshots/03_ghoul_attack.png"
-  },
-  "isocity-cursor": {
-    "src": "assets/media/learning/isocity-cursor.webp",
-    "alt": "A dense isometric city around a blue harbour, with streets, waterfront buildings and green parks.",
-    "caption": "The creator’s panoramic city view, preserved in full with padding.",
-    "sourceUrl": "https://github.com/amilich/isometric-city#readme",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/amilich/isometric-city/main/public/readme-image.png",
-    "width": 1280,
-    "height": 720
-  },
-  "project-plateau": {
-    "src": "assets/media/learning/project-plateau.webp",
-    "alt": "The player’s field camera points toward a prehistoric animal family beside a brook, with photographic plate and daylight indicators.",
-    "caption": "A creator-published frame from the recorded expedition, showing the field camera, animal family and remaining daylight.",
-    "sourceUrl": "https://github.com/zenstory-ai/novel-to-game/blob/7758caa8d9578f19780349e7b4e4115ef831fd7a/examples/project-plateau/build/evidence/current-run/01-field-glade.jpg",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/zenstory-ai/novel-to-game/7758caa8d9578f19780349e7b4e4115ef831fd7a/examples/project-plateau/build/evidence/current-run/01-field-glade.jpg",
-    "width": 1280,
-    "height": 720
-  },
-  "surge-for-oinja-codex": {
-    "src": "assets/media/learning/surge-for-oinja-codex.webp",
-    "alt": "SURGE gameplay in the Tidal Observatory with a character, support machine, enemies and combat HUD.",
-    "caption": "The creator’s Tidal Observatory gameplay screenshot.",
-    "sourceUrl": "https://github.com/MartinDelophy/awesome-gpt-6-astra/issues/106",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://github.com/user-attachments/assets/8adca12c-6ede-46b3-96e7-128de3709de6",
-    "width": 1280,
-    "height": 720
-  },
-  "deep-yellow-claude": {
-    "src": "assets/media/learning/deep-yellow-claude.webp",
-    "alt": "A first-person yellow-corridor encounter with a held bat, inventory and minimap, inside the creator’s captured Godot editor.",
-    "caption": "The author’s Godot play-mode screenshot, retaining the original editor and debug panels.",
-    "sourceUrl": "https://aebrer.itch.io/deep-yellow",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://img.itch.zone/aW1hZ2UvNDA2ODk3Ni8yNTU4NTg5NS5wbmc=/original/HZA7lO.png",
-    "width": 1280,
-    "height": 720
-  },
-  "morbreaker-unity-claude": {
-    "src": "assets/media/learning/morbreaker-unity-claude.webp",
-    "alt": "morBreaker gameplay with a paddle, ball, coloured brick grid, and score display.",
-    "caption": "Gameplay captured from the creator’s published WebGL build.",
-    "sourceUrl": "https://github.com/KingMordas/mor-breaker",
-    "origin": "local-capture",
-    "capturedAt": "2026-10-20",
-    "width": 1280,
-    "height": 720
-  },
-  "silent-meridian-codex": {
-    "src": "assets/media/learning/silent-meridian-codex.webp",
-    "alt": "Silent Meridian’s observatory with a brass mechanism, clue markers, Present/Echo controls and journal access.",
-    "caption": "The creator’s running observatory scene with optional 3D effects enabled.",
-    "sourceUrl": "https://github.com/stackloomdev/silent-meridian/blob/d1f1de0bfafd56498347b37b84b5ea8fe1c4d36c/docs/screenshots/depth-observatory.png",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/stackloomdev/silent-meridian/d1f1de0bfafd56498347b37b84b5ea8fe1c4d36c/docs/screenshots/depth-observatory.png",
-    "width": 1280,
-    "height": 720
-  },
-  "castle-clash-duel-claude": {
-    "src": "assets/media/learning/castle-clash-duel-claude.webp",
-    "alt": "Two opposing castles and small fantasy units fighting along a winding lane, with health counters and a match timer.",
-    "caption": "A still from the creator’s gameplay animation, showing lane combat and castle health.",
-    "sourceUrl": "https://github.com/chongdashu/phaserjs-tinyswords#implementation-with-agent-skills",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/chongdashu/phaserjs-tinyswords/main/docs/preview.gif",
-    "width": 1280,
-    "height": 720
-  },
-  "golden-hour-skatepark-cursor": {
-    "src": "assets/media/learning/golden-hour-skatepark-cursor.webp",
-    "alt": "A skater is airborne above a half-pipe in a palm-lined skatepark under a warm evening sky.",
-    "caption": "The creator’s actual half-pipe gameplay frame, with the skater and the procedural park.",
-    "sourceUrl": "https://github.com/StarKnightt/skate-park#readme",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/StarKnightt/skate-park/main/docs/media/02-half-pipe-air.jpg",
-    "width": 1280,
-    "height": 720
-  },
-  "vibe-racer-opencode": {
-    "src": "assets/media/learning/vibe-racer-opencode.webp",
-    "alt": "Vibe Racer top-down racing gameplay on a tiled circuit.",
-    "caption": "Creator-published race screenshot from the game repository.",
-    "sourceUrl": "https://github.com/Kecksdose/vibe_racer#screenshots",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/Kecksdose/vibe_racer/main/screenshots/race.png",
-    "width": 1280,
-    "height": 720
-  },
-  "novel-journey-to-west": {
-    "src": "assets/media/learning/novel-journey-to-west.webp",
-    "alt": "A command battle at Jilei Mountain, with Wukong’s party, the Bull Demon King’s side, turn order and a command panel.",
-    "caption": "The creator’s published battle screenshot, retaining the original painted scene and game interface.",
-    "sourceUrl": "https://github.com/zenstory-ai/novel-to-game/blob/7758caa8d9578f19780349e7b4e4115ef831fd7a/examples/journey-to-the-west/screenshots/battle.jpg",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/zenstory-ai/novel-to-game/7758caa8d9578f19780349e7b4e4115ef831fd7a/examples/journey-to-the-west/screenshots/battle.jpg",
-    "width": 1280,
-    "height": 720
-  },
-  "clowder-and-crest-agents": {
-    "src": "assets/media/learning/clowder-and-crest-agents.webp",
-    "alt": "The cat guild’s explorable town and management interface.",
-    "caption": "Capture from the creator’s browser campaign.",
-    "sourceUrl": "https://clowderandcrest.com/",
-    "origin": "browser-capture",
-    "capturedAt": "2026-10-20T02:17:53.808Z",
-    "width": 1280,
-    "height": 720
-  },
-  "pokemon-tactics-claude": {
-    "src": "assets/media/learning/pokemon-tactics-claude.webp",
-    "alt": "A tactical battle on a raised grassy grid, with Pokemon units, action menus and health bars.",
-    "caption": "An unaltered gameplay frame from the creator’s low-resolution battle animation.",
-    "sourceUrl": "https://github.com/kekel87/pokemon-tactics/tree/main/docs/images",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/kekel87/pokemon-tactics/main/docs/images/demo.gif",
-    "width": 1280,
-    "height": 720
-  },
-  "rhythm-master-windsurf": {
-    "src": "assets/media/learning/rhythm-master-windsurf.webp",
-    "alt": "A purple 3D rhythm highway with four note lanes, score and combo panels, a track timer and keyboard prompts.",
-    "caption": "The unmodified public HTML game after track start and a normal note-key input.",
-    "sourceUrl": "https://github.com/frankjniu/rhythm-game",
-    "origin": "local-capture",
-    "capturedAt": "2026-10-20",
-    "width": 1280,
-    "height": 720
-  },
-  "spirit-of-kiro": {
-    "src": "assets/media/learning/spirit-of-kiro.webp",
-    "alt": "Spirit of Kiro workshop gameplay with a ghost beside the item lever and crafting workbench.",
-    "caption": "Official gameplay image from Kiro’s learn-by-playing guide.",
-    "sourceUrl": "https://kiro.dev/docs/guides/learn-by-playing/",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://kiro.dev/images/video-game-guide/intro.png?h=4e4c1049",
-    "width": 1280,
-    "height": 720
-  },
-  "isocoaster-cursor": {
-    "src": "assets/media/learning/isocoaster-cursor.webp",
-    "alt": "An isometric theme park with intertwined colourful roller-coaster tracks, rides and paths.",
-    "caption": "The creator’s full theme-park screenshot, from the shared IsoCity/IsoCoaster repository.",
-    "sourceUrl": "https://github.com/amilich/isometric-city#readme",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/amilich/isometric-city/main/public/readme-coaster.png",
-    "width": 1280,
-    "height": 720
-  },
-  "astra-floor-ai": {
-    "src": "assets/media/learning/astra-floor-ai.webp",
-    "alt": "Astra Floor rifle combat against a zombie wave, with health, ammunition and wave counters.",
-    "caption": "The creator’s rifle-combat screenshot.",
-    "sourceUrl": "https://github.com/MartinDelophy/awesome-gpt-6-astra/issues/96",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://github.com/user-attachments/assets/35972360-9042-401a-9545-e94769da294e",
-    "width": 1280,
-    "height": 720
-  },
-  "mosswing-astra": {
-    "src": "assets/media/learning/mosswing-astra.webp",
-    "alt": "A flying creature approaches stone gaps in Mosswing.",
-    "caption": "The author-linked browser build during an opening flight.",
-    "sourceUrl": "https://mosswing-quiet-flight.jack-514.chatgpt.site/",
-    "origin": "browser-capture",
-    "capturedAt": "2026-10-20T02:13:26.621Z",
-    "width": 1280,
-    "height": 720
-  },
-  "sprout-quest-claude": {
-    "src": "assets/media/learning/sprout-quest-claude.webp",
-    "alt": "A small sword-wielding adventurer fights creatures on a forest path, with a portrait mobile touch joystick.",
-    "caption": "A combat frame from the creator’s portrait gameplay animation, fitted without cropping.",
-    "sourceUrl": "https://github.com/aibengineering/sprout-quest#readme",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/aibengineering/sprout-quest/main/docs/teaser.webp",
-    "width": 1280,
-    "height": 720
-  },
-  "claude-dreaming-godot": {
-    "src": "assets/media/learning/claude-dreaming-godot.webp",
-    "alt": "Claude Dreaming gameplay showing a robot floating near a small planet in purple space.",
-    "caption": "Creator-published gameplay screenshot from the itch.io page. The film-derived robot design retains the project-only restrictions recorded in the creator’s NOTICE.md.",
-    "sourceUrl": "https://rusty-production.itch.io/claude-dreaming",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://img.itch.zone/aW1hZ2UvNTExNzQwMi8zMDYzNzA4OS5qcGc=/original/qSShCX.jpg",
-    "width": 1280,
-    "height": 720
-  },
-  "sakura-crossing-qwen": {
-    "src": "assets/media/learning/sakura-crossing-qwen.webp",
-    "alt": "Sakura Crossing gameplay in a cel-shaded Japanese neighbourhood at dusk.",
-    "caption": "Creator-published gameplay animation from the repository README.",
-    "sourceUrl": "https://github.com/danymaniglie-cmyk/3d-sakura-crossing",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/danymaniglie-cmyk/3d-sakura-crossing/main/docs/anteprima.gif",
-    "width": 1280,
-    "height": 720
-  },
-  "magic-carpet-wizard-astra": {
-    "src": "assets/media/learning/magic-carpet-wizard-astra.webp",
-    "alt": "A carpet rider flies over a curved city toward a glowing ring.",
-    "caption": "Capture from the creator’s playable flight game.",
-    "sourceUrl": "https://threapchills.github.io/MagicCarpetWizard/",
-    "origin": "browser-capture",
-    "capturedAt": "2026-10-20T02:13:14.034Z",
-    "width": 1280,
-    "height": 720
-  },
-  "supermarket-simulator-cursor": {
-    "src": "assets/media/learning/supermarket-simulator-cursor.webp",
-    "alt": "The creator’s running supermarket game at its title menu, showing store shelves and two characters.",
-    "caption": "The creator’s in-game title screen and supermarket scene; this is not a GameMap execution of the Windows release.",
-    "sourceUrl": "https://github.com/breineng/supermarket-simulator#description",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://github.com/user-attachments/assets/0045cc0c-b7c0-4c99-be13-c13f2c66cef2",
-    "width": 1280,
-    "height": 720
-  },
-  "arkanoid-neon-claude": {
-    "src": "assets/media/learning/arkanoid-neon-claude.webp",
-    "alt": "A neon brick-breaker field with rainbow rows of bricks, a glowing ball and paddle, score and round indicators.",
-    "caption": "The creator’s full portrait brick-breaker screenshot, preserved with side padding.",
-    "sourceUrl": "https://github.com/Jack-c3l2w/arkanoid-neon#readme",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://raw.githubusercontent.com/Jack-c3l2w/arkanoid-neon/main/screenshots/gameplay.png",
-    "width": 1280,
-    "height": 720
-  },
-  "crown-defender-codex": {
-    "src": "assets/media/learning/crown-defender-codex.webp",
-    "alt": "A hero defends a castle in Crown Defender’s isometric arena.",
-    "caption": "The complete source served locally: opening wave, hero and castle HUD.",
-    "sourceUrl": "https://github.com/Aleksandr-Litvinenko/Codex.-Crown-Defender-TD-3D-browser-tower-defense-game",
-    "origin": "local-capture",
-    "capturedAt": "2026-10-20T02:13:29.138Z",
-    "width": 1280,
-    "height": 720
-  },
-  "three-quake-claude-port": {
-    "src": "assets/media/learning/three-quake-claude-port.webp",
-    "alt": "Quake’s shareware level rendered in the Three.js port, with a first-person weapon and the original status bar.",
-    "caption": "The author-hosted browser port rendering the shareware game; original Quake artwork remains credited to id Software.",
-    "sourceUrl": "https://mrdoob.github.io/three-quake/",
-    "origin": "browser-capture",
-    "capturedAt": "2026-10-20",
-    "width": 1280,
-    "height": 720
-  },
-  "roo-code-action": {
-    "src": "assets/media/learning/roo-code-action.webp",
-    "alt": "A red player with a green health bar fires red projectiles toward blue enemies on a tiled SVG field.",
-    "caption": "The unmodified author-hosted action prototype after normal movement and sustained firing input.",
-    "sourceUrl": "https://action-with-ai.mizchi.workers.dev/",
-    "origin": "browser-capture",
-    "capturedAt": "2026-10-20",
-    "width": 1280,
-    "height": 720
-  },
-  "cloud-crush-gemini-cli": {
-    "src": "assets/media/learning/cloud-crush-gemini-cli.webp",
-    "alt": "Cloud Crush gameplay with an eight-by-eight match-3 board, score, countdown, mobile QR code, and the original browser automation status bar.",
-    "caption": "The publisher’s browser gameplay screenshot, with the match board, timer, and score panel.",
-    "sourceUrl": "https://github.com/GoogleCloudPlatform/devrel-demos/blob/cdded29daeb83a24d37dc5c7ead5c85d8a08ff89/codelabs/gemini-cli/gemini-cli-match3-golang/screenshots/09_gameplay.png",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-18",
-    "originalImageUrl": "https://raw.githubusercontent.com/GoogleCloudPlatform/devrel-demos/cdded29daeb83a24d37dc5c7ead5c85d8a08ff89/codelabs/gemini-cli/gemini-cli-match3-golang/screenshots/09_gameplay.png",
-    "width": 1280,
-    "height": 720
-  },
-  "dinosaur-offline-gemini-cli": {
-    "src": "assets/media/learning/dinosaur-offline-gemini-cli.webp",
-    "alt": "The dinosaur runner in play: a jumping T-Rex, an approaching cactus, clouds, score, and the creator’s Gemini CLI credit.",
-    "caption": "The author-hosted build during a jump, with a live score and approaching cactus.",
-    "sourceUrl": "https://tonidevvn.github.io/dinosaur-game-offline/",
-    "origin": "browser-capture",
-    "capturedAt": "2026-10-18T11:14:10.197Z",
-    "width": 1280,
-    "height": 720
+  'dinosaur-offline-gemini-cli': {
+    src: 'media/learning/dinosaur-offline-gemini-cli.webp',
+    alt: 'The dinosaur runner in play: a jumping T-Rex, an approaching cactus, clouds, score, and the creator’s Gemini CLI credit.',
+    caption: 'The author-hosted build during a jump, with a live score and approaching cactus.',
+    sourceUrl: 'https://tonidevvn.github.io/dinosaur-game-offline/',
+    origin: 'browser-capture',
+    capturedAt: '2026-10-18T11:14:10.197Z',
+    width: 1280,
+    height: 720,
   },
   "turbo-kart-rally-claude": {
-    "src": "assets/media/learning/turbo-kart-rally-claude.webp",
+    "src": "media/learning/turbo-kart-rally-claude.webp",
     "alt": "A kart race with low-poly mountains, rivals, a lap timer, minimap, and seventh-place HUD.",
     "caption": "The creator’s race screenshot, showing rivals, lap timing, and drifting-track scenery.",
     "sourceUrl": "https://github.com/bridge-mind/turbo-kart-rally/blob/c52aca3f10c7995884c316810cac6514daa40e9c/docs/screenshots/race.jpg",
@@ -447,7 +35,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "long-wind-claude": {
-    "src": "assets/media/learning/long-wind-claude.webp",
+    "src": "media/learning/long-wind-claude.webp",
     "alt": "A swordsman approaches an opponent in a golden grassland beneath a sunset.",
     "caption": "The creator’s opening grassland chapter, with the player character and an opponent.",
     "sourceUrl": "https://github.com/jbang2004/long-wind/blob/1e9c4265ad2a7d06a174c8ac5f3ab64bc18252f3/docs/media/steppe.jpg",
@@ -458,7 +46,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "nova-lancer-claude": {
-    "src": "assets/media/learning/nova-lancer-claude.webp",
+    "src": "media/learning/nova-lancer-claude.webp",
     "alt": "A player aircraft fires twin laser beams toward enemies above an ocean.",
     "caption": "The creator’s ocean-combat screenshot with the player aircraft and enemy formation.",
     "sourceUrl": "https://github.com/tanuu5/nova-lancer/blob/dd5d3842609af266c1d3b6179ff03d09d0a66036/docs/screenshots/ocean.jpg",
@@ -469,7 +57,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "ombres-claude": {
-    "src": "assets/media/learning/ombres-claude.webp",
+    "src": "media/learning/ombres-claude.webp",
     "alt": "Bird characters and long tower shadows cross a colored territory map with a Golden Hour HUD.",
     "caption": "The creator’s golden-hour match, showing shadow-painted territory and the round interface.",
     "sourceUrl": "https://github.com/briossant/ombres/blob/403840d83740eee4e264e7a1cc04390b8d346787/docs/screenshots/3-heure-doree.jpg",
@@ -480,7 +68,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "dragons-reach-claude": {
-    "src": "assets/media/learning/dragons-reach-claude.webp",
+    "src": "media/learning/dragons-reach-claude.webp",
     "alt": "A small dragon glides toward a floating green island in a procedural sky world.",
     "caption": "The creator’s dragon gliding between islands in the playable world.",
     "sourceUrl": "https://github.com/jaydemks/ImADragon_onepromptcode_game/blob/e898e72ae95c31391cbe7c046fa5d6f04ba3e438/docs/media/glide.jpg",
@@ -491,7 +79,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "vibe-jet-gemini": {
-    "src": "assets/media/learning/vibe-jet-gemini.webp",
+    "src": "media/learning/vibe-jet-gemini.webp",
     "alt": "A fighter jet flies over a low-poly city beneath clouds, with speed and position readouts.",
     "caption": "The creator’s flight screenshot, with the aircraft, city, and flight readouts.",
     "sourceUrl": "https://github.com/cedrickchee/vibe-jet/blob/ba08f6e0533f757de4a5d0f8b019d15343edde8d/docs/screenshots/game-visual.png",
@@ -502,7 +90,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "the-tithe-claude": {
-    "src": "assets/media/learning/the-tithe-claude.webp",
+    "src": "media/learning/the-tithe-claude.webp",
     "alt": "A dark first-person view of a wooden cabin and bare trees in a foggy field.",
     "caption": "The creator’s first-person opening scene, approaching the cabin at dusk.",
     "sourceUrl": "https://github.com/miguelsolorio/the-tithe/blob/da42501c6188fd897567b82d28695eb8d947c03c/docs/screenshots/field.jpg",
@@ -513,7 +101,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "fragarena-copilot": {
-    "src": "assets/media/learning/fragarena-copilot.webp",
+    "src": "media/learning/fragarena-copilot.webp",
     "alt": "A space arena with player ships, floating structures, player names, and a radar HUD.",
     "caption": "The creator’s multiplayer arena screenshot with ships and on-screen radar.",
     "sourceUrl": "https://github.com/jonnyleigh/fragarena/blob/6487c94ab558fe78ccb7db997004ff7cba00646e/assets/screenshot.png",
@@ -524,7 +112,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "michi-neko-ai": {
-    "src": "assets/media/learning/michi-neko-ai.webp",
+    "src": "media/learning/michi-neko-ai.webp",
     "alt": "An orange cat walks along a Japanese-inspired street with NPCs, plants, and a quest interface.",
     "caption": "The creator’s development gameplay capture: cat exploration and the quest interface.",
     "sourceUrl": "https://github.com/c1t1zen1/Michi-Neko-The-Cat-Philosophers-Path/blob/4a592079967c711ef2233b0b5fc2f43155922588/data/misc/catwalk_shots/loop7_street.png",
@@ -535,7 +123,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "operation-naptime-claude": {
-    "src": "assets/media/learning/operation-naptime-claude.webp",
+    "src": "media/learning/operation-naptime-claude.webp",
     "alt": "A first-person view from a baby playpen into a sunlit living room with toys, furniture, and interactive props.",
     "caption": "The creator’s in-engine living-room screenshot, viewed from the playpen.",
     "sourceUrl": "https://github.com/alandaitch/operacion-siesta/blob/8157953526d0ff5a3d7c5b0a543f4c64dbb4c6bf/docs/frames/hero.png",
@@ -546,7 +134,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "orb-shooter-ai": {
-    "src": "assets/media/learning/orb-shooter-ai.webp",
+    "src": "media/learning/orb-shooter-ai.webp",
     "alt": "Warehouse arena, orb enemy, rifle and live health/ammo HUD",
     "caption": "The live shooter after its models load: warehouse, rifle, enemy, and health/ammo HUD.",
     "sourceUrl": "https://theredstapler.github.io/orb-shooter/",
@@ -556,7 +144,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "slide-rush-opus": {
-    "src": "assets/media/learning/slide-rush-opus.webp",
+    "src": "media/learning/slide-rush-opus.webp",
     "alt": "Race underway: waterslide, rivals, position, timer and speed HUD",
     "caption": "A live race underway, with waterslide rivals, position, timer, and speed.",
     "sourceUrl": "https://kjlkurt.github.io/waterslide-game-opus-5.5/",
@@ -566,7 +154,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "cursor-space-shooter": {
-    "src": "assets/media/learning/cursor-space-shooter.webp",
+    "src": "media/learning/cursor-space-shooter.webp",
     "sourceUrl": "https://games.littleearth.dev/shooter/",
     "alt": "Cyan player ship firing at a red enemy inside a neon-bordered star field.",
     "caption": "Space Shooter during a round, with an enemy ship, shots, and health display.",
@@ -576,7 +164,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "capturedAt": "2026-10-18"
   },
   "cursor-destruction-derby": {
-    "src": "assets/media/learning/cursor-destruction-derby.webp",
+    "src": "media/learning/cursor-destruction-derby.webp",
     "sourceUrl": "https://games.littleearth.dev/demoderby/",
     "alt": "Top-down cars collide and emit particles in the Destruction Derby arena.",
     "caption": "Destruction Derby during a match with both local players and computer opponents.",
@@ -586,7 +174,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "capturedAt": "2026-10-18"
   },
   "beach-kitty-ai-campaign": {
-    "src": "assets/media/learning/beach-kitty-ai-campaign.webp",
+    "src": "media/learning/beach-kitty-ai-campaign.webp",
     "sourceUrl": "https://www.beachkittygame.games/",
     "alt": "An orange cat runs along a sandy shore below a sunny sky in a CRT-style frame.",
     "caption": "Beach Kitty’s Sunny Shore runner level after entering the campaign.",
@@ -596,7 +184,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "capturedAt": "2026-10-18"
   },
   "gemini-pirate-fleet": {
-    "src": "assets/media/learning/gemini-pirate-fleet.webp",
+    "src": "media/learning/gemini-pirate-fleet.webp",
     "sourceUrl": "https://joeysalmons.github.io/vibe-coded-games/Pirate%20Fleet%20Commander%20v7.4.html",
     "alt": "A selected pirate ship explores a tiled ocean beside the fleet and resource panel.",
     "caption": "Pirate Fleet Commander after sailing from the starting tile.",
@@ -606,7 +194,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "capturedAt": "2026-10-18"
   },
   "gemini-kymograph": {
-    "src": "assets/media/learning/gemini-kymograph.webp",
+    "src": "media/learning/gemini-kymograph.webp",
     "sourceUrl": "https://joeysalmons.github.io/vibe-coded-games/Kymograph%20v4.html",
     "alt": "Green CRT puzzle interface with a red triangular signal and counter-signal controls.",
     "caption": "Kymograph’s first deduction puzzle after initializing the system.",
@@ -616,7 +204,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "capturedAt": "2026-10-18"
   },
   "gemini-pumpkin-hunt": {
-    "src": "assets/media/learning/gemini-pumpkin-hunt.webp",
+    "src": "media/learning/gemini-pumpkin-hunt.webp",
     "sourceUrl": "https://joeysalmons.github.io/vibe-coded-games/Pumpkin%20Hunt%20Horror%20Game%20v3.html",
     "alt": "A dark first-person forest with low-poly trees, a pumpkin, and survival HUD.",
     "caption": "Midnight Pumpkin Hunt’s forest scene after dismissing the introduction.",
@@ -626,7 +214,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "capturedAt": "2026-10-18"
   },
   "deepseek-neon-snake": {
-    "src": "assets/media/learning/deepseek-neon-snake.webp",
+    "src": "media/learning/deepseek-neon-snake.webp",
     "sourceUrl": "https://twitchcaptain.com/snake/",
     "alt": "A cyan segmented snake turns toward a glowing red food item on a dark grid.",
     "caption": "Neon Snake during play after starting and turning with the keyboard.",
@@ -636,7 +224,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "capturedAt": "2026-10-18"
   },
   "deepseek-mini-ksp": {
-    "src": "assets/media/learning/deepseek-mini-ksp.webp",
+    "src": "media/learning/deepseek-mini-ksp.webp",
     "sourceUrl": "https://github.com/BairlyEmei/mini-ksp",
     "origin": "local-capture",
     "alt": "A staged rocket lifts from a curved planet with Chinese flight telemetry and a first-launch achievement.",
@@ -646,7 +234,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "capturedAt": "2026-10-18"
   },
   "gravity-birds-grok-cursor": {
-    "src": "assets/media/learning/gravity-birds-grok-cursor.webp",
+    "src": "media/learning/gravity-birds-grok-cursor.webp",
     "sourceUrl": "https://github.com/az9713/grokbot-game-dev-demo/blob/main/game_ui_2.png",
     "originalImageUrl": "https://raw.githubusercontent.com/az9713/grokbot-game-dev-demo/main/game_ui_2.png",
     "alt": "A segmented blue bird collects oranges on a stair-shaped puzzle board, with Undo, Restart, and Menu controls.",
@@ -657,7 +245,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "quasar-saz-claude": {
-    "src": "assets/media/learning/quasar-saz-claude.webp",
+    "src": "media/learning/quasar-saz-claude.webp",
     "sourceUrl": "https://github.com/cleak/quasar-saz/blob/master/docs/screenshot_20260219_154704.png",
     "originalImageUrl": "https://raw.githubusercontent.com/cleak/quasar-saz/master/docs/screenshot_20260219_154704.png",
     "alt": "A colorful musical boss battle with the Dissonance King health bar, instrument projectiles, energy, and score.",
@@ -668,7 +256,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "agent-arcade-copilot": {
-    "src": "assets/media/learning/agent-arcade-copilot.webp",
+    "src": "media/learning/agent-arcade-copilot.webp",
     "sourceUrl": "https://github.com/DanWahlin/agent-arcade/blob/main/docs/images/agent-arcade-ninja.gif",
     "originalImageUrl": "https://raw.githubusercontent.com/DanWahlin/agent-arcade/main/docs/images/agent-arcade-ninja.gif",
     "alt": "Ninja Runner plays as a transparent overlay above the creator’s code editor, with the character, ground, obstacles, lives, and score.",
@@ -679,7 +267,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "claude-tower-defense": {
-    "src": "assets/media/learning/claude-tower-defense.webp",
+    "src": "media/learning/claude-tower-defense.webp",
     "alt": "Tower defense combat with a central tower, approaching enemies, and an upgraded Damage button.",
     "caption": "Browser capture after buying a Damage upgrade; the game is fighting its first wave.",
     "sourceUrl": "https://claude-game-lilac.vercel.app/",
@@ -689,7 +277,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "cursor-procedural-platformer": {
-    "src": "assets/media/learning/cursor-procedural-platformer.webp",
+    "src": "media/learning/cursor-procedural-platformer.webp",
     "alt": "A yellow player jumps among platforms, collectibles, hazards, and enemies.",
     "caption": "Browser capture after moving and jumping; score increased during the run.",
     "sourceUrl": "https://commjoen.github.io/generated-game-experiment/",
@@ -699,7 +287,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "claude-mini-snake": {
-    "src": "assets/media/learning/claude-mini-snake.webp",
+    "src": "media/learning/claude-mini-snake.webp",
     "alt": "Mini Snake board after collecting food, with a three-segment snake and score two.",
     "caption": "Browser capture after keyboard movement collected two food items; score rose from 0 to 2.",
     "sourceUrl": "https://minisnake.vercel.app/",
@@ -709,7 +297,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "flux-codex-runner": {
-    "src": "assets/media/learning/flux-codex-runner.webp",
+    "src": "media/learning/flux-codex-runner.webp",
     "alt": "Flux gravity runner in motion with the player, obstacle, trail, and mountain backdrop.",
     "caption": "Browser capture after starting a run and flipping gravity.",
     "sourceUrl": "https://codex-hackathon-drab.vercel.app/",
@@ -719,7 +307,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "bash-fighter-agent": {
-    "src": "assets/media/learning/bash-fighter-agent.webp",
+    "src": "media/learning/bash-fighter-agent.webp",
     "alt": "A twenty-fighter bot match with platforms, health percentages, and the Timed Brawl scoreboard.",
     "caption": "Browser capture after creating a private lobby, starting with bots, and moving, jumping, and attacking.",
     "sourceUrl": "https://bashfighter.com/",
@@ -729,7 +317,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "running-man-claude-pixellab": {
-    "src": "assets/media/learning/running-man-claude-pixellab.webp",
+    "src": "media/learning/running-man-claude-pixellab.webp",
     "alt": "Running Man character crossing a scrolling road beneath a pixel-art mountain landscape.",
     "caption": "Browser capture during a run after starting and jumping, with a live distance counter.",
     "sourceUrl": "https://games.jdilig.me/games/running-man/",
@@ -739,7 +327,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "pixel-princess-claude": {
-    "src": "assets/media/learning/pixel-princess-claude.webp",
+    "src": "media/learning/pixel-princess-claude.webp",
     "alt": "Pixel Princess heroine in the first forest level with apple pickups, an enemy, and the lives HUD.",
     "caption": "Creator gameplay screenshot by Vito D’Elia, published in the project repository.",
     "sourceUrl": "https://github.com/VTvito/pixel-princess-platformer/blob/main/assets/screenshot.png",
@@ -750,7 +338,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "gothicvania-codex": {
-    "src": "assets/media/learning/gothicvania-codex.webp",
+    "src": "media/learning/gothicvania-codex.webp",
     "alt": "GothicVania player jumps between platforms in a gothic interior with four health hearts.",
     "caption": "Browser capture after entering the level, moving right, jumping, and attacking.",
     "sourceUrl": "https://acatovic.github.io/gothicvania-codex-demo/",
@@ -760,7 +348,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "dunkirk-ai-assisted": {
-    "src": "assets/media/learning/dunkirk-ai-assisted.webp",
+    "src": "media/learning/dunkirk-ai-assisted.webp",
     "alt": "A green player plane fires toward enemy aircraft above blue water and islands, with the score displayed.",
     "caption": "The live Godot shooter after starting, moving, and firing at incoming aircraft.",
     "sourceUrl": "https://cheery-sable-f2dce2.netlify.app/dunkirk.html",
@@ -770,7 +358,7 @@ export const communityMedia: Record<string, LearningMedia> = {
     "height": 720
   },
   "garden-match-agents": {
-    "src": "assets/media/learning/garden-match-agents.webp",
+    "src": "media/learning/garden-match-agents.webp",
     "alt": "A Garden Match fruit puzzle with a remaining-moves counter, apple objective, companion puppy, and settings button.",
     "caption": "The local Garden Match project, using its documented development Canvas renderer.",
     "sourceUrl": "https://github.com/kevinchenkai/GameAI/tree/main/garden",
@@ -778,57 +366,5 @@ export const communityMedia: Record<string, LearningMedia> = {
     "capturedAt": "2026-10-18T10:43:38.714Z",
     "width": 1280,
     "height": 720
-  },
-  "word-rain-chatgpt": {
-    "src": "assets/media/learning/word-rain-chatgpt.webp",
-    "alt": "Word Rain in play, with falling letter tiles, a basket, target word, score, hearts, shield and speed indicators.",
-    "caption": "The running author-hosted game after start and ordinary direction-key basket movement.",
-    "sourceUrl": "https://octopuskid.github.io/word-rain/",
-    "origin": "browser-capture",
-    "capturedAt": "2026-10-20",
-    "width": 1280,
-    "height": 720
-  },
-  "overexposed-ai": {
-    "src": "assets/media/learning/overexposed-ai.webp",
-    "alt": "Overexposed’s desktop card table with newspapers, career cards, money, fame, craft, heat and an End Turn control.",
-    "caption": "Creator-published gameplay screenshot from the itch.io game page.",
-    "sourceUrl": "https://eg30.itch.io/overexposed",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "originalImageUrl": "https://img.itch.zone/aW1hZ2UvNTA3MzQwMi8zMTAxNTIwOS5wbmc=/original/pgaZBa.png",
-    "width": 1280,
-    "height": 720
-  },
-  "minimal-rogue-claude": {
-    "src": "assets/media/learning/minimal-rogue-claude.webp",
-    "alt": "Minimal Rogue first-floor gameplay with the player, breakable blocks, corridor, HP and stamina HUD, and block-cracking log.",
-    "caption": "The live first-floor room after normal movement and block-cracking inputs.",
-    "sourceUrl": "https://hirotaka-adachi.itch.io/minimal-rogue",
-    "origin": "browser-capture",
-    "capturedAt": "2026-10-20",
-    "width": 1280,
-    "height": 720
-  },
-  "katana-kitsune-godot": {
-    "src": "assets/media/learning/katana-kitsune-godot.webp",
-    "alt": "The creator’s Katana Kitsune combat screenshot with an isometric courtyard, the party, enemies, health bars and minimap.",
-    "caption": "Creator-published combat screenshot from the silent Godot prototype.",
-    "sourceUrl": "https://github.com/9-K9/KatanaKitsune/blob/bc9321eeaac727bbb5372a315ec58f68c96240ac/marketing/itch/05_attack.png",
-    "originalImageUrl": "https://raw.githubusercontent.com/9-K9/KatanaKitsune/bc9321eeaac727bbb5372a315ec58f68c96240ac/marketing/itch/05_attack.png",
-    "origin": "creator-screenshot",
-    "reviewedAt": "2026-10-20",
-    "width": 1280,
-    "height": 720
-  },
-  "polar-icecapade-claude": {
-    "src": "assets/media/learning/polar-icecapade-claude.webp",
-    "alt": "Polar Icecapade’s first icy 3D arena after melee propulsion and a shot, showing the moving character, gates, coins, timer and 11 of 12 ammunition.",
-    "caption": "The live first level after melee movement and a shot; ammo has fallen to 11/12.",
-    "sourceUrl": "https://evankurtzart.itch.io/polar-icecapade",
-    "origin": "browser-capture",
-    "capturedAt": "2026-10-20",
-    "width": 1280,
-    "height": 720
   }
-};
+}

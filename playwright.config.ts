@@ -2,7 +2,7 @@ import { defineConfig, devices } from "@playwright/test";
 import { readFileSync } from "node:fs";
 
 const { base } = JSON.parse(
-  readFileSync("site-manifest.json", "utf8"),
+  readFileSync("dist/site-manifest.json", "utf8"),
 ) as { base: string };
 const origin = "http://127.0.0.1:4176";
 export default defineConfig({
@@ -27,7 +27,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "node scripts/preview.mjs --root . --port 4176",
+    command: "node scripts/preview.mjs --port 4176",
     url: origin + base,
     reuseExistingServer: !process.env.CI,
     timeout: 15000,

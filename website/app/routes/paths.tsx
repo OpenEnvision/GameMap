@@ -1,5 +1,5 @@
 import { useLoaderData, type LoaderFunctionArgs } from "react-router";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { contentFor } from "../../content/registry.server";
 import { ContentCard } from "../components/content";
 import { Link, useSiteI18n } from "../lib/i18n";
@@ -47,14 +47,7 @@ export default function Paths() {
               key={path.key}
             >
               {art?.type === "image" && (
-                <figure className="path-card-media">
-                  <img src={art.src} alt={art.alt} loading="lazy" />
-                  <figcaption>
-                    <a href={art.source} target="_blank" rel="noreferrer">
-                      {art.credit}<ArrowUpRight size={12} aria-hidden="true" />
-                    </a>
-                  </figcaption>
-                </figure>
+                <img src={art.src} alt={art.alt} loading="lazy" />
               )}
               <div>
                 <span className="small-label">
@@ -76,8 +69,8 @@ export default function Paths() {
                     </li>
                   ))}
                 </ol>
-                <Link className="inline-link" to={steps[0]?.url || path.url}>
-                  {t("Start with the first step")}
+                <Link className="inline-link" to={path.url}>
+                  {t("Follow this path")}
                   <ArrowRight size={15} />
                 </Link>
               </div>

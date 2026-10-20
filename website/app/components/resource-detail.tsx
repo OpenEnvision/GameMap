@@ -98,7 +98,7 @@ export function ResourceDetail({
               <ArrowUpRight size={12} />
             </a>
             <a href={demo.data.originalUrl} target="_blank" rel="noreferrer">
-              {t("Original recording")}
+              {t("Original video")}
               <ArrowUpRight size={12} />
             </a>
           </figcaption>

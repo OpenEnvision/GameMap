@@ -17,11 +17,10 @@ import {
 } from "./lib/documents.mjs";
 import { loadContent } from "./lib/content.mjs";
 import { writeIfChanged } from './lib/files.mjs';
-import { assetFile, publicAssetPath } from './lib/assets.mjs';
 
 const docsDir = resolve(root, "docs");
 const contentDir = resolve(root, "website/.content/docs");
-const assetsDir = assetFile(publicAssetPath('docs/'));
+const assetsDir = resolve(root, "website/public/docs-assets");
 const assetBase = (
   "/" +
   (process.env.PAGES_BASE_PATH || "").split("/").filter(Boolean).join("/") +
@@ -33,13 +32,7 @@ await mkdir(contentDir, { recursive: true });
 const expectedDocs = new Set(manifest.map(page => resolve(contentDir, page.slug + '.md')));
 for (const stale of await walk(contentDir)) if (!expectedDocs.has(stale)) await rm(stale, {force:true});
 const visibleAssets = publicSourcePaths();
-const documentAssets = (await walk(docsDir)).filter(file => /\.(?:png|jpe?g|gif|webp|svg)$/i.test(file) && publishablePath(relative(root,file),visibleAssets));
-await mkdir(assetsDir, {recursive:true});
-const expectedAssets = new Set(documentAssets.map(file=>resolve(assetsDir,relative(docsDir,file))));
-for(const stale of await walk(assetsDir)) if(!expectedAssets.has(stale)) await rm(stale,{force:true});
-// This previous location contains generated copies only, never authored originals.
-await rm(resolve(root,'website/public/docs-assets'),{recursive:true,force:true});
-for (const file of documentAssets) {
+for (const file of (await walk(docsDir)).filter(file => /\.(?:png|jpe?g|gif|webp|svg)$/i.test(file) && publishablePath(relative(root,file),visibleAssets))) {
   const target = resolve(assetsDir, relative(docsDir, file));
   await mkdir(dirname(target), { recursive: true });
   await writeIfChanged(target, await readFile(file));

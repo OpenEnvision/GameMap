@@ -13,15 +13,14 @@ test("every main Chinese view has a real localized title and no overflow", async
   page,
 }) => {
   const pages = [
-    ["zh/", "构建你的下一个世界."],
+    ["zh/", "从一个想法，到可玩的世界."],
     ["zh/resources/", "选择合适的开发工具。"],
     ["zh/examples/", "从一个可玩的项目开始。"],
     ["zh/agents/", "让代理接入实际开发流程。"],
     ["zh/paths/", "按步骤推进，而不是堆叠工具。"],
     ["zh/testing/", "用实际任务检验改动。"],
     ["zh/showcase/", "从演示回到原始记录。"],
-    ["zh/research/", "仓库研究"],
-    ["zh/papers/", "论文列表"],
+    ["zh/research/", "找到值得研究的项目。"],
     ["zh/explore/", "在全部内容中查找。"],
     ["docs/zh/", "中文文档"],
   ];
