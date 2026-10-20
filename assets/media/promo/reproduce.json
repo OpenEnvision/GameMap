@@ -1,0 +1,37 @@
+{
+  "width": 1280,
+  "height": 720,
+  "frameRate": 24,
+  "averageBitRate": 2100000,
+  "brandSeconds": 1,
+  "transitionSeconds": 0.4,
+  "output": "gamemap-showreel.mp4",
+  "clips": [
+    {
+      "id": "opengame-portal",
+      "file": "opengame-portal.mp4",
+      "startSeconds": 0.5,
+      "durationSeconds": 8
+    },
+    {
+      "id": "pelican-bike-claude",
+      "file": "pelican-ride.mp4",
+      "startSeconds": 1,
+      "durationSeconds": 8,
+      "posterSourceSeconds": 4
+    },
+    {
+      "id": "code-world-model-cloud-harbor",
+      "file": "cwm-cloud-harbor-rgb-002.mp4",
+      "startSeconds": 2,
+      "durationSeconds": 8
+    }
+  ],
+  "reproduction": {
+    "platform": "macOS with Swift and Apple AVFoundation/CoreImage frameworks",
+    "build": "swiftc scripts/render-home-showreel.swift -o /tmp/render-home-showreel",
+    "export": "/tmp/render-home-showreel website/public/assets/media/promo/reproduce.json website/public/assets/media/promo /path/to/originals /tmp/gamemap-showreel-frames",
+    "posters": "The exporter writes complete selected source frames as PNG into FRAME_DIR, using posterSourceSeconds when set and otherwise the selected clip start. Convert those three images to WebP quality 86 without resizing or cropping; film and poster provenance is in manifest.json.",
+    "timing": "The intended 24.4-second timeline is rounded up to 586 complete frames at 24 fps (24.4166667 seconds). Original source audio is omitted. No case captions are baked into the movie."
+  }
+}
