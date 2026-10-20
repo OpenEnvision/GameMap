@@ -1,9 +1,15 @@
 import { createServer } from "node:http";
 import { createReadStream } from "node:fs";
 import { readFile, stat } from "node:fs/promises";
-import { resolve, extname, sep } from "node:path";
+import { resolve, extname, sep, relative } from "node:path";
+import { readRootStaticManifest } from './lib/root-static.mjs';
 
-const root = resolve("dist");
+const args = process.argv.slice(2);
+const option = (name, fallback) =>
+  args.includes(name) ? args[args.indexOf(name) + 1] : fallback;
+const root = resolve(option('--root', '.'));
+const exported = await readRootStaticManifest(true, root);
+const publishedFiles = exported ? new Set(exported.files.map(file => file.path)) : null;
 let base, build;
 try {
   build = JSON.parse(await readFile(resolve(root,'site-manifest.json'),'utf8'));
@@ -14,9 +20,6 @@ try {
   );
 }
 console.log(`Build ${build.commit || 'unknown'} · ${build.builtAt || 'unknown time'}; rebuild after pulling source changes.`);
-const args = process.argv.slice(2);
-const option = (name, fallback) =>
-  args.includes(name) ? args[args.indexOf(name) + 1] : fallback;
 const host = option("--host", "127.0.0.1");
 const port = Number(option("--port", process.env.PORT || "4173"));
 const types = {
@@ -73,6 +76,7 @@ const server = createServer(async (request, response) => {
       info = await stat(file);
     }
     if (!info.isFile()) throw new Error("Not a file");
+    if (publishedFiles && !publishedFiles.has(relative(root, file).split(sep).join('/'))) throw new Error('Not a publication file');
   } catch {
     status = 404;
     const relative=path.startsWith(base)?path.slice(base.length):'';
@@ -114,6 +118,6 @@ server.on("error", (error) => {
 });
 server.listen(port, host, () =>
   console.log(
-    `Static preview: http://${host}:${port}${base} (no application server or SPA fallback)`,
+    `Static preview: http://${host}:${port}${base} (files from ${root}; no application server or SPA fallback)`,
   ),
 );

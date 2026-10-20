@@ -219,7 +219,7 @@ test("all recording records are discoverable and one project can select multiple
   if (!original || original.type !== "links")
     throw new Error("Missing original source fixture");
   await expect(
-    dialog.getByRole("link", { name: "Original video", exact: true }),
+    dialog.getByRole("link", { name: "Original recording", exact: true }),
   ).toHaveAttribute("href", original.items[0].url);
   await page.keyboard.press("Escape");
 });

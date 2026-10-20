@@ -22,7 +22,7 @@ Fix the task, seed, action rate, observation source, and episode budget.
 
 ### Asset & animation pipelines
 
-**Start with:** Kenney · Quaternius Standard · 100STYLE.
+**Start with:** Kenney Animated Characters · Quaternius UAL · 100STYLE.
 
 Import a character, map its skeleton, and play a licensed motion clip.
 

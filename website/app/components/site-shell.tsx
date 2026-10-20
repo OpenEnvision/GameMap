@@ -1,31 +1,57 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { useLocation } from "react-router";
-import { ArrowUpRight, Menu, Moon, Search, Sun, X } from "lucide-react";
+import { ArrowUpRight, Menu, Search, X } from "lucide-react";
 import { useSearchContext } from "fumadocs-ui/contexts/search";
-import { useTheme } from "next-themes";
+import { DisplayModeToggle } from "./display-mode";
 import { navigation, url } from "../../content/site";
-import { Link, NavLink, LanguageSwitcher, useSiteI18n } from "../lib/i18n";
+import { unlocalizedPath } from "../../content/locale";
+import { Link, LanguageSwitcher, useSiteI18n } from "../lib/i18n";
+
+function NavigationLink({ to, children }: { to: string; children: ReactNode }) {
+  const { pathname } = useLocation();
+  const normalize = (path: string) =>
+    unlocalizedPath(path).replace(/\/+$/, "") || "/";
+  const current = normalize(pathname);
+  const target = normalize(to);
+  const active =
+    current === target ||
+    (target !== "/" && current.startsWith(target + "/"));
+  return (
+    <Link
+      to={to}
+      className={active ? "active" : undefined}
+      aria-current={active ? "page" : undefined}
+    >
+      {children}
+    </Link>
+  );
+}
 export function Brand() {
   return (
     <span className="atlas-brand">
       <img
-        src={`${import.meta.env.BASE_URL}brand/gamemap-mark.svg`}
-        width="29"
-        height="29"
+        className="brand-mark"
+        src={`${import.meta.env.BASE_URL}assets/brand/gamemap-mark.svg`}
+        width="44"
+        height="44"
         alt=""
       />
-      <span>GameMap</span>
+      <span className="brand-copy">
+        <span className="brand-wordmark">
+          Game<span className="brand-map">Map</span>
+        </span>
+        <span className="brand-tagline" aria-hidden="true">
+          AI × GAMES × WORLDS
+        </span>
+      </span>
     </span>
   );
 }
 export function SiteHeader() {
   const { t } = useSiteI18n(),
-    [open, setOpen] = useState(false),
-    [mounted, setMounted] = useState(false);
+    [open, setOpen] = useState(false);
   const { setOpenSearch } = useSearchContext(),
-    { resolvedTheme, setTheme } = useTheme(),
     location = useLocation();
-  useEffect(() => setMounted(true), []);
   useEffect(() => setOpen(false), [location.pathname]);
   useEffect(() => {
     if (!open) return;
@@ -48,9 +74,9 @@ export function SiteHeader() {
           {navigation
             .filter((page) => page.nav === "primary")
             .map((page) => (
-              <NavLink key={page.id} to={page.path}>
+              <NavigationLink key={page.id} to={page.path}>
                 {t(page.title)}
-              </NavLink>
+              </NavigationLink>
             ))}
           <details className="more-navigation" key={location.pathname}>
             <summary>{t("More")}</summary>
@@ -58,9 +84,9 @@ export function SiteHeader() {
               {navigation
                 .filter((page) => page.nav === "secondary")
                 .map((page) => (
-                  <NavLink key={page.id} to={page.path}>
+                  <NavigationLink key={page.id} to={page.path}>
                     {t(page.title)}
-                  </NavLink>
+                  </NavigationLink>
                 ))}
             </div>
           </details>
@@ -75,19 +101,7 @@ export function SiteHeader() {
             <span>{t("Search all")}</span>
             <kbd>⌘ K</kbd>
           </button>
-          <button
-            className="quiet-icon"
-            aria-label={t("Toggle color theme")}
-            onClick={() =>
-              setTheme(resolvedTheme === "dark" ? "light" : "dark")
-            }
-          >
-            {mounted && resolvedTheme === "dark" ? (
-              <Sun size={18} />
-            ) : (
-              <Moon size={18} />
-            )}
-          </button>
+          <DisplayModeToggle />
           <LanguageSwitcher />
           <a
             className="github-link"
@@ -117,9 +131,9 @@ export function SiteHeader() {
           aria-label={t("Mobile navigation")}
         >
           {navigation.map((page) => (
-            <NavLink key={page.id} to={page.path}>
+            <NavigationLink key={page.id} to={page.path}>
               {t(page.title)}
-            </NavLink>
+            </NavigationLink>
           ))}
         </nav>
       )}
@@ -134,7 +148,9 @@ export function SiteFooter() {
         <Link to="/">
           <Brand />
         </Link>
-        <p>{t("A little direction for your next playable world.")}</p>
+        <p>
+          © 2026 <a href="https://openenvision.org/" target="_blank" rel="noreferrer">OpenEnvision</a>. {t("All rights reserved.")}
+        </p>
       </div>
       <div className="footer-links">
         <Link to={url.page("explore")}>{t("All content")}</Link>

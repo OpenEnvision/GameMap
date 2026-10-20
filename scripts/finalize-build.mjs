@@ -1,7 +1,8 @@
-import { readFile, writeFile, cp, rm } from "node:fs/promises";
+import { readFile, writeFile, cp, rm, rename, readdir } from "node:fs/promises";
 import { execFileSync } from 'node:child_process';
 import { gzipSync } from 'node:zlib';
 import { loadContent, contentDigest } from "./lib/content.mjs";
+import { writeLegacyAssetAliases } from './lib/assets.mjs';
 
 const base = (
   "/" +
@@ -14,17 +15,21 @@ const pages = context
   .staticPagePaths(registry)
   .map((path) => path.replace(/^\//, ""));
 const records = context.contentManifest(registry);
-let commit='source-archive'; try {commit=execFileSync('git',['rev-parse','--short','HEAD'],{encoding:'utf8'}).trim();}catch{}
+let commit='source-archive'; try {commit=execFileSync('git',['rev-parse','--short','HEAD'],{encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();}catch{}
 const builtAt=new Date().toISOString();
 await rm("dist", { recursive: true, force: true });
-await cp(".build/client", "dist", { recursive: true });
+// Staging is disposable after prerendering; move it to avoid duplicating media.
+await rename(".build/client", "dist");
 // Prerendered routes include basename on disk, while Vite's assets do not.
 // Pages mounts dist/ at that base already, so flatten only the route directory.
 if (base !== "/") {
   const directory = "dist/" + base.split("/").filter(Boolean).join("/");
-  await cp(directory, "dist", { recursive: true });
+  for (const entry of await readdir(directory))
+    await rename(directory + "/" + entry, "dist/" + entry);
   await rm(directory, { recursive: true, force: true });
 }
+// Compatibility copies are build artifacts, not a second authored asset tree.
+await writeLegacyAssetAliases('dist');
 await cp("dist/404/index.html", "dist/404.html");
 await rm("dist/__spa-fallback.html", { force: true });
 await writeFile(
@@ -98,5 +103,5 @@ await writeFile(
   `User-agent: *\nAllow: ${base}\nSitemap: ${site}${base}sitemap.xml\n`,
 );
 console.log(
-  `Static site ready: ${pages.length} pages, ${docs.length} rendered documents, search index, and a real 404 page. Only dist/ is published.`,
+  `Static build ready in dist/: ${pages.length} pages, ${docs.length} rendered documents, search index, and a real 404 page. The build now exports the same website to the repository root.`,
 );

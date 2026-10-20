@@ -208,51 +208,64 @@
   },
   "demo:opengame-portal": {
     "title": "OpenGame · 平台跑酷",
-    "description": "在生成的像素平台游戏中跳跃、战斗与探索。"
+    "description": "在生成的像素平台游戏中跳跃、战斗与探索。",
+    "limitations": "游戏实录片段；可玩版本与源码见对应游戏案例。"
   },
   "demo:opengame-skirmish": {
     "title": "OpenGame · 空间站交战",
-    "description": "在生成的俯视角动作游戏中移动、瞄准与躲避。"
+    "description": "在生成的俯视角动作游戏中移动、瞄准与躲避。",
+    "limitations": "动作游戏实录片段；可玩版本与源码见对应游戏案例。"
   },
   "demo:gamefactory-ue5-combat": {
     "title": "3AGameFactory · 庭院战斗",
-    "description": "在 Unreal Engine 5 游戏中接近敌人、交换攻击，观察生命值变化。"
+    "description": "在 Unreal Engine 5 游戏中接近敌人、交换攻击，观察生命值变化。",
+    "limitations": "官方 UE5 战斗实录片段，需通过项目提供的运行环境体验游戏。"
   },
   "demo:gamefactory-ue5-rpg": {
     "title": "3AGameFactory · 村庄任务",
-    "description": "穿过风格化村庄，收集宝藏并观察任务推进。"
+    "description": "穿过风格化村庄，收集宝藏并观察任务推进。",
+    "limitations": "官方 UE5 任务实录片段，需通过项目提供的运行环境体验游戏。"
   },
   "demo:streamrender-car": {
     "title": "StreamRender-H3 · 从引擎到神经渲染",
-    "description": "同步比较引擎输入与相应的神经渲染画面。"
+    "description": "同步比较引擎输入与相应的神经渲染画面。",
+    "limitations": "同步展示引擎输入与神经渲染结果，完整保留两幅画面；此处为录制输出。"
   },
   "demo:recording-streamrender-h3": {
     "title": "StreamRender-H3 · 引擎与神经渲染对照",
-    "description": "官方同步比较：左侧为引擎输出，右侧为流式神经渲染，两幅画面均完整展示。"
+    "description": "官方同步比较：左侧为引擎输出，右侧为流式神经渲染，两幅画面均完整展示。",
+    "limitations": "引擎输入与神经渲染对照原片，与精选预览共用同一片源。"
   },
   "demo:solar-voxel": {
     "title": "SolarRenderer · 体素世界的视觉转换",
-    "description": "简单体素场景转成风格丰富、持续运动的世界。"
+    "description": "简单体素场景转成风格丰富、持续运动的世界。",
+    "limitations": "结构条件控制的神经渲染实录，并非可导出的可编辑游戏。"
   },
   "demo:recording-solarrenderer": {
     "title": "SolarRenderer · 官方演示片",
-    "description": "先预览官方赛博朋克街景，再观看完整影片中的更多结构控制与生成渲染示例。"
+    "description": "先预览官方赛博朋克街景，再观看完整影片中的更多结构控制与生成渲染示例。",
+    "limitations": "研究项目的生成渲染演示；预览及完整影片不代表完整可玩游戏。"
   },
   "demo:recording-opengame": {
     "title": "OpenGame · 猫咪塔防演示",
-    "description": "OpenGame 官方演示，展示生成的像素游戏如何运行。"
+    "description": "OpenGame 官方演示，展示生成的像素游戏如何运行。",
+    "limitations": "作者录制的塔防演示；此处播放录片，游戏入口见案例详情。"
   },
   "demo:recording-trellis": {
     "title": "TRELLIS · 3D 资产生成",
-    "description": "Microsoft Research 官方展示生成的 3D 资产，项目资料面向学术与研究用途提供。"
+    "description": "Microsoft Research 官方展示生成的 3D 资产，项目资料面向学术与研究用途提供。",
+    "limitations": "官方生成资产展示，没有演示玩法、骨骼绑定或游戏运行集成。"
   },
   "demo:recording-infinigen": {
     "title": "Infinigen · 程序化关节资产",
-    "description": "官方演示通过程序化生成制作的关节资产。"
+    "description": "官方演示通过程序化生成制作的关节资产。",
+    "limitations": "程序化生成的关节资产；演示不代表由 AI 编写的游戏玩法。",
+    "alt": "Infinigen 官方程序化关节物体与机械结构演示"
   },
   "demo:recording-holodeck": {
     "title": "Holodeck · 从提示词到房间",
-    "description": "作者发布的生成式波西米亚风客厅导览。"
+    "description": "作者发布的生成式波西米亚风客厅导览。",
+    "limitations": "作者生成房间漫游原片共 12.04 秒，此处节选第 1–11 秒；展示的是房间漫游，并非具备完整玩法系统的游戏。"
   },
   "collection:awesome-ai-built-games": {
     "description": "按动作、竞速、冒险、策略、解谜和街机等方向整理的社区游戏集，各项目公开源码的程度不同。"
@@ -263,5 +276,334 @@
   "collection:claude-community-use-cases": {
     "title": "Claude 社区案例",
     "description": "寻找创作者演示和开发记录；此项目集也包含游戏之外的影片、工具与实验。"
+  },
+  "example:isocity-cursor": {
+    "description": "用分区、道路、铁路和公共设施建造一座等距城市，观察人口与交通模拟。IsoCity 是完整的 Canvas 浏览器游戏，作者明确表示使用 Cursor 开发。",
+    "aiUse": "作者明确将 Cursor 列为开发工具，但没有公开模型名称、代码生成比例或完整提示记录。可以把它作为 AI 辅助城市建造项目，研究渲染、状态与模拟之间的衔接。"
+  },
+  "example:project-plateau": {
+    "description": "受《失落的世界》启发的第一人称野外摄影探险：为史前动物取景，分配四张感光板，避开威胁，并在天色变暗前返回营地。",
+    "aiUse": "创作者将 Project Plateau 作为 NovelToGame 小说改编工作流案例，公开分析、概念、世界设计、美术、构建和 QA 各阶段。项目包含源码、已提交的模型纹理、资产生成脚本及一条测试路径的输入记录，没有明确指出具体编码客户端。"
+  },
+  "example:surge-for-oinja-codex": {
+    "description": "在两张可互动地图中对抗机械怪潮，组合电气能力形成构筑。攻击自动发动，玩家负责移动、闪避、选择升级和恢复设施。",
+    "aiUse": "Olivia 使用 Codex 中的 GPT-6 Astra 实现战斗、能力联动、程序化环境、界面和调试。原创 Oinja 世界、创作方向和试玩反馈由作者提供；作品经过多轮会话和修改。"
+  },
+  "example:deep-yellow-claude": {
+    "description": "在程序生成的后室中探索。这是一款第一人称回合制 Roguelike：移动或等待会触发战斗，装备组合与理智值共同影响每次冒险。",
+    "aiUse": "Drew Brereton 明确说明游戏代码由 Claude 辅助开发。项目署名进一步指出使用了 Claude Code，并将原创内容与外部着色器、纹理和字体分开列出。"
+  },
+  "example:morbreaker-unity-claude": {
+    "description": "用挡板引导不断加速的小球，挑战十个难度递增的打砖块关卡，包含多段耐久砖块与本地高分记录。",
+    "aiUse": "KingMordas 说明几乎整个游戏由 Claude Code 通过 Unity MCP 插件完成，包括玩法脚本、场景与预制体连接、测试及文档。AI 编辑工具与发布游戏的运行环境相互独立。"
+  },
+  "example:silent-meridian-codex": {
+    "description": "调查停在 00:17 的观测站，在“现在”与“回声”之间切换，借助日志与可选提示，解开四章中的十三道关联谜题。",
+    "aiUse": "stackloomdev 指导 Codex 中的 GPT-6 Astra 多轮参与故事、谜题、中英文文案、界面、代码、存档、程序化 WebGL 效果和测试。背景插画另外生成，3D 层为场景调查界面增加景深。",
+    "title": "Silent Meridian · 静默子午线"
+  },
+  "example:castle-clash-duel-claude": {
+    "title": "Castle Clash Duel",
+    "description": "招募战士与弓箭手，在瓦片地图上进行双人战术对抗。这个完整 Phaser 原型由 Claude Code 实现，并使用 Pixel Frog 制作的 Tiny Swords 美术素材。",
+    "aiUse": "作者先准备需求文档、技术设计与素材元数据，再使用三个 Claude Code 技能实现 Phaser 玩法、地图和前端测试。美术是另行署名的人工作品；当前项目仍是原型。"
+  },
+  "example:golden-hour-skatepark-cursor": {
+    "title": "Golden Hour Skatepark",
+    "description": "在原创海边滑板场中压弯、起跳、翻板、滑杆、平衡，摔倒后重新上板。这是完整的第三人称滑板沙盒，显示短暂的技巧连段，支持切换日照，没有关卡或持久积分。",
+    "aiUse": "作者明确表示，Cursor 的 AI 代理通过实现与视觉评审轮次开发游戏，人类试玩推动了控制方式的修改。代码构建的场景与程序化滑行动作，配合 Cursor 生成画作，以及另行署名的 CC0 声音、纹理和 Mixamo 摔倒起身动画。"
+  },
+  "example:vibe-racer-opencode": {
+    "description": "俯视角计时赛车，包含本地最佳成绩、玩家与作者的幽灵车、泥地路面，以及内置赛道编辑器。",
+    "aiUse": "Kecksdose 明确写出使用 OpenCode 编程工具与 GPT 5.2 Codex 模型。README 提供简短开发说明，尚未公开原始提示词或完整对话。"
+  },
+  "example:novel-journey-to-west": {
+    "title": "西游记：三借芭蕉扇",
+    "description": "把三借芭蕉扇篇章改编为中文回合制 RPG，包含彩绘场景行走、任务、装备、宠物和指令战斗。",
+    "aiUse": "Zenstory 将该游戏作为 NovelToGame 代理工作流的产物发布，提供原著分析、被淘汰的概念、玩法与美术设计、生成美术、完整实现及 QA 记录。案例没有明确某一个编码客户端，不能从工具支持列表推断所有客户端都参与了制作。"
+  },
+  "example:clowder-and-crest-agents": {
+    "description": "招募猫咪组成中世纪公会，在十五类小游戏中接取任务、培养羁绊，并体验受公会声望影响的七章剧情。",
+    "aiUse": "JacobStephens2 将 Claude Code 列为主要代码与设计伙伴，Codex CLI 和 Gemini CLI 分别承担第二、第三条编码任务线。PixelLab、Midjourney、ElevenLabs 和 Suno 生成不同种类的素材，仓库保留了分工具的任务文件。"
+  },
+  "example:pokemon-tactics-claude": {
+    "title": "Pokemon Tactics",
+    "description": "让宝可梦在等距战场上移动，利用高低差，并在范围攻击时避开队友。这款可玩的同人战棋采用 TypeScript 模拟核心、2D-HD 精灵和 Babylon.js 地形。",
+    "aiUse": "作者负责设计与架构，Claude Code 与专门代理编写大部分代码、测试和文档。宝可梦数据、精灵图及部分 PixelLab 美术另有署名与使用条件，不能与代码许可混为一谈。"
+  },
+  "example:rhythm-master-windsurf": {
+    "description": "四轨音乐节奏游戏，包含合成器曲目、难度选择、连击和特殊模式，完整实现集中在一个浏览器 HTML 文件中。",
+    "aiUse": "Frank Niu 在作者帖子中链接这款游戏，并描述 Claude Sonnet 3.7 网页对话与 Windsurf 配合的流程：先生成初版，在对话中诊断问题，再由 Windsurf 应用修改。这是人工引导的开发案例，没有证据表明使用了 Claude Code 或一次自主运行完成。"
+  },
+  "example:spirit-of-kiro": {
+    "description": "寻找奇特物品，在工坊中组合、拆解或改变它们，再交给 AI 估价师出售，体验开放式合成玩法。",
+    "aiUse": "Kiro 官方项目说明超过 95% 的代码通过提示 Kiro 编写。配套指南使用这个实际游戏讲解引导文件、修复、重构、规格、钩子与 MCP；游戏运行时也用 AI 生成物品及合成结果。"
+  },
+  "example:isocoaster-cursor": {
+    "description": "铺设过山车轨道、安排游乐设施，经营有游客活动的主题公园。IsoCoaster 与 IsoCity 共用仓库，但拥有独立的可玩游戏和页面入口。",
+    "aiUse": "作者在两个游戏的共同 README 中明确说明使用 Cursor，但没有公开具体模型或完整对话。可以比较共享等距渲染器如何支撑不同的模拟和操作界面。"
+  },
+  "example:astra-floor-ai": {
+    "description": "在第一人称工业场地中抵挡六波僵尸并挑战最终首领，管理弹药、后坐力、体力和每轮间的商店采购。",
+    "aiUse": "BEROCHLU 表示 GPT-6 Astra 参与了大量架构、程序化 3D 生成和 Web Audio 合成，Antigravity 2.0 完成其他实现与迭代打磨。作者没有宣称这是一次提示完成的作品。"
+  },
+  "example:mosswing-astra": {
+    "description": "通过单键振翅让小生物保持飞行，穿过不断滚动的石柱缺口，在精简的 3D 网页游戏中挑战更高分。",
+    "aiUse": "Ayi1337 公开了 Astra 原始提示和单文件 HTML 结果，称其为一次 Xhigh 的单轮测试。人类规定振翅、重力、碰撞和得分规则，并要求原创角色、世界与画风；这是作者陈述，没有完整生成轨迹。"
+  },
+  "example:sprout-quest-claude": {
+    "title": "Sprout Quest",
+    "description": "探索小世界，参加实时竞技场战斗，采集材料、锻造装备并重建村庄。Sprout Quest 面向竖屏手机，将二维世界与实时渲染的三维角色、道具组合在一起。",
+    "aiUse": "作者称游戏、测试与 Blender 美术流程均由 Claude Code 根据自然语言要求完成；人类负责在手机上试玩并反馈。仓库同时提供运行素材和素材生成脚本，可以研究试玩反馈如何推动后续修改。"
+  },
+  "example:claude-dreaming-godot": {
+    "description": "从像素风阁楼走入可玩的 3D 画作，探索梦境花园、太空飞行、小行星与社区共同制作的房间。",
+    "aiUse": "Rusty 将作品署名为 Rusty 与 Claude，并披露代码、图像、声音和文字均有 AI 辅助。仓库提供贡献说明与关卡接口，方便继续与 Claude 一起制作新梦境。"
+  },
+  "example:sakura-crossing-qwen": {
+    "description": "探索卡通渲染的日本街区，体验运行中的铁路道口、居民对话、开合桥、可驾驶小车与可游泳河流。",
+    "aiUse": "仓库说明代码由本地运行的 Qwen 3.8 27B 生成，再由人手工审查、调试与扩展。作者的开发帖子进一步说明使用 Claude Code CLI 作为执行工具，底层模型为 Qwen。",
+    "title": "3D Sakura Crossing：本地 Qwen 探索原型"
+  },
+  "example:magic-carpet-wizard-astra": {
+    "description": "驾驶飞毯掠过微型球形世界，穿越计分圆环、使用三种法术并迎战敌人与首领。本地幽灵竞速支持两人轮流挑战。",
+    "aiUse": "作者在仓库简介中将游戏归功于 GPT-6 Astra。README 说明场景和贴图由程序生成，音频由外部提供；没有公开提示、完整会话或人类与模型工作的精确比例。"
+  },
+  "example:supermarket-simulator-cursor": {
+    "description": "以第一人称经营超市：订货、拆包、补货，并在收银台服务顾客。作者使用 Cursor 完成这个 Unity 实验，并使用 Hunyuan 生成 3D 模型。",
+    "aiUse": "作者明确列出 Cursor，以及 Gemini 2.5 Pro、Claude Opus 4 和 Claude Sonnet 4，并提供制作视频。“全部由 AI 生成”是作者的开发说明；代码协作、Unity 项目与模型生成需要分别理解。"
+  },
+  "example:arkanoid-neon-claude": {
+    "title": "Arkanoid Neon",
+    "description": "让球反弹穿过八种霓虹砖块布局，收集强化道具，并应对逐渐加快的节奏。这款完整浏览器游戏使用 Canvas 2D 与实时合成的 Web Audio。",
+    "aiUse": "作者在瑞典语 README 中明确表示，代码、画面、音效、音乐与关卡由 Claude Code 配合 Claude Opus 5.5 完成，并公开最初的一句话要求。这是作者的开发说明，不是独立审核过的完整生成记录。"
+  },
+  "example:crown-defender-codex": {
+    "description": "在等距视角下操控英雄，抵挡三十波敌人保护城堡，通过升级组合赢得装饰皇冠。",
+    "aiUse": "Aleksandr-Litvinenko 将此版本归功于 Codex，并公开与相同需求下 Claude Code 版本的比较。作者表示比较针对两种代理最初的实现选择；此仓库提供运行所需的代码和素材。"
+  },
+  "example:three-quake-claude-port": {
+    "title": "Three Quake：AI 辅助移植 Quake",
+    "description": "在 Three.js 浏览器移植版中试玩 Quake 共享版篇章，研究如何借助 AI 改造已有射击游戏的渲染与运行时。",
+    "aiUse": "Mr.doob 将 Claude 列为 Three.js 移植工作的协助者。Quake 的原始设计与实现来自 id Software，本例是 AI 辅助移植，不能表述成 AI 创作了 Quake。README 链接开发记录，但没有明确具体 Claude 客户端。"
+  },
+  "example:roo-code-action": {
+    "title": "Action with AI：Roo Code 开发实验",
+    "description": "使用 SVG 呈现的俯视角动作原型，包含鼠标瞄准射击、敌人和攻击预警，并附有按提示逐步实现的开发记录。",
+    "aiUse": "Mizchi 明确使用 Roo Code（原 Roo Cline）和 Claude 3.5 Sonnet，并禁止人工直接改代码。人类提供基于开发经验的设计、逐步指令和架构约束。原文保留了工作方法与限制，这仍是早期原型。"
+  },
+  "example:eight-second-crew-codex": {
+    "title": "8 秒盗贼团",
+    "description": "录制一段八秒行动，让分身在下一轮重播，与过去的自己合作偷取钥匙并逃脱。九个关卡逐步加入机关踏板、巡逻者和投射物。",
+    "aiUse": "DongJae Shin 决定规则、难度和表现方向，Codex 协助规划与实现关卡、碰撞、行动重播、界面、测试和部署。Agent Sprite Forge 处理生成角色的精灵素材，作者反复试玩并提出修改。"
+  },
+  "example:core-business-claude": {
+    "description": "向下钻掘矿物，管理燃料与机体状态，回到地面商店出售矿产和升级。这是受 Motherload 启发的非商业采矿技术演示：Three.js 渲染 2.5D 世界，Blender 脚本制作三维资产。",
+    "aiUse": "作者将游戏代码、测试、纹理、翻译、模型和 Blender 生成脚本归于 Claude Opus 5.5，音效与音乐来自 ElevenLabs。该项目使用新资产重新实现 Motherload 风格的规则，并明确定位为非商业实验；未说明具体编码客户端。"
+  },
+  "example:vibe-golf-bevy": {
+    "title": "Vibe Golf",
+    "description": "在布满山坡与装饰物的 3D 地形上蓄力击球，追逐移动的鸭子目标，体验小型街机高尔夫沙盒。",
+    "aiUse": "作者将几乎全部开发与生成素材描述为 GPT-5 实验，另行提供了自己偏好的高度图，并多次调整设计方向。具体编程客户端未说明；项目公开了实际玩法和渲染源码，而非仅提供提示词。"
+  },
+  "example:fang-fox-gbc-claude": {
+    "title": "Fang the Fox · Game Boy Color",
+    "description": "以真正的 Game Boy Color 游戏形式探索浮空岛、挑战首领、解开谜题，体验小狐狸的冒险。可在浏览器模拟器中试玩，也可下载 ROM 在掌机或模拟器中运行。",
+    "aiUse": "Austin Ginder 说明由运行 Opus 5.5 的 Claude Code 将自己的浏览器游戏移植为 C。他提供方向并试听改编音乐；公开构建工具让原版与卡带版共享地图、精灵和规则。"
+  },
+  "example:three-kingdoms-codex": {
+    "title": "三分天下 · 百将风云",
+    "description": "经营钱粮、发展城池，在十五座据点间统率武将作战。选择魏、蜀或吴，与两个电脑势力竞争，一统地图。",
+    "aiUse": "MartinDelophy 提出策略游戏方向，要求扩充武将、头像和数值平衡。Codex 中的 GPT-6 Astra 多轮实现规则、界面、数据、对手、存档和测试；地形与头像图集由独立图像工具生成。"
+  },
+  "example:pelican-bike-claude": {
+    "title": "Pelican on a Bike：鹈鹕骑单车",
+    "description": "让戴着头盔的鹈鹕沿程序化海岸骑行，变道抓鱼、跳跃并解锁小成就。完整 Three.js 工程包含角色、单车、海洋、音频与昼夜系统。",
+    "aiUse": "作者说明使用 Claude Code 中的 Claude Opus 5.5，从一句中文提示开始生成游戏。README 公开提示词，并记录模型进行浏览器测试及后续修复的过程；“人工未改代码”是作者自述，并非独立测量的创作比例。"
+  },
+  "example:fishslop-claude": {
+    "description": "驾驶潜水器进入沉没的珊瑚礁，喂鱼、收集掉落的硬币，购买新鱼种和潜艇部件。声呐能短暂揭示平时隐形的 Veilfin。",
+    "aiUse": "作者在初次实现与后续修复的提交中，明确将 Claude Opus 5.5 列为共同作者。这证明模型参与了开发，但未说明具体编码客户端，也不足以认定所有代码均由模型生成。鱼、珊瑚、纹理与音效由游戏代码在运行时生成。"
+  },
+  "example:clockout-unseen-codex": {
+    "title": "准点下班，别被发现",
+    "description": "在三层办公室中限时潜行，利用家具遮挡、咖啡机干扰和临时文件夹伪装避开巡逻视线，抵达电梯下班。",
+    "aiUse": "Ryan-fm 提出办公室潜行概念并确认视觉方向。Codex 中的 GPT-6 Astra 多轮实现碰撞、视线、巡逻、互动、关卡衔接、手机操作和测试；办公室与人物图片由独立图像生成工具制作。"
+  },
+  "example:nagi-home-cowork": {
+    "title": "Nagi Home：小螃蟹的日常",
+    "description": "照顾住在程序化小屋里的螃蟹 Nagi：放食物、扔球、邀请它使用家具，并从日记观察每日需求变化。这个安静的生活模拟器会保存进度。",
+    "aiUse": "作者明确说明，代码由 Claude Cowork 中的 Claude Opus 5.5 生成，并另行注明人类负责企划与发布。这里保留实际客户端 Cowork，不将其改写为 Claude Code；作者没有公开完整对话。"
+  },
+  "example:thunderfall-astra": {
+    "title": "雷霆战机 · 天穹远征",
+    "description": "从三种战机中选择一架，穿越五大空域，在漂移弹、激光和首领攻击间寻找航路。拾取四色武器，并在关间选择强化。",
+    "aiUse": "作者公开了实际需求，并报告 GPT-6 Astra ultra 参与设计、实现、程序画面、合成声音和审阅。作品经过协作代理及多轮修改，公开材料未明确说明使用的编码客户端。"
+  },
+  "example:fruit-ninja-dojo-astra": {
+    "title": "水果忍者 · 再来一刀",
+    "description": "挥刀切开腾空的水果，积累连击并避开炸弹。这款非官方复刻提供经典、六十秒街机和九十秒禅模式。",
+    "aiUse": "Laplace9 表示初版来自 Astra 极高推理强度的一句话请求，随后公开完整源码。当前仓库包含后续打磨与测试；初版的单轮生成说法不能证明现有每行代码都来自那次提示。"
+  },
+  "example:pixel-orchard-astra": {
+    "title": "像素果园 · 记忆收获",
+    "description": "翻开十二张种子卡，找出六组相同符号。记录步数、记住翻错的卡牌，然后重新洗牌进行下一轮。",
+    "aiUse": "MiaAI-Lab 将整个合集标为 GPT-6 Astra 生成，并保留本作的准确提示，明确要求配对、重置和快速输入保护。公开材料没有说明具体聊天或编码客户端，也没有披露人工修改范围。"
+  },
+  "example:butch-graves-j2me": {
+    "title": "Butch Graves 3D",
+    "description": "在五个万圣节射击篇章中挑战首领、寻找钥匙与秘密，观看游戏内过场。作品使用为 Java 功能手机制作的小型光线投射引擎。",
+    "aiUse": "WollyMonjac 将代码、关卡、美术和音频工具归功于 Claude Opus 5.5。人类提供创作任务与方向，试玩构建并反馈问题；作者也分别说明了桌面模拟、手机模拟器与真机测试的边界。"
+  },
+  "example:katana-kitsune-godot": {
+    "description": "选择狐妖剑士，在等距视角的动作肉鸽中迎战妖怪、管理体力、拾取道具并深入地牢。这个无声原型支持本地多人，当前源码还记录了后续队伍系统。",
+    "aiUse": "作者明确列出 Claude Code、GitHub Copilot、GPT Image 2、PixelLab 和 Meshy 等制作工具。仓库记录了 Meshy 绑定动画、Blender 重定向和 PixelOver 精灵导出流程；没有说明确切编程模型或各助手的代码分工。游戏里的 NPC 队友并不是 AI 辅助开发的证据。",
+    "steps": [
+      "打开 itch 原型，选择一名真人玩家，认领键盘并选择服装。",
+      "阅读作者的 AI 披露，以及角色、战斗和精灵制作流程说明。",
+      "在 Godot 4.7 中通过 GL Compatibility 打开 project.godot；工程已包含可运行精灵和游戏场景。",
+      "调整一项战斗或生成参数，检查标题、选角、地牢、受伤和重开的完整衔接。"
+    ]
+  },
+  "example:overexposed-ai": {
+    "description": "通过卡牌选择，引导一位初露头角的艺人度过一年的职业生涯。平衡技艺、金钱和关注度，观察三家报纸的反应，避免过高热度引发丑闻。",
+    "aiUse": "EG30 负责设计、方向和写作，使用 Claude Code 与 OpenAI Codex 实现游戏，并亲自修改 AI 辅助起草的文本。美术和音效通过代码绘制或合成；Holizna 背景音乐另有 CC0 署名。",
+    "steps": [
+      "打开 itch.io 网页版本，依次选择 Begin、Continue 并签约经纪人。",
+      "选择开局卡牌，观察桌面、资源和报纸如何回应。",
+      "阅读作者 AI 披露、README 和 CREDITS.md，区分程序化美术、音效与第三方音乐。",
+      "使用 Node.js 22.18+ 执行 npm install、npm run dev，沿 content/cards.json、core/reducer.ts 和 React 桌面阅读规则，再测试一整年。"
+    ]
+  },
+  "example:polar-icecapade-claude": {
+    "description": "在冰面 3D 场景中滑行，用三段近战连击向前推进，射击时利用后坐力向后移动。穿过闸门、收集金币，在短篇 Game Jam 冒险中对抗老鼠政权。",
+    "aiUse": "Aidan “Botodo” Connolly 和 Evan Kurtz 说明 Claude Code 帮助诊断问题、实现困难的核心逻辑，之后他们检查并调整了全部代码。建模、绑定、动画和设计由团队完成，音频另有署名；作者明确说明没有用生成式 AI 制作资产，也未给出编程模型版本。",
+    "steps": [
+      "使用鼠标开始网页首关，测试冰面滑行和近战连击推进。",
+      "右键射击，对比向后的后坐力与近战向前推进。",
+      "阅读团队对 Claude Code 的说明，以及人工美术、动画和音频署名。",
+      "在 Godot 4.6 中打开 slick 工程，修改一项移动或闸门规则，检查首个房间、弹药、暂停与重开。"
+    ]
+  },
+  "example:minimal-rogue-claude": {
+    "description": "探索黑白地牢、打碎方块，管理体力和装备，逐层深入 ASCII 风格的肉鸽冒险。游戏提供英文和日文界面。",
+    "aiUse": "Hirotaka Adachi 将开发工具归为 Claude Code，音乐归为 SUNO AI，并称作品完全由 AI 制作，但没有给出确切编程模型。公开项目包含渲染器、规则、界面和四首音乐；作者的这一表述不等于没有人工指导的自主开发。",
+    "steps": [
+      "运行网页游戏，选择新游戏与语言，用 Enter 推进开场和教程。",
+      "用方向键探索首个房间，Space 防御，X 打开指令菜单。",
+      "阅读作者的 AI 披露，检查完整 HTML、CSS、JavaScript 和音乐文件。",
+      "通过 HTTP 提供源码目录，修改一项房间或体力规则，检查移动、交互和新一局流程。"
+    ]
+  },
+  "example:word-rain-chatgpt": {
+    "description": "移动篮子，按顺序接住字母拼成单词，同时躲避红色危险方块。护盾、万能字母、完美单词连击和变化的下落速度，让拼字街机不断增加挑战。",
+    "aiUse": "octopuskid 负责设计和打磨，ChatGPT/Codex 辅助代码及界面文本。原创旋律与音效通过代码合成，也有 ChatGPT 协助；两首可选 Kevin MacLeod 录音单独署名，并非 AI 生成音乐。",
+    "steps": [
+      "启动网页游戏，用方向键、A/D 或拖动操作篮子。",
+      "阅读作者的 AI 披露，对比浏览器和 Android 版本。",
+      "保留 assets/music 目录打开 index.html，或下载独立 Lite 版本在离线浏览器运行。",
+      "在 Canvas 游戏中跟踪字母生成、接取、护盾和计分逻辑，修改规则前检查暂停与继续。"
+    ]
+  },
+  "demo:recording-moonlight-mayhem": {
+    "title": "月光与混乱 · 博物馆劫案",
+    "description": "在 Three.js 博物馆中避开移动巡逻，救出浣熊同伴。",
+    "limitations": "节选作者57.9秒实玩录屏的5–13秒，展示移动、警戒发现和救援同伴；未验证完整劫案或后续流程。",
+    "alt": "作者实玩画面：浣熊在俯视博物馆中移动，周围有展柜和巡逻警戒范围。"
+  },
+  "demo:recording-raccoon-heist": {
+    "title": "浣熊大盗 · 夜色中搜刮",
+    "description": "在巡逻手电的扫射下收集战利品，体验 Claude 制作的 Three.js 后院潜行游戏。",
+    "limitations": "节选作者58.134秒实玩录屏的3–11秒，展示第六夜的移动和拾取。作者也指出玩法深度有限，此片段不代表完成度成熟的商业作品。",
+    "alt": "作者实玩画面：浣熊穿过夜间后院，收集战利品并避开手电照明。"
+  },
+  "demo:recording-agent-arcade-galaxy": {
+    "title": "Agent Arcade · 银河射击",
+    "description": "Phaser 太空射击小游戏以透明桌面叠层运行，编辑器仍在背景中可见。",
+    "limitations": "节选作者11.07秒演示的1–9秒，约8秒。完整保留桌面与编辑器背景，只展示其中一款小游戏；画面中的终端不能证明每次修改由哪个智能体完成。",
+    "alt": "作者实录画面：像素飞船和敌人在透明游戏叠层中交战，后方是代码编辑器。"
+  },
+  "demo:recording-castle-clash": {
+    "title": "城堡对决 · 原型攻防",
+    "description": "招募小队，让 Tiny Swords 动画单位向敌方城堡推进。",
+    "limitations": "节选官方仓库23秒动态预览的4–12秒，保留原始帧时序。展示原型的招募与行军，不代表当前 Duel 版本的全部规则；原始素材为动态 GIF。",
+    "alt": "作者动态预览的真实画面：两座城堡之间铺有道路，底部有士兵招募按钮和兵力信息。"
+  },
+  "demo:recording-pokemon-tactics": {
+    "title": "宝可梦战术 · 等距战场",
+    "description": "在 Babylon.js 渲染的 2D-HD 战场中调整站位并选择攻击目标。",
+    "limitations": "节选作者32.13秒战斗动图的24–32秒，保留完整360×203原始画面及帧时序。只展示瞄准与战斗结算，不代表完整战役；这是非商业同人项目。",
+    "alt": "作者战斗动图的真实画面：宝可梦站在等距网格上，界面显示攻击范围、行动顺序和技能信息。"
+  },
+  "demo:recording-sakura-crossing": {
+    "title": "樱花道口 · 可漫步的街区",
+    "description": "在本地 Qwen 辅助编写的卡通日式街区中，沿着运行中的铁路道口行走。",
+    "limitations": "完整呈现作者8秒动图，按原始帧时序转换，展示行走、附近居民和经过的列车。这是可交互探索原型，不表示有完整战役或胜负流程。原图560×373，H264为偶数尺寸560×372，未裁切场景。",
+    "alt": "作者演示的真实画面：角色站在樱花街区的铁路道口前，一列列车从身后经过。"
+  },
+  "demo:recording-hunyuan3d-assets": {
+    "title": "Hunyuan3D 2.0 · 带纹理的生成资产",
+    "description": "作者展示 Hunyuan3D 2.0 形状与纹理生成流程产出的三维角色，并通过旋转展示表面细节。",
+    "limitations": "这是作者的资产生成结果动画，并非玩法或运行中的游戏场景。转换保留原 GIF 帧时序；本次未运行生成，也未验证拓扑、绑定、碰撞或游戏运行性能。",
+    "alt": "粉色地面上并列展示的两个带纹理三维角色，来自官方 Hunyuan3D 2.0 动画。"
+  },
+  "demo:recording-triposr-assets": {
+    "title": "TripoSR · 单图三维重建",
+    "description": "对照五张输入图片与对应的旋转三维重建结果，完整保留官方 TripoSR 演示的上下两行画面。",
+    "limitations": "这是作者的单图重建展示，并非可玩场景；动画播放速度不代表推理耗时。本次未在本地运行重建，也未验证拓扑、绑定或游戏运行性能。",
+    "alt": "完整的官方 TripoSR 对照画面：上排五张输入图片，下排对应的三维重建结果。"
+  },
+  "demo:recording-cwm-brain-cloud-harbor": {
+    "title": "Code World Model · 云海港湾",
+    "description": "官方录片中，一艘风帆艇在云海港湾航行，画面保留移动操作提示。",
+    "limitations": "这是研究输出的录片：程序状态通过代理输入驱动视频渲染器，并非本页可交互的浏览器游戏。公开版本未包含闭源游戏基础系统和代理输入生成工具。",
+    "alt": "Code World Model 官方录片中的风帆艇穿行于绘画风格的云海港湾，WASD 与动作操作提示仍在画面中。"
+  },
+  "demo:recording-solarwm-overview": {
+    "title": "SolarWM · 相机控制的世界",
+    "description": "官方概览展示相机控制下的移动，穿行于生成的雪村、风景、遗迹等世界。",
+    "limitations": "这是世界模型概览录片，并非可交互的浏览器游戏。片中标明部分画面经过加速；这段预览本身不证明可编辑几何、持久实体规则或游戏玩法逻辑。",
+    "alt": "SolarWM 官方概览的标题叠在多个生成环境的网格画面上，各画面带有移动操作提示。"
+  },
+  "demo:recording-wonderworld-cathedral": {
+    "title": "WonderWorld · 扩展教堂场景",
+    "description": "官方分屏录片展示用户选择新内容与相机方向时，教堂场景如何逐步扩展。",
+    "limitations": "这是加速录制的交互式场景生成过程，并非完整可玩游戏，也不是本页运行的浏览器模型推理。项目页另有预生成世界查看器，本次核查未加载该查看器。",
+    "alt": "WonderWorld 官方分屏录片同时展示教堂的第一人称画面，以及不断扩展的三维场景总览。"
+  },
+  "demo:recording-diamond-csgo": {
+    "title": "DIAMOND · CS:GO 的扩散世界模型",
+    "description": "作者使用键盘和鼠标操作扩散世界模型的录片；模型以 CS:GO 画面训练。",
+    "limitations": "这是对游戏画面的神经预测，并非 CS:GO 引擎或完整游戏源码。原始录片仅 280×150 像素，画面清晰度有限。在本地交互运行世界模型需要公开代码、模型权重与合适硬件。",
+    "alt": "低分辨率的 DIAMOND 官方 CS:GO 世界模型录片，展示第一人称武器与石质庭院。"
+  },
+  "demo:recording-genie3-jetski": {
+    "title": "Genie 3 · 灯节水上摩托",
+    "description": "Google DeepMind 录制了夜间可控的水上摩托世界，生成的水面与灯笼画面上保留方向输入提示。",
+    "limitations": "这是官方模型交互录片，并非本页运行的实时模型，也不是可导出的游戏工程。另行提供的 Project Genie 原型目前限支持地区的合资格个人 Google AI Ultra 账户，用户须年满 18 岁；每次探索最多 60 秒，可用性还取决于容量。",
+    "alt": "Genie 3 官方录片展示第一人称水上摩托、挂满节日灯笼的水面，以及方向操作输入。"
+  },
+  "demo:recording-marble-blue-diner": {
+    "title": "Marble · 蓝色餐厅三维场景",
+    "description": "World Labs 的镜头游览展示由文本提示生成的蓝色餐厅，以及具有持久结构的三维室内空间。",
+    "limitations": "这是官方场景漫游录片，并非完整游戏，也不能据此认定有已编写的玩法系统。产品生成与导出有账户和套餐要求；碰撞网格与高质量带纹理 GLB 属于不同导出功能。",
+    "alt": "World Labs Marble 官方镜头游览蓝色灯光餐厅，画面中有卡座、吧台、顶灯和棋盘格地面。"
+  },
+  "demo:recording-video2game-garden": {
+    "title": "Video2Game · 在重建花园中交互",
+    "description": "官方浏览器录屏展示在视频重建的花园中移动，并发射球体与场景物体互动。",
+    "limitations": "这是加入刚体交互的场景重建研究演示录屏。它并不表示任意输入视频都能直接变成完整游戏；重建、碰撞体设置与玩法集成仍是独立步骤。",
+    "alt": "Video2Game 官方浏览器录屏：方块角色站在重建花园中，前方圆桌上放着花瓶，画面保留操作说明和计分面板"
+  },
+  "demo:recording-autoue-workflow": {
+    "title": "AutoUE · Unreal Engine 自动生成流程",
+    "description": "官方演示记录了 Unreal Engine 编辑器中的自动生成工作流程。",
+    "limitations": "这是作者发布的开发流程录屏，并非可直接在浏览器试玩的构建。复现生成需要 Unreal Engine 集成、素材和外部大模型服务；本次仅验证了视频播放，未运行生成器或逐一测试生成的游戏。",
+    "alt": "AutoUE 官方视频中的 Unreal Engine 编辑器，完整展示关卡视口、场景对象、对象列表与输出日志面板"
+  },
+  "demo:recording-sprite-forge": {
+    "title": "Agent Sprite Forge · 早期 0.3 精灵制作流程",
+    "description": "早期 0.3 版本的短片展示 Ryo 案例从静态图、视频动画到抠色精灵条的制作流程。",
+    "limitations": "这段短片介绍早期 0.3 的 Ryo 工作流程，并非当前 0.4 流程或可玩游戏。生成、抠色和打包仍需对应模型渠道、工具与人工审核。",
+    "alt": "Sprite Forge 早期介绍短片中的真实画面：生成的 Ryo 角色位于用于抠色的洋红背景上"
   }
 }

@@ -58,11 +58,18 @@ const structural = new Set([
   "role",
   "agents",
   "resourceIds",
+  "testingIds",
   "dimensions",
   "stages",
   "official",
   "catalogResourceId",
   "recordingId",
+  "referenceType",
+  "primaryRole",
+  "roles",
+  "arxivId",
+  "doi",
+  "year",
 ]);
 export function canTranslate(
   entry: Pick<ContentEntry, "blocks" | "data">,

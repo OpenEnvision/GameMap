@@ -2,6 +2,183 @@
 
 Trace game cases back to creator build notes, playable releases, and source projects. Use the candidate records below for discovery, or open the [case guide](tutorials-and-demos.md) to study a complete project.
 
+The dated audit notes below preserve findings from individual research and runtime checks. Source-tree snapshots, intermediate captures, console/action logs, and contact sheets were temporary working files; they are not distributed as repository downloads. For the previews included in this project, use the [published media manifest](../website/public/assets/media/learning/manifest.json) and [media source guide](media-sources.md), which record delivered assets and their provenance. The manifest is not a replacement for the complete temporary runtime logs.
+
+## Playable-source and engine review — 2026-10-20
+
+This pass prioritizes complete game source and an accessible hosted build or packaged release. Thirteen distinct games are added: twelve received a brief browser interaction check; the Java ME release was downloaded and its archive/manifest checked without executing an emulator. The previous seventy cases remain. Models and coding clients retain the creator’s stated attribution; a model name alone does not establish its client.
+
+| Game | Runtime engine / renderer | Asset tools | Creator AI evidence | Complete source | Play / package |
+| --- | --- | --- | --- | --- | --- |
+| 8-Second Crew · 8초 도둑단 | Canvas 2D · Vanilla JavaScript · HTML/CSS UI | Agent Sprite Forge | [Creator record](https://github.com/sdj3261/openai_game_2026#codex와-함께-만든-과정) | [Project](https://github.com/sdj3261/openai_game_2026) | [Play](https://sdj3261.github.io/openai_game_2026/) |
+| Core Business | Three.js · JavaScript | Blender · ElevenLabs | [Creator record](https://github.com/Leichtbier/core-business#readme) | [Project](https://github.com/Leichtbier/core-business) | [Play](https://leichtbier.github.io/core-business/) |
+| Vibe Golf | Bevy 0.14 + Rapier 0.27 · Rust / WebAssembly | — | [Creator record](https://www.reddit.com/r/ChatGPT/comments/1mnllsq/vibe_coded_a_3d_game_with_gpt_5_and_rust/) | [Project](https://github.com/ahammer/vibe_golf) | [Play](https://ahammer.github.io/vibe_golf/) |
+| Fang the Fox · Game Boy Color | GBDK-2020 4.5 · C / hUGEDriver | — | [Creator record](https://tinybitadventures.com/fang-the-fox-on-the-game-boy-color/) | [Project](https://github.com/TinyBitAdventures/fang-the-fox) | [Play](https://tinybitadventures.com/games/fang-the-fox-gbc/) |
+| Three Kingdoms: Hundred Heroes | DOM/CSS + SVG · React | — | [Creator record](https://github.com/MartinDelophy/awesome-gpt-6-astra/blob/main/works/three-kingdoms/CREATION.md) | [Project](https://github.com/MartinDelophy/awesome-gpt-6-astra/tree/main/works/three-kingdoms) | [Play](https://sanguo-jiangshan.vercel.app/) |
+| Pelican on a Bike | Three.js · JavaScript | — | [Creator record](https://github.com/riba2534/claude-opus-5-5-demo#readme) | [Project](https://github.com/riba2534/claude-opus-5-5-demo/tree/main/pelican-bike) | [Play](https://claude-opus-5-5.riba2534.cn/) |
+| Fishslop | Three.js · TypeScript · Web Audio | — | [Creator record](https://github.com/vasu-devs/FishSlop_Opus5.5/commit/e7a7a2dd61b6da92f9512ccabafad13e1e9a3df4) | [Project](https://github.com/vasu-devs/FishSlop_Opus5.5) | [Play](https://vasu-devs.github.io/FishSlop_Opus5.5/) |
+| Clock Out Unseen | Canvas 2D · React UI | — | [Creator record](https://github.com/Ryan-fm/clockout-unseen/blob/main/docs/DEVELOPMENT.md) | [Project](https://github.com/Ryan-fm/clockout-unseen) | [Play](https://www.bilibili.com/toy/clockout-unseen/index.html) |
+| Nagi Home | Three.js r169 · JavaScript | — | [Creator record](https://github.com/tanuu5/nagi-home#readme) | [Project](https://github.com/tanuu5/nagi-home) | [Play](https://tanuu5.github.io/nagi-home/) |
+| THUNDERFALL · Skyward Expedition | Canvas 2D · Vanilla JavaScript · Web Audio | — | [Creator record](https://github.com/MartinDelophy/awesome-gpt-6-astra/blob/main/works/thunderfall/README.md) | [Project](https://github.com/MartinDelophy/awesome-gpt-6-astra/tree/main/works/thunderfall) | [Play](https://thunderfall.vercel.app/) |
+| Fruit Ninja Dojo · One More Slice | Canvas 2D · Vanilla JavaScript · HTML/CSS UI | — | [Creator record](https://linux.do/t/topic/2857340) | [Project](https://github.com/yongqixue99-hue/fruit-ninja-dojo) | [Play](https://fruit-ninja-dojo-20260905.yongqixue666.chatgpt.site/) |
+| Pixel Orchard · Memory Harvest | DOM/CSS · Vanilla JavaScript | — | [Creator record](https://github.com/MiaAI-Lab/GPT-6-Astra-100-HTML-Files/blob/main/README.md) | [Project](https://github.com/MiaAI-Lab/GPT-6-Astra-100-HTML-Files/blob/main/013-pixel-orchard.html) | [Play](https://miaai-lab.github.io/GPT-6-Astra-100-HTML-Files/013-pixel-orchard.html) |
+| Butch Graves 3D | Custom fixed-point raycaster · Java MIDP 2.0 / CLDC 1.0 | — | [Creator record](https://github.com/WollyMonjac/ButchGraves3D#butch-graves-3d) | [Project](https://github.com/WollyMonjac/ButchGraves3D) | [Package](https://github.com/WollyMonjac/ButchGraves3D/tree/main/dist) |
+
+The two games selected from awesome-gpt-6-astra have independent source directories and unrelated mechanics: THUNDERFALL is a Canvas shooter and Three Kingdoms is a DOM/SVG strategy game. Pixel Orchard is one complete matching game selected from a larger HTML study collection, not a card per visual experiment. The selected Pelican game is not multiplied into the other games in its repository. New source/demo URLs and titles were compared against the existing gallery, including normalized source-directory identities. Fang GBC is a cartridge implementation, not another copy of an existing GameMap entry.
+
+### Runtime checks and boundaries
+
+- 8-Second Crew: normal start, movement and X recording advanced the HUD to turn 2 / one clone.
+- THUNDERFALL: start, movement and a bomb yielded score 200 and visible combat.
+- Three Kingdoms: farming changed money and agriculture level; End turn began opponent actions.
+- Fruit Ninja Dojo: ordinary mouse slicing showed score 8 and a four-fruit combo.
+- Pixel Orchard: revealing two cards increased the move counter.
+- Clock Out Unseen: normal-level start and movement advanced the timer 150→149. The README’s V1 hosting note differs from observed V2-style features; the exact deployed revision is not claimed.
+- Pelican on a Bike: muted start, acceleration, jump achievement and camera change.
+- Fishslop: steering, food, coin feedback and a recharging sonar HUD.
+- Nagi Home: food placed on the room floor and ball thrown; diary feedback and ball activity appeared.
+- Core Business: normal start/transmission and movement/drilling input reached score 25 with fuel/depth feedback using Metal. Initial default-headless shader preparation stalled; the game code was not edited.
+- Fang GBC: normal new game, opening dialogue and movement; player position and island-edge feedback changed.
+- Vibe Golf: Play and mouse charge/release produced ball movement and speed 24.30 m/s; target/scoring completion was not established. Optional asset .meta requests return 404.
+- Butch Graves: the 1,679,547-byte JAR contained 444 archive entries and the expected MIDP 2.0 / CLDC 1.0 manifest. An emulator remains required and was not executed.
+
+### Existing engine and duplicate audit
+
+All seventy existing runtime labels were checked against direct source imports, renderer calls or native project configuration. Build tools, coding-agent tools and asset-production tools are not treated as game engines. The visible labels now distinguish custom Canvas 2D, DOM/SVG, native WebGL, Phaser and the named 3D engines. Blender and other confirmed asset tools have their own field on cards and detail pages. Sprout Quest uses both Canvas 2D and Three.js; Mini KSP’s separate Three.js construction workbench does not classify its playable Canvas game as Three.js.
+
+| Existing game | Runtime engine / renderer | Confirmed asset tools | Runtime source |
+| --- | --- | --- | --- |
+| IsoCity | Custom Canvas 2D · TypeScript | — | [Source file](https://github.com/amilich/isometric-city/blob/main/src/components/game/CanvasIsometricGrid.tsx#L973) |
+| Project Plateau: Proof Before Dark | Three.js · WebGL2 | Blender | [Source file](https://github.com/zenstory-ai/novel-to-game/blob/main/examples/project-plateau/build/app/src/main.js#L110) |
+| SURGE for Oinja | Three.js · Rapier 3D · TypeScript | — | [Source file](https://github.com/Olivia295/SURGE-for-Oinja/blob/main/src/surge/renderer.ts#L87) |
+| DEEP YELLOW | Godot 4.6 · GDScript | — | [Source file](https://github.com/aebrer/deep-yellow/blob/master/project.godot#L20) |
+| morBreaker | Unity 6 · URP · C# | — | [Source file](https://github.com/KingMordas/mor-breaker/blob/main/ProjectSettings/ProjectVersion.txt#L1) |
+| Silent Meridian | Custom JavaScript · DOM/CSS · WebGL · Web Audio | — | [Source file](https://github.com/stackloomdev/silent-meridian/blob/main/src/scene-depth.js#L188) |
+| Castle Clash Duel | Phaser 3 · JavaScript | — | [Source file](https://github.com/chongdashu/phaserjs-tinyswords/blob/main/public/index.html#L4340) |
+| Golden Hour Skatepark | Three.js · TypeScript | Blender | [Source file](https://github.com/StarKnightt/skate-park/blob/main/src/game.ts#L121) |
+| Vibe Racer | Pygame 2.6 · Python | — | [Source file](https://github.com/Kecksdose/vibe_racer/blob/main/src/render.py#L3) |
+| Journey to the West: Three Borrowings of the Banana Fan | Custom Canvas 2D · JavaScript · DOM UI | — | [Source file](https://github.com/zenstory-ai/novel-to-game/blob/main/examples/journey-to-the-west/build/app/js/overworld.js#L24) |
+| Clowder & Crest | Phaser 3 · TypeScript | — | [Source file](https://github.com/JacobStephens2/clowder-and-crest/blob/main/src/main.ts#L170) |
+| Pokemon Tactics | Babylon.js · TypeScript | — | [Source file](https://github.com/kekel87/pokemon-tactics/blob/main/packages/app/src/renderer-backend.ts#L1) |
+| Rhythm Master 3D | Three.js · Tone.js · JavaScript | — | [Source file](https://github.com/frankjniu/rhythm-game/blob/main/rhythm.html#L820) |
+| Spirit of Kiro | Custom Vue 3 · DOM/CSS sprites · TypeScript | — | [Source file](https://github.com/kirodotdev/spirit-of-kiro/blob/main/client/src/components/PlayerCharacter.vue#L376) |
+| IsoCoaster | Custom Canvas 2D · TypeScript | — | [Source file](https://github.com/amilich/isometric-city/blob/main/src/components/coaster/CoasterGrid.tsx#L2625) |
+| Astra Floor | Three.js · TypeScript (React UI) | — | [Source file](https://github.com/BEROCHLU/astrafloor/blob/main/lib/game.ts#L379) |
+| Mosswing | Three.js · JavaScript · WebGL | — | [Source file](https://github.com/Ayi1337/gpt6-astra-one-shot-games/blob/main/mosswing/src/game.js#L40) |
+| Sprout Quest | Custom Canvas 2D + Three.js · TypeScript | Blender | [Source file](https://github.com/aibengineering/sprout-quest/blob/main/src/main.ts#L32) |
+| Claude Dreaming | Godot 4.7 · GDScript | — | [Source file](https://github.com/moritzfh/claude-dreaming/blob/main/project.godot#L15) |
+| 3D Sakura Crossing: an exploration prototype | Three.js · JavaScript | — | [Source file](https://github.com/danymaniglie-cmyk/3d-sakura-crossing/blob/main/index.html#L114) |
+| Magic Carpet Wizard · A Thousand Skies | Three.js · JavaScript | — | [Source file](https://github.com/threapchills/MagicCarpetWizard/blob/main/src/main.js#L33) |
+| Supermarket Simulator | Unity 2023.2.6f1 · URP · C# | — | [Source file](https://github.com/breineng/supermarket-simulator/blob/main/ProjectSettings/ProjectVersion.txt#L1) |
+| Arkanoid Neon | Custom Canvas 2D · JavaScript · Web Audio | — | [Source file](https://github.com/Jack-c3l2w/arkanoid-neon/blob/main/game.js#L153) |
+| Crown Defender TD 3D · Codex build | Three.js · JavaScript | — | [Source file](https://github.com/Aleksandr-Litvinenko/Codex.-Crown-Defender-TD-3D-browser-tower-defense-game/blob/main/game.js#L244) |
+| Three Quake: an AI-assisted Quake port | Three.js · JavaScript | — | [Source file](https://github.com/mrdoob/three-quake/blob/main/src/vid.js#L185) |
+| Action with AI: a Roo Code experiment | React · SVG · TypeScript | — | [Source file](https://github.com/mizchi/action-with-ai/blob/HEAD/src/renderer/App.tsx#L1) |
+| Cloud Crush: Gemini CLI builds a match-3 game | Ebitengine 2 · Go / WebAssembly | — | [Source file](https://github.com/GoogleCloudPlatform/devrel-demos/blob/HEAD/codelabs/gemini-cli/gemini-cli-match3-golang/main.go#L14) |
+| Dinosaur Game Offline: Gemini CLI-assisted runner | DOM / CSS · JavaScript | — | [Source file](https://github.com/tonidevvn/dinosaur-game-offline/blob/HEAD/script.js#L75) |
+| Moonlight & Mayhem | Three.js · JavaScript | gpt-image-2 | [Source file](https://github.com/simonw/raccoon-heist-codex/blob/HEAD/src/game.js#L1) |
+| TRON: EXONIX | Godot 4.7 · GDScript | Blender · Nano Banana · PATINA · Tripo · Stable Audio · ElevenLabs | [Source file](https://github.com/witnesstodark/tron-exonix/blob/HEAD/game/project.godot#L15) |
+| Tetris built by an AI agent team | Canvas 2D · JavaScript | — | [Source file](https://github.com/caiguanhao/tetris/blob/HEAD/js/renderer.js#L10) |
+| Tower of Time: prompting a rewind mechanic | Phaser 3 · TypeScript | — | [Source file](https://github.com/maciej-trebacz/tower-of-time-game/blob/HEAD/src/main.ts#L1) |
+| Raccoon Heist | Three.js · JavaScript | gpt-image-2 | [Source file](https://github.com/simonw/raccoon-heist/blob/HEAD/js/main.js#L4) |
+| Hajimi Defense: The Tuna Crisis | Phaser 3 · TypeScript | — | [Source file](https://yelonhu.github.io/OpenGame-landing-page/games/hajimi/assets/index-Be3e4nNy.js) |
+| Marvel Avengers: Infinity Strike | Phaser 3 · TypeScript | — | [Source file](https://yelonhu.github.io/OpenGame-landing-page/games/marvel/assets/index-ClG0C0ss.js) |
+| Harry Potter: Arithmancy Academy | Phaser 3 · TypeScript | — | [Source file](https://yelonhu.github.io/OpenGame-landing-page/games/harryPotter/assets/index-BQiJ9jNZ.js) |
+| Star Wars: Mandalorian Protocol | Phaser 3 · TypeScript | — | [Source file](https://yelonhu.github.io/OpenGame-landing-page/games/starWars/assets/index-DDnJ5zpE.js) |
+| Turbo Kart Rally | Three.js · JavaScript | — | [Source file](https://github.com/bridge-mind/turbo-kart-rally/blob/HEAD/src/main.js#L2) |
+| Long Wind | Three.js · JavaScript | Tripo · Adobe Mixamo | [Source file](https://github.com/jbang2004/long-wind/blob/HEAD/src/core/app.js#L16) |
+| NOVA LANCER | Three.js · JavaScript | — | [Source file](https://github.com/tanuu5/nova-lancer/blob/HEAD/src/gfx.js#L2) |
+| Orb Shooter | Three.js · JavaScript | — | [Source file](https://github.com/theredstapler/orb-shooter/blob/HEAD/src/main.js#L2) |
+| Operation Naptime · Operación Siesta | Three.js + Rapier · JavaScript | — | [Source file](https://github.com/alandaitch/operacion-siesta/blob/HEAD/src/core/engine.js#L26) |
+| Ombres | React Three Fiber · TypeScript | — | [Source file](https://github.com/briossant/ombres/blob/HEAD/src/host/render/WorldCanvas.tsx#L8) |
+| Dragon’s Reach | Three.js · JavaScript | — | [Source file](https://github.com/jaydemks/ImADragon_onepromptcode_game/blob/HEAD/src/core/Engine.js#L10) |
+| Vibe Jet | Three.js · JavaScript | — | [Source file](https://github.com/cedrickchee/vibe-jet/blob/HEAD/game.html#L40) |
+| Slide Rush | Three.js · JavaScript | — | [Source file](https://github.com/KJLKurt/waterslide-game-opus-5.5/blob/HEAD/src/App.js#L1) |
+| The Tithe | Three.js · JavaScript | — | [Source file](https://github.com/miguelsolorio/the-tithe/blob/HEAD/src/main.js#L1) |
+| Michi-Neko · The Cat Philosopher’s Path | Three.js · JavaScript | — | [Source file](https://github.com/c1t1zen1/Michi-Neko-The-Cat-Philosophers-Path/blob/HEAD/src/main.js#L1) |
+| FragArena | Three.js · JavaScript | — | [Source file](https://github.com/jonnyleigh/fragarena/blob/HEAD/js/renderer.js#L11) |
+| GothicVania: Codex builds a platformer | Phaser 3 · JavaScript | — | [Source file](https://github.com/acatovic/gothicvania-codex-demo/blob/main/index.html#L36) |
+| Pixel Princess: a complete arcade campaign | KAPLAY · JavaScript | — | [Source file](https://github.com/VTvito/pixel-princess-platformer/blob/main/src/kaplayCtx.js#L7) |
+| Claude Code Tower Defense | PixiJS · TypeScript / Next.js | — | [Source file](https://github.com/mdkess/claude-game/blob/main/src/game/Game.ts#L1) |
+| Cursor’s procedural platformer experiment | Canvas 2D · TypeScript | — | [Source file](https://github.com/commjoen/generated-game-experiment/blob/main/src/main.ts#L11) |
+| Mini Snake: a Claude conversation game | Canvas 2D · JavaScript | — | [Source file](https://github.com/BizShibe/claude-ai-mini-snake-game/blob/main/index.html#L459) |
+| Flux: Codex gravity-flip runner | Canvas 2D · JavaScript | — | [Source file](https://github.com/scriptedbyshivam/codex-hackathon-2026/blob/main/index.html#L117) |
+| Bash Fighter: an agent-developed multiplayer brawler | PixiJS · TypeScript | — | [Source file](https://github.com/Bash-Entertainment/bash-fighter/blob/main/packages/render/src/stage.ts#L7) |
+| Running Man: Claude Code meets PixelLab | Canvas 2D · JavaScript | — | [Source file](https://github.com/balbonits/ai-browser-game-demos/blob/main/public/games/running-man/main.js#L33) |
+| Garden Match: agents build and review a puzzle game | Phaser 3 · TypeScript | — | [Source file](https://github.com/kevinchenkai/GameAI/blob/main/garden/web/src/main.ts#L7) |
+| Dunkirk: an honestly documented AI-assisted shooter | Godot 4.6 · GDScript | — | [Source file](https://github.com/Ponloe/dunkirk-godot/blob/main/project.godot#L19) |
+| Gravity Birds: Grok Bot directs Cursor | Godot 4.3 · GDScript | — | [Source file](https://github.com/az9713/grokbot-game-dev-demo/blob/main/project.godot#L16) |
+| Quasar Saz: an unusual Claude Code experiment | Godot 4.6 .NET · C# | — | [Source file](https://github.com/cleak/quasar-saz/blob/master/project.godot#L16) |
+| Agent Arcade: Copilot builds desktop arcade games | Phaser · TypeScript / Tauri | — | [Source file](https://github.com/DanWahlin/agent-arcade/blob/main/src/game/game.ts#L60) |
+| Space Shooter: a family Cursor experiment | Canvas 2D · JavaScript | — | [Source file](https://github.com/littleearth/vibe-coded-games/blob/main/shooter/game.js#L175) |
+| Destruction Derby Arena | Canvas 2D · JavaScript | — | [Source file](https://github.com/littleearth/vibe-coded-games/blob/main/demoderby/game.js#L4) |
+| Beach Kitty | Phaser 3 · React · TypeScript | — | [Source file](https://github.com/matthewod11-stack/CatRunner/blob/main/components/PhaserGame.tsx#L2) |
+| Pirate Fleet Commander | Canvas 2D · JavaScript | — | [Source file](https://github.com/JoeySalmons/vibe-coded-games/blob/main/Pirate%20Fleet%20Commander%20v7.4.html#L425) |
+| Kymograph | HTML / SVG · JavaScript · Web Audio | — | [Source file](https://github.com/JoeySalmons/vibe-coded-games/blob/main/Kymograph%20v4.html#L228) |
+| Midnight Pumpkin Hunt | Three.js · JavaScript | — | [Source file](https://github.com/JoeySalmons/vibe-coded-games/blob/main/Pumpkin%20Hunt%20Horror%20Game%20v3.html#L61) |
+| Snake: Neon Arcade Edition | Canvas 2D · JavaScript | — | [Source file](https://github.com/TwitchCaptain/snake/blob/main/game.js#L7) |
+| Mini KSP: a Chinese rocket sandbox | Canvas 2D · JavaScript | — | [Source file](https://github.com/BairlyEmei/mini-ksp/blob/main/js/game.js#L1283) |
+
+Existing source repositories were normalized to their current owner/repository identities and the seventy final demo/download addresses compared after redirects. No hidden alias, renamed-repository duplicate or shared final game URL was found. Known shared repositories retain separate game implementations: IsoCity/IsoCoaster, the two NovelToGame adaptations, the four OpenGame archives, the two Little Earth games and three distinct Joey Salmons HTML games. Simon Willison’s two raccoon games have separate source, objectives and worlds.
+
+### Candidates retained outside this addition
+
+| Candidate | Why it is not one of the new playable cases |
+| --- | --- |
+| [Pocket Bomber](https://github.com/chongdashu/love2d-pocket-bomber-game) | Complete source and creator gameplay media, but no hosted game or packaged release was verified; required local LÖVE, Go/WASM or Godot execution was not performed. |
+| [Bomb Jack Go](https://github.com/teedjay/go-bombjack) | Complete source and creator gameplay media, but no hosted game or packaged release was verified; required local LÖVE, Go/WASM or Godot execution was not performed. |
+| [Opus FPS](https://github.com/frankhale/opus-fps) | Complete source and creator gameplay media, but no hosted game or packaged release was verified; required local LÖVE, Go/WASM or Godot execution was not performed. |
+| [CoEngineers Games](https://github.com/highlandhodl/coengineers-os-games) | Complete Phaser collection with an explicit Claude Code workflow, but no hosted play link or local execution was completed in this pass. Its modes are not multiplied into separate cases. |
+| [Not Mortal Kombat](https://github.com/jc-able/not-mortal-kombat) | Public code deliberately omits roughly 770 MB of character/cinematic binaries; do not equate the code-only checkout with a complete playable asset package. |
+| [Starball Run / Codex GameDev Harness](https://github.com/ddalkakgames/codex-gamedev-harness) | Unreal workflow and vertical-slice planning evidence, without a verified complete delivered game package or public playable build in this pass. It is not used to create an Unreal case just to fill a category. |
+
+## Expanded source review — 2026-10-20
+
+Search covered creator repositories, developer accounts, engine communities and public game directories. Directory rows were leads; the table below links the creator evidence and actual project for each addition. The original cases remain in the gallery. IsoCity/IsoCoaster share one implementation repository but expose distinct games; the two NovelToGame entries adapt different works into different game systems. Isometric Canvas games remain 2D, while 3D terrain or first-person projects are marked 3D.
+
+| Game | Creator AI evidence | Complete project | Play / run | Preview origin |
+| --- | --- | --- | --- | --- |
+| IsoCity | [Creator record](https://github.com/amilich/isometric-city#readme) | [Source](https://github.com/amilich/isometric-city) | [Browser](https://iso-city.com) | creator-screenshot |
+| Project Plateau: Proof Before Dark | [Creator record](https://github.com/zenstory-ai/novel-to-game#what-the-qa-record-admits-it-did-not-test) | [Source](https://github.com/zenstory-ai/novel-to-game/tree/main/examples/project-plateau) | [Browser](https://plateau.vibecoco.ai/) | creator-screenshot |
+| SURGE for Oinja | [Creator record](https://github.com/MartinDelophy/awesome-gpt-6-astra/issues/106) | [Source](https://github.com/Olivia295/SURGE-for-Oinja) | [Browser](https://oinja-game.vercel.app/) | creator-screenshot |
+| DEEP YELLOW | [Creator record](https://github.com/aebrer/deep-yellow/blob/master/CREDITS.md#code-and-design) | [Source](https://github.com/aebrer/deep-yellow) | [Browser](https://aebrer.itch.io/deep-yellow) | creator-screenshot |
+| morBreaker | [Creator record](https://github.com/KingMordas/mor-breaker#built-with-claude-code-) | [Source](https://github.com/KingMordas/mor-breaker) | [Download / local](https://github.com/KingMordas/mor-breaker/releases/tag/v1.2.0) | local-capture |
+| Silent Meridian | [Creator record](https://github.com/stackloomdev/silent-meridian/blob/main/docs/CREATION.md) | [Source](https://github.com/stackloomdev/silent-meridian) | [Browser](https://silent-meridian.pjstack.dev/) | creator-screenshot |
+| Castle Clash Duel | [Creator record](https://github.com/chongdashu/phaserjs-tinyswords#implementation-with-agent-skills) | [Source](https://github.com/chongdashu/phaserjs-tinyswords) | [Browser](https://vibe-tiny-swords.vercel.app/) | creator-screenshot |
+| Golden Hour Skatepark | [Creator record](https://github.com/StarKnightt/skate-park#how-it-was-built) | [Source](https://github.com/StarKnightt/skate-park) | [Browser](https://starknightt.github.io/skate-park/) | creator-screenshot |
+| Vibe Racer | [Creator record](https://github.com/Kecksdose/vibe_racer#development) | [Source](https://github.com/Kecksdose/vibe_racer) | [Download / local](https://github.com/Kecksdose/vibe_racer/archive/refs/heads/main.zip) | creator-screenshot |
+| Journey to the West: Three Borrowings of the Banana Fan | [Creator record](https://github.com/zenstory-ai/novel-to-game#play-online) | [Source](https://github.com/zenstory-ai/novel-to-game/tree/main/examples/journey-to-the-west) | [Browser](https://xiyouji.vibecoco.ai/) | creator-screenshot |
+| Clowder & Crest | [Creator record](https://github.com/JacobStephens2/clowder-and-crest#built-with) | [Source](https://github.com/JacobStephens2/clowder-and-crest) | [Browser](https://clowderandcrest.com/) | browser-capture |
+| Pokemon Tactics | [Creator record](https://github.com/kekel87/pokemon-tactics#built-with-ai) | [Source](https://github.com/kekel87/pokemon-tactics) | [Browser](https://kekel87.itch.io/pokemon-tactics) | creator-screenshot |
+| Rhythm Master 3D | [Creator record](https://www.linkedin.com/posts/frankniu_if-youre-not-vibe-coding-with-claude-sonnet-activity-7304977951761039362-2xQe) | [Source](https://github.com/frankjniu/rhythm-game) | [Download / local](https://github.com/frankjniu/rhythm-game/archive/refs/heads/main.zip) | local-capture |
+| Spirit of Kiro | [Creator record](https://github.com/kirodotdev/spirit-of-kiro#spirit-of-kiro) | [Source](https://github.com/kirodotdev/spirit-of-kiro) | [Download / local](https://github.com/kirodotdev/spirit-of-kiro/archive/refs/heads/main.zip) | creator-screenshot |
+| IsoCoaster | [Creator record](https://github.com/amilich/isometric-city#readme) | [Source](https://github.com/amilich/isometric-city) | [Browser](https://iso-coaster.com) | creator-screenshot |
+| Astra Floor | [Creator record](https://github.com/MartinDelophy/awesome-gpt-6-astra/issues/96) | [Source](https://github.com/BEROCHLU/astrafloor) | [Browser](https://astrafloor.berochlu.workers.dev/) | creator-screenshot |
+| Mosswing | [Creator record](https://github.com/Ayi1337/gpt6-astra-one-shot-games#02--mosswing) | [Source](https://github.com/Ayi1337/gpt6-astra-one-shot-games/tree/main/mosswing) | [Browser](https://mosswing-quiet-flight.jack-514.chatgpt.site/) | browser-capture |
+| Sprout Quest | [Creator record](https://github.com/aibengineering/sprout-quest#how-it-was-built) | [Source](https://github.com/aibengineering/sprout-quest) | [Browser](https://aibengineering.github.io/sprout-quest/) | creator-screenshot |
+| Claude Dreaming | [Creator record](https://rusty-production.itch.io/claude-dreaming) | [Source](https://github.com/moritzfh/claude-dreaming) | [Browser](https://rusty-production.itch.io/claude-dreaming) | creator-screenshot |
+| 3D Sakura Crossing: an exploration prototype | [Creator record](https://github.com/danymaniglie-cmyk/3d-sakura-crossing#credits) | [Source](https://github.com/danymaniglie-cmyk/3d-sakura-crossing) | [Browser](https://danymaniglie-cmyk.github.io/3d-sakura-crossing/) | creator-screenshot |
+| Magic Carpet Wizard · A Thousand Skies | [Creator record](https://github.com/threapchills/MagicCarpetWizard) | [Source](https://github.com/threapchills/MagicCarpetWizard) | [Browser](https://threapchills.github.io/MagicCarpetWizard/) | browser-capture |
+| Supermarket Simulator | [Creator record](https://github.com/breineng/supermarket-simulator#description) | [Source](https://github.com/breineng/supermarket-simulator) | [Download / local](https://github.com/breineng/supermarket-simulator/releases/download/0.0.1/SupermarketSimulator.zip) | creator-screenshot |
+| Arkanoid Neon | [Creator record](https://github.com/Jack-c3l2w/arkanoid-neon#readme) | [Source](https://github.com/Jack-c3l2w/arkanoid-neon) | [Browser](https://jack-c3l2w.github.io/arkanoid-neon/) | creator-screenshot |
+| Crown Defender TD 3D · Codex build | [Creator record](https://github.com/Aleksandr-Litvinenko/Codex.-Crown-Defender-TD-3D-browser-tower-defense-game/blob/main/COMPARISON.md) | [Source](https://github.com/Aleksandr-Litvinenko/Codex.-Crown-Defender-TD-3D-browser-tower-defense-game) | [Download / local](https://github.com/Aleksandr-Litvinenko/Codex.-Crown-Defender-TD-3D-browser-tower-defense-game/archive/refs/heads/main.zip) | local-capture |
+| Three Quake: an AI-assisted Quake port | [Creator record](https://github.com/mrdoob/three-quake#credits) | [Source](https://github.com/mrdoob/three-quake) | [Browser](https://mrdoob.github.io/three-quake/) | browser-capture |
+| Action with AI: a Roo Code experiment | [Creator record](https://zenn.dev/mizchi/articles/game-with-cline) | [Source](https://github.com/mizchi/action-with-ai) | [Browser](https://action-with-ai.mizchi.workers.dev/) | browser-capture |
+
+Source checks establish what the creator publishes, not an audited AI authorship percentage. A Claude or Astra model mention alone is not attributed to Claude Code or Codex. Roo Code, OpenCode, Kiro and Windsurf remain distinct clients; the novel adaptations do not identify their exact client. Quake is credited as an assisted port of id Software’s existing game. Native engines, Git LFS, cloud runtime requirements and separate asset terms are written beside the relevant run/source operation. The per-game study steps are proposed learning exercises.
+
+### Candidates kept outside the added cases
+
+| Candidate | Evidence boundary / next check |
+| --- | --- |
+| [GODOT4 Cycle Tour](https://github.com/Bills-Institute-of-Technology/GODOT4_CycleTour) | README says scenes, scripts and assets will be added later; setup prose alone is not a delivered game. |
+| [Tripo playbook examples](https://github.com/TripoGrowthLab/vibe-gaming-interactive-playbook) | Already covered as a workflow; public projects intentionally omit final generated GLBs and render as greyboxes. Do not duplicate them as complete game-and-asset examples. |
+| [SANDLINE](https://github.com/xilinnihao-afk/sandline-threejs-fps) | The discovered project requires third-party character assets absent from a clean clone; retain it as a lead rather than a complete packaged case. |
+| [Detective Agentic Mysteries](https://github.com/suuus/detective-agentic-mysteries) | Development evidence is explicit, but its Copilot runtime needs authentication/subscription and no genuine gameplay preview was captured. Current SDK/CLI requirements supersede the README’s older Node/extension setup; no account setup was performed. |
+| [Multiverse Mate](https://github.com/vijaydotin/multiverse-mate) | The documented root pnpm dev command does not exist in the reviewed package. PostgreSQL, DATABASE_URL and separate service ports require a corrected reproducible setup before promotion. |
+
+The discovery section also adds Vibe Jam, AI Browser Game Jam and the Astra source collection. Those links do not increase the reviewed game count.
+
 ## Gemini CLI case addition
 
 Two previously reviewed code resources now also have individual game cases. Both are 2D games and are explicitly attributed to the Gemini CLI client, distinct from the six existing cases using Gemini models or AI Studio.
@@ -59,25 +236,25 @@ This is a dated research snapshot, not an exhaustive inventory of every communit
 
 ## Source-tree checks
 
-Public GitHub tree JSON snapshots are saved as `/tmp/gamemap-2d-<owner>-<repo>-tree.json` (Garden is `/tmp/gamemap-2d-gameai-tree`). They contain source paths and pinned HEAD SHA values, not downloaded repository code. Verified file counts: GothicVania 40; Pixel Princess 176; tower defense 89; Cursor platformer 81; Gravity Birds 89; Agent Arcade 368; Mini Snake 3; Flux 22; Bash Fighter 385; Quasar Saz 1076; John Dilig collection 171; GameAI collection 1122; Dunkirk 212. Counts include supporting docs, assets and tests, not just game code.
+Public GitHub tree JSON snapshots were held in temporary working files during this audit. They contained source paths and pinned HEAD SHA values, not downloaded repository code, and are not bundled with this repository. Verified file counts: GothicVania 40; Pixel Princess 176; tower defense 89; Cursor platformer 81; Gravity Birds 89; Agent Arcade 368; Mini Snake 3; Flux 22; Bash Fighter 385; Quasar Saz 1076; John Dilig collection 171; GameAI collection 1122; Dunkirk 212. Counts include supporting docs, assets and tests, not just game code. The primary repositories and evidence URLs remain in the candidate table above.
 
-Additional fetched primary material: Cursor conversation summary (`/tmp/gamemap-2d-cursor-conversation`), Gravity Birds README and full journey HTML (`/tmp/gamemap-2d-gravity-readme`, `/tmp/gamemap-2d-gravity-journey`), and Mini Snake's complete HTML (`/tmp/gamemap-2d-minisnake.html`). GitHub HTML/raw pages and the Copilot creator article were also opened with web research tools. Cache-miss errors were not treated as a verified dead site; direct public fetches/browser navigation were used to resolve important cases.
+Additional primary material fetched into temporary audit files included the Cursor conversation summary, Gravity Birds README and full journey HTML, and Mini Snake's complete HTML. Those working copies are not published artifacts; the candidate table links their creator-controlled sources. GitHub HTML/raw pages and the Copilot creator article were also opened with web research tools. Cache-miss errors were not treated as a verified dead site; direct public fetches/browser navigation were used to resolve important cases.
 
 ## Creator gameplay images for downloadable projects
 
-- Gravity Birds: https://raw.githubusercontent.com/az9713/grokbot-game-dev-demo/main/game_ui_2.png — visually checked; actual Stairway puzzle with bird, fruit, exit and undo/restart UI. README captions it "After polish". Local `/tmp/gamemap-2d-gravity-game2.png`.
-- Quasar Saz: https://raw.githubusercontent.com/cleak/quasar-saz/master/docs/screenshot_20260219_154704.png — visually checked; actual Dissonance King phase-3 combat, player, attacks, energy/score HUD. Local `/tmp/gamemap-2d-quasar-game-complete.png`.
-- Agent Arcade: https://raw.githubusercontent.com/DanWahlin/agent-arcade/main/docs/images/agent-arcade-ninja.gif — creator gameplay GIF. Same recording is explicitly captioned "Ninja Runner Gameplay" in the creator's linked article. Local `/tmp/gamemap-2d-previews/agent-arcade-copilot.gif`.
+- Gravity Birds: https://raw.githubusercontent.com/az9713/grokbot-game-dev-demo/main/game_ui_2.png — visually checked; actual Stairway puzzle with bird, fruit, exit and undo/restart UI. README captions it "After polish". [Published preview](../website/public/assets/media/learning/gravity-birds-grok-cursor.webp).
+- Quasar Saz: https://raw.githubusercontent.com/cleak/quasar-saz/master/docs/screenshot_20260219_154704.png — visually checked; actual Dissonance King phase-3 combat, player, attacks, energy/score HUD. [Published preview](../website/public/assets/media/learning/quasar-saz-claude.webp).
+- Agent Arcade: https://raw.githubusercontent.com/DanWahlin/agent-arcade/main/docs/images/agent-arcade-ninja.gif — creator gameplay GIF. Same recording is explicitly captioned "Ninja Runner Gameplay" in the creator's linked article. [Published preview](../website/public/assets/media/learning/agent-arcade-copilot.webp).
 
 These are creator-provided gameplay media, not captures made during our own playtests. Root integration is preserving that provenance.
 
 ## Browser verification
 
-Browser plugin unavailable; used bundled Playwright and Chromium 1208. All 10 browser-entry URLs returned HTTP 200 and correct page titles in the initial navigation run. Initial title/loading screenshots are intentionally excluded from accepted gallery media. Captures and per-case console/request/action metadata live under `/tmp/gamemap-2d-previews/`. Metal rendering and one foreground page are used for follow-up captures where asset loading or animation is slow.
+Browser plugin unavailable; used bundled Playwright and Chromium 1208. All 10 browser-entry URLs returned HTTP 200 and correct page titles in the initial navigation run. Initial title/loading screenshots are intentionally excluded from accepted gallery media. Captures and per-case console/request/action metadata were temporary audit files and are not distributed. The [published manifest](../website/public/assets/media/learning/manifest.json) and [media guide](media-sources.md) identify the retained previews and their sources. Metal rendering and one foreground page were used for follow-up captures where asset loading or animation was slow.
 
 Verified active interactions: tower-defense Damage upgrade changes Lv0→Lv1 and gold25→5; Cursor platformer moves/jumps and score increases; Mini Snake is played with arrows to collect two food items (score0→2; length1→3), then paused for capture; Flux enters its running state and flips gravity; Bash Fighter creates a private lobby, starts with bots, enters Timed Brawl and responds to movement/jump/attack; Running Man starts, jumps and reaches 19m; GothicVania moves from its exported `title` state to `level`, with a moving/jumping player, health4 and live enemies. GothicVania's Enter input must be held across a rendered frame because its title checks Phaser `JustDown`.
 
-The verified preview manifest is `/tmp/gamemap-2d-previews/verified-manifest.json`: seven actual browser gameplay captures plus one creator gameplay screenshot for Pixel Princess. The latter's public build reached a working menu, but variable first-load asset timing made the creator's existing gameplay screenshot the more reliable preview: https://raw.githubusercontent.com/VTvito/pixel-princess-platformer/main/assets/screenshot.png (local `/tmp/gamemap-2d-pixel-creator.png`). It was visually checked as actual forest-level gameplay with heroine, enemy, pickups and lives/score HUD. Garden Match diagnosis/capture was handed to the 3D research agent and Dunkirk capture to the root agent, so their final results are recorded by those agents rather than claimed here.
+The temporary verified-preview selection recorded seven actual browser gameplay captures plus one creator gameplay screenshot for Pixel Princess. That audit selection file is not a repository download; retained media and origins are recorded in the [published manifest](../website/public/assets/media/learning/manifest.json). Pixel Princess's public build reached a working menu, but variable first-load asset timing made the creator's existing gameplay screenshot the more reliable preview: https://raw.githubusercontent.com/VTvito/pixel-princess-platformer/main/assets/screenshot.png ([published preview](../website/public/assets/media/learning/pixel-princess-claude.webp)). It was visually checked as actual forest-level gameplay with heroine, enemy, pickups and lives/score HUD. Garden Match diagnosis/capture was handed to the 3D research agent and Dunkirk capture to the root agent, so their final results are recorded by those agents rather than claimed here.
 
 ## Rejected or deferred prospects
 
@@ -169,7 +346,7 @@ All final tutorial/evidence pointers are primary creator material. Entries that 
 
 - Vibe Jet and FragArena public hosts failed DNS resolution. Their final `demo` fields now link the actual main-branch source ZIP with local Node launch instructions and state that the public host did not resolve at review.
 - Ombres browser navigation timed out; final demo note flags possible temporary unavailability. This is not treated as definitive proof of a dead host.
-- Exact creator gameplay screenshot candidates are in `/tmp/gamemap-3d-screenshots.json`, keyed by case ID with immutable commit refs, raw image URLs, source permalinks, byte sizes, and README provenance. Nine are explicitly embedded as gameplay in creator README content. The Michi development capture requires pixel inspection; all aspirational README artwork is excluded. Orb Shooter and Slide Rush have no creator gameplay screenshots in their source trees, so root browser capture is required for them.
+- Historical screenshot-candidate metadata was held in a temporary audit file, keyed by case ID with immutable commit refs, raw image URLs, source permalinks, byte sizes, and README provenance. That working file is not distributed; use the [published manifest](../website/public/assets/media/learning/manifest.json) and [media guide](media-sources.md) for retained preview provenance. Nine candidates were explicitly embedded as gameplay in creator README content. The Michi development capture required pixel inspection; all aspirational README artwork was excluded. Orb Shooter and Slide Rush had no creator gameplay screenshots in their source trees, so browser capture was required for their previews.
 
 
 ---
@@ -219,7 +396,7 @@ Eight entries were authored; six distinct game implementations from three source
 
 ## Screenshot QA completed (same date)
 
-Eight 1280×720 real browser-rendered PNGs at `/tmp/gamemap-diverse-previews/<case-id>.png`; metadata `/tmp/gamemap-diverse-previews/metadata.json`; contact sheet `final-contact.png`. No title-only or loading-only images retained. Used installed Playwright because Browser plugin/skill is absent. Every retained screenshot was visually inspected.
+Eight 1280×720 real browser-rendered PNGs, per-case metadata, and a contact sheet were created as temporary working files during this audit. They are not distributed as QA downloads. The retained previews and source provenance are available in the [published manifest](../website/public/assets/media/learning/manifest.json) and [media guide](media-sources.md). No title-only or loading-only images were retained. Used installed Playwright because Browser plugin/skill was absent. Every retained screenshot was visually inspected.
 
 - Shooter: Start Game → hold Space → move left; enemy and shots visible; no page errors.
 - Derby: already in a running arena → drive Player 1 with WASD; collisions/particles visible; no page errors.

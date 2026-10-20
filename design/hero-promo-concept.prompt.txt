@@ -1,0 +1,28 @@
+Use case: ui-mockup. Generate exactly ONE exceptionally polished, high-fidelity desktop website first-viewport design screenshot for GameMap, requested canvas 1440 by 1000 pixels. This is a production UI concept only, not a production game screenshot asset. All webpage text and controls will be implemented as native HTML/CSS by the engineer; do not suggest shipping the concept image as UI.
+
+REFERENCE ROLES:
+Image 1 is the CURRENT English GameMap homepage: preserve its actual GameMap logo, header/navigation, overall brand, left-side copy, search, two CTA labels, and the beginning of the next section. Redesign only the right-hand hero media area, plus the hero column proportions needed to accommodate it.
+Image 2 is the real OpenGame Marvel gameplay frame. Use this recognizable actual pixel-art city/portal/Thor/taxi frame as the central film content. Preserve its original image content and complete HUD; fit the COMPLETE frame inside a 16:9 media viewport using a tasteful quiet dark matte if its native aspect differs. Do not invent, repaint, replace, mix, or crop away game content. Reproduce it as closely as possible.
+Image 3 is the actual Pelican on a Bike gameplay screenshot, supplied as a secondary reference for the richness of the 3D chapter. The visible selected chapter in this single screenshot MUST be 2D Game with the Marvel frame from Image 2, so do not combine the pelican into that frame or mislabel it.
+
+VISUAL DIRECTION:
+A refined independent film-festival screening room, with editorial confidence, cinematic imagery, high-end typography and generous intelligent whitespace. One singular beautiful media window, not nested cards, not a dashboard. Flat warm-white page #fffcfb, black/near-black text #1d1917, restrained burnt-orange #bd4b11. Preserve the actual orange geometric G plus small upper-right hexagon and GameMap wordmark (Game dark, Map orange) from Image 1. Use the same clean Inter-like sans-serif family. No neon glow, no decorative grids, no fake code, no fabricated metrics, no additional marketing sections or copy, no gradient wash over the gameplay frame. Avoid generic rounded-card UI. Approximately 8px radius on the film window and one subtle soft shadow.
+
+LAYOUT:
+Keep the quiet existing header at about 76px high, aligned to a centered content width about 1216px with 112px page gutters.
+Header exact navigation: "Resources", "Game examples", "Guides & notes", "More"; at right the existing small "Search all" control, moon icon, "中文", "GitHub" with external arrow. Match reference header hierarchy; do not add controls.
+Hero grid about 1fr 1.15fr, 48px gap. Left column about 540px, right film module about 620px wide and 460px high. Left copy and right frame feel balanced, with the right module the stronger visual focal point. The hero starts around y=165 and leaves the start of the next section visible below around y=755. No extra hero wrappers.
+Keep the existing small left eyebrow "A FIELD GUIDE FOR GAME MAKERS" because it is already present in the site reference.
+Left H1 must render EXACTLY "Bulit your next world." B-U-L-I-T is intentional; do NOT correct it to Build or Built. Natural balanced two-line composition: visually "Bulit your" then "next world." Large 64–68px semibold, compact tracking, black letters, exactly one orange final period.
+Below it preserve exact paragraph: "The tools, working examples, and practical knowledge to build games with AI. Less wandering. More making."
+Preserve the existing actual search row with magnifier, placeholder "What would you like to build?" and right arrow submit button.
+Preserve the two exact CTA labels: filled burnt-orange "Explore the resources" with right arrow, followed by quiet text link "Find a starting point" with external arrow. Do not invent button copy.
+
+RIGHT FILM MODULE, COPY LOCK:
+At the very top a tiny understated label "GAMEMAP / THE SHOWREEL" in 9–10px spaced uppercase, with a minimal play/pause icon and fullscreen icon at the far right. Tiny clean outline icons, not big floating pills.
+Central dominant viewport: complete actual Image 2 gameplay frame inside a 16:9 display area, presented without a color tint. This must feel like a gorgeous real project film with its authentic visible pixels and HUD, not concept art.
+Under the picture place a separate warm-black title strip (#1d1917 or #211d1b), NOT text over the game. Exact small upper label "01 / 2D GAME", exact main title "Marvel: Infinity Strike", exact small credit "OpenGame · Phaser", and a small source/external arrow to the right. White title, muted warm-light secondary copy. Elegant crisp typographic hierarchy; no additional sentence.
+At the very bottom, a restrained chapter rail with three exact native-button labels: "2D Game", "3D Game", "Code World Model". First chapter selected with a thin burnt-orange progress line. No segmented pill backgrounds, no decorative thumbnails, no extra cards. The rail, title strip and video belong to one coherent media component.
+
+NEXT SECTION CONTINUATION:
+Preserve only the beginning of the real next section to communicate rhythm. A fine divider, small existing label "CHOOSE YOUR DIRECTION", headline "A whole toolkit, mapped out.", right link "Browse everything" and the top edges of the existing resource tiles. Do not redesign the lower page or add content. Use the reference's exact information architecture. Keep all key text clear and legible and all listed copy verbatim. No browser chrome, no mockup device, no watermark.

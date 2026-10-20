@@ -4,6 +4,8 @@ import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 import { parseFragment } from "parse5";
 import { execFileSync } from 'node:child_process';
+import { publicAssetPath } from './assets.mjs';
+import { generatedRootPaths } from './root-static.mjs';
 
 export const root = fileURLToPath(new URL("../../", import.meta.url));
 // Raw HTML is source content too. Review new tags/attributes rather than dropping or executing them.
@@ -55,7 +57,7 @@ export async function walk(directory) {
   return files.flat();
 }
 export function publicSourcePaths() {
-  try { return new Set(execFileSync('git',['ls-files','-z','--cached','--others','--exclude-standard','--','docs',':(top,glob)*.md'],{cwd:root,encoding:'utf8'}).split('\0').filter(Boolean)); }
+  try { return new Set(execFileSync('git',['ls-files','-z','--cached','--others','--exclude-standard','--','docs',':(top,glob)*.md'],{cwd:root,encoding:'utf8',stdio:['ignore','pipe','ignore']}).split('\0').filter(Boolean)); }
   catch { return undefined; } // Source archives without .git still build; hidden paths remain excluded.
 }
 export function publishablePath(path, visible) { return !path.split('/').some(part=>part.startsWith('.')) && (!visible || visible.has(path)); }
@@ -63,6 +65,9 @@ export function publishablePath(path, visible) { return !path.split('/').some(pa
 export async function readDocuments() {
   const groups = JSON.parse(
     await readFile(resolve(root, "website/docs.config.json"), "utf8"),
+  );
+  const descriptions = JSON.parse(
+    await readFile(resolve(root, "website/docs.descriptions.json"), "utf8"),
   );
   const visible = publicSourcePaths();
   const files = (await walk(resolve(root, "docs")))
@@ -76,8 +81,12 @@ export async function readDocuments() {
     "AWESOME.md": "catalog",
     "CONTRIBUTING.md": "contributing",
   };
+  // Root publication downloads are built artifacts, not additional source
+  // articles. Keep the canonical repository documents even when the export
+  // manifest records them as source-preserved files.
+  const generated = await generatedRootPaths();
   for (const filename of (await readdir(root))
-    .filter(filename => filename.endsWith('.md') && publishablePath(filename,visible))
+    .filter(filename => filename.endsWith('.md') && publishablePath(filename,visible) && (Object.hasOwn(rootSlugs,filename) || !generated.has(filename)))
     .sort())
     files.push({
       file: resolve(root, filename),
@@ -85,6 +94,12 @@ export async function readDocuments() {
     });
   const known = new Set(files.map((item) => item.slug));
   if (known.size !== files.length) throw new Error("Document slug collision");
+  for (const slug of Object.keys(descriptions))
+    if (!known.has(slug))
+      throw new Error(`Document summary references a missing source: ${slug}`);
+  for (const slug of known)
+    if (typeof descriptions[slug] !== "string" || !descriptions[slug].trim())
+      throw new Error(`Document needs an article-specific summary: ${slug}`);
   const configured = new Set();
   for (const group of groups)
     for (const [slug] of group.pages) {
@@ -108,9 +123,7 @@ export async function readDocuments() {
         slug,
         title,
         label: group?.pages.find(([id]) => id === slug)?.[1] || title,
-        description:
-          group?.description ||
-          "Curated source notes and practical guidance from GameMap.",
+        description: descriptions[slug].trim(),
         group: group?.title || "More notes",
         source: slash(relative(root, file)),
         sourceHash: createHash("sha256").update(markdown).digest("hex"),
@@ -151,9 +164,11 @@ export function documentLinkResolver(documents, assetBase = "/") {
     if (!publicPath.startsWith("..")) return assetBase + publicPath + suffix;
     const docPath = slash(relative(resolve(root, "docs"), absolute));
     if (!docPath.startsWith("..") && image)
-      return assetBase + "docs-assets/" + docPath + suffix;
+      return assetBase + publicAssetPath("docs/" + docPath) + suffix;
     if (absolute === resolve(root, "data/resources.json"))
       return assetBase + "resources.json" + suffix;
+    if (absolute === resolve(root, "data/papers.json"))
+      return assetBase + "papers.json" + suffix;
     return url;
   };
 }

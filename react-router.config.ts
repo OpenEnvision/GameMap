@@ -1,5 +1,5 @@
 import type { Config } from "@react-router/dev/config";
-import { readFile } from "node:fs/promises";
+import contentPaths from "./website/.content/routes.json";
 
 const basename =
   "/" +
@@ -11,10 +11,11 @@ export default {
   basename: basename === "/" ? "/" : basename + "/",
   ssr: false,
   routeDiscovery: { mode: "initial" },
-  async prerender() {
-    const paths = JSON.parse(
-      await readFile("website/.content/routes.json", "utf8"),
-    ) as string[];
+  prerender() {
+    // A config dependency lets the dev server refresh its prerender allow-list
+    // when content adds a URL. An untracked readFile left new detail loaders out
+    // of SingleFetch until the server was manually restarted.
+    const paths = contentPaths as string[];
     // Generated from the typed registry; React Router adds basename itself.
     return [
       ...paths.map((path) => (path === "/" ? "/" : path.replace(/\/$/, ""))),

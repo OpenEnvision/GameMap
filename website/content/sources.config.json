@@ -1,9 +1,22 @@
 {
+  "data/papers.json": {
+    "exports": { "default": { "shape": "array", "kind": "paper" } }
+  },
   "website/src/data/resources.json": {
-    "exports": { "default": { "shape": "array", "kind": "resource" } }
+    "exports": {
+      "default": {
+        "shape": "array",
+        "kind": "resource"
+      }
+    }
   },
   "data/resources.json": {
-    "exports": { "default": { "shape": "array", "kind": "resource" } }
+    "exports": {
+      "default": {
+        "shape": "array",
+        "kind": "resource"
+      }
+    }
   },
   "data/segments/repository-research.json": {
     "exports": {
@@ -30,46 +43,90 @@
   },
   "website/src/data/learningPaths.ts": {
     "exports": {
-      "learningPaths": { "shape": "array", "kind": "example" },
-      "foundationPaths": { "shape": "array", "kind": "foundation" },
-      "communityCollections": { "shape": "array", "kind": "collection" }
+      "learningPaths": {
+        "shape": "array",
+        "kind": "example"
+      },
+      "foundationPaths": {
+        "shape": "array",
+        "kind": "foundation"
+      },
+      "communityCollections": {
+        "shape": "array",
+        "kind": "collection"
+      }
     }
   },
   "website/src/data/ai3dCases.ts": {
-    "exports": { "ai3dCases": { "shape": "array", "kind": "example" } }
+    "exports": {
+      "ai3dCases": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
   },
   "website/src/data/aiCommunityCases.ts": {
-    "exports": { "aiCommunityCases": { "shape": "array", "kind": "example" } }
+    "exports": {
+      "aiCommunityCases": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
   },
   "website/src/data/openGameCases.ts": {
-    "exports": { "openGameCases": { "shape": "array", "kind": "example" } }
+    "exports": {
+      "openGameCases": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
   },
   "website/src/data/community2dExpansion.ts": {
     "exports": {
-      "community2dExpansion": { "shape": "array", "kind": "example" }
+      "community2dExpansion": {
+        "shape": "array",
+        "kind": "example"
+      }
     }
   },
   "website/src/data/community3dExpansion.ts": {
     "exports": {
-      "community3dExpansion": { "shape": "array", "kind": "example" }
+      "community3dExpansion": {
+        "shape": "array",
+        "kind": "example"
+      }
     }
   },
   "website/src/data/diverseCommunityCases.ts": {
     "exports": {
-      "diverseCommunityCases": { "shape": "array", "kind": "example" }
+      "diverseCommunityCases": {
+        "shape": "array",
+        "kind": "example"
+      }
     }
   },
   "website/src/data/geminiCliCases.ts": {
-    "exports": { "geminiCliCases": { "shape": "array", "kind": "example" } }
+    "exports": {
+      "geminiCliCases": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
   },
   "website/src/data/communityResearch.ts": {
     "exports": {
-      "communityCollections": { "shape": "array", "kind": "collection" }
+      "communityCollections": {
+        "shape": "array",
+        "kind": "collection"
+      }
     }
   },
   "website/src/data/agentGameResources.ts": {
     "exports": {
-      "agentGameResources": { "shape": "array", "kind": "agent" },
+      "agentGameResources": {
+        "shape": "array",
+        "kind": "agent"
+      },
       "gameCaseAgents": {
         "shape": "lookup",
         "kind": "example",
@@ -135,8 +192,14 @@
   },
   "website/src/data/testingResources.ts": {
     "exports": {
-      "testingResources": { "shape": "array", "kind": "testing" },
-      "testingStarterPacks": { "shape": "array", "kind": "testing-pack" },
+      "testingResources": {
+        "shape": "array",
+        "kind": "testing"
+      },
+      "testingStarterPacks": {
+        "shape": "array",
+        "kind": "testing-pack"
+      },
       "testingReviewDate": {
         "shape": "metadata",
         "kind": "testing",
@@ -160,21 +223,44 @@
     }
   },
   "website/src/data/testingProjects.ts": {
-    "exports": { "testingProjects": { "shape": "array", "kind": "testing" } }
+    "exports": {
+      "testingProjects": {
+        "shape": "array",
+        "kind": "testing"
+      }
+    }
   },
   "website/src/data/testingEnvironments.ts": {
     "exports": {
-      "testingEnvironments": { "shape": "array", "kind": "testing" }
+      "testingEnvironments": {
+        "shape": "array",
+        "kind": "testing"
+      }
     }
   },
   "website/src/data/testingAssets.ts": {
-    "exports": { "testingAssets": { "shape": "array", "kind": "testing" } }
+    "exports": {
+      "testingAssets": {
+        "shape": "array",
+        "kind": "testing"
+      }
+    }
   },
   "website/src/data/testingMotion.ts": {
-    "exports": { "testingMotion": { "shape": "array", "kind": "testing" } }
+    "exports": {
+      "testingMotion": {
+        "shape": "array",
+        "kind": "testing"
+      }
+    }
   },
   "website/src/data/plans.ts": {
-    "exports": { "plans": { "shape": "plans", "kind": "step" } }
+    "exports": {
+      "plans": {
+        "shape": "plans",
+        "kind": "step"
+      }
+    }
   },
   "website/src/data/showcase.ts": {
     "exports": {
@@ -186,7 +272,12 @@
     }
   },
   "website/src/data/recordings.ts": {
-    "exports": { "recordings": { "shape": "media", "kind": "demo" } }
+    "exports": {
+      "recordings": {
+        "shape": "media",
+        "kind": "demo"
+      }
+    }
   },
   "website/src/data/projectMedia.ts": {
     "exports": {
@@ -239,6 +330,30 @@
         "shape": "metadata",
         "kind": "resource",
         "reason": "Rendering adapter for the independently registered identity JSON, used by ResourceIcon."
+      }
+    }
+  },
+  "website/src/data/researchedGameCases.ts": {
+    "exports": {
+      "researchedGameCases": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
+  },
+  "data/segments/publishing-platforms.json": {
+    "exports": {
+      "default": {
+        "shape": "array",
+        "kind": "resource"
+      }
+    }
+  },
+  "website/src/data/publishingGameCases.ts": {
+    "exports": {
+      "publishingGameCases": {
+        "shape": "array",
+        "kind": "example"
       }
     }
   }

@@ -26,6 +26,8 @@ export interface TestingStarterPack {
   resources: string;
   task: string;
   measure: string;
+  testingIds: string[];
+  check: string;
 }
 
 export interface TestingResource {

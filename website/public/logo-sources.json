@@ -14,7 +14,7 @@
     "sourceUrl": "https://github.com/openai/codex",
     "logoSourceUrl": "https://github.com/openai.png?size=256",
     "notes": "Official OpenAI coding agent and OpenAI-authored workflow. Use the OpenAI brand mark, not a generated substitute.",
-    "asset": "logos/openai-cde5d42ad75d.png",
+    "asset": "assets/logos/openai-cde5d42ad75d.png",
     "sha256": "6025a4347a8eaed17e31eaebf7834e33ec4af26cc7f59be586ac59ba5157fa1c",
     "background": "light",
     "wide": false
@@ -25,7 +25,7 @@
     "sourceUrl": "https://github.com/anthropics/claude-code",
     "logoSourceUrl": "https://github.com/anthropics.png?size=256",
     "notes": "Official Anthropic product and SDK. The organization avatar is an official corporate mark.",
-    "asset": "logos/anthropic-71c4fa5d4a22.png",
+    "asset": "assets/logos/anthropic-71c4fa5d4a22.png",
     "sha256": "ad9a7f631954b416962687d1777bd03dbaeeba7f3cdcc01f3d1429b7be4bc4b3",
     "background": "dark",
     "wide": false
@@ -36,7 +36,7 @@
     "sourceUrl": "https://github.com/google-gemini/gemini-cli",
     "logoSourceUrl": "https://github.com/google-gemini.png?size=256",
     "notes": "Official Google Gemini project organization; the Gemini mark represents the product brand.",
-    "asset": "logos/google-gemini-58e971a4ea5a.jpg",
+    "asset": "assets/logos/google-gemini-58e971a4ea5a.jpg",
     "sha256": "b221b3f1df8546b4ce0dafd24a990fedb735dc9cdcefad79a1cf40b32a88e1ac",
     "background": "light",
     "wide": false
@@ -47,7 +47,7 @@
     "sourceUrl": "https://github.com/deepseek-ai",
     "logoSourceUrl": "https://github.com/deepseek-ai.png?size=256",
     "notes": "Official DeepSeek organization links its API documentation. This entry covers a model integration guide, not a separate game agent.",
-    "asset": "logos/deepseek-a96a716c8fa0.png",
+    "asset": "assets/logos/deepseek-a96a716c8fa0.png",
     "sha256": "dcd990222ad315c4e39ea41dc280e2dd552bea8c0ae72c13f65fe662def41fcf",
     "background": "light",
     "wide": false
@@ -58,7 +58,7 @@
     "sourceUrl": "https://github.com/anomalyco/opencode",
     "logoSourceUrl": "https://raw.githubusercontent.com/anomalyco/opencode/dev/packages/console/app/src/asset/logo-ornate-light.svg",
     "notes": "Exact OpenCode logo referenced by the official README; use an appropriate light/dark variant without redrawing it.",
-    "asset": "logos/opencode-anomaly-f26c1a011686.svg",
+    "asset": "assets/logos/opencode-anomaly-f26c1a011686.svg",
     "sha256": "00ac8ac1b456ac230499fa76c08205d7658e29c383cd635669780c644fdcd321",
     "background": "light",
     "wide": true
@@ -69,7 +69,7 @@
     "sourceUrl": "https://github.com/cline/cline",
     "logoSourceUrl": "https://raw.githubusercontent.com/cline/cline/main/assets/icons/icon.png",
     "notes": "Exact Cline project icon referenced at the top of the official README.",
-    "asset": "logos/cline-ff8f84b407d2.png",
+    "asset": "assets/logos/cline-ff8f84b407d2.png",
     "sha256": "653b81c4eee035547205dbc4089ded35f92e9c1166915feb151811623570cfc6",
     "background": "light",
     "wide": false
@@ -80,7 +80,7 @@
     "sourceUrl": "https://github.com/Aider-AI/aider",
     "logoSourceUrl": "https://aider.chat/assets/logo.svg",
     "notes": "Exact logo linked by the official project README.",
-    "asset": "logos/aider-8dd7bc13afeb.svg",
+    "asset": "assets/logos/aider-8dd7bc13afeb.svg",
     "sha256": "d6cfcd12b085653e0da3fbd0831f8426366aba72e91b7ad2459adfb497c2e4e4",
     "background": "dark",
     "wide": true
@@ -91,7 +91,7 @@
     "sourceUrl": "https://github.com/OpenHands/OpenHands",
     "logoSourceUrl": "https://assets.openhands.dev/logo-whitebackground.png",
     "notes": "Official OpenHands README logo; the Software Agent SDK is maintained in the same OpenHands organization.",
-    "asset": "logos/openhands-a0e4c05d7411.png",
+    "asset": "assets/logos/openhands-a0e4c05d7411.png",
     "sha256": "8b344297eba69207b4fe9971dab9e7b46188291f2514d516b4ae0172b7d93812",
     "background": "light",
     "wide": true
@@ -102,7 +102,7 @@
     "sourceUrl": "https://github.com/OpenHands/OpenHands",
     "logoSourceUrl": "https://assets.openhands.dev/logo-whitebackground.png",
     "notes": "Official OpenHands README logo; the Software Agent SDK is maintained in the same OpenHands organization.",
-    "asset": "logos/openhands-a0e4c05d7411.png",
+    "asset": "assets/logos/openhands-a0e4c05d7411.png",
     "sha256": "8b344297eba69207b4fe9971dab9e7b46188291f2514d516b4ae0172b7d93812",
     "background": "light",
     "wide": true
@@ -113,7 +113,7 @@
     "sourceUrl": "https://github.com/anthropics/claude-code",
     "logoSourceUrl": "https://github.com/anthropics.png?size=256",
     "notes": "Official Anthropic product and SDK. The organization avatar is an official corporate mark.",
-    "asset": "logos/anthropic-71c4fa5d4a22.png",
+    "asset": "assets/logos/anthropic-71c4fa5d4a22.png",
     "sha256": "ad9a7f631954b416962687d1777bd03dbaeeba7f3cdcc01f3d1429b7be4bc4b3",
     "background": "dark",
     "wide": false
@@ -124,7 +124,7 @@
     "sourceUrl": "https://github.com/SWE-agent/mini-swe-agent/blob/main/mkdocs.yml",
     "logoSourceUrl": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/main/docs/assets/mini_square.svg",
     "notes": "The official MkDocs configuration explicitly sets assets/mini_square.svg as both logo and favicon. Prefer the actual project mark over assigning one university from a multi-institution team.",
-    "asset": "logos/mini-swe-agent-swe-agent-bfd49ec27a1e.svg",
+    "asset": "assets/logos/mini-swe-agent-swe-agent-bfd49ec27a1e.svg",
     "sha256": "14f549e2a0d3be26c587f188d467ef6ff1419f38671af3ca0dd86dd27ac76d02",
     "background": "light",
     "wide": false
@@ -135,7 +135,7 @@
     "sourceUrl": "https://agents.md/",
     "logoSourceUrl": "https://cdn.sanity.io/images/4o10fa7h/production/b2a2e03cf5baa4ada47dccb4cfabb3e29c5dc1b9-2000x2000.png",
     "notes": "AGENTS.md explicitly states current stewardship by the Agentic AI Foundation under the Linux Foundation. Logo is the AAIF author mark used on aaif.io, not an OpenAI ownership claim.",
-    "asset": "logos/agentic-ai-foundation-e19aebeb3141.png",
+    "asset": "assets/logos/agentic-ai-foundation-e19aebeb3141.png",
     "sha256": "e099ff4ec39019b029df12f6e5b34b6d61e5830b63cb0d7097cb9879e848afb6",
     "background": "light",
     "wide": false
@@ -146,7 +146,7 @@
     "sourceUrl": "https://agentskills.io/home",
     "logoSourceUrl": "https://github.com/anthropics.png?size=256",
     "notes": "The official format website states Agent Skills was originally developed by Anthropic. Label as creator; the open format is adopted across the ecosystem.",
-    "asset": "logos/anthropic-71c4fa5d4a22.png",
+    "asset": "assets/logos/anthropic-71c4fa5d4a22.png",
     "sha256": "ad9a7f631954b416962687d1777bd03dbaeeba7f3cdcc01f3d1429b7be4bc4b3",
     "background": "dark",
     "wide": false
@@ -157,7 +157,7 @@
     "sourceUrl": "https://github.com/openai/codex",
     "logoSourceUrl": "https://github.com/openai.png?size=256",
     "notes": "Official OpenAI coding agent and OpenAI-authored workflow. Use the OpenAI brand mark, not a generated substitute.",
-    "asset": "logos/openai-cde5d42ad75d.png",
+    "asset": "assets/logos/openai-cde5d42ad75d.png",
     "sha256": "6025a4347a8eaed17e31eaebf7834e33ec4af26cc7f59be586ac59ba5157fa1c",
     "background": "light",
     "wide": false
@@ -168,7 +168,7 @@
     "sourceUrl": "https://github.com/CoplayDev/unity-mcp",
     "logoSourceUrl": "https://raw.githubusercontent.com/CoplayDev/unity-mcp/beta/docs/images/logo-header-light.png",
     "notes": "Exact MCP for Unity project logo from its README. Independent community integration, explicitly not affiliated with Unity Technologies. The operator guide belongs to the same repository.",
-    "asset": "logos/mcp-for-unity-coplaydev-83f6d5fb6cb7.png",
+    "asset": "assets/logos/mcp-for-unity-coplaydev-83f6d5fb6cb7.png",
     "sha256": "2f6c06cc309fbdd455851b41c4a6342d001ecbc3b765cab3b02cded424a5b9a7",
     "background": "light",
     "wide": true
@@ -179,7 +179,7 @@
     "sourceUrl": "https://github.com/CoplayDev/unity-mcp",
     "logoSourceUrl": "https://raw.githubusercontent.com/CoplayDev/unity-mcp/beta/docs/images/logo-header-light.png",
     "notes": "Exact MCP for Unity project logo from its README. Independent community integration, explicitly not affiliated with Unity Technologies. The operator guide belongs to the same repository.",
-    "asset": "logos/mcp-for-unity-coplaydev-83f6d5fb6cb7.png",
+    "asset": "assets/logos/mcp-for-unity-coplaydev-83f6d5fb6cb7.png",
     "sha256": "2f6c06cc309fbdd455851b41c4a6342d001ecbc3b765cab3b02cded424a5b9a7",
     "background": "light",
     "wide": true
@@ -220,7 +220,7 @@
     "sourceUrl": "https://github.com/microsoft/playwright-mcp",
     "logoSourceUrl": "https://playwright.dev/img/playwright-logo.svg",
     "notes": "Official Microsoft Playwright project. Use the real Playwright brand mark; it is a Microsoft-maintained MCP, unlike third-party engine bridges.",
-    "asset": "logos/microsoft-playwright-42a5ff460d7c.svg",
+    "asset": "assets/logos/microsoft-playwright-42a5ff460d7c.svg",
     "sha256": "6b0a4367bdeab10995bc239278f04c68c10e48adbec15e799e01909a0d66dcb9",
     "background": "light",
     "wide": false
@@ -231,7 +231,7 @@
     "sourceUrl": "https://github.com/godotengine/godot",
     "logoSourceUrl": "https://github.com/godotengine.png?size=256",
     "notes": "Official engine and its own documentation/demo repositories. The official Godot organization avatar is its recognizable project logo.",
-    "asset": "logos/godot-engine-3c9b7f792300.png",
+    "asset": "assets/logos/godot-engine-3c9b7f792300.png",
     "sha256": "8ab7c4c4bc650c9b6f6c0016bd9d7dc1e34dcb82de6a024cc798d854ab609a9c",
     "background": "light",
     "wide": false
@@ -242,7 +242,7 @@
     "sourceUrl": "https://github.com/godotengine/godot",
     "logoSourceUrl": "https://github.com/godotengine.png?size=256",
     "notes": "Official engine and its own documentation/demo repositories. The official Godot organization avatar is its recognizable project logo.",
-    "asset": "logos/godot-engine-3c9b7f792300.png",
+    "asset": "assets/logos/godot-engine-3c9b7f792300.png",
     "sha256": "8ab7c4c4bc650c9b6f6c0016bd9d7dc1e34dcb82de6a024cc798d854ab609a9c",
     "background": "light",
     "wide": false
@@ -253,7 +253,7 @@
     "sourceUrl": "https://github.com/godotengine/godot",
     "logoSourceUrl": "https://github.com/godotengine.png?size=256",
     "notes": "Official engine and its own documentation/demo repositories. The official Godot organization avatar is its recognizable project logo.",
-    "asset": "logos/godot-engine-3c9b7f792300.png",
+    "asset": "assets/logos/godot-engine-3c9b7f792300.png",
     "sha256": "8ab7c4c4bc650c9b6f6c0016bd9d7dc1e34dcb82de6a024cc798d854ab609a9c",
     "background": "light",
     "wide": false
@@ -264,7 +264,7 @@
     "sourceUrl": "https://github.com/bitwes/Gut",
     "logoSourceUrl": "https://raw.githubusercontent.com/bitwes/Gut/main/images/gut_logo_256x256.png",
     "notes": "The actual GUT project logo is referenced on the first line of its official README; do not use the Godot engine mark in its place.",
-    "asset": "logos/gut-bitwes-df8cdf532c90.png",
+    "asset": "assets/logos/gut-bitwes-df8cdf532c90.png",
     "sha256": "176fcf8090c620db14f2365cf2019f7b2f033d704a6efe5d0a3a193fd62a5dae",
     "background": "light",
     "wide": false
@@ -275,7 +275,7 @@
     "sourceUrl": "https://www.gdquest.com/library/first_2d_game_godot4_vampire_survivor/",
     "logoSourceUrl": "https://github.com/GDQuest.png?size=256",
     "notes": "GDQuest-authored course and library page; use GDQuest's own organization mark rather than Godot branding.",
-    "asset": "logos/gdquest-9b58a051e485.png",
+    "asset": "assets/logos/gdquest-9b58a051e485.png",
     "sha256": "f04f4626f360a5bd6b80c4a3da3ecefc30031b278197299ebc0878859644a538",
     "background": "light",
     "wide": false
@@ -286,7 +286,7 @@
     "sourceUrl": "https://github.com/Unity-Technologies/2d-techdemos",
     "logoSourceUrl": "https://github.com/Unity-Technologies.png?size=256",
     "notes": "Official Unity editor documentation, test framework, and demos. This association is limited to official Unity resources, not third-party MCP projects.",
-    "asset": "logos/unity-c20a05de0895.png",
+    "asset": "assets/logos/unity-c20a05de0895.png",
     "sha256": "300cc9cf57b29fe09b43e587b23f563c390bb67242227524acfcc28fc477f4f7",
     "background": "light",
     "wide": false
@@ -297,7 +297,7 @@
     "sourceUrl": "https://github.com/Unity-Technologies/2d-techdemos",
     "logoSourceUrl": "https://github.com/Unity-Technologies.png?size=256",
     "notes": "Official Unity editor documentation, test framework, and demos. This association is limited to official Unity resources, not third-party MCP projects.",
-    "asset": "logos/unity-c20a05de0895.png",
+    "asset": "assets/logos/unity-c20a05de0895.png",
     "sha256": "300cc9cf57b29fe09b43e587b23f563c390bb67242227524acfcc28fc477f4f7",
     "background": "light",
     "wide": false
@@ -308,7 +308,7 @@
     "sourceUrl": "https://github.com/Unity-Technologies/2d-techdemos",
     "logoSourceUrl": "https://github.com/Unity-Technologies.png?size=256",
     "notes": "Official Unity editor documentation, test framework, and demos. This association is limited to official Unity resources, not third-party MCP projects.",
-    "asset": "logos/unity-c20a05de0895.png",
+    "asset": "assets/logos/unity-c20a05de0895.png",
     "sha256": "300cc9cf57b29fe09b43e587b23f563c390bb67242227524acfcc28fc477f4f7",
     "background": "light",
     "wide": false
@@ -319,7 +319,7 @@
     "sourceUrl": "https://catlikecoding.com/",
     "logoSourceUrl": "https://catlikecoding.com/unity/code-documentation/logo-catlikecoding.png",
     "notes": "The official site identifies Jasper Flick as the author and sole operator. Its own code documentation labels this image Logo. Use the Catlike Coding creator mark rather than Unity's logo.",
-    "asset": "logos/catlike-coding-jasper-flick-0b71b19bfa2a.png",
+    "asset": "assets/logos/catlike-coding-jasper-flick-0b71b19bfa2a.png",
     "sha256": "707d8e132db55fef8592d0ee5130101ef1f96d411508de493e2ae728bc7aa7b3",
     "background": "light",
     "wide": false
@@ -330,7 +330,7 @@
     "sourceUrl": "https://dev.epicgames.com/documentation/en-us/unreal-engine",
     "logoSourceUrl": "https://github.com/EpicGames.png?size=256",
     "notes": "Official Epic Games documentation, automation framework, Lyra sample, and developer community. The Epic Games corporate mark is appropriate and avoids a third-party inferred association.",
-    "asset": "logos/epic-games-unreal-engine-e0295cf4837c.png",
+    "asset": "assets/logos/epic-games-unreal-engine-e0295cf4837c.png",
     "sha256": "22a06f67ab790bcef639f5618ae7396b7f0f7a943817ef01efc9c9cb15a0e056",
     "background": "light",
     "wide": false
@@ -341,7 +341,7 @@
     "sourceUrl": "https://dev.epicgames.com/documentation/en-us/unreal-engine",
     "logoSourceUrl": "https://github.com/EpicGames.png?size=256",
     "notes": "Official Epic Games documentation, automation framework, Lyra sample, and developer community. The Epic Games corporate mark is appropriate and avoids a third-party inferred association.",
-    "asset": "logos/epic-games-unreal-engine-e0295cf4837c.png",
+    "asset": "assets/logos/epic-games-unreal-engine-e0295cf4837c.png",
     "sha256": "22a06f67ab790bcef639f5618ae7396b7f0f7a943817ef01efc9c9cb15a0e056",
     "background": "light",
     "wide": false
@@ -352,7 +352,7 @@
     "sourceUrl": "https://dev.epicgames.com/documentation/en-us/unreal-engine",
     "logoSourceUrl": "https://github.com/EpicGames.png?size=256",
     "notes": "Official Epic Games documentation, automation framework, Lyra sample, and developer community. The Epic Games corporate mark is appropriate and avoids a third-party inferred association.",
-    "asset": "logos/epic-games-unreal-engine-e0295cf4837c.png",
+    "asset": "assets/logos/epic-games-unreal-engine-e0295cf4837c.png",
     "sha256": "22a06f67ab790bcef639f5618ae7396b7f0f7a943817ef01efc9c9cb15a0e056",
     "background": "light",
     "wide": false
@@ -363,7 +363,7 @@
     "sourceUrl": "https://dev.epicgames.com/documentation/en-us/unreal-engine",
     "logoSourceUrl": "https://github.com/EpicGames.png?size=256",
     "notes": "Official Epic Games documentation, automation framework, Lyra sample, and developer community. The Epic Games corporate mark is appropriate and avoids a third-party inferred association.",
-    "asset": "logos/epic-games-unreal-engine-e0295cf4837c.png",
+    "asset": "assets/logos/epic-games-unreal-engine-e0295cf4837c.png",
     "sha256": "22a06f67ab790bcef639f5618ae7396b7f0f7a943817ef01efc9c9cb15a0e056",
     "background": "light",
     "wide": false
@@ -374,7 +374,7 @@
     "sourceUrl": "https://github.com/mrdoob/three.js",
     "logoSourceUrl": "https://raw.githubusercontent.com/mrdoob/three.js/dev/files/icon.svg",
     "notes": "Official Three.js project/site icon. Do not use mrdoob's personal portrait as an institution logo.",
-    "asset": "logos/three-js-e71c607c8ef4.svg",
+    "asset": "assets/logos/three-js-e71c607c8ef4.svg",
     "sha256": "d9789885f9f2171b8f0a633a4e6d91a2c4ad2124dab045a3fb3554997d7cb928",
     "background": "light",
     "wide": false
@@ -385,7 +385,7 @@
     "sourceUrl": "https://github.com/mrdoob/three.js",
     "logoSourceUrl": "https://raw.githubusercontent.com/mrdoob/three.js/dev/files/icon.svg",
     "notes": "Official Three.js project/site icon. Do not use mrdoob's personal portrait as an institution logo.",
-    "asset": "logos/three-js-e71c607c8ef4.svg",
+    "asset": "assets/logos/three-js-e71c607c8ef4.svg",
     "sha256": "d9789885f9f2171b8f0a633a4e6d91a2c4ad2124dab045a3fb3554997d7cb928",
     "background": "light",
     "wide": false
@@ -406,7 +406,7 @@
     "sourceUrl": "https://github.com/pmndrs/react-three-fiber",
     "logoSourceUrl": "https://github.com/pmndrs.png?size=256",
     "notes": "The repository belongs to the pmndrs collective. Use its real organization brand mark with creator attribution rather than the generic React logo, which belongs to another project.",
-    "asset": "logos/poimandres-pmndrs-8f3e6d6b8c62.png",
+    "asset": "assets/logos/poimandres-pmndrs-8f3e6d6b8c62.png",
     "sha256": "c2da2f0f871c9fd2d064ac9e509830ba14780603626a0100c40cc042910f33fb",
     "background": "dark",
     "wide": false
@@ -417,7 +417,7 @@
     "sourceUrl": "https://github.com/blender/blender",
     "logoSourceUrl": "https://github.com/blender.png?size=256",
     "notes": "Official Blender mirror and API quickstart source. The official organization avatar uses the Blender brand mark.",
-    "asset": "logos/blender-2f115b53a895.png",
+    "asset": "assets/logos/blender-2f115b53a895.png",
     "sha256": "905e2e911c8ef096069860c201e8129dca81b82b9b762cb1ee323de54f1d3dfc",
     "background": "light",
     "wide": false
@@ -428,7 +428,7 @@
     "sourceUrl": "https://github.com/blender/blender",
     "logoSourceUrl": "https://github.com/blender.png?size=256",
     "notes": "Official Blender mirror and API quickstart source. The official organization avatar uses the Blender brand mark.",
-    "asset": "logos/blender-2f115b53a895.png",
+    "asset": "assets/logos/blender-2f115b53a895.png",
     "sha256": "905e2e911c8ef096069860c201e8129dca81b82b9b762cb1ee323de54f1d3dfc",
     "background": "light",
     "wide": false
@@ -439,7 +439,7 @@
     "sourceUrl": "https://github.com/KhronosGroup/glTF-Blender-IO",
     "logoSourceUrl": "https://github.com/KhronosGroup.png?size=256",
     "notes": "Repository ownership confirms the Khronos-maintained glTF importer/exporter. Use the actual Khronos Group organization logo, with creator attribution.",
-    "asset": "logos/khronos-group-f784820a94fc.png",
+    "asset": "assets/logos/khronos-group-f784820a94fc.png",
     "sha256": "1b769dd33c55da6a20430838910c92d8d0c3c8923a505c14ec0b15c0e854f028",
     "background": "dark",
     "wide": false
@@ -450,7 +450,7 @@
     "sourceUrl": "https://github.com/phaserjs/phaser",
     "logoSourceUrl": "https://github.com/phaserjs.png?size=256",
     "notes": "Official framework and examples organization. README explicitly attributes Phaser logo and characters to Phaser Studio Inc. The organization avatar avoids using a version-4 wordmark on Phaser-3 examples.",
-    "asset": "logos/phaser-phaser-studio-68512df3fcdf.png",
+    "asset": "assets/logos/phaser-phaser-studio-68512df3fcdf.png",
     "sha256": "0e2c7033dbbd0466908eb165fb8494175ac69d5bd2322ec252f1e3cd04897f01",
     "background": "light",
     "wide": false
@@ -461,7 +461,7 @@
     "sourceUrl": "https://github.com/phaserjs/phaser",
     "logoSourceUrl": "https://github.com/phaserjs.png?size=256",
     "notes": "Official framework and examples organization. README explicitly attributes Phaser logo and characters to Phaser Studio Inc. The organization avatar avoids using a version-4 wordmark on Phaser-3 examples.",
-    "asset": "logos/phaser-phaser-studio-68512df3fcdf.png",
+    "asset": "assets/logos/phaser-phaser-studio-68512df3fcdf.png",
     "sha256": "0e2c7033dbbd0466908eb165fb8494175ac69d5bd2322ec252f1e3cd04897f01",
     "background": "light",
     "wide": false
@@ -472,7 +472,7 @@
     "sourceUrl": "https://arxiv.org/html/2310.08067",
     "logoSourceUrl": "https://autogame.ai/images/logo.svg",
     "notes": "The paper lists first author Dake Chen at AutoGame Research and uses autogame.ai email addresses for other AutoGame authors. The logo is linked by AutoGame's official homepage. Other author affiliations include X-Institute, USC, and Tsinghua; this is a representative research affiliation, not exclusive ownership or endorsement.",
-    "asset": "logos/autogame-research-e967543b6c83.svg",
+    "asset": "assets/logos/autogame-research-e967543b6c83.svg",
     "sha256": "93117759a6c68592415ce30d2c3a0ab7105b135bc80cfb7483ff2b5df9eadae3",
     "background": "dark",
     "wide": true
@@ -483,7 +483,7 @@
     "sourceUrl": "https://github.com/leigest519/OpenGame",
     "logoSourceUrl": "https://www.cuhk.edu.hk/english/images/fav-icons/apple-touch-icon.png",
     "notes": "The official README directly identifies the author team as CUHK MMLab and lists CUHK email addresses. Uses the university's official website icon to identify that affiliation.",
-    "asset": "logos/the-chinese-university-of-hong-kong-mmlab-bc9252642a5a.png",
+    "asset": "assets/logos/the-chinese-university-of-hong-kong-mmlab-bc9252642a5a.png",
     "sha256": "237924e88c064255b10c46e1a2a2a883eab83dc7a83172d1bb04b46e4fb2a070",
     "background": "light",
     "wide": false
@@ -494,7 +494,7 @@
     "sourceUrl": "https://arxiv.org/html/2602.11103",
     "logoSourceUrl": "https://live-cmu-brand.pantheonsite.io/sites/default/files/cmu-brand-files/inline-images/cmu-wordmark-square-w-on-r%201.png",
     "notes": "The paper lists first author Wayne Chi and most coauthors at Carnegie Mellon; one coauthor is at Princeton. This represents the first author's affiliation, not a claim of exclusive authorship. The 900px square logo is the image displayed on CMU's official brand standards University Logo page.",
-    "asset": "logos/carnegie-mellon-university-c40d43eb19fa.png",
+    "asset": "assets/logos/carnegie-mellon-university-c40d43eb19fa.png",
     "sha256": "42485e3316cf92b6000af399a8cdc83fc2207da707caeba6173acab3c297ec7d",
     "background": "light",
     "wide": false
@@ -505,7 +505,7 @@
     "sourceUrl": "https://arxiv.org/html/2608.21833",
     "logoSourceUrl": "https://ia.cas.cn/images/favicon.png",
     "notes": "The paper lists first author Kun Chen at MAIS, Institute of Automation, Chinese Academy of Sciences. It also lists Tsinghua, HKUST, CUHK Shenzhen, Tencent Lightspeed Studios, and the Tencent Hunyuan team. The institute icon is linked by its official identity page https://ia.cas.cn/gkjj/xxbs/. Affiliation is representative, not exclusive.",
-    "asset": "logos/institute-of-automation-chinese-academy-of-sciences-1568edd09a70.png",
+    "asset": "assets/logos/institute-of-automation-chinese-academy-of-sciences-1568edd09a70.png",
     "sha256": "ce6ee19fe84efef8772702b4d4cb1b65fe009166e99006654dd3fa1b0e7a7876",
     "background": "light",
     "wide": false
@@ -516,7 +516,7 @@
     "sourceUrl": "https://arxiv.org/pdf/2605.07442",
     "logoSourceUrl": "https://www.cuhk.edu.hk/english/images/fav-icons/apple-touch-icon.png",
     "notes": "The PDF's first page assigns first author Chaobo Jia and Hong Xu to affiliation 1, CUHK. Equal contributors and coauthors also list HUST, Lionrock AI Lab, NTU, HKU, and an independent researcher. The university icon identifies one verified author affiliation, not the sole project owner.",
-    "asset": "logos/the-chinese-university-of-hong-kong-mmlab-bc9252642a5a.png",
+    "asset": "assets/logos/the-chinese-university-of-hong-kong-mmlab-bc9252642a5a.png",
     "sha256": "237924e88c064255b10c46e1a2a2a883eab83dc7a83172d1bb04b46e4fb2a070",
     "background": "light",
     "wide": false
@@ -527,7 +527,7 @@
     "sourceUrl": "https://arxiv.org/html/2302.05981",
     "logoSourceUrl": "https://en.itu.dk/svg/itu/logo_en.svg",
     "notes": "The paper lists first author Shyam Sudhakaran at IT University of Copenhagen and modl.ai; other authors also list ITU and modl.ai. Uses the university's official English logo. This is one verified affiliation rather than exclusive institutional authorship.",
-    "asset": "logos/it-university-of-copenhagen-a4764ab8996e.svg",
+    "asset": "assets/logos/it-university-of-copenhagen-a4764ab8996e.svg",
     "sha256": "831f16b238b3a78cd43cb9e8b935319dd0d09dac51b8cc9bb9e7a7411a4288c2",
     "background": "dark",
     "wide": true
@@ -538,7 +538,7 @@
     "sourceUrl": "https://arxiv.org/html/2407.09388",
     "logoSourceUrl": "https://engineering.nyu.edu/themes/custom/tandon/images/favicon/apple-touch-icon.png",
     "notes": "The paper lists first author Graham Todd and Julian Togelius at NYU Tandon. Other authors list ETH Zurich, Flinders, UCLouvain, and Maastricht. This identifies the first author's institution using NYU Tandon's own website icon.",
-    "asset": "logos/new-york-university-tandon-school-of-engineering-d82ccba1edc3.png",
+    "asset": "assets/logos/new-york-university-tandon-school-of-engineering-d82ccba1edc3.png",
     "sha256": "1d609267ee46ae363ae429b28c1e78ff9843667b81cf955b6ed609b360dd32e2",
     "background": "dark",
     "wide": false
@@ -549,7 +549,7 @@
     "sourceUrl": "https://arxiv.org/html/2502.07128",
     "logoSourceUrl": "https://communications.rutgers.edu/sites/default/files/Rutgers_Primary_Mark_Horizontal_Red_and_Black_RGB.svg",
     "notes": "The paper lists first author Danrui Li and several coauthors at Rutgers, with other affiliations including Ontario Tech and Roblox. The SVG is linked from Rutgers' official Logos, Signatures, and Visual Identity page. This is a representative author affiliation.",
-    "asset": "logos/rutgers-university-d9578e3c36ff.svg",
+    "asset": "assets/logos/rutgers-university-d9578e3c36ff.svg",
     "sha256": "fc171eb7a40ef7b2740a623630dec7fbb78edbe782a49edcb83b959337373af9",
     "background": "light",
     "wide": true
@@ -560,7 +560,7 @@
     "sourceUrl": "https://github.com/0x0funky/agent-game-forge",
     "logoSourceUrl": "https://raw.githubusercontent.com/0x0funky/agent-game-forge/main/apps/web/public/ogf-logo-256.png",
     "notes": "This is the actual project logo committed in the official repository's web/public directory, with several size variants. The repository is independently maintained by 0x0funky; no university or corporate affiliation is asserted.",
-    "asset": "logos/agent-game-forge-0x0funky-43c95b0fa403.png",
+    "asset": "assets/logos/agent-game-forge-0x0funky-43c95b0fa403.png",
     "sha256": "0ebe974665a61c9592e5b611cbf1d44d383f534d1b3bf46e3b35b1468dffeafe",
     "background": "light",
     "wide": false
@@ -581,7 +581,7 @@
     "sourceUrl": "https://www.pixellab.ai/mcp",
     "logoSourceUrl": "https://avatars.githubusercontent.com/u/151592092?v=4",
     "notes": "The official PixelLab site describes its MCP asset service. The pixellab-code GitHub organization names itself PixelLab and links back to www.pixellab.ai; this is its official organization image, not a generated symbol.",
-    "asset": "logos/pixellab-c3af2d8508f8.png",
+    "asset": "assets/logos/pixellab-c3af2d8508f8.png",
     "sha256": "02eae944701ce530a053d3892e85b5ed153dbcd95330e59dea2a06b89cdd82d2",
     "background": "dark",
     "wide": false
@@ -603,7 +603,7 @@
     "sourceUrl": "https://github.com/OpenDCAI/GameFactory-3A",
     "logoSourceUrl": "https://avatars.githubusercontent.com/u/177615276?v=4",
     "notes": "The official repository is owned by the OpenDCAI organization, whose profile describes data-centric AI research. No university affiliation was established from the project or organization profile. Use only the organization's actual selected identity image; do not infer a school from the project name.",
-    "asset": "logos/opendcai-1d87e5fed141.png",
+    "asset": "assets/logos/opendcai-1d87e5fed141.png",
     "sha256": "c0d1e3c83857234da44e401c3cc50df3ce9efab22a9fb420c85de174709235bb",
     "background": "light",
     "wide": false
@@ -614,7 +614,7 @@
     "sourceUrl": "https://arxiv.org/html/2607.03525",
     "logoSourceUrl": "https://nitrode.com/assets/nitrode/nitrode-mark.svg",
     "notes": "The paper lists Brian La, Sejoon Chang, and Ben Kim at Nitrode, provides research@nitrode.com, and links the Nitrode-Research repository. Other affiliations include Nexon Intelligence Labs and several universities. The paper explicitly says authors' views do not necessarily reflect employer or institutional policy. The mark is linked from Nitrode's official site.",
-    "asset": "logos/nitrode-140a4ff0a205.svg",
+    "asset": "assets/logos/nitrode-140a4ff0a205.svg",
     "sha256": "65057c659709cfcb0ae0865e4b9256d4f021bf357cca7e2eef0c65851a298ea7",
     "background": "light",
     "wide": false
@@ -625,7 +625,7 @@
     "sourceUrl": "https://docs.unity.com/en-us/ai/unity-plugin/about-unity-plugin",
     "logoSourceUrl": "https://github.com/Unity-Technologies.png",
     "notes": "Unity's own product documentation identifies the official plugin, with source under the Unity-Technologies organization. Use the official organization's brand image; this attribution applies to the official plugin, not independent Unity MCP bridges.",
-    "asset": "logos/unity-technologies-84b30ca73d1e.png",
+    "asset": "assets/logos/unity-technologies-84b30ca73d1e.png",
     "sha256": "73bae9147452c70f345ea7380bb61e5347095062820b29c70f846b0244e16088",
     "background": "light",
     "wide": false
@@ -656,7 +656,7 @@
     "sourceUrl": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2",
     "logoSourceUrl": "https://avatars.githubusercontent.com/u/210980732?v=4",
     "notes": "The official model repository is owned by Tencent-Hunyuan. That organization links to hy.tencent.com. Use its actual brand image rather than an unrelated 3D icon.",
-    "asset": "logos/tencent-hunyuan-547abf65938b.png",
+    "asset": "assets/logos/tencent-hunyuan-547abf65938b.png",
     "sha256": "90db0495e4d538b565ef8392abb90dfc1a2fde4e4b15396db0507fc7d73bb291",
     "background": "light",
     "wide": false
@@ -667,7 +667,7 @@
     "sourceUrl": "https://github.com/microsoft/TRELLIS",
     "logoSourceUrl": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120",
     "notes": "The official research repository is hosted by Microsoft's organization. The asset is from Microsoft's official brand page and identifies the organization rather than fabricating a TRELLIS project mark.",
-    "asset": "logos/microsoft-f4a787ffde7c.jpg",
+    "asset": "assets/logos/microsoft-f4a787ffde7c.jpg",
     "sha256": "22085429a7aceb666f12e64505268d95c73132d8cd2164b050db30f5e372738a",
     "background": "light",
     "wide": false
@@ -678,7 +678,7 @@
     "sourceUrl": "https://github.com/VAST-AI-Research/TripoSR",
     "logoSourceUrl": "https://avatars.githubusercontent.com/u/149052137?v=4",
     "notes": "The official README explicitly says TripoSR was collaboratively developed by Tripo AI and Stability AI. The VAST-AI-Research organization links to tripo3d.ai. This shows Tripo/VAST as one verified co-developer, not as the sole author.",
-    "asset": "logos/tripo-ai-vast-50f52a476f35.png",
+    "asset": "assets/logos/tripo-ai-vast-50f52a476f35.png",
     "sha256": "a54e88da222f3608f1fe6bc9bcc220727da12f18a0df18eb03282c7ed33b60cd",
     "background": "dark",
     "wide": false
@@ -689,7 +689,7 @@
     "sourceUrl": "https://github.com/princeton-vl/infinigen",
     "logoSourceUrl": "https://pvl.cs.princeton.edu/pvl-logo-orange.png",
     "notes": "The official repository is maintained by Princeton Vision & Learning Lab. The lab's official cs.princeton.edu homepage links this orange lab icon. It is the real lab identity rather than a reconstructed university seal.",
-    "asset": "logos/princeton-university-vision-learning-lab-acd2e0b729b5.png",
+    "asset": "assets/logos/princeton-university-vision-learning-lab-acd2e0b729b5.png",
     "sha256": "486ee84fbef43ff26b920a9d49faac6c94263930760b7e757b8fa9e1154e13ff",
     "background": "light",
     "wide": false
@@ -700,7 +700,7 @@
     "sourceUrl": "https://arxiv.org/html/2312.09067",
     "logoSourceUrl": "https://allenai.org/icon.png?56c26b049606f4e5",
     "notes": "The official code is hosted by allenai, and the paper lists multiple Allen Institute authors alongside collaborators at UPenn, Stanford, and the University of Washington. The icon comes from Ai2's official homepage. This represents the code-hosting research institution, not an exclusive affiliation for every author.",
-    "asset": "logos/allen-institute-for-ai-ai2-c42b207f6534.png",
+    "asset": "assets/logos/allen-institute-for-ai-ai2-c42b207f6534.png",
     "sha256": "c6e6363ecc4666b2ad84cb2d811bc4963283d8c4f21ccb618f88b2281314534a",
     "background": "dark",
     "wide": false
@@ -711,7 +711,7 @@
     "sourceUrl": "https://arxiv.org/html/2404.09833",
     "logoSourceUrl": "https://cdn.brand.illinois.edu/touch-icon-180x180.png",
     "notes": "The paper lists first author Hongchi Xia at both UIUC and Shanghai Jiao Tong University, with coauthors at UIUC and Cornell. UIUC is one verified first-author affiliation. This is its official brand CDN icon, linked by illinois.edu.",
-    "asset": "logos/university-of-illinois-urbana-champaign-3e3bb99e394e.png",
+    "asset": "assets/logos/university-of-illinois-urbana-champaign-3e3bb99e394e.png",
     "sha256": "ae14db859949d33027186e167613d76b04aef468132b2ae52ba1a94f366ba6a9",
     "background": "light",
     "wide": false
@@ -722,7 +722,7 @@
     "sourceUrl": "https://github.com/FreedomIntelligence/BlenderLLM",
     "logoSourceUrl": "https://www.cuhk.edu.cn/sites/default/files/zh-hans_logo.png",
     "notes": "The official README's About section explicitly says the team is from the School of Data Science, CUHK Shenzhen. The university logo is linked on its official English homepage. CUHK Shenzhen is identified distinctly from CUHK in Hong Kong.",
-    "asset": "logos/the-chinese-university-of-hong-kong-shenzhen-school-of-data--afe7ceb4b29f.png",
+    "asset": "assets/logos/the-chinese-university-of-hong-kong-shenzhen-school-of-data--afe7ceb4b29f.png",
     "sha256": "ad996831e1ecad366ed60d1bd1d8bff12336f9d4e86a7cdddd0efcb23df39198",
     "background": "light",
     "wide": true
@@ -733,7 +733,7 @@
     "sourceUrl": "https://enderfga.cn/SolarRenderer/",
     "logoSourceUrl": "https://www.comp.nus.edu.sg/wp-content/uploads/2023/09/cropped-favicon-180x180.png",
     "notes": "First author Guian Fang is affiliation 1 (NUS). The author page also lists LIGHTSPEED, CUHK(SZ), SLAI, and HKUST(GZ). Use the complete vertical logo from the official NUS identity page, not an isolated shield: https://www.nus.edu.sg/identity/elements-of-the-nus-logo. The displayed shield is the official NUS website icon supplied by the School of Computing website; this does not assign the paper to that school.",
-    "asset": "logos/national-university-of-singapore-208339f730ed.png",
+    "asset": "assets/logos/national-university-of-singapore-208339f730ed.png",
     "sha256": "48642dfe9bd2f4488b4aa987c06358bcc54150846b341473d2aa4b47f79bfc51",
     "background": "light",
     "wide": false
@@ -744,7 +744,7 @@
     "sourceUrl": "https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/",
     "logoSourceUrl": "https://www.nvidia.com/content/nvidiaGDC/us/en_US/about-nvidia/legal-info/logo-brand-usage/_jcr_content/root/responsivegrid/nv_container_392921705/nv_container/nv_image.coreimg.svg/1776076920288/nvidia-logo-vert.svg",
     "notes": "The official project page footer identifies StreamRender-H3 as NVIDIA Research. The full, original vertical NVIDIA logo is supplied by the official NVIDIA Logo and Brand Guidelines page.",
-    "asset": "logos/nvidia-research-eeccd683f64c.svg",
+    "asset": "assets/logos/nvidia-research-eeccd683f64c.svg",
     "sha256": "281b4206abb4ab0c1e85ae507198a5a0184ecc453968185a85ad39819736c528",
     "background": "light",
     "wide": false
@@ -755,7 +755,7 @@
     "sourceUrl": "https://buaacyw.github.io/cwm/",
     "logoSourceUrl": "https://en.westlake.edu.cn/images/header_icon_color.png",
     "notes": "The author project page lists AGI Lab, Westlake University as affiliation 1 and Nanyang Technological University as affiliation 2. First author Yiwen Chen has both affiliations. Select the first listed institution. The logo URL is declared as Organization.logo in the official English university homepage JSON-LD.",
-    "asset": "logos/westlake-university-0523b293fb55.png",
+    "asset": "assets/logos/westlake-university-0523b293fb55.png",
     "sha256": "b1f0794bc3b4fbc4c9c30d7ca2704aa5f779d26f819f8952293b8769a6da849c",
     "background": "light",
     "wide": true
@@ -766,7 +766,7 @@
     "sourceUrl": "https://alaya-lab.github.io/pwm/",
     "logoSourceUrl": "https://alayalab.ai/assets/brand/alaya-lab-icon-dark.svg",
     "notes": "The official project page and repository explicitly identify Alaya Lab. The logo is the official lab favicon linked by https://alayalab.ai/. A white variant is also linked there at assets/brand/alaya-lab-icon-white.svg. No university affiliation is inferred.",
-    "asset": "logos/alaya-lab-5a8322ca3e48.svg",
+    "asset": "assets/logos/alaya-lab-5a8322ca3e48.svg",
     "sha256": "7e4a2c224e369dc82ecb38201c1814a76197511ff28d53aeec13ff31d60d7582",
     "background": "light",
     "wide": false
@@ -777,7 +777,7 @@
     "sourceUrl": "https://arxiv.org/html/2609.26458v1",
     "logoSourceUrl": "https://en.ustc.edu.cn/images/school-icon.png",
     "notes": "The original CoDeR paper lists USTC and TongYi Lab; USTC is the first listed institutional affiliation. Select USTC while preserving TongYi Lab as a collaborator. The PNG is used as the school-icon image in the header and footer of the official English university homepage.",
-    "asset": "logos/university-of-science-and-technology-of-china-e21fee5bdb8d.png",
+    "asset": "assets/logos/university-of-science-and-technology-of-china-e21fee5bdb8d.png",
     "sha256": "ddac7e0f30ef13a25afae47f80dc6e465061151ccadf5b0b72dfa7e243b31e45",
     "background": "dark",
     "wide": true
@@ -788,7 +788,7 @@
     "sourceUrl": "https://arxiv.org/pdf/2608.27168",
     "logoSourceUrl": "https://cs.nju.edu.cn/_upload/site/00/42/66/logo.png",
     "notes": "Paper page 1 identifies first author Xiaoyu Zhan with affiliations 1 and 2: Mogo AI Ltd. and Nanjing University. Select the first author’s university affiliation. Other authors also represent the University of Southampton. This logo is the official Nanjing University/Computer Science header identity from https://cs.nju.edu.cn/; an authentic Magpie project favicon is separately linked by the author site at https://zhanxy.xyz/Magpie-website/magpie-mark.png.",
-    "asset": "logos/nanjing-university-d605e6af946b.png",
+    "asset": "assets/logos/nanjing-university-d605e6af946b.png",
     "sha256": "463551a86ab41e54bc8c1914a8153094c1fbc4f3478b31bf8d0ed4b356a1e02f",
     "background": "light",
     "wide": true
@@ -799,7 +799,7 @@
     "sourceUrl": "https://junchao-cs.github.io/SolarWM-Web/",
     "logoSourceUrl": "https://www.cuhk.edu.cn/sites/default/files/zh-hans_logo.png",
     "notes": "First author Junchao Huang is affiliated with CUHK-SZ and SLAI. Select the first listed institution, CUHK-Shenzhen, not the separate CUHK campus. The project also lists NUS, CUHK, HKUST, HKUST-GZ, NVIDIA, UCLA, and MSRA. The logo is the Home image in the official CUHK-Shenzhen homepage HTML.",
-    "asset": "logos/the-chinese-university-of-hong-kong-shenzhen-school-of-data--afe7ceb4b29f.png",
+    "asset": "assets/logos/the-chinese-university-of-hong-kong-shenzhen-school-of-data--afe7ceb4b29f.png",
     "sha256": "ad996831e1ecad366ed60d1bd1d8bff12336f9d4e86a7cdddd0efcb23df39198",
     "background": "light",
     "wide": true
@@ -810,7 +810,7 @@
     "sourceUrl": "https://arxiv.org/html/2402.12275v1",
     "logoSourceUrl": "https://www.cs.cornell.edu/themes/custom/computer_science/logo.svg",
     "notes": "The original paper identifies Hao Tang, Darren Key, and Kevin Ellis with Cornell University, Department of Computer Science. The official Cornell CS homepage embeds this SVG with alt text Department of Computer Science | Cornell Bowers.",
-    "asset": "logos/cornell-university-8858dc0430e1.svg",
+    "asset": "assets/logos/cornell-university-8858dc0430e1.svg",
     "sha256": "1b77d83a15f57acb9b359b11d377b1e61484625543c0cb87268cfd0b04f81353",
     "background": "light",
     "wide": true
@@ -821,7 +821,7 @@
     "sourceUrl": "https://sites.google.com/view/code-world-models/home",
     "logoSourceUrl": "https://www.aalto.fi/sites/default/files/favicons/apple-touch-icon.png",
     "notes": "The authors’ project page explicitly lists Nicola Dainese, Matteo Merler, Minttu Alakuijala, and Pekka Marttinen under Aalto University. The logo URL is the official Aalto homepage touch icon, provided and verified by the root agent.",
-    "asset": "logos/aalto-university-c704d8cdfabc.png",
+    "asset": "assets/logos/aalto-university-c704d8cdfabc.png",
     "sha256": "85526884896a69b070edefa1e0248fa6538dc8ad06170186ecf311a590b3bb0c",
     "background": "dark",
     "wide": false
@@ -832,7 +832,7 @@
     "sourceUrl": "https://arxiv.org/html/2510.04542v1",
     "logoSourceUrl": "https://avatars.githubusercontent.com/u/8596759?s=200&v=4",
     "notes": "The original paper lists Google DeepMind as the authors’ affiliation. Use the avatar embedded by the official google-deepmind organization page, https://github.com/google-deepmind; not an author portrait.",
-    "asset": "logos/google-deepmind-377933de024e.png",
+    "asset": "assets/logos/google-deepmind-377933de024e.png",
     "sha256": "c7365c53e195a9a52ac70bb9449a8da0712098089a36ee43bf1f9e805facad82",
     "background": "light",
     "wide": false
@@ -843,7 +843,7 @@
     "sourceUrl": "https://arxiv.org/pdf/2505.10819",
     "logoSourceUrl": "https://www.cs.cornell.edu/themes/custom/computer_science/logo.svg",
     "notes": "The original paper lists Cornell University, University of Cambridge, The Alan Turing Institute, and Dalhousie University. Select Cornell, the first listed institution and the first-author institution. The SVG is the official Cornell CS homepage identity, also used for WorldCoder.",
-    "asset": "logos/cornell-university-8858dc0430e1.svg",
+    "asset": "assets/logos/cornell-university-8858dc0430e1.svg",
     "sha256": "1b77d83a15f57acb9b359b11d377b1e61484625543c0cb87268cfd0b04f81353",
     "background": "light",
     "wide": true
@@ -854,7 +854,7 @@
     "sourceUrl": "https://cs.stanford.edu/~sunfanyun/factorsim/",
     "logoSourceUrl": "https://www-media.stanford.edu/assets/favicon/apple-touch-icon-180x180.png",
     "notes": "The project page assigns the first author Fan-Yun Sun and most authors to Stanford University; NVIDIA is the second institution. The logo is an official Stanford touch icon linked by https://identity.stanford.edu/.",
-    "asset": "logos/stanford-university-28c9f9e81778.png",
+    "asset": "assets/logos/stanford-university-28c9f9e81778.png",
     "sha256": "0257c372945d9665b071f4d69d00a364c946c200a3ef954c40bae3948988074c",
     "background": "light",
     "wide": false
@@ -865,7 +865,7 @@
     "sourceUrl": "https://arxiv.org/html/2402.15391v1",
     "logoSourceUrl": "https://avatars.githubusercontent.com/u/8596759?s=200&v=4",
     "notes": "The original paper explicitly identifies the authors with Google DeepMind. Jeff Clune additionally lists the University of British Columbia. Select the main institution; use the official google-deepmind organization avatar.",
-    "asset": "logos/google-deepmind-377933de024e.png",
+    "asset": "assets/logos/google-deepmind-377933de024e.png",
     "sha256": "c7365c53e195a9a52ac70bb9449a8da0712098089a36ee43bf1f9e805facad82",
     "background": "light",
     "wide": false
@@ -876,7 +876,7 @@
     "sourceUrl": "https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/",
     "logoSourceUrl": "https://avatars.githubusercontent.com/u/8596759?s=200&v=4",
     "notes": "Genie 3 is introduced on the official Google DeepMind blog. Use the official google-deepmind organization avatar, consistently with the original Genie paper.",
-    "asset": "logos/google-deepmind-377933de024e.png",
+    "asset": "assets/logos/google-deepmind-377933de024e.png",
     "sha256": "c7365c53e195a9a52ac70bb9449a8da0712098089a36ee43bf1f9e805facad82",
     "background": "light",
     "wide": false
@@ -887,7 +887,7 @@
     "sourceUrl": "https://gamengen.github.io/",
     "logoSourceUrl": "https://avatars.githubusercontent.com/u/43830688?s=200&v=4",
     "notes": "The project page lists equal-contribution authors Dani Valevski and Yaniv Leviathan at Google Research; Moab Arar at Tel Aviv University with work done while at Google Research; and Shlomi Fruchter at Google DeepMind. Select Google Research, the first listed organization. Logo is the official google-research organization avatar from https://github.com/google-research.",
-    "asset": "logos/google-research-87403a8c3b23.png",
+    "asset": "assets/logos/google-research-87403a8c3b23.png",
     "sha256": "224b801fb704b50df31cb301fb2a3dd1f5eb87219f21c16c88cb94f4d1e571f4",
     "background": "light",
     "wide": false
@@ -898,7 +898,7 @@
     "sourceUrl": "https://diamond-wm.github.io/",
     "logoSourceUrl": "https://www.unige.ch/cdn/themes/unige2016/img/unige-logo.svg",
     "notes": "The project page lists equal-contribution first authors Eloi Alonso (University of Geneva) and Adam Jelley (University of Edinburgh), with Microsoft Research also involved. Select the first author’s first institution, Geneva. The SVG is from the official university homepage and was provided/verified by the root agent.",
-    "asset": "logos/university-of-geneva-1463fc8ebff6.svg",
+    "asset": "assets/logos/university-of-geneva-1463fc8ebff6.svg",
     "sha256": "85b40eda3f20940ca957b95e5352906d39f6d45ab67280ceaa826e17c07e299d",
     "background": "dark",
     "wide": true
@@ -909,7 +909,7 @@
     "sourceUrl": "https://github.com/KlingAIResearch/GameFactory",
     "logoSourceUrl": "https://www.hku.hk/etc.clientlibs/hkucms/clientlibs/clientlib-site/resources/apple-touch-icon-180x180.png",
     "notes": "The official repository lists first authors Jiwen Yu and Yiran Qin with The University of Hong Kong (affiliation 1); Kuaishou Technology is affiliation 2 and an internship host. Select HKU, not a generic Kling logo. The icon comes from the official HKU homepage, provided/verified by the root agent.",
-    "asset": "logos/the-university-of-hong-kong-9f73767c00f9.png",
+    "asset": "assets/logos/the-university-of-hong-kong-9f73767c00f9.png",
     "sha256": "03537d27b9a0f18fee3be429593a4c13f3b0c3617e827b39a8eb96b17d03d680",
     "background": "light",
     "wide": false
@@ -920,7 +920,7 @@
     "sourceUrl": "https://oasis-model.github.io/",
     "logoSourceUrl": "https://cdn.prod.website-files.com/69a974f0b1fffb03644ecf2c/69ac71152873beed5390c042_footer-signet.svg",
     "notes": "The official Oasis page credits Decart and Etched and specifically credits the AI team at Decart. Select the model team’s company, Decart, while acknowledging Etched. The logo is the footer image explicitly labeled Decart signet in https://decart.ai/ HTML.",
-    "asset": "logos/decart-6ca0a89a6eb1.svg",
+    "asset": "assets/logos/decart-6ca0a89a6eb1.svg",
     "sha256": "60a92810988fdba897600aa761b250145aa2f4efb0fc0ec8a40b99cf64b8fc6e",
     "background": "dark",
     "wide": false
@@ -931,7 +931,7 @@
     "sourceUrl": "https://kovenyu.com/wonderworld/",
     "logoSourceUrl": "https://www-media.stanford.edu/assets/favicon/apple-touch-icon-180x180.png",
     "notes": "The author page lists equal-contribution first authors Hong-Xing (Koven) Yu and Haoyi Duan at Stanford University, with MIT also represented. Select Stanford. The logo is the official touch icon linked by https://identity.stanford.edu/.",
-    "asset": "logos/stanford-university-28c9f9e81778.png",
+    "asset": "assets/logos/stanford-university-28c9f9e81778.png",
     "sha256": "0257c372945d9665b071f4d69d00a364c946c200a3ef954c40bae3948988074c",
     "background": "light",
     "wide": false
@@ -942,7 +942,7 @@
     "sourceUrl": "https://www.worldlabs.ai/blog/marble-world-model",
     "logoSourceUrl": "https://www.worldlabs.ai/icon.svg",
     "notes": "The official World Labs product announcement introduces Marble. Use the World Labs brand associated with the product announcement, not a generated scene or a third-party company logo. The SVG is the official site icon linked in https://www.worldlabs.ai/ HTML.",
-    "asset": "logos/world-labs-d497d3eca146.svg",
+    "asset": "assets/logos/world-labs-d497d3eca146.svg",
     "sha256": "256785d5083f317abc585678fe217f720d77e1cc5578f74ecb66adb68a92787f",
     "background": "light",
     "wide": false
@@ -953,7 +953,7 @@
     "sourceUrl": "https://github.com/scenario-labs/Scenario-Unity",
     "logoSourceUrl": "https://avatars.githubusercontent.com/u/71755875?s=200&v=4",
     "notes": "Official Scenario organization mark. The public Unity integration belongs to scenario-labs, whose organization links to scenario.com.",
-    "asset": "logos/scenario-69c44818c77c.png",
+    "asset": "assets/logos/scenario-69c44818c77c.png",
     "sha256": "69c44818c77c890a9bdf6713bd5c210eadd68d0813b59ea1db01e8897210cba1",
     "background": "dark",
     "wide": false
@@ -964,7 +964,7 @@
     "sourceUrl": "https://www.meshy.ai/media-kit",
     "logoSourceUrl": "https://cdn.meshy.ai/ti_w%3A2048%2Cq%3A75/landing-assets/media-kit/meshy-logo-general.webp",
     "notes": "Original full-color Meshy brand mark downloaded from the official media kit; artwork and aspect ratio are preserved.",
-    "asset": "logos/meshy-a8d0b59eb31a.webp",
+    "asset": "assets/logos/meshy-a8d0b59eb31a.webp",
     "sha256": "a8d0b59eb31a9c0774f2c1fa4974bff8aee82b96e2ccd6d0b491e1679f5d8206",
     "background": "dark",
     "wide": false
@@ -975,7 +975,7 @@
     "sourceUrl": "https://github.com/elevenlabs/elevenlabs-python",
     "logoSourceUrl": "https://github.com/elevenlabs.png?size=256",
     "notes": "The official ElevenLabs SDK organization uses the ElevenLabs double-bar mark. This is the company mark, not an audio placeholder.",
-    "asset": "logos/elevenlabs-sfx-61d3a1f305ac.png",
+    "asset": "assets/logos/elevenlabs-sfx-61d3a1f305ac.png",
     "sha256": "61d3a1f305ac3cfa29ddac70e78d4f2f3eb2d03cddb7ab0f116fe4f0bfebbb64",
     "background": "light",
     "wide": false
@@ -986,7 +986,7 @@
     "sourceUrl": "https://stability.ai/",
     "logoSourceUrl": "https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/4e38b1d7-350c-4fd8-ac08-114a3448f110/Stability-ai-logo-white-dot.png",
     "notes": "Original Stability AI wordmark served in the official website footer; the Stable Audio Open model is published by stabilityai.",
-    "asset": "logos/stable-audio-open-e030c46f6897.png",
+    "asset": "assets/logos/stable-audio-open-e030c46f6897.png",
     "sha256": "e030c46f689730ba31f5d00e248f889dae0631a6d7fc62b46e34a486b841469c",
     "background": "dark",
     "wide": true
@@ -997,7 +997,7 @@
     "sourceUrl": "https://github.com/Regression-Games",
     "logoSourceUrl": "https://github.com/Regression-Games.png?size=256",
     "notes": "The official Regression Games organization links regression.gg and publishes RGUnityBots; use its original RG company mark.",
-    "asset": "logos/regression-games-42b84c069d79.png",
+    "asset": "assets/logos/regression-games-42b84c069d79.png",
     "sha256": "42b84c069d797ff39661cad25801089ef5e2d5b8f029575d4676c4909d25f0c1",
     "background": "dark",
     "wide": false
@@ -1008,7 +1008,7 @@
     "sourceUrl": "https://github.com/modl-ai",
     "logoSourceUrl": "https://github.com/modl-ai.png?size=256",
     "notes": "The modl-ai organization links modl.ai. Its custom black rounded-square company mark is visually verified, not a default GitHub identicon.",
-    "asset": "logos/modl-ai-5ab80a9907ac.png",
+    "asset": "assets/logos/modl-ai-5ab80a9907ac.png",
     "sha256": "5ab80a9907ac785254a4198a07865077d974797fa43fb81d55dcffb4603e7e50",
     "background": "light",
     "wide": false
@@ -1019,7 +1019,7 @@
     "sourceUrl": "https://convai.com/",
     "logoSourceUrl": "https://cdn.prod.website-files.com/66f6655083b0f778e338eebf/66fb9e2f3b4c9acafeeeca64_Group%20654947.png",
     "notes": "Original Convai mark from the official website apple-touch-icon. The GitHub organization avatar is a default identicon and is deliberately not used.",
-    "asset": "logos/convai-da09160535bb.png",
+    "asset": "assets/logos/convai-da09160535bb.png",
     "sha256": "da09160535bb86ba6153dc001aedb9f4fc39b0216364c42624333e056f0bc406",
     "background": "dark",
     "wide": false
@@ -1030,7 +1030,7 @@
     "sourceUrl": "https://github.com/Tencent-Hunyuan/HY-Motion-1.0",
     "logoSourceUrl": "https://avatars.githubusercontent.com/u/210980732?v=4",
     "notes": "HY-Motion is published by the official Tencent-Hunyuan organization. Reuse its verified original Tencent Hunyuan brand mark, also used for Hunyuan3D.",
-    "asset": "logos/tencent-hunyuan-547abf65938b.png",
+    "asset": "assets/logos/tencent-hunyuan-547abf65938b.png",
     "sha256": "90db0495e4d538b565ef8392abb90dfc1a2fde4e4b15396db0507fc7d73bb291",
     "background": "light",
     "wide": false
@@ -1061,7 +1061,7 @@
     "sourceUrl": "https://learn.microsoft.com/en-us/xbox/accessibility/guidelines",
     "logoSourceUrl": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120",
     "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
-    "asset": "logos/microsoft-f4a787ffde7c.jpg",
+    "asset": "assets/logos/microsoft-f4a787ffde7c.jpg",
     "sha256": "22085429a7aceb666f12e64505268d95c73132d8cd2164b050db30f5e372738a",
     "background": "light",
     "wide": false
@@ -1094,7 +1094,7 @@
     "sourceUrl": "https://github.com/microsoft/DirectXShaderCompiler",
     "logoSourceUrl": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120",
     "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
-    "asset": "logos/microsoft-f4a787ffde7c.jpg",
+    "asset": "assets/logos/microsoft-f4a787ffde7c.jpg",
     "sha256": "22085429a7aceb666f12e64505268d95c73132d8cd2164b050db30f5e372738a",
     "background": "light",
     "wide": false
@@ -1105,7 +1105,7 @@
     "sourceUrl": "https://playwright.dev/docs/test-snapshots",
     "logoSourceUrl": "https://playwright.dev/img/playwright-logo.svg",
     "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
-    "asset": "logos/microsoft-playwright-42a5ff460d7c.svg",
+    "asset": "assets/logos/microsoft-playwright-42a5ff460d7c.svg",
     "sha256": "6b0a4367bdeab10995bc239278f04c68c10e48adbec15e799e01909a0d66dcb9",
     "background": "light",
     "wide": false
@@ -1116,7 +1116,7 @@
     "sourceUrl": "https://developers.openai.com/api/docs/guides/image-generation",
     "logoSourceUrl": "https://github.com/openai.png?size=256",
     "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
-    "asset": "logos/openai-cde5d42ad75d.png",
+    "asset": "assets/logos/openai-cde5d42ad75d.png",
     "sha256": "6025a4347a8eaed17e31eaebf7834e33ec4af26cc7f59be586ac59ba5157fa1c",
     "background": "light",
     "wide": false
@@ -1127,7 +1127,7 @@
     "sourceUrl": "https://elevenlabs.io/docs/overview/capabilities/music",
     "logoSourceUrl": "https://github.com/elevenlabs.png?size=256",
     "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
-    "asset": "logos/elevenlabs-sfx-61d3a1f305ac.png",
+    "asset": "assets/logos/elevenlabs-sfx-61d3a1f305ac.png",
     "sha256": "61d3a1f305ac3cfa29ddac70e78d4f2f3eb2d03cddb7ab0f116fe4f0bfebbb64",
     "background": "light",
     "wide": false
@@ -1138,7 +1138,7 @@
     "sourceUrl": "https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html",
     "logoSourceUrl": "https://avatars.githubusercontent.com/u/149052137?v=4",
     "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
-    "asset": "logos/tripo-ai-vast-50f52a476f35.png",
+    "asset": "assets/logos/tripo-ai-vast-50f52a476f35.png",
     "sha256": "a54e88da222f3608f1fe6bc9bcc220727da12f18a0df18eb03282c7ed33b60cd",
     "background": "dark",
     "wide": false
@@ -1149,7 +1149,7 @@
     "sourceUrl": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert",
     "logoSourceUrl": "https://github.com/elevenlabs.png?size=256",
     "notes": "Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.",
-    "asset": "logos/elevenlabs-sfx-61d3a1f305ac.png",
+    "asset": "assets/logos/elevenlabs-sfx-61d3a1f305ac.png",
     "sha256": "61d3a1f305ac3cfa29ddac70e78d4f2f3eb2d03cddb7ab0f116fe4f0bfebbb64",
     "background": "light",
     "wide": false
@@ -1160,7 +1160,7 @@
     "sourceUrl": "https://dev.epicgames.com/documentation/unreal-engine/remote-control-for-unreal-engine",
     "logoSourceUrl": "https://github.com/EpicGames.png?size=256",
     "notes": "Official documentation identifies the publisher of this interface. The existing bundled mark identifies the same publisher; documented API availability does not establish a working GameMap adapter.",
-    "asset": "logos/epic-games-unreal-engine-e0295cf4837c.png",
+    "asset": "assets/logos/epic-games-unreal-engine-e0295cf4837c.png",
     "sha256": "22a06f67ab790bcef639f5618ae7396b7f0f7a943817ef01efc9c9cb15a0e056",
     "background": "light",
     "wide": false
@@ -1171,7 +1171,7 @@
     "sourceUrl": "https://dev.epicgames.com/documentation/unreal-engine/gauntlet-automation-framework-overview-in-unreal-engine?lang=en-US",
     "logoSourceUrl": "https://github.com/EpicGames.png?size=256",
     "notes": "Official documentation identifies the publisher of this interface. The existing bundled mark identifies the same publisher; documented API availability does not establish a working GameMap adapter.",
-    "asset": "logos/epic-games-unreal-engine-e0295cf4837c.png",
+    "asset": "assets/logos/epic-games-unreal-engine-e0295cf4837c.png",
     "sha256": "22a06f67ab790bcef639f5618ae7396b7f0f7a943817ef01efc9c9cb15a0e056",
     "background": "light",
     "wide": false
@@ -1182,7 +1182,7 @@
     "sourceUrl": "https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/build-scripting-start-build.html",
     "logoSourceUrl": "https://github.com/Unity-Technologies.png?size=256",
     "notes": "Official documentation identifies the publisher of this interface. The existing bundled mark identifies the same publisher; documented API availability does not establish a working GameMap adapter.",
-    "asset": "logos/unity-c20a05de0895.png",
+    "asset": "assets/logos/unity-c20a05de0895.png",
     "sha256": "300cc9cf57b29fe09b43e587b23f563c390bb67242227524acfcc28fc477f4f7",
     "background": "light",
     "wide": false
@@ -1193,8 +1193,63 @@
     "sourceUrl": "https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview",
     "logoSourceUrl": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120",
     "notes": "Official documentation identifies the publisher of this interface. The existing bundled mark identifies the same publisher; documented API availability does not establish a working GameMap adapter.",
-    "asset": "logos/microsoft-f4a787ffde7c.jpg",
+    "asset": "assets/logos/microsoft-f4a787ffde7c.jpg",
     "sha256": "22085429a7aceb666f12e64505268d95c73132d8cd2164b050db30f5e372738a",
+    "background": "light",
+    "wide": false
+  },
+  "steamworks": {
+    "organization": "Valve / Steam",
+    "kind": "brand",
+    "sourceUrl": "https://partner.steamgames.com/",
+    "logoSourceUrl": "https://store.fastly.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016",
+    "notes": "Exact Steam wordmark used by the official Steam storefront. Bundled locally with colors and aspect ratio intact; only the XML declaration and external DTD header were removed. The Steam brand identifies Valve’s distribution platform, not authorship of any listed game.",
+    "background": "dark",
+    "wide": true,
+    "asset": "assets/logos/steam-ec1098f56177.svg",
+    "sha256": "ec1098f56177d06dfbac75f8da5cc9b6249e789e42fc79992b48bfcbebf94851"
+  },
+  "itch-io": {
+    "organization": "itch.io",
+    "kind": "brand",
+    "sourceUrl": "https://itch.io/press-kit",
+    "logoSourceUrl": "https://static.itch.io/images/app-icon.svg",
+    "notes": "Official itch.io app icon from the publisher’s press kit. The artwork is unchanged and bundled locally, following the request not to hotlink brand images. This mark identifies the platform rather than the creators of games hosted there.",
+    "background": "light",
+    "wide": false,
+    "asset": "assets/logos/itch-io-7c7c74347fbf.svg",
+    "sha256": "7c7c74347fbfd5eefa0a9730028f6ca1df67580119b0ef645561046761080198"
+  },
+  "gog": {
+    "organization": "GOG",
+    "kind": "brand",
+    "sourceUrl": "https://www.gog.com/pressroom/press-kit/",
+    "logoSourceUrl": "https://www.gog.com/pressroom/wp-content/uploads/2025/06/GOG_LOGO_DARK.png",
+    "notes": "Original dark GOG logo provided in the official GOG press kit. Original pixels, colors, transparency, and aspect ratio are retained. It represents the distribution platform; DRM-free availability does not imply public game source.",
+    "background": "light",
+    "wide": false,
+    "asset": "assets/logos/gog-e8ee9c8c97d9.png",
+    "sha256": "e8ee9c8c97d9ccf47515838eb8a08cca481551876d5b35dc2fd3498e8fe47d51"
+  },
+  "crazygames": {
+    "organization": "CrazyGames",
+    "kind": "brand",
+    "sourceUrl": "https://developer.crazygames.com/",
+    "logoSourceUrl": "https://imgs.crazygames.com/favicons/favicon-transparent.png?quality=95&metadata=none&width=196&height=196&fit=crop",
+    "notes": "Official transparent CrazyGames brand icon linked by the CrazyGames developer portal. The downloaded public image is bundled unchanged and identifies the platform, not an individual developer or an AI development tool.",
+    "background": "light",
+    "wide": false,
+    "asset": "assets/logos/crazygames-c284e89a355c.png",
+    "sha256": "c284e89a355c1b2ac365b1afb51777c268ea499f70cbca33d20fac4705b162c6"
+  },
+  "epic-games-store": {
+    "organization": "Epic Games / Epic Games Store",
+    "kind": "brand",
+    "sourceUrl": "https://store.epicgames.com/en-US/distribution",
+    "logoSourceUrl": "https://github.com/EpicGames.png?size=256",
+    "notes": "Official Epic Games corporate mark, already bundled from the verified EpicGames organization profile. The mark identifies the publisher operating Epic Games Store; the storefront is engine-agnostic and is not the Unreal Engine runtime.",
+    "asset": "assets/logos/epic-games-unreal-engine-e0295cf4837c.png",
+    "sha256": "22a06f67ab790bcef639f5618ae7396b7f0f7a943817ef01efc9c9cb15a0e056",
     "background": "light",
     "wide": false
   }

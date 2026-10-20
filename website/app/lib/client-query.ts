@@ -1,4 +1,4 @@
-import { useSyncExternalStore } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 import { useSearchParams } from "react-router";
 
 const subscribe = () => () => {};
@@ -14,5 +14,11 @@ export const useHydrated = () =>
 export function useClientQuery() {
   const hydrated = useHydrated();
   const [params, setParams] = useSearchParams();
-  return [hydrated ? params : empty, setParams, hydrated] as const;
+  const setClientParams: typeof setParams = useCallback((next, options) => {
+    // Navigation updates the address bar before React necessarily commits it.
+    // Functional updates must compose against that URL, not an older render.
+    setParams(typeof next === "function"
+      ? next(new URLSearchParams(window.location.search)) : next, options);
+  }, [setParams]);
+  return [hydrated ? params : empty, setClientParams, hydrated] as const;
 }
