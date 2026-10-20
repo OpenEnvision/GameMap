@@ -1,12 +1,12 @@
 # From Resource Map to Runnable Game
 
-This page contains **GameMap editorial recommendations** for turning research, tools, and engine references into an executable workflow. It does not promise any agent's success rate. Sources were reviewed through **2026-10-18**; that date records source review, not installation, training, or complete reproduction of every project. No automatic collection or recurring updates are scheduled.
+Start with a small playable loop. Choose the target platform, set a concrete task for the agent, and check the result in the running game before expanding the project.
 
 ## Define the deliverable before choosing tools
 
 Specify the target platform, player actions, core loop, win/loss conditions, art direction, target hardware, and delivery format. A shippable game project, an action-controlled video experience, an importable scene asset, and a simulator for planning or training need different world representations and acceptance methods.
 
-The selection guidance below reflects GameMap's editorial judgment, not a performance or cost ranking. Existing team experience, working templates, and the target platform often matter more to an initial release than demo visuals.
+Choose around your team's experience, working templates, and target platform. Start with a project you can already run.
 
 | Tool | Official scope and boundaries | A suitable starting task |
 | --- | --- | --- |
@@ -21,8 +21,8 @@ The selection guidance below reflects GameMap's editorial judgment, not a perfor
 
 1. **Plan:** write a one-page specification for input, state, feedback, and end conditions. Define one minimal level and a reproducible action sequence.
 2. **Code:** use placeholders to complete the loop from start to play, success or failure, and retry. Separate game state, input, and visual updates. Have the agent implement one verifiable mechanic before expanding the levels.
-3. **Assets:** fix the canvas, frame dimensions, action names, frame rates, directions, and foot anchors. Preserve source images, processing scripts, and import configuration. A sprite sheet that looks correct is only part of the deliverable.
-4. **Scene:** configure collision layers, tile sizes, camera bounds, UI safe areas, volume, and input hints. Check scaling, pausing, switching away from the window, and restarting.
+3. **Assets:** fix the canvas, frame dimensions, action names, frame rates, directions, and foot anchors. Preserve source images, processing scripts, and import configuration. A sprite sheet that looks correct is only part of the deliverable. The [sprite delivery contract](asset-validation-contracts.md#sprite-atlas-metadata-and-playback-delivery) explains trimmed offsets, duplicate/empty-frame dwell, pivots and explicit timebase conversion.
+4. **Scene:** configure collision layers, tile sizes, camera bounds, UI safe areas, volume, and input hints. Check scaling, pausing, switching away from the window, and restarting. For authored tilemaps, preserve [tile identities, transforms and saved coordinates](asset-validation-contracts.md#tile-map-identity-geometry-and-runtime-delivery) before testing collision and traversal.
 5. **Test and ship:** gather evidence by the layers below. Finally, run the full loop in an actual target-platform build, with launch instructions, controls, and known issues included.
 
 ## 3D: Complete a graybox, then establish the asset pipeline
@@ -33,7 +33,7 @@ The selection guidance below reflects GameMap's editorial judgment, not a perfor
 4. **Scene:** check spawn points, camera obstruction, navigation, lighting, occlusion culling, and asset loading. Replace the graybox after these checks so visual changes do not also alter gameplay decisions.
 5. **Test and ship:** collect frame-time and loading measurements on target hardware. Check asset reimport and clean-environment builds to confirm the editor demo can become a distributable result.
 
-These steps are GameMap engineering recommendations. They do not require one agent to fill every role. Coding agents, asset tools, and playtesting agents should share files and task contracts.
+Give coding agents, asset tools, and playtesting agents shared files and task contracts so each can work on a specific part of the project.
 
 ## Write a task contract for the agent
 
@@ -59,7 +59,7 @@ Asset tasks need the same clarity: "Deliver an eight-frame run animation as tran
 | Playability | A human or agent reaches the objective, recording blockers, failures, and completion routes | Performance on untested devices |
 | Runtime performance | Frame times, loading, and memory on specified devices, resolutions, and scenes | Passing performance on every device |
 
-These are GameMap editorial recommendations. Set budgets per project, report averages and stutter distributions, and avoid showing only the best frame. Browser 3D also needs a distinction between CSS size and drawing-buffer resolution: increasing pixel ratio without a budget increases rendering load. [Three.js responsive rendering](https://threejs.org/manual/pages/responsive.html)
+Set budgets per project, report averages and stutter distributions, and avoid showing only the best frame. Browser 3D also needs a distinction between CSS size and drawing-buffer resolution: increasing pixel ratio without a budget increases rendering load. [Three.js responsive rendering](https://threejs.org/manual/pages/responsive.html)
 
 ## Where world models fit
 
@@ -72,3 +72,7 @@ These are GameMap editorial recommendations. Set budgets per project, report ave
 For reproduction, record the code commit, base model, weights, dataset version, inputs, seed, precision, GPU count/model/memory, and measurement scope. Official StreamRender-H3 deployment figures use eight GB200 GPUs. Public CWM / World Brain materials cover only inference, LoRAs, and proxy examples; the complete underlying proxy-generation code cannot be redistributed. Keep these conditions when comparing throughput, time to first frame, and interaction latency. [StreamRender-H3](https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/), [CWM reproduction scope](https://github.com/buaacyw/code-world-model/blob/main/ENVIRONMENT.md)
 
 See the [world model research notes](./world-model-notes.md) for detailed reading routes, release status, and terminology.
+
+## Detailed production research
+
+For source-scoped completion, failure, recovery, licensing and evaluation constraints, see the [production research dossiers](research-index.md). The notes distinguish documented interfaces, proposed acceptance fixtures and actual reproduction.

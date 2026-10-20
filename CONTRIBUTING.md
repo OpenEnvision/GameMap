@@ -1,8 +1,12 @@
 # Contributing to GameMap
 
-Contributions of credible resources, corrected descriptions, repaired links, and evidence-backed engineering experience are welcome. GameMap maps coding agents, engine ecosystems, 2D and 3D development, and world models. Inclusion is not a performance endorsement or a claim of full reproduction.
+Website content must follow the [content model and coverage contract](docs/content-model.md).
+
+Contributions of credible resources, corrected descriptions, repaired links, and evidence-backed engineering experience are welcome. GameMap maps coding agents, engine ecosystems, 2D and 3D development, and world models.
 
 ## Source of truth and generation workflow
+
+The root `README.md` is a hand-maintained project overview. Keep the full resource catalog in `AWESOME.md` and publishing details in [the deployment guide](docs/deployment.md).
 
 Edit resource entries only in `data/segments/*.json`. Do not edit these generated files directly:
 
@@ -17,9 +21,18 @@ After changing data, run these commands from the repository root in order:
 node scripts/generate.mjs
 npm run check
 npm run build
+npm run check:build
 ```
 
-The generator synchronizes the Awesome List, website data, and downloadable directory. `npm run check` validates the schema and checks generated output consistency; `npm run build` generates the data and builds the website. These checks do not install, train, or play the listed projects. No automated scraping or scheduled updates are configured; entries are maintained by reading sources manually.
+The generator synchronizes the Awesome List, website data, and downloadable directory. `npm run check` validates source data, public source media, and generated editorial files without requiring a built website. `npm run build` generates the data and the deployable `dist/` directory, including pre-rendered Fumadocs articles. `npm run check:build` additionally validates built downloads, deployed media, rendered documents, static search, and internal links; always run it after building. These checks do not install, train, or play the listed projects. No automated scraping or scheduled updates are configured; entries are maintained by reading sources manually.
+
+### What belongs in Git
+
+Keep application source in `website/app/`, catalog/case data in `website/src/`, `package-lock.json`, `data/`, `docs/`, and source assets/downloads under `website/public/` versioned. Generated editorial files stay committed so reviewers can inspect catalog and documentation changes; CI checks their consistency.
+
+Do not commit dependencies, `dist/` or `website/dist/`, legacy root previews, `.build/`, `.react-router/`, prepared documents in `website/.content/`, copied `website/public/docs-assets/`, TypeScript/Vite/lint caches, coverage and browser-test reports, agent traces, logs, temporary files, local environment secrets, or machine-specific editor/OS files. Build outputs are regenerated in CI and only `dist/` is published to GitHub Pages. Keep shareable environment configuration in `.env.example`, `.env.sample`, or `.env.template`, without secrets. The `.gitignore` deliberately does not hide source media, lockfiles, shared VS Code configuration, or environment templates.
+
+The Cadle-like research inventory is maintained in `data/segments/repository-research.json`. Its complete source-candidate membership and review statuses are validated; `docs/cadle-repositories.md` and public Markdown/JSON downloads are generated. These research rows do not automatically become resource cards or featured playable cases.
 
 ## Entry format
 
@@ -63,9 +76,27 @@ Prefer author papers, official documentation, project repositories, model cards,
 
 `verified` means a source check. Claim reproduction only after an actual run, with commands, versions, hardware, inputs, results, and the limits of what was tested. Distinguish paper demonstrations, complete open-source implementations, partial inference code, hosted products, and release plans. Code, model weights, and data can have different terms; link to their official guidance rather than generalizing from one repository license label.
 
-Performance numbers require measurement conditions and a primary source. Do not directly rank results from different tasks, resolutions, GPUs, or measurement scopes. Method comparisons should distinguish build success, functional correctness, visual quality, playability, and runtime performance. Label planning guidance or workflow preferences as **GameMap editorial guidance**, rather than presenting them as research findings.
+Performance numbers require measurement conditions and a primary source. Do not directly rank results from different tasks, resolutions, GPUs, or measurement scopes. Method comparisons should distinguish build success, functional correctness, visual quality, playability, and runtime performance. Describe proposed workflows as templates or next steps, rather than reporting them as measured findings.
 
 World model entries should also explain where authoritative state lives: an executable program, an engine, video latents, or explicit 3D assets. Use separate tags for action-conditioned video, neural rendering, and code-based worlds. See the [world model notes](docs/world-model-notes.md).
+
+## Writing for readers
+
+- Start with the task, workflow, or decision the reader needs to make. Use plain, direct language.
+- Omit editorial self-description, collection-size reports, generic no-guarantee disclaimers, review-date preambles, and statements about unscheduled future updates.
+- Put concrete version requirements, unavailable artifacts, licensing conditions, and untested assumptions beside the operation they affect. Keep sources and attribution.
+- Name a proposed check or work-order template as such; do not describe it as a completed integration or measured result.
+- Keep audit timestamps and internal identifiers in source records or maintenance ledgers, not reader-facing introductions.
+- Chinese guides live under `docs/zh/`. Mark links to untranslated material as English. Do not rewrite the separately licensed, preserved skill package to change its tone.
+
+## Translations
+
+- Keep canonical source data in English. Put Chinese interface messages in `website/content/i18n/zh.json` or `docs.zh.json`, and reader-text overlays in `website/content/i18n/content/` using stable `kind:id` keys.
+- Translate the complete field, including material conditions. Preserve project names, source URLs, creator attribution, licensing, list items, and the difference between proposed work and measured results.
+- Run `node scripts/check-locales.mjs --approve-new` to record fingerprints for newly translated fields. It does not approve changed source text. Review an existing translation before updating its source fingerprint; never automatically refresh all hashes.
+- Add full Chinese articles under `docs/zh/`. Mark deliberate links to English originals as `(English)` or with the existing Chinese language marker. Other internal links keep the selected interface language.
+- Keep untranslated passages explicitly English. Do not replace third-party source files, or present a translated title as a translated article.
+- Run `npm run check`, rebuild, and run `npm run check:build` and `npm run test:web` for both locales.
 
 ## Pull requests
 

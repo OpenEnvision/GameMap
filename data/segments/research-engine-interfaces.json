@@ -1,0 +1,137 @@
+[
+  {
+    "id": "unreal-remote-control",
+    "name": "Unreal Engine · Remote Control API",
+    "category": "engines",
+    "type": "docs",
+    "summary": "Exposes reflected editor properties and functions over HTTP for external tooling.",
+    "detail": "Remote Control provides a native engine integration surface distinct from a community MCP bridge. Property writes can request editor transactions and change notifications, but an acknowledged mutation does not establish package-save completion. The rolling Epic guide labels this feature Beta and disables it by default in packaged builds and -game. Enable the appropriate plugin, restrict network exposure, and qualify editor versus packaged-runtime access separately.",
+    "url": "https://dev.epicgames.com/documentation/unreal-engine/remote-control-for-unreal-engine",
+    "links": [
+      {
+        "label": "HTTP API reference",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/remote-control-api-http-reference-for-unreal-engine"
+      }
+    ],
+    "tags": [
+      "Unreal Engine",
+      "HTTP",
+      "Editor automation",
+      "State mutation"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unreal-gauntlet",
+    "name": "Unreal Engine · Gauntlet",
+    "category": "production",
+    "type": "docs",
+    "summary": "Orchestrates game test sessions with multiple processes, roles, devices, and collected logs.",
+    "detail": "Gauntlet consumes prepared cooked builds and launches configured game roles through AutomationTool. Game-specific test nodes define assertions and terminal outcomes; launching a client and server alone does not establish scenario success. Build production, device availability, process cleanup, and parallel-session port allocation remain separate responsibilities.",
+    "url": "https://dev.epicgames.com/documentation/unreal-engine/gauntlet-automation-framework-overview-in-unreal-engine?lang=en-US",
+    "links": [],
+    "tags": [
+      "Unreal Engine",
+      "AutomationTool",
+      "Multi-process testing",
+      "Cooked builds"
+    ],
+    "stages": [
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "unity-addressables-scripting",
+    "name": "Unity · Addressables Build and Loading APIs",
+    "category": "engines",
+    "type": "docs",
+    "summary": "Builds addressable content from explicit profiles and loads assets through asynchronous handles.",
+    "detail": "The checked Addressables 1.21 documentation separates content builds from executable builds. Build settings, active profile, builder, and content-state file affect outputs. Runtime loading returns a handle whose status and result must be checked and later released. A key matching several assets can select only the first; preserve dependency and cache provenance.",
+    "url": "https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/build-scripting-start-build.html",
+    "links": [
+      {
+        "label": "LoadAssetAsync reference",
+        "url": "https://docs.unity3d.com/kr/Packages/com.unity.addressables%401.21/api/UnityEngine.AddressableAssets.Addressables.LoadAssetAsync.html"
+      }
+    ],
+    "tags": [
+      "Unity",
+      "Addressables",
+      "Asset dependencies",
+      "Async loading",
+      "Content builds"
+    ],
+    "stages": [
+      "assets",
+      "code",
+      "ship",
+      "runtime"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-18"
+  },
+  {
+    "id": "windows-ui-automation",
+    "name": "Windows · UI Automation and Input Semantics",
+    "category": "production",
+    "type": "docs",
+    "summary": "Exposes provider-supported accessibility control patterns for inspecting and manipulating desktop editor controls.",
+    "detail": "Provider support must be probed per control; no specific game editor is assumed accessible. UIA coordinates are physical pixels, while absolute mouse input uses normalized desktop coordinates. Bounding rectangles may contain occluded points, foreground activation can be refused, and input insertion does not prove application completion. Integrity restrictions must be respected.",
+    "url": "https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview",
+    "links": [
+      {
+        "label": "Properties and occlusion",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-automation-element-propids"
+      },
+      {
+        "label": "Input and integrity limits",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendinput"
+      },
+      {
+        "label": "DPI coordinates",
+        "url": "https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-screenscaling"
+      },
+      {
+        "label": "Window/display capture and frame lifetime",
+        "url": "https://learn.microsoft.com/en-us/windows/apps/develop/media-authoring-processing/screen-capture"
+      },
+      {
+        "label": "GameMap: native UI evidence boundaries",
+        "url": "https://github.com/OpenEnvision/GameMap/blob/main/docs/engine-operation-contracts.md#native-gui-automation-is-a-separate-evidence-surface"
+      }
+    ],
+    "tags": [
+      "Windows",
+      "Accessibility",
+      "Native GUI",
+      "CUA",
+      "DPI"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-10-19"
+  }
+]

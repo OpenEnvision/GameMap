@@ -5,7 +5,7 @@
     "category": "3d",
     "type": "framework",
     "summary": "Coordinates agents to build Unreal scenes, gameplay code, interactions, and playtests.",
-    "detail": "A research pipeline for turning a game description into Unreal Engine scenes and C++ gameplay. Its public implementation includes setup instructions, a demonstration video, and a linked dataset of generated games and assets. Reproduction requires Unreal integrations and external model services. The video demonstrates outputs; it is not a hosted playable game.",
+    "detail": "A research pipeline for turning a game description into Unreal Engine scenes and C++ gameplay. Its public implementation includes setup instructions, a demonstration video, and a linked dataset of generated games and assets. Reproduction requires Unreal integrations and external model services. The video demonstrates outputs; it is not a hosted playable game. Static inspection of the pinned evaluation dispatcher shows movement commands skipped and interaction handlers called directly; completion of that script path alone does not establish player navigation success.",
     "url": "https://github.com/Pluto156/AutoUE",
     "links": [
       {
@@ -15,6 +15,10 @@
       {
         "label": "Generated games and asset dataset",
         "url": "https://huggingface.co/datasets/Pluto156/AutoUE_DataSet"
+      },
+      {
+        "label": "Pinned evaluation dispatcher",
+        "url": "https://github.com/Pluto156/AutoUE/blob/8686a4d51c19813f2b3368bd73f685a940db7531/PCGGen_UE/Plugins/LLMEditor/Source/LLMEditor/Private/Core/EvaluateExecutor/EvaluateExecutor.cpp#L174-L186"
       }
     ],
     "access": {
@@ -54,7 +58,7 @@
       "3d"
     ],
     "year": 2026,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "unigen",
@@ -173,7 +177,7 @@
     "category": "production",
     "type": "tool",
     "summary": "Uses visual agents and natural-language tasks to test uploaded game builds.",
-    "detail": "The current commercial service observes screens and sends simulated inputs without requiring an engine SDK. Teams upload a build, describe test tasks, and review captured sessions and bug reports. Its stated coverage includes Android and desktop; timing-critical gameplay remains limited. The current product differs from older SDK-based documentation. Public self-service gameplay, complete product source, and an independent hands-on tutorial were not verified.",
+    "detail": "The current commercial service observes screens and sends simulated inputs without requiring an engine SDK. Teams upload a build, describe test tasks, and review captured sessions and bug reports. Its stated coverage includes Android and desktop; timing-critical gameplay remains limited. The vendor also describes game-specific model training using test-run data; SDK-free does not mean no game-specific preparation. The current product differs from older SDK-based documentation. Public self-service gameplay, complete product source, and an independent hands-on tutorial were not verified.",
     "url": "https://modl.ai/",
     "links": [
       {

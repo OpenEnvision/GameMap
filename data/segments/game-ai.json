@@ -3,13 +3,13 @@
     "id": "gamegpt",
     "name": "GameGPT",
     "category": "2d",
-    "type": "framework",
+    "type": "paper",
     "summary": "Studies automated game development through multi-agent planning and code generation.",
     "detail": "Planning, review, and implementation agents break down game requirements and generate code, with a focus on hallucination and redundancy. This is an early research framework for game development agents. The linked repository contains only the paper and README; it is not a verified, ready-to-deploy product.",
     "url": "https://arxiv.org/abs/2310.08067",
     "links": [
       {
-        "label": "Author repository",
+        "label": "Paper and README repository",
         "url": "https://github.com/leyiwo/GameGPT"
       }
     ],
@@ -35,8 +35,8 @@
     "name": "OpenGame",
     "category": "2d",
     "type": "agent",
-    "summary": "Generates browser games with templates, debugging skills, and the GameCoder model.",
-    "detail": "Turns natural-language requirements into runnable web projects. Its Game Skill combines Template Skill and Debug Skill for Canvas, Phaser, three.js, and other templates. The paper uses browser execution and visual judging to study build success, usability, and intent alignment. At review, the README still listed the standalone evaluation pipeline as forthcoming, so paper results do not imply a fully reproducible release.",
+    "summary": "Generates browser game projects with reusable templates and debugging skills.",
+    "detail": "Turns natural-language requirements into web projects using Template Skill and Debug Skill for Canvas, Phaser, three.js, and other templates. The public CLI accepts OpenAI-compatible model endpoints; the paper also introduces GameCoder-27B. Browser execution and visual judging assess build health, usability, and intent alignment. The README still lists the standalone evaluation pipeline as forthcoming; model weights and full evaluation reproducibility are not established by the framework release alone.",
     "url": "https://github.com/leigest519/OpenGame",
     "links": [
       {
@@ -338,7 +338,7 @@
     "category": "2d",
     "type": "skill",
     "summary": "Combines reference art, generated animation, and deterministic processing into exportable sprites.",
-    "detail": "Generates motion clips from an approved reference image, then performs background removal, alignment, loop selection, timing correction, and atlas packaging. It offers Godot, Aseprite, and web exports. The README states that some newer editor exports have only passed parse round-trip checks and have not been opened in every target editor. Import and visual acceptance checks remain necessary.",
+    "detail": "Generates motion clips from an approved reference image, then performs background removal, alignment, loop selection, timing correction, and atlas packaging. It offers Godot, Aseprite, and web exports. For 0.4.0, the README reports parse-level round trips but no Godot, LDtk, or Aseprite editor-import verification. Import and visual acceptance checks remain necessary.",
     "url": "https://github.com/0x0funky/agent-sprite-forge",
     "tags": [
       "Agent Skill",
@@ -395,12 +395,16 @@
     "category": "3d",
     "type": "benchmark",
     "summary": "Tests agent-written C++ runtime changes in real Unreal Engine projects.",
-    "detail": "The paper includes 110 tasks from nine projects. Inputs specify a buildable starting point, allowed files, and behavioral requirements; outputs are patches checked by compilation and engine behavior tests. Tasks cover integration issues such as replicated state, lifecycle, and animation. The scope is local C++ implementation, not complete 3D game generation.",
+    "detail": "Paper v2 describes 110 scoped C++ tasks from nine Unreal projects. Agents receive a buildable start, allowed files, and behavioral requirements. After compilation and Play-in-Editor listen-server tests, an LLM judge reviews the specification, test evidence, edits, and reference solution to determine success. The paper-linked repository could not be retrieved during review, so runnable-code availability remains unverified. The scope is local C++ implementation, not complete 3D game generation.",
     "url": "https://arxiv.org/abs/2607.03525",
     "links": [
       {
-        "label": "Code repository linked by the paper",
+        "label": "Paper-linked repository (availability unverified)",
         "url": "https://github.com/Nitrode-Research/GameEngineBench"
+      },
+      {
+        "label": "Versioned evaluation protocol",
+        "url": "https://arxiv.org/html/2607.03525v2"
       }
     ],
     "tags": [
@@ -463,7 +467,7 @@
     "category": "3d",
     "type": "tool",
     "summary": "A community MCP bridge for querying, editing, and testing Unity projects.",
-    "detail": "Exposes scenes, GameObjects, components, Prefabs, logs, Unity Test Runner, and other editor operations to MCP clients. This third-party tool is maintained by CoderGamester and is separate from Unity's official plugin. Editor automation alone does not establish correct gameplay; compilation, playtesting, and project tests are still needed.",
+    "detail": "Exposes scenes, GameObjects, components, Prefabs, logs, Unity Test Runner, and other editor operations to MCP clients. This community tool is separate from Unity's official plugin. Its README warns that entering Play Mode with domain reload can disconnect the bridge; check the installed version, test configuration, and actual results. Editor automation alone does not establish correct gameplay.",
     "url": "https://github.com/CoderGamester/mcp-unity",
     "tags": [
       "Unity",
@@ -508,11 +512,11 @@
   },
   {
     "id": "hunyuan3d-2",
-    "name": "Hunyuan3D 2.x",
+    "name": "Hunyuan3D 2.0",
     "category": "3d",
     "type": "tool",
     "summary": "Turns reference images into geometry and textures for 3D asset pipelines.",
-    "detail": "The 2.0 pipeline generates shape with Hunyuan3D-DiT and textures the mesh with Hunyuan3D-Paint. It supports GLB and OBJ export and a Blender addon. This addresses part of individual asset production. Topology, LOD, rigging, collision, and runtime performance still need game pipeline checks, with model versions and licenses tracked separately.",
+    "detail": "The 2.0 pipeline generates shape with Hunyuan3D-DiT and textures the mesh with Hunyuan3D-Paint. It supports GLB and OBJ export and a Blender addon under a dedicated Tencent Hunyuan 3D 2.0 community license. The separate 2.1 release adds a PBR texture pipeline and training code. Topology, LOD, rigging, collision, runtime performance, and each version's terms still need game-pipeline checks.",
     "url": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2",
     "links": [
       {
@@ -522,6 +526,10 @@
       {
         "label": "2.1 repository",
         "url": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1"
+      },
+      {
+        "label": "2.0 license",
+        "url": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2/blob/main/LICENSE"
       }
     ],
     "tags": [
@@ -649,7 +657,7 @@
     "dimensions": [
       "3d"
     ],
-    "year": 2024,
+    "year": 2023,
     "verified": "2026-10-18"
   },
   {
@@ -658,12 +666,16 @@
     "category": "3d",
     "type": "paper",
     "summary": "Reconstructs real-world video into interactive 3D environments for the browser.",
-    "detail": "Video and camera information pass through reconstruction, mesh extraction, appearance baking, and collision generation into a three.js game environment. The repository also documents UE import. This is an explicit environment reconstruction approach with remaining manual scene setup and physics integration. It should be distinguished from interactive video world models that predict the next frame.",
+    "detail": "Video and camera information pass through reconstruction, mesh extraction, appearance baking, and collision generation into a three.js game environment. The documented UE route recommends fully diffuse baked meshes, with the baking specular dimension set to zero. This is an explicit environment reconstruction approach with remaining manual scene setup and physics integration. It should be distinguished from interactive video world models that predict the next frame.",
     "url": "https://github.com/video2game/video2game",
     "links": [
       {
         "label": "Paper",
         "url": "https://arxiv.org/abs/2404.09833"
+      },
+      {
+        "label": "Pinned engine-handoff recommendations",
+        "url": "https://github.com/video2game/video2game/blob/7bcf8ae754240b9fd2de75a154eb73c75a146b79/readme.md#L256-L273"
       }
     ],
     "tags": [
@@ -681,7 +693,7 @@
       "3d"
     ],
     "year": 2024,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   },
   {
     "id": "blenderllm",
@@ -689,7 +701,7 @@
     "category": "3d",
     "type": "paper",
     "summary": "Studies text-to-Blender scripting with a training dataset and modeling benchmark.",
-    "detail": "BlenderLLM generates bpy modeling scripts from user instructions. BlendNet provides about 12K paired samples, and CADBench includes synthetic and forum-sourced tasks. Evaluation focuses on basic CAD-style modeling and instruction following. The README identifies limitations in advanced materials, multimodal input, and multi-turn collaboration; this is not a game creation benchmark.",
+    "detail": "BlenderLLM generates bpy modeling scripts from user instructions. The repository and released dataset documentation report about 12K BlendNet pairs, and CADBench includes synthetic and forum-sourced tasks. Evaluation focuses on basic CAD-style modeling and instruction following. The README identifies limitations in advanced materials, multimodal input, and multi-turn collaboration; this is not a game creation benchmark.",
     "url": "https://github.com/FreedomIntelligence/BlenderLLM",
     "links": [
       {
@@ -703,6 +715,10 @@
       {
         "label": "CADBench",
         "url": "https://huggingface.co/datasets/FreedomIntelligence/CADBench"
+      },
+      {
+        "label": "Pinned release dataset description",
+        "url": "https://github.com/FreedomIntelligence/BlenderLLM/blob/f778bfd6992ddd675f7615d0eaf965a8576f2879/README.md#L44-L50"
       }
     ],
     "tags": [
@@ -719,6 +735,6 @@
       "3d"
     ],
     "year": 2024,
-    "verified": "2026-10-18"
+    "verified": "2026-10-19"
   }
 ]

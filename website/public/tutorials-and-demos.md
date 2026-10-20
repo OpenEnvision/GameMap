@@ -1,16 +1,8 @@
-# Real AI game builds: workflows, playable demos, and complete source
+# AI game builds
 
-Primary sources reviewed on 2026-10-18. Featured cases require a creator-provided record of AI involvement, a playable or locally runnable game, and the actual game project. AI contribution is attributed to those records; it is not an independently measured percentage. Study steps are GameMap editorial guidance.
+Play a project, read its creator's build notes, and inspect the game source. Each entry includes a workflow to study and the setup needed to run it.
 
-44 reviewed cases: **28 2D** and **16 3D**; 37 browser links and 7 local downloads.
-
-## Search scope and selection
-
-Discovery covered public GitHub projects, creator sites, itch.io and game-jam pages, Hacker News and Reddit posts, and English, Chinese, and Japanese search terms for AI-built 2D/3D games, Claude Code, Codex, Cursor, Gemini, DeepSeek, and Copilot. Community lists are discovery leads; each counted case links primary author evidence and its actual game source.
-
-A README AI disclosure is labeled separately from a prompt, transcript, development log, or tutorial. Some entries are prototypes. A collection is counted as one case unless its individual games have separately reviewed gameplay and source. Browser access is checked where practical; download entries state their setup requirements, and known unavailable hosts are disclosed. Screenshots identify GameMap captures or creator-published gameplay, with provenance in the media guide. This is a growing reviewed collection, not an exhaustive inventory of every community game or a claim that all games were fully reproduced.
-
-## AI-built games
+## Games and source
 
 | Game | Dimension | AI production record | Play or run | Complete game source |
 | --- | --- | --- | --- | --- |
@@ -87,13 +79,13 @@ Jump a pixel dinosaur over cacti and avoid flying obstacles while the score and 
 
 - [See the creator’s Gemini CLI disclosure](https://github.com/tonidevvn/dinosaur-game-offline#how-gemini-cli-helped) — README, repository description, and the in-game footer explicitly name gemini-cli. This establishes creator attribution rather than independent proof of fully autonomous generation.
 - [Read how Gemini CLI helped](https://github.com/tonidevvn/dinosaur-game-offline#how-gemini-cli-helped)
-- [Play Dinosaur Game Offline](https://tonidevvn.github.io/dinosaur-game-offline/) — Author-hosted browser build, checked in Chromium. Space starts and jumps; after a collision, click the restart icon. Desktop keyboard recommended because the board has a fixed 900-pixel width. The full project can also run locally by opening index.html.
+- [Play Dinosaur Game Offline](https://tonidevvn.github.io/dinosaur-game-offline/) — Author-hosted browser build; earlier catalog notes report a Chromium check, not independently revalidated here. Space starts and jumps; after a collision, click the restart icon. Desktop keyboard recommended because the board has a fixed 900-pixel width. The full project can also run locally by opening index.html.
 - [Open the complete dinosaur game source](https://github.com/tonidevvn/dinosaur-game-offline) — Complete index.html, style.css, script.js, and referenced image/audio assets. Public source is available, but the repository does not declare a code license.
 
 **Study this AI workflow**
 
 1. Open the author-hosted browser game on a desktop with a keyboard. Press Space once to start, then press Space again to jump over an approaching cactus.
-2. Watch the score rise, test a collision, and use the restart icon after game over. The live build was smoke-tested for start, jumping, scoring, collision, and restart; the preview was captured during a real jump.
+2. Watch the score rise, test a collision, and use the restart icon after game over. Earlier catalog notes report a start/jump/score/collision/restart smoke test and a preview captured during a jump. That run was not repeated or independently validated in this source-only review.
 3. To run locally, download the complete dinosaur-game-offline repository and open index.html. Keep style.css, script.js, and public/ beside it. No npm installation, build step, Gemini CLI, or API key is needed to play.
 4. If a browser restricts local files, serve the repository with python3 -m http.server 8080 and open http://localhost:8080. The game board is fixed at 900 pixels wide and targets desktop keyboard play. Its optional Google Fonts stylesheet uses the network.
 5. Read the creator’s disclosure, then inspect script.js for the requestAnimationFrame loop, jump state, obstacle spawning, scoring, collision checks, and restart behavior.
@@ -394,7 +386,7 @@ An arcade flying game with a documented Gemini 2.5 Pro prompting process and a N
 
 - [Read the creator’s development approach](https://github.com/cedrickchee/vibe-jet#my-development-approach) — A creator-authored account and prompt record, not an independently verified claim that every line was generated.
 - [Read the prompt and development journey](https://github.com/cedrickchee/vibe-jet#the-initial-prompt)
-- [Download and run Vibe Jet](https://github.com/cedrickchee/vibe-jet/archive/refs/heads/main.zip) — Published live host did not resolve at review. Download source, install Node.js, run npm install then npm start, and follow the README. Desktop keyboard/mouse required.
+- [Download and run Vibe Jet](https://github.com/cedrickchee/vibe-jet/archive/refs/heads/main.zip) — Current hosted availability was not verified in this source-only pass. With Node.js 18+, run npm install. Start a static server with npx serve, then run npm start in a second terminal; npm start starts only the WebSocket server on port 8080; the browser client connects to ws://localhost:8080. Open /game.html on the static server address. Desktop keyboard/mouse required. These launch instructions were source-checked, not executed.
 - [Open the complete flight-game project](https://github.com/cedrickchee/vibe-jet) — Includes game.html, server.js, package setup, aircraft GLBs, and textures. Three.js and ground texture load online; multiplayer needs the supplied Node server.
 
 **Study this AI workflow**
@@ -919,7 +911,7 @@ Provides downloadable text-to-audio weights and local tools for sound effects an
 
 - **Tutorial (tutorial):** [Local inference and WAV export](https://huggingface.co/stabilityai/stable-audio-open-1.0#usage). Official model usage examples for stable-audio-tools and Diffusers.
 - **Demo (local-tool):** [Local audio demo setup](https://github.com/Stability-AI/stable-audio-tools#interface). Download and run the official Gradio audio interface locally; this link is setup guidance, not a hosted playable game.
-- **Source (model):** [Audio tools source](https://github.com/Stability-AI/stable-audio-tools). Public training and inference tools with separately downloadable model weights; no complete game project.
+- **Source (pipeline-source):** [Audio tools source](https://github.com/Stability-AI/stable-audio-tools). MIT-licensed training and inference code; Stable Audio Open 1.0 weights are separately gated and governed by the model's Community License. No complete game project.
 
 ### Regression Games
 
@@ -945,8 +937,14 @@ Adds conversational NPCs with speech, memory, emotion, and in-scene actions.
 - **Demo (interactive):** [Try character experiences](https://x.convai.com/). Account-required browser character experiences; these are conversations and role-play, not complete game-generation demos.
 - **Source (sdk):** [Unreal engine SDK source](https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4). Public engine integration source; the complete cloud conversation service is not included.
 
+### Level Design Book · unofficial design skill
+
+An unofficial, agent-neutral adaptation of The Level Design Book for level briefs, blockouts, encounters, wayfinding, and evidence-based playtest reviews.
+
+- **Tutorial (tutorial):** [Read the original book](https://book.leveldesignbook.com/). The underlying book remains authoritative. The skill reorganizes guidance and templates rather than claiming universal design laws or independently measured outcomes.
+- **Demo (unavailable):** Instructions and templates, not a runnable demo. No engine plugin, executable level, benchmark result, or validated playtest is supplied.
+- **Source (full-source):** [Complete skill package and license](https://github.com/OpenEnvision/GameMap/tree/main/docs/skills/level-design). Text-only package with SKILL.md, LICENSE.md, references, and templates. CC BY-NC-SA 4.0 applies to this adaptation directory, not the whole repository; commercial distribution requires appropriate permission.
+
 ## Additional asset-to-game workflow
 
 The [Tripo Vibe Gaming Interactive Playbook](https://github.com/TripoGrowthLab/vibe-gaming-interactive-playbook) publishes a staged AI coding and generated-model workflow with playable 3D examples. Its public game code runs with greybox objects because the Tripo model files are not bundled. It is useful production guidance, but is not counted among the featured complete game-and-asset projects above.
-
-Source review and browser smoke testing do not establish full reproduction, complete gameplay coverage, or the availability of every third-party service.

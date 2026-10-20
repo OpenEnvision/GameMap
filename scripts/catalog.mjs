@@ -1,18 +1,26 @@
 import {readdir, readFile} from 'node:fs/promises';
-export const categories=[['agents','Coding agents and game development bridges'],['engines','Game engines, DCC tools, and ecosystems'],['2d','AI for 2D game development'],['3d','AI for 3D game development'],['production','Game production: art, animation, audio, testing, and runtime AI'],['world','Code world models and interactive worlds']];
-export const types={agent:'Agent',framework:'Framework',skill:'Skill',benchmark:'Benchmark',paper:'Paper',docs:'Documentation',tool:'Tool',community:'Community',dataset:'Dataset'};
-export const stages={plan:'Planning',code:'Coding',assets:'Assets',scene:'Scenes',test:'Testing',ship:'Shipping',runtime:'Runtime AI',world:'World models'};
-const accessKinds=['tutorial','playable','interactive','video','download','full-source','sdk','examples','model','local-tool','pipeline-source','service','unavailable'];
+const taxonomy=JSON.parse(await readFile(new URL('../website/content/taxonomy.json',import.meta.url),'utf8'));
+export const categories=Object.entries(taxonomy.categories).map(([id,{documentLabel}])=>[id,documentLabel]);
+export const types=taxonomy.types;
+export const stages=Object.fromEntries(Object.entries(taxonomy.stages).map(([id,entry])=>[id,entry.documentLabel]));
+const accessKinds=Object.keys(taxonomy.accessKinds);
 export async function loadCatalog(){
  const files=(await readdir(new URL('../data/segments/',import.meta.url))).filter(f=>f.endsWith('.json')).sort();
- const sections=await Promise.all(files.map(f=>readFile(new URL('../data/segments/'+f,import.meta.url),'utf8').then(JSON.parse)));
+ const contracts=JSON.parse(await readFile(new URL('../website/content/sources.config.json',import.meta.url),'utf8'));
+ const sections=await Promise.all(files.map(async f=>{
+  const rule=contracts['data/segments/'+f]?.exports?.default;
+  if(rule&&rule.kind!=='resource')return [];
+  const section=JSON.parse(await readFile(new URL('../data/segments/'+f,import.meta.url),'utf8'));
+  if(!Array.isArray(section))throw Error(`Unclassified segment ${f}: declare its kind in website/content/sources.config.json`);
+  return section;
+ }));
  const all=sections.flat();
  const records=categories.flatMap(([id])=>all.filter(r=>r.category===id));
  if(records.length!==all.length)throw Error('Unknown category in data segments');
  return records;
 }
 export function validate(records){
- const ids=new Set(),urls=new Set();const dimensions=['2d','3d','world'];
+ const ids=new Set(),urls=new Set();const dimensions=Object.keys(taxonomy.dimensions);
  for(const r of records){
   for(const key of ['id','name','category','type','summary','detail','url','verified'])if(typeof r[key]!=='string'||!r[key].trim())throw Error(`Missing ${key}: ${r.id}`);
   if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(r.id))throw Error(`Invalid ID: ${r.id}`);
@@ -47,8 +55,9 @@ export function renderAwesome(records){
 
 **${total} curated primary sources** connecting coding agents, game engines, AI for 2D and 3D development, production tools, and code world models. Main source review date: **October 18, 2026**. This is a research snapshot: reviewing a source does not imply reproducing its results or continuously monitoring it.
 
-- [Interactive GameMap website](https://gamemap-ai-atlas.jiadonghou69.chatgpt.site) (initially published as owner-private)
+- [Interactive GameMap website — GitHub Pages](https://openenvision.github.io/GameMap/)
 - [A practical guide from resources to a working project](docs/practical-guide.md)
+- [Production research: interfaces, evidence and generative-service boundaries](docs/research-index.md)
 - [Tutorials, playable demos, and complete example-game source](docs/tutorials-and-demos.md)
 - [Coding agents × games: skills, bridges, evaluations, and game code](docs/coding-agent-game-code.md)
 - [Testing library: games, AI environments, assets, rigs, and motion data](docs/game-testing-library.md)
@@ -64,7 +73,7 @@ export function renderAwesome(records){
 | Benchmark | Repeatable development evaluation | Tasks, scoring scripts, environments, and versions |
 | Paper / world model | Executable state, neural simulation, or hybrid rendering | World representation, action interface, long-term consistency, and public availability |
 
-**Editorial notes.** DeepSeek is listed through its model integration documentation, rather than as an official standalone harness. Blender is a DCC application and Three.js is a 3D library; their roles differ from those of full game engines. Development, gameplay, and modeling evaluations are considered separately. SolarRenderer and StreamRender-H3 belong to the structure- or engine-driven hybrid rendering track; pure video world models are labeled separately. The roadmaps and acceptance criteria are GameMap editorial guidance.
+**Tool roles.** DeepSeek is listed through its model integration documentation, rather than as an official standalone harness. Blender is a DCC application and Three.js is a 3D library; their roles differ from those of full game engines. Development, gameplay, and modeling evaluations are considered separately. SolarRenderer and StreamRender-H3 belong to the structure- or engine-driven hybrid rendering track; pure video world models are labeled separately.
 
 ## Contents
 
@@ -103,23 +112,3 @@ Edit only \`data/segments/*.json\` for catalog content. Run \`npm run build\` to
 `;
  return text;
 }
-
-export function renderReadme(awesome){return awesome+`
-## Run locally
-
-\`\`\`sh
-npm ci
-npm run build
-npm run dev
-\`\`\`
-
-Use the development URL printed by Vite. The root \`index.html\` is a preview you can open directly in a browser, with scripts and styles embedded. Keep the \`website/public/\` folder alongside it for local images, icons, and documents. The development entry is \`website/index.html\`; application source lives in \`website/src/\`. Running \`npm run build\` updates the root preview and generates \`dist/\` for hosting.
-
-Homepage video previews and posters are bundled locally. Full films, external project pages, and web fonts require an internet connection. No API key is required. Saved resources stay in the current browser and can be exported as Markdown. The website uses React, TypeScript, and Vite, with native SVG and CSS graphics.
-
-## Deploy to GitHub Pages
-
-The repository includes \`.github/workflows/deploy-pages.yml\`. In your GitHub repository, go to **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. A push to \`main\` installs dependencies, builds the site, checks the catalog, and publishes \`dist/\`. You can also run the workflow manually from the Actions tab.
-
-Relative asset and document URLs support repository paths such as \`https://<username>.github.io/<repository>/\`. The workflow publishes \`dist/\`; the root \`index.html\` is for direct preview. Rebuild after editing the source. See the [official GitHub Pages workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
-`;}

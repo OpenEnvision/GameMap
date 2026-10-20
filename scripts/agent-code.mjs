@@ -116,9 +116,7 @@ export function renderAgentCodeGuide(resources,cases,caseAgents,labels,kinds){
  validateAgentCodeContent(resources,cases,caseAgents,labels,kinds);
  let text=`# Coding agents × game development: code resources and game sources
 
-**${resources.length} reviewed code resources** connect coding agents to game development. Separately, **${cases.length} reviewed game cases** link actual game projects and creator AI evidence. These are separate counts: a workflow or bridge is not another game, and a game may use several tools.
-
-Resources contain implementation source, agent instructions, or both. A source review does not mean that a resource was installed, executed, or independently reproduced. Review dates and publisher status are recorded per resource. Counts describe collection size, not how many entries were newly added.
+Find engine bridges, implementation code, and setup instructions for coding agents. To study a complete project, use the [game cases](tutorials-and-demos.md); to check permissions and reset behavior, use the [interface notes](agent-interface-evidence.md).
 
 ## Read the attribution correctly
 
@@ -126,17 +124,15 @@ Coding-agent clients and harnesses are distinguished from underlying models and 
 
 ## Resources and games by agent attribution
 
-A resource or game can appear in several rows; row counts overlap.
-
-| Client, harness, or model attribution | Code resources | Game cases | Resource links |
-| --- | --- | --- | --- |
+| Client, harness, or model attribution | Code and instructions | Game projects |
+| --- | --- | --- |
 `;
  for(const [agent,label] of Object.entries(labels)){
   const matches=resources.filter(resource=>resource.agents.includes(agent));
   const games=cases.filter(game=>caseAgents[game.id].includes(agent));
   if(!matches.length&&!games.length)continue;
   const links=matches.map(resource=>link(resource.title,resource.codeUrl)).join(' · ')||'—';
-  text+=`| ${inline(label)} | ${matches.length} | ${games.length} | ${links} |\n`;
+  text+=`| ${inline(label)} | ${links} | ${games.map(game=>link(game.title,game.source.url)).join(' · ')||'—'} |\n`;
  }
 
  text+='\n## Reviewed code resources\n\n';
@@ -152,14 +148,14 @@ ${link('Code / instructions',resource.codeUrl)} · ${link('Review evidence',reso
 - **Material:** ${codeTypes[resource.codeType]}.
 - **Scope:** ${inline(resource.codeScope)}
 - **Limitations:** ${inline(resource.limitations)}
-- **Publisher:** ${inline(resource.publisher)} · ${resource.official?'Official publisher source':'Community / independent source'} · reviewed ${resource.reviewed}.
+- **Publisher:** ${inline(resource.publisher)} · ${resource.official?'Official publisher source':'Community / independent source'}.
 
 `;
  }
 
  text+=`## Game cases: actual attribution and complete source
 
-These ${cases.length} games are the game-case collection, separate from the ${resources.length} code resources above. Client/model labels follow the creator evidence, rather than the game's related-tool links. The creator record describes AI involvement; it is not an independently measured authorship percentage.
+Open the game project alongside its creator's build record and playable or local release.
 
 | Game | Creator-attributed client or model | Actual game source | Creator AI evidence |
 | --- | --- | --- | --- |
