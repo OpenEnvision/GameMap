@@ -4,6 +4,7 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {build} from 'esbuild';
 import {parse} from 'parse5';
+import {assetFile,publicAssetPath} from './lib/assets.mjs';
 import {categories,loadCatalog,validate,renderAwesome} from './catalog.mjs';
 import {loadLearningContent,renderLearningGuide} from './learning.mjs';
 import {loadAgentCodeContent,validateAgentCodeContent,renderAgentCodeGuide} from './agent-code.mjs';
@@ -97,7 +98,7 @@ function inspectWebp(bytes,label){
 const learningMediaBundle=await build({absWorkingDir:fileURLToPath(new URL('../',import.meta.url)),entryPoints:['website/src/data/learningMedia.ts'],bundle:true,write:false,format:'esm',platform:'node'});
 const {learningMedia}=await import('data:text/javascript;base64,'+Buffer.from(learningMediaBundle.outputFiles[0].text).toString('base64'));
 assert.deepEqual(Object.keys(learningMedia).sort(),learningPaths.map(path=>path.id).sort(),'Every featured AI game needs one real screenshot; engine foundations are excluded');
-const learningManifestText=await readFile(new URL('../website/public/media/learning/manifest.json',import.meta.url),'utf8');
+const learningManifestText=await readFile(assetFile(publicAssetPath('media/learning/manifest.json')),'utf8');
 const learningManifest=JSON.parse(learningManifestText);
 assert.equal(learningManifest.kind,'gameplay-screenshots');
 assert.deepEqual(learningManifest.previews.map(preview=>preview.id),learningPaths.map(path=>path.id),'Gameplay provenance must follow the rendered cases');
@@ -105,7 +106,7 @@ const mediaSources=await readFile(new URL('../docs/media-sources.md',import.meta
 let gameplayPreviewBytes=0;
 for(const path of learningPaths){
  const preview=learningMedia[path.id],provenance=learningManifest.previews.find(item=>item.id===path.id);
- assert.equal(preview.src,`media/learning/${path.id}.webp`,`Gameplay screenshots must be bundled locally: ${path.id}`);
+ assert.equal(preview.src,publicAssetPath(`media/learning/${path.id}.webp`),`Gameplay screenshots must be bundled locally: ${path.id}`);
  for(const field of ['alt','caption'])assert.ok(preview[field]?.trim(),`Missing gameplay screenshot ${field}: ${path.id}`);
  assert.equal(new URL(preview.sourceUrl).protocol,'https:');
  const creatorScreenshot=preview.origin==='creator-screenshot';
@@ -130,8 +131,8 @@ for(const path of learningPaths){
  if(checkBuilt)assert.deepEqual(await readFile(new URL('../dist/'+preview.src,import.meta.url)),bytes,`Rebuild deployed gameplay screenshot: ${path.id}`);
  gameplayPreviewBytes+=bytes.length;
 }
-assert.deepEqual((await readdir(new URL('../website/public/media/learning/',import.meta.url))).filter(name=>name.endsWith('.webp')).sort(),Object.values(learningMedia).map(preview=>preview.src.split('/').at(-1)).sort(),'Record every bundled gameplay screenshot');
-if(checkBuilt)assert.equal(await readFile(new URL('../dist/media/learning/manifest.json',import.meta.url),'utf8'),learningManifestText,'Rebuild deployed gameplay provenance');
+assert.deepEqual((await readdir(assetFile(publicAssetPath('media/learning/')))).filter(name=>name.endsWith('.webp')).sort(),Object.values(learningMedia).map(preview=>preview.src.split('/').at(-1)).sort(),'Record every bundled gameplay screenshot');
+if(checkBuilt)assert.equal(await readFile(new URL('../dist/'+publicAssetPath('media/learning/manifest.json'),import.meta.url),'utf8'),learningManifestText,'Rebuild deployed gameplay provenance');
 assert.equal(await readFile(new URL('../website/public/media-sources.md',import.meta.url),'utf8'),mediaSources.replaceAll('../website/public/','./'),'Regenerate public media attribution');
 console.log(`Learning-preview checks passed: ${learningPaths.length} real-game screenshots, matched source URLs, 16:9 WebP pixels, ${checkBuilt?'public/deployment':'public'} integrity, ${(gameplayPreviewBytes/1_000_000).toFixed(2)} MB total.`);
 
@@ -153,7 +154,7 @@ for(const resource of records){
   textOnly.push(resource.id);
   continue;
  }
- assert.match(identity.asset,/^logos\/[a-z0-9-]+\.(png|jpg|svg|webp|ico|gif)$/,`Logo must be bundled locally: ${resource.id}`);
+ assert.match(identity.asset,/^assets\/logos\/[a-z0-9-]+\.(png|jpg|svg|webp|ico|gif)$/,`Logo must be bundled locally: ${resource.id}`);
  assert.equal(new URL(identity.logoSourceUrl).protocol,'https:');
  const bytes=await readFile(new URL('../website/public/'+identity.asset,import.meta.url));
  assert.equal(createHash('sha256').update(bytes).digest('hex'),identity.sha256,`Logo integrity mismatch: ${resource.id}`);
@@ -223,7 +224,7 @@ function inspectMp4(bytes,label){
  return {width:bytes.readUInt32BE(tkhd.end-8)/65536,height:bytes.readUInt32BE(tkhd.end-4)/65536,durationSeconds:duration/timescale,frameRate:samples/(ticks/timescale),audioTracks:tracks.filter(track=>track.handler==='soun').length,codec:sampleEntries[0].type};
 }
 
-const {clips,variants=[],libraryClips=[]}=JSON.parse(await readFile(new URL('../website/public/media/showcase/manifest.json',import.meta.url),'utf8'));
+const {clips,variants=[],libraryClips=[]}=JSON.parse(await readFile(assetFile(publicAssetPath('media/showcase/manifest.json')),'utf8'));
 const bundle=await build({absWorkingDir:fileURLToPath(new URL('../',import.meta.url)),entryPoints:['website/src/data/recordings.ts'],bundle:true,write:false,format:'esm',platform:'node',define:{'import.meta.env.BASE_URL':'"./"'}});
 const {recordings}=await import('data:text/javascript;base64,'+Buffer.from(bundle.outputFiles[0].text).toString('base64'));
 const showcaseCases=Object.fromEntries(recordings.flatMap(recording=>recording.views.filter(view=>view.role==='excerpt').map(view=>[view.id,{...view,video:{previewSrc:view.previewSrc,src:recording.originalUrl,source:view.sourceUrl}}])));
@@ -237,11 +238,11 @@ for(const track of ['2d','3d','world']){
 assert.equal(new Set([...clips,...variants,...libraryClips].map(clip=>clip.id)).size,clips.length+variants.length+libraryClips.length,'Duplicate media provenance IDs');
 assert.equal(new Set([...clips,...variants,...libraryClips].map(clip=>clip.asset)).size,clips.length+variants.length+libraryClips.length,'Each media record must name its own asset');
 const declaredMedia=[...clips,...variants,...libraryClips].flatMap(clip=>[clip.asset.split('/').at(-1),clip.poster.split('/').at(-1)]).sort();
-const bundledMedia=(await readdir(new URL('../website/public/media/showcase/',import.meta.url))).filter(name=>/\.(?:mp4|webp)$/.test(name)).sort();
+const bundledMedia=(await readdir(assetFile(publicAssetPath('media/showcase/')))).filter(name=>/\.(?:mp4|webp)$/.test(name)).sort();
 assert.deepEqual(bundledMedia,declaredMedia,'Remove unused demo files and record every bundled video/poster in provenance');
 async function checkLocalPreview(clip){
- assert.match(clip.asset,/^media\/showcase\/[a-z0-9-]+\.mp4$/);
- assert.match(clip.poster,/^media\/showcase\/[a-z0-9-]+\.webp$/);
+ assert.match(clip.asset,/^assets\/media\/showcase\/[a-z0-9-]+\.mp4$/);
+ assert.match(clip.poster,/^assets\/media\/showcase\/[a-z0-9-]+\.webp$/);
  const mp4=await readFile(new URL('../website/public/'+clip.asset,import.meta.url));
  const poster=await readFile(new URL('../website/public/'+clip.poster,import.meta.url));
  assert.equal(mp4.length,clip.bytes,`Video size: ${clip.id}`);

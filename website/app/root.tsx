@@ -66,7 +66,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#fffcfb" />
-        <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+        <link rel="icon" href={`${import.meta.env.BASE_URL}assets/brand/favicon.svg`} />
         <Meta />
         {canonical && <link rel="canonical" href={absolute(canonical)} />}
         {Object.entries(alternates).map(([language, path]) => (

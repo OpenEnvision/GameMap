@@ -9,7 +9,7 @@ export function Brand() {
   return (
     <span className="atlas-brand">
       <img
-        src={`${import.meta.env.BASE_URL}brand/gamemap-mark.svg`}
+        src={`${import.meta.env.BASE_URL}assets/brand/gamemap-mark.svg`}
         width="29"
         height="29"
         alt=""

@@ -28,9 +28,27 @@ The generator synchronizes the Awesome List, website data, and downloadable dire
 
 ### What belongs in Git
 
-Keep application source in `website/app/`, catalog/case data in `website/src/`, `package-lock.json`, `data/`, `docs/`, and source assets/downloads under `website/public/` versioned. Generated editorial files stay committed so reviewers can inspect catalog and documentation changes; CI checks their consistency.
+Keep application source in `website/app/`, catalog/case data in `website/src/`, `package-lock.json`, `data/`, `docs/`, and static source assets under `website/public/assets/`, and downloadable Markdown/JSON under `website/public/` versioned. Generated editorial files stay committed so reviewers can inspect catalog and documentation changes; CI checks their consistency.
 
-Do not commit dependencies, `dist/` or `website/dist/`, legacy root previews, `.build/`, `.react-router/`, prepared documents in `website/.content/`, copied `website/public/docs-assets/`, TypeScript/Vite/lint caches, coverage and browser-test reports, agent traces, logs, temporary files, local environment secrets, or machine-specific editor/OS files. Build outputs are regenerated in CI and only `dist/` is published to GitHub Pages. Keep shareable environment configuration in `.env.example`, `.env.sample`, or `.env.template`, without secrets. The `.gitignore` deliberately does not hide source media, lockfiles, shared VS Code configuration, or environment templates.
+Do not commit dependencies, `dist/` or `website/dist/`, legacy root previews, `.build/`, `.react-router/`, prepared documents in `website/.content/`, copied `website/public/assets/docs/`, TypeScript/Vite/lint caches, coverage and browser-test reports, agent traces, logs, temporary files, local environment secrets, or machine-specific editor/OS files. Build outputs are regenerated in CI and only `dist/` is published to GitHub Pages. Keep shareable environment configuration in `.env.example`, `.env.sample`, or `.env.template`, without secrets. The `.gitignore` deliberately does not hide source media, lockfiles, shared VS Code configuration, or environment templates.
+
+### Static assets
+
+Keep website images, logos, icons, audio, video, and source fonts in `website/public/assets/`, grouped as follows:
+
+```text
+website/public/assets/
+├── brand/     # GameMap mark and generated favicon
+├── logos/     # Verified resource identities
+├── icons/     # Preserved legacy artwork and its licenses
+├── fonts/     # Optional source fonts, with their licenses
+├── media/     # demos/, editorial/, learning/, showcase/
+└── docs/      # Generated document-image copies; not committed
+```
+
+Use site-relative `assets/...` paths in source records and `publicAsset()` when rendering them; do not add locale prefixes or hard-code `/GameMap/`. Keep media provenance, original URLs, checksums, and license notices alongside their existing records. `website/assets.config.json` defines the groups, generated paths, and old URL aliases. Only `scripts/finalize-build.mjs` creates compatibility copies outside `assets/` in `dist/`; do not recreate the old directories in `website/public/`. The asset checks verify canonical files and byte-identical compatibility URLs.
+
+Keep research data in `data/`, readable source articles and their original attachments in `docs/`, and reproducible skill downloads in the existing distribution workflow. They are not a second website asset directory.
 
 The Cadle-like research inventory is maintained in `data/segments/repository-research.json`. Its complete source-candidate membership and review statuses are validated; `docs/cadle-repositories.md` and public Markdown/JSON downloads are generated. These research rows do not automatically become resource cards or featured playable cases.
 

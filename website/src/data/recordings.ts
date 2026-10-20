@@ -15,8 +15,8 @@ export const recordings: Recording[] = [
         "role": "excerpt",
         "alt": "OpenGame · Portal runner — a frame from the official project recording",
         "track": "2d",
-        "previewSrc": publicAsset("media/showcase/opengame-portal.mp4"),
-        "poster": publicAsset("media/showcase/opengame-portal.webp"),
+        "previewSrc": publicAsset("assets/media/showcase/opengame-portal.mp4"),
+        "poster": publicAsset("assets/media/showcase/opengame-portal.webp"),
         "sourceUrl": "https://yelonhu.github.io/OpenGame-landing-page/",
         "credit": "OpenGame · CUHK MMLab"
       }
@@ -34,8 +34,8 @@ export const recordings: Recording[] = [
         "role": "excerpt",
         "alt": "OpenGame · Space-station skirmish — a frame from the official project recording",
         "track": "2d",
-        "previewSrc": publicAsset("media/showcase/opengame-skirmish.mp4"),
-        "poster": publicAsset("media/showcase/opengame-skirmish.webp"),
+        "previewSrc": publicAsset("assets/media/showcase/opengame-skirmish.mp4"),
+        "poster": publicAsset("assets/media/showcase/opengame-skirmish.webp"),
         "sourceUrl": "https://yelonhu.github.io/OpenGame-landing-page/",
         "credit": "OpenGame · CUHK MMLab"
       }
@@ -53,8 +53,8 @@ export const recordings: Recording[] = [
         "role": "excerpt",
         "alt": "3AGameFactory · Courtyard combat — a frame from the official project recording",
         "track": "3d",
-        "previewSrc": publicAsset("media/showcase/gamefactory-ue5-combat.mp4"),
-        "poster": publicAsset("media/showcase/gamefactory-ue5-combat.webp"),
+        "previewSrc": publicAsset("assets/media/showcase/gamefactory-ue5-combat.mp4"),
+        "poster": publicAsset("assets/media/showcase/gamefactory-ue5-combat.webp"),
         "sourceUrl": "https://github.com/OpenDCAI/GameFactory-3A#ue5",
         "credit": "OpenDCAI · Unreal Engine 5 gameplay"
       }
@@ -72,8 +72,8 @@ export const recordings: Recording[] = [
         "role": "excerpt",
         "alt": "3AGameFactory · Village quest — a frame from the official project recording",
         "track": "3d",
-        "previewSrc": publicAsset("media/showcase/gamefactory-ue5-rpg.mp4"),
-        "poster": publicAsset("media/showcase/gamefactory-ue5-rpg.webp"),
+        "previewSrc": publicAsset("assets/media/showcase/gamefactory-ue5-rpg.mp4"),
+        "poster": publicAsset("assets/media/showcase/gamefactory-ue5-rpg.webp"),
         "sourceUrl": "https://github.com/OpenDCAI/GameFactory-3A#ue5",
         "credit": "OpenDCAI · Unreal Engine 5 gameplay"
       }
@@ -91,14 +91,14 @@ export const recordings: Recording[] = [
         "role": "excerpt",
         "alt": "StreamRender-H3 · Engine to neural render — a frame from the official project recording",
         "track": "world",
-        "previewSrc": publicAsset("media/showcase/streamrender-car.mp4"),
-        "poster": publicAsset("media/showcase/streamrender-car.webp"),
+        "previewSrc": publicAsset("assets/media/showcase/streamrender-car.mp4"),
+        "poster": publicAsset("assets/media/showcase/streamrender-car.webp"),
         "sourceUrl": "https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/",
         "credit": "NVIDIA Research · official input / output comparison",
         "aspectRatio": 3.5,
         "mobilePreview": {
-          "src": publicAsset("media/showcase/streamrender-car-mobile.mp4"),
-          "poster": publicAsset("media/showcase/streamrender-car-mobile.webp"),
+          "src": publicAsset("assets/media/showcase/streamrender-car-mobile.mp4"),
+          "poster": publicAsset("assets/media/showcase/streamrender-car-mobile.webp"),
           "aspectRatio": 0.8759124087591241
         }
       },
@@ -109,7 +109,7 @@ export const recordings: Recording[] = [
         "role": "source-recording",
         "track": "world",
         "previewSrc": "https://huggingface.co/datasets/Efficient-Large-Model/Sana-assets/resolve/main/Sol-Engine/StreamRender-H3/blog-assets/engine-vs-render-single-car.mp4",
-        "poster": publicAsset("media/demos/streamrender-h3.webp"),
+        "poster": publicAsset("assets/media/demos/streamrender-h3.webp"),
         "alt": "Official StreamRender-H3 car comparison: engine output on the left and diffusion rendering on the right",
         "sourceUrl": "https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/",
         "credit": "NVIDIA · StreamRender-H3"
@@ -128,8 +128,8 @@ export const recordings: Recording[] = [
         "role": "excerpt",
         "alt": "SolarRenderer · Voxel world, reimagined — a frame from the official project recording",
         "track": "world",
-        "previewSrc": publicAsset("media/showcase/solar-voxel.mp4"),
-        "poster": publicAsset("media/showcase/solar-voxel.webp"),
+        "previewSrc": publicAsset("assets/media/showcase/solar-voxel.mp4"),
+        "poster": publicAsset("assets/media/showcase/solar-voxel.webp"),
         "sourceUrl": "https://enderfga.cn/SolarRenderer/",
         "credit": "SolarRenderer authors · official model output"
       }
@@ -147,7 +147,7 @@ export const recordings: Recording[] = [
         "role": "source-recording",
         "track": "world",
         "previewSrc": "https://enderfga.cn/SolarRenderer/media/hero/oasis-street__cyberpunk.mp4",
-        "poster": publicAsset("media/demos/solarrenderer.webp"),
+        "poster": publicAsset("assets/media/demos/solarrenderer.webp"),
         "alt": "Official SolarRenderer cyberpunk render showing pedestrians on a rainy neon-lit street",
         "sourceUrl": "https://enderfga.cn/SolarRenderer/",
         "credit": "SolarRenderer authors · official model output",
@@ -167,7 +167,7 @@ export const recordings: Recording[] = [
         "role": "source-recording",
         "track": "2d",
         "previewSrc": "https://yelonhu.github.io/OpenGame-landing-page/demos/hajimi.mp4",
-        "poster": publicAsset("media/demos/opengame.webp"),
+        "poster": publicAsset("assets/media/demos/opengame.webp"),
         "alt": "Official OpenGame poster for the pixel game Hajimi Defense: The Tuna Crisis",
         "sourceUrl": "https://yelonhu.github.io/OpenGame-landing-page/#demo",
         "credit": "OpenGame · CUHK MMLab"
@@ -186,7 +186,7 @@ export const recordings: Recording[] = [
         "role": "source-recording",
         "track": "3d",
         "previewSrc": "https://microsoft.github.io/TRELLIS/assets/teaser.mp4",
-        "poster": publicAsset("media/demos/trellis.webp"),
+        "poster": publicAsset("assets/media/demos/trellis.webp"),
         "alt": "Official Microsoft TRELLIS teaser showing a collection of generated 3D assets",
         "sourceUrl": "https://microsoft.github.io/TRELLIS/",
         "credit": "TRELLIS · Microsoft Research"
@@ -205,7 +205,7 @@ export const recordings: Recording[] = [
         "role": "source-recording",
         "track": "3d",
         "previewSrc": "https://infinigen.org/img/random_sample_articulated.mp4",
-        "poster": publicAsset("media/demos/infinigen.webp"),
+        "poster": publicAsset("assets/media/demos/infinigen.webp"),
         "alt": "Official Infinigen samples of procedurally generated forests, underwater scenes, deserts, and mountains",
         "sourceUrl": "https://infinigen.org/",
         "credit": "Infinigen · Princeton Vision & Learning Lab"
@@ -223,8 +223,8 @@ export const recordings: Recording[] = [
         "description": "An author-published tour of a generated bohemian living room.",
         "role": "source-recording",
         "track": "3d",
-        "previewSrc": publicAsset("media/showcase/holodeck-living.mp4"),
-        "poster": publicAsset("media/showcase/holodeck-living.webp"),
+        "previewSrc": publicAsset("assets/media/showcase/holodeck-living.mp4"),
+        "poster": publicAsset("assets/media/showcase/holodeck-living.webp"),
         "alt": "A frame from the official Holodeck recording of a generated bohemian living room",
         "sourceUrl": "https://yueyang.ai/holodeck/",
         "credit": "Holodeck authors · generated bohemian living room"

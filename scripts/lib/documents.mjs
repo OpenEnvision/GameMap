@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 import { parseFragment } from "parse5";
 import { execFileSync } from 'node:child_process';
+import { publicAssetPath } from './assets.mjs';
 
 export const root = fileURLToPath(new URL("../../", import.meta.url));
 // Raw HTML is source content too. Review new tags/attributes rather than dropping or executing them.
@@ -151,7 +152,7 @@ export function documentLinkResolver(documents, assetBase = "/") {
     if (!publicPath.startsWith("..")) return assetBase + publicPath + suffix;
     const docPath = slash(relative(resolve(root, "docs"), absolute));
     if (!docPath.startsWith("..") && image)
-      return assetBase + "docs-assets/" + docPath + suffix;
+      return assetBase + publicAssetPath("docs/" + docPath) + suffix;
     if (absolute === resolve(root, "data/resources.json"))
       return assetBase + "resources.json" + suffix;
     return url;

@@ -2,6 +2,7 @@ import { readFile, writeFile, cp, rm } from "node:fs/promises";
 import { execFileSync } from 'node:child_process';
 import { gzipSync } from 'node:zlib';
 import { loadContent, contentDigest } from "./lib/content.mjs";
+import { writeLegacyAssetAliases } from './lib/assets.mjs';
 
 const base = (
   "/" +
@@ -25,6 +26,8 @@ if (base !== "/") {
   await cp(directory, "dist", { recursive: true });
   await rm(directory, { recursive: true, force: true });
 }
+// Compatibility copies are build artifacts, not a second authored asset tree.
+await writeLegacyAssetAliases('dist');
 await cp("dist/404/index.html", "dist/404.html");
 await rm("dist/__spa-fallback.html", { force: true });
 await writeFile(

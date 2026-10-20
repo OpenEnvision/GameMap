@@ -20,6 +20,8 @@ dist/
 /.build/
 /.react-router/
 /website/.content/
+/website/public/assets/docs/
+# Previous generated image cache (cleaned by prepare-docs.mjs).
 /website/public/docs-assets/
 
 # TypeScript, Vite, lint, and other disposable tool caches.
