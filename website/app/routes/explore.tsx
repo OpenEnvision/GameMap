@@ -77,6 +77,7 @@ export default function Explore() {
     };
   }, [query, locale]);
   const ready = result?.query === query && result?.locale === locale;
+  const ranks = new Map((ready ? result.keys : []).map((key, index) => [key, index]));
   const filtered = entries.filter(
     (entry) =>
       (selectedKind === "all" || entry.kind === selectedKind) &&
@@ -86,7 +87,8 @@ export default function Explore() {
             `${entry.title} ${entry.originalTitle || ""} ${entry.description}`,
             query,
           )),
-  );
+  ).sort((a, b) => query && ready ? (ranks.get(a.key) ?? Infinity) - (ranks.get(b.key) ?? Infinity) : 0);
+  const matchingKinds = entries.filter((entry) => !query || ranks.has(entry.key));
   const change = (key: string, value: string) =>
     setParams(
       (previous) => {
@@ -136,14 +138,22 @@ export default function Explore() {
           </select>
         </label>
       </div>
-      <nav className="content-overview" aria-label={t("Content types")}>
-        {Object.entries(contentKinds).map(([kind, definition]) => (
-          <a key={kind} href={`#${kind}`}>
-            {t(definition.plural)}
-            <span>{counts[kind]}</span>
-          </a>
-        ))}
-      </nav>
+      {(query ? matchingKinds : filtered).length > 0 && (
+        <nav className="content-overview" aria-label={t("Content types")}>
+          {query && <button aria-pressed={selectedKind === "all"} onClick={() => change("kind", "all")}>{t("All content types")}</button>}
+          {Object.entries(contentKinds)
+            .filter(([kind]) => (query ? matchingKinds : filtered).some((entry) => entry.kind === kind))
+            .map(([kind, definition]) => query ? (
+              <button key={kind} aria-pressed={selectedKind === kind} onClick={() => change("kind", kind)}>
+                {t(definition.plural)}<span>{matchingKinds.filter((entry) => entry.kind === kind).length}</span>
+              </button>
+            ) : (
+              <Link key={kind} to={{pathname: "/explore/", hash: `#${kind}`, search: params.toString()}}>
+                {t(definition.plural)}<span>{filtered.filter((entry) => entry.kind === kind).length}</span>
+              </Link>
+            ))}
+        </nav>
+      )}
       {query && (!ready || result.error) && (
         <p role="status" className="reading-note">
           {t((ready && result?.error) || "Loading full-text matches…")}
@@ -154,7 +164,12 @@ export default function Explore() {
           {t("{count} results", { count: filtered.length })}
         </span>
       </div>
-      {Object.entries(contentKinds).map(([kind, definition]) => {
+      {query && filtered.length > 0 ? (
+        <section className="content-index-section search-ranked-results" aria-label={t("Results by relevance")}>
+          <h2>{t("Best matches")}</h2>
+          <div className="content-grid">{filtered.map((entry) => <ContentCard entry={entry} key={entry.key} />)}</div>
+        </section>
+      ) : Object.entries(contentKinds).map(([kind, definition]) => {
         const items = filtered.filter((entry) => entry.kind === kind);
         return items.length ? (
           <section className="content-index-section" id={kind} key={kind}>

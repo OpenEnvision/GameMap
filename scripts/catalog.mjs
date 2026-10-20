@@ -53,7 +53,7 @@ export function renderAwesome(records){
 
 > A planning map for AI game development — from an idea to a playable world.
 
-**${total} curated primary sources** connecting coding agents, game engines, AI for 2D and 3D development, production tools, and code world models. Main source review date: **October 18, 2026**. This is a research snapshot: reviewing a source does not imply reproducing its results or continuously monitoring it.
+**${total} curated primary sources** connecting coding agents, game engines, AI for 2D and 3D development, production tools, and code world models. Start with the categories below, then follow each entry's setup, release scope, and source links.
 
 - [Interactive GameMap website — GitHub Pages](https://openenvision.github.io/GameMap/)
 - [A practical guide from resources to a working project](docs/practical-guide.md)
@@ -61,6 +61,10 @@ export function renderAwesome(records){
 - [Tutorials, playable demos, and complete example-game source](docs/tutorials-and-demos.md)
 - [Coding agents × games: skills, bridges, evaluations, and game code](docs/coding-agent-game-code.md)
 - [Testing library: games, AI environments, assets, rigs, and motion data](docs/game-testing-library.md)
+- [Paper List: official code, licenses, project pages, and demo filters](https://openenvision.github.io/GameMap/papers/)
+- [Repository research: implementation access and source evidence](https://openenvision.github.io/GameMap/research/)
+- [Project demos: live experiences and recorded research cases](https://openenvision.github.io/GameMap/showcase/)
+- [Publishing platforms: Steam, itch.io, web portals, and stores](docs/publishing-platforms.md)
 - [Contributing and data maintenance](CONTRIBUTING.md) · [Structured JSON](data/resources.json)
 
 ## How to read the map

@@ -12,12 +12,15 @@ GameMap treats source content, presentation, and discovery as separate responsib
 | `website/content/fields.ts` | Exhaustive field presentation or a documented structural use |
 | `website/content/registry-core.ts` | Normalize source records without overwrites, validate identities and references, derive inventories |
 | `scripts/lib/documents.mjs` | Recursively discover Markdown; labels cannot exclude a document |
+| `website/docs.descriptions.json` | Article-specific summaries keyed by the discovered document slug |
 | `website/content/registry.server.ts` | Server/build registry; routes serialize only the data their view requires |
 | `website/content/taxonomy.json` | Shared category, stage, resource-type, and access-kind definitions |
 
 Reader-facing blocks contain explanations, instructions, links, credits, and relevant limitations. Technical metadata such as audit dates, internal flags, revision hashes, and numeric IDs stays in source records and the published content manifest; it is not rendered as an extra details panel or added to full-text search. Creation attribution, licensing categories, review status, and execution status remain reader-facing provenance.
 
 The resource directory, game examples, agent toolkit, testing library, development paths, project recordings, discovery collections, and repository research remain distinct kinds. Research candidates are not silently promoted into curated resources or verified playable cases. Engine foundations are not labeled AI-authored games.
+
+Game examples retain a primary `demo` and may publish additional creator-verified `distribution` links. Each additional link declares browser play, a downloadable build, or a store page and preserves its version and access limitations. The destination label distinguishes source archives and setup instructions from prepared game builds. Store and publishing platforms are resources at the build-and-release stage; they do not increase the AI game count. Steam presence alone establishes neither AI development nor complete public source.
 
 ## Identity and ownership
 
@@ -35,7 +38,7 @@ A resource may have multiple curated excerpts and original project recordings. T
 
 ## Documents and search
 
-Every Markdown file under `docs/` and at the repository root—including the hand-maintained README, full catalog, and contribution guide—is discovered automatically. Configured groups provide labels and order; unconfigured documents appear under More notes. Missing configured sources and duplicate slugs are errors.
+Every Markdown file under `docs/` and at the repository root—including the hand-maintained README, full catalog, and contribution guide—is discovered automatically. Configured groups provide labels and order; unconfigured documents appear under More notes. Each discovered slug needs an article-specific summary in `website/docs.descriptions.json`; group descriptions describe navigation groups rather than individual articles. Missing summaries, summaries for absent sources, missing configured sources and duplicate slugs are errors.
 
 The same registry feeds navigation, canonical links, static routes, the complete content index, and global search. Global search includes article bodies and structured fields across all kinds. The homepage, complete index, and search dialog share full-text matching over a compact static document export, without shipping a large inverted database. Collection filters use the same token-matching rules within their explicitly scoped structured fields. The full source registry is server-only; client bundles do not import the research ledger. Client-only form controls remain disabled until hydration restores browser query state; native links, disclosures, and article reading remain available without JavaScript. This prevents an early selection from being consumed by a static placeholder state.
 
@@ -73,5 +76,9 @@ Both locales are pre-rendered and checked for visible fields, owning collections
 - Add a row to an existing typed collection and keep its source evidence and limitations. Its existing adapter registers and renders it automatically.
 - For a new data module or export, declare its owner and shape in the source inventory. A fragment must also be included in its aggregate collection; independent inventory checks detect omissions.
 - For a new field or content kind, define its type and explicit presentation before publishing. Structural omissions require an explanation; unknown runtime fields fail validation.
-- Add Markdown anywhere under `docs/`. Navigation, static rendering, search, and coverage discovery follow automatically. Add an optional label to `website/docs.config.json` for deliberate placement.
+- Add Markdown anywhere under `docs/` and its specific summary to `website/docs.descriptions.json`. Navigation, static rendering, search, and coverage discovery follow automatically. Add an optional label to `website/docs.config.json` for deliberate placement.
 - Do not remove unavailable sources, historical identities, alternate recordings, attribution boundaries, or license qualifications merely to simplify a view.
+
+## Typed recording presentations
+
+A recording owns one original media URL and one or more presentation views. The Showcase groups those views before filtering and preserves links to every view. Each view may declare `demoType` (gameplay, assets, scenes, world-model or workflow), a documented `engine`, an `exampleId` linking to a registered game case, and reader-facing `limitations`. These fields participate in the normal content, search, translation and rendered-field coverage. A source-recording view may use a short local preview of its original animation; its role preserves source identity, while limitations and the media manifest record the preview duration. Local previews require checksummed video and poster provenance; remote previews require checksummed local posters and remain `preload="none"`.

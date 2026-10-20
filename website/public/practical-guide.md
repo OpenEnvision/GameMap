@@ -2,6 +2,112 @@
 
 Start with a small playable loop. Choose the target platform, set a concrete task for the agent, and check the result in the running game before expanding the project.
 
+<a id="first-playable-loop"></a>
+
+## First playable loop: a 15-minute browser exercise
+
+Use a desktop browser and an existing plain-text editor. This tutorial needs no account, API key, package installation, game engine or external assets. The small starter below is tutorial code; it is separate from the creator-documented projects in Game examples.
+
+### 1. Save and open the complete starter
+
+Copy the whole code block into a plain-text file named **first-game.html**, then open that file in your browser. Keep the `.html` extension, not `.html.txt`. If your editor supports rich text, switch it to plain text before saving. You can open the saved file directly; a local server is not required.
+
+```html
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three points — first game loop</title>
+<style>
+  body { margin: 24px auto; max-width: 680px; padding: 0 16px;
+    font: 18px system-ui; background: #101827; color: #f5f7fb; }
+  canvas { width: 100%; background: #19263b; border: 1px solid #64748b; }
+  button { padding: 10px 18px; font: inherit; cursor: pointer; }
+</style>
+<h1>Three points</h1>
+<p>Move with arrow keys or WASD. Collect all three orange points.</p>
+<button id="start">Start</button>
+<p id="readout">Press Start. You have 20 seconds.</p>
+<canvas id="game" width="640" height="360" aria-label="Blue player and orange points"></canvas>
+<script>
+const canvas = document.querySelector('#game');
+const ctx = canvas.getContext('2d');
+const readout = document.querySelector('#readout');
+const start = document.querySelector('#start');
+const speed = 200, roundSeconds = 20;
+const keys = new Set();
+let player, points, remaining, state = 'ready', last = performance.now();
+function reset() {
+  player = { x: 50, y: 180 };
+  points = [{ x: 200, y: 180 }, { x: 360, y: 110 }, { x: 520, y: 250 }];
+  remaining = roundSeconds;
+  keys.clear();
+}
+reset();
+start.addEventListener('click', () => {
+  reset(); state = 'playing'; start.textContent = 'Restart';
+});
+window.addEventListener('keydown', event => {
+  const key = event.key.toLowerCase();
+  if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'w', 'a', 's', 'd'].includes(key)) {
+    event.preventDefault(); keys.add(key);
+  }
+});
+window.addEventListener('keyup', event => keys.delete(event.key.toLowerCase()));
+window.addEventListener('blur', () => keys.clear());
+function frame(now) {
+  const dt = Math.min((now - last) / 1000, 0.05); last = now;
+  if (state === 'playing') {
+    let x = Number(keys.has('arrowright') || keys.has('d')) - Number(keys.has('arrowleft') || keys.has('a'));
+    let y = Number(keys.has('arrowdown') || keys.has('s')) - Number(keys.has('arrowup') || keys.has('w'));
+    const length = Math.hypot(x, y) || 1;
+    player.x = Math.max(10, Math.min(630, player.x + x / length * speed * dt));
+    player.y = Math.max(10, Math.min(350, player.y + y / length * speed * dt));
+    for (const point of points)
+      if (Math.hypot(player.x - point.x, player.y - point.y) < 21) point.taken = true;
+    remaining = Math.max(0, remaining - dt);
+    if (points.every(point => point.taken)) state = 'won';
+    else if (remaining === 0) state = 'lost';
+  }
+  ctx.clearRect(0, 0, 640, 360);
+  for (const point of points) if (!point.taken) {
+    ctx.fillStyle = '#ff936a'; ctx.beginPath();
+    ctx.arc(point.x, point.y, 8, 0, Math.PI * 2); ctx.fill();
+  }
+  ctx.fillStyle = '#8bcbff'; ctx.fillRect(player.x - 10, player.y - 10, 20, 20);
+  const score = points.filter(point => point.taken).length;
+  if (state === 'playing') readout.textContent = `Score ${score}/3 · ${remaining.toFixed(1)}s`;
+  if (state === 'won') readout.textContent = 'You win! Press Restart to play again.';
+  if (state === 'lost') readout.textContent = 'Time is up. Press Restart to try again.';
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</html>
+```
+
+### 2. Check the original game before editing
+
+Click **Start**. Move the blue square with the arrow keys or WASD; the orange points are collectible.
+
+- **Win:** collect all three points before the 20-second timer expires. The result must say “You win!”.
+- **Lose:** click Restart and leave the square still for 20 seconds. The result must say “Time is up.”.
+- **Retry:** click Restart again. The square returns to the left, all three points reappear, and the next frame shows score 0/3 and a fresh timer.
+
+If the page displays the HTML as text, check the file extension and plain-text format. If the square does not move, click the game page and check that the round has started. These checks establish a complete start → play → win/lose → retry loop, not a finished commercial game.
+
+### 3. Make one change, with or without an agent
+
+Ask your coding agent, or make this edit yourself:
+
+> In first-game.html, change only the player speed from 200 to 140 pixels per second. Keep the controls, point locations, 20-second round and restart behavior unchanged. Explain the edited line and the manual checks to rerun. Do not add dependencies.
+
+Save the file and reload the browser. The same route should take longer, while collecting all three points, timing out and restarting must still work. If a check fails, revert that single change and keep the failing action sequence for the next attempt. No coding-agent account is required to complete the exercise manually.
+
+### 4. Choose the next project
+
+Use [Game examples](/examples/) to choose a complete source project with controls and setup you understand. Use the [testing library](/testing/) to choose a test target. Record the browser, change, actions and observed result; then use the engine and production guidance below when your next task needs it.
+
 ## Define the deliverable before choosing tools
 
 Specify the target platform, player actions, core loop, win/loss conditions, art direction, target hardware, and delivery format. A shippable game project, an action-controlled video experience, an importable scene asset, and a simulator for planning or training need different world representations and acceptance methods.

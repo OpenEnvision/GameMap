@@ -7,7 +7,7 @@
       "description": "Turn ideas into code with agents, skills, and engine integrations."
     },
     "engines": {
-      "label": "Game engines",
+      "label": "Engines & creation tools",
       "documentLabel": "Game engines, DCC tools, and ecosystems",
       "color": "#9780d5",
       "description": "Official documentation, working examples, and practical engine knowledge."

@@ -88,6 +88,11 @@ Original artwork is displayed with its aspect ratio and colors intact. Wide word
 | Regression Games | Regression Games | brand | [Primary source](https://github.com/Regression-Games) | [Original image](https://github.com/Regression-Games.png?size=256) | <code>assets/logos/regression-games-42b84c069d79.png</code> |
 | modl.ai | modl.ai | brand | [Primary source](https://github.com/modl-ai) | [Original image](https://github.com/modl-ai.png?size=256) | <code>assets/logos/modl-ai-5ab80a9907ac.png</code> |
 | Convai | Convai | brand | [Primary source](https://convai.com/) | [Original image](https://cdn.prod.website-files.com/66f6655083b0f778e338eebf/66fb9e2f3b4c9acafeeeca64_Group%20654947.png) | <code>assets/logos/convai-da09160535bb.png</code> |
+| Steam | Valve / Steam | brand | [Primary source](https://partner.steamgames.com/) | [Original image](https://store.fastly.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016) | <code>assets/logos/steam-ec1098f56177.svg</code> |
+| itch.io | itch.io | brand | [Primary source](https://itch.io/press-kit) | [Original image](https://static.itch.io/images/app-icon.svg) | <code>assets/logos/itch-io-7c7c74347fbf.svg</code> |
+| Epic Games Store | Epic Games / Epic Games Store | brand | [Primary source](https://store.epicgames.com/en-US/distribution) | [Original image](https://github.com/EpicGames.png?size=256) | <code>assets/logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
+| GOG | GOG | brand | [Primary source](https://www.gog.com/pressroom/press-kit/) | [Original image](https://www.gog.com/pressroom/wp-content/uploads/2025/06/GOG_LOGO_DARK.png) | <code>assets/logos/gog-e8ee9c8c97d9.png</code> |
+| CrazyGames | CrazyGames | brand | [Primary source](https://developer.crazygames.com/) | [Original image](https://imgs.crazygames.com/favicons/favicon-transparent.png?quality=95&metadata=none&width=196&height=196&fit=crop) | <code>assets/logos/crazygames-c284e89a355c.png</code> |
 | Unreal Engine · Gauntlet | Epic Games / Unreal Engine | brand | [Primary source](https://dev.epicgames.com/documentation/unreal-engine/gauntlet-automation-framework-overview-in-unreal-engine?lang=en-US) | [Original image](https://github.com/EpicGames.png?size=256) | <code>assets/logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
 | Windows · UI Automation and Input Semantics | Microsoft | brand | [Primary source](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview) | [Original image](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Microsoft-logo_rgb_c-gray_20?wid=120&hei=120) | <code>assets/logos/microsoft-f4a787ffde7c.jpg</code> |
 | ElevenLabs Music | ElevenLabs | brand | [Primary source](https://elevenlabs.io/docs/overview/capabilities/music) | [Original image](https://github.com/elevenlabs.png?size=256) | <code>assets/logos/elevenlabs-sfx-61d3a1f305ac.png</code> |
@@ -440,6 +445,26 @@ The modl-ai organization links modl.ai. Its custom black rounded-square company 
 ### Convai
 
 Original Convai mark from the official website apple-touch-icon. The GitHub organization avatar is a default identicon and is deliberately not used.
+
+### Steam
+
+Exact Steam wordmark used by the official Steam storefront. Bundled locally with colors and aspect ratio intact; only the XML declaration and external DTD header were removed. The Steam brand identifies Valve’s distribution platform, not authorship of any listed game.
+
+### itch.io
+
+Official itch.io app icon from the publisher’s press kit. The artwork is unchanged and bundled locally, following the request not to hotlink brand images. This mark identifies the platform rather than the creators of games hosted there.
+
+### Epic Games Store
+
+Official Epic Games corporate mark, already bundled from the verified EpicGames organization profile. The mark identifies the publisher operating Epic Games Store; the storefront is engine-agnostic and is not the Unreal Engine runtime.
+
+### GOG
+
+Original dark GOG logo provided in the official GOG press kit. Original pixels, colors, transparency, and aspect ratio are retained. It represents the distribution platform; DRM-free availability does not imply public game source.
+
+### CrazyGames
+
+Official transparent CrazyGames brand icon linked by the CrazyGames developer portal. The downloaded public image is bundled unchanged and identifies the platform, not an individual developer or an AI development tool.
 
 ### Unreal Engine · Gauntlet
 

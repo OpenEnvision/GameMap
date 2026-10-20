@@ -7,6 +7,7 @@ import type {
 } from "../src/data/testingTypes";
 import type { PlanNode } from "../src/data/plans";
 import type { CommunityCollection } from "../src/data/communityResearch";
+import type { PaperReference } from "./papers";
 import type repositoryResearch from "../../data/segments/repository-research.json";
 export type RepositoryResearchRecord =
   (typeof repositoryResearch.records)[number];
@@ -36,6 +37,10 @@ export interface DemoContent {
   description: string;
   track: Dimension;
   role: "excerpt" | "source-recording";
+  demoType?: "gameplay" | "assets" | "scenes" | "world-model" | "workflow";
+  engine?: string;
+  exampleId?: string;
+  limitations?: string;
   alt?: string;
   previewSrc: string;
   poster?: string;
@@ -48,6 +53,7 @@ export interface DemoContent {
   mobilePreview?: { src: string; poster: string; aspectRatio: number };
 }
 export interface ContentModels {
+  paper: PaperReference;
   resource: Resource;
   example: LearningPath;
   foundation: LearningPath;
@@ -63,6 +69,7 @@ export interface ContentModels {
 }
 export type ContentKind = keyof ContentModels;
 export const contentKinds = {
+  paper: { label: "Research reference", plural: "Paper List", page: "papers" },
   resource: { label: "Resource", plural: "Resources", page: "resources" },
   example: { label: "Game example", plural: "Game examples", page: "examples" },
   foundation: {
@@ -98,7 +105,7 @@ export const contentKinds = {
     plural: "Community discovery",
     page: "examples",
   },
-  document: { label: "Document", plural: "Guides & notes", page: "docs" },
+  document: { label: "Document", plural: "Guides & Notes", page: "docs" },
 } as const satisfies Record<
   ContentKind,
   { label: string; plural: string; page: import("./site").PageId }

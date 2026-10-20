@@ -6,7 +6,10 @@ test("English and Chinese pages load assets from the shared canonical directory"
   for (const route of ["", "zh/"]) {
     const failures: string[] = [];
     const inspect = (response: import("@playwright/test").Response) => {
-      if (response.url().includes("/assets/") && response.status() >= 400)
+      if (
+        new URL(response.url()).origin === new URL(page.url()).origin &&
+        response.status() >= 400
+      )
         failures.push(response.url());
     };
     page.on("response", inspect);
@@ -24,10 +27,15 @@ test("English and Chinese pages load assets from the shared canonical directory"
       "href",
       /\/assets\/brand\/favicon\.svg$/,
     );
-    await expect(page.locator(".spotlight-image img")).toHaveAttribute(
-      "src",
-      /\/assets\/media\//,
+    await expect(page.locator(".home-showreel video")).toHaveAttribute(
+      "poster",
+      /\/assets\/media\/promo\/chapter-2d\.webp$/,
     );
+    const poster = page.locator(".showreel-poster");
+    await expect(poster).toHaveJSProperty("complete", true);
+    expect(
+      await poster.evaluate((node: HTMLImageElement) => node.naturalWidth),
+    ).toBeGreaterThan(0);
     expect(failures).toEqual([]);
     page.off("response", inspect);
   }

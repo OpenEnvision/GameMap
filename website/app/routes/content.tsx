@@ -32,7 +32,8 @@ export function loader({ params, request }: LoaderFunctionArgs) {
       entry.kind === "resource"
         ? content.examplesFor({ kind: "resource", id: entry.id })
         : [],
-    demos: entry.kind === "resource" ? content.demosFor(entry.id) : [],
+    demos: entry.kind === "resource" ? content.demosFor(entry.id)
+      : entry.kind === "example" ? content.all("demo").filter((demo) => demo.data.exampleId === entry.id) : [],
   };
 }
 export default function ContentPage() {
@@ -56,7 +57,7 @@ export default function ContentPage() {
         </div>
       )}
       <ContentDocument entry={entry} />
-      {entry.kind === "resource" && <RelatedDemos demos={demos} />}
+      {(entry.kind === "resource" || entry.kind === "example") && <RelatedDemos demos={demos} />}
       {steps.length > 0 && (
         <section
           className="path-steps"

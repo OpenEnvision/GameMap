@@ -15,6 +15,7 @@ import type { LearningMedia } from "../src/data/learningMedia";
 import type { ResourceIdentity } from "../src/data/resourceIdentities";
 import { publicAsset } from "../src/publicAsset";
 import { localizedPath, documentLanguages } from "./locale";
+import { demoTypeLabels } from "./media";
 
 const imageKeys = {
   src: true,
@@ -48,6 +49,7 @@ const learningMediaKeys = {
   height: true,
 } satisfies Record<keyof LearningMedia, true>;
 const sourcePaths: Record<ContentKind, string> = {
+  paper: "data/papers.json",
   resource: "website/src/data/resources.json",
   example: "website/src/data/learningPaths.ts",
   foundation: "website/src/data/learningPaths.ts",
@@ -184,6 +186,15 @@ export function createRegistry(
     }
   }
   const caseIds = new Set(sources.learningPaths.map((item) => item.id));
+  const paperIdentities = new Set<string>();
+  for (const item of sources.papers) {
+    check(!paperIdentities.has(item.url), `Duplicate publication identity: ${item.url}`);
+    paperIdentities.add(item.url);
+    check(Number.isInteger(item.year) && item.year >= 1900 && item.year <= 2100, `Invalid paper year: ${item.id}`);
+    check(item.origins.length > 0, `Paper needs a source: ${item.id}`);
+    for (const id of item.resourceIds) check(resourceIds.has(id), `Missing paper resource ${id} in ${item.id}`);
+    add("paper", item.id, item, url.paper(item.id));
+  }
   for (const [name, values, owners] of [
     ["projectMedia", sources.projectMedia, resourceIds],
     ["identities", sources.identities, resourceIds],
@@ -296,7 +307,7 @@ export function createRegistry(
     const art = sources.editorial[track];
     assertKeys(
       art,
-      { src: true, title: true, description: true, alt: true, index: true },
+      { src: true, title: true, description: true, alt: true, index: true, source: true, credit: true },
       `editorial:${track}`,
     );
     path.blocks.push({
@@ -305,7 +316,8 @@ export function createRegistry(
       label: `Figure ${art.index} · ${art.title} — ${art.description}`,
       src: art.src,
       alt: art.alt,
-      credit: "Original GameMap artwork",
+      source: art.source,
+      credit: art.credit,
     });
     const previews = sources.showcaseByTrack[track];
     assertKeys(
@@ -338,6 +350,10 @@ export function createRegistry(
       );
   }
   for (const item of demos) {
+    if (item.demoType)
+      check(Object.hasOwn(demoTypeLabels, item.demoType), `Unknown recording demo type: ${item.id}/${item.demoType}`);
+    if (item.exampleId)
+      check(caseIds.has(item.exampleId), `Recording refers to missing game case: ${item.id}/${item.exampleId}`);
     check(
       resourceIds.has(item.resourceId),
       `Demo ${item.id} refers to missing resource ${item.resourceId}`,
@@ -402,6 +418,7 @@ export function expectedContentKeys(
   documents: readonly DocumentMetadata[],
 ) {
   return [
+    ...sources.papers.map((item) => `paper:${item.id}`),
     ...sources.repositoryResearch.records.map(
       (item) => `repository-research:${item.requested_repo}`,
     ),

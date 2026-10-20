@@ -34,6 +34,12 @@ export const pages = {
     title: "Repository research",
     nav: "secondary",
   },
+  papers: {
+    path: "/papers/",
+    module: "routes/papers.tsx",
+    title: "Paper List",
+    nav: "secondary",
+  },
   paths: {
     path: "/paths/",
     module: "routes/paths.tsx",
@@ -61,12 +67,13 @@ export const pages = {
   docs: {
     path: "/docs/",
     module: "routes/docs-index.tsx",
-    title: "Guides & notes",
+    title: "Guides & Notes",
     nav: "primary",
   },
 } as const;
 export type PageId = keyof typeof pages;
 export const detailRoutes = [
+  { id: "paper-detail", path: "/papers/:paperId", param: "paperId", kinds: ["paper"], module: "routes/content.tsx" },
   {
     id: "resource-detail",
     path: "/resources/:resourceId",
@@ -130,6 +137,7 @@ export const navigation = Object.entries(pages)
   .map(([id, definition]) => ({ id: id as PageId, ...definition }))
   .filter((page) => page.nav !== "hidden");
 export const url = {
+  paper: (id: string) => `/papers/${encodeURIComponent(id)}/`,
   page: (id: PageId) => pages[id].path,
   resource: (id: string) => `${pages.resources.path}${encodeURIComponent(id)}/`,
   example: (id: string) => `${pages.examples.path}${encodeURIComponent(id)}/`,

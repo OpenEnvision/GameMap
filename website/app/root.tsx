@@ -1,4 +1,5 @@
-import { useEffect, type ReactNode } from "react";
+import type { ReactNode } from "react";
+import { useTheme } from "next-themes";
 import {
   isRouteErrorResponse,
   Links,
@@ -15,6 +16,10 @@ import { RootProvider } from "fumadocs-ui/provider/react-router";
 import AtlasSearch from "./components/search";
 import { FrameworkLink } from "./components/framework-link";
 import { SiteFooter, SiteHeader } from "./components/site-shell";
+import {
+  displayModeBootstrap,
+  displayModeStorageKey,
+} from "./components/display-mode";
 import "@fontsource-variable/inter";
 import "./styles.css";
 import { useHydrated } from "./lib/client-query";
@@ -36,20 +41,14 @@ export function loader() {
 }
 
 function ThemeColor() {
-  useEffect(() => {
-    const root = document.documentElement;
-    const update = () => {
-      const color = getComputedStyle(root).getPropertyValue("--paper").trim();
-      document
-        .querySelector('meta[name="theme-color"]')
-        ?.setAttribute("content", color);
-    };
-    const observer = new MutationObserver(update);
-    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
-    update();
-    return () => observer.disconnect();
-  }, []);
-  return null;
+  const { theme } = useTheme();
+  return (
+    <meta
+      name="theme-color"
+      content={theme === "general" ? "#fffcfb" : "#0b101b"}
+      suppressHydrationWarning
+    />
+  );
 }
 
 export function Layout({ children }: { children: ReactNode }) {
@@ -65,7 +64,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#fffcfb" />
+        <script dangerouslySetInnerHTML={{ __html: displayModeBootstrap }} />
         <link rel="icon" href={`${import.meta.env.BASE_URL}assets/brand/favicon.svg`} />
         <Meta />
         {canonical && <link rel="canonical" href={absolute(canonical)} />}
@@ -83,7 +82,17 @@ export function Layout({ children }: { children: ReactNode }) {
         <LocaleProvider locale={locale} documents={data?.documents}>
           <RootProvider
             components={{ Link: FrameworkLink }}
-            theme={{ defaultTheme: "light" }}
+            theme={{
+              attribute: "class",
+              storageKey: displayModeStorageKey,
+              themes: ["general", "game"],
+              value: { general: "light", game: "dark" },
+              defaultTheme: "game",
+              enableSystem: false,
+              enableColorScheme: false,
+              hotKey: false,
+              disableTransitionOnChange: true,
+            }}
             search={{ SearchDialog: AtlasSearch }}
             i18n={{ locale, translations: docMessages(locale).ui }}
           >

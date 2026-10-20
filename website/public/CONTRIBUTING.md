@@ -6,7 +6,7 @@ Contributions of credible resources, corrected descriptions, repaired links, and
 
 ## Source of truth and generation workflow
 
-The root `README.md` is a hand-maintained project overview. Keep the full resource catalog in `AWESOME.md` and publishing details in [the deployment guide](./deployment.md).
+The root `README.md` is a hand-maintained project overview with selected awesome resources. Keep the complete resource catalog in `AWESOME.md` and publishing details in [the deployment guide](./deployment.md). The root `index.html` contains the complete, pre-rendered GameMap homepage and matches `dist/index.html`. It does not redirect to a development server or another website. Keep the homepage implementation in `website/app/`; a production build exports the complete static site, including its assets and other pages, to the repository root.
 
 Edit resource entries only in `data/segments/*.json`. Do not edit these generated files directly:
 
@@ -14,23 +14,29 @@ Edit resource entries only in `data/segments/*.json`. Do not edit these generate
 - `data/resources.json`
 - `website/src/data/resources.json`
 - `website/public/awesome-list.md`
+- `index.html` and the other root static exports — edit the application or content sources, then run `npm run build`; do not edit generated pages, assets, or route data by hand
+- `.gamemap-static.json` — records ownership and hashes of root static exports; `CONTRIBUTING.md` remains a source file with mode `source-preserved`
+
+Paper bibliography and artifact-access metadata are maintained in `data/papers.json`. Run `npm run sync:papers` after editing it; do not edit `website/public/papers.json`, the generated availability counts in `website/content/paper-catalog.json`, or the synchronized artifact-review sections of `website/public/papers-provenance.json` by hand. Preserve the source-backed bibliography mapping and distinguish unavailable source from code known not to have been released.
 
 After changing data, run these commands from the repository root in order:
 
 ```sh
+npm run sync:papers
 node scripts/generate.mjs
+PAGES_BASE_PATH=/GameMap/ npm run build
 npm run check
-npm run build
 npm run check:build
+npm run check:release
 ```
 
-The generator synchronizes the Awesome List, website data, and downloadable directory. `npm run check` validates source data, public source media, and generated editorial files without requiring a built website. `npm run build` generates the data and the deployable `dist/` directory, including pre-rendered Fumadocs articles. `npm run check:build` additionally validates built downloads, deployed media, rendered documents, static search, and internal links; always run it after building. These checks do not install, train, or play the listed projects. No automated scraping or scheduled updates are configured; entries are maintained by reading sources manually.
+The generators synchronize the Awesome List, website data, and downloadable directory. `npm run build` generates the deployable `dist/` directory, including pre-rendered Fumadocs articles, then exports its complete static tree to the repository root. `npm run check` validates source data, public source media, generated editorial files, and the committed root site's integrity without requiring `dist/`. `npm run check:build` validates built downloads, deployed media, rendered documents, static search, internal links, and root export integrity; always run it after building. `npm run check:release` validates both the root site and `dist/` deployment structures. If an existing validated build needs to be exported again, run `npm run generate:entry` after building; this command synchronizes `dist/` to the root and does not compile source changes. These checks do not install, train, or play the listed projects. No automated scraping or scheduled updates are configured; entries are maintained by reading sources manually.
 
 ### What belongs in Git
 
-Keep application source in `website/app/`, catalog/case data in `website/src/`, `package-lock.json`, `data/`, `docs/`, and static source assets under `website/public/assets/`, and downloadable Markdown/JSON under `website/public/` versioned. Generated editorial files stay committed so reviewers can inspect catalog and documentation changes; CI checks their consistency.
+Keep application source in `website/app/`, catalog/case data in `website/src/`, `package-lock.json`, `data/`, `docs/`, static source assets under `website/public/assets/`, and downloadable Markdown/JSON under `website/public/` versioned. Commit the complete root static export, including `index.html`, `.nojekyll`, `.gamemap-static.json`, assets, route directories, route data, search indexes, and public downloads. Include `.github/workflows/` when uploading the project. Generated editorial files and root static files stay committed so GitHub Pages can publish directly from `main` and `/(root)`.
 
-Do not commit dependencies, `dist/` or `website/dist/`, legacy root previews, `.build/`, `.react-router/`, prepared documents in `website/.content/`, copied `website/public/assets/docs/`, TypeScript/Vite/lint caches, coverage and browser-test reports, agent traces, logs, temporary files, local environment secrets, or machine-specific editor/OS files. Build outputs are regenerated in CI and only `dist/` is published to GitHub Pages. Keep shareable environment configuration in `.env.example`, `.env.sample`, or `.env.template`, without secrets. The `.gitignore` deliberately does not hide source media, lockfiles, shared VS Code configuration, or environment templates.
+Do not commit dependencies, `dist/` or `website/dist/`, `release/` and publishing ZIPs, `.build/`, `.react-router/`, prepared documents in `website/.content/`, copied `website/public/assets/docs/`, TypeScript/Vite/lint caches, coverage and browser-test reports, agent traces, logs, temporary files, local environment secrets, or machine-specific editor/OS files. The root static export is the versioned publishing tree; `dist/` is its disposable build staging copy. Source Markdown in `docs/` coexists with generated article HTML, while generated root Markdown downloads are excluded from source-document discovery. The exporter uses `.gamemap-static.json` to update and remove its own files without deleting source documents. `npm run package:pages` packages a validated build as `release/GameMap-pages.zip` with the application's `index.html` at the archive root. Keep shareable environment configuration in `.env.example`, `.env.sample`, or `.env.template`, without secrets. The `.gitignore` deliberately does not hide source media, root static exports, lockfiles, shared VS Code configuration, or environment templates.
 
 ### Static assets
 
@@ -114,7 +120,7 @@ World model entries should also explain where authoritative state lives: an exec
 - Run `node scripts/check-locales.mjs --approve-new` to record fingerprints for newly translated fields. It does not approve changed source text. Review an existing translation before updating its source fingerprint; never automatically refresh all hashes.
 - Add full Chinese articles under `docs/zh/`. Mark deliberate links to English originals as `(English)` or with the existing Chinese language marker. Other internal links keep the selected interface language.
 - Keep untranslated passages explicitly English. Do not replace third-party source files, or present a translated title as a translated article.
-- Run `npm run check`, rebuild, and run `npm run check:build` and `npm run test:web` for both locales.
+- Rebuild, then run `npm run check`, `npm run check:build`, and `npm run test:web` for both locales.
 
 ## Pull requests
 

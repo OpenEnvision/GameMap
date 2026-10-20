@@ -20,6 +20,10 @@ import {
 } from "../scripts/lib/documents.mjs";
 import { resolve } from "node:path";
 import { readFile } from "node:fs/promises";
+import {
+  assertSiteMetadata,
+  assertSitemapAndRobots,
+} from "../scripts/lib/site-hosting.mjs";
 
 const context = await loadContent();
 const {
@@ -46,7 +50,7 @@ function stepHTML(entry, omitted, empty) {
     .filter((block) => block.field !== omitted)
     .map(
       (block) =>
-        `<section data-content-field="${block.field}">${block.field === empty ? "" : escape(block.type === "list" ? block.items.join(" ") : block.value || block.label)}</section>`,
+        `<section data-content-field="${block.field}">${block.field === empty ? "" : block.type === "links" ? block.items.map(item => `<a href="${escape(item.url)}">${escape(item.label)}</a>`).join(" ") : escape(block.type === "list" ? block.items.join(" ") : block.value || block.label)}</section>`,
     )
     .join("")}</article>`;
 }
@@ -54,6 +58,54 @@ const scope = (html, key) =>
   parsePage(html).nodes.find(
     (node) => attributes(node)["data-content-key"] === key,
   );
+
+test("published site metadata allows third-party creator demo hosts", () => {
+  const hosting = { siteOrigin: "https://openenvision.github.io", base: "/GameMap/" };
+  const html = `<head>
+    <link rel="canonical" href="https://openenvision.github.io/GameMap/examples/">
+    <link rel="alternate" hreflang="zh-CN" href="https://openenvision.github.io/GameMap/zh/examples/">
+    <meta property="og:url" content="https://openenvision.github.io/GameMap/examples/">
+  </head><body>
+    <a href="https://mosswing-quiet-flight.jack-514.chatgpt.site/">Play Mosswing</a>
+  </body>`;
+  assert.doesNotThrow(() => assertSiteMetadata(parsePage(html).nodes, hosting));
+  assert.doesNotThrow(() =>
+    assertSitemapAndRobots(
+      "<urlset><url><loc>https://openenvision.github.io/GameMap/examples/</loc></url></urlset>",
+      "User-agent: *\nSitemap: https://openenvision.github.io/GameMap/sitemap.xml\n",
+      hosting,
+    ),
+  );
+});
+
+test("published self-addresses reject wrong origins and deployment paths", () => {
+  const hosting = { siteOrigin: "https://openenvision.github.io", base: "/GameMap/" };
+  for (const metadata of [
+    '<link rel="canonical" href="https://old-gamemap.chatgpt.site/examples/">',
+    '<link rel="alternate" hreflang="en" href="https://openenvision.github.io/examples/">',
+    '<meta property="og:url" content="https://old-gamemap.chatgpt.site/">',
+  ])
+    assert.throws(
+      () => assertSiteMetadata(parsePage(`<head>${metadata}</head>`).nodes, hosting),
+      /wrong published origin|outside base/,
+    );
+  assert.throws(
+    () => assertSitemapAndRobots(
+      "<urlset><url><loc>https://old-gamemap.chatgpt.site/examples/</loc></url></urlset>",
+      "Sitemap: https://openenvision.github.io/GameMap/sitemap.xml",
+      hosting,
+    ),
+    /wrong published origin/,
+  );
+  assert.throws(
+    () => assertSitemapAndRobots(
+      "<urlset><url><loc>https://openenvision.github.io/GameMap/examples/</loc></url></urlset>",
+      "Sitemap: https://old-gamemap.chatgpt.site/sitemap.xml",
+      hosting,
+    ),
+    /wrong published origin/,
+  );
+});
 
 test("all source kinds, fragments, attachments, and raw exports have registered owners", () => {
   assertRegistryCoverage(sources, documents, registry);
@@ -257,6 +309,14 @@ test("another clip on an existing project is not reduced to one resource preview
     registry.demosFor("opengame").length + 1,
   );
 });
+test("recording categories and game references cannot silently point to unknown content", () => {
+  const missingGame = clone();
+  missingGame.recordings[0].views[0].exampleId = "missing-game-case";
+  assert.throws(() => createRegistry(missingGame, documents), /Recording refers to missing game case/);
+  const unknownCategory = clone();
+  unknownCategory.recordings[0].views[0].demoType = "missing-category";
+  assert.throws(() => createRegistry(unknownCategory, documents), /Unknown recording demo type/);
+});
 test("field proof detects a missing deliverable, not just missing record IDs", () => {
   const entry = registry.all("step")[0];
   assert.doesNotThrow(() =>
@@ -383,6 +443,30 @@ test("document language routes preserve English URLs and choose explicit counter
   assert.equal(docHome("zh"), "/docs/zh/");
   assert.equal(translationSlug("zh/practical-guide", "en"), "practical-guide");
   assert.equal(translationSlug("practical-guide", "zh"), "zh/practical-guide");
+});
+test("article summaries remain specific rather than inheriting navigation-group copy", async () => {
+  const groups = JSON.parse(
+    await readFile(resolve(root, "website/docs.config.json"), "utf8"),
+  );
+  const groupDescriptions = new Set(groups.map((group) => group.description));
+  for (const document of documents) {
+    assert.ok(document.description.trim(), `${document.slug} needs a summary`);
+    assert.ok(
+      !groupDescriptions.has(document.description),
+      `${document.slug} must describe the article, not its navigation group`,
+    );
+  }
+});
+test("intentional English source labels preserve prefix and suffix language markers", () => {
+  for (const label of [
+    "英文部署说明",
+    " 英文原文 ",
+    "完整实践参考（英文）",
+    "Deployment (English)",
+  ])
+    assert.equal(context.isEnglishSourceLabel(label), true, label);
+  for (const label of ["中文本地运行指南", "游戏案例", "Game examples"])
+    assert.equal(context.isEnglishSourceLabel(label), false, label);
 });
 test("site language links preserve filters, anchors and explicit document counterparts", () => {
   const languages = context.documentLanguages(documents);
@@ -525,6 +609,10 @@ test("document URL policy preserves rendered routes, source assets, and deployme
   assert.equal(
     rewrite("../README.md", resolve(root, "docs/workflow-notes.md")),
     "/docs/overview/",
+  );
+  assert.equal(
+    rewrite("data/papers.json", resolve(root, "README.md")),
+    "/GameMap/papers.json",
   );
   assert.equal(
     rewrite(
@@ -860,4 +948,15 @@ test("source and content digests change when a qualification changes", () => {
     contentDigest({ sources, documents }),
     contentDigest({ sources: next, documents }),
   );
+});
+
+test("build-intent searches keep useful keywords and lead to an actionable path", () => {
+  const docs = [
+    {key:"guide",kind:"document",title:"Testing a game",url:"/guide/",text:"I want to build a 2D game and test it"},
+    {key:"case",kind:"example",title:"A platformer",url:"/case/",text:"A playable 2D game"},
+    {key:"path",kind:"path",title:"Build a 2D game",url:"/paths/2d/",text:"Build a 2D game",alternateText:"制作2D游戏"},
+  ];
+  assert.equal(context.rankDocuments(docs,"I want to build a 2D game.")[0].key,"path");
+  assert.equal(context.rankDocuments(docs,"我想做一个2D游戏")[0].key,"path");
+  assert.equal(context.matchesSearch("Godot 3D", "Godot 2D"),false);
 });

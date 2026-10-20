@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import type { Root } from "fumadocs-core/page-tree";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { Brand } from "../components/site-shell";
+import { DocumentationDisplayMode } from "../components/display-mode";
 import type { DocumentMetadata } from "../../content/models";
 import { url } from "../../content/site";
 import {
@@ -11,12 +12,15 @@ import {
   type DocLocale,
 } from "../../content/doc-language";
 import { LanguageSwitcher, useSiteI18n } from "./i18n";
+import documentationGroups from "../../docs.config.json";
 export function documentGroups(manifest: readonly DocumentMetadata[]) {
   return [...new Set(manifest.map((page) => page.group))].map((title) => {
     const documents = manifest.filter((page) => page.group === title);
     return {
       title,
-      description: documents[0].description,
+      description:
+        documentationGroups.find((group) => group.title === title)?.description ||
+        "Curated source notes and practical guidance from GameMap.",
       pages: documents.map(
         (page) => [page.slug, page.label] as [string, string],
       ),
@@ -84,6 +88,7 @@ export function DocumentationLayout({
   return (
     <DocsLayout
       tree={tree}
+      slots={{ themeSwitch: DocumentationDisplayMode }}
       nav={{ title: <Brand />, url: href("/") }}
       githubUrl="https://github.com/OpenEnvision/GameMap"
       links={(["resources", "examples", "paths"] as const).map((id) => ({

@@ -8,11 +8,13 @@ export interface PlanNode {
   description: string;
   deliverable: string;
   check: string;
+  resourceIds: string[];
 }
 export const plans: Record<Dimension, PlanNode[]> = {
   "2d": [
     {
       id: "scope",
+      resourceIds: ["level-design-book-skill"],
       title: "Plan & scope",
       subtitle: "Find the fun",
       tags: ["Game brief", "Core loop"],
@@ -25,6 +27,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "engine",
+      resourceIds: ["godot-engine", "phaser", "unity-engine"],
       title: "Choose an engine",
       subtitle: "Pick your foundation",
       tags: ["Godot", "Phaser · Unity"],
@@ -37,6 +40,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "gameplay",
+      resourceIds: ["godot-demo-projects", "phaser-examples", "unity-2d-techdemos"],
       title: "Build the loop",
       subtitle: "Make it playable",
       tags: ["Coding agents", "Game logic"],
@@ -49,6 +53,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "assets",
+      resourceIds: ["pixellab", "scenario", "elevenlabs-sfx"],
       title: "Create the assets",
       subtitle: "Give the game a style",
       tags: ["Sprites", "Tiles · Audio"],
@@ -62,6 +67,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "testing",
+      resourceIds: ["playwright-test", "godot-gut", "unity-test-framework"],
       title: "Playtest & iterate",
       subtitle: "Tune the experience",
       tags: ["Benchmarks", "Visual QA"],
@@ -75,6 +81,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "release",
+      resourceIds: ["itch-io", "crazygames", "steamworks"],
       title: "Ship your world",
       subtitle: "Put it in players’ hands",
       tags: ["Build", "Player feedback"],
@@ -89,6 +96,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
   "3d": [
     {
       id: "scope",
+      resourceIds: ["level-design-book-skill", "xbox-accessibility-guidelines"],
       title: "Plan & scope",
       subtitle: "Start with one space",
       tags: ["Vertical slice", "Target device"],
@@ -102,6 +110,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "engine",
+      resourceIds: ["godot-engine", "unreal-engine", "unity-engine", "threejs"],
       title: "Choose an engine",
       subtitle: "Set up the pipeline",
       tags: ["Unreal · Unity", "Three.js · Godot"],
@@ -114,6 +123,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "gameplay",
+      resourceIds: ["godot-demo-projects", "unreal-lyra", "catlike-coding-movement", "threejs-examples"],
       title: "Build the loop",
       subtitle: "Bring space to life",
       tags: ["Agent frameworks", "Gameplay"],
@@ -127,6 +137,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "assets",
+      resourceIds: ["blender", "gltf-blender-io", "hunyuan3d-2"],
       title: "Create the assets",
       subtitle: "Make models game-ready",
       tags: ["Mesh · Texture", "Rig · Animation"],
@@ -140,6 +151,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "testing",
+      resourceIds: ["unreal-automation-tests", "unity-test-framework", "godot-gut", "playwright-test"],
       title: "Playtest & iterate",
       subtitle: "Test behavior and space",
       tags: ["Runtime tests", "Performance"],
@@ -153,6 +165,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "release",
+      resourceIds: ["steamworks", "unreal-gauntlet", "unity-addressables-scripting"],
       title: "Ship your world",
       subtitle: "Package the experience",
       tags: ["Packaging", "Optimization"],
@@ -168,6 +181,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
   world: [
     {
       id: "state",
+      resourceIds: ["worldcoder", "programmable-world-model"],
       title: "Define the state",
       subtitle: "Choose what holds truth",
       tags: ["Code state", "Scene graph"],
@@ -181,6 +195,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "actions",
+      resourceIds: ["diamond", "solarwm"],
       title: "Connect actions",
       subtitle: "Turn input into change",
       tags: ["Action interface", "Environment"],
@@ -193,6 +208,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "dynamics",
+      resourceIds: ["worldcoder", "code-world-model-brain"],
       title: "Code the dynamics",
       subtitle: "Keep rules and memory",
       tags: ["WorldCoder", "Code world model"],
@@ -205,6 +221,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "rendering",
+      resourceIds: ["solarrenderer", "streamrender-h3"],
       title: "Render the world",
       subtitle: "From structure to image",
       tags: ["SolarRenderer", "StreamRender-H3"],
@@ -218,6 +235,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "consistency",
+      resourceIds: ["gif-mcts-cwm", "cwm-general-game-playing"],
       title: "Test consistency",
       subtitle: "Measure what persists",
       tags: ["Long horizon", "Controllability"],
@@ -231,6 +249,7 @@ export const plans: Record<Dimension, PlanNode[]> = {
     },
     {
       id: "experience",
+      resourceIds: ["diamond", "wonderworld"],
       title: "Build an experience",
       subtitle: "Make research interactive",
       tags: ["Runtime budget", "Research demo"],
