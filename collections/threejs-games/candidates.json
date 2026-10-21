@@ -1,0 +1,125 @@
+{
+  "$schema": "./candidates.schema.json",
+  "schema_version": 1,
+  "candidates": [
+    {
+      "id": "marble-mouse",
+      "repository_url": "https://github.com/rameshvarun/marble-mouse",
+      "status": "excluded",
+      "checked_at": "2026-10-21",
+      "source_commit": "8b25684a815307f62e8320911841ca451d87d9e2",
+      "reason": "README explicitly says the game is not open source. LICENSE restricts redistribution and is not a standard open-source license.",
+      "next_action": "Reconsider only if the author changes the license; do not count it as open source.",
+      "evidence_urls": [
+        "https://github.com/rameshvarun/marble-mouse/blob/8b25684a815307f62e8320911841ca451d87d9e2/README.md",
+        "https://github.com/rameshvarun/marble-mouse/blob/8b25684a815307f62e8320911841ca451d87d9e2/LICENSE"
+      ]
+    },
+    {
+      "id": "retro-flight-simulator",
+      "repository_url": "https://github.com/ruben3d/retroflightsim",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "1b373c11e5383e29f06c04f14a44d6e3f52df8ad",
+      "reason": "Direct Three.js and MIT are established, but reviewed material describes a free-flight visual/simulation experiment; a game objective or progression is not established.",
+      "next_action": "Inspect simulation goals and runtime behavior before deciding whether it exceeds a pure scene/simulator demo.",
+      "evidence_urls": [
+        "https://github.com/ruben3d/retroflightsim/blob/1b373c11e5383e29f06c04f14a44d6e3f52df8ad/README.md",
+        "https://github.com/ruben3d/retroflightsim/blob/1b373c11e5383e29f06c04f14a44d6e3f52df8ad/package.json",
+        "https://github.com/ruben3d/retroflightsim/blob/1b373c11e5383e29f06c04f14a44d6e3f52df8ad/src/script/render/renderer.ts"
+      ]
+    },
+    {
+      "id": "asw-tetris",
+      "repository_url": "https://github.com/jbouny/asw-tetris",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "03d1e618fecb3372b99de3649177639a2805033f",
+      "reason": "Has ASCII, Canvas2D and Three.js viewers over a Tetris ruleset; the requested 3D-game boundary needs review.",
+      "next_action": "Keep separate from verified 3D games until its qualifying 3D gameplay scope is established.",
+      "evidence_urls": [
+        "https://github.com/jbouny/asw-tetris/blob/03d1e618fecb3372b99de3649177639a2805033f/README.md"
+      ]
+    },
+    {
+      "id": "three-dee-tris",
+      "repository_url": "https://github.com/ThomasReulen/three-dee-tris",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "891056825ab8640a8500608accb277c832a333c0",
+      "reason": "Direct Three.js and MIT are visible, but source appears to apply a 3D viewer to a row/column block board; scope and start/reset behavior need review.",
+      "next_action": "Decide the 3D gameplay boundary and verify the complete gameplay path before promotion.",
+      "evidence_urls": [
+        "https://github.com/ThomasReulen/three-dee-tris/blob/891056825ab8640a8500608accb277c832a333c0/README.md",
+        "https://github.com/ThomasReulen/three-dee-tris/blob/891056825ab8640a8500608accb277c832a333c0/src/core.js",
+        "https://github.com/ThomasReulen/three-dee-tris/blob/891056825ab8640a8500608accb277c832a333c0/src/game.js"
+      ]
+    },
+    {
+      "id": "orbit-golf",
+      "repository_url": "https://github.com/ronpicard/orbit-golf",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "c854d9829da8828d2a35f7c15c4dfbd51a6ebd73",
+      "reason": "README and manifest describe plain Three.js plus React DOM UI; full renderer/physics integration review is in progress.",
+      "next_action": "Finish renderer construction, game outcomes, license and demo checks; React alone is not an exclusion.",
+      "evidence_urls": [
+        "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/README.md",
+        "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/package.json",
+        "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/src/render/Engine.ts"
+      ]
+    },
+    {
+      "id": "sky-force",
+      "repository_url": "https://github.com/pixel-z/Sky-Force",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "45aad2dafed7f27064d17bc97d8be8129da53eed",
+      "reason": "Root repository metadata/License indicates MIT while package.json says ISC; renderer/game scope and license text require completion.",
+      "next_action": "Read renderer/gameplay and root license; record the license conflict explicitly and check the 3D/2.5D boundary.",
+      "evidence_urls": [
+        "https://github.com/pixel-z/Sky-Force/blob/45aad2dafed7f27064d17bc97d8be8129da53eed/README.md",
+        "https://github.com/pixel-z/Sky-Force/blob/45aad2dafed7f27064d17bc97d8be8129da53eed/package.json"
+      ]
+    },
+    {
+      "id": "apex-formula-2026",
+      "repository_url": "https://github.com/ahacker-1/apex-formula-2026",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "410198faf310fe3376b07f2415083df8b146fff1",
+      "reason": "README, manifest and source tree found; renderer/gameplay paths and third-party notices still need direct review.",
+      "next_action": "Review js/main.js, js/race.js, LICENSE, THIRD_PARTY_NOTICES.md and the author demo.",
+      "evidence_urls": [
+        "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/README.md",
+        "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/package.json"
+      ]
+    },
+    {
+      "id": "tower-of-hanoi-3d",
+      "repository_url": "https://github.com/anisches/towerofHanoi",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80",
+      "reason": "MIT and a Three.js-only runtime manifest found; renderer and victory logic still need direct review.",
+      "next_action": "Inspect src/main.js for WebGPURenderer and checkWin, then check the author-linked demo.",
+      "evidence_urls": [
+        "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/README.md",
+        "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/package.json"
+      ]
+    },
+    {
+      "id": "neon-doom-pit",
+      "repository_url": "https://github.com/PaulAtkins88/neon-doom-pit",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "83ce2aa21bfe329f26eb8ddc68742fcd78b8f830",
+      "reason": "README and web/workspace manifests found; direct rendering, three-wave loop and asset notices still need review.",
+      "next_action": "Inspect core Game and WaveSystem, verify code/asset license scope, then check single-player demo limitations.",
+      "evidence_urls": [
+        "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/README.md",
+        "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/apps/web/package.json"
+      ]
+    }
+  ]
+}
