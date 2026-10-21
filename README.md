@@ -16,7 +16,7 @@ All **115 curated resources** are listed below. Longer companion catalogs are or
 
 <a id="start-here"></a>
 
-[Direct Three.js 3D game index](collections/threejs-games/README.md) · [Machine-readable games](collections/threejs-games/games.json) · [Verification evidence](collections/threejs-games/evidence/batch-001.md)
+[Direct Three.js 3D game index](collections/threejs-games/README.md) · [Machine-readable games](collections/threejs-games/games.json) · [Verification evidence](collections/threejs-games/evidence/README.md)
 
 ## Start with your goal
 

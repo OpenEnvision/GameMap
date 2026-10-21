@@ -56,20 +56,6 @@
       ]
     },
     {
-      "id": "orbit-golf",
-      "repository_url": "https://github.com/ronpicard/orbit-golf",
-      "status": "pending",
-      "checked_at": "2026-10-21",
-      "source_commit": "c854d9829da8828d2a35f7c15c4dfbd51a6ebd73",
-      "reason": "README and manifest describe plain Three.js plus React DOM UI; full renderer/physics integration review is in progress.",
-      "next_action": "Finish renderer construction, game outcomes, license and demo checks; React alone is not an exclusion.",
-      "evidence_urls": [
-        "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/README.md",
-        "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/package.json",
-        "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/src/render/Engine.ts"
-      ]
-    },
-    {
       "id": "sky-force",
       "repository_url": "https://github.com/pixel-z/Sky-Force",
       "status": "pending",
@@ -83,42 +69,81 @@
       ]
     },
     {
-      "id": "apex-formula-2026",
-      "repository_url": "https://github.com/ahacker-1/apex-formula-2026",
+      "id": "arena",
+      "repository_url": "https://github.com/Hazzad123/fully-ai-arena-fps",
       "status": "pending",
       "checked_at": "2026-10-21",
-      "source_commit": "410198faf310fe3376b07f2415083df8b146fff1",
-      "reason": "README, manifest and source tree found; renderer/gameplay paths and third-party notices still need direct review.",
-      "next_action": "Review js/main.js, js/race.js, LICENSE, THIRD_PARTY_NOTICES.md and the author demo.",
+      "source_commit": "920b123d67015d5e8151a4ebd6742d8015d538be",
+      "reason": "Root LICENSE separates MIT code from named CC0 art; README describes a full multiplayer FPS. Direct renderer/client manifests still need this batch's detailed review.",
+      "next_action": "Review client/src/mapRenderer.js and main.js, all client/server manifests and author demo/backend needs.",
       "evidence_urls": [
-        "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/README.md",
-        "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/package.json"
+        "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/README.md",
+        "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/LICENSE"
       ]
     },
     {
-      "id": "tower-of-hanoi-3d",
-      "repository_url": "https://github.com/anisches/towerofHanoi",
+      "id": "wizardwarz",
+      "repository_url": "https://github.com/Lallassu/wizardwarz",
       "status": "pending",
       "checked_at": "2026-10-21",
-      "source_commit": "bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80",
-      "reason": "MIT and a Three.js-only runtime manifest found; renderer and victory logic still need direct review.",
-      "next_action": "Inspect src/main.js for WebGPURenderer and checkWin, then check the author-linked demo.",
+      "source_commit": "fc5451c980c61698f59c11319e581cf8e43ee028",
+      "reason": "MIT code and multiplayer game description found; author explicitly says the project is abandoned. Per-asset licenses and direct renderer path need review.",
+      "next_action": "Inspect js/game.js, js/player.js, index.html asset credits and server manifests; retain abandonment/network limits.",
       "evidence_urls": [
-        "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/README.md",
-        "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/package.json"
+        "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/README.md",
+        "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/LICENSE"
       ]
     },
     {
-      "id": "neon-doom-pit",
-      "repository_url": "https://github.com/PaulAtkins88/neon-doom-pit",
+      "id": "earth-defender",
+      "repository_url": "https://github.com/alexprut/earth-defender",
       "status": "pending",
       "checked_at": "2026-10-21",
-      "source_commit": "83ce2aa21bfe329f26eb8ddc68742fcd78b8f830",
-      "reason": "README and web/workspace manifests found; direct rendering, three-wave loop and asset notices still need review.",
-      "next_action": "Inspect core Game and WaveSystem, verify code/asset license scope, then check single-player demo limitations.",
+      "source_commit": "5d4d8f0832fc74882a701d6a0dedee23fd494648",
+      "reason": "MIT code and 3D single/multiplayer description found; client renderer and Erlang/OTP backend requirements need review.",
+      "next_action": "Inspect client/js/game.js, Bower dependencies, client entry and demo; audit available texture notices.",
       "evidence_urls": [
-        "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/README.md",
-        "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/apps/web/package.json"
+        "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/README.md",
+        "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/LICENSE"
+      ]
+    },
+    {
+      "id": "trigger-rally",
+      "repository_url": "https://github.com/CodeArtemis/TriggerRally",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "079ac53216b74598b652ce3bf11478beb5c6832b",
+      "reason": "LICENSE.md grants GPL v3 for source but restricts modification/redistribution of Content without a separate license.",
+      "next_action": "Treat as restricted-assets research, not a fully open game package; verify the current direct renderer and asset separation before any promotion.",
+      "evidence_urls": [
+        "https://github.com/CodeArtemis/TriggerRally/blob/079ac53216b74598b652ce3bf11478beb5c6832b/README.md",
+        "https://github.com/CodeArtemis/TriggerRally/blob/079ac53216b74598b652ce3bf11478beb5c6832b/LICENSE.md"
+      ]
+    },
+    {
+      "id": "lba2-remake",
+      "repository_url": "https://github.com/LBALab/lba2remake",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "db54f5de071354939a8b02e71e47c53343ab6ee5",
+      "reason": "MIT covers reimplementation code; README requires owning an original game and says original executable/assets/IP belong to its rights holder.",
+      "next_action": "Keep in restricted-assets research and inspect current gameplay/renderer completeness; do not claim the commercial assets are MIT.",
+      "evidence_urls": [
+        "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/README.md",
+        "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/LICENSE"
+      ]
+    },
+    {
+      "id": "gorescript-classic",
+      "repository_url": "https://github.com/gorescript/gorescript",
+      "status": "excluded",
+      "checked_at": "2026-10-21",
+      "source_commit": "e3adca28228eb862ba9392e1af67087bc189cadc",
+      "reason": "Upstream README explicitly describes a 2.5D FPS, outside the strict full-3D game scope for this index.",
+      "next_action": "Retain the scope exclusion unless the user requests a separate 2.5D collection.",
+      "evidence_urls": [
+        "https://github.com/gorescript/gorescript/blob/e3adca28228eb862ba9392e1af67087bc189cadc/README.md",
+        "https://github.com/gorescript/gorescript/blob/e3adca28228eb862ba9392e1af67087bc189cadc/LICENSE.txt"
       ]
     }
   ]

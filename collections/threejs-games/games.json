@@ -1222,6 +1222,1054 @@
         "Very old Three.js release and pointer-lock code; browser/CDN compatibility was not tested.",
         "Moon/crate assets and textures were not exhaustively audited."
       ]
+    },
+    {
+      "id": "apex-formula-2026",
+      "name": "APEX FORMULA 2026",
+      "repository_url": "https://github.com/ahacker-1/apex-formula-2026",
+      "genres": [
+        "racing",
+        "simulation",
+        "time-trial"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r160 vendored; npm three 0.160.0 is development-only",
+        "render_evidence": {
+          "url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/js/main.js#L172",
+          "claim": "Directly imports Three.js and constructs WebGLRenderer; index.html maps Three.js to the local lib directory."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "@playwright/test": "^1.62.0",
+              "three": "0.160.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Plain browser ES modules, vendored Three.js post-processing and custom vehicle/race systems.",
+          "Playwright and matching npm Three.js are development-only; optional paid audio-generation tools are not required or used in this review."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/js/race.js#L1197",
+        "claim": "Marks finishers, selects the winner and constructs ordered race results; the README describes quick race, championship and time-trial modes."
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "source_url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/LICENSE",
+        "additional_notices": [
+          "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/THIRD_PARTY_NOTICES.md",
+          "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/ASSET_PROVENANCE.md"
+        ],
+        "notes": "Original project code/assets are Apache-2.0 according to LICENSE and the author's provenance inventory. Vendored Three.js remains MIT. Optional generated audio is excluded from the open-source release; its service terms are not represented as Apache-2.0."
+      },
+      "demo": {
+        "url": "https://apex-formula-2026.vercel.app",
+        "status": "page-read",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/README.md",
+        "notes": "Author URL redirected to https://apexformularacing.com/ and returned a loading screen. Asset completion and driving were not tested."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/README.md",
+        "notes": "Source contains race direction, finishing order and results; README describes a fictional 24-round championship and 21 AI rivals."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "410198faf310fe3376b07f2415083df8b146fff1",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-002.md#apex-formula-2026",
+        "reviewed_files": [
+          {
+            "path": "ASSET_PROVENANCE.md",
+            "url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/ASSET_PROVENANCE.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/README.md"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/THIRD_PARTY_NOTICES.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/index.html"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/js/main.js"
+          },
+          {
+            "path": "js/race.js",
+            "url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/js/race.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/package.json"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Simulation accuracy, performance and upstream browser-test claims were not independently measured.",
+        "A loading page does not establish a working race or loaded assets."
+      ]
+    },
+    {
+      "id": "tower-of-hanoi-3d",
+      "name": "Tower of Hanoi 3D",
+      "repository_url": "https://github.com/anisches/towerofHanoi",
+      "genres": [
+        "puzzle",
+        "board-game"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.184.0",
+        "render_evidence": {
+          "url": "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/src/main.js#L105",
+          "claim": "Imports three/webgpu directly and constructs Three.js WebGPURenderer, scene and camera."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/package.json",
+            "dependencies": {
+              "three": "^0.184.0"
+            },
+            "dev_dependencies": {
+              "vite": "^5.4.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js is the only declared runtime npm dependency; Vite ^5.4.0 is a dev dependency.",
+          "Web Audio synthesis and custom disk motion/drag logic."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/src/main.js#L1517",
+        "claim": "Checks that every disk reaches the third stack, counts moves, triggers celebration and shows the win overlay; initGame resets play."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://anisches.github.io/towerofHanoi/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/README.md",
+        "notes": "The author-linked Pages URL could not be retrieved through the text reader; current availability is unconfirmed."
+      },
+      "maturity": {
+        "status": "work-in-progress",
+        "basis_url": "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/README.md",
+        "notes": "README explicitly labels early development and lists mobile support/optimization as future work."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-002.md#tower-of-hanoi-3d",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/package.json"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/src/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Discrete Hanoi board rules rendered with actual 3D disks; this is not a free-roaming world.",
+        "WebGPU/backend compatibility and drag interaction were not tested."
+      ]
+    },
+    {
+      "id": "neon-doom-pit",
+      "name": "Neon Doom Pit",
+      "repository_url": "https://github.com/PaulAtkins88/neon-doom-pit",
+      "genres": [
+        "shooter",
+        "first-person",
+        "arena",
+        "survival"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.180.0",
+        "render_evidence": {
+          "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/apps/web/src/core/Game.ts#L72",
+          "claim": "Directly imports Three.js and constructs WebGLRenderer; its own requestAnimationFrame loop coordinates the game."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "typescript": "^5.9.3"
+            }
+          },
+          {
+            "path": "apps/web/package.json",
+            "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/apps/web/package.json",
+            "dependencies": {
+              "@neon/shared": "workspace:*",
+              "three": "^0.180.0"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.184.0",
+              "typescript": "^5.9.3",
+              "vite": "^7.1.9"
+            }
+          },
+          {
+            "path": "apps/server/package.json",
+            "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/apps/server/package.json",
+            "dependencies": {
+              "@neon/shared": "workspace:*",
+              "tsx": "^4.20.6",
+              "ws": "^8.18.3"
+            },
+            "dev_dependencies": {
+              "@types/node": "^24.9.1",
+              "@types/ws": "^8.18.1",
+              "typescript": "^5.9.3"
+            }
+          },
+          {
+            "path": "packages/shared/package.json",
+            "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/packages/shared/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vite, TypeScript, PointerLockControls, pnpm workspaces and shared protocol types.",
+          "Optional authoritative multiplayer server uses ws/tsx. GitHub Pages only hosts the static client; no server is implied by that link."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/apps/web/src/systems/WaveSystem.ts#L83",
+        "claim": "Advances cleared waves and returns a victory transition after the configured final wave; core Game handles damage, game-over and restart."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/LICENSE",
+        "additional_notices": [
+          "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/README.md"
+        ],
+        "notes": "Code is MIT. README identifies included Kenney-derived sprite assets as CC0/public domain. This is the author's asset attribution, not an independent per-file asset audit."
+      },
+      "demo": {
+        "url": "https://paulatkins88.github.io/neon-doom-pit/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/README.md",
+        "notes": "Author-linked static demo could not be retrieved by the reader; single-player and networking were not run."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/README.md",
+        "notes": "README describes a compact one-arena FPS with a three-wave single-player loop and a separate multiplayer server."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "83ce2aa21bfe329f26eb8ddc68742fcd78b8f830",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-002.md#neon-doom-pit",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/README.md"
+          },
+          {
+            "path": "apps/server/package.json",
+            "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/apps/server/package.json"
+          },
+          {
+            "path": "apps/web/package.json",
+            "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/apps/web/package.json"
+          },
+          {
+            "path": "apps/web/src/core/Game.ts",
+            "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/apps/web/src/core/Game.ts"
+          },
+          {
+            "path": "apps/web/src/systems/WaveSystem.ts",
+            "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/apps/web/src/systems/WaveSystem.ts"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/package.json"
+          },
+          {
+            "path": "packages/shared/package.json",
+            "url": "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/packages/shared/package.json"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Uses camera-facing sprites in a 3D arena; sprite art is disclosed rather than treated as a pure model-only renderer.",
+        "Multiplayer needs a separate live server; the Pages URL does not supply it."
+      ]
+    },
+    {
+      "id": "island-survival",
+      "name": "Island Survival",
+      "repository_url": "https://github.com/alexandrosang21/island-survival",
+      "genres": [
+        "survival",
+        "crafting",
+        "building",
+        "action"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.178.0",
+        "render_evidence": {
+          "url": "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/src/core/renderer.ts#L15",
+          "claim": "Directly constructs Three.js WebGPURenderer and initializes it; source detects the selected WebGPU/WebGL backend."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/package.json",
+            "dependencies": {
+              "three": "^0.178.0",
+              "@dimforge/rapier3d-compat": "^0.14.0"
+            },
+            "dev_dependencies": {
+              "typescript": "^5.6.0",
+              "vite": "^6.0.0",
+              "@types/three": "^0.178.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "@dimforge/rapier3d-compat ^0.14.0 is the only other declared runtime package; TypeScript and Vite are dev tools.",
+          "README describes procedural placeholder audio, localStorage saves and optional future recorded audio."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/src/main.ts#L334",
+        "claim": "Runs simulation and rendering for player stats, combat, wildlife, gathering, crafting, building and night raids."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/LICENSE",
+        "additional_notices": [
+          "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/public/assets/CREDITS.md"
+        ],
+        "notes": "Repository code is MIT. The asset credits file contains a policy heading but no per-asset inventory; external asset provenance is not established by that file."
+      },
+      "demo": {
+        "url": "https://forest.angelov.gr",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/README.md",
+        "notes": "The author-linked site could not be retrieved through this text reader. No claim about gameplay or uptime."
+      },
+      "maturity": {
+        "status": "work-in-progress",
+        "basis_url": "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/README.md",
+        "notes": "Version 0.1.0; source includes the survival loop, while README notes planned cloud saves and incomplete translations."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "9140b5b94f60b5f67da58cf546850b24e65bff69",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-002.md#island-survival",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/package.json"
+          },
+          {
+            "path": "public/assets/CREDITS.md",
+            "url": "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/public/assets/CREDITS.md"
+          },
+          {
+            "path": "src/core/renderer.ts",
+            "url": "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/src/core/renderer.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/src/main.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "GPU fallback behavior, save durability, building rules and raid balance were not tested.",
+        "Asset credits are incomplete; MIT code is not evidence for all asset rights."
+      ]
+    },
+    {
+      "id": "minecraft-adventure",
+      "name": "Minecraft Adventure",
+      "repository_url": "https://github.com/JasonTM17/Minecraft_Adventure",
+      "genres": [
+        "survival",
+        "voxel",
+        "adventure",
+        "building"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.185.1",
+        "render_evidence": {
+          "url": "https://github.com/JasonTM17/Minecraft_Adventure/blob/137e6c52600e5dad5f055bb25316a53c58535b17/src/core/game.ts#L27",
+          "claim": "Directly imports Three.js, creates WebGLRenderer and drives frames with renderer.setAnimationLoop."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/JasonTM17/Minecraft_Adventure/blob/137e6c52600e5dad5f055bb25316a53c58535b17/package.json",
+            "dependencies": {
+              "three": "^0.185.1"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.185.1",
+              "oxlint": "^1.75.0",
+              "typescript": "^7.0.2",
+              "vite": "^8.1.5",
+              "vitest": "^4.1.10"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js is the only declared runtime dependency; Vite, TypeScript, Vitest and oxlint are dev tools.",
+          "Custom voxel/AABB physics and terrain; README describes procedural canvas textures and Web Audio synthesis."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/JasonTM17/Minecraft_Adventure/blob/137e6c52600e5dad5f055bb25316a53c58535b17/src/adventure/quest-manager.ts#L75",
+        "claim": "Advances hunting, travel, crystal and dragon objectives; dragonSlain completes the adventure and fires the completion callback."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/JasonTM17/Minecraft_Adventure/blob/137e6c52600e5dad5f055bb25316a53c58535b17/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/JasonTM17/Minecraft_Adventure/blob/137e6c52600e5dad5f055bb25316a53c58535b17/README.md",
+        "notes": "Reviewed README provides local/Docker run instructions but no author-published live-play URL; no Pages URL was guessed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/JasonTM17/Minecraft_Adventure/blob/137e6c52600e5dad5f055bb25316a53c58535b17/README.md",
+        "notes": "Version 0.3.0, with survival systems and an implemented quest-chain victory; README provides build/test instructions."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "137e6c52600e5dad5f055bb25316a53c58535b17",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-002.md#minecraft-adventure",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/JasonTM17/Minecraft_Adventure/blob/137e6c52600e5dad5f055bb25316a53c58535b17/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/JasonTM17/Minecraft_Adventure/blob/137e6c52600e5dad5f055bb25316a53c58535b17/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/JasonTM17/Minecraft_Adventure/blob/137e6c52600e5dad5f055bb25316a53c58535b17/package.json"
+          },
+          {
+            "path": "src/adventure/quest-manager.ts",
+            "url": "https://github.com/JasonTM17/Minecraft_Adventure/blob/137e6c52600e5dad5f055bb25316a53c58535b17/src/adventure/quest-manager.ts"
+          },
+          {
+            "path": "src/core/game.ts",
+            "url": "https://github.com/JasonTM17/Minecraft_Adventure/blob/137e6c52600e5dad5f055bb25316a53c58535b17/src/core/game.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/JasonTM17/Minecraft_Adventure/blob/137e6c52600e5dad5f055bb25316a53c58535b17/src/main.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "README's zero-external-assets statement is recorded as an author claim, not an exhaustive asset audit.",
+        "Procedural generation, mining persistence, boss difficulty and upstream test counts were not tested.",
+        "This fan project is not represented as an official Minecraft release."
+      ]
+    },
+    {
+      "id": "stick-steel",
+      "name": "Stick & Steel",
+      "repository_url": "https://github.com/Rabneba/stick-steel",
+      "genres": [
+        "fighting",
+        "dueling",
+        "physics",
+        "multiplayer"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.180.0",
+        "render_evidence": {
+          "url": "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/lib/duel/scene.ts#L39",
+          "claim": "Imports Three.js directly, creates WebGLRenderer and runs its own animation loop and scene rendering; React/Vinext hosts the client scene."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/package.json",
+            "dependencies": {
+              "@base-ui/react": "1.7.0",
+              "@dimforge/rapier3d-compat": "^0.19.0",
+              "@genex-ai/embed-sdk": "^0.21.1",
+              "@genex-ai/multiplayer": "^0.16.0",
+              "@shadcn/react": "0.3.0",
+              "class-variance-authority": "0.7.1",
+              "clsx": "2.1.1",
+              "cmdk": "1.1.1",
+              "date-fns": "4.1.0",
+              "embla-carousel-react": "8.5.2",
+              "input-otp": "1.4.2",
+              "lucide-react": "1.31.0",
+              "react": "19.2.6",
+              "react-day-picker": "9.8.1",
+              "react-dom": "19.2.6",
+              "react-resizable-panels": "4.5.8",
+              "react-server-dom-webpack": "19.2.6",
+              "recharts": "3.8.0",
+              "shadcn": "4.18.0",
+              "tailwind-merge": "3.6.0",
+              "three": "^0.180.0",
+              "tw-animate-css": "1.4.0",
+              "vinext": "1.0.0-beta.5"
+            },
+            "dev_dependencies": {
+              "@cloudflare/vite-plugin": "1.37.1",
+              "@cloudflare/workers-types": "4.20260515.1",
+              "@genex-ai/cli-demo": "^1.30.0-dev.645",
+              "@openai/sites-vite-plugin": "0.2.0",
+              "@tailwindcss/postcss": "4.2.1",
+              "@types/node": "22.19.19",
+              "@types/react": "19.2.14",
+              "@types/react-dom": "19.2.3",
+              "@types/three": "^0.180.0",
+              "@vitejs/plugin-react": "6.0.2",
+              "@vitejs/plugin-rsc": "0.5.26",
+              "oxfmt": "0.61.0",
+              "oxlint": "1.76.0",
+              "oxlint-tsgolint": "7.0.2001",
+              "tailwindcss": "4.2.1",
+              "tsx": "^4.20.6",
+              "typescript": "5.9.3",
+              "vite": "8.0.13",
+              "wrangler": "4.92.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Rapier ^0.19.0 weapon/ragdoll physics; React 19, React DOM, Vinext, Genex embed/multiplayer and the full UI utility dependency snapshot are disclosed.",
+          "Solo practice and the rig lab can run locally according to README; online duels use Genex relay services. Models, sounds and textures use Git LFS."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/lib/duel/physics.ts#L713",
+        "claim": "Applies defeat by setting health to zero, enters the finished phase, selects the winner and supports a reset/rematch path."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/LICENSE",
+        "additional_notices": [
+          "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/public/fonts/OFL.txt"
+        ],
+        "notes": "Project code is MIT. Bundled Patrick Hand font has its own SIL Open Font License 1.1 notice. README states third-party dependencies retain their own licenses; Git LFS assets were not exhaustively audited."
+      },
+      "demo": {
+        "url": "https://genex.games/stick-steel",
+        "status": "page-read",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/README.md",
+        "notes": "The Genex host page was readable and described bot/online duels. The embedded game was not launched or interacted with."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/README.md",
+        "notes": "Author labels it a dueling prototype with training, bots, practice and online bouts."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "4c8e1d05a1ec47db93b687a81a82878727308b20",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-002.md#stick-steel",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/README.md"
+          },
+          {
+            "path": "lib/duel/physics.ts",
+            "url": "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/lib/duel/physics.ts"
+          },
+          {
+            "path": "lib/duel/scene.ts",
+            "url": "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/lib/duel/scene.ts"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/package.json"
+          },
+          {
+            "path": "public/fonts/OFL.txt",
+            "url": "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/public/fonts/OFL.txt"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "React is an auxiliary app/UI shell; no React Three Fiber is declared or used in the reviewed renderer path.",
+        "Online relay, Git LFS asset download and physical combat were not tested.",
+        "No account, paid service, asset download or generated-art service was used in this review."
+      ]
+    },
+    {
+      "id": "skyward",
+      "name": "Skyward",
+      "repository_url": "https://github.com/arjunemirchandani/skyward-flight-simulator",
+      "genres": [
+        "flight",
+        "simulation",
+        "missions",
+        "time-trial"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.161.0 (unpkg import map)",
+        "render_evidence": {
+          "url": "https://github.com/arjunemirchandani/skyward-flight-simulator/blob/5fde882dc8fe33bd3067504c8181c85747b6fb60/index.html#L411",
+          "claim": "Imports Three.js through an explicit CDN import map and directly constructs WebGLRenderer; the same HTML file runs requestAnimationFrame."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Single-file HTML/JavaScript game; Three.js/add-ons via unpkg; no package manifest found.",
+          "Author describes procedural terrain/weather/traffic and synthesized audio; flight model is explicitly arcade-style."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/arjunemirchandani/skyward-flight-simulator/blob/5fde882dc8fe33bd3067504c8181c85747b6fb60/index.html#L3535",
+        "claim": "Completes runway-to-runway missions with gate, touchdown and time scoring; ring courses also record best times."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/arjunemirchandani/skyward-flight-simulator/blob/5fde882dc8fe33bd3067504c8181c85747b6fb60/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://arjunemirchandani.github.io/skyward-flight-simulator/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/arjunemirchandani/skyward-flight-simulator/blob/5fde882dc8fe33bd3067504c8181c85747b6fb60/README.md",
+        "notes": "The author-linked Pages URL could not be retrieved through the reader; flight and scoring were not tested."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/arjunemirchandani/skyward-flight-simulator/blob/5fde882dc8fe33bd3067504c8181c85747b6fb60/README.md",
+        "notes": "Source implements scored missions and persistent logbook/records, differentiating it from a flight-scene showcase."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "5fde882dc8fe33bd3067504c8181c85747b6fb60",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-002.md#skyward",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/arjunemirchandani/skyward-flight-simulator/blob/5fde882dc8fe33bd3067504c8181c85747b6fb60/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/arjunemirchandani/skyward-flight-simulator/blob/5fde882dc8fe33bd3067504c8181c85747b6fb60/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/arjunemirchandani/skyward-flight-simulator/blob/5fde882dc8fe33bd3067504c8181c85747b6fb60/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "A network connection is required for the Three.js CDN on first load.",
+        "Flight realism, collisions, weather and route score balance were not tested."
+      ]
+    },
+    {
+      "id": "voxel-musou",
+      "name": "Voxel Musou",
+      "repository_url": "https://github.com/mike007jd/voxel-musou",
+      "genres": [
+        "action",
+        "hack-and-slash",
+        "third-person",
+        "survival"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r186 (vendored; README and import map)",
+        "render_evidence": {
+          "url": "https://github.com/mike007jd/voxel-musou/blob/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f/src/post/post.js#L206",
+          "claim": "Directly imports Three.js and constructs WebGLRenderer with Three.js post-processing; no component renderer is involved."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Plain ES modules, vendored Three.js/add-ons, custom fixed 60 Hz simulation and procedural Web Audio.",
+          "No package manifest found; Node-based simulation checks exist upstream but were not run."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/mike007jd/voxel-musou/blob/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f/src/story/index.js#L64",
+        "claim": "Ends stories with win/loss result events, freezes final statistics and supports chapter/trial progression; main.js drives fixed-step battles."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/mike007jd/voxel-musou/blob/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f/LICENSE",
+        "additional_notices": [
+          "https://github.com/mike007jd/voxel-musou/blob/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f/README.md"
+        ],
+        "notes": "Code and Three.js are MIT per the author's notices. README identifies the bundled Yuji Boku font subset as SIL OFL 1.1 and states original commercial-game assets are not included; this claim was not independently audited."
+      },
+      "demo": {
+        "url": "https://voxel-musou.vercel.app",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/mike007jd/voxel-musou/blob/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f/README.md",
+        "notes": "The author-linked Vercel URL could not be retrieved through the reader. No battlefield rendering or combat was tested."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/mike007jd/voxel-musou/blob/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f/README.md",
+        "notes": "Source implements campaign win/loss, results and chapter/trial state; README documents progression and records."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "aba5fb8f43b713e88e8ac3a3105e48f01941dc7f",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-002.md#voxel-musou",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/mike007jd/voxel-musou/blob/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/mike007jd/voxel-musou/blob/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/mike007jd/voxel-musou/blob/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f/index.html"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/mike007jd/voxel-musou/blob/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f/src/main.js"
+          },
+          {
+            "path": "src/post/post.js",
+            "url": "https://github.com/mike007jd/voxel-musou/blob/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f/src/post/post.js"
+          },
+          {
+            "path": "src/story/index.js",
+            "url": "https://github.com/mike007jd/voxel-musou/blob/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f/src/story/index.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Hundreds-of-enemies performance and source/asset originality claims are not independent test results.",
+        "Font licensing differs from MIT code; campaign progress uses origin-specific localStorage.",
+        "Fan-project branding does not grant rights in third-party trademarks."
+      ]
+    },
+    {
+      "id": "simdrone",
+      "name": "Drone World / SimDrone",
+      "repository_url": "https://github.com/realEdwinJ/SimDrone",
+      "genres": [
+        "flight",
+        "racing",
+        "delivery",
+        "simulation"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.185.1",
+        "render_evidence": {
+          "url": "https://github.com/realEdwinJ/SimDrone/blob/ecfa202b879d85b4bafff3528afd86eb7676cf9c/lib/simulator.js#L16",
+          "claim": "Imports Three.js directly, aliases it as T and constructs WebGLRenderer; its own animation function renders the scene."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/realEdwinJ/SimDrone/blob/ecfa202b879d85b4bafff3528afd86eb7676cf9c/package.json",
+            "dependencies": {
+              "esbuild": "^0.28.1",
+              "three": "^0.185.1"
+            },
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vanilla JavaScript with Three.js; esbuild ^0.28.1 is the bundler although listed under dependencies.",
+          "Custom drone dynamics, procedural city and browser DOM/touch HUD."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/realEdwinJ/SimDrone/blob/ecfa202b879d85b4bafff3528afd86eb7676cf9c/lib/simulator.js#L809",
+        "claim": "Moves delivery missions from pickup to drop-off, awards points on delivery, and separately completes checkpoint races with recorded finish time."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/realEdwinJ/SimDrone/blob/ecfa202b879d85b4bafff3528afd86eb7676cf9c/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/realEdwinJ/SimDrone/blob/ecfa202b879d85b4bafff3528afd86eb7676cf9c/README.md",
+        "notes": "README mentions Pages deployment workflows but provides no live URL; none was inferred from the repository name."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/realEdwinJ/SimDrone/blob/ecfa202b879d85b4bafff3528afd86eb7676cf9c/README.md",
+        "notes": "Source includes delivery rewards, timed racing, battery/health and crash/reset states; README provides local build instructions."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "ecfa202b879d85b4bafff3528afd86eb7676cf9c",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-002.md#simdrone",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/realEdwinJ/SimDrone/blob/ecfa202b879d85b4bafff3528afd86eb7676cf9c/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/realEdwinJ/SimDrone/blob/ecfa202b879d85b4bafff3528afd86eb7676cf9c/README.md"
+          },
+          {
+            "path": "lib/simulator.js",
+            "url": "https://github.com/realEdwinJ/SimDrone/blob/ecfa202b879d85b4bafff3528afd86eb7676cf9c/lib/simulator.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/realEdwinJ/SimDrone/blob/ecfa202b879d85b4bafff3528afd86eb7676cf9c/package.json"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Flight dynamics and collision/health simulation were not tested.",
+        "Declared fonts and all procedural/third-party asset provenance were not exhaustively audited."
+      ]
+    },
+    {
+      "id": "orbit-golf",
+      "name": "Orbit Golf",
+      "repository_url": "https://github.com/ronpicard/orbit-golf",
+      "genres": [
+        "sports",
+        "mini-golf",
+        "puzzle",
+        "physics"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.0",
+        "render_evidence": {
+          "url": "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/src/render/Engine.ts#L796",
+          "claim": "Imports Three.js/add-ons directly and constructs WebGLRenderer; React renders separate menus/HUD rather than the 3D scene."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/package.json",
+            "dependencies": {
+              "react": "^19.3.0",
+              "react-dom": "^19.3.0",
+              "three": "^0.186.0"
+            },
+            "dev_dependencies": {
+              "@types/node": "^22.20.2",
+              "@types/react": "^19.3.0",
+              "@types/react-dom": "^19.3.0",
+              "@types/three": "^0.186.0",
+              "@vitejs/plugin-react": "^6.1.1",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "React/React DOM 19.3.0 UI, TypeScript, Vite, custom GLSL/post-processing and Web Audio synthesis.",
+          "Custom planar Newtonian gravity, velocity-Verlet stepping, friction, collision and saved progress; no backend according to README."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/src/game/physics.ts#L371",
+        "claim": "Returns goal, hazard and rest outcomes for shots; the renderer reacts to goal/rest, and the README documents stroke limits and hole progression."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://ronpicard.github.io/orbit-golf/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/README.md",
+        "notes": "The author-linked Pages URL was attempted in this review session and could not be retrieved; availability remains unknown."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/README.md",
+        "notes": "Version 2.4.0; source implements goal/hazard/rest outcomes and README documents an 18-hole scorecard and progression."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "c854d9829da8828d2a35f7c15c4dfbd51a6ebd73",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-002.md#orbit-golf",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/package.json"
+          },
+          {
+            "path": "src/game/physics.ts",
+            "url": "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/src/game/physics.ts"
+          },
+          {
+            "path": "src/render/Engine.ts",
+            "url": "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/src/render/Engine.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Underlying ball simulation is planar while the fairway, golfer, hazards and cameras are rendered in 3D.",
+        "React DOM is disclosed; no React Three Fiber appears in the reviewed manifest or renderer path.",
+        "Stored solver solutions, hole finishability, physics accuracy and mobile controls were not executed or tested."
+      ]
     }
   ]
 }
