@@ -2270,6 +2270,997 @@
         "React DOM is disclosed; no React Three Fiber appears in the reviewed manifest or renderer path.",
         "Stored solver solutions, hole finishability, physics accuracy and mobile controls were not executed or tested."
       ]
+    },
+    {
+      "id": "vesper-street",
+      "name": "Vesper Street",
+      "repository_url": "https://github.com/winchxyz/vesper-street",
+      "genres": [
+        "horror",
+        "survival",
+        "adventure"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.169.0 (CDN import map)",
+        "render_evidence": {
+          "url": "https://github.com/winchxyz/vesper-street/blob/fcc2f6eda84311194c0834de6cd7081c2965086f/js/main.js#L17",
+          "claim": "Imports Three.js directly, constructs WebGLRenderer and drives the frame function with renderer.setAnimationLoop."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla ES modules and a Three.js CDN import map; no package manifest found.",
+          "Author describes procedural voxel scenery and synthesized Web Audio, with no external art assets."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/winchxyz/vesper-street/blob/fcc2f6eda84311194c0834de6cd7081c2965086f/js/game.js#L272",
+        "claim": "Reaching a chapter exit advances the campaign; runtime also manages items, sanity, flashlight battery, death and an ending state."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/winchxyz/vesper-street/blob/fcc2f6eda84311194c0834de6cd7081c2965086f/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://winchxyz.github.io/vesper-street/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/winchxyz/vesper-street/blob/fcc2f6eda84311194c0834de6cd7081c2965086f/README.md",
+        "notes": "Author-linked Pages URL could not be retrieved through the text reader; no rendering or gameplay was tested."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/winchxyz/vesper-street/blob/fcc2f6eda84311194c0834de6cd7081c2965086f/README.md",
+        "notes": "Source has campaign progression, objective/inventory state, death/retry and ending flow; README describes three chapters."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "fcc2f6eda84311194c0834de6cd7081c2965086f",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-003.md#vesper-street",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/winchxyz/vesper-street/blob/fcc2f6eda84311194c0834de6cd7081c2965086f/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/winchxyz/vesper-street/blob/fcc2f6eda84311194c0834de6cd7081c2965086f/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/winchxyz/vesper-street/blob/fcc2f6eda84311194c0834de6cd7081c2965086f/index.html"
+          },
+          {
+            "path": "js/game.js",
+            "url": "https://github.com/winchxyz/vesper-street/blob/fcc2f6eda84311194c0834de6cd7081c2965086f/js/game.js"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/winchxyz/vesper-street/blob/fcc2f6eda84311194c0834de6cd7081c2965086f/js/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Isometric presentation and planar navigation are disclosed; this is a rendered 3D town, not an optional 3D viewer for a flat game.",
+        "The author's procedural/no-external-assets claim and browser performance were not independently audited."
+      ]
+    },
+    {
+      "id": "liminality",
+      "name": "Liminality",
+      "repository_url": "https://github.com/IronExcavater/threejs-liminality",
+      "genres": [
+        "horror",
+        "first-person",
+        "maze",
+        "puzzle"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.174.0",
+        "render_evidence": {
+          "url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/src/app.js#L44",
+          "claim": "Directly imports Three.js, creates WebGLRenderer and uses renderer.setAnimationLoop for updates."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/package.json",
+            "dependencies": {
+              "three": "^0.174.0",
+              "cannon-es": "^0.20.0",
+              "heap-js": "^2.6.0"
+            },
+            "dev_dependencies": {
+              "vite": "^6.2.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Cannon-es ^0.20.0 physics, heap-js ^2.6.0, Three.js add-ons/post-processing and Vite ^6.2.0."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/src/ExitDoor.js#L48",
+        "claim": "An escape interaction depends on restored power and displays an escaped ending; PowerSwitch.js increments the breaker/power objective."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/LICENSE",
+        "additional_notices": [
+          "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/public/assets/models/flashlight/license.txt",
+          "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/public/assets/models/furniture/license.txt"
+        ],
+        "notes": "Code is MIT. Flashlight and school furniture model notices separately require CC BY 4.0 attribution to their named Sketchfab creators. Other model/audio rights were not exhaustively audited."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/README.md",
+        "notes": "The reviewed README provides project/run information but no confirmed author-hosted live-play URL; none was guessed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/README.md",
+        "notes": "Source implements a first-person maze, interactive power switches, an escape condition and restart UI."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "d57abb61d6546de0379df15f60b0ba33210b1ee6",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-003.md#liminality",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/package.json"
+          },
+          {
+            "path": "public/assets/models/flashlight/license.txt",
+            "url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/public/assets/models/flashlight/license.txt"
+          },
+          {
+            "path": "public/assets/models/furniture/license.txt",
+            "url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/public/assets/models/furniture/license.txt"
+          },
+          {
+            "path": "src/ExitDoor.js",
+            "url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/src/ExitDoor.js"
+          },
+          {
+            "path": "src/PowerSwitch.js",
+            "url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/src/PowerSwitch.js"
+          },
+          {
+            "path": "src/app.js",
+            "url": "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/src/app.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Procedural maze generation, entity AI and the escape sequence were not run.",
+        "Code MIT must not replace the explicit CC BY 4.0 model attribution requirements."
+      ]
+    },
+    {
+      "id": "deep-in-the-graveyard",
+      "name": "Deep in the Graveyard",
+      "repository_url": "https://github.com/andykswong/ld48",
+      "genres": [
+        "roguelite",
+        "turn-based",
+        "survival",
+        "puzzle"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.128.0",
+        "render_evidence": {
+          "url": "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/src/game.ts#L12",
+          "claim": "Imports Three.js directly and creates WebGLRenderer; the game updates mobs and renders a Three.js scene and camera."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/package.json",
+            "dependencies": {
+              "gsap": "^3.6.1",
+              "three": "^0.128.0"
+            },
+            "dev_dependencies": {
+              "@types/gsap": "^1.20.2",
+              "@types/node": "^14.14.25",
+              "@types/three": "^0.127.1",
+              "@typescript-eslint/eslint-plugin": "^4.2.0",
+              "@typescript-eslint/parser": "^4.2.0",
+              "copy-webpack-plugin": "^8.1.1",
+              "cross-env": "^7.0.3",
+              "eslint": "^7.24.0",
+              "rimraf": "^3.0.2",
+              "source-map-loader": "^2.0.0",
+              "ts-essentials": "^7.0.1",
+              "ts-loader": "^8.0.12",
+              "typedoc": "^0.20.24",
+              "typescript": "^4.2.4",
+              "webpack": "^5.31.2",
+              "webpack-cli": "^4.2.0",
+              "webpack-dev-server": "^3.11.0",
+              "webpack-merge": "^5.7.3"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "GSAP ^3.6.1, TypeScript and webpack tooling; procedural Three.js models according to README."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/src/index.ts#L86",
+        "claim": "Detects hero death, reports depth survived and offers retry; the runtime moves the hero and enemies turn by turn."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/LICENSE",
+        "additional_notices": [
+          "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/README.md"
+        ],
+        "notes": "Code is MIT. README separately credits jsfxr-generated effects, Wolfram Tones music, the Zughy 32 palette and Lobster Two font. Those media/source-service terms were not established as MIT or independently audited."
+      },
+      "demo": {
+        "url": "https://andykswong.itch.io/ld48",
+        "status": "page-read",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/README.md",
+        "notes": "Author itch.io page and its HTML5 iframe link were readable; the embedded game was not launched or interacted with."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/README.md",
+        "notes": "Author describes a Ludum Dare 48 compo game built in under a day; published page labels it in development."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "72901e2d21d85219cbb54af13055ec42632fba25",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-003.md#deep-in-the-graveyard",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/package.json"
+          },
+          {
+            "path": "src/game.ts",
+            "url": "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/src/game.ts"
+          },
+          {
+            "path": "src/index.ts",
+            "url": "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/src/index.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Grid-based turn rules use a 3D-rendered graveyard; there is no claim of continuous 3D player physics.",
+        "Jam code quality, procedural models, font/audio rights and browser behavior were not exhaustively audited."
+      ]
+    },
+    {
+      "id": "snake-charmer",
+      "name": "Snake Charmer",
+      "repository_url": "https://github.com/andrenanninga/ludum-dare-40",
+      "genres": [
+        "arcade",
+        "snake",
+        "dungeon"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.88.0",
+        "render_evidence": {
+          "url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/src/Game/index.js#L44",
+          "claim": "Game class imports Three.js and constructs WebGLRenderer; React App mounts that class into a DOM container and renders HUD components."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/package.json",
+            "dependencies": {
+              "hammerjs": "^2.0.8",
+              "howler": "^2.0.5",
+              "lodash": "^4.17.4",
+              "matter-js": "^0.14.0",
+              "orbit-controls-es6": "^1.0.10",
+              "react": "^16.2.0",
+              "react-dom": "^16.2.0",
+              "stats.js": "^0.17.0",
+              "three": "^0.88.0",
+              "three-react-mtl-loader": "^1.0.3",
+              "three-react-obj-loader": "^1.0.4"
+            },
+            "dev_dependencies": {
+              "gh-pages": "^1.1.0",
+              "react-scripts": "1.0.17"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "React 16/React DOM HUD shell, Matter.js planar physics, Hammer.js, Howler, lodash, Stats.js and Create React App tooling.",
+          "Manifest declares three-react-mtl-loader/obj-loader packages; the reviewed Loader/index.js actually imports local OBJLoader/MTLLoader helper modules. These declarations are not R3F."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/src/Game/Snake.js#L139",
+        "claim": "Checks the next tile for body/wall collisions, updates lives and dying state, consumes food, and exits to the next dungeon."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://fakeyou.github.io/ludum-dare-40/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/README.md",
+        "notes": "Repository homepage's historical author URL could not be retrieved through the text reader; availability remains unconfirmed."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/README.md",
+        "notes": "Ludum Dare 40 game source includes lives, eating, collision/death, dungeon transitions, scoring and restart."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "d8307e3f6152c168a72bd743e49592f3d661e72a",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-003.md#snake-charmer",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/package.json"
+          },
+          {
+            "path": "src/App.js",
+            "url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/src/App.js"
+          },
+          {
+            "path": "src/Game/Loader/index.js",
+            "url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/src/Game/Loader/index.js"
+          },
+          {
+            "path": "src/Game/Snake.js",
+            "url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/src/Game/Snake.js"
+          },
+          {
+            "path": "src/Game/index.js",
+            "url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/src/Game/index.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Snake movement and Matter physics are planar inside a 3D-rendered dungeon; React is an explicit auxiliary HUD shell.",
+        "Legacy Three.js/CRA compatibility and bundled model/audio/font licensing were not exhaustively audited."
+      ]
+    },
+    {
+      "id": "bowling",
+      "name": "Bowling",
+      "repository_url": "https://github.com/iliagrigorevdev/bowling",
+      "genres": [
+        "sports",
+        "bowling",
+        "physics"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "vendored js/three.js (exact revision not established)",
+        "render_evidence": {
+          "url": "https://github.com/iliagrigorevdev/bowling/blob/60fa6fe5283869c45515f614f6a99b181c63d499/js/bowlchallenge.js#L81",
+          "claim": "Creates a Three.js WebGLRenderer, scene, perspective camera and loaded bowling objects; index.html loads the scripts directly."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vendored Ammo.js/Bullet physics, Three.js GLTFLoader and plain browser scripts; no package manifest found.",
+          "bowlphysics.js creates and steps an Ammo dynamics world."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/iliagrigorevdev/bowling/blob/60fa6fe5283869c45515f614f6a99b181c63d499/js/scores.js#L2",
+        "claim": "Implements ten frames, strike/spare handling, throw results, total scoring and game-over state."
+      },
+      "license": {
+        "spdx": "GPL-3.0 (only/or-later variant unconfirmed)",
+        "source_url": "https://github.com/iliagrigorevdev/bowling/blob/60fa6fe5283869c45515f614f6a99b181c63d499/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://iliagrigorevdev.github.io/bowling/",
+        "status": "page-read",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/iliagrigorevdev/bowling/blob/60fa6fe5283869c45515f614f6a99b181c63d499/README.md",
+        "notes": "Text reader returned an HTML document titled Bowling but no extractable body; bowling physics and input were not tested."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/iliagrigorevdev/bowling/blob/60fa6fe5283869c45515f614f6a99b181c63d499/README.md",
+        "notes": "Source implements ball positioning/throwing and a complete ten-frame scoring session; README links a published build."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "60fa6fe5283869c45515f614f6a99b181c63d499",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-003.md#bowling",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/iliagrigorevdev/bowling/blob/60fa6fe5283869c45515f614f6a99b181c63d499/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/iliagrigorevdev/bowling/blob/60fa6fe5283869c45515f614f6a99b181c63d499/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/iliagrigorevdev/bowling/blob/60fa6fe5283869c45515f614f6a99b181c63d499/index.html"
+          },
+          {
+            "path": "js/bowlchallenge.js",
+            "url": "https://github.com/iliagrigorevdev/bowling/blob/60fa6fe5283869c45515f614f6a99b181c63d499/js/bowlchallenge.js"
+          },
+          {
+            "path": "js/bowlphysics.js",
+            "url": "https://github.com/iliagrigorevdev/bowling/blob/60fa6fe5283869c45515f614f6a99b181c63d499/js/bowlphysics.js"
+          },
+          {
+            "path": "js/scores.js",
+            "url": "https://github.com/iliagrigorevdev/bowling/blob/60fa6fe5283869c45515f614f6a99b181c63d499/js/scores.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "GPL v3 text is present; a project-specific only/or-later election was not established in this review.",
+        "The author's accurate-physics claim and bundled asset licenses were not independently verified."
+      ]
+    },
+    {
+      "id": "journey-to-the-center-of-the-hole",
+      "name": "Journey to the Center of the Hole",
+      "repository_url": "https://github.com/dvcolgan/ludumdare29",
+      "genres": [
+        "survival",
+        "first-person",
+        "falling",
+        "arcade"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "vendored vendor/three.js (exact revision not established)",
+        "render_evidence": {
+          "url": "https://github.com/dvcolgan/ludumdare29/blob/80753b2bc3ac1bc4348edcf2307ca1269d820afb/factories.js#L8",
+          "claim": "The project renderer factory directly constructs Three.js WebGLRenderer; main.js renders its own scene/camera from requestAnimationFrame."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vendored jQuery, lodash, tween.js, SoundManager2, signals, class helpers and Cannon.js script tags; declaration/loading does not establish active physics use.",
+          "Project-authored renderer/entity/pool helpers and plain JavaScript; no package manifest found."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/dvcolgan/ludumdare29/blob/80753b2bc3ac1bc4348edcf2307ca1269d820afb/main.js#L76",
+        "claim": "Checks loss after wall/root/fireball hazards, enters game-over with distance fallen as score and exposes a restart button."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/dvcolgan/ludumdare29/blob/80753b2bc3ac1bc4348edcf2307ca1269d820afb/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/dvcolgan/ludumdare29/blob/80753b2bc3ac1bc4348edcf2307ca1269d820afb/README.md",
+        "notes": "No author-published live-play URL was located in the reviewed short README and entry HTML."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/dvcolgan/ludumdare29/blob/80753b2bc3ac1bc4348edcf2307ca1269d820afb/README.md",
+        "notes": "Despite a short starting-codebase README, the actual entry HTML names the game and main.js implements title/play/game-over/restart states."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "80753b2bc3ac1bc4348edcf2307ca1269d820afb",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-003.md#journey-to-the-center-of-the-hole",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/dvcolgan/ludumdare29/blob/80753b2bc3ac1bc4348edcf2307ca1269d820afb/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/dvcolgan/ludumdare29/blob/80753b2bc3ac1bc4348edcf2307ca1269d820afb/README.md"
+          },
+          {
+            "path": "factories.js",
+            "url": "https://github.com/dvcolgan/ludumdare29/blob/80753b2bc3ac1bc4348edcf2307ca1269d820afb/factories.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/dvcolgan/ludumdare29/blob/80753b2bc3ac1bc4348edcf2307ca1269d820afb/index.html"
+          },
+          {
+            "path": "main.js",
+            "url": "https://github.com/dvcolgan/ludumdare29/blob/80753b2bc3ac1bc4348edcf2307ca1269d820afb/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Jam-era browser/audio compatibility and all shipped image/audio rights were not exhaustively audited.",
+        "A fetched source entry is not proof that the old build currently runs."
+      ]
+    },
+    {
+      "id": "3d-platformer-dan",
+      "name": "3D Platformer Game (Dan Art Projects)",
+      "repository_url": "https://github.com/Dan-Art-Projects/3d-platformer-three",
+      "genres": [
+        "platformer",
+        "action"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 / 0.128.0 (CDN scripts in index.html)",
+        "render_evidence": {
+          "url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/scripts/game.js#L97",
+          "claim": "Actual index.html entry loads scripts/game.js, which directly creates Three.js WebGLRenderer, Scene and PerspectiveCamera; root game.js is not the reviewed entry."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/package.json",
+            "dependencies": {
+              "@lookingglass/webxr": "^0.6.0",
+              "body-parser": "^1.20.2",
+              "cors": "^2.8.5",
+              "express": "^4.21.2",
+              "sqlite3": "^5.1.6"
+            },
+            "dev_dependencies": {
+              "nodemon": "^3.0.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js/GLTFLoader via CDN; Express, SQLite3, body-parser, cors and nodemon for the server/leaderboard.",
+          "@lookingglass/webxr is declared and index.html contains optional WebXR/Looking Glass helpers; this is not a replacement 3D renderer."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/scripts/gameFlow.js#L4",
+        "claim": "Completing a level advances currentLevel; passing maxLevel invokes gameWin, while gameOver and score/restart screens are separate paths."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/README.md",
+        "notes": "No confirmed author-hosted play URL was located; local Node server instructions are not converted into a guessed hosted demo."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/README.md",
+        "notes": "README describes five progressive levels, enemies, powers, health and leaderboards; source includes win/loss progression."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "cdac6f7792e89ceacebc7dba55d301fd40ab85be",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-003.md#3d-platformer-dan",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/package.json"
+          },
+          {
+            "path": "scripts/game.js",
+            "url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/scripts/game.js"
+          },
+          {
+            "path": "scripts/gameActions.js",
+            "url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/scripts/gameActions.js"
+          },
+          {
+            "path": "scripts/gameFlow.js",
+            "url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/scripts/gameFlow.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "GLB models, sky imagery and other asset provenance were not exhaustively audited.",
+        "Backend database, WebXR hardware and browser controls were not tested.",
+        "Repository includes generated/vendor files; none are copied into GameMap."
+      ]
+    },
+    {
+      "id": "arena",
+      "name": "Arena",
+      "repository_url": "https://github.com/Hazzad123/fully-ai-arena-fps",
+      "genres": [
+        "shooter",
+        "first-person",
+        "multiplayer",
+        "arena"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.185.1",
+        "render_evidence": {
+          "url": "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/client/src/mapRenderer.js#L760",
+          "claim": "Directly imports Three.js and constructs WebGLRenderer; client main runs its own frame/simulation/render loop."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/package.json",
+            "dependencies": {
+              "express": "^5.1.0",
+              "three": "^0.185.1",
+              "ws": "^8.18.3"
+            },
+            "dev_dependencies": {
+              "concurrently": "^9.2.1",
+              "vite": "^7.1.5"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Express ^5.1.0 and ws ^8.18.3 backend, Vite ^7.1.5, concurrently and plain Three.js client.",
+          "Root LICENSE describes synthesized audio; desktop mouse/trackpad/controller controls and multiplayer/practice are documented."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/client/src/main.js#L1660",
+        "claim": "Receives match transitions, presents round results and supports practice/match screens; client frame steps simulation and renders the 3D arena."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE explicitly covers source with MIT and separately identifies Quaternius Toon Shooter art and Screaming Brain textures as CC0. GitHub metadata says NOASSERTION, so the actual file is used rather than guessing from that metadata."
+      },
+      "demo": {
+        "url": "https://arena-8g34.onrender.com",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/README.md",
+        "notes": "Author homepage could not be retrieved by the reader; no backend health, room creation or gameplay was tested."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/README.md",
+        "notes": "Version 0.1.0; source implements multiplayer round results and a practice range, while README describes multiple match modes."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "920b123d67015d5e8151a4ebd6742d8015d538be",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-003.md#arena",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/README.md"
+          },
+          {
+            "path": "client/src/main.js",
+            "url": "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/client/src/main.js"
+          },
+          {
+            "path": "client/src/mapRenderer.js",
+            "url": "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/client/src/mapRenderer.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/package.json"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Requires a running server for multiplayer; server uptime and network interpolation were not tested.",
+        "Asset CC0 claims are grounded in the repository notice, not an exhaustive independent file-by-file upstream audit."
+      ]
+    },
+    {
+      "id": "wizardwarz",
+      "name": "WizardWarz",
+      "repository_url": "https://github.com/Lallassu/wizardwarz",
+      "genres": [
+        "shooter",
+        "fantasy",
+        "multiplayer",
+        "action"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "vendored js/libs/three.min.js (exact revision not established)",
+        "render_evidence": {
+          "url": "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/js/game.js#L179",
+          "claim": "Creates Three.js WebGLRenderer; animate requests frames, updates game objects and renders the Three.js scene/camera."
+        },
+        "manifests": [
+          {
+            "path": "server/socket.io/package.json",
+            "url": "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/server/socket.io/package.json",
+            "dependencies": {
+              "socket.io-client": "0.9.16",
+              "policyfile": "0.0.4",
+              "base64id": "0.1.0"
+            },
+            "dev_dependencies": {
+              "expresso": "0.9.2",
+              "should": "*",
+              "benchmark": "0.2.2",
+              "microtime": "0.1.3-1",
+              "colors": "0.5.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Node HTTP server, SQLite via dblite, vendored Socket.IO 0.9.16 and old Three.js loaders/THREEx helpers.",
+          "jQuery 1.9.1 and font/typeface scripts are loaded by the client. The Socket.IO manifest snapshot is a vendored dependency manifest, not a complete app dependency lock."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/js/player.js#L103",
+        "claim": "Implements player death, health restoration/respawn, levels and combat-related player state for the networked wizard game."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/LICENSE",
+        "additional_notices": [
+          "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/index.html"
+        ],
+        "notes": "Root code is MIT. Entry HTML credits external sound/model/font sources, including SoundBible, BlendSwap and ROME; corresponding per-asset license grants were not established, so these are not called MIT assets."
+      },
+      "demo": {
+        "url": "http://wizardwarz.nergal.se",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/README.md",
+        "notes": "Historical README URL could not be retrieved by the reader after HTTPS normalization. README also mentions a historical server port; no alternative host/port was guessed."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/README.md",
+        "notes": "Author explicitly says the project is abandoned; source implements a multiplayer game rather than only a scene snippet."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "fc5451c980c61698f59c11319e581cf8e43ee028",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-003.md#wizardwarz",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/index.html"
+          },
+          {
+            "path": "js/game.js",
+            "url": "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/js/game.js"
+          },
+          {
+            "path": "js/player.js",
+            "url": "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/js/player.js"
+          },
+          {
+            "path": "server/server.js",
+            "url": "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/server/server.js"
+          },
+          {
+            "path": "server/socket.io/package.json",
+            "url": "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/server/socket.io/package.json"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Abandoned 2015-era networking, browser APIs and server dependencies were not installed or run.",
+        "External media and font credits do not establish a blanket redistribution license.",
+        "No account creation or live multiplayer connection was attempted."
+      ]
+    },
+    {
+      "id": "earth-defender",
+      "name": "Earth Defender",
+      "repository_url": "https://github.com/alexprut/earth-defender",
+      "genres": [
+        "shooter",
+        "space",
+        "multiplayer"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "Bower threejs *; exact bundled revision not established",
+        "render_evidence": {
+          "url": "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/client/js/game.js#L144",
+          "claim": "Creates Three.js WebGLRenderer and a perspective camera directly, with an explicit requestAnimationFrame render/update path."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Bower dependencies are threejs * and stats.js *; client is plain browser JavaScript.",
+          "README specifies Erlang/OTP multiplayer server and WebSocket connectivity; single-player configuration is also documented."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/client/js/game.js#L445",
+        "claim": "Updates meteorites, bullets, collisions and Earth damage/life; input changes spaceship position independently on x, y and z axes."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://alexprut.github.io/earth-defender/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/README.md",
+        "notes": "Author-linked Pages preview could not be retrieved through the reader; multiplayer backend availability and actual gameplay remain untested."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/README.md",
+        "notes": "2015-era distributed real-time 3D game source has life/damage and gameplay updates plus client/server setup documentation."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "5d4d8f0832fc74882a701d6a0dedee23fd494648",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-003.md#earth-defender",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/README.md"
+          },
+          {
+            "path": "client/bower.json",
+            "url": "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/client/bower.json"
+          },
+          {
+            "path": "client/index.html",
+            "url": "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/client/index.html"
+          },
+          {
+            "path": "client/js/game.js",
+            "url": "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/client/js/game.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Legacy Bower/Erlang/backend compatibility and wildcard dependency resolution were not tested.",
+        "Textures/models and other asset rights were not exhaustively audited."
+      ]
     }
   ]
 }

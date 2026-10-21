@@ -2,7 +2,7 @@
 
 [Machine-readable index](games.json) · [Source evidence](evidence/README.md) · [Candidate and exclusion queue](candidates.json) · [Schema](schema.json) · [Validator](validate.py)
 
-This focused collection currently contains **22 source-verified games** (reviewed 2026-10-21). **None were built or playtested in this review.** Twenty repositories were not mentioned in the existing root README; HexGL and YAZH receive normalized, pinned evidence here rather than being counted as new projects across GameMap.
+This focused collection currently contains **32 source-verified games** (reviewed 2026-10-21). **None were built or playtested in this review.** 30 repositories were not mentioned in the existing root README; HexGL and YAZH receive normalized, pinned evidence here rather than being counted as new projects across GameMap.
 
 “Direct Three.js” means the game itself creates a Three.js WebGLRenderer or WebGPURenderer and uses Three.js as its rendering core. Physics libraries, build tools, networking and DOM UI are allowed and disclosed. React/Vue/Svelte DOM UI appears in some entries. React Three Fiber, A-Frame, Babylon.js, Unity and comparable rendering/engine layers are excluded. A tutorial snippet, non-game scene, unavailable source, or unproven stack is insufficient. Public source with a restrictive non-open license is excluded.
 
@@ -32,6 +32,16 @@ The dimension field separates 3D worlds, 3D board games, cylindrical puzzles and
 | [Voxel Musou](https://github.com/mike007jd/voxel-musou) | action, hack-and-slash, third-person, survival | 3d-world | MIT | game | [author link](https://voxel-musou.vercel.app) — reader-error |
 | [Drone World / SimDrone](https://github.com/realEdwinJ/SimDrone) | flight, racing, delivery, simulation | 3d-world | MIT | game | not-located |
 | [Orbit Golf](https://github.com/ronpicard/orbit-golf) | sports, mini-golf, puzzle, physics | 3d-world | MIT | game | [author link](https://ronpicard.github.io/orbit-golf/) — reader-error |
+| [Vesper Street](https://github.com/winchxyz/vesper-street) | horror, survival, adventure | 3d-world | MIT | game | [author link](https://winchxyz.github.io/vesper-street/) — reader-error |
+| [Liminality](https://github.com/IronExcavater/threejs-liminality) | horror, first-person, maze, puzzle | 3d-world | MIT | prototype | not-located |
+| [Deep in the Graveyard](https://github.com/andykswong/ld48) | roguelite, turn-based, survival, puzzle | 3d-world | MIT | prototype | [author link](https://andykswong.itch.io/ld48) — page-read |
+| [Snake Charmer](https://github.com/andrenanninga/ludum-dare-40) | arcade, snake, dungeon | 3d-world | MIT | legacy-prototype | [author link](https://fakeyou.github.io/ludum-dare-40/) — reader-error |
+| [Bowling](https://github.com/iliagrigorevdev/bowling) | sports, bowling, physics | 3d-world | GPL-3.0 (only/or-later variant unconfirmed) | game | [author link](https://iliagrigorevdev.github.io/bowling/) — page-read |
+| [Journey to the Center of the Hole](https://github.com/dvcolgan/ludumdare29) | survival, first-person, falling, arcade | 3d-world | MIT | legacy-prototype | not-located |
+| [3D Platformer Game (Dan Art Projects)](https://github.com/Dan-Art-Projects/3d-platformer-three) | platformer, action | 3d-world | MIT | prototype | not-located |
+| [Arena](https://github.com/Hazzad123/fully-ai-arena-fps) | shooter, first-person, multiplayer, arena | 3d-world | MIT | prototype | [author link](https://arena-8g34.onrender.com) — reader-error |
+| [WizardWarz](https://github.com/Lallassu/wizardwarz) | shooter, fantasy, multiplayer, action | 3d-world | MIT | legacy-prototype | [author link](http://wizardwarz.nergal.se) — reader-error |
+| [Earth Defender](https://github.com/alexprut/earth-defender) | shooter, space, multiplayer | 3d-world | MIT | legacy-prototype | [author link](https://alexprut.github.io/earth-defender/) — reader-error |
 
 A `page-read` result only means the web reader returned an HTML document. It does not prove that scripts, WebGL/WebGPU, controls, assets or multiplayer work. `reader-error` means this reader could not retrieve the URL; it does not prove the site is down. `not-located` means the reviewed primary sources did not yield a live play URL. Demo checks and source commits are dated separately from any future runtime tests.
 
@@ -47,4 +57,4 @@ The dependency-free validator checks the JSON schema subset used here, required 
 
 For each increment, read the latest remote main, all open PRs and the current index/queue first. Use a fresh branch after a PR is merged; do not append to a merged branch or reopen superseded research. Add reviewed facts, update queue decisions and run the validator before opening/updating a PR. Preserve existing GameMap content, do not merge or deploy, and do not restore content from before the user's reset. The current series began from main `5d4de4f2984a8c1df1c6818b044a70c7080d085d`.
 
-Batch evidence: [001 — 12 games](evidence/batch-001.md) · [002 — 10 games](evidence/batch-002.md). The queue currently retains 9 pending and 2 excluded repositories; explicit commercial/restricted-asset cases are not presented as fully open game packages.
+Batch evidence: [001 — 12 games](evidence/batch-001.md) · [002 — 10 games](evidence/batch-002.md) · [003 — 10 games](evidence/batch-003.md). The queue currently retains 9 pending and 2 excluded repositories; explicit commercial/restricted-asset cases are not presented as fully open game packages.

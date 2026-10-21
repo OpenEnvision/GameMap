@@ -69,45 +69,6 @@
       ]
     },
     {
-      "id": "arena",
-      "repository_url": "https://github.com/Hazzad123/fully-ai-arena-fps",
-      "status": "pending",
-      "checked_at": "2026-10-21",
-      "source_commit": "920b123d67015d5e8151a4ebd6742d8015d538be",
-      "reason": "Root LICENSE separates MIT code from named CC0 art; README describes a full multiplayer FPS. Direct renderer/client manifests still need this batch's detailed review.",
-      "next_action": "Review client/src/mapRenderer.js and main.js, all client/server manifests and author demo/backend needs.",
-      "evidence_urls": [
-        "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/README.md",
-        "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/LICENSE"
-      ]
-    },
-    {
-      "id": "wizardwarz",
-      "repository_url": "https://github.com/Lallassu/wizardwarz",
-      "status": "pending",
-      "checked_at": "2026-10-21",
-      "source_commit": "fc5451c980c61698f59c11319e581cf8e43ee028",
-      "reason": "MIT code and multiplayer game description found; author explicitly says the project is abandoned. Per-asset licenses and direct renderer path need review.",
-      "next_action": "Inspect js/game.js, js/player.js, index.html asset credits and server manifests; retain abandonment/network limits.",
-      "evidence_urls": [
-        "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/README.md",
-        "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/LICENSE"
-      ]
-    },
-    {
-      "id": "earth-defender",
-      "repository_url": "https://github.com/alexprut/earth-defender",
-      "status": "pending",
-      "checked_at": "2026-10-21",
-      "source_commit": "5d4d8f0832fc74882a701d6a0dedee23fd494648",
-      "reason": "MIT code and 3D single/multiplayer description found; client renderer and Erlang/OTP backend requirements need review.",
-      "next_action": "Inspect client/js/game.js, Bower dependencies, client entry and demo; audit available texture notices.",
-      "evidence_urls": [
-        "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/README.md",
-        "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/LICENSE"
-      ]
-    },
-    {
       "id": "trigger-rally",
       "repository_url": "https://github.com/CodeArtemis/TriggerRally",
       "status": "pending",
@@ -144,6 +105,51 @@
       "evidence_urls": [
         "https://github.com/gorescript/gorescript/blob/e3adca28228eb862ba9392e1af67087bc189cadc/README.md",
         "https://github.com/gorescript/gorescript/blob/e3adca28228eb862ba9392e1af67087bc189cadc/LICENSE.txt"
+      ]
+    },
+    {
+      "id": "moonshard-warden",
+      "repository_url": "https://github.com/euuuuuuan/moonshard-warden-public",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "897d26af64aab4003b057b3910a7118279b927d8",
+      "reason": "Direct Three.js rendering and Apache-2.0 source are established, but effective CREDITS.md limits project-created runtime geometry/art/audio and captures to a With the project only tier; Apache applies to source only. Third-party media are separately CC0/OFL.",
+      "next_action": "Keep as explicit code-open/restricted-media research rather than a fully open game package; preserve the effective CREDITS override and resolve the intended asset-scope category before promotion.",
+      "evidence_urls": [
+        "https://github.com/euuuuuuan/moonshard-warden-public/blob/897d26af64aab4003b057b3910a7118279b927d8/README.md",
+        "https://github.com/euuuuuuan/moonshard-warden-public/blob/897d26af64aab4003b057b3910a7118279b927d8/LICENSE",
+        "https://github.com/euuuuuuan/moonshard-warden-public/blob/897d26af64aab4003b057b3910a7118279b927d8/CREDITS.md",
+        "https://github.com/euuuuuuan/moonshard-warden-public/blob/897d26af64aab4003b057b3910a7118279b927d8/LICENSES.md",
+        "https://github.com/euuuuuuan/moonshard-warden-public/blob/897d26af64aab4003b057b3910a7118279b927d8/src/game/game.js",
+        "https://github.com/euuuuuuan/moonshard-warden-public/blob/897d26af64aab4003b057b3910a7118279b927d8/app/page.jsx"
+      ]
+    },
+    {
+      "id": "platforms",
+      "repository_url": "https://github.com/matthias-schuetz/webgl-platforms-game",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "ba0626b28eb0c9368ee0c0d26c17c1613cec0201",
+      "reason": "README explicitly says the game is based on the THREE.BasicThirdPersonGame micro-framework, even though Three.js is its render core.",
+      "next_action": "Keep outside the strict direct/no-game-framework list until the framework boundary is resolved; do not silently call it plain Three.js.",
+      "evidence_urls": [
+        "https://github.com/matthias-schuetz/webgl-platforms-game/blob/ba0626b28eb0c9368ee0c0d26c17c1613cec0201/README.md",
+        "https://github.com/matthias-schuetz/webgl-platforms-game/blob/ba0626b28eb0c9368ee0c0d26c17c1613cec0201/LICENSE",
+        "https://github.com/matthias-schuetz/webgl-platforms-game/blob/ba0626b28eb0c9368ee0c0d26c17c1613cec0201/package.json"
+      ]
+    },
+    {
+      "id": "aiba-percent-battle",
+      "repository_url": "https://github.com/opstiger/aiba-percent-battle",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "e1e0500d84b29959775b0806a12f4c39c7269897",
+      "reason": "MIT covers source only. NOTICE reserves all rights in audio, models, face textures, logos, covers and promotional images and requires permission to redistribute those media.",
+      "next_action": "Retain only as restricted-assets research; do not present the complete game package as openly redistributable.",
+      "evidence_urls": [
+        "https://github.com/opstiger/aiba-percent-battle/blob/e1e0500d84b29959775b0806a12f4c39c7269897/README.md",
+        "https://github.com/opstiger/aiba-percent-battle/blob/e1e0500d84b29959775b0806a12f4c39c7269897/LICENSE",
+        "https://github.com/opstiger/aiba-percent-battle/blob/e1e0500d84b29959775b0806a12f4c39c7269897/NOTICE"
       ]
     }
   ]
