@@ -1,0 +1,79 @@
+[
+  {
+    "id": "level-design",
+    "files": [
+      {
+        "path": "level-design/LICENSE.md",
+        "sha256": "7baf28f0942b105ddcf68f80f73dfbdba24d7207f60e6876ddb99d28d417e3a6"
+      },
+      {
+        "path": "level-design/references/blockout-metrics.md",
+        "sha256": "aba747e2d92c367001c3f3c6b5b4027472926beac9dff33882025c6a631c1898"
+      },
+      {
+        "path": "level-design/references/case-studies.md",
+        "sha256": "4f0643c5d776144531ec46b2af1936158eea6780aa84751d74b0ca61237a52b0"
+      },
+      {
+        "path": "level-design/references/combat-balance.md",
+        "sha256": "bdbe6945e7cd9a51aa50ad9a1b02fac12635f9ec8f0f187c1753abba871033c8"
+      },
+      {
+        "path": "level-design/references/culture-history.md",
+        "sha256": "fec0df471ced497b20c5e0ccd08340f3ac3297393ac618cff7626256333f4d0a"
+      },
+      {
+        "path": "level-design/references/foundations.md",
+        "sha256": "79cc3bd4a123904fad9309d7444fd27d62287fe1307e1529a60104f493ce8b5a"
+      },
+      {
+        "path": "level-design/references/learning.md",
+        "sha256": "dfcd003181de23901a8944c7af364311108a4c66f1a7daf1d2c2409ccd0382b0"
+      },
+      {
+        "path": "level-design/references/lighting-art.md",
+        "sha256": "ce11613f8c7efe1ab46a656e34fbfe837dea9e2cda21eb8b65c5dd7ab29e1d90"
+      },
+      {
+        "path": "level-design/references/optimization-release.md",
+        "sha256": "c861e21126e62c18971e1f0ced575cf4f6605fdf9e3310d753ccd85b377fc9ca"
+      },
+      {
+        "path": "level-design/references/scripting-doors.md",
+        "sha256": "31194f2df5c662e41fa292b6ee820bbc594a22ec421cdea1f6cba207b5a2a2eb"
+      },
+      {
+        "path": "level-design/references/source-map.md",
+        "sha256": "0e0bf748565ed9da345e0f2a01261a6cc5ea8af80933a21389b3f79ef9742ca0"
+      },
+      {
+        "path": "level-design/references/spatial-layout.md",
+        "sha256": "e8641eb15099627cf59978304ef807c5ade18f886bd02e8519739c2405249e6a"
+      },
+      {
+        "path": "level-design/references/tools-quake.md",
+        "sha256": "62d3e4393042b8338c0655724e19b9f2e3f654c6e314e05516dd2e9c2cc46392"
+      },
+      {
+        "path": "level-design/references/wayfinding-playtesting.md",
+        "sha256": "778c6d2ab5095aa2a794c5b84da4cdef575350af9b235ca983c5e1a2a0307c6e"
+      },
+      {
+        "path": "level-design/SKILL.md",
+        "sha256": "81c8dd3c0237982e39772cd3d778e4d258d0c1a7ace0fe74daf7cd6994702f27"
+      },
+      {
+        "path": "level-design/templates/level-brief.md",
+        "sha256": "21ca07d5e829cc7bb4bd2719ae24d9d8bfe2e71e1c607526e0907aacabad9927"
+      },
+      {
+        "path": "level-design/templates/playtest-report.md",
+        "sha256": "1fefc9190edd9a460a263033c12f79b555e4fb7ef3e139bfb75d7ca5061ff8a2"
+      },
+      {
+        "path": "level-design/templates/review.md",
+        "sha256": "779a2edb6080480f4b73ad9b96692b9ae7eb4aa3e2f1bd613c637b4240ee608b"
+      }
+    ]
+  }
+]

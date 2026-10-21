@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /GameMap/
+Sitemap: https://openenvision.github.io/GameMap/sitemap.xml
