@@ -253,7 +253,7 @@ import{j as e}from"./jsx-runtime-BE0eTAub.js";let r={title:"Awesome AI Game Deve
 `,e.jsx(n.li,{children:e.jsx(n.a,{href:"https://openenvision.github.io/GameMap/research/",children:"Repository research: implementation access and source evidence"})}),`
 `,e.jsx(n.li,{children:e.jsx(n.a,{href:"https://openenvision.github.io/GameMap/showcase/",children:"Project demos: live experiences and recorded research cases"})}),`
 `,e.jsx(n.li,{children:e.jsx(n.a,{href:"/docs/publishing-platforms/",children:"Publishing platforms: Steam, itch.io, web portals, and stores"})}),`
-`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"/docs/contributing/",children:"Contributing and data maintenance"})," · ",e.jsx(n.a,{href:"/GameMap/resources.json",children:"Structured JSON"})]}),`
+`,e.jsxs(n.li,{children:[e.jsx(n.a,{href:"/docs/contributing/",children:"Contributing and data maintenance"})," · ",e.jsx(n.a,{href:"/GameMap/data/resources.json",children:"Structured JSON"})]}),`
 `]}),`
 `,e.jsx(n.h2,{id:"how-to-read-the-map",children:"How to read the map"}),`
 
