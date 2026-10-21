@@ -2,7 +2,7 @@
 
 [Machine-readable index](games.json) · [Source evidence](evidence/README.md) · [Candidate and exclusion queue](candidates.json) · [Schema](schema.json) · [Validator](validate.py)
 
-This focused collection currently contains **32 source-verified games** (reviewed 2026-10-21). **None were built or playtested in this review.** 30 repositories were not mentioned in the existing root README; HexGL and YAZH receive normalized, pinned evidence here rather than being counted as new projects across GameMap.
+This focused collection currently contains **42 source-verified games** (reviewed 2026-10-21). **None were built or playtested in this review.** 40 repositories were not mentioned in the existing root README; HexGL and YAZH receive normalized, pinned evidence here rather than being counted as new projects across GameMap.
 
 “Direct Three.js” means the game itself creates a Three.js WebGLRenderer or WebGPURenderer and uses Three.js as its rendering core. Physics libraries, build tools, networking and DOM UI are allowed and disclosed. React/Vue/Svelte DOM UI appears in some entries. React Three Fiber, A-Frame, Babylon.js, Unity and comparable rendering/engine layers are excluded. A tutorial snippet, non-game scene, unavailable source, or unproven stack is insufficient. Public source with a restrictive non-open license is excluded.
 
@@ -42,6 +42,16 @@ The dimension field separates 3D worlds, 3D board games, cylindrical puzzles and
 | [Arena](https://github.com/Hazzad123/fully-ai-arena-fps) | shooter, first-person, multiplayer, arena | 3d-world | MIT | prototype | [author link](https://arena-8g34.onrender.com) — reader-error |
 | [WizardWarz](https://github.com/Lallassu/wizardwarz) | shooter, fantasy, multiplayer, action | 3d-world | MIT | legacy-prototype | [author link](http://wizardwarz.nergal.se) — reader-error |
 | [Earth Defender](https://github.com/alexprut/earth-defender) | shooter, space, multiplayer | 3d-world | MIT | legacy-prototype | [author link](https://alexprut.github.io/earth-defender/) — reader-error |
+| [CouchCourt](https://github.com/kuehn-lars/CouchCourt) | sports, tennis, motion-control, local-multiplayer | 3d-world | MIT | prototype | not-located |
+| [Spin Table Tennis](https://github.com/huangluke89757/spin-table-tennis) | sports, table-tennis, arcade | 3d-world | MIT | game | [author link](https://spin-pingpong.app.workbuddy.host/) — reader-error |
+| [Nyan-Cororin](https://github.com/imshota1009/Nyan-Cororin) | platformer, ball-rolling, physics, motion-control | 3d-world | MIT | game | [author link](https://nyan-cororin-game-app.web.app/) — reader-error |
+| [VANTAGE](https://github.com/suncal/vantage) | puzzle, spatial-alignment, daily | 3d-perspective | MIT | game | [author link](https://suncal.github.io/vantage/) — reader-error |
+| [Marble Maze](https://github.com/danielmroczek/marble-maze) | puzzle, maze, ball-rolling | 3d-board | MIT | game | [author link](https://danielmroczek.github.io/marble-maze/) — reader-error |
+| [Galactic Recruit Pinball](https://github.com/DaedalusApps/GalacticRecruitPinball) | arcade, pinball, physics | 3d-world | MIT | prototype | not-located |
+| [Floppy Defense](https://github.com/N-THEM-Studio/floppy-defense) | strategy, tower-defense | 3d-world | MIT | prototype | not-located |
+| [TrollTower](https://github.com/danielesteban/trolltower) | climbing, multiplayer, webxr, physics | 3d-world | MIT | legacy-release | [author link](https://trolltower.app/) — reader-error |
+| [Bombanauts](https://github.com/Bombanauts/Bombanauts) | action, arena, multiplayer, bombing | 3d-world | MIT | legacy-prototype | [author link](http://bombanauts.herokuapp.com/) — reader-error |
+| [Temple Rumble](https://github.com/dammafra/temple-rumble) | action, survival, reflex | 3d-world | AGPL-3.0 (only/or-later variant unconfirmed) | game | [author link](https://templerumble.dammafra.dev) — reader-error |
 
 A `page-read` result only means the web reader returned an HTML document. It does not prove that scripts, WebGL/WebGPU, controls, assets or multiplayer work. `reader-error` means this reader could not retrieve the URL; it does not prove the site is down. `not-located` means the reviewed primary sources did not yield a live play URL. Demo checks and source commits are dated separately from any future runtime tests.
 
@@ -57,4 +67,4 @@ The dependency-free validator checks the JSON schema subset used here, required 
 
 For each increment, read the latest remote main, all open PRs and the current index/queue first. Use a fresh branch after a PR is merged; do not append to a merged branch or reopen superseded research. Add reviewed facts, update queue decisions and run the validator before opening/updating a PR. Preserve existing GameMap content, do not merge or deploy, and do not restore content from before the user's reset. The current series began from main `5d4de4f2984a8c1df1c6818b044a70c7080d085d`.
 
-Batch evidence: [001 — 12 games](evidence/batch-001.md) · [002 — 10 games](evidence/batch-002.md) · [003 — 10 games](evidence/batch-003.md). The queue currently retains 9 pending and 2 excluded repositories; explicit commercial/restricted-asset cases are not presented as fully open game packages.
+Batch evidence: [001 — 12 games](evidence/batch-001.md) · [002 — 10 games](evidence/batch-002.md) · [003 — 10 games](evidence/batch-003.md) · [004 — 10 games](evidence/batch-004.md). The queue currently retains 9 pending and 3 excluded repositories; explicit commercial/restricted-asset cases are not presented as fully open game packages.

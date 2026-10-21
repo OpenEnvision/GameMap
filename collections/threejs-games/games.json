@@ -3261,6 +3261,994 @@
         "Legacy Bower/Erlang/backend compatibility and wildcard dependency resolution were not tested.",
         "Textures/models and other asset rights were not exhaustively audited."
       ]
+    },
+    {
+      "id": "couchcourt",
+      "name": "CouchCourt",
+      "repository_url": "https://github.com/kuehn-lars/CouchCourt",
+      "genres": [
+        "sports",
+        "tennis",
+        "motion-control",
+        "local-multiplayer"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.0",
+        "render_evidence": {
+          "url": "https://github.com/kuehn-lars/CouchCourt/blob/5c086724ba213117d37f032e9209c0eaa88e380b/src/host/render/scene.ts#L118",
+          "claim": "Imports Three.js directly and constructs WebGLRenderer for the host's 3D tennis court."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/kuehn-lars/CouchCourt/blob/5c086724ba213117d37f032e9209c0eaa88e380b/package.json",
+            "dependencies": {
+              "@phosphor-icons/core": "^2.1.1",
+              "qrcode-generator": "^2.0.4",
+              "three": "^0.186.0",
+              "ws": "^8.21.3"
+            },
+            "dev_dependencies": {
+              "@biomejs/biome": "^2.5.14",
+              "@types/node": "^24.13.6",
+              "@types/three": "^0.186.0",
+              "@types/ws": "^8.18.1",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.0",
+              "vitest": "^5.0.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "ws WebSocket LAN relay, qrcode-generator, Phosphor icons, TypeScript and Vite; no R3F.",
+          "A phone supplies motion-control events to the host; README describes bot and local multiplayer options."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/kuehn-lars/CouchCourt/blob/5c086724ba213117d37f032e9209c0eaa88e380b/src/shared/sim/scoring.ts#L49",
+        "claim": "Awards tennis points and advances games/deuce/tiebreak/set-winner state; host main runs the shared game simulation and renderer."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/kuehn-lars/CouchCourt/blob/5c086724ba213117d37f032e9209c0eaa88e380b/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/kuehn-lars/CouchCourt/blob/5c086724ba213117d37f032e9209c0eaa88e380b/README.md",
+        "notes": "README documents a local host/phone setup and LAN URLs, not an author-published public-play site."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/kuehn-lars/CouchCourt/blob/5c086724ba213117d37f032e9209c0eaa88e380b/README.md",
+        "notes": "Version 0.0.0; source implements tennis scoring and a local device/relay flow. Upstream device/performance test claims were not repeated."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "5c086724ba213117d37f032e9209c0eaa88e380b",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-004.md#couchcourt",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/kuehn-lars/CouchCourt/blob/5c086724ba213117d37f032e9209c0eaa88e380b/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/kuehn-lars/CouchCourt/blob/5c086724ba213117d37f032e9209c0eaa88e380b/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/kuehn-lars/CouchCourt/blob/5c086724ba213117d37f032e9209c0eaa88e380b/package.json"
+          },
+          {
+            "path": "src/host/main.ts",
+            "url": "https://github.com/kuehn-lars/CouchCourt/blob/5c086724ba213117d37f032e9209c0eaa88e380b/src/host/main.ts"
+          },
+          {
+            "path": "src/host/render/scene.ts",
+            "url": "https://github.com/kuehn-lars/CouchCourt/blob/5c086724ba213117d37f032e9209c0eaa88e380b/src/host/render/scene.ts"
+          },
+          {
+            "path": "src/shared/sim/scoring.ts",
+            "url": "https://github.com/kuehn-lars/CouchCourt/blob/5c086724ba213117d37f032e9209c0eaa88e380b/src/shared/sim/scoring.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Requires compatible phone sensors, permission and a secure context/LAN relay; none were exercised.",
+        "README explicitly says its trusted LAN TLS certificate's private key is public by design, so it provides no privacy against others on the same Wi-Fi.",
+        "Icons, media and all third-party asset/license scopes were not exhaustively audited."
+      ]
+    },
+    {
+      "id": "spin-table-tennis",
+      "name": "Spin Table Tennis",
+      "repository_url": "https://github.com/huangluke89757/spin-table-tennis",
+      "genres": [
+        "sports",
+        "table-tennis",
+        "arcade"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r149 (vendored; README)",
+        "render_evidence": {
+          "url": "https://github.com/huangluke89757/spin-table-tennis/blob/588cfdd328c2c27b32879552c4917080633f3a1d/game.js#L195",
+          "claim": "Directly constructs a Three.js WebGLRenderer and runs its own requestAnimationFrame loop."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vendored Three.js, custom ball/spin physics, Web Audio synthesis, browser DOM and localStorage; no package manifest found."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/huangluke89757/spin-table-tennis/blob/588cfdd328c2c27b32879552c4917080633f3a1d/game.js#L937",
+        "claim": "Successful returns increment the rally and update best records/difficulty; gameOver records a failed or ended session."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/huangluke89757/spin-table-tennis/blob/588cfdd328c2c27b32879552c4917080633f3a1d/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://spin-pingpong.app.workbuddy.host/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/huangluke89757/spin-table-tennis/blob/588cfdd328c2c27b32879552c4917080633f3a1d/README.md",
+        "notes": "Author-linked site could not be retrieved through the text reader; no shots or controls were tested."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/huangluke89757/spin-table-tennis/blob/588cfdd328c2c27b32879552c4917080633f3a1d/README.md",
+        "notes": "Source contains practice/challenge modes, rally records, score/difficulty progression and game-over flow."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "588cfdd328c2c27b32879552c4917080633f3a1d",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-004.md#spin-table-tennis",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/huangluke89757/spin-table-tennis/blob/588cfdd328c2c27b32879552c4917080633f3a1d/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/huangluke89757/spin-table-tennis/blob/588cfdd328c2c27b32879552c4917080633f3a1d/README.md"
+          },
+          {
+            "path": "game.js",
+            "url": "https://github.com/huangluke89757/spin-table-tennis/blob/588cfdd328c2c27b32879552c4917080633f3a1d/game.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/huangluke89757/spin-table-tennis/blob/588cfdd328c2c27b32879552c4917080633f3a1d/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Spin realism, offline loading and mobile gesture behavior are author claims or source features, not results of this review.",
+        "All bundled art/font and third-party media rights were not exhaustively audited."
+      ]
+    },
+    {
+      "id": "nyan-cororin",
+      "name": "Nyan-Cororin",
+      "repository_url": "https://github.com/imshota1009/Nyan-Cororin",
+      "genres": [
+        "platformer",
+        "ball-rolling",
+        "physics",
+        "motion-control"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (CDN script)",
+        "render_evidence": {
+          "url": "https://github.com/imshota1009/Nyan-Cororin/blob/fb9054368526d30929870aae7338b3b956235e7a/public/index.html#L536",
+          "claim": "Creates Three.js WebGLRenderer directly inside the single-file game; imports Three.js and Cannon.js through CDN script tags."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Cannon.js 0.6.2 physics, keyboard/touch and DeviceOrientation/DeviceMotion input; static HTML/Firebase Hosting configuration, no package manifest."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/imshota1009/Nyan-Cororin/blob/fb9054368526d30929870aae7338b3b956235e7a/public/index.html#L1314",
+        "claim": "Checks x/y/z proximity to the stage goal and calls stageClear; falling below the stage threshold calls miss."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/imshota1009/Nyan-Cororin/blob/fb9054368526d30929870aae7338b3b956235e7a/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://nyan-cororin-game-app.web.app/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/imshota1009/Nyan-Cororin/blob/fb9054368526d30929870aae7338b3b956235e7a/README.md",
+        "notes": "The author-hosted URL could not be retrieved through the reader; sensor, keyboard and jumping controls were not tested."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/imshota1009/Nyan-Cororin/blob/fb9054368526d30929870aae7338b3b956235e7a/README.md",
+        "notes": "README describes ten stages and multiple cats; reviewed source has goals, checkpoints, falls and stage progression."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "fb9054368526d30929870aae7338b3b956235e7a",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-004.md#nyan-cororin",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/imshota1009/Nyan-Cororin/blob/fb9054368526d30929870aae7338b3b956235e7a/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/imshota1009/Nyan-Cororin/blob/fb9054368526d30929870aae7338b3b956235e7a/README.md"
+          },
+          {
+            "path": "public/index.html",
+            "url": "https://github.com/imshota1009/Nyan-Cororin/blob/fb9054368526d30929870aae7338b3b956235e7a/public/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Motion sensors need HTTPS or localhost and user permission on supported devices; iOS requires an explicit permission gesture according to README.",
+        "Sensor handling, moving platforms, stage completeness and all media licensing were not exhaustively tested/audited."
+      ]
+    },
+    {
+      "id": "vantage",
+      "name": "VANTAGE",
+      "repository_url": "https://github.com/suncal/vantage",
+      "genres": [
+        "puzzle",
+        "spatial-alignment",
+        "daily"
+      ],
+      "dimension": "3d-perspective",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 (CDN module import)",
+        "render_evidence": {
+          "url": "https://github.com/suncal/vantage/blob/020f4e37e11c2f9fa350168dbd103bca95e70c58/main.js#L161",
+          "claim": "Imports Three.js directly from a pinned CDN version and constructs WebGLRenderer and a perspective camera."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Plain ES modules, browser DOM/localStorage and Three.js from CDN; no package manifest.",
+          "Google Fonts and platform emoji rendering are separate from the MIT source license."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/suncal/vantage/blob/020f4e37e11c2f9fa350168dbd103bca95e70c58/main.js#L293",
+        "claim": "Alignment changes the puzzle from playing to locking, then solved; projected blocks use perspective rays with differing depths."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/suncal/vantage/blob/020f4e37e11c2f9fa350168dbd103bca95e70c58/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://suncal.github.io/vantage/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/suncal/vantage/blob/020f4e37e11c2f9fa350168dbd103bca95e70c58/README.md",
+        "notes": "Author-linked Pages site could not be retrieved through the reader; puzzle rendering and alignment were not tested."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/suncal/vantage/blob/020f4e37e11c2f9fa350168dbd103bca95e70c58/README.md",
+        "notes": "Source implements puzzle state transitions and README describes date-seeded daily play."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "020f4e37e11c2f9fa350168dbd103bca95e70c58",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-004.md#vantage",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/suncal/vantage/blob/020f4e37e11c2f9fa350168dbd103bca95e70c58/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/suncal/vantage/blob/020f4e37e11c2f9fa350168dbd103bca95e70c58/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/suncal/vantage/blob/020f4e37e11c2f9fa350168dbd103bca95e70c58/index.html"
+          },
+          {
+            "path": "main.js",
+            "url": "https://github.com/suncal/vantage/blob/020f4e37e11c2f9fa350168dbd103bca95e70c58/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Daily solvability, finish tolerance and browser consistency were not verified by execution.",
+        "Font and platform emoji rights are not established by the code's MIT file."
+      ]
+    },
+    {
+      "id": "marble-maze",
+      "name": "Marble Maze",
+      "repository_url": "https://github.com/danielmroczek/marble-maze",
+      "genres": [
+        "puzzle",
+        "maze",
+        "ball-rolling"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 (import map)",
+        "render_evidence": {
+          "url": "https://github.com/danielmroczek/marble-maze/blob/9c60a20fa012059bcce894ebb979faa9b7e3df9a/main.js#L34",
+          "claim": "Creates Three.js WebGLRenderer directly; index.html maps Three.js to version 0.160.0."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Custom marble/tilt/collision logic and static HTML modules; no backend or build manifest is present."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/danielmroczek/marble-maze/blob/9c60a20fa012059bcce894ebb979faa9b7e3df9a/main.js#L492",
+        "claim": "Checks the marble reaching the goal, freezes a won state/timer and displays the win message."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/danielmroczek/marble-maze/blob/9c60a20fa012059bcce894ebb979faa9b7e3df9a/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://danielmroczek.github.io/marble-maze/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/danielmroczek/marble-maze/blob/9c60a20fa012059bcce894ebb979faa9b7e3df9a/README.md",
+        "notes": "Author-linked Pages URL could not be retrieved through the reader; mouse/phone tilt was not exercised."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/danielmroczek/marble-maze/blob/9c60a20fa012059bcce894ebb979faa9b7e3df9a/README.md",
+        "notes": "Source implements generated maze play, timing, a win popup and reset flow; author describes a static adaptation of an earlier C++ project."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "9c60a20fa012059bcce894ebb979faa9b7e3df9a",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-004.md#marble-maze",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/danielmroczek/marble-maze/blob/9c60a20fa012059bcce894ebb979faa9b7e3df9a/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/danielmroczek/marble-maze/blob/9c60a20fa012059bcce894ebb979faa9b7e3df9a/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/danielmroczek/marble-maze/blob/9c60a20fa012059bcce894ebb979faa9b7e3df9a/index.html"
+          },
+          {
+            "path": "main.js",
+            "url": "https://github.com/danielmroczek/marble-maze/blob/9c60a20fa012059bcce894ebb979faa9b7e3df9a/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Main motion/collision is on the board's XZ plane, shown as a tilted 3D maze; this is labeled as a 3D board game.",
+        "The three BMP files assets/chess.bmp, start.bmp and stop.bmp have no per-asset provenance established in this review."
+      ]
+    },
+    {
+      "id": "galactic-recruit-pinball",
+      "name": "Galactic Recruit Pinball",
+      "repository_url": "https://github.com/DaedalusApps/GalacticRecruitPinball",
+      "genres": [
+        "arcade",
+        "pinball",
+        "physics"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.170.0",
+        "render_evidence": {
+          "url": "https://github.com/DaedalusApps/GalacticRecruitPinball/blob/c3560181d8c2a21a62358d369c4f162894b55740/src/main.ts#L121",
+          "claim": "Directly creates Three.js WebGLRenderer and drives the game through its own requestAnimationFrame loop."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/DaedalusApps/GalacticRecruitPinball/blob/c3560181d8c2a21a62358d369c4f162894b55740/package.json",
+            "dependencies": {
+              "cannon-es": "^0.20.0",
+              "three": "^0.170.0"
+            },
+            "dev_dependencies": {
+              "@types/node": "^22.10.2",
+              "@types/three": "^0.170.0",
+              "typescript": "^5.7.2",
+              "vite": "^6.0.3",
+              "vite-plugin-singlefile": "^2.1.0",
+              "vitest": "^2.1.8"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Cannon-es ^0.20.0 physics, TypeScript, Vite, vite-plugin-singlefile and Vitest.",
+          "README describes generated models/audio and a mission/rank/score layer; upstream tests were not run."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/DaedalusApps/GalacticRecruitPinball/blob/c3560181d8c2a21a62358d369c4f162894b55740/src/game/state.ts#L242",
+        "claim": "Tracks saved/extra/remaining balls and declares game-over when no balls remain; main integrates the pinball simulation."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/DaedalusApps/GalacticRecruitPinball/blob/c3560181d8c2a21a62358d369c4f162894b55740/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/DaedalusApps/GalacticRecruitPinball/blob/c3560181d8c2a21a62358d369c4f162894b55740/README.md",
+        "notes": "Reviewed README links development resources but no confirmed author-hosted live-play URL."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/DaedalusApps/GalacticRecruitPinball/blob/c3560181d8c2a21a62358d369c4f162894b55740/README.md",
+        "notes": "Version 0.1.0; source implements ball lifecycle and a complete game-over transition with pinball missions documented by the author."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "c3560181d8c2a21a62358d369c4f162894b55740",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-004.md#galactic-recruit-pinball",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/DaedalusApps/GalacticRecruitPinball/blob/c3560181d8c2a21a62358d369c4f162894b55740/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/DaedalusApps/GalacticRecruitPinball/blob/c3560181d8c2a21a62358d369c4f162894b55740/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/DaedalusApps/GalacticRecruitPinball/blob/c3560181d8c2a21a62358d369c4f162894b55740/package.json"
+          },
+          {
+            "path": "src/game/state.ts",
+            "url": "https://github.com/DaedalusApps/GalacticRecruitPinball/blob/c3560181d8c2a21a62358d369c4f162894b55740/src/game/state.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/DaedalusApps/GalacticRecruitPinball/blob/c3560181d8c2a21a62358d369c4f162894b55740/src/main.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Pinball physics accuracy, single-file bundle behavior and mission/rank completeness were not executed.",
+        "Space Cadet/Space Invaders inspiration does not establish third-party branding rights; asset provenance was not exhaustively audited."
+      ]
+    },
+    {
+      "id": "floppy-defense",
+      "name": "Floppy Defense",
+      "repository_url": "https://github.com/N-THEM-Studio/floppy-defense",
+      "genres": [
+        "strategy",
+        "tower-defense"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/src/render/renderer.js#L123",
+          "claim": "Imports Three.js directly and constructs WebGLRenderer; a project-authored fixed-step loop drives simulation/rendering."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/package.json",
+            "dependencies": {
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "vite": "^7.1.0",
+              "playwright-core": "^1.64.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js is the only declared runtime npm dependency; Vite and Playwright tooling are dev dependencies.",
+          "README describes all geometry, textures and Web Audio generated in code."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/src/main.js#L207",
+        "claim": "Completing the campaign produces victory/unlocks endless mode; CPU health reaching zero produces game-over."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/README.md",
+        "notes": "No final game-hosting URL was found. The author's studio homepage is not treated as a playable demo."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/docs/scheda-ldjam.md",
+        "notes": "The jam/itch publication sheet explicitly says draft and awaits final screenshots/links; no formal jam release is inferred from README wording."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "aee3b103f77d04816d252c30a57ff3afd079a876",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-004.md#floppy-defense",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/README.md"
+          },
+          {
+            "path": "docs/scheda-ldjam.md",
+            "url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/docs/scheda-ldjam.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/package.json"
+          },
+          {
+            "path": "src/core/loop.js",
+            "url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/src/core/loop.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/src/main.js"
+          },
+          {
+            "path": "src/render/renderer.js",
+            "url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/src/render/renderer.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "showtimez/floppy-defense is a mirror: README, LICENSE and reviewed main/renderer/loop source hashes match; it is not counted separately.",
+        "Published-jam status, generated-asset claims and gameplay balance were not independently verified."
+      ]
+    },
+    {
+      "id": "trolltower",
+      "name": "TrollTower",
+      "repository_url": "https://github.com/danielesteban/trolltower",
+      "genres": [
+        "climbing",
+        "multiplayer",
+        "webxr",
+        "physics"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.125.1 (core/three.js CDN re-exports)",
+        "render_evidence": {
+          "url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/core/renderer.js#L28",
+          "claim": "Imports Three.js renderer classes from a local CDN re-export module, creates WebGLRenderer and sets its animation loop directly."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/package.json",
+            "dependencies": {
+              "@octokit/auth-oauth-app": "^3.0.8",
+              "@octokit/core": "^3.2.5",
+              "body-parser": "^1.19.0",
+              "cors": "^2.8.5",
+              "express": "^4.17.1",
+              "express-ws": "^4.0.0",
+              "helmet": "^4.4.1",
+              "jsonwebtoken": "^8.5.1",
+              "nocache": "^2.1.0",
+              "sequelize": "^6.5.0",
+              "short-unique-id": "^3.2.3",
+              "sqlite3": "^5.0.1",
+              "uuid": "^8.3.2"
+            },
+            "dev_dependencies": {
+              "sirv-cli": "^1.0.10"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Ammo/Bullet helper via core/ammo.js, SimplePeer/WebRTC, WebXR and Node/Express/WebSocket/server database dependencies.",
+          "Three.js is CDN-loaded despite not appearing in package.json; complete declared server packages are preserved in the manifest snapshot."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/core/player.js#L268",
+        "claim": "Handles controller-grip climbing against physics colliders; gameplay.js manages rockets, peer interaction and respawn."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://trolltower.app/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/README.md",
+        "notes": "Author-linked site could not be retrieved by the reader; no headset, room or peer connection was attempted."
+      },
+      "maturity": {
+        "status": "legacy-release",
+        "basis_url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/README.md",
+        "notes": "Published WebXR climbing-game link and complete player/renderer/network paths are present in this legacy source."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "6c07dc2ecc306086ad7c84ffc1e8d77fd723e453",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-004.md#trolltower",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/README.md"
+          },
+          {
+            "path": "core/ammo.js",
+            "url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/core/ammo.js"
+          },
+          {
+            "path": "core/gameplay.js",
+            "url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/core/gameplay.js"
+          },
+          {
+            "path": "core/peers.js",
+            "url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/core/peers.js"
+          },
+          {
+            "path": "core/player.js",
+            "url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/core/player.js"
+          },
+          {
+            "path": "core/renderer.js",
+            "url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/core/renderer.js"
+          },
+          {
+            "path": "core/scene.js",
+            "url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/core/scene.js"
+          },
+          {
+            "path": "core/three.js",
+            "url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/core/three.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/package.json"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Legacy Three.js, WebXR hardware permissions, server services and peer networking were not tested.",
+        "GLB/OGG asset rights and all vendored dependency notices were not exhaustively audited.",
+        "A local AmmoPhysics helper is an auxiliary physics layer; no A-Frame renderer is used in the reviewed path."
+      ]
+    },
+    {
+      "id": "bombanauts",
+      "name": "Bombanauts",
+      "repository_url": "https://github.com/Bombanauts/Bombanauts",
+      "genres": [
+        "action",
+        "arena",
+        "multiplayer",
+        "bombing"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.84.0",
+        "render_evidence": {
+          "url": "https://github.com/Bombanauts/Bombanauts/blob/47b1c4c699fdd0278bfc6a1c8c089734b120b3dc/browser/game/main.js#L154",
+          "claim": "Imports Three.js directly and creates WebGLRenderer; the arena is rendered from a project-owned animation loop."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Bombanauts/Bombanauts/blob/47b1c4c699fdd0278bfc6a1c8c089734b120b3dc/package.json",
+            "dependencies": {
+              "cannon": "^0.6.2",
+              "express": "^4.14.0",
+              "express-static-gzip": "^1.1.3",
+              "material-ui": "^0.16.7",
+              "react": "^15.4.2",
+              "react-dom": "^15.4.2",
+              "react-redux": "^5.0.2",
+              "react-tap-event-plugin": "^2.0.1",
+              "redux": "3.6.0",
+              "redux-logger": "^2.7.4",
+              "redux-thunk": "2.2.0",
+              "socket.io": "^1.7.2",
+              "socket.io-client": "^1.7.2",
+              "socket.io-react": "^1.1.2",
+              "three": "^0.84.0"
+            },
+            "dev_dependencies": {
+              "@babel/core": "^7.4.5",
+              "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+              "@babel/preset-env": "^7.4.5",
+              "@babel/preset-react": "^7.0.0",
+              "babel-loader": "^8.0.6",
+              "brotli-webpack-plugin": "^1.1.0",
+              "chai": "^3.5.0",
+              "chalk": "^1.1.3",
+              "compression-webpack-plugin": "^2.0.0",
+              "css-loader": "^2.1.1",
+              "file-loader": "^3.0.1",
+              "mocha": "^3.2.0",
+              "node-sass": "^4.12.0",
+              "nodemon": "^1.11.0",
+              "redux-logger": "^2.7.4",
+              "sass-loader": "^7.1.0",
+              "style-loader": "^0.23.1",
+              "uglifyjs-webpack-plugin": "^2.1.3",
+              "webpack": "^4.32.2",
+              "webpack-bundle-analyzer": "^3.3.2",
+              "webpack-cli": "^3.3.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Cannon ^0.6.2, Socket.IO 1.7, Express, React 15/Redux/Material UI as app/HUD layers, and webpack tooling.",
+          "package.json targets Node 7.x; React is not used as a Three.js component renderer in the reviewed game path."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Bombanauts/Bombanauts/blob/47b1c4c699fdd0278bfc6a1c8c089734b120b3dc/server/index.js#L89",
+        "claim": "Handles player kills and score changes, then emits winner state to the room; author describes last-player/timer-based rounds."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/Bombanauts/Bombanauts/blob/47b1c4c699fdd0278bfc6a1c8c089734b120b3dc/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "http://bombanauts.herokuapp.com/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/Bombanauts/Bombanauts/blob/47b1c4c699fdd0278bfc6a1c8c089734b120b3dc/README.md",
+        "notes": "Historical author-linked Heroku URL could not be retrieved through the text reader; no online match was run."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/Bombanauts/Bombanauts/blob/47b1c4c699fdd0278bfc6a1c8c089734b120b3dc/README.md",
+        "notes": "Source implements networked kill/score/winner flow; README documents a complete multiplayer bombing round."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "47b1c4c699fdd0278bfc6a1c8c089734b120b3dc",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-004.md#bombanauts",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Bombanauts/Bombanauts/blob/47b1c4c699fdd0278bfc6a1c8c089734b120b3dc/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Bombanauts/Bombanauts/blob/47b1c4c699fdd0278bfc6a1c8c089734b120b3dc/README.md"
+          },
+          {
+            "path": "browser/game/main.js",
+            "url": "https://github.com/Bombanauts/Bombanauts/blob/47b1c4c699fdd0278bfc6a1c8c089734b120b3dc/browser/game/main.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Bombanauts/Bombanauts/blob/47b1c4c699fdd0278bfc6a1c8c089734b120b3dc/package.json"
+          },
+          {
+            "path": "server/index.js",
+            "url": "https://github.com/Bombanauts/Bombanauts/blob/47b1c4c699fdd0278bfc6a1c8c089734b120b3dc/server/index.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Node 7-era dependencies and multiplayer backend/browser compatibility were not installed or tested.",
+        "VolumetricFire effects, creeper-like textures and other external media provenance were not established as MIT."
+      ]
+    },
+    {
+      "id": "temple-rumble",
+      "name": "Temple Rumble",
+      "repository_url": "https://github.com/dammafra/temple-rumble",
+      "genres": [
+        "action",
+        "survival",
+        "reflex"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.175.0",
+        "render_evidence": {
+          "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/src/experience/renderer.js#L26",
+          "claim": "Imports Three.js WebGLRenderer directly and constructs it; declared three.ez instancing/camera controls are auxiliary rendering utilities."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/package.json",
+            "dependencies": {
+              "@tailwindcss/vite": "^4.0.9",
+              "@three.ez/instanced-mesh": "^0.3.4",
+              "@tweakpane/core": "^2.0.5",
+              "@tweakpane/plugin-essentials": "^0.2.1",
+              "camera-controls": "^2.10.0",
+              "core-js": "^3.42.0",
+              "firebase": "^11.8.1",
+              "gsap": "^3.12.7",
+              "keydrown": "^1.3.0",
+              "nipplejs": "^0.10.2",
+              "tailwindcss": "^4.0.9",
+              "three": "^0.175.0",
+              "tweakpane": "^4.0.5"
+            },
+            "dev_dependencies": {
+              "prettier": "^3.4.2",
+              "vite": "^6.0.11",
+              "vite-plugin-restart": "^0.4.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "@three.ez/instanced-mesh, camera-controls, GSAP, Tweakpane, Firebase, nipplejs/keydrown, Tailwind and Vite.",
+          "Direct Three.js remains the renderer; optional leaderboard service is external to core survival play."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/src/game/game.js#L116",
+        "claim": "Death stops the run, resets pillars, shows retry and submits survival time to the leaderboard; the loop chooses safe/unsafe pillar combinations."
+      },
+      "license": {
+        "spdx": "AGPL-3.0 (only/or-later variant unconfirmed)",
+        "source_url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/LICENSE",
+        "additional_notices": [
+          "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/README.md"
+        ],
+        "notes": "Code is AGPL v3 per README/LICENSE. README separately credits CC BY model creators plus Quaternius, Kenney, texture sources and Pixabay audio; those assets are not all asserted to be AGPL or independently license-audited."
+      },
+      "demo": {
+        "url": "https://templerumble.dammafra.dev",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/README.md",
+        "notes": "The author-linked site could not be retrieved through the text reader; no run or leaderboard request was made."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/README.md",
+        "notes": "Source implements survival timing, death/retry and pillar hazards; README links a published game-jam project."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "1f39c09b447ed44e5bf504e4c440ae80a9771413",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-004.md#temple-rumble",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/package.json"
+          },
+          {
+            "path": "src/experience/renderer.js",
+            "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/src/experience/renderer.js"
+          },
+          {
+            "path": "src/game/game.js",
+            "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/src/game/game.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "AGPL v3 only/or-later election and every individual asset's terms remain unconfirmed beyond the recorded primary notices.",
+        "Firebase availability, reflex timing, touch controls and upstream award claims were not tested/independently verified."
+      ]
     }
   ]
 }

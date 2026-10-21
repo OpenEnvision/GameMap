@@ -151,6 +151,19 @@
         "https://github.com/opstiger/aiba-percent-battle/blob/e1e0500d84b29959775b0806a12f4c39c7269897/LICENSE",
         "https://github.com/opstiger/aiba-percent-battle/blob/e1e0500d84b29959775b0806a12f4c39c7269897/NOTICE"
       ]
+    },
+    {
+      "id": "floppy-defense-mirror",
+      "repository_url": "https://github.com/showtimez/floppy-defense",
+      "status": "excluded",
+      "checked_at": "2026-10-21",
+      "source_commit": "49f5346f6cb7e2247a6cf71d7a4d5f2027cd3183",
+      "reason": "Mirror of N-THEM-Studio/floppy-defense: README, LICENSE and the reviewed src/main.js, src/render/renderer.js and src/core/loop.js blob hashes match. Count the canonical game once.",
+      "next_action": "Use N-THEM-Studio/floppy-defense as the catalog repository. Reconsider this fork only with evidence of a distinct game.",
+      "evidence_urls": [
+        "https://github.com/showtimez/floppy-defense/blob/49f5346f6cb7e2247a6cf71d7a4d5f2027cd3183/README.md",
+        "https://github.com/showtimez/floppy-defense/blob/49f5346f6cb7e2247a6cf71d7a4d5f2027cd3183/LICENSE"
+      ]
     }
   ]
 }
