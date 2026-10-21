@@ -1,4 +1,4 @@
-import{j as e}from"./jsx-runtime-BE0eTAub.js";let d={title:"发现游戏，发布自己的作品",description:"从官方入口了解 Steam、itch.io 等游戏平台，分清试玩、下载、源码与发行状态。"},i={contents:[{heading:void 0,content:"这些平台帮助游戏触达玩家，可用于发现作品或准备发行；GameMap 的 AI 游戏案例另有创作者证据、可玩版本与完整工程要求。官方入口查验于 **2026 年 10 月 20 日**。"},{heading:void 0,content:`| 平台    | 发现游戏 | 准备发布              | 适合什么                            |
+import{j as e}from"./jsx-runtime-BE0eTAub.js?v=20261021-pages-ready";let d={title:"发现游戏，发布自己的作品",description:"从官方入口了解 Steam、itch.io 等游戏平台，分清试玩、下载、源码与发行状态。"},i={contents:[{heading:void 0,content:"这些平台帮助游戏触达玩家，可用于发现作品或准备发行；GameMap 的 AI 游戏案例另有创作者证据、可玩版本与完整工程要求。官方入口查验于 **2026 年 10 月 20 日**。"},{heading:void 0,content:`| 平台    | 发现游戏 | 准备发布              | 适合什么                            |
 | ----- | ---- | ----------------- | ------------------------------- |
 | Steam | 浏览游戏 | Steamworks · 入门指南 | 桌面游戏商店；准备开发者入驻、商店页面、构建、测试与发行审核。 |`,table:"table-0"},{heading:void 0,content:`| 平台      | 发现游戏 | 准备发布           | 适合什么                        |
 | ------- | ---- | -------------- | --------------------------- |

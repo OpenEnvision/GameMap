@@ -1709,7 +1709,7 @@ All 66 documents in the site’s full index, including production and evaluation
 | [Contributing to GameMap](https://openenvision.github.io/GameMap/docs/contributing/) | Contribute resources and game cases with primary evidence, accurate source scope, runnable access and clear attribution. |
 | [GameMap demo media sources](https://openenvision.github.io/GameMap/docs/media-sources/) | Trace project previews and recordings to their original creators, capture methods, credits and reuse limitations. |
 | [GameMap resource logo sources](https://openenvision.github.io/GameMap/docs/icon-sources/) | Find the official sources, local files and attribution records for resource logos and visual identity assets. |
-| [Website development and deployment](https://openenvision.github.io/GameMap/docs/deployment/) | Run GameMap locally with automatic source refresh, verify a static build and publish it through GitHub Pages. |
+| [Website development and deployment](https://openenvision.github.io/GameMap/docs/deployment/) | Run the ready-to-host static GameMap snapshot locally, verify its paths, and publish the complete folder with GitHub Pages. |
 | [Content model and coverage contract](https://openenvision.github.io/GameMap/docs/content-model/) | Understand registered content kinds, source ownership, localization, generated outputs and completeness checks. |
 
 </details>
@@ -1733,7 +1733,7 @@ All 66 documents in the site’s full index, including production and evaluation
 | [How to use this resource library (Chinese)](https://openenvision.github.io/GameMap/docs/zh/reading-guide/) | Choose tools, cases or research for your current question, and distinguish sources, runnability, licenses and the scope of actual validation. |
 | [From an idea to a playable game (Chinese)](https://openenvision.github.io/GameMap/docs/zh/practical-guide/) | Complete start, play, win/loss and retry in a dependency-free HTML game, then make one clearly bounded change. |
 | [Level design skill (Chinese)](https://openenvision.github.io/GameMap/docs/zh/level-design-skill/) | Learn the skill’s scope, download entry point, brief and playtest templates, sources and noncommercial license conditions. |
-| [Run and publish GameMap (Chinese)](https://openenvision.github.io/GameMap/docs/zh/deployment/) | Learn local startup, automatic source refresh, production-build preview and GitHub Pages deployment. |
+| [Run and publish GameMap (Chinese)](https://openenvision.github.io/GameMap/docs/zh/deployment/) | Preview the complete static site, verify navigation and search, and publish it with GitHub Pages. |
 | [Discover games and publish your own (Chinese)](https://openenvision.github.io/GameMap/docs/zh/publishing-platforms/) | Explore official entry points for Steam, itch.io and other game platforms, distinguishing play, downloads, source access and release status. |
 
 </details>
@@ -1808,7 +1808,7 @@ The two visible files at the top level are `index.html` and `readme.md`. Runtime
 | `skills/` | Downloadable skill packages. |
 | Section directories and `zh/` | English and Chinese pages corresponding to website routes. Keep their names and internal layout intact. |
 
-`.nojekyll` lets GitHub Pages publish the static files as provided. All `.data` files live under `data/`, preserving their section hierarchy, and the runtime uses those request paths. Existing pages support direct access and refresh. GitHub Pages uses its default page for missing routes; the local preview uses the custom pages under `404/`. The sitemap is stored at `data/seo/sitemap.xml`.
+`.nojekyll` lets GitHub Pages publish the static files as provided. All `.data` files live under `data/`, preserving their section hierarchy, and the runtime uses those request paths. Existing pages support direct access and refresh. No custom 404 page is bundled; missing files receive the host’s standard HTTP error response. The sitemap is stored at `data/seo/sitemap.xml`.
 
 <a id="data-and-attribution"></a>
 

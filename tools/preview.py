@@ -65,15 +65,14 @@ class Preview(BaseHTTPRequestHandler):
             return
         local = path[len(BASE):] if path.startswith(BASE) else None
         parts = [part for part in (local or "").split("/") if part]
+        # Keep already-open previews working after navigation data moved into data/.
+        if local is not None and local.endswith(".data") and not local.startswith("data/"):
+            parts.insert(0, "data")
         opened = self.open_file(parts) if local is not None else None
-        status = 200 if opened else 404
-        if not opened:
-            if local == "zh" or (local or "").startswith("zh/"):
-                opened = self.open_file(["zh", "404", "index.html"])
-            opened = opened or self.open_file(["404", "fallback.html"])
         if not opened:
             self.empty(404)
             return
+        status = 200
         stream, name = opened
         with stream:
             info = os.fstat(stream.fileno())
