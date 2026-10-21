@@ -2,21 +2,11 @@
 
 Reviewed against repository commit URLs shown below. Method: read upstream README, tree, available package manifests, renderer and gameplay paths, license and author demo links. No install, build, upstream test suite, browser rendering or gameplay was executed. A web-reader fetch failure is an access limitation, not a dead-link verdict.
 
-GameMap base: `5d4de4f2984a8c1df1c6818b044a70c7080d085d`; no open PRs were present at the initial check. Existing root README and static site are preserved. The two legacy mentions are identified in JSON. The queue retains unresolved and excluded repositories without counting them as verified games.
+GameMap base: `5d4de4f2984a8c1df1c6818b044a70c7080d085d`; no open PRs were present at the initial check. Existing root README and static site are preserved. The remaining legacy mention (YAZH) is identified in JSON; HexGL is now pending. The queue retains unresolved and excluded repositories without counting them as verified games.
 
-<a id="hexgl"></a>
+## License correction — HexGL retained as a candidate
 
-## HexGL
-
-- Source: [BKcore/HexGL](https://github.com/BKcore/HexGL/tree/6addc95a2fce3bf05f4d751823cc054c61a16d68), commit `6addc95a2fce3bf05f4d751823cc054c61a16d68`.
-- Rendering: Creates a Three.js WebGLRenderer and uses Three.js render targets and post-processing; index.html loads libs/Three.dev.js directly. [Renderer source](https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/HexGL.js#L285).
-- Game loop: Implements a three-lap race, lap timing, completion and destroyed-ship outcomes. [Gameplay source](https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/Gameplay.js#L49).
-- Dependencies: Vendored Three.js post-processing, Stats.js, dat.GUI and LeapMotion; project-authored JavaScript/CoffeeScript helpers. 
-- License: MIT. Root code/resources default to MIT unless a file says otherwise. audio/LICENSE lists CC BY 3.0 and public-domain sound exceptions; do not treat all audio as MIT. [License file](https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/LICENSE). [Additional notice](https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/audio/LICENSE).
-- Maturity: legacy-release. README calls master the stable public release and states development is on hiatus. [Author README](https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/README.md).
-- Demo: [Author-linked URL](https://hexgl.bkcore.com/play/); `page-read` on 2026-10-21. Author landing page and linked play page were readable; the play page exposes a Start screen. WebGL was not run.
-- Review limits: Legacy Three.js and browser APIs; current browser compatibility was not tested. The public ladder is closed according to the author landing page.
-- Runtime status: source reviewed; **not built, not playtested; upstream tests not run**.
+The first draft included HexGL as MIT. The 2026-10-21 file-header audit found CC BY-NC 3.0 notices in its active renderer and gameplay source. It is now **pending, outside the verified open-source index**: 11 games remain in this batch. [Pinned notices and relicense history](license-review-001.md) preserve the source evidence and explain the unresolved scope. Historical rendering/gameplay observations are not a finding of an open license.
 
 <a id="super-kart-3djs"></a>
 

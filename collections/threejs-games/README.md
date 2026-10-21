@@ -2,15 +2,14 @@
 
 [Machine-readable index](games.json) · [Source evidence](evidence/batch-001.md) · [Candidate and exclusion queue](candidates.json) · [Schema](schema.json) · [Validator](validate.py)
 
-This focused collection currently contains **12 source-verified games** (reviewed 2026-10-21). **None were built or playtested in this review.** Ten repositories were not mentioned in the existing root README; HexGL and YAZH receive normalized, pinned evidence here rather than being counted as new projects across GameMap.
+This focused collection currently contains **11 source-verified games** (reviewed 2026-10-21). **None were built or playtested in this review.** Ten repositories were not mentioned in the existing root README; YAZH receives normalized, pinned evidence here rather than being counted as a new project across GameMap. HexGL has been moved to the pending queue because active source headers retain a noncommercial license despite the root MIT file. [License correction](evidence/license-review-001.md).
 
 “Direct Three.js” means the game itself creates a Three.js WebGLRenderer or WebGPURenderer and uses Three.js as its rendering core. Physics libraries, build tools, networking and DOM UI are allowed and disclosed. Vue/Svelte DOM UI appears in some entries. React Three Fiber, A-Frame, Babylon.js, Unity and comparable rendering/engine layers are excluded. A tutorial snippet, non-game scene, unavailable source, or unproven stack is insufficient. Public source with a restrictive non-open license is excluded.
 
-The dimension field separates 3D worlds, 3D board games, cylindrical puzzles and perspective-alignment puzzles. Board rules and planar physics can coexist with real 3D scenes; flat games with only an optional 3D viewer remain in the candidate queue. Consumers needing spatial movement can filter to `3d-world`.
+The dimension field separates 3D worlds, 3D board games, cylindrical puzzles and perspective-alignment puzzles. Board rules and planar physics can coexist with real 3D scenes; flat games with only an optional 3D viewer remain in the candidate queue. These labels describe the rendered scene or board, not movement freedom: `3d-world` also includes planar simulation or constrained movement. Check each entry's limitations for motion scope; the label alone does not establish free 3D navigation.
 
 | Game | Genres | 3D scope | Code license | Maturity | Demo check |
 | --- | --- | --- | --- | --- | --- |
-| [HexGL](https://github.com/BKcore/HexGL) | racing, time-trial | 3d-world | MIT | legacy-release | [author link](https://hexgl.bkcore.com/play/) — page-read |
 | [Super Kart 3D.js](https://github.com/fecolinhares/super-kart-3djs) | racing, kart | 3d-world | MIT | game | [author link](https://fecolinhares.github.io/super-kart-3djs/) — page-read |
 | [Tower Defense (djpav)](https://github.com/djpav/threejs-tower-defense) | strategy, tower-defense | 3d-world | MIT | game | [author link](https://djpav.github.io/threejs-tower-defense/) — reader-error |
 | [Mastermind 3D](https://github.com/joeseesun/mastermind-3d) | puzzle, board-game, deduction | 3d-board | MIT | game | [author link](https://mastermind.qiaomu.ai) — reader-error |
@@ -23,9 +22,11 @@ The dimension field separates 3D worlds, 3D board games, cylindrical puzzles and
 | [Astray](https://github.com/wwwtyro/Astray) | puzzle, maze, ball-rolling | 3d-world | Unlicense | legacy-release | [author link](https://wwwtyro.github.io/Astray/) — page-read |
 | [Harvest](https://github.com/JamesLMilner/Harvest) | platformer, first-person | 3d-world | MIT | legacy-prototype | [author link](http://www.loxodrome.io/Harvest/index.html) — reader-error |
 
-A `page-read` result only means the web reader returned an HTML document. It does not prove that scripts, WebGL/WebGPU, controls, assets or multiplayer work. `reader-error` means this reader could not retrieve the URL; it does not prove the site is down. `not-located` means the reviewed primary sources did not yield a live play URL. Demo checks and source commits are dated separately from any future runtime tests.
+A `page-read` result only means the web reader returned an HTML document. It does not prove that scripts, WebGL/WebGPU, controls, assets or multiplayer work. `reader-error` means this reader could not retrieve the URL; it does not prove the site is down. `not-located` means the reviewed primary sources did not yield a live play URL. Demo checks and source commits are dated separately from any future runtime tests. Rendering, gameplay and license evidence stays pinned to reviewed commits. A demo discovery source may instead be dated repository homepage metadata or the actual author landing page; those sources are identified explicitly rather than attributed to an unrelated README.
 
-Code license is taken from the linked repository license file. Asset and vendored-library exceptions are recorded when found, including HexGL audio. A code license is not a blanket asset license. No third-party source code or assets are copied into this collection.
+Code license is taken from the linked repository license file. Asset and vendored-library exceptions are recorded when found, and restrictive core-file headers. HexGL is pending rather than presented as an ordinary MIT game. A code license is not a blanket asset license. No third-party source code or assets are copied into this collection.
+
+Schema v2 uses `license.label` for human-readable terms and `license.spdx` only for an established identifier. Unconfirmed GPL/AGPL variants or conflicting license scope use `spdx: null`, with the uncertainty in notes.
 
 Run lightweight local checks with Python 3:
 

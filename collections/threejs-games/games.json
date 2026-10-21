@@ -1,94 +1,7 @@
 {
   "$schema": "./schema.json",
-  "schema_version": 1,
+  "schema_version": 2,
   "games": [
-    {
-      "id": "hexgl",
-      "name": "HexGL",
-      "repository_url": "https://github.com/BKcore/HexGL",
-      "genres": [
-        "racing",
-        "time-trial"
-      ],
-      "dimension": "3d-world",
-      "stack": {
-        "renderer": "three.js",
-        "integration": "direct",
-        "three_version": "vendored legacy build (exact revision not established)",
-        "render_evidence": {
-          "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/HexGL.js#L285",
-          "claim": "Creates a Three.js WebGLRenderer and uses Three.js render targets and post-processing; index.html loads libs/Three.dev.js directly."
-        },
-        "manifests": [],
-        "auxiliary_dependencies": [
-          "Vendored Three.js post-processing, Stats.js, dat.GUI and LeapMotion; project-authored JavaScript/CoffeeScript helpers."
-        ],
-        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
-      },
-      "gameplay_evidence": {
-        "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/Gameplay.js#L49",
-        "claim": "Implements a three-lap race, lap timing, completion and destroyed-ship outcomes."
-      },
-      "license": {
-        "spdx": "MIT",
-        "source_url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/LICENSE",
-        "additional_notices": [
-          "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/audio/LICENSE"
-        ],
-        "notes": "Root code/resources default to MIT unless a file says otherwise. audio/LICENSE lists CC BY 3.0 and public-domain sound exceptions; do not treat all audio as MIT."
-      },
-      "demo": {
-        "url": "https://hexgl.bkcore.com/play/",
-        "status": "page-read",
-        "checked_at": "2026-10-21",
-        "source_url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/README.md",
-        "notes": "Author landing page and linked play page were readable; the play page exposes a Start screen. WebGL was not run."
-      },
-      "maturity": {
-        "status": "legacy-release",
-        "basis_url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/README.md",
-        "notes": "README calls master the stable public release and states development is on hiatus."
-      },
-      "verification": {
-        "date": "2026-10-21",
-        "source_commit": "6addc95a2fce3bf05f4d751823cc054c61a16d68",
-        "source_reviewed": true,
-        "playtested": false,
-        "upstream_tests_run": false,
-        "evidence_path": "evidence/batch-001.md#hexgl",
-        "reviewed_files": [
-          {
-            "path": "LICENSE",
-            "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/LICENSE"
-          },
-          {
-            "path": "README.md",
-            "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/README.md"
-          },
-          {
-            "path": "audio/LICENSE",
-            "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/audio/LICENSE"
-          },
-          {
-            "path": "bkcore/hexgl/Gameplay.js",
-            "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/Gameplay.js"
-          },
-          {
-            "path": "bkcore/hexgl/HexGL.js",
-            "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/HexGL.js"
-          },
-          {
-            "path": "index.html",
-            "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/index.html"
-          }
-        ],
-        "already_mentioned_in_legacy_readme": true
-      },
-      "limitations": [
-        "Legacy Three.js and browser APIs; current browser compatibility was not tested.",
-        "The public ladder is closed according to the author landing page."
-      ]
-    },
     {
       "id": "super-kart-3djs",
       "name": "Super Kart 3D.js",
@@ -132,7 +45,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/fecolinhares/super-kart-3djs/blob/d94f63da26b6a01ecbfc1e301e5d754ea64649c2/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://fecolinhares.github.io/super-kart-3djs/",
@@ -230,7 +144,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/djpav/threejs-tower-defense/blob/dcb33e163c96e03d464d868b5b91ca5af93fe4f2/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://djpav.github.io/threejs-tower-defense/",
@@ -317,7 +232,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/joeseesun/mastermind-3d/blob/c10c5525376e3b94538b7f6f1e75a78f33590ca8/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://mastermind.qiaomu.ai",
@@ -409,7 +325,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/JakeSiegers/PuzzleCylinder/blob/2a559160acb005bcae212840727028912937aadd/LICENSE.txt",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://jakesiegers.github.io/PuzzleCylinder/",
@@ -514,7 +431,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/MankyDanky/web-racing/blob/49d3db2b11585ab3ab4dc0e424f58d50256a8a27/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://racez.io",
@@ -637,7 +555,8 @@
         "spdx": "ISC",
         "source_url": "https://github.com/project-trio/td/blob/ca9ad1fb254d2d1b180454c0ef8388186c3b4185/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "ISC"
       },
       "demo": {
         "url": "https://ttd.netlify.com",
@@ -764,7 +683,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/UstymUkhman/YetAnotherZombieHorror/blob/cdbde45a9911200376a449957408c3bebbaccd12/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": null,
@@ -883,14 +803,15 @@
         "spdx": "MIT",
         "source_url": "https://github.com/juanuys/perspectives/blob/9d34062cfb87b7668b4e266ba4e7bab54573739c/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://juanuys.com/perspectives",
         "status": "page-read",
         "checked_at": "2026-10-21",
-        "source_url": "https://github.com/juanuys/perspectives/blob/9d34062cfb87b7668b4e266ba4e7bab54573739c/README.md",
-        "notes": "The author homepage redirected to a trailing-slash HTML document titled Perspectives. Rendering was not run."
+        "source_url": "https://api.github.com/repos/juanuys/perspectives",
+        "notes": "Demo URL is from repository homepage metadata observed on 2026-10-21. The author homepage redirected to a trailing-slash HTML document titled Perspectives. Rendering was not run."
       },
       "maturity": {
         "status": "prototype",
@@ -1009,14 +930,15 @@
         "spdx": "MIT",
         "source_url": "https://github.com/vanrez-nez/glory-box-game/blob/5cc0ba8a242e2c079aee08a5e1bda02f404238f1/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://glory-box-game-rhig-ivan-juarezs-projects.vercel.app",
         "status": "reader-error",
         "checked_at": "2026-10-21",
-        "source_url": "https://github.com/vanrez-nez/glory-box-game/blob/5cc0ba8a242e2c079aee08a5e1bda02f404238f1/README.md",
-        "notes": "Repository homepage could not be retrieved through the web reader. This is not a demonstrated deployment failure."
+        "source_url": "https://api.github.com/repos/vanrez-nez/glory-box-game",
+        "notes": "Demo URL is from repository homepage metadata observed on 2026-10-21. Repository homepage could not be retrieved through the web reader. This is not a demonstrated deployment failure."
       },
       "maturity": {
         "status": "work-in-progress",
@@ -1100,7 +1022,8 @@
         "spdx": "Unlicense",
         "source_url": "https://github.com/wwwtyro/Astray/blob/d3c4f61f2cbbe35752fbfa205f85a41d7f9fe0f0/License.md",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "Unlicense"
       },
       "demo": {
         "url": "https://wwwtyro.github.io/Astray/",
@@ -1177,7 +1100,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/JamesLMilner/Harvest/blob/e234f4e2fd090b7128afa6c0342bc9a7455e9499/LICENSE.md",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "http://www.loxodrome.io/Harvest/index.html",

@@ -2,6 +2,7 @@
 """Validate the JSON Schema subset used by this collection, without dependencies.
 
 This is a local metadata check. It does not fetch URLs or run upstream games.
+Schema v2 separates human license labels from nullable, recognized SPDX identifiers.
 """
 import datetime as dt
 import json
@@ -104,13 +105,25 @@ def check_collection(catalog, queue):
         evidence_urls = [game["stack"]["render_evidence"]["url"],
                          game["gameplay_evidence"]["url"],
                          game["license"]["source_url"],
-                         game["demo"]["source_url"],
                          game["maturity"]["basis_url"]]
         evidence_urls += game["license"]["additional_notices"]
         evidence_urls += [m["url"] for m in game["stack"]["manifests"]]
         for url in evidence_urls:
             require(url.startswith(prefix), f"{ident}: unpinned or cross-repo evidence: {url}")
             require(url.split("#")[0] in reviewed, f"{ident}: evidence absent from reviewed files: {url}")
+        demo_source = game["demo"]["source_url"]
+        metadata_source = "https://api.github.com/repos/" + game["repository_url"].split("github.com/", 1)[1]
+        if demo_source.startswith(prefix):
+            require(demo_source.split("#")[0] in reviewed,
+                    f"{ident}: demo discovery file was not reviewed")
+        elif demo_source == metadata_source:
+            require("metadata" in game["demo"]["notes"].lower(),
+                    f"{ident}: metadata-derived demo needs an explicit dated attribution note")
+        else:
+            require(game["demo"]["url"] is not None
+                    and urlparse(demo_source).hostname == urlparse(game["demo"]["url"]).hostname
+                    and "author" in game["demo"]["notes"].lower(),
+                    f"{ident}: demo source must be a reviewed file, repository metadata or an attributed author page")
         for item in verify["reviewed_files"]:
             require(item["url"] == prefix + item["path"],
                     f"{ident}: reviewed path/URL mismatch")
@@ -145,7 +158,7 @@ def main():
     pending = sum(c["status"] == "pending" for c in queue["candidates"])
     excluded = sum(c["status"] == "excluded" for c in queue["candidates"])
     print(f"PASS: {len(catalog['games'])} source-verified games, {pending} pending, "
-          f"{excluded} excluded; schema, duplicates, pinned sources and local links checked.")
+          f"{excluded} excluded; schema/SPDX labels, duplicates, pinned sources and local links checked.")
 
 
 if __name__ == "__main__":
