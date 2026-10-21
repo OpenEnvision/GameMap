@@ -2,6 +2,7 @@
 """Validate the JSON Schema subset used by this collection, without dependencies.
 
 This is a local metadata check. It does not fetch URLs or run upstream games.
+Schema v2 separates human license labels from nullable, recognized SPDX identifiers.
 """
 import datetime as dt
 import json
@@ -157,7 +158,7 @@ def main():
     pending = sum(c["status"] == "pending" for c in queue["candidates"])
     excluded = sum(c["status"] == "excluded" for c in queue["candidates"])
     print(f"PASS: {len(catalog['games'])} source-verified games, {pending} pending, "
-          f"{excluded} excluded; schema, duplicates, pinned sources and local links checked.")
+          f"{excluded} excluded; schema/SPDX labels, duplicates, pinned sources and local links checked.")
 
 
 if __name__ == "__main__":

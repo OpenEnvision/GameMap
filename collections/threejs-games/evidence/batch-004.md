@@ -1,8 +1,10 @@
 # Batch 004 source review — 2026-10-21
 
-Adds **10 source-reviewed games**, bringing the series to **42**. New coverage includes tennis, table tennis, motion-controlled rolling, perspective puzzles, marble mazes, pinball, WebXR climbing and survival. Reviews inspect primary source and licenses at fixed commits; **no upstream install, build, test suite, browser game execution or playtest occurred**.
+Adds **10 source-reviewed games**, bringing the series to **41**. New coverage includes tennis, table tennis, motion-controlled rolling, perspective puzzles, marble mazes, pinball, WebXR climbing and survival. Reviews inspect primary source and licenses at fixed commits; **no upstream install, build, test suite, browser game execution or playtest occurred**.
 
 This batch is appended to the current open [PR #48](https://github.com/OpenEnvision/GameMap/pull/48), after head `a2eb247e718fb8a4e516ab371c16756298b36134`. The foundation is [PR #46](https://github.com/OpenEnvision/GameMap/pull/46). Main/PR state is checked before the branch update; no merge or deployment is performed.
+
+Totals reflect the later [HexGL license correction](license-review-001.md), which retains its evidence in the pending queue.
 
 <a id="couchcourt"></a>
 
@@ -136,7 +138,7 @@ This batch is appended to the current open [PR #48](https://github.com/OpenEnvis
 
 - Source: [dammafra/temple-rumble](https://github.com/dammafra/temple-rumble/tree/1f39c09b447ed44e5bf504e4c440ae80a9771413), commit `1f39c09b447ed44e5bf504e4c440ae80a9771413`.
 - Rendering: Imports Three.js WebGLRenderer directly and constructs it; declared three.ez instancing/camera controls are auxiliary rendering utilities. [Renderer source](https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/src/experience/renderer.js#L26).
-- Game loop: Death stops the run, resets pillars, shows retry and submits survival time to the leaderboard; the loop chooses safe/unsafe pillar combinations. [Gameplay source](https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/src/game/game.js#L116).
+- Game loop: Death stops the run, resets pillars and shows retry plus the survival-time leaderboard. Qualifying scores expose an optional submit button; the loop chooses safe/unsafe pillar combinations. [Optional qualifying-score submission](https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/src/firebase/leaderboard.js#L26). [Gameplay source](https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/src/game/game.js#L116).
 - Dependencies: @three.ez/instanced-mesh, camera-controls, GSAP, Tweakpane, Firebase, nipplejs/keydrown, Tailwind and Vite. Direct Three.js remains the renderer; optional leaderboard service is external to core survival play. [package.json](https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/package.json)
 - License: AGPL-3.0 (only/or-later variant unconfirmed). Code is AGPL v3 per README/LICENSE. README separately credits CC BY model creators plus Quaternius, Kenney, texture sources and Pixabay audio; those assets are not all asserted to be AGPL or independently license-audited. [License file](https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/LICENSE). [Additional notice](https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/README.md).
 - Maturity: game. Source implements survival timing, death/retry and pillar hazards; README links a published game-jam project. [Maturity basis](https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/README.md).

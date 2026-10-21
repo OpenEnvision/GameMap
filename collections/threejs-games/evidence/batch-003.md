@@ -1,8 +1,10 @@
 # Batch 003 source review — 2026-10-21
 
-Adds **10 source-reviewed games**, for a series total of **32**. This batch expands horror/puzzle, roguelite, bowling, platformer and multiplayer/space categories. Source review and text-reader links are separate from runtime testing: no upstream game installation, build, automated suite, browser execution or play session occurred.
+Adds **10 source-reviewed games**, for a series total of **31**. This batch expands horror/puzzle, roguelite, bowling, platformer and multiplayer/space categories. Source review and text-reader links are separate from runtime testing: no upstream game installation, build, automated suite, browser execution or play session occurred.
 
 Appended to the latest open increment [PR #48](https://github.com/OpenEnvision/GameMap/pull/48), based on head `7c26065e83a2eb7030070a09975f78668bb4d54d`, to avoid creating another dependent PR. The base series remains [PR #46](https://github.com/OpenEnvision/GameMap/pull/46). Remote main and both PR states are checked again before publication.
+
+Totals reflect the later [HexGL license correction](license-review-001.md), which retains its evidence in the pending queue.
 
 <a id="vesper-street"></a>
 

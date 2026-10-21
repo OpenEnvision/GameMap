@@ -1,94 +1,7 @@
 {
   "$schema": "./schema.json",
-  "schema_version": 1,
+  "schema_version": 2,
   "games": [
-    {
-      "id": "hexgl",
-      "name": "HexGL",
-      "repository_url": "https://github.com/BKcore/HexGL",
-      "genres": [
-        "racing",
-        "time-trial"
-      ],
-      "dimension": "3d-world",
-      "stack": {
-        "renderer": "three.js",
-        "integration": "direct",
-        "three_version": "vendored legacy build (exact revision not established)",
-        "render_evidence": {
-          "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/HexGL.js#L285",
-          "claim": "Creates a Three.js WebGLRenderer and uses Three.js render targets and post-processing; index.html loads libs/Three.dev.js directly."
-        },
-        "manifests": [],
-        "auxiliary_dependencies": [
-          "Vendored Three.js post-processing, Stats.js, dat.GUI and LeapMotion; project-authored JavaScript/CoffeeScript helpers."
-        ],
-        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
-      },
-      "gameplay_evidence": {
-        "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/Gameplay.js#L49",
-        "claim": "Implements a three-lap race, lap timing, completion and destroyed-ship outcomes."
-      },
-      "license": {
-        "spdx": "MIT",
-        "source_url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/LICENSE",
-        "additional_notices": [
-          "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/audio/LICENSE"
-        ],
-        "notes": "Root code/resources default to MIT unless a file says otherwise. audio/LICENSE lists CC BY 3.0 and public-domain sound exceptions; do not treat all audio as MIT."
-      },
-      "demo": {
-        "url": "https://hexgl.bkcore.com/play/",
-        "status": "page-read",
-        "checked_at": "2026-10-21",
-        "source_url": "https://hexgl.bkcore.com/",
-        "notes": "The author landing page links the play URL. Author landing page and linked play page were readable; the play page exposes a Start screen. WebGL was not run."
-      },
-      "maturity": {
-        "status": "legacy-release",
-        "basis_url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/README.md",
-        "notes": "README calls master the stable public release and states development is on hiatus."
-      },
-      "verification": {
-        "date": "2026-10-21",
-        "source_commit": "6addc95a2fce3bf05f4d751823cc054c61a16d68",
-        "source_reviewed": true,
-        "playtested": false,
-        "upstream_tests_run": false,
-        "evidence_path": "evidence/batch-001.md#hexgl",
-        "reviewed_files": [
-          {
-            "path": "LICENSE",
-            "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/LICENSE"
-          },
-          {
-            "path": "README.md",
-            "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/README.md"
-          },
-          {
-            "path": "audio/LICENSE",
-            "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/audio/LICENSE"
-          },
-          {
-            "path": "bkcore/hexgl/Gameplay.js",
-            "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/Gameplay.js"
-          },
-          {
-            "path": "bkcore/hexgl/HexGL.js",
-            "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/HexGL.js"
-          },
-          {
-            "path": "index.html",
-            "url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/index.html"
-          }
-        ],
-        "already_mentioned_in_legacy_readme": true
-      },
-      "limitations": [
-        "Legacy Three.js and browser APIs; current browser compatibility was not tested.",
-        "The public ladder is closed according to the author landing page."
-      ]
-    },
     {
       "id": "super-kart-3djs",
       "name": "Super Kart 3D.js",
@@ -132,7 +45,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/fecolinhares/super-kart-3djs/blob/d94f63da26b6a01ecbfc1e301e5d754ea64649c2/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://fecolinhares.github.io/super-kart-3djs/",
@@ -230,7 +144,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/djpav/threejs-tower-defense/blob/dcb33e163c96e03d464d868b5b91ca5af93fe4f2/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://djpav.github.io/threejs-tower-defense/",
@@ -317,7 +232,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/joeseesun/mastermind-3d/blob/c10c5525376e3b94538b7f6f1e75a78f33590ca8/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://mastermind.qiaomu.ai",
@@ -409,7 +325,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/JakeSiegers/PuzzleCylinder/blob/2a559160acb005bcae212840727028912937aadd/LICENSE.txt",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://jakesiegers.github.io/PuzzleCylinder/",
@@ -514,7 +431,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/MankyDanky/web-racing/blob/49d3db2b11585ab3ab4dc0e424f58d50256a8a27/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://racez.io",
@@ -637,7 +555,8 @@
         "spdx": "ISC",
         "source_url": "https://github.com/project-trio/td/blob/ca9ad1fb254d2d1b180454c0ef8388186c3b4185/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "ISC"
       },
       "demo": {
         "url": "https://ttd.netlify.com",
@@ -764,7 +683,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/UstymUkhman/YetAnotherZombieHorror/blob/cdbde45a9911200376a449957408c3bebbaccd12/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": null,
@@ -883,7 +803,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/juanuys/perspectives/blob/9d34062cfb87b7668b4e266ba4e7bab54573739c/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://juanuys.com/perspectives",
@@ -1009,7 +930,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/vanrez-nez/glory-box-game/blob/5cc0ba8a242e2c079aee08a5e1bda02f404238f1/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://glory-box-game-rhig-ivan-juarezs-projects.vercel.app",
@@ -1100,7 +1022,8 @@
         "spdx": "Unlicense",
         "source_url": "https://github.com/wwwtyro/Astray/blob/d3c4f61f2cbbe35752fbfa205f85a41d7f9fe0f0/License.md",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "Unlicense"
       },
       "demo": {
         "url": "https://wwwtyro.github.io/Astray/",
@@ -1177,7 +1100,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/JamesLMilner/Harvest/blob/e234f4e2fd090b7128afa6c0342bc9a7455e9499/LICENSE.md",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "http://www.loxodrome.io/Harvest/index.html",
@@ -1269,7 +1193,8 @@
           "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/THIRD_PARTY_NOTICES.md",
           "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/ASSET_PROVENANCE.md"
         ],
-        "notes": "Original project code/assets are Apache-2.0 according to LICENSE and the author's provenance inventory. Vendored Three.js remains MIT. Optional generated audio is excluded from the open-source release; its service terms are not represented as Apache-2.0."
+        "notes": "Original project code/assets are Apache-2.0 according to LICENSE and the author's provenance inventory. Vendored Three.js remains MIT. Optional generated audio is excluded from the open-source release; its service terms are not represented as Apache-2.0.",
+        "label": "Apache-2.0"
       },
       "demo": {
         "url": "https://apex-formula-2026.vercel.app",
@@ -1374,7 +1299,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://anisches.github.io/towerofHanoi/",
@@ -1498,7 +1424,8 @@
         "additional_notices": [
           "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/README.md"
         ],
-        "notes": "Code is MIT. README identifies included Kenney-derived sprite assets as CC0/public domain. This is the author's asset attribution, not an independent per-file asset audit."
+        "notes": "Code is MIT. README identifies included Kenney-derived sprite assets as CC0/public domain. This is the author's asset attribution, not an independent per-file asset audit.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://paulatkins88.github.io/neon-doom-pit/",
@@ -1610,7 +1537,8 @@
         "additional_notices": [
           "https://github.com/alexandrosang21/island-survival/blob/9140b5b94f60b5f67da58cf546850b24e65bff69/public/assets/CREDITS.md"
         ],
-        "notes": "Repository code is MIT. The asset credits file contains a policy heading but no per-asset inventory; external asset provenance is not established by that file."
+        "notes": "Repository code is MIT. The asset credits file contains a policy heading but no per-asset inventory; external asset provenance is not established by that file.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://forest.angelov.gr",
@@ -1713,7 +1641,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/JasonTM17/Minecraft_Adventure/blob/137e6c52600e5dad5f055bb25316a53c58535b17/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": null,
@@ -1855,7 +1784,8 @@
         "additional_notices": [
           "https://github.com/Rabneba/stick-steel/blob/4c8e1d05a1ec47db93b687a81a82878727308b20/public/fonts/OFL.txt"
         ],
-        "notes": "Project code is MIT. Bundled Patrick Hand font has its own SIL Open Font License 1.1 notice. README states third-party dependencies retain their own licenses; Git LFS assets were not exhaustively audited."
+        "notes": "Project code is MIT. Bundled Patrick Hand font has its own SIL Open Font License 1.1 notice. README states third-party dependencies retain their own licenses; Git LFS assets were not exhaustively audited.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://genex.games/stick-steel",
@@ -1944,7 +1874,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/arjunemirchandani/skyward-flight-simulator/blob/5fde882dc8fe33bd3067504c8181c85747b6fb60/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://arjunemirchandani.github.io/skyward-flight-simulator/",
@@ -2022,7 +1953,8 @@
         "additional_notices": [
           "https://github.com/mike007jd/voxel-musou/blob/aba5fb8f43b713e88e8ac3a3105e48f01941dc7f/README.md"
         ],
-        "notes": "Code and Three.js are MIT per the author's notices. README identifies the bundled Yuji Boku font subset as SIL OFL 1.1 and states original commercial-game assets are not included; this claim was not independently audited."
+        "notes": "Code and Three.js are MIT per the author's notices. README identifies the bundled Yuji Boku font subset as SIL OFL 1.1 and states original commercial-game assets are not included; this claim was not independently audited.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://voxel-musou.vercel.app",
@@ -2121,7 +2053,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/realEdwinJ/SimDrone/blob/ecfa202b879d85b4bafff3528afd86eb7676cf9c/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": null,
@@ -2220,7 +2153,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://ronpicard.github.io/orbit-golf/",
@@ -2304,7 +2238,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/winchxyz/vesper-street/blob/fcc2f6eda84311194c0834de6cd7081c2965086f/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://winchxyz.github.io/vesper-street/",
@@ -2403,7 +2338,8 @@
           "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/public/assets/models/flashlight/license.txt",
           "https://github.com/IronExcavater/threejs-liminality/blob/d57abb61d6546de0379df15f60b0ba33210b1ee6/public/assets/models/furniture/license.txt"
         ],
-        "notes": "Code is MIT. Flashlight and school furniture model notices separately require CC BY 4.0 attribution to their named Sketchfab creators. Other model/audio rights were not exhaustively audited."
+        "notes": "Code is MIT. Flashlight and school furniture model notices separately require CC BY 4.0 attribution to their named Sketchfab creators. Other model/audio rights were not exhaustively audited.",
+        "label": "MIT"
       },
       "demo": {
         "url": null,
@@ -2529,7 +2465,8 @@
         "additional_notices": [
           "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/README.md"
         ],
-        "notes": "Code is MIT. README separately credits jsfxr-generated effects, Wolfram Tones music, the Zughy 32 palette and Lobster Two font. Those media/source-service terms were not established as MIT or independently audited."
+        "notes": "Code is MIT. README separately credits jsfxr-generated effects, Wolfram Tones music, the Zughy 32 palette and Lobster Two font. Those media/source-service terms were not established as MIT or independently audited.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://andykswong.itch.io/ld48",
@@ -2634,7 +2571,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://fakeyou.github.io/ludum-dare-40/",
@@ -2722,10 +2660,11 @@
         "claim": "Implements ten frames, strike/spare handling, throw results, total scoring and game-over state."
       },
       "license": {
-        "spdx": "GPL-3.0 (only/or-later variant unconfirmed)",
+        "spdx": null,
         "source_url": "https://github.com/iliagrigorevdev/bowling/blob/60fa6fe5283869c45515f614f6a99b181c63d499/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "GPL v3 text is present, but a project-specific only/or-later election was not established; spdx remains null rather than guessing a valid SPDX variant. Vendored dependencies and third-party assets may have different terms.",
+        "label": "GPL-3.0 (only/or-later variant unconfirmed)"
       },
       "demo": {
         "url": "https://iliagrigorevdev.github.io/bowling/",
@@ -2813,7 +2752,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/dvcolgan/ludumdare29/blob/80753b2bc3ac1bc4348edcf2307ca1269d820afb/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": null,
@@ -2910,7 +2850,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/Dan-Art-Projects/3d-platformer-three/blob/cdac6f7792e89ceacebc7dba55d301fd40ab85be/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": null,
@@ -3017,7 +2958,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/LICENSE",
         "additional_notices": [],
-        "notes": "Root LICENSE explicitly covers source with MIT and separately identifies Quaternius Toon Shooter art and Screaming Brain textures as CC0. GitHub metadata says NOASSERTION, so the actual file is used rather than guessing from that metadata."
+        "notes": "Root LICENSE explicitly covers source with MIT and separately identifies Quaternius Toon Shooter art and Screaming Brain textures as CC0. GitHub metadata says NOASSERTION, so the actual file is used rather than guessing from that metadata.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://arena-8g34.onrender.com",
@@ -3120,7 +3062,8 @@
         "additional_notices": [
           "https://github.com/Lallassu/wizardwarz/blob/fc5451c980c61698f59c11319e581cf8e43ee028/index.html"
         ],
-        "notes": "Root code is MIT. Entry HTML credits external sound/model/font sources, including SoundBible, BlendSwap and ROME; corresponding per-asset license grants were not established, so these are not called MIT assets."
+        "notes": "Root code is MIT. Entry HTML credits external sound/model/font sources, including SoundBible, BlendSwap and ROME; corresponding per-asset license grants were not established, so these are not called MIT assets.",
+        "label": "MIT"
       },
       "demo": {
         "url": "http://wizardwarz.nergal.se",
@@ -3212,7 +3155,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/alexprut/earth-defender/blob/5d4d8f0832fc74882a701d6a0dedee23fd494648/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://alexprut.github.io/earth-defender/",
@@ -3316,7 +3260,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/kuehn-lars/CouchCourt/blob/5c086724ba213117d37f032e9209c0eaa88e380b/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": null,
@@ -3403,7 +3348,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/huangluke89757/spin-table-tennis/blob/588cfdd328c2c27b32879552c4917080633f3a1d/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://spin-pingpong.app.workbuddy.host/",
@@ -3482,7 +3428,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/imshota1009/Nyan-Cororin/blob/fb9054368526d30929870aae7338b3b956235e7a/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://nyan-cororin-game-app.web.app/",
@@ -3557,7 +3504,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/suncal/vantage/blob/020f4e37e11c2f9fa350168dbd103bca95e70c58/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://suncal.github.io/vantage/",
@@ -3635,7 +3583,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/danielmroczek/marble-maze/blob/9c60a20fa012059bcce894ebb979faa9b7e3df9a/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://danielmroczek.github.io/marble-maze/",
@@ -3731,7 +3680,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/DaedalusApps/GalacticRecruitPinball/blob/c3560181d8c2a21a62358d369c4f162894b55740/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": null,
@@ -3825,7 +3775,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/N-THEM-Studio/floppy-defense/blob/aee3b103f77d04816d252c30a57ff3afd079a876/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": null,
@@ -3940,7 +3891,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/danielesteban/trolltower/blob/6c07dc2ecc306086ad7c84ffc1e8d77fd723e453/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://trolltower.app/",
@@ -4090,7 +4042,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/Bombanauts/Bombanauts/blob/47b1c4c699fdd0278bfc6a1c8c089734b120b3dc/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "http://bombanauts.herokuapp.com/",
@@ -4192,15 +4145,16 @@
       },
       "gameplay_evidence": {
         "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/src/game/game.js#L116",
-        "claim": "Death stops the run, resets pillars, shows retry and submits survival time to the leaderboard; the loop chooses safe/unsafe pillar combinations."
+        "claim": "Death stops the run, resets pillars and shows retry plus the survival-time leaderboard. Qualifying scores expose an optional submit button; the loop chooses safe/unsafe pillar combinations."
       },
       "license": {
-        "spdx": "AGPL-3.0 (only/or-later variant unconfirmed)",
+        "spdx": null,
         "source_url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/LICENSE",
         "additional_notices": [
           "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/README.md"
         ],
-        "notes": "Code is AGPL v3 per README/LICENSE. README separately credits CC BY model creators plus Quaternius, Kenney, texture sources and Pixabay audio; those assets are not all asserted to be AGPL or independently license-audited."
+        "notes": "Code is AGPL v3 per README/LICENSE. README separately credits CC BY model creators plus Quaternius, Kenney, texture sources and Pixabay audio; those assets are not all asserted to be AGPL or independently license-audited. A project-specific only/or-later election is unconfirmed; spdx is null rather than guessing the variant.",
+        "label": "AGPL-3.0 (only/or-later variant unconfirmed)"
       },
       "demo": {
         "url": "https://templerumble.dammafra.dev",
@@ -4227,16 +4181,20 @@
             "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/LICENSE"
           },
           {
-            "path": "README.md",
-            "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/README.md"
-          },
-          {
             "path": "package.json",
             "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/package.json"
           },
           {
+            "path": "README.md",
+            "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/README.md"
+          },
+          {
             "path": "src/experience/renderer.js",
             "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/src/experience/renderer.js"
+          },
+          {
+            "path": "src/firebase/leaderboard.js",
+            "url": "https://github.com/dammafra/temple-rumble/blob/1f39c09b447ed44e5bf504e4c440ae80a9771413/src/firebase/leaderboard.js"
           },
           {
             "path": "src/game/game.js",
@@ -4247,7 +4205,8 @@
       },
       "limitations": [
         "AGPL v3 only/or-later election and every individual asset's terms remain unconfirmed beyond the recorded primary notices.",
-        "Firebase availability, reflex timing, touch controls and upstream award claims were not tested/independently verified."
+        "Firebase availability, reflex timing, touch controls and upstream award claims were not tested/independently verified.",
+        "Leaderboard.show refreshes scores; saving a qualifying name/score occurs only through its submit-button handler. No submit action was performed."
       ]
     },
     {
@@ -4283,7 +4242,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/bridge-mind/tideline/blob/c8e772fa8b51bae6221630b9693178f1bebee047/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://bridge-mind.github.io/tideline/",
@@ -4405,7 +4365,8 @@
           "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/public/fonts/Silkscreen-OFL.txt",
           "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/public/fonts/DotGothic16-OFL.txt"
         ],
-        "notes": "Code is MIT; fonts are separately SIL OFL. CREDITS documents AI-generated art/audio and an original catch sound whose exact Freesound match is explicitly unconfirmed. Those media are not all asserted to be MIT/CC0 or independently rights-audited."
+        "notes": "Code is MIT; fonts are separately SIL OFL. CREDITS documents AI-generated art/audio and an original catch sound whose exact Freesound match is explicitly unconfirmed. Those media are not all asserted to be MIT/CC0 or independently rights-audited.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://neonriver2.kahdev.me",
@@ -4508,7 +4469,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/ryanio/tidebreak/blob/572d537c82de053296b9cd9de5bff164bb152480/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://ryanio.github.io/tidebreak/",
@@ -4618,10 +4580,15 @@
         "claim": "Evaluates surviving contenders, returns a finished match with its winner and maps that state to local victory/defeat."
       },
       "license": {
-        "spdx": "MIT",
+        "spdx": null,
         "source_url": "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/LICENSE",
-        "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "additional_notices": [
+          "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/src/game/engine.ts",
+          "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/src/game/victory.ts",
+          "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/src/App.tsx"
+        ],
+        "notes": "Root LICENSE/package declare MIT, but the reviewed engine.ts, victory.ts and App.tsx explicitly carry SPDX-License-Identifier: Apache-2.0 headers. Both notices are preserved as mixed/conflicting repository evidence; no single uniform code license is inferred. This review does not establish asset or transitive dependency rights.",
+        "label": "MIT (root); Apache-2.0 (reviewed source headers)"
       },
       "demo": {
         "url": null,
@@ -4672,7 +4639,8 @@
       },
       "limitations": [
         "Requires a running LAN/server setup for multiplayer; no room, Docker service or network session was created.",
-        "React is auxiliary UI; procedural-asset claims and all UI dependency/asset rights were not exhaustively audited."
+        "React is auxiliary UI; procedural-asset claims and all UI dependency/asset rights were not exhaustively audited.",
+        "Code license labels differ: MIT at repository root and Apache-2.0 in the reviewed active source files. Clarify scope upstream before redistributing a combined package."
       ]
     },
     {
@@ -4725,7 +4693,8 @@
         "additional_notices": [
           "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/ASSETS.md"
         ],
-        "notes": "Code is MIT. ASSETS.md says runtime art/audio are generated from project code and no third-party media are pulled into the bundle; this is an author statement, not an exhaustive independent asset audit."
+        "notes": "Code is MIT. ASSETS.md says runtime art/audio are generated from project code and no third-party media are pulled into the bundle; this is an author statement, not an exhaustive independent asset audit.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://tiny-planet-action-rpg.vercel.app/",
@@ -4834,7 +4803,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://victorzakharov.github.io/last-stand/",
@@ -4950,7 +4920,8 @@
         "spdx": "MIT",
         "source_url": "https://github.com/lumixed/tennis/blob/9e510e8ef439618f146618a3a60cf9251ccb83f8/LICENSE",
         "additional_notices": [],
-        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
       },
       "demo": {
         "url": "https://tennis-blond.vercel.app/",
@@ -5007,6 +4978,830 @@
         "Camera play needs webcam permission and HTTPS outside localhost; README says the pose worker runs only in a built bundle.",
         "Keyboard/touch fallback and upstream camera latency/test-count claims were not tested or repeated.",
         "MediaPipe model/software licensing and all runtime download terms were not independently audited."
+      ]
+    },
+    {
+      "id": "cinderbelt",
+      "name": "Cinderbelt",
+      "repository_url": "https://github.com/amoreo140/cinderbelt",
+      "genres": [
+        "space",
+        "combat",
+        "mining",
+        "trading",
+        "shipbuilding"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/src/render/RenderContext.ts#L5",
+          "claim": "Imports WebGLRenderer directly from Three.js and constructs the shared renderer. App uses Preact to render DOM UI; the game creates its own GameRenderer and frame loop."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/package.json",
+            "dependencies": {
+              "@fontsource-variable/archivo": "^5.3.0",
+              "@fontsource-variable/atkinson-hyperlegible-next": "^5.3.0",
+              "preact": "^11.0.1",
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "@babel/parser": "^7.29.9",
+              "@gltf-transform/core": "4.5.1",
+              "@gltf-transform/extensions": "4.5.1",
+              "@gltf-transform/functions": "4.5.1",
+              "@playwright/test": "^1.64.1",
+              "@preact/preset-vite": "^2.10.6",
+              "@types/three": "^0.186.0",
+              "fake-indexeddb": "^6.2.5",
+              "meshoptimizer": "1.3.0",
+              "sharp": "0.35.5",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.4",
+              "vitest": "^5.0.4"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Preact ^11.0.1 DOM UI; Fontsource Archivo and Atkinson Hyperlegible Next; TypeScript/Vite toolchain. Full runtime/dev manifest snapshot is recorded.",
+          "Custom planar rigid-body/ship simulation with 3D rendering; browser Web Audio and IndexedDB saves."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/src/sim/combat/combat.ts#L472",
+        "claim": "Steps projectiles, damages individual ship parts and records hits/destruction; source and README describe mining, trade, contracts and modular shipbuilding."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/LICENSE",
+        "additional_notices": [
+          "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/LICENSE-ASSETS.md",
+          "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/THIRD-PARTY.md"
+        ],
+        "notes": "MIT code; LICENSE-ASSETS.md separately licenses art, music and their sources under CC BY 4.0. Bundled fonts retain SIL OFL 1.1; runtime libraries retain their own MIT notices. The author documents AI-assisted code/art/music; these statements are not an independent provenance audit.",
+        "label": "MIT"
+      },
+      "demo": {
+        "url": "https://amoreo140.github.io/cinderbelt/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/README.md",
+        "notes": "README-linked Pages URL could not be retrieved by the text reader. No game, save export or IndexedDB operation was executed."
+      },
+      "maturity": {
+        "status": "work-in-progress",
+        "basis_url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/README.md",
+        "notes": "README labels the game early but playable and under active development; package version 0.3.2. Playability is the author's claim, not a playtest result."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "b86b07ff9bf4071033a16f6cb986357787e1b247",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-006.md#cinderbelt",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/LICENSE"
+          },
+          {
+            "path": "LICENSE-ASSETS.md",
+            "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/LICENSE-ASSETS.md"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/README.md"
+          },
+          {
+            "path": "THIRD-PARTY.md",
+            "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/THIRD-PARTY.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/package.json"
+          },
+          {
+            "path": "src/game/Game.ts",
+            "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/src/game/Game.ts"
+          },
+          {
+            "path": "src/game/app/App.ts",
+            "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/src/game/app/App.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/src/main.ts"
+          },
+          {
+            "path": "src/render/RenderContext.ts",
+            "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/src/render/RenderContext.ts"
+          },
+          {
+            "path": "src/sim/combat/combat.ts",
+            "url": "https://github.com/amoreo140/cinderbelt/blob/b86b07ff9bf4071033a16f6cb986357787e1b247/src/sim/combat/combat.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Flight/physics is planar despite 3D ships and environments; it is not a six-degree-of-freedom flight simulator.",
+        "Mining, trade, balance, persistence and the author's test/bot claims were not run or independently reproduced.",
+        "CC BY assets require attribution; the code's MIT grant does not replace the asset/font terms."
+      ]
+    },
+    {
+      "id": "sky-combat",
+      "name": "Sky Combat",
+      "repository_url": "https://github.com/Gallind/Sky-Combat",
+      "genres": [
+        "flight",
+        "shooter",
+        "aerial-combat",
+        "wave-combat"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 / 0.128.0 CDN",
+        "render_evidence": {
+          "url": "https://github.com/Gallind/Sky-Combat/blob/6575ed310a6be912f29735ce4addfba0d3c39182/js/main.js#L158",
+          "claim": "Creates Three.js Scene, PerspectiveCamera and WebGLRenderer; index.html loads Three r128 and GLTFLoader directly from CDNs."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla script tags; Three.js GLTFLoader; Tailwind browser v4 for DOM UI; Web Audio and HTML Audio. No package manifest/build step in the reviewed tree."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Gallind/Sky-Combat/blob/6575ed310a6be912f29735ce4addfba0d3c39182/js/combat.js#L48",
+        "claim": "Spawns timed drone/jet waves, checks enemy elimination, heals between waves and completes/unlocks levels; main.js drives playing/won/lost states."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/Gallind/Sky-Combat/blob/6575ed310a6be912f29735ce4addfba0d3c39182/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
+      },
+      "demo": {
+        "url": "https://eloquent-tulumba-7667c4.netlify.app/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/Gallind/Sky-Combat/blob/6575ed310a6be912f29735ce4addfba0d3c39182/README.md",
+        "notes": "README-linked Netlify demo could not be retrieved by the text reader; no flight, wave or asset load was tested."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Gallind/Sky-Combat/blob/6575ed310a6be912f29735ce4addfba0d3c39182/README.md",
+        "notes": "README identifies a university free-style assignment and describes five levels; source includes wave/level transitions and health-driven game states."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "6575ed310a6be912f29735ce4addfba0d3c39182",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-006.md#sky-combat",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Gallind/Sky-Combat/blob/6575ed310a6be912f29735ce4addfba0d3c39182/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Gallind/Sky-Combat/blob/6575ed310a6be912f29735ce4addfba0d3c39182/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Gallind/Sky-Combat/blob/6575ed310a6be912f29735ce4addfba0d3c39182/index.html"
+          },
+          {
+            "path": "js/combat.js",
+            "url": "https://github.com/Gallind/Sky-Combat/blob/6575ed310a6be912f29735ce4addfba0d3c39182/js/combat.js"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/Gallind/Sky-Combat/blob/6575ed310a6be912f29735ce4addfba0d3c39182/js/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "HTML credits list Freesound contributors and Sketchfab model authors, but individual asset licenses/provenance were not established for every file.",
+        "CDN availability, pointer-lock input, five-level completion and browser compatibility were not tested."
+      ]
+    },
+    {
+      "id": "cube-parking",
+      "name": "Vibe Parking / Cube Parking",
+      "repository_url": "https://github.com/arturitu/cube-parking",
+      "genres": [
+        "puzzle",
+        "sliding-block",
+        "board-game"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.182.0",
+        "render_evidence": {
+          "url": "https://github.com/arturitu/cube-parking/blob/f7bd45312602c47dd89962246f1fc1e924b08219/src/engine/GameEngine.js#L1",
+          "claim": "Directly imports Three.js and constructs WebGLRenderer/Scene/PerspectiveCamera. React GameCanvas mounts an imperative GameEngine into a DOM div."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/arturitu/cube-parking/blob/f7bd45312602c47dd89962246f1fc1e924b08219/package.json",
+            "dependencies": {
+              "@tailwindcss/vite": "^4.1.5",
+              "react": "^19.1.0",
+              "react-dom": "^19.1.0",
+              "tailwindcss": "^4.1.5",
+              "three": "0.182.0",
+              "zustand": "^5.0.4"
+            },
+            "dev_dependencies": {
+              "@types/react": "^19.1.2",
+              "@types/react-dom": "^19.1.2",
+              "@vitejs/plugin-react": "^4.4.1",
+              "vite": "6.3.5"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "React 19/React DOM DOM shell, Zustand state; Tailwind CSS, Vite and the React Vite plugin. Manifest contains no React Three Fiber."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/arturitu/cube-parking/blob/f7bd45312602c47dd89962246f1fc1e924b08219/src/engine/GameEngine.js#L283",
+        "claim": "Constrains dragged blocks along grid axes with collisions; checkWin detects the target block leaving the board and records level completion."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/arturitu/cube-parking/blob/f7bd45312602c47dd89962246f1fc1e924b08219/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/arturitu/cube-parking/blob/f7bd45312602c47dd89962246f1fc1e924b08219/README.md",
+        "notes": "No public play URL was located in the reviewed README or repository homepage metadata. The README documents a local Vite HTTPS server; no URL was guessed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/arturitu/cube-parking/blob/f7bd45312602c47dd89962246f1fc1e924b08219/src/engine/GameEngine.js",
+        "notes": "Source implements block dragging, moves, level completion and a render loop; README concentrates on local setup rather than a release."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "f7bd45312602c47dd89962246f1fc1e924b08219",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-006.md#cube-parking",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/arturitu/cube-parking/blob/f7bd45312602c47dd89962246f1fc1e924b08219/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/arturitu/cube-parking/blob/f7bd45312602c47dd89962246f1fc1e924b08219/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/arturitu/cube-parking/blob/f7bd45312602c47dd89962246f1fc1e924b08219/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/arturitu/cube-parking/blob/f7bd45312602c47dd89962246f1fc1e924b08219/package.json"
+          },
+          {
+            "path": "src/components/GameCanvas.jsx",
+            "url": "https://github.com/arturitu/cube-parking/blob/f7bd45312602c47dd89962246f1fc1e924b08219/src/components/GameCanvas.jsx"
+          },
+          {
+            "path": "src/engine/GameEngine.js",
+            "url": "https://github.com/arturitu/cube-parking/blob/f7bd45312602c47dd89962246f1fc1e924b08219/src/engine/GameEngine.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Sliding-block rules stay on a flat grid: classified as a 3D board game, not a freely navigable 3D world.",
+        "README requires locally generated HTTPS certificates; none were generated or reused in this review.",
+        "Google Fonts and all other asset/dependency terms were not individually audited."
+      ]
+    },
+    {
+      "id": "nyan-bomber",
+      "name": "Nyan Bomber",
+      "repository_url": "https://github.com/imshota1009/Nyan-Bomber",
+      "genres": [
+        "action",
+        "puzzle",
+        "bombing",
+        "arcade"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 CDN fallback (modular entry)",
+        "render_evidence": {
+          "url": "https://github.com/imshota1009/Nyan-Bomber/blob/75d4b63af4d58ac2d5d37387c899d1081c050910/nyan-bomber/main.js#L5",
+          "claim": "Constructs Three.js WebGLRenderer, scene and perspective camera. The modular HTML loads vendored Three with an r128 CDN fallback; the root HTML also contains an inlined game."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla JavaScript, procedural Three.js geometry, Web Audio and browser storage; Firebase app/Firestore compat 10.12.0 scripts and Google Fonts in HTML. No npm manifest in the reviewed tree."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/imshota1009/Nyan-Bomber/blob/75d4b63af4d58ac2d5d37387c899d1081c050910/nyan-bomber/main.js#L175",
+        "claim": "Updates bombs, player, enemies, boss and gate; time expiry loses and clearing all enemies advances the stage. stageClear calculates score/rank and persists records."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/imshota1009/Nyan-Bomber/blob/75d4b63af4d58ac2d5d37387c899d1081c050910/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
+      },
+      "demo": {
+        "url": "https://nyan-bomber-game-app.web.app",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/imshota1009/Nyan-Bomber/blob/75d4b63af4d58ac2d5d37387c899d1081c050910/README.md",
+        "notes": "Author README links the Firebase-hosted site; text reader could not retrieve it. No play session, leaderboard write or Firebase call was executed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/imshota1009/Nyan-Bomber/blob/75d4b63af4d58ac2d5d37387c899d1081c050910/README.md",
+        "notes": "README and source describe multiple stages, cat selection, seed bombs, garden regeneration, tutorial and a boss battle; these were source-reviewed only."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "75d4b63af4d58ac2d5d37387c899d1081c050910",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-006.md#nyan-bomber",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/imshota1009/Nyan-Bomber/blob/75d4b63af4d58ac2d5d37387c899d1081c050910/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/imshota1009/Nyan-Bomber/blob/75d4b63af4d58ac2d5d37387c899d1081c050910/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/imshota1009/Nyan-Bomber/blob/75d4b63af4d58ac2d5d37387c899d1081c050910/index.html"
+          },
+          {
+            "path": "nyan-bomber/game/core.js",
+            "url": "https://github.com/imshota1009/Nyan-Bomber/blob/75d4b63af4d58ac2d5d37387c899d1081c050910/nyan-bomber/game/core.js"
+          },
+          {
+            "path": "nyan-bomber/game/ui.js",
+            "url": "https://github.com/imshota1009/Nyan-Bomber/blob/75d4b63af4d58ac2d5d37387c899d1081c050910/nyan-bomber/game/ui.js"
+          },
+          {
+            "path": "nyan-bomber/index.html",
+            "url": "https://github.com/imshota1009/Nyan-Bomber/blob/75d4b63af4d58ac2d5d37387c899d1081c050910/nyan-bomber/index.html"
+          },
+          {
+            "path": "nyan-bomber/main.js",
+            "url": "https://github.com/imshota1009/Nyan-Bomber/blob/75d4b63af4d58ac2d5d37387c899d1081c050910/nyan-bomber/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Planar garden movement/bomb rules are rendered with real 3D geometry, so this entry is labeled 3d-board.",
+        "Saving differs between entries: the modular core stageClear calls Firestore, but later main.js redeclares stageClear without that call. The root inlined stageClear does include a savePlaySession call; actual network success or deployed-version behavior is unknown.",
+        "Firebase code can record stage/rank/score/time, cat and a locally generated user ID; no such submission was initiated in this review.",
+        "External fonts, emoji rendering and all media rights were not independently audited."
+      ]
+    },
+    {
+      "id": "grid-wars",
+      "name": "Grid Wars",
+      "repository_url": "https://github.com/loosecannons/grid-wars",
+      "genres": [
+        "strategy",
+        "turn-based",
+        "hex-grid",
+        "multiplayer"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 CDN",
+        "render_evidence": {
+          "url": "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/src/main.js#L1",
+          "claim": "Imports Three.js and its own addons directly, creates WebGLRenderer/Scene/Camera, and uses a manual frame loop with post-processing."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/package.json",
+            "dependencies": {
+              "ws": "^8.18.0"
+            },
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js import-map CDN plus native modules, Web Audio and Orbitron Google Font. ws ^8.18.0 supplies the Node multiplayer relay; Electron is optional desktop packaging rather than the renderer."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/src/game.js#L3454",
+        "claim": "Eliminates defeated factions and ends the game when at most one team remains; source implements turns, cores and units on the hex board."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/LICENSE",
+        "additional_notices": [
+          "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/NOTICE"
+        ],
+        "notes": "MIT code. NOTICE explicitly describes AI-generated, unreviewed and untested experimental software with no guarantee it works. Procedural models/audio are an author claim; TRON-related names/branding are not cleared by the MIT license.",
+        "label": "MIT"
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/README.md",
+        "notes": "Reviewed sources link a Docker image and release packages, not a public browser demo. No image/container/desktop binary was downloaded or run."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/README.md",
+        "notes": "The author explicitly calls this an untested AI-generated experimental novelty. Source contains gameplay/victory paths, but this review does not establish a working release."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "faf2c7a62ff586f12b77b4bd850e35b588e1cc72",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-006.md#grid-wars",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/LICENSE"
+          },
+          {
+            "path": "NOTICE",
+            "url": "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/NOTICE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/package.json"
+          },
+          {
+            "path": "src/game.js",
+            "url": "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/src/game.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/loosecannons/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/src/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Author NOTICE says it has not been reviewed/tested/verified for correctness or security and offers no usability guarantee; retain that warning when assessing this record.",
+        "Hex tactics uses a planar board with 3D meshes; it is labeled 3d-board.",
+        "Online play needs a relay, and the browser also needs external Three.js/font downloads. Multiplayer and optional Electron packaging were not tested.",
+        "TRON film branding and other third-party rights are not granted by the code license."
+      ]
+    },
+    {
+      "id": "space-rocks",
+      "name": "Space Rocks",
+      "repository_url": "https://github.com/moar-tech/spacerocks",
+      "genres": [
+        "shooter",
+        "space",
+        "survival",
+        "webvr"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r88 (vendored script)",
+        "render_evidence": {
+          "url": "https://github.com/moar-tech/spacerocks/blob/a03f7ff43a3456580cf16e81df1c611fb8e00ead/scripts/moar/three.js#L22",
+          "claim": "Directly constructs Three.js WebGLRenderer and uses renderer.vr/VRDisplay APIs; this pinned version uses legacy WebVR, regardless of the live page title."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vendored Three r88, THREE.VRController, TaskLists and Mode helpers; native Web Audio/browser APIs. No package manifest found in the reviewed tree."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/moar-tech/spacerocks/blob/a03f7ff43a3456580cf16e81df1c611fb8e00ead/scripts/main.js#L551",
+        "claim": "Enters gameplay, resets the player, generates successive asteroid waves and changes to game-over when lives reach zero; score is recorded on teardown."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/moar-tech/spacerocks/blob/a03f7ff43a3456580cf16e81df1c611fb8e00ead/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
+      },
+      "demo": {
+        "url": "https://spacerocks.moar.io",
+        "status": "page-read",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/moar-tech/spacerocks/blob/a03f7ff43a3456580cf16e81df1c611fb8e00ead/README.md",
+        "notes": "Text reader returned the author site's HTML with VR instructions/requirements. This is only a page read; no VR session, controller use or asteroid gameplay was run."
+      },
+      "maturity": {
+        "status": "legacy-release",
+        "basis_url": "https://github.com/moar-tech/spacerocks/blob/a03f7ff43a3456580cf16e81df1c611fb8e00ead/README.md",
+        "notes": "README describes a 2017–2018 WebVR game requiring a position-tracked headset and two controllers. Its historical compatibility matrix is not a current browser support guarantee."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "a03f7ff43a3456580cf16e81df1c611fb8e00ead",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-006.md#space-rocks",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/moar-tech/spacerocks/blob/a03f7ff43a3456580cf16e81df1c611fb8e00ead/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/moar-tech/spacerocks/blob/a03f7ff43a3456580cf16e81df1c611fb8e00ead/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/moar-tech/spacerocks/blob/a03f7ff43a3456580cf16e81df1c611fb8e00ead/index.html"
+          },
+          {
+            "path": "scripts/main.js",
+            "url": "https://github.com/moar-tech/spacerocks/blob/a03f7ff43a3456580cf16e81df1c611fb8e00ead/scripts/main.js"
+          },
+          {
+            "path": "scripts/moar/three.js",
+            "url": "https://github.com/moar-tech/spacerocks/blob/a03f7ff43a3456580cf16e81df1c611fb8e00ead/scripts/moar/three.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Pinned source requires legacy WebVR APIs (renderer.vr and VRDisplay), not modern WebXR; present-day headset/browser support is unverified.",
+        "The author lists Big Noodle Titling and Roboto fonts; font/media redistribution terms were not individually audited, so MIT is asserted for code only.",
+        "index.html loads Google Analytics and source includes gameplay-stat events; no runtime analytics or user-data submission was triggered."
+      ]
+    },
+    {
+      "id": "causality-paradox",
+      "name": "Causality Paradox",
+      "repository_url": "https://github.com/jzwood/FPP",
+      "genres": [
+        "puzzle",
+        "first-person",
+        "time-rewind",
+        "platformer"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r78 (vendored Three.min.js REVISION)",
+        "render_evidence": {
+          "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/src/game/js/gameComponents/lightsCameraScene.js#L4",
+          "claim": "Directly constructs Three.js scene, perspective camera and WebGLRenderer; animate.js steps physics/player replay and renders the scene."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "gulp": "^3.9.1",
+              "gulp-autoprefixer": "^3.1.0",
+              "gulp-clean-css": "^2.0.12",
+              "gulp-concat": "^2.6.0",
+              "gulp-connect": "^5.0.0",
+              "gulp-htmlmin": "^2.0.0",
+              "gulp-imagemin": "^3.0.3",
+              "gulp-rename": "^1.2.2",
+              "gulp-uglify": "^2.0.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vendored Three r78, Cannon.js and PointerLockControls; Gulp ^3.9.1 with legacy build plugins, captured in the development manifest. No replacement rendering framework was identified."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/src/game/js/gameComponents/player.js#L78",
+        "claim": "Records movement, rewinds position history and replays a past self to cooperate with the player; falling resets the player within the locked-room puzzle game."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
+      },
+      "demo": {
+        "url": "http://jzwood.github.io/FPP/build/home",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/README.md",
+        "notes": "README-linked historical Pages URL could not be retrieved by the text reader (HTTPS normalization shown by the tool). No room, pointer lock or time replay was tested."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/README.md",
+        "notes": "A 2017 first-person locked-room puzzle project; source includes runtime initialization, recording/playback and game scene assets. README browser caveats are historical claims."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "eecf52584ef74dffe6dc9850262fcaa8c85c0606",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-006.md#causality-paradox",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/README.md"
+          },
+          {
+            "path": "build/game/index.html",
+            "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/build/game/index.html"
+          },
+          {
+            "path": "gulpfile.js",
+            "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/gulpfile.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/package.json"
+          },
+          {
+            "path": "src/game/game.html",
+            "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/src/game/game.html"
+          },
+          {
+            "path": "src/game/js/gameComponents/animate.js",
+            "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/src/game/js/gameComponents/animate.js"
+          },
+          {
+            "path": "src/game/js/gameComponents/lightsCameraScene.js",
+            "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/src/game/js/gameComponents/lightsCameraScene.js"
+          },
+          {
+            "path": "src/game/js/gameComponents/player.js",
+            "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/src/game/js/gameComponents/player.js"
+          },
+          {
+            "path": "src/game/js/libs/Three.min.js",
+            "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/src/game/js/libs/Three.min.js"
+          },
+          {
+            "path": "src/game/js/main.js",
+            "url": "https://github.com/jzwood/FPP/blob/eecf52584ef74dffe6dc9850262fcaa8c85c0606/src/game/js/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Old Three/Cannon/Gulp versions and historical pointer-lock/browser caveats need a new runtime check before recommending compatibility.",
+        "Texture/image/audio provenance and all vendored-library notices were not individually audited."
+      ]
+    },
+    {
+      "id": "spacer-js",
+      "name": "SpaceR.js",
+      "repository_url": "https://github.com/firmanmm/SpaceR.js",
+      "genres": [
+        "space",
+        "obstacle-dodging",
+        "endless-runner",
+        "arcade"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "100dev (vendored REVISION)",
+        "render_evidence": {
+          "url": "https://github.com/firmanmm/SpaceR.js/blob/49c0b7cde6d95d4dbc2bbddd9fcad69410219f91/js/spacer.driver.js#L148",
+          "claim": "Directly creates Three.js WebGLRenderer on the canvas; Update renders the current scene using a manual requestAnimationFrame loop."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vendored Three 100dev, jQuery, FBXLoader and inflate.js loaded by index.html; a small project-local scene/object lifecycle organizes the game. No npm manifest in the reviewed tree."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/firmanmm/SpaceR.js/blob/49c0b7cde6d95d4dbc2bbddd9fcad69410219f91/js/spacer.driver.js#L528",
+        "claim": "Moves the ship in response to pointer input, spawns advancing obstacles, increases speed/distance score, saves a high score and returns to the menu on collision."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/firmanmm/SpaceR.js/blob/49c0b7cde6d95d4dbc2bbddd9fcad69410219f91/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license.",
+        "label": "MIT"
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/firmanmm/SpaceR.js/blob/49c0b7cde6d95d4dbc2bbddd9fcad69410219f91/README.md",
+        "notes": "README supplies code/use instructions and screenshots; no game-specific live URL was located. The generic author homepage was not treated as a game demo."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/firmanmm/SpaceR.js/blob/49c0b7cde6d95d4dbc2bbddd9fcad69410219f91/README.md",
+        "notes": "Author describes a 2018 computer-graphics class toy/tutorial project; the actual source implements obstacle-dodging, scoring and a collision/restart loop rather than only an empty scene."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "49c0b7cde6d95d4dbc2bbddd9fcad69410219f91",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-006.md#spacer-js",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/firmanmm/SpaceR.js/blob/49c0b7cde6d95d4dbc2bbddd9fcad69410219f91/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/firmanmm/SpaceR.js/blob/49c0b7cde6d95d4dbc2bbddd9fcad69410219f91/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/firmanmm/SpaceR.js/blob/49c0b7cde6d95d4dbc2bbddd9fcad69410219f91/index.html"
+          },
+          {
+            "path": "js/spacer.driver.js",
+            "url": "https://github.com/firmanmm/SpaceR.js/blob/49c0b7cde6d95d4dbc2bbddd9fcad69410219f91/js/spacer.driver.js"
+          },
+          {
+            "path": "js/three.min.js",
+            "url": "https://github.com/firmanmm/SpaceR.js/blob/49c0b7cde6d95d4dbc2bbddd9fcad69410219f91/js/three.min.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "An educational toy implementation with a project-local lifecycle inspired by Unity; it does not import or use the Unity engine.",
+        "Legacy Three APIs and FBX assets need runtime compatibility checks; FBX/font/texture rights were not individually audited."
       ]
     }
   ]

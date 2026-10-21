@@ -7,7 +7,7 @@
       "const": "./schema.json"
     },
     "schema_version": {
-      "const": 1
+      "const": 2
     },
     "games": {
       "type": "array",
@@ -156,8 +156,24 @@
             "type": "object",
             "properties": {
               "spdx": {
-                "type": "string",
-                "minLength": 1
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "MIT",
+                      "ISC",
+                      "Unlicense",
+                      "Apache-2.0",
+                      "GPL-3.0-only",
+                      "GPL-3.0-or-later",
+                      "AGPL-3.0-only",
+                      "AGPL-3.0-or-later"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               },
               "source_url": {
                 "type": "string",
@@ -173,13 +189,18 @@
               "notes": {
                 "type": "string",
                 "minLength": 1
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1
               }
             },
             "required": [
               "spdx",
               "source_url",
               "additional_notices",
-              "notes"
+              "notes",
+              "label"
             ],
             "additionalProperties": false
           },

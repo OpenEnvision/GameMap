@@ -1,8 +1,10 @@
 # Batch 002 source review — 2026-10-21
 
-Adds 10 games to the 12-entry first batch, for **22 source-verified records**. All are source/link reviews: no upstream game install, build, test suite, browser execution or play session occurred. React DOM shells are disclosed where present, and direct Three.js rendering is supported by a pinned constructor path. A reader failure is not a site-down finding.
+Adds 10 games to the corrected 11-entry first batch, for **21 source-verified records**. All are source/link reviews: no upstream game install, build, test suite, browser execution or play session occurred. React DOM shells are disclosed where present, and direct Three.js rendering is supported by a pinned constructor path. A reader failure is not a site-down finding.
 
 Series dependency: [PR #46](https://github.com/OpenEnvision/GameMap/pull/46), first-batch head `140f04e667a864f9414a9a6199198a8b91c1720e`. The latest remote main and PR state must be rechecked before publishing this increment. Four queued projects are promoted only after their renderer/gameplay/license reviews are complete; the queue still contains unresolved scope/asset questions.
+
+Totals reflect the later [HexGL license correction](license-review-001.md), which retains its evidence in the pending queue.
 
 <a id="apex-formula-2026"></a>
 

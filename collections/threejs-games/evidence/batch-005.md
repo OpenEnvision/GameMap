@@ -1,8 +1,10 @@
 # Batch 005 source review — 2026-10-21
 
-Adds **7 source-reviewed games**, for **49** in the series, expanding fishing, real-time strategy, action-RPG and tennis coverage. No upstream installation, build, automated suite, browser game execution, camera/model activation or playtest occurred. Reader failures only establish a retrieval limitation.
+Adds **7 source-reviewed games**, for **48** in the corrected series, expanding fishing, real-time strategy, action-RPG and tennis coverage. No upstream installation, build, automated suite, browser game execution, camera/model activation or playtest occurred. Reader failures only establish a retrieval limitation.
 
 Appended to open [PR #48](https://github.com/OpenEnvision/GameMap/pull/48), after head `f7f18420e310f96aca594ecaeb192ad5aa156377`, without adding another dependent PR. Main/PR state is rechecked before publication. No third-party code or assets are copied.
+
+Totals reflect the later [HexGL license correction](license-review-001.md), which retains its evidence in the pending queue.
 
 <a id="tideline"></a>
 
@@ -54,7 +56,7 @@ Appended to open [PR #48](https://github.com/OpenEnvision/GameMap/pull/48), afte
 - Rendering: GameEngine imports Three.js directly, constructs WebGLRenderer and renders the scene in its own animation loop; React App hosts the viewport/UI. [Renderer source](https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/src/game/engine.ts#L73).
 - Game loop: Evaluates surviving contenders, returns a finished match with its winner and maps that state to local victory/defeat. [Gameplay source](https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/src/game/victory.ts#L47).
 - Dependencies: React/React DOM/Lucide/Tailwind UI, Express and Socket.IO LAN server/client, TypeScript, Vite and UUID utilities. Author describes procedural Three.js models and synthesized audio; app/server dependency snapshots are explicit. [package.json](https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/package.json)
-- License: MIT. Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license. [License file](https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/LICENSE).
+- License: MIT (root); Apache-2.0 (reviewed source headers). Root LICENSE/package declare MIT, but the reviewed engine.ts, victory.ts and App.tsx explicitly carry SPDX-License-Identifier: Apache-2.0 headers. Both notices are preserved as mixed/conflicting repository evidence; no single uniform code license is inferred. This review does not establish asset or transitive dependency rights. [Root license](https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/LICENSE). [Per-file notice](https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/src/game/engine.ts#L1). [Per-file notice](https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/src/game/victory.ts#L1). [Per-file notice](https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/src/App.tsx#L1).
 - Maturity: game. Version 0.7.1; source has economy/building/combat systems and match outcome logic; README documents hosted LAN matches. [Author README](https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/README.md).
 - Demo: No live play URL located; `not-located` on 2026-10-21. Repository homepage points to its README; reviewed instructions provide local Node/Docker LAN play, not a confirmed public demo. [Discovery source](https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/README.md).
 - Review limits: Requires a running LAN/server setup for multiplayer; no room, Docker service or network session was created. React is auxiliary UI; procedural-asset claims and all UI dependency/asset rights were not exhaustively audited.

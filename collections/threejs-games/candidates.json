@@ -191,6 +191,36 @@
         "https://github.com/air-buddy410/kantor-rpg/blob/7e6dc4955d1c407213d00e1f38d1d87031205ae4/README.md",
         "https://github.com/air-buddy410/kantor-rpg/blob/7e6dc4955d1c407213d00e1f38d1d87031205ae4/LICENSE"
       ]
+    },
+    {
+      "id": "squirm",
+      "repository_url": "https://github.com/farzinmirzaie/squirm",
+      "status": "excluded",
+      "checked_at": "2026-10-21",
+      "source_commit": "e4f27ccc35eafe9c088989be20fd5c24cfc78918",
+      "reason": "The README explicitly describes a 2.5D garden puzzle; excluded from this strict 3D collection despite direct Three.js and an MIT code license.",
+      "next_action": "Revisit only if the collection scope is explicitly expanded to 2.5D; do not present it as a verified strict-3D game.",
+      "evidence_urls": [
+        "https://github.com/farzinmirzaie/squirm/blob/e4f27ccc35eafe9c088989be20fd5c24cfc78918/README.md#L5",
+        "https://github.com/farzinmirzaie/squirm/blob/e4f27ccc35eafe9c088989be20fd5c24cfc78918/LICENSE",
+        "https://github.com/farzinmirzaie/squirm/blob/e4f27ccc35eafe9c088989be20fd5c24cfc78918/package.json"
+      ]
+    },
+    {
+      "id": "hexgl",
+      "repository_url": "https://github.com/BKcore/HexGL",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "6addc95a2fce3bf05f4d751823cc054c61a16d68",
+      "reason": "Mixed/conflicting code license evidence: root LICENSE is MIT and README defaults to MIT except where files specify otherwise, while the actual renderer HexGL.js and Gameplay.js retain CC BY-NC 3.0 headers. The 2015 MIT-switch PR changes only LICENSE/README and does not resolve those file notices.",
+      "next_action": "Keep outside the verified open-source index until an explicit upstream clarification or updated file notices establish the applicable license for core code. Preserve the pinned notices and relicense history; do not infer a legal conclusion from GitHub's MIT badge.",
+      "evidence_urls": [
+        "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/LICENSE",
+        "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/README.md#L9",
+        "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/HexGL.js#L1",
+        "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/Gameplay.js#L1",
+        "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/audio/LICENSE"
+      ]
     }
   ]
 }
