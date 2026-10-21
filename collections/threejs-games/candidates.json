@@ -164,6 +164,33 @@
         "https://github.com/showtimez/floppy-defense/blob/49f5346f6cb7e2247a6cf71d7a4d5f2027cd3183/README.md",
         "https://github.com/showtimez/floppy-defense/blob/49f5346f6cb7e2247a6cf71d7a4d5f2027cd3183/LICENSE"
       ]
+    },
+    {
+      "id": "voidstrike",
+      "repository_url": "https://github.com/braedonsaunders/voidstrike",
+      "status": "excluded",
+      "checked_at": "2026-10-21",
+      "source_commit": "4df0235116b78bf9232105486738e64b2e6905cb",
+      "reason": "README explicitly describes a hybrid Three.js WebGPU + Phaser overlay presentation, and package.json declares Phaser 4. This does not meet the strict no-other-game-engine/rendering-layer scope.",
+      "next_action": "Retain as an excluded hybrid stack, rather than hiding Phaser behind the Three.js tag.",
+      "evidence_urls": [
+        "https://github.com/braedonsaunders/voidstrike/blob/4df0235116b78bf9232105486738e64b2e6905cb/README.md",
+        "https://github.com/braedonsaunders/voidstrike/blob/4df0235116b78bf9232105486738e64b2e6905cb/package.json",
+        "https://github.com/braedonsaunders/voidstrike/blob/4df0235116b78bf9232105486738e64b2e6905cb/LICENSE"
+      ]
+    },
+    {
+      "id": "kantor-rpg",
+      "repository_url": "https://github.com/air-buddy410/kantor-rpg",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "7e6dc4955d1c407213d00e1f38d1d87031205ae4",
+      "reason": "Reviewed material establishes a 3D virtual-office app with optional private AI backend and embedded minigames; this review has not yet proven a qualifying 3D game/score/goal path.",
+      "next_action": "Inspect actual app renderer and a complete 3D minigame before promotion; do not count a walkable office scene alone.",
+      "evidence_urls": [
+        "https://github.com/air-buddy410/kantor-rpg/blob/7e6dc4955d1c407213d00e1f38d1d87031205ae4/README.md",
+        "https://github.com/air-buddy410/kantor-rpg/blob/7e6dc4955d1c407213d00e1f38d1d87031205ae4/LICENSE"
+      ]
     }
   ]
 }

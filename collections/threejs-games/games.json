@@ -41,8 +41,8 @@
         "url": "https://hexgl.bkcore.com/play/",
         "status": "page-read",
         "checked_at": "2026-10-21",
-        "source_url": "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/README.md",
-        "notes": "Author landing page and linked play page were readable; the play page exposes a Start screen. WebGL was not run."
+        "source_url": "https://hexgl.bkcore.com/",
+        "notes": "The author landing page links the play URL. Author landing page and linked play page were readable; the play page exposes a Start screen. WebGL was not run."
       },
       "maturity": {
         "status": "legacy-release",
@@ -889,8 +889,8 @@
         "url": "https://juanuys.com/perspectives",
         "status": "page-read",
         "checked_at": "2026-10-21",
-        "source_url": "https://github.com/juanuys/perspectives/blob/9d34062cfb87b7668b4e266ba4e7bab54573739c/README.md",
-        "notes": "The author homepage redirected to a trailing-slash HTML document titled Perspectives. Rendering was not run."
+        "source_url": "https://api.github.com/repos/juanuys/perspectives",
+        "notes": "Demo URL is from repository homepage metadata observed on 2026-10-21. The author homepage redirected to a trailing-slash HTML document titled Perspectives. Rendering was not run."
       },
       "maturity": {
         "status": "prototype",
@@ -1015,8 +1015,8 @@
         "url": "https://glory-box-game-rhig-ivan-juarezs-projects.vercel.app",
         "status": "reader-error",
         "checked_at": "2026-10-21",
-        "source_url": "https://github.com/vanrez-nez/glory-box-game/blob/5cc0ba8a242e2c079aee08a5e1bda02f404238f1/README.md",
-        "notes": "Repository homepage could not be retrieved through the web reader. This is not a demonstrated deployment failure."
+        "source_url": "https://api.github.com/repos/vanrez-nez/glory-box-game",
+        "notes": "Demo URL is from repository homepage metadata observed on 2026-10-21. Repository homepage could not be retrieved through the web reader. This is not a demonstrated deployment failure."
       },
       "maturity": {
         "status": "work-in-progress",
@@ -2535,8 +2535,8 @@
         "url": "https://andykswong.itch.io/ld48",
         "status": "page-read",
         "checked_at": "2026-10-21",
-        "source_url": "https://github.com/andykswong/ld48/blob/72901e2d21d85219cbb54af13055ec42632fba25/README.md",
-        "notes": "Author itch.io page and its HTML5 iframe link were readable; the embedded game was not launched or interacted with."
+        "source_url": "https://api.github.com/repos/andykswong/ld48",
+        "notes": "Demo URL is from repository homepage metadata observed on 2026-10-21. Author itch.io page and its HTML5 iframe link were readable; the embedded game was not launched or interacted with."
       },
       "maturity": {
         "status": "prototype",
@@ -2640,8 +2640,8 @@
         "url": "https://fakeyou.github.io/ludum-dare-40/",
         "status": "reader-error",
         "checked_at": "2026-10-21",
-        "source_url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/README.md",
-        "notes": "Repository homepage's historical author URL could not be retrieved through the text reader; availability remains unconfirmed."
+        "source_url": "https://github.com/andrenanninga/ludum-dare-40/blob/d8307e3f6152c168a72bd743e49592f3d661e72a/package.json",
+        "notes": "The historical demo URL is declared in the pinned package.json homepage as well as repository metadata. Repository homepage's historical author URL could not be retrieved through the text reader; availability remains unconfirmed."
       },
       "maturity": {
         "status": "legacy-prototype",
@@ -3023,8 +3023,8 @@
         "url": "https://arena-8g34.onrender.com",
         "status": "reader-error",
         "checked_at": "2026-10-21",
-        "source_url": "https://github.com/Hazzad123/fully-ai-arena-fps/blob/920b123d67015d5e8151a4ebd6742d8015d538be/README.md",
-        "notes": "Author homepage could not be retrieved by the reader; no backend health, room creation or gameplay was tested."
+        "source_url": "https://api.github.com/repos/Hazzad123/fully-ai-arena-fps",
+        "notes": "Demo URL is from repository homepage metadata observed on 2026-10-21. Author homepage could not be retrieved by the reader; no backend health, room creation or gameplay was tested."
       },
       "maturity": {
         "status": "prototype",
@@ -3641,8 +3641,8 @@
         "url": "https://danielmroczek.github.io/marble-maze/",
         "status": "reader-error",
         "checked_at": "2026-10-21",
-        "source_url": "https://github.com/danielmroczek/marble-maze/blob/9c60a20fa012059bcce894ebb979faa9b7e3df9a/README.md",
-        "notes": "Author-linked Pages URL could not be retrieved through the reader; mouse/phone tilt was not exercised."
+        "source_url": "https://api.github.com/repos/danielmroczek/marble-maze",
+        "notes": "Demo URL is from repository homepage metadata observed on 2026-10-21. Author-linked Pages URL could not be retrieved through the reader; mouse/phone tilt was not exercised."
       },
       "maturity": {
         "status": "game",
@@ -4248,6 +4248,765 @@
       "limitations": [
         "AGPL v3 only/or-later election and every individual asset's terms remain unconfirmed beyond the recorded primary notices.",
         "Firebase availability, reflex timing, touch controls and upstream award claims were not tested/independently verified."
+      ]
+    },
+    {
+      "id": "tideline",
+      "name": "TIDELINE",
+      "repository_url": "https://github.com/bridge-mind/tideline",
+      "genres": [
+        "fishing",
+        "simulation",
+        "collection"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.170 (CDN import map; README)",
+        "render_evidence": {
+          "url": "https://github.com/bridge-mind/tideline/blob/c8e772fa8b51bae6221630b9693178f1bebee047/src/core/scene.js#L8",
+          "claim": "Imports Three.js directly and creates WebGLRenderer, Scene and the camera/light environment."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla ES modules, Three.js from CDN, browser Web Audio and local saves; no package manifest/build step.",
+          "Author describes procedural water, scenery, fish and audio with a collection/equipment/unlock loop."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/bridge-mind/tideline/blob/c8e772fa8b51bae6221630b9693178f1bebee047/src/main.js#L318",
+        "claim": "Landed-fish events register catches in the economy; the reel fight can snap the line or land fish, driving progression and saves."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/bridge-mind/tideline/blob/c8e772fa8b51bae6221630b9693178f1bebee047/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://bridge-mind.github.io/tideline/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/bridge-mind/tideline/blob/c8e772fa8b51bae6221630b9693178f1bebee047/README.md",
+        "notes": "Author-linked Pages URL could not be retrieved through the text reader; casting, reeling and collection were not run."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/bridge-mind/tideline/blob/c8e772fa8b51bae6221630b9693178f1bebee047/README.md",
+        "notes": "Source implements casting, bites, tension fights, catches/economy and a progression UI; author describes 21 collectible species."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "c8e772fa8b51bae6221630b9693178f1bebee047",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-005.md#tideline",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/bridge-mind/tideline/blob/c8e772fa8b51bae6221630b9693178f1bebee047/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/bridge-mind/tideline/blob/c8e772fa8b51bae6221630b9693178f1bebee047/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/bridge-mind/tideline/blob/c8e772fa8b51bae6221630b9693178f1bebee047/index.html"
+          },
+          {
+            "path": "src/core/scene.js",
+            "url": "https://github.com/bridge-mind/tideline/blob/c8e772fa8b51bae6221630b9693178f1bebee047/src/core/scene.js"
+          },
+          {
+            "path": "src/gameplay/reelMinigame.js",
+            "url": "https://github.com/bridge-mind/tideline/blob/c8e772fa8b51bae6221630b9693178f1bebee047/src/gameplay/reelMinigame.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/bridge-mind/tideline/blob/c8e772fa8b51bae6221630b9693178f1bebee047/src/main.js"
+          },
+          {
+            "path": "src/state/gameState.js",
+            "url": "https://github.com/bridge-mind/tideline/blob/c8e772fa8b51bae6221630b9693178f1bebee047/src/state/gameState.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": true
+      },
+      "limitations": [
+        "Fishing balance, all-species availability, procedural asset claims and saved progress were not tested.",
+        "The CDN request is an external runtime dependency despite no npm installation."
+      ]
+    },
+    {
+      "id": "neon-river",
+      "name": "Neon River",
+      "repository_url": "https://github.com/khesse-757/neon-river-remastered",
+      "genres": [
+        "fishing",
+        "arcade"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.184.0",
+        "render_evidence": {
+          "url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/src/render/SceneRenderer.ts#L163",
+          "claim": "Directly creates Three.js WebGLRenderer with Three.js post-processing; actual src/main.ts boots the full game rather than the hidden skill template."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/package.json",
+            "dependencies": {
+              "lil-gui": "^0.21.0",
+              "three": "^0.184.0"
+            },
+            "dev_dependencies": {
+              "@eslint/js": "^10.0.1",
+              "@playwright/test": "^1.60.0",
+              "@types/node": "^25.9.0",
+              "@types/pngjs": "^6.0.5",
+              "@types/three": "^0.184.1",
+              "eslint": "^10.12.0",
+              "eslint-config-prettier": "^10.1.8",
+              "globals": "^17.13.0",
+              "husky": "^9.1.7",
+              "lint-staged": "^17.6.0",
+              "pngjs": "^7.0.0",
+              "prettier": "^3.9.9",
+              "tsx": "^4.23.15",
+              "typescript": "^6.0.3",
+              "typescript-eslint": "^8.71.0",
+              "vite": "^8.0.13",
+              "vitest": "^5.0.3"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "TypeScript, Vite, Three.js post-processing, lil-gui diagnostics and browser Web Audio; full root manifest is recorded.",
+          "3D actors and water are combined with layered source painting; generated audio is stored offline as files."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/src/sim/sim.ts#L593",
+        "claim": "Catches change weight/score, reaching the configured quota wins, catching eels or exceeding escape limits loses."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/LICENSE",
+        "additional_notices": [
+          "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/CREDITS.md",
+          "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/public/fonts/Silkscreen-OFL.txt",
+          "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/public/fonts/DotGothic16-OFL.txt"
+        ],
+        "notes": "Code is MIT; fonts are separately SIL OFL. CREDITS documents AI-generated art/audio and an original catch sound whose exact Freesound match is explicitly unconfirmed. Those media are not all asserted to be MIT/CC0 or independently rights-audited."
+      },
+      "demo": {
+        "url": "https://neonriver2.kahdev.me",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/README.md",
+        "notes": "Author-linked site could not be retrieved through the reader; the 3D remaster, modes and records were not executed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/README.md",
+        "notes": "Version 2.0.1; source implements distinct win/loss simulation status, catches/quota and the complete remaster entry."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "da903346488e880565099700772cb9d593a43fe9",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-005.md#neon-river",
+        "reviewed_files": [
+          {
+            "path": "CREDITS.md",
+            "url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/CREDITS.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/package.json"
+          },
+          {
+            "path": "public/fonts/DotGothic16-OFL.txt",
+            "url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/public/fonts/DotGothic16-OFL.txt"
+          },
+          {
+            "path": "public/fonts/Silkscreen-OFL.txt",
+            "url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/public/fonts/Silkscreen-OFL.txt"
+          },
+          {
+            "path": "src/game/Game.ts",
+            "url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/src/game/Game.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/src/main.ts"
+          },
+          {
+            "path": "src/render/SceneRenderer.ts",
+            "url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/src/render/SceneRenderer.ts"
+          },
+          {
+            "path": "src/sim/sim.ts",
+            "url": "https://github.com/khesse-757/neon-river-remastered/blob/da903346488e880565099700772cb9d593a43fe9/src/sim/sim.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Catching mechanics are planar in a fixed 3D river scene; this is not described as free 3D navigation.",
+        "One sound's provenance is uncertain in the author's own credit file; generated-media service terms were not established.",
+        "No paid image/audio service was called and no media were copied by this review."
+      ]
+    },
+    {
+      "id": "tidebreak",
+      "name": "Tidebreak",
+      "repository_url": "https://github.com/ryanio/tidebreak",
+      "genres": [
+        "strategy",
+        "real-time-strategy",
+        "tactics"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.169.0 (CDN import map)",
+        "render_evidence": {
+          "url": "https://github.com/ryanio/tidebreak/blob/572d537c82de053296b9cd9de5bff164bb152480/js/game.js#L227",
+          "claim": "Creates Three.js WebGLRenderer directly; index.html supplies Three.js through an explicit CDN import map."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "No npm dependencies or build step; custom formation/combat/morale/control systems and Three.js CDN rendering."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/ryanio/tidebreak/blob/572d537c82de053296b9cd9de5bff164bb152480/js/game.js#L592",
+        "claim": "Counts active formations on both sides, ends the battle when a side has none and displays victory/defeat with survivor totals."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/ryanio/tidebreak/blob/572d537c82de053296b9cd9de5bff164bb152480/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://ryanio.github.io/tidebreak/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/ryanio/tidebreak/blob/572d537c82de053296b9cd9de5bff164bb152480/README.md",
+        "notes": "Author-linked Pages URL could not be retrieved by the reader; formations, flanking and morale were not tested."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/ryanio/tidebreak/blob/572d537c82de053296b9cd9de5bff164bb152480/README.md",
+        "notes": "Source implements battle, routing and win/loss results; README describes presets, army selection and replaying battles."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "572d537c82de053296b9cd9de5bff164bb152480",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-005.md#tidebreak",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/ryanio/tidebreak/blob/572d537c82de053296b9cd9de5bff164bb152480/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/ryanio/tidebreak/blob/572d537c82de053296b9cd9de5bff164bb152480/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/ryanio/tidebreak/blob/572d537c82de053296b9cd9de5bff164bb152480/index.html"
+          },
+          {
+            "path": "js/combat.js",
+            "url": "https://github.com/ryanio/tidebreak/blob/572d537c82de053296b9cd9de5bff164bb152480/js/combat.js"
+          },
+          {
+            "path": "js/game.js",
+            "url": "https://github.com/ryanio/tidebreak/blob/572d537c82de053296b9cd9de5bff164bb152480/js/game.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Formation movement and tactics are planar inside a 3D-rendered reef.",
+        "Upstream simulation/UI test claims and balance were not repeated; Total War inspiration does not grant branding rights."
+      ]
+    },
+    {
+      "id": "terrinha",
+      "name": "Terrinha",
+      "repository_url": "https://github.com/martinsmiguel/terrinha",
+      "genres": [
+        "strategy",
+        "real-time-strategy",
+        "building",
+        "multiplayer"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/src/game/engine.ts#L73",
+          "claim": "GameEngine imports Three.js directly, constructs WebGLRenderer and renders the scene in its own animation loop; React App hosts the viewport/UI."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/package.json",
+            "dependencies": {
+              "@tailwindcss/vite": "^4.3.3",
+              "@types/three": "^0.186.0",
+              "@vitejs/plugin-react": "^6.1.1",
+              "express": "^4.21.2",
+              "lucide-react": "^0.546.0",
+              "react": "^19.0.1",
+              "react-dom": "^19.0.1",
+              "socket.io": "^4.8.3",
+              "socket.io-client": "^4.8.3",
+              "three": "^0.186.1",
+              "uuid": "^14.0.2",
+              "vite": "^8.3.0"
+            },
+            "dev_dependencies": {
+              "@types/express": "^4.17.21",
+              "@types/node": "^22.14.0",
+              "@types/react": "^19.3.0",
+              "@types/react-dom": "^19.3.0",
+              "tailwindcss": "^4.3.3",
+              "tsx": "^4.21.0",
+              "typescript": "^7.0.2",
+              "vitest": "^5.0.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "React/React DOM/Lucide/Tailwind UI, Express and Socket.IO LAN server/client, TypeScript, Vite and UUID utilities.",
+          "Author describes procedural Three.js models and synthesized audio; app/server dependency snapshots are explicit."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/src/game/victory.ts#L47",
+        "claim": "Evaluates surviving contenders, returns a finished match with its winner and maps that state to local victory/defeat."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/README.md",
+        "notes": "Repository homepage points to its README; reviewed instructions provide local Node/Docker LAN play, not a confirmed public demo."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/README.md",
+        "notes": "Version 0.7.1; source has economy/building/combat systems and match outcome logic; README documents hosted LAN matches."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-005.md#terrinha",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/package.json"
+          },
+          {
+            "path": "src/App.tsx",
+            "url": "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/src/App.tsx"
+          },
+          {
+            "path": "src/game/engine.ts",
+            "url": "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/src/game/engine.ts"
+          },
+          {
+            "path": "src/game/victory.ts",
+            "url": "https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/src/game/victory.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Requires a running LAN/server setup for multiplayer; no room, Docker service or network session was created.",
+        "React is auxiliary UI; procedural-asset claims and all UI dependency/asset rights were not exhaustively audited."
+      ]
+    },
+    {
+      "id": "tiny-planet-action-rpg",
+      "name": "Tiny Planet — Shrines of the Blight",
+      "repository_url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG",
+      "genres": [
+        "action-rpg",
+        "adventure",
+        "combat"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/src/render/Renderer.ts#L52",
+          "claim": "Imports Three.js renderer classes and creates WebGLRenderer directly for the planet scene."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/package.json",
+            "dependencies": {
+              "dexie": "^4.4.6",
+              "three": "^0.186.1",
+              "zustand": "^5.0.15"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.186.0",
+              "typescript": "^5.9.3",
+              "vite": "^8.3.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Dexie ^4.4.6/IndexedDB saves, Zustand ^5.0.15 state, TypeScript, Vite and native Web Audio.",
+          "Custom spherical movement/combat/quest systems; no component renderer or separate game engine is declared."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/src/state/gameState.ts#L426",
+        "claim": "Curing shrines updates state; curing every shrine sets victory and emits the victory event, which core Game displays and saves."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/LICENSE",
+        "additional_notices": [
+          "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/ASSETS.md"
+        ],
+        "notes": "Code is MIT. ASSETS.md says runtime art/audio are generated from project code and no third-party media are pulled into the bundle; this is an author statement, not an exhaustive independent asset audit."
+      },
+      "demo": {
+        "url": "https://tiny-planet-action-rpg.vercel.app/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/README.md",
+        "notes": "Primary author-linked Vercel URL could not be retrieved through the reader; no planet traversal or shrine quest was executed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/README.md",
+        "notes": "Version 1.0.0; source implements combat/quests, shrine completion/victory and saves; README links published builds."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "787542b40fef77e1f0e06da207a85b8aaa0212d4",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-005.md#tiny-planet-action-rpg",
+        "reviewed_files": [
+          {
+            "path": "ASSETS.md",
+            "url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/ASSETS.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/package.json"
+          },
+          {
+            "path": "src/core/Game.ts",
+            "url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/src/core/Game.ts"
+          },
+          {
+            "path": "src/render/Renderer.ts",
+            "url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/src/render/Renderer.ts"
+          },
+          {
+            "path": "src/state/gameState.ts",
+            "url": "https://github.com/Jeevan2410/Tiny-Planet-Action-RPG/blob/787542b40fef77e1f0e06da207a85b8aaa0212d4/src/state/gameState.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Planet navigation, combat difficulty, procedural content and save durability were not tested.",
+        "Alternative art-replacement instructions in ASSETS.md are not evidence that those external assets ship in this game."
+      ]
+    },
+    {
+      "id": "last-stand",
+      "name": "Last Stand",
+      "repository_url": "https://github.com/VictorZakharov/last-stand",
+      "genres": [
+        "action-rpg",
+        "survival",
+        "wave-combat"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.185.1",
+        "render_evidence": {
+          "url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/src/core/renderer.ts#L400",
+          "claim": "Imports Three.js and its add-ons directly and constructs WebGLRenderer for its render/post-processing pipeline."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/package.json",
+            "dependencies": {
+              "@dgreenheck/ez-tree": "^1.1.0",
+              "three": "0.185.1"
+            },
+            "dev_dependencies": {
+              "@resvg/resvg-js": "^2.6.2",
+              "@types/node": "^26.6.2",
+              "@types/three": "0.185.4",
+              "playwright-core": "^1.61.1",
+              "sass": "^1.105.0",
+              "typescript": "6.0.2",
+              "vite": "8.2.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "@dgreenheck/ez-tree ^1.1.0 procedural-tree utility, Three.js, TypeScript, Vite, Sass and browser audio.",
+          "README explicitly excepts painted skill icons and music files from the otherwise procedural runtime content."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/src/game/run.ts#L422",
+        "claim": "Banking exits a run with loot; fighting/cleared/countdown/death states manage wave completion and loss of unbanked spoils."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://victorzakharov.github.io/last-stand/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/README.md",
+        "notes": "Author-linked Pages site could not be retrieved through the reader; no wave, bank/continue decision or save was tested."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/README.md",
+        "notes": "Source implements waves, clear/bank/death results and persistent loot interfaces; version is 0.1.0."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "0789c92d51fdaa89d8f7c2b631b6332feb415e41",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-005.md#last-stand",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/package.json"
+          },
+          {
+            "path": "src/core/renderer.ts",
+            "url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/src/core/renderer.ts"
+          },
+          {
+            "path": "src/game/run.ts",
+            "url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/src/game/run.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/src/main.ts"
+          },
+          {
+            "path": "src/state.ts",
+            "url": "https://github.com/VictorZakharov/last-stand/blob/0789c92d51fdaa89d8f7c2b631b6332feb415e41/src/state.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "It is not accurate to call every shipped media file runtime-generated: skill art and music are explicit exceptions.",
+        "All art/music provenance, external tree utility notices and gameplay/save behavior were not exhaustively audited."
+      ]
+    },
+    {
+      "id": "tennis-lumixed",
+      "name": "Tennis (lumixed)",
+      "repository_url": "https://github.com/lumixed/tennis",
+      "genres": [
+        "sports",
+        "tennis",
+        "motion-control"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.180.0",
+        "render_evidence": {
+          "url": "https://github.com/lumixed/tennis/blob/9e510e8ef439618f146618a3a60cf9251ccb83f8/src/scene/gameScene.ts#L60",
+          "claim": "Directly imports Three.js and creates WebGLRenderer for the tennis scene; React handles application UI rather than scene rendering."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/lumixed/tennis/blob/9e510e8ef439618f146618a3a60cf9251ccb83f8/package.json",
+            "dependencies": {
+              "@mediapipe/tasks-vision": "^0.10.20",
+              "react": "^19.2.0",
+              "react-dom": "^19.2.0",
+              "three": "^0.180.0"
+            },
+            "dev_dependencies": {
+              "@testing-library/jest-dom": "^6.9.1",
+              "@testing-library/react": "^16.3.2",
+              "@testing-library/user-event": "^14.6.3",
+              "@types/node": "^22.20.1",
+              "@types/react": "^19.2.0",
+              "@types/react-dom": "^19.2.0",
+              "@types/three": "^0.180.0",
+              "@vitejs/plugin-react": "^5.0.0",
+              "jsdom": "^25.0.1",
+              "typescript": "^5.7.0",
+              "vite": "^7.1.0",
+              "vitest": "^3.2.7"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "React 19/React DOM UI, MediaPipe Tasks Vision ^0.10.20 pose input, TypeScript and Vite.",
+          "Native browser keyboard/touch input is available; camera mode is optional and WebRTC-related support is documented."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/lumixed/tennis/blob/9e510e8ef439618f146618a3a60cf9251ccb83f8/src/engine/scoring.ts#L63",
+        "claim": "Awards points, progresses games/sets/tiebreaks and assigns the match winner; game/session.ts drives the deterministic tennis match."
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_url": "https://github.com/lumixed/tennis/blob/9e510e8ef439618f146618a3a60cf9251ccb83f8/LICENSE",
+        "additional_notices": [],
+        "notes": "Repository code license verified from this file. This does not establish that every vendored dependency or third-party asset has the same license."
+      },
+      "demo": {
+        "url": "https://tennis-blond.vercel.app/",
+        "status": "reader-error",
+        "checked_at": "2026-10-21",
+        "source_url": "https://api.github.com/repos/lumixed/tennis",
+        "notes": "Demo URL is from repository homepage metadata observed on 2026-10-21. The text reader could not retrieve it; no camera, model download or tennis session was started."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/lumixed/tennis/blob/9e510e8ef439618f146618a3a60cf9251ccb83f8/README.md",
+        "notes": "Version 0.1.0; source implements full tennis scoring/session/scene, with optional pose-input adapters."
+      },
+      "verification": {
+        "date": "2026-10-21",
+        "source_commit": "9e510e8ef439618f146618a3a60cf9251ccb83f8",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-005.md#tennis-lumixed",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/lumixed/tennis/blob/9e510e8ef439618f146618a3a60cf9251ccb83f8/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/lumixed/tennis/blob/9e510e8ef439618f146618a3a60cf9251ccb83f8/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/lumixed/tennis/blob/9e510e8ef439618f146618a3a60cf9251ccb83f8/package.json"
+          },
+          {
+            "path": "src/engine/scoring.ts",
+            "url": "https://github.com/lumixed/tennis/blob/9e510e8ef439618f146618a3a60cf9251ccb83f8/src/engine/scoring.ts"
+          },
+          {
+            "path": "src/game/session.ts",
+            "url": "https://github.com/lumixed/tennis/blob/9e510e8ef439618f146618a3a60cf9251ccb83f8/src/game/session.ts"
+          },
+          {
+            "path": "src/main.tsx",
+            "url": "https://github.com/lumixed/tennis/blob/9e510e8ef439618f146618a3a60cf9251ccb83f8/src/main.tsx"
+          },
+          {
+            "path": "src/scene/gameScene.ts",
+            "url": "https://github.com/lumixed/tennis/blob/9e510e8ef439618f146618a3a60cf9251ccb83f8/src/scene/gameScene.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Camera play needs webcam permission and HTTPS outside localhost; README says the pose worker runs only in a built bundle.",
+        "Keyboard/touch fallback and upstream camera latency/test-count claims were not tested or repeated.",
+        "MediaPipe model/software licensing and all runtime download terms were not independently audited."
       ]
     }
   ]

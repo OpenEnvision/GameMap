@@ -2,7 +2,7 @@
 
 [Machine-readable index](games.json) · [Source evidence](evidence/README.md) · [Candidate and exclusion queue](candidates.json) · [Schema](schema.json) · [Validator](validate.py)
 
-This focused collection currently contains **42 source-verified games** (reviewed 2026-10-21). **None were built or playtested in this review.** 40 repositories were not mentioned in the existing root README; HexGL and YAZH receive normalized, pinned evidence here rather than being counted as new projects across GameMap.
+This focused collection currently contains **49 source-verified games** (reviewed 2026-10-21). **None were built or playtested in this review.** 46 repositories were not mentioned in the existing root README; 3 previously mentioned repositories (HexGL, Yet Another Zombie Horror, TIDELINE) receive normalized, pinned evidence here rather than being counted as new projects across GameMap.
 
 “Direct Three.js” means the game itself creates a Three.js WebGLRenderer or WebGPURenderer and uses Three.js as its rendering core. Physics libraries, build tools, networking and DOM UI are allowed and disclosed. React/Vue/Svelte DOM UI appears in some entries. React Three Fiber, A-Frame, Babylon.js, Unity and comparable rendering/engine layers are excluded. A tutorial snippet, non-game scene, unavailable source, or unproven stack is insufficient. Public source with a restrictive non-open license is excluded.
 
@@ -52,8 +52,15 @@ The dimension field separates 3D worlds, 3D board games, cylindrical puzzles and
 | [TrollTower](https://github.com/danielesteban/trolltower) | climbing, multiplayer, webxr, physics | 3d-world | MIT | legacy-release | [author link](https://trolltower.app/) — reader-error |
 | [Bombanauts](https://github.com/Bombanauts/Bombanauts) | action, arena, multiplayer, bombing | 3d-world | MIT | legacy-prototype | [author link](http://bombanauts.herokuapp.com/) — reader-error |
 | [Temple Rumble](https://github.com/dammafra/temple-rumble) | action, survival, reflex | 3d-world | AGPL-3.0 (only/or-later variant unconfirmed) | game | [author link](https://templerumble.dammafra.dev) — reader-error |
+| [TIDELINE](https://github.com/bridge-mind/tideline) | fishing, simulation, collection | 3d-world | MIT | game | [author link](https://bridge-mind.github.io/tideline/) — reader-error |
+| [Neon River](https://github.com/khesse-757/neon-river-remastered) | fishing, arcade | 3d-world | MIT | game | [author link](https://neonriver2.kahdev.me) — reader-error |
+| [Tidebreak](https://github.com/ryanio/tidebreak) | strategy, real-time-strategy, tactics | 3d-world | MIT | game | [author link](https://ryanio.github.io/tidebreak/) — reader-error |
+| [Terrinha](https://github.com/martinsmiguel/terrinha) | strategy, real-time-strategy, building, multiplayer | 3d-world | MIT | game | not-located |
+| [Tiny Planet — Shrines of the Blight](https://github.com/Jeevan2410/Tiny-Planet-Action-RPG) | action-rpg, adventure, combat | 3d-world | MIT | game | [author link](https://tiny-planet-action-rpg.vercel.app/) — reader-error |
+| [Last Stand](https://github.com/VictorZakharov/last-stand) | action-rpg, survival, wave-combat | 3d-world | MIT | game | [author link](https://victorzakharov.github.io/last-stand/) — reader-error |
+| [Tennis (lumixed)](https://github.com/lumixed/tennis) | sports, tennis, motion-control | 3d-world | MIT | prototype | [author link](https://tennis-blond.vercel.app/) — reader-error |
 
-A `page-read` result only means the web reader returned an HTML document. It does not prove that scripts, WebGL/WebGPU, controls, assets or multiplayer work. `reader-error` means this reader could not retrieve the URL; it does not prove the site is down. `not-located` means the reviewed primary sources did not yield a live play URL. Demo checks and source commits are dated separately from any future runtime tests.
+A `page-read` result only means the web reader returned an HTML document. It does not prove that scripts, WebGL/WebGPU, controls, assets or multiplayer work. `reader-error` means this reader could not retrieve the URL; it does not prove the site is down. `not-located` means the reviewed primary sources did not yield a live play URL. Demo checks and source commits are dated separately from any future runtime tests. Rendering, gameplay and license evidence stays pinned to reviewed commits. A demo discovery source may instead be dated repository homepage metadata or the actual author landing page; those sources are identified explicitly rather than attributed to an unrelated README.
 
 Code license is taken from the linked repository license file. Asset and vendored-library exceptions are recorded when found, including HexGL audio. A code license is not a blanket asset license. No third-party source code or assets are copied into this collection.
 
@@ -67,4 +74,4 @@ The dependency-free validator checks the JSON schema subset used here, required 
 
 For each increment, read the latest remote main, all open PRs and the current index/queue first. Use a fresh branch after a PR is merged; do not append to a merged branch or reopen superseded research. Add reviewed facts, update queue decisions and run the validator before opening/updating a PR. Preserve existing GameMap content, do not merge or deploy, and do not restore content from before the user's reset. The current series began from main `5d4de4f2984a8c1df1c6818b044a70c7080d085d`.
 
-Batch evidence: [001 — 12 games](evidence/batch-001.md) · [002 — 10 games](evidence/batch-002.md) · [003 — 10 games](evidence/batch-003.md) · [004 — 10 games](evidence/batch-004.md). The queue currently retains 9 pending and 3 excluded repositories; explicit commercial/restricted-asset cases are not presented as fully open game packages.
+Batch evidence: [001 — 12 games](evidence/batch-001.md) · [002 — 10 games](evidence/batch-002.md) · [003 — 10 games](evidence/batch-003.md) · [004 — 10 games](evidence/batch-004.md) · [005 — 7 games](evidence/batch-005.md). The queue currently retains 10 pending and 4 excluded repositories; explicit commercial/restricted-asset cases are not presented as fully open game packages.

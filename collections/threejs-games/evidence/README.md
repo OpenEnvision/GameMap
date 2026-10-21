@@ -8,5 +8,6 @@ All listed entries are **source reviewed**, with no game builds, upstream test r
 | 002 | 10 | 2026-10-21 | [Pinned source review](batch-002.md) |
 | 003 | 10 | 2026-10-21 | [Pinned source review](batch-003.md) |
 | 004 | 10 | 2026-10-21 | [Pinned source review](batch-004.md) |
+| 005 | 7 | 2026-10-21 | [Pinned source review](batch-005.md) |
 
-[42-game machine-readable index](../games.json) · [Candidate/exclusion queue](../candidates.json) · [Scope and method](../README.md)
+[49-game machine-readable index](../games.json) · [Candidate/exclusion queue](../candidates.json) · [Scope and method](../README.md)
