@@ -5803,6 +5803,823 @@
         "An educational toy implementation with a project-local lifecycle inspired by Unity; it does not import or use the Unity engine.",
         "Legacy Three APIs and FBX assets need runtime compatibility checks; FBX/font/texture rights were not individually audited."
       ]
+    },
+    {
+      "id": "vr-sentinel",
+      "name": "The Sentinel — VR",
+      "repository_url": "https://github.com/SteveSmith16384/vr-sentinel",
+      "genres": [
+        "strategy",
+        "puzzle",
+        "webxr"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r116 in bundled Three.js builds",
+        "render_evidence": {
+          "url": "https://github.com/SteveSmith16384/vr-sentinel/blob/5399c5e2685c28a3a3c7e281a984a274ae242d06/index.html#L48",
+          "claim": "Directly creates Three.js WebGLRenderer, enables renderer.xr and uses setAnimationLoop to update and render the actual Sentinel game; imports the vendored Three module."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vendored Three.js, VRButton, XRControllerModelFactory and OBJLoader; project-local map/ECS helpers. No package manifest in the reviewed entry path."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/SteveSmith16384/vr-sentinel/blob/5399c5e2685c28a3a3c7e281a984a274ae242d06/TheSentinelGame.js#L286",
+        "claim": "Absorbing the Sentinel completes a level; teleporting costs energy and being seen can deplete it and restart play. Terrain height and stacked cubes determine visibility."
+      },
+      "license": {
+        "spdx": null,
+        "label": "GPL-3.0 (only/or-later variant unconfirmed)",
+        "source_url": "https://github.com/SteveSmith16384/vr-sentinel/blob/5399c5e2685c28a3a3c7e281a984a274ae242d06/LICENSE.txt",
+        "additional_notices": [],
+        "notes": "LICENSE.txt and README identify GPL v3, but a project-specific only/or-later election was not established; spdx is null rather than guessing. README credits models to kochsoft/free_sentinel_gl; model/audio and third-party notices were not comprehensively audited."
+      },
+      "demo": {
+        "url": "https://stephensmith.itch.io/the-sentinal-vr",
+        "status": "page-read",
+        "checked_at": "2026-10-22",
+        "source_url": "https://api.github.com/repos/SteveSmith16384/vr-sentinel",
+        "notes": "Demo URL is from repository homepage metadata observed on 2026-10-22. Text reader returned the author's itch page and its WebXR embedding caveat/alternative Bitbucket link; no iframe, headset or controller gameplay was started."
+      },
+      "maturity": {
+        "status": "legacy-release",
+        "basis_url": "https://github.com/SteveSmith16384/vr-sentinel/blob/5399c5e2685c28a3a3c7e281a984a274ae242d06/README.md",
+        "notes": "Source implements level completion and energy-based failure; the author itch listing labels it Released. Legacy Three.js/XR runtime compatibility was not tested."
+      },
+      "verification": {
+        "date": "2026-10-22",
+        "source_commit": "5399c5e2685c28a3a3c7e281a984a274ae242d06",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-007.md#vr-sentinel",
+        "reviewed_files": [
+          {
+            "path": "LICENSE.txt",
+            "url": "https://github.com/SteveSmith16384/vr-sentinel/blob/5399c5e2685c28a3a3c7e281a984a274ae242d06/LICENSE.txt"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/SteveSmith16384/vr-sentinel/blob/5399c5e2685c28a3a3c7e281a984a274ae242d06/README.md"
+          },
+          {
+            "path": "TheSentinelGame.js",
+            "url": "https://github.com/SteveSmith16384/vr-sentinel/blob/5399c5e2685c28a3a3c7e281a984a274ae242d06/TheSentinelGame.js"
+          },
+          {
+            "path": "build/three.min.js",
+            "url": "https://github.com/SteveSmith16384/vr-sentinel/blob/5399c5e2685c28a3a3c7e281a984a274ae242d06/build/three.min.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/SteveSmith16384/vr-sentinel/blob/5399c5e2685c28a3a3c7e281a984a274ae242d06/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "VR controller/headset and a suitable secure WebXR context are needed; author landing-page embedding concerns are not resolved by this text-only check.",
+        "README describes a simplified remake of Geoff Crammond's game; the code license is not a grant of all original branding/asset rights.",
+        "Repository certificate/key files were not fetched, installed or reused."
+      ]
+    },
+    {
+      "id": "periplus",
+      "name": "PERIPLUS",
+      "repository_url": "https://github.com/TonyDowney/periplus",
+      "genres": [
+        "exploration",
+        "adventure",
+        "surveying",
+        "collectathon"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.185.1",
+        "render_evidence": {
+          "url": "https://github.com/TonyDowney/periplus/blob/29608f0c4d23eaf653cada1372076e7dfc3bb105/src/main.js#L60",
+          "claim": "Directly imports Three.js and constructs WebGLRenderer/Scene; the imperative main loop drives a spherical world and post-processing."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/TonyDowney/periplus/blob/29608f0c4d23eaf653cada1372076e7dfc3bb105/package.json",
+            "dependencies": {
+              "three": "^0.185.1"
+            },
+            "dev_dependencies": {
+              "esbuild": "^0.28.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js is the only declared runtime npm dependency; esbuild ^0.28.1 bundles a single-file release, while native ES modules/import-map serve development.",
+          "Author documents procedural terrain, props and audio; no independent asset-provenance audit or upstream browser test was performed."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/TonyDowney/periplus/blob/29608f0c4d23eaf653cada1372076e7dfc3bb105/src/main.js#L378",
+        "claim": "Approaching cairns records discoveries and opens logs; finding all eight starts an ending that reports survey percentage, distance and elapsed time."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT",
+        "source_url": "https://github.com/TonyDowney/periplus/blob/29608f0c4d23eaf653cada1372076e7dfc3bb105/LICENSE",
+        "additional_notices": [],
+        "notes": "LICENSE and package.json declare MIT. The package-lock root still says ISC; this metadata discrepancy is preserved, not silently resolved or treated as proof of a different file-level license."
+      },
+      "demo": {
+        "url": "https://tonydowney.github.io/periplus/",
+        "status": "reader-error",
+        "checked_at": "2026-10-22",
+        "source_url": "https://github.com/TonyDowney/periplus/blob/29608f0c4d23eaf653cada1372076e7dfc3bb105/README.md",
+        "notes": "Pinned README links this Pages URL. The text reader could not retrieve it; no walking, survey, pointer lock or ending was executed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/TonyDowney/periplus/blob/29608f0c4d23eaf653cada1372076e7dfc3bb105/README.md",
+        "notes": "Author describes a compact exploration game-jam entry; source implements eight discovery destinations, survey milestones, a journal and a definite ending."
+      },
+      "verification": {
+        "date": "2026-10-22",
+        "source_commit": "29608f0c4d23eaf653cada1372076e7dfc3bb105",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-007.md#periplus",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/TonyDowney/periplus/blob/29608f0c4d23eaf653cada1372076e7dfc3bb105/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/TonyDowney/periplus/blob/29608f0c4d23eaf653cada1372076e7dfc3bb105/README.md"
+          },
+          {
+            "path": "package-lock.json",
+            "url": "https://github.com/TonyDowney/periplus/blob/29608f0c4d23eaf653cada1372076e7dfc3bb105/package-lock.json"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/TonyDowney/periplus/blob/29608f0c4d23eaf653cada1372076e7dfc3bb105/package.json"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/TonyDowney/periplus/blob/29608f0c4d23eaf653cada1372076e7dfc3bb105/src/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Requires WebGL2, keyboard and mouse per README; pointer lock and whole-world reachability were not tested.",
+        "README contains an AI development transcript and self-reported tests; those reports are attributed to the author and were not reproduced.",
+        "package-lock root license/name differ from the current package.json; retain both notices when evaluating redistribution."
+      ]
+    },
+    {
+      "id": "vox-lords",
+      "name": "VoxLords",
+      "repository_url": "https://github.com/Lallassu/VoxLords",
+      "genres": [
+        "action",
+        "adventure",
+        "voxel",
+        "escort"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r70 (vendored)",
+        "render_evidence": {
+          "url": "https://github.com/Lallassu/VoxLords/blob/02eb32c30522fae572cd00e1325b18143183702a/js/main.js#L178",
+          "claim": "Creates a Three.js WebGLRenderer and renders the scene in its own requestAnimationFrame loop; the custom voxel/map system uses Three.js directly."
+        },
+        "manifests": [
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/Lallassu/VoxLords/blob/02eb32c30522fae572cd00e1325b18143183702a/server/package.json",
+            "dependencies": {
+              "socket.io": "1.0.6"
+            },
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vendored Three r70, THREEx keyboard/resize helpers, jQuery and project-local voxel/block physics, PNG map and VOX loading.",
+          "server/package.json declares socket.io 1.0.6; README documents a Node web server. This helper stack is distinct from a replacement rendering engine."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Lallassu/VoxLords/blob/02eb32c30522fae572cd00e1325b18143183702a/js/princess.js#L70",
+        "claim": "The rescued character follows the player, reaching the castle advances through map IDs and completes the final map; escort death fails the rescue."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT",
+        "source_url": "https://github.com/Lallassu/VoxLords/blob/02eb32c30522fae572cd00e1325b18143183702a/LICENSE.txt",
+        "additional_notices": [],
+        "notes": "Root code license verified. This does not establish identical terms for every third-party model, texture, sound, font or vendored dependency; assets were not comprehensively rights-audited."
+      },
+      "demo": {
+        "url": "http://voxlords.webgl.nu",
+        "status": "reader-error",
+        "checked_at": "2026-10-22",
+        "source_url": "https://github.com/Lallassu/VoxLords/blob/02eb32c30522fae572cd00e1325b18143183702a/README.md",
+        "notes": "README-linked historical play URL could not be retrieved through the text reader; the HTTPS normalization by the tool is not proof of site failure."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/Lallassu/VoxLords/blob/02eb32c30522fae572cd00e1325b18143183702a/README.md",
+        "notes": "Author explicitly describes unpolished source. The reviewed entry contains a four-map rescue/escort objective, rather than only the separate engine-test link."
+      },
+      "verification": {
+        "date": "2026-10-22",
+        "source_commit": "02eb32c30522fae572cd00e1325b18143183702a",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-007.md#vox-lords",
+        "reviewed_files": [
+          {
+            "path": "LICENSE.txt",
+            "url": "https://github.com/Lallassu/VoxLords/blob/02eb32c30522fae572cd00e1325b18143183702a/LICENSE.txt"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Lallassu/VoxLords/blob/02eb32c30522fae572cd00e1325b18143183702a/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Lallassu/VoxLords/blob/02eb32c30522fae572cd00e1325b18143183702a/index.html"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/Lallassu/VoxLords/blob/02eb32c30522fae572cd00e1325b18143183702a/js/main.js"
+          },
+          {
+            "path": "js/princess.js",
+            "url": "https://github.com/Lallassu/VoxLords/blob/02eb32c30522fae572cd00e1325b18143183702a/js/princess.js"
+          },
+          {
+            "path": "libs/three.min.js",
+            "url": "https://github.com/Lallassu/VoxLords/blob/02eb32c30522fae572cd00e1325b18143183702a/libs/three.min.js"
+          },
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/Lallassu/VoxLords/blob/02eb32c30522fae572cd00e1325b18143183702a/server/package.json"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "index.html line 195 references js/particleEngine.js, which is absent from the reviewed recursive tree; the effect on runtime startup was not tested.",
+        "Legacy browser APIs, server dependencies and bundled music/models/fonts need fresh compatibility and rights checks.",
+        "Horizontal escort movement takes place on a rendered voxel terrain; this record does not promise free 3D movement."
+      ]
+    },
+    {
+      "id": "parrot-hunt",
+      "name": "ParrotHunt",
+      "repository_url": "https://github.com/Lallassu/ParrotHunt",
+      "genres": [
+        "shooter",
+        "bird-hunting",
+        "arcade"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r67 (vendored)",
+        "render_evidence": {
+          "url": "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/js/main.js#L189",
+          "claim": "Directly creates Three.js WebGLRenderer, a perspective scene and a manual animation/render loop; birds and scenery are 3D objects."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vendored Three r67, jQuery 1.9.1, THREEx helpers, ShaderParticles and OBJ/MTL loaders; Node HTTP/Socket.IO plus dblite/SQLite-backed score handling in server/server.js."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/js/main.js#L42",
+        "claim": "Starts a timed shooting round, ends it with hit/ammo/time scoring and sends the resulting score through the project network adapter."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT",
+        "source_url": "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/LICENSE",
+        "additional_notices": [
+          "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/models/palm/BLENDSWAP_LICENSE.txt"
+        ],
+        "notes": "MIT code. The palm model's bundled notice explicitly says CC0; this is not a finding that every other model, sound, font or vendored dependency is MIT/CC0."
+      },
+      "demo": {
+        "url": "http://parrothunt.nergal.se",
+        "status": "reader-error",
+        "checked_at": "2026-10-22",
+        "source_url": "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/README.md",
+        "notes": "README-linked historical demo could not be retrieved by the text reader; no round, Socket.IO session or score submission was initiated."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/README.md",
+        "notes": "README calls the code unpolished; source contains countdown/start, timed end-state and a result screen."
+      },
+      "verification": {
+        "date": "2026-10-22",
+        "source_commit": "5bd7d0560e69361069633888d69280061eb4d372",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-007.md#parrot-hunt",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/index.html"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/js/main.js"
+          },
+          {
+            "path": "js/net.js",
+            "url": "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/js/net.js"
+          },
+          {
+            "path": "libs/three.min.js",
+            "url": "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/libs/three.min.js"
+          },
+          {
+            "path": "models/palm/BLENDSWAP_LICENSE.txt",
+            "url": "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/models/palm/BLENDSWAP_LICENSE.txt"
+          },
+          {
+            "path": "server/server.js",
+            "url": "https://github.com/Lallassu/ParrotHunt/blob/5bd7d0560e69361069633888d69280061eb4d372/server/server.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Uses a fixed shooting viewpoint in a rendered 3D environment; it is not a free-roaming shooter.",
+        "Source initializes a localhost:8080 score connection and EndGame sends a player name/score/hits via send_Score; backend reachability and persistence were not tested.",
+        "Old vendored server dependencies and every asset's license have not been exhaustively audited."
+      ]
+    },
+    {
+      "id": "drakonas",
+      "name": "Drakonas",
+      "repository_url": "https://github.com/Casmo/Drakonas",
+      "genres": [
+        "shooter",
+        "shoot-em-up",
+        "flight"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r67 (vendored)",
+        "render_evidence": {
+          "url": "https://github.com/Casmo/Drakonas/blob/a85a35bc027f8f62df8245864507df1e49ad77ff/js/game.js#L7",
+          "claim": "Directly constructs Three.js Scene, WebGLRenderer and PerspectiveCamera; its own requestAnimationFrame render function advances the game."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vendored Three r67, Tween.js, OBJLoader and project-local DOM/JSON helpers; browser audio and localStorage-backed game settings. No root npm manifest found."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Casmo/Drakonas/blob/a85a35bc027f8f62df8245864507df1e49ad77ff/js/player.js#L297",
+        "claim": "Removing defeated enemies awards mission score; destroying a boss calls mission completion, while game.js health depletion triggers game-over."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT",
+        "source_url": "https://github.com/Casmo/Drakonas/blob/a85a35bc027f8f62df8245864507df1e49ad77ff/LICENSE",
+        "additional_notices": [],
+        "notes": "Root code license verified. This does not establish identical terms for every third-party model, texture, sound, font or vendored dependency; assets were not comprehensively rights-audited."
+      },
+      "demo": {
+        "url": "https://couchfriends.com/src/games/drakonas/",
+        "status": "page-read",
+        "checked_at": "2026-10-22",
+        "source_url": "https://github.com/Casmo/Drakonas/blob/a85a35bc027f8f62df8245864507df1e49ad77ff/README.md",
+        "notes": "The reader returned only a Loading document at the README-linked URL. This does not establish a rendered scene, working mission or completed asset load."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/Casmo/Drakonas/blob/a85a35bc027f8f62df8245864507df1e49ad77ff/README.md",
+        "notes": "README explicitly calls the hosted version a very early prototype. Source contains playable mission combat and boss/health result paths; planned shops/upgrades are not asserted complete."
+      },
+      "verification": {
+        "date": "2026-10-22",
+        "source_commit": "a85a35bc027f8f62df8245864507df1e49ad77ff",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-007.md#drakonas",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Casmo/Drakonas/blob/a85a35bc027f8f62df8245864507df1e49ad77ff/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Casmo/Drakonas/blob/a85a35bc027f8f62df8245864507df1e49ad77ff/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Casmo/Drakonas/blob/a85a35bc027f8f62df8245864507df1e49ad77ff/index.html"
+          },
+          {
+            "path": "js/game.js",
+            "url": "https://github.com/Casmo/Drakonas/blob/a85a35bc027f8f62df8245864507df1e49ad77ff/js/game.js"
+          },
+          {
+            "path": "js/lib/three.min.js",
+            "url": "https://github.com/Casmo/Drakonas/blob/a85a35bc027f8f62df8245864507df1e49ad77ff/js/lib/three.min.js"
+          },
+          {
+            "path": "js/player.js",
+            "url": "https://github.com/Casmo/Drakonas/blob/a85a35bc027f8f62df8245864507df1e49ad77ff/js/player.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Top-down aircraft combat has constrained movement while scenery and enemies are rendered in 3D.",
+        "Shop/hangar/upgrading paragraphs mix future plans with implementation; the catalog does not claim the full design is shipped.",
+        "Bundled OBJ/texture/audio provenance and legacy browser behavior were not independently audited."
+      ]
+    },
+    {
+      "id": "dino3d",
+      "name": "T-Rex Run 3D",
+      "repository_url": "https://github.com/Priler/dino3d",
+      "genres": [
+        "endless-runner",
+        "obstacle-dodging",
+        "voxel",
+        "arcade"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r112 (vendored)",
+        "render_evidence": {
+          "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/js/src/init.js#L26",
+          "claim": "Creates Three.js WebGLRenderer directly; the source managers are assembled into the entry bundle by the reviewed Gulp build task."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vendored Three r112, vox.js, Three Nebula particles, Howler and Visibly; legacy Gulp/Sass/rigger/minifier tooling.",
+          "The root file named package.json is lock-shaped data with requires/lockfileVersion/dependency objects, not a normal application manifest. It is reviewed as a tooling limitation and not misrepresented as dependency version strings."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/js/src/enemy_manager.js#L332",
+        "claim": "Tests 3D collision boxes against obstacles and stops the run on contact; game_manager.js stops audio/particles, displays restart and resets player/enemies/score."
+      },
+      "license": {
+        "spdx": null,
+        "label": "GPL-3.0 (only/or-later variant unconfirmed)",
+        "source_url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/LICENSE",
+        "additional_notices": [],
+        "notes": "GPL v3 text is present, but a project-specific only/or-later election was not established; spdx remains null. README says the voxel graphics were hand-created in MagicaVoxel; that is an author statement, not an independent asset rights audit."
+      },
+      "demo": {
+        "url": "https://priler.github.io/dino3d/",
+        "status": "page-read",
+        "checked_at": "2026-10-22",
+        "source_url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/README.md",
+        "notes": "Text reader returned an asset-loading/error screen marked ERR_LOADING_ASSETS 0%. It did not run the game, so this is not a browser-runtime failure diagnosis. README also links a lower-quality entry."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/README.md",
+        "notes": "Author calls it an unpolished experiment; source implements jump/crouch obstacle play, scoring, death and restart."
+      },
+      "verification": {
+        "date": "2026-10-22",
+        "source_commit": "5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-007.md#dino3d",
+        "reviewed_files": [
+          {
+            "path": "gulpfile.js",
+            "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/gulpfile.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/index.html"
+          },
+          {
+            "path": "js/src/build.js",
+            "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/js/src/build.js"
+          },
+          {
+            "path": "js/src/enemy_manager.js",
+            "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/js/src/enemy_manager.js"
+          },
+          {
+            "path": "js/src/game_manager.js",
+            "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/js/src/game_manager.js"
+          },
+          {
+            "path": "js/src/init.js",
+            "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/js/src/init.js"
+          },
+          {
+            "path": "js/src/player_manager.js",
+            "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/js/src/player_manager.js"
+          },
+          {
+            "path": "js/src/score_manager.js",
+            "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/js/src/score_manager.js"
+          },
+          {
+            "path": "libs/three/three.min.js",
+            "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/libs/three/three.min.js"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Priler/dino3d/blob/5b0a0903d0f5c1cd7c4a7dd325d06b175a0b3d3b/README.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Runner motion is constrained rather than freely navigable; 3D voxel scenery and collision volumes do not imply full movement freedom.",
+        "The misnamed lock-shaped package.json and legacy toolchain need manual setup review; no install or rebuild was attempted.",
+        "Assets, service-worker/offline behavior, browser input and upstream bug-fix claims were not tested."
+      ]
+    },
+    {
+      "id": "three-minesweeper",
+      "name": "ThreeMineSweeper",
+      "repository_url": "https://github.com/ppizarror/ThreeMineSweeper",
+      "genres": [
+        "puzzle",
+        "minesweeper",
+        "board-game"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r124 (vendored)",
+        "render_evidence": {
+          "url": "https://github.com/ppizarror/ThreeMineSweeper/blob/0a05195ef0e951f67fd09f298a858b29574b3337/src/engine/tms/viewer.js#L652",
+          "claim": "Creates Three.js WebGLRenderer directly for a 3D geometric board viewer; its own animation thread renders the scene."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/ppizarror/ThreeMineSweeper/blob/0a05195ef0e951f67fd09f298a858b29574b3337/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "@types/jquery": "^3.5.32",
+              "@types/three": "^0.125.0",
+              "eslint": "^9.26.0",
+              "google-closure-compiler": "^20260511.0.0",
+              "karma": "^6.4.1",
+              "karma-chrome-launcher": "^3.1.1",
+              "karma-coverage": "^2.2.0",
+              "karma-jasmine": "^5.1.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vendored Three r124, jQuery 3.4.1, Bootstrap CSS and assorted browser UI/audio helpers loaded from local lib/ paths.",
+          "package.json contains developer lint/compiler/Karma tooling and @types/three ^0.125.0; those type declarations are not the runtime Three revision."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/ppizarror/ThreeMineSweeper/blob/0a05195ef0e951f67fd09f298a858b29574b3337/src/engine/tms/minesweeper.js#L230",
+        "claim": "Handles reveals/flags, mine hits and game-over, and checks all eligible faces to declare a win on geometric surface maps."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT",
+        "source_url": "https://github.com/ppizarror/ThreeMineSweeper/blob/0a05195ef0e951f67fd09f298a858b29574b3337/LICENSE",
+        "additional_notices": [],
+        "notes": "Root code license verified. This does not establish identical terms for every third-party model, texture, sound, font or vendored dependency; assets were not comprehensively rights-audited."
+      },
+      "demo": {
+        "url": "https://ppizarror.github.io/ThreeMineSweeper/",
+        "status": "reader-error",
+        "checked_at": "2026-10-22",
+        "source_url": "https://github.com/ppizarror/ThreeMineSweeper/blob/0a05195ef0e951f67fd09f298a858b29574b3337/README.md",
+        "notes": "Pinned README links the Pages game; the text reader could not retrieve it. No map, username prompt, DB-IP lookup or leaderboard submission was executed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/ppizarror/ThreeMineSweeper/blob/0a05195ef0e951f67fd09f298a858b29574b3337/README.md",
+        "notes": "README explicitly calls it experimental geometric 3D minesweeper; source implements board interaction and both game-over and win state."
+      },
+      "verification": {
+        "date": "2026-10-22",
+        "source_commit": "0a05195ef0e951f67fd09f298a858b29574b3337",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-007.md#three-minesweeper",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/ppizarror/ThreeMineSweeper/blob/0a05195ef0e951f67fd09f298a858b29574b3337/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/ppizarror/ThreeMineSweeper/blob/0a05195ef0e951f67fd09f298a858b29574b3337/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/ppizarror/ThreeMineSweeper/blob/0a05195ef0e951f67fd09f298a858b29574b3337/index.html"
+          },
+          {
+            "path": "lib/three.js/three.min.js",
+            "url": "https://github.com/ppizarror/ThreeMineSweeper/blob/0a05195ef0e951f67fd09f298a858b29574b3337/lib/three.js/three.min.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/ppizarror/ThreeMineSweeper/blob/0a05195ef0e951f67fd09f298a858b29574b3337/package.json"
+          },
+          {
+            "path": "src/engine/tms/minesweeper.js",
+            "url": "https://github.com/ppizarror/ThreeMineSweeper/blob/0a05195ef0e951f67fd09f298a858b29574b3337/src/engine/tms/minesweeper.js"
+          },
+          {
+            "path": "src/engine/tms/viewer.js",
+            "url": "https://github.com/ppizarror/ThreeMineSweeper/blob/0a05195ef0e951f67fd09f298a858b29574b3337/src/engine/tms/viewer.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This is a 3D surface/board puzzle, not a freely navigable world; flat or geometric mine rules remain board rules.",
+        "The score path imports DB-IP visitor lookup, records country code and submits name/time/generator data to a remote score endpoint. No such submission was initiated.",
+        "All optional board generators, external services and vendored asset/library terms were not exhaustively checked."
+      ]
+    },
+    {
+      "id": "mind-your-head",
+      "name": "Mind Your Head",
+      "repository_url": "https://github.com/zhangjikai/mind-your-head",
+      "genres": [
+        "shooter",
+        "arcade",
+        "survival"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r60 (vendored)",
+        "render_evidence": {
+          "url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/js/main/GameStart.js#L41",
+          "claim": "Creates a Three.js scene/camera and WebGLRenderer, with a legacy CanvasRenderer fallback; the manual animation loop updates and renders the shooter."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/package.json",
+            "dependencies": {
+              "jquery": "^3.1.1",
+              "loaders.css": "^0.1.2",
+              "remodal": "^1.1.1",
+              "sweetalert": "^1.1.3"
+            },
+            "dev_dependencies": {
+              "browser-sync": "^2.17.3",
+              "gulp": "^3.9.1",
+              "gulp-clean-css": "^2.3.2",
+              "gulp-less": "^3.3.0",
+              "gulp-minify": "0.0.14",
+              "gulp-notify": "^2.2.0",
+              "gulp-plumber": "^1.1.0",
+              "gulp-rename": "^1.2.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vendored Three r60 and helpers; game.html loads jQuery 1.9.1, while package.json declares jQuery ^3.1.1 plus loaders.css/remodal/sweetalert. Both entry and manifest versions are disclosed.",
+          "Gulp 3 development scripts; project-local input, gravity, audio and image-cropping helpers."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/js/main/GameStart.js#L209",
+        "claim": "The run checks remaining life for defeat and remaining enemies for level victory, updates stored scores/stage and offers retry or continuation."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT",
+        "source_url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/LICENSE",
+        "additional_notices": [
+          "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/crop/fonts/codropsicons/license.txt"
+        ],
+        "notes": "MIT code. The crop icon notice separately identifies Font Awesome SIL OFL and Eco Ico CC0; that does not license every face image, background, font or sound under MIT."
+      },
+      "demo": {
+        "url": "https://head.zhangjikai.com",
+        "status": "reader-error",
+        "checked_at": "2026-10-22",
+        "source_url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/CNAME",
+        "notes": "The host is specified by the pinned CNAME file. Text reader could not retrieve it; no face image was selected, game run or user score action performed."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/README.md",
+        "notes": "Source and README document level and score modes, four weapons, victory/loss and local progress. The author says the network battle mode was removed because its Java server was unavailable."
+      },
+      "verification": {
+        "date": "2026-10-22",
+        "source_commit": "aa61a2e9174f3722337231beee6853f4a9c349a1",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-007.md#mind-your-head",
+        "reviewed_files": [
+          {
+            "path": "CNAME",
+            "url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/CNAME"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/README.md"
+          },
+          {
+            "path": "crop/fonts/codropsicons/license.txt",
+            "url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/crop/fonts/codropsicons/license.txt"
+          },
+          {
+            "path": "game.html",
+            "url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/game.html"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/index.html"
+          },
+          {
+            "path": "js/lib/three.js",
+            "url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/js/lib/three.js"
+          },
+          {
+            "path": "js/main/GameStart.js",
+            "url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/js/main/GameStart.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/zhangjikai/mind-your-head/blob/aa61a2e9174f3722337231beee6853f4a9c349a1/package.json"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Single-player entry only: commented server code is not evidence of a currently available multiplayer mode.",
+        "README lists mobile gravity-sensor failures, blocked autoplay, landscape-lock and screen-awake issues; present-day behavior was not retested.",
+        "User-supplied face images and other bundled media need their own rights review; no image or permission prompt was used here."
+      ]
     }
   ]
 }
