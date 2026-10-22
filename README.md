@@ -778,6 +778,7 @@ Terms categories support filtering; code, characters, motion data, and third-par
 ## Repository research and code references
 
 For native Godot projects, see [Godot 3D games](docs/godot-3d-games.md), a repository research supplement not yet included in the exported website’s cards or search.
+**Additional game repositories:** [Strategy and simulation source studies](docs/strategy-game-repositories.md) — ten projects covering 4X, RTS, settlement economies, factory logistics and physics sandboxes.
 
 All **213 research records**, preserving the original research groups: **204 source-reviewed, 8 unavailable, and 1 metadata-only**. This collection includes games, prototypes, components, skills, forks, and discovery lists. Historical groups and AI-associated labels do not establish AI authorship or playable completeness. Source review does not mean the project was executed.
 
