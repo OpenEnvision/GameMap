@@ -113,6 +113,8 @@ Official documentation, runnable examples, scripting interfaces, testing tools, 
 
 ### Godot · 5 resources
 
+[Native Godot 2D game repositories](docs/godot-2d-game-repositories.md) adds four source studies covering platforming, alternate input, color puzzles and mirrored controls.
+
 | Resource | Type | Purpose | Further reading |
 | --- | --- | --- | --- |
 | [Godot Engine · Official Documentation](<https://docs.godotengine.org/en/stable/>) | Tool | An open-source 2D and 3D game engine that organizes runnable projects through scenes, nodes, resources, and scripts. | [Site details](<https://openenvision.github.io/GameMap/resources/godot-engine/>) · [Engine source](<https://github.com/godotengine/godot>) · [Official examples](<https://github.com/godotengine/godot-demo-projects>) |
