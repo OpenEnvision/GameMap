@@ -52,7 +52,7 @@ All **115 curated resources** are listed below. Longer companion catalogs are or
 | [Demos and visual evidence](#showcase) | 29 | Game recordings, world models, scenes, assets, and workflow demonstrations. |
 | [Test resources](#testing) | 36 resources, 3 starter tasks | Modifiable projects, agent environments, assets, and motion datasets. |
 | [Repository research](#repository-research) | 213 records | Game projects, agent harnesses, FPS projects, engine components, classic ports, and discovery lists. |
-| [More game source by language](docs/game-repositories-by-language.md) | 4 repositories | Lua, Python, Haxe and Rust games with gameplay code and setup guides. |
+| [More game source by language](docs/game-repositories-by-language.md) | 8 repositories | Lua, Python, Haxe, Rust and C# games with gameplay code and setup guides. |
 | [Papers and research materials](#papers) | 483 records | Design, building, runtime systems, testing, playing, world modeling, and foundations. |
 | [Documentation and guides](#guides) | 66 pages | Practical guides, technical notes, production workflows, source records, and skill references. |
 

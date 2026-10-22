@@ -1,6 +1,6 @@
-# Games in Lua, Python, Haxe and Rust
+# Games in Lua, Python, Haxe, Rust and C#
 
-Four game repositories that broaden the catalog beyond its existing browser-engine and native C++ examples. Reviewed **2026-10-22** through official project documentation, selected gameplay source and license files. Source review only; no game was installed, built or playtested.
+Eight game repositories that broaden the catalog beyond its existing browser-engine and native C++ examples. Reviewed **2026-10-22** through official project documentation, selected gameplay source and license files. Source review only; no game was installed, built or playtested.
 
 ## SNKRX
 
@@ -33,5 +33,37 @@ Four game repositories that broaden the catalog beyond its existing browser-engi
 - **Start here:** The [README](https://gitlab.com/veloren/veloren/-/blob/master/README.md) links Windows, macOS and Linux downloads and recommends the Airshipper launcher for keeping client versions current. The [compiling guide](https://book.veloren.net/contributors/compiling.html) lists platform dependencies and `cargo run`; it also documents launching the standalone server.
 - **Learn from:** [roll.rs](https://gitlab.com/veloren/veloren/-/blob/master/common/src/states/roll.rs) implements a character action through buildup, movement and recovery stages, with orientation, forced motion, status effects and jump interruption. This is a compact example of a gameplay state machine inside a larger networked RPG.
 - **License:** [GPLv3](https://gitlab.com/veloren/veloren/-/blob/master/LICENSE); the [workspace manifest](https://gitlab.com/veloren/veloren/-/blob/master/Cargo.toml) specifies GPLv3-or-later for workspace packages. Individual artwork and documentation retain their own notices.
+
+## osu! (lazer)
+
+- **Repository:** [ppy/osu](https://github.com/ppy/osu), reviewed on `master`.
+- **Game / stack:** The osu! rhythm-game client known as lazer, with several rulesets, beatmap editing and extensible gameplay modes. C#/.NET on osu!framework.
+- **Start here:** The [README](https://github.com/ppy/osu/blob/master/README.md) links official platform downloads, ruleset templates and development instructions. With the repository's required .NET SDK installed, its desktop command is `dotnet run --project osu.Desktop`.
+- **Learn from:** [EditorBeatmap.cs](https://github.com/ppy/osu/blob/master/osu.Game/Screens/Edit/EditorBeatmap.cs) coordinates note insertion, removal, update notifications and beat-grid snapping. [OsuHitWindows.cs](https://github.com/ppy/osu/blob/master/osu.Game.Rulesets.Osu/Scoring/OsuHitWindows.cs) maps difficulty to judgment windows. These offer focused entry points into an integrated rhythm-game editor and rules framework.
+- **License / contribution:** [MIT code](https://github.com/ppy/osu/blob/master/LICENCE); the separate [resource package](https://github.com/ppy/osu-resources/blob/master/README.md) is mostly CC BY-NC 4.0 with font exceptions. The upstream README rejects AI-assisted issues and pull requests.
+
+## Fish Folk: Jumpy
+
+- **Repository:** [fishfolk/jumpy](https://github.com/fishfolk/jumpy), reviewed on `main`.
+- **Game / stack:** A tactical 2D arena shooter built around movement, positioning and left/right aiming, with shared-screen and online multiplayer. Rust with Bones and its Bevy renderer, as shown in [Cargo.toml](https://github.com/fishfolk/jumpy/blob/main/Cargo.toml). Upstream labels its broader feature list work in progress.
+- **Start here:** The [README](https://github.com/fishfolk/jumpy/blob/main/README.md) links a browser demo and packaged releases and documents Rust installation followed by `cargo run` from the checkout. `cargo r --profile dev-optimized` enables the project's faster runtime development profile.
+- **Learn from:** [scoring.rs](https://github.com/fishfolk/jumpy/blob/main/src/ui/scoring.rs) connects match scores, tied/sole winners, player readiness and the transition back into play. It is useful for studying the often-overlooked flow between multiplayer rounds.
+- **License:** The [license file](https://github.com/fishfolk/jumpy/blob/main/LICENSE) offers MIT or Apache 2.0 for source code and CC BY-NC 4.0 for Fish Folk media assets.
+
+## BYTEPATH
+
+- **Repository:** [a327ex/BYTEPATH](https://github.com/a327ex/BYTEPATH), reviewed on `master`.
+- **Game / stack:** Arcade space shooter with a large skill tree, classes and ships for experimenting with builds. Lua and LÖVE; [conf.lua](https://github.com/a327ex/BYTEPATH/blob/master/conf.lua) declares the historical LÖVE 0.10.2 runtime.
+- **Start here:** The [README](https://github.com/a327ex/BYTEPATH/blob/master/README.md) links the released game and a complete development tutorial. Its documented Windows source launcher is `love/love.exe --console .`; it also links separate Linux adaptation notes.
+- **Learn from:** [Player.lua](https://github.com/a327ex/BYTEPATH/blob/master/objects/Player.lua) brings together movement, boost, ammunition, firing cooldowns and skill-derived modifiers. The repository also includes the tutorial's exercises and answers, making it useful for tracing how a small shooter grows into a progression-heavy game.
+- **License:** [MIT code](https://github.com/a327ex/BYTEPATH/blob/master/LICENSE); asset-specific licenses are linked from the game credits.
+
+## Mari0
+
+- **Repository:** [Stabyourself/mari0](https://github.com/Stabyourself/mari0), reviewed on `master`.
+- **Game / stack:** A 2D Mario/Portal crossover platformer with portal puzzles, four-player cooperative play, a level editor and downloadable map packs. Lua with LÖVE.
+- **Start here:** The [official game page](https://stabyourself.net/mari0/) links packaged downloads and explains its features. The current source [README](https://github.com/Stabyourself/mari0/blob/master/README.md) specifies LÖVE 11.4; [main.lua](https://github.com/Stabyourself/mari0/blob/master/main.lua) is the runtime entry point.
+- **Learn from:** [physics.lua](https://github.com/Stabyourself/mari0/blob/master/physics.lua) combines gravity, tile/object collision and portal traversal, including position and velocity transformations for different entry/exit orientations. It is a useful study of adding a new traversal mechanic to familiar platformer physics.
+- **License:** The README and `main.lua` declare MIT for the source. The game includes Mario/Portal-derived media; that code declaration is not a blanket asset-reuse license.
 
 This repository supplement is linked from the README; it is not part of the exported website catalog.
