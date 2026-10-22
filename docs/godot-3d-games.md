@@ -29,6 +29,7 @@ This repository research supplement is not yet included in GameMap’s exported 
 | [Dude Temple](#dude-temple) | First-person physics bowling, pin scoring, furniture unlocks and saved progress | Godot 4.6 .NET; Godot.NET.Sdk 4.6.0 targets net8.0 | Tagged Windows/Linux prototype; media provenance not exhaustively documented |
 | [DeepInTheWoods](#deepinthewoods) | First-person ritual-item search, stamina, pursuer avoidance and repeating objectives | Godot 3/GDScript; exact minor/patch unresolved | Released browser/Windows/Linux jam game; no source-to-build correspondence established |
 | [Plant Game](#plant-game) | Plant-form abilities, spatial platforming, key retrieval and return-home completion | Godot 4.2 C#; Godot.NET.Sdk 4.2.2 targets net6.0 | Author-listed Windows/Linux prototype; active raw Blender imports need attention |
+| [Brick Up](#brick-up) | First-person tower climbing, falling-block placement and crown/lava outcomes | Project and stock export workflow select Godot 4.3 | Released desktop jam game; build/source mapping and post-win replay remain unverified |
 
 For an additional source-only study, see [Isolith](#isolith). [Marble](#marble) and [Casino Defender](#casino-defender) are separated as reserve studies with unresolved setup or media-rights conditions.
 
@@ -43,6 +44,8 @@ For separately qualified prototypes, see [Open Street Kart](#open-street-kart) a
 [All Alone](#all-alone) is a separately qualified C# zombie-survival reserve: the source implements a full loss/retry loop, but intentionally omits audio and includes two apparently unused effect scenes with missing textures.
 
 [Open Shot Golf](#open-shot-golf) is a separately qualified driving-range simulation study, not full course golf. [Easy Flight](#easy-flight) adds an arcade-flight reserve with a concrete leftover-source defect, not a demonstrated runtime failure.
+
+[SuperTux 3D](#supertux-3d) is a released legacy exploration/collecting reserve: exact Godot minor, finite completion, and bundled font provenance remain unresolved.
 
 ## Tanks of Freedom II
 
@@ -400,6 +403,30 @@ These additional studies were checked on 2026-10-22. Placement recommends source
 - **Inspect the loop:** [BaseShip](https://github.com/PlayCode1/easy-flight/blob/dbd610dc3733c0d28ef86300284617ab465a9d95/Ship/BaseShip.cs) drives a RigidBody3D through spatial obstacles; [World](https://github.com/PlayCode1/easy-flight/blob/dbd610dc3733c0d28ef86300284617ab465a9d95/World/World.cs), [BaseBoss](https://github.com/PlayCode1/easy-flight/blob/dbd610dc3733c0d28ef86300284617ab465a9d95/Level/Boss/BaseBoss.cs) and [Player](https://github.com/PlayCode1/easy-flight/blob/dbd610dc3733c0d28ef86300284617ab465a9d95/Player.cs) connect distance goals, shooting, boss damage, upgrades, repeating stage 6, death and restart. A finite campaign ending is not asserted.
 - **Why reserve:** a leftover global [slicer script](https://github.com/PlayCode1/easy-flight/blob/dbd610dc3733c0d28ef86300284617ab465a9d95/Lib/ConcaveMeshSlicer.gd#L15) contains `SurfaceTool.new()s`; an [example controller](https://github.com/PlayCode1/easy-flight/blob/dbd610dc3733c0d28ef86300284617ab465a9d95/Lib/Concave/Player.gd) preloads an absent material. The played [ship effect](https://github.com/PlayCode1/easy-flight/blob/dbd610dc3733c0d28ef86300284617ab465a9d95/Ship/Effect/mesh_slicer.tscn) references another slicer copy without that typo, and inspected scenes do not reference the example controller. These are real source/editor caveats, not a measured import failure or proof that the published game fails.
 - **Reuse limits:** [MIT LICENSE](https://github.com/PlayCode1/easy-flight/blob/dbd610dc3733c0d28ef86300284617ab465a9d95/LICENSE) and [Unlicense LICENSE.md](https://github.com/PlayCode1/easy-flight/blob/dbd610dc3733c0d28ef86300284617ab465a9d95/LICENSE.md) coexist without explicit code/media allocation. Bundled slicer code resembles a separately MIT-licensed upstream project, but its exact derivation pin and complete sound/font provenance remain unresolved. Preserve notices and avoid inventing a deliberate dual-license or all-assets-public-domain claim.
+
+## Additional tower-climbing study
+
+These additional source studies were checked on 2026-10-22.
+
+### Brick Up
+
+[Brick Up](https://github.com/chybby/gmtkjam2024) is a released GMTK Jam 2024 first-person building/platforming game. Place falling blocks along two horizontal axes, climb the tower, replenish the block supply, and reach the crown.
+
+- **Play or obtain a build:** the [creator's page](https://chybby.itch.io/brick-up) lists version-50 Windows, macOS, and Linux downloads dated 2024-08-20. These were not downloaded or played. Source pin `948fdc41f625be81dc47c3003efc863465952e80` is not asserted to match them: at review, the mutable GitHub `latest` prerelease tag resolved to `d562bba09b09629379b61268ec766e4e6a58cee1`.
+- **Open the project:** [project.godot](https://github.com/chybby/gmtkjam2024/blob/948fdc41f625be81dc47c3003efc863465952e80/project.godot) and [CI](https://github.com/chybby/gmtkjam2024/blob/948fdc41f625be81dc47c3003efc863465952e80/.github/workflows/godot-ci.yml) select stock Godot 4.3. Blender importing is disabled and exported GLB models are supplied. No enabled editor add-on, native extension, C# tooling, submodule, or LFS attributes were found. This is static setup evidence, not a tested clean import.
+- **Inspect 3D implementation:** the [player](https://github.com/chybby/gmtkjam2024/blob/948fdc41f625be81dc47c3003efc863465952e80/scenes/game_objects/player/playerController.gd), [blocks](https://github.com/chybby/gmtkjam2024/blob/948fdc41f625be81dc47c3003efc863465952e80/scenes/game_objects/block/block.gd), and [world](https://github.com/chybby/gmtkjam2024/blob/948fdc41f625be81dc47c3003efc863465952e80/scenes/game_objects/world/world.gd) implement spatial traversal, falling/settling, replenishment, and height-triggered effects. [Crown](https://github.com/chybby/gmtkjam2024/blob/948fdc41f625be81dc47c3003efc863465952e80/scenes/game_objects/crown/crown.gd) and [main](https://github.com/chybby/gmtkjam2024/blob/948fdc41f625be81dc47c3003efc863465952e80/scenes/main/main.gd) connect victory, health-exhaustion loss, run statistics, chaos mode, and retry. The persistent win flag is not cleared in the inspected retry path, so clean post-win replay behavior is not established.
+- **Reuse limits:** the [root MIT license](https://github.com/chybby/gmtkjam2024/blob/948fdc41f625be81dc47c3003efc863465952e80/LICENSE) and publisher's code label are distinct from the bundled Titan One font's [OFL 1.1 notice](https://github.com/chybby/gmtkjam2024/blob/948fdc41f625be81dc47c3003efc863465952e80/resources/OFL.txt). The [README](https://github.com/chybby/gmtkjam2024/blob/948fdc41f625be81dc47c3003efc863465952e80/README.md) says the team made art, models, and audio during the jam; this is not an independent media-rights audit. Do not label the entire package MIT.
+
+## Legacy exploration reserve
+
+### SuperTux 3D
+
+[SuperTux 3D](https://github.com/edstoner/supertux_3d) is a released gravity-platforming exploration/collecting study. It is kept as a legacy reserve, not a verified finite campaign or a modern-engine recommendation.
+
+- **Play or obtain a build:** the [creator's page](https://edsmithy.itch.io/supertux-3d) lists a Linux ZIP and links this repository; the [README](https://github.com/edstoner/supertux_3d/blob/5d409c087d1c2e1db7026a5467bb2835c42f647e/README.md) links back. No download was fetched or played, and no correspondence to inspected source `5d409c087d1c2e1db7026a5467bb2835c42f647e` was established.
+- **Open the project:** [project.godot](https://github.com/edstoner/supertux_3d/blob/5d409c087d1c2e1db7026a5467bb2835c42f647e/project.godot) and its API types establish legacy Godot 3/GDScript; the exact minor/patch remains unresolved. The tree supplies model, texture, and audio resources, with no add-on, native-extension, submodule, LFS-attribute, or C# setup found. A clean import was not tested.
+- **Inspect 3D implementation:** the [player](https://github.com/edstoner/supertux_3d/blob/5d409c087d1c2e1db7026a5467bb2835c42f647e/tux.gd) uses raycasts and basis alignment for changing-gravity surfaces, jumps, ledge interactions, sliding, combat, and marble pickup. The [hub](https://github.com/edstoner/supertux_3d/blob/5d409c087d1c2e1db7026a5467bb2835c42f647e/gatelevel.tscn) connects three level portals; the [third level](https://github.com/edstoner/supertux_3d/blob/5d409c087d1c2e1db7026a5467bb2835c42f647e/gravitylevel3.tscn) provides spatial traversal and collecting content. [Globals](https://github.com/edstoner/supertux_3d/blob/5d409c087d1c2e1db7026a5467bb2835c42f647e/Globals.gd) saves marble state and elapsed time. A finite ending or death/retry loop was not established; lava knockback alone is not evidence of one.
+- **Reuse limits:** the [root license](https://github.com/edstoner/supertux_3d/blob/5d409c087d1c2e1db7026a5467bb2835c42f647e/LICENSE) is GPLv3 and the player header specifies GPL-3.0-or-later. The publisher labels assets CC BY-SA 4.0, but bundled Lacquer and Luckiest Guy fonts have no separate notices in the inspected tree. That general label does not independently clear every media file.
 
 ## Review scope
 
