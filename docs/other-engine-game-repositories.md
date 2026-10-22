@@ -1,6 +1,6 @@
 # Games and playable samples across additional engines
 
-Reviewed 2026-10-22. Five projects broaden the source-study collection across Foster, macroquad, Bevy, libGDX and Defold. Primary READMEs, selected gameplay source, manifests, licenses and play/download pages were inspected; no project was built or playtested.
+Reviewed 2026-10-22. Nine projects broaden the source-study collection across Foster, macroquad, Bevy, libGDX, Defold, MonoGame and Babylon.js. Primary READMEs, selected gameplay source, manifests, licenses and play/download pages were inspected; no project was built or playtested.
 
 ## Celeste 64: Fragments of the Mountain — Foster / C#
 
@@ -46,5 +46,40 @@ Reviewed 2026-10-22. Five projects broaden the source-study collection across Fo
 - Learning value: a concrete bridge from Defold collections, messages and collision objects to an interactive 3D scene. The detailed [README](https://github.com/defold/sample-third-person-playground/blob/master/README.md) maps the project and explains its input, pickup and rendering systems.
 - Run: open [game.project](https://github.com/defold/sample-third-person-playground/blob/master/game.project) in Defold and build/run through the editor; see the official [editor guide](https://defold.com/manuals/editor/). The README also provides the ready-to-play HTML5 build.
 - License: [MIT](https://github.com/defold/sample-third-person-playground/blob/master/LICENSE), with model, texture and sound creators credited in the README.
+
+## Arid Arnold — MonoGame / C#
+
+- Repository: [AugsEU/arid-arnold](https://github.com/AugsEU/arid-arnold), `master`; [author's downloads](https://icefish-software.itch.io/arid-arnold).
+- A released platform-puzzle adventure across nine worlds. Search for water while rotating the world, moving between past and future, and controlling Arnold alongside a clone. The author provides complete Windows and Linux builds.
+- Stack: C# / MonoGame DesktopGL 3.8.2 and .NET 8, from [AridArnold.csproj](https://github.com/AugsEU/arid-arnold/blob/master/AridArnold/AridArnold.csproj).
+- Read [Arnold.cs](https://github.com/AugsEU/arid-arnold/blob/master/AridArnold/Entity/Player/Arnold.cs) for gravity-relative input, time reversal and collisions; [CampaignManager.cs](https://github.com/AugsEU/arid-arnold/blob/master/AridArnold/Progress/CampaignManager.cs) connects hubs, level sequences, lives and saves. The author's [architecture document](https://github.com/AugsEU/arid-arnold/blob/master/Docs/Bible/Arid%20Arnold%20Bible-1.pdf) provides a broader view of the shipped game's systems.
+- Run: the [README](https://github.com/AugsEU/arid-arnold/blob/master/README.md) asks developers to install the Pixica, PixicaMicro and Doomed fonts in `Docs/Fonts`, then build `AridArnold.sln` with a MonoGame development environment. [BuildFlags.cs](https://github.com/AugsEU/arid-arnold/blob/master/AridArnold/BuildFlags.cs) currently enables `DEBUG_LOADER`; the README explains disabling it to start the normal game.
+- License: repository [MIT](https://github.com/AugsEU/arid-arnold/blob/master/LICENSE.txt).
+
+## Timelooper — Defold / Lua
+
+- Repository: [benjames-171/defold-games](https://github.com/benjames-171/defold-games), `master`; the selected [Timelooper project](https://github.com/benjames-171/defold-games/tree/master/Timelooper) is one game within this collection, counted once here. [Browser game and Windows download](https://benjames171.itch.io/timelooper).
+- A released six-level puzzle game: every ten seconds, a past self begins repeating the player's recorded actions. Use these copies to hold buttons and open doors, gather all gems and reach the exit, while avoiding contact with the copies. [Level data](https://github.com/benjames-171/defold-games/blob/master/Timelooper/main/data.lua) defines the six-stage progression.
+- Read [player.script](https://github.com/benjames-171/defold-games/blob/master/Timelooper/game/player/player.script) for recording movement/animation, spawning copies and handling death/completion; [past.script](https://github.com/benjames-171/defold-games/blob/master/Timelooper/game/player/past.script) replays the saved frames. A compact example of turning recorded player behavior into both a puzzle tool and a hazard.
+- Run: open [Timelooper/game.project](https://github.com/benjames-171/defold-games/blob/master/Timelooper/game.project) in Defold. The [collection README](https://github.com/benjames-171/defold-games/blob/master/README.md) specifies compatibility with Defold 1.9.1–1.12.4 and notes compatibility changes in 1.13.0; use its documented range for this source snapshot.
+- License: repository [MIT](https://github.com/benjames-171/defold-games/blob/master/LICENSE).
+
+## ALIENS! 2 — MonoGame / C#
+
+- Repository: [Vega-Boo/ALIENS2](https://github.com/Vega-Boo/ALIENS2), `main`; [author's game and source downloads](https://vegaboo.itch.io/aliens-2).
+- A released arcade planet-defense shooter. Fly around a planet, stop alien ships abducting colonists and build a high score. Successful abductions increase the invasion meter; reaching its limit ends the game.
+- Stack: C# / MonoGame DesktopGL 3.8.1 and .NET 6, from the [project file](https://github.com/Vega-Boo/ALIENS2/blob/main/ALIENS!%202/ALIENS!%202.csproj).
+- Read [Game1.cs](https://github.com/Vega-Boo/ALIENS2/blob/main/ALIENS!%202/Game1.cs) for scene changes, shooting, invasion state, game over and high scores; [NPCs.cs](https://github.com/Vega-Boo/ALIENS2/blob/main/ALIENS!%202/NPCs.cs) implements enemy approach, abduction and escape around the spherical playfield. Useful for studying a compact objective-defense loop.
+- Run: the [README](https://github.com/Vega-Boo/ALIENS2/blob/main/README.md) requires installing the included `Fonts`. Open the root `ALIENS! 2.sln` in a MonoGame development environment; the author's download notes describe the source setup.
+- License: repository [CC0-1.0](https://github.com/Vega-Boo/ALIENS2/blob/main/LICENSE); the author page separately labels code as Unlicense and permits commercial code use. External assets are credited in the README with their original sources.
+
+## Space Pirates — Babylon.js / TypeScript
+
+- Repository: [BabylonJS/SpacePirates](https://github.com/BabylonJS/SpacePirates), `master`; [official browser game](https://spacepirates.babylonjs.com/).
+- An archived playable sample created for the Babylon.js 5.0 launch. Pilot a ship against AI opponents using lasers and missiles. [Game.ts](https://github.com/BabylonJS/SpacePirates/blob/master/app_package/src/Playground/Game.ts) implements defeat when the player fleet is lost and victory when the opposing fleet is cleared.
+- Stack: TypeScript and Babylon.js 5.3, as recorded in [app_package/package.json](https://github.com/BabylonJS/SpacePirates/blob/master/app_package/package.json).
+- Read [Ship.ts](https://github.com/BabylonJS/SpacePirates/blob/master/app_package/src/Playground/Ship.ts) for player/AI ships, targeting, missile launch and collisions, then `Game.ts` for manager updates and result transitions. Useful for tracing an interactive combat loop through a Babylon rendering project.
+- Run: the [README](https://github.com/BabylonJS/SpacePirates/blob/master/README.md) documents `npm install`, `npm run dev` and `npm run build` at the repository root, plus copying `test_package/public/assets` into the build output for deployment.
+- License: repository [Apache 2.0](https://github.com/BabylonJS/SpacePirates/blob/master/licence.md).
 
 This repository supplement is linked from the README; it is not part of the exported website catalog.

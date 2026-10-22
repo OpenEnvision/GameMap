@@ -143,7 +143,7 @@ Official documentation, runnable examples, scripting interfaces, testing tools, 
 
 ### Browser graphics and game frameworks · 6 resources
 
-[Games across additional engines](docs/other-engine-game-repositories.md) adds five source studies using Foster, macroquad, Bevy, libGDX and Defold.
+[Games across additional engines](docs/other-engine-game-repositories.md) adds nine source studies using Foster, macroquad, Bevy, libGDX, Defold, MonoGame and Babylon.js.
 
 | Resource | Type | Purpose | Further reading |
 | --- | --- | --- | --- |
