@@ -473,7 +473,7 @@ The [downloadable level-design skill](skills/level-design.zip) is an unofficial 
 
 ## Playable games, official foundations and discovery collections
 
-**Additional source-study games:** [Small browser game repositories](docs/browser-game-repositories.md) — 2048, Hextris and A Dark Room, with gameplay source, entry points and licenses.
+**Additional source-study games:** [Browser game repositories](docs/browser-game-repositories.md) — six games spanning compact JavaScript, Phaser and PixiJS, with gameplay source, entry points and licenses.
 
 88 games with creator-documented AI involvement, plus three official foundation projects. Each entry connects the game’s context, gameplay and source; AI attribution follows the creator’s evidence.
 
