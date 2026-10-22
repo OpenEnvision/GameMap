@@ -243,6 +243,8 @@ Engine agent workflows, 3D asset generation, procedural scenes, and reconstructi
 
 ## Production, testing, and publishing · 23 resources
 
+[Engineering blogs and production tools](docs/game-development-blogs-and-tools.md) adds twenty-two references and tools for game programming, animation, graphics, levels, audio, accessibility, narrative and localization.
+
 Art, animation, audio, NPCs, levels, engineering tools, testing, accessibility, and game distribution.
 
 ### Art and motion assets · 3 resources
