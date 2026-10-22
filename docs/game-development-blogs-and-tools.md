@@ -1,6 +1,6 @@
 # Engineering blogs and production tools
 
-Primary sources reviewed on 2026-10-22. Eighteen resources cover algorithms, architecture, animation, graphics, asset workflows, level editing, audio and accessibility. Each provides a concrete starting point.
+Primary sources reviewed on 2026-10-22. Twenty-two resources cover algorithms, architecture, animation, graphics, asset workflows, level editing, audio, accessibility, game AI, narrative, save inspection and localization. Each provides a concrete starting point.
 
 ## Red Blob Games
 
@@ -141,5 +141,37 @@ Primary sources reviewed on 2026-10-22. Eighteen resources cover algorithms, arc
 - **Useful for:** Studying how terrain elevation, drainage, coastlines, settlement placement and political regions can build on shared map data.
 - **Start here:** In [terrain.js](https://github.com/mewo2/terrain/blob/master/terrain.js), `generateCoast` assembles and erodes the height field, `getRivers` follows downhill flow, `cityScore` combines river flux with settlement spacing, and `getTerritories` expands regions using terrain-dependent travel costs.
 - **Access / license:** MIT. The README identifies this as a finished reference project and lists its D3, priority-queue and language-generation dependencies.
+
+## Game AI Pro
+
+- **Type / workflow:** Practitioner-written chapters about game AI, edited by Steve Rabin; engine-independent explanations of decision making, movement, tactics and debugging.
+- **Official source:** [Game AI Pro](https://www.gameaipro.com/).
+- **Useful for:** Choosing meaningful inputs for NPC utility scoring and recording enough AI state to understand an incorrect decision after it happens.
+- **Start here:** Mike Lewis's [Choosing Effective Utility-Based Considerations](https://www.gameaipro.com/GameAIPro3/GameAIPro3_Chapter13_Choosing_Effective_Utility-Based_Considerations.pdf) uses tactical movement and skill selection to explain utility considerations. David Young's [Debugging AI with Instant In-Game Scrubbing](https://www.gameaipro.com/GameAIPro3/GameAIPro3_Chapter06_Debugging_AI_with_Instant_In-Game_Scrubbing.pdf) describes recording relevant data and stepping through previous frames with visual debugging tools.
+- **Access:** The official site provides free chapter downloads. The texts remain copyrighted rather than being openly licensed for republication.
+
+## Kaitai Struct
+
+- **Type / workflow:** Declarative binary-format descriptions and parser generation for languages including C++, C#, JavaScript, Lua and Python.
+- **Official source:** [Kaitai Struct](https://kaitai.io/).
+- **Useful for:** Inspecting a game's custom binary save, replay or asset format by describing fields, byte order, nested structures and repeated records, then generating a parser for development tools.
+- **Start here:** Follow the [user guide's workflow and format examples](https://doc.kaitai.io/user_guide.html), then load a binary file and its `.ksy` description into the [Web IDE](https://ide.kaitai.io/) to inspect how bytes map to fields. This is a format-description and parsing workflow; the schema supplies the meaning of the data.
+- **Access / license:** Free and open source. The compiler and visualizer use GPL-3.0-or-later; runtime libraries have separate permissive licenses, including MIT for C# and Python and Apache-2.0 for JavaScript. The [official licensing section](https://kaitai.io/#licensing) lists them.
+
+## articy:draft X
+
+- **Type / workflow:** Visual narrative-authoring application with branching flow diagrams, dialogue fragments, entities, templates and variables. Structured exports support custom engines as well as dedicated Unity and Unreal integrations.
+- **Official source:** [articy:draft X features](https://www.articy.com/en/articydraft/feature-list/).
+- **Useful for:** Keeping branching dialogue, character data and conditional story logic together, then exporting the authored content to the game's runtime.
+- **Start here:** Build a small dialogue flow with speaker-linked fragments and conditions, then use [Technical Exports](https://www.articy.com/en/articydraft/integration/techexports/) to choose JSON or XML for a custom-engine import. [Exporting data](https://articy.com/help/adx/Exports_General.html) explains how to export selected objects or filtered content.
+- **Access:** Commercial software with a free single-user tier limited to 700 objects per project. The [official FAQ](https://www.articy.com/en/support/frequently-asked-questions/) states that the free tier includes all exports and permits commercial use.
+
+## Weblate
+
+- **Type / workflow:** Repository-integrated localization platform for translation files such as PO and JSON; independent of the game engine.
+- **Official source:** [Weblate](https://weblate.org/en/).
+- **Useful for:** Translating menus and dialogue with screenshots, neighboring strings and glossaries for context, while checks help identify placeholder, markup and plural-form problems.
+- **Start here:** [Translating using Weblate](https://docs.weblate.org/en/latest/user/translating.html) covers translation context, screenshots, suggestions and checks. Match the game's string files against the [supported localization formats](https://docs.weblate.org/en/latest/formats.html) before connecting its repository.
+- **Access / license:** GPL-3.0-or-later, with free self-hosting and paid managed hosting. Eligible libre projects can request free hosting; the [official site](https://weblate.org/en/) describes the hosting options and the [license documentation](https://docs.weblate.org/en/latest/contributing/license.html) identifies the software license.
 
 This repository supplement is linked from the README; it is not part of the exported website catalog.
