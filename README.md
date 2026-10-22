@@ -112,6 +112,8 @@ From general coding agents, model integrations, and project instructions to MCP 
 
 ## Engines, documentation, and learning resources · 24 resources
 
+[Released games across Cocos2d-x, Axmol, AGS and Solarus](docs/less-common-engine-game-repositories.md) adds five source studies with gameplay files, version-matched launch instructions and code/content terms.
+
 Official documentation, runnable examples, scripting interfaces, testing tools, and community tutorials, organized by engine and creation tool.
 
 ### Godot · 5 resources
