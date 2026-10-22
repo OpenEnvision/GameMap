@@ -54,6 +54,7 @@ All **115 curated resources** are listed below. Longer companion catalogs are or
 | [Repository research](#repository-research) | 213 records | Game projects, agent harnesses, FPS projects, engine components, classic ports, and discovery lists. |
 | [Papers and research materials](#papers) | 483 records | Design, building, runtime systems, testing, playing, world modeling, and foundations. |
 | [Documentation and guides](#guides) | 66 pages | Practical guides, technical notes, production workflows, source records, and skill references. |
+| [Luanti game source studies](docs/luanti-game-repositories.md) | 3 games | Survival processing, world-based crafting and optical machines, and an authored platform adventure. |
 
 Counts describe entries in each collection; a project can appear in more than one. Resource types follow the website's labels, including agents, frameworks, tools, documentation, skills, benchmarks, papers, and community resources. The documentation catalog includes the original Chinese-language guides, identified in their titles.
 
