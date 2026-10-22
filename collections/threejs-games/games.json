@@ -6620,6 +6620,519 @@
         "README lists mobile gravity-sensor failures, blocked autoplay, landscape-lock and screen-awake issues; present-day behavior was not retested.",
         "User-supplied face images and other bundled media need their own rights review; no image or permission prompt was used here."
       ]
+    },
+    {
+      "id": "chess-3d-terminats",
+      "name": "Chess-3D (Terminats)",
+      "repository_url": "https://github.com/Terminats/chess-3d",
+      "genres": [
+        "chess",
+        "board-game",
+        "strategy"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.143.0",
+        "render_evidence": {
+          "url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/src/game/Game.ts#L38",
+          "claim": "Imports Three.js WebGLRenderer directly; project-local ChessScene/BasicScene classes render the board and src/index.ts drives requestAnimationFrame."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/package.json",
+            "dependencies": {
+              "cannon-es": "0.19.0",
+              "cannon-es-debugger": "1.0.0",
+              "chess.js": "0.13.4",
+              "express": "4.18.1",
+              "lodash.clonedeep": "4.5.0",
+              "three": "0.143.0",
+              "web-worker": "1.2.0"
+            },
+            "dev_dependencies": {
+              "@commitlint/cli": "17.0.3",
+              "@commitlint/config-conventional": "17.0.3",
+              "@types/chess.js": "0.13.3",
+              "@types/lodash.clonedeep": "4.5.7",
+              "@types/three": "0.143.0",
+              "@typescript-eslint/eslint-plugin": "5.32.0",
+              "@typescript-eslint/parser": "5.32.0",
+              "copy-webpack-plugin": "11.0.0",
+              "cssnano": "5.1.13",
+              "eslint": "8.21.0",
+              "eslint-plugin-prettier": "4.2.1",
+              "husky": "8.0.1",
+              "lint-staged": "13.0.3",
+              "postcss": "8.4.16",
+              "postcss-cli": "10.0.0",
+              "prettier": "2.7.1",
+              "ts-loader": "9.3.1",
+              "ts-node": "10.9.1",
+              "webpack": "5.74.0",
+              "webpack-cli": "4.10.0",
+              "webpack-dev-server": "4.9.3"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Cannon-es 0.19.0 physics, chess.js 0.13.4 rules, GLTFLoader, minimax/alpha-beta web-worker AI; TypeScript/Webpack and Express hosting. Full npm manifest is recorded."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/src/logic/ChessGameEngine/ChessGameEngine.ts#L107",
+        "claim": "Applies player and worker-AI moves through chess.js, checks game_over after each side and dispatches checkmate/draw results and restart."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT",
+        "source_url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/LICENSE.MD",
+        "additional_notices": [],
+        "notes": "Root MIT code license verified. Third-party dependencies/media may have separate terms; not every model, font, texture or transitive dependency was independently audited."
+      },
+      "demo": {
+        "url": "https://chess-3d-mja9.vercel.app/",
+        "status": "reader-error",
+        "checked_at": "2026-10-22",
+        "source_url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/README.md",
+        "notes": "Pinned README links this game URL. The text reader could not retrieve it; no match, save, room, chat or score action was executed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/README.md",
+        "notes": "Version 1.0.0; README links a deployed game and source implements terminal chess results and restart."
+      },
+      "verification": {
+        "date": "2026-10-22",
+        "source_commit": "7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-008.md#chess-3d-terminats",
+        "reviewed_files": [
+          {
+            "path": "LICENSE.MD",
+            "url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/LICENSE.MD"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/package.json"
+          },
+          {
+            "path": "src/game/Game.ts",
+            "url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/src/game/Game.ts"
+          },
+          {
+            "path": "src/index.ts",
+            "url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/src/index.ts"
+          },
+          {
+            "path": "src/logic/ChessAi/ChessAi.ts",
+            "url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/src/logic/ChessAi/ChessAi.ts"
+          },
+          {
+            "path": "src/logic/ChessGameEngine/ChessGameEngine.ts",
+            "url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/src/logic/ChessGameEngine/ChessGameEngine.ts"
+          },
+          {
+            "path": "src/scenes/BasicScene/BasicScene.ts",
+            "url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/src/scenes/BasicScene/BasicScene.ts"
+          },
+          {
+            "path": "src/scenes/ChessScene/ChessScene.ts",
+            "url": "https://github.com/Terminats/chess-3d/blob/7099a73a5ed5e4eef49ef5c39e5004451b0ab1d8/src/scenes/ChessScene/ChessScene.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Board rules are planar despite 3D pieces/camera/physics; this is a 3d-board entry.",
+        "Manifest pins Node 16.4.2 and older libraries; compatibility, AI strength and rule conformance were not tested.",
+        "README says the author created the Blender models; this is not an independent asset-provenance audit."
+      ]
+    },
+    {
+      "id": "chinese-chess",
+      "name": "Chinese Chess — Three.js 3D",
+      "repository_url": "https://github.com/doggy8088/chinese-chess",
+      "genres": [
+        "xiangqi",
+        "board-game",
+        "strategy"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 CDN",
+        "render_evidence": {
+          "url": "https://github.com/doggy8088/chinese-chess/blob/3c32dbae23e5b7c7b256b446837bcf4ae8e03bfe/main.js#L25",
+          "claim": "Imports Three.js and creates Scene/WebGLRenderer/OrbitControls directly; index.html pins the Three.js import map."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Native ES modules, Three.js/OrbitControls CDN, CanvasTexture-generated labels, Web Audio, localStorage settings and local worker AI; no npm manifest in the reviewed tree."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/doggy8088/chinese-chess/blob/3c32dbae23e5b7c7b256b446837bcf4ae8e03bfe/main.js#L699",
+        "claim": "After each move, checks legal replies, checkmate/stalemate and repetition verdicts, assigns a winner or draw and displays game-over."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT",
+        "source_url": "https://github.com/doggy8088/chinese-chess/blob/3c32dbae23e5b7c7b256b446837bcf4ae8e03bfe/LICENSE",
+        "additional_notices": [],
+        "notes": "Root MIT code license verified. Third-party dependencies/media may have separate terms; not every model, font, texture or transitive dependency was independently audited."
+      },
+      "demo": {
+        "url": "https://chinese-chess.gh.miniasp.com",
+        "status": "reader-error",
+        "checked_at": "2026-10-22",
+        "source_url": "https://github.com/doggy8088/chinese-chess/blob/3c32dbae23e5b7c7b256b446837bcf4ae8e03bfe/README.md",
+        "notes": "Pinned README links this game URL. The text reader could not retrieve it; no match, save, room, chat or score action was executed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/doggy8088/chinese-chess/blob/3c32dbae23e5b7c7b256b446837bcf4ae8e03bfe/README.md",
+        "notes": "Source implements local AI/hotseat play, rules, terminal positions, repetition, undo/new-game and results."
+      },
+      "verification": {
+        "date": "2026-10-22",
+        "source_commit": "3c32dbae23e5b7c7b256b446837bcf4ae8e03bfe",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-008.md#chinese-chess",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/doggy8088/chinese-chess/blob/3c32dbae23e5b7c7b256b446837bcf4ae8e03bfe/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/doggy8088/chinese-chess/blob/3c32dbae23e5b7c7b256b446837bcf4ae8e03bfe/README.md"
+          },
+          {
+            "path": "ai.js",
+            "url": "https://github.com/doggy8088/chinese-chess/blob/3c32dbae23e5b7c7b256b446837bcf4ae8e03bfe/ai.js"
+          },
+          {
+            "path": "game.js",
+            "url": "https://github.com/doggy8088/chinese-chess/blob/3c32dbae23e5b7c7b256b446837bcf4ae8e03bfe/game.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/doggy8088/chinese-chess/blob/3c32dbae23e5b7c7b256b446837bcf4ae8e03bfe/index.html"
+          },
+          {
+            "path": "main.js",
+            "url": "https://github.com/doggy8088/chinese-chess/blob/3c32dbae23e5b7c7b256b446837bcf4ae8e03bfe/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This is a 3D-rendered board with planar xiangqi rules, not spatial movement.",
+        "AI difficulty, rule/repetition conformance and author test reports were not independently tested.",
+        "README documents AI-assisted development; dependency/media provenance was not exhaustively audited."
+      ]
+    },
+    {
+      "id": "gomoku-five-chess-game",
+      "name": "Gomoku / Renju (Will)",
+      "repository_url": "https://github.com/doggy8088/five-chess-game",
+      "genres": [
+        "gomoku",
+        "renju",
+        "board-game",
+        "strategy"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 CDN",
+        "render_evidence": {
+          "url": "https://github.com/doggy8088/five-chess-game/blob/2431fad3a5c0029d0cb4390bb6d5099cdeac7ce5/app.js#L174",
+          "claim": "Constructs Three.js WebGLRenderer/Scene/Camera directly. Initialization prefers the 3D board when Three loads and falls back to 2D Canvas if it does not."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/doggy8088/five-chess-game/blob/2431fad3a5c0029d0cb4390bb6d5099cdeac7ce5/package.json",
+            "dependencies": {
+              "@google-cloud/firestore": "^9.0.0",
+              "express": "^5.2.1",
+              "qrcode": "^1.5.4",
+              "ws": "^8.21.3"
+            },
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js is the rendering CDN; local JavaScript supplies rules/AI and browser storage/audio. npm Firestore, Express, QRCode and ws dependencies support optional online/server features."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/doggy8088/five-chess-game/blob/2431fad3a5c0029d0cb4390bb6d5099cdeac7ce5/game.js#L876",
+        "claim": "Places legal stones, detects winning lines, variant-specific forbidden moves and board draws; app.js drives AI/local play and result statistics."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT",
+        "source_url": "https://github.com/doggy8088/five-chess-game/blob/2431fad3a5c0029d0cb4390bb6d5099cdeac7ce5/LICENSE",
+        "additional_notices": [],
+        "notes": "Root MIT code license verified. Third-party dependencies/media may have separate terms; not every model, font, texture or transitive dependency was independently audited."
+      },
+      "demo": {
+        "url": "https://gomoku.game.miniasp.com/",
+        "status": "reader-error",
+        "checked_at": "2026-10-22",
+        "source_url": "https://github.com/doggy8088/five-chess-game/blob/2431fad3a5c0029d0cb4390bb6d5099cdeac7ce5/README.md",
+        "notes": "Pinned README links this game URL. The text reader could not retrieve it; no match, save, room, chat or score action was executed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/doggy8088/five-chess-game/blob/2431fad3a5c0029d0cb4390bb6d5099cdeac7ce5/README.md",
+        "notes": "Version 0.3.9; source implements results, statistics, local/AI matches and optional online adapters. The interactive 3D entry is indexed."
+      },
+      "verification": {
+        "date": "2026-10-22",
+        "source_commit": "2431fad3a5c0029d0cb4390bb6d5099cdeac7ce5",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-008.md#gomoku-five-chess-game",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/doggy8088/five-chess-game/blob/2431fad3a5c0029d0cb4390bb6d5099cdeac7ce5/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/doggy8088/five-chess-game/blob/2431fad3a5c0029d0cb4390bb6d5099cdeac7ce5/README.md"
+          },
+          {
+            "path": "app.js",
+            "url": "https://github.com/doggy8088/five-chess-game/blob/2431fad3a5c0029d0cb4390bb6d5099cdeac7ce5/app.js"
+          },
+          {
+            "path": "game.js",
+            "url": "https://github.com/doggy8088/five-chess-game/blob/2431fad3a5c0029d0cb4390bb6d5099cdeac7ce5/game.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/doggy8088/five-chess-game/blob/2431fad3a5c0029d0cb4390bb6d5099cdeac7ce5/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/doggy8088/five-chess-game/blob/2431fad3a5c0029d0cb4390bb6d5099cdeac7ce5/package.json"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "A 3D board with a 2D failure fallback; this entry covers the direct Three.js rendering path.",
+        "Renju variants/first-foul behavior, AI strength, reconnect state and upstream tests were not independently verified.",
+        "Optional online rooms need a Node relay and optional Firestore deployment; no cloud project or paid resource was used."
+      ]
+    },
+    {
+      "id": "four-ball-billiards-web",
+      "name": "Four-ball Billiards — Web Client",
+      "repository_url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS",
+      "genres": [
+        "sports",
+        "billiards",
+        "carom",
+        "physics"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.162.0 CDN",
+        "render_evidence": {
+          "url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS/blob/036052d6edc05122f7806ac0f38e3c9ed7213801/static/app.js#L44",
+          "claim": "Directly imports Three.js/OrbitControls and constructs Scene/WebGLRenderer; the HTML import map pins Three 0.162.0 and ball state arrives over WebSocket."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Web target: FastAPI >=0.104, uvicorn[standard] >=0.24 and unpinned NumPy in requirements_web.txt. controller.py/physics.py use Python/NumPy for rules and physics.",
+          "server.py replaces the repository's separate desktop Ursina display layer; the reviewed web imports do not depend on Ursina. Three.js is the browser renderer."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS/blob/036052d6edc05122f7806ac0f38e3c9ed7213801/controller.py#L545",
+        "claim": "Scores a carom for touching both red balls without a foul, switches player/AI turns on misses and ends the game at ten points."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT",
+        "source_url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS/blob/036052d6edc05122f7806ac0f38e3c9ed7213801/LICENSE",
+        "additional_notices": [],
+        "notes": "Root MIT code license verified. Third-party dependencies/media may have separate terms; not every model, font, texture or transitive dependency was independently audited."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-22",
+        "source_url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS/blob/036052d6edc05122f7806ac0f38e3c9ed7213801/README.md",
+        "notes": "README documents localhost:8000 setup but no confirmed public demo. No hosted URL was guessed or server started."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS/blob/036052d6edc05122f7806ac0f38e3c9ed7213801/README.md",
+        "notes": "README and controller implement player-versus-AI first-to-ten play alongside practice and a headless API."
+      },
+      "verification": {
+        "date": "2026-10-22",
+        "source_commit": "036052d6edc05122f7806ac0f38e3c9ed7213801",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-008.md#four-ball-billiards-web",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS/blob/036052d6edc05122f7806ac0f38e3c9ed7213801/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS/blob/036052d6edc05122f7806ac0f38e3c9ed7213801/README.md"
+          },
+          {
+            "path": "controller.py",
+            "url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS/blob/036052d6edc05122f7806ac0f38e3c9ed7213801/controller.py"
+          },
+          {
+            "path": "physics.py",
+            "url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS/blob/036052d6edc05122f7806ac0f38e3c9ed7213801/physics.py"
+          },
+          {
+            "path": "requirements_web.txt",
+            "url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS/blob/036052d6edc05122f7806ac0f38e3c9ed7213801/requirements_web.txt"
+          },
+          {
+            "path": "server.py",
+            "url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS/blob/036052d6edc05122f7806ac0f38e3c9ed7213801/server.py"
+          },
+          {
+            "path": "static/app.js",
+            "url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS/blob/036052d6edc05122f7806ac0f38e3c9ed7213801/static/app.js"
+          },
+          {
+            "path": "static/index.html",
+            "url": "https://github.com/skoo1/Four-Ball_Billiards_ThreeJS/blob/036052d6edc05122f7806ac0f38e3c9ed7213801/static/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Requires the Python/WebSocket server; static HTML alone is not the complete game.",
+        "Repository also has a separate Ursina desktop client. This entry is specifically the direct Three.js/FastAPI web target.",
+        "Physics realism, AI shots, shot-script runner and backend APIs were not tested; dependency versions are partly unconstrained."
+      ]
+    },
+    {
+      "id": "los-polos-pirates",
+      "name": "Los Polos Pirates / Kalózok",
+      "repository_url": "https://github.com/lospolosadwords-dev/kalozok",
+      "genres": [
+        "sailing",
+        "action",
+        "trading",
+        "pirates",
+        "multiplayer"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 CDN",
+        "render_evidence": {
+          "url": "https://github.com/lospolosadwords-dev/kalozok/blob/52a5d7f6a77700b26a2af8b9ebd507bfe247ae17/index.html#L823",
+          "claim": "Directly constructs Three.js Scene/WebGLRenderer and renders in its own requestAnimationFrame loop, with Three example water/sky/post-processing utilities."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Single HTML entry, Three.js r128 CDN, Three example GLTF/Water/Sky/post-processing helpers, native Web Audio and optional WebSocket multiplayer relay."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or other replacement renderer was identified in the reviewed manifests, script entrypoints and renderer path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/lospolosadwords-dev/kalozok/blob/52a5d7f6a77700b26a2af8b9ebd507bfe247ae17/index.html#L1643",
+        "claim": "Kraken damage/defeat drives boss rewards and progression; other runtime paths implement ship damage, sinking/respawn, port trading, crew and combat."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT",
+        "source_url": "https://github.com/lospolosadwords-dev/kalozok/blob/52a5d7f6a77700b26a2af8b9ebd507bfe247ae17/LICENSE",
+        "additional_notices": [
+          "https://github.com/lospolosadwords-dev/kalozok/blob/52a5d7f6a77700b26a2af8b9ebd507bfe247ae17/NOTICE.md",
+          "https://github.com/lospolosadwords-dev/kalozok/blob/52a5d7f6a77700b26a2af8b9ebd507bfe247ae17/ASSETS.md"
+        ],
+        "notes": "MIT code. Author NOTICE.md/ASSETS.md attribute repository models/textures to CC0 sources, keep Three example code/water normals MIT, and state generated portraits are CC0. These scoped notices are not an independent audit of every original source or deployed asset."
+      },
+      "demo": {
+        "url": "https://skynet.lospolo.hu/kalozok/?lang=en",
+        "status": "reader-error",
+        "checked_at": "2026-10-22",
+        "source_url": "https://github.com/lospolosadwords-dev/kalozok/blob/52a5d7f6a77700b26a2af8b9ebd507bfe247ae17/README.md",
+        "notes": "Pinned README links this game URL. The text reader could not retrieve it; no match, save, room, chat or score action was executed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/lospolosadwords-dev/kalozok/blob/52a5d7f6a77700b26a2af8b9ebd507bfe247ae17/README.md",
+        "notes": "Source includes open-world sailing/combat/economy and a boss-defeat/reward path; README links a published play URL."
+      },
+      "verification": {
+        "date": "2026-10-22",
+        "source_commit": "52a5d7f6a77700b26a2af8b9ebd507bfe247ae17",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-008.md#los-polos-pirates",
+        "reviewed_files": [
+          {
+            "path": "ASSETS.md",
+            "url": "https://github.com/lospolosadwords-dev/kalozok/blob/52a5d7f6a77700b26a2af8b9ebd507bfe247ae17/ASSETS.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/lospolosadwords-dev/kalozok/blob/52a5d7f6a77700b26a2af8b9ebd507bfe247ae17/LICENSE"
+          },
+          {
+            "path": "NOTICE.md",
+            "url": "https://github.com/lospolosadwords-dev/kalozok/blob/52a5d7f6a77700b26a2af8b9ebd507bfe247ae17/NOTICE.md"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/lospolosadwords-dev/kalozok/blob/52a5d7f6a77700b26a2af8b9ebd507bfe247ae17/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/lospolosadwords-dev/kalozok/blob/52a5d7f6a77700b26a2af8b9ebd507bfe247ae17/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Ship navigation is mainly on the sea plane in a 3D-rendered world; the dimension label does not imply free 3D motion.",
+        "Author says internal builds contained colleague photographs and documents repository cleanup; deployed media were not compared against this pinned source.",
+        "Relay availability, multiplayer synchronization, balance and original asset-source terms were not independently tested."
+      ]
     }
   ]
 }

@@ -221,6 +221,49 @@
         "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/Gameplay.js#L1",
         "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/audio/LICENSE"
       ]
+    },
+    {
+      "id": "chess-drobenyuka",
+      "repository_url": "https://github.com/DrobenyukA/chess",
+      "status": "excluded",
+      "checked_at": "2026-10-22",
+      "source_commit": "9767671ec3e75962a4b8a88dc42573d0bd101bde",
+      "reason": "The MIT repository declares @react-three/fiber and @react-three/drei runtime dependencies, outside the direct Three.js boundary.",
+      "next_action": "Reconsider only for an explicitly broader R3F collection; do not count as direct rendering.",
+      "evidence_urls": [
+        "https://github.com/DrobenyukA/chess/blob/9767671ec3e75962a4b8a88dc42573d0bd101bde/package.json",
+        "https://github.com/DrobenyukA/chess/blob/9767671ec3e75962a4b8a88dc42573d0bd101bde/LICENSE"
+      ]
+    },
+    {
+      "id": "raonautica",
+      "repository_url": "https://github.com/albusdemens/Raonautica",
+      "status": "pending",
+      "checked_at": "2026-10-22",
+      "source_commit": "4ea544d899ffb7447a83e83feaf859026415c1da",
+      "reason": "The primary README describes a Godot 4 model-agent experiment with no human player and a model API key requirement. A Three.js web subtree exists but is not verified as a standalone qualifying game.",
+      "next_action": "Review the separate web target's objective and rendering path without invoking paid model services.",
+      "evidence_urls": [
+        "https://github.com/albusdemens/Raonautica/blob/4ea544d899ffb7447a83e83feaf859026415c1da/README.md",
+        "https://github.com/albusdemens/Raonautica/blob/4ea544d899ffb7447a83e83feaf859026415c1da/package.json",
+        "https://github.com/albusdemens/Raonautica/blob/4ea544d899ffb7447a83e83feaf859026415c1da/LICENSE"
+      ]
+    },
+    {
+      "id": "windsurf-simulator",
+      "repository_url": "https://github.com/viachm/windsurf-simulator",
+      "status": "pending",
+      "checked_at": "2026-10-22",
+      "source_commit": "770eb3be81b39519801c16b6e5c4de63d923f860",
+      "reason": "MIT/direct Three.js source exists, but reviewed code is a free-sailing learning simulation with capsize/recovery; a race, finite objective or progression game loop was not established.",
+      "next_action": "Find an authored challenge/goal mode or explicit scope authorization for training/free-simulation toys before promotion.",
+      "evidence_urls": [
+        "https://github.com/viachm/windsurf-simulator/blob/770eb3be81b39519801c16b6e5c4de63d923f860/README.md",
+        "https://github.com/viachm/windsurf-simulator/blob/770eb3be81b39519801c16b6e5c4de63d923f860/LICENSE",
+        "https://github.com/viachm/windsurf-simulator/blob/770eb3be81b39519801c16b6e5c4de63d923f860/site/src/world.js",
+        "https://github.com/viachm/windsurf-simulator/blob/770eb3be81b39519801c16b6e5c4de63d923f860/site/src/sim.js",
+        "https://github.com/viachm/windsurf-simulator/blob/770eb3be81b39519801c16b6e5c4de63d923f860/site/src/main.js"
+      ]
     }
   ]
 }
