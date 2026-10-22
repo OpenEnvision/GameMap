@@ -56,20 +56,6 @@
       ]
     },
     {
-      "id": "orbit-golf",
-      "repository_url": "https://github.com/ronpicard/orbit-golf",
-      "status": "pending",
-      "checked_at": "2026-10-21",
-      "source_commit": "c854d9829da8828d2a35f7c15c4dfbd51a6ebd73",
-      "reason": "README and manifest describe plain Three.js plus React DOM UI; full renderer/physics integration review is in progress.",
-      "next_action": "Finish renderer construction, game outcomes, license and demo checks; React alone is not an exclusion.",
-      "evidence_urls": [
-        "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/README.md",
-        "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/package.json",
-        "https://github.com/ronpicard/orbit-golf/blob/c854d9829da8828d2a35f7c15c4dfbd51a6ebd73/src/render/Engine.ts"
-      ]
-    },
-    {
       "id": "sky-force",
       "repository_url": "https://github.com/pixel-z/Sky-Force",
       "status": "pending",
@@ -83,42 +69,157 @@
       ]
     },
     {
-      "id": "apex-formula-2026",
-      "repository_url": "https://github.com/ahacker-1/apex-formula-2026",
+      "id": "trigger-rally",
+      "repository_url": "https://github.com/CodeArtemis/TriggerRally",
       "status": "pending",
       "checked_at": "2026-10-21",
-      "source_commit": "410198faf310fe3376b07f2415083df8b146fff1",
-      "reason": "README, manifest and source tree found; renderer/gameplay paths and third-party notices still need direct review.",
-      "next_action": "Review js/main.js, js/race.js, LICENSE, THIRD_PARTY_NOTICES.md and the author demo.",
+      "source_commit": "079ac53216b74598b652ce3bf11478beb5c6832b",
+      "reason": "LICENSE.md grants GPL v3 for source but restricts modification/redistribution of Content without a separate license.",
+      "next_action": "Treat as restricted-assets research, not a fully open game package; verify the current direct renderer and asset separation before any promotion.",
       "evidence_urls": [
-        "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/README.md",
-        "https://github.com/ahacker-1/apex-formula-2026/blob/410198faf310fe3376b07f2415083df8b146fff1/package.json"
+        "https://github.com/CodeArtemis/TriggerRally/blob/079ac53216b74598b652ce3bf11478beb5c6832b/README.md",
+        "https://github.com/CodeArtemis/TriggerRally/blob/079ac53216b74598b652ce3bf11478beb5c6832b/LICENSE.md"
       ]
     },
     {
-      "id": "tower-of-hanoi-3d",
-      "repository_url": "https://github.com/anisches/towerofHanoi",
+      "id": "lba2-remake",
+      "repository_url": "https://github.com/LBALab/lba2remake",
       "status": "pending",
       "checked_at": "2026-10-21",
-      "source_commit": "bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80",
-      "reason": "MIT and a Three.js-only runtime manifest found; renderer and victory logic still need direct review.",
-      "next_action": "Inspect src/main.js for WebGPURenderer and checkWin, then check the author-linked demo.",
+      "source_commit": "db54f5de071354939a8b02e71e47c53343ab6ee5",
+      "reason": "MIT covers reimplementation code; README requires owning an original game and says original executable/assets/IP belong to its rights holder.",
+      "next_action": "Keep in restricted-assets research and inspect current gameplay/renderer completeness; do not claim the commercial assets are MIT.",
       "evidence_urls": [
-        "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/README.md",
-        "https://github.com/anisches/towerofHanoi/blob/bbcb622aeb8598f5eab83a47e4c8b42fb00b3e80/package.json"
+        "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/README.md",
+        "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/LICENSE"
       ]
     },
     {
-      "id": "neon-doom-pit",
-      "repository_url": "https://github.com/PaulAtkins88/neon-doom-pit",
+      "id": "gorescript-classic",
+      "repository_url": "https://github.com/gorescript/gorescript",
+      "status": "excluded",
+      "checked_at": "2026-10-21",
+      "source_commit": "e3adca28228eb862ba9392e1af67087bc189cadc",
+      "reason": "Upstream README explicitly describes a 2.5D FPS, outside the strict full-3D game scope for this index.",
+      "next_action": "Retain the scope exclusion unless the user requests a separate 2.5D collection.",
+      "evidence_urls": [
+        "https://github.com/gorescript/gorescript/blob/e3adca28228eb862ba9392e1af67087bc189cadc/README.md",
+        "https://github.com/gorescript/gorescript/blob/e3adca28228eb862ba9392e1af67087bc189cadc/LICENSE.txt"
+      ]
+    },
+    {
+      "id": "moonshard-warden",
+      "repository_url": "https://github.com/euuuuuuan/moonshard-warden-public",
       "status": "pending",
       "checked_at": "2026-10-21",
-      "source_commit": "83ce2aa21bfe329f26eb8ddc68742fcd78b8f830",
-      "reason": "README and web/workspace manifests found; direct rendering, three-wave loop and asset notices still need review.",
-      "next_action": "Inspect core Game and WaveSystem, verify code/asset license scope, then check single-player demo limitations.",
+      "source_commit": "897d26af64aab4003b057b3910a7118279b927d8",
+      "reason": "Direct Three.js rendering and Apache-2.0 source are established, but effective CREDITS.md limits project-created runtime geometry/art/audio and captures to a With the project only tier; Apache applies to source only. Third-party media are separately CC0/OFL.",
+      "next_action": "Keep as explicit code-open/restricted-media research rather than a fully open game package; preserve the effective CREDITS override and resolve the intended asset-scope category before promotion.",
       "evidence_urls": [
-        "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/README.md",
-        "https://github.com/PaulAtkins88/neon-doom-pit/blob/83ce2aa21bfe329f26eb8ddc68742fcd78b8f830/apps/web/package.json"
+        "https://github.com/euuuuuuan/moonshard-warden-public/blob/897d26af64aab4003b057b3910a7118279b927d8/README.md",
+        "https://github.com/euuuuuuan/moonshard-warden-public/blob/897d26af64aab4003b057b3910a7118279b927d8/LICENSE",
+        "https://github.com/euuuuuuan/moonshard-warden-public/blob/897d26af64aab4003b057b3910a7118279b927d8/CREDITS.md",
+        "https://github.com/euuuuuuan/moonshard-warden-public/blob/897d26af64aab4003b057b3910a7118279b927d8/LICENSES.md",
+        "https://github.com/euuuuuuan/moonshard-warden-public/blob/897d26af64aab4003b057b3910a7118279b927d8/src/game/game.js",
+        "https://github.com/euuuuuuan/moonshard-warden-public/blob/897d26af64aab4003b057b3910a7118279b927d8/app/page.jsx"
+      ]
+    },
+    {
+      "id": "platforms",
+      "repository_url": "https://github.com/matthias-schuetz/webgl-platforms-game",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "ba0626b28eb0c9368ee0c0d26c17c1613cec0201",
+      "reason": "README explicitly says the game is based on the THREE.BasicThirdPersonGame micro-framework, even though Three.js is its render core.",
+      "next_action": "Keep outside the strict direct/no-game-framework list until the framework boundary is resolved; do not silently call it plain Three.js.",
+      "evidence_urls": [
+        "https://github.com/matthias-schuetz/webgl-platforms-game/blob/ba0626b28eb0c9368ee0c0d26c17c1613cec0201/README.md",
+        "https://github.com/matthias-schuetz/webgl-platforms-game/blob/ba0626b28eb0c9368ee0c0d26c17c1613cec0201/LICENSE",
+        "https://github.com/matthias-schuetz/webgl-platforms-game/blob/ba0626b28eb0c9368ee0c0d26c17c1613cec0201/package.json"
+      ]
+    },
+    {
+      "id": "aiba-percent-battle",
+      "repository_url": "https://github.com/opstiger/aiba-percent-battle",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "e1e0500d84b29959775b0806a12f4c39c7269897",
+      "reason": "MIT covers source only. NOTICE reserves all rights in audio, models, face textures, logos, covers and promotional images and requires permission to redistribute those media.",
+      "next_action": "Retain only as restricted-assets research; do not present the complete game package as openly redistributable.",
+      "evidence_urls": [
+        "https://github.com/opstiger/aiba-percent-battle/blob/e1e0500d84b29959775b0806a12f4c39c7269897/README.md",
+        "https://github.com/opstiger/aiba-percent-battle/blob/e1e0500d84b29959775b0806a12f4c39c7269897/LICENSE",
+        "https://github.com/opstiger/aiba-percent-battle/blob/e1e0500d84b29959775b0806a12f4c39c7269897/NOTICE"
+      ]
+    },
+    {
+      "id": "floppy-defense-mirror",
+      "repository_url": "https://github.com/showtimez/floppy-defense",
+      "status": "excluded",
+      "checked_at": "2026-10-21",
+      "source_commit": "49f5346f6cb7e2247a6cf71d7a4d5f2027cd3183",
+      "reason": "Mirror of N-THEM-Studio/floppy-defense: README, LICENSE and the reviewed src/main.js, src/render/renderer.js and src/core/loop.js blob hashes match. Count the canonical game once.",
+      "next_action": "Use N-THEM-Studio/floppy-defense as the catalog repository. Reconsider this fork only with evidence of a distinct game.",
+      "evidence_urls": [
+        "https://github.com/showtimez/floppy-defense/blob/49f5346f6cb7e2247a6cf71d7a4d5f2027cd3183/README.md",
+        "https://github.com/showtimez/floppy-defense/blob/49f5346f6cb7e2247a6cf71d7a4d5f2027cd3183/LICENSE"
+      ]
+    },
+    {
+      "id": "voidstrike",
+      "repository_url": "https://github.com/braedonsaunders/voidstrike",
+      "status": "excluded",
+      "checked_at": "2026-10-21",
+      "source_commit": "4df0235116b78bf9232105486738e64b2e6905cb",
+      "reason": "README explicitly describes a hybrid Three.js WebGPU + Phaser overlay presentation, and package.json declares Phaser 4. This does not meet the strict no-other-game-engine/rendering-layer scope.",
+      "next_action": "Retain as an excluded hybrid stack, rather than hiding Phaser behind the Three.js tag.",
+      "evidence_urls": [
+        "https://github.com/braedonsaunders/voidstrike/blob/4df0235116b78bf9232105486738e64b2e6905cb/README.md",
+        "https://github.com/braedonsaunders/voidstrike/blob/4df0235116b78bf9232105486738e64b2e6905cb/package.json",
+        "https://github.com/braedonsaunders/voidstrike/blob/4df0235116b78bf9232105486738e64b2e6905cb/LICENSE"
+      ]
+    },
+    {
+      "id": "kantor-rpg",
+      "repository_url": "https://github.com/air-buddy410/kantor-rpg",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "7e6dc4955d1c407213d00e1f38d1d87031205ae4",
+      "reason": "Reviewed material establishes a 3D virtual-office app with optional private AI backend and embedded minigames; this review has not yet proven a qualifying 3D game/score/goal path.",
+      "next_action": "Inspect actual app renderer and a complete 3D minigame before promotion; do not count a walkable office scene alone.",
+      "evidence_urls": [
+        "https://github.com/air-buddy410/kantor-rpg/blob/7e6dc4955d1c407213d00e1f38d1d87031205ae4/README.md",
+        "https://github.com/air-buddy410/kantor-rpg/blob/7e6dc4955d1c407213d00e1f38d1d87031205ae4/LICENSE"
+      ]
+    },
+    {
+      "id": "squirm",
+      "repository_url": "https://github.com/farzinmirzaie/squirm",
+      "status": "excluded",
+      "checked_at": "2026-10-21",
+      "source_commit": "e4f27ccc35eafe9c088989be20fd5c24cfc78918",
+      "reason": "The README explicitly describes a 2.5D garden puzzle; excluded from this strict 3D collection despite direct Three.js and an MIT code license.",
+      "next_action": "Revisit only if the collection scope is explicitly expanded to 2.5D; do not present it as a verified strict-3D game.",
+      "evidence_urls": [
+        "https://github.com/farzinmirzaie/squirm/blob/e4f27ccc35eafe9c088989be20fd5c24cfc78918/README.md#L5",
+        "https://github.com/farzinmirzaie/squirm/blob/e4f27ccc35eafe9c088989be20fd5c24cfc78918/LICENSE",
+        "https://github.com/farzinmirzaie/squirm/blob/e4f27ccc35eafe9c088989be20fd5c24cfc78918/package.json"
+      ]
+    },
+    {
+      "id": "hexgl",
+      "repository_url": "https://github.com/BKcore/HexGL",
+      "status": "pending",
+      "checked_at": "2026-10-21",
+      "source_commit": "6addc95a2fce3bf05f4d751823cc054c61a16d68",
+      "reason": "Mixed/conflicting code license evidence: root LICENSE is MIT and README defaults to MIT except where files specify otherwise, while the actual renderer HexGL.js and Gameplay.js retain CC BY-NC 3.0 headers. The 2015 MIT-switch PR changes only LICENSE/README and does not resolve those file notices.",
+      "next_action": "Keep outside the verified open-source index until an explicit upstream clarification or updated file notices establish the applicable license for core code. Preserve the pinned notices and relicense history; do not infer a legal conclusion from GitHub's MIT badge.",
+      "evidence_urls": [
+        "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/LICENSE",
+        "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/README.md#L9",
+        "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/HexGL.js#L1",
+        "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/Gameplay.js#L1",
+        "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/audio/LICENSE"
       ]
     },
     {

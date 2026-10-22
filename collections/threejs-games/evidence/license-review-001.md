@@ -15,3 +15,7 @@ HexGL is removed from the ordinary open-source game index and retained as a pend
 The author merged [upstream PR #32, Switch to the MIT License](https://github.com/BKcore/HexGL/pull/32), addressing [license request #29](https://github.com/BKcore/HexGL/issues/29). Its [file diff](https://github.com/BKcore/HexGL/pull/32/files) adds the root LICENSE and changes README's default license while retaining the file-exception clause. It does not update either core file header. This review found no explicit statement resolving the continuing per-file notices. The existence of a root MIT file, badge or merged relicense PR is therefore not used to assert a uniform MIT code grant.
 
 This is a catalog eligibility decision based on conflicting repository notices, not a legal determination. Reconsider the candidate when upstream clarifies the effective core-code license or changes those file notices. No author was contacted, no code/assets were redistributed, and no game was run.
+
+## Additional source-header disclosure
+
+[Terrinha's root LICENSE](https://github.com/martinsmiguel/terrinha/blob/ad665d1e00c14a505c1e31eb1bc2bfd1fb3d0fb2/LICENSE) is MIT, while its reviewed active engine, victory and App sources declare Apache-2.0. Those are recorded as mixed/conflicting notices instead of being flattened to MIT; both are open-source licenses, so the record remains in the index with an explicit scope caveat. See its pinned entry and batch 005 evidence for those exact paths.
