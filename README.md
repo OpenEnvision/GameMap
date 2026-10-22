@@ -1643,6 +1643,8 @@ Bibliographic provenance includes [AI for Games in the Foundation Model Era](htt
 
 ## Production guides, research notes and level-design references
 
+[Sports, racing and puzzle game source](docs/sports-racing-puzzle-games.md) adds four released games with guides to physics, level interactions, replays and match rules.
+
 All 66 documents in the site’s full index, including production and evaluation notes, level-design references and reusable templates. Five explicitly Chinese-language documents are labeled accordingly; every description below is in English.
 
 <details>
