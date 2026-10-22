@@ -296,4 +296,3 @@ Sources checked on 2026-10-21. The file links above pin the inspected revisions.
 Project files, selected scenes and scripts, version instructions, and licensing statements were read. No game was imported, exported, or played; no executable game build was downloaded, and no runtime compatibility or performance test was performed. These entries establish native Godot 3D source evidence, not AI authorship, engine-fork compatibility, or an executed reproduction.
 
 The supplement leaves the existing exported catalogs and their counts unchanged. Full website registration, rendered pages, and search inclusion require the website source and a consistent rebuild.
-
