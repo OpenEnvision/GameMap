@@ -150,6 +150,8 @@ Official documentation, runnable examples, scripting interfaces, testing tools, 
 
 ### Browser graphics and game frameworks · 6 resources
 
+[Games across additional engines](docs/other-engine-game-repositories.md) adds nine source studies using Foster, macroquad, Bevy, libGDX, Defold, MonoGame and Babylon.js.
+
 | Resource | Type | Purpose | Further reading |
 | --- | --- | --- | --- |
 | [Three.js](<https://github.com/mrdoob/three.js>) | Tool | A JavaScript 3D rendering library for browsers, with scenes, cameras, materials, and loaders. | [Site details](<https://openenvision.github.io/GameMap/resources/threejs/>) · [Official manual](<https://threejs.org/manual/>) · [Official examples](<https://threejs.org/examples/>) |
