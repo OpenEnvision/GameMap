@@ -123,6 +123,8 @@ Official documentation, runnable examples, scripting interfaces, testing tools, 
 
 ### Unity · 5 resources
 
+[Unity and Unreal game code and samples](docs/unity-unreal-game-repositories.md) adds six projects, with gameplay source, editor versions and code/content terms.
+
 | Resource | Type | Purpose | Further reading |
 | --- | --- | --- | --- |
 | [Unity · Manual](<https://docs.unity3d.com/Manual/index.html>) | Tool | Official Unity documentation for projects, the editor, scripting, rendering, physics, asset import, and publishing. | [Site details](<https://openenvision.github.io/GameMap/resources/unity-engine/>) · [Official example source](<https://github.com/Unity-Technologies/2d-techdemos>) |
