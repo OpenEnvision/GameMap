@@ -1,6 +1,6 @@
 # Native Godot 2D game repositories
 
-Reviewed 2026-10-22. Four short game projects with specific movement, input and puzzle systems to study. Native Godot project settings and 2D gameplay scripts were read, along with author-published play pages. No Godot import, export or playtest was performed.
+Reviewed 2026-10-22. Seven game projects spanning movement, puzzles, deckbuilding and local multiplayer. Native Godot project settings and 2D gameplay scripts were read, along with author-published play pages. No Godot import, export or playtest was performed.
 
 ## Stomper
 
@@ -33,5 +33,29 @@ Reviewed 2026-10-22. Four short game projects with specific movement, input and 
 - **Play / open:** [Author's browser demo](https://255-ping.github.io/Mirror-Conflict/), linked from the [README](https://github.com/255-Ping/Mirror-Conflict/blob/main/README.md). Import the root [project.godot](https://github.com/255-Ping/Mirror-Conflict/blob/main/project.godot); the scene-loader add-on is included.
 - **Learn from:** [opposite_player.gd](https://github.com/255-Ping/Mirror-Conflict/blob/main/Scripts/Players/opposite_player.gd) reverses horizontal input, handles shared jumping and crate pushing, and advances after the mirrored character's death. [level_12.gd](https://github.com/255-Ping/Mirror-Conflict/blob/main/Scripts/Levels/level_12.gd) leads to the ending scene.
 - **License:** [GPLv3 or later](https://github.com/255-Ping/Mirror-Conflict/blob/main/LICENSE); the README credits separately sourced art, sound and music.
+
+## Worlds Upon The Wind
+
+- **Repository:** [max99x/wutw-public](https://github.com/max99x/wutw-public), the author's complete game-source mirror.
+- **Game / stack:** A peaceful roguelite deckbuilder about planning settlements on broken islands, changing terrain with cards and progressing through expeditions. Godot 4.7 / GDScript, with C++ GDExtensions for map generation and sprite management.
+- **Play / open:** The [README](https://github.com/max99x/wutw-public/blob/main/README.md) explains opening `wutw/project.godot`, waiting for import and pressing F5; prebuilt extensions are included in `wutw/bin`. The [official Steam page](https://store.steampowered.com/app/3640430/Worlds_Upon_The_Wind/) offers the release and a demo for Windows, Linux and macOS.
+- **Learn from:** [run.gd](https://github.com/max99x/wutw-public/blob/main/wutw/run/run.gd) connects phase selection, card play, rewards, seasons and win/loss state. [card_type.gd](https://github.com/max99x/wutw-public/blob/main/wutw/cards/card_type.gd) models rarity, abilities and display data as resources. Useful for following content and progression in a larger card game.
+- **License:** [CC0](https://github.com/max99x/wutw-public/blob/main/LICENSE.md) for the author's code and art, with separate third-party notices. Commercial music and sound effects are omitted; the source version is largely silent apart from voiced cutscenes.
+
+## Starship Olympics — playable alpha
+
+- **Repository:** [notapixelstudio/starship-olympics](https://github.com/notapixelstudio/starship-olympics), previously SuperStarfighter.
+- **Game / stack:** One-button spaceship competition for 1–4 local players, with racing, collection and combat modes plus AI opponents. GDScript / Godot 2D; the [current project configuration](https://github.com/notapixelstudio/starship-olympics/blob/main/godot/project.godot) declares 4.7, while the README still says 4.4.x.
+- **Play / open:** The [author's itch page](https://notapixel.itch.io/starship-olympics) provides Windows, Linux and macOS alpha downloads. For source study, import `godot/project.godot` using the project-declared engine version. The [README](https://github.com/notapixelstudio/starship-olympics/blob/main/README.md) describes development plans as well as implemented features.
+- **Learn from:** [RacingGame.gd](https://github.com/notapixelstudio/starship-olympics/blob/main/godot/godot4/arena/managers/games/RacingGame.gd) tracks ordered gates and player progress. [GameOverManager.gd](https://github.com/notapixelstudio/starship-olympics/blob/main/godot/godot4/arena/managers/GameOverManager.gd) shares time limits, score limits and rankings across modes.
+- **License:** [MIT source](https://github.com/notapixelstudio/starship-olympics/blob/main/LICENSE_source_code.txt); game assets have separate terms, generally CC BY-NC-SA 2.0 with credited exceptions. Published binaries carry a separate EULA.
+
+## ROTA: Bend Gravity
+
+- **Repository:** [HarmonyHoney/ROTA](https://github.com/HarmonyHoney/ROTA), reviewed on `master4`.
+- **Game / stack:** A released gravity puzzle game: round platform edges to change gravity, manipulate blocks and collect gems across eight worlds. The [README](https://github.com/HarmonyHoney/ROTA/blob/master4/readme.md) specifies Godot 3.6.1; the branch name does not indicate Godot 4.
+- **Play / open:** The [author's itch page](https://harmonymonroe.itch.io/rota) offers browser play and desktop/Android downloads. Import the root [project.godot](https://github.com/HarmonyHoney/ROTA/blob/master4/project.godot) for source study.
+- **Learn from:** [Player.gd](https://github.com/HarmonyHoney/ROTA/blob/master4/src/actor/Player.gd) rotates coordinates to share movement and ground checks across four gravity directions. [Box.gd](https://github.com/HarmonyHoney/ROTA/blob/master4/src/actor/Box.gd) connects blocked-cell checks, chained pushing and animation.
+- **License:** The current [LICENSE](https://github.com/HarmonyHoney/ROTA/blob/master4/LICENSE) contains MIT terms; the README still names the Unlicense and excludes `addons/` from its blanket statement. Consult the current file and individual add-on notices when reusing material.
 
 This repository supplement is linked from the README; it is not part of the exported website catalog.

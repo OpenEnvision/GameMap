@@ -113,7 +113,7 @@ Official documentation, runnable examples, scripting interfaces, testing tools, 
 
 ### Godot · 5 resources
 
-[Native Godot 2D game repositories](docs/godot-2d-game-repositories.md) adds four source studies covering platforming, alternate input, color puzzles and mirrored controls.
+[Native Godot 2D game repositories](docs/godot-2d-game-repositories.md) adds seven source studies covering platforming, alternate input, puzzles, deckbuilding and local multiplayer.
 
 | Resource | Type | Purpose | Further reading |
 | --- | --- | --- | --- |
