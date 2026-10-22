@@ -475,6 +475,8 @@ The [downloadable level-design skill](skills/level-design.zip) is an unofficial 
 
 ## Playable games, official foundations and discovery collections
 
+**Additional source-study games:** [Browser game repositories](docs/browser-game-repositories.md) — eight games spanning compact JavaScript, Phaser and PixiJS, with gameplay source, entry points and licenses.
+
 88 games with creator-documented AI involvement, plus three official foundation projects. Each entry connects the game’s context, gameplay and source; AI attribution follows the creator’s evidence.
 
 **Play** opens a browser game; **Download** opens a downloadable release. **Complete project** identifies the game project itself. Build logs, tutorials, prompts and author notes document how the project was made; when that URL already appears under play or source, it is linked once.
