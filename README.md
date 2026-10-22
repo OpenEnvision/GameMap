@@ -123,7 +123,7 @@ Official documentation, runnable examples, scripting interfaces, testing tools, 
 
 ### Unity · 5 resources
 
-[Unity and Unreal game code and samples](docs/unity-unreal-game-repositories.md) adds six projects, with gameplay source, editor versions and code/content terms.
+[Unity and Unreal game code and samples](docs/unity-unreal-game-repositories.md) adds nine projects, with gameplay source, editor versions and code/content terms.
 
 | Resource | Type | Purpose | Further reading |
 | --- | --- | --- | --- |
