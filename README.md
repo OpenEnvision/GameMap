@@ -691,6 +691,8 @@ These are existing official teaching games suited to agent-assisted explanation,
 
 ## Testing resources and starter tasks
 
+**More game projects to study:** [Action, arcade and RPG repositories](docs/action-game-repositories.md) — twelve projects with gameplay source, setup and licensing notes.
+
 **36 resources and 3 starter tasks** for code changes, automated playtests, agent evaluation, and asset pipelines. Each website entry includes setup, proposed tasks, licenses, and limitations. These are source-reviewed references, not installation or runtime certifications.
 
 ### Three ways to begin
