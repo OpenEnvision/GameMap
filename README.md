@@ -48,6 +48,7 @@ All **115 curated resources** are listed below. Longer companion catalogs are or
 | [Development paths](#paths) | 3 paths, 18 steps | Stage goals, deliverables, and acceptance checks for 2D, 3D, and world-model projects. |
 | [Agent toolkit](#agent-toolkit) | 31 | Skills, engine bridges, development frameworks, workflows, code examples, and evaluation tools. |
 | [Game examples and foundations](#examples) | 88 cases, 3 official foundations | Game descriptions, engines, playable or downloadable builds, project source, and development records. |
+| [Geometry and arcade game source](docs/geometry-arcade-game-repositories.md) | 4 games | Hyperbolic tactics, fractal traversal, circular survival and scripted bullet patterns, with gameplay source guides. |
 | [Community collections](#examples) | 6 | More games, creators, and discovery lists. |
 | [Demos and visual evidence](#showcase) | 29 | Game recordings, world models, scenes, assets, and workflow demonstrations. |
 | [Test resources](#testing) | 36 resources, 3 starter tasks | Modifiable projects, agent environments, assets, and motion datasets. |
