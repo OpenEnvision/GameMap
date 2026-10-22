@@ -773,6 +773,8 @@ Terms categories support filtering; code, characters, motion data, and third-par
 
 ## Repository research and code references
 
+For native Godot projects, see [Godot 3D games](docs/godot-3d-games.md), a repository research supplement not yet included in the exported website’s cards or search.
+
 All **213 research records**, preserving the original research groups: **204 source-reviewed, 8 unavailable, and 1 metadata-only**. This collection includes games, prototypes, components, skills, forks, and discovery lists. Historical groups and AI-associated labels do not establish AI authorship or playable completeness. Source review does not mean the project was executed.
 
 Repository links use the recorded current identity where established. Detail pages retain the originally requested identity, with revision, attribution, terms, and evidence. Unavailable requested addresses remain visible; independently found alternatives are not represented as authenticated migrations.
