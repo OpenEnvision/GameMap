@@ -1,0 +1,376 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Direct Three.js game source-review index",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "const": "./schema.json"
+    },
+    "schema_version": {
+      "const": 2
+    },
+    "games": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "repository_url": {
+            "type": "string",
+            "pattern": "^https://github\\.com/[^/\\s]+/[^/\\s]+$"
+          },
+          "genres": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "dimension": {
+            "enum": [
+              "3d-world",
+              "3d-board",
+              "3d-cylinder",
+              "3d-perspective"
+            ]
+          },
+          "stack": {
+            "type": "object",
+            "properties": {
+              "renderer": {
+                "const": "three.js"
+              },
+              "integration": {
+                "const": "direct"
+              },
+              "three_version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "render_evidence": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "pattern": "^https?://[^\\s]+$"
+                  },
+                  "claim": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "url",
+                  "claim"
+                ],
+                "additionalProperties": false
+              },
+              "manifests": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "url": {
+                      "type": "string",
+                      "pattern": "^https?://[^\\s]+$"
+                    },
+                    "dependencies": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "dev_dependencies": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "url",
+                    "dependencies",
+                    "dev_dependencies"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "auxiliary_dependencies": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "framework_audit": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "renderer",
+              "integration",
+              "three_version",
+              "render_evidence",
+              "manifests",
+              "auxiliary_dependencies",
+              "framework_audit"
+            ],
+            "additionalProperties": false
+          },
+          "gameplay_evidence": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string",
+                "pattern": "^https?://[^\\s]+$"
+              },
+              "claim": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "url",
+              "claim"
+            ],
+            "additionalProperties": false
+          },
+          "license": {
+            "type": "object",
+            "properties": {
+              "spdx": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "MIT",
+                      "ISC",
+                      "Unlicense",
+                      "Apache-2.0",
+                      "GPL-3.0-only",
+                      "GPL-3.0-or-later",
+                      "AGPL-3.0-only",
+                      "AGPL-3.0-or-later"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "source_url": {
+                "type": "string",
+                "pattern": "^https?://[^\\s]+$"
+              },
+              "additional_notices": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^https?://[^\\s]+$"
+                }
+              },
+              "notes": {
+                "type": "string",
+                "minLength": 1
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "spdx",
+              "source_url",
+              "additional_notices",
+              "notes",
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "demo": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^https?://[^\\s]+$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "status": {
+                "enum": [
+                  "page-read",
+                  "reader-error",
+                  "not-located",
+                  "not-checked"
+                ]
+              },
+              "checked_at": {
+                "type": "string",
+                "format": "date"
+              },
+              "source_url": {
+                "type": "string",
+                "pattern": "^https?://[^\\s]+$"
+              },
+              "notes": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "url",
+              "status",
+              "checked_at",
+              "source_url",
+              "notes"
+            ],
+            "additionalProperties": false
+          },
+          "maturity": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "enum": [
+                  "game",
+                  "prototype",
+                  "work-in-progress",
+                  "legacy-release",
+                  "legacy-prototype",
+                  "archived-prototype"
+                ]
+              },
+              "basis_url": {
+                "type": "string",
+                "pattern": "^https?://[^\\s]+$"
+              },
+              "notes": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "status",
+              "basis_url",
+              "notes"
+            ],
+            "additionalProperties": false
+          },
+          "verification": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "source_commit": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{40}$"
+              },
+              "source_reviewed": {
+                "const": true
+              },
+              "playtested": {
+                "type": "boolean"
+              },
+              "upstream_tests_run": {
+                "type": "boolean"
+              },
+              "evidence_path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reviewed_files": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "url": {
+                      "type": "string",
+                      "pattern": "^https?://[^\\s]+$"
+                    }
+                  },
+                  "required": [
+                    "path",
+                    "url"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 3
+              },
+              "already_mentioned_in_legacy_readme": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "date",
+              "source_commit",
+              "source_reviewed",
+              "playtested",
+              "upstream_tests_run",
+              "evidence_path",
+              "reviewed_files",
+              "already_mentioned_in_legacy_readme"
+            ],
+            "additionalProperties": false
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "repository_url",
+          "genres",
+          "dimension",
+          "stack",
+          "gameplay_evidence",
+          "license",
+          "demo",
+          "maturity",
+          "verification",
+          "limitations"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "$schema",
+    "schema_version",
+    "games"
+  ],
+  "additionalProperties": false
+}

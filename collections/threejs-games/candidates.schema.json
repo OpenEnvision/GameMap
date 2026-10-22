@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Three.js game candidate and exclusion queue",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "const": "./candidates.schema.json"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "repository_url": {
+            "type": "string",
+            "pattern": "^https://github\\.com/[^/\\s]+/[^/\\s]+$"
+          },
+          "status": {
+            "enum": [
+              "pending",
+              "excluded"
+            ]
+          },
+          "checked_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "source_commit": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "next_action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^https?://[^\\s]+$"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "id",
+          "repository_url",
+          "status",
+          "checked_at",
+          "source_commit",
+          "reason",
+          "next_action",
+          "evidence_urls"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "$schema",
+    "schema_version",
+    "candidates"
+  ],
+  "additionalProperties": false
+}
