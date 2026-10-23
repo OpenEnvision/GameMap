@@ -7587,6 +7587,383 @@
         "README's procedural models/maps/audio and no-external-media claims are author statements; they were not independently asset-audited.",
         "This records a wave-survival and death/settlement loop; runtime balance, touch controls, saved upgrades and author verification scripts were not run."
       ]
+    },
+    {
+      "id": "moto-craft-3d",
+      "name": "Moto Craft 3D — Pro Edition",
+      "repository_url": "https://github.com/Somesh2228/Moto-Craft-3D---Pro-Edition",
+      "genres": [
+        "motorcycle",
+        "platformer",
+        "obstacle-course"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (CDN script)",
+        "render_evidence": {
+          "url": "https://github.com/Somesh2228/Moto-Craft-3D---Pro-Edition/blob/7a93c44bd494ff593c7d82a93cc74718df2a02e4/index.html#L224",
+          "claim": "Constructs Three.js WebGLRenderer directly; procedural bike and block geometry are rendered by the handwritten requestAnimationFrame loop at lines 595–600."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla HTML/CSS/JavaScript; Three.js r128 loaded from cdnjs at index.html:187; custom bike/terrain/hazard physics and DOM controls. No npm package manifest in the reviewed root tree."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed client manifest, entrypoint and rendering path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Somesh2228/Moto-Craft-3D---Pro-Edition/blob/7a93c44bd494ff593c7d82a93cc74718df2a02e4/index.html#L526",
+        "claim": "Collects checkpoints, measures distance against level targets and calls levelUp at the target; lava, falling and moving hazards call die to show a respawn menu. resetToLastCheckpoint restores the bike for another attempt."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/Somesh2228/Moto-Craft-3D---Pro-Edition/blob/7a93c44bd494ff593c7d82a93cc74718df2a02e4/LICENSE",
+        "additional_notices": [],
+        "notes": "Root MIT text is present, with copyright year 2026 but an empty holder name. This records the repository code notice, not a completed asset/dependency rights audit."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "source_url": "https://github.com/Somesh2228/Moto-Craft-3D---Pro-Edition/blob/7a93c44bd494ff593c7d82a93cc74718df2a02e4/README.md",
+        "notes": "README documents local use but no confirmed author-hosted demo was located; no URL was guessed.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "prototype",
+        "notes": "Source implements checkpoint respawn, distance-driven worlds and hazards. README describes these features, but its setup names moto ride.html while the actual reviewed entry is index.html.",
+        "basis_url": "https://github.com/Somesh2228/Moto-Craft-3D---Pro-Edition/blob/7a93c44bd494ff593c7d82a93cc74718df2a02e4/README.md"
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "7a93c44bd494ff593c7d82a93cc74718df2a02e4",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-010.md#moto-craft-3d",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Somesh2228/Moto-Craft-3D---Pro-Edition/blob/7a93c44bd494ff593c7d82a93cc74718df2a02e4/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Somesh2228/Moto-Craft-3D---Pro-Edition/blob/7a93c44bd494ff593c7d82a93cc74718df2a02e4/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Somesh2228/Moto-Craft-3D---Pro-Edition/blob/7a93c44bd494ff593c7d82a93cc74718df2a02e4/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Bike simulation is constrained to the XY plane with a fixed-depth camera; the volumetric meshes form a 3D-rendered side-view course, not free XYZ driving.",
+        "The source advances distance targets/worlds but no final victory screen was identified. After the listed targets it falls back to 10000; this progression and any repeated level-up behavior were not run.",
+        "README control/setup descriptions differ from the actual index.html in places; use the source as the verified basis. CDN loading, touch controls and runtime physics remain untested."
+      ]
+    },
+    {
+      "id": "snowglider",
+      "name": "SnowGlider",
+      "repository_url": "https://github.com/den-run-ai/snowglider",
+      "genres": [
+        "skiing",
+        "time-trial",
+        "survival"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.184.0",
+        "render_evidence": {
+          "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/src/game/scene-setup.ts#L165",
+          "claim": "Directly constructs Three.js WebGLRenderer. src/main.ts imports the coordinator; src/snowglider.ts wires scene setup and the project-authored main loop, which renders at main-loop.ts:842."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/package.json",
+            "dependencies": {
+              "@dgreenheck/ez-tree": "1.1.0",
+              "firebase": "11.5.0",
+              "three": "0.184.0"
+            },
+            "dev_dependencies": {
+              "@eslint/js": "^9.39.4",
+              "@firebase/rules-unit-testing": "^4.0.1",
+              "@playwright/test": "^1.61.0",
+              "@types/jsdom": "^28.0.3",
+              "@types/node": "^22.20.0",
+              "@types/three": "0.184.0",
+              "c8": "^10.1.2",
+              "eslint": "^9.39.4",
+              "globals": "^15.15.0",
+              "http-server": "^14.1.1",
+              "istanbul-lib-coverage": "^3.2.2",
+              "istanbul-lib-report": "^3.0.1",
+              "istanbul-reports": "^3.2.0",
+              "jsdom": "^27.0.1",
+              "puppeteer": "^25.10.0",
+              "typescript": "^6.0.3",
+              "typescript-eslint": "^8.61.1",
+              "v8-to-istanbul": "^9.3.0",
+              "vite": "^8.0.16",
+              "vite-plugin-pwa": "^1.3.0",
+              "workbox-build": "^7.4.1",
+              "workbox-core": "^7.4.1",
+              "workbox-precaching": "^7.4.1",
+              "workbox-routing": "^7.4.1",
+              "workbox-strategies": "^7.4.1",
+              "workbox-window": "^7.4.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "TypeScript/Vite and imperative Three.js; @dgreenheck/ez-tree generates tree geometry; Firebase supports optional authentication/leaderboards. The complete declared runtime/dev dependency map is recorded."
+        ],
+        "framework_audit": "No React Three Fiber, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed client manifest, entrypoint and rendering path; this is not an exhaustive transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/src/snowman/collision.ts#L213",
+        "claim": "Crossing FINISH_Z ends the slope run; collisions, side bounds and falling end it with separate reasons. The main loop also ends active runs on avalanche burial and banks jump/dodge bonuses; lifecycle provides reset/restart."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/LICENSE",
+        "additional_notices": [
+          "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/THIRD_PARTY_NOTICES.md"
+        ],
+        "notes": "LICENSE scopes MIT to source code and original assets, explicitly excluding third-party material. THIRD_PARTY_NOTICES.md identifies Skullbeatz's Bad Cat track as CC BY-SA 3.0; the linked creator page and its Commons Deed corroborated that attribution/share-alike license on the review date. Other dependency and asset terms were not exhaustively audited."
+      },
+      "demo": {
+        "url": "https://snowglider.ai/",
+        "status": "page-read",
+        "source_url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/index.html#L11",
+        "notes": "The pinned HTML canonical link identifies the author demo. A text reader retrieved menus/instructions and music attribution; no run, login, score submission, build or playtest occurred.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "game",
+        "notes": "The reviewed source includes mountain skiing, timed finish/death results, jumping, avalanche pursuit and restart. README's automated-test claims were not independently exercised.",
+        "basis_url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/README.md"
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "b1e058cd541d1ef87123351710ce97cd4bba76e4",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-010.md#snowglider",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/README.md"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/THIRD_PARTY_NOTICES.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/package.json"
+          },
+          {
+            "path": "src/avalanche.ts",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/src/avalanche.ts"
+          },
+          {
+            "path": "src/game/lifecycle.ts",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/src/game/lifecycle.ts"
+          },
+          {
+            "path": "src/game/main-loop.ts",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/src/game/main-loop.ts"
+          },
+          {
+            "path": "src/game/scene-setup.ts",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/src/game/scene-setup.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/src/main.ts"
+          },
+          {
+            "path": "src/snowglider.ts",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/src/snowglider.ts"
+          },
+          {
+            "path": "src/snowman/collision.ts",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/src/snowman/collision.ts"
+          },
+          {
+            "path": "src/snowman/physics.ts",
+            "url": "https://github.com/den-run-ai/snowglider/blob/b1e058cd541d1ef87123351710ce97cd4bba76e4/src/snowman/physics.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Optional Firebase authentication, remote scores and analytics were not invoked; reading the landing page does not establish gameplay, offline/PWA behavior or leaderboard availability.",
+        "Use the canonical den-run-ai repository; 1Konny/snowglider is a fork and is not separately counted.",
+        "Music remains under its separate CC BY-SA 3.0 notice; MIT code does not mean every bundled/dependency asset shares MIT terms."
+      ]
+    },
+    {
+      "id": "realtime-tanks-threejs",
+      "name": "Realtime Tanks — Three.js client",
+      "repository_url": "https://github.com/colyseus/realtime-tanks-demo",
+      "genres": [
+        "tank-combat",
+        "multiplayer",
+        "team-deathmatch"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.170.0",
+        "render_evidence": {
+          "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/web-threejs/src/Game.ts#L71",
+          "claim": "The standalone web-threejs client imports Three.js and directly creates WebGLRenderer with a 3D isometric scene; its own animate method requests frames and renders at lines 512–575."
+        },
+        "manifests": [
+          {
+            "path": "web-threejs/package.json",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/web-threejs/package.json",
+            "dependencies": {
+              "@colyseus/sdk": "^0.17.35",
+              "colyseus.js": "^0.15.0",
+              "three": "^0.170.0"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.170.0",
+              "pngjs": "^7.0.0",
+              "typescript": "^5.0.0",
+              "vite": "^6.0.0"
+            }
+          },
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/server/package.json",
+            "dependencies": {
+              "colyseus": "^0.17.0"
+            },
+            "dev_dependencies": {
+              "@colyseus/loadtest": "^0.17.8",
+              "@types/node": "^22.0.0",
+              "tsx": "^4.0.0",
+              "typescript": "^5.0.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "This entry is specifically web-threejs plus the shared Colyseus server. TypeScript/Vite, @colyseus/sdk/colyseus.js for networking, colyseus 0.17 server; both scoped manifests are recorded.",
+          "The repository also contains separate PlayCanvas, Godot, Unity and other clients; they are alternatives, not dependencies of the reviewed Three.js browser client."
+        ],
+        "framework_audit": "The scoped web-threejs manifest/entry/renderer use direct Three.js without R3F or another renderer engine; server/package.json provides the shared Colyseus backend. Other engine clients coexist in separate directories and are outside this entry. This is not an exhaustive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/server/src/rooms/BattleRoom.ts#L422",
+        "claim": "Authoritative bullet hits reduce tank health; kills increment personal/team score. The 10-kill team threshold sets winnerTeam, kills/reset state are handled server-side, and the Three.js client listens for winnerTeam and shows a result screen."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/LICENSE",
+        "additional_notices": [
+          "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/README.md"
+        ],
+        "notes": "Root MIT code license verified. README attributes the bundled Pixel Tank FBX/textures to Firewarden3D and links Sketchfab, but a specific model redistribution license was not located in the reviewed client tree and the creator-page reader returned 403. Model rights remain unconfirmed; this is MIT code, not an all-assets-MIT claim."
+      },
+      "demo": {
+        "url": "https://colyseus.io/realtime-tanks-demo/web-threejs/",
+        "status": "page-read",
+        "source_url": "https://colyseus.io/realtime-tanks-demo/",
+        "notes": "The author demo selector explicitly links the Three.js build. Text reader retrieved Connecting/Leaderboard/Destroyed/Respawning labels; no server connection success or playable match was established.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "prototype",
+        "notes": "A complete client/server sample with team scoring, tank damage, death/respawn and match result states. A running Colyseus backend is required; README describes multiple alternative clients.",
+        "basis_url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/README.md"
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "6339493130b4b1d4d28f0f52d17b2fba738c7d47",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-010.md#realtime-tanks-threejs",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/README.md"
+          },
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/server/package.json"
+          },
+          {
+            "path": "server/src/rooms/BattleRoom.ts",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/server/src/rooms/BattleRoom.ts"
+          },
+          {
+            "path": "web-threejs/README.md",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/web-threejs/README.md"
+          },
+          {
+            "path": "web-threejs/index.html",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/web-threejs/index.html"
+          },
+          {
+            "path": "web-threejs/package.json",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/web-threejs/package.json"
+          },
+          {
+            "path": "web-threejs/src/Game.ts",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/web-threejs/src/Game.ts"
+          },
+          {
+            "path": "web-threejs/src/MapRenderer.ts",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/web-threejs/src/MapRenderer.ts"
+          },
+          {
+            "path": "web-threejs/src/Network.ts",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/web-threejs/src/Network.ts"
+          },
+          {
+            "path": "web-threejs/src/Tank.ts",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/web-threejs/src/Tank.ts"
+          },
+          {
+            "path": "web-threejs/src/main.ts",
+            "url": "https://github.com/colyseus/realtime-tanks-demo/blob/6339493130b4b1d4d28f0f52d17b2fba738c7d47/web-threejs/src/main.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Team movement/collision is simulated on a plane and shown with actual 3D meshes; this does not imply free XYZ movement.",
+        "Only the direct Three.js client is in scope. A working backend on port 2567 or an explicit server override is needed; no backend, deployment or match was run.",
+        "The third-party tank model/texture license is unconfirmed; root MIT covers the reviewed source notice, not independently cleared media.",
+        "edgegap/backend-game-sample-threejs-colyseus-tanks is a fork of this upstream and is not counted separately."
+      ]
     }
   ]
 }

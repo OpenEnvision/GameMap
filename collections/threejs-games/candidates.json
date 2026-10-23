@@ -325,6 +325,82 @@
         "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/src/render/actors/models.ts",
         "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/src/app/Game.ts"
       ]
+    },
+    {
+      "id": "rubiks-cube-aaron-bird",
+      "repository_url": "https://github.com/Aaron-Bird/rubiks-cube",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "a080fd09a06f2bfa3c25c56912141e0e9398b0c3",
+      "reason": "MIT and direct Three.js cube rotation/scrambling/reset are verified, but the reviewed entry/model files establish a cube manipulator rather than a scored or explicitly adjudicated solve loop. No solved-state detector or player result was identified in those files.",
+      "next_action": "Clarify whether the intended playable-puzzle boundary includes manual solve completion without adjudication; inspect remaining logic before upgrading.",
+      "evidence_urls": [
+        "https://github.com/Aaron-Bird/rubiks-cube/blob/a080fd09a06f2bfa3c25c56912141e0e9398b0c3/LICENSE",
+        "https://github.com/Aaron-Bird/rubiks-cube/blob/a080fd09a06f2bfa3c25c56912141e0e9398b0c3/README.md",
+        "https://github.com/Aaron-Bird/rubiks-cube/blob/a080fd09a06f2bfa3c25c56912141e0e9398b0c3/src/index.ts",
+        "https://github.com/Aaron-Bird/rubiks-cube/blob/a080fd09a06f2bfa3c25c56912141e0e9398b0c3/src/rubik-cube.ts"
+      ]
+    },
+    {
+      "id": "cube-world-paulrobello",
+      "repository_url": "https://github.com/paulrobello/cube-world",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "2953df9ae41674ddede72aa8574773ca1e0e5d9a",
+      "reason": "MIT/direct Three.js and automatic car/destination lifecycle are verified. In the reviewed entry, the car advances and all-destination completion regenerates automatically; exposed controls change camera, pause, lighting and regeneration. Player steering/route decisions or a points counter were not established despite the README's points wording.",
+      "next_action": "Locate implemented player decisions that affect the car/objective; retain as an interactive driving scene until the actual-game boundary is supported.",
+      "evidence_urls": [
+        "https://github.com/paulrobello/cube-world/blob/2953df9ae41674ddede72aa8574773ca1e0e5d9a/LICENSE",
+        "https://github.com/paulrobello/cube-world/blob/2953df9ae41674ddede72aa8574773ca1e0e5d9a/README.md",
+        "https://github.com/paulrobello/cube-world/blob/2953df9ae41674ddede72aa8574773ca1e0e5d9a/src/main.ts",
+        "https://github.com/paulrobello/cube-world/blob/2953df9ae41674ddede72aa8574773ca1e0e5d9a/src/lib/car.ts"
+      ]
+    },
+    {
+      "id": "fall-line",
+      "repository_url": "https://github.com/WiseeCarrot/fall-line",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "554767d6441ccb1202543ee0eed4fb255e60e372",
+      "reason": "MIT/direct Three.js free skiing with crash/recovery is verified. README explicitly says there is no timer, race, gates or finish line; the Score toggle controls music, not gameplay points. A discrete objective/result or scored survival loop remains unproven.",
+      "next_action": "Review whether the free-ski simulation is within the requested actual-game scope; do not invent a race/score/finish condition.",
+      "evidence_urls": [
+        "https://github.com/WiseeCarrot/fall-line/blob/554767d6441ccb1202543ee0eed4fb255e60e372/LICENSE",
+        "https://github.com/WiseeCarrot/fall-line/blob/554767d6441ccb1202543ee0eed4fb255e60e372/README.md",
+        "https://github.com/WiseeCarrot/fall-line/blob/554767d6441ccb1202543ee0eed4fb255e60e372/src/game.js",
+        "https://github.com/WiseeCarrot/fall-line/blob/554767d6441ccb1202543ee0eed4fb255e60e372/src/player/skier.js"
+      ]
+    },
+    {
+      "id": "webgl-tank-game-memorywrong",
+      "repository_url": "https://github.com/MemoryWrong/webgl-tank-game",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "c582b7ab522a86dfb20806127adaf5b1e421c856",
+      "reason": "The reviewed MIT Three.js entry supports tank movement and firing/removing cannonballs, but no enemy/target damage, score, victory or loss loop was identified; README presents basic controls. It is a controls/shooting demonstration under this collection's current boundary.",
+      "next_action": "Reconsider only if source gains an implemented game objective or another actual game entry is located.",
+      "evidence_urls": [
+        "https://github.com/MemoryWrong/webgl-tank-game/blob/c582b7ab522a86dfb20806127adaf5b1e421c856/LICENSE",
+        "https://github.com/MemoryWrong/webgl-tank-game/blob/c582b7ab522a86dfb20806127adaf5b1e421c856/README.md",
+        "https://github.com/MemoryWrong/webgl-tank-game/blob/c582b7ab522a86dfb20806127adaf5b1e421c856/src/js/app.js",
+        "https://github.com/MemoryWrong/webgl-tank-game/blob/c582b7ab522a86dfb20806127adaf5b1e421c856/src/js/components/player.js",
+        "https://github.com/MemoryWrong/webgl-tank-game/blob/c582b7ab522a86dfb20806127adaf5b1e421c856/src/js/components/bullet.js"
+      ]
+    },
+    {
+      "id": "road-rash-starter-pack",
+      "repository_url": "https://github.com/gemsjohn/road-rash-starter-pack",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "b9af0be0a908a9b959530a2cd9e059c72905ca78",
+      "reason": "README calls this a Three.js/Rapier motorcycle starter pack. The reviewed runtime establishes movement/rider animation and physics setup, but no race checkpoints, opponent/combat objective, scoring or terminal game state was identified.",
+      "next_action": "Use as an implementation reference only; re-review if a complete playable game loop is added.",
+      "evidence_urls": [
+        "https://github.com/gemsjohn/road-rash-starter-pack/blob/b9af0be0a908a9b959530a2cd9e059c72905ca78/LICENSE",
+        "https://github.com/gemsjohn/road-rash-starter-pack/blob/b9af0be0a908a9b959530a2cd9e059c72905ca78/README.md",
+        "https://github.com/gemsjohn/road-rash-starter-pack/blob/b9af0be0a908a9b959530a2cd9e059c72905ca78/index.html",
+        "https://github.com/gemsjohn/road-rash-starter-pack/blob/b9af0be0a908a9b959530a2cd9e059c72905ca78/physics.js"
+      ]
     }
   ]
 }
