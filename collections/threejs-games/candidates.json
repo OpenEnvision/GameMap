@@ -221,6 +221,447 @@
         "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/bkcore/hexgl/Gameplay.js#L1",
         "https://github.com/BKcore/HexGL/blob/6addc95a2fce3bf05f4d751823cc054c61a16d68/audio/LICENSE"
       ]
+    },
+    {
+      "id": "chess-drobenyuka",
+      "repository_url": "https://github.com/DrobenyukA/chess",
+      "status": "excluded",
+      "checked_at": "2026-10-22",
+      "source_commit": "9767671ec3e75962a4b8a88dc42573d0bd101bde",
+      "reason": "The MIT repository declares @react-three/fiber and @react-three/drei runtime dependencies, outside the direct Three.js boundary.",
+      "next_action": "Reconsider only for an explicitly broader R3F collection; do not count as direct rendering.",
+      "evidence_urls": [
+        "https://github.com/DrobenyukA/chess/blob/9767671ec3e75962a4b8a88dc42573d0bd101bde/package.json",
+        "https://github.com/DrobenyukA/chess/blob/9767671ec3e75962a4b8a88dc42573d0bd101bde/LICENSE"
+      ]
+    },
+    {
+      "id": "raonautica",
+      "repository_url": "https://github.com/albusdemens/Raonautica",
+      "status": "pending",
+      "checked_at": "2026-10-22",
+      "source_commit": "4ea544d899ffb7447a83e83feaf859026415c1da",
+      "reason": "The primary README describes a Godot 4 model-agent experiment with no human player and a model API key requirement. A Three.js web subtree exists but is not verified as a standalone qualifying game.",
+      "next_action": "Review the separate web target's objective and rendering path without invoking paid model services.",
+      "evidence_urls": [
+        "https://github.com/albusdemens/Raonautica/blob/4ea544d899ffb7447a83e83feaf859026415c1da/README.md",
+        "https://github.com/albusdemens/Raonautica/blob/4ea544d899ffb7447a83e83feaf859026415c1da/package.json",
+        "https://github.com/albusdemens/Raonautica/blob/4ea544d899ffb7447a83e83feaf859026415c1da/LICENSE"
+      ]
+    },
+    {
+      "id": "windsurf-simulator",
+      "repository_url": "https://github.com/viachm/windsurf-simulator",
+      "status": "pending",
+      "checked_at": "2026-10-22",
+      "source_commit": "770eb3be81b39519801c16b6e5c4de63d923f860",
+      "reason": "MIT/direct Three.js source exists, but reviewed code is a free-sailing learning simulation with capsize/recovery; a race, finite objective or progression game loop was not established.",
+      "next_action": "Find an authored challenge/goal mode or explicit scope authorization for training/free-simulation toys before promotion.",
+      "evidence_urls": [
+        "https://github.com/viachm/windsurf-simulator/blob/770eb3be81b39519801c16b6e5c4de63d923f860/README.md",
+        "https://github.com/viachm/windsurf-simulator/blob/770eb3be81b39519801c16b6e5c4de63d923f860/LICENSE",
+        "https://github.com/viachm/windsurf-simulator/blob/770eb3be81b39519801c16b6e5c4de63d923f860/site/src/world.js",
+        "https://github.com/viachm/windsurf-simulator/blob/770eb3be81b39519801c16b6e5c4de63d923f860/site/src/sim.js",
+        "https://github.com/viachm/windsurf-simulator/blob/770eb3be81b39519801c16b6e5c4de63d923f860/site/src/main.js"
+      ]
+    },
+    {
+      "id": "soccer-arcade-no-source",
+      "repository_url": "https://github.com/Segmentree/soccer-arcade",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "165ddd0f8e4de7730edb0f99c27d8f64dc73cfed",
+      "reason": "The advertised game has no game source at this pinned commit: the complete non-truncated tree contains only .gitignore and LICENSE.",
+      "next_action": "Revisit when actual game source is published; a description and MIT file alone cannot establish a qualifying game.",
+      "evidence_urls": [
+        "https://github.com/Segmentree/soccer-arcade/blob/165ddd0f8e4de7730edb0f99c27d8f64dc73cfed/LICENSE"
+      ]
+    },
+    {
+      "id": "starbow-tracking-prototype",
+      "repository_url": "https://github.com/Mogadragos/StarBow",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "d86116ecf05a8931aed88b987f25cd047f82ce43",
+      "reason": "The actual GameScene renders a smartphone/cube and applies incoming sensor quaternions. The reviewed entry has no implemented archery shot, target or scoring loop; it is a tracking/display prototype.",
+      "next_action": "Reconsider a future commit with actual archery gameplay, rather than treating the project description as implemented functionality.",
+      "evidence_urls": [
+        "https://github.com/Mogadragos/StarBow/blob/d86116ecf05a8931aed88b987f25cd047f82ce43/README.md",
+        "https://github.com/Mogadragos/StarBow/blob/d86116ecf05a8931aed88b987f25cd047f82ce43/LICENSE",
+        "https://github.com/Mogadragos/StarBow/blob/d86116ecf05a8931aed88b987f25cd047f82ce43/src/browser/Game.ts",
+        "https://github.com/Mogadragos/StarBow/blob/d86116ecf05a8931aed88b987f25cd047f82ce43/src/browser/scenes/impl/GameScene.ts"
+      ]
+    },
+    {
+      "id": "football-vardhan-scope",
+      "repository_url": "https://github.com/vardhan2000/multiplayer-football-game",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "e57a1ba8e4b59daa857a5d798eec7a666768069c",
+      "reason": "Direct Three.js player/ball controls are present, but the reviewed course entry does not establish scoring, goal adjudication or a match outcome; out-of-bounds merely reloads the page.",
+      "next_action": "Inspect other authoritative implementation/assignment material or future code for an actual match objective and outcome before promotion.",
+      "evidence_urls": [
+        "https://github.com/vardhan2000/multiplayer-football-game/blob/e57a1ba8e4b59daa857a5d798eec7a666768069c/README.md",
+        "https://github.com/vardhan2000/multiplayer-football-game/blob/e57a1ba8e4b59daa857a5d798eec7a666768069c/LICENSE",
+        "https://github.com/vardhan2000/multiplayer-football-game/blob/e57a1ba8e4b59daa857a5d798eec7a666768069c/index.html",
+        "https://github.com/vardhan2000/multiplayer-football-game/blob/e57a1ba8e4b59daa857a5d798eec7a666768069c/index.js",
+        "https://github.com/vardhan2000/multiplayer-football-game/blob/e57a1ba8e4b59daa857a5d798eec7a666768069c/lib/renderer.js"
+      ]
+    },
+    {
+      "id": "salvo-dimensional-scope",
+      "repository_url": "https://github.com/adrienbrault/salvo",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "6fd572b62425a55583dc0165036332621a83e3c5",
+      "reason": "A complete direct Three.js WebGPU score-attack game with 3D procedural models exists, but rendering.md explicitly fixes all gameplay to z=0. The vertical scrolling shoot-em-up boundary versus this strict 3D collection remains unresolved.",
+      "next_action": "Keep the planar shooter outside verified games until dimensional scope is explicitly resolved; preserve the direct-renderer and game-loop evidence.",
+      "evidence_urls": [
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/LICENSE",
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/README.md",
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/package.json",
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/docs/rendering.md",
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/src/render/GameRenderer.ts",
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/src/render/actors/models.ts",
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/src/app/Game.ts"
+      ]
+    },
+    {
+      "id": "rubiks-cube-aaron-bird",
+      "repository_url": "https://github.com/Aaron-Bird/rubiks-cube",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "a080fd09a06f2bfa3c25c56912141e0e9398b0c3",
+      "reason": "MIT and direct Three.js cube rotation/scrambling/reset are verified, but the reviewed entry/model files establish a cube manipulator rather than a scored or explicitly adjudicated solve loop. No solved-state detector or player result was identified in those files.",
+      "next_action": "Clarify whether the intended playable-puzzle boundary includes manual solve completion without adjudication; inspect remaining logic before upgrading.",
+      "evidence_urls": [
+        "https://github.com/Aaron-Bird/rubiks-cube/blob/a080fd09a06f2bfa3c25c56912141e0e9398b0c3/LICENSE",
+        "https://github.com/Aaron-Bird/rubiks-cube/blob/a080fd09a06f2bfa3c25c56912141e0e9398b0c3/README.md",
+        "https://github.com/Aaron-Bird/rubiks-cube/blob/a080fd09a06f2bfa3c25c56912141e0e9398b0c3/src/index.ts",
+        "https://github.com/Aaron-Bird/rubiks-cube/blob/a080fd09a06f2bfa3c25c56912141e0e9398b0c3/src/rubik-cube.ts"
+      ]
+    },
+    {
+      "id": "cube-world-paulrobello",
+      "repository_url": "https://github.com/paulrobello/cube-world",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "2953df9ae41674ddede72aa8574773ca1e0e5d9a",
+      "reason": "MIT/direct Three.js and automatic car/destination lifecycle are verified. In the reviewed entry, the car advances and all-destination completion regenerates automatically; exposed controls change camera, pause, lighting and regeneration. Player steering/route decisions or a points counter were not established despite the README's points wording.",
+      "next_action": "Locate implemented player decisions that affect the car/objective; retain as an interactive driving scene until the actual-game boundary is supported.",
+      "evidence_urls": [
+        "https://github.com/paulrobello/cube-world/blob/2953df9ae41674ddede72aa8574773ca1e0e5d9a/LICENSE",
+        "https://github.com/paulrobello/cube-world/blob/2953df9ae41674ddede72aa8574773ca1e0e5d9a/README.md",
+        "https://github.com/paulrobello/cube-world/blob/2953df9ae41674ddede72aa8574773ca1e0e5d9a/src/main.ts",
+        "https://github.com/paulrobello/cube-world/blob/2953df9ae41674ddede72aa8574773ca1e0e5d9a/src/lib/car.ts"
+      ]
+    },
+    {
+      "id": "fall-line",
+      "repository_url": "https://github.com/WiseeCarrot/fall-line",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "554767d6441ccb1202543ee0eed4fb255e60e372",
+      "reason": "MIT/direct Three.js free skiing with crash/recovery is verified. README explicitly says there is no timer, race, gates or finish line; the Score toggle controls music, not gameplay points. A discrete objective/result or scored survival loop remains unproven.",
+      "next_action": "Review whether the free-ski simulation is within the requested actual-game scope; do not invent a race/score/finish condition.",
+      "evidence_urls": [
+        "https://github.com/WiseeCarrot/fall-line/blob/554767d6441ccb1202543ee0eed4fb255e60e372/LICENSE",
+        "https://github.com/WiseeCarrot/fall-line/blob/554767d6441ccb1202543ee0eed4fb255e60e372/README.md",
+        "https://github.com/WiseeCarrot/fall-line/blob/554767d6441ccb1202543ee0eed4fb255e60e372/src/game.js",
+        "https://github.com/WiseeCarrot/fall-line/blob/554767d6441ccb1202543ee0eed4fb255e60e372/src/player/skier.js"
+      ]
+    },
+    {
+      "id": "webgl-tank-game-memorywrong",
+      "repository_url": "https://github.com/MemoryWrong/webgl-tank-game",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "c582b7ab522a86dfb20806127adaf5b1e421c856",
+      "reason": "The reviewed MIT Three.js entry supports tank movement and firing/removing cannonballs, but no enemy/target damage, score, victory or loss loop was identified; README presents basic controls. It is a controls/shooting demonstration under this collection's current boundary.",
+      "next_action": "Reconsider only if source gains an implemented game objective or another actual game entry is located.",
+      "evidence_urls": [
+        "https://github.com/MemoryWrong/webgl-tank-game/blob/c582b7ab522a86dfb20806127adaf5b1e421c856/LICENSE",
+        "https://github.com/MemoryWrong/webgl-tank-game/blob/c582b7ab522a86dfb20806127adaf5b1e421c856/README.md",
+        "https://github.com/MemoryWrong/webgl-tank-game/blob/c582b7ab522a86dfb20806127adaf5b1e421c856/src/js/app.js",
+        "https://github.com/MemoryWrong/webgl-tank-game/blob/c582b7ab522a86dfb20806127adaf5b1e421c856/src/js/components/player.js",
+        "https://github.com/MemoryWrong/webgl-tank-game/blob/c582b7ab522a86dfb20806127adaf5b1e421c856/src/js/components/bullet.js"
+      ]
+    },
+    {
+      "id": "road-rash-starter-pack",
+      "repository_url": "https://github.com/gemsjohn/road-rash-starter-pack",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "b9af0be0a908a9b959530a2cd9e059c72905ca78",
+      "reason": "README calls this a Three.js/Rapier motorcycle starter pack. The reviewed runtime establishes movement/rider animation and physics setup, but no race checkpoints, opponent/combat objective, scoring or terminal game state was identified.",
+      "next_action": "Use as an implementation reference only; re-review if a complete playable game loop is added.",
+      "evidence_urls": [
+        "https://github.com/gemsjohn/road-rash-starter-pack/blob/b9af0be0a908a9b959530a2cd9e059c72905ca78/LICENSE",
+        "https://github.com/gemsjohn/road-rash-starter-pack/blob/b9af0be0a908a9b959530a2cd9e059c72905ca78/README.md",
+        "https://github.com/gemsjohn/road-rash-starter-pack/blob/b9af0be0a908a9b959530a2cd9e059c72905ca78/index.html",
+        "https://github.com/gemsjohn/road-rash-starter-pack/blob/b9af0be0a908a9b959530a2cd9e059c72905ca78/physics.js"
+      ]
+    },
+    {
+      "id": "minigolf-threejs-joaovalentee",
+      "repository_url": "https://github.com/joaovalentee/MiniGolf-ThreeJS",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "2533512b51b138dd8833ab3fc3f8e0f2aec0bd41",
+      "reason": "Repository contains Three.js/Physijs golf source, but no repository license/permission notice was located in the recursive tree or reviewed entry. Physijs also wraps scene/physics setup and needs boundary review.",
+      "next_action": "Establish an explicit source license and inspect the Physijs integration/game objective before promoting; vendor-library notices do not license the author's game.",
+      "evidence_urls": [
+        "https://github.com/joaovalentee/MiniGolf-ThreeJS/blob/2533512b51b138dd8833ab3fc3f8e0f2aec0bd41/index.html",
+        "https://github.com/joaovalentee/MiniGolf-ThreeJS/blob/2533512b51b138dd8833ab3fc3f8e0f2aec0bd41/golf.js"
+      ]
+    },
+    {
+      "id": "partee",
+      "repository_url": "https://github.com/WilliamTuominiemi/Partee",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "0ecba1a1ed9557619f2bba75168c6272c2f30291",
+      "reason": "The reviewed React/Next client directly constructs Three.js for minigolf, but no root/nested source license or README permission grant was found in the recursive tree and reviewed files.",
+      "next_action": "Obtain or locate an explicit license covering the author's code before source-verified open-source inclusion.",
+      "evidence_urls": [
+        "https://github.com/WilliamTuominiemi/Partee/blob/0ecba1a1ed9557619f2bba75168c6272c2f30291/README.md",
+        "https://github.com/WilliamTuominiemi/Partee/blob/0ecba1a1ed9557619f2bba75168c6272c2f30291/package.json",
+        "https://github.com/WilliamTuominiemi/Partee/blob/0ecba1a1ed9557619f2bba75168c6272c2f30291/components/ThreeScene.tsx"
+      ]
+    },
+    {
+      "id": "tsukimi-pinball",
+      "repository_url": "https://github.com/apkmasondev/pinball-3d",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "b9aea108263312a4f363fe75ad402392403f8702",
+      "reason": "README and source describe a scored three-table pinball game with Three.js, but no source license grant was located. README credits FreeSound excerpts and separately licensed fonts without establishing all media terms.",
+      "next_action": "Clarify the game code license and trace FreeSound/music permissions; do not infer openness from public source or font licenses.",
+      "evidence_urls": [
+        "https://github.com/apkmasondev/pinball-3d/blob/b9aea108263312a4f363fe75ad402392403f8702/README.md",
+        "https://github.com/apkmasondev/pinball-3d/blob/b9aea108263312a4f363fe75ad402392403f8702/game/package.json",
+        "https://github.com/apkmasondev/pinball-3d/blob/b9aea108263312a4f363fe75ad402392403f8702/game/src/main.js"
+      ]
+    },
+    {
+      "id": "feria-derby-3d",
+      "repository_url": "https://github.com/MarcVillarroya/feria-derby-3d",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "a32ff7b76270d3d0f9396a4437920dc1c1aae2cb",
+      "reason": "README's Licencia section explicitly says no distribution license has been assigned and code is reserved until the owner selects one. Public Three.js/Cannon source is not an open-source permission grant.",
+      "next_action": "Revisit if an explicit open-source code license is added.",
+      "evidence_urls": [
+        "https://github.com/MarcVillarroya/feria-derby-3d/blob/a32ff7b76270d3d0f9396a4437920dc1c1aae2cb/README.md",
+        "https://github.com/MarcVillarroya/feria-derby-3d/blob/a32ff7b76270d3d0f9396a4437920dc1c1aae2cb/package.json"
+      ]
+    },
+    {
+      "id": "the-dim-room",
+      "repository_url": "https://github.com/emanuelghdev/the-dim-room",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "f2722343719508cc7902c479c444c4c1848ca232",
+      "reason": "Root code is MIT and the escape-room source is present, but NOTICE identifies several bundled models under the TurboSquid 3D Model License, alongside CC0/CC-BY assets. The soundtrack and full asset rights were not established; do not present the whole game as uniformly open.",
+      "next_action": "Keep in the code-open/assets-restricted queue; audit applicable model/audio terms or a cleared-asset replacement edition before promotion.",
+      "evidence_urls": [
+        "https://github.com/emanuelghdev/the-dim-room/blob/f2722343719508cc7902c479c444c4c1848ca232/LICENSE",
+        "https://github.com/emanuelghdev/the-dim-room/blob/f2722343719508cc7902c479c444c4c1848ca232/NOTICE",
+        "https://github.com/emanuelghdev/the-dim-room/blob/f2722343719508cc7902c479c444c4c1848ca232/README.md",
+        "https://github.com/emanuelghdev/the-dim-room/blob/f2722343719508cc7902c479c444c4c1848ca232/objects/MyScene.js"
+      ]
+    },
+    {
+      "id": "dungeon-boots",
+      "repository_url": "https://github.com/rocket-boots/dungeon-boots",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "621e7a6a0e58166102574b7d98c13e4ad076398a",
+      "reason": "MIT root and Three.js dependency are verified, but README explicitly presents Dungeon Boots as a reusable dungeon-crawler framework, backed by rocket-boots-three-toolbox and other framework helpers. It is not yet an independently verified plain-Three game entry.",
+      "next_action": "Find a complete separately licensed game built with direct Three.js or review the included jam game and helper boundaries; do not relabel the framework itself as a verified game.",
+      "evidence_urls": [
+        "https://github.com/rocket-boots/dungeon-boots/blob/621e7a6a0e58166102574b7d98c13e4ad076398a/LICENSE",
+        "https://github.com/rocket-boots/dungeon-boots/blob/621e7a6a0e58166102574b7d98c13e4ad076398a/README.md",
+        "https://github.com/rocket-boots/dungeon-boots/blob/621e7a6a0e58166102574b7d98c13e4ad076398a/package.json"
+      ]
+    },
+    {
+      "id": "block-party",
+      "repository_url": "https://github.com/pennyshen/block_party",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "7c1f63c2cd0e7132a355f6ce8553d9017a7c65d3",
+      "reason": "MIT code/direct Three/spatial objectives verified. index.html credits bundled Space Forest to Kassich; the creator page currently asks for contact before project use. Applicable redistribution permission and other track terms were not established.",
+      "next_action": "Locate documented music permission/open-license terms or an asset-cleared edition; infer neither permission nor infringement from the MIT code file.",
+      "evidence_urls": [
+        "https://github.com/pennyshen/block_party/blob/7c1f63c2cd0e7132a355f6ce8553d9017a7c65d3/LICENSE",
+        "https://github.com/pennyshen/block_party/blob/7c1f63c2cd0e7132a355f6ce8553d9017a7c65d3/index.html",
+        "https://github.com/pennyshen/block_party/blob/7c1f63c2cd0e7132a355f6ce8553d9017a7c65d3/js/LevelMode.js",
+        "https://github.com/pennyshen/block_party/blob/7c1f63c2cd0e7132a355f6ce8553d9017a7c65d3/js/Block.js"
+      ]
+    },
+    {
+      "id": "epmik-puzzles",
+      "repository_url": "https://github.com/epmik/puzzles",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "83ca13b2d822b08bd97214f57aa8e8e84a11aca4",
+      "reason": "The sampled pyramid-flip entry starts p5 createCanvas/setup/draw despite loading Three scripts. Its actual renderer is p5; another direct-Three 3D game entry remains unproven.",
+      "next_action": "Inspect another complete entry if present; unused Three library includes do not establish the rendering stack.",
+      "evidence_urls": [
+        "https://github.com/epmik/puzzles/blob/83ca13b2d822b08bd97214f57aa8e8e84a11aca4/LICENSE",
+        "https://github.com/epmik/puzzles/blob/83ca13b2d822b08bd97214f57aa8e8e84a11aca4/README.md",
+        "https://github.com/epmik/puzzles/blob/83ca13b2d822b08bd97214f57aa8e8e84a11aca4/pyramid-flip-puzzle/index.html",
+        "https://github.com/epmik/puzzles/blob/83ca13b2d822b08bd97214f57aa8e8e84a11aca4/pyramid-flip-puzzle/js/main.js",
+        "https://github.com/epmik/puzzles/blob/83ca13b2d822b08bd97214f57aa8e8e84a11aca4/pyramid-flip-puzzle/js/app.game.js"
+      ]
+    },
+    {
+      "id": "pool-bunlongheng",
+      "repository_url": "https://github.com/bunlongheng/pool",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "32e1e03d6d3c2336b351f08fb30cd7343004f784",
+      "reason": "Actual manifest depends on @react-three/fiber and @react-three/drei; README also separates Canvas2D table from R3F balls. Outside the direct-Three boundary.",
+      "next_action": "Reconsider only a separate direct-Three edition.",
+      "evidence_urls": [
+        "https://github.com/bunlongheng/pool/blob/32e1e03d6d3c2336b351f08fb30cd7343004f784/LICENSE",
+        "https://github.com/bunlongheng/pool/blob/32e1e03d6d3c2336b351f08fb30cd7343004f784/README.md",
+        "https://github.com/bunlongheng/pool/blob/32e1e03d6d3c2336b351f08fb30cd7343004f784/package.json"
+      ]
+    },
+    {
+      "id": "3d-rts-sylvain",
+      "repository_url": "https://github.com/SylvainSenechal/3D-RTS",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "ef8b70670c62098931e94b34cb5674cb504a49f0",
+      "reason": "Pinned recursive tree contains only LICENSE, README, .gitattributes and an image; no implementation source verifies the advertised RTS/Three game.",
+      "next_action": "Revisit when actual game implementation source is published.",
+      "evidence_urls": [
+        "https://github.com/SylvainSenechal/3D-RTS/blob/ef8b70670c62098931e94b34cb5674cb504a49f0/LICENSE",
+        "https://github.com/SylvainSenechal/3D-RTS/blob/ef8b70670c62098931e94b34cb5674cb504a49f0/README.md"
+      ]
+    },
+    {
+      "id": "dominion",
+      "repository_url": "https://github.com/amithey/dominion",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "ab17b062e7fd159d292fa7dfdf31db1194b27a5f",
+      "reason": "Current README says the active Windows product is Godot; older browser code is historical and outside active releases. Description/three devDependency would misrepresent current stack.",
+      "next_action": "Review the historical browser edition as a separately scoped legacy game with renderer, objectives and asset notices.",
+      "evidence_urls": [
+        "https://github.com/amithey/dominion/blob/ab17b062e7fd159d292fa7dfdf31db1194b27a5f/LICENSE",
+        "https://github.com/amithey/dominion/blob/ab17b062e7fd159d292fa7dfdf31db1194b27a5f/README.md",
+        "https://github.com/amithey/dominion/blob/ab17b062e7fd159d292fa7dfdf31db1194b27a5f/package.json"
+      ]
+    },
+    {
+      "id": "trash-jam-v2-1",
+      "repository_url": "https://github.com/mrbllyy/Trash-Jam-v2.1",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "ab911f05b9c08a720f7d4a9d93f6437ad6051ccf",
+      "reason": "Reviewed root entry consists of Three GLTF/OrbitControls viewers and keyboard scene edits; no concrete trash/target/score/win/loss objective was established. README's play link alone is insufficient.",
+      "next_action": "Revisit if an actual game entry is identified; no runtime failure is inferred from source review.",
+      "evidence_urls": [
+        "https://github.com/mrbllyy/Trash-Jam-v2.1/blob/ab911f05b9c08a720f7d4a9d93f6437ad6051ccf/LICENSE",
+        "https://github.com/mrbllyy/Trash-Jam-v2.1/blob/ab911f05b9c08a720f7d4a9d93f6437ad6051ccf/README.md",
+        "https://github.com/mrbllyy/Trash-Jam-v2.1/blob/ab911f05b9c08a720f7d4a9d93f6437ad6051ccf/index.html"
+      ]
+    },
+    {
+      "id": "orbital-gianlucatruda",
+      "repository_url": "https://github.com/gianlucatruda/orbital",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "a5f3741b98103c471d57b1783a0871325eca9cf4",
+      "reason": "GPL source/direct Three.js are present, but README describes an experimental orbital simulator/game and the reviewed main/engine expose orbit/ship parameters without an established mission, score or terminal game objective.",
+      "next_action": "Locate an actual implemented objective/result loop before presenting the simulator as a verified game.",
+      "evidence_urls": [
+        "https://github.com/gianlucatruda/orbital/blob/a5f3741b98103c471d57b1783a0871325eca9cf4/LICENSE",
+        "https://github.com/gianlucatruda/orbital/blob/a5f3741b98103c471d57b1783a0871325eca9cf4/README.md",
+        "https://github.com/gianlucatruda/orbital/blob/a5f3741b98103c471d57b1783a0871325eca9cf4/src/main.js",
+        "https://github.com/gianlucatruda/orbital/blob/a5f3741b98103c471d57b1783a0871325eca9cf4/src/engine.js"
+      ]
+    },
+    {
+      "id": "mazegame-joppiesaus",
+      "repository_url": "https://github.com/joppiesaus/mazegame",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "5c837e286b61ed0454b251c8fe7365b33e2ae90f",
+      "reason": "Unlicense and direct Three.js maze navigation verified. Source carves an entrance/finish opening but no explicit completion-state/progression hook was established in the reviewed main/maze logic.",
+      "next_action": "Clarify the actual-game boundary for a manually completed maze or locate a completion/progression handler; do not claim a verified win state.",
+      "evidence_urls": [
+        "https://github.com/joppiesaus/mazegame/blob/5c837e286b61ed0454b251c8fe7365b33e2ae90f/LICENSE.md",
+        "https://github.com/joppiesaus/mazegame/blob/5c837e286b61ed0454b251c8fe7365b33e2ae90f/README.md",
+        "https://github.com/joppiesaus/mazegame/blob/5c837e286b61ed0454b251c8fe7365b33e2ae90f/js/main.js",
+        "https://github.com/joppiesaus/mazegame/blob/5c837e286b61ed0454b251c8fe7365b33e2ae90f/js/mazegame.js"
+      ]
+    },
+    {
+      "id": "parkour-yuqian5",
+      "repository_url": "https://github.com/yuqian5/parkour",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "d48ff8dfc4abdd46247c09c700bacd98a0d5f1f3",
+      "reason": "CC0/Three.js free movement/physics map verified. README's goal prose mentions fast navigation, but reviewed runtime only established controls, collisions and debug coordinates/speed, not timing/checkpoints/scoring/finish adjudication.",
+      "next_action": "Locate an implemented parkour course objective/result loop before upgrading from an exploration/learner prototype.",
+      "evidence_urls": [
+        "https://github.com/yuqian5/parkour/blob/d48ff8dfc4abdd46247c09c700bacd98a0d5f1f3/LICENSE",
+        "https://github.com/yuqian5/parkour/blob/d48ff8dfc4abdd46247c09c700bacd98a0d5f1f3/README.md",
+        "https://github.com/yuqian5/parkour/blob/d48ff8dfc4abdd46247c09c700bacd98a0d5f1f3/js/main.js"
+      ]
+    },
+    {
+      "id": "find-me-connect-us",
+      "repository_url": "https://github.com/zqzten/FindMeConnectUs",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "6a0ac75c626089cfffddcfbdf459b80a84574be7",
+      "reason": "Apache code/direct Three game renderer and voting/result logic are verified, but the companion admin/lobby manifest includes vue-3d-model. Its necessity and scope relative to the actual game runtime remain unestablished under the strict renderer-wrapper boundary.",
+      "next_action": "Audit whether that model viewer is optional admin-only UI and can be scoped outside the direct Three game; keep pending rather than hide the wrapper dependency.",
+      "evidence_urls": [
+        "https://github.com/zqzten/FindMeConnectUs/blob/6a0ac75c626089cfffddcfbdf459b80a84574be7/LICENSE",
+        "https://github.com/zqzten/FindMeConnectUs/blob/6a0ac75c626089cfffddcfbdf459b80a84574be7/src/client/main/package.json",
+        "https://github.com/zqzten/FindMeConnectUs/blob/6a0ac75c626089cfffddcfbdf459b80a84574be7/src/client/main/src/js/main.js",
+        "https://github.com/zqzten/FindMeConnectUs/blob/6a0ac75c626089cfffddcfbdf459b80a84574be7/src/client/main/src/js/game_control.js",
+        "https://github.com/zqzten/FindMeConnectUs/blob/6a0ac75c626089cfffddcfbdf459b80a84574be7/src/client/admin/package.json",
+        "https://github.com/zqzten/FindMeConnectUs/blob/6a0ac75c626089cfffddcfbdf459b80a84574be7/src/server/socket.js"
+      ]
+    },
+    {
+      "id": "synthblast",
+      "repository_url": "https://github.com/brianrisk/SYNTHBLAST-threejs-game",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "8fd77ccc4e03bc9c6033e0738472351b0ab8f2a6",
+      "reason": "Current entry actively creates both THREE.WebGLRenderer and PIXI.WebGLRenderer sharing the GL context; LevelScreen uses Pixi containers/graphics. This is a mixed-renderer game, outside the default pure-Three collection boundary.",
+      "next_action": "Reconsider a separately licensed/scoped edition without the active Pixi renderer; do not treat the pixi dependency as unused.",
+      "evidence_urls": [
+        "https://github.com/brianrisk/SYNTHBLAST-threejs-game/blob/8fd77ccc4e03bc9c6033e0738472351b0ab8f2a6/LICENSE",
+        "https://github.com/brianrisk/SYNTHBLAST-threejs-game/blob/8fd77ccc4e03bc9c6033e0738472351b0ab8f2a6/package.json",
+        "https://github.com/brianrisk/SYNTHBLAST-threejs-game/blob/8fd77ccc4e03bc9c6033e0738472351b0ab8f2a6/index.html",
+        "https://github.com/brianrisk/SYNTHBLAST-threejs-game/blob/8fd77ccc4e03bc9c6033e0738472351b0ab8f2a6/js/classes/ui/LevelScreen.js"
+      ]
+    },
+    {
+      "id": "glenn-explore",
+      "repository_url": "https://github.com/WilliamAvHolmberg/glenn-explore",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "5b40306259dcaa2fc7a0fbb32626f50c3bc99805",
+      "reason": "Reviewed web source creates a Cesium.Viewer and uses Mapbox/Threebox; web-2 declares @react-three/fiber/drei/react-three-map. These rendering paths exceed direct Three.js despite the repository description.",
+      "next_action": "Reconsider only a separate direct-Three edition with its own verified runtime/objective.",
+      "evidence_urls": [
+        "https://github.com/WilliamAvHolmberg/glenn-explore/blob/5b40306259dcaa2fc7a0fbb32626f50c3bc99805/LICENSE",
+        "https://github.com/WilliamAvHolmberg/glenn-explore/blob/5b40306259dcaa2fc7a0fbb32626f50c3bc99805/README.md",
+        "https://github.com/WilliamAvHolmberg/glenn-explore/blob/5b40306259dcaa2fc7a0fbb32626f50c3bc99805/web/package.json",
+        "https://github.com/WilliamAvHolmberg/glenn-explore/blob/5b40306259dcaa2fc7a0fbb32626f50c3bc99805/web/src/cesium/core/Scene.ts",
+        "https://github.com/WilliamAvHolmberg/glenn-explore/blob/5b40306259dcaa2fc7a0fbb32626f50c3bc99805/web-2/package.json"
+      ]
     }
   ]
 }
