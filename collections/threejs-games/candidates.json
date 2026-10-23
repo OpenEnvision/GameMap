@@ -264,6 +264,67 @@
         "https://github.com/viachm/windsurf-simulator/blob/770eb3be81b39519801c16b6e5c4de63d923f860/site/src/sim.js",
         "https://github.com/viachm/windsurf-simulator/blob/770eb3be81b39519801c16b6e5c4de63d923f860/site/src/main.js"
       ]
+    },
+    {
+      "id": "soccer-arcade-no-source",
+      "repository_url": "https://github.com/Segmentree/soccer-arcade",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "165ddd0f8e4de7730edb0f99c27d8f64dc73cfed",
+      "reason": "The advertised game has no game source at this pinned commit: the complete non-truncated tree contains only .gitignore and LICENSE.",
+      "next_action": "Revisit when actual game source is published; a description and MIT file alone cannot establish a qualifying game.",
+      "evidence_urls": [
+        "https://github.com/Segmentree/soccer-arcade/blob/165ddd0f8e4de7730edb0f99c27d8f64dc73cfed/LICENSE"
+      ]
+    },
+    {
+      "id": "starbow-tracking-prototype",
+      "repository_url": "https://github.com/Mogadragos/StarBow",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "d86116ecf05a8931aed88b987f25cd047f82ce43",
+      "reason": "The actual GameScene renders a smartphone/cube and applies incoming sensor quaternions. The reviewed entry has no implemented archery shot, target or scoring loop; it is a tracking/display prototype.",
+      "next_action": "Reconsider a future commit with actual archery gameplay, rather than treating the project description as implemented functionality.",
+      "evidence_urls": [
+        "https://github.com/Mogadragos/StarBow/blob/d86116ecf05a8931aed88b987f25cd047f82ce43/README.md",
+        "https://github.com/Mogadragos/StarBow/blob/d86116ecf05a8931aed88b987f25cd047f82ce43/LICENSE",
+        "https://github.com/Mogadragos/StarBow/blob/d86116ecf05a8931aed88b987f25cd047f82ce43/src/browser/Game.ts",
+        "https://github.com/Mogadragos/StarBow/blob/d86116ecf05a8931aed88b987f25cd047f82ce43/src/browser/scenes/impl/GameScene.ts"
+      ]
+    },
+    {
+      "id": "football-vardhan-scope",
+      "repository_url": "https://github.com/vardhan2000/multiplayer-football-game",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "e57a1ba8e4b59daa857a5d798eec7a666768069c",
+      "reason": "Direct Three.js player/ball controls are present, but the reviewed course entry does not establish scoring, goal adjudication or a match outcome; out-of-bounds merely reloads the page.",
+      "next_action": "Inspect other authoritative implementation/assignment material or future code for an actual match objective and outcome before promotion.",
+      "evidence_urls": [
+        "https://github.com/vardhan2000/multiplayer-football-game/blob/e57a1ba8e4b59daa857a5d798eec7a666768069c/README.md",
+        "https://github.com/vardhan2000/multiplayer-football-game/blob/e57a1ba8e4b59daa857a5d798eec7a666768069c/LICENSE",
+        "https://github.com/vardhan2000/multiplayer-football-game/blob/e57a1ba8e4b59daa857a5d798eec7a666768069c/index.html",
+        "https://github.com/vardhan2000/multiplayer-football-game/blob/e57a1ba8e4b59daa857a5d798eec7a666768069c/index.js",
+        "https://github.com/vardhan2000/multiplayer-football-game/blob/e57a1ba8e4b59daa857a5d798eec7a666768069c/lib/renderer.js"
+      ]
+    },
+    {
+      "id": "salvo-dimensional-scope",
+      "repository_url": "https://github.com/adrienbrault/salvo",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "6fd572b62425a55583dc0165036332621a83e3c5",
+      "reason": "A complete direct Three.js WebGPU score-attack game with 3D procedural models exists, but rendering.md explicitly fixes all gameplay to z=0. The vertical scrolling shoot-em-up boundary versus this strict 3D collection remains unresolved.",
+      "next_action": "Keep the planar shooter outside verified games until dimensional scope is explicitly resolved; preserve the direct-renderer and game-loop evidence.",
+      "evidence_urls": [
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/LICENSE",
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/README.md",
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/package.json",
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/docs/rendering.md",
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/src/render/GameRenderer.ts",
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/src/render/actors/models.ts",
+        "https://github.com/adrienbrault/salvo/blob/6fd572b62425a55583dc0165036332621a83e3c5/src/app/Game.ts"
+      ]
     }
   ]
 }
