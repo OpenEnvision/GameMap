@@ -282,6 +282,9 @@ export function renderStagingEnvironment(input) {
     "CATALOG_STUDIO_HOST=127.0.0.1",
     "CATALOG_STUDIO_PORT=4180",
     "CATALOG_MEDIA_ROOT=" + JSON.stringify(plan.studio.mediaRoot),
+    "# Optional small-host policy: 2.5 MP uploads, one at a time; no automatic resizing or provider guarantee.",
+    "# See docs/deployment.md for runtime-only pre-launch memory settings; this template does not apply them.",
+    "# CATALOG_MEDIA_PROFILE=low-memory",
     "",
   ].join("\n");
 }

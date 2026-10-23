@@ -41,6 +41,7 @@ export async function studioFixture({
   staticDirectory,
   port = 0,
   approved = true,
+  mediaProfile = "default",
   realm: requestedRealm = {
     environment: "local",
     project: "local:studio-fixture",
@@ -130,7 +131,7 @@ export async function studioFixture({
     },
   };
   const directory = await mkdtemp(join(tmpdir(), "gamemap-studio-media-"));
-  const media = createMediaStore(directory),
+  const media = createMediaStore(directory, { profile: mediaProfile }),
     sessions = createSessions(database, auth, {
       origin,
       secret: "test-fixture-secret-never-used-in-production",

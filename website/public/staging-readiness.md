@@ -13,6 +13,8 @@ This review is limited to environment/deployment readiness. It is not a penetrat
 - An HTTPS, persistent Node service for Studio, with **one instance** and a private persistent media volume outside the checkout. Pages cannot run Studio. Ephemeral/serverless filesystems are not an acceptable replacement for the current media store.
 - The public preview remains anonymous. Auth, database access and deployment credentials stay server/operator-side.
 
+An optional [low-memory Studio policy](deployment.md#optional-low-memory-studio) limits new uploads and native image processing for small-host evaluation. It does not provision or certify a free host, change existing media, relax the single-instance/persistent-volume requirement, or resolve the publication blockers below. Actual resource usage, quotas, mainland-China connectivity and full-workflow recovery still need cloud acceptance.
+
 Copy the example to an ignored private location before entering real topology values. Never put passwords, database URLs with credentials, Auth keys or session keys in the JSON plan.
 
 ```sh

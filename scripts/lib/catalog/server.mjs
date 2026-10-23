@@ -4,6 +4,7 @@ import { stat } from "node:fs/promises";
 import { extname } from "node:path";
 import { z } from "zod";
 import { AuthenticationError } from "./auth.mjs";
+import { MediaUploadBusyError } from "./media.mjs";
 import { ContentValidationError } from "./validation.mjs";
 import { canonicalJSON, safePath, readArtifact } from "./codec.mjs";
 import { first } from "./database.mjs";
@@ -295,6 +296,7 @@ export function createStudioServer({
           forms: context.contractForms(),
           translatable,
           ...registered,
+          mediaUpload: media.policy,
           limitations:
             "Validation checks structure, references, media and translation freshness; source review and reproduction remain human responsibilities.",
         });
@@ -446,7 +448,9 @@ export function createStudioServer({
           "reviewer",
           "admin",
         ]);
-        const result = await media.put(await bytes(request, 10 * 1024 * 1024));
+        const result = await media.upload(() =>
+          bytes(request, media.policy.maxBytes),
+        );
         await database.system((client) =>
           client.query(
             "insert into catalog.audit_events(actor_id, action, entity, detail) values($1, 'upload-media', $2, $3::jsonb)",
@@ -516,6 +520,19 @@ export function createStudioServer({
           error.status,
           { error: { code: "authentication", message: error.message } },
           { "Set-Cookie": sessions.clearCookie() },
+        );
+        return;
+      }
+      if (error instanceof MediaUploadBusyError) {
+        // Do not buffer or drain a rejected upload into application memory. Close the
+        // connection after the response, including when the sender has not finished.
+        response(
+          res,
+          429,
+          {
+            error: { code: "media_busy", message: error.message },
+          },
+          { "Retry-After": "1", Connection: "close" },
         );
         return;
       }

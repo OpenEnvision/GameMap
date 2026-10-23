@@ -10,10 +10,46 @@ import {
   assertPrivateDirectory,
 } from "./codec.mjs";
 
-const limit = 10 * 1024 * 1024;
-export async function normalizeImage(bytes) {
+const profiles = new Map(
+  [
+    { profile: "default", maxPixels: 40000000, maxConcurrentUploads: null },
+    { profile: "low-memory", maxPixels: 2500000, maxConcurrentUploads: 1 },
+  ].map((profile) => [
+    profile.profile,
+    Object.freeze({
+      maxBytes: 10 * 1024 * 1024,
+      maxDimension: 10000,
+      ...profile,
+    }),
+  ]),
+);
+export function mediaUploadPolicy(profile = "default") {
   assert.ok(
-    bytes.length > 0 && bytes.length <= limit,
+    profiles.has(profile),
+    "Invalid CATALOG_MEDIA_PROFILE; use default or low-memory",
+  );
+  return profiles.get(profile);
+}
+// Process-wide native settings belong at startup, never in a per-request toggle.
+// The default profile deliberately leaves Sharp's existing settings untouched.
+export function configureMediaRuntime(profile = "default") {
+  const policy = mediaUploadPolicy(profile);
+  if (policy.profile === "low-memory") {
+    sharp.cache(false);
+    sharp.concurrency(1);
+  }
+  return policy;
+}
+export class MediaUploadBusyError extends Error {
+  constructor() {
+    super("Another image upload is running. Wait for it to finish and retry.");
+    this.name = "MediaUploadBusyError";
+  }
+}
+export async function normalizeImage(bytes, profile = "default") {
+  const policy = mediaUploadPolicy(profile);
+  assert.ok(
+    bytes.length > 0 && bytes.length <= policy.maxBytes,
     "Image must be between 1 byte and 10 MB",
   );
   // Reject SVG/active formats before invoking an image decoder. Fully decode, auto-orient and
@@ -33,7 +69,7 @@ export async function normalizeImage(bytes) {
   try {
     result = await sharp(bytes, {
       failOn: "error",
-      limitInputPixels: 40000000,
+      limitInputPixels: policy.maxPixels,
       animated: false,
     })
       .rotate()
@@ -42,15 +78,15 @@ export async function normalizeImage(bytes) {
   } catch {
     throw Object.assign(
       new Error(
-        "Image could not be fully decoded within the 40-megapixel limit",
+        `Image could not be fully decoded within the ${policy.maxPixels / 1000000}-megapixel limit`,
       ),
       { status: 422 },
     );
   }
   assert.ok(
-    result.info.width <= 10000 &&
-      result.info.height <= 10000 &&
-      result.data.length <= limit,
+    result.info.width <= policy.maxDimension &&
+      result.info.height <= policy.maxDimension &&
+      result.data.length <= policy.maxBytes,
     "Normalized image exceeds the dimensions or 10 MB storage limit",
   );
   return {
@@ -61,43 +97,63 @@ export async function normalizeImage(bytes) {
 }
 export function createMediaStore(
   directory = resolve(root, ".build/catalog-media"),
+  { profile = "default" } = {},
 ) {
+  const policy = mediaUploadPolicy(profile);
   const filenamePattern = /^[a-f0-9]{64}\.webp$/;
   const privateRoot = async () => {
     await assertPrivateDirectory(root, directory);
     await mkdir(directory, { recursive: true, mode: 0o700 });
     await assertPrivateDirectory(root, await realpath(directory));
   };
+  const store = async (input) => {
+    const image = await normalizeImage(input, policy.profile),
+      hash = sha256(image.bytes),
+      filename = `${hash}.webp`;
+    await privateRoot();
+    try {
+      await writeFile(safePath(directory, filename), image.bytes, {
+        flag: "wx",
+        mode: 0o600,
+      });
+    } catch (error) {
+      if (error.code !== "EEXIST") throw error;
+      assert.equal(
+        sha256(await readFile(safePath(directory, filename))),
+        hash,
+        "Stored media checksum conflict",
+      );
+    }
+    return {
+      filename,
+      path: `media/catalog/${filename}`,
+      sha256: hash,
+      source_sha256: sha256(input),
+      bytes: image.bytes.length,
+      width: image.width,
+      height: image.height,
+      preview_url: `/api/media/${filename}`,
+    };
+  };
+  let activeUploads = 0;
+  const upload = async (readInput) => {
+    // Reserve before reading the body; never queue encoded images in memory. One Studio
+    // process/store is required. This is not distributed coordination or a memory SLA.
+    if (activeUploads >= (policy.maxConcurrentUploads ?? Infinity))
+      throw new MediaUploadBusyError();
+    activeUploads++;
+    try {
+      return await store(await readInput());
+    } finally {
+      activeUploads--;
+    }
+  };
   return {
+    policy,
     ready: privateRoot,
-    async put(input) {
-      const image = await normalizeImage(input),
-        hash = sha256(image.bytes),
-        filename = `${hash}.webp`;
-      await privateRoot();
-      try {
-        await writeFile(safePath(directory, filename), image.bytes, {
-          flag: "wx",
-          mode: 0o600,
-        });
-      } catch (error) {
-        if (error.code !== "EEXIST") throw error;
-        assert.equal(
-          sha256(await readFile(safePath(directory, filename))),
-          hash,
-          "Stored media checksum conflict",
-        );
-      }
-      return {
-        filename,
-        path: `media/catalog/${filename}`,
-        sha256: hash,
-        source_sha256: sha256(input),
-        bytes: image.bytes.length,
-        width: image.width,
-        height: image.height,
-        preview_url: `/api/media/${filename}`,
-      };
+    upload,
+    put(input) {
+      return upload(() => input);
     },
     async get(filename) {
       assert.match(filename, filenamePattern, "Unknown media object");

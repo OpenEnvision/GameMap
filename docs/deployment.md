@@ -66,6 +66,28 @@ Tests exercise desktop and mobile layouts, filtering, saved collections, resourc
 
 `npm run site:build -- --input PACKAGE --out PRIVATE_OUTPUT --realm OPERATOR_REALM_FILE --base /GameMap/ --browser` verifies a reviewed release and builds it in a separate temporary workspace. It does not change the ordinary build source, the working tree's `dist/`, or the Pages workflow. Use `npm run site:verify -- --input PRIVATE_OUTPUT` to verify the exact completed artifact. The realm file is an independently provisioned operator expectation, not a file trusted from the release sender. Local fixtures require `--development` and remain explicitly local; staging/production require matching immutable realm identity, clean exact source and browser gates. See [content-platform operations](content-platform.md) for generated-guide review, source ownership, artifact evidence and remaining deployment gates. Nothing is uploaded or activated by these commands.
 
+## Optional low-memory Studio
+
+Studio keeps its existing upload policy unless an operator explicitly sets `CATALOG_MEDIA_PROFILE=low-memory`. Unknown profile values fail startup rather than silently falling back. The low-memory policy:
+
+- Accepts at most **2.5 million pixels** per new upload (including 1920×1080), versus the default 40 million. Both profiles retain the 10 MB encoded/output limit and 10,000-pixel dimension limit.
+- Admits **one upload at a time per process/store**, before reading its request body. Extra authenticated uploads receive `429 media_busy`, `Retry-After: 1` and a closed connection; images are not queued in memory. Authentication, membership, Origin and CSRF checks still precede admission.
+- Disables Sharp's process-wide operation cache and uses one native image-processing thread at Studio startup. The default profile does not change these native settings. Run one Studio instance/store; this is not distributed coordination.
+- Rejects oversized images explicitly, without resizing, cropping or changing their provenance. Accepted uploads keep the same lossless, auto-oriented, EXIF-stripped WebP normalization. Existing larger media remains readable and exportable without rewriting its bytes.
+
+Authenticated `/api/contracts` responses include `mediaUpload`, the actual upload policy. Limits are enforced server-side even if a browser does not display them. Aborted reads and failed decoding/storage release admission slots.
+
+For a small **Linux/glibc** runtime, the local resource probe also uses the following **pre-launch** allocator, worker-pool and V8 settings. Supply the normal private Studio configuration and prebuilt UI separately:
+
+```sh
+MALLOC_ARENA_MAX=2 UV_THREADPOOL_SIZE=1 CATALOG_MEDIA_PROFILE=low-memory \
+  node --max-old-space-size=128 scripts/studio.mjs --production
+```
+
+Apply these settings to the runtime only, not dependency installation, builds or migrations. In particular, putting `MALLOC_ARENA_MAX` in a file loaded by Node's `--env-file` does not establish the tested pre-launch allocator environment. The V8 heap setting does **not** limit native image memory or total process memory. Other platforms/allocators require separate measurement.
+
+This policy is **not a guarantee that every workflow fits a 512 MiB host**. Resource probes are local, not provider acceptance. Large API responses, validation, freezing/export and concurrent non-upload requests still require full-workload measurement. Verify actual host architecture, restarts, persistent-volume capacity, cold starts, quotas, database/Auth connectivity, backup/recovery and mainland-China access before using a free tier. Do not automatically upgrade to a paid plan when a test or quota fails. HTTPS, private persistent storage, immutable release identity and independent publication approval remain mandatory.
+
 ## Staging preparation (disabled, offline only)
 
 See the [staging-readiness review](staging-readiness.md) before connecting a cloud project. `config/staging.example.json` proposes an isolated preview repository, Supabase project and single-instance persistent Studio host, but is not consumed by a publisher. `npm run staging:check -- --config config/staging.example.json --out NEW_PRIVATE_DIRECTORY` writes a private redacted report and blank-secret Studio environment template without reading credential stores or making network requests. Exit code 2 means blocked/not ready. Immutable realm enforcement is implemented and tested locally, but actual cloud identity, hosting-adapter and operational acceptance remain unverified or blocked; filling placeholders cannot authorize a deployment.

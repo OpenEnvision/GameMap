@@ -6,7 +6,10 @@ import { createImportBundle } from "./lib/platform.mjs";
 import { connectDatabase } from "./lib/catalog/database.mjs";
 import { createSupabaseAuth, createSessions } from "./lib/catalog/auth.mjs";
 import { createCatalogWorker } from "./lib/catalog/worker.mjs";
-import { createMediaStore } from "./lib/catalog/media.mjs";
+import {
+  createMediaStore,
+  configureMediaRuntime,
+} from "./lib/catalog/media.mjs";
 import { createStudioServer } from "./lib/catalog/server.mjs";
 import {
   readReleaseRealmFile,
@@ -14,6 +17,8 @@ import {
 } from "./lib/catalog/release-realm.mjs";
 
 if (process.argv.includes("--production")) process.env.NODE_ENV = "production";
+// Validate before opening connections; never silently fall back from an invalid profile.
+const mediaPolicy = configureMediaRuntime(process.env.CATALOG_MEDIA_PROFILE);
 const required = [
   "CATALOG_DATABASE_URL",
   "SUPABASE_URL",
@@ -98,6 +103,7 @@ if (!missing.length) {
     process.env.CATALOG_MEDIA_ROOT
       ? resolve(process.env.CATALOG_MEDIA_ROOT)
       : undefined,
+    { profile: mediaPolicy.profile },
   );
   await media.ready();
   const worker = createCatalogWorker(database, context, {
