@@ -8663,6 +8663,623 @@
         "Player health/death recovery, networking, database/auth behavior, persistent progression and production-readiness claims were not exercised.",
         "React is an auxiliary UI/lifecycle layer; the scene is rendered by direct Three.js."
       ]
+    },
+    {
+      "id": "3d-blocks-jerilseb",
+      "name": "3D Blocks",
+      "repository_url": "https://github.com/jerilseb/3d-blocks",
+      "genres": [
+        "merge-puzzle",
+        "board-game"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r71",
+        "render_evidence": {
+          "url": "https://github.com/jerilseb/3d-blocks/blob/429f08eea94d2b9d47d9857c4ec198c39d810520/js/game.js#L66",
+          "claim": "Direct Three.js WebGLRenderer; board/pieces use BoxGeometry meshes, rendered by the author's frame loop. The vendored header identifies r71."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla JavaScript; vendored Three r71, Projector/OrbitControls/DeviceOrientationControls/THREEx.WindowResize and Tween. Scripts listed in index.html; no root npm manifest."
+        ],
+        "framework_audit": "No R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified in the reviewed entry/manifests/render path. Auxiliary controls/audio/build/network/map helpers are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/jerilseb/3d-blocks/blob/429f08eea94d2b9d47d9857c4ec198c39d810520/js/game_logic.js#L153",
+        "claim": "Placement checks neighboring equal figures, merges groups and adds score; game_over detects a filled/no-move board and game.js displays GAME OVER."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/jerilseb/3d-blocks/blob/429f08eea94d2b9d47d9857c4ec198c39d810520/LICENSE",
+        "additional_notices": [],
+        "notes": "Root MIT text verified (2016 copyright line names no holder). Bundled texture/sound/dependency rights were not exhaustively audited."
+      },
+      "demo": {
+        "url": "https://jerilseb.github.io/3d-blocks/",
+        "status": "reader-error",
+        "source_url": "https://github.com/jerilseb/3d-blocks/blob/429f08eea94d2b9d47d9857c4ec198c39d810520/README.md",
+        "notes": "Pinned README links the author demo. Reader failure does not establish site downtime or playability.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/jerilseb/3d-blocks/blob/429f08eea94d2b9d47d9857c4ec198c39d810520/README.md",
+        "notes": "Source implements placement/merging, reserve, scoring and game-over with old Three APIs."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "429f08eea94d2b9d47d9857c4ec198c39d810520",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-012.md#3d-blocks-jerilseb",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/jerilseb/3d-blocks/blob/429f08eea94d2b9d47d9857c4ec198c39d810520/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/jerilseb/3d-blocks/blob/429f08eea94d2b9d47d9857c4ec198c39d810520/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/jerilseb/3d-blocks/blob/429f08eea94d2b9d47d9857c4ec198c39d810520/index.html"
+          },
+          {
+            "path": "js/game.js",
+            "url": "https://github.com/jerilseb/3d-blocks/blob/429f08eea94d2b9d47d9857c4ec198c39d810520/js/game.js"
+          },
+          {
+            "path": "js/game_logic.js",
+            "url": "https://github.com/jerilseb/3d-blocks/blob/429f08eea94d2b9d47d9857c4ec198c39d810520/js/game_logic.js"
+          },
+          {
+            "path": "js/libs/three.js/three.js",
+            "url": "https://github.com/jerilseb/3d-blocks/blob/429f08eea94d2b9d47d9857c4ec198c39d810520/js/libs/three.js/three.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Rules use a 5×5 XY array displayed as a volumetric Three.js board: this is a 3D-rendered board game, not XYZ movement or 3D-volume packing.",
+        "Legacy controls, merges, full-board handling and modern-browser compatibility were not run."
+      ]
+    },
+    {
+      "id": "bubble-reactor",
+      "name": "Bubble Reactor",
+      "repository_url": "https://github.com/ninetailschris/bubble-reactor",
+      "genres": [
+        "bubble-shooter",
+        "matching-puzzle"
+      ],
+      "dimension": "3d-cylinder",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r106",
+        "render_evidence": {
+          "url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/build/js/scene.js#L11",
+          "claim": "drawScene directly creates WebGLRenderer. game.js arranges bubble sprites on alternating circular XZ rings at different heights, forming a cylindrical game space."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla JS and vendored Three r106; jQuery/Bootstrap UI, Keydrown input, Tween, Howler, stats/rendererstats and Three FBX loader. Actual scripts are listed in build/index.html; no npm manifest."
+        ],
+        "framework_audit": "No R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified in the reviewed entry/manifests/render path. Auxiliary controls/audio/build/network/map helpers are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/build/js/game.js#L303",
+        "claim": "Puzzle shots consume a color stack; exhausting it or occupying the final ring calls gameOver, pauses and opens an end interface. logic.js finds/removes matching adjacent color clusters."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/LICENSE",
+        "additional_notices": [],
+        "notes": "Root MIT code license verified. Sounds, sphere/skybox images, Fredoka font and other dependency/media provenance were not fully audited."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "source_url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/README.md",
+        "notes": "No confirmed author-hosted demo was located; build/index.html is the source entry. No Pages URL was guessed.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/README.md",
+        "notes": "README explicitly labels the game very early; source supplies timed/puzzle modes, cylindrical aiming, cluster removal and game-over."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "09ee24cc95010c9944d2d354870b8164e2ee61eb",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-012.md#bubble-reactor",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/README.md"
+          },
+          {
+            "path": "build/index.html",
+            "url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/build/index.html"
+          },
+          {
+            "path": "build/js/controls.js",
+            "url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/build/js/controls.js"
+          },
+          {
+            "path": "build/js/game.js",
+            "url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/build/js/game.js"
+          },
+          {
+            "path": "build/js/libraries/three.106.js",
+            "url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/build/js/libraries/three.106.js"
+          },
+          {
+            "path": "build/js/logic.js",
+            "url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/build/js/logic.js"
+          },
+          {
+            "path": "build/js/menus.js",
+            "url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/build/js/menus.js"
+          },
+          {
+            "path": "build/js/scene.js",
+            "url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/build/js/scene.js"
+          },
+          {
+            "path": "build/js/sound.js",
+            "url": "https://github.com/ninetailschris/bubble-reactor/blob/09ee24cc95010c9944d2d354870b8164e2ee61eb/build/js/sound.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Bubbles use textured Points/sprites within a real cylindrical 3D arrangement. Adjacency is a wrapped ring grid, not free spatial locomotion.",
+        "Stack boundaries, cluster outcomes, game-over timing, sound loading and browser support were not exercised."
+      ]
+    },
+    {
+      "id": "neon-snake-3d-samuel-cabral",
+      "name": "Neon Snake 3D",
+      "repository_url": "https://github.com/samuel-cabral/snake-3d",
+      "genres": [
+        "snake",
+        "arcade",
+        "board-game"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.184.0",
+        "render_evidence": {
+          "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/src/rendering/scene.ts#L51",
+          "claim": "SceneRig directly creates WebGLRenderer. App constructs GameRenderer/SceneRig; SnakeView uses cubic BoxGeometry meshes on the rendered board."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/package.json",
+            "dependencies": {
+              "@upstash/redis": "^1.38.0",
+              "three": "^0.184.0"
+            },
+            "dev_dependencies": {
+              "@eslint/js": "^9.17.0",
+              "@playwright/test": "^1.49.1",
+              "@types/node": "^26.0.0",
+              "@types/three": "^0.184.0",
+              "@vitest/coverage-v8": "^2.1.8",
+              "eslint": "^9.17.0",
+              "globals": "^15.14.0",
+              "husky": "^9.1.7",
+              "jsdom": "^25.0.1",
+              "lint-staged": "^15.3.0",
+              "prettier": "^3.4.2",
+              "typescript": "^5.7.2",
+              "typescript-eslint": "^8.18.2",
+              "vite": "^6.0.7",
+              "vitest": "^2.1.8"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "TypeScript/Vite, direct Three.js and Web Audio/input helpers. @upstash/redis supports optional serverless leaderboard endpoints; full declared runtime/dev map recorded."
+        ],
+        "framework_audit": "No R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified in the reviewed entry/manifests/render path. Auxiliary controls/audio/build/network/map helpers are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/src/core/game.ts#L79",
+        "claim": "Ticks advance cells, end on wall/body collision, grow/add score for food and shrink the arena. No free cells records a win; App shows the result overlay."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/LICENSE",
+        "additional_notices": [],
+        "notes": "Root MIT code license verified. README's synthesized-audio and test-coverage claims are author statements; dependency/font/media rights were not exhaustively audited."
+      },
+      "demo": {
+        "url": "https://snake-3d-lyart.vercel.app",
+        "status": "reader-error",
+        "source_url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/README.md",
+        "notes": "Pinned README supplies the author demo; reader could not retrieve it. Runtime availability remains unknown.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/README.md",
+        "notes": "Source implements ready/running/game-over states, food/score, wall/body loss, arena shrinking and a full-board win."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "3e9c14527dc49165120eb90172119278f4096f20",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-012.md#neon-snake-3d-samuel-cabral",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/package.json"
+          },
+          {
+            "path": "src/app/main.ts",
+            "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/src/app/main.ts"
+          },
+          {
+            "path": "src/core/game.ts",
+            "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/src/core/game.ts"
+          },
+          {
+            "path": "src/core/types.ts",
+            "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/src/core/types.ts"
+          },
+          {
+            "path": "src/platform/leaderboard.ts",
+            "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/src/platform/leaderboard.ts"
+          },
+          {
+            "path": "src/rendering/GameRenderer.ts",
+            "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/src/rendering/GameRenderer.ts"
+          },
+          {
+            "path": "src/rendering/board.ts",
+            "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/src/rendering/board.ts"
+          },
+          {
+            "path": "src/rendering/scene.ts",
+            "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/src/rendering/scene.ts"
+          },
+          {
+            "path": "src/rendering/snake.ts",
+            "url": "https://github.com/samuel-cabral/snake-3d/blob/3e9c14527dc49165120eb90172119278f4096f20/src/rendering/snake.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Classic planar Snake: core Cell contains x/z only, presented as a 3D board with cubic models. It is not an XYZ spatial snake.",
+        "App attempts remote score submission on game over; no score, identifier, Redis service, key or paid resource was submitted/used in this source review.",
+        "Author Vitest/Playwright claims, daily challenges, persistence and touch controls were not run."
+      ]
+    },
+    {
+      "id": "sketchy-snake-vr",
+      "name": "Sketchy Snake VR",
+      "repository_url": "https://github.com/aunysillyme/sketchy-snake-vr",
+      "genres": [
+        "snake",
+        "spatial-arcade",
+        "webxr"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (CDN)",
+        "render_evidence": {
+          "url": "https://github.com/aunysillyme/sketchy-snake-vr/blob/8a84203f3e64098d4c2180736a779eb3ecd72c9c/main.js#L146",
+          "claim": "Direct WebGLRenderer with XR/setAnimationLoop; index.html loads Three r128 and matching OrbitControls/VRButton."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla JS, Three r128/OrbitControls/VRButton CDNs, custom spatial rules/Web Audio bite sound, external Google Fonts CSS. No npm manifest."
+        ],
+        "framework_audit": "No R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified in the reviewed entry/manifests/render path. Auxiliary controls/audio/build/network/map helpers are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/aunysillyme/sketchy-snake-vr/blob/8a84203f3e64098d4c2180736a779eb3ecd72c9c/main.js#L330",
+        "claim": "XYZ Vector3 motion crosses spatial bounds to reset the run; eating 3D food adds ten points, grows the body and saves a local best. Keyboard includes vertical and X/Z steering."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/aunysillyme/sketchy-snake-vr/blob/8a84203f3e64098d4c2180736a779eb3ecd72c9c/LICENSE",
+        "additional_notices": [],
+        "notes": "Root MIT code license verified. Fonts and other dependency/media terms were not exhaustively audited."
+      },
+      "demo": {
+        "url": "https://aunysillyme.github.io/sketchy-snake-vr/",
+        "status": "reader-error",
+        "source_url": "https://github.com/aunysillyme/sketchy-snake-vr/blob/8a84203f3e64098d4c2180736a779eb3ecd72c9c/README.md",
+        "notes": "Pinned README links the author VR/browser demo. Reader failure does not establish availability; no headset/browser session occurred.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/aunysillyme/sketchy-snake-vr/blob/8a84203f3e64098d4c2180736a779eb3ecd72c9c/README.md",
+        "notes": "Source supplies spatial steering, food/growth, boundary reset and best-score persistence; the linked 2D edition is separate and not counted."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "8a84203f3e64098d4c2180736a779eb3ecd72c9c",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-012.md#sketchy-snake-vr",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/aunysillyme/sketchy-snake-vr/blob/8a84203f3e64098d4c2180736a779eb3ecd72c9c/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/aunysillyme/sketchy-snake-vr/blob/8a84203f3e64098d4c2180736a779eb3ecd72c9c/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/aunysillyme/sketchy-snake-vr/blob/8a84203f3e64098d4c2180736a779eb3ecd72c9c/index.html"
+          },
+          {
+            "path": "main.js",
+            "url": "https://github.com/aunysillyme/sketchy-snake-vr/blob/8a84203f3e64098d4c2180736a779eb3ecd72c9c/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Only boundary reset and food/growth are claimed: self-body collision loss was not identified in the reviewed loop.",
+        "Quest/Vision Pro/controller compatibility, food reachability, XR input and local storage were not exercised."
+      ]
+    },
+    {
+      "id": "hanoi-webxr-mr",
+      "name": "Towers of Hanoi — WebXR MR",
+      "repository_url": "https://github.com/Mahmoud-AboShukr/webxr-towers-of-hanoi-mr",
+      "genres": [
+        "hanoi",
+        "spatial-puzzle",
+        "webxr"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.159.0 (unpkg modules)",
+        "render_evidence": {
+          "url": "https://github.com/Mahmoud-AboShukr/webxr-towers-of-hanoi-mr/blob/9c8f6d963e561f8cdde7774127e686bce667345a/script.js#L9",
+          "claim": "Direct alpha WebGLRenderer with Three 0.159.0/ARButton; custom setAnimationLoop handles controller rays and scene rendering."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla modules, Three/ARButton 0.159.0 from unpkg, WebXR controllers/raycasting, procedural puzzle geometry and external Wikimedia images/audio. No npm manifest."
+        ],
+        "framework_audit": "No R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified in the reviewed entry/manifests/render path. Auxiliary controls/audio/build/network/map helpers are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Mahmoud-AboShukr/webxr-towers-of-hanoi-mr/blob/9c8f6d963e561f8cdde7774127e686bce667345a/script.js#L303",
+        "claim": "Top-disk and no-larger-on-smaller checks gate peg transfers. All disks on peg 3 sets hasWon and triggers win text/stars/audio; reset is separate."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/Mahmoud-AboShukr/webxr-towers-of-hanoi-mr/blob/9c8f6d963e561f8cdde7774127e686bce667345a/LICENSE",
+        "additional_notices": [
+          "https://github.com/Mahmoud-AboShukr/webxr-towers-of-hanoi-mr/blob/9c8f6d963e561f8cdde7774127e686bce667345a/script.js"
+        ],
+        "notes": "Root MIT code verified. Consulted Wikimedia pages label the linked anthem CC BY-SA 4.0 and restored portrait public domain. These are file-page declarations, not an ownership audit; the flag and all other media/dependency terms were not fully audited or relicensed as MIT."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "source_url": "https://github.com/Mahmoud-AboShukr/webxr-towers-of-hanoi-mr/blob/9c8f6d963e561f8cdde7774127e686bce667345a/README.md",
+        "notes": "README gives local serving/headset requirements; no confirmed author-hosted game was located.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Mahmoud-AboShukr/webxr-towers-of-hanoi-mr/blob/9c8f6d963e561f8cdde7774127e686bce667345a/README.md",
+        "notes": "An educational MR puzzle with legal moves, ghost previews, final-peg win and reset, verified from actual source rather than report citation placeholders."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "9c8f6d963e561f8cdde7774127e686bce667345a",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-012.md#hanoi-webxr-mr",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Mahmoud-AboShukr/webxr-towers-of-hanoi-mr/blob/9c8f6d963e561f8cdde7774127e686bce667345a/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Mahmoud-AboShukr/webxr-towers-of-hanoi-mr/blob/9c8f6d963e561f8cdde7774127e686bce667345a/README.md"
+          },
+          {
+            "path": "WEB_REQUIREMENTS.md",
+            "url": "https://github.com/Mahmoud-AboShukr/webxr-towers-of-hanoi-mr/blob/9c8f6d963e561f8cdde7774127e686bce667345a/WEB_REQUIREMENTS.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Mahmoud-AboShukr/webxr-towers-of-hanoi-mr/blob/9c8f6d963e561f8cdde7774127e686bce667345a/index.html"
+          },
+          {
+            "path": "script.js",
+            "url": "https://github.com/Mahmoud-AboShukr/webxr-towers-of-hanoi-mr/blob/9c8f6d963e561f8cdde7774127e686bce667345a/script.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Intended for immersive-ar-capable hardware/controller in a secure context; passthrough and interaction were not tested.",
+        "Themed imagery/music retain separate source/attribution terms; no image/audio was copied or played, and asset compliance was not comprehensively audited."
+      ]
+    },
+    {
+      "id": "hormuz",
+      "name": "HORMUZ",
+      "repository_url": "https://github.com/watercastlegames/hormuz",
+      "genres": [
+        "real-time-strategy",
+        "campaign",
+        "naval-combat"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "vendored Three.js module (revision unconfirmed)",
+        "render_evidence": {
+          "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/assets/js/rts-combat.js#L2849",
+          "claim": "The authored RTS imports vendored Three and creates WebGLRenderer; its own frame loop renders the scene. rts-combat.html loads the bundle; README documents its source/build command."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla JS, vendored Three/GLTFLoader/MeshoptDecoder/geometry helpers and custom simulation; esbuild bundling instructions. Optional Google basemap integration is disabled with an empty key and local-three fallback."
+        ],
+        "framework_audit": "No R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified in the reviewed entry/manifests/render path. Auxiliary controls/audio/build/network/map helpers are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/assets/js/rts-combat.js#L8891",
+        "claim": "checkOutcome evaluates forces, civilians, objectives, rescue state and timeout, then calls endBattle(success). That freezes battle state and builds victory/defeat results for campaign flow."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/LICENSE",
+        "additional_notices": [
+          "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/ASSET-LICENSES.md",
+          "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/assets/models/animation-v1/KAYKIT-CHARACTER-ANIMATIONS-LICENSE.txt",
+          "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/assets/models/animation-v1/SOURCE.md",
+          "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/docs/MAP_SOURCES.md",
+          "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/assets/data/rts-audio.json"
+        ],
+        "notes": "Root MIT code/docs verified. ASSET-LICENSES declares HORMUZ models CC BY 4.0, KayKit CC0 and Natural Earth public domain. Production ElevenLabs free-plan sound is explicitly omitted: public audio events are empty. AI-generated media/third-party terms were not exhaustively audited."
+      },
+      "demo": {
+        "url": "https://watercastlegames.github.io/hormuz/",
+        "status": "reader-error",
+        "source_url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/README.md",
+        "notes": "Pinned README supplies the author demo; reader could not retrieve it. No RTS session, map API request, key setup, deployment or paid service was used.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/README.md",
+        "notes": "Source implements mission-based force selection/combat, success/failure and campaign results; balance, narrative accuracy and author verification claims remain untested."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "293b04b4543d62e3ebf582e2af151576ff561666",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-012.md#hormuz",
+        "reviewed_files": [
+          {
+            "path": "ASSET-LICENSES.md",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/ASSET-LICENSES.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/README.md"
+          },
+          {
+            "path": "assets/data/rts-audio.json",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/assets/data/rts-audio.json"
+          },
+          {
+            "path": "assets/js/core/scoring.js",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/assets/js/core/scoring.js"
+          },
+          {
+            "path": "assets/js/rts-combat.js",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/assets/js/rts-combat.js"
+          },
+          {
+            "path": "assets/js/rts-google-map.js",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/assets/js/rts-google-map.js"
+          },
+          {
+            "path": "assets/js/vendor/three.module.js",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/assets/js/vendor/three.module.js"
+          },
+          {
+            "path": "assets/models/animation-v1/KAYKIT-CHARACTER-ANIMATIONS-LICENSE.txt",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/assets/models/animation-v1/KAYKIT-CHARACTER-ANIMATIONS-LICENSE.txt"
+          },
+          {
+            "path": "assets/models/animation-v1/SOURCE.md",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/assets/models/animation-v1/SOURCE.md"
+          },
+          {
+            "path": "docs/MAP_SOURCES.md",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/docs/MAP_SOURCES.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/index.html"
+          },
+          {
+            "path": "net/google-maps-config.js",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/net/google-maps-config.js"
+          },
+          {
+            "path": "rts-combat.html",
+            "url": "https://github.com/watercastlegames/hormuz/blob/293b04b4543d62e3ebf582e2af151576ff561666/rts-combat.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Public source audio events are empty; do not imply parity with production demo sound.",
+        "Optional Google code is present but source config is disabled without an API key; no map service was enabled/used.",
+        "CC BY model attribution, KayKit/Natural Earth notices and generated-media provenance need separate review; code MIT does not cover all assets uniformly.",
+        "Most simulation is on XZ terrain rendered as a 3D world, not unrestricted XYZ unit movement."
+      ]
     }
   ]
 }

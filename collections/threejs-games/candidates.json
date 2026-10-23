@@ -484,6 +484,92 @@
         "https://github.com/rocket-boots/dungeon-boots/blob/621e7a6a0e58166102574b7d98c13e4ad076398a/README.md",
         "https://github.com/rocket-boots/dungeon-boots/blob/621e7a6a0e58166102574b7d98c13e4ad076398a/package.json"
       ]
+    },
+    {
+      "id": "block-party",
+      "repository_url": "https://github.com/pennyshen/block_party",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "7c1f63c2cd0e7132a355f6ce8553d9017a7c65d3",
+      "reason": "MIT code/direct Three/spatial objectives verified. index.html credits bundled Space Forest to Kassich; the creator page currently asks for contact before project use. Applicable redistribution permission and other track terms were not established.",
+      "next_action": "Locate documented music permission/open-license terms or an asset-cleared edition; infer neither permission nor infringement from the MIT code file.",
+      "evidence_urls": [
+        "https://github.com/pennyshen/block_party/blob/7c1f63c2cd0e7132a355f6ce8553d9017a7c65d3/LICENSE",
+        "https://github.com/pennyshen/block_party/blob/7c1f63c2cd0e7132a355f6ce8553d9017a7c65d3/index.html",
+        "https://github.com/pennyshen/block_party/blob/7c1f63c2cd0e7132a355f6ce8553d9017a7c65d3/js/LevelMode.js",
+        "https://github.com/pennyshen/block_party/blob/7c1f63c2cd0e7132a355f6ce8553d9017a7c65d3/js/Block.js"
+      ]
+    },
+    {
+      "id": "epmik-puzzles",
+      "repository_url": "https://github.com/epmik/puzzles",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "83ca13b2d822b08bd97214f57aa8e8e84a11aca4",
+      "reason": "The sampled pyramid-flip entry starts p5 createCanvas/setup/draw despite loading Three scripts. Its actual renderer is p5; another direct-Three 3D game entry remains unproven.",
+      "next_action": "Inspect another complete entry if present; unused Three library includes do not establish the rendering stack.",
+      "evidence_urls": [
+        "https://github.com/epmik/puzzles/blob/83ca13b2d822b08bd97214f57aa8e8e84a11aca4/LICENSE",
+        "https://github.com/epmik/puzzles/blob/83ca13b2d822b08bd97214f57aa8e8e84a11aca4/README.md",
+        "https://github.com/epmik/puzzles/blob/83ca13b2d822b08bd97214f57aa8e8e84a11aca4/pyramid-flip-puzzle/index.html",
+        "https://github.com/epmik/puzzles/blob/83ca13b2d822b08bd97214f57aa8e8e84a11aca4/pyramid-flip-puzzle/js/main.js",
+        "https://github.com/epmik/puzzles/blob/83ca13b2d822b08bd97214f57aa8e8e84a11aca4/pyramid-flip-puzzle/js/app.game.js"
+      ]
+    },
+    {
+      "id": "pool-bunlongheng",
+      "repository_url": "https://github.com/bunlongheng/pool",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "32e1e03d6d3c2336b351f08fb30cd7343004f784",
+      "reason": "Actual manifest depends on @react-three/fiber and @react-three/drei; README also separates Canvas2D table from R3F balls. Outside the direct-Three boundary.",
+      "next_action": "Reconsider only a separate direct-Three edition.",
+      "evidence_urls": [
+        "https://github.com/bunlongheng/pool/blob/32e1e03d6d3c2336b351f08fb30cd7343004f784/LICENSE",
+        "https://github.com/bunlongheng/pool/blob/32e1e03d6d3c2336b351f08fb30cd7343004f784/README.md",
+        "https://github.com/bunlongheng/pool/blob/32e1e03d6d3c2336b351f08fb30cd7343004f784/package.json"
+      ]
+    },
+    {
+      "id": "3d-rts-sylvain",
+      "repository_url": "https://github.com/SylvainSenechal/3D-RTS",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "ef8b70670c62098931e94b34cb5674cb504a49f0",
+      "reason": "Pinned recursive tree contains only LICENSE, README, .gitattributes and an image; no implementation source verifies the advertised RTS/Three game.",
+      "next_action": "Revisit when actual game implementation source is published.",
+      "evidence_urls": [
+        "https://github.com/SylvainSenechal/3D-RTS/blob/ef8b70670c62098931e94b34cb5674cb504a49f0/LICENSE",
+        "https://github.com/SylvainSenechal/3D-RTS/blob/ef8b70670c62098931e94b34cb5674cb504a49f0/README.md"
+      ]
+    },
+    {
+      "id": "dominion",
+      "repository_url": "https://github.com/amithey/dominion",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "ab17b062e7fd159d292fa7dfdf31db1194b27a5f",
+      "reason": "Current README says the active Windows product is Godot; older browser code is historical and outside active releases. Description/three devDependency would misrepresent current stack.",
+      "next_action": "Review the historical browser edition as a separately scoped legacy game with renderer, objectives and asset notices.",
+      "evidence_urls": [
+        "https://github.com/amithey/dominion/blob/ab17b062e7fd159d292fa7dfdf31db1194b27a5f/LICENSE",
+        "https://github.com/amithey/dominion/blob/ab17b062e7fd159d292fa7dfdf31db1194b27a5f/README.md",
+        "https://github.com/amithey/dominion/blob/ab17b062e7fd159d292fa7dfdf31db1194b27a5f/package.json"
+      ]
+    },
+    {
+      "id": "trash-jam-v2-1",
+      "repository_url": "https://github.com/mrbllyy/Trash-Jam-v2.1",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "ab911f05b9c08a720f7d4a9d93f6437ad6051ccf",
+      "reason": "Reviewed root entry consists of Three GLTF/OrbitControls viewers and keyboard scene edits; no concrete trash/target/score/win/loss objective was established. README's play link alone is insufficient.",
+      "next_action": "Revisit if an actual game entry is identified; no runtime failure is inferred from source review.",
+      "evidence_urls": [
+        "https://github.com/mrbllyy/Trash-Jam-v2.1/blob/ab911f05b9c08a720f7d4a9d93f6437ad6051ccf/LICENSE",
+        "https://github.com/mrbllyy/Trash-Jam-v2.1/blob/ab911f05b9c08a720f7d4a9d93f6437ad6051ccf/README.md",
+        "https://github.com/mrbllyy/Trash-Jam-v2.1/blob/ab911f05b9c08a720f7d4a9d93f6437ad6051ccf/index.html"
+      ]
     }
   ]
 }
