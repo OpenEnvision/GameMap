@@ -9601,6 +9601,179 @@
         "Legacy Physijs/Ammo worker loading, pointer lock, imported weapon/scene assets and modern-browser compatibility were not exercised.",
         "GPL code evidence does not resolve all imported model/audio/texture rights."
       ]
+    },
+    {
+      "id": "asteroid-patrol-3d",
+      "name": "AsteroidPatrol3D",
+      "repository_url": "https://github.com/erichlof/AsteroidPatrol3D",
+      "genres": [
+        "space-shooter",
+        "first-person",
+        "asteroids"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r70",
+        "render_evidence": {
+          "url": "https://github.com/erichlof/AsteroidPatrol3D/blob/8e7b283e70bc4e094cc4d66b9d1d878f13e2dab1/js/AsteroidPatrolVariables.js#L56",
+          "claim": "Directly creates Three.js WebGLRenderer. AsteroidPatrol3D.html loads that variable module and runs its authored frame loop, rendering both the game scene and radar; the vendored library header identifies r70."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla JavaScript; vendored Three.js r70, THREEx.FirstPersonControls/keyboard/GameTimer, virtual-button joystick and Howler 2.0-era sound helpers. Active scripts are listed in AsteroidPatrol3D.html; no npm manifest was located."
+        ],
+        "framework_audit": "The actual HTML/variable-module entry directly creates Three.js WebGLRenderer; the reviewed script list uses small controls/audio/utility helpers and no replacement game renderer. This is not an exhaustive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/erichlof/AsteroidPatrol3D/blob/8e7b283e70bc4e094cc4d66b9d1d878f13e2dab1/AsteroidPatrol3D.html#L2890",
+        "claim": "Player death hides the ship, decrements lives and sets gameOver below the remaining-life threshold; the game-over sequence displays a banner then resets level, score and lives. Separate asteroid/UFO hits award points and level setup increments progression."
+      },
+      "license": {
+        "spdx": "CC0-1.0",
+        "label": "CC0-1.0 (code)",
+        "source_url": "https://github.com/erichlof/AsteroidPatrol3D/blob/8e7b283e70bc4e094cc4d66b9d1d878f13e2dab1/LICENSE",
+        "additional_notices": [],
+        "notes": "Root contains CC0 1.0 text. Third-party Three.js, helper libraries, models/textures/sounds retain their own terms; all asset/dependency rights were not exhaustively audited and are not asserted to be uniformly CC0."
+      },
+      "demo": {
+        "url": "http://erichlof.github.io/AsteroidPatrol3D/AsteroidPatrol3D.html",
+        "status": "page-read",
+        "source_url": "https://github.com/erichlof/AsteroidPatrol3D/blob/8e7b283e70bc4e094cc4d66b9d1d878f13e2dab1/README.md",
+        "notes": "Pinned README supplies the author demo. Reader retrieved Loading/title/controls/score/sound labels only; this is not an executed or playable-session check.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "legacy-release",
+        "basis_url": "https://github.com/erichlof/AsteroidPatrol3D/blob/8e7b283e70bc4e094cc4d66b9d1d878f13e2dab1/README.md",
+        "notes": "README's January 2015 note says the author completed all TODOs; source implements scoring, life loss, level setup and game-over/reset. That historical completion statement does not establish modern runtime compatibility."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "8e7b283e70bc4e094cc4d66b9d1d878f13e2dab1",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-014.md#asteroid-patrol-3d",
+        "reviewed_files": [
+          {
+            "path": "AsteroidPatrol3D.html",
+            "url": "https://github.com/erichlof/AsteroidPatrol3D/blob/8e7b283e70bc4e094cc4d66b9d1d878f13e2dab1/AsteroidPatrol3D.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/erichlof/AsteroidPatrol3D/blob/8e7b283e70bc4e094cc4d66b9d1d878f13e2dab1/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/erichlof/AsteroidPatrol3D/blob/8e7b283e70bc4e094cc4d66b9d1d878f13e2dab1/README.md"
+          },
+          {
+            "path": "js/AsteroidPatrolVariables.js",
+            "url": "https://github.com/erichlof/AsteroidPatrol3D/blob/8e7b283e70bc4e094cc4d66b9d1d878f13e2dab1/js/AsteroidPatrolVariables.js"
+          },
+          {
+            "path": "js/three.min.js",
+            "url": "https://github.com/erichlof/AsteroidPatrol3D/blob/8e7b283e70bc4e094cc4d66b9d1d878f13e2dab1/js/three.min.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Authored ship/UFO/asteroid procedural-model claims are supported by source descriptions but are not an exhaustive rights audit of sounds, textures or dependencies.",
+        "Desktop/mobile input, stereo Howler audio, radar, collision/life accounting and modern-browser compatibility were not exercised.",
+        "The source's life threshold and automatic restart are reported directly; a particular number of successful playable levels or deaths was not tested."
+      ]
+    },
+    {
+      "id": "3d-light-cycles",
+      "name": "3dLightCycles",
+      "repository_url": "https://github.com/erichlof/3dLightCycles",
+      "genres": [
+        "light-cycle",
+        "arcade",
+        "opponent-avoidance"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r71",
+        "render_evidence": {
+          "url": "https://github.com/erichlof/3dLightCycles/blob/dc9062090f3073883c2e54a4b79eb210dfe2aad2/js/3dLightCyclesVariables.js#L63",
+          "claim": "Directly creates Three.js WebGLRenderer; 3dLightCycles.html loads this module, the enemy AI and its own animation/render loop. The active vendored Three.js header identifies r71."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla JavaScript; Three.js r71, project ShadowMesh, THREEx.FirstPersonControls/keyboard/GameTimer, virtual-button joystick, Howler and authored enemyAI. No npm manifest was located."
+        ],
+        "framework_audit": "The actual HTML/variable-module entry directly creates Three.js WebGLRenderer; the reviewed script list uses small controls/audio/utility helpers and no replacement game renderer. This is not an exhaustive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/erichlof/3dLightCycles/blob/dc9062090f3073883c2e54a4b79eb210dfe2aad2/3dLightCycles.html#L2683",
+        "claim": "Wall/trail collisions dispatch player or enemy crash. Crash handlers mark that cycle not alive, stop turns and show an explosion; trail-disappear completion restores alive/visible state for continued play against the AI."
+      },
+      "license": {
+        "spdx": "CC0-1.0",
+        "label": "CC0-1.0 (code)",
+        "source_url": "https://github.com/erichlof/3dLightCycles/blob/dc9062090f3073883c2e54a4b79eb210dfe2aad2/LICENSE",
+        "additional_notices": [],
+        "notes": "Root contains CC0 1.0 text. Third-party Three.js, helper libraries, models/textures/sounds retain their own terms; all asset/dependency rights were not exhaustively audited and are not asserted to be uniformly CC0."
+      },
+      "demo": {
+        "url": "http://erichlof.github.io/3dLightCycles/3dLightCycles.html",
+        "status": "reader-error",
+        "source_url": "https://github.com/erichlof/3dLightCycles/blob/dc9062090f3073883c2e54a4b79eb210dfe2aad2/README.md",
+        "notes": "Pinned README links the author demo. Reader could not retrieve it; no browser/game execution or permanent-downtime finding is claimed.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/erichlof/3dLightCycles/blob/dc9062090f3073883c2e54a4b79eb210dfe2aad2/README.md",
+        "notes": "The historical prototype has steering, growing trails, enemy AI, collision/crash and recovery. README explicitly lists scoring and a winner animation as future TODOs; those are not presented as implemented."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "dc9062090f3073883c2e54a4b79eb210dfe2aad2",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-014.md#3d-light-cycles",
+        "reviewed_files": [
+          {
+            "path": "3dLightCycles.html",
+            "url": "https://github.com/erichlof/3dLightCycles/blob/dc9062090f3073883c2e54a4b79eb210dfe2aad2/3dLightCycles.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/erichlof/3dLightCycles/blob/dc9062090f3073883c2e54a4b79eb210dfe2aad2/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/erichlof/3dLightCycles/blob/dc9062090f3073883c2e54a4b79eb210dfe2aad2/README.md"
+          },
+          {
+            "path": "js/3dLightCyclesVariables.js",
+            "url": "https://github.com/erichlof/3dLightCycles/blob/dc9062090f3073883c2e54a4b79eb210dfe2aad2/js/3dLightCyclesVariables.js"
+          },
+          {
+            "path": "js/enemyAI.js",
+            "url": "https://github.com/erichlof/3dLightCycles/blob/dc9062090f3073883c2e54a4b79eb210dfe2aad2/js/enemyAI.js"
+          },
+          {
+            "path": "js/three.min.js",
+            "url": "https://github.com/erichlof/3dLightCycles/blob/dc9062090f3073883c2e54a4b79eb210dfe2aad2/js/three.min.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Scoring, a formal match-winner display and acceleration are listed as future work in the author notes; no such finished competitive loop is claimed.",
+        "Cycle simulation is on an XZ arena with volumetric cycle/trail meshes and a movable 3D camera, not free XYZ vehicle motion.",
+        "TRON-inspired branding/model resemblance is not a rights clearance. Model, sound and texture provenance and all helper licenses were not comprehensively audited.",
+        "Collision fairness, AI, turning input and repeated recovery were not exercised."
+      ]
     }
   ]
 }
