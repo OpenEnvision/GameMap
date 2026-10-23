@@ -9774,6 +9774,546 @@
         "TRON-inspired branding/model resemblance is not a rights clearance. Model, sound and texture provenance and all helper licenses were not comprehensively audited.",
         "Collision fairness, AI, turning input and repeated recovery were not exercised."
       ]
+    },
+    {
+      "id": "ultimate-striker-run-v3",
+      "name": "Ultimate Striker Run — standalone v3",
+      "repository_url": "https://github.com/richducat/footy-run-3d",
+      "genres": [
+        "runner",
+        "soccer-themed",
+        "arcade"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (CDN)",
+        "render_evidence": {
+          "url": "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/v3.html#L267",
+          "claim": "The standalone v3.html constructs Three.js WebGLRenderer directly and runs its own animation loop. It loads Three.js r128 from cdnjs; the repository's default index/js/main/js/game instead run a separate Canvas2D edition."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Standalone vanilla JavaScript/HTML/CSS with Three.js r128 CDN. Root package.json has no declared runtime dependency map and does not describe the CDN dependency; default Canvas2D entry is outside this scoped edition."
+        ],
+        "framework_audit": "The reviewed game entry/rendering path directly constructs Three.js WebGLRenderer; no R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified. Helpers and alternate entries are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/v3.html#L635",
+        "claim": "The standalone 3D start/reset path clears distance/coins/goals and enables play. Obstacle collision invokes gameOver, stops play and displays results; pickups and goal sequences separately update counters."
+      },
+      "license": {
+        "spdx": null,
+        "label": "MIT root; ISC package metadata (unresolved)",
+        "source_url": "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/LICENSE",
+        "additional_notices": [
+          "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/package.json"
+        ],
+        "notes": "Root LICENSE is MIT, while package.json metadata says ISC; both notices are retained and no resolution is inferred. README's original-branding/no-licensed-club/likeness claims are author statements, not an asset-rights audit."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "source_url": "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/README.md#L40",
+        "notes": "README provides a general production root URL, but the current source's default entry is Canvas2D. No confirmed author-hosted URL specifically serving this standalone v3 edition was established; no v3 Pages path was guessed.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/README.md",
+        "notes": "A separate 3D endless-runner prototype in v3.html with lane changes, jump/slide, obstacles, coins/goals and collision/restart. The overall repository must not be described as uniformly 3D."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "313691a7cc338af873309a2d2cc48f4a46b59f85",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-015.md#ultimate-striker-run-v3",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/index.html"
+          },
+          {
+            "path": "js/game.js",
+            "url": "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/js/game.js"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/js/main.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/package.json"
+          },
+          {
+            "path": "v3.html",
+            "url": "https://github.com/richducat/footy-run-3d/blob/313691a7cc338af873309a2d2cc48f4a46b59f85/v3.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Only the pinned standalone v3 edition is verified here; opening the default index.html runs the separate Canvas2D app.",
+        "Root MIT versus ISC package metadata remains unresolved; the root package declares no Three runtime dependency although v3 loads it by CDN.",
+        "Lane/jump/slide collision, goal sequences, persistence and the separately advertised production deployment were not exercised."
+      ]
+    },
+    {
+      "id": "bridge-horror-house",
+      "name": "Bridge Horror House",
+      "repository_url": "https://github.com/bridge-mind/bridge-horror-house",
+      "genres": [
+        "horror",
+        "first-person",
+        "escape-room"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.170.0",
+        "render_evidence": {
+          "url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/src/Game.js#L53",
+          "claim": "Game directly creates a Three.js WebGLRenderer and official postprocessing helpers. src/main.js constructs Game on the canvas and starts it from the title interaction."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/package.json",
+            "dependencies": {
+              "three": "^0.170.0"
+            },
+            "dev_dependencies": {
+              "vite": "^6.0.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vanilla JavaScript/Vite, Three.js and its postprocessing addons; handwritten player/house/ghost/scare/HUD modules. AudioEngine uses Web Audio oscillators/buffers and Textures uses CanvasTexture."
+        ],
+        "framework_audit": "The reviewed game entry/rendering path directly constructs Three.js WebGLRenderer; no R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified. Helpers and alternate entries are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/src/Game.js#L126",
+        "claim": "The caught path disables control and shows death UI; the escaped path sets escaped and stops active play. Front-door interaction checks all three brass keys before escape, while ghost detection can trigger capture."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/LICENSE",
+        "additional_notices": [],
+        "notes": "Root MIT code license verified. README's zero-asset/procedural audio/texture claim is supported by the reviewed AudioEngine/Textures paths but is not an exhaustive rights audit of every generated output/dependency."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "source_url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/README.md",
+        "notes": "README documents local serving and project provenance, but no confirmed author-hosted game demo was located. The company homepage was not treated as a game demo.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/README.md",
+        "notes": "Source contains title/start, a three-key door objective, ghost capture, death and escape screens with procedural house/audio/texture systems."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "c63aa7ca07109ac73736917db15543d363549400",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-015.md#bridge-horror-house",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/package.json"
+          },
+          {
+            "path": "src/Game.js",
+            "url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/src/Game.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/src/main.js"
+          },
+          {
+            "path": "src/systems/AudioEngine.js",
+            "url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/src/systems/AudioEngine.js"
+          },
+          {
+            "path": "src/systems/Ghost.js",
+            "url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/src/systems/Ghost.js"
+          },
+          {
+            "path": "src/world/Textures.js",
+            "url": "https://github.com/bridge-mind/bridge-horror-house/blob/c63aa7ca07109ac73736917db15543d363549400/src/world/Textures.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Ghost behavior, clue/door reachability, scare timing, sound and input were source-reviewed only; no run or playtest occurred.",
+        "Procedural material/audio originality and all dependency terms were not exhaustively rights-audited."
+      ]
+    },
+    {
+      "id": "the-warcrooms",
+      "name": "The Warcrooms",
+      "repository_url": "https://github.com/WildRelation/backrooms-horror",
+      "genres": [
+        "horror",
+        "first-person",
+        "escape",
+        "maze"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.184.0 (nested devDependency)",
+        "render_evidence": {
+          "url": "https://github.com/WildRelation/backrooms-horror/blob/dc175e9ef7d7d602183e3ec42a4975dcba585c8c/backrooms/main.js#L357",
+          "claim": "The nested backrooms source imports Three.js, constructs WebGLRenderer directly and uses official GLTF/DRACO/PointerLock helpers plus three-mesh-bvh for raycast acceleration."
+        },
+        "manifests": [
+          {
+            "path": "backrooms/package.json",
+            "url": "https://github.com/WildRelation/backrooms-horror/blob/dc175e9ef7d7d602183e3ec42a4975dcba585c8c/backrooms/package.json",
+            "dependencies": {
+              "three-addons": "^1.2.0",
+              "three-mesh-bvh": "^0.9.10"
+            },
+            "dev_dependencies": {
+              "playwright": "^1.60.0",
+              "sharp": "^0.34.5",
+              "three": "^0.184.0",
+              "vite": "^4.4.5"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vanilla JavaScript/Vite; nested manifest declares Three as a devDependency, three-addons and three-mesh-bvh as dependencies, plus Sharp/Playwright tooling. All declared maps are recorded; no toolchain was run."
+        ],
+        "framework_audit": "The reviewed game entry/rendering path directly constructs Three.js WebGLRenderer; no R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified. Helpers and alternate entries are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/WildRelation/backrooms-horror/blob/dc175e9ef7d7d602183e3ec42a4975dcba585c8c/backrooms/main.js#L1675",
+        "claim": "Page collection gates an exit; triggerWin advances through level configs and shows the final-victory sequence at the last level. triggerDeath marks gameLost and opens the end menu."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/WildRelation/backrooms-horror/blob/dc175e9ef7d7d602183e3ec42a4975dcba585c8c/LICENSE",
+        "additional_notices": [],
+        "notes": "Root MIT notice names Zachary Marino (2023), preserved independently of the current repository owner. Imported sprites, sounds, textures, models and all dependency rights were not exhaustively audited."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "source_url": "https://github.com/WildRelation/backrooms-horror/blob/dc175e9ef7d7d602183e3ec42a4975dcba585c8c/README.md",
+        "notes": "README documents the nested local Vite source and generic static-host deployment, not a confirmed author live URL. No Pages URL was inferred.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/WildRelation/backrooms-horror/blob/dc175e9ef7d7d602183e3ec42a4975dcba585c8c/README.md",
+        "notes": "Source implements three configured maze stages with page objectives, hostile entities, death, level transitions and final victory; the author calls it The Warcrooms."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "dc175e9ef7d7d602183e3ec42a4975dcba585c8c",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-015.md#the-warcrooms",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/WildRelation/backrooms-horror/blob/dc175e9ef7d7d602183e3ec42a4975dcba585c8c/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/WildRelation/backrooms-horror/blob/dc175e9ef7d7d602183e3ec42a4975dcba585c8c/README.md"
+          },
+          {
+            "path": "backrooms/index.html",
+            "url": "https://github.com/WildRelation/backrooms-horror/blob/dc175e9ef7d7d602183e3ec42a4975dcba585c8c/backrooms/index.html"
+          },
+          {
+            "path": "backrooms/main.js",
+            "url": "https://github.com/WildRelation/backrooms-horror/blob/dc175e9ef7d7d602183e3ec42a4975dcba585c8c/backrooms/main.js"
+          },
+          {
+            "path": "backrooms/package.json",
+            "url": "https://github.com/WildRelation/backrooms-horror/blob/dc175e9ef7d7d602183e3ec42a4975dcba585c8c/backrooms/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/WildRelation/backrooms-horror/blob/dc175e9ef7d7d602183e3ec42a4975dcba585c8c/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "README credits Three r157 while the current nested manifest requests ^0.184.0; source declarations are recorded, not a verified version of any hosted bundle.",
+        "Monsters are sprite billboards inside a real 3D maze scene; navigation is ground-constrained. This is not a free XYZ movement claim.",
+        "Entity fairness, page/exit reachability, legacy UI timers, imported assets/decoder loading and final victory were not exercised."
+      ]
+    },
+    {
+      "id": "turbo-robot-league-lite",
+      "name": "Turbo Robot League 3D (Lite)",
+      "repository_url": "https://github.com/pemmyz/js_carballgame",
+      "genres": [
+        "car-soccer",
+        "arcade",
+        "physics"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 (CDN)",
+        "render_evidence": {
+          "url": "https://github.com/pemmyz/js_carballgame/blob/8043dcc4d70b8bde55d6109255d10ce3fd2df34d/script.js#L235",
+          "claim": "The script loaded by index.html directly creates Three.js WebGLRenderer and mesh-based arena/cars/ball. index.html pins Three 0.160.0 and Planck.js 0.3.31 CDNs."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla JavaScript, Three.js 0.160.0 and Planck.js 0.3.31 physics via unpkg. Source includes custom AI, keyboard/gamepad input and DOM UI; no npm manifest was located."
+        ],
+        "framework_audit": "The reviewed game entry/rendering path directly constructs Three.js WebGLRenderer; no R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified. Helpers and alternate entries are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/pemmyz/js_carballgame/blob/8043dcc4d70b8bde55d6109255d10ce3fd2df34d/script.js#L966",
+        "claim": "Goal sensors invoke handleGoal, update the appropriate score counter, show a goal message and reset the ball/car state after a pause. Source supports human-vs-CPU or AI spectator play."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/pemmyz/js_carballgame/blob/8043dcc4d70b8bde55d6109255d10ce3fd2df34d/LICENSE",
+        "additional_notices": [
+          "https://github.com/pemmyz/js_carballgame/blob/8043dcc4d70b8bde55d6109255d10ce3fd2df34d/README.md"
+        ],
+        "notes": "Root MIT text verified. README's license section mentions personal/educational availability; that wording is retained without inferring an exclusive-use restriction. Library/media terms were not exhaustively audited."
+      },
+      "demo": {
+        "url": "https://pemmyz.github.io/js_carballgame/",
+        "status": "reader-error",
+        "source_url": "https://github.com/pemmyz/js_carballgame/blob/8043dcc4d70b8bde55d6109255d10ce3fd2df34d/README.md",
+        "notes": "Pinned README links the author demo. Reader could not retrieve it; no match, gamepad or scoring behavior was tested.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/pemmyz/js_carballgame/blob/8043dcc4d70b8bde55d6109255d10ce3fd2df34d/README.md",
+        "notes": "A car-ball arcade prototype with goal sensors, scoreboards, elapsed clock, AI and repeated goal/reset play. A fixed-duration match or formal winner state was not established."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "8043dcc4d70b8bde55d6109255d10ce3fd2df34d",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-015.md#turbo-robot-league-lite",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/pemmyz/js_carballgame/blob/8043dcc4d70b8bde55d6109255d10ce3fd2df34d/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/pemmyz/js_carballgame/blob/8043dcc4d70b8bde55d6109255d10ce3fd2df34d/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/pemmyz/js_carballgame/blob/8043dcc4d70b8bde55d6109255d10ce3fd2df34d/index.html"
+          },
+          {
+            "path": "script.js",
+            "url": "https://github.com/pemmyz/js_carballgame/blob/8043dcc4d70b8bde55d6109255d10ce3fd2df34d/script.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Physics is a 2D Planck plane mapped to an isometric volumetric Three.js arena; no ball-height/XYZ driving simulation is claimed.",
+        "The displayed clock is not evidence of a timed match-ending rule. No fixed match duration or winner screen is claimed.",
+        "Goal/team labeling, AI, physics modes, input and repeated resets were not exercised."
+      ]
+    },
+    {
+      "id": "wickhaven",
+      "name": "WICKHAVEN",
+      "repository_url": "https://github.com/euuuuuuan/wickhaven",
+      "genres": [
+        "horror",
+        "pursuit",
+        "third-person",
+        "escape"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.185.1",
+        "render_evidence": {
+          "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/src/render/GameView.ts#L44",
+          "claim": "GameView directly creates Three.js WebGLRenderer. src/main.ts constructs the simulation/view and runs a handwritten requestAnimationFrame loop; actors load through Three.js's GLTF helpers."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/package.json",
+            "dependencies": {
+              "three": "^0.185.1"
+            },
+            "dev_dependencies": {
+              "@biomejs/biome": "^2.5.7",
+              "@types/three": "^0.185.0",
+              "typescript": "^6.0.2",
+              "vite": "^8.2.0",
+              "vitest": "^4.1.10"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "TypeScript/Vite and direct Three.js are the runtime foundation; project-authored simulation, navigation, input, UI, audio and VFX. Full dependency/dev snapshot is recorded."
+        ],
+        "framework_audit": "The reviewed game entry/rendering path directly constructs Three.js WebGLRenderer; no R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified. Helpers and alternate entries are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/src/sim/game.ts#L123",
+        "claim": "Completing three relays opens the gate; entering its radius sets won. Hunter capture consumes courage/recovery opportunities and finishCatch sets lost when courage is exhausted."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/LICENSE",
+        "additional_notices": [
+          "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/THIRD_PARTY_ASSETS.md",
+          "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/public/assets/manifest.json",
+          "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/public/assets/licenses/KayKit-Adventurers-LICENSE.txt",
+          "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/public/assets/licenses/KayKit-Halloween-LICENSE.txt",
+          "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/public/assets/licenses/KayKit-Skeletons-LICENSE.txt",
+          "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/public/assets/licenses/Kenney-Impact-Sounds-LICENSE.txt"
+        ],
+        "notes": "Root code is MIT. THIRD_PARTY_ASSETS.md, public/assets/manifest.json and four bundled KayKit/Kenney licenses identify shipped external assets as CC0 1.0; original procedural/code work remains MIT. These notices were read, but asset hashes and the author's assets:audit script were not executed and no universal chain-of-title audit is claimed."
+      },
+      "demo": {
+        "url": "https://euuuuuuan.github.io/wickhaven/",
+        "status": "reader-error",
+        "source_url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/README.md",
+        "notes": "Pinned README supplies the author demo. Reader could not retrieve it; no game, persistence, audio or asset-audit execution occurred.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/README.md",
+        "notes": "The source provides relay interaction, pursuit/noise/tools, recovery/courage, gate opening and distinct won/lost states, with a documented CC0 asset ledger."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "ddc28ce8c8d7db04225baa64080bdce433df4c49",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-015.md#wickhaven",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/README.md"
+          },
+          {
+            "path": "THIRD_PARTY_ASSETS.md",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/THIRD_PARTY_ASSETS.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/package.json"
+          },
+          {
+            "path": "public/assets/licenses/KayKit-Adventurers-LICENSE.txt",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/public/assets/licenses/KayKit-Adventurers-LICENSE.txt"
+          },
+          {
+            "path": "public/assets/licenses/KayKit-Halloween-LICENSE.txt",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/public/assets/licenses/KayKit-Halloween-LICENSE.txt"
+          },
+          {
+            "path": "public/assets/licenses/KayKit-Skeletons-LICENSE.txt",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/public/assets/licenses/KayKit-Skeletons-LICENSE.txt"
+          },
+          {
+            "path": "public/assets/licenses/Kenney-Impact-Sounds-LICENSE.txt",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/public/assets/licenses/Kenney-Impact-Sounds-LICENSE.txt"
+          },
+          {
+            "path": "public/assets/manifest.json",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/public/assets/manifest.json"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/src/main.ts"
+          },
+          {
+            "path": "src/render/ActorView.ts",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/src/render/ActorView.ts"
+          },
+          {
+            "path": "src/render/GameView.ts",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/src/render/GameView.ts"
+          },
+          {
+            "path": "src/sim/game.ts",
+            "url": "https://github.com/euuuuuuan/wickhaven/blob/ddc28ce8c8d7db04225baa64080bdce433df4c49/src/sim/game.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Most simulation is planar XZ with actual 3D character/environment assets and camera; it does not imply free XYZ movement.",
+        "Asset ledger/hash/audit claims are author documentation; no asset binary was copied or independently hash-checked and no upstream audit/test suite ran.",
+        "Balance, pursuit fairness, relay/gate solvability, saves and author runtime verification claims were not independently exercised."
+      ]
     }
   ]
 }

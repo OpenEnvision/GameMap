@@ -662,6 +662,94 @@
         "https://github.com/WilliamAvHolmberg/glenn-explore/blob/5b40306259dcaa2fc7a0fbb32626f50c3bc99805/web/src/cesium/core/Scene.ts",
         "https://github.com/WilliamAvHolmberg/glenn-explore/blob/5b40306259dcaa2fc7a0fbb32626f50c3bc99805/web-2/package.json"
       ]
+    },
+    {
+      "id": "rhythm-dodge-expo",
+      "repository_url": "https://github.com/creach-t/rhythm-dodge-game",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "278609950d77f64511943ed2149b1ff9c41a0081",
+      "reason": "The actual GameRenderer constructs Renderer from expo-three on an Expo GL context, with React Native/Expo runtime. It is not an established standalone direct-Three browser rendering path under this collection's strict boundary.",
+      "next_action": "Review the adapter's role/platform scope or locate a direct Three edition before promotion; do not hide Expo/expo-three as absent.",
+      "evidence_urls": [
+        "https://github.com/creach-t/rhythm-dodge-game/blob/278609950d77f64511943ed2149b1ff9c41a0081/LICENSE",
+        "https://github.com/creach-t/rhythm-dodge-game/blob/278609950d77f64511943ed2149b1ff9c41a0081/README.md",
+        "https://github.com/creach-t/rhythm-dodge-game/blob/278609950d77f64511943ed2149b1ff9c41a0081/package.json",
+        "https://github.com/creach-t/rhythm-dodge-game/blob/278609950d77f64511943ed2149b1ff9c41a0081/src/engine/GameRenderer.ts",
+        "https://github.com/creach-t/rhythm-dodge-game/blob/278609950d77f64511943ed2149b1ff9c41a0081/src/components/GameScreen/index.tsx"
+      ]
+    },
+    {
+      "id": "crypto-beach-soccer",
+      "repository_url": "https://github.com/golden-mane-labs/olympic-crypto-soccer-beach",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "03966bd3032ef4514a443cdbbac94a41bdf5aa75",
+      "reason": "The reviewed GameScreen imports and constructs R3F Canvas with drei, matching the declared @react-three/fiber/drei/postprocessing dependencies. Outside the direct-Three boundary.",
+      "next_action": "Reconsider only a separately scoped direct Three edition; no wallet/auth/payment was invoked.",
+      "evidence_urls": [
+        "https://github.com/golden-mane-labs/olympic-crypto-soccer-beach/blob/03966bd3032ef4514a443cdbbac94a41bdf5aa75/LICENSE",
+        "https://github.com/golden-mane-labs/olympic-crypto-soccer-beach/blob/03966bd3032ef4514a443cdbbac94a41bdf5aa75/package.json",
+        "https://github.com/golden-mane-labs/olympic-crypto-soccer-beach/blob/03966bd3032ef4514a443cdbbac94a41bdf5aa75/client/src/game/screens/GameScreen.tsx"
+      ]
+    },
+    {
+      "id": "tempo-strike",
+      "repository_url": "https://github.com/Kaumarya/Tempo-Strike",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "2ebd6daaedb33f64b62cd351f9b329ac61b0dedd",
+      "reason": "Actual GameScene uses useFrame/useThree from @react-three/fiber and drei helpers, matching its declared R3F dependencies.",
+      "next_action": "Reconsider a separate direct Three renderer edition; no webcam/MediaPipe session was opened.",
+      "evidence_urls": [
+        "https://github.com/Kaumarya/Tempo-Strike/blob/2ebd6daaedb33f64b62cd351f9b329ac61b0dedd/LICENSE",
+        "https://github.com/Kaumarya/Tempo-Strike/blob/2ebd6daaedb33f64b62cd351f9b329ac61b0dedd/package.json",
+        "https://github.com/Kaumarya/Tempo-Strike/blob/2ebd6daaedb33f64b62cd351f9b329ac61b0dedd/components/GameScene.tsx"
+      ]
+    },
+    {
+      "id": "lagoon-yacht",
+      "repository_url": "https://github.com/dubel/yacht",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "525fc04c0c274bfa34e3ef0cda5b2648e4a0a8c6",
+      "reason": "No root project LICENSE was located; the MIT license found is for third-party Clearwater. README explicitly lists CC-BY-NC, CC-BY-NC-ND and Sketchfab Standard model restrictions, alongside open assets.",
+      "next_action": "Clarify the project-code grant and obtain a cleared/open-asset edition before verified inclusion; do not extend Clearwater's MIT license to the entire game.",
+      "evidence_urls": [
+        "https://github.com/dubel/yacht/blob/525fc04c0c274bfa34e3ef0cda5b2648e4a0a8c6/README.md",
+        "https://github.com/dubel/yacht/blob/525fc04c0c274bfa34e3ef0cda5b2648e4a0a8c6/package.json",
+        "https://github.com/dubel/yacht/blob/525fc04c0c274bfa34e3ef0cda5b2648e4a0a8c6/public/assets/audio/CREDITS.md",
+        "https://github.com/dubel/yacht/blob/525fc04c0c274bfa34e3ef0cda5b2648e4a0a8c6/public/assets/music/CREDITS.md"
+      ]
+    },
+    {
+      "id": "drift-ocean-game",
+      "repository_url": "https://github.com/ashleyholman/ocean-game",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "1bb4d202df4b6528a443c08bdbc9c2a16bf4d066",
+      "reason": "MIT Three.js sailing/planet simulation and detailed asset credits are present, but the author labels it unfinished; the reviewed main establishes simulation/controls without a proven race, mission, score or completion loop. HYG data has separate CC BY-SA terms.",
+      "next_action": "Locate an implemented game objective/result before upgrading the free-sailing simulation; retain data/asset notices separately.",
+      "evidence_urls": [
+        "https://github.com/ashleyholman/ocean-game/blob/1bb4d202df4b6528a443c08bdbc9c2a16bf4d066/LICENSE",
+        "https://github.com/ashleyholman/ocean-game/blob/1bb4d202df4b6528a443c08bdbc9c2a16bf4d066/README.md",
+        "https://github.com/ashleyholman/ocean-game/blob/1bb4d202df4b6528a443c08bdbc9c2a16bf4d066/src/main.ts",
+        "https://github.com/ashleyholman/ocean-game/blob/1bb4d202df4b6528a443c08bdbc9c2a16bf4d066/docs/project/ASSET_CREDITS.md"
+      ]
+    },
+    {
+      "id": "shining-stars",
+      "repository_url": "https://github.com/rjroy/shining-stars",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "2ba52f15c4e8ddb3dd904984320e46aa89ba2f28",
+      "reason": "Root software is MIT, but README explicitly warns not to redistribute source recordings based on that software license alone. The catalog/bundled songs do not establish a separate media permission grant; full renderer/gameplay review is also unfinished.",
+      "next_action": "Clarify song/media licenses or a music-cleared edition, then complete renderer/objective review; do not label all bundled recordings MIT.",
+      "evidence_urls": [
+        "https://github.com/rjroy/shining-stars/blob/2ba52f15c4e8ddb3dd904984320e46aa89ba2f28/LICENSE",
+        "https://github.com/rjroy/shining-stars/blob/2ba52f15c4e8ddb3dd904984320e46aa89ba2f28/README.md",
+        "https://github.com/rjroy/shining-stars/blob/2ba52f15c4e8ddb3dd904984320e46aa89ba2f28/data/catalog.json"
+      ]
     }
   ]
 }
