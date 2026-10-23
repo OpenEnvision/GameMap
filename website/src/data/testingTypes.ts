@@ -1,3 +1,5 @@
+import type { PayloadModels } from "../../content/contracts";
+
 export const testingKinds = {
   project: "Games & engine projects",
   environment: "AI evaluation environments",
@@ -19,33 +21,5 @@ export const testingTerms = {
   review: "Permission needs confirmation",
 } as const;
 
-export interface TestingStarterPack {
-  id: string;
-  use: keyof typeof testingUses;
-  title: string;
-  resources: string;
-  task: string;
-  measure: string;
-}
-
-export interface TestingResource {
-  id: string;
-  title: string;
-  kind: keyof typeof testingKinds;
-  uses: (keyof typeof testingUses)[];
-  dimensions: ("2d" | "3d")[];
-  stack: string;
-  summary: string;
-  sourceUrl: string;
-  access: { label: string; url: string; note: string };
-  codeLicense: string;
-  assetLicense: string;
-  terms: keyof typeof testingTerms;
-  licenseUrl: string;
-  evidence: { label: string; url: string }[];
-  aiUseNote: string;
-  testTasks: string[];
-  setup: string[];
-  limitations: string;
-  reviewed: string;
-}
+export type TestingStarterPack = PayloadModels["testing-pack"];
+export type TestingResource = PayloadModels["testing"];

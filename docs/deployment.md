@@ -23,11 +23,11 @@ The application lives in `website/app/`. Existing catalog and case data remain i
 
 ## Documents and internal links
 
-Markdown under `docs/`, plus `AWESOME.md` and `CONTRIBUTING.md`, is rendered at build time. Articles include navigation, a table of contents, highlighted code, heading links, and full-text search. The original Markdown remains the source of truth and is available through each article's source link.
+Markdown under `docs/`, plus `AWESOME.md` and `CONTRIBUTING.md`, is rendered at build time. Articles include navigation, a table of contents, highlighted code, heading links, and full-text search. Git-authored long-form Markdown remains the source of truth and is available through its source link. Registered catalog guides are generated views of structured data; their source link identifies the trusted generator rather than implying that an old Git export is a competing authoring source.
 
 `scripts/prepare-docs.mjs` creates disposable copies in `website/.content/`. It derives titles, rewrites internal Markdown links to document routes, and stages local documentation images in the ignored `website/public/docs-assets/` directory. Original research text is not rewritten. `website/docs.config.json` controls navigation groups and short labels; ungrouped articles remain available under More notes. After editing source Markdown during development, rerun this preparation script or restart `npm run dev` to refresh the prepared copies.
 
-The document source uses Fumadocs MDX's Vite integration. Article bodies are lazy-loaded on client navigation, but every document also ships as complete HTML, so direct links and reading without JavaScript work. Full-text search loads a static index into the browser; there is no `/api/search` server in production.
+The document source uses Fumadocs MDX's Vite integration in Markdown-only mode; catalog prose cannot execute MDX expressions or imports. Article bodies are lazy-loaded on client navigation, but every document also ships as complete HTML, so direct links and reading without JavaScript work. Full-text search loads a static index into the browser; there is no `/api/search` server in production.
 
 ## Build and validate
 
@@ -40,7 +40,7 @@ npm run check:build
 
 - `generate.mjs` synchronizes the resource catalog and downloadable editorial files. It does not overwrite the README.
 - `npm run check` validates source data, public source media, and generated editorial files without requiring build output.
-- `npm run build` prepares documents, checks TypeScript, pre-renders routes, and assembles the static `dist/` directory. Temporary framework output stays in `.build/`.
+- `npm run build` prepares documents, checks TypeScript, pre-renders routes, and assembles the static `dist/` directory. Temporary framework output stays in `.build/website/`, separate from private Studio output, import packages and staged media. Building the public website must never clear the whole `.build/` directory.
 - `npm run check:build` also checks deployed documents/media, every rendered article, internal links/assets, the static search index, and the real 404 page.
 
 To reproduce the GitHub Pages subpath:
@@ -61,6 +61,16 @@ npm run test:web
 ```
 
 Tests exercise desktop and mobile layouts, filtering, saved collections, resource dialogs, click-to-play previews, document navigation with and without JavaScript, static search, themes, and 404 behavior against the built static artifact. Pull requests run these checks in CI. `test-results/` and browser reports are ignored.
+
+### Private release-package builds
+
+`npm run site:build -- --input PACKAGE --out PRIVATE_OUTPUT --base /GameMap/ --browser` verifies a reviewed release and builds it in a separate temporary workspace. It does not change the ordinary build source, the working tree's `dist/`, or the Pages workflow. Use `npm run site:verify -- --input PRIVATE_OUTPUT` to verify the exact completed artifact. Local fixtures require `--development` and remain explicitly non-production; production requires clean exact source and browser gates. See [content-platform operations](content-platform.md) for generated-guide review, source ownership, artifact evidence and remaining deployment gates. Nothing is uploaded or activated by these commands.
+
+## Staging preparation (disabled, offline only)
+
+See the [staging-readiness review](staging-readiness.md) before connecting a cloud project. `config/staging.example.json` proposes an isolated preview repository, Supabase project and single-instance persistent Studio host, but is not consumed by a publisher. `npm run staging:check -- --config config/staging.example.json --out NEW_PRIVATE_DIRECTORY` writes a private redacted report and blank-secret Studio environment template without reading credential stores or making network requests. Exit code 2 means blocked/not ready. The current realm, hosting-adapter and cloud-acceptance gaps remain explicit blockers; filling placeholders cannot authorize a deployment.
+
+This preparation does not change the default Git provider or `.github/workflows/deploy-pages.yml`, create resources, commit, push or deploy.
 
 ## GitHub Pages setup
 

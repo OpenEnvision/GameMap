@@ -1,4 +1,6 @@
 import { publicAsset } from "../publicAsset";
+import type { z } from "zod";
+import type { projectImageSchema } from "../../content/contracts";
 /**
  * Author-published project media, kept separate from GameMap editorial artwork.
  * `source` opens the original project page, not a generic image search.
@@ -6,13 +8,7 @@ import { publicAsset } from "../publicAsset";
  */
 export const projectMedia: Record<
   string,
-  {
-    src: string;
-    alt: string;
-    source: string;
-    credit: string;
-    kind: "official-demo";
-  }
+  z.infer<typeof projectImageSchema>
 > = {
   opengame: {
     src: publicAsset("media/demos/opengame.webp"),

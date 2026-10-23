@@ -3,18 +3,21 @@ import { useHref } from "react-router";
 import { Link, useSiteI18n, LanguageSwitcher } from "../lib/i18n";
 import { ArrowUpRight, Bookmark, Check, Link2, X } from "lucide-react";
 import type { Resource } from "../../src/types";
+import type { ResourceIdentity } from "../../src/data/resourceIdentities";
 import ResourceIcon from "../../src/components/ResourceIcon";
 import type { ContentEntry } from "../../content/models";
 import { ContentDocument, RelatedDemos, MediaPreview } from "./content";
 
 export function ResourceDetail({
   entry,
+  identity,
   demos,
   saved,
   onSave,
   onClose,
 }: {
   entry: ContentEntry<"resource">;
+  identity: ResourceIdentity;
   demos: ContentEntry<"demo">[];
   saved: boolean;
   onSave: () => void;
@@ -106,7 +109,7 @@ export function ResourceDetail({
         </figure>
       )}
       <div className="detail-identity">
-        <ResourceIcon resource={resource} size={56} />
+        <ResourceIcon resource={resource} identity={identity} size={56} />
         <Link className="inline-link" to={entry.url}>
           {t("Open complete project record")}
           <ArrowUpRight size={14} />

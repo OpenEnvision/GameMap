@@ -1,0 +1,34 @@
+{
+  "format": "gamemap.staging-plan",
+  "version": 1,
+  "enabled": false,
+  "environment": "staging",
+  "name": "gamemap-staging",
+  "site": {
+    "provider": "github-pages",
+    "repository": "replace-owner/GameMap-staging",
+    "origin": "https://replace-owner.github.io",
+    "base": "/GameMap-staging/",
+    "approvalEnvironment": "gamemap-staging"
+  },
+  "studio": {
+    "hosting": "persistent-node",
+    "origin": "https://studio-staging.example.invalid",
+    "replicas": 1,
+    "mediaRoot": "/srv/gamemap-staging/media",
+    "databaseLogin": "catalog_studio_staging"
+  },
+  "publisher": {
+    "databaseLogin": "catalog_publisher_staging"
+  },
+  "database": {
+    "projectRef": "replace-staging-project-ref",
+    "url": "https://replace-staging-project-ref.supabase.co",
+    "productionProjectRef": null
+  },
+  "production": {
+    "repository": "OpenEnvision/GameMap",
+    "siteOrigin": "https://openenvision.github.io",
+    "base": "/GameMap/"
+  }
+}

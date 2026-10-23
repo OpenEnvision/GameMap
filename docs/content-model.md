@@ -6,7 +6,11 @@ GameMap treats source content, presentation, and discovery as separate responsib
 
 | Definition | Responsibility |
 | --- | --- |
-| `website/content/models.ts` | Content kinds, typed source models, presentation blocks, and registry API |
+| `website/content/contracts.ts` | Versioned runtime payload/attachment validation; inferred TypeScript models and generated Studio form schemas |
+| `website/content/models.ts` | Content kinds, per-kind schema version, authoring owner, validator key, presentation blocks, and registry API |
+| `website/content/assembly.ts` | Rehydrate selected database revisions without filling missing business rows from Git |
+| `website/content/source-data.ts` | Authoring provider boundary; Git by default, explicit snapshot materialization only in isolated builds |
+| `website/content/generators.config.json` | Registered derived document addresses and trusted source renderers; no executable database recipes |
 | `website/content/sources.config.json` | Every data module, runtime export, fragment, attachment, and metadata owner |
 | `website/content/site.ts` | Route definitions, canonical URL helpers, and navigation |
 | `website/content/fields.ts` | Exhaustive field presentation or a documented structural use |
@@ -72,6 +76,6 @@ Both locales are pre-rendered and checked for visible fields, owning collections
 
 - Add a row to an existing typed collection and keep its source evidence and limitations. Its existing adapter registers and renders it automatically.
 - For a new data module or export, declare its owner and shape in the source inventory. A fragment must also be included in its aggregate collection; independent inventory checks detect omissions.
-- For a new field or content kind, define its type and explicit presentation before publishing. Structural omissions require an explanation; unknown runtime fields fail validation.
+- For a new field or content kind, define its type and explicit presentation before publishing. Structural omissions require an explanation; unknown runtime fields fail validation. Declare its runtime schema in `contracts.ts`, derive the TypeScript type, declare its version, owner and validator key in `contentKinds`, implement its import/assembly strategies, and register the contract in a new ordered database migration. See the [content-platform extension guide](content-platform.md). Payload upgrades create successor revisions; they never rewrite old approved content.
 - Add Markdown anywhere under `docs/`. Navigation, static rendering, search, and coverage discovery follow automatically. Add an optional label to `website/docs.config.json` for deliberate placement.
 - Do not remove unavailable sources, historical identities, alternate recordings, attribution boundaries, or license qualifications merely to simplify a view.

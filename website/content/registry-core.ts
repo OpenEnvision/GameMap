@@ -290,13 +290,13 @@ export function createRegistry(
     const path = add(
       "path",
       track,
-      { id: track, ...tracks[track] },
+      sources.pathDefinitions?.[track] ?? { id: track, ...tracks[track] },
       url.path(track),
     );
     const art = sources.editorial[track];
     assertKeys(
       art,
-      { src: true, title: true, description: true, alt: true, index: true },
+      { src: true, title: true, description: true, alt: true, index: true, credit: true, sourceUrl: true },
       `editorial:${track}`,
     );
     path.blocks.push({
@@ -305,7 +305,8 @@ export function createRegistry(
       label: `Figure ${art.index} · ${art.title} — ${art.description}`,
       src: art.src,
       alt: art.alt,
-      credit: "Original GameMap artwork",
+      credit: art.credit || "Original GameMap artwork",
+      ...(art.sourceUrl ? { source: art.sourceUrl } : {}),
     });
     const previews = sources.showcaseByTrack[track];
     assertKeys(

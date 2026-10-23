@@ -1,4 +1,5 @@
 import {build} from 'esbuild';
+import {canonicalValue} from './lib/catalog/codec.mjs';
 import {fileURLToPath} from 'node:url';
 
 export async function loadLearningContent(){
@@ -8,6 +9,7 @@ export async function loadLearningContent(){
 
 const safe=value=>value.replaceAll('|','\\|');
 export function renderLearningGuide(cases,foundations,resources,collections=[]){
+ [cases,foundations,resources,collections]=canonicalValue([cases,foundations,resources,collections]);
  let text=`# AI game builds\n\nPlay a project, read its creator's build notes, and inspect the game source. Each entry includes a workflow to study and the setup needed to run it.\n\n## Games and source\n\n| Game | Dimension | AI production record | Play or run | Complete game source |\n| --- | --- | --- | --- | --- |\n`;
  for(const path of cases)text+=`| ${safe(path.title)} | ${path.track.toUpperCase()} | [${safe(path.tutorial.label)}](${path.tutorial.url}) | [${path.demo.kind==='playable'?'Play in browser':'Download / run locally'}](${path.demo.url}) | [Game project](${path.source.url}) |\n`;
  text+='\n';

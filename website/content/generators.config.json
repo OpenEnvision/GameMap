@@ -1,0 +1,26 @@
+{
+  "resource-catalog": {
+    "source": "AWESOME.md",
+    "renderer": "scripts/catalog.mjs"
+  },
+  "game-builds": {
+    "source": "docs/tutorials-and-demos.md",
+    "renderer": "scripts/learning.mjs"
+  },
+  "agent-library": {
+    "source": "docs/coding-agent-game-code.md",
+    "renderer": "scripts/agent-code.mjs"
+  },
+  "testing-library": {
+    "source": "docs/game-testing-library.md",
+    "renderer": "scripts/testing.mjs"
+  },
+  "repository-index": {
+    "source": "docs/cadle-repositories.md",
+    "renderer": "scripts/repository-research.mjs"
+  },
+  "logo-attribution": {
+    "source": "docs/icon-sources.md",
+    "renderer": "scripts/lib/catalog/generated-documents.mjs"
+  }
+}

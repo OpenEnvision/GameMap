@@ -49,6 +49,9 @@ function Document({
     Content = page.body,
     info = record.data,
     bodyLocale = docLocale(info.slug);
+  const sourceLink = record.blocks.flatMap((block) =>
+    block.field === "source" && block.type === "links" ? block.items : [],
+  )[0];
   return (
     <DocsPage
       toc={toc}
@@ -75,11 +78,11 @@ function Document({
         <p data-content-field="description">{record.description}</p>
         <a
           data-content-field="source"
-          href={`https://github.com/OpenEnvision/GameMap/blob/main/${info.source}`}
+          href={sourceLink.url}
           target="_blank"
           rel="noreferrer"
         >
-          {text.source}
+          {info.sourceMode === "generated" ? text.generatedSource : text.source}
         </a>
       </details>
     </DocsPage>

@@ -7,6 +7,32 @@ concurrency:
   group: catalog-pr-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 jobs:
+  local-supabase:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, checked 2026-10-18
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4, checked 2026-10-18
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Start loopback-only local Supabase and provision private fixtures
+        run: |
+          npm run local:start
+          npm run local:setup
+      - name: Exercise actual Auth, PostgREST, least-privilege SQL and restore probes
+        run: npm run test:local
+      - name: Exercise isolated exact-artifact publication, process crashes and rollback
+        run: |
+          npm run local:publisher-setup
+          npm run test:local:publication
+      - name: Stop local services without exposing private logs or credentials
+        if: always()
+        run: npm run local:stop
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -25,8 +51,12 @@ jobs:
           git diff --exit-code -- AWESOME.md data/resources.json website/src/data/resources.json website/public docs
       - name: Validate source catalog and media
         run: npm run check
-      - name: Build static website and documentation
-        run: npm run build
+      - name: Build static website without clearing private artifacts
+        run: |
+          mkdir -p .build/catalog-media
+          printf 'private build boundary\n' > .build/catalog-media/.isolation-fixture
+          npm run build
+          test -f .build/catalog-media/.isolation-fixture
         env:
           PAGES_BASE_PATH: /GameMap/
       - name: Validate generated build output
@@ -35,3 +65,20 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Check desktop and mobile interactions
         run: npm run test:web
+      - name: Check private Studio workflow against isolated PostgreSQL and test Auth
+        run: npm run test:studio
+      - name: Build and verify a private database-only release fixture
+        run: |
+          NODE_ENV=test node tests/helpers/release-fixture.mjs --out .build/ci-release
+          npm run site:build -- --input .build/ci-release --out .build/ci-site-artifact --base /GameMap/ --development --browser
+          npm run site:verify -- --input .build/ci-site-artifact
+      - name: Verify server runtime without development dependencies
+        run: |
+          npm ci --omit=dev --no-audit --no-fund
+          NODE_ENV=production node --input-type=module <<'JS'
+          import { loadContent } from './scripts/lib/content.mjs';
+          await import('./scripts/lib/catalog/server.mjs');
+          await import('./scripts/lib/catalog/database.mjs');
+          const context = await loadContent();
+          console.log(`Production runtime loaded ${context.registry.entries.length} records without connecting to Auth or a database.`);
+          JS

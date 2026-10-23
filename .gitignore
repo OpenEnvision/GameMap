@@ -53,6 +53,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Supabase local state and project-link cache; schema and config stay versioned.
+/supabase/.temp/
+/supabase/.branches/
+
 # Local environment configuration and secrets; keep example templates visible.
 .env
 .env.*

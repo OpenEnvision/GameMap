@@ -3,7 +3,8 @@ import { resolve, relative, sep, extname, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 import { parseFragment } from "parse5";
-import { execFileSync } from 'node:child_process';
+import { execFileSync } from "node:child_process";
+import { documentOrigin } from "./catalog/generated-registry.mjs";
 
 export const root = fileURLToPath(new URL("../../", import.meta.url));
 // Raw HTML is source content too. Review new tags/attributes rather than dropping or executing them.
@@ -33,12 +34,17 @@ export function assertDocumentHTML(value, source) {
 }
 export function sourceMarkdown(markdown) {
   const match = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
-  const body = (match ? markdown.slice(match[0].length) : markdown).replace(/^\s*#\s+[^\n]+\r?\n/, '');
+  const body = (match ? markdown.slice(match[0].length) : markdown).replace(
+    /^\s*#\s+[^\n]+\r?\n/,
+    "",
+  );
   return { body, frontmatter: match?.[1] };
 }
 export function preparedMarkdown(markdown) {
   const { body, frontmatter } = sourceMarkdown(markdown);
-  return frontmatter ? `${body.trimEnd()}\n\n<details>\n<summary>Package metadata</summary>\n\n\`\`\`yaml\n${frontmatter}\n\`\`\`\n\n</details>\n` : body;
+  return frontmatter
+    ? `${body.trimEnd()}\n\n<details>\n<summary>Package metadata</summary>\n\n\`\`\`yaml\n${frontmatter}\n\`\`\`\n\n</details>\n`
+    : body;
 }
 export const slash = (value) => value.split(sep).join("/");
 export async function walk(directory) {
@@ -55,10 +61,35 @@ export async function walk(directory) {
   return files.flat();
 }
 export function publicSourcePaths() {
-  try { return new Set(execFileSync('git',['ls-files','-z','--cached','--others','--exclude-standard','--','docs',':(top,glob)*.md'],{cwd:root,encoding:'utf8'}).split('\0').filter(Boolean)); }
-  catch { return undefined; } // Source archives without .git still build; hidden paths remain excluded.
+  try {
+    return new Set(
+      execFileSync(
+        "git",
+        [
+          "ls-files",
+          "-z",
+          "--cached",
+          "--others",
+          "--exclude-standard",
+          "--",
+          "docs",
+          ":(top,glob)*.md",
+        ],
+        { cwd: root, encoding: "utf8", stdio: ['ignore','pipe','ignore'] },
+      )
+        .split("\0")
+        .filter(Boolean),
+    );
+  } catch {
+    return undefined;
+  } // Source archives without .git still build; hidden paths remain excluded.
 }
-export function publishablePath(path, visible) { return !path.split('/').some(part=>part.startsWith('.')) && (!visible || visible.has(path)); }
+export function publishablePath(path, visible) {
+  return (
+    !path.split("/").some((part) => part.startsWith(".")) &&
+    (!visible || visible.has(path))
+  );
+}
 /** Discover public Markdown recursively; ignored local notes must not become published content. */
 export async function readDocuments() {
   const groups = JSON.parse(
@@ -66,7 +97,11 @@ export async function readDocuments() {
   );
   const visible = publicSourcePaths();
   const files = (await walk(resolve(root, "docs")))
-    .filter(file => file.endsWith('.md') && publishablePath(slash(relative(root,file)),visible))
+    .filter(
+      (file) =>
+        file.endsWith(".md") &&
+        publishablePath(slash(relative(root, file)), visible),
+    )
     .map((file) => ({
       file,
       slug: slash(relative(resolve(root, "docs"), file)).slice(0, -3),
@@ -77,7 +112,10 @@ export async function readDocuments() {
     "CONTRIBUTING.md": "contributing",
   };
   for (const filename of (await readdir(root))
-    .filter(filename => filename.endsWith('.md') && publishablePath(filename,visible))
+    .filter(
+      (filename) =>
+        filename.endsWith(".md") && publishablePath(filename, visible),
+    )
     .sort())
     files.push({
       file: resolve(root, filename),
@@ -113,6 +151,7 @@ export async function readDocuments() {
           "Curated source notes and practical guidance from GameMap.",
         group: group?.title || "More notes",
         source: slash(relative(root, file)),
+        ...documentOrigin(slash(relative(root, file))),
         sourceHash: createHash("sha256").update(markdown).digest("hex"),
       };
     }),

@@ -1,3 +1,5 @@
+import type { PayloadModels } from '../../content/contracts';
+
 export const agentLabels = {
   codex: 'Codex',
   'claude-code': 'Claude Code',
@@ -35,21 +37,4 @@ export const agentResourceKinds = {
   'code-example': 'Runnable game code',
 } as const;
 
-export interface AgentGameResource {
-  id: string;
-  catalogResourceId?: string;
-  title: string;
-  kind: keyof typeof agentResourceKinds;
-  agents: AgentId[];
-  engine: string;
-  summary: string;
-  sourceUrl: string;
-  codeUrl: string;
-  evidenceUrl: string;
-  codeType: 'implementation' | 'instructions' | 'mixed';
-  codeScope: string;
-  limitations: string;
-  publisher: string;
-  official: boolean;
-  reviewed: string;
-}
+export type AgentGameResource = PayloadModels['agent'];

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {canonicalValue} from './lib/catalog/codec.mjs';
 import { build } from 'esbuild';
 import { fileURLToPath } from 'node:url';
 
@@ -40,6 +41,7 @@ export function testingManifest(content) {
 
 const safe = value => value.replaceAll('|', '\\|');
 export function renderTestingGuide(content) {
+  content=canonicalValue(content);
   const { testingResources: resources, testingReviewDate: date, testingKinds: kinds, testingUses: uses, testingTerms: terms, testingStarterPacks: packs } = content;
   let text = `# Game testing library\n\nChoose a runnable project, AI environment, or asset set for the behavior you want to test. Start with a task below, then follow the setup and license details for each resource.\n\n## Starter packs\n\n`;
   for (const pack of packs) text += `### ${uses[pack.use]}\n\n**Start with:** ${pack.resources}.\n\n${pack.task}\n\n**Measure:** ${pack.measure}\n\n`;

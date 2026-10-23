@@ -13,7 +13,7 @@ import {
   SlidersHorizontal,
 } from "lucide-react";
 import { Link, useNavigate, useSiteI18n, SourceLanguage } from "../lib/i18n";
-import { contentFor } from "../../content/registry.server";
+import { contentFor, sources } from "../../content/registry.server";
 import { matchesSearch } from "../../content/matching";
 import { searchableText } from "../../content/search";
 import ResourceIcon, {
@@ -26,11 +26,15 @@ import { url } from "../../content/site";
 import { useClientQuery } from "../lib/client-query";
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
-  return { entries: content.all("resource"), demos: content.all("demo") };
+  return {
+    entries: content.all("resource"),
+    demos: content.all("demo"),
+    identities: sources.identities,
+  };
 }
 export default function Resources() {
   const { t } = useSiteI18n(),
-    { entries, demos } = useLoaderData<typeof loader>();
+    { entries, demos, identities } = useLoaderData<typeof loader>();
   const resources = entries.map((entry) => entry.data),
     searchText = new Map(
       entries.map((entry) => [entry.id, searchableText(entry)]),
@@ -305,7 +309,13 @@ export default function Resources() {
                 data-content-ref={entry.key}
               >
                 <div className="resource-card-top">
-                  <ResourceIcon resource={resource} size={42} />
+                  <ResourceIcon
+                    resource={resource}
+                    identity={
+                      identities[resource.id as keyof typeof identities]
+                    }
+                    size={42}
+                  />
                   <button
                     className="quiet-icon bookmark-button"
                     aria-label={t(
@@ -336,7 +346,9 @@ export default function Resources() {
                 <h2>
                   <Link to={url.resource(resource.id)}>{resource.name}</Link>
                 </h2>
-                <ResourceAttribution resource={resource} />
+                <ResourceAttribution
+                  identity={identities[resource.id as keyof typeof identities]}
+                />
                 <p
                   className="resource-description"
                   lang={entry.descriptionLanguage === "en" ? "en" : undefined}
@@ -406,6 +418,7 @@ export default function Resources() {
         <ResourceDetail
           key={active.id}
           entry={entries.find((entry) => entry.id === active.id)!}
+          identity={identities[active.id as keyof typeof identities]}
           demos={demos.filter((demo) => demo.data.resourceId === active.id)}
           saved={saved.includes(active.id)}
           onSave={() => toggleSave(active.id)}

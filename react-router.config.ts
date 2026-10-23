@@ -7,7 +7,7 @@ const basename =
 
 export default {
   appDirectory: "website/app",
-  buildDirectory: ".build",
+  buildDirectory: ".build/website",
   basename: basename === "/" ? "/" : basename + "/",
   ssr: false,
   routeDiscovery: { mode: "initial" },

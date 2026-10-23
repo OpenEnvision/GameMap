@@ -4,6 +4,7 @@ import { Link, useSiteI18n, SourceLanguage } from "../lib/i18n";
 import type { ContentBlock, ContentEntry, Fact } from "../../content/models";
 import { contentKinds } from "../../content/models";
 import { groupRecordings } from "../../content/media";
+import { publicAsset } from "../../src/publicAsset";
 export function ContentLink({
   href,
   children,
@@ -39,8 +40,8 @@ export function MediaPreview({
         controls
         playsInline
         preload="none"
-        poster={block.poster}
-        src={block.src}
+        poster={block.poster ? publicAsset(block.poster) : undefined}
+        src={publicAsset(block.src)}
         aria-label={block.label}
       >
         {t("Your browser does not support this preview.")}
@@ -52,8 +53,8 @@ export function MediaPreview({
           controls
           playsInline
           preload="none"
-          poster={block.mobile.poster}
-          src={block.mobile.src}
+          poster={publicAsset(block.mobile.poster)}
+          src={publicAsset(block.mobile.src)}
           aria-label={`${block.label} — ${t("mobile preview")}`}
         >
           {t("Your browser does not support this preview.")}
@@ -156,7 +157,7 @@ function Block({
       return (
         <figure className="content-image" data-content-field={block.field}>
           <img
-            src={block.src}
+            src={publicAsset(block.src)}
             alt={block.alt}
             width={block.width}
             height={block.height}

@@ -1,4 +1,5 @@
 import {readdir, readFile} from 'node:fs/promises';
+import {canonicalValue} from './lib/catalog/codec.mjs';
 const taxonomy=JSON.parse(await readFile(new URL('../website/content/taxonomy.json',import.meta.url),'utf8'));
 export const categories=Object.entries(taxonomy.categories).map(([id,{documentLabel}])=>[id,documentLabel]);
 export const types=taxonomy.types;
@@ -48,6 +49,7 @@ export function validate(records){
 }
 const tableSafe=s=>s.replaceAll('|','\\|').replaceAll('\n',' ');
 export function renderAwesome(records){
+ records=canonicalValue(records);
  const total=records.length;
  let text=`# Awesome AI Game Development
 

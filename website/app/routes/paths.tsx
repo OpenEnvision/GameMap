@@ -2,6 +2,7 @@ import { useLoaderData, type LoaderFunctionArgs } from "react-router";
 import { ArrowRight } from "lucide-react";
 import { contentFor } from "../../content/registry.server";
 import { ContentCard } from "../components/content";
+import { publicAsset } from "../../src/publicAsset";
 import { Link, useSiteI18n } from "../lib/i18n";
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
@@ -47,7 +48,7 @@ export default function Paths() {
               key={path.key}
             >
               {art?.type === "image" && (
-                <img src={art.src} alt={art.alt} loading="lazy" />
+                <img src={publicAsset(art.src)} alt={art.alt} loading="lazy" />
               )}
               <div>
                 <span className="small-label">

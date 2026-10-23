@@ -25,7 +25,9 @@ const counts = Object.fromEntries(
   ]),
 );
 console.log(
-  `Source coverage passed: ${registry.entries.length} records, ${Object.keys(context.contracts).length} data modules, ${context.sourceRows} independently checked source references. ${JSON.stringify(counts)}`,
+  context.inputMode === "release"
+    ? `Verified release coverage passed: ${registry.entries.length} selected records; no Git business-row fallback. ${JSON.stringify(counts)}`
+    : `Source coverage passed: ${registry.entries.length} records, ${Object.keys(context.contracts).length} data modules, ${context.sourceRows} independently checked source references. ${JSON.stringify(counts)}`,
 );
 if (built) {
   const manifest = JSON.parse(

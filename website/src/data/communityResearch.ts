@@ -1,10 +1,6 @@
+import type { PayloadModels } from "../../content/contracts";
 // Discovery collections are entry points, not individually verified game cases.
-export interface CommunityCollection {
-  id: string;
-  title: string;
-  url: string;
-  description: string;
-}
+export type CommunityCollection = PayloadModels["collection"];
 export const communityCollections = [
   {
     id: "awesome-ai-built-games",

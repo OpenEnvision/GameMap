@@ -24,6 +24,23 @@ Documentation and catalog changes refresh automatically. The website is static, 
 
 See [development & deployment](docs/deployment.md) for production builds and GitHub Pages configuration.
 
+## Private content Studio
+
+The [content platform](docs/content-platform.md) includes typed editing forms, a trusted validator, revision/translation review, protected media uploads and immutable release export.
+
+```sh
+# Start Docker Desktop first. These wrappers never connect to a cloud project.
+npm run local:start
+npm run local:setup
+npm run studio:dev
+```
+
+Local account passwords stay in ignored `.build/catalog-local/access.json`; setup imports content as drafts and writes a private `.env` with a restricted database login. `npm run test:local` exercises actual Supabase Auth/PostgREST/PostgreSQL and a separate restore probe using explicitly local test approvals, not production editorial decisions. `npm run local:stop` stops services while retaining their data.
+
+Studio runs separately from the public website. Without configuration it shows setup instructions, not a demo login. Server credentials and Auth tokens never enter the browser bundle. See the guide for production TLS, restricted database credentials, persistent media and portable exports.
+
+The public website is **not switched to database releases yet**. Git remains its default source until the cutover gates pass; Studio never deploys or activates a release. Reviewed packages can already be built through the isolated `site:build` / `site:verify` path, including database-only records and uploaded media, without changing the checkout's `dist/`. Only `dist/`, not the private Studio or private snapshot artifacts, is published by the existing Pages workflow.
+
 ## Sources & reuse
 
 Original projects and media retain their respective rights. Inclusion is not an endorsement or a claim of independent reproduction.

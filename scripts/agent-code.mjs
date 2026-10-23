@@ -1,4 +1,5 @@
 import {build} from 'esbuild';
+import {canonicalValue} from './lib/catalog/codec.mjs';
 import {fileURLToPath} from 'node:url';
 
 export async function loadAgentCodeContent(){
@@ -113,6 +114,7 @@ const link=(label,url)=>`[${inline(label)}](${new URL(url).href.replaceAll('(','
 const agentNames=(agents,labels)=>agents.map(agent=>inline(labels[agent])).join(' · ');
 
 export function renderAgentCodeGuide(resources,cases,caseAgents,labels,kinds){
+ [resources,cases,caseAgents,labels,kinds]=canonicalValue([resources,cases,caseAgents,labels,kinds]);
  validateAgentCodeContent(resources,cases,caseAgents,labels,kinds);
  let text=`# Coding agents × game development: code resources and game sources
 

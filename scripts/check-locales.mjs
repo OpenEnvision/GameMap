@@ -20,7 +20,8 @@ const sourcePath = resolve(
   root,
   "website/content/i18n/content.zh.sources.json",
 );
-const fingerprints = JSON.parse(await readFile(sourcePath, "utf8"));
+assert.ok(!(context.inputMode === 'release' && process.argv.includes('--approve-new')), 'Release translations are immutable; review them in Studio');
+const fingerprints = context.inputMode === 'release' ? context.translationSources : JSON.parse(await readFile(sourcePath, "utf8"));
 const messages = context.chineseMessages;
 let fields = 0;
 for (const [key, values] of Object.entries(translated)) {

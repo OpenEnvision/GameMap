@@ -1,14 +1,6 @@
-import type { Dimension, Stage } from "../types";
-export interface PlanNode {
-  id: string;
-  title: string;
-  subtitle: string;
-  tags: string[];
-  stage: Stage;
-  description: string;
-  deliverable: string;
-  check: string;
-}
+import type { Dimension } from "../types";
+import type { PayloadModels } from "../../content/contracts";
+export type PlanNode = Omit<PayloadModels["step"], "track">;
 export const plans: Record<Dimension, PlanNode[]> = {
   "2d": [
     {

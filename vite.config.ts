@@ -17,6 +17,8 @@ export default defineConfig({
     fumadocsMdx({
       globalOptions: {
         mdxOptions: {
+          // Content is Markdown, never executable expressions supplied by catalog editors.
+          format: "md",
           remarkImageOptions: { useImport: false },
           rehypePlugins: (plugins) => [
             [

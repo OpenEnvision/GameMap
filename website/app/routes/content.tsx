@@ -1,7 +1,7 @@
 import { useLoaderData, type LoaderFunctionArgs } from "react-router";
 import { Link, useSiteI18n } from "../lib/i18n";
 import { ArrowLeft } from "lucide-react";
-import { contentFor } from "../../content/registry.server";
+import { contentFor, sources } from "../../content/registry.server";
 import { contentKinds } from "../../content/models";
 import { detailRoutes, pages, url } from "../../content/site";
 import {
@@ -24,6 +24,10 @@ export function loader({ params, request }: LoaderFunctionArgs) {
   if (!entry) throw new Response("Content not found", { status: 404 });
   return {
     entry,
+    identity:
+      entry.kind === "resource"
+        ? sources.identities[entry.id as keyof typeof sources.identities]
+        : null,
     steps:
       entry.kind === "path"
         ? content.all("step").filter((step) => step.data.track === entry.id)
@@ -37,7 +41,8 @@ export function loader({ params, request }: LoaderFunctionArgs) {
 }
 export default function ContentPage() {
   const { t } = useSiteI18n();
-  const { entry, steps, cases, demos } = useLoaderData<typeof loader>();
+  const { entry, identity, steps, cases, demos } =
+    useLoaderData<typeof loader>();
   const collection = pages[contentKinds[entry.kind].page];
   return (
     <main id="main-content" className="site-main content-page">
@@ -52,7 +57,7 @@ export default function ContentPage() {
       </nav>
       {entry.kind === "resource" && (
         <div className="content-resource-mark">
-          <ResourceIcon resource={entry.data} size={56} />
+          <ResourceIcon resource={entry.data} identity={identity!} size={56} />
         </div>
       )}
       <ContentDocument entry={entry} />

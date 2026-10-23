@@ -25,6 +25,15 @@ export type ContentTranslations = Record<
   string,
   Record<string, TranslationValue>
 >;
+export type TranslationCatalogs = Partial<
+  Record<
+    Locale,
+    {
+      content: ContentTranslations;
+      fingerprints: Record<string, Record<string, string>>;
+    }
+  >
+>;
 export const chineseContent: ContentTranslations = {};
 for (const group of [resources, paths, examples, toolkit, testing])
   for (const [key, fields] of Object.entries(group)) {
@@ -35,6 +44,18 @@ for (const group of [resources, paths, examples, toolkit, testing])
 export const translationSources = fingerprints as Record<
   string,
   Record<string, string>
+>;
+/** Data exporters consume locale-keyed catalogs, not a hardcoded target language. */
+export const translationCatalogs = {
+  zh: { content: chineseContent, fingerprints: translationSources },
+} satisfies Partial<
+  Record<
+    Locale,
+    {
+      content: ContentTranslations;
+      fingerprints: Record<string, Record<string, string>>;
+    }
+  >
 >;
 export const localizationSnapshot = {
   messages: chineseMessages,
@@ -157,8 +178,11 @@ export function localizeEntry<K extends ContentKind>(
   entry: ContentEntry<K>,
   locale: Locale,
   documents: ReturnType<typeof documentLanguages>,
+  catalogs: TranslationCatalogs = translationCatalogs,
 ): ContentEntry<K> {
   if (locale === "en") return entry;
+  const { content: translatedContent = {}, fingerprints: sources = {} } =
+    catalogs[locale] || {};
   const nativeChinese = entry.kind === "document" && entry.id.startsWith("zh/");
   const raw = entry.data as unknown as Record<string, unknown>;
   const inherited: Record<string, TranslationValue> = {};
@@ -168,11 +192,11 @@ export function localizeEntry<K extends ContentKind>(
       ["title", "name"],
       ["summary", "summary"],
     ]) {
-      const translated = chineseContent[source]?.[field];
+      const translated = translatedContent[source]?.[field];
       if (
         translated !== undefined &&
         canTranslate(entry, target) &&
-        translationSources[source]?.[field] === translationHash(raw[target])
+        sources[source]?.[field] === translationHash(raw[target])
       )
         inherited[target] = translated;
     }
@@ -180,11 +204,10 @@ export function localizeEntry<K extends ContentKind>(
   const values = {
     ...inherited,
     ...Object.fromEntries(
-      Object.entries(chineseContent[entry.key] || {}).filter(
+      Object.entries(translatedContent[entry.key] || {}).filter(
         ([field]) =>
           canTranslate(entry, field) &&
-          translationSources[entry.key]?.[field] ===
-            translationHash(raw[field]),
+          sources[entry.key]?.[field] === translationHash(raw[field]),
       ),
     ),
   };
@@ -209,13 +232,14 @@ export function localizeEntry<K extends ContentKind>(
 export function localizedRegistry(
   registry: ContentRegistry,
   locale: Locale,
+  catalogs: TranslationCatalogs = translationCatalogs,
 ): ContentRegistry {
   if (locale === "en") return registry;
   const documents = documentLanguages(
     registry.all("document").map((entry) => entry.data),
   );
   const allEntries = registry.entries.map((entry) =>
-    localizeEntry(entry, locale, documents),
+    localizeEntry(entry, locale, documents, catalogs),
   );
   const map = new Map(allEntries.map((entry) => [entry.key, entry]));
   // A translated article replaces its English counterpart in the Chinese reading view only.

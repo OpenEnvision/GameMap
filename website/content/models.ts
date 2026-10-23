@@ -1,108 +1,70 @@
-import type { Resource, Dimension } from "../src/types";
-import type { LearningPath } from "../src/data/learningTypes";
-import type { AgentGameResource } from "../src/data/agentGameTypes";
-import type {
-  TestingResource,
-  TestingStarterPack,
-} from "../src/data/testingTypes";
-import type { PlanNode } from "../src/data/plans";
-import type { CommunityCollection } from "../src/data/communityResearch";
-import type repositoryResearch from "../../data/segments/repository-research.json";
-export type RepositoryResearchRecord =
-  (typeof repositoryResearch.records)[number];
-
-export interface DocumentMetadata {
-  slug: string;
-  title: string;
-  label: string;
-  description: string;
-  group: string;
-  source: string;
-  sourceHash: string;
-}
-export interface PathContent {
-  id: Dimension;
-  title: string;
-  description: string;
-}
-export interface StepContent extends PlanNode {
-  track: Dimension;
-}
-export interface DemoContent {
-  recordingId: string;
-  id: string;
-  resourceId: string;
-  title: string;
-  description: string;
-  track: Dimension;
-  role: "excerpt" | "source-recording";
-  alt?: string;
-  previewSrc: string;
-  poster?: string;
-  originalUrl: string;
-  sourceUrl: string;
-  credit: string;
-  alternatePreviewUrl?: string;
-  prompt?: string;
-  aspectRatio?: number;
-  mobilePreview?: { src: string; poster: string; aspectRatio: number };
-}
-export interface ContentModels {
-  resource: Resource;
-  example: LearningPath;
-  foundation: LearningPath;
-  agent: AgentGameResource;
-  testing: TestingResource;
-  "testing-pack": TestingStarterPack;
-  "repository-research": RepositoryResearchRecord;
-  path: PathContent;
-  step: StepContent;
-  demo: DemoContent;
-  collection: CommunityCollection;
-  document: DocumentMetadata;
-}
+import type { PayloadModels } from "./contracts";
+export type ContentModels = PayloadModels;
+export type RepositoryResearchRecord = PayloadModels["repository-research"];
+export type DocumentMetadata = PayloadModels["document"];
+export type PathContent = PayloadModels["path"];
+export type StepContent = PayloadModels["step"];
+export type DemoContent = PayloadModels["demo"];
 export type ContentKind = keyof ContentModels;
+export interface ContentKindDefinition {
+  label: string;
+  plural: string;
+  page: import("./site").PageId;
+  owner: "database" | "git";
+  schemaVersion: number;
+  validatorKey: string;
+}
+/** UI, import, and database registry checks share these versioned kind declarations. */
 export const contentKinds = {
-  resource: { label: "Resource", plural: "Resources", page: "resources" },
-  example: { label: "Game example", plural: "Game examples", page: "examples" },
-  foundation: {
-    label: "Engine foundation",
-    plural: "Engine foundations",
-    page: "examples",
+  resource: {
+    label: "Resource", plural: "Resources", page: "resources",
+    owner: "database", schemaVersion: 1, validatorKey: "gamemap.resource",
   },
-  agent: { label: "Agent resource", plural: "Agent toolkit", page: "agents" },
+  example: {
+    label: "Game example", plural: "Game examples", page: "examples",
+    owner: "database", schemaVersion: 1, validatorKey: "gamemap.example",
+  },
+  foundation: {
+    label: "Engine foundation", plural: "Engine foundations", page: "examples",
+    owner: "database", schemaVersion: 1, validatorKey: "gamemap.foundation",
+  },
+  agent: {
+    label: "Agent resource", plural: "Agent toolkit", page: "agents",
+    owner: "database", schemaVersion: 1, validatorKey: "gamemap.agent",
+  },
   testing: {
-    label: "Testing resource",
-    plural: "Testing library",
-    page: "testing",
+    label: "Testing resource", plural: "Testing library", page: "testing",
+    owner: "database", schemaVersion: 1, validatorKey: "gamemap.testing",
   },
   "testing-pack": {
-    label: "Testing starter",
-    plural: "Testing starter tasks",
-    page: "testing",
+    label: "Testing starter", plural: "Testing starter tasks", page: "testing",
+    owner: "database", schemaVersion: 1, validatorKey: "gamemap.testing-pack",
   },
   "repository-research": {
-    label: "Repository research record",
-    plural: "Repository research",
-    page: "research",
+    label: "Repository research record", plural: "Repository research", page: "research",
+    owner: "database", schemaVersion: 1, validatorKey: "gamemap.repository-research",
   },
   path: {
-    label: "Development path",
-    plural: "Development paths",
-    page: "paths",
+    label: "Development path", plural: "Development paths", page: "paths",
+    owner: "database", schemaVersion: 1, validatorKey: "gamemap.path",
   },
-  step: { label: "Path step", plural: "Steps & checkpoints", page: "paths" },
-  demo: { label: "Project demo", plural: "Project demos", page: "demos" },
+  step: {
+    label: "Path step", plural: "Steps & checkpoints", page: "paths",
+    owner: "database", schemaVersion: 1, validatorKey: "gamemap.step",
+  },
+  demo: {
+    label: "Project demo", plural: "Project demos", page: "demos",
+    owner: "database", schemaVersion: 1, validatorKey: "gamemap.demo",
+  },
   collection: {
-    label: "Discovery collection",
-    plural: "Community discovery",
-    page: "examples",
+    label: "Discovery collection", plural: "Community discovery", page: "examples",
+    owner: "database", schemaVersion: 1, validatorKey: "gamemap.collection",
   },
-  document: { label: "Document", plural: "Guides & notes", page: "docs" },
-} as const satisfies Record<
-  ContentKind,
-  { label: string; plural: string; page: import("./site").PageId }
->;
+  document: {
+    label: "Document", plural: "Guides & notes", page: "docs",
+    owner: "git", schemaVersion: 1, validatorKey: "gamemap.document",
+  },
+} as const satisfies Record<ContentKind, ContentKindDefinition>;
 
 type TextBlock = {
   type: "title" | "lead" | "text";

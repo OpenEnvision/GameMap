@@ -861,89 +861,89 @@ A tool interface, recorded video, model, SDK, and complete game are different de
 
 Coordinates agents to build Unreal scenes, gameplay code, interactions, and playtests.
 
-- **Tutorial (tutorial):** [Setup and usage](https://github.com/Pluto156/AutoUE#setup-and-usage). Author instructions for dependencies, service credentials, and running the Unreal generation pipeline.
 - **Demo (video):** [Game-generation video](https://github.com/Pluto156/AutoUE/blob/main/assets/show.mp4). Recorded demonstrations of generated Unreal games; no public browser-playable build verified.
 - **Source (pipeline-source):** [Pipeline source](https://github.com/Pluto156/AutoUE). Public framework implementation; engine setup, model services, and dataset assets remain separate requirements.
+- **Tutorial (tutorial):** [Setup and usage](https://github.com/Pluto156/AutoUE#setup-and-usage). Author instructions for dependencies, service credentials, and running the Unreal generation pipeline.
 
 ### UniGen
 
 Plans Unity prototypes, generates scripts, assembles scenes, and supports iterative debugging.
 
-- **Tutorial (tutorial):** [Installation and usage](https://github.com/yxwan123/UniGen#-installation). README covers prerequisites and the local Unity generation workflow; review paths and project setup before running.
 - **Demo (video):** [Unity generation video](https://www.youtube.com/watch?v=xyJjFfnxUx0). Author-linked demonstration video, not a browser-playable game.
 - **Source (pipeline-source):** [Pipeline source](https://github.com/yxwan123/UniGen). Published generator implementation and prompts; this is not a complete release of every benchmark game.
+- **Tutorial (tutorial):** [Installation and usage](https://github.com/yxwan123/UniGen#-installation). README covers prerequisites and the local Unity generation workflow; review paths and project setup before running.
 
 ### Scenario
 
 Builds consistent game art pipelines with custom style models and batch generation.
 
-- **Tutorial (tutorial):** [Consistent game asset pipeline](https://docs.scenario.com/get-started/documentation/integrating-with-applications-real-world-scenarios#1-game-asset-pipeline--batch-generation-with-style-consistency). Official walkthrough for custom style training, batch generation, and asset delivery.
 - **Demo (interactive):** [Asset generation app](https://app.scenario.com/). Hosted creative tool requiring an account; this is an asset workspace, not a playable game.
 - **Source (sdk):** [Unity integration source](https://github.com/scenario-labs/Scenario-Unity). Public Unity integration plugin; hosted model source and a complete game project are not included.
+- **Tutorial (tutorial):** [Consistent game asset pipeline](https://docs.scenario.com/get-started/documentation/integrating-with-applications-real-world-scenarios#1-game-asset-pipeline--batch-generation-with-style-consistency). Official walkthrough for custom style training, batch generation, and asset delivery.
 
 ### Meshy API
 
 Connects AI model generation, humanoid rigging, and animation export for game asset workflows.
 
-- **Tutorial (tutorial):** [Image to animated character](https://www.meshy.ai/developers/cookbook/recipes/animate-3d-character/). Official guide with reference files, Python and TypeScript examples, and GLB/FBX outputs. API access uses credits.
 - **Demo (interactive):** [3D asset workspace](https://www.meshy.ai/workspace). Hosted generation and animation workspace; account access is required to generate assets. This is not a playable game.
 - **Source (examples):** [Cookbook example source](https://github.com/meshy-dev/meshy-cookbook). Public asset-generation recipes, not Meshy's model source or a complete game project.
+- **Tutorial (tutorial):** [Image to animated character](https://www.meshy.ai/developers/cookbook/recipes/animate-3d-character/). Official guide with reference files, Python and TypeScript examples, and GLB/FBX outputs. API access uses credits.
 
 ### HY-Motion 1.0
 
 Generates skeletal humanoid motion from text with public inference code and model weights.
 
-- **Tutorial (tutorial):** [Installation and motion workflow](https://github.com/Tencent-Hunyuan/HY-Motion-1.0/blob/master/README.md). Official setup, CLI inference, local UI, and prompting guidance. Local execution requires the documented GPU resources.
 - **Demo (interactive):** [Interactive motion demo](https://huggingface.co/spaces/tencent/HY-Motion-1.0). Official text-to-motion model interface; a motion preview rather than playable gameplay. Hosted availability may vary.
 - **Source (model):** [Motion implementation source](https://github.com/Tencent-Hunyuan/HY-Motion-1.0). Public inference and visualization implementation with separately linked weights; no complete game project.
+- **Tutorial (tutorial):** [Installation and motion workflow](https://github.com/Tencent-Hunyuan/HY-Motion-1.0/blob/master/README.md). Official setup, CLI inference, local UI, and prompting guidance. Local execution requires the documented GPU resources.
 
 ### ElevenLabs Sound Effects
 
 Generates game sound effects, Foley, and looping ambience from text through a web app or API.
 
-- **Tutorial (tutorial):** [Sound Effects quickstart](https://elevenlabs.io/docs/eleven-api/guides/cookbooks/sound-effects). Official API walkthrough with SDK examples; an account and API key are needed for generation.
 - **Demo (interactive):** [Sound effects generator](https://elevenlabs.io/sound-effects). Official text-to-audio generator and sound examples; this is an audio tool, not a playable game.
 - **Source (sdk):** [Official Python SDK](https://github.com/elevenlabs/elevenlabs-python). API client source only; generation model and complete game source are not included.
+- **Tutorial (tutorial):** [Sound Effects quickstart](https://elevenlabs.io/docs/eleven-api/guides/cookbooks/sound-effects). Official API walkthrough with SDK examples; an account and API key are needed for generation.
 
 ### Stable Audio Open 1.0
 
 Provides downloadable text-to-audio weights and local tools for sound effects and field recordings.
 
-- **Tutorial (tutorial):** [Local inference and WAV export](https://huggingface.co/stabilityai/stable-audio-open-1.0#usage). Official model usage examples for stable-audio-tools and Diffusers.
 - **Demo (local-tool):** [Local audio demo setup](https://github.com/Stability-AI/stable-audio-tools#interface). Download and run the official Gradio audio interface locally; this link is setup guidance, not a hosted playable game.
 - **Source (pipeline-source):** [Audio tools source](https://github.com/Stability-AI/stable-audio-tools). MIT-licensed training and inference code; Stable Audio Open 1.0 weights are separately gated and governed by the model's Community License. No complete game project.
+- **Tutorial (tutorial):** [Local inference and WAV export](https://huggingface.co/stabilityai/stable-audio-open-1.0#usage). Official model usage examples for stable-audio-tools and Diffusers.
 
 ### Regression Games
 
 Provides a public Unity SDK for gameplay recording, input replay, and regression-test reference workflows.
 
-- **Tutorial (tutorial):** [Your first automated test](https://github.com/Regression-Games/RegressionDocs/blob/main/docs/getting-started/creating-your-first-automated-test.mdx). Official first-test walkthrough preserved in the documentation repository. The former live documentation domain was unreachable during review.
 - **Demo (examples):** [Runnable Boss Room sample](https://github.com/Regression-Games/UITest-BossRoom). A complete Unity sample project with UI tests; download and open locally rather than playing in a browser.
 - **Source (sdk):** [Unity testing SDK source](https://github.com/Regression-Games/RGUnityBots). Public client SDK source; it does not contain the complete hosted dashboard backend.
+- **Tutorial (tutorial):** [Your first automated test](https://github.com/Regression-Games/RegressionDocs/blob/main/docs/getting-started/creating-your-first-automated-test.mdx). Official first-test walkthrough preserved in the documentation repository. The former live documentation domain was unreachable during review.
 
 ### modl.ai
 
 Uses visual agents and natural-language tasks to test uploaded game builds.
 
-- **Tutorial (service):** [Workflow overview](https://modl.ai/). Official upload, task-definition, and reporting overview; detailed onboarding is provided through the service.
 - **Demo (service):** [Book a product demo](https://modl.ai/contact). Commercial demonstration by arrangement; this is not a public playable game or instant sandbox.
 - **Source (unavailable):** Full product source unavailable. No complete source release for the current hosted testing product was verified; older public samples are not its backend.
+- **Tutorial (service):** [Workflow overview](https://modl.ai/). Official upload, task-definition, and reporting overview; detailed onboarding is provided through the service.
 
 ### Convai
 
 Adds conversational NPCs with speech, memory, emotion, and in-scene actions.
 
-- **Tutorial (tutorial):** [Build your first AI character](https://docs.convai.com/api-docs/plugins-and-integrations/convai-unity-sdk/getting-started). Official Unity installation, service setup, sample-scene, and custom-character walkthrough.
 - **Demo (interactive):** [Try character experiences](https://x.convai.com/). Account-required browser character experiences; these are conversations and role-play, not complete game-generation demos.
 - **Source (sdk):** [Unreal engine SDK source](https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4). Public engine integration source; the complete cloud conversation service is not included.
+- **Tutorial (tutorial):** [Build your first AI character](https://docs.convai.com/api-docs/plugins-and-integrations/convai-unity-sdk/getting-started). Official Unity installation, service setup, sample-scene, and custom-character walkthrough.
 
 ### Level Design Book · unofficial design skill
 
 An unofficial, agent-neutral adaptation of The Level Design Book for level briefs, blockouts, encounters, wayfinding, and evidence-based playtest reviews.
 
-- **Tutorial (tutorial):** [Read the original book](https://book.leveldesignbook.com/). The underlying book remains authoritative. The skill reorganizes guidance and templates rather than claiming universal design laws or independently measured outcomes.
 - **Demo (unavailable):** Instructions and templates, not a runnable demo. No engine plugin, executable level, benchmark result, or validated playtest is supplied.
 - **Source (full-source):** [Complete skill package and license](https://github.com/OpenEnvision/GameMap/tree/main/docs/skills/level-design). Text-only package with SKILL.md, LICENSE.md, references, and templates. CC BY-NC-SA 4.0 applies to this adaptation directory, not the whole repository; commercial distribution requires appropriate permission.
+- **Tutorial (tutorial):** [Read the original book](https://book.leveldesignbook.com/). The underlying book remains authoritative. The skill reorganizes guidance and templates rather than claiming universal design laws or independently measured outcomes.
 
 ## Additional asset-to-game workflow
 

@@ -14,10 +14,10 @@ const pages = context
   .staticPagePaths(registry)
   .map((path) => path.replace(/^\//, ""));
 const records = context.contentManifest(registry);
-let commit='source-archive'; try {commit=execFileSync('git',['rev-parse','--short','HEAD'],{encoding:'utf8'}).trim();}catch{}
+let commit=context.siteSource?.gitCommit?.slice(0,8)||'source-archive'; if (!context.siteSource) try {commit=execFileSync('git',['rev-parse','--short','HEAD'],{encoding:'utf8'}).trim();}catch{}
 const builtAt=new Date().toISOString();
 await rm("dist", { recursive: true, force: true });
-await cp(".build/client", "dist", { recursive: true });
+await cp(".build/website/client", "dist", { recursive: true });
 // Prerendered routes include basename on disk, while Vite's assets do not.
 // Pages mounts dist/ at that base already, so flatten only the route directory.
 if (base !== "/") {
@@ -30,7 +30,7 @@ await rm("dist/__spa-fallback.html", { force: true });
 await writeFile(
   "dist/site-manifest.json",
   JSON.stringify(
-    { base, pages, commit, builtAt, docs: docs.map(({ slug, title }) => ({ slug, title })) },
+    { base, pages, commit, builtAt, source: context.siteSource || { mode: 'git' }, docs: docs.map(({ slug, title }) => ({ slug, title })) },
     null,
     2,
   ) + "\n",
@@ -40,6 +40,7 @@ await writeFile(
   JSON.stringify(
     {
       version: 1,
+      source: context.siteSource || { mode: 'git' },
       sourceDigest: contentDigest({ sources, documents: docs }),
       localizationDigest: contentDigest(context.localizationSnapshot),
       locales: context.locales,
