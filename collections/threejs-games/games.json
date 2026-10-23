@@ -9280,6 +9280,327 @@
         "CC BY model attribution, KayKit/Natural Earth notices and generated-media provenance need separate review; code MIT does not cover all assets uniformly.",
         "Most simulation is on XZ terrain rendered as a 3D world, not unrestricted XYZ unit movement."
       ]
+    },
+    {
+      "id": "space-pong-3d",
+      "name": "SpacePong3D",
+      "repository_url": "https://github.com/erichlof/SpacePong3D",
+      "genres": [
+        "pong",
+        "arcade",
+        "multiplayer"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r69 (CDN)",
+        "render_evidence": {
+          "url": "https://github.com/erichlof/SpacePong3D/blob/b4b30fe0bde4710fd5ffd6350aeccb1076497caf/SpacePong3D.html#L117",
+          "claim": "The actual HTML entry constructs Three.js WebGLRenderer directly and runs its own requestAnimationFrame/render loop; it loads Three.js r69 and small THREEx helpers."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla JS; Three r69 CDN plus THREEx timer/keyboard/glow/skybox helpers, virtual joystick and WebAudiox sounds. PubNub/WebRTC beta 0.7.0 handles networking; no npm manifest was located."
+        ],
+        "framework_audit": "The reviewed entry and rendering path directly create Three.js renderers; no R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified. Auxiliary UI, physics and networking dependencies are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/erichlof/SpacePong3D/blob/b4b30fe0bde4710fd5ffd6350aeccb1076497caf/SpacePong3D.html#L973",
+        "claim": "Missing a paddle awards the opponent a point; reaching five points sets redWins/blueWins, triggering the winner sequence and score reset. README describes network matches through a lobby and opponent acceptance."
+      },
+      "license": {
+        "spdx": "CC0-1.0",
+        "label": "CC0-1.0 (code)",
+        "source_url": "https://github.com/erichlof/SpacePong3D/blob/b4b30fe0bde4710fd5ffd6350aeccb1076497caf/LICENSE",
+        "additional_notices": [],
+        "notes": "Root contains the CC0 1.0 dedication. Three.js, helper/network libraries, skybox images and sounds retain their own terms; those were not exhaustively audited and are not all declared CC0."
+      },
+      "demo": {
+        "url": "http://erichlof.github.io/SpacePong3D/SpacePong3D.html",
+        "status": "reader-error",
+        "source_url": "https://github.com/erichlof/SpacePong3D/blob/b4b30fe0bde4710fd5ffd6350aeccb1076497caf/README.md",
+        "notes": "Pinned README links the author demo. Reader could not retrieve it; no game, lobby request or match invitation was sent.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/erichlof/SpacePong3D/blob/b4b30fe0bde4710fd5ffd6350aeccb1076497caf/README.md",
+        "notes": "Source implements 3D paddle/ball play, first-to-five scoring and winner/reset flow. The network backend and old browser APIs remain untested."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "b4b30fe0bde4710fd5ffd6350aeccb1076497caf",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-013.md#space-pong-3d",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/erichlof/SpacePong3D/blob/b4b30fe0bde4710fd5ffd6350aeccb1076497caf/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/erichlof/SpacePong3D/blob/b4b30fe0bde4710fd5ffd6350aeccb1076497caf/README.md"
+          },
+          {
+            "path": "SpacePong3D.html",
+            "url": "https://github.com/erichlof/SpacePong3D/blob/b4b30fe0bde4710fd5ffd6350aeccb1076497caf/SpacePong3D.html"
+          },
+          {
+            "path": "js/SpacePongNetwork.js",
+            "url": "https://github.com/erichlof/SpacePong3D/blob/b4b30fe0bde4710fd5ffd6350aeccb1076497caf/js/SpacePongNetwork.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The entry requests Three/PubNub scripts over HTTP; mixed-content/CDN behavior was not exercised.",
+        "Legacy PubNub/WebRTC matchmaking, opponent invitations and audio were not invoked; no real user or service was contacted through the game.",
+        "Root CC0 does not establish uniform rights for third-party libraries, sounds or skybox assets."
+      ]
+    },
+    {
+      "id": "spot-the-bot",
+      "name": "Spot The Bot",
+      "repository_url": "https://github.com/hookerz/spot-the-bot",
+      "genres": [
+        "cooperative",
+        "identification-puzzle",
+        "webvr"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.84.0",
+        "render_evidence": {
+          "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/src/core/world.js#L95",
+          "claim": "World constructs Three.js WebGLRenderer directly. The production entry boots SpotTheBot; role-specific VRPlayer/NonVRPlayer instantiate World and the game-state manager."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/package.json",
+            "dependencies": {
+              "debug": "^2.6.0",
+              "three": "^0.84.0",
+              "vue": "^2.2.1",
+              "vuex": "^2.1.2"
+            },
+            "dev_dependencies": {
+              "browser-sync": "^2.18.7",
+              "cpx": "^1.5.0",
+              "npm-run-all": "^4.0.1",
+              "rollup": "^0.41.4",
+              "rollup-plugin-commonjs": "^7.0.0",
+              "rollup-plugin-node-resolve": "^2.0.0",
+              "rollup-plugin-replace": "^1.1.1",
+              "rollup-plugin-string": "^2.0.2",
+              "rollup-plugin-vue": "^2.2.20",
+              "shx": "^0.2.2",
+              "stylus": "^0.54.5",
+              "yargs": "^6.6.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js renders both roles directly; Vue/Vuex provide DOM UI, debug and Rollup/Stylus are auxiliary. Production HTML also loads WebVR polyfill, seedrandom, Firebase, TweenMax and is.js; Firebase/is_js are external globals in Rollup and are not listed as npm runtime dependencies."
+        ],
+        "framework_audit": "The reviewed entry and rendering path directly create Three.js renderers; no R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified. Auxiliary UI, physics and networking dependencies are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/src/core/gamemodes/gamemode-rush.js#L125",
+        "claim": "Correct guesses increment catchCount and advance the target/round; incorrect guesses penalize time. GameStateManager counts down and sends EndGame on expiry/disconnect, and the mode enters finished."
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "label": "Apache-2.0 (code)",
+        "source_url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/LICENSE",
+        "additional_notices": [],
+        "notes": "Root Apache-2.0 text verified. Bundled robot art, sounds, fonts and third-party scripts were not exhaustively rights-audited; the code notice does not establish identical terms for every asset."
+      },
+      "demo": {
+        "url": "https://spot-the-bot.com",
+        "status": "reader-error",
+        "source_url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/README.md",
+        "notes": "Pinned README supplies the author demo. Text reader returned 502; that does not establish permanent downtime or runtime playability.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/README.md",
+        "notes": "An older cooperative picker/helper game with full target, timer, scoring and finished-state logic. README includes a 2018 warning about legacy WebVR API support."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "579b3f8e3e71dea42d3528e6501b89da4f9720ef",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-013.md#spot-the-bot",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/package.json"
+          },
+          {
+            "path": "rollup.config-prod.js",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/rollup.config-prod.js"
+          },
+          {
+            "path": "src/core/game-state-manager.js",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/src/core/game-state-manager.js"
+          },
+          {
+            "path": "src/core/gamemodes/gamemode-rush.js",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/src/core/gamemodes/gamemode-rush.js"
+          },
+          {
+            "path": "src/core/world.js",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/src/core/world.js"
+          },
+          {
+            "path": "src/index.js",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/src/index.js"
+          },
+          {
+            "path": "src/index.prod.js",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/src/index.prod.js"
+          },
+          {
+            "path": "src/spot-the-bot/index.js",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/src/spot-the-bot/index.js"
+          },
+          {
+            "path": "src/spot-the-bot/non-vr-player/non-vr-player.js",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/src/spot-the-bot/non-vr-player/non-vr-player.js"
+          },
+          {
+            "path": "src/spot-the-bot/vr-player/vr-player.js",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/src/spot-the-bot/vr-player/vr-player.js"
+          },
+          {
+            "path": "static/index.prod.html",
+            "url": "https://github.com/hookerz/spot-the-bot/blob/579b3f8e3e71dea42d3528e6501b89da4f9720ef/static/index.prod.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Uses legacy WebVR display APIs/polyfill rather than established modern WebXR compatibility; no headset or browser run occurred.",
+        "Firebase initialization/rooms, Facebook API hooks, analytics and multiplayer were not invoked; backend availability is unknown.",
+        "Vue is the UI layer; actual game rendering is imperative Three.js. External scripts and media terms need separate audit."
+      ]
+    },
+    {
+      "id": "first-person-shooter-js-davidinfante",
+      "name": "First Person Shooter JS",
+      "repository_url": "https://github.com/davidinfante/First-Person-Shooter-JS",
+      "genres": [
+        "shooter",
+        "first-person",
+        "target-practice"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "vendored Three.js (revision unconfirmed)",
+        "render_evidence": {
+          "url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/fps/script.js#L177",
+          "claim": "The actual FPS entry constructs THREE.WebGLRenderer directly. TheScene extends the Physijs physics scene while Three.js remains the renderer."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla JS; Three.js/PointerLockControls/OBJ/MTL loaders with Physijs/Ammo physics, jQuery, dat.gui, stats and Howler. The actual script list is in fps/index.html; no npm manifest was located."
+        ],
+        "framework_audit": "The reviewed entry and rendering path directly create Three.js renderers; no R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified. Auxiliary UI, physics and networking dependencies are disclosed; this is not an exhaustive transitive audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/fps/TheScene.js#L231",
+        "claim": "Ammunition reaching zero invokes endGame, stops controls and shows total score with P to restart. Enemy collision handlers add ten points and advance after four counted targets; newGame resets ammunition/score."
+      },
+      "license": {
+        "spdx": null,
+        "label": "GPL-3.0 (only/or-later variant unconfirmed)",
+        "source_url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/LICENSE.md",
+        "additional_notices": [],
+        "notes": "Root contains GPL version 3 text; a project-specific only/or-later choice was not established, so SPDX remains null. Models, sounds, textures and bundled dependency terms were not exhaustively audited."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "source_url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/README.md",
+        "notes": "README documents local serving, not a confirmed public author demo; no Pages URL was guessed.",
+        "checked_at": "2026-10-23"
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/README.md",
+        "notes": "An educational FPS prototype with ammunition, targets, score, level advancement and end/restart UI. This is source verification, not gameplay or collision-correctness verification."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "1761f5758816aeb83ee4b9bf703c26b96a3bd284",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-013.md#first-person-shooter-js-davidinfante",
+        "reviewed_files": [
+          {
+            "path": "LICENSE.md",
+            "url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/LICENSE.md"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/README.md"
+          },
+          {
+            "path": "fps/Bullets.js",
+            "url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/fps/Bullets.js"
+          },
+          {
+            "path": "fps/Enemies.js",
+            "url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/fps/Enemies.js"
+          },
+          {
+            "path": "fps/TheScene.js",
+            "url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/fps/TheScene.js"
+          },
+          {
+            "path": "fps/avatar.js",
+            "url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/fps/avatar.js"
+          },
+          {
+            "path": "fps/index.html",
+            "url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/fps/index.html"
+          },
+          {
+            "path": "fps/script.js",
+            "url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/fps/script.js"
+          },
+          {
+            "path": "libs/three.js",
+            "url": "https://github.com/davidinfante/First-Person-Shooter-JS/blob/1761f5758816aeb83ee4b9bf703c26b96a3bd284/libs/three.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Enemy collision callbacks/counting and hit attribution were not run; player health/survival mechanics are not claimed.",
+        "Legacy Physijs/Ammo worker loading, pointer lock, imported weapon/scene assets and modern-browser compatibility were not exercised.",
+        "GPL code evidence does not resolve all imported model/audio/texture rights."
+      ]
     }
   ]
 }

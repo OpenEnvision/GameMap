@@ -570,6 +570,98 @@
         "https://github.com/mrbllyy/Trash-Jam-v2.1/blob/ab911f05b9c08a720f7d4a9d93f6437ad6051ccf/README.md",
         "https://github.com/mrbllyy/Trash-Jam-v2.1/blob/ab911f05b9c08a720f7d4a9d93f6437ad6051ccf/index.html"
       ]
+    },
+    {
+      "id": "orbital-gianlucatruda",
+      "repository_url": "https://github.com/gianlucatruda/orbital",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "a5f3741b98103c471d57b1783a0871325eca9cf4",
+      "reason": "GPL source/direct Three.js are present, but README describes an experimental orbital simulator/game and the reviewed main/engine expose orbit/ship parameters without an established mission, score or terminal game objective.",
+      "next_action": "Locate an actual implemented objective/result loop before presenting the simulator as a verified game.",
+      "evidence_urls": [
+        "https://github.com/gianlucatruda/orbital/blob/a5f3741b98103c471d57b1783a0871325eca9cf4/LICENSE",
+        "https://github.com/gianlucatruda/orbital/blob/a5f3741b98103c471d57b1783a0871325eca9cf4/README.md",
+        "https://github.com/gianlucatruda/orbital/blob/a5f3741b98103c471d57b1783a0871325eca9cf4/src/main.js",
+        "https://github.com/gianlucatruda/orbital/blob/a5f3741b98103c471d57b1783a0871325eca9cf4/src/engine.js"
+      ]
+    },
+    {
+      "id": "mazegame-joppiesaus",
+      "repository_url": "https://github.com/joppiesaus/mazegame",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "5c837e286b61ed0454b251c8fe7365b33e2ae90f",
+      "reason": "Unlicense and direct Three.js maze navigation verified. Source carves an entrance/finish opening but no explicit completion-state/progression hook was established in the reviewed main/maze logic.",
+      "next_action": "Clarify the actual-game boundary for a manually completed maze or locate a completion/progression handler; do not claim a verified win state.",
+      "evidence_urls": [
+        "https://github.com/joppiesaus/mazegame/blob/5c837e286b61ed0454b251c8fe7365b33e2ae90f/LICENSE.md",
+        "https://github.com/joppiesaus/mazegame/blob/5c837e286b61ed0454b251c8fe7365b33e2ae90f/README.md",
+        "https://github.com/joppiesaus/mazegame/blob/5c837e286b61ed0454b251c8fe7365b33e2ae90f/js/main.js",
+        "https://github.com/joppiesaus/mazegame/blob/5c837e286b61ed0454b251c8fe7365b33e2ae90f/js/mazegame.js"
+      ]
+    },
+    {
+      "id": "parkour-yuqian5",
+      "repository_url": "https://github.com/yuqian5/parkour",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "d48ff8dfc4abdd46247c09c700bacd98a0d5f1f3",
+      "reason": "CC0/Three.js free movement/physics map verified. README's goal prose mentions fast navigation, but reviewed runtime only established controls, collisions and debug coordinates/speed, not timing/checkpoints/scoring/finish adjudication.",
+      "next_action": "Locate an implemented parkour course objective/result loop before upgrading from an exploration/learner prototype.",
+      "evidence_urls": [
+        "https://github.com/yuqian5/parkour/blob/d48ff8dfc4abdd46247c09c700bacd98a0d5f1f3/LICENSE",
+        "https://github.com/yuqian5/parkour/blob/d48ff8dfc4abdd46247c09c700bacd98a0d5f1f3/README.md",
+        "https://github.com/yuqian5/parkour/blob/d48ff8dfc4abdd46247c09c700bacd98a0d5f1f3/js/main.js"
+      ]
+    },
+    {
+      "id": "find-me-connect-us",
+      "repository_url": "https://github.com/zqzten/FindMeConnectUs",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "6a0ac75c626089cfffddcfbdf459b80a84574be7",
+      "reason": "Apache code/direct Three game renderer and voting/result logic are verified, but the companion admin/lobby manifest includes vue-3d-model. Its necessity and scope relative to the actual game runtime remain unestablished under the strict renderer-wrapper boundary.",
+      "next_action": "Audit whether that model viewer is optional admin-only UI and can be scoped outside the direct Three game; keep pending rather than hide the wrapper dependency.",
+      "evidence_urls": [
+        "https://github.com/zqzten/FindMeConnectUs/blob/6a0ac75c626089cfffddcfbdf459b80a84574be7/LICENSE",
+        "https://github.com/zqzten/FindMeConnectUs/blob/6a0ac75c626089cfffddcfbdf459b80a84574be7/src/client/main/package.json",
+        "https://github.com/zqzten/FindMeConnectUs/blob/6a0ac75c626089cfffddcfbdf459b80a84574be7/src/client/main/src/js/main.js",
+        "https://github.com/zqzten/FindMeConnectUs/blob/6a0ac75c626089cfffddcfbdf459b80a84574be7/src/client/main/src/js/game_control.js",
+        "https://github.com/zqzten/FindMeConnectUs/blob/6a0ac75c626089cfffddcfbdf459b80a84574be7/src/client/admin/package.json",
+        "https://github.com/zqzten/FindMeConnectUs/blob/6a0ac75c626089cfffddcfbdf459b80a84574be7/src/server/socket.js"
+      ]
+    },
+    {
+      "id": "synthblast",
+      "repository_url": "https://github.com/brianrisk/SYNTHBLAST-threejs-game",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "8fd77ccc4e03bc9c6033e0738472351b0ab8f2a6",
+      "reason": "Current entry actively creates both THREE.WebGLRenderer and PIXI.WebGLRenderer sharing the GL context; LevelScreen uses Pixi containers/graphics. This is a mixed-renderer game, outside the default pure-Three collection boundary.",
+      "next_action": "Reconsider a separately licensed/scoped edition without the active Pixi renderer; do not treat the pixi dependency as unused.",
+      "evidence_urls": [
+        "https://github.com/brianrisk/SYNTHBLAST-threejs-game/blob/8fd77ccc4e03bc9c6033e0738472351b0ab8f2a6/LICENSE",
+        "https://github.com/brianrisk/SYNTHBLAST-threejs-game/blob/8fd77ccc4e03bc9c6033e0738472351b0ab8f2a6/package.json",
+        "https://github.com/brianrisk/SYNTHBLAST-threejs-game/blob/8fd77ccc4e03bc9c6033e0738472351b0ab8f2a6/index.html",
+        "https://github.com/brianrisk/SYNTHBLAST-threejs-game/blob/8fd77ccc4e03bc9c6033e0738472351b0ab8f2a6/js/classes/ui/LevelScreen.js"
+      ]
+    },
+    {
+      "id": "glenn-explore",
+      "repository_url": "https://github.com/WilliamAvHolmberg/glenn-explore",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "5b40306259dcaa2fc7a0fbb32626f50c3bc99805",
+      "reason": "Reviewed web source creates a Cesium.Viewer and uses Mapbox/Threebox; web-2 declares @react-three/fiber/drei/react-three-map. These rendering paths exceed direct Three.js despite the repository description.",
+      "next_action": "Reconsider only a separate direct-Three edition with its own verified runtime/objective.",
+      "evidence_urls": [
+        "https://github.com/WilliamAvHolmberg/glenn-explore/blob/5b40306259dcaa2fc7a0fbb32626f50c3bc99805/LICENSE",
+        "https://github.com/WilliamAvHolmberg/glenn-explore/blob/5b40306259dcaa2fc7a0fbb32626f50c3bc99805/README.md",
+        "https://github.com/WilliamAvHolmberg/glenn-explore/blob/5b40306259dcaa2fc7a0fbb32626f50c3bc99805/web/package.json",
+        "https://github.com/WilliamAvHolmberg/glenn-explore/blob/5b40306259dcaa2fc7a0fbb32626f50c3bc99805/web/src/cesium/core/Scene.ts",
+        "https://github.com/WilliamAvHolmberg/glenn-explore/blob/5b40306259dcaa2fc7a0fbb32626f50c3bc99805/web-2/package.json"
+      ]
     }
   ]
 }
