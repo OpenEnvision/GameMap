@@ -401,6 +401,89 @@
         "https://github.com/gemsjohn/road-rash-starter-pack/blob/b9af0be0a908a9b959530a2cd9e059c72905ca78/index.html",
         "https://github.com/gemsjohn/road-rash-starter-pack/blob/b9af0be0a908a9b959530a2cd9e059c72905ca78/physics.js"
       ]
+    },
+    {
+      "id": "minigolf-threejs-joaovalentee",
+      "repository_url": "https://github.com/joaovalentee/MiniGolf-ThreeJS",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "2533512b51b138dd8833ab3fc3f8e0f2aec0bd41",
+      "reason": "Repository contains Three.js/Physijs golf source, but no repository license/permission notice was located in the recursive tree or reviewed entry. Physijs also wraps scene/physics setup and needs boundary review.",
+      "next_action": "Establish an explicit source license and inspect the Physijs integration/game objective before promoting; vendor-library notices do not license the author's game.",
+      "evidence_urls": [
+        "https://github.com/joaovalentee/MiniGolf-ThreeJS/blob/2533512b51b138dd8833ab3fc3f8e0f2aec0bd41/index.html",
+        "https://github.com/joaovalentee/MiniGolf-ThreeJS/blob/2533512b51b138dd8833ab3fc3f8e0f2aec0bd41/golf.js"
+      ]
+    },
+    {
+      "id": "partee",
+      "repository_url": "https://github.com/WilliamTuominiemi/Partee",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "0ecba1a1ed9557619f2bba75168c6272c2f30291",
+      "reason": "The reviewed React/Next client directly constructs Three.js for minigolf, but no root/nested source license or README permission grant was found in the recursive tree and reviewed files.",
+      "next_action": "Obtain or locate an explicit license covering the author's code before source-verified open-source inclusion.",
+      "evidence_urls": [
+        "https://github.com/WilliamTuominiemi/Partee/blob/0ecba1a1ed9557619f2bba75168c6272c2f30291/README.md",
+        "https://github.com/WilliamTuominiemi/Partee/blob/0ecba1a1ed9557619f2bba75168c6272c2f30291/package.json",
+        "https://github.com/WilliamTuominiemi/Partee/blob/0ecba1a1ed9557619f2bba75168c6272c2f30291/components/ThreeScene.tsx"
+      ]
+    },
+    {
+      "id": "tsukimi-pinball",
+      "repository_url": "https://github.com/apkmasondev/pinball-3d",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "b9aea108263312a4f363fe75ad402392403f8702",
+      "reason": "README and source describe a scored three-table pinball game with Three.js, but no source license grant was located. README credits FreeSound excerpts and separately licensed fonts without establishing all media terms.",
+      "next_action": "Clarify the game code license and trace FreeSound/music permissions; do not infer openness from public source or font licenses.",
+      "evidence_urls": [
+        "https://github.com/apkmasondev/pinball-3d/blob/b9aea108263312a4f363fe75ad402392403f8702/README.md",
+        "https://github.com/apkmasondev/pinball-3d/blob/b9aea108263312a4f363fe75ad402392403f8702/game/package.json",
+        "https://github.com/apkmasondev/pinball-3d/blob/b9aea108263312a4f363fe75ad402392403f8702/game/src/main.js"
+      ]
+    },
+    {
+      "id": "feria-derby-3d",
+      "repository_url": "https://github.com/MarcVillarroya/feria-derby-3d",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "a32ff7b76270d3d0f9396a4437920dc1c1aae2cb",
+      "reason": "README's Licencia section explicitly says no distribution license has been assigned and code is reserved until the owner selects one. Public Three.js/Cannon source is not an open-source permission grant.",
+      "next_action": "Revisit if an explicit open-source code license is added.",
+      "evidence_urls": [
+        "https://github.com/MarcVillarroya/feria-derby-3d/blob/a32ff7b76270d3d0f9396a4437920dc1c1aae2cb/README.md",
+        "https://github.com/MarcVillarroya/feria-derby-3d/blob/a32ff7b76270d3d0f9396a4437920dc1c1aae2cb/package.json"
+      ]
+    },
+    {
+      "id": "the-dim-room",
+      "repository_url": "https://github.com/emanuelghdev/the-dim-room",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "f2722343719508cc7902c479c444c4c1848ca232",
+      "reason": "Root code is MIT and the escape-room source is present, but NOTICE identifies several bundled models under the TurboSquid 3D Model License, alongside CC0/CC-BY assets. The soundtrack and full asset rights were not established; do not present the whole game as uniformly open.",
+      "next_action": "Keep in the code-open/assets-restricted queue; audit applicable model/audio terms or a cleared-asset replacement edition before promotion.",
+      "evidence_urls": [
+        "https://github.com/emanuelghdev/the-dim-room/blob/f2722343719508cc7902c479c444c4c1848ca232/LICENSE",
+        "https://github.com/emanuelghdev/the-dim-room/blob/f2722343719508cc7902c479c444c4c1848ca232/NOTICE",
+        "https://github.com/emanuelghdev/the-dim-room/blob/f2722343719508cc7902c479c444c4c1848ca232/README.md",
+        "https://github.com/emanuelghdev/the-dim-room/blob/f2722343719508cc7902c479c444c4c1848ca232/objects/MyScene.js"
+      ]
+    },
+    {
+      "id": "dungeon-boots",
+      "repository_url": "https://github.com/rocket-boots/dungeon-boots",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "621e7a6a0e58166102574b7d98c13e4ad076398a",
+      "reason": "MIT root and Three.js dependency are verified, but README explicitly presents Dungeon Boots as a reusable dungeon-crawler framework, backed by rocket-boots-three-toolbox and other framework helpers. It is not yet an independently verified plain-Three game entry.",
+      "next_action": "Find a complete separately licensed game built with direct Three.js or review the included jam game and helper boundaries; do not relabel the framework itself as a verified game.",
+      "evidence_urls": [
+        "https://github.com/rocket-boots/dungeon-boots/blob/621e7a6a0e58166102574b7d98c13e4ad076398a/LICENSE",
+        "https://github.com/rocket-boots/dungeon-boots/blob/621e7a6a0e58166102574b7d98c13e4ad076398a/README.md",
+        "https://github.com/rocket-boots/dungeon-boots/blob/621e7a6a0e58166102574b7d98c13e4ad076398a/package.json"
+      ]
     }
   ]
 }
