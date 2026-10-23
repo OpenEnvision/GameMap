@@ -5,6 +5,7 @@ import {
   readLocalStatus,
   setupLocal,
   migrateLocal,
+  setupLocalRealm,
   localDirectory,
 } from "./lib/catalog/local-runtime.mjs";
 import {
@@ -29,6 +30,14 @@ try {
     await migrateLocal();
     console.log(
       "Applied pending sequential migrations to the owned local project only.",
+    );
+  } else if (command === "realm-setup") {
+    const file = await setupLocalRealm();
+    console.log(
+      `Registered the immutable owned-local release realm. Set CATALOG_RELEASE_REALM_FILE=${file} in the private Studio environment.`,
+    );
+    console.log(
+      "No existing releases or artifact bytes were rewritten; no cloud project was contacted.",
     );
   } else if (command === "setup") {
     console.log(JSON.stringify(await setupLocal(), null, 2));
@@ -58,7 +67,7 @@ try {
     );
   } else
     console.log(
-      "Local-only catalog operations: local:start/setup/status/stop/backup/restore-probe. No remote link, push, reset or deployment commands.",
+      "Local-only catalog operations: local:start/setup/migrate/realm-setup/status/stop/backup/restore-probe. No remote link, push, reset or deployment commands.",
     );
 } catch (error) {
   console.error(error.message);

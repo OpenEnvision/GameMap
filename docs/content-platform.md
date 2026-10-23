@@ -41,8 +41,9 @@ Migration filenames use sequential schema versions, **not timestamps**. Supabase
 | `0010_catalog_backend_role.sql` | Least-privilege web/validator role, distinct from the deployment role |
 | `0011_catalog_publication.sql` | Separate local deployment authority, immutable artifact receipts/events, target binding and artifact-level activation |
 | `0012_catalog_sync_authorship.sql` | Attribute human-triggered source synchronization and prevent self-review, including historical NULL-author sync records |
+| `0013_catalog_release_realm.sql` | Immutable environment/project/instance/target binding, versioned frozen identities, and restricted historical local rollback |
 
-These files live under `supabase/migrations/`. The test runner discovers them in numeric order and pins every module in migration packages; there is no hardcoded one-file migration path. Append a new version for future changes. Never rename, reorder, or edit migrations that have been applied to a shared environment. The twelve migrations have been applied only to an isolated local Supabase project; there is no shared or production deployment. Earlier undeployed drafts were consolidated, but further schema changes must append a new numbered migration.
+These files live under `supabase/migrations/`. The test runner discovers them in numeric order and pins every module in migration packages; there is no hardcoded one-file migration path. Append a new version for future changes. Never rename, reorder, or edit migrations that have been applied to a shared environment. This migration chain is exercised only against isolated local services and test databases; there is no shared or production deployment. Earlier undeployed drafts were consolidated, but further schema changes must append a new numbered migration.
 
 Keep three version axes separate:
 
@@ -187,7 +188,7 @@ The opt-in acceptance runner uses actual Auth/PostgREST/PostgreSQL, including a 
 
 The UI defaults to `http://127.0.0.1:5174` and proxies its same-origin API on port 4180. Without credentials it displays setup instructions; there is no demo account or authentication bypass. The only fake Auth implementation is under `tests/helpers/`, backed by an isolated in-memory database. Neither the real entry point nor the browser build imports it.
 
-The server needs `CATALOG_DATABASE_URL`, `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, and a randomly generated `CATALOG_SESSION_SECRET` of at least 32 characters. No variable uses a `VITE_` prefix. Auth access/refresh tokens are encrypted in private session rows; the browser receives an opaque HttpOnly, SameSite=Strict cookie and a CSRF nonce, not JWTs or refresh tokens. Mutations require the configured exact Origin and CSRF header. Revoking a membership denies the next protected request. Rotating the session secret invalidates sessions without changing content.
+The server needs `CATALOG_DATABASE_URL`, `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, a randomly generated `CATALOG_SESSION_SECRET` of at least 32 characters, and `CATALOG_RELEASE_REALM_FILE` pointing to an independently provisioned operator identity file. Startup compares that file with the database's immutable realm before serving configured requests. No variable uses a `VITE_` prefix. Auth access/refresh tokens are encrypted in private session rows; the browser receives an opaque HttpOnly, SameSite=Strict cookie and a CSRF nonce, not JWTs or refresh tokens. Mutations require the configured exact Origin and CSRF header. Revoking a membership denies the next protected request. Rotating the session secret invalidates sessions without changing content.
 
 ```sh
 npm run studio:build
@@ -198,7 +199,25 @@ npm run studio:start
 
 Studio provides no account signup or activation button. Editors save immutable successors, explicitly review stale translations, validate and submit. Reviewers inspect changes and record a decision; they cannot review their own revisions. Administrators may submit imported drafts and synchronize Git document indexes. Source synchronization reads discovered public Git prose and regenerates registered catalog views from the approved database selection. It appends and validates changed indexes and leaves them as drafts; it neither rewrites the Git checkout nor approves them. Reviewers can inspect the exact full Markdown in the private preview, as well as the corresponding Git/generator changes. After approving structured changes, synchronize and review changed catalog indexes before freezing; stale generated Markdown blocks the release.
 
-Restart Studio after changing runtime contracts or Git source documents. A frozen context pins compiler/source hashes; a changed checkout is rejected instead of silently using different code. Production refuses to freeze a dirty source checkout. Local development snapshots record `source_dirty` and `environment: local`; production artifacts require an explicitly production-frozen context. A clean checkout cannot turn a local acceptance fixture into an authorized production release.
+Restart Studio after changing runtime contracts or Git source documents. A frozen context pins compiler/source hashes; a changed checkout is rejected instead of silently using different code. Staging and production require production security mode, clean committed source and their own registered realms. `NODE_ENV` never selects or changes the realm: even with production security settings, a local database still freezes local releases. A clean checkout cannot turn a local acceptance fixture into an authorized production release.
+
+### Immutable release realms and upgrades
+
+An operator registers exactly one environment (`local`, `staging` or `production`), project key, database instance UUID and logical publication target. Registration is immutable and idempotent only for the exact same values. `catalog.initialize_release_realm` is owner-only: Studio, browser roles, the service role and the deployer cannot initialize, change or adopt an identity. An unbound database cannot freeze. Non-local registration must precede any existing review/release history; local approvals must never be imported into a new real environment.
+
+Migration `0013` does not guess an environment. New `local:setup` explicitly initializes the owned local project. To upgrade an existing local project:
+
+```sh
+npm run local:migrate
+npm run local:realm-setup
+# Add the printed CATALOG_RELEASE_REALM_FILE path to the private .env, then restart Studio.
+```
+
+The non-secret `.build/catalog-local/realm.json` is an operator expectation, not a credential or provider signature. Studio checks it against the database; `site:build --realm FILE` checks it against the frozen manifest/context; the local publisher checks it against the database and artifact. Do not accept a target file supplied by an untrusted package sender. A copied database retains its identity; it is not a new staging project. Real provider/project separation must still be independently verified.
+
+New frozen manifests, build contexts and site-artifact evidence use version **2** and carry the same realm. The release-package envelope remains version **1**; per-kind schemas and import-package serialization are separate axes. Frozen revisions bind the logical target before build, while the local publisher still accepts only local development artifacts. Different local basenames can produce distinct artifacts for that same target; a future hosting adapter must additionally enforce its actual repository/origin/base configuration.
+
+Historical version-1 bytes are never relabeled or rewritten. Existing public delivery remains available. Only artifacts already activated before `0013`, recorded in its immutable local-history allowlist and still matching the original instance/target/root and receipt, may be recovered or rolled back locally. Unactivated old artifacts and old packages cannot gain new publication eligibility or be rebuilt through the new builder. Freeze a new realm-bound release instead. The raw `catalog.activate_release` compatibility path is disabled even before a filesystem target is claimed.
 
 The browser JSON export is metadata plus frozen document text, not a media backup. To create and verify a portable private package using protected operator credentials:
 
@@ -225,11 +244,11 @@ The probe verifies those bytes, restores with the local container's operator acc
 The ordinary `npm run build` and Pages workflow remain Git-driven. Release builds are an explicit, isolated path, not an environment switch applied to the working tree:
 
 ```sh
-npm run site:build -- --input .build/releases/reviewed --out .build/site-artifacts/reviewed --base /GameMap/ --browser
+npm run site:build -- --input .build/releases/reviewed --out .build/site-artifacts/reviewed --realm OPERATOR_REALM_FILE --base /GameMap/ --browser
 npm run site:verify -- --input .build/site-artifacts/reviewed
 ```
 
-Production artifacts require the exact frozen Git commit, a clean checkout, an explicitly production/non-dirty frozen context, and browser gates. For private local fixtures only, pass `--development`; the public site manifest and artifact evidence then remain explicitly marked as development output. Integrity verification is not a signature or deployment authorization.
+Staging/production artifacts require the exact frozen Git commit, a clean checkout, a matching independently supplied realm and non-dirty frozen context, and browser gates. For private local fixtures only, pass `--realm .build/catalog-local/realm.json --development`; the public site manifest and artifact evidence then remain explicitly marked as development output. Integrity verification is not a signature or deployment authorization.
 
 The builder verifies the package before creating a private temporary checkout, materializes one snapshot provider, and never fills absent rows or translations from Git defaults. It uses the reviewed document bodies, derives all structured downloads, passes original and uploaded media through the deployment basename exactly once, and preserves every existing identity/address by default. Withdrawals or address moves need a separate explicit policy rather than a silent missing page. Workspaces are removed after use; existing artifact directories are never overwritten, and `dist/` in the developer checkout is untouched.
 
@@ -259,7 +278,7 @@ npm run local:publication-recover
 
 The private target is `.build/catalog-local/publication/`; visit the anonymous preview at `http://127.0.0.1:4190/GameMap/` when that is the artifact's basename. Only the committed delivery pointer's site files are served, never receipts, journals, credentials or older HTML. Neither `dist/` nor the Pages workflow is replaced. The independent `NOINHERIT` login is stored in private `.build/catalog-local/deployer.json`, not `.env`, Studio or a browser bundle. It cannot author/approve content, provision members or read private Auth/session tables.
 
-On first use, the database target and filesystem marker bind a canonical private directory to that database instance. A PostgreSQL session advisory lock spans copying, SQL commit and journal cleanup; another operator cannot interleave a switch. The publisher verifies and copies exactly the artifact inventory into a retained directory, syncs its bytes/directories, writes a durable intent, atomically renames the `current` symlink, verifies the switched artifact, and only then activates its release/artifact with both expected predecessor identities. A separately atomic `published.json` pointer is updated after SQL commit, so anonymous readers remain on the old complete site while promotion is pending. Two builds of the same release still have distinct artifact identities. After target binding, the earlier service-role-only release-pointer path is disabled; it cannot bypass artifact-bound publication.
+On first use, the database target and filesystem marker bind a canonical private directory to that database instance. A PostgreSQL session advisory lock spans copying, SQL commit and journal cleanup; another operator cannot interleave a switch. The publisher verifies and copies exactly the artifact inventory into a retained directory, syncs its bytes/directories, writes a durable intent, atomically renames the `current` symlink, verifies the switched artifact, and only then activates its release/artifact with both expected predecessor identities. A separately atomic `published.json` pointer is updated after SQL commit, so anonymous readers remain on the old complete site while promotion is pending. Two builds of the same release still have distinct artifact identities. The earlier service-role-only release-pointer path is disabled even before target binding; it cannot bypass artifact-bound publication.
 
 Files and PostgreSQL are **not one distributed transaction**. If a process dies before SQL commits, recovery restores the previous file pointer. If it dies after commit but before acknowledging/cleaning up, recovery preserves the committed artifact instead. Ambiguous failures retain the journal; recovery reads committed database state rather than guessing from files. Unexpected third-party pointers or damaged retained bytes stop recovery for investigation instead of silently overwriting them. Rollback uses only previously activated, re-verified retained artifacts; it never rebuilds old content with newer source. During a switch, individual requests use one complete snapshot; cached pages/assets and CDN-wide atomicity remain production-adapter concerns.
 

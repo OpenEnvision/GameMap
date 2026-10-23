@@ -29,6 +29,7 @@
     "local:start": "node scripts/local-catalog.mjs start",
     "local:setup": "node scripts/local-catalog.mjs setup",
     "local:migrate": "node scripts/local-catalog.mjs migrate",
+    "local:realm-setup": "node scripts/local-catalog.mjs realm-setup",
     "local:publisher-setup": "node scripts/local-publication.mjs setup",
     "local:publication-status": "node scripts/local-publication.mjs status",
     "local:publish": "node scripts/local-publication.mjs publish",

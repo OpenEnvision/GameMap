@@ -804,6 +804,7 @@ test("Git source metadata updates append validated drafts under the restricted w
     },
   };
   const worker = createCatalogWorker(fixture.database, context, {
+    realm: fixture.realm,
     readAsset: (path) => fixture.media.readAsset(path),
   });
   const result = await worker.syncDocuments(accounts.admin.id);
@@ -920,6 +921,7 @@ test("trusted workers bind each revision to its own installed schema version, no
     },
   };
   const worker = createCatalogWorker(fixture.database, context, {
+    realm: fixture.realm,
     readAsset: (path) => fixture.media.readAsset(path),
   });
   await worker.validate(accounts.editor.id, first.id);

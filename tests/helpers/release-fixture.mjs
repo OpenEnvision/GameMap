@@ -1,6 +1,7 @@
 // Isolated test Auth/PostgreSQL only. Never imported by a production entry point.
 import assert from "node:assert/strict";
 import { resolve } from "node:path";
+import { writeFile } from "node:fs/promises";
 import sharp from "sharp";
 import { studioFixture } from "./studio-fixture.mjs";
 import { writeReleasePackage } from "../../scripts/lib/catalog/release-files.mjs";
@@ -116,6 +117,12 @@ try {
     },
   );
   assert.equal(report.records, fixture.bundle.snapshot.entries.length + 1);
+  // Test-owned expected identity is separate from the package, not a sender-selected production target.
+  await writeFile(
+    resolve(output) + ".realm.json",
+    JSON.stringify(fixture.realm, null, 2) + "\n",
+    { flag: "wx", mode: 0o600 },
+  );
   console.log(
     `TEST ONLY: exported ${report.records} records, including database-only content, Chinese text, private media and literal MDX-shaped text. Nothing activated.`,
   );

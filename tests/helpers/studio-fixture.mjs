@@ -41,6 +41,11 @@ export async function studioFixture({
   staticDirectory,
   port = 0,
   approved = true,
+  realm: requestedRealm = {
+    environment: "local",
+    project: "local:studio-fixture",
+    target: "local-preview",
+  },
 } = {}) {
   const context = await loadContent(),
     bundle = await createImportBundle(context),
@@ -49,6 +54,16 @@ export async function studioFixture({
     create table auth.users(id uuid primary key);
     create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;`);
   for (const migration of await loadMigrations()) await pg.exec(migration.sql);
+  const realm = (
+    await pg.query(
+      "select catalog.initialize_release_realm($1,$2,$3) as realm",
+      [
+        requestedRealm.environment,
+        requestedRealm.project,
+        requestedRealm.target,
+      ],
+    )
+  ).rows[0].realm;
   for (const [role, account] of Object.entries(accounts)) {
     await pg.query("insert into auth.users values($1)", [account.id]);
     if (role !== "outsider")
@@ -121,6 +136,7 @@ export async function studioFixture({
       secret: "test-fixture-secret-never-used-in-production",
     });
   const worker = createCatalogWorker(database, context, {
+    realm,
     sourceFiles: bundle.snapshot.source_files,
     readAsset: (path) => media.readAsset(path),
   });
@@ -171,6 +187,7 @@ export async function studioFixture({
     database,
     context,
     bundle,
+    realm,
     server,
     address,
     origin,

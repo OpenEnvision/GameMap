@@ -90,6 +90,22 @@ test("local or unmarked frozen releases cannot become production artifacts on a 
   );
   assert.equal(
     isDevelopmentRelease({ environment: "production", source_dirty: false }),
+    true,
+  );
+  assert.equal(
+    isDevelopmentRelease({
+      version: 2,
+      environment: "production",
+      realm: {
+        format: "gamemap.release-realm",
+        version: 1,
+        environment: "production",
+        project: "fixture-project",
+        instance: "00000000-0000-4000-8000-000000000099",
+        target: "fixture-pages",
+      },
+      source_dirty: false,
+    }),
     false,
   );
 });

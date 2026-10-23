@@ -4,18 +4,20 @@ import { resolve, join } from "node:path";
 import { readFile } from "node:fs/promises";
 import { loadContent, normalizeBase } from "./lib/content.mjs";
 import { createImportBundle } from "./lib/platform.mjs";
+import { readReleaseRealmFile } from "./lib/catalog/release-realm.mjs";
 import {
   buildReleaseSite,
   verifySiteArtifact,
 } from "./lib/catalog/site-build.mjs";
 
 const help = `Private snapshot site builds (never upload or activate)
-  npm run site:build -- --input .build/releases/reviewed --out .build/site-artifacts/reviewed --base /GameMap/ --browser
-  npm run site:build -- --input PACKAGE --out OUTPUT --development
+  npm run site:build -- --input .build/releases/reviewed --out .build/site-artifacts/reviewed --realm OPERATOR_REALM_FILE --base /GameMap/ --browser
+  npm run site:build -- --input PACKAGE --out OUTPUT --realm .build/catalog-local/realm.json --development
   npm run site:verify -- --input OUTPUT
 
-Production builds require clean, exact frozen source and browser gates. Development
-artifacts are explicitly marked and are not deployment authorization. Outputs never replace dist/.
+Staging/production builds require a matching independently provisioned realm, clean exact
+frozen source and browser gates. Never use a realm file supplied by an untrusted release sender.
+Development artifacts are local-only. Legacy releases are read-only. Outputs never replace dist/.
 `;
 async function main() {
   const [command, ...args] = process.argv.slice(2);
@@ -24,9 +26,14 @@ async function main() {
   for (let index = 0; index < args.length; index++) {
     const key = args[index];
     assert.ok(
-      ["--input", "--out", "--base", "--development", "--browser"].includes(
-        key,
-      ) && !Object.hasOwn(options, key),
+      [
+        "--input",
+        "--out",
+        "--base",
+        "--realm",
+        "--development",
+        "--browser",
+      ].includes(key) && !Object.hasOwn(options, key),
       help,
     );
     options[key] = ["--development", "--browser"].includes(key)
@@ -42,7 +49,11 @@ async function main() {
       `Verified ${evidence.files.length} artifact files for ${evidence.release}; development=${evidence.development}. No deployment performed.`,
     );
   }
-  assert.ok(command === "build" && options["--out"], help);
+  assert.ok(
+    command === "build" && options["--out"] && options["--realm"],
+    help,
+  );
+  const realm = await readReleaseRealmFile(resolve(options["--realm"]));
   const base = normalizeBase(options["--base"]);
   assert.ok(
     base
@@ -66,6 +77,7 @@ async function main() {
     resolve(options["--out"]),
     {
       sourceFiles: baseline.snapshot.source_files,
+      realm,
       base,
       development: Boolean(options["--development"]),
       browser: Boolean(options["--browser"]),

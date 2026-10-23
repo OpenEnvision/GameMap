@@ -22,6 +22,7 @@ import {
   sha256,
 } from "./codec.mjs";
 import { verifySiteArtifact } from "./site-build.mjs";
+import { parseReleaseRealm, assertReleaseRealm } from "./release-realm.mjs";
 const digestPattern = /^[a-f0-9]{64}$/;
 const uuidPattern =
   /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
@@ -103,9 +104,22 @@ async function switchArtifact(directory, digest) {
 export function createLocalPublisher({
   database,
   directory,
-  target = "local-preview",
+  realm: expectedRealm,
+  target,
   checkpoint = async () => {},
 }) {
+  const realm = parseReleaseRealm(expectedRealm);
+  assert.equal(
+    realm.environment,
+    "local",
+    "The local publisher cannot accept staging or production realms",
+  );
+  target ??= realm.target;
+  assert.equal(
+    target,
+    realm.target,
+    "Publication target differs from the expected release realm",
+  );
   directory = resolve(directory);
   const marker = join(directory, "target.json"),
     pending = join(directory, "pending.json");
@@ -114,6 +128,8 @@ export function createLocalPublisher({
     return join(directory, "artifacts", digest);
   };
   async function bind(db) {
+    const state = await db.status();
+    assertReleaseRealm(state.realm, realm);
     await assertPrivateDirectory(repository, directory);
     await mkdir(dirname(directory), { recursive: true, mode: 0o700 });
     await mkdir(directory, { mode: 0o700 }).catch((error) => {
@@ -125,7 +141,6 @@ export function createLocalPublisher({
       "Publication root must be a real private directory",
     );
     const location = sha256(await realpath(directory));
-    const state = await db.status();
     if (await exists(marker)) {
       const saved = JSON.parse(await readArtifact(directory, "target.json"));
       assert.equal(saved.format, "gamemap.local-publication");
@@ -168,6 +183,14 @@ export function createLocalPublisher({
     );
     const evidence = await verifySiteArtifact(path);
     assert.equal(evidence.artifactDigest, digest);
+    if (evidence.version === 2) assertReleaseRealm(evidence.realm, realm);
+    else
+      assert.ok(
+        receipt.legacy_local_rollback === true &&
+          receipt.published === true &&
+          evidence.development === true,
+        "Legacy artifacts require their original pre-migration local activation history",
+      );
     assert.equal(
       (await readArtifact(path, "evidence.json")).toString(),
       receipt.evidence_text,
@@ -256,6 +279,12 @@ export function createLocalPublisher({
   async function stage(db, input) {
     const text = (await readArtifact(input, "evidence.json")).toString();
     const evidence = await verifySiteArtifact(input);
+    assert.equal(
+      evidence.version,
+      2,
+      "Unbound legacy artifacts cannot be newly published",
+    );
+    assertReleaseRealm(evidence.realm, realm);
     assert.deepEqual(
       JSON.parse(text),
       evidence,
@@ -430,11 +459,15 @@ export function createLocalPublisher({
         return reconcile(db, true);
       }),
     status: () =>
-      database.withLock(async (db) => ({
-        ...(await db.status()),
-        onDisk: await currentArtifact(directory),
-        visible: await visibleArtifact(directory),
-        pending: Boolean(await exists(pending)),
-      })),
+      database.withLock(async (db) => {
+        const state = await db.status();
+        assertReleaseRealm(state.realm, realm);
+        return {
+          ...state,
+          onDisk: await currentArtifact(directory),
+          visible: await visibleArtifact(directory),
+          pending: Boolean(await exists(pending)),
+        };
+      }),
   };
 }

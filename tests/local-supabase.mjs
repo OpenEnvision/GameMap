@@ -13,6 +13,7 @@ import {
   localAccess,
   localDirectory,
   assertLoopback,
+  readLocalRealm,
 } from "../scripts/lib/catalog/local-runtime.mjs";
 import { loadContent } from "../scripts/lib/content.mjs";
 import {
@@ -81,7 +82,9 @@ const sessions = createSessions(database, measuredAuth, {
   secret: env.CATALOG_SESSION_SECRET,
   origin,
 });
+const realm = await readLocalRealm();
 const worker = createCatalogWorker(database, context, {
+  realm,
   sourceFiles: bundle.snapshot.source_files,
   readAsset: (path) => media.readAsset(path),
 });
@@ -244,6 +247,47 @@ try {
         ),
         /permission denied/,
       );
+    },
+  );
+  await check(
+    "real database realm is immutable and operator expectations reject foreign identity before freezing",
+    async () => {
+      const actual = await database.system(
+        async (client) =>
+          (
+            await client.query(
+              "select catalog.current_release_realm() as realm",
+            )
+          ).rows[0].realm,
+      );
+      assert.deepEqual(actual, realm);
+      assert.equal(actual.environment, "local");
+      await assert.rejects(
+        database.system((client) =>
+          client.query(
+            "select catalog.initialize_release_realm('production','wrong-project','wrong-target')",
+          ),
+        ),
+        /permission denied/,
+      );
+      await assert.rejects(
+        owner`select catalog.initialize_release_realm('production','wrong-project','wrong-target')`,
+        /immutable/,
+      );
+      for (const patch of [
+        { environment: "staging" },
+        { project: "wrong-project" },
+        { instance: randomUUID() },
+        { target: "wrong-target" },
+      ]) {
+        const wrongWorker = createCatalogWorker(database, context, {
+          realm: { ...realm, ...patch },
+        });
+        await assert.rejects(
+          wrongWorker.freeze(access.accounts.reviewer.id),
+          /realm mismatch/,
+        );
+      }
     },
   );
   await check(
@@ -589,6 +633,10 @@ try {
         }),
       );
       assert.equal(JSON.parse(pack.context_text).environment, "local");
+      assert.equal(JSON.parse(pack.context_text).version, 2);
+      assert.equal(JSON.parse(pack.manifest_text).format_version, 2);
+      assert.deepEqual(JSON.parse(pack.context_text).realm, realm);
+      assert.deepEqual(JSON.parse(pack.manifest_text).realm, realm);
       const output = join(localDirectory, "acceptance-release-" + releaseId);
       await writeReleasePackage(context, pack, output, {
         sourceFiles: bundle.snapshot.source_files,
@@ -614,42 +662,17 @@ try {
   await check(
     "real anonymous API respects activation authority, including the artifact-bound publisher",
     async () => {
-      const bound = (
-        await owner`select target_key from catalog.publication_state`
-      )[0].target_key;
-      if (bound) {
-        await assert.rejects(
-          owner.begin(async (sql) => {
-            await sql.unsafe("set local role service_role");
-            await sql`select catalog.activate_release(${releaseId}::uuid,${initialReleaseId}::uuid,'blocked-legacy-local-test')`;
-          }),
-          /artifact-bound publisher/,
-        );
-        assert.equal(
-          (
-            await (
-              await rpc("rpc/catalog_published_release", undefined, {})
-            ).json()
-          )?.id || null,
-          initialReleaseId,
-        );
-        return;
-      }
-      await owner.begin(async (sql) => {
-        await sql.unsafe("set local role service_role");
-        await sql`select catalog.activate_release(${releaseId}::uuid,${initialReleaseId}::uuid,'local-acceptance-pointer-test')`;
-      });
-      const visible = await (
-        await rpc("rpc/catalog_published_release", undefined, {})
-      ).json();
-      assert.equal(visible.id, releaseId);
       await assert.rejects(
         owner.begin(async (sql) => {
           await sql.unsafe("set local role service_role");
-          await sql`select catalog.activate_release(${releaseId}::uuid,null,'stale-local-acceptance')`;
+          await sql`select catalog.activate_release(${releaseId}::uuid,${initialReleaseId}::uuid,'blocked-legacy-local-test')`;
         }),
-        /Deployment conflict/,
+        /artifact-bound publisher/,
       );
+      const visible = await (
+        await rpc("rpc/catalog_published_release", undefined, {})
+      ).json();
+      assert.equal(visible?.id || null, initialReleaseId);
     },
   );
   await check(

@@ -16,7 +16,13 @@ import {
 } from "../scripts/lib/catalog/site-build.mjs";
 import { sha256 } from "../scripts/lib/catalog/codec.mjs";
 process.env.NODE_ENV = "test";
-const { publisher, database, directory } = await localPublisher();
+const { publisher, database, directory, realm } = await localPublisher();
+const initialPublication = await publisher.status();
+const historicalReceipt = initialPublication.artifact_digest
+  ? await database.withLock((db) =>
+      db.artifact(initialPublication.artifact_digest),
+    )
+  : null;
 const report = [];
 const check = async (name, run) => {
   await run();
@@ -51,6 +57,7 @@ for (const [name, base] of [
   const path = join(fixtureRoot, name);
   await buildReleaseSite(context, pack, selected.path, path, {
     sourceFiles: baseline.snapshot.source_files,
+    realm,
     base,
     development: true,
     browser: true,
@@ -76,6 +83,39 @@ const options = async (artifact) => {
 };
 let server;
 try {
+  await check(
+    "real publisher rejects foreign realm expectations and SQL receipts before activation",
+    async () => {
+      for (const patch of [
+        { project: "wrong-project" },
+        { instance: randomUUID() },
+        { target: "wrong-target" },
+      ]) {
+        const wrong = createLocalPublisher({
+          database,
+          directory,
+          realm: { ...realm, ...patch },
+        });
+        await assert.rejects(wrong.status(), /realm mismatch/);
+      }
+      for (const environment of ["staging", "production"])
+        await assert.rejects(
+          database.withLock((db) =>
+            db.register(
+              JSON.stringify({
+                ...a.evidence,
+                realm: { ...realm, environment },
+              }),
+            ),
+          ),
+          /realm mismatch/,
+        );
+      assert.equal(
+        (await publisher.status()).artifact_digest,
+        initialPublication.artifact_digest,
+      );
+    },
+  );
   await check(
     "verified local publication uses a separate role and preserves the default website",
     async () => {
@@ -167,6 +207,7 @@ try {
       const blocked = createLocalPublisher({
         database,
         directory,
+        realm,
         checkpoint: async (point) => {
           if (point === "after-switch") {
             reached();
@@ -204,6 +245,54 @@ try {
       assert.equal(result.artifact_digest, b.evidence.artifactDigest);
     },
   );
+  if (historicalReceipt?.legacy_local_rollback)
+    await check(
+      "pre-upgrade activated local history rolls back with unchanged evidence bytes",
+      async () => {
+        const state = await publisher.status();
+        const result = await publisher.rollback({
+          artifact: initialPublication.artifact_digest,
+          expectedArtifact: state.artifact_digest,
+          expectedRelease: state.release_id,
+          run: "legacy-local-upgrade-rollback",
+        });
+        assert.equal(
+          result.artifact_digest,
+          initialPublication.artifact_digest,
+        );
+        assert.equal(
+          await readFile(
+            join(
+              directory,
+              "artifacts",
+              initialPublication.artifact_digest,
+              "evidence.json",
+            ),
+            "utf8",
+          ),
+          historicalReceipt.evidence_text,
+        );
+        await assert.rejects(
+          publisher.publish({
+            input: join(
+              directory,
+              "artifacts",
+              initialPublication.artifact_digest,
+            ),
+            expectedArtifact: result.artifact_digest,
+            expectedRelease: result.release_id,
+            run: "legacy-new-publication-denied",
+          }),
+          /legacy artifacts cannot be newly published/,
+        );
+        await publisher.rollback({
+          artifact: b.evidence.artifactDigest,
+          expectedArtifact: result.artifact_digest,
+          expectedRelease: result.release_id,
+          run: "restore-bound-acceptance-artifact",
+        });
+      },
+    );
   await check(
     "artifact CAS rejects stale commands even when both builds use the same release UUID",
     async () => {

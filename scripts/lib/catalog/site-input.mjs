@@ -4,9 +4,14 @@ import { realpath } from "node:fs/promises";
 import { root } from "../documents.mjs";
 import { readArtifact, canonicalJSON, digest, sha256 } from "./codec.mjs";
 import { readReleaseData } from "./validation.mjs";
+import { releaseRealm } from "./release-realm.mjs";
 
 export const isDevelopmentRelease = (build) =>
-  build.environment !== "production" || build.source_dirty !== false;
+  build.version !== 2 ||
+  !releaseRealm.safeParse(build.realm).success ||
+  build.environment !== build.realm.environment ||
+  build.realm.environment === "local" ||
+  build.source_dirty !== false;
 
 export function materializeSiteInput(context, pack) {
   const data = readReleaseData(context, pack);
@@ -33,6 +38,7 @@ export function materializeSiteInput(context, pack) {
       manifestDigest: pack.manifest_digest,
       contextDigest: pack.context_digest,
       gitCommit: data.build.git_commit,
+      ...(data.realm ? { realm: data.realm } : {}),
       development: isDevelopmentRelease(data.build),
     },
     records: data.manifest.entries,

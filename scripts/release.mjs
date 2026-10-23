@@ -5,6 +5,10 @@ import { createImportBundle } from "./lib/platform.mjs";
 import { connectDatabase, first } from "./lib/catalog/database.mjs";
 import { createMediaStore } from "./lib/catalog/media.mjs";
 import {
+  readReleaseRealmFile,
+  assertReleaseRealm,
+} from "./lib/catalog/release-realm.mjs";
+import {
   writeReleasePackage,
   verifyReleaseDirectory,
 } from "./lib/catalog/release-files.mjs";
@@ -47,8 +51,23 @@ async function main() {
     throw new Error(
       "Configure a protected CATALOG_DATABASE_URL; no browser token can replace it",
     );
+  const realm = await readReleaseRealmFile(
+    process.env.CATALOG_RELEASE_REALM_FILE,
+  );
   const database = connectDatabase(process.env.CATALOG_DATABASE_URL);
   try {
+    assertReleaseRealm(
+      await database.system(
+        async (client) =>
+          (
+            await first(
+              client,
+              "select catalog.current_release_realm() as realm",
+            )
+          ).realm,
+      ),
+      realm,
+    );
     const row = await database.system((client) =>
       first(
         client,

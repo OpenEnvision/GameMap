@@ -15,6 +15,7 @@ import {
   resolveDocumentBody,
 } from "./generated-documents.mjs";
 import { documentGenerator } from "./generated-registry.mjs";
+import { frozenReleaseRealm } from "./release-realm.mjs";
 
 export class ContentValidationError extends Error {
   constructor(issues) {
@@ -438,8 +439,9 @@ export function readReleaseData(context, release) {
   );
   const manifest = JSON.parse(release.manifest_text),
     build = JSON.parse(release.context_text);
+  assert.equal(manifest.format, "gamemap.content-release");
   assert.equal(build.format, "gamemap.build-context");
-  assert.equal(build.version, 1);
+  const realm = frozenReleaseRealm(manifest, build, { allowLegacy: true });
   assert.deepEqual(
     [...build.selected_revisions].sort((a, b) => a.id.localeCompare(b.id)),
     manifest.entries
@@ -478,5 +480,5 @@ export function readReleaseData(context, release) {
       document.sourceHash,
       `Release Markdown differs: ${document.source}`,
     );
-  return { manifest, build, ...assembled, registry };
+  return { manifest, build, realm, ...assembled, registry };
 }

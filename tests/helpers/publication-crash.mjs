@@ -2,11 +2,12 @@
 import { localPublisher } from "../../scripts/local-publication.mjs";
 import { createLocalPublisher } from "../../scripts/lib/catalog/publication.mjs";
 const [input, expectedArtifact, expectedRelease, phase] = process.argv.slice(2);
-const { database, directory } = await localPublisher();
+const { database, directory, realm } = await localPublisher();
 try {
   const publisher = createLocalPublisher({
     database,
     directory,
+    realm,
     checkpoint: async (point) => {
       if (point === phase) process.exit(73);
     },

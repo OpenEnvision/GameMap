@@ -15,6 +15,11 @@ import {
 import { verifyReleasePackage } from "./release-files.mjs";
 import { materializeSiteInput, isDevelopmentRelease } from "./site-input.mjs";
 import { siteDownloads } from "./site-files.mjs";
+import {
+  frozenReleaseRealm,
+  parseReleaseRealm,
+  assertReleaseRealm,
+} from "./release-realm.mjs";
 
 const facade = `import input from '../.content/release-input.json';
 import type { ContentSources } from './git-sources.server';
@@ -177,8 +182,26 @@ export async function buildReleaseSite(
   pack,
   packageDirectory,
   output,
-  { sourceFiles, base = "/", development = false, browser = false } = {},
+  {
+    sourceFiles,
+    base = "/",
+    development = false,
+    browser = false,
+    realm: expectedRealm,
+  } = {},
 ) {
+  const realm = assertReleaseRealm(
+    frozenReleaseRealm(
+      JSON.parse(pack.manifest_text),
+      JSON.parse(pack.context_text),
+    ),
+    expectedRealm,
+  );
+  assert.equal(
+    development,
+    realm.environment === "local",
+    "Local builds require --development; non-local realms cannot be relabeled as development",
+  );
   await assertPrivateDirectory(root, output);
   await verifyReleasePackage(context, pack, {
     sourceFiles,
@@ -197,17 +220,14 @@ export async function buildReleaseSite(
   if (!development) {
     assert.ok(
       !isDevelopmentRelease(build) && !dirty,
-      "Production artifacts require a production-frozen release and clean committed source; local acceptance releases always require --development",
+      "Non-local artifacts require a realm-bound release and clean committed source; local acceptance releases always require --development",
     );
     assert.equal(
       head,
       build.git_commit,
-      "Production build must use the exact frozen Git commit",
+      "Non-local build must use the exact frozen Git commit",
     );
-    assert.ok(
-      browser,
-      "Production artifacts require browser gates (--browser)",
-    );
+    assert.ok(browser, "Non-local artifacts require browser gates (--browser)");
   }
   await mkdir(dirname(output), { recursive: true });
   await mkdir(output, { mode: 0o700 });
@@ -270,7 +290,7 @@ export async function buildReleaseSite(
     }
     const evidence = {
       format: "gamemap.site-artifact",
-      version: 1,
+      version: 2,
       ...materialized.input.source,
       browserChecked: browser,
       checkoutCommit: head,
@@ -297,7 +317,20 @@ export async function buildReleaseSite(
 export async function verifySiteArtifact(directory) {
   const evidence = JSON.parse(await readArtifact(directory, "evidence.json"));
   assert.equal(evidence.format, "gamemap.site-artifact");
-  assert.equal(evidence.version, 1);
+  assert.ok([1, 2].includes(evidence.version), "Unsupported artifact version");
+  if (evidence.version === 2) {
+    const realm = parseReleaseRealm(evidence.realm);
+    assert.equal(
+      evidence.development,
+      realm.environment === "local",
+      "Artifact environment/development mismatch",
+    );
+  } else
+    assert.equal(
+      evidence.realm,
+      undefined,
+      "Legacy artifacts cannot be relabeled with a realm",
+    );
   assert.equal(
     sha256(canonicalJSON(evidence.files)),
     evidence.artifactDigest,
@@ -313,6 +346,7 @@ export async function verifySiteArtifact(directory) {
     "contextDigest",
     "gitCommit",
     "development",
+    "realm",
   ])
     assert.deepEqual(
       site.source?.[key],

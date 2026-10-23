@@ -18,6 +18,7 @@ import { loadContent } from "../content.mjs";
 import { createImportBundle } from "../platform.mjs";
 import { loadMigrations } from "../migrations.mjs";
 import { canonicalJSON } from "./codec.mjs";
+import { readReleaseRealmFile, assertReleaseRealm } from "./release-realm.mjs";
 
 export const localDirectory = resolve(root, ".build/catalog-local");
 const cli = resolve(root, "node_modules/.bin/supabase");
@@ -251,6 +252,53 @@ export async function localAccess() {
   return json(join(localDirectory, "access.json"));
 }
 
+export const localRealmFile = join(localDirectory, "realm.json");
+export const readLocalRealm = () => readReleaseRealmFile(localRealmFile);
+async function registerLocalRealm(owner) {
+  const state = (await owner`select catalog.publication_status() as state`)[0]
+    .state;
+  const expected = {
+    format: "gamemap.release-realm",
+    version: 1,
+    environment: "local",
+    project: "local:gamemap",
+    instance: state.instance_id,
+    target: "local-preview",
+  };
+  let existing;
+  try {
+    existing = await readLocalRealm();
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
+  if (existing) assertReleaseRealm(existing, expected);
+  const realm = (
+    await owner`select catalog.initialize_release_realm('local','local:gamemap','local-preview') as realm`
+  )[0].realm;
+  assertReleaseRealm(realm, expected);
+  if (!existing)
+    await privateWrite(
+      localRealmFile,
+      JSON.stringify(realm, null, 2) + "\n",
+      "wx",
+    );
+  return realm;
+}
+export async function setupLocalRealm() {
+  const status = await readLocalStatus();
+  const owner = postgres(status.DB_URL, {
+    max: 1,
+    prepare: false,
+    onnotice() {},
+  });
+  try {
+    await registerLocalRealm(owner);
+    return localRealmFile;
+  } finally {
+    await owner.end({ timeout: 5 });
+  }
+}
+
 export async function migrateLocal() {
   await readLocalStatus();
   await runCLI(["migration", "up", "--local"], "migrate.log");
@@ -362,6 +410,7 @@ export async function setupLocal() {
       ),
       "Apply the expected catalog migrations before provisioning",
     );
+    await registerLocalRealm(owner);
     const role = (
       await owner`select rolname from pg_roles where rolname=${state.login}`
     )[0];
@@ -417,6 +466,7 @@ export async function setupLocal() {
       SUPABASE_URL: status.API_URL,
       SUPABASE_PUBLISHABLE_KEY: status.PUBLISHABLE_KEY || status.ANON_KEY,
       CATALOG_SESSION_SECRET: state.sessionSecret,
+      CATALOG_RELEASE_REALM_FILE: localRealmFile,
       CATALOG_STUDIO_ORIGIN: "http://127.0.0.1:5174",
       CATALOG_STUDIO_PORT: "4180",
       CATALOG_STUDIO_UI_PORT: "5174",

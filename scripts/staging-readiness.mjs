@@ -57,10 +57,14 @@ async function main() {
   );
   const references = {};
   for (const [name, path, literal] of [
-    ["releaseRealm", "scripts/lib/catalog/worker.mjs", "environment:"],
+    [
+      "releaseRealm",
+      "supabase/migrations/0013_catalog_release_realm.sql",
+      "create table catalog.release_realms",
+    ],
     [
       "publisher",
-      "supabase/migrations/0011_catalog_publication.sql",
+      "supabase/migrations/0013_catalog_release_realm.sql",
       "Local publication requires",
     ],
     ["pages", ".github/workflows/deploy-pages.yml", "run: npm run build"],

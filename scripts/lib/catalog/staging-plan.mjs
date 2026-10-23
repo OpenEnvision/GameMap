@@ -206,8 +206,8 @@ export function reviewStagingPlan(
   );
   add(
     "release.trust-realm",
-    "blocked",
-    "Frozen contexts distinguish local/production via NODE_ENV, not a separately bound staging identity. Add and test explicit cross-environment promotion rejection before cloud integration.",
+    "pass",
+    "Local implementation binds new snapshots/artifacts to an immutable environment/project/instance/target and independent operator expectations. Legacy recovery is limited to pre-upgrade local activation history. Actual cloud identity/provisioning is still unverified.",
     references.releaseRealm,
   );
   add(
@@ -276,6 +276,8 @@ export function renderStagingEnvironment(input) {
     "SUPABASE_URL=" + JSON.stringify(plan.database.url),
     "SUPABASE_PUBLISHABLE_KEY=",
     "CATALOG_SESSION_SECRET=",
+    "# Independently verify and provision the immutable project/instance/target; do not trust a release sender's file.",
+    "CATALOG_RELEASE_REALM_FILE=",
     "CATALOG_STUDIO_ORIGIN=" + JSON.stringify(plan.studio.origin),
     "CATALOG_STUDIO_HOST=127.0.0.1",
     "CATALOG_STUDIO_PORT=4180",

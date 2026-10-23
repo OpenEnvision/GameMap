@@ -47,7 +47,7 @@ test("the staged topology is an explicitly disabled planning document, not deplo
   );
   assert.equal(find(report, "publisher.hosting-adapter").status, "blocked");
 });
-test("even complete clean planning values cannot certify a staging realm, hosting adapter or cloud controls", () => {
+test("implemented realm enforcement and complete planning values still cannot certify cloud identity or hosting controls", () => {
   const report = review(filled());
   assert.equal(find(report, "configuration.placeholders").status, "pass");
   assert.equal(find(report, "source.clean").status, "pass");
@@ -58,7 +58,7 @@ test("even complete clean planning values cannot certify a staging realm, hostin
     git: { commit: "a".repeat(40) },
   });
   assert.equal(find(unknownCleanliness, "source.clean").status, "blocked");
-  assert.equal(find(report, "release.trust-realm").status, "blocked");
+  assert.equal(find(report, "release.trust-realm").status, "pass");
   assert.equal(find(report, "security.cloud-acceptance").status, "unverified");
 });
 test("plans reject activation, extra secret fields, credential-bearing URLs, multiline values and unsupported replicas", () => {
@@ -119,6 +119,7 @@ test("rendered Studio templates use existing runtime variable names, blank secre
   assert.equal(env.CATALOG_DATABASE_URL, "");
   assert.equal(env.SUPABASE_PUBLISHABLE_KEY, "");
   assert.equal(env.CATALOG_SESSION_SECRET, "");
+  assert.equal(env.CATALOG_RELEASE_REALM_FILE, "");
   assert.equal(env.CATALOG_STUDIO_ORIGIN, "https://studio-staging.example.com");
   assert.equal(env.CATALOG_MEDIA_ROOT, "/srv/gamemap-staging/media");
   assert.equal(

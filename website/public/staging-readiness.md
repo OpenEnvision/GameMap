@@ -26,14 +26,14 @@ Use a new output directory for every review. Exit code **2** means **blocked/not
 - `report.json`: sanitized planning checks, source commit and source-file references/hashes. It contains no environment values or credential-store contents.
 - `studio.env.example`, only for a structurally valid plan: existing Studio variable names with all credential fields blank. Publisher credentials are deliberately absent.
 
-The generated environment file is **not an instruction to start a cloud server**. `NODE_ENV=production` enables HTTPS/security checks but is not a staging identity boundary. Resolve the realm/adapter blockers below before connecting a real project. The command never reads `.env`, Auth/session key files or cloud credentials, never runs migrations, and never modifies Git or the current website. It does not certify cloud settings even if every proposed URL is filled in.
+The generated environment file is **not an instruction to start a cloud server**. `NODE_ENV=production` enables HTTPS/security checks but is not a staging identity boundary. The required `CATALOG_RELEASE_REALM_FILE` must come from independently confirmed operator provisioning, not from the plan or a release sender. Resolve the adapter and cloud-acceptance blockers below before connecting a real project. The command never reads `.env`, Auth/session key files or cloud credentials, never runs migrations, and never modifies Git or the current website. It does not certify cloud settings even if every proposed URL is filled in.
 
 ## Blocking findings
 
 | Priority | Finding and evidence | Required before proceeding |
 | --- | --- | --- |
-| P0 | Exact committed source is not yet established. `scripts/lib/catalog/worker.mjs` and `site-build.mjs` reject dirty production freezes/builds. A commit also must include reviewed new/untracked source, migrations and lockfiles. | Review the complete working tree, agree its scope, explicitly authorize a local commit, and reproduce tests/build from that clean commit. No push is implied. |
-| P0 | Frozen contexts use `NODE_ENV` to select only `local` or `production` in `scripts/lib/catalog/worker.mjs`. There is no separately immutable staging/project/target identity. | Design explicit realm/target binding across frozen contexts, artifacts and deployment authority; add cross-project and staging-to-production rejection tests. Never relabel a local fixture as a real release. |
+| P0 | Each candidate must pin the exact reviewed commit. `scripts/lib/catalog/worker.mjs` and `site-build.mjs` reject dirty non-local freezes/builds; unrelated working-tree edits do not belong in an approved candidate. | Review the complete candidate, explicitly authorize local commits, and reproduce tests/build from its clean checkout. No push is implied. |
+| P1 | Migration `0013` and `release-realm.mjs` enforce an immutable environment/project/instance/target contract, independent operator expectations, cross-realm denials and restricted legacy local rollback. This is local implementation evidence, not proof of a cloud project's identity. | Independently verify actual cloud project separation and operator registration. Initialize a fresh non-local realm before any review/release history; never relabel local fixtures or trust a realm file supplied by a release sender. |
 | P0 | `0011_catalog_publication.sql` accepts local development artifacts only. The filesystem publisher is not a Pages upload/verification adapter. | Implement a separately protected staging hosting adapter with exact uploaded-byte identity, deployment evidence, predecessor CAS, failure reconciliation and retained-artifact rollback. Do not remove the local-only guard as a shortcut. |
 | P0 | `.github/workflows/deploy-pages.yml` still builds Git `dist/` on `main`. That is intentional and remains unchanged. | Prepare a separate manual/protected staging workflow after the adapter exists. It must consume one verified artifact without rebuilding in the privileged deploy step. Configure protected environment reviewers/ref restrictions in GitHub and verify them remotely. |
 | P0 | Local fixtures contain synthetic accounts, explicit test approvals and local deployment state. | Use a fresh isolated staging database, apply sequential migrations, provision real independent members and import the preserved source corpus as **drafts**. Never clone local fixture approval/publication state into a real authoring environment. |
@@ -42,7 +42,7 @@ The generated environment file is **not an instruction to start a cloud server**
 | P1 | Local restore uses the container's `supabase_admin` operator in `local-backup.mjs`; managed cloud projects do not necessarily expose that authority. Database/media/source backups alone omit publisher filesystem state and infrastructure/signing-key recovery. | Test provider-supported database/Auth restore plus media, retained artifacts, target metadata/journal and matching source/configuration. Record signing-key/session recovery or deliberate logout policy, offsite encryption/retention, RPO/RTO and operator permissions. |
 | P1 | Emergency withdrawal is not implemented. `assertReleaseParity()` deliberately rejects silent identity/address removal. Cached/offline static copies cannot be instantly recalled. | Agree a stable-URL withdrawal and urgent publishing/cache policy, implement it and rehearse it before authoring cutover. Do not bypass parity checks by deleting old identities. |
 
-The compatibility `catalog.activate_release` entry point exists only while a database has no claimed exact-artifact target. After target binding it is disabled. Cloud initialization must establish the intended protected target before accepting publication traffic, or remove that compatibility path through an explicitly reviewed additive migration. Applied migrations must not be rewritten.
+Migration `0013` disables the compatibility `catalog.activate_release` entry point even before a filesystem target is claimed. New freezes and builds require realm-bound version-2 identity. Only the migration's already-activated legacy local allowlist remains eligible for original-byte local recovery/rollback; historical bytes are unchanged. There is still no cloud publishing authority or remote hosting adapter. Applied migrations must not be rewritten.
 
 ## Cloud acceptance still unverified
 
@@ -60,7 +60,7 @@ A clean build, checksum, workflow log or successful upload is not by itself appr
 ## Order of the next implementation stages
 
 1. Review and commit the prepared local source only after explicit authorization.
-2. Agree and implement the immutable staging/production realm contract and its denial tests.
+2. Re-run the immutable realm denial and legacy-upgrade tests for the candidate, then independently verify the actual staging project's identity before operator registration.
 3. Choose the independent preview repository, Supabase project and persistent Studio host; configure credentials **on the host/CI platform**, never in chat or source.
 4. Implement and exercise the real hosting adapter/protected workflow against staging only.
 5. Complete cloud security/restore/withdrawal acceptance with a real reviewed corpus.

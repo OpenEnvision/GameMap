@@ -32,6 +32,7 @@ async function fixtureArtifact(label) {
     manifestDigest: pack.manifest_digest,
     contextDigest: pack.context_digest,
     gitCommit: JSON.parse(pack.context_text).git_commit,
+    realm: fixture.realm,
     development: true,
   };
   const path = join(directory, label);
@@ -52,7 +53,7 @@ async function fixtureArtifact(label) {
   }
   const evidence = {
     format: "gamemap.site-artifact",
-    version: 1,
+    version: 2,
     ...source,
     browserChecked: true,
     files,
@@ -107,6 +108,7 @@ before(async () => {
   };
   publication = createLocalPublisher({
     database,
+    realm: fixture.realm,
     directory: join(directory, "published"),
   });
   a = await fixtureArtifact("A");
@@ -200,7 +202,7 @@ test("stale artifact/release expectations and mismatched or unreviewed build rec
     await writeFile(evidenceFile, JSON.stringify({ ...b.evidence, ...patch }));
     await assert.rejects(
       publication.publish(await options(b)),
-      /Browser|local\/development|release identity/,
+      /Browser|local\/development|release identity|environment\/development/,
     );
   }
   await writeFile(evidenceFile, original);
@@ -213,6 +215,7 @@ test("failures after file switch and before SQL commit restore the old exact art
   for (const phase of ["before-switch", "after-switch", "before-commit"]) {
     const failing = createLocalPublisher({
       database,
+      realm: fixture.realm,
       directory: join(directory, "published"),
       checkpoint: async (point) => {
         if (point === phase) throw Error("Simulated " + phase);
@@ -233,6 +236,7 @@ test("failures after file switch and before SQL commit restore the old exact art
 test("a lost acknowledgement after COMMIT keeps the committed deployment instead of undoing it", async () => {
   const failing = createLocalPublisher({
     database,
+    realm: fixture.realm,
     directory: join(directory, "published"),
     checkpoint: async (point) => {
       if (point === "after-commit") throw Error("Lost acknowledgement");
@@ -311,6 +315,7 @@ test("explicit recovery can reconstruct a missing delivery pointer only from mat
 test("foreign roots, altered rollback files and unsafe pointers fail closed", async () => {
   const other = createLocalPublisher({
     database,
+    realm: fixture.realm,
     directory: join(directory, "other"),
   });
   await assert.rejects(other.publish(await options(c)), /already bound/);

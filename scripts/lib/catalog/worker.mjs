@@ -6,6 +6,11 @@ import { first } from "./database.mjs";
 import { canonicalJSON, json, sha256, sorted, readArtifact } from "./codec.mjs";
 import { validateSelection, readReleaseData } from "./validation.mjs";
 import {
+  parseReleaseRealm,
+  assertReleaseRealm,
+  assertFreezeEnvironment,
+} from "./release-realm.mjs";
+import {
   renderGeneratedDocuments,
   resolveDocumentBody,
 } from "./generated-documents.mjs";
@@ -53,8 +58,9 @@ const projectionTables = {
 export function createCatalogWorker(
   database,
   context,
-  { sourceFiles = [], readAsset } = {},
+  { sourceFiles = [], readAsset, realm } = {},
 ) {
+  const expectedRealm = parseReleaseRealm(realm);
   const configuration = context.configurationFromSources(
     context.sources,
     context.registry.entries,
@@ -384,6 +390,18 @@ export function createCatalogWorker(
     },
     async freeze(userId, ids) {
       await authorize(userId, ["reviewer", "admin"]);
+      const realm = assertReleaseRealm(
+        await database.system(
+          async (client) =>
+            (
+              await first(
+                client,
+                "select catalog.current_release_realm() as realm",
+              )
+            ).realm,
+        ),
+        expectedRealm,
+      );
       const input = await database.system((client) =>
         selection(client, { approved: true, ids }),
       );
@@ -415,16 +433,13 @@ export function createCatalogWorker(
           { cwd: root, encoding: "utf8" },
         ).trim(),
       );
-      if (process.env.NODE_ENV === "production" && dirty)
-        throw new Error(
-          "Commit and verify the source checkout before freezing a production release",
-        );
+      assertFreezeEnvironment(realm, { nodeEnv: process.env.NODE_ENV, dirty });
       const build = {
         source_dirty: dirty,
-        environment:
-          process.env.NODE_ENV === "production" ? "production" : "local",
+        environment: realm.environment,
+        realm,
         format: "gamemap.build-context",
-        version: 1,
+        version: 2,
         git_commit: gitCommit,
         configuration,
         source_hashes: sourceHashes,
@@ -503,7 +518,14 @@ export function createCatalogWorker(
         version: 1,
         ...release,
       };
-      readReleaseData(context, pack);
+      const data = readReleaseData(context, pack);
+      if (data.realm) assertReleaseRealm(data.realm, expectedRealm);
+      else
+        assert.ok(
+          expectedRealm.environment === "local" &&
+            data.build.environment === "local",
+          "Legacy exports are local read-only history",
+        );
       return pack;
     },
   };

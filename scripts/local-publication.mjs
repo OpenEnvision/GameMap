@@ -8,6 +8,7 @@ import {
   readLocalStatus,
   assertLoopback,
   setupLocalPublisher,
+  readLocalRealm,
 } from "./lib/catalog/local-runtime.mjs";
 import { connectPublicationDatabase } from "./lib/catalog/publication-database.mjs";
 import { createLocalPublisher } from "./lib/catalog/publication.mjs";
@@ -26,11 +27,13 @@ export async function localPublisher() {
   assert.equal(url.username, "gamemap_publisher_local");
   assert.equal(url.host, new URL(status.DB_URL).host);
   assert.equal(url.pathname, new URL(status.DB_URL).pathname);
+  const realm = await readLocalRealm();
   const database = connectPublicationDatabase(credentials.databaseURL);
   return {
-    publisher: createLocalPublisher({ database, directory }),
+    publisher: createLocalPublisher({ database, directory, realm }),
     database,
     directory,
+    realm,
   };
 }
 const help = `Local-only, independent publication operator (never GitHub/production)

@@ -12,10 +12,14 @@ const users = {
   admin: "00000000-0000-4000-8000-000000000003",
   outsider: "00000000-0000-4000-8000-000000000004",
 };
-let db, bundle, context;
+let db, bundle, context, realm;
 const one = async (sql, args = []) => (await db.query(sql, args)).rows[0];
 async function as(role, user, run) {
-  assert.ok(["anon", "authenticated", "service_role"].includes(role));
+  assert.ok(
+    ["anon", "authenticated", "service_role", "catalog_deployer"].includes(
+      role,
+    ),
+  );
   await db.exec("begin");
   try {
     await db.exec(`set local role ${role}`);
@@ -122,7 +126,10 @@ const activate = async (id, previous) => {
     ).rows;
     const text = canonicalJSON({
       format: "gamemap.build-context",
-      version: 1,
+      version: 2,
+      environment: realm.environment,
+      realm,
+      git_commit: bundle.snapshot.git_commit,
       selected_revisions: rows,
     });
     await as("service_role", null, () =>
@@ -133,12 +140,37 @@ const activate = async (id, previous) => {
       ]),
     );
   }
-  return as("service_role", null, () =>
-    db.query(
-      "select catalog.activate_release($1, $2, 'test://successful-deployment')",
-      [id, previous],
-    ),
+  const release = await one(
+    "select r.digest as manifest_digest,c.digest as context_digest from catalog.releases r join catalog.release_contexts c on c.release_id=r.id where r.id=$1",
+    [id],
   );
+  const evidence = {
+    format: "gamemap.site-artifact",
+    version: 2,
+    mode: "release",
+    release: id,
+    realm,
+    development: true,
+    browserChecked: true,
+    artifactDigest: sha256(id),
+    files: [],
+    manifestDigest: release.manifest_digest,
+    contextDigest: release.context_digest,
+    gitCommit: bundle.snapshot.git_commit,
+  };
+  return as("catalog_deployer", null, async () => {
+    await db.query("select catalog.claim_publication_target($1,$2)", [
+      realm.target,
+      "f".repeat(64),
+    ]);
+    await db.query("select catalog.register_publication_artifact($1)", [
+      canonicalJSON(evidence),
+    ]);
+    return db.query(
+      "select catalog.activate_publication($1,$2,$3,'test://successful-deployment')",
+      [sha256(id), previous ? sha256(previous) : null, previous],
+    );
+  });
 };
 
 before(async () => {
@@ -154,6 +186,11 @@ before(async () => {
       $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
   `);
   for (const migration of await loadMigrations()) await db.exec(migration.sql);
+  realm = (
+    await one(
+      "select catalog.initialize_release_realm('local','local:sql-fixture','local-preview') as realm",
+    )
+  ).realm;
   for (const [role, user] of Object.entries(users)) {
     await db.query("insert into auth.users values($1)", [user]);
     if (role !== "outsider")
@@ -525,7 +562,7 @@ test("releases require approved revisions and cannot omit related targets", asyn
   assert.equal(await published(), null, "freezing must not publish");
 });
 
-test("activation is worker-only, isolates later drafts, and supports conflict-safe rollback", async () => {
+test("activation is deployer-only, isolates later drafts, and supports conflict-safe rollback", async () => {
   const firstRevision = await save("platform-release-first");
   await approve(firstRevision);
   const first = await freeze([firstRevision]);
@@ -548,9 +585,9 @@ test("activation is worker-only, isolates later drafts, and supports conflict-sa
   const secondRevision = await save("platform-release-second");
   await approve(secondRevision);
   const second = await freeze([secondRevision]);
-  await assert.rejects(activate(second, null), /Deployment conflict/);
+  await assert.rejects(activate(second, null), /[Dd]eployment conflict/);
   await activate(second, first);
-  await assert.rejects(activate(first, first), /Deployment conflict/);
+  await assert.rejects(activate(first, first), /[Dd]eployment conflict/);
   await activate(first, second);
   assert.deepEqual(await published(), initial);
   assert.equal(

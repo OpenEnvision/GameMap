@@ -70,7 +70,7 @@ jobs:
       - name: Build and verify a private database-only release fixture
         run: |
           NODE_ENV=test node tests/helpers/release-fixture.mjs --out .build/ci-release
-          npm run site:build -- --input .build/ci-release --out .build/ci-site-artifact --base /GameMap/ --development --browser
+          npm run site:build -- --input .build/ci-release --out .build/ci-site-artifact --realm .build/ci-release.realm.json --base /GameMap/ --development --browser
           npm run site:verify -- --input .build/ci-site-artifact
       - name: Verify server runtime without development dependencies
         run: |

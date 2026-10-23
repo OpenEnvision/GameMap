@@ -8,6 +8,10 @@ import { createSupabaseAuth, createSessions } from "./lib/catalog/auth.mjs";
 import { createCatalogWorker } from "./lib/catalog/worker.mjs";
 import { createMediaStore } from "./lib/catalog/media.mjs";
 import { createStudioServer } from "./lib/catalog/server.mjs";
+import {
+  readReleaseRealmFile,
+  assertReleaseRealm,
+} from "./lib/catalog/release-realm.mjs";
 
 if (process.argv.includes("--production")) process.env.NODE_ENV = "production";
 const required = [
@@ -15,6 +19,7 @@ const required = [
   "SUPABASE_URL",
   "SUPABASE_PUBLISHABLE_KEY",
   "CATALOG_SESSION_SECRET",
+  "CATALOG_RELEASE_REALM_FILE",
 ];
 const missing = required.filter((key) => !process.env[key]);
 const origin = process.env.CATALOG_STUDIO_ORIGIN || "http://127.0.0.1:5174";
@@ -33,7 +38,20 @@ if (!Number.isInteger(port) || port < 1 || port > 65535)
 let options = { origin, missingConfiguration: missing };
 let database;
 if (!missing.length) {
+  const realm = await readReleaseRealmFile(
+    process.env.CATALOG_RELEASE_REALM_FILE,
+  );
+  if (realm.environment !== "local" && process.env.NODE_ENV !== "production")
+    throw new Error("Non-local Studio realms require production security mode");
   database = connectDatabase(process.env.CATALOG_DATABASE_URL);
+  assertReleaseRealm(
+    await database.system(
+      async (client) =>
+        (await client.query("select catalog.current_release_realm() as realm"))
+          .rows[0].realm,
+    ),
+    realm,
+  );
   const ready = await database.system(
     async (client) =>
       (
@@ -83,6 +101,7 @@ if (!missing.length) {
   );
   await media.ready();
   const worker = createCatalogWorker(database, context, {
+    realm,
     sourceFiles: bundle.snapshot.source_files,
     readAsset: (path) => media.readAsset(path),
   });
