@@ -13662,6 +13662,524 @@
         "No upstream server, build, tests or playtest occurred. Multiplayer requires PHP and was not verified; author statements about supported features are distinct from runtime validation.",
         "Only the vendored Three.js header/revision and targeted library fragments were reviewed, not its entire 1.27 MB implementation. Several asset notices were sampled, not every binary/media file; external Google Fonts terms were not independently reviewed."
       ]
+    },
+    {
+      "id": "bunbetsu-beat",
+      "name": "Bunbetsu Beat (ぶんべつビート)",
+      "repository_url": "https://github.com/tanuu5/bunbetsu-beat",
+      "genres": [
+        "rhythm",
+        "sorting",
+        "arcade"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.180.0 (CDN import map)",
+        "render_evidence": {
+          "url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/js/view/scene.js#L108",
+          "claim": "index.html loads the real js/main.js entry and imports Three.js from the CDN. The scene helper directly constructs THREE.WebGLRenderer/PerspectiveCamera; setAnimationLoop advances the live game and renders its 3D conveyor, items, robot and bins."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js r180 through jsDelivr, project-authored chart/judgment/scoring and 3D geometry, WebAudio synthesis, plain DOM UI and localStorage. package.json declares no runtime/dev dependencies; Node's built-in test runner is only a script, not executed here."
+        ],
+        "framework_audit": "The actual HTML/module entry and rendering/game code were inspected. Three.js directly owns scene/camera rendering through project-authored game helpers. No R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified in the reviewed entry or declared manifests; optional wrappers, services and development tools are disclosed rather than treated as rendering engines."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/js/main.js#L323",
+        "claim": "Input is judged against chart timing/direction and applied to score/combo/health. Zero-health game over and the chart-duration clear path both end the run, compute rank/results and support another round; accepted throws animate the corresponding 3D sorting action."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/LICENSE",
+        "additional_notices": [
+          "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/README.md"
+        ],
+        "notes": "Root LICENSE grants MIT use of repository code/text. README attributes Three.js under its separate MIT terms and says runtime models, original music and effects are generated, with system fonts. Reviewed item/model source builds runtime geometry; this records the author's art/music statement without claiming an exhaustive originality audit."
+      },
+      "demo": {
+        "url": "https://tanuu5.github.io/bunbetsu-beat/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/README.md",
+        "notes": "The README's author-hosted browser link could not be retrieved by the text reader; no browser game, audio, debug or score-storage action ran. A reader failure does not establish that the deployment is offline."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/README.md",
+        "notes": "A complete chart/run/results lifecycle and multiple input modes are implemented; the package is version 0.1.0. README's approximate round length, responsiveness and performance are author descriptions rather than reproduced measurements."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "67cbea249ae8dba6b179318c1feff49b9049d424",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-022.md#bunbetsu-beat",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/index.html"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/js/main.js"
+          },
+          {
+            "path": "js/view/scene.js",
+            "url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/js/view/scene.js"
+          },
+          {
+            "path": "js/core/score.js",
+            "url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/js/core/score.js"
+          },
+          {
+            "path": "js/view/items.js",
+            "url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/js/view/items.js"
+          },
+          {
+            "path": "js/view/models.js",
+            "url": "https://github.com/tanuu5/bunbetsu-beat/blob/67cbea249ae8dba6b179318c1feff49b9049d424/js/view/models.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "A fixed-camera 3D sorting arena uses timing and four-direction inputs; it is not free 3D navigation. WebGL2 and browser audio/input behavior were inspected only in source.",
+        "No upstream install, build, Node test or playtest was performed. Music timing, touch controls, graphics and browser compatibility remain unverified."
+      ]
+    },
+    {
+      "id": "tennis-training",
+      "name": "Tennis Training",
+      "repository_url": "https://github.com/doncebay/tennis-training",
+      "genres": [
+        "tennis",
+        "sports",
+        "motion controls"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/public/js/world.js#L373",
+          "claim": "The actual public/index.html imports main.js and maps three to the served/copied npm module. createWorld directly creates THREE.WebGLRenderer/PerspectiveCamera and the 3D court; main's requestAnimationFrame calls match.update and world.render."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/package.json",
+            "dependencies": {
+              "peerjs": "^1.5.5",
+              "selfsigned": "^5.5.0",
+              "three": "^0.186.1",
+              "uqr": "^0.1.3",
+              "ws": "^8.21.3"
+            },
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js, own court/characters/physics and WebAudio; PeerJS/WebRTC or Node ws relay, uqr invite codes and selfsigned local HTTPS support. The static build copies the actual npm Three.js module/core/addon files. Exact package dependencies are preserved; there is no UI/game-rendering framework."
+        ],
+        "framework_audit": "The actual HTML/module entry and rendering/game code were inspected. Three.js directly owns scene/camera rendering through project-authored game helpers. No R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified in the reviewed entry or declared manifests; optional wrappers, services and development tools are disclosed rather than treated as rendering engines."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/public/js/match.js#L499",
+        "claim": "End-point processing awards tennis points/games, updates the scoreboard and schedules the next point or match-over result. The live match simulates serves, rallies, faults, AI and racket/ball interactions; phone orientation or mouse/keyboard can control the racket."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/LICENSE",
+        "additional_notices": [],
+        "notes": "Root source LICENSE is MIT. World/audio source constructs geometry and WebAudio behavior; npm Three.js, PeerJS, QR/certificate/network helpers keep their separate terms. No blanket media/dependency license or complete originality audit is asserted."
+      },
+      "demo": {
+        "url": "https://doncebay.github.io/tennis-training/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/README.md",
+        "notes": "README links the hosted game, despite repository metadata having no homepage. The text reader could not retrieve it; no phone, QR pairing, sensor permission, peer connection, local certificate or server was used."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/README.md",
+        "notes": "README documents an implemented first-person tennis game, hosted/static and local-network modes and a mouse/keyboard fallback. Actual scoring/result and frame-loop code was reviewed; deployment, controller latency and match quality were not exercised."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "40f037bad338b1adb5a34afb47a3706d7290fb0a",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-022.md#tennis-training",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/package.json"
+          },
+          {
+            "path": "public/index.html",
+            "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/public/index.html"
+          },
+          {
+            "path": "public/js/main.js",
+            "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/public/js/main.js"
+          },
+          {
+            "path": "public/js/world.js",
+            "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/public/js/world.js"
+          },
+          {
+            "path": "public/js/match.js",
+            "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/public/js/match.js"
+          },
+          {
+            "path": "public/js/net.js",
+            "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/public/js/net.js"
+          },
+          {
+            "path": "server.js",
+            "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/server.js"
+          },
+          {
+            "path": "scripts/build-static.js",
+            "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/scripts/build-static.js"
+          },
+          {
+            "path": "public/js/audio.js",
+            "url": "https://github.com/doncebay/tennis-training/blob/40f037bad338b1adb5a34afb47a3706d7290fb0a/public/js/audio.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Phone motion requires browser sensor permission and an appropriate secure context. Hosted pairing uses WebRTC infrastructure; the optional local Node server generates a self-signed certificate. None of those network/permission/certificate flows was performed.",
+        "The npm files referenced by the import map are served by the Node setup or copied by build-static.js; a raw source checkout does not contain the generated vendor bundle.",
+        "No upstream install, build, tests or playtest occurred. Gyroscope control, fallback controls, physics and current browser support remain unverified."
+      ]
+    },
+    {
+      "id": "pithu-arena",
+      "name": "Pithu Arena",
+      "repository_url": "https://github.com/dev-abdulw/pithu-arena",
+      "genres": [
+        "sports",
+        "physics",
+        "arcade"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r160 (vendored module header)",
+        "render_evidence": {
+          "url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/src/render/SceneRenderer.js#L17",
+          "claim": "index.html maps three to its local vendored module and loads the real main entry. SceneRenderer directly constructs THREE.WebGLRenderer/PerspectiveCamera, while the project loop updates match/physics and renders the scene."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Locally vendored Three.js r160, own rigid-body/ball/character/AI systems, procedural arena/geometry, replay and WebAudio. No npm runtime dependencies are declared. NOTICE lists optional development-only Playwright/esbuild tools; package devDependencies is empty and none of those tools was installed/run."
+        ],
+        "framework_audit": "The actual HTML/module entry and rendering/game code were inspected. Three.js directly owns scene/camera rendering through project-authored game helpers. No R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified in the reviewed entry or declared manifests; optional wrappers, services and development tools are disclosed rather than treated as rendering engines."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/src/core/MatchController.js#L352",
+        "claim": "Completing the seven-stone stack calls the victory path, disables defenders and starts the celebration/replay flow; fatal hits or running out of time enter defeat. Results finalize victory, remaining time and score statistics. The player breaks/rebuilds the stack while dodging AI throws."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/LICENSE",
+        "additional_notices": [
+          "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/THIRD_PARTY_NOTICES.md",
+          "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/vendor/three.module.js"
+        ],
+        "notes": "Root code is MIT; THIRD_PARTY_NOTICES separately preserves the vendored Three.js MIT notice. The author describes all other runtime art/audio/animation as original procedural work and system fonts. That statement is attributed to the project, not an independent audit of originality."
+      },
+      "demo": {
+        "url": "https://dev-abdulw.github.io/pithu-arena/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/README.md",
+        "notes": "README's browser-game link could not be retrieved by the text reader. The package homepage points to an author portfolio and is not substituted for the game URL; no browser, local server or score/replay action ran."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/README.md",
+        "notes": "A complete sports-game match state machine implements stack rebuilding, AI opposition, timed/health failure, victory replay and results. Author load-size, timing, device and test claims are not independently reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "2f21eb52c333f75c5e1943a911b553d65a729b87",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-022.md#pithu-arena",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/package.json"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/THIRD_PARTY_NOTICES.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/index.html"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/src/main.js"
+          },
+          {
+            "path": "src/render/SceneRenderer.js",
+            "url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/src/render/SceneRenderer.js"
+          },
+          {
+            "path": "src/core/MatchController.js",
+            "url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/src/core/MatchController.js"
+          },
+          {
+            "path": "src/gameplay/ScoreService.js",
+            "url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/src/gameplay/ScoreService.js"
+          },
+          {
+            "path": "vendor/three.module.js",
+            "url": "https://github.com/dev-abdulw/pithu-arena/blob/2f21eb52c333f75c5e1943a911b553d65a729b87/vendor/three.module.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "No upstream install, build, unit/integration test, minifier or playtest occurred. Physics, bot behavior, controls and game balance remain source reviewed only.",
+        "The Three.js header/revision/export fragments were checked, not the entire 1.27 MB vendor library. Author originality and performance claims are recorded without blanket asset or benchmark verification."
+      ]
+    },
+    {
+      "id": "stemstage",
+      "name": "STEMSTAGE",
+      "repository_url": "https://github.com/SylarBeck/STEMSTAGE",
+      "genres": [
+        "rhythm",
+        "music",
+        "local multiplayer"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/src/game/renderer.js#L113",
+          "claim": "The real HTML loads src/main.js, which creates the project Renderer and Session. Renderer directly constructs THREE.WebGLRenderer and Three.js post-processing passes; the highway uses a PerspectiveCamera and 3D lane/note meshes. Tauri/Capacitor are optional application shells, not game renderers."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/package.json",
+            "dependencies": {
+              "@capacitor/core": "^8.5.2",
+              "@capacitor/ios": "^8.5.2",
+              "@fortawesome/fontawesome-free": "^6.7.2",
+              "music-metadata": "^11.16.1",
+              "three": "^0.186.1",
+              "ws": "^8.22.0"
+            },
+            "dev_dependencies": {
+              "@capacitor/cli": "^8.5.2",
+              "@gltf-transform/core": "^4.5.1",
+              "@gltf-transform/extensions": "^4.5.1",
+              "@gltf-transform/functions": "^4.5.1",
+              "@resvg/resvg-js": "^2.6.2",
+              "@tauri-apps/cli": "^2.12.0",
+              "meshoptimizer": "^1.3.0",
+              "puppeteer-core": "^25.12.0",
+              "vite": "^8.3.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js core/addons, own 3D highway/stage and timing/scoring, WebAudio, music-metadata and ws. Optional Tauri 2/Capacitor shells and Python AI/controller tooling are disclosed: core requirements include numpy, pydualsense, websockets and yt-dlp; AI requirements include Demucs, faster-whisper, ONNX Runtime/librosa and related helpers. Exact npm snapshots and the Python/Rust definition files were reviewed; no tool/model/media was installed or invoked."
+        ],
+        "framework_audit": "The actual HTML/module entry and rendering/game code were inspected. Three.js directly owns scene/camera rendering through project-authored game helpers. No R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified in the reviewed entry or declared manifests; optional wrappers, services and development tools are disclosed rather than treated as rendering engines."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/src/game/session.js#L424",
+        "claim": "Player hit/miss handling awards points, streak/multiplier changes and failure. The session's song-end path finalizes each player's results and personal bests, stops the active session and handles optional online results. The source also includes a procedurally synthesized demo track that bypasses stem separation."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/LICENSE",
+        "additional_notices": [
+          "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/README.md",
+          "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/public/fonts/OFL-Anton.txt",
+          "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/public/fonts/OFL-BarlowCondensed.txt",
+          "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/public/fonts/OFL-BigShouldersStencilDisplay.txt",
+          "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/public/fonts/LICENSE-PermanentMarker.txt",
+          "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/public/controllers/pack/LICENSE.txt",
+          "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/public/vendor/fontawesome/LICENSE.txt"
+        ],
+        "notes": "Root game-code LICENSE is MIT. README credits OFL Anton/Barlow Condensed/Big Shoulders fonts, Apache-2.0 Permanent Marker, MIT gamepad artwork and Font Awesome's separate icon/font terms; the corresponding bundled notices were read. MakeHuman/MPFB-derived human models are described by the author but their per-model provenance/grants were not independently audited. User-imported songs and optional backend dependencies are not covered by the game-code MIT grant."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/README.md",
+        "notes": "README points to desktop releases and https://stemstage.varconstint.com/ as a website; neither is guessed to be a verified public browser-game demo. No installer, website account, song import/download, AI model, microphone, controller bridge, tunnel or server was used."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/README.md",
+        "notes": "Source implements a substantial rhythm-game session with 3D note highways, scoring, failure/results and a local synthetic demo. README's feature, desktop-release and device-support claims are distinguished from unperformed runtime testing."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "26d022d05c1be0e1946bc50089fd7e6c34adcda7",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-022.md#stemstage",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/index.html"
+          },
+          {
+            "path": "src/game/renderer.js",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/src/game/renderer.js"
+          },
+          {
+            "path": "src/game/session.js",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/src/game/session.js"
+          },
+          {
+            "path": "src/game/highway.js",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/src/game/highway.js"
+          },
+          {
+            "path": "public/fonts/LICENSE-PermanentMarker.txt",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/public/fonts/LICENSE-PermanentMarker.txt"
+          },
+          {
+            "path": "public/controllers/pack/LICENSE.txt",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/public/controllers/pack/LICENSE.txt"
+          },
+          {
+            "path": "public/vendor/fontawesome/LICENSE.txt",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/public/vendor/fontawesome/LICENSE.txt"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/src/main.js"
+          },
+          {
+            "path": "src/audio/demo.js",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/src/audio/demo.js"
+          },
+          {
+            "path": "src/game/player.js",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/src/game/player.js"
+          },
+          {
+            "path": "public/fonts/OFL-Anton.txt",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/public/fonts/OFL-Anton.txt"
+          },
+          {
+            "path": "public/fonts/OFL-BarlowCondensed.txt",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/public/fonts/OFL-BarlowCondensed.txt"
+          },
+          {
+            "path": "public/fonts/OFL-BigShouldersStencilDisplay.txt",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/public/fonts/OFL-BigShouldersStencilDisplay.txt"
+          },
+          {
+            "path": "server/requirements-ai.txt",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/server/requirements-ai.txt"
+          },
+          {
+            "path": "server/requirements-core.txt",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/server/requirements-core.txt"
+          },
+          {
+            "path": "server/requirements.txt",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/server/requirements.txt"
+          },
+          {
+            "path": "src-tauri/Cargo.toml",
+            "url": "https://github.com/SylarBeck/STEMSTAGE/blob/26d022d05c1be0e1946bc50089fd7e6c34adcda7/src-tauri/Cargo.toml"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The 3D note highway/stage uses lane/timing input rather than free 3D movement. Source inspection verifies actual 3D game rendering, not a decorative-only avatar viewer.",
+        "Optional song import/separation, lyrics, microphone, native controllers, packaging and online/tunnel features have substantial additional tools and services. They were not exercised or license-audited transitively; the synthetic demo path was inspected but not run.",
+        "No upstream npm/Python/Rust install, build, tests, playtest, model download, paid service or media acquisition occurred. Bundled human-model and third-party asset provenance was not exhaustively audited."
+      ]
     }
   ]
 }

@@ -1069,6 +1069,117 @@
         "https://github.com/PhilippGoecke/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/LICENSE",
         "https://github.com/PhilippGoecke/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/NOTICE"
       ]
+    },
+    {
+      "id": "hook-a-fish",
+      "repository_url": "https://github.com/dammafra/hook-a-fish",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "f2b187dabd2fe41fdb60c0608c86d76987e7f9a3",
+      "reason": "The actual Canvas helper imports and renders R3FCanvas from @react-three/fiber; package.json declares Fiber, Drei, React Three Rapier and other R3F helpers. The game may be 3D, but its renderer is outside the direct-Three-only scope.",
+      "next_action": "Reconsider only an independently verified imperative-Three version; an author's separate direct-Three game does not establish this project's stack.",
+      "evidence_urls": [
+        "https://github.com/dammafra/hook-a-fish/blob/f2b187dabd2fe41fdb60c0608c86d76987e7f9a3/package.json",
+        "https://github.com/dammafra/hook-a-fish/blob/f2b187dabd2fe41fdb60c0608c86d76987e7f9a3/src/components/helpers/Canvas.tsx#L1",
+        "https://github.com/dammafra/hook-a-fish/blob/f2b187dabd2fe41fdb60c0608c86d76987e7f9a3/src/App.tsx",
+        "https://github.com/dammafra/hook-a-fish/blob/f2b187dabd2fe41fdb60c0608c86d76987e7f9a3/LICENSE"
+      ]
+    },
+    {
+      "id": "storm-fishers",
+      "repository_url": "https://github.com/TheAlexPG/storm-fishers",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "98d25b559739e7db0ef2fc4838c92470235750d0",
+      "reason": "Root LICENSE is PolyForm Noncommercial 1.0.0 and NOTICE requires a separate written license for commercial use. Publicly viewable Three.js source with that restriction does not meet this collection's open-source boundary.",
+      "next_action": "Reconsider only if upstream supplies a qualifying open-source grant for the relevant game code; do not infer MIT from the Three.js dependency.",
+      "evidence_urls": [
+        "https://github.com/TheAlexPG/storm-fishers/blob/98d25b559739e7db0ef2fc4838c92470235750d0/LICENSE",
+        "https://github.com/TheAlexPG/storm-fishers/blob/98d25b559739e7db0ef2fc4838c92470235750d0/NOTICE",
+        "https://github.com/TheAlexPG/storm-fishers/blob/98d25b559739e7db0ef2fc4838c92470235750d0/README.md",
+        "https://github.com/TheAlexPG/storm-fishers/blob/98d25b559739e7db0ef2fc4838c92470235750d0/package.json"
+      ]
+    },
+    {
+      "id": "boat-and-bobber",
+      "repository_url": "https://github.com/alexbarker234/boat-and-bobber",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "f124496ba07e0c21bb0874a819d3d128200ef650",
+      "reason": "Root package.json declares ISC, but no root license text or README license grant was located in the reviewed tree. Separate client/server license scope and asset grants remain unestablished; direct-renderer/objective review is incomplete.",
+      "next_action": "Inspect client/server terms and establish the game-code grant and media scope before source verification/promotion. Preserve the ISC manifest declaration as evidence rather than silently treating it as a fully audited grant.",
+      "evidence_urls": [
+        "https://github.com/alexbarker234/boat-and-bobber/blob/f124496ba07e0c21bb0874a819d3d128200ef650/package.json",
+        "https://github.com/alexbarker234/boat-and-bobber/blob/f124496ba07e0c21bb0874a819d3d128200ef650/README.md"
+      ]
+    },
+    {
+      "id": "v2fun-dance-game",
+      "repository_url": "https://github.com/V2Fun-Research/v2fun-dance-game",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "9b3bb54036540eda6744f88e8b4b0e63fc004800",
+      "reason": "Starter code is MIT, but THIRD_PARTY.md explicitly excludes the bundled default character and supplied video/audio/capture from that grant and says redistribution rights are unestablished. Motion capture separately requires service access and potentially credits. A bundled offline example is not proof of cleared asset rights.",
+      "next_action": "Keep the source-open/starter/example case pending until distributable media/model grants or replacements are established, then assess the actual 3D game scope. Do not invoke the service or spend credits.",
+      "evidence_urls": [
+        "https://github.com/V2Fun-Research/v2fun-dance-game/blob/9b3bb54036540eda6744f88e8b4b0e63fc004800/THIRD_PARTY.md",
+        "https://github.com/V2Fun-Research/v2fun-dance-game/blob/9b3bb54036540eda6744f88e8b4b0e63fc004800/LICENSE",
+        "https://github.com/V2Fun-Research/v2fun-dance-game/blob/9b3bb54036540eda6744f88e8b4b0e63fc004800/README.md",
+        "https://github.com/V2Fun-Research/v2fun-dance-game/blob/9b3bb54036540eda6744f88e8b4b0e63fc004800/assets/starter/stage.js"
+      ]
+    },
+    {
+      "id": "pancing-unity-reference",
+      "repository_url": "https://github.com/Altrabird/Pancing",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "402e5fbe1b001cfa5b80dcc57644e1b1204ac73b",
+      "reason": "README identifies the current game target as Unity 6 and relegates the original Three.js web build to a golden reference. No applicable grant or independently supported standalone browser-game scope was established in the reviewed README/metadata.",
+      "next_action": "Keep the current Unity target outside the verified list. Determine whether a separately licensed, complete independent Three.js web game can be scoped and reviewed before reconsidering.",
+      "evidence_urls": [
+        "https://github.com/Altrabird/Pancing/blob/402e5fbe1b001cfa5b80dcc57644e1b1204ac73b/README.md"
+      ]
+    },
+    {
+      "id": "teitasan-fishing-game",
+      "repository_url": "https://github.com/teitasan/ThreeJs-Fishing-Game",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "d3abd7c77c72513e3e261a74e95ffb0d3dfe14c5",
+      "reason": "The reviewed tree has no root game LICENSE and the English/Japanese READMEs do not establish a game-code grant. A vendored post-processing dependency license cannot be transferred to the game or its models/audio; package.json contains no license declaration.",
+      "next_action": "Establish an applicable game-code license and asset permissions, then finish the entry/renderer/objective audit. Public source and a playable-looking author URL alone are insufficient.",
+      "evidence_urls": [
+        "https://github.com/teitasan/ThreeJs-Fishing-Game/blob/d3abd7c77c72513e3e261a74e95ffb0d3dfe14c5/README.en.md",
+        "https://github.com/teitasan/ThreeJs-Fishing-Game/blob/d3abd7c77c72513e3e261a74e95ffb0d3dfe14c5/README.md",
+        "https://github.com/teitasan/ThreeJs-Fishing-Game/blob/d3abd7c77c72513e3e261a74e95ffb0d3dfe14c5/package.json"
+      ]
+    },
+    {
+      "id": "lighthouse-fishing-game",
+      "repository_url": "https://github.com/freeboxwork/lighthouse-fishing-game",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "d200dd1e2495f387852ae3479b8a2e25eefdfc45",
+      "reason": "The reviewed source tree has no game LICENSE, README supplies no game-code grant and package.json has no license field. Its Three.js dependency does not license the application or its media.",
+      "next_action": "Keep as an unlicensed/unclear-license candidate until upstream establishes the grant, then inspect the implemented renderer, fishing objectives and media separately.",
+      "evidence_urls": [
+        "https://github.com/freeboxwork/lighthouse-fishing-game/blob/d200dd1e2495f387852ae3479b8a2e25eefdfc45/README.md",
+        "https://github.com/freeboxwork/lighthouse-fishing-game/blob/d200dd1e2495f387852ae3479b8a2e25eefdfc45/package.json"
+      ]
+    },
+    {
+      "id": "quiet-lake-fishing3d",
+      "repository_url": "https://github.com/lisa-1002/fishing3d",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "5b16dd5adf94b55d18d886e5dd3ea38879d6527d",
+      "reason": "Root LICENSE explicitly reserves all rights to the original program and generated art. The separate CC0 water texture and MIT Three.js/CC0 fish exceptions do not grant open-source rights to the game code.",
+      "next_action": "Reconsider only if an explicit qualifying game-code grant is supplied; preserve the code/media distinction rather than treating any individual CC0 dependency as the whole game's license.",
+      "evidence_urls": [
+        "https://github.com/lisa-1002/fishing3d/blob/5b16dd5adf94b55d18d886e5dd3ea38879d6527d/LICENSE",
+        "https://github.com/lisa-1002/fishing3d/blob/5b16dd5adf94b55d18d886e5dd3ea38879d6527d/README.md",
+        "https://github.com/lisa-1002/fishing3d/blob/5b16dd5adf94b55d18d886e5dd3ea38879d6527d/CREDITS.md"
+      ]
     }
   ]
 }
