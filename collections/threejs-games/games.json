@@ -16872,6 +16872,290 @@
         "Optional hosted-site GoatCounter/event code is disclosed; its present service behavior or privacy claims were not independently audited. Vendor review targeted the header/revision, not the entire minified library.",
         "No upstream install/build/test or playtest, input/controller/haptic action, audio playback, save write, screenshot/export/share or network multiplayer session occurred. Author originality, test and performance reports remain author claims."
       ]
+    },
+    {
+      "id": "air-hockey-webgl",
+      "name": "Air Hockey WebGL",
+      "repository_url": "https://github.com/MortimerGoro/AirHockeyWebGL",
+      "genres": [
+        "air hockey",
+        "sports",
+        "AI opponent"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r66 (vendored)",
+        "render_evidence": {
+          "url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/src/main.js#L25",
+          "claim": "The actual index loads the vendored Three library and game scripts. main.js directly creates Three WebGLRenderer and drives the Hockey scene with requestAnimationFrame; hockey.js renders the 3D table, mallets and pucks while project-authored helpers connect Box2D physics and the AI opponent."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vendored Three.js r66, OBJMTLLoader, Box2D.js and dat.GUI; the exact Box2D/dat.GUI releases were not established. Project-authored game/model/AI helpers, mouse controls and native Audio play bundled Ogg effects. No npm manifest appears in the complete reviewed tree."
+        ],
+        "framework_audit": "Actual game-entry, rendering and objective sources were inspected at this commit. Three.js owns the reviewed renderer; no R3F, A-Frame, Babylon.js, Unity runtime or replacement rendering engine was identified in that scoped entry/manifests. Project-authored gameplay/render helpers and other library roles are disclosed. Every transitive dependency and content file was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/src/model.js#L100",
+        "claim": "Box2D goal-sensor contacts in physics.js call the model's goal method, which increments the appropriate side's score. The game's goal handler hides/deactivates that puck, updates the scoreboard and serves again once no active pucks remain. Goal scoring and repeated serves are implemented; no terminal match-victory rule is claimed."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/LICENSE",
+        "additional_notices": [
+          "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/README.md",
+          "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/lib/three.min.js"
+        ],
+        "notes": "Root LICENSE and README grant MIT project-code use. Bundled libraries, OBJ/MTL models, table/floor textures and Ogg effects retain any separate terms; their full origin/grant chains were not independently audited. The vendor review targeted Three's header/revision rather than the entire minified library."
+      },
+      "demo": {
+        "url": "http://mortimergoro.github.io/AirHockeyWebGL/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/README.md",
+        "notes": "README supplies this historical HTTP GitHub Pages link. The reader attempted the corresponding HTTPS page but returned an accessibility error; neither current playability nor deployment/source equivalence was established. The reader error alone does not prove the site offline."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/README.md",
+        "notes": "The 2014-era project has goal scoring, an AI paddle and repeated play, but a terminal match win and current browser/input/audio compatibility were not demonstrated. The legacy label reflects the old source/libraries, not an observed runtime failure."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "9ad9bf421c2787a0b4a4cca2e7c12772f099ff68",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-029.md#air-hockey-webgl",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/index.html"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/src/main.js"
+          },
+          {
+            "path": "src/hockey.js",
+            "url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/src/hockey.js"
+          },
+          {
+            "path": "src/model.js",
+            "url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/src/model.js"
+          },
+          {
+            "path": "src/physics.js",
+            "url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/src/physics.js"
+          },
+          {
+            "path": "src/AI.js",
+            "url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/src/AI.js"
+          },
+          {
+            "path": "src/audio.js",
+            "url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/src/audio.js"
+          },
+          {
+            "path": "lib/three.min.js",
+            "url": "https://github.com/MortimerGoro/AirHockeyWebGL/blob/9ad9bf421c2787a0b4a4cca2e7c12772f099ff68/lib/three.min.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Puck/goal physics is planar Box2D simulation rendered on a 3D table. The dimension label describes that rendered board rather than free movement in three axes.",
+        "No upstream installation, build, tests or playtest, score round, input or Ogg playback occurred. A target-score field is not treated as proof of an enforced terminal victory; complete library/media provenance was not audited."
+      ]
+    },
+    {
+      "id": "gold-ring",
+      "name": "GOLD RING",
+      "repository_url": "https://github.com/mixerabc/gold-ring-archer",
+      "genres": [
+        "target archery",
+        "tournament",
+        "sports simulation"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/client/src/render/renderer.ts#L114",
+          "claim": "The real client main.ts boots Game, which creates its Three RenderPipeline and advances the live game. The pipeline directly constructs WebGLRenderer, with an optional Three WebGPURenderer branch when requested and available. It renders the authored 3D range, archer and projectile presentation rather than relying on a rendering wrapper."
+        },
+        "manifests": [
+          {
+            "path": "client/package.json",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/client/package.json",
+            "dependencies": {
+              "@dimforge/rapier3d-compat": "^0.21.0",
+              "gsap": "^3.15.0",
+              "howler": "^2.2.4",
+              "three": "^0.186.1",
+              "zustand": "^5.0.15"
+            },
+            "dev_dependencies": {
+              "@types/howler": "^2.2.13",
+              "@types/three": "^0.186.0",
+              "typescript": "~5.9.3",
+              "vite": "^7.3.7"
+            }
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "@types/node": "^24.10.0",
+              "tsx": "^4.23.15",
+              "typescript": "~5.9.3",
+              "vitest": "^3.2.7"
+            }
+          },
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/server/package.json",
+            "dependencies": {
+              "@fastify/cors": "^11.3.1",
+              "@fastify/helmet": "^13.2.0",
+              "@fastify/rate-limit": "^11.2.1",
+              "@gold-ring/shared": "*",
+              "fastify": "^5.12.7",
+              "pino": "^10.4.0",
+              "pino-pretty": "^13.2.0",
+              "tsx": "^4.23.15",
+              "ws": "^8.22.0",
+              "zod": "^4.6.7"
+            },
+            "dev_dependencies": {
+              "@types/node": "^24.10.0",
+              "@types/ws": "^8.18.2",
+              "typescript": "~5.9.3"
+            }
+          },
+          {
+            "path": "shared/package.json",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/shared/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Client manifest declares Three ^0.186.1, GSAP ^3.15.0, Zustand ^5.0.15, Howler ^2.2.4 and Rapier compat ^0.21.0. ASSETS/README say current arrow flight uses the shared deterministic integrator and Web Audio synthesis; Howler/Rapier are installed for optional recorded packs/future prop physics. Root/client/server/shared npm manifests are recorded. Optional Fastify/ws/Pino/Zod server services support leaderboards/daily seeds/multiplayer; Vite/TypeScript/Vitest are development tools."
+        ],
+        "framework_audit": "Actual game-entry, rendering and objective sources were inspected at this commit. Three.js owns the reviewed renderer; no R3F, A-Frame, Babylon.js, Unity runtime or replacement rendering engine was identified in that scoped entry/manifests. Project-authored gameplay/render helpers and other library roles are disclosed. Every transitive dependency and content file was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/client/src/competition/matchManager.ts#L162",
+        "claim": "Real arrow impacts in game.ts call addPlayerArrow, which applies timing penalties, records the scored arrow and closes a completed end. Match/ranking completion events lead to the session result path. Shared scoring rules and manager/game integration implement practice, ranking and match progression; full tournament/network play was not reproduced."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/LICENSE",
+        "additional_notices": [
+          "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/ASSETS.md"
+        ],
+        "notes": "Root LICENSE grants MIT project-code use. ASSETS lists procedural game art/audio under project MIT, Three.js code under MIT and platform-provided speech/fonts under platform terms. It separately lists GSAP's Standard no-charge license; no claim is made that all dependencies are MIT or that version-specific upstream/transitive terms were independently audited."
+      },
+      "demo": {
+        "url": "https://gold-ring-archer.vercel.app",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://api.github.com/repos/mixerabc/gold-ring-archer",
+        "notes": "Author repository metadata supplied this homepage when checked on 2026-10-24; the README's reviewed URLs describe local client/server instructions rather than this demo link. The text reader could not retrieve it. No game, speech, backend, ranking submission or deployment/source comparison ran."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/README.md",
+        "notes": "Source integrates target scoring, ends, ranking/match completion and results into the actual Game. README describes practice, tournament and optional online play; those broader flows and author screenshots/tests were not independently reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "e58f26e52d034512ff439279e6449b922bbaa733",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-029.md#gold-ring",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/README.md"
+          },
+          {
+            "path": "client/package.json",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/client/package.json"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/package.json"
+          },
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/server/package.json"
+          },
+          {
+            "path": "shared/package.json",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/shared/package.json"
+          },
+          {
+            "path": "client/index.html",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/client/index.html"
+          },
+          {
+            "path": "client/src/main.ts",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/client/src/main.ts"
+          },
+          {
+            "path": "client/src/render/renderer.ts",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/client/src/render/renderer.ts"
+          },
+          {
+            "path": "client/src/competition/matchManager.ts",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/client/src/competition/matchManager.ts"
+          },
+          {
+            "path": "client/src/competition/scoring.ts",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/client/src/competition/scoring.ts"
+          },
+          {
+            "path": "ASSETS.md",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/ASSETS.md"
+          },
+          {
+            "path": "client/src/game.ts",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/client/src/game.ts"
+          },
+          {
+            "path": "shared/src/rules/scoring.ts",
+            "url": "https://github.com/mixerabc/gold-ring-archer/blob/e58f26e52d034512ff439279e6449b922bbaa733/shared/src/rules/scoring.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "README states that WebGPU falls back to WebGL2, while post-processing and the compound-scope render target are WebGL2-only in this build. Online play is documented as one five-end cumulative format without reconnect/ranked ladder; present compatibility is not tested.",
+        "Optional server features need their own backend configuration. A client-as-offline description is an author claim rather than a reproduced deployment result. Browser speech synthesis depends on platform voices.",
+        "No upstream installation, build, tests, playtest, pointer lock, speech/audio playback, server/multiplayer session, score submission or save write occurred. External library and platform terms remain separate from project MIT."
+      ]
     }
   ]
 }

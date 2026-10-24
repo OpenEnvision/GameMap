@@ -1437,6 +1437,62 @@
         "https://github.com/StarKnightt/river-morning/blob/e562bf3f913a7cc491bb0862302c7a9748d47806/src/core/Engine.ts#L116",
         "https://github.com/StarKnightt/river-morning/blob/e562bf3f913a7cc491bb0862302c7a9748d47806/src/fishing/FishingSim.ts#L1655"
       ]
+    },
+    {
+      "id": "glide-hockey",
+      "repository_url": "https://github.com/1to1-Digital-Solutions/glide-hockey",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "52688b2e1813d24424d562a4a07279c5d24be451",
+      "reason": "The actual GameCanvas imports R3F Canvas, Drei controls and React Three XR and renders through that Canvas. These packages being listed as devDependencies does not change the shipped rendering-wrapper architecture.",
+      "next_action": "Keep outside the direct-Three verified list unless a distinct imperative Three.js browser-game entry is supplied; do not infer purity from package grouping.",
+      "evidence_urls": [
+        "https://github.com/1to1-Digital-Solutions/glide-hockey/blob/52688b2e1813d24424d562a4a07279c5d24be451/package.json",
+        "https://github.com/1to1-Digital-Solutions/glide-hockey/blob/52688b2e1813d24424d562a4a07279c5d24be451/src/components/game/GameCanvas.tsx#L3"
+      ]
+    },
+    {
+      "id": "3d-voice-chess",
+      "repository_url": "https://github.com/HarikalarKutusu/3d-voice-chess",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "897ab6598460b5a5cae10f9f69fc1f10c6426efa",
+      "reason": "The actual 3D chess component uses @react-three/fiber and the client manifest declares R3F/Drei. Voice/STT functionality does not remove the rendering-wrapper dependency.",
+      "next_action": "Retain outside this direct-Three scope; do not run the microphone or speech server for a project already excluded by its renderer.",
+      "evidence_urls": [
+        "https://github.com/HarikalarKutusu/3d-voice-chess/blob/897ab6598460b5a5cae10f9f69fc1f10c6426efa/voice-chess-react/package.json",
+        "https://github.com/HarikalarKutusu/3d-voice-chess/blob/897ab6598460b5a5cae10f9f69fc1f10c6426efa/voice-chess-react/src/components/chess3D.tsx#L41",
+        "https://github.com/HarikalarKutusu/3d-voice-chess/blob/897ab6598460b5a5cae10f9f69fc1f10c6426efa/README.md"
+      ]
+    },
+    {
+      "id": "volleyball-strategy-simulator",
+      "repository_url": "https://github.com/aryanyaksh-art/volleyball-simulator",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "69a24bbc4653915744d2fd0750773bf558e37ef8",
+      "reason": "README explicitly describes a coaching/strategy tool rather than a game: lineup/rotation-legality editing, scripted play authoring, deterministic playback and tactical coverage visualisation. A Three.js 3D court and ball physics alone do not establish an implemented game objective.",
+      "next_action": "Keep in the non-game tool exclusion queue. Revisit only a distinct actual playable challenge/match implementation, without treating its current 3D visualisation as sufficient.",
+      "evidence_urls": [
+        "https://github.com/aryanyaksh-art/volleyball-simulator/blob/69a24bbc4653915744d2fd0750773bf558e37ef8/README.md#L10",
+        "https://github.com/aryanyaksh-art/volleyball-simulator/blob/69a24bbc4653915744d2fd0750773bf558e37ef8/package.json"
+      ]
+    },
+    {
+      "id": "castellan",
+      "repository_url": "https://github.com/otakuch/castellan",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "0a125db76cdafae41f09bdbf15065dbb0df869e7",
+      "reason": "Source implements direct Three.js castle/terrain building, running NPC settlement simulation and an eleven-condition holding assessment shown as a score out of 100. Under this collection's strict actual-game boundary, whether that self-directed builder/diagnostic assessment supplies the required game objective remains unresolved; it is not called an empty scene or a finished campaign.",
+      "next_action": "Retain the real building, simulation and score evidence. Establish the intended creative-sandbox/gameplay boundary and any progression/challenge rules before promoting it; do not invent resource expenditure, a terminal win or failure state.",
+      "evidence_urls": [
+        "https://github.com/otakuch/castellan/blob/0a125db76cdafae41f09bdbf15065dbb0df869e7/README.md#L36",
+        "https://github.com/otakuch/castellan/blob/0a125db76cdafae41f09bdbf15065dbb0df869e7/src/js/02-renderer-quality.js#L3",
+        "https://github.com/otakuch/castellan/blob/0a125db76cdafae41f09bdbf15065dbb0df869e7/src/js/22-interface.js#L126",
+        "https://github.com/otakuch/castellan/blob/0a125db76cdafae41f09bdbf15065dbb0df869e7/src/js/22-interface.js#L185",
+        "https://github.com/otakuch/castellan/blob/0a125db76cdafae41f09bdbf15065dbb0df869e7/src/js/23-frame.js#L60"
+      ]
     }
   ]
 }
