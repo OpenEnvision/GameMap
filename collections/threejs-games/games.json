@@ -11479,6 +11479,389 @@
         "GAME Protocol/KDD are authoring/validation tooling in this repository; the inspected browser renderer uses Three.js and local puzzle modules directly.",
         "Procedural board/labels are visible in source; no comprehensive dependency/asset audit, difficulty/solvability test, local server, build or playtest was run."
       ]
+    },
+    {
+      "id": "ashen-ring",
+      "name": "灰烬王冠 — Ashen Ring",
+      "repository_url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos",
+      "genres": [
+        "souls-like action",
+        "roguelike",
+        "dungeon combat"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r170 vendored; manifest ^0.170.0",
+        "render_evidence": {
+          "url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/js/engine/view.js#L221",
+          "claim": "The actual HTML/module entry creates a project View that directly constructs Three.js WebGLRenderer and standard Three.js post-processing. js/main.js runs its own requestAnimationFrame loop. The vendored Three.js header confirms revision 170 and MIT."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/package.json",
+            "dependencies": {
+              "three": "^0.170.0"
+            },
+            "dev_dependencies": {
+              "electron": "^33.0.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js ^0.170.0 is declared; the browser import map uses vendored r170 and standard Three.js addon post-processing. Project-authored movement/combat/world generation and synthesized audio. Node static server and optional Electron ^33 dev/desktop tooling; exact manifest recorded."
+        ],
+        "framework_audit": "The reviewed actual entry constructs Three.js rendering through project-authored modules. No R3F, A-Frame, Babylon.js, Unity or replacement engine renderer was identified in the entry/render path or declared manifests. Rules, UI, physics, tooling and platform helpers are disclosed; no transitive dependency audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/js/main.js#L759",
+        "claim": "Clearing rooms/bosses enables progression gates; descend advances depths and calls victory after the third depth. victory sets state to win, records earned marks/victories and shows result stats. A separate dying/dead flow handles defeat and return to the hub."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/LICENSE",
+        "additional_notices": [
+          "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/README.md",
+          "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/vendor/three.module.js"
+        ],
+        "notes": "Root LICENSE/package metadata grant MIT code use; the vendored Three.js header separately retains MIT. README describes original procedural models/textures/audio. No binary/vendor/complete asset chain-of-title audit is claimed, and the code grant is not extended to unrelated branding."
+      },
+      "demo": {
+        "url": "https://z-biz-game.github.io/z-biz-game-ashen-ring-cos/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/README.md",
+        "notes": "The pinned README supplies this author demo URL. The text reader could not retrieve it on this review date; browser availability, asset loading and gameplay remain unconfirmed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/README.md",
+        "notes": "The documented run loop combines procedural rooms, boss gates, relic choices, a hub and three depths; source establishes gate checks and distinct victory/death states. Advertised balance, browser verification and content coverage were not independently reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-018.md#ashen-ring",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/index.html"
+          },
+          {
+            "path": "js/engine/audio.js",
+            "url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/js/engine/audio.js"
+          },
+          {
+            "path": "js/engine/view.js",
+            "url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/js/engine/view.js"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/js/main.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/package.json"
+          },
+          {
+            "path": "vendor/three.module.js",
+            "url": "https://github.com/z-biz-game/z-biz-game-ashen-ring-cos/blob/cc60ea065a1cc2aaad0e349b38a96bbfb253ab6c/vendor/three.module.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Character travel/combat mainly uses an XZ floor with 3D models, camera, world geometry and effects; the scene label does not imply free XYZ flight.",
+        "Only vendored Three.js header lines 1-26 were inspected for revision/license; no full vendor or post-processing dependency audit occurred.",
+        "README describes original procedural geometry/textures/WebAudio and includes author-reported playtest/performance figures. Those authorship, balance and runtime reports are not our tests.",
+        "Electron is an optional desktop shell; no desktop build, art script, offline-cache operation, save operation or gameplay run was performed."
+      ]
+    },
+    {
+      "id": "threejs-chess-ironexcavater",
+      "name": "threejs-chess — IronExcavater",
+      "repository_url": "https://github.com/IronExcavater/threejs-chess",
+      "genres": [
+        "chess",
+        "local board strategy"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.174.0",
+        "render_evidence": {
+          "url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/src/render/scene.ts#L53",
+          "claim": "The actual TypeScript entry initializes its own scene and input controller. scene.ts directly creates Three.js WebGLRenderer and setAnimationLoop; GLTF/EXR/font loaders build an actual 3D chess board and pieces without a replacement rendering framework."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/package.json",
+            "dependencies": {
+              "three": "^0.174.0"
+            },
+            "dev_dependencies": {
+              "@eslint/js": "^9.39.5",
+              "@types/three": "^0.174.0",
+              "eslint": "^9.39.5",
+              "eslint-plugin-import": "^2.32.0",
+              "eslint-plugin-unused-imports": "^4.4.1",
+              "husky": "^9.1.7",
+              "lint-staged": "^16.4.0",
+              "prettier": "^3.9.6",
+              "typescript": "^6.0.3",
+              "typescript-eslint": "^8.65.0",
+              "vite": "^8.1.5",
+              "vitest": "^4.1.10"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js is the sole declared runtime package; its GLTFLoader, EXRLoader and FontLoader load game resources. Project-authored TypeScript chess logic/controller and DOM promotion UI, with Vite/Vitest/ESLint dev tooling; exact manifest retained."
+        ],
+        "framework_audit": "The reviewed actual entry constructs Three.js rendering through project-authored modules. No R3F, A-Frame, Babylon.js, Unity or replacement engine renderer was identified in the entry/render path or declared manifests. Rules, UI, physics, tooling and platform helpers are disclosed; no transitive dependency audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/src/engine/game.ts#L134",
+        "claim": "After a legal move, the local rules engine changes turns and checks whether the opponent is in check and has legal moves, setting checkmate or stalemate. The input controller consumes these results and displays the outcome; pawn promotion has a separate interaction."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/LICENSE",
+        "additional_notices": [
+          "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/public/assets/fonts/inter-regular.typeface.json"
+        ],
+        "notes": "Root LICENSE and package metadata say MIT for software. The embedded Inter typeface metadata names the Inter authors and SIL Open Font License 1.1, independently of the code grant. GLB chess models and HDRI environment provenance/rights were not independently established; no all-assets-MIT claim is made."
+      },
+      "demo": {
+        "url": "https://ironexcavater.github.io/threejs-chess/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/README.md",
+        "notes": "The pinned README supplies this author demo URL. The text reader could not retrieve it on this review date; browser availability, asset loading and gameplay remain unconfirmed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/README.md",
+        "notes": "A local 3D chess implementation with custom board/rules/pieces, promotion and checkmate/stalemate feedback. README supplies a demo; complete chess-rule fidelity, input paths and model loading were not tested."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "1c213d4ec480445a59de9816fbf4e59aa549af45",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-018.md#threejs-chess-ironexcavater",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/package.json"
+          },
+          {
+            "path": "public/assets/fonts/inter-regular.typeface.json",
+            "url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/public/assets/fonts/inter-regular.typeface.json"
+          },
+          {
+            "path": "src/engine/game.ts",
+            "url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/src/engine/game.ts"
+          },
+          {
+            "path": "src/input/controller.ts",
+            "url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/src/input/controller.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/src/main.ts"
+          },
+          {
+            "path": "src/render/resources.ts",
+            "url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/src/render/resources.ts"
+          },
+          {
+            "path": "src/render/scene.ts",
+            "url": "https://github.com/IronExcavater/threejs-chess/blob/1c213d4ec480445a59de9816fbf4e59aa549af45/src/render/scene.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Chess rules live on an 8×8 board; actual 3D models, environment lighting and camera do not imply 3D chess rules or free-world movement.",
+        "The bundled Inter typeface metadata explicitly states SIL OFL 1.1. Only font metadata was reviewed; glyph outlines and the large GLB/EXR binaries were not audited.",
+        "No per-model/HDRI grant ledger was found in the reviewed notices. Their provenance and permissions remain unverified rather than being generalized from the MIT code grant.",
+        "Castling, en passant, draw rules, promotion edge cases, legal-move correctness and rendering/performance were not independently exercised; this is not a certified chess implementation."
+      ]
+    },
+    {
+      "id": "chess-3d-vioancer",
+      "name": "Chess-3D — Vioancer",
+      "repository_url": "https://github.com/Vioancer/3D-Chess-Game",
+      "genres": [
+        "chess",
+        "AI opponent",
+        "board strategy"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.143.0",
+        "render_evidence": {
+          "url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/src/game/Game.ts#L39",
+          "claim": "The actual src/index.ts entry drives a custom game loop. Game directly creates Three.js WebGLRenderer and GLTFLoader, using project-authored BasicScene/ChessScene classes; no declarative renderer is used."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/package.json",
+            "dependencies": {
+              "cannon-es": "0.19.0",
+              "cannon-es-debugger": "1.0.0",
+              "chess.js": "0.13.4",
+              "express": "4.18.1",
+              "lodash.clonedeep": "4.5.0",
+              "three": "0.143.0",
+              "web-worker": "1.2.0"
+            },
+            "dev_dependencies": {
+              "@commitlint/cli": "17.0.3",
+              "@commitlint/config-conventional": "17.0.3",
+              "@types/chess.js": "0.13.3",
+              "@types/lodash.clonedeep": "4.5.7",
+              "@types/three": "0.143.0",
+              "@typescript-eslint/eslint-plugin": "5.32.0",
+              "@typescript-eslint/parser": "5.32.0",
+              "copy-webpack-plugin": "11.0.0",
+              "cssnano": "5.1.13",
+              "eslint": "8.21.0",
+              "eslint-plugin-prettier": "4.2.1",
+              "husky": "8.0.1",
+              "lint-staged": "13.0.3",
+              "postcss": "8.4.16",
+              "postcss-cli": "10.0.0",
+              "prettier": "2.7.1",
+              "ts-loader": "9.3.1",
+              "ts-node": "10.9.1",
+              "webpack": "5.74.0",
+              "webpack-cli": "4.10.0",
+              "webpack-dev-server": "4.9.3"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js 0.143.0 with cannon-es/debugger, chess.js 0.13.4 rules, lodash.clonedeep, web-worker and Express. Project-authored scenes and minimax AI integration; TypeScript/Webpack/PostCSS tooling and exact dependency versions are recorded."
+        ],
+        "framework_audit": "The reviewed actual entry constructs Three.js rendering through project-authored modules. No R3F, A-Frame, Babylon.js, Unity or replacement engine renderer was identified in the entry/render path or declared manifests. Rules, UI, physics, tooling and platform helpers are disclosed; no transitive dependency audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/src/logic/ChessGameEngine/ChessGameEngine.ts#L115",
+        "claim": "The chess.js-backed engine checks game_over after human/AI turns and calls the registered end callback. Game consumes it to display checkmate wins/losses or stalemate/repetition/draw results. README describes a minimax AI worker, and the worker/engine entry paths are present."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/LICENSE.MD",
+        "additional_notices": [
+          "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/README.md"
+        ],
+        "notes": "LICENSE.MD and package metadata grant MIT software use. README attributes the 3D models to the author; this does not constitute independent clearance of every binary/texture or replace third-party component notices."
+      },
+      "demo": {
+        "url": "https://chess-3d-mja9.vercel.app/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/README.md",
+        "notes": "The pinned README supplies this author demo URL. The text reader could not retrieve it on this review date; browser availability, asset loading and gameplay remain unconfirmed."
+      },
+      "maturity": {
+        "status": "legacy-release",
+        "basis_url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/README.md",
+        "notes": "An author-published 3D chess edition with Three.js 0.143.0, a Node 16.4.2 target and Webpack 5 tooling. Source includes rule-based results and AI integration; current browser/server support and model loading remain unconfirmed."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-018.md#chess-3d-vioancer",
+        "reviewed_files": [
+          {
+            "path": "LICENSE.MD",
+            "url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/LICENSE.MD"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/package.json"
+          },
+          {
+            "path": "src/game/Game.ts",
+            "url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/src/game/Game.ts"
+          },
+          {
+            "path": "src/index.ts",
+            "url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/src/index.ts"
+          },
+          {
+            "path": "src/logic/ChessGameEngine/ChessGameEngine.ts",
+            "url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/src/logic/ChessGameEngine/ChessGameEngine.ts"
+          },
+          {
+            "path": "src/logic/GameInterface/GameInterface.ts",
+            "url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/src/logic/GameInterface/GameInterface.ts"
+          },
+          {
+            "path": "src/scenes/BasicScene/BasicScene.ts",
+            "url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/src/scenes/BasicScene/BasicScene.ts"
+          },
+          {
+            "path": "src/scenes/ChessScene/ChessScene.ts",
+            "url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/src/scenes/ChessScene/ChessScene.ts"
+          },
+          {
+            "path": "static/index.html",
+            "url": "https://github.com/Vioancer/3D-Chess-Game/blob/53b6b768e1a5d3fcde14c16f8c81ea3cc4eac9b8/static/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Standard planar chess rules are rendered with actual Blender-authored 3D pieces/board; this is not a free-roaming game.",
+        "README says the author created the 3D models in Blender. That is an author claim, not an independent audit of each model/texture or dependency license.",
+        "The manifest pins a legacy Node target and older Three.js/Cannon/chess.js versions; no install/build/upgrade or compatibility test was performed.",
+        "AI strength, worker startup, rule correctness, physics interactions and end-state presentation were not exercised."
+      ]
     }
   ]
 }

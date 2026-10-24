@@ -840,6 +840,85 @@
         "https://github.com/spwoodall/keepers-page/blob/ef2632a6b460291266e792fd6804692e5ec42ed0/README.md",
         "https://github.com/spwoodall/keepers-page/blob/ef2632a6b460291266e792fd6804692e5ec42ed0/game.js"
       ]
+    },
+    {
+      "id": "multi-magic-dungeon-web",
+      "repository_url": "https://github.com/dschonholtz/MultiMagicDungeonWeb",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "fe2c847f15cee1cbe53afda4eb13fb5e88fa3366",
+      "reason": "The entry directly renders Three.js, has multiplayer/offline movement, spells, traps and killable voxel dragons, but the advertised dungeon-building/raid/duel completion loop was not established by the reviewed entry. A chest still shows 'Treasure awaits' without a proven reward/result flow, and imported character/Meshy-model grants were not located.",
+      "next_action": "Verify a concrete implemented objective/result and the model/asset terms before promotion; distinguish the current exploration/combat prototype from planned README features. No Meshy/API/model-generation or server process was run.",
+      "evidence_urls": [
+        "https://github.com/dschonholtz/MultiMagicDungeonWeb/blob/fe2c847f15cee1cbe53afda4eb13fb5e88fa3366/README.md",
+        "https://github.com/dschonholtz/MultiMagicDungeonWeb/blob/fe2c847f15cee1cbe53afda4eb13fb5e88fa3366/LICENSE",
+        "https://github.com/dschonholtz/MultiMagicDungeonWeb/blob/fe2c847f15cee1cbe53afda4eb13fb5e88fa3366/index.html",
+        "https://github.com/dschonholtz/MultiMagicDungeonWeb/blob/fe2c847f15cee1cbe53afda4eb13fb5e88fa3366/server/package.json"
+      ]
+    },
+    {
+      "id": "multi-magic-dungeon-elias-fork",
+      "repository_url": "https://github.com/eliaslotfi/MultiMagicDungeonWeb",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "1baf35dc27e98dbbb66a41af4ad993a702633a0f",
+      "reason": "GitHub repository metadata identifies this as a fork of dschonholtz/MultiMagicDungeonWeb; its README describes the same titled game. No separately verified distinct game was established, so it is retained for dedup rather than counted again.",
+      "next_action": "Track the primary repository; reconsider only a distinct, independently verified game edition rather than assuming the fork commit is identical.",
+      "evidence_urls": [
+        "https://github.com/eliaslotfi/MultiMagicDungeonWeb/blob/1baf35dc27e98dbbb66a41af4ad993a702633a0f/README.md",
+        "https://github.com/eliaslotfi/MultiMagicDungeonWeb/blob/1baf35dc27e98dbbb66a41af4ad993a702633a0f/LICENSE"
+      ]
+    },
+    {
+      "id": "kokiri-forest",
+      "repository_url": "https://github.com/btjones-me/kokiri-forest",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "638353fbf36478657622b9c6ff969ff17fa7e464",
+      "reason": "MIT code is available, but README/THIRD_PARTY_NOTICES explicitly exclude Nintendo/Grezzo models, textures, rigs and music. A fresh checkout only shows missing-asset setup and has no playable asset-free fallback; required compatible content must be supplied separately.",
+      "next_action": "Keep in the restricted-assets queue until a legally cleared open-asset playable edition exists; do not download/import commercial game assets or infer their rights from the MIT software notice.",
+      "evidence_urls": [
+        "https://github.com/btjones-me/kokiri-forest/blob/638353fbf36478657622b9c6ff969ff17fa7e464/README.md",
+        "https://github.com/btjones-me/kokiri-forest/blob/638353fbf36478657622b9c6ff969ff17fa7e464/LICENSE",
+        "https://github.com/btjones-me/kokiri-forest/blob/638353fbf36478657622b9c6ff969ff17fa7e464/THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "id": "fishing-wloverde",
+      "repository_url": "https://github.com/wloverde/fishing",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "2bfd76af198603e8de22d0fc9b40371b757a7096",
+      "reason": "The reviewed commit contains only README.md, LICENSE and .gitignore; there is no implemented game source or renderer to verify despite the Three.js fishing description.",
+      "next_action": "Reconsider when actual playable game source and rendering/objective evidence are published.",
+      "evidence_urls": [
+        "https://github.com/wloverde/fishing/blob/2bfd76af198603e8de22d0fc9b40371b757a7096/README.md",
+        "https://github.com/wloverde/fishing/blob/2bfd76af198603e8de22d0fc9b40371b757a7096/LICENSE"
+      ]
+    },
+    {
+      "id": "minigolf-binar-fork",
+      "repository_url": "https://github.com/BinarO26/MiniGolf-ThreeJS",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "2533512b51b138dd8833ab3fc3f8e0f2aec0bd41",
+      "reason": "This is a fork of joaovalentee/MiniGolf-ThreeJS. The reviewed ten-file tree contains game/physics/vendor source and a texture but no project LICENSE or README establishing a code grant; render/objective review is unfinished.",
+      "next_action": "Review the primary upstream and establish project/asset terms before inclusion. Physics helpers alone are not a renderer exclusion, and no license is guessed.",
+      "evidence_urls": [
+        "https://github.com/BinarO26/MiniGolf-ThreeJS/blob/2533512b51b138dd8833ab3fc3f8e0f2aec0bd41/index.html"
+      ]
+    },
+    {
+      "id": "goofy-golf",
+      "repository_url": "https://github.com/sixboy666/goofy-golf",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "81a81dd3fbb0c28776f9fcc9f72ed4b74148bfcb",
+      "reason": "The source tree contains a Three.js mini-golf entry and game modules, but no project LICENSE or README/full permission grant was found. Renderer/objective and asset provenance review are incomplete.",
+      "next_action": "Clarify the project-code grant and complete source/objective review; do not treat public source availability as an open-source license.",
+      "evidence_urls": [
+        "https://github.com/sixboy666/goofy-golf/blob/81a81dd3fbb0c28776f9fcc9f72ed4b74148bfcb/index.html"
+      ]
     }
   ]
 }
