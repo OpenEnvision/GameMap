@@ -14180,6 +14180,696 @@
         "Optional song import/separation, lyrics, microphone, native controllers, packaging and online/tunnel features have substantial additional tools and services. They were not exercised or license-audited transitively; the synthetic demo path was inspected but not run.",
         "No upstream npm/Python/Rust install, build, tests, playtest, model download, paid service or media acquisition occurred. Bundled human-model and third-party asset provenance was not exhaustively audited."
       ]
+    },
+    {
+      "id": "echo-maze-overdrive",
+      "name": "Echo Maze Overdrive",
+      "repository_url": "https://github.com/FitsumMehari/game-echo-maze",
+      "genres": [
+        "first-person",
+        "sonar stealth",
+        "maze"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.184.0",
+        "render_evidence": {
+          "url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/src/game/Game.ts#L105",
+          "claim": "The actual main.ts calls app/boot, which creates Game and drives its tick/render through renderer.setAnimationLoop. Game directly constructs THREE.WebGLRenderer and the Three.js scene, with procedural maze/sonar presentation."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/package.json",
+            "dependencies": {
+              "three": "^0.184.0"
+            },
+            "dev_dependencies": {
+              "@eslint/js": "^9.30.1",
+              "@playwright/test": "^1.54.1",
+              "@types/three": "^0.184.0",
+              "eslint": "^9.30.1",
+              "prettier": "^3.6.2",
+              "typescript": "~6.0.2",
+              "typescript-eslint": "^8.35.1",
+              "vite": "^8.0.10",
+              "vite-plugin-pwa": "^1.0.1",
+              "vitest": "^3.2.4"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js, project-authored maze generation, collision/hunter AI and sonar rendering, WebAudio, TypeScript/Vite and optional PWA build support. index.html requests Google Fonts IBM Plex Mono/Syne. Exact runtime/development manifest versions are recorded."
+        ],
+        "framework_audit": "Actual entry and game/render code were inspected: Three.js is invoked directly through project-authored helpers. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. DOM UI, native browser APIs, build/network and optional service helpers are separately disclosed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/src/game/endCheck.ts#L33",
+        "claim": "The end checker tests exit proximity and the echo-key requirement, then records a graded run and enters won state. A hunter in catch range instead records failure and enters lost state; hiding suppresses the catch test."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/LICENSE",
+        "additional_notices": [
+          "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/index.html"
+        ],
+        "notes": "Root LICENSE is MIT game code. README describes procedural world/spatial audio; no blanket originality audit is claimed. Google Fonts requested by index.html keep separate font terms that were not independently audited."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/README.md",
+        "notes": "No author-published public game URL was located in the reviewed README or repository metadata. Local development/test instructions are not cataloged as public demos; no game, audio, microphone, PWA installation or test hook ran."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/README.md",
+        "notes": "README calls it a technical playground with implemented game missions, procedural generation and hunter systems. Actual win/loss code was inspected; package version 1.0.0 is metadata, not proof of a stable tested release."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "febc8db353b7bddb37ce9eaac5198ad83c032574",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-023.md#echo-maze-overdrive",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/index.html"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/src/main.ts"
+          },
+          {
+            "path": "src/game/Game.ts",
+            "url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/src/game/Game.ts"
+          },
+          {
+            "path": "src/game/endCheck.ts",
+            "url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/src/game/endCheck.ts"
+          },
+          {
+            "path": "src/app/boot.ts",
+            "url": "https://github.com/FitsumMehari/game-echo-maze/blob/febc8db353b7bddb37ce9eaac5198ad83c032574/src/app/boot.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "No upstream install, build, unit/browser tests or playtest occurred. Generation solvability, accessibility, sonar/audio balance, controls and browser support remain source reviewed only.",
+        "The first-person maze renders in 3D while player/hunter navigation is mainly on the floor plane. External font availability/license details and complete asset provenance were not audited."
+      ]
+    },
+    {
+      "id": "out-of-the-box",
+      "name": "OUT OF THE BOX",
+      "repository_url": "https://github.com/tanuu5/out-of-the-box",
+      "genres": [
+        "stealth",
+        "escape",
+        "action"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/src/render/Pipeline.ts#L131",
+          "claim": "The real main.ts initializes Game, whose Pipeline directly constructs THREE.WebGLRenderer and Three.js post-processing passes. Project code owns the lab scene, player/observer systems and update/render loop."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/package.json",
+            "dependencies": {
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.186.0",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js core/example post-processing, own player/guard/vision/checkpoint and in-game board systems, procedural geometry/shaders and WebAudio, TypeScript/Vite. Google Fonts M PLUS 1 Code, Orbitron and Rajdhani are explicitly credited by the README."
+        ],
+        "framework_audit": "Actual entry and game/render code were inspected: Three.js is invoked directly through project-authored helpers. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. DOM UI, native browser APIs, build/network and optional service helpers are separately disclosed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/src/Game.ts#L947",
+        "claim": "Reaching the exit calls beginEnding. The ending records the final sector and completed escape, updates escape/best-time progress and presents the ending; capture/reset and checkpoint handlers preserve retry/progression state."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/LICENSE",
+        "additional_notices": [
+          "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/README.md",
+          "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/index.html"
+        ],
+        "notes": "Root code is MIT. README says game characters/world/writing and synthesized visuals/audio are original, and separately credits the three Google Fonts under SIL OFL. Those author statements are retained without claiming a complete originality or independent font-grant audit."
+      },
+      "demo": {
+        "url": "https://tanuu5.github.io/out-of-the-box/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/README.md",
+        "notes": "The README's browser-game URL could not be retrieved by the text reader. No game, storage, audio or in-game board action was executed; reader failure does not establish an offline deployment."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/README.md",
+        "notes": "An implemented stealth/escape game with checkpoints, capture/retry and an exit/ending flow is present. Fictional AI/lab/board presentation is game content; no real model service was invoked or verified."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "31f6147c463b329bf6c554026857e9d133c6f65d",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-023.md#out-of-the-box",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/index.html"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/src/main.ts"
+          },
+          {
+            "path": "src/Game.ts",
+            "url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/src/Game.ts"
+          },
+          {
+            "path": "src/render/Pipeline.ts",
+            "url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/src/render/Pipeline.ts"
+          },
+          {
+            "path": "src/systems/Board.ts",
+            "url": "https://github.com/tanuu5/out-of-the-box/blob/31f6147c463b329bf6c554026857e9d133c6f65d/src/systems/Board.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "No upstream install, build, tests or playtest occurred. Detection fairness, checkpoint behavior, input, graphics, audio and completion timing remain untested.",
+        "The 3D lab has constrained ground movement. In-game board/telemetry and external font behavior were source reviewed without execution; font licenses retain their separate scope."
+      ]
+    },
+    {
+      "id": "echofold",
+      "name": "ECHOFOLD",
+      "repository_url": "https://github.com/Ghostzy0/echofold",
+      "genres": [
+        "puzzle",
+        "time loop",
+        "cooperation with recordings"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 (HTML CDN import map)",
+        "render_evidence": {
+          "url": "https://github.com/Ghostzy0/echofold/blob/7c395653b80731f11d3146e92758ed81651698ca/src/render/scene.js#L32",
+          "claim": "index.html imports the real main.js and maps three to the r160 module. createView directly creates THREE.WebGLRenderer/PerspectiveCamera; main steps the project simulation and submits the view render."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Ghostzy0/echofold/blob/7c395653b80731f11d3146e92758ed81651698ca/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "CDN Three.js r160, plain JavaScript modules, project-authored fixed-step simulation/input/rooms, procedural scene/shaders, DOM HUD and WebAudio synthesis. package.json contains scripts but declares no runtime/dev dependencies."
+        ],
+        "framework_audit": "Actual entry and game/render code were inspected: Three.js is invoked directly through project-authored helpers. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. DOM UI, native browser APIs, build/network and optional service helpers are separately disclosed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Ghostzy0/echofold/blob/7c395653b80731f11d3146e92758ed81651698ca/src/sim/simulate.js#L100",
+        "claim": "The player can record motion as replaying echoes to cooperate with switches/rooms and move shards. A living, non-recording player wins only after all shards are deposited and the exit is reached; the simulator emits the win event consumed by the main game."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/Ghostzy0/echofold/blob/7c395653b80731f11d3146e92758ed81651698ca/LICENSE",
+        "additional_notices": [],
+        "notes": "Root source LICENSE is MIT. The scene and README describe generated geometry and asset-free procedural audio. The CDN Three.js library retains its own MIT notice; no complete dependency or originality audit is claimed."
+      },
+      "demo": {
+        "url": "https://thefadghost.github.io/echofold/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/Ghostzy0/echofold/blob/7c395653b80731f11d3146e92758ed81651698ca/README.md",
+        "notes": "README links this author deployment even though the source repository uses a different owner name. The text reader could not retrieve it; no game, solver, verification script, audio or local server ran."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Ghostzy0/echofold/blob/7c395653b80731f11d3146e92758ed81651698ca/README.md",
+        "notes": "Version 0.3.0 includes authored rooms, recording/replay mechanics, shard objectives and win progression. README solve evidence and model-authorship claims were not independently reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "7c395653b80731f11d3146e92758ed81651698ca",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-023.md#echofold",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/Ghostzy0/echofold/blob/7c395653b80731f11d3146e92758ed81651698ca/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Ghostzy0/echofold/blob/7c395653b80731f11d3146e92758ed81651698ca/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Ghostzy0/echofold/blob/7c395653b80731f11d3146e92758ed81651698ca/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Ghostzy0/echofold/blob/7c395653b80731f11d3146e92758ed81651698ca/index.html"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/Ghostzy0/echofold/blob/7c395653b80731f11d3146e92758ed81651698ca/src/main.js"
+          },
+          {
+            "path": "src/render/scene.js",
+            "url": "https://github.com/Ghostzy0/echofold/blob/7c395653b80731f11d3146e92758ed81651698ca/src/render/scene.js"
+          },
+          {
+            "path": "src/sim/simulate.js",
+            "url": "https://github.com/Ghostzy0/echofold/blob/7c395653b80731f11d3146e92758ed81651698ca/src/sim/simulate.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Rooms render volumetric 3D scenery/actors, while simulation movement is on an XZ floor plane; this is not free 3D movement.",
+        "No upstream install, tests, solver/verification, build or playtest occurred. Published room-solution claims and current CDN/browser compatibility remain unverified."
+      ]
+    },
+    {
+      "id": "projection",
+      "name": "Projection",
+      "repository_url": "https://github.com/Noamshalom/projection",
+      "genres": [
+        "puzzle",
+        "spatial reasoning",
+        "orthographic projection"
+      ],
+      "dimension": "3d-perspective",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (^0.128.0 manifest; HTML UMD)",
+        "render_evidence": {
+          "url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/src/stage.js#L64",
+          "claim": "Stage directly constructs THREE.WebGLRenderer/PerspectiveCamera for interactive sculptures. React/ReactDOM implement the DOM quiz UI. build.mjs bundles the real main.jsx/app and binds its imports to React 18.3.1/Three r128 UMD scripts from the HTML template; no R3F renderer is used."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/package.json",
+            "dependencies": {
+              "react": "^18.3.1",
+              "react-dom": "^18.3.1",
+              "three": "^0.128.0"
+            },
+            "dev_dependencies": {
+              "esbuild": "^0.21.5"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js r128, React/ReactDOM 18 DOM UI, custom sculpture/projection/puzzle code, WebAudio and esbuild. The HTML template loads React/Three from cdnjs and Inter from Google Fonts; it is a single built HTML file with external runtime resources."
+        ],
+        "framework_audit": "Actual entry and game/render code were inspected: Three.js is invoked directly through project-authored helpers. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. DOM UI, native browser APIs, build/network and optional service helpers are separately disclosed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/src/ui/modes.jsx#L57",
+        "claim": "A player's answer is checked against the generated option, reports correctness and response time, flies the sculpture camera to the queried view and reveals matching/difference overlays. Correct quick-round answers auto-advance; other modes implement additional projection questions."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/LICENSE",
+        "additional_notices": [
+          "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/src/index.html"
+        ],
+        "notes": "Root code is MIT. Generated sculpture/quiz code was reviewed; no complete originality audit is claimed. React/Three retain separate terms and the requested Inter font has its own terms, not a blanket game-code MIT grant."
+      },
+      "demo": {
+        "url": "https://noamshalom.github.io/projection/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/README.md",
+        "notes": "README links the hosted game. The text reader could not retrieve it; no browser rendering, quiz, build or author's geometry/puzzle verifier was run."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/README.md",
+        "notes": "Multiple interactive question modes, generated sculpture/answer data, per-answer feedback and progression are implemented. The author's all-puzzles-verifiable and device-support claims were not independently tested."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "5bc531cd47585be18b1815580452ad9552a2deb2",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-023.md#projection",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/package.json"
+          },
+          {
+            "path": "src/index.html",
+            "url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/src/index.html"
+          },
+          {
+            "path": "src/main.jsx",
+            "url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/src/main.jsx"
+          },
+          {
+            "path": "src/stage.js",
+            "url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/src/stage.js"
+          },
+          {
+            "path": "src/ui/app.jsx",
+            "url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/src/ui/app.jsx"
+          },
+          {
+            "path": "src/ui/modes.jsx",
+            "url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/src/ui/modes.jsx"
+          },
+          {
+            "path": "build.mjs",
+            "url": "https://github.com/Noamshalom/projection/blob/5bc531cd47585be18b1815580452ad9552a2deb2/build.mjs"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The scene is a real 3D sculpture used for orthographic-projection questions; the dimension label denotes projection reasoning, not a freely navigable world.",
+        "No upstream install, build, verifier, tests or playtest occurred. The output depends on CDN/library/font availability or cache; its one-file format is not treated as proof of full offline operation. The older Three.js r128 path was not compatibility-tested."
+      ]
+    },
+    {
+      "id": "misty-bunny",
+      "name": "Misty Bunny",
+      "repository_url": "https://github.com/Bynzski/misty-bunny",
+      "genres": [
+        "first-person",
+        "exploration",
+        "puzzle"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/src/core/engine.js#L66",
+          "claim": "The actual main.js boots the custom engine/game, whose engine directly creates THREE.WebGLRenderer/PerspectiveCamera and renders the constructed tower. Project world, puzzle, interaction and audio helpers sit on Three.js rather than another engine."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/package.json",
+            "dependencies": {
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "puppeteer-core": "^23.11.1",
+              "vite": "^7.1.5"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js and its example post-processing, project-authored FPS movement/collision/interaction, world geometry/puzzles and WebAudio. Vite and Puppeteer are development dependencies. Author-generated material maps are baked with a Blender tool before runtime."
+        ],
+        "framework_audit": "Actual entry and game/render code were inspected: Three.js is invoked directly through project-authored helpers. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. DOM UI, native browser APIs, build/network and optional service helpers are separately disclosed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/src/puzzles/lens.js#L155",
+        "claim": "Puzzle progress callbacks advance sluice/gate/lens objectives. Solving the final lens calls progress and then finish, which game.js routes to the implemented ending screen; the tower has interactive clues and puzzle state rather than being only an explorable model."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/LICENSE",
+        "additional_notices": [
+          "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/README.md"
+        ],
+        "notes": "Root source LICENSE is MIT. README says scene/audio/geometry are generated and explains that supplied PBR maps are baked from project-authored procedural height fields using the included Blender pipeline. The pipeline and every binary/map were not executed or independently originality-audited."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/README.md",
+        "notes": "No author-published public game URL was located in the reviewed README or repository metadata. Screenshots and localhost instructions are not treated as live demos; no game, audio, Blender pipeline or development browser ran."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/README.md",
+        "notes": "Source implements a continuous first-person tower, clue reading, puzzle progress and an ending. The author's visual/performance and full-playthrough/solution claims are not reproduced by this source review."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-023.md#misty-bunny",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/index.html"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/src/main.js"
+          },
+          {
+            "path": "src/core/engine.js",
+            "url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/src/core/engine.js"
+          },
+          {
+            "path": "src/game.js",
+            "url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/src/game.js"
+          },
+          {
+            "path": "src/art/pbr.js",
+            "url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/src/art/pbr.js"
+          },
+          {
+            "path": "src/puzzles/lens.js",
+            "url": "https://github.com/Bynzski/misty-bunny/blob/ee4a7142e413b3e14ae3cc87c41473b6f71d0d4f/src/puzzles/lens.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "No upstream install, build, tests, browser playtest or material bake occurred. Puzzle fairness, movement/collision, graphics and completion remain unverified at runtime.",
+        "Baked PBR material images are supplied separately from runtime procedural geometry/audio; the code MIT grant is not presented as a comprehensive originality audit of every map or dependency."
+      ]
+    },
+    {
+      "id": "harness-hollow",
+      "name": "Harness Hollow",
+      "repository_url": "https://github.com/KrasimirKralev/harvest-hollow",
+      "genres": [
+        "cooperative farming",
+        "life simulation",
+        "progression"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/public/js/render/renderer.js#L228",
+          "claim": "The public HTML/main entry imports the project's view, whose render/index creates the renderer and submits the scene. createRenderer directly constructs THREE.WebGLRenderer and camera.js creates a PerspectiveCamera; farm/avatars/models are rendered through project-authored Three.js helpers."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/package.json",
+            "dependencies": {
+              "express": "^5.2.1",
+              "three": "^0.186.1",
+              "ws": "^8.22.0"
+            },
+            "dev_dependencies": {
+              "axe-core": "4.11.1",
+              "puppeteer-core": "^25.12.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js with Express/Node and ws for shared farm state, own simulation/render/UI code, CC0 model/music packs per project credits, and development-only axe/Puppeteer. The optional self-hosted Harvey mod helper documents external model/CLI access; it is separate from the basic farming loop and was not configured or invoked."
+        ],
+        "framework_audit": "Actual entry and game/render code were inspected: Three.js is invoked directly through project-authored helpers. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. DOM UI, native browser APIs, build/network and optional service helpers are separately disclosed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/shared/rules/actions/farming.js#L471",
+        "claim": "Shared registered rules implement planting, watering and maturity checks. Harvest validates targets, adds produce/XP/deed progress, clears the crop and increments its cycle. The authoritative server dispatches those rules and journals/broadcasts state, supporting concrete ongoing farming goals rather than only scenery."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/LICENSE",
+        "additional_notices": [
+          "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/public/assets/models/CREDITS.md",
+          "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/public/assets/audio/music/CREDITS.md",
+          "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/README.md"
+        ],
+        "notes": "Root game-code LICENSE is MIT. The two reviewed asset credit files list Quaternius/Kenney/other model packs and music as CC0, with source links. Those are project-supplied provenance statements; every origin grant, converted binary, icon/brand image, font and optional helper dependency was not independently audited."
+      },
+      "demo": {
+        "url": "https://harvest-hollow.up.railway.app",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/README.md",
+        "notes": "README's current Play URL is selected; repository metadata instead points to the GitHub Pages URL. The text reader could not retrieve the Play page. No farm account/pairing, server, socket, model/OAuth/CLI helper, mod, music or persistence action was used."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/README.md",
+        "notes": "The project is called Harness Hollow in its current README, while the repository remains harvest-hollow. Version 0.1.0 contains actual open-ended crop/economy/state progression; no terminal win or full feature/device validation is claimed."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "9b23e1a1fe2b19e117a3005efce21417052ded97",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-023.md#harness-hollow",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/package.json"
+          },
+          {
+            "path": "public/assets/models/CREDITS.md",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/public/assets/models/CREDITS.md"
+          },
+          {
+            "path": "public/assets/audio/music/CREDITS.md",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/public/assets/audio/music/CREDITS.md"
+          },
+          {
+            "path": "public/index.html",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/public/index.html"
+          },
+          {
+            "path": "public/js/main.js",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/public/js/main.js"
+          },
+          {
+            "path": "public/js/render/renderer.js",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/public/js/render/renderer.js"
+          },
+          {
+            "path": "public/js/render/scene.js",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/public/js/render/scene.js"
+          },
+          {
+            "path": "server/engine.js",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/server/engine.js"
+          },
+          {
+            "path": "public/js/render/index.js",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/public/js/render/index.js"
+          },
+          {
+            "path": "shared/rules/index.js",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/shared/rules/index.js"
+          },
+          {
+            "path": "shared/rules/actions/farming.js",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/shared/rules/actions/farming.js"
+          },
+          {
+            "path": "public/js/render/camera.js",
+            "url": "https://github.com/KrasimirKralev/harvest-hollow/blob/9b23e1a1fe2b19e117a3005efce21417052ded97/public/js/render/camera.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Core shared play requires the Node/WebSocket backend; it is not presented as a server-free static demo. Co-op synchronization, farm persistence, economy, controls and browser support were not playtested.",
+        "No upstream install, server, build, tests, paid model/service, native helper or playtest occurred. Harvey/provider internals and exhaustive media/license provenance are outside this source review."
+      ]
     }
   ]
 }

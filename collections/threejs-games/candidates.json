@@ -1180,6 +1180,66 @@
         "https://github.com/lisa-1002/fishing3d/blob/5b16dd5adf94b55d18d886e5dd3ea38879d6527d/README.md",
         "https://github.com/lisa-1002/fishing3d/blob/5b16dd5adf94b55d18d886e5dd3ea38879d6527d/CREDITS.md"
       ]
+    },
+    {
+      "id": "lidar-vr",
+      "repository_url": "https://github.com/BSoDium/Lidar",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "f10562d8935ddbc5b641a569383f9f9686bdb4ba",
+      "reason": "The actual App imports Canvas from @react-three/fiber and wraps its scene in the R3F WebXR components. The manifest declares Fiber/Drei/XR and a second legacy react-three-fiber package; this is outside the direct-Three rendering boundary.",
+      "next_action": "Reconsider only an independently verified imperative-Three version; Three.js being an underlying dependency does not make this host direct.",
+      "evidence_urls": [
+        "https://github.com/BSoDium/Lidar/blob/f10562d8935ddbc5b641a569383f9f9686bdb4ba/package.json",
+        "https://github.com/BSoDium/Lidar/blob/f10562d8935ddbc5b641a569383f9f9686bdb4ba/src/App.tsx#L6",
+        "https://github.com/BSoDium/Lidar/blob/f10562d8935ddbc5b641a569383f9f9686bdb4ba/src/components/MazeView.tsx",
+        "https://github.com/BSoDium/Lidar/blob/f10562d8935ddbc5b641a569383f9f9686bdb4ba/LICENSE"
+      ]
+    },
+    {
+      "id": "stick-rush",
+      "repository_url": "https://github.com/1to1-Digital-Solutions/stick-rush",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "34cb5c3fdbd3fd3ac93f2cb054caa4c734861046",
+      "reason": "The current browser host's GameCanvas imports and uses @react-three/fiber Canvas, Drei and React Three XR. These packages are listed under devDependencies, but source shows they render the actual game website; their manifest section does not make them irrelevant runtime code.",
+      "next_action": "A separately supported standalone imperative-Three host could be reviewed independently. Keep the present R3F browser path outside the verified list; do not infer a stack just from the project's godot directory name.",
+      "evidence_urls": [
+        "https://github.com/1to1-Digital-Solutions/stick-rush/blob/34cb5c3fdbd3fd3ac93f2cb054caa4c734861046/package.json",
+        "https://github.com/1to1-Digital-Solutions/stick-rush/blob/34cb5c3fdbd3fd3ac93f2cb054caa4c734861046/src/components/game/GameCanvas.tsx#L3",
+        "https://github.com/1to1-Digital-Solutions/stick-rush/blob/34cb5c3fdbd3fd3ac93f2cb054caa4c734861046/src/app/game/page.tsx",
+        "https://github.com/1to1-Digital-Solutions/stick-rush/blob/34cb5c3fdbd3fd3ac93f2cb054caa4c734861046/LICENSE"
+      ]
+    },
+    {
+      "id": "savoria",
+      "repository_url": "https://github.com/naticorrea-03/savoria",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "e2aec5713febdecf12f98e0f17a4ce81b503af48",
+      "reason": "Code LICENSE is MIT, but ASSET-LICENSE explicitly applies CC BY-NC 4.0 to active game images and reserves the logo/brand. Those noncommercial/restricted media terms cannot be replaced by the code MIT badge; full 3D gameplay/render scope has not been completed.",
+      "next_action": "Keep as source-open/restricted-assets candidate. Establish permissive replacements or applicable rights and complete actual renderer/objective review before promotion.",
+      "evidence_urls": [
+        "https://github.com/naticorrea-03/savoria/blob/e2aec5713febdecf12f98e0f17a4ce81b503af48/ASSET-LICENSE.md",
+        "https://github.com/naticorrea-03/savoria/blob/e2aec5713febdecf12f98e0f17a4ce81b503af48/LICENSE",
+        "https://github.com/naticorrea-03/savoria/blob/e2aec5713febdecf12f98e0f17a4ce81b503af48/CREDITS.md",
+        "https://github.com/naticorrea-03/savoria/blob/e2aec5713febdecf12f98e0f17a4ce81b503af48/README.md"
+      ]
+    },
+    {
+      "id": "glimmer-box-puzzle",
+      "repository_url": "https://github.com/17biubiu/glimmer-box-puzzle",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "57175a5daec33dd4a34f4b9209fd78611cb168b6",
+      "reason": "Root code is MIT. The bundled level notice identifies tutorial/1.xsb as David W. Skinner's Microban #44, asserts attribution-based redistribution and directs commercial releases to confirm the original author's terms. This review could not retrieve that linked primary page; no contrary license conclusion is inferred, but the applicable third-party level grant remains independently unconfirmed.",
+      "next_action": "Verify the original author's applicable terms/attribution or a properly licensed replacement, then finish the actual game entry/render/objective review. Retain the project's precise level-origin notice and do not call a failed reader fetch a revoked license or offline site.",
+      "evidence_urls": [
+        "https://github.com/17biubiu/glimmer-box-puzzle/blob/57175a5daec33dd4a34f4b9209fd78611cb168b6/public/levels/LICENSE-NOTE.md",
+        "https://github.com/17biubiu/glimmer-box-puzzle/blob/57175a5daec33dd4a34f4b9209fd78611cb168b6/LICENSE",
+        "https://github.com/17biubiu/glimmer-box-puzzle/blob/57175a5daec33dd4a34f4b9209fd78611cb168b6/README.en.md",
+        "https://github.com/17biubiu/glimmer-box-puzzle/blob/57175a5daec33dd4a34f4b9209fd78611cb168b6/package.json"
+      ]
     }
   ]
 }
