@@ -13068,6 +13068,600 @@
         "Experimental autobot/assist modes are author code/features; no AI training, benchmark or performance evaluation was executed.",
         "Collision/score correctness, localStorage high scores, restart, rendering and contemporary browser compatibility remain untested."
       ]
+    },
+    {
+      "id": "ian-yeh-parkour",
+      "name": "3D Parkour Game",
+      "repository_url": "https://github.com/ian-yeh/threejs-parkour",
+      "genres": [
+        "first-person",
+        "platformer",
+        "parkour"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.136.0",
+        "render_evidence": {
+          "url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/src/index.ts#L35",
+          "claim": "index.html loads src/index.ts, which directly constructs THREE.WebGLRenderer and repeatedly updates the player and renders the Three.js scene/camera. PointerLockControls and GLTFLoader come from Three.js examples."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/package.json",
+            "dependencies": {
+              "three": "^0.136.0"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.136.1",
+              "typescript": "^4.4.4",
+              "vite": "^2.7.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js PointerLockControls/GLTFLoader, project-authored movement/collision/level generation, TypeScript and Vite. Bundled GLB models and an MP3 are loaded; no separate physics engine is declared."
+        ],
+        "framework_audit": "The actual HTML/TypeScript entry, scene construction and game loop were inspected. Rendering is imperative Three.js through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed game entry or declared manifests. This is a source audit, not a transitive-dependency or runtime audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/src/Player.ts#L173",
+        "claim": "Touching the lava resets position and increments attempts. Reaching the ending platform increments the level, plays a level-up sound and rebuilds the parkour cubes; the active loop handles jumping and scene collisions."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/LICENSE",
+        "additional_notices": [],
+        "notes": "The root MIT LICENSE is present (retaining a 2019 ourcade copyright notice). This records the game-code license; the provenance and separate grants of the bundled GLB models, level-up MP3 and icon were not established, so MIT is not asserted to cover every asset."
+      },
+      "demo": {
+        "url": "https://threejs-parkour-pmle.vercel.app/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/README.md",
+        "notes": "README links the hosted game. The text reader could not retrieve the page on the review date; no browser, pointer-lock session or game ran. This fetch failure does not establish that the site is offline."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/README.md",
+        "notes": "A small first-person parkour implementation with level progression and retry counters. The npm name/version still describe a getting-started project; actual game objectives are verified in Player.ts rather than inferred from that name."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "9a63758b992a93727334a29728d37658ef4f64d5",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-021.md#ian-yeh-parkour",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/package.json"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/LICENSE"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/index.html"
+          },
+          {
+            "path": "src/index.ts",
+            "url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/src/index.ts"
+          },
+          {
+            "path": "src/Player.ts",
+            "url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/src/Player.ts"
+          },
+          {
+            "path": "src/Scene.ts",
+            "url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/src/Scene.ts"
+          },
+          {
+            "path": "src/Controller.ts",
+            "url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/src/Controller.ts"
+          },
+          {
+            "path": "src/GLTFModel.ts",
+            "url": "https://github.com/ian-yeh/threejs-parkour/blob/9a63758b992a93727334a29728d37658ef4f64d5/src/GLTFModel.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "No upstream install, build, tests or playtest was performed; loading, controls and current browser compatibility remain unverified.",
+        "Uses an older Three.js 0.136/Vite 2 toolchain and desktop pointer-lock controls. The model/audio/icon asset rights were not independently audited."
+      ]
+    },
+    {
+      "id": "aeon-4x",
+      "name": "AEON",
+      "repository_url": "https://github.com/qmw/aeon",
+      "genres": [
+        "turn-based strategy",
+        "4X",
+        "empire building"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.185.1",
+        "render_evidence": {
+          "url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/src/main.js#L17",
+          "claim": "The actual HTML loads src/main.js, which directly creates THREE.WebGLRenderer, a PerspectiveCamera and the game/render modules, then drives their updates with renderer.setAnimationLoop. Unit geometry includes boxes, spheres, cylinders and cones."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/package.json",
+            "dependencies": {
+              "three": "^0.185.1"
+            },
+            "dev_dependencies": {
+              "playwright": "^1.62.1",
+              "vite": "^8.2.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js core/examples, project-authored world generation, hex strategy rules, AI, geometry/shaders and DOM HUD. Runtime manifest declares only Three.js; Vite and Playwright are development tools, with exact versions preserved."
+        ],
+        "framework_audit": "The actual HTML/TypeScript entry, scene construction and game loop were inspected. Rendering is imperative Three.js through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed game entry or declared manifests. This is a source audit, not a transitive-dependency or runtime audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/src/game/turn.js#L805",
+        "claim": "Turn processing runs AI, world/research/income updates and victory evaluation. checkVictory records a winner for last surviving civilization, the science condition or the culture-plus-faith threshold; input orders move and attack on the hex board."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE is MIT. README describes runtime-generated art; reviewed unit code constructs procedural 3D geometry. That author statement and partial procedural-source inspection are not a comprehensive originality or third-party asset/dependency audit."
+      },
+      "demo": {
+        "url": "https://qmw.github.io/aeon/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/README.md",
+        "notes": "README links the author-hosted game. The text reader could not retrieve the page; no browser game or author-provided visual/performance/test harness was run."
+      },
+      "maturity": {
+        "status": "work-in-progress",
+        "basis_url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/README.md",
+        "notes": "The 0.1.0 project implements strategy turns and victory states. README retains a substantial outstanding rendering/visual-quality list; its screenshots, benchmark results and test claims are the author's, not independently reproduced here."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "c4e4134a4f450575d5be5ea421b3732c6746cd42",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-021.md#aeon-4x",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/index.html"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/src/main.js"
+          },
+          {
+            "path": "src/render/post.js",
+            "url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/src/render/post.js"
+          },
+          {
+            "path": "src/game/turn.js",
+            "url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/src/game/turn.js"
+          },
+          {
+            "path": "src/render/units.js",
+            "url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/src/render/units.js"
+          },
+          {
+            "path": "src/game/rules.js",
+            "url": "https://github.com/qmw/aeon/blob/c4e4134a4f450575d5be5ea421b3732c6746cd42/src/game/rules.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This entry covers a rendered 3D hex strategy board; movement and rule coordinates are hex-grid based, not free 3D navigation.",
+        "No upstream install, build, tests or playtest occurred. README visual-comparison, performance and automated-test claims were not independently verified; game balance and completion quality remain untested."
+      ]
+    },
+    {
+      "id": "lowpoly-roguelike-moba",
+      "name": "Lowpoly Roguelike MOBA",
+      "repository_url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba",
+      "genres": [
+        "action RPG",
+        "wave survival",
+        "co-op"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.169.0 (HTML import map)",
+        "render_evidence": {
+          "url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/src/game.js#L6",
+          "claim": "The HTML import map binds three to the r169 WebGPU build. src/main.js calls makeRenderer, which directly creates THREE.WebGPURenderer, initializes it and selects a WebGL backend when navigator.gpu is unavailable. Project code owns the scene and render loop."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "CDN-imported Three.js 0.169.0, PeerJS 1.5.4 for WebRTC signaling/data channels and qrcode 1.5.4 for invites. Procedural rigged characters/animation, own controls/combat and plain DOM UI. package.json has no dependency/devDependency entries; its start script invokes unpinned http-server via npx."
+        ],
+        "framework_audit": "The actual HTML/TypeScript entry, scene construction and game loop were inspected. Rendering is imperative Three.js through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed game entry or declared manifests. This is a source audit, not a transitive-dependency or runtime audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/src/game.js#L430",
+        "claim": "Waves spawn creeps/elites and every fifth wave spawns a boss. Combat applies damage and rewards experience/gold, level-ups offer upgrades, and zero local-player health stops the loop and shows wave/gold/level results."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE grants MIT game-code use. README and hero.js describe/build procedural characters and animation. CDN Three.js/PeerJS/QR packages keep their separate notices; no full dependency or asset-originality audit is claimed."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/README.md",
+        "notes": "No author-published public game URL was located in the reviewed README or repository metadata; README provides local serving instructions. No guessed Pages URL, local server, WebGPU initialization or peer session was used."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/README.md",
+        "notes": "README explicitly calls this a browser MOBA/roguelike prototype and the multiplayer design a lightweight proof of concept, with its limitations documented in docs/multiplayer.md."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "f149114fb857d5b45a08337654c0dda11730709d",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-021.md#lowpoly-roguelike-moba",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/index.html"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/src/main.js"
+          },
+          {
+            "path": "src/game.js",
+            "url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/src/game.js"
+          },
+          {
+            "path": "src/hero.js",
+            "url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/src/hero.js"
+          },
+          {
+            "path": "src/net.js",
+            "url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/src/net.js"
+          },
+          {
+            "path": "docs/multiplayer.md",
+            "url": "https://github.com/carlomigueldy/lowpoly-roguelike-moba/blob/f149114fb857d5b45a08337654c0dda11730709d/docs/multiplayer.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The arena and characters render in 3D, but click-to-move combat is primarily planar. WebGPU/WebGL fallback behavior was inspected in source and not exercised.",
+        "Networking relies on the public PeerJS broker; enemy movement is not fully authoritative, latency can cause damage/projectile divergence, and reconnect/readiness flows are incomplete. These are documented author limitations, not measured results.",
+        "No upstream install, build, tests or playtest occurred. CDN availability, browser support and the unpinned local-serving command were not verified by running them."
+      ]
+    },
+    {
+      "id": "dead-signal-exclusion-zone",
+      "name": "DEAD SIGNAL: EXCLUSION ZONE",
+      "repository_url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game",
+      "genres": [
+        "first-person shooter",
+        "extraction",
+        "zombie survival"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.0",
+        "render_evidence": {
+          "url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/src/render/Renderer.ts#L68",
+          "claim": "The HTML/main.ts entry creates Game, whose Renderer helper directly constructs THREE.WebGLRenderer and Three.js example post-processing passes. Game owns requestAnimationFrame and simulation; the helper submits the actual scene/composer render."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/package.json",
+            "dependencies": {
+              "three": "^0.186.0"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.186.0",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.0",
+              "vitest": "^5.0.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js and its EffectComposer/post-processing examples, project-authored FPS movement, combat, zombie AI, mission state machines and procedural WebAudio/geometry. Runtime manifest contains only Three.js; TypeScript, Vite and Vitest are development tools."
+        ],
+        "framework_audit": "The actual HTML/TypeScript entry, scene construction and game loop were inspected. Rendering is imperative Three.js through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed game entry or declared manifests. This is a source audit, not a transitive-dependency or runtime audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/src/core/Game.ts#L530",
+        "claim": "The mission tracks defense/hunt contracts, extraction unlock and a timed contamination deadline. A successful boarding interaction calls onVictory, followed by extraction animation and a victory result; health/deadline failures and restart states are also implemented."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE is MIT. README says meshes, textures and audio are generated at runtime and fonts use the system stack; reviewed renderer/game/mission code is consistent with the direct Three.js architecture. The author asset statement is recorded without claiming a complete originality audit."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/README.md",
+        "notes": "No author-hosted public game URL was located in the reviewed README or repository metadata. README's localhost and developer automation URLs are not cataloged as public demos; no local game or debug hook ran."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/README.md",
+        "notes": "A game implementation with contracts, extraction, failure/results and restart flow is present. Its version/name, authorship and model-generation claims are author metadata; neither a release nor the quality of a complete playthrough was independently verified."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "9805c3ef6297e8f518fdfb75f58a7af599334013",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-021.md#dead-signal-exclusion-zone",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/package.json"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/src/main.ts"
+          },
+          {
+            "path": "src/core/Game.ts",
+            "url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/src/core/Game.ts"
+          },
+          {
+            "path": "src/render/Renderer.ts",
+            "url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/src/render/Renderer.ts"
+          },
+          {
+            "path": "src/mission/Mission.ts",
+            "url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/src/mission/Mission.ts"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/blob/9805c3ef6297e8f518fdfb75f58a7af599334013/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "No upstream install, typecheck, build, Vitest run or playtest occurred. Desktop FPS/pointer-lock behavior, balance, audio, extraction timing and browser/GPU compatibility remain unverified.",
+        "Cataloged by its game title. The repository's model-name and generation claims are not independent verification of any model release or authorship."
+      ]
+    },
+    {
+      "id": "birodalmak",
+      "name": "BIRODALMAK (Empires)",
+      "repository_url": "https://github.com/lospolosadwords-dev/birodalmak",
+      "genres": [
+        "turn-based strategy",
+        "4X",
+        "empire building"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r160 (vendored module header)",
+        "render_evidence": {
+          "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/js/render3d/core3d.js#L65",
+          "claim": "The real js/main.js game offers a 3D button/keyboard view switch. In that mode it creates THREE.WebGLRenderer, a PerspectiveCamera, terrain/models and ray picking, synchronizes the live game state and renders frames. Click/command/double-click hooks execute the same tile orders, unit commands and city UI as the game, rather than only displaying a detached preview."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla JavaScript/DOM UI, locally vendored Three.js r160, project-authored camera/terrain/picking and GLB reader, CC0 asset/audio packs, WebAudio and optional PHP multiplayer. Classic canvas 2D mode also exists. index.html requests Google Fonts Cinzel/Inter; no npm manifest is present."
+        ],
+        "framework_audit": "The actual HTML/TypeScript entry, scene construction and game loop were inspected. Rendering is imperative Three.js through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed game entry or declared manifests. This is a source audit, not a transitive-dependency or runtime audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/js/game/victory.js#L760",
+        "claim": "The imported victory module checks domination, science, culture, religion and score paths, declares G.gameOver and emits the result. The interactive Three.js board shares the active turn/empire state and order handlers, with city management, exploration, combat and research."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/LICENSE",
+        "additional_notices": [
+          "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/NOTICE.md",
+          "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/ASSETS.md",
+          "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/AUDIO.md",
+          "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/assets/licenses/castle-kit.txt",
+          "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/assets/licenses/fantasy-town-kit.txt",
+          "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/assets/licenses/nature-kit.txt",
+          "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/assets/audio/licenses/mEarly.txt",
+          "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/assets/audio/licenses/ki.txt",
+          "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/lib/three.module.js",
+          "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/index.html"
+        ],
+        "notes": "Root game-code LICENSE is MIT. NOTICE/ASSETS/AUDIO describe CC0 sprites/models/audio; sampled Kenney Castle/Fantasy Town/Nature and audio source notices explicitly retain CC0. The vendored Three.js header is MIT. Google Fonts Cinzel/Inter requested by index.html retain separate font terms, which were not audited here. This is not a claim that every asset/font was exhaustively cleared."
+      },
+      "demo": {
+        "url": "https://skynet.lospolo.hu/birodalmak/en/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/README.md",
+        "notes": "README links the English deployment and https://lospolosadwords-dev.github.io/birodalmak/ mirror. Both text-reader attempts failed; this does not prove either deployment offline. README says Pages lacks PHP multiplayer; no game, login, multiplayer or score submission ran."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/README.md",
+        "notes": "The current game has a fully interactive Three.js mode integrated into the normal game UI, as well as the classic canvas view. Victory and order handlers are implemented; author status/test/visual claims were not independently reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "5757369a63445c1d71b82f850243d2dbe8ea6e0b",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-021.md#birodalmak",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/LICENSE"
+          },
+          {
+            "path": "ASSETS.md",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/ASSETS.md"
+          },
+          {
+            "path": "AUDIO.md",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/AUDIO.md"
+          },
+          {
+            "path": "NOTICE.md",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/NOTICE.md"
+          },
+          {
+            "path": "BIRODALMAK_STATUS.md",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/BIRODALMAK_STATUS.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/index.html"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/js/main.js"
+          },
+          {
+            "path": "js/game/victory.js",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/js/game/victory.js"
+          },
+          {
+            "path": "js/render3d/core3d.js",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/js/render3d/core3d.js"
+          },
+          {
+            "path": "js/render3d/view3d.js",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/js/render3d/view3d.js"
+          },
+          {
+            "path": "js/render3d/picking3d.js",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/js/render3d/picking3d.js"
+          },
+          {
+            "path": "assets/licenses/castle-kit.txt",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/assets/licenses/castle-kit.txt"
+          },
+          {
+            "path": "assets/licenses/fantasy-town-kit.txt",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/assets/licenses/fantasy-town-kit.txt"
+          },
+          {
+            "path": "assets/licenses/nature-kit.txt",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/assets/licenses/nature-kit.txt"
+          },
+          {
+            "path": "assets/audio/licenses/mEarly.txt",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/assets/audio/licenses/mEarly.txt"
+          },
+          {
+            "path": "assets/audio/licenses/ki.txt",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/assets/audio/licenses/ki.txt"
+          },
+          {
+            "path": "js/render3d/camera3d.js",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/js/render3d/camera3d.js"
+          },
+          {
+            "path": "js/render3d/models.js",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/js/render3d/models.js"
+          },
+          {
+            "path": "lib/three.module.js",
+            "url": "https://github.com/lospolosadwords-dev/birodalmak/blob/5757369a63445c1d71b82f850243d2dbe8ea6e0b/lib/three.module.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This record covers the selectable, interactive Three.js 3D board mode; classic 2D rendering remains available. Hex-grid rules stay planar, with camera orbit/zoom rather than free 3D movement. Detached 3D preview HTML pages were not used as gameplay evidence.",
+        "No upstream server, build, tests or playtest occurred. Multiplayer requires PHP and was not verified; author statements about supported features are distinct from runtime validation.",
+        "Only the vendored Three.js header/revision and targeted library fragments were reviewed, not its entire 1.27 MB implementation. Several asset notices were sampled, not every binary/media file; external Google Fonts terms were not independently reviewed."
+      ]
     }
   ]
 }

@@ -1024,6 +1024,51 @@
         "https://github.com/aryribeiro/skifree/blob/fcaa71befb5c7926621bad1a0644af498a8a60bd/LICENSE",
         "https://github.com/aryribeiro/skifree/blob/fcaa71befb5c7926621bad1a0644af498a8a60bd/src/main.js"
       ]
+    },
+    {
+      "id": "frontfall",
+      "repository_url": "https://github.com/nic0lasm/frontfall",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "78dabbf5da3cf938cc54f6569f758e919ef0fa15",
+      "reason": "Direct Three.js RTS source and a victory loop are present, but the shipped main experience is a flat map. The spherical renderer is explicitly a hidden ?view=globe prototype for whole-world maps, with unfinished labels/sampling/switching and a future interface milestone. Keep this borderline 3D-mode case outside the verified 3D-game list until its scope/maturity is settled.",
+      "next_action": "Revisit a release that exposes a supported interactive 3D globe in the normal game UI and review rendering, picking, live orders and remaining limitations together. Do not equate a Three.js flat-map renderer or prototype benchmark with a fully verified 3D release.",
+      "evidence_urls": [
+        "https://github.com/nic0lasm/frontfall/blob/78dabbf5da3cf938cc54f6569f758e919ef0fa15/README.md",
+        "https://github.com/nic0lasm/frontfall/blob/78dabbf5da3cf938cc54f6569f758e919ef0fa15/docs/adr/0005-globe-spike.md",
+        "https://github.com/nic0lasm/frontfall/blob/78dabbf5da3cf938cc54f6569f758e919ef0fa15/apps/client/src/main.ts#L58",
+        "https://github.com/nic0lasm/frontfall/blob/78dabbf5da3cf938cc54f6569f758e919ef0fa15/apps/client/src/render/globe-view.ts#L29",
+        "https://github.com/nic0lasm/frontfall/blob/78dabbf5da3cf938cc54f6569f758e919ef0fa15/packages/engine/src/victory.ts#L8",
+        "https://github.com/nic0lasm/frontfall/blob/78dabbf5da3cf938cc54f6569f758e919ef0fa15/LICENSE"
+      ]
+    },
+    {
+      "id": "sonicity",
+      "repository_url": "https://github.com/B1aZer/sonicity",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "038b74eb8c0f4fcf869ee02ff66ebdabdc182772",
+      "reason": "Root source LICENSE is MIT, but README explicitly says bought/licensed models, textures, images, music and fonts are not included and the client needs replacement assets at the same paths. Source and asset completeness/rights are separate; on-chain/wallet gameplay was not exercised, and a complete renderer/game-loop audit has not been completed.",
+      "next_action": "Keep as source-open/missing-commercial-assets candidate. Establish replacement or explicit redistribution grants, then finish actual entry/renderer/objective verification; do not connect a wallet, request funds or make chain transactions for collection work.",
+      "evidence_urls": [
+        "https://github.com/B1aZer/sonicity/blob/038b74eb8c0f4fcf869ee02ff66ebdabdc182772/README.md#L15",
+        "https://github.com/B1aZer/sonicity/blob/038b74eb8c0f4fcf869ee02ff66ebdabdc182772/LICENSE",
+        "https://github.com/B1aZer/sonicity/blob/038b74eb8c0f4fcf869ee02ff66ebdabdc182772/package.json"
+      ]
+    },
+    {
+      "id": "grid-wars-philippgoecke-fork",
+      "repository_url": "https://github.com/PhilippGoecke/grid-wars",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "faf2c7a62ff586f12b77b4bd850e35b588e1cc72",
+      "reason": "Duplicate fork of the already indexed loosecannons/grid-wars: both snapshots are the exact commit faf2c7a62ff586f12b77b4bd850e35b588e1cc72. Counting this copy would duplicate the same game and unchanged untested/experimental NOTICE.",
+      "next_action": "Use the existing upstream Grid Wars record; reconsider only if a fork develops a distinct implemented game and independently reviewable changes.",
+      "evidence_urls": [
+        "https://github.com/PhilippGoecke/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/README.md",
+        "https://github.com/PhilippGoecke/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/LICENSE",
+        "https://github.com/PhilippGoecke/grid-wars/blob/faf2c7a62ff586f12b77b4bd850e35b588e1cc72/NOTICE"
+      ]
     }
   ]
 }
