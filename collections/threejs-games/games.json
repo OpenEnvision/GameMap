@@ -16766,6 +16766,112 @@
         "The reviewed renderer uses the global r128 library; HTML also contains a 0.160.0 import map. No claim is made that both versions are actually loaded on every path or that the declared configuration is compatible in current browsers.",
         "Scope is the actual timed-challenge game, not exhibition alone. Bundled raster/wood textures and fonts retain any separate rights. No upstream install/build/test or playtest, timed round, input, save or sound action occurred."
       ]
+    },
+    {
+      "id": "neon-mayhem",
+      "name": "NEON MAYHEM",
+      "repository_url": "https://github.com/pranshuparmar/neon-mayhem",
+      "genres": [
+        "open-world driving",
+        "missions",
+        "racing"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (vendored)",
+        "render_evidence": {
+          "url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/js/main.js#L11",
+          "claim": "The actual HTML loads the vendored Three.js library and main.js. Main directly creates WebGLRenderer, scene and camera; its live requestAnimationFrame loop advances GAME.tick and renders that same city. Reviewed vehicle source builds actual mesh geometry, rather than a detached or flat-only scene preview."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vendored Three.js r128 with the retained MIT notice; vanilla JavaScript and project-authored vehicle/city/gameplay/render helpers, DOM UI, local save/progress logic and synthesized Web Audio. No npm manifest was found in the complete reviewed tree. An optional GoatCounter wrapper loads visit/event counting on eligible hosted sites and skips local/offline paths; no analytics request was exercised."
+        ],
+        "framework_audit": "Actual game-entry, rendering and objective sources were inspected at this commit. Three.js owns the reviewed renderer; no R3F, A-Frame, Babylon.js, Unity runtime or replacement rendering engine was identified in that scoped entry/manifests. Project-authored gameplay/render helpers and other library roles are disclosed. Every transitive dependency and content file was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/js/missions.js#L2355",
+        "claim": "The active mission finish path distinguishes success/failure. Success updates the mission best, awards in-game cash, checks progression unlocks and shows mission/race results; races report place/time and other jobs track earnings. The primary frame advances these game systems before drawing, so this is an implemented mission/driving game."
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "label": "Apache-2.0 (project code)",
+        "source_url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/LICENSE",
+        "additional_notices": [
+          "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/THREE.LICENSE"
+        ],
+        "notes": "Root project code is Apache-2.0; the vendored Three.js library retains its separate MIT notice. README says the fan-tribute city, characters, brands and synthesized audio are original and contains a non-affiliation statement. Reviewed mesh/audio sources are consistent with that design, but complete authorship, every media origin and trademark clearance were not independently audited."
+      },
+      "demo": {
+        "url": "https://pranshuparmar.github.io/neon-mayhem/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/README.md",
+        "notes": "README directly links the author's GitHub Pages game. The text reader could not retrieve it, which does not prove an offline deployment. No fresh browser rendering, input, game action or deployed/source correspondence was tested."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/README.md",
+        "notes": "Source implements driving, mission/job/race results, rewards and progression. README describes a broad open world and author-run headless verification; the full feature set, offline operation, performance and campaign completion were not independently reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "c85a6102bcb6f4191243401194f80a85fd92b246",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-028.md#neon-mayhem",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/README.md"
+          },
+          {
+            "path": "THREE.LICENSE",
+            "url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/THREE.LICENSE"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/index.html"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/js/main.js"
+          },
+          {
+            "path": "js/missions.js",
+            "url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/js/missions.js"
+          },
+          {
+            "path": "js/vehicles.js",
+            "url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/js/vehicles.js"
+          },
+          {
+            "path": "js/analytics.js",
+            "url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/js/analytics.js"
+          },
+          {
+            "path": "js/lib/three.min.js",
+            "url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/js/lib/three.min.js"
+          },
+          {
+            "path": "js/audio.js",
+            "url": "https://github.com/pranshuparmar/neon-mayhem/blob/c85a6102bcb6f4191243401194f80a85fd92b246/js/audio.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The scope is the actual direct-Three driving/mission entry. Fictional in-game cash/rewards are gameplay state; no purchase or transaction was performed.",
+        "Optional hosted-site GoatCounter/event code is disclosed; its present service behavior or privacy claims were not independently audited. Vendor review targeted the header/revision, not the entire minified library.",
+        "No upstream install/build/test or playtest, input/controller/haptic action, audio playback, save write, screenshot/export/share or network multiplayer session occurred. Author originality, test and performance reports remain author claims."
+      ]
     }
   ]
 }

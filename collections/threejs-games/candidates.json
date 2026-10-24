@@ -1365,6 +1365,78 @@
         "https://github.com/superRaptor911/Asteroid-attack/blob/a22a854483a6b1115763066b1b5aab500b0dd3ca/src/scenes/menus/gameover.ts#L37",
         "https://github.com/superRaptor911/Asteroid-attack/blob/a22a854483a6b1115763066b1b5aab500b0dd3ca/package.json"
       ]
+    },
+    {
+      "id": "dvla-xmas-game",
+      "repository_url": "https://github.com/omikrom/dvla-xmas-game",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "521414b95bb300d51c064dcf6584a90571c40cc3",
+      "reason": "The actual race page imports Canvas/useFrame/useThree from @react-three/fiber plus Drei, React Three Rapier and postprocessing. The manifest declares those rendering wrappers, outside the requested direct-Three core.",
+      "next_action": "Retain outside the verified collection unless a separate direct imperative Three.js game entry is supplied.",
+      "evidence_urls": [
+        "https://github.com/omikrom/dvla-xmas-game/blob/521414b95bb300d51c064dcf6584a90571c40cc3/package.json",
+        "https://github.com/omikrom/dvla-xmas-game/blob/521414b95bb300d51c064dcf6584a90571c40cc3/app/race/page.tsx#L5"
+      ]
+    },
+    {
+      "id": "myball-game",
+      "repository_url": "https://github.com/LAPCoder/MyBall.game",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "d018487bcaed8f9e22cacc060ca24fba0b2cdc9b",
+      "reason": "README explicitly says this copies a Three.js example. The reviewed primary HTML implements first-person movement, throwing spheres, collision/physics updates and out-of-bounds teleporting; no implemented scoring, objective, progression or completion/failure game loop was established in this snapshot.",
+      "next_action": "Revisit a distinct game implementation with actual objectives; do not count the example's physics interactions or a game title as sufficient proof.",
+      "evidence_urls": [
+        "https://github.com/LAPCoder/MyBall.game/blob/d018487bcaed8f9e22cacc060ca24fba0b2cdc9b/README.md",
+        "https://github.com/LAPCoder/MyBall.game/blob/d018487bcaed8f9e22cacc060ca24fba0b2cdc9b/index.html#L315",
+        "https://github.com/LAPCoder/MyBall.game/blob/d018487bcaed8f9e22cacc060ca24fba0b2cdc9b/index.html#L601"
+      ]
+    },
+    {
+      "id": "four-pong",
+      "repository_url": "https://github.com/TimTinkers/Four-Pong",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "4cfee62d2aec25dcb925349d8b2072f87a0019b6",
+      "reason": "Although README calls this four-person Pong, the complete small current tree's server/client implement moving a single wireframe box with authoritative position updates and latency experiments. Pong ball/paddles, scoring, elimination or another game objective were not found in the reviewed implementation.",
+      "next_action": "Locate a distinct actual game revision before admission; keep this snapshot as a networking/movement demonstration rather than claiming the advertised Pong is implemented.",
+      "evidence_urls": [
+        "https://github.com/TimTinkers/Four-Pong/blob/4cfee62d2aec25dcb925349d8b2072f87a0019b6/README.md",
+        "https://github.com/TimTinkers/Four-Pong/blob/4cfee62d2aec25dcb925349d8b2072f87a0019b6/main.js#L86",
+        "https://github.com/TimTinkers/Four-Pong/blob/4cfee62d2aec25dcb925349d8b2072f87a0019b6/public/js/client/client.js#L21"
+      ]
+    },
+    {
+      "id": "bombarda",
+      "repository_url": "https://github.com/Sagsso/Bombarda",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "9b9c686e90e1b353da9421c74d9bd22b07840f81",
+      "reason": "Direct Three.js rendering and game score logic are present, but root LICENSE is Apache-2.0 while package.json says MIT. Asset provenance is unresolved: the snapshot contains a file explicitly named for the Harry Potter/Hedwig soundtrack, other recorded audio/character/font assets, and the entry autoplays hp.mp3. No separate reuse grant was located; the root code license does not establish those recordings' rights.",
+      "next_action": "Clarify code-license declarations and per-asset grants or replacements, then finish the gameplay/entry audit. Keep the named soundtrack and autoplay recording distinct; no audio was downloaded, played or copied.",
+      "evidence_urls": [
+        "https://github.com/Sagsso/Bombarda/blob/9b9c686e90e1b353da9421c74d9bd22b07840f81/LICENSE",
+        "https://github.com/Sagsso/Bombarda/blob/9b9c686e90e1b353da9421c74d9bd22b07840f81/package.json",
+        "https://github.com/Sagsso/Bombarda/blob/9b9c686e90e1b353da9421c74d9bd22b07840f81/game.html#L32",
+        "https://github.com/Sagsso/Bombarda/blob/9b9c686e90e1b353da9421c74d9bd22b07840f81/src/app.js#L225"
+      ]
+    },
+    {
+      "id": "river-morning",
+      "repository_url": "https://github.com/StarKnightt/river-morning",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "e562bf3f913a7cc491bb0862302c7a9748d47806",
+      "reason": "The source directly uses Three WebGPURenderer and implements catching/tallying fish, but its own CREDITS retains open asset-license issues: the beard's AGPL3 header versus CC0 pack description and unconfirmed MIT/CC0 scope for project-created models. Other assets have CC0/CC BY 4.0 and custom CMU motion-data terms. Origin-page read attempts failed, without resolving those stated questions.",
+      "next_action": "Resolve the specific per-file/model grant questions using licensor evidence; retain MIT code, other media terms and the current credits wording separately. No game, asset acquisition, audio or original motion-data download was run.",
+      "evidence_urls": [
+        "https://github.com/StarKnightt/river-morning/blob/e562bf3f913a7cc491bb0862302c7a9748d47806/LICENSE",
+        "https://github.com/StarKnightt/river-morning/blob/e562bf3f913a7cc491bb0862302c7a9748d47806/CREDITS.md#L257",
+        "https://github.com/StarKnightt/river-morning/blob/e562bf3f913a7cc491bb0862302c7a9748d47806/CREDITS.md#L275",
+        "https://github.com/StarKnightt/river-morning/blob/e562bf3f913a7cc491bb0862302c7a9748d47806/src/core/Engine.ts#L116",
+        "https://github.com/StarKnightt/river-morning/blob/e562bf3f913a7cc491bb0862302c7a9748d47806/src/fishing/FishingSim.ts#L1655"
+      ]
     }
   ]
 }
