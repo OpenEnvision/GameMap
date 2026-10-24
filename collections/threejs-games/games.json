@@ -10314,6 +10314,453 @@
         "Asset ledger/hash/audit claims are author documentation; no asset binary was copied or independently hash-checked and no upstream audit/test suite ran.",
         "Balance, pursuit fairness, relay/gate solvability, saves and author runtime verification claims were not independently exercised."
       ]
+    },
+    {
+      "id": "marble-loco",
+      "name": "Marble Loco",
+      "repository_url": "https://github.com/johnwlockwood/marble-loco",
+      "genres": [
+        "marble platformer",
+        "time trial",
+        "obstacle courses"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.185.1",
+        "render_evidence": {
+          "url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/src/core/Engine.ts#L49",
+          "claim": "Engine directly constructs Three.js WebGLRenderer and a requestAnimationFrame fixed-step loop. Game binds simulation/render hooks; index.html loads src/main.ts."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/package.json",
+            "dependencies": {
+              "three": "^0.185.1"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.185.1",
+              "@vitejs/plugin-basic-ssl": "^2.3.0",
+              "typescript": "^7.0.2",
+              "vite": "^8.1.5"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Runtime manifest contains only Three.js; TypeScript/Vite and basic-SSL tooling are development dependencies. Project-authored fixed-step sphere/box physics, shader/post-processing pipeline and WebAudio sound; no separate physics engine is declared."
+        ],
+        "framework_audit": "The reviewed actual entry and rendering path directly construct Three.js WebGLRenderer. No R3F, A-Frame, Babylon.js, Unity or replacement engine renderer was identified in these files/declared manifests; project-authored logic/render helpers are disclosed. This is not a transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/src/game/Game.ts#L329",
+        "claim": "A Goal surface contact calls completeLevel, saves the best time/unlock and opens the completion UI; falling respawns and reaching the course time limit calls failLevel. Three-dimensional jumping/ramps and sphere contacts are implemented."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/LICENSE",
+        "additional_notices": [
+          "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/README.md"
+        ],
+        "notes": "Root LICENSE and package metadata say MIT. README states no image/audio asset files and procedural surfaces/sounds; Audio.ts and GLSL helpers were inspected. This records the project-code grant and author asset claims, not a universal rights audit."
+      },
+      "demo": {
+        "url": "https://johnwlockwood.github.io/marble-loco/",
+        "status": "reader-error",
+        "checked_at": "2026-10-23",
+        "source_url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/README.md",
+        "notes": "The pinned README supplies this author demo URL. The text reader could not retrieve it on this review date; availability and gameplay remain unconfirmed. No browser game, network session, sensor or audio was executed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/README.md",
+        "notes": "The README documents sixteen courses, checkpoints, tilt/thumbstick/keyboard input and local progress; reviewed level/state sources establish completion, falls and time failure without proving every course's reachability."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "aeb3d9be50eca8bc4638eac42f556f2c2db6bf24",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-016.md#marble-loco",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/package.json"
+          },
+          {
+            "path": "src/core/Audio.ts",
+            "url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/src/core/Audio.ts"
+          },
+          {
+            "path": "src/core/Engine.ts",
+            "url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/src/core/Engine.ts"
+          },
+          {
+            "path": "src/game/Game.ts",
+            "url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/src/game/Game.ts"
+          },
+          {
+            "path": "src/game/levels.ts",
+            "url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/src/game/levels.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/src/main.ts"
+          },
+          {
+            "path": "src/render/glsl.ts",
+            "url": "https://github.com/johnwlockwood/marble-loco/blob/aeb3d9be50eca8bc4638eac42f556f2c2db6bf24/src/render/glsl.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Tilt requires a secure context and an explicit motion-permission gesture; keyboard/thumbstick alternatives are documented, but device compatibility was not exercised.",
+        "The project calls its shaders, geometry and WebAudio sounds procedural; reviewed audio/GLSL sources support that approach, without an exhaustive authorship or asset audit.",
+        "Difficulty, time budgets, course reachability, physics, progress persistence and the author's performance claims were not independently tested."
+      ]
+    },
+    {
+      "id": "cinderbanner",
+      "name": "Cinderbanner",
+      "repository_url": "https://github.com/brepre109/cinderbanner",
+      "genres": [
+        "turn-based tactics",
+        "tactical RPG",
+        "campaign"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.180.0",
+        "render_evidence": {
+          "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/src/render/pipeline.js#L153",
+          "claim": "createPipeline directly creates Three.js WebGLRenderer. The battle boot creates a Three scene/camera, runs battle.update inside requestAnimationFrame, and calls the project's render pipeline; terrain uses genuine height-based BufferGeometry meshes."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/package.json",
+            "dependencies": {
+              "three": "^0.180.0"
+            },
+            "dev_dependencies": {
+              "puppeteer-core": "^23.11.1",
+              "vite": "^6.4.3"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js is the only declared runtime dependency; Vite and puppeteer-core are dev tools. Project-authored charge-time rules/AI, WebAudio synthesis, sprites, terrain and DOM campaign UI; no external game engine is declared."
+        ],
+        "framework_audit": "The reviewed actual entry and rendering path directly construct Three.js WebGLRenderer. No R3F, A-Frame, Babylon.js, Unity or replacement engine renderer was identified in these files/declared manifests; project-authored logic/render helpers are disclosed. This is not a transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/src/game/battle.js#L307",
+        "claim": "Battle.checkVictory consumes the rules engine's objective result, stops the battle and emits victory/summary for UI/campaign handling. rules.js implements opposing-team elimination, leader/protect objectives and draws; the browser turn loop calls these checks."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/LICENSE",
+        "additional_notices": [
+          "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/README.md",
+          "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/public/fonts/LICENSE-FONTS.txt"
+        ],
+        "notes": "Root software LICENSE and package metadata say MIT. README discloses AI-generated sprites/portraits/environment art and synthesized sound. public/fonts/LICENSE-FONTS.txt separately grants the DejaVu-derived Cinder faces under Bitstream Vera conditions, including notice/renaming rules. No claim that every asset is MIT or independently cleared."
+      },
+      "demo": {
+        "url": "https://brepre109.github.io/cinderbanner/",
+        "status": "reader-error",
+        "checked_at": "2026-10-23",
+        "source_url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/README.md",
+        "notes": "The pinned README supplies this author demo URL. The text reader could not retrieve it on this review date; availability and gameplay remain unconfirmed. No browser game, network session, sensor or audio was executed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/README.md",
+        "notes": "The author explicitly labels this a playable prototype, with a documented two-chapter campaign and skirmish entry. Rules, battle hooks and height-mapped terrain are source verified; advertised content counts and full campaign completion were not tested."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "a3da16da3c180ac66467b0dfd149ec9ac909764c",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-016.md#cinderbanner",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/package.json"
+          },
+          {
+            "path": "public/fonts/LICENSE-FONTS.txt",
+            "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/public/fonts/LICENSE-FONTS.txt"
+          },
+          {
+            "path": "src/core/battleboot.js",
+            "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/src/core/battleboot.js"
+          },
+          {
+            "path": "src/game/battle.js",
+            "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/src/game/battle.js"
+          },
+          {
+            "path": "src/game/rules.js",
+            "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/src/game/rules.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/src/main.js"
+          },
+          {
+            "path": "src/render/camera.js",
+            "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/src/render/camera.js"
+          },
+          {
+            "path": "src/render/pipeline.js",
+            "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/src/render/pipeline.js"
+          },
+          {
+            "path": "src/world/terrain.js",
+            "url": "https://github.com/brepre109/cinderbanner/blob/a3da16da3c180ac66467b0dfd149ec9ac909764c/src/world/terrain.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "A rotatable 3D diorama/height-based board with billboard sprite-sheet characters; it is not a free-roaming fully volumetric character game.",
+        "README identifies generated art and runtime-synthesized sound. Raw generated art frames are absent, and no exhaustive media provenance audit was performed.",
+        "Bundled Cinder font derivatives retain DejaVu/Bitstream Vera conditions; the project's MIT code label does not replace those font terms.",
+        "README's Pages URL is conditional on hosting being enabled. Desktop keyboard/WebGL2/GPU requirements are documented; touch is unsupported and runtime/performance claims remain untested."
+      ]
+    },
+    {
+      "id": "mega-battles",
+      "name": "Mega Battles",
+      "repository_url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles",
+      "genres": [
+        "turn-based tactics",
+        "duel",
+        "AI opponent",
+        "network multiplayer"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.170.0",
+        "render_evidence": {
+          "url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/src/main.js#L22",
+          "claim": "The actual ES-module entry directly constructs Three.js WebGLRenderer, PerspectiveCamera, scene and OrbitControls; renderer.setAnimationLoop advances animation and renders the board and procedural character meshes."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/package.json",
+            "dependencies": {
+              "express": "^4.21.0",
+              "three": "^0.170.0",
+              "ws": "^8.18.0"
+            },
+            "dev_dependencies": {
+              "vite": "^6.0.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js with its OrbitControls addon; Express and ws support the Node >=20 backend. Vite is the dev dependency. Project-authored board/pathfinding, AI, models, WebAudio effects and DOM UI; exact manifest snapshot retained."
+        ],
+        "framework_audit": "The reviewed actual entry and rendering path directly construct Three.js WebGLRenderer. No R3F, A-Frame, Babylon.js, Unity or replacement engine renderer was identified in these files/declared manifests; project-authored logic/render helpers are disclosed. This is not a transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/src/main.js#L441",
+        "claim": "After attacks/HP removal, checkVictory detects a team with no living units, marks game.over and shows the opposing winner. Turn/action handling and a quick AI mode are present; the WebSocket server relays online-room actions."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/LICENSE",
+        "additional_notices": [
+          "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/README.md"
+        ],
+        "notes": "Root LICENSE grants MIT software use and the README links it. README separately credits the original design/concept contributors and says UI artwork was generated; no contrary media-specific restriction was found in reviewed notices, but the complete art chain of title was not independently audited."
+      },
+      "demo": {
+        "url": "https://mega-battles.cleverapps.io/",
+        "status": "reader-error",
+        "checked_at": "2026-10-23",
+        "source_url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/README.md",
+        "notes": "The pinned README supplies this author demo URL. The text reader could not retrieve it on this review date; availability and gameplay remain unconfirmed. No browser game, network session, sensor or audio was executed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/README.md",
+        "notes": "A small documented 2026 reboot with a six-versus-six turn-based duel, AI quick match and online rooms. Main/board/unit/model/server sources establish a complete team-elimination loop; networking quality and balance remain untested."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-016.md#mega-battles",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/package.json"
+          },
+          {
+            "path": "server/index.js",
+            "url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/server/index.js"
+          },
+          {
+            "path": "src/audio.js",
+            "url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/src/audio.js"
+          },
+          {
+            "path": "src/board.js",
+            "url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/src/board.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/src/main.js"
+          },
+          {
+            "path": "src/models.js",
+            "url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/src/models.js"
+          },
+          {
+            "path": "src/units.js",
+            "url": "https://github.com/jonas-de-cuisinez-pour-bebe/mega-battles/blob/4cecdd10070f5cdd9c11c38c54efb74a2c2c1a2e/src/units.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Tile-constrained XZ movement with genuine 3D meshes and a perspective/orbit camera; board tactics do not imply unrestricted XYZ movement.",
+        "Online play requires the Node Express/ws backend. README describes an action relay rather than server-side simulation; relay protocol was inspected, but determinism, authorization and sync claims were not tested.",
+        "README credits the 2013 concept contributors, procedural character models and generated UI art. The MIT code grant is recorded without independently auditing every image's rights or calling any generation service.",
+        "No multiplayer sessions, AI matches, game builds, sound playback or paid image generation were executed."
+      ]
+    },
+    {
+      "id": "warlord-game",
+      "name": "Warlord",
+      "repository_url": "https://github.com/saptak69/warlord-game",
+      "genres": [
+        "first-person shooter",
+        "wave survival",
+        "boss combat"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (CDN script in index.html)",
+        "render_evidence": {
+          "url": "https://github.com/saptak69/warlord-game/blob/273101cc12b7a59a87213f3e48954d94a0af029f/index.html#L681",
+          "claim": "The single HTML game directly creates THREE.WebGLRenderer/PerspectiveCamera and a handwritten requestAnimationFrame loop. Script tags pin Three.js r128 and Tone.js 14.8.49, with Tailwind's unversioned CDN for the HUD."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla HTML/JavaScript; CDN Three.js r128, Tone.js 14.8.49 audio and unpinned Tailwind styling. Project-authored collision/weapons/enemy logic and procedural models/textures; no npm manifest was located in the reviewed repository tree."
+        ],
+        "framework_audit": "The reviewed actual entry and rendering path directly construct Three.js WebGLRenderer. No R3F, A-Frame, Babylon.js, Unity or replacement engine renderer was identified in these files/declared manifests; project-authored logic/render helpers are disclosed. This is not a transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/saptak69/warlord-game/blob/273101cc12b7a59a87213f3e48954d94a0af029f/index.html#L997",
+        "claim": "The update loop spawns and clears successive enemy waves; after wave four is cleared it sets gameWon and shows the win screen. Player health reaching zero sets isDead and shows death stats; HTML buttons reload to retry."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/saptak69/warlord-game/blob/273101cc12b7a59a87213f3e48954d94a0af029f/LICENSE",
+        "additional_notices": [
+          "https://github.com/saptak69/warlord-game/blob/273101cc12b7a59a87213f3e48954d94a0af029f/README.md"
+        ],
+        "notes": "Root LICENSE grants MIT. The single-file entry generates geometry/textures and Tone.js sound; CDN libraries retain their own licenses. This does not assert a complete asset/dependency rights audit."
+      },
+      "demo": {
+        "url": "https://warlord-game.vercel.app",
+        "status": "reader-error",
+        "checked_at": "2026-10-23",
+        "source_url": "https://github.com/saptak69/warlord-game/blob/273101cc12b7a59a87213f3e48954d94a0af029f/README.md",
+        "notes": "The pinned README supplies this author demo URL. The text reader could not retrieve it on this review date; availability and gameplay remain unconfirmed. No browser game, network session, sensor or audio was executed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/saptak69/warlord-game/blob/273101cc12b7a59a87213f3e48954d94a0af029f/README.md",
+        "notes": "Single-file FPS with movement/jump/collision, weapons, enemy waves, blackout and final boss/win state in the actual entry. README presents a browser FPS, but cross-device support and balancing were not independently verified."
+      },
+      "verification": {
+        "date": "2026-10-23",
+        "source_commit": "273101cc12b7a59a87213f3e48954d94a0af029f",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-016.md#warlord-game",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/saptak69/warlord-game/blob/273101cc12b7a59a87213f3e48954d94a0af029f/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/saptak69/warlord-game/blob/273101cc12b7a59a87213f3e48954d94a0af029f/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/saptak69/warlord-game/blob/273101cc12b7a59a87213f3e48954d94a0af029f/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "README says 'Zero Dependencies / No Install', but the actual page fetches Three.js r128, Tone.js 14.8.49 and unpinned Tailwind from CDNs; these are explicit runtime dependencies here.",
+        "Desktop pointer lock and keyboard/mouse controls are used; a responsive HUD does not establish touch-play support.",
+        "Procedural geometry/textures and synthesized audio are visible in source. No exhaustive rights audit, CDN integrity/compatibility test, gameplay run or performance measurement occurred."
+      ]
     }
   ]
 }

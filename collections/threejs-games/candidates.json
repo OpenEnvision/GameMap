@@ -750,6 +750,70 @@
         "https://github.com/rjroy/shining-stars/blob/2ba52f15c4e8ddb3dd904984320e46aa89ba2f28/README.md",
         "https://github.com/rjroy/shining-stars/blob/2ba52f15c4e8ddb3dd904984320e46aa89ba2f28/data/catalog.json"
       ]
+    },
+    {
+      "id": "marbletable2",
+      "repository_url": "https://github.com/jeromeetienne/marbletable2",
+      "status": "pending",
+      "checked_at": "2026-10-23",
+      "source_commit": "54245215b5657d4322717a81df2245c1057ef12c",
+      "reason": "Direct Three.js r59/Cannon/THREEx marble gameplay and MIT project notices are present, but texture credits only call sources 'free' or 'from cgtexture kindof site', and music is attributed without a reviewed separate grant. The root page also points to the older marbleTable project, leaving upstream identity/dedup scope to resolve.",
+      "next_action": "Clarify upstream project identity and the actual texture/music grants, or identify a cleared-asset edition; do not treat the MIT code license or the word 'free' as universal asset permission.",
+      "evidence_urls": [
+        "https://github.com/jeromeetienne/marbletable2/blob/54245215b5657d4322717a81df2245c1057ef12c/LICENSE",
+        "https://github.com/jeromeetienne/marbletable2/blob/54245215b5657d4322717a81df2245c1057ef12c/MIT-LICENSE.txt",
+        "https://github.com/jeromeetienne/marbletable2/blob/54245215b5657d4322717a81df2245c1057ef12c/index.html",
+        "https://github.com/jeromeetienne/marbletable2/blob/54245215b5657d4322717a81df2245c1057ef12c/game/index.html",
+        "https://github.com/jeromeetienne/marbletable2/blob/54245215b5657d4322717a81df2245c1057ef12c/game/images/ballTextures/README.md",
+        "https://github.com/jeromeetienne/marbletable2/blob/54245215b5657d4322717a81df2245c1057ef12c/game/images/planets/README.md",
+        "https://github.com/jeromeetienne/marbletable2/blob/54245215b5657d4322717a81df2245c1057ef12c/game/images/sports/readme.md"
+      ]
+    },
+    {
+      "id": "marble-race-r3f",
+      "repository_url": "https://github.com/kevinfjbecker/marble-race",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "95cb3b2b43b164ede83c81c5a42c7ff5391807c2",
+      "reason": "The actual src/index.jsx imports and mounts Canvas from @react-three/fiber with drei controls; package.json declares fiber/drei/rapier. README identifies a Three.js Journey lesson implementation, outside the strict direct-Three boundary.",
+      "next_action": "Reconsider only a separately scoped direct Three implementation with actual game objectives; do not relabel R3F as plain Three.",
+      "evidence_urls": [
+        "https://github.com/kevinfjbecker/marble-race/blob/95cb3b2b43b164ede83c81c5a42c7ff5391807c2/README.md",
+        "https://github.com/kevinfjbecker/marble-race/blob/95cb3b2b43b164ede83c81c5a42c7ff5391807c2/package.json",
+        "https://github.com/kevinfjbecker/marble-race/blob/95cb3b2b43b164ede83c81c5a42c7ff5391807c2/src/index.jsx",
+        "https://github.com/kevinfjbecker/marble-race/blob/95cb3b2b43b164ede83c81c5a42c7ff5391807c2/src/Experience.jsx"
+      ]
+    },
+    {
+      "id": "spindeck",
+      "repository_url": "https://github.com/CherryCuteCN/SpinDeck",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "9d7e4d3023aa9610b504b45364a2a2471a877e49",
+      "reason": "README and package description identify a vinyl/album visualization and music playback-control app with a Tauri desktop shell. No actual game objective is established; 3D presentation alone is insufficient.",
+      "next_action": "Reconsider only a separately implemented game; do not access users' media libraries or OS playback controls for this collection.",
+      "evidence_urls": [
+        "https://github.com/CherryCuteCN/SpinDeck/blob/9d7e4d3023aa9610b504b45364a2a2471a877e49/README.md",
+        "https://github.com/CherryCuteCN/SpinDeck/blob/9d7e4d3023aa9610b504b45364a2a2471a877e49/README.zh-Hans.md",
+        "https://github.com/CherryCuteCN/SpinDeck/blob/9d7e4d3023aa9610b504b45364a2a2471a877e49/package.json",
+        "https://github.com/CherryCuteCN/SpinDeck/blob/9d7e4d3023aa9610b504b45364a2a2471a877e49/LICENSE"
+      ]
+    },
+    {
+      "id": "lieutenant-fizz",
+      "repository_url": "https://github.com/liminal-hq/lieutenant-fizz",
+      "status": "excluded",
+      "checked_at": "2026-10-23",
+      "source_commit": "4bce0361dfc787515616a97a8db255bc067c5880",
+      "reason": "The author describes a Keen-style side-scrolling tile/sprite platformer on the Liminal Retro Engine. Its Three.js renderer uses orthographic instanced PlaneGeometry sprites and XY coordinates; a GPU backend does not make the 2D game a 3D-world/board game.",
+      "next_action": "Reconsider a distinct genuinely 3D edition; retain the existing Apache-2.0 OR MIT code notices and separate font terms if ever in scope.",
+      "evidence_urls": [
+        "https://github.com/liminal-hq/lieutenant-fizz/blob/4bce0361dfc787515616a97a8db255bc067c5880/README.md",
+        "https://github.com/liminal-hq/lieutenant-fizz/blob/4bce0361dfc787515616a97a8db255bc067c5880/packages/engine/src/renderer.ts",
+        "https://github.com/liminal-hq/lieutenant-fizz/blob/4bce0361dfc787515616a97a8db255bc067c5880/packages/engine/package.json",
+        "https://github.com/liminal-hq/lieutenant-fizz/blob/4bce0361dfc787515616a97a8db255bc067c5880/LICENSE-MIT",
+        "https://github.com/liminal-hq/lieutenant-fizz/blob/4bce0361dfc787515616a97a8db255bc067c5880/LICENSE-APACHE"
+      ]
     }
   ]
 }
