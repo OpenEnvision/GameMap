@@ -14870,6 +14870,776 @@
         "Core shared play requires the Node/WebSocket backend; it is not presented as a server-free static demo. Co-op synchronization, farm persistence, economy, controls and browser support were not playtested.",
         "No upstream install, server, build, tests, paid model/service, native helper or playtest occurred. Harvey/provider internals and exhaustive media/license provenance are outside this source review."
       ]
+    },
+    {
+      "id": "void-harvest",
+      "name": "Void Harvest",
+      "repository_url": "https://github.com/VictorZakharov/void-harvest-game",
+      "genres": [
+        "twin-stick shooter",
+        "roguelite",
+        "local co-op"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.182.0",
+        "render_evidence": {
+          "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/js/RenderingManager.js#L84",
+          "claim": "Webpack injects js/main.js into the actual HTML; that entry creates Game and its RenderingManager. The manager directly constructs THREE.WebGLRenderer/PerspectiveCamera and Three.js post-processing; the live game loop submits its render. Player/enemy factories build volumetric meshes."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/package.json",
+            "dependencies": {
+              "three": "^0.182.0"
+            },
+            "dev_dependencies": {
+              "css-loader": "^7.1.2",
+              "html-webpack-plugin": "^5.6.4",
+              "mini-css-extract-plugin": "^2.9.4",
+              "sass": "^1.94.2",
+              "sass-loader": "^16.0.6",
+              "style-loader": "^4.0.0",
+              "webpack": "^5.102.1",
+              "webpack-cli": "^6.0.1",
+              "webpack-dev-server": "^5.2.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js/addon post-processing, own arena/player/enemy/lighting and run systems, plain DOM UI and Webpack/Sass development tooling. The HTML requests Orbitron/Rajdhani from Google Fonts; their terms are separate from the game code."
+        ],
+        "framework_audit": "Actual entry and live render/game code were inspected. Rendering invokes Three.js directly through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. Physics, DOM UI, build and optional service helpers are disclosed; no complete transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/js/GameSessionManager.js#L288",
+        "claim": "The run progresses through waves. Player/all-player death routes to gameOver, records final wave/run earnings and shows results; start/restart resets run state. Source contains local co-op selection and shared defeat handling."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/LICENSE",
+        "additional_notices": [
+          "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/index.html"
+        ],
+        "notes": "Root LICENSE grants MIT game-code use. Reviewed player/enemy factories construct 3D geometry, but complete media/originality and dependency provenance was not audited. External font terms and any other asset/library grants are not replaced by the code MIT label."
+      },
+      "demo": {
+        "url": "https://vhgame.netlify.app/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/README.md",
+        "notes": "README's Play URL failed in the text reader. No game, audio, local co-op or deployment-revision comparison was performed; a reader error does not prove an offline site."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/README.md",
+        "notes": "Implemented wave survival, run resets, local co-op wiring and result flow are present. README feature/performance and deployment claims are not reproduced by this source review."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "8d9109d7d65cb84d7bd87e4df95bc4d019eded1e",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-024.md#void-harvest",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/index.html"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/js/main.js"
+          },
+          {
+            "path": "js/game.js",
+            "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/js/game.js"
+          },
+          {
+            "path": "js/RenderingManager.js",
+            "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/js/RenderingManager.js"
+          },
+          {
+            "path": "js/GameSessionManager.js",
+            "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/js/GameSessionManager.js"
+          },
+          {
+            "path": "js/entities/PlayerMeshFactory.js",
+            "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/js/entities/PlayerMeshFactory.js"
+          },
+          {
+            "path": "js/entities/EnemyMeshFactory.js",
+            "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/js/entities/EnemyMeshFactory.js"
+          },
+          {
+            "path": "webpack.config.js",
+            "url": "https://github.com/VictorZakharov/void-harvest-game/blob/8d9109d7d65cb84d7bd87e4df95bc4d019eded1e/webpack.config.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The arena renders 3D actors/world with mostly planar movement. No upstream install, build, tests or playtest occurred; wave balance, co-op, graphics and browser compatibility remain unverified."
+      ]
+    },
+    {
+      "id": "wildsong",
+      "name": "WILDSONG",
+      "repository_url": "https://github.com/ShokouP/wildsong",
+      "genres": [
+        "action adventure",
+        "exploration",
+        "combat"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/src/game.js#L92",
+          "claim": "The modular index/main entry creates Game, which directly constructs THREE.WebGLRenderer/PerspectiveCamera and the procedural world/player systems. The repository also supplies a separate bundled WILDSONG.html; its complete bundle parity/offline behavior was not tested."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/package.json",
+            "dependencies": {
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "vite": "^8.3.4",
+              "vite-plugin-singlefile": "^2.3.3"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js with project-authored terrain, entities, camera, world effects, UI and audio modules; Vite and vite-plugin-singlefile build tools. Exact npm runtime/development versions are preserved."
+        ],
+        "framework_audit": "Actual entry and live render/game code were inspected. Rendering invokes Three.js directly through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. Physics, DOM UI, build and optional service helpers are disclosed; no complete transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/src/game.js#L1399",
+        "claim": "Shrine activation records progress toward four shrines. The boss-defeated callback marks the quest done, saves progress and starts the ending timer; the live update path presents the ending. Player, enemy and traversal systems are connected through the active game."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/LICENSE",
+        "additional_notices": [
+          "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/NOTICE.md"
+        ],
+        "notes": "Root source LICENSE is MIT. NOTICE states that terrain/models/textures/art/music/effects are original procedural work and no proprietary commercial-game assets are used. That project statement is attributed; this is not an independent exhaustive originality audit."
+      },
+      "demo": {
+        "url": "https://shokoup.github.io/wildsong/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/README.md",
+        "notes": "README links this hosted game. The text reader could not retrieve it; no game, audio, save state, build or bundled standalone HTML was executed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/README.md",
+        "notes": "Source implements shrine/quest progression, combat callbacks and a final ending. Modular-source review does not reproduce the author's whole-adventure, rendering or single-file portability claims."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "6d22bf9257b103b652c24d05cce794d7052bcb75",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-024.md#wildsong",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/package.json"
+          },
+          {
+            "path": "NOTICE.md",
+            "url": "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/NOTICE.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/index.html"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/src/main.js"
+          },
+          {
+            "path": "src/game.js",
+            "url": "https://github.com/ShokouP/wildsong/blob/6d22bf9257b103b652c24d05cce794d7052bcb75/src/game.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "No upstream install, build, tests, playtest or full standalone-bundle audit occurred. Traversal, combat fairness, save behavior, visual quality and browser/offline support remain unverified."
+      ]
+    },
+    {
+      "id": "roadster-flip",
+      "name": "Roadster Flip",
+      "repository_url": "https://github.com/thefhiter/roadster-flip",
+      "genres": [
+        "stunt driving",
+        "physics",
+        "score attack"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r170 (vendored module header)",
+        "render_evidence": {
+          "url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/js/main.js#L24",
+          "claim": "The actual HTML loads main.js, which directly creates THREE.WebGLRenderer/PerspectiveCamera and renders a volumetric car/ramp scene. car.js builds 3D wheel/body meshes. The separate physics core explicitly simulates in the vertical XY plane."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vendored Three.js r170, own 2D XY stunt physics and 3D car/world/fx, native WebAudio and plain DOM UI. No npm runtime/dev dependencies are declared. HTML requests Google Fonts Inter Tight/JetBrains Mono."
+        ],
+        "framework_audit": "Actual entry and live render/game code were inspected. Rendering invokes Three.js directly through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. Physics, DOM UI, build and optional service helpers are disclosed; no complete transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/js/main.js#L421",
+        "claim": "Completed attempts show crash, short-jump or landing-grade results, score and per-challenge bests. The simulation produces landing/crash/success data used by this result handler and supports retrying stunt challenges."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/LICENSE",
+        "additional_notices": [
+          "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/vendor/three/LICENSE",
+          "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/vendor/three/three.module.js",
+          "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/index.html"
+        ],
+        "notes": "Root game code is MIT; vendor/three/LICENSE and the module header retain the Three.js MIT notice. External fonts retain separate terms and were not independently grant-audited. Only targeted vendor header/revision/export fragments were reviewed."
+      },
+      "demo": {
+        "url": "https://thefhiter.github.io/roadster-flip/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/README.md",
+        "notes": "README's author-hosted URL failed in the text reader. No game, audio, storage, local server or physics test ran."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/README.md",
+        "notes": "Actual stunt-result, scoring/best and retry paths accompany the 3D renderer and custom simulation. The numerical physics model and quality of playable controls were not tested."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "93d993e4e89ed7cf06c5c40f2ad75f35bb84046d",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-024.md#roadster-flip",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/index.html"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/js/main.js"
+          },
+          {
+            "path": "js/physics.js",
+            "url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/js/physics.js"
+          },
+          {
+            "path": "vendor/three/LICENSE",
+            "url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/vendor/three/LICENSE"
+          },
+          {
+            "path": "vendor/three/three.module.js",
+            "url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/vendor/three/three.module.js"
+          },
+          {
+            "path": "js/car.js",
+            "url": "https://github.com/thefhiter/roadster-flip/blob/93d993e4e89ed7cf06c5c40f2ad75f35bb84046d/js/car.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Physics is explicitly two-dimensional in XY; car, wheels, ramps and camera are real 3D geometry/rendering. This is included under the collection's 3D-scene criterion, with motion scope disclosed.",
+        "No upstream install, tests, playtest or full vendor audit occurred. Browser controls, landing grades, performance and simulation accuracy remain unverified."
+      ]
+    },
+    {
+      "id": "dicerun-io",
+      "name": "DiceRun.io",
+      "repository_url": "https://github.com/super3/dicerun.io",
+      "genres": [
+        "dice",
+        "roguelike",
+        "round progression"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.138.0 (HTML import map)",
+        "render_evidence": {
+          "url": "https://github.com/super3/dicerun.io/blob/86d159ad9c17b95f24da6bc501f3bf55e19d9f9b/src/script.js#L214",
+          "claim": "The actual HTML import map loads Three.js r138 and script.js, which directly creates WebGLRenderer/PerspectiveCamera and Cannon ES dice physics. Three.js GLTFLoader/geometry helpers support the scene; the optional store duck is loaded separately."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/super3/dicerun.io/blob/86d159ad9c17b95f24da6bc501f3bf55e19d9f9b/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "jest": "^29.7.0",
+              "jest-environment-jsdom": "^29.7.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "CDN Three.js 0.138.0, Cannon ES from an unversioned Skypack URL, es-module-shims 1.3.6, plain JS/DOM UI and an optional duck.glb. HTML also includes an unversioned Lucky Orange analytics script. package.json declares only Jest/jsdom development dependencies."
+        ],
+        "framework_audit": "Actual entry and live render/game code were inspected. Rendering invokes Three.js directly through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. Physics, DOM UI, build and optional service helpers are disclosed; no complete transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/super3/dicerun.io/blob/86d159ad9c17b95f24da6bc501f3bf55e19d9f9b/src/script.js#L792",
+        "claim": "The live browser script checks settled dice against the round target: winning unlocks earnings/store/next-round controls; exhausting rerolls below target exposes New Game. Dice locking, purchases and round progression are implemented. The separate CommonJS gameLogic.js is not used as the primary browser-goal evidence."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/super3/dicerun.io/blob/86d159ad9c17b95f24da6bc501f3bf55e19d9f9b/LICENSE",
+        "additional_notices": [
+          "https://github.com/super3/dicerun.io/blob/86d159ad9c17b95f24da6bc501f3bf55e19d9f9b/index.html"
+        ],
+        "notes": "Root code LICENSE is MIT. Third-party libraries/analytics retain separate terms. The bundled optional src/duck.glb has unestablished provenance/separate license scope in this review; the code MIT label is not asserted to independently clear every asset."
+      },
+      "demo": {
+        "url": "https://dicerun.io/",
+        "status": "page-read",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/super3/dicerun.io/blob/86d159ad9c17b95f24da6bc501f3bf55e19d9f9b/README.md",
+        "notes": "The text reader returned indexed initial HUD/store text and reported a crawl age of about three weeks. This is page-read evidence, not a fresh browser/gameplay or deployment-revision check; no dice roll, store action, analytics interaction or playtest was performed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/super3/dicerun.io/blob/86d159ad9c17b95f24da6bc501f3bf55e19d9f9b/README.md",
+        "notes": "Live round-win/loss, earnings/store and restart code is implemented. Reader-visible initial UI supports only document availability; actual rendering, physics and rounds were not exercised."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "86d159ad9c17b95f24da6bc501f3bf55e19d9f9b",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-024.md#dicerun-io",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/super3/dicerun.io/blob/86d159ad9c17b95f24da6bc501f3bf55e19d9f9b/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/super3/dicerun.io/blob/86d159ad9c17b95f24da6bc501f3bf55e19d9f9b/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/super3/dicerun.io/blob/86d159ad9c17b95f24da6bc501f3bf55e19d9f9b/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/super3/dicerun.io/blob/86d159ad9c17b95f24da6bc501f3bf55e19d9f9b/index.html"
+          },
+          {
+            "path": "src/script.js",
+            "url": "https://github.com/super3/dicerun.io/blob/86d159ad9c17b95f24da6bc501f3bf55e19d9f9b/src/script.js"
+          },
+          {
+            "path": "src/gameLogic.js",
+            "url": "https://github.com/super3/dicerun.io/blob/86d159ad9c17b95f24da6bc501f3bf55e19d9f9b/src/gameLogic.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "No upstream install, build, Jest run or playtest occurred. Three r138 compatibility, the unpinned Cannon CDN resolution and tracker behavior were not validated at runtime.",
+        "Optional duck-model provenance/terms and all third-party asset/dependency grants were not exhaustively audited. The HTML's analytics script is disclosed as a dependency, not endorsed."
+      ]
+    },
+    {
+      "id": "the-ninth-vigil",
+      "name": "THE NINTH VIGIL",
+      "repository_url": "https://github.com/iamlukethedev/The-Ninth-Vigil",
+      "genres": [
+        "action RPG",
+        "dungeon exploration",
+        "combat progression"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.185.1",
+        "render_evidence": {
+          "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/src/core/Engine.js#L23",
+          "claim": "The real main entry creates the project Engine and loads registered world/combat/director/render modules. Engine directly constructs THREE.WebGLRenderer/PerspectiveCamera and drives module updates/rendering; no external game renderer replaces Three.js."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/package.json",
+            "dependencies": {
+              "three": "^0.185.1"
+            },
+            "dev_dependencies": {
+              "playwright": "^1.62.0",
+              "vite": "^8.1.6"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js, project-authored procedural world/characters, combat, progression, director/objectives, UI and audio modules. Vite and Playwright are development tools; no additional npm runtime dependency is declared."
+        ],
+        "framework_audit": "Actual entry and live render/game code were inspected. Rendering invokes Three.js directly through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. Physics, DOM UI, build and optional service helpers are disclosed; no complete transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/src/game/Director.js#L684",
+        "claim": "Registered death events distinguish hero recovery from enemy kills. Enemy deaths update world/pacing/encounter progress and award XP, with level-up events when due; hero death uses a checkpoint/recovery state machine. Progression and objective modules implement further level/goal state."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/LICENSE",
+        "additional_notices": [
+          "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/KNOWN_ISSUES.md"
+        ],
+        "notes": "Root LICENSE is MIT. README describes procedural textures/meshes/rigs/audio without external art; the inspected entry/core/game modules support the direct-Three architecture. The entire generator, originality and dependency graph were not independently audited."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/README.md",
+        "notes": "No author-published public game URL was located in the reviewed README or repository metadata. Local harness/screenshot/scenario commands are not treated as hosted demos and were not run."
+      },
+      "maturity": {
+        "status": "work-in-progress",
+        "basis_url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/README.md",
+        "notes": "The project includes active combat/progression and a substantial current KNOWN_ISSUES list. Its author-reported captures, benchmarks and quality/feature comparisons were not independently reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "1f566b2e53585ed55592fceb064caa6d0e4669be",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-024.md#the-ninth-vigil",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/index.html"
+          },
+          {
+            "path": "KNOWN_ISSUES.md",
+            "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/KNOWN_ISSUES.md"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/src/main.js"
+          },
+          {
+            "path": "src/core/Engine.js",
+            "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/src/core/Engine.js"
+          },
+          {
+            "path": "src/game/modules.js",
+            "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/src/game/modules.js"
+          },
+          {
+            "path": "src/game/Director.js",
+            "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/src/game/Director.js"
+          },
+          {
+            "path": "src/game/director/Objectives.js",
+            "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/src/game/director/Objectives.js"
+          },
+          {
+            "path": "src/game/Progression.js",
+            "url": "https://github.com/iamlukethedev/The-Ninth-Vigil/blob/1f566b2e53585ed55592fceb064caa6d0e4669be/src/game/Progression.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "No upstream install, build, tests, screenshot harness or playtest occurred. Combat balance, campaign/encounter completion, procedural visuals and browser performance remain unverified.",
+        "Reviewed gameplay proof covers implemented death/XP/progress handling; it does not establish every advertised campaign, item, skill or rendering feature as completed."
+      ]
+    },
+    {
+      "id": "voxelcraft",
+      "name": "Voxelcraft",
+      "repository_url": "https://github.com/bridge-mind/voxelcraft",
+      "genres": [
+        "voxel sandbox",
+        "survival",
+        "crafting"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (CDN script)",
+        "render_evidence": {
+          "url": "https://github.com/bridge-mind/voxelcraft/blob/30e8a2a2f7c8be9450983fa1d57aa197e875faf6/index.html#L4316",
+          "claim": "The single real HTML defines Game.init, directly creates THREE.WebGLRenderer/PerspectiveCamera and calls initialization from its boot path. Procedural chunk/block meshing, interaction and player systems operate in the same page; Three.js r128 and JSZip are external CDN scripts."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Three.js r128 and JSZip 3.10.1 from cdnjs, native browser APIs and project-authored single-page world/voxel physics/UI. No npm manifest exists. JSZip handles user resource-pack input and compressed local saves; default textures are generated when no pack is loaded."
+        ],
+        "framework_audit": "Actual entry and live render/game code were inspected. Rendering invokes Three.js directly through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. Physics, DOM UI, build and optional service helpers are disclosed; no complete transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/bridge-mind/voxelcraft/blob/30e8a2a2f7c8be9450983fa1d57aa197e875faf6/index.html#L2653",
+        "claim": "Health depletion drops inventory and opens death/respawn state. Interaction code breaks/places blocks and changes resources; recipe matching and consumeCraft update crafting inputs/results. New/load-world controls call Game.start, supporting actual sandbox/survival progression."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/bridge-mind/voxelcraft/blob/30e8a2a2f7c8be9450983fa1d57aa197e875faf6/LICENSE",
+        "additional_notices": [
+          "https://github.com/bridge-mind/voxelcraft/blob/30e8a2a2f7c8be9450983fa1d57aa197e875faf6/README.md",
+          "https://github.com/bridge-mind/voxelcraft/blob/30e8a2a2f7c8be9450983fa1d57aa197e875faf6/index.html"
+        ],
+        "notes": "Root source LICENSE is MIT. The default procedural-texture path is present. README explicitly says third-party resource packs are not included and retain their own licenses; the loader supplies no redistribution grant for user packs. Complete originality/dependency auditing was not performed."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/bridge-mind/voxelcraft/blob/30e8a2a2f7c8be9450983fa1d57aa197e875faf6/README.md",
+        "notes": "No author-published public game URL was located in the reviewed README or repository metadata. The one-file/local instructions do not establish a hosted demo; no game, imported pack, save, model, local server or build ran."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/bridge-mind/voxelcraft/blob/30e8a2a2f7c8be9450983fa1d57aa197e875faf6/README.md",
+        "notes": "A single-page Minecraft-style implementation has active world start/load, block interaction, crafting and death/respawn. The full advertised feature set and playability were not independently exercised."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "30e8a2a2f7c8be9450983fa1d57aa197e875faf6",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-024.md#voxelcraft",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/bridge-mind/voxelcraft/blob/30e8a2a2f7c8be9450983fa1d57aa197e875faf6/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/bridge-mind/voxelcraft/blob/30e8a2a2f7c8be9450983fa1d57aa197e875faf6/LICENSE"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/bridge-mind/voxelcraft/blob/30e8a2a2f7c8be9450983fa1d57aa197e875faf6/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "No upstream install, tests, playtest, resource-pack import or save action occurred. CDN availability/cache is required for the external libraries; one HTML file alone is not treated as a fully self-contained offline guarantee.",
+        "Optional user-supplied resource packs keep separate terms and were not loaded. No terminal victory or complete parity with another game is claimed."
+      ]
+    },
+    {
+      "id": "blackwater",
+      "name": "BLACKWATER",
+      "repository_url": "https://github.com/Hiraeth010/blackwater",
+      "genres": [
+        "first-person shooter",
+        "tactical mission",
+        "extraction"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.180.0",
+        "render_evidence": {
+          "url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/app/game/engine.ts#L222",
+          "claim": "The React DOM page creates the imperative Game in a useEffect host. Game directly constructs THREE.WebGLRenderer/PerspectiveCamera and procedural environment/weapon/enemy systems. React/Base UI/shadcn implement menus and controls; no R3F renderer is declared or used in this entry."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/package.json",
+            "dependencies": {
+              "@base-ui/react": "1.7.0",
+              "clsx": "2.1.1",
+              "lucide-react": "1.31.0",
+              "react": "19.2.6",
+              "react-dom": "19.2.6",
+              "shadcn": "4.18.0",
+              "tailwind-merge": "3.6.0",
+              "three": "0.180.0",
+              "tw-animate-css": "1.4.0"
+            },
+            "dev_dependencies": {
+              "@tailwindcss/postcss": "4.2.1",
+              "@types/node": "22.19.19",
+              "@types/react": "19.2.14",
+              "@types/react-dom": "19.2.3",
+              "@types/three": "0.180.0",
+              "@vitejs/plugin-react": "6.0.2",
+              "oxfmt": "0.61.0",
+              "oxlint": "1.76.0",
+              "oxlint-tsgolint": "7.0.2001",
+              "tailwindcss": "4.2.1",
+              "typescript": "5.9.3",
+              "vite": "^8.2.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js 0.180.0, React/ReactDOM 19.2.6 with Base UI/shadcn/Lucide and Tailwind-related DOM styling, project-authored FPS/environment/audio, TypeScript and Vite. Exact runtime/dev declarations are preserved."
+        ],
+        "framework_audit": "Actual entry and live render/game code were inspected. Rendering invokes Three.js directly through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. Physics, DOM UI, build and optional service helpers are disclosed; no complete transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/app/game/engine.ts#L988",
+        "claim": "After all opponents are defeated, remaining in the extraction zone fills the extraction timer and enters complete mode. Zero player health enters dead mode; the active engine handles shooting, damage, actors and mission state."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/LICENSE",
+        "additional_notices": [
+          "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/THIRD_PARTY_NOTICES.md",
+          "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/README.md"
+        ],
+        "notes": "README releases original code and procedural assets under MIT. Copied UI/software dependencies retain the separate licenses in THIRD_PARTY_NOTICES.md; those notices were reviewed without claiming a complete transitive/originality audit."
+      },
+      "demo": {
+        "url": "https://blackwater-roan.vercel.app",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://api.github.com/repos/Hiraeth010/blackwater",
+        "notes": "Repository metadata homepage read on 2026-10-24 identifies this author deployment; README does not supply the live URL. The text reader could not retrieve it. No browser game, pointer lock, audio, settings/storage or mission ran."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/README.md",
+        "notes": "README explicitly presents a focused browser prototype. Source implements a single-player extraction completion/death path; deployment, combat quality and device support were not tested."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "80e56105690c963e3263d075ade41afce533d44e",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-024.md#blackwater",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/package.json"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/THIRD_PARTY_NOTICES.md"
+          },
+          {
+            "path": "main.tsx",
+            "url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/main.tsx"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/index.html"
+          },
+          {
+            "path": "app/page.tsx",
+            "url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/app/page.tsx"
+          },
+          {
+            "path": "app/game/engine.ts",
+            "url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/app/game/engine.ts"
+          },
+          {
+            "path": "app/game/environment.ts",
+            "url": "https://github.com/Hiraeth010/blackwater/blob/80e56105690c963e3263d075ade41afce533d44e/app/game/environment.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "No upstream install, build, combat/world verifier, tests or playtest occurred. Enemy AI, aiming, mission balance, rendering, pointer-lock behavior and current browser compatibility remain source reviewed only."
+      ]
     }
   ]
 }

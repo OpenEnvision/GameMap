@@ -1240,6 +1240,34 @@
         "https://github.com/17biubiu/glimmer-box-puzzle/blob/57175a5daec33dd4a34f4b9209fd78611cb168b6/README.en.md",
         "https://github.com/17biubiu/glimmer-box-puzzle/blob/57175a5daec33dd4a34f4b9209fd78611cb168b6/package.json"
       ]
+    },
+    {
+      "id": "enigma-cube",
+      "repository_url": "https://github.com/pasquelin/enigma-cube",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "e5342a4f2b21021b2dbc8bdb949efe45e61714a5",
+      "reason": "Current root LICENSE/README identify MIT code, while the checked-in installer license page retains a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 US agreement. Its historical/current scope relative to MIT has not been resolved; README separately warns that some bundled library/media items retain their own terms. No blanket legal conclusion is inferred.",
+      "next_action": "Clarify the installer/file-level/relicense scope and media grants, then finish the actual game entry/render/objective review. Keep the two pinned license statements visible rather than presenting an unqualified MIT game.",
+      "evidence_urls": [
+        "https://github.com/pasquelin/enigma-cube/blob/e5342a4f2b21021b2dbc8bdb949efe45e61714a5/LICENSE",
+        "https://github.com/pasquelin/enigma-cube/blob/e5342a4f2b21021b2dbc8bdb949efe45e61714a5/README.md",
+        "https://github.com/pasquelin/enigma-cube/blob/e5342a4f2b21021b2dbc8bdb949efe45e61714a5/install/license.php#L235"
+      ]
+    },
+    {
+      "id": "operation-ink",
+      "repository_url": "https://github.com/byteab/operation-ink",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "10c5857b05fca41b943f63c365c2f76cc7e80331",
+      "reason": "Code is MIT, but README/sound credits explicitly do not grant reuse rights for Project I.G.I. recordings. The snapshot includes 62 files under public/sounds/igi; credits identify the imported bank as primary game audio. The game-code license does not clear that commercial-source material.",
+      "next_action": "Keep as source-open/restricted-audio candidate until applicable permissions or replacements/removal are established, then complete the renderer/objective audit. Do not copy or play the recordings.",
+      "evidence_urls": [
+        "https://github.com/byteab/operation-ink/blob/10c5857b05fca41b943f63c365c2f76cc7e80331/LICENSE",
+        "https://github.com/byteab/operation-ink/blob/10c5857b05fca41b943f63c365c2f76cc7e80331/README.md#L15",
+        "https://github.com/byteab/operation-ink/blob/10c5857b05fca41b943f63c365c2f76cc7e80331/public/sounds/CREDITS.md#L18"
+      ]
     }
   ]
 }
