@@ -1309,6 +1309,62 @@
         "https://github.com/TheCodingRocket/3D-Pong/blob/adfc09a0dfcb15e80c4b80f2035245978838aea8/README.md",
         "https://github.com/TheCodingRocket/3D-Pong/blob/adfc09a0dfcb15e80c4b80f2035245978838aea8/LICENSE"
       ]
+    },
+    {
+      "id": "mini-golf-mania-threlte",
+      "repository_url": "https://github.com/LCmaster/minigolf",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "760bff35374881be3df3fe4f350d342b1b276f3c",
+      "reason": "README names SvelteKit/Threlte and the manifest declares @threlte/core, extras and rapier. This is a Three.js-backed game through a rendering wrapper, outside the direct imperative Three.js scope.",
+      "next_action": "Keep outside the verified direct-Three collection; do not treat a three dependency or a working game as sufficient to remove the wrapper exclusion.",
+      "evidence_urls": [
+        "https://github.com/LCmaster/minigolf/blob/760bff35374881be3df3fe4f350d342b1b276f3c/README.md#L7",
+        "https://github.com/LCmaster/minigolf/blob/760bff35374881be3df3fe4f350d342b1b276f3c/package.json"
+      ]
+    },
+    {
+      "id": "tideline-fish",
+      "repository_url": "https://github.com/lingting-only/tideline-fish",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "fbde9b760bf35ca3129333b3d5d88c8303fe6603",
+      "reason": "README still identifies the game as BridgeMind's TIDELINE and links the already indexed canonical game's demo. Comparison to the indexed pinned snapshot found 18 of 34 examined core/entry/README/license/style blobs identical; 16 differ and have not been classified as a distinct new game. It is retained under the existing game identity rather than counted again.",
+      "next_action": "Use the canonical bridge-mind/tideline entry. Revisit separately only with a documented distinct game identity and an audit of substantive changes; this decision does not assert byte-identical repositories.",
+      "evidence_urls": [
+        "https://github.com/lingting-only/tideline-fish/blob/fbde9b760bf35ca3129333b3d5d88c8303fe6603/README.md#L1",
+        "https://github.com/lingting-only/tideline-fish/blob/fbde9b760bf35ca3129333b3d5d88c8303fe6603/LICENSE"
+      ]
+    },
+    {
+      "id": "tidal-fishing-web3",
+      "repository_url": "https://github.com/NewSoulOnTheBlock/tidal-fishing",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "16e4f2c2926f699e7ec8dcfa8ee34e27a3d30482",
+      "reason": "README describes a Solana-wallet TIDAL derivative of the already indexed Tideline, while the current package description names a Robinhood Chain/Bull Fish Blitz variant. The default game entry, relevant backend/wallet paths, media grants and distinct-game identity have not completed source review. No wallet, transaction or service was used.",
+      "next_action": "Reconcile the current entry/chain documentation and derivative identity, then statically inspect direct rendering, game objectives and dependency/media licensing. Do not equate a package MIT label with a completed game/runtime review.",
+      "evidence_urls": [
+        "https://github.com/NewSoulOnTheBlock/tidal-fishing/blob/16e4f2c2926f699e7ec8dcfa8ee34e27a3d30482/README.md#L1",
+        "https://github.com/NewSoulOnTheBlock/tidal-fishing/blob/16e4f2c2926f699e7ec8dcfa8ee34e27a3d30482/package.json",
+        "https://github.com/NewSoulOnTheBlock/tidal-fishing/blob/16e4f2c2926f699e7ec8dcfa8ee34e27a3d30482/LICENSE"
+      ]
+    },
+    {
+      "id": "asteroid-attack",
+      "repository_url": "https://github.com/superRaptor911/Asteroid-attack",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "a22a854483a6b1115763066b1b5aab500b0dd3ca",
+      "reason": "The inspected game directly creates a Three WebGLRenderer and implements survival score/game-over logic, but its essential SceneNode/UI/resource helpers are a Git submodule pinned at 80fe28107d632b82c6be53ac3de1f0930f2317a9. That dependency's code/license scope has not been audited. README remains a Node template; bundled media and Telegram score integration also need scoped review.",
+      "next_action": "Inspect the pinned r-engine dependency, relevant asset notices and automatic Telegram score path without running or submitting anything; establish entry/runtime instructions before admission.",
+      "evidence_urls": [
+        "https://github.com/superRaptor911/Asteroid-attack/blob/a22a854483a6b1115763066b1b5aab500b0dd3ca/.gitmodules",
+        "https://github.com/superRaptor911/Asteroid-attack/blob/a22a854483a6b1115763066b1b5aab500b0dd3ca/src/game.ts#L10",
+        "https://github.com/superRaptor911/Asteroid-attack/blob/a22a854483a6b1115763066b1b5aab500b0dd3ca/src/scenes/gamescene/gamescene.ts#L157",
+        "https://github.com/superRaptor911/Asteroid-attack/blob/a22a854483a6b1115763066b1b5aab500b0dd3ca/src/scenes/menus/gameover.ts#L37",
+        "https://github.com/superRaptor911/Asteroid-attack/blob/a22a854483a6b1115763066b1b5aab500b0dd3ca/package.json"
+      ]
     }
   ]
 }

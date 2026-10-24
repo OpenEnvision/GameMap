@@ -16403,6 +16403,369 @@
         "The WebLLM CDN import is unversioned; the optional rival mode may download local inference models, and the PeerJS path may use network services. Their present compatibility, availability, model terms and multiplayer operation were not tested.",
         "No upstream installation, build, tests, playtest, soundtrack playback, AI model/service, peer session or save write ran. Review was limited to intended public game files and relevant notices; no exhaustive asset-origin or transitive-library audit is claimed."
       ]
+    },
+    {
+      "id": "stackblock-io",
+      "name": "StackBlock.io",
+      "repository_url": "https://github.com/ZhengLinLei/stackblock.io",
+      "genres": [
+        "timing arcade",
+        "block stacking",
+        "score attack"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (CDN)",
+        "render_evidence": {
+          "url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/js/script.js#L547",
+          "claim": "The HTML loads script.min.js, which contains the direct Three.js WebGLRenderer/game loop. Gruntfile maps unminified js sources to their minified counterparts; both reviewed forms contain the renderer and scoring logic. The game creates 3D box layers, cameras and scene geometry while Cannon animates falling overhangs."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/package.json",
+            "dependencies": {
+              "grunt": "^1.6.1",
+              "grunt-contrib-uglify": "^5.2.2"
+            },
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js r128 and Cannon.js 0.6.2 via fixed CDN URLs; party-js@latest is unpinned. The manifest declares Grunt ^1.6.1 and grunt-contrib-uglify ^5.2.2 as build dependencies. Authored game/PWA code, a PNG sharing helper credited to canvas-pixels, Google Source Code Pro fonts, localStorage and service-worker registration are present."
+        ],
+        "framework_audit": "Actual game-entry, rendering and objective sources were inspected at this commit. Three.js owns the reviewed renderer; no R3F, A-Frame, Babylon.js, Unity runtime or replacement rendering engine was identified in that scoped entry/manifests. Project-authored gameplay/render helpers and other library roles are disclosed. Every transitive dependency and content file was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/js/script.js#L697",
+        "claim": "A successful placement trims the overlapping layer, drops overhangs, adds the next moving block and increments score. A miss sets GAME_.end and converts the final layer to a falling physics body before the result UI; the active animation loop continues physics/rendering."
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "label": "Apache-2.0 (project code)",
+        "source_url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE/manifest declare Apache-2.0 project code. CDN libraries, fonts and the PNG helper's separately credited canvas-pixels source retain their own terms; those complete upstream grants/transitive notices and every content origin were not independently audited. The root project label is not a claim that all included or fetched material is Apache-2.0."
+      },
+      "demo": {
+        "url": "https://zhenglinlei.github.io/stackblock.io",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/README.md",
+        "notes": "README directly links the GitHub Pages preview. The text reader could not retrieve it; that is not an offline-site conclusion or a source/deployment equivalence check. No game, PWA, sharing or storage action ran."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/README.md",
+        "notes": "Source implements stacking/overhang physics, scoring, missed-placement results and restart/progress UI. HTML/README display 0.1.9 while the build manifest says 0.1.6; present browser compatibility and performance are not tested."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "2046607a2f5dd5fd0275f43ef22d53ecd89861aa",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-027.md#stackblock-io",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/index.html"
+          },
+          {
+            "path": "js/script.js",
+            "url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/js/script.js"
+          },
+          {
+            "path": "js/script.min.js",
+            "url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/js/script.min.js"
+          },
+          {
+            "path": "Gruntfile.js",
+            "url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/Gruntfile.js"
+          },
+          {
+            "path": "js/lib/png2share.js",
+            "url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/js/lib/png2share.js"
+          },
+          {
+            "path": "js/lib/png2share.min.js",
+            "url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/js/lib/png2share.min.js"
+          },
+          {
+            "path": "js/pwa/pwa.min.js",
+            "url": "https://github.com/ZhengLinLei/stackblock.io/blob/2046607a2f5dd5fd0275f43ef22d53ecd89861aa/js/pwa/pwa.min.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The loaded minified game and its readable source were both inspected for renderer/scoring/end state; no rebuild or full semantic byte-for-byte minification equivalence was performed.",
+        "party-js@latest is unpinned, and font/share/PWA dependencies have separate terms. Version labels differ between page/README and manifest. No install/build/test, playtest, service-worker installation, PNG export, share, save or sound action occurred."
+      ]
+    },
+    {
+      "id": "eight-fronts",
+      "name": "Eight Fronts",
+      "repository_url": "https://github.com/mike007jd/eightfront-3d",
+      "genres": [
+        "run and gun",
+        "campaign",
+        "local co-op"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r179 (vendored)",
+        "render_evidence": {
+          "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/src/renderer-three.js#L15",
+          "claim": "The build assembles bootGame around createThreeBackend(await loadThree()). That backend directly creates Three.js WebGLRenderer/Scene/cameras and 3D world/character passes. The real app frame advances gameplay, draws CampaignWorld and checks that the active backend is a Three WebGLRenderer; no replacement engine is inferred from custom shader code."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vendored Three.js r179 with project-authored forward-HDR shaders, mesh/rig generation, physics/game rules, procedural audio, DOM UI and local input. Node >=20 runs custom build/serve/bundle scripts; the npm manifest declares no dependency/devDependency packages. The build is designed to embed local runtime resources in one HTML; it was not executed."
+        ],
+        "framework_audit": "Actual game-entry, rendering and objective sources were inspected at this commit. Three.js owns the reviewed renderer; no R3F, A-Frame, Babylon.js, Unity runtime or replacement rendering engine was identified in that scoped entry/manifests. Project-authored gameplay/render helpers and other library roles are disclosed. Every transitive dependency and content file was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/src/game.js#L306",
+        "claim": "Boss defeat leads to clearStage: stages 1–7 enter clear state and save progression, while the eighth enters won and invokes completion. Gameplay also tracks score, kills, player lives/deaths and local co-op; the live app frame updates the simulation at a fixed step before rendering."
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "label": "Apache-2.0 (project code)",
+        "source_url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/LICENSE",
+        "additional_notices": [
+          "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/NOTICE.md",
+          "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/vendor/THREE-LICENSE.txt",
+          "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/vendor/README.txt"
+        ],
+        "notes": "Root code uses Apache-2.0 with retained NOTICE. Vendored Three.js has its separate MIT notice. NOTICE attributes procedural project assets and screenshots to this project and disclaims imported commercial ROM/sprite/model/music/font assets; those are author provenance statements, not an independent clearance of all binary content or trademarks. The vendor tree hashes agree with the hashes printed in NOTICE; the build's official-reference checks were read, not run."
+      },
+      "demo": {
+        "url": "https://eight-fronts.vercel.app",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://api.github.com/repos/mike007jd/eightfront-3d",
+        "notes": "The author repository metadata homepage supplied this URL when checked on 2026-10-24; it is not attributed to a README demo link. The reader could not retrieve it. No generated build, game, controller, save or deployment/source comparison ran."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/README.md",
+        "notes": "README describes eight stages/local two-player play and the source contains stage-clear/final-win and loss/life mechanics. Performance, offline output, local co-op compatibility and a complete campaign playthrough were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "3a9776b1088e1c28dae3c206b0b77c5429a2218e",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-027.md#eight-fronts",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/LICENSE"
+          },
+          {
+            "path": "NOTICE.md",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/NOTICE.md"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/package.json"
+          },
+          {
+            "path": "scripts/build.mjs",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/scripts/build.mjs"
+          },
+          {
+            "path": "scripts/bundle-three.mjs",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/scripts/bundle-three.mjs"
+          },
+          {
+            "path": "src/shell.html",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/src/shell.html"
+          },
+          {
+            "path": "src/app.js",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/src/app.js"
+          },
+          {
+            "path": "src/renderer-three.js",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/src/renderer-three.js"
+          },
+          {
+            "path": "src/game.js",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/src/game.js"
+          },
+          {
+            "path": "src/characters.js",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/src/characters.js"
+          },
+          {
+            "path": "src/stages.js",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/src/stages.js"
+          },
+          {
+            "path": "vendor/README.txt",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/vendor/README.txt"
+          },
+          {
+            "path": "vendor/THREE-LICENSE.txt",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/vendor/THREE-LICENSE.txt"
+          },
+          {
+            "path": "src/world.js",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/src/world.js"
+          },
+          {
+            "path": "vendor/three.module.js",
+            "url": "https://github.com/mike007jd/eightfront-3d/blob/3a9776b1088e1c28dae3c206b0b77c5429a2218e/vendor/three.module.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Stage rules include side-scrolling, depth-room and vertical layouts. Characters/world are rendered as 3D meshes; unrestricted movement is not implied by the dimension label.",
+        "The unofficial tribute and claimed original procedural content do not establish any trademark endorsement or independently audited asset provenance. The vendor module header was inspected in targeted fragments; no full library audit or rebuild was performed.",
+        "No upstream install/build/test or playtest, gamepad input, local co-op session, browser download, audio or save write occurred. Author performance and build-verification claims remain unreplicated."
+      ]
+    },
+    {
+      "id": "roller-rink-3d",
+      "name": "Roller Rink 3D",
+      "repository_url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D",
+      "genres": [
+        "roller skating",
+        "timed challenge",
+        "score attack"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 global renderer; HTML also declares 0.160.0 import map",
+        "render_evidence": {
+          "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/src/renderer.js#L5",
+          "claim": "The actual index loads global Three.js r128 and the module main.js, whose imported renderer directly creates THREE.WebGLRenderer/Scene/camera. Its animation loop updates skater physics, challenge state, authored Tween animations and the same rendered 3D rink. HTML also declares a Three.js 0.160.0 import map, whose wider use is not presumed."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Global Three.js r128, Tween.js 18.6.4 and the matching 0.128.0 OrbitControls script; HTML additionally declares 0.160.0 module/add-on URLs. Vanilla ES modules, authored movement/collision logic and procedural hierarchical skater animation; no npm manifest in the reviewed project tree. Poppins is loaded through Google Fonts and bundled raster/wood texture files are used."
+        ],
+        "framework_audit": "Actual game-entry, rendering and objective sources were inspected at this commit. Three.js owns the reviewed renderer; no R3F, A-Frame, Babylon.js, Unity runtime or replacement rendering engine was identified in that scoped entry/manifests. Project-authored gameplay/render helpers and other library roles are disclosed. Every transitive dependency and content file was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/src/hud.js#L241",
+        "claim": "Challenge mode decrements a timer in the live main loop. At expiry it stops the challenge and presents the scored result; showEndGameScreen compares score to difficulty-dependent targets. Other inspected paths award/penalize points for actions/items/collisions, so challenge mode has a game objective beyond training/exhibition animation."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE grants MIT project-code use. README describes procedural character/environment geometry but also lists external raster/wood texture assets; their complete provenance/grants and Google Fonts/CDN dependency terms were not independently audited. The code grant is not a blanket asset-clearance statement."
+      },
+      "demo": {
+        "url": "https://claudiacornacchia.github.io/Roller-Rink-3D/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/README.md",
+        "notes": "README supplies the author's GitHub Pages demo. The text reader returned an accessibility error; current playability, browser-specific performance and deployed/source correspondence remain untested. The error alone does not establish an offline site."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/README.md",
+        "notes": "The educational graphics project includes actual timed challenge score/grade state as well as training and exhibition modes. The author recommends browsers based on personal performance observations; those observations and all challenge difficulties were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "ba999d63156084782889915ed991a8cb9a1d984d",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-027.md#roller-rink-3d",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/index.html"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/src/main.js"
+          },
+          {
+            "path": "src/renderer.js",
+            "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/src/renderer.js"
+          },
+          {
+            "path": "src/hud.js",
+            "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/src/hud.js"
+          },
+          {
+            "path": "src/logic/physics.js",
+            "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/src/logic/physics.js"
+          },
+          {
+            "path": "src/logic/animations.js",
+            "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/src/logic/animations.js"
+          },
+          {
+            "path": "src/objects/items.js",
+            "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/src/objects/items.js"
+          },
+          {
+            "path": "src/state.js",
+            "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/src/state.js"
+          },
+          {
+            "path": "src/objects/skater.js",
+            "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/src/objects/skater.js"
+          },
+          {
+            "path": "src/objects/lighting.js",
+            "url": "https://github.com/ClaudiaCornacchia/Roller-Rink-3D/blob/ba999d63156084782889915ed991a8cb9a1d984d/src/objects/lighting.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The reviewed renderer uses the global r128 library; HTML also contains a 0.160.0 import map. No claim is made that both versions are actually loaded on every path or that the declared configuration is compatible in current browsers.",
+        "Scope is the actual timed-challenge game, not exhibition alone. Bundled raster/wood textures and fonts retain any separate rights. No upstream install/build/test or playtest, timed round, input, save or sound action occurred."
+      ]
     }
   ]
 }
