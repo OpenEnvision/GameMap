@@ -12233,6 +12233,841 @@
         "Optional WebXR requires suitable browser/device/session support; no headset, controller, touch, pointer or audio session was opened.",
         "Timing, hit testing, course completion, score display, physics and contemporary browser support remain untested source observations."
       ]
+    },
+    {
+      "id": "dart-room",
+      "name": "Dart Room",
+      "repository_url": "https://github.com/crispierry/dart-room",
+      "genres": [
+        "darts",
+        "score attack",
+        "local multiplayer",
+        "CPU opponent"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.185.1",
+        "render_evidence": {
+          "url": "https://github.com/crispierry/dart-room/blob/eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7/app/game/DartboardScene.tsx#L242",
+          "claim": "The client scene directly creates Three.js WebGLRenderer and its requestAnimationFrame dart/room rendering. Next.js/React host the canvas and match UI; no React Three Fiber renderer is used."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/crispierry/dart-room/blob/eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7/package.json",
+            "dependencies": {
+              "@fontsource-variable/instrument-sans": "^5.3.0",
+              "@fontsource/instrument-serif": "^5.3.0",
+              "next": "16.2.12",
+              "react": "19.2.8",
+              "react-dom": "19.2.8",
+              "three": "^0.185.1"
+            },
+            "dev_dependencies": {
+              "@axe-core/playwright": "^4.12.1",
+              "@eslint/compat": "^2.1.0",
+              "@playwright/test": "^1.62.0",
+              "@types/node": "26.1.2",
+              "@types/react": "19.2.17",
+              "@types/react-dom": "19.2.3",
+              "@types/three": "^0.185.1",
+              "eslint": "^10.8.0",
+              "eslint-config-next": "16.2.12",
+              "tsx": "4.23.1",
+              "typescript": "^6.0.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js with Next.js 16/React 19 UI, Fontsource Instrument Sans/Serif and project-authored darts rules/AI/animation. Exact runtime/dev versions are recorded; no R3F is declared or used in the reviewed scene."
+        ],
+        "framework_audit": "Actual game entry/rendering code directly uses Three.js through project-authored game/render helpers. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. UI, vision, physics, network and build helpers are disclosed; no transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/crispierry/dart-room/blob/eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7/app/game/DartsGame.tsx#L213",
+        "claim": "finishGame sets the complete phase and announces a winner/draw. Count-up completes after eight rounds; 301/cricket use dedicated score/checkout/target rules and a result screen. Solo, shared-device and CPU selection are implemented in the same client game."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/crispierry/dart-room/blob/eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE grants MIT software use. Fontsource typefaces and other dependencies retain their own terms; no claim is made that every dependency/font is covered by the game-code MIT grant."
+      },
+      "demo": {
+        "url": "https://crispierry.com/projects/dart-room",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://api.github.com/repos/crispierry/dart-room",
+        "notes": "Author homepage from GitHub repository metadata read on 2026-10-24. Text retrieval failed; no browser gameplay was executed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/crispierry/dart-room/blob/eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7/README.md",
+        "notes": "An educational playable companion with full match configuration, scoring, turns/results and a 3D throwing scene. It is not merely a tutorial fragment; rule fidelity and the documented UI/accessibility tests were not exercised."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-020.md#dart-room",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/crispierry/dart-room/blob/eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/crispierry/dart-room/blob/eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7/README.md"
+          },
+          {
+            "path": "app/fonts.ts",
+            "url": "https://github.com/crispierry/dart-room/blob/eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7/app/fonts.ts"
+          },
+          {
+            "path": "app/game/DartboardScene.tsx",
+            "url": "https://github.com/crispierry/dart-room/blob/eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7/app/game/DartboardScene.tsx"
+          },
+          {
+            "path": "app/game/DartsGame.tsx",
+            "url": "https://github.com/crispierry/dart-room/blob/eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7/app/game/DartsGame.tsx"
+          },
+          {
+            "path": "app/game/lib/darts.ts",
+            "url": "https://github.com/crispierry/dart-room/blob/eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7/app/game/lib/darts.ts"
+          },
+          {
+            "path": "app/page.tsx",
+            "url": "https://github.com/crispierry/dart-room/blob/eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7/app/page.tsx"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/crispierry/dart-room/blob/eb2bc2c9be6beb8649141bf68de81bfca0a6c9c7/package.json"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "A fixed aiming target inside a 3D room with dart animation; no unrestricted player/world movement is implied.",
+        "Next.js/React are UI/app dependencies and Fontsource Instrument typefaces are separate font dependencies; their complete transitive/font notices were not independently audited.",
+        "Scoring edge cases, CPU strength, gestures, persistence, sound, responsive layout and accessibility claims remain untested source observations."
+      ]
+    },
+    {
+      "id": "eight-ball-sk4rkr0w",
+      "name": "8ball-threejs-game",
+      "repository_url": "https://github.com/Sk4rKr0w/8ball-threejs-game",
+      "genres": [
+        "eight-ball pool",
+        "local multiplayer",
+        "physics billiards"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.176.0",
+        "render_evidence": {
+          "url": "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/src/main.js#L22",
+          "claim": "The actual HTML/module entry directly creates Three.js WebGLRenderer, a 3D table/cue/balls and its own animation loop. OrbitControls/GLTF/post-processing are Three.js helpers; ball/table physics is project-authored."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/package.json",
+            "dependencies": {
+              "@tailwindcss/vite": "^4.1.8",
+              "tailwindcss": "^4.1.8",
+              "three": "^0.176.0",
+              "toastify": "^2.0.1",
+              "toastify-js": "^1.12.0",
+              "tweakpane": "^4.0.5"
+            },
+            "dev_dependencies": {
+              "vite": "^6.3.5"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js with its loader/control/post-processing helpers, Tweakpane, Tailwind and Toastify packages; Vite builds the app. Exact manifest, including both toastify package names, is retained without silently cleaning declarations."
+        ],
+        "framework_audit": "Actual game entry/rendering code directly uses Three.js through project-authored game/render helpers. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. UI, vision, physics, network and build helpers are disclosed; no transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/src/main.js#L618",
+        "claim": "Pocket handling assigns groups, tracks scores/turns and handles cue-ball fouls. Pocketing the black ball before seven group points declares a loss, while the permitted black-ball finish declares a win, then resetMatch restores play."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/LICENSE",
+        "additional_notices": [
+          "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/public/models/billiard_cue/license.txt",
+          "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/public/models/billiards/license.txt"
+        ],
+        "notes": "Root software LICENSE is MIT. Model notices identify Pool Table by Juanpa Velazquez and Billiard cue by stivenguerrero as CC BY 4.0, with source/credit links. Those notices were read separately; no blanket all-models-MIT or binary rights audit is claimed."
+      },
+      "demo": {
+        "url": "https://8ball-threejs-game.vercel.app",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://api.github.com/repos/Sk4rKr0w/8ball-threejs-game",
+        "notes": "Author homepage from GitHub repository metadata read on 2026-10-24. Text retrieval failed; no browser gameplay was executed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/README.md",
+        "notes": "A source-complete local pool prototype with aiming/shots, ball contacts/pockets, group scoring/fouls and black-ball result/reset logic. Realism, official rule compliance and runtime stability were not tested."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "6d184a6f600ee4d01b89ce365dacf0965f3ece43",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-020.md#eight-ball-sk4rkr0w",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/package.json"
+          },
+          {
+            "path": "public/models/billiard_cue/license.txt",
+            "url": "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/public/models/billiard_cue/license.txt"
+          },
+          {
+            "path": "public/models/billiards/license.txt",
+            "url": "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/public/models/billiards/license.txt"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/Sk4rKr0w/8ball-threejs-game/blob/6d184a6f600ee4d01b89ce365dacf0965f3ece43/src/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Movement is mainly on the table plane while the renderer uses volumetric models and camera; this is a 3D board, not unrestricted spatial play.",
+        "The table and cue have separate CC BY 4.0 notices and attribution requirements; their binaries/hashes and full provenance were not independently audited.",
+        "Manual physics, fouls/group assignment, resets, frame-rate behavior and model loading were not independently exercised."
+      ]
+    },
+    {
+      "id": "carom-pool",
+      "name": "Carom-Pool",
+      "repository_url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer",
+      "genres": [
+        "carom billiards",
+        "turn-based sports",
+        "network multiplayer"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.92.0",
+        "render_evidence": {
+          "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/assets/js/Engine/GameView.js#L32",
+          "claim": "The actual Nuxt carom page instantiates the project controller and starts the game; GameView directly constructs Three.js WebGLRenderer. Own model/physics/view classes render 3D balls/table and update through requestAnimationFrame."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/package.json",
+            "dependencies": {
+              "@feathersjs/authentication": "^2.1.5",
+              "@feathersjs/authentication-client": "^1.0.2",
+              "@feathersjs/authentication-jwt": "^2.0.0",
+              "@feathersjs/authentication-local": "^1.1.3",
+              "@feathersjs/configuration": "^1.0.2",
+              "@feathersjs/errors": "^3.3.0",
+              "@feathersjs/express": "^1.2.2",
+              "@feathersjs/feathers": "^3.1.4",
+              "@feathersjs/socketio": "^3.2.1",
+              "@feathersjs/socketio-client": "^1.1.0",
+              "compression": "^1.7.2",
+              "cookie-storage": "^3.1.0",
+              "cors": "^2.8.4",
+              "eslint-plugin-vue": "^4.5.0",
+              "feathers-authentication-hooks": "^0.2.0",
+              "feathers-hooks-common": "^4.11.0",
+              "feathers-memory": "^2.1.1",
+              "feathers-nedb": "^3.0.0",
+              "feathers-vuex": "^1.2.1",
+              "helmet": "^3.12.0",
+              "js-cookie": "^2.2.0",
+              "nedb": "^1.8.0",
+              "nuxt": "^1.4.0",
+              "serve-favicon": "^2.5.0",
+              "socket.io-client": "^2.1.0",
+              "three": "^0.92.0",
+              "three-orbit-controls": "^82.1.0",
+              "vuelidate": "^0.6.2",
+              "vuetify": "^1.0.0",
+              "vuex-persistedstate": "^2.5.2",
+              "winston": "^2.4.2"
+            },
+            "dev_dependencies": {
+              "babel-eslint": "^7.2.3",
+              "cross-env": "^5.0.1",
+              "eslint": "^4.19.1",
+              "eslint-config-prettier": "^2.9.0",
+              "eslint-config-standard": "^10.2.1",
+              "eslint-loader": "^1.9.0",
+              "eslint-plugin-html": "^3.1.1",
+              "eslint-plugin-import": "^2.7.0",
+              "eslint-plugin-node": "^5.1.1",
+              "eslint-plugin-promise": "^3.5.0",
+              "eslint-plugin-standard": "^3.0.1",
+              "mocha": "^5.1.1",
+              "nodemon": "^1.17.3",
+              "request": "^2.85.0",
+              "request-promise": "^4.2.2",
+              "stylus": "^0.54.5",
+              "stylus-loader": "^3.0.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js and three-orbit-controls with project-authored billiards physics; Nuxt/Vue/Vuetify UI and Feathers/Socket.IO/NeDB backend/state packages. Full declared runtime/dev maps are retained."
+        ],
+        "framework_audit": "Actual game entry/rendering code directly uses Three.js through project-authored game/render helpers. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. UI, vision, physics, network and build helpers are disclosed; no transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/assets/js/Engine/Game.js#L104",
+        "claim": "GameModel determines turn validity and calls endTurn. A successful carom increments the current player's score and continues their play; otherwise the controller switches players. The view updates score models and turn feedback."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE grants MIT software use. Dependencies and media retain their own terms; no per-file media grant ledger or complete asset/rights audit was established."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/README.md",
+        "notes": "No author-hosted public demo was established from the reviewed README/metadata; no Pages or other URL was guessed."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/assets/js/Engine/Game.js",
+        "notes": "A legacy Nuxt 1/Vuetify/Three.js carom implementation with per-turn scoring and network room hooks. The generic build README is supplemented by actual game/controller/model source; no current deployment or working online session is asserted."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "378b0da955398ddd60e5f5fe964380087fb76a5c",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-020.md#carom-pool",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/README.md"
+          },
+          {
+            "path": "assets/js/Carom.js",
+            "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/assets/js/Carom.js"
+          },
+          {
+            "path": "assets/js/Engine/CaromPhysics.js",
+            "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/assets/js/Engine/CaromPhysics.js"
+          },
+          {
+            "path": "assets/js/Engine/Game.js",
+            "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/assets/js/Engine/Game.js"
+          },
+          {
+            "path": "assets/js/Engine/GameModel.js",
+            "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/assets/js/Engine/GameModel.js"
+          },
+          {
+            "path": "assets/js/Engine/GameView.js",
+            "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/assets/js/Engine/GameView.js"
+          },
+          {
+            "path": "assets/js/Objects/Boule.js",
+            "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/assets/js/Objects/Boule.js"
+          },
+          {
+            "path": "assets/js/Objects/Table.js",
+            "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/assets/js/Objects/Table.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/package.json"
+          },
+          {
+            "path": "pages/carom.vue",
+            "url": "https://github.com/the-zucc/carom-pool-threejs-multiplayer/blob/378b0da955398ddd60e5f5fe964380087fb76a5c/pages/carom.vue"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The game is table-constrained 3D billiards. No target-score terminal match win was established; this record describes the implemented scored-turn loop.",
+        "Nuxt/Vue/Vuetify are UI/app layers; Feathers/Socket.IO/NeDB/auth packages provide legacy network/account infrastructure. No account, server or network game session was opened.",
+        "Elevator-song audio and other texture/asset provenance were not independently established, and code MIT is not extended to every media file.",
+        "Manual carom physics, multiplayer synchronization, scoring, compatibility and legacy dependency behavior remain untested."
+      ]
+    },
+    {
+      "id": "pool-quget",
+      "name": "ThreeJS-Pool-Game — Quget",
+      "repository_url": "https://github.com/Quget/ThreeJS-Pool-Game",
+      "genres": [
+        "eight-ball pool",
+        "local multiplayer",
+        "billiards"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r80 (vendored header)",
+        "render_evidence": {
+          "url": "https://github.com/Quget/ThreeJS-Pool-Game/blob/22aaa5804425c2cfbf276d203ec42cebc5de773e/js/SceneRenderer.js#L28",
+          "claim": "The actual index loads local Three.js and jQuery before the project game classes. SceneRenderer directly creates WebGLRenderer and its animation callback; balls and table are 3D meshes with project-authored collision/input logic."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vendored Three.js r80 and jQuery 3.1.0; own scene/input/audio/ball/hole/player/collision classes loaded by index.html. No npm manifest was present; CSG files are not loaded by the inspected entry."
+        ],
+        "framework_audit": "Actual game entry/rendering code directly uses Three.js through project-authored game/render helpers. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. UI, vision, physics, network and build helpers are disclosed; no transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Quget/ThreeJS-Pool-Game/blob/22aaa5804425c2cfbf276d203ec42cebc5de773e/js/Main.js#L190",
+        "claim": "Pocket events distinguish cue/black/group balls and switch turns. The black-ball path checks HaveAllBallIn, displays a won/lost message, marks gameDone and resets the setup; the broader loop removes pocketed balls and manages turn progress."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/Quget/ThreeJS-Pool-Game/blob/22aaa5804425c2cfbf276d203ec42cebc5de773e/LICENCE",
+        "additional_notices": [],
+        "notes": "LICENCE grants MIT software use. Vendored libraries and media retain their own terms; no complete vendor or binary/audio/texture clearance was performed."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/Quget/ThreeJS-Pool-Game/blob/22aaa5804425c2cfbf276d203ec42cebc5de773e/README.md",
+        "notes": "No author-hosted public demo was established from the reviewed README/metadata; no Pages or other URL was guessed."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/Quget/ThreeJS-Pool-Game/blob/22aaa5804425c2cfbf276d203ec42cebc5de773e/README.md",
+        "notes": "A school-project pool game using Three.js r80, with two-player/group/black-ball outcome logic in source. Its UI requires manual refresh in result messages; current browser compatibility and complete rules were not tested."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "22aaa5804425c2cfbf276d203ec42cebc5de773e",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-020.md#pool-quget",
+        "reviewed_files": [
+          {
+            "path": "LICENCE",
+            "url": "https://github.com/Quget/ThreeJS-Pool-Game/blob/22aaa5804425c2cfbf276d203ec42cebc5de773e/LICENCE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Quget/ThreeJS-Pool-Game/blob/22aaa5804425c2cfbf276d203ec42cebc5de773e/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Quget/ThreeJS-Pool-Game/blob/22aaa5804425c2cfbf276d203ec42cebc5de773e/index.html"
+          },
+          {
+            "path": "js/Ball.js",
+            "url": "https://github.com/Quget/ThreeJS-Pool-Game/blob/22aaa5804425c2cfbf276d203ec42cebc5de773e/js/Ball.js"
+          },
+          {
+            "path": "js/HoleBall.js",
+            "url": "https://github.com/Quget/ThreeJS-Pool-Game/blob/22aaa5804425c2cfbf276d203ec42cebc5de773e/js/HoleBall.js"
+          },
+          {
+            "path": "js/Main.js",
+            "url": "https://github.com/Quget/ThreeJS-Pool-Game/blob/22aaa5804425c2cfbf276d203ec42cebc5de773e/js/Main.js"
+          },
+          {
+            "path": "js/SceneRenderer.js",
+            "url": "https://github.com/Quget/ThreeJS-Pool-Game/blob/22aaa5804425c2cfbf276d203ec42cebc5de773e/js/SceneRenderer.js"
+          },
+          {
+            "path": "js/lib/three.min.js",
+            "url": "https://github.com/Quget/ThreeJS-Pool-Game/blob/22aaa5804425c2cfbf276d203ec42cebc5de773e/js/lib/three.min.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Billiards rules are plane-constrained on a 3D table. This does not imply free XYZ play or certified eight-ball rule compliance.",
+        "Only the vendored Three.js header/revision fragment was inspected. The active entry loads jQuery 3.1.0 and project helpers; unused CSG files in the tree are not asserted as runtime dependencies.",
+        "Bundled ambience/textures and every asset's provenance/rights were not independently audited; no all-assets-MIT statement is made.",
+        "Physics, turn/foul rules, match reset/refresh behavior, audio and browser support remain untested."
+      ]
+    },
+    {
+      "id": "firn",
+      "name": "Firn",
+      "repository_url": "https://github.com/robinsadeghpour/webcam-ski",
+      "genres": [
+        "skiing",
+        "endless run",
+        "flag collection",
+        "motion controls"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/src/main.ts#L145",
+          "claim": "The actual TypeScript entry directly creates Three.js WebGLRenderer and a handwritten animation loop for procedural terrain, skier and flags. MediaPipe pose/gesture input is separate from the rendering core, with keyboard fallback."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/package.json",
+            "dependencies": {
+              "@mediapipe/tasks-vision": "^1.1.0",
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.186.0",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.4"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js and @mediapipe/tasks-vision at declared versions, with TypeScript/Vite tooling; project-authored pose/keyboard mapping, procedural world, flags and WebAudio. Vision is an input helper, not another renderer."
+        ],
+        "framework_audit": "Actual game entry/rendering code directly uses Three.js through project-authored game/render helpers. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. UI, vision, physics, network and build helpers are disclosed; no transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/src/world/flags.ts#L320",
+        "claim": "Flags.update marks nearby crossed flags taken, increments the count/streak and tracks the best streak. The main loop updates flags and renders counters alongside run distance; obstacles cause stumble/hit penalties, and restart clears run counters. This is an endless collection loop, not a claimed terminal win/loss game."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/LICENSE",
+        "additional_notices": [
+          "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/THIRD_PARTY_NOTICES.md",
+          "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/LICENSES/Apache-2.0.txt"
+        ],
+        "notes": "Root code is MIT. THIRD_PARTY_NOTICES.md separately identifies MediaPipe Tasks Vision and BlazePose GHUM 3D lite under Apache 2.0; LICENSES/Apache-2.0.txt is bundled. The linked original model card also states Apache 2.0. No full binary or asset chain-of-title audit is claimed."
+      },
+      "demo": {
+        "url": "https://native.express/lab/ski",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/README.md",
+        "notes": "Pinned README supplies the author URL. Text retrieval failed; availability and gameplay remain unconfirmed. No game, media/camera or network session was executed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/README.md",
+        "notes": "A source-implemented endless skiing game with keyboard/body input, terrain, flag counters/streaks, movement/jumps and collision feedback. Capture, pose accuracy and performance claims were not independently exercised."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "d747df8d49dd4e0767ac2245f8e72f413e27e3d8",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-020.md#firn",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/LICENSE"
+          },
+          {
+            "path": "LICENSES/Apache-2.0.txt",
+            "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/LICENSES/Apache-2.0.txt"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/README.md"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/THIRD_PARTY_NOTICES.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/package.json"
+          },
+          {
+            "path": "src/game/run.ts",
+            "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/src/game/run.ts"
+          },
+          {
+            "path": "src/input/keyboard.ts",
+            "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/src/input/keyboard.ts"
+          },
+          {
+            "path": "src/input/pose.ts",
+            "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/src/input/pose.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/src/main.ts"
+          },
+          {
+            "path": "src/world/flags.ts",
+            "url": "https://github.com/robinsadeghpour/webcam-ski/blob/d747df8d49dd4e0767ac2245f8e72f413e27e3d8/src/world/flags.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Body input requires camera permission and a compatible device/browser; keyboard fallback is documented and implemented. No camera, pose inference, recording or model execution occurred.",
+        "Third-party notices distinguish MIT Three.js and Apache-2.0 MediaPipe/model components. The original Google model card was checked for its Apache-2.0 statement; the model binary was not downloaded or hash-audited.",
+        "Scoring is an endless distance/flag/streak session; no terminal victory or death state is asserted.",
+        "Motion calibration, collision handling, recording, saved preferences and runtime/performance remain untested."
+      ]
+    },
+    {
+      "id": "island-escape-lost-treasure",
+      "name": "Island Escape 3D — The Lost Treasure",
+      "repository_url": "https://github.com/SUMAIRDERO62/Island-escape-3dd",
+      "genres": [
+        "treasure hunt",
+        "exploration adventure",
+        "environment puzzles"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.160.0",
+        "render_evidence": {
+          "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/src/core/Game.js#L103",
+          "claim": "The actual entry constructs its own Game and requestAnimationFrame GameLoop. Game directly creates Three.js WebGLRenderer/camera/scene, with project-authored player, island, collectibles, hazards and puzzle modules."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/package.json",
+            "dependencies": {
+              "three": "^0.160.0"
+            },
+            "dev_dependencies": {
+              "vite": "^5.4.10"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js is the only declared runtime package; Vite is the dev tool. Own input/player/world/quest/score/interaction/puzzle modules and direct Three.js GameLoop; no replacement game engine is declared."
+        ],
+        "framework_audit": "Actual game entry/rendering code directly uses Three.js through project-authored game/render helpers. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. UI, vision, physics, network and build helpers are disclosed; no transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/src/puzzles/TemplePuzzle.js#L59",
+        "claim": "The temple door checks for three map pieces and a golden key. Interacting with its treasure chest sets treasureOpened and emits game:victory; Game switches to VICTORY and displays finalized score, while the player-death path handles GAME_OVER."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE grants MIT software use. The reviewed code builds the game through local modules; no complete dependency/media ownership audit or all-assets-MIT guarantee is made."
+      },
+      "demo": {
+        "url": "https://island-escape-3d.vercel.app/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/README.md",
+        "notes": "Pinned README supplies the author URL. Text retrieval failed; availability and gameplay remain unconfirmed. No game, media/camera or network session was executed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/README.md",
+        "notes": "A university-project adventure with source-implemented exploration collectibles, temple-door/chest progression and victory/game-over/score UI. All advertised puzzles, wildlife and complete path reachability were not independently played through."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "acd7e622893cf80938a0e46f8d20555c98bd9784",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-020.md#island-escape-lost-treasure",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/package.json"
+          },
+          {
+            "path": "src/core/Game.js",
+            "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/src/core/Game.js"
+          },
+          {
+            "path": "src/core/GameLoop.js",
+            "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/src/core/GameLoop.js"
+          },
+          {
+            "path": "src/core/GameState.js",
+            "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/src/core/GameState.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/src/main.js"
+          },
+          {
+            "path": "src/puzzles/TemplePuzzle.js",
+            "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/src/puzzles/TemplePuzzle.js"
+          },
+          {
+            "path": "src/systems/QuestSystem.js",
+            "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/src/systems/QuestSystem.js"
+          },
+          {
+            "path": "src/systems/ScoreSystem.js",
+            "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/src/systems/ScoreSystem.js"
+          },
+          {
+            "path": "src/world/Temple.js",
+            "url": "https://github.com/SUMAIRDERO62/Island-escape-3dd/blob/acd7e622893cf80938a0e46f8d20555c98bd9784/src/world/Temple.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "README's demo uses island-escape-3d.vercel.app, while GitHub homepage metadata uses island-escape-3dd.vercel.app. Both reader fetches failed; the discrepancy is retained without declaring either offline.",
+        "The game is primarily grounded island travel rendered in 3D; the scene label does not mean unrestricted XYZ controls.",
+        "No separate exhaustive asset/provenance ledger was established. The MIT software notice is not extended to every potential media/dependency asset.",
+        "Puzzle requirements, collectible reachability, hazards, saves, score/balance and mobile controls remain untested."
+      ]
+    },
+    {
+      "id": "ski-3d-redux",
+      "name": "SKI-3D",
+      "repository_url": "https://github.com/pemmyz/js_laskettelu_redux",
+      "genres": [
+        "downhill skiing",
+        "endless score attack",
+        "obstacle avoidance"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r164 (standalone vendored module)",
+        "render_evidence": {
+          "url": "https://github.com/pemmyz/js_laskettelu_redux/blob/d468b8c8a00eb19d68300d00606bf0652084ae62/script.js#L24",
+          "claim": "The actual HTML loads script.js, which imports the local file named three.core.min.js and directly creates WebGLRenderer/PerspectiveCamera. Inspection confirms that this file is a self-contained r164 module exporting WebGLRenderer, despite its filename."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla HTML/JavaScript and a locally vendored standalone Three.js r164 module. Own geometry/obstacles, controls, scoring, localStorage and experimental autobot logic; no npm manifest or external game renderer was located."
+        ],
+        "framework_audit": "Actual game entry/rendering code directly uses Three.js through project-authored game/render helpers. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in the reviewed entry or declared manifests. UI, vision, physics, network and build helpers are disclosed; no transitive audit is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/pemmyz/js_laskettelu_redux/blob/d468b8c8a00eb19d68300d00606bf0652084ae62/script.js#L350",
+        "claim": "gameOver stops an active run and displays final/high-score data. The update loop scores distance, gates and jumps, while crash/yeti contacts call gameOver. Restart initializes a new run; optional project-authored autobot modes are present."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/pemmyz/js_laskettelu_redux/blob/d468b8c8a00eb19d68300d00606bf0652084ae62/LICENSE",
+        "additional_notices": [
+          "https://github.com/pemmyz/js_laskettelu_redux/blob/d468b8c8a00eb19d68300d00606bf0652084ae62/three.core.min.js"
+        ],
+        "notes": "Root LICENSE grants MIT game-code use; the local Three.js header separately retains its MIT notice. No comprehensive vendor/asset ownership audit is claimed."
+      },
+      "demo": {
+        "url": "https://pemmyz.github.io/js_laskettelu_redux/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/pemmyz/js_laskettelu_redux/blob/d468b8c8a00eb19d68300d00606bf0652084ae62/README.md",
+        "notes": "Pinned README supplies the author URL. Text retrieval failed; availability and gameplay remain unconfirmed. No game, media/camera or network session was executed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/pemmyz/js_laskettelu_redux/blob/d468b8c8a00eb19d68300d00606bf0652084ae62/README.md",
+        "notes": "A static downhill game with true 3D geometric scenery/obstacles, keyboard control, scoring, crash results and restart. README calls the autobot modes experimental; those claims were not benchmarked."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "d468b8c8a00eb19d68300d00606bf0652084ae62",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-020.md#ski-3d-redux",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/pemmyz/js_laskettelu_redux/blob/d468b8c8a00eb19d68300d00606bf0652084ae62/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/pemmyz/js_laskettelu_redux/blob/d468b8c8a00eb19d68300d00606bf0652084ae62/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/pemmyz/js_laskettelu_redux/blob/d468b8c8a00eb19d68300d00606bf0652084ae62/index.html"
+          },
+          {
+            "path": "script.js",
+            "url": "https://github.com/pemmyz/js_laskettelu_redux/blob/d468b8c8a00eb19d68300d00606bf0652084ae62/script.js"
+          },
+          {
+            "path": "three.core.min.js",
+            "url": "https://github.com/pemmyz/js_laskettelu_redux/blob/d468b8c8a00eb19d68300d00606bf0652084ae62/three.core.min.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Rules are largely ground-plane travel with 3D meshes/camera; free XYZ movement is not implied.",
+        "The local module's header/import/export/revision fragments were inspected, confirming r164 and MIT. The whole third-party library was not audited.",
+        "Experimental autobot/assist modes are author code/features; no AI training, benchmark or performance evaluation was executed.",
+        "Collision/score correctness, localStorage high scores, restart, rendering and contemporary browser compatibility remain untested."
+      ]
     }
   ]
 }

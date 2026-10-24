@@ -995,6 +995,35 @@
         "https://github.com/BrianMacIntosh/LD34/blob/15139ffbe6b2284c570eb5ab8048daa037e0461e/script_game/tileManager.js",
         "https://github.com/BrianMacIntosh/LD34/blob/15139ffbe6b2284c570eb5ab8048daa037e0461e/LICENSE"
       ]
+    },
+    {
+      "id": "temple-escape",
+      "repository_url": "https://github.com/JosephDola/temple-escape",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "c2c2948696efeaa1d02f357aefbdc0f16cce44f7",
+      "reason": "The root game code is MIT, but THIRD_PARTY_NOTICES explicitly leaves supplied arms/temple texture rights with their original owners without a new grant. It also distinguishes earlier CC0 creature references from Quaternius QAL game-use terms rather than licensing every asset uniformly.",
+      "next_action": "Clarify the supplied-resource grants and applicable creature acquisition terms, or identify a fully cleared asset edition before promotion. No release HTML, model binary or installer was downloaded/run.",
+      "evidence_urls": [
+        "https://github.com/JosephDola/temple-escape/blob/c2c2948696efeaa1d02f357aefbdc0f16cce44f7/README.md",
+        "https://github.com/JosephDola/temple-escape/blob/c2c2948696efeaa1d02f357aefbdc0f16cce44f7/LICENSE",
+        "https://github.com/JosephDola/temple-escape/blob/c2c2948696efeaa1d02f357aefbdc0f16cce44f7/THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "id": "skifree-aryribeiro",
+      "repository_url": "https://github.com/aryribeiro/skifree",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "fcaa71befb5c7926621bad1a0644af498a8a60bd",
+      "reason": "README describes pixel-faithful orthographic rendering and the actual main uses sprites/XY presentation, outside the collection's 3D scene/board boundary. NOTICE also explicitly excludes the recovered original bitmaps/tables from the repository's MIT grant.",
+      "next_action": "Reconsider a distinct true-3D edition with clarified original-content terms; do not treat Three.js as proof that an original 2D sprite game is 3D or that MIT covers original SkiFree content.",
+      "evidence_urls": [
+        "https://github.com/aryribeiro/skifree/blob/fcaa71befb5c7926621bad1a0644af498a8a60bd/README.md",
+        "https://github.com/aryribeiro/skifree/blob/fcaa71befb5c7926621bad1a0644af498a8a60bd/NOTICE.md",
+        "https://github.com/aryribeiro/skifree/blob/fcaa71befb5c7926621bad1a0644af498a8a60bd/LICENSE",
+        "https://github.com/aryribeiro/skifree/blob/fcaa71befb5c7926621bad1a0644af498a8a60bd/src/main.js"
+      ]
     }
   ]
 }
