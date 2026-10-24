@@ -11862,6 +11862,377 @@
         "The manifest pins a legacy Node target and older Three.js/Cannon/chess.js versions; no install/build/upgrade or compatibility test was performed.",
         "AI strength, worker startup, rule correctness, physics interactions and end-state presentation were not exercised."
       ]
+    },
+    {
+      "id": "in-the-dark-ld29",
+      "name": "In The Dark — LD29",
+      "repository_url": "https://github.com/catlinman/in-the-dark",
+      "genres": [
+        "first-person exploration",
+        "procedural descent",
+        "coin collection"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r66 (vendored revision fragment)",
+        "render_evidence": {
+          "url": "https://github.com/catlinman/in-the-dark/blob/02d34d1697ab8a9954d2d669e2ec9ea9b1077e05/canvas.game.js#L51",
+          "claim": "The actual index loads vendored Three.js and project-authored canvas/input helpers. canvas.game.js directly creates WebGLRenderer and a 3D room/player scene; canvas.lib.js drives the requestAnimationFrame loop. The vendor revision fragment identifies r66."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla HTML/JavaScript and vendored Three.js r66, with project-authored canvas/input/math/game-loop helpers. Helvetiker font and local audio assets are loaded; no npm manifest or external replacement renderer was located."
+        ],
+        "framework_audit": "The inspected actual entry directly renders with Three.js through project-authored game/input/render helpers. No R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified in the entry path or declared manifests. This is not a transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/catlinman/in-the-dark/blob/02d34d1697ab8a9954d2d669e2ec9ea9b1077e05/canvas.game.js#L1089",
+        "claim": "Room progression increments currentFloor and regenerates the next 3D floor; coin pickups increment totalCoins. Player health reaching zero sets gameover and shows a death summary with coins and the deepest level reached."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/catlinman/in-the-dark/blob/02d34d1697ab8a9954d2d669e2ec9ea9b1077e05/LICENSE",
+        "additional_notices": [
+          "https://github.com/catlinman/in-the-dark/blob/02d34d1697ab8a9954d2d669e2ec9ea9b1077e05/helvetiker_regular.typeface.js"
+        ],
+        "notes": "Root LICENSE/README grant MIT software use. The bundled Helvetiker typeface embeds its own Magenta/MgOpen font permission conditions, which were read separately. Audio and full vendor/asset rights were not independently audited."
+      },
+      "demo": {
+        "url": "https://catlinman.github.io/in-the-dark/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/catlinman/in-the-dark/blob/02d34d1697ab8a9954d2d669e2ec9ea9b1077e05/README.md",
+        "notes": "Pinned README supplies this author URL. Text retrieval failed on the review date; this does not establish that the site is offline, and no browser game/audio/XR session was executed."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/catlinman/in-the-dark/blob/02d34d1697ab8a9954d2d669e2ec9ea9b1077e05/README.md",
+        "notes": "Ludum Dare 29 source with a playable-game author link, procedural rooms/hazards, floor progression, coins and death statistics. It uses legacy Three.js/browser APIs; no present-day compatibility claim is made."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "02d34d1697ab8a9954d2d669e2ec9ea9b1077e05",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-019.md#in-the-dark-ld29",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/catlinman/in-the-dark/blob/02d34d1697ab8a9954d2d669e2ec9ea9b1077e05/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/catlinman/in-the-dark/blob/02d34d1697ab8a9954d2d669e2ec9ea9b1077e05/README.md"
+          },
+          {
+            "path": "canvas.game.js",
+            "url": "https://github.com/catlinman/in-the-dark/blob/02d34d1697ab8a9954d2d669e2ec9ea9b1077e05/canvas.game.js"
+          },
+          {
+            "path": "canvas.lib.js",
+            "url": "https://github.com/catlinman/in-the-dark/blob/02d34d1697ab8a9954d2d669e2ec9ea9b1077e05/canvas.lib.js"
+          },
+          {
+            "path": "helvetiker_regular.typeface.js",
+            "url": "https://github.com/catlinman/in-the-dark/blob/02d34d1697ab8a9954d2d669e2ec9ea9b1077e05/helvetiker_regular.typeface.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/catlinman/in-the-dark/blob/02d34d1697ab8a9954d2d669e2ec9ea9b1077e05/index.html"
+          },
+          {
+            "path": "three.min.js",
+            "url": "https://github.com/catlinman/in-the-dark/blob/02d34d1697ab8a9954d2d669e2ec9ea9b1077e05/three.min.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The vendored Three.js header/revision fragment was inspected; no complete vendor audit occurred.",
+        "Helvetiker's embedded metadata includes a separate Magenta/MgOpen font permission notice with retention, naming/modification and distribution conditions; it is not generalized to the game's MIT code label.",
+        "Bundled MP3 provenance and every asset's chain of title were not independently established. No all-assets-MIT claim is made.",
+        "Pointer-lock/audio behavior, generated-room reachability, collisions, difficulty and browser compatibility remain untested source observations."
+      ]
+    },
+    {
+      "id": "power-tycoon",
+      "name": "Power Tycoon",
+      "repository_url": "https://github.com/oparisy/LD39",
+      "genres": [
+        "power management",
+        "building strategy",
+        "resource simulation"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "manifest latest; committed docs bundle r86",
+        "render_evidence": {
+          "url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/src/index.ts#L48",
+          "claim": "The actual TypeScript entry directly imports Three.js, creates WebGLRenderer and runs requestAnimationFrame. Project-authored map/building/drone renderers draw the 3D management map. The committed docs bundle contains a Three.js r86 revision fragment while package.json leaves the dependency at latest."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/package.json",
+            "dependencies": {
+              "@types/three": "latest",
+              "three": "latest",
+              "three-obj-loader": "latest"
+            },
+            "dev_dependencies": {
+              "awesome-typescript-loader": "latest",
+              "browser-sync": "latest",
+              "browser-sync-webpack-plugin": "latest",
+              "css-loader": "latest",
+              "extract-text-webpack-plugin": "latest",
+              "html-webpack-plugin": "latest",
+              "json-loader": "latest",
+              "progress-bar-webpack-plugin": "latest",
+              "style-loader": "latest",
+              "typescript": "latest",
+              "webpack": "latest",
+              "webpack-dev-server": "latest",
+              "raw-loader": "latest",
+              "clean-webpack-plugin": "latest",
+              "file-loader": "latest"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "TypeScript with Three.js and three-obj-loader; the manifest also places @types/three in dependencies. Webpack and its loaders/browser-sync tooling are declared at latest. Exact declared maps are retained; no versions were silently substituted."
+        ],
+        "framework_audit": "The inspected actual entry directly renders with Three.js through project-authored game/input/render helpers. No R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified in the entry path or declared manifests. This is not a transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/src/index.ts#L346",
+        "claim": "The power simulation sums production/consumption/storage and pays credits when demand is met. Surviving five in-game days produces Won; storage dropping below zero produces GameOver, and the main loop consumes the outcome for the result UI."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE grants MIT software use. The code renders primitive buildings and includes wind-turbine OBJ/Blender assets, whose full provenance/rights were not independently audited. The MIT code grant is not a blanket assertion about every dependency or binary asset."
+      },
+      "demo": {
+        "url": "http://oparisy.github.io/LD39/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/README.md",
+        "notes": "Pinned README supplies this author URL. Text retrieval failed on the review date; this does not establish that the site is offline, and no browser game/audio/XR session was executed."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/README.md",
+        "notes": "The author identifies this as a two-day Ludum Dare 39 submission and links its committed-site version. Building/research costs, supply/demand, five-day victory and power-shortage failure are implemented; balance and playthroughs remain unverified."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "ce41664df45494b1c6d36bda385840ef78b1f1e6",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-019.md#power-tycoon",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/README.md"
+          },
+          {
+            "path": "docs/index.js",
+            "url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/docs/index.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/package.json"
+          },
+          {
+            "path": "src/index.html",
+            "url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/src/index.html"
+          },
+          {
+            "path": "src/index.ts",
+            "url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/src/index.ts"
+          },
+          {
+            "path": "src/model/building.ts",
+            "url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/src/model/building.ts"
+          },
+          {
+            "path": "src/model/research.ts",
+            "url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/src/model/research.ts"
+          },
+          {
+            "path": "src/model/worldmap.ts",
+            "url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/src/model/worldmap.ts"
+          },
+          {
+            "path": "src/render/maprenderer.ts",
+            "url": "https://github.com/oparisy/LD39/blob/ce41664df45494b1c6d36bda385840ef78b1f1e6/src/render/maprenderer.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This is a 3D-rendered city/grid management board, with building placement and resource rules rather than avatar movement or free XYZ controls.",
+        "Runtime and build dependencies are declared as latest, including three/@types/three/three-obj-loader. The committed distribution's r86 fragment does not pin what a fresh installation would resolve today.",
+        "Only the committed bundle header/revision fragment was inspected; the whole compiled bundle and wind-turbine OBJ/Blender assets were not independently audited.",
+        "Old TypeScript/Webpack APIs, browser support, power balance, research/build paths and full five-day solvability were not tested."
+      ]
+    },
+    {
+      "id": "moshot",
+      "name": "Moshot",
+      "repository_url": "https://github.com/moses555/moshot",
+      "genres": [
+        "space shooter",
+        "asteroid shooting",
+        "score attack",
+        "optional WebXR"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.123.0",
+        "render_evidence": {
+          "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/src/game/engine.js#L37",
+          "claim": "The actual game entry instantiates its own Engine, which directly creates Three.js WebGLRenderer, camera/scene and the setAnimationLoop callback. The module uses Three.js's VRButton/controller helpers for its optional XR path."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/package.json",
+            "dependencies": {
+              "gsap": "^3.5.1",
+              "three": "^0.123.0"
+            },
+            "dev_dependencies": {
+              "@babel/core": "^7.12.9",
+              "@babel/preset-env": "^7.12.7",
+              "babel-loader": "^8.2.2",
+              "clean-webpack-plugin": "^3.0.0",
+              "copy-webpack-plugin": "^6.3.2",
+              "css-loader": "^5.0.1",
+              "eslint": "^7.14.0",
+              "eslint-webpack-plugin": "^2.4.1",
+              "file-loader": "^6.0.0",
+              "glslify-loader": "^2.0.0",
+              "html-loader": "^1.1.0",
+              "html-webpack-plugin": "^4.3.0",
+              "prettier": "^2.2.1",
+              "prettier-webpack-plugin": "^1.2.0",
+              "raw-loader": "^4.0.1",
+              "style-loader": "^2.0.0",
+              "stylelint": "^13.8.0",
+              "stylelint-config-recommended": "^3.0.0",
+              "stylelint-webpack-plugin": "^2.1.1",
+              "webpack": "^5.9.0",
+              "webpack-cli": "^4.2.0",
+              "webpack-dev-server": "^3.11.0",
+              "webpack-merge": "^5.4.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js ^0.123.0 and GSAP ^3.5.1 are the only declared runtime dependencies. Project-authored scene/object/game modules, Three.js VRButton/controller helpers and Webpack/Babel tooling; exact dev/runtime manifest retained."
+        ],
+        "framework_audit": "The inspected actual entry directly renders with Three.js through project-authored game/input/render helpers. No R3F, A-Frame, Babylon.js, Unity or replacement game renderer was identified in the entry path or declared manifests. This is not a transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/src/game/index.js#L117",
+        "claim": "Click/controller actions shoot; hit rocks create explosions, increase points and are removed from the target set. The course advances with elapsed time and stops at t>=0.8; collisions decrement health. This is an implemented finite scoring loop, not a verified health-triggered defeat or separate victory screen."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE grants MIT software use. Dependencies retain their own licenses, including GSAP; the bundled audio/font/texture/GLTF assets were not individually rights-audited. No broader all-assets or all-components MIT claim is made."
+      },
+      "demo": {
+        "url": "https://moshot.web.app/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/README.md",
+        "notes": "Pinned README supplies this author URL. Text retrieval failed on the review date; this does not establish that the site is offline, and no browser game/audio/XR session was executed."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/README.md",
+        "notes": "The README identifies a 2020 GitHub Game-Off space game. Source establishes a 3D finite-course shooting/score loop and desktop/touch/XR event hooks; release quality and the advertised compatibility matrix were not independently tested."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-019.md#moshot",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/package.json"
+          },
+          {
+            "path": "src/game/actions.js",
+            "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/src/game/actions.js"
+          },
+          {
+            "path": "src/game/data.js",
+            "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/src/game/data.js"
+          },
+          {
+            "path": "src/game/engine.js",
+            "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/src/game/engine.js"
+          },
+          {
+            "path": "src/game/index.js",
+            "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/src/game/index.js"
+          },
+          {
+            "path": "src/index.html",
+            "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/src/index.html"
+          },
+          {
+            "path": "src/index.js",
+            "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/src/index.js"
+          },
+          {
+            "path": "src/objects/Rocks/index.js",
+            "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/src/objects/Rocks/index.js"
+          },
+          {
+            "path": "src/table.js",
+            "url": "https://github.com/moses555/moshot/blob/7c5f1b7bca22ebd73b6a4deb6d10c8805dfb91e1/src/table.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "No distinct win screen or health-based terminal loss was established in the inspected path; the record describes scoring/course stop and health decrement precisely.",
+        "GSAP and Three.js have their own component terms. Bundled MP3, Roboto font, textures and GLTF model provenance/rights were not independently audited or labeled universally MIT.",
+        "Optional WebXR requires suitable browser/device/session support; no headset, controller, touch, pointer or audio session was opened.",
+        "Timing, hit testing, course completion, score display, physics and contemporary browser support remain untested source observations."
+      ]
     }
   ]
 }

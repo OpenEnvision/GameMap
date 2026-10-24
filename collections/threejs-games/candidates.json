@@ -919,6 +919,82 @@
       "evidence_urls": [
         "https://github.com/sixboy666/goofy-golf/blob/81a81dd3fbb0c28776f9fcc9f72ed4b74148bfcb/index.html"
       ]
+    },
+    {
+      "id": "joystick-jammers",
+      "repository_url": "https://github.com/cdilga/multiplayer-racer",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "9403bc3830da51c2952760f159ab1ba3af033d58",
+      "reason": "Direct Three.js host rendering and Rust/WASM race rules are present, and project code declares GPL-3.0-or-later. However, its shipped-dependency policy/ledger lists LicenseRef-MIT-OpenAI-Anthropic-Rider exceptions for asupersync/franken components. Exact released-version rider grants/scope were not established; owner acceptance is not substituted for that review.",
+      "next_action": "Review the exact component terms and whether an independently cleared host/local edition is in scope before promotion. The connector denied the tags-list endpoint; it was not retried. No server, room, phone/controller session, Rust build or game was executed.",
+      "evidence_urls": [
+        "https://github.com/cdilga/multiplayer-racer/blob/9403bc3830da51c2952760f159ab1ba3af033d58/COPYRIGHT_HEADER.txt",
+        "https://github.com/cdilga/multiplayer-racer/blob/9403bc3830da51c2952760f159ab1ba3af033d58/Cargo.toml",
+        "https://github.com/cdilga/multiplayer-racer/blob/9403bc3830da51c2952760f159ab1ba3af033d58/web/host/src/render/backend.ts",
+        "https://github.com/cdilga/multiplayer-racer/blob/9403bc3830da51c2952760f159ab1ba3af033d58/crates/jj-sim/src/race/mod.rs",
+        "https://github.com/cdilga/multiplayer-racer/blob/9403bc3830da51c2952760f159ab1ba3af033d58/tools/licences/policy.json",
+        "https://github.com/cdilga/multiplayer-racer/blob/9403bc3830da51c2952760f159ab1ba3af033d58/web/landing/credits/licences.json"
+      ]
+    },
+    {
+      "id": "graveyard-reaper-minjam",
+      "repository_url": "https://github.com/andykswong/minjam2021",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "1319f7ea926bef445053ded45eccb2ca575f37af",
+      "reason": "README explicitly calls this a reduced adaptation of the already indexed LD48 Deep in the Graveyard, retaining zombies on a static map. A distinct game scope has not been independently established, so it is not counted as another verified game.",
+      "next_action": "Compare implemented mechanics/objectives with the existing LD48 entry before separate inclusion; otherwise track it as an alternate edition without double-counting. Its separately credited font/music terms still need review.",
+      "evidence_urls": [
+        "https://github.com/andykswong/minjam2021/blob/1319f7ea926bef445053ded45eccb2ca575f37af/README.md",
+        "https://github.com/andykswong/minjam2021/blob/1319f7ea926bef445053ded45eccb2ca575f37af/LICENSE",
+        "https://github.com/andykswong/minjam2021/blob/1319f7ea926bef445053ded45eccb2ca575f37af/package.json"
+      ]
+    },
+    {
+      "id": "infinite-garbage-can-ld38",
+      "repository_url": "https://github.com/Tw1ddle/Ludum-Dare-38",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "1ee152d6adea63ec2d31be942191758c33dc3e15",
+      "reason": "The author explicitly says the entry is unfinished and only simple rendering/tweens/sky/clouds/ocean were completed, with TODOs required to make a playable game. Reviewed Main.hx supports scene work without an established game objective.",
+      "next_action": "Reconsider a later playable edition with implemented objectives; Haxe compilation and Three.js rendering alone are not disqualifying, but an unfinished display scene is outside this collection.",
+      "evidence_urls": [
+        "https://github.com/Tw1ddle/Ludum-Dare-38/blob/1ee152d6adea63ec2d31be942191758c33dc3e15/README.md",
+        "https://github.com/Tw1ddle/Ludum-Dare-38/blob/1ee152d6adea63ec2d31be942191758c33dc3e15/src/Main.hx",
+        "https://github.com/Tw1ddle/Ludum-Dare-38/blob/1ee152d6adea63ec2d31be942191758c33dc3e15/LICENSE"
+      ]
+    },
+    {
+      "id": "strelok",
+      "repository_url": "https://github.com/ESWAT/strelok",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "ec5ac87f428644fae8cf00d4f85daac200e8a4eb",
+      "reason": "README calls this a very unfinished experiment that might later resemble a game. Reviewed entry/setup/systems implement rendering and movement through an entity system without an established game objective/result.",
+      "next_action": "Reconsider a completed game edition; do not count an archived renderer/control experiment as a verified game.",
+      "evidence_urls": [
+        "https://github.com/ESWAT/strelok/blob/ec5ac87f428644fae8cf00d4f85daac200e8a4eb/README.md",
+        "https://github.com/ESWAT/strelok/blob/ec5ac87f428644fae8cf00d4f85daac200e8a4eb/src/script/game.js",
+        "https://github.com/ESWAT/strelok/blob/ec5ac87f428644fae8cf00d4f85daac200e8a4eb/src/script/systems.js",
+        "https://github.com/ESWAT/strelok/blob/ec5ac87f428644fae8cf00d4f85daac200e8a4eb/LICENSE"
+      ]
+    },
+    {
+      "id": "vines-of-darkness-ld34",
+      "repository_url": "https://github.com/BrianMacIntosh/LD34",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "15139ffbe6b2284c570eb5ab8048daa037e0461e",
+      "reason": "Three.js is used here for a 2D XY sprite/tile game: the SDK creates an orthographic camera, geometry helpers create PlaneGeometry sprites, and the map layers flat terrain/growth meshes. This is not a verified actual 3D scene/board game.",
+      "next_action": "Reconsider a distinct 3D edition; direct Three.js as a 2D renderer does not meet the collection's 3D boundary.",
+      "evidence_urls": [
+        "https://github.com/BrianMacIntosh/LD34/blob/15139ffbe6b2284c570eb5ab8048daa037e0461e/index.html",
+        "https://github.com/BrianMacIntosh/LD34/blob/15139ffbe6b2284c570eb5ab8048daa037e0461e/script_sdk/main.js",
+        "https://github.com/BrianMacIntosh/LD34/blob/15139ffbe6b2284c570eb5ab8048daa037e0461e/script_sdk/geometry.js",
+        "https://github.com/BrianMacIntosh/LD34/blob/15139ffbe6b2284c570eb5ab8048daa037e0461e/script_game/tileManager.js",
+        "https://github.com/BrianMacIntosh/LD34/blob/15139ffbe6b2284c570eb5ab8048daa037e0461e/LICENSE"
+      ]
     }
   ]
 }
