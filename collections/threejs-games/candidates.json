@@ -1493,6 +1493,49 @@
         "https://github.com/otakuch/castellan/blob/0a125db76cdafae41f09bdbf15065dbb0df869e7/src/js/22-interface.js#L185",
         "https://github.com/otakuch/castellan/blob/0a125db76cdafae41f09bdbf15065dbb0df869e7/src/js/23-frame.js#L60"
       ]
+    },
+    {
+      "id": "hkmj",
+      "repository_url": "https://github.com/h4x0r/hkmj",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "e58f41e6694ca173c731cab2e78b86be02ce6c4d",
+      "reason": "README and the manifest explicitly identify React Three Fiber/Drei as the 3D board renderer. This is outside the direct imperative Three.js scope even though the project implements Mahjong rules and multiplayer.",
+      "next_action": "Retain outside the verified list unless a separate direct-Three entry is provided; do not connect its room/backend services merely to reconfirm the wrapper exclusion.",
+      "evidence_urls": [
+        "https://github.com/h4x0r/hkmj/blob/e58f41e6694ca173c731cab2e78b86be02ce6c4d/README.md#L9",
+        "https://github.com/h4x0r/hkmj/blob/e58f41e6694ca173c731cab2e78b86be02ce6c4d/package.json",
+        "https://github.com/h4x0r/hkmj/blob/e58f41e6694ca173c731cab2e78b86be02ce6c4d/src/components/game/GameBoard.tsx"
+      ]
+    },
+    {
+      "id": "mahjong-3d",
+      "repository_url": "https://github.com/elh/mahjong-3d",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "4cad7bad7720d1f5d2601196f9f9aa68d8cd043e",
+      "reason": "README explicitly says React Three Fiber and the manifest declares R3F/Drei/Rapier wrappers for the idle Mahjong simulator/screensaver. Its 3D output and simulation rules do not remove the rendering-wrapper exclusion.",
+      "next_action": "Keep outside this collection's direct-Three verified list; do not download or launch the native screensaver for an already excluded render architecture.",
+      "evidence_urls": [
+        "https://github.com/elh/mahjong-3d/blob/4cad7bad7720d1f5d2601196f9f9aa68d8cd043e/README.md#L3",
+        "https://github.com/elh/mahjong-3d/blob/4cad7bad7720d1f5d2601196f9f9aa68d8cd043e/package.json",
+        "https://github.com/elh/mahjong-3d/blob/4cad7bad7720d1f5d2601196f9f9aa68d8cd043e/src/App.tsx"
+      ]
+    },
+    {
+      "id": "m3ssana-sailing",
+      "repository_url": "https://github.com/m3ssana/sailing",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "2b95b01d94591d9f40cf2b763028c3b4c3c118f8",
+      "reason": "README still states early-development/not-yet-playable status. The inspected current main, renderer and GameLoop provide direct Three.js/boat-simulation foundation, but this review did not establish an implemented game objective/progression loop or a completed playable release. No runtime failure/offline-site conclusion is inferred from that author status.",
+      "next_action": "Trace the completed player/game-objective integration as development progresses, reconcile source versus README status and distinguish design-intent specs from implemented gameplay before admission. Do not exercise live weather services just to fill the gap.",
+      "evidence_urls": [
+        "https://github.com/m3ssana/sailing/blob/2b95b01d94591d9f40cf2b763028c3b4c3c118f8/README.md#L9",
+        "https://github.com/m3ssana/sailing/blob/2b95b01d94591d9f40cf2b763028c3b4c3c118f8/src/main.ts",
+        "https://github.com/m3ssana/sailing/blob/2b95b01d94591d9f40cf2b763028c3b4c3c118f8/src/app/GameLoop.ts",
+        "https://github.com/m3ssana/sailing/blob/2b95b01d94591d9f40cf2b763028c3b4c3c118f8/src/render/Renderer.ts"
+      ]
     }
   ]
 }

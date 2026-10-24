@@ -17156,6 +17156,445 @@
         "Optional server features need their own backend configuration. A client-as-offline description is an author claim rather than a reproduced deployment result. Browser speech synthesis depends on platform voices.",
         "No upstream installation, build, tests, playtest, pointer lock, speech/audio playback, server/multiplayer session, score submission or save write occurred. External library and platform terms remain separate from project MIT."
       ]
+    },
+    {
+      "id": "sokoban-vr-first-person",
+      "name": "Sokoban-VR — First Person",
+      "repository_url": "https://github.com/NikolaSl/sokoban-vr",
+      "genres": [
+        "Sokoban",
+        "first-person puzzle",
+        "spatial memory"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 (CDN)",
+        "render_evidence": {
+          "url": "https://github.com/NikolaSl/sokoban-vr/blob/213274613ff67dd603254b0baf083a6496b892fc/src/main.js#L40",
+          "claim": "The actual HTML imports Three.js 0.160.0 and its add-ons, then loads main.js. Main directly creates WebGLRenderer, perspective scene/camera and volumetric wall/crate boxes, with PointerLockControls. Its active animation loop draws the same puzzle scene; the map overlay is a separate navigation aid."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Three.js 0.160.0 and its PointerLockControls via pinned CDN import map; vanilla ES modules, authored grid/push logic, texture helper, map overlay, level text files and UI/audio helper code. No npm manifest in the complete scoped project tree; no rendering wrapper or separate physics engine was identified in the reviewed entry."
+        ],
+        "framework_audit": "Actual game-entry, rendering and objective sources were inspected at this commit. Three.js owns the reviewed renderer; no R3F, A-Frame, Babylon.js, Unity runtime or replacement rendering engine was identified in that scoped entry/manifests. Project-authored gameplay/render helpers and other library roles are disclosed. Every transitive dependency and content file was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/NikolaSl/sokoban-vr/blob/213274613ff67dd603254b0baf083a6496b892fc/src/game.js#L123",
+        "claim": "The grid move/push logic updates crates and goals. isWin succeeds when no crate remains off a goal, and the live movement-completion path calls it before triggering the level-complete effect. This supplies actual puzzle completion beyond first-person scene navigation."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/NikolaSl/sokoban-vr/blob/213274613ff67dd603254b0baf083a6496b892fc/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE/README grant MIT project-code use. The complete origin/grants of bundled textures and classic level layouts were not independently established; dependencies and level/media content are not collectively asserted to be MIT by this code label."
+      },
+      "demo": {
+        "url": "https://nikolasl.github.io/sokoban-vr/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/NikolaSl/sokoban-vr/blob/213274613ff67dd603254b0baf083a6496b892fc/README.md",
+        "notes": "README directly supplies this GitHub Pages game link. The text reader could not retrieve it; that does not prove an offline deployment. No pointer-lock, puzzle action, renderer or deployed/source comparison was exercised."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/NikolaSl/sokoban-vr/blob/213274613ff67dd603254b0baf083a6496b892fc/README.md",
+        "notes": "README describes a small first-person Sokoban variant and source implements grid pushes, map recall and completion feedback. All levels, input/audio compatibility and any headset support were not demonstrated."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "213274613ff67dd603254b0baf083a6496b892fc",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-030.md#sokoban-vr-first-person",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/NikolaSl/sokoban-vr/blob/213274613ff67dd603254b0baf083a6496b892fc/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/NikolaSl/sokoban-vr/blob/213274613ff67dd603254b0baf083a6496b892fc/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/NikolaSl/sokoban-vr/blob/213274613ff67dd603254b0baf083a6496b892fc/index.html"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/NikolaSl/sokoban-vr/blob/213274613ff67dd603254b0baf083a6496b892fc/src/main.js"
+          },
+          {
+            "path": "src/game.js",
+            "url": "https://github.com/NikolaSl/sokoban-vr/blob/213274613ff67dd603254b0baf083a6496b892fc/src/game.js"
+          },
+          {
+            "path": "src/textures.js",
+            "url": "https://github.com/NikolaSl/sokoban-vr/blob/213274613ff67dd603254b0baf083a6496b892fc/src/textures.js"
+          },
+          {
+            "path": "levels/level01.txt",
+            "url": "https://github.com/NikolaSl/sokoban-vr/blob/213274613ff67dd603254b0baf083a6496b892fc/levels/level01.txt"
+          },
+          {
+            "path": "levels/level02.txt",
+            "url": "https://github.com/NikolaSl/sokoban-vr/blob/213274613ff67dd603254b0baf083a6496b892fc/levels/level02.txt"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Movement/push rules use a planar Sokoban grid while the live walls/crates and first-person view are 3D. The repository's VR-style name is not treated as evidence of working WebXR/headset integration; reviewed control code uses PointerLockControls.",
+        "No upstream install/build/test or playtest, pointer lock, map input, level win, save or sound action occurred. Level-layout and texture provenance was not exhaustively audited."
+      ]
+    },
+    {
+      "id": "sokoban-3d-web-port",
+      "name": "Sokoban — 3D Web Port",
+      "repository_url": "https://github.com/cfwang123/sokoban_game",
+      "genres": [
+        "Sokoban",
+        "box-pushing puzzle",
+        "level collection"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 (CDN)",
+        "render_evidence": {
+          "url": "https://github.com/cfwang123/sokoban_game/blob/8bbf2f148cebd9287166eb6fb2e69ee439437f69/html_3dapp/js/game.js#L33",
+          "claim": "The scoped html_3dapp/index.html loads its level/solver helpers and module game.js through a Three.js 0.160.0 import map. game.js directly constructs WebGLRenderer, Scene, camera/OrbitControls and BoxGeometry floors/walls/crates; its active animation loop renders that board."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Three.js 0.160.0 and its OrbitControls via pinned import map; vanilla browser modules, project pathfinding/solver helpers and generated local level data. This record is limited to html_3dapp; the repository's many other language/2D/framework ports are not attributed to this renderer. No npm manifest governs this reviewed standalone browser entry."
+        ],
+        "framework_audit": "Actual game-entry, rendering and objective sources were inspected at this commit. Three.js owns the reviewed renderer; no R3F, A-Frame, Babylon.js, Unity runtime or replacement rendering engine was identified in that scoped entry/manifests. Project-authored gameplay/render helpers and other library roles are disclosed. Every transitive dependency and content file was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/cfwang123/sokoban_game/blob/8bbf2f148cebd9287166eb6fb2e69ee439437f69/html_3dapp/js/game.js#L628",
+        "claim": "Move/push and undo paths call checkWin. It checks every crate against the goal set, marks state.won, displays the completion/move-count overlay and stops solver playback when solved. The scoped entry also exposes level selection/reset and authored solver helpers; the full level corpus/solver was not executed."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/cfwang123/sokoban_game/blob/8bbf2f148cebd9287166eb6fb2e69ee439437f69/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE grants MIT repository project-code use. The 3D port's local levels_data.js is generated from levels.json and labels classic layouts, but their complete independent origin/grants were not identified. No blanket statement is made that every level layout or every other implementation's dependencies share the code license."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/cfwang123/sokoban_game/blob/8bbf2f148cebd9287166eb6fb2e69ee439437f69/README.md",
+        "notes": "The reviewed root README gives local HTTP instructions for html_3dapp/index.html and metadata supplies no author homepage. No hosted game URL is guessed; the other language/2D ports' instructions are not treated as a 3D demo."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/cfwang123/sokoban_game/blob/8bbf2f148cebd9287166eb6fb2e69ee439437f69/README.md",
+        "notes": "The educational multi-implementation repository contains a complete scoped 3D browser puzzle loop with moves, pushes, undo/reset, level UI and a win overlay. Source verification here is limited to that implementation, not all advertised ports, all classic levels or solver correctness."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "8bbf2f148cebd9287166eb6fb2e69ee439437f69",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-030.md#sokoban-3d-web-port",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/cfwang123/sokoban_game/blob/8bbf2f148cebd9287166eb6fb2e69ee439437f69/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/cfwang123/sokoban_game/blob/8bbf2f148cebd9287166eb6fb2e69ee439437f69/README.md"
+          },
+          {
+            "path": "html_3dapp/index.html",
+            "url": "https://github.com/cfwang123/sokoban_game/blob/8bbf2f148cebd9287166eb6fb2e69ee439437f69/html_3dapp/index.html"
+          },
+          {
+            "path": "html_3dapp/js/game.js",
+            "url": "https://github.com/cfwang123/sokoban_game/blob/8bbf2f148cebd9287166eb6fb2e69ee439437f69/html_3dapp/js/game.js"
+          },
+          {
+            "path": "html_3dapp/js/levels_data.js",
+            "url": "https://github.com/cfwang123/sokoban_game/blob/8bbf2f148cebd9287166eb6fb2e69ee439437f69/html_3dapp/js/levels_data.js"
+          },
+          {
+            "path": "html_3dapp/js/ai.js",
+            "url": "https://github.com/cfwang123/sokoban_game/blob/8bbf2f148cebd9287166eb6fb2e69ee439437f69/html_3dapp/js/ai.js"
+          },
+          {
+            "path": "html_3dapp/js/pathfinding.js",
+            "url": "https://github.com/cfwang123/sokoban_game/blob/8bbf2f148cebd9287166eb6fb2e69ee439437f69/html_3dapp/js/pathfinding.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Rules stay on a 2D grid while actual volumetric geometry is rendered as a 3D board. The scope excludes the repository's unrelated 2D and other-renderer versions.",
+        "No upstream install/build/test or playtest, solver execution, level attempt, browser storage or asset acquisition occurred. Classic level-set origin/permissions were not exhaustively audited."
+      ]
+    },
+    {
+      "id": "hanazar-3d-billiards",
+      "name": "3D Billiards — Hanazar",
+      "repository_url": "https://github.com/Hanazar-Games/Billiards",
+      "genres": [
+        "pool",
+        "8-ball",
+        "9-ball"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.170.0",
+        "render_evidence": {
+          "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/src/core/Renderer.js#L29",
+          "claim": "The actual index/main module boots Game, whose Renderer helper directly constructs Three.js WebGLRenderer and renders the 3D room/table/balls. Its project GameLoop integrates game/physics updates and rendering; cannon-es supplies physics rather than owning the render scene."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/package.json",
+            "dependencies": {
+              "cannon-es": "^0.20.0",
+              "three": "^0.170.0",
+              "ws": "^8.20.1"
+            },
+            "dev_dependencies": {
+              "puppeteer": "^25.0.2",
+              "vite": "^6.0.0",
+              "webgl-mock-threejs": "^0.0.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Declared runtime Three ^0.170.0, cannon-es ^0.20.0 and ws ^8.20.1; authored turn/rule, AI, room/table, challenge and UI systems. Vite ^6.0.0, Puppeteer ^25.0.2 and webgl-mock-threejs ^0.0.1 are development dependencies. The optional LAN mode needs its Node/WebSocket server; reviewed audio/table code generates effects/geometry rather than loading recorded art/audio files."
+        ],
+        "framework_audit": "Actual game-entry, rendering and objective sources were inspected at this commit. Three.js owns the reviewed renderer; no R3F, A-Frame, Babylon.js, Unity runtime or replacement rendering engine was identified in that scoped entry/manifests. Project-authored gameplay/render helpers and other library roles are disclosed. Every transitive dependency and content file was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/src/game/Rules.js#L216",
+        "claim": "The 8-ball rule engine resolves a legal final eight-ball as the current player's win and an early/fouled eight-ball as the opponent's win. Game.js calls resolveShot and consumes gameOver/winner for result handling. The reviewed separate nine-ball engine also has winner/foul paths; full official-rules compliance was not independently tested."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE grants MIT project-code use. The complete tree has no separate binary model/audio asset collection, and inspected table/audio systems construct geometry and synthesized sound. Dependencies, any generated-content authorship and every transitive term were not independently audited; no blanket originality/clearance warranty is claimed."
+      },
+      "demo": {
+        "url": "https://hanazar-games.github.io/Billiards/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/README.md",
+        "notes": "README directly lists the author's GitHub Pages game. The reader returned an accessibility error, without establishing an offline site or a source/deployment match. No table interaction, audio, LAN connection or game session ran."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/README.md",
+        "notes": "README labels the current version v1.26.13 and describes 8-/9-ball, practice, local/AI/LAN and challenges. Source confirms integrated rule/result paths; that version label, broad feature set and author regression/performance reports are not independent runtime validation."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "0448b033f3555d8554e17ff0a270928962600fee",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-030.md#hanazar-3d-billiards",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/index.html"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/src/main.js"
+          },
+          {
+            "path": "src/core/Renderer.js",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/src/core/Renderer.js"
+          },
+          {
+            "path": "src/core/GameLoop.js",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/src/core/GameLoop.js"
+          },
+          {
+            "path": "src/core/MatchEngine.js",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/src/core/MatchEngine.js"
+          },
+          {
+            "path": "src/game/Game.js",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/src/game/Game.js"
+          },
+          {
+            "path": "src/game/Rules.js",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/src/game/Rules.js"
+          },
+          {
+            "path": "src/game/NineBallRules.js",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/src/game/NineBallRules.js"
+          },
+          {
+            "path": "src/game/Table.js",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/src/game/Table.js"
+          },
+          {
+            "path": "src/audio/AudioManager.js",
+            "url": "https://github.com/Hanazar-Games/Billiards/blob/0448b033f3555d8554e17ff0a270928962600fee/src/audio/AudioManager.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This is a tabletop/room 3D game; no unrestricted world exploration is implied. Source rule paths are verified, not certified as complete WPA/competition-rule conformance.",
+        "LAN play needs an additional server/session. No upstream install/build/test, playtest, AI/LAN match, input, save, achievement/leaderboard submission or synthesized audio playback occurred."
+      ]
+    },
+    {
+      "id": "voxel-galleons",
+      "name": "Voxel Galleons — The Pirate Republic",
+      "repository_url": "https://github.com/GraceUnderGravity/VoxelGalleons",
+      "genres": [
+        "naval adventure",
+        "sailing combat",
+        "cargo collection"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.180.0 (vendored r180 verified)",
+        "render_evidence": {
+          "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/dist/game.js#L23",
+          "claim": "The actual dist/index.html loads readable ES-module game.js, which imports the checked-in Three module and directly creates WebGLRenderer, scene/camera and the sea/fleet. The live renderFrame advances the authored simulation and renders the same 3D world. Models/galleon source constructs procedural mesh geometry; no replacement render engine is used in this scoped entry."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/package.json",
+            "dependencies": {
+              "three": "0.180.0"
+            },
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Root manifest declares Three 0.180.0; the actual browser entry uses vendored Three module/core with retained MIT notice. Header/revision inspection of the core blob confirms REVISION 180. Project-authored ship/cloth/wave/collision/combat/AI/UI systems are readable ES modules under dist; Node's startup script serves the files. No browser build or extra runtime engine is declared."
+        ],
+        "framework_audit": "Actual game-entry, rendering and objective sources were inspected at this commit. Three.js owns the reviewed renderer; no R3F, A-Frame, Babylon.js, Unity runtime or replacement rendering engine was identified in that scoped entry/manifests. Project-authored gameplay/render helpers and other library roles are disclosed. Every transitive dependency and content file was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/dist/simulation.js#L176",
+        "claim": "The active simulation loses when hull reaches zero. It wins when at least five cargo items and two ship sinkings are recorded and nearPort succeeds, awarding a completion bonus. Cargo pickup/combat changes those values, and the live game frame invokes the simulation and presents its events/state."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/LICENSE",
+        "additional_notices": [
+          "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/dist/LICENSE.txt",
+          "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/dist/vendor/THREE-LICENSE.txt"
+        ],
+        "notes": "Root project code and retained dist/LICENSE.txt are MIT; the checked-in Three vendor notice is separately MIT. README says game models are code-generated and the reviewed model/galleon files are consistent with that claim. Complete authorship, every module/content origin and the whole vendor library were not exhaustively audited."
+      },
+      "demo": {
+        "url": "https://graceundergravity.github.io/VoxelGalleons/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/README.md",
+        "notes": "README directly links the public GitHub Pages game. The text reader could not retrieve it; no current playability, input or deployed/source match was verified. An accessibility error alone does not show the site offline."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/README.md",
+        "notes": "Readable game code implements cargo/combat, repairs/upgrades and explicit voyage win/loss; README documents broader fleet/weather/civilian behavior and author regression checks. Those broader features/tests and a complete successful voyage were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "d9364ea780e275f5448c0c073baa9a5f91c8c866",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-030.md#voxel-galleons",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/package.json"
+          },
+          {
+            "path": "dist/index.html",
+            "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/dist/index.html"
+          },
+          {
+            "path": "dist/game.js",
+            "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/dist/game.js"
+          },
+          {
+            "path": "dist/simulation.js",
+            "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/dist/simulation.js"
+          },
+          {
+            "path": "dist/models.js",
+            "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/dist/models.js"
+          },
+          {
+            "path": "dist/vendor/THREE-LICENSE.txt",
+            "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/dist/vendor/THREE-LICENSE.txt"
+          },
+          {
+            "path": "dist/vendor/three.core.js",
+            "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/dist/vendor/three.core.js"
+          },
+          {
+            "path": "dist/galleon.js",
+            "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/dist/galleon.js"
+          },
+          {
+            "path": "server.mjs",
+            "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/server.mjs"
+          },
+          {
+            "path": "dist/LICENSE.txt",
+            "url": "https://github.com/GraceUnderGravity/VoxelGalleons/blob/d9364ea780e275f5448c0c073baa9a5f91c8c866/dist/LICENSE.txt"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The browser/game source in this repository is shipped as readable dist ES modules. Third-party vendor inspection targeted its license/header/revision, rather than a full semantic library audit.",
+        "No upstream installation, build, tests or playtest, static server, voyage, cannon action, audio, save or multiplayer session ran. Source implementation and author screenshots/regressions do not establish present-device performance or completion."
+      ]
     }
   ]
 }
