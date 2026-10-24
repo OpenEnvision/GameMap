@@ -10761,6 +10761,724 @@
         "Desktop pointer lock and keyboard/mouse controls are used; a responsive HUD does not establish touch-play support.",
         "Procedural geometry/textures and synthesized audio are visible in source. No exhaustive rights audit, CDN integrity/compatibility test, gameplay run or performance measurement occurred."
       ]
+    },
+    {
+      "id": "token-spire-first-person",
+      "name": "TOKEN SPIRE: FIRST PERSON",
+      "repository_url": "https://github.com/adamholter/token-spire",
+      "genres": [
+        "deckbuilding roguelike",
+        "first-person shooter",
+        "arena combat"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r169 (vendored header)",
+        "render_evidence": {
+          "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/fps/js/arena.js#L29",
+          "claim": "The scoped fps/index.html loads the shared rules/data then fps/js/main.js. Arena directly creates Three.js WebGLRenderer/PerspectiveCamera; the main requestAnimationFrame loop updates and renders real 3D voxel enemies/weapons. The vendor header confirms r169 and MIT."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "playwright": "^1.48.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Static HTML/JavaScript; vendored Three.js r169 and project-authored shared rules, voxel meshing, weapon logic, DOM planning UI and synthesized sound. Root package declares no runtime npm dependency; Playwright is dev capture/test tooling. Separate video/GSAP projects are outside the indexed FPS runtime."
+        ],
+        "framework_audit": "The reviewed actual game entry directly uses Three.js rendering through project-authored game/render modules. No R3F, A-Frame, Babylon.js, Unity or replacement engine renderer was identified in that path or declared game manifests. UI, platform, authoring and physics helpers are disclosed; this is not a transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/fps/js/main.js#L187",
+        "claim": "FPSCombat detects eliminated enemies, handles a boss phase and marks victory; player damage can mark defeat. Arena callbacks route these results through endBreach to rewards/boss victory or game-over, carrying health/deck/run state across planning and breach phases."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/LICENSE",
+        "additional_notices": [
+          "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/NOTICE.md",
+          "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/fps/vendor/three.module.js"
+        ],
+        "notes": "Root LICENSE is MIT. NOTICE.md expressly covers original game code, pixel/voxel art, bitmap font and synthesized audio; it identifies the vendored Three.js MIT grant and separate trailer GSAP terms. The Three.js MIT header/revision was inspected, without a full vendor or asset chain-of-title audit."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/README.md",
+        "notes": "The README gives a general project demo at https://token-spire-game.adamholter.chatgpt.site and identifies fps/index.html as the 3D edition. The general link returned a reader error; no FPS-specific hosted URL was established, so no guessed subpath is presented as a confirmed demo."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/README.md",
+        "notes": "The scoped first-person edition has deck/weapon planning, a 3D combat arena, persistent encounters/rewards and win/loss routing. The README documents both editions; only the FPS edition is indexed here."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "636a175d70de4cd9c624bc1c244a0ec8c2901780",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-017.md#token-spire-first-person",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/LICENSE"
+          },
+          {
+            "path": "NOTICE.md",
+            "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/NOTICE.md"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/README.md"
+          },
+          {
+            "path": "fps/index.html",
+            "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/fps/index.html"
+          },
+          {
+            "path": "fps/js/arena.js",
+            "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/fps/js/arena.js"
+          },
+          {
+            "path": "fps/js/main.js",
+            "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/fps/js/main.js"
+          },
+          {
+            "path": "fps/js/voxel.js",
+            "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/fps/js/voxel.js"
+          },
+          {
+            "path": "fps/vendor/three.module.js",
+            "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/fps/vendor/three.module.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/index.html"
+          },
+          {
+            "path": "js/engine.js",
+            "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/js/engine.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/adamholter/token-spire/blob/636a175d70de4cd9c624bc1c244a0ec8c2901780/package.json"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The default root entry is a separate Canvas2D game and is outside this record. The FPS edition itself alternates a 2D planning UI with real-time 3D combat.",
+        "Only the vendored Three.js header lines 1-26 were inspected for version/license; the whole third-party library was not audited.",
+        "NOTICE.md covers original art/voxel/font/audio work and separately identifies GSAP in out-of-scope trailer projects. That trailer tooling is not a game runtime dependency.",
+        "Model names/benchmark figures are author-supplied theme data and fictionalized gameplay; no current benchmark, price, affiliation or endorsement claim is made. Balance, capture scripts, audio and runs were not executed."
+      ]
+    },
+    {
+      "id": "junkyard-bandit",
+      "name": "Junkyard Bandit",
+      "repository_url": "https://github.com/wr427wh75h-afk/junkyard-bandit",
+      "genres": [
+        "stealth",
+        "collection",
+        "third-person exploration"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 (import map CDN)",
+        "render_evidence": {
+          "url": "https://github.com/wr427wh75h-afk/junkyard-bandit/blob/53b3b0c164f8bacc54dd5b32a3e9b1b042f7fa88/index.html#L422",
+          "claim": "The actual HTML entry imports Three.js 0.160.0 from its unpkg import map and directly creates WebGLRenderer, 3D terrain/objects/player and camera. A handwritten requestAnimationFrame loop updates the guard/player and renders the scene."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla HTML/JavaScript; CDN Three.js 0.160.0, project-authored terrain/guard/controls/collision and procedural canvas/WebAudio content. No npm manifest or separate physics/game engine was located in the reviewed tree."
+        ],
+        "framework_audit": "The reviewed actual game entry directly uses Three.js rendering through project-authored game/render modules. No R3F, A-Frame, Babylon.js, Unity or replacement engine renderer was identified in that path or declared game manifests. UI, platform, authoring and physics helpers are disclosed; this is not a transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/wr427wh75h-afk/junkyard-bandit/blob/53b3b0c164f8bacc54dd5b32a3e9b1b042f7fa88/index.html#L2138",
+        "claim": "Interaction marks valuables collected and increments the counter; reaching all 15 sets gameState to complete and shows mission completion. Guard capture sets caught, displays stats and respawns the player after a delay."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/wr427wh75h-afk/junkyard-bandit/blob/53b3b0c164f8bacc54dd5b32a3e9b1b042f7fa88/LICENSE",
+        "additional_notices": [
+          "https://github.com/wr427wh75h-afk/junkyard-bandit/blob/53b3b0c164f8bacc54dd5b32a3e9b1b042f7fa88/assets/README.md"
+        ],
+        "notes": "Root LICENSE grants MIT software use. assets/README.md says the current textures and audio are procedural; the repository tree and single-file source support that approach. The CDN dependency retains its own license; no universal asset clearance is claimed."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/wr427wh75h-afk/junkyard-bandit/blob/53b3b0c164f8bacc54dd5b32a3e9b1b042f7fa88/README.md",
+        "notes": "README instructs opening/serving index.html and the repository metadata had no homepage. No author-hosted public demo was established; no Pages URL was guessed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/wr427wh75h-afk/junkyard-bandit/blob/53b3b0c164f8bacc54dd5b32a3e9b1b042f7fa88/README.md",
+        "notes": "Single-file mobile/desktop stealth prototype with valuables, guard perception/chase, capture/respawn and a 15-item completion state in the actual game source."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "53b3b0c164f8bacc54dd5b32a3e9b1b042f7fa88",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-017.md#junkyard-bandit",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/wr427wh75h-afk/junkyard-bandit/blob/53b3b0c164f8bacc54dd5b32a3e9b1b042f7fa88/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/wr427wh75h-afk/junkyard-bandit/blob/53b3b0c164f8bacc54dd5b32a3e9b1b042f7fa88/README.md"
+          },
+          {
+            "path": "assets/README.md",
+            "url": "https://github.com/wr427wh75h-afk/junkyard-bandit/blob/53b3b0c164f8bacc54dd5b32a3e9b1b042f7fa88/assets/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/wr427wh75h-afk/junkyard-bandit/blob/53b3b0c164f8bacc54dd5b32a3e9b1b042f7fa88/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Player travel is grounded on the terrain in XZ, with a 3D environment and following camera; the scene label does not imply free-flight XYZ controls.",
+        "assets/README.md states current textures/audio are generated at runtime; source uses canvas/WebAudio. That statement does not establish an exhaustive rights audit.",
+        "Three.js is fetched from a CDN, so 'no build step' still requires the module to be available. Mobile controls, detection, navigation, reachability and performance were not exercised."
+      ]
+    },
+    {
+      "id": "shadow-protocol",
+      "name": "Shadow Protocol",
+      "repository_url": "https://github.com/lalalaoneplus-dev/shadow-protocol",
+      "genres": [
+        "stealth",
+        "first-person exploration",
+        "security puzzles"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r160 (vendored header)",
+        "render_evidence": {
+          "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/src/engine.js#L46",
+          "claim": "The actual browser entry imports its own Engine, which directly constructs Three.js WebGLRenderer and runs a requestAnimationFrame loop. Its local three.module.js header confirms r160/MIT; Electron is a desktop shell, while devserver.js and localStorage fallback support a browser path."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "electron": "31.7.7",
+              "electron-builder": "24.13.3"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vendored Three.js r160; plain ES modules, project-authored stealth/world logic, DOM tools and synthesized audio. Electron is the optional desktop shell and electron-builder the packaging tool; exact dev manifest is retained. Browser persistence has a localStorage fallback."
+        ],
+        "framework_audit": "The reviewed actual game entry directly uses Three.js rendering through project-authored game/render modules. No R3F, A-Frame, Babylon.js, Unity or replacement engine renderer was identified in that path or declared game manifests. UI, platform, authoring and physics helpers are disclosed; this is not a transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/src/main.js#L117",
+        "claim": "Near-terminal interaction invokes an in-game objective tool; successful completion advances/debriefs the sector. onObjectiveComplete unlocks the next sector and displays victory after sector ten. Guard detection calls the capture/respawn flow."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/LICENSE",
+        "additional_notices": [
+          "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/vendor/three.module.js",
+          "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/README.md"
+        ],
+        "notes": "Root LICENSE and package metadata say MIT. The vendored Three.js header independently retains its MIT notice. Reviewed game geometry/audio are implemented in source; desktop binaries/icons and a complete asset chain of title were not audited."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/README.md",
+        "notes": "README supplies desktop release links and a local browser dev-server command, but no author-hosted browser demo was established. Installers/releases were not downloaded or run."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/README.md",
+        "notes": "The author documents a ten-sector stealth/puzzle game with packaged desktop releases; the source wires objective success, sector progression and final victory. Release installers and puzzle solutions were not tested."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "cacc2d090de50557a1a98518d0a52d336d7ae80c",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-017.md#shadow-protocol",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/README.md"
+          },
+          {
+            "path": "devserver.js",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/devserver.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/package.json"
+          },
+          {
+            "path": "src/content.js",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/src/content.js"
+          },
+          {
+            "path": "src/engine.js",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/src/engine.js"
+          },
+          {
+            "path": "src/fragments.js",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/src/fragments.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/src/main.js"
+          },
+          {
+            "path": "src/save.js",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/src/save.js"
+          },
+          {
+            "path": "src/state.js",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/src/state.js"
+          },
+          {
+            "path": "src/terminal.js",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/src/terminal.js"
+          },
+          {
+            "path": "vendor/three.module.js",
+            "url": "https://github.com/lalalaoneplus-dev/shadow-protocol/blob/cacc2d090de50557a1a98518d0a52d336d7ae80c/vendor/three.module.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "First-person movement is grounded within 3D sector layouts; terminal challenges use a 2D DOM interface.",
+        "Electron 31.7.7/electron-builder are declared for desktop packaging. The reviewed save layer uses native storage when available and localStorage otherwise; neither path was executed.",
+        "Only the vendored Three.js header lines 1-26 were inspected for revision/license; no full vendor, installer/icon or other binary-asset audit occurred.",
+        "Security objectives are in-game tools/puzzles. No external scanning, real target operations, game build, save operation, desktop installation or playtest was performed."
+      ]
+    },
+    {
+      "id": "otterpuck",
+      "name": "Otterpuck",
+      "repository_url": "https://github.com/edwinzhng/otterpuck",
+      "genres": [
+        "sports",
+        "underwater hockey",
+        "AI opponents",
+        "network multiplayer"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.185.1",
+        "render_evidence": {
+          "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/src/world.ts#L197",
+          "claim": "createWorld directly constructs Three.js WebGLRenderer and a 3D underwater arena/camera. src/main.ts creates simulation/world, steps the match and calls renderWorld from its own requestAnimationFrame loop."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/package.json",
+            "dependencies": {
+              "@vercel/analytics": "^2.0.1",
+              "three": "0.185.1",
+              "zod": "^4.6.5"
+            },
+            "dev_dependencies": {
+              "@biomejs/biome": "2.5.12",
+              "@types/bun": "1.4.1",
+              "@types/three": "0.185.4",
+              "railway": "^3.11.0",
+              "typescript": "7.0.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js 0.185.1 plus zod and @vercel/analytics are declared runtime dependencies; Bun serves/builds the TypeScript app and room services. Project-authored swimming/puck physics, bots and render logic; exact manifest/dev versions retained."
+        ],
+        "framework_audit": "The reviewed actual game entry directly uses Three.js rendering through project-authored game/render modules. No R3F, A-Frame, Babylon.js, Unity or replacement engine renderer was identified in that path or declared game manifests. UI, platform, authoring and physics helpers are disclosed; this is not a transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/src/puck-physics.ts#L132",
+        "claim": "A puck crossing the goal increments the scoring team's score and triggers a faceoff reset. Match simulation decrements the timer and marks finished at zero; main.ts consumes finished and matchResult renders win/loss/draw. Bot and multiplayer paths are present."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/LICENSE",
+        "additional_notices": [
+          "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/docs/credits.md",
+          "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/public/audio/CREDITS.md",
+          "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/public/licenses/lucide.txt"
+        ],
+        "notes": "Root code is MIT. docs/credits.md assigns project art/painted skies the project grant. public/audio/CREDITS.md separately identifies original MIT audio and CC0 Alexander Ehlers/tricksntraps and Peludo sources; those two author pages were checked on the review date. public/licenses/lucide.txt preserves ISC and Feather-derived MIT notices. These checks do not replace an exhaustive binary/rights audit."
+      },
+      "demo": {
+        "url": "https://otterpuck.edwinzhang.com",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/README.md",
+        "notes": "Pinned README supplies the author demo URL. The text reader could not retrieve it; availability, matchmaking, audio and browser performance remain unconfirmed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/README.md",
+        "notes": "Documented first-person underwater hockey with bot matches, online play and practice, character/arena selection and a timed score-based result. Exact rules/simulation/render sources were inspected; the full advertised roster/mode matrix was not tested."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-017.md#otterpuck",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/README.md"
+          },
+          {
+            "path": "docs/credits.md",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/docs/credits.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/package.json"
+          },
+          {
+            "path": "public/audio/CREDITS.md",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/public/audio/CREDITS.md"
+          },
+          {
+            "path": "public/licenses/lucide.txt",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/public/licenses/lucide.txt"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/src/main.ts"
+          },
+          {
+            "path": "src/match-result.ts",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/src/match-result.ts"
+          },
+          {
+            "path": "src/puck-physics.ts",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/src/puck-physics.ts"
+          },
+          {
+            "path": "src/rules.ts",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/src/rules.ts"
+          },
+          {
+            "path": "src/simulation.ts",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/src/simulation.ts"
+          },
+          {
+            "path": "src/world.ts",
+            "url": "https://github.com/edwinzhng/otterpuck/blob/7f4b643fc183ff29c35c74a24d5e9deb29bdf1e2/src/world.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Online play requires its room/server infrastructure; no server, lobby, friend match or authentication was exercised. Free Swim/practice are not confused with the timed competitive objective.",
+        "The actual entry calls @vercel/analytics inject(); this dependency is disclosed, and no browser session or telemetry request was initiated.",
+        "Audio credits identify original MIT menu content and CC0 music/splash sources; both original author pages were checked for their stated grants. No binary hashes or exhaustive asset audit was performed.",
+        "Lucide icons retain ISC and listed Feather-derived MIT terms. Rendering, collision, bot behavior, rules, offline support, saves and performance remain source-only observations."
+      ]
+    },
+    {
+      "id": "narayana-hadal-cycle",
+      "name": "NARAYANA — The Hadal Cycle",
+      "repository_url": "https://github.com/xirtus/narayana-the-hadal-cycle",
+      "genres": [
+        "underwater adventure",
+        "exploration",
+        "objective puzzles"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.180.0",
+        "render_evidence": {
+          "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/src/core/Game.js#L52",
+          "claim": "Game directly creates Three.js WebGLRenderer and its own requestAnimationFrame update/render loop. The actual entry constructs this game with project-authored underwater world, player, encounters, expedition and UI modules."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/package.json",
+            "dependencies": {
+              "three": "^0.180.0"
+            },
+            "dev_dependencies": {
+              "@playwright/test": "^1.63.0",
+              "vite": "^7.1.5"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Only Three.js is declared at runtime; Vite and @playwright/test are dev tools. Project-authored world/expedition/player/combat/ecology modules and WebAudio; Google Fonts requests and OFL terms are disclosed separately."
+        ],
+        "framework_audit": "The reviewed actual game entry directly uses Three.js rendering through project-authored game/render modules. No R3F, A-Frame, Babylon.js, Unity or replacement engine renderer was identified in that path or declared game manifests. UI, platform, authoring and physics helpers are disclosed; this is not a transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/src/expedition/Expedition.js#L261",
+        "claim": "Numbered nearby/visible node interactions advance a space's progress and open its gate. Entering the completed heart gate sets expedition data.finished and emits finished; Game.expeditionEvent consumes that event, shows the completion transition and persists progress."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/LICENSE",
+        "additional_notices": [
+          "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/ASSET-LICENSE.md",
+          "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/THIRD_PARTY.md",
+          "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/docs/SOURCES.md"
+        ],
+        "notes": "Root software LICENSE is MIT. ASSET-LICENSE.md expressly releases original procedural animals, terrain, vegetation, materials, particles, UI and audio under CC BY 4.0 with Andreas Xirtus attribution. THIRD_PARTY.md and docs/SOURCES.md distinguish Three/Vite and OFL fonts from those original assets. No code grant is generalized to every asset."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/README.md",
+        "notes": "README documents running the Vite project locally; no author-hosted public demo URL was established in the reviewed README/metadata. No hosting URL was guessed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/README.md",
+        "notes": "The author describes a playable underwater adventure with original-ocean, trench and terraced-descent experiences. Source establishes ordered objectives, gated spaces and a completion event; all experience paths and optional systems were not played through."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "80088be52a34840fd071612c890011bd14bac6e1",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-017.md#narayana-hadal-cycle",
+        "reviewed_files": [
+          {
+            "path": "ASSET-LICENSE.md",
+            "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/ASSET-LICENSE.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/README.md"
+          },
+          {
+            "path": "THIRD_PARTY.md",
+            "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/THIRD_PARTY.md"
+          },
+          {
+            "path": "docs/SOURCES.md",
+            "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/docs/SOURCES.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/package.json"
+          },
+          {
+            "path": "src/core/Game.js",
+            "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/src/core/Game.js"
+          },
+          {
+            "path": "src/expedition/Expedition.js",
+            "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/src/expedition/Expedition.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/src/main.js"
+          },
+          {
+            "path": "src/mythology/EncounterSystem.js",
+            "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/src/mythology/EncounterSystem.js"
+          },
+          {
+            "path": "src/world/RestorationSystem.js",
+            "url": "https://github.com/xirtus/narayana-the-hadal-cycle/blob/80088be52a34840fd071612c890011bd14bac6e1/src/world/RestorationSystem.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Code is MIT, while original procedural animals/world/UI/audio are explicitly CC BY 4.0 with attribution to Andreas Xirtus; those asset terms must remain distinct.",
+        "THIRD_PARTY.md separately identifies Google Fonts under OFL, with system fallbacks. Source/reference notes describe original procedural work; no exhaustive asset authorship audit occurred.",
+        "The setting includes fictional underwater/mythological locations and is not treated as a scientific simulation or survey-accurate reconstruction.",
+        "Completion, line-of-sight, path reachability, combat/hunting systems, persistence, motion and the three experience variants remain untested source observations."
+      ]
+    },
+    {
+      "id": "triangular-sphere-puzzle",
+      "name": "Triangular Sphere Puzzle",
+      "repository_url": "https://github.com/MauricioPerera/triangular-sphere-puzzle",
+      "genres": [
+        "spatial sliding puzzle",
+        "spherical board"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.178.0",
+        "render_evidence": {
+          "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/src/ui/app.mjs#L38",
+          "claim": "public/index.html imports app.mjs and maps Three.js/addons to the installed npm package. The actual UI directly creates WebGLRenderer, a perspective camera, OrbitControls and an icosahedral 3D board, rendered in its own requestAnimationFrame loop."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/package.json",
+            "dependencies": {
+              "three": "^0.178.0"
+            },
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js is the only declared runtime dependency; OrbitControls and wide-line helpers come from its addons. Node scripts serve/build/validate and GAME/KDD tooling is outside the direct browser rendering path. Actual app uses local geometry/state/target-label modules."
+        ],
+        "framework_audit": "The reviewed actual game entry directly uses Three.js rendering through project-authored game/render modules. No R3F, A-Frame, Babylon.js, Unity or replacement engine renderer was identified in that path or declared game manifests. UI, platform, authoring and physics helpers are disclosed; this is not a transitive dependency audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/src/ui/app.mjs#L373",
+        "claim": "Selecting adjacent faces with one empty position applies a legal ball move, updates positions/move count and shows solved when the state returns to its targets. Shuffle performs legal nontrivial moves and solved state re-enables shuffle/difficulty controls."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE grants MIT software use. The inspected puzzle geometry/state/labels are code-driven and no separate asset-license notice was located in the tree. Generic templates/tooling are not evidence of additional game runtime frameworks or of an exhaustive asset rights audit."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/docs/estado-actual.md",
+        "notes": "The game-specific status document describes the browser prototype, and public/index.html is the actual entry. No author-hosted game demo was established; the root README's KDD methodology landing page is not presented as this game's demo."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/docs/estado-actual.md",
+        "notes": "The game-specific status document explicitly describes a playable n=1 icosahedral puzzle: 20 faces, 19 balls, one empty face, a shuffle/start interaction and solved detection. These implemented modules are distinct from the retained generic GAME/KDD template documents."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "bba1a19e168f1949921a82efa4d23f3be932365c",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-017.md#triangular-sphere-puzzle",
+        "reviewed_files": [
+          {
+            "path": "DEFINITION.md",
+            "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/DEFINITION.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/README.md"
+          },
+          {
+            "path": "docs/estado-actual.md",
+            "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/docs/estado-actual.md"
+          },
+          {
+            "path": "game/GAME.md",
+            "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/game/GAME.md"
+          },
+          {
+            "path": "game/README.md",
+            "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/game/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/package.json"
+          },
+          {
+            "path": "public/index.html",
+            "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/public/index.html"
+          },
+          {
+            "path": "src/core/puzzle-state.mjs",
+            "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/src/core/puzzle-state.mjs"
+          },
+          {
+            "path": "src/core/triangular-sphere.mjs",
+            "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/src/core/triangular-sphere.mjs"
+          },
+          {
+            "path": "src/ui/app.mjs",
+            "url": "https://github.com/MauricioPerera/triangular-sphere-puzzle/blob/bba1a19e168f1949921a82efa4d23f3be932365c/src/ui/app.mjs"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This is a true spherical 3D board puzzle, not a free-roaming world. It begins solved as a reference and requires Shuffle to start the actual puzzle.",
+        "The root README/game/GAME.md contain generic authoring-template material; maturity/objective claims use the actual UI/core modules and game-specific status document instead.",
+        "GAME Protocol/KDD are authoring/validation tooling in this repository; the inspected browser renderer uses Three.js and local puzzle modules directly.",
+        "Procedural board/labels are visible in source; no comprehensive dependency/asset audit, difficulty/solvability test, local server, build or playtest was run."
+      ]
     }
   ]
 }

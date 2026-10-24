@@ -814,6 +814,32 @@
         "https://github.com/liminal-hq/lieutenant-fizz/blob/4bce0361dfc787515616a97a8db255bc067c5880/LICENSE-MIT",
         "https://github.com/liminal-hq/lieutenant-fizz/blob/4bce0361dfc787515616a97a8db255bc067c5880/LICENSE-APACHE"
       ]
+    },
+    {
+      "id": "echoes-of-the-deep",
+      "repository_url": "https://github.com/nishivector/echoes-of-the-deep",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "6ca5a0f503c4fc568903b34758cf038617c7a8a8",
+      "reason": "README ends with an MIT label, but no project LICENSE/full permission text was found in the five-entry repository tree. Renderer/objective review is also incomplete; the short license label is not expanded into a verified grant.",
+      "next_action": "Obtain/locate the actual license grant and complete entry/renderer/game-loop review before promotion; retain the author's MIT claim without treating it as a full asset grant.",
+      "evidence_urls": [
+        "https://github.com/nishivector/echoes-of-the-deep/blob/6ca5a0f503c4fc568903b34758cf038617c7a8a8/README.md"
+      ]
+    },
+    {
+      "id": "keepers-page",
+      "repository_url": "https://github.com/spwoodall/keepers-page",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "ef2632a6b460291266e792fd6804692e5ec42ed0",
+      "reason": "Root software LICENSE is MIT, while README credits generated panoramas, ElevenLabs, Freesound and Pixabay media without a per-file source/grant ledger. Rendering is panoramic; only the opening source portion was inspected, so the strict 3D gameplay boundary is also unresolved.",
+      "next_action": "Clarify individual sound/image terms and verify implemented puzzle objectives plus the 3D-scene boundary, or identify an asset-cleared edition. Do not infer every external recording is MIT or that a tribute disclaimer grants media rights.",
+      "evidence_urls": [
+        "https://github.com/spwoodall/keepers-page/blob/ef2632a6b460291266e792fd6804692e5ec42ed0/LICENSE",
+        "https://github.com/spwoodall/keepers-page/blob/ef2632a6b460291266e792fd6804692e5ec42ed0/README.md",
+        "https://github.com/spwoodall/keepers-page/blob/ef2632a6b460291266e792fd6804692e5ec42ed0/game.js"
+      ]
     }
   ]
 }
