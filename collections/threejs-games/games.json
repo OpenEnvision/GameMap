@@ -15640,6 +15640,316 @@
       "limitations": [
         "No upstream install, build, combat/world verifier, tests or playtest occurred. Enemy AI, aiming, mission balance, rendering, pointer-lock behavior and current browser compatibility remain source reviewed only."
       ]
+    },
+    {
+      "id": "containment",
+      "name": "Containment",
+      "repository_url": "https://github.com/cdb-lumen/containment",
+      "genres": [
+        "action roguelike",
+        "top-down shooter",
+        "expedition"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.185.0",
+        "render_evidence": {
+          "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/src/render/DepthRenderer.ts#L50",
+          "claim": "The real HTML/main.ts creates DepthRenderer and DepthGame, then updates gameplay and submits frames. DepthRenderer directly constructs Three.js WebGLRenderer, a Scene/OrthographicCamera and the actor/world rendering; Rapier supplies physics."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/package.json",
+            "dependencies": {
+              "@dimforge/rapier3d-compat": "^0.20.0",
+              "three": "0.185.0"
+            },
+            "dev_dependencies": {
+              "@types/node": "^24.13.3",
+              "@types/three": "^0.183.0",
+              "playwright": "1.58.2",
+              "typescript": "6.0.3",
+              "vite": "8.1.4",
+              "vitest": "4.1.10"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js 0.185.0, @dimforge/rapier3d-compat ^0.20.0, project-authored gameplay/render/DOM systems, TypeScript/Vite and development Playwright/Vitest. GLTF models, PBR materials, audio and CC0 flipbook atlases have explicit media notices; the Unity Labs credit concerns image assets, not a Unity engine dependency."
+        ],
+        "framework_audit": "The scoped game entry, live renderer and game-goal code were inspected. Three.js is invoked directly through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity runtime or replacement renderer was identified in the reviewed game entry/manifests. Physics, container, UI and asset-source roles are disclosed separately."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/src/DepthGame.ts#L90",
+        "claim": "Clearing a room calls completeExpeditionRoom, collects loot and enters reward or final complete state. Enemy deaths increment kills/credits and drop pickups; queen-defeated events advance encounter progress. The live main loop drives combat/input and expedition route/reward progression."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/LICENSE",
+        "additional_notices": [
+          "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/THIRD_PARTY/Three-LICENSE.txt",
+          "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/THIRD_PARTY/Rapier-LICENSE.txt",
+          "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/asset-credits.html",
+          "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/audio-credits.html",
+          "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/audio/Q009-CC-BY-SA-3.0.txt",
+          "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/environment/CREDITS.md",
+          "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/vfx/CREDITS.md",
+          "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/vfx/Explosion01-LICENSE.md",
+          "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/benchmark/CREDITS.md",
+          "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/communal-atrium/CREDITS.md",
+          "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/passenger-vault/CREDITS.md"
+        ],
+        "notes": "Root game/domain code is MIT; Rapier is separately Apache-2.0 and Three.js MIT per the read notices. Project notices list adapted Unvanquished models under CC BY-SA 2.5/3.0/4.0, Q009 adapted sounds under CC BY-SA 3.0, other credited audio/environment/VFX under CC0 and original scoped geometry under MIT. Sampled original OpenGameArt pages confirm Q009 CC BY-SA 3.0 and Joth music CC0. Barlow fonts retain SIL OFL terms per README; no exhaustive origin/binary/transitive audit is claimed."
+      },
+      "demo": {
+        "url": "https://cdb-lumen.github.io/containment/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/README.md",
+        "notes": "README links the author's GitHub Pages game. The text reader could not retrieve it; no game, audio, save, browser test or deployment comparison was run. A reader error does not establish an offline site."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/README.md",
+        "notes": "Source implements expedition combat, rewards/routes, deaths and an ending state. The author's browser-smoke, asset-generation, benchmark and screenshot reports were read as author claims and were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "2d5639d5998ed445715948a8baed34d55f886f08",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-025.md#containment",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/package.json"
+          },
+          {
+            "path": "public/asset-credits.html",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/asset-credits.html"
+          },
+          {
+            "path": "public/assets/benchmark/CREDITS.md",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/benchmark/CREDITS.md"
+          },
+          {
+            "path": "public/assets/communal-atrium/CREDITS.md",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/communal-atrium/CREDITS.md"
+          },
+          {
+            "path": "public/assets/environment/CREDITS.md",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/environment/CREDITS.md"
+          },
+          {
+            "path": "public/assets/passenger-vault/CREDITS.md",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/passenger-vault/CREDITS.md"
+          },
+          {
+            "path": "public/assets/passenger-vault/material-budget/CREDITS.md",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/passenger-vault/material-budget/CREDITS.md"
+          },
+          {
+            "path": "public/assets/passenger-vault/materials/CREDITS.md",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/passenger-vault/materials/CREDITS.md"
+          },
+          {
+            "path": "public/assets/vfx/CREDITS.md",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/vfx/CREDITS.md"
+          },
+          {
+            "path": "public/assets/vfx/Explosion01-LICENSE.md",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/vfx/Explosion01-LICENSE.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/index.html"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/src/main.ts"
+          },
+          {
+            "path": "src/DepthGame.ts",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/src/DepthGame.ts"
+          },
+          {
+            "path": "src/render/DepthRenderer.ts",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/src/render/DepthRenderer.ts"
+          },
+          {
+            "path": "src/game/roguelike/expedition.ts",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/src/game/roguelike/expedition.ts"
+          },
+          {
+            "path": "src/game/audio/AudioSystem.ts",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/src/game/audio/AudioSystem.ts"
+          },
+          {
+            "path": "public/audio-credits.html",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/audio-credits.html"
+          },
+          {
+            "path": "public/assets/audio/manifest.json",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/audio/manifest.json"
+          },
+          {
+            "path": "THIRD_PARTY/Rapier-LICENSE.txt",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/THIRD_PARTY/Rapier-LICENSE.txt"
+          },
+          {
+            "path": "THIRD_PARTY/Three-LICENSE.txt",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/THIRD_PARTY/Three-LICENSE.txt"
+          },
+          {
+            "path": "public/assets/audio/Q009-CC-BY-SA-3.0.txt",
+            "url": "https://github.com/cdb-lumen/containment/blob/2d5639d5998ed445715948a8baed34d55f886f08/public/assets/audio/Q009-CC-BY-SA-3.0.txt"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The top-down/orthographic game renders 3D models and world geometry while most combat/navigation uses planar coordinates. Dimension describes that rendered scene, not free 3D movement.",
+        "No upstream install, build, tests, asset generators, playtest or audio playback occurred. Every converted media file, external origin, share-alike implementation, font and runtime dependency was not independently audited; media terms remain separate from MIT code."
+      ]
+    },
+    {
+      "id": "zil",
+      "name": "ZIL",
+      "repository_url": "https://github.com/uzudil/zil",
+      "genres": [
+        "voxel RPG",
+        "quests",
+        "exploration"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r69 (vendored header)",
+        "render_evidence": {
+          "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/src/zil.js#L981",
+          "claim": "apps/zil/package.json points to the real game HTML, which loads zil.js/story.js and starts ZIL. ZIL directly creates THREE.WebGLRenderer/OrthographicCamera and its composer loop; chunk.js constructs BoxGeometry/Geometry/Mesh voxel surfaces. The project-authored voxel helpers are inside this game repository."
+        },
+        "manifests": [
+          {
+            "path": "apps/zil/package.json",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/apps/zil/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Historical node-webkit (NW.js) desktop container, vendored Three.js r69 with example shaders/post-processing, jQuery 2.0.3 by entry filename, Underscore and declared MIDI.js/soundfont helpers. The actual NW.js manifest is recorded; no dependency/devDependency versions are declared there. Native filesystem APIs support game/config data."
+        ],
+        "framework_audit": "The scoped game entry, live renderer and game-goal code were inspected. Three.js is invoked directly through project-authored helpers; no R3F, A-Frame, Babylon.js, Unity runtime or replacement renderer was identified in the reviewed game entry/manifests. Physics, container, UI and asset-source roles are disclosed separately."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/src/zil.js#L1456",
+        "claim": "Quest completion invokes the authored callback, awards experience for accepted quests, removes the active quest and persists completed-quest state. Story callbacks call this path, including the sewer quest, and the renderer's live loop calls game_step before drawing."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/LICENSE.txt",
+        "additional_notices": [
+          "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/lib/three.js",
+          "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/apps/zil/index.html"
+        ],
+        "notes": "LICENSE.txt grants MIT project-code use. Vendored libraries, fonts, soundfont/sample data and other content retain their own terms; their complete provenance/grants were not independently audited. The Three.js vendor header/revision was inspected in targeted fragments, not as a full library audit."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/README.md",
+        "notes": "README provides node-webkit desktop-app instructions and links to that runtime's documentation, not an author-hosted game demo. No public game URL was located in the reviewed README/metadata; no desktop app or filesystem/config action ran."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/README.md",
+        "notes": "README describes a voxel RPG and separate editor tooling, and requires node-webkit to run apps/zil. The 0.1.0 app manifest and vintage Three.js/runtime justify a legacy-prototype label; no current release/compatibility or complete campaign playthrough is verified."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "5f23e0eb629b65f70e45916fc6a7376701b715e9",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-025.md#zil",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/README.md"
+          },
+          {
+            "path": "LICENSE.txt",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/LICENSE.txt"
+          },
+          {
+            "path": "apps/zil/index.html",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/apps/zil/index.html"
+          },
+          {
+            "path": "src/player.js",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/src/player.js"
+          },
+          {
+            "path": "src/story.js",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/src/story.js"
+          },
+          {
+            "path": "src/zil.js",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/src/zil.js"
+          },
+          {
+            "path": "src/mobile.js",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/src/mobile.js"
+          },
+          {
+            "path": "src/zil_shape.js",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/src/zil_shape.js"
+          },
+          {
+            "path": "src/songbook.js",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/src/songbook.js"
+          },
+          {
+            "path": "lib/three.js",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/lib/three.js"
+          },
+          {
+            "path": "apps/zil/package.json",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/apps/zil/package.json"
+          },
+          {
+            "path": "src/zil_util.js",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/src/zil_util.js"
+          },
+          {
+            "path": "src/chunk.js",
+            "url": "https://github.com/uzudil/zil/blob/5f23e0eb629b65f70e45916fc6a7376701b715e9/src/chunk.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This entry is scoped to the apps/zil game with active story/quest/XP code. The repository also contains builder/animator tools, whose previews are not used as game-goal evidence.",
+        "Desktop node-webkit/native filesystem APIs are required by the documented path; the exact supported runtime release is unpinned. The old entry also requests Google Fonts over HTTP. Modern NW.js/Chromium/WebGL compatibility was not tested.",
+        "No runtime download, installation, native app, build, tests, playtest, MIDI playback or config/save write occurred. Library/sample/font/media licensing and full campaign completion were not exhaustively audited."
+      ]
     }
   ]
 }
