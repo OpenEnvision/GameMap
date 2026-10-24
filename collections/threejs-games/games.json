@@ -15950,6 +15950,459 @@
         "Desktop node-webkit/native filesystem APIs are required by the documented path; the exact supported runtime release is unpinned. The old entry also requests Google Fonts over HTTP. Modern NW.js/Chromium/WebGL compatibility was not tested.",
         "No runtime download, installation, native app, build, tests, playtest, MIDI playback or config/save write occurred. Library/sample/font/media licensing and full campaign completion were not exhaustively audited."
       ]
+    },
+    {
+      "id": "abyss-command",
+      "name": "ABYSS COMMAND",
+      "repository_url": "https://github.com/BasharORG/abyss-command",
+      "genres": [
+        "underwater strategy",
+        "fleet command",
+        "campaign"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.180.0",
+        "render_evidence": {
+          "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/src/render/worldview.ts#L192",
+          "claim": "The real main.ts constructs Game; its WorldView imports Three.js and directly creates WebGLRenderer, cameras, meshes and example-module post-processing. The active game loop advances fixed-step simulation/commander logic and renders the synchronized 3D submarine world."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/package.json",
+            "dependencies": {
+              "modern-screenshot": "^4.7.0",
+              "three": "^0.180.0"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.180.0",
+              "typescript": "^5.9.2",
+              "vite": "^7.1.0",
+              "vitest": "^3.2.4"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js ^0.180.0 with its example post-processing; modern-screenshot ^4.7.0 for image capture. Project-authored fixed-step simulation, fleet planner, procedural geometry/audio, DOM UI and localStorage campaign saves. TypeScript/Vite/Vitest are development tools; the shipped NEREUS planner is described as classic local game AI, not an LLM service."
+        ],
+        "framework_audit": "The actual browser entry, direct renderer and implemented game objectives were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity runtime or replacement render engine was identified in the reviewed entry/manifests. Project-authored helpers and optional library/service roles are disclosed; this is not an exhaustive audit of every transitive dependency."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/src/sim/simulation.ts#L910",
+        "claim": "The core-recovery operation wins when the carried core and the required surviving submarines reach extraction. Explicit loss paths handle insufficient survivors, immobilized/empty-battery fleets and the operation deadline. game.ts advances these rules before drawing, and additional source operations have their own completion states."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/LICENSE",
+        "additional_notices": [
+          "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/THIRD_PARTY_NOTICES.md"
+        ],
+        "notes": "Root LICENSE grants MIT project-code use. README/THIRD_PARTY_NOTICES declare procedural in-game geometry, textures and audio under that project scope; the inspected mesh/audio code is consistent with that description. Three.js and modern-screenshot have separate MIT notices; transitive distributions and every content-generation path were not exhaustively audited."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/README.md",
+        "notes": "No public author-hosted game URL was located in the reviewed README/metadata. README supplies local Vite instructions and static-host deployment guidance; neither is treated as a live demo. Nothing was installed, hosted or run."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/README.md",
+        "notes": "Source implements a core-recovery mission, explicit win/loss conditions and additional campaign operations. README's campaign UI, performance and memory-check reports are author claims and were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "33f25db2353767edb9a06aec3a2233aef5762de7",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-026.md#abyss-command",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/README.md"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/THIRD_PARTY_NOTICES.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/index.html"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/src/main.ts"
+          },
+          {
+            "path": "src/game.ts",
+            "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/src/game.ts"
+          },
+          {
+            "path": "src/render/worldview.ts",
+            "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/src/render/worldview.ts"
+          },
+          {
+            "path": "src/sim/simulation.ts",
+            "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/src/sim/simulation.ts"
+          },
+          {
+            "path": "src/world/mission.ts",
+            "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/src/world/mission.ts"
+          },
+          {
+            "path": "src/render/submarineMesh.ts",
+            "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/src/render/submarineMesh.ts"
+          },
+          {
+            "path": "src/audio/audio.ts",
+            "url": "https://github.com/BasharORG/abyss-command/blob/33f25db2353767edb9a06aec3a2233aef5762de7/src/audio/audio.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "WebGL2 and browser localStorage are used; the author notes that context restoration reloads the page, standalone sorties lack checkpoints, and device/GPU performance varies. No performance guarantee is inferred from the author's measurements.",
+        "No upstream installation, build, tests, game, image capture, save write, input device or sound playback ran. The existence of implemented rules does not verify a successful full campaign playthrough."
+      ]
+    },
+    {
+      "id": "abyss-ocean-exploration",
+      "name": "Abyss — Ocean Exploration",
+      "repository_url": "https://github.com/temidayoxyz/abyss",
+      "genres": [
+        "underwater exploration",
+        "discovery collection",
+        "simulation"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.172.0",
+        "render_evidence": {
+          "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/src/systems/world.js#L131",
+          "claim": "The actual main.js imports createRenderer from world.js, which directly constructs Three.js WebGLRenderer. Its requestAnimationFrame loop updates the controlled submersible, ocean, creatures and landmarks, then renders the same 3D scene."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/package.json",
+            "dependencies": {
+              "three": "^0.172.0"
+            },
+            "dev_dependencies": {
+              "vite": "^6.0.7"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three.js ^0.172.0 and development Vite ^6.0.7; vanilla DOM UI, project-authored movement/creature/world systems and procedural Web Audio. The entry requests IBM Plex Mono and Outfit through Google Fonts."
+        ],
+        "framework_audit": "The actual browser entry, direct renderer and implemented game objectives were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity runtime or replacement render engine was identified in the reviewed entry/manifests. Project-authored helpers and optional library/service roles are disclosed; this is not an exhaustive audit of every transitive dependency."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/src/main.js#L125",
+        "claim": "Aimed scanning, sampling and photographing locate nearby creatures/landmarks and add or update entries through Journal.discover. journal.js records unique discoveries, sample/photo counts and the HUD collection count. This is an open-ended collection/exploration loop, not a claimed terminal victory or combat campaign."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/LICENSE",
+        "additional_notices": [],
+        "notes": "The checked-in root LICENSE contains the MIT grant, beyond README's conditional license wording. Read game systems construct procedural geometry and Web Audio; external Google Fonts and dependencies retain their own terms, and no blanket provenance/license audit of all content is claimed."
+      },
+      "demo": {
+        "url": "https://temidayoxyz.github.io/abyss/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/README.md",
+        "notes": "README directly links the author's GitHub Pages game. The text reader returned an accessibility error; this does not establish that the site is offline. No renderer, actions, audio or deployment/source match was exercised."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/README.md",
+        "notes": "README presents an ocean exploration simulator and source implements discovery collection and resource meters. A terminal ending, persisted collection save, present-device compatibility and the full feature list were not established by gameplay."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "baa50005cd5e9d2ed7a043d8d442d30f81d5a31f",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-026.md#abyss-ocean-exploration",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/index.html"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/src/main.js"
+          },
+          {
+            "path": "src/systems/submarine.js",
+            "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/src/systems/submarine.js"
+          },
+          {
+            "path": "src/systems/journal.js",
+            "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/src/systems/journal.js"
+          },
+          {
+            "path": "src/systems/world.js",
+            "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/src/systems/world.js"
+          },
+          {
+            "path": "src/systems/audio.js",
+            "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/src/systems/audio.js"
+          },
+          {
+            "path": "src/systems/creatures.js",
+            "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/src/systems/creatures.js"
+          },
+          {
+            "path": "src/systems/landmarks.js",
+            "url": "https://github.com/temidayoxyz/abyss/blob/baa50005cd5e9d2ed7a043d8d442d30f81d5a31f/src/systems/landmarks.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The game goal is open-ended discovery collection; do not advertise a win/loss campaign. The reviewed journal stores its entries in memory. Scan/sample/photo labels do not by themselves prove a downloaded photograph or persistent archive.",
+        "Oxygen/battery are atmosphere/resource mechanics in the inspected submersible code; no death/failure rule is inferred. The external fonts have separate rights. No upstream install/build/test, playtest, pointer-lock/touch input or audio playback occurred."
+      ]
+    },
+    {
+      "id": "flydrones-swat-game",
+      "name": "FlyDrones — Browser Swat Game",
+      "repository_url": "https://github.com/SpikeCalls/FlyDrones",
+      "genres": [
+        "arcade",
+        "3D interaction",
+        "simulation"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r170 (vendored)",
+        "render_evidence": {
+          "url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/docs/live/app.js#L39",
+          "claim": "docs/index.html loads live/app.js and maps Three.js to the vendored r170 module. app.js directly creates WebGLRenderer, scene/cameras and an EffectComposer; project-authored room/drone/fly/swatter meshes form the 3D game and the animation loop renders it."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vendored Three.js r170 with example OrbitControls, RoundedBoxGeometry and post-processing; project-authored browser physics, MiniFly neural simulation and procedural models/audio. Optional webcam mode dynamically loads MediaPipe Tasks Vision 0.10.14, its WASM and Google hand-landmarker model. The scoped browser game has no npm manifest and does not require the repository's separate Python/hardware-control package."
+        ],
+        "framework_audit": "The actual browser entry, direct renderer and implemented game objectives were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity runtime or replacement render engine was identified in the reviewed entry/manifests. Project-authored helpers and optional library/service roles are disclosed; this is not an exhaustive audit of every transitive dependency."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/docs/live/app.js#L505",
+        "claim": "The user can trigger a swatter round. gameAfterTick checks its three-dimensional overlap with the simulated drone, updates swatted/dodged totals and streak/best, adjusts round speed and ends the round. The live frame step advances the pilot and invokes this game-result logic."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/LICENSE",
+        "additional_notices": [
+          "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/THIRD_PARTY.md",
+          "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/docs/vendor/THREE_LICENSE"
+        ],
+        "notes": "Root code is MIT and the vendored Three.js notice is MIT. THIRD_PARTY distinguishes the synthetic browser MiniFly from optional MaleCNS data (CC BY 4.0, not bundled) and describes separately licensed optional MediaPipe/software dependencies. The scoped models/room are procedural source; external scientific/data/model claims and every dependency grant were not independently audited."
+      },
+      "demo": {
+        "url": "https://spikecalls.github.io/FlyDrones/",
+        "status": "page-read",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/README.md",
+        "notes": "The text reader returned cached initial interface text, with a reported crawl age of yesterday, including the swat controls and zeroed score fields. This is a cached page-text observation, not fresh browser execution, a rendered simulation or a source/deployment equivalence check."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/README.md",
+        "notes": "The broader project is a neural-control demonstration; this entry is limited to its implemented browser swat/scoring mode. The README identifies browser MiniFly as a synthetic stand-in, not the full connectome, and says separate hardware adapters have not been flight-tested by the author."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "3e269346b3882c291d2a977bc2c2c6a9c9213c21",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-026.md#flydrones-swat-game",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/README.md"
+          },
+          {
+            "path": "docs/index.html",
+            "url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/docs/index.html"
+          },
+          {
+            "path": "docs/live/app.js",
+            "url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/docs/live/app.js"
+          },
+          {
+            "path": "docs/live/engine.js",
+            "url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/docs/live/engine.js"
+          },
+          {
+            "path": "docs/live/models.js",
+            "url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/docs/live/models.js"
+          },
+          {
+            "path": "docs/vendor/THREE_LICENSE",
+            "url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/docs/vendor/THREE_LICENSE"
+          },
+          {
+            "path": "docs/live/room.js",
+            "url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/docs/live/room.js"
+          },
+          {
+            "path": "docs/live/minifly.json",
+            "url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/docs/live/minifly.json"
+          },
+          {
+            "path": "docs/vendor/three.module.min.js",
+            "url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/docs/vendor/three.module.min.js"
+          },
+          {
+            "path": "THIRD_PARTY.md",
+            "url": "https://github.com/SpikeCalls/FlyDrones/blob/3e269346b3882c291d2a977bc2c2c6a9c9213c21/THIRD_PARTY.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Only the browser swat game is indexed. Separate Python connectome downloads and real-drone adapters are not needed for this scoped entry and were not run or tested; biological or real-flight fidelity is not independently verified.",
+        "Webcam/MediaPipe is optional and requires user permission/model download; no camera, sensor, hardware, model download, audio or multiplayer session was activated. No upstream install/build/test or playtest occurred.",
+        "The vendored module's license header/revision was inspected in a targeted review; this is not a full audit of the minified library. Reader content was cached and does not establish current playability."
+      ]
+    },
+    {
+      "id": "slay-the-spore",
+      "name": "Slay the Spore",
+      "repository_url": "https://github.com/ilatroce/Slay-the-Spore",
+      "genres": [
+        "deckbuilder",
+        "creature evolution",
+        "turn-based combat"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 (CDN)",
+        "render_evidence": {
+          "url": "https://github.com/ilatroce/Slay-the-Spore/blob/df52c1a431df9a0986f08b88463dd02acf5397f7/index.html#L3314",
+          "claim": "The actual index.html imports Three.js through its import map and directly creates WebGLRenderer, a 3D battle scene and procedural creature meshes. Its active animation loop updates the same creatures/combat effects and renders that scene; separate look-development pages are not used as gameplay proof."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Three.js 0.160.0 and its OrbitControls; PeerJS 1.5.5 and es-module-shims 1.8.0 CDN scripts; vanilla HTML/JS, authored card/run-state logic and soundtrack playback. The module also imports unversioned @mlc-ai/web-llm from esm.run for an optional local rival mode; no npm manifest governs the reviewed browser entry. A remote Poly Haven terrain texture and bundled Cards/Icons/Textures/OST content are referenced."
+        ],
+        "framework_audit": "The actual browser entry, direct renderer and implemented game objectives were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity runtime or replacement render engine was identified in the reviewed entry/manifests. Project-authored helpers and optional library/service roles are disclosed; this is not an exhaustive audit of every transitive dependency."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/ilatroce/Slay-the-Spore/blob/df52c1a431df9a0986f08b88463dd02acf5397f7/index.html#L9158",
+        "claim": "Enemy/player HP checks enter winCombat or loseCombat. Winning changes the game state, removes the defeated 3D enemy and offers card/coin rewards; the reward path adds a card to the run deck and advances the single-player victory flow. Losing exposes the defeat state rather than leaving only a scene preview."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/ilatroce/Slay-the-Spore/blob/df52c1a431df9a0986f08b88463dd02acf5397f7/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE and README identify MIT project code. Bundled art/music, the external terrain texture and CDN library/model terms were not exhaustively traced or independently cleared; no blanket assertion that every asset/dependency is MIT is made."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/ilatroce/Slay-the-Spore/blob/df52c1a431df9a0986f08b88463dd02acf5397f7/README.md",
+        "notes": "Reviewed README points to local main_screen.html/index.html instructions and optional query modes; repository metadata supplies no public game homepage. No hosted demo URL is guessed, and no page, worker, rival model or multiplayer peer was launched."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/ilatroce/Slay-the-Spore/blob/df52c1a431df9a0986f08b88463dd02acf5397f7/README.md",
+        "notes": "README explicitly calls it a browser prototype. The checked-in primary entry has actual turn-based HP/win/loss, reward/deck state and 3D creature presentation. The wider evolution, elite/multiplayer and optional rival feature set has not been validated through a full run."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "df52c1a431df9a0986f08b88463dd02acf5397f7",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-026.md#slay-the-spore",
+        "reviewed_files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/ilatroce/Slay-the-Spore/blob/df52c1a431df9a0986f08b88463dd02acf5397f7/README.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/ilatroce/Slay-the-Spore/blob/df52c1a431df9a0986f08b88463dd02acf5397f7/LICENSE"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/ilatroce/Slay-the-Spore/blob/df52c1a431df9a0986f08b88463dd02acf5397f7/index.html"
+          },
+          {
+            "path": "cards.js",
+            "url": "https://github.com/ilatroce/Slay-the-Spore/blob/df52c1a431df9a0986f08b88463dd02acf5397f7/cards.js"
+          },
+          {
+            "path": "run_state.js",
+            "url": "https://github.com/ilatroce/Slay-the-Spore/blob/df52c1a431df9a0986f08b88463dd02acf5397f7/run_state.js"
+          },
+          {
+            "path": "ost.js",
+            "url": "https://github.com/ilatroce/Slay-the-Spore/blob/df52c1a431df9a0986f08b88463dd02acf5397f7/ost.js"
+          },
+          {
+            "path": "fullscreen.js",
+            "url": "https://github.com/ilatroce/Slay-the-Spore/blob/df52c1a431df9a0986f08b88463dd02acf5397f7/fullscreen.js"
+          },
+          {
+            "path": "fight_llms_worker.js",
+            "url": "https://github.com/ilatroce/Slay-the-Spore/blob/df52c1a431df9a0986f08b88463dd02acf5397f7/fight_llms_worker.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The core combat decisions use cards/DOM UI while the live player/enemy battle presentation is rendered in 3D. This is not free-roaming spatial gameplay, and separate preview/lab pages are outside this entry's game evidence.",
+        "The WebLLM CDN import is unversioned; the optional rival mode may download local inference models, and the PeerJS path may use network services. Their present compatibility, availability, model terms and multiplayer operation were not tested.",
+        "No upstream installation, build, tests, playtest, soundtrack playback, AI model/service, peer session or save write ran. Review was limited to intended public game files and relevant notices; no exhaustive asset-origin or transitive-library audit is claimed."
+      ]
     }
   ]
 }

@@ -1268,6 +1268,47 @@
         "https://github.com/byteab/operation-ink/blob/10c5857b05fca41b943f63c365c2f76cc7e80331/README.md#L15",
         "https://github.com/byteab/operation-ink/blob/10c5857b05fca41b943f63c365c2f76cc7e80331/public/sounds/CREDITS.md#L18"
       ]
+    },
+    {
+      "id": "spectral-horn",
+      "repository_url": "https://github.com/ingSlonik/spectral-horn",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "dc14d414a576cf4e59c410b509b87771107cd3f2",
+      "reason": "README/manifest explicitly describe a 2D optical puzzle; the actual renderer constructs CanvasRenderingContext2D surfaces. Three.js appears in explanatory comparison text, not as the game's rendering core.",
+      "next_action": "Retain outside the direct-Three 3D collection unless a distinct actual Three.js 3D implementation is supplied.",
+      "evidence_urls": [
+        "https://github.com/ingSlonik/spectral-horn/blob/dc14d414a576cf4e59c410b509b87771107cd3f2/README.md#L18",
+        "https://github.com/ingSlonik/spectral-horn/blob/dc14d414a576cf4e59c410b509b87771107cd3f2/package.json",
+        "https://github.com/ingSlonik/spectral-horn/blob/dc14d414a576cf4e59c410b509b87771107cd3f2/src/renderer.ts#L146"
+      ]
+    },
+    {
+      "id": "carrier-vector-1988",
+      "repository_url": "https://github.com/bejranonda/carrier-vector-1988",
+      "status": "excluded",
+      "checked_at": "2026-10-24",
+      "source_commit": "0c9d2634affbb889a18e6e526966aa21fc1bcb2c",
+      "reason": "This is a 3D flight game in its own wireframe renderer, but README/manifest explicitly promise zero 3D engine dependencies and VectorRenderer obtains a Canvas 2D context. Three.js does not own its rendering core.",
+      "next_action": "Keep outside this technology-specific collection; do not infer a Three.js dependency from dimensional gameplay or search matches.",
+      "evidence_urls": [
+        "https://github.com/bejranonda/carrier-vector-1988/blob/0c9d2634affbb889a18e6e526966aa21fc1bcb2c/README.md",
+        "https://github.com/bejranonda/carrier-vector-1988/blob/0c9d2634affbb889a18e6e526966aa21fc1bcb2c/package.json",
+        "https://github.com/bejranonda/carrier-vector-1988/blob/0c9d2634affbb889a18e6e526966aa21fc1bcb2c/src/renderer/VectorRenderer.ts#L64"
+      ]
+    },
+    {
+      "id": "thecodingrocket-3d-pong",
+      "repository_url": "https://github.com/TheCodingRocket/3D-Pong",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "adfc09a0dfcb15e80c4b80f2035245978838aea8",
+      "reason": "Root README describes a GameRunner/canvas setup, while the checked-in nested entry is a WebGL2 path-traced Pong with a separate CC0 subtree license alongside root MIT. The upstream/rehost identity and advertised-demo/source relation have not been established; the two permissive notices are not asserted to be incompatible.",
+      "next_action": "Compare the actual path-traced game with its upstream and existing Pong entries, establish file-level attribution/license scope and confirm which entry the README's demo represents before admission.",
+      "evidence_urls": [
+        "https://github.com/TheCodingRocket/3D-Pong/blob/adfc09a0dfcb15e80c4b80f2035245978838aea8/README.md",
+        "https://github.com/TheCodingRocket/3D-Pong/blob/adfc09a0dfcb15e80c4b80f2035245978838aea8/LICENSE"
+      ]
     }
   ]
 }
