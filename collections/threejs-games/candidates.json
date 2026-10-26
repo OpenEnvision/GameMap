@@ -2353,6 +2353,41 @@
         "https://github.com/alexandernanberg/motorsport/blob/cc418f026d19dba882737aadcde652ed9a7cdcd2/src/index.tsx",
         "https://github.com/alexandernanberg/motorsport/blob/cc418f026d19dba882737aadcde652ed9a7cdcd2/src/App.tsx"
       ]
+    },
+    {
+      "id": "ion-rush-incomplete-source-only-release",
+      "repository_url": "https://github.com/semihhcosgun/ion-rush",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "8d9200eac40788c8c4f6deb157ed5928f523c131",
+      "reason": "Actual direct Three rendering and substantial runner/race gameplay source exist under an explicit GPL-3.0-only project grant. The README expressly says this is a separate code-only release, not a complete playable game: images, textures, fonts/media/geodata and production/native configuration are omitted, references remain and no replacement media or playable demo is promised. The store binaries are not treated as this open distribution.",
+      "next_action": "Review a complete openly redistributable game/asset bundle or an explicitly implemented playable fallback scope before promotion. Keep this useful source-only candidate separate; do not provision stores, ads/telemetry/native SDKs, purchases, credentials, media or paid resources.",
+      "evidence_urls": [
+        "https://github.com/semihhcosgun/ion-rush/blob/8d9200eac40788c8c4f6deb157ed5928f523c131/README.md",
+        "https://github.com/semihhcosgun/ion-rush/blob/8d9200eac40788c8c4f6deb157ed5928f523c131/LICENSE",
+        "https://github.com/semihhcosgun/ion-rush/blob/8d9200eac40788c8c4f6deb157ed5928f523c131/package.json",
+        "https://github.com/semihhcosgun/ion-rush/blob/8d9200eac40788c8c4f6deb157ed5928f523c131/THIRD-PARTY-NOTICES.md",
+        "https://github.com/semihhcosgun/ion-rush/blob/8d9200eac40788c8c4f6deb157ed5928f523c131/src/main.ts",
+        "https://github.com/semihhcosgun/ion-rush/blob/8d9200eac40788c8c4f6deb157ed5928f523c131/src/game.ts",
+        "https://github.com/semihhcosgun/ion-rush/blob/8d9200eac40788c8c4f6deb157ed5928f523c131/src/world.ts"
+      ]
+    },
+    {
+      "id": "swish-basketball-scene-without-game",
+      "repository_url": "https://github.com/codenameyau/swish",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "373bf7fe1c0259548980128f00ed4ffd42ea54ba",
+      "reason": "The actual app entry creates a direct Three renderer and an authored ThreeGen movement/collision helper, but its custom code only adds lights, a textured court and a moving/bouncing basketball. No hoop, shooting objective, score/result/retry game was established in the inspected active source; README says development stopped. In addition, package.json has invalid trailing-comma JSON and labels MIT while root LICENSE contains Apache-2.0 text; neither is silently normalized.",
+      "next_action": "Revisit if an implemented basketball challenge and result path appear, and clarify the root-versus-manifest license discrepancy. Exclusion is for the current scene-only game scope, not an invented R3F or 2D classification; no upstream tool or scene was run.",
+      "evidence_urls": [
+        "https://github.com/codenameyau/swish/blob/373bf7fe1c0259548980128f00ed4ffd42ea54ba/README.md",
+        "https://github.com/codenameyau/swish/blob/373bf7fe1c0259548980128f00ed4ffd42ea54ba/LICENSE",
+        "https://github.com/codenameyau/swish/blob/373bf7fe1c0259548980128f00ed4ffd42ea54ba/package.json",
+        "https://github.com/codenameyau/swish/blob/373bf7fe1c0259548980128f00ed4ffd42ea54ba/app/index.html",
+        "https://github.com/codenameyau/swish/blob/373bf7fe1c0259548980128f00ed4ffd42ea54ba/app/assets/js/main.js",
+        "https://github.com/codenameyau/swish/blob/373bf7fe1c0259548980128f00ed4ffd42ea54ba/app/assets/js/lib/plugins/ThreeGen.js"
+      ]
     }
   ]
 }
