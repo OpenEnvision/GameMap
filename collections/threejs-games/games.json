@@ -27393,6 +27393,689 @@
         "The complete initial asset load, final failure/restart behavior and all score/resource combinations are source observations, not runtime results.",
         "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
       ]
+    },
+    {
+      "id": "yakar-gol",
+      "name": "Yakar Gol",
+      "repository_url": "https://github.com/JosephUz/yakargol",
+      "genres": [
+        "football",
+        "dodgeball hybrid",
+        "team sports"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.180.0 (exact npm dependency; selected export copies its module/core builds)",
+        "render_evidence": {
+          "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/view/view.js#L1-L25",
+          "claim": "The ordinary game/main constructs this view, which directly imports Three and creates WebGLRenderer, Scene and cameras. Authored volumetric pitch/actors/ball/effects are rendered in the real frame. The HTML import map and selected export map Three to its exact npm module/core files."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/package.json",
+            "dependencies": {
+              "@capacitor/android": "^8.5.2",
+              "@capacitor/app": "^8.1.1",
+              "@capacitor/core": "^8.5.2",
+              "three": "0.180.0",
+              "ws": "^8.21.3"
+            },
+            "dev_dependencies": {
+              "@capacitor/cli": "^8.5.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Plain JavaScript modules with exact Three 0.180.0, ws ^8.21.3 and declared Capacitor Android/app/core helpers, plus development Capacitor CLI; the full root runtime/dev maps are preserved.",
+          "Authored match rules, bots, ball/kinematics, Three geometry, DOM UI, keyboard/touch and synthesized WebAudio effects are helpers. WebSocket rooms and optional Android/Cloudflare packaging are separate from rendering.",
+          "Hosted usage measurement has real sendBeacon/fetch device/referrer/app and match/share hooks. Solo bot mode does not make the whole hosted app network-free; no endpoint, room, telemetry or packaging was activated."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/world.js#L177-L182",
+        "claim": "The normal fixed-step 5v5 world advances a scored match. At the clock limit the leading team becomes winner and emits end; a tie enters golden-goal overtime, whose next goal sets winner. Ordinary main detects this outcome and renders final-score/stat results, separately from staged showcase/autopilot paths."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (game code; reserved identity and excluded music archive)",
+        "source_url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/LICENSE",
+        "additional_notices": [
+          "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/README.md",
+          "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/TRADEMARKS.md",
+          "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/muzik/LISANS.txt",
+          "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/muzik/archive/NOT.txt",
+          "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/muzik.js",
+          "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/scripts/build-web.mjs"
+        ],
+        "notes": "LICENSE/README grant MIT code, while official names/logo/icons and music compositions are explicitly reserved. All three current SAHNELER music lists are empty and MUZIK_VAR false; every MP3 in the reviewed tree is archived, and the selected export filters archive out. Those tracks are not described as active or cleared/open media. The raw repository still contains reserved archives, and identity/icon exceptions remain; forks must follow the stated identity conditions. CC0 instrument samples do not relicense compositions. This is not a whole-repository/all-media MIT claim."
+      },
+      "demo": {
+        "url": "https://yakargol.josephuz.com",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/README.md",
+        "notes": "The exact author README game URL returned a text-reader error. No game, room, device/referrer measurement, score/data submission or mobile feature was activated; reader failure is not an offline-site finding."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/README.md",
+        "notes": "An implemented team-sports game with ordinary solo bot match, timer/scoring/overtime and results. Public online/Android links and ten-player capacity are author-advertised, without independent capacity, bot-balance or device verification."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "0986e451f6e56aab3816b06ba145face86b91932",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-050.md#yakar-gol",
+        "reviewed_files": [
+          {
+            "path": "game.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/game.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/LICENSE"
+          },
+          {
+            "path": "muzik/archive/NOT.txt",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/muzik/archive/NOT.txt"
+          },
+          {
+            "path": "muzik/LISANS.txt",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/muzik/LISANS.txt"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/README.md"
+          },
+          {
+            "path": "scripts/build-web.mjs",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/scripts/build-web.mjs"
+          },
+          {
+            "path": "src/audio.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/audio.js"
+          },
+          {
+            "path": "src/ball.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/ball.js"
+          },
+          {
+            "path": "src/config.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/config.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/main.js"
+          },
+          {
+            "path": "src/muzik.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/muzik.js"
+          },
+          {
+            "path": "src/net/client.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/net/client.js"
+          },
+          {
+            "path": "src/olcum.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/olcum.js"
+          },
+          {
+            "path": "src/platform.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/platform.js"
+          },
+          {
+            "path": "src/ui.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/ui.js"
+          },
+          {
+            "path": "src/view/actors.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/view/actors.js"
+          },
+          {
+            "path": "src/view/builders.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/view/builders.js"
+          },
+          {
+            "path": "src/view/view.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/view/view.js"
+          },
+          {
+            "path": "src/world.js",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/src/world.js"
+          },
+          {
+            "path": "TRADEMARKS.md",
+            "url": "https://github.com/JosephUz/yakargol/blob/0986e451f6e56aab3816b06ba145face86b91932/TRADEMARKS.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Rules/movement mainly use an XZ pitch with authored 3D actors, ball/effects and shoulder/cinematic cameras; 3d-world describes rendered geometry rather than unrestricted spatial travel.",
+        "Reserved music archives are inactive and excluded by the inspected export, with no global claim about every local/server distribution. Official brand/icons remain exceptions to code MIT.",
+        "Actual hosted measurement and WebSocket features exist; no no-tracking/no-network guarantee is made. No endpoint, token, room, native packaging, cloud, storage or sound action was invoked.",
+        "The normal music-less match scope is distinguished from stale music README paragraphs, staged videos, autopilot and showcase scenes.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "pillar-valley",
+      "name": "Pillar Valley",
+      "repository_url": "https://github.com/EvanBacon/pillar-valley",
+      "genres": [
+        "arcade platform timing",
+        "endless score challenge"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.172.0 (exact npm; Metro aliases bare Three to three/webgpu)",
+        "render_evidence": {
+          "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/lib/webgpu-renderer.ts#L54-L69",
+          "claim": "Actual GameScreen/GraphicsView directly constructs Three WebGPURenderer with a native-canvas adapter, awaits init and drives GameState update/render. react-native-wgpu supplies canvas/context/present; Expo/React Native host the app/UI. This Canvas is not R3F Canvas, and Three remains the render core."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/package.json",
+            "dependencies": {
+              "@bacons/apple-colors": "^0.0.8",
+              "@expo/react-native-action-sheet": "^4.1.0",
+              "@expo/vector-icons": "^15.0.2",
+              "@types/react": "~19.2.10",
+              "expo": "^55.0.13",
+              "expo-application": "~55.0.14",
+              "expo-asset": "~55.0.14",
+              "expo-audio": "~55.0.13",
+              "expo-blur": "~55.0.14",
+              "expo-constants": "~55.0.13",
+              "expo-device": "~55.0.14",
+              "expo-font": "~55.0.6",
+              "expo-glass-effect": "~55.0.10",
+              "expo-haptics": "~55.0.14",
+              "expo-linking": "~55.0.12",
+              "expo-quick-actions": "^4.0.2",
+              "expo-router": "~55.0.11",
+              "expo-sensors": "~55.0.13",
+              "expo-splash-screen": "~55.0.17",
+              "expo-sqlite": "~55.0.15",
+              "expo-status-bar": "~55.0.5",
+              "expo-store-review": "~55.0.13",
+              "expo-symbols": "~55.0.7",
+              "expo-system-ui": "~55.0.15",
+              "expo-updates": "~55.0.20",
+              "react": "19.2.0",
+              "react-dom": "19.2.0",
+              "react-native": "0.83.4",
+              "react-native-animatable": "^1.3.3",
+              "react-native-gesture-handler": "~2.30.0",
+              "react-native-safe-area-context": "~5.6.2",
+              "react-native-screens": "~4.23.0",
+              "react-native-svg": "15.15.3",
+              "react-native-web": "^0.21.0",
+              "react-native-webview": "13.16.0",
+              "react-native-wgpu": "^0.4.1",
+              "three": "0.172.0",
+              "wgpu-matrix": "^3.0.2",
+              "zustand": "^4.3.8"
+            },
+            "dev_dependencies": {
+              "@bacons/apple-targets": "^4.0.6",
+              "@config-plugins/apple-settings": "^7.0.0",
+              "@expo/plist": "^0.0.20",
+              "@types/fs-extra": "^11.0.1",
+              "@types/three": "0.172.0",
+              "@typescript-eslint/eslint-plugin": "^8.19.0",
+              "@typescript-eslint/parser": "^8.19.0",
+              "babel-eslint": "10.0.3",
+              "bplist-creator": "^0.1.1",
+              "bplist-parser": "^0.3.2",
+              "eslint": "^8.41.0",
+              "eslint-config-expo": "~55.0.0",
+              "eslint-config-universe": "^11.2.0",
+              "eslint-plugin-bacon": "^0.0.3",
+              "expo-build-properties": "~55.0.13",
+              "fs-extra": "^11.1.1",
+              "glob": "^10.3.4",
+              "npm-license-crawler": "^0.2.1",
+              "prettier": "^2.8.8",
+              "react-compiler-runtime": "^19.0.0-beta-55955c9-20241229",
+              "ts-node": "^10.9.2",
+              "typescript": "~5.9.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Exact Three 0.172.0 plus React/React DOM/React Native/Expo 55, react-native-wgpu, wgpu-matrix, Zustand and many explicit Expo/UI/native/storage helpers; complete declared root maps are included.",
+          "Native-canvas shim, Three TSL/node materials, custom RNAnimator and React Native Animated/input are helpers. README still lists GSAP, but current source uses authored RNAnimator and GSAP is absent from the current manifest.",
+          "Native/app storage, audio, share, updates and platform hooks are disclosed. No R3F or replacement 3D engine was identified in the reviewed route; transitive/platform import resolution was not built or certified."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/Game/Game.ts#L469-L495",
+        "claim": "The active tap path checks the landed generated pillar: a miss invokes gameOver, while traversed pillars increment score and select another target. Normal update also shrinks the active item toward failure. gameOver updates total/best/round state, returns to menu and resets after animation; these are implemented game paths."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (source; bundled media/font and dependency inventory qualified)",
+        "source_url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/LICENSE",
+        "additional_notices": [
+          "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/README.md",
+          "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/constants/Licenses.json",
+          "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/AudioManager.ts"
+        ],
+        "notes": "Root LICENSE grants MIT from 650 Industries; its standard preceding All rights reserved line does not negate that grant and is not treated as proprietary code. A dependency-license inventory exists but is not assumed complete/current for today's manifest. Bundled song/effects/images/Inter font and native/store/brand assets were identified without fetching payloads or auditing every origin/grant; they are not all called MIT or generated in code."
+      },
+      "demo": {
+        "url": "https://pillarvalley.expo.app/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/README.md",
+        "notes": "The author README web URL could not be retrieved by the text reader. No web/native WebGPU, device/store, app update or game was exercised. App Store/Play/App Clip links are author references, not verified current availability or prices."
+      },
+      "maturity": {
+        "status": "work-in-progress",
+        "basis_url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/README.md",
+        "notes": "An authored cross-platform arcade game with public author web/store links and a current native-canvas/WebGPU port. Normal score/miss/failure/reset are implemented; the unbuilt selected integration is recorded as work-in-progress without certifying release compatibility or every achievement/UI/storage path."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "a79316d1614fa95cc51e6aed2264ad8e4b1d9595",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-050.md#pillar-valley",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/LICENSE"
+          },
+          {
+            "path": "metro.config.js",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/metro.config.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/README.md"
+          },
+          {
+            "path": "src/app/index.tsx",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/app/index.tsx"
+          },
+          {
+            "path": "src/AudioManager.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/AudioManager.ts"
+          },
+          {
+            "path": "src/components/GraphicsView.tsx",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/components/GraphicsView.tsx"
+          },
+          {
+            "path": "src/components/ScoreBadge.tsx",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/components/ScoreBadge.tsx"
+          },
+          {
+            "path": "src/components/ScoreMeta.tsx",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/components/ScoreMeta.tsx"
+          },
+          {
+            "path": "src/constants/Licenses.json",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/constants/Licenses.json"
+          },
+          {
+            "path": "src/Game/entities/Platform.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/Game/entities/Platform.ts"
+          },
+          {
+            "path": "src/Game/entities/PlayerBall.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/Game/entities/PlayerBall.ts"
+          },
+          {
+            "path": "src/Game/Game.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/Game/Game.ts"
+          },
+          {
+            "path": "src/Game/GameObject.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/Game/GameObject.ts"
+          },
+          {
+            "path": "src/Game/GameScene.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/Game/GameScene.ts"
+          },
+          {
+            "path": "src/Game/GameState.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/Game/GameState.ts"
+          },
+          {
+            "path": "src/Game/utils/animator.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/Game/utils/animator.ts"
+          },
+          {
+            "path": "src/lib/Analytics.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/lib/Analytics.ts"
+          },
+          {
+            "path": "src/lib/expo-haptics.native.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/lib/expo-haptics.native.ts"
+          },
+          {
+            "path": "src/lib/expo-haptics.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/lib/expo-haptics.ts"
+          },
+          {
+            "path": "src/lib/webgpu-renderer.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/lib/webgpu-renderer.ts"
+          },
+          {
+            "path": "src/runtime/local-storage.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/runtime/local-storage.ts"
+          },
+          {
+            "path": "src/zustand/models.ts",
+            "url": "https://github.com/EvanBacon/pillar-valley/blob/a79316d1614fa95cc51e6aed2264ad8e4b1d9595/src/zustand/models.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Direct Three WebGPURenderer uses a native bridge, and the many Expo/React Native app dependencies are explicit. Native/browser GPU compatibility and deployed-build equivalence remain untested.",
+        "Selected helpers import invariant/expo-haptics without direct root runtime declarations; transitive/Metro/platform resolution was not verified. Storage code imports @bacons/apple-targets, declared in development dependencies.",
+        "Default Analytics.ts leaves the outbound customEvent call commented out. The default haptic stub differs from its native re-export; hooks alone are not proof of transmitted analytics or successful haptics on every platform.",
+        "No sensor/haptic, SQLite/storage, screenshot/share, purchase/store review, update, native build or game action was invoked. Media origins/current license inventory remain qualified.",
+        "Current custom tween clock/Three 0.172 WebGPU alias are distinguished from the older README GSAP stack line.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "null-sector-hosthobbit",
+      "name": "NULL SECTOR",
+      "repository_url": "https://github.com/hosthobbit/null-sector",
+      "genres": [
+        "first-person shooter",
+        "horror survival",
+        "procedural dungeon combat"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r186 (vendored core REVISION = '186', MIT header)",
+        "render_evidence": {
+          "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/main.js#L44-L79",
+          "claim": "The actual HTML import map loads vendored Three and official addons. Normal main constructs WebGLRenderer, Scene/cameras and volumetric world/enemy/viewmodel meshes, then runs simulation and official composer/render passes in its real frame rather than only title-camera display."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vanilla ES modules with empty npm runtime/dev dependency maps; package metadata supplies local-server scripts. Vendored Three r186 and official addons are loaded by the real import map.",
+          "Authored grid collision, volumetric models, level/AI/projectile/weapons/pickups, Canvas textures, WebAudio synthesis, DOM HUD and localStorage settings/best are helpers.",
+          "A small zero-dependency Node static server or equivalent local serving is described, without running installation/server/build/test. No R3F, A-Frame, Babylon, Unity or Doom-engine runtime was identified."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/main.js#L496-L520",
+        "claim": "The ordinary final-Warden kill calls wardenDown, sets won/score and opens victory results after the death sequence. Health depletion also reaches gameOver failure with time/score/accuracy/sector/best results. The normal sector route instantiates the final encounter; no debug completion helper is used as evidence, and ten-sector reachability is not playtested."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (game and vendored Three; procedural-media claims attributed)",
+        "source_url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/LICENSE",
+        "additional_notices": [
+          "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/README.md",
+          "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/vendor/three/LICENSE",
+          "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/vendor/three/build/three.core.js",
+          "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/textures.js",
+          "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/audio.js"
+        ],
+        "notes": "Root LICENSE grants MIT project code, and the preserved vendor license/SPDX headers identify Three MIT. README describes levels/textures/effects/music as generated by code, supported by selected geometry/texture/WebAudio sources. This is attributed author/source evidence, not independent authorship/all-media/dependency or franchise-mark clearance. Documentation screenshots and source/assets are not copied into GameMap."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/README.md",
+        "notes": "No author-hosted playable URL was located in the inspected README or repository homepage metadata; local instructions and an author company link do not establish a public game demo. No Pages URL was guessed or local server/game run."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/README.md",
+        "notes": "An implemented FPS with ordinary sector progression, final-boss victory and death/quit results, plus an advertised ten-sector campaign. Every weapon/enemy/sector, balance, performance and browser claim remains untested."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "1382fd9843bf9588d2c0193f1d08b311bbdfcbe5",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-050.md#null-sector-hosthobbit",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/README.md"
+          },
+          {
+            "path": "src/audio.js",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/audio.js"
+          },
+          {
+            "path": "src/effects.js",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/effects.js"
+          },
+          {
+            "path": "src/enemies.js",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/enemies.js"
+          },
+          {
+            "path": "src/horror.js",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/horror.js"
+          },
+          {
+            "path": "src/level.js",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/level.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/main.js"
+          },
+          {
+            "path": "src/physics.js",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/physics.js"
+          },
+          {
+            "path": "src/player.js",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/player.js"
+          },
+          {
+            "path": "src/textures.js",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/textures.js"
+          },
+          {
+            "path": "src/weapons.js",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/src/weapons.js"
+          },
+          {
+            "path": "vendor/three/build/three.core.js",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/vendor/three/build/three.core.js"
+          },
+          {
+            "path": "vendor/three/build/three.module.js",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/vendor/three/build/three.module.js"
+          },
+          {
+            "path": "vendor/three/LICENSE",
+            "url": "https://github.com/hosthobbit/null-sector/blob/1382fd9843bf9588d2c0193f1d08b311bbdfcbe5/vendor/three/LICENSE"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "First-person 3D meshes/jumping/view controls coexist with authored grid/XZ navigation; physically simulated multi-level architecture is not certified.",
+        "Horror combat/gore are project descriptions, without an age-suitability or franchise endorsement claim.",
+        "No localStorage setting/best, pointer lock, audio, boss/sector, composer or local server was executed. Procedural-media statements remain attributed rather than blanket rights clearance.",
+        "No public author demo was located; source implementation and current deployment/runtime compatibility remain separate.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "hide-classroom-horror",
+      "name": "HIDE — Classroom Horror",
+      "repository_url": "https://github.com/BossmanCom/scary-classroom-hide-seek",
+      "genres": [
+        "hide-and-seek",
+        "first-person horror survival"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r160 (vendored REVISION = '160', MIT header)",
+        "render_evidence": {
+          "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/js/main.js#L30-L58",
+          "claim": "The normal HTML/main directly constructs Three WebGLRenderer, camera and scene with volumetric classroom/hallway/seeker geometry. Actual tick updates player/world/seeker and renders Three; the Canvas2D minimap is auxiliary rather than the main game renderer."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla ES modules without an npm manifest/build system in the reviewed 22-path tree. Locally vendored Three r160, authored geometry/collision/player/seeker rules and DOM UI form the runtime.",
+          "WebAudio procedural effects, keyboard/Pointer Lock, touch overlay and Canvas2D minimap are helpers; local serving is documented but not run.",
+          "CSP/host configuration and a security-bootstrap network/storage/media guard are source features. Author privacy/security claims are not an audit, offline guarantee or child-suitability certification."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/js/main.js#L368-L398",
+        "claim": "Normal play begins with 30 seconds free hiding, then updates seeker/noise investigation and a three-minute hunt timer. Surviving reaches endRound(true), capture reaches endRound(false), and actual overlays show SURVIVED/FOUND with restart. Those timings/results were inspected rather than reached in play."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project; preserved vendored Three MIT header)",
+        "source_url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/LICENSE",
+        "additional_notices": [
+          "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/README.md",
+          "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/vendor/three.module.js"
+        ],
+        "notes": "Root MIT grant identifies BossmanCom code; the vendored Three module preserves its copyright/MIT SPDX header. README describes low-poly geometry and procedural audio without external media, supported by selected world/seeker/audio source. These descriptions do not independently audit every design/dependency or later asset, and no third-party payload is copied into GameMap."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/README.md",
+        "notes": "No author-hosted public game URL was located in README or homepage metadata. Localhost instructions and Netlify/Vercel/Azure host-header configuration do not establish deployment; no hostname was guessed or browser/local server started."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/README.md",
+        "notes": "A compact hide-and-seek horror prototype with free-hide/hunt phases, timed survival/capture, results and restart. Desktop/mobile, noise/hiding mechanics and author privacy/security claims were not exercised or independently certified."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-050.md#hide-classroom-horror",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/index.html"
+          },
+          {
+            "path": "js/audio.js",
+            "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/js/audio.js"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/js/main.js"
+          },
+          {
+            "path": "js/minimap.js",
+            "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/js/minimap.js"
+          },
+          {
+            "path": "js/mobile.js",
+            "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/js/mobile.js"
+          },
+          {
+            "path": "js/player.js",
+            "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/js/player.js"
+          },
+          {
+            "path": "js/security-bootstrap.js",
+            "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/js/security-bootstrap.js"
+          },
+          {
+            "path": "js/seeker.js",
+            "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/js/seeker.js"
+          },
+          {
+            "path": "js/world.js",
+            "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/js/world.js"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/LICENSE"
+          },
+          {
+            "path": "PRIVACY.md",
+            "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/PRIVACY.md"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/README.md"
+          },
+          {
+            "path": "vendor/three.module.js",
+            "url": "https://github.com/BossmanCom/scary-classroom-hide-seek/blob/23a0adc2a58fe14b0d5a08f9f5be82b4b7b40332/vendor/three.module.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Floor/hiding movement occurs within volumetric 3D classroom/hallway models; the dimension label does not promise unrestricted travel.",
+        "No round, seeker pathing/random locker check, collision/hiding exploit, mobile input, pointer lock or audio was tested.",
+        "README/PRIVACY/bootstrap claims are source observations, without a privacy/security audit or suitability guarantee. No media/device permission or guard execution was activated.",
+        "No public author demo was located, and static-host configuration is not proof of current hosting or browser compatibility.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
     }
   ]
 }

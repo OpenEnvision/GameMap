@@ -2588,6 +2588,23 @@
         "https://github.com/hikasap/space-odyssey/blob/8b60931aa919ba3ff204795b231fc49c74477938/src/components/spacecraft/spacecraft.js",
         "https://github.com/hikasap/space-odyssey/blob/8b60931aa919ba3ff204795b231fc49c74477938/src/systems/inventoryManager.js"
       ]
+    },
+    {
+      "id": "overworld-framework-r3f-starter",
+      "repository_url": "https://github.com/luzhenqian/overworld",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "2fa9266542de81ef44bd6b858b6f8a825c1dc591",
+      "reason": "Root is a modular RPG systems framework rather than one independently verified game. The reviewed runnable starter imports Canvas from @react-three/fiber and renders World inside it, with R3F/Drei dependencies. This framework/starter does not meet the direct-Three actual-game scope, despite MIT source and renderer-agnostic systems.",
+      "next_action": "Reconsider a separately identifiable complete game with direct Three entry and objective/result evidence. Do not claim that every use of its reusable framework requires R3F or that all systems are a full verified game. No package, starter, adapter or service was run.",
+      "evidence_urls": [
+        "https://github.com/luzhenqian/overworld/blob/2fa9266542de81ef44bd6b858b6f8a825c1dc591/README.md",
+        "https://github.com/luzhenqian/overworld/blob/2fa9266542de81ef44bd6b858b6f8a825c1dc591/LICENSE",
+        "https://github.com/luzhenqian/overworld/blob/2fa9266542de81ef44bd6b858b6f8a825c1dc591/package.json",
+        "https://github.com/luzhenqian/overworld/blob/2fa9266542de81ef44bd6b858b6f8a825c1dc591/examples/starter/package.json",
+        "https://github.com/luzhenqian/overworld/blob/2fa9266542de81ef44bd6b858b6f8a825c1dc591/examples/starter/src/App.tsx#L1-L20",
+        "https://github.com/luzhenqian/overworld/blob/2fa9266542de81ef44bd6b858b6f8a825c1dc591/examples/starter/src/World.tsx"
+      ]
     }
   ]
 }
