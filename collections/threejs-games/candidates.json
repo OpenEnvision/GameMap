@@ -1872,6 +1872,72 @@
         "https://github.com/CNSleepybear/AI-Arcade/blob/22eadf3b122edb262c74defbd035d5ae96e12096/src/three/VideoManager.js#L21-L27",
         "https://github.com/CNSleepybear/AI-Arcade/blob/22eadf3b122edb262c74defbd035d5ae96e12096/src/games/registry.js"
       ]
+    },
+    {
+      "id": "luminous-lake-environment",
+      "repository_url": "https://github.com/stas4000/luminous-lake",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "726c6bdc800569f5b50018bf9d1fdab0d50645cd",
+      "reason": "The current entry directly uses Three, but its reviewed world/UI are a cinematic environment with weather/time/camera controls and automatically drifting boat/wildlife. No integrated player fishing, score, survival, progression or completion objective was established. A visible rod/fish/boat and renderer alone do not make this an actual game.",
+      "next_action": "Reconsider a separately implemented game mode with source-proven rules/objectives; do not promote the environmental showcase or untested performance/fallback claims.",
+      "evidence_urls": [
+        "https://github.com/stas4000/luminous-lake/blob/726c6bdc800569f5b50018bf9d1fdab0d50645cd/README.md",
+        "https://github.com/stas4000/luminous-lake/blob/726c6bdc800569f5b50018bf9d1fdab0d50645cd/src/main.js#L85-L98",
+        "https://github.com/stas4000/luminous-lake/blob/726c6bdc800569f5b50018bf9d1fdab0d50645cd/src/world/world.js#L168-L197",
+        "https://github.com/stas4000/luminous-lake/blob/726c6bdc800569f5b50018bf9d1fdab0d50645cd/src/world/boat.js#L94-L118",
+        "https://github.com/stas4000/luminous-lake/blob/726c6bdc800569f5b50018bf9d1fdab0d50645cd/src/ui.js"
+      ]
+    },
+    {
+      "id": "vibe-submarine-studio",
+      "repository_url": "https://github.com/zhulin025/Vibe-submarine",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "7cf06f643cd94d87487cf9ec279349a35a389618",
+      "reason": "This MIT/direct Three WebGPU project is a procedural submarine product/model studio. The actual entry offers orbit/pan, material/debug modes, animation pause/reset and render metrics; it does not implement submarine navigation or an integrated game objective. The model's cockpit detail is not playable submarine gameplay.",
+      "next_action": "Reconsider only a distinct implemented game mode, preserving this project's status as a rendering/modeling showcase.",
+      "evidence_urls": [
+        "https://github.com/zhulin025/Vibe-submarine/blob/7cf06f643cd94d87487cf9ec279349a35a389618/README.md",
+        "https://github.com/zhulin025/Vibe-submarine/blob/7cf06f643cd94d87487cf9ec279349a35a389618/package.json",
+        "https://github.com/zhulin025/Vibe-submarine/blob/7cf06f643cd94d87487cf9ec279349a35a389618/src/main.js#L18-L52",
+        "https://github.com/zhulin025/Vibe-submarine/blob/7cf06f643cd94d87487cf9ec279349a35a389618/src/main.js#L71-L122",
+        "https://github.com/zhulin025/Vibe-submarine/blob/7cf06f643cd94d87487cf9ec279349a35a389618/src/submarine-scene.js"
+      ]
+    },
+    {
+      "id": "tidewater-current-own-renderer",
+      "repository_url": "https://github.com/dgreenheck/tidewater",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "4811ba48d795197de5621985f404e765c0b7c0ef",
+      "reason": "The reviewed current canonical revision is a real fishing game but uses its own WebGPU/WGSL engine. README explicitly states that renderer; the npm manifest has no Three runtime dependency, and the actual Engine imports authored GPU/scene/MeshRenderer classes and initializes navigator.gpu through GPU.js. Old fork metadata describing Three is not evidence for this current runtime.",
+      "next_action": "Reconsider only a separately proven historical/direct-Three edition and deduplicate it as the same game; no current or forked Three edition is asserted by this review.",
+      "evidence_urls": [
+        "https://github.com/dgreenheck/tidewater/blob/4811ba48d795197de5621985f404e765c0b7c0ef/README.md#L1-L6",
+        "https://github.com/dgreenheck/tidewater/blob/4811ba48d795197de5621985f404e765c0b7c0ef/package.json",
+        "https://github.com/dgreenheck/tidewater/blob/4811ba48d795197de5621985f404e765c0b7c0ef/src/App.js",
+        "https://github.com/dgreenheck/tidewater/blob/4811ba48d795197de5621985f404e765c0b7c0ef/src/core/Engine.js",
+        "https://github.com/dgreenheck/tidewater/blob/4811ba48d795197de5621985f404e765c0b7c0ef/src/engine/Engine.js#L1-L32",
+        "https://github.com/dgreenheck/tidewater/blob/4811ba48d795197de5621985f404e765c0b7c0ef/src/engine/gpu/GPU.js#L24-L41"
+      ]
+    },
+    {
+      "id": "courier-city-objective-scope",
+      "repository_url": "https://github.com/shubhransh-gupta/courier-city",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "0c82a87c9bad8e31704e630f95dd75daa501d3a4",
+      "reason": "MIT code and a public Three-described transport world exist, with playable movement/vehicles in shipped JavaScript chunks. However, an integrated mission/score/win-loss/progression objective was not established in the reviewed entry/bundle; the README emphasizes city/transit exploration. The inspected tree has shipped chunks but no authored src directory or source maps identified. Minified JavaScript is not categorically called no source, and package metadata alone is not used to certify a game-objective chain.",
+      "next_action": "Locate a source-proven game mode/objective and trace the actual shipped entry and corresponding authored logic; clarify asset/font notices before promotion. A vehicle/camera sandbox can remain a candidate without inventing delivery missions from the title.",
+      "evidence_urls": [
+        "https://github.com/shubhransh-gupta/courier-city/blob/0c82a87c9bad8e31704e630f95dd75daa501d3a4/LICENSE",
+        "https://github.com/shubhransh-gupta/courier-city/blob/0c82a87c9bad8e31704e630f95dd75daa501d3a4/README.md#L30-L35",
+        "https://github.com/shubhransh-gupta/courier-city/blob/0c82a87c9bad8e31704e630f95dd75daa501d3a4/README.md#L60-L75",
+        "https://github.com/shubhransh-gupta/courier-city/blob/0c82a87c9bad8e31704e630f95dd75daa501d3a4/package.json",
+        "https://github.com/shubhransh-gupta/courier-city/blob/0c82a87c9bad8e31704e630f95dd75daa501d3a4/index.html",
+        "https://github.com/shubhransh-gupta/courier-city/blob/0c82a87c9bad8e31704e630f95dd75daa501d3a4/assets/index-CizabRDk.js"
+      ]
     }
   ]
 }

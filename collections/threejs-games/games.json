@@ -20497,6 +20497,284 @@
         "Procedural-content and no-original-assets statements are attributed to the author and sampled source. Named commercial inspirations/brands and remotely served fonts retain separate rights questions; the all-code claim is qualified by the Google Fonts request.",
         "No upstream installation, build, automated suite, playtest, audio, save, campaign unlock, local server or order/attack was run. Source inspection does not prove every mission is solvable, rules/balance are correct or the game works on a current device."
       ]
+    },
+    {
+      "id": "luya-club",
+      "name": "LUYA CLUB — Lure Fishing",
+      "repository_url": "https://github.com/NightElfAelora1234/luya-club",
+      "genres": [
+        "fishing",
+        "skill arcade",
+        "catch and release"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r186 (retained vendor REVISION; exact patch not established)",
+        "render_evidence": {
+          "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/core/engine.js#L146-L170",
+          "claim": "The actual index import map selects vendored Three. The repository's authored engine helper directly constructs THREE.WebGLRenderer and scene/camera; main creates the fishing system and its animation frame updates fishing mode then calls engine.render on that active 3D world. A secondary fish-bag preview renderer is not the sole rendering evidence."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "The npm manifest declares no dependencies/devDependencies: browser ES modules use local vendored Three r186 and its postprocessing addons. Authored fishing/QTE/line/net/camera/rod/scene and DOM systems provide the gameplay; no additional rendering or physics engine is declared.",
+          "THIRD_PARTY_NOTICES explicitly identifies Three MIT, system font stacks and generated project geometry/textures/graphics. The retained Three core header confirms r186/MIT but was not exhaustively re-audited.",
+          "Fishing effects are synthesized through Web Audio, while background music is a pre-generated local OGG/MP3 loaded with HTML Audio. Notices attribute that music to an offline NumPy/ffmpeg generator; these generator tools are not browser runtime dependencies and were not run. The local Node serve script is optional hosting tooling."
+        ],
+        "framework_audit": "The actual browser bootstrap, project-authored direct Three renderer, integrated playable objective and scoped manifest/import map were inspected. No R3F, A-Frame, Babylon.js, Unity, enable3d or replacement rendering framework was identified in this runtime. Authored helpers, build/media tooling and assets are disclosed; complete transitive/originality and runtime audits were not performed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/game/fishing.js#L1720-L1796",
+        "claim": "Casting, hook/QTE fighting and netting reach landFish, which increments catches and enters LANDED. The actual catch UI invokes finishCatch: keep adds a weighed fish to the bag, while protected-species flags force release. Escape/line-failure paths clear the fight and return to the rigged state for another cast. This is an implemented repeatable catch/result loop, distinct from the cinematic descent and concept-brand pages."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; asset scope documented)",
+        "source_url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/LICENSE",
+        "additional_notices": [
+          "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/README.md",
+          "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/THIRD_PARTY_NOTICES.md",
+          "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/vendor/three/LICENSE",
+          "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/vendor/three/build/three.core.js"
+        ],
+        "notes": "Root code LICENSE is a complete MIT grant. README explicitly places project procedural assets, screenshots and synthesized music under MIT, while Third-party notices retain the separate Three MIT license and describe fictional concept branding/system fonts. These are the author's grants/origin statements, consistent with sampled scene/rod/audio source; complete design/melody originality and every binary's derivation were not independently cleared. No asset or music file was downloaded or copied into GameMap."
+      },
+      "demo": {
+        "url": "https://nightelfaelora1234.github.io/luya-club/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/README.md",
+        "notes": "README explicitly identifies this author demo. A text-reader attempt returned an accessibility error; no browser game, renderer, input, sound or deployed/source correspondence was tested. This does not establish that the deployment is offline."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/README.md",
+        "notes": "An implemented first-person lure-fishing prototype with cast/hook/QTE/net, landed catch card, keep/release/bag and escape/retry states, alongside a scripted 3D dive. Static review finds duplicate fishing.update(dt) invocations in the main frame; gameplay timing, balance, all species/gear outcomes and author performance claims were not executed or certified."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "a27043dd99a3459e1c1418532559a7ff32e14108",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-038.md#luya-club",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/index.html"
+          },
+          {
+            "path": "js/audio/fishing-audio.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/audio/fishing-audio.js"
+          },
+          {
+            "path": "js/audio/music.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/audio/music.js"
+          },
+          {
+            "path": "js/core/engine.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/core/engine.js"
+          },
+          {
+            "path": "js/core/quality.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/core/quality.js"
+          },
+          {
+            "path": "js/core/state.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/core/state.js"
+          },
+          {
+            "path": "js/core/util.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/core/util.js"
+          },
+          {
+            "path": "js/data/fish-guide.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/data/fish-guide.js"
+          },
+          {
+            "path": "js/game/bag.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/game/bag.js"
+          },
+          {
+            "path": "js/game/fishing.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/game/fishing.js"
+          },
+          {
+            "path": "js/game/net.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/game/net.js"
+          },
+          {
+            "path": "js/game/qte.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/game/qte.js"
+          },
+          {
+            "path": "js/game/rod.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/game/rod.js"
+          },
+          {
+            "path": "js/game/scene.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/game/scene.js"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/main.js"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/package.json"
+          },
+          {
+            "path": "README.en.md",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/README.en.md"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/README.md"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/THIRD_PARTY_NOTICES.md"
+          },
+          {
+            "path": "vendor/three/build/three.core.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/vendor/three/build/three.core.js"
+          },
+          {
+            "path": "vendor/three/LICENSE",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/vendor/three/LICENSE"
+          },
+          {
+            "path": "js/ui/fishing.js",
+            "url": "https://github.com/NightElfAelora1234/luya-club/blob/a27043dd99a3459e1c1418532559a7ff32e14108/js/ui/fishing.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The world is volumetric, but the descent is scripted and fishing uses a fixed pontoon viewpoint with spatial line/fish animation. Concept-brand pages and the bag turntable are not separate games.",
+        "At the pinned main.js frame, fishing.update(dt) appears at both lines 503 and 513 (shop updates are also repeated). This is a static timing concern that may advance game systems twice per displayed frame; no browser failure or exact timing effect was reproduced.",
+        "Species/protection data and forced-release rules are authored game content; real-world classification, simulation accuracy and complete legal-fishing rules were not independently verified. No actual fish data service, bag action, audio, save or screenshot export was activated.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation and author device/performance/content descriptions do not establish successful current-browser play, complete correctness or independently cleared asset provenance."
+      ]
+    },
+    {
+      "id": "rotor-rush",
+      "name": "Rotor Rush",
+      "repository_url": "https://github.com/momenbuilds/rotor-rush",
+      "genres": [
+        "arcade flight",
+        "checkpoint course",
+        "score attack"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.179.1 (declared)",
+        "render_evidence": {
+          "url": "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/src/main.js#L1-L14",
+          "claim": "The actual index loads bootstrap.js, whose Start handler dynamically imports main.js and starts the game. main directly creates THREE.WebGLRenderer and owns the update/render animation frame for the player, volumetric city and aerial gates. DOM pilot selection is a lightweight shell, not a rendering framework."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/package.json",
+            "dependencies": {
+              "three": "^0.179.1"
+            },
+            "dev_dependencies": {
+              "vite": "^7.1.4"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three is the only declared npm runtime dependency, with Vite development tooling. Authored vector/velocity/fuel movement, gate proximity checks, instanced scenery, DOM input/HUD and a Web Audio rotor tone implement the flight game without a physics/render framework.",
+          "The bootstrap delays the Three game import until Start. Local WebP textures provide pilot/celebrity faces; other city/player geometry and UI labels are constructed in code. The reviewed stylesheet uses system fonts. The scoped flight source has no account/social-backend integration; follower totals are game-score values, not real audience data."
+        ],
+        "framework_audit": "The actual browser bootstrap, project-authored direct Three renderer, integrated playable objective and scoped manifest/import map were inspected. No R3F, A-Frame, Babylon.js, Unity, enable3d or replacement rendering framework was identified in this runtime. Authored helpers, build/media tooling and assets are disclosed; complete transitive/originality and runtime audits were not performed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/src/main.js#L635-L647",
+        "claim": "The flight updates the next visible gate in sequence. Bringing the player's 3D position within 5.5 units hides that gate, awards virtual followers and advances checkpoint; clearing the final gate calls finishGame. That changes state to finished and displays elapsed time and the run's virtual follower score, with reset/replay controls."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; asset scope documented)",
+        "source_url": "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/LICENSE",
+        "additional_notices": [
+          "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/README.md"
+        ],
+        "notes": "Root LICENSE and package/README declare MIT for the project code. The shipped WebP pilot portraits, celebrity-related textures/names and their image/design origins are not separately established by the inspected files and were not downloaded or independently cleared. Code MIT does not independently establish all image/likeness rights; sampled procedural geometry and synthesized rotor sound do not clear every media component."
+      },
+      "demo": {
+        "url": "https://rotor-rush.vercel.app",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/README.md",
+        "notes": "README explicitly identifies this author demo. A text-reader attempt returned an accessibility error; no browser game, renderer, input, sound or deployed/source correspondence was tested. This does not establish that the deployment is offline."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/README.md",
+        "notes": "A compact seven-gate flight-course prototype with manual movement, optional sightings, virtual follower rewards, timed finish and restart. README's adaptive-rendering/device/performance and no-tracking statements are author claims rather than reviewer runtime or security findings."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "13c795979b53de6b12c747b2d8d209f459285fea",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-038.md#rotor-rush",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/README.md"
+          },
+          {
+            "path": "src/bootstrap.js",
+            "url": "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/src/bootstrap.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/src/main.js"
+          },
+          {
+            "path": "src/style.css",
+            "url": "https://github.com/momenbuilds/rotor-rush/blob/13c795979b53de6b12c747b2d8d209f459285fea/src/style.css"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Player translation and altitude occur in a volumetric 3D scene. Gate completion uses sequential distance checks rather than a verified directional crossing test; collision/flight realism, fairness and a full run were not validated.",
+        "The helicopter backpack and virtual follower/celebrity scoring are arcade presentation. No real social account, contact, audience change or external transaction is part of the inspected scoring path.",
+        "Pilot/portrait origin remains unreviewed. No Start/pilot selection, flight, sound, input, rescue, pause or restart was activated.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation and author device/performance/content descriptions do not establish successful current-browser play, complete correctness or independently cleared asset provenance."
+      ]
     }
   ]
 }
