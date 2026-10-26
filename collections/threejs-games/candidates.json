@@ -1536,6 +1536,21 @@
         "https://github.com/m3ssana/sailing/blob/2b95b01d94591d9f40cf2b763028c3b4c3c118f8/src/app/GameLoop.ts",
         "https://github.com/m3ssana/sailing/blob/2b95b01d94591d9f40cf2b763028c3b4c3c118f8/src/render/Renderer.ts"
       ]
+    },
+    {
+      "id": "sogo-3d-moba",
+      "repository_url": "https://github.com/moriken2004/SOGO_3D-Moba",
+      "status": "pending",
+      "checked_at": "2026-10-24",
+      "source_commit": "2f01ef9034d790c5c330fcee550abf55a8cefa86",
+      "reason": "An actual direct-Three 3D four-in-a-row game is implemented, with a renderer and checkWin. Root MIT expressly covers code, while README identifies user-supplied fish/crab photographs and a UUV STL without an explicit reuse grant. Poly Haven textures are separately credited CC0. Availability of those files is not enough to establish an open asset grant.",
+      "next_action": "Seek explicit photo/STL reuse grants or a clearly licensed/default procedural asset path before moving into the verified collection; keep code/rendering evidence and avoid inferring that MIT covers these assets.",
+      "evidence_urls": [
+        "https://github.com/moriken2004/SOGO_3D-Moba/blob/2f01ef9034d790c5c330fcee550abf55a8cefa86/LICENSE",
+        "https://github.com/moriken2004/SOGO_3D-Moba/blob/2f01ef9034d790c5c330fcee550abf55a8cefa86/README.md#L311-L324",
+        "https://github.com/moriken2004/SOGO_3D-Moba/blob/2f01ef9034d790c5c330fcee550abf55a8cefa86/sogo3d.html#L769",
+        "https://github.com/moriken2004/SOGO_3D-Moba/blob/2f01ef9034d790c5c330fcee550abf55a8cefa86/sogo3d.html#L1457"
+      ]
     }
   ]
 }

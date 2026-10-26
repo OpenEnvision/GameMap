@@ -17595,6 +17595,633 @@
         "The browser/game source in this repository is shipped as readable dist ES modules. Third-party vendor inspection targeted its license/header/revision, rather than a full semantic library audit.",
         "No upstream installation, build, tests or playtest, static server, voyage, cannon action, audio, save or multiplayer session ran. Source implementation and author screenshots/regressions do not establish present-device performance or completion."
       ]
+    },
+    {
+      "id": "four-up-3d",
+      "name": "Four Up 3D",
+      "repository_url": "https://github.com/nickewing/four_up_3d",
+      "genres": [
+        "board game",
+        "line scoring",
+        "multiplayer"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "Vendored Three.js; exact revision not established",
+        "render_evidence": {
+          "url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/public/js/game_renderer.js#L228",
+          "claim": "The active browser renderer directly constructs THREE.WebGLRenderer for the volumetric board and pieces. Its own animation frame updates and renders that scene; main.js applies server game-state changes to this renderer."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/package.json",
+            "dependencies": {
+              "express": "^4.13.4",
+              "hiredis": "^0.4.1",
+              "nodeunit": "0.5.1",
+              "redis": "0.6.7",
+              "socket.io": "1.4.5"
+            },
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Node/Express and Socket.IO supply the game server; Redis is an external server using the declared redis/hiredis Node clients. Those client versions are not Redis server versions.",
+          "The browser uses vendored Three/RequireJS, jQuery 1.6.4 and jQuery UI 1.8.16 from HTTP Google CDN URLs, jquery.history and native Audio. Exact Three/RequireJS revisions were not established. nodeunit is declared under runtime dependencies in the original manifest."
+        ],
+        "framework_audit": "The actual entry, renderer, gameplay and available manifests were inspected at the fixed commit. The reviewed rendering core creates Three.js directly; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in this scoped path. Helper roles are disclosed; transitive packages and every content file were not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/public/js/board.js#L64",
+        "claim": "scoreLine awards a point for each same-player four-cell line and score recomputes the 3D line totals. Client main.js invokes that scoring after state updates. The Node game validates placement/turn, switches turns, saves and publishes the new state through Redis. A terminal first-four win is not established by these reviewed paths."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE grants MIT for project code. Vendored/CDN libraries retain their own terms; complete library notices and drop.wav origin were not independently audited. The project grant does not imply ownership of every bundled sound/dependency."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/README.md",
+        "notes": "README provides local Node/Redis startup instructions. No author-hosted demo URL was located in the reviewed README or repository metadata; no deployment is guessed."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/README.md",
+        "notes": "The 2011 project documents multiplayer Three/WebGL, a Node server and Redis pub/sub. Placement, turn updates and scoring are implemented; its old native bindings and current runtime compatibility remain untested."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "e30dd895a6b7230b656d1b07d6659da11ec1d328",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-031.md#four-up-3d",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/package.json"
+          },
+          {
+            "path": "public/index.html",
+            "url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/public/index.html"
+          },
+          {
+            "path": "public/js/board.js",
+            "url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/public/js/board.js"
+          },
+          {
+            "path": "public/js/game_renderer.js",
+            "url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/public/js/game_renderer.js"
+          },
+          {
+            "path": "public/js/main.js",
+            "url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/public/js/main.js"
+          },
+          {
+            "path": "src/app.js",
+            "url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/src/app.js"
+          },
+          {
+            "path": "src/game.js",
+            "url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/src/game.js"
+          },
+          {
+            "path": "src/socket_listener.js",
+            "url": "https://github.com/nickewing/four_up_3d/blob/e30dd895a6b7230b656d1b07d6659da11ec1d328/src/socket_listener.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The board is genuinely three-dimensional, but the review establishes continuous line scoring rather than a first-four terminal match rule.",
+        "Requires a separately running Node/Redis backend. Old hiredis/native bindings, old browser APIs and HTTP CDN imports may need maintenance; no server, socket session or sound was started.",
+        "No upstream installation, build, automated tests or playtest occurred. Source implementation does not establish current browser/device compatibility, performance or a completed game."
+      ]
+    },
+    {
+      "id": "star-cadet",
+      "name": "Star Cadet",
+      "repository_url": "https://github.com/richdubbs/star-cadet",
+      "genres": [
+        "pinball",
+        "arcade",
+        "score attack"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 (browser CDN import map)",
+        "render_evidence": {
+          "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/src/render/index.js#L83",
+          "claim": "The real ES-module browser entry imports Three through index.html's 0.160.0 import map, constructs WebGLRenderer and renders the authored volumetric pinball table. main.js integrates that view with the simulation and input rather than using a rendering framework."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Plain browser ES modules and Three 0.160.0 from jsDelivr; no npm runtime/dev dependencies are declared in the root manifest. Project-authored table physics/rules, DOM UI and an optional Web Audio/MIDI path are separate from Three rendering.",
+          "Silent start sets withSound=false, skips unlock/load/music and still calls rules.newGame. Optional original-audio lookup, local file selection and caching are separate paths; no audio path was activated. An optional Windows wrapper exists outside the scoped browser entry and was not built/downloaded."
+        ],
+        "framework_audit": "The actual entry, renderer, gameplay and available manifests were inspected at the fixed commit. The reviewed rendering core creates Three.js directly; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in this scoped path. Helper roles are disclosed; transitive packages and every content file were not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/src/rules/flow.js#L232",
+        "claim": "The actual game runs a fixed-step custom table simulation, sends physics events through the rules and updates the lamp state. The last drain enters gameOver, disables the flippers, removes balls and shows the final result; scoring and new-game actions are wired to the browser entry."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/LICENSE",
+        "additional_notices": [
+          "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/README.md",
+          "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/sounds/README.txt"
+        ],
+        "notes": "Root LICENSE is MIT. README attributes the code, geometry, textures and lettering to the project authors; this is an author statement, not independent clearance of every design/data origin. Original Space Cadet sounds/music remain copyrighted by Microsoft/Cinematronics/Maxis and are not bundled. An optional consented loader can seek local/cached/archive audio; these files are not covered by this MIT grant and were never retrieved."
+      },
+      "demo": {
+        "url": "https://richdubbs.github.io/star-cadet/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/README.md",
+        "notes": "README links this author demo. A text-reader attempt returned an accessibility error; this is not an offline-site finding and does not verify rendering, controls or the deployed/source match."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/README.md",
+        "notes": "The source implements a browser pinball game with custom rules, scoring, drains and game-over. README describes a broader mission set and known shot/performance limitations; those claims and full mission completion were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "4f066b1b1b7ff4114a24f1cec4e4e85642f593ef",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-031.md#star-cadet",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/package.json"
+          },
+          {
+            "path": "sounds/README.txt",
+            "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/sounds/README.txt"
+          },
+          {
+            "path": "src/audio/sources.js",
+            "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/src/audio/sources.js"
+          },
+          {
+            "path": "src/data/components.js",
+            "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/src/data/components.js"
+          },
+          {
+            "path": "src/game.js",
+            "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/src/game.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/src/main.js"
+          },
+          {
+            "path": "src/render/index.js",
+            "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/src/render/index.js"
+          },
+          {
+            "path": "src/rules.js",
+            "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/src/rules.js"
+          },
+          {
+            "path": "src/rules/flow.js",
+            "url": "https://github.com/richdubbs/star-cadet/blob/4f066b1b1b7ff4114a24f1cec4e4e85642f593ef/src/rules/flow.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Table motion is mainly constrained to a playfield with height/ramp presentation, not a free 3D rigid-body simulator.",
+        "The reviewed Git tree has no committed wav/ogg/mp3/mid/zip/dat original-audio files. The silent-start source path starts the game without loading audio; that source path was not executed. No optional copyrighted audio or desktop release was downloaded.",
+        "The table-data file is generated from research/layout data. Layout/data provenance and the author's original-geometry claims were not exhaustively audited; MIT does not license the original game's trademarks or recordings.",
+        "No upstream installation, build, automated tests or playtest occurred. Source implementation does not establish current browser/device compatibility, performance or a completed game."
+      ]
+    },
+    {
+      "id": "neon-pinball",
+      "name": "Neon Pinball",
+      "repository_url": "https://github.com/ronpicard/neon-pinball",
+      "genres": [
+        "pinball",
+        "arcade",
+        "score attack"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.0 (declared)",
+        "render_evidence": {
+          "url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/src/render/Engine.ts#L230",
+          "claim": "The canvas engine directly creates THREE.WebGLRenderer and Three example postprocessing passes. Its own animation frame advances the game/view and renders the composer. App.tsx hosts this imperative engine; React supplies DOM HUD/menu/touch controls rather than R3F scene composition."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/package.json",
+            "dependencies": {
+              "react": "^19.3.0",
+              "react-dom": "^19.3.0",
+              "three": "^0.186.0"
+            },
+            "dev_dependencies": {
+              "@types/node": "^22.20.2",
+              "@types/react": "^19.3.0",
+              "@types/react-dom": "^19.3.0",
+              "@types/three": "^0.186.0",
+              "@vitejs/plugin-react": "^6.1.1",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "React/react-dom are DOM UI only; TypeScript and Vite build the app. Three examples supply bloom/compositing, custom code supplies table physics, and Web Audio synthesizes effects. No physics engine is declared.",
+          "The manifest requires Node >=22.12.0 and declares recent React/TypeScript/Vite versions exactly as indexed. They were not installed or resolved; no headless autoplayer or upstream test was run."
+        ],
+        "framework_audit": "The actual entry, renderer, gameplay and available manifests were inspected at the fixed commit. The reviewed rendering core creates Three.js directly; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in this scoped path. Helper roles are disclosed; transitive packages and every content file were not exhaustively audited. React DOM is explicitly retained in the dependency record."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/src/game/rules.ts#L476",
+        "claim": "The active rules count drained balls, account for extra balls and enter gameOver after the configured balls-per-game limit. Bumpers/targets/lanes update points and bonuses; the actual canvas engine runs these rules alongside the custom pinball simulation."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/LICENSE",
+        "additional_notices": [
+          "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/README.md"
+        ],
+        "notes": "Project LICENSE grants MIT. README says textures and sound are generated in code, and the reviewed render/audio code is consistent with that statement. Third-party package licenses remain separate; every source/content origin was not independently audited."
+      },
+      "demo": {
+        "url": "https://ronpicard.github.io/neon-pinball/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/README.md",
+        "notes": "README links this author demo. A text-reader attempt returned an accessibility error; this is not an offline-site finding and does not verify rendering, controls or the deployed/source match."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/README.md",
+        "notes": "The source has a complete ball/score/drain/game-over loop. README documents multiball, bonuses, an attract-mode autoplayer and browser high scores; author 'proven playable' and performance/test claims were not adopted as reviewer runtime results."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-031.md#neon-pinball",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/package.json"
+          },
+          {
+            "path": "src/App.tsx",
+            "url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/src/App.tsx"
+          },
+          {
+            "path": "src/audio.ts",
+            "url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/src/audio.ts"
+          },
+          {
+            "path": "src/game/physics.ts",
+            "url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/src/game/physics.ts"
+          },
+          {
+            "path": "src/game/rules.ts",
+            "url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/src/game/rules.ts"
+          },
+          {
+            "path": "src/render/Engine.ts",
+            "url": "https://github.com/ronpicard/neon-pinball/blob/649f9e341b99f4fa80d9ec7b4ac28fcfaca76da2/src/render/Engine.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Physics is primarily two-dimensional on a sloped table with ramp/height state, rendered as a full 3D cabinet and arcade scene; this is not unconstrained 3D navigation.",
+        "React is a disclosed DOM shell, not the renderer. Browser storage, synthesized audio, autoplayer and device-quality fallback were not activated or tested.",
+        "No upstream installation, build, automated tests or playtest occurred. Source implementation does not establish current browser/device compatibility, performance or a completed game."
+      ]
+    },
+    {
+      "id": "tantrum-tower",
+      "name": "Tantrum Tower",
+      "repository_url": "https://github.com/writingdeveloper/tantrum-tower",
+      "genres": [
+        "construction management",
+        "strategy",
+        "campaign"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.184.0 (browser CDN import map)",
+        "render_evidence": {
+          "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/src/core/Game.js#L7",
+          "claim": "The active core creates THREE.WebGLRenderer and an authored retro render pipeline. Its own requestAnimationFrame loop updates registered systems and renders the Three scene; index.html supplies Three 0.184.0 via import map without a browser bundler requirement."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "@playwright/test": "^1.58.2",
+              "@types/node": "^20",
+              "jsdom": "^28.0.0",
+              "typescript": "^5",
+              "vitest": "^4.0.18"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Browser ES modules, Three examples and project-authored entity/worker/economy/campaign/retro-render systems. No external game engine or npm runtime dependency is declared. Web Audio is synthesized by default; optional local drop-in models/audio have fallback paths.",
+          "Playwright, jsdom, TypeScript and Vitest are development tooling only, preserved with their exact declared strings; none was installed or executed. Managers described as AI are game NPC logic, not proof of an external model service."
+        ],
+        "framework_audit": "The actual entry, renderer, gameplay and available manifests were inspected at the fixed commit. The reviewed rendering core creates Three.js directly; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in this scoped path. Helper roles are disclosed; transitive packages and every content file were not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/src/logic/scoring.js#L3",
+        "claim": "evaluate returns win when floorsBuilt reaches targetFloors, and defeat on timeout before the target or when the crew falls below the collapse threshold. main.js calls evaluate from the active simulation and latches its verdict. Progress logic stores campaign stars/unlocks after wins."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/LICENSE",
+        "additional_notices": [
+          "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/README.md",
+          "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/assets/CREDITS.md",
+          "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/assets/chars/README.md",
+          "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/assets/sfx/README.md",
+          "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/assets/voice/README.md"
+        ],
+        "notes": "Project code is MIT. The asset credits separately identify eleven committed model entries as CC0, including Quaternius, Kenney and the crane creator. Original Poly Pizza pages for the worker and crane were checked and state CC0; the whole list was not independently re-audited. Optional user drop-ins, fonts and dependencies require their own terms; no model or audio was downloaded."
+      },
+      "demo": {
+        "url": "https://tantrum-tower.writingdeveloper.blog",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/README.md",
+        "notes": "README links this author demo. A text-reader attempt returned an accessibility error; this is not an offline-site finding and does not verify rendering, controls or the deployed/source match."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/README.md",
+        "notes": "The source integrates production/rage/crew state with explicit floor-target win and defeat evaluation, campaign progress and retry UI. README documents the extracted standalone project and author unit/E2E checks; campaign completion and those checks were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "054d84883524147d4a1dff716644c61329a5134d",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-031.md#tantrum-tower",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/README.md"
+          },
+          {
+            "path": "assets/CREDITS.md",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/assets/CREDITS.md"
+          },
+          {
+            "path": "assets/chars/README.md",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/assets/chars/README.md"
+          },
+          {
+            "path": "assets/sfx/README.md",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/assets/sfx/README.md"
+          },
+          {
+            "path": "assets/voice/README.md",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/assets/voice/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/package.json"
+          },
+          {
+            "path": "src/audio/AudioManager.js",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/src/audio/AudioManager.js"
+          },
+          {
+            "path": "src/core/Game.js",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/src/core/Game.js"
+          },
+          {
+            "path": "src/logic/campaign.js",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/src/logic/campaign.js"
+          },
+          {
+            "path": "src/logic/progress.js",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/src/logic/progress.js"
+          },
+          {
+            "path": "src/logic/scoring.js",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/src/logic/scoring.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/src/main.js"
+          },
+          {
+            "path": "src/render/RetroPipeline.js",
+            "url": "https://github.com/writingdeveloper/tantrum-tower/blob/054d84883524147d4a1dff716644c61329a5134d/src/render/RetroPipeline.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This management game shows a 3D construction site; the player primarily operates simulation/UI controls rather than freely navigating in 3D.",
+        "No voice generation, external AI service, audio, localStorage save, model load or upstream test was activated. Optional acquisition guidance is not a claim that proprietary drop-ins are required or licensed by MIT.",
+        "No upstream installation, build, automated tests or playtest occurred. Source implementation does not establish current browser/device compatibility, performance or a completed game."
+      ]
+    },
+    {
+      "id": "gridfall-arena",
+      "name": "Gridfall Arena",
+      "repository_url": "https://github.com/salavert/gridfall-arena",
+      "genres": [
+        "arena brawler",
+        "survival",
+        "single-player"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r186 (shipped kernel); package.json declares 0.180.0",
+        "render_evidence": {
+          "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/public/runtime/Renderer.js#L168",
+          "claim": "The actual src/runtime.js loads the shipped kernel and named renderer/gameplay subsystems before creating the game. Renderer.js directly instantiates alias uc; kernel.js defines uc as the Three WebGLRenderer class with isWebGLRenderer and Three renderer internals. Kernel registration/window.__THREE__ reports revision 186, whereas package.json declares 0.180.0. The active render core is the shipped Three implementation, not a replacement engine."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/package.json",
+            "dependencies": {
+              "three": "0.180.0"
+            },
+            "dev_dependencies": {
+              "vite": "7.3.6"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vite builds the modern bootstrap; readable project-authored runtime subsystems and a minified Three-derived kernel own the renderer. The Three MIT notice is retained. Character model factories receive the shared Three classes; procedural audio and combat helpers are authored modules.",
+          "A separate CharacterAssetLoader imports the npm Three/GLTF helper path, but its active production use was not established. Optional window.claude hot-reload bridging has a standalone fallback; no creator service or bridge was activated."
+        ],
+        "framework_audit": "The actual entry, renderer, gameplay and available manifests were inspected at the fixed commit. The reviewed rendering core creates Three.js directly; no R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in this scoped path. Helper roles are disclosed; transitive packages and every content file were not exhaustively audited. Targeted kernel class/revision checks establish the actual Three alias despite minification; this is not a full semantic audit of every bundled library statement."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/public/runtime/Game.js#L77",
+        "claim": "In the live match controller, player death ends the game with won=false; when only one runner remains and the player is alive, it ends with won=true and rank 1. Combat/core collection and the shrinking void drive that survival objective through the actual browser runtime orchestrator."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/LICENSE",
+        "additional_notices": [
+          "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/THIRD_PARTY_NOTICES.md",
+          "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/README.md"
+        ],
+        "notes": "Root project code is MIT and the bundled Three notice preserves its MIT terms. README claims code-generated game art/audio; the inspected model factory is consistent with procedural geometry. Complete provenance of every kernel/helper/content statement was not independently audited."
+      },
+      "demo": {
+        "url": "https://salavert.github.io/gridfall-arena/",
+        "status": "reader-error",
+        "checked_at": "2026-10-24",
+        "source_url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/README.md",
+        "notes": "README links this author demo. A text-reader attempt returned an accessibility error; this is not an offline-site finding and does not verify rendering, controls or the deployed/source match."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/README.md",
+        "notes": "The source has playable-runner control, combat and explicit last-survivor win/loss. README documents further kits, quality profiles and author tests, while noting GPU visuals/device performance still need browser playtesting; those broader claims/tests were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-24",
+        "source_commit": "1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-031.md#gridfall-arena",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/README.md"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/THIRD_PARTY_NOTICES.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/package.json"
+          },
+          {
+            "path": "public/runtime/Game.js",
+            "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/public/runtime/Game.js"
+          },
+          {
+            "path": "public/runtime/Renderer.js",
+            "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/public/runtime/Renderer.js"
+          },
+          {
+            "path": "public/runtime/kernel.js",
+            "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/public/runtime/kernel.js"
+          },
+          {
+            "path": "src/characters/CharacterAssetLoader.js",
+            "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/src/characters/CharacterAssetLoader.js"
+          },
+          {
+            "path": "src/runtime.js",
+            "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/src/runtime.js"
+          },
+          {
+            "path": "src/volt/model.js",
+            "url": "https://github.com/salavert/gridfall-arena/blob/1ef1dcb46f3df5f6da68d8fd26cf0a38d0d8e75e/src/volt/model.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The shipped Three kernel reports r186 despite an npm dependency on 0.180.0. Exact r186 patch and compatibility between those copies were not established; versions are not silently treated as identical.",
+        "Arena movement is mainly planar within a volumetric 3D scene. The optional npm asset-loader path and creator hot bridge were not proven active during play; no service, audio, benchmark or match ran.",
+        "No upstream installation, build, automated tests or playtest occurred. Source implementation does not establish current browser/device compatibility, performance or a completed game."
+      ]
     }
   ]
 }
