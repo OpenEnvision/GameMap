@@ -24821,6 +24821,768 @@
         "No game/bot/fast-forward flag, optional media payload, local save, market, trade, result, Blender script or upstream test was executed.",
         "No upstream installation, build, automated suite or playtest occurred. Source inspection does not establish current browser/device compatibility, complete rules correctness, every objective's reachability, deployment/source equivalence or independently cleared rights for every asset and dependency."
       ]
+    },
+    {
+      "id": "memory-match-cube",
+      "name": "Memory Match Cube",
+      "repository_url": "https://github.com/bryanherger/memory-match-cube",
+      "genres": [
+        "memory matching",
+        "spatial puzzle"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r91 (bundled library REVISION)",
+        "render_evidence": {
+          "url": "https://github.com/bryanherger/memory-match-cube/blob/3a54e3a974651a9a678a2dbb3e7e91963c15c720/index.html#L438-L460",
+          "claim": "The actual HTML loads bundled Three r91 and OrbitControls and directly constructs THREE.WebGLRenderer. Nested XYZ loops create selectable volumetric subcubes around a cube's surface; the authored animation loop updates orbit controls and renders the scene."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "No npm manifest is present. Runtime uses local Three r91, its OrbitControls helper and authored inline JavaScript/DOM timer and menus; library text and its revision/license pointer were inspected without execution.",
+          "Card images are loaded from bundled texture sets. Their per-image origins/grants were not established from the reviewed README/entry/root notice; the root code grant is not represented as independent clearance of every photograph or texture."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/bryanherger/memory-match-cube/blob/3a54e3a974651a9a678a2dbb3e7e91963c15c720/index.html#L277-L312",
+        "claim": "Actual raycast clicks reveal hidden textures and compare two selections. Matched objects become resolved and decrement the remaining count; a mismatch hides both after a timeout. At zero remaining the code alerts solved and clears the timer, establishing a stateful matching game across the cube rather than only a texture viewer."
+      },
+      "license": {
+        "spdx": "BSD-3-Clause",
+        "label": "BSD-3-Clause (project code; texture/dependency terms qualified)",
+        "source_url": "https://github.com/bryanherger/memory-match-cube/blob/3a54e3a974651a9a678a2dbb3e7e91963c15c720/LICENSE",
+        "additional_notices": [
+          "https://github.com/bryanherger/memory-match-cube/blob/3a54e3a974651a9a678a2dbb3e7e91963c15c720/index.html",
+          "https://github.com/bryanherger/memory-match-cube/blob/3a54e3a974651a9a678a2dbb3e7e91963c15c720/README.md",
+          "https://github.com/bryanherger/memory-match-cube/blob/3a54e3a974651a9a678a2dbb3e7e91963c15c720/js/three.min.js"
+        ],
+        "notes": "Root LICENSE and the actual HTML contain full BSD three-clause redistribution/attribution/disclaimer text. The HTML names Bryan Herger and Woodside Labs; the root names bryanherger. The All rights reserved line is followed by the permissive grant and is not misclassified as proprietary code. Bundled Three/controls, imagery and referenced snippets retain applicable terms."
+      },
+      "demo": {
+        "url": "https://www.woodsidelabs.com/games/mmcube/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/bryanherger/memory-match-cube/blob/3a54e3a974651a9a678a2dbb3e7e91963c15c720/README.md",
+        "notes": "The pinned README supplies the exact Woodside Labs game URL. A text-reader attempt on 2026-10-26 returned an accessibility error; no offline, working-renderer, completed pair or solved-game claim is inferred."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/bryanherger/memory-match-cube/blob/3a54e3a974651a9a678a2dbb3e7e91963c15c720/README.md",
+        "notes": "An older Three r91 source memory game with configurable surface-cube size, matching/mismatch, remaining count, elapsed timer and solved feedback. Current browser/touch operation and every board configuration were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "3a54e3a974651a9a678a2dbb3e7e91963c15c720",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-046.md#memory-match-cube",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/bryanherger/memory-match-cube/blob/3a54e3a974651a9a678a2dbb3e7e91963c15c720/index.html"
+          },
+          {
+            "path": "js/OrbitControls.js",
+            "url": "https://github.com/bryanherger/memory-match-cube/blob/3a54e3a974651a9a678a2dbb3e7e91963c15c720/js/OrbitControls.js"
+          },
+          {
+            "path": "js/three.min.js",
+            "url": "https://github.com/bryanherger/memory-match-cube/blob/3a54e3a974651a9a678a2dbb3e7e91963c15c720/js/three.min.js"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/bryanherger/memory-match-cube/blob/3a54e3a974651a9a678a2dbb3e7e91963c15c720/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/bryanherger/memory-match-cube/blob/3a54e3a974651a9a678a2dbb3e7e91963c15c720/README.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The game uses a volumetric cube surface and orbitable camera; this is a 3d-board puzzle.",
+        "The reviewed click block lacks an explicit first-object-versus-second-object identity guard. Selecting the same unresolved tile twice may incorrectly decrement the remaining count; this is a source concern, not a reproduced runtime defect.",
+        "No image payload, touch/click/orbit action, timer, reset or solved alert was executed.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "peri-golf",
+      "name": "Peri Golf",
+      "repository_url": "https://github.com/Furkiozknn/peri-golf",
+      "genres": [
+        "miniature golf",
+        "physics puzzle",
+        "sports"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.170.0 / r170 (HTML import map)",
+        "render_evidence": {
+          "url": "https://github.com/Furkiozknn/peri-golf/blob/db0da74b3741f3f47c1d6ed5c2579de921db7a41/index.html#L1333-L1352",
+          "claim": "The actual single HTML entry imports Three 0.170.0 and official addons via an import map, then directly creates THREE.WebGLRenderer. Authored course/ball meshes and camera/input are updated and rendered by its own animation loop, without a scene reconciler or another engine."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "There is no npm manifest. The HTML imports CDN Three 0.170.0/addons and implements authored rolling, vertical velocity/slope/jump/wall/obstacle/cup rules, DOM UI, local saves and audio.",
+          "The procedural geometry and synthesized effects/music have an optional deferred asset layer: authored Blender-built models plus credited Poly Haven textures/HDRI and Kenney sampled effects. CREDITS and docs/assets describe separate grants and fallback roles; not every sound is live synthesis.",
+          "The noassets/low/auto/debug/sim flags and author performance/bot results are source/documentation only. No flag, Blender tool, asset payload, simulation bot or upstream command was run."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Furkiozknn/peri-golf/blob/db0da74b3741f3f47c1d6ed5c2579de921db7a41/index.html#L1226-L1260",
+        "claim": "Active ball/cup logic emits sink events that record strokes and challenge stars, save per-hole/ghost bests and unlock the next hole. The actual final-course method marks the run ended, computes totals/stars, updates a complete-round best and opens the result UI. Water/fall penalties and a reset-to-shot-position path are implemented."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code/authored models; third-party CC0 assets separate)",
+        "source_url": "https://github.com/Furkiozknn/peri-golf/blob/db0da74b3741f3f47c1d6ed5c2579de921db7a41/LICENSE",
+        "additional_notices": [
+          "https://github.com/Furkiozknn/peri-golf/blob/db0da74b3741f3f47c1d6ed5c2579de921db7a41/README.md",
+          "https://github.com/Furkiozknn/peri-golf/blob/db0da74b3741f3f47c1d6ed5c2579de921db7a41/CREDITS.md",
+          "https://github.com/Furkiozknn/peri-golf/blob/db0da74b3741f3f47c1d6ed5c2579de921db7a41/docs/assets.md"
+        ],
+        "notes": "Root LICENSE provides full MIT project-code text. CREDITS attributes authored model scripts/models to the project MIT grant and lists third-party optional textures/HDRI/effects as CC0. These are author/source provenance statements, not an independent per-payload clearance; Three/addons, marks and external resources keep their own terms."
+      },
+      "demo": {
+        "url": "https://furkiozknn.github.io/peri-golf/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/Furkiozknn/peri-golf/blob/db0da74b3741f3f47c1d6ed5c2579de921db7a41/README.md",
+        "notes": "The pinned README gives this exact author Pages URL. Text retrieval on 2026-10-26 failed in the reader; no site-down or successful game claim follows. No shot, cup, hole progression, save or result was executed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Furkiozknn/peri-golf/blob/db0da74b3741f3f47c1d6ed5c2579de921db7a41/README.md",
+        "notes": "A source mini-golf prototype with twelve configured holes, stroke/penalty and star rules, per-hole unlocks, course totals and replay/result UI. Author claims about all-hole bot completion, target hardware/frame rates and phone controls were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "db0da74b3741f3f47c1d6ed5c2579de921db7a41",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-046.md#peri-golf",
+        "reviewed_files": [
+          {
+            "path": "CREDITS.md",
+            "url": "https://github.com/Furkiozknn/peri-golf/blob/db0da74b3741f3f47c1d6ed5c2579de921db7a41/CREDITS.md"
+          },
+          {
+            "path": "docs/assets.md",
+            "url": "https://github.com/Furkiozknn/peri-golf/blob/db0da74b3741f3f47c1d6ed5c2579de921db7a41/docs/assets.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Furkiozknn/peri-golf/blob/db0da74b3741f3f47c1d6ed5c2579de921db7a41/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Furkiozknn/peri-golf/blob/db0da74b3741f3f47c1d6ed5c2579de921db7a41/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Furkiozknn/peri-golf/blob/db0da74b3741f3f47c1d6ed5c2579de921db7a41/README.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Ball state includes XYZ position/velocity and terrain height/jumps. Source-level 3D physics is distinct from validating all collisions or hole reachability.",
+        "The default optional media pass is disclosed even though procedural fallback/noassets paths exist; live fallback and every asset's rights/availability were not certified.",
+        "No renderer, physics, shot, bot/fast-forward, downloaded media, best/ghost save or result was activated.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "dolmus-minibus-driving",
+      "name": "Dolmuş",
+      "repository_url": "https://github.com/Furkiozknn/dolmus",
+      "genres": [
+        "driving",
+        "passenger transport",
+        "score challenge"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.170.0 / r170 (HTML import map)",
+        "render_evidence": {
+          "url": "https://github.com/Furkiozknn/dolmus/blob/8badcef95bfe57b360d48499b09ba31ee5c90ad0/index.html#L2382-L2395",
+          "claim": "The active single HTML entry imports Three through its CDN import map and directly creates THREE.WebGLRenderer. Volumetric vehicles/city/scenery, chase camera and authored UI/input are rendered from its own animation loop rather than another engine."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "No npm manifest is present. HTML declares Three 0.170.0/addons and authored vehicle/traffic/pedestrian/route, collision, passenger/fare/fine and timed-shift rules.",
+          "Web Audio engine/horn/rain/music and procedural meshes coexist with optional authored Blender models, Poly Haven texture/sky imagery and Kenney recorded effects. CREDITS and docs/assets attribute the third-party media to CC0; this is not described as an exclusively asset-free or synthesized-audio game.",
+          "Source exposes local best/run/settings storage and optional auto/debug/calibration/camera/media flags. Their existence is not verification of performance, course balance or an automatic successful campaign; none was executed."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Furkiozknn/dolmus/blob/8badcef95bfe57b360d48499b09ba31ee5c90ad0/index.html#L2363-L2379",
+        "claim": "The active shift update services passenger doors/stops and route progress, ending on a wreck threshold or shift time. endShift freezes simulation and computes net fares and stars against level targets; its real levelEnd hook shows the result and records campaign progress, next shift and retry/endless behavior."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code/authored models; third-party CC0 media separate)",
+        "source_url": "https://github.com/Furkiozknn/dolmus/blob/8badcef95bfe57b360d48499b09ba31ee5c90ad0/LICENSE",
+        "additional_notices": [
+          "https://github.com/Furkiozknn/dolmus/blob/8badcef95bfe57b360d48499b09ba31ee5c90ad0/README.md",
+          "https://github.com/Furkiozknn/dolmus/blob/8badcef95bfe57b360d48499b09ba31ee5c90ad0/CREDITS.md",
+          "https://github.com/Furkiozknn/dolmus/blob/8badcef95bfe57b360d48499b09ba31ee5c90ad0/docs/assets.md"
+        ],
+        "notes": "Root LICENSE grants MIT project code. The source/credits attribute authored models to this project and optional Poly Haven/Kenney media to their own CC0 grants. This does not independently clear every payload, external mark, geographic likeness or traffic-rule accuracy; Three/addons and outside resources retain applicable terms."
+      },
+      "demo": {
+        "url": "https://furkiozknn.github.io/dolmus/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/Furkiozknn/dolmus/blob/8badcef95bfe57b360d48499b09ba31ee5c90ad0/README.md",
+        "notes": "The pinned README supplies this exact Pages URL. A text-reader attempt on 2026-10-26 returned an accessibility error, not an offline or playability finding. No drive, passenger, fare, shift, score or save was started."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Furkiozknn/dolmus/blob/8badcef95bfe57b360d48499b09ba31ee5c90ad0/README.md",
+        "notes": "A source minibus prototype with multiple configured shifts, passenger/fare/fine rules, timed net-target or wreck outcomes, stars and campaign/endless result paths. Claimed frame rates, bot calibration, phone controls and the full shift campaign were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "8badcef95bfe57b360d48499b09ba31ee5c90ad0",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-046.md#dolmus-minibus-driving",
+        "reviewed_files": [
+          {
+            "path": "CREDITS.md",
+            "url": "https://github.com/Furkiozknn/dolmus/blob/8badcef95bfe57b360d48499b09ba31ee5c90ad0/CREDITS.md"
+          },
+          {
+            "path": "docs/assets.md",
+            "url": "https://github.com/Furkiozknn/dolmus/blob/8badcef95bfe57b360d48499b09ba31ee5c90ad0/docs/assets.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Furkiozknn/dolmus/blob/8badcef95bfe57b360d48499b09ba31ee5c90ad0/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Furkiozknn/dolmus/blob/8badcef95bfe57b360d48499b09ba31ee5c90ad0/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Furkiozknn/dolmus/blob/8badcef95bfe57b360d48499b09ba31ee5c90ad0/README.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Vehicle and traffic movement is planar XZ in a volumetric 3D city; it is not a certified road/traffic simulator or freely three-axis vehicle physics.",
+        "Optional model/texture/sky and sampled-effect assets are part of the default media pass; the procedural fallback was read as code, not demonstrated in a browser.",
+        "No auto/calibration flag, renderer, vehicle/door/passenger action, media payload, local save, result or upstream test was executed.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "nirania",
+      "name": "Nirania",
+      "repository_url": "https://github.com/salomonelli/nirania",
+      "genres": [
+        "obstacle runner",
+        "platform action",
+        "collecting"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.87.1 (exact npm declaration)",
+        "render_evidence": {
+          "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/components/game-frame/Scene.js#L16-L29",
+          "claim": "The React DOM game-frame creates the authored Play/Scene classes. Scene extends THREE.Scene and directly creates THREE.WebGLRenderer; Play's active requestAnimationFrame loop calls scene.render and authored movement/tween updates. React provides route/UI hosting rather than a scene reconciler."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/package.json",
+            "dependencies": {
+              "babel-polyfill": "6.23.0",
+              "concurrently": "3.3.0",
+              "material-ui": "0.19.1",
+              "material-ui-icons": "1.0.0-beta.5",
+              "mdi": "2.0.46",
+              "pouchdb-adapter-http": "6.1.2",
+              "pouchdb-adapter-idb": "6.1.2",
+              "pouchdb-replication": "6.1.2",
+              "random-boolean": "1.0.0",
+              "react": "15.4.2",
+              "react-dom": "15.4.2",
+              "roboto-fontface": "0.10.0",
+              "rxjs": "5.2.0",
+              "three": "0.87.1",
+              "tween.js": "16.6.0"
+            },
+            "dev_dependencies": {
+              "autoprefixer": "6.7.7",
+              "babel-core": "6.24.1",
+              "babel-eslint": "7.2.3",
+              "babel-jest": "18.0.0",
+              "babel-loader": "6.2.10",
+              "babel-preset-react-app": "2.2.0",
+              "babel-runtime": "6.20.0",
+              "case-sensitive-paths-webpack-plugin": "1.1.4",
+              "chalk": "1.1.3",
+              "connect-history-api-fallback": "1.3.0",
+              "cross-spawn": "4.0.2",
+              "css-loader": "0.28.7",
+              "detect-port": "1.1.1",
+              "dotenv": "2.0.0",
+              "enzyme": "3.1.0",
+              "eslint": "3.19.0",
+              "eslint-config-react-app": "0.6.2",
+              "eslint-loader": "1.7.1",
+              "eslint-plugin-flowtype": "2.35.1",
+              "eslint-plugin-import": "2.2.0",
+              "eslint-plugin-jsx-a11y": "4.0.0",
+              "eslint-plugin-react": "6.10.3",
+              "extract-text-webpack-plugin": "1.0.1",
+              "file-loader": "0.11.1",
+              "fs-extra": "0.30.0",
+              "gh-pages": "1.0.0",
+              "html-webpack-plugin": "2.28.0",
+              "http-proxy-middleware": "0.17.4",
+              "jest": "18.1.0",
+              "json-loader": "0.5.7",
+              "less": "2.7.2",
+              "less-loader": "4.0.5",
+              "object-assign": "4.1.1",
+              "postcss-loader": "1.3.3",
+              "promise": "7.1.1",
+              "react-dev-utils": "0.5.2",
+              "react-router": "4.2.0",
+              "react-router-dom": "4.2.2",
+              "react-test-renderer": "15.4.2",
+              "rimraf": "2.6.1",
+              "rxdb": "5.3.0",
+              "rxjs": "5.3.0",
+              "style-loader": "0.18.2",
+              "url-loader": "0.5.8",
+              "webpack": "1.14.0",
+              "webpack-dev-server": "1.16.2",
+              "webpack-manifest-plugin": "1.3.1",
+              "whatwg-fetch": "2.0.3"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Exact runtime declarations include three 0.87.1, React/React DOM 15.4.2, RxJS 5.2.0, tween.js 16.6.0, Material UI, PouchDB adapters and Roboto/icon packages. Full runtime/dev maps are retained without pretending these are modern installed versions.",
+          "The database service imports RxDB although it is declared in devDependencies. It uses IndexedDB and contains conditional HTTP-sync construction to the current hostname on port 10102; actual sync conditions and operational behavior were not reproduced. An omit-dev deployment or legacy bundler may need additional work.",
+          "Authored course, avatar, collision, jump/movement and result helpers use Three directly. No React Three Fiber, replacement engine, database/server, account or provider was activated."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/components/game-frame/play.js#L69-L110",
+        "claim": "The active status loop moves the course and checks collisions. Reaching the course end sets complete/survived and evaluates the configured diamond requirement; obstacle collisions instead set failure, while diamond hits increment collection state. The actual level page subscribes to completion, persists progress and shows repeat/next-level/result controls."
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "label": "Apache-2.0 (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/LICENCE.md",
+        "additional_notices": [
+          "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/README.md",
+          "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/components/game-frame/play.js",
+          "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/services/database.service.js"
+        ],
+        "notes": "The root LICENCE.md contains full Apache License 2.0 text. Third-party Three/React/UI/database/font/icon/media keep their own applicable terms; no complete per-asset or historical contribution audit is implied by the project code grant."
+      },
+      "demo": {
+        "url": "https://salomonelli.github.io/nirania",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/package.json",
+        "notes": "The exact author Pages URL appears in the pinned package.json homepage field. A text-reader attempt on 2026-10-26 returned an accessibility error, not proof of an offline or functioning game. No renderer, level, database/sync, progress save or result was run."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/README.md",
+        "notes": "The README explicitly says the project is in progress. Its legacy React 15/Three 0.87 source has course traversal, collision/diamond success/failure and actual stored-progress/result/retry wiring; all five configured levels, touch support and current build/runtime operation were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "2925f770d1a311cb5a851e089a42115f86a3b6e7",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-046.md#nirania",
+        "reviewed_files": [
+          {
+            "path": "LICENCE.md",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/LICENCE.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/README.md"
+          },
+          {
+            "path": "src/App.jsx",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/App.jsx"
+          },
+          {
+            "path": "src/components/game-frame/collision-detector.js",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/components/game-frame/collision-detector.js"
+          },
+          {
+            "path": "src/components/game-frame/game-frame.jsx",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/components/game-frame/game-frame.jsx"
+          },
+          {
+            "path": "src/components/game-frame/level/level.js",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/components/game-frame/level/level.js"
+          },
+          {
+            "path": "src/components/game-frame/level/level1.js",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/components/game-frame/level/level1.js"
+          },
+          {
+            "path": "src/components/game-frame/play.js",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/components/game-frame/play.js"
+          },
+          {
+            "path": "src/components/game-frame/Scene.js",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/components/game-frame/Scene.js"
+          },
+          {
+            "path": "src/components/level-end/level-end.jsx",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/components/level-end/level-end.jsx"
+          },
+          {
+            "path": "src/index.js",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/index.js"
+          },
+          {
+            "path": "src/models/level.model.js",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/models/level.model.js"
+          },
+          {
+            "path": "src/pages/level/level.jsx",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/pages/level/level.jsx"
+          },
+          {
+            "path": "src/services/database.service.js",
+            "url": "https://github.com/salomonelli/nirania/blob/2925f770d1a311cb5a851e089a42115f86a3b6e7/src/services/database.service.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The scoped audit covers the active course runner/result path; configuration files for several courses are not proof that every course is reachable or completable.",
+        "React/Material UI are disclosed DOM interfaces. Old dependency and browser APIs, the runtime RxDB import from devDependencies and conditional HTTP-sync helper are compatibility/setup limits.",
+        "No upstream tests/build, mobile control, game level, IndexedDB/local progress, HTTP synchronization, account or result was activated.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "kars-fuel-desperation",
+      "name": "Kars — Fuel Desperation",
+      "repository_url": "https://github.com/alvinwan/kars",
+      "genres": [
+        "driving survival",
+        "resource challenge",
+        "score attack"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r91 (bundled library REVISION)",
+        "render_evidence": {
+          "url": "https://github.com/alvinwan/kars/blob/6df2eaf366907984030dd9bcfc1306de4474df5a/js/game.js#L98-L114",
+          "claim": "The actual index loads only bundled Three and js/game.js. This active script directly creates THREE.WebGLRenderer and authored car/tree/fuel/ground meshes; the animation loop applies controls and collision checks, then renders the scene. The neighboring game.physi.js alternative is not loaded by the normal entry."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "No npm manifest exists in the pinned tree. Normal runtime uses local Three r91, authored JavaScript kinematic/collision/resource logic and a Google Fonts Playfair Display stylesheet.",
+          "Physijs-related alternative source is present but not referenced by index.html, so it is not invented as an active renderer/physics dependency. This audit scopes the normal direct-Three entry, not every alternative file.",
+          "The bundled Three blob is shared with Boxy-Run's library version, while the actual game logic/entry is different: this is a driving/fuel-budget game, not another count of the same runner or a copy of its preview scene."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/alvinwan/kars/blob/6df2eaf366907984030dd9bcfc1306de4474df5a/js/game.js#L619-L666",
+        "claim": "The active resource timer reduces time and fuel, updates their HUD and invokes a real game-over alert/reset when either runs out. Fuel-goal collision calls endLevel and creates another level; reset stores a new best score, resets the car/resources and updates score/record UI. Educational step comments accompany this implemented game rather than an empty lesson fragment."
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "label": "Apache-2.0 (project code; bundled Three/font terms separate)",
+        "source_url": "https://github.com/alvinwan/kars/blob/6df2eaf366907984030dd9bcfc1306de4474df5a/LICENSE",
+        "additional_notices": [
+          "https://github.com/alvinwan/kars/blob/6df2eaf366907984030dd9bcfc1306de4474df5a/README.md",
+          "https://github.com/alvinwan/kars/blob/6df2eaf366907984030dd9bcfc1306de4474df5a/index.html",
+          "https://github.com/alvinwan/kars/blob/6df2eaf366907984030dd9bcfc1306de4474df5a/js/three.min.js"
+        ],
+        "notes": "Root LICENSE supplies Apache License 2.0 text, including its unfilled generic application appendix; no specific owner line is invented. Bundled Three, Google Fonts and external README imagery keep their own terms. Full asset/authorship history beyond these observed code/dependency notices was not independently cleared."
+      },
+      "demo": {
+        "url": "http://alvinwan.com/kars",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://api.github.com/repos/alvinwan/kars",
+        "notes": "The exact http://alvinwan.com/kars URL comes from dated repository homepage metadata on 2026-10-26. The README's visible label resembles it but its actual hyperlink uses a malformed dot target; that wrong target was not followed or silently rewritten as verified evidence. The reader followed the metadata URL to HTTPS and failed; no offline or playable-build claim is made."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/alvinwan/kars/blob/6df2eaf366907984030dd9bcfc1306de4474df5a/README.md",
+        "notes": "An older educational Three r91 game for Bit by Bit with controllable driving, fuel/time pressure, successive goals, game over/reset and local record. Source labels and a lesson context do not certify present compatibility or a full reviewed curriculum."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "6df2eaf366907984030dd9bcfc1306de4474df5a",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-046.md#kars-fuel-desperation",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/alvinwan/kars/blob/6df2eaf366907984030dd9bcfc1306de4474df5a/index.html"
+          },
+          {
+            "path": "js/game.js",
+            "url": "https://github.com/alvinwan/kars/blob/6df2eaf366907984030dd9bcfc1306de4474df5a/js/game.js"
+          },
+          {
+            "path": "js/three.min.js",
+            "url": "https://github.com/alvinwan/kars/blob/6df2eaf366907984030dd9bcfc1306de4474df5a/js/three.min.js"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/alvinwan/kars/blob/6df2eaf366907984030dd9bcfc1306de4474df5a/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/alvinwan/kars/blob/6df2eaf366907984030dd9bcfc1306de4474df5a/README.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Car/world movement is horizontal within volumetric 3D meshes and camera. This is survival/score progression, not a verified finite race campaign.",
+        "The actual entry is direct Three; unused alternative physics code does not prove normal runtime use. A README demo hyperlink defect is preserved separately from the author's metadata URL.",
+        "No driving, fuel pickup, timer, local record/save, alert/reset, alternate engine, font payload or upstream lesson/tool was executed.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "kraken-isles",
+      "name": "Kraken Isles",
+      "repository_url": "https://github.com/DanWahlin/kraken-isles",
+      "genres": [
+        "island adventure",
+        "navigation puzzle",
+        "educational game"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.186.1 (exact npm declaration)",
+        "render_evidence": {
+          "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/engine/engine.ts#L85-L102",
+          "claim": "The actual boot entry calls the authored Engine.createRenderer, which directly constructs Three's WebGPURenderer and selects a WebGL2 backend with forceWebGL when needed. Its own setAnimationLoop advances authored systems and renders the scene; React mounts DOM UI, not a Fiber scene. Engine is the project's helper class, not a separate third-party game renderer."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/package.json",
+            "dependencies": {
+              "meshoptimizer": "~1.2.0",
+              "react": "^19.3.0",
+              "react-dom": "^19.3.0",
+              "three": "0.186.1"
+            },
+            "dev_dependencies": {
+              "@eslint/js": "^10.0.1",
+              "@gltf-transform/cli": "^4.5.0",
+              "@gltf-transform/core": "^4.5.0",
+              "@playwright/test": "^1.63.0",
+              "@types/react": "^19.3.0",
+              "@types/react-dom": "^19.3.0",
+              "@types/three": "0.186.0",
+              "@vitejs/plugin-react": "^6.1.1",
+              "@webgpu/types": "^0.1.74",
+              "eslint": "^10.11.0",
+              "globals": "^17.12.0",
+              "microsoft-cognitiveservices-speech-sdk": "^1.51.0",
+              "prettier": "^3.9.9",
+              "sharp": "^0.35.4",
+              "tsx": "^4.23.15",
+              "typescript": "~6.0.3",
+              "typescript-eslint": "^8.70.1",
+              "vite": "^8.3.0",
+              "vitest": "^5.0.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Exact runtime declarations are three 0.186.1, meshoptimizer ~1.2.0, React ^19.3.0 and React DOM ^19.3.0. The full Vite/TypeScript/asset/check tooling map is retained, including an Azure Speech SDK devDependency; no build, terrain bake, asset generation or provider request was run.",
+          "The scoped engine/boot/flow/session/quest chain owns Three WebGPU/WebGL2 rendering and imperative simulation. The Three Helms source path is audited as actual navigation/puzzle progress; all authored islands, course packs and naval battles are not independently certified.",
+          "Audio/voice players consume bundled/pre-rendered files. ASSETS, ART_PROVENANCE, audio credits and third-party notices separate MIT-adapted code/course content, CC0/CC-BY assets and generated art/music/voice. Paid-plan commercial-use assertions are author statements, not automatic proof that every generated file may be relicensed under MIT.",
+          "README says gameplay needs no API keys; asset-making tools have separate requirements. No source sync, course/model refresh, AI asset/speech/music generation, provider, save migration, account, SDK or paid resource was activated."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/game/puzzles/three-helms.ts#L440-L463",
+        "claim": "The reviewed normal Meridian Three Helms quest is instantiated by meridian-session and updated in the active game session. Sailing/mark/autopilot completion checks invoke the real finish path: it records sailed modes, saves puzzle state and marks the quest solved after the automatic helm returns to dock, with dialogue/feedback. This is distinct from the separate debug helper that completes all modes for tests."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code/course notices; media and generated-output terms qualified)",
+        "source_url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/LICENSE",
+        "additional_notices": [
+          "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/README.md",
+          "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/THIRD_PARTY_NOTICES.md",
+          "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/ASSETS.md",
+          "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/ART_PROVENANCE.md",
+          "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/public/audio/CREDITS.md",
+          "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/courses/copilot-app/public/course/LICENSE",
+          "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/courses/copilot-cli/public/course/LICENSE"
+        ],
+        "notes": "Root LICENSE grants MIT project code. Included course copies preserve GitHub's separate MIT notices; third-party code and CC0/CC-BY media have their own notices. ART_PROVENANCE records author-confirmed commercial-use plans/terms for generated music, voice and art, including Azure terms; this is not a blanket MIT or independently audited downstream redistribution grant for all media. The source disclaims GitHub/Microsoft endorsement and reserves no inferred rights to their marks."
+      },
+      "demo": {
+        "url": "https://danwahlin.github.io/kraken-isles/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/README.md",
+        "notes": "The pinned README advertises this exact early-preview Pages URL after a 2026-10-26 rename from Copilot Isles. The former repository name was checked against the existing dedup list and was not already indexed/queued. Text retrieval returned a reader accessibility error; old/new deployed behavior, save migration and current gameplay were not tested."
+      },
+      "maturity": {
+        "status": "work-in-progress",
+        "basis_url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/README.md",
+        "notes": "The author labels an early preview and lists current/planned islands/course coverage. This entry verifies an active Three-rendered quest/navigation source path with saved completion, not every planned island, course lesson, quiz answer, battle, gamepad, performance budget or completion of the overall adventure."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "ec861a2515c91a0c96407e3afead35ab7470bab9",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-046.md#kraken-isles",
+        "reviewed_files": [
+          {
+            "path": "ART_PROVENANCE.md",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/ART_PROVENANCE.md"
+          },
+          {
+            "path": "ASSETS.md",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/ASSETS.md"
+          },
+          {
+            "path": "courses/copilot-app/public/course/LICENSE",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/courses/copilot-app/public/course/LICENSE"
+          },
+          {
+            "path": "courses/copilot-cli/public/course/LICENSE",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/courses/copilot-cli/public/course/LICENSE"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/package.json"
+          },
+          {
+            "path": "public/audio/CREDITS.md",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/public/audio/CREDITS.md"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/README.md"
+          },
+          {
+            "path": "src/audio/music/music-player.ts",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/audio/music/music-player.ts"
+          },
+          {
+            "path": "src/audio/voice/player.ts",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/audio/voice/player.ts"
+          },
+          {
+            "path": "src/boot/main.ts",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/boot/main.ts"
+          },
+          {
+            "path": "src/engine/engine.ts",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/engine/engine.ts"
+          },
+          {
+            "path": "src/game/cove-quests.ts",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/game/cove-quests.ts"
+          },
+          {
+            "path": "src/game/flow.ts",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/game/flow.ts"
+          },
+          {
+            "path": "src/game/meridian-session.ts",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/game/meridian-session.ts"
+          },
+          {
+            "path": "src/game/puzzles/three-helms.ts",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/game/puzzles/three-helms.ts"
+          },
+          {
+            "path": "src/game/session.ts",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/game/session.ts"
+          },
+          {
+            "path": "src/learn/progress.ts",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/learn/progress.ts"
+          },
+          {
+            "path": "src/ui/mount.tsx",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/ui/mount.tsx"
+          },
+          {
+            "path": "src/world/battle/battle.ts",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/src/world/battle/battle.ts"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/DanWahlin/kraken-isles/blob/ec861a2515c91a0c96407e3afead35ab7470bab9/THIRD_PARTY_NOTICES.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The audited normal Three Helms finish path is distinguished from its debug/test completion API; no debug command or automatic game completion was invoked.",
+        "React is a DOM UI helper; Three WebGPURenderer remains the scene core on either selected backend. WebGPU/WebGL2 capability and fallback were not demonstrated on a device.",
+        "The code/course grants, third-party notices and generated-media provider assertions are recorded separately. All-media redistribution rights, course/API accuracy, trademarks and external service terms are not certified.",
+        "No renderer/GPU benchmark, terrain bake, game/navigation/quest/sea battle, voice/media payload, tool/provider generation, course/model refresh, save migration, deployment or upstream test was executed.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
     }
   ]
 }

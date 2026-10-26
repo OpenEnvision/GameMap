@@ -2388,6 +2388,59 @@
         "https://github.com/codenameyau/swish/blob/373bf7fe1c0259548980128f00ed4ffd42ea54ba/app/assets/js/main.js",
         "https://github.com/codenameyau/swish/blob/373bf7fe1c0259548980128f00ed4ffd42ea54ba/app/assets/js/lib/plugins/ThreeGen.js"
       ]
+    },
+    {
+      "id": "danktanks-driving-firing-scene",
+      "repository_url": "https://github.com/AXDOOMER/danktanks",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "34599bf7b4abde4325c3f0c1170136b10f9564c9",
+      "reason": "The active entry directly renders Three, moves a tank/turret and spawns shells, with ISC text in license.txt and the source header. The complete reviewed active loop only moves/expires shells among static houses/scenery; no enemy/damage/objective/score/failure or game-result flow was established. This currently fits an interactive driving/firing showcase rather than the strict actual-game scope.",
+      "next_action": "Revisit when a concrete opponent/challenge and game progression/result path are implemented. Do not confuse shell lifetime expiration or camera/turret input with a completed game objective; no scene or shell was run.",
+      "evidence_urls": [
+        "https://github.com/AXDOOMER/danktanks/blob/34599bf7b4abde4325c3f0c1170136b10f9564c9/README.md",
+        "https://github.com/AXDOOMER/danktanks/blob/34599bf7b4abde4325c3f0c1170136b10f9564c9/license.txt",
+        "https://github.com/AXDOOMER/danktanks/blob/34599bf7b4abde4325c3f0c1170136b10f9564c9/index.html",
+        "https://github.com/AXDOOMER/danktanks/blob/34599bf7b4abde4325c3f0c1170136b10f9564c9/game.js"
+      ]
+    },
+    {
+      "id": "golfwithfriends-current-r3f",
+      "repository_url": "https://github.com/nathanpotter17/GolfWithFriends",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "a565e8d2e49aa42adbae6b7ab5901be45da32416",
+      "reason": "The actual App imports and uses @react-three/fiber Canvas; the golf simulation imports useFrame/useThree and React Rapier helpers. The manifest declares R3F/drei/react-three-rapier/r3f-perf. This falls outside direct Three rendering. README says MIT while the root file is BSD-3-Clause; that mismatch is recorded rather than inferred away.",
+      "next_action": "Keep excluded while the normal entry is R3F. If a separate direct-Three edition appears, review it and clarify its code license before promotion; no WebSocket server, physics, game or service was started.",
+      "evidence_urls": [
+        "https://github.com/nathanpotter17/GolfWithFriends/blob/a565e8d2e49aa42adbae6b7ab5901be45da32416/README.md",
+        "https://github.com/nathanpotter17/GolfWithFriends/blob/a565e8d2e49aa42adbae6b7ab5901be45da32416/LICENSE",
+        "https://github.com/nathanpotter17/GolfWithFriends/blob/a565e8d2e49aa42adbae6b7ab5901be45da32416/package.json",
+        "https://github.com/nathanpotter17/GolfWithFriends/blob/a565e8d2e49aa42adbae6b7ab5901be45da32416/src/main.tsx",
+        "https://github.com/nathanpotter17/GolfWithFriends/blob/a565e8d2e49aa42adbae6b7ab5901be45da32416/src/App.tsx",
+        "https://github.com/nathanpotter17/GolfWithFriends/blob/a565e8d2e49aa42adbae6b7ab5901be45da32416/components/GolfSimRapier.tsx"
+      ]
+    },
+    {
+      "id": "emotional-snake-license-and-input-scope",
+      "repository_url": "https://github.com/ohm-team/ohm-snake",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "32a06a01a28ba45069a90d4f68626c62b74d8ece",
+      "reason": "Actual direct Three rendering, a snake/self-collision game and a real end/replay controller exist. Root LICENSE is BSD-3-Clause credited to the earlier 4DSnake author, package metadata says ISC and the README badge uses a different GPT3 label. Vendored Jeeliz has an Apache-2.0 header and gifshot has an MIT grant; these are not mislabeled as unlicensed. The scope for current project changes and the required face-model payload's grant remain unresolved by this audit.",
+      "next_action": "Clarify the root-versus-manifest/current-change license and the neural input model terms, preserving upstream attribution. Before promotion accurately describe required camera control, movement-triggered face-photo capture, GIF generation/share and analytics hooks. No camera, neural weights, photos, GIF/share, speech or tracking was activated.",
+      "evidence_urls": [
+        "https://github.com/ohm-team/ohm-snake/blob/32a06a01a28ba45069a90d4f68626c62b74d8ece/README.md",
+        "https://github.com/ohm-team/ohm-snake/blob/32a06a01a28ba45069a90d4f68626c62b74d8ece/LICENSE",
+        "https://github.com/ohm-team/ohm-snake/blob/32a06a01a28ba45069a90d4f68626c62b74d8ece/package.json",
+        "https://github.com/ohm-team/ohm-snake/blob/32a06a01a28ba45069a90d4f68626c62b74d8ece/src/index.ts",
+        "https://github.com/ohm-team/ohm-snake/blob/32a06a01a28ba45069a90d4f68626c62b74d8ece/src/game.ts",
+        "https://github.com/ohm-team/ohm-snake/blob/32a06a01a28ba45069a90d4f68626c62b74d8ece/src/startGame.ts",
+        "https://github.com/ohm-team/ohm-snake/blob/32a06a01a28ba45069a90d4f68626c62b74d8ece/src/snake/index.ts",
+        "https://github.com/ohm-team/ohm-snake/blob/32a06a01a28ba45069a90d4f68626c62b74d8ece/src/services/HeadControlService/HeadControlService.ts",
+        "https://github.com/ohm-team/ohm-snake/blob/32a06a01a28ba45069a90d4f68626c62b74d8ece/public/vendor/jeelizFaceFilter.js",
+        "https://github.com/ohm-team/ohm-snake/blob/32a06a01a28ba45069a90d4f68626c62b74d8ece/src/services/ImageCaptureService/gifshot.js"
+      ]
     }
   ]
 }
