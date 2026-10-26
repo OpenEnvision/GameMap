@@ -1611,6 +1611,99 @@
         "https://github.com/jiayuqi7813/rhythm-game-bga/blob/a72db12afc7eca8701c993b1ac1da647ab30a635/README.md",
         "https://github.com/jiayuqi7813/rhythm-game-bga/blob/a72db12afc7eca8701c993b1ac1da647ab30a635/LICENSE"
       ]
+    },
+    {
+      "id": "downhill-mayhem-legacy",
+      "repository_url": "https://github.com/pranshuparmar/downhill-mayhem",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "c7e7fc249d867923b85b86fbcfede0c25940270d",
+      "reason": "The current pinned GameMap root README already lists this project and links its existing source-review page. This batch's direct-Three/race/license review is retained as research, but another verified entry would duplicate an already tracked game.",
+      "next_action": "Preserve the existing root/research entry and alias for deduplication; do not count this as a new GameMap project or replace user content.",
+      "evidence_urls": [
+        "https://github.com/pranshuparmar/downhill-mayhem/blob/c7e7fc249d867923b85b86fbcfede0c25940270d/README.md",
+        "https://github.com/pranshuparmar/downhill-mayhem/blob/c7e7fc249d867923b85b86fbcfede0c25940270d/LICENSE",
+        "https://github.com/pranshuparmar/downhill-mayhem/blob/c7e7fc249d867923b85b86fbcfede0c25940270d/THREE.LICENSE",
+        "https://github.com/pranshuparmar/downhill-mayhem/blob/c7e7fc249d867923b85b86fbcfede0c25940270d/index.html#L1118",
+        "https://github.com/pranshuparmar/downhill-mayhem/blob/c7e7fc249d867923b85b86fbcfede0c25940270d/index.html#L2361-L2408"
+      ]
+    },
+    {
+      "id": "strategy-kerrishaus",
+      "repository_url": "https://github.com/kerrishaus/strategy",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "850ab746ce28de16642191c61e7f6d7fa44de6c0",
+      "reason": "Root code has GPLv3 text, but the active loading/text paths request Arial. fonts/Arial.json retains Monotype copyright/EULA metadata; the MIT text embedded there expressly applies to Biblical Hebrew OpenType layout logic, not the complete font. Those limited terms cannot be promoted to a blanket open-font grant. Renderer/objective review is also incomplete.",
+      "next_action": "Clarify the default font's redistribution grant or provide an open-font replacement, then complete actual renderer/game-loop/version and terminal-rule review. Do not infer that root GPL or the layout-only MIT text clears the Arial glyph data.",
+      "evidence_urls": [
+        "https://github.com/kerrishaus/strategy/blob/850ab746ce28de16642191c61e7f6d7fa44de6c0/LICENSE",
+        "https://github.com/kerrishaus/strategy/blob/850ab746ce28de16642191c61e7f6d7fa44de6c0/fonts/Arial.json",
+        "https://github.com/kerrishaus/strategy/blob/850ab746ce28de16642191c61e7f6d7fa44de6c0/scripts/states/LoadingState.js#L39-L41",
+        "https://github.com/kerrishaus/strategy/blob/850ab746ce28de16642191c61e7f6d7fa44de6c0/scripts/WorldObject.js#L175-L183",
+        "https://github.com/kerrishaus/strategy/blob/850ab746ce28de16642191c61e7f6d7fa44de6c0/README.md"
+      ]
+    },
+    {
+      "id": "verold-airhockey",
+      "repository_url": "https://github.com/dweis/verold-airhockey",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "c684b7912309f94a6479603fa4bfebaad55d1a4a",
+      "reason": "The actual GameClient extends window.VAPI.VeroldApp and obtains its renderer/engine from Verold, including engine update events. MIT code and a Three dependency underneath Verold do not establish the required direct-Three game rendering core.",
+      "next_action": "Reconsider a distinct source entry that directly owns Three rendering without Verold; retain this framework boundary for deduplication.",
+      "evidence_urls": [
+        "https://github.com/dweis/verold-airhockey/blob/c684b7912309f94a6479603fa4bfebaad55d1a4a/README.md",
+        "https://github.com/dweis/verold-airhockey/blob/c684b7912309f94a6479603fa4bfebaad55d1a4a/client/game_client.js#L7",
+        "https://github.com/dweis/verold-airhockey/blob/c684b7912309f94a6479603fa4bfebaad55d1a4a/client/game_client.js#L95-L118",
+        "https://github.com/dweis/verold-airhockey/blob/c684b7912309f94a6479603fa4bfebaad55d1a4a/client/game_client.js#L172-L174",
+        "https://github.com/dweis/verold-airhockey/blob/c684b7912309f94a6479603fa4bfebaad55d1a4a/package.json"
+      ]
+    },
+    {
+      "id": "toonks",
+      "repository_url": "https://github.com/maxscharwath/toonks-game",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "bfce8a6f675eb9452174c2a612a911e8e18b2a62",
+      "reason": "The production Project extends enable3d ThreeGraphics and Game imports THREE through enable3d. The manifest also includes @react-three/fiber and drei. This is an engine-managed runtime rather than the requested direct-Three implementation, regardless of its underlying Three renderer.",
+      "next_action": "Do not promote on the README's Three label; reconsider only a separately proven direct-Three entry.",
+      "evidence_urls": [
+        "https://github.com/maxscharwath/toonks-game/blob/bfce8a6f675eb9452174c2a612a911e8e18b2a62/package.json",
+        "https://github.com/maxscharwath/toonks-game/blob/bfce8a6f675eb9452174c2a612a911e8e18b2a62/game/scenes/Project.ts#L1-L17",
+        "https://github.com/maxscharwath/toonks-game/blob/bfce8a6f675eb9452174c2a612a911e8e18b2a62/game/scenes/Game.ts#L1-L17",
+        "https://github.com/maxscharwath/toonks-game/blob/bfce8a6f675eb9452174c2a612a911e8e18b2a62/src/routes/GameRenderer.tsx"
+      ]
+    },
+    {
+      "id": "rush-bistro-3d",
+      "repository_url": "https://github.com/carlomigueldy/rush-bistro-3d",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "3727800b3554973309b3adf945216c6c00ca259a",
+      "reason": "The package labels the project MIT and a direct-Three restaurant game source exists, but no project LICENSE, README or complete permission grant was found in the reviewed 55-entry tree or entry files. A package label alone does not settle the source/asset grant for this review.",
+      "next_action": "Locate an applicable full source grant and asset notices before promotion; retain the implementation evidence and avoid treating public code as permission to reuse.",
+      "evidence_urls": [
+        "https://github.com/carlomigueldy/rush-bistro-3d/blob/3727800b3554973309b3adf945216c6c00ca259a/package.json",
+        "https://github.com/carlomigueldy/rush-bistro-3d/blob/3727800b3554973309b3adf945216c6c00ca259a/index.html",
+        "https://github.com/carlomigueldy/rush-bistro-3d/blob/3727800b3554973309b3adf945216c6c00ca259a/src/main.ts",
+        "https://github.com/carlomigueldy/rush-bistro-3d/blob/3727800b3554973309b3adf945216c6c00ca259a/src/game/Game.ts"
+      ]
+    },
+    {
+      "id": "rushbite-kitchen-crew",
+      "repository_url": "https://github.com/trongnhanqng2005/rushbite-kitchen-crew",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "c91647dd97a4bbb8fea0e0ebdb2039536b181881",
+      "reason": "The repository provides a Three-based restaurant game, React DOM shell and shift logic, but the reviewed 66-entry tree has no project LICENSE/README/full grant and package.json supplies no license field. Source availability is not an established open-source permission grant.",
+      "next_action": "Clarify source and media licensing before completing promotion; do not install/build/test merely to substitute for a missing grant.",
+      "evidence_urls": [
+        "https://github.com/trongnhanqng2005/rushbite-kitchen-crew/blob/c91647dd97a4bbb8fea0e0ebdb2039536b181881/package.json",
+        "https://github.com/trongnhanqng2005/rushbite-kitchen-crew/blob/c91647dd97a4bbb8fea0e0ebdb2039536b181881/src/App.tsx",
+        "https://github.com/trongnhanqng2005/rushbite-kitchen-crew/blob/c91647dd97a4bbb8fea0e0ebdb2039536b181881/src/game/Game.ts",
+        "https://github.com/trongnhanqng2005/rushbite-kitchen-crew/blob/c91647dd97a4bbb8fea0e0ebdb2039536b181881/src/systems/ShiftSystem.ts"
+      ]
     }
   ]
 }
