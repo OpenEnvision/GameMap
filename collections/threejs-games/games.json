@@ -25583,6 +25583,628 @@
         "No renderer/GPU benchmark, terrain bake, game/navigation/quest/sea battle, voice/media payload, tool/provider generation, course/model refresh, save migration, deployment or upstream test was executed.",
         "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
       ]
+    },
+    {
+      "id": "galactic-conquest-chezgoulet",
+      "name": "Galactic Conquest — chezgoulet",
+      "repository_url": "https://github.com/chezgoulet/galactic-conquest",
+      "genres": [
+        "combined-arms shooter",
+        "strategy",
+        "space combat"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.186.0 (npm dev declaration and vendored VERSION)",
+        "render_evidence": {
+          "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/js/render/scene.js#L28-L43",
+          "claim": "The normal HTML loads the authored game bundle and vendored Three build. The scoped scene/bootstrap directly constructs THREE.WebGPURenderer, initializes it and retries its WebGL2 backend on failure. Authored Renderer/Game classes own the world, cameras, unit meshes and active frame; the normal bundle includes those scene/game paths, not a detached example or another engine."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "esbuild": "0.25.12",
+              "playwright": "^1.62.1",
+              "three": "0.186.0"
+            }
+          },
+          {
+            "path": "apps/play/package.json",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/apps/play/package.json",
+            "dependencies": {
+              "@electric-sql/pglite": "0.5.8",
+              "@fastify/cookie": "11.1.2",
+              "@fastify/formbody": "9.0.0",
+              "@fastify/rate-limit": "11.2.0",
+              "@fastify/static": "10.1.5",
+              "@fastify/websocket": "11.3.1",
+              "fastify": "5.12.5",
+              "pg": "8.23.0",
+              "zod": "4.6.5"
+            },
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Root npm declares Three 0.186.0, esbuild and Playwright as dev dependencies used for vendoring/build/checks. The pinned vendor/VERSION also says 0.186.0 webgpu+tsl; the bundler script exports Three's WebGPU/TSL and official addon nodes into the runtime global. No vendoring/build or GPU execution was run.",
+          "Authored simulation, terrain/units/factions and adaptive Web Audio score are implemented as project modules. NOTICE gives the project's Apache notice and the separate vendored Three MIT notice; procedural-asset claims do not certify every design/algorithm origin.",
+          "An optional zero-dependency Node LAN signaling server and separate apps/play Fastify/SQL account/ranked service are documented. Exact workspace runtime/dev maps are retained. No server, account, 2FA, matchmaking, WebRTC/TURN, database, ranked-result signature/submission, admin operation, Docker or paid resource was activated."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/js/sim/objectives.js#L159-L175",
+        "claim": "The active simulation resolves ticket depletion and wiped forces into a winner, end time and gameOver event. Normal Game.flow consumes that winner, changes state to ended and opens the actual results summary after its short delay; the summary contains won/team/score/kills/deaths/captures. Player possession, ground/air/space combat and command actions are source-wired, rather than only attract-mode scenery."
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "label": "Apache-2.0 (project code; vendored Three MIT separate)",
+        "source_url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/LICENSE",
+        "additional_notices": [
+          "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/NOTICE",
+          "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/README.md",
+          "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/vendor/THREE-LICENSE",
+          "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/vendor/VERSION",
+          "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/tools/vendor-three.cjs"
+        ],
+        "notes": "Root LICENSE plus project-specific NOTICE supply Apache-2.0 for project code; vendor/THREE-LICENSE separately preserves Three's MIT grant. Sampled geometry and music are code-generated, as the author states; no universal clearance of external marks, all implementation origins or optional service/dependency terms is inferred."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/README.md",
+        "notes": "No specific author-hosted game URL was located in the pinned README or repository homepage metadata. Local server/file-build instructions and an example production-domain placeholder are not a verified public demo, and no server or build was started."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/README.md",
+        "notes": "A source combined-arms vertical-slice prototype. The inspected match winner/result flow is implemented; the README's eight-biome campaign, multiplayer/online end-to-end claims, test counts, all vehicles and balance were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "33bcb4465b2d8f7f4320b7240ba7ba1be8d42432",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-047.md#galactic-conquest-chezgoulet",
+        "reviewed_files": [
+          {
+            "path": "apps/play/package.json",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/apps/play/package.json"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/index.html"
+          },
+          {
+            "path": "js/core/music.js",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/js/core/music.js"
+          },
+          {
+            "path": "js/game.bundle.js",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/js/game.bundle.js"
+          },
+          {
+            "path": "js/render/renderer.js",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/js/render/renderer.js"
+          },
+          {
+            "path": "js/render/scene.js",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/js/render/scene.js"
+          },
+          {
+            "path": "js/sim/objectives.js",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/js/sim/objectives.js"
+          },
+          {
+            "path": "js/sim/sim.js",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/js/sim/sim.js"
+          },
+          {
+            "path": "js/ui/game.js",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/js/ui/game.js"
+          },
+          {
+            "path": "js/ui/main.js",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/js/ui/main.js"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/LICENSE"
+          },
+          {
+            "path": "NOTICE",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/NOTICE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/README.md"
+          },
+          {
+            "path": "tools/vendor-three.cjs",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/tools/vendor-three.cjs"
+          },
+          {
+            "path": "vendor/THREE-LICENSE",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/vendor/THREE-LICENSE"
+          },
+          {
+            "path": "vendor/VERSION",
+            "url": "https://github.com/chezgoulet/galactic-conquest/blob/33bcb4465b2d8f7f4320b7240ba7ba1be8d42432/vendor/VERSION"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The actual renderer is Three WebGPURenderer with a WebGL2 retry, despite old generic WebGL/min.js naming. Vendor VERSION and manifest are declarations, not a certified current device/deployment build.",
+        "Normal match results were distinguished from attract scenes and online ranked operations. A victory event is not proof that every campaign/world is reachable or completed.",
+        "No game/GPU/physics, build/test, LAN/online service, account/admin, signed result, deployment or source/media payload execution occurred.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "moon-chorus-aim-dojo",
+      "name": "Moon Chorus / aim-dojo",
+      "repository_url": "https://github.com/robjohncolson/aim-dojo",
+      "genres": [
+        "rhythm aim trainer",
+        "spatial-audio skill game",
+        "score challenge"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (HTML CDN declaration)",
+        "render_evidence": {
+          "url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/aim-dojo-main.js#L441-L460",
+          "claim": "The actual HTML loads Three r128 and this authored main script. It directly creates THREE.WebGLRenderer for the arena/3D targets/sky, and its own animation loop advances input, projectiles, targets and rendering. Moon Chorus is the display name of the same aim-dojo repository/domain/storage identity, not another game to count."
+        },
+        "manifests": [
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/server/package.json",
+            "dependencies": {
+              "express": "^4.19.2"
+            },
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "The client has no root npm manifest: HTML/script loaders declare Three r128, Tone 14.8.49, optional Supabase 2.x and qrcodejs 1.0.0 CDNs. Web Audio/Three positional audio implement the rhythm and spatial-feedback roles, not a replacement render engine.",
+          "The optional server/package.json is a Node >=18 Express ^4.19.2 daily-score verification/writer service; it is recorded separately from browser CDN dependencies. Optional sky/personal/chart/auth/cloud/realtime services have additional configuration and availability requirements.",
+          "Source defaults enable ghost-sharing hooks and completed-session/page-hide record paths; a static client is not therefore certified network-free. No anonymous relay, score writer, auth, cloud preference, sky query, geolocation, export/share or provider request was activated.",
+          "Sky README files describe NASA-derived visualization/maps and reduced/copied art while preserving original rights; complete original per-image license/provenance was not established. No sky/planet/zodiac payload was fetched or cleared by the root MIT code label."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/aim-dojo-main.js#L7778-L7800",
+        "claim": "The active projectile-hit path grades an arrival against beat timing; a good hit increases score-like hits and streak/best-streak. The normal frame runs the enabled holster/Bow clock; its real finish path completes the session, finalizes enabled records/sharing, marks the next entry for reset and returns to the overlay, with run-derived feedback/night-card paths. This verifies a stateful skill game rather than only the separate sky-viewing feature."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; sky/media/service rights qualified)",
+        "source_url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/LICENSE",
+        "additional_notices": [
+          "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/README.md",
+          "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/assets/sky/README.md",
+          "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/assets/sky/compact/README.md",
+          "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/assets/sky/zodiac/README.md",
+          "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/server/README.md"
+        ],
+        "notes": "Root LICENSE supplies a full MIT project-code grant. The code grant does not independently clear every sky/planet/zodiac image, astronomical dataset, NASA name/mark, CDN dependency or external service. Asset notes explicitly retain source rights; their existence is not a blanket public-domain claim or independent rights/astronomy certification."
+      },
+      "demo": {
+        "url": "https://aim-dojo.vercel.app",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/README.md",
+        "notes": "The pinned README identifies https://aim-dojo.vercel.app as primary and a Pages mirror. The primary URL's text-reader attempt on 2026-10-26 failed; no site-down, playable session, valid timing/spatial audio or current source/deployment equivalence is inferred."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/README.md",
+        "notes": "A source skill-game prototype with beat-arrival grading, a training path, score/streak state and an enabled session-ending Bow/reset flow. Optional sky/chart/Temple, records, cloud, realtime and sharing features are not all independently audited; timing fairness and astronomy accuracy were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "8d8641833c13997c923b61764246511f418a96cc",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-047.md#moon-chorus-aim-dojo",
+        "reviewed_files": [
+          {
+            "path": "aim-dojo-main.js",
+            "url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/aim-dojo-main.js"
+          },
+          {
+            "path": "assets/sky/compact/README.md",
+            "url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/assets/sky/compact/README.md"
+          },
+          {
+            "path": "assets/sky/README.md",
+            "url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/assets/sky/README.md"
+          },
+          {
+            "path": "assets/sky/zodiac/README.md",
+            "url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/assets/sky/zodiac/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/README.md"
+          },
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/server/package.json"
+          },
+          {
+            "path": "server/README.md",
+            "url": "https://github.com/robjohncolson/aim-dojo/blob/8d8641833c13997c923b61764246511f418a96cc/server/README.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This is one repository with a new display name, not separate Moon Chorus and aim-dojo counts.",
+        "The audited game targets and projectile travel use a 3D arena; optional celestial viewing/exploration is not the sole evidence of gameplay.",
+        "Source has enabled anonymous ghost/record/relay and optional account/cloud features. No network-free, privacy, authentication or score-verification guarantee is made.",
+        "No input lock, audio transport, graded hit, Bow/night card, image payload, share/relay, sky/provider request, record/save or upstream test was executed.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "pulse-slice-color-survival",
+      "name": "Pulse Slice — current color-survival prototype",
+      "repository_url": "https://github.com/sanjitmathur/pulse-slice",
+      "genres": [
+        "color-matching arcade",
+        "block survival",
+        "WebXR game"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.161.0 (HTML import map)",
+        "render_evidence": {
+          "url": "https://github.com/sanjitmathur/pulse-slice/blob/c2143b037ac80a19174f931c057cd0f51234b919/index.html#L141-L152",
+          "claim": "The actual single HTML imports Three 0.161.0 and VRButton through its import map, directly creates THREE.WebGLRenderer and enables its XR manager. Authored volumetric hand/block/particle geometry and setAnimationLoop provide the current game renderer, without A-Frame or a scene reconciler."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/sanjitmathur/pulse-slice/blob/c2143b037ac80a19174f931c057cd0f51234b919/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "The npm manifest is optional test/start metadata with no runtime/dev dependency maps. Actual browser runtime imports CDN Three 0.161.0 and its VRButton addon; authored inline geometry, AABB collision and DOM state/UI supply the game.",
+          "The current laptop entry uses left/right arrow movement and one authored hand group; an XR controller/session path is present. No headset/controller, browser permission, VR capability or desktop control behavior was exercised.",
+          "The README describes src/ audio/beatmap/arrow-validation/combo modules and mouse/two-saber rhythm behavior that are not in this pinned eight-file tree/current entry. No music playback, beat-accurate scoring, arrow-direction validation or combo system was established in the inspected inline implementation."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/sanjitmathur/pulse-slice/blob/c2143b037ac80a19174f931c057cd0f51234b919/index.html#L420-L455",
+        "claim": "Active 3D box-intersection rules award a point for a matching-color block and flip the hand color; wrong-color contact or missing a required-color block removes a life. Zero lives calls the real game-over/results UI, and the restart handler resets score/lives/field. This is the current inline color-survival game, not the broader modular rhythm design described in the README."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; Three/addon terms separate)",
+        "source_url": "https://github.com/sanjitmathur/pulse-slice/blob/c2143b037ac80a19174f931c057cd0f51234b919/LICENSE",
+        "additional_notices": [
+          "https://github.com/sanjitmathur/pulse-slice/blob/c2143b037ac80a19174f931c057cd0f51234b919/README.md",
+          "https://github.com/sanjitmathur/pulse-slice/blob/c2143b037ac80a19174f931c057cd0f51234b919/index.html"
+        ],
+        "notes": "Root LICENSE supplies full MIT project-code text. Three and VRButton keep their own terms; the genre/reference inspiration does not grant Beat Saber, Meta or other brand/design rights. The source-shaped geometry is not an independent all-media/dependency clearance."
+      },
+      "demo": {
+        "url": "https://sanjitmathur.github.io/pulse-slice/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/sanjitmathur/pulse-slice/blob/c2143b037ac80a19174f931c057cd0f51234b919/README.md",
+        "notes": "The pinned README advertises this exact Pages URL; repository metadata separately lists a Vercel host. The Pages text-reader attempt on 2026-10-26 failed, and neither host is certified as matching or running this simpler inline edition."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/sanjitmathur/pulse-slice/blob/c2143b037ac80a19174f931c057cd0f51234b919/README.md",
+        "notes": "A compact source color-matching survival prototype with score, three lives, game-over/restart and an optional XR path. The metadata/README call it a rhythm slicer, but that richer feature set is deliberately not asserted for the actual reviewed entry."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "c2143b037ac80a19174f931c057cd0f51234b919",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-047.md#pulse-slice-color-survival",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/sanjitmathur/pulse-slice/blob/c2143b037ac80a19174f931c057cd0f51234b919/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/sanjitmathur/pulse-slice/blob/c2143b037ac80a19174f931c057cd0f51234b919/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/sanjitmathur/pulse-slice/blob/c2143b037ac80a19174f931c057cd0f51234b919/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/sanjitmathur/pulse-slice/blob/c2143b037ac80a19174f931c057cd0f51234b919/README.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The game's current 3D matching/life/result loop is established from code; the stale README directory and richer controls/audio claims remain explicit.",
+        "The actual import map is Three 0.161.0. Source uses its direct XR manager/VRButton, not A-Frame; device/session compatibility was not verified.",
+        "No desktop input, headset/XR session, collision, score/result/restart, audio, CDN runtime or upstream test was executed.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "rhythm-run-3d",
+      "name": "节奏长跑 / Rhythm Run 3D",
+      "repository_url": "https://github.com/3155498108/rhythm-run-3d",
+      "genres": [
+        "running race",
+        "stamina management",
+        "local two-player"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r149 (vendored REVISION alias e = 149)",
+        "render_evidence": {
+          "url": "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/src/scene.js#L189-L207",
+          "claim": "The actual HTML loads the bundled Three global, logic, Scene3D, Canvas HUD and game scripts in order. Scene3D directly constructs THREE.WebGLRenderer and volumetric runners/course; the active game frame steps Logic, renders that 3D scene and draws the separate 2D HUD. A Canvas HUD is not substituted for the scene's Three renderer."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "The pinned static repository has no npm manifest. It loads local vendor/three.min.js; its text declares minified e = 149 and exports REVISION = e, with an MIT SPDX header. It is not an invented modern npm/CDN Three version.",
+          "Authored plain JavaScript logic, 3D procedural geometry/Canvas textures, keyboard/touch inputs and Canvas2D menus/HUD are separate roles. Web Audio Sfx code generates feedback; no imported music/model payload or alternate game engine was established in the scoped entry.",
+          "Source implements one-player rivals and same-keyboard two-human mode. README timing/endurance/balance/mobile claims are author documentation, not a reproduced exercise/race or hardware benchmark."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/src/logic.js#L652-L661",
+        "claim": "Player distance reaching the configured 1,000-metre finish records finish time/rank and emits finish. The real update changes phase to over when all human players finish or a time limit expires; two-player completion selects the lower finish time, and the active frame draws the result HUD. Alternating-key pace, stamina/water/heat, rivals and obstacles feed that race state."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; bundled Three/system-font terms separate)",
+        "source_url": "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/LICENSE",
+        "additional_notices": [
+          "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/README.md",
+          "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/index.html",
+          "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/vendor/three.min.js"
+        ],
+        "notes": "Root LICENSE grants MIT project code; bundled Three has its own MIT notice/SPDX header. The active scene/Sfx are authored geometry/texture/audio code, but system fonts, repository screenshots and all design/origin rights are not independently cleared merely by that code grant."
+      },
+      "demo": {
+        "url": "https://rhythm-run-3d.app.workbuddy.host/?sharecode=5C62PUJRVC",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/README.md",
+        "notes": "The pinned README supplies this exact public author URL including its advertised share-code query. Text retrieval on 2026-10-26 returned an accessibility error; no offline finding or successful solo/two-player race is implied."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/README.md",
+        "notes": "A source running-race prototype with a configured finish distance, timer/ranking, result phase, local two-player and resource/obstacle/rival rules. All controls, finish tie handling, race fairness, stamina balance and mobile operation were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "c999e1936d84a0ee0b718625a99649c4fe737dce",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-047.md#rhythm-run-3d",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/README.md"
+          },
+          {
+            "path": "src/game.js",
+            "url": "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/src/game.js"
+          },
+          {
+            "path": "src/hud.js",
+            "url": "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/src/hud.js"
+          },
+          {
+            "path": "src/logic.js",
+            "url": "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/src/logic.js"
+          },
+          {
+            "path": "src/scene.js",
+            "url": "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/src/scene.js"
+          },
+          {
+            "path": "vendor/three.min.js",
+            "url": "https://github.com/3155498108/rhythm-run-3d/blob/c999e1936d84a0ee0b718625a99649c4fe737dce/vendor/three.min.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Movement is along lanes/track in a volumetric 3D course; the 2D HUD is disclosed separately from direct Three rendering.",
+        "Rhythm refers to alternating running input. No musical beatmap/game soundtrack is invented from the repository name.",
+        "No keys/touch, audio, renderer/race, supply pickup, result, shared device/session or upstream test was executed.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "quarantine-line",
+      "name": "Quarantine Line",
+      "repository_url": "https://github.com/cmullis1/quarantine-line",
+      "genres": [
+        "real-time strategy",
+        "government survival",
+        "zombie outbreak simulation"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 (HTML import map)",
+        "render_evidence": {
+          "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/render/renderer.js#L11-L18",
+          "claim": "The actual main creates the app and View, which directly constructs THREE.WebGLRenderer and an isometric OrthographicCamera using the HTML's Three 0.160.0 import map. Authored terrain/town/unit/horde meshes and active app frame render a volumetric country board; UI and maps are project helpers rather than another engine."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "No runtime/dev npm dependency maps are declared; package.json only supplies Node test/simulation and Python serve scripts. The actual browser import map loads Three 0.160.0, and README notes CDN font requirements.",
+          "Authored deterministic state/map, movement/combat, economy/politics/scenario and volumetric geometry use imperative JavaScript/Three. Audio modules implement authored browser synthesis/sequencing; no engine wrapper, provider or paid resource was activated.",
+          "The country, outbreak, policies, meters and ending are fictional game state. Author bot matrices, balance, frame/performance claims, every building/unit/scenario and all campaign routes were not reproduced or certified as real-world guidance."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/sim/systems/politics.js#L278-L303",
+        "claim": "The active politics system checks the campaign end: loss if the capital fails or trust/order fall below thresholds, and a win on the configured Day 50 survival boundary. end builds a concrete ending/record/score, assigns state.over and emits over; the app/UI consumes this for the end-state modal. Sandbox/tutorial paths are separate from this verified campaign outcome."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/font/media terms separate)",
+        "source_url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/LICENSE",
+        "additional_notices": [
+          "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/README.md",
+          "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/index.html",
+          "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/config/campaign.js"
+        ],
+        "notes": "Root LICENSE supplies a full MIT project-code grant. Three, CDN/system fonts, repository imagery, and any third-party implementation/media retain their applicable terms. Procedural/synthesized-source observations are not a blanket independent provenance or external-rights clearance."
+      },
+      "demo": {
+        "url": "https://cmullis1.github.io/quarantine-line/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/README.md",
+        "notes": "The pinned README supplies this exact Pages URL. Text retrieval on 2026-10-26 failed in the reader; it does not establish an offline game or working current build. No start, policy/build command, campaign day, end modal, save or audio was executed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/README.md",
+        "notes": "A source strategy prototype with an actual Day 50 campaign win, capital/trust/order failures, scored endings and distinct tutorial/sandbox modes. Its author-reported balance, automated test/bot runs and all scenarios were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "cd760ca3814451cafc25076300ad6fb4b091e26a",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-047.md#quarantine-line",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/index.html"
+          },
+          {
+            "path": "js/app.js",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/app.js"
+          },
+          {
+            "path": "js/audio/synth.js",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/audio/synth.js"
+          },
+          {
+            "path": "js/config/balance.js",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/config/balance.js"
+          },
+          {
+            "path": "js/config/campaign.js",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/config/campaign.js"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/main.js"
+          },
+          {
+            "path": "js/render/entities.js",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/render/entities.js"
+          },
+          {
+            "path": "js/render/renderer.js",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/render/renderer.js"
+          },
+          {
+            "path": "js/sim/sim.js",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/sim/sim.js"
+          },
+          {
+            "path": "js/sim/systems/politics.js",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/sim/systems/politics.js"
+          },
+          {
+            "path": "js/sim/systems/world.js",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/sim/systems/world.js"
+          },
+          {
+            "path": "js/ui/modals.js",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/js/ui/modals.js"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/cmullis1/quarantine-line/blob/cd760ca3814451cafc25076300ad6fb4b091e26a/README.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The isometric scene contains volumetric terrain/towns/units, while map movement occurs on a plane. The dimension label describes rendering, not free three-axis movement.",
+        "This entry verifies the concrete campaign end-check/UI path, without treating a sandbox, generated map, policy-themed text or author test log as a completed campaign.",
+        "No renderer/audio, AI/bot matrix, game/policy/build command, save, result or upstream install/build/test/playtest was run.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
     }
   ]
 }

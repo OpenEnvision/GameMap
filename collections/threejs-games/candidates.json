@@ -2441,6 +2441,80 @@
         "https://github.com/ohm-team/ohm-snake/blob/32a06a01a28ba45069a90d4f68626c62b74d8ece/public/vendor/jeelizFaceFilter.js",
         "https://github.com/ohm-team/ohm-snake/blob/32a06a01a28ba45069a90d4f68626c62b74d8ece/src/services/ImageCaptureService/gifshot.js"
       ]
+    },
+    {
+      "id": "cayir-muhafizi-restricted-music",
+      "repository_url": "https://github.com/JosephUz/cayirmuhafizi",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "5de651a5f2cf36052bb790d593b6a875f9c33706",
+      "reason": "The actual entry directly renders Three and the world resolves banner/team defeat into a result/report UI under MIT project code. However muzik/LISANS.txt explicitly reserves all rights to the compositions and says they are for JosephUz's games/content only. Its CC0 VSCO instrument samples do not make those compositions CC0, and the normal music module loads the named tracks.",
+      "next_action": "Locate an upstream open reuse grant/cleared edition, or a clearly documented and verified complete game scope omitting/replacing the restricted tracks, before promotion. Preserve the source/asset distinction; do not activate multiplayer, telemetry, music, Android/Capacitor or services.",
+      "evidence_urls": [
+        "https://github.com/JosephUz/cayirmuhafizi/blob/5de651a5f2cf36052bb790d593b6a875f9c33706/README.md",
+        "https://github.com/JosephUz/cayirmuhafizi/blob/5de651a5f2cf36052bb790d593b6a875f9c33706/LICENSE",
+        "https://github.com/JosephUz/cayirmuhafizi/blob/5de651a5f2cf36052bb790d593b6a875f9c33706/package.json",
+        "https://github.com/JosephUz/cayirmuhafizi/blob/5de651a5f2cf36052bb790d593b6a875f9c33706/src/main.js",
+        "https://github.com/JosephUz/cayirmuhafizi/blob/5de651a5f2cf36052bb790d593b6a875f9c33706/src/world.js",
+        "https://github.com/JosephUz/cayirmuhafizi/blob/5de651a5f2cf36052bb790d593b6a875f9c33706/src/muzik.js",
+        "https://github.com/JosephUz/cayirmuhafizi/blob/5de651a5f2cf36052bb790d593b6a875f9c33706/muzik/LISANS.txt"
+      ]
+    },
+    {
+      "id": "tongue-of-war-current-2-5d",
+      "repository_url": "https://github.com/Jayyo/tongue-of-war",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "ff078a22f6b55e1d91178c14831715cbc0392d04",
+      "reason": "The normal Three renderer explicitly calls itself 2.5D and renders camera-facing alpha-cutout unit planes and rig parts on a perspective lane stage. It is real MIT-code/CC-BY-art strategy gameplay with a scripted-bot fallback and optional LLM backend, but this current sprite-stage edition falls outside the strict full-3D list. It is not mislabeled R3F, source-unavailable or necessarily paid-only.",
+      "next_action": "Revisit a volumetric 3D edition or separately accepted 2.5D collection. Retain the explicit MIT-code versus CC-BY-4.0 artwork grant and Korean-input/provider limits; no LLM key, art generation, local server, match or provider was invoked.",
+      "evidence_urls": [
+        "https://github.com/Jayyo/tongue-of-war/blob/ff078a22f6b55e1d91178c14831715cbc0392d04/README.md",
+        "https://github.com/Jayyo/tongue-of-war/blob/ff078a22f6b55e1d91178c14831715cbc0392d04/LICENSE",
+        "https://github.com/Jayyo/tongue-of-war/blob/ff078a22f6b55e1d91178c14831715cbc0392d04/NOTICE",
+        "https://github.com/Jayyo/tongue-of-war/blob/ff078a22f6b55e1d91178c14831715cbc0392d04/index.html",
+        "https://github.com/Jayyo/tongue-of-war/blob/ff078a22f6b55e1d91178c14831715cbc0392d04/src/main.js",
+        "https://github.com/Jayyo/tongue-of-war/blob/ff078a22f6b55e1d91178c14831715cbc0392d04/src/ui/renderer-three.js",
+        "https://github.com/Jayyo/tongue-of-war/blob/ff078a22f6b55e1d91178c14831715cbc0392d04/src/engine/sim.js"
+      ]
+    },
+    {
+      "id": "map-madness-noncommercial-car-model",
+      "repository_url": "https://github.com/freaxnx01/game-rhyflitzer",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "9a42d756b625a908d84d1b5eec7b6fc6d0988985",
+      "reason": "The actual prototype directly creates Three.WebGLRenderer and root code is MIT, but the README and Hatchback model notice explicitly assign CC-BY-NC-SA-4.0 to the modified Mazda-derived model and say the game stays non-commercial. Geodata has separate ODbL/attribution terms, and handmade asset licensing is also listed as undecided. These are not blanket MIT game assets.",
+      "next_action": "Find a clearly open asset-cleared edition or a verified complete scope without restricted/undecided assets before promotion. Preserve author-model/data attributions and the code/media distinction; no geodata/model payload, provider/editor service, drive or race was run.",
+      "evidence_urls": [
+        "https://github.com/freaxnx01/game-rhyflitzer/blob/9a42d756b625a908d84d1b5eec7b6fc6d0988985/README.md",
+        "https://github.com/freaxnx01/game-rhyflitzer/blob/9a42d756b625a908d84d1b5eec7b6fc6d0988985/LICENSE.md",
+        "https://github.com/freaxnx01/game-rhyflitzer/blob/9a42d756b625a908d84d1b5eec7b6fc6d0988985/CREDITS.md",
+        "https://github.com/freaxnx01/game-rhyflitzer/blob/9a42d756b625a908d84d1b5eec7b6fc6d0988985/index.html",
+        "https://github.com/freaxnx01/game-rhyflitzer/blob/9a42d756b625a908d84d1b5eec7b6fc6d0988985/prototype/index.html",
+        "https://github.com/freaxnx01/game-rhyflitzer/blob/9a42d756b625a908d84d1b5eec7b6fc6d0988985/prototype/assets/hatchback.LICENSE.md"
+      ]
+    },
+    {
+      "id": "vibewars-license-declaration-conflict",
+      "repository_url": "https://github.com/asynkron/VibeWars",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "0c8f2e5471fb42c5e306ec55c0b857c709f4bc4b",
+      "reason": "The normal TypeScript entry directly renders Three and has human/CPU turns and actual vital-unit/HQ/elimination/points end-game paths. Root LICENSE and README state Apache-2.0 while package.json declares ISC; the current scope of those declarations has not been resolved. The bundled sound notice is affirmatively CC-BY-SA-3.0, not non-commercial or unlicensed, and the frozen Feint directory is an internal AI reference rather than evidence of another renderer.",
+      "next_action": "Clarify the project code/license declarations and retain per-model/sound provenance before promotion as a normally labeled project. Do not infer dual licensing/relicensing or private game code solely from mismatched metadata; no AI tournament, game, asset tool or upstream suite was run.",
+      "evidence_urls": [
+        "https://github.com/asynkron/VibeWars/blob/0c8f2e5471fb42c5e306ec55c0b857c709f4bc4b/README.md",
+        "https://github.com/asynkron/VibeWars/blob/0c8f2e5471fb42c5e306ec55c0b857c709f4bc4b/LICENSE",
+        "https://github.com/asynkron/VibeWars/blob/0c8f2e5471fb42c5e306ec55c0b857c709f4bc4b/package.json",
+        "https://github.com/asynkron/VibeWars/blob/0c8f2e5471fb42c5e306ec55c0b857c709f4bc4b/index.html",
+        "https://github.com/asynkron/VibeWars/blob/0c8f2e5471fb42c5e306ec55c0b857c709f4bc4b/src/game.ts",
+        "https://github.com/asynkron/VibeWars/blob/0c8f2e5471fb42c5e306ec55c0b857c709f4bc4b/src/render.ts",
+        "https://github.com/asynkron/VibeWars/blob/0c8f2e5471fb42c5e306ec55c0b857c709f4bc4b/src/systems/GameState.ts",
+        "https://github.com/asynkron/VibeWars/blob/0c8f2e5471fb42c5e306ec55c0b857c709f4bc4b/public/assets/sounds/license.txt",
+        "https://github.com/asynkron/VibeWars/blob/0c8f2e5471fb42c5e306ec55c0b857c709f4bc4b/public/assets/sounds/readme.txt",
+        "https://github.com/asynkron/VibeWars/blob/0c8f2e5471fb42c5e306ec55c0b857c709f4bc4b/src/reference/feint0805/README.md"
+      ]
     }
   ]
 }
