@@ -2515,6 +2515,40 @@
         "https://github.com/asynkron/VibeWars/blob/0c8f2e5471fb42c5e306ec55c0b857c709f4bc4b/public/assets/sounds/readme.txt",
         "https://github.com/asynkron/VibeWars/blob/0c8f2e5471fb42c5e306ec55c0b857c709f4bc4b/src/reference/feint0805/README.md"
       ]
+    },
+    {
+      "id": "music-universe-flat-rhythm-separate-three-visualizer",
+      "repository_url": "https://github.com/Aaron0837/music-universe",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "3af2bc8ded70955d31908d7b97d2d09855fc7501",
+      "reason": "The MIT React music app has real scored rhythm gameplay, but its active RhythmGame draws the lanes/notes through canvas.getContext('2d') and RhythmSession supplies judgments. The direct Three UniverseRenderer is a separate audio-reactive preset visualizer. Three in package.json or that non-game 3D scene does not establish a Three-rendered 3D game.",
+      "next_action": "Reconsider only if an actual volumetric Three gameplay mode is implemented and its entry, rules/result and media scope can be traced. Do not misclassify as R3F or claim the rhythm game has no gameplay; no music import, playback, storage or PWA action was performed.",
+      "evidence_urls": [
+        "https://github.com/Aaron0837/music-universe/blob/3af2bc8ded70955d31908d7b97d2d09855fc7501/README.md",
+        "https://github.com/Aaron0837/music-universe/blob/3af2bc8ded70955d31908d7b97d2d09855fc7501/LICENSE",
+        "https://github.com/Aaron0837/music-universe/blob/3af2bc8ded70955d31908d7b97d2d09855fc7501/package.json",
+        "https://github.com/Aaron0837/music-universe/blob/3af2bc8ded70955d31908d7b97d2d09855fc7501/src/components/rhythm-game/RhythmGame.tsx#L32-L89",
+        "https://github.com/Aaron0837/music-universe/blob/3af2bc8ded70955d31908d7b97d2d09855fc7501/src/components/rhythm-game/RhythmSession.ts",
+        "https://github.com/Aaron0837/music-universe/blob/3af2bc8ded70955d31908d7b97d2d09855fc7501/src/rendering/UniverseRenderer.ts#L20-L54"
+      ]
+    },
+    {
+      "id": "open-sinnoh-rom-backed-engine-scope",
+      "repository_url": "https://github.com/DennisSnijder/open-sinnoh",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "95acfced3b42c7ed3764572bfcf33f33ad318a88",
+      "reason": "MIT engine source is available, but the advertised Pokémon Platinum play path imports the player's own commercial ROM data; the repository says it does not distribute that game's code/graphics/text/music/data. README also advertises small original fixture/demo packs, so this is not an assertion that no original runnable content exists. Their complete game/render/objective scope has not been separately verified for this collection.",
+      "next_action": "Keep the ROM-backed commercial game separate from source-open engine status. Review a clearly original, freely distributable fixture/game mode and its direct renderer, complete rules/result, asset grants and author demo independently before promotion. Do not acquire/import ROMs or treat the source MIT grant as a grant to Pokémon assets/branding; no ROM, account, telemetry or game was activated.",
+      "evidence_urls": [
+        "https://github.com/DennisSnijder/open-sinnoh/blob/95acfced3b42c7ed3764572bfcf33f33ad318a88/README.md#L19-L26",
+        "https://github.com/DennisSnijder/open-sinnoh/blob/95acfced3b42c7ed3764572bfcf33f33ad318a88/README.md#L65-L79",
+        "https://github.com/DennisSnijder/open-sinnoh/blob/95acfced3b42c7ed3764572bfcf33f33ad318a88/LICENSE",
+        "https://github.com/DennisSnijder/open-sinnoh/blob/95acfced3b42c7ed3764572bfcf33f33ad318a88/package.json",
+        "https://github.com/DennisSnijder/open-sinnoh/blob/95acfced3b42c7ed3764572bfcf33f33ad318a88/CREDITS.md",
+        "https://github.com/DennisSnijder/open-sinnoh/blob/95acfced3b42c7ed3764572bfcf33f33ad318a88/THIRD_PARTY_NOTICES.md"
+      ]
     }
   ]
 }

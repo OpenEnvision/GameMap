@@ -51,7 +51,8 @@ All listed entries are **source reviewed**, with no game builds, upstream test r
 | 045 | 6 | 2026-10-26 | [Pinned source review](batch-045.md) |
 | 046 | 6 | 2026-10-26 | [Pinned source review](batch-046.md) |
 | 047 | 5 | 2026-10-26 | [Pinned source review](batch-047.md) |
+| 048 | 4 | 2026-10-26 | [Pinned source review](batch-048.md) |
 
-[223-game machine-readable index](../games.json) · [Candidate/exclusion queue](../candidates.json) · [Scope and method](../README.md)
+[227-game machine-readable index](../games.json) · [Candidate/exclusion queue](../candidates.json) · [Scope and method](../README.md)
 
 [License correction 001](license-review-001.md) moves HexGL to pending and discloses file-level notices. Batch totals above reflect that correction, rather than counting the original HexGL draft as verified.
