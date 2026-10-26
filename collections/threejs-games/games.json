@@ -23076,6 +23076,483 @@
         "No local server/browser run was used to certify README's direct-file/no-network setup.",
         "No upstream installation, build, automated suite or playtest occurred. Source review does not establish present browser/device operation, all objectives' reachability, full rules/simulation correctness, service availability or independently cleared data/media/dependency rights."
       ]
+    },
+    {
+      "id": "server-survival",
+      "name": "Server Survival",
+      "repository_url": "https://github.com/pshenok/server-survival",
+      "genres": [
+        "infrastructure strategy",
+        "tower defense",
+        "resource simulation"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (HTML CDN declaration)",
+        "render_evidence": {
+          "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/game.js#L326-L341",
+          "claim": "The actual index loads Three r128 as a CDN global and the module entry loads authored game.js. That file directly creates THREE.WebGLRenderer and scene/camera; its active animation frame updates the simulation and renders volumetric service meshes. Service.js constructs box/cylinder/sphere and other Three meshes, not just flat diagram sprites."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "@eslint/js": "^10.0.1",
+              "eslint": "^10.7.0",
+              "globals": "^17.7.0",
+              "happy-dom": "^20.11.1",
+              "vitest": "^4.1.10"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "The root npm manifest is optional development tooling only, with no runtime dependency map; exact ESLint/Happy DOM/Vitest declarations are recorded. Runtime HTML instead loads Three r128 and a Tailwind CSS CDN script, which are disclosed rather than inventing an npm Three dependency.",
+          "Authored request-routing, resource/economy/failure and campaign modules model fictional service infrastructure. The 3D nodes are procedural Three meshes; SoundService uses generated browser audio feedback. No cloud SDK, cloud account or actual infrastructure provisioning was invoked.",
+          "The HTML/global scene uses authored camera/input helpers and plain DOM campaign/HUD/debrief screens, without a replacement render engine. Local save/load, achievements, snapshots and share/export paths are implemented separately and were not activated.",
+          "README/tutorial cloud-architecture explanations, dollar costs and system-performance analogies are game rules and author educational claims; they were not independently certified as real operational guidance or real provider pricing. External CDN availability and every asset/design origin were not independently audited."
+        ],
+        "framework_audit": "The scoped actual entry, directly created Three renderer, active input/state/rules and objective/result path were inspected along with available manifest/CDN declarations. No R3F, A-Frame, Babylon.js, Unity or replacement scene/render engine was identified in that scope. DOM UI, authored helper/simulation, input/audio and server/build roles are disclosed; no exhaustive transitive/runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/src/campaign/campaign.js#L227-L283",
+        "claim": "The active game frame calls CampaignController.tick, which evaluates objective predicates and end conditions. A win requires all primary objectives plus at least one completed request; reputation/money thresholds or unmet objectives at timeout can lose. The actual end method freezes simulation, persists earned stars/progress on a win and invokes the campaign debrief UI."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/LICENSE",
+        "additional_notices": [
+          "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/README.md",
+          "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/index.html"
+        ],
+        "notes": "Root LICENSE supplies a full MIT project-code grant. Sampled service geometry and SoundService feedback are authored code; Three/Tailwind, browser/system media and any repository screenshots/branding retain their applicable terms. No blanket clearance of cloud-provider marks, architecture accuracy or every media origin is inferred from MIT."
+      },
+      "demo": {
+        "url": "https://pshenok.github.io/server-survival/",
+        "status": "page-read",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/README.md",
+        "notes": "The README supplies this exact author URL. Text retrieval on 2026-10-26 returned the v3.0 title/ready menu, initial budget/reputation/traffic HUD and campaign/failure controls. No start, renderer, objective, successful level or source/deployment match was tested."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/README.md",
+        "notes": "A source prototype with campaign objectives, served-request win gate, reputation/economy/timeout loss, debrief and persisted stars, plus separate survival/sandbox modes. README counts, educational accuracy, campaign completion, balancing and claimed tests were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "52fc46f0602acf11b8e2a9cf2627e706ccff8f6f",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-043.md#server-survival",
+        "reviewed_files": [
+          {
+            "path": "game.js",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/game.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/README.md"
+          },
+          {
+            "path": "src/achievements/achievements.js",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/src/achievements/achievements.js"
+          },
+          {
+            "path": "src/campaign/campaign.js",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/src/campaign/campaign.js"
+          },
+          {
+            "path": "src/campaign/levels.js",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/src/campaign/levels.js"
+          },
+          {
+            "path": "src/campaign/objectives.js",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/src/campaign/objectives.js"
+          },
+          {
+            "path": "src/entities/Service.js",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/src/entities/Service.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/src/main.js"
+          },
+          {
+            "path": "src/services/SoundService.js",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/src/services/SoundService.js"
+          },
+          {
+            "path": "src/state.js",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/src/state.js"
+          },
+          {
+            "path": "src/ui/campaign-ui.js",
+            "url": "https://github.com/pshenok/server-survival/blob/52fc46f0602acf11b8e2a9cf2627e706ccff8f6f/src/ui/campaign-ui.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Infrastructure placement/routing occurs on a planar graph rendered with volumetric nodes and orbitable 3D camera. This is a 3D-rendered strategy board rather than a real cloud management client.",
+        "The readable author page establishes static HTML/UI retrieval only. No Start Survival, campaign, sandbox injection, service purchase/link, save/upload, snapshot, sound or result was activated.",
+        "All budgets/services/traffic in the inspected flow are simulation state; no actual cloud resource or paid service was created.",
+        "No upstream installation, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, all levels' reachability, full rules/economy correctness, service behavior or independently cleared media/dependency rights."
+      ]
+    },
+    {
+      "id": "scam-with-friends-web",
+      "name": "Scam With Your Friends — Web",
+      "repository_url": "https://github.com/mrzh7/scam-with-your-friends-web",
+      "genres": [
+        "fictional office party",
+        "time management",
+        "co-op simulation"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.180.0 (npm declaration)",
+        "render_evidence": {
+          "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/components/Office.tsx#L18-L29",
+          "claim": "The actual React app mounts Office, whose effect directly constructs THREE.WebGLRenderer for an authored volumetric room/avatars. Its own requestAnimationFrame renders that scene and handles office movement/interaction commands. App passes the same spatial world, player input/commands and game event state; React supplies DOM office/desktop/result UI without R3F."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/package.json",
+            "dependencies": {
+              "jose": "^6.2.12",
+              "lucide-react": "^0.468.0",
+              "react": "^19.2.0",
+              "react-dom": "^19.2.0",
+              "three": "^0.180.0"
+            },
+            "dev_dependencies": {
+              "@cloudflare/vite-plugin": "^1.13.7",
+              "@cloudflare/workers-types": "^5.20261004.1",
+              "@playwright/test": "^1.56.0",
+              "@types/node": "^24.7.0",
+              "@types/react": "^19.2.0",
+              "@types/react-dom": "^19.2.0",
+              "@types/three": "^0.180.0",
+              "@types/ws": "^8.18.2",
+              "@vitejs/plugin-react": "^5.0.4",
+              "typescript": "^5.9.3",
+              "vite": "^7.1.9",
+              "vitest": "^4.1.11",
+              "wrangler": "^4.43.0",
+              "ws": "^8.22.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Runtime npm declares three ^0.180.0, React/ReactDOM ^19.2.0, lucide-react ^0.468.0 and jose ^6.2.12; the full development map, including local ws tooling, is recorded exactly. Node >=24 is declared.",
+          "Authored actor/world/ragdoll and quota/campaign rules run independently of the render engine; Office uses direct Three geometry while React manages DOM menus/phone/desktop/result screens. The active office UI passes onInput/onCommand into the authored world helper.",
+          "README states source defaults to no accounts and can use scripted offline dialogue with an empty AI key; the hosted demo instead requires Google login or verified email. Local scripted solo, Cloudflare/room networking and hosted account policy are not conflated, and none was exercised.",
+          "External AI/speech, OAuth/email, Cloudflare/storage and co-op microphone/voice features have separate provider terms/costs. These are optional or deployment-dependent roles, not render frameworks. No key, provider request, account, microphone, voice session, room or paid service was used.",
+          "THIRD_PARTY_NOTICES says room/portrait/favicon art is generated code/SVG and original-game media/private research are excluded from the public tree. It separately qualifies name/design similarities and promotional OFL fonts. Those remain author provenance statements; the overall design and all media rights were not independently cleared."
+        ],
+        "framework_audit": "The scoped actual entry, directly created Three renderer, active input/state/rules and objective/result path were inspected along with available manifest/CDN declarations. No R3F, A-Frame, Babylon.js, Unity or replacement scene/render engine was identified in that scope. DOM UI, authored helper/simulation, input/audio and server/build roles are disclosed; no exhaustive transitive/runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/game/engine.ts#L14-L20",
+        "claim": "The active reducer's review compares earned in-game performance with the day quota: passing advances to review or won on day seven, while failure sets fired. App's playing-phase timer/dispatch and actual Review/BossReview UI consume these phases. The scoped game is fictional NPC/office quota management, with a source-scripted solo path and separate optional co-op/provider features."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/LICENSE",
+        "additional_notices": [
+          "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/README.md",
+          "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/THIRD_PARTY_NOTICES.md",
+          "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/docs/DEPENDENCIES.md"
+        ],
+        "notes": "Root LICENSE grants MIT for maintainers' project-owned code, qualified by THIRD_PARTY_NOTICES to rights they hold. The unofficial original-game name/reference, protected design expression, dependencies, external services and trailer fonts are not represented as covered wholesale by MIT. The author's public-media/private-archive descriptions were read as provenance, not an independent legal clearance."
+      },
+      "demo": {
+        "url": "https://scam.gamefun.world",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/README.md",
+        "notes": "The README supplies this exact author-hosted URL. A text-reader attempt failed on 2026-10-26; no renderer, input, game, account or source/deployment match was tested, and reader failure does not establish an offline site."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/README.md",
+        "notes": "An experimental browser-remake prototype with an integrated direct-Three office, source-scripted solo state, daily quota review/firing and a day-seven win state. The hosted account gate, co-op authority, all campaign branches and optional AI/speech/voice behavior were not run or certified."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "b30aa8aa8b486f5b6a160defbb1345807f28247e",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-043.md#scam-with-friends-web",
+        "reviewed_files": [
+          {
+            "path": "docs/DEPENDENCIES.md",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/docs/DEPENDENCIES.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/README.md"
+          },
+          {
+            "path": "src/App.tsx",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/App.tsx"
+          },
+          {
+            "path": "src/components/BossReview.tsx",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/components/BossReview.tsx"
+          },
+          {
+            "path": "src/components/Office.tsx",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/components/Office.tsx"
+          },
+          {
+            "path": "src/components/Review.tsx",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/components/Review.tsx"
+          },
+          {
+            "path": "src/game/audio.ts",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/game/audio.ts"
+          },
+          {
+            "path": "src/game/campaign.ts",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/game/campaign.ts"
+          },
+          {
+            "path": "src/game/engine.ts",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/game/engine.ts"
+          },
+          {
+            "path": "src/game/useCallerSpeech.ts",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/game/useCallerSpeech.ts"
+          },
+          {
+            "path": "src/game/useDialogue.ts",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/game/useDialogue.ts"
+          },
+          {
+            "path": "src/game/useRoom.ts",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/game/useRoom.ts"
+          },
+          {
+            "path": "src/game/useWorld.ts",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/game/useWorld.ts"
+          },
+          {
+            "path": "src/game/world.ts",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/game/world.ts"
+          },
+          {
+            "path": "src/main.tsx",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/src/main.tsx"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/mrzh7/scam-with-your-friends-web/blob/b30aa8aa8b486f5b6a160defbb1345807f28247e/THIRD_PARTY_NOTICES.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This record scopes the normal 3D office and its coupled actor/game state; separate desktop/camera/studio views are not counted as additional games.",
+        "Fictional NPC/in-game-money mechanics are recorded as a game, without instructions for real-world conduct or an assertion that provider features are free.",
+        "No office input, fictional call/action, timer/review, provider dialogue, speech/recording, login/email, save sync, network room or deployment was activated.",
+        "No upstream installation, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, all levels' reachability, full rules/economy correctness, service behavior or independently cleared media/dependency rights."
+      ]
+    },
+    {
+      "id": "pocketvibe-mini-golf",
+      "name": "PocketVibe — Mini Golf",
+      "repository_url": "https://github.com/cobanov/pocketvibe",
+      "genres": [
+        "mini golf",
+        "sports",
+        "course score attack"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1 (scoped game npm declaration)",
+        "render_evidence": {
+          "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/src/handheld.js#L250-L265",
+          "claim": "The actual Mini Golf HTML loads its own main.js, which builds Three scene/camera/course/ball state and uses the project-authored handheld helper. That helper directly creates THREE.WebGLRenderer and owns its setAnimationLoop; the game render callback draws the same volumetric course. The helper provides sizing/input/save/audio integration rather than a replacement scene engine."
+        },
+        "manifests": [
+          {
+            "path": "games/mini-golf/package.json",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/package.json",
+            "dependencies": {
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "vite": "^8.3.3"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Only the bundled games/mini-golf implementation is indexed, once for this repository. Its package declares three ^0.186.1 and Vite ^8.3.3 for development. The launcher, native ports, Neon Pinball and other bundled games are not counted as independently verified entries.",
+          "The inspected handheld.js is an authored Three/input/screen/save/device helper used by the Mini Golf entry; custom fixed-step golf physics handles height fields, slopes, borders, movers, cup/hazards and stroke progression. No R3F, external scene engine or native game runtime was required or run for this source decision.",
+          "Sound.js decodes pre-rendered WAV effects and looping OGG music with Web Audio. A game-specific SFX-generation script was inspected as text, not run; the audio is not mislabeled as all generated live at runtime. No recording/model/font payload was downloaded or independently rights-audited.",
+          "Root README separately identifies launcher/site DejaVu font terms under Bitstream Vera and Simple Icons as CC0. Those platform notices do not establish that every bundled game's media is MIT or that every supported handheld meets the claimed performance.",
+          "Native audio-unlock/device hooks, controller mapping, screen options and persistent bests are disclosed but untested. The author website is a collection/launcher URL, not a verified direct game deep link."
+        ],
+        "framework_audit": "The scoped actual entry, directly created Three renderer, active input/state/rules and objective/result path were inspected along with available manifest/CDN declarations. No R3F, A-Frame, Babylon.js, Unity or replacement scene/render engine was identified in that scope. DOM UI, authored helper/simulation, input/audio and server/build roles are disclosed; no exhaustive transitive/runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/src/main.js#L595-L634",
+        "claim": "The active physics step reports cup/hazard/stop events, and main drives sunk/pickup phases into finishHole. That records strokes and shows a hole scorecard; the final configured hole calls showFinal, calculates the course total, saves a new best and presents replay/title controls. Water/edge penalties, a stroke cap and moving-obstacle interactions are authored game rules rather than a detached course viewer."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/LICENSE",
+        "additional_notices": [
+          "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/README.md",
+          "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/README.md",
+          "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/site/public/fonts/LICENSE.txt"
+        ],
+        "notes": "Root LICENSE supplies MIT for project code, including the scoped authored Mini Golf/helper sources. The root README and full site-font notice keep Bitstream/DejaVu and platform-mark terms separate. Pre-rendered game audio and other payloads were not independently cleared, and the license label does not certify all launcher/native/other-game assets or provider-generated output."
+      },
+      "demo": {
+        "url": "https://pocketvibe.cobanov.dev",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/README.md",
+        "notes": "The root README supplies this author launcher/collection website and says its games can be played there. It is not represented as a verified direct Mini Golf deep link. A text-reader attempt failed on 2026-10-26; no renderer, input, game, account or source/deployment match was tested, and reader failure does not establish an offline site."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/README.md",
+        "notes": "A complete source flow for the scoped mini-game: two configured courses, cup/penalty/stroke handling, hole scorecards, course final totals and best/replay controls. All holes' reachability, physics accuracy, audio payload readiness, browser/controller/ROCKNIX/Android behavior and advertised performance were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "ce45e13cec26dbda4e1bfbd631c561a48965b70e",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-043.md#pocketvibe-mini-golf",
+        "reviewed_files": [
+          {
+            "path": "games/mini-golf/index.html",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/index.html"
+          },
+          {
+            "path": "games/mini-golf/package.json",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/package.json"
+          },
+          {
+            "path": "games/mini-golf/pocketvibe.json",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/pocketvibe.json"
+          },
+          {
+            "path": "games/mini-golf/README.md",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/README.md"
+          },
+          {
+            "path": "games/mini-golf/src/ball.js",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/src/ball.js"
+          },
+          {
+            "path": "games/mini-golf/src/course.js",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/src/course.js"
+          },
+          {
+            "path": "games/mini-golf/src/handheld.js",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/src/handheld.js"
+          },
+          {
+            "path": "games/mini-golf/src/holes.js",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/src/holes.js"
+          },
+          {
+            "path": "games/mini-golf/src/hud.js",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/src/hud.js"
+          },
+          {
+            "path": "games/mini-golf/src/main.js",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/src/main.js"
+          },
+          {
+            "path": "games/mini-golf/src/physics.js",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/src/physics.js"
+          },
+          {
+            "path": "games/mini-golf/src/shared.js",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/src/shared.js"
+          },
+          {
+            "path": "games/mini-golf/src/sound.js",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/src/sound.js"
+          },
+          {
+            "path": "games/mini-golf/src/style.css",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/src/style.css"
+          },
+          {
+            "path": "games/mini-golf/src/world.js",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/games/mini-golf/src/world.js"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/README.md"
+          },
+          {
+            "path": "site/public/fonts/LICENSE.txt",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/site/public/fonts/LICENSE.txt"
+          },
+          {
+            "path": "tools/sfx/games/mini-golf.py",
+            "url": "https://github.com/cobanov/pocketvibe/blob/ce45e13cec26dbda4e1bfbd631c561a48965b70e/tools/sfx/games/mini-golf.py"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Rules mainly advance horizontal ball coordinates over a height field with ramps/obstacles, rendered as a real volumetric golf board; the dimension label does not imply unrestricted three-axis flight.",
+        "Only one scoped game is counted for this repository. Template/launcher/native tooling and read-only neighboring-game docs are context, not extra verified games.",
+        "No putt, charge, cup/hazard, next-hole/final card, save, Web Audio file, native unlock bridge, launcher installation or upstream build/test was activated.",
+        "No upstream installation, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, all levels' reachability, full rules/economy correctness, service behavior or independently cleared media/dependency rights."
+      ]
     }
   ]
 }

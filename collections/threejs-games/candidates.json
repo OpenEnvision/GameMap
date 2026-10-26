@@ -2196,6 +2196,76 @@
         "https://github.com/cramara/Volleyball-court-in-ThreeJS/blob/4eb47fcfb1f0fc46b9524b72dd29923cb02578c1/components/VolleyballCourt.tsx",
         "https://github.com/cramara/Volleyball-court-in-ThreeJS/blob/4eb47fcfb1f0fc46b9524b72dd29923cb02578c1/components/game/GameLogic.ts"
       ]
+    },
+    {
+      "id": "dawnfolk-open-ended-game-scope",
+      "repository_url": "https://github.com/imsvidskiy/dawnfolk",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "c7209aa85449808b997feb59b209752dee54e887",
+      "reason": "A direct Three WebGPURenderer, active engine loop, worker simulation and player power commands exist, with MIT project text and React DOM UI. The current scoped audit establishes an open-ended world/god simulation but has not settled its concrete player-objective/outcome boundary for this strict actual-game collection. It is not mislabeled R3F, source-unavailable or merely a static scene.",
+      "next_action": "Review a documented stateful playing/survival mode and its player-directed goals/outcomes, then record that scope before promotion. Keep the vendored UI/font/dependency terms separate; no worker/GPU/gameplay was run.",
+      "evidence_urls": [
+        "https://github.com/imsvidskiy/dawnfolk/blob/c7209aa85449808b997feb59b209752dee54e887/README.md",
+        "https://github.com/imsvidskiy/dawnfolk/blob/c7209aa85449808b997feb59b209752dee54e887/LICENSE",
+        "https://github.com/imsvidskiy/dawnfolk/blob/c7209aa85449808b997feb59b209752dee54e887/package.json",
+        "https://github.com/imsvidskiy/dawnfolk/blob/c7209aa85449808b997feb59b209752dee54e887/src/rendering/create-renderer.ts",
+        "https://github.com/imsvidskiy/dawnfolk/blob/c7209aa85449808b997feb59b209752dee54e887/src/game/game-engine.ts",
+        "https://github.com/imsvidskiy/dawnfolk/blob/c7209aa85449808b997feb59b209752dee54e887/src/simulation/simulation.ts",
+        "https://github.com/imsvidskiy/dawnfolk/blob/c7209aa85449808b997feb59b209752dee54e887/src/simulation/commands.ts"
+      ]
+    },
+    {
+      "id": "planeteer-exploration-game-scope",
+      "repository_url": "https://github.com/andreumassanet/planeteer",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "a1a2202427aa4ca7f9e01ebd9f1745d613be7c0d",
+      "reason": "The source directly creates a Three renderer and updates a walkable/vehicle world with grounded passport arrivals and persistent stamps. A bounded challenge/result or otherwise sufficiently clear game-objective scope has not been established in this audit, so the broad Earth-explorer description is retained as a candidate rather than promoted as a completed game. This is not a no-source or flat-renderer exclusion.",
+      "next_action": "Trace a concrete challenge or explicit playing objective/outcome tied to the active world. Preserve the separate geography, CC0 model/audio and OFL font notices, without assuming all payloads or 101 advertised landmarks were verified.",
+      "evidence_urls": [
+        "https://github.com/andreumassanet/planeteer/blob/a1a2202427aa4ca7f9e01ebd9f1745d613be7c0d/README.md",
+        "https://github.com/andreumassanet/planeteer/blob/a1a2202427aa4ca7f9e01ebd9f1745d613be7c0d/LICENSE",
+        "https://github.com/andreumassanet/planeteer/blob/a1a2202427aa4ca7f9e01ebd9f1745d613be7c0d/package.json",
+        "https://github.com/andreumassanet/planeteer/blob/a1a2202427aa4ca7f9e01ebd9f1745d613be7c0d/src/app/graphics.ts#L46-L58",
+        "https://github.com/andreumassanet/planeteer/blob/a1a2202427aa4ca7f9e01ebd9f1745d613be7c0d/src/passport.ts",
+        "https://github.com/andreumassanet/planeteer/blob/a1a2202427aa4ca7f9e01ebd9f1745d613be7c0d/src/app/frame/whereabouts.ts",
+        "https://github.com/andreumassanet/planeteer/blob/a1a2202427aa4ca7f9e01ebd9f1745d613be7c0d/CREDITS.md"
+      ]
+    },
+    {
+      "id": "blockyard-scoped-render-audit",
+      "repository_url": "https://github.com/Potrock/blockyard",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "45b2b9f2236a9e6ee87df50d1cd29f4c64182252",
+      "reason": "The repository is a broad Rust/Wasm/TypeScript multiplayer platform with several included games, and the inspected golf server has real score/round rules. Its Three manifest alone does not complete a chosen game's client/renderer and engine-boundary audit. Rust is not automatically treated as a forbidden renderer, and the platform is not counted as nine verified games.",
+      "next_action": "Inspect one actual game's client, directly created renderer, active input/outcomes and the role of its own voxel/Wasm core. Record required server/auth/media scope and count the repository only once when a scoped entry qualifies; no WASM build, room or Discord/account action was used.",
+      "evidence_urls": [
+        "https://github.com/Potrock/blockyard/blob/45b2b9f2236a9e6ee87df50d1cd29f4c64182252/README.md",
+        "https://github.com/Potrock/blockyard/blob/45b2b9f2236a9e6ee87df50d1cd29f4c64182252/LICENSE",
+        "https://github.com/Potrock/blockyard/blob/45b2b9f2236a9e6ee87df50d1cd29f4c64182252/package.json",
+        "https://github.com/Potrock/blockyard/blob/45b2b9f2236a9e6ee87df50d1cd29f4c64182252/engine/Cargo.toml",
+        "https://github.com/Potrock/blockyard/blob/45b2b9f2236a9e6ee87df50d1cd29f4c64182252/src/platform/engine/wasm.ts",
+        "https://github.com/Potrock/blockyard/blob/45b2b9f2236a9e6ee87df50d1cd29f4c64182252/src/games/golf/server.ts"
+      ]
+    },
+    {
+      "id": "shootercoaster-current-r3f",
+      "repository_url": "https://github.com/alexbelyeu/shooterCoaster",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "ef5018cf51980d73276d70d77c1f5d7bcc0111f8",
+      "reason": "The current actual HTML entry goes through src/main.tsx/App to GameCanvas, which imports and renders React Three Fiber Canvas and drei. The manifest also declares R3F/drei/postprocessing. Older direct-Three JavaScript files and the old README remain in the tree, but do not establish the current normal entry as direct Three.",
+      "next_action": "Reconsider only a separately scoped runnable direct-Three edition with its own fixed source evidence; no historic branch or old content is restored automatically.",
+      "evidence_urls": [
+        "https://github.com/alexbelyeu/shooterCoaster/blob/ef5018cf51980d73276d70d77c1f5d7bcc0111f8/index.html",
+        "https://github.com/alexbelyeu/shooterCoaster/blob/ef5018cf51980d73276d70d77c1f5d7bcc0111f8/src/main.tsx",
+        "https://github.com/alexbelyeu/shooterCoaster/blob/ef5018cf51980d73276d70d77c1f5d7bcc0111f8/src/app/App.tsx",
+        "https://github.com/alexbelyeu/shooterCoaster/blob/ef5018cf51980d73276d70d77c1f5d7bcc0111f8/src/canvas/GameCanvas.tsx#L1-L24",
+        "https://github.com/alexbelyeu/shooterCoaster/blob/ef5018cf51980d73276d70d77c1f5d7bcc0111f8/package.json",
+        "https://github.com/alexbelyeu/shooterCoaster/blob/ef5018cf51980d73276d70d77c1f5d7bcc0111f8/README.md"
+      ]
     }
   ]
 }
