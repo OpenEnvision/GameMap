@@ -1765,6 +1765,61 @@
         "https://github.com/VictorZakharov/supaplex-glm3f/blob/b122afbc5df62127c4f80ec60113a0e161b1ae69/src/render/TileLayer.ts#L130-L136",
         "https://github.com/VictorZakharov/supaplex-glm3f/blob/b122afbc5df62127c4f80ec60113a0e161b1ae69/src/render/GameRenderer.ts#L33-L74"
       ]
+    },
+    {
+      "id": "curling-liam-osler",
+      "repository_url": "https://github.com/LiamOsler/curling",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "d7104e9283f74ba7acc5b8b04437a3a3abea3312",
+      "reason": "Direct Three rendering and playable stone/turn logic are present, but the inspected tree has only README, index and a model. No project license or full source-code redistribution grant was identified in README/index; dependency/library terms do not license this game's own source/assets.",
+      "next_action": "Obtain an explicit project grant and model provenance, then recheck the objective/scoring path before promotion.",
+      "evidence_urls": [
+        "https://github.com/LiamOsler/curling/blob/d7104e9283f74ba7acc5b8b04437a3a3abea3312/README.md",
+        "https://github.com/LiamOsler/curling/blob/d7104e9283f74ba7acc5b8b04437a3a3abea3312/index.html#L305-L319"
+      ]
+    },
+    {
+      "id": "chess-3d-mrabhin",
+      "repository_url": "https://github.com/mrabhin03/3D-Chess-Game",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "4b66ca40261a3deff228db0038d8e7b59d086b1a",
+      "reason": "The actual browser entry directly uses Three and chess.js with a mate result, and README asserts MIT. No complete project LICENSE/grant was found in the reviewed tree or README. A library's own MIT notice or the README's bare license name is not recorded as a fully verified project license.",
+      "next_action": "Clarify the complete project grant and model/environment/dependency notices before promotion; retain direct-render/gameplay evidence without upgrading the license assertion.",
+      "evidence_urls": [
+        "https://github.com/mrabhin03/3D-Chess-Game/blob/4b66ca40261a3deff228db0038d8e7b59d086b1a/readme.md#L51-L55",
+        "https://github.com/mrabhin03/3D-Chess-Game/blob/4b66ca40261a3deff228db0038d8e7b59d086b1a/index.html",
+        "https://github.com/mrabhin03/3D-Chess-Game/blob/4b66ca40261a3deff228db0038d8e7b59d086b1a/main.js#L1-L8",
+        "https://github.com/mrabhin03/3D-Chess-Game/blob/4b66ca40261a3deff228db0038d8e7b59d086b1a/main.js#L621-L625"
+      ]
+    },
+    {
+      "id": "cinematic-eight-ball-reserved",
+      "repository_url": "https://github.com/carlomigueldy/cinematic-8ball-pool",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "09ed8a573c4e4adf908c4d82d52aae511481fdc8",
+      "reason": "The source directly creates Three and implements an eight-ball game, but README explicitly says no open-source license was selected and all rights are reserved unless a license is added. It fails the open-source licensing boundary despite a public repository and polished gameplay/demo claims.",
+      "next_action": "Reconsider only after an actual author grant is added and source/media terms are reviewed at a new commit.",
+      "evidence_urls": [
+        "https://github.com/carlomigueldy/cinematic-8ball-pool/blob/09ed8a573c4e4adf908c4d82d52aae511481fdc8/README.md#L155-L157",
+        "https://github.com/carlomigueldy/cinematic-8ball-pool/blob/09ed8a573c4e4adf908c4d82d52aae511481fdc8/package.json",
+        "https://github.com/carlomigueldy/cinematic-8ball-pool/blob/09ed8a573c4e4adf908c4d82d52aae511481fdc8/src/main.ts#L178-L185"
+      ]
+    },
+    {
+      "id": "interactive-chess-board-empty",
+      "repository_url": "https://github.com/dgreenheck/interactive-chess-board",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "d8cd406ba4108c105de456b688dceb6f6c6b991f",
+      "reason": "The pinned tree contains only .gitignore, LICENSE and a two-line README. Although the project is MIT and described as a Three board, there is no implemented entry, renderer or game source to inspect at this commit.",
+      "next_action": "Reconsider when an actual implementation and integrated playable rules/objectives are committed; do not infer source from the repository title.",
+      "evidence_urls": [
+        "https://github.com/dgreenheck/interactive-chess-board/blob/d8cd406ba4108c105de456b688dceb6f6c6b991f/README.md",
+        "https://github.com/dgreenheck/interactive-chess-board/blob/d8cd406ba4108c105de456b688dceb6f6c6b991f/LICENSE"
+      ]
     }
   ]
 }
