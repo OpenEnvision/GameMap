@@ -28076,6 +28076,727 @@
         "No public author demo was located, and static-host configuration is not proof of current hosting or browser compatibility.",
         "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
       ]
+    },
+    {
+      "id": "endgame-voithos",
+      "name": "endgame",
+      "repository_url": "https://github.com/voithos/endgame",
+      "genres": [
+        "chess",
+        "online board game"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r76 (vendored public/js/vendor/three.js REVISION)",
+        "render_evidence": {
+          "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/src/scene.js#L144-L150",
+          "claim": "Normal scene setup directly constructs Three WebGLRenderer when WebGL is available, with the project's legacy Three CanvasRenderer fallback. Actual 3D board/piece scene updates follow accepted moves; Vue/jQuery/Bootstrap provide DOM UI rather than replacing Three rendering."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/package.json",
+            "dependencies": {
+              "promise": "~6.1.0",
+              "lodash": "~2.4.1"
+            },
+            "dev_dependencies": {
+              "@eslint/js": "^9.39.5",
+              "esbuild": "^0.28.2",
+              "eslint": "^9.39.5",
+              "globals": "^17.12.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Root manifest declares Promise ~6.1.0 and Lodash ~2.4.1; current development esbuild/ESLint tools are preserved exactly. The actual HTML also loads vendored Three r76, Chess.js, PeerJS, Tween, Vue, jQuery/Bootstrap/Toastr and official/THREEx helpers outside npm maps.",
+          "Firebase 7.13.2 app/database/auth scripts and WebRTC room/media paths are disclosed; these are network/media/UI helpers. No R3F or replacement game renderer was identified.",
+          "Author README now requires Node 22+, while the 2015/2016-era game/vendor APIs remain legacy. No room, Firebase DB/auth operation, WebRTC connection, webcam/mic or upstream tool was activated."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/src/endgame.js#L435-L459",
+        "claim": "Ordinary local and remote legal chess moves pass through Chess.js and afterMove to the actual scene and checkGameOver. Checkmate/stalemate/material/draw conditions disable moves and feed the real game-end screen. Debug alternating-side play is not used as the sole completion evidence."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project; CC-BY art and other vendor/media grants separate)",
+        "source_url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/MIT-LICENSE.txt",
+        "additional_notices": [
+          "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/ATTRIBUTION.md",
+          "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/public/js/vendor/chess.js",
+          "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/README.md"
+        ],
+        "notes": "The full project MIT-LICENSE.txt grants MIT source. ATTRIBUTION.md maps chess models/board/texture, Cburnett SVGs, move sound/icons and libraries to creators. Original chess-piece and board author pages were checked and list CC-BY 3.0; the referenced Tiziana texture also offers CC-BY 3.0 among LGPL options. These are not all CC0 or project-MIT assets. Chess.js preserves BSD-style terms; every other vendored library, SVG, sound and converted asset grant was not independently audited. Freesound text retrieval failed without establishing its individual grant or unavailability."
+      },
+      "demo": {
+        "url": "https://endgame-chess.web.app/",
+        "status": "page-read",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/README.md",
+        "notes": "The exact README URL returned a static HTML/text-reader page. Its room/media templates still contain placeholders; that is not proof this review created a room, initialized Firebase, obtained permissions, connected WebRTC or played chess."
+      },
+      "maturity": {
+        "status": "legacy-release",
+        "basis_url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/README.md",
+        "notes": "A source-reviewed 3D online chess implementation originating in Static Showdown 2015, with real legal-move/checkmate/draw UI flow. The README's current build tooling does not certify old vendor/media/RTC/browser compatibility or current hosted Firebase configuration."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "5b706a4e34e5bc3cad97e5210deb43a714a33b5b",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-051.md#endgame-voithos",
+        "reviewed_files": [
+          {
+            "path": "ATTRIBUTION.md",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/ATTRIBUTION.md"
+          },
+          {
+            "path": "MIT-LICENSE.txt",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/MIT-LICENSE.txt"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/package.json"
+          },
+          {
+            "path": "public/index.html",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/public/index.html"
+          },
+          {
+            "path": "public/js/vendor/chess.js",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/public/js/vendor/chess.js"
+          },
+          {
+            "path": "public/js/vendor/three.js",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/public/js/vendor/three.js"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/README.md"
+          },
+          {
+            "path": "src/endgame.js",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/src/endgame.js"
+          },
+          {
+            "path": "src/game.js",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/src/game.js"
+          },
+          {
+            "path": "src/media.js",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/src/media.js"
+          },
+          {
+            "path": "src/rtc.js",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/src/rtc.js"
+          },
+          {
+            "path": "src/scene.js",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/src/scene.js"
+          },
+          {
+            "path": "src/views.js",
+            "url": "https://github.com/voithos/endgame/blob/5b706a4e34e5bc3cad97e5210deb43a714a33b5b/src/views.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This is a volumetric 3D chess board with planar chess rules, not a free-roaming world. Legacy Three Canvas fallback is disclosed alongside WebGL rendering.",
+        "Normal play depends on room/RTC/Firebase and media-permission flow described by the app, even when a user declines camera/mic; no such permission/connection was activated.",
+        "Model/board/texture CC-BY attribution is preserved; not every SVG/audio/icon/vendor grant or conversion provenance was independently cleared.",
+        "No current full game, network reliability, account/DB write, local setting write, promotion edge case or complete chess-rule conformance was tested.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "steez-jam",
+      "name": "Steez Jam",
+      "repository_url": "https://github.com/harvitronix/steezjam",
+      "genres": [
+        "skiing",
+        "rail tricks",
+        "arcade score challenge"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.185.1 (exact game/package.json runtime)",
+        "render_evidence": {
+          "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/src/main.ts#L1-L22",
+          "claim": "The actual game entry directly creates Three WebGLRenderer and Game; its fixed-step loop advances game.step, presents the actual world and calls renderer.render(game.world.scene,game.camera). The separate micro-site folds that playable game into /play at build time."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "@playwright/test": "^1.62.1"
+            }
+          },
+          {
+            "path": "game/package.json",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/package.json",
+            "dependencies": {
+              "three": "0.185.1"
+            },
+            "dev_dependencies": {
+              "@types/three": "0.185.3",
+              "typescript": "7.0.2",
+              "vite": "8.2.0"
+            }
+          },
+          {
+            "path": "site/package.json",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/site/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "typescript": "7.0.2",
+              "vite": "8.2.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three 0.185.1 is the game runtime dependency. Exact root/game/site manifest maps include Playwright, TypeScript 7.0.2, @types/three and Vite development helpers; the site is a separate plain HTML/TypeScript host.",
+          "Authored skier/rail/course math, fixed-step physics/input, procedural world/effects, WebAudio synth and DOM HUD are helpers; no R3F or replacement game engine was identified.",
+          "README Node 22.12+/pnpm setup and the /play deploy bundle are recorded. Source build tools/automated test hooks were inspected where selected and not executed; benchmark/source-generation claims are not review test results."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/src/game.ts#L320-L363",
+        "claim": "The ordinary landing bank computes combo points/multiplier, records a landed result and session best, then unlocks ability tiers. Crashes void the active combo and record bailed/zero-point feedback. Real controls, jumps/rails/landing and that persistent-on-screen result form a score game, without an invented campaign ending or saved career."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media scope qualified)",
+        "source_url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/LICENSE",
+        "additional_notices": [
+          "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/README.md",
+          "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/src/world/world.ts",
+          "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/src/fx/audio.ts"
+        ],
+        "notes": "Root LICENSE grants MIT project source. Selected world/skier and WebAudio implementations support an authored geometry/synthesis approach, but every dependency/static-site/media origin was not independently audited or relicensed. README benchmark/model-run scoring is an author statement, not a current correctness, game-quality or all-rights certification."
+      },
+      "demo": {
+        "url": "http://steezjam.harvitronix.com/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://api.github.com/repos/harvitronix/steezjam",
+        "notes": "The author homepage came from dated GitHub repository metadata, not a guessed /play URL. Its HTTP request redirected to an HTTPS reader error. The inspected bundle places the game at /play, but no hosted landing/game version, controls or deployment was exercised."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/README.md",
+        "notes": "An authored rail-jam prototype with implemented snow/air/rail/crash, banked trick results and six ability tiers. Best/unlocks are session-local by design and reset on page reload; no complete campaign or persistent progression is claimed."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "93c43de5c7ede974bf60fea504fd9022f23190bc",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-051.md#steez-jam",
+        "reviewed_files": [
+          {
+            "path": "game/index.html",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/index.html"
+          },
+          {
+            "path": "game/package.json",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/package.json"
+          },
+          {
+            "path": "game/src/fx/audio.ts",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/src/fx/audio.ts"
+          },
+          {
+            "path": "game/src/game.ts",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/src/game.ts"
+          },
+          {
+            "path": "game/src/levels.ts",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/src/levels.ts"
+          },
+          {
+            "path": "game/src/main.ts",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/src/main.ts"
+          },
+          {
+            "path": "game/src/player/skier.ts",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/src/player/skier.ts"
+          },
+          {
+            "path": "game/src/ui/hud.ts",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/src/ui/hud.ts"
+          },
+          {
+            "path": "game/src/world/world.ts",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/game/src/world/world.ts"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/README.md"
+          },
+          {
+            "path": "scripts/bundle-site.mjs",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/scripts/bundle-site.mjs"
+          },
+          {
+            "path": "site/package.json",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/site/package.json"
+          },
+          {
+            "path": "site/src/main.ts",
+            "url": "https://github.com/harvitronix/steezjam/blob/93c43de5c7ede974bf60fea504fd9022f23190bc/site/src/main.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Ski/rail constraints run inside a volumetric world; physical realism, every trick/rail/ability tier and difficulty balance were not certified.",
+        "Session best drives tier unlocks rather than a sum of all attempts; the code does not save this career across page reloads.",
+        "The landing site and game have separate builds/dev ports; a fetched homepage alone does not prove /play is present or matches this commit.",
+        "No author-reported benchmark scores, upstream tests, build, touch/browser/layout/performance or audio result was reproduced.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "sillage-skiing",
+      "name": "Sillage",
+      "repository_url": "https://github.com/Alex12062012/sillage",
+      "genres": [
+        "skiing",
+        "downhill challenges",
+        "mountain free ride"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.186.1 (exact declared npm runtime)",
+        "render_evidence": {
+          "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/main.ts#L1-L40",
+          "claim": "The normal entry directly imports and constructs Three WebGLRenderer and the authored Game. Real game/simulation/camera/terrain updates use Three scene geometry and the active frame, separately from the attract-mode bot and free-ride/map tools."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/package.json",
+            "dependencies": {
+              "socket.io-client": "4.8.3",
+              "three": "0.186.1"
+            },
+            "dev_dependencies": {
+              "@eslint/js": "10.0.1",
+              "@playwright/test": "1.64.1",
+              "@types/node": "24.19.2",
+              "@types/three": "0.186.0",
+              "eslint": "10.13.0",
+              "typescript": "6.0.3",
+              "typescript-eslint": "8.72.0",
+              "vite": "8.3.5",
+              "vitest": "5.0.5"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Plain TypeScript/Vite and exact Three 0.186.1; Socket.IO client 4.8.3 is also declared runtime and provides optional online capabilities. Exact development TypeScript/Vite/Vitest/Playwright/ESLint maps are included.",
+          "Authored skiing/terrain/track/challenge/flow/score progression, procedural Three meshes, DOM UI and WebAudio are helpers. No UI rendering framework or alternate 3D engine was identified.",
+          "Optional real-station free-ride data and geo baking are distinct from procedural challenge runs; no downloader, remote geo endpoint, Socket.IO room, gamepad/haptic or build/test was invoked."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/sim/run.ts#L74-L94",
+        "claim": "Normal downhill distance crossing finishZ sets finished, adds time-based bonus, ends the active chain and emits finish. Game/main route that event into finish/run-out, apply medals/records/unlocks and show real results with retry/next/menu. Attract-mode bot runs return to menus rather than being counted as human completion evidence."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code; OSM/IGN/terrain data terms separately attributed)",
+        "source_url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/LICENSE",
+        "additional_notices": [
+          "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/README.md",
+          "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/sim/rousses-data.ts",
+          "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/sim/avoriaz-data.ts",
+          "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/scripts/bake-station.mjs"
+        ],
+        "notes": "Root LICENSE grants MIT project code. Baked station headers explicitly attribute OpenStreetMap contributors under ODbL, IGN BD TOPO under Licence Ouverte and AWS/Mapzen-derived terrain; these data are not called wholly MIT or entirely invented procedurally. The upstream headers/bake-source provenance are recorded without certifying every source-dataset term, transformation or attribution fulfillment. Procedural geometry/audio descriptions do not independently clear all data, media, names or dependencies."
+      },
+      "demo": {
+        "url": "https://sillage-hazel-kappa.vercel.app",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/README.md",
+        "notes": "The exact README public game URL returned a text-reader error. No downhill/free-ride run, station download, multiplayer, save or deployed-build check occurred; reader failure is not an offline-site finding."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/README.md",
+        "notes": "An implemented downhill challenge game with actual finish/score/medal/unlock/retry results and separately advertised free-ride stations. Source README claims of real scale, route counts, speeds, mobile support and tests are not independently certified; authored slope exaggeration is acknowledged upstream."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "c2ca6f334fa20024e8e048f12eca9e3f9b340c11",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-051.md#sillage-skiing",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/README.md"
+          },
+          {
+            "path": "scripts/bake-station.mjs",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/scripts/bake-station.mjs"
+          },
+          {
+            "path": "src/audio/audio.ts",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/audio/audio.ts"
+          },
+          {
+            "path": "src/game.ts",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/game.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/main.ts"
+          },
+          {
+            "path": "src/net/online.ts",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/net/online.ts"
+          },
+          {
+            "path": "src/render/terrain.ts",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/render/terrain.ts"
+          },
+          {
+            "path": "src/sim/avoriaz-data.ts",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/sim/avoriaz-data.ts"
+          },
+          {
+            "path": "src/sim/missions.ts",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/sim/missions.ts"
+          },
+          {
+            "path": "src/sim/progress.ts",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/sim/progress.ts"
+          },
+          {
+            "path": "src/sim/rousses-data.ts",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/sim/rousses-data.ts"
+          },
+          {
+            "path": "src/sim/run.ts",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/sim/run.ts"
+          },
+          {
+            "path": "src/ui/results.ts",
+            "url": "https://github.com/Alex12062012/sillage/blob/c2ca6f334fa20024e8e048f12eca9e3f9b340c11/src/ui/results.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Challenge finish/progression is verified in source; every map, medal, outfit, lift, free-ride route and online mode was not tested.",
+        "Real-station data headers are inspected for attribution; raw terrain arrays were not treated as proof of every coordinate or dataset license compliance, and no geodata/assets were copied into GameMap.",
+        "Optional Socket.IO client code exists despite a broad README no-server line; no claim is made that all modes are offline or server-free.",
+        "Local saves/input/audio/haptic paths remain unexecuted; source progression and claimed geography/physics fidelity are separate.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "fishaviour",
+      "name": "Fishaviour",
+      "repository_url": "https://github.com/Blue-Phoenix82/fishaviour",
+      "genres": [
+        "arcade rescue",
+        "herding",
+        "timed score challenge"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r160 (vendored REVISION/MIT header)",
+        "render_evidence": {
+          "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/src/main.js#L1-L24",
+          "claim": "Normal main directly constructs Three WebGLRenderer/camera and Game with the authored volumetric lake, fish and anglers. The actual requestAnimationFrame loop updates play and calls renderer.render(scene,camera); no build framework is involved."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla HTML/JavaScript ES modules and locally vendored Three r160, without an npm manifest/build system in the reviewed tree.",
+          "Authored fish/bait/angler/player rules, volumetric geometry, water shader, DOM UI, WebAudio synthesis and localStorage best are helpers, not a replacement renderer.",
+          "Keyboard movement/sprint and a stated 60-second round are implemented. README's no-network/runtime claims are author/source descriptions rather than browser traffic or device certification."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/src/game.js#L130-L156",
+        "claim": "The real round timer reaches endRound, which records caught fish and rescue pushes, chooses verdict and shows results/replay. Fewer caught fish is better; tied caught counts use more pushes as the local-best tiebreaker. Normal fish/bait/angler updates and ramming rescues run before that result, rather than only a menu school animation."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project and preserved Three notice; media statements attributed)",
+        "source_url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/LICENSE",
+        "additional_notices": [
+          "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/README.md",
+          "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/THIRD_PARTY_NOTICES.md",
+          "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/vendor/three.module.js"
+        ],
+        "notes": "Root MIT source and THIRD_PARTY_NOTICES preserve the Three MIT grant/header. README describes other models/terrain/water/UI/sound as procedural, supported by the inspected source. Documentation screenshots are separate, and every underlying media/dependency/design provenance is not independently certified. No source, screenshot, audio or asset payload is copied into GameMap."
+      },
+      "demo": {
+        "url": "https://blue-phoenix82.github.io/fishaviour/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/README.md",
+        "notes": "The exact author README Pages URL returned a text-reader error. No round, audio, local record or browser/deployed-build check occurred; the result does not prove the site is offline."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/README.md",
+        "notes": "A compact timed rescue/herding prototype with ordinary score, local best, pause/end/replay, fish bite/spook/respawn and angler loops. The advertised three anglers/thirty friends/sixty seconds and keyboard controls are source observations, without a successful playthrough or balance/performance claim."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "630cf04ecc61b8d8f9ef6d662bb4ae5752a39182",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-051.md#fishaviour",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/README.md"
+          },
+          {
+            "path": "src/audio.js",
+            "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/src/audio.js"
+          },
+          {
+            "path": "src/fish.js",
+            "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/src/fish.js"
+          },
+          {
+            "path": "src/game.js",
+            "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/src/game.js"
+          },
+          {
+            "path": "src/humans.js",
+            "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/src/humans.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/src/main.js"
+          },
+          {
+            "path": "src/player.js",
+            "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/src/player.js"
+          },
+          {
+            "path": "src/world.js",
+            "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/src/world.js"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/THIRD_PARTY_NOTICES.md"
+          },
+          {
+            "path": "vendor/three.module.js",
+            "url": "https://github.com/Blue-Phoenix82/fishaviour/blob/630cf04ecc61b8d8f9ef6d662bb4ae5752a39182/vendor/three.module.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Swimming and school navigation are predominantly planar in a volumetric lake; 3d-world describes scene geometry rather than unrestricted underwater travel.",
+        "Lower caught count is the goal; +1 caught is a penalty rather than a positive rescue score.",
+        "LocalStorage best, keyboard/sprint, every bait timing/rescue collision and all win-verdict reachability remain untested.",
+        "No no-network/no-account/privacy guarantee is independently certified from README claims alone.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "obsidian-baize-club",
+      "name": "Obsidian / Baize Club",
+      "repository_url": "https://github.com/AtharvaLakhe/baize-club",
+      "genres": [
+        "snooker",
+        "8-ball pool",
+        "table sports"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1 (declared npm runtime)",
+        "render_evidence": {
+          "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/src/render/renderer3d.ts#L89-L111",
+          "claim": "Normal app/GameView constructs the authored Renderer3D, which directly imports Three and creates WebGLRenderer and volumetric table/ball/cue visuals. Active shot-animation/UI frames call that renderer; DOM menus and PeerJS do not replace Three."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/package.json",
+            "dependencies": {
+              "peerjs": "^1.5.5",
+              "qrcode": "^1.5.4",
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "@types/qrcode": "^1.5.6",
+              "@types/three": "^0.186.0",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.4",
+              "vitest": "^5.0.5"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Plain TypeScript/Vite with Three ^0.186.1, PeerJS ^1.5.5 and QRCode ^1.5.4 runtime. Full declared TypeScript/Vite/Vitest/types development maps are preserved.",
+          "Authored spin/table physics, snooker/eight-ball rules, shot replay, AI, procedural Three geometry, DOM HUD and synthesized WebAudio are helpers; no R3F/other engine was identified.",
+          "Online play uses a public PeerJS signaling broker and WebRTC data channels with browser host authority; local practice/computer/pass-and-play routes are distinct. QR/share/chat/reaction capabilities are described but no room, message, peer or sharing action was invoked."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/src/core/rules.ts#L574-L584",
+        "claim": "The ordinary snooker scorer finishes a frame with a winner and advances best-of match totals/winner; separate actual 8-ball finish sets the same state. HostRoom simulates authorized shots then calls resolveShot and broadcasts the result, and GameView opens frame/match results with next/rematch. These are implemented rule/result paths, without certifying every official rule or AI/physics claim."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms qualified)",
+        "source_url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/LICENSE",
+        "additional_notices": [
+          "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/README.md",
+          "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/src/audio/sound.ts"
+        ],
+        "notes": "Root LICENSE grants MIT project source. README and inspected renderer/audio describe authored table/ball/cue visuals and synthesized sound without sound files; these are source/provenance statements rather than independent all-media/dependency/brand clearance. PeerJS/QR/Three and any interface/font/static art retain their own rights; no third-party payload is copied into GameMap."
+      },
+      "demo": {
+        "url": "https://baize-club.vercel.app",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/README.md",
+        "notes": "The exact author README public game URL returned a text-reader error. Obsidian is the current display name for the one baize-club repository, not two games. No practice/match, PeerJS room, chat/share card or deployed-build behavior was exercised."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/README.md",
+        "notes": "An implemented table-sports game with real snooker/eight-ball frame/match result paths, rematch, local/computer/peer modes and current Obsidian branding. Claimed rule completeness, deterministic cross-browser physics, AI quality and all singles/doubles/best-of variants remain untested."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "a5dfe876589348b74de068b880ef28f9d9d6dcc1",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-051.md#obsidian-baize-club",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/README.md"
+          },
+          {
+            "path": "src/audio/sound.ts",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/src/audio/sound.ts"
+          },
+          {
+            "path": "src/core/physics.ts",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/src/core/physics.ts"
+          },
+          {
+            "path": "src/core/pool8.ts",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/src/core/pool8.ts"
+          },
+          {
+            "path": "src/core/rules.ts",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/src/core/rules.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/src/main.ts"
+          },
+          {
+            "path": "src/net/host.ts",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/src/net/host.ts"
+          },
+          {
+            "path": "src/net/peer.ts",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/src/net/peer.ts"
+          },
+          {
+            "path": "src/net/session.ts",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/src/net/session.ts"
+          },
+          {
+            "path": "src/render/renderer3d.ts",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/src/render/renderer3d.ts"
+          },
+          {
+            "path": "src/ui/game.ts",
+            "url": "https://github.com/AtharvaLakhe/baize-club/blob/a5dfe876589348b74de068b880ef28f9d9d6dcc1/src/ui/game.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Table physics use two-dimensional coordinates, while balls/table/cue are volumetric Three geometry. 3d-board describes rendering, not free world travel or certified real-world ball behavior.",
+        "The public signaling broker is a network service even though no dedicated authoritative game server is needed; no server-free/no-network guarantee is made.",
+        "No room/account/peer/chat/reaction, score/match, result-share, audio or preference write was activated.",
+        "No exhaustive snooker/free-ball/foul/respotted-black/eight-ball rule compliance, AI difficulty, physical realism or cross-browser determinism is certified.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
     }
   ]
 }

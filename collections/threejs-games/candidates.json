@@ -2605,6 +2605,23 @@
         "https://github.com/luzhenqian/overworld/blob/2fa9266542de81ef44bd6b858b6f8a825c1dc591/examples/starter/src/App.tsx#L1-L20",
         "https://github.com/luzhenqian/overworld/blob/2fa9266542de81ef44bd6b858b6f8a825c1dc591/examples/starter/src/World.tsx"
       ]
+    },
+    {
+      "id": "dynamic-billiards-mit-isc-declaration",
+      "repository_url": "https://github.com/zhou-tao/billiards",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "880a0a82efca0aa3959c66f8d9be603f76ca5105",
+      "reason": "The actual game directly constructs Three WebGLRenderer and implements arcade ball-clear victory plus separate eight-ball rules. Root LICENSE grants MIT, while package.json declares ISC, without a resolved explanation in the inspected scope. Both positive source/game evidence and this concrete declaration discrepancy are preserved rather than silently assigning one license to everything.",
+      "next_action": "Locate an upstream maintained clarification or consistent declaration before promotion. Preserve asset/dependency and author security/CI claims separately; do not infer package boilerplate intent, all-MIT assets or tested online safety. No match, WebSocket room/server, score, upstream test/audit or deployment was run.",
+      "evidence_urls": [
+        "https://github.com/zhou-tao/billiards/blob/880a0a82efca0aa3959c66f8d9be603f76ca5105/README.md",
+        "https://github.com/zhou-tao/billiards/blob/880a0a82efca0aa3959c66f8d9be603f76ca5105/LICENSE",
+        "https://github.com/zhou-tao/billiards/blob/880a0a82efca0aa3959c66f8d9be603f76ca5105/package.json",
+        "https://github.com/zhou-tao/billiards/blob/880a0a82efca0aa3959c66f8d9be603f76ca5105/index.html",
+        "https://github.com/zhou-tao/billiards/blob/880a0a82efca0aa3959c66f8d9be603f76ca5105/js/game.js#L14-L34",
+        "https://github.com/zhou-tao/billiards/blob/880a0a82efca0aa3959c66f8d9be603f76ca5105/js/rules.js"
+      ]
     }
   ]
 }
