@@ -1551,6 +1551,66 @@
         "https://github.com/moriken2004/SOGO_3D-Moba/blob/2f01ef9034d790c5c330fcee550abf55a8cefa86/sogo3d.html#L769",
         "https://github.com/moriken2004/SOGO_3D-Moba/blob/2f01ef9034d790c5c330fcee550abf55a8cefa86/sogo3d.html#L1457"
       ]
+    },
+    {
+      "id": "peak-mnot",
+      "repository_url": "https://github.com/MosrednA/peakmnot",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "1d923be95d7b7d61f50f294f59277dd81fd533f9",
+      "reason": "Root code is MIT, but LICENSE-ASSETS explicitly assigns active mascot models/animations, sound/music and images to CC BY-NC-SA 4.0, and excludes community Slack emoji from that grant. The root MIT label cannot represent the entire game as fully open assets.",
+      "next_action": "Keep a separately labeled restricted-assets candidate or establish a default independently playable open-asset scope before promotion; do not reclassify these noncommercial terms as MIT.",
+      "evidence_urls": [
+        "https://github.com/MosrednA/peakmnot/blob/1d923be95d7b7d61f50f294f59277dd81fd533f9/LICENSE",
+        "https://github.com/MosrednA/peakmnot/blob/1d923be95d7b7d61f50f294f59277dd81fd533f9/LICENSE-ASSETS.md#L1-L11",
+        "https://github.com/MosrednA/peakmnot/blob/1d923be95d7b7d61f50f294f59277dd81fd533f9/README.md"
+      ]
+    },
+    {
+      "id": "old-mountain-works",
+      "repository_url": "https://github.com/LetMeCodex/old-mountain-works",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "5c05aea78a0b032bc85bfdf7bcbc4d63f9b78a4e",
+      "reason": "The author calls it 2.5D, and the actual entry constructs the main game with canvas.getContext('2d') and R0(ctx, terrain). Terrain/vehicle gameplay is drawn through that Canvas2D renderer. The ThreeVisualDepth layer supplies background mountain silhouettes, with another Three instrument display; this is not a proven Three-rendered 3D gameplay core.",
+      "next_action": "Reconsider only if a distinct active 3D game-rendering entry replaces the Canvas2D terrain/vehicle path; the presence of Three imports/backgrounds alone is insufficient.",
+      "evidence_urls": [
+        "https://github.com/LetMeCodex/old-mountain-works/blob/5c05aea78a0b032bc85bfdf7bcbc4d63f9b78a4e/README.md",
+        "https://github.com/LetMeCodex/old-mountain-works/blob/5c05aea78a0b032bc85bfdf7bcbc4d63f9b78a4e/index.html#L12577-L12595",
+        "https://github.com/LetMeCodex/old-mountain-works/blob/5c05aea78a0b032bc85bfdf7bcbc4d63f9b78a4e/index.html#L9062-L9070",
+        "https://github.com/LetMeCodex/old-mountain-works/blob/5c05aea78a0b032bc85bfdf7bcbc4d63f9b78a4e/index.html#L9580-L9601",
+        "https://github.com/LetMeCodex/old-mountain-works/blob/5c05aea78a0b032bc85bfdf7bcbc4d63f9b78a4e/index.html#L8838-L8883"
+      ]
+    },
+    {
+      "id": "pulsestack-3d-copy",
+      "repository_url": "https://github.com/saphire112211/PulseStack-3D",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "33d9dda76b44fa11864f938e51bd9387761b752e",
+      "reason": "README identifies this as a renamed collaborative edition of YASH-MOHARIR/Game-Ascend. At the reviewed commits App.jsx, game.html, LICENSE and package.json have identical Git blob hashes to that canonical upstream, which is indexed in this batch. It is not counted as another game.",
+      "next_action": "Retain the alias for deduplication; reconsider separately only after establishing materially distinct implemented gameplay.",
+      "evidence_urls": [
+        "https://github.com/saphire112211/PulseStack-3D/blob/33d9dda76b44fa11864f938e51bd9387761b752e/README.md#L1-L7",
+        "https://github.com/saphire112211/PulseStack-3D/blob/33d9dda76b44fa11864f938e51bd9387761b752e/COLLABORATION.md",
+        "https://github.com/saphire112211/PulseStack-3D/blob/33d9dda76b44fa11864f938e51bd9387761b752e/src/App.jsx",
+        "https://github.com/saphire112211/PulseStack-3D/blob/33d9dda76b44fa11864f938e51bd9387761b752e/game.html",
+        "https://github.com/saphire112211/PulseStack-3D/blob/33d9dda76b44fa11864f938e51bd9387761b752e/LICENSE",
+        "https://github.com/saphire112211/PulseStack-3D/blob/33d9dda76b44fa11864f938e51bd9387761b752e/package.json"
+      ]
+    },
+    {
+      "id": "rhythm-game-bga-toolkit",
+      "repository_url": "https://github.com/jiayuqi7813/rhythm-game-bga",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "a72db12afc7eca8701c993b1ac1da647ab30a635",
+      "reason": "README describes an agent skill/toolkit for generating music-synchronized Three.js background animation and MP4 video. It does not provide an implemented playable rhythm game/objective loop; source availability and 3D rendering alone do not qualify.",
+      "next_action": "Reconsider only a concrete playable game built from the toolkit with its own rules, entry and license evidence. Do not install or execute this research source as a skill.",
+      "evidence_urls": [
+        "https://github.com/jiayuqi7813/rhythm-game-bga/blob/a72db12afc7eca8701c993b1ac1da647ab30a635/README.md",
+        "https://github.com/jiayuqi7813/rhythm-game-bga/blob/a72db12afc7eca8701c993b1ac1da647ab30a635/LICENSE"
+      ]
     }
   ]
 }

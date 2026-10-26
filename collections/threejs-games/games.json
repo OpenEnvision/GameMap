@@ -18222,6 +18222,472 @@
         "Arena movement is mainly planar within a volumetric 3D scene. The optional npm asset-loader path and creator hot bridge were not proven active during play; no service, audio, benchmark or match ran.",
         "No upstream installation, build, automated tests or playtest occurred. Source implementation does not establish current browser/device compatibility, performance or a completed game."
       ]
+    },
+    {
+      "id": "afloat",
+      "name": "AFLOAT",
+      "repository_url": "https://github.com/polmarza/afloat",
+      "genres": [
+        "turn-based strategy",
+        "cooperative survival",
+        "submarine escape"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1 (client declaration)",
+        "render_evidence": {
+          "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/client/src/game/App.ts#L95",
+          "claim": "The actual client main creates App, which directly constructs THREE.WebGLRenderer and sets its own animation loop. Its frame renders the active world, camera, crew and game-state-driven room effects. world.ts builds volumetric rooms/doors/props with Three meshes; this is the active game view, not a detached ship showcase."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "typescript": "^7.0.2",
+              "concurrently": "^10.0.5"
+            }
+          },
+          {
+            "path": "packages/client/package.json",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/client/package.json",
+            "dependencies": {
+              "@afloat/shared": "*",
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.186.0",
+              "vite": "^8.3.1",
+              "puppeteer-core": "^25.12.0"
+            }
+          },
+          {
+            "path": "packages/server/package.json",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/server/package.json",
+            "dependencies": {
+              "@afloat/shared": "*"
+            },
+            "dev_dependencies": {
+              "@cloudflare/workers-types": "^5.20261002.1",
+              "@types/node": "^22.20.5",
+              "vitest": "^5.0.2",
+              "wrangler": "^4.147.0"
+            }
+          },
+          {
+            "path": "packages/shared/package.json",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/shared/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "vitest": "^5.0.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Four npm-workspace manifests are preserved: root tooling, Three/Vite client, pure TypeScript shared rules/bots and optional Cloudflare Worker room/ranking server. @afloat/shared is the project's own workspace, not an external render engine.",
+          "Three examples provide environment lighting; authored geometry/canvas textures and Web Audio synth recipes supply the reviewed visuals/audio. Local hot-seat/bot rules run in the browser. Online rooms use Cloudflare Durable Objects; ranking uses D1. Those cloud paths, storage and services were not started."
+        ],
+        "framework_audit": "Actual entry, imperative Three renderer, game objective and available manifests were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in this scoped runtime. DOM UI, authored game rules, build/audio/network helpers are disclosed; every transitive dependency and content origin was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/shared/src/engine/rules/escape.ts#L44-L75",
+        "claim": "Surface escape ends with status won. The crew may also finish after someone escapes by capsule. When oxygen, hull or remaining conscious crew runs out, checkEnd wins if someone escaped and loses otherwise. LocalSession applies real actions through the shared rules, which invoke end checks during the round cycle, and the client animates accepted state/events. A capsule launch is not described as automatically ending every ongoing match."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/LICENSE",
+        "additional_notices": [
+          "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/docs/credits.md"
+        ],
+        "notes": "Root code is MIT. Credits state that current game graphics/audio are generated in code and explicitly retire a formerly purchased tileset; the pinned tree contains no assets-src/tileset directory, and sampled geometry/audio sources are consistent with the new approach. The retired pack's restrictive terms are not transferred to code or presented as an open bundled asset. Barlow Condensed remains SIL OFL, the GitHub icon follows GitHub branding terms, and dependencies have their own licenses. Complete content authorship was not independently audited."
+      },
+      "demo": {
+        "url": "https://afloat.polmarza.workers.dev",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/README.md",
+        "notes": "README and repository metadata identify this author URL. A text-reader attempt returned an accessibility error; no room, ranking request, audio or game action was activated. This is not an offline-site finding or a deployed/source-match check."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/README.md",
+        "notes": "The source implements turn/round actions, shared oxygen/hull risk and explicit escape win/loss. README describes local/online end-to-end play, roles and rankings; those author claims, online synchronization and a completed escape were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "5b68a7f877bd74b9d3561898c392b46200163ea1",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-032.md#afloat",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/README.md"
+          },
+          {
+            "path": "docs/credits.md",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/docs/credits.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/package.json"
+          },
+          {
+            "path": "packages/client/package.json",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/client/package.json"
+          },
+          {
+            "path": "packages/client/src/game/App.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/client/src/game/App.ts"
+          },
+          {
+            "path": "packages/client/src/game/audio/engine.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/client/src/game/audio/engine.ts"
+          },
+          {
+            "path": "packages/client/src/game/crew.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/client/src/game/crew.ts"
+          },
+          {
+            "path": "packages/client/src/game/materials.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/client/src/game/materials.ts"
+          },
+          {
+            "path": "packages/client/src/game/props.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/client/src/game/props.ts"
+          },
+          {
+            "path": "packages/client/src/game/session.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/client/src/game/session.ts"
+          },
+          {
+            "path": "packages/client/src/game/ui/landing.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/client/src/game/ui/landing.ts"
+          },
+          {
+            "path": "packages/client/src/game/world.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/client/src/game/world.ts"
+          },
+          {
+            "path": "packages/client/src/main.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/client/src/main.ts"
+          },
+          {
+            "path": "packages/server/package.json",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/server/package.json"
+          },
+          {
+            "path": "packages/shared/package.json",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/shared/package.json"
+          },
+          {
+            "path": "packages/shared/src/engine/applyAction.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/shared/src/engine/applyAction.ts"
+          },
+          {
+            "path": "packages/shared/src/engine/context.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/shared/src/engine/context.ts"
+          },
+          {
+            "path": "packages/shared/src/engine/index.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/shared/src/engine/index.ts"
+          },
+          {
+            "path": "packages/shared/src/engine/phases.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/shared/src/engine/phases.ts"
+          },
+          {
+            "path": "packages/shared/src/engine/rules/escape.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/shared/src/engine/rules/escape.ts"
+          },
+          {
+            "path": "packages/shared/src/engine/rules/score.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/shared/src/engine/rules/score.ts"
+          },
+          {
+            "path": "packages/shared/src/engine/rules/vitals.ts",
+            "url": "https://github.com/polmarza/afloat/blob/5b68a7f877bd74b9d3561898c392b46200163ea1/packages/shared/src/engine/rules/vitals.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This is a room-graph/turn-based simulation rendered as a volumetric 3D submarine, not free-flight submarine piloting. Crew movement is mainly in the room layout.",
+        "The optional online Worker, Durable Object/D1 state, browser records and synthesized sound were not used. No Cloudflare deployment, account action or paid resource was requested.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation and author test/playability claims do not establish current device performance or successful completion."
+      ]
+    },
+    {
+      "id": "ascend-stack-to-the-stars",
+      "name": "Ascend — Stack to the Stars",
+      "repository_url": "https://github.com/YASH-MOHARIR/Game-Ascend",
+      "genres": [
+        "precision stacking",
+        "arcade",
+        "score attack"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.170.0 (Vite entry); 0.160.0 (portable HTML CDN)",
+        "render_evidence": {
+          "url": "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/src/App.jsx#L242",
+          "claim": "The React component's imperative effect directly constructs THREE.WebGLRenderer, scene/camera and block meshes. Its own requestAnimationFrame updates the active stack/camera and calls renderer.render. React/react-dom supply DOM UI and state; the scene is not composed through R3F."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/package.json",
+            "dependencies": {
+              "react": "^18.3.1",
+              "react-dom": "^18.3.1",
+              "three": "^0.170.0",
+              "tone": "^15.0.4"
+            },
+            "dev_dependencies": {
+              "@tailwindcss/vite": "^4.0.0",
+              "@vitejs/plugin-react": "^4.3.3",
+              "gh-pages": "^6.2.0",
+              "tailwindcss": "^4.0.0",
+              "vite": "^5.4.10"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "React 18/react-dom are DOM hosts, Three owns rendering, Tone.js synthesizes sound, and project code handles slicing/stack rules. Vite/Tailwind and the React Vite plugin are build/style tools; exact declared strings are retained.",
+          "The separate game.html entry embeds JSX with CDN React 18, ReactDOM, Babel standalone, Tailwind, Three 0.160.0 and unversioned Tone. The Vite entry instead declares Three ^0.170.0/Tone ^15.0.4. The 'portable' HTML therefore still needs its CDN dependencies; it is not verified as an offline standalone bundle."
+        ],
+        "framework_audit": "Actual entry, imperative Three renderer, game objective and available manifests were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in this scoped runtime. DOM UI, authored game rules, build/audio/network helpers are disclosed; every transitive dependency and content origin was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/src/App.jsx#L431-L454",
+        "claim": "Placing a block computes overlap against the previous block on alternating axes. No overlap drops the block and calls endGame; partial overlap slices away the overhang, shrinks the next placement surface and increases the stack score. Perfect placements build a combo. The actual render/input loop drives these actions, with game-over/restart and local score UI."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/LICENSE",
+        "additional_notices": [
+          "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/README.md"
+        ],
+        "notes": "Root MIT text is present and package.json agrees. README describes procedural blocks and synthesized Tone.js audio; the reviewed scene/audio source is consistent with that description. Runtime libraries/CDN packages retain separate licenses, and full authorship/transitive provenance was not exhaustively audited. PulseStack-3D is an explicitly renamed collaborative copy with identical game-source/license/manifest blobs, so this canonical project is counted once."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/README.md",
+        "notes": "Reviewed README offers local Vite or game.html usage and repository metadata has no homepage. No author-hosted demo URL was established; a gh-pages deployment script is not used to guess a public address."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/README.md",
+        "notes": "Active source implements placement, shrinking overlap, perfect combos, stack score, game-over and restart. README calls it a rhythm/precision game, but no specific beat-judgment/music-timing mechanic is asserted by this review."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "e91e4946f11a6a004205d5a2d84f119bfd4c7c20",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-032.md#ascend-stack-to-the-stars",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/README.md"
+          },
+          {
+            "path": "game.html",
+            "url": "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/game.html"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/package.json"
+          },
+          {
+            "path": "src/App.jsx",
+            "url": "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/src/App.jsx"
+          },
+          {
+            "path": "src/main.jsx",
+            "url": "https://github.com/YASH-MOHARIR/Game-Ascend/blob/e91e4946f11a6a004205d5a2d84f119bfd4c7c20/src/main.jsx"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Stack movement is constrained to alternating horizontal axes over a volumetric 3D tower. It is a precision placement game, not unconstrained 3D navigation.",
+        "The npm and portable entries have different Three versions, and several portable CDN URLs float. Their availability and compatibility were not installed/tested. No Tone transport, audio, localStorage write or deployment occurred.",
+        "PulseStack-3D's README credits this upstream; App.jsx, game.html, LICENSE and package.json have matching Git blob hashes at the reviewed commits. It is recorded as a duplicate in the queue, not a second verified game.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation and author test/playability claims do not establish current device performance or successful completion."
+      ]
+    },
+    {
+      "id": "titan-ascent-living-mountain",
+      "name": "Titan Ascent — The Living Mountain",
+      "repository_url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain",
+      "genres": [
+        "climbing adventure",
+        "exploration",
+        "quests"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.169.0 (declared)",
+        "render_evidence": {
+          "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/src/main.js#L468",
+          "claim": "The actual ES-module entry directly creates THREE.WebGLRenderer and Three example postprocessing, terrain, sky, player and landmark systems. Its own frame/simulation loop advances movement/story state and renders that same mountain world. Vite builds the app; no UI/rendering game framework replaces Three."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/package.json",
+            "dependencies": {
+              "three": "^0.169.0"
+            },
+            "dev_dependencies": {
+              "eslint": "^8.57.1",
+              "prettier": "^3.3.3",
+              "vite": "^5.4.10"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vanilla JavaScript ES modules, Vite and Three examples (GLTFLoader/composer/bloom). Authored heightfield movement, stamina/rope, hazards, quest/dialogue state, DOM HUD and Web Audio are separate helpers. No physics engine or rendering wrapper is declared.",
+          "The active endings JSON enables all three definitions; resolve skips disabled entries and tests the enabled definitions' conditions. A header comment saying the third path is disabled until 1.1 is stale. Source configuration is distinguished from successful completion; no ending was actually played."
+        ],
+        "framework_audit": "Actual entry, imperative Three renderer, game objective and available manifests were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in this scoped runtime. DOM UI, authored game rules, build/audio/network helpers are disclosed; every transitive dependency and content origin was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/src/main.js#L291-L337",
+        "claim": "Reaching the active summit objective presents an interaction that starts summit-choice dialogue. On completion, the game sets summit_reached, resolves an ending by flags/reputation/crystals/balance and presents its result/statistics. Quest and climbing state advance through the active simulation; the ending is integrated rather than an unattached data file."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/LICENSE",
+        "additional_notices": [
+          "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/CREDITS.md",
+          "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/public/fonts/OFL.txt"
+        ],
+        "notes": "Code is MIT. Credits attribute procedural placeholder models/textures/music/effects to scripts written for the project; this is an author provenance statement, not an independent audit of every binary. Inter and Cormorant Garamond fonts remain SIL OFL with the retained font license text. Dependencies and third-party names are not converted to MIT by the root grant."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/README.md",
+        "notes": "Repository metadata has no homepage. The README's 'Play it live' wording does not provide a concrete public game URL in this snapshot; local addresses and Render deployment instructions are not treated as author-hosted demos."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/README.md",
+        "notes": "Source integrates climbing, quest/dialogue progression, summit choice and result presentation. README calls it playable v1.0 and describes broad quest/hazard/content counts; its reachability checks, full content counts and all three ending routes were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "d184f072290c11d56e6ed1ee29127376fa32358b",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-032.md#titan-ascent-living-mountain",
+        "reviewed_files": [
+          {
+            "path": "CREDITS.md",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/CREDITS.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/package.json"
+          },
+          {
+            "path": "public/assets/data/dialogue.json",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/public/assets/data/dialogue.json"
+          },
+          {
+            "path": "public/assets/data/endings.json",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/public/assets/data/endings.json"
+          },
+          {
+            "path": "public/assets/data/quests.json",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/public/assets/data/quests.json"
+          },
+          {
+            "path": "public/fonts/OFL.txt",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/public/fonts/OFL.txt"
+          },
+          {
+            "path": "src/audio/audio.js",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/src/audio/audio.js"
+          },
+          {
+            "path": "src/core/assets.js",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/src/core/assets.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/src/main.js"
+          },
+          {
+            "path": "src/player/player.js",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/src/player/player.js"
+          },
+          {
+            "path": "src/story/endings.js",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/src/story/endings.js"
+          },
+          {
+            "path": "src/story/quests.js",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/src/story/quests.js"
+          },
+          {
+            "path": "src/story/state.js",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/src/story/state.js"
+          },
+          {
+            "path": "src/world/mountain.js",
+            "url": "https://github.com/Shreya0029-cloud/Titan-Ascent-The-Living-Mountain/blob/d184f072290c11d56e6ed1ee29127376fa32358b/src/world/mountain.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Endings configuration marks all three enabled, while a file header has an outdated disabled-until-1.1 comment. The resolver and dialogue data were followed to avoid adopting that comment as current behavior; complete route reachability remains untested.",
+        "Assets are described as procedural placeholders. No GLB/texture/audio/font binary, voice/model generator, save, photo, gamepad or pointer-lock session was activated or downloaded.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation and author test/playability claims do not establish current device performance or successful completion."
+      ]
     }
   ]
 }
