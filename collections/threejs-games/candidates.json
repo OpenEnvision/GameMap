@@ -2110,6 +2110,92 @@
         "https://github.com/superstes/strategy-browser-game/blob/fb684387a7ea7c8aa43e0e817c37a3c42bc3ddc7/src/frontend/js/user.js",
         "https://github.com/superstes/strategy-browser-game/blob/fb684387a7ea7c8aa43e0e817c37a3c42bc3ddc7/src/frontend/js/graphics.js"
       ]
+    },
+    {
+      "id": "archers-peak-project-grant",
+      "repository_url": "https://github.com/hunkim/3D_Archers",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "46628859e1f6db06564b283d42bb44d6d2309374",
+      "reason": "The actual HTML contains a direct Three renderer and archery score/result flow, but no full project-code grant was established in the untruncated pinned tree. README's license section identifies Three's MIT license without clearly granting the game's authored code.",
+      "next_action": "Establish an explicit project-code grant and separate any asset/dependency notices before promotion. No archery round or runtime was tested.",
+      "evidence_urls": [
+        "https://github.com/hunkim/3D_Archers/blob/46628859e1f6db06564b283d42bb44d6d2309374/README.md",
+        "https://github.com/hunkim/3D_Archers/blob/46628859e1f6db06564b283d42bb44d6d2309374/archers_peak.html#L190-L201"
+      ]
+    },
+    {
+      "id": "pinball-xr-project-license-and-table-scope",
+      "repository_url": "https://github.com/patrick-s-young/pinball-xr",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "533af1a5afed568ca71574f1f5991a2d67dbf015",
+      "reason": "README/package assert MIT and link a root LICENSE that is absent in the inspected tree. The complete MIT notice found is for adapted WebGPU-Ocean code in src/water3d, not an established project-wide grant. The app also imports outside VPX table/GLB/audio content under separate unknown scope; README says scoring is future work.",
+      "next_action": "Clarify the project grant, standalone game/objective scope and table-content terms before promotion. Distinguish the direct Three table path from optional raw-WebGPU fluid rendering. No VPX import, media, XR session or physics run was started.",
+      "evidence_urls": [
+        "https://github.com/patrick-s-young/pinball-xr/blob/533af1a5afed568ca71574f1f5991a2d67dbf015/README.md",
+        "https://github.com/patrick-s-young/pinball-xr/blob/533af1a5afed568ca71574f1f5991a2d67dbf015/package.json",
+        "https://github.com/patrick-s-young/pinball-xr/blob/533af1a5afed568ca71574f1f5991a2d67dbf015/src/water3d/LICENSE-WebGPU-Ocean",
+        "https://github.com/patrick-s-young/pinball-xr/blob/533af1a5afed568ca71574f1f5991a2d67dbf015/src/game/Game.js",
+        "https://github.com/patrick-s-young/pinball-xr/blob/533af1a5afed568ca71574f1f5991a2d67dbf015/src/three/Renderer.js"
+      ]
+    },
+    {
+      "id": "vpx-js-library-not-game",
+      "repository_url": "https://github.com/vpdb/vpx-js",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "e8a6d6fa52262a757d38b2317d845043e5fe1c95",
+      "reason": "The author README explicitly states this is not a ready-to-use game, but a library of rendering/physics/scripting components for a Visual Pinball player. A Three adapter and GPL source do not by themselves establish a specific open standalone game for this collection.",
+      "next_action": "Reconsider a separate actual game with its own implemented objectives/content and clarified table/media rights; do not count the library or its tests as a game.",
+      "evidence_urls": [
+        "https://github.com/vpdb/vpx-js/blob/e8a6d6fa52262a757d38b2317d845043e5fe1c95/README.md",
+        "https://github.com/vpdb/vpx-js/blob/e8a6d6fa52262a757d38b2317d845043e5fe1c95/package.json",
+        "https://github.com/vpdb/vpx-js/blob/e8a6d6fa52262a757d38b2317d845043e5fe1c95/LICENSE"
+      ]
+    },
+    {
+      "id": "vpweb-development-player",
+      "repository_url": "https://github.com/freezy/vpweb",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "c0b28d383577fa979509d966198d100f2647f5c8",
+      "reason": "The author README calls this a development host that creates a scene and loads VPX-JS when a user drags in a VPX file. A separately supplied table and its content/rules are not established as a curated standalone game in this revision.",
+      "next_action": "Reconsider a specific fully source/content-scoped game rather than the generic table-player host. No VPX file, cache or emulator was activated.",
+      "evidence_urls": [
+        "https://github.com/freezy/vpweb/blob/c0b28d383577fa979509d966198d100f2647f5c8/README.md",
+        "https://github.com/freezy/vpweb/blob/c0b28d383577fa979509d966198d100f2647f5c8/package.json",
+        "https://github.com/freezy/vpweb/blob/c0b28d383577fa979509d966198d100f2647f5c8/LICENSE"
+      ]
+    },
+    {
+      "id": "fliphetic-deployment-source-scope",
+      "repository_url": "https://github.com/FlipGame-Hetic/Demo",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "ecf1e4d9fa7c01c984a98b9333c44c81984b70db",
+      "reason": "The pinned repository is a small deployment/demo wrapper containing infrastructure and a firmware binary, without the actual frontend renderer/game implementation to inspect. Public metadata mentions R3F; root MIT and a hosted URL do not prove a direct-Three source game.",
+      "next_action": "Locate the corresponding source and renderer evidence, then apply the R3F/direct-Three boundary. Do not pull container images, firmware, IoT services or substitute a deployment wrapper for game source.",
+      "evidence_urls": [
+        "https://github.com/FlipGame-Hetic/Demo/blob/ecf1e4d9fa7c01c984a98b9333c44c81984b70db/README.md",
+        "https://github.com/FlipGame-Hetic/Demo/blob/ecf1e4d9fa7c01c984a98b9333c44c81984b70db/LICENSE"
+      ]
+    },
+    {
+      "id": "volleyball-cramara-project-grant",
+      "repository_url": "https://github.com/cramara/Volleyball-court-in-ThreeJS",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "4eb47fcfb1f0fc46b9524b72dd29923cb02578c1",
+      "reason": "Inspected SceneSetup constructs a direct Three renderer inside a React UI lifecycle, with game logic files present, but no project-code license grant was established in the untruncated tree/README/package. React by itself is not labeled R3F. Generic scaffold instructions mentioning a Gemini key are not proof that active gameplay needs that service.",
+      "next_action": "Establish a project grant, trace complete match outcomes and document imported model/texture rights before promotion. No environment file/key, AI request, game, asset import or runtime was used.",
+      "evidence_urls": [
+        "https://github.com/cramara/Volleyball-court-in-ThreeJS/blob/4eb47fcfb1f0fc46b9524b72dd29923cb02578c1/README.md",
+        "https://github.com/cramara/Volleyball-court-in-ThreeJS/blob/4eb47fcfb1f0fc46b9524b72dd29923cb02578c1/package.json",
+        "https://github.com/cramara/Volleyball-court-in-ThreeJS/blob/4eb47fcfb1f0fc46b9524b72dd29923cb02578c1/components/scene/SceneSetup.ts#L20-L30",
+        "https://github.com/cramara/Volleyball-court-in-ThreeJS/blob/4eb47fcfb1f0fc46b9524b72dd29923cb02578c1/components/VolleyballCourt.tsx",
+        "https://github.com/cramara/Volleyball-court-in-ThreeJS/blob/4eb47fcfb1f0fc46b9524b72dd29923cb02578c1/components/game/GameLogic.ts"
+      ]
     }
   ]
 }

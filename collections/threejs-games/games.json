@@ -22112,6 +22112,970 @@
         "No fixture, speech mode, model/provider, API credential, human placement/shot, WebSocket room, replay log, Docker process or upstream test/build was activated.",
         "No upstream install, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, every puzzle/match outcome, full rules correctness, security/privacy behavior or independently cleared media/dependency rights."
       ]
+    },
+    {
+      "id": "by-the-lee-threejs",
+      "name": "By The Lee — Three.js practice racing",
+      "repository_url": "https://github.com/leeboardtools/bythelee",
+      "genres": [
+        "sailing simulation",
+        "time trial"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "86dev (vendored Three REVISION; RequireJS declaration)",
+        "render_evidence": {
+          "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/leeboard/ui3d/View3D.js#L77-L97",
+          "claim": "The actual ThreeJS HTML entry loads main-ThreeJS through RequireJS. Its project-authored UI3d View directly constructs THREE.WebGLRenderer for the sailing scene and is rendered by the authored App3D animation frame. Main explicitly selects SailEnvTHREE.CANNON_PHYSICS; this record scopes that entry, not the separate older Phaser version."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/package.json",
+            "dependencies": {
+              "body-parser": "~1.18.2",
+              "cookie-parser": "~1.4.3",
+              "debug": "~2.6.9",
+              "express": "~4.15.5",
+              "morgan": "~1.9.0",
+              "pug": "2.0.0-beta11",
+              "serve-favicon": "~2.4.5",
+              "socket.io": "^2.0.4"
+            },
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three 86dev is vendored and referenced through RequireJS; it is not declared as an npm dependency. The inspected 3D module imports the project's sailing helpers, Cannon link, Three and TWEEN. The root npm manifest instead declares the legacy Node/Express/Socket.IO serving stack exactly; bower.json has empty dependency maps.",
+          "The authored sailing/geometry/physics helpers maintain boat forces and a Three view; Cannon supplies rigid-body integration. Phaser source/RequireJS aliases remain for an older entry and are not hidden, but are not imported by the inspected main-ThreeJS/SailSim-THREE dependency definitions.",
+          "The actual HTML additionally requests Sofia and Material Icons from Google Fonts and a Socket.IO client script. App3D may connect that client and emit debug timing. This is not evidence of an implemented multiplayer race; README calls multiplayer future work.",
+          "Boat models and textures, including Three-example-derived images, have not been exhaustively asset-audited. Legacy renderer/add-ons/server compatibility, numerical physics and current external resources were not exercised."
+        ],
+        "framework_audit": "This record scopes the actual bythelee-ThreeJS.html/main-ThreeJS.js implementation. Its authored UI3d view directly creates a Three renderer, and the entry explicitly selects Cannon physics. The repository also retains an older Phaser entry, source directories and RequireJS aliases; those are disclosed rather than certifying the whole repository as Phaser-free. No R3F or replacement render/scene engine was identified in the scoped 3D entry and inspected dependency modules."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/main-ThreeJS.js#L1182-L1203",
+        "claim": "The practice-race control constructs a race for the boat and starts pre-race timing. Active updates advance course mark trackers; exhausting the ordered marks sets the competitor FINISHED. Its actual main callback invokes showRaceResults, which displays racing time, penalties and total, with endRace clearing the displayed course/result state."
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "label": "Apache-2.0 (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/LICENSE",
+        "additional_notices": [
+          "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/README.md",
+          "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/main-ThreeJS.js",
+          "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/leeboard/sailsim/Racing.js",
+          "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/bythelee-ThreeJS.html"
+        ],
+        "notes": "Root LICENSE and inspected authored app, renderer, race and simulation headers identify Apache-2.0. That grant is recorded for project code; vendored Three/Cannon/RequireJS/TWEEN, examples, models, textures and externally served fonts retain separate terms and were not all independently cleared. The older Phaser material is outside the scoped game path."
+      },
+      "demo": {
+        "url": "http://leeboardtools.github.io",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/README.md",
+        "notes": "The pinned README supplies this exact author URL. A text-reader attempt on 2026-10-26 failed. No game, input, rendering, sound, successful completion or source/deployment match was tested; the reader error does not establish an offline site."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/README.md",
+        "notes": "A legacy sailing prototype with a source-connected practice race and timed result UI, despite README's older prospective-game wording. startRace currently selects raceCourses[0] regardless of its courseName/mode arguments; multiple selectable race modes and multiplayer completion are not claimed."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "c5ce159e2c125c6aa7346c97d7a3808bfce693d3",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-042.md#by-the-lee-threejs",
+        "reviewed_files": [
+          {
+            "path": "bower.json",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/bower.json"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/package.json"
+          },
+          {
+            "path": "public_html/bythelee-ThreeJS.html",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/bythelee-ThreeJS.html"
+          },
+          {
+            "path": "public_html/data/courses/basin.courses.json",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/data/courses/basin.courses.json"
+          },
+          {
+            "path": "public_html/index.html",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/index.html"
+          },
+          {
+            "path": "public_html/js/leeboard/cannon/CannonPhysicsLink.js",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/leeboard/cannon/CannonPhysicsLink.js"
+          },
+          {
+            "path": "public_html/js/leeboard/core/Physics.js",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/leeboard/core/Physics.js"
+          },
+          {
+            "path": "public_html/js/leeboard/sailsim-three/SailSim-THREE.js",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/leeboard/sailsim-three/SailSim-THREE.js"
+          },
+          {
+            "path": "public_html/js/leeboard/sailsim/Racing.js",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/leeboard/sailsim/Racing.js"
+          },
+          {
+            "path": "public_html/js/leeboard/sailsim/SailEnv.js",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/leeboard/sailsim/SailEnv.js"
+          },
+          {
+            "path": "public_html/js/leeboard/sailsim/SailSim.js",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/leeboard/sailsim/SailSim.js"
+          },
+          {
+            "path": "public_html/js/leeboard/sailsim/SailSimBase.js",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/leeboard/sailsim/SailSimBase.js"
+          },
+          {
+            "path": "public_html/js/leeboard/ui3d/App3D.js",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/leeboard/ui3d/App3D.js"
+          },
+          {
+            "path": "public_html/js/leeboard/ui3d/View3D.js",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/leeboard/ui3d/View3D.js"
+          },
+          {
+            "path": "public_html/js/lib/three.js",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/lib/three.js"
+          },
+          {
+            "path": "public_html/js/main-ThreeJS.js",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/main-ThreeJS.js"
+          },
+          {
+            "path": "public_html/js/require-js-config.js",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/public_html/js/require-js-config.js"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/leeboardtools/bythelee/blob/c5ce159e2c125c6aa7346c97d7a3808bfce693d3/README.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Boat navigation is primarily on water, with 3D forces/pose and a volumetric scene; this does not imply unrestricted flight or a certified sailing model.",
+        "Only the explicit ThreeJS/Cannon entry is included. No Phaser entry, local server, Socket.IO session, Google Font, practice race or physics/test script was executed.",
+        "No completed course, penalty accuracy or historical supported-browser statement was reproduced.",
+        "No upstream installation, build, automated suite or playtest occurred. Source review does not establish present browser/device operation, all objectives' reachability, full rules/simulation correctness, service availability or independently cleared data/media/dependency rights."
+      ]
+    },
+    {
+      "id": "yarn-planet",
+      "name": "Yarn Planet",
+      "repository_url": "https://github.com/makerjackie/yarn-planet",
+      "genres": [
+        "spatial connection puzzle",
+        "exploration",
+        "chapter adventure"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1 (npm declaration)",
+        "render_evidence": {
+          "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/main.ts#L56-L65",
+          "claim": "The actual TypeScript entry directly creates a Three WebGLRenderer, scene and perspective camera. The authored frame advances player/thread/chapter state and renders through its own Three ink/postprocessing helper. Procedural planet/character geometry, shaders and DOM story UI retain Three as the render core."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/package.json",
+            "dependencies": {
+              "three": "^0.186.1",
+              "three-mesh-bvh": "^0.9.16"
+            },
+            "dev_dependencies": {
+              "@cloudflare/workers-types": "^4.20260702.1",
+              "@types/node": "^26.6.5",
+              "@types/three": "^0.186.0",
+              "playwright": "^1.57.0",
+              "tsx": "^4.23.15",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.4",
+              "wrangler": "4.90.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Runtime npm dependencies are three ^0.186.1 and three-mesh-bvh ^0.9.16. Authored spherical movement/thread/collision rules use the BVH helper rather than another scene/game engine; TypeScript/Vite and Worker/Wrangler/test tools are declared separately in the exact manifest snapshot.",
+          "Sampled meshes/shaders and default Web Audio/music/voice-like feedback are generated in code. The sample-bank API can load explicitly registered replacements but registers nothing by default; the inspected default is not described as requiring downloaded sound recordings.",
+          "Production defaults to a same-origin online Worker for presence/preset greetings and stored paths; local development has no online origin unless ?online specifies one. The reviewed Worker uses Cloudflare Durable Objects. No Worker, room, greeting or live network gameplay was started.",
+          "Main can upload a quantized walk at the finale and on pagehide when walk.length exceeds 120, subject to its origin/point/upload guards. It is not described as uploading only completed chapters. README/Worker disclose a salted per-day IP-hash upload counter; this is source description, not an independent privacy assurance.",
+          "THIRD_PARTY_NOTICES includes a full MIT notice for David Hoskins' noise helper and separate library terms. The CC BY 4.0 trailer music is stated to be outside the repository/game; no trailer or media was downloaded."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, integrated objective/result flow and available manifest/import declarations were reviewed. No R3F, A-Frame, Babylon.js, Unity or replacement scene/render engine was identified in that scope. Authored physics, audio, DOM, server and development helpers are disclosed; no exhaustive transitive/runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/chapter/director.ts#L157-L204",
+        "claim": "The real ThreadSystem onConnected callback feeds ChapterDirector, persists completed connections and activates restored world features. Once configured root connections are complete, the director schedules the finale, flags progress as finale and invokes the actual chapter-end UI. Main continues updating this director in the active game frame."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/LICENSE",
+        "additional_notices": [
+          "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/README.md",
+          "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/THIRD_PARTY_NOTICES.md"
+        ],
+        "notes": "Root LICENSE supplies MIT for project code, consistent with README and THIRD_PARTY_NOTICES. Sampled runtime assets are generated code; separate library/noise terms remain. README explicitly withholds brand use of Yarn Planet/毛线星球/Maker Jackie and identifies outside-repository trailer music under CC BY 4.0; these are not represented as blanket MIT media/branding permissions."
+      },
+      "demo": {
+        "url": "https://yarn.ynot.games/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/README.md",
+        "notes": "The pinned README supplies this exact author URL. A text-reader attempt on 2026-10-26 failed. No game, input, rendering, sound, successful completion or source/deployment match was tested; the reader error does not establish an offline site."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/README.md",
+        "notes": "A first-chapter prototype with source-wired connection objectives, revival, persisted progress, finale and chapter-end card. Later chapters, a full successful clear, spool-route reachability and advertised device/online behavior were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "5c8acce8df04fc7788d48a98343e38c05a458a16",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-042.md#yarn-planet",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/README.md"
+          },
+          {
+            "path": "src/audio/engine.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/audio/engine.ts"
+          },
+          {
+            "path": "src/audio/index.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/audio/index.ts"
+          },
+          {
+            "path": "src/audio/music.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/audio/music.ts"
+          },
+          {
+            "path": "src/audio/samples.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/audio/samples.ts"
+          },
+          {
+            "path": "src/audio/sfx.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/audio/sfx.ts"
+          },
+          {
+            "path": "src/audio/voice.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/audio/voice.ts"
+          },
+          {
+            "path": "src/chapter/data.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/chapter/data.ts"
+          },
+          {
+            "path": "src/chapter/director.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/chapter/director.ts"
+          },
+          {
+            "path": "src/chapter/progress.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/chapter/progress.ts"
+          },
+          {
+            "path": "src/journey.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/journey.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/main.ts"
+          },
+          {
+            "path": "src/net/online.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/net/online.ts"
+          },
+          {
+            "path": "src/net/walk.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/net/walk.ts"
+          },
+          {
+            "path": "src/physics.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/physics.ts"
+          },
+          {
+            "path": "src/render.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/render.ts"
+          },
+          {
+            "path": "src/style.css",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/style.css"
+          },
+          {
+            "path": "src/thread/index.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/src/thread/index.ts"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/THIRD_PARTY_NOTICES.md"
+          },
+          {
+            "path": "worker/index.ts",
+            "url": "https://github.com/makerjackie/yarn-planet/blob/5c8acce8df04fc7788d48a98343e38c05a458a16/worker/index.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The player moves over a small spherical world with authored jump/gravity/thread constraints; objective connections depend on spatial routes and finite spool length.",
+        "No connection, save, finale, postcard, sample fetch, sound, greeting, presence session, path upload, IP-counter interaction or deployment was activated.",
+        "Brand/trailer statements are preserved as author notices, and procedural generation does not independently certify all design originality.",
+        "No upstream installation, build, automated suite or playtest occurred. Source review does not establish present browser/device operation, all objectives' reachability, full rules/simulation correctness, service availability or independently cleared data/media/dependency rights."
+      ]
+    },
+    {
+      "id": "snack-hole",
+      "name": "Snack Hole",
+      "repository_url": "https://github.com/SamadiPour/snack-hole-game",
+      "genres": [
+        "incremental arcade",
+        "timed rounds",
+        "swallowing and growth"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1 (npm declaration)",
+        "render_evidence": {
+          "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/render/scene.ts#L72-L87",
+          "claim": "The actual main constructs the authored Game/renderer, whose scene directly creates THREE.WebGLRenderer for volumetric city/prop meshes and a hole. Game's requestAnimationFrame loop advances the authored world and calls that same renderer; DOM economy/result screens are auxiliary."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/package.json",
+            "dependencies": {
+              "@fontsource-variable/nunito": "^5.3.0",
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "@types/node": "^26.6.5",
+              "@types/three": "^0.186.0",
+              "playwright-core": "^1.64.1",
+              "tsx": "^4.23.15",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.4",
+              "vitest": "^5.0.5"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Runtime npm declares three ^0.186.1 and @fontsource-variable/nunito ^5.3.0; exact development declarations cover TypeScript/Vite, Vitest, tsx and playwright-core. Authored hole movement, swallowing/falling, map generation and economy use no external physics/render engine.",
+          "Inspected prop geometry/shaders are procedural. Sound effects/ambience use Web Audio, while background music actually fetches per-map MP3 tracks credited in CREDITS.md as CC0. Downloaded background music is not conflated with synthesized effects.",
+          "CREDITS.md separately identifies Nunito under SIL OFL 1.1, library terms and system-rendered emoji. Individual track payloads/originality and all upstream license pages were not independently audited.",
+          "The source includes local persistence/import/export, offline earnings and a service worker/PWA path. None was activated; source implementation alone does not establish successful offline installation, save recovery or economy balance."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, integrated objective/result flow and available manifest/import declarations were reviewed. No R3F, A-Frame, Babylon.js, Unity or replacement scene/render engine was identified in that scope. Authored physics, audio, DOM, server and development helpers are disclosed; no exhaustive transitive/runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/core/world.ts#L953-L994",
+        "claim": "Active rounds end on time expiry, configured eaten-weight completion or a no-more-snacks condition. The world stops, records the end reason and emits end after its fall/feedback delay. RoundFeedback routes that event to Game.endRound, which settles cash/progress, persists and shows actual results; casual Tour has a separate settlement/next-map/completion flow."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/LICENSE",
+        "additional_notices": [
+          "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/README.md",
+          "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/CREDITS.md"
+        ],
+        "notes": "Root LICENSE/README provide MIT for project code. CREDITS.md separately attributes seven music tracks as CC0, Nunito as SIL OFL 1.1 and dependencies under their own terms. Those are credited source claims, not an independent payload/originality audit or a blanket MIT grant for downloaded recordings/font software."
+      },
+      "demo": {
+        "url": "https://samadipour.github.io/snack-hole-game/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/README.md",
+        "notes": "The pinned README supplies this exact author URL. A text-reader attempt on 2026-10-26 failed. No game, input, rendering, sound, successful completion or source/deployment match was tested; the reader error does not establish an offline site."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/README.md",
+        "notes": "A source prototype with timed round results, growth/earnings/upgrades, a casual Tour progression path and persistent meta-game. README's exact map/prop/trophy totals, balance tests and offline/device behavior were not independently verified by execution."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "2f1e5699eb08e19b6e6b76ab1e28055c9295a27b",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-042.md#snack-hole",
+        "reviewed_files": [
+          {
+            "path": "CREDITS.md",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/CREDITS.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/README.md"
+          },
+          {
+            "path": "src/audio/audio.ts",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/audio/audio.ts"
+          },
+          {
+            "path": "src/audio/music.ts",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/audio/music.ts"
+          },
+          {
+            "path": "src/core/economy.ts",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/core/economy.ts"
+          },
+          {
+            "path": "src/core/round.ts",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/core/round.ts"
+          },
+          {
+            "path": "src/core/tour.ts",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/core/tour.ts"
+          },
+          {
+            "path": "src/core/world.ts",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/core/world.ts"
+          },
+          {
+            "path": "src/game.ts",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/game.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/main.ts"
+          },
+          {
+            "path": "src/persistence.ts",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/persistence.ts"
+          },
+          {
+            "path": "src/render/props.ts",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/render/props.ts"
+          },
+          {
+            "path": "src/render/scene.ts",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/render/scene.ts"
+          },
+          {
+            "path": "src/round-fx.ts",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/round-fx.ts"
+          },
+          {
+            "path": "src/service-worker.js",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/service-worker.js"
+          },
+          {
+            "path": "src/ui/dialogs.ts",
+            "url": "https://github.com/SamadiPour/snack-hole-game/blob/2f1e5699eb08e19b6e6b76ab1e28055c9295a27b/src/ui/dialogs.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Hole steering is chiefly on the XZ ground plane, while props/world meshes and falling/swallow animations are volumetric. The dimension labels rendered scene structure.",
+        "Time expiry ends and settles a round; it is not mislabeled as a mandatory game-loss state. Casual Tour rules differ from timed economy rounds.",
+        "No PLAY, swallow, ability, result, music, save/import/export, offline-earnings settlement, PWA installation or upstream simulation/test was run.",
+        "No upstream installation, build, automated suite or playtest occurred. Source review does not establish present browser/device operation, all objectives' reachability, full rules/simulation correctness, service availability or independently cleared data/media/dependency rights."
+      ]
+    },
+    {
+      "id": "under-stockholm",
+      "name": "Under Stockholm — exploration and driving practice",
+      "repository_url": "https://github.com/joelhagvall/under-stockholm",
+      "genres": [
+        "metro exploration",
+        "train driving",
+        "stop-accuracy challenge"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.0 (npm declaration)",
+        "render_evidence": {
+          "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/boot.ts#L239-L253",
+          "claim": "The lazy-loaded actual game boot directly creates a Three WebGLRenderer and renders the metro scene with the player's camera in its setAnimationLoop-driven frame. Rapier supplies physics through the authored Physics/player helpers; landing/network-view UI does not replace the scoped game's Three renderer."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/package.json",
+            "dependencies": {
+              "@dimforge/rapier3d": "0.20.0",
+              "three": "^0.186.0"
+            },
+            "dev_dependencies": {
+              "@jridgewell/trace-mapping": "^0.3.31",
+              "@types/bun": "latest",
+              "@types/three": "^0.186.0",
+              "puppeteer-core": "^25.12.0",
+              "spectorjs": "^0.9.33",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.0",
+              "wrangler": "^4.141.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Runtime npm declares three ^0.186.0 and @dimforge/rapier3d 0.20.0; Bun/Vite/TypeScript, browser-diagnostic/test and Wrangler tooling are recorded separately in the exact manifest map. No other scene/game engine was found in the scoped entry.",
+          "The README describes a local timetable path and optional configured relay/live SL/GTFS, weather, news and presence features. Those services and their data terms remain separate; no API key, relay, live feed, multiplayer presence or deployment was accessed.",
+          "Sampled geometry/Canvas textures and train/chime effects are generated code. Public announcements can use browser Swedish speech; the optional private C20 recordings are explicitly absent from the public repository/distribution, with synthetic/browser-voice fallback described in public/audio/README.md. OS/browser voice availability was not tested.",
+          "Three supplied human/clink sound recordings are credited as public domain/CC0 in the SFX README. Map/live data have separate SL/SMHI/SR terms, GTFS CC0, Open-Meteo CC BY 4.0, OSM ODbL and Copernicus DEM conditions/copyright notices; the game-code license does not replace them.",
+          "The driving practice train has its own timeline on a straight practice route and does not share ordinary scheduled tracks. Arbitrary real-network driving, every advertised station, reliable live coverage and realistic railway operation were not certified."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, integrated objective/result flow and available manifest/import declarations were reviewed. No R3F, A-Frame, Babylon.js, Unity or replacement scene/render engine was identified in that scope. Authored physics, audio, DOM, server and development helpers are disclosed; no exhaustive transitive/runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/driver.ts#L152-L214",
+        "claim": "The active driving mode grades a stop when doors open near its marker and accumulates a HUD score. Closing doors after a scored stop advances the route; the final stop announces the total and schedules events.finished. Boot wires that event to stopDriving and updates driver.readout into the real HUD during play. This is the scoped score challenge within an exploration sandbox, not a claimed global story ending."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/LICENSE",
+        "additional_notices": [
+          "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/README.md",
+          "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/public/audio/README.md",
+          "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/public/audio/sfx/README.md"
+        ],
+        "notes": "Root LICENSE/README identify MIT for the project's own code. README explicitly excludes other organizations' names/marks and the listed data, retaining their source-specific terms and DEM copyright notice. Audio notices distinguish public-domain/CC0 SFX and browser/synth speech from private recordings not bundled. No blanket MIT/data/media/branding clearance or independent audit of all source datasets is claimed."
+      },
+      "demo": {
+        "url": "https://understockholm.com",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/README.md",
+        "notes": "The pinned README supplies this exact author URL. A text-reader attempt on 2026-10-26 failed. No game, input, rendering, sound, successful completion or source/deployment match was tested; the reader error does not establish an offline site."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/README.md",
+        "notes": "A metro exploration prototype with an actual source-integrated train-stopping score challenge, route completion feedback and a return-to-walking callback. Broad metro/live-data counts and every exploration feature remain author claims qualified by the inspected scope; no train route or complete game was played."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "03e9c28dc8438559de4699b747e35ea0f4237970",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-042.md#under-stockholm",
+        "reviewed_files": [
+          {
+            "path": "docs/GAMEPLAY.md",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/docs/GAMEPLAY.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/package.json"
+          },
+          {
+            "path": "public/audio/README.md",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/public/audio/README.md"
+          },
+          {
+            "path": "public/audio/sfx/README.md",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/public/audio/sfx/README.md"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/README.md"
+          },
+          {
+            "path": "src/game/announcements.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/announcements.ts"
+          },
+          {
+            "path": "src/game/audio.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/audio.ts"
+          },
+          {
+            "path": "src/game/boot.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/boot.ts"
+          },
+          {
+            "path": "src/game/discoveries.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/discoveries.ts"
+          },
+          {
+            "path": "src/game/driver.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/driver.ts"
+          },
+          {
+            "path": "src/game/frames.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/frames.ts"
+          },
+          {
+            "path": "src/game/gfx/textures.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/gfx/textures.ts"
+          },
+          {
+            "path": "src/game/ghosts.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/ghosts.ts"
+          },
+          {
+            "path": "src/game/hud.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/hud.ts"
+          },
+          {
+            "path": "src/game/journey.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/journey.ts"
+          },
+          {
+            "path": "src/game/physics.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/physics.ts"
+          },
+          {
+            "path": "src/game/player.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/player.ts"
+          },
+          {
+            "path": "src/game/realService.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/game/realService.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/main.ts"
+          },
+          {
+            "path": "src/style.css",
+            "url": "https://github.com/joelhagvall/under-stockholm/blob/03e9c28dc8438559de4699b747e35ea0f4237970/src/style.css"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The scored practice-driver path is the concrete game objective traced here, alongside free exploration. It is not a claim that all world objects or the network visualization form separate games.",
+        "Private announcement recordings are not required by the described public fallback and were not obtained; live external data terms are not silently folded into MIT.",
+        "No entry, cab control, stop grading, speech/audio, service-key read, relay/API call, presence, save or upstream check/build was activated.",
+        "No upstream installation, build, automated suite or playtest occurred. Source review does not establish present browser/device operation, all objectives' reachability, full rules/simulation correctness, service availability or independently cleared data/media/dependency rights."
+      ]
+    },
+    {
+      "id": "cyber-hockey-amir",
+      "name": "Cyber Hockey",
+      "repository_url": "https://github.com/amir9480/cyberhockey",
+      "genres": [
+        "air hockey",
+        "AI opponents",
+        "local and network matches"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1 (npm declaration)",
+        "render_evidence": {
+          "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/game/view.ts#L142-L157",
+          "claim": "The actual client creates authored View, which directly constructs THREE.WebGLRenderer and owns setAnimationLoop, the volumetric table/mallet/puck scene and Three postprocessing. Alpine.js manages DOM menus/results; it is not a scene renderer."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/package.json",
+            "dependencies": {
+              "alpinejs": "^3.17.4",
+              "express": "^5.1.0",
+              "helmet": "^8.3.0",
+              "posthog-js": "^1.435.8",
+              "three": "^0.186.1",
+              "ws": "^8.18.3"
+            },
+            "dev_dependencies": {
+              "@types/alpinejs": "^3.17.0",
+              "@types/express": "^5.0.3",
+              "@types/node": "^22.15.0",
+              "@types/three": "^0.186.0",
+              "@types/ws": "^8.18.1",
+              "esbuild": "^0.25.5",
+              "tsx": "^4.20.3",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.2",
+              "vitest": "^3.2.4"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "The root npm manifest declares three ^0.186.1, alpinejs ^3.17.4, express ^5.1.0, ws ^8.18.3, helmet ^8.3.0 and posthog-js ^1.435.8, plus exact build/test development dependencies. Authored 2D continuous table physics/AI drive volumetric Three objects without an external render/physics engine.",
+          "Local AI/single-player, default web server rooms, Itch and CrazyGames builds use separate platform adapters. The CrazyGames adapter declares its external v3 SDK, with source fallback when unavailable; no SDK, account, advertising/platform action or room was invoked.",
+          "PostHog is conditional on a build-time key and tracking preferences in source, with configured memory persistence and capture restrictions. No key/configuration was read and no analytics event or network guarantee was tested.",
+          "Current Sound uses preloaded HTMLAudio MP3 pools and a music element, explicitly not runtime Web Audio synthesis. The source describes SFX as pre-rendered from older synth recipes; the HTML credits background music to OctoSound/Pixabay. These recordings are not claimed as MIT or independently cleared.",
+          "The audio directories are declared Git LFS paths in .gitattributes; LFS media payloads were not downloaded or audited. Successful sound/build readiness may depend on obtaining those objects. Sampled UI CSS uses system sans-serif stacks."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, integrated objective/result flow and available manifest/import declarations were reviewed. No R3F, A-Frame, Babylon.js, Unity or replacement scene/render engine was identified in that scope. Authored physics, audio, DOM, server and development helpers are disclosed; no exhaustive transitive/runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/shared/src/match.ts#L252-L264",
+        "claim": "The authored shared simulation awards goals and sets a winner when winScore is reached. The local Match wrapper advances this core, reports done through onOver and View forwards it to the actual main result UI, which displays win/defeat/final score and Play again. Network-match paths use the shared rules separately rather than being asserted from a static scene."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/LICENSE",
+        "additional_notices": [
+          "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/README.md",
+          "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/index.html",
+          "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/.gitattributes"
+        ],
+        "notes": "Root LICENSE supplies a full MIT project-code grant. The actual HTML separately credits OctoSound/Pixabay music; specific track/payload redistribution terms and the pre-rendered SFX origins were not independently established. MIT is not applied wholesale to those recordings or platform SDK/services. Git LFS declarations are recorded without fetching media."
+      },
+      "demo": {
+        "url": "https://amir9480.itch.io/cyber-hockey",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://api.github.com/repos/amir9480/cyberhockey",
+        "notes": "Author repository homepage metadata, observed 2026-10-26 20:44:24 UTC, supplies this URL; it is not printed in the inspected README. A text-reader attempt on 2026-10-26 failed. No game, input, rendering, sound, successful completion or source/deployment match was tested; the reader error does not establish an offline site."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/README.md",
+        "notes": "A source prototype with local AI goal/score/winner/result/rematch and separate network/platform implementations. Current audio loading, LFS availability, online synchronization, latency and advertised multi-player/device behavior were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "36e1ee9ab1fdb30189cd8474e48867d576340797",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-042.md#cyber-hockey-amir",
+        "reviewed_files": [
+          {
+            "path": ".gitattributes",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/.gitattributes"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/README.md"
+          },
+          {
+            "path": "shared/src/match.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/shared/src/match.ts"
+          },
+          {
+            "path": "shared/src/physics.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/shared/src/physics.ts"
+          },
+          {
+            "path": "web/index.html",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/index.html"
+          },
+          {
+            "path": "web/src/analytics.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/analytics.ts"
+          },
+          {
+            "path": "web/src/game/ball.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/game/ball.ts"
+          },
+          {
+            "path": "web/src/game/match.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/game/match.ts"
+          },
+          {
+            "path": "web/src/game/sound.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/game/sound.ts"
+          },
+          {
+            "path": "web/src/game/table.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/game/table.ts"
+          },
+          {
+            "path": "web/src/game/view.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/game/view.ts"
+          },
+          {
+            "path": "web/src/main.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/main.ts"
+          },
+          {
+            "path": "web/src/net/modes.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/net/modes.ts"
+          },
+          {
+            "path": "web/src/net/netgame.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/net/netgame.ts"
+          },
+          {
+            "path": "web/src/platform/crazygames.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/platform/crazygames.ts"
+          },
+          {
+            "path": "web/src/platform/index.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/platform/index.ts"
+          },
+          {
+            "path": "web/src/platform/itch.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/platform/itch.ts"
+          },
+          {
+            "path": "web/src/platform/singleplayer.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/platform/singleplayer.ts"
+          },
+          {
+            "path": "web/src/platform/web.ts",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/platform/web.ts"
+          },
+          {
+            "path": "web/src/style.css",
+            "url": "https://github.com/amir9480/cyberhockey/blob/36e1ee9ab1fdb30189cd8474e48867d576340797/web/src/style.css"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The puck/mallet simulation uses a plane, rendered as a volumetric table with moving 3D objects/camera. This is an explicitly labeled 3D-rendered board sport.",
+        "Eligibility rests on the traced local match/result path. The author Itch URL can ship a separate platform build; source/deployment equivalence and live room support were not checked.",
+        "No start, goal, result/rematch, pointer lock, MP3 load, LFS payload, analytics, SDK/account, server, multiplayer room or upstream test/build was activated.",
+        "No upstream installation, build, automated suite or playtest occurred. Source review does not establish present browser/device operation, all objectives' reachability, full rules/simulation correctness, service availability or independently cleared data/media/dependency rights."
+      ]
+    },
+    {
+      "id": "shopsim-3d",
+      "name": "ShopSim 3D",
+      "repository_url": "https://github.com/Ishu-dev/shop-sim-3d",
+      "genres": [
+        "shopping-list exploration",
+        "collection",
+        "walking adventure"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (vendored REVISION alias verified in three.min.js)",
+        "render_evidence": {
+          "url": "https://github.com/Ishu-dev/shop-sim-3d/blob/d1121ea5bac159f7f147f67ffdeed4ec7f08e082/js/game.js#L19-L32",
+          "claim": "The actual HTML loads the local vendored Three build and authored game.js, which directly constructs THREE.WebGLRenderer, scene and cameras. Its requestAnimationFrame tick updates shopper/NPC/objective feedback and renders the same volumetric supermarket. The minimap/receipt DOM is auxiliary."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "No npm manifest is present in the inspected small pinned tree. index.html uses local classic scripts three.min.js and js/game.js; the vendored source has REVISION=e with const e='128' and an MIT SPDX header.",
+          "Authored supermarket/product/shopper/NPC/cart geometry and movement/interaction rules use Three directly. Sampled audio feedback is Web Audio-generated; the HTML uses system UI/monospace fonts. No other engine or framework was identified in the scoped entry.",
+          "The shopping receipt and in-game prices/coins are authored game state; no real purchase/payment flow was invoked or inferred. README's local-file/no-network and device behavior were not reproduced."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, integrated objective/result flow and available manifest/import declarations were reviewed. No R3F, A-Frame, Babylon.js, Unity or replacement scene/render engine was identified in that scope. Authored physics, audio, DOM, server and development helpers are disclosed; no exhaustive transitive/runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Ishu-dev/shop-sim-3d/blob/d1121ea5bac159f7f147f67ffdeed4ec7f08e082/js/game.js#L978-L1037",
+        "claim": "Actual E interaction picks up the nearest unfinished listed product, marks it done and updates the shopping list/cart. Once every item is done, interacting near checkout calls winGame, stops timing and shows the receipt/result overlay with item prices, elapsed time, savings and collected coins. This implemented completion path distinguishes the game from a store-only scene."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/Ishu-dev/shop-sim-3d/blob/d1121ea5bac159f7f147f67ffdeed4ec7f08e082/LICENSE",
+        "additional_notices": [
+          "https://github.com/Ishu-dev/shop-sim-3d/blob/d1121ea5bac159f7f147f67ffdeed4ec7f08e082/README.md",
+          "https://github.com/Ishu-dev/shop-sim-3d/blob/d1121ea5bac159f7f147f67ffdeed4ec7f08e082/three.min.js"
+        ],
+        "notes": "Root LICENSE provides MIT for project code, and the local Three build separately identifies SPDX MIT/copyright for Three authors. Sampled geometry/feedback is generated by project code; that does not independently clear every product/design, system emoji or vendored dependency. No models/screenshots were copied into GameMap."
+      },
+      "demo": {
+        "url": "https://ishu-dev.github.io/shop-sim-3d/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/Ishu-dev/shop-sim-3d/blob/d1121ea5bac159f7f147f67ffdeed4ec7f08e082/README.md",
+        "notes": "The pinned README supplies this exact author URL. A text-reader attempt on 2026-10-26 failed. No game, input, rendering, sound, successful completion or source/deployment match was tested; the reader error does not establish an offline site."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Ishu-dev/shop-sim-3d/blob/d1121ea5bac159f7f147f67ffdeed4ec7f08e082/README.md",
+        "notes": "A walking/collection game prototype with a concrete shopping list, product interaction, checkout gate and completion receipt. The inspected source goes beyond a static retail scene; all camera/device modes and successful shopping completion were not played."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "d1121ea5bac159f7f147f67ffdeed4ec7f08e082",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-042.md#shopsim-3d",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/Ishu-dev/shop-sim-3d/blob/d1121ea5bac159f7f147f67ffdeed4ec7f08e082/index.html"
+          },
+          {
+            "path": "js/game.js",
+            "url": "https://github.com/Ishu-dev/shop-sim-3d/blob/d1121ea5bac159f7f147f67ffdeed4ec7f08e082/js/game.js"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Ishu-dev/shop-sim-3d/blob/d1121ea5bac159f7f147f67ffdeed4ec7f08e082/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Ishu-dev/shop-sim-3d/blob/d1121ea5bac159f7f147f67ffdeed4ec7f08e082/README.md"
+          },
+          {
+            "path": "three.min.js",
+            "url": "https://github.com/Ishu-dev/shop-sim-3d/blob/d1121ea5bac159f7f147f67ffdeed4ec7f08e082/three.min.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Shopper movement is mainly on the store floor in a volumetric environment, with multiple camera modes; it is not unrestricted vertical navigation.",
+        "Completion requires the list plus proximity interaction at checkout. No product, haggle, cart, pickup, coin, receipt, sound or camera control was activated.",
+        "No local server/browser run was used to certify README's direct-file/no-network setup.",
+        "No upstream installation, build, automated suite or playtest occurred. Source review does not establish present browser/device operation, all objectives' reachability, full rules/simulation correctness, service availability or independently cleared data/media/dependency rights."
+      ]
     }
   ]
 }
