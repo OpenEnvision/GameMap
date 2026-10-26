@@ -2266,6 +2266,93 @@
         "https://github.com/alexbelyeu/shooterCoaster/blob/ef5018cf51980d73276d70d77c1f5d7bcc0111f8/package.json",
         "https://github.com/alexbelyeu/shooterCoaster/blob/ef5018cf51980d73276d70d77c1f5d7bcc0111f8/README.md"
       ]
+    },
+    {
+      "id": "cube-game-puzzle-outcome-scope",
+      "repository_url": "https://github.com/SydX-pages/cube-game",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "6a8646189de1dfc34bfb581f83c2ce68f240da40",
+      "reason": "The actual React DOM CubeView instantiates an authored Cube and Utils directly creates Three.WebGLRenderer; this is not R3F. Inspected code implements 3D layer selection/rotation and an optional MediaPipe camera gesture interface, but a scramble/challenge/solved-state or other game-outcome path was not established. README paths drift from the current components/cube tree.",
+      "next_action": "Trace a concrete puzzle challenge and solved/progress feedback before promotion. Keep optional Tauri/MediaPipe and bundled gesture-model/WASM rights separate; no camera, model, native build or game was activated.",
+      "evidence_urls": [
+        "https://github.com/SydX-pages/cube-game/blob/6a8646189de1dfc34bfb581f83c2ce68f240da40/README.md",
+        "https://github.com/SydX-pages/cube-game/blob/6a8646189de1dfc34bfb581f83c2ce68f240da40/LICENSE",
+        "https://github.com/SydX-pages/cube-game/blob/6a8646189de1dfc34bfb581f83c2ce68f240da40/package.json",
+        "https://github.com/SydX-pages/cube-game/blob/6a8646189de1dfc34bfb581f83c2ce68f240da40/src/App.jsx",
+        "https://github.com/SydX-pages/cube-game/blob/6a8646189de1dfc34bfb581f83c2ce68f240da40/src/components/CubeView.jsx",
+        "https://github.com/SydX-pages/cube-game/blob/6a8646189de1dfc34bfb581f83c2ce68f240da40/src/cube/Cube.js",
+        "https://github.com/SydX-pages/cube-game/blob/6a8646189de1dfc34bfb581f83c2ce68f240da40/src/cube/Utils.js",
+        "https://github.com/SydX-pages/cube-game/blob/6a8646189de1dfc34bfb581f83c2ce68f240da40/src/components/Gesture.jsx"
+      ]
+    },
+    {
+      "id": "canyon-pve-audio-reuse-permission",
+      "repository_url": "https://github.com/xiong356/shooting-game",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "a8d184ffb8041bd0b461ce70a28772822b9537f8",
+      "reason": "Actual direct Three rendering and a seven-level shooting/death/victory source path exist, with MIT project code. However assets/sfx/CREDITS.md identifies negev-shot.wav as extracted from a third-party video and says permission was obtained by a user, without publishing the scope or an open downstream redistribution grant. Other listed effects have CC0 or author-synthesis descriptions; the generic root MIT label does not settle this specific recording.",
+      "next_action": "Obtain a public reusable-license/permission statement for this recording, or verify a clearly separate distributable mode/source scope that omits it, before treating the game bundle as openly reusable. Preserve this as a concrete unresolved media question rather than claiming infringement or no game source.",
+      "evidence_urls": [
+        "https://github.com/xiong356/shooting-game/blob/a8d184ffb8041bd0b461ce70a28772822b9537f8/README.md",
+        "https://github.com/xiong356/shooting-game/blob/a8d184ffb8041bd0b461ce70a28772822b9537f8/LICENSE",
+        "https://github.com/xiong356/shooting-game/blob/a8d184ffb8041bd0b461ce70a28772822b9537f8/index.html",
+        "https://github.com/xiong356/shooting-game/blob/a8d184ffb8041bd0b461ce70a28772822b9537f8/js/game.js",
+        "https://github.com/xiong356/shooting-game/blob/a8d184ffb8041bd0b461ce70a28772822b9537f8/js/config/levels.js",
+        "https://github.com/xiong356/shooting-game/blob/a8d184ffb8041bd0b461ce70a28772822b9537f8/assets/sfx/CREDITS.md"
+      ]
+    },
+    {
+      "id": "diwali-celebration-sandbox-game-scope",
+      "repository_url": "https://github.com/ShimanshuChauhan/Diwali_Game",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "84119541186a3116142912f3da4287aa627b1b1b",
+      "reason": "Direct Three.WebGLRenderer, an active fixed-step scene and Rapier-assisted interaction exist with MIT project text; it is not mislabeled as another render engine. The author explicitly describes a celebration sandbox. Inspected session/main paths establish exploration, diya/firework/household activities but did not establish a concrete challenge/objective/result mode for the strict actual-game index. NOTICES says aarti recordings are original placeholders requiring replacement before release.",
+      "next_action": "Review a documented stateful game/challenge scope and its objective/progress or result path before promotion. Retain Rapier, asset/recording notices and prototype scope; no fireworks/audio/camera/session/build was run.",
+      "evidence_urls": [
+        "https://github.com/ShimanshuChauhan/Diwali_Game/blob/84119541186a3116142912f3da4287aa627b1b1b/README.md",
+        "https://github.com/ShimanshuChauhan/Diwali_Game/blob/84119541186a3116142912f3da4287aa627b1b1b/LICENSE",
+        "https://github.com/ShimanshuChauhan/Diwali_Game/blob/84119541186a3116142912f3da4287aa627b1b1b/package.json",
+        "https://github.com/ShimanshuChauhan/Diwali_Game/blob/84119541186a3116142912f3da4287aa627b1b1b/src/main.ts",
+        "https://github.com/ShimanshuChauhan/Diwali_Game/blob/84119541186a3116142912f3da4287aa627b1b1b/src/session/session.ts",
+        "https://github.com/ShimanshuChauhan/Diwali_Game/blob/84119541186a3116142912f3da4287aa627b1b1b/NOTICES.md"
+      ]
+    },
+    {
+      "id": "tiny-town-open-ended-builder-scope",
+      "repository_url": "https://github.com/nazariitaran/tiny-town-threejs-game",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "fa4c3d700342be7cb18ca0e7c61ffe4870d42a35",
+      "reason": "Direct Three rendering and a real interactive town-building tool exist with MIT code and explicit separate CC0/CC-BY/OFL media notices. The README explicitly says there are no goals, money or timers; the current scoped audit therefore retains this open-ended creative sandbox separately instead of silently treating placement/rendering as a verified objective-driven game.",
+      "next_action": "Review a documented playing/economy/challenge mode if added or clarify the catalog's creative-sandbox boundary before promotion. Preserve all six CC-BY model attributions and the separate media/font terms; no model payload, photo export, save or town was executed.",
+      "evidence_urls": [
+        "https://github.com/nazariitaran/tiny-town-threejs-game/blob/fa4c3d700342be7cb18ca0e7c61ffe4870d42a35/README.md",
+        "https://github.com/nazariitaran/tiny-town-threejs-game/blob/fa4c3d700342be7cb18ca0e7c61ffe4870d42a35/LICENSE",
+        "https://github.com/nazariitaran/tiny-town-threejs-game/blob/fa4c3d700342be7cb18ca0e7c61ffe4870d42a35/package.json",
+        "https://github.com/nazariitaran/tiny-town-threejs-game/blob/fa4c3d700342be7cb18ca0e7c61ffe4870d42a35/src/main.ts",
+        "https://github.com/nazariitaran/tiny-town-threejs-game/blob/fa4c3d700342be7cb18ca0e7c61ffe4870d42a35/src/core/Renderer.ts",
+        "https://github.com/nazariitaran/tiny-town-threejs-game/blob/fa4c3d700342be7cb18ca0e7c61ffe4870d42a35/src/game/Game.ts",
+        "https://github.com/nazariitaran/tiny-town-threejs-game/blob/fa4c3d700342be7cb18ca0e7c61ffe4870d42a35/CREDITS.md"
+      ]
+    },
+    {
+      "id": "motorsport-current-r3f",
+      "repository_url": "https://github.com/alexandernanberg/motorsport",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "cc418f026d19dba882737aadcde652ed9a7cdcd2",
+      "reason": "The actual src/index.tsx mounts App.tsx, which imports Canvas from @react-three/fiber and wraps the game in that reconciler. The manifest also declares R3F, drei and r3f-perf. This current edition falls outside the direct-Three rendering criterion despite having an MIT project license and a Three dependency.",
+      "next_action": "Keep excluded unless an independently reviewed current direct-Three edition appears. Do not infer pure Three from the low-level Three dependency or the game name.",
+      "evidence_urls": [
+        "https://github.com/alexandernanberg/motorsport/blob/cc418f026d19dba882737aadcde652ed9a7cdcd2/README.md",
+        "https://github.com/alexandernanberg/motorsport/blob/cc418f026d19dba882737aadcde652ed9a7cdcd2/LICENSE",
+        "https://github.com/alexandernanberg/motorsport/blob/cc418f026d19dba882737aadcde652ed9a7cdcd2/package.json",
+        "https://github.com/alexandernanberg/motorsport/blob/cc418f026d19dba882737aadcde652ed9a7cdcd2/src/index.tsx",
+        "https://github.com/alexandernanberg/motorsport/blob/cc418f026d19dba882737aadcde652ed9a7cdcd2/src/App.tsx"
+      ]
     }
   ]
 }

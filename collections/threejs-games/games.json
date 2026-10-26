@@ -23553,6 +23553,605 @@
         "No putt, charge, cup/hazard, next-hole/final card, save, Web Audio file, native unlock bridge, launcher installation or upstream build/test was activated.",
         "No upstream installation, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, all levels' reachability, full rules/economy correctness, service behavior or independently cleared media/dependency rights."
       ]
+    },
+    {
+      "id": "wargame-amir9480",
+      "name": "Wargame",
+      "repository_url": "https://github.com/amir9480/wargame",
+      "genres": [
+        "real-time strategy",
+        "base building",
+        "AI skirmish"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1 (npm declaration)",
+        "render_evidence": {
+          "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/src/engine.ts#L136-L158",
+          "claim": "The actual main.ts constructs the authored Engine, which directly creates THREE.WebGLRenderer and starts its own setAnimationLoop. Active frame hooks call GameController.update; it advances GameSession and the Three game/world layers rather than merely orbiting menu scenery."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/package.json",
+            "dependencies": {
+              "alpinejs": "^3.17.4",
+              "jolt-physics": "^1.1.0",
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "@tauri-apps/cli": "^2.12.1",
+              "@types/alpinejs": "^3.17.0",
+              "@types/node": "^26.6.4",
+              "@types/three": "^0.186.0",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.2",
+              "vite-plugin-glsl": "^1.6.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Exact npm runtime declarations are three ^0.186.1, alpinejs ^3.17.4 and jolt-physics ^1.1.0. Alpine drives the DOM HUD; Three owns the scene. The inspected Jolt bootstrap imports jolt-physics/wasm-compat as a physics helper, not a replacement scene renderer; no WASM or physics was run.",
+          "TypeScript/Vite/GLSL and pnpm support the build; the Tauri CLI supports an optional desktop package. These exact dev declarations are retained in the manifest snapshot. The texture-generation script was read as text only and was not executed.",
+          "The authored simulation, AI, binary codecs and LoopbackChannel run a local skirmish. The presence of net-named modules is not presented as proof of public online multiplayer. Procedural building/terrain/texture code was sampled; no blanket media-origin audit is claimed."
+        ],
+        "framework_audit": "The pinned actual entry, directly constructed Three renderer, active state/input/render path and game outcome were inspected alongside available manifest/CDN or vendored declarations. No R3F, A-Frame, Babylon.js, Unity or replacement rendering/game engine was identified in that scoped path. Authored helpers, DOM/React UI, physics, audio, build, native and service roles are disclosed; no exhaustive transitive or runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/src/game/session.ts#L88-L120",
+        "claim": "The active fixed-step session advances AI and a local authoritative simulation through a loopback channel. Removing a player's last structure records a defeat; the session reports lost if the human is defeated, won when all three opponents are defeated, and the actual Alpine HUD displays Victory/Defeat. Selection, construction, resource income, production and combat are connected to this session."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/LICENSE",
+        "additional_notices": [
+          "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/README.md",
+          "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/src/engine.ts",
+          "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/scripts/generate-textures.ts"
+        ],
+        "notes": "Root LICENSE supplies the full MIT project-code grant. Three, Alpine, Jolt, optional native/build components, marks and any non-code media retain their own applicable terms. Inspected engine, gameplay and texture-generator file headers did not establish a conflicting grant; this is not a claim that every repository asset is independently cleared."
+      },
+      "demo": {
+        "url": "https://amir9480.github.io/wargame/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/README.md",
+        "notes": "The pinned README supplies this exact author Pages URL. A text retrieval attempt on 2026-10-26 returned a reader accessibility error. That is not a site-down finding or an executed skirmish; no renderer, opponent, match result or save was activated."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/README.md",
+        "notes": "A source skirmish prototype with a generated battlefield, human versus three AI, economy/production/combat and an actual victory/defeat HUD. The package is private version 0.1.0; no gameplay quality, browser compatibility or balance was reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "c8a3a2179d1d67ab5a4802369da4c271fede5a6a",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-044.md#wargame-amir9480",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/README.md"
+          },
+          {
+            "path": "scripts/generate-textures.ts",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/scripts/generate-textures.ts"
+          },
+          {
+            "path": "src/engine.ts",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/src/engine.ts"
+          },
+          {
+            "path": "src/game/net/channel.ts",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/src/game/net/channel.ts"
+          },
+          {
+            "path": "src/game/physics/jolt.ts",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/src/game/physics/jolt.ts"
+          },
+          {
+            "path": "src/game/session.ts",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/src/game/session.ts"
+          },
+          {
+            "path": "src/game/sim/simulation.ts",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/src/game/sim/simulation.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/src/main.ts"
+          },
+          {
+            "path": "src/render/game/gameLayer.ts",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/src/render/game/gameLayer.ts"
+          },
+          {
+            "path": "src/ui/gameController.ts",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/src/ui/gameController.ts"
+          },
+          {
+            "path": "src/ui/hud.ts",
+            "url": "https://github.com/amir9480/wargame/blob/c8a3a2179d1d67ab5a4802369da4c271fede5a6a/src/ui/hud.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Units use ground/deck heights over horizontal navigation on a volumetric terrain with a 3D camera; this does not imply free six-axis movement.",
+        "The implemented elimination condition concerns all structures, not only the README's Command Center shorthand. The inspection did not prove that a published build matches this pinned source.",
+        "No native package, texture generation, map worker, physics/WASM, local save, live service, public multiplayer session or paid resource was activated.",
+        "No upstream installation, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, all objectives' reachability, complete rules correctness, deployment/source equivalence or independently cleared rights for every asset and dependency."
+      ]
+    },
+    {
+      "id": "backrooms-weiming3",
+      "name": "Backrooms — Weiming3",
+      "repository_url": "https://github.com/Weiming3/backrooms-game",
+      "genres": [
+        "first-person horror",
+        "survival",
+        "maze exploration"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 / 0.128.0 (HTML CDN declarations)",
+        "render_evidence": {
+          "url": "https://github.com/Weiming3/backrooms-game/blob/ac6a18e4aa94b6e3742b88b78c4f6a7a80111902/index.html#L432-L450",
+          "claim": "The single actual HTML entry loads the Three r128 global and PointerLockControls, directly constructs THREE.Scene/PerspectiveCamera/WebGLRenderer and renders its authored volumetric corridors and entities from the animation loop. It does not embed another game engine or a reconciler."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "No npm manifest exists in the pinned four-file tree. Runtime HTML declares Three r128 from cdnjs and the 0.128.0 PointerLockControls example from jsDelivr, both with integrity attributes; current CDN bytes/SRI acceptance and browser compatibility were not tested.",
+          "The authored collision/map/entity logic uses Three directly. Canvas-generated wall/floor textures and Web Audio hum/steps/alerts are implemented in the HTML; no bundled media/model payload was downloaded.",
+          "The README explicitly requires serving over HTTP and an initial network fetch for CDN scripts. Pointer lock and audio require browser/user interaction; none was requested or activated."
+        ],
+        "framework_audit": "The pinned actual entry, directly constructed Three renderer, active state/input/render path and game outcome were inspected alongside available manifest/CDN or vendored declarations. No R3F, A-Frame, Babylon.js, Unity or replacement rendering/game engine was identified in that scoped path. Authored helpers, DOM/React UI, physics, audio, build, native and service roles are disclosed; no exhaustive transitive or runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Weiming3/backrooms-game/blob/ac6a18e4aa94b6e3742b88b78c4f6a7a80111902/index.html#L708-L735",
+        "claim": "Entity attacks reduce health and call die at zero; die marks the run dead, unlocks the pointer and opens a death overlay with a page-reload restart control. The active frame also moves the player, updates entities and sanity, and checks a generated exit for level transition. This establishes a source survival loop, without asserting a completed three-level campaign."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/Weiming3/backrooms-game/blob/ac6a18e4aa94b6e3742b88b78c4f6a7a80111902/LICENSE",
+        "additional_notices": [
+          "https://github.com/Weiming3/backrooms-game/blob/ac6a18e4aa94b6e3742b88b78c4f6a7a80111902/README.md",
+          "https://github.com/Weiming3/backrooms-game/blob/ac6a18e4aa94b6e3742b88b78c4f6a7a80111902/index.html"
+        ],
+        "notes": "Root LICENSE supplies a full MIT project-code grant. Three and its controls keep their own terms. Procedural geometry, Canvas textures and Web Audio code were inspected, but that does not independently clear all Backrooms names/design references, dependency versions or repository imagery."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/Weiming3/backrooms-game/blob/ac6a18e4aa94b6e3742b88b78c4f6a7a80111902/README.md",
+        "notes": "No author-hosted game URL was located in the pinned README or repository homepage metadata. Local-server instructions are not recorded as a hosted demo, and no server was started."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Weiming3/backrooms-game/blob/ac6a18e4aa94b6e3742b88b78c4f6a7a80111902/README.md",
+        "notes": "A small single-file source horror prototype; README describes three escalating level themes and calls the project zero-maintenance. The code cycles the level index modulo three rather than implementing a terminal campaign win, and a concrete transition concern is recorded below."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "ac6a18e4aa94b6e3742b88b78c4f6a7a80111902",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-044.md#backrooms-weiming3",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/Weiming3/backrooms-game/blob/ac6a18e4aa94b6e3742b88b78c4f6a7a80111902/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Weiming3/backrooms-game/blob/ac6a18e4aa94b6e3742b88b78c4f6a7a80111902/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Weiming3/backrooms-game/blob/ac6a18e4aa94b6e3742b88b78c4f6a7a80111902/README.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The inspected transition callback calls generateLevel for the next level and then assigns exitPosition = null, discarding that level's newly generated exit reference. This makes later exit progression questionable; the concern is from source and was not reproduced in a browser.",
+        "Sanity and health, monster attacks, generated corridors and a death/reload path are implemented; a complete, beatable three-level ending is not claimed.",
+        "First-person movement is on the corridor floor within volumetric 3D geometry. No pointer lock, audio, start, death/reload, CDN acceptance or level transition was executed.",
+        "No upstream installation, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, all objectives' reachability, complete rules correctness, deployment/source equivalence or independently cleared rights for every asset and dependency."
+      ]
+    },
+    {
+      "id": "cla-go",
+      "name": "Cla-Go",
+      "repository_url": "https://github.com/Kwusv55/Cla-Go",
+      "genres": [
+        "first-person shooter",
+        "tactical shooter",
+        "team deathmatch"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r147 (vendored declaration in THIRD-PARTY-NOTICES.md)",
+        "render_evidence": {
+          "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/js/main.js#L61-L84",
+          "claim": "The actual index loads local Three and its official example passes, then the authored scripts. main.js directly creates THREE.WebGLRenderer; its requestAnimationFrame advances the active game at a fixed step and draws it through Three EffectComposer. The custom Engine object is project code, not a replacement third-party renderer."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "No npm manifest is present in the pinned static-game tree. index.html loads vendored Three and CopyShader/FXAA/EffectComposer/RenderPass/UnrealBloomPass/Sky examples; the third-party notice identifies r147 and supplies their MIT notice.",
+          "Authored movement, collision, actors/bots, weapons, map, HUD and game rules use plain scripts. The active frame uses a fixed 128-tick simulation and interpolated render; textures/models and Web Audio/HRTF effects are produced by authored code in the inspected files.",
+          "Optional LAN play uses the inspected server/server.js with Node built-in http/fs/path/os/crypto modules and authored transport handling. The public HTTPS Pages link and the README's local relay workflow have different requirements; no server, firewall helper or network room was started."
+        ],
+        "framework_audit": "The pinned actual entry, directly constructed Three renderer, active state/input/render path and game outcome were inspected alongside available manifest/CDN or vendored declarations. No R3F, A-Frame, Babylon.js, Unity or replacement rendering/game engine was identified in that scoped path. Authored helpers, DOM/React UI, physics, audio, build, native and service roles are disclosed; no exhaustive transitive or runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/js/game.js#L1246-L1274",
+        "claim": "The tactical mode evaluates elimination, time and planted-objective/defuse outcomes, increments team round scores, awards in-game money and displays an outcome. Reaching its match threshold calls finish, freezes play and displays the winning side and match score. A separately implemented team-deathmatch mode also resolves score/time limits; practice is not presented as the only gameplay."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/LICENSE",
+        "additional_notices": [
+          "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/README.md",
+          "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/THIRD-PARTY-NOTICES.md",
+          "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/js/audio.js"
+        ],
+        "notes": "Root LICENSE grants MIT for authored project code, and THIRD-PARTY-NOTICES explicitly separates js/css/index from vendored Three/examples with their own MIT notice. Procedural media is an author/source observation, not independent clearance of every algorithm, mark or design reference; Counter-Strike-style names/game design are not licensed merely by this MIT file."
+      },
+      "demo": {
+        "url": "https://kwusv55.github.io/Cla-Go/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/README.md",
+        "notes": "The pinned README supplies this exact author Pages URL. Text retrieval on 2026-10-26 failed in the reader; this does not establish offline status. No Start, pointer lock, firing, result, network room or provider was activated."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/README.md",
+        "notes": "A static source FPS prototype with bots, tactical round/match results, deathmatch limits, a practice mode and an optional LAN relay. Source/manual descriptions of recoil, realism, latency, offline operation and balance were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-044.md#cla-go",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/index.html"
+          },
+          {
+            "path": "js/audio.js",
+            "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/js/audio.js"
+          },
+          {
+            "path": "js/game.js",
+            "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/js/game.js"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/js/main.js"
+          },
+          {
+            "path": "js/models.js",
+            "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/js/models.js"
+          },
+          {
+            "path": "js/net.js",
+            "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/js/net.js"
+          },
+          {
+            "path": "js/textures.js",
+            "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/js/textures.js"
+          },
+          {
+            "path": "js/world.js",
+            "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/js/world.js"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/README.md"
+          },
+          {
+            "path": "server/server.js",
+            "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/server/server.js"
+          },
+          {
+            "path": "THIRD-PARTY-NOTICES.md",
+            "url": "https://github.com/Kwusv55/Cla-Go/blob/0cb5e7d0d5b8394623fec1e603a1bbf4b8ffd043/THIRD-PARTY-NOTICES.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The runtime is direct Three despite its authored object being called Engine. Vendored postprocessing is from Three examples; an UnrealBloomPass filename does not establish use of Unreal Engine.",
+        "README states that its hosted HTTPS page cannot use the documented plain LAN relay workflow. The Windows server helper can request elevated firewall changes; it was only inspected as source and was not invoked.",
+        "No local transport server, Windows helper, firewall setting, peer connection, weapon action, audio or saved setting was executed.",
+        "No upstream installation, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, all objectives' reachability, complete rules correctness, deployment/source equivalence or independently cleared rights for every asset and dependency."
+      ]
+    },
+    {
+      "id": "forest-survival",
+      "name": "Forest Survival",
+      "repository_url": "https://github.com/suryanarayanrenjith/Forest-Survival",
+      "genres": [
+        "first-person shooter",
+        "wave survival",
+        "endless survival"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.180.0 (npm declaration)",
+        "render_evidence": {
+          "url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/src/App.tsx#L1740-L1764",
+          "claim": "The actual React DOM bootstrap lazily mounts App.tsx. That module imports Three directly and constructs its own THREE.WebGLRenderer, scene/camera and authored animation frame rather than a React Three Fiber Canvas. The sampled renderer is the gameplay renderer, separate from menu-decoration components."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/package.json",
+            "dependencies": {
+              "@convex-dev/auth": "^0.0.94",
+              "@convex-dev/rate-limiter": "^0.3.2",
+              "@dimforge/rapier3d-compat": "^0.12.0",
+              "@types/three": "^0.180.0",
+              "@vercel/analytics": "^1.5.0",
+              "@vercel/speed-insights": "^1.2.0",
+              "convex": "^1.39.1",
+              "lucia": "^3.2.2",
+              "lucide-react": "^1.16.0",
+              "motion": "14.1.0",
+              "peerjs": "^1.5.5",
+              "react": "^19.1.1",
+              "react-dom": "^19.1.1",
+              "three": "^0.180.0"
+            },
+            "dev_dependencies": {
+              "@eslint/js": "^9.36.0",
+              "@types/node": "^24.10.0",
+              "@types/react": "^19.1.16",
+              "@types/react-dom": "^19.1.9",
+              "@vitejs/plugin-react": "^5.0.4",
+              "autoprefixer": "^10.4.20",
+              "babel-plugin-react-compiler": "^19.1.0-rc.3",
+              "baseline-browser-mapping": "^2.11.32",
+              "eslint": "^9.36.0",
+              "eslint-plugin-react-hooks": "^5.2.0",
+              "eslint-plugin-react-refresh": "^0.4.22",
+              "globals": "^16.4.0",
+              "postcss": "^8.4.49",
+              "tailwindcss": "^3.4.17",
+              "typescript": "~5.9.3",
+              "typescript-eslint": "^8.45.0",
+              "vite": "^7.3.7"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Exact npm dependencies include direct three ^0.180.0, React/React DOM, Rapier compat ^0.12.0, Motion, Lucide, PeerJS, Convex/Auth/rate limiting, Lucia and Vercel analytics/speed insights; the full dependency and devDependency maps are retained. React is UI/hosting here, not a hidden R3F scene reconciler.",
+          "src/main.tsx constructs a ConvexReactClient from VITE_CONVEX_URL and wraps the app in Convex auth and player-data providers. A reproducible standalone offline bootstrap was not established merely because combat is local; deployment/auth/progression provisioning requirements remain explicit.",
+          "Authored Three geometry/terrain, rendering/postprocessing, combat and Web Audio/SoundManager code were sampled. The source includes local Oswald and Chakra Petch font files and provider/analytics integrations; their independent rights and live behavior were not certified.",
+          "Optional PeerJS multiplayer, account persistence, leaderboard/daily systems and photo storage are broader features than the scoped classic solo result audit. No connection, room, account, save/submission, analytics request, photograph upload or paid service was activated."
+        ],
+        "framework_audit": "The pinned actual entry, directly constructed Three renderer, active state/input/render path and game outcome were inspected alongside available manifest/CDN or vendored declarations. No R3F, A-Frame, Babylon.js, Unity or replacement rendering/game engine was identified in that scoped path. Authored helpers, DOM/React UI, physics, audio, build, native and service roles are disclosed; no exhaustive transitive or runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/src/App.tsx#L10701-L10757",
+        "claim": "The active classic survival path updates combat, score and escalating waves. Health at zero starts the death sequence, whose completion sets isGameOver and flushes the HUD state; App renders the real GameOver component with score, kills, wave, restart and main-menu handlers. Its classic HUD explicitly sets isVictory false because the mode is endless; no finite boss-win campaign is asserted."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/LICENSE",
+        "additional_notices": [
+          "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/README.md",
+          "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/src/components/CreditsMenu.tsx",
+          "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/index.html"
+        ],
+        "notes": "Root LICENSE supplies a full MIT project-code grant. Dependencies, bundled fonts, branding and other non-code media retain their applicable terms. The credits UI is primarily a technology/author list, not a complete per-asset license inventory; no blanket MIT assertion for all media or external services is made."
+      },
+      "demo": {
+        "url": "https://forestsurvival.live/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/README.md",
+        "notes": "The pinned README and index metadata identify the author URL forestsurvival.live. Text retrieval on 2026-10-26 returned a reader accessibility error, not proof of an offline site. No account, renderer, classic run, score submission, multiplayer or upload was started."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/README.md",
+        "notes": "A substantial source prototype whose package version remains 0.0.0. The scoped audit establishes classic endless-wave combat, death/result/restart wiring; README feature counts, every weapon/map/mode, authored performance figures and hosted playability were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-044.md#forest-survival",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/README.md"
+          },
+          {
+            "path": "src/App.tsx",
+            "url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/src/App.tsx"
+          },
+          {
+            "path": "src/components/CreditsMenu.tsx",
+            "url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/src/components/CreditsMenu.tsx"
+          },
+          {
+            "path": "src/components/GameOver.tsx",
+            "url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/src/components/GameOver.tsx"
+          },
+          {
+            "path": "src/main.tsx",
+            "url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/src/main.tsx"
+          },
+          {
+            "path": "src/utils/PhysicsWorld.ts",
+            "url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/src/utils/PhysicsWorld.ts"
+          },
+          {
+            "path": "src/utils/SoundManager.ts",
+            "url": "https://github.com/suryanarayanrenjith/Forest-Survival/blob/d3d0dfdbfc0e077c435d4841c4a058f6c8622a0f/src/utils/SoundManager.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This entry certifies the inspected classic solo source path; optional multiplayer, tutorial completion, provider setup and all broader systems were not exhaustively audited.",
+        "The current manifest and imported gameplay path use direct Three. Historical or removed R3F credits do not override the actual current renderer; React UI and service requirements remain disclosed.",
+        "Classic survival is endless and death ends a run. A general GameOver isVictory prop or boss roster is not evidence of a finite campaign victory.",
+        "The application bootstrap depends on a configured Convex endpoint, and source contains analytics/speed-insight integrations. No environment credential, provider provisioning, auth, real request, stored player data or photo was used.",
+        "No upstream installation, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, all objectives' reachability, complete rules correctness, deployment/source equivalence or independently cleared rights for every asset and dependency."
+      ]
+    },
+    {
+      "id": "game-off-2026-dash-smash",
+      "name": "Game Off 2026 — dash-smash prototype",
+      "repository_url": "https://github.com/enochcarsaas/game-off-2026",
+      "genres": [
+        "arena survival",
+        "score attack",
+        "arcade action"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.170.0 / r170 (vendored filename and build/design declarations)",
+        "render_evidence": {
+          "url": "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/src/game.js#L1-L24",
+          "claim": "The authored game directly creates THREE.WebGLRenderer, scene/camera and volumetric toon meshes. The inspected build.js inlines the vendored Three module and this game into the actual HTML template; the authored requestAnimationFrame renders that scene. No build or bundled page execution was performed."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "No package.json exists in the pinned 12-file tree. The custom Node/fs build script reads vendor/three-0.170.0.module.min.js and src/game.js and fills src/index.html; it was read only. The vendored Three MIT license was inspected separately.",
+          "Movement, collisions, chase AI, dash, combos and pooled particles are authored plain JavaScript with a fixed 60 Hz step and system-font DOM HUD. Horizontal arena motion is rendered with volumetric geometry and a perspective camera.",
+          "The Web Audio hook loads only audio filenames enumerated by the build. In this pinned tree audio contains only .gitkeep, so bundled recordings/music are absent and missing audio remains silent. This is not described as working synthesized sound or a complete music release."
+        ],
+        "framework_audit": "The pinned actual entry, directly constructed Three renderer, active state/input/render path and game outcome were inspected alongside available manifest/CDN or vendored declarations. No R3F, A-Frame, Babylon.js, Unity or replacement rendering/game engine was identified in that scoped path. Authored helpers, DOM/React UI, physics, audio, build, native and service roles are disclosed; no exhaustive transitive or runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/src/game.js#L70-L101",
+        "claim": "Starting resets a three-heart arena run. Fixed-step logic awards combo points for collecting sparks and dash-smashing pursuing enemies; ordinary contact costs health, and zero health calls gameOver. The result UI records final/best score with a local-storage best and an Again handler, establishing score-attack gameplay rather than an empty scene or future design only."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/LICENSE",
+        "additional_notices": [
+          "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/README.md",
+          "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/design.md",
+          "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/vendor/THREE-LICENSE"
+        ],
+        "notes": "Root LICENSE supplies the full MIT project-code grant and vendor/THREE-LICENSE preserves Three's separate MIT notice. The documented visual shapes are code-built. Future sound files, event names/marks and any later media do not acquire a grant from this inspection; no audio payload exists in the reviewed audio tree."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/README.md",
+        "notes": "No specific author-hosted demo URL was located in the pinned README or repository homepage metadata. The tracked dist/index.html is a repository build artifact, not an invented public Pages URL, and was not executed."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/README.md",
+        "notes": "The author calls this a working-title, pre-theme Game Off 2026 entry. A score/dash/enemy/health/result core exists now; planned between-wave upgrades and theme adaptations are not presented as implemented, submitted, accepted or released features."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "b2c46c1dad9150527d1e195b5615492446ddcbaa",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-044.md#game-off-2026-dash-smash",
+        "reviewed_files": [
+          {
+            "path": "build.js",
+            "url": "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/build.js"
+          },
+          {
+            "path": "design.md",
+            "url": "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/design.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/README.md"
+          },
+          {
+            "path": "src/game.js",
+            "url": "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/src/game.js"
+          },
+          {
+            "path": "src/index.html",
+            "url": "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/src/index.html"
+          },
+          {
+            "path": "vendor/THREE-LICENSE",
+            "url": "https://github.com/enochcarsaas/game-off-2026/blob/b2c46c1dad9150527d1e195b5615492446ddcbaa/vendor/THREE-LICENSE"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Core player and enemy motion is planar XZ inside a volumetric 3D arena. The dimension field describes the rendered scene rather than free three-axis movement.",
+        "Audio is an optional file hook with an empty bundled audio directory at this pin. The design's proposed upgrades, theme rules and target run duration were not verified as current gameplay.",
+        "No build script, headless bot, vendor bundle, local storage, audio context, run, dash, final score or jam submission was executed.",
+        "No upstream installation, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, all objectives' reachability, complete rules correctness, deployment/source equivalence or independently cleared rights for every asset and dependency."
+      ]
     }
   ]
 }
