@@ -1718,6 +1718,53 @@
         "https://github.com/makalin/MazeRoamer/blob/3f9d69179be697595d0ea2f87f0a31ccfc3f1122/README.md",
         "https://github.com/makalin/MazeRoamer/blob/3f9d69179be697595d0ea2f87f0a31ccfc3f1122/index.html"
       ]
+    },
+    {
+      "id": "rubiks-game-snow",
+      "repository_url": "https://github.com/mr-snow2005/Rubiks-Game",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "eb9f540bc2a997894db9c7ae0a52c52456d15864",
+      "reason": "MIT/direct Three and a solve/timer path exist, but static inspection raises a completion-adjudication concern. CubeBase builds sticker maps using original face labels, rotations update transforms/logical positions without re-keying those labels, and isSolved compares colors grouped by those original keys rather than current world-facing orientation. This suggests false-positive solved states; it was not confirmed by running the game.",
+      "next_action": "Verify or repair pose-aware solved detection, scramble/unsolved/solve transitions and timer gating before promotion. Retain the source inference as an unexecuted concern, not a claimed browser bug reproduction.",
+      "evidence_urls": [
+        "https://github.com/mr-snow2005/Rubiks-Game/blob/eb9f540bc2a997894db9c7ae0a52c52456d15864/LICENSE",
+        "https://github.com/mr-snow2005/Rubiks-Game/blob/eb9f540bc2a997894db9c7ae0a52c52456d15864/src/puzzles/CubeBase.js#L76-L94",
+        "https://github.com/mr-snow2005/Rubiks-Game/blob/eb9f540bc2a997894db9c7ae0a52c52456d15864/src/puzzles/CubeBase.js#L173-L189",
+        "https://github.com/mr-snow2005/Rubiks-Game/blob/eb9f540bc2a997894db9c7ae0a52c52456d15864/src/puzzles/CubeBase.js#L202-L214",
+        "https://github.com/mr-snow2005/Rubiks-Game/blob/eb9f540bc2a997894db9c7ae0a52c52456d15864/src/main.js#L76-L85",
+        "https://github.com/mr-snow2005/Rubiks-Game/blob/eb9f540bc2a997894db9c7ae0a52c52456d15864/src/core/State.js#L106-L119"
+      ]
+    },
+    {
+      "id": "three-dimensional-2048-fiber",
+      "repository_url": "https://github.com/SymphonyIceAttack/3d-2048-game",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "ae1891626751565f2d72990685c83f35414348dd",
+      "reason": "The actual 3D game component imports Canvas from @react-three/fiber and renders its scene inside that Canvas; the manifest also declares Drei/React Spring helpers. It is outside the direct-Three rendering boundary even though Three is the underlying library.",
+      "next_action": "Reconsider only a separately proven direct-Three entry; do not promote on the 3D/Three.js title alone.",
+      "evidence_urls": [
+        "https://github.com/SymphonyIceAttack/3d-2048-game/blob/ae1891626751565f2d72990685c83f35414348dd/package.json",
+        "https://github.com/SymphonyIceAttack/3d-2048-game/blob/ae1891626751565f2d72990685c83f35414348dd/components/game-2048-3d.tsx#L1-L14",
+        "https://github.com/SymphonyIceAttack/3d-2048-game/blob/ae1891626751565f2d72990685c83f35414348dd/components/game-2048-3d.tsx#L478-L504",
+        "https://github.com/SymphonyIceAttack/3d-2048-game/blob/ae1891626751565f2d72990685c83f35414348dd/app/page.tsx"
+      ]
+    },
+    {
+      "id": "supaplex-neon-flat",
+      "repository_url": "https://github.com/VictorZakharov/supaplex-glm3f",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "b122afbc5df62127c4f80ec60113a0e161b1ae69",
+      "reason": "This entry does directly create Three WebGLRenderer, but the active game is a flat sprite grid: tiles are PlaneGeometry instances translated to z=0, the player is another textured plane and the camera is orthographic. Decorative particles/postprocessing do not establish a volumetric 3D game/board for this collection.",
+      "next_action": "Keep the dimensional exclusion separate from renderer/licensing quality; reconsider only a distinct implemented 3D gameplay view.",
+      "evidence_urls": [
+        "https://github.com/VictorZakharov/supaplex-glm3f/blob/b122afbc5df62127c4f80ec60113a0e161b1ae69/README.md",
+        "https://github.com/VictorZakharov/supaplex-glm3f/blob/b122afbc5df62127c4f80ec60113a0e161b1ae69/src/render/TileLayer.ts#L76-L84",
+        "https://github.com/VictorZakharov/supaplex-glm3f/blob/b122afbc5df62127c4f80ec60113a0e161b1ae69/src/render/TileLayer.ts#L130-L136",
+        "https://github.com/VictorZakharov/supaplex-glm3f/blob/b122afbc5df62127c4f80ec60113a0e161b1ae69/src/render/GameRenderer.ts#L33-L74"
+      ]
     }
   ]
 }

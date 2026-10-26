@@ -19604,6 +19604,308 @@
         "R32 model parts, sky/water textures and an engine recording are runtime dependencies with incomplete provenance review; code MIT is not all-assets clearance. No GLB/image/audio asset was retrieved or reused in GameMap, and no sound, worker, save or pointer-lock session ran.",
         "No upstream installation, build, automated suite or playtest occurred. Source implementation and author content/compatibility claims do not establish successful play or completion on a current device."
       ]
+    },
+    {
+      "id": "de-stijl-compass",
+      "name": "De Stijl Compass — Geometry 3D",
+      "repository_url": "https://github.com/fanquanpp/destijl-compass",
+      "genres": [
+        "geometric construction",
+        "spatial puzzle",
+        "educational"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.169.0 (declared)",
+        "render_evidence": {
+          "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/src/core/scene3d.js#L93",
+          "claim": "The real app creates its authored scene helper, which directly instantiates THREE.WebGLRenderer. app.js owns the requestAnimationFrame loop and calls that scene's render; a Three CSS2DRenderer adds labels only. Authored line/circle/sphere/point visuals represent the active construction model rather than a detached exhibit."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/package.json",
+            "dependencies": {
+              "three": "^0.169.0"
+            },
+            "dev_dependencies": {
+              "@fontsource/space-grotesk": "^5.3.0",
+              "vite": "^8.3.4"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three is the sole declared npm runtime dependency; Vite and @fontsource/space-grotesk are declared development dependencies. Three examples supply orbit/DOM-label helpers; authored math/model/session/level logic implements intersections and objective checks, with plain DOM UI.",
+          "Web Audio synthesizes feedback. CREDITS separately attributes bundled Space Grotesk font files and decorative Mondrian reproductions; these are assets with their own terms, not evidence that the entire repository is only Three code."
+        ],
+        "framework_audit": "Actual entry, direct Three renderer, integrated objective and available manifests were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity, enable3d or replacement renderer was identified in the scoped game runtime. Authored scene/game helpers, build/audio/DOM/backend roles are disclosed; every transitive package and content origin was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/src/core/session.js#L88-L100",
+        "claim": "After each construction change, the actual app rebuilds the model and calls session.check. A level-specific geometry predicate sets solved; stars depend on operation count relative to par, and the app records stars/unlocks and presents its solved overlay. The source includes a spatial tetrahedron goal requiring equal-distance points and all six drawn edges, alongside planar constructions."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code)",
+        "source_url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/LICENSE",
+        "additional_notices": [
+          "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/CREDITS.md",
+          "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/README.md"
+        ],
+        "notes": "Root project code is MIT. CREDITS calls Space Grotesk SIL OFL 1.1 and four decorative Mondrian reproductions public-domain/PD-Art, with procedural geometry/paper/grid and synthesized sound. Those are author attributions: exact artwork-file/source matching, every font binary and jurisdiction-specific artwork status were not independently cleared. Code MIT does not replace the separate asset terms; no artwork/font binary was downloaded or copied into GameMap."
+      },
+      "demo": {
+        "url": "https://fanquanpp.github.io/destijl-compass/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://api.github.com/repos/fanquanpp/destijl-compass",
+        "notes": "Author repository metadata homepage, read 2026-10-26, identifies this URL; README describes Pages output but does not print the demo URL. A text-reader attempt returned an accessibility error; no renderer, game or deployed/source match was tested. Reader failure is not an offline-site conclusion."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/README.md",
+        "notes": "Source integrates construction tools, geometry-dependent completion, operation-based star ratings and progress/UI. README describes bilingual levels and a sandbox; the full level set, geometric tolerances, solutions and author tests were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "d0b8e94b9e391e719cd642f47276e5fd323d0c64",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-035.md#de-stijl-compass",
+        "reviewed_files": [
+          {
+            "path": "CREDITS.md",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/CREDITS.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/package.json"
+          },
+          {
+            "path": "src/app.js",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/src/app.js"
+          },
+          {
+            "path": "src/core/audio.js",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/src/core/audio.js"
+          },
+          {
+            "path": "src/core/levels.js",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/src/core/levels.js"
+          },
+          {
+            "path": "src/core/math3.js",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/src/core/math3.js"
+          },
+          {
+            "path": "src/core/model.js",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/src/core/model.js"
+          },
+          {
+            "path": "src/core/scene3d.js",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/src/core/scene3d.js"
+          },
+          {
+            "path": "src/core/session.js",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/src/core/session.js"
+          },
+          {
+            "path": "src/core/storage.js",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/src/core/storage.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/src/main.js"
+          },
+          {
+            "path": "tools/optimize-textures.py",
+            "url": "https://github.com/fanquanpp/destijl-compass/blob/d0b8e94b9e391e719cd642f47276e5fd323d0c64/tools/optimize-textures.py"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "A manipulable 3D drafting board with mostly planar classic constructions and genuinely spatial sphere/tetrahedron operations. Camera orbit is not a freely moving player world; sandbox drawing is not counted as a separate game.",
+        "The asset optimizer was read as text only. No artwork conversion/download, synthesized sound, font load, localStorage progress, export, formal correctness proof or upstream test was run.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation and author content/performance/compatibility claims do not establish successful play or completion on a current device."
+      ]
+    },
+    {
+      "id": "beagle-chomp",
+      "name": "Beagle Chomp",
+      "repository_url": "https://github.com/nunoamorim99/beagle-chomp",
+      "genres": [
+        "maze chase",
+        "arcade",
+        "score attack"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.169.0 (declared)",
+        "render_evidence": {
+          "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/src/render/scene.ts#L287",
+          "claim": "The actual authenticated bootstrap constructs Game, which creates the authored scene rig and directly instantiates THREE.WebGLRenderer. The game's own animation frame advances tile movement/enemies/state and renders that same volumetric beagle/hedge-maze scene. The backend and editor do not own rendering."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/package.json",
+            "dependencies": {
+              "three": "^0.169.0"
+            },
+            "dev_dependencies": {
+              "@types/node": "^26.1.0",
+              "@types/three": "^0.169.0",
+              "lil-gui": "^0.21.0",
+              "playwright": "^1.61.1",
+              "tsx": "^4.22.5",
+              "typescript": "^5.6.3",
+              "vite": "^5.4.10",
+              "vite-plugin-pwa": "^0.20.5"
+            }
+          },
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/server/package.json",
+            "dependencies": {
+              "@hono/node-server": "^2.1.0",
+              "@node-rs/argon2": "^2.1.0",
+              "hono": "^4.6.14",
+              "pg": "^8.13.1",
+              "web-push": "^3.6.7",
+              "zod": "^3.24.1"
+            },
+            "dev_dependencies": {
+              "@types/node": "^22.10.2",
+              "@types/pg": "^8.11.10",
+              "@types/web-push": "^3.6.4",
+              "tsx": "^4.19.2",
+              "typescript": "^5.7.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "The browser's sole npm runtime dependency is Three; TypeScript/Vite/PWA tooling, tsx, Playwright and editor lil-gui are development dependencies. Authored grid movement, AI, geometry/sculpting, effects and Web Audio supply game systems; no physics/render engine replaces Three.",
+          "The separate Node >=22 server manifest declares Hono/node adapter, native Argon2, PostgreSQL pg, web-push and Zod. The actual boot requires configured API, authenticated account and hydrated profile before constructing Game; a run requires a server session. Backend/account access is mandatory for the reviewed production flow, not an optional leaderboard-only feature."
+        ],
+        "framework_audit": "Actual entry, direct Three renderer, integrated objective and available manifests were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity, enable3d or replacement renderer was identified in the scoped game runtime. Authored scene/game helpers, build/audio/DOM/backend roles are disclosed; every transitive package and content origin was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/src/game/game.ts#L1583-L1602",
+        "claim": "Eating a biscuit/bone adds points, removes the pickup and clears the map when no pellets remain. levelClear presents Map Cleared and the state machine advances onward; exhausting lives after a death calls gameOver. Classic play continues through map cycles rather than inferring a final game victory from the maximum-difficulty celebration. The source attempts run submission at game-over."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code; branding excluded)",
+        "source_url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/LICENSE",
+        "additional_notices": [
+          "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/README.md",
+          "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/server/README.md"
+        ],
+        "notes": "Root code LICENSE is MIT. README explicitly excludes the Beagle Chomp name/logo/app icons from that grant and asks forks not to reuse the identity. It also excludes watermarked reference photos, which it says are kept outside git and contribute no image pixels to the original geometry. Procedural model/texture/sound claims are author statements consistent with sampled sculpt/sound source; complete design/reference provenance and branding reuse rights were not independently cleared."
+      },
+      "demo": {
+        "url": "https://beaglechomp.nunoamorim.dev",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/README.md",
+        "notes": "README and repository metadata identify this author game. A text-reader attempt returned an accessibility error; no renderer, game, authentication or deployed/source match was tested. Reader failure is not an offline-site conclusion."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/README.md",
+        "notes": "Source implements pickup scoring, enemy/life loss, map clearing, classic cycling and run/result handling, with a larger progression/challenge/account system. README's device/PWA, content counts, score-validation and tests are not adopted as reviewer runtime/security results."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "b2ca967a7e3979b8188294424f441999cfb46b44",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-035.md#beagle-chomp",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/package.json"
+          },
+          {
+            "path": "server/README.md",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/server/README.md"
+          },
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/server/package.json"
+          },
+          {
+            "path": "src/game/game.ts",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/src/game/game.ts"
+          },
+          {
+            "path": "src/game/state.ts",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/src/game/state.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/src/main.ts"
+          },
+          {
+            "path": "src/net/api.ts",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/src/net/api.ts"
+          },
+          {
+            "path": "src/net/runSubmit.ts",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/src/net/runSubmit.ts"
+          },
+          {
+            "path": "src/render/beagleSculpt.ts",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/src/render/beagleSculpt.ts"
+          },
+          {
+            "path": "src/render/scene.ts",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/src/render/scene.ts"
+          },
+          {
+            "path": "src/ui/sound.ts",
+            "url": "https://github.com/nunoamorim99/beagle-chomp/blob/b2ca967a7e3979b8188294424f441999cfb46b44/src/ui/sound.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Planar tile-stepping rules are rendered with volumetric characters, walls and environment. Only the actual game path is counted; editor/admin/diagram-style screens are not additional games.",
+        "A working API/Postgres-backed account/session flow is required; source has no guest/offline gameplay fallback. Game-over and other completed-run paths automatically attempt score/telemetry submission and can retry queued results.",
+        "No account was registered or signed in, and no game-backend API, run/session, leaderboard submission, push/service worker, save, sound or PWA install was activated. Branding exceptions remain explicit; game code MIT is not permission to reuse the name/logo/app icons.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation and author content/performance/compatibility claims do not establish successful play or completion on a current device."
+      ]
     }
   ]
 }
