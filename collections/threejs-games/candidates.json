@@ -1704,6 +1704,20 @@
         "https://github.com/trongnhanqng2005/rushbite-kitchen-crew/blob/c91647dd97a4bbb8fea0e0ebdb2039536b181881/src/game/Game.ts",
         "https://github.com/trongnhanqng2005/rushbite-kitchen-crew/blob/c91647dd97a4bbb8fea0e0ebdb2039536b181881/src/systems/ShiftSystem.ts"
       ]
+    },
+    {
+      "id": "maze-roamer",
+      "repository_url": "https://github.com/makalin/MazeRoamer",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "3f9d69179be697595d0ea2f87f0a31ccfc3f1122",
+      "reason": "MIT code and direct Three navigation/timer are established, but the reviewed single-file entry does not establish completion adjudication, scoring or level progression. README still lists adding an end-of-maze win condition as a future enhancement. The maze-game title/timer alone is not promoted to a verified objective loop.",
+      "next_action": "Recheck an implemented exit/progression/score condition wired to the actual movement loop before promotion; keep the renderer/license evidence and do not treat the author demo link as a playtest.",
+      "evidence_urls": [
+        "https://github.com/makalin/MazeRoamer/blob/3f9d69179be697595d0ea2f87f0a31ccfc3f1122/LICENSE",
+        "https://github.com/makalin/MazeRoamer/blob/3f9d69179be697595d0ea2f87f0a31ccfc3f1122/README.md",
+        "https://github.com/makalin/MazeRoamer/blob/3f9d69179be697595d0ea2f87f0a31ccfc3f1122/index.html"
+      ]
     }
   ]
 }

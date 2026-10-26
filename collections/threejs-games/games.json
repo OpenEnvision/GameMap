@@ -18996,6 +18996,614 @@
         "Browser text availability is the only live demo observation. No game mode, real command, scoring session, external cluster, storage/export action or upstream suite was run.",
         "No upstream install, build, test suite or playtest occurred. Source paths and author compatibility/completion claims do not establish successful gameplay on a current device."
       ]
+    },
+    {
+      "id": "pocket-racer",
+      "name": "Pocket Racer",
+      "repository_url": "https://github.com/inabako06/pocket-racer",
+      "genres": [
+        "arcade racing",
+        "drifting",
+        "championship"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.160.0 (declared)",
+        "render_evidence": {
+          "url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/src/Game.ts#L244",
+          "claim": "The actual main entry constructs Game, which directly creates THREE.WebGLRenderer and owns its setAnimationLoop. The active race scene is built from authored car/track geometry and advances the Cannon simulation, player/rival controllers and HUD before rendering. No rendering framework owns the Three scene."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/package.json",
+            "dependencies": {
+              "cannon-es": "^0.20.0",
+              "three": "^0.160.0"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.160.0",
+              "typescript": "^5.3.3",
+              "vite": "^5.0.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Runtime npm dependencies are Three and cannon-es; TypeScript/Vite are build tooling. Authored car, track, AI-driver, camera and HUD systems integrate Cannon RaycastVehicle-style physics with the direct Three renderer.",
+          "README describes procedural models/textures/music/sound; sampled AssetGenerator, MusicPlayer/MusicTracks and EngineSound sources construct geometry/canvas textures and Web Audio synthesis. MusicTracks explicitly claims original melodies/progressions rather than reuse of existing songs; this remains an author statement."
+        ],
+        "framework_audit": "Actual entry, direct Three renderer, integrated objective and available manifests were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity, enable3d or replacement renderer was identified in this scoped runtime. Authored scene/game helpers, physics/build/network/audio roles are disclosed; complete transitive/content provenance was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/src/Game.ts#L642-L663",
+        "claim": "Checkpoint/lap progression marks an entrant finished once the required laps are exceeded, records finish order/time and calls finishRace for the player. The result path ranks entrants and, in arcade mode, sets gameOver for position 4 or worse while tracking final-course progression. These are active race/result conditions, not just a drivable car preview."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code)",
+        "source_url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/LICENSE",
+        "additional_notices": [
+          "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/README.md",
+          "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/src/MusicTracks.ts"
+        ],
+        "notes": "Root project code is MIT. README and the music source attribute procedural assets/compositions to this project, and sampled sources are consistent with that statement. Three/Cannon/tooling retain their own terms; complete authorship, every generated design and all content origins were not independently audited. No models, recordings or music were downloaded or played."
+      },
+      "demo": {
+        "url": "https://inabako06.github.io/pocket-racer/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/README.md",
+        "notes": "README and repository metadata link this author game. The text reader could not retrieve it; no renderer, lap, handling, audio or source/deployment correspondence was tested. An accessibility error alone does not show the site offline."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/README.md",
+        "notes": "Source implements a lap-based race, standings, a results screen and arcade continuation/game-over logic. README describes courses, cars, drifting and audio; exact content counts, full series completion and handling/performance were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "5f08ceee57b94647e088df46f01012006e321275",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-034.md#pocket-racer",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/README.md"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/package.json"
+          },
+          {
+            "path": "src/AssetGenerator.ts",
+            "url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/src/AssetGenerator.ts"
+          },
+          {
+            "path": "src/EngineSound.ts",
+            "url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/src/EngineSound.ts"
+          },
+          {
+            "path": "src/Game.ts",
+            "url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/src/Game.ts"
+          },
+          {
+            "path": "src/MusicPlayer.ts",
+            "url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/src/MusicPlayer.ts"
+          },
+          {
+            "path": "src/MusicTracks.ts",
+            "url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/src/MusicTracks.ts"
+          },
+          {
+            "path": "src/Physics.ts",
+            "url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/src/Physics.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/inabako06/pocket-racer/blob/5f08ceee57b94647e088df46f01012006e321275/src/main.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Cannon physics plus authored drift/steering assists are an arcade handling model; real-car accuracy, lap integrity, standings correctness and full championship completion were not validated.",
+        "No audio, car-preview session, browser save, gamepad or touch interaction was activated.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation and author content/compatibility claims do not establish successful play or completion on a current device."
+      ]
+    },
+    {
+      "id": "apex-velocity-3d",
+      "name": "APEX Velocity 3D",
+      "repository_url": "https://github.com/gpreethish08/apex-velocity-racing",
+      "genres": [
+        "circuit racing",
+        "arcade driving",
+        "car progression"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1 (declared)",
+        "render_evidence": {
+          "url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/src/core/Game.js#L86",
+          "claim": "The actual bootstrap creates Game, which directly constructs THREE.WebGLRenderer and owns a requestAnimationFrame loop. Its authored car/track/environment systems update player/rivals, lap and HUD state, then renderer.render draws that same race scene. The showroom is not the only implemented entry."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/package.json",
+            "dependencies": {
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "vite": "^8.3.4"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Only Three is declared as an npm runtime dependency; Vite is development tooling. Authored vehicle dynamics, AI, track/coin/nitro systems, DOM UI and Web Audio synthesis supply gameplay/audio without another game engine.",
+          "CarModelBuilder constructs mesh geometry/materials and SoundManager builds synthetic audio. Brochure claims of realistic/PBR performance are not reviewer validation; vehicle brand/model inspirations are retained as project descriptions rather than independent rights clearance."
+        ],
+        "framework_audit": "Actual entry, direct Three renderer, integrated objective and available manifests were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity, enable3d or replacement renderer was identified in this scoped runtime. Authored scene/game helpers, physics/build/network/audio roles are disclosed; complete transitive/content provenance was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/src/core/Game.js#L449-L510",
+        "claim": "The active race detects a track-progress wrap from above 0.85 to below 0.15, updates lap timing and finishes at the configured three laps. finishRace changes state to FINISHED, awards a position-dependent coin bonus and presents time/position/earnings. Coin collection and garage progression are integrated separately from the render-only car models."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code)",
+        "source_url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/LICENSE",
+        "additional_notices": [
+          "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/README.md"
+        ],
+        "notes": "Root LICENSE and package.json agree on MIT for project code. Sampled car/sound source is procedural, but the README's named real-car inspirations and brands are not licensed by the project MIT grant. Dependencies, design/content origins and every generated component were not exhaustively audited."
+      },
+      "demo": {
+        "url": "https://apex-racing-3d.vercel.app",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/README.md",
+        "notes": "README and repository metadata identify this author URL. A text-reader attempt returned an accessibility error; no race, garage transaction, save, audio or deployed/source-match check occurred. This is not an offline-site conclusion."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/README.md",
+        "notes": "Source integrates countdown/race updates, lap completion, result presentation and coin progression. README describes broader cars/cameras/FX and real-world handling qualities; those counts, realism claims and a complete race were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "ef8277af4520f5ae7c15989014e4000361db73d1",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-034.md#apex-velocity-3d",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/package.json"
+          },
+          {
+            "path": "src/core/Game.js",
+            "url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/src/core/Game.js"
+          },
+          {
+            "path": "src/core/SoundManager.js",
+            "url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/src/core/SoundManager.js"
+          },
+          {
+            "path": "src/entities/CarModelBuilder.js",
+            "url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/src/entities/CarModelBuilder.js"
+          },
+          {
+            "path": "src/entities/VehiclePhysics.js",
+            "url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/src/entities/VehiclePhysics.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/gpreethish08/apex-velocity-racing/blob/ef8277af4520f5ae7c15989014e4000361db73d1/src/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Custom vehicle dynamics are an authored arcade simulation. Source lap-wrap/ranking/economy logic was traced, without testing handling accuracy, race fairness or persistent progression.",
+        "Garage coins are game state, not a verified monetary transaction. No purchase button, storage write, device input or sound was activated.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation and author content/compatibility claims do not establish successful play or completion on a current device."
+      ]
+    },
+    {
+      "id": "valley-puzzle-explorer",
+      "name": "VALLEY — 3D Puzzle Explorer",
+      "repository_url": "https://github.com/rsamwilson2323-cloud/valley",
+      "genres": [
+        "spatial puzzle",
+        "exploration",
+        "platform traversal"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.169.0 (declared; WebGPU/TSL imports)",
+        "render_evidence": {
+          "url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/game.js#L74-L84",
+          "claim": "The actual index loads game.js, which imports three/webgpu and three/tsl, directly creates WebGPURenderer, initializes it and owns setAnimationLoop. Its authored player/pathfinder/scene builder operate on the actual multi-height puzzle world; editor helpers are separate from normal play."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/package.json",
+            "dependencies": {
+              "three": "^0.169.0"
+            },
+            "dev_dependencies": {
+              "vite": "^6.0.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three is the only declared npm runtime package; Vite supplies tooling. Direct WebGPU/TSL, OrbitControls and authored level data, pathfinder, player, modular scene builder and optional editor provide the runtime. No rendering wrapper/physics engine is declared.",
+          "The reviewed tree consists of code/config/docs rather than shipped external model/texture/audio files. Sampled scene geometry and collection chime are produced in code; complete originality/design provenance was not independently established."
+        ],
+        "framework_audit": "Actual entry, direct Three renderer, integrated objective and available manifests were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity, enable3d or replacement renderer was identified in this scoped runtime. Authored scene/game helpers, physics/build/network/audio roles are disclosed; complete transitive/content provenance was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/game.js#L1503-L1517",
+        "claim": "The active frame calls checkTargetReached, comparing player and target coordinates including height. Reaching the target cell invokes triggerLevelComplete, which marks transitioning, presents collection/fade effects and loads the next defined level or loops back to level 1. This is integrated objective/progression logic rather than an editor-only target marker."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code)",
+        "source_url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/LICENSE",
+        "additional_notices": [],
+        "notes": "Root LICENSE gives a full MIT project grant. README's license paragraph alone only says public/open source, so the actual LICENSE text is used as evidence. Geometry/chime code and system-font UI were inspected; third-party Three terms, complete authorship and any remix/design origins were not exhaustively audited."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/README.md",
+        "notes": "Reviewed README and repository metadata supply no concrete author-hosted game URL. GitHub source, local setup addresses and editor controls are not substituted for a demo deployment."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/README.md",
+        "notes": "README calls it an experimental browser game and level-design environment. Source has normal puzzle play with a diamond objective and level transition, alongside an editor; full level reachability, WebGPU compatibility and broader atmospheric-feature claims were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "0b02bfee93782bdf0f236b2bd469edb5da1e1222",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-034.md#valley-puzzle-explorer",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/README.md"
+          },
+          {
+            "path": "editor.js",
+            "url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/editor.js"
+          },
+          {
+            "path": "game.js",
+            "url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/game.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/index.html"
+          },
+          {
+            "path": "levels.js",
+            "url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/levels.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/package.json"
+          },
+          {
+            "path": "pathfinder.js",
+            "url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/pathfinder.js"
+          },
+          {
+            "path": "player.js",
+            "url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/player.js"
+          },
+          {
+            "path": "sceneBuilder.js",
+            "url": "https://github.com/rsamwilson2323-cloud/valley/blob/0b02bfee93782bdf0f236b2bd469edb5da1e1222/sceneBuilder.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Movement and target detection include vertical coordinates in a real 3D puzzle world. The optional editor/export path is not counted as another game or as proof that every authored level is solvable.",
+        "WebGPU/TSL renderer initialization, fallback behavior, shader compatibility, saves/editor export and collection sound were not run.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation and author content/compatibility claims do not establish successful play or completion on a current device."
+      ]
+    },
+    {
+      "id": "rune-vault",
+      "name": "Rune Vault",
+      "repository_url": "https://github.com/kzxheli-commits/rune-vault",
+      "genres": [
+        "multiplayer deduction",
+        "social deduction",
+        "sequence puzzle"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r170 (vendored); ^0.170.0 declared",
+        "render_evidence": {
+          "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/client/js/world.js#L68",
+          "claim": "The actual client main creates World/Controls; World directly constructs THREE.WebGLRenderer, procedural room/pillar/altar geometry and the first-person camera. The client's own animation frame updates controls/network snapshots and renders that active world. The import map selects the retained vendored Three module rather than a render framework."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/package.json",
+            "dependencies": {
+              "ws": "^8.18.0",
+              "three": "^0.170.0"
+            },
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Root npm dependencies are ws and Three. A Node HTTP/WebSocket server hosts static files and authoritative room/round state; plain browser ES modules, authored controls/world/UI and shared constants implement the client. No bundler is required by the documented entry.",
+          "The shipped Three module's header states SPDX MIT and its revision binding/registration reports 170; package.json separately declares ^0.170.0. The game needs a running room server/multiple participants; a standalone static page does not establish a working multiplayer session."
+        ],
+        "framework_audit": "Actual entry, direct Three renderer, integrated objective and available manifests were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity, enable3d or replacement renderer was identified in this scoped runtime. Authored scene/game helpers, physics/build/network/audio roles are disclosed; complete transitive/content provenance was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/server/game.js#L264-L317",
+        "claim": "The authoritative game handler checks the submitted rune sequence and altar proximity, then ends a correct round. Round settlement awards solver/saboteur points, checks the configured target score and broadcasts matchEnd for a champion. Client main handles roundEnd/matchEnd messages in the actual HUD; timeouts also settle a round. This network/rule integration was statically traced, not exercised."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code)",
+        "source_url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/LICENSE",
+        "additional_notices": [
+          "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/client/vendor/three.module.min.js",
+          "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/README.md"
+        ],
+        "notes": "Root project LICENSE grants MIT, and the vendored Three header separately retains MIT SPDX/copyright attribution. Sampled room/rune/character visuals are authored geometry/canvas content. Complete font/glyph, library and design provenance was not independently audited; no third-party game code/assets are copied into this index."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/README.md",
+        "notes": "README supplies local/LAN server setup and placeholder deployment/WebSocket examples, while repository metadata has no homepage. No specific author-hosted demo URL was established or guessed."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/README.md",
+        "notes": "Source integrates room creation/joining, private clues, spatial rune submission, timed rounds, scoring and a match champion. README's automated tests and multiplayer/privacy assertions were not run or treated as a security guarantee."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "163c7bf76bb2cd04ea67ada424d36e3e034f0edd",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-034.md#rune-vault",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/README.md"
+          },
+          {
+            "path": "client/index.html",
+            "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/client/index.html"
+          },
+          {
+            "path": "client/js/controls.js",
+            "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/client/js/controls.js"
+          },
+          {
+            "path": "client/js/main.js",
+            "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/client/js/main.js"
+          },
+          {
+            "path": "client/js/shared.js",
+            "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/client/js/shared.js"
+          },
+          {
+            "path": "client/js/world.js",
+            "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/client/js/world.js"
+          },
+          {
+            "path": "client/vendor/three.module.min.js",
+            "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/client/vendor/three.module.min.js"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/package.json"
+          },
+          {
+            "path": "server/game.js",
+            "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/server/game.js"
+          },
+          {
+            "path": "server/index.js",
+            "url": "https://github.com/kzxheli-commits/rune-vault/blob/163c7bf76bb2cd04ea67ada424d36e3e034f0edd/server/index.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "First-person planar movement occurs inside a volumetric 3D chamber; interaction proximity is part of the source rules. Node/WebSocket hosting and sufficient players are needed for the documented multiplayer mode.",
+        "No server, room, chat, role assignment, socket, pointer lock or upstream suite was started. Source position/privacy checks are not independent security validation.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation and author content/compatibility claims do not establish successful play or completion on a current device."
+      ]
+    },
+    {
+      "id": "tricky-track",
+      "name": "Tricky Track",
+      "repository_url": "https://github.com/UstymUkhman/tricky-track",
+      "genres": [
+        "endless driving",
+        "survival",
+        "procedural track"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.161.0 (declared)",
+        "render_evidence": {
+          "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/src/scenes/Level.js#L67-L86",
+          "claim": "The actual Track scene extends the project-authored Level helper, which directly creates Three WebGLRenderer. Track owns the composer and authored update; RAF/main bootstrap drive car/track physics and render the same game scene. The helper is local game code rather than a replacement rendering engine."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/package.json",
+            "dependencies": {
+              "three": "^0.161.0"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.161.2",
+              "vite": "^5.1.4",
+              "vite-plugin-glsl": "^1.2.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Three is the npm runtime dependency; Vite, types and vite-plugin-glsl are tooling. Project-authored Embedded/Shared adapters load checked-in Ammo.js for physics. Its exact revision/license header was not established by the attempted large-file header read; no blanket project-MIT claim is made for that vendor code.",
+          "SharedArrayBuffer/worker physics is conditional, with an embedded main-thread path when unsupported. Browser isolation/worker compatibility was not tested. Three examples supply water/sky/compositing, and authored RAF/input/loader helpers wire the runtime."
+        ],
+        "framework_audit": "Actual entry, direct Three renderer, integrated objective and available manifests were inspected at this commit. No R3F, A-Frame, Babylon.js, Unity, enable3d or replacement renderer was identified in this scoped runtime. Authored scene/game helpers, physics/build/network/audio roles are disclosed; complete transitive/content provenance was not exhaustively audited."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/src/cars/SkylineR32.js#L115-L130",
+        "claim": "Intersecting the water plane deactivates the car and emits Camera::StopFollow. Track exits pointer lock; the Mouse callback pauses and sends the computed run length with end=true. The actual main entry displays Play Again and restarting resets the car/counters. This is a run-length survival/reset loop, not a verified finite-lap competition or an AI-rival race."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code)",
+        "source_url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/LICENSE",
+        "additional_notices": [],
+        "notes": "Root project source is MIT. Active loaders request R32 GLB car parts, water/sky images and engine.mp3; no separate per-asset grant ledger was located, so model/texture/recording reuse rights remain unreviewed rather than being called MIT. Vendored Ammo and other dependencies retain their own terms, which the root grant does not replace."
+      },
+      "demo": {
+        "url": "https://ustymukhman.github.io/tricky-track/dist",
+        "status": "page-read",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/README.md",
+        "notes": "README links this author URL; the text reader followed its trailing-slash redirect and retrieved Start Game/Play menu text on the review date. It did not render Three, load/play assets, enter pointer lock or drive a run. Menu text does not establish current playability."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/README.md",
+        "notes": "The pinned source commit is from 2024-04-21 and package version is 0.1.0. Source implements a procedural-track driving run with a water-loss/reset result; current worker/asset/build compatibility and measured run distance were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "8f899eb7638f3b09cbc379a8d03244484ccb2177",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-034.md#tricky-track",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/package.json"
+          },
+          {
+            "path": "src/cars/SkylineR32.js",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/src/cars/SkylineR32.js"
+          },
+          {
+            "path": "src/controls/Mouse.js",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/src/controls/Mouse.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/src/main.js"
+          },
+          {
+            "path": "src/physics/Embedded.js",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/src/physics/Embedded.js"
+          },
+          {
+            "path": "src/physics/Shared.js",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/src/physics/Shared.js"
+          },
+          {
+            "path": "src/scenes/Level.js",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/src/scenes/Level.js"
+          },
+          {
+            "path": "src/scenes/Track.js",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/src/scenes/Track.js"
+          },
+          {
+            "path": "src/utils/Assets.js",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/src/utils/Assets.js"
+          },
+          {
+            "path": "src/utils/RAF.js",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/src/utils/RAF.js"
+          },
+          {
+            "path": "src/utils/SAB.js",
+            "url": "https://github.com/UstymUkhman/tricky-track/blob/8f899eb7638f3b09cbc379a8d03244484ccb2177/src/utils/SAB.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The displayed kilometres are a source-derived run-length counter whose physical accuracy was not validated. No lap finish, opponents, championship or accurate distance measurement is asserted.",
+        "R32 model parts, sky/water textures and an engine recording are runtime dependencies with incomplete provenance review; code MIT is not all-assets clearance. No GLB/image/audio asset was retrieved or reused in GameMap, and no sound, worker, save or pointer-lock session ran.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation and author content/compatibility claims do not establish successful play or completion on a current device."
+      ]
     }
   ]
 }
