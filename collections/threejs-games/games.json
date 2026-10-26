@@ -26748,6 +26748,651 @@
         "Project MIT code does not independently clear every generated-output, media, third-party code/font or brand right.",
         "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
       ]
+    },
+    {
+      "id": "tie-fighter-cocodedk",
+      "name": "TIE Fighter — Cocode",
+      "repository_url": "https://github.com/cocodedk/tie-fighter",
+      "genres": [
+        "space shooter",
+        "arcade survival"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.0 (declared npm dependency)",
+        "render_evidence": {
+          "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/world.js#L1-L36",
+          "claim": "The normal boot/main imports this world module, which directly constructs Three WebGLRenderer, Scene and PerspectiveCamera and adds volumetric procedural ship/planet meshes. The actual main loop calls updateGame and renderer.render through setAnimationLoop; it is not only a title scene."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/package.json",
+            "dependencies": {
+              "three": "^0.186.0"
+            },
+            "dev_dependencies": {
+              "@biomejs/biome": "^2.5.13",
+              "@playwright/test": "^1.63.0",
+              "oxlint": "^1.82.0",
+              "vite": "^8.3.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Plain JavaScript ES modules with Three as the only declared runtime dependency; Vite ^8.3.0 builds the site, while Biome/Oxlint/Playwright are development helpers recorded exactly in the manifest.",
+          "Authored flight/combat, geometry, starfield, local score/career storage, DOM English/Persian UI, keyboard/touch controls and optional native Chrome WebMCP inspection/control tools. Ordinary play does not require WebMCP; no browser flag, registered tool or agent control was invoked."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/game.js#L65-L85",
+        "claim": "Active updates run flight, enemy movement, combat and enemy fire; three escaped penalized enemies or zero hull enter over mode. Combat awards points and calls recordKill; unlocking the actual 250-campaign-kill rank sets victoryPending, leading to won mode and the victory scene/dialog. Start resets the run and preserves the recorded career/best according to source."
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "label": "Apache-2.0 (code; fonts and franchise/brand rights separate)",
+        "source_url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/LICENSE",
+        "additional_notices": [
+          "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/NOTICE",
+          "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/README.md",
+          "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/public/fonts/LICENSE-Barlow.txt",
+          "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/public/fonts/LICENSE-Barlow-Condensed.txt",
+          "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/public/fonts/LICENSE-Vazirmatn.txt"
+        ],
+        "notes": "Root LICENSE and NOTICE identify Apache-2.0 project source and Cocode attribution. Bundled Barlow/Barlow Condensed/Vazirmatn font notices preserve SIL OFL 1.1, and Three retains its own MIT grant. Ships are built from inspected authored geometry helpers, but the project uses Star Wars names/design references; the source grant is not a franchise trademark/IP endorsement or an independent clearance of every art/design/brand right."
+      },
+      "demo": {
+        "url": "https://tiefighter.cocode.dk/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/README.md",
+        "notes": "The author README's English game URL produced a text-reader error. The metadata homepage also advertises a Pages URL, but no deployed game, input, native WebMCP feature, stored progress or victory sequence was run. Reader failure is not a site-down finding."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/README.md",
+        "notes": "A compact arcade shooter prototype with actual enemy/hull failure, score/career advancement and a source-traced campaign-rank victory route, plus start/pause/restart UI. The 250-kill threshold and award logic were inspected rather than reached in play."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "28bbadcdadc30920401ee0acbdac629ad7b5ca28",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-049.md#tie-fighter-cocodedk",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/LICENSE"
+          },
+          {
+            "path": "NOTICE",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/NOTICE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/package.json"
+          },
+          {
+            "path": "public/fonts/LICENSE-Barlow-Condensed.txt",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/public/fonts/LICENSE-Barlow-Condensed.txt"
+          },
+          {
+            "path": "public/fonts/LICENSE-Barlow.txt",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/public/fonts/LICENSE-Barlow.txt"
+          },
+          {
+            "path": "public/fonts/LICENSE-Vazirmatn.txt",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/public/fonts/LICENSE-Vazirmatn.txt"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/README.md"
+          },
+          {
+            "path": "src/boot.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/boot.js"
+          },
+          {
+            "path": "src/career.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/career.js"
+          },
+          {
+            "path": "src/combat.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/combat.js"
+          },
+          {
+            "path": "src/enemies.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/enemies.js"
+          },
+          {
+            "path": "src/enemy-fire.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/enemy-fire.js"
+          },
+          {
+            "path": "src/flight.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/flight.js"
+          },
+          {
+            "path": "src/game.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/game.js"
+          },
+          {
+            "path": "src/keyboard.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/keyboard.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/main.js"
+          },
+          {
+            "path": "src/parts.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/parts.js"
+          },
+          {
+            "path": "src/player.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/player.js"
+          },
+          {
+            "path": "src/state.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/state.js"
+          },
+          {
+            "path": "src/tie.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/tie.js"
+          },
+          {
+            "path": "src/ui.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/ui.js"
+          },
+          {
+            "path": "src/victory.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/victory.js"
+          },
+          {
+            "path": "src/webmcp.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/webmcp.js"
+          },
+          {
+            "path": "src/world.js",
+            "url": "https://github.com/cocodedk/tie-fighter/blob/28bbadcdadc30920401ee0acbdac629ad7b5ca28/src/world.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Player steering is constrained arcade lateral/vertical motion while enemies approach in depth; volumetric meshes/perspective define the 3d-world rendering label, not a free-roaming space simulation.",
+        "Current source needs WebGL2 and modern browser JavaScript; touch, localization, all medals and native WebMCP compatibility were not exercised.",
+        "Scores, chosen ship and career can write localStorage; no write, input/control tool or browser experimental flag was activated.",
+        "Apache-2.0 code and procedural construction do not establish permission to reuse third-party franchise names, visual designs, fonts or branding under one blanket grant.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "park-shift",
+      "name": "PARK / SHIFT",
+      "repository_url": "https://github.com/andreashxc/park-shift-game",
+      "genres": [
+        "parking simulation",
+        "driving challenges"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.179.1 (exact declared npm dependency)",
+        "render_evidence": {
+          "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/src/main.ts#L217-L242",
+          "claim": "The actual TypeScript entry constructs Three WebGLRenderer for its canvas and starts the real animation frame. Authored volumetric cars/scenery and multiple cameras are rendered by Three; driving updates use the normal fixed-step loop, with separate garage preview and rear-view rendering paths."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/package.json",
+            "dependencies": {
+              "three": "0.179.1"
+            },
+            "dev_dependencies": {
+              "@types/three": "0.179.0",
+              "typescript": "5.9.3",
+              "vite": "7.3.7"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Plain TypeScript/Vite with only exact Three 0.179.1 declared at runtime. @types/three 0.179.0, TypeScript 5.9.3 and Vite 7.3.7 are development dependencies; README requires Node 22.12+.",
+          "Authored kinematic bicycle/OBB collision model, procedural geometry/weather/audio, DOM HUD, touch/gamepad controls and localStorage scores/settings. Transitive/dev license inventory entries are not treated as active Rapier/Tween runtime physics.",
+          "Static deployment/base-path and local Manrope font helpers; no React/R3F, A-Frame, Babylon or separate engine was identified in the reviewed entry."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/src/main.ts#L1310-L1368",
+        "claim": "Parking success requires all car corners within the target, heading within 14 degrees and speed under 0.16, held for 1.5 seconds. The ordinary finish path calculates penalties/accuracy, score/stars/local best and shows next/retry results; damage/time-limit failures use the same finish path. It is a playable challenge loop rather than only a car model viewer."
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "label": "Apache-2.0 (project; Three MIT and Manrope OFL separately)",
+        "source_url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/LICENSE",
+        "additional_notices": [
+          "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/NOTICE",
+          "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/AUTHORS.md",
+          "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/THIRD_PARTY_NOTICES.md",
+          "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/MODIFICATIONS.md",
+          "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/public/assets/fonts/Manrope-OFL.txt",
+          "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/public/licenses/Three.js-LICENSE.txt"
+        ],
+        "notes": "Root LICENSE/NOTICE/AUTHORS identify Andrew Manuilov's Apache-2.0 public edition and applicable attribution. Third-party notices and inspected actual public notice files identify Three MIT and Manrope SIL OFL 1.1. README describes generated cars/scenery/weather/sound and fictional car names, with no downloaded vehicle models; this is an attributed author/source statement rather than an exhaustive independent media-origin audit. Some notice prose refers to historical/export paths; actual reviewed notice links are pinned to existing files."
+      },
+      "demo": {
+        "url": "https://andreashxc.github.io/park-shift-game/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/README.md",
+        "notes": "The exact author README Pages URL could not be retrieved by the text reader. No parking, controller, local score/settings write or deployed-build check occurred; the reader error does not prove the game is offline."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/README.md",
+        "notes": "Author-labeled playable prototype with three car definitions and six challenge definitions, an actual parking success/failure/result flow and assists/expert choices. README's past preparation browser/build/audit checks are author reports, not work run by this review, and no current audit/performance/device guarantee is made."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "042cc6caf5ad153dbc470cf318f35bddb5962ff2",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-049.md#park-shift",
+        "reviewed_files": [
+          {
+            "path": "AUTHORS.md",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/AUTHORS.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/LICENSE"
+          },
+          {
+            "path": "MODIFICATIONS.md",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/MODIFICATIONS.md"
+          },
+          {
+            "path": "NOTICE",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/NOTICE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/package.json"
+          },
+          {
+            "path": "public/assets/fonts/Manrope-OFL.txt",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/public/assets/fonts/Manrope-OFL.txt"
+          },
+          {
+            "path": "public/licenses/Three.js-LICENSE.txt",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/public/licenses/Three.js-LICENSE.txt"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/README.md"
+          },
+          {
+            "path": "src/data.ts",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/src/data.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/src/main.ts"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/THIRD_PARTY_NOTICES.md"
+          },
+          {
+            "path": "vite.config.ts",
+            "url": "https://github.com/andreashxc/park-shift-game/blob/042cc6caf5ad153dbc470cf318f35bddb5962ff2/vite.config.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Cars drive on a largely planar surface in a volumetric 3D scene; 3d-world describes rendering, not unrestricted movement or real-world driver training.",
+        "The Russian UI, all six challenges/three cars, four cameras, controller mappings, coaching quality and score reachability were not playtested.",
+        "Scores/preferences are browser localStorage; README lists no multiplayer/cloud save/native app and a large-bundle warning. No saved state was written.",
+        "The upstream npm test script is documented as a TypeScript/Vite build check, not a gameplay unit suite; it was not run. Old author preparation/audit statements are not asserted as current facts.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "dunekeep-fortress-of-the-sands",
+      "name": "Dunekeep — Fortress of the Sands",
+      "repository_url": "https://github.com/andreashxc/dunekeep-rts",
+      "genres": [
+        "real-time strategy",
+        "settlement building",
+        "siege defense"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.179.1 (declared npm dependency)",
+        "render_evidence": {
+          "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/src/render/GameRenderer.ts#L166-L186",
+          "claim": "The normal main entry constructs GameRenderer, whose module directly imports Three and creates WebGLRenderer, scene/camera and authored volumetric world layers. The real frame consumes simulation snapshots, renders GameUI and GameRenderer, and schedules requestAnimationFrame; QA/debug helpers are separate from this evidence."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/package.json",
+            "dependencies": {
+              "three": "^0.179.1"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.179.0",
+              "typescript": "^5.9.2",
+              "vite": "7.3.7",
+              "vitest": "4.1.11"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Plain TypeScript, Three and Vite; Three ^0.179.1 is the sole declared runtime dependency, with exact manifest records for @types/three, TypeScript, Vite and Vitest development helpers.",
+          "Authored grid/economy/combat/fortification/pathing simulation, snapshot-based procedural Three rendering, DOM GameUI, WebAudio effects and browser session/localStorage helpers. No R3F or replacement rendering engine was identified.",
+          "README Node 22.12+ requirement, static Pages base path, local Manrope font and optional local QA pilot/debug helpers are disclosed. Vitest, portrait tools and the QA pilot are described by upstream; none was executed."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/src/game/simulation.ts#L1238-L1267",
+        "claim": "The normal simulation tick advances waves/economy/construction/towers/units/raiders. Non-duel victory requires all mission waves processed, no remaining raiders and isGoalComplete, then marks missionCompleted and sets victory. Distinct keep-damage defeat and duel-objective paths exist; the ordinary snapshot-driven GameUI opens victory/defeat and offers next/continue/restart. This does not certify every campaign or debug completion."
+      },
+      "license": {
+        "spdx": "Apache-2.0",
+        "label": "Apache-2.0 (project; dependency/font grants and excluded prototype notices separate)",
+        "source_url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/LICENSE",
+        "additional_notices": [
+          "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/NOTICE",
+          "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/AUTHORS.md",
+          "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/THIRD_PARTY_NOTICES.md",
+          "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/docs/ASSET_LICENSES.md",
+          "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/public/assets/fonts/Manrope-OFL.txt",
+          "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/public/licenses/Three.js-LICENSE.txt"
+        ],
+        "notes": "Root LICENSE/NOTICE/AUTHORS grant Apache-2.0 original project code with attribution. Asset inventory describes active buildings/characters/terrain/UI/artwork/effects as project-generated, and portraits as renders of those factories, while retaining Three MIT and Manrope OFL notices. Historical Kenney/Quaternius notices explicitly describe excluded prototype assets and a pack-name mismatch: they do not prove those models are loaded or licensed in this edition. Stronghold/Firefly branding/assets are not granted. Author byte-reproduction/preparation claims were not repeated as this review's tests."
+      },
+      "demo": {
+        "url": "https://andreashxc.github.io/dunekeep-rts/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/README.md",
+        "notes": "The exact Pages URL in the pinned author README returned a text-reader error. No campaign, save/session write, browser test, QA pilot, portrait generation or deployed-build verification occurred; failure to retrieve text is not an offline-site finding."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/README.md",
+        "notes": "Author describes an evolving playable prototype with a six-mission campaign, difficulty, economy/fortification/siege systems and some newer duel/direct-control paths. The actual normal simulation/objective/UI path is established, while full campaign balance, historical design promises and reported preparation test counts are not certified."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "4a3eb114bb389c124f4d6112794c88ec5721ba92",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-049.md#dunekeep-fortress-of-the-sands",
+        "reviewed_files": [
+          {
+            "path": "AUTHORS.md",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/AUTHORS.md"
+          },
+          {
+            "path": "docs/ASSET_LICENSES.md",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/docs/ASSET_LICENSES.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/LICENSE"
+          },
+          {
+            "path": "NOTICE",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/NOTICE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/package.json"
+          },
+          {
+            "path": "public/assets/fonts/Manrope-OFL.txt",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/public/assets/fonts/Manrope-OFL.txt"
+          },
+          {
+            "path": "public/licenses/Three.js-LICENSE.txt",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/public/licenses/Three.js-LICENSE.txt"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/README.md"
+          },
+          {
+            "path": "src/audio/GameAudio.ts",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/src/audio/GameAudio.ts"
+          },
+          {
+            "path": "src/game/content.ts",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/src/game/content.ts"
+          },
+          {
+            "path": "src/game/simulation.ts",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/src/game/simulation.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/src/main.ts"
+          },
+          {
+            "path": "src/render/GameRenderer.ts",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/src/render/GameRenderer.ts"
+          },
+          {
+            "path": "src/ui/GameUI.ts",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/src/ui/GameUI.ts"
+          },
+          {
+            "path": "THIRD_PARTY_NOTICES.md",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/THIRD_PARTY_NOTICES.md"
+          },
+          {
+            "path": "vite.config.ts",
+            "url": "https://github.com/andreashxc/dunekeep-rts/blob/4a3eb114bb389c124f4d6112794c88ec5721ba92/vite.config.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "World geometry is 3D, while construction, economy/pathing and most unit motion use a planar grid. The rendering label does not promise a fully free-moving or physically realistic simulation.",
+        "A preparation/planning pause must be distinguished from the running raid/economy loop; debug spawn helpers and local QA pilots were not used as victory evidence.",
+        "No claim is made that every mission/difficulty/duel/direct-control/production chain is balanced, reachable or fully tested. The Russian UI, touch support, saves and performance remain untested.",
+        "Historical design documents and retained prototype notices can exceed or differ from active main-line implementation; excluded GLB/textures and their notices are not called active runtime assets.",
+        "No upstream npm test/build/Vitest suite or author-reported 559 preparation tests were run; no current vulnerability-audit or all-device success claim is made.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "zero-g-salvage-space-survival",
+      "name": "Zero-G Salvage: Space Survival",
+      "repository_url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival",
+      "genres": [
+        "zero-gravity survival",
+        "resource salvage",
+        "first-person exploration"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.160.0 (declared npm dependency; active bare Three imports)",
+        "render_evidence": {
+          "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/scene/createScene.js#L1-L31",
+          "claim": "The normal main creates Game and createScene directly constructs Three Scene, PerspectiveCamera and WebGLRenderer. Game.start sets the renderer animation loop and uses official Three EffectComposer/RenderPass/ShaderPass for the active simulation/render path; no alternative engine renderer is identified."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/package.json",
+            "dependencies": {
+              "cannon-es": "^0.20.0",
+              "lil-gui": "^0.19.2",
+              "three": "^0.160.0"
+            },
+            "dev_dependencies": {
+              "vite": "^5.0.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Plain JavaScript/Vite with runtime Three ^0.160.0, cannon-es ^0.20.0 physics and lil-gui ^0.19.2 settings; Vite ^5.0.0 is a development dependency. Vite config does not alias bare Three to the adjacent vendored lib tree.",
+          "Authored player/input, fixed-step Cannon world, survival/inventory/storage/scanner systems, DOM HUD and official Three postprocessing/loaders are helpers; no R3F/A-Frame/Babylon/Unity renderer was identified.",
+          "The actual runtime imports root GLB files for ship, crate, extinguisher, food, oxygen and water; procedural environment/debris coexist with them. This is not described as an all-procedural or asset-free game."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/core/GameState.js#L25-L73",
+        "claim": "The active SurvivalSystem ticks time and drains hunger/thirst/oxygen, ending the run when one is depleted. Supplies restore resources, and useful unheld items inside the 3D storage volume are stored for score/inventory; the real Game loop runs those systems and HUD shows final reason/time/score with restart. This is open-ended survival scoring, without an invented final win."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; bundled model/vendor provenance qualified)",
+        "source_url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/LICENSE",
+        "additional_notices": [
+          "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/README.md",
+          "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/items/createItems.js",
+          "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/scene/createSpaceship.js"
+        ],
+        "notes": "The root MIT grant identifies Yunus Gedik's project code. The inspected runtime loads bundled GLB models as well as procedural geometry; no complete per-model/texture provenance or separate grant was established by this text review. Those assets and adjacent vendored third-party libraries are not independently cleared as all-original/all-MIT, and npm dependencies retain their own grants. No binary model, image, Blender file or asset is copied into GameMap."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/README.md",
+        "notes": "No author-hosted playable URL was located in the inspected README or dated repository metadata; only local development instructions are present. No Pages URL was guessed, and no local server, game, pointer lock, media or score action was run."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/README.md",
+        "notes": "README explicitly calls this a small zero-gravity survival prototype. The actual entry, 3-axis movement/helper roles, resource/fuel constraints, storage score, failure/HUD/restart loop are inspected; no full campaign completion or production readiness is claimed."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "2f187b3005f455bfc09cb6e5efaa5318eb37352d",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-049.md#zero-g-salvage-space-survival",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/README.md"
+          },
+          {
+            "path": "src/core/Game.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/core/Game.js"
+          },
+          {
+            "path": "src/core/GameState.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/core/GameState.js"
+          },
+          {
+            "path": "src/core/Settings.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/core/Settings.js"
+          },
+          {
+            "path": "src/items/createItems.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/items/createItems.js"
+          },
+          {
+            "path": "src/items/ItemManager.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/items/ItemManager.js"
+          },
+          {
+            "path": "src/items/itemTypes.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/items/itemTypes.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/main.js"
+          },
+          {
+            "path": "src/player/PlayerController.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/player/PlayerController.js"
+          },
+          {
+            "path": "src/scene/createEnvironment.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/scene/createEnvironment.js"
+          },
+          {
+            "path": "src/scene/createScene.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/scene/createScene.js"
+          },
+          {
+            "path": "src/scene/createSpaceship.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/scene/createSpaceship.js"
+          },
+          {
+            "path": "src/systems/StorageSystem.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/systems/StorageSystem.js"
+          },
+          {
+            "path": "src/systems/SurvivalSystem.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/systems/SurvivalSystem.js"
+          },
+          {
+            "path": "src/ui/HUD.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/src/ui/HUD.js"
+          },
+          {
+            "path": "vite.config.js",
+            "url": "https://github.com/DlphnBrch/zero-g-salvage-space-survival/blob/2f187b3005f455bfc09cb6e5efaa5318eb37352d/vite.config.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The source includes active bundled GLB loads whose origins/individual redistribution scope were not fully audited; root MIT code is not blanket media clearance.",
+        "The declared npm-renderer route is distinguished from a large adjacent vendored lib tree and native/local server files; those extra implementations were not executed or exhaustively license-audited.",
+        "Keyboard/mouse/pointer lock, thrust/extinguisher interaction, shader/postprocessing, asset paths and current browser compatibility were not tested. No server or experimental hardware input was activated.",
+        "Settings can alter resource drains, movement and automatic stored-supply use; no default-balance, physics-fidelity or performance guarantee is made.",
+        "The complete initial asset load, final failure/restart behavior and all score/resource combinations are source observations, not runtime results.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
     }
   ]
 }

@@ -2549,6 +2549,45 @@
         "https://github.com/DennisSnijder/open-sinnoh/blob/95acfced3b42c7ed3764572bfcf33f33ad318a88/CREDITS.md",
         "https://github.com/DennisSnijder/open-sinnoh/blob/95acfced3b42c7ed3764572bfcf33f33ad318a88/THIRD_PARTY_NOTICES.md"
       ]
+    },
+    {
+      "id": "galactic-pod-racing-vendor-asset-clearance",
+      "repository_url": "https://github.com/jseg380/Galactic-Pod-Racing",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "062db7ed7f158b7aaf77659beb27937d77c1c2b9",
+      "reason": "The normal main entry directly renders vendored Three r161 and has obstacle/bonus lives, increasing speed, loss dialog and restart, distinct from its model visualizer. Root LICENSE is a GPL v3 text, but only/or-later is not established here; the source/provenance grant for vendored CSG-v2.js and the actually loaded Free3D rock model was not resolved. Texture-provider credits are present, without making every image/model/source component GPL.",
+      "next_action": "Clarify the exact component/model grants and applicable project GPL variant before promotion. Preserve the positive renderer/gameplay evidence and explicit Free3D/AmbientCG/Poly Haven sources; do not infer noncommercial terms, blanket GPL asset rights or Star Wars affiliation. No code, model, image, localhost server or game was run.",
+      "evidence_urls": [
+        "https://github.com/jseg380/Galactic-Pod-Racing/blob/062db7ed7f158b7aaf77659beb27937d77c1c2b9/README.md",
+        "https://github.com/jseg380/Galactic-Pod-Racing/blob/062db7ed7f158b7aaf77659beb27937d77c1c2b9/LICENSE",
+        "https://github.com/jseg380/Galactic-Pod-Racing/blob/062db7ed7f158b7aaf77659beb27937d77c1c2b9/main/index.html",
+        "https://github.com/jseg380/Galactic-Pod-Racing/blob/062db7ed7f158b7aaf77659beb27937d77c1c2b9/main/MyScene.js#L340-L386",
+        "https://github.com/jseg380/Galactic-Pod-Racing/blob/062db7ed7f158b7aaf77659beb27937d77c1c2b9/main/modelos/Roca.js",
+        "https://github.com/jseg380/Galactic-Pod-Racing/blob/062db7ed7f158b7aaf77659beb27937d77c1c2b9/libs/CSG-v2.js",
+        "https://github.com/jseg380/Galactic-Pod-Racing/blob/062db7ed7f158b7aaf77659beb27937d77c1c2b9/libs/three.module.js#L1-L6",
+        "https://github.com/jseg380/Galactic-Pod-Racing/blob/062db7ed7f158b7aaf77659beb27937d77c1c2b9/imgs/credits.txt"
+      ]
+    },
+    {
+      "id": "space-odyssey-survival-objective-unconfirmed",
+      "repository_url": "https://github.com/hikasap/space-odyssey",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "8b60931aa919ba3ff204795b231fc49c74477938",
+      "reason": "MIT source, Svelte app hosting and direct Three rendering are established, with a real spacecraft/fuel/inventory/exploration loop. README marks upgrade/resource-survival features as questions, and this scoped review has not established a complete survival objective/failure/completion feedback path. A Three scene, collection/fuel helpers and an author game description alone are not treated as a fully verified game.",
+      "next_action": "Trace a clearly implemented normal objective/resource consequence/result or meaningful survival progression path and actual asset grants before promotion. Do not label Svelte UI as R3F/Threlte or claim no interaction exists; keep author plans distinct from implementation. No GLB/media, controller, local server, audio or game was run.",
+      "evidence_urls": [
+        "https://github.com/hikasap/space-odyssey/blob/8b60931aa919ba3ff204795b231fc49c74477938/README.md",
+        "https://github.com/hikasap/space-odyssey/blob/8b60931aa919ba3ff204795b231fc49c74477938/LICENSE",
+        "https://github.com/hikasap/space-odyssey/blob/8b60931aa919ba3ff204795b231fc49c74477938/package.json",
+        "https://github.com/hikasap/space-odyssey/blob/8b60931aa919ba3ff204795b231fc49c74477938/src/App.svelte",
+        "https://github.com/hikasap/space-odyssey/blob/8b60931aa919ba3ff204795b231fc49c74477938/src/core/renderer.js",
+        "https://github.com/hikasap/space-odyssey/blob/8b60931aa919ba3ff204795b231fc49c74477938/src/scenes/scene.js#L129-L148",
+        "https://github.com/hikasap/space-odyssey/blob/8b60931aa919ba3ff204795b231fc49c74477938/src/components/spacecraft/fuelManager.js",
+        "https://github.com/hikasap/space-odyssey/blob/8b60931aa919ba3ff204795b231fc49c74477938/src/components/spacecraft/spacecraft.js",
+        "https://github.com/hikasap/space-odyssey/blob/8b60931aa919ba3ff204795b231fc49c74477938/src/systems/inventoryManager.js"
+      ]
     }
   ]
 }
