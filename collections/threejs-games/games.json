@@ -29271,6 +29271,601 @@
         "CDN library/fonts, browser input/audio/storage and every AI/track/fuel/pit/turbo configuration remain unexecuted and unverified at runtime.",
         "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
       ]
+    },
+    {
+      "id": "3d-tower-defense-saacostam",
+      "name": "3D Tower Defense — saacostam",
+      "repository_url": "https://github.com/saacostam/3d-tower-defense",
+      "genres": [
+        "tower defense",
+        "strategy",
+        "survival"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.173.0",
+        "render_evidence": {
+          "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/game/game/game.ts#L30-L35",
+          "claim": "The actual Game constructs Three WebGLRenderer directly; its ordinary update/graphics/render/rAF loop drives authored actor/container helpers. ReactDOM mounts menus/HUD and requests rerenders rather than owning Three scene rendering."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/package.json",
+            "dependencies": {
+              "@tailwindcss/vite": "^4.1.3",
+              "@vitejs/plugin-react": "^4.3.4",
+              "astar-typescript": "^1.2.7",
+              "clsx": "^2.1.1",
+              "daisyui": "^5.0.18",
+              "gsap": "^3.13.0",
+              "react": "^19.1.0",
+              "react-dom": "^19.1.0",
+              "tailwindcss": "^4.1.3",
+              "three": "^0.173.0"
+            },
+            "dev_dependencies": {
+              "@types/react": "^19.0.12",
+              "@types/react-dom": "^19.0.4",
+              "@types/three": "^0.173.0",
+              "typescript": "~5.7.2",
+              "vite": "^6.1.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "TypeScript/Vite; Three ^0.173.0; authored Game/Container/Actor helpers and astar-typescript pathfinding, without an external rendering/game engine.",
+          "React 19/ReactDOM overlay, GSAP and Tailwind/DaisyUI/clsx helpers; exact manifest dependencies and devDependencies are recorded, including build plugins declared under dependencies.",
+          "Web Audio fetches bundled music and MP3 effects; those recordings are not described as procedural or independently MIT-cleared."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/player/head-quarters.actor.ts#L95-L109",
+        "claim": "Ordinary spawned enemies pathfind toward and damage HQ; placed guns spend coins and shoot. HQ health reaching zero marks the container over and triggers the actual Game Over/menu/restart overlay. The inspected spawner accelerates continuous spawning; a finite campaign victory is not claimed."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; bundled audio/dependency rights qualified)",
+        "source_url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/LICENSE",
+        "additional_notices": [
+          "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/README.md",
+          "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/game/README.md",
+          "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/audio-manager/lib/audio-manager.ts"
+        ],
+        "notes": "Root MIT grant identifies saacostam's project code. Selected scenery/building code constructs geometry, but the audio manager fetches bundled music/effects whose individual sources/grants were not established by the reviewed notices. Third-party library/style/font/icon rights are not converted into blanket MIT by the root grant; no media/source payload is copied into GameMap."
+      },
+      "demo": {
+        "url": "https://saacostam.github.io/3d-tower-defense/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://api.github.com/repos/saacostam/3d-tower-defense",
+        "notes": "The author repository homepage in dated GitHub metadata identifies this URL. The text reader could not access it; this does not establish that it is offline or that the built game works. No browser game, audio fetch, local server or playtest was activated."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/README.md",
+        "notes": "An implemented single-map tower-defense prototype with actual placement/currency, pathfinding, enemies, HQ failure and restart. README explicitly leaves added levels/upgrades as future work; React lifecycle integration and every tower/balance/performance behavior remain untested."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "7aab3b05ff00b2f34b1498278c8280d9697b8415",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-053.md#3d-tower-defense-saacostam",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/package.json"
+          },
+          {
+            "path": "src/main.tsx",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/main.tsx"
+          },
+          {
+            "path": "src/modules/audio-manager/lib/audio-manager.ts",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/audio-manager/lib/audio-manager.ts"
+          },
+          {
+            "path": "src/modules/battlefield-container/battle-field-container.ts",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/battlefield-container/battle-field-container.ts"
+          },
+          {
+            "path": "src/modules/battlefield-container/ui/battle-field-container.ui.tsx",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/battlefield-container/ui/battle-field-container.ui.tsx"
+          },
+          {
+            "path": "src/modules/battlefield-container/utils/modeling.utils.ts",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/battlefield-container/utils/modeling.utils.ts"
+          },
+          {
+            "path": "src/modules/game/README.md",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/game/README.md"
+          },
+          {
+            "path": "src/modules/game/container/container.ts",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/game/container/container.ts"
+          },
+          {
+            "path": "src/modules/game/game/game.ts",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/game/game/game.ts"
+          },
+          {
+            "path": "src/modules/levels/constants/level-01.ts",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/levels/constants/level-01.ts"
+          },
+          {
+            "path": "src/modules/mobs/mob.ts",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/mobs/mob.ts"
+          },
+          {
+            "path": "src/modules/mobs/spawner.ts",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/mobs/spawner.ts"
+          },
+          {
+            "path": "src/modules/player/cursor.ts",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/player/cursor.ts"
+          },
+          {
+            "path": "src/modules/player/gun.ts",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/player/gun.ts"
+          },
+          {
+            "path": "src/modules/player/head-quarters.actor.ts",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/modules/player/head-quarters.actor.ts"
+          },
+          {
+            "path": "src/style.css",
+            "url": "https://github.com/saacostam/3d-tower-defense/blob/7aab3b05ff00b2f34b1498278c8280d9697b8415/src/style.css"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The volumetric scene uses largely planar 2D actor/path grids; 3d-world is a rendering label, not free three-axis player movement.",
+        "The actual loss/restart path is verified in source; continuous timed spawns are not presented as a completed finite-wave campaign.",
+        "React is disclosed as a DOM/UI overlay and the authored actor/container abstractions remain explicit.",
+        "Bundled music/effect provenance and all transitive/font/icon grants were not exhaustively audited.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "drift-suncal",
+      "name": "DRIFT",
+      "repository_url": "https://github.com/suncal/drift",
+      "genres": [
+        "space flight",
+        "exploration",
+        "time attack"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 (HTML import map)",
+        "render_evidence": {
+          "url": "https://github.com/suncal/drift/blob/9abb20c4206995ee3c8890c90f96017d44b51a51/main.js#L92-L101",
+          "claim": "main imports Three and directly constructs WebGLRenderer, then uses Three postprocessing/composer in the normal flight tick. index.html pins both Three and its addons to 0.160.0 through a CDN import map; no UI scene framework is used."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla JavaScript/HTML with CDN Three 0.160.0, Orbit-free custom flight, Three EffectComposer/RenderPass/bloom/OutputPass and GLTFLoader addons.",
+          "Custom seeded terrain, flight/collision/scanning systems and Web Audio synthesis; localStorage stores discovery/best progress.",
+          "The chase view loads one bundled ship GLB and falls back to procedural geometry; Google Fonts supplies Space Grotesk. No npm manifest is present in the inspected tree."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/suncal/drift/blob/9abb20c4206995ee3c8890c90f96017d44b51a51/main.js#L1854-L1858",
+        "claim": "In ordinary Run mode, flight decrements the timer and a corridor finish grants a bonus before endRun; hull depletion also ends the run. endRun records best score and opens actual score/beacons/results with replay/menu handlers. Explore separately records scans and sector discovery progress."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; ship/font and media provenance qualified)",
+        "source_url": "https://github.com/suncal/drift/blob/9abb20c4206995ee3c8890c90f96017d44b51a51/LICENSE",
+        "additional_notices": [
+          "https://github.com/suncal/drift/blob/9abb20c4206995ee3c8890c90f96017d44b51a51/README.md",
+          "https://github.com/suncal/drift/blob/9abb20c4206995ee3c8890c90f96017d44b51a51/main.js",
+          "https://github.com/suncal/drift/blob/9abb20c4206995ee3c8890c90f96017d44b51a51/index.html"
+        ],
+        "notes": "Root MIT grant identifies Priyankar Chakraborty's project code. The author source calls the bundled GLB hull AI-generated and retains procedural fallback/interior geometry; this does not independently establish every model/output right or generation entitlement. Selected textures/audio are generated in code, while external Three/fonts retain their own terms. The model and any media/dependency origins were not exhaustively audited or copied."
+      },
+      "demo": {
+        "url": "https://suncal.github.io/drift/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/suncal/drift/blob/9abb20c4206995ee3c8890c90f96017d44b51a51/README.md",
+        "notes": "README links the author demo directly. The text reader returned an access error, which is not a site-down conclusion or proof of playable flight. No browser execution, model/audio/font request, state write or debug hook was invoked."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/suncal/drift/blob/9abb20c4206995ee3c8890c90f96017d44b51a51/README.md",
+        "notes": "A compact implemented exploration and timed asteroid-run game with normal scoring, hull failure, results/replay and discoveries. Every advertised enterable body, terrain continuity, realism, accessibility/mobile control and performance claim remains untested."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "9abb20c4206995ee3c8890c90f96017d44b51a51",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-053.md#drift-suncal",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/suncal/drift/blob/9abb20c4206995ee3c8890c90f96017d44b51a51/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/suncal/drift/blob/9abb20c4206995ee3c8890c90f96017d44b51a51/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/suncal/drift/blob/9abb20c4206995ee3c8890c90f96017d44b51a51/index.html"
+          },
+          {
+            "path": "main.js",
+            "url": "https://github.com/suncal/drift/blob/9abb20c4206995ee3c8890c90f96017d44b51a51/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The timed Run mode supplies concrete score/result/replay evidence; the separate exploratory mode is not represented as a finite campaign ending.",
+        "The source identifies an AI-generated GLB; its individual origin/output grant was not independently cleared, and root MIT is not asserted for all fonts/media.",
+        "CDN Three/addons and Google Fonts require their external resources despite static-site/no-backend architecture.",
+        "Normal game paths were inspected separately from window.DRIFT manual step/teleport hooks; those hooks were never called.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "voidsea-odyssey",
+      "name": "Voidsea Odyssey",
+      "repository_url": "https://github.com/stas4000/voidsea-odyssey",
+      "genres": [
+        "space exploration",
+        "resource gathering",
+        "adventure"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.179.1",
+        "render_evidence": {
+          "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/game/renderer.js#L17-L42",
+          "claim": "The actual renderer factory directly constructs Three WebGPURenderer when eligible and otherwise constructs Three WebGLRenderer. Normal Game.frame consumes controls, advances simulation and calls World.render; the source's initialization-failure caveat is recorded rather than certifying successful fallback."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/package.json",
+            "dependencies": {
+              "three": "^0.179.1"
+            },
+            "dev_dependencies": {
+              "@eslint/js": "^9.34.0",
+              "@playwright/test": "^1.61.1",
+              "eslint": "^9.34.0",
+              "vite": "^7.1.3"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Runtime manifest declares only Three ^0.179.1; custom simulation/world/renderer/input/HUD, geometry factories and localStorage saves.",
+          "Three WebGPU/WebGL backends; standard DOM/touch controls and CSS; external Barlow Condensed/Inter Google Fonts.",
+          "Vite 7, ESLint and Playwright/Node test tooling are declared dev dependencies. Upstream test/quality claims were not reproduced."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/game/Simulation.js#L192-L217",
+        "claim": "The normal mine action reaches mineTarget then gather, which adds capacity-limited inventory and mission progress. Reaching four accepted samples completes First Light once, awards 260 credits and emits the event displayed by the active HUD; docking/trade/crafting extend the implemented loop. This is a mission reward, not a claimed final campaign ending."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; external font/dependency rights qualified)",
+        "source_url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/LICENSE",
+        "additional_notices": [
+          "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/README.md",
+          "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/game/factories.js",
+          "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/styles.css"
+        ],
+        "notes": "Root MIT grant identifies Stanislav Sorokin/Bles Software project code. Selected ships/world/terrain factories create geometry/materials directly and the inspected tree has no bundled model payload, but all origins/designs and dependency/media terms were not independently certified. Google Fonts and Three retain their respective grants; a root MIT file is not a blanket clearance for every external font or underlying asset."
+      },
+      "demo": {
+        "url": "https://voidsea-odyssey.bles-software.com/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/README.md",
+        "notes": "The README gives the author-hosted URL. The text reader could not access it, leaving deployment equivalence and runtime success unverified without a site-down claim. No browser game, font/provider fetch, save, test, local server or score/account request was activated."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/README.md",
+        "notes": "An implemented exploration prototype with ship/world selection, flight/surface/underwater modes, inventory, first mission reward, crafting/trade and local saves. Scope is the inspected mine/reward path and supporting normal loop; every world/puzzle/combat/failure/quality or device claim remains untested."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "1aa4634e643f4bd32be5f16b215e16f16f2cfdd8",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-053.md#voidsea-odyssey",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/package.json"
+          },
+          {
+            "path": "src/game/Game.js",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/game/Game.js"
+          },
+          {
+            "path": "src/game/Hud.js",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/game/Hud.js"
+          },
+          {
+            "path": "src/game/Input.js",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/game/Input.js"
+          },
+          {
+            "path": "src/game/Simulation.js",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/game/Simulation.js"
+          },
+          {
+            "path": "src/game/World.js",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/game/World.js"
+          },
+          {
+            "path": "src/game/catalog.js",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/game/catalog.js"
+          },
+          {
+            "path": "src/game/factories.js",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/game/factories.js"
+          },
+          {
+            "path": "src/game/renderer.js",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/game/renderer.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/main.js"
+          },
+          {
+            "path": "src/styles.css",
+            "url": "https://github.com/stas4000/voidsea-odyssey/blob/1aa4634e643f4bd32be5f16b215e16f16f2cfdd8/src/styles.css"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The identified concrete objective is First Light's four-sample reward; no final campaign victory, full hostile AI or complete survival/failure cycle is asserted.",
+        "Flight updates three position axes while on-foot movement is mainly planar; labels describe the rendered scene.",
+        "If WebGPU construction succeeds but await init rejects, renderer may stay truthy and skip the !renderer WebGL fallback. This is a source-level compatibility concern, not an observed runtime failure.",
+        "Custom resource/mining and defense actions are simplified state systems; no physical flight/mining realism or authored test claims are certified.",
+        "External font/dependency terms and every design/media origin remain separately qualified.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "bronze-industrial-tabletop",
+      "name": "BRONZE",
+      "repository_url": "https://github.com/NAMAN-VERMA-02/bronze",
+      "genres": [
+        "turn-based strategy",
+        "economic board game",
+        "industrial network"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.185.1",
+        "render_evidence": {
+          "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/main.ts#L280-L304",
+          "claim": "The active kinetic page boots main.ts, directly constructs Three WebGLRenderer and Three postprocessing/controls. renderer.setAnimationLoop drives normal AI/visual updates and composer.render; authored rule and DOM helpers do not replace the Three rendering core."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "typescript": "^5.7.2",
+              "tsx": "^4.19.2",
+              "playwright": "^1.56.1"
+            }
+          },
+          {
+            "path": "client/package.json",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/package.json",
+            "dependencies": {
+              "@bronze/shared": "*",
+              "gsap": "^3.15.0",
+              "three": "^0.185.1"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.185.4",
+              "typescript": "^5.7.2",
+              "vite": "^6.0.7"
+            }
+          },
+          {
+            "path": "shared/package.json",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/shared/package.json",
+            "dependencies": {
+              "gsap": "^3.15.0",
+              "three": "^0.185.1"
+            },
+            "dev_dependencies": {
+              "@types/node": "^22.10.0",
+              "tsx": "^4.19.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "TypeScript workspaces: root/client/shared manifests are captured exactly. Client and shared declare Three ^0.185.1 and GSAP ^3.15.0; @bronze/shared provides authored rules/AI.",
+          "Three OrbitControls and EffectComposer/bloom/OutputPass; standard DOM menus/HUD, authored procedural board/piece/texture and Web Audio helpers.",
+          "Vite/TypeScript/tsx/Playwright toolchain is disclosed. Session tables are a localStorage registry, not network rooms; the active main also implements local game autosave/resume."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/main.ts#L2675-L2707",
+        "claim": "Normal actions call advanceTurn and shared era/round scoring. End of the Rail era sets state.over; afterStateChange opens a reveal/results ledger with actual scores and rematch/home/lobby handlers. AI uses the same endAction pipeline. The displayed sorting is VP then money, so README's income-first tie-break is not certified."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code; fan-project/design and dependency scope qualified)",
+        "source_url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/LICENSE",
+        "additional_notices": [
+          "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/README.md",
+          "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/HOW_TO_RUN.md",
+          "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/pieces.ts",
+          "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/audio.ts",
+          "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/music.ts"
+        ],
+        "notes": "LICENSE and README explicitly grant MIT code. README identifies a free fan project with original code/art and no Roxley/Martin Wallace affiliation; selected pieces/textures/audio are generated by source. Those are author/design provenance statements, not independent clearance of every rulebook, commercial game identity, font, recording or third-party dependency. Upstream comments saying synthesized audio has 'no copyright' are not adopted as a legal conclusion. No game code/art/audio is copied."
+      },
+      "demo": {
+        "url": "https://naman-verma-02.github.io/bronze/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/README.md",
+        "notes": "README points to the author Pages home. The text reader could not access it; the source's home and separate kinetic game entry are distinguished, without claiming the deployed game works. No browser, local table code, save, autoplay/debug hook, test or build was activated."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/README.md",
+        "notes": "An implemented local economic strategy tabletop with normal human/AI action resolution, Canal/Rail eras, scoring, ledger and restart. Rulebook parity, all edge cases, AI strength and authored screenshots/QA reports remain untested; stale documentation and result-sort differences are recorded."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "7e61d1e5cbdd488a5e2df5b716739b401c28b79d",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-053.md#bronze-industrial-tabletop",
+        "reviewed_files": [
+          {
+            "path": "HOW_TO_RUN.md",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/HOW_TO_RUN.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/README.md"
+          },
+          {
+            "path": "client/index.html",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/index.html"
+          },
+          {
+            "path": "client/kinetic.html",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/kinetic.html"
+          },
+          {
+            "path": "client/package.json",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/package.json"
+          },
+          {
+            "path": "client/src/kinetic/ai.ts",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/ai.ts"
+          },
+          {
+            "path": "client/src/kinetic/audio.ts",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/audio.ts"
+          },
+          {
+            "path": "client/src/kinetic/hud.ts",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/hud.ts"
+          },
+          {
+            "path": "client/src/kinetic/main.ts",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/main.ts"
+          },
+          {
+            "path": "client/src/kinetic/music.ts",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/music.ts"
+          },
+          {
+            "path": "client/src/kinetic/pieces.ts",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/pieces.ts"
+          },
+          {
+            "path": "client/src/kinetic/session.ts",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/session.ts"
+          },
+          {
+            "path": "client/src/kinetic/state.ts",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/state.ts"
+          },
+          {
+            "path": "client/src/kinetic/textures.ts",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/src/kinetic/textures.ts"
+          },
+          {
+            "path": "client/vite.config.ts",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/client/vite.config.ts"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/package.json"
+          },
+          {
+            "path": "shared/package.json",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/shared/package.json"
+          },
+          {
+            "path": "shared/src/bronze/ai.ts",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/shared/src/bronze/ai.ts"
+          },
+          {
+            "path": "shared/src/bronze/state.ts",
+            "url": "https://github.com/NAMAN-VERMA-02/bronze/blob/7e61d1e5cbdd488a5e2df5b716739b401c28b79d/shared/src/bronze/state.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "This is a rendered 3D tabletop with discrete planar/network rules, not free-world movement.",
+        "The create/join table registry is localStorage-backed; online synchronized multiplayer is not claimed.",
+        "The active code implements autosave/resume and per-adjacent-city link scoring despite HOW_TO_RUN retaining older contrary descriptions. Other documented simplifications are not blindly treated as current verified behavior.",
+        "The results ledger sorts by VP then money; README's income-before-money tie-break differs. No full commercial-rule parity or endorsement is asserted.",
+        "Normal human/AI endAction reaches results separately from AUTOPLAY/debug hooks; no authored QA/test/screenshots or performance claim was reproduced.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
     }
   ]
 }

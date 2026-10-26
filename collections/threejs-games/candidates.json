@@ -2657,6 +2657,92 @@
         "https://github.com/eriknomitch/workmelt/blob/4af0cfa81cbef5bb9f90cfbf3789d2abcaa2e649/public/sfx/CREDITS.md",
         "https://github.com/eriknomitch/workmelt/blob/4af0cfa81cbef5bb9f90cfbf3789d2abcaa2e649/public/fonts/CREDITS.md"
       ]
+    },
+    {
+      "id": "pingpong3d-archive-source-review",
+      "repository_url": "https://github.com/KtosNapewno97/pingpong3d",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "cfb3dd64756dbc7089e88e84e5e52e9545900b61",
+      "reason": "The untruncated pinned tree has README, a root MIT grant and a ZIP payload, without a separately readable game source entry. README advertises single-file Three table tennis, but the archive has not been fetched/extracted or its rendering/rules inspected; an author description alone does not establish this review's stack/gameplay evidence.",
+      "next_action": "Review an author-provided readable source tree or the archive's exact source/license provenance before promotion. Preserve the MIT declaration without claiming source unavailable in principle, that a ZIP is inherently unsafe, or that the advertised game was run.",
+      "evidence_urls": [
+        "https://github.com/KtosNapewno97/pingpong3d/blob/cfb3dd64756dbc7089e88e84e5e52e9545900b61/README.md",
+        "https://github.com/KtosNapewno97/pingpong3d/blob/cfb3dd64756dbc7089e88e84e5e52e9545900b61/LICENSE"
+      ]
+    },
+    {
+      "id": "leap-tabletennis-objective-license-scope",
+      "repository_url": "https://github.com/DaveCole/threejs-leapmotion-tabletennis",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "9468605312352a0f6a57004b2b04a0d41394bade",
+      "reason": "README calls this an experimental Leap Motion/Three API sandbox. The active source uses legacy Three CanvasRenderer, hand-controlled plane and a bouncing ball, but the inspected source did not establish a scored/rules-based result/restart path qualifying it as the requested actual game. LICENSE.md credits HTML5 Boilerplate; game-specific provenance/coverage is not independently resolved.",
+      "next_action": "Locate a complete implemented objective/result and corresponding source/grant before promotion. Do not call CanvasRenderer a different engine or R3F, or claim the required legacy hardware/SDK works. No device, SDK or browser game was activated.",
+      "evidence_urls": [
+        "https://github.com/DaveCole/threejs-leapmotion-tabletennis/blob/9468605312352a0f6a57004b2b04a0d41394bade/README.md",
+        "https://github.com/DaveCole/threejs-leapmotion-tabletennis/blob/9468605312352a0f6a57004b2b04a0d41394bade/LICENSE.md",
+        "https://github.com/DaveCole/threejs-leapmotion-tabletennis/blob/9468605312352a0f6a57004b2b04a0d41394bade/index.html",
+        "https://github.com/DaveCole/threejs-leapmotion-tabletennis/blob/9468605312352a0f6a57004b2b04a0d41394bade/js/main.js#L457-L490"
+      ]
+    },
+    {
+      "id": "blue-salamander-reactthree-renderer",
+      "repository_url": "https://github.com/Izzimach/blue-salamander",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "dc7c98edd9479ad18d4e829954b76dace494dcd9",
+      "reason": "The pinned ClojureScript project declares org.clojars.haussman/react-three 0.9.2, and graphics mounts through js/ReactTHREE.render/unmount via Om reconciliation. This is a historical Three-targeting React rendering framework rather than the requested directly owned Three renderer. It is not asserted to be modern React Three Fiber, and its actual orb/maze gameplay and MIT grant are not denied.",
+      "next_action": "Reconsider only a distinct direct-renderer game implementation with normal objective/result evidence. React DOM UI alone remains allowed in other projects; this exclusion concerns the actual Three scene rendering wrapper.",
+      "evidence_urls": [
+        "https://github.com/Izzimach/blue-salamander/blob/dc7c98edd9479ad18d4e829954b76dace494dcd9/README.md",
+        "https://github.com/Izzimach/blue-salamander/blob/dc7c98edd9479ad18d4e829954b76dace494dcd9/LICENSE",
+        "https://github.com/Izzimach/blue-salamander/blob/dc7c98edd9479ad18d4e829954b76dace494dcd9/project.clj#L9-L18",
+        "https://github.com/Izzimach/blue-salamander/blob/dc7c98edd9479ad18d4e829954b76dace494dcd9/src/blue_salamander/graphics.cljs#L278-L285",
+        "https://github.com/Izzimach/blue-salamander/blob/dc7c98edd9479ad18d4e829954b76dace494dcd9/src/blue_salamander/core.cljs"
+      ]
+    },
+    {
+      "id": "maze-redux-player-completion",
+      "repository_url": "https://github.com/pemmyz/js_mazelabyrinth_threejs",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "2934a43092c52967653ac314578a6a3948461e6a",
+      "reason": "The MIT project directly constructs Three WebGLRenderer and implements collision-controlled player exploration, a marked exit and an A* bot. The inspected FINISHED transition belongs to the bot; updateMovement updates player coordinates/grid without an established player goal/result/restart check. It remains a candidate rather than treating bot completion as human gameplay completion.",
+      "next_action": "Locate an explicit player objective/completion route or a revised game implementation before promotion. Preserve positive direct-Three/maze evidence without labeling the demo offline, the project broken or the bot path as a verified player win.",
+      "evidence_urls": [
+        "https://github.com/pemmyz/js_mazelabyrinth_threejs/blob/2934a43092c52967653ac314578a6a3948461e6a/README.md",
+        "https://github.com/pemmyz/js_mazelabyrinth_threejs/blob/2934a43092c52967653ac314578a6a3948461e6a/LICENSE",
+        "https://github.com/pemmyz/js_mazelabyrinth_threejs/blob/2934a43092c52967653ac314578a6a3948461e6a/index.html",
+        "https://github.com/pemmyz/js_mazelabyrinth_threejs/blob/2934a43092c52967653ac314578a6a3948461e6a/script.js#L304-L315",
+        "https://github.com/pemmyz/js_mazelabyrinth_threejs/blob/2934a43092c52967653ac314578a6a3948461e6a/script.js#L482-L513"
+      ]
+    },
+    {
+      "id": "fishingcompany-code-license-unestablished",
+      "repository_url": "https://github.com/frhn3vo/3js_fishingcompany",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "49fcabfa90ca5313e07cbdb05bec4f9a69b84cb4",
+      "reason": "The pinned game source directly constructs Three WebGLRenderer and README identifies a fishing game, but the complete tree has no root license/grant file and the reviewed README/source do not establish an explicit reusable code license. Public visibility and a Three import do not supply an open-source grant.",
+      "next_action": "Locate an explicit applicable source license before promotion, then finish gameplay/entry/dependency/asset evidence. No inference of proprietary intent or permission to redistribute assets is made, and no game was executed.",
+      "evidence_urls": [
+        "https://github.com/frhn3vo/3js_fishingcompany/blob/49fcabfa90ca5313e07cbdb05bec4f9a69b84cb4/README.md",
+        "https://github.com/frhn3vo/3js_fishingcompany/blob/49fcabfa90ca5313e07cbdb05bec4f9a69b84cb4/js/main.js#L245-L255"
+      ]
+    },
+    {
+      "id": "tide-of-fortune-license-unestablished",
+      "repository_url": "https://github.com/LivesCreate/Tide-of-Fortune",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "a3cce3ab9f8655b0b0c90f5885581855fd8630ae",
+      "reason": "The complete pinned tree contains a single HTML game with direct Three rendering, cannon-es dice, sailing state and a win/loss function, but no standalone license/readme or explicit source grant was identified in the inspected text. An advertised public demo and source visibility do not establish the requested open-source license.",
+      "next_action": "Locate an explicit applicable code grant before promotion, then capture the actual import-map dependency versions and full normal result loop. No HTML gameplay, dice service, provider or author demo was executed.",
+      "evidence_urls": [
+        "https://github.com/LivesCreate/Tide-of-Fortune/blob/a3cce3ab9f8655b0b0c90f5885581855fd8630ae/Tide%20of%20Fortune.html#L389-L417",
+        "https://github.com/LivesCreate/Tide-of-Fortune/blob/a3cce3ab9f8655b0b0c90f5885581855fd8630ae/Tide%20of%20Fortune.html#L1480-L1535"
+      ]
     }
   ]
 }
