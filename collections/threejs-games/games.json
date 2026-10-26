@@ -21473,6 +21473,645 @@
         "No INITIATE RUN/reboot, pointer lock, input, sound, flare, damage, successful exit or browser render was activated.",
         "No upstream installation, build, automated suite or playtest occurred. Source implementation does not establish current browser/device operation, every generated layout's reachability, complete rule correctness or independently cleared dependency/media origins."
       ]
+    },
+    {
+      "id": "klarbase",
+      "name": "Klarbase",
+      "repository_url": "https://github.com/TanmoyP/klarbase",
+      "genres": [
+        "spatial path puzzle",
+        "crate pushing",
+        "level clearing"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.170.0 (client npm declaration)",
+        "render_evidence": {
+          "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/src/game/world.js#L30-L44",
+          "claim": "The actual client constructs the authored World, which directly creates THREE.WebGLRenderer, scene and perspective camera for volumetric isles, props and Pip. World owns setAnimationLoop/frame and renderer.render; Session sequences the same world's rule moves and animations. DOM menus and the builder do not replace the Three rendering core."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          },
+          {
+            "path": "client/package.json",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/package.json",
+            "dependencies": {
+              "@klar/core": "*",
+              "better-auth": "1.4.22",
+              "three": "^0.170.0"
+            },
+            "dev_dependencies": {
+              "vite": "^6.0.0"
+            }
+          },
+          {
+            "path": "core/package.json",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/core/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          },
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/server/package.json",
+            "dependencies": {
+              "@klar/core": "*",
+              "@prisma/client": "^6.2.0",
+              "better-auth": "1.4.22",
+              "express": "^4.21.2",
+              "express-rate-limit": "^7.4.1"
+            },
+            "dev_dependencies": {
+              "prisma": "^6.2.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "The client declares three ^0.170.0, the local @klar/core workspace and better-auth 1.4.22, with Vite ^6.0.0 for development. Root, client, core and optional server package dependency maps are recorded exactly.",
+          "Authored core rules, solver and grid/storey topology support movement, pushes, bridges, ice and goal checks. Sampled World/props/Pip construct Three geometry/Canvas effects; game/audio.js synthesizes feedback with Web Audio. No external physics/scene engine was identified.",
+          "The optional online server declares Express ^4.21.2, @prisma/client/Prisma ^6.2.0, better-auth 1.4.22 and express-rate-limit ^7.4.1, with Postgres described in README. Official/bundled puzzles and builder have local paths; sign-in and online sharing are separate services. A startup session lookup is caught and routing proceeds independently.",
+          "Main actually sends fire-and-forget /api/plays POST events for starts, clears, hints and restarts with credentials omitted; the server stores aggregate counters/histograms. This is not described as a network-free application or a complete privacy audit. No event, account, save or sharing action was triggered.",
+          "The HTML separately requests Fredoka and Nunito from Google Fonts. Their remote responses/terms were not independently inspected; README's procedural/no-asset-file description is qualified by this external font dependency."
+        ],
+        "framework_audit": "The actual entry, authored direct Three renderer, connected objective/result flow and available package/CDN declarations were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement scene/render engine was identified in that scope. Authored game-rule, server, audio, DOM and build roles are explicit; this is not an exhaustive transitive or runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/src/game/session.js#L35-L65",
+        "claim": "The active Session pump calls the shared core step, records moves, animates the returned state and invokes finish when r.won. finish marks the session won, celebrates and calls the main onWin hook, which saves best progress and opens an Isle cleared result with stars/moves and subsequent-play controls. Core rules determine victory on settled goal arrival, with crates, gates, ice and other spatial transitions."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/LICENSE",
+        "additional_notices": [
+          "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/README.md",
+          "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/index.html"
+        ],
+        "notes": "Root LICENSE gives a full MIT project grant and README explicitly applies MIT to code and contributed isles. Sampled meshes/textures/audio are generated by project code; this does not independently prove every level/design's originality or clear external font/dependency rights. Google Fonts, Three, auth/build/server libraries and author contributions retain their own applicable terms."
+      },
+      "demo": {
+        "url": "https://klarbase.dev",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/README.md",
+        "notes": "The pinned README supplies this exact author URL. A text-reader attempt on 2026-10-26 returned an accessibility error. No renderer, input, simulation, successful game session or source/deployment match was tested; reader failure does not establish an offline site."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/README.md",
+        "notes": "An implemented campaign/daily/community puzzle prototype with undo, restart, hints, source-connected goal completion, result stars and progress. README's exact level-count, solver-verified and solver/game consistency claims were not independently executed or certified; the inspected registry/rules are the fixed source basis."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "53532e5f03100ebf3cfa20f79fd10a88be933947",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-041.md#klarbase",
+        "reviewed_files": [
+          {
+            "path": "client/index.html",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/index.html"
+          },
+          {
+            "path": "client/package.json",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/package.json"
+          },
+          {
+            "path": "client/src/auth.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/src/auth.js"
+          },
+          {
+            "path": "client/src/game/audio.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/src/game/audio.js"
+          },
+          {
+            "path": "client/src/game/pip.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/src/game/pip.js"
+          },
+          {
+            "path": "client/src/game/props.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/src/game/props.js"
+          },
+          {
+            "path": "client/src/game/session.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/src/game/session.js"
+          },
+          {
+            "path": "client/src/game/world.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/src/game/world.js"
+          },
+          {
+            "path": "client/src/main.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/src/main.js"
+          },
+          {
+            "path": "client/src/net.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/client/src/net.js"
+          },
+          {
+            "path": "core/package.json",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/core/package.json"
+          },
+          {
+            "path": "core/src/index.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/core/src/index.js"
+          },
+          {
+            "path": "core/src/isle/index.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/core/src/isle/index.js"
+          },
+          {
+            "path": "core/src/isle/isles.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/core/src/isle/isles.js"
+          },
+          {
+            "path": "core/src/isle/official.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/core/src/isle/official.js"
+          },
+          {
+            "path": "core/src/isle/rules.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/core/src/isle/rules.js"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/README.md"
+          },
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/server/package.json"
+          },
+          {
+            "path": "server/src/routes/plays.js",
+            "url": "https://github.com/TanmoyP/klarbase/blob/53532e5f03100ebf3cfa20f79fd10a88be933947/server/src/routes/plays.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Discrete grid/storey/height rules are rendered as volumetric floating-isle boards. The dimension label does not mean unrestricted 3D avatar motion; some puzzles have vertically linked storeys.",
+        "No puzzle, hint solver, solution replay, localStorage progress, builder, proposed contribution, sign-in, statistics POST or online share was activated.",
+        "The repository includes upstream contribution and solver test machinery; none was run for this metadata-only review.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, every puzzle/match outcome, full rules correctness, security/privacy behavior or independently cleared media/dependency rights."
+      ]
+    },
+    {
+      "id": "smash-rally-rajin",
+      "name": "Smash Rally",
+      "repository_url": "https://github.com/rajinsyed/smash-rally",
+      "genres": [
+        "badminton",
+        "sports",
+        "AI and online 1v1"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.184.0 (npm declaration)",
+        "render_evidence": {
+          "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/core/Renderer.ts#L1-L16",
+          "claim": "The actual main asset bootstrap constructs Game, which calls the authored createRenderer and directly creates THREE.WebGLRenderer. An authored fixed-step Loop owns simulation/frame/render callbacks. High quality uses Three's own EffectComposer/RenderPass add-ons, while the low path renders the same Three scene directly; DOM HUD does not own scene rendering."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/package.json",
+            "dependencies": {
+              "three": "^0.184.0",
+              "ws": "^8.21.1"
+            },
+            "dev_dependencies": {
+              "@playwright/test": "^1.60.0",
+              "@types/node": "^25.9.0",
+              "@types/pngjs": "^6.0.5",
+              "@types/three": "^0.184.1",
+              "pngjs": "^7.0.0",
+              "typescript": "^6.0.3",
+              "vite": "^8.0.16"
+            }
+          },
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/server/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "The root npm runtime declares three ^0.184.0 and ws ^8.21.1; development declarations include TypeScript ^6.0.3, Vite ^8.0.16, Playwright, type packages and pngjs. The server package is a small module/test-runner descriptor with no separate declared dependency map.",
+          "Authored fixed-step shuttle simulation, aiming, player energy, AI, scoring and event synchronization use imperative Three. PostPipeline imports Three example postprocessing add-ons, not another game/scene engine.",
+          "The README describes static vs-AI mode and an optional Node/WebSocket room relay for online 1v1. Online synchronization/availability/room isolation were not exercised; no relay, connection, test hook or deployment was started.",
+          "Assets load from the project manifest with source fallback paths to placeholder visuals. README and manifest attribute character/prop assets to Tripo, art/textures to Gemini and sound/announcer output to ElevenLabs. 'Generated for this project' is provenance text rather than independent redistribution/originality clearance; no generation service or credits were used.",
+          "The bundled Baloo 2 font has a separate full SIL OFL 1.1 notice. Models/textures/audio were not downloaded, decoded or executed; manifest declarations and loader wiring alone do not certify all asset rights or loaded behavior."
+        ],
+        "framework_audit": "The actual entry, authored direct Three renderer, connected objective/result flow and available package/CDN declarations were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement scene/render engine was identified in that scope. Authored game-rule, server, audio, DOM and build roles are explicit; this is not an exhaustive transitive or runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/game/MatchStateMachine.ts#L107-L142",
+        "claim": "Active shuttle landing feeds Game's state machine to decide the point and increment score. After the point pause, resolvePoint compares the scorer with pointsToWin, emits matchOver and records a winner. The real HUD displays the winner and final score; offline rematch resets the match, and online rematch uses a separate mutual-consent flow."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/LICENSE",
+        "additional_notices": [
+          "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/README.md",
+          "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/public/assets/manifest.json",
+          "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/public/assets/ui/fonts/OFL.txt"
+        ],
+        "notes": "Root LICENSE is a full MIT project-code grant. The manifest/README identify generated media, with a separate Baloo 2 OFL notice. A generated-for-this-project label does not itself prove the providers' redistribution rights, subscription/output conditions or originality; the code grant is not presented as a blanket MIT clearance for every generated model, texture, recording, voice or font."
+      },
+      "demo": {
+        "url": "https://smash-rally.fly.dev",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/README.md",
+        "notes": "The pinned README supplies this exact author URL. A text-reader attempt on 2026-10-26 returned an accessibility error. No renderer, input, simulation, successful game session or source/deployment match was tested; reader failure does not establish an offline site."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/README.md",
+        "notes": "A source prototype with local AI and online-1v1 paths, landing/point/match state, actual result HUD and rematch handling. Authored simulation and assist/settings are game approximations; complete standard-badminton rules, network matches, asset fallback and claimed test/bot/phone results were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "9a542529f47932a5af59913385526c7c12c5e053",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-041.md#smash-rally-rajin",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/package.json"
+          },
+          {
+            "path": "public/assets/manifest.json",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/public/assets/manifest.json"
+          },
+          {
+            "path": "public/assets/ui/fonts/OFL.txt",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/public/assets/ui/fonts/OFL.txt"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/README.md"
+          },
+          {
+            "path": "server/package.json",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/server/package.json"
+          },
+          {
+            "path": "src/core/assets.ts",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/core/assets.ts"
+          },
+          {
+            "path": "src/core/AudioManager.ts",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/core/AudioManager.ts"
+          },
+          {
+            "path": "src/core/Loop.ts",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/core/Loop.ts"
+          },
+          {
+            "path": "src/core/PostPipeline.ts",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/core/PostPipeline.ts"
+          },
+          {
+            "path": "src/core/Renderer.ts",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/core/Renderer.ts"
+          },
+          {
+            "path": "src/entities/CharacterModel.ts",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/entities/CharacterModel.ts"
+          },
+          {
+            "path": "src/game/Game.ts",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/game/Game.ts"
+          },
+          {
+            "path": "src/game/MatchStateMachine.ts",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/game/MatchStateMachine.ts"
+          },
+          {
+            "path": "src/game/ModeManager.ts",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/game/ModeManager.ts"
+          },
+          {
+            "path": "src/game/ScoringRules.ts",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/game/ScoringRules.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/main.ts"
+          },
+          {
+            "path": "src/systems/ShuttleSim.ts",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/systems/ShuttleSim.ts"
+          },
+          {
+            "path": "src/ui/HUD.ts",
+            "url": "https://github.com/rajinsyed/smash-rally/blob/9a542529f47932a5af59913385526c7c12c5e053/src/ui/HUD.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Players move mainly on the court plane while the shuttle has authored three-dimensional flight/net/landing behavior in a volumetric court scene.",
+        "Victory uses a configurable pointsToWin threshold; standard deuce, best-of-three or full professional laws are not inferred from generic badminton wording.",
+        "No match, generated asset download, sound/voice, pointer input, settings save, test/dev hook, WebSocket room, bot suite or Fly deployment was activated.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, every puzzle/match outcome, full rules correctness, security/privacy behavior or independently cleared media/dependency rights."
+      ]
+    },
+    {
+      "id": "battlespace-nmick",
+      "name": "BattleSpace",
+      "repository_url": "https://github.com/Nmick1995/battlespace",
+      "genres": [
+        "turn-based strategy",
+        "battleship",
+        "AI opponent"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.169.0 (HTML import-map CDN declaration)",
+        "render_evidence": {
+          "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/js/world.js#L18-L35",
+          "claim": "The actual HTML entry imports authored main.js, which constructs World. World directly creates THREE.WebGLRenderer for a perspective starfield/volumetric starship scene; its own frame updates animations and calls world.render. Procedural geometry and Three add-on postprocessing retain Three as the render core."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "package.json has no npm runtime or development dependencies; its start script runs a local static Node server. index.html instead declares Three 0.169.0 and matching Three add-ons via a jsDelivr import map. This source dependency remains required despite the empty npm maps.",
+          "Authored grid placement, shot resolution, fleet state and AI implement rules. Sampled ships/world build volumetric geometry, shader/Canvas textures and a star/planet scene; Web Audio code synthesizes sound effects and a choir-like score rather than loading audio files.",
+          "The HTML separately requests Orbitron and Rajdhani from Google Fonts. CDN/import-map/font access, sound and source/deployment compatibility were not exercised. Author built-entirely-with-code language does not remove external dependency/font terms."
+        ],
+        "framework_audit": "The actual entry, authored direct Three renderer, connected objective/result flow and available package/CDN declarations were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement scene/render engine was identified in that scope. Authored game-rule, server, audio, DOM and build roles are explicit; this is not an exhaustive transitive or runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/js/main.js#L432-L474",
+        "claim": "A selected grid shot resolves enemy sections, records hits and alternates to an AI turn. A newly sunk final ship makes fleetDead call gameOver(true/false) for either side. The actual game-over routine shows victory/defeat and statistics, with a Play again control calling startGame."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/LICENSE",
+        "additional_notices": [
+          "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/README.md",
+          "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/index.html"
+        ],
+        "notes": "Root LICENSE and README provide MIT for the project code. Sampled meshes/textures and Web Audio generation are procedural; no independent worldwide design/music originality audit was done. Three/CDN and remote Google Fonts have separate terms, and screenshots/media elsewhere in the repository were not exhaustively cleared."
+      },
+      "demo": {
+        "url": "https://nmick1995.github.io/battlespace/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/README.md",
+        "notes": "The pinned README supplies this exact author URL. A text-reader attempt on 2026-10-26 returned an accessibility error. No renderer, input, simulation, successful game session or source/deployment match was tested; reader failure does not establish an offline site."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/README.md",
+        "notes": "A game-source prototype with ship deployment, alternating player/AI shots, section/hull destruction, complete fleet victory/defeat and result/rematch controls. Source cinematic presentation is separate from confirmed runtime responsiveness, AI fairness and completion; no match was played."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "330c07770a7ced4f063210307e9d135999deba17",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-041.md#battlespace-nmick",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/index.html"
+          },
+          {
+            "path": "js/ai.js",
+            "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/js/ai.js"
+          },
+          {
+            "path": "js/audio.js",
+            "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/js/audio.js"
+          },
+          {
+            "path": "js/core.js",
+            "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/js/core.js"
+          },
+          {
+            "path": "js/main.js",
+            "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/js/main.js"
+          },
+          {
+            "path": "js/ships.js",
+            "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/js/ships.js"
+          },
+          {
+            "path": "js/world.js",
+            "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/js/world.js"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/README.md"
+          },
+          {
+            "path": "style.css",
+            "url": "https://github.com/Nmick1995/battlespace/blob/330c07770a7ced4f063210307e9d135999deba17/style.css"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Battleship decisions use two planar 10×10 grids, rendered with volumetric starships and moving 3D cameras. It is a 3D-rendered board game, not free-flight combat or continuous three-axis strategy.",
+        "No placement, shot, skip/cinematic, generated music, result/rematch, debug handle or local server was activated.",
+        "No-build/static setup still needs the declared ES-module/CDN resources; historical README browser compatibility was not certified.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, every puzzle/match outcome, full rules correctness, security/privacy behavior or independently cleared media/dependency rights."
+      ]
+    },
+    {
+      "id": "salvo-battleship-ai-agents",
+      "name": "Salvo — Battleship AI Agents",
+      "repository_url": "https://github.com/corba777/battleship_ai_agents",
+      "genres": [
+        "battleship",
+        "turn-based strategy",
+        "human multiplayer and spectators"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.171.0 (client npm declaration)",
+        "render_evidence": {
+          "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/client/src/scene/arena.ts#L27-L41",
+          "claim": "The actual TypeScript entry constructs Arena, which directly creates THREE.WebGLRenderer, scene and perspective cameras. Its requestAnimationFrame tick advances the event buffer/HUD and authored arena rendering. Ship hulls are Three geometry; DOM setup and optional agent commentary are auxiliary."
+        },
+        "manifests": [
+          {
+            "path": "client/package.json",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/client/package.json",
+            "dependencies": {
+              "three": "^0.171.0"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.171.0",
+              "typescript": "^5.7.3",
+              "vite": "^6.0.7"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "The browser client declares only three ^0.171.0 at runtime, with Three types ^0.171.0, TypeScript ^5.7.3 and Vite ^6.0.7 for development. No R3F or other render framework was found in its manifest/entry.",
+          "The separately reviewed pyproject.toml requires Python >=3.12 and declares anthropic>=0.125.0, fastapi>=0.115, google-adk>=2.7.1, google-genai>=2.18.1, httpx>=0.28.1, openai>=3.3.1 and uvicorn[standard]>=0.32. Optional development declarations include pytest>=8.3 and httpx>=0.28. These are Python/server/optional-agent dependencies, not hidden npm or render dependencies.",
+          "Live play needs the FastAPI/WebSocket referee backend. Human-vs-human uses queued human actions rather than model calls; bot/provider and spectator paths are separate. Selecting paid LLM providers would require their credentials/services, none of which were accessed or invoked.",
+          "The client fixture can replay a pre-recorded match without the server; this is not claimed as an offline interactive opponent. Sampled procedural ship hulls/Three geometry and generated beeps are distinguished from external agent output and recording/screenshot content.",
+          "The HTML separately requests IBM Plex Mono and IBM Plex Sans from Google Fonts. External font terms/responses and full asset originality were not independently checked."
+        ],
+        "framework_audit": "The actual entry, authored direct Three renderer, connected objective/result flow and available package/CDN declarations were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement scene/render engine was identified in that scope. Authored game-rule, server, audio, DOM and build roles are explicit; this is not an exhaustive transitive or runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/salvo/referee/match.py#L104-L129",
+        "claim": "The Python referee fires the selected shot, emits shot/sunk events and yields MatchEnd when all opponent ships are sunk. The room runner broadcasts these referee events. The live browser picker sends human_shot, and the client projector consumes match_end to reveal fleets and display the winner/final result. The included fixture is a replay path, distinct from actual live human/agent games."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/LICENSE",
+        "additional_notices": [
+          "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/README.md",
+          "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/client/index.html",
+          "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/pyproject.toml"
+        ],
+        "notes": "Root LICENSE supplies a full MIT project-code grant. Sampled ship geometry and client sound generation are authored code; Three, Python/server/model-provider packages, remote fonts and externally generated agent content retain separate terms. No proprietary API/service license or generated output is represented as covered by the game's MIT grant."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/README.md",
+        "notes": "No concrete author-hosted browser demo URL was established in the reviewed README or repository homepage metadata. Localhost setup and a YouTube recording are not substituted for a hosted playable demo."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/README.md",
+        "notes": "A server-backed game prototype with human placement/fire input, referee-enforced shots/sinking/end events, client results and a separate spectator/fixture mode. No local server, human room, agent/model session, full game, information-hiding assurance or advertised tests were reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-041.md#salvo-battleship-ai-agents",
+        "reviewed_files": [
+          {
+            "path": "client/index.html",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/client/index.html"
+          },
+          {
+            "path": "client/package.json",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/client/package.json"
+          },
+          {
+            "path": "client/src/hud/setup.ts",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/client/src/hud/setup.ts"
+          },
+          {
+            "path": "client/src/main.ts",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/client/src/main.ts"
+          },
+          {
+            "path": "client/src/net/apply.ts",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/client/src/net/apply.ts"
+          },
+          {
+            "path": "client/src/scene/arena.ts",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/client/src/scene/arena.ts"
+          },
+          {
+            "path": "client/src/scene/ships.ts",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/client/src/scene/ships.ts"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/LICENSE"
+          },
+          {
+            "path": "pyproject.toml",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/pyproject.toml"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/README.md"
+          },
+          {
+            "path": "salvo/agents/human.py",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/salvo/agents/human.py"
+          },
+          {
+            "path": "salvo/referee/board.py",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/salvo/referee/board.py"
+          },
+          {
+            "path": "salvo/referee/match.py",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/salvo/referee/match.py"
+          },
+          {
+            "path": "salvo/server/app.py",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/salvo/server/app.py"
+          },
+          {
+            "path": "salvo/server/rooms.py",
+            "url": "https://github.com/corba777/battleship_ai_agents/blob/b39f2948196f2b7cf3dc4c684a7f0bcd8f032e4a/salvo/server/rooms.py"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The decisions are on planar 10×10 boards rendered with volumetric ships/water/cameras. This satisfies the 3D-rendered-board scope, without claiming three-axis movement.",
+        "A recorded fixture alone is a visualization; eligibility here rests on the inspected live human-shot/referee/result integration. The optional LLM mode is not required for the scoped human game.",
+        "No fixture, speech mode, model/provider, API credential, human placement/shot, WebSocket room, replay log, Docker process or upstream test/build was activated.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not establish current browser/device operation, every puzzle/match outcome, full rules correctness, security/privacy behavior or independently cleared media/dependency rights."
+      ]
     }
   ]
 }

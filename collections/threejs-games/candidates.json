@@ -1993,6 +1993,123 @@
         "https://github.com/AstraxGames/maze-escape/blob/d8d2837267569be5ec8d147122c511ccff9e242e/package.json",
         "https://github.com/AstraxGames/maze-escape/blob/d8d2837267569be5ec8d147122c511ccff9e242e/main.js"
       ]
+    },
+    {
+      "id": "ink-rooms-reserved-assets",
+      "repository_url": "https://github.com/adamholter/ink-rooms-source",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "ea64f5a59137dcf6fe1824a583cd0c3b38b9b731",
+      "reason": "An actual direct-Three puzzle and a full MIT code grant exist, but LICENSE and ASSET-RIGHTS explicitly reserve the bundled character/likeness and recordings. They allow limited local study/play and official-host use while restricting reuse/adaptation/redistribution and modified-game publication with those assets. It is a code-open, asset-restricted candidate, not an ordinary unrestricted MIT game.",
+      "next_action": "Retain the code/asset split and consider only a clearly separated restricted-assets listing or a demonstrated replacement-asset path before promotion. Do not remove the original notices, infer worldwide puzzle originality or contact the author without authorization.",
+      "evidence_urls": [
+        "https://github.com/adamholter/ink-rooms-source/blob/ea64f5a59137dcf6fe1824a583cd0c3b38b9b731/LICENSE",
+        "https://github.com/adamholter/ink-rooms-source/blob/ea64f5a59137dcf6fe1824a583cd0c3b38b9b731/LICENSE-CODE",
+        "https://github.com/adamholter/ink-rooms-source/blob/ea64f5a59137dcf6fe1824a583cd0c3b38b9b731/ASSET-RIGHTS.md",
+        "https://github.com/adamholter/ink-rooms-source/blob/ea64f5a59137dcf6fe1824a583cd0c3b38b9b731/CREDITS.md",
+        "https://github.com/adamholter/ink-rooms-source/blob/ea64f5a59137dcf6fe1824a583cd0c3b38b9b731/src/game.ts#L15-L24"
+      ]
+    },
+    {
+      "id": "noordheim-react-three-fiber",
+      "repository_url": "https://github.com/thijssmudde/noordheim-oss",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "06886ce1955934f1ae066852c0e2557ac2e3fc42",
+      "reason": "The actual game components import React Three Fiber, including useLoader in attract-scene.tsx, and package.json declares @react-three/fiber and @react-three/drei. This exceeds the direct-Three boundary; React is not merely a DOM shell. Its art/audio are also explicitly CC BY-NC 4.0 rather than covered by MIT code.",
+      "next_action": "Reconsider only a separately implemented direct-rendering edition; preserve the noncommercial asset notice independently of the rendering exclusion.",
+      "evidence_urls": [
+        "https://github.com/thijssmudde/noordheim-oss/blob/06886ce1955934f1ae066852c0e2557ac2e3fc42/package.json",
+        "https://github.com/thijssmudde/noordheim-oss/blob/06886ce1955934f1ae066852c0e2557ac2e3fc42/components/game/world/attract-scene.tsx#L1-L8",
+        "https://github.com/thijssmudde/noordheim-oss/blob/06886ce1955934f1ae066852c0e2557ac2e3fc42/components/game/game.tsx",
+        "https://github.com/thijssmudde/noordheim-oss/blob/06886ce1955934f1ae066852c0e2557ac2e3fc42/LICENSE-ASSETS.md"
+      ]
+    },
+    {
+      "id": "sokoban-zhzhch335-project-license",
+      "repository_url": "https://github.com/zhzhch335/sokoban",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "2440e268f09bd86138966ca5e62436d0f7b55e9a",
+      "reason": "The source directly constructs a Three renderer and connects move checks to a congratulations/step-count result. However, no project-code license grant was established in the untruncated pinned tree or README. Licenses belonging to Three, icons or other vendored helpers would not establish permission for this game's authored code/assets.",
+      "next_action": "Establish a project grant and separately document STL/texture/font origins before promotion. Historical browser support and successful gameplay remain untested; no source/asset use permission is inferred from public visibility.",
+      "evidence_urls": [
+        "https://github.com/zhzhch335/sokoban/blob/2440e268f09bd86138966ca5e62436d0f7b55e9a/README.md",
+        "https://github.com/zhzhch335/sokoban/blob/2440e268f09bd86138966ca5e62436d0f7b55e9a/js/TRender.js#L1-L17",
+        "https://github.com/zhzhch335/sokoban/blob/2440e268f09bd86138966ca5e62436d0f7b55e9a/js/operation.js#L58-L68",
+        "https://github.com/zhzhch335/sokoban/blob/2440e268f09bd86138966ca5e62436d0f7b55e9a/index.html"
+      ]
+    },
+    {
+      "id": "rally-badminton-finale-voice-scope",
+      "repository_url": "https://github.com/zcinta0514/rally-badminton",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "7164832c6b2dae212318c8ff2ec53a607cfe5fab",
+      "reason": "The project supplies MIT code and separate CC0 recording notices, but the bundled finale-dad.wav has a provenance-only notice that explicitly does not claim CC0 or independently verified commercial redistribution rights. THIRD_PARTY_NOTICES excludes that speech from the recordings' CC0 and blanket MIT statements. No adequate grant for that bundled output was established by the source review; this is not a claim that all code or recordings lack a license.",
+      "next_action": "Clarify the speech output's redistribution terms or demonstrate a clearly separated/replaced speech-free distribution before promotion. Retain the distinct recording and model notices and optional mode boundaries; do not run speech generation, create a peer room, install a PWA or submit feedback.",
+      "evidence_urls": [
+        "https://github.com/zcinta0514/rally-badminton/blob/7164832c6b2dae212318c8ff2ec53a607cfe5fab/LICENSE",
+        "https://github.com/zcinta0514/rally-badminton/blob/7164832c6b2dae212318c8ff2ec53a607cfe5fab/README.md",
+        "https://github.com/zcinta0514/rally-badminton/blob/7164832c6b2dae212318c8ff2ec53a607cfe5fab/THIRD_PARTY_NOTICES.md",
+        "https://github.com/zcinta0514/rally-badminton/blob/7164832c6b2dae212318c8ff2ec53a607cfe5fab/src/audio/LICENSE.txt",
+        "https://github.com/zcinta0514/rally-badminton/blob/7164832c6b2dae212318c8ff2ec53a607cfe5fab/src/audio/FINALE-VOICE.txt"
+      ]
+    },
+    {
+      "id": "mahjong-threejs-tile-layout-visualizer",
+      "repository_url": "https://github.com/dmitriylogunov/mahjong-threejs",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "7a46ad4f04d398b7f6a039a1b18e809721db2d1f",
+      "reason": "The README describes a turtle-layout tile-set visualization. The inspected main creates tiles/lights, orbit controls and an animation loop, without an implemented selection/pair-removal/blocking/win path. It is a rendering experiment rather than an established Mahjong game.",
+      "next_action": "Reconsider after an actual tile-rule/objective/result path is implemented and a project grant is established; the package's ISC string is not treated as a substitute for those missing game mechanics.",
+      "evidence_urls": [
+        "https://github.com/dmitriylogunov/mahjong-threejs/blob/7a46ad4f04d398b7f6a039a1b18e809721db2d1f/README.md",
+        "https://github.com/dmitriylogunov/mahjong-threejs/blob/7a46ad4f04d398b7f6a039a1b18e809721db2d1f/package.json",
+        "https://github.com/dmitriylogunov/mahjong-threejs/blob/7a46ad4f04d398b7f6a039a1b18e809721db2d1f/main.js"
+      ]
+    },
+    {
+      "id": "mahjong-single-tile-display",
+      "repository_url": "https://github.com/codingkudu/threejs-mahjong",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "3dd0f9d46870e0e1bbf92f850d84268ddbe9e8c5",
+      "reason": "The README and actual HTML implement one decorative Green Dragon tile with drag/zoom/rotation and material detail. No gameplay rules, score or objective/result loop was found in that scoped entry.",
+      "next_action": "Reconsider a distinct implemented game; do not count a rotatable tile or its author demo as a Mahjong game.",
+      "evidence_urls": [
+        "https://github.com/codingkudu/threejs-mahjong/blob/3dd0f9d46870e0e1bbf92f850d84268ddbe9e8c5/README.md",
+        "https://github.com/codingkudu/threejs-mahjong/blob/3dd0f9d46870e0e1bbf92f850d84268ddbe9e8c5/index.html"
+      ]
+    },
+    {
+      "id": "mahjong-3d-readme-only",
+      "repository_url": "https://github.com/derek-hobden/mahjong-3d",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "2e837b6cb2612efd03de719af1548cc89bdff086",
+      "reason": "The untruncated pinned tree contains only a short README describing a prospective 3D Mahjong Solitaire project. There is no game implementation in that revision to inspect for rendering, rules or licensing.",
+      "next_action": "Recheck only after source and a project grant are published; no source/runtime evidence is fabricated from the repository description.",
+      "evidence_urls": [
+        "https://github.com/derek-hobden/mahjong-3d/blob/2e837b6cb2612efd03de719af1548cc89bdff086/README.md"
+      ]
+    },
+    {
+      "id": "strategy-browser-game-objective-integration",
+      "repository_url": "https://github.com/superstes/strategy-browser-game",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "fb684387a7ea7c8aa43e0e817c37a3c42bc3ddc7",
+      "reason": "A direct Three renderer and AGPL root text exist, but the inspected current entry updates camera/controls/render while entity stepping is commented out, and user resource/API methods remain TODO stubs. The README lists resource/capture strategy features as roadmap items. An implemented strategy economy/objective/result path was not established, so roadmap claims are not promoted as playable features.",
+      "next_action": "Trace an implemented integrated strategy loop in a later revision or a more specific source path. Separately inspect music attribution and AGPL application notices; no login form, network call, audio or upstream scripts were activated.",
+      "evidence_urls": [
+        "https://github.com/superstes/strategy-browser-game/blob/fb684387a7ea7c8aa43e0e817c37a3c42bc3ddc7/README.md",
+        "https://github.com/superstes/strategy-browser-game/blob/fb684387a7ea7c8aa43e0e817c37a3c42bc3ddc7/LICENSE",
+        "https://github.com/superstes/strategy-browser-game/blob/fb684387a7ea7c8aa43e0e817c37a3c42bc3ddc7/src/frontend/js/main.js#L44-L74",
+        "https://github.com/superstes/strategy-browser-game/blob/fb684387a7ea7c8aa43e0e817c37a3c42bc3ddc7/src/frontend/js/user.js",
+        "https://github.com/superstes/strategy-browser-game/blob/fb684387a7ea7c8aa43e0e817c37a3c42bc3ddc7/src/frontend/js/graphics.js"
+      ]
     }
   ]
 }
