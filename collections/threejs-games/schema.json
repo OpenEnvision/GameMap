@@ -322,7 +322,7 @@
                   ],
                   "additionalProperties": false
                 },
-                "minItems": 3
+                "minItems": 2
               },
               "already_mentioned_in_legacy_readme": {
                 "type": "boolean"

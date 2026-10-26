@@ -1938,6 +1938,45 @@
         "https://github.com/shubhransh-gupta/courier-city/blob/0c82a87c9bad8e31704e630f95dd75daa501d3a4/index.html",
         "https://github.com/shubhransh-gupta/courier-city/blob/0c82a87c9bad8e31704e630f95dd75daa501d3a4/assets/index-CizabRDk.js"
       ]
+    },
+    {
+      "id": "usion-mini-football-project-license",
+      "repository_url": "https://github.com/ugshanyu/usion-mini-football",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "b1e920de23092b348046963dff365016daff6e99",
+      "reason": "The client directly uses Three and the source includes server-authoritative goals, a match timer and match_end results. However, the only complete MIT text in the inspected tree is THREE-LICENSE.txt, whose copyright/grant is for Three's authors. No complete project-code grant was established in README, package or scoped game sources. The GitHub MIT classification is not used as proof that this game's own code is MIT.",
+      "next_action": "Obtain an explicit project grant and document the external Usion shared-room SDK/runtime terms and hosting requirements before promotion. No SDK room, server, iframe host or connection was started.",
+      "evidence_urls": [
+        "https://github.com/ugshanyu/usion-mini-football/blob/b1e920de23092b348046963dff365016daff6e99/README.md",
+        "https://github.com/ugshanyu/usion-mini-football/blob/b1e920de23092b348046963dff365016daff6e99/THREE-LICENSE.txt",
+        "https://github.com/ugshanyu/usion-mini-football/blob/b1e920de23092b348046963dff365016daff6e99/package.json",
+        "https://github.com/ugshanyu/usion-mini-football/blob/b1e920de23092b348046963dff365016daff6e99/app.js#L1-L25",
+        "https://github.com/ugshanyu/usion-mini-football/blob/b1e920de23092b348046963dff365016daff6e99/server.bundle.js#L150-L168"
+      ]
+    },
+    {
+      "id": "poluxis-dimensional-scope",
+      "repository_url": "https://github.com/mcLYX/ProjectPoluxis",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "41200790b20caf12ffb49be05e934f4639b747f5",
+      "reason": "A real rhythm score/judgement game, MIT core and imperative direct-Three renderer exist inside a React shell, without R3F. The full path uses a perspective scene with flat note planes and a box tunnel; separate full-app Canvas-2D/Lite modes deliberately reproduce the same projected judgement model. Eligibility under the strict 3D boundary remains unresolved, so it is not promoted or mislabeled as R3F/2D-only. Built-in charts and synthesized audio exist; external chart/music content retains its authors' terms.",
+      "next_action": "Review meaningful full-mode note/layer depth and geometry against the strict 3D boundary, and distinguish that scope from the 2D/Lite/editor/Capacitor paths. Keep external media licensing separate from MIT core and synthesized defaults; no audio/import/PWA/account session is needed for this source decision.",
+      "evidence_urls": [
+        "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/LICENSE",
+        "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/README.md#L874-L876",
+        "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/package.json",
+        "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/src/App.tsx#L5-L10",
+        "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/src/App.tsx#L773-L786",
+        "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/src/components/GameCanvas.tsx#L441-L447",
+        "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/src/components/GameCanvas.tsx#L1587-L1623",
+        "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/src/components/GameCanvas.tsx#L1884-L1888",
+        "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/src/components/GameCanvas2D.tsx#L2-L15",
+        "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/src/shared/demoCharts.ts",
+        "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/src/shared/gameplaySpec.ts#L77-L104",
+        "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/src/audio/AudioManager.ts"
+      ]
     }
   ]
 }

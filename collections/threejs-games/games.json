@@ -20775,6 +20775,202 @@
         "Pilot/portrait origin remains unreviewed. No Start/pilot selection, flight, sound, input, rescue, pause or restart was activated.",
         "No upstream installation, build, automated suite or playtest occurred. Source implementation and author device/performance/content descriptions do not establish successful current-browser play, complete correctness or independently cleared asset provenance."
       ]
+    },
+    {
+      "id": "snake-3d-rakgomo",
+      "name": "3D Snake — GoitseoneRakgomo",
+      "repository_url": "https://github.com/GoitseoneRakgomo/3d-snake",
+      "genres": [
+        "grid arcade",
+        "snake",
+        "level clearing"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.128.0 (npm and index import-map declaration)",
+        "render_evidence": {
+          "url": "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/game/logic.ts#L188-L218",
+          "claim": "The actual TSX entry mounts React App, whose effect constructs the authored Game with the canvas and score/loss/level/win callbacks. Game directly creates THREE.WebGLRenderer, scene and camera and owns its update/render animation frame. React supplies menus/HUD and a canvas lifecycle, without R3F scene ownership."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/package.json",
+            "dependencies": {
+              "three": "0.128.0",
+              "@tweenjs/tween.js": "18.6.4",
+              "react": "^19.2.0",
+              "react-dom": "^19.2.0"
+            },
+            "dev_dependencies": {
+              "@types/node": "^22.14.0",
+              "@vitejs/plugin-react": "^5.0.0",
+              "typescript": "~5.8.2",
+              "vite": "^6.2.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "The npm manifest declares Three 0.128.0, @tweenjs/tween.js 18.6.4, React and ReactDOM ^19.2.0. React/Vite/TypeScript development tooling is recorded exactly; React manages DOM UI while the authored Game owns Three rendering and TWEEN animation.",
+          "index.html also declares Three/TWEEN CDN imports, React/ReactDOM aistudiocdn URLs and a Tailwind CDN styling script. CDN availability and npm-versus-import-map deployment behavior were not exercised. The entry references index.css and vite.svg, neither identified in the inspected tree; setup/output readiness is unverified.",
+          "Volumetric snake blocks, obstacles/trees and food are constructed with Three geometry. Eat/crash feedback is generated with Web Audio/offline oscillator buffers. Score submission is a localStorage UI path, not a verified network leaderboard."
+        ],
+        "framework_audit": "Actual entry, project-authored direct Three renderer, integrated objective/result state and available manifest/CDN declarations were inspected. No R3F, A-Frame, Babylon.js, Unity, enable3d or replacement scene/render engine was identified in the scoped game. React/DOM, tweening, build, audio and styling roles are disclosed; no exhaustive transitive or runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/game/logic.ts#L394-L430",
+        "claim": "Eating food grows the snake, awards level-scaled points and advances the per-level food count. Five foods trigger levelComplete and a level-clear bonus; the ten-level source table ends in onGameWon after the last layout. Boundary, obstacle and self collisions call onGameOver. React wires these callbacks to actual result/next-level/restart screens and an optional localStorage score form."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/LICENSE",
+        "additional_notices": [
+          "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/README.md",
+          "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/index.html"
+        ],
+        "notes": "Root LICENSE supplies a full MIT project grant and README identifies MIT. Sampled meshes and audio are procedural code; Three, TWEEN, React/DOM, Tailwind and CDN providers have separate terms that were not exhaustively reviewed. Complete design/originality and all dependency rights are not independently cleared by the game-code grant."
+      },
+      "demo": {
+        "url": "https://3d-snake.vercel.app",
+        "status": "reader-error",
+        "source_url": "https://api.github.com/repos/GoitseoneRakgomo/3d-snake",
+        "notes": "Author repository metadata homepage, read 2026-10-26, identifies this URL; the repeated README does not print it. A text-reader attempt returned an accessibility error. No renderer, keyboard play, score submission or source/deployment match was tested; reader failure does not establish an offline site.",
+        "checked_at": "2026-10-26"
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/README.md",
+        "notes": "The source implements ten obstacle layouts, five-food level goals, bonuses, collision loss, final victory and actual React UI transitions. The broad README fully-3D/JavaScript wording is qualified by the real TypeScript/React/direct-Three stack and planar grid rules. Complete campaign reachability, missing static-reference handling, legacy Three compatibility and present build behavior were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "f4da5155e27f88929aa8a4c0ca2042968923e273",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-039.md#snake-3d-rakgomo",
+        "reviewed_files": [
+          {
+            "path": "App.tsx",
+            "url": "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/App.tsx"
+          },
+          {
+            "path": "game/logic.ts",
+            "url": "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/game/logic.ts"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/index.html"
+          },
+          {
+            "path": "index.tsx",
+            "url": "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/index.tsx"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/README.md"
+          },
+          {
+            "path": "types.ts",
+            "url": "https://github.com/GoitseoneRakgomo/3d-snake/blob/f4da5155e27f88929aa8a4c0ca2042968923e273/types.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "XZ-only grid movement is rendered with volumetric snake/food/obstacle meshes. It is a 3D-rendered board, not free vertical movement or a purely flat sprite view.",
+        "Game source, callback wiring and ten configured levels were reviewed; no successful full clear, spawn/layout solvability, collision fairness or keyboard/touch/device support was tested.",
+        "No local leaderboard name/save, sound, game start/pause/next-level or external CDN game load was activated. Repetitive README claims are not adopted in place of inspected source.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation does not establish successful present-day browser/device play, every level/match outcome, complete rules correctness or independently cleared dependency/media origins."
+      ]
+    },
+    {
+      "id": "world-cup-arena-shahriyar",
+      "name": "World Cup Arena — Shahriyar",
+      "repository_url": "https://github.com/Shahriyarrrrr/world-cup-arena",
+      "genres": [
+        "arcade football",
+        "team sport",
+        "AI opponents"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (declared CDN script tag; not executed)",
+        "render_evidence": {
+          "url": "https://github.com/Shahriyarrrrr/world-cup-arena/blob/eba341e94c876aaa162e8898f84f6b12b67e6e66/world-cup-arena.html#L400-L411",
+          "claim": "The single actual HTML entry loads Three r128 from a CDN and directly creates THREE.WebGLRenderer, scene and perspective camera. Its requestAnimationFrame tick advances match/player/ball state and renders the same volumetric pitch, goal structures, players and ball. Plain DOM overlays and Canvas-generated badge/kit textures do not replace Three rendering."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "No npm manifest is present: this is a single HTML/classic-script entry with a declared Three r128 CDN URL. Authored vector/ball gravity/bounce/possession, team AI, input and match state implement arcade rules without an external physics/render framework.",
+          "Players/ball/goals/stadium are Three geometry; team badges/kit patterns and ball texture use Canvas. Source comments describe original national-flag-inspired graphics and explicitly deny affiliation with FIFA/EA. Web Audio synthesizes whistles/crowd feedback.",
+          "index HTML separately requests Anton and Rajdhani from Google Fonts. No bundled font license or external-font response was independently checked; connectivity, gamepad input and current CDN/legacy-renderer compatibility remain untested."
+        ],
+        "framework_audit": "Actual entry, project-authored direct Three renderer, integrated objective/result state and available manifest/CDN declarations were inspected. No R3F, A-Frame, Babylon.js, Unity, enable3d or replacement scene/render engine was identified in the scoped game. React/DOM, tweening, build, audio and styling roles are disclosed; no exhaustive transitive or runtime certification is claimed."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Shahriyarrrrr/world-cup-arena/blob/eba341e94c876aaa162e8898f84f6b12b67e6e66/world-cup-arena.html#L759-L791",
+        "claim": "The active ball update checks goal-mouth crossings and calls scoreGoal to increment the appropriate side and show a goal celebration. The playing-state clock advances through two halves and invokes endMatch at full time. That sets fulltime and presents home/away totals with a win/loss/draw verdict; actual start/rematch controls reset match state."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; dependency/media terms separate)",
+        "source_url": "https://github.com/Shahriyarrrrr/world-cup-arena/blob/eba341e94c876aaa162e8898f84f6b12b67e6e66/LICENSE",
+        "additional_notices": [
+          "https://github.com/Shahriyarrrrr/world-cup-arena/blob/eba341e94c876aaa162e8898f84f6b12b67e6e66/world-cup-arena.html"
+        ],
+        "notes": "Root LICENSE is a full MIT project-code grant. The single game file claims original procedural flag-inspired badges/kits rather than licensed crests/kit graphics, with generated geometry/textures and synthesized audio. Those are author/source statements, not independent clearance of every design, national/team/brand association, melody or remotely served font. The game code grant does not replace separate Three/CDN/font terms."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "notes": "The inspected pinned tree contains LICENSE and one game HTML file, with no README. Repository metadata has no homepage and the HTML supplies no concrete author-hosted play URL. No deployment URL was guessed from the repository name or replaced with an unrelated source page.",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/Shahriyarrrrr/world-cup-arena/blob/eba341e94c876aaa162e8898f84f6b12b67e6e66/world-cup-arena.html"
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Shahriyarrrrr/world-cup-arena/blob/eba341e94c876aaa162e8898f84f6b12b67e6e66/world-cup-arena.html",
+        "notes": "A self-contained source prototype with selectable teams, manual control and AI participants, goal scoring, halftime/fulltime and a result/restart flow. Its input/physics are arcade approximations; no complete match, full roster behavior, standard-football rules, timing/fairness or browser compatibility was validated."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "eba341e94c876aaa162e8898f84f6b12b67e6e66",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-039.md#world-cup-arena-shahriyar",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Shahriyarrrrr/world-cup-arena/blob/eba341e94c876aaa162e8898f84f6b12b67e6e66/LICENSE"
+          },
+          {
+            "path": "world-cup-arena.html",
+            "url": "https://github.com/Shahriyarrrrr/world-cup-arena/blob/eba341e94c876aaa162e8898f84f6b12b67e6e66/world-cup-arena.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Ground-player movement/AI are largely planar on a volumetric pitch, while the ball has height/gravity and 3D goal-mouth checks. This is 3D sports rendering, without a claim of free-avatar flight.",
+        "Source two-half match/result logic was traced rather than treating a team-selection/stadium scene as a game by itself. Real football-law coverage, keeper/AI balance, collision fidelity and all goal cases were not certified.",
+        "No start/team choice, gamepad, sound, kick, match restart or browser runtime was activated. Generated-art/non-affiliation statements remain author claims; external font terms were not independently reviewed.",
+        "No upstream installation, build, automated suite or playtest occurred. Source implementation does not establish successful present-day browser/device play, every level/match outcome, complete rules correctness or independently cleared dependency/media origins."
+      ]
     }
   ]
 }

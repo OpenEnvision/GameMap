@@ -102,6 +102,13 @@ def check_collection(catalog, queue):
         ident, verify = game["id"], game["verification"]
         prefix = game["repository_url"] + "/blob/" + verify["source_commit"] + "/"
         reviewed = {item["url"] for item in verify["reviewed_files"]}
+        if len(verify["reviewed_files"]) == 2:
+            entry = game["stack"]["render_evidence"]["url"].split("#")[0]
+            gameplay = game["gameplay_evidence"]["url"].split("#")[0]
+            license_file = game["license"]["source_url"].split("#")[0]
+            require(entry == gameplay and entry != license_file
+                    and reviewed == {entry, license_file},
+                    f"{ident}: two reviewed files require one shared render/gameplay entry and a separate license")
         evidence_urls = [game["stack"]["render_evidence"]["url"],
                          game["gameplay_evidence"]["url"],
                          game["license"]["source_url"],
