@@ -28797,6 +28797,480 @@
         "No exhaustive snooker/free-ball/foul/respotted-black/eight-ball rule compliance, AI difficulty, physical realism or cross-browser determinism is certified.",
         "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
       ]
+    },
+    {
+      "id": "chessgame-pravila00",
+      "name": "ChessGame — Pravila00",
+      "repository_url": "https://github.com/Pravila00/ChessGame",
+      "genres": [
+        "chess",
+        "local board game"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r121 (vendored libs/three.module.js REVISION)",
+        "render_evidence": {
+          "url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/MyScene.js#L113-L125",
+          "claim": "Normal MyScene directly constructs Three WebGLRenderer and instantiates the authored board/pieces, with an actual input/update/render loop and turn-following camera. jQuery/Bootstrap modals, controls/Tween and geometric helpers do not replace Three rendering."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla JavaScript modules with vendored Three r121 and geometric piece construction, including ThreeBSP/controls/Tween helpers, plus jQuery/Bootstrap-style DOM modal UI. No npm manifest/build system appears in the reviewed 35-path tree.",
+          "Custom piece movement/check/legal-move/turn logic and raycasting supply gameplay; no R3F, A-Frame, Babylon or replacement 3D engine was identified.",
+          "Parent-relative library imports and asset paths require appropriate root serving/path layout. No local server, browser compatibility or source library/asset build was exercised."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/Tablero.js#L235-L261",
+        "claim": "After a normal accepted board move and turn change, the active board computes check and available moves, then opens black-win/white-win or stalemate modals. checkMate iterates the current side's generated legal moves, and the real HTML offers a finish/reload action. These are implemented result paths rather than a chess-piece viewer, without exhaustive FIDE-rule certification."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; vendor/texture provenance qualified)",
+        "source_url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/LICENSE",
+        "additional_notices": [
+          "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/README.md",
+          "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/libs/three.module.js",
+          "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/libs/ThreeBSP.js"
+        ],
+        "notes": "Root LICENSE grants MIT project code and README credits the collaborator. Vendored Three has its original license link and r121 marker; other vendored helper grants and the loaded wood texture's individual origin/rights were not exhaustively audited. Inspected chess shapes include authored procedural geometry, without asserting that every library/image/asset is original or MIT. No source/asset payload is copied into GameMap."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/README.md",
+        "notes": "No author-hosted game URL was located in the minimal README or repository homepage metadata; the included demo GIF is not a live game link. No Pages address was guessed or game/server run."
+      },
+      "maturity": {
+        "status": "legacy-prototype",
+        "basis_url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/README.md",
+        "notes": "A legacy local chess prototype with implemented piece/turn/check/no-move and mate/stalemate result logic, Spanish modals and sparse documentation. The legacy library/path setup and all rule/edge-case reachability remain unbuilt and unplayed."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "1c61a761d78c7951cf33a8cd120742e9759b4f00",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-052.md#chessgame-pravila00",
+        "reviewed_files": [
+          {
+            "path": "Ficha.js",
+            "url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/Ficha.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/index.html"
+          },
+          {
+            "path": "libs/three.module.js",
+            "url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/libs/three.module.js"
+          },
+          {
+            "path": "libs/ThreeBSP.js",
+            "url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/libs/ThreeBSP.js"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/LICENSE"
+          },
+          {
+            "path": "MyScene.js",
+            "url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/MyScene.js"
+          },
+          {
+            "path": "Peon.js",
+            "url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/Peon.js"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/README.md"
+          },
+          {
+            "path": "Rey.js",
+            "url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/Rey.js"
+          },
+          {
+            "path": "Tablero.js",
+            "url": "https://github.com/Pravila00/ChessGame/blob/1c61a761d78c7951cf33a8cd120742e9759b4f00/Tablero.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Rules are planar chess on a volumetric Three board. A 3d-board label does not imply free world movement.",
+        "Source includes checkmate/stalemate modal paths, without independently proving all generated moves, special rules, self-check prevention or complete chess conformance.",
+        "Parent-relative imports can fail under an incompatible subdirectory host; no current public deployment or browser success is certified.",
+        "Vendored helper and texture provenance remain qualified; no input, result/reset, library or media was executed.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "star-descent-yildiz-inisi",
+      "name": "Star Descent",
+      "repository_url": "https://github.com/umutseve4/yildiz-inisi-webgl",
+      "genres": [
+        "skiing",
+        "endless arcade",
+        "obstacle and collection challenge"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.169.0 (pinned actual HTML import-map CDN URL)",
+        "render_evidence": {
+          "url": "https://github.com/umutseve4/yildiz-inisi-webgl/blob/8307578554d06a2cf5804b15c518bc9b893d485a/index.html#L470-L490",
+          "claim": "The actual single-game HTML imports Three 0.169.0 and directly constructs WebGLRenderer, Scene/camera and procedural slope/skier/chunk geometry. Its real frame steps the active state and renders Three; no alternate engine or scene framework is identified."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/umutseve4/yildiz-inisi-webgl/blob/8307578554d06a2cf5804b15c518bc9b893d485a/package.json",
+            "dependencies": {},
+            "dev_dependencies": {
+              "@playwright/test": "1.47.2"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vanilla inline JavaScript, DOM/keyboard/touch UI, authored chunk/ground/obstacle/collision rules and Three geometry. Root package has only a declared Playwright development dependency; the exact empty npm runtime map is preserved.",
+          "The actual Three runtime is a pinned unpkg CDN import, so the author's single-file/no-art-download description is distinguished from a guarantee of zero library network requests or offline operation.",
+          "Author QA/static/browser/Pages assertions and test counts are upstream statements; no upstream test, browser acceptance, CI or deployment was run by this review."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/umutseve4/yildiz-inisi-webgl/blob/8307578554d06a2cf5804b15c518bc9b893d485a/index.html#L366-L377",
+        "claim": "Normal collision crash subtracts health, resets combo and slows the skier; exhausted health sets phase over, records best and emits over. The active frame consumes this state to show actual score/distance/star results and the replay control restarts. Star/gate scoring and increasing generated obstacles form a real endless game, not a static slope."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (game code; external Three terms separately qualified)",
+        "source_url": "https://github.com/umutseve4/yildiz-inisi-webgl/blob/8307578554d06a2cf5804b15c518bc9b893d485a/LICENSE",
+        "additional_notices": [
+          "https://github.com/umutseve4/yildiz-inisi-webgl/blob/8307578554d06a2cf5804b15c518bc9b893d485a/README.md"
+        ],
+        "notes": "Root MIT grant identifies Umut Sever's source. README and actual inline model/terrain generation support an authored procedural-art approach, with no separate game art payload in the reviewed tree. External Three and any underlying design/dependency retain their own grants; this is not an independent all-media/provenance or deployment certification."
+      },
+      "demo": {
+        "url": "https://umutseve4.github.io/yildiz-inisi-webgl/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/umutseve4/yildiz-inisi-webgl/blob/8307578554d06a2cf5804b15c518bc9b893d485a/README.md",
+        "notes": "The exact author README Pages URL returned a text-reader error. README's live-URL/CI claims were not substituted for a successful browser game test, and reader failure does not establish that the site is down."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/umutseve4/yildiz-inisi-webgl/blob/8307578554d06a2cf5804b15c518bc9b893d485a/README.md",
+        "notes": "A compact authored skiing prototype with actual score/combo/obstacle/health/end/results/replay and selectable palettes. Its author-reported static/browser acceptance counts, every mode, difficulty and live-host success remain untested."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "8307578554d06a2cf5804b15c518bc9b893d485a",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-052.md#star-descent-yildiz-inisi",
+        "reviewed_files": [
+          {
+            "path": "index.html",
+            "url": "https://github.com/umutseve4/yildiz-inisi-webgl/blob/8307578554d06a2cf5804b15c518bc9b893d485a/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/umutseve4/yildiz-inisi-webgl/blob/8307578554d06a2cf5804b15c518bc9b893d485a/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/umutseve4/yildiz-inisi-webgl/blob/8307578554d06a2cf5804b15c518bc9b893d485a/package.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/umutseve4/yildiz-inisi-webgl/blob/8307578554d06a2cf5804b15c518bc9b893d485a/README.md"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Skiing is constrained to the generated slope with lateral movement/jumps in a volumetric scene; this is not certified real skiing physics or unrestricted travel.",
+        "CDN Three is an actual runtime dependency despite no npm runtime entries and a single HTML game source. No offline/no-request guarantee is made.",
+        "No obstacle/collection run, best-score update, touch controls, frame rate, every atmosphere or result replay was exercised.",
+        "Upstream CI badges/assertion counts and deployment claims are separated from this catalog's local JSON/evidence checks.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "astra-pool",
+      "name": "Astra Pool",
+      "repository_url": "https://github.com/darrinm/astrapool",
+      "genres": [
+        "8-ball pool",
+        "table sports",
+        "arcade scoring"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.185.1 (declared npm Three runtime)",
+        "render_evidence": {
+          "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/core.js#L1-L38",
+          "claim": "Normal core awaits Rapier init and directly constructs Three WebGLRenderer, Scene/camera and the actual physics world. The ordinary main fixed-step frame advances/syncs the active pool simulation and renders Three, separately from attract/demo and debug handles."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/package.json",
+            "dependencies": {
+              "@dimforge/rapier3d-compat": "^0.20.0",
+              "three": "^0.185.1"
+            },
+            "dev_dependencies": {
+              "vite": "^8.2.2",
+              "wrangler": "^4.129.0",
+              "ws": "^8.21.3"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Runtime Three ^0.185.1 and @dimforge/rapier3d-compat ^0.20.0; exact Vite/Wrangler/ws development declarations are preserved. Rapier is the actual physics helper, not a replacement renderer.",
+          "Authored table/rules/computer/arcade/replay, official Three controls/geometry, DOM UI, textures/environment and mixed sampled/generated audio are helpers. Online WebSocket/Cloudflare and an optional Apple shell are disclosed separately.",
+          "Actual gameplay analytics use API POST/beacon/native-bridge paths, including result events; no no-tracking/no-network guarantee is made and no endpoint, room, native action or score was invoked."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/eight-ball.js#L59-L70",
+        "claim": "The normal shot resolver assigns a winner for legal called-pocket eight-ball completion or an early/foul/wrong-pocket loss. The active pool settleShot path calls that resolver, updates match/score and passes winner/table-cleared state to real rack results/rematch UI. Free play, attract solo results and replay are distinct from the normal rules path."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code; planet/generated media terms and omitted private Heads distinct)",
+        "source_url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/LICENSE",
+        "additional_notices": [
+          "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/README.md",
+          "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/public/planets/credits.json",
+          "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/ball-sets.js",
+          "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/vite.config.js",
+          "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/sounds.js"
+        ],
+        "notes": "Root LICENSE grants MIT code; README explicitly separates art/audio. Planet credits identify Solar System Scope CC-BY 4.0 maps, NASA/VTAD/USGS media/public-domain terms and generated/reconstructed outputs with references/checksums; these are not all MIT or blanket NASA public domain. Environment art and ElevenLabs audio retain their stated output/reuse terms, without independent entitlement verification. Reserved real-person Heads photographs are absent from the current untruncated tree, and Vite/catalog code filters Heads by existing texture ids. No photo, media or history payload was fetched, cleared or copied; omission is not a whole-history/all-assets redistribution grant. Three/Rapier/Fraunces notices are separate as described upstream."
+      },
+      "demo": {
+        "url": "https://astrapool.darrinm.com",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/README.md",
+        "notes": "The exact author README game URL returned a text-reader error. No pool match, live server/analytics, photo collection, audio, native app or deployed-build check occurred, and reader failure is not an offline-site finding."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/README.md",
+        "notes": "An implemented pool game with actual ordinary shot/eight-ball/rack result/rematch, local/computer/free/online routes and arcade/replay features. Every AI/style, rule, gravity setting, photo/media configuration, large-scale test or mobile/performance claim remains untested."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "f0094c045f8bafd9b14aaee3c719284393d70cd2",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-052.md#astra-pool",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/LICENSE"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/package.json"
+          },
+          {
+            "path": "physics/poolphysics.js",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/physics/poolphysics.js"
+          },
+          {
+            "path": "public/planets/credits.json",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/public/planets/credits.json"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/README.md"
+          },
+          {
+            "path": "src/ball-sets.js",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/ball-sets.js"
+          },
+          {
+            "path": "src/core.js",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/core.js"
+          },
+          {
+            "path": "src/eight-ball.js",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/eight-ball.js"
+          },
+          {
+            "path": "src/environment-picker.js",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/environment-picker.js"
+          },
+          {
+            "path": "src/game-analytics.js",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/game-analytics.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/main.js"
+          },
+          {
+            "path": "src/platform.js",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/platform.js"
+          },
+          {
+            "path": "src/pool.js",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/pool.js"
+          },
+          {
+            "path": "src/rack-results-view.js",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/rack-results-view.js"
+          },
+          {
+            "path": "src/rack-results.js",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/rack-results.js"
+          },
+          {
+            "path": "src/sounds.js",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/src/sounds.js"
+          },
+          {
+            "path": "vite.config.js",
+            "url": "https://github.com/darrinm/astrapool/blob/f0094c045f8bafd9b14aaee3c719284393d70cd2/vite.config.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Volumetric table/balls are rendered in a 3d-board scope; authored table play is predominantly planar, without certified physical realism or complete official rule coverage.",
+        "Heads real-person photos are reserved and not present in this selected public tree; no private/current/historical photo was fetched and no claim is made that the repository's full history is cleared.",
+        "CC-BY/NASA/USGS and generated environment/audio terms remain distinct from MIT code, with no blanket all-media or provider-plan entitlement claim.",
+        "Analytics POST/beacon, rooms/WebSocket and native bridge code exist. No account/room/data submission, sound/texture payload, storage or Apple action was activated.",
+        "Normal match completion is separated from attract mode, free play, debug tick and replay; no successful runtime rack or all-variant compatibility was certified.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "amiga-turbo-racer",
+      "name": "AMIGA TURBO RACER",
+      "repository_url": "https://github.com/pemmyz/js_lotus_threejs",
+      "genres": [
+        "arcade racing",
+        "local split-screen racing"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (actual HTML cdnjs Three script)",
+        "render_evidence": {
+          "url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/main.js#L10-L31",
+          "claim": "The actual ordered HTML loads Three r128 and authored audio/cloud/pixel/track/car/main scripts. Normal Game directly constructs Three WebGLRenderer and renders authored volumetric tracks/cars, including separate local split-screen cameras; the CRT helper only adjusts renderer resolution and CSS."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla HTML/CSS/JavaScript with CDN Three r128 and no npm manifest/build system in the reviewed 10-file tree. Authored track/car/AI, fuel/turbo/pit/race-clock, WebAudio, DOM UI and Canvas2D minimap are helpers.",
+          "Actual local two-player split-screen, keyboard/touch controls and a renderer/CSS pixel-resolution helper are recorded separately from online play; no R3F/A-Frame/Babylon/Unity renderer was identified.",
+          "CSS imports Press Start 2P and Chakra Petch from Google Fonts, so external font/library requests and their separate terms remain explicit. No upstream source/server/build/test was run."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/main.js#L970-L974",
+        "claim": "The normal player HUD/update path detects lap greater than the configured race limit, marks that player finished and calls finishRace from the actual racing state. finishRace opens sorted standings with best-lap/finish feedback and real rematch/new-track/menu controls. It does not require every AI to finish or establish online multiplayer."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; Three/font/design scope qualified)",
+        "source_url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/LICENSE",
+        "additional_notices": [
+          "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/README.md",
+          "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/style.css",
+          "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/audio.js"
+        ],
+        "notes": "Root LICENSE/README grant MIT project code. Selected track/car/cloud/CRT/audio implementations use authored geometry and synthesis, but every origin/underlying design or dependency/font grant was not independently audited. CDN Three and Google Fonts retain their own terms; the Amiga/Lotus-era inspiration and names do not establish franchise/brand endorsement or blanket rights to external assets. No source, art, sound or font payload is copied into GameMap."
+      },
+      "demo": {
+        "url": "https://pemmyz.github.io/js_lotus_threejs/",
+        "status": "reader-error",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/README.md",
+        "notes": "The exact author README Pages URL returned a text-reader error. No race, split-screen/mobile input, lap, audio, font, track generation or deployed-build test occurred; this does not establish site unavailability."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/README.md",
+        "notes": "An authored configurable arcade racer with ordinary lap/result/retry flow and advertised AI, local split screen, practice, fuel/turbo/pit and multiple environments/tracks. All modes/car counts, fair standings, physical fidelity, mobile layouts and performance remain untested."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "ddda3a0ede675245510e8ee8a1aa7e565a2d911a",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-052.md#amiga-turbo-racer",
+        "reviewed_files": [
+          {
+            "path": "audio.js",
+            "url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/audio.js"
+          },
+          {
+            "path": "cars.js",
+            "url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/cars.js"
+          },
+          {
+            "path": "clouds.js",
+            "url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/clouds.js"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/index.html"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/LICENSE"
+          },
+          {
+            "path": "main.js",
+            "url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/main.js"
+          },
+          {
+            "path": "pixelMode.js",
+            "url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/pixelMode.js"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/README.md"
+          },
+          {
+            "path": "style.css",
+            "url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/style.css"
+          },
+          {
+            "path": "track.js",
+            "url": "https://github.com/pemmyz/js_lotus_threejs/blob/ddda3a0ede675245510e8ee8a1aa7e565a2d911a/track.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Tracks/cars are volumetric Three objects with constrained circuit driving; this is not a certified real-car simulation or unrestricted world.",
+        "A player crossing the configured lap limit triggers results; no assertion is made that every AI/player completes a full race or every lap/track edge case is correct.",
+        "Two-player mode is local split-screen. No online networking feature is inferred from the word multiplayer.",
+        "CDN library/fonts, browser input/audio/storage and every AI/track/fuel/pit/turbo configuration remain unexecuted and unverified at runtime.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
     }
   ]
 }

@@ -2622,6 +2622,41 @@
         "https://github.com/zhou-tao/billiards/blob/880a0a82efca0aa3959c66f8d9be603f76ca5105/js/game.js#L14-L34",
         "https://github.com/zhou-tao/billiards/blob/880a0a82efca0aa3959c66f8d9be603f76ca5105/js/rules.js"
       ]
+    },
+    {
+      "id": "3d-chess-v2-r3f-renderer",
+      "repository_url": "https://github.com/icode198/3d-chess-v2",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "dcb164027443f8e35bda805806a074c825333301",
+      "reason": "The actual Scene imports Canvas from @react-three/fiber and renders the board inside it with Drei; R3F/Drei are runtime dependencies, not merely incidental test metadata. This is outside direct-Three rendering scope despite the game/rules and MIT source grant.",
+      "next_action": "Reconsider only a distinct implemented direct Three render entry with normal game/result evidence. Do not exclude React DOM UI alone in other projects, and do not call this project proprietary or devoid of gameplay. No game, package, room or test was run.",
+      "evidence_urls": [
+        "https://github.com/icode198/3d-chess-v2/blob/dcb164027443f8e35bda805806a074c825333301/README.md",
+        "https://github.com/icode198/3d-chess-v2/blob/dcb164027443f8e35bda805806a074c825333301/LICENSE",
+        "https://github.com/icode198/3d-chess-v2/blob/dcb164027443f8e35bda805806a074c825333301/package.json",
+        "https://github.com/icode198/3d-chess-v2/blob/dcb164027443f8e35bda805806a074c825333301/src/App.tsx",
+        "https://github.com/icode198/3d-chess-v2/blob/dcb164027443f8e35bda805806a074c825333301/src/components/SceneComponents/Scene.tsx#L1-L34"
+      ]
+    },
+    {
+      "id": "workmelt-license-and-media-scope",
+      "repository_url": "https://github.com/eriknomitch/workmelt",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "4af0cfa81cbef5bb9f90cfbf3789d2abcaa2e649",
+      "reason": "Direct Three renderer and normal bot/online match winner/ceremony source exist. Root LICENSE is MIT credited to mshumer, while package declares ISC. README acknowledges Claude-of-Duty ancestry despite metadata fork=false; distinct/canonical-game scope and declaration consistency remain unresolved. Actual credits include baked CC-BY4 model geometry, CC0/CC-BY3 samples, OFL fonts and generated ElevenLabs paid-plan terms, contradicting a blanket all-procedural/all-MIT reading.",
+      "next_action": "Locate a maintained consistent code-license declaration and scope the exact active build/media grants and canonical derivative identity before promotion. Preserve the positively identified attribution; baking a model into JS does not remove its CC-BY terms, and plan entitlement is not independently certified. Do not contact contributors, invoke generation/audio fetch tools, create rooms or run tests/deployment without separate authorization.",
+      "evidence_urls": [
+        "https://github.com/eriknomitch/workmelt/blob/4af0cfa81cbef5bb9f90cfbf3789d2abcaa2e649/README.md",
+        "https://github.com/eriknomitch/workmelt/blob/4af0cfa81cbef5bb9f90cfbf3789d2abcaa2e649/LICENSE",
+        "https://github.com/eriknomitch/workmelt/blob/4af0cfa81cbef5bb9f90cfbf3789d2abcaa2e649/package.json",
+        "https://github.com/eriknomitch/workmelt/blob/4af0cfa81cbef5bb9f90cfbf3789d2abcaa2e649/src/render/index.js#L169-L187",
+        "https://github.com/eriknomitch/workmelt/blob/4af0cfa81cbef5bb9f90cfbf3789d2abcaa2e649/src/match/index.js",
+        "https://github.com/eriknomitch/workmelt/blob/4af0cfa81cbef5bb9f90cfbf3789d2abcaa2e649/public/models/CREDITS.md",
+        "https://github.com/eriknomitch/workmelt/blob/4af0cfa81cbef5bb9f90cfbf3789d2abcaa2e649/public/sfx/CREDITS.md",
+        "https://github.com/eriknomitch/workmelt/blob/4af0cfa81cbef5bb9f90cfbf3789d2abcaa2e649/public/fonts/CREDITS.md"
+      ]
     }
   ]
 }
