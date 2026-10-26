@@ -1977,6 +1977,22 @@
         "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/src/shared/gameplaySpec.ts#L77-L104",
         "https://github.com/mcLYX/ProjectPoluxis/blob/41200790b20caf12ffb49be05e934f4639b747f5/src/audio/AudioManager.ts"
       ]
+    },
+    {
+      "id": "astrax-maze-license-conflict",
+      "repository_url": "https://github.com/AstraxGames/maze-escape",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "d8d2837267569be5ec8d147122c511ccff9e242e",
+      "reason": "A direct Three r128 renderer and substantial game source are present, but root LICENSE supplies MIT while the pinned README explicitly labels this project proprietary, all rights reserved, and restricts distribution, modification and commercial use without permission. Those conflicting project statements are unresolved; GitHub's MIT label/root license is not treated as proof of an unqualified open-source game.",
+      "next_action": "Clarify the scope of the root grant versus README's project-wide restriction before promotion, retaining both sources without guessing which statement prevails. If clarified, separately audit Electron/updater, Firebase/auth/multiplayer and asset terms; no account, room, backend, desktop package or updater was started and no outreach was sent.",
+      "evidence_urls": [
+        "https://github.com/AstraxGames/maze-escape/blob/d8d2837267569be5ec8d147122c511ccff9e242e/LICENSE",
+        "https://github.com/AstraxGames/maze-escape/blob/d8d2837267569be5ec8d147122c511ccff9e242e/README.md#L193-L199",
+        "https://github.com/AstraxGames/maze-escape/blob/d8d2837267569be5ec8d147122c511ccff9e242e/index.html#L3050-L3060",
+        "https://github.com/AstraxGames/maze-escape/blob/d8d2837267569be5ec8d147122c511ccff9e242e/package.json",
+        "https://github.com/AstraxGames/maze-escape/blob/d8d2837267569be5ec8d147122c511ccff9e242e/main.js"
+      ]
     }
   ]
 }
