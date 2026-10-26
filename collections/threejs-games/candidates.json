@@ -1820,6 +1820,58 @@
         "https://github.com/dgreenheck/interactive-chess-board/blob/d8cd406ba4108c105de456b688dceb6f6c6b991f/README.md",
         "https://github.com/dgreenheck/interactive-chess-board/blob/d8cd406ba4108c105de456b688dceb6f6c6b991f/LICENSE"
       ]
+    },
+    {
+      "id": "skitastic-whitestorm",
+      "repository_url": "https://github.com/nguest/skitastic",
+      "status": "excluded",
+      "checked_at": "2026-10-26",
+      "source_commit": "8174421b52fe55fd1d20640ed203d8232a64d0eb",
+      "reason": "The skiing entry imports Three but constructs WHS.App with Whitestorm scene, camera and RenderingModule; its package declares whs ^2.1.9. Whitestorm owns the render integration, so this is outside the direct-Three boundary. The separate Ammo/physics helper is not the exclusion by itself.",
+      "next_action": "Reconsider only a separately implemented direct-Three entry; do not infer eligibility from the Three.js/Ammo description or MIT code license.",
+      "evidence_urls": [
+        "https://github.com/nguest/skitastic/blob/8174421b52fe55fd1d20640ed203d8232a64d0eb/README.md",
+        "https://github.com/nguest/skitastic/blob/8174421b52fe55fd1d20640ed203d8232a64d0eb/package.json#L21-L30",
+        "https://github.com/nguest/skitastic/blob/8174421b52fe55fd1d20640ed203d8232a64d0eb/app/app.js#L55-L87"
+      ]
+    },
+    {
+      "id": "shroud-of-kings-outcome-wiring",
+      "repository_url": "https://github.com/hahzterry/Shroud-of-Kings",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "a8790bf7eff67d01084c4200aa7274d4fd496e4e",
+      "reason": "MIT project code, direct Three client and secret-role combat are present. However, the server sets a public winner flag on a king death while the inspected game loop sends player-state packets without consuming/transmitting that outcome; main's message dispatch does not select the imported GameOverPage. A terminal-page class alone does not establish the documented match-end flow. This is an unexecuted static integration concern. README points to a different original repository whose metadata read returned 404; identity/model provenance is also unresolved.",
+      "next_action": "Trace or repair an integrated king-death-to-server-termination/result-message-to-client-result path, confirm the original/mirror relationship and model terms, then review a fresh pin. Do not claim a reproduced runtime defect or a complete multiplayer match.",
+      "evidence_urls": [
+        "https://github.com/hahzterry/Shroud-of-Kings/blob/a8790bf7eff67d01084c4200aa7274d4fd496e4e/LICENSE",
+        "https://github.com/hahzterry/Shroud-of-Kings/blob/a8790bf7eff67d01084c4200aa7274d4fd496e4e/docs/README.md#L28-L32",
+        "https://github.com/hahzterry/Shroud-of-Kings/blob/a8790bf7eff67d01084c4200aa7274d4fd496e4e/public/js/view/UiElements/GamePage.js#L343-L381",
+        "https://github.com/hahzterry/Shroud-of-Kings/blob/a8790bf7eff67d01084c4200aa7274d4fd496e4e/include/game/GameManager.hpp",
+        "https://github.com/hahzterry/Shroud-of-Kings/blob/a8790bf7eff67d01084c4200aa7274d4fd496e4e/src/game/GameManager.cpp#L318-L345",
+        "https://github.com/hahzterry/Shroud-of-Kings/blob/a8790bf7eff67d01084c4200aa7274d4fd496e4e/lobby_server_main.cpp#L245-L288",
+        "https://github.com/hahzterry/Shroud-of-Kings/blob/a8790bf7eff67d01084c4200aa7274d4fd496e4e/public/js/main.js#L38-L73",
+        "https://github.com/hahzterry/Shroud-of-Kings/blob/a8790bf7eff67d01084c4200aa7274d4fd496e4e/public/js/view/UiElements/GameOverPage.js#L15-L32"
+      ]
+    },
+    {
+      "id": "ai-arcade-media-scope",
+      "repository_url": "https://github.com/CNSleepybear/AI-Arcade",
+      "status": "pending",
+      "checked_at": "2026-10-26",
+      "source_commit": "22eadf3b122edb262c74defbd035d5ae96e12096",
+      "reason": "Direct Three and an actual 3D shard-collection/unlock path exist, so the project is not rejected as a bare display scene. Root code is MIT, but README separately says bundled public/videos media belongs to original rights holders and is for display; no clear redistribution grant was established for those videos. VideoManager actively references those files. The four registered iframe game paths also lack implementations in the inspected tree (public/games contains only the shared SDK), so they cannot be counted as reviewed games.",
+      "next_action": "Clarify or replace/disable the video/media dependencies and audit the self-contained 3D exploration scope; inspect actual embedded game source separately before making claims about those entries. Do not activate Supabase, account/chat, online LLM, media, saves or embedded sessions during this source-only review.",
+      "evidence_urls": [
+        "https://github.com/CNSleepybear/AI-Arcade/blob/22eadf3b122edb262c74defbd035d5ae96e12096/LICENSE",
+        "https://github.com/CNSleepybear/AI-Arcade/blob/22eadf3b122edb262c74defbd035d5ae96e12096/README.md#L451-L455",
+        "https://github.com/CNSleepybear/AI-Arcade/blob/22eadf3b122edb262c74defbd035d5ae96e12096/package.json",
+        "https://github.com/CNSleepybear/AI-Arcade/blob/22eadf3b122edb262c74defbd035d5ae96e12096/src/main.js#L60-L66",
+        "https://github.com/CNSleepybear/AI-Arcade/blob/22eadf3b122edb262c74defbd035d5ae96e12096/src/main.js#L626-L632",
+        "https://github.com/CNSleepybear/AI-Arcade/blob/22eadf3b122edb262c74defbd035d5ae96e12096/src/three/ExplorationSystem.js#L147-L171",
+        "https://github.com/CNSleepybear/AI-Arcade/blob/22eadf3b122edb262c74defbd035d5ae96e12096/src/three/VideoManager.js#L21-L27",
+        "https://github.com/CNSleepybear/AI-Arcade/blob/22eadf3b122edb262c74defbd035d5ae96e12096/src/games/registry.js"
+      ]
     }
   ]
 }

@@ -20346,6 +20346,157 @@
         "No local server, save, browser input, promotion dialog or piece animation was activated.",
         "No upstream installation, build, automated suite or playtest occurred. Source paths and author descriptions do not establish current device/browser compatibility, a successfully completed game or exhaustive correctness of the rules."
       ]
+    },
+    {
+      "id": "settlers-roman-chronicle",
+      "name": "Settlers — A Roman Chronicle",
+      "repository_url": "https://github.com/markldn/settlers-roman-chronicle",
+      "genres": [
+        "real-time strategy",
+        "settlement economy",
+        "campaign"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r185 (retained vendor REVISION; exact patch not established)",
+        "render_evidence": {
+          "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/render/renderer.js#L37-L46",
+          "claim": "The real root import map selects retained Three modules. main constructs the authored Renderer, whose constructor directly creates THREE.WebGLRenderer with a perspective scene/camera. The active simulation loop calls its frame method, syncing terrain/instanced world and drawing through Three EffectComposer or renderer.render; it is the gameplay world as well as a separate title attract mode."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "No npm package manifest is present in the reviewed tree. The static ES-module entry uses vendored Three and its postprocessing/geometry addons; retained three.core.js reports REVISION 185 and MIT SPDX, with a separate vendor LICENSE. Header/revision were inspected without exhaustively re-auditing the library.",
+          "Authored tile/grid, logistics, jobs, military, map generation and AI implement simulation, with plain DOM UI and CanvasTexture-generated surfaces/icons. Sampled meshes, terrain and Web Audio score/effects are constructed in code; no replacement render/physics engine was identified.",
+          "index.html separately requests Cinzel and Alegreya from Google Fonts, with serif fallback described by README. Their OFL attribution is the author's statement and was not independently cleared. Local static HTTP serving is documented; no game backend/account is required by the reviewed single-player entry. Save/campaign/quality state uses localStorage."
+        ],
+        "framework_audit": "Inspected root entry/import map, authored direct Three renderer, live simulation/result loop and procedural model/texture/audio code. No R3F, A-Frame, Babylon.js, Unity, enable3d or framework-owned renderer was identified in this scoped runtime. Vendor header/revision inspection is distinguished from a full third-party implementation, asset or rules audit."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/sim/missions.js#L138-L157",
+        "claim": "The actual game frame periodically calls checkMission. Campaign objectives track buildings/production/land/soldiers/conquest and return won/lost; free play ends when enemy teams have no living players. checkDefeat removes a player's alive state when no completed warehouse or occupied military site remains. main consumes won/lost to show Victory/Defeat, offer retry/next chapter and unlock campaign progression on wins."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (game code; separate dependency/font terms)",
+        "source_url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/LICENSE",
+        "additional_notices": [
+          "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/vendor/three/LICENSE",
+          "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/vendor/three/three.core.js",
+          "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/README.md"
+        ],
+        "notes": "Project code has a full MIT grant; retained Three has its own MIT copyright/SPDX notice and license. README attributes Cinzel/Alegreya to SIL OFL via Google Fonts, and explicitly identifies this as an unofficial fan tribute using The Settlers trademark associated with Ubisoft/Blue Byte. The author states original game assets/story/maps are absent. Sampled procedural content agrees with the implementation approach, but complete authorship/design/melody, font and trademark reuse rights were not independently cleared. Project MIT is not an all-rights clearance."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-26",
+        "source_url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/README.md",
+        "notes": "Reviewed README gives local/LAN static-server setup and screenshots; repository metadata has no homepage. No concrete author-hosted game URL was identified or guessed. A title attract mode in source is not a verified hosted demo."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/README.md",
+        "notes": "Source integrates a carried-ware economy, construction, AI/military defeat, objective-driven campaign and free-play win/loss with result dialogs and progression. The campaign data contains eight chapters, matching the author's description; complete chapter reachability, balance, performance and automated-test claims were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-26",
+        "source_commit": "a537a9404d7c6d689a054838c3578b9f29f2411b",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-037.md#settlers-roman-chronicle",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/index.html"
+          },
+          {
+            "path": "src/audio.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/audio.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/main.js"
+          },
+          {
+            "path": "src/render/models.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/render/models.js"
+          },
+          {
+            "path": "src/render/renderer.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/render/renderer.js"
+          },
+          {
+            "path": "src/render/terrain.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/render/terrain.js"
+          },
+          {
+            "path": "src/render/textures.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/render/textures.js"
+          },
+          {
+            "path": "src/render/world.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/render/world.js"
+          },
+          {
+            "path": "src/sim/ai.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/sim/ai.js"
+          },
+          {
+            "path": "src/sim/data.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/sim/data.js"
+          },
+          {
+            "path": "src/sim/game.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/sim/game.js"
+          },
+          {
+            "path": "src/sim/grid.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/sim/grid.js"
+          },
+          {
+            "path": "src/sim/mapgen.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/sim/mapgen.js"
+          },
+          {
+            "path": "src/sim/military.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/sim/military.js"
+          },
+          {
+            "path": "src/sim/missions.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/sim/missions.js"
+          },
+          {
+            "path": "src/ui/ui.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/src/ui/ui.js"
+          },
+          {
+            "path": "vendor/three/LICENSE",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/vendor/three/LICENSE"
+          },
+          {
+            "path": "vendor/three/three.core.js",
+            "url": "https://github.com/markldn/settlers-roman-chronicle/blob/a537a9404d7c6d689a054838c3578b9f29f2411b/vendor/three/three.core.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Indirect strategy orders and economy/combat use a tile/graph map represented by volumetric terrain, buildings and settlers. The camera can orbit; this is not free-avatar movement in all three axes.",
+        "A static single-player campaign/free-play implementation is the scope. The title's simulated attract scene is separate from actual play; victory/objective/UI wiring, rather than that background scene alone, establishes inclusion.",
+        "Procedural-content and no-original-assets statements are attributed to the author and sampled source. Named commercial inspirations/brands and remotely served fonts retain separate rights questions; the all-code claim is qualified by the Google Fonts request.",
+        "No upstream installation, build, automated suite, playtest, audio, save, campaign unlock, local server or order/attack was run. Source inspection does not prove every mission is solvable, rules/balance are correct or the game works on a current device."
+      ]
     }
   ]
 }
