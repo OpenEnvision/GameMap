@@ -29866,6 +29866,587 @@
         "Normal human/AI endAction reaches results separately from AUTOPLAY/debug hooks; no authored QA/test/screenshots or performance claim was reproduced.",
         "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
       ]
+    },
+    {
+      "id": "mehter-rhythm-march",
+      "name": "Mehter",
+      "repository_url": "https://github.com/Furkiozknn/mehter",
+      "genres": [
+        "rhythm",
+        "music",
+        "score attack"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.170.0 (HTML import map)",
+        "render_evidence": {
+          "url": "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/index.html#L1085-L1094",
+          "claim": "The inline game directly constructs Three WebGLRenderer from the 0.170.0 import map. Notes/holds themselves are instanced box meshes on the 3D road, alongside the volumetric marching band, rather than only a decorative scene behind DOM note gameplay."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla inline JavaScript/HTML, CDN Three 0.170.0 and Three GLTF/RGBE loader addons; no npm manifest in the complete inspected tree.",
+          "Authored chart/judgment, instanced meshes, Web Audio scheduling/synthesis, keyboard/touch/gamepad routes, calibration and localStorage settings/best.",
+          "Optional authored band GLBs, named CC0 Poly Haven texture/HDRI and Kenney samples supplement procedural/synthesized fallbacks; the model-generation Python scripts were read only."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/index.html#L707-L721",
+        "claim": "Ordinary hit/miss/hold judgment changes score, combo and spirit; spirit depletion calls endSong(true), while reaching song end calls endSong(false). endSong computes a grade/result, conditionally records a cleared-song best and opens results with replay/selection controls, separately from auto/simulation hooks."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (code/authored band models; specified third-party media CC0)",
+        "source_url": "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/LICENSE",
+        "additional_notices": [
+          "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/README.md",
+          "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/CREDITS.md",
+          "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/docs/assets.md",
+          "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/assets/src/band_figure.py",
+          "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/assets/src/band_instruments.py"
+        ],
+        "notes": "Root LICENSE grants MIT code. CREDITS distinguishes project band models under game MIT from named third-party CC0 texture/HDRI and Kenney samples. The original Poly Haven and Kenney pages were text-read and support those specific CC0 declarations; no media payload/converted-file identity, generation entitlement, complete underlying composition rights or all-dependency provenance was independently certified. See batch evidence for those primary links. Optional third-party media are not all described as procedural or MIT."
+      },
+      "demo": {
+        "url": "https://furkiozknn.github.io/mehter/",
+        "status": "reader-error",
+        "checked_at": "2026-10-27",
+        "source_url": "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/README.md",
+        "notes": "README links this author demo. The text reader returned an access error, which does not establish an outage or a successful game run. No browser game/audio/sample/model/HDR/font request, calibration, gamepad, save or bot/simulation hook was activated."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/README.md",
+        "notes": "An implemented six-song/four-lane rhythm game with normal grading, spirit failure, results/replay, difficulty and optional-asset paths. Author GPU/bot/performance/asset-fallback reports remain author reports; this review did not reproduce them or test every chart, timing/device or accessibility case."
+      },
+      "verification": {
+        "date": "2026-10-27",
+        "source_commit": "06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-054.md#mehter-rhythm-march",
+        "reviewed_files": [
+          {
+            "path": "CREDITS.md",
+            "url": "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/CREDITS.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/README.md"
+          },
+          {
+            "path": "assets/src/band_figure.py",
+            "url": "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/assets/src/band_figure.py"
+          },
+          {
+            "path": "assets/src/band_instruments.py",
+            "url": "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/assets/src/band_instruments.py"
+          },
+          {
+            "path": "docs/assets.md",
+            "url": "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/docs/assets.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Furkiozknn/mehter/blob/06c7e5aa03cfc64530a33e8e54cd21bca5f6fa3a/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Rules use four discrete lanes and timed holds within an actual rendered 3D avenue; 3d-world does not mean free player movement.",
+        "Source review distinguishes normal input/song results from ?auto/?sim and screenshot/debug hooks; no bot result is claimed as manual play.",
+        "Specific CC0 author pages support listed source assets, not an independent byte-level audit of every transformed file or musical arrangement.",
+        "The Three/addon CDN remains external even when optional media use procedural fallbacks; audio/device/loading/performance behavior is untested.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "ashworth-station",
+      "name": "Ashworth Station",
+      "repository_url": "https://github.com/AUAggy/ashworth-station",
+      "genres": [
+        "first-person shooter",
+        "zombie survival",
+        "wave defense"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r170 (vendored module revision and vendor notice)",
+        "render_evidence": {
+          "url": "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/index.html#L752-L760",
+          "claim": "The actual HTML imports local Three and RoomEnvironment, then directly constructs Three WebGLRenderer. The normal frame updates active player/enemy/wave systems and renders the scene; the vendored module revision is 170 and its MIT notice is preserved."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla single game HTML plus locally vendored Three r170 and RoomEnvironment; complete inspected tree has no npm manifest or build dependency.",
+          "Authored geometry/canvas textures, movement/shooting/enemy/wave logic and Web Audio synthesis; keyboard/mouse/touch paths and localStorage preferences/progression.",
+          "Service worker source precaches local page/engine files for author-described offline use. Its registration/cache behavior was not activated or tested."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/index.html#L3499-L3506",
+        "claim": "When the ordinary fighting phase has no living enemies or queued spawns, the fifteenth wave calls victory; player health depletion separately calls gameOver. Real result panels record score/best and offer redeploy/title, with badges and New Game+ on victory. A forced-loss/endless-final-wave reading of the README opening is contradicted by this implemented path."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code and explicit Three vendor grant; media scope qualified)",
+        "source_url": "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/LICENSE",
+        "additional_notices": [
+          "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/README.md",
+          "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/docs/VENDOR.md",
+          "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/vendor/LICENSE",
+          "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/vendor/three.module.min.js",
+          "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/vendor/RoomEnvironment.js"
+        ],
+        "notes": "Root MIT grant identifies AUAggy's source, and vendor/LICENSE plus module header separately grant Three code under MIT. Selected gameplay geometry/textures/audio are generated in source, consistent with the author description, but every underlying design, promotional image/icon and dependency origin was not independently cleared. The one-document game still requires its vendored local files; none of that source/media is copied into GameMap."
+      },
+      "demo": {
+        "url": "https://auaggy.github.io/ashworth-station/",
+        "status": "reader-error",
+        "checked_at": "2026-10-27",
+        "source_url": "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/README.md",
+        "notes": "README gives the author Pages URL. Text-reader access failed, so the current deployment, rendering/audio and offline success remain unverified without a site-down conclusion. No browser execution, pointer lock, service-worker/cache registration, save, audio or playtest was activated."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/README.md",
+        "notes": "An implemented wave FPS with normal victory/loss, score/best, restart, difficulty and prestige/badge progression. Author family playtests, browser suite, security/performance constraints and real-device/offline acceptance statements are not results of this review."
+      },
+      "verification": {
+        "date": "2026-10-27",
+        "source_commit": "1c4ccbd0faa0e8d5e92d807b98df26469f2a8861",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-054.md#ashworth-station",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/README.md"
+          },
+          {
+            "path": "docs/VENDOR.md",
+            "url": "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/docs/VENDOR.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/index.html"
+          },
+          {
+            "path": "sw.js",
+            "url": "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/sw.js"
+          },
+          {
+            "path": "vendor/LICENSE",
+            "url": "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/vendor/LICENSE"
+          },
+          {
+            "path": "vendor/RoomEnvironment.js",
+            "url": "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/vendor/RoomEnvironment.js"
+          },
+          {
+            "path": "vendor/three.module.min.js",
+            "url": "https://github.com/AUAggy/ashworth-station/blob/1c4ccbd0faa0e8d5e92d807b98df26469f2a8861/vendor/three.module.min.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The source has a finite final spawn queue and actual wave-15 victory; the README's initial inevitable-loss phrasing is not treated as an implementation guarantee.",
+        "Player terrain/movement is constrained to the subway platform; detailed geometry and a first-person view do not imply a fully traversable multi-level station.",
+        "No claim is made that the local offline cache, touch controls, adaptive pixel ratio, every weapon/enemy or New Game+ balance works on current devices.",
+        "Vendored engine code and project code have distinct explicit MIT sources; all promotional/media/underlying-design provenance remains qualified.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "voltopia",
+      "name": "Voltopia",
+      "repository_url": "https://github.com/thorsten/Voltopia",
+      "genres": [
+        "city building",
+        "energy management",
+        "scenario strategy"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/render/renderer.ts#L298-L310",
+          "claim": "GameRenderer directly constructs Three WebGLRenderer and its authored Three postprocessing chain. React GameView mounts that imperative renderer outside React's render cycle; worker diffs update the scene and its own requestAnimationFrame loop renders it without R3F."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/package.json",
+            "dependencies": {
+              "@tauri-apps/api": "^2.12.2",
+              "@tauri-apps/plugin-dialog": "^2.8.1",
+              "@tauri-apps/plugin-fs": "^2.6.0",
+              "@tauri-apps/plugin-opener": "^2.7.0",
+              "react": "^19.2.0",
+              "react-dom": "^19.2.0",
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "@playwright/test": "^1.63.0",
+              "@tauri-apps/cli": "^2.12.1",
+              "@types/node": "^26.6.3",
+              "@types/react": "^19.2.0",
+              "@types/react-dom": "^19.2.0",
+              "@types/three": "^0.186.0",
+              "@vitejs/plugin-react": "^6.1.1",
+              "@vitest/coverage-v8": "^3.2.0",
+              "oxfmt": "^0.70.0",
+              "oxlint": "^1.85.0",
+              "simple-git-hooks": "^2.14.0",
+              "typescript": "~7.0.2",
+              "vite": "^8.3.1",
+              "vite-plugin-pwa": "^1.3.0",
+              "vitest": "^3.2.0"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "TypeScript/Vite, Three ^0.186.1, React 19/ReactDOM menus/HUD and authored imperative renderer; exact root manifest dependency/devDependency maps are captured.",
+          "Custom Web Worker simulation, grid/economy/renewable-energy/scenario systems, Three EffectComposer/GTAO/OutputPass, geometry helpers and Web Audio UI synthesis.",
+          "IndexedDB saves, localStorage result/intro preferences and PWA support. Optional Tauri 2 native wrapper has npm API/dialog/fs/opener and Cargo tauri/serde helpers; no native app, file dialog, WebMCP tool or PWA action was activated."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/sim/scenarios/step.ts#L71-L78",
+        "claim": "Normal simulation ticks advance energy/economy/goals and scenarioStep. At each day boundary a met fail condition ends the scenario; at its deadline all win conditions determine won versus failed. Worker stats feed the actual EndScreen with result conditions, continue-city, retry and scenario-selection controls; free-play all-goals feedback is separate."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; external dependency/design scope qualified)",
+        "source_url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/LICENSE",
+        "additional_notices": [
+          "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/README.md",
+          "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/render/buildings/primitives.ts",
+          "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/render/vehicles/models.ts",
+          "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/ui/sound.ts",
+          "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src-tauri/Cargo.toml"
+        ],
+        "notes": "Root LICENSE grants Thorsten Rinne's project code under MIT. Inspected building/vehicle helpers create geometry and the UI sound manager synthesizes feedback; they do not independently establish that every design/icon/font/dependency or optional native component is cleared by the root grant. Three/React/Tauri/Rust and other dependencies retain their own notices. No third-party source, city save or art/audio payload is copied."
+      },
+      "demo": {
+        "url": "https://thorsten.github.io/Voltopia/",
+        "status": "reader-error",
+        "checked_at": "2026-10-27",
+        "source_url": "https://api.github.com/repos/thorsten/Voltopia",
+        "notes": "The dated author repository homepage metadata identifies this demo; README describes local/native operation without that literal URL. The text reader could not access the homepage. This leaves deployed-build and runtime/offline/device success unverified, without an outage claim or a guessed URL."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/README.md",
+        "notes": "An implemented city/renewables management game at package 0.1.0 with normal construction/simulation, goals, scenario deadlines/results and continue/retry UI. Every subsystem, scenario balance, saved-city migration, optional platform and author test/quality claim remains untested."
+      },
+      "verification": {
+        "date": "2026-10-27",
+        "source_commit": "47fbaa374c3f997cbd0edffd1a5381936c6c7468",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-054.md#voltopia",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/package.json"
+          },
+          {
+            "path": "src-tauri/Cargo.toml",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src-tauri/Cargo.toml"
+          },
+          {
+            "path": "src/main.tsx",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/main.tsx"
+          },
+          {
+            "path": "src/render/buildings/primitives.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/render/buildings/primitives.ts"
+          },
+          {
+            "path": "src/render/postprocessing.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/render/postprocessing.ts"
+          },
+          {
+            "path": "src/render/renderer.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/render/renderer.ts"
+          },
+          {
+            "path": "src/render/scene.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/render/scene.ts"
+          },
+          {
+            "path": "src/render/vehicles/models.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/render/vehicles/models.ts"
+          },
+          {
+            "path": "src/sim/engine.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/sim/engine.ts"
+          },
+          {
+            "path": "src/sim/goals.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/sim/goals.ts"
+          },
+          {
+            "path": "src/sim/scenarios/conditions.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/sim/scenarios/conditions.ts"
+          },
+          {
+            "path": "src/sim/scenarios/defs/dunkelflaute.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/sim/scenarios/defs/dunkelflaute.ts"
+          },
+          {
+            "path": "src/sim/scenarios/stats.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/sim/scenarios/stats.ts"
+          },
+          {
+            "path": "src/sim/scenarios/step.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/sim/scenarios/step.ts"
+          },
+          {
+            "path": "src/sim/scenarios/types.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/sim/scenarios/types.ts"
+          },
+          {
+            "path": "src/sim/tick.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/sim/tick.ts"
+          },
+          {
+            "path": "src/sim/worker.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/sim/worker.ts"
+          },
+          {
+            "path": "src/ui/App.tsx",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/ui/App.tsx"
+          },
+          {
+            "path": "src/ui/EndScreen.tsx",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/ui/EndScreen.tsx"
+          },
+          {
+            "path": "src/ui/GameView.tsx",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/ui/GameView.tsx"
+          },
+          {
+            "path": "src/ui/ScenarioPanel.tsx",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/ui/ScenarioPanel.tsx"
+          },
+          {
+            "path": "src/ui/app.css",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/ui/app.css"
+          },
+          {
+            "path": "src/ui/sound.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/ui/sound.ts"
+          },
+          {
+            "path": "src/ui/useSimBridge.ts",
+            "url": "https://github.com/thorsten/Voltopia/blob/47fbaa374c3f997cbd0edffd1a5381936c6c7468/src/ui/useSimBridge.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The volumetric isometric city uses grid/tile planning and a simulated load curve; 3d-world labels rendered space rather than free movement or a real engineering model.",
+        "Scenario failure takes precedence at a daily check; winning is evaluated at the configured deadline, rather than an asserted immediate success for any partial metric.",
+        "React owns UI/renderer lifecycle while the game directly owns Three; optional Tauri/PWA/WebMCP interfaces are disclosed rather than treated as tested capabilities.",
+        "Source simulation/energy/economy behavior is game logic, without certification of real-world electrical, climate, urban or financial accuracy.",
+        "No IndexedDB save, shared-city import/export, native file action, machine-facing command, upstream suite or performance/device test was run.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "meuh-rocket",
+      "name": "Meuh Rocket!",
+      "repository_url": "https://github.com/arimet/meuh-rocket",
+      "genres": [
+        "routing puzzle",
+        "voxel board game",
+        "cow rescue"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1",
+        "render_evidence": {
+          "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/render/stage.ts#L1-L20",
+          "claim": "The actual main creates BoardScene, whose stage directly constructs Three WebGLRenderer and RoomEnvironment. Authored volumetric voxel models and a Three diorama/postprocessing chain render the active board; normal setAnimationLoop plays controller frames, without a scene framework."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/package.json",
+            "dependencies": {
+              "@fontsource/pixelify-sans": "^5.3.0",
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "@types/node": "^26.6.5",
+              "@types/three": "^0.186.0",
+              "tsx": "^4.23.15",
+              "typescript": "^7.0.2",
+              "vite": "^8.3.5",
+              "vitest": "^5.0.5"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "TypeScript/Vite and runtime Three ^0.186.1 plus @fontsource/pixelify-sans ^5.3.0; exact declared npm/dev dependencies are captured.",
+          "Authored deterministic grid simulation/solver/controller, volumetric voxel geometry, Three RoomEnvironment and EffectComposer/OutputPass/ShaderPass helpers, DOM screens and localStorage progress.",
+          "Web Audio synthesized sounds; bundled Fontsource Pixelify Sans styles/regular digit font are imported and README identifies SIL OFL. Vitest/tsx author tooling was not run."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/game/controller.ts#L143-L171",
+        "claim": "Launch precomputes the player's arrow-board simulation, then the ordinary controller animates it. A won outcome enters won and calls the active main's onWin to persist star/unlock progress, launch the rocket and show victory/next-level UI; failure shows its cause and rewinds back to placement for another attempt. This is deliberate recorded simulation playback, not physics run independently on every frame."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code/models per author; Pixelify Sans font SIL OFL)",
+        "source_url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/LICENSE",
+        "additional_notices": [
+          "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/README.md",
+          "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/render/models.ts",
+          "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/audio/sfx.ts",
+          "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/ui/progress.ts"
+        ],
+        "notes": "Root MIT grant identifies Anthony Rimet's code. README states original boards/models/sounds and names Pixelify Sans under SIL Open Font License; inspected voxel/audio helpers support authored geometry and synthesis without proving every underlying design/third-party origin. ChuChu Rocket!/Sega inspiration is explicitly non-affiliated, not a franchise-rights or full-rule parity grant. External font/dependencies retain their terms; no model/audio/font payload is copied."
+      },
+      "demo": {
+        "url": "https://arimet.github.io/meuh-rocket/",
+        "status": "reader-error",
+        "checked_at": "2026-10-27",
+        "source_url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/README.md",
+        "notes": "README directly links the author Pages URL. The text reader returned an access error, leaving current live-game equivalence and playability unverified without an offline claim. No browser game, font/audio load, progress save, solution action, local server or upstream test/solver run was activated."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/README.md",
+        "notes": "An implemented routing puzzle shipping forty level files across three themed worlds, normal launch/win/failure-rewind, stars/unlocks and solution-assisted play. File count and inspected architecture do not prove every level solvable or all author test/device/performance claims; none was played."
+      },
+      "verification": {
+        "date": "2026-10-27",
+        "source_commit": "8cd19ecaf01a83e318644f932700e1e7a4218f4d",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-054.md#meuh-rocket",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/package.json"
+          },
+          {
+            "path": "src/audio/sfx.ts",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/audio/sfx.ts"
+          },
+          {
+            "path": "src/game/controller.ts",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/game/controller.ts"
+          },
+          {
+            "path": "src/levels/index.ts",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/levels/index.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/main.ts"
+          },
+          {
+            "path": "src/render/boardScene.ts",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/render/boardScene.ts"
+          },
+          {
+            "path": "src/render/diorama.ts",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/render/diorama.ts"
+          },
+          {
+            "path": "src/render/models.ts",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/render/models.ts"
+          },
+          {
+            "path": "src/render/stage.ts",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/render/stage.ts"
+          },
+          {
+            "path": "src/sim/sim.ts",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/sim/sim.ts"
+          },
+          {
+            "path": "src/sim/types.ts",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/sim/types.ts"
+          },
+          {
+            "path": "src/style.css",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/style.css"
+          },
+          {
+            "path": "src/ui/progress.ts",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/ui/progress.ts"
+          },
+          {
+            "path": "src/ui/screens.ts",
+            "url": "https://github.com/arimet/meuh-rocket/blob/8cd19ecaf01a83e318644f932700e1e7a4218f4d/src/ui/screens.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "The board uses actual 3D voxel/diorama geometry with discrete planar routing rules; it is a 3d-board game rather than a free three-axis world.",
+        "Runs are computed at Launch and played back; rewind/fast-forward changes the recording cursor rather than re-running arbitrary physics backward.",
+        "The win hook awards stars based on launches and zero stars when a solution was revealed; normal completion is distinguished from the optional stored-solution/development hooks.",
+        "Forty shipped level files and author solver/test descriptions are not a fresh full-campaign solvability or difficulty audit.",
+        "Original-media and non-affiliation statements remain author provenance claims; font/dependency and underlying-design scope is separate.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
     }
   ]
 }

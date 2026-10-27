@@ -2743,6 +2743,56 @@
         "https://github.com/LivesCreate/Tide-of-Fortune/blob/a3cce3ab9f8655b0b0c90f5885581855fd8630ae/Tide%20of%20Fortune.html#L389-L417",
         "https://github.com/LivesCreate/Tide-of-Fortune/blob/a3cce3ab9f8655b0b0c90f5885581855fd8630ae/Tide%20of%20Fortune.html#L1480-L1535"
       ]
+    },
+    {
+      "id": "hyprise-parkour-objective-scope",
+      "repository_url": "https://github.com/waxodium/hyprise",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "b52b08cc4a46bb59944d56c83067326972df25d7",
+      "reason": "The MIT single-player prototype directly constructs Three WebGLRenderer and implements procedural terrain, movement, jump/dash/slide and an elapsed timer. The inspected normal entry/player/world files did not establish a goal, scored completion/failure or replay progression sufficient for this catalog's actual-game evidence. Freeform parkour movement is positive source evidence, but it is not promoted by inventing a result.",
+      "next_action": "Locate an implemented objective/result route or an author-scoped intended freeform game loop before promotion. Do not call it R3F, claim the prototype cannot run, or invent hosted multiplayer/demo capabilities.",
+      "evidence_urls": [
+        "https://github.com/waxodium/hyprise/blob/b52b08cc4a46bb59944d56c83067326972df25d7/README.md",
+        "https://github.com/waxodium/hyprise/blob/b52b08cc4a46bb59944d56c83067326972df25d7/LICENSE",
+        "https://github.com/waxodium/hyprise/blob/b52b08cc4a46bb59944d56c83067326972df25d7/world.js#L1-L17",
+        "https://github.com/waxodium/hyprise/blob/b52b08cc4a46bb59944d56c83067326972df25d7/main.js",
+        "https://github.com/waxodium/hyprise/blob/b52b08cc4a46bb59944d56c83067326972df25d7/player.js"
+      ]
+    },
+    {
+      "id": "g-escape-license-declaration-consistency",
+      "repository_url": "https://github.com/rheeeuro/g-escape",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "c9edcc581da48ab0d4a509148cc739c16bca0d0a",
+      "reason": "Root LICENSE grants MIT while package.json declares ISC. The actual HTML directly constructs Three WebGLRenderer and uses Three loaders/postprocessing/WebXR helpers for a room-escape project, but the license-declaration inconsistency and per-model/media scope are unresolved rather than silently collapsed into one label.",
+      "next_action": "Find a maintained consistent applicable code-license statement, then finish normal puzzle/escape-result, exact vendored version and model/media grant evidence. Preserve both declarations without a legal ownership conclusion; no VR device, server, author demo or game was activated.",
+      "evidence_urls": [
+        "https://github.com/rheeeuro/g-escape/blob/c9edcc581da48ab0d4a509148cc739c16bca0d0a/README.md",
+        "https://github.com/rheeeuro/g-escape/blob/c9edcc581da48ab0d4a509148cc739c16bca0d0a/LICENSE",
+        "https://github.com/rheeeuro/g-escape/blob/c9edcc581da48ab0d4a509148cc739c16bca0d0a/package.json",
+        "https://github.com/rheeeuro/g-escape/blob/c9edcc581da48ab0d4a509148cc739c16bca0d0a/index.html#L349-L362",
+        "https://github.com/rheeeuro/g-escape/blob/c9edcc581da48ab0d4a509148cc739c16bca0d0a/js/models.js"
+      ]
+    },
+    {
+      "id": "slime-escape-flat-sprite-and-reserved-media",
+      "repository_url": "https://github.com/alxdos/slime-escape",
+      "status": "excluded",
+      "checked_at": "2026-10-27",
+      "source_commit": "f1cdbb1dc226aaf6442508261f919545bb439b3e",
+      "reason": "The reviewed main client uses Three as a flat 2D renderer: an orthographic camera looks straight down Z at an XY plane and character/background sprites are PlaneGeometry layers. This actual rendered implementation is outside the 3D-world/volumetric-board scope despite direct Three use. Separately, README grants MIT source code but explicitly reserves game assets, art, characters and world/design materials; they are not all MIT.",
+      "next_action": "Reconsider only a separately implemented volumetric 3D game route with applicable code/media evidence. Retain the MIT code grant and positive active rendering evidence; do not describe reserved media as openly reusable or classify another game solely from an orthographic camera.",
+      "evidence_urls": [
+        "https://github.com/alxdos/slime-escape/blob/f1cdbb1dc226aaf6442508261f919545bb439b3e/README.md#L45-L51",
+        "https://github.com/alxdos/slime-escape/blob/f1cdbb1dc226aaf6442508261f919545bb439b3e/LICENSE",
+        "https://github.com/alxdos/slime-escape/blob/f1cdbb1dc226aaf6442508261f919545bb439b3e/package.json",
+        "https://github.com/alxdos/slime-escape/blob/f1cdbb1dc226aaf6442508261f919545bb439b3e/src/main/index.ts",
+        "https://github.com/alxdos/slime-escape/blob/f1cdbb1dc226aaf6442508261f919545bb439b3e/src/main/render/Renderer.ts#L228-L249",
+        "https://github.com/alxdos/slime-escape/blob/f1cdbb1dc226aaf6442508261f919545bb439b3e/src/main/render/Renderer.ts#L802-L812",
+        "https://github.com/alxdos/slime-escape/blob/f1cdbb1dc226aaf6442508261f919545bb439b3e/src/main/render/Renderer.ts#L1286-L1291"
+      ]
     }
   ]
 }
