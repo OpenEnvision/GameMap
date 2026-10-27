@@ -3179,6 +3179,96 @@
       "evidence_urls": [
         "https://github.com/ThaboModise/crystal_dungeon/blob/639906f6f9c9b1d6626d1048c7b78931e705eb56/README.md"
       ]
+    },
+    {
+      "id": "open-birdie-supplemental-terms",
+      "repository_url": "https://github.com/rroojrooj/Open-Birdie",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "a6cb94295cde369e2129143e55c8e80221c96344",
+      "reason": "Direct Three/Electron golf source includes ordinary shot, cup, scorecard, round-complete and restart/practice paths, and root LICENSE is MIT. However DISCLAIMER.md requires acceptance of additional terms, describes entertainment-only/non-reliance scope and indemnification, and separately qualifies data/vendor rights. The relationship of those mandatory supplemental terms to the MIT grant needs clarification; the descriptive phrase non-commercial project is not by itself treated as a copyright-use ban.",
+      "next_action": "Look for author clarification of the supplemental agreement versus MIT and preserve OSM/ODbL, terrain and monitor-software scopes. No legal ruling, blanket noncommercial ban or all-data clearance is inferred. No installer, provider, hardware bridge, practice/shot/reset API or release binary was run.",
+      "evidence_urls": [
+        "https://github.com/rroojrooj/Open-Birdie/blob/a6cb94295cde369e2129143e55c8e80221c96344/LICENSE",
+        "https://github.com/rroojrooj/Open-Birdie/blob/a6cb94295cde369e2129143e55c8e80221c96344/README.md#L103-L133",
+        "https://github.com/rroojrooj/Open-Birdie/blob/a6cb94295cde369e2129143e55c8e80221c96344/DISCLAIMER.md#L1-L12",
+        "https://github.com/rroojrooj/Open-Birdie/blob/a6cb94295cde369e2129143e55c8e80221c96344/DISCLAIMER.md#L123-L162",
+        "https://github.com/rroojrooj/Open-Birdie/blob/a6cb94295cde369e2129143e55c8e80221c96344/package.json",
+        "https://github.com/rroojrooj/Open-Birdie/blob/a6cb94295cde369e2129143e55c8e80221c96344/public/render/scene.js#L65-L80",
+        "https://github.com/rroojrooj/Open-Birdie/blob/a6cb94295cde369e2129143e55c8e80221c96344/lib/game.js#L300-L326",
+        "https://github.com/rroojrooj/Open-Birdie/blob/a6cb94295cde369e2129143e55c8e80221c96344/server.js#L240-L265"
+      ]
+    },
+    {
+      "id": "nimigolf-entry-scope",
+      "repository_url": "https://github.com/nimigolf/nimigolf.github.io",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "23fbb4aa8c4201fffa39c0baab639717275b0063",
+      "reason": "Root MIT repository has mixed entries: the normal index loads A-Frame/physics/Firebase and script.js uses AFRAME plus completed-hole network events. Separate game.html loads Three/Ammo and script3000.js directly creates WebGLRenderer and hole contacts, but the inspected completion feedback is console/contact flags; a full standalone result/recovery path is not established. The README's Three/Ammo summary is not used to hide the A-Frame entry.",
+      "next_action": "Verify whether the isolated game.html path is a complete direct-Three game rather than a physics prototype, including visible result/recovery and asset rights. Keep the A-Frame/Firebase entry outside the verified scope; do not initialize a room/database.",
+      "evidence_urls": [
+        "https://github.com/nimigolf/nimigolf.github.io/blob/23fbb4aa8c4201fffa39c0baab639717275b0063/README.md",
+        "https://github.com/nimigolf/nimigolf.github.io/blob/23fbb4aa8c4201fffa39c0baab639717275b0063/LICENSE",
+        "https://github.com/nimigolf/nimigolf.github.io/blob/23fbb4aa8c4201fffa39c0baab639717275b0063/index.html#L8-L16",
+        "https://github.com/nimigolf/nimigolf.github.io/blob/23fbb4aa8c4201fffa39c0baab639717275b0063/script.js#L242-L248",
+        "https://github.com/nimigolf/nimigolf.github.io/blob/23fbb4aa8c4201fffa39c0baab639717275b0063/game.html#L11-L15",
+        "https://github.com/nimigolf/nimigolf.github.io/blob/23fbb4aa8c4201fffa39c0baab639717275b0063/game.html#L38-L40",
+        "https://github.com/nimigolf/nimigolf.github.io/blob/23fbb4aa8c4201fffa39c0baab639717275b0063/script3000.js#L1-L12",
+        "https://github.com/nimigolf/nimigolf.github.io/blob/23fbb4aa8c4201fffa39c0baab639717275b0063/script3000.js#L602-L651"
+      ]
+    },
+    {
+      "id": "neoturf-masters-scope-module",
+      "repository_url": "https://github.com/pmachadojulio/neoturf-masters",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "7781977e5702a7ba96c69b17c37a12689ba89191",
+      "reason": "Root/README code licensing is MIT. Author describes a 2.5D golf clone combining real direct Three course geometry with a 2D golfer/HUD overlay; this is not automatically called flat-only. Source also declares export function gameLoop and exports gameLoop again in the same module, a concrete duplicate-export issue requiring clarification. No parser, build or game was executed to assert observed failure.",
+      "next_action": "Inspect a corrected upstream module/entry and confirm the intended three-dimensional gameplay scope before promotion. Preserve the 2.5D presentation, authored sprite/brand limitations and looping three-hole behavior rather than claiming a verified full round.",
+      "evidence_urls": [
+        "https://github.com/pmachadojulio/neoturf-masters/blob/7781977e5702a7ba96c69b17c37a12689ba89191/README.md#L1-L7",
+        "https://github.com/pmachadojulio/neoturf-masters/blob/7781977e5702a7ba96c69b17c37a12689ba89191/LICENSE",
+        "https://github.com/pmachadojulio/neoturf-masters/blob/7781977e5702a7ba96c69b17c37a12689ba89191/src/render.js#L24-L35",
+        "https://github.com/pmachadojulio/neoturf-masters/blob/7781977e5702a7ba96c69b17c37a12689ba89191/src/render.js#L1035-L1081",
+        "https://github.com/pmachadojulio/neoturf-masters/blob/7781977e5702a7ba96c69b17c37a12689ba89191/src/shot.js#L258-L305",
+        "https://github.com/pmachadojulio/neoturf-masters/blob/7781977e5702a7ba96c69b17c37a12689ba89191/src/main.js"
+      ]
+    },
+    {
+      "id": "iron-command-ios-r3f",
+      "repository_url": "https://github.com/astickleyid/iron-command-ios",
+      "status": "excluded",
+      "checked_at": "2026-10-27",
+      "source_commit": "820c32a037e35a2d3b6958901e994e44e942f364",
+      "reason": "The registered source App imports Canvas/useFrame/useThree from @react-three/fiber, mounts Canvas and uses drei; the manifest and README also declare R3F. Its MIT license and iOS/Expo container do not change that rendering integration. React Native alone is not the exclusion.",
+      "next_action": "Reconsider only a distinct direct-Three implementation. No Expo build, signing, app submission, device or sensor operation was invoked.",
+      "evidence_urls": [
+        "https://github.com/astickleyid/iron-command-ios/blob/820c32a037e35a2d3b6958901e994e44e942f364/README.md",
+        "https://github.com/astickleyid/iron-command-ios/blob/820c32a037e35a2d3b6958901e994e44e942f364/LICENSE",
+        "https://github.com/astickleyid/iron-command-ios/blob/820c32a037e35a2d3b6958901e994e44e942f364/package.json",
+        "https://github.com/astickleyid/iron-command-ios/blob/820c32a037e35a2d3b6958901e994e44e942f364/index.js",
+        "https://github.com/astickleyid/iron-command-ios/blob/820c32a037e35a2d3b6958901e994e44e942f364/src/App.tsx#L1-L10",
+        "https://github.com/astickleyid/iron-command-ios/blob/820c32a037e35a2d3b6958901e994e44e942f364/src/App.tsx#L205-L225"
+      ]
+    },
+    {
+      "id": "dungeon-forge-generator",
+      "repository_url": "https://github.com/majidmanzarpour/threejs-procedural-dungeon",
+      "status": "excluded",
+      "checked_at": "2026-10-27",
+      "source_commit": "0a2aa0980028cbbc77af6642b4232b45713dc5de",
+      "reason": "Dungeon Forge directly renders Three and is MIT, but its README, manifest and actual source implement a deterministic dungeon-generation/build-animation viewer with theme, seed and inspection controls. Room tags such as combat/boss/treasure are generated semantics, not verified player combat, victory or recovery. This complete generator is not counted as an actual game.",
+      "next_action": "Reconsider a playable game built on the generated dungeon if ordinary input/objective/result/recovery source is supplied; do not count a generation finished animation as a game win.",
+      "evidence_urls": [
+        "https://github.com/majidmanzarpour/threejs-procedural-dungeon/blob/0a2aa0980028cbbc77af6642b4232b45713dc5de/README.md#L1-L9",
+        "https://github.com/majidmanzarpour/threejs-procedural-dungeon/blob/0a2aa0980028cbbc77af6642b4232b45713dc5de/README.md#L25-L50",
+        "https://github.com/majidmanzarpour/threejs-procedural-dungeon/blob/0a2aa0980028cbbc77af6642b4232b45713dc5de/LICENSE",
+        "https://github.com/majidmanzarpour/threejs-procedural-dungeon/blob/0a2aa0980028cbbc77af6642b4232b45713dc5de/package.json",
+        "https://github.com/majidmanzarpour/threejs-procedural-dungeon/blob/0a2aa0980028cbbc77af6642b4232b45713dc5de/index.html",
+        "https://github.com/majidmanzarpour/threejs-procedural-dungeon/blob/0a2aa0980028cbbc77af6642b4232b45713dc5de/src/main.js#L760-L782",
+        "https://github.com/majidmanzarpour/threejs-procedural-dungeon/blob/0a2aa0980028cbbc77af6642b4232b45713dc5de/src/main.js#L2115-L2160"
+      ]
     }
   ]
 }

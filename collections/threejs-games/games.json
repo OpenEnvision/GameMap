@@ -32065,6 +32065,209 @@
         "Vendor and procedural-source evidence does not certify all narrative branches, browser compatibility or independently cleared rights to every included document image.",
         "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
       ]
+    },
+    {
+      "id": "spacewar3d-frankrsk",
+      "name": "Spacewar 3D",
+      "repository_url": "https://github.com/FrankRSK/Spacewar3D",
+      "genres": [
+        "turn-based strategy",
+        "galactic conquest",
+        "single-player versus AI"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r128 (actual CDN scripts; OrbitControls 0.128.0)",
+        "render_evidence": {
+          "url": "https://github.com/FrankRSK/Spacewar3D/blob/2fb0cc85016b23dc20731ca7a219903c27d06ccf/index.html#L413-L430",
+          "claim": "The actual HTML loads Three r128 and matching OrbitControls and directly creates WebGLRenderer for a rotatable volumetric planet/territory graph. Turn logic and render updates are authored inline."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Single HTML/vanilla JavaScript, CDN Three/OrbitControls, Tailwind CSS and Google Fonts; no npm manifest in the inspected tree.",
+          "Authored AI/turn/territory/combat and Three animations; local MP3/image media and optional browser save/load. No other rendering engine identified."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer and scoped normal game/result/recovery paths were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement rendering engine was identified in that scope. UI/input/physics/build/service helper roles are disclosed; source review is not exhaustive transitive or runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/FrankRSK/Spacewar3D/blob/2fb0cc85016b23dc20731ca7a219903c27d06ccf/index.html#L1086-L1090",
+        "claim": "Ordinary reinforce/attack/fortify turns call the remaining-owner check; one remaining faction triggers global GAME_OVER and winner results. Human elimination has a separate defeat/spectator prompt while AI can continue. The result restart button reloads."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; bundled media rights not fully audited)",
+        "source_url": "https://github.com/FrankRSK/Spacewar3D/blob/2fb0cc85016b23dc20731ca7a219903c27d06ccf/LICENSE",
+        "additional_notices": [
+          "https://github.com/FrankRSK/Spacewar3D/blob/2fb0cc85016b23dc20731ca7a219903c27d06ccf/README.md",
+          "https://github.com/FrankRSK/Spacewar3D/blob/2fb0cc85016b23dc20731ca7a219903c27d06ccf/index.html"
+        ],
+        "notes": "Root LICENSE and README declare MIT. Inline entry uses external Three/CSS/fonts plus bundled music, sound and background images; those dependencies/media were not independently cleared as all-MIT assets. Risk-style inspiration does not establish rights to unrelated brands or original-game media."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-27",
+        "source_url": "https://github.com/FrankRSK/Spacewar3D/blob/2fb0cc85016b23dc20731ca7a219903c27d06ccf/README.md",
+        "notes": "README's play link points to the repository, not a hosted game. The author's collection/legal site linked by the HTML could not be read this round; no specific hosted demo URL was confirmed or guessed. This is not a site-down finding."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/FrankRSK/Spacewar3D/blob/2fb0cc85016b23dc20731ca7a219903c27d06ccf/README.md",
+        "notes": "Version 0.69 source has human-versus-AI turn phases, conquest, winner/defeat UI, replay and save/load. Balance, AI behavior, media playback and browser compatibility remain untested."
+      },
+      "verification": {
+        "date": "2026-10-27",
+        "source_commit": "2fb0cc85016b23dc20731ca7a219903c27d06ccf",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-059.md#spacewar3d-frankrsk",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/FrankRSK/Spacewar3D/blob/2fb0cc85016b23dc20731ca7a219903c27d06ccf/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/FrankRSK/Spacewar3D/blob/2fb0cc85016b23dc20731ca7a219903c27d06ccf/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/FrankRSK/Spacewar3D/blob/2fb0cc85016b23dc20731ca7a219903c27d06ccf/index.html"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "A true three-dimensional rendered strategy board/graph; fleet/territory decisions are discrete rather than free flight.",
+        "Human defeat is not automatically global match completion; AI spectator continuation is retained in the record.",
+        "No save import/export, audio, asset load, automated demo mode or game input was executed.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployment equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "procedural-line-dungeon",
+      "name": "Procedural Line Dungeon",
+      "repository_url": "https://github.com/Mentis123/procedural-line-dungeon",
+      "genres": [
+        "first-person dungeon crawler",
+        "roguelite shooter",
+        "score attack"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.185.1 (package.json)",
+        "render_evidence": {
+          "url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/src/render/scene.ts#L34-L57",
+          "claim": "The Vite entry creates the authored Game, whose scene factory directly constructs Three WebGLRenderer, a perspective camera and volumetric line/point dungeon geometry. Its own rAF updates active play and renders the scene."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/package.json",
+            "dependencies": {
+              "three": "^0.185.1"
+            },
+            "dev_dependencies": {
+              "@types/three": "^0.185.4",
+              "typescript": "~5.9.2",
+              "vite": "^7.1.0",
+              "vitest": "^3.2.4"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "TypeScript/Vite, Three as sole runtime npm dependency, PointerLockControls, authored seeded generation/collision/enemy/projectile/upgrade/UI helpers and synthesized Web Audio.",
+          "README describes no downloaded art or sound packs; the reviewed renderer/effects/synth generate geometry and audio. Vitest is declared, but no upstream suite was run."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer and scoped normal game/result/recovery paths were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement rendering engine was identified in that scope. UI/input/physics/build/service helper roles are disclosed; source review is not exhaustive transitive or runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/src/game/Game.ts#L391-L411",
+        "claim": "Normal player proximity to the exit calls completeFloor for score and a next-floor screen; ordinary damage at zero HP calls die for score/seed results. Wired retry/new-seed/next-floor buttons reset or advance the run. No finite campaign victory is claimed."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (root project license; dependency/media scope qualified)",
+        "source_url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/LICENSE",
+        "additional_notices": [
+          "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/README.md"
+        ],
+        "notes": "Actual root LICENSE grants MIT to Procedural Line Dungeon contributors. README's shorter license paragraph mentions Three's MIT separately; that is not substituted for the root grant. No independent originality or every screenshot/dependency rights clearance is claimed."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-27",
+        "source_url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/README.md",
+        "notes": "README contains local dev/preview instructions and a note about an unavailable author-hosted delivery, with no explicit usable public game URL. That author-account note is not an execution-environment blocker here; no deployment or guessed Pages URL was attempted."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/README.md",
+        "notes": "Version 1.0.0 source has seeded floors, combat/upgrades, exit score/continuation, death and replay. Hosted delivery, author test claims, every seed's reachability and real browser behavior remain unverified."
+      },
+      "verification": {
+        "date": "2026-10-27",
+        "source_commit": "32c304f5285314389b568274f50df69716bcf9e1",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-059.md#procedural-line-dungeon",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/package.json"
+          },
+          {
+            "path": "src/audio/synth.ts",
+            "url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/src/audio/synth.ts"
+          },
+          {
+            "path": "src/game/Game.ts",
+            "url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/src/game/Game.ts"
+          },
+          {
+            "path": "src/game/state.ts",
+            "url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/src/game/state.ts"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/src/main.ts"
+          },
+          {
+            "path": "src/render/effects.ts",
+            "url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/src/render/effects.ts"
+          },
+          {
+            "path": "src/render/scene.ts",
+            "url": "https://github.com/Mentis123/procedural-line-dungeon/blob/32c304f5285314389b568274f50df69716bcf9e1/src/render/scene.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Wireframe/vector styling renders an actual three-dimensional first-person scene; movement uses a grid-based horizontal collision layout.",
+        "An escalating floor/score loop, with no verified last boss or finite campaign ending.",
+        "Pointer lock, audio, seed URL changes and game input were inspected without being invoked.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployment equivalence or all-media/dependency rights."
+      ]
     }
   ]
 }
