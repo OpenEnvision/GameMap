@@ -31433,6 +31433,142 @@
         "The cached demo text and source paths do not establish deployed-build equivalence or current complete playability.",
         "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
       ]
+    },
+    {
+      "id": "cave-runner",
+      "name": "Cave Runner",
+      "repository_url": "https://github.com/tope-olajide/cave-runner",
+      "genres": [
+        "endless runner",
+        "obstacle avoidance",
+        "coin collection"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.142.0 (package.json)",
+        "render_evidence": {
+          "url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/src/main.ts#L1-L20",
+          "claim": "The Vite/TypeScript entry directly imports and constructs Three WebGLRenderer plus PerspectiveCamera. Its own rAF updates the currently selected authored menu/running/character Scene and renders it without R3F or another scene engine."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/package.json",
+            "dependencies": {
+              "@netlify/functions": "^1.0.0",
+              "@tweenjs/tween.js": "^18.6.4",
+              "@types/node": "^14.18.23",
+              "bcrypt": "^5.0.1",
+              "dotenv": "^16.0.1",
+              "flag-icons": "^6.6.4",
+              "jsonwebtoken": "^8.5.1",
+              "mysql2": "^2.3.3",
+              "netlify-cli": "^10.15.0",
+              "three": "^0.142.0",
+              "toastify-js": "^1.12.0"
+            },
+            "dev_dependencies": {
+              "@types/bcrypt": "^5.0.0",
+              "@types/jsonwebtoken": "^8.5.8",
+              "@types/three": "^0.142.0",
+              "@types/toastify-js": "^1.11.1",
+              "@typescript-eslint/eslint-plugin": "^5.30.7",
+              "@typescript-eslint/parser": "^5.30.7",
+              "eslint": "^8.20.0",
+              "eslint-config-airbnb-base": "^15.0.0",
+              "eslint-plugin-import": "^2.26.0",
+              "typescript": "^4.7.4",
+              "vite": "^2.9.9"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vite 2/TypeScript 4, Three FBXLoader/animation and authored Three Scene subclasses; @tweenjs/tween.js animates movement and Toastify/flag-icons/Font Awesome support UI.",
+          "The full manifest is captured including runtime-listed @types/node, Netlify CLI/functions, dotenv, bcrypt, jsonwebtoken and mysql2. Account backup/high-score functions use Netlify/PlanetScale; these are auxiliary services, not rendering engines.",
+          "README allows starting the local game without serverless setup with some online features unavailable. No provider account, CLI login, database, credentials, paid resource, online score/coin save or localStorage mutation was used."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/src/scenes/RunningScene.ts#L427-L556",
+        "claim": "Normal scene updates move cave segments, process coins/obstacles and score; bounding-box collisions call gameOver, stop speed and show score/coins. The wired restart button resets obstacles, coins, animation, flags and player position; menu routing is separate."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; bundled media and services not fully audited)",
+        "source_url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/LICENSE",
+        "additional_notices": [
+          "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/README.md",
+          "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/index.html",
+          "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/src/scenes/RunningScene.ts",
+          "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/src/scenes/MainMenuScene.ts",
+          "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/src/scenes/CharacterSelectionScene.ts"
+        ],
+        "notes": "Actual root LICENSE is MIT and README identifies MIT, although its License paragraph points to LICENSE.txt rather than the LICENSE file present in the tree. FBX characters/animations/models, a named Unsplash texture, icons, fonts and dependency terms were not independently cleared as all-MIT assets. Root code licensing does not establish rights to each bundled media file."
+      },
+      "demo": {
+        "url": "https://cave-runner.netlify.app",
+        "status": "page-read",
+        "checked_at": "2026-10-27",
+        "source_url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/README.md",
+        "notes": "The README's author-hosted URL returned a text-reader snapshot of menu, score, game-over and account forms, marked crawled four days earlier. Static state labels do not show a played failure, successful login, current backend health or deployed-source equivalence. No form submission, provider/database call, local save, build or playtest occurred."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/README.md",
+        "notes": "A 2022 PlanetScale hackathon runner with character selection, slide/jump/lane controls, coins, score, collision loss/restart and optional online account backup/ranking. Source functionality and cached static page were reviewed; service availability and real gameplay were not tested."
+      },
+      "verification": {
+        "date": "2026-10-27",
+        "source_commit": "3714f84f98fe8efc28211a059bcda91eff9575cc",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-057.md#cave-runner",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/package.json"
+          },
+          {
+            "path": "src/main.ts",
+            "url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/src/main.ts"
+          },
+          {
+            "path": "src/scenes/CharacterSelectionScene.ts",
+            "url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/src/scenes/CharacterSelectionScene.ts"
+          },
+          {
+            "path": "src/scenes/MainMenuScene.ts",
+            "url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/src/scenes/MainMenuScene.ts"
+          },
+          {
+            "path": "src/scenes/RunningScene.ts",
+            "url": "https://github.com/tope-olajide/cave-runner/blob/3714f84f98fe8efc28211a059bcda91eff9575cc/src/scenes/RunningScene.ts"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "An endless three-dimensional lane runner with discrete lane/jump/slide controls; no finite campaign or broad multiplayer simulation is claimed.",
+        "Normal game-over calls local coin/high-score persistence and, when a token exists, online save functions; online account, backup overwrite and ranking paths were read only, never invoked.",
+        "The historical Netlify/PlanetScale stack may need independent configuration; current availability, authentication security, full media provenance and modern toolchain compatibility remain untested.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
     }
   ]
 }
