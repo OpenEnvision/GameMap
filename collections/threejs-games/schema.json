@@ -164,6 +164,7 @@
                       "ISC",
                       "Unlicense",
                       "Apache-2.0",
+                      "BSD-3-Clause",
                       "GPL-3.0-only",
                       "GPL-3.0-or-later",
                       "AGPL-3.0-only",
@@ -322,7 +323,7 @@
                   ],
                   "additionalProperties": false
                 },
-                "minItems": 3
+                "minItems": 2
               },
               "already_mentioned_in_legacy_readme": {
                 "type": "boolean"
