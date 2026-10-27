@@ -3037,6 +3037,148 @@
         "https://github.com/joneit/space-out/blob/ba247d0aea53088474e0aa216e8d02c852566591/plunger.html",
         "https://github.com/joneit/space-out/blob/ba247d0aea53088474e0aa216e8d02c852566591/plunger.js"
       ]
+    },
+    {
+      "id": "shattered-covenant-r3f",
+      "repository_url": "https://github.com/jwseymour/covenant",
+      "status": "excluded",
+      "checked_at": "2026-10-27",
+      "source_commit": "69ea331bfb6f402bf6f2be0ccfbc26af8b6d1b4d",
+      "reason": "The actual React entry reaches App's MacroView, which imports @react-three/fiber Canvas and @react-three/drei and mounts Canvas. This is an implemented strategy project, but its active rendering integration falls outside the direct-Three filter; React UI alone is not the exclusion.",
+      "next_action": "Reconsider only an independently verified direct-Three renderer path. No upstream test count, lobby or network play was reproduced.",
+      "evidence_urls": [
+        "https://github.com/jwseymour/covenant/blob/69ea331bfb6f402bf6f2be0ccfbc26af8b6d1b4d/README.md",
+        "https://github.com/jwseymour/covenant/blob/69ea331bfb6f402bf6f2be0ccfbc26af8b6d1b4d/client/package.json",
+        "https://github.com/jwseymour/covenant/blob/69ea331bfb6f402bf6f2be0ccfbc26af8b6d1b4d/client/src/main.tsx",
+        "https://github.com/jwseymour/covenant/blob/69ea331bfb6f402bf6f2be0ccfbc26af8b6d1b4d/client/src/App.tsx",
+        "https://github.com/jwseymour/covenant/blob/69ea331bfb6f402bf6f2be0ccfbc26af8b6d1b4d/client/src/renderer/MacroView.tsx#L12-L22",
+        "https://github.com/jwseymour/covenant/blob/69ea331bfb6f402bf6f2be0ccfbc26af8b6d1b4d/client/src/renderer/MacroView.tsx#L130-L150"
+      ]
+    },
+    {
+      "id": "cryptwick-netforge-engine",
+      "repository_url": "https://github.com/netnetdev/netforge-dungeon-crawler-template",
+      "status": "excluded",
+      "checked_at": "2026-10-27",
+      "source_commit": "ea2a20f64dd06a96719f3388d0dbbe83cc6d2543",
+      "reason": "Root code is MIT and the source contains real co-op encounter/boss/end rules. However src/game.ts exclusively declares against @netforge/engine; the Net Forge template package supplies renderer, physics, netcode and HUD. It is an engine-based game outside the pure direct-Three boundary, not an empty template or a missing-goal finding.",
+      "next_action": "Reconsider a standalone direct-Three implementation if provided; do not substitute the upstream engine's claimed Three/WebGPU internals for a renderer owned by this game source. No kit-play, bot test, wallet, room or service was started.",
+      "evidence_urls": [
+        "https://github.com/netnetdev/netforge-dungeon-crawler-template/blob/ea2a20f64dd06a96719f3388d0dbbe83cc6d2543/README.md",
+        "https://github.com/netnetdev/netforge-dungeon-crawler-template/blob/ea2a20f64dd06a96719f3388d0dbbe83cc6d2543/LICENSE",
+        "https://github.com/netnetdev/netforge-dungeon-crawler-template/blob/ea2a20f64dd06a96719f3388d0dbbe83cc6d2543/package.json",
+        "https://github.com/netnetdev/netforge-dungeon-crawler-template/blob/ea2a20f64dd06a96719f3388d0dbbe83cc6d2543/src/game.ts#L1-L18",
+        "https://github.com/netnetdev/netforge-dungeon-crawler-template/blob/ea2a20f64dd06a96719f3388d0dbbe83cc6d2543/src/game.ts#L275-L281"
+      ]
+    },
+    {
+      "id": "galactic-golf-license-document",
+      "repository_url": "https://github.com/javieranta/GalacticGolf",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "6c4b4c1028acb53dea598a49e4be813e54610ab6",
+      "reason": "README labels this React/Three/Zustand gravity-golf project MIT and Game.ts implements simulation, fail/retry and scorecard phases. The inspected complete 36-file tree contains no project license file, and package.json does not declare one. Licensing/attribution scope is not promoted from a README label alone.",
+      "next_action": "Clarify the project-wide license grant and media notices, then finish renderer-entry review and source/demo identity checks. Do not count its technology description as runtime validation.",
+      "evidence_urls": [
+        "https://github.com/javieranta/GalacticGolf/blob/6c4b4c1028acb53dea598a49e4be813e54610ab6/README.md",
+        "https://github.com/javieranta/GalacticGolf/blob/6c4b4c1028acb53dea598a49e4be813e54610ab6/package.json",
+        "https://github.com/javieranta/GalacticGolf/blob/6c4b4c1028acb53dea598a49e4be813e54610ab6/src/main.tsx",
+        "https://github.com/javieranta/GalacticGolf/blob/6c4b4c1028acb53dea598a49e4be813e54610ab6/src/game/Game.ts#L28-L43",
+        "https://github.com/javieranta/GalacticGolf/blob/6c4b4c1028acb53dea598a49e4be813e54610ab6/src/game/Game.ts#L365-L399"
+      ]
+    },
+    {
+      "id": "disc-it-license-unknown",
+      "repository_url": "https://github.com/Bynzski/disc-it",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "5854be75e697f3ff9d7be19136dad364122ede71",
+      "reason": "Actual main.js directly creates Three WebGLRenderer and implements scored hole/round completion; README distinguishes free play from leaderboard runs. The complete inspected 64-file tree has no project license document and neither README nor package.json establishes a clear grant. Public source access is not treated as an open-source license.",
+      "next_action": "Obtain a project-wide license/asset clarification before promotion. Keep optional leaderboard post/name/local-save behavior explicit; no submitRun, score API, device input or production deployment was invoked.",
+      "evidence_urls": [
+        "https://github.com/Bynzski/disc-it/blob/5854be75e697f3ff9d7be19136dad364122ede71/README.md",
+        "https://github.com/Bynzski/disc-it/blob/5854be75e697f3ff9d7be19136dad364122ede71/package.json",
+        "https://github.com/Bynzski/disc-it/blob/5854be75e697f3ff9d7be19136dad364122ede71/src/main.js#L1-L35",
+        "https://github.com/Bynzski/disc-it/blob/5854be75e697f3ff9d7be19136dad364122ede71/src/main.js#L450-L480",
+        "https://github.com/Bynzski/disc-it/blob/5854be75e697f3ff9d7be19136dad364122ede71/src/main.js#L515-L537"
+      ]
+    },
+    {
+      "id": "resource-strategy-game-license-unknown",
+      "repository_url": "https://github.com/coloradude/resource-strategy-game",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "bd9b78858a9d6ec4f8bc68007b30c8e3f5623ff8",
+      "reason": "README describes a Three/Node RTS and manifest declares Three ^0.83.0, but no project license was located in the complete 168-file tree or reviewed README/manifest. Renderer/objective completeness is also not yet verified.",
+      "next_action": "Establish an explicit project license and inspect actual entry, objective/result/recovery and media attribution before promotion.",
+      "evidence_urls": [
+        "https://github.com/coloradude/resource-strategy-game/blob/bd9b78858a9d6ec4f8bc68007b30c8e3f5623ff8/README.md",
+        "https://github.com/coloradude/resource-strategy-game/blob/bd9b78858a9d6ec4f8bc68007b30c8e3f5623ff8/package.json"
+      ]
+    },
+    {
+      "id": "comethop-project-license-unknown",
+      "repository_url": "https://github.com/maedi/CometHop",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "04c2a656be96346c8bbabf96a57b77aa18be9f8b",
+      "reason": "The README describes a Three/Meteor space strategy game. The complete 47-file tree lacks a project-level license; a MIT notice under client/threex applies to that helper and is not taken as a blanket game grant.",
+      "next_action": "Clarify project-wide source/media licensing and inspect the real renderer/game rules before promotion.",
+      "evidence_urls": [
+        "https://github.com/maedi/CometHop/blob/04c2a656be96346c8bbabf96a57b77aa18be9f8b/README.md",
+        "https://github.com/maedi/CometHop/blob/04c2a656be96346c8bbabf96a57b77aa18be9f8b/client/threex/MIT-LICENSE.txt"
+      ]
+    },
+    {
+      "id": "time-of-war-nav-identity-license",
+      "repository_url": "https://github.com/navidina/threejs-time_of_war",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "94624854e4e77f4bbd68c20e2af97e4a9eb9f725",
+      "reason": "README describes multiplayer Three/Express strategy. No project license file was located; manifest declares ISC but points to KubiO24/Time_of_War as its repository, leaving canonical/derivative identity and grant scope unresolved.",
+      "next_action": "Compare the cited original and applicable attribution/license, then verify renderer and normal game-result paths; avoid counting rebrands as new games.",
+      "evidence_urls": [
+        "https://github.com/navidina/threejs-time_of_war/blob/94624854e4e77f4bbd68c20e2af97e4a9eb9f725/README.md",
+        "https://github.com/navidina/threejs-time_of_war/blob/94624854e4e77f4bbd68c20e2af97e4a9eb9f725/package.json"
+      ]
+    },
+    {
+      "id": "threejs-rts-game-license-document",
+      "repository_url": "https://github.com/shaulhadarn/threejs-rts-game",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "457b4826d74acbf83ad5c82ccdd0446c5cc19b1a",
+      "reason": "Manifest declares MIT and Three ^0.160.0, while the complete 28-file tree has no license document and the short README supplies no grant. Full gameplay/rendering scope remains unreviewed.",
+      "next_action": "Clarify the written project grant, then review the entry, normal objectives/results and media provenance.",
+      "evidence_urls": [
+        "https://github.com/shaulhadarn/threejs-rts-game/blob/457b4826d74acbf83ad5c82ccdd0446c5cc19b1a/README.md",
+        "https://github.com/shaulhadarn/threejs-rts-game/blob/457b4826d74acbf83ad5c82ccdd0446c5cc19b1a/package.json"
+      ]
+    },
+    {
+      "id": "tupp-tupp-license-attribution",
+      "repository_url": "https://github.com/Addyvan/gmtk-2023",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "85d6033abb781da359d20e5a3c3b2002d15d22ff",
+      "reason": "README identifies a GMTK mobile golf game. No project license document was found; manifest says ISC but retains box-collision/package repository metadata from a different particles demo. Three/ptcl declarations do not resolve licensing of the authored jam game.",
+      "next_action": "Clarify game versus starter attribution and the project grant; inspect actual renderer, physics role, hole-result/recovery and assets before promotion.",
+      "evidence_urls": [
+        "https://github.com/Addyvan/gmtk-2023/blob/85d6033abb781da359d20e5a3c3b2002d15d22ff/README.md",
+        "https://github.com/Addyvan/gmtk-2023/blob/85d6033abb781da359d20e5a3c3b2002d15d22ff/package.json"
+      ]
+    },
+    {
+      "id": "crystal-dungeon-license-runtime",
+      "repository_url": "https://github.com/ThaboModise/crystal_dungeon",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "639906f6f9c9b1d6626d1048c7b78931e705eb56",
+      "reason": "README calls this a Three editor puzzle experiment with a required local editor/assets workflow. The complete 14-file tree has no project license and the game/result path is not yet source-verified.",
+      "next_action": "Clarify licensing and inspect exported scene scripts/actual puzzle result and reset. Three's editor alone is not an excluded engine, but an author claim is not enough to promote this game.",
+      "evidence_urls": [
+        "https://github.com/ThaboModise/crystal_dungeon/blob/639906f6f9c9b1d6626d1048c7b78931e705eb56/README.md"
+      ]
     }
   ]
 }

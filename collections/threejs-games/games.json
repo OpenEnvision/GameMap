@@ -31569,6 +31569,502 @@
         "The historical Netlify/PlanetScale stack may need independent configuration; current availability, authentication security, full media provenance and modern toolchain compatibility remain untested.",
         "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
       ]
+    },
+    {
+      "id": "kingdom-of-hex",
+      "name": "Kingdom of Hex",
+      "repository_url": "https://github.com/iedayan/Kingdom-of-Hex",
+      "genres": [
+        "turn-based strategy",
+        "kingdom building",
+        "tactical survival"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.183.2 (package.json; direct three/webgpu renderer)",
+        "render_evidence": {
+          "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/src/App.js#L141-L161",
+          "claim": "The actual main.js creates the authored App, which directly imports three/webgpu and initializes WebGPURenderer for the volumetric hex board. Its own rAF updates city/game and Three post-processing. Both entry and App explicitly gate on WebGPU availability; a WebGL fallback is not claimed."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/package.json",
+            "dependencies": {
+              "gsap": "^3.14.2",
+              "howler": "^2.2.4",
+              "lucide": "^1.6.0",
+              "three": "^0.183.2",
+              "zod": "^4.3.6"
+            },
+            "dev_dependencies": {
+              "@playwright/test": "^1.50.0",
+              "@types/node": "^25.5.0",
+              "@types/three": "^0.183.1",
+              "@vitejs/plugin-basic-ssl": "^2.1.4",
+              "typescript": "^6.0.2",
+              "vite": "^6.0.0",
+              "vitest": "^4.1.1"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vanilla JavaScript with authored hex/WFC, game, enemy, UI and event helpers. GSAP animates, Howler handles audio, Lucide supplies DOM icons and Zod validates data; the exact manifest including Vite/TypeScript/Vitest/Playwright is recorded.",
+          "Three WebGPU/TSL post-processing, OrbitControls and CSS2DRenderer remain Three rendering helpers. Reviewed analytics persists local events; session/meta progression uses local saves. No external rendering engine was identified in the scoped entry."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/src/game/GameSession.js#L860-L892",
+        "claim": "Normal end-turn victory conditions, turn limit and capital-overrun paths call win/lose, set the phase and emit gameEnd. The app's event hook displays the end screen; its Play Again button reloads. Resources, research, building placement, combat and enemy waves form the actual turn-based loop."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (original code; explicit separate asset policy)",
+        "source_url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/LICENSE",
+        "additional_notices": [
+          "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/ASSET_POLICY.md",
+          "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/README.md"
+        ],
+        "notes": "Root LICENSE and ASSET_POLICY.md grant MIT to original code and separate media rights. The policy explicitly says bundled art/models/HDR/audio/promo material must not be assumed MIT, credits KayKit Medieval Hexagon Pack and leaves some asset-specific provenance undocumented. README also credits the hex-map/WFC inspirations. No game assets or media were copied or independently cleared as all-MIT."
+      },
+      "demo": {
+        "url": "https://iedayan.itch.io/kingdom-of-hex",
+        "status": "page-read",
+        "checked_at": "2026-10-27",
+        "source_url": "https://api.github.com/repos/iedayan/Kingdom-of-Hex",
+        "notes": "The author URL was discovered in GitHub repository metadata on this date; the text reader returned an itch.io listing cached about three weeks earlier. Its Run game/HTML5/Released labels are listing evidence, not an executed build, current WebGPU compatibility or deployed-source match. No embedded game, download or support payment was activated."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/README.md",
+        "notes": "The repository describes an active seeded strategy game and its metadata-linked itch listing labels it Released, while package version remains 0.0.0. Source includes ordinary win/loss and replay; no test-count, balance, performance or release/deployment equivalence claim was reproduced."
+      },
+      "verification": {
+        "date": "2026-10-27",
+        "source_commit": "1120e2476b7916bba169527d092e464d5f7b7680",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-058.md#kingdom-of-hex",
+        "reviewed_files": [
+          {
+            "path": "ASSET_POLICY.md",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/ASSET_POLICY.md"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/package.json"
+          },
+          {
+            "path": "src/App.js",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/src/App.js"
+          },
+          {
+            "path": "src/PostFX.js",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/src/PostFX.js"
+          },
+          {
+            "path": "src/app/AppLaunchFeatures.js",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/src/app/AppLaunchFeatures.js"
+          },
+          {
+            "path": "src/app/AppPalaceUI.js",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/src/app/AppPalaceUI.js"
+          },
+          {
+            "path": "src/core/analytics/Analytics.js",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/src/core/analytics/Analytics.js"
+          },
+          {
+            "path": "src/game/GameSession.js",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/src/game/GameSession.js"
+          },
+          {
+            "path": "src/game/goals.ts",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/src/game/goals.ts"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/src/main.js"
+          },
+          {
+            "path": "src/ui/screens/EndGameScreen.js",
+            "url": "https://github.com/iedayan/Kingdom-of-Hex/blob/1120e2476b7916bba169527d092e464d5f7b7680/src/ui/screens/EndGameScreen.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "A volumetric hex-board strategy game with discrete turns/grid movement; dimension describes rendering rather than unrestricted spatial movement.",
+        "The actual entry requires WebGPU. Browser/device availability, full victory reachability, save/meta progression and legacy/current dependency behavior were not tested.",
+        "ASSET_POLICY.md explicitly leaves non-code rights separate; this is original-code verification and does not establish unrestricted bundled-asset reuse.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "coastline-golf",
+      "name": "Coastline Golf",
+      "repository_url": "https://github.com/t-lujan/coastline-golf",
+      "genres": [
+        "golf",
+        "sports",
+        "score attack"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "^0.186.1 (package.json)",
+        "render_evidence": {
+          "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/src/main.js#L1-L46",
+          "claim": "The actual index imports src/main.js, which directly creates a Three WebGLRenderer. Authored terrain, water, props, effects and ball simulation feed its setAnimationLoop; Three is the sole declared runtime npm dependency."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/package.json",
+            "dependencies": {
+              "three": "^0.186.1"
+            },
+            "dev_dependencies": {
+              "vite": "^8.3.5"
+            }
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vanilla ES modules, Three post-processing and authored ball/terrain/flight/roll/putting physics; Vite is the build helper. Web Audio synthesizes effects in the reviewed audio module.",
+          "Weather helper requests Open-Meteo and, for Bishop wind observations, api.weather.gov, with offline fallback; those providers were not called. Map choice/settings use localStorage. Terrain, heightmap and other data rights remain distinct from project code."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/src/main.js#L450-L527",
+        "claim": "Normal drag/club input strikes the ball and counts strokes; physical cup capture emits holed, which enters hole-out and the result sequence. Water hazards add a drop penalty. The end replay button resets the hole and prepares a new shot; the catalog does not rely on forceHoleOut/debug helpers."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; terrain/weather/data scope qualified)",
+        "source_url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/LICENSE",
+        "additional_notices": [
+          "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/README.md",
+          "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/src/weather.js",
+          "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/src/maps/bishop.js",
+          "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/src/maps/pismo.js"
+        ],
+        "notes": "Root LICENSE and manifest declare MIT. README separately credits Open-Meteo data under CC BY 4.0 and Mapzen/AWS elevation incorporating USGS/SRTM sources; reviewed mapping code also refers to OSM-derived landmark locations. Specific geodata, baked heightmaps, promo images, dependencies and landmark/brand rights were not independently cleared as all-MIT."
+      },
+      "demo": {
+        "url": "https://t-lujan.github.io/coastline-golf/",
+        "status": "reader-error",
+        "checked_at": "2026-10-27",
+        "source_url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/index.html",
+        "notes": "The exact author Pages URL is supplied by index.html's og:url, not guessed from repository naming. Text retrieval returned a reader error; this does not establish an offline demo or gameplay failure. No game execution, live weather query, terrain baking, audio, sharing, clipboard or save was invoked."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/README.md",
+        "notes": "An authored golf prototype with shot/cup/penalty/result/replay paths. Current map code lists Morro, Bishop and Pismo, although README still describes two holes and gives a different Bishop par; the code-backed distinction is retained without asserting a full 18-hole round."
+      },
+      "verification": {
+        "date": "2026-10-27",
+        "source_commit": "37315386c846d9982832295715797e4caf5728d8",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-058.md#coastline-golf",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/package.json"
+          },
+          {
+            "path": "src/audio.js",
+            "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/src/audio.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/src/main.js"
+          },
+          {
+            "path": "src/maps/bishop.js",
+            "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/src/maps/bishop.js"
+          },
+          {
+            "path": "src/maps/index.js",
+            "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/src/maps/index.js"
+          },
+          {
+            "path": "src/maps/morro.js",
+            "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/src/maps/morro.js"
+          },
+          {
+            "path": "src/maps/pismo.js",
+            "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/src/maps/pismo.js"
+          },
+          {
+            "path": "src/physics.js",
+            "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/src/physics.js"
+          },
+          {
+            "path": "src/weather.js",
+            "url": "https://github.com/t-lujan/coastline-golf/blob/37315386c846d9982832295715797e4caf5728d8/src/weather.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Current src/maps/index.js offers three map/hole choices, and Bishop source exports par 4 despite README saying par 5. The catalog follows pinned code and records the documentation mismatch.",
+        "A realistic presentation and physics comments do not certify real-world survey accuracy, deterministic results, supported hardware or current weather-provider availability.",
+        "The review used only source text and the supplied demo URL; no heightmap/model/image/audio payload, provider service or debug result shortcut was executed.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "gravity-golf-masafykun",
+      "name": "Gravity Golf",
+      "repository_url": "https://github.com/masafykun/gravity-golf",
+      "genres": [
+        "puzzle golf",
+        "gravity slingshot",
+        "score attack"
+      ],
+      "dimension": "3d-board",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "0.160.0 (actual unpkg import map)",
+        "render_evidence": {
+          "url": "https://github.com/masafykun/gravity-golf/blob/6f7a85abb5e2d91661917460c1e66c7a80c166bb/main.js#L123-L141",
+          "claim": "Direct Three WebGLRenderer and orthographic camera render actual sphere/torus geometry with Three bloom passes. Physics is explicitly planar XY; this is a three-dimensional rendered puzzle board, not free spatial flight."
+        },
+        "manifests": [],
+        "auxiliary_dependencies": [
+          "Vanilla HTML/ES modules, unpkg Three/addons, custom planar gravity/flight integration and synthesized Web Audio; no npm manifest in the six-file tree.",
+          "Normal results may save a personal best locally. No CDN module execution, sound, storage mutation, stage solver or debug shortcut was run."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/masafykun/gravity-golf/blob/6f7a85abb5e2d91661917460c1e66c7a80c166bb/main.js#L645-L694",
+        "claim": "Normal hole capture calls finishLevel, advances through ten source-defined stages and reaches score/rank results. Planet collisions, bounds or shot timeout reset the shot; the result Retry button starts again. Debug goto/finishAll is not used as completion evidence."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code; external dependency terms separate)",
+        "source_url": "https://github.com/masafykun/gravity-golf/blob/6f7a85abb5e2d91661917460c1e66c7a80c166bb/LICENSE",
+        "additional_notices": [
+          "https://github.com/masafykun/gravity-golf/blob/6f7a85abb5e2d91661917460c1e66c7a80c166bb/README.md",
+          "https://github.com/masafykun/gravity-golf/blob/6f7a85abb5e2d91661917460c1e66c7a80c166bb/index.html"
+        ],
+        "notes": "Root LICENSE and README declare MIT. Three/CDN dependency rights and linked screenshot/emoji/platform rendering remain separate; no all-media or transitive license audit is claimed."
+      },
+      "demo": {
+        "url": "https://masafykun.github.io/gravity-golf/",
+        "status": "reader-error",
+        "checked_at": "2026-10-27",
+        "source_url": "https://github.com/masafykun/gravity-golf/blob/6f7a85abb5e2d91661917460c1e66c7a80c166bb/README.md",
+        "notes": "README supplies the exact author Pages URL. Text retrieval failed in the reader; that is not an offline-site or broken-game finding."
+      },
+      "maturity": {
+        "status": "prototype",
+        "basis_url": "https://github.com/masafykun/gravity-golf/blob/6f7a85abb5e2d91661917460c1e66c7a80c166bb/README.md",
+        "notes": "Ten-stage source puzzle with par scoring, target capture, failure recovery and results/retry. README's solver/solvability and mobile claims were not reproduced."
+      },
+      "verification": {
+        "date": "2026-10-27",
+        "source_commit": "6f7a85abb5e2d91661917460c1e66c7a80c166bb",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-058.md#gravity-golf-masafykun",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/masafykun/gravity-golf/blob/6f7a85abb5e2d91661917460c1e66c7a80c166bb/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/masafykun/gravity-golf/blob/6f7a85abb5e2d91661917460c1e66c7a80c166bb/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/masafykun/gravity-golf/blob/6f7a85abb5e2d91661917460c1e66c7a80c166bb/index.html"
+          },
+          {
+            "path": "main.js",
+            "url": "https://github.com/masafykun/gravity-golf/blob/6f7a85abb5e2d91661917460c1e66c7a80c166bb/main.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Planar XY movement and fixed orthographic presentation are explicit; the 3d-board label records volumetric rendering.",
+        "The normal skip button carries a score penalty; its path and optional debug result API were inspected but never invoked. Every stage's intended solution and balance remain untested.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
+    },
+    {
+      "id": "the-verrow",
+      "name": "The Verrow",
+      "repository_url": "https://github.com/SBurrell23/RPG",
+      "genres": [
+        "narrative RPG",
+        "dungeon exploration",
+        "choice adventure"
+      ],
+      "dimension": "3d-world",
+      "stack": {
+        "renderer": "three.js",
+        "integration": "direct",
+        "three_version": "r170 (actual local import map and vendor REVISION)",
+        "render_evidence": {
+          "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/src/engine/renderer.js#L9-L36",
+          "claim": "The actual HTML/import map routes to local Three r170. The authored Renderer directly constructs WebGLRenderer and Three post-processing; main.js owns rAF, first-person movement and room interaction."
+        },
+        "manifests": [
+          {
+            "path": "package.json",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/package.json",
+            "dependencies": {},
+            "dev_dependencies": {}
+          }
+        ],
+        "auxiliary_dependencies": [
+          "Vanilla ES modules, authored state/dialogue/collision/room helpers, DOM UI and local saves. package.json supplies only validation/static-server scripts, without npm runtime dependencies.",
+          "Vendored Three/addons, procedural canvas textures/primitive models and Web Audio synthesis are documented; sampled texture/audio source was read. No assets or generated output were copied."
+        ],
+        "framework_audit": "The actual entry, directly constructed Three renderer, scoped active input/state/render and objective/result path, and declared helper roles were inspected. No R3F, A-Frame, Babylon.js, Unity or replacement renderer was identified in that scope. UI/physics/input/build/service helpers are disclosed; this is source review, not exhaustive transitive/runtime certification."
+      },
+      "gameplay_evidence": {
+        "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/src/main.js#L270-L335",
+        "claim": "Normal dialogue/room effects progress ten floors, spend hearts and trigger loss or authored endings. Floor-ten choices dispatch four ending IDs; ended state releases pointer lock, clears the run save and shows results with Descend again reloading. No debug ending command was used."
+      },
+      "license": {
+        "spdx": "MIT",
+        "label": "MIT (project code and observed Three header; media scope qualified)",
+        "source_url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/LICENSE",
+        "additional_notices": [
+          "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/README.md",
+          "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/vendor/three/build/three.module.js"
+        ],
+        "notes": "Root LICENSE declares MIT; the actual vendor header independently identifies Three authors and SPDX MIT. README describes generated models/textures/sounds, supported by sampled generator source, without an exhaustive originality or every-doc-image rights clearance."
+      },
+      "demo": {
+        "url": null,
+        "status": "not-located",
+        "checked_at": "2026-10-27",
+        "source_url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/README.md",
+        "notes": "No explicit author-hosted game URL was located in README, manifest or entry. Generic GitHub Pages advice and localhost instructions are not converted into a guessed demo."
+      },
+      "maturity": {
+        "status": "game",
+        "basis_url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/README.md",
+        "notes": "Version 1.0.0 source implements a ten-floor, no-combat narrative run with choices, resources/hearts, four authored endings plus loss and replay. Complete branch reachability and author performance claims remain untested."
+      },
+      "verification": {
+        "date": "2026-10-27",
+        "source_commit": "2441db8b8e0fb9e32b9a1b4219e4e76336100e94",
+        "source_reviewed": true,
+        "playtested": false,
+        "upstream_tests_run": false,
+        "evidence_path": "evidence/batch-058.md#the-verrow",
+        "reviewed_files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/LICENSE"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/README.md"
+          },
+          {
+            "path": "index.html",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/index.html"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/package.json"
+          },
+          {
+            "path": "src/data/endings.js",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/src/data/endings.js"
+          },
+          {
+            "path": "src/data/floors/floor10.js",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/src/data/floors/floor10.js"
+          },
+          {
+            "path": "src/data/floors/index.js",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/src/data/floors/index.js"
+          },
+          {
+            "path": "src/engine/audio.js",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/src/engine/audio.js"
+          },
+          {
+            "path": "src/engine/renderer.js",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/src/engine/renderer.js"
+          },
+          {
+            "path": "src/engine/textures.js",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/src/engine/textures.js"
+          },
+          {
+            "path": "src/game/effects.js",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/src/game/effects.js"
+          },
+          {
+            "path": "src/game/state.js",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/src/game/state.js"
+          },
+          {
+            "path": "src/main.js",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/src/main.js"
+          },
+          {
+            "path": "src/ui/panels.js",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/src/ui/panels.js"
+          },
+          {
+            "path": "vendor/three/build/three.module.js",
+            "url": "https://github.com/SBurrell23/RPG/blob/2441db8b8e0fb9e32b9a1b4219e4e76336100e94/vendor/three/build/three.module.js"
+          }
+        ],
+        "already_mentioned_in_legacy_readme": false
+      },
+      "limitations": [
+        "Actual three-dimensional first-person rooms and interaction; this is a no-combat narrative RPG.",
+        "Endings and loss mutate/clear local saves and use pointer lock/audio during play; those actions were inspected only.",
+        "Vendor and procedural-source evidence does not certify all narrative branches, browser compatibility or independently cleared rights to every included document image.",
+        "No upstream install, build, automated suite or playtest occurred. Source inspection does not certify current compatibility, complete rules/reachability, deployed-build equivalence or all-media/dependency rights."
+      ]
     }
   ]
 }
