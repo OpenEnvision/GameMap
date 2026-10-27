@@ -2793,6 +2793,72 @@
         "https://github.com/alxdos/slime-escape/blob/f1cdbb1dc226aaf6442508261f919545bb439b3e/src/main/render/Renderer.ts#L802-L812",
         "https://github.com/alxdos/slime-escape/blob/f1cdbb1dc226aaf6442508261f919545bb439b3e/src/main/render/Renderer.ts#L1286-L1291"
       ]
+    },
+    {
+      "id": "infinity-parking-r3f-renderer",
+      "repository_url": "https://github.com/CapyBlaze/Infinity-Parking",
+      "status": "excluded",
+      "checked_at": "2026-10-27",
+      "source_commit": "8c20b256e9c00e062f2d783950a8a5660bf7d321",
+      "reason": "README and actual GamePage construct the parking scene inside @react-three/fiber Canvas, with Drei and R3F runtime helpers. This is an implemented 3D puzzle with MIT code, but its scene ownership is outside the requested direct-Three integration; React DOM UI alone is not the reason.",
+      "next_action": "Reconsider only a distinct implemented direct-Three render entry and normal gameplay/result evidence. Do not claim it is a flat 2D game, lacks gameplay or grants MIT to every external model.",
+      "evidence_urls": [
+        "https://github.com/CapyBlaze/Infinity-Parking/blob/8c20b256e9c00e062f2d783950a8a5660bf7d321/README.md",
+        "https://github.com/CapyBlaze/Infinity-Parking/blob/8c20b256e9c00e062f2d783950a8a5660bf7d321/LICENSE",
+        "https://github.com/CapyBlaze/Infinity-Parking/blob/8c20b256e9c00e062f2d783950a8a5660bf7d321/package.json",
+        "https://github.com/CapyBlaze/Infinity-Parking/blob/8c20b256e9c00e062f2d783950a8a5660bf7d321/src/pages/GamePage.tsx#L180-L209",
+        "https://github.com/CapyBlaze/Infinity-Parking/blob/8c20b256e9c00e062f2d783950a8a5660bf7d321/src/rendering/Parking.tsx"
+      ]
+    },
+    {
+      "id": "zombie-hugs-theme-and-model-license-scope",
+      "repository_url": "https://github.com/DAMNinc/zombie-hugs",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "1854f12805197997fa6c6f3fa6c86e927f9fedbb",
+      "reason": "Game/server source has an explicit MIT grant and actual direct Three rendering plus round/result code. However src/css/LICENSE.md restricts the bundled Bootstrap Material Design theme's free use to nonprofit projects and adds commercial conditions. The served lobby uses the main layout linking that theme; the game route explicitly sets layout=false, so the restriction is not misattributed to the Three renderer itself. Model/ROME and font/icon grants also need scoped review.",
+      "next_action": "Resolve or replace the applicable restricted lobby/theme dependency and complete per-model/library notice review before promotion as an ordinary open-game entry. Preserve positive MIT game/server and direct-renderer evidence; do not call every asset MIT or infer that ROME software Apache automatically clears all model payloads.",
+      "evidence_urls": [
+        "https://github.com/DAMNinc/zombie-hugs/blob/1854f12805197997fa6c6f3fa6c86e927f9fedbb/README.md",
+        "https://github.com/DAMNinc/zombie-hugs/blob/1854f12805197997fa6c6f3fa6c86e927f9fedbb/LICENSE",
+        "https://github.com/DAMNinc/zombie-hugs/blob/1854f12805197997fa6c6f3fa6c86e927f9fedbb/package.json",
+        "https://github.com/DAMNinc/zombie-hugs/blob/1854f12805197997fa6c6f3fa6c86e927f9fedbb/src/css/LICENSE.md#L7-L23",
+        "https://github.com/DAMNinc/zombie-hugs/blob/1854f12805197997fa6c6f3fa6c86e927f9fedbb/views/layouts/main.handlebars#L10-L16",
+        "https://github.com/DAMNinc/zombie-hugs/blob/1854f12805197997fa6c6f3fa6c86e927f9fedbb/server.ts#L25-L65",
+        "https://github.com/DAMNinc/zombie-hugs/blob/1854f12805197997fa6c6f3fa6c86e927f9fedbb/src/client/zombie.ts#L938-L948",
+        "https://github.com/DAMNinc/zombie-hugs/blob/1854f12805197997fa6c6f3fa6c86e927f9fedbb/src/client/models.ts",
+        "https://github.com/DAMNinc/zombie-hugs/blob/1854f12805197997fa6c6f3fa6c86e927f9fedbb/src/fonts/LICENSE.txt"
+      ]
+    },
+    {
+      "id": "submarine-aviator-derivative-and-license-scope",
+      "repository_url": "https://github.com/raged07/ThreeJS-Submarine-game",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "6ba437da23bfaf719212f0c178c80999619adc1f",
+      "reason": "The pinned README still identifies The Aviator tutorial/source and demo, permits building personal/commercial projects but prohibits as-is republication/redistribution/sale. It is not a missing-license claim or an inferred standard MIT grant. The actual Three game has submarine adaptation/game-over source, while distinct derivative/canonical identity and applicable modification/media grant scope remain unresolved.",
+      "next_action": "Trace the adaptation's actual changes and applicable source/asset grants before counting a separate game, preserving the restrictive pinned notice. The corpus already knows an Aviator repository; do not treat a copied demo URL as a verified submarine demo or dismiss a complete tutorial-derived game solely for its origin.",
+      "evidence_urls": [
+        "https://github.com/raged07/ThreeJS-Submarine-game/blob/6ba437da23bfaf719212f0c178c80999619adc1f/README.md#L1-L13",
+        "https://github.com/raged07/ThreeJS-Submarine-game/blob/6ba437da23bfaf719212f0c178c80999619adc1f/index.html",
+        "https://github.com/raged07/ThreeJS-Submarine-game/blob/6ba437da23bfaf719212f0c178c80999619adc1f/js/game.js#L819-L851"
+      ]
+    },
+    {
+      "id": "iron-tide-original-code-license-unestablished",
+      "repository_url": "https://github.com/eforus-overseer/iron-tide-submarine",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "a04968f7f96a09b36c300c1569180b8b8820359c",
+      "reason": "Readable distributed game.js directly renders Three and contains patrol mission state; README/packaging identify the Three vendor MIT grant, but no applicable explicit license for the original game code was established in the complete pinned tree, README or package. Vendor permission does not automatically license the surrounding authored game.",
+      "next_action": "Locate an applicable original-game grant, then finish ordinary mission/result/dependency/media review before promotion. Do not call the readable distribution no-source merely because it is under dist, and do not present the walkthrough/project homepage as a confirmed live game or invoke its machine-facing tools.",
+      "evidence_urls": [
+        "https://github.com/eforus-overseer/iron-tide-submarine/blob/a04968f7f96a09b36c300c1569180b8b8820359c/README.md",
+        "https://github.com/eforus-overseer/iron-tide-submarine/blob/a04968f7f96a09b36c300c1569180b8b8820359c/package.json",
+        "https://github.com/eforus-overseer/iron-tide-submarine/blob/a04968f7f96a09b36c300c1569180b8b8820359c/dist/game.js",
+        "https://github.com/eforus-overseer/iron-tide-submarine/blob/a04968f7f96a09b36c300c1569180b8b8820359c/dist/index.html",
+        "https://github.com/eforus-overseer/iron-tide-submarine/blob/a04968f7f96a09b36c300c1569180b8b8820359c/dist/vendor/THREE-LICENSE.txt"
+      ]
     }
   ]
 }
