@@ -2859,6 +2859,110 @@
         "https://github.com/eforus-overseer/iron-tide-submarine/blob/a04968f7f96a09b36c300c1569180b8b8820359c/dist/index.html",
         "https://github.com/eforus-overseer/iron-tide-submarine/blob/a04968f7f96a09b36c300c1569180b8b8820359c/dist/vendor/THREE-LICENSE.txt"
       ]
+    },
+    {
+      "id": "run-away-boxy-run-identity",
+      "repository_url": "https://github.com/HarshCasper/Run-Away",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "3419e8f84cf0ff2ccf4ea95fa0f7b4c57b6678a8",
+      "reason": "Root MIT source includes a direct Three renderer and a real obstacle/score/collision-loss/down-arrow reload loop. However the code still names Boxy Run while README/UI rebrand it Run-Away, leaving canonical/derivative game identity and source/asset attribution unresolved. A generic README cube example is not substituted for the actual game source, and a copied/rebranded implementation is not counted as a separate new game without this check.",
+      "next_action": "Compare the canonical Boxy Run source and applicable attribution before counting a distinct game; investigate the primary repository surfaced in research (wanfungchui/Boxy-Run) in the next increment. Do not infer theft, a license violation or identical bytes from the retained name alone.",
+      "evidence_urls": [
+        "https://github.com/HarshCasper/Run-Away/blob/3419e8f84cf0ff2ccf4ea95fa0f7b4c57b6678a8/README.md",
+        "https://github.com/HarshCasper/Run-Away/blob/3419e8f84cf0ff2ccf4ea95fa0f7b4c57b6678a8/LICENSE",
+        "https://github.com/HarshCasper/Run-Away/blob/3419e8f84cf0ff2ccf4ea95fa0f7b4c57b6678a8/index.html",
+        "https://github.com/HarshCasper/Run-Away/blob/3419e8f84cf0ff2ccf4ea95fa0f7b4c57b6678a8/js/game.js#L20-L38",
+        "https://github.com/HarshCasper/Run-Away/blob/3419e8f84cf0ff2ccf4ea95fa0f7b4c57b6678a8/js/game.js#L237-L258"
+      ]
+    },
+    {
+      "id": "offroadjs-v2-restricted-asset-scope",
+      "repository_url": "https://github.com/tomo0613/offroadJS_v2",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "e2de2d54ed28eb5797138603025fe72591ced958",
+      "reason": "Root GPL-v3 and matching package declaration accompany direct Three, Cannon-es and actual checkpoint/finish code; React is an editor/modal UI helper. The vehicle-model notice separately permits personal/commercial game integration but restricts standalone asset copying/resale, including modified assets, and README identifies separately sourced music. This is a code-open game with restricted/unfinished media scope, not an ordinary all-open bundle or a noncommercial-game-only claim.",
+      "next_action": "Keep as a scoped restricted-media candidate until applicable vehicle/music redistribution terms and catalog category are established. Do not treat project GPL as relicensing all assets, confuse React DOM with R3F, invoke the editor/import/export, or claim the source/physics/finish was playtested.",
+      "evidence_urls": [
+        "https://github.com/tomo0613/offroadJS_v2/blob/e2de2d54ed28eb5797138603025fe72591ced958/README.md",
+        "https://github.com/tomo0613/offroadJS_v2/blob/e2de2d54ed28eb5797138603025fe72591ced958/LICENSE",
+        "https://github.com/tomo0613/offroadJS_v2/blob/e2de2d54ed28eb5797138603025fe72591ced958/package.json",
+        "https://github.com/tomo0613/offroadJS_v2/blob/e2de2d54ed28eb5797138603025fe72591ced958/assets/3D_objects/License.txt",
+        "https://github.com/tomo0613/offroadJS_v2/blob/e2de2d54ed28eb5797138603025fe72591ced958/src/main.ts",
+        "https://github.com/tomo0613/offroadJS_v2/blob/e2de2d54ed28eb5797138603025fe72591ced958/src/gameProgress/gameProgressManager.ts",
+        "https://github.com/tomo0613/offroadJS_v2/blob/e2de2d54ed28eb5797138603025fe72591ced958/src/gameProgress/checkpointHandler.ts",
+        "https://github.com/tomo0613/offroadJS_v2/blob/e2de2d54ed28eb5797138603025fe72591ced958/src/gameProgress/mapFinishedModal.tsx"
+      ]
+    },
+    {
+      "id": "timewar-license-declaration-consistency",
+      "repository_url": "https://github.com/jaanonim/TimeWar",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "8d42f3cb04a1ed2b9820442f200318b8a639ea08",
+      "reason": "Root LICENSE contains GPL version 3 while the root npm manifest declares ISC. Positive source evidence shows directly owned Three WebGLRenderer/camera, React DOM game mount, server turn/win logic and endGame UI handling; this is not an R3F exclusion. The code-license declaration and model/media scope remain unresolved rather than silently assigning one grant.",
+      "next_action": "Locate a consistent applicable code grant before promotion, then scope server/database, shaders/models and actual turn/result compatibility. Preserve the distinct client/root/server manifests and avoid using sessions, rooms, credentials, admin endpoints or deployment scripts.",
+      "evidence_urls": [
+        "https://github.com/jaanonim/TimeWar/blob/8d42f3cb04a1ed2b9820442f200318b8a639ea08/README.md",
+        "https://github.com/jaanonim/TimeWar/blob/8d42f3cb04a1ed2b9820442f200318b8a639ea08/LICENSE",
+        "https://github.com/jaanonim/TimeWar/blob/8d42f3cb04a1ed2b9820442f200318b8a639ea08/package.json",
+        "https://github.com/jaanonim/TimeWar/blob/8d42f3cb04a1ed2b9820442f200318b8a639ea08/client/package.json",
+        "https://github.com/jaanonim/TimeWar/blob/8d42f3cb04a1ed2b9820442f200318b8a639ea08/server/package.json",
+        "https://github.com/jaanonim/TimeWar/blob/8d42f3cb04a1ed2b9820442f200318b8a639ea08/client/src/scripts/classes/Camera.js#L90-L105",
+        "https://github.com/jaanonim/TimeWar/blob/8d42f3cb04a1ed2b9820442f200318b8a639ea08/client/src/components/GameScreen/GameScreen.jsx",
+        "https://github.com/jaanonim/TimeWar/blob/8d42f3cb04a1ed2b9820442f200318b8a639ea08/server/src/classes/Room.js#L110-L123",
+        "https://github.com/jaanonim/TimeWar/blob/8d42f3cb04a1ed2b9820442f200318b8a639ea08/client/src/scripts/Socket.js#L182-L194"
+      ]
+    },
+    {
+      "id": "qake-voxel-engine-gameplay-scope",
+      "repository_url": "https://github.com/Lallassu/Qake",
+      "status": "pending",
+      "checked_at": "2026-10-27",
+      "source_commit": "6c8da7a83b72870024473663c48d7516e218db80",
+      "reason": "README identifies a voxel-engine demo, and inspected source has direct Three rendering, player movement/destructible terrain and Die effects, including world-hit and debug-key paths. Die hides/explodes the mesh, while the inspected Spawn method is empty; no complete objective/score/result/replay progression was established. It remains a candidate instead of promoting an engine preview as a verified complete game.",
+      "next_action": "Locate a separately implemented normal game objective and result/recovery loop, then finish current-entry/model/library rights and maintenance review. Preserve positive rendering/interaction evidence without claiming it cannot run, that death is exclusively a debug path or that a named demo was actually played.",
+      "evidence_urls": [
+        "https://github.com/Lallassu/Qake/blob/6c8da7a83b72870024473663c48d7516e218db80/README.md",
+        "https://github.com/Lallassu/Qake/blob/6c8da7a83b72870024473663c48d7516e218db80/LICENSE",
+        "https://github.com/Lallassu/Qake/blob/6c8da7a83b72870024473663c48d7516e218db80/index.html",
+        "https://github.com/Lallassu/Qake/blob/6c8da7a83b72870024473663c48d7516e218db80/js/main.js",
+        "https://github.com/Lallassu/Qake/blob/6c8da7a83b72870024473663c48d7516e218db80/js/player.js#L715-L748",
+        "https://github.com/Lallassu/Qake/blob/6c8da7a83b72870024473663c48d7516e218db80/js/world.js"
+      ]
+    },
+    {
+      "id": "burgenvoelki-r3f-renderer",
+      "repository_url": "https://github.com/olivierluethy/Burgenvoelki",
+      "status": "excluded",
+      "checked_at": "2026-10-27",
+      "source_commit": "fb104233bab63b9cb406327a33ad69e817346ff7",
+      "reason": "Both inspected local GameScreen and online NetGameScreen construct their scene inside @react-three/fiber Canvas; the manifest/README also identify Drei and React Three Rapier. The MIT game/rule/network source is positive, but these rendering entries are outside direct-Three integration scope.",
+      "next_action": "Reconsider only a distinct implemented direct Three render core with normal game/result evidence. Do not exclude games solely for React DOM, Colyseus or physics, and do not claim this project lacks game rules or is flat 2D.",
+      "evidence_urls": [
+        "https://github.com/olivierluethy/Burgenvoelki/blob/fb104233bab63b9cb406327a33ad69e817346ff7/README.md",
+        "https://github.com/olivierluethy/Burgenvoelki/blob/fb104233bab63b9cb406327a33ad69e817346ff7/LICENSE",
+        "https://github.com/olivierluethy/Burgenvoelki/blob/fb104233bab63b9cb406327a33ad69e817346ff7/client/package.json",
+        "https://github.com/olivierluethy/Burgenvoelki/blob/fb104233bab63b9cb406327a33ad69e817346ff7/client/src/game/GameScreen.tsx",
+        "https://github.com/olivierluethy/Burgenvoelki/blob/fb104233bab63b9cb406327a33ad69e817346ff7/client/src/net/NetGameScreen.tsx"
+      ]
+    },
+    {
+      "id": "good-residence-r3f-renderer",
+      "repository_url": "https://github.com/georgewaraw/gr",
+      "status": "excluded",
+      "checked_at": "2026-10-27",
+      "source_commit": "b184b0afa6ed7b6e26eae72361215d807a11b112",
+      "reason": "Good Residence's actual index mounts Game, whose implementation uses @react-three/fiber Canvas, with R3F/Drei/postprocessing in the manifest. The MIT shooter has described point/ghost gameplay, but its scene rendering is outside the requested direct-Three core.",
+      "next_action": "Reconsider only a distinct implemented direct-renderer game entry and objective/result evidence. Preserve MIT source and gameplay claims without calling React DOM UI itself disallowed or claiming every model/media grant was audited.",
+      "evidence_urls": [
+        "https://github.com/georgewaraw/gr/blob/b184b0afa6ed7b6e26eae72361215d807a11b112/README.md",
+        "https://github.com/georgewaraw/gr/blob/b184b0afa6ed7b6e26eae72361215d807a11b112/LICENSE",
+        "https://github.com/georgewaraw/gr/blob/b184b0afa6ed7b6e26eae72361215d807a11b112/package.json",
+        "https://github.com/georgewaraw/gr/blob/b184b0afa6ed7b6e26eae72361215d807a11b112/src/index.jsx",
+        "https://github.com/georgewaraw/gr/blob/b184b0afa6ed7b6e26eae72361215d807a11b112/src/Game.jsx"
+      ]
     }
   ]
 }
