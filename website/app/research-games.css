@@ -1,0 +1,9 @@
+#game-examples {
+  scroll-margin-top: 100px;
+}
+.example-card .example-image {
+  aspect-ratio: 16 / 9;
+}
+.example-card .example-links {
+  flex-wrap: wrap;
+}
