@@ -1,101 +1,135 @@
-import { useEffect } from "react";
-import { FINE_POINTER_MOTION, clamp, matches, watchMedia } from "../../lib/motion";
+import { useEffect, useRef, useSyncExternalStore } from "react";
+import { useLocation } from "react-router";
+import { ArrowUpRight, Code, Download, Play } from "lucide-react";
+import {
+  FINE_POINTER_MOTION,
+  matches,
+  useReducedMotion,
+  watchMedia,
+} from "../../lib/motion";
+import { useSiteI18n } from "../../lib/i18n";
+import { startPageFx, startPointerFx, type CursorLabels } from "../fx/engine";
 
-/** Surfaces that receive the pointer-tracked glow. Markup is never changed:
- *  only CSS custom properties are written to the hovered element's inline style. */
-const GLOW_SELECTOR = [
-  ".example-card",
-  ".resource-tile",
-  ".testing-card",
-  ".content-card",
-  ".catalog-game-card",
-  ".catalog-paper-row",
-  ".path-card",
-  ".demo-card",
-  ".category-tile",
-  ".docs-start",
-  ".docs-home-task",
-  ".hero-spotlight",
-].join(",");
-const PROPERTIES = ["--mx", "--my", "--tilt-x", "--tilt-y"] as const;
-const MAX_TILT = 3;
+const subscribeFinePointer = (callback: () => void) =>
+  watchMedia(FINE_POINTER_MOTION, callback);
+/** False in static HTML and during hydration; the client upgrades afterwards. */
+function useFinePointerMotion() {
+  return useSyncExternalStore(
+    subscribeFinePointer,
+    () => matches(FINE_POINTER_MOTION),
+    () => false,
+  );
+}
 
+/** Restarts the finite, time-based CSS animations around a page title. */
+function replayEntrance(title: Element) {
+  const scope =
+    title.closest("header, section") ?? title.parentElement ?? title;
+  for (const animation of scope.getAnimations({ subtree: true })) {
+    if (
+      !(animation instanceof CSSAnimation) ||
+      animation.timeline !== document.timeline ||
+      animation.effect?.getComputedTiming().iterations === Infinity
+    )
+      continue;
+    animation.currentTime = 0;
+    animation.play();
+  }
+}
+
+/** Site-wide signature motion: the card glow, cursor ring and label pill,
+ *  magnetic controls, ambient light, view-transition origin and page entrance
+ *  replays. Every node here is decorative, client-only (nothing is rendered
+ *  into static HTML or under reduced motion) and ignores pointer events. */
 export function CosmosEffects() {
-  useEffect(() => {
-    let active: HTMLElement | null = null;
-    let rect: DOMRect | null = null;
-    let pending: PointerEvent | null = null;
-    let frame = 0;
-    let attached = false;
+  const reduced = useReducedMotion();
+  const fine = useFinePointerMotion();
+  const { t } = useSiteI18n();
+  const { pathname } = useLocation();
+  const labels = useRef<CursorLabels>({
+    play: "Play",
+    code: "Code",
+    visit: "Visit",
+    download: "Download",
+    open: "Open",
+  });
+  const ring = useRef<HTMLDivElement>(null);
+  const pill = useRef<HTMLDivElement>(null);
+  const pillLabel = useRef<HTMLSpanElement>(null);
+  const ambient = useRef<HTMLDivElement>(null);
+  const warm = useRef<HTMLSpanElement>(null);
+  const cool = useRef<HTMLSpanElement>(null);
+  const previousPath = useRef<string | null>(null);
+  const previousTitle = useRef<Element | null>(null);
 
-    const release = () => {
-      if (active) for (const name of PROPERTIES) active.style.removeProperty(name);
-      active = null;
-      rect = null;
+  useEffect(() => {
+    labels.current = {
+      play: t("Play"),
+      code: t("Code"),
+      visit: t("Visit"),
+      download: t("Download"),
+      open: t("Open"),
     };
-    const paint = () => {
-      frame = 0;
-      const event = pending;
-      pending = null;
-      if (!event) return;
-      const target =
-        event.target instanceof Element
-          ? event.target.closest<HTMLElement>(GLOW_SELECTOR)
-          : null;
-      if (target !== active) {
-        release();
-        active = target;
-      }
-      if (!active) return;
-      rect ??= active.getBoundingClientRect();
-      if (!rect.width || !rect.height) return;
-      const x = clamp((event.clientX - rect.left) / rect.width, 0, 1);
-      const y = clamp((event.clientY - rect.top) / rect.height, 0, 1);
-      active.style.setProperty("--mx", `${(x * 100).toFixed(1)}%`);
-      active.style.setProperty("--my", `${(y * 100).toFixed(1)}%`);
-      active.style.setProperty("--tilt-x", `${((x - 0.5) * 2 * MAX_TILT).toFixed(2)}deg`);
-      active.style.setProperty("--tilt-y", `${((0.5 - y) * 2 * MAX_TILT).toFixed(2)}deg`);
+  });
+
+  useEffect(() => {
+    if (reduced) return;
+    return startPageFx();
+  }, [reduced]);
+
+  useEffect(() => {
+    if (!fine) return;
+    const nodes = {
+      ring: ring.current,
+      pill: pill.current,
+      pillLabel: pillLabel.current,
+      ambient: ambient.current,
+      warm: warm.current,
+      cool: cool.current,
     };
-    const onMove = (event: PointerEvent) => {
-      if (event.pointerType !== "mouse") return;
-      pending = event;
-      if (!frame) frame = requestAnimationFrame(paint);
-    };
-    const onScroll = () => {
-      rect = null;
-    };
-    const onLeave = () => {
-      pending = null;
-      release();
-    };
-    const attach = () => {
-      if (attached) return;
-      attached = true;
-      document.addEventListener("pointermove", onMove, { passive: true });
-      document.documentElement.addEventListener("pointerleave", onLeave);
-      window.addEventListener("scroll", onScroll, { passive: true, capture: true });
-      window.addEventListener("resize", onScroll, { passive: true });
-      window.addEventListener("blur", onLeave);
-    };
-    const detach = () => {
-      if (!attached) return;
-      attached = false;
-      document.removeEventListener("pointermove", onMove);
-      document.documentElement.removeEventListener("pointerleave", onLeave);
-      window.removeEventListener("scroll", onScroll, { capture: true });
-      window.removeEventListener("resize", onScroll);
-      window.removeEventListener("blur", onLeave);
-      if (frame) cancelAnimationFrame(frame);
-      frame = 0;
-      onLeave();
-    };
-    const sync = () => (matches(FINE_POINTER_MOTION) ? attach() : detach());
-    sync();
-    const unwatch = watchMedia(FINE_POINTER_MOTION, sync);
-    return () => {
-      unwatch();
-      detach();
-    };
-  }, []);
-  return null;
+    if (Object.values(nodes).some((node) => !node)) return;
+    return startPointerFx(
+      nodes as { [K in keyof typeof nodes]: NonNullable<(typeof nodes)[K]> },
+      () => labels.current,
+    );
+  }, [fine]);
+
+  // Entrances are CSS animations that run when a page's hero is inserted. A
+  // route that reuses its hero element (same template, new path) replays them
+  // here, whichever stylesheet defined them. The document load never replays.
+  useEffect(() => {
+    const title = document.querySelector("main h1, #nd-page h1");
+    const previous = previousPath.current,
+      reused = title !== null && title === previousTitle.current;
+    previousPath.current = pathname;
+    previousTitle.current = title;
+    if (reduced || !reused || previous === null || previous === pathname)
+      return;
+    replayEntrance(title);
+  }, [pathname, reduced]);
+
+  if (reduced) return null;
+  return (
+    <>
+      <div className="fx-portal" aria-hidden="true" />
+      {fine && (
+        <>
+          <div className="fx-ambient" ref={ambient} aria-hidden="true">
+            <span className="fx-ambient-warm" ref={warm} />
+            <span className="fx-ambient-cool" ref={cool} />
+          </div>
+          <div className="fx-cursor" ref={ring} aria-hidden="true" />
+          <div className="fx-cursor-pill" ref={pill} aria-hidden="true">
+            <span className="fx-cursor-pill-inner">
+              <Play className="fx-icon-play" size={11} fill="currentColor" />
+              <Code className="fx-icon-code" size={13} />
+              <ArrowUpRight className="fx-icon-visit fx-icon-open" size={13} />
+              <Download className="fx-icon-download" size={13} />
+              <span ref={pillLabel} />
+            </span>
+          </div>
+        </>
+      )}
+    </>
+  );
 }

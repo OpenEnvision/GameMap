@@ -1,0 +1,629 @@
+/* ==========================================================================
+   Signature interactions ("fx"). Loaded after motion.css.
+   - Static by default: the client-only nodes rendered by
+     components/cosmos/effects.tsx (cursor, pill, ambient light) and the
+     first-visit intro are display:none here and appear only inside the
+     motion queries below. Under prefers-reduced-motion: reduce nothing in this
+     file renders or moves.
+   - Pointer-following layers also need a fine, hovering pointer.
+   - Decoration never takes pointer events and never widens the page.
+   - Generic selectors are wrapped in :where() so any template rule wins.
+   Opt-in hooks for templates (no JavaScript needed on their side):
+     data-magnetic          the control leans toward the pointer
+     data-cursor-label="…"  the cursor becomes a pill with this (translated) label
+     data-cursor="hide"     the cursor ring hides over this element
+   ========================================================================== */
+
+@property --fx-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@property --fx-count {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
+:root {
+  --fx-light-warm: rgb(223 31 38 / 0.11);
+  --fx-light-cool: rgb(255 255 255 / 0.7);
+  --fx-sheen-a: rgb(223 31 38 / 0.85);
+  --fx-sheen-b: rgb(5 5 5 / 0.4);
+  --fx-title-mask: linear-gradient(to bottom, #000 40%, transparent 60%);
+  /* The two reds of public/brand/gamemap-mark.svg. */
+  --fx-mark: #e53a32;
+  --fx-mark-shade: #9e1218;
+}
+.dark {
+  --fx-light-warm: rgb(223 31 38 / 0.15);
+  --fx-light-cool: rgb(255 255 255 / 0.05);
+  --fx-sheen-a: rgb(240 74 58 / 0.95);
+  --fx-sheen-b: rgb(255 255 255 / 0.7);
+}
+
+.fx-cursor,
+.fx-cursor-pill,
+.fx-ambient,
+.fx-intro {
+  display: none;
+}
+
+/* --- 1. Cursor ring, label pill and ambient light ------------------------ */
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  /* The ring blends with whatever is beneath it, so it reads on both themes
+     and on imagery. engine.ts moves it with transform; CSS only morphs it. */
+  .fx-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2147483600;
+    display: block;
+    width: 44px;
+    height: 44px;
+    margin: -22px 0 0 -22px;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    opacity: 0;
+    contain: strict;
+    will-change: transform;
+    transition: opacity 260ms var(--ease-out);
+  }
+  .fx-cursor::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid #ffffff;
+    border-radius: 50%;
+    scale: 0.6;
+    transition:
+      scale 560ms var(--ease-expo),
+      background-color 320ms var(--ease-out),
+      opacity 220ms var(--ease-out);
+  }
+  .fx-cursor[data-visible] {
+    opacity: 1;
+  }
+  .fx-cursor[data-mode="link"]::before {
+    scale: 1.12;
+    background-color: rgb(255 255 255 / 0.14);
+  }
+  .fx-cursor[data-mode="media"]::before {
+    scale: 0.25;
+    opacity: 0;
+  }
+  .fx-cursor[data-mode="hidden"] {
+    opacity: 0;
+  }
+  .fx-cursor[data-pressed]::before {
+    scale: 0.42;
+    transition-duration: 160ms;
+  }
+  .fx-cursor[data-mode="link"][data-pressed]::before {
+    scale: 0.86;
+  }
+
+  .fx-cursor-pill {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2147483601;
+    display: block;
+    pointer-events: none;
+    will-change: transform;
+  }
+  .fx-cursor-pill-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 32px;
+    padding: 0 14px 0 11px;
+    border-radius: var(--radius-pill);
+    color: var(--on-action);
+    background: var(--action);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.28),
+      0 14px 34px -10px var(--glow-accent);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transform-origin: 0 0;
+    scale: 0.3;
+    opacity: 0;
+    transition:
+      scale 460ms var(--ease-expo),
+      opacity 200ms var(--ease-out);
+  }
+  html[lang="zh-CN"] .fx-cursor-pill-inner {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+  .fx-cursor-pill[data-side="left"] .fx-cursor-pill-inner {
+    transform-origin: 100% 0;
+  }
+  .fx-cursor-pill[data-on] .fx-cursor-pill-inner {
+    scale: 1;
+    opacity: 1;
+  }
+  .fx-cursor-pill svg {
+    display: none;
+  }
+  .fx-cursor-pill[data-icon="play"] .fx-icon-play,
+  .fx-cursor-pill[data-icon="code"] .fx-icon-code,
+  .fx-cursor-pill[data-icon="visit"] .fx-icon-visit,
+  .fx-cursor-pill[data-icon="open"] .fx-icon-open,
+  .fx-cursor-pill[data-icon="download"] .fx-icon-download {
+    display: block;
+  }
+
+  /* Two soft lights behind the content: a warm one trails the pointer and a
+     cool one drifts the opposite way. Paint containment keeps them inside
+     the viewport. */
+  .fx-ambient {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    display: block;
+    overflow: hidden;
+    pointer-events: none;
+    contain: strict;
+    opacity: 0;
+    transition: opacity 1400ms var(--ease-out);
+  }
+  .fx-ambient[data-visible] {
+    opacity: 1;
+  }
+  .fx-ambient span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    will-change: transform;
+  }
+  .fx-ambient-warm {
+    width: 1100px;
+    height: 1100px;
+    margin: -550px 0 0 -550px;
+    background: radial-gradient(
+      closest-side,
+      var(--fx-light-warm),
+      color-mix(in srgb, var(--fx-light-warm) 35%, transparent) 55%,
+      transparent
+    );
+  }
+  .fx-ambient-cool {
+    width: 900px;
+    height: 900px;
+    margin: -450px 0 0 -450px;
+    background: radial-gradient(
+      closest-side,
+      var(--fx-light-cool),
+      transparent
+    );
+  }
+
+  /* --- 2. Magnetic controls: engine.ts writes --fx-mx/--fx-my while the
+     pointer is over one; the individual translate property composes with
+     any transform the templates use. */
+  :is(
+    .button-primary,
+    .community-submit-link,
+    .nav-pillar > summary,
+    .global-search,
+    [data-magnetic]
+  )[data-fx-magnet] {
+    translate: var(--fx-mx, 0px) var(--fx-my, 0px);
+    transition:
+      color var(--dur-fast) ease,
+      background-color var(--dur-fast) ease,
+      border-color var(--dur-fast) ease,
+      box-shadow var(--dur-base) var(--ease-out),
+      translate 620ms var(--ease-expo);
+  }
+}
+
+/* --- 3. Page entrance: the title rises through a soft mask, then whatever
+   sits beside it (kicker before, lede and actions after) lifts in. Pure CSS
+   that always ends visible. Zero specificity: a template's own entrance wins.
+   effects.tsx replays entrances when a route reuses its hero element. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fx-title {
+    from {
+      translate: 0 0.3em;
+      -webkit-mask-image: var(--fx-title-mask);
+      mask-image: var(--fx-title-mask);
+      -webkit-mask-size: 100% 300%;
+      mask-size: 100% 300%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: 0 100%;
+      mask-position: 0 100%;
+    }
+    to {
+      translate: 0 0;
+      -webkit-mask-image: var(--fx-title-mask);
+      mask-image: var(--fx-title-mask);
+      -webkit-mask-size: 100% 300%;
+      mask-size: 100% 300%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: 0 0;
+      mask-position: 0 0;
+    }
+  }
+  @keyframes fx-lift {
+    from {
+      opacity: 0;
+      translate: 0 22px;
+    }
+  }
+  :where(main, #nd-page) :where(h1) {
+    animation: fx-title 1200ms var(--ease-expo) 120ms backwards;
+  }
+  :where(main, #nd-page)
+    :where(
+      :is(.kicker, .eyebrow, .small-label, .chip, nav, span, small, p):has(
+        + h1
+      ),
+      h1 + *,
+      h1 + * + *,
+      h1 + * + * + *
+    ) {
+    animation: fx-lift 950ms var(--ease-expo) backwards;
+  }
+  :where(main, #nd-page) :where(:has(+ h1)) {
+    animation-delay: 30ms;
+  }
+  :where(main, #nd-page) :where(h1 + *) {
+    animation-delay: 320ms;
+  }
+  :where(main, #nd-page) :where(h1 + * + *) {
+    animation-delay: 400ms;
+  }
+  :where(main, #nd-page) :where(h1 + * + * + *) {
+    animation-delay: 480ms;
+  }
+  /* While the first-visit intro plays, the entrance waits for the curtain. */
+  html:not([data-fx-intro="off"]) :where(main, #nd-page) h1 {
+    animation-delay: 1000ms;
+  }
+  html:not([data-fx-intro="off"]) :where(main, #nd-page) :where(:has(+ h1)) {
+    animation-delay: 940ms;
+  }
+  html:not([data-fx-intro="off"]) :where(main, #nd-page) :where(h1 + *) {
+    animation-delay: 1180ms;
+  }
+  html:not([data-fx-intro="off"]) :where(main, #nd-page) :where(h1 + * + *) {
+    animation-delay: 1260ms;
+  }
+  html:not([data-fx-intro="off"])
+    :where(main, #nd-page)
+    :where(h1 + * + * + *) {
+    animation-delay: 1340ms;
+  }
+}
+
+/* --- 4. Navigation pill: an orbiting sheen on the rim (brighter on hover),
+   a reading-progress line along its base and a flourish on the mark. ------ */
+@media (prefers-reduced-motion: no-preference) {
+  .nav-pill::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    padding: 1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: conic-gradient(
+      from var(--fx-angle),
+      transparent 0turn,
+      var(--fx-sheen-a) 0.07turn,
+      transparent 0.2turn,
+      transparent 0.5turn,
+      var(--fx-sheen-b) 0.57turn,
+      transparent 0.7turn
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box exclude,
+      linear-gradient(#000 0 0);
+    opacity: 0.4;
+    transition: opacity 700ms var(--ease-out);
+    animation: fx-orbit 10s linear infinite;
+  }
+  .nav-pill:hover::before,
+  .nav-pill:focus-within::before {
+    opacity: 1;
+  }
+  @keyframes fx-orbit {
+    to {
+      --fx-angle: 1turn;
+    }
+  }
+
+  @supports (animation-timeline: scroll()) {
+    .nav-pill::after {
+      content: "";
+      position: absolute;
+      left: 32px;
+      right: 32px;
+      bottom: -1px;
+      height: 1px;
+      pointer-events: none;
+      background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--accent) 0%, transparent),
+        var(--accent) 85%,
+        var(--fx-sheen-b)
+      );
+      box-shadow: 0 0 10px var(--glow-accent);
+      transform-origin: 0 50%;
+      scale: 0 1;
+      animation: fx-progress linear both;
+      animation-timeline: scroll(root block);
+    }
+    @keyframes fx-progress {
+      to {
+        scale: 1 1;
+      }
+    }
+  }
+
+  .nav-brand {
+    position: relative;
+  }
+  .nav-brand::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -6px;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .nav-brand:hover::after {
+    animation: fx-halo 900ms var(--ease-out) both;
+  }
+  .nav-brand:hover .atlas-brand img {
+    animation: fx-mark-spin 1100ms var(--ease-expo) both;
+  }
+  @keyframes fx-halo {
+    from {
+      opacity: 0.9;
+      scale: 0.55;
+    }
+    to {
+      opacity: 0;
+      scale: 1.7;
+    }
+  }
+  @keyframes fx-mark-spin {
+    0% {
+      rotate: 0deg;
+      scale: 1;
+    }
+    20% {
+      rotate: -16deg;
+      scale: 0.88;
+    }
+    100% {
+      rotate: 1turn;
+      scale: 1;
+    }
+  }
+}
+
+/* --- 5. First-visit intro (components/fx/intro.tsx): the mark assembles,
+   the wordmark wipes in, a counter runs to 100 and the curtain lifts. The
+   whole sequence and the removal are CSS, so it can never block a visitor;
+   a head script marks later visits in the session with data-fx-intro="off". */
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-fx-intro="off"]) .fx-intro {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483000;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        ellipse 50% 42% at 50% 50%,
+        var(--nebula-a),
+        transparent 72%
+      ),
+      var(--paper);
+    animation: fx-intro-lift 640ms var(--fx-vt-ease) 900ms forwards;
+  }
+  @keyframes fx-intro-lift {
+    from {
+      clip-path: inset(0 0 0 0);
+    }
+    to {
+      clip-path: inset(0 0 100% 0);
+      visibility: hidden;
+    }
+  }
+  .fx-intro-stage {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 1.6vw, 22px);
+    animation: fx-intro-stage 640ms var(--fx-vt-ease) 900ms forwards;
+  }
+  @keyframes fx-intro-stage {
+    to {
+      opacity: 0;
+      translate: 0 -48px;
+    }
+  }
+  .fx-intro-mark {
+    width: clamp(50px, 6vw, 72px);
+    height: auto;
+    overflow: visible;
+  }
+  .fx-intro-trace {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.2;
+    stroke-linejoin: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation:
+      fx-intro-draw 560ms var(--ease-in-out) 40ms forwards,
+      fx-intro-fade 300ms ease 560ms forwards;
+  }
+  @keyframes fx-intro-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes fx-intro-fade {
+    to {
+      opacity: 0;
+    }
+  }
+  .fx-intro-body {
+    fill: var(--fx-mark);
+    clip-path: inset(100% 0 0 0);
+    animation: fx-intro-fill 460ms var(--ease-expo) 330ms forwards;
+  }
+  @keyframes fx-intro-fill {
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+  .fx-intro-face {
+    fill: var(--fx-mark-shade);
+    opacity: 0;
+    translate: -6px 0;
+    animation: fx-intro-face 520ms var(--ease-expo) 430ms forwards;
+  }
+  @keyframes fx-intro-face {
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  .fx-intro-dot {
+    fill: var(--fx-mark);
+    transform-box: fill-box;
+    transform-origin: center;
+    scale: 0;
+    rotate: -120deg;
+    animation: fx-intro-dot 640ms cubic-bezier(0.34, 1.56, 0.64, 1) 480ms
+      forwards;
+  }
+  @keyframes fx-intro-dot {
+    to {
+      scale: 1;
+      rotate: 0deg;
+    }
+  }
+  .fx-intro-word {
+    display: inline-flex;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: clamp(34px, 4.6vw, 60px);
+    font-weight: 650;
+    letter-spacing: -0.045em;
+    line-height: 1;
+  }
+  .fx-intro-word > span {
+    display: inline-block;
+    clip-path: inset(0 100% 0 0);
+    translate: 0 0.22em;
+    animation: fx-intro-word 680ms var(--ease-expo) 220ms forwards;
+  }
+  .fx-intro-word > .fx-intro-accent {
+    color: var(--accent);
+    animation-delay: 340ms;
+  }
+  @keyframes fx-intro-word {
+    to {
+      clip-path: inset(-20% -10% -25% 0);
+      translate: 0 0;
+    }
+  }
+  .fx-intro-meter {
+    position: absolute;
+    right: var(--gutter);
+    bottom: clamp(28px, 6vh, 56px);
+    left: var(--gutter);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    animation: fx-intro-fade 300ms ease 900ms forwards;
+  }
+  .fx-intro-count {
+    order: 2;
+    min-width: 4ch;
+    text-align: right;
+  }
+  .fx-intro-count::before {
+    counter-reset: fx-n var(--fx-count);
+    content: counter(fx-n, decimal-leading-zero);
+    animation: fx-intro-count 860ms cubic-bezier(0.45, 0, 0.2, 1) forwards;
+  }
+  @keyframes fx-intro-count {
+    to {
+      --fx-count: 100;
+    }
+  }
+  .fx-intro-bar {
+    position: relative;
+    flex: 1;
+    height: 1px;
+    overflow: hidden;
+    background: var(--line-strong);
+  }
+  .fx-intro-bar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform-origin: 0 50%;
+    scale: 0 1;
+    animation: fx-intro-bar 860ms cubic-bezier(0.45, 0, 0.2, 1) forwards;
+  }
+  @keyframes fx-intro-bar {
+    to {
+      scale: 1 1;
+    }
+  }
+}
+
+/* --- 6. Fallbacks. --------------------------------------------------------- */
+@media (forced-colors: active) {
+  .fx-cursor,
+  .fx-cursor-pill,
+  .fx-ambient,
+  .nav-pill::before,
+  .nav-pill::after,
+  .nav-brand::after {
+    display: none;
+  }
+}
+@media print {
+  .fx-cursor,
+  .fx-cursor-pill,
+  .fx-ambient,
+  .fx-portal,
+  .fx-intro {
+    display: none !important;
+  }
+}

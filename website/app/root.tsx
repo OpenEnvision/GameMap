@@ -32,7 +32,9 @@ import "./styles/collections.css";
 import "./styles/detail.css";
 import "./styles/docs.css";
 import "./styles/motion.css";
+import "./styles/fx.css";
 import { CosmosEffects } from "./components/cosmos/effects";
+import { FX_INTRO_SCRIPT, FxIntro } from "./components/fx/intro";
 import { CommunityProvider } from "./lib/community";
 import { useHydrated } from "./lib/client-query";
 // The root loader only supplies the immutable document-language manifest.
@@ -89,7 +91,8 @@ export function Layout({ children }: { children: ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#05070f" />
+        <meta name="theme-color" content="#050505" />
+        <script dangerouslySetInnerHTML={{ __html: FX_INTRO_SCRIPT }} />
         <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
         <Meta />
         {canonical && <link rel="canonical" href={absolute(canonical)} />}
@@ -145,6 +148,7 @@ export default function App() {
         data-client-ready={hydrated}
       >
         <CosmosEffects />
+        <FxIntro />
         {!docs && <SiteHeader />}
         <Outlet />
         {!docs && <SiteFooter />}

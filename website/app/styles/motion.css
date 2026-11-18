@@ -5,27 +5,107 @@
    stylesheet, inside the same media query.
    ========================================================================== */
 
+/* Registered so the rim of the page transition can animate as a length. */
+@property --fx-ring {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+:root {
+  --fx-vt-dur: 900ms;
+  --fx-vt-ease: cubic-bezier(0.76, 0, 0.24, 1);
+  --fx-rim-core: rgb(184 15 22 / 0.9);
+  --fx-rim-glow: rgb(223 31 38 / 0.36);
+  --fx-rim-cool: rgb(5 5 5 / 0.12);
+}
+.dark {
+  --fx-rim-core: rgb(255 240 238 / 0.95);
+  --fx-rim-glow: rgb(223 31 38 / 0.55);
+  --fx-rim-cool: rgb(255 255 255 / 0.2);
+}
+/* Client-only node (components/cosmos/effects.tsx) that carries the rim. */
+.fx-portal {
+  display: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  /* Page-to-page transitions (React Router viewTransition links). */
-  @keyframes gm-page-out {
-    to {
-      opacity: 0;
-      transform: translateY(-10px) scale(0.995);
-      filter: blur(6px);
-    }
-  }
-  @keyframes gm-page-in {
-    from {
-      opacity: 0;
-      transform: translateY(18px);
-      filter: blur(6px);
-    }
+  /* Page-to-page transitions (React Router viewTransition links): the new
+     page opens as a circle from the point the visitor clicked, its rim lit in
+     the brand colours, while the old page recedes into the dark. The click
+     listener in components/fx/engine.ts writes --fx-vt-x/--fx-vt-y/--fx-vt-r
+     on <html>; the view-transition pseudo-elements inherit them from :root.
+     Without a recorded click the circle opens from the centre. */
+  ::view-transition {
+    background: var(--paper);
   }
   ::view-transition-old(root) {
-    animation: gm-page-out 260ms var(--ease-in-out) both;
+    animation: gm-page-recede var(--fx-vt-dur) var(--fx-vt-ease) both;
+    transform-origin: var(--fx-vt-x, 50%) var(--fx-vt-y, 50%);
+    mix-blend-mode: normal;
   }
   ::view-transition-new(root) {
-    animation: gm-page-in 560ms var(--ease-expo) both;
+    animation: gm-page-reveal var(--fx-vt-dur) var(--fx-vt-ease) both;
+    mix-blend-mode: normal;
+  }
+  @keyframes gm-page-recede {
+    to {
+      opacity: 0.2;
+      transform: scale(0.94);
+      filter: blur(4px);
+    }
+  }
+  @keyframes gm-page-reveal {
+    from {
+      clip-path: circle(0px at var(--fx-vt-x, 50%) var(--fx-vt-y, 50%));
+    }
+    to {
+      clip-path: circle(
+        var(--fx-vt-r, 75vmax) at var(--fx-vt-x, 50%) var(--fx-vt-y, 50%)
+      );
+    }
+  }
+  /* The rim: an empty fixed layer whose transition group paints a glowing
+     ring that grows in step with the circle, above both pages and below the
+     header. */
+  .fx-portal {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: block;
+    pointer-events: none;
+    contain: strict;
+    view-transition-name: fx-portal;
+  }
+  ::view-transition-group(fx-portal) {
+    animation: gm-page-rim var(--fx-vt-dur) var(--fx-vt-ease) both;
+    background: radial-gradient(
+      circle at var(--fx-vt-x, 50%) var(--fx-vt-y, 50%),
+      transparent calc(var(--fx-ring) - 120px),
+      color-mix(in srgb, var(--fx-rim-glow) 40%, transparent)
+        calc(var(--fx-ring) - 28px),
+      var(--fx-rim-core) calc(var(--fx-ring) - 0.75px),
+      var(--fx-rim-glow) calc(var(--fx-ring) + 1.5px),
+      var(--fx-rim-cool) calc(var(--fx-ring) + 30px),
+      transparent calc(var(--fx-ring) + 140px)
+    );
+  }
+  ::view-transition-old(fx-portal),
+  ::view-transition-new(fx-portal) {
+    animation: none;
+    opacity: 0;
+  }
+  @keyframes gm-page-rim {
+    0% {
+      --fx-ring: 0px;
+      opacity: 1;
+    }
+    78% {
+      opacity: 1;
+    }
+    100% {
+      --fx-ring: var(--fx-vt-r, 75vmax);
+      opacity: 0;
+    }
   }
   /* The header stays put while pages change beneath it. */
   .site-header {
@@ -106,8 +186,9 @@
       box-shadow var(--dur-base) var(--ease-out),
       translate var(--dur-base) var(--ease-out);
   }
-  .button-primary:hover,
-  .site-header .community-submit-link:hover {
+  /* A magnetised control (fx.css) follows the pointer instead. */
+  .button-primary:hover:not([data-fx-magnet]),
+  .site-header .community-submit-link:hover:not([data-fx-magnet]) {
     translate: 0 -1px;
   }
   .button-primary::after {
