@@ -11,14 +11,16 @@ const ownsSource = (definition, source) =>
   definition.source === source || definition.legacySources?.includes(source);
 
 export function canonicalDocumentSource(source) {
-  return Object.values(documentGenerators).find((definition) =>
-    ownsSource(definition, source),
-  )?.source ?? source;
+  return (
+    Object.values(documentGenerators).find((definition) =>
+      ownsSource(definition, source),
+    )?.source ?? source
+  );
 }
 
 export function documentOrigin(source) {
-  const generator = Object.entries(documentGenerators).find(
-    ([, definition]) => ownsSource(definition, source),
+  const generator = Object.entries(documentGenerators).find(([, definition]) =>
+    ownsSource(definition, source),
   );
   return generator
     ? { sourceMode: "generated", generatorKey: generator[0] }

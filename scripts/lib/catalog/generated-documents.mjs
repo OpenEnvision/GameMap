@@ -59,7 +59,8 @@ export function renderGeneratedDocuments(input) {
   // JSONB and canonical package serialization reorder maps. Only arrays carry editorial order.
   const sources = JSON.parse(canonicalJSON(input));
   const renderers = {
-    "resource-catalog": (source) => renderAwesome(sources.resources, { source }),
+    "resource-catalog": (source) =>
+      renderAwesome(sources.resources, { source }),
     "game-builds": () =>
       renderLearningGuide(
         sources.learningPaths,
