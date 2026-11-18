@@ -136,7 +136,7 @@ test("retired archives stay absent while current guides retain full language nav
     "zh/docs/remote/asset-selection-feedback/",
   ])
     expect((await request.get(path)).status()).toBe(404);
-  await page.goto("docs/zh/asset-selection-feedback/");
+  await page.goto("docs/zh/assets/selection/");
   await expect(page.locator("html")).toHaveAttribute("lang", "zh-CN");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "资产候选选择与视觉反馈创作",
@@ -152,7 +152,7 @@ test("retired archives stay absent while current guides retain full language nav
     .locator(".documentation-language")
     .getByRole("link", { name: "English", exact: true })
     .click();
-  await expect(page).toHaveURL(/\/docs\/asset-selection-feedback\/$/);
+  await expect(page).toHaveURL(/\/docs\/assets\/selection\/$/);
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
 });
 
@@ -215,11 +215,11 @@ test("formal articles have complete Chinese bodies and language switches preserv
 test("Chinese document references open their full Chinese counterparts", async ({
   page,
 }) => {
-  await page.goto("docs/zh/practical-guide/");
+  await page.goto("docs/zh/guides/practical-guide/");
   await page
-    .locator('#nd-page .prose a[href$="/docs/zh/world-model-notes/"]')
+    .locator('#nd-page .prose a[href$="/docs/zh/ecosystem/world-models/"]')
     .click();
-  await expect(page).toHaveURL(/\/docs\/zh\/world-model-notes\/$/);
+  await expect(page).toHaveURL(/\/docs\/zh\/ecosystem\/world-models\/$/);
   await expect(page.locator("#nd-page .prose")).toHaveAttribute(
     "lang",
     "zh-CN",
@@ -249,11 +249,11 @@ test("homepage navigation reaches Chinese documents without a separate content d
     .getByRole("link", { name: "中文", exact: true })
     .click();
   const source = page.locator(
-    '[data-content-ref="document:zh/practical-guide"]',
+    '[data-content-ref="document:zh/guides/practical-guide"]',
   );
   await expect(source).toHaveAttribute(
     "href",
-    /\/docs\/zh\/practical-guide\/$/,
+    /\/docs\/zh\/guides\/practical-guide\/$/,
   );
   await source.click();
   await expect(page.locator("html")).toHaveAttribute("lang", "zh-CN");
@@ -277,7 +277,7 @@ test("Chinese resources, paths and complete translated articles work without Jav
     await expect(
       page.locator('[data-content-field="deliverable"]').first(),
     ).toContainText("一页游戏简报");
-    await page.goto(baseURL + "docs/zh/agents-notes/");
+    await page.goto(baseURL + "docs/zh/ecosystem/agents/");
     await expect(page.locator("#nd-page .prose")).toHaveAttribute(
       "lang",
       "zh-CN",

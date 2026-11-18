@@ -200,7 +200,7 @@ test("documents render on the server and navigate without an API server", async 
   await page
     .getByRole("link", { name: "New here? Start with the practical guide." })
     .click();
-  await expect(page).toHaveURL(/docs\/practical-guide\/$/);
+  await expect(page).toHaveURL(/docs\/guides\/practical-guide\/$/);
   await expect(page.locator("#nd-page .prose")).toContainText(
     "Define the deliverable",
   );
@@ -297,7 +297,7 @@ test("Chinese documentation has localized navigation and an English counterpart"
     .locator(".documentation-language")
     .getByRole("link", { name: "English", exact: true })
     .click();
-  await expect(page).toHaveURL(/\/docs\/practical-guide\/$/);
+  await expect(page).toHaveURL(/\/docs\/guides\/practical-guide\/$/);
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
   await expect(page.locator("#nd-page .prose")).not.toContainText(
     "This page contains",
@@ -323,7 +323,7 @@ test("Chinese documentation remains readable without JavaScript", async ({
       page
         .locator(".documentation-language")
         .getByRole("link", { name: "English", exact: true }),
-    ).toHaveAttribute("href", /\/docs\/practical-guide\/$/);
+    ).toHaveAttribute("href", /\/docs\/guides\/practical-guide\/$/);
   } finally {
     await context.close();
   }

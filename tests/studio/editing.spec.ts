@@ -244,10 +244,14 @@ test("late initial catalog loading cannot override an active search page", async
     });
     // Wait for hydration on mobile instead of sampling a not-yet-mounted toggle.
     if (info.project.name === "mobile") await toggle.click();
-    await page.getByLabel("搜索内容", { exact: true }).fill("document:catalog");
+    await page
+      .getByLabel("搜索内容", { exact: true })
+      .fill("document:reference/catalog");
     release();
     await expect(
-      page.locator('.entry-button[data-entry-key="document:catalog"]'),
+      page.locator(
+        '.entry-button[data-entry-key="document:reference/catalog"]',
+      ),
     ).toHaveCount(1);
     await expect(page.locator(".pagination > span")).toHaveText("1 / 1");
   } finally {

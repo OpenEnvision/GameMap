@@ -164,7 +164,7 @@ test("static collections expose every record and canonical Chinese guides hydrat
     const page = await hydrated.newPage();
     const errors: string[] = [];
     page.on("pageerror", (error) => errors.push(error.message));
-    const response = await page.goto("docs/zh/practical-guide/");
+    const response = await page.goto("docs/zh/guides/practical-guide/");
     expect(response?.status()).toBe(200);
     await expect(page.locator(".reader-prose")).toHaveAttribute(
       "lang",

@@ -35,7 +35,7 @@ test("the full remote snapshot retains native collections and canonical guides",
     ).toBe(true);
   }
   await expect(
-    page.locator('[data-content-key="document:practical-guide"]'),
+    page.locator('[data-content-key="document:guides/practical-guide"]'),
   ).toBeVisible();
   expect(errors).toEqual([]);
 });
@@ -65,7 +65,7 @@ test("canonical guides remain usable without JavaScript while all remote archive
         )
         .first(),
     ).toBeVisible();
-    await page.goto("docs/zh/reading-guide/");
+    await page.goto("docs/zh/guides/reading-guide/");
     await expect(page.locator("div.prose[lang]")).toHaveAttribute(
       "lang",
       "zh-CN",
