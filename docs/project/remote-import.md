@@ -1,4 +1,6 @@
-# Additive remote candidates → local drafts
+# Remote import: from candidate packages to local drafts
+
+Import a reviewed package of remote candidates as local drafts. The importer never publishes or approves content and never contacts a remote service.
 
 `npm run remote:import -- --package /absolute/remote-package` is **offline dry-run by default**. It neither discovers Supabase credentials nor connects to a database. It accepts only the `gamemap.remote-candidates` v1 packet, checks every manifested source file's bytes/hash, rejects traversal/symlinks/duplicate identities, and compiles **all** candidates with the installed typed contracts and normalized catalog projection. Unsupported payload/attachment/translation envelopes fail closed, even for existing keys. Preserve the actual `0013_catalog_release_realm.sql`, then install the types lane's real `0014_catalog_extended_types.sql` before `0015_catalog_remote_import.sql`; do not invent a placeholder migration.
 

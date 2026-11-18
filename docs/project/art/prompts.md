@@ -1,4 +1,6 @@
-# GameMap editorial art prompts
+# Editorial art prompts
+
+The prompts and files behind GameMap's original editorial illustrations, kept so they can be reviewed or regenerated.
 
 Generated with the built-in `image_gen.imagegen` tool in default built-in mode on 2026-10-18. No API key or fallback CLI used. These are original **EDITORIAL ART / 原创概念插图**, not screenshots or demo outputs from any cited game, paper, engine or model. No creative postprocessing; `sips` was used only to encode the generated 1536 × 1024 PNGs to quality-92 JPEG for the website.
 

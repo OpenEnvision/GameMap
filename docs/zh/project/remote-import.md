@@ -1,4 +1,6 @@
-# 增量远程候选项 → 本地草稿
+# 远程导入：从候选包到本地草稿
+
+将经过审阅的远程候选包导入为本地草稿。导入器不会发布或批准内容，也不会连接任何远程服务。
 
 `npm run remote:import -- --package /absolute/remote-package`  **默认执行离线试运行** 。它既不查找 Supabase 凭据，也不连接数据库。它仅接受 `gamemap.remote-candidates` v1 数据包，检查清单中每个源文件的字节/哈希，拒绝路径穿越、符号链接和重复身份，并使用已安装的带类型契约及规范化目录投影编译 **所有** 候选项。不支持的载荷/附件/翻译封套按失败即关闭原则处理，即使是已有键也不例外。保留实际的 `0013_catalog_release_realm.sql`，然后先安装类型工作线真正的 `0014_catalog_extended_types.sql`，再安装 `0015_catalog_remote_import.sql`；不要编造占位迁移。
 

@@ -1,4 +1,6 @@
-# GameMap 设计系统
+# 设计系统（第一版）
+
+已由[第二版](../v2/design-system.md)取代。本页保留第一版视觉方向，仅供参考。
 
 内置 ImageGen 概念图：`map-concept.png` 和 `library-concept.png`。这些图用作设计参考；网站通过 SVG/CSS/React 绘制地图、线条插画、控件和文字。
 

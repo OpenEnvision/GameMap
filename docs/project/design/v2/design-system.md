@@ -1,4 +1,6 @@
-# GameMap / World Studio — visual specification
+# Design system, second edition: World Studio
+
+A design record of the second-edition visual direction. The stylesheets in `website/app/styles/` are the source of truth; where they differ from this page, the stylesheets win.
 
 Active references: overview-concept.png and library-concept.png, created with built-in ImageGen. These replace the first-edition visual direction. UI remains native React/CSS/SVG; original art and official project previews are separate assets.
 

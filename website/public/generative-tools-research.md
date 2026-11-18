@@ -1,3 +1,3 @@
-# Generative tools: additional source-reviewed research
+# Generative tools and services
 
-This document has moved to [Generative tools: additional source-reviewed research](./docs/assets/generative-tools.md).
+This document has moved to [Generative tools and services](./docs/assets/generative-tools.md).

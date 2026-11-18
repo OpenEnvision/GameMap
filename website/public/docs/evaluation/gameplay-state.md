@@ -1,4 +1,4 @@
-# Gameplay state, narrative checkpoints and durable effects
+# Gameplay state, narrative checkpoints, and durable effects
 
 Decide what must survive a save, checkpoint, replay, or retry. The interfaces below separate interpreter state, game-world state, database transactions, physics, and client observations so you can design recovery checks for each.
 

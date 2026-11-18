@@ -1,6 +1,6 @@
 # Community AI game case review
 
-Trace game cases back to creator build notes, playable releases, and source projects. Use the candidate records below for discovery, or open the [case guide](../tutorials-and-demos.md) to study a complete project.
+Trace game cases back to creator build notes, playable releases, and source projects. Use the candidate records below for discovery, or open [Game examples](../tutorials-and-demos.md) to study a complete project.
 
 ## Gemini CLI case addition
 

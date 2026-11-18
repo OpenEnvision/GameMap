@@ -264,7 +264,7 @@ test("documents remain readable without JavaScript", async ({
   const page = await context.newPage();
   await page.goto(baseURL + "docs/guides/practical-guide/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "From Resource Map to Runnable Game",
+    "From resource map to runnable game",
   );
   await expect(page.locator("#nd-page .prose")).toContainText(
     "Define the deliverable before choosing tools",

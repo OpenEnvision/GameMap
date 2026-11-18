@@ -1,4 +1,6 @@
-# GameMap / World Studio — 视觉规范
+# 设计系统（第二版）：World Studio
+
+第二版视觉方向的设计记录。网站样式以 `website/app/styles/` 中的样式表为准；与本页不一致时，以样式表为准。
 
 当前参考图：overview-concept.png 和 library-concept.png，使用内置 ImageGen 创建。它们取代第一版视觉方向。界面仍使用原生 React/CSS/SVG；原创插画和官方项目预览作为独立素材。
 

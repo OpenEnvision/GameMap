@@ -1,5 +1,7 @@
 # Staging preparation and release-readiness review
 
+Check what still blocks moving GameMap from local publication to a cloud staging environment.
+
 **Verdict: not ready for cloud staging publication or production cutover.** The local editorial, static-build, exact-artifact publication and process-crash drills are useful evidence, not cloud certification. The current public website remains Git-authored and anonymous; Studio is a separate authenticated editorial service.
 
 This review is limited to environment/deployment readiness. It is not a penetration test, an independent factual/licensing review, or permission to commit, push, create cloud resources or replace the current site.

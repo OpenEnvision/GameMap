@@ -1,4 +1,4 @@
-# Generation jobs, artifact delivery and asset acquisition
+# Generation jobs, artifact delivery, and asset acquisition
 
 Follow a generation request from submission through completion, download, and asset validation. Check provider-specific job states, failure responses, and artifact lifetimes before building an adapter. For usage rights, see [provider and model terms](api-terms.md).
 

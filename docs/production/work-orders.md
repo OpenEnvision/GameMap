@@ -1,4 +1,4 @@
-# Production work orders: artifacts, recovery and acceptance
+# Production work orders: artifacts, recovery, and acceptance
 
 Use these work-order templates to connect asset creation, import, build, testing, and delivery. Each template defines the inputs, expected artifacts, completion checks, failure handling, and evidence to collect when implementing it.
 

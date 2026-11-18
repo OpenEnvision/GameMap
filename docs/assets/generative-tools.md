@@ -1,4 +1,4 @@
-# Generative tools: additional source-reviewed research
+# Generative tools and services
 
 Compare generation services by their job lifecycle, downloadable outputs, integration requirements, and usage terms. For research and commercial use, also check the [provider and model terms](api-terms.md).
 

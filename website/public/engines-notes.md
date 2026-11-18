@@ -1,3 +1,3 @@
-# Engines, rendering libraries, and content tools: sources and scope
+# Engines, rendering libraries, and content tools
 
-This document has moved to [Engines, rendering libraries, and content tools: sources and scope](./docs/ecosystem/engines.md).
+This document has moved to [Engines, rendering libraries, and content tools](./docs/ecosystem/engines.md).

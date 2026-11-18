@@ -1,4 +1,4 @@
-# GameMap resource logo sources
+# Resource logo sources
 
 Find the organization, research affiliation, or maintainer behind each resource, along with the source of its bundled mark.
 

@@ -1,3 +1,3 @@
-# 2D / 3D Game Development AI: Research Notes
+# AI for 2D and 3D game development
 
-This document has moved to [2D / 3D Game Development AI: Research Notes](./docs/ecosystem/2d-3d-development.md).
+This document has moved to [AI for 2D and 3D game development](./docs/ecosystem/2d-3d-development.md).

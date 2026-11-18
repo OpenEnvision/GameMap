@@ -1,4 +1,4 @@
-# GameMap demo media sources
+# Demo media sources
 
 Homepage previews are excerpts from recordings published by the project authors. The credits below link each clip to its original source.
 

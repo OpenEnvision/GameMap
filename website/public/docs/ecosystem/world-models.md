@@ -1,4 +1,4 @@
-# Coding World Models: Categories, Selection, and Research Notes
+# World models: categories and selection
 
 Compare executable world models, action-conditioned video, and engine-driven rendering by the state they represent and the outputs they produce. Use the release notes below to find code, weights, and data for each approach.
 

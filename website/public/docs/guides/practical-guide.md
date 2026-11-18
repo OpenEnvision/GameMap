@@ -1,4 +1,4 @@
-# From Resource Map to Runnable Game
+# From resource map to runnable game
 
 Start with a small playable loop. Choose the target platform, set a concrete task for the agent, and check the result in the running game before expanding the project.
 

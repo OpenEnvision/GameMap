@@ -1,8 +1,8 @@
-# 2D / 3D Game Development AI: Research Notes
+# AI for 2D and 3D game development
 
 Explore systems for generating game rules, constructing playable projects, editing scenes, and evaluating the results. The sections below distinguish their outputs and the engine feedback each workflow uses.
 
-For additional project sources, see the [repository research](../../cadle-repositories.md).
+For playable projects and their source code, see [Game examples](../../cadle-repositories.md).
 
 ## Categories and evidence
 

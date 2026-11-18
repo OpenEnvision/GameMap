@@ -1,4 +1,4 @@
-# Additional evaluation research for agents that create games
+# Evaluating agents that create games
 
 Choose an evaluation around what the agent needs to produce: a playable project, a correct modification, a delivered build, or a diagnosed defect. The studies below use different tasks and success criteria; use the [reproduction reference](./benchmarks.md) to locate the artifacts needed for each.
 

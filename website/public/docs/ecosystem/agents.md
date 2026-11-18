@@ -1,4 +1,4 @@
-# Coding agents and game tool integrations: source review notes
+# Coding agents and game tool integrations
 
 Choose the model, execution harness, domain skills, and engine interface separately. The combinations below link to implementation sources and setup instructions.
 

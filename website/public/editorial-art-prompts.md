@@ -1,3 +1,3 @@
-# GameMap editorial art prompts
+# Editorial art prompts
 
-This document has moved to [GameMap editorial art prompts](./docs/project/art/prompts.md).
+This document has moved to [Editorial art prompts](./docs/project/art/prompts.md).

@@ -1,4 +1,4 @@
-# Engines, rendering libraries, and content tools: sources and scope
+# Engines, rendering libraries, and content tools
 
 Choose a game engine for runtime and editing, a rendering library for custom graphics, and a content tool for asset production. Their responsibilities differ: Godot, Unity, and Unreal provide engine workflows; Phaser targets browser 2D games; Three.js and React Three Fiber handle rendering; Blender creates and processes assets.
 

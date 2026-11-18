@@ -1,4 +1,6 @@
-# GameMap design system
+# Design system, first edition
+
+Superseded by the [second edition](../v2/design-system.md). This page records the first visual direction for reference.
 
 Built-in ImageGen concepts: `map-concept.png` and `library-concept.png`. These are design references; the website draws its map, line art, controls and text with SVG/CSS/React.
 

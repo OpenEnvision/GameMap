@@ -1,3 +1,3 @@
-# Coding World Models: Categories, Selection, and Research Notes
+# World models: categories and selection
 
-This document has moved to [Coding World Models: Categories, Selection, and Research Notes](./docs/ecosystem/world-models.md).
+This document has moved to [World models: categories and selection](./docs/ecosystem/world-models.md).

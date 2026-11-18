@@ -1,3 +1,3 @@
-# From Resource Map to Runnable Game
+# From resource map to runnable game
 
-This document has moved to [From Resource Map to Runnable Game](./docs/guides/practical-guide.md).
+This document has moved to [From resource map to runnable game](./docs/guides/practical-guide.md).
