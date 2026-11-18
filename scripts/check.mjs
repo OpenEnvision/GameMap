@@ -327,7 +327,7 @@ await Promise.all(englishFiles.map(async path=>{
  if(path==='dist/index.html')source=englishRenderedCopy(parse(source));
  assert.doesNotMatch(source,/\p{Script=Han}/u,`Unlocalized Chinese copy remains in the English interface: ${path}`);
 }));
-for(const path of ['website/app/root.tsx',...(checkBuilt?['dist/index.html']:[])])assert.match(await readFile(new URL('../'+path,import.meta.url),'utf8'),/<html lang(?:=|[\s>])/,`Set the document language explicitly: ${path}`);
+for(const path of ['website/app/root.tsx',...(checkBuilt?['dist/index.html']:[])])assert.match(await readFile(new URL('../'+path,import.meta.url),'utf8'),/<html\s+lang(?:=|[\s>])/,`Set the document language explicitly: ${path}`);
 console.log(`English-interface checks passed: ${englishFiles.length} ${checkBuilt?'source, rendered-site, and download':'source and download'} files.`);
 
 const repositoryResearch=await loadRepositoryResearch();
