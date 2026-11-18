@@ -25,14 +25,14 @@ The application lives in `website/app/`. Existing catalog and case data remain i
 
 Markdown under `docs/` (including `docs/AWESOME.md`), plus `CONTRIBUTING.md`, is rendered at build time. Articles include navigation, a table of contents, highlighted code, heading links, and full-text search. Git-authored long-form Markdown remains the source of truth and is available through its source link. Registered catalog guides are generated views of structured data; their source link identifies the trusted generator rather than implying that an old Git export is a competing authoring source.
 
-`scripts/prepare-docs.mjs` creates disposable copies in `website/.content/`. It derives titles, rewrites internal Markdown links to document routes, and stages local documentation images in the ignored `website/public/docs-assets/` directory. Original research text is not rewritten. `website/docs.config.json` controls navigation groups and short labels; ungrouped articles remain available under More notes. After editing source Markdown during development, rerun this preparation script or restart `npm run dev` to refresh the prepared copies.
+`scripts/build/prepare-docs.mjs` creates disposable copies in `website/.content/`. It derives titles, rewrites internal Markdown links to document routes, and stages local documentation images in the ignored `website/public/docs-assets/` directory. Original research text is not rewritten. `website/docs.config.json` controls navigation groups and short labels; ungrouped articles remain available under More notes. After editing source Markdown during development, rerun this preparation script or restart `npm run dev` to refresh the prepared copies.
 
 The document source uses Fumadocs MDX's Vite integration in Markdown-only mode; catalog prose cannot execute MDX expressions or imports. Article bodies are lazy-loaded on client navigation, but every document also ships as complete HTML, so direct links and reading without JavaScript work. Full-text search loads a static index into the browser; there is no `/api/search` server in production.
 
 ## Build and validate
 
 ```sh
-node scripts/generate.mjs
+node scripts/build/generate.mjs
 npm run check
 npm run build
 npm run check:build
@@ -81,7 +81,7 @@ For a small **Linux/glibc** runtime, the local resource probe also uses the foll
 
 ```sh
 MALLOC_ARENA_MAX=2 UV_THREADPOOL_SIZE=1 CATALOG_MEDIA_PROFILE=low-memory \
-  node --max-old-space-size=128 scripts/studio.mjs --production
+  node --max-old-space-size=128 scripts/platform/studio.mjs --production
 ```
 
 Apply these settings to the runtime only, not dependency installation, builds or migrations. In particular, putting `MALLOC_ARENA_MAX` in a file loaded by Node's `--env-file` does not establish the tested pre-launch allocator environment. The V8 heap setting does **not** limit native image memory or total process memory. Other platforms/allocators require separate measurement.

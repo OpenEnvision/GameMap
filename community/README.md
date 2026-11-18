@@ -17,13 +17,13 @@
 
 ```sh
 npm run local:backup
-node scripts/community.mjs setup
+node scripts/platform/community.mjs setup
 # 如果本次修改了 supabase/config.toml，使用所属本地栈包装命令重载：
 npm run local:stop
 npm run local:start
-node scripts/community.mjs setup
+node scripts/platform/community.mjs setup
 # 4191 的服务应为以下入口，不应切回读取 Git-only dist 的普通 preview：
-node scripts/local-publication.mjs serve --port 4191
+node scripts/platform/local-publication.mjs serve --port 4191
 ```
 
 端口已占用时，先核对监听进程，不要启动第二个服务或结束不相关进程。公开页面须另用最新完整目录快照重新构建；setup 不负责构建、审核或激活目录。
@@ -58,8 +58,8 @@ node scripts/local-publication.mjs serve --port 4191
 6. 让 CLI 子进程从私有环境读取配置，重载所属本地栈：
 
    ```sh
-   node --env-file=.env scripts/local-catalog.mjs stop
-   node --env-file=.env scripts/local-catalog.mjs start
+   node --env-file=.env scripts/platform/local-catalog.mjs stop
+   node --env-file=.env scripts/platform/local-catalog.mjs start
    ```
 
 7. 检查 `/api/community/config` 的 `github` 为 true，然后使用真实 GitHub 账号验证完整授权/回调。

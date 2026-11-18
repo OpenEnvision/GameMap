@@ -1,4 +1,4 @@
-// Generated from data/segments/jam-game-media.json by scripts/import-example-media.mjs.
+// Generated from data/segments/jam-game-media.json by scripts/import/example-media.mjs.
 import type { LearningMedia } from './learningMedia';
 
 export const jamGameMedia: Record<string, LearningMedia> = {

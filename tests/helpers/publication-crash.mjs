@@ -1,5 +1,5 @@
 // Explicit local integration fault injector, never imported by Studio or normal publication CLI.
-import { localPublisher } from "../../scripts/local-publication.mjs";
+import { localPublisher } from "../../scripts/platform/local-publication.mjs";
 import { createLocalPublisher } from "../../scripts/lib/catalog/publication.mjs";
 const [input, expectedArtifact, expectedRelease, phase] = process.argv.slice(2);
 const { database, directory, realm } = await localPublisher();

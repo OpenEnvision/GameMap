@@ -23,7 +23,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: `node scripts/preview.mjs --port ${port}`,
+    command: `node scripts/build/preview.mjs --port ${port}`,
     url: origin + site.base,
     reuseExistingServer: false,
     timeout: 15000,

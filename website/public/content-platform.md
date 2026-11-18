@@ -296,7 +296,7 @@ Keep the retained publication artifacts, target marker and any pending journal w
 
 ```sh
 npm ci
-node scripts/generate.mjs
+node scripts/build/generate.mjs
 npm run check
 npm run platform:export -- --out .build/catalog-import
 npm run platform:verify -- --input .build/catalog-import

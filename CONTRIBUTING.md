@@ -18,7 +18,7 @@ Edit resource entries only in `data/segments/*.json`. Do not edit these generate
 After changing data, run these commands from the repository root in order:
 
 ```sh
-node scripts/generate.mjs
+node scripts/build/generate.mjs
 npm run check
 npm run build
 npm run check:build
@@ -97,7 +97,7 @@ World model entries should also explain where authoritative state lives: an exec
 
 - Keep canonical source data in English. Put Chinese interface messages in `website/content/i18n/zh.json` or `docs.zh.json`, and reader-text overlays in `website/content/i18n/content/` using stable `kind:id` keys.
 - Translate the complete field, including material conditions. Preserve project names, source URLs, creator attribution, licensing, list items, and the difference between proposed work and measured results.
-- Run `node scripts/check-locales.mjs --approve-new` to record fingerprints for newly translated fields. It does not approve changed source text. Review an existing translation before updating its source fingerprint; never automatically refresh all hashes.
+- Run `node scripts/check/locales.mjs --approve-new` to record fingerprints for newly translated fields. It does not approve changed source text. Review an existing translation before updating its source fingerprint; never automatically refresh all hashes.
 - Add full Chinese articles under `docs/zh/`. Mark deliberate links to English originals as `(English)` or with the existing Chinese language marker. Other internal links keep the selected interface language.
 - Keep untranslated passages explicitly English. Do not replace third-party source files, or present a translated title as a translated article.
 - Run `npm run check`, rebuild, and run `npm run check:build` and `npm run test:web` for both locales.

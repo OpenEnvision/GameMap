@@ -2,23 +2,23 @@
   "resource-catalog": {
     "source": "docs/AWESOME.md",
     "legacySources": ["AWESOME.md"],
-    "renderer": "scripts/catalog.mjs"
+    "renderer": "scripts/lib/guides/catalog.mjs"
   },
   "game-builds": {
     "source": "docs/tutorials-and-demos.md",
-    "renderer": "scripts/learning.mjs"
+    "renderer": "scripts/lib/guides/learning.mjs"
   },
   "agent-library": {
     "source": "docs/coding-agent-game-code.md",
-    "renderer": "scripts/agent-code.mjs"
+    "renderer": "scripts/lib/guides/agent-code.mjs"
   },
   "testing-library": {
     "source": "docs/game-testing-library.md",
-    "renderer": "scripts/testing.mjs"
+    "renderer": "scripts/lib/guides/testing.mjs"
   },
   "repository-index": {
     "source": "docs/cadle-repositories.md",
-    "renderer": "scripts/repository-research.mjs"
+    "renderer": "scripts/lib/guides/repository-research.mjs"
   },
   "logo-attribution": {
     "source": "docs/icon-sources.md",

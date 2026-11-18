@@ -8,7 +8,7 @@
 
 来源验证器和导入器都会调用 `verifyRemoteSourceFidelity`：清单哈希检查后，它仅针对 **清单中这些原始字节** 重新运行现有 `recoverRemoteSource`。它比较完整的确定性数据包：每个条目的身份、标题、摘要、原生/加载器载荷、附件和 `source_review`，以及候选项/排除项成员及理由、来源清单、产物目标路径和原始文档。仅有模式有效性并不足够。伪造的 Codex 详情、论文来源信息、任意加载器候选项、被省略的候选项或捏造的排除项，即使全部原始来源哈希保持不变，也会失败。缺少必需源输入时按失败即关闭原则处理。导入器在编译或任何数据库操作前执行此检查；对夹具或已有键也没有绕过途径。
 
-导入前，使用 **最终安装的模式** 重建数据包：模式是否接受决定排除项。旧包不会被静默升级。验证器有意要求数组顺序与恢复输出的确定性顺序相同。仍需从固定的干净检出生成（`node scripts/remote-source.mjs --source PINNED_CHECKOUT --out EMPTY_DIRECTORY`），或使用独立可信的摘要：重新提取无法验证同时被替换的源字节及哈希的真实性。
+导入前，使用 **最终安装的模式** 重建数据包：模式是否接受决定排除项。旧包不会被静默升级。验证器有意要求数组顺序与恢复输出的确定性顺序相同。仍需从固定的干净检出生成（`node scripts/import/remote-source.mjs --source PINNED_CHECKOUT --out EMPTY_DIRECTORY`），或使用独立可信的摘要：重新提取无法验证同时被替换的源字节及哈希的真实性。
 
 ### 两项精确的图片路径规范化
 
@@ -54,7 +54,7 @@ npm run local:backup
 npm run research:import -- --packet PRIVATE_PACKET --checkout PINNED_GIT_REPOSITORY --remaining --actor ADMIN_UUID --backup PRIVATE_BACKUP --apply
 npm run research:import -- --packet PRIVATE_PACKET --checkout PINNED_GIT_REPOSITORY --remaining --verify
 # Both matching verified receipts are required before removing the remote tree.
-node scripts/recover-remote-documents.mjs --packet PRIVATE_PACKET --checkout PINNED_GIT_REPOSITORY
+node scripts/import/recover-remote-documents.mjs --packet PRIVATE_PACKET --checkout PINNED_GIT_REPOSITORY
 ```
 
 Studio → **研究证据** 支持登录后按项目、许可或审核限制搜索，跳转关联目录条目，查看完整来源并无损下载原始文本。匿名访问和直接写表均被拒绝。这条证据通道从不提交、批准、冻结或发布目录内容。同一批次重放不改变任何行；来源冲突、备份清单变化或字节／哈希不匹配会中止事务。保留私有备份，并用 `npm run local:restore-probe -- --input PRIVATE_BACKUP` 验证可恢复性。

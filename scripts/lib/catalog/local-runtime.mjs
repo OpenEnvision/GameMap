@@ -168,7 +168,7 @@ export async function startLocal() {
   const directory = join(localDirectory, "bin");
   await mkdir(directory, { recursive: true, mode: 0o700 });
   const quote = (value) => "'" + value.replaceAll("'", "'\\''") + "'";
-  const shell = `#!/bin/sh\nexec ${quote(process.execPath)} ${quote(resolve(root, "scripts/local-docker.mjs"))} "$@"\n`;
+  const shell = `#!/bin/sh\nexec ${quote(process.execPath)} ${quote(resolve(root, "scripts/platform/local-docker.mjs"))} "$@"\n`;
   await writeFile(join(directory, "docker"), shell, { mode: 0o700 });
   await chmod(join(directory, "docker"), 0o700);
   await runCLI(

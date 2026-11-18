@@ -8,7 +8,7 @@ No remote services, HTTP fetches, remote SQL URLs, source execution, autoapprova
 
 Both the source verifier and importer call `verifyRemoteSourceFidelity`: after manifest hash checks, it reruns the existing `recoverRemoteSource` over **only those manifested original bytes**. It compares the complete deterministic packet: every entry identity, title, summary, native/loader payload, attachment and `source_review`, plus candidate/exclusion membership and reasons, source inventory, artifact destinations and original documents. Schema validity alone is insufficient. A forged Codex detail, paper provenance, arbitrary loader candidate, omitted candidate or fabricated exclusion fails even when every original source hash stays unchanged. Missing required source inputs fail closed. The importer performs this check before compilation or any DB work; there is no bypass for fixtures or existing keys.
 
-Rebuild packets with the **final installed schemas** before import: schema acceptance determines exclusions. Old packets are not silently upgraded. The verifier intentionally requires deterministic array ordering as emitted by recovery. Pinned clean-checkout generation (`node scripts/remote-source.mjs --source PINNED_CHECKOUT --out EMPTY_DIRECTORY`) or an independently trusted digest is still necessary: re-extraction cannot authenticate jointly replaced source bytes and hashes.
+Rebuild packets with the **final installed schemas** before import: schema acceptance determines exclusions. Old packets are not silently upgraded. The verifier intentionally requires deterministic array ordering as emitted by recovery. Pinned clean-checkout generation (`node scripts/import/remote-source.mjs --source PINNED_CHECKOUT --out EMPTY_DIRECTORY`) or an independently trusted digest is still necessary: re-extraction cannot authenticate jointly replaced source bytes and hashes.
 
 ### Two exact image path normalizations
 
@@ -54,7 +54,7 @@ npm run local:backup
 npm run research:import -- --packet PRIVATE_PACKET --checkout PINNED_GIT_REPOSITORY --remaining --actor ADMIN_UUID --backup PRIVATE_BACKUP --apply
 npm run research:import -- --packet PRIVATE_PACKET --checkout PINNED_GIT_REPOSITORY --remaining --verify
 # Both matching verified receipts are required before removing the remote tree.
-node scripts/recover-remote-documents.mjs --packet PRIVATE_PACKET --checkout PINNED_GIT_REPOSITORY
+node scripts/import/recover-remote-documents.mjs --packet PRIVATE_PACKET --checkout PINNED_GIT_REPOSITORY
 ```
 
 Studio's **Research evidence** workspace provides authenticated search by project, license or review limitation, links to catalog records, complete source inspection and lossless original-text download. Anonymous access and direct table writes are denied. This evidence lane never submits, approves, freezes or publishes catalog content. Replaying the same batch changes no row; conflicting sources, changed backup inventories or byte/hash mismatches stop the transaction. Keep private backups and verify restoration with `npm run local:restore-probe -- --input PRIVATE_BACKUP`.

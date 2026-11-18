@@ -47,7 +47,7 @@ jobs:
       - run: npm ci
       - name: Generate and check committed source outputs
         run: |
-          node scripts/generate.mjs
+          node scripts/build/generate.mjs
           git diff --exit-code -- docs/AWESOME.md data/resources.json website/src/data/resources.json website/public docs
       - name: Validate source catalog and media
         run: npm run check

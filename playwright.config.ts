@@ -28,7 +28,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "node scripts/preview.mjs --port 4176",
+    command: "node scripts/build/preview.mjs --port 4176",
     url: origin + base,
     reuseExistingServer: !process.env.CI,
     timeout: 15000,

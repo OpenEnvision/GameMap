@@ -127,8 +127,8 @@
       "translationHash": "af875abebae6255b0c6b93047e174cfb0746ad234385b4a28ed83c1aa37151e8"
     },
     "contributing": {
-      "sourceHash": "1e424241eb712aa7096d4337c7b86ba49193f5795541f4ca719ccb9206f2b996",
-      "translationHash": "767d3da924ccfee81d8d2e73053b0ba459548e392f690fb4a0f573a5c762bec7"
+      "sourceHash": "b1d3d10b415b3f18813dd58695703eb806c83b461dce377cd191ac261542d940",
+      "translationHash": "a7caf7dca0c7156e77332aff91bce3a7098750496258af69036d41a086af2ae4"
     },
     "media-sources": {
       "sourceHash": "a1283fd5fbe7bf329ba0317a5c27719f09d045abacd3a195c771133aa1e02378",
@@ -139,8 +139,8 @@
       "translationHash": "0166bbe59b58061b1926a5a2a0cccc6757fc64ae1341881fb0bdd574bf916855"
     },
     "deployment": {
-      "sourceHash": "bd18924a716b9a108c2c13163236f6e743d8b9110981fd394391d7f1d516b521",
-      "translationHash": "fc2646dc7cb8a7a1f222d24649fc45e154f08d329d4138d88b24219d1f9e4551"
+      "sourceHash": "2d68d704639645b0245152218a76e8505a5e93227eb0df7d10ec9b9e9d2935ba",
+      "translationHash": "1178d7616932376099943ed003d9a9e56e008632bfbf86623bccbcc857325d23"
     },
     "content-model": {
       "sourceHash": "1ae0490b8d0bf749ebdd8a20a55ea35a51b33a83038af6eb22b9deccfdc42ac6",
@@ -159,8 +159,8 @@
       "translationHash": "616a2f50444df2eea5cd43b940d1aa593c74426fd42fafa75f8375594a391662"
     },
     "content-platform": {
-      "sourceHash": "d643d8ac1a1fc3cb2742ed0c9e2c4c6d41b1c58c7340aa15e3219b21adc85e57",
-      "translationHash": "cb79b7431e4def85722820e03a743d3f1e3b3e9624deb2ac96499c934e4c92e4"
+      "sourceHash": "b69f9341186720c6a722adeaf71ec44d5945a5288da3e620dc51b696a3979c48",
+      "translationHash": "082195060bdd765a53ad3f1c648336ea94901f6c7fad8026b73321bf7ceb58e0"
     },
     "design/design-system": {
       "sourceHash": "7611580f45460b19e881abd518d0d9608ab54277da286fe7c17d9720ca6882a9",
@@ -175,8 +175,8 @@
       "translationHash": "c71742651f04d82676e1338a2a242c208358ea5dad4dec42800b068c9c61342b"
     },
     "remote-import": {
-      "sourceHash": "2ca58750a76fad53e97ec2a42629f244bf930a04f7e71bf8b3adf2c21be71b22",
-      "translationHash": "dad9387baaed3d1a7c783521769cfce981b3eed35aa90253e6fa827386d107aa"
+      "sourceHash": "95609b891026b0f3c408fce7e8bb9b99727de9d8d23a090e47bfd5d6a330d0bd",
+      "translationHash": "0660af614df154cd55a35865268c935623825895d17432d244825e841df66ccf"
     },
     "skills/level-design/references/blockout-metrics": {
       "sourceHash": "aba747e2d92c367001c3f3c6b5b4027472926beac9dff33882025c6a631c1898",
@@ -243,8 +243,8 @@
       "translationHash": "bac3ae9585d59196e4ad37509e0a7dbc8a6ce9c78fc69487a150ec294fa48f31"
     },
     "staging-readiness": {
-      "sourceHash": "28c14be90a5f2795ac2719875440cacb32d319277f7bf37f3c63003b46d9fca9",
-      "translationHash": "efcde3a7e0a73deb0c450f608cc122bda09389c73d8bceeeec4df296290d58d8"
+      "sourceHash": "2b52a7b9353d16a5c63e53e883e10a1ab6eb57cbb128f7935136b5ac52b91416",
+      "translationHash": "92d192164716bd8d75992ff918debd96bc145910f0acc0dfe5a19c110bf5425e"
     }
   }
 }

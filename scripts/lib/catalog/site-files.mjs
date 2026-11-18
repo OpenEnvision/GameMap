@@ -1,4 +1,4 @@
-import { testingManifest } from "../../testing.mjs";
+import { testingManifest } from "../guides/testing.mjs";
 import { sha256, readArtifact } from "./codec.mjs";
 import documentRedirects from "../../../website/content/document-redirects.json" with { type: "json" };
 

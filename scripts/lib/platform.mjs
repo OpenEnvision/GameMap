@@ -3,7 +3,7 @@ import { execFileSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 import { resolve, relative } from "node:path";
 import { loadContent } from "./content.mjs";
-import { loadCatalog, validate } from "../catalog.mjs";
+import { loadCatalog, validate } from "./guides/catalog.mjs";
 import { root, walk, publishablePath } from "./documents.mjs";
 import { loadMigrations } from "./migrations.mjs";
 import { adapterFor } from "./catalog/adapters.mjs";
@@ -24,19 +24,19 @@ export const importFormat = "gamemap.content-import";
 // Package serialization is independent of each content kind's schema_version.
 export const packageVersion = 2;
 const toolFiles = [
-  "scripts/platform.mjs",
-  "scripts/studio.mjs",
-  "scripts/studio-dev.mjs",
-  "scripts/build-studio.mjs",
-  "scripts/release.mjs",
-  "scripts/site-release.mjs",
+  "scripts/platform/package.mjs",
+  "scripts/platform/studio.mjs",
+  "scripts/platform/studio-dev.mjs",
+  "scripts/platform/studio-build.mjs",
+  "scripts/platform/release.mjs",
+  "scripts/platform/site-release.mjs",
   "vite.config.ts", "react-router.config.ts", "playwright.release.config.ts", "tsconfig.json", "website/docs.config.json",
   "scripts/lib/platform.mjs",
   "scripts/lib/migrations.mjs",
   "scripts/lib/content.mjs",
   "scripts/lib/documents.mjs",
   "scripts/lib/source-inventory.mjs",
-  "scripts/catalog.mjs",
+  "scripts/lib/guides/catalog.mjs",
   "package.json",
   "package-lock.json",
   "supabase/config.toml",
@@ -107,7 +107,7 @@ export async function createImportBundle(context = undefined) {
   assert.deepEqual(
     json(context.sources.resources),
     validate(await loadCatalog()),
-    "Generated catalog is stale; run node scripts/generate.mjs first",
+    "Generated catalog is stale; run node scripts/build/generate.mjs first",
   );
   const document_bodies = {};
   for (const page of context.documents) {

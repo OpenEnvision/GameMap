@@ -8,7 +8,7 @@ import remarkGfm from "remark-gfm";
 import {
   generateRemoteDocuments,
   revision,
-} from "../../recover-remote-documents.mjs";
+} from "../../import/recover-remote-documents.mjs";
 import { canonicalJSON, sha256 } from "./codec.mjs";
 import { assertMarkdownSafety } from "./markdown-safety.mjs";
 import { databaseResearchArchive } from "../research-archive-policy.mjs";

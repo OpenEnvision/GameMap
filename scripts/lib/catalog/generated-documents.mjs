@@ -1,9 +1,9 @@
 import assert from "node:assert/strict";
-import { renderAwesome } from "../../catalog.mjs";
-import { renderLearningGuide } from "../../learning.mjs";
-import { renderAgentCodeGuide } from "../../agent-code.mjs";
-import { renderTestingGuide } from "../../testing.mjs";
-import { renderRepositoryResearch } from "../../repository-research.mjs";
+import { renderAwesome } from "../guides/catalog.mjs";
+import { renderLearningGuide } from "../guides/learning.mjs";
+import { renderAgentCodeGuide } from "../guides/agent-code.mjs";
+import { renderTestingGuide } from "../guides/testing.mjs";
+import { renderRepositoryResearch } from "../guides/repository-research.mjs";
 import {
   documentGenerators,
   documentGenerator,

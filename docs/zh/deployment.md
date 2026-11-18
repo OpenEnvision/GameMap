@@ -25,14 +25,14 @@ npm run dev
 
 `docs/` 下的 Markdown（包括 `docs/AWESOME.md`）以及 `CONTRIBUTING.md`，都会在构建时渲染。文章包含导航、目录、代码高亮、标题链接和全文搜索。通过 Git 编写的长篇 Markdown 仍是权威来源，可通过来源链接访问。已注册的目录指南是结构化数据的生成视图；其来源链接指向可信生成器，而不是暗示旧的 Git 导出文件是另一个并行编写来源。
 
-`scripts/prepare-docs.mjs` 会在 `website/.content/` 中创建可丢弃的副本。它会推导标题、将内部 Markdown 链接改写为文档路由，并将本地文档图片暂存到被忽略的 `website/public/docs-assets/` 目录。原始研究文本不会被改写。`website/docs.config.json` 控制导航分组和短标签；未分组文章仍可在“更多笔记”下访问。开发时编辑源 Markdown 后，重新运行此准备脚本或重启 `npm run dev`，以刷新准备好的副本。
+`scripts/build/prepare-docs.mjs` 会在 `website/.content/` 中创建可丢弃的副本。它会推导标题、将内部 Markdown 链接改写为文档路由，并将本地文档图片暂存到被忽略的 `website/public/docs-assets/` 目录。原始研究文本不会被改写。`website/docs.config.json` 控制导航分组和短标签；未分组文章仍可在“更多笔记”下访问。开发时编辑源 Markdown 后，重新运行此准备脚本或重启 `npm run dev`，以刷新准备好的副本。
 
 文档源使用 Fumadocs MDX 的 Vite 集成，并以纯 Markdown 模式运行；目录正文无法执行 MDX 表达式或导入。客户端导航时按需加载文章正文，但每篇文档也会提供完整 HTML，因此直接链接及禁用 JavaScript 的阅读均可正常使用。全文搜索会将静态索引加载到浏览器中；生产环境没有 `/api/search` 服务器。
 
 ## 构建与验证
 
 ```sh
-node scripts/generate.mjs
+node scripts/build/generate.mjs
 npm run check
 npm run build
 npm run check:build
@@ -81,7 +81,7 @@ npm run test:web
 
 ```sh
 MALLOC_ARENA_MAX=2 UV_THREADPOOL_SIZE=1 CATALOG_MEDIA_PROFILE=low-memory \
-  node --max-old-space-size=128 scripts/studio.mjs --production
+  node --max-old-space-size=128 scripts/platform/studio.mjs --production
 ```
 
 这些设置仅适用于运行环境，不适用于依赖安装、构建或迁移。尤其要注意，将 `MALLOC_ARENA_MAX` 放入由 Node 的 `--env-file` 加载的文件，并不能建立已测试的启动前分配器环境。V8 堆设置 **不会** 限制原生图像内存或进程总内存。其他平台或分配器需要单独测量。

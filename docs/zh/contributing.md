@@ -18,7 +18,7 @@
 修改数据后，在仓库根目录依次运行以下命令：
 
 ```sh
-node scripts/generate.mjs
+node scripts/build/generate.mjs
 npm run check
 npm run build
 npm run check:build
@@ -97,7 +97,7 @@ npm run check:build
 
 - 保持规范源数据为英文。中文界面消息放在 `website/content/i18n/zh.json` 或 `docs.zh.json` 中，读者文本覆盖层放在 `website/content/i18n/content/` 中，并使用稳定的 `kind:id` 键。
 - 翻译完整字段，包括实质性条件。保留项目名称、来源 URL、创作者署名、许可、列表项，以及拟议工作与测量结果之间的区别。
-- 运行 `node scripts/check-locales.mjs --approve-new`，记录新翻译字段的指纹。该命令不会批准源文本变更。更新已有译文的源指纹前应先审阅译文；绝不能自动刷新全部哈希。
+- 运行 `node scripts/check/locales.mjs --approve-new`，记录新翻译字段的指纹。该命令不会批准源文本变更。更新已有译文的源指纹前应先审阅译文；绝不能自动刷新全部哈希。
 - 在 `docs/zh/` 下添加完整中文文章。有意指向英文原文的链接应标记为 `(English)`，或使用现有的中文语言标记。其他内部链接保持所选界面语言。
 - 将未翻译段落明确标为英文。不要替换第三方源文件，也不要将翻译后的标题当作已翻译文章呈现。
 - 运行 `npm run check`，重新构建，并为两个语言版本运行 `npm run check:build` 和 `npm run test:web`。

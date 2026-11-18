@@ -270,14 +270,14 @@ export async function buildReleaseSite(
         "-e",
         "import {generateSkillPackages} from './scripts/lib/skill-packages.mjs';await generateSkillPackages();",
       ],
-      ["scripts/prepare-docs.mjs"],
+      ["scripts/build/prepare-docs.mjs"],
       ["node_modules/@react-router/dev/bin.js", "typegen"],
       ["node_modules/typescript/bin/tsc", "-b"],
       ["node_modules/@react-router/dev/bin.js", "build"],
-      ["scripts/finalize-build.mjs"],
-      ["scripts/check-web.mjs"],
-      ["scripts/check-content.mjs", "--built"],
-      ["scripts/check-locales.mjs", "--built"],
+      ["scripts/build/finalize.mjs"],
+      ["scripts/check/web.mjs"],
+      ["scripts/check/content.mjs", "--built"],
+      ["scripts/check/locales.mjs", "--built"],
     ];
     if (browser)
       gates.push([
