@@ -63,9 +63,21 @@ function localizedTo(to: To, href: (value: string) => string): To {
       ? { ...to, pathname: href(to.pathname) }
       : to;
 }
-export function Link({ to, ...props }: ComponentProps<typeof RouterLink>) {
+/** Page navigations animate through the View Transitions API where supported;
+ *  motion.css keeps the transition still under prefers-reduced-motion. */
+export function Link({
+  to,
+  viewTransition = true,
+  ...props
+}: ComponentProps<typeof RouterLink>) {
   const { href } = useSiteI18n();
-  return <RouterLink to={localizedTo(to, href)} {...props} />;
+  return (
+    <RouterLink
+      to={localizedTo(to, href)}
+      viewTransition={viewTransition}
+      {...props}
+    />
+  );
 }
 /** Pages are prerendered at "/examples" but served and hydrated at "/examples/".
  *  Comparing slash-normalized paths keeps static and hydrated markup identical. */
@@ -74,20 +86,23 @@ export const withTrailingSlash = (path: string) =>
 export function NavLink({
   to,
   className,
+  viewTransition = true,
   ...props
 }: ComponentProps<typeof RouterLink>) {
   const { href } = useSiteI18n();
   const { pathname } = useLocation();
   const target = localizedTo(to, href);
   const targetPath =
-    typeof target === "string" ? target.split(/[?#]/)[0] : target.pathname || "";
+    typeof target === "string"
+      ? target.split(/[?#]/)[0]
+      : target.pathname || "";
   const current = withTrailingSlash(pathname);
   const wanted = withTrailingSlash(targetPath);
-  const active =
-    wanted === "/" ? current === "/" : current.startsWith(wanted);
+  const active = wanted === "/" ? current === "/" : current.startsWith(wanted);
   return (
     <RouterLink
       to={target}
+      viewTransition={viewTransition}
       className={[className, active && "active"].filter(Boolean).join(" ")}
       aria-current={active ? "page" : undefined}
       {...props}

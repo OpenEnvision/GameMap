@@ -16,13 +16,21 @@ import AtlasSearch from "./components/search";
 import { SearchStateProvider } from "./lib/search-state";
 import { FrameworkLink } from "./components/framework-link";
 import { SiteFooter, SiteHeader } from "./components/site-shell";
-import "@fontsource-variable/inter";
+import "@fontsource-variable/inter/opsz.css";
 import "@fontsource/instrument-serif/400.css";
 import "@fontsource/instrument-serif/400-italic.css";
 import "@fontsource-variable/jetbrains-mono";
+// Cascade order is deliberate: legacy component rules, then the design system,
+// the shell, one stylesheet per page template, and finally all motion.
 import "./styles/index.css";
 import "./styles/community.css";
-import "./styles/cosmos.css";
+import "./styles/foundation.css";
+import "./styles/shell.css";
+import "./styles/home.css";
+import "./styles/gallery.css";
+import "./styles/collections.css";
+import "./styles/detail.css";
+import "./styles/docs.css";
 import "./styles/motion.css";
 import { CosmosEffects } from "./components/cosmos/effects";
 import { CommunityProvider } from "./lib/community";
