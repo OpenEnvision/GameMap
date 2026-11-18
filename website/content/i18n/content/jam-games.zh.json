@@ -1,0 +1,1205 @@
+{
+  "example:jam-foursight": {
+    "description": "在世界静止时预先规划一套按时序执行的移动与攻击动作，再执行这套动作，在二维平台跳跃挑战中生存下来。"
+  },
+  "example:jam-secret-sugar": {
+    "description": "游玩一款可爱却暗藏邪恶的牌组构筑卡牌游戏，使用攻击、防御和技能卡牌。"
+  },
+  "example:jam-scales-of-the-golden-dragon": {
+    "description": "收集龙鳞以解锁移动能力，探索一场由复仇驱动的银河恶魔城类冒险，并通过滑翔获取能力能量。"
+  },
+  "example:jam-enchanted-towers-realm-defenders": {
+    "description": "购买造价、射程和射速各不相同的骑士塔与法师塔，抵御一波波敌人的进攻。"
+  },
+  "example:jam-wave-of-fate": {
+    "description": "在以洞穴为场景的平台跳跃游戏中挥砍敌人，并利用向下的弹跳攻击向上弹起，重置下落时的重力。"
+  },
+  "example:jam-surwave": {
+    "description": "在外星人的攻击下生存六分钟，收集宝石，在角落的祭坛购买武器、冲击波和移动能力升级。"
+  },
+  "example:jam-dash-splash": {
+    "description": "让平台跳跃游戏中的角色旋转并向前推进，探索充满气泡的世界，同时追踪可收集的星星。"
+  },
+  "example:jam-canvas-chaos": {
+    "description": "两名玩家操控大炮、发射气泡，并控制气泡爆炸的时机。"
+  },
+  "example:jam-the-roots-of-all-our-problems": {
+    "description": "在一款叙事型平台跳跃游戏中引导一颗旋翼种子，寻找可以扎根的地方，途中接触关于人类的真相与谎言。"
+  },
+  "example:jam-gmtk2023-duck-dodge": {
+    "description": "在角色反转的猎鸭情境中，操控一只鸭子在屏幕上移动，躲避猎人的射击。"
+  },
+  "example:jam-gmtk2023-humansters": {
+    "description": "逃出关押人类宠物的笼子，探索一个巨大的房间，同时避开会把你重新关起来的仓鼠。"
+  },
+  "example:jam-gmtk2021-conductor": {
+    "description": "指挥一支管弦乐团，及时响应各声部的限时请求，赶在演奏吃力的乐手飘走并导致扣分之前完成指挥。"
+  },
+  "example:jam-tower-of-bricks": {
+    "description": "拾起可见的玩具积木，将它们摆成平台向上攀爬，同时避免代价高昂的跌落。"
+  },
+  "example:jam-lasso-sheriff": {
+    "description": "用套索套住匪徒，绕着他们跑圈以捕获多名敌人，同时通过冲刺远离危险。"
+  },
+  "example:jam-fairy-catch": {
+    "description": "在一款街机游戏中移动小仙子，接住落下的苹果。"
+  },
+  "example:jam-sand-slide": {
+    "description": "在落沙沙盒中涂画能相互作用的元素，建造栖息地、试验电路，并摧毁模拟世界。"
+  },
+  "example:jam-agarust": {
+    "description": "在在线竞技场中操控一个不断长大的细胞，吞食较小的玩家，并消耗质量来换取冲刺。"
+  },
+  "example:jam-flingsort": {
+    "description": "点击下落的食物和饮料，将它们弹入不断变化的类别中，同时应对物品越来越密集的回合。"
+  },
+  "example:jam-puddle-of-forever-time": {
+    "description": "以俯视视角探索森林，回到死去生物过去的生命历程中，前往一处能赋予永生的水洼。"
+  },
+  "example:jam-ld50-plant": {
+    "description": "修剪一株不断生长的植物的枝条，在修剪造成的伤害与它不可避免的衰败之间权衡。"
+  },
+  "example:jam-ld49-keep-talking-bob": {
+    "description": "用声音让鲍勃在雪山中持续前进，同时引导他绕开障碍，避免触发由噪声引起的危险。"
+  },
+  "example:jam-ld49-eye-of-glower-on": {
+    "description": "触发地震与巨石坠落，阻止向上攀登的英雄，保卫一座不稳定的山。"
+  },
+  "example:jam-capsized-ld54": {
+    "description": "划动一艘载客量有限的救生艇，在时间耗尽前将乘客送上救援船，并在生命与利润之间作出选择。"
+  },
+  "example:jam-gogogodots-ld54": {
+    "description": "在一款满是球体的三维物理游戏中操控一个球，相同的球会合并成更大的球体。"
+  },
+  "example:jam-critter-catchers-ld56": {
+    "description": "在一款带有诡异转折的简短俯视视角游戏中，捕捉四处游荡的小生物。"
+  },
+  "example:jam-heroes-of-keys-and-kingdoms-ld55": {
+    "description": "召唤以字母表示的英雄，拼出单词来伤害怪物、格挡攻击并进行治疗。"
+  },
+  "example:jam-the-thirteenth-offering": {
+    "description": "在生存竞技场中与邪教徒战斗，每击杀十三名敌人就会召唤出一只恶魔。"
+  },
+  "example:jam-spirit-hunter": {
+    "description": "在滚动的瓦片地图中移动并射击敌人，同时管理生命值，应对接连而来的敌人关卡。"
+  },
+  "example:jam-gecko-blaster": {
+    "description": "在一款滚动场景的沙漠射击游戏中拖动壁虎，收集甜甜圈和火力升级，随后迎战最终首领。"
+  },
+  "example:jam-crazy-bike": {
+    "description": "骑自行车穿行于贝维尔，通过送货和特技表演，在时间耗尽前赚到35美元，同时撞碎场景物件来补回时间。"
+  },
+  "example:jam-bevy-five-bullet-heaven": {
+    "description": "在一颗三维星球上四处移动，抵御周期性的敌人攻击以求生存，并在每次升级时选择属性升级。"
+  },
+  "example:jam-ocean-king-gwj41": {
+    "description": "完成小游戏，击败海洋之王及其爪牙，夺取他的王冠。"
+  },
+  "example:jam-wild-fishing-gwj41": {
+    "description": "操控鱼钩穿行于水下关卡，捕捉鱼类并购买装备升级。"
+  },
+  "example:jam-stars-exhumed-gwj57": {
+    "description": "绘制星座来准备法术，再将法术发射向来袭、威胁地球的流星。"
+  },
+  "example:jam-unavoidable-katakana": {
+    "description": "点击移动中的片假名音节，选中属于你所选行的音节来得分，同时学习日语。"
+  },
+  "example:jam-blind-box-co": {
+    "description": "使用探测器检查尚未拆封的邮包，识别违禁品，以此谋生。"
+  },
+  "example:jam-furball-siege": {
+    "description": "用弹弓发射仓鼠，击倒程序生成的堡垒，并用有限的弹药消灭侏儒。"
+  },
+  "example:jam-silent-hare": {
+    "description": "在夜幕降临前收集食物，通过跺脚定位附近的柳树，并控制噪声以免惊动狐狸。"
+  },
+  "example:jam-bigger-eater": {
+    "description": "操控一只饥饿的奇美拉，杀死人类并不断扩大身体，直到吞噬一切。"
+  },
+  "example:jam-freezing-shooter": {
+    "description": "在一款俯视视角射击游戏中与敌人战斗，冻结时无法移动，但可以恢复生命值。"
+  },
+  "example:jam-lovelands-leap": {
+    "description": "扮演洛夫兰蛙，跳越平台解谜障碍，在平台之间摆荡，并收集苍蝇。"
+  },
+  "example:jam-void-orusliox": {
+    "description": "在限时弹幕波次中生存，而不是消灭所有敌人，并利用升级来坚持更久。"
+  },
+  "example:jam-wind-up-racer": {
+    "description": "操控一辆发条小车在三维赛道上行驶，收集齿轮以维持行进，并在能量耗尽前跑完三圈。"
+  },
+  "example:jam-the-game-that-never-ends": {
+    "description": "在随机生成的二维平台间奔跑跳跃，在六十秒倒计时结束前收集金币，争取高分。"
+  },
+  "example:jam-dash-slash": {
+    "description": "为忍者的冲刺蓄力并瞄准，在二维关卡中斩击目标及其保镖，避开致命的墙壁，并保持足够的速度。"
+  },
+  "example:jam-twokoban": {
+    "description": "在双人推箱子谜题中，将彩色箱子推到颜色对应的目标位置，同时记录移动次数，逐关推进。"
+  },
+  "example:jam-recharge": {
+    "description": "在一款俯视视角射击游戏中移动和瞄准，帮助机器人充电，与敌人战斗，并逐步推进至机器人首领战。"
+  },
+  "example:jam-magickal-powers": {
+    "description": "将土、火、水元素组合成可瞄准、可蓄力的法术，每次最多组合三个元素，保卫城堡，抵御逼近的怪物。"
+  },
+  "example:jam-my-little-tree": {
+    "description": "在一款游戏创作赛沙盒游戏中，将树根拖向地下水，并平衡能量、水分与稳定性，让树木生长。"
+  },
+  "example:jam-untitled-dinosaur-game": {
+    "description": "在一款粗糙的宠物模拟原型中，照料一只独处的恐龙，通过喂食和抚摸来管理它的饥饿程度与心情。"
+  },
+  "example:jam-cosmic-coder": {
+    "description": "探索一艘宇宙飞船，操作终端文件，赶在陨石摧毁地球前解锁管理员激光指令。"
+  },
+  "example:jam-metashift": {
+    "description": "在一款为游戏创作赛制作的俯视视角生存游戏原型中，扮演刚刚变成昆虫的角色，一边射击一边闪避，应对不断增强的虫群。"
+  },
+  "example:jam-demon-reaper": {
+    "description": "在一款未完成的游戏创作赛俯视视角动作游戏中，在限定时间内击败人类的守护者以附身人类，再用人性碎片换取升级。"
+  },
+  "example:jam-neon-desert": {
+    "description": "在霓虹风格的等距视角沙漠关卡中移动和射击，消灭所有敌人以进入下一关。"
+  },
+  "example:jam-frostbite-farm": {
+    "description": "在冰封的农场中种植并出售作物，购买种子、给植物浇水，并让附近的加热灯保持点亮，防止植物冻住。"
+  },
+  "example:jam-my-little-pit-stop": {
+    "description": "作为维修组成员支援一支小马竞速队伍，通过鼠标操作完成维修小游戏，在比赛期间修复参赛小马的部件。"
+  },
+  "example:jam-virus-shooter": {
+    "description": "在一款二维平台射击游戏中跳跃前进，每次射击都会消耗半颗心，同时避开巡逻的敌人，收集爱心来恢复生命值。"
+  },
+  "example:jam-skeletons-ate-my-plants": {
+    "description": "用浇水壶对抗骷髅，恢复各个关卡中的植物，通过移动和射击生存下来，同时完成各个花盆的种植。"
+  },
+  "example:jam-rhythm-gauntlet": {
+    "description": "在一场二维节奏冒险中一路战斗，用 Z 键攻击、X 键格挡，跟随音乐节拍行动，打出更强的攻击并成功防御。"
+  },
+  "example:jam-bugs-out": {
+    "description": "在一款双人桌游改编游戏中轮流行动，通过掷骰子和旋转障碍，引导移动中的虫子前往你的食物资源，率先获得五枚金币的玩家获胜。"
+  },
+  "example:jam-killstreak": {
+    "description": "射击敌人，利用跳跃、贴墙滑行和冲刺穿越平台跳跃房间，同时逃离会将你碾碎的力场。"
+  },
+  "example:jam-center-of-maat": {
+    "description": "在天平的一侧托盘上移动，抓起不断累积的罪孽并扔到另一侧托盘上，避免你的灵魂比一颗纯洁的心更重。"
+  },
+  "example:jam-weapon-ball-scroller": {
+    "description": "在持械球体之间由物理驱动的战斗中滚动推进，并在放置类 Roguelike 遭遇战之间获取技能与升级。"
+  },
+  "example:jam-notepad-ace": {
+    "description": "利用跳跃、冲刺和隐藏的移动机制，速通手绘风格的二维平台跳跃关卡，途中设有检查点和可选择收集的奖杯。"
+  },
+  "example:jam-memory-pizza": {
+    "description": "记住隐藏配料的位置，选出顾客要求的食材，在一分钟内尽可能多地完成披萨。"
+  },
+  "example:jam-work-horse": {
+    "description": "完成搬箱子、转阀门和用键盘编程的工作，在工作日倒计时结束前尽可能多地赚钱。"
+  },
+  "example:jam-pigeon-in-town": {
+    "description": "扮演一只鸽子探索小镇，与古怪的居民交谈，发现取决于对话的成就。"
+  },
+  "example:jam-unpetrify": {
+    "description": "指挥骷髅工人采矿、侦察和采收，同时在基于格子的地图上建造农场、法力收集器、坟墓和瞭望塔。"
+  },
+  "example:jam-scrap-signal": {
+    "description": "扮演一台受损的维修机器人探索废弃工厂，收集备用零件，修复被遗忘的机器，同时发现日志与分支结局。"
+  },
+  "example:jam-vaporcade-td": {
+    "description": "在一款街机风格的塔防游戏中选择防御塔并启动敌人波次，利用伤害与减速攻击，阻止敌人抵达路径终点。"
+  },
+  "example:jam-the-curse-of-household-chaos": {
+    "description": "修复被诅咒的家居物品，寻找所需工具并清理垃圾，在三十轮不断加剧的混乱中生存下来。"
+  },
+  "example:jam-omens-ascent": {
+    "description": "攀登一座危机四伏的高塔，运用攻击、冲刺和招架与怪物战斗，击败邪恶存在麾下的勇士，拯救你的村庄。"
+  },
+  "example:jam-cannon-and-commerce": {
+    "description": "在岛屿港口之间航行，靠港接受并完成随机生成的货运合约，积累声望以解锁价值更高的长途运输任务。"
+  },
+  "example:jam-grounded": {
+    "description": "扮演一名青少年，通过横向卷轴探索和互动小游戏，赶在父母回家前完成家务。"
+  },
+  "example:jam-the-hunt-of-croakzilla": {
+    "description": "手持激光枪，在程序生成的生态区域中战斗，在管理饥饿、能量与搜寻升级物品之间取得平衡，并击败变异首领 Croakzilla。"
+  },
+  "example:jam-the-adventures-of-the-heroic-fox": {
+    "description": "在这款回合制策略游戏中，重新排列固执狐狸英雄预定的战斗行动，同时权衡修改计划对其自尊心的消耗。"
+  },
+  "example:jam-stargazer-novastrike": {
+    "description": "在这个尚不稳定的比赛版本中，用双键和惯性控制气球悬挂的篮子，收集星星并避免失去气球。"
+  },
+  "example:jam-that-time-i-got-reincarnated-as-a-barn": {
+    "description": "在这款农场塔防原型中，控制农夫保卫转生后的谷仓，种植能强化防御塔的植物，并收获种子来建造更多防御设施。"
+  },
+  "example:jam-decked-mini-jame-gam-53": {
+    "description": "在这款开发中的农场牌组构筑游戏中，出牌翻土、播种、浇水、收获并扩建田地，用作物收入购买更好的卡牌，并通过休息恢复体力。"
+  },
+  "example:jam-the-clicking-hour": {
+    "description": "在夜店服务员一波波到来时，点击拦下拿错饮品的人，让携带所需酒杯的人通过，并应对传送、隐藏和需要多次点击的变体。"
+  },
+  "example:jam-turbulent-tinctures": {
+    "description": "在这款仍在开发中的游戏 jam 解谜作品里，你要在风浪中的船上调配药水，并在灯笼熄灭时凭记忆还原配方。"
+  },
+  "example:jam-sky-conquerors": {
+    "description": "在这款仍在开发中的即时战略游戏 jam 作品里，你要采集有限资源，指挥工人与士兵，并征服程序生成的浮空群岛。"
+  },
+  "example:jam-kamikamace": {
+    "description": "在这款仍在开发中的本地双人竞技游戏里，你要拖着绳索连接的钉头锤，抢先撞上对手的锤子，以比对手先死亡来得分。"
+  },
+  "example:jam-strange-winds": {
+    "description": "在南极迫降后，你要瞄准并开火，抵御逼近的敌人、保护飞机，体验一段短篇氛围生存射击游戏。"
+  },
+  "example:jam-overforged": {
+    "description": "扮演小猫村庄的铁匠，熔炼矿石、锻打并磨利剑刃，为士兵配备武器，撑过三波老鼠入侵。"
+  },
+  "example:jam-fractured-drift": {
+    "description": "一款通过拾取和缩放物体来解决空间谜题的3D解谜平台游戏。"
+  },
+  "example:jam-run-for-it": {
+    "description": "一款2D无尽跑酷游戏，玩家通过跳跃应对逐渐加难的奔跑挑战并赚取金钱，帮助猫咪逃离燃烧的大楼。"
+  },
+  "example:jam-possess-and-destroy": {
+    "description": "一款恶魔题材潜行第一人称射击游戏，玩家从背后附身人类、消耗能量隐身，并在避免暴露身份的同时猎杀目标。"
+  },
+  "example:jam-perdio-boca": {
+    "description": "一款3D俯视角清版动作原型，玩家扮演失意的球迷，拳击警察、投掷数量有限的啤酒，并向巨大的麦当劳首领推进。"
+  },
+  "example:jam-solar-charged": {
+    "description": "一款太阳能供电的塔防原型，防御塔消耗的电力同时也是维持生存的资源，天气决定战斗阶段之间的电力恢复。"
+  },
+  "example:jam-ceres": {
+    "description": "在这款尚未完成的种植策略游戏中，利用每天有限的资源种植、浇水并布置作物，抵御赏金猎人的袭击。"
+  },
+  "example:jam-sombra": {
+    "description": "在这款开发中的俯视角动作游戏中，使用攻击和消耗能量的冲刺击败并吸收敌人。"
+  },
+  "example:jam-egg-hunt": {
+    "description": "在这款用一天制作的寻蛋小游戏中，在关卡倒计时结束前找到并点击随机放置的彩蛋。"
+  },
+  "example:jam-the-house-always-wins": {
+    "description": "消耗有限的魔力操控骰子比大小的概率，在赌场利润与赌客命运之间做出取舍。"
+  },
+  "example:jam-hue-protocol": {
+    "description": "在二维平台关卡中跳跃攀登测试路线，并使用面具使特定材料消失。"
+  },
+  "example:jam-life-in-2-dimensions": {
+    "description": "一款开发中的点击游戏，通过点击红色按钮达成不断提高的目标，为会死亡的第二维度补充生命值。"
+  },
+  "example:jam-ancient-secrets": {
+    "description": "在三维古代遗迹中探索，与宝箱互动获取钥匙和信息，再消耗钥匙开门。"
+  },
+  "example:jam-clown-panic": {
+    "description": "在桌面风格的文件系统中寻找并在游戏内删除病毒；病毒会进化并藏得更深，同时需要避免误删文件带来的惩罚。"
+  },
+  "example:jam-morse-morse-revolution": {
+    "description": "用一个按钮发送摩尔斯电码，与抵抗组织成员通信，并完成消息传递环节和三种基于摩尔斯电码的挑战。"
+  },
+  "example:jam-splitrun": {
+    "description": "一款短篇二维平台跳跃游戏，你会分出一个以锁链相连的分身，利用连接进行摆荡、拉拽和攀爬，穿过三个关卡。"
+  },
+  "example:jam-crate-crusher": {
+    "description": "在无限生成的房间中用锤子砸开木箱，避开会造成伤害的炸弹和无法破坏的金属箱，并收集偶尔掉落的强化道具。"
+  },
+  "example:jam-terrapy": {
+    "description": "打出植物养护卡牌，填满每株室内植物的水分、日照与土壤计量条，同时管理重新抽牌的惩罚。"
+  },
+  "example:jam-robo-blocks": {
+    "description": "驾驶并转向一台模块化机器人，通过拖放和旋转额外模块，将其组装成更大的机器。"
+  },
+  "example:jam-fungal-protocol": {
+    "description": "拿起医疗工具，清除病人身上生长的蘑菇，赶在他们死于真菌丧尸感染之前救治他们。"
+  },
+  "example:jam-lost-and-found-gamejam26": {
+    "description": "经营失物招领柜台，根据十位访客的描述在储物格中寻找物品，归还失物并了解他们的故事。"
+  },
+  "example:jam-shoot-into-the-void": {
+    "description": "在限定圆形区域内移动飞船，用鼠标引导发射的导弹，在每发导弹失效前摧毁敌人。"
+  },
+  "example:jam-loop-sproker": {
+    "description": "静止时吹出不断扩大的烟圈攻击下降的黄蜂，再移动躲避无法摧毁的障碍，挑战四轮街机关卡。"
+  },
+  "example:jam-meteor-power": {
+    "description": "在这款游戏创作活动策略游戏中，指挥机器人穿越平台、建造太阳能站并连接电线，延缓能源耗尽与陨石破坏。"
+  },
+  "example:jam-the-curse-of-the-ancients": {
+    "description": "在被诅咒的埃及世界中无尽奔跑，通过跳跃、滑铲和射击躲避敌人与障碍。"
+  },
+  "example:jam-primrose": {
+    "description": "在这款简短的游戏创作活动作品中，扮演外星人探索并归还人们遗失的物品，让世界恢复色彩与快乐。"
+  },
+  "example:jam-2wcocsdajnr2d": {
+    "description": "在基于颜色的合作平台游戏中，引导朝向不同的两名玩家跳跃、下踩并收集颜料颜色。"
+  },
+  "example:jam-sticktorio": {
+    "description": "在这款放置点击游戏原型中，收集资源、雇佣工人并建立生产链，取得四件王室物品。"
+  },
+  "example:jam-avoid-the-void": {
+    "description": "在不断上升的虚空吞噬星球时，利用可变高度跳跃攀登平台、前往火箭飞船逃生。"
+  },
+  "example:jam-zombies-are-dumb": {
+    "description": "在六个简短关卡中指挥僵尸群消灭人类，调整单只僵尸的方向或聚集附近僵尸，同时避免它们互相吞食。"
+  },
+  "example:jam-new-phone-who-dis": {
+    "description": "在这款简短的游戏创作活动推理作品中，根据最后收到的消息推断丢失的手机联系人身份；作者说明平衡与完善程度仍然不足。"
+  },
+  "example:jam-mecha-shells": {
+    "description": "在这款仍在开发中的游戏创作活动策略作品中，组装机械乌龟并与其他机器人战斗。"
+  },
+  "example:jam-magic-engineering": {
+    "description": "排列魔法阵中的法术并组合其效果，满足每关要求的结果与规则书限制。"
+  },
+  "example:jam-stuck-in-a-loop": {
+    "description": "被困在游泳圈中，利用墙壁反弹穿过循环平台，不断向上攀登无尽裂谷。"
+  },
+  "example:jam-hughs-chromatic-adventure": {
+    "description": "在这款仍在开发中的游戏里，帮助企鹅休利用二段跳和可收集的彩色面具穿越解谜平台关卡。"
+  },
+  "example:jam-darkness-falls": {
+    "description": "在这款只有一个关卡、作者承认仍有粗糙之处的塔防原型中，白天建造元素防御塔，夜晚施放法术抵御敌人波次。"
+  },
+  "example:jam-grim-at-your-service": {
+    "description": "在这款鼠标操作的对话解谜游戏中担任死神，为灵魂选择交谈话题，同时管理有限的值班时间与分数。"
+  },
+  "example:jam-luxel": {
+    "description": "操纵提灯的幸存者穿行于敌群，在设置商店中出售字幕、界面元素、操作功能，最终连像素也一并出售，以换取战斗能力。"
+  },
+  "example:jam-bamboozled": {
+    "description": "一款游戏创作活动中的解谜平台游戏：砍下竹子，选择足够长的竹竿跨越深水坑，避免落水。"
+  },
+  "example:jam-squirrel-family": {
+    "description": "一款小型生存游戏：躲避猫头鹰，把鱼转移到干净的水中，将蛇送回岩石，并让兔子躲进树里。"
+  },
+  "example:jam-bubble-bubble": {
+    "description": "一款巫师酒吧主题的活动作品：购买原料并将其拖入大锅，调制饮品以赚回成本。"
+  },
+  "example:jam-fun-fox-biscuit-bash": {
+    "description": "一款受《瓦力欧制造》启发的原型，连续安排短小游戏，并提供带有风险的额外生命或分数倍率；作者提醒含有巨大声响及轻度癫痫诱发风险。"
+  },
+  "example:jam-itsy-bitsy": {
+    "description": "一款蜘蛛主题的解谜平台游戏，通过移动、吐丝和攀爬抵达山顶。"
+  },
+  "example:jam-operation-spin": {
+    "description": "一款用一周制作的3D潜行活动作品：操纵遥控无人机穿过戒备森严的建筑，取回机密文件并避免触发警报。"
+  },
+  "example:jam-autumn-preserves": {
+    "description": "一款温馨像素风游戏：采集食材，完成四种厨房小游戏，整理储藏室里的罐子，并与邻居、集市顾客和孙辈分享腌渍与果酱食品。"
+  },
+  "example:jam-bug-bounty": {
+    "description": "一款快节奏点击游戏：在模拟代码编辑器中寻找并拍死虫子，争取在一分钟内获得尽可能高的成绩。"
+  },
+  "example:jam-decay-runner": {
+    "description": "一款无尽跑酷游戏：巫师逃离不断逼近的腐朽，使用魔杖射击和蓄力法术将其击退，同时避免跌落。"
+  },
+  "example:jam-sacred-guardian": {
+    "description": "一款2D森林战斗游戏：守护者通过方向移动和有时限的近战攻击，对抗一波波入侵生物。"
+  },
+  "example:jam-oubliette": {
+    "description": "一款3D解谜原型：组合并旋转符印，构筑足够强大的封印，阻止不断出现的超自然异物。"
+  },
+  "example:jam-whispers-of-the-carnival": {
+    "description": "一款3D探索平台游戏原型：波比在陌生的土地上探索、结识角色并收集神秘卡牌，寻找回家的办法。"
+  },
+  "example:jam-booouuhgie": {
+    "description": "一款短篇解谜平台游戏原型：推动能将追逐者幽灵石化的蜡烛，攀爬梯子，逃出闹鬼宅邸。"
+  },
+  "example:jam-constraktor": {
+    "description": "一款2D活动作品：收集经验、扩张移动城市，并保护中央节点免遭敌人摧毁；作者提醒游戏结束功能无法正常工作。"
+  },
+  "example:jam-readers-block": {
+    "description": "一款极简阅读解谜游戏：把缺失的空格当作有限资源来调配，设法读到文本结尾。"
+  },
+  "example:jam-everything-survivor": {
+    "description": "一款仍在开发中的多人合作生存射击游戏：对抗具有敌意的维基百科条目并逃离互联网；多人游玩需要服务器。"
+  },
+  "example:jam-lizards-tower": {
+    "description": "一款俯视角像素风动作游戏：维京战士一边攀登古塔，一边与变异蜥蜴战斗。"
+  },
+  "example:jam-invite-only": {
+    "description": "一款简短的3D点击式冒险Jam游戏，玩家在一场阴森的聚会上为保住性命而玩游戏。作者提醒汽车区域存在漏洞和卡顿，并建议使用运行与音效表现更好的 Windows 版本。"
+  },
+  "example:jam-kiwi-airborne": {
+    "description": "一款在周末Jam中制作的2D横版游戏，玩家帮助几维鸟追求飞行梦想，同时管理生命值、耐力和冲刺能力。"
+  },
+  "example:jam-unknowable": {
+    "description": "一款回合制教团管理游戏，玩家给追随者分配任务，在52周内收集五件神器，同时躲避监察者。"
+  },
+  "example:jam-carveout": {
+    "description": "一款打砖块风格的解谜原型，玩家通过移动和射击匹配目标图案，而不是清除所有砖块。作者说明仍有若干遗漏和漏洞，但称这些问题并不太影响游玩。"
+  },
+  "example:jam-blackwater": {
+    "description": "一款3D海战原型，玩家驾驶自动向前航行的小船躲避炮火，撑过五波进攻后击沉旗舰。"
+  },
+  "example:jam-sonic-shock": {
+    "description": "一款使用图库照片制作的3D Jam冒险游戏，玩家在遭到机器人化改造的太空殖民地中进行第一人称战斗、潜行、黑客入侵和游泳。"
+  },
+  "example:jam-square-in-10-seconds-or-less": {
+    "description": "一款2D平台跳跃Jam游戏，方块必须在十秒内完成每一关，否则就要重来。"
+  },
+  "example:jam-flypost": {
+    "description": "一款简短的3D反乌托邦Jam游戏，玩家需要留意执法者，贴上被禁止的贴纸后若无其事地离开。"
+  },
+  "example:jam-tidal-towns": {
+    "description": "一款3D城市建设解谜游戏，玩家在不断上涨的海水淹没城镇时重新安置居民并管理建筑。"
+  },
+  "example:jam-revenge-of-the-cursed": {
+    "description": "一款本地双人Jam追逐游戏：受诅咒的英雄会抹去接触的地形，逃跑的巫师则会将其恢复，双方都只能在飘过的云层下移动。"
+  },
+  "example:jam-orbital-clash": {
+    "description": "一款由引力驱动的2D太空射击游戏，玩家用鼠标控制推进来占领行星；作者建议下载游玩，而不是使用卡顿的网页版本。"
+  },
+  "example:jam-polygon-protocol": {
+    "description": "一款开发中的几何图形Roguelite游戏，玩家让形状不断进化，在敌群中冲刺并攻击暴露的Boss核心。"
+  },
+  "example:jam-plomes-i-piulades": {
+    "description": "一款2D教育卡牌解谜游戏，玩家将瓦伦西亚的鸟类与物品配对，形成由六条连接组成的互助链。"
+  },
+  "example:jam-minisode-madness": {
+    "description": "一款开发中的、受《瓦力欧制造》启发的小游戏合集，包含点击、打字和旋转玩法，网页版本曾被报告存在结尾画面卡住的问题。"
+  },
+  "example:jam-ocean-commander": {
+    "description": "一款2D即时战略Jam游戏，玩家指挥船只在岛屿附近采矿、自动迎战敌人，并建立舰队摧毁敌方基地；游戏教程尚未完成。"
+  },
+  "example:jam-planet-escape": {
+    "description": "一款尚未完成的3D生存Jam游戏，玩家在即将毁灭的海洋星球上采矿并组装逃生火箭；当前仅包含作者完成的第一阶段内容。"
+  },
+  "example:jam-bag-of-beholding": {
+    "description": "一款回合制背包战斗原型，玩家在一波波敌人的战斗中吞噬物品获得影响力，并阻止宿主使用某些物品。"
+  },
+  "example:jam-nekogotchi": {
+    "description": "一款为游戏创作活动制作的桌面虚拟宠物游戏，通过内含二维宠物的三维玩具界面喂养 Neko、打扫房间、关灯并玩小游戏。"
+  },
+  "example:jam-whisperstone": {
+    "description": "一款早期 Alpha 阶段的 Roguelike 牌组构筑游戏，围绕神秘的魔法卷轴卡牌，在解读卡牌效果与直接使用其不可预测的力量之间权衡。"
+  },
+  "example:jam-cool-shoot": {
+    "description": "一款短篇轨道射击原型，玩家扮演酷炫特工射击屁股月亮狼人等荒诞目标，使用鼠标左键开火、右键装填。"
+  },
+  "example:jam-hola-soy-fish": {
+    "description": "一款双人本地合作的游戏创作活动作品，两名玩家分担酱油气泡船的驾驶、打气和火炮操作，在应对海洋危险的同时维持鱼的空气供应。"
+  },
+  "example:jam-slam-to-the-laughter": {
+    "description": "一款 Doom 风格的游戏创作活动射击作品，玩家扮演 DOMAIN_DEFENDATRON，在两个关卡和一个简短教程中为公有领域角色恢复笑容；部分历史插画含有非色情的裸露内容。"
+  },
+  "example:jam-nicas-bubble-tea": {
+    "description": "一款双人分屏打字派对游戏，两名奶茶学徒共用一个键盘，通过按下字母泡泡对应的按键竞速装满杯子，按错则受到惩罚。"
+  },
+  "example:jam-loopdale": {
+    "description": "一款小型、未完成的3D交通管理Jam游戏：资助道路工程、吸引居民并维持公众支持率，以最大化生存天数乘以人口的得分；作者说明移动端缺失贴图且游戏没有音频。"
+  },
+  "example:jam-mousewheel": {
+    "description": "一款鼠标控制的2D动作游戏：利用移动轨迹画圈包围敌人、积累连击并迎战首领。"
+  },
+  "example:jam-froglet-frenzy": {
+    "description": "一款短篇单键2D平台游戏：操控青蛙在木头与叶片间跳跃、躲避捕食者，并竞速抵达每关的池塘。"
+  },
+  "example:jam-pulss": {
+    "description": "一款未完成的2D猫咪平台射击游乐场，包含快速移动、跳跃与搭桥机制；单人关卡、社区地图和多人模式仍标注为即将推出。"
+  },
+  "example:jam-flicky-bee": {
+    "description": "一款3D蜜蜂弹射街机游戏：在花朵间弹射、采集蜂蜜并躲避危险，直到体力耗尽，再用蜂蜜积分购买外观。"
+  },
+  "example:jam-the-fat-hand": {
+    "description": "一款3D物理喜剧Jam游戏：操控长着巨手的恐龙，通过摆弄物体以及轻巧或莽撞的挥拳来完成日常任务。"
+  },
+  "example:jam-aim-assist": {
+    "description": "一款短篇2D街机游戏：在炮塔之间移动，完成类似验证码的目标选择，帮助计算机射击逼近的敌人。"
+  },
+  "example:jam-bubble-wizard": {
+    "description": "一款2D平台游戏，玩家操控能施放泡泡的巫师跨越沟壑和高大障碍，同时避开尖刺与坠落伤害。"
+  },
+  "example:jam-roll-of-the-dice-fabiomix": {
+    "description": "一款作者首次制作的2D算术解谜原型，玩家在五枚骰子之间选择运算符，以匹配生成的目标值，并需考虑运算优先级和整数除法。"
+  },
+  "example:jam-diedie": {
+    "description": "一款作者明确标注为未完成的俯视角射击原型：接触实体骰子会重掷并改变武器行为，骰子也能摧毁敌人；它缺少计分、关卡设计和完整的游戏状态循环。"
+  },
+  "example:jam-tetrogue": {
+    "description": "一款融合俄罗斯方块式拼块与RPG元素的2D解谜游戏，玩家拼接平台帮助英雄逃离房间，遇到困难时可以跳过关卡。"
+  },
+  "example:jam-cheekydice": {
+    "description": "一款俯视角3D物理游戏，玩家操控骰子将物品撞下桌子来得分，同时躲避试图把骰子也撞下桌子的人类。"
+  },
+  "example:jam-cycle-delver": {
+    "description": "一款2D游戏创作赛解谜原型，玩家穿行于嵌套环路之间，收集带编号的钥匙、遵守单向箭头，并从深处携带延多王冠返回。"
+  },
+  "example:jam-space-escapers": {
+    "description": "一款作者明确承认存在诸多问题的2D任务管理游戏创作赛原型，讲述宇航员与名为Fred的大型史莱姆，包含种植、收获、喂食以及重复的每日任务循环。"
+  },
+  "example:jam-bombario": {
+    "description": "一款短篇游戏创作活动平台游戏，你需要蓄力投掷炸弹、触发连锁爆炸，并将升级能力带入循环关卡。"
+  },
+  "example:jam-personal-delivery-conglomerate": {
+    "description": "一款第一人称包裹分拣游戏，你需要将到货包裹放上货架、进行扫描，并快速将正确的包裹交给每位顾客。"
+  },
+  "example:jam-bonbon-and-the-deep-below": {
+    "description": "一款仍带有粗糙之处的游戏创作活动平台游戏，玩家操控野兔在瓦片关卡中跳跃并不断向深处挖掘，逃离下落的机械危险。"
+  },
+  "example:jam-potat-os": {
+    "description": "一款桌面主题的小游戏合集，你需要完成最新弹窗中的小游戏，避免电脑内存溢出。"
+  },
+  "example:jam-tensecbox": {
+    "description": "一款拳击原型游戏，你需要在反复进行的十秒回合中出拳和闪避，直到击倒对手。"
+  },
+  "example:jam-raft-blaster": {
+    "description": "一款木筏生存解谜原型游戏，你需要重新摆放物品并凑成三连、组合火炮对付敌人，还要在炸弹威胁木筏时扑灭火焰。"
+  },
+  "example:jam-tiny-shop": {
+    "description": "一款小商店经营游戏创作活动作品，你需要在有限空间中处理商品、购物篮和结账，同时应对前来寻找商品的顾客。"
+  },
+  "example:jam-summer-survival": {
+    "description": "一款蚊虫生存游戏创作活动作品，将三消资源收集与拍打蚊虫、使用强化攻击相结合，玩家必须避免烦躁值蓄满。"
+  },
+  "example:jam-ant-colony-tycoon-deluxe": {
+    "description": "一款蚁群生存模拟游戏，你需要绘制信息素路径，引导蚂蚁把食物和树枝带回巢穴，避免寿命有限的蚂蚁全部死去。"
+  },
+  "example:jam-tiny-hawk-pro-skater": {
+    "description": "一款基于起始项目开发的二维滑板游戏创作活动作品，包含跳跃、栏杆滑行、坡道和限时特技输入。"
+  },
+  "example:jam-raid-in-abyss": {
+    "description": "在这款源自游戏创作活动的奇幻砍杀游戏中深入程序生成的深渊关卡，把握方向性挥砍、格挡与踢击的时机，对抗越来越强的敌人。"
+  },
+  "example:jam-st-amsel": {
+    "description": "在这款小型阿尔卑斯村庄叙事冒险原型中与村民交谈，揭开围绕牧师的谜团；受创作活动时间限制，游戏范围已缩减为对话与故事，而非解谜。"
+  },
+  "example:jam-gunshift": {
+    "description": "在这款简约的二维创作活动动作游戏中射击与冲刺，收集并组合武器改装件，改变射击方式与机动能力。"
+  },
+  "example:jam-mid-sized-monsters": {
+    "description": "在这款于48小时创作活动中制作的生物收集游戏里探索程序生成的世界，削弱并捕捉怪物、召唤它们战斗，并投掷治疗药水以避免永久失去它们。"
+  },
+  "example:jam-99-shotguns": {
+    "description": "在这款创作活动射击游戏中，用不断扩充、可同时开火的枪械集合轰击成群怪物；作者建议使用Chrome并避免全屏，以获得更好的性能。"
+  },
+  "example:jam-collectors-coast": {
+    "description": "在这款具有活动后更新的创作活动聚落建设游戏中，建设海岸聚落、采集资源、重建港口，并派船远征，集齐博物馆所需的七件文物。"
+  },
+  "example:jam-cannon-ball-wok": {
+    "description": "在这款五天创作活动物理游戏中，绕着遭炮弹轰击的倾斜圆盘奔跑，让落下的食材按食谱顺序滑入两口炒锅来得分；错误食材会扣除生命。"
+  },
+  "example:jam-13-steps-to-escape": {
+    "description": "在这款带有撤销功能和关卡编辑器的像素风解谜游戏中，通过推动箱子和巨石、打开锁并触发机关，在十三步或十三次行动之内到达每关的旗帜。"
+  },
+  "example:jam-save-the-princess-mister-knight": {
+    "description": "在这款可下载的LÖVE创作活动防守游戏中，指挥骑士击败一波波僵尸、保护公主，并在波次之间升级骑士。"
+  },
+  "example:jam-rollermaze": {
+    "description": "在这款三维创作活动迷宫游戏中，滚动一个立方八面体，在十三秒内抵达树林；利用按钮打开受阻路径，在安全点重置计时，同时躲避哨兵方块。"
+  },
+  "example:jam-close-encounters-of-the-jeff-kind": {
+    "description": "一款游戏创作赛弹幕配送游戏：杰夫必须在时限内收集并递送包裹，同时躲避会使他眩晕的外星人子弹。"
+  },
+  "example:jam-the-last-dodo": {
+    "description": "一款游戏创作赛动作平台游戏：最后一只渡渡鸟通过跳跃和冲刺躲避杀手机器人，并用火箭攻击其控制中心。"
+  },
+  "example:jam-you-wake-up-in-a-forest-its-raining": {
+    "description": "一款通过文字指令操作的森林冒险游戏：你需要探索反复出现的梦境，与森林居民互动，并发现可能帮助你逃脱的行动。"
+  },
+  "example:jam-out-of-bounds": {
+    "description": "一款小型游戏创作赛平台跳跃游戏：你需要在关卡中移动和跳跃、避开敌人并到达终点，同时记录通关用时。"
+  },
+  "example:jam-doors": {
+    "description": "一款在三小时游戏创作赛中制作的原型：你需要猜测每扇门应推还是应拉，并尽量延长连续得分纪录。"
+  },
+  "example:jam-knight-helper": {
+    "description": "一款包含五个关卡的游戏创作赛解谜原型：你需要从快捷栏摆放物品，再运行模拟，帮助自主行动的骑士到达门口。"
+  },
+  "example:jam-eggs-with-legs": {
+    "description": "一款在七十二小时游戏创作赛中制作的俯视射击游戏：你需要救回被偷走的鸡蛋、保护它们免受农场主攻击，并用鸡蛋交换零件和维修服务。"
+  },
+  "example:jam-cat-crop-collector": {
+    "description": "一款游戏创作赛第一人称收集游戏：你需要收获猫咪作物、将它们存入中央篮子，并在计时结束前喷射消灭敌人。"
+  },
+  "example:jam-pinos-perfect-public-pizza-party": {
+    "description": "一款在四十八小时游戏创作赛中制作的计分游戏：你需要向人们投掷披萨、补充弹药，并在回合计时结束前通过配送得分。"
+  },
+  "example:jam-tableaoom": {
+    "description": "一款类似《毁灭战士》的游戏创作赛第一人称射击游戏，使用平面图像敌人；你需要在战斗中存活并收集三把里特维尔德椅子。"
+  },
+  "example:jam-necro-crypt": {
+    "description": "一款游戏创作赛动作原型：失去记忆的死灵法师必须对抗自己曾统领的亡灵大军，以重新获得力量。"
+  },
+  "example:jam-spacecell": {
+    "description": "一款在四十八小时游戏创作赛中制作的太空生存游戏：你需要打捞战利品、在建造模式中安装飞船组件，并切换到战斗模式抵御来袭陨石。"
+  },
+  "example:jam-living-lift": {
+    "description": "一款三维游戏创作赛探索游戏：一个生物劫持了下班的职员，你需要四处移动、收集物品，并喂食活体电梯。"
+  },
+  "example:jam-scrap-repair": {
+    "description": "一款短篇游戏创作赛机器人冒险游戏：你需要寻找并安装替换零件，修好工厂里唯一的另一台机器人，并尝试离开。"
+  },
+  "example:jam-catalyst": {
+    "description": "一款游戏创作赛连续首领战射击游戏：你需要通过冲刺和射击击败四个元素首领，并在战斗之间用等价升级换取新的升级。"
+  },
+  "example:jam-arthur-fisher-intelligence": {
+    "description": "一款在游戏创作活动中制作的基于格子的工厂解谜游戏，你需要放置和旋转地块，引导陷入循环的机器人工人并生产零件。"
+  },
+  "example:jam-codeware": {
+    "description": "一款快节奏的瓦里奥制造式小游戏合集，提供五条生命，包含限时收集光球的平台跳跃挑战。"
+  },
+  "example:jam-dont-blink": {
+    "description": "一款尚未完成的恐怖演示游戏，你需要启动四台发电机并躲避怪物，逃离废弃发电厂。"
+  },
+  "example:jam-monsters-night": {
+    "description": "一款在46小时内制作的短篇万圣节决策游戏，你需要判断来访者，决定是否为可能是怪物的访客开门。"
+  },
+  "example:jam-for-the-great-belly": {
+    "description": "一款在三天游戏创作活动中制作的仅用鼠标操作的增量游戏，猫咪会收集越来越多的鱼，并获得帽子和升级。"
+  },
+  "example:jam-shadow-wielder": {
+    "description": "一款俯视角生存原型游戏，你需要使用近战和暗影攻击撑过敌人波次，并选择升级。"
+  },
+  "example:jam-chrono-banana-farm": {
+    "description": "一款仍在开发中的种植游戏，你需要种植香蕉、利用神殿跳到未来，再出售收成以买下全部地块。"
+  },
+  "example:jam-ragged-sails": {
+    "description": "一款航海幸存者类原型游戏，你需要驾驶船只、对抗不断生成的敌人，并在获得经验后选择升级。"
+  },
+  "example:jam-monstersweeper": {
+    "description": "一款温馨的等距视角扫雷式解谜游戏，你需要在收割作物时避开隐藏着怪物的格子。"
+  },
+  "example:jam-only-so-many-places": {
+    "description": "一款俯视角潜行搜寻游戏，受罚的九岁孩子需要在家中寻找游戏机电源线，同时避开妈妈的视线。"
+  },
+  "example:jam-live-square-repeat": {
+    "description": "一款方块角色可以回到过去、解决原本无法通过的难题的平台解谜游戏，为主题是“循环”的GMTK Game Jam 2025制作。"
+  },
+  "example:jam-bucket-brews": {
+    "description": "一款短篇炼金商店游戏，你需要在桶中混合原料来完成药水订单，并随着轮次推进解锁更多配方。"
+  },
+  "example:jam-noumenon": {
+    "description": "一款短篇动作游戏，你需要操控猫咪把四处游荡的字母拍回原位，同时躲避会反击的愤怒字母。"
+  },
+  "example:jam-utterly-from-outer-space": {
+    "description": "一款3D平台跳跃游戏，被外星人绑架的奶牛需要使用外星科技，通过跳跃、冲刺和泡泡逃脱；由于网页版运行缓慢且粒子效果有问题，作者建议下载游玩。"
+  },
+  "example:jam-faulty-robot": {
+    "description": "一款在游戏创作活动后继续开发的平台解谜游戏，包含八个关卡和教程，你需要引导故障机器人Ai前往公主身边。"
+  },
+  "example:jam-afrogalypse": {
+    "description": "一款受《青蛙过河》启发的弹幕驾驶刷分游戏，你需要躲避机器青蛙，并消耗生命值获得无敌加速；作者建议下载游玩以改善性能和存档可靠性。"
+  },
+  "example:jam-elder-angler": {
+    "description": "在这款短篇生存游戏中，为年老鮟鱇鱼的灯充能后释放，击晕警觉的虾，并通过进食恢复全部生命值；作者报告网页版存在鼠标捕获问题。"
+  },
+  "example:jam-falling-casino": {
+    "description": "在这款面向 Windows 的短篇 3D 堆筹码与穿孔原型游戏中，挑战随机筹码形状的楼层并努力生存。"
+  },
+  "example:jam-the-bloody-raise": {
+    "description": "以第一人称探索办公室，向老板要求加薪，并持枪面对随之而来的恐怖追逐。"
+  },
+  "example:jam-plungewing-mcaquaquack": {
+    "description": "在这款开发中的距离挑战游戏中，从瓶子里发射橡皮鸭，滑翔并在泡泡上弹跳，再用获得的货币购买升级。"
+  },
+  "example:jam-bash": {
+    "description": "在这款原型中，让有意识的方块滑过网格谜题房间并撞击敌人；若浏览器粒子效果导致卡死，作者建议使用 Windows 构建。"
+  },
+  "example:jam-last-one-dancing": {
+    "description": "在这款开发中的房主制多人潜行游戏中，混入假面舞会的 NPC 人群，识别对手侦探并争夺王冠。"
+  },
+  "example:jam-phaseshifter": {
+    "description": "在这款开发中的解谜游戏中，利用魔法球切换光明与黑暗，推动方块、收集可选宝石，并竞速通关。"
+  },
+  "example:jam-keep-it-bombganized": {
+    "description": "在这款鼠标操作的解谜游戏中，摆放并旋转组件，完成定制包裹炸弹订单；游戏存在已知的触控板和触摸控制限制。"
+  },
+  "example:jam-ball-entanglement": {
+    "description": "点击并按住球体机关，牵引受物理作用的球完成鼠标操作的平台挑战；可重新开始，也可使用会使本次成绩失效的传送辅助。"
+  },
+  "example:jam-interrogation": {
+    "description": "询问嫌疑人并拼凑谋杀案真相，体验不同角色的小游戏，包括限时生成食物的挑战。"
+  },
+  "example:jam-far-lands": {
+    "description": "在这款作者称有很多漏洞的短篇平台游戏中，利用可变高度跳跃攀登愈发混乱的浮空陆地。"
+  },
+  "example:jam-drunk-space-odyssey": {
+    "description": "在这款反向弹幕游戏中，召唤敌人波次，帮助醉酒飞行员补充燃料并升级飞船；作者报告存在依浏览器或电脑而异的不发射子弹问题。"
+  },
+  "example:jam-oblivision": {
+    "description": "在这款解谜平台原型中，引导机器人饮用药水，使其每次只能看见并接触四种元素中的一种，并利用眼睛检查点和黑洞传送前进。"
+  },
+  "example:jam-trix": {
+    "description": "用鼠标移动并瞄准，在每关 20 秒内消灭敌人；作者指出网页粒子效果无法工作，因此优先使用桌面下载版。"
+  },
+  "example:jam-unshelled": {
+    "description": "在这款开发中的 Jam 游戏中，附身死去的海洋生物，使用河豚尖刺或剑鱼斩击，并利用死亡机制解开水下平台谜题。"
+  },
+  "example:jam-castaway-grid-farmer": {
+    "description": "从一无所有开始，收集漂来的种子，种植并收获作物，再花金币逐格扩建小岛。"
+  },
+  "example:jam-13th-floor": {
+    "description": "一款第一人称潜行恐怖游戏：在酒店房间中逐个寻找钥匙，使用手电筒探索，并躲避追逐而来的怪物。"
+  },
+  "example:jam-those-final-seconds": {
+    "description": "一款小型 Jam 射击游戏：收集敌人掉落的时钟来延长得分时间。作者建议使用 Firefox 或 Chrome/Chromium 以保证音频正常，并提醒 Firefox 隐私浏览可能出现图形问题。"
+  },
+  "example:jam-nebula-m09": {
+    "description": "一款包含九个关卡的镜像线条解谜游戏：蓝色与红色路径必须收集所有宝石，并分别重新连接到各自的起点。"
+  },
+  "example:jam-unborn": {
+    "description": "一款 2D 灵魂生存 Jam 游戏：吸收其他灵魂为爆炸攻击充能，躲避天使和恶魔，并探索生成式世界以寻找转世的机会。"
+  },
+  "example:jam-big-black-book-of-magic": {
+    "description": "一款 2D Jam 施法游戏：通过绘制手势选择施放次数有限的法术并向目标释放；作者报告，已发布的 Godot 4.0.2 构建存在随机崩溃问题。"
+  },
+  "example:jam-supercritical-post-apocalyptic-bonsai": {
+    "description": "一款 2D Jam 园艺解谜游戏：修剪核能盆栽的藤蔓并管理养分流动，以避免养分枯竭或核爆炸。"
+  },
+  "example:jam-moon-run": {
+    "description": "一款 3D 月球逃生游戏：在遭到毁灭前奔向安全地带，同时应对低重力移动、接地限制和有限氧气；此处选择的是 Jam 结束后的完整版本。"
+  },
+  "example:jam-dream-tail": {
+    "description": "一款以梦境世界为背景的 3D 解谜平台游戏原型，包含跳跃、冲刺和攀爬机制，并以桌面下载构建的形式参加 Godot Wild Jam #55。"
+  },
+  "example:jam-buildings-eraser": {
+    "description": "一款小型二维拆楼 Jam 原型：操控角色跳跃并投放定时炸药，炸碎建筑墙体。"
+  },
+  "example:jam-the-golden-rule": {
+    "description": "一款三维骑士平台解谜 Jam 游戏，包含陷阱、倒下后变成雕像的骑士，以及通过鼠标激活陷阱和摧毁雕像的操作。"
+  },
+  "example:jam-devotion-gwj81": {
+    "description": "一款 Jam 后继续完善的二维登山平台游戏：独行探险者使用数量有限的旗帜设置检查点，并可传送回最近插下的旗帜。"
+  },
+  "example:jam-seasonal-consequences": {
+    "description": "一款二维季节采集 Jam 游戏：熊需要赶在冬天来临前收集并运送食物，同时应对蜜蜂和猎人。"
+  },
+  "example:jam-automnia": {
+    "description": "一款二维秋日聚落卡牌游戏：选择建筑的摆放位置，为相邻的不同类型建筑获得分数，并完成一轮 25 张卡牌的流程。"
+  },
+  "example:jam-haunted-circuits": {
+    "description": "一款二维闹鬼逻辑电路 Jam 解谜游戏：将逻辑门移入电路，测试输出是否符合要求的模式，同时应对闹鬼效果导致的输出反转。"
+  },
+  "example:jam-absurd-herd": {
+    "description": "一款三维史莱姆放牧 Jam 游戏，围绕收集、合成和交付具有不同效果的史莱姆展开；作者提示关卡加载偶尔会失败。"
+  },
+  "example:jam-superspeed-spa": {
+    "description": "在这款鼠标操作的 Jam 模拟游戏中，为急躁的水疗顾客敷面膜、放黄瓜片。"
+  },
+  "example:jam-happy-hermit-crab-turbo-adventure": {
+    "description": "在这款短篇 Jam 生存游戏中收集海滩上的彩色物品装饰寄居蟹 Hermie 的家，并躲进壳里避开海浪。"
+  },
+  "example:jam-terminal-ggj23": {
+    "description": "在这款仍在开发的 Jam 游戏中，通过终端命令移动指针、穿过文件夹寻找根目录；本地网页版需要服务器，Linux 版须将可执行文件和 PCK 放在同一目录。"
+  },
+  "example:jam-man-versus-the-crowd": {
+    "description": "在这款 3D Jam 动作原型中选择喜剧演员的台词，并躲过观众扔来的物品。"
+  },
+  "example:jam-the-necrobotanist": {
+    "description": "在这款解谜平台跳跃原型中复活死者，让它们为植物施肥或回收植物的生命力，以克服平台关卡挑战。"
+  },
+  "example:jam-jest-to-impress": {
+    "description": "完成速度不断加快的小丑迷你游戏，维持国王的注意力，在这款 Jam 游戏中尽可能延长表演并冲击高分。"
+  },
+  "example:jam-blub-blub-pop": {
+    "description": "在这款 48 小时 Jam 制作的短篇鼠标操作放置游戏中戳破泡泡赚钱，并招募鱼类助手。"
+  },
+  "example:jam-funky-drive-through": {
+    "description": "在这款 Jam 餐厅经营原型中为动物顾客制作奇特汉堡，满足配料目标并避免过多失误。"
+  },
+  "example:jam-sitcom-simulator": {
+    "description": "在这款经营管理原型中，给具有不同性格特征的情景喜剧角色分配道具，赚取笑声并花钱购买新物品。"
+  },
+  "example:jam-rooted-journey": {
+    "description": "操控不断生长的树根寻找水源并避开墙壁和鼹鼠；铀可提供短暂无敌，深入地下则会提高速度。"
+  },
+  "example:jam-dual-crystal": {
+    "description": "在俯视角解谜冒险中探索重叠的红蓝两个世界，通过射击水晶切换世界并继续前进。"
+  },
+  "example:jam-ooboloo": {
+    "description": "在这款围绕“失而复得”主题、48 小时制作的 Jam 游戏中，操控团状角色穿越平台关卡，跳跃和冲刺会消耗自身的一部分。"
+  },
+  "example:jam-lovely-masqueraid": {
+    "description": "在这款带存读档功能的 Dialogic 视觉小说最小可行原型中，扮演间谍潜入假面舞会，通过分支对话和带有恋爱意味的社交接触展开行动。"
+  },
+  "example:jam-compy-destroys-the-world": {
+    "description": "在这款 Jam 游戏中，须在30秒内完成三个限时挑战并传送 Compy 的关机代码；发布页提供 Windows 和 macOS 下载。"
+  },
+  "example:jam-priests-holy-quest": {
+    "description": "在这款开发中的平台游戏里跳跃、攻击敌人并与面具相关能力互动；作者建议使用基于 Chromium 的浏览器运行网页版。"
+  },
+  "example:jam-snatch-n-sniff": {
+    "description": "在这款第一人称3D Jam 游戏中移动、抓取物品，并持续按住嗅闻操作以识别物品；公开下载为最初的 Jam 提交版。"
+  },
+  "example:jam-repair-raider": {
+    "description": "在这款 Jam 游戏中驾驶可维修的载具前往交货点，沿途保护货物和车辆免受荒原机器人袭击；发布页提供 Windows、macOS 和 Linux 下载。"
+  },
+  "example:jam-poungi": {
+    "description": "在这款可玩的 Jam 原型中，引导企鹅穿越冰雪2D世界，应对危险和暴风雪效果，并把蛋送回巢穴。"
+  },
+  "example:jam-shadow-of-the-mask": {
+    "description": "在这款2D生存计分原型中附身怪物，消耗能量捕获更强的宿主，并使用宿主的能力射击；可在浏览器中游玩，也提供 Windows 下载。"
+  },
+  "example:jam-under-the-horizon": {
+    "description": "在这款2D平台冒险 Jam 的 Alpha 版本中，运用移动与投射物机制探索被巨树侵蚀的世界；Windows 发布版明确提醒可能存在错误和待改进之处。"
+  },
+  "example:jam-catfluencer": {
+    "description": "通过只需鼠标操作的迷你挑战帮助家猫成为直播明星，包括选择安全食物；这款 Jam 游戏提供 Windows 和 macOS 下载。"
+  },
+  "example:jam-supertuxworld": {
+    "description": "一款仍处于早期开发阶段、由 Tux 主演的三维平台跳跃游戏，包含跳跃、冲刺、蹲伏和物理交互；作者提供 Windows 与 Linux 的 0.0.3 版下载。"
+  },
+  "example:jam-crystal-dash": {
+    "description": "交换相邻宝石组成配对，延长不断减少的计时并争取高分的宝石消除游戏；当前重制版源码尚未核实是否与发布页的 v1.3 构建一致。"
+  },
+  "example:jam-deepwood": {
+    "description": "一款约需 3 至 5 分钟完成的短篇骑士平台跳跃游戏，包含森林与洞穴陷阱、剑术战斗、强化道具和恶魔首领；作者标注支持 Chrome、Firefox 和 Edge，不支持 Safari。"
+  },
+  "example:jam-zacks-dress-up": {
+    "description": "通过点击切换上装、下装和整套服装，为动画角色换装；这是源自 2007 年 Flash 换装系列的 Godot 移植版，发布页的第三次迭代与当前源码的命名有所不同。"
+  },
+  "example:jam-mongoose-feast": {
+    "description": "操纵猫鼬在纵向场地中吃甲虫、收集萤火虫以获得分数和额外时间，同时躲避毒蟾蜍；这是提供浏览器嵌入版及 Windows 下载的早期 0.1 版本，发布页仍将 Android 触控和 Google Play 发布列为即将推出。"
+  },
+  "example:jam-weekend-space-command-prototype": {
+    "description": "一款有明确体验边界的地理位置科研舰队原型游戏，要求玩家实际前往至少四个现实地点，使用离线目的地数据并可另行下载地图；需要 Android S 时代或更新的手机，以及现实中的出行。"
+  },
+  "example:jam-depot-gato": {
+    "description": "在这款小型二维街机游戏中扮演猫咪，拯救即将被绑走的其他猫咪，工程包含投射物、气球和关卡推进系统；作者原始发布地址现重定向到 Kalijband Games。"
+  },
+  "example:jam-shooting-gallery-sparrowworks": {
+    "description": "在二维打靶场中射击一波波目标，赚取现金升级武器，并挑战高分或计时模式的快速通关评级；尚未核实源码与发布构建是否一致。"
+  },
+  "example:jam-forgotten-crypt": {
+    "description": "一款作者首作性质的三维恐怖探索体验，玩家在介于过去与现在之间的空间中游荡并与环境互动；提供 Windows 和 Linux 下载，作者要求安装 .NET SDK 7.0 或 6.0。"
+  },
+  "example:jam-reia-pre-alpha": {
+    "description": "一款尚未完成的三维动作角色扮演前期测试原型，包含探索、攻击敌人和拾取战利品；公开构建面向 Windows，制作与多人玩法的若干功能仍未完成，当前 Godot/Rust 源码需要 Git LFS 素材及子模块。"
+  },
+  "example:jam-poder-solar": {
+    "description": "一款赶工完成的 Jam 原型：布置自动发电设施，为村庄供应整夜电力，同时避免断电、过量充电和污染超标。"
+  },
+  "example:jam-bread-adventure": {
+    "description": "以面包为主角的类银河恶魔城游戏，包含探索、战斗及可收集的移动能力升级；提供免费 Steam 演示版，桌面完整版需付费，Steam 分发需要使用其客户端。"
+  },
+  "example:jam-radius-rumble": {
+    "description": "一个教程系列制作的 agar.io 风格多人游戏：吞噬孢子和较小对手，并躲避更大的玩家；浏览器游玩依赖作者的在线服务器及账户后端设施。"
+  },
+  "example:jam-miras-journal": {
+    "description": "一款开发中的日式角色扮演游戏，探索衰败的土地并参与基于颜色机制的回合制战斗；可下载的测试版本可能已经过时，未来 Steam 正式版计划收费。"
+  },
+  "example:jam-asteroids-revenge": {
+    "description": "一款开发中的太空生存刷分游戏：操控超自然小行星躲避敌舰，并发射数量受限的齐射；提供浏览器游玩及桌面和 Android 下载。"
+  },
+  "example:jam-marble-mechanical-flower": {
+    "description": "一款偏观赛式的 3D 弹珠竞速小游戏，可命名弹珠、生成程序化赛道，并在淘汰模式中定时炸掉最后一名；提供浏览器游玩和桌面下载。"
+  },
+  "example:jam-expland": {
+    "description": "一款尚未完成的单人 3D 冒险恐怖游戏，包含探索与生存系统；可下载已归档的公开预发行版本，但源码修改仅限私人非商业用途，禁止再分发。"
+  },
+  "example:jam-the-jade-crypt": {
+    "description": "一款已发布浏览器版本的 2.5D 武侠动作平台游戏，使用 3D 角色实现攀沿、剑术战斗、游泳及能力门槛关卡；尚未实际运行验证浏览器兼容性与可玩性。"
+  },
+  "example:jam-horde-survival-3d": {
+    "description": "一款以浏览器为主要平台的第三人称生存肉鸽游戏，具有自动攻击武器、经验升级及限时生存目标；网页要求支持硬件加速的现代 WebGL 2 浏览器，并提示首次加载时引擎编译可能约需一分钟。"
+  },
+  "example:jam-cutting-plane-game-2": {
+    "description": "一款讲解优化算法的教育解谜游戏：在整数点阵上，使用次数受限的圆形切割、Gomory 割和分割切割处理多边形；已发布浏览器测试版，排行榜与统计功能依赖 Talo 服务。"
+  },
+  "example:jam-not-named-yet-gamedev": {
+    "description": "一款移动设备优先的生存游戏 Alpha，包含角色选择、实时近战与投射攻击、骷髅敌人和生命条；仍在开发中，部分动画回调尚未完成。"
+  },
+  "example:jam-moon-mishap": {
+    "description": "操纵月球着陆器旋转并推进，管理燃料和氧气，以足够缓慢平稳的姿态降落，避免爆炸。"
+  },
+  "example:jam-dragon-city-clone-escalopa": {
+    "description": "一款与原作官方无关的同人学习项目：建设等距视角的龙岛，繁育并孵化混合元素龙、喂养龙并参与元素战斗。"
+  },
+  "example:jam-marble-runner-kaushalmeena": {
+    "description": "引导弹珠沿蜿蜒的五车道无尽跑道前进，跳跃或躲避障碍，收集水果提升倍率，在不断加速的跑程中分辨有益拾取物与陷阱。"
+  },
+  "example:jam-holonomy": {
+    "description": "在这款游戏创作赛解谜游戏中，引导圆点穿行于骰子的非欧几里得表面；网页版音频可能出现杂音，若骰子显示全黑，需降低画质或使用桌面下载版。"
+  },
+  "example:jam-cards-n-castles": {
+    "description": "在这款游戏创作赛原型中，组建中世纪兵种牌组，在网格上部署并观看自动战斗；现有八场战斗，教学与单位属性提示仍在作者的后续计划中。"
+  },
+  "example:jam-lithic": {
+    "description": "在这款叙事型推箱子游戏创作赛作品中推动雕像、破解洞穴谜题；作者建议遇到加载问题时使用 Chrome，但部分 Mac 用户仍可能无法加载游戏。"
+  },
+  "example:jam-caliditas": {
+    "description": "在这款源自游戏创作赛的卡牌游戏中，使用以温度决定强弱的生物牌和法术牌；发布页另提供扩充卡牌并加入联网对战的 Alpha 版本。"
+  },
+  "example:jam-cybertale": {
+    "description": "在这款于 72 小时游戏创作赛中制作的小型轻度 Roguelike 作品里，扮演机器人冲刺斩击病毒，并挑战最终首领。"
+  },
+  "example:jam-crux-swarm": {
+    "description": "在这款融合银河恶魔城与塔防的游戏创作赛作品中，激活并保护赋予能力的核心；发布页提供 Windows、Linux 和 Mac 桌面下载版。"
+  },
+  "example:jam-untitled-glue-game": {
+    "description": "在这款 48 小时游戏创作赛作品中，控制双手抓取、粘合并修复物品，提供 Windows、Linux 和 macOS 下载版；建议使用带模拟摇杆和扳机的手柄，因为键盘操作体验较差。"
+  },
+  "example:jam-power-cut": {
+    "description": "在这款 Gamedev.js 游戏创作赛作品中，跳跃穿越以电力为主题的小型平台解谜关卡，并与场景物体互动。"
+  },
+  "example:jam-hide-and-sick": {
+    "description": "在这款短篇游戏创作赛生存恐怖作品中潜行躲藏，逃离噩梦般的医院；提供 Windows 和 Linux 下载版，README 提醒 Windows 可能警告该下载未签名。"
+  },
+  "example:jam-cozy-snow": {
+    "description": "在这款尚未完成的冬季游戏创作赛原型中左右移动，向雪人投掷雪球；作者说明存在雪人不扔雪、关卡偏少及移动端控制等问题。"
+  },
+  "example:jam-electro-havoc-v2": {
+    "description": "在这款游戏创作赛时期的浏览器射击作品中，利用射击、连锁爆炸和强化道具挺过十波敌人；建议使用电脑浏览器，不支持移动端，浏览器中的最高分也不会持久保存。"
+  },
+  "example:jam-laugh-equilibrium": {
+    "description": "在这款两天制作的游戏创作赛作品中表演小丑把戏，满足观众要求、赚取报酬，并努力撑过一周。"
+  },
+  "example:jam-blood-moon-game-off-2020": {
+    "description": "扮演力量随月升增强的狼人，熬过五个夜晚恢复人类身份，或挑战无尽模式；作者建议全屏游玩。"
+  },
+  "example:jam-archetype-cssa": {
+    "description": "在这款提供 Windows 和 macOS 下载版的游戏创作赛作品中，赶在铁匠敌人接近前输入其单词射出箭矢，并输入已收集强化道具的名称来使用它们。"
+  },
+  "example:jam-d3bugged": {
+    "description": "在这款融合牌组构筑风格与弹幕战斗的游戏创作赛原型中，探索生成的网络世界并组合攻击芯片；后续开发尚不确定，目前仅有 DELETE + DELETE = REFORMAT 这一组合。"
+  },
+  "example:jam-fusion-farmer": {
+    "description": "一款农场主题的创作赛原型：融合动物的头部和身体，按时满足镇民的订单，通过评价争取成为五星农场。"
+  },
+  "example:jam-equal-to-p": {
+    "description": "一款源自创作赛的逻辑解谜游戏：填入表达式中的空位，使算式恒为真，并让指定符号组成笑脸颜文字；未核实此源码与后来的商业版本是否一致。"
+  },
+  "example:jam-hackerspiele": {
+    "description": "一个社区创作赛迷你游戏合集：主框架提供限时挑战、三条生命和计分，包含多种短小游戏；当前源码同时含有 GPN23 与 GPN24 的游戏集合，而非单个独立小游戏。"
+  },
+  "example:jam-super-repair-bros": {
+    "description": "一款每局限时 20 秒的驾驶创作赛游戏：停车修理损坏的汽车，并撞击乌龟获取额外分数。"
+  },
+  "example:jam-hare-der-lage": {
+    "description": "一款尚未完善的太空动作创作赛原型：驾驶飞船转向、射击并躲避鸡翅黑帮；已读源码中的胜利处理仅输出信息并暂停游戏。"
+  },
+  "example:jam-clickbait": {
+    "description": "一款混乱的创作赛动作游戏：在鼠标指针不断失控、广告会生成更多窗口的情况下关闭所有弹窗；作者建议使用实体鼠标。"
+  },
+  "example:jam-sabotage-express": {
+    "description": "一款在 48 小时创作赛中制作的解谜原型：扮演反派蜜獾，在火车抵达前铺设电缆，连通引爆器与炸药；扩展选关菜单及更多打磨仍在计划中。"
+  },
+  "example:jam-totally-terrifying-turns": {
+    "description": "一款洞穴逃生创作赛原型：穿越黑暗迷宫、躲避怪物，并通过两个相互衔接的关卡。"
+  },
+  "example:jam-tree-of-eden": {
+    "description": "一款动作平台跳跃创作赛原型：穿越时空的科学家种植蘑菇、树木和花朵以向上攀登，并用长矛与鞭子战斗；创作赛版本缺少游戏内教程，已确认提供 Windows 下载。"
+  },
+  "example:jam-immunity-attack": {
+    "description": "一款二维射击创作赛原型：操纵入侵生物在人体内前进、向细胞射击，并躲避会扣除生命与分数的碰撞。"
+  },
+  "example:jam-triangle-run": {
+    "description": "一款用于学习引擎的三维跑酷创作赛作品：三角形穿越平台路段、抵达检查点并挑战个人纪录；macOS 下载版未签名，当前源码仍保留直接进入调试路线的捷径。"
+  },
+  "example:jam-cave-empire": {
+    "description": "一款横向卷轴即时战略创作赛作品：采集资源、建造建筑并训练部队抵御入侵者；已确认的公开下载版本适用于 64 位 Windows 和 64 位 Linux。"
+  },
+  "example:jam-monke-sim": {
+    "description": "一款多人猴子模拟器创作赛原型，包含第一人称移动、抓取物品和抓钩机制；桌面游玩采用创建主机或加入主机的联网方式，公共服务器是否可用尚未核实。"
+  },
+  "example:jam-wild-and-free": {
+    "description": "一款 Alpha 阶段的二维太空射击游戏，包含推进式飞船移动、激光、敌人和生命值拾取物；作者提供的是预发布下载，而非完成版游戏。"
+  },
+  "example:jam-re-pairing": {
+    "description": "一款仍在开发中的末日背景二维解谜平台游戏：受损机器人收集零件，并使用磁力光束修复自身及周围的世界。"
+  },
+  "example:jam-cordyception": {
+    "description": "一款短篇俯视角弹幕游戏，讲述工蚁获得寄生能力后的生存冒险；作者推荐键盘和鼠标操作，并建议较旧的电脑使用桌面可执行版本。"
+  },
+  "example:jam-grave-harvest": {
+    "description": "一款三天创作赛作品：在墓园完成杂务获取肥料，培育巨型南瓜，同时对抗幽灵并与倒计时赛跑。"
+  },
+  "example:jam-greenway": {
+    "description": "一款创作赛回收设施解谜游戏：使用有限道路，将不断发展的城镇连接到垃圾处理中心；当前发布页提供 Windows 下载，推荐手柄操作，并记录了优化方面的限制。"
+  },
+  "example:jam-to-catch-a-wizard": {
+    "description": "在每次仅有十秒的倒带循环中找回移动能力，逃出巫师的地牢；目前发布的 Jam 游戏已加入赛后音乐。"
+  },
+  "example:jam-evergrove": {
+    "description": "在分层的程序生成地下世界中指挥矮人殖民地采矿，布置食物、啤酒和能量补给站；这是 Jam 原型，启动和切换层级可能卡顿，加载进度条尚未完成。"
+  },
+  "example:jam-outward": {
+    "description": "在世界逐渐扩张时向村民下令收集资源；这是未完成的殖民地原型，收集的资源尚无后续用途，旗帜附近的资源有时需要移除并重新下达命令才会被识别。"
+  },
+  "example:jam-giggle-groove": {
+    "description": "在双键操作的喜剧节奏 Jam 游戏中把握向观众讲笑话的时机，跟随的是口述笑话而非音乐节拍。"
+  },
+  "example:jam-second-interval": {
+    "description": "在以音乐为核心的平台探索游戏中穿越森林与不同生态区，收集小二度音程以重建旋律；声音是预期体验的重要部分。"
+  },
+  "example:jam-pizza-game": {
+    "description": "在节奏紧张的烹饪 Jam 游戏中快速制作披萨，处理面团、配料和烤箱；现有桌面下载是赛后改进的 1.1 版，而非原始参赛版本。"
+  },
+  "example:jam-daemon-limbs": {
+    "description": "在第一人称 Jam 游戏中躲避召唤出的怪物，查阅魔法书并改变它的身体部位，直到能够使用与其身体匹配的驱逐咒语。"
+  },
+  "example:jam-pot-life": {
+    "description": "在这个 Jam 沙盒原型中观察花盆里的微小生物，并聚焦放大镜引燃火焰；作者建议使用 Chrome，因为放大镜在 Safari 中无法工作。"
+  },
+  "example:jam-delive": {
+    "description": "在俯视角射击 Jam 原型中消灭敌对生命体，可使用鼠标或手柄瞄准，并具有自动开火和连续击杀升级机制。"
+  },
+  "example:jam-halt": {
+    "description": "在动作平台 Jam 游戏中运用跳跃、攻击和抓钩动作，阻止冒险者向更深处前进。"
+  },
+  "example:jam-zip-drone-dash": {
+    "description": "在无尽飞行 Jam 游戏中驾驶无人机运送救命药品，在爬升、投放包裹和消耗电量的加速之间调整操作，并避免失速。"
+  },
+  "example:jam-blorts-big-adventure": {
+    "description": "在解谜平台 Jam 游戏中扮演被锁在塔外、又遗失魔法书的巫师，召唤魔法伙伴来破解自己布置的机关。"
+  },
+  "example:jam-wild-magic-dice": {
+    "description": "在这款无尽女巫战斗 Jam 游戏中投掷骰子，激活元素攻击和治疗卡牌；发布页为调整过平衡的赛后版本，没有胜利结局。"
+  },
+  "example:jam-pineapple-run": {
+    "description": "在不断收缩的隧道中奔跑、跳跃并射击方块：摧毁蓝色方块会扩大隧道，摧毁红色方块则会使其进一步缩小。"
+  },
+  "example:jam-a-flicker-in-the-dark": {
+    "description": "在这款 3D Jam 原型中穿行于黑暗，瞄准并开关能够吸引萤火虫的手电筒；当前发布页列出了结局和卡顿修复，以及升级到 Godot 4.5 的更新。"
+  },
+  "example:jam-1d-puzzle": {
+    "description": "发射小生物，利用位移元件将它们引导到所有目标上，解开紧凑的线式谜题。"
+  },
+  "example:jam-lockerworlds": {
+    "description": "在这款鼠标操作的上帝模拟 Jam 游戏中照顾住在储物柜里的小生物，在微型世界之间切换，防止它们溺水、失火或触电。"
+  },
+  "example:jam-shadow-summoner": {
+    "description": "在这款开发中的 Jam 游戏里召唤或收回影子，捕获物体并逃离谜题关卡，逐步解锁更多能力。"
+  },
+  "example:jam-echo-chamber": {
+    "description": "在这款可在浏览器运行的 Jam 原型中，通过鼠标视角移动、投掷照明弹和回声脉冲探索 3D 关卡，到达目标区域。"
+  },
+  "example:jam-illuminat": {
+    "description": "在这款紧凑的 Jam 解谜游戏中，在六边形网格上放置并旋转镜子、分光器和合光器，将彩色光线引向检查点。"
+  },
+  "example:jam-bumpy-drilly": {
+    "description": "操纵小机器人向下采矿，将收集矿石的收益用于升级钻头，并应对深度增加带来的采矿效率下降。"
+  },
+  "example:jam-ld54-train-routes": {
+    "description": "在这款带计时关卡的紧凑 2D Jam 游戏中管理列车和铁路路线，在避免碰撞的同时完成停站目标。"
+  },
+  "example:jam-risky-rule": {
+    "description": "在这款紧凑的政治管理 Jam 游戏中，根据事件作出选择，平衡军事、稳定、金钱和外交；任一资源降至零都会导致游戏结束。"
+  },
+  "example:jam-bosskeeper": {
+    "description": "在这款提供 Windows 下载的 Jam 小游戏中，使用卡牌布置陷阱、墙壁、黏液地带和诱人的木桶，对抗接连出现的英雄，保护弱小的史莱姆首领。"
+  },
+  "example:jam-a-cat-in-the-aliens-lair": {
+    "description": "在这款短篇 2D 潜行动作 Jam 游戏中，扮演小猫潜入外星人基地，部署并再次启动可回收的诱饵，通过踩下地面按钮推进关卡。"
+  },
+  "example:jam-shelf-shift": {
+    "description": "一款基于物理效果的 Jam 原型：在时间耗尽前用念力把书装上书架；发布页列有 Windows、Linux 和 macOS 桌面下载。"
+  },
+  "example:jam-the-boy-on-the-first-floor": {
+    "description": "一款简短的 2D Jam 地牢探索游戏，包含挥剑战斗和角色互动；到达最后一层后会带着变化回到第一层。"
+  },
+  "example:jam-between-my-shadows": {
+    "description": "一款简短的 3D 存在主义恐怖 Jam 游戏：面对记忆、躲避阴影并升级技能；包含可能令人不适的主题，作者推荐佩戴耳机。"
+  },
+  "example:jam-monster-match": {
+    "description": "一款浏览器三消 Jam 原型：通过拖动或滑动图形延缓怪兽摧毁城市，各关设有不同的消除目标与计时。"
+  },
+  "example:jam-tiny-tinker": {
+    "description": "一款为 Jam 制作的简短浏览器平台跳跃游戏：深入巨型机器人内部维修电脑，逐步解锁冲刺与滑翔能力。"
+  },
+  "example:jam-dark-ritual": {
+    "description": "一款 2D Jam 冒险游戏：利用有限的仪式次数、钥匙及牧师／幽灵形态阻止邪恶巫师；作者说明赛后修复了结局切换问题，并可按 R 重置当前房间。"
+  },
+  "example:jam-while-the-lantern-burns": {
+    "description": "一款简短、注重氛围的 3D 洞穴逃生 Jam 游戏，使用 2D 角色美术、手动充能的提灯与刻意缓慢的火枪装填机制；作者强烈推荐佩戴耳机。"
+  },
+  "example:jam-beet-farmer": {
+    "description": "一款融合农场经营与 Pong／打砖块玩法的 2D Jam 游戏：同时维持最多三个行动球来播种、浇水和收获甜菜，并避免饥饿及不断上涨的应缴费用。"
+  },
+  "example:jam-crisis-in-banana-republic": {
+    "description": "一款 2D Jam 网格解谜游戏：规划角色路线穿过收集物并避开陷阱，同时记录步数；作者要求使用 Chrome，因为 Firefox 可能无法运行。"
+  },
+  "example:jam-monster-hunter-pocket": {
+    "description": "在这款提供 Windows/Linux 下载版的单键 Game Jam 小游戏中，扮演艾露猫对战雄火龙，单击格挡、双击奔跑、长按攻击；本次审阅的完整源码位于历史 Jam 标签，而非尚未完成的 develop 重写分支。"
+  },
+  "example:jam-otica-hero": {
+    "description": "在这款限时冲分的 Game Jam 游戏中，使用 WASD 或方向键匹配屏幕上的舞步箭头，为眼镜店招揽顾客。"
+  },
+  "example:jam-sketchy-characters": {
+    "description": "在这款 Game Jam 游戏中，阅读配饰描述，从人群中找出并射击对应的火柴人，在时间耗尽或误伤平民达到上限前完成目标，后续波次的人数会不断增加。"
+  },
+  "example:jam-state-of-order": {
+    "description": "在五天内监管广场，核对规则并拖走违规者；作者说明浏览器版本首次显示粒子效果时会出现轻微卡顿。"
+  },
+  "example:jam-graceful-descend": {
+    "description": "在这款使用鼠标操控的游戏节作品中，引导旋转飘落的枫树种子落地，并挑战连续存活更多世代。"
+  },
+  "example:jam-cattle-quest": {
+    "description": "在这款三维游戏节作品中，发射并收回皮搋子，救回不断膨胀的奶牛，捕捉鼹鼠换取货币并购买升级；牧场主不允许损失任何一头奶牛。"
+  },
+  "example:jam-collaboration-brothers-adventure": {
+    "description": "一款有四个关卡的 Jam 解谜平台游戏，需要切换能力各异的三兄弟来解谜；游戏没有检查点。"
+  },
+  "example:jam-bahama-banana": {
+    "description": "购买专利、找出涉嫌侵权的发明，并在法庭上选择论据，赚够购买巴哈马房屋的钱。"
+  },
+  "example:jam-orbeater": {
+    "description": "使用方向键击中随音乐到来的球体的节奏游戏；源码接入在线排行榜，但未核实该服务是否仍可用。"
+  },
+  "example:jam-green-dusk": {
+    "description": "一款单键生存跑酷游戏，需要跳过陷坑，并选择被动武器与升级，抵御植物般的日行吸血鬼，活到日落。"
+  },
+  "example:jam-dezombification": {
+    "description": "根据旋转红箭头的方向把握时机输入左右指令，清理受感染的神经元区域；失误会按所选难度重置进度。"
+  },
+  "example:jam-dakota-duck-dark-slime-dungeon": {
+    "description": "一款操控 Dakota Duck 对抗史莱姆并向地牢深处探索的原型游戏；仍有剑未正确停用、受伤动画和返回标题界面的已知问题。"
+  },
+  "example:jam-rated-t-for-trash": {
+    "description": "一款 2.5D 海洋清洁原型游戏，需要收集垃圾并将其再利用为机器人升级；作者强烈建议下载桌面版以获得更好的体验。"
+  },
+  "example:jam-escape-space": {
+    "description": "一款融合 Pong、打砖块与弹球机制的桌面解谜游戏：将彗星推入目标并清除砖块，在飞船倒计时结束前逃离。"
+  },
+  "example:jam-scaling-up-industries": {
+    "description": "一款潜入并破坏外星设施的科幻第一人称射击游戏；网页版性能不佳时建议使用原生版本，且游戏包含闪烁效果、枪械和街机式暴力。"
+  },
+  "example:jam-hammer-space": {
+    "description": "一款围绕拾取和投掷锤子、穿越危险关卡展开的 Jam 平台游戏原型。"
+  },
+  "example:jam-lurelink": {
+    "description": "一款以奇异世界作为单位的未完成 Jam 塔防原型；作者明确承认完成度与平衡性方面的不足。"
+  },
+  "example:jam-the-guardrooms": {
+    "description": "一款通过询问可能说谎的守卫、标记其陈述并选择正确房门来逃离城堡的推理解谜游戏。"
+  },
+  "example:jam-chores": {
+    "description": "一款仍在开发中的农场、角色扮演与恐怖混合测试版游戏，围绕做家务以及切换人类和恶魔形态展开；提供 Windows、macOS 和 Linux 桌面版下载。"
+  },
+  "example:jam-mocas-no-survivor-game": {
+    "description": "驾驶战机穿过不断袭来的敌机与弹幕，在自动射击的同时专注走位。游戏采用三维战机与纵向卷轴战场，结合元素弹药、不同弹道、机体形态和首领战，构成一轮逐步强化的生存挑战。"
+  },
+  "example:jam-255-ping-mirror-conflict": {
+    "description": "在这款二维解谜动作游戏中，面对左右反向移动的镜像对手，在不同视角间切换，利用地形、障碍与行动时机周旋。两名角色响应同一跳跃输入，但各自受落地条件限制。"
+  },
+  "example:jam-onoff": {
+    "description": "在两个状态之间切换的平台跳跃游戏，包含 25 个手工设计的关卡。玩家需要躲避尖刺、跨越深坑，并利用场景切换寻找路线；项目还提供关卡编辑器。"
+  },
+  "example:jam-triangle-back-to-home": {
+    "description": "一款以洞穴逃脱为目标的小型平台冒险游戏。玩家通过移动和跳跃寻找回家的路线，角色逻辑包含体力、贴墙互动和碰撞处理。"
+  },
+  "example:jam-off-the-line": {
+    "description": "一款考验反应与时机的街机游戏：沿线移动、跃离轨道、收集金币并避开墙壁，挑战 20 个手工设计的关卡。源码中的玩家控制器区分沿线移动和跳跃状态。"
+  },
+  "example:jam-spacecraft": {
+    "description": "一款太空主题的跑酷游戏，玩家在太阳系的行星与卫星之间收集数据，并躲避太空垃圾和小行星。角色控制器实现了换道、跳跃及限时能力。"
+  },
+  "example:jam-raven": {
+    "description": "一款俯视角动作解谜游戏，场景是一座监控摄像头失效的设施。玩家需要修复摄像头并保持对 Raven 的观察；一旦转身，它们就会带来危险。"
+  },
+  "example:jam-super-chrono-portal-maker": {
+    "description": "一款融合传送门、时间旅行和关卡编辑器的平台解谜游戏。官方页面介绍了 30 个关卡，包含方块等机关；游戏循环还会重放先前角色的操作。"
+  },
+  "example:jam-evil-glitch": {
+    "description": "一款带有霓虹几何敌人与复古故障视觉效果的二维街机射击游戏。玩家使用 WASD 移动、鼠标瞄准，并可按官方说明使用时间控制能力。"
+  },
+  "example:jam-glitch-buster": {
+    "description": "一款以限时修复 13 处故障为目标的平台动作游戏。玩家要躲避危险的指针敌人，或跳到它们头上，并投掷断点；角色源码还实现了修复触发和投掷瞄准。"
+  },
+  "example:jam-xx142-b2exe": {
+    "description": "一款科幻潜入解谜游戏，每次尝试只有 13 秒。玩家需要利用此前尝试留下的行动轨迹，逐步突破外星网络并关闭其系统；“AI 病毒”仅是故事设定。"
+  },
+  "example:jam-mumuy-pacman": {
+    "description": "一款包含 12 个关卡的 HTML5 吃豆人风格迷宫游戏。玩家收集豆子得分、利用能量豆并躲避追逐的 NPC；源码实现了地图数据、寻路和键盘控制。"
+  }
+}

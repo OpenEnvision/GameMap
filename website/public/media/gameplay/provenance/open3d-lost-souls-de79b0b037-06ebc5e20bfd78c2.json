@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-lost-souls",
+    "baselineRevision": "86504b71-b34c-42dd-b262-7a5123712872",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://edimon4884.itch.io/lost-souls",
+    "imageUrl": "https://img.itch.zone/aW1hZ2UvNDA1OTY3OS8yNDE5OTAxNi5wbmc=/347x500/YqsCIw.png",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-24T20:42:33.550Z",
+    "reviewedFrameSha256": "fd00f648b26bd648f557fe5cecd15247ce0cdbf8f88f4c2825ba7644d24cc710",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "9714f936962f9dae2f9a24e76d78f9b37d7b4cd09002f5124bb48e05221990cb",
+    "receiptOutcome": "captured-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-24T20:42:29.264Z",
+        "action": "GET",
+        "url": "https://edimon4884.itch.io/lost-souls",
+        "type": "document",
+        "status": 200,
+        "bytes": 27651,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-24T20:42:33.550Z",
+        "action": "GET",
+        "url": "https://img.itch.zone/aW1hZ2UvNDA1OTY3OS8yNDE5OTAxNi5wbmc=/347x500/YqsCIw.png",
+        "type": "image",
+        "status": 200,
+        "bytes": 90949,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-25",
+    "reviewedAt": "2026-10-25T23:48:05.702961Z",
+    "observed": "First-person view down a brick corridor toward a blue swirling circular portal, lit by lamps; three heart icons and Orbs: 0/10 remain at top left. The Lost Souls by Edimon4884 creator-page receipt journals this exact image with HTTP 200.",
+    "copy": {
+      "en": {
+        "alt": "A blue swirling portal in a lamp-lit brick corridor in Lost Souls.",
+        "caption": "Creator-published screenshot: A blue portal stands at the end of a brick corridor, with hearts and an orb counter visible."
+      },
+      "zh": {
+        "alt": "Lost Souls 中，灯光照亮的砖墙走廊里有蓝色旋涡传送门。",
+        "caption": "创作者发布的截图：砖墙走廊尽头立着蓝色传送门，画面保留心形图标和光球计数。"
+      }
+    },
+    "reviewArtifactSha256": "5e83c982a81ac5fed3b12cc0a8b2ecf136ab193b948c13499b58ed5224611bf9",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-lost-souls-de79b0b037-ee16aea7cda46c3f.webp",
+      "bytes": 32738,
+      "sha256": "ee16aea7cda46c3f4d2b0c0f1dea826176a32d12062446ff592442ccef7efc9c",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-lost-souls-de79b0b037-263cd7c97f2048b6.png",
+      "bytes": 90949,
+      "sha256": "263cd7c97f2048b6cbf79a13d6380070334a155e362464aea4b297efd911fa64",
+      "width": 347,
+      "height": 194,
+      "format": "png"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-lost-souls-de79b0b037-fd00f648b26bd648.png",
+      "bytes": 93707,
+      "sha256": "fd00f648b26bd648f557fe5cecd15247ce0cdbf8f88f4c2825ba7644d24cc710",
+      "width": 347,
+      "height": 194,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

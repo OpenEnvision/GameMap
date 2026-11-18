@@ -1,0 +1,97 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-trigger-rally",
+    "baselineRevision": "ec578979-3db5-4947-8c80-2dd9c795be6d",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://trigger-rally.sourceforge.io/",
+    "imageUrl": "https://trigger-rally.sourceforge.io/img/trigger_screenshot_4.jpg",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-26T00:02:16.370Z",
+    "reviewedFrameSha256": "c32d4d5908963fff19708e4f454bb158590d27737a395fdb88038681a8582d6c",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "f9ea73221eceac00dd69918838e8d02341c2884d44ebf74120622f7f051dc844",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:52:02.224Z",
+        "action": "GET",
+        "url": "https://trigger-rally.sourceforge.io/",
+        "type": "document",
+        "status": 200,
+        "bytes": 5236,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-26T00:02:16.370Z",
+        "action": "GET",
+        "url": "https://trigger-rally.sourceforge.io/img/trigger_screenshot_4.jpg",
+        "type": "image",
+        "status": 200,
+        "bytes": 547720,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:15:23.269347Z",
+    "observed": "Purple rally car on a continuous dirt road through trees, with dust, timing, checkpoint counter, map and speed/gear gauge. Clear racing scene matching the native Trigger Rally homepage screenshot binding, not the unrelated web game.",
+    "copy": {
+      "en": {
+        "alt": "A purple rally car on a dirt road in Trigger Rally, with timing, map and speed overlays.",
+        "caption": "Creator-published screenshot: A purple rally car follows a tree-lined dirt road, with timing, map and speed overlays."
+      },
+      "zh": {
+        "alt": "Trigger Rally 中，紫色拉力赛车位于林间土路上，画面保留计时、地图和速度界面。",
+        "caption": "创作者发布的截图：紫色拉力赛车沿林间土路行驶，画面保留计时、地图和速度界面。"
+      }
+    },
+    "reviewArtifactSha256": "d039aa87b602e6c3b658384dfe7e20af903815d4c6605355c1128bd1b854878c",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-trigger-rally-8933f836cf-58d7696955037920.webp",
+      "bytes": 113280,
+      "sha256": "58d76969550379200fe8d3d153418507b7c32bbe5e6df572ce72608746610e99",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-trigger-rally-8933f836cf-3bbf05492701fabf.jpeg",
+      "bytes": 547720,
+      "sha256": "3bbf05492701fabff01c797da6737206b2ba4b8400934578e3ab98a1decc266e",
+      "width": 1920,
+      "height": 1080,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-trigger-rally-8933f836cf-c32d4d5908963fff.png",
+      "bytes": 2294545,
+      "sha256": "c32d4d5908963fff19708e4f454bb158590d27737a395fdb88038681a8582d6c",
+      "width": 1920,
+      "height": 1080,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

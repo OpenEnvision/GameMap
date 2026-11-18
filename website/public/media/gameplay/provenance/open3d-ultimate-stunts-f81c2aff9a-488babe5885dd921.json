@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-ultimate-stunts",
+    "baselineRevision": "2da3984d-c0bb-4c81-ae78-499b58e45981",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://www.ultimatestunts.nl/",
+    "imageUrl": "https://www.ultimatestunts.nl/screenshots/home_small.jpg",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-26T00:02:19.934Z",
+    "reviewedFrameSha256": "3511e2f653757986f85c5a2b93fecab6bd93aaaa3f2ade74b6396f3f6b50eb91",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "eadb4b8ae5727d5e4b9eb447d11d7f015cbfad73e8eefc96f48e478e3cc685b8",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:52:19.850Z",
+        "action": "GET",
+        "url": "https://www.ultimatestunts.nl/",
+        "type": "document",
+        "status": 200,
+        "bytes": 8904,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-26T00:02:19.934Z",
+        "action": "GET",
+        "url": "https://www.ultimatestunts.nl/screenshots/home_small.jpg",
+        "type": "image",
+        "status": 200,
+        "bytes": 9790,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:15:23.269347Z",
+    "observed": "Complete 200×150 screenshot shows a blue/red open-wheel car from behind on a paved bend, striped curb, course scenery and a circular gauge. Small but recognizable racing gameplay; low resolution limits fine text/detail, not basic scene identity. No larger image URL inferred.",
+    "copy": {
+      "en": {
+        "alt": "An open-wheel car approaches a paved bend in Ultimate Stunts, with a small gauge visible.",
+        "caption": "Creator-published screenshot: An open-wheel car follows a paved bend beside a striped curb."
+      },
+      "zh": {
+        "alt": "Ultimate Stunts 中，敞轮赛车前方是铺装弯道，画面保留小型仪表。",
+        "caption": "创作者发布的截图：敞轮赛车沿带条纹路肩的铺装弯道行驶。"
+      }
+    },
+    "reviewArtifactSha256": "d039aa87b602e6c3b658384dfe7e20af903815d4c6605355c1128bd1b854878c",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-ultimate-stunts-f81c2aff9a-4ba7d0e66577660f.webp",
+      "bytes": 36608,
+      "sha256": "4ba7d0e66577660f47d3b26dd279513047a534a7b30db4844b0d1b9c242cd343",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-ultimate-stunts-f81c2aff9a-af6c69b159ffd18d.jpeg",
+      "bytes": 9790,
+      "sha256": "af6c69b159ffd18d584f28a82194e0b46049df1982590a2dc15a183c03030b53",
+      "width": 200,
+      "height": 150,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-ultimate-stunts-f81c2aff9a-3511e2f653757986.png",
+      "bytes": 72262,
+      "sha256": "3511e2f653757986f85c5a2b93fecab6bd93aaaa3f2ade74b6396f3f6b50eb91",
+      "width": 200,
+      "height": 150,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

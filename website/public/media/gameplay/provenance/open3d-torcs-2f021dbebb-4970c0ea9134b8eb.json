@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-torcs",
+    "baselineRevision": "3386d9a9-730f-4a6b-8fdd-8eec44167509",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://sourceforge.net/projects/torcs/",
+    "imageUrl": "https://a.fsdn.com/con/app/proj/torcs/screenshots/torcs-20121025120501.png/245/183/1",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-25T23:51:58.016Z",
+    "reviewedFrameSha256": "9e6304f3f5d89efa0b100b4216b2a9ae55c68a5b96295bba5017fa405eb2cec2",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "917092e9a64ad42b22391eb0fdcec6f5cec48eb7a279810a3fad31af6feac9b6",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:51:57.618Z",
+        "action": "GET",
+        "url": "https://sourceforge.net/projects/torcs/",
+        "type": "document",
+        "status": 200,
+        "bytes": 111822,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-25T23:51:58.016Z",
+        "action": "GET",
+        "url": "https://a.fsdn.com/con/app/proj/torcs/screenshots/torcs-20121025120501.png/245/183/1",
+        "type": "image",
+        "status": 200,
+        "bytes": 72762,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:02:18.556392Z",
+    "observed": "A pink open-wheel car viewpoint follows other cars around a paved circuit, with a rear-view mirror, gauges and track-map overlay. This is a coherent racing gameplay frame, matching the TORCS 1.3.4 project-gallery caption. The mirror is an in-game overlay, not a webpage collage.",
+    "copy": {
+      "en": {
+        "alt": "TORCS racing view with cars ahead, a rear-view mirror and dashboard gauges.",
+        "caption": "Creator-published screenshot: Cars round a paved circuit above visible dashboard gauges and beneath a rear-view mirror."
+      },
+      "zh": {
+        "alt": "TORCS 赛道视角中可见前方赛车、后视镜与仪表。",
+        "caption": "创作者发布的截图：多辆赛车驶过铺装赛道，画面保留仪表与后视镜。"
+      }
+    },
+    "reviewArtifactSha256": "bed511b104ef6318d97401a40d06c0b635c918bc50ff40c778946671d29f8b61",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-torcs-2f021dbebb-6fbc683b230820cc.webp",
+      "bytes": 46612,
+      "sha256": "6fbc683b230820cc4e06d1a126a217d533d74c233cc90036afa7004289ad083f",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-torcs-2f021dbebb-ebde70622051c6f4.png",
+      "bytes": 72762,
+      "sha256": "ebde70622051c6f468de449084dc464e6f08dcedc343bd03b049cb147a671a1a",
+      "width": 245,
+      "height": 183,
+      "format": "png"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-torcs-2f021dbebb-9e6304f3f5d89efa.png",
+      "bytes": 100541,
+      "sha256": "9e6304f3f5d89efa0b100b4216b2a9ae55c68a5b96295bba5017fa405eb2cec2",
+      "width": 245,
+      "height": 183,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

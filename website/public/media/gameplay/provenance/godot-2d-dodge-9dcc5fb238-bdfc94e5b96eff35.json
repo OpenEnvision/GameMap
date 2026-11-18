@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "foundation:godot-2d-dodge",
+    "baselineRevision": "fa4c1eba-27ac-41a4-9447-52734e5a50e8",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html",
+    "imageUrl": "https://docs.godotengine.org/en/stable/_images/dodge_preview.gif",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-26T00:02:19.109Z",
+    "reviewedFrameSha256": "39dfaddc8c49da9c463d9db862252480fb2203813a818edb5e47002067c70317",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "4123b8a123df78024f771f5fe9c3a4853a0612d234eefe8ddfe46e11800a1d6c",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:52:39.436Z",
+        "action": "GET",
+        "url": "https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html",
+        "type": "document",
+        "status": 200,
+        "bytes": 1385573,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-26T00:02:19.109Z",
+        "action": "GET",
+        "url": "https://docs.godotengine.org/en/stable/_images/dodge_preview.gif",
+        "type": "image",
+        "status": 200,
+        "bytes": 210274,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:15:23.269347Z",
+    "observed": "A pale player-like sprite and several red/dark enemy sprites occupy a teal playfield beneath score 4. The official first-2D-game tutorial identifies this figure as the completed game, not an editor illustration. Reviewed complete frame 93 of 187 from animated WebP bytes despite the .gif URL.",
+    "copy": {
+      "en": {
+        "alt": "Small sprites on a teal Dodge the Creeps playfield beneath score 4.",
+        "caption": "Creator-published screenshot: Small sprites occupy a teal playfield with score 4 at the top."
+      },
+      "zh": {
+        "alt": "Dodge the Creeps 蓝绿色场地上的小型角色，顶部显示分数 4。",
+        "caption": "创作者发布的截图：小型角色分布在蓝绿色场地上，顶部显示分数 4。"
+      }
+    },
+    "reviewArtifactSha256": "d039aa87b602e6c3b658384dfe7e20af903815d4c6605355c1128bd1b854878c",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/godot-2d-dodge-9dcc5fb238-2c3fe1c297df2a5b.webp",
+      "bytes": 4010,
+      "sha256": "2c3fe1c297df2a5ba525aa66ae43ad90931bf9850bb17f926767e6ef69226eb5",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/godot-2d-dodge-9dcc5fb238-51a18089d64bbca3.webp",
+      "bytes": 210274,
+      "sha256": "51a18089d64bbca37379f5feb0a1b5eb27986616f20c1ae587896d255a72ffad",
+      "width": 240,
+      "height": 370,
+      "format": "webp"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/godot-2d-dodge-9dcc5fb238-39dfaddc8c49da9c.png",
+      "bytes": 5555,
+      "sha256": "39dfaddc8c49da9c463d9db862252480fb2203813a818edb5e47002067c70317",
+      "width": 240,
+      "height": 370,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 93
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-linux-air-combat",
+    "baselineRevision": "c91eb213-18e1-4af2-ba13-7f81b1d85061",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://sourceforge.net/projects/linuxaircombat/",
+    "imageUrl": "https://a.fsdn.com/con/app/proj/linuxaircombat/screenshots/LacWW2Cockpit001-e7c05afa.jpg/245/183/1",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-25T23:50:41.960Z",
+    "reviewedFrameSha256": "76cff234aa61abf265077598d86f52053f79e25f21bbdd5ae3a212150fc241e5",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "020b52ba9991c54be9aff0431f4631ec32b62e08270f1efba4636983091adfc8",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:50:39.397Z",
+        "action": "GET",
+        "url": "https://sourceforge.net/projects/linuxaircombat/",
+        "type": "document",
+        "status": 200,
+        "bytes": 146058,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-25T23:50:41.960Z",
+        "action": "GET",
+        "url": "https://a.fsdn.com/con/app/proj/linuxaircombat/screenshots/LacWW2Cockpit001-e7c05afa.jpg/245/183/1",
+        "type": "image",
+        "status": 200,
+        "bytes": 8420,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:02:18.556392Z",
+    "observed": "A tilted coastline and sea are visible above a cockpit instrument panel with circular gauges, colored readouts and a red targeting outline. Genuine flight-simulator scene matching the Linux Air Combat gallery caption New WW2 Cockpit Style Enabled, Feb2024; unlike the other two candidates, this is not a controls diagram.",
+    "copy": {
+      "en": {
+        "alt": "Linux Air Combat cockpit gauges beneath a tilted sea and coastline.",
+        "caption": "Creator-published screenshot: A cockpit view shows gauges, a red targeting outline and a tilted coastline."
+      },
+      "zh": {
+        "alt": "Linux Air Combat 驾驶舱仪表上方可见倾斜的海面与海岸线。",
+        "caption": "创作者发布的截图：驾驶舱视角中可见仪表、红色瞄准框与倾斜的海岸线。"
+      }
+    },
+    "reviewArtifactSha256": "bed511b104ef6318d97401a40d06c0b635c918bc50ff40c778946671d29f8b61",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-linux-air-combat-72a5dd3509-3dff75f53311d12a.webp",
+      "bytes": 24496,
+      "sha256": "3dff75f53311d12a0d97ce7930a3da1f1a3f30bfc4146e119843ff8b9cf5248f",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-linux-air-combat-72a5dd3509-e7f5c240afe3f6ef.jpeg",
+      "bytes": 8420,
+      "sha256": "e7f5c240afe3f6efcc77af82817051c238060e4805c885537d516c322567d2ee",
+      "width": 245,
+      "height": 183,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-linux-air-combat-72a5dd3509-76cff234aa61abf2.png",
+      "bytes": 83045,
+      "sha256": "76cff234aa61abf265077598d86f52053f79e25f21bbdd5ae3a212150fc241e5",
+      "width": 245,
+      "height": 183,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

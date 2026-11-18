@@ -1,0 +1,97 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-unvanquished",
+    "baselineRevision": "84cc8136-0d0d-400f-bb5e-0de52c92e7d1",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://unvanquished.net/",
+    "imageUrl": "https://unvanquished.net/wp-content/uploads/2021/04/perseus_mantis1.jpg",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-25T23:52:32.419Z",
+    "reviewedFrameSha256": "7455d55e542c51fb4b1c1ecf0c94c068389b92dd44dca0ec3f4b42ec2a84e1e5",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "438ceaa778ee07d65981782b37f5fbbda77b09de31361e7dff4797d74fc1d8d3",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:52:29.178Z",
+        "action": "GET",
+        "url": "https://unvanquished.net/",
+        "type": "document",
+        "status": 200,
+        "bytes": 52030,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-25T23:52:32.419Z",
+        "action": "GET",
+        "url": "https://unvanquished.net/wp-content/uploads/2021/04/perseus_mantis1.jpg",
+        "type": "image",
+        "status": 200,
+        "bytes": 36577,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:03:17.158038Z",
+    "observed": "An insect-like alien clings to a ribbed wall in a continuous industrial corridor with overhead lights, flooring and railings. The creature is embedded in a game-level environment, not isolated on a showcase background; no editor UI is visible. The intake links the Unvanquished homepage, whose gallery labels this exact image “Perseus mantis” alongside other map/character scenes. Document and image GETs are HTTP 200. HUD absence alone is not a rejection; this frame is accepted as a credible in-game level scene, not proof of a playtest.",
+    "copy": {
+      "en": {
+        "alt": "An alien clinging to a wall in an industrial corridor in Unvanquished.",
+        "caption": "Creator-published screenshot: Unvanquished shows an alien on a ribbed wall within a dim industrial corridor."
+      },
+      "zh": {
+        "alt": "Unvanquished 中攀附在工业走廊墙壁上的异形。",
+        "caption": "创作者发布的截图：Unvanquished 的昏暗工业走廊与附在条纹墙壁上的异形。"
+      }
+    },
+    "reviewArtifactSha256": "2b028357406fa6a6327d1d882852b7812087c95589df2ce141d7635e38d1a29c",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-unvanquished-7047db3c90-e92193e683293f99.webp",
+      "bytes": 32652,
+      "sha256": "e92193e683293f9913e4f6a5ebbb8bb2fdb306f8e3916afa815b0d9bb63c3ea2",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-unvanquished-7047db3c90-f52d939c7b2af666.jpeg",
+      "bytes": 36577,
+      "sha256": "f52d939c7b2af6668d88e97c336630a3e9037c4aa86de7fd2d4579d16319700d",
+      "width": 800,
+      "height": 500,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-unvanquished-7047db3c90-7455d55e542c51fb.png",
+      "bytes": 336257,
+      "sha256": "7455d55e542c51fb4b1c1ecf0c94c068389b92dd44dca0ec3f4b42ec2a84e1e5",
+      "width": 800,
+      "height": 500,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

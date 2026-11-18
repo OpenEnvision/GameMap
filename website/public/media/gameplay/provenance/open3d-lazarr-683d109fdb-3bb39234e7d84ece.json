@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-lazarr",
+    "baselineRevision": "48412be3-8c6d-4e39-b917-27961da9e157",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://wuzzy.codeberg.page/Lazarr/",
+    "imageUrl": "https://wuzzy.codeberg.page/Lazarr/img/screenshot_puzzle_hut_small.jpg",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-25T23:50:47.506Z",
+    "reviewedFrameSha256": "fa6085140d50dc90aa466583860a6a0352841ab1bee356d4d25d43611b97af54",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "baf328a8654d15f9688b071ff2476d579780da92833bc82d2456bccb6a1299cf",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:50:43.265Z",
+        "action": "GET",
+        "url": "https://wuzzy.codeberg.page/Lazarr/",
+        "type": "document",
+        "status": 200,
+        "bytes": 10449,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-25T23:50:47.506Z",
+        "action": "GET",
+        "url": "https://wuzzy.codeberg.page/Lazarr/img/screenshot_puzzle_hut_small.jpg",
+        "type": "image",
+        "status": 200,
+        "bytes": 36564,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:03:17.158038Z",
+    "observed": "A first-person view inside a wooden hut shows yellow beams between framed mirror blocks and other puzzle objects, with a hand, crosshair, bottom inventory strip and 0/2 counter. The Lazarr! homepage names the game and the screenshot alt describes this wooden hut and deflected/split yellow beam. The document and exact image GETs are HTTP 200. No editor panels or isolated-asset background are present.",
+    "copy": {
+      "en": {
+        "alt": "Yellow beams and framed mirror blocks inside a wooden hut in Lazarr!.",
+        "caption": "Creator-published screenshot: Lazarr! shows a wooden puzzle room with yellow beams, a hand and an inventory strip."
+      },
+      "zh": {
+        "alt": "Lazarr! 中木屋内的黄色光束与带框镜面方块。",
+        "caption": "创作者发布的截图：Lazarr! 的木制谜题房间、黄色光束、手部与物品栏。"
+      }
+    },
+    "reviewArtifactSha256": "2b028357406fa6a6327d1d882852b7812087c95589df2ce141d7635e38d1a29c",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-lazarr-683d109fdb-3a6c547f542f4a96.webp",
+      "bytes": 99204,
+      "sha256": "3a6c547f542f4a965cc5c58705e73fd1e3eddb3d6098c756a865e6807862f4cf",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-lazarr-683d109fdb-2d9fc388e6f1fdf5.jpeg",
+      "bytes": 36564,
+      "sha256": "2d9fc388e6f1fdf538deed5b67211cf3abb8f3e3175f05dea9b0cb8760754f52",
+      "width": 600,
+      "height": 338,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-lazarr-683d109fdb-fa6085140d50dc90.png",
+      "bytes": 471823,
+      "sha256": "fa6085140d50dc90aa466583860a6a0352841ab1bee356d4d25d43611b97af54",
+      "width": 600,
+      "height": 338,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

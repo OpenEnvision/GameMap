@@ -1,0 +1,118 @@
+{
+  "dataset": "open_3d_games_2026-10-24.jsonl",
+  "sha256": "d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69",
+  "includedLegacyThreejsIds": [
+    "3d-platformer-dan",
+    "ashen-ring",
+    "astray",
+    "carom-pool",
+    "chess-3d-terminats",
+    "cinderbanner",
+    "dart-room",
+    "drakonas",
+    "eight-ball-sk4rkr0w",
+    "firn",
+    "harvest",
+    "in-the-dark-ld29",
+    "island-escape-lost-treasure",
+    "island-survival",
+    "junkyard-bandit",
+    "liminality",
+    "marble-loco",
+    "mastermind-3d",
+    "mega-battles",
+    "minecraft-adventure",
+    "moshot",
+    "narayana-hadal-cycle",
+    "otterpuck",
+    "pool-quget",
+    "power-tycoon",
+    "shadow-protocol",
+    "ski-3d-redux",
+    "the-warcrooms",
+    "threejs-chess-ironexcavater",
+    "threejs-tower-defense",
+    "token-spire-first-person",
+    "triangular-sphere-puzzle",
+    "turbo-robot-league-lite",
+    "ultimate-striker-run-v3",
+    "warlord-game",
+    "wickhaven",
+    "yet-another-zombie-horror"
+  ],
+  "pinnedPR": {
+    "url": "https://github.com/OpenEnvision/GameMap/pull/63",
+    "head": "409260b610f46f11a857b78b96a89879728d350a",
+    "includedIds": [
+      "ultimate-striker-run-v3",
+      "the-warcrooms",
+      "turbo-robot-league-lite",
+      "wickhaven",
+      "marble-loco",
+      "cinderbanner",
+      "mega-battles",
+      "warlord-game",
+      "token-spire-first-person",
+      "junkyard-bandit",
+      "shadow-protocol",
+      "otterpuck",
+      "narayana-hadal-cycle",
+      "triangular-sphere-puzzle",
+      "ashen-ring",
+      "threejs-chess-ironexcavater",
+      "in-the-dark-ld29",
+      "power-tycoon",
+      "moshot",
+      "dart-room",
+      "eight-ball-sk4rkr0w",
+      "carom-pool",
+      "pool-quget",
+      "firn",
+      "island-escape-lost-treasure",
+      "ski-3d-redux",
+      "chess-3d-terminats"
+    ],
+    "canonicalAliases": {
+      "bridge-horror-house": {
+        "target": "example:open3d-bridge-horror-house",
+        "reason": "Same repository as an existing published game. Raw upstream record is preserved, not a second catalog game."
+      },
+      "chess-3d-vioancer": {
+        "target": "threejs-game:chess-3d-terminats",
+        "reason": "Both supplied records and fresh repository metadata point to the same author demo URL and identical described chess loop. Deduplicate the shared game/build without certifying fork relation, ownership, license equivalence or either runtime."
+      }
+    }
+  },
+  "additionalDatasets": [
+    {
+      "dataset": "open_3d_games_round2_additions.jsonl",
+      "sha256": "e0f1da65d9612ae0555eb9d70fdcc4b378f43dee64ec55908dbc69f2cbe361dd",
+      "includedLegacyThreejsIds": [
+        "harvest",
+        "island-escape-lost-treasure",
+        "mastermind-3d",
+        "threejs-tower-defense",
+        "yet-another-zombie-horror"
+      ]
+    },
+    {
+      "dataset": "open_3d_games_round3_additions.jsonl",
+      "sha256": "d3a4a774261d263551b818a08ea29fd56f33dfdc625b1d41196f25a1132cb1e4",
+      "includedLegacyThreejsIds": [
+        "3d-platformer-dan",
+        "island-survival",
+        "minecraft-adventure"
+      ]
+    },
+    {
+      "dataset": "itch-open-source-3d-games.json",
+      "sha256": "456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9",
+      "includedLegacyThreejsIds": []
+    },
+    {
+      "dataset": "open_3d_games_round4_additions.jsonl",
+      "sha256": "c71434ca7a69fa55bb28fcb3c9343621125453dd6e86fc0379265164ad6fd224",
+      "includedLegacyThreejsIds": []
+    }
+  ]
+}

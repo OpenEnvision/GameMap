@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-veloren",
+    "baselineRevision": "ec917e80-3160-41db-b0d1-c78f0c0a2ffd",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://veloren.net/",
+    "imageUrl": "https://veloren.net/processed_images/gallery-2.aad0ddaa8cb1e1a1.jpg",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-26T00:02:18.288Z",
+    "reviewedFrameSha256": "555b830bd793d8e154bfea5ff5459c680dc5bad37592bb64322981623f479f38",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "cd2ed79b91a3cb9c592c5b79bffd950d604affb6152906c22b4802aa3ff85b01",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:52:26.974Z",
+        "action": "GET",
+        "url": "https://veloren.net/",
+        "type": "document",
+        "status": 200,
+        "bytes": 11441,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-26T00:02:18.288Z",
+        "action": "GET",
+        "url": "https://veloren.net/processed_images/gallery-2.aad0ddaa8cb1e1a1.jpg",
+        "type": "image",
+        "status": 200,
+        "bytes": 30098,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:15:23.269347Z",
+    "observed": "Voxel forest clearing contains several small character/creature figures positioned across continuous stepped terrain. The creator homepage explicitly labels these gallery assets In-game screenshot. This character-populated scene is stronger actual-world evidence than the landscape-only alternative; no HUD is required. Native 400×225 resolution retained.",
+    "copy": {
+      "en": {
+        "alt": "Small figures in a bright voxel forest clearing in Veloren.",
+        "caption": "Creator-published screenshot: Several small figures occupy a bright, stepped voxel forest clearing."
+      },
+      "zh": {
+        "alt": "Veloren 明亮体素森林空地中的多个小型角色。",
+        "caption": "创作者发布的截图：多个小型角色分布在明亮、阶梯状的体素森林空地上。"
+      }
+    },
+    "reviewArtifactSha256": "d039aa87b602e6c3b658384dfe7e20af903815d4c6605355c1128bd1b854878c",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-veloren-6322764822-bb0feb715f3a5c0b.webp",
+      "bytes": 91102,
+      "sha256": "bb0feb715f3a5c0bfb712dd3f638b513f2a8c7a06972c05794dc62b887e68439",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-veloren-6322764822-f9cd693ec6226138.jpeg",
+      "bytes": 30098,
+      "sha256": "f9cd693ec6226138fd68adf8be397e79a7b611f12f74bffc7c7657ffab17985b",
+      "width": 400,
+      "height": 225,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-veloren-6322764822-555b830bd793d8e1.png",
+      "bytes": 226231,
+      "sha256": "555b830bd793d8e154bfea5ff5459c680dc5bad37592bb64322981623f479f38",
+      "width": 400,
+      "height": 225,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

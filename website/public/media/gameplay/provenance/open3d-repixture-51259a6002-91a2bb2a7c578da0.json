@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-repixture",
+    "baselineRevision": "7d876e39-7ba4-4459-817f-a8e58c27809b",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://wuzzy.codeberg.page/Repixture/",
+    "imageUrl": "https://wuzzy.codeberg.page/Repixture/assets/images/screenshots/game_house_small.jpg",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-25T23:51:43.549Z",
+    "reviewedFrameSha256": "8d221c1043e02f80b314812f1d26900fad0b3f104b057e640a930b19af294200",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "0915d7f450e08a097f1e9cbbf62d14cb95db42147aed56b3e6e69741cdfc682c",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:51:39.501Z",
+        "action": "GET",
+        "url": "https://wuzzy.codeberg.page/Repixture/",
+        "type": "document",
+        "status": 200,
+        "bytes": 12644,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-25T23:51:43.549Z",
+        "action": "GET",
+        "url": "https://wuzzy.codeberg.page/Repixture/assets/images/screenshots/game_house_small.jpg",
+        "type": "image",
+        "status": 200,
+        "bytes": 23067,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:03:17.158038Z",
+    "observed": "A first-person wooden house interior contains chests, wall lights, windows and a ladder opening; a held object, central crosshair and bottom status/inventory interface remain visible. The Repixture author page describes this exact house screenshot and matches the intake identity. Document and image GETs are HTTP 200. This is a full room view with game interface rather than a house asset render.",
+    "copy": {
+      "en": {
+        "alt": "A wooden house interior with chests, windows and a ladder opening in Repixture.",
+        "caption": "Creator-published screenshot: Repixture shows a wooden house interior with a crosshair and bottom inventory interface."
+      },
+      "zh": {
+        "alt": "Repixture 中带箱子、窗户与梯子入口的木屋内部。",
+        "caption": "创作者发布的截图：Repixture 的木屋内部、准星与底部物品栏界面。"
+      }
+    },
+    "reviewArtifactSha256": "2b028357406fa6a6327d1d882852b7812087c95589df2ce141d7635e38d1a29c",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-repixture-51259a6002-7ce9ea4de5fdd40f.webp",
+      "bytes": 48606,
+      "sha256": "7ce9ea4de5fdd40f9ada8656ab65ffe2d6c7acabc12b53eaf46e856b7dea921c",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-repixture-51259a6002-419101a0794ef283.jpeg",
+      "bytes": 23067,
+      "sha256": "419101a0794ef28342006466a091810dab51631862fb1682083b08be84cd67b6",
+      "width": 600,
+      "height": 338,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-repixture-51259a6002-8d221c1043e02f80.png",
+      "bytes": 275671,
+      "sha256": "8d221c1043e02f80b314812f1d26900fad0b3f104b057e640a930b19af294200",
+      "width": 600,
+      "height": 338,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

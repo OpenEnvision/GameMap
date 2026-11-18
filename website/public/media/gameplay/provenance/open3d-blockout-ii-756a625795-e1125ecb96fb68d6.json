@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-blockout-ii",
+    "baselineRevision": "5ff1cc62-6f99-46f3-826e-a862d538d60b",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://sourceforge.net/projects/blockout/",
+    "imageUrl": "https://a.fsdn.com/con/app/proj/blockout/screenshots/133081.jpg/245/183/1",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-25T23:49:47.178Z",
+    "reviewedFrameSha256": "22b4e44c6488ac4483c42fe3743257b89ae3da3f027fcbc2b25ff457a4413f48",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "1d9ef0c0cd6216392bec946674e663f2863906ae0c04c75bbf36368ec13f1ddf",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:49:46.468Z",
+        "action": "GET",
+        "url": "https://sourceforge.net/projects/blockout/",
+        "type": "document",
+        "status": 200,
+        "bytes": 120617,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-25T23:49:47.178Z",
+        "action": "GET",
+        "url": "https://a.fsdn.com/con/app/proj/blockout/screenshots/133081.jpg/245/183/1",
+        "type": "image",
+        "status": 200,
+        "bytes": 10846,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:02:18.556392Z",
+    "observed": "Colored blocks and a translucent wireframe piece occupy a deep gridded well, with score/level panels and BlockOut II branding. This is a complete spatial-puzzle gameplay view, matching the source gallery title BlockOut II (Arcade Style).",
+    "copy": {
+      "en": {
+        "alt": "Colored blocks inside a gridded BlockOut II well, beside score and level panels.",
+        "caption": "Creator-published screenshot: Colored blocks and a wireframe piece appear inside a deep gridded well."
+      },
+      "zh": {
+        "alt": "BlockOut II 网格深井中的彩色方块，旁边有分数和等级面板。",
+        "caption": "创作者发布的截图：彩色方块与线框方块位于网格深井中。"
+      }
+    },
+    "reviewArtifactSha256": "bed511b104ef6318d97401a40d06c0b635c918bc50ff40c778946671d29f8b61",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-blockout-ii-756a625795-29e5cc64c44bc7b9.webp",
+      "bytes": 30690,
+      "sha256": "29e5cc64c44bc7b9520946e2519af57895a86fd308b4325de92c112ed2d65d81",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-blockout-ii-756a625795-89f059a56a713a0a.jpeg",
+      "bytes": 10846,
+      "sha256": "89f059a56a713a0a2ba6c5708d842de67e5cc4da6d0b8ce968cb3dbfd7312ca9",
+      "width": 245,
+      "height": 183,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-blockout-ii-756a625795-22b4e44c6488ac44.png",
+      "bytes": 105688,
+      "sha256": "22b4e44c6488ac4483c42fe3743257b89ae3da3f027fcbc2b25ff457a4413f48",
+      "width": 245,
+      "height": 183,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

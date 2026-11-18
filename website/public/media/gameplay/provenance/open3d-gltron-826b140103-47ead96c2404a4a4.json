@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-gltron",
+    "baselineRevision": "22562eab-1974-488c-bc77-09a1a164c613",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://sourceforge.net/projects/gltron/",
+    "imageUrl": "https://a.fsdn.com/con/app/proj/gltron/screenshots/55754.jpg/245/183/1",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-25T23:50:32.324Z",
+    "reviewedFrameSha256": "f72d7c026af24775e437589feb2059802c50ffdb5ac3d0b7f98c326fbeb63e42",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "4e54cca3cef20e41b9f44ca5809d59ee6eb56a30f219fa69bc349738ca11cc12",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:50:31.037Z",
+        "action": "GET",
+        "url": "https://sourceforge.net/projects/gltron/",
+        "type": "document",
+        "status": 200,
+        "bytes": 117477,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-25T23:50:32.324Z",
+        "action": "GET",
+        "url": "https://a.fsdn.com/con/app/proj/gltron/screenshots/55754.jpg/245/183/1",
+        "type": "image",
+        "status": 200,
+        "bytes": 11468,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:03:17.158038Z",
+    "observed": "A yellow-and-black light cycle and its yellow trail occupy a red-and-black gridded arena. Faint pause text is retained at the top; there is no standalone settings or menu screen. The exact image is in the GLTron project gallery with title “Evil...”, and the project description matches the intake light-cycle game. Accept as a paused in-game arena scene, not evidence of active runtime execution. The source and image GETs are HTTP 200.",
+    "copy": {
+      "en": {
+        "alt": "A yellow-and-black light cycle and yellow trail on a red gridded arena in GLTron.",
+        "caption": "Creator-published screenshot: GLTron shows a light cycle in a red-and-black arena, with pause text retained."
+      },
+      "zh": {
+        "alt": "GLTron 中红色网格场地上的黄黑色光轮车与黄色轨迹。",
+        "caption": "创作者发布的截图：GLTron 的光轮车与红黑色场地，保留画面上的暂停文字。"
+      }
+    },
+    "reviewArtifactSha256": "2b028357406fa6a6327d1d882852b7812087c95589df2ce141d7635e38d1a29c",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-gltron-826b140103-1cfb381f22a0fb22.webp",
+      "bytes": 38460,
+      "sha256": "1cfb381f22a0fb2228c4faff533fc8f8d2e4ab0c1699fa0edf20dd0544abe8f6",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-gltron-826b140103-90cb954a0939b13b.jpeg",
+      "bytes": 11468,
+      "sha256": "90cb954a0939b13b259f7ed9cbeec30839ed3200c567ade994a4b081f63c1edd",
+      "width": 245,
+      "height": 183,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-gltron-826b140103-f72d7c026af24775.png",
+      "bytes": 99937,
+      "sha256": "f72d7c026af24775e437589feb2059802c50ffdb5ac3d0b7f98c326fbeb63e42",
+      "width": 245,
+      "height": 183,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

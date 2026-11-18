@@ -1,0 +1,97 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-tabletop-club",
+    "baselineRevision": "8c1f1c58-ba45-4b0b-b7b8-8b8317feb148",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://tabletopclub.net/",
+    "imageUrl": "https://tabletopclub.net/assets/images/screenshot_0.jpg",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-24T21:03:59.165Z",
+    "reviewedFrameSha256": "d80304cf2b88108635269a3625390d36c289842d57b2e0bdbc3e4addbf779582",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "8c955565d7ff53fdb6707cf4c98f6f3be41bff74a6bde9be2b5cdbbbc7cdbdfb",
+    "receiptOutcome": "captured-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-24T21:03:51.087Z",
+        "action": "GET",
+        "url": "https://tabletopclub.net/",
+        "type": "document",
+        "status": 200,
+        "bytes": 16083,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-24T21:03:59.165Z",
+        "action": "GET",
+        "url": "https://tabletopclub.net/assets/images/screenshot_0.jpg",
+        "type": "image",
+        "status": 200,
+        "bytes": 218352,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-25",
+    "reviewedAt": "2026-10-25T23:48:05.702961Z",
+    "observed": "A green virtual card table holds dealt playing cards, a face-down deck and multiple stacks of numbered chips; translucent player-hand zones are visible. The distributed cards/chips and hand zones support an actual tabletop simulator scene rather than an isolated asset display. Tabletop Club homepage receipt journals the exact screenshot_0 image with HTTP 200.",
+    "copy": {
+      "en": {
+        "alt": "Playing cards and numbered chips on a green Tabletop Club table.",
+        "caption": "Creator-published screenshot: Dealt cards, a deck and chip stacks occupy a green virtual table."
+      },
+      "zh": {
+        "alt": "Tabletop Club 绿色虚拟牌桌上的扑克牌和数字筹码。",
+        "caption": "创作者发布的截图：绿色虚拟牌桌上摆有已发出的牌、牌堆与多组筹码。"
+      }
+    },
+    "reviewArtifactSha256": "5e83c982a81ac5fed3b12cc0a8b2ecf136ab193b948c13499b58ed5224611bf9",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-tabletop-club-f836597109-8d8854a3002e0b58.webp",
+      "bytes": 44544,
+      "sha256": "8d8854a3002e0b58192e4f1607b6716349fbe1ca168f903904f17420968c8949",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-tabletop-club-f836597109-d5b0618ecf430604.jpeg",
+      "bytes": 218352,
+      "sha256": "d5b0618ecf430604d19ed6f9fd0e4a421b741856e552db5efea21b46c179585b",
+      "width": 1920,
+      "height": 1080,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-tabletop-club-f836597109-d80304cf2b881086.png",
+      "bytes": 1066882,
+      "sha256": "d80304cf2b88108635269a3625390d36c289842d57b2e0bdbc3e4addbf779582",
+      "width": 1920,
+      "height": 1080,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

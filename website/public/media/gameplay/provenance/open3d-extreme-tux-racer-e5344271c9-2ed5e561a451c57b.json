@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-extreme-tux-racer",
+    "baselineRevision": "7d50e6ed-f634-43eb-a6cb-62b4e9ed78a9",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://sourceforge.net/projects/extremetuxracer/",
+    "imageUrl": "https://a.fsdn.com/con/app/proj/extremetuxracer/screenshots/ETR3.png/245/183/1",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-24T20:44:43.510Z",
+    "reviewedFrameSha256": "b6d00f26bcfce7f093d6357532678ec3c91f4c6911bd6af8b3040710e1188ddf",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "689278f470436059b9fd4e537eb98c654561b3e27a7ef3351f2508174d8a4bb1",
+    "receiptOutcome": "captured-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-24T20:44:39.640Z",
+        "action": "GET",
+        "url": "https://sourceforge.net/projects/extremetuxracer/",
+        "type": "document",
+        "status": 200,
+        "bytes": 122508,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-24T20:44:43.510Z",
+        "action": "GET",
+        "url": "https://a.fsdn.com/con/app/proj/extremetuxracer/screenshots/ETR3.png/245/183/1",
+        "type": "image",
+        "status": 200,
+        "bytes": 75574,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-25",
+    "reviewedAt": "2026-10-25T23:48:05.702961Z",
+    "observed": "Tux is seen from behind on a snowy course approaching a FINISH banner, with trees, mountains, snowflakes, timer, fish counter and gauge. The Extreme Tux Racer project receipt journals the exact ETR3 screenshot URL with HTTP 200.",
+    "copy": {
+      "en": {
+        "alt": "Tux approaches a finish banner on a snowy Extreme Tux Racer course.",
+        "caption": "Creator-published screenshot: Tux approaches the finish banner on a snowy mountain course."
+      },
+      "zh": {
+        "alt": "Extreme Tux Racer 中，Tux 正接近雪道上的终点横幅。",
+        "caption": "创作者发布的截图：Tux 位于雪山赛道上，前方是终点横幅。"
+      }
+    },
+    "reviewArtifactSha256": "5e83c982a81ac5fed3b12cc0a8b2ecf136ab193b948c13499b58ed5224611bf9",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-extreme-tux-racer-e5344271c9-24e4c63d228f7733.webp",
+      "bytes": 53194,
+      "sha256": "24e4c63d228f7733ad20060ade292acc51e97ee17f1a7b8185009994d652ea87",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-extreme-tux-racer-e5344271c9-1b8897d7123a8bfb.png",
+      "bytes": 75574,
+      "sha256": "1b8897d7123a8bfbde2aa82944a4f41d77fbdd16bc8b4aac14d07729e10ec962",
+      "width": 245,
+      "height": 183,
+      "format": "png"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-extreme-tux-racer-e5344271c9-b6d00f26bcfce7f0.png",
+      "bytes": 87913,
+      "sha256": "b6d00f26bcfce7f093d6357532678ec3c91f4c6911bd6af8b3040710e1188ddf",
+      "width": 245,
+      "height": 183,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

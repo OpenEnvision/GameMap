@@ -1,0 +1,263 @@
+{
+  "example:open3d-apex-formula": {
+    "description": "支持快速比赛、计时赛和含排位的大奖赛周末，涉及天气、轮胎和AI车手。 注意：附ARCHITECTURE.md模块约定；复杂车辆模型的真实性和性能没有实测。"
+  },
+  "example:open3d-apophenoth": {
+    "description": "收集资源、选择演化路线、建造基地、抵御波次并进入竞技场。 注意：README中的大量系统功能依据作者说明，未实机逐项验证。"
+  },
+  "example:open3d-ashworth-station": {
+    "description": "在地铁站抵御15波僵尸，含鼠标/触屏控制、武器、积分与离线缓存。 注意：附Playwright行为测试、固定渲染预算截图比较和真实设备测试记录；文档明确区分自动验证与实机表现。"
+  },
+  "example:open3d-combat-arena": {
+    "description": "通过房间码组队进行回合制两队对战，含同步射击、武器、命中反馈和胜负结算。 注意：无Bot；命中验证不是完整服务器权威反作弊；房间状态存内存，服务重启会丢失。"
+  },
+  "example:open3d-cyber-arena-3d-fps": {
+    "description": "与具有巡逻、追击等状态的机器人交战，含两套操作方式和程序化机甲。"
+  },
+  "example:open3d-darkroom": {
+    "description": "在房间中寻找物件、解读谜语，组合钥匙并解锁出口。"
+  },
+  "example:open3d-dead-signal-exclusion-zone": {
+    "description": "进入工业区完成合约、升级装备，呼叫直升机并在尸潮与污染推进中撤离。 注意：含武器、生命值、合约、撤离、碰撞和寻路单元测试；同作者另一模型生成版本未另计一项。"
+  },
+  "example:open3d-superposition-backrooms": {
+    "description": "穿过逐渐崩坏的后室，躲避红球形敌人并寻找稳定出口。 注意：README对关卡数存在9/10处表述差异，未将精确关卡数作为已核实字段。"
+  },
+  "example:open3d-turno-da-madrugada-br-040": {
+    "description": "以偏僻加油站夜班为背景，围绕日常工作、随机异常和理智系统展开。 注意：多结局、扩展探索区域和动态叙事仍在计划中，不能当作已完成内容。"
+  },
+  "example:open3d-voxelcraft-bridgemind": {
+    "description": "单HTML体素世界，含分块地形、挖掘建造、合成、生物、照明与资源包加载。 注意：CDN依赖Three.js与JSZip；支持外部资源包不代表附带原版Minecraft素材。"
+  },
+  "example:open3d-voxellab": {
+    "description": "建造、拆除与探索共享方块世界，含离线单人、多人同步和角色自定义。 注意：网络模式需Node服务端；README性能数字未经本轮测试；Lego风格角色不代表品牌授权。"
+  },
+  "example:open3d-delixia": {
+    "description": "在日式厨房接单、取食材、加工组合、装盘和上菜，协作应对时间限制。 注意：需要Colyseus服务端；涉及Havok及第三方依赖。"
+  },
+  "example:open3d-endless-runner-remarkablegames": {
+    "description": "持续前进并躲避障碍，支持键盘方向键和WASD。"
+  },
+  "example:open3d-insane-behaviors-tournament": {
+    "description": "为Isart Game Week 2014制作的多人第一人称射击游戏。 注意：README较简略，旧Node/Babylon依赖及部署方式需自行适配。"
+  },
+  "example:open3d-shadows-of-the-abandoned": {
+    "description": "探索废弃精神病院，使用手电，寻找文件、钥匙和开关并应对黑暗中的实体。 注意：README所述多结局和氛围效果未经逐项运行验证。"
+  },
+  "example:open3d-stellar-abyss-echoes-of-exile": {
+    "description": "驾驶飞船对抗逐步增强的敌机，解锁武器并摧毁大型母舰的子系统。 注意：仓库名deathstar，当前游戏标题已更名；按一个项目计数。"
+  },
+  "example:open3d-survival-game-cptnope": {
+    "description": "程序地形、采集、制作、动物AI、战斗、升级和昼夜循环。 注意：通过CDN加载Babylon.js；含作者提供的几何与玩法测试。"
+  },
+  "example:open3d-moon-rider": {
+    "description": "沿音乐轨道前进，切击或拳击节拍方块，并提供观赏模式。 注意：只收作者supermedium主仓库，aframevr同名分支未重复计数；旧构建要求Node<12。"
+  },
+  "example:open3d-atop": {
+    "description": "在活着的山峰上探索和攀塔，升级角色能力，阻止高塔污染大地。 注意：Codeberg 源码入口由作者参赛页确认，本次未直接读取仓库；提供浏览器、Windows 和 Linux 版本。"
+  },
+  "example:open3d-back-into-the-cave": {
+    "description": "通过洞穴、飞船和角色移动讲述两个朋友的哲学讨论。 注意：Bitbucket 入口由作者链接确认，搜索工具未返回仓库正文；未实机测试流程。"
+  },
+  "example:open3d-bathysphere": {
+    "description": "玩家团队共同驾驶潜水球寻找水下宝藏，采用第一人称操作和服务器联机。 注意：作者明确为多人设计，虽可单人但体验非针对单人；采用正文更具体的 AGPLv3 说明，未直接读取 GitLab 许可证文件。"
+  },
+  "example:open3d-brick-up": {
+    "description": "堆叠下落方块搭建高塔，再控制角色攀登；收集星星、补充方块并避开熔岩。 注意：完整范围为 jam 小游戏；代码 MIT 不自动解释独立美术再利用条款。"
+  },
+  "example:open3d-callsign-hangman": {
+    "description": "在被异形袭击的空间站救出研究员；通过收集血液维持生命，并夺取敌人的手臂作为武器。 注意：小型 jam 作品；3D 依据作者发行页，未验证所有角色是否使用纯3D模型。"
+  },
+  "example:open3d-drill-deeper": {
+    "description": "控制角色在洞穴中采集、移动和战斗，乘钻探飞船逐层深入地下。 注意：代码与资产有明显不同的再利用范围；有网页、Windows、macOS、Linux 构建。"
+  },
+  "example:open3d-drop-dead-delivery": {
+    "description": "用霰弹枪、近战与翻滚对抗食尸鬼，完成送货以得分并解锁能力升级。 注意：是3D呈现的俯视射击，并非第一人称；原 ldjam53 仓库已重定向到 Drop-Dead-Delivery，只计一次。"
+  },
+  "example:open3d-ex-aeternum-redux": {
+    "description": "探索无人设施，诊断机械与设备故障，利用线索解谜并向神秘存在汇报发现。 注意：采用鼠标点击式探索；Bitbucket 源码入口确认但本次未返回仓库正文。"
+  },
+  "example:open3d-flingshot": {
+    "description": "调整弹射器方向和速度，把送货车抛向目的地；飞过头时还可以弹出车内包裹。 注意：Bitbucket 入口由作者链接确认，本次未返回仓库正文；不是传统驾驶模拟器。"
+  },
+  "example:open3d-gnome-space-program": {
+    "description": "把花园地精绑上火箭，尝试发射和飞行的简化太空模拟小游戏。 注意：不是完整 Kerbal Space Program 等价物；不能把 GPL 代码许可扩展至非商业纹理。"
+  },
+  "example:open3d-long-jump-cliffs": {
+    "description": "在峡谷和峭壁之间跳跃前进的低多边形第一人称平台小游戏。 注意：篇幅较短；提供 Windows 和 Linux 构建，支持键鼠与手柄。"
+  },
+  "example:open3d-maze-flyer": {
+    "description": "在随机生成的零重力迷宫中自由翻滚飞行，以尽可能短的时间摧毁全部哨戒炮。 注意：原版缺少完整菜单、结算画面和排行榜；作者建议手柄，Windows 构建测试有限。后续作品 Polychoron 与本作有延续关系，本轮未重复计入。"
+  },
+  "example:open3d-melon-crusade": {
+    "description": "躲避公路车辆，踩漂浮木头过河，再攀岩到达甜瓜，把 Frogger 思路扩展成3D平台关卡。 注意：体量很小，适合研究碰撞、跳跃和关卡交互；与同作者其他游戏是不同项目。"
+  },
+  "example:open3d-penguin-s-platforming-christmas-adventure": {
+    "description": "控制企鹅在圣诞主题3D关卡中跳跃探索，收集全部28份礼物。 注意：范围为短篇 jam 作品，采用旧版 Godot；提供 Windows、Linux 和 macOS 构建。"
+  },
+  "example:open3d-premonition": {
+    "description": "在白雾环绕的大屋里查看物件与回忆；物件逐渐消失，各次游玩的故事线索不同。 注意：依赖加入特定3D最近邻缩放补丁的 Godot 4.3 定制构建；作者列出随机消失逻辑和碰撞问题。应优先使用修复音频后的v1.01构建。"
+  },
+  "example:open3d-profundus": {
+    "description": "用鼠标拖动身体穿过狭窄洞道，以光线对抗追逐者，在洞穴系统中寻找出口。 注意：作者列出跳吓动画重复、镜头异常和文本消失过快等已知问题；未实机试玩。"
+  },
+  "example:open3d-red-hat-runner": {
+    "description": "控制小红帽躲避狼并把热蛋糕送给奶奶，通过左右移动、停步和跳跃应对障碍。 注意：当前作者发行页提供 Windows 构建；老版 Godot 工程，素材需保留各自来源。"
+  },
+  "example:open3d-silmance": {
+    "description": "在视野受限的低多边形环境中寻找被掳走的公主，避开未知怪物并带她逃离。 注意：作者代码 Unlicense 不自动将 OpenGameArt 等第三方资源置于公共领域；提供 Windows 和 Linux 版本。"
+  },
+  "example:open3d-six-ways-to-suffer": {
+    "description": "受 Buckshot Roulette 启发，与神秘庄家进行左轮赌局，组合特殊子弹效果以赚到逃离所需金额。 注意：代码与资产许可不同，不能把全游戏素材当作可商业复用资产；含游戏内俄罗斯轮盘题材。"
+  },
+  "example:open3d-super-golden-speedster-3d": {
+    "description": "带加速、跳跃、俯冲踩踏和可旋转相机的短篇高速3D平台游戏。 注意：仓库 README 的早期项目名为 Speeding-Booty-Blaster-3D，属于同一作品，不另计；成熟度为 jam 小游戏。"
+  },
+  "example:open3d-super-poli-ball": {
+    "description": "Super Monkey Ball 风格滚球关卡，以3D关卡和几何构造展示 CSG 与渲染技术。 注意：小型毕业练习，非大型商业内容体量；提供网页和桌面构建。"
+  },
+  "example:open3d-the-aberratron": {
+    "description": "启动异常实验装置，通过倒置重力等物理谜题探索实验室；隐藏五件叙事收集物和五项成就。 注意：作者列出关键咖啡杯可能被扔出边界导致需重启的已知问题；不能把NC素材自由用于商业改作。"
+  },
+  "example:open3d-the-scary-outlet": {
+    "description": "围绕神秘插座展开的短篇恐怖，含第一人称移动、跳跃、手电与熔岩地板。 注意：源码以发行页 The Scary Outlet SOURCE.zip 下载包提供，repo_url 为源码入口而非 Git 仓库。"
+  },
+  "example:open3d-to-shed-new-light": {
+    "description": "改变相机角度、位置和旋转，以新的投影视角改变谜题的可达关系。 注意：玩法利用投影视角忽略深度，属于3D场景解谜；浏览器和桌面版本均有入口。"
+  },
+  "example:open3d-towards-the-sunrise": {
+    "description": "受 Race the Sun 启发，在不断变化的随机地形中高速前进，躲避障碍并收集加速和跳跃道具。 注意：作者明确不支持 Godot 4，需3.5.3工具链；代码许可不能代替素材署名要求。"
+  },
+  "example:open3d-voidquest": {
+    "description": "含程序化地形与生态区、分块加载、近战与法术、背包装备、制作和局域网多人。 注意：作者发行页明确标为 Prototype；不把丰富的系统列表等同于完整剧情或成熟长期运营产品。"
+  },
+  "example:open3d-another-night": {
+    "description": "拾柴维持营火，战斗或潜行避开木乃伊，沿脚印寻路，让营地伙伴存活到日出。 注意：短篇Jam作品；使用较旧Unity版本。"
+  },
+  "example:open3d-bloodew-valley": {
+    "description": "白天种植赚钱，与生存恐怖的期限和威胁相结合，需要在规定日程达到收入目标。 注意：源码入口为作者的SourceBloodewValley.zip而非Git仓库；作者列出光标和暂停菜单已知问题。"
+  },
+  "example:open3d-crazy-driver": {
+    "description": "躲避障碍物并甩开警车，随着速度提升尽可能生存更久。 注意：72小时开发的小型游戏；作者的笼统资产说明不是逐项第三方权利审计。"
+  },
+  "example:open3d-dgs-dystopian-generic-shooter": {
+    "description": "采用低分辨率像素风格的3D反乌托邦FPS，包含完整小型战斗体验。 注意：作者用于学习；已知启动时光标未锁定，可按ESC处理。"
+  },
+  "example:open3d-fly-dangerous": {
+    "description": "以Elite Dangerous竞速玩法为灵感，提供检查点赛道、排行榜、幽灵录像、无限地形与自由飞行。 注意：官方提供NO_PAID_ASSETS降级构建方法；仍需免费版MapMagic，部分场景/视觉效果缺失，不能称全依赖FOSS。"
+  },
+  "example:open3d-food-dynasty": {
+    "description": "建造食品工厂和输送流程，购买材料、生产食物、销售并升级自动化设备。 注意：采用等角视角但为真实3D场景；音效与音乐需按各自授权处理。"
+  },
+  "example:open3d-geographical-adventures": {
+    "description": "驾驶飞机绕微缩地球飞行，按目的地把包裹送往不同国家，在任务中学习地理。 注意：作者仍标为进行中；发布页提醒音乐会触发Content ID，不能把MIT扩展到全部音乐。"
+  },
+  "example:open3d-project-zero": {
+    "description": "创建角色探索五个地区，帮助NPC完成测验、拼图和迷宫等任务，以书籍提升不同编程语言能力。 注意：为教育RPG而非恐怖游戏；使用老Unity，第三方内容需单独核验。"
+  },
+  "example:open3d-quota-qrunch": {
+    "description": "以抓取、包装、交付为循环，在不断增长的配额压力下体验仓库工作的心理恐怖。 注意：源工程含Git子模块；音乐仍按作者所列第三方来源核验。"
+  },
+  "example:open3d-velocity": {
+    "description": "围绕Source风格空中横移和兔子跳设计的高速3D平台竞速游戏。 注意：基于TheAsuro原Velocity项目的延续版本，不应把原版另算一个项目；构建需Unity和Blender。"
+  },
+  "example:open3d-blackout-facility": {
+    "description": "探索两层设施，恢复供电，操作门、电梯、控制板并完成彼此连接的环境谜题。 注意：课程结业游戏而非Epic官方样例；主要为灰盒视觉，第三方素材不自动适用MIT。"
+  },
+  "example:open3d-dark-lab": {
+    "description": "实验室在玩家看不见的黑暗中改变结构；利用光线、拾取道具并找到黑色门卡逃生。 注意：2018年项目，作者已停止维护；Unreal运行环境另受Epic许可约束。"
+  },
+  "example:open3d-devils-tower": {
+    "description": "在以魔鬼塔为灵感的程序生成地形中探索，寻找并解决Nonogram谜题。 注意：采用较旧Python/Panda3D工具链；素材授权范围需与代码许可分别核对。"
+  },
+  "example:open3d-hobot-s-ascent": {
+    "description": "帮助小机器人从神秘高塔地下室出发，利用有限的交互手段逐层攀登。 注意：采用固定镜头房间式3D场景；旧项目依赖需按requirements安装。"
+  },
+  "example:open3d-logs-odysseys": {
+    "description": "用冲击波和河道屏障把上游木材送至锯木厂，管理木材质量、河道风险与资金。 注意：从源码运行；大模型和水面着色器来源不应自动套用MIT。"
+  },
+  "example:open3d-pollen": {
+    "description": "借鉴Flower的自然主题，在3D植物场景中飞行与收集，以花粉唤醒春天。 注意：代码开放但天空盒含非商业限制；发布页CC0元数据不能覆盖正文列出的第三方例外。"
+  },
+  "example:open3d-pirate-run": {
+    "description": "控制海盗女孩沿道路奔跑，避开障碍物并延长生存时间。 注意：短小街机循环；Flax引擎与第三方资源条款独立于游戏代码MIT。"
+  },
+  "example:open3d-adagate": {
+    "description": "以星门、传送门、可滚动能量块和空间障碍组成逃脱谜题，提供完整Ada/OpenGL实现。 注意：源码实际随大型7z发行包提供，Github自动Source code.zip不含全部内容；不能因GPL代码就把纹理都视作可自由复用。"
+  },
+  "example:open3d-avara": {
+    "description": "驾驶双足机甲在低多边形三维地图中联网战斗，将1996年Mac游戏移植到现代桌面平台。 注意：当前移植明确标Alpha；不可将其包装成完全稳定的现代成品。"
+  },
+  "example:open3d-balazar-brothers": {
+    "description": "仅用两个按键分别控制兄弟角色跳向下一平台，在移动平台、怪物和陷阱之间协调行动。 注意：作者安装指南明确依赖Python 2.7、Soya及旧版库；现代系统运行未实测。"
+  },
+  "example:open3d-billardgl": {
+    "description": "小体量OpenGL台球游戏，适合研究球体碰撞、球桌相机与基础三维运动模拟。 注意：与FooBillard++是不同项目；旧平台发行和现代编译环境的兼容性未实测。"
+  },
+  "example:open3d-blockout-ii": {
+    "description": "在有深度的三维井中旋转和堆叠积木，保留经典Blockout的核心计分与规则。 注意：是3D积木空间解谜，视角与动作游戏不同；不把原版商业Blockout另列。"
+  },
+  "example:open3d-cubyz": {
+    "description": "具有远距离LOD、无固定高度边界的3D区块和程序化工具制造系统的体素沙盒。 注意：当前主要版本为Zig重写版；旧Java版不另外计数。README要求OpenGL 4.3，未支持macOS。"
+  },
+  "example:open3d-danger-from-the-deep": {
+    "description": "模拟德国潜艇的航行、观测、鱼雷攻击和水面环境，提供专用3D海战系统参考。 注意：官方仍标Alpha；不将源码GPL推广为整个游戏素材都可自由改作。"
+  },
+  "example:open3d-dreamchess": {
+    "description": "可自由旋转的三维棋盘，附Dreamer棋力引擎，也能连接xboard兼容引擎。 注意：属于真实3D棋盘表现的棋牌作品；不是第一或第三人称漫游游戏。"
+  },
+  "example:open3d-extreme-tux-racer": {
+    "description": "操纵企鹅Tux沿雪坡高速滑行、收集鱼并挑战计时赛事，是小型原生3D竞速的完整参考。 注意：只计Extreme Tux Racer这一条，不把Tux Racer及各移动端移植分列。"
+  },
+  "example:open3d-foobillard": {
+    "description": "提供三维球桌、台球物理、跳球与适配触控的操作；适合研究3D桌面运动游戏。 注意：FooBillard 3.0a的扩展版本；原版与其他移植不重复计数。"
+  },
+  "example:open3d-freeallegiance-allegiance": {
+    "description": "飞行员驾驶战机、指挥官调度资源与科技的团队太空战争，融合第一人称战斗与即时战略。 注意：主要为Windows旧DirectX架构；现有服务器和玩家数量未测试；不沿用历史Shared Source作为当前代码许可。"
+  },
+  "example:open3d-glportal": {
+    "description": "以传送门与物理交互为核心的科幻第一人称解谜平台游戏，与The Tithe同属可研究的第一人称场景交互项目。 注意：不把其Radix通用引擎单独算作游戏。"
+  },
+  "example:open3d-gltron": {
+    "description": "一至四名玩家驾驶会留下致命轨迹的光轮摩托，利用转弯和空间封锁迫使对手撞墙。 注意：所列Github是原SVN源码的维护迁移；只计一个游戏。"
+  },
+  "example:open3d-hexon": {
+    "description": "控制飞行器升级武器、护盾和特殊能量球，最多四名玩家共同迎战敌人与Boss。 注意：采用作者当前GitLab与itch入口；代码许可按当前发行页GPLv3记录，旧GitLab元信息显示v2-or-later。"
+  },
+  "example:open3d-infiniminer": {
+    "description": "在方块三维世界中采掘、建造并与其他队伍竞争的多人沙盒，具有游戏史与网络实现参考价值。 注意：原作者早期Github入口目前不可抓取；所列为历史源码副本，README指向原作者分支。旧XNA及联网服务可用性需要另测。"
+  },
+  "example:open3d-kubrick": {
+    "description": "支持2×2×2至6×6×6魔方和非等边砖块，带预设谜题、打乱和解法展示。 注意：属于可旋转三维益智对象，玩法不是人物或车辆在场景内漫游。"
+  },
+  "example:open3d-lasercrabs-deceiver": {
+    "description": "具有单人和联网玩法的射击项目，包含AI、实时导航网格、物理、完整资产管线与跨平台构建。 注意：不是完整维护中的成品；需要Git LFS、旧Blender与Wwise，Wwise使用受专有EULA约束。"
+  },
+  "example:open3d-linux-air-combat": {
+    "description": "可在三维天空中执行训练和多人空战，强调可在普通Linux硬件上运行。 注意：官方两个页面许可版本不一致，不能给出无保留的精确SPDX；不再另列其前身GL-117。"
+  },
+  "example:open3d-maniadrive": {
+    "description": "在短而紧凑的三维特技赛道上竞速，包含关卡挑战和网络功能，适合研究街机车辆控制。 注意：附现代化分支但不另计游戏；维护版README仍需PHP 5.3用于故事模式与联网功能，旧工具链兼容性未实测。"
+  },
+  "example:open3d-openbve": {
+    "description": "从驾驶室视角驾驶列车，支持多种铁路线路和车辆格式，适合研究驾驶模拟与可扩展内容系统。 注意：这是专用铁路模拟器；需要另行安装线路和列车包，并非附齐所有路线的单一游戏。"
+  },
+  "example:open3d-openspades": {
+    "description": "Ace of Spades 0.75兼容客户端，将挖掘、搭建掩体与团队射击组合在可破坏体素地图中。 注意：需要兼容服务器；本项是可运行客户端，但源码GPL不覆盖默认非自由素材。"
+  },
+  "example:open3d-search-and-rescue-ii": {
+    "description": "驾驶直升机和飞机寻找、吊运并救助山地、海面和火场中的遇险者。 注意：侧重救援任务而非军事空战；README主要列Linux/macOS。"
+  },
+  "example:open3d-trackballs": {
+    "description": "俯视3D滚球闯关，穿过锤子、酸液等障碍；包括Guile关卡脚本和关卡编辑器。 注意：有真实3D渲染，但玩法主要沿关卡表面移动。"
+  },
+  "example:open3d-ultimate-stunts": {
+    "description": "重现经典Stunts式环形、坡道与高风险赛道驾驶，并提供编辑器与多人玩法。 注意：不是要求原DOS游戏资产的引擎重实现；仍需留意旧依赖的构建兼容性。"
+  },
+  "example:open3d-voxelands": {
+    "description": "包含方块、物品、工具和生物的可破坏三维沙盒，是以实际游戏内容为中心的独立发行。 注意：虽源自早期Minetest，但本项是独立游戏发行；官方GitLab正文加载受限，许可细节由同项目源码镜像README交叉核验。"
+  },
+  "example:open3d-ysflight": {
+    "description": "低多边形飞行模拟，包含多种飞机、飞行训练及空战场景；原作者开放了实现供继续维护。 注意：构建还需要作者的captainys/public库；社区扩展包不自动继承代码许可证。"
+  }
+}

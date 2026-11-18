@@ -1,0 +1,36 @@
+{
+  "example:browser-port-02": {
+    "description": "《罪恶都市》浏览器封装，使用 Emscripten C++ 引擎及 OPFS 本地存储。README 指明 re3/reVC 逆向重实现谱系，并要求正版原始游戏数据；封装源码不等于完整引擎源码。 注意：仅作参考，不发布游玩入口。须合法取得《罪恶都市》数据。触控、离线与存档仅为 README 宣称，未经运行验证；封装源码不能证明完整对应引擎源码可用。"
+  },
+  "example:browser-port-03": {
+    "description": "Quake III 多人浏览器移植参考：所给站点注明 Q3JS，项目页面称采用 ioquake3 和官方试玩数据。 注意：仅限多人及试玩数据范围；不得据此认定完整零售版或自由资产。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。"
+  },
+  "example:browser-port-06": {
+    "description": "已识别 Skate 3 Rust/Bevy 重实现，包含滑行、技巧与地图支持，但还原度仍在开发中。当前 README 仅说明 Windows 构建，尚不能确认所指浏览器版本，因此保留候选。 注意：本浏览器收录中保留候选：尚未确定浏览器版本。实验性玩法未达完全还原，须自备原商业数据并转换。未运行原生构建、转换工具或游戏，亦未下载构建。 按实验性原生源码项目收录，不代表已确认浏览器版本。"
+  },
+  "example:browser-port-08": {
+    "description": "基于 Devilution 的《暗黑破坏神 1》浏览器移植，引擎模块源码位于另一个仓库。README 描述 spawn.mpq 共享版模式；完整版须自备 DIABDAT.MPQ。不推定包含地狱火或 DevilutionX。 注意：仅为文本参考，不发布试玩或游玩入口。必须区分共享版与自有数据完整版；未核实素材授权、完整源码、存档兼容或实际运行。"
+  },
+  "example:browser-port-12": {
+    "description": "Urban Terror 多人浏览器移植参考；纠正误标的 Unreal Tournament。 注意：仅确认 Urban Terror 多人模式，并非 Unreal Tournament；首载会下载游戏数据，不得启动；FrozenSand 资产另受限制。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。",
+    "title": "Urban Terror 浏览器项目参考"
+  },
+  "example:browser-port-15": {
+    "description": "QuakeWorld 多人浏览器移植参考，不等同于经验证的完整 Quake 单人版。 注意：页面称最多八人多人模式；未确认完整战役或资产版本，不参与公共对局。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。"
+  },
+  "example:browser-port-17": {
+    "description": "Halo Mobile README 描述面向手机的 Halo CE 浏览器/PWA 移植、触控、本地存储及可选外部地图流服务。战役及 System Link 支持仅为作者宣称；须自备兼容且获授权的 Xbox 游戏数据。 注意：仅源码参考，不提供运行入口。须自备获授权且兼容的游戏数据；战役、存档、触控及 System Link 均未测试。不认证完整战役、源码完备性或权利；实验性显示模式及外部服务可能另有限制。"
+  },
+  "example:browser-port-19": {
+    "description": "Return to Castle Wolfenstein 多人浏览器移植参考；页面称首次约下载 380 MB 游戏数据。 注意：仅确认多人模式，不声称单人完整性；不得下载所述游戏数据或加入对局。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。"
+  },
+  "example:browser-port-21": {
+    "description": "WebXash 文档支持使用用户自有数据运行 Half-Life 1 和 Counter-Strike 1.6；作者明确其工作为前端。 注意：需合法自有 valve/cstrike 数据；模组兼容性有限、移动端需键鼠，CS 存档禁用，互联网服务器发现不可用并需直接设置 websocket 服务器。文档中的前端地址不作为已验证游玩链接。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。"
+  },
+  "example:browser-port-22": {
+    "description": "Quake II 多人浏览器移植参考，页面注明 FTE QuakeWorld；未验证完整战役版本。 注意：页面称最多八人多人模式；不参与公共对局，资产版本及战役完整性未确认。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。"
+  },
+  "collection:wasm-arcade-repository-catalogue": {
+    "description": "WASM Arcade 的公开仓库聚合参考，不是单个游戏或经验证的启动器；尚未确认它是否对应用户名单中的同名网站，所宣称的部署站点未访问。条目可能混合源码移植、模拟及其他运行方式，收录不代表取得代码、ROM 或资产再分发许可。"
+  }
+}

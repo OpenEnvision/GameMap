@@ -1,0 +1,97 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-super-tux-party",
+    "baselineRevision": "8a7f2334-bfdf-44d4-a9e4-6f64fd44883d",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://supertux.party/",
+    "imageUrl": "https://supertux.party/img/6c4d80e321d03931f687072f681955844d8eca7a8b56cd8ef58842a1fb30eed0.webp",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-24T21:03:43.946Z",
+    "reviewedFrameSha256": "ebf9d971fc503ae531622c7b42d6223f820a9740a1b1bd231129ca18207d9d1f",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "96e486415969b3815f4f4c5525611e9b6eeef75842db8642226009fc0137cda3",
+    "receiptOutcome": "captured-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-24T21:03:39.414Z",
+        "action": "GET",
+        "url": "https://supertux.party/",
+        "type": "document",
+        "status": 200,
+        "bytes": 14156,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-24T21:03:43.946Z",
+        "action": "GET",
+        "url": "https://supertux.party/img/6c4d80e321d03931f687072f681955844d8eca7a8b56cd8ef58842a1fb30eed0.webp",
+        "type": "image",
+        "status": 200,
+        "bytes": 120590,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-25",
+    "reviewedAt": "2026-10-25T23:47:23.192403Z",
+    "observed": "Four cartoon characters occupy a blue board space on a sandy island with bridges and water. Turn/player HUD and a tutorial dialogue with Yes/No choices remain intact. This is an in-world board scene with a dialogue overlay, not a standalone menu; the Super Tux Party homepage receipt identifies the title and journals this image.",
+    "copy": {
+      "en": {
+        "alt": "Four characters on an island board with a tutorial dialogue in Super Tux Party.",
+        "caption": "Creator-published screenshot: Super Tux Party shows an island board, player counters and an open tutorial dialogue."
+      },
+      "zh": {
+        "alt": "Super Tux Party 中岛屿棋盘上的四个角色与教程对话。",
+        "caption": "创作者发布的截图：Super Tux Party 的岛屿棋盘、玩家计数与打开的教程对话。"
+      }
+    },
+    "reviewArtifactSha256": "ba05222bc79d3cb38ea2fca4332c89ae8d8937f266b8e4ea3dc6c098d056f5e1",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-super-tux-party-9f1ba6b1e8-249c4b0b8565e0f4.webp",
+      "bytes": 112414,
+      "sha256": "249c4b0b8565e0f45ff36a8075d80453aa20f74035ecdd0117df4557f45983e0",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-super-tux-party-9f1ba6b1e8-6c4d80e321d03931.webp",
+      "bytes": 120590,
+      "sha256": "6c4d80e321d03931f687072f681955844d8eca7a8b56cd8ef58842a1fb30eed0",
+      "width": 1366,
+      "height": 768,
+      "format": "webp"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-super-tux-party-9f1ba6b1e8-ebf9d971fc503ae5.png",
+      "bytes": 1042763,
+      "sha256": "ebf9d971fc503ae531622c7b42d6223f820a9740a1b1bd231129ca18207d9d1f",
+      "width": 1366,
+      "height": 768,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

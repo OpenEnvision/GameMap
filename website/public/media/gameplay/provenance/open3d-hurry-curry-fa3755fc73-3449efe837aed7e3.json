@@ -1,0 +1,97 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-hurry-curry",
+    "baselineRevision": "fb35d6ea-c16c-4d44-a4b7-7ed6b4399884",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://hurrycurry.org/",
+    "imageUrl": "https://hurrycurry.org/assets/images/screenshot-1-lq.webp",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-24T20:29:26.042Z",
+    "reviewedFrameSha256": "121ce855ed4373c0cd88ab1bd08a6a7acb68113f8ac198a2a873e6a4298dd6ab",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "0afbb1328a35127fd13b1ad23576f0df7437d9130133f3f96e5dd6876eba5e31",
+    "receiptOutcome": "captured-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-24T20:29:03.286Z",
+        "action": "GET",
+        "url": "https://hurrycurry.org/",
+        "type": "document",
+        "status": 200,
+        "bytes": 16222,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-24T20:29:26.042Z",
+        "action": "GET",
+        "url": "https://hurrycurry.org/assets/images/screenshot-1-lq.webp",
+        "type": "image",
+        "status": 200,
+        "bytes": 61526,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-25",
+    "reviewedAt": "2026-10-25T23:48:05.702961Z",
+    "observed": "Overhead kitchen view shows two cooks between orange counters, a blender, stoves, food bins, serving windows and a green progress bar. The continuous playable room and character placement support an in-game scene. The Hurry Curry! homepage receipt journals the exact screenshot-1-lq image with HTTP 200.",
+    "copy": {
+      "en": {
+        "alt": "Two cooks among counters and stoves in a Hurry Curry! kitchen.",
+        "caption": "Creator-published screenshot: An overhead kitchen view shows two cooks, counters, stoves and food bins."
+      },
+      "zh": {
+        "alt": "Hurry Curry! 厨房中的两名厨师、料理台和炉灶。",
+        "caption": "创作者发布的截图：俯视厨房中可见两名厨师、料理台、炉灶和食材箱。"
+      }
+    },
+    "reviewArtifactSha256": "5e83c982a81ac5fed3b12cc0a8b2ecf136ab193b948c13499b58ed5224611bf9",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-hurry-curry-fa3755fc73-8f0749eb1e1750d5.webp",
+      "bytes": 88338,
+      "sha256": "8f0749eb1e1750d51cefe27ac6b68568bc9b24e8905135ce5baebefc82ee30f3",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-hurry-curry-fa3755fc73-878f4764138b0158.webp",
+      "bytes": 61526,
+      "sha256": "878f4764138b01589457d992b62febd545ee5d1eebecda1b37aaa1a64b616948",
+      "width": 1920,
+      "height": 1080,
+      "format": "webp"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-hurry-curry-fa3755fc73-121ce855ed4373c0.png",
+      "bytes": 1640681,
+      "sha256": "121ce855ed4373c0cd88ab1bd08a6a7acb68113f8ac198a2a873e6a4298dd6ab",
+      "width": 1920,
+      "height": 1080,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

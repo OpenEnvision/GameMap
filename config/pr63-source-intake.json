@@ -1,0 +1,334 @@
+{
+  "version": 1,
+  "pullRequest": "https://github.com/OpenEnvision/GameMap/pull/63",
+  "head": "409260b610f46f11a857b78b96a89879728d350a",
+  "mirroredFiles": [
+    {
+      "path": "collections/threejs-games/README.md",
+      "gitBlob": "aac46847ed6dbf775801916f9dc5356489f005a4",
+      "sha256": "70bed88a5bbbfa2096a869d21d0728ae2de08a510503eaa8714ef849254be155",
+      "bytes": 29132
+    },
+    {
+      "path": "collections/threejs-games/candidates.json",
+      "gitBlob": "261f540535938fb40321c6791dd12fc1f885e629",
+      "sha256": "b8afa484253a20bdc2075d52c59122c394912784f17af2eedda0ea1579934c6c",
+      "bytes": 75100
+    },
+    {
+      "path": "collections/threejs-games/evidence/README.md",
+      "gitBlob": "ca349a67f64693897278610fdbace4c889176a26",
+      "sha256": "8c3ad3853b9c2d615d1c095a96b0bf21e327c12e0579c4708fe7830ff4ea21fc",
+      "bytes": 1935
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-015.md",
+      "gitBlob": "3e05be4f5e76195a2b04adce32f0985eb11a7daf",
+      "sha256": "da36f7d9b3b1d469147979c0a0cf26ed93efa6a9282b2630b8222682ad9d8f55",
+      "bytes": 20787
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-016.md",
+      "gitBlob": "c27b61c7828f41b15029a2443226439730ffa487",
+      "sha256": "2ff5310f8f3815660978015f7a180463d620417b7c3fad0aa588e83a6bff5c7d",
+      "bytes": 18811
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-017.md",
+      "gitBlob": "65dc2f53fa1379f1b0863caf14cb480708948c96",
+      "sha256": "f41e9b4d51965f41e37844f68f23d6dd987df91e833fe31882d951bc89865170",
+      "bytes": 24545
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-018.md",
+      "gitBlob": "acc608bac7b9e32aa54d6901721e9b109a25515e",
+      "sha256": "9d22cc83a665773538569d08199d0528fd8a9dd9c0396294f0f4854bce911e2c",
+      "bytes": 15940
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-019.md",
+      "gitBlob": "9e1ef103232a7d3f02668d56f4bc935b351af34e",
+      "sha256": "a2d1f3208716f9d9b55ac032b31b5407bdd0394a595e6ecddc268ac14b1f97cb",
+      "bytes": 15624
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-020.md",
+      "gitBlob": "2a1f5eb169a388784c2418074796a1ef2f844d11",
+      "sha256": "256a084d4b897ad4ca57d36b5919c11cdef131295617b24d4b0a4b668b38fe91",
+      "bytes": 24845
+    },
+    {
+      "path": "collections/threejs-games/games.json",
+      "gitBlob": "26d97fbadf0667c313192f50a44ab26b3b3faa54",
+      "sha256": "2304c6e88a445634924d5d492aefd96d87178f7c51b6f5df20fddca163454f2c",
+      "bytes": 685904
+    },
+    {
+      "path": "collections/threejs-games/candidates.schema.json",
+      "gitBlob": "c147857948cd675193ca59fc4569be6a45c8d455",
+      "sha256": "91e5ab6fe0bef0172fefb94414a644ba64d748d1ab4f85ed0ba87ceffee01ca3",
+      "bytes": 1763,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/schema.json",
+      "gitBlob": "a90b70b8a0863adc9c239ab5078229a3c72a5750",
+      "sha256": "412b79da602fa82222271e5e4dd5da2cdc6b3a4f40f1a2a3555eb3001867bcb9",
+      "bytes": 10366,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-001.md",
+      "gitBlob": "db94afceb05ca0a2abe4e402bf7c662eb51bc024",
+      "sha256": "2793930bf4b43485c11bf0fe4bb2bbe42d05c4d584429f866259e706c8f6d4ed",
+      "bytes": 24242,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-002.md",
+      "gitBlob": "2cd4d8a48a822d6c530a909b81f3af07c9b8b165",
+      "sha256": "f04b8c33cb50c92575e68d6cad343c4801bc6a07047c9ef294baa0def3375205",
+      "bytes": 24526,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-003.md",
+      "gitBlob": "d016b09421a4b8b52aefc76c7f58345ec8fcd85c",
+      "sha256": "52da5990ad2a229af0f2adaafdf2d4d965b4fefc7f633eb87e80812abf9f5cd2",
+      "bytes": 23718,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-004.md",
+      "gitBlob": "3004f9e3377a2165831fecad3513e49f6e3e84c1",
+      "sha256": "ba5178bea472e2c8f5ce25c10f5e5043ef4a2a0ebd1878fb4b6d2d1915dc4d56",
+      "bytes": 23255,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-005.md",
+      "gitBlob": "9c6dabe2e4904cd12dee508e00136f330ca41477",
+      "sha256": "0d91343a381c0b801ae7f36cb4ce1a793fbd9b3b180e96458c537d50e9d0fd0a",
+      "bytes": 19530,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-006.md",
+      "gitBlob": "cd5b7eab4e144c868c9f4660892f01507c3e63ab",
+      "sha256": "86ccc88e27bdbe1fdff76ab8968182f39be4a81018f051fba82e8eced63bca4d",
+      "bytes": 22313,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-007.md",
+      "gitBlob": "4ebbe71c6385e9ed9191137aa6966efca0f5a9c7",
+      "sha256": "ca4e6e7d692f3bea2627332f0a02b74fb5920f0f041804fefa312bcce80f7288",
+      "bytes": 23026,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-008.md",
+      "gitBlob": "09f095b2a3f227ed1ae1d21aaccb454faabc90b0",
+      "sha256": "97747c320309baa33989058c131271d86b5c58853787275ade99503dfe5cac0b",
+      "bytes": 15522,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-009.md",
+      "gitBlob": "733b49b5b5cc9a0392b3464981d949f5dd9b1e28",
+      "sha256": "bf9437418626b301712beabb02d6a1877500698ae3bd0cdcec8825eac6e2cdd7",
+      "bytes": 14961,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-010.md",
+      "gitBlob": "5c2733f5737a3e8a79d719c8ce9eaf41b1a02d1b",
+      "sha256": "0ad02482795de32cb37b0ca03b4147c776e8a3baf2ef1b6a509e1370515a3f76",
+      "bytes": 15278,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-011.md",
+      "gitBlob": "c345e6e9f4a947ae68df89cf40551de79f8d8ecb",
+      "sha256": "10c8f4a19d3731cc44f4328245bacd41cb7e3de30a47ffbb94ce4bb9a5dd0ddc",
+      "bytes": 20572,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-012.md",
+      "gitBlob": "5f3d344aea980fcd7bb9629f6eb3f6cf03e6ed9f",
+      "sha256": "aec48e874722191fd6d075afef4539046b5fc921b4a4445f3d5950d16dbd50a1",
+      "bytes": 21265,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-013.md",
+      "gitBlob": "434498fe88cf73f9e285e880a711fad27b4d4586",
+      "sha256": "63763d9cbec958965a0cc3f195ff49cb700bedeb99d0cca8c1d6a4f18605a537",
+      "bytes": 14687,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/batch-014.md",
+      "gitBlob": "51ff9e85370885a1f9927dc372c90e2e6b34a07c",
+      "sha256": "0dab0f67aab763f6d6e04cd4778e9c37388d991d08bef40643644e6d73288f6c",
+      "bytes": 6856,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    },
+    {
+      "path": "collections/threejs-games/evidence/license-review-001.md",
+      "gitBlob": "2dab80df8c9e24b9e774423c1d4bccde3deff6dd",
+      "sha256": "cc511b95a34625f43d04d9058178f2efc113aa2d5a3a9618f66b428f74fb1497",
+      "bytes": 2716,
+      "role": "supporting schema/linked historical evidence, not extra PR games"
+    }
+  ],
+  "oldIds": [
+    "3d-blocks-jerilseb",
+    "3d-light-cycles",
+    "3d-platformer-dan",
+    "apex-formula-2026",
+    "apexarcade-maze",
+    "arena",
+    "asteroid-patrol-3d",
+    "astray",
+    "bombanauts",
+    "bowling",
+    "bubble-reactor",
+    "causality-paradox",
+    "chess-3d-terminats",
+    "chinese-chess",
+    "cinderbelt",
+    "couchcourt",
+    "cube-parking",
+    "deep-in-the-graveyard",
+    "dino3d",
+    "drakonas",
+    "dungeon-crawler-claytonwas",
+    "earth-defender",
+    "film-n-fish",
+    "first-person-shooter-js-davidinfante",
+    "floppy-defense",
+    "four-ball-billiards-web",
+    "galactic-recruit-pinball",
+    "glory-box",
+    "gomoku-five-chess-game",
+    "grid-wars",
+    "hanoi-webxr-mr",
+    "harvest",
+    "hormuz",
+    "island-survival",
+    "journey-to-the-center-of-the-hole",
+    "kaleydo-world",
+    "last-stand",
+    "liminality",
+    "los-polos-pirates",
+    "marble-maze",
+    "mastermind-3d",
+    "mind-your-head",
+    "minecraft-adventure",
+    "moto-craft-3d",
+    "neon-doom-pit",
+    "neon-river",
+    "neon-snake-3d-samuel-cabral",
+    "nyan-bomber",
+    "nyan-cororin",
+    "orbit-golf",
+    "parrot-hunt",
+    "periplus",
+    "perspectives",
+    "puzzle-cylinder",
+    "racez-io",
+    "rainbound-escape-room",
+    "realtime-tanks-threejs",
+    "rogue-descent",
+    "saturday-thunder-3d",
+    "simdrone",
+    "sketchy-snake-vr",
+    "sky-combat",
+    "skyward",
+    "snake-charmer",
+    "snowglider",
+    "space-pong-3d",
+    "space-rocks",
+    "spacer-js",
+    "spin-table-tennis",
+    "spot-the-bot",
+    "stick-steel",
+    "super-kart-3djs",
+    "temple-rumble",
+    "tennis-lumixed",
+    "terrinha",
+    "three-minesweeper",
+    "threejs-tower-defense",
+    "tidebreak",
+    "tideline",
+    "tiny-planet-action-rpg",
+    "tower-of-hanoi-3d",
+    "trio-td",
+    "trolltower",
+    "vantage",
+    "vesper-street",
+    "vox-lords",
+    "voxel-dungeon-majiayu",
+    "voxel-musou",
+    "vr-sentinel",
+    "wizardwarz",
+    "yet-another-zombie-horror",
+    "zombie-siege-maker-young"
+  ],
+  "newThreejsIds": [
+    "ultimate-striker-run-v3",
+    "the-warcrooms",
+    "turbo-robot-league-lite",
+    "wickhaven",
+    "marble-loco",
+    "cinderbanner",
+    "mega-battles",
+    "warlord-game",
+    "token-spire-first-person",
+    "junkyard-bandit",
+    "shadow-protocol",
+    "otterpuck",
+    "narayana-hadal-cycle",
+    "triangular-sphere-puzzle",
+    "ashen-ring",
+    "threejs-chess-ironexcavater",
+    "in-the-dark-ld29",
+    "power-tycoon",
+    "moshot",
+    "dart-room",
+    "eight-ball-sk4rkr0w",
+    "carom-pool",
+    "pool-quget",
+    "firn",
+    "island-escape-lost-treasure",
+    "ski-3d-redux"
+  ],
+  "canonicalAliases": {
+    "bridge-horror-house": {
+      "target": "example:open3d-bridge-horror-house",
+      "reason": "Same repository as an existing published game. Raw upstream record is preserved, not a second catalog game."
+    },
+    "chess-3d-vioancer": {
+      "target": "threejs-game:chess-3d-terminats",
+      "reason": "Both supplied records and fresh repository metadata point to the same author demo URL and identical described chess loop. Deduplicate the shared game/build without certifying fork relation, ownership, license equivalence or either runtime."
+    }
+  },
+  "englishNameOverrides": {
+    "ashen-ring": "Ashen Ring"
+  },
+  "sourceReferenceAliases": [
+    {
+      "url": "https://github.com/SUMAIRDERO7/island-escape-3d",
+      "target": "threejs-game:island-escape-lost-treasure",
+      "reason": "GitHub metadata redirects the old owner to SUMAIRDERO62; same author/game/treasure loop and README build reference as the supplied PR. Preserve the two repository spellings without presenting a second copy of the game."
+    },
+    {
+      "url": "https://github.com/SUMAIRDERO62/island-escape-3d",
+      "target": "threejs-game:island-escape-lost-treasure",
+      "reason": "Same-author related repository for the same supplied title and game loop; coalesced game identity, not a claim that every file/export matches."
+    }
+  ],
+  "qualification": "Imported pinned PR data and evidence; upstream source-review assertions are retained as upstream assertions. No fresh game-source, license, asset, build, playability, AI-authorship, safety or L1/L2/L3 certification. No merge, commit, push or production deployment."
+}

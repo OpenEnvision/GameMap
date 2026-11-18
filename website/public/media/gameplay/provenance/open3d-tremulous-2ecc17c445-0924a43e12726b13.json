@@ -1,0 +1,97 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-tremulous",
+    "baselineRevision": "763fe656-2f59-4ead-9f04-b4b343a596f4",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://tremulous.net/",
+    "imageUrl": "https://tremulous.net/screenshots/3.jpg",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-26T00:02:21.687Z",
+    "reviewedFrameSha256": "7d27d8d30e647b512d5a2e3f2d48e6e2ef3ff7e9859e8f4a24c44a7e35543b5f",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "0d280b7cbe4c88d1e61961e719770a0361a6e01ed030e468fde46406ae6bb3c8",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:52:13.811Z",
+        "action": "GET",
+        "url": "https://tremulous.net/",
+        "type": "document",
+        "status": 200,
+        "bytes": 6217,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-26T00:02:21.687Z",
+        "action": "GET",
+        "url": "https://tremulous.net/screenshots/3.jpg",
+        "type": "image",
+        "status": 200,
+        "bytes": 287055,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:15:23.269347Z",
+    "observed": "First-person weapon and crosshair inside a connected industrial room with stairs, pipes and glowing structures; health/ammunition HUD, help text, FPS and time remain visible. This is an in-game view, not the menu mentioned in the help text.",
+    "copy": {
+      "en": {
+        "alt": "A first-person weapon inside an industrial Tremulous room, with HUD and help text.",
+        "caption": "Creator-published screenshot: A first-person view shows a weapon, stairs and overhead pipes, with the HUD and help text retained."
+      },
+      "zh": {
+        "alt": "Tremulous 工业房间中的第一人称武器视角，画面保留状态界面和提示文字。",
+        "caption": "创作者发布的截图：第一人称画面中可见武器、楼梯与顶部管道，保留状态界面和提示文字。"
+      }
+    },
+    "reviewArtifactSha256": "d039aa87b602e6c3b658384dfe7e20af903815d4c6605355c1128bd1b854878c",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-tremulous-2ecc17c445-08751fd56bc706b4.webp",
+      "bytes": 101598,
+      "sha256": "08751fd56bc706b42838af2079e5856f6f94c44845e8f548a7eb202b3b915ae1",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-tremulous-2ecc17c445-18bba77cbf89d085.jpeg",
+      "bytes": 287055,
+      "sha256": "18bba77cbf89d0858557de34b961e4a73f1e085ebcbe8fdb8bf6d338ed8ffd5b",
+      "width": 1680,
+      "height": 1050,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-tremulous-2ecc17c445-7d27d8d30e647b51.png",
+      "bytes": 3076646,
+      "sha256": "7d27d8d30e647b512d5a2e3f2d48e6e2ef3ff7e9859e8f4a24c44a7e35543b5f",
+      "width": 1680,
+      "height": 1050,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

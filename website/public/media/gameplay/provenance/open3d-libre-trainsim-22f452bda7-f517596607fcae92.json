@@ -1,0 +1,97 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-libre-trainsim",
+    "baselineRevision": "ebcf3756-049e-4315-92cc-603900174221",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://www.libretrainsim.org/",
+    "imageUrl": "https://www.libretrainsim.org/wp-content/uploads/2021/11/4-1024x576.png",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-24T21:03:28.674Z",
+    "reviewedFrameSha256": "27ed1da73e329fc06775d1e51760bbf7254c38e6e6926c199ace9f883dd12ce6",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "486c21acb29ac56d336c31027e6fb877bd4faf56f27fb5a22ee8de2fa4da5624",
+    "receiptOutcome": "captured-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-24T21:03:11.715Z",
+        "action": "GET",
+        "url": "https://www.libretrainsim.org/",
+        "type": "document",
+        "status": 200,
+        "bytes": 61645,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-24T21:03:28.674Z",
+        "action": "GET",
+        "url": "https://www.libretrainsim.org/wp-content/uploads/2021/11/4-1024x576.png",
+        "type": "image",
+        "status": 200,
+        "bytes": 575005,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-25",
+    "reviewedAt": "2026-10-25T23:48:05.702961Z",
+    "observed": "View through a train cab windshield toward station platforms and tracks, with wiper, instrument panels and route display visible. This is a credible simulator driving scene, not an isolated train render. Libre TrainSim homepage receipt journals the exact 4-1024x576 screenshot URL with HTTP 200.",
+    "copy": {
+      "en": {
+        "alt": "Libre TrainSim cab instruments and windshield overlooking station tracks.",
+        "caption": "Creator-published screenshot: A train cab overlooks station platforms and tracks."
+      },
+      "zh": {
+        "alt": "Libre TrainSim 驾驶室仪表与窗外的车站轨道。",
+        "caption": "创作者发布的截图：从列车驾驶室可见车站站台和轨道。"
+      }
+    },
+    "reviewArtifactSha256": "5e83c982a81ac5fed3b12cc0a8b2ecf136ab193b948c13499b58ed5224611bf9",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-libre-trainsim-22f452bda7-d7df6716dfe3f75f.webp",
+      "bytes": 53108,
+      "sha256": "d7df6716dfe3f75fce8e5ec4d1fe056bac6a06dcbb1f599cc94315a2026036ab",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-libre-trainsim-22f452bda7-0d15638d70c51b8f.png",
+      "bytes": 575005,
+      "sha256": "0d15638d70c51b8f55e1e97d606f4d1536ac0bd7e5163c676dea28eb2bf18f53",
+      "width": 1024,
+      "height": 576,
+      "format": "png"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-libre-trainsim-22f452bda7-27ed1da73e329fc0.png",
+      "bytes": 572843,
+      "sha256": "27ed1da73e329fc06775d1e51760bbf7254c38e6e6926c199ace9f883dd12ce6",
+      "width": 1024,
+      "height": 576,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

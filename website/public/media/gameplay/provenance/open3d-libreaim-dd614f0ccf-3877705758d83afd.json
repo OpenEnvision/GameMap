@@ -1,0 +1,97 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-libreaim",
+    "baselineRevision": "45304638-914b-4b96-af66-1342bb7110d8",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://codeberg.org/Nokorpo/LibreAim",
+    "imageUrl": "https://img.itch.zone/aW1nLzIzMjE0ODY2LnBuZw==/original/e6jA3U.png",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-26T00:02:25.085Z",
+    "reviewedFrameSha256": "519b0076cffd7bb63604f7864522870083186d4c3c630e95be02ebd6fe7b7e16",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "f605f40c27ebfbfee198d04f494d34fe35ccf94a75e0322cc7bb0fd5eb018117",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:49:44.234Z",
+        "action": "GET",
+        "url": "https://codeberg.org/Nokorpo/LibreAim",
+        "type": "document",
+        "status": 200,
+        "bytes": 62250,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-26T00:02:25.085Z",
+        "action": "GET",
+        "url": "https://img.itch.zone/aW1nLzIzMjE0ODY2LnBuZw==/original/e6jA3U.png",
+        "type": "image",
+        "status": 200,
+        "bytes": 47761,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:15:23.269347Z",
+    "observed": "Yellow spherical targets appear above a blue checkered floor with a centered green crosshair and time, score and accuracy panel. The sparse scene is an aim-trainer game view matching LibreAim, not an isolated sphere asset or blank screen.",
+    "copy": {
+      "en": {
+        "alt": "Yellow targets over a blue floor in LibreAim, with crosshair and performance panel.",
+        "caption": "Creator-published screenshot: Yellow targets appear above a blue floor with a green crosshair and time, score and accuracy panel."
+      },
+      "zh": {
+        "alt": "LibreAim 蓝色地面上方的黄色目标，画面保留准星和成绩面板。",
+        "caption": "创作者发布的截图：黄色目标悬于蓝色地面上方，画面保留绿色准星、时间、分数和准确率面板。"
+      }
+    },
+    "reviewArtifactSha256": "d039aa87b602e6c3b658384dfe7e20af903815d4c6605355c1128bd1b854878c",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-libreaim-dd614f0ccf-63a8fd1ca86eb504.webp",
+      "bytes": 7852,
+      "sha256": "63a8fd1ca86eb50413b6e2e09d900531efd20369269c0d9c38972a2b420d350b",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-libreaim-dd614f0ccf-14087a37a6a051e0.png",
+      "bytes": 47761,
+      "sha256": "14087a37a6a051e0337960cc42861c1e176e2d09f95983c63b473ad0509f8554",
+      "width": 1920,
+      "height": 1080,
+      "format": "png"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-libreaim-dd614f0ccf-519b0076cffd7bb6.png",
+      "bytes": 61518,
+      "sha256": "519b0076cffd7bb63604f7864522870083186d4c3c630e95be02ebd6fe7b7e16",
+      "width": 1920,
+      "height": 1080,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-xonotic",
+    "baselineRevision": "d793bff0-02e4-4930-abcb-0875049db9ca",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://xonotic.org/",
+    "imageUrl": "https://xonotic.org/static/img/screenshot2-th.jpg",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-25T23:52:55.869Z",
+    "reviewedFrameSha256": "72575b4c9fbe2d2a2c4a92075638efede2ee7224445afd6d00831e2aeb54f5a2",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "f7269cc5ee671ff7dc93498670fde915a5885ddb901800a0f2c4e020dd03c308",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:52:53.892Z",
+        "action": "GET",
+        "url": "https://xonotic.org/",
+        "type": "document",
+        "status": 200,
+        "bytes": 16115,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-25T23:52:55.869Z",
+        "action": "GET",
+        "url": "https://xonotic.org/static/img/screenshot2-th.jpg",
+        "type": "image",
+        "status": 200,
+        "bytes": 7667,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:03:17.158038Z",
+    "observed": "Blue and red armored figures appear above the floor in a stone-and-metal corridor with bright ceiling lights. This is a coherent game-level character scene rather than a logo, diagram or isolated character render. The Xonotic homepage names the arena shooter and includes the exact screenshot2-th.jpg thumbnail in its screenshot links. Document and image GETs are HTTP 200. The original is only 200×150, so fine text/details cannot be established; the same full frame and dimensions are retained.",
+    "copy": {
+      "en": {
+        "alt": "Blue and red armored figures in a stone-and-metal corridor in Xonotic.",
+        "caption": "Creator-published screenshot: Xonotic shows armored figures in a lit corridor; the original thumbnail is 200×150."
+      },
+      "zh": {
+        "alt": "Xonotic 中石质与金属走廊内的蓝色和红色装甲人物。",
+        "caption": "创作者发布的截图：Xonotic 的明亮走廊与装甲人物；原始缩略图为 200×150。"
+      }
+    },
+    "reviewArtifactSha256": "2b028357406fa6a6327d1d882852b7812087c95589df2ce141d7635e38d1a29c",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-xonotic-98394f22b0-5db12e4221a80cb4.webp",
+      "bytes": 29612,
+      "sha256": "5db12e4221a80cb4c59918faf70ca2e64d0500b9791a4cba9cdd9facd9e81150",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-xonotic-98394f22b0-0454c89a2d871bf9.jpeg",
+      "bytes": 7667,
+      "sha256": "0454c89a2d871bf99d29d21e76f824733b04b4df35b75145baacd683f00b1529",
+      "width": 200,
+      "height": 150,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-xonotic-98394f22b0-72575b4c9fbe2d2a.png",
+      "bytes": 55438,
+      "sha256": "72575b4c9fbe2d2a2c4a92075638efede2ee7224445afd6d00831e2aeb54f5a2",
+      "width": 200,
+      "height": 150,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

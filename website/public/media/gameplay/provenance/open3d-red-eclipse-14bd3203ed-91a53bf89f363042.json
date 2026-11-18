@@ -1,0 +1,97 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-red-eclipse",
+    "baselineRevision": "9d091adf-59ae-450f-9cd1-cde719d42e0b",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://www.redeclipse.net/",
+    "imageUrl": "https://www.redeclipse.net/bits/images/001.jpg",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-26T00:02:19.078Z",
+    "reviewedFrameSha256": "104710bf94431a398670f8348ced68dfb26399b3dd237944da464a02fa023ef3",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "ea1f63f07371f7d80bd83e635c1c6a9e766bce879c70ac4aac6ff08c6f52eda3",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:51:10.600Z",
+        "action": "GET",
+        "url": "https://www.redeclipse.net/",
+        "type": "document",
+        "status": 200,
+        "bytes": 41163,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-26T00:02:19.078Z",
+        "action": "GET",
+        "url": "https://www.redeclipse.net/bits/images/001.jpg",
+        "type": "image",
+        "status": 200,
+        "bytes": 1546603,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:15:23.269347Z",
+    "observed": "Environment-only screenshot of a connected science-fiction arena: textured stone/metal walls, recessed ceiling lamps, cyan-edged floor-to-wall ramps, adjoining passages and a raised conduit/platform. No characters, combat, weapon or HUD are visible. Nevertheless, continuous traversable map geometry and the matching creator-page lightbox explicitly titled screenshot support an actual in-game level view rather than concept art or an isolated asset. Accepted as an environment scene only; no claim of active combat, a playtest or runtime verification.",
+    "copy": {
+      "en": {
+        "alt": "A cyan-lit Red Eclipse arena interior with ramps, passages and ceiling lights.",
+        "caption": "Creator-published screenshot: Cyan-lit ramps and passages connect within a science-fiction arena interior."
+      },
+      "zh": {
+        "alt": "Red Eclipse 青色灯光下的竞技场内部，可见斜坡、通道与顶灯。",
+        "caption": "创作者发布的截图：科幻竞技场内部的斜坡与通道由青色灯光勾勒。"
+      }
+    },
+    "reviewArtifactSha256": "d039aa87b602e6c3b658384dfe7e20af903815d4c6605355c1128bd1b854878c",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-red-eclipse-14bd3203ed-d07f7d96bdb2202a.webp",
+      "bytes": 85472,
+      "sha256": "d07f7d96bdb2202a164ee377582452faaefcf2bb403ecf2a261c941515ffc154",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-red-eclipse-14bd3203ed-1a193ce5ea94dab4.jpeg",
+      "bytes": 1546603,
+      "sha256": "1a193ce5ea94dab4e1ba6466e5af69751123e3fa8621914d892394939b246677",
+      "width": 3840,
+      "height": 2160,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-red-eclipse-14bd3203ed-104710bf94431a39.png",
+      "bytes": 9787783,
+      "sha256": "104710bf94431a398670f8348ced68dfb26399b3dd237944da464a02fa023ef3",
+      "width": 3840,
+      "height": 2160,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

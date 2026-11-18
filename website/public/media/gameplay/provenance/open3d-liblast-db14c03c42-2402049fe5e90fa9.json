@@ -1,0 +1,97 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-liblast",
+    "baselineRevision": "6df5969b-ad99-41a5-a3f5-7e9d9d21dc6f",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://libla.st/",
+    "imageUrl": "https://libla.st/images/screenshots/02.jpg",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-24T21:02:39.435Z",
+    "reviewedFrameSha256": "c604957a6bcc7688cb496762bd33961c0a9d2b0cbb9aa0c47204db61160c363a",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "9750b350b1260912f47e91b5705ef06d953cceeac7ce30ae2c32ee2029d35219",
+    "receiptOutcome": "blocked",
+    "networkObservations": [
+      {
+        "at": "2026-10-24T21:02:25.881Z",
+        "action": "GET",
+        "url": "https://libla.st/",
+        "type": "document",
+        "status": 200,
+        "bytes": 7933,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-24T21:02:39.435Z",
+        "action": "GET",
+        "url": "https://libla.st/images/screenshots/02.jpg",
+        "type": "image",
+        "status": 200,
+        "bytes": 1062359,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-25",
+    "reviewedAt": "2026-10-25T23:47:23.192403Z",
+    "observed": "A first-person weapon and crosshair face a tiled arena with green blocks and a bright particle burst. HP, jetpack, hosting and FPS overlays are present. The Liblast owner receipt journals its homepage document and this screenshot with HTTP 200; the overall page capture is blocked by timeout, not a successful captured homepage.",
+    "copy": {
+      "en": {
+        "alt": "A first-person weapon beside green arena blocks and a bright burst in Liblast.",
+        "caption": "Creator-published screenshot: Liblast shows a tiled arena, weapon, particle effects and status overlays."
+      },
+      "zh": {
+        "alt": "Liblast 中第一人称武器、绿色场地方块与明亮特效。",
+        "caption": "创作者发布的截图：Liblast 的网格场地、武器、粒子特效与状态叠加界面。"
+      }
+    },
+    "reviewArtifactSha256": "ba05222bc79d3cb38ea2fca4332c89ae8d8937f266b8e4ea3dc6c098d056f5e1",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-liblast-db14c03c42-e5aaf373e8f94d32.webp",
+      "bytes": 127914,
+      "sha256": "e5aaf373e8f94d32a8cb612dd218984285a114f05db9d051d04441d27f0f1e67",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-liblast-db14c03c42-f08498622906a57f.jpeg",
+      "bytes": 1062359,
+      "sha256": "f08498622906a57f3252b448561292120148044383a63c2680a33c3ef752e764",
+      "width": 2560,
+      "height": 1440,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-liblast-db14c03c42-c604957a6bcc7688.png",
+      "bytes": 4922798,
+      "sha256": "c604957a6bcc7688cb496762bd33961c0a9d2b0cbb9aa0c47204db61160c363a",
+      "width": 2560,
+      "height": 1440,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

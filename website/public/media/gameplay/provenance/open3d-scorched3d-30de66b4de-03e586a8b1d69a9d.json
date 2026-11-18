@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-scorched3d",
+    "baselineRevision": "feab2a85-4e9f-4a87-8582-ac0553f1d204",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://sourceforge.net/projects/scorched3d/",
+    "imageUrl": "https://a.fsdn.com/con/app/proj/scorched3d/screenshots/8943.jpg/245/183/1",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-25T23:51:16.065Z",
+    "reviewedFrameSha256": "6cb568b38b0cd0f36d02cec6bbe442541ef2081b192fed5b995a414f2d0b229d",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "d2e84fa7cced9ae06d95d4c3b57b96d06c3390ee60f47635c6bb6c8b6083fce0",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:51:14.788Z",
+        "action": "GET",
+        "url": "https://sourceforge.net/projects/scorched3d/",
+        "type": "document",
+        "status": 200,
+        "bytes": 129180,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-25T23:51:16.065Z",
+        "action": "GET",
+        "url": "https://a.fsdn.com/con/app/proj/scorched3d/screenshots/8943.jpg/245/183/1",
+        "type": "image",
+        "status": 200,
+        "bytes": 10056,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:02:18.556392Z",
+    "observed": "Lightning crosses a mountainous island scene with colored target/name markers, circular HUD panels and Gavin’s Move text. The gameplay overlays and source gallery caption Lightning from version 38 support a genuine Scorched3D scene rather than a landscape illustration.",
+    "copy": {
+      "en": {
+        "alt": "Lightning over a mountainous island in Scorched3D, with turn text and circular HUD panels.",
+        "caption": "Creator-published screenshot: Lightning strikes above an island landscape with game markers and turn text."
+      },
+      "zh": {
+        "alt": "Scorched3D 山地岛屿上方的闪电，画面保留回合文字和圆形界面。",
+        "caption": "创作者发布的截图：岛屿景观上方可见闪电，画面保留游戏标记与回合文字。"
+      }
+    },
+    "reviewArtifactSha256": "bed511b104ef6318d97401a40d06c0b635c918bc50ff40c778946671d29f8b61",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-scorched3d-30de66b4de-158c0463e87d5267.webp",
+      "bytes": 32188,
+      "sha256": "158c0463e87d5267c7d5a7a610deb2cf10ebc9685b9cdd5603e596afd7f11f70",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-scorched3d-30de66b4de-525ceca399816cbc.jpeg",
+      "bytes": 10056,
+      "sha256": "525ceca399816cbc3a18e17c2a1a879210739851b37c1fab1aa369791414e450",
+      "width": 245,
+      "height": 183,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-scorched3d-30de66b4de-6cb568b38b0cd0f3.png",
+      "bytes": 81738,
+      "sha256": "6cb568b38b0cd0f36d02cec6bbe442541ef2081b192fed5b995a414f2d0b229d",
+      "width": 245,
+      "height": 183,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

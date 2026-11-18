@@ -1,0 +1,97 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-quetoo",
+    "baselineRevision": "bf993ad0-52f1-4d23-b950-46b2bafcd4e7",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://quetoo.org/",
+    "imageUrl": "https://quetoo.org/images/screenshots/quetoo000.jpg",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-26T00:02:21.077Z",
+    "reviewedFrameSha256": "648cd01c55565843f4abc23a34b7365f80177c11f7cabecec65f79c2d65be7e3",
+    "frameEncoding": "Lossless PNG compression level 9 with adaptive filtering; identical complete decoded pixels, no resize/crop",
+    "originalReceiptSha256": "91d94412afb88b8d005669bc33cffe67371f360b9dfde98e2eeb5ff224edec9b",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:51:38.275Z",
+        "action": "GET",
+        "url": "https://quetoo.org/",
+        "type": "document",
+        "status": 200,
+        "bytes": 8094,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-26T00:02:21.077Z",
+        "action": "GET",
+        "url": "https://quetoo.org/images/screenshots/quetoo000.jpg",
+        "type": "image",
+        "status": 200,
+        "bytes": 2267789,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:15:23.269347Z",
+    "observed": "Continuous orange-lit industrial arena contains stairs, stacked crates and a weapon pickup; a centered crosshair, health/ammunition, match counters and timing establish a first-person game scene. This candidate provides stronger game-state evidence than the other two level views.",
+    "copy": {
+      "en": {
+        "alt": "An orange-lit Quetoo arena with stairs, crates, crosshair and HUD.",
+        "caption": "Creator-published screenshot: An orange-lit industrial arena contains stairs, stacked crates and a weapon pickup, with crosshair and HUD visible."
+      },
+      "zh": {
+        "alt": "Quetoo 橙色灯光下的竞技场，画面中有楼梯、箱子、准星和状态界面。",
+        "caption": "创作者发布的截图：工业竞技场中可见楼梯、堆叠箱子和武器拾取物，画面保留准星和状态界面。"
+      }
+    },
+    "reviewArtifactSha256": "d039aa87b602e6c3b658384dfe7e20af903815d4c6605355c1128bd1b854878c",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-quetoo-502ece727d-96cd8cf2ec39d137.webp",
+      "bytes": 113828,
+      "sha256": "96cd8cf2ec39d137cbc093129be1d50d97bba2fffd499aba433b0c0ffefa7084",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-quetoo-502ece727d-4e6f29b8f51118a2.jpeg",
+      "bytes": 2267789,
+      "sha256": "4e6f29b8f51118a249f781b65950b3d706711a8f7089f1287cbc110d7ffe2c06",
+      "width": 4096,
+      "height": 2304,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-quetoo-502ece727d-b1b675d6d68fffd7.png",
+      "bytes": 9163158,
+      "sha256": "b1b675d6d68fffd7dd720f88a155b44acd7a2c98ee7a7adf6c66f5c09408d289",
+      "width": 4096,
+      "height": 2304,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

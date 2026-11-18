@@ -1,0 +1,97 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-warzone-2100",
+    "baselineRevision": "6e319c5c-87f8-4f6a-af6c-d697e7ffdce5",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://wz2100.net/",
+    "imageUrl": "https://wz2100.net/img/screenshots/multiplayer_massive_battle.png",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-25T23:52:33.042Z",
+    "reviewedFrameSha256": "e83431c38ca1b12167d17a402db04d985c9172c458bfde2bf9b57840e4df0ee0",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "beb59037991bebae38eaa428796a2c0823f20ffa24d29cdbe9902b96a37bc60c",
+    "receiptOutcome": "collected-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-25T23:52:29.842Z",
+        "action": "GET",
+        "url": "https://wz2100.net/",
+        "type": "document",
+        "status": 200,
+        "bytes": 201587,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-25T23:52:33.042Z",
+        "action": "GET",
+        "url": "https://wz2100.net/img/screenshots/multiplayer_massive_battle.png",
+        "type": "image",
+        "status": 200,
+        "bytes": 630967,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-26",
+    "reviewedAt": "2026-10-26T00:02:18.556392Z",
+    "observed": "Large groups of colored armored vehicles occupy a continuous battlefield with explosions, projectiles, selection brackets, health bars and a minimap. This is a genuine Warzone 2100 strategy-game scene linked by the homepage carousel to the exact multiplayer_massive_battle.png asset. Existing edge-truncated interface text is preserved as supplied.",
+    "copy": {
+      "en": {
+        "alt": "Colored vehicles and explosions across a Warzone 2100 battlefield, with selection markers and minimap.",
+        "caption": "Creator-published screenshot: Colored armored vehicles fill a battlefield with explosions, selection markers and a minimap."
+      },
+      "zh": {
+        "alt": "Warzone 2100 战场上的彩色装甲车辆与爆炸，画面保留选择标记和小地图。",
+        "caption": "创作者发布的截图：多色装甲车辆分布在战场上，伴有爆炸、选择标记与小地图。"
+      }
+    },
+    "reviewArtifactSha256": "bed511b104ef6318d97401a40d06c0b635c918bc50ff40c778946671d29f8b61",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-warzone-2100-9acb34bb66-5eb43a6afe2d2d26.webp",
+      "bytes": 164774,
+      "sha256": "5eb43a6afe2d2d26fd80b26816361163a42836852aa42baaaaa59bfcfd54960f",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-warzone-2100-9acb34bb66-a8623f3098fab22c.png",
+      "bytes": 630967,
+      "sha256": "a8623f3098fab22cda5388b6c067c419d76fd6cc409f5fe87d40728215694c6d",
+      "width": 1151,
+      "height": 800,
+      "format": "png"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-warzone-2100-9acb34bb66-e83431c38ca1b121.png",
+      "bytes": 869923,
+      "sha256": "e83431c38ca1b12167d17a402db04d985c9172c458bfde2bf9b57840e4df0ee0",
+      "width": 1151,
+      "height": 800,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-manic-digger",
+    "baselineRevision": "4457d723-890e-49ef-b128-69da14d871f2",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://sourceforge.net/projects/manicdigger/",
+    "imageUrl": "https://a.fsdn.com/con/app/proj/manicdigger/screenshots/274861.jpg/245/183/1",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-24T20:45:15.759Z",
+    "reviewedFrameSha256": "3f5944fa063b7286c41b6cbf46ee95698436cc98c1b3a4e2f27e4b1a62b9b81e",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "526bd298843f8bba1ff1c374096a9a5e79601691f02aa90a586d1340bb6f725a",
+    "receiptOutcome": "captured-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-24T20:45:13.893Z",
+        "action": "GET",
+        "url": "https://sourceforge.net/projects/manicdigger/",
+        "type": "document",
+        "status": 200,
+        "bytes": 122569,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-24T20:45:15.759Z",
+        "action": "GET",
+        "url": "https://a.fsdn.com/con/app/proj/manicdigger/screenshots/274861.jpg/245/183/1",
+        "type": "image",
+        "status": 200,
+        "bytes": 10799,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-25",
+    "reviewedAt": "2026-10-25T23:47:23.192403Z",
+    "observed": "A first-person voxel cavern scene contains stone ledges, vegetation and water, with a held dirt block, central crosshair and inventory strip. The manicdigger project page receipt journals this project screenshot; no editor UI or webpage composition is visible.",
+    "copy": {
+      "en": {
+        "alt": "A voxel cavern with stone ledges, water and a held dirt block in Manic Digger.",
+        "caption": "Creator-published screenshot: Manic Digger shows a blocky cavern with a crosshair and inventory strip."
+      },
+      "zh": {
+        "alt": "Manic Digger 中的方块洞穴、石台、水与手持泥土方块。",
+        "caption": "创作者发布的截图：Manic Digger 的方块洞穴场景，带有准星与物品栏。"
+      }
+    },
+    "reviewArtifactSha256": "ba05222bc79d3cb38ea2fca4332c89ae8d8937f266b8e4ea3dc6c098d056f5e1",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-manic-digger-2f4e813d60-67974d843ba1db51.webp",
+      "bytes": 33892,
+      "sha256": "67974d843ba1db510d291ac96c098c923e81407a698abe08638c97bdcad95e9b",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-manic-digger-2f4e813d60-b17e130e2bab941f.jpeg",
+      "bytes": 10799,
+      "sha256": "b17e130e2bab941fb7e8ed73a25fc3b63099ece8cb68d0c0a98e7d576f3a75a5",
+      "width": 245,
+      "height": 183,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-manic-digger-2f4e813d60-3f5944fa063b7286.png",
+      "bytes": 71602,
+      "sha256": "3f5944fa063b7286c41b6cbf46ee95698436cc98c1b3a4e2f27e4b1a62b9b81e",
+      "width": 245,
+      "height": 183,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

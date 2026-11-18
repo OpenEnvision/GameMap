@@ -1,0 +1,97 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-search-and-rescue-ii",
+    "baselineRevision": "8fab9684-28ff-4063-9909-1eafdb499c30",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://searchandrescue2.github.io/sar2/",
+    "imageUrl": "https://searchandrescue2.github.io/sar2/images/screenshots/sar4.jpg",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-24T20:46:22.997Z",
+    "reviewedFrameSha256": "e394e3a572f63f7f3f215264fd1258eeaa9641b2983930445b3702503af938e1",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "e7ddf578779e02bbe483bd9e0a31375550996dc2335c8cb8ee03dc392ca72abb",
+    "receiptOutcome": "captured-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-24T20:46:12.956Z",
+        "action": "GET",
+        "url": "https://searchandrescue2.github.io/sar2/",
+        "type": "document",
+        "status": 200,
+        "bytes": 14814,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-24T20:46:22.997Z",
+        "action": "GET",
+        "url": "https://searchandrescue2.github.io/sar2/images/screenshots/sar4.jpg",
+        "type": "image",
+        "status": 200,
+        "bytes": 35572,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-25",
+    "reviewedAt": "2026-10-25T23:47:23.192403Z",
+    "observed": "A red-and-white helicopter flies low over blue water beside a large coast-guard-marked ship, with rotor wash and bottom flight telemetry. This is a coherent simulator scene with both aircraft and surroundings. The Search and Rescue II author-page receipt journals this exact screenshot with HTTP 200.",
+    "copy": {
+      "en": {
+        "alt": "A helicopter above the sea beside a large ship in Search and Rescue II.",
+        "caption": "Creator-published screenshot: Search and Rescue II shows a low-flying helicopter, ship and flight telemetry."
+      },
+      "zh": {
+        "alt": "Search and Rescue II 中海面上、大船旁的直升机。",
+        "caption": "创作者发布的截图：Search and Rescue II 的低空直升机、大船与飞行数据显示。"
+      }
+    },
+    "reviewArtifactSha256": "ba05222bc79d3cb38ea2fca4332c89ae8d8937f266b8e4ea3dc6c098d056f5e1",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-search-and-rescue-ii-6ed148618a-4258351ceca703b7.webp",
+      "bytes": 22518,
+      "sha256": "4258351ceca703b71a74c56da173df2f5ccb757353644d678a3d56c72e14d98c",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-search-and-rescue-ii-6ed148618a-ac604a53f1403962.jpeg",
+      "bytes": 35572,
+      "sha256": "ac604a53f14039624af747221bee003dc4dbe57eef81359f8e849279110ae663",
+      "width": 1024,
+      "height": 550,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-search-and-rescue-ii-6ed148618a-e394e3a572f63f7f.png",
+      "bytes": 212945,
+      "sha256": "e394e3a572f63f7f3f215264fd1258eeaa9641b2983930445b3702503af938e1",
+      "width": 1024,
+      "height": 550,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}

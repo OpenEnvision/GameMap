@@ -1,0 +1,962 @@
+{
+  "version": 1,
+  "source": {
+    "description": "Structured transcription of user-provided 25-reference message; not a verbatim full conversation archive",
+    "inputSha256": "d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd",
+    "originalInputText": "{\n  \"source\": \"User message in current session\",\n  \"records\": [\n    {\n      \"id\": \"browser-port-01\",\n      \"name\": \"Moon Zombies\",\n      \"suppliedStatus\": \"offline\",\n      \"suppliedClaim\": \"Old PortedGames address redirects to unrelated site. Do not follow CAPTCHA, login or download demands. Three.js COD Zombies map remake, not the original full game.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-02\",\n      \"name\": \"GTA Vice City\",\n      \"suppliedStatus\": \"requires-original-data\",\n      \"suppliedClaim\": \"gta-vice-city-wasm; reVC/re3 reverse-engineered reimplementation plus WASM. Original game files required; not all original assets provided.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-03\",\n      \"name\": \"Quake 3\",\n      \"suppliedStatus\": \"multiplayer-entry\",\n      \"suppliedClaim\": \"https://q3.pieter.com ; Q3JS/ioquake3 WASM source port, not necessarily reverse engineered; do not join public play.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-04\",\n      \"name\": \"BO1 Zombies\",\n      \"suppliedStatus\": \"restricted\",\n      \"suppliedClaim\": \"https://vel.gg/bo1z returned 451 in supplied review; root has map menu. No bypass or replacement mirror.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-05\",\n      \"name\": \"Half-Life\",\n      \"suppliedStatus\": \"requires-original-data\",\n      \"suppliedClaim\": \"Xash3D FWGS Emscripten port; game data required. Find exact official source, do not guess.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-06\",\n      \"name\": \"Skate 3\",\n      \"suppliedStatus\": \"requires-converted-assets\",\n      \"suppliedClaim\": \"Skate 3 Rust Engine; Rust/Bevy mechanics reimplementation, not a full Xbox 360 emulator or complete reproduction.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-07\",\n      \"name\": \"Halo CE\",\n      \"suppliedStatus\": \"requires-original-data\",\n      \"suppliedClaim\": \"mitchellhynes.com to Combat Lab; halo-ce-universal decompilation; original Xbox image required.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-08\",\n      \"name\": \"Diablo\",\n      \"suppliedStatus\": \"demo-and-owned-data\",\n      \"suppliedClaim\": \"Diablo browser demo claimed available; full game requires owned DIABDAT.MPQ; Devilution family engine reconstruction.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-09\",\n      \"name\": \"Modern Warfare 2 / OVZ\",\n      \"suppliedStatus\": \"offline\",\n      \"suppliedClaim\": \"OVZ on ovz-game-production.up.railway.app reports DMCA removal. Do not locate a removed build or mirror; not full MW2.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-10\",\n      \"name\": \"Kino der Toten\",\n      \"suppliedStatus\": \"offline\",\n      \"suppliedClaim\": \"PortedGames old entry redirects to unrelated domain; Three.js map remake, not all Black Ops.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-11\",\n      \"name\": \"PES 6\",\n      \"suppliedStatus\": \"uncertain-source-and-assets\",\n      \"suppliedClaim\": \"OptiJuegos entry claimed; PSP WASM/recompilation environment, saving/online claims untested. Find official project evidence; no ROM download or execution.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-12\",\n      \"name\": \"Unreal Tournament (provided label; actually Urban Terror)\",\n      \"suppliedStatus\": \"misnamed\",\n      \"suppliedClaim\": \"https://ut.pieter.com actually Urban Terror / ioUrbanTerror WASM. Do not label Unreal Tournament.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-13\",\n      \"name\": \"Black Ops 2 / Hijacked\",\n      \"suppliedStatus\": \"offline\",\n      \"suppliedClaim\": \"PortedGames old entry offline; was a Three.js FPS map remake of Hijacked, not full BO2.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-14\",\n      \"name\": \"The Simpsons: Hit & Run\",\n      \"suppliedStatus\": \"unverified-port\",\n      \"suppliedClaim\": \"WASM/WebGL entry and menu reportedly seen, full game flow not independently verified. Exact source and URL missing from supplied text.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-15\",\n      \"name\": \"Quake 1\",\n      \"suppliedStatus\": \"multiplayer-entry\",\n      \"suppliedClaim\": \"https://q1.pieter.com ; FTE QuakeWorld browser port. No public session participation.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-16\",\n      \"name\": \"Skate Rust\",\n      \"suppliedStatus\": \"restricted\",\n      \"suppliedClaim\": \"PortedGames Skate × Rust fan game, now points to membership platform. No login/purchase or evasion.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-17\",\n      \"name\": \"Halo CE Mobile\",\n      \"suppliedStatus\": \"requires-original-data\",\n      \"suppliedClaim\": \"Halo CE Mobile browser/PWA based on decompilation; owned Xbox image required. Author full-campaign claim is not a playtest.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-18\",\n      \"name\": \"BO3 Cheese Cube\",\n      \"suppliedStatus\": \"offline\",\n      \"suppliedClaim\": \"PortedGames Zombies mod-map fan remake removed; old link redirects unrelated site. Do not seek mirror.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-19\",\n      \"name\": \"Return to Castle Wolfenstein\",\n      \"suppliedStatus\": \"multiplayer-large\",\n      \"suppliedClaim\": \"https://rtcw.pieter.com ; iortcw WASM; supplied first load about 380 MB. Fetch text only, no game assets or public match.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-20\",\n      \"name\": \"CS Surf\",\n      \"suppliedStatus\": \"specialized-gameplay\",\n      \"suppliedClaim\": \"Classic surf; Source-style surf with timing/physics/leaderboard, not all Counter-Strike. Exact official URL/source to recover.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-21\",\n      \"name\": \"Half-Life / CS 1.6\",\n      \"suppliedStatus\": \"requires-original-data\",\n      \"suppliedClaim\": \"webXash / Xash3D FWGS WASM; owned Half-Life / CS game data required. May overlap other Half-Life entry; deduplicate by actual project/game.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-22\",\n      \"name\": \"Quake 2\",\n      \"suppliedStatus\": \"multiplayer-entry\",\n      \"suppliedClaim\": \"https://q2.pieter.com ; FTE compatible Quake II browser port. No public match.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-23\",\n      \"name\": \"Hedgewars\",\n      \"suppliedStatus\": \"unavailable-2d\",\n      \"suppliedClaim\": \"Hedgewars WASM attempt, supplied host request failed; original game is 2D, do not call it 3D.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-24\",\n      \"name\": \"GTA 5\",\n      \"suppliedStatus\": \"unproven-completeness\",\n      \"suppliedClaim\": \"October 2026 media demonstration, original entry disappeared. Grand-V/gweb may only expose launchers or compiled client snapshots, not auditable/buildable full RAGE/game source. No mirrors or full-source claim.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    },\n    {\n      \"id\": \"browser-port-25\",\n      \"name\": \"WASM Arcade\",\n      \"suppliedStatus\": \"aggregator\",\n      \"suppliedClaim\": \"WASM Arcade mixes native ports, emulation and Flash games. Resource/directory only, never count as one game.\",\n      \"suppliedReviewDate\": \"2026-10-25\",\n      \"verification\": \"User-provided assertions; not independently confirmed by this import\"\n    }\n  ],\n  \"safety\": \"Text/source-only research. No native execution, browser games, multiplayer, original assets/ROM uploads, archive download, accounts/purchases, denial/TLS/451 bypass, proxies or removed-build mirrors.\"\n}\n",
+    "importedAt": "2026-10-24",
+    "suppliedReviewDate": "2026-10-25",
+    "policy": "Operator explicitly approved evidence-based split and four project-reference cards with corresponding source unverified. Offline/451/removed/unclear projects remain candidates; aggregators are collections, not games. No runtime, source completeness or asset-rights claim."
+  },
+  "records": [
+    {
+      "id": "browser-port-01",
+      "name": "Moon Zombies",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Reported Three.js map fan remake; unverified.",
+      "descriptionEn": "Reported offline legacy Moon map fan remake, not complete Call of Duty Zombies. Exact source unavailable; old PortedGames destination not requested.",
+      "descriptionZh": "旧 Moon 地图同人重制据称下线；并非完整 COD Zombies，未确认源码，未访问旧跳转。",
+      "engine": "Unverified",
+      "codeLicenseNote": "No code license or complete source independently established for this exact entry.",
+      "assetLicenseNote": "Original commercial game assets and trademarks remain restricted; no asset redistribution rights established.",
+      "conditionsEn": "Candidate only. Supplied assertions are not independent evidence. No game execution, asset download, login, bypass or replacement-build search performed. Do not treat as a free/full-source game or verified play link.",
+      "conditionsZh": "仅为候选；用户提供的描述并非独立证据。未运行游戏、下载素材、登录、绕过限制或寻找替代构建；不可当作免费完整源码游戏或已验证的游玩链接。",
+      "availability": "offline (supplied, not independently confirmed)",
+      "sourceScope": "Exact entry/source identity unresolved; source and runtime completeness unverified.",
+      "duplicateHints": [],
+      "evidence": [],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-02",
+      "name": "GTA Vice City",
+      "decision": "game-reference",
+      "track": "3d",
+      "sourceUrl": "https://github.com/joncodeofficial/gta-vice-city-wasm",
+      "entryUrl": null,
+      "technique": "Browser source-port wrapper over re3/reVC reverse-engineered engine, via reVCDOS/DOS Zone; not emulation or original commercial source.",
+      "descriptionEn": "GTA: Vice City browser wrapper using an Emscripten C++ engine and local OPFS storage. README identifies re3/reVC lineage and requires legitimate original game data. Wrapper and engine source scopes are distinct.",
+      "descriptionZh": "《罪恶都市》浏览器封装，使用 Emscripten C++ 引擎及 OPFS 本地存储。README 指明 re3/reVC 逆向重实现谱系，并要求正版原始游戏数据；封装源码不等于完整引擎源码。",
+      "engine": "re3/reVC lineage via reVCDOS; Emscripten/WebAssembly, Vite browser wrapper",
+      "codeLicenseNote": "README claims MIT for this repository source only; upstream engine licensing, source coverage and buildability not audited.",
+      "assetLicenseNote": "README explicitly excludes models, textures, audio and maps and requires a legitimate owned copy. No rights to distribute game.tar.gz established; no archive fetched.",
+      "conditionsEn": "Reference only; no play link published. Supply lawfully obtained Vice City data. README features (touch, offline storage, saves) are author claims, not runtime verification. Wrapper source is not proof of complete corresponding engine source.",
+      "conditionsZh": "仅作参考，不发布游玩入口。须合法取得《罪恶都市》数据。触控、离线与存档仅为 README 宣称，未经运行验证；封装源码不能证明完整对应引擎源码可用。",
+      "availability": "Public README accessible; author lists browser deployment, not fetched or tested; original data required.",
+      "sourceScope": "Fetched repository README only; browser-client source described separately from external WASM engine lineage. No source-tree/build/completeness audit.",
+      "duplicateHints": [],
+      "evidence": [
+        {
+          "url": "https://api.github.com/repos/joncodeofficial/gta-vice-city-wasm/readme",
+          "checkedAt": "2026-10-24T17:45:55.037096+00:00",
+          "quote": "The game engine is based on the open-source reverse engineering project",
+          "sha256": "f76dc0035a9186d20c05c51062a94b6eff326c140f4eae7d2771cbb78f1c996b"
+        },
+        {
+          "url": "https://api.github.com/repos/joncodeofficial/gta-vice-city-wasm/readme",
+          "checkedAt": "2026-10-24T17:45:55.037096+00:00",
+          "quote": "The source code in this repository does not include the game's data files (models, textures, audio, maps).",
+          "sha256": "f76dc0035a9186d20c05c51062a94b6eff326c140f4eae7d2771cbb78f1c996b"
+        },
+        {
+          "url": "https://api.github.com/repos/joncodeofficial/gta-vice-city-wasm/readme",
+          "checkedAt": "2026-10-24T17:45:55.037096+00:00",
+          "quote": "This repository's source code is licensed under the [MIT License](LICENSE).",
+          "sha256": "f76dc0035a9186d20c05c51062a94b6eff326c140f4eae7d2771cbb78f1c996b"
+        }
+      ],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-03",
+      "name": "Quake 3",
+      "decision": "game-reference",
+      "track": "3d",
+      "sourceUrl": "https://github.com/lklacar/q3js",
+      "entryUrl": "https://q3.pieter.com/",
+      "technique": "Source port (ioquake3-based browser build; not evidence of decompilation or reverse engineering).",
+      "descriptionEn": "Quake III multiplayer reference: the supplied host credits Q3JS; Q3JS describes an ioquake3 build using official demo data.",
+      "descriptionZh": "Quake III 多人浏览器移植参考：所给站点注明 Q3JS，项目页面称采用 ioquake3 和官方试玩数据。",
+      "engine": "ioquake3 / Q3JS",
+      "codeLicenseNote": "Project homepage states GPL-licensed ioquake3 engine build; frontend license and exact revision unverified.",
+      "assetLicenseNote": "Original commercial game data and trademarks remain separately restricted; engine availability does not grant asset rights.",
+      "conditionsEn": "Multiplayer/demo scope only; do not join public servers. Demo assets are not free-licensed merely because the engine is GPL. Public text only; no runtime, asset loading, account access or multiplayer participation tested.",
+      "conditionsZh": "仅限多人及试玩数据范围；不得据此认定完整零售版或自由资产。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。",
+      "availability": "Landing/reference text accessible; runtime untested. Not a verified play link.",
+      "sourceScope": "Q3JS repository explicitly linked by project homepage; repository contents and deployed revision not audited. Demo scope, not the full retail release.",
+      "duplicateHints": [
+        "Baseline repository-research:lrusso/Quake3 is a separate repository; do not merge solely by game title."
+      ],
+      "evidence": [
+        {
+          "url": "https://q3.pieter.com/",
+          "checkedAt": "2026-10-24T17:45:41.396482+00:00",
+          "quote": "powered by",
+          "sha256": "4c6bf60ef542aebf6ed694f19fdfbbb20939a18c8df2f3b034fea999a30901db"
+        },
+        {
+          "url": "https://q3js.com/",
+          "checkedAt": "2026-10-24T17:46:18.595375+00:00",
+          "quote": "Q3JS is a non-commercial fan project using the officially released demo data and a GPL-licensed ioquake3 engine build.",
+          "sha256": "dde3b60aad7fa88af456d20327b5ed8fe6f70bc81bb891eb55731b039d1ba3c7"
+        }
+      ],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-04",
+      "name": "BO1 Zombies",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Unverified; map menu alone establishes no lineage.",
+      "descriptionEn": "Supplied https://vel.gg/bo1z reportedly returned 451; not re-requested or bypassed. Exact source/technology unverified; root menu is not proof of a playable BO1 edition.",
+      "descriptionZh": "所提供 https://vel.gg/bo1z 据称返回 451；未重试或绕过。根目录菜单不能证明完整 BO1 可玩。",
+      "engine": "Unverified",
+      "codeLicenseNote": "No code license or complete source independently established for this exact entry.",
+      "assetLicenseNote": "Original commercial game assets and trademarks remain restricted; no asset redistribution rights established.",
+      "conditionsEn": "Candidate only. Supplied assertions are not independent evidence. No game execution, asset download, login, bypass or replacement-build search performed. Do not treat as a free/full-source game or verified play link.",
+      "conditionsZh": "仅为候选；用户提供的描述并非独立证据。未运行游戏、下载素材、登录、绕过限制或寻找替代构建；不可当作免费完整源码游戏或已验证的游玩链接。",
+      "availability": "restricted (supplied, not independently confirmed)",
+      "sourceScope": "Exact entry/source identity unresolved; source and runtime completeness unverified.",
+      "duplicateHints": [],
+      "evidence": [],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-05",
+      "name": "Half-Life",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Claimed Xash3D-FWGS Emscripten source port; exact supplied edition unresolved.",
+      "descriptionEn": "The generic Half-Life claim does not uniquely identify a deployment or repository; a documented WebXash frontend exists but may duplicate browser-port-21.",
+      "descriptionZh": "笼统的 Half-Life 声明无法唯一确定部署或源码；可能与 browser-port-21 的 WebXash 重复。",
+      "engine": "Xash3D-FWGS (claimed)",
+      "codeLicenseNote": "Exact deployed code revision and license files were not inspected; no complete-source or redistribution claim.",
+      "assetLicenseNote": "Original commercial game data and trademarks remain separately restricted; engine availability does not grant asset rights.",
+      "conditionsEn": "Keep candidate until exact project identity and edition are resolved. Owned original data required; no full-source Half-Life claim. Public text only; no runtime, asset loading, account access or multiplayer participation tested.",
+      "conditionsZh": "在确认项目与版本前保留候选；需自行合法持有原版数据，不能称 Half-Life 完整开源。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。",
+      "availability": "Exact intended entry unidentified; no play URL assigned.",
+      "sourceScope": "Related fork README identifies an Emscripten port and links a different upstream; this does not establish which project the assigned entry means.",
+      "duplicateHints": [
+        "browser-port-21: potential same engine/frontend family; do not count twice without edition evidence."
+      ],
+      "evidence": [
+        {
+          "url": "https://api.github.com/repos/swtkiptr/webxash3d-fwgs/readme",
+          "checkedAt": "2026-10-24T17:46:09.398367+00:00",
+          "quote": "This project is an [Emscripten](https://emscripten.org/)-based web port of [Xash3D-FWGS](https://github.com/FWGS/xash3d-fwgs), an open-source engine for games based on the GoldSource engine.",
+          "sha256": "cf94c22fbccf7ba42c3541441cb0e1cb26f329cd4b076f526e332f849ac0377b"
+        },
+        {
+          "url": "https://api.github.com/repos/swtkiptr/webxash3d-fwgs/readme",
+          "checkedAt": "2026-10-24T17:46:09.398367+00:00",
+          "quote": "You must provide your own game files (e.g., from Steam):",
+          "sha256": "cf94c22fbccf7ba42c3541441cb0e1cb26f329cd4b076f526e332f849ac0377b"
+        }
+      ],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-06",
+      "name": "Skate 3",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": "https://github.com/SK8-ENGINE/skate-3-rust-engine",
+      "entryUrl": null,
+      "technique": "Rust/Bevy mechanics reimplementation informed by reverse-engineering research; current rewrite not established as static recompilation or Xbox 360 emulation.",
+      "descriptionEn": "Identified Skate 3 Rust/Bevy reimplementation with skating, tricks and map support; gameplay parity is work in progress. Current README documents Windows builds, not this claimed browser edition, so browser-reference eligibility remains unresolved.",
+      "descriptionZh": "已识别 Skate 3 Rust/Bevy 重实现，包含滑行、技巧与地图支持，但还原度仍在开发中。当前 README 仅说明 Windows 构建，尚不能确认所指浏览器版本，因此保留候选。",
+      "engine": "Rust / Bevy; SDL3 input",
+      "codeLicenseNote": "README states GPL-3.0-only for original project code unless noted; third-party/vendor code retains separate licenses. License file not fetched.",
+      "assetLicenseNote": "Skate 3 assets explicitly not included. Setup requires owned Xbox 360 ISO or extracted default.xex/data; converted game assets remain proprietary. GPL does not grant EA or third-party asset rights.",
+      "conditionsEn": "Candidate for this browser intake: exact browser edition not established. Experimental gameplay lacks parity; original commercial data and conversion required. No native build, conversion, download or game execution performed.",
+      "conditionsZh": "本浏览器收录中保留候选：尚未确定浏览器版本。实验性玩法未达完全还原，须自备原商业数据并转换。未运行原生构建、转换工具或游戏，亦未下载构建。",
+      "availability": "Public source README accessible; documents experimental Windows distribution, not a verified browser entry.",
+      "sourceScope": "README describes Rust rewrite and historical recompilation separately; no source-tree/build audit, no full reproduction claim.",
+      "duplicateHints": [
+        "browser-port-16: similarly named Skate Rust, exact identity not established; do not merge automatically."
+      ],
+      "evidence": [
+        {
+          "url": "https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme",
+          "checkedAt": "2026-10-24T17:45:47.967472+00:00",
+          "quote": "A Rust and Bevy skating project built from Skate 3 reverse-engineering research.",
+          "sha256": "4d650d61e6f3a3241fc7a8d0f45791c673db74b9ea74e50b6ab52dfc8df3176a"
+        },
+        {
+          "url": "https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme",
+          "checkedAt": "2026-10-24T17:45:47.967472+00:00",
+          "quote": "Gameplay parity is still a work in progress.",
+          "sha256": "4d650d61e6f3a3241fc7a8d0f45791c673db74b9ea74e50b6ab52dfc8df3176a"
+        },
+        {
+          "url": "https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme",
+          "checkedAt": "2026-10-24T17:45:47.967472+00:00",
+          "quote": "**Skate 3 assets are not included.**",
+          "sha256": "4d650d61e6f3a3241fc7a8d0f45791c673db74b9ea74e50b6ab52dfc8df3176a"
+        },
+        {
+          "url": "https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme",
+          "checkedAt": "2026-10-24T17:45:47.967472+00:00",
+          "quote": "Requires Windows, Rust with the MSVC toolchain, and LLVM installed in its default",
+          "sha256": "4d650d61e6f3a3241fc7a8d0f45791c673db74b9ea74e50b6ab52dfc8df3176a"
+        },
+        {
+          "url": "https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme",
+          "checkedAt": "2026-10-24T17:45:47.967472+00:00",
+          "quote": "[GNU General Public License version 3 only](LICENSE) (`GPL-3.0-only`).",
+          "sha256": "4d650d61e6f3a3241fc7a8d0f45791c673db74b9ea74e50b6ab52dfc8df3176a"
+        }
+      ],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-07",
+      "name": "Halo CE",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Related upstream describes a source port of decompilation from early Xbox development build 2342, not emulation; exact Combat Lab edition unresolved.",
+      "descriptionEn": "Supplied Halo CE / Combat Lab entry lacks an exact confirmed repository. The supplied halo-ce-universal upstream resolves to OpenCE; its README describes an early Xbox build 2342 decompilation port, not a full original retail-source release.",
+      "descriptionZh": "所提供 Halo CE / Combat Lab 入口尚无确切对应仓库。其上游 halo-ce-universal 已迁至 OpenCE，README 说明基于 Xbox 早期开发版 2342 的反编译移植，并非原零售版本完整源码发布。",
+      "engine": "Related upstream: native-compiled game code, SDL3, OpenGL / browser WebGL 2",
+      "codeLicenseNote": "Related OpenCE metadata reports AGPL-3.0; underlying decompiled commercial-code rights and exact Combat Lab licensing not established.",
+      "assetLicenseNote": "Related OpenCE requires own Halo Xbox ISO/XISO and excludes game data. Xbox maps and Custom Edition/PC maps have distinct compatibility and ownership conditions.",
+      "conditionsEn": "Retain candidate until exact Combat Lab source/deployment mapping is proven. Do not substitute the related upstream as the original entry. No game, multiplayer, map import or streaming tested.",
+      "conditionsZh": "须确认 Combat Lab 精确源码及部署对应关系后再评估；不得将上游替代原入口。未测试游戏、多人、地图导入或流式加载。",
+      "availability": "Related upstream public README accessible; exact supplied deployment not checked.",
+      "sourceScope": "Related source only: cybersecurity/halo-ce-universal API redirect resolved to OpenCommunityEdition/OpenCE. README explicitly identifies development build 2342. No exact Combat Lab source identity proven.",
+      "duplicateHints": [
+        "browser-port-17: related decompilation lineage, mobile fork; not necessarily same edition."
+      ],
+      "evidence": [
+        {
+          "url": "https://api.github.com/repositories/1388653148",
+          "checkedAt": "2026-10-24T17:46:01.083690+00:00",
+          "quote": "OpenCommunityEdition/OpenCE",
+          "sha256": "d31472834b8f97c6c93ec9b1136b6d38ae718b576d7ccb3624e45279e43a6253"
+        },
+        {
+          "url": "https://api.github.com/repos/OpenCommunityEdition/OpenCE/readme",
+          "checkedAt": "2026-10-24T17:46:12.266995+00:00",
+          "quote": "based on an early Xbox development build (2342)",
+          "sha256": "dbdf7d35254624a5c0c34f8a27dc7c6cdfa62ccbd84cf91400be3362c2d60af2"
+        },
+        {
+          "url": "https://api.github.com/repos/OpenCommunityEdition/OpenCE/readme",
+          "checkedAt": "2026-10-24T17:46:12.266995+00:00",
+          "quote": "OpenCE does not include the game data.",
+          "sha256": "dbdf7d35254624a5c0c34f8a27dc7c6cdfa62ccbd84cf91400be3362c2d60af2"
+        },
+        {
+          "url": "https://api.github.com/repos/OpenCommunityEdition/OpenCE/readme",
+          "checkedAt": "2026-10-24T17:46:12.266995+00:00",
+          "quote": "not an emulator",
+          "sha256": "dbdf7d35254624a5c0c34f8a27dc7c6cdfa62ccbd84cf91400be3362c2d60af2"
+        }
+      ],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-08",
+      "name": "Diablo",
+      "decision": "game-reference",
+      "track": "2d",
+      "sourceUrl": "https://github.com/d07RiV/diabloweb",
+      "entryUrl": null,
+      "technique": "Browser source port of Devilution engine reconstruction/decompilation lineage; WebAssembly compilation is its deployment mechanism, not evidence of emulation.",
+      "descriptionEn": "Diablo 1 browser port based on Devilution, with separate engine-module source repository. README offers shareware spawn.mpq mode; full Diablo requires the user’s own DIABDAT.MPQ. No Hellfire or DevilutionX scope inferred.",
+      "descriptionZh": "基于 Devilution 的《暗黑破坏神 1》浏览器移植，引擎模块源码位于另一个仓库。README 描述 spawn.mpq 共享版模式；完整版须自备 DIABDAT.MPQ。不推定包含地狱火或 DevilutionX。",
+      "engine": "Devilution-derived C/C++ engine compiled to WebAssembly with JS interface",
+      "codeLicenseNote": "No license file fetched; wrapper and separate engine-module source have distinct scopes. No blanket free-software or commercial-code rights claim.",
+      "assetLicenseNote": "README says hosted shareware spawn.mpq; shareware is not unrestricted assets. Full commercial DIABDAT.MPQ must come from an owned original copy. No MPQ downloaded.",
+      "conditionsEn": "Text reference only; no demo or play link published. Shareware and full-owned-data modes must remain distinct. No asset rights, complete source, save compatibility or actual operation verified.",
+      "conditionsZh": "仅为文本参考，不发布试玩或游玩入口。必须区分共享版与自有数据完整版；未核实素材授权、完整源码、存档兼容或实际运行。",
+      "availability": "Public README accessible; author identifies a hosted shareware deployment, not fetched or tested.",
+      "sourceScope": "Fetched d07RiV/diabloweb README identifies https://github.com/d07RiV/devilution as separate WebAssembly module source. That repository was not fetched or audited.",
+      "duplicateHints": [],
+      "evidence": [
+        {
+          "url": "https://api.github.com/repos/d07RiV/diabloweb/readme",
+          "checkedAt": "2026-10-24T17:46:03.155377+00:00",
+          "quote": "This project is based on https://github.com/diasurgical/devilution.",
+          "sha256": "ff351c15c7138c45ad6e5c4d6e0bf53ec676481c89df8ddf150cb7d701934b23"
+        },
+        {
+          "url": "https://api.github.com/repos/d07RiV/diabloweb/readme",
+          "checkedAt": "2026-10-24T17:46:03.155377+00:00",
+          "quote": "Source code to build the WebAssembly modules is here: https://github.com/d07RiV/devilution",
+          "sha256": "ff351c15c7138c45ad6e5c4d6e0bf53ec676481c89df8ddf150cb7d701934b23"
+        },
+        {
+          "url": "https://api.github.com/repos/d07RiV/diabloweb/readme",
+          "checkedAt": "2026-10-24T17:46:03.155377+00:00",
+          "quote": "To play the full game, you must use your own DIABDAT.MPQ",
+          "sha256": "ff351c15c7138c45ad6e5c4d6e0bf53ec676481c89df8ddf150cb7d701934b23"
+        }
+      ],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-09",
+      "name": "Modern Warfare 2 / OVZ",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Unverified; not established as MW2 source port.",
+      "descriptionEn": "Reported DMCA-removed OVZ at ovz-game-production.up.railway.app, not full Modern Warfare 2. No removed build or mirror sought; source unavailable for exact edition.",
+      "descriptionZh": "据称 OVZ 已因 DMCA 下线，并非完整 MW2；未寻找被移除构建或镜像，精确版本源码未确认。",
+      "engine": "Unverified",
+      "codeLicenseNote": "No code license or complete source independently established for this exact entry.",
+      "assetLicenseNote": "Original commercial game assets and trademarks remain restricted; no asset redistribution rights established.",
+      "conditionsEn": "Candidate only. Supplied assertions are not independent evidence. No game execution, asset download, login, bypass or replacement-build search performed. Do not treat as a free/full-source game or verified play link.",
+      "conditionsZh": "仅为候选；用户提供的描述并非独立证据。未运行游戏、下载素材、登录、绕过限制或寻找替代构建；不可当作免费完整源码游戏或已验证的游玩链接。",
+      "availability": "offline (supplied, not independently confirmed)",
+      "sourceScope": "Exact entry/source identity unresolved; source and runtime completeness unverified.",
+      "duplicateHints": [],
+      "evidence": [],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-10",
+      "name": "Kino der Toten",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Reported Three.js map fan remake; unverified.",
+      "descriptionEn": "Reported offline Kino der Toten Three.js map fan remake, not full Black Ops. Exact source unavailable; known unrelated PortedGames redirect not requested.",
+      "descriptionZh": "据称已下线的 Kino 地图 Three.js 同人重制，非完整 Black Ops；源码未确认，未访问已知无关跳转。",
+      "engine": "Unverified",
+      "codeLicenseNote": "No code license or complete source independently established for this exact entry.",
+      "assetLicenseNote": "Original commercial game assets and trademarks remain restricted; no asset redistribution rights established.",
+      "conditionsEn": "Candidate only. Supplied assertions are not independent evidence. No game execution, asset download, login, bypass or replacement-build search performed. Do not treat as a free/full-source game or verified play link.",
+      "conditionsZh": "仅为候选；用户提供的描述并非独立证据。未运行游戏、下载素材、登录、绕过限制或寻找替代构建；不可当作免费完整源码游戏或已验证的游玩链接。",
+      "availability": "offline (supplied, not independently confirmed)",
+      "sourceScope": "Exact entry/source identity unresolved; source and runtime completeness unverified.",
+      "duplicateHints": [],
+      "evidence": [],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-11",
+      "name": "PES 6",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Unresolved: PSP emulation versus static recompilation; WASM alone insufficient.",
+      "descriptionEn": "PES 6 edition, official source and exact entry remain unidentified. Supplied OptiJuegos/PSP WASM claim does not distinguish emulation from static recompilation; saving and online claims untested. Aggregator search result is not game-source evidence.",
+      "descriptionZh": "PES 6 具体版本、官方源码与入口均未确定。OptiJuegos/PSP WASM 描述不足以区分模拟与静态重编译；存档及在线功能未测试，聚合站不能作为游戏源码证据。",
+      "engine": "Unverified",
+      "codeLicenseNote": "No code license or complete source independently established for this exact entry.",
+      "assetLicenseNote": "Original commercial game assets and trademarks remain restricted; no asset redistribution rights established.",
+      "conditionsEn": "Candidate only. Supplied assertions are not independent evidence. No game execution, asset download, login, bypass or replacement-build search performed. Do not treat as a free/full-source game or verified play link.",
+      "conditionsZh": "仅为候选；用户提供的描述并非独立证据。未运行游戏、下载素材、登录、绕过限制或寻找替代构建；不可当作免费完整源码游戏或已验证的游玩链接。",
+      "availability": "uncertain-source-and-assets (supplied, not independently confirmed)",
+      "sourceScope": "Search metadata found an aggregator reference only, not official PES 6 code, edition identity, or technology proof. No aggregator/game assets fetched.",
+      "duplicateHints": [],
+      "evidence": [
+        {
+          "url": "https://api.github.com/search/repositories?q=OptiJuegos&per_page=3",
+          "checkedAt": "2026-10-24T17:46:04.950749+00:00",
+          "quote": "https://optijuegos.github.io/",
+          "sha256": "537bff639c37d298fb6efce37dc3756c93fbf6539b811d272926a89792e89042"
+        }
+      ],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-12",
+      "name": "Unreal Tournament (provided label; actually Urban Terror)",
+      "decision": "game-reference",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": "https://ut.pieter.com/",
+      "technique": "ioUrbanTerror engine compiled to WebAssembly; source port, not Unreal Tournament.",
+      "descriptionEn": "Urban Terror multiplayer browser reference, correcting the supplied Unreal Tournament label.",
+      "descriptionZh": "Urban Terror 多人浏览器移植参考；纠正误标的 Unreal Tournament。",
+      "engine": "ioUrbanTerror",
+      "codeLicenseNote": "Exact deployed code revision and license files were not inspected; no complete-source or redistribution claim.",
+      "assetLicenseNote": "Landing page credits ownership to FrozenSand; no asset redistribution permission established.",
+      "conditionsEn": "Only Urban Terror multiplayer is identified, not Unreal Tournament. First load downloads game data; do not launch. FrozenSand assets remain separately restricted. Public text only; no runtime, asset loading, account access or multiplayer participation tested.",
+      "conditionsZh": "仅确认 Urban Terror 多人模式，并非 Unreal Tournament；首载会下载游戏数据，不得启动；FrozenSand 资产另受限制。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。",
+      "availability": "Landing/reference text accessible; runtime untested. Not a verified play link.",
+      "sourceScope": "Landing page identifies ioUrbanTerror and FrozenSand; exact browser-port source repository not linked/verified.",
+      "duplicateHints": [],
+      "evidence": [
+        {
+          "url": "https://ut.pieter.com/",
+          "checkedAt": "2026-10-24T17:46:02.171960+00:00",
+          "quote": "Real Urban Terror engine (ioUrbanTerror) compiled to WebAssembly.",
+          "sha256": "09ad8736ddd24d96adf3885e9abd97065aa4cce41d983d81e7dbcbd66ee93191"
+        },
+        {
+          "url": "https://ut.pieter.com/",
+          "checkedAt": "2026-10-24T17:46:02.171960+00:00",
+          "quote": "Urban Terror is created and owned by",
+          "sha256": "09ad8736ddd24d96adf3885e9abd97065aa4cce41d983d81e7dbcbd66ee93191"
+        }
+      ],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-13",
+      "name": "Black Ops 2 / Hijacked",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Reported Three.js FPS map fan remake; unverified.",
+      "descriptionEn": "Reported offline Hijacked map fan remake, not full Black Ops 2. Exact source unavailable; removed PortedGames destination not requested.",
+      "descriptionZh": "据称下线的 Hijacked 地图同人重制，并非完整 Black Ops 2；源码未确认，未访问已移除入口。",
+      "engine": "Unverified",
+      "codeLicenseNote": "No code license or complete source independently established for this exact entry.",
+      "assetLicenseNote": "Original commercial game assets and trademarks remain restricted; no asset redistribution rights established.",
+      "conditionsEn": "Candidate only. Supplied assertions are not independent evidence. No game execution, asset download, login, bypass or replacement-build search performed. Do not treat as a free/full-source game or verified play link.",
+      "conditionsZh": "仅为候选；用户提供的描述并非独立证据。未运行游戏、下载素材、登录、绕过限制或寻找替代构建；不可当作免费完整源码游戏或已验证的游玩链接。",
+      "availability": "offline (supplied, not independently confirmed)",
+      "sourceScope": "Exact entry/source identity unresolved; source and runtime completeness unverified.",
+      "duplicateHints": [],
+      "evidence": [],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-14",
+      "name": "The Simpsons: Hit & Run",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Unknown; WASM/WebGL does not prove recompilation, emulation or reimplementation.",
+      "descriptionEn": "Exact Simpsons: Hit & Run browser source and URL missing. Supplied WASM/WebGL menu observation does not establish engine lineage, buildable source or complete game flow.",
+      "descriptionZh": "缺少《辛普森：横冲直撞》浏览器版确切源码与网址；WASM/WebGL 菜单观察不能证明技术谱系、可构建源码或完整流程。",
+      "engine": "Unverified",
+      "codeLicenseNote": "No code license or complete source independently established for this exact entry.",
+      "assetLicenseNote": "Original commercial game assets and trademarks remain restricted; no asset redistribution rights established.",
+      "conditionsEn": "Candidate only. Supplied assertions are not independent evidence. No game execution, asset download, login, bypass or replacement-build search performed. Do not treat as a free/full-source game or verified play link.",
+      "conditionsZh": "仅为候选；用户提供的描述并非独立证据。未运行游戏、下载素材、登录、绕过限制或寻找替代构建；不可当作免费完整源码游戏或已验证的游玩链接。",
+      "availability": "unverified-port (supplied, not independently confirmed)",
+      "sourceScope": "Exact entry/source identity unresolved; source and runtime completeness unverified.",
+      "duplicateHints": [],
+      "evidence": [],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-15",
+      "name": "Quake 1",
+      "decision": "game-reference",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": "https://q1.pieter.com/",
+      "technique": "FTE QuakeWorld browser engine port; no decompilation claim.",
+      "descriptionEn": "QuakeWorld multiplayer browser reference, not a verified full Quake single-player release.",
+      "descriptionZh": "QuakeWorld 多人浏览器移植参考，不等同于经验证的完整 Quake 单人版。",
+      "engine": "FTE QuakeWorld",
+      "codeLicenseNote": "Exact deployed code revision and license files were not inspected; no complete-source or redistribution claim.",
+      "assetLicenseNote": "Original commercial game data and trademarks remain separately restricted; engine availability does not grant asset rights.",
+      "conditionsEn": "Multiplayer scope, advertised up to eight players; no public sessions. Full campaign and supplied asset edition unverified. Public text only; no runtime, asset loading, account access or multiplayer participation tested.",
+      "conditionsZh": "页面称最多八人多人模式；未确认完整战役或资产版本，不参与公共对局。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。",
+      "availability": "Landing/reference text accessible; runtime untested. Not a verified play link.",
+      "sourceScope": "Landing page credits FTE QuakeWorld and links https://www.fteqw.org; deployed source repository/revision unverified.",
+      "duplicateHints": [
+        "Baseline repository-research:Triang3l/WebQuake and example:three-quake-claude-port use other implementations; no identity match established."
+      ],
+      "evidence": [
+        {
+          "url": "https://q1.pieter.com/",
+          "checkedAt": "2026-10-24T17:46:03.743924+00:00",
+          "quote": "Powered by",
+          "sha256": "9c81d557f9839e10d61c6114c5c2975c3e02cd7af22987700d6565a0f8d27578"
+        },
+        {
+          "url": "https://q1.pieter.com/",
+          "checkedAt": "2026-10-24T17:46:03.743924+00:00",
+          "quote": "Play QuakeWorld Multiplayer Online",
+          "sha256": "9c81d557f9839e10d61c6114c5c2975c3e02cd7af22987700d6565a0f8d27578"
+        }
+      ],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-16",
+      "name": "Skate Rust",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Reported fan game; exact technology and identity unresolved.",
+      "descriptionEn": "Reported membership-gated Skate × Rust fan game; exact source, asset provenance and identity relative to Skate 3 Rust Engine unresolved. No login, purchase or gated destination requested.",
+      "descriptionZh": "据称需会员的 Skate × Rust 同人游戏；源码、素材来源及与 Skate 3 Rust Engine 的关系不明，未登录、购买或访问受限入口。",
+      "engine": "Unverified",
+      "codeLicenseNote": "No code license or complete source independently established for this exact entry.",
+      "assetLicenseNote": "Original commercial game assets and trademarks remain restricted; no asset redistribution rights established.",
+      "conditionsEn": "Candidate only. Supplied assertions are not independent evidence. No game execution, asset download, login, bypass or replacement-build search performed. Do not treat as a free/full-source game or verified play link.",
+      "conditionsZh": "仅为候选；用户提供的描述并非独立证据。未运行游戏、下载素材、登录、绕过限制或寻找替代构建；不可当作免费完整源码游戏或已验证的游玩链接。",
+      "availability": "restricted (supplied, not independently confirmed)",
+      "sourceScope": "Exact entry/source identity unresolved; source and runtime completeness unverified.",
+      "duplicateHints": [
+        "browser-port-06: similarly named project; exact identity unproven."
+      ],
+      "evidence": [],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-17",
+      "name": "Halo CE Mobile",
+      "decision": "game-reference",
+      "track": "3d",
+      "sourceUrl": "https://github.com/OMG-Guest/Halo-Mobile",
+      "entryUrl": null,
+      "technique": "Mobile-focused browser source port of Halo CE decompilation lineage; Emscripten/WebAssembly/WebGL 2, not established as emulation or fan remake.",
+      "descriptionEn": "Halo Mobile README describes a phone-focused Halo CE browser/PWA port, touch controls, local storage, and optional separately hosted map streaming. Campaign and System Link support are author claims only; compatible authorized Xbox data required.",
+      "descriptionZh": "Halo Mobile README 描述面向手机的 Halo CE 浏览器/PWA 移植、触控、本地存储及可选外部地图流服务。战役及 System Link 支持仅为作者宣称；须自备兼容且获授权的 Xbox 游戏数据。",
+      "engine": "Halo CE decompilation; Emscripten/WebAssembly, WebGL 2, OffscreenCanvas, OPFS",
+      "codeLicenseNote": "README badge says CC0 source license but also requires preserving upstream attribution/licenses and reading LICENSE.md. Actual license file and proprietary decompilation rights not audited; no blanket CC0 or rights clearance claimed.",
+      "assetLicenseNote": "README excludes Halo maps, disc images, saves, credentials and generated builds. Optional range-map hosting is separate and does not establish distribution rights; no map services requested.",
+      "conditionsEn": "Source reference only, entryUrl withheld. Requires authorized compatible game data. Claimed campaign, saves, touch support and System Link not tested. No full campaign/completeness or rights certification. Experimental presentation modes and third-party service dependencies may differ.",
+      "conditionsZh": "仅源码参考，不提供运行入口。须自备获授权且兼容的游戏数据；战役、存档、触控及 System Link 均未测试。不认证完整战役、源码完备性或权利；实验性显示模式及外部服务可能另有限制。",
+      "availability": "Public README accessible; no deployed mobile entry independently identified or tested.",
+      "sourceScope": "README only; describes source/, browser bridge and launcher, but complete buildable corresponding source not audited. Credits halo-ce-universal and other upstreams; exact development-build inheritance not independently audited for this fork.",
+      "duplicateHints": [
+        "browser-port-07: shared halo-ce-universal / Halo decompilation lineage; distinct mobile-focused edition, no automatic merge."
+      ],
+      "evidence": [
+        {
+          "url": "https://api.github.com/repos/OMG-Guest/Halo-Mobile/readme",
+          "checkedAt": "2026-10-24T17:46:02.156206+00:00",
+          "quote": "Halo Mobile takes the Halo: Combat Evolved decompilation",
+          "sha256": "e10c7a6d81d1f48cfd03ba99600876c20a6100d406569a61cc915188dbf0abe0"
+        },
+        {
+          "url": "https://api.github.com/repos/OMG-Guest/Halo-Mobile/readme",
+          "checkedAt": "2026-10-24T17:46:02.156206+00:00",
+          "quote": "This repository includes **zero** Halo maps, disc images, saves, credentials, or generated builds.",
+          "sha256": "e10c7a6d81d1f48cfd03ba99600876c20a6100d406569a61cc915188dbf0abe0"
+        },
+        {
+          "url": "https://api.github.com/repos/OMG-Guest/Halo-Mobile/readme",
+          "checkedAt": "2026-10-24T17:46:02.156206+00:00",
+          "quote": "Preserve their attribution and licenses. Read [LICENSE.md](LICENSE.md).",
+          "sha256": "e10c7a6d81d1f48cfd03ba99600876c20a6100d406569a61cc915188dbf0abe0"
+        }
+      ],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-18",
+      "name": "BO3 Cheese Cube",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Reported mod-map fan remake; unverified.",
+      "descriptionEn": "Reported removed Cheese Cube Zombies mod-map fan remake, not complete Black Ops 3. Exact source unavailable; no unrelated redirect or replacement build requested.",
+      "descriptionZh": "据称被移除的 Cheese Cube Zombies 模组地图同人重制，并非完整 Black Ops 3；源码未确认，未访问无关跳转或替代构建。",
+      "engine": "Unverified",
+      "codeLicenseNote": "No code license or complete source independently established for this exact entry.",
+      "assetLicenseNote": "Original commercial game assets and trademarks remain restricted; no asset redistribution rights established.",
+      "conditionsEn": "Candidate only. Supplied assertions are not independent evidence. No game execution, asset download, login, bypass or replacement-build search performed. Do not treat as a free/full-source game or verified play link.",
+      "conditionsZh": "仅为候选；用户提供的描述并非独立证据。未运行游戏、下载素材、登录、绕过限制或寻找替代构建；不可当作免费完整源码游戏或已验证的游玩链接。",
+      "availability": "offline (supplied, not independently confirmed)",
+      "sourceScope": "Exact entry/source identity unresolved; source and runtime completeness unverified.",
+      "duplicateHints": [],
+      "evidence": [],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-19",
+      "name": "Return to Castle Wolfenstein",
+      "decision": "game-reference",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": "https://rtcw.pieter.com/",
+      "technique": "iortcw engine compiled to WebAssembly; source port.",
+      "descriptionEn": "Return to Castle Wolfenstein multiplayer browser reference; landing text advertises approximately 380 MB first-load game data.",
+      "descriptionZh": "Return to Castle Wolfenstein 多人浏览器移植参考；页面称首次约下载 380 MB 游戏数据。",
+      "engine": "iortcw + Wwasm (page spelling)",
+      "codeLicenseNote": "Exact deployed code revision and license files were not inspected; no complete-source or redistribution claim.",
+      "assetLicenseNote": "Original commercial game data and trademarks remain separately restricted; engine availability does not grant asset rights.",
+      "conditionsEn": "Multiplayer only; no single-player completeness claim. Do not fetch the advertised game-data load or join a match. Public text only; no runtime, asset loading, account access or multiplayer participation tested.",
+      "conditionsZh": "仅确认多人模式，不声称单人完整性；不得下载所述游戏数据或加入对局。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。",
+      "availability": "Landing/reference text accessible; runtime untested. Not a verified play link.",
+      "sourceScope": "Only landing-page engine attribution verified; deployed source and asset package not inspected.",
+      "duplicateHints": [],
+      "evidence": [
+        {
+          "url": "https://rtcw.pieter.com/",
+          "checkedAt": "2026-10-24T17:46:05.347795+00:00",
+          "quote": "Real RTCW multiplayer engine (iortcw) compiled to WebAssembly.",
+          "sha256": "312d6779c24dfa53cb383a75d39daedbe3371cd31a3f059e1f5e7e3780264d84"
+        },
+        {
+          "url": "https://rtcw.pieter.com/",
+          "checkedAt": "2026-10-24T17:46:05.347795+00:00",
+          "quote": "First load downloads ~380 MB of game data (cached after).",
+          "sha256": "312d6779c24dfa53cb383a75d39daedbe3371cd31a3f059e1f5e7e3780264d84"
+        }
+      ],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-20",
+      "name": "CS Surf",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Unresolved; Source-style surf mechanics do not prove a Source engine port.",
+      "descriptionEn": "CS Surf / Classic surf remains unidentified; no exact official URL or source was recovered. It must not be described as all of Counter-Strike.",
+      "descriptionZh": "CS Surf／Classic surf 尚未确定具体项目，未找到准确官方网址或源码；不得等同于完整 Counter-Strike。",
+      "engine": null,
+      "codeLicenseNote": "Exact deployed code revision and license files were not inspected; no complete-source or redistribution claim.",
+      "assetLicenseNote": "Original commercial game data and trademarks remain separately restricted; engine availability does not grant asset rights.",
+      "conditionsEn": "Retain candidate: identity, physics implementation, leaderboard service, license and availability unverified. Public text only; no runtime, asset loading, account access or multiplayer participation tested.",
+      "conditionsZh": "保留候选：身份、物理实现、排行榜服务、许可及可用性未确认。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。",
+      "availability": "Unresolved; no entry URL assigned.",
+      "sourceScope": "Supplied assertion only; repository search did not identify this game.",
+      "duplicateHints": [
+        "Baseline Utopia Surf, Surface Contact and Counter-Strike: Football are not identity evidence."
+      ],
+      "evidence": [],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-21",
+      "name": "Half-Life / CS 1.6",
+      "decision": "game-reference",
+      "track": "3d",
+      "sourceUrl": "https://github.com/x8BitRain/webXash",
+      "entryUrl": null,
+      "technique": "WebXash frontend for a Xash3D-FWGS Emscripten engine port/reimplementation; not complete original GoldSrc or commercial game source.",
+      "descriptionEn": "WebXash documents Half-Life 1 and Counter-Strike 1.6 using user-owned game files; the author explicitly identifies their work as a frontend.",
+      "descriptionZh": "WebXash 文档支持使用用户自有数据运行 Half-Life 1 和 Counter-Strike 1.6；作者明确其工作为前端。",
+      "engine": "WebXash / Xash3D-FWGS",
+      "codeLicenseNote": "Exact deployed code revision and license files were not inspected; no complete-source or redistribution claim.",
+      "assetLicenseNote": "Original commercial game data and trademarks remain separately restricted; engine availability does not grant asset rights.",
+      "conditionsEn": "Owned valve/cstrike files required. Mod compatibility is limited, mobile keyboard/mouse caveats apply, CS saves disabled, internet server discovery unavailable and direct websocket server setup required. Published frontend URL is README-only evidence, not a validated play link. Public text only; no runtime, asset loading, account access or multiplayer participation tested.",
+      "conditionsZh": "需合法自有 valve/cstrike 数据；模组兼容性有限、移动端需键鼠，CS 存档禁用，互联网服务器发现不可用并需直接设置 websocket 服务器。文档中的前端地址不作为已验证游玩链接。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。",
+      "availability": "Repository README accessible; published https://x8bitrain.github.io/webXash/ not fetched or runtime-verified.",
+      "sourceScope": "Frontend README fetched via GitHub API. It links https://github.com/yohimik/webxash3d-fwgs as engine upstream; that upstream was not fetched. A related swtkiptr fork README was inspected, not substituted as official upstream.",
+      "duplicateHints": [
+        "browser-port-05: possible duplicate; keep generic Half-Life candidate separate pending identity."
+      ],
+      "evidence": [
+        {
+          "url": "https://api.github.com/repos/x8BitRain/webXash/readme",
+          "checkedAt": "2026-10-24T17:46:08.555018+00:00",
+          "quote": "You must provide your own game files (e.g., from Steam):",
+          "sha256": "7b4697741b7e9e0e8f270062c7dce043b5b2621b47004cdc93d08a0bd5c2b749"
+        },
+        {
+          "url": "https://api.github.com/repos/x8BitRain/webXash/readme",
+          "checkedAt": "2026-10-24T17:46:08.555018+00:00",
+          "quote": "Nope, I'm not the maintainer of this port, I just wrote a frontend for it",
+          "sha256": "7b4697741b7e9e0e8f270062c7dce043b5b2621b47004cdc93d08a0bd5c2b749"
+        },
+        {
+          "url": "https://api.github.com/repos/x8BitRain/webXash/readme",
+          "checkedAt": "2026-10-24T17:46:08.555018+00:00",
+          "quote": "Save manager is disabled when CS 1.6 is selected.",
+          "sha256": "7b4697741b7e9e0e8f270062c7dce043b5b2621b47004cdc93d08a0bd5c2b749"
+        }
+      ],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-22",
+      "name": "Quake 2",
+      "decision": "game-reference",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": "https://q2.pieter.com/",
+      "technique": "FTE-based Quake II browser engine port; not established as static recompilation, emulation or decompilation.",
+      "descriptionEn": "Quake II multiplayer browser reference credited to FTE QuakeWorld; not a verified full campaign edition.",
+      "descriptionZh": "Quake II 多人浏览器移植参考，页面注明 FTE QuakeWorld；未验证完整战役版本。",
+      "engine": "FTE QuakeWorld",
+      "codeLicenseNote": "Exact deployed code revision and license files were not inspected; no complete-source or redistribution claim.",
+      "assetLicenseNote": "Original commercial game data and trademarks remain separately restricted; engine availability does not grant asset rights.",
+      "conditionsEn": "Advertised up to eight-player multiplayer. No public session participation; asset edition and campaign completeness unknown. Public text only; no runtime, asset loading, account access or multiplayer participation tested.",
+      "conditionsZh": "页面称最多八人多人模式；不参与公共对局，资产版本及战役完整性未确认。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。",
+      "availability": "Landing/reference text accessible; runtime untested. Not a verified play link.",
+      "sourceScope": "Landing page attribution only; exact browser source repository and deployed revision not verified.",
+      "duplicateHints": [
+        "Baseline repository-research:turol/webquake2 is a different source reference; do not merge by title alone."
+      ],
+      "evidence": [
+        {
+          "url": "https://q2.pieter.com/",
+          "checkedAt": "2026-10-24T17:46:06.961975+00:00",
+          "quote": "Play Quake II Multiplayer Online",
+          "sha256": "8d49e2c17bb88335e06c984d974eff5894eaa975ef44dd29592d18cbb8a87df4"
+        },
+        {
+          "url": "https://q2.pieter.com/",
+          "checkedAt": "2026-10-24T17:46:06.961975+00:00",
+          "quote": "Powered by",
+          "sha256": "8d49e2c17bb88335e06c984d974eff5894eaa975ef44dd29592d18cbb8a87df4"
+        }
+      ],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-23",
+      "name": "Hedgewars",
+      "decision": "candidate",
+      "track": "2d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Claimed WebAssembly attempt; exact browser project and lineage unresolved.",
+      "descriptionEn": "Hedgewars is a 2D game; the supplied browser attempt has no exact verified source or available entry.",
+      "descriptionZh": "Hedgewars 为二维游戏；所述浏览器尝试未确认准确源码或可用入口。",
+      "engine": "Hedgewars (exact browser build unknown)",
+      "codeLicenseNote": "Exact deployed code revision and license files were not inspected; no complete-source or redistribution claim.",
+      "assetLicenseNote": "Exact browser asset distribution unverified; native game licensing was not researched in this lane.",
+      "conditionsEn": "Keep candidate, including supplied failed-host status; do not transfer native-project licensing or completeness to an unidentified browser build. Public text only; no runtime, asset loading, account access or multiplayer participation tested.",
+      "conditionsZh": "保留候选及所给主机失败状态；不得将原生项目许可或完整性直接套用于未识别的浏览器构建。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。",
+      "availability": "Supplied unavailable attempt; no independently verified browser host.",
+      "sourceScope": "No browser repository identified. GitHub search was blocked with HTTP 403; no workaround attempted.",
+      "duplicateHints": [],
+      "evidence": [],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-24",
+      "name": "GTA 5",
+      "decision": "candidate",
+      "track": "3d",
+      "sourceUrl": null,
+      "entryUrl": null,
+      "technique": "Unknown; media/WASM/WebGPU claims cannot establish source port, recompilation or emulation.",
+      "descriptionEn": "Supplied October 2026 GTA 5 demonstration and disappeared entry do not prove auditable/buildable RAGE or complete GTA 5 source. Grand-V/gweb identity unresolved; launcher or compiled snapshots would not suffice. No removed build or mirror sought.",
+      "descriptionZh": "所提供 2026 年 10 月 GTA 5 演示及已消失入口不能证明可审计、可构建的 RAGE 或完整游戏源码。Grand-V/gweb 身份未确定；启动器或编译快照不足以证明完整源码。未寻找移除构建或镜像。",
+      "engine": "Unverified",
+      "codeLicenseNote": "No code license or complete source independently established for this exact entry.",
+      "assetLicenseNote": "Original commercial game assets and trademarks remain restricted; no asset redistribution rights established.",
+      "conditionsEn": "Candidate only. Supplied assertions are not independent evidence. No game execution, asset download, login, bypass or replacement-build search performed. Do not treat as a free/full-source game or verified play link.",
+      "conditionsZh": "仅为候选；用户提供的描述并非独立证据。未运行游戏、下载素材、登录、绕过限制或寻找替代构建；不可当作免费完整源码游戏或已验证的游玩链接。",
+      "availability": "unproven-completeness (supplied, not independently confirmed)",
+      "sourceScope": "Exact entry/source identity unresolved; source and runtime completeness unverified.",
+      "duplicateHints": [],
+      "evidence": [],
+      "notPlaytested": true
+    },
+    {
+      "id": "browser-port-25",
+      "name": "WASM Arcade",
+      "decision": "resource",
+      "track": null,
+      "sourceUrl": "https://github.com/AndrewC776/wasm-arcade",
+      "entryUrl": null,
+      "technique": "Catalogue/aggregator; includes references, a demo and Ruffle Flash-file emulation, not one source-ported game.",
+      "descriptionEn": "Wasm Arcade repository describes a classic-game catalogue and local-SWF Ruffle support, not a single game. The match to the generic supplied name is probable, not unique.",
+      "descriptionZh": "Wasm Arcade 仓库描述经典游戏目录及本地 SWF 的 Ruffle 支持，并非单个游戏；与所给通用名称可能匹配，但不唯一。",
+      "engine": null,
+      "codeLicenseNote": "Exact deployed code revision and license files were not inspected; no complete-source or redistribution claim.",
+      "assetLicenseNote": "Per-game rights vary; catalogue inclusion and claimed free/no-login access do not license original games, SWF files, artwork or trademarks.",
+      "conditionsEn": "Resource only; do not count entries as verified games or assume shared technique/rights. README says original files are not hosted; no assets/SWF files fetched. Public text only; no runtime, asset loading, account access or multiplayer participation tested.",
+      "conditionsZh": "仅作资源，不将目录条目视作已验证游戏，也不假定统一技术或权利；文档称不托管原版文件，未获取任何资产或 SWF。 仅核对公开文字，未运行、加载资产、登录或参加多人游戏。",
+      "availability": "Repository README accessible; exact generic-name identity uncertain; no verified play link.",
+      "sourceScope": "README only, discovered through public repository search. Published https://wasmarcade.net/ was not fetched. No catalogue entries or hosted code audited.",
+      "duplicateHints": [],
+      "evidence": [
+        {
+          "url": "https://api.github.com/repos/AndrewC776/wasm-arcade/readme",
+          "checkedAt": "2026-10-24T17:46:10.387614+00:00",
+          "quote": "The catalogue is an index. Each entry links to its source reference; the site does not host the original game files.",
+          "sha256": "f2e5b2138549a772bee4e9e2024a26cbf4c042d0c970a7688a0b0556c7aa7dd4"
+        },
+        {
+          "url": "https://api.github.com/repos/AndrewC776/wasm-arcade/readme",
+          "checkedAt": "2026-10-24T17:46:10.387614+00:00",
+          "quote": "load your own SWF files into a built-in Ruffle Flash player",
+          "sha256": "f2e5b2138549a772bee4e9e2024a26cbf4c042d0c970a7688a0b0556c7aa7dd4"
+        }
+      ],
+      "notPlaytested": true
+    }
+  ],
+  "mappings": [
+    {
+      "inputId": "browser-port-01",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-02",
+      "key": "example:browser-port-02",
+      "status": "source-reference-conditions-required"
+    },
+    {
+      "inputId": "browser-port-03",
+      "key": "example:browser-port-03",
+      "status": "source-reference-conditions-required"
+    },
+    {
+      "inputId": "browser-port-04",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-05",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-06",
+      "key": "example:browser-port-06",
+      "status": "source-reference-conditions-required"
+    },
+    {
+      "inputId": "browser-port-07",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-08",
+      "key": "example:browser-port-08",
+      "status": "source-reference-conditions-required"
+    },
+    {
+      "inputId": "browser-port-09",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-10",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-11",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-12",
+      "key": "example:browser-port-12",
+      "status": "project-reference-source-unverified"
+    },
+    {
+      "inputId": "browser-port-13",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-14",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-15",
+      "key": "example:browser-port-15",
+      "status": "project-reference-source-unverified"
+    },
+    {
+      "inputId": "browser-port-16",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-17",
+      "key": "example:browser-port-17",
+      "status": "source-reference-conditions-required"
+    },
+    {
+      "inputId": "browser-port-18",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-19",
+      "key": "example:browser-port-19",
+      "status": "project-reference-source-unverified"
+    },
+    {
+      "inputId": "browser-port-20",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-21",
+      "key": "example:browser-port-21",
+      "status": "source-reference-conditions-required"
+    },
+    {
+      "inputId": "browser-port-22",
+      "key": "example:browser-port-22",
+      "status": "project-reference-source-unverified"
+    },
+    {
+      "inputId": "browser-port-23",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-24",
+      "status": "research-candidate"
+    },
+    {
+      "inputId": "browser-port-25",
+      "status": "resource-reference",
+      "key": "collection:wasm-arcade-repository-catalogue"
+    }
+  ],
+  "newExampleIds": [
+    "browser-port-02",
+    "browser-port-03",
+    "browser-port-06",
+    "browser-port-08",
+    "browser-port-12",
+    "browser-port-15",
+    "browser-port-17",
+    "browser-port-19",
+    "browser-port-21",
+    "browser-port-22"
+  ],
+  "sourceReferenceIds": [
+    "browser-port-02",
+    "browser-port-03",
+    "browser-port-06",
+    "browser-port-08",
+    "browser-port-17",
+    "browser-port-21"
+  ],
+  "projectReferenceIds": [
+    "browser-port-12",
+    "browser-port-15",
+    "browser-port-19",
+    "browser-port-22"
+  ],
+  "collections": [
+    "wasm-arcade-repository-catalogue"
+  ],
+  "research": {
+    "engine": {
+      "requests": 24,
+      "stoppedHosts": [
+        "xash3d.pieter.com",
+        "quake1.pieter.com",
+        "quake2.pieter.com",
+        "doom3.pieter.com",
+        "api.github.com"
+      ]
+    },
+    "reverse": {
+      "requests": 17,
+      "stoppedHosts": [
+        "api.github.com"
+      ]
+    },
+    "issues": [
+      "24-request cap reached. All assigned records and all 1288 baseline hints loaded; relevant overlaps noted, not resolved by title alone.",
+      "Four speculative robots-only hostname probes (xash3d, quake1, quake2, doom3 subdomains of pieter.com) failed TLS. They are not verified project URLs; doom3 was unrelated scope and no content was obtained. No retries or bypass.",
+      "GitHub API returned HTTP 403 on the Hedgewars search at request 22; that host was stopped. Later requests 23–24 only visited the already-linked q3js.com host.",
+      "No runtime or game assets fetched; landing HTML and README statements are not playtesting, license audits, complete-source proof or certification.",
+      "Exact source repositories for the deployed Pieter Urban Terror, FTE QuakeWorld/Quake II and RTCW builds remain unverified; sourceUrl stays null rather than guessing.",
+      "Supplied review date 2026-10-25 is later than actual UTC fetch timestamps 2026-10-24; retained as supplied metadata, not access time.",
+      "API host stopped at request 17 after 403 rate limit; later guarded invocations made no requests. No alternate-provider or authentication workaround.",
+      "Google robots disallows search; no Google search requested.",
+      "Only public text/README/metadata checked; no playtesting, build execution, assets, ROMs or binaries fetched. No rights or L1/L2/L3 certification.",
+      "All 1,288 baseline hints parsed; no exact corresponding repository/title duplicate found. Related assigned records flagged separately.",
+      "Unresolved, removed and 451-reported entries retained as candidates; no removed PortedGames destination requested."
+    ],
+    "parentDisposition": "Discard speculative hostname probes as evidence. No follow-up requests to GitHub/API after reported 403. Native Skate source is admitted with browser uncertainty, not promoted as a browser build. All 25 entries and conditional/removed-project evidence retained."
+  }
+}

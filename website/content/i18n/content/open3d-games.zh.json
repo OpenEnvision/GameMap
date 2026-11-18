@@ -1,0 +1,366 @@
+{
+  "example:open3d-arcade-3d": {
+    "description": "微型开放世界、团队战、吃鸡、破坏沙盒和火箭任务。 注意：作为一个项目计数；在线模式和服务功能需后端。"
+  },
+  "example:open3d-ashlands": {
+    "description": "火山岛探索、法术、对话和任务图；附视觉检查工具及实验复盘。 注意：作者明确为agentic开发实验；不能视为达到商业游戏品质的已完成产品。"
+  },
+  "example:open3d-bridge-horror-house": {
+    "description": "在废弃住宅寻找三把钥匙并逃离，含手电和敌人追逐。 注意：附SYSTEM_PROMPT.md，可研究生成提示和项目实现。"
+  },
+  "example:open3d-claude-bandicoot": {
+    "description": "换道、跳跃、滑铲、旋转攻击、破箱与逐步增难。 注意：同人灵感作品；代码许可不等于相关品牌或角色权利授权。"
+  },
+  "example:open3d-flight-sim": {
+    "description": "三种飞机，包含自由飞行、穿环和着陆挑战。 注意：部分外围功能依赖后端。"
+  },
+  "example:open3d-house-arkanum": {
+    "description": "五个软件故障主题房间，解开交互谜题后逃脱。"
+  },
+  "example:open3d-langenium": {
+    "description": "浏览器客户端、游戏逻辑和服务端均公开。 注意：作者公共服务器无可用性保证；可部署自己的服务。"
+  },
+  "example:open3d-leonida": {
+    "description": "城市驾驶与互动沙盒，代码生成城市场景。 注意：README称非商业同人测试项目；代码许可与角色/设定授权分开。"
+  },
+  "example:open3d-liminal": {
+    "description": "多层后室、保险丝与密码任务、敌人视听追踪、移动端控制。 注意：使用原作者仓库，未把source-liminal镜像重复计数。"
+  },
+  "example:open3d-the-maze": {
+    "description": "迷宫怪物根据脚步追踪，BFS寻路；冲刺更容易暴露。 注意：以仓库中的The Maze为一项，不把整个合集重复计游戏数。"
+  },
+  "example:open3d-the-soul-foundry": {
+    "description": "经营资源生产链和劳动力，应对八级递增配额。"
+  },
+  "example:open3d-tower-defense": {
+    "description": "Three.js塔防项目，含可运行演示与贡献说明。 注意：README列出波次、升级、关卡和存档仍待完成。"
+  },
+  "example:open3d-trigger-rally-online-edition": {
+    "description": "浏览器拉力赛车，含客户端与服务端代码。 注意：与原生Trigger Rally是不同代码项目；旧依赖需适配。"
+  },
+  "example:open3d-404-race": {
+    "description": "小体积赛车；3D图像配合二维物理。 注意：作者已从最终版本移除LAN多人功能。"
+  },
+  "example:open3d-invaders": {
+    "description": "空间入侵者风格的第一人称射击，支持单机和双人P2P。 注意：可选联网/存图服务可能过时；离线核心可独立研究。"
+  },
+  "example:open3d-cat-shooter-ritual-catacombs": {
+    "description": "收集碎片解锁符文门，击退多类敌人并挑战九命Boss。"
+  },
+  "example:open3d-minipunk": {
+    "description": "第三人称战斗、跳跃和瞄准；有详细技术复盘。"
+  },
+  "example:open3d-scriptfox13k": {
+    "description": "Star Fox风格的小体积太空飞行射击。"
+  },
+  "example:open3d-the-adventures-of-captain-callisto": {
+    "description": "宇航员平台跳跃、喷气背包，源码附长篇开发复盘。"
+  },
+  "example:open3d-underrun": {
+    "description": "小体积科幻射击，用于研究空间照明、敌人群和战斗反馈。 注意：俯视玩法，使用3D渲染。"
+  },
+  "example:open3d-3d-horror-game-yassine-mathlouthi": {
+    "description": "废弃房屋探索恐怖原型，含钥匙拾取、射线交互、网格背包、移动端摇杆与雾效。 注意：README 明确处于开发阶段，不应视为完整流程成品；Apache 许可不自动覆盖全部第三方资产。"
+  },
+  "example:open3d-3d-horror-proto": {
+    "description": "探索阈限空间与水下机械恐惧氛围的第一人称原型。 注意：README 自称 proto，不能当成完整游戏。"
+  },
+  "example:open3d-all-alone": {
+    "description": "通过击杀僵尸获得资源、开启新房间、购买更强枪械及收集强化道具。 注意：原thelastflapjack仓库已迁移到teeeece；音频需按missing_audio_info.txt单独获取，不能把MIT扩大到排除资源。"
+  },
+  "example:open3d-boom": {
+    "description": "有导航网格、导航敌人与烘焙光照的简单复古FPS。 注意：部分lightmap未附带，需本地重烘焙；素材来自Realm667等。"
+  },
+  "example:open3d-broken-seals": {
+    "description": "含单人/多人、技能施法、背包、商店等系统的3D动作RPG。 注意：要求定制 Godot 和引擎模块；README 说明多人功能仍有缺陷。"
+  },
+  "example:open3d-cypress-motel": {
+    "description": "扮演汽车旅馆夜班维修员，维修设施、交互并坚持到早上六点。 注意：代码许可证明确，素材的逐项再分发范围需另核。"
+  },
+  "example:open3d-delta-park": {
+    "description": "驾驶皮划艇穿越岛屿，躲避巨大船只并寻找失踪宠物；带实验性 VR。 注意：仓库名 DeltaKayak，README 产品名 Delta Park；完整发行状态未实测。"
+  },
+  "example:open3d-dogwalk": {
+    "description": "Blender Studio 制作，控制狗与孩子在雪地探索并与环境互动，适合研究完成度较高的小型3D冒险。 注意：repo_url 为非官方镜像。官方制作文件与原始 Blender 工程在 Blender Studio，部分下载可能需要订阅；不能把镜像等同于完整原始美术工程。当前官方脚本许可为 MIT，不沿用旧报道的 GPL 说法。"
+  },
+  "example:open3d-ghost-snap": {
+    "description": "探索场景并拍摄幽灵的第一人称小游戏。 注意：适合小型交互、相机和视觉反馈任务；非大型恐怖游戏。"
+  },
+  "example:open3d-hazy-road": {
+    "description": "驾车回家途中道路突然被挡住，下车探索雾林和十字路口，利用场景物品解开阻碍。 注意：短篇Game Jam作品；需安装仓库列出的Godot插件。"
+  },
+  "example:open3d-hurry-curry": {
+    "description": "多人协作接单、切菜、烘烤、煎制和送餐；有机器人与多张地图。 注意：官方仓库在Codeberg；一手官网明确代码许可，资产逐项范围待核。"
+  },
+  "example:open3d-in-the-blue-mist": {
+    "description": "以超现实阿巴拉契亚小镇为背景的 PSX 风格第一人称生存恐怖项目。 注意：公开仓库包含 TestMap/Prototype，成熟度有限。"
+  },
+  "example:open3d-keep-going-trick-box": {
+    "description": "操控红色方块通过障碍关卡，包含进度保存与皮肤系统的3D平台解谜练习。 注意：README 明确说明尚未完成、尚未发布，适合看实现不适合当作完整成品推荐。"
+  },
+  "example:open3d-kilvault": {
+    "description": "通过程序生成迷宫推进叙事的FPS，有可下载构建。 注意：两类外部脚本不在作者MIT声明覆盖内；依赖版本未核。"
+  },
+  "example:open3d-liblast": {
+    "description": "全开源工具链开发的多人FPS，有现行重写版与功能更完整的legacy分支。 注意：GitHub/unfa镜像已归档，不要把旧镜像当现行主线。"
+  },
+  "example:open3d-libre-trainsim": {
+    "description": "自由开源的火车驾驶模拟器，包含列车、线路和驾驶操作，适合研究较大型 Godot 3D 模拟项目。 注意：与恐怖题材距离较远；素材和附加线路的单独授权需再查。"
+  },
+  "example:open3d-libreaim": {
+    "description": "轻量可配置的开源第一人称瞄准训练游戏，适合参考鼠标输入、目标生成与练习反馈。 注意：属于训练用途，没有叙事关卡；主要开发地址已迁至 Codeberg，旧 GitHub 仓库已归档。"
+  },
+  "example:open3d-lost-souls": {
+    "description": "在迷宫中寻找十个光球、利用三次生命寻找出口的短篇第一人称恐怖游戏，平均一局几分钟。 注意：MIT 依据作者官方发行页；未逐项审查第三方图像和音频许可，也未实机试玩。"
+  },
+  "example:open3d-meteorite": {
+    "description": "低分辨率科幻设施探索，枪械与移动升级、炮塔和 Boss。 注意：老版本依赖明确；字体不能随仓库自由分发。"
+  },
+  "example:open3d-panik": {
+    "description": "森林中的 Slender 风格恐怖游戏，有手电、怪物、交互场景。 注意：README 要求 Godot4.3，旧 Terrain3D 与4.4存在兼容性问题。"
+  },
+  "example:open3d-racing-game-cyteon": {
+    "description": "包含六条赛道、昼夜变化、手柄操作和漂移玩法的开源赛车游戏。 注意：第三方车辆、赛道、音乐等素材许可未逐项核验。"
+  },
+  "example:open3d-rapid-rescue": {
+    "description": "受 Labyrinth 棋盘游戏启发，通过推动河道方块改变路径，与本地玩家竞争救出五个人。 注意：偏棋盘策略而非第一人称探索；素材授权未逐项核验。"
+  },
+  "example:open3d-return-null": {
+    "description": "驾驶侦察船探索太空，寻找、扫描、分类异常信号并解码传输。 注意：仓库描述为3D experience，具体时长与完整度未实测。"
+  },
+  "example:open3d-rooted-shadow": {
+    "description": "在迷宫般黑暗森林里寻找汽车，奔跑躲藏并避开树根，以免惊动敌对树木。 注意：篇幅较短，适合学习小型潜行恐怖游戏结构；不能以代码MIT替代所有素材许可。"
+  },
+  "example:open3d-scavenge-drill": {
+    "description": "双人海底寻宝，使用WebRTC与Nakama信令建立P2P合作。 注意：联网运行依赖信令服务配置；非纯离线项目。"
+  },
+  "example:open3d-super-tux-party": {
+    "description": "Mario Party风格的自由开源聚会游戏，结合棋盘与小游戏。 注意：官方称游戏尚未完成；alpha 与 beta 的功能不同，在线多人属于较新的 beta 分支。"
+  },
+  "example:open3d-tabletop-club": {
+    "description": "可自由操作棋子、骰子、纸牌的物理桌游环境，支持多人和资产包。 注意：开放沙盒，玩法规则多数由玩家自己执行。"
+  },
+  "example:open3d-tanks-of-freedom-ii": {
+    "description": "最多四军交战，AI战役、热座对战和内置地图编辑器。 注意：不要与2D前作混淆；许可例外见 LICENSE.md。"
+  },
+  "example:open3d-thrive": {
+    "description": "从微生物阶段出发的演化模拟，适合研究编辑器、UI和复杂模拟系统。 注意：3D表现但微生物阶段主要平面操作；并非所有宏观演化阶段都已完成。"
+  },
+  "example:open3d-under-the-cover-of-night": {
+    "description": "雪村探索、收集燃料逃生、怪物巡逻和追逐状态机、动态天气。 注意：作者声明停止开发；README 宣称约45—60分钟，未实测。"
+  },
+  "example:open3d-analogvhs": {
+    "description": "工业迷宫内收集12卷VHS录像带，包含模拟磁带干扰、动态光照和后处理。 注意：不把仓库GPL等同第三方视频/资产开放；项目使用Unity 2022.3.19f1。"
+  },
+  "example:open3d-antura-learn-with-antura": {
+    "description": "面向儿童语言学习和文化探索的完整产品，覆盖移动端与桌面，适合研究多小游戏和内容管线。 注意：含2D界面与多种小游戏；与恐怖FPS题材较远，属于完整3D产品扩展候选。"
+  },
+  "example:open3d-backrooms-esyverse": {
+    "description": "全亮日光灯环境中的Backrooms逃脱，有桌面、网页与VR版本。 注意：源码包需付费获取且仅v1.5.0，不含Oculus Quest配置；repo_url为官方源码下载页。"
+  },
+  "example:open3d-cat-sanctuary": {
+    "description": "在闹鬼的猫咪庇护所收集线索与遗骸、触发音效和事件并逃离。 注意：独立LICENSE链接和第三方素材许可仍需复核，不能仅凭README笼统判断完整资产自由。"
+  },
+  "example:open3d-classroom-404": {
+    "description": "赶往404教室，却不断遇到位置改变与时间倒退；可用于研究空间变化和时间循环机制。 注意：代码和资产许可证不同，不能将整个游戏称为完全自由资产。"
+  },
+  "example:open3d-delivery-beyond-game-off-2022": {
+    "description": "复古3D第一人称场景，围绕取放和使用物品、按钮、发电机及供电事件展开。 注意：资产清单包含Valve内容，不能将MIT代码许可证扩展到所有游戏素材。"
+  },
+  "example:open3d-doggy-man-3d": {
+    "description": "完整六关冒险，含生命/体力、4格背包、钥匙门、开关、敌群和最终龙Boss，提供多平台构建。 注意：README明确使用MediEvil 1 remastered原声；再利用时应替换或核验音乐和其他第三方素材。"
+  },
+  "example:open3d-hoptons-trip": {
+    "description": "找道具、跨越障碍、躲避敌人并进行Boss战，提供网页试玩和Windows版本。 注意：作者页提供Project Files/Source Code下载入口；本次下载目标未成功抓取，repo_url为官方源码入口页面，并非Git仓库。"
+  },
+  "example:open3d-lockdown-breakout": {
+    "description": "生物研究设施内寻找钥匙、操作门和开关、躲避追击生物；有虚拟手、NavMesh行为和结束条件。 注意：代码开放不覆盖第三方素材；完整原始资产包未全部公开。",
+    "title": "Lockdown: Breakout / 禁闭：突围"
+  },
+  "example:open3d-metal-nest": {
+    "description": "以声音为核心，在庞大工业迷宫里探索；复古PSX画面。 注意：依赖Unity 2020.2.7f1与FMOD 2.02.13；完整资产开放范围待逐项核验。"
+  },
+  "example:open3d-nodulus": {
+    "description": "旋转方块和杆件形成连接，20个难度递增关卡；适合小型可验证谜题任务。 注意：玩法在平面网格上，3D呈现；并非自由漫游3D游戏。"
+  },
+  "example:open3d-november": {
+    "description": "小型密室逃脱与walking simulator；有网页和Windows版本。 注意：仓库未见独立代码LICENSE；MIT依据作者itch元数据，音效逐项保留来源。"
+  },
+  "example:open3d-polyrace": {
+    "description": "四种悬浮载具，在程序生成的山谷与山地赛道中竞速。 注意：每日竞赛、missions和challenge等在线部分已移除；需要Blender导入模型。"
+  },
+  "example:open3d-red-planet-rampage": {
+    "description": "柴油朋克西部机器人射击，模块化武器、部件拍卖、分屏与Steam联机、AI对手和多种地图模式。 注意：BSD四条款包含广告鸣谢义务；未逐项审计第三方资产。"
+  },
+  "example:open3d-team-capture": {
+    "description": "受Quake、HL2DM、TF2启发，包含武器切换、拾取、延迟补偿、服务器权威移动及离线模式。 注意：README明确非常早期Alpha；先构建.NET源码生成器再构建Unity。"
+  },
+  "example:open3d-the-machine-of-dr-jeffrey-wright": {
+    "description": "在维多利亚时代科学家的房屋里调查机器与秘密；手绘素材结合完整3D物理环境。 注意：第三方字体和音效按README来源核验。"
+  },
+  "example:open3d-theseus-the-descent": {
+    "description": "三个章节分别探索不同游戏设计方式的恐怖FPS。 注意：音乐需要作者Drkblu另行许可；本次未验证商店安装。"
+  },
+  "example:open3d-bomberrage": {
+    "description": "现代UE多人游戏，支持Game Feature Plugins、Gameplay Ability System、在线会话、AI与可配置数据。 注意：当前仓库为精简内容，完整Maya地图内容从Releases获取；UE本身受Epic许可。"
+  },
+  "example:open3d-budget-backrooms": {
+    "description": "非程序生成的Backrooms关卡及敌人AI，项目有完整Content和Source目录。 注意：仓库GPL标注不表示UE引擎开放；引擎EULA及第三方音效兼容性未审计。"
+  },
+  "example:open3d-avolition-2": {
+    "description": "四职业、地牢怪物和Boss、钥匙门、商店与关卡自动存档。 注意：基于wezu/Avolition的派生项目，不应和原项目重复计作独立大作；作者提示稳定性问题。"
+  },
+  "example:open3d-yorg": {
+    "description": "跨平台开源赛车游戏，包含模型处理和资源构建流程。 注意：需要递归克隆yyagl/yracing子模块并生成资产；非开发者可选stable分支。"
+  },
+  "example:open3d-sintel-the-game": {
+    "description": "以 Blender 开放电影 Sintel 为基础的3D冒险游戏项目，可玩内容包括沙漠、码头、冻土等关卡。 注意：项目历史久远并依赖 Blender 2.68/BGE；不能直接在现代 Blender 中运行，也不是完整发行级长篇游戏。不要把当前代码 MIT 自动套用到电影所有素材。"
+  },
+  "example:open3d-yo-frankie": {
+    "description": "Blender 开放游戏项目，控制角色在3D关卡奔跑、跳跃和互动，是完整开放素材平台冒险的经典案例。 注意：repo_url 为历史镜像；README 依赖旧版 Blender 2.49a 等兼容环境，现代 BGE/UPBGE 需移植。"
+  },
+  "example:open3d-0-a-d": {
+    "description": "古代文明、采集建设、军队与多人即时战略。 注意：GitHub 0ad/0ad 镜像已于2024年迁移而弃用，应使用官方Gitea。"
+  },
+  "example:open3d-alien-arena": {
+    "description": "复古科幻主题、快节奏多人竞技与Bot。"
+  },
+  "example:open3d-armagetron-advanced": {
+    "description": "用光轮留下的墙面包围对手的多人竞技。"
+  },
+  "example:open3d-assaultcube": {
+    "description": "轻量军事风格多人FPS。 注意：需逐项查看官方license页面。"
+  },
+  "example:open3d-beyond-all-reason": {
+    "description": "大规模单位、经济与基地建设的3D即时战略。 注意：不能把整体资产当成FOSS或可自由改编/重分发资产池。"
+  },
+  "example:open3d-bzflag": {
+    "description": "三维第一人称坦克、夺旗、地图与服务器插件。"
+  },
+  "example:open3d-colobot-gold-edition": {
+    "description": "在三维环境中指挥/编程机器人完成探索与任务。 注意：对agent研究尤其适合代码与三维执行结果联动；数据须递归拉取。"
+  },
+  "example:open3d-craft": {
+    "description": "数千行C实现地形、方块建造、昼夜、SQLite持久化与多人。 注意：旧公共服务器已关闭，可自行运行Python服务器。"
+  },
+  "example:open3d-cube-2-sauerbraten": {
+    "description": "单人/多人FPS，内置体素式几何地图编辑器。 注意：所列GitHub仓库是SVN镜像；不要把全部美术当作可自由复用模板。"
+  },
+  "example:open3d-egoboo": {
+    "description": "NetHack启发的三维地下城探索与动作战斗。 注意：构建时需递归拉取子模块。"
+  },
+  "example:open3d-flightgear": {
+    "description": "全球地景、天气、飞机系统和多人飞行。 注意：属于模拟器扩展范围；GitHub仓库注明Mirror。"
+  },
+  "example:open3d-lips-of-suna": {
+    "description": "带幽默风格的3D动作RPG。 注意：老项目，当前构建与维护情况待实测。"
+  },
+  "example:open3d-lugaru": {
+    "description": "拟人兔武术、跳跃、潜行与近战战役。 注意：官方WolfireGames仓库与社区GitLab延续版需要区分。"
+  },
+  "example:open3d-megaglest": {
+    "description": "七阵营、单位生产、资源与可下载地图内容。 注意：不是仅引擎demo；官方提供完整游戏发行，clone引擎后仍需数据。"
+  },
+  "example:open3d-mineclonia": {
+    "description": "强调稳定性与性能的Minecraft风格自由游戏。 注意：Codeberg与ContentDB本次直接内容读取受限，已通过作者官方发布页搜索信息核验；VoxeLibre同谱系但独立发展。"
+  },
+  "example:open3d-minetest-game": {
+    "description": "无内置敌人、无明确目标，适合装配模组和做小范围改动。 注意：与Luanti引擎分开计；不应当作完整Minecraft等价物。"
+  },
+  "example:open3d-neverball-neverputt": {
+    "description": "倾斜地板控制滚球；同仓库附带Neverputt。 注意：同一发行谱系合并为一条，避免按子游戏膨胀计数。"
+  },
+  "example:open3d-oolite": {
+    "description": "Elite风格太空航行，并有可扩展的OXP系统。"
+  },
+  "example:open3d-openarena": {
+    "description": "Quake III风格死斗、团队与夺旗竞技。 注意：引擎另见OpenArena/engine；不要把ioquake3通用README的Quake商业数据要求混同于OpenArena自身。"
+  },
+  "example:open3d-opendungeons": {
+    "description": "Dungeon Keeper风格地下城建设、手下与陷阱战斗。 注意：官方README称多年低活跃，推荐同时研究OpenDungeonsPlus。"
+  },
+  "example:open3d-opendungeonsplus": {
+    "description": "在OpenDungeons基础上继续开发的地下城策略游戏。 注意：与OpenDungeons同谱系，数据统计时可按家族合并。"
+  },
+  "example:open3d-pioneer": {
+    "description": "开放式太空飞行、贸易、探索。 注意：项目贡献政策不接受主要由AI生成的代码；研究本地修改与向上游提交应分别处理。"
+  },
+  "example:open3d-quetoo": {
+    "description": "Bot、单人阶梯、竞速回放、现代照明和TrenchBroom支持。 注意：游戏启动时可自动取资产；编译当前代码需要其SDL3分支。"
+  },
+  "example:open3d-red-eclipse": {
+    "description": "冲刺、蹬墙、推进跳跃与竞技射击。"
+  },
+  "example:open3d-rigs-of-rods": {
+    "description": "车辆变形、汽车船舶飞机与多人场景。 注意：模拟沙盒，非剧情关卡游戏。"
+  },
+  "example:open3d-scorched3d": {
+    "description": "可破坏三维地景、抛物线炮击与防御道具。 注意：较老项目；现代系统构建需实测。"
+  },
+  "example:open3d-scp-containment-breach": {
+    "description": "收容设施、追逐AI、眨眼机制与道具探索。 注意：老Blitz3D工具链；项目将代码也置于CC-BY-SA-3.0。CC官方不建议将CC许可用于软件，因此应与采用常见软件许可证的开源项目区分展示。"
+  },
+  "example:open3d-smokin-guns": {
+    "description": "西部枪战、抢银行和团队对抗。 注意：美术与代码许可需分开核对。"
+  },
+  "example:open3d-speed-dreams": {
+    "description": "真实物理、多个赛车类别与可编程AI车手。 注意：官方主仓库位于Forgejo。"
+  },
+  "example:open3d-stunt-rally-3": {
+    "description": "科幻场景、赛道编辑器与汽车竞速。 注意：与Stunt Rally旧版同系列，本表不把旧版另计。"
+  },
+  "example:open3d-supertuxkart": {
+    "description": "赛道、道具、单人挑战与多人竞速。"
+  },
+  "example:open3d-terasology": {
+    "description": "模块化方块世界，可通过不同模块组合形成玩法。 注意：需指定游戏模块组合，不能只把核心引擎当完整目标任务。"
+  },
+  "example:open3d-tesseract": {
+    "description": "Instagib死斗、夺旗与实时协作地图编辑。 注意：官方站本次直开502；来源索引与源码入口已确认，构建未测试。"
+  },
+  "example:open3d-the-dark-mod": {
+    "description": "Thief风格潜行、光照声响、巡逻AI与大量独立任务。 注意：已是独立游戏，无需购买Doom 3。"
+  },
+  "example:open3d-torcs": {
+    "description": "驾驶、车辆物理与机器人车手的经典模拟器。 注意：SourceForge为官方发布和源码入口。"
+  },
+  "example:open3d-tremulous": {
+    "description": "人类与异形对抗，带基地建造。 注意：原项目与GrangerHub延续分支须区分；历史依赖可能需适配。"
+  },
+  "example:open3d-trigger-rally": {
+    "description": "轻量3D拉力赛，强调路线与时间挑战。 注意：此条是原生C++游戏；不要与CodeArtemis的Web同名项目混为一谈。"
+  },
+  "example:open3d-ufo-alien-invasion": {
+    "description": "X-COM风格地球防卫、小队三维战斗与基地研究。 注意：不是2D的OpenXcom；此项目使用3D场景。"
+  },
+  "example:open3d-unvanquished": {
+    "description": "人类对异形；第一人称战斗结合基地建造。 注意：游戏逻辑仓库、引擎与资产分离。"
+  },
+  "example:open3d-vdrift": {
+    "description": "以漂移为核心的跨平台汽车物理与竞速模拟。"
+  },
+  "example:open3d-vega-strike": {
+    "description": "动态宇宙、贸易、战斗、任务与可定制飞船。 注意：引擎仓库需搭配官方游戏数据。"
+  },
+  "example:open3d-veloren": {
+    "description": "程序化大型世界、探索、战斗与多人协作。 注意：GitHub veloren/veloren 为官方镜像。"
+  },
+  "example:open3d-voxelibre": {
+    "description": "采矿、制作、怪物、生存、红石机器与创造模式。 注意：原MineClone2，GitHub为镜像。"
+  },
+  "example:open3d-warfork": {
+    "description": "Warsow谱系，强调高速移动、竞技与卡通渲染。 注意：不把Warsow旧项目再单独叠加计数。"
+  },
+  "example:open3d-warzone-2100": {
+    "description": "战役、多人、AI遭遇战、科技树和模块化载具设计。"
+  },
+  "example:open3d-world-of-padman": {
+    "description": "卡通微缩场景、独特武器与竞技玩法。 注意：代码开源，但整体美术并非可自由商业再利用。"
+  },
+  "example:open3d-xonotic": {
+    "description": "高速移动、多武器、多模式竞技射击。 注意：GitHub xonotic/xonotic 是 GitLab 镜像。"
+  },
+  "example:open3d-zero-k": {
+    "description": "机器人军团、地形改造、战役和大规模多人战略。"
+  }
+}

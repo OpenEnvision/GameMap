@@ -1,0 +1,98 @@
+{
+  "format": "gamemap.gameplay-screenshot-provenance",
+  "version": 1,
+  "owner": {
+    "key": "example:open3d-foobillard",
+    "baselineRevision": "605f0a48-eee8-4fbf-99ca-8dfe0a8d0398",
+    "baselineRelease": "fa995674-1ad8-4aac-a2a0-ee601f36e7db",
+    "baselineArtifact": "8d36ca4b5d79a29222f8e38596d6be174b55f7ffbc5692c7ecbc44731704e604"
+  },
+  "source": {
+    "origin": "creator-screenshot",
+    "pageUrl": "https://sourceforge.net/projects/foobillardplus/",
+    "imageUrl": "https://a.fsdn.com/con/app/proj/foobillardplus/screenshots/314333.jpg/245/183/1",
+    "imageHttpStatus": 200,
+    "observedAt": "2026-10-24T20:44:52.204Z",
+    "reviewedFrameSha256": "8edc95b62b8f48b8c0ca8694f07820e43b5d22a89b69611964e4df521915277f",
+    "frameEncoding": "Reviewed full-frame PNG unchanged",
+    "originalReceiptSha256": "7b134fdb1aaa9556b5236b1b0cdd764ac2dae6df3d495ccd94a1733c53bb58f9",
+    "receiptOutcome": "captured-needs-review",
+    "networkObservations": [
+      {
+        "at": "2026-10-24T20:44:47.214Z",
+        "action": "GET",
+        "url": "https://sourceforge.net/projects/foobillardplus/",
+        "type": "document",
+        "status": 200,
+        "bytes": 125696,
+        "cache": "miss",
+        "location": null
+      },
+      {
+        "at": "2026-10-24T20:44:52.204Z",
+        "action": "GET",
+        "url": "https://a.fsdn.com/con/app/proj/foobillardplus/screenshots/314333.jpg/245/183/1",
+        "type": "image",
+        "status": 200,
+        "bytes": 8749,
+        "cache": "miss",
+        "location": null
+      }
+    ],
+    "limitations": [
+      "Low-resolution creator-published source; no larger URL or detail was invented.",
+      "A screenshot does not establish code completeness, a reproducible build, current runtime or reuse permission."
+    ]
+  },
+  "review": {
+    "date": "2026-10-25",
+    "reviewedAt": "2026-10-25T23:47:23.192403Z",
+    "observed": "An overhead pool table shows scattered balls, a cue and aiming lines, with a bottom player/power interface. This is a playable billiards scene rather than an asset render; the foobillardplus project receipt and project-specific screenshot journal match.",
+    "copy": {
+      "en": {
+        "alt": "An overhead pool table with balls, cue and aiming lines in FooBillard++.",
+        "caption": "Creator-published screenshot: FooBillard++ shows a top-down pool table with its player interface."
+      },
+      "zh": {
+        "alt": "FooBillard++ 中带球杆和瞄准线的俯视台球桌。",
+        "caption": "创作者发布的截图：FooBillard++ 的俯视台球桌与玩家界面。"
+      }
+    },
+    "reviewArtifactSha256": "ba05222bc79d3cb38ea2fca4332c89ae8d8937f266b8e4ea3dc6c098d056f5e1",
+    "method": "Automated independent visual/evidence review; parent acceptance required; not independent human or rights clearance."
+  },
+  "files": {
+    "preview": {
+      "src": "media/gameplay/previews/open3d-foobillard-de76c8c1fc-8a72d093f98b9d51.webp",
+      "bytes": 22618,
+      "sha256": "8a72d093f98b9d51aeeb40ca52d059803bdc5f7181c74c45cd32bb2130765d34",
+      "width": 1280,
+      "height": 720
+    },
+    "original": {
+      "src": "media/gameplay/originals/open3d-foobillard-de76c8c1fc-28256a21925883f3.jpeg",
+      "bytes": 8749,
+      "sha256": "28256a21925883f396859e5ac1206ed3c6b69918366a56a93f872f652c2572ad",
+      "width": 245,
+      "height": 183,
+      "format": "jpeg"
+    },
+    "frame": {
+      "src": "media/gameplay/frames/open3d-foobillard-de76c8c1fc-8edc95b62b8f48b8.png",
+      "bytes": 62415,
+      "sha256": "8edc95b62b8f48b8c0ca8694f07820e43b5d22a89b69611964e4df521915277f",
+      "width": 245,
+      "height": 183,
+      "format": "png"
+    }
+  },
+  "processing": {
+    "fit": "contain",
+    "crop": false,
+    "generatedSceneContent": false,
+    "width": 1280,
+    "height": 720,
+    "frameIndex": 0
+  },
+  "rights": "Original game and screenshot rights remain with their creators and rights holders; no reuse permission or runtime certification is inferred."
+}
