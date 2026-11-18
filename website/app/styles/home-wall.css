@@ -1,0 +1,260 @@
+/* ==========================================================================
+   Home — "the wall of worlds": hundreds of real games drifting on a tilted
+   plane behind one enormous number. Decorative layers never take focus or
+   widen the page; the section clips its own overflow.
+   ========================================================================== */
+
+.game-wall {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: clamp(760px, 118vh, 1180px);
+  margin-block: clamp(32px, 6vw, 96px);
+  padding: clamp(110px, 14vw, 200px) var(--gutter);
+  overflow: clip;
+}
+/* Fade the wall into the page at the top and bottom, and darken the centre
+   so the number and copy read cleanly over moving imagery. */
+.game-wall::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 46% 44% at 50% 52%,
+      color-mix(in srgb, var(--paper) 94%, transparent) 0 42%,
+      color-mix(in srgb, var(--paper) 55%, transparent) 70%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      var(--paper) 0%,
+      transparent 16%,
+      transparent 84%,
+      var(--paper) 100%
+    ),
+    linear-gradient(
+      to right,
+      var(--paper) 0%,
+      transparent 12%,
+      transparent 88%,
+      var(--paper) 100%
+    );
+}
+.game-wall::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 38% 30% at 50% 50%,
+    color-mix(in srgb, var(--accent) 18%, transparent),
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+}
+.game-wall-stage {
+  position: absolute;
+  inset: -14% -22%;
+  z-index: -2;
+  display: grid;
+  align-content: center;
+  gap: clamp(12px, 1.4vw, 20px);
+  transform: perspective(1800px) rotateX(26deg) rotateZ(-9deg) scale(1.08);
+  transform-origin: 50% 42%;
+}
+.game-wall-row {
+  min-width: 0;
+}
+.game-wall-track {
+  display: flex;
+  gap: clamp(12px, 1.4vw, 20px);
+  width: max-content;
+}
+.game-wall-card {
+  position: relative;
+  flex: none;
+  display: block;
+  width: clamp(200px, 21vw, 340px);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--media-bg);
+  box-shadow: 0 24px 60px -28px rgb(0 0 0 / 0.75);
+}
+.game-wall-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.8) brightness(0.72);
+}
+:root:not(.dark) .game-wall-card {
+  background: var(--soft);
+}
+:root:not(.dark) .game-wall-card img {
+  filter: saturate(0.85) brightness(0.96);
+}
+.game-wall-card span {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 26px 14px 10px;
+  color: var(--chip-ink);
+  background: linear-gradient(to top, rgb(0 0 0 / 0.78), transparent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+}
+.game-wall-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent),
+    0 30px 70px -24px var(--glow-accent);
+}
+.game-wall-card:hover img {
+  filter: none;
+  scale: 1.06;
+}
+.game-wall-card:hover span {
+  opacity: 1;
+}
+
+/* The copy floats above the wall. */
+.game-wall-copy {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: clamp(14px, 1.8vw, 24px);
+  max-width: 920px;
+  text-align: center;
+}
+.game-wall-copy .kicker {
+  color: var(--accent);
+}
+.game-wall-count {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(120px, 23vw, 360px);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.065em;
+  line-height: 0.8;
+  color: transparent;
+  background: linear-gradient(
+    180deg,
+    var(--ink) 18%,
+    color-mix(in srgb, var(--accent) 70%, var(--ink)) 62%,
+    color-mix(in srgb, var(--accent) 35%, transparent) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 20px 60px var(--glow-accent));
+}
+.game-wall-copy h2 {
+  margin: 0;
+}
+.game-wall-copy .lede {
+  max-width: 640px;
+  margin: 0;
+}
+.game-wall-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 6px 0 4px;
+  padding: 0;
+  list-style: none;
+}
+.game-wall-stats li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-pill);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+.game-wall-stats strong {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.game-wall-stats span {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+html[lang="zh-CN"] .game-wall-stats span {
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 680px) {
+  .game-wall {
+    min-height: 680px;
+  }
+  .game-wall-stage {
+    inset: -10% -60%;
+    transform: perspective(1200px) rotateX(24deg) rotateZ(-10deg) scale(1.02);
+  }
+  .game-wall-card {
+    width: 168px;
+  }
+  .game-wall-row:nth-child(n + 5) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes game-wall-drift {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .game-wall-track {
+    animation: game-wall-drift var(--wall-speed, 100s) linear infinite;
+    will-change: transform;
+  }
+  .game-wall-row:nth-child(even) .game-wall-track {
+    animation-direction: reverse;
+  }
+  .game-wall-stage:hover .game-wall-track {
+    animation-play-state: paused;
+  }
+  .game-wall-card img {
+    transition:
+      filter var(--dur-base) var(--ease-out),
+      scale var(--dur-slow) var(--ease-out);
+  }
+  .game-wall-card span {
+    transition: opacity var(--dur-base) var(--ease-out);
+  }
+}
+@media (forced-colors: active) {
+  .game-wall-stage,
+  .game-wall::before,
+  .game-wall::after {
+    display: none;
+  }
+  .game-wall-count {
+    color: CanvasText;
+    background: none;
+  }
+}
