@@ -446,6 +446,13 @@ html[data-menu-open] {
     padding: 0 8px;
   }
 }
+/* The narrowest phones keep the mark and drop the wordmark so every control
+   (search, language, theme, menu) fits inside the pill. */
+@media (max-width: 400px) {
+  .nav-brand .brand-wordmark {
+    display: none;
+  }
+}
 /* Submit and account live in the mobile menu on narrow screens. */
 @media (max-width: 520px) {
   .site-header .community-account-link,
