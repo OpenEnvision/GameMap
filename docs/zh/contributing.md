@@ -34,6 +34,19 @@ npm run check:build
 
 类 Cadle 的研究清单维护在 `data/segments/repository-research.json` 中。其完整来源候选成员及审阅状态会接受验证；`docs/cadle-repositories.md` 和公开的 Markdown/JSON 下载文件均由生成器生成。这些研究行不会自动成为资源卡片或精选可玩案例。
 
+### 仓库结构与格式
+
+- `scripts/build/`：开发服务器、生成器、文档准备、构建收尾与预览。
+- `scripts/check/`：`npm run check` 和 `npm run check:build` 使用的源数据、内容、语言、翻译及构建站点检查。
+- `scripts/import/`：有边界的导入器，把审阅过的报告、归档和远程数据包转为带版本的数据。
+- `scripts/media/`：游戏截图、页面封面和仓库媒体的采集与下载工具。
+- `scripts/platform/`：Studio、本地服务、发布、数据包、版本发布及预发布就绪检查。
+- `scripts/lib/`：共享模块；`scripts/lib/guides/` 负责加载目录数据并渲染生成的指南。
+- `tests/unit/`：由 `npm run test:unit` 运行的 `node:test` 测试。`tests/e2e/`、`tests/release/` 和 `tests/studio/` 存放 Playwright 用例；`tests/local/` 验证本地 Supabase 服务。
+- `website/app/`：路由、组件和样式。`website/content/` 存放类型化契约与站点配置；`website/src/data/` 存放目录数据模块。
+
+提交前运行 `npm run format`。Prettier 负责格式化代码、样式和配置。`.prettierignore` 让 Markdown、生成产物、数据台账和公开下载文件保持逐字节不变；存在未格式化文件时 `npm run check` 会失败。
+
 ## 内容平台过渡
 
 [内容平台指南](content-platform.md)介绍了带版本的数据库模型、离线迁移命令及剩余切换门槛。公共网站仍读取现有 Git 来源。请继续使用上述工作流；不要同时编辑同一集合的数据库副本和 Git 副本。迁移包保留在被忽略的 `.build/` 下，作为私有内容；首次导入会创建草稿，而不是发布或批准现有内容。

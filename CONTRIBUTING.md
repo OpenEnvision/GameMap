@@ -34,6 +34,19 @@ Do not commit dependencies, `dist/` or `website/dist/`, legacy root previews, `.
 
 The Cadle-like research inventory is maintained in `data/segments/repository-research.json`. Its complete source-candidate membership and review statuses are validated; `docs/cadle-repositories.md` and public Markdown/JSON downloads are generated. These research rows do not automatically become resource cards or featured playable cases.
 
+### Repository layout and formatting
+
+- `scripts/build/`: development server, generators, document preparation, build finalization and preview.
+- `scripts/check/`: source, content, locale, translation and built-site checks used by `npm run check` and `npm run check:build`.
+- `scripts/import/`: bounded importers that turn reviewed reports, archives and remote packets into versioned data.
+- `scripts/media/`: capture and fetch helpers for gameplay screenshots, page covers and repository media.
+- `scripts/platform/`: Studio, local services, publication, packages, releases and staging readiness.
+- `scripts/lib/`: shared modules; `scripts/lib/guides/` loads catalog data and renders the generated guides.
+- `tests/unit/`: `node:test` suites run by `npm run test:unit`. `tests/e2e/`, `tests/release/` and `tests/studio/` hold Playwright specs; `tests/local/` exercises local Supabase services.
+- `website/app/`: routes, components and styles. `website/content/` holds typed contracts and site configuration; `website/src/data/` holds catalog modules.
+
+Run `npm run format` before committing. Prettier formats code, styles and configuration. `.prettierignore` leaves Markdown, generated outputs, data ledgers and public downloads byte for byte, and `npm run check` fails on unformatted files.
+
 ## Content-platform transition
 
 The [content-platform guide](docs/content-platform.md) describes the versioned database model, offline migration commands, and remaining cutover gates. The public website still reads the existing Git sources. Continue the workflow above; do not edit database and Git copies of the same collection in parallel. Migration packages stay private under ignored `.build/`, and initial imports create drafts rather than publishing or approving existing content.
