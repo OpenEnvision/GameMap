@@ -9,9 +9,12 @@ for (const name of ["--input", "--translations", "--baseline"])
   assert.ok(args.includes(name), "Required: " + name);
 const round = args.includes("--round") ? Number(option("--round")) : 1;
 assert.ok(
-  [1, 2, 3, 4].includes(round),
-  "Supported explicit import rounds: 1, 2, 3 or 4",
+  [1, 2, 3, 4, 5].includes(round),
+  "Supported explicit import rounds: 1, 2, 3, 4 or 5",
 );
+// Round 5 (supplied AI game list) is checked against GitHub before import: its rows
+// carry GitHub license metadata, README model mentions and per-row aiUse text.
+const githubChecked = round >= 5;
 const suffix = round === 1 ? "" : "-round" + round,
   moduleName = round === 1 ? "open3dGames" : "open3dRound" + round + "Games",
   localeName = round === 1 ? "open3d-games" : "open3d-games-round" + round;
@@ -49,11 +52,22 @@ if (companion)
 const identity = (value) => {
   const u = publicMediaURL(value),
     parts = u.pathname.split("/").filter(Boolean);
-  if (u.hostname === "github.com" && parts.length >= 2)
+  if (u.hostname === "github.com" && parts.length >= 2) {
+    // From round 5, a tree/blob path is part of the identity: one repository can
+    // hold several distinct games (benchmarks, arcades, model comparisons).
+    const path =
+      githubChecked && ["tree", "blob"].includes(parts[2])
+        ? parts
+            .slice(4)
+            .join("/")
+            .replace(/\/(?:README\.md|index\.html)$/i, "")
+        : "";
     return (
       "github.com/" +
-      (parts[0] + "/" + parts[1].replace(/\.git$/i, "")).toLowerCase()
+      (parts[0] + "/" + parts[1].replace(/\.git$/i, "")).toLowerCase() +
+      (path ? "/" + decodeURIComponent(path).toLowerCase() : "")
     );
+  }
   u.hash = "";
   u.pathname = u.pathname.replace(/\/+$/, "") || "/";
   u.searchParams.sort();
@@ -186,6 +200,11 @@ for (const row of games) {
     assert.ok(en[k]?.trim());
     assert.doesNotMatch(en[k], /\p{Script=Han}/u);
   }
+  if (githubChecked) {
+    assert.ok(en.aiUse?.trim(), "Round 5 rows need checked aiUse text");
+    assert.doesNotMatch(en.aiUse, /\p{Script=Han}/u);
+    assert.ok(row.ai_use_zh?.trim(), "Round 5 rows need a Chinese aiUse");
+  }
   const id = "open3d-" + row.id;
   assert.ok(
     !manifest.entries.some((x) => x.key === "example:" + id),
@@ -210,8 +229,9 @@ for (const row of games) {
     engine: en.engine,
     track: "3d",
     category: "community",
-    aiUse:
-      "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    aiUse: githubChecked
+      ? en.aiUse
+      : "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
     steps: [
       "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
       "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission.",
@@ -231,14 +251,21 @@ for (const row of games) {
       label: "Inspect the supplied source reference",
       url: row.repo_url,
       scope: "unverified-project",
-      note:
-        "Supplied directory lists code license: " +
-        en.codeLicenseNote +
-        ". Asset notes from that directory: " +
-        en.assetLicenseNote +
-        ". Qualification: " +
-        en.caveat +
-        " These are imported statements, not independent license, asset or complete-project verification.",
+      note: githubChecked
+        ? "GitHub license check: " +
+          en.codeLicenseNote +
+          ". Asset licenses: " +
+          en.assetLicenseNote +
+          ". Qualification: " +
+          en.caveat +
+          " These are repository metadata and supplied statements, not independent license, asset or complete-project verification."
+        : "Supplied directory lists code license: " +
+          en.codeLicenseNote +
+          ". Asset notes from that directory: " +
+          en.assetLicenseNote +
+          ". Qualification: " +
+          en.caveat +
+          " These are imported statements, not independent license, asset or complete-project verification.",
     },
     evidence: {
       label: "Read supplied directory references",
@@ -248,7 +275,9 @@ for (const row of games) {
         basename(input) +
         ", row " +
         row.id +
-        ", supplied metadata date " +
+        (githubChecked
+          ? ", GitHub repository check on "
+          : ", supplied metadata date ") +
         row.checked_on +
         ". Input SHA-256: " +
         digest +
@@ -271,8 +300,12 @@ for (const row of games) {
   localizations["example:" + id] = {
     description:
       row.description_zh + (row.caveat_zh ? " 注意：" + row.caveat_zh : ""),
+    ...(githubChecked ? { aiUse: row.ai_use_zh } : {}),
   };
-  if (title !== row.name) localizations["example:" + id].title = row.name;
+  // Round 5 keeps the supplied original title as the Chinese title.
+  if (githubChecked && /\p{Script=Han}/u.test(row.supplied_name || ""))
+    localizations["example:" + id].title = row.supplied_name;
+  else if (title !== row.name) localizations["example:" + id].title = row.name;
   mappings.push({
     inputId: row.id,
     key: "example:" + id,
@@ -302,8 +335,9 @@ const raw = {
     suppliedMetadataDate: [...new Set(records.map((r) => r.checked_on))].join(
       ", ",
     ),
-    policy:
-      "Only the supplied games-and-prototypes category is admitted; source-only/unverified, no invented play/download URL. Other categories remain raw intake evidence, not game admission.",
+    policy: githubChecked
+      ? "Every supplied row was checked against GitHub before import; unavailable repositories are excluded and rows already in the catalog keep their existing record. Admitted rows are source-only/unverified with no invented play/download URL. Model attribution repeats only what the project README states."
+      : "Only the supplied games-and-prototypes category is admitted; source-only/unverified, no invented play/download URL. Other categories remain raw intake evidence, not game admission.",
   },
   inputRecords: records,
   mappings,
