@@ -5,6 +5,12 @@ export { localeFromPath } from "./locale";
 export function docLocale(slug: string): DocLocale {
   return slug === "zh" || slug.startsWith("zh/") ? "zh" : "en";
 }
+/** Source language does not change a namespaced archive's canonical route. */
+export function documentBodyLocale(slug: string): DocLocale {
+  return slug === "remote-source-index" || slug.startsWith("remote/zh/")
+    ? "zh"
+    : docLocale(slug);
+}
 export const docHome = (locale: DocLocale) =>
   locale === "zh" ? "/docs/zh/" : "/docs/";
 export const docMessages = (locale: DocLocale) => messages[locale];

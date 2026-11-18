@@ -1,0 +1,14 @@
+{
+  "/docs/tutorials-and-demos/": "/examples/",
+  "/docs/zh/tutorials-and-demos/": "/zh/examples/",
+  "/zh/docs/tutorials-and-demos/": "/zh/examples/",
+  "/zh/docs/zh/tutorials-and-demos/": "/zh/examples/",
+  "/docs/coding-agent-game-code/": "/examples/",
+  "/docs/zh/coding-agent-game-code/": "/zh/examples/",
+  "/zh/docs/coding-agent-game-code/": "/zh/examples/",
+  "/zh/docs/zh/coding-agent-game-code/": "/zh/examples/",
+  "/docs/cadle-repositories/": "/examples/",
+  "/docs/zh/cadle-repositories/": "/zh/examples/",
+  "/zh/docs/cadle-repositories/": "/zh/examples/",
+  "/zh/docs/zh/cadle-repositories/": "/zh/examples/"
+}

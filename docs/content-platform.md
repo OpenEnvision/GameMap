@@ -270,13 +270,13 @@ npm run local:publication-status
 
 # Use the predecessor artifact/release reported by status; use none only for an empty pointer.
 npm run local:publish -- --input PRIVATE_SITE_ARTIFACT --expected EXPECTED_ARTIFACT_OR_none --expected-release EXPECTED_RELEASE_OR_none --run operator-reviewed-local-run
-npm run local:publication-serve -- --port 4190
+npm run local:publication-serve -- --port 4191
 
 npm run local:rollback -- --artifact PREVIOUSLY_PUBLISHED_ARTIFACT --expected CURRENT_ARTIFACT --expected-release CURRENT_RELEASE --run operator-reviewed-local-rollback
 npm run local:publication-recover
 ```
 
-The private target is `.build/catalog-local/publication/`; visit the anonymous preview at `http://127.0.0.1:4190/GameMap/` when that is the artifact's basename. Only the committed delivery pointer's site files are served, never receipts, journals, credentials or older HTML. Neither `dist/` nor the Pages workflow is replaced. The independent `NOINHERIT` login is stored in private `.build/catalog-local/deployer.json`, not `.env`, Studio or a browser bundle. It cannot author/approve content, provision members or read private Auth/session tables.
+The private target is `.build/catalog-local/publication/`; visit the anonymous preview at `http://127.0.0.1:4191/GameMap/` when that is the artifact's basename. Only the committed delivery pointer's site files are served, never receipts, journals, credentials or older HTML. Neither `dist/` nor the Pages workflow is replaced. The independent `NOINHERIT` login is stored in private `.build/catalog-local/deployer.json`, not `.env`, Studio or a browser bundle. It cannot author/approve content, provision members or read private Auth/session tables.
 
 On first use, the database target and filesystem marker bind a canonical private directory to that database instance. A PostgreSQL session advisory lock spans copying, SQL commit and journal cleanup; another operator cannot interleave a switch. The publisher verifies and copies exactly the artifact inventory into a retained directory, syncs its bytes/directories, writes a durable intent, atomically renames the `current` symlink, verifies the switched artifact, and only then activates its release/artifact with both expected predecessor identities. A separately atomic `published.json` pointer is updated after SQL commit, so anonymous readers remain on the old complete site while promotion is pending. Two builds of the same release still have distinct artifact identities. The earlier service-role-only release-pointer path is disabled even before target binding; it cannot bypass artifact-bound publication.
 

@@ -1,0 +1,250 @@
+{
+  "version": 1,
+  "locale": "zh",
+  "documents": {
+    "reading-guide": {
+      "sourceHash": "a0d94b99cec9a506cc005fb8b54136acb16dbac1c1beef17624f44f2bbfbf6e8",
+      "translationHash": "5c9a8642e3126f010536618c270f0843413e0ad3f746afe38ecd694943821c8d"
+    },
+    "practical-guide": {
+      "sourceHash": "3881dc0d013f425d0472595c8f4b20748ecef2788c79052ae11ddef1d26a071e",
+      "translationHash": "1e9d1f34e2500953335520fd6c725a946c1fe7ef741d02478ba98642db38b9d9"
+    },
+    "game-testing-library": {
+      "sourceHash": "a6464f7988a050d4925efc88c3b7075d01261373fb37f933313fb5df028094f4",
+      "translationHash": "3bfeea14a0155ffee74fc00b6b1074a32d81278c510eb7c0c8a90a23a4bba9d7"
+    },
+    "agents-notes": {
+      "sourceHash": "2a3353046adee5f276218ea2f22070fdd52b6e4dbe2edbd9b5a8d504418888a3",
+      "translationHash": "0d50e3a5c638ac32af1d5d969c4b50aeeeb7c69026f67731aafb56910cd156f4"
+    },
+    "engines-notes": {
+      "sourceHash": "f9ccc0288b0c600d0bdd576528966abf34d5dd1226cb4c6e0019a194567d9c5d",
+      "translationHash": "6d2b99ee5fe762700a42a177bcf52cc824db41c37e61a450f339616784220c35"
+    },
+    "game-ai-notes": {
+      "sourceHash": "ffcb9a080adca25301db04bba859b2faf2336ee85cc8d383d2bd81126f9d9b2d",
+      "translationHash": "d60afcca7cd2b9911a2705705aea8fde8d8692336bc91e0c8a85bceaf485e021"
+    },
+    "world-model-notes": {
+      "sourceHash": "3284ce6c39421d88858bdb0919306f1aa14a2c4334245530a70943f0bed9a741",
+      "translationHash": "b8bfe8e6560785ed490038265b4923b299668d0fe4fd829fce1423341f3045b9"
+    },
+    "research-index": {
+      "sourceHash": "e1d872b4e5982d699ceda5e95eb031b2650b40447eec59540d938f1a6e2a9872",
+      "translationHash": "f1f3ee393019ec89ceb2b0a85fa9eaefa1d9c7130a37781e424f84597da87c67"
+    },
+    "production-research-notes": {
+      "sourceHash": "b713a8ed1f662d7f79708cd4363cd3580c0a980757e15638aa1467c0506b25b2",
+      "translationHash": "2c1008d97637da20f0b41530a782a80cd500137d3fe1096f2575367ec31aacbc"
+    },
+    "engine-operation-contracts": {
+      "sourceHash": "36f9e2afea2659af26299d81f3165bb22a8dcc940622cfb78b27bee6458fc0a2",
+      "translationHash": "a6c48cd67d7b64409377a462f13d37fe4e4cce37132d083498e70d499ffd7980"
+    },
+    "production-work-orders": {
+      "sourceHash": "c612e8d796834f907606b68a7d90d3f75eabdf5ef5f14b0f2842dbe2a53985e2",
+      "translationHash": "905698cc79c3b822ca1c32965ed40c34e47b33d85e8716b9d80a7c905d05548e"
+    },
+    "studio-production-case-studies": {
+      "sourceHash": "56eeef744a25f7a377eb797ebb4f669685f2b3b356e3e29342085902346459b7",
+      "translationHash": "47e67a4f86e2e77e54c7d7842aeab0019983e2c2723011d9e9a88ee3ae730a35"
+    },
+    "native-operation-details": {
+      "sourceHash": "f6b2d944a9c4cfa8ea937d120aee0e1d50b6b85a9981964185268febecb68d13",
+      "translationHash": "f3a6acb02e15b8d5f0c61f4cce4cafd685321cae268c4f0538fa63d050cb6aa6"
+    },
+    "production-debugging-contracts": {
+      "sourceHash": "a54714123e7a1ca1937f0ca687565d4a069d52d4014bab162f862517c8ea28f3",
+      "translationHash": "24e1cf33df2d14f21b555d6b457cc47eb1129cd140f1fae0076ef63d05e2a180"
+    },
+    "production-coverage-gaps": {
+      "sourceHash": "3cb5daf6bf9e4dd28c0f26a79f08e6c9f1f3d4f3bc897401dd03ee207f99cf3f",
+      "translationHash": "ab94696c0b40091ed7d905b0c5e9e40ecd6bdb4458e50d0ef0d3c993aae629c8"
+    },
+    "generative-tools-research": {
+      "sourceHash": "4780eb1f63fa2300d03d3f4c3c4858f6a07639b0e66e7a78f1e30d47bbcdd611",
+      "translationHash": "ff5cfb33e7b85e90feaf9c9fb9b0b593f5266e76e09ab1a667152e37abcbf188"
+    },
+    "generative-api-boundaries": {
+      "sourceHash": "64f71410f530db6da3bca0aaa3f9c99a706540272af989db252075102e582817",
+      "translationHash": "5121e4efbbff852bb30594d9424c4421719c90f322d6d05cae895b40529d9f51"
+    },
+    "generation-delivery-contracts": {
+      "sourceHash": "a8c29bea9be8f032cdee2c627d69750e580b53ff753a5fe3d785149fdc02412c",
+      "translationHash": "9db4e4df9f90993f35eac8217ba2b74c2e235b255c085a5e1cbdac5eb1764a94"
+    },
+    "asset-validation-contracts": {
+      "sourceHash": "5a2c80a8b3ca37f1fb0a26de94023a602355b13e32e2b4d613ba9f69d934abd8",
+      "translationHash": "c55096f2855af77d3aefd686e1b6c5d9fa8406f78f60aa5c89bdaeb85543f405"
+    },
+    "asset-selection-feedback": {
+      "sourceHash": "04f504b0bf14a4df47005642258b4e7510addb575c690ab855f678710fa0d06e",
+      "translationHash": "fc0284188408d7afab4ef81b37c8b7a255ea9f419ea17bce7e17e88e790f5a33"
+    },
+    "visual-evidence-research": {
+      "sourceHash": "160171b2f4332bba01be76fa6b5d3bcd64e56367e0a55ca9835fd9ada6f26aa8",
+      "translationHash": "910401f29513fe27ea8c501754d1104b062a8d88aa225199e329e8802617a7ab"
+    },
+    "visual-feedback-mechanisms": {
+      "sourceHash": "9800f24df8b5f7e859c46ed058400152ed23f501ba83e3e4a2362eede6d6aac8",
+      "translationHash": "b13a8663697a64df02fc9c04061bef65b4c75b067290b65f10e9ee80b22b9274"
+    },
+    "game-development-evaluation": {
+      "sourceHash": "e294011f80cbdce3f3931c408edbc1d7de355ba27dfb811e6741d3bae317d9df",
+      "translationHash": "58c98d355d6b57a14893ffab127120fca8707c62fc09db206d478e4bc7dc8ba7"
+    },
+    "benchmark-reproducibility": {
+      "sourceHash": "4ff4a210639b7e3f49a024faa488424bbf45bae2d95517fdf3b9ad0d4bdf0133",
+      "translationHash": "ea1fa3f6c0113666e57b897ffb90853d0eb7d32319986f6978959e6996d3503c"
+    },
+    "gameplay-state-contracts": {
+      "sourceHash": "39daa242fce97cd61aa619a90f35ec12f314b9adf8a59936546967fa46bca50e",
+      "translationHash": "cba0d6ca548b063e4511b261876afb2bfba4b6ba4539764367b8befca8cd7fb3"
+    },
+    "agent-interface-evidence": {
+      "sourceHash": "7510f6ff8fdce7d3ba4b1ea35befc17cfc7796b9f826d4157b166817a300b582",
+      "translationHash": "47a6b03454346de4acf5fe65a84c8683eb4a148f2e210071f3504ace6f59849a"
+    },
+    "catalog-review-coverage": {
+      "sourceHash": "a7ea83ab0cb738a7d2900ca772ec2736ee87deed4fa42dc6a8c69fe9c1277d86",
+      "translationHash": "6c8b23db0900315200a5d75de0c79be0ca07b4bc9819234c8f73fae0196e4e5a"
+    },
+    "source-revision-notes": {
+      "sourceHash": "d074761cd7ff667d22331b02a2e9ca843831c4525a411757700e5c9d8cedf896",
+      "translationHash": "9f723548fd2df3e85f920125b6680d519abb67997a077dfe5bce01c47bf8cb05"
+    },
+    "community-case-research": {
+      "sourceHash": "6cc81518fc762c0c17dae89409c50b03462435ba60572c1085bf42519e9ac559",
+      "translationHash": "e39d45582f39bbe35408bb88f3686ce6da8829858a84949960d6b9e7d22ffd9e"
+    },
+    "overview": {
+      "sourceHash": "670dae88f252690c7af0dd092621bf89b3de3b686dc5a264f75b3bec9912a796",
+      "translationHash": "88aa3b0caf68158f8513736e22921938c12f93cd060bc0c20adff7e27f682efd"
+    },
+    "catalog": {
+      "sourceHash": "33646f78960435fa676fa6381a8e0301712fb2c5c23a6204f41214dd13c51223",
+      "translationHash": "af875abebae6255b0c6b93047e174cfb0746ad234385b4a28ed83c1aa37151e8"
+    },
+    "contributing": {
+      "sourceHash": "1e424241eb712aa7096d4337c7b86ba49193f5795541f4ca719ccb9206f2b996",
+      "translationHash": "767d3da924ccfee81d8d2e73053b0ba459548e392f690fb4a0f573a5c762bec7"
+    },
+    "media-sources": {
+      "sourceHash": "a1283fd5fbe7bf329ba0317a5c27719f09d045abacd3a195c771133aa1e02378",
+      "translationHash": "343567c4c511863bb4680b19fa2365e51b208dfbe8e8e46143a0341878a5eaaf"
+    },
+    "icon-sources": {
+      "sourceHash": "f446a5a9f744f6b094df8855a92f62419c5636003a8accadab93879105221f35",
+      "translationHash": "0166bbe59b58061b1926a5a2a0cccc6757fc64ae1341881fb0bdd574bf916855"
+    },
+    "deployment": {
+      "sourceHash": "bd18924a716b9a108c2c13163236f6e743d8b9110981fd394391d7f1d516b521",
+      "translationHash": "fc2646dc7cb8a7a1f222d24649fc45e154f08d329d4138d88b24219d1f9e4551"
+    },
+    "content-model": {
+      "sourceHash": "1ae0490b8d0bf749ebdd8a20a55ea35a51b33a83038af6eb22b9deccfdc42ac6",
+      "translationHash": "3e85f7acf3f03a30d0824ab4cef10742eca1e944da812182fccd5166e1cf9fdb"
+    },
+    "level-design-skill": {
+      "sourceHash": "71ec8a18dee374979b028bd2d5e678e97bb15b9fea73b8c6c0d66ce42aae9347",
+      "translationHash": "6c8bb3725e1b9707c19021e8a850547227bcc0fae1db45e8a989010199f83f58"
+    },
+    "skills/level-design/SKILL": {
+      "sourceHash": "81c8dd3c0237982e39772cd3d778e4d258d0c1a7ace0fe74daf7cd6994702f27",
+      "translationHash": "2a2b3ed66bb14901e4b6af16656cf6fa9782134a901904bfb3839512e5c4f6a4"
+    },
+    "skills/level-design/LICENSE": {
+      "sourceHash": "7baf28f0942b105ddcf68f80f73dfbdba24d7207f60e6876ddb99d28d417e3a6",
+      "translationHash": "616a2f50444df2eea5cd43b940d1aa593c74426fd42fafa75f8375594a391662"
+    },
+    "content-platform": {
+      "sourceHash": "d643d8ac1a1fc3cb2742ed0c9e2c4c6d41b1c58c7340aa15e3219b21adc85e57",
+      "translationHash": "cb79b7431e4def85722820e03a743d3f1e3b3e9624deb2ac96499c934e4c92e4"
+    },
+    "design/design-system": {
+      "sourceHash": "7611580f45460b19e881abd518d0d9608ab54277da286fe7c17d9720ca6882a9",
+      "translationHash": "8daff6d9746fd78ba3f3274955b0328df5bf29b7f5f3ec4c83fb7f6fccc22eaa"
+    },
+    "design/v2/design-system": {
+      "sourceHash": "18d092f1c068d25665c112904ea0caa5d7271c9586afc31dde14f6f684a11425",
+      "translationHash": "6b981a1c889e98c863ae637e6838fb20b5729b94fcfe191b0b052f0bf80c27c2"
+    },
+    "editorial-art-prompts": {
+      "sourceHash": "191b85f07d0cd5aff43ee9f2c8359022e06bc51b39fb93e775f2369d04a149a3",
+      "translationHash": "c71742651f04d82676e1338a2a242c208358ea5dad4dec42800b068c9c61342b"
+    },
+    "remote-import": {
+      "sourceHash": "2ca58750a76fad53e97ec2a42629f244bf930a04f7e71bf8b3adf2c21be71b22",
+      "translationHash": "dad9387baaed3d1a7c783521769cfce981b3eed35aa90253e6fa827386d107aa"
+    },
+    "skills/level-design/references/blockout-metrics": {
+      "sourceHash": "aba747e2d92c367001c3f3c6b5b4027472926beac9dff33882025c6a631c1898",
+      "translationHash": "400858919ce8a8c4c0c2f58ba6888e9410f9e89988928f82d69034661395dcfd"
+    },
+    "skills/level-design/references/case-studies": {
+      "sourceHash": "4f0643c5d776144531ec46b2af1936158eea6780aa84751d74b0ca61237a52b0",
+      "translationHash": "d45b284edca1b48b42816ecf43a9d517586d3654ef516adaaa981abac85cc055"
+    },
+    "skills/level-design/references/combat-balance": {
+      "sourceHash": "bdbe6945e7cd9a51aa50ad9a1b02fac12635f9ec8f0f187c1753abba871033c8",
+      "translationHash": "2d7b24b3bb882df22a14b0740dd7bdfd3b7d59f28aa8367ad2643bc06c1896f3"
+    },
+    "skills/level-design/references/culture-history": {
+      "sourceHash": "fec0df471ced497b20c5e0ccd08340f3ac3297393ac618cff7626256333f4d0a",
+      "translationHash": "540f8404319c43c6c075f9a9e53706f54de0a6c3c128f34c46e5752ccdba27ad"
+    },
+    "skills/level-design/references/foundations": {
+      "sourceHash": "79cc3bd4a123904fad9309d7444fd27d62287fe1307e1529a60104f493ce8b5a",
+      "translationHash": "7309ad0486679253a07aa86dfbea0984323d72eb2d919df6a8d1be05d85803ab"
+    },
+    "skills/level-design/references/learning": {
+      "sourceHash": "dfcd003181de23901a8944c7af364311108a4c66f1a7daf1d2c2409ccd0382b0",
+      "translationHash": "d71061501241e0f7cd2e08b69487125e238604adef3746667f6d08183e4ca5c1"
+    },
+    "skills/level-design/references/lighting-art": {
+      "sourceHash": "ce11613f8c7efe1ab46a656e34fbfe837dea9e2cda21eb8b65c5dd7ab29e1d90",
+      "translationHash": "7bf33683fe2cf6142b0d6bdc129a66413e5c1afbba1a1a19ddef44ca23f9e939"
+    },
+    "skills/level-design/references/optimization-release": {
+      "sourceHash": "c861e21126e62c18971e1f0ced575cf4f6605fdf9e3310d753ccd85b377fc9ca",
+      "translationHash": "3f6da5822fbb7054aa783161ee455a95649aba8f8add19fa3693293b331c7c3d"
+    },
+    "skills/level-design/references/scripting-doors": {
+      "sourceHash": "31194f2df5c662e41fa292b6ee820bbc594a22ec421cdea1f6cba207b5a2a2eb",
+      "translationHash": "dcc4b768b5cd00b2115270547918657152bdfaf3e111e17491cd9874116ccd89"
+    },
+    "skills/level-design/references/source-map": {
+      "sourceHash": "0e0bf748565ed9da345e0f2a01261a6cc5ea8af80933a21389b3f79ef9742ca0",
+      "translationHash": "e0d0e006d0f7e81a41272067e8bfff01eb8ce5eb151aee499d34cbabefbfecfd"
+    },
+    "skills/level-design/references/spatial-layout": {
+      "sourceHash": "e8641eb15099627cf59978304ef807c5ade18f886bd02e8519739c2405249e6a",
+      "translationHash": "ad8710d4a1a38c8af3ec7be49ffd093f1eb03de341718a6de67b72856459af62"
+    },
+    "skills/level-design/references/tools-quake": {
+      "sourceHash": "62d3e4393042b8338c0655724e19b9f2e3f654c6e314e05516dd2e9c2cc46392",
+      "translationHash": "130e08f994a8d3c91ca188a7c8c75ed2526abc81d6ba934f56c98974b6609a5e"
+    },
+    "skills/level-design/references/wayfinding-playtesting": {
+      "sourceHash": "778c6d2ab5095aa2a794c5b84da4cdef575350af9b235ca983c5e1a2a0307c6e",
+      "translationHash": "592b7f66c2f794a47b39fc76781dc02ad0f8deb950e22a2b837ea0be20976f23"
+    },
+    "skills/level-design/templates/level-brief": {
+      "sourceHash": "21ca07d5e829cc7bb4bd2719ae24d9d8bfe2e71e1c607526e0907aacabad9927",
+      "translationHash": "a00daff008630f20e11af57c8f2e7f60dedf4373e8e2eca717f2ee9ff9690fad"
+    },
+    "skills/level-design/templates/playtest-report": {
+      "sourceHash": "1fefc9190edd9a460a263033c12f79b555e4fb7ef3e139bfb75d7ca5061ff8a2",
+      "translationHash": "5de72744ba5c9e21829346fb7f364a48774f395197ec96dcde3cbed308baf7ef"
+    },
+    "skills/level-design/templates/review": {
+      "sourceHash": "779a2edb6080480f4b73ad9b96692b9ae7eb4aa3e2f1bd613c637b4240ee608b",
+      "translationHash": "bac3ae9585d59196e4ad37509e0a7dbc8a6ce9c78fc69487a150ec294fa48f31"
+    },
+    "staging-readiness": {
+      "sourceHash": "28c14be90a5f2795ac2719875440cacb32d319277f7bf37f3c63003b46d9fca9",
+      "translationHash": "efcde3a7e0a73deb0c450f608cc122bda09389c73d8bceeeec4df296290d58d8"
+    }
+  }
+}

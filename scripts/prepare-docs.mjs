@@ -16,6 +16,7 @@ import {
 } from "./lib/documents.mjs";
 import { loadContent } from "./lib/content.mjs";
 import { writeIfChanged } from "./lib/files.mjs";
+import { applyTranslatedHeadingIds } from "./lib/document-translations.mjs";
 
 const docsDir = resolve(root, "docs");
 const contentDir = resolve(root, "website/.content/docs");
@@ -46,11 +47,21 @@ for (const file of (await walk(docsDir)).filter(
 }
 for (const page of manifest) {
   const file = resolve(root, page.source);
-  const markdown = preparedMarkdown(await readFile(file, "utf8"));
+  const markdown = preparedMarkdown(
+    await readFile(file, "utf8"),
+    page.slug.startsWith("zh/") ? "包元数据" : "Package metadata",
+  );
+  const original = page.slug.startsWith("zh/")
+    ? manifest.find((entry) => entry.slug === page.slug.slice(3))
+    : undefined;
+  const english = original
+    ? await readFile(resolve(root, original.source), "utf8")
+    : undefined;
   const processor = unified()
     .use(remarkParse)
     .use(remarkGfm)
     .use(() => (tree) => {
+      if (english !== undefined) applyTranslatedHeadingIds(tree, english);
       visit(tree, (node) => {
         if (node.type === "html") assertDocumentHTML(node.value, page.source);
         if (["link", "image", "definition"].includes(node.type))

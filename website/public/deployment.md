@@ -23,7 +23,7 @@ The application lives in `website/app/`. Existing catalog and case data remain i
 
 ## Documents and internal links
 
-Markdown under `docs/`, plus `AWESOME.md` and `CONTRIBUTING.md`, is rendered at build time. Articles include navigation, a table of contents, highlighted code, heading links, and full-text search. Git-authored long-form Markdown remains the source of truth and is available through its source link. Registered catalog guides are generated views of structured data; their source link identifies the trusted generator rather than implying that an old Git export is a competing authoring source.
+Markdown under `docs/` (including `docs/AWESOME.md`), plus `CONTRIBUTING.md`, is rendered at build time. Articles include navigation, a table of contents, highlighted code, heading links, and full-text search. Git-authored long-form Markdown remains the source of truth and is available through its source link. Registered catalog guides are generated views of structured data; their source link identifies the trusted generator rather than implying that an old Git export is a competing authoring source.
 
 `scripts/prepare-docs.mjs` creates disposable copies in `website/.content/`. It derives titles, rewrites internal Markdown links to document routes, and stages local documentation images in the ignored `website/public/docs-assets/` directory. Original research text is not rewritten. `website/docs.config.json` controls navigation groups and short labels; ungrouped articles remain available under More notes. After editing source Markdown during development, rerun this preparation script or restart `npm run dev` to refresh the prepared copies.
 

@@ -4,9 +4,15 @@ Homepage previews are excerpts from recordings published by the project authors.
 
 The previews retain every part of the source frame, including original game interfaces and input/output comparison labels. Only excerpt selection, proportional resizing, frame-rate normalization (maximum 30 fps), H.264 encoding, audio removal, and first-frame WebP poster encoding were applied to the six primary excerpts. Square footage and wide comparisons use a quiet matte instead of cutting off content. Native frame proportions are used in the lower gallery when practical. The mobile comparison variant additionally rearranges the two complete source panels as described below; it does not crop, replace, or generate any scene content.
 
+## Community game screenshots
+
+The [community screenshot ledger](../website/public/game-screenshot-sources.json) records each reviewed game image, its author page and original image URL or browser-capture origin, review or capture date, source-frame and preview checksums, and any unresolved gaps. Images are visually checked for actual gameplay rather than title art, logos, loading screens or error pages, then proportionally contained in a 1280 × 720 WebP without cropping the source frame.
+
+Creator-published images retain their original attribution and rights; inclusion is not blanket permission to reuse them. Browser fallback uses isolated, sandboxed contexts without native game execution, accounts, purchases or granted device permissions. A screenshot does not certify compilation, game stability, security, complete playtesting or L1/L2/L3 validation.
+
 ## AI game tutorial screenshots
 
-Reviewed October 18, 2026. Every game case has a real-game preview with explicit provenance: 27 GameMap captures from linked browser builds, 2 local source-project captures, and 15 creator-published gameplay screenshots or recording stills. The page badges distinguish these origins. Creator images have a source-review date, not an invented capture date. These are game pixels, not generated illustrations or reconstructed promotional artwork. Optional engine foundations are excluded.
+Reviewed October 18, 2026. Each AI game case has a real-game preview with explicit provenance: 27 GameMap captures from linked browser builds, 2 local source-project captures, and 15 creator-published gameplay screenshots or recording stills. The page badges distinguish these origins. Creator images have a source-review date, not an invented capture date. These are game pixels, not generated illustrations or reconstructed promotional artwork. Optional engine foundations are excluded.
 
 Images are proportionally resized and centered on a 1280 × 720 canvas without cropping game content. The [manifest](../website/public/media/learning/manifest.json) records origin, source URL, capture or review date, dimensions, file size, and SHA-256. Creator images also retain their original image URL. Underlying art, characters, and interfaces remain credited to their creators and rights holders.
 

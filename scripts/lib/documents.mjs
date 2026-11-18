@@ -5,6 +5,7 @@ import { createHash } from "node:crypto";
 import { parseFragment } from "parse5";
 import { execFileSync } from "node:child_process";
 import { documentOrigin } from "./catalog/generated-registry.mjs";
+import documentRedirects from "../../website/content/document-redirects.json" with { type: "json" };
 
 export const root = fileURLToPath(new URL("../../", import.meta.url));
 // Raw HTML is source content too. Review new tags/attributes rather than dropping or executing them.
@@ -40,10 +41,10 @@ export function sourceMarkdown(markdown) {
   );
   return { body, frontmatter: match?.[1] };
 }
-export function preparedMarkdown(markdown) {
+export function preparedMarkdown(markdown, metadataLabel = "Package metadata") {
   const { body, frontmatter } = sourceMarkdown(markdown);
   return frontmatter
-    ? `${body.trimEnd()}\n\n<details>\n<summary>Package metadata</summary>\n\n\`\`\`yaml\n${frontmatter}\n\`\`\`\n\n</details>\n`
+    ? `${body.trimEnd()}\n\n<details>\n<summary>${metadataLabel}</summary>\n\n\`\`\`yaml\n${frontmatter}\n\`\`\`\n\n</details>\n`
     : body;
 }
 export const slash = (value) => value.split(sep).join("/");
@@ -75,7 +76,7 @@ export function publicSourcePaths() {
           "docs",
           ":(top,glob)*.md",
         ],
-        { cwd: root, encoding: "utf8", stdio: ['ignore','pipe','ignore'] },
+        { cwd: root, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] },
       )
         .split("\0")
         .filter(Boolean),
@@ -95,16 +96,32 @@ export async function readDocuments() {
   const groups = JSON.parse(
     await readFile(resolve(root, "website/docs.config.json"), "utf8"),
   );
+  const chinese = Object.assign(
+    {},
+    ...(await Promise.all(
+      ["docs.zh.json", "zh.json"].map(async (name) =>
+        JSON.parse(
+          await readFile(resolve(root, "website/content/i18n", name), "utf8"),
+        ),
+      ),
+    )),
+  );
   const visible = publicSourcePaths();
   const files = (await walk(resolve(root, "docs")))
     .filter(
       (file) =>
         file.endsWith(".md") &&
-        publishablePath(slash(relative(root, file)), visible),
+        publishablePath(slash(relative(root, file)), visible) &&
+        !Object.hasOwn(
+          documentRedirects,
+          `/docs/${slash(relative(resolve(root, "docs"), file)).slice(0, -3)}/`,
+        ),
     )
     .map((file) => ({
       file,
-      slug: slash(relative(resolve(root, "docs"), file)).slice(0, -3),
+      slug: relative(resolve(root, "docs"), file) === "AWESOME.md"
+        ? "catalog"
+        : slash(relative(resolve(root, "docs"), file)).slice(0, -3),
     }));
   const rootSlugs = {
     "README.md": "overview",
@@ -139,16 +156,28 @@ export async function readDocuments() {
       const markdown = await readFile(file, "utf8");
       const title =
         markdown.match(/^#\s+(.+)$/m)?.[1].replace(/`/g, "") || slug;
-      const group = groups.find((group) =>
-        group.pages.some(([id]) => id === slug),
-      );
+      const originalSlug = slug.replace(/^zh\//, "");
+      // A complete translation shares its source's topic and navigation label.
+      // Keep one navigation definition instead of a separate, abridged Chinese library.
+      const group =
+        groups.find((group) => group.pages.some(([id]) => id === slug)) ||
+        groups.find((group) => group.pages.some(([id]) => id === originalSlug));
+      const label =
+        group?.pages.find(([id]) => id === slug)?.[1] ||
+        group?.pages.find(([id]) => id === originalSlug)?.[1] ||
+        title;
+      const description =
+        group?.description ||
+        "Curated source notes and practical guidance from GameMap.";
+      // zh/ records are native Chinese sources, including their canonical metadata.
+      // Otherwise the English registry expects English descriptions on Chinese pages.
+      const localize = (value) =>
+        slug.startsWith("zh/") ? chinese[value] || value : value;
       return {
         slug,
         title,
-        label: group?.pages.find(([id]) => id === slug)?.[1] || title,
-        description:
-          group?.description ||
-          "Curated source notes and practical guidance from GameMap.",
+        label: localize(label),
+        description: localize(description),
         group: group?.title || "More notes",
         source: slash(relative(root, file)),
         ...documentOrigin(slash(relative(root, file))),
@@ -163,7 +192,8 @@ export async function readDocuments() {
   );
   return documents.sort(
     (a, b) =>
-      (order.get(a.slug) ?? Infinity) - (order.get(b.slug) ?? Infinity) ||
+      (order.get(a.slug.replace(/^zh\//, "")) ?? Infinity) -
+        (order.get(b.slug.replace(/^zh\//, "")) ?? Infinity) ||
       a.slug.localeCompare(b.slug),
   );
 }
@@ -177,6 +207,21 @@ export function documentLinkResolver(documents, assetBase = "/") {
       ? resolve(root, "website/public", decodeURI(path).slice(1))
       : resolve(dirname(sourceFile), decodeURI(path));
     if (extname(absolute).toLowerCase() === ".md") {
+      const slug = slash(relative(resolve(root, "docs"), absolute)).slice(
+        0,
+        -3,
+      );
+      const redirect = documentRedirects[`/docs/${slug}/`];
+      if (redirect) {
+        const chineseSource = slash(
+          relative(root, resolve(root, sourceFile)),
+        ).startsWith("docs/zh/");
+        return (
+          (chineseSource && !redirect.startsWith("/zh/")
+            ? "/zh" + redirect
+            : redirect) + suffix
+        );
+      }
       const document = documents.find(
         (page) => resolve(root, page.source) === absolute,
       );

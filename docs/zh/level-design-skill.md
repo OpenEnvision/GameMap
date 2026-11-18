@@ -1,38 +1,19 @@
-# 关卡设计 Skill
+# 关卡设计技能
 
-用关卡简报、路线结构、灰盒和试玩记录，把设计目标转成可迭代的工作流程。这个 Skill 根据《The Level Design Book》整理，包含任务指南、参考资料和模板。
+借助改编自 [The Level Design Book](https://book.leveldesignbook.com/) 的任务指南与可复用模板，规划布局、灰盒、遭遇和试玩测试。从一个设计问题出发，构建可玩的片段，并用观察结果指导下一次修改。
 
-## 阅读与下载
+## 阅读或安装
 
-- [打开完整 Skill（英文）](../skills/level-design/SKILL.md)。
-- [下载完整包](../../website/public/skills/level-design.zip)。解压后，按照你所用客户端的说明放进技能目录；它不会自动安装引擎集成。
-- [查看许可与署名（英文）](../skills/level-design/LICENSE.md)。
-- 直接使用[关卡简报](../skills/level-design/templates/level-brief.md)、[试玩报告](../skills/level-design/templates/playtest-report.md)或[评审模板](../skills/level-design/templates/review.md)，模板目前为英文。
+- [阅读技能及其任务分流指引](skills/level-design/SKILL.md)。
+- [下载完整技能包](../../website/public/skills/level-design.zh.zip)。将 `level-design/` 目录解压到所选客户端支持的技能目录中；请查阅该客户端的说明。此操作不会自动安装任何引擎集成。
+- [阅读改编许可与第三方例外](skills/level-design/LICENSE.md)。
+- [查看已记录的来源映射与未完成章节](skills/level-design/references/source-map.md)。
+- 从[关卡简报](skills/level-design/templates/level-brief.md)、[试玩测试报告](skills/level-design/templates/playtest-report.md)或[评审](skills/level-design/templates/review.md)开始。
 
-## 先把问题变具体
+技能包包含操作说明、十三份专题／来源参考文档和三个模板。它主要面向 3D 关卡；用于 2D 及其他情境时，需要明确相关假设。包内不包含原书截图、游戏资源、链接指向的视频、外部文章或 pi 配置。
 
-不要只说“做一个好看的关卡”。先说明：玩家是谁、遵循什么规则、应该经历什么，以及什么观察能支持这个设计。
+## 署名与许可
 
-一个小而可用的流程是：
+本改编采用  **CC BY-NC-SA 4.0**  许可。请保留原始署名与改编声明，遵守非商业性使用／相同方式共享条件，并核查第三方材料的例外情况。不要推定宿主工具的 MIT 许可也适用于本技能。本技能包的声明不会改变 GameMap 其余部分的许可，也不意味着由此产出的每个游戏都会自动继承本改编的许可。
 
-1. **写简报**：明确体验目标、核心活动、开始与结束条件、风险和不做的内容。
-2. **画结构**：选路线图、平面图、剖面或节奏表中最便宜有效的一种，不要求全部都做。
-3. **做可玩切片**：用真实的移动、碰撞、交互和敌人能力，尽早测试最不确定的关系。
-4. **观察试玩**：先写测试问题，区分实际行为、玩家陈述和设计解释。
-5. **小步调整**：用“问题 → 具体位置或复现 → 最小修改 → 验证”的格式记录改动。
-
-如果没有运行环境，就交付清楚标注“未运行”的规格与检查步骤，不要编造游玩时间、成功率或玩家行为。
-
-## 容易误解的地方
-
-- 好看的截图不能证明空间可达、路线清晰或战斗公平。
-- 对称不等于平衡，单人难度也不等于多人公平。
-- 玩家迷路不一定都是问题，要区分有意探索与信息不可读。
-- 灰盒并不意味着可以缺少回答测试问题所必需的交互与反馈。
-- 这套材料主要面向 3D；用于 2D、开放世界等场景时，需要说明假设发生了什么变化。
-
-## 许可必须保留
-
-原书由 **Robert Yang** 发起并主要撰写/编辑，贡献者包括 **Andrew Yoder**。改编包采用 **CC BY-NC-SA 4.0**：需要署名、遵守非商业使用和相同方式共享条件，并检查第三方内容的例外。宿主工具的 MIT 许可不会覆盖这份材料。
-
-Skill 是社区改编包，原始指南、引用和模板保持英文。这份中文导读按同样的 **CC BY-NC-SA 4.0** 条件提供；改编与署名说明见[完整许可](../skills/level-design/LICENSE.md)，原书见 [The Level Design Book](https://book.leveldesignbook.com/)。
+原书由  **Robert Yang**  创立并主要撰写／编辑，贡献者包括  **Andrew Yoder** 。这是社区改编版本。所提供的英文原包文件保持不变，本目录为完整的简体中文译本；其[来源映射](skills/level-design/references/source-map.md)记录了阅读快照与未完成章节。

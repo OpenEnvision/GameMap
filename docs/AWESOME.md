@@ -5,12 +5,12 @@
 **110 curated primary sources** connecting coding agents, game engines, AI for 2D and 3D development, production tools, and code world models. Main source review date: **October 18, 2026**. This is a research snapshot: reviewing a source does not imply reproducing its results or continuously monitoring it.
 
 - [Interactive GameMap website — GitHub Pages](https://openenvision.github.io/GameMap/)
-- [A practical guide from resources to a working project](docs/practical-guide.md)
-- [Production research: interfaces, evidence and generative-service boundaries](docs/research-index.md)
-- [Tutorials, playable demos, and complete example-game source](docs/tutorials-and-demos.md)
-- [Coding agents × games: skills, bridges, evaluations, and game code](docs/coding-agent-game-code.md)
-- [Testing library: games, AI environments, assets, rigs, and motion data](docs/game-testing-library.md)
-- [Contributing and data maintenance](CONTRIBUTING.md) · [Structured JSON](data/resources.json)
+- [A practical guide from resources to a working project](practical-guide.md)
+- [Production research: interfaces, evidence and generative-service boundaries](research-index.md)
+- [Tutorials, playable demos, and complete example-game source](tutorials-and-demos.md)
+- [Coding agents × games: skills, bridges, evaluations, and game code](coding-agent-game-code.md)
+- [Testing library: games, AI environments, assets, rigs, and motion data](game-testing-library.md)
+- [Contributing and data maintenance](../CONTRIBUTING.md) · [Structured JSON](../data/resources.json)
 
 ## How to read the map
 
@@ -1143,11 +1143,11 @@ Tags: `scene-generation` · `explicit-3d` · `Gaussian-splatting` · `mesh-expor
 
 ## Further reading and practice
 
-- [Agents: models, harnesses, skills, and MCP](docs/agents-notes.md)
-- [Engine ecosystems: documentation, source, tests, and community practice](docs/engines-notes.md)
-- [AI for 2D and 3D: evaluation versions, asset pipelines, and release boundaries](docs/game-ai-notes.md)
-- [World models: code state, hybrid rendering, video simulation, and explicit 3D](docs/world-model-notes.md)
-- [Practical guide: task contracts, asset import, validation, and reproduction](docs/practical-guide.md)
+- [Agents: models, harnesses, skills, and MCP](agents-notes.md)
+- [Engine ecosystems: documentation, source, tests, and community practice](engines-notes.md)
+- [AI for 2D and 3D: evaluation versions, asset pipelines, and release boundaries](game-ai-notes.md)
+- [World models: code state, hybrid rendering, video simulation, and explicit 3D](world-model-notes.md)
+- [Practical guide: task contracts, asset import, validation, and reproduction](practical-guide.md)
 
 ## Maintenance
 
