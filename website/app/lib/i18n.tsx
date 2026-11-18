@@ -9,7 +9,6 @@ import {
 } from "react";
 import {
   Link as RouterLink,
-  NavLink as RouterNavLink,
   useLocation,
   useNavigate as useRouterNavigate,
   type To,
@@ -68,12 +67,32 @@ export function Link({ to, ...props }: ComponentProps<typeof RouterLink>) {
   const { href } = useSiteI18n();
   return <RouterLink to={localizedTo(to, href)} {...props} />;
 }
+/** Pages are prerendered at "/examples" but served and hydrated at "/examples/".
+ *  Comparing slash-normalized paths keeps static and hydrated markup identical. */
+export const withTrailingSlash = (path: string) =>
+  path.endsWith("/") || /\.[^/]+$/.test(path) ? path : path + "/";
 export function NavLink({
   to,
+  className,
   ...props
-}: ComponentProps<typeof RouterNavLink>) {
+}: ComponentProps<typeof RouterLink>) {
   const { href } = useSiteI18n();
-  return <RouterNavLink to={localizedTo(to, href)} {...props} />;
+  const { pathname } = useLocation();
+  const target = localizedTo(to, href);
+  const targetPath =
+    typeof target === "string" ? target.split(/[?#]/)[0] : target.pathname || "";
+  const current = withTrailingSlash(pathname);
+  const wanted = withTrailingSlash(targetPath);
+  const active =
+    wanted === "/" ? current === "/" : current.startsWith(wanted);
+  return (
+    <RouterLink
+      to={target}
+      className={[className, active && "active"].filter(Boolean).join(" ")}
+      aria-current={active ? "page" : undefined}
+      {...props}
+    />
+  );
 }
 export function useNavigate(): NavigateFunction {
   const navigate = useRouterNavigate(),
@@ -104,7 +123,9 @@ export function LanguageSwitcher({
           )}
           <RouterLink
             to={localizedPath(
-              location.pathname + location.search + location.hash,
+              withTrailingSlash(location.pathname) +
+                location.search +
+                location.hash,
               language,
               documents,
             )}
