@@ -1,5 +1,5 @@
 import type { Dimension } from "../src/types";
-import retiredDocumentRoutes from "./document-redirects.json";
+import retiredDocumentRoutes from "./document-redirects.json" with { type: "json" };
 
 export const documentRedirects: Record<string, string> = retiredDocumentRoutes;
 export function retiredDocumentTarget(pathname: string, base = "/") {
