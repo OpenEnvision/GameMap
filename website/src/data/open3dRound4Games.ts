@@ -739,10 +739,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Beware the Living Room",
-      "url": "https://github.com/100-Devs-1-Game/BewareTheLivingRoom",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://100devs.itch.io/beware-the-living-room",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (Windows V10.16.25.02 72 MB; Linux V10.16.25.01 65 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -784,10 +784,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Boatconf",
-      "url": "https://gitlab.com/remram44/boatconf",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://remram44.itch.io/boatconf",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (boatconf-macos.zip 14 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -829,10 +829,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Dreams of Fire",
-      "url": "https://github.com/TwistedTwigleg/Dreams_of_Fire",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://twistedtwigleg.itch.io/dreams-of-fire",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (Dreams_of_Fire_Linux.zip 30 MB; Dreams_of_Fire_MacOS.zip 27 MB; Dreams_of_Fire_Windows.zip 26 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -919,10 +919,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Goddel",
-      "url": "https://codeberg.org/Goddel/Goddel",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://rbduck.itch.io/goddel",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (Goddel_dev2_linux.zip 64 MB; Goddel_dev2_win.zip 73 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -964,10 +964,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for grGRIDid",
-      "url": "https://bitbucket.org/JohnGabrielUK/grgridid",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://johngabrieluk.itch.io/grgridid",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (Windows 15 MB; macOS 28 MB; Linux 16 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1009,10 +1009,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for HackB0t",
-      "url": "https://github.com/MJ-meo-dmt/godot-gamejam",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://mj-meo-dmt.itch.io/hackb0t",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (Hackbot_linux_64.7z 5.3 MB; Hackbot_windows_64.7z 8 MB; Custom Engine build linux 64 bit External), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1099,10 +1099,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Mildly Haunted",
-      "url": "https://github.com/nuzcraft/mildly_haunted",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://nuzcraft.itch.io/mildly-haunted",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (MildlyHaunted_v1.3_windows.zip 30 MB; MildlyHaunted_v1.3_linux.zip 31 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1144,10 +1144,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Pinball But It's Only Multiball",
-      "url": "https://github.com/FigyTuna/Multiball",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://figytuna.itch.io/pinball-but-its-only-multiball",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (Multiball_Linux64.zip 11 MB; Multiball_Linux32.zip 13 MB; Multiball_Win32.zip 10 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1234,10 +1234,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Pixel Sabotage Adventure",
-      "url": "https://codeberg.org/rubberduck99/PixelSabotageAdventure",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://rbduck.itch.io/pixel-sabotage-adventure",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (PixelSabotageAdventure_Windows.zip 87 MB; PixelSabotageAdventure_Linux.zip 79 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1279,10 +1279,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Segmentation_Fault",
-      "url": "https://gitlab.com/newyearstudios/ritual-jam",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://newyearstudios.itch.io/segmentation-fault",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (Seg_Fault_Linux.zip 126 MB; Seg_Fault_OSX.zip 142 MB; Seg_Fault_Windows.zip 121 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1324,10 +1324,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Solaria",
-      "url": "https://gitlab.com/atorresm/solaria",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://papaya-games.itch.io/solaria",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (solaria-1.0-linux.zip 27 MB; solaria-1.0-windows.zip 25 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1549,10 +1549,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Windy Seas",
-      "url": "https://github.com/kodiitulip/windy-seas",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://kodiitulip.itch.io/windy-seas",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (Windy Seas - Linux 53 MB; WindySeas - Windows 61 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1594,10 +1594,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Camp Shepherd",
-      "url": "https://github.com/dallonf/gmtk2018-towercar",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://meanwhile.itch.io/camp-shepherd",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (Camp Shepherd v1.0.1 - Windows.zip 28 MB; Camp Shepherd - macOS.zip 32 MB; Camp Shepherd - Linux.zip 33 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1639,10 +1639,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Living Dead",
-      "url": "https://github.com/Aayush-Gangwar/Living-Dead-Fps_3d_shooting-game",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://aayush21.itch.io/living-dead",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (Living Dead (Windows PC) 149 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1954,10 +1954,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Ghostie Hunt",
-      "url": "https://github.com/madmonki/GhostieHunt",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://madmonki.itch.io/ghostie-hunt",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (GhostieHunt-LinuxPostJamFinal.zip 205 MB; GhostieLDJ56-LinuxBuild.zip 182 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2044,10 +2044,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Pirate Bay",
-      "url": "https://github.com/Empheon/GGJ21",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://pandamnesik.itch.io/pirate-bay",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (Pirate Bay - Windows 153 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2089,10 +2089,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Poladroïd",
-      "url": "https://github.com/LeoSery/Project-Poladroide--UnrealEngine5-2024",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://leosery.itch.io/poladroid",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (Poladroid_V1.0_OSX_x64.zip 838 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2134,10 +2134,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Rootin n’ Shootin",
-      "url": "https://github.com/henriksen-marcus/Game-Jam-2023",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Rootin n’ Shootin",
+      "url": "https://github.com/henriksen-marcus/Game-Jam-2023/releases/tag/v1.0.0",
+      "kind": "download",
+      "note": "The author README describes the Windows executable distribution, and the release asset list publishes the named archive. Checked on 2026-11-18; no package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2269,10 +2269,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Six Shootin’ Cats",
-      "url": "https://github.com/momojohobo/pyweek27-six",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows build",
+      "url": "https://s3.eu-west-2.amazonaws.com/media.pyweek.org/27/secretgame/SixShootinCats-0.0.0_win_amd64.zip",
+      "kind": "download",
+      "note": "Author competition entry links the platform-specific Windows binary archive. HEAD response checked on 2026-11-18; no package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2359,10 +2359,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for The Martian Thirst",
-      "url": "https://codeberg.org/Simulan/pyweek34-redplanet",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows build",
+      "url": "https://s3.eu-west-2.amazonaws.com/media.pyweek.org/34/GMars/martian-thirst-1.0.0_win_amd64.zip",
+      "kind": "download",
+      "note": "Author competition entry links the platform-specific Windows binary archive. HEAD response checked on 2026-11-18; no package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2449,10 +2449,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for 3D game experiment (Akuli)",
-      "url": "https://github.com/Akuli/3d-game-experiment",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download 3D game experiment (Akuli)",
+      "url": "https://github.com/Akuli/3d-game-experiment/releases/tag/master-2021-12-30",
+      "kind": "download",
+      "note": "The author README describes the Windows executable distribution, and the release asset list publishes the named archive. Checked on 2026-11-18; no package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2629,10 +2629,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Digital Extinction",
-      "url": "https://github.com/DigitalExtinction/Game",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Linux nightly build",
+      "url": "https://download.de-game.org/x86_64-unknown-linux-gnu/nightly.zip",
+      "kind": "download",
+      "note": "Author project homepage links native Linux, Windows and macOS nightly packages. The Linux package HEAD response returned HTTP 200 with application/x-zip-compressed on 2026-11-18. No package was downloaded, installed or run; nightly builds are described by the author as potentially unstable."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2854,10 +2854,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Laborgeist",
-      "url": "https://github.com/Some-Bevy-Jam-7-Team/jam",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://janhohenheim.itch.io/laborgeist",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (laborgeist-linux.zip 449 MB; laborgeist-win.zip 440 MB; laborgeist-macos.zip 450 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2944,10 +2944,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Maze Ascension: The Labyrinth of Echoes",
-      "url": "https://github.com/kristoferssolo/maze-ascension",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://kristoferssolo.itch.io/maze-ascension",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (maze-ascension-linux.zip 20 MB; maze-ascension-macos.dmg 38 MB; maze-ascension-windows.zip 16 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3034,10 +3034,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Not Snake",
-      "url": "https://github.com/ramirezmike/not_snake_game",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://ramirezmike2.itch.io/not-snake",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (not_snake-windows-v1.4.1.zip 26 MB; not_snake-macos-v1.4.1.dmg 29 MB; not_snake-linux-v1.4.1.zip 30 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3124,10 +3124,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Pilot Garden",
-      "url": "https://github.com/carrascomj/pilot_garden",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View author downloads",
+      "url": "https://carrascomj.itch.io/pilot-garden",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (pilot-garden-linux.zip 36 MB; pilot_garden-macos-0.4.1.dmg 41 MB; pilot_garden-macos-arm64-0.4.1.dmg 39 MB; pilot-garden-windows.zip 35 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",

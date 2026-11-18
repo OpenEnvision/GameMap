@@ -798,7 +798,8 @@ test("optional native v2 contracts preserve installed v1 payloads and historical
     }
     if (
       record.kind === "example" &&
-      record.body.payload.demo.kind === "source"
+      (record.body.payload.demo.kind === "source" ||
+        record.body.payload.source.scope === "unverified-project")
     ) {
       assert.equal(record.schema_version, 8);
       assert.equal(
@@ -814,7 +815,7 @@ test("optional native v2 contracts preserve installed v1 payloads and historical
         true,
       );
       record.schema_version = 4;
-      continue; // Preserve the installed source-only v4 reader.
+      continue; // Source verification remains a v4 distinction even after a separately verified demo upgrade.
     }
     if (
       record.kind === "example" &&

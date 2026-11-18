@@ -6,6 +6,19 @@ const raw = JSON.parse(
   await readFile("data/segments/open-3d-import.json", "utf8"),
 );
 const context = await loadContent();
+const mediaReview = await readFile(
+  "data/segments/open-3d-round5-media.json",
+  "utf8",
+)
+  .then(JSON.parse)
+  .catch((error) => {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  });
+const verifiedDemos = new Map(
+  (mediaReview?.demos.records || []).map((row) => [row.id, row.demo]),
+);
+
 const entries = context.registry
   .all("example")
   .filter((e) => e.data.intake?.sha256 === raw.source.sha256);
@@ -43,8 +56,12 @@ test("v4 source-only records cannot masquerade as verified playable builds and p
   for (const entry of entries) {
     const data = entry.data;
     context.versionedContracts.example[4].payload.parse(data);
-    assert.equal(data.demo.kind, "source");
-    assert.equal(data.demo.url, data.source.url);
+    if (verifiedDemos.has(entry.id))
+      assert.deepEqual(data.demo, verifiedDemos.get(entry.id));
+    else {
+      assert.equal(data.demo.kind, "source");
+      assert.equal(data.demo.url, data.source.url);
+    }
     assert.equal(data.source.scope, "unverified-project");
     assert.equal(data.intake.dataset, "open_3d_games_2026-10-24.jsonl");
     assert.equal(
@@ -63,6 +80,7 @@ test("v4 source-only records cannot masquerade as verified playable builds and p
     context.versionedContracts.example[4].payload.parse(data),
   );
   const wrong = structuredClone(entries[0].data);
+  wrong.demo.kind = "source";
   wrong.demo.url = "https://example.org/not-the-source";
   assert.throws(() =>
     context.versionedContracts.example[4].payload.parse(wrong),

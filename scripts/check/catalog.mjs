@@ -1,3 +1,4 @@
+import { validateSourceDemoScope } from "../lib/round5-media.mjs";
 import { inspectMp4 } from "../lib/mp4.mjs";
 import assert from "node:assert/strict";
 import { readFile, readdir } from "node:fs/promises";
@@ -32,6 +33,34 @@ import {
   validateRepositoryResearch,
   renderRepositoryResearch,
 } from "../lib/guides/repository-research.mjs";
+const round5LedgerURL = new URL(
+  "../../data/segments/open-3d-round5-media.json",
+  import.meta.url,
+);
+const round5LedgerText = await readFile(round5LedgerURL, "utf8").catch(
+  (error) => {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  },
+);
+const reviewedDemoDecisions = new Map(
+  (round5LedgerText === null
+    ? []
+    : JSON.parse(round5LedgerText).demos.records
+  ).map((row) => [row.id, row]),
+);
+const frozenDemoBaselines =
+  round5LedgerText === null
+    ? {}
+    : JSON.parse(
+        await readFile(
+          new URL(
+            "../../website/content/round5-media.config.json",
+            import.meta.url,
+          ),
+          "utf8",
+        ),
+      ).baselineDemos;
 // Source checks work on a clean clone; --built additionally verifies local build output.
 const checkBuilt = process.argv.includes("--built");
 const records = validate(await loadCatalog());
@@ -173,14 +202,10 @@ for (const path of learningPaths) {
     path.evidence.url,
     `Missing creator evidence from Examples: ${path.id}`,
   );
-  assert.equal(
-    path.source.scope,
-    path.demo.kind === "source"
-      ? "unverified-project"
-      : path.demo.kind === "reference"
-        ? "project-reference"
-        : "complete-project",
-    `Do not certify an unreviewed source reference as a complete project: ${path.id}`,
+  validateSourceDemoScope(
+    path,
+    reviewedDemoDecisions.get(path.id),
+    frozenDemoBaselines[path.id],
   );
   assert.ok(
     ["prompt", "build-log", "tutorial", "quickstart", "disclosure"].includes(
@@ -405,6 +430,35 @@ if (checkBuilt)
 const screenshotCredits = new Map(
   JSON.parse(screenshotLedgerText).records.map((row) => [row.id, row]),
 );
+// The expanded media pass publishes a separate attribution ledger; absence is
+// valid until its first complete review is imported. Never fall back to invented credits.
+if (round5LedgerText !== null) {
+  const publicPath = "open-3d-round5-media-sources.json";
+  assert.equal(
+    await readFile(
+      new URL("../../website/public/" + publicPath, import.meta.url),
+      "utf8",
+    ),
+    round5LedgerText,
+    "Expanded screenshot evidence differs from its reviewed ledger",
+  );
+  if (checkBuilt)
+    assert.equal(
+      await readFile(
+        new URL("../../dist/" + publicPath, import.meta.url),
+        "utf8",
+      ),
+      round5LedgerText,
+      "Rebuild expanded screenshot evidence download",
+    );
+  for (const row of JSON.parse(round5LedgerText).records) {
+    assert.ok(
+      !screenshotCredits.has(row.id),
+      `Conflicting screenshot attribution: ${row.id}`,
+    );
+    screenshotCredits.set(row.id, row);
+  }
+}
 let gameplayPreviewBytes = 0;
 for (const path of learningPaths) {
   const preview = learningMedia[path.id],

@@ -3349,10 +3349,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for OUT OF REACH",
-      "url": "https://github.com/alex-slovakia/out-of-reach",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows build",
+      "url": "https://github.com/alex-slovakia/out-of-reach/releases/tag/spaceapps-2026-final",
+      "kind": "download",
+      "note": "Author README identifies Windows game builds; the release page and expanded binary asset list were inspected on 2026-11-18. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4249,10 +4249,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Opus vs Sol",
-      "url": "https://github.com/privatekey7/opus-vs-sol",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows build",
+      "url": "https://github.com/privatekey7/opus-vs-sol/releases/tag/v1.0.0",
+      "kind": "download",
+      "note": "Author README identifies Windows game builds; the release page and expanded binary asset list were inspected on 2026-11-18. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4744,10 +4744,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Supermarket Simulator",
-      "url": "https://github.com/breineng/supermarket-simulator",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Supermarket Simulator for Windows",
+      "url": "https://github.com/breineng/supermarket-simulator/releases/tag/0.0.1",
+      "kind": "download",
+      "note": "Author README identifies SupermarketSimulator.zip as the Windows game build containing Supermaket Simulator.exe; the release asset listing was checked on 2026-11-18. No binary was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -5644,10 +5644,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for FableFlight",
-      "url": "https://github.com/Rolandjg/fableflight",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download game",
+      "url": "https://github.com/Rolandjg/fableflight/releases/tag/v1.0.1",
+      "kind": "download",
+      "note": "The author README links the game release download; its release lists platform-specific game distributions separately from source archives and checksums. Author release asset listing checked on 2026-11-18. No binary was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -5869,10 +5869,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Hexcrown (Source Directory)",
-      "url": "https://github.com/kvladsrc/gym/tree/main/games/realms",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download game",
+      "url": "https://zjgkkn.itch.io/hexcrown",
+      "kind": "download",
+      "note": "The author game page explicitly labels downloadable Windows and Linux builds and lists hexcrown-windows.zip and hexcrown-linux.zip, each 1 GB. Author page checked on 2026-11-18. No binary was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -5959,10 +5959,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Ironvale",
-      "url": "https://github.com/SharpWizard/ironvale",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download game",
+      "url": "https://github.com/SharpWizard/ironvale/releases/tag/v1.0",
+      "kind": "download",
+      "note": "The README identifies Ironvale.exe as a portable Windows game containing the whole game and working offline. Author release asset listing checked on 2026-11-18. No binary was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -8659,10 +8659,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for PokeBrawl",
-      "url": "https://github.com/xjoje6/PokeBrawl",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download game",
+      "url": "https://github.com/xjoje6/PokeBrawl/releases/tag/demo",
+      "kind": "download",
+      "note": "The README identifies the release as the Windows build, instructing players to unzip it and run PokeBrawl.exe. Author release asset listing checked on 2026-11-18. No binary was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -9604,10 +9604,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Last Light Academy",
-      "url": "https://github.com/SadManQT/Last-Light-Academy",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows and macOS builds",
+      "url": "https://github.com/SadManQT/Last-Light-Academy/releases/tag/v0.1.0-final.20261113",
+      "kind": "download",
+      "note": "Author README and release metadata identify native game builds; the expanded release asset list was inspected on 2026-11-18. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -9874,10 +9874,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Alchemists of Prague",
-      "url": "https://github.com/msveshnikov/alchemists-of-prague",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows and Android builds",
+      "url": "https://github.com/msveshnikov/alchemists-of-prague/releases/tag/v1.2",
+      "kind": "download",
+      "note": "Author README and release metadata identify native game builds; the expanded release asset list was inspected on 2026-11-18. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -10459,10 +10459,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Blocks Beyond the Stars",
-      "url": "https://github.com/marceld23/BlocksBeyondTheStars",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows, Linux and macOS builds",
+      "url": "https://github.com/marceld23/BlocksBeyondTheStars/releases/tag/v2026.11.22",
+      "kind": "download",
+      "note": "Author README and release metadata identify native game builds; the expanded release asset list was inspected on 2026-11-18. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -12844,10 +12844,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Castle Vibes",
-      "url": "https://github.com/michaliskambi/castle-vibes",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows and Linux builds",
+      "url": "https://github.com/michaliskambi/castle-vibes/releases/tag/snapshot",
+      "kind": "download",
+      "note": "Author README and release metadata identify native game builds; the expanded release asset list was inspected on 2026-11-18. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -13069,10 +13069,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Depthbound",
-      "url": "https://github.com/Augustforge/Forge_Depthbound_mobile_dungeon_game",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows, macOS and Android builds",
+      "url": "https://github.com/Augustforge/Forge_Depthbound_mobile_dungeon_game/releases/tag/v0.5.0",
+      "kind": "download",
+      "note": "Author README and release metadata identify native game builds; the expanded release asset list was inspected on 2026-11-18. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -14509,10 +14509,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for How To Suck",
-      "url": "https://github.com/breineng/how-to-suck",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download game",
+      "url": "https://breineng.itch.io/how-to-suck",
+      "kind": "download",
+      "note": "Author Windows game upload and launch instructions verified on 2026-11-18. No binary was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -14644,10 +14644,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Desert Velocity",
-      "url": "https://github.com/sim7575/desert-velocity",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download game",
+      "url": "https://sim75.itch.io/desert-velocity",
+      "kind": "download",
+      "note": "Author Windows game archive and launch instructions verified on 2026-11-18. No binary was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -15409,10 +15409,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Country Lane",
-      "url": "https://github.com/MingqiZhang0/country-lane-demo-horror-game",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download game",
+      "url": "https://github.com/MingqiZhang0/country-lane-demo-horror-game/releases/tag/v0.1.1-demo",
+      "kind": "download",
+      "note": "Author release instructions and Windows distribution asset verified on 2026-11-18. No binary was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -17569,10 +17569,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Hollowreach",
-      "url": "https://github.com/Anonymous-Floof/Hollowreach",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download game",
+      "url": "https://github.com/Anonymous-Floof/Hollowreach/releases/tag/v2.18.0",
+      "kind": "download",
+      "note": "Author release instructions and Windows distribution asset verified on 2026-11-18. No binary was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

@@ -3,8 +3,47 @@ import { readFile, writeFile, readdir } from "node:fs/promises";
 import { basename, resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { publicMediaURL } from "../lib/example-media.mjs";
+import { applyPublishedDemos } from "../lib/round5-media.mjs";
+import { writeIfChanged } from "../lib/files.mjs";
 const args = process.argv.slice(2),
   option = (name) => args[args.indexOf(name) + 1];
+// Refresh only generated demo fields without rewriting intake receipts or translations.
+// The normal import below consumes the same ledger, so a later import cannot erase verification.
+if (args.includes("--refresh-demos")) {
+  const refreshRound = args.includes("--round") ? Number(option("--round")) : 5;
+  assert.ok([1, 2, 3, 4, 5].includes(refreshRound));
+  const module =
+    refreshRound === 1 ? "open3dGames" : `open3dRound${refreshRound}Games`;
+  const path = resolve(
+    import.meta.dirname,
+    `../../website/src/data/${module}.ts`,
+  );
+  const source = await readFile(path, "utf8");
+  const marker = `export const ${module}: LearningPath[] = `;
+  const start = source.indexOf(marker);
+  assert.ok(start >= 0, "Expected generated JSON array module");
+  const encoded = source.slice(start + marker.length).trim();
+  assert.ok(encoded.endsWith(";"));
+  const entries = JSON.parse(encoded.slice(0, -1));
+  const refreshed = await applyPublishedDemos(entries);
+  if (!args.includes("--dry-run"))
+    await writeIfChanged(
+      path,
+      source.slice(0, start + marker.length) +
+        JSON.stringify(refreshed, null, 2) +
+        ";\n",
+    );
+  console.log(
+    JSON.stringify({
+      round: refreshRound,
+      examples: entries.length,
+      upgraded: refreshed.filter((entry) => entry.demo.kind !== "source")
+        .length,
+      dryRun: args.includes("--dry-run"),
+    }),
+  );
+  process.exit(0);
+}
 for (const name of ["--input", "--translations", "--baseline"])
   assert.ok(args.includes(name), "Required: " + name);
 const round = args.includes("--round") ? Number(option("--round")) : 1;
@@ -374,6 +413,8 @@ if (previous)
     previous.newExampleIds,
     "Do not overwrite previously generated rows using a post-import baseline",
   );
+const verified = await applyPublishedDemos(examples);
+for (let i = 0; i < examples.length; i++) examples[i].demo = verified[i].demo;
 await output("data/segments/open-3d-import" + suffix + ".json", raw);
 await output("website/public/open-3d-games-import" + suffix + ".json", raw);
 await output(
@@ -436,7 +477,7 @@ console.log(
       newExamples: examples.length,
       reused: games.length - examples.length,
       excluded: raw.excludedIds.length,
-      sourceOnly: true,
+      sourceOnly: examples.every((entry) => entry.demo.kind === "source"),
     },
     null,
     2,

@@ -14,6 +14,8 @@ import {
   normalizeScreenshot,
 } from "../lib/example-media.mjs";
 
+import { excludeMigratedLegacyGaps } from "../lib/round5-media.mjs";
+
 const root = resolve(import.meta.dirname, "../.."),
   args = process.argv.slice(2);
 const option = (key, fallback) =>
@@ -33,9 +35,26 @@ const selectedWorkRoot =
     await readFile(resolve(root, ".build/example-media/work.json"), "utf8"),
   ).workRoot;
 const workRoot = await realpath(resolve(selectedWorkRoot));
-const jobs = new Map(intake.jobs.map((row) => [row.id, row]));
+const expandedLedger = await readFile(
+  resolve(root, "data/segments/open-3d-round5-media.json"),
+  "utf8",
+)
+  .then(JSON.parse)
+  .catch((error) => {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  });
+const migrated = new Set(expandedLedger?.scopeIds || []);
+const jobs = new Map(
+  intake.jobs
+    .filter((row) => !migrated.has(row.id))
+    .map((row) => [row.id, row]),
+);
 const ledgerPath = resolve(root, "data/segments/jam-game-media.json");
-const previous = JSON.parse(await readFile(ledgerPath, "utf8"));
+const previous = excludeMigratedLegacyGaps(
+  JSON.parse(await readFile(ledgerPath, "utf8")),
+  migrated,
+);
 const reports = [];
 for (const name of (await readdir(reportsPath))
   .filter((name) => name.endsWith(".json"))
@@ -54,6 +73,7 @@ const selected = new Map(),
   gaps = new Map();
 for (const report of reports) {
   for (const row of report.missing) {
+    if (migrated.has(row.id)) continue;
     assert.ok(jobs.has(row.id), `Unknown missing game ${row.id}`);
     gaps.set(row.id, {
       id: row.id,
@@ -62,6 +82,7 @@ for (const report of reports) {
     });
   }
   for (const row of report.accepted) {
+    if (migrated.has(row.id)) continue;
     assert.ok(jobs.has(row.id), `Unknown selected game ${row.id}`);
     assert.ok(
       !selected.has(row.id),

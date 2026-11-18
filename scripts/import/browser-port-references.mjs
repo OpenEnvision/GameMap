@@ -1,3 +1,4 @@
+import { applyPublishedDemos } from "../lib/round5-media.mjs";
 import assert from "node:assert/strict";
 import { readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
@@ -223,7 +224,7 @@ await output("website/public/browser-port-research.json", raw);
 await output(
   "website/src/data/browserPortGames.ts",
   "// Explicit source and project references; no games or proprietary assets executed.\nimport type { LearningPath } from './learningTypes';\nexport const browserPortGames: LearningPath[] = " +
-    JSON.stringify(games, null, 2) +
+    JSON.stringify(await applyPublishedDemos(games), null, 2) +
     ";\n",
 );
 await output(

@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFile, stat } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { loadContent } from "../../scripts/lib/content.mjs";
+import { validateDemoDecision } from "../../scripts/lib/round5-media.mjs";
 import { normalizePr63Game } from "../../scripts/lib/threejs-games-intake.mjs";
 const archiveAvailable = await stat("collections/threejs-games")
   .then(() => true)
@@ -22,6 +23,18 @@ const read = async (p) => JSON.parse(await readFile(p, "utf8")),
   r2 = await read("data/segments/open-3d-import-round2.json"),
   r3 = await read("data/segments/open-3d-import-round3.json"),
   itch = await read("data/segments/itch-3d-import.json");
+
+const mediaReview = await read("data/segments/open-3d-round5-media.json").catch(
+  (error) => {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  },
+);
+const verifiedDemos = new Map(
+  (mediaReview?.demos.records || []).map((row) => [row.id, row]),
+);
+const frozenBaselines = (await read("website/content/round5-media.config.json"))
+  .baselineDemos;
 
 test("pinned import policy stays versioned independently of the optional local archive", () => {
   assert.equal(pr.head, "409260b610f46f11a857b78b96a89879728d350a");
@@ -133,8 +146,21 @@ test("second and third supplied directories remain separate, complete and dedupl
   for (const id of ids) {
     const e = context.registry.require("example", id);
     context.versionedContracts.example[4].payload.parse(e.data);
-    assert.equal(e.data.demo.kind, "source");
-    assert.equal(e.data.demo.url, e.data.source.url);
+    const decision = verifiedDemos.get(id);
+    if (decision) {
+      validateDemoDecision(decision, e.data);
+      assert.deepEqual(e.data.demo, decision.demo);
+      assert.equal(e.data.source.url, decision.sourceUrl);
+      assert.equal(frozenBaselines[id]?.kind, "source");
+      assert.equal(
+        e.data.source.url,
+        frozenBaselines[id].url,
+        "Preserve the original source URL when upgrading a demo",
+      );
+    } else {
+      assert.equal(e.data.demo.kind, "source");
+      assert.equal(e.data.demo.url, e.data.source.url);
+    }
     assert.equal(e.data.source.scope, "unverified-project");
     assert.match(e.data.intake.verification, /not independently/);
     assert.doesNotMatch(

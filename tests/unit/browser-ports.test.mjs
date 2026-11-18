@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
+import { validateDemoDecision } from "../../scripts/lib/round5-media.mjs";
 import { loadContent } from "../../scripts/lib/content.mjs";
 const context = await loadContent(),
   round4 = JSON.parse(
@@ -9,6 +10,21 @@ const context = await loadContent(),
   ports = JSON.parse(
     await readFile("data/segments/browser-port-research.json", "utf8"),
   );
+const mediaReview = await readFile(
+  "data/segments/open-3d-round5-media.json",
+  "utf8",
+)
+  .then(JSON.parse)
+  .catch((error) => {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  });
+const verifiedDemos = new Map(
+  (mediaReview?.demos.records || []).map((row) => [row.id, row]),
+);
+const frozenBaselines = JSON.parse(
+  await readFile("website/content/round5-media.config.json", "utf8"),
+).baselineDemos;
 test("fourth directory retains all 88 original rows and admits only 75 game/prototype identities", () => {
   assert.equal(round4.inputRecords.length, 88);
   assert.equal(round4.mappings.length, 75);
@@ -21,7 +37,27 @@ test("fourth directory retains all 88 original rows and admits only 75 game/prot
   for (const id of round4.newExampleIds) {
     const e = context.registry.require("example", id);
     context.versionedContracts.example[4].payload.parse(e.data);
-    assert.equal(e.data.demo.kind, "source");
+    const decision = verifiedDemos.get(id);
+    if (decision) {
+      validateDemoDecision(decision, e.data);
+      assert.deepEqual(e.data.demo, decision.demo);
+      assert.equal(e.data.source.url, decision.sourceUrl);
+      assert.equal(frozenBaselines[id]?.kind, "source");
+      assert.equal(
+        e.data.source.url,
+        frozenBaselines[id].url,
+        "Preserve the original source URL when upgrading a demo",
+      );
+    } else {
+      assert.equal(e.data.demo.kind, "source");
+      assert.equal(e.data.demo.url, e.data.source.url);
+    }
+    const original = round4.inputRecords.find(
+      (row) => row.id === e.data.intake.rowId,
+    );
+    assert.ok(original, `Missing original intake row: ${id}`);
+    assert.equal(e.data.source.url, original.repo_url);
+    assert.equal(e.data.source.scope, "unverified-project");
     assert.ok(context.translationCatalogs.zh.content[e.key]?.description);
   }
 });

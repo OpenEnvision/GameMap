@@ -1,3 +1,4 @@
+import { applyPublishedDemos } from "../lib/round5-media.mjs";
 import assert from "node:assert/strict";
 import { readFile, writeFile } from "node:fs/promises";
 import { basename, resolve } from "node:path";
@@ -385,7 +386,7 @@ await output("website/public/itch-3d-games-import.json", raw);
 await output(
   "website/src/data/itch3dGames.ts",
   "// Generated supplied-directory intake; not independent source/runtime verification.\nimport type { LearningPath } from './learningTypes';\nexport const itch3dGames: LearningPath[] = " +
-    JSON.stringify(examples, null, 2) +
+    JSON.stringify(await applyPublishedDemos(examples), null, 2) +
     ";\n",
 );
 await output(

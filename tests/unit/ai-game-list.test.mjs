@@ -6,6 +6,18 @@ const context = await loadContent(),
   raw = JSON.parse(
     await readFile("data/segments/open-3d-import-round5.json", "utf8"),
   );
+const mediaReview = await readFile(
+  "data/segments/open-3d-round5-media.json",
+  "utf8",
+)
+  .then(JSON.parse)
+  .catch((error) => {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  });
+const verifiedDemos = new Map(
+  (mediaReview?.demos.records || []).map((row) => [row.id, row.demo]),
+);
 const entries = context.registry
   .all("example")
   .filter((entry) => entry.data.intake?.sha256 === raw.source.sha256);
@@ -45,13 +57,17 @@ test("the AI game list keeps all 411 supplied rows and imports only new, reachab
   assert.equal(raw.mappings.length, 410);
 });
 
-test("imported AI list games are source-only and validate against the current example contract", () => {
+test("imported AI list games remain source-only unless a reviewed demo ledger verifies an upgrade", () => {
   const latest = context.contentKinds.example.schemaVersion;
   for (const entry of entries) {
     const data = entry.data;
     context.versionedContracts.example[latest].payload.parse(data);
-    assert.equal(data.demo.kind, "source");
-    assert.equal(data.demo.url, data.source.url);
+    if (verifiedDemos.has(entry.id))
+      assert.deepEqual(data.demo, verifiedDemos.get(entry.id));
+    else {
+      assert.equal(data.demo.kind, "source");
+      assert.equal(data.demo.url, data.source.url);
+    }
     assert.equal(data.source.scope, "unverified-project");
     assert.equal(data.category, "community");
     assert.equal(data.intake.dataset, "ai_3d_game_list_round5.jsonl");

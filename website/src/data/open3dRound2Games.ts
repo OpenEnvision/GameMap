@@ -874,10 +874,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Back Into the Cave",
-      "url": "https://bitbucket.org/JohnGabrielUK/back-into-the-cave",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Back Into the Cave",
+      "url": "https://johngabrieluk.itch.io/back-into-the-cave",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1054,10 +1054,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Drill Deeper",
-      "url": "https://gitlab.com/remram44/drill-deeper",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Drill Deeper",
+      "url": "https://remram44.itch.io/drill-deeper",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1234,10 +1234,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Gnome Space Program",
-      "url": "https://github.com/Sushutt/Gnome-Space-Program",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Gnome Space Program",
+      "url": "https://sushut.itch.io/gnome-space-program",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1324,10 +1324,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Maze Flyer",
-      "url": "https://github.com/fractilegames/mazeflyer",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Maze Flyer",
+      "url": "https://fractilegames.itch.io/maze-flyer",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1369,10 +1369,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Melon Crusade",
-      "url": "https://github.com/MechanicalFlower/MelonCrusade",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Melon Crusade",
+      "url": "https://mechanical-flower.itch.io/meloncrusade",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1414,10 +1414,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Penguin's Platforming Christmas Adventure",
-      "url": "https://github.com/wojciech-graj/penguin-platformer",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Penguin's Platforming Christmas Adventure",
+      "url": "https://wojciech-graj.itch.io/penguin-platform",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1459,10 +1459,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Premonition",
-      "url": "https://github.com/Framebuffers/Premonition",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Premonition",
+      "url": "https://framebuffers.itch.io/premonition",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1549,10 +1549,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Red Hat Runner",
-      "url": "https://github.com/gshadows/red-hat-runner",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Red Hat Runner",
+      "url": "https://gshadow.itch.io/red-hat-runner",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1594,10 +1594,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Silmance",
-      "url": "https://github.com/JulioEvencio/silmance",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Silmance",
+      "url": "https://julio-igreja.itch.io/silmance",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1639,10 +1639,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Six Ways to Suffer",
-      "url": "https://github.com/100-Devs-1-Game/Sixwaystosuffer",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Six Ways to Suffer",
+      "url": "https://100devs.itch.io/six-ways-to-suffer",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1864,10 +1864,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for To Shed New Light",
-      "url": "https://github.com/eldskald/to-shed-new-light",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download To Shed New Light",
+      "url": "https://eldskald.itch.io/to-shed-new-light",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1909,10 +1909,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Towards The Sunrise",
-      "url": "https://github.com/AlexNottaBen/Towards-The-Sunrise",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Towards The Sunrise",
+      "url": "https://alexnottaben.itch.io/towards-the-sunrise",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1954,10 +1954,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for VoidQuest",
-      "url": "https://github.com/alex-pyslar/VoidQuest",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download VoidQuest",
+      "url": "https://alexpyslar.itch.io/voidquest",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1999,10 +1999,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Another Night",
-      "url": "https://github.com/DataGreed/LD46",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Another Night",
+      "url": "https://datagreed.itch.io/another-night",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2089,10 +2089,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Crazy Driver",
-      "url": "https://github.com/Antonio-Gorisek/Crazy-Driver",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Crazy Driver",
+      "url": "https://antonio-gorisek.itch.io/crazy-driver-download",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2179,10 +2179,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Fly Dangerous",
-      "url": "https://github.com/jukibom/FlyDangerous",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Fly Dangerous",
+      "url": "https://jukibom.itch.io/fly-dangerous",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2224,10 +2224,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Food Dynasty",
-      "url": "https://github.com/Kesomannen/FoodDynasty",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Food Dynasty",
+      "url": "https://kesomannen69.itch.io/food-dynasty",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2404,10 +2404,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Velocity",
-      "url": "https://github.com/BrokenSt0ne/Velocity",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Velocity",
+      "url": "https://lunakittyyy.itch.io/velocity",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2674,10 +2674,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for pollen.",
-      "url": "https://github.com/rdb/pollen",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download pollen.",
+      "url": "https://rdb.itch.io/pollen",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

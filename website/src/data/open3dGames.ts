@@ -1324,10 +1324,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Hazy Road",
-      "url": "https://github.com/MechanicalFlower/HazyRoad",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Hazy Road",
+      "url": "https://mechanical-flower.itch.io/hazy-road",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1639,10 +1639,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for LibreAim",
-      "url": "https://codeberg.org/Nokorpo/LibreAim",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download LibreAim",
+      "url": "https://antimundo.itch.io/libreaim",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1684,10 +1684,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Lost Souls",
-      "url": "https://github.com/EdiCM/LostSouls",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Lost Souls",
+      "url": "https://edimon4884.itch.io/lost-souls",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1954,10 +1954,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Rooted Shadow",
-      "url": "https://github.com/MechanicalFlower/RootedShadow",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Rooted Shadow",
+      "url": "https://mechanical-flower.itch.io/rooted-shadow",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2134,10 +2134,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Tanks of Freedom II",
-      "url": "https://github.com/P1X-in/tanks-of-freedom-ii",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Tanks of Freedom II",
+      "url": "https://czlowiekimadlo.itch.io/tanks-of-freedom-ii",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2449,10 +2449,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Classroom 404",
-      "url": "https://github.com/Nianyi-GSND-Projects/Classroom-404",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Classroom 404",
+      "url": "https://nianyi-wang.itch.io/classroom-404",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2764,10 +2764,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for november",
-      "url": "https://github.com/Chikanz/november",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download november",
+      "url": "https://snootboop.itch.io/november",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2854,10 +2854,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Red Planet Rampage",
-      "url": "https://github.com/hackerspace-ntnu/Red-Planet-Rampage",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Red Planet Rampage",
+      "url": "https://hackerspace.itch.io/red-planet-rampage",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2944,10 +2944,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for The Machine of Dr. Jeffrey Wright",
-      "url": "https://github.com/MarkusSecundus/TheMachineOfDrJeffreyWright_AdventureGame",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download The Machine of Dr. Jeffrey Wright",
+      "url": "https://markussecundus.itch.io/the-machine-of-dr-jeffrey-wright",
+      "kind": "download",
+      "note": "The author publication is linked to the source repository and lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

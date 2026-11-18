@@ -1,19 +1,9 @@
 {
   "website/src/data/resources.json": {
-    "exports": {
-      "default": {
-        "shape": "array",
-        "kind": "resource"
-      }
-    }
+    "exports": { "default": { "shape": "array", "kind": "resource" } }
   },
   "data/resources.json": {
-    "exports": {
-      "default": {
-        "shape": "array",
-        "kind": "resource"
-      }
-    }
+    "exports": { "default": { "shape": "array", "kind": "resource" } }
   },
   "data/segments/repository-research.json": {
     "exports": {
@@ -40,90 +30,46 @@
   },
   "website/src/data/learningPaths.ts": {
     "exports": {
-      "learningPaths": {
-        "shape": "array",
-        "kind": "example"
-      },
-      "foundationPaths": {
-        "shape": "array",
-        "kind": "foundation"
-      },
-      "communityCollections": {
-        "shape": "array",
-        "kind": "collection"
-      }
+      "learningPaths": { "shape": "array", "kind": "example" },
+      "foundationPaths": { "shape": "array", "kind": "foundation" },
+      "communityCollections": { "shape": "array", "kind": "collection" }
     }
   },
   "website/src/data/ai3dCases.ts": {
-    "exports": {
-      "ai3dCases": {
-        "shape": "array",
-        "kind": "example"
-      }
-    }
+    "exports": { "ai3dCases": { "shape": "array", "kind": "example" } }
   },
   "website/src/data/aiCommunityCases.ts": {
-    "exports": {
-      "aiCommunityCases": {
-        "shape": "array",
-        "kind": "example"
-      }
-    }
+    "exports": { "aiCommunityCases": { "shape": "array", "kind": "example" } }
   },
   "website/src/data/openGameCases.ts": {
-    "exports": {
-      "openGameCases": {
-        "shape": "array",
-        "kind": "example"
-      }
-    }
+    "exports": { "openGameCases": { "shape": "array", "kind": "example" } }
   },
   "website/src/data/community2dExpansion.ts": {
     "exports": {
-      "community2dExpansion": {
-        "shape": "array",
-        "kind": "example"
-      }
+      "community2dExpansion": { "shape": "array", "kind": "example" }
     }
   },
   "website/src/data/community3dExpansion.ts": {
     "exports": {
-      "community3dExpansion": {
-        "shape": "array",
-        "kind": "example"
-      }
+      "community3dExpansion": { "shape": "array", "kind": "example" }
     }
   },
   "website/src/data/diverseCommunityCases.ts": {
     "exports": {
-      "diverseCommunityCases": {
-        "shape": "array",
-        "kind": "example"
-      }
+      "diverseCommunityCases": { "shape": "array", "kind": "example" }
     }
   },
   "website/src/data/geminiCliCases.ts": {
-    "exports": {
-      "geminiCliCases": {
-        "shape": "array",
-        "kind": "example"
-      }
-    }
+    "exports": { "geminiCliCases": { "shape": "array", "kind": "example" } }
   },
   "website/src/data/communityResearch.ts": {
     "exports": {
-      "communityCollections": {
-        "shape": "array",
-        "kind": "collection"
-      }
+      "communityCollections": { "shape": "array", "kind": "collection" }
     }
   },
   "website/src/data/agentGameResources.ts": {
     "exports": {
-      "agentGameResources": {
-        "shape": "array",
-        "kind": "agent"
-      },
+      "agentGameResources": { "shape": "array", "kind": "agent" },
       "gameCaseAgents": {
         "shape": "lookup",
         "kind": "example",
@@ -170,12 +116,7 @@
     }
   },
   "website/src/data/open3dGames.ts": {
-    "exports": {
-      "open3dGames": {
-        "shape": "array",
-        "kind": "example"
-      }
-    }
+    "exports": { "open3dGames": { "shape": "array", "kind": "example" } }
   },
   "data/segments/open-3d-import.json": {
     "exports": {
@@ -187,12 +128,7 @@
     }
   },
   "website/src/data/jamGames.ts": {
-    "exports": {
-      "jamGames": {
-        "shape": "array",
-        "kind": "example"
-      }
-    }
+    "exports": { "jamGames": { "shape": "array", "kind": "example" } }
   },
   "data/segments/jam-games.json": {
     "exports": {
@@ -228,14 +164,8 @@
   },
   "website/src/data/testingResources.ts": {
     "exports": {
-      "testingResources": {
-        "shape": "array",
-        "kind": "testing"
-      },
-      "testingStarterPacks": {
-        "shape": "array",
-        "kind": "testing-pack"
-      },
+      "testingResources": { "shape": "array", "kind": "testing" },
+      "testingStarterPacks": { "shape": "array", "kind": "testing-pack" },
       "testingReviewDate": {
         "shape": "metadata",
         "kind": "testing",
@@ -259,44 +189,21 @@
     }
   },
   "website/src/data/testingProjects.ts": {
-    "exports": {
-      "testingProjects": {
-        "shape": "array",
-        "kind": "testing"
-      }
-    }
+    "exports": { "testingProjects": { "shape": "array", "kind": "testing" } }
   },
   "website/src/data/testingEnvironments.ts": {
     "exports": {
-      "testingEnvironments": {
-        "shape": "array",
-        "kind": "testing"
-      }
+      "testingEnvironments": { "shape": "array", "kind": "testing" }
     }
   },
   "website/src/data/testingAssets.ts": {
-    "exports": {
-      "testingAssets": {
-        "shape": "array",
-        "kind": "testing"
-      }
-    }
+    "exports": { "testingAssets": { "shape": "array", "kind": "testing" } }
   },
   "website/src/data/testingMotion.ts": {
-    "exports": {
-      "testingMotion": {
-        "shape": "array",
-        "kind": "testing"
-      }
-    }
+    "exports": { "testingMotion": { "shape": "array", "kind": "testing" } }
   },
   "website/src/data/plans.ts": {
-    "exports": {
-      "plans": {
-        "shape": "plans",
-        "kind": "step"
-      }
-    }
+    "exports": { "plans": { "shape": "plans", "kind": "step" } }
   },
   "website/src/data/showcase.ts": {
     "exports": {
@@ -308,12 +215,7 @@
     }
   },
   "website/src/data/recordings.ts": {
-    "exports": {
-      "recordings": {
-        "shape": "media",
-        "kind": "demo"
-      }
-    }
+    "exports": { "recordings": { "shape": "media", "kind": "demo" } }
   },
   "website/src/data/projectMedia.ts": {
     "exports": {
@@ -398,23 +300,12 @@
   },
   "website/content/extended-data.ts": {
     "exports": {
-      "papers": {
-        "shape": "array",
-        "kind": "paper"
-      },
-      "threejsGames": {
-        "shape": "array",
-        "kind": "threejs-game"
-      }
+      "papers": { "shape": "array", "kind": "paper" },
+      "threejsGames": { "shape": "array", "kind": "threejs-game" }
     }
   },
   "website/src/data/open3dRound2Games.ts": {
-    "exports": {
-      "open3dRound2Games": {
-        "shape": "array",
-        "kind": "example"
-      }
-    }
+    "exports": { "open3dRound2Games": { "shape": "array", "kind": "example" } }
   },
   "data/segments/open-3d-import-round2.json": {
     "exports": {
@@ -426,12 +317,7 @@
     }
   },
   "website/src/data/open3dRound3Games.ts": {
-    "exports": {
-      "open3dRound3Games": {
-        "shape": "array",
-        "kind": "example"
-      }
-    }
+    "exports": { "open3dRound3Games": { "shape": "array", "kind": "example" } }
   },
   "data/segments/open-3d-import-round3.json": {
     "exports": {
@@ -443,12 +329,7 @@
     }
   },
   "website/src/data/itch3dGames.ts": {
-    "exports": {
-      "itch3dGames": {
-        "shape": "array",
-        "kind": "example"
-      }
-    }
+    "exports": { "itch3dGames": { "shape": "array", "kind": "example" } }
   },
   "data/segments/itch-3d-import.json": {
     "exports": {
@@ -460,35 +341,17 @@
     }
   },
   "website/src/data/open3dRound4Games.ts": {
-    "exports": {
-      "open3dRound4Games": {
-        "shape": "array",
-        "kind": "example"
-      }
-    }
+    "exports": { "open3dRound4Games": { "shape": "array", "kind": "example" } }
   },
   "website/src/data/open3dRound5Games.ts": {
-    "exports": {
-      "open3dRound5Games": {
-        "shape": "array",
-        "kind": "example"
-      }
-    }
+    "exports": { "open3dRound5Games": { "shape": "array", "kind": "example" } }
   },
   "website/src/data/browserPortGames.ts": {
-    "exports": {
-      "browserPortGames": {
-        "shape": "array",
-        "kind": "example"
-      }
-    }
+    "exports": { "browserPortGames": { "shape": "array", "kind": "example" } }
   },
   "website/src/data/browserPortCollections.ts": {
     "exports": {
-      "browserPortCollections": {
-        "shape": "array",
-        "kind": "collection"
-      }
+      "browserPortCollections": { "shape": "array", "kind": "collection" }
     }
   },
   "data/segments/open-3d-import-round4.json": {
@@ -542,6 +405,24 @@
         "shape": "metadata",
         "kind": "example",
         "reason": "Explicitly imported, reviewed fallback page-cover evidence for published example/foundation/threejs-game full keys; preserves originals, hashes, source snapshots and non-gameplay/source-access qualifications. Not Git authoring business records or gameplay proof."
+      }
+    }
+  },
+  "data/segments/open-3d-round5-media.json": {
+    "exports": {
+      "default": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "Complete reviewed scope, screenshot attribution and verified demo evidence; public copy: open-3d-round5-media-sources.json. Missing decisions record checked sources, not presumed absence."
+      }
+    }
+  },
+  "website/src/data/open3dRound5Media.ts": {
+    "exports": {
+      "open3dRound5Media": {
+        "shape": "lookup",
+        "kind": "example",
+        "sourceKey": "learningMedia"
       }
     }
   }

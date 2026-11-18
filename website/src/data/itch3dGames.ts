@@ -64,10 +64,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/POtOSoftware/HTRAGS-232",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "Download How To Rob A Gas Station",
+      "url": "https://poto-software.itch.io/how-to-rob-a-gas-station",
+      "kind": "download",
+      "note": "The verified author itch page lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -109,10 +109,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/POtOSoftware/HTRAGS-2",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "Download How To Rob A Gas Station 2",
+      "url": "https://poto-software.itch.io/how-to-rob-a-gas-station-2",
+      "kind": "download",
+      "note": "The verified author itch page lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -154,10 +154,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/HackerPoet/MarbleMarcher",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "Download Marble Marcher",
+      "url": "https://codeparade.itch.io/marblemarcher",
+      "kind": "download",
+      "note": "The verified author itch page lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -199,10 +199,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/m4ym4y/museum-of-all-things",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "Download Museum of All Things",
+      "url": "https://mayeclair.itch.io/museum-of-all-things",
+      "kind": "download",
+      "note": "The verified author itch page lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -244,10 +244,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/nzp-team/nzportable",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "Download Nazi Zombies: Portable",
+      "url": "https://nzp-team.itch.io/nazi-zombies-portable",
+      "kind": "download",
+      "note": "The verified author itch page lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -379,10 +379,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/HauntedBees/bag-witch",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "Download Bag Witch",
+      "url": "https://hauntedbees.itch.io/bag-witch",
+      "kind": "download",
+      "note": "The verified author itch page lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -514,10 +514,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/esotericpig/EkoScape",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "Download EkoScape",
+      "url": "https://esotericpig.itch.io/ekoscape",
+      "kind": "download",
+      "note": "The verified author itch page lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -604,10 +604,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/llamacademy/minigolf",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "Download Minigolf (LlamAcademy)",
+      "url": "https://llamacademy.itch.io/minigolf",
+      "kind": "download",
+      "note": "The verified author itch page lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -649,10 +649,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/zenorogue/hyperrogue/",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "Download Nil Rider",
+      "url": "https://zenorogue.itch.io/nil-rider",
+      "kind": "download",
+      "note": "The verified author itch page lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -694,10 +694,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/Solype/Asteroid",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "Download AST3ROID",
+      "url": "https://mael-rabot.itch.io/ast3roid",
+      "kind": "download",
+      "note": "The verified author itch page lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -739,10 +739,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/bearlikelion/BoomerShooter",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "Download Boomer Shooter",
+      "url": "https://bearlikelion.itch.io/boomer-shooter",
+      "kind": "download",
+      "note": "The verified author itch page lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -874,10 +874,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/SirNeirda/godot_procedural_infinite_world",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "Download Infinite Runner — 3D Procedural Generation for Godot",
+      "url": "https://bouncerocksoftware.itch.io/infinite-runner",
+      "kind": "download",
+      "note": "The verified author itch page lists native game downloads with explicit platform labels; checked on 2026-11-18. Source-project uploads were excluded. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -964,10 +964,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/39M/LMix",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "View author downloads",
+      "url": "https://39.itch.io/lmix",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (LMix For Windows 73 MB; LMix For Mac 76 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -1099,10 +1099,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/teeeece/godot_open_target_shooter",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "View author downloads",
+      "url": "https://teeeece.itch.io/open-target-shooter",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (open_target_shooter_win_64.zip 29 MB; open_target_shooter_linux.zip 33 MB; open_target_shooter_macosx.zip 48 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -1369,10 +1369,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/blendogames/flotilla",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "View author downloads",
+      "url": "https://blendogames.itch.io/flotilla",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (flotilla-windows.zip 34 MB; flotilla-linux.zip 47 MB; flotilla-osx.zip 42 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -1459,10 +1459,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/blendogames/quadrilateralcowboy",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "View author downloads",
+      "url": "https://blendogames.itch.io/quadrilateralcowboy",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (quadrilateralcowboy-windows.zip 635 MB; quadrilateralcowboy-osx.zip 633 MB; quadrilateralcowboy-linux.zip 634 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -1594,10 +1594,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/llamacademy/dino-attack",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "View author downloads",
+      "url": "https://llamacademy.itch.io/dino-attack",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (Build-Standalone.zip 62 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -1864,10 +1864,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/sma7560/stuck_in_the_dark",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "View author downloads",
+      "url": "https://jollygoodfellow.itch.io/stuck-in-the-dark",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (StuckInTheDark_Win32.zip 63 MB; StuckInTheDark_MacOS.zip 61 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -2044,10 +2044,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/rameshvarun/BlueScreen",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "View author downloads",
+      "url": "https://varunramesh.itch.io/blue-screen",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (blue-screen-win.zip 55 MB; blue-screen-linux.zip 70 MB; blue-screen-osx.zip 64 MB), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -2089,10 +2089,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/solcloud/Counter-Strike",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "View author downloads",
+      "url": "https://solcloud.itch.io/counter-strike-football",
+      "kind": "download",
+      "note": "The author itch.io page lists native platform downloads (client-windows-x86_64.zip External; client-linux-x86_64.zip External; client-macos-x86_64.zip External), inspected on 2026-11-18. See the author page for current price and access terms. No package was downloaded, installed or run."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
