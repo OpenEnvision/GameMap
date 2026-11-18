@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { build } from "esbuild";
 import { readDocuments } from "../lib/documents.mjs";
+import { documentDownloads } from "../lib/document-downloads.mjs";
 import { generateSkillPackages } from "../lib/skill-packages.mjs";
 import { writeIfChanged } from "../lib/files.mjs";
 import { categories, loadCatalog, validate } from "../lib/guides/catalog.mjs";
@@ -16,7 +17,6 @@ import {
   testingManifest,
 } from "../lib/guides/testing.mjs";
 import { loadRepositoryResearch } from "../lib/guides/repository-research.mjs";
-import documentRedirects from "../../website/content/document-redirects.json" with { type: "json" };
 const records = validate(await loadCatalog());
 const json = JSON.stringify(records, null, 2) + "\n";
 const outputs = {
@@ -98,64 +98,22 @@ const generated = renderGeneratedDocuments({
 // Historical source aliases remain readable, but must never be regenerated at old paths.
 for (const { source } of Object.values(documentGenerators))
   outputs[source] = generated[source];
-const awesome = generated["docs/AWESOME.md"];
-const attribution = generated["docs/icon-sources.md"];
-outputs["website/public/logo-sources.md"] = attribution.replaceAll(
-  "<code>website/public/logos/</code>",
-  "<code>logos/</code>",
-);
-outputs["website/public/media-sources.md"] = (
-  await readFile(
-    new URL("../../docs/media-sources.md", import.meta.url),
+// Raw Markdown downloads, including notices at moved or retired download names.
+const documents = await readDocuments();
+const bodies = {
+  "CONTRIBUTING.md": await readFile(
+    new URL("../../CONTRIBUTING.md", import.meta.url),
     "utf8",
-  )
-).replaceAll("../website/public/", "./");
-// Public downloads use same-directory paths so links also work on repository subpaths.
-let downloadable = awesome;
-// Flat source notes also have raw downloads. Nested archives are rendered as documentation.
-const downloadableNotes = (await readDocuments()).filter(
-  (page) =>
-    /^docs\/[^/]+\.md$/.test(page.source) &&
-    !["catalog", "media-sources", "icon-sources"].includes(page.slug),
-);
-for (const { slug: name, source: path } of downloadableNotes) {
-  downloadable = downloadable.replaceAll(
-    `](${path.slice("docs/".length)})`,
-    `](./${name}.md)`,
-  );
-  let note =
-    outputs[path] ??
-    (await readFile(new URL("../../" + path, import.meta.url), "utf8"));
-  note = note.replaceAll("](../website/public/", "](./");
-  note = note.replaceAll("](../AWESOME.md)", "](./awesome-list.md)");
-  note = note.replaceAll("](AWESOME.md)", "](./awesome-list.md)");
-  note = note.replaceAll("](../CONTRIBUTING.md", "](./CONTRIBUTING.md");
-  note = note.replaceAll(
-    "](world-model-notes.md)",
-    "](./world-model-notes.md)",
-  );
-  outputs[`website/public/${name}.md`] = note.trimEnd() + "\n";
-}
-let contributing = await readFile(
-  new URL("../../CONTRIBUTING.md", import.meta.url),
-  "utf8",
-);
-for (const { slug } of downloadableNotes)
-  contributing = contributing.replaceAll(`](docs/${slug}.md`, `](./${slug}.md`);
-outputs["website/public/CONTRIBUTING.md"] = contributing;
-outputs["website/public/awesome-list.md"] = downloadable
-  .replaceAll("](../CONTRIBUTING.md)", "](./CONTRIBUTING.md)")
-  .replaceAll("](../data/resources.json)", "](./resources.json)");
-// Retired catalogs keep flat migration-notice downloads, not stale document paths.
-for (const [path, target] of Object.entries(documentRedirects)) {
-  if (!/^\/docs\/[^/]+\/$/.test(path)) continue;
-  const slug = path.split("/")[2];
-  outputs[`website/public/${slug}.md`] =
-    `# Game examples\n\nThis catalog has moved to [Game examples](${target}).\n`;
-  outputs["website/public/awesome-list.md"] = outputs[
-    "website/public/awesome-list.md"
-  ].replaceAll(`](${slug}.md)`, `](./${slug}.md)`);
-}
+  ),
+};
+for (const page of documents)
+  bodies[page.source] =
+    outputs[page.source] ??
+    (await readFile(new URL("../../" + page.source, import.meta.url), "utf8"));
+for (const [path, value] of Object.entries(
+  documentDownloads(documents, bodies),
+))
+  outputs["website/public/" + path] = value;
 for (const [path, value] of Object.entries(outputs)) {
   const url = new URL("../../" + path, import.meta.url);
   await mkdir(new URL(".", url), { recursive: true });

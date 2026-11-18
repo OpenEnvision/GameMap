@@ -7464,10 +7464,10 @@
       "repository_id": 1227019873,
       "existing_locations": [
         "data/segments/game-ai.json",
-        "docs/catalog-review-coverage.md",
-        "docs/community-case-research.md",
-        "docs/game-ai-notes.md",
-        "docs/icon-sources.md",
+        "docs/evaluation/review-coverage.md",
+        "docs/evaluation/community-cases.md",
+        "docs/ecosystem/2d-3d-development.md",
+        "docs/reference/logo-sources.md",
         "website/src/data/resourceIdentities.json",
         "website/src/data/resources.json"
       ],
@@ -7960,7 +7960,7 @@
       "parent_repo": null,
       "repository_id": 1289660388,
       "existing_locations": [
-        "docs/community-case-research.md"
+        "docs/evaluation/community-cases.md"
       ],
       "related_existing_entries": [],
       "related_repositories": [],
@@ -8005,7 +8005,7 @@
       "repository_id": 1194055946,
       "existing_locations": [
         "docs/coding-agent-game-code.md",
-        "docs/community-case-research.md",
+        "docs/evaluation/community-cases.md",
         "website/src/data/agentGameResources.ts"
       ],
       "related_existing_entries": [],
@@ -8104,9 +8104,9 @@
       "repository_id": 576201,
       "existing_locations": [
         "data/segments/engines.json",
-        "docs/catalog-review-coverage.md",
-        "docs/engines-notes.md",
-        "docs/icon-sources.md"
+        "docs/evaluation/review-coverage.md",
+        "docs/ecosystem/engines.md",
+        "docs/reference/logo-sources.md"
       ],
       "related_existing_entries": [],
       "related_repositories": [],
@@ -8254,8 +8254,8 @@
       "repository_id": 172521926,
       "existing_locations": [
         "data/segments/engines.json",
-        "docs/engines-notes.md",
-        "docs/icon-sources.md"
+        "docs/ecosystem/engines.md",
+        "docs/reference/logo-sources.md"
       ],
       "related_existing_entries": [],
       "related_repositories": [],
@@ -9039,7 +9039,7 @@
       "parent_repo": null,
       "repository_id": 46684632,
       "existing_locations": [
-        "docs/production-research-notes.md"
+        "docs/production/tools.md"
       ],
       "related_existing_entries": [],
       "related_repositories": [],

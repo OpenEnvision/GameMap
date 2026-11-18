@@ -4,14 +4,14 @@
 
 A practical map of tools, playable projects, and production knowledge for building games with AI.
 
-[Website](https://openenvision.github.io/GameMap/) · [Resource catalog](docs/AWESOME.md) · [Documentation](docs/practical-guide.md) · [中文指南](docs/zh/reading-guide.md) · [Contributing](CONTRIBUTING.md)
+[Website](https://openenvision.github.io/GameMap/) · [Resource catalog](docs/reference/catalog.md) · [Documentation](docs/guides/practical-guide.md) · [中文指南](docs/zh/guides/reading-guide.md) · [Contributing](CONTRIBUTING.md)
 
 ## Explore
 
-- **[Tools & engines](docs/AWESOME.md)** — coding agents, engine integrations, asset pipelines, and world models.
+- **[Tools & engines](docs/reference/catalog.md)** — coding agents, engine integrations, asset pipelines, and world models.
 - **[Games & workflows](docs/tutorials-and-demos.md)** — playable examples, creator build stories, and project source.
-- **[Production & testing](docs/research-index.md)** — practical interfaces, evaluation methods, and evidence boundaries.
-- **[Level design](docs/level-design-skill.md)** — a complete skill package with references and reusable templates.
+- **[Production & testing](docs/production/overview.md)** — practical interfaces, evaluation methods, and evidence boundaries.
+- **[Level design](docs/guides/level-design.md)** — a complete skill package with references and reusable templates.
 
 ## Development
 
@@ -22,11 +22,11 @@ npm run dev
 
 Documentation and catalog changes refresh automatically. The website is static, built with Fumadocs, React Router, TypeScript, and Vite; no application backend or API key is required.
 
-See [development & deployment](docs/deployment.md) for production builds and GitHub Pages configuration.
+See [development & deployment](docs/project/deployment.md) for production builds and GitHub Pages configuration.
 
 ## Private content Studio
 
-The [content platform](docs/content-platform.md) includes typed editing forms, a trusted validator, revision/translation review, protected media uploads and immutable release export.
+The [content platform](docs/project/content-platform.md) includes typed editing forms, a trusted validator, revision/translation review, protected media uploads and immutable release export.
 
 ```sh
 # Start Docker Desktop first. These wrappers never connect to a cloud project.

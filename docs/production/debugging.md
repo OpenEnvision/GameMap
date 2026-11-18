@@ -1,0 +1,306 @@
+# Production debugging and evidence contracts
+
+Choose a profiler or diagnostic surface for the failure you need to isolate. Connect each measurement to a specific game state, capture, and repeatable comparison.
+
+## Choose the diagnostic evidence
+
+| Symptom | Source-backed surface below | What remains unproven |
+| --- | --- | --- |
+| Wrong pixels or shader result | RenderDoc invocation trace; native Metal capture | Intended game appearance and target-driver correctness |
+| Slow or irregular frames | Nsight live/replay distinction; PresentMon populations; delayed Unity samples | Comparable uninstrumented performance and physical-display latency |
+| GPU removal | DRED breadcrumbs and allocation candidates | Exact failing instruction and safe device recovery |
+| Contact or rollback failure | CVD recorded solver stages; Jolt contact/state APIs | Whole-game reset, animation semantics and cross-engine equivalence |
+| Unexpected build size or blurred streamed assets | UnityDataTool content analysis; Addressables reports; UE streaming counters | Runtime memory, project quality targets and complete-world readiness |
+| Memory grows across repeated edit/playtest cycles | [Allocation windows, snapshots and retained references](#memory-lifetime-across-repeated-production-cycles) | Intended cache lifetime, complete native/GPU ownership and an actual leak verdict |
+
+## Capture, shader and GPU diagnosis
+
+### 1. Finish or discard an application-triggered RenderDoc capture
+
+**Gap filled:** the existing entry names `renderdoccmd` but leaves the programmable capture lifecycle unverified.
+
+**Source/version:** [in-application API at RenderDoc v1.46](https://github.com/baldurk/renderdoc/blob/e4bd23b671d3d5a747ff5221dbe08a63eb6ca200/docs/in_application_api.rst), API **1.7.0**; exact [release commit](https://github.com/baldurk/renderdoc/commit/e4bd23b671d3d5a747ff5221dbe08a63eb6ca200).
+
+**Documented:** `RENDERDOC_GetAPI` reports interface availability. `StartFrameCapture` begins capture; `EndFrameCapture` returns 1 for success and 0 for error. Ending without the matching active device/window capture is undefined. `GetNumCaptures`/`GetCapture` enumerate recorded paths and timestamps. `DiscardFrameCapture` discards the active capture without writing it. `TriggerCapture` waits for a subsequent present and does nothing for a non-presenting application. Multi-frame triggering creates independent files. Null device selection is ambiguous when multiple graphics APIs are active.
+
+**Unknowns:** crash-safe file durability, failure recovery, and idempotent retry are not established. Capture timestamps are not an engine-state identity.
+
+**Proposed acceptance:** negotiate API version; record explicit device/window and frame marker; retain native outcome plus newly enumerated artifact; hash and reopen it independently. Serialize capture requests. Treat a never-presenting target as a missing trigger condition. Preserve failed attempts rather than replaying an uncertain start/end pair.
+
+### 2. Complete a specific shader invocation diagnosis
+
+**Gap filled:** compiler/validator success is already covered; replay readiness, fragment selection and shader-debug completion are not.
+
+**Source/version:** [RenderDoc v1.46 replay API](https://github.com/baldurk/renderdoc/blob/e4bd23b671d3d5a747ff5221dbe08a63eb6ca200/renderdoc/api/replay/renderdoc_replay.h); [v1.46 release limitations](https://github.com/baldurk/renderdoc/releases/tag/v1.46).
+
+**Documented:** `OpenFile` reports a result; local `OpenCapture` blocks until loaded and returns status plus controller. `SetFrameEvent` selects post-event state. `DebugPixel` uses top-left coordinates even for GL; unspecified primitive selection may choose an arbitrary fragment. `ContinueDebug` returns batches of states; an empty batch means debugging completed. However, fatal replay errors can also leave the controller returning empty data: inspect `GetFatalErrorStatus`. Free the trace with `FreeTrace`; remote controllers require the server's `CloseCapture`. The v1.46 release warns of AMD-driver problems affecting multi-thread-dependent shader debugging.
+
+**Unknowns:** a completed trace does not establish shader correctness; supported shader features and driver accuracy must be qualified. No universal cancel/retry contract is established here.
+
+**Proposed acceptance:** retain capture hash, event/shader identity, pixel, sample, primitive, view or compute group/thread. Distinguish open failure, unsupported debugging, completed diagnosis and evaluator outcome. Keep output-resource evidence beside variable traces. Do not classify debugger failure as a game defect or shader simulation as native GPU performance.
+
+### 3. Await Nsight artifacts, then distinguish replay cost from live timing
+
+**Gap filled:** the existing Nsight card explicitly leaves automation unverified.
+
+**Source/version:** NVIDIA's rolling **2026.3 documentation family**, identified by [release notes](https://docs.nvidia.com/nsight-graphics/ReleaseNotes/index.html); [SDK guide](https://docs.nvidia.com/nsight-graphics/UserGuide/sdk.html), [capture CLI](https://docs.nvidia.com/nsight-graphics/UserGuide/graphics-capture-cli.html), [GPU Trace CLI](https://docs.nvidia.com/nsight-graphics/UserGuide/gpu-trace-overview.html), [replay interpretation](https://docs.nvidia.com/nsight-graphics/UserGuide/graphics-capture-ui.html). Pages report July 21, 2026 updates; URLs are not immutable version pins. The SDK guide identifies header-only SDK 0.9.0 as beta, subject to change and unsuitable for mission-critical reliance.
+
+**Documented:** the SDK initializes before graphics-context creation and requires structure version fields. Injection requires a caller-selected library-loading callback through `NGFX_SetLibraryLoadFn`; the guide warns that its no-verification helper is unsuitable for production and describes caller-side library verification. Save `NGFX_GraphicsCapture_GetCaptureFileCount()` before requesting capture, then wait for that index with `NGFX_GraphicsCapture_WaitForCaptureFilePath()`. The returned path is finalized and safe to open, in the target filesystem. GPU Trace still requires an attached host; its artifact paths belong to that host. Only one of those activities can be injected into a process. `ngfx-capture` supports unattended triggering; GPU Trace CLI supports `--auto-export`. Injection adds overhead. Replay separates frame and resource-reset costs and inserts wait-for-idle boundaries. A GPU Trace of Live Replay measures the captured workload, not the original process.
+
+**Unknowns:** unattended cancellation, crash durability and target-project compatibility remain untested. CLI documentation disagrees internally on maximum frame count; query the installed version rather than copying a universal limit.
+
+**Proposed acceptance:** retain exact executable/SDK/driver and supported hardware, trigger, artifact namespace and native errors; bound waits and retrieve the finalized path rather than predicting filenames. Record live versus replay provenance, reset cost, clock/V-Sync settings and metric passes. Validate any optimization again in a separate live run. Never change profiling permissions or machine settings implicitly.
+
+### 4. End a bounded PresentMon run without losing the measurement population
+
+**Gap filled:** existing coverage gives timing capability and platform caveats, but no run termination or frame-selection contract.
+
+**Source/version:** [PresentMon v2.3.1 console reference](https://github.com/GameTechDev/PresentMon/blob/v2.3.1/README-ConsoleApplication.md), deliberately version-pinned rather than assuming current-main columns.
+
+**Documented:** `--process_id` scopes capture; `--session_name` permits distinct concurrent sessions. `--timed` stops recording; `--terminate_after_timed` additionally exits. `--terminate_on_proc_exit` exits when all targets exit. CSV includes process/swap-chain/presentation information; `DisplayedTime` is `NA` for undisplayed frames. `--exclude_dropped` removes those rows. QPC timestamps are available. `--track_frame_type` distinguishes application and generated frames only with required instrumentation. Legacy metric switches change the schema.
+
+**Unknowns:** observer exit alone does not establish complete ETW delivery or an artifact's integrity. This source does not prove physical-display latency accuracy for a particular setup.
+
+**Proposed acceptance:** use a uniquely owned session, explicit output/schema and bounded interval; preserve undisplayed frames and unavailable values; associate timing with engine markers. Inspect CSV identity, sample count and time span after observer exit. Report rendered/displayed/generated populations separately when available. Avoid stopping an existing unrelated session, silently elevating privileges, or treating unavailable frame-type data as proof all frames were rendered.
+
+### 5. Capture the intended Metal command-buffer interval
+
+**Gap filled:** RenderDoc's Metal exclusion currently has no native capture alternative or command-buffer inclusion rule.
+
+**Source/version:** Apple's [programmatic Metal capture article](https://developer.apple.com/documentation/xcode/capturing-a-metal-workload-programmatically), rolling documentation inspected October 18, 2026 through its indexed official text; direct HTML returned a JavaScript shell. The documented environment-variable route requires macOS 14+; this is not a universal SDK-version claim.
+
+**Documented:** enable capture with `MetalCaptureEnabled` or the documented environment variable. Select the device/queue/scope in `MTLCaptureDescriptor`; check `supportsDestination(.gpuTraceDocument)` before choosing an output `.gputrace`. `startCapture(with:)` can throw; `stopCapture()` ends capture. Only command buffers created after capture begins and committed before it ends are included. Enabling capture has measurable CPU overhead.
+
+**Unknowns:** stop does not document a separate artifact-finalization callback, fsync guarantee, general cancellation/rollback, or Metal 4 parity in this article.
+
+**Proposed acceptance:** log capture support/start error and exact buffer interval; independently verify the saved trace can reopen and contains the required pass. Do not use a pre-created command buffer as evidence of coverage. Preserve a separate uninstrumented timing run and exact OS/Xcode/GPU metadata.
+
+### 6. Collect D3D12 removal diagnostics before claiming a root cause
+
+**Gap filled:** graphics API validation and frame capture do not cover the separate device-removal diagnostic path.
+
+**Source/version:** Microsoft's [DRED guide](https://learn.microsoft.com/windows/win32/direct3d12/use-dred), updated July 1, 2022; [breadcrumb getter](https://learn.microsoft.com/en-us/windows/win32/api/d3d12/nf-d3d12-id3d12deviceremovedextendeddata-getautobreadcrumbsoutput) and [page-fault getter](https://learn.microsoft.com/en-us/windows/win32/api/d3d12/nf-d3d12-id3d12deviceremovedextendeddata-getpagefaultallocationoutput), updated February 22, 2024. These method pages specify Windows 10 version 1903 minimum; installed SDK/runtime compatibility remains unchecked.
+
+**Documented:** process-global DRED configuration must precede device creation. After removal, the runtime interface exposes breadcrumbs and page-fault allocation candidates. Getters distinguish `S_OK`, not-currently-available (device not removed) and unsupported (feature not enabled). Breadcrumbs are approximate because GPU execution is pipelined/reordered; their history is bounded. Page-fault support varies by GPU; diagnostic instrumentation adds overhead.
+
+**Unknowns:** diagnostics do not identify the exact failing instruction reliably, restore a device, or establish a safe retry. Crash-dump persistence is a separate collector responsibility.
+
+**Proposed acceptance:** retain native removal reason, feature configuration, getter outcomes, marker/resource identities and raw diagnostics before an application-specific recovery path. Keep unsupported/no-data distinct from a clean result. Use a disposable fault fixture to test collection; do not provoke a GPU fault or change watchdog/security settings during source research.
+
+
+## Physics recording, contact and restoration
+
+### 1. Inspect a recorded solver failure: Unreal Engine 5.5 CVD
+
+**Documented constraints.** Chaos Visual Debugger records simulation state. Its ReSim badge identifies frames recorded during network correction; rerunning simulations/queries inside CVD is listed as future work. Async game frames and solver frames need not correspond one-to-one; the game timeline chooses the closest solver timestamp. Solver-stage inspection depends on recorded channels. Contact selections expire across frames and may display stale data with a warning. Joint, character-ground-constraint and acceleration-structure recording are disabled by default. Recorded particle geometry is physics-thread geometry, which may differ from game-thread geometry. Component queries have limited support. Rapid landscape collision unload/reload can display incorrectly while scrubbing; the documented workaround is reloading the recording. These are UE 5.5 guide limitations, not claims about later releases. [Official UE 5.5 guide](https://dev.epicgames.com/documentation/en-us/unreal-engine/chaos-visual-debugger-user-guide?application_version=5.5)
+
+**Proposed acceptance.** Store capture hash, engine build, data channels, solver ID/frame/stage, game timestamp, synchronization mode and contact freshness. Reject unsupported, absent or stale observations. Compare aligned network ticks before declaring desynchronization. Separate recorded inspection from a new counterfactual run.
+
+**Unknowns.** Headless extraction, automated completion signals and recording compatibility remain unverified.
+
+### 2. Preserve contact origin, sign and identity: Jolt 5.2.0
+
+**Documented constraints.** ContactManifold contact points are relative to `mBaseOffset`; world-space accessors are available. `mWorldSpaceNormal` points in the direction that moves body 2 out of collision. Negative penetration depth denotes a speculative contact that might never cause a velocity change. Manifold reduction can retain only one subshape pair when merging coplanar manifolds. [Versioned ContactManifold reference](https://jrouwe.github.io/JoltPhysicsDocs/5.2.0/class_contact_manifold.html)
+
+**Proposed acceptance.** Retain ordered body/subshape identities, base offset, relative and reconstructed world points, normal convention, signed depth and update identity. Use an asymmetric two-body fixture with an origin shift to catch swapped normals and dropped offsets. Classify speculative contacts separately from resolved impacts. Do not present one retained subshape pair as an exhaustive collision-feature inventory.
+
+**Unknowns.** No cross-engine contact equivalence or project-specific penetration tolerance is established. The fixture needs independently chosen world units and tolerances.
+
+### 3. Distinguish update completion from current contact truth: Jolt 5.2.0
+
+**Documented constraints.** `PhysicsSystem::Update` divides its interval into collision/integration iterations, waits for its internal jobs and returns an `EPhysicsUpdateError`. `WereBodiesInContact` queries the last update, can remain true after movement/removal, and requires at least one active body for contact detection. Its permitted use during an update is restricted to specified contact callbacks. `SaveState` accepts state selection/filter parameters; `RestoreState` returns false on failure. [Versioned PhysicsSystem reference](https://jrouwe.github.io/JoltPhysicsDocs/5.2.0/class_physics_system.html)
+
+**Proposed acceptance.** Preserve timestep, collision-step count, return error, completed-update identity and subsequent mutations beside contact evidence. A returned call does not establish a clean update or current overlap. Reject failed restoration before advancing; preserve the failure artifact and restart from a separately verified baseline rather than assuming atomic rollback.
+
+**Unknowns.** Failure atomicity, durable snapshot writes and cross-version snapshot compatibility are not established by this reference.
+
+### 4. Validate a complete state replay: Jolt 5.2.0
+
+**Documented constraints.** StateRecorder saves simulation-modified state, excluding settings such as friction, restitution and motion quality. Validation requires the full state, `EStateRecorderState::All`, and no filter. Multipart restoration requires disjoint body/constraint/contact sets and only the last part marked final; restoring a contact twice produces undefined behavior. Multipart restoration and validation are incompatible. [Versioned StateRecorder reference](https://jrouwe.github.io/JoltPhysicsDocs/5.2.0/class_state_recorder.html)
+
+**Proposed acceptance.** Preserve an external configuration journal with each physics snapshot. Test full-state replay separately from reduced-bandwidth restoration. Record snapshot inclusion policy and part manifest; reject duplicate or missing parts before restoring. A filtered snapshot must not be labeled a validated full-state replay. Keep gameplay inventory, RNG, input and event-side-effect restoration as explicit application responsibilities.
+
+**Unknowns.** Snapshot schema migration, application-state coverage, crash durability and recovery after a partially applied restore remain project-specific.
+
+### 5. Qualify determinism and topology restoration: Jolt 5.2.0
+
+**Documented constraints.** Baseline determinism requires identical mutation order and binary code. Cross-platform mode requires `CROSS_PLATFORM_DETERMINISTIC`, matching source and compile defines; upstream describes it as less tested. Application floating-point precision/contraction, trigonometry and sorting choices also matter. Rollback needs application-managed topology reconciliation and stable body IDs; snapshots do not recreate subsequently added bodies. Constraint serialization depends on constraint ordering even where unique priorities allow equivalent simulation ordering. [Versioned architecture: Deterministic Simulation; Rolling Back a Simulation; Being Sloppy While Still Being Deterministic](https://jrouwe.github.io/JoltPhysicsDocs/5.2.0/)
+
+**Proposed acceptance.** Freeze source/binary/build flags, floating-point configuration, ordered mutation/input log, stable identities and constraint ordering. Compare a restored rerun against an uninterrupted reference over a declared horizon. Include a configuration change, body addition/removal and delayed input. Declare separately whether the target is identical bytes or a numerical tolerance; matching images cannot establish either.
+
+**Unknowns.** These prerequisites do not verify the target platform combination, application determinism or compatibility between engine releases.
+
+
+### Joint and articulation observation contracts
+
+For Unity 6000.0, check connections, drives, and constraints alongside [collider shapes](../assets/validation.md#collision-cooking-and-gameplay-shape-acceptance). Resolve patch-specific behavior against the engine version used by your project.
+
+#### Source-scoped operation contracts
+
+##### 1. Validate the actual connection and coordinate frames
+
+In the ordinary Rigidbody connection path, `Joint.connectedBody` is the endpoint reference; leaving it unset connects to a fixed world point. Unity does not support that connection across a different Scene using a local physics Scene. Moving the connected Rigidbody into a Scene using `LocalPhysicsMode.Physics3D` automatically disconnects it. An intended pair remaining visually adjacent therefore does not establish a surviving connection. [Connected-body API][U1]
+
+`Joint.anchor` uses local coordinates. ConfigurableJoint exposes per-axis linear/angular motion modes, limits, drive mode and target values; `configuredInWorldSpace` changes the target-value frame. Preserve the two endpoint identities, physics-scene identities, anchors, axis basis, motion restrictions and chosen target frame as inputs rather than deriving them from a screenshot. The exposed properties are configuration, not a native motion-completed result. [Anchor API][U2], [ConfigurableJoint API][U3]
+
+ArticulationBody instead describes a reduced-coordinate logical tree. Its `parentAnchorPosition` is relative to the parent **articulation body**, which can differ from the immediate Transform parent when intermediate nodes exist. The revolute axis is the parent anchor's X axis, and rotating that anchor changes the axis in world space. This requires an explicit body/anchor hierarchy map, not only a scene-Transform list. [Articulation API][U4], [Parent-anchor API][U5], [Articulation component reference][U6]
+
+##### 2. Keep requested targets, units and measured motion separate
+
+The articulation component reference describes drives as implicit springs with position-error and velocity-error terms. The force limit caps generated force/torque. Zero stiffness removes position attraction; zero damping does not make the drive stop at its target. A drive target is therefore not a settling or interaction-success signal. [Articulation component reference][U6]
+
+The documented angular units differ by interface: `ArticulationDrive.target` uses **degrees**, while `SetDriveTargets(List<float>)` and `GetJointPositions(List<float>)` use **radians**; their linear quantities use meters. `GetJointVelocities(List<float>)` documents meters/second and radians/second. These are documentation-level contracts requiring exact-build verification, not measured implementation behavior. [Per-drive target][U7], [Bulk target setter][U8], [Position readback][U9], [Velocity readback][U10]
+
+`SetDriveTargets` returns void and addresses the whole hierarchy. `GetDofStartIndices(List<int>)` supplies offsets indexed by each body's `index`; that body's `dofCount` supplies its span. The integer result is the hierarchy's total DOF count, not a success code. Do not assume one float per scene node, infer stable correspondence from equal array lengths, or reuse an old mapping after topology/lock changes without validation. The inspected documentation does not specify malformed-buffer error behavior, transactional application or cancellation. [Bulk target setter][U8], [DOF mapping][U11]
+
+##### 3. Observe constraints without mistaking numerical correction for physical validity
+
+`Joint.currentForce` and `currentTorque` expose solver constraint loads relative to `connectedBody` when assigned, otherwise in world space. Record that frame and its pose with the sample; comparing raw vectors from differently oriented connections is not a common-frame comparison. These API pages establish neither an observation timestamp nor a complete accounting of every external/contact/actuator load. [Force API][U12], [Torque API][U13]
+
+`ArticulationBody.GetDriveForces(List<float>)` fills hierarchy-wide reduced-coordinate drive-force data and returns the DOF count. Use the same body/DOF mapping; this documented drive observation is not a whole-mechanism contact-wrench measurement. [Drive-force readback][U14]
+
+`ConfigurableJoint.projectionMode` can bring violated constraints back into alignment after solver failure, but the correction is nonphysical and can violate momentum conservation and collision geometry. The projection-distance API warns about jitter with very small tolerances and about configurations such as joint cycles where projection may be impossible. A tidy final pose is therefore insufficient acceptance evidence. Retain projection settings and measure constraint errors and motion over time. [Projection mode][U15], [Projection distance][U16]
+
+##### 4. Preserve an explicit break-condition documentation conflict
+
+The 6000.0 `Joint.breakTorque` API says the torque axis must be Locked or Limited, and identifies an unconstrained ConfigurableJoint as unable to break. The same-version Configurable Joint manual says torque breaking can occur for Free, Limited or Locked axes. **These official pages conflict; this research does not resolve their runtime behavior.** An adapter must not silently select one as a universal guarantee. [Break-torque API][U17], [Configurable Joint manual][U18]
+
+`OnJointBreak(float)` reports a break on the same GameObject, passes the break force and precedes automatic removal/deletion of the joint. The callback supplies no joint reference in its signature. For multiple joints on one object, a single callback value alone is insufficient identity evidence; retain component identities and inspect which connection survives. Exact torque-case callback behavior and callback/removal sampling order beyond this documented sequence remain untested. [Break callback][U19]
+
+#### Proposed acceptance and failure handling
+
+**Suggested check:** require configuration readback, then bounded dynamic acceptance, then independent persistence/reopen acceptance. None of the cited setters supplies an asynchronous operation handle or an application-level settled/succeeded signal. Define a sampling phase and horizon using the project's existing physics-step owner; capture pose/velocity, anchor separation or forbidden-axis error, target tracking, limit excursions, relevant loads and joint existence. Require an explicit settling tolerance and dwell interval when settling matters. Missing samples, stale topology, unexpected disconnection/breakage, nonfinite data or exceeded project tolerances block promotion. A documented ambiguity remains unresolved until a disposable exact-patch fixture establishes it.
+
+Preserve exact engine/build/platform, scene/content identity, body/constraint identity, physics-scene membership, transform/anchor frames, DOF map, units, initial conditions, mass/inertia and relevant solver/drive/projection settings, applied command history, sampling phase and tolerances. Retry only from a known authored fixture with its original configuration; this supplement establishes no transactional rollback, safe repeated actuation, persisted joint identity, cross-engine equivalence or deterministic simulation guarantee.
+
+#### Unexecuted acceptance fixtures
+
+1. **Connection and frame identity:** build a limited door mechanism with nonidentity parent rotations and an intermediate Transform node in an articulation variant. Verify the chosen world hinge axis and both endpoint identities. In a separate Rigidbody fixture, move the connected body into a different local physics Scene and verify that unexpected disconnection is detected rather than accepted as a world-fixed joint.
+2. **Mixed-unit, mixed-DOF command:** use fixed, prismatic, revolute and spherical links with unique body IDs. Compare a 90-degree per-drive command with its documented pi/2-radian bulk equivalent, then compare measured motion and mapped readback. Change a lock/topology input within valid articulation configurations and require mapping revalidation. The documented constraints prohibit locking a revolute/prismatic joint’s sole DOF or all spherical rotations. A same-length, intentionally permuted adapter map must fail the identity gate before native submission.
+3. **Tracking and stability:** command a target with adequate versus deliberately insufficient drive effort, and with versus without damping. Keep position error and residual velocity separate. Compare projection disabled/enabled under a declared load; a recovered final pose must not hide excessive intermediate separation or unacceptable motion. Include a cyclic ConfigurableJoint graph as a distinct observation case without predicting projection success.
+4. **Break identity and disputed axis case:** compare Free, Limited and Locked rotational modes under the same declared torque protocol, retaining exact patch and diagnostic evidence. Use one joint per object first; add a two-joint object to verify break attribution, event evidence and surviving-component inventory. Treat the free-axis result as resolving only the tested configuration, not rewriting the conflicting source claims globally.
+
+#### Primary sources
+
+[U1]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-connectedBody.html
+[U2]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-anchor.html
+[U3]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ConfigurableJoint.html
+[U4]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.html
+[U5]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody-parentAnchorPosition.html
+[U6]: https://docs.unity3d.com/6000.0/Documentation/Manual/class-ArticulationBody.html
+[U7]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationDrive-target.html
+[U8]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.SetDriveTargets.html
+[U9]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.GetJointPositions.html
+[U10]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.GetJointVelocities.html
+[U11]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.GetDofStartIndices.html
+[U12]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-currentForce.html
+[U13]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-currentTorque.html
+[U14]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ArticulationBody.GetDriveForces.html
+[U15]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ConfigurableJoint-projectionMode.html
+[U16]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ConfigurableJoint-projectionDistance.html
+[U17]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Joint-breakTorque.html
+[U18]: https://docs.unity3d.com/6000.0/Documentation/Manual/class-ConfigurableJoint.html
+[U19]: https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.OnJointBreak.html
+
+
+## Build artifacts, streaming budgets and delayed timing
+
+### UnityDataTool: query the shipped bytes before proposing an asset fix
+
+**New gap filled:** existing asset notes validate formats and dependency operations; they do not establish how an agent can inspect actual Unity build contents or detect an invalid analysis.
+
+The [inspected UnityDataTools README](https://github.com/Unity-Technologies/UnityDataTools/blob/db19dffbf40008e3a61e7566a5ddd6888eb68717/README.md) describes an offline CLI over archives and serialized files, without a running Editor. The native UnityFileSystemApi is backward-compatible but not forward-compatible with newer Editor content. The project is experimental and explicitly not officially supported; source availability does not guarantee support or compatibility. No binary was downloaded or run. The [same-revision license notice](https://github.com/Unity-Technologies/UnityDataTools/blob/db19dffbf40008e3a61e7566a5ddd6888eb68717/LICENSE.md) identifies the Unity Companion License for Unity-dependent projects. The linked [current license, v1.4](https://unity.com/legal/licenses/unity-companion-license) permits use in connection with authoring/distribution under a valid Unity Engine License, prohibits competitive analysis and competing products/services, and retains notice and third-party-rights conditions. This is a use-restricted license, not a generic noncommercial rule or verified deployment entitlement.
+
+The same-revision [agent guide](https://github.com/Unity-Technologies/UnityDataTools/blob/db19dffbf40008e3a61e7566a5ddd6888eb68717/Documentation/agent-guide.md) supplies unusually concrete failure boundaries:
+
+- Analyze one binary build’s archives/serialized files per database; duplicate archive/serialized-file names are rejected rather than safely identifying separate targets.
+- Missing TypeTrees can skip files and leave a valid but empty database. Player builds normally omit them; the documented diagnostic build switch changes the input artifact and must be recorded.
+- Database row `id` and serialized local `object_id` differ. Reference lookup takes the former; object dumping takes the latter, whose uniqueness is only within a serialized file.
+- Potential-duplicate rows are candidates based on matching attributes, not verified byte-identical redundancy. Whole-build coverage matters; analyzing one bundle cannot establish build-wide duplication.
+- Reference-chain tooling is experimental; a missing result is not proof that no dependency exists.
+
+**Proposed gate:** preserve build provenance, target, native-reader version, file inventory and skipped-file diagnostics before interpreting a query. Archive the database schema and join on the correct identity domain. Reinspect the object and dependencies before changing bundling or Read/Write settings. These are research recommendations, not a working automated optimizer.
+
+### Compare build outputs without confusing identifiers or byte domains
+
+The pinned [comparison guide](https://github.com/Unity-Technologies/UnityDataTools/blob/db19dffbf40008e3a61e7566a5ddd6888eb68717/Documentation/comparing-builds.md) describes separate databases and cross-database queries rather than a native two-build comparison operation. Hash-bearing bundle filenames can change after content edits. A matching text dump need not prove binary equivalence: header/padding changes and floating-point representation can differ; hexadecimal float output helps investigate the latter. External resource bytes require their own comparison.
+
+The pinned [Addressables analysis guide](https://github.com/Unity-Technologies/UnityDataTools/blob/db19dffbf40008e3a61e7566a5ddd6888eb68717/Documentation/addressables-build-reports.md) documents report-to-SQLite extraction and build-scoped tables. Its bundle-size comparison assumes packed-together groups and stable group GUIDs. Cache names and catalog names are distinct. Report build IDs scope joins; do not join records from unrelated builds solely by an integer asset ID.
+
+The [Addressables 2.2.2 layout-report page](https://docs.unity3d.com/Packages/com.unity.addressables@2.2/manual/BuildLayoutReport.html) requires enabling Debug Build Layout and building content; generation adds build time. Its documented `buildlayout` path and the newer tool guide's `BuildReports` JSON example are different documentation scopes. Verify the actual report schema/path instead of advertising one universal command.
+
+**Unknowns:** parser behavior for each engine/package release, cancellation, interrupted database recovery, stable cross-build object correspondence, and a project's intended duplication/performance tradeoff. A smaller bundle is not by itself a successful optimization.
+
+### Unreal texture-streaming completion is budget-relative
+
+The [Texture Streaming Metrics page, labeled UE 5.8](https://dev.epicgames.com/documentation/unreal-engine/texture-streaming-metrics-in-unreal-engine?lang=en-US) distinguishes conceptual pools from currently used mip memory. Required Pool can exceed the streaming budget, reducing delivered resolution. Wanted Mips at 100% means the current wanted set has streamed, not that every texture reached ideal resolution. Full streamer updates span frames; non-streaming allocation fluctuations exceeding the safety pool can repeatedly displace streamed textures. The temporary pool affects in-flight requests and loading order, while the displayed IO-bandwidth estimate is not an exact storage benchmark. Early visibility before incremental level processing of static components completes can force remaining work into a hitch. Historical Paragon/4.15 performance examples on that page are not current-project results.
+
+**Proposed diagnostic:** correlate camera path, visibility changes, required/wanted/visible mips, allocations and frame-time evidence at the same update scope. Preserve resource-quality targets alongside budget counters. Increasing a pool or reaching 100% Wanted Mips is not an acceptance test for visual quality, whole-world streaming readiness or stable performance.
+
+### Unity frame timing: retain the observation delay and sample count
+
+The [Unity 6000.0 FrameTimingManager manual](https://docs.unity.com/en-us/engine/6000.0/manual/analysis/graphics-performance-profiling/profile-rendering/frame-timing-manager/manager) documents a four-frame result delay, without guaranteeing valid results after that delay. Instrumentation may itself slow OpenGL ES. Platform/API support is partial in some configurations, and tile-based rendering can report GPU duration exceeding frame duration because the interval includes deferred gaps.
+
+[GetLatestTimings, Unity 6000.0](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/FrameTimingManager.GetLatestTimings.html) returns the number actually obtained, at most the request; element zero is the latest completed sample, with older samples afterward. Array capacity is the caller's responsibility.
+
+**Proposed gate:** record capture request, actual returned count, sample timestamps, graphics API/device and instrumentation configuration. Do not align a delayed sample with the current screenshot solely by array position, or interpret unavailable data as zero cost. Performance acceptance needs a specified target workload, comparable capture overhead and repeated observations. No frame collector or benchmark was executed here.
+
+## Memory lifetime across repeated production cycles
+
+Measure allocations and retained resources across a repeatable load, interaction, and cleanup cycle. Compare observations at the same idle boundary.
+
+### Source and version scope
+
+The inspected Epic pages are labeled **Unreal Engine 5.8**. Unity's scripting/manual pages are scoped to **6000.0**; Memory Profiler `@1.1` resolves to **1.1.11**, and Addressables `@1.21` to **1.21.21**. These are documentation versions, not installed binaries or immutable implementation pins. Keep the actual engine, package, target, scripting backend, build configuration and profiling settings with each experiment.
+
+### Unreal: query an allocation's lifetime, not just total growth
+
+**Documented inputs and output.** [Memory Insights](https://dev.epicgames.com/documentation/en-us/unreal-engine/memory-insights-in-unreal-engine) requires memory tracing from process startup; enabling it only through late connection cannot recover the allocation history. Its example uses `-trace=default,memory`; packaged projects must be Development builds. Optional `metadata,assetmetadata` channels support asset/class filtering. The resulting `.utrace` opens in Insights, where allocation queries take a rule and timeline markers. Results include sizes, tags and allocation/free callstacks; readable symbols require the matching `.pdb` or `.elf`.
+
+The **Memory Leaks** rule selects allocations created between A and B and not freed until after C. **Growth** selects allocations created during A–B and surviving B; **Limited Lifetime** finds allocations created during A–B and freed during B–C. Query execution can take substantial time; the allocation table populates after completion. Detailed allocation tracks and LLM summaries have different temporal granularity and startup coverage. [Memory Insights query and recording reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/memory-insights-in-unreal-engine)
+
+**Interpretation:** the rule name is not a project-specific fault verdict. A retained cache can satisfy the same predicate as an accidentally retained object. The application must establish when that allocation should have become unnecessary.
+
+**Recording boundary.** The [Insights reference](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-insights-reference-in-unreal-engine-5) distinguishes `Memory` (allocation events, callstacks and tags) from `Memory_Light` (without callstacks). It documents file/trace-store destinations, `Trace.Stop`, and the required channels; a disabled channel produces no corresponding events. [Trace status](https://dev.epicgames.com/documentation/en-us/unreal-engine/trace-in-unreal-engine-5#trace-status) reports connection, tracing memory, sent bytes and channel state. The tracing system itself consumes resources. Neither source establishes a crash-durable flush receipt or a universal overhead allowance. Preserve the destination, settings and terminal observation; independently reopen the file and check interval coverage before treating an empty query as evidence.
+
+### Unity: capture target, completion and artifact are separate
+
+[TakeSnapshot, Unity 6000.0](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Unity.Profiling.Memory.MemoryProfiler.TakeSnapshot.html) accepts a path, finish callback, capture flags and optional screenshot callback. The signature/example use `(path, success)`; the parameter prose reverses these arguments. A disconnected Player writes locally. A connected Player streams to the Editor and reports **false locally even when the Editor saved the snapshot**. Editor calls capture the selected connected Player or the Editor itself. Caller-side failure therefore cannot alone classify receiving-side delivery.
+
+Serialize captures until the finish callback. Screenshot completion is separate and only available in Players/Play mode; waiting outside these conditions can hang. The snapshot process blocks execution on the captured host. Unsupported native-callstack flags are ignored. The sample checks a temporary file before renaming it; this is no crash-durability guarantee. No bounded timeout or cancellation contract is documented here.
+
+**Proposed evidence:** retain connection direction, target, requested fields, callback outcomes and received artifact. Verify the receiver rather than converting every false callback into a failed production candidate.
+
+### Snapshot and reference evidence has limits
+
+A snapshot records one capture point, not continuous monitoring. [Snapshot concepts](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/snapshots-concepts.html) describe `.snap` storage and metadata; snapshots can be large. The [capture guide](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/snapshot-capture.html) warns that Editor memory cannot isolate Play mode and recommends checking optimization results in a Player build.
+
+[Comparison](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/snapshots-comparison.html) shows absolute values and differences; unchanged rows are hidden by default. Cross-session conditions can change totals independently of the application change. A positive delta requires diagnosis, not immediate attribution to the edited feature.
+
+The [References panel](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/references-component.html) distinguishes the expandable **Referenced By** chain toward roots from **References To**, which lists direct outgoing references only. A selected object's name still appears when no references are displayed. Treat this as the captured reference surface, not proof that every possible native/GPU owner was collected.
+
+Record observer settings too: the [window reference](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/memory-profiler-window-reference.html) exposes capture flags, screenshots, closing open captures and running garbage collection before Editor captures. Changing these between candidates changes the observation procedure.
+
+### Addressables: relinquishing ownership is not immediate reclamation
+
+[Addressables memory management](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/MemoryManagement.html) requires matched loads/releases. Both assets and bundles have reference counts. Releasing an asset to zero does not necessarily unload it while other assets retain its bundle. The Addressables profiler reflects those counts, not an exact inventory of resident memory; `Resources.UnloadUnusedAssets` can unload eligible objects without updating that reference-count view, and may introduce hitches.
+
+Conversely, immediately reloading a just-unloaded shared dependency causes **asset churn**. Lower retained bytes at one boundary can therefore trade against repeated loading work. Preserve asset/handle identity, bundle dependencies, intended cache lifetime and actual release operations alongside memory evidence. Do not force unloading merely to obtain a smaller score.
+
+Unity's [disabled-domain-reload guidance](https://docs.unity3d.com/6000.0/Documentation/Manual/domain-reloading.html) adds a separate confound: static fields, static-event subscribers and nonserialized values can survive Play sessions, while script-change refreshes can still trigger reload. Reentering Play mode is not an equivalent cold reset.
+
+### Proposed fixed-cycle fixture, unimplemented and unexecuted
+
+Use one disposable project and a declared cycle: load a fixed asset set, instantiate a scene, run a fixed interaction/capture sequence, destroy cycle-owned objects, release owned handles, then return to a named idle boundary. Freeze cycle count, content, warm-up, cache policy, reset method, observation settings and allowed residual resources before comparing candidates.
+
+1. Record a fresh-process baseline and separate warmed baseline. Mark A before acquisition, B after work, and C after the application's declared release boundary; do not replace lifecycle completion with an arbitrary sleep.
+2. Capture equivalent Unity snapshots or retain the complete UE trace interval. Inspect growth by object/category and retention chain or allocation callstack. Keep shared bundles and intended caches explicit.
+3. Include a deliberately retained fixture object and a correctly released control. Check whether the chosen observation surface distinguishes them; no automatic fault verdict is assumed.
+4. Repeat unchanged cycles without resetting away the suspected accumulation. Separately rerun from a fresh process to distinguish session persistence from reproducible per-cycle retention.
+5. Preserve files, hashes, callback outcomes, query parameters, identities and exclusions. Report incomplete capture, missing fields, timeout and unresolved ownership as inconclusive. Measure normal gameplay timing separately from snapshot-induced pauses.
+
+Cross-platform coverage, native/GPU accounting completeness, safe interrupted-capture recovery and actual retention thresholds remain unverified. A useful result is a reproducible lifetime violation with an identified owner or allocation origin; neither reduced bytes nor successful snapshot creation establishes that result.
+
+## Remaining practical boundary
+
+A production failure still needs project-owned identity mapping between frame, solver update, asset/build revision and gameplay event. Animation foot contact requires the rig/controller, intended motion, coordinate transform and collision evidence; a contact API alone supplies no universal foot-sliding or retargeting threshold. Streaming readiness also includes project-specific geometry, navigation, scripts and durable state beyond texture mips. These joins, target-machine entitlements and real fixture outcomes remain unknown. Prefer a reproducible failing project and explicit acceptance target before claiming an automatic diagnosis or optimization loop.

@@ -815,7 +815,9 @@ test("remote-import: media/logos source copies are inert, Git collisions are rep
   entry.body.attachments.identity.sha256 = sha256(source);
   const fixture = await packet([entry], () => {}, {
     "logos/remote-import-test.svg": source,
-    "docs/content-platform.md": Buffer.from("# Proposed original document\n"),
+    "docs/project/content-platform.md": Buffer.from(
+      "# Proposed original document\n",
+    ),
   });
   const save = () =>
     writeFile(

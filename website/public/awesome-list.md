@@ -5,11 +5,11 @@
 **110 curated primary sources** connecting coding agents, game engines, AI for 2D and 3D development, production tools, and code world models. Main source review date: **October 18, 2026**. This is a research snapshot: reviewing a source does not imply reproducing its results or continuously monitoring it.
 
 - [Interactive GameMap website — GitHub Pages](https://openenvision.github.io/GameMap/)
-- [A practical guide from resources to a working project](./practical-guide.md)
-- [Production research: interfaces, evidence and generative-service boundaries](./research-index.md)
+- [A practical guide from resources to a working project](./docs/guides/practical-guide.md)
+- [Production research: interfaces, evidence and generative-service boundaries](./docs/production/overview.md)
 - [Tutorials, playable demos, and complete example-game source](./tutorials-and-demos.md)
 - [Coding agents × games: skills, bridges, evaluations, and game code](./coding-agent-game-code.md)
-- [Testing library: games, AI environments, assets, rigs, and motion data](./game-testing-library.md)
+- [Testing library: games, AI environments, assets, rigs, and motion data](./docs/reference/testing-library.md)
 - [Contributing and data maintenance](./CONTRIBUTING.md) · [Structured JSON](./resources.json)
 
 ## How to read the map
@@ -391,7 +391,7 @@ Tags: `Blender` · `DCC` · `3D assets` · `Animation` · `Open source`. Source 
 
 Connects Blender asset production to game runtimes and helps diagnose material, mesh, and animation conversion issues. Match the addon's release branch to the Blender version; main can target an upcoming Blender release. Repository CI validates exports and compares import / export roundtrips. A valid file can still render differently in the target engine, so verify runtime imports.
 
-Tags: `Blender` · `glTF` · `GLB` · `Asset pipeline` · `Roundtrip validation`. Source reviewed: 2026-10-19. Further reading: [Technical notes](https://github.com/KhronosGroup/glTF-Blender-IO/blob/main/Technical.md) · [GameMap: asset validity and runtime fidelity](https://github.com/OpenEnvision/GameMap/blob/main/docs/asset-validation-contracts.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity)
+Tags: `Blender` · `glTF` · `GLB` · `Asset pipeline` · `Roundtrip validation`. Source reviewed: 2026-10-19. Further reading: [Technical notes](https://github.com/KhronosGroup/glTF-Blender-IO/blob/main/Technical.md) · [GameMap: asset validity and runtime fidelity](https://github.com/OpenEnvision/GameMap/blob/main/docs/assets/validation.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity)
 
 **[Phaser · First Game Guide](https://docs.phaser.io/phaser/getting-started/making-your-first-phaser-game)**
 
@@ -824,7 +824,7 @@ Tags: `Unreal Engine` · `AutomationTool` · `Multi-process testing` · `Cooked 
 
 Provider support must be probed per control; no specific game editor is assumed accessible. UIA coordinates are physical pixels, while absolute mouse input uses normalized desktop coordinates. Bounding rectangles may contain occluded points, foreground activation can be refused, and input insertion does not prove application completion. Integrity restrictions must be respected.
 
-Tags: `Windows` · `Accessibility` · `Native GUI` · `CUA` · `DPI`. Source reviewed: 2026-10-19. Further reading: [Properties and occlusion](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-automation-element-propids) · [Input and integrity limits](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendinput) · [DPI coordinates](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-screenscaling) · [Window/display capture and frame lifetime](https://learn.microsoft.com/en-us/windows/apps/develop/media-authoring-processing/screen-capture) · [GameMap: native UI evidence boundaries](https://github.com/OpenEnvision/GameMap/blob/main/docs/engine-operation-contracts.md#native-gui-automation-is-a-separate-evidence-surface)
+Tags: `Windows` · `Accessibility` · `Native GUI` · `CUA` · `DPI`. Source reviewed: 2026-10-19. Further reading: [Properties and occlusion](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-automation-element-propids) · [Input and integrity limits](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendinput) · [DPI coordinates](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-screenscaling) · [Window/display capture and frame lifetime](https://learn.microsoft.com/en-us/windows/apps/develop/media-authoring-processing/screen-capture) · [GameMap: native UI evidence boundaries](https://github.com/OpenEnvision/GameMap/blob/main/docs/production/engine-operations.md#native-gui-automation-is-a-separate-evidence-surface)
 
 **[Xbox Accessibility Guidelines](https://learn.microsoft.com/en-us/xbox/accessibility/guidelines)**
 
@@ -1143,11 +1143,11 @@ Tags: `scene-generation` · `explicit-3d` · `Gaussian-splatting` · `mesh-expor
 
 ## Further reading and practice
 
-- [Agents: models, harnesses, skills, and MCP](./agents-notes.md)
-- [Engine ecosystems: documentation, source, tests, and community practice](./engines-notes.md)
-- [AI for 2D and 3D: evaluation versions, asset pipelines, and release boundaries](./game-ai-notes.md)
-- [World models: code state, hybrid rendering, video simulation, and explicit 3D](./world-model-notes.md)
-- [Practical guide: task contracts, asset import, validation, and reproduction](./practical-guide.md)
+- [Agents: models, harnesses, skills, and MCP](./docs/ecosystem/agents.md)
+- [Engine ecosystems: documentation, source, tests, and community practice](./docs/ecosystem/engines.md)
+- [AI for 2D and 3D: evaluation versions, asset pipelines, and release boundaries](./docs/ecosystem/2d-3d-development.md)
+- [World models: code state, hybrid rendering, video simulation, and explicit 3D](./docs/ecosystem/world-models.md)
+- [Practical guide: task contracts, asset import, validation, and reproduction](./docs/guides/practical-guide.md)
 
 ## Maintenance
 

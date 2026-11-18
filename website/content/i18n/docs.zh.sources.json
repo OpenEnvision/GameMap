@@ -2,153 +2,153 @@
   "version": 1,
   "locale": "zh",
   "documents": {
-    "reading-guide": {
-      "sourceHash": "a0d94b99cec9a506cc005fb8b54136acb16dbac1c1beef17624f44f2bbfbf6e8",
-      "translationHash": "5c9a8642e3126f010536618c270f0843413e0ad3f746afe38ecd694943821c8d"
+    "guides/reading-guide": {
+      "sourceHash": "673eb97a65c23fe4b5e7db8df2591636f4bc0de32adaa03dec05db6ee68042d7",
+      "translationHash": "07198ef60f4ca75b2a915d0d5eb28a004c3d472ebc2911fbc699602112b61902"
     },
-    "practical-guide": {
-      "sourceHash": "3881dc0d013f425d0472595c8f4b20748ecef2788c79052ae11ddef1d26a071e",
-      "translationHash": "1e9d1f34e2500953335520fd6c725a946c1fe7ef741d02478ba98642db38b9d9"
+    "guides/practical-guide": {
+      "sourceHash": "89fc660bb64e85e6b940632e883451274526ec6eef43fe0c40920078ff3cc538",
+      "translationHash": "d1ef72627a176f42ec70799659bbb368d92c0c5dd411b650734aaf83ea627078"
     },
-    "game-testing-library": {
+    "reference/testing-library": {
       "sourceHash": "a6464f7988a050d4925efc88c3b7075d01261373fb37f933313fb5df028094f4",
       "translationHash": "3bfeea14a0155ffee74fc00b6b1074a32d81278c510eb7c0c8a90a23a4bba9d7"
     },
-    "agents-notes": {
+    "ecosystem/agents": {
       "sourceHash": "2a3353046adee5f276218ea2f22070fdd52b6e4dbe2edbd9b5a8d504418888a3",
       "translationHash": "0d50e3a5c638ac32af1d5d969c4b50aeeeb7c69026f67731aafb56910cd156f4"
     },
-    "engines-notes": {
+    "ecosystem/engines": {
       "sourceHash": "f9ccc0288b0c600d0bdd576528966abf34d5dd1226cb4c6e0019a194567d9c5d",
       "translationHash": "6d2b99ee5fe762700a42a177bcf52cc824db41c37e61a450f339616784220c35"
     },
-    "game-ai-notes": {
-      "sourceHash": "ffcb9a080adca25301db04bba859b2faf2336ee85cc8d383d2bd81126f9d9b2d",
-      "translationHash": "d60afcca7cd2b9911a2705705aea8fde8d8692336bc91e0c8a85bceaf485e021"
+    "ecosystem/2d-3d-development": {
+      "sourceHash": "2788e68eafab3a84e8a94562b7bd69946bd498d7af679c7356edfc8ccbd2cf87",
+      "translationHash": "23c5c7f0dab99f181f4f3fcbd88d580e3be3b15d73883894e1d9bcc358aef2ad"
     },
-    "world-model-notes": {
-      "sourceHash": "3284ce6c39421d88858bdb0919306f1aa14a2c4334245530a70943f0bed9a741",
-      "translationHash": "b8bfe8e6560785ed490038265b4923b299668d0fe4fd829fce1423341f3045b9"
+    "ecosystem/world-models": {
+      "sourceHash": "48b909d2796be1e393b1ed836a0630bfe5bf268999c5e5607417bfdccb67aceb",
+      "translationHash": "18637a4575ec1e7e79751bf1bcf880c4a60c26e50cf209a5fede179bfce22c32"
     },
-    "research-index": {
-      "sourceHash": "e1d872b4e5982d699ceda5e95eb031b2650b40447eec59540d938f1a6e2a9872",
-      "translationHash": "f1f3ee393019ec89ceb2b0a85fa9eaefa1d9c7130a37781e424f84597da87c67"
+    "production/overview": {
+      "sourceHash": "bff4fd2e1d7685de683ec1d9fdaca9c538295e7a79f95b69b524d430d1fd49b8",
+      "translationHash": "7f53fc171820d8256e4e0b7728c4832bc71ab997c6e8d6605799433197c32269"
     },
-    "production-research-notes": {
-      "sourceHash": "b713a8ed1f662d7f79708cd4363cd3580c0a980757e15638aa1467c0506b25b2",
-      "translationHash": "2c1008d97637da20f0b41530a782a80cd500137d3fe1096f2575367ec31aacbc"
+    "production/tools": {
+      "sourceHash": "fce323789c1db97501704bbd6d5b78a248de6c977135df1bdd09d8aa5a46a97c",
+      "translationHash": "ff1d9f2b711a0379f56baf4bb9049eaee841bce678b86a7bbba841adf678f844"
     },
-    "engine-operation-contracts": {
-      "sourceHash": "36f9e2afea2659af26299d81f3165bb22a8dcc940622cfb78b27bee6458fc0a2",
-      "translationHash": "a6c48cd67d7b64409377a462f13d37fe4e4cce37132d083498e70d499ffd7980"
+    "production/engine-operations": {
+      "sourceHash": "dabdafdb7e0fecaacbd898e8fa1eba85af3b0f11126412a41106108ed923f887",
+      "translationHash": "0cf1b348f82b3eba8fe3a3eb82ffa0b0c7b25bf213d775a06fae5ea017d7fae8"
     },
-    "production-work-orders": {
-      "sourceHash": "c612e8d796834f907606b68a7d90d3f75eabdf5ef5f14b0f2842dbe2a53985e2",
-      "translationHash": "905698cc79c3b822ca1c32965ed40c34e47b33d85e8716b9d80a7c905d05548e"
+    "production/work-orders": {
+      "sourceHash": "1e9cb1a9da8dd85361fdecf31838b89d6e9b96c921a5a541eef0ee01d659741b",
+      "translationHash": "e17ead4fe48e4879f2a43a5f443ab514253e23edae713695c6052932e258540a"
     },
-    "studio-production-case-studies": {
-      "sourceHash": "56eeef744a25f7a377eb797ebb4f669685f2b3b356e3e29342085902346459b7",
-      "translationHash": "47e67a4f86e2e77e54c7d7842aeab0019983e2c2723011d9e9a88ee3ae730a35"
+    "production/studio-case-studies": {
+      "sourceHash": "7d136306e3c2e9fea4adf77431ae27356fbf895c8967bb79baa4fd7ab5cd36e1",
+      "translationHash": "2ab997164e1654a361cf37b795ae9ad8be24f1a5f17a7384f7a3ae54d49c4056"
     },
-    "native-operation-details": {
-      "sourceHash": "f6b2d944a9c4cfa8ea937d120aee0e1d50b6b85a9981964185268febecb68d13",
-      "translationHash": "f3a6acb02e15b8d5f0c61f4cce4cafd685321cae268c4f0538fa63d050cb6aa6"
+    "production/native-operations": {
+      "sourceHash": "06153865335b39951de1ee750e4cc79af303ffe99ad38bbc7c36efaa666cd970",
+      "translationHash": "6482dc73e354b193cbbad3fc8996d81e8dbc1a688806f2eb52e208e0134b0f24"
     },
-    "production-debugging-contracts": {
-      "sourceHash": "a54714123e7a1ca1937f0ca687565d4a069d52d4014bab162f862517c8ea28f3",
-      "translationHash": "24e1cf33df2d14f21b555d6b457cc47eb1129cd140f1fae0076ef63d05e2a180"
+    "production/debugging": {
+      "sourceHash": "bdb6154f3a1e5c3e45f52bee9e3837733ce47ac19700c3cd0cbef993a647ded8",
+      "translationHash": "0559b6d9e86a81e3e0d28648dda62753307b4144c927fae074f8806ba804e6b3"
     },
-    "production-coverage-gaps": {
-      "sourceHash": "3cb5daf6bf9e4dd28c0f26a79f08e6c9f1f3d4f3bc897401dd03ee207f99cf3f",
-      "translationHash": "ab94696c0b40091ed7d905b0c5e9e40ecd6bdb4458e50d0ef0d3c993aae629c8"
+    "production/coverage-gaps": {
+      "sourceHash": "5a03e3ff7b618df16ea5ea07ccb97f7bd9704dc02b4eec72114f8d5d442342ea",
+      "translationHash": "a6f4fe4e68c64924ee2e6835bee47b75794a767fc3a27f788e8faeab158ad6c5"
     },
-    "generative-tools-research": {
-      "sourceHash": "4780eb1f63fa2300d03d3f4c3c4858f6a07639b0e66e7a78f1e30d47bbcdd611",
-      "translationHash": "ff5cfb33e7b85e90feaf9c9fb9b0b593f5266e76e09ab1a667152e37abcbf188"
+    "assets/generative-tools": {
+      "sourceHash": "de8249fc57d810b0b40b959c1e1d0a29a8fc5a8b26e0771391e381b28ee026b0",
+      "translationHash": "88ddb303e0a2c0409b866f6977629fdd86fb12b101f3cb7f1f89957be0cfff3e"
     },
-    "generative-api-boundaries": {
-      "sourceHash": "64f71410f530db6da3bca0aaa3f9c99a706540272af989db252075102e582817",
-      "translationHash": "5121e4efbbff852bb30594d9424c4421719c90f322d6d05cae895b40529d9f51"
+    "assets/api-terms": {
+      "sourceHash": "e1d7f6b6655bafbae6591013a7916941da5a71a319b4efa8c80759f65d69e7bf",
+      "translationHash": "3c29e92353295b120922fe8e9ef688d5e4f3c7cda2d4eec1e8c908a4bbd60abe"
     },
-    "generation-delivery-contracts": {
-      "sourceHash": "a8c29bea9be8f032cdee2c627d69750e580b53ff753a5fe3d785149fdc02412c",
-      "translationHash": "9db4e4df9f90993f35eac8217ba2b74c2e235b255c085a5e1cbdac5eb1764a94"
+    "assets/generation-delivery": {
+      "sourceHash": "f1a725922a4a1149c634955a71034dcb0bc7d8d14d33b1f0759a49c57d1e19da",
+      "translationHash": "8f708244d444f2ca2d60dca830c8a1345afcdd7b45f86de581e4030ada74eb28"
     },
-    "asset-validation-contracts": {
-      "sourceHash": "5a2c80a8b3ca37f1fb0a26de94023a602355b13e32e2b4d613ba9f69d934abd8",
-      "translationHash": "c55096f2855af77d3aefd686e1b6c5d9fa8406f78f60aa5c89bdaeb85543f405"
+    "assets/validation": {
+      "sourceHash": "d87b19603e25d37eb73716134d0a21d2305a5926c6872213fc9ac1dc311dcbcf",
+      "translationHash": "4ef0d612b6498ae02c63e2c392a660b2c492dc6cbbd49c451c987e0cdd273095"
     },
-    "asset-selection-feedback": {
-      "sourceHash": "04f504b0bf14a4df47005642258b4e7510addb575c690ab855f678710fa0d06e",
-      "translationHash": "fc0284188408d7afab4ef81b37c8b7a255ea9f419ea17bce7e17e88e790f5a33"
+    "assets/selection": {
+      "sourceHash": "74994abfbca02f9592b0b5886c5513e2609fc76abc50abdd9a4ce2f8b95bdb2c",
+      "translationHash": "61d139afc6fe1215b37cf23916a9f3497581c82bdb7284e7b613cf22d2e9ba40"
     },
-    "visual-evidence-research": {
-      "sourceHash": "160171b2f4332bba01be76fa6b5d3bcd64e56367e0a55ca9835fd9ada6f26aa8",
-      "translationHash": "910401f29513fe27ea8c501754d1104b062a8d88aa225199e329e8802617a7ab"
+    "assets/visual-evidence": {
+      "sourceHash": "f9f92b23cff82c81c6bb3a25eebd9e7b89e8191742ea68e750d8c491f1be69b1",
+      "translationHash": "61844f8b3d13efaf078df24efb851d19609bd8c381971c303987d4eecd10f468"
     },
-    "visual-feedback-mechanisms": {
-      "sourceHash": "9800f24df8b5f7e859c46ed058400152ed23f501ba83e3e4a2362eede6d6aac8",
-      "translationHash": "b13a8663697a64df02fc9c04061bef65b4c75b067290b65f10e9ee80b22b9274"
+    "assets/visual-feedback": {
+      "sourceHash": "0101b9bbfc4c4de0ec9ccdbfed5ea70ef7584b6dcd95dd70e3d15b2ce27e3169",
+      "translationHash": "0646fd11d4209c54a2e7d5639cac5a915aec31c284aab310f1832a2f1fe199ca"
     },
-    "game-development-evaluation": {
-      "sourceHash": "e294011f80cbdce3f3931c408edbc1d7de355ba27dfb811e6741d3bae317d9df",
-      "translationHash": "58c98d355d6b57a14893ffab127120fca8707c62fc09db206d478e4bc7dc8ba7"
+    "evaluation/development-evaluation": {
+      "sourceHash": "9416bd4b21c38292fbf2d0c9abefcfc3c0d43d91bf336261c8c172f0ee007ca8",
+      "translationHash": "651b4dd262d8d3bc9daee8ea65749eeb391950fad536f1f78b8d5b4804e60edc"
     },
-    "benchmark-reproducibility": {
-      "sourceHash": "4ff4a210639b7e3f49a024faa488424bbf45bae2d95517fdf3b9ad0d4bdf0133",
-      "translationHash": "ea1fa3f6c0113666e57b897ffb90853d0eb7d32319986f6978959e6996d3503c"
+    "evaluation/benchmarks": {
+      "sourceHash": "adfc28de7b9fada0de4a5354480552bf5a15e2b6b785e991ff4a1c568997c096",
+      "translationHash": "de152475e1c23d3da67dc7d47e7a7ccfaff532cd8045de90e9919fd85e5e5cd6"
     },
-    "gameplay-state-contracts": {
-      "sourceHash": "39daa242fce97cd61aa619a90f35ec12f314b9adf8a59936546967fa46bca50e",
-      "translationHash": "cba0d6ca548b063e4511b261876afb2bfba4b6ba4539764367b8befca8cd7fb3"
+    "evaluation/gameplay-state": {
+      "sourceHash": "a44151feaa430b1fbddab8e62e14a3a6c6dbb4679fab744a890c3f02e80e3749",
+      "translationHash": "682357b403764c1a4e5ce4d57ff540da4eccb4fc9685492bee32a9144b70347f"
     },
-    "agent-interface-evidence": {
+    "evaluation/agent-interfaces": {
       "sourceHash": "7510f6ff8fdce7d3ba4b1ea35befc17cfc7796b9f826d4157b166817a300b582",
       "translationHash": "47a6b03454346de4acf5fe65a84c8683eb4a148f2e210071f3504ace6f59849a"
     },
-    "catalog-review-coverage": {
-      "sourceHash": "a7ea83ab0cb738a7d2900ca772ec2736ee87deed4fa42dc6a8c69fe9c1277d86",
-      "translationHash": "6c8b23db0900315200a5d75de0c79be0ca07b4bc9819234c8f73fae0196e4e5a"
+    "evaluation/review-coverage": {
+      "sourceHash": "812c2ae1d3f6eb304cdc79fd591a49f03423c2936135a3a98d8ddb2456b91ede",
+      "translationHash": "c4ebbf14a5204c0da706f920b86bdd692f79e8a89b99c70e5a7d7edf4baf8962"
     },
-    "source-revision-notes": {
-      "sourceHash": "d074761cd7ff667d22331b02a2e9ca843831c4525a411757700e5c9d8cedf896",
-      "translationHash": "9f723548fd2df3e85f920125b6680d519abb67997a077dfe5bce01c47bf8cb05"
+    "evaluation/source-revisions": {
+      "sourceHash": "cf645e768b8505b601e18c80f434b110f58c5bb60baa918702b747f7364d1f2f",
+      "translationHash": "ff70ca13e3f04597eb8cd9df1ad122d5f3a8f9f9eda40d5990548cbdc4391f2f"
     },
-    "community-case-research": {
-      "sourceHash": "6cc81518fc762c0c17dae89409c50b03462435ba60572c1085bf42519e9ac559",
-      "translationHash": "e39d45582f39bbe35408bb88f3686ce6da8829858a84949960d6b9e7d22ffd9e"
+    "evaluation/community-cases": {
+      "sourceHash": "ae500bf3346d539a22b1a27bcc2acc711263d9a92e9ddd5ce77a0df0edca5397",
+      "translationHash": "03ab6a946827a44852a4b739627049e9df368f746b045994e2f7140bc88d45ea"
     },
     "overview": {
-      "sourceHash": "670dae88f252690c7af0dd092621bf89b3de3b686dc5a264f75b3bec9912a796",
-      "translationHash": "88aa3b0caf68158f8513736e22921938c12f93cd060bc0c20adff7e27f682efd"
+      "sourceHash": "e7725642e656a9d2dd69fc3e7b4085ddc4da199eee22d7f28e74a3a00d638f8c",
+      "translationHash": "f2c661eeed817c054165734a85668b2d173956112f45b470ef646829514ffbde"
     },
-    "catalog": {
-      "sourceHash": "33646f78960435fa676fa6381a8e0301712fb2c5c23a6204f41214dd13c51223",
-      "translationHash": "af875abebae6255b0c6b93047e174cfb0746ad234385b4a28ed83c1aa37151e8"
+    "reference/catalog": {
+      "sourceHash": "d48371654e1442de768436ec3704e0ea46a39c6ef085d71ae9280067db9899fb",
+      "translationHash": "e52fe9adb0de6c21e3102478df2fe6226e5d3d17efefd9a036edcc4f65e2018b"
     },
     "contributing": {
-      "sourceHash": "b49a5778a153e14449aa6223a98350298e22966f101ce7bb3f8892c5cc797d9a",
-      "translationHash": "dc0026aaf3422900fbbb2bef528c53630827623b6bf79cbeff1c9adfa7e8c812"
+      "sourceHash": "819f6f480cd8a84e6c25a4df1ac18222a8e9ba109fcadb62dc3b71393b5f71d3",
+      "translationHash": "95c3220ebbe2575fcead45799f16ac42ead46adcb48b0b83687ff0c88e66b950"
     },
-    "media-sources": {
-      "sourceHash": "a1283fd5fbe7bf329ba0317a5c27719f09d045abacd3a195c771133aa1e02378",
-      "translationHash": "343567c4c511863bb4680b19fa2365e51b208dfbe8e8e46143a0341878a5eaaf"
+    "reference/media-sources": {
+      "sourceHash": "066ccf13a91f30ea28693bf6d846713c214c1e16e18d4ab7edd0ea90b1663c29",
+      "translationHash": "4595bac4c8dc7d2f9777a273e97fdfa13d25eded625431cc0e75abe738a5f05a"
     },
-    "icon-sources": {
+    "reference/logo-sources": {
       "sourceHash": "f446a5a9f744f6b094df8855a92f62419c5636003a8accadab93879105221f35",
       "translationHash": "0166bbe59b58061b1926a5a2a0cccc6757fc64ae1341881fb0bdd574bf916855"
     },
-    "deployment": {
-      "sourceHash": "2d68d704639645b0245152218a76e8505a5e93227eb0df7d10ec9b9e9d2935ba",
-      "translationHash": "1178d7616932376099943ed003d9a9e56e008632bfbf86623bccbcc857325d23"
+    "project/deployment": {
+      "sourceHash": "2f9c5fcabab32b8a984cb5b1fd825f05bd4b0671193f96d5302d4c7f5e33ddfd",
+      "translationHash": "b796bcc13d50c8ef4c49eabf6ec59f0f6c0df0b04c3bf5677cd2b113269a51d8"
     },
-    "content-model": {
+    "project/content-model": {
       "sourceHash": "1ae0490b8d0bf749ebdd8a20a55ea35a51b33a83038af6eb22b9deccfdc42ac6",
       "translationHash": "3e85f7acf3f03a30d0824ab4cef10742eca1e944da812182fccd5166e1cf9fdb"
     },
-    "level-design-skill": {
-      "sourceHash": "71ec8a18dee374979b028bd2d5e678e97bb15b9fea73b8c6c0d66ce42aae9347",
-      "translationHash": "6c8bb3725e1b9707c19021e8a850547227bcc0fae1db45e8a989010199f83f58"
+    "guides/level-design": {
+      "sourceHash": "7591693f906e0b1a3f552846aee880e1f2832a2495e6bdd21d673901733a3cd8",
+      "translationHash": "5463e0f21284d36a190c56dccb7b93fd14ef758db966c10d422c42f4b5fc9dac"
     },
     "skills/level-design/SKILL": {
       "sourceHash": "81c8dd3c0237982e39772cd3d778e4d258d0c1a7ace0fe74daf7cd6994702f27",
@@ -158,23 +158,23 @@
       "sourceHash": "7baf28f0942b105ddcf68f80f73dfbdba24d7207f60e6876ddb99d28d417e3a6",
       "translationHash": "616a2f50444df2eea5cd43b940d1aa593c74426fd42fafa75f8375594a391662"
     },
-    "content-platform": {
+    "project/content-platform": {
       "sourceHash": "b69f9341186720c6a722adeaf71ec44d5945a5288da3e620dc51b696a3979c48",
       "translationHash": "082195060bdd765a53ad3f1c648336ea94901f6c7fad8026b73321bf7ceb58e0"
     },
-    "design/design-system": {
+    "project/design/v1/design-system": {
       "sourceHash": "7611580f45460b19e881abd518d0d9608ab54277da286fe7c17d9720ca6882a9",
       "translationHash": "8daff6d9746fd78ba3f3274955b0328df5bf29b7f5f3ec4c83fb7f6fccc22eaa"
     },
-    "design/v2/design-system": {
+    "project/design/v2/design-system": {
       "sourceHash": "18d092f1c068d25665c112904ea0caa5d7271c9586afc31dde14f6f684a11425",
       "translationHash": "6b981a1c889e98c863ae637e6838fb20b5729b94fcfe191b0b052f0bf80c27c2"
     },
-    "editorial-art-prompts": {
-      "sourceHash": "191b85f07d0cd5aff43ee9f2c8359022e06bc51b39fb93e775f2369d04a149a3",
-      "translationHash": "c71742651f04d82676e1338a2a242c208358ea5dad4dec42800b068c9c61342b"
+    "project/art/prompts": {
+      "sourceHash": "d3d4d47bc2dd0a3f944f9f66d71c64bff26732b03e1917efd83b3ae9592e8dec",
+      "translationHash": "4214dd3fcb9969bf6837a3c1a062f733794e508d15b8929b4a7407ed4cf98253"
     },
-    "remote-import": {
+    "project/remote-import": {
       "sourceHash": "95609b891026b0f3c408fce7e8bb9b99727de9d8d23a090e47bfd5d6a330d0bd",
       "translationHash": "0660af614df154cd55a35865268c935623825895d17432d244825e841df66ccf"
     },
@@ -242,7 +242,7 @@
       "sourceHash": "779a2edb6080480f4b73ad9b96692b9ae7eb4aa3e2f1bd613c637b4240ee608b",
       "translationHash": "bac3ae9585d59196e4ad37509e0a7dbc8a6ce9c78fc69487a150ec294fa48f31"
     },
-    "staging-readiness": {
+    "project/staging-readiness": {
       "sourceHash": "2b52a7b9353d16a5c63e53e883e10a1ab6eb57cbb128f7935136b5ac52b91416",
       "translationHash": "92d192164716bd8d75992ff918debd96bc145910f0acc0dfe5a19c110bf5425e"
     }

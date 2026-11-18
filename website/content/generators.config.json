@@ -1,7 +1,7 @@
 {
   "resource-catalog": {
-    "source": "docs/AWESOME.md",
-    "legacySources": ["AWESOME.md"],
+    "source": "docs/reference/catalog.md",
+    "legacySources": ["AWESOME.md", "docs/AWESOME.md"],
     "renderer": "scripts/lib/guides/catalog.mjs"
   },
   "game-builds": {
@@ -13,7 +13,8 @@
     "renderer": "scripts/lib/guides/agent-code.mjs"
   },
   "testing-library": {
-    "source": "docs/game-testing-library.md",
+    "source": "docs/reference/testing-library.md",
+    "legacySources": ["docs/game-testing-library.md"],
     "renderer": "scripts/lib/guides/testing.mjs"
   },
   "repository-index": {
@@ -21,7 +22,8 @@
     "renderer": "scripts/lib/guides/repository-research.mjs"
   },
   "logo-attribution": {
-    "source": "docs/icon-sources.md",
+    "source": "docs/reference/logo-sources.md",
+    "legacySources": ["docs/icon-sources.md"],
     "renderer": "scripts/lib/catalog/generated-documents.mjs"
   }
 }

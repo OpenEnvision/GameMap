@@ -116,7 +116,7 @@ test("atlas themes stay consistent across the site and Fumadocs", async ({
     expect(popover.actual).toBe(popover.panel);
     await page.keyboard.press("Escape");
 
-    await page.goto("docs/practical-guide/");
+    await page.goto("docs/guides/practical-guide/");
     await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute(
       "content",
       background,

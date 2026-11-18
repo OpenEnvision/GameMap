@@ -134,9 +134,9 @@ test("translation fixtures rebase local counterparts, archives, assets and suffi
   assert.equal(isFormalDocument({ slug: "remote-import" }), true);
   assert.equal(
     translatedDocumentLink(
-      "../website/public/skills/level-design.zip",
-      "docs/level-design-skill.md",
-      "docs/zh/level-design-skill.md",
+      "../../website/public/skills/level-design.zip",
+      "docs/guides/level-design.md",
+      "docs/zh/guides/level-design.md",
       [
         {
           slug: "zh/skills/level-design/SKILL",
@@ -144,7 +144,7 @@ test("translation fixtures rebase local counterparts, archives, assets and suffi
         },
       ],
     ),
-    "../../website/public/skills/level-design.zh.zip",
+    "../../../website/public/skills/level-design.zh.zip",
   );
 });
 
@@ -297,8 +297,11 @@ test("all formal documents have complete, source-bound Chinese counterparts in m
       "utf8",
     ),
   );
-  const explicitlyRetired = Object.keys(redirects).filter((path) =>
-    /^\/docs\/[^/]+\/$/.test(path),
+  // Moved documents stay in the inventory under their new slug; only retired
+  // catalogs (redirected to a site page) leave it.
+  const explicitlyRetired = Object.keys(redirects).filter(
+    (path) =>
+      /^\/docs\/[^/]+\/$/.test(path) && !redirects[path].startsWith("/docs/"),
   ).length;
   assert.ok(
     count + explicitlyRetired >= 63,

@@ -1,6 +1,6 @@
 import { testingManifest } from "../guides/testing.mjs";
 import { sha256, readArtifact } from "./codec.mjs";
-import documentRedirects from "../../../website/content/document-redirects.json" with { type: "json" };
+import { documentDownloads } from "../document-downloads.mjs";
 
 /** Public downloads are derived from the selected revisions, never copied from Git business exports. */
 export async function siteDownloads(input, bodies, directory) {
@@ -22,57 +22,7 @@ export async function siteDownloads(input, bodies, directory) {
       "website/public/brand/gamemap-mark.svg",
     ),
   };
-  const notes = documents.filter(
-    (page) =>
-      /^docs\/[^/]+\.md$/.test(page.source) &&
-      !["catalog", "media-sources", "icon-sources"].includes(page.slug),
-  );
-  const catalogSource =
-    documents.find((page) => page.slug === "catalog")?.source ?? "AWESOME.md";
-  let downloadable = bodies[catalogSource];
-  for (const page of notes) {
-    downloadable = downloadable.replaceAll(
-      `](${catalogSource.startsWith("docs/") ? page.source.slice("docs/".length) : page.source})`,
-      `](./${page.slug}.md)`,
-    );
-    output[`${page.slug}.md`] =
-      bodies[page.source]
-        .replaceAll("](../website/public/", "](./")
-        .replaceAll("](../AWESOME.md)", "](./awesome-list.md)")
-        .replaceAll("](AWESOME.md)", "](./awesome-list.md)")
-        .replaceAll("](../CONTRIBUTING.md", "](./CONTRIBUTING.md")
-        .replaceAll("](world-model-notes.md)", "](./world-model-notes.md)")
-        .trimEnd() + "\n";
-  }
-  let contributing = bodies["CONTRIBUTING.md"];
-  for (const page of notes)
-    contributing = contributing.replaceAll(
-      `](docs/${page.slug}.md`,
-      `](./${page.slug}.md`,
-    );
-  output["CONTRIBUTING.md"] = contributing;
-  output["awesome-list.md"] = downloadable
-    .replaceAll("](CONTRIBUTING.md)", "](./CONTRIBUTING.md)")
-    .replaceAll("](../CONTRIBUTING.md)", "](./CONTRIBUTING.md)")
-    .replaceAll("](data/resources.json)", "](./resources.json)")
-    .replaceAll("](../data/resources.json)", "](./resources.json)");
-  output["logo-sources.md"] = bodies["docs/icon-sources.md"].replaceAll(
-    "<code>website/public/logos/</code>",
-    "<code>logos/</code>",
-  );
-  output["media-sources.md"] = bodies["docs/media-sources.md"].replaceAll(
-    "../website/public/",
-    "./",
-  );
-  for (const [path, target] of Object.entries(documentRedirects)) {
-    if (!/^\/docs\/[^/]+\/$/.test(path)) continue;
-    const slug = path.split("/")[2];
-    output[`${slug}.md`] =
-      `# Game examples\n\nThis catalog has moved to [Game examples](${target}).\n`;
-    output["awesome-list.md"] = output["awesome-list.md"]
-      .replaceAll(`](docs/${slug}.md)`, `](./${slug}.md)`)
-      .replaceAll(`](${slug}.md)`, `](./${slug}.md)`);
-  }
+  Object.assign(output, documentDownloads(documents, bodies));
   const previews = [];
   for (const row of sources.learningPaths) {
     const media =

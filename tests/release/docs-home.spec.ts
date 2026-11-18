@@ -68,7 +68,7 @@ test("guide search supports English and Chinese, empty states, and keyboard clea
     await expect(page.locator(".docs-home-results")).toBeVisible();
     await expect(
       page.locator(
-        ".docs-home-results a[href*='/docs/engines-notes/'], .docs-home-results a[href*='/docs/zh/engines-notes/']",
+        ".docs-home-results a[href*='/docs/ecosystem/engines/'], .docs-home-results a[href*='/docs/zh/ecosystem/engines/']",
       ),
     ).toHaveCount(1);
     await expect(page.locator(".docs-home-tasks")).toHaveCount(0);

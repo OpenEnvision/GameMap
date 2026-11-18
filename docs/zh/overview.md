@@ -4,14 +4,14 @@
 
 一份用于借助 AI 构建游戏的工具、可玩项目与生产知识实践地图。
 
-[网站](https://openenvision.github.io/GameMap/) · [资源目录](catalog.md) · [文档](practical-guide.md) · [中文指南](reading-guide.md) · [贡献指南](contributing.md)
+[网站](https://openenvision.github.io/GameMap/) · [资源目录](reference/catalog.md) · [文档](guides/practical-guide.md) · [中文指南](guides/reading-guide.md) · [贡献指南](contributing.md)
 
 ## 探索
 
-- **[工具与引擎](catalog.md)** ——编码智能体、引擎集成、资产管线和世界模型。
+- **[工具与引擎](reference/catalog.md)** ——编码智能体、引擎集成、资产管线和世界模型。
 - **[游戏与工作流](tutorials-and-demos.md)** ——可玩示例、创作者构建历程和项目源码。
-- **[生产与测试](research-index.md)** ——实用接口、评估方法和证据边界。
-- **[关卡设计](level-design-skill.md)** ——包含参考资料和可复用模板的完整技能包。
+- **[生产与测试](production/overview.md)** ——实用接口、评估方法和证据边界。
+- **[关卡设计](guides/level-design.md)** ——包含参考资料和可复用模板的完整技能包。
 
 ## 开发
 
@@ -22,11 +22,11 @@ npm run dev
 
 文档和目录变更会自动刷新。网站是静态的，使用 Fumadocs、React Router、TypeScript 和 Vite 构建；无需应用后端或 API 密钥。
 
-生产构建和 GitHub Pages 配置见[开发与部署](deployment.md)。
+生产构建和 GitHub Pages 配置见[开发与部署](project/deployment.md)。
 
 ## 私有内容 Studio
 
-[内容平台](content-platform.md)包含类型化编辑表单、可信验证器、修订/翻译审阅、受保护的媒体上传和不可变发布导出。
+[内容平台](project/content-platform.md)包含类型化编辑表单、可信验证器、修订/翻译审阅、受保护的媒体上传和不可变发布导出。
 
 ```sh
 # Start Docker Desktop first. These wrappers never connect to a cloud project.

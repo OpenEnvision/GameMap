@@ -173,9 +173,9 @@ test("formal articles have complete Chinese bodies and language switches preserv
       ),
     }));
   for (const slug of [
-    "practical-guide",
-    "agents-notes",
-    "asset-validation-contracts",
+    "guides/practical-guide",
+    "ecosystem/agents",
+    "assets/validation",
   ]) {
     await page.goto(`docs/${slug}/`);
     const original = await structure();

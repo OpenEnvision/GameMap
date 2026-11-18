@@ -42,22 +42,32 @@ test("retired game catalogs leave the document inventory but retain explicit bil
       "/preview/zh/examples/",
     );
   }
-  assert.equal(retiredDocumentTarget("/docs/practical-guide/"), null);
-  assert.equal(Object.keys(redirects).length, 12);
+  assert.equal(retiredDocumentTarget("/docs/guides/practical-guide/"), null);
+  assert.equal(
+    Object.values(redirects).filter((target) => !target.startsWith("/docs/"))
+      .length,
+    12,
+  );
 });
 
 test("existing Markdown references resolve directly to Examples without reviving retired documents", async () => {
   const resolve = documentLinkResolver(await readDocuments());
   assert.equal(
-    resolve("tutorials-and-demos.md", "docs/practical-guide.md"),
+    resolve("../tutorials-and-demos.md", "docs/guides/practical-guide.md"),
     "/examples/",
   );
   assert.equal(
-    resolve("../coding-agent-game-code.md", "docs/zh/practical-guide.md"),
+    resolve(
+      "../../coding-agent-game-code.md",
+      "docs/zh/guides/practical-guide.md",
+    ),
     "/zh/examples/",
   );
   assert.equal(
-    resolve("coding-agent-game-code.md", "docs/zh/practical-guide.md"),
+    resolve(
+      "../coding-agent-game-code.md",
+      "docs/zh/guides/practical-guide.md",
+    ),
     "/zh/examples/",
   );
 });

@@ -130,7 +130,7 @@ try {
 } catch {
   // Database/driver errors may embed connection strings or private input. Never echo them.
   console.error(
-    `Remote import stopped during ${stage}. No partial import was committed. See docs/remote-import.md for preconditions and validation tests.`,
+    `Remote import stopped during ${stage}. No partial import was committed. See docs/project/remote-import.md for preconditions and validation tests.`,
   );
   process.exitCode = 1;
 } finally {

@@ -3,81 +3,93 @@
     "title": "Start building",
     "description": "Find a starting point and turn it into a working project.",
     "pages": [
-      ["reading-guide", "Reading guide"],
-      ["practical-guide", "Practical guide"],
-      ["game-testing-library", "Testing library"]
+      ["guides/reading-guide", "Reading guide"],
+      ["guides/practical-guide", "Practical guide"],
+      ["guides/level-design", "Level design guide"]
     ]
   },
   {
     "title": "Explore the ecosystem",
     "description": "Understand the tools, engines, and world models.",
     "pages": [
-      ["agents-notes", "Agents, skills & MCP"],
-      ["engines-notes", "Game engines"],
-      ["game-ai-notes", "2D & 3D development"],
-      ["world-model-notes", "World models"]
+      ["ecosystem/agents", "Agents, skills & MCP"],
+      ["ecosystem/engines", "Game engines"],
+      ["ecosystem/2d-3d-development", "2D & 3D development"],
+      ["ecosystem/world-models", "World models"]
     ]
   },
   {
     "title": "Production & engineering",
     "description": "Move from a promising demo to a reliable pipeline.",
     "pages": [
-      ["research-index", "Research overview"],
-      ["production-research-notes", "Production research"],
-      ["engine-operation-contracts", "Engine operations"],
-      ["production-work-orders", "Production work orders"],
-      ["studio-production-case-studies", "Studio case studies"],
-      ["native-operation-details", "Native operations"],
-      ["production-debugging-contracts", "Debugging contracts"],
-      ["production-coverage-gaps", "Coverage & limitations"]
+      ["production/overview", "Research overview"],
+      ["production/tools", "Production research"],
+      ["production/engine-operations", "Engine operations"],
+      ["production/work-orders", "Production work orders"],
+      ["production/studio-case-studies", "Studio case studies"],
+      ["production/native-operations", "Native operations"],
+      ["production/debugging", "Debugging contracts"],
+      ["production/coverage-gaps", "Coverage & limitations"]
     ]
   },
   {
     "title": "Assets & generative tools",
     "description": "Create, validate, and integrate assets with clear boundaries.",
     "pages": [
-      ["generative-tools-research", "Generative tools"],
-      ["generative-api-boundaries", "API boundaries"],
-      ["generation-delivery-contracts", "Generation & delivery"],
-      ["asset-validation-contracts", "Asset validation"],
-      ["asset-selection-feedback", "Asset selection"],
-      ["visual-evidence-research", "Visual evidence"],
-      ["visual-feedback-mechanisms", "Visual feedback"]
+      ["assets/generative-tools", "Generative tools"],
+      ["assets/api-terms", "API boundaries"],
+      ["assets/generation-delivery", "Generation & delivery"],
+      ["assets/validation", "Asset validation"],
+      ["assets/selection", "Asset selection"],
+      ["assets/visual-evidence", "Visual evidence"],
+      ["assets/visual-feedback", "Visual feedback"]
     ]
   },
   {
     "title": "Evidence & evaluation",
     "description": "Read the evidence and understand what was actually tested.",
     "pages": [
-      ["game-development-evaluation", "Development evaluation"],
-      ["benchmark-reproducibility", "Benchmark reproducibility"],
-      ["gameplay-state-contracts", "Gameplay state"],
-      ["agent-interface-evidence", "Agent interfaces"],
-      ["catalog-review-coverage", "Review coverage"],
-      ["source-revision-notes", "Source revisions"],
-      ["community-case-research", "Community case research"]
-    ]
-  },
-  {
-    "title": "About this atlas",
-    "description": "Source attribution, contribution standards, and site maintenance.",
-    "pages": [
-      ["overview", "Project overview"],
-      ["catalog", "Full resource catalog"],
-      ["contributing", "Contributing"],
-      ["media-sources", "Media sources"],
-      ["icon-sources", "Logo sources"],
-      ["deployment", "Development & deployment"],
-      ["content-model", "Content model & coverage"]
+      ["evaluation/development-evaluation", "Development evaluation"],
+      ["evaluation/benchmarks", "Benchmark reproducibility"],
+      ["evaluation/gameplay-state", "Gameplay state"],
+      ["evaluation/agent-interfaces", "Agent interfaces"],
+      ["evaluation/review-coverage", "Review coverage"],
+      ["evaluation/source-revisions", "Source revisions"],
+      ["evaluation/community-cases", "Community case research"]
     ]
   },
   {
     "title": "Skills & practice",
     "description": "Practical skill packages, templates, and their source boundaries.",
     "pages": [
-      ["level-design-skill", "Level design guide"],
       ["skills/level-design/SKILL", "Level design skill"],
       ["skills/level-design/LICENSE", "Skill attribution & license"]
+    ]
+  },
+  {
+    "title": "Reference",
+    "description": "The full resource catalog, testing library, and source attribution.",
+    "pages": [
+      ["reference/catalog", "Full resource catalog"],
+      ["reference/testing-library", "Testing library"],
+      ["reference/media-sources", "Media sources"],
+      ["reference/logo-sources", "Logo sources"]
+    ]
+  },
+  {
+    "title": "About this atlas",
+    "description": "Project overview, contribution standards, and site maintenance.",
+    "pages": [
+      ["overview", "Project overview"],
+      ["contributing", "Contributing"],
+      ["project/deployment", "Development & deployment"],
+      ["project/content-model", "Content model & coverage"],
+      ["project/content-platform", "Content platform"],
+      ["project/remote-import", "Remote import"],
+      ["project/staging-readiness", "Staging readiness"],
+      ["project/design/v2/design-system", "Design system"],
+      ["project/design/v1/design-system", "Design system (first edition)"],
+      ["project/art/prompts", "Editorial art prompts"]
     ]
   }
 ]

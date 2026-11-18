@@ -1,16 +1,16 @@
 # Contributing to GameMap
 
-Website content must follow the [content model and coverage contract](docs/content-model.md).
+Website content must follow the [content model and coverage contract](docs/project/content-model.md).
 
 Contributions of credible resources, corrected descriptions, repaired links, and evidence-backed engineering experience are welcome. GameMap maps coding agents, engine ecosystems, 2D and 3D development, and world models.
 
 ## Source of truth and generation workflow
 
-The root `README.md` is a hand-maintained project overview. Keep the full resource catalog in `docs/AWESOME.md` and publishing details in [the deployment guide](docs/deployment.md).
+The root `README.md` is a hand-maintained project overview. Keep the full resource catalog in `docs/reference/catalog.md` and publishing details in [the deployment guide](docs/project/deployment.md).
 
 Edit resource entries only in `data/segments/*.json`. Do not edit these generated files directly:
 
-- `docs/AWESOME.md`
+- `docs/reference/catalog.md`
 - `data/resources.json`
 - `website/src/data/resources.json`
 - `website/public/awesome-list.md`
@@ -49,7 +49,7 @@ Run `npm run format` before committing. Prettier formats code, styles and config
 
 ## Content-platform transition
 
-The [content-platform guide](docs/content-platform.md) describes the versioned database model, offline migration commands, and remaining cutover gates. The public website still reads the existing Git sources. Continue the workflow above; do not edit database and Git copies of the same collection in parallel. Migration packages stay private under ignored `.build/`, and initial imports create drafts rather than publishing or approving existing content.
+The [content-platform guide](docs/project/content-platform.md) describes the versioned database model, offline migration commands, and remaining cutover gates. The public website still reads the existing Git sources. Continue the workflow above; do not edit database and Git copies of the same collection in parallel. Migration packages stay private under ignored `.build/`, and initial imports create drafts rather than publishing or approving existing content.
 
 ## Entry format
 
@@ -95,7 +95,7 @@ Prefer author papers, official documentation, project repositories, model cards,
 
 Performance numbers require measurement conditions and a primary source. Do not directly rank results from different tasks, resolutions, GPUs, or measurement scopes. Method comparisons should distinguish build success, functional correctness, visual quality, playability, and runtime performance. Describe proposed workflows as templates or next steps, rather than reporting them as measured findings.
 
-World model entries should also explain where authoritative state lives: an executable program, an engine, video latents, or explicit 3D assets. Use separate tags for action-conditioned video, neural rendering, and code-based worlds. See the [world model notes](docs/world-model-notes.md).
+World model entries should also explain where authoritative state lives: an executable program, an engine, video latents, or explicit 3D assets. Use separate tags for action-conditioned video, neural rendering, and code-based worlds. See the [world model notes](docs/ecosystem/world-models.md).
 
 ## Writing for readers
 

@@ -178,12 +178,12 @@ test("documents render on the server and navigate without an API server", async 
   baseURL,
   isMobile,
 }) => {
-  const response = await request.get(baseURL + "docs/practical-guide/");
+  const response = await request.get(baseURL + "docs/guides/practical-guide/");
   expect(response.ok()).toBeTruthy();
   expect(await response.text()).toContain(
     "Define the deliverable before choosing tools",
   );
-  await page.goto("docs/practical-guide/");
+  await page.goto("docs/guides/practical-guide/");
   await expect(page.locator("#nd-page .prose")).toContainText(
     "Define the deliverable",
   );
@@ -247,7 +247,7 @@ test("responsive layout, theme toggle, and navigation", async ({
       page.getByRole("button", { name: "Open navigation", exact: true }),
     ).toHaveAttribute("aria-expanded", "false");
   }
-  await page.goto("docs/game-testing-library/");
+  await page.goto("docs/reference/testing-library/");
   await expect(page.locator("#nd-page .prose")).toBeVisible();
   expect(
     await page.evaluate(
@@ -262,7 +262,7 @@ test("documents remain readable without JavaScript", async ({
 }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
-  await page.goto(baseURL + "docs/practical-guide/");
+  await page.goto(baseURL + "docs/guides/practical-guide/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "From Resource Map to Runnable Game",
   );
@@ -310,7 +310,7 @@ test("Chinese documentation remains readable without JavaScript", async ({
   const context = await browser.newContext({ javaScriptEnabled: false });
   try {
     const page = await context.newPage();
-    await page.goto(baseURL + "docs/zh/practical-guide/");
+    await page.goto(baseURL + "docs/zh/guides/practical-guide/");
     await expect(page.locator("html")).toHaveAttribute("lang", "zh-CN");
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(
       "从想法到可玩的游戏",

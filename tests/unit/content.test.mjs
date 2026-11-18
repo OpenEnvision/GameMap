@@ -407,15 +407,21 @@ test("source-only metadata is preserved in blocks but omitted from reader search
   assert.ok(text.includes("Noncommercial only"));
 });
 test("document language routes preserve English URLs and choose explicit counterparts", () => {
-  assert.equal(docLocale("practical-guide"), "en");
-  assert.equal(docLocale("zh/practical-guide"), "zh");
+  assert.equal(docLocale("guides/practical-guide"), "en");
+  assert.equal(docLocale("zh/guides/practical-guide"), "zh");
   assert.equal(
-    localeFromPath("/GameMap/docs/zh/practical-guide/", "/GameMap/"),
+    localeFromPath("/GameMap/docs/zh/guides/practical-guide/", "/GameMap/"),
     "zh",
   );
   assert.equal(docHome("zh"), "/docs/zh/");
-  assert.equal(translationSlug("zh/practical-guide", "en"), "practical-guide");
-  assert.equal(translationSlug("practical-guide", "zh"), "zh/practical-guide");
+  assert.equal(
+    translationSlug("zh/guides/practical-guide", "en"),
+    "guides/practical-guide",
+  );
+  assert.equal(
+    translationSlug("guides/practical-guide", "zh"),
+    "zh/guides/practical-guide",
+  );
 });
 test("site language links preserve filters, anchors and explicit document counterparts", () => {
   const languages = context.documentLanguages(documents);
@@ -432,20 +438,20 @@ test("site language links preserve filters, anchors and explicit document counte
     "/resources/?saved=1",
   );
   assert.equal(
-    context.localizedPath("/docs/practical-guide/", "zh", languages),
-    "/docs/zh/practical-guide/",
+    context.localizedPath("/docs/guides/practical-guide/", "zh", languages),
+    "/docs/zh/guides/practical-guide/",
   );
   assert.equal(
-    context.localizedPath("/docs/zh/reading-guide/", "en", languages),
-    "/docs/reading-guide/",
+    context.localizedPath("/docs/zh/guides/reading-guide/", "en", languages),
+    "/docs/guides/reading-guide/",
   );
   assert.equal(
-    context.localizedPath("/docs/agents-notes/", "zh", languages),
-    "/docs/zh/agents-notes/",
+    context.localizedPath("/docs/ecosystem/agents/", "zh", languages),
+    "/docs/zh/ecosystem/agents/",
   );
   assert.equal(
-    context.localizedPath("/docs/asset-validation-contracts/", "zh", languages),
-    "/docs/zh/asset-validation-contracts/",
+    context.localizedPath("/docs/assets/validation/", "zh", languages),
+    "/docs/zh/assets/validation/",
   );
   assert.equal(
     context.localizedPath("/media/source.webm", "zh", languages),
@@ -507,8 +513,8 @@ test("Chinese views preserve identifiers, URLs, source data and complete curated
     "Translating must not mutate the English registry",
   );
   assert.equal(
-    zh.require("document", "practical-guide").id,
-    "zh/practical-guide",
+    zh.require("document", "guides/practical-guide").id,
+    "zh/guides/practical-guide",
   );
   assert.ok(
     zh
@@ -555,13 +561,25 @@ test("document URL policy preserves rendered routes, source assets, and deployme
   assert.equal(
     rewrite(
       "practical-guide.md#example",
-      resolve(root, "docs/workflow-notes.md"),
+      resolve(root, "docs/guides/workflow-notes.md"),
     ),
-    "/docs/practical-guide/#example",
+    "/docs/guides/practical-guide/#example",
   );
   assert.equal(
-    rewrite("../README.md", resolve(root, "docs/workflow-notes.md")),
+    rewrite("../../README.md", resolve(root, "docs/guides/workflow-notes.md")),
     "/docs/overview/",
+  );
+  // Links to a moved document follow its redirect in the source's language.
+  assert.equal(
+    rewrite(
+      "practical-guide.md#example",
+      resolve(root, "docs/workflow-notes.md"),
+    ),
+    "/docs/guides/practical-guide/#example",
+  );
+  assert.equal(
+    rewrite("agents-notes.md", resolve(root, "docs/zh/workflow-notes.md")),
+    "/docs/zh/ecosystem/agents/",
   );
   assert.equal(
     rewrite(

@@ -91,6 +91,8 @@ export function publishablePath(path, visible) {
     (!visible || visible.has(path))
   );
 }
+// Folder indexes for repository readers. The website has its own documentation home.
+const repositoryIndexes = new Set(["docs/README.md", "docs/zh/README.md"]);
 /** Discover public Markdown recursively; ignored local notes must not become published content. */
 export async function readDocuments() {
   const groups = JSON.parse(
@@ -112,6 +114,7 @@ export async function readDocuments() {
       (file) =>
         file.endsWith(".md") &&
         publishablePath(slash(relative(root, file)), visible) &&
+        !repositoryIndexes.has(slash(relative(root, file))) &&
         !Object.hasOwn(
           documentRedirects,
           `/docs/${slash(relative(resolve(root, "docs"), file)).slice(0, -3)}/`,
@@ -119,14 +122,10 @@ export async function readDocuments() {
     )
     .map((file) => ({
       file,
-      slug:
-        relative(resolve(root, "docs"), file) === "AWESOME.md"
-          ? "catalog"
-          : slash(relative(resolve(root, "docs"), file)).slice(0, -3),
+      slug: slash(relative(resolve(root, "docs"), file)).slice(0, -3),
     }));
   const rootSlugs = {
     "README.md": "overview",
-    "AWESOME.md": "catalog",
     "CONTRIBUTING.md": "contributing",
   };
   for (const filename of (await readdir(root))
@@ -217,8 +216,12 @@ export function documentLinkResolver(documents, assetBase = "/") {
         const chineseSource = slash(
           relative(root, resolve(root, sourceFile)),
         ).startsWith("docs/zh/");
+        // Moved documents redirect to their own localized path; retired catalogs
+        // redirect to a site page whose Chinese version lives under /zh/.
         return (
-          (chineseSource && !redirect.startsWith("/zh/")
+          (chineseSource &&
+          !redirect.startsWith("/zh/") &&
+          !redirect.startsWith("/docs/")
             ? "/zh" + redirect
             : redirect) + suffix
         );

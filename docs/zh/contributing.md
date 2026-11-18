@@ -1,16 +1,16 @@
 # 为 GameMap 做贡献
 
-网站内容必须遵循[内容模型与覆盖范围约定](content-model.md)。
+网站内容必须遵循[内容模型与覆盖范围约定](project/content-model.md)。
 
 欢迎贡献可信资源、修正描述、修复链接，以及有证据支持的工程经验。GameMap 梳理编码智能体、引擎生态、2D 与 3D 开发以及世界模型。
 
 ## 权威来源与生成工作流
 
-根目录的 `README.md` 是手动维护的项目概览。完整资源目录请保留在 `docs/AWESOME.md` 中，发布细节请保留在[部署指南](deployment.md)中。
+根目录的 `README.md` 是手动维护的项目概览。完整资源目录请保留在 `docs/reference/catalog.md` 中，发布细节请保留在[部署指南](project/deployment.md)中。
 
 仅在 `data/segments/*.json` 中编辑资源条目。不要直接编辑以下生成文件：
 
-- `docs/AWESOME.md`
+- `docs/reference/catalog.md`
 - `data/resources.json`
 - `website/src/data/resources.json`
 - `website/public/awesome-list.md`
@@ -49,7 +49,7 @@ npm run check:build
 
 ## 内容平台过渡
 
-[内容平台指南](content-platform.md)介绍了带版本的数据库模型、离线迁移命令及剩余切换门槛。公共网站仍读取现有 Git 来源。请继续使用上述工作流；不要同时编辑同一集合的数据库副本和 Git 副本。迁移包保留在被忽略的 `.build/` 下，作为私有内容；首次导入会创建草稿，而不是发布或批准现有内容。
+[内容平台指南](project/content-platform.md)介绍了带版本的数据库模型、离线迁移命令及剩余切换门槛。公共网站仍读取现有 Git 来源。请继续使用上述工作流；不要同时编辑同一集合的数据库副本和 Git 副本。迁移包保留在被忽略的 `.build/` 下，作为私有内容；首次导入会创建草稿，而不是发布或批准现有内容。
 
 ## 条目格式
 
@@ -95,7 +95,7 @@ npm run check:build
 
 性能数字必须附有测量条件和一手来源。不要直接对不同任务、分辨率、GPU 或测量范围的结果进行排名。方法比较应区分构建成功、功能正确性、视觉质量、可玩性和运行时性能。将建议的工作流描述为模板或后续步骤，而不是已测得的结论。
 
-世界模型条目还应说明权威状态位于何处：可执行程序、引擎、视频潜变量，还是显式 3D 资产。动作条件视频、神经渲染和基于代码的世界应使用不同标签。参见[世界模型说明](world-model-notes.md)。
+世界模型条目还应说明权威状态位于何处：可执行程序、引擎、视频潜变量，还是显式 3D 资产。动作条件视频、神经渲染和基于代码的世界应使用不同标签。参见[世界模型说明](ecosystem/world-models.md)。
 
 ## 面向读者写作
 

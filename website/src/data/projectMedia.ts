@@ -4,7 +4,7 @@ import type { projectImageSchema } from "../../content/contracts";
 /**
  * Author-published project media, kept separate from GameMap editorial artwork.
  * `source` opens the original project page, not a generic image search.
- * Original file URLs and reuse notes: docs/media-sources.md.
+ * Original file URLs and reuse notes: docs/reference/media-sources.md.
  */
 export const projectMedia: Record<
   string,

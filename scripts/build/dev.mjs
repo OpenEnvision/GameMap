@@ -7,10 +7,10 @@ import { root } from "../lib/documents.mjs";
 const args = process.argv.slice(2),
   hashes = new Map();
 const generatedDocs = new Set([
-  "docs/icon-sources.md",
+  "docs/reference/logo-sources.md",
   "docs/tutorials-and-demos.md",
   "docs/coding-agent-game-code.md",
-  "docs/game-testing-library.md",
+  "docs/reference/testing-library.md",
   "docs/cadle-repositories.md",
 ]);
 const relevant = (path) =>

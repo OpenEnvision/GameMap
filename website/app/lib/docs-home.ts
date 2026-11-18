@@ -16,10 +16,14 @@ export type PortalGroup = {
 };
 export type PortalTaskId = "tools" | "prototype" | "assets" | "testing";
 const taskDocuments: Record<PortalTaskId, readonly string[]> = {
-  tools: ["engines-notes", "game-ai-notes", "agents-notes"],
-  prototype: ["practical-guide"],
-  assets: ["generative-tools-research", "asset-validation-contracts"],
-  testing: ["game-testing-library", "game-development-evaluation"],
+  tools: [
+    "ecosystem/engines",
+    "ecosystem/2d-3d-development",
+    "ecosystem/agents",
+  ],
+  prototype: ["guides/practical-guide"],
+  assets: ["assets/generative-tools", "assets/validation"],
+  testing: ["reference/testing-library", "evaluation/development-evaluation"],
 };
 export const canonicalDocumentSlug = (slug: string) =>
   slug.replace(/^zh\//, "");
@@ -42,7 +46,8 @@ export function documentationPortal(
       document,
       canonicalLabel: original.label,
       canonicalTitle: original.title,
-      group: slug === "reading-guide" ? "Start building" : original.group,
+      group:
+        slug === "guides/reading-guide" ? "Start building" : original.group,
       description: original.description,
       archive: slug.startsWith("remote/archive/")
         ? "original"
@@ -89,7 +94,7 @@ export function documentationPortal(
     coreCount: pages.filter((page) => !page.archive).length,
     originals: pages.filter((page) => page.archive === "original"),
     reconstructions: pages.filter((page) => page.archive === "reconstructed"),
-    starter: firstAvailable(["practical-guide", "reading-guide"]),
+    starter: firstAvailable(["guides/practical-guide", "guides/reading-guide"]),
     tasks: (
       Object.entries(taskDocuments) as [PortalTaskId, readonly string[]][]
     ).flatMap(([id, slugs]) => {

@@ -9,7 +9,7 @@ export type LearningMedia = Omit<CanonicalLearningMedia, "origin"> & {
   origin?: CanonicalLearningMedia["origin"];
 };
 
-// Browser/local captures and attributed creator screenshots. See docs/media-sources.md.
+// Browser/local captures and attributed creator screenshots. See docs/reference/media-sources.md.
 export const learningMedia: Record<string, LearningMedia> = {
   ...communityMedia,
   ...jamGameMedia,

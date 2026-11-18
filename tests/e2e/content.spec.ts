@@ -353,7 +353,7 @@ test("global search also finds a canonical resource rather than only documentati
 test("native Markdown summaries and source anchors survive compilation", async ({
   page,
 }) => {
-  await page.goto("docs/catalog/");
+  await page.goto("docs/reference/catalog/");
   await expect(page.locator("#agents")).toHaveCount(1);
   const summary = page.locator("#nd-page .prose details summary").first();
   await expect(summary).toHaveText(

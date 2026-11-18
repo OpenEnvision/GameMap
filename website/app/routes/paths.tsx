@@ -10,9 +10,9 @@ export function loader({ request }: LoaderFunctionArgs) {
     paths: content.all("path"),
     steps: content.all("step"),
     notes: [
-      "practical-guide",
-      "production-work-orders",
-      "world-model-notes",
+      "guides/practical-guide",
+      "production/work-orders",
+      "ecosystem/world-models",
     ].map((id) => content.require("document", id)),
   };
 }

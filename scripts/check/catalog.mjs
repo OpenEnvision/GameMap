@@ -46,11 +46,16 @@ for (const path of [
     expected,
     `Stale generated file: ${path}`,
   );
-const awesome = renderAwesome(records, { source: "docs/AWESOME.md" });
+const awesome = renderAwesome(records, {
+  source: "docs/reference/catalog.md",
+});
 assert.equal(
-  await readFile(new URL("../../docs/AWESOME.md", import.meta.url), "utf8"),
+  await readFile(
+    new URL("../../docs/reference/catalog.md", import.meta.url),
+    "utf8",
+  ),
   awesome,
-  "Regenerate docs/AWESOME.md",
+  "Regenerate docs/reference/catalog.md",
 );
 for (const r of records)
   assert.ok(
@@ -243,9 +248,9 @@ const testingResources = validateTestingContent(testingContent);
 const testingGuide = renderTestingGuide(testingContent),
   testingJson = testingManifest(testingContent);
 for (const path of [
-  "docs/game-testing-library.md",
-  "website/public/game-testing-library.md",
-  ...(checkBuilt ? ["dist/game-testing-library.md"] : []),
+  "docs/reference/testing-library.md",
+  "website/public/docs/reference/testing-library.md",
+  ...(checkBuilt ? ["dist/docs/reference/testing-library.md"] : []),
 ])
   assert.equal(
     await readFile(new URL("../../" + path, import.meta.url), "utf8"),
@@ -370,7 +375,7 @@ assert.deepEqual(
   "Gameplay provenance must follow the cases with real screenshots",
 );
 const mediaSources = await readFile(
-  new URL("../../docs/media-sources.md", import.meta.url),
+  new URL("../../docs/reference/media-sources.md", import.meta.url),
   "utf8",
 );
 const screenshotLedgerText = await readFile(
@@ -557,7 +562,7 @@ assert.equal(
     new URL("../../website/public/media-sources.md", import.meta.url),
     "utf8",
   ),
-  mediaSources.replaceAll("../website/public/", "./"),
+  mediaSources.replaceAll("../../website/public/", "./"),
   "Regenerate public media attribution",
 );
 console.log(
@@ -917,6 +922,23 @@ console.log(
   `Showcase checks passed: ${clips.length} real cases, ${variants.length} responsive variant, ${libraryClips.length} library clip, matched posters, H.264, no audio, progressive playback and local asset integrity.`,
 );
 
+// English raw downloads mirror docs/ under website/public/docs/.
+async function markdownDownloads(directory) {
+  const entries = await readdir(
+    new URL("../../" + directory, import.meta.url),
+    { withFileTypes: true },
+  );
+  const nested = await Promise.all(
+    entries.map((entry) =>
+      entry.isDirectory()
+        ? markdownDownloads(`${directory}/${entry.name}`)
+        : entry.name.endsWith(".md")
+          ? [`${directory}/${entry.name}`]
+          : [],
+    ),
+  );
+  return nested.flat();
+}
 async function englishSources(directory) {
   const entries = await readdir(
     new URL("../../" + directory, import.meta.url),
@@ -967,7 +989,8 @@ const englishFiles = [
   ...(await englishSources("website/app")),
   ...(checkBuilt ? ["dist/index.html"] : []),
   "README.md",
-  "docs/AWESOME.md",
+  "docs/reference/catalog.md",
+  ...(await markdownDownloads("website/public/docs")),
   ...(await readdir(new URL("../../website/public/", import.meta.url)))
     .filter(
       (name) =>
@@ -979,7 +1002,7 @@ const englishFiles = [
 // Preserve the language-switch label and the exact bilingual label in the archived art source.
 const sourceQuotes = {
   "README.md": ["中文指南"],
-  "website/public/editorial-art-prompts.md": ["原创概念插图"],
+  "website/public/docs/project/art/prompts.md": ["原创概念插图"],
 };
 function englishRenderedCopy(node, inherited = "en") {
   if (["script", "style"].includes(node.tagName)) return "";

@@ -34,19 +34,19 @@ const page = (
   sourceMode: "git",
 });
 const originals = [
-  page("practical-guide", "Practical guide"),
+  page("guides/practical-guide", "Practical guide"),
   page(
-    "engines-notes",
+    "ecosystem/engines",
     "Game engines",
     "Explore the ecosystem",
     "Tools and engines",
   ),
   page(
-    "generative-tools-research",
+    "assets/generative-tools",
     "Generative tools",
     "Assets & generative tools",
   ),
-  page("game-testing-library", "Testing library", "Evidence & evaluation"),
+  page("reference/testing-library", "Testing library", "Evidence & evaluation"),
   page("remote/archive/docs/example", "Original source", "Source originals"),
   page("remote/notes", "Reconstructed source", "Rendered pages"),
   page("remote/zh/reading-guide", "Chinese source snapshot", "Rendered pages"),
@@ -78,31 +78,36 @@ test("the homepage separates source material without losing or mutating a docume
 
 test("translated documents inherit canonical topics without creating English pages", () => {
   const translated = page(
-    "zh/practical-guide",
+    "zh/guides/practical-guide",
     "从想法到可玩的游戏",
     "中文指南",
   );
-  const reading = page("zh/reading-guide", "阅读指南", "中文指南");
+  const reading = page("zh/guides/reading-guide", "阅读指南", "中文指南");
   const manifest = [...originals, translated, reading];
   const visible = [
-    ...originals.filter((p) => p.slug !== "practical-guide"),
+    ...originals.filter((p) => p.slug !== "guides/practical-guide"),
     translated,
     reading,
   ];
   const model = documentationPortal(manifest, visible);
-  assert.equal(model.starter.document.slug, "zh/practical-guide");
+  assert.equal(model.starter.document.slug, "zh/guides/practical-guide");
   assert.equal(model.groups[0].title, "Start building");
   assert.ok(
-    model.groups[0].pages.some((p) => p.document.slug === "zh/reading-guide"),
+    model.groups[0].pages.some(
+      (p) => p.document.slug === "zh/guides/reading-guide",
+    ),
   );
   assert.ok(!model.groups.some((group) => group.title === "中文指南"));
   assert.equal(
     model.pages.filter(
-      (p) => canonicalDocumentSlug(p.document.slug) === "practical-guide",
+      (p) =>
+        canonicalDocumentSlug(p.document.slug) === "guides/practical-guide",
     ).length,
     1,
   );
-  assert.ok(!model.pages.some((p) => p.document.slug === "reading-guide"));
+  assert.ok(
+    !model.pages.some((p) => p.document.slug === "guides/reading-guide"),
+  );
 });
 
 test("task links and the recommended start always resolve to existing visible documents", () => {
@@ -114,18 +119,18 @@ test("task links and the recommended start always resolve to existing visible do
   const valid = new Set(originals.map((p) => p.slug));
   assert.ok(model.tasks.every((task) => valid.has(task.page.document.slug)));
   const fallback = [
-    page("agents-notes", "Coding agents", "Explore the ecosystem"),
+    page("ecosystem/agents", "Coding agents", "Explore the ecosystem"),
   ];
   const partial = documentationPortal(fallback, fallback);
   assert.equal(partial.tasks.length, 1);
-  assert.equal(partial.tasks[0].page.document.slug, "agents-notes");
+  assert.equal(partial.tasks[0].page.document.slug, "ecosystem/agents");
   assert.equal(partial.starter, undefined);
   assert.equal(documentationPortal([], []).tasks.length, 0);
 });
 
 test("local search handles translated labels, canonical English titles, accents and multiple words", () => {
   const translated = page(
-    "zh/engines-notes",
+    "zh/ecosystem/engines",
     "引擎选择",
     "中文指南",
     "工具选择",
@@ -160,7 +165,7 @@ test("search uses existing interface translations without pretending to search d
   const translate = (value) => (value === "Game engines" ? "游戏引擎" : value);
   assert.equal(
     searchDocumentation(model.pages, "游戏引擎", translate)[0].document.slug,
-    "engines-notes",
+    "ecosystem/engines",
   );
   assert.equal(
     searchDocumentation(model.pages, "text-only-present-in-a-body").length,

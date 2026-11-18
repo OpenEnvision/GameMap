@@ -1,4 +1,5 @@
 import { readdir, readFile } from "node:fs/promises";
+import { posix } from "node:path";
 import { canonicalValue } from "../catalog/codec.mjs";
 const taxonomy = JSON.parse(
   await readFile(
@@ -146,8 +147,14 @@ export function validate(records) {
   return records;
 }
 const tableSafe = (s) => s.replaceAll("|", "\\|").replaceAll("\n", " ");
+// The current location plus historical ones whose stored bodies must still render.
+const catalogSources = [
+  "docs/reference/catalog.md",
+  "docs/AWESOME.md",
+  "AWESOME.md",
+];
 export function renderAwesome(records, { source = "AWESOME.md" } = {}) {
-  if (!["AWESOME.md", "docs/AWESOME.md"].includes(source))
+  if (!catalogSources.includes(source))
     throw Error("Unsupported resource catalog source path");
   records = canonicalValue(records);
   const total = records.length;
@@ -158,11 +165,11 @@ export function renderAwesome(records, { source = "AWESOME.md" } = {}) {
 **${total} curated primary sources** connecting coding agents, game engines, AI for 2D and 3D development, production tools, and code world models. Main source review date: **October 18, 2026**. This is a research snapshot: reviewing a source does not imply reproducing its results or continuously monitoring it.
 
 - [Interactive GameMap website — GitHub Pages](https://openenvision.github.io/GameMap/)
-- [A practical guide from resources to a working project](docs/practical-guide.md)
-- [Production research: interfaces, evidence and generative-service boundaries](docs/research-index.md)
+- [A practical guide from resources to a working project](docs/guides/practical-guide.md)
+- [Production research: interfaces, evidence and generative-service boundaries](docs/production/overview.md)
 - [Tutorials, playable demos, and complete example-game source](docs/tutorials-and-demos.md)
 - [Coding agents × games: skills, bridges, evaluations, and game code](docs/coding-agent-game-code.md)
-- [Testing library: games, AI environments, assets, rigs, and motion data](docs/game-testing-library.md)
+- [Testing library: games, AI environments, assets, rigs, and motion data](docs/reference/testing-library.md)
 - [Contributing and data maintenance](CONTRIBUTING.md) · [Structured JSON](data/resources.json)
 
 ## How to read the map
@@ -212,20 +219,21 @@ export function renderAwesome(records, { source = "AWESOME.md" } = {}) {
   }
   text += `## Further reading and practice
 
-- [Agents: models, harnesses, skills, and MCP](docs/agents-notes.md)
-- [Engine ecosystems: documentation, source, tests, and community practice](docs/engines-notes.md)
-- [AI for 2D and 3D: evaluation versions, asset pipelines, and release boundaries](docs/game-ai-notes.md)
-- [World models: code state, hybrid rendering, video simulation, and explicit 3D](docs/world-model-notes.md)
-- [Practical guide: task contracts, asset import, validation, and reproduction](docs/practical-guide.md)
+- [Agents: models, harnesses, skills, and MCP](docs/ecosystem/agents.md)
+- [Engine ecosystems: documentation, source, tests, and community practice](docs/ecosystem/engines.md)
+- [AI for 2D and 3D: evaluation versions, asset pipelines, and release boundaries](docs/ecosystem/2d-3d-development.md)
+- [World models: code state, hybrid rendering, video simulation, and explicit 3D](docs/ecosystem/world-models.md)
+- [Practical guide: task contracts, asset import, validation, and reproduction](docs/guides/practical-guide.md)
 
 ## Maintenance
 
 Edit only \`data/segments/*.json\` for catalog content. Run \`npm run build\` to regenerate the list and website, and \`npm run check\` to validate the data and generated outputs. There is no automatic scraping or scheduled updating. Code, weights, data, and services may have different licenses; read the relevant official terms before use. External projects belong to their respective authors.
 `;
-  if (source === "docs/AWESOME.md")
-    text = text
-      .replaceAll("](docs/", "](")
-      .replaceAll("](CONTRIBUTING.md)", "](../CONTRIBUTING.md)")
-      .replaceAll("](data/resources.json)", "](../data/resources.json)");
-  return text;
+  // Links above are written from the repository root; rebase them onto the output file.
+  const directory = posix.dirname(source);
+  return text.replace(
+    /\]\(((?:docs\/|data\/|CONTRIBUTING\.md)[^)#]*)(#[^)]*)?\)/g,
+    (_, path, fragment = "") =>
+      `](${posix.relative(directory, path)}${fragment})`,
+  );
 }

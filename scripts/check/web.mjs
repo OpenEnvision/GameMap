@@ -99,7 +99,7 @@ const search = JSON.parse(
 );
 assert.ok(Object.keys(search).length > 0, "A static search index is required");
 assert.ok(
-  JSON.stringify(search).includes("/docs/practical-guide"),
+  JSON.stringify(search).includes("/docs/guides/practical-guide"),
   "Search must index the document content",
 );
 await access(resolve(root, "404.html"));

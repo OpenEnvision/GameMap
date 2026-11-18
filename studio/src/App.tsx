@@ -523,8 +523,8 @@ export default function App() {
           </ul>
           <p>
             参见 <code>.env.example</code> 与{" "}
-            <code>docs/content-platform.md</code>。密钥只放在服务端，不要加{" "}
-            <code>VITE_</code> 前缀。
+            <code>docs/project/content-platform.md</code>
+            。密钥只放在服务端，不要加 <code>VITE_</code> 前缀。
           </p>
         </div>
         <small>应用不会自动运行数据库迁移、导入数据或切换线上数据源。</small>

@@ -658,7 +658,7 @@
       },
       {
         "label": "GameMap: asset validity and runtime fidelity",
-        "url": "https://github.com/OpenEnvision/GameMap/blob/main/docs/asset-validation-contracts.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity"
+        "url": "https://github.com/OpenEnvision/GameMap/blob/main/docs/assets/validation.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity"
       }
     ],
     "tags": [

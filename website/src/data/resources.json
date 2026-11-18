@@ -1304,7 +1304,7 @@
       },
       {
         "label": "GameMap: asset validity and runtime fidelity",
-        "url": "https://github.com/OpenEnvision/GameMap/blob/main/docs/asset-validation-contracts.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity"
+        "url": "https://github.com/OpenEnvision/GameMap/blob/main/docs/assets/validation.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity"
       }
     ],
     "tags": [
@@ -2847,7 +2847,7 @@
       },
       {
         "label": "GameMap: native UI evidence boundaries",
-        "url": "https://github.com/OpenEnvision/GameMap/blob/main/docs/engine-operation-contracts.md#native-gui-automation-is-a-separate-evidence-surface"
+        "url": "https://github.com/OpenEnvision/GameMap/blob/main/docs/production/engine-operations.md#native-gui-automation-is-a-separate-evidence-surface"
       }
     ],
     "tags": [

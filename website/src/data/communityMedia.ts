@@ -1,6 +1,6 @@
 import type { LearningMedia } from './learningMedia'
 
-// Primary screenshot sources are recorded in docs/media-sources.md.
+// Primary screenshot sources are recorded in docs/reference/media-sources.md.
 export const communityMedia: Record<string, LearningMedia> = {
   'cloud-crush-gemini-cli': {
     src: 'media/learning/cloud-crush-gemini-cli.webp',
