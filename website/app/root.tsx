@@ -17,8 +17,13 @@ import { SearchStateProvider } from "./lib/search-state";
 import { FrameworkLink } from "./components/framework-link";
 import { SiteFooter, SiteHeader } from "./components/site-shell";
 import "@fontsource-variable/inter";
+import "@fontsource-variable/space-grotesk";
+import "@fontsource-variable/jetbrains-mono";
 import "./styles.css";
 import "./community.css";
+import "./cosmos.css";
+import "./motion.css";
+import { CosmosEffects } from "./components/cosmos/effects";
 import { CommunityProvider } from "./lib/community";
 import { useHydrated } from "./lib/client-query";
 // The root loader only supplies the immutable document-language manifest.
@@ -67,11 +72,15 @@ export function Layout({ children }: { children: ReactNode }) {
     siteOrigin + import.meta.env.BASE_URL.replace(/\/$/, "") + path;
   const canonical = alternates[locale] || alternates.en || alternates.zh;
   return (
-    <html lang={locale === "zh" ? "zh-CN" : "en"} suppressHydrationWarning>
+    <html
+      lang={locale === "zh" ? "zh-CN" : "en"}
+      className="dark"
+      suppressHydrationWarning
+    >
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#fffcfb" />
+        <meta name="theme-color" content="#05070f" />
         <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
         <Meta />
         {canonical && <link rel="canonical" href={absolute(canonical)} />}
@@ -91,7 +100,7 @@ export function Layout({ children }: { children: ReactNode }) {
             <SearchStateProvider>
               <RootProvider
                 components={{ Link: FrameworkLink }}
-                theme={{ defaultTheme: "light" }}
+                theme={{ defaultTheme: "dark" }}
                 search={{ SearchDialog: AtlasSearch }}
                 i18n={{ locale, translations: docMessages(locale).ui }}
               >
@@ -126,6 +135,7 @@ export default function App() {
         disabled={!hydrated}
         data-client-ready={hydrated}
       >
+        <CosmosEffects />
         {!docs && <SiteHeader />}
         <Outlet />
         {!docs && <SiteFooter />}

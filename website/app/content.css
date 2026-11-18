@@ -2,7 +2,7 @@
 .site-language { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; white-space: nowrap; }
 .site-language a { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; padding: 4px 6px; border-radius: 5px; }
 .site-language a[aria-current] { display: none; }
-.site-language a:hover { background: var(--surface); color: var(--accent); }
+.site-language a:hover { background: var(--hover); color: var(--accent); }
 .site-language a:focus-visible, .documentation-language a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .site-language .language-separator { display: none; }
 .source-language { display: inline-block; margin-inline-start: 8px; color: var(--muted); font-size: 10px; font-weight: 500; letter-spacing: .02em; vertical-align: middle; }
@@ -60,7 +60,7 @@ html[lang='zh-CN'] .resource-description, html[lang='zh-CN'] .content-lead, html
   border: 1px solid var(--border);
   border-radius: 10px;
   background: var(--panel);
-  box-shadow: 0 12px 32px #00000012;
+  box-shadow: var(--shadow-2);
 }
 .more-navigation > div a {
   display: block;
@@ -205,7 +205,7 @@ html[lang='zh-CN'] .resource-description, html[lang='zh-CN'] .content-lead, html
   gap: 6px;
 }
 .media-preview {
-  background: #171717;
+  background: var(--media-bg);
   min-width: 0;
   overflow: hidden;
 }

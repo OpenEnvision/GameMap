@@ -21,8 +21,9 @@ export default function AtlasSearch(props: SharedProps) {
   const openedAt = useRef("");
   return (
     <SearchDialog {...search} {...props}>
-      <SearchDialogOverlay />
+      <SearchDialogOverlay className="atlas-search-overlay" />
       <SearchDialogContent
+        className="atlas-search-content"
         onOpenAutoFocus={() => {
           const element = document.activeElement;
           returnFocus.current = element instanceof HTMLElement ? element : null;
