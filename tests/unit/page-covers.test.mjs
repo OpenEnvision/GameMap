@@ -3,7 +3,11 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import sharp from "sharp";
 import { loadContent } from "../../scripts/lib/content.mjs";
-import { digest, sha256, contentUUID } from "../../scripts/lib/catalog/codec.mjs";
+import {
+  digest,
+  sha256,
+  contentUUID,
+} from "../../scripts/lib/catalog/codec.mjs";
 import { adapterFor } from "../../scripts/lib/catalog/adapters.mjs";
 import { validateSelection } from "../../scripts/lib/catalog/validation.mjs";
 

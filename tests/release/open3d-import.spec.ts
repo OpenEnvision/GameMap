@@ -42,9 +42,19 @@ test("imported 3D games retain source-only status and never expose fabricated pl
     if (screenshot) {
       await expect(card).toHaveAttribute("data-cover-kind", "gameplay");
       await expect(card.locator(".page-cover-label")).toHaveCount(0);
-      await expect(card.locator("img")).toHaveAttribute("alt", screenshot.localizations.zh.alt);
-      expect((await card.locator("img").getAttribute("src"))!.endsWith("/" + screenshot.src)).toBe(true);
-    } else if (cover) await expect(card.locator(".page-cover-label")).toContainText("非游戏截图");
+      await expect(card.locator("img")).toHaveAttribute(
+        "alt",
+        screenshot.localizations.zh.alt,
+      );
+      expect(
+        (await card.locator("img").getAttribute("src"))!.endsWith(
+          "/" + screenshot.src,
+        ),
+      ).toBe(true);
+    } else if (cover)
+      await expect(card.locator(".page-cover-label")).toContainText(
+        "非游戏截图",
+      );
   }
   for (const entry of legacy)
     await expect(page.locator(`[data-content-ref="${entry.key}"]`)).toHaveCount(

@@ -6,12 +6,19 @@ import { loadContent } from "../../scripts/lib/content.mjs";
 import { normalizePr63Game } from "../../scripts/lib/threejs-games-intake.mjs";
 const archiveAvailable = await stat("collections/threejs-games")
   .then(() => true)
-  .catch((error) => { if (error.code === "ENOENT") return false; throw error; });
+  .catch((error) => {
+    if (error.code === "ENOENT") return false;
+    throw error;
+  });
 const read = async (p) => JSON.parse(await readFile(p, "utf8")),
   context = await loadContent(),
   pr = await read("config/threejs-games-intake.json"),
-  raw = archiveAvailable ? await read("collections/threejs-games/games.json") : null,
-  queue = archiveAvailable ? await read("collections/threejs-games/candidates.json") : null,
+  raw = archiveAvailable
+    ? await read("collections/threejs-games/games.json")
+    : null,
+  queue = archiveAvailable
+    ? await read("collections/threejs-games/candidates.json")
+    : null,
   r2 = await read("data/segments/open-3d-import-round2.json"),
   r3 = await read("data/segments/open-3d-import-round3.json"),
   itch = await read("data/segments/itch-3d-import.json");
@@ -20,45 +27,86 @@ test("pinned import policy stays versioned independently of the optional local a
   assert.equal(pr.head, "409260b610f46f11a857b78b96a89879728d350a");
   assert.equal(pr.oldIds.length, 92);
   assert.equal(pr.newThreejsIds.length, 26);
-  assert.equal(context.registry.all("threejs-game").length, 0, "Git defaults never auto-import database-owned PR records");
+  assert.equal(
+    context.registry.all("threejs-game").length,
+    0,
+    "Git defaults never auto-import database-owned PR records",
+  );
 });
 
-test("pinned PR preserves all upstream resources and canonical ownership rather than duplicating games", {
-  skip: archiveAvailable ? false : "Optional ignored collections/ archive is not present",
-}, async () => {
-  assert.equal(pr.head, "409260b610f46f11a857b78b96a89879728d350a");
-  assert.equal(raw.games.length, 120);
-  assert.equal(pr.oldIds.length, 92);
-  assert.equal(pr.newThreejsIds.length, 26);
-  assert.equal(queue.candidates.length, 71);
-  assert.equal(
-    queue.candidates.filter((x) => x.status === "pending").length,
-    44,
-  );
-  assert.equal(
-    queue.candidates.filter((x) => x.status === "excluded").length,
-    27,
-  );
-  for (const f of pr.mirroredFiles)
+test(
+  "pinned PR preserves all upstream resources and canonical ownership rather than duplicating games",
+  {
+    skip: archiveAvailable
+      ? false
+      : "Optional ignored collections/ archive is not present",
+  },
+  async () => {
+    assert.equal(pr.head, "409260b610f46f11a857b78b96a89879728d350a");
+    assert.equal(raw.games.length, 120);
+    assert.equal(pr.oldIds.length, 92);
+    assert.equal(pr.newThreejsIds.length, 26);
+    assert.equal(queue.candidates.length, 71);
     assert.equal(
-      createHash("sha256")
-        .update(await readFile(f.path))
-        .digest("hex"),
-      f.sha256,
-      "Pinned source changed " + f.path,
+      queue.candidates.filter((x) => x.status === "pending").length,
+      44,
     );
-  for (const g of raw.games) context.payloadSchemas["threejs-game"].parse(g);
-  assert.equal(context.registry.all("threejs-game").length, 0, "Git defaults never auto-import database-owned PR records");
-  for (const id of pr.oldIds) { const game = raw.games.find(g => g.id === id); assert.deepEqual(normalizePr63Game(game, pr), game); }
-  for (const id of pr.newThreejsIds) {
-    const game = normalizePr63Game(raw.games.find(g => g.id === id), pr);
-    context.versionedContracts["threejs-game"][1].payload.parse(game);
-    assert.doesNotMatch(JSON.stringify(game), /chatgpt\.site/i, 'Do not publish a general/2D hosting URL as the FPS edition');
-    assert.ok(game.limitations.includes(pr.qualification + " Pinned source: " + pr.pullRequest + " at " + pr.head));
-  }
-  assert.equal(normalizePr63Game(raw.games.find(g => g.id === "ashen-ring"), pr).name, "Ashen Ring");
-  assert.equal(raw.games.find(g => g.id === "ashen-ring").name, "灰烬王冠 — Ashen Ring");
-});
+    assert.equal(
+      queue.candidates.filter((x) => x.status === "excluded").length,
+      27,
+    );
+    for (const f of pr.mirroredFiles)
+      assert.equal(
+        createHash("sha256")
+          .update(await readFile(f.path))
+          .digest("hex"),
+        f.sha256,
+        "Pinned source changed " + f.path,
+      );
+    for (const g of raw.games) context.payloadSchemas["threejs-game"].parse(g);
+    assert.equal(
+      context.registry.all("threejs-game").length,
+      0,
+      "Git defaults never auto-import database-owned PR records",
+    );
+    for (const id of pr.oldIds) {
+      const game = raw.games.find((g) => g.id === id);
+      assert.deepEqual(normalizePr63Game(game, pr), game);
+    }
+    for (const id of pr.newThreejsIds) {
+      const game = normalizePr63Game(
+        raw.games.find((g) => g.id === id),
+        pr,
+      );
+      context.versionedContracts["threejs-game"][1].payload.parse(game);
+      assert.doesNotMatch(
+        JSON.stringify(game),
+        /chatgpt\.site/i,
+        "Do not publish a general/2D hosting URL as the FPS edition",
+      );
+      assert.ok(
+        game.limitations.includes(
+          pr.qualification +
+            " Pinned source: " +
+            pr.pullRequest +
+            " at " +
+            pr.head,
+        ),
+      );
+    }
+    assert.equal(
+      normalizePr63Game(
+        raw.games.find((g) => g.id === "ashen-ring"),
+        pr,
+      ).name,
+      "Ashen Ring",
+    );
+    assert.equal(
+      raw.games.find((g) => g.id === "ashen-ring").name,
+      "灰烬王冠 — Ashen Ring",
+    );
+  },
+);
 
 test("second and third supplied directories remain separate, complete and deduplicated across PR and prior games", () => {
   for (const [data, rows, games, added] of [

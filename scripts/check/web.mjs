@@ -49,7 +49,7 @@ for (const path of site.pages) {
     `One clear page title: ${path || "/"}`,
   );
   assertHistoricalDocumentEvidence(html, path);
-  if (site.docs.some(document=>path===`docs/${document.slug}/`)) {
+  if (site.docs.some((document) => path === `docs/${document.slug}/`)) {
     const body = tree.find((node) =>
       node.attrs.some(
         (attr) =>

@@ -2,7 +2,14 @@ import { test, expect } from "@playwright/test";
 import { readFile } from "node:fs/promises";
 import { loadContent } from "../../scripts/lib/content.mjs";
 const context = await loadContent();
-const prIds = context.registry.all("threejs-game").filter(entry => entry.data.limitations.some(note => note.includes("at 409260b610f46f11a857b78b96a89879728d350a"))).map(entry => entry.id);
+const prIds = context.registry
+  .all("threejs-game")
+  .filter((entry) =>
+    entry.data.limitations.some((note) =>
+      note.includes("at 409260b610f46f11a857b78b96a89879728d350a"),
+    ),
+  )
+  .map((entry) => entry.id);
 const datasets = await Promise.all(
   ["open-3d-import-round2", "open-3d-import-round3", "itch-3d-import"].map(
     async (name) =>
@@ -30,14 +37,24 @@ test("all new directory cases retain source-only actions and original Chinese in
     if (screenshot) {
       await expect(card).toHaveAttribute("data-cover-kind", "gameplay");
       await expect(card.locator(".page-cover-label")).toHaveCount(0);
-      await expect(card.locator("img")).toHaveAttribute("alt", screenshot.localizations.zh.alt);
-      expect((await card.locator("img").getAttribute("src"))!.endsWith("/" + screenshot.src)).toBe(true);
-    } else if (cover) await expect(card.locator(".page-cover-label")).toContainText("非游戏截图");
+      await expect(card.locator("img")).toHaveAttribute(
+        "alt",
+        screenshot.localizations.zh.alt,
+      );
+      expect(
+        (await card.locator("img").getAttribute("src"))!.endsWith(
+          "/" + screenshot.src,
+        ),
+      ).toBe(true);
+    } else if (cover)
+      await expect(card.locator(".page-cover-label")).toContainText(
+        "非游戏截图",
+      );
     await expect(card.locator(".example-body > p")).toContainText(
       context.translationCatalogs.zh.content[entry.key].description,
     );
   }
-  if(context.inputMode === "release") expect(prIds).toHaveLength(26);
+  if (context.inputMode === "release") expect(prIds).toHaveLength(26);
   for (const id of prIds)
     await expect(
       page.locator('[data-content-ref="threejs-game:' + id + '"]'),

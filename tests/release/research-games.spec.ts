@@ -69,8 +69,14 @@ test("all games share one card grid and retain complete source records", async (
   await expect(
     first.getByRole("link", { name: "入口来源证据", exact: true }),
   ).toBeVisible();
-  const detailLink = first.getByRole("link", { name: completeRecord, exact: true });
-  const detailURL = new URL((await detailLink.getAttribute("href"))!, page.url()).href;
+  const detailLink = first.getByRole("link", {
+    name: completeRecord,
+    exact: true,
+  });
+  const detailURL = new URL(
+    (await detailLink.getAttribute("href"))!,
+    page.url(),
+  ).href;
   await detailLink.click();
   await expect(page).toHaveURL(detailURL);
   await expect(

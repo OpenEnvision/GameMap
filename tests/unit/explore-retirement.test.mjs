@@ -98,7 +98,10 @@ test("agent pages ship only toolkit entries; games and creator attribution stay 
   // remain on detail pages rather than being duplicated into every grid load.
   assert.equal(games.examples.length, 1);
   const game = games.examples[0];
-  assert.deepEqual(Object.keys(game).sort(), ["key", "id", "data", "descriptionLanguage", "searchText"].sort());
+  assert.deepEqual(
+    Object.keys(game).sort(),
+    ["key", "id", "data", "descriptionLanguage", "searchText"].sort(),
+  );
   assert.equal(game.key, example.key);
   assert.equal(game.id, example.id);
   assert.deepEqual(game.data, example.data);

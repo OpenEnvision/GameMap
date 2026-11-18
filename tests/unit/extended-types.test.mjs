@@ -772,23 +772,60 @@ test("optional native v2 contracts preserve installed v1 payloads and historical
   const historical = structuredClone(bundle.snapshot.entries);
   for (const record of historical) {
     if (!Object.hasOwn(legacyV2Fields, record.kind)) continue;
-    assert.equal(context.contentKinds[record.kind].schemaVersion, record.kind === 'example' ? 7 : 2);
-    if (record.kind === 'example' && record.body.payload.demo.kind === 'reference') {
+    assert.equal(
+      context.contentKinds[record.kind].schemaVersion,
+      record.kind === "example" ? 7 : 2,
+    );
+    if (
+      record.kind === "example" &&
+      record.body.payload.demo.kind === "reference"
+    ) {
       assert.equal(record.schema_version, 5);
-      assert.equal(context.versionedContracts.example[4].payload.safeParse(record.body.payload).success, false);
+      assert.equal(
+        context.versionedContracts.example[4].payload.safeParse(
+          record.body.payload,
+        ).success,
+        false,
+      );
       continue; // Project pages are neither source nor release links.
     }
-    if (record.kind === 'example' && record.body.payload.demo.kind === 'source') {
+    if (
+      record.kind === "example" &&
+      record.body.payload.demo.kind === "source"
+    ) {
       assert.equal(record.schema_version, 5);
-      assert.equal(context.versionedContracts.example[3].payload.safeParse(record.body.payload).success, false);
-      assert.equal(context.versionedContracts.example[4].payload.safeParse(record.body.payload).success, true);
+      assert.equal(
+        context.versionedContracts.example[3].payload.safeParse(
+          record.body.payload,
+        ).success,
+        false,
+      );
+      assert.equal(
+        context.versionedContracts.example[4].payload.safeParse(
+          record.body.payload,
+        ).success,
+        true,
+      );
       record.schema_version = 4;
       continue; // Preserve the installed source-only v4 reader.
     }
-    if (record.kind === 'example' && record.body.payload.category === 'community') {
+    if (
+      record.kind === "example" &&
+      record.body.payload.category === "community"
+    ) {
       for (const version of [1, 2])
-        assert.equal(context.versionedContracts.example[version].payload.safeParse(record.body.payload).success, false);
-      assert.equal(context.versionedContracts.example[3].payload.safeParse(record.body.payload).success, true);
+        assert.equal(
+          context.versionedContracts.example[version].payload.safeParse(
+            record.body.payload,
+          ).success,
+          false,
+        );
+      assert.equal(
+        context.versionedContracts.example[3].payload.safeParse(
+          record.body.payload,
+        ).success,
+        true,
+      );
       record.schema_version = 3;
       continue; // Preserve the installed community v3 reader while the active pointer advances.
     }

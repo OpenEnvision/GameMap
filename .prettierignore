@@ -1,0 +1,34 @@
+# Prettier also skips everything in .gitignore. The paths below are versioned,
+# but their exact bytes are owned by a generator, an importer or a review hash.
+
+# Lockfiles and SQL migrations.
+package-lock.json
+supabase/
+
+# Markdown is reviewed content: translation fingerprints hash the exact bytes,
+# and several documents are generated (see website/content/generators.config.json).
+*.md
+
+# Public downloads and media; generated copies are compared byte for byte.
+website/public/
+
+# Catalog data, import ledgers and pinned import receipts.
+data/
+config/research-archive-receipt.json
+config/research-archive-remainder-receipt.json
+config/threejs-games-intake.json
+
+# Modules and settings written by scripts/import/.
+website/content/open3d-import.config.json
+website/content/i18n/
+website/src/data/browserPortCollections.ts
+website/src/data/browserPortGames.ts
+website/src/data/itch3dGames.ts
+website/src/data/jamGameMedia.ts
+website/src/data/jamGames.ts
+website/src/data/open3d*Games.ts
+website/src/data/resources.json
+
+# Temporary: the site redesign is rewriting website/app/ and formats it when it
+# lands. Delete this entry in that commit, then run `npm run format`.
+website/app/

@@ -62,9 +62,13 @@ record.data.game_access = {
 };
 record.data.ai_note = "No creator coding-client attribution was established.";
 const pageCover = {
-  kind: "page-cover", origin: "project-page-capture", sourceKind: "repository-page",
-  src: "media/page-covers/render-test.webp", alt: "Repository page, not gameplay.",
-  width: 1280, height: 720,
+  kind: "page-cover",
+  origin: "project-page-capture",
+  sourceKind: "repository-page",
+  src: "media/page-covers/render-test.webp",
+  alt: "Repository page, not gameplay.",
+  width: 1280,
+  height: 720,
 };
 const hasClass = (node, name) =>
   attributes(node).class?.split(/\s+/).includes(name);
@@ -190,28 +194,76 @@ test("project references expose an observed project page, never a source or play
 });
 
 test("page covers are visibly non-gameplay fallback media without changing access actions", () => {
-  const entry = context.registry.all("example").find((e) => e.data.demo.kind === "source");
+  const entry = context.registry
+    .all("example")
+    .find((e) => e.data.demo.kind === "source");
   const page = parsePage(render(false, { game: entry.data, pageCover }));
   const article = page.nodes.find((n) => n.tagName === "article");
   assert.equal(attributes(article)["data-cover-kind"], "project-page");
-  assert.equal(attributes(page.nodes.find((n) => n.tagName === "img")).src, "/" + pageCover.src);
-  assert.equal(textContent(page.nodes.find((n) => hasClass(n, "page-cover-label"))), "Project page · not gameplay");
-  assert.equal(page.nodes.some((n) => hasClass(n, "game-preview-unavailable")), false);
-  assert.equal(attributes(page.nodes.find((n) => hasClass(n, "example-image"))).href, entry.data.demo.url);
-  assert.match(textContent(page.nodes.find((n) => hasClass(n, "image-action"))), /View source/);
+  assert.equal(
+    attributes(page.nodes.find((n) => n.tagName === "img")).src,
+    "/" + pageCover.src,
+  );
+  assert.equal(
+    textContent(page.nodes.find((n) => hasClass(n, "page-cover-label"))),
+    "Project page · not gameplay",
+  );
+  assert.equal(
+    page.nodes.some((n) => hasClass(n, "game-preview-unavailable")),
+    false,
+  );
+  assert.equal(
+    attributes(page.nodes.find((n) => hasClass(n, "example-image"))).href,
+    entry.data.demo.url,
+  );
+  assert.match(
+    textContent(page.nodes.find((n) => hasClass(n, "image-action"))),
+    /View source/,
+  );
 });
 
 test("catalog-record covers are visibly distinct from upstream pages and gameplay", () => {
-  const entry = context.registry.all("example").find((e) => e.data.demo.kind === "source");
-  const page = parsePage(render(false, { game: entry.data, pageCover: { ...pageCover, origin: "catalog-page-capture" } }));
-  assert.equal(attributes(page.nodes.find((n) => n.tagName === "article"))["data-cover-kind"], "catalog-page");
-  assert.equal(textContent(page.nodes.find((n) => hasClass(n, "page-cover-label"))), "GameMap record · not upstream or gameplay");
-  assert.equal(attributes(page.nodes.find((n) => hasClass(n, "example-image"))).href, entry.data.demo.url);
+  const entry = context.registry
+    .all("example")
+    .find((e) => e.data.demo.kind === "source");
+  const page = parsePage(
+    render(false, {
+      game: entry.data,
+      pageCover: { ...pageCover, origin: "catalog-page-capture" },
+    }),
+  );
+  assert.equal(
+    attributes(page.nodes.find((n) => n.tagName === "article"))[
+      "data-cover-kind"
+    ],
+    "catalog-page",
+  );
+  assert.equal(
+    textContent(page.nodes.find((n) => hasClass(n, "page-cover-label"))),
+    "GameMap record · not upstream or gameplay",
+  );
+  assert.equal(
+    attributes(page.nodes.find((n) => hasClass(n, "example-image"))).href,
+    entry.data.demo.url,
+  );
 });
 
 test("a reviewed gameplay image always wins over a supplied fallback page cover", () => {
-  const page = parsePage(render(false, { game: example.data, media, pageCover }));
-  assert.equal(attributes(page.nodes.find((n) => n.tagName === "article"))["data-cover-kind"], "gameplay");
-  assert.equal(attributes(page.nodes.find((n) => n.tagName === "img")).src, "/" + media.src);
-  assert.equal(page.nodes.some((n) => hasClass(n, "page-cover-label")), false);
+  const page = parsePage(
+    render(false, { game: example.data, media, pageCover }),
+  );
+  assert.equal(
+    attributes(page.nodes.find((n) => n.tagName === "article"))[
+      "data-cover-kind"
+    ],
+    "gameplay",
+  );
+  assert.equal(
+    attributes(page.nodes.find((n) => n.tagName === "img")).src,
+    "/" + media.src,
+  );
+  assert.equal(
+    page.nodes.some((n) => hasClass(n, "page-cover-label")),
+    false,
+  );
 });

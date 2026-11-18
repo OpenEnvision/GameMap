@@ -3,11 +3,15 @@ import { resolve } from "node:path";
 import { root } from "../lib/documents.mjs";
 
 const env = { ...process.env, NODE_ENV: "development" };
-const api = spawn(process.execPath, ["--watch", "scripts/platform/studio.mjs"], {
-  cwd: root,
-  stdio: "inherit",
-  env,
-});
+const api = spawn(
+  process.execPath,
+  ["--watch", "scripts/platform/studio.mjs"],
+  {
+    cwd: root,
+    stdio: "inherit",
+    env,
+  },
+);
 const ui = spawn(
   process.execPath,
   [

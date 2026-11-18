@@ -74,6 +74,10 @@
   {
     "title": "Skills & practice",
     "description": "Practical skill packages, templates, and their source boundaries.",
-    "pages": [["level-design-skill", "Level design guide"], ["skills/level-design/SKILL", "Level design skill"], ["skills/level-design/LICENSE", "Skill attribution & license"]]
+    "pages": [
+      ["level-design-skill", "Level design guide"],
+      ["skills/level-design/SKILL", "Level design skill"],
+      ["skills/level-design/LICENSE", "Skill attribution & license"]
+    ]
   }
 ]

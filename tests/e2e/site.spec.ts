@@ -20,7 +20,9 @@ test.afterEach(async ({ page }) => {
   ).toEqual([]);
 });
 
-test("home search opens canonical resource results in the global dialog", async ({ page }) => {
+test("home search opens canonical resource results in the global dialog", async ({
+  page,
+}) => {
   await page.goto("");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
     "Playable worlds",
@@ -34,11 +36,15 @@ test("home search opens canonical resource results in the global dialog", async 
     .click();
   const dialog = page.getByRole("dialog");
   await expect(dialog.getByRole("combobox")).toHaveValue("OpenAI Codex");
-  const result = dialog.locator('[role="option"][id="fd-search-option-resource:codex"]');
+  const result = dialog.locator(
+    '[role="option"][id="fd-search-option-resource:codex"]',
+  );
   await expect(result).toBeVisible();
   await result.click();
   await expect(page).toHaveURL(/\/resources\/codex\/$/);
-  await expect(page.getByRole("heading", { name: "OpenAI Codex", exact: true })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "OpenAI Codex", exact: true }),
+  ).toBeVisible();
 });
 
 test("filters, shareable details, bookmarks, persistence, and export", async ({

@@ -207,9 +207,19 @@ test("expanded case notes retain all text, align the current row and leave later
   );
   alignedRows(after);
   expect(after[0].height).toBeGreaterThan(before[0].height);
-  const firstRowCount = before.filter((card) => Math.abs(card.top - before[0].top) < 1).length;
+  const firstRowCount = before.filter(
+    (card) => Math.abs(card.top - before[0].top) < 1,
+  ).length;
   expect(before.length).toBeGreaterThan(firstRowCount);
-  expect(Math.max(...after.slice(firstRowCount).map((card, index) => Math.abs(card.height - before[index + firstRowCount].height)))).toBeLessThanOrEqual(1);
+  expect(
+    Math.max(
+      ...after
+        .slice(firstRowCount)
+        .map((card, index) =>
+          Math.abs(card.height - before[index + firstRowCount].height),
+        ),
+    ),
+  ).toBeLessThanOrEqual(1);
   expect(
     await first.evaluate(
       (element) => element.scrollHeight - element.clientHeight,

@@ -16,7 +16,10 @@ test("complete release downloads preserve games without inventing missing screen
     await Promise.all(
       context.documents.map(async (page) => [
         page.source,
-        await readFile(new URL("../../" + page.source, import.meta.url), "utf8"),
+        await readFile(
+          new URL("../../" + page.source, import.meta.url),
+          "utf8",
+        ),
       ]),
     ),
   );

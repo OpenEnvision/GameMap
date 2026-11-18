@@ -30,7 +30,11 @@ const toolFiles = [
   "scripts/platform/studio-build.mjs",
   "scripts/platform/release.mjs",
   "scripts/platform/site-release.mjs",
-  "vite.config.ts", "react-router.config.ts", "playwright.release.config.ts", "tsconfig.json", "website/docs.config.json",
+  "vite.config.ts",
+  "react-router.config.ts",
+  "playwright.release.config.ts",
+  "tsconfig.json",
+  "website/docs.config.json",
   "scripts/lib/platform.mjs",
   "scripts/lib/migrations.mjs",
   "scripts/lib/content.mjs",
@@ -47,13 +51,27 @@ async function sourcePaths(context) {
     (file) => file.endsWith(".mjs"),
   );
   const migrations = await loadMigrations();
-  const rendererFiles = (await Promise.all(['scripts', 'website/app', 'website/content', 'website/src', 'website/public/brand'].map((path) => walk(resolve(root, path)))))
-    .flat().filter((file) => /\.(mjs|ts|tsx|json|css|svg)$/.test(file)).map((file) => relative(root, file));
+  const rendererFiles = (
+    await Promise.all(
+      [
+        "scripts",
+        "website/app",
+        "website/content",
+        "website/src",
+        "website/public/brand",
+      ].map((path) => walk(resolve(root, path))),
+    )
+  )
+    .flat()
+    .filter((file) => /\.(mjs|ts|tsx|json|css|svg)$/.test(file))
+    .map((file) => relative(root, file));
   return [
     ...new Set([
       ...toolFiles,
       ...rendererFiles,
-      ...Object.values(documentGenerators).map((definition) => definition.renderer),
+      ...Object.values(documentGenerators).map(
+        (definition) => definition.renderer,
+      ),
       ...modules.map((file) => relative(root, file)),
       ...migrations.map((migration) => migration.path),
       ...Object.keys(context.contracts),

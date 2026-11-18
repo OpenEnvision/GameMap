@@ -18,18 +18,32 @@ const context = await loadContent(),
   { registry, canTranslate, translationHash } = context;
 if (context.inputMode === "git") {
   const documentFingerprints = JSON.parse(
-    await readFile(resolve(root, "website/content/i18n/docs.zh.sources.json"), "utf8"),
+    await readFile(
+      resolve(root, "website/content/i18n/docs.zh.sources.json"),
+      "utf8",
+    ),
   );
-  const count = await assertFormalDocumentTranslations(context.documents, documentFingerprints);
-  console.log(`Complete document translation checks passed: ${count} English/Chinese pairs.`);
+  const count = await assertFormalDocumentTranslations(
+    context.documents,
+    documentFingerprints,
+  );
+  console.log(
+    `Complete document translation checks passed: ${count} English/Chinese pairs.`,
+  );
 }
 const translated = context.chineseContent;
 const sourcePath = resolve(
   root,
   "website/content/i18n/content.zh.sources.json",
 );
-assert.ok(!(context.inputMode === 'release' && process.argv.includes('--approve-new')), 'Release translations are immutable; review them in Studio');
-const fingerprints = context.inputMode === 'release' ? context.translationSources : JSON.parse(await readFile(sourcePath, "utf8"));
+assert.ok(
+  !(context.inputMode === "release" && process.argv.includes("--approve-new")),
+  "Release translations are immutable; review them in Studio",
+);
+const fingerprints =
+  context.inputMode === "release"
+    ? context.translationSources
+    : JSON.parse(await readFile(sourcePath, "utf8"));
 const messages = context.chineseMessages;
 let fields = 0;
 for (const [key, values] of Object.entries(translated)) {
@@ -170,12 +184,7 @@ if (process.argv.includes("--built")) {
       ),
       "utf8",
     );
-  const result = await assertRenderedCoverage(
-    zh,
-    readPage,
-    site.base,
-    "/zh/",
-  );
+  const result = await assertRenderedCoverage(zh, readPage, site.base, "/zh/");
   for (const entry of zh.entries) {
     const html = await readPage(entry.url),
       page = parsePage(html),

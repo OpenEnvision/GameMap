@@ -52,19 +52,21 @@ const { learningMedia } = await import(
     Buffer.from(learningMediaBundle.outputFiles[0].text).toString("base64")
 );
 const learningPreviews = await Promise.all(
-  learningPaths.filter((path) => path.category !== 'community' || learningMedia[path.id]).map(async (path) => {
-    const preview = learningMedia[path.id];
-    if (!preview) throw new Error(`Missing gameplay preview: ${path.id}`);
-    const bytes = await readFile(
-      new URL("../../website/public/" + preview.src, import.meta.url),
-    );
-    return {
-      id: path.id,
-      ...preview,
-      bytes: bytes.length,
-      sha256: createHash("sha256").update(bytes).digest("hex"),
-    };
-  }),
+  learningPaths
+    .filter((path) => path.category !== "community" || learningMedia[path.id])
+    .map(async (path) => {
+      const preview = learningMedia[path.id];
+      if (!preview) throw new Error(`Missing gameplay preview: ${path.id}`);
+      const bytes = await readFile(
+        new URL("../../website/public/" + preview.src, import.meta.url),
+      );
+      return {
+        id: path.id,
+        ...preview,
+        bytes: bytes.length,
+        sha256: createHash("sha256").update(bytes).digest("hex"),
+      };
+    }),
 );
 outputs["website/public/media/learning/manifest.json"] =
   JSON.stringify(
@@ -103,7 +105,10 @@ outputs["website/public/logo-sources.md"] = attribution.replaceAll(
   "<code>logos/</code>",
 );
 outputs["website/public/media-sources.md"] = (
-  await readFile(new URL("../../docs/media-sources.md", import.meta.url), "utf8")
+  await readFile(
+    new URL("../../docs/media-sources.md", import.meta.url),
+    "utf8",
+  )
 ).replaceAll("../website/public/", "./");
 // Public downloads use same-directory paths so links also work on repository subpaths.
 let downloadable = awesome;
@@ -114,7 +119,10 @@ const downloadableNotes = (await readDocuments()).filter(
     !["catalog", "media-sources", "icon-sources"].includes(page.slug),
 );
 for (const { slug: name, source: path } of downloadableNotes) {
-  downloadable = downloadable.replaceAll(`](${path.slice("docs/".length)})`, `](./${name}.md)`);
+  downloadable = downloadable.replaceAll(
+    `](${path.slice("docs/".length)})`,
+    `](./${name}.md)`,
+  );
   let note =
     outputs[path] ??
     (await readFile(new URL("../../" + path, import.meta.url), "utf8"));
@@ -144,8 +152,9 @@ for (const [path, target] of Object.entries(documentRedirects)) {
   const slug = path.split("/")[2];
   outputs[`website/public/${slug}.md`] =
     `# Game examples\n\nThis catalog has moved to [Game examples](${target}).\n`;
-  outputs["website/public/awesome-list.md"] = outputs["website/public/awesome-list.md"]
-    .replaceAll(`](${slug}.md)`, `](./${slug}.md)`);
+  outputs["website/public/awesome-list.md"] = outputs[
+    "website/public/awesome-list.md"
+  ].replaceAll(`](${slug}.md)`, `](./${slug}.md)`);
 }
 for (const [path, value] of Object.entries(outputs)) {
   const url = new URL("../../" + path, import.meta.url);

@@ -2,8 +2,12 @@ import { expect, test, type Page } from "@playwright/test";
 
 async function searchFromHome(page: Page, query: string) {
   await page.goto("");
-  await page.getByRole("textbox", { name: "Search all game development content" }).fill(query);
-  await page.getByRole("button", { name: "Search all content from home", exact: true }).click();
+  await page
+    .getByRole("textbox", { name: "Search all game development content" })
+    .fill(query);
+  await page
+    .getByRole("button", { name: "Search all content from home", exact: true })
+    .click();
   const dialog = page.getByRole("dialog");
   await expect(dialog).toBeVisible();
   await expect(dialog.getByRole("combobox")).toHaveValue(query);
@@ -107,42 +111,79 @@ test("resources ignores stale URL filters, preserves aliases and unrelated state
   await expect(page.locator(".empty-state")).toBeVisible();
 });
 
-test("the search dialog ranks canonical results without a separate directory page", async ({ page }) => {
-  await page.route("**/search-index.json", route => route.fulfill({ json: {
-    version: 2,
-    documents: [
-      { key: "resource:codex", kind: "resource", title: "Secondary", text: "ranking-probe", url: "/resources/codex/" },
-      { key: "resource:claude-code", kind: "resource", title: "ranking-probe", text: "ranking-probe", url: "/resources/claude-code/" },
-    ],
-  }}));
+test("the search dialog ranks canonical results without a separate directory page", async ({
+  page,
+}) => {
+  await page.route("**/search-index.json", (route) =>
+    route.fulfill({
+      json: {
+        version: 2,
+        documents: [
+          {
+            key: "resource:codex",
+            kind: "resource",
+            title: "Secondary",
+            text: "ranking-probe",
+            url: "/resources/codex/",
+          },
+          {
+            key: "resource:claude-code",
+            kind: "resource",
+            title: "ranking-probe",
+            text: "ranking-probe",
+            url: "/resources/claude-code/",
+          },
+        ],
+      },
+    }),
+  );
   const dialog = await searchFromHome(page, "ranking-probe");
   const options = dialog.getByRole("option");
   await expect(options).toHaveCount(2);
-  await expect(options.first()).toHaveAttribute("id", "fd-search-option-resource:claude-code");
+  await expect(options.first()).toHaveAttribute(
+    "id",
+    "fd-search-option-resource:claude-code",
+  );
   await expect(dialog.locator(".content-overview")).toHaveCount(0);
   await options.first().click();
   await expect(page).toHaveURL(/\/resources\/claude-code\/$/);
 });
 
-test("failed full text is reported and retried on the next dialog query", async ({ page }) => {
+test("failed full text is reported and retried on the next dialog query", async ({
+  page,
+}) => {
   let requests = 0;
-  await page.route("**/search-index.json", route => {
+  await page.route("**/search-index.json", (route) => {
     requests++;
-    return requests === 1 ? route.fulfill({ status: 503, body: "Unavailable" }) : route.continue();
+    return requests === 1
+      ? route.fulfill({ status: 503, body: "Unavailable" })
+      : route.continue();
   });
   const dialog = await searchFromHome(page, "OpenAI Codex");
-  await expect(dialog.getByRole("status").filter({ hasText: "Search failed" })).toBeVisible();
+  await expect(
+    dialog.getByRole("status").filter({ hasText: "Search failed" }),
+  ).toBeVisible();
   await dialog.getByRole("combobox").fill("Claude Code");
-  await expect(dialog.locator('[role="option"][id="fd-search-option-resource:claude-code"]')).toBeVisible();
-  await expect(dialog.getByRole("status").filter({ hasText: "Search failed" })).toHaveCount(0);
+  await expect(
+    dialog.locator(
+      '[role="option"][id="fd-search-option-resource:claude-code"]',
+    ),
+  ).toBeVisible();
+  await expect(
+    dialog.getByRole("status").filter({ hasText: "Search failed" }),
+  ).toHaveCount(0);
   expect(requests).toBe(2);
 });
 
-test("a delayed index response cannot restore a cleared dialog query", async ({ page }) => {
+test("a delayed index response cannot restore a cleared dialog query", async ({
+  page,
+}) => {
   let release!: () => void;
   let requested = false;
-  const waiting = new Promise<void>(resolve => { release = resolve; });
-  await page.route("**/search-index.json", async route => {
+  const waiting = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  await page.route("**/search-index.json", async (route) => {
     requested = true;
     await waiting;
     await route.continue();
@@ -156,8 +197,12 @@ test("a delayed index response cannot restore a cleared dialog query", async ({ 
     await expect(dialog.getByRole("combobox")).toHaveValue("");
     await expect(dialog.getByRole("option")).toHaveCount(0);
     await dialog.getByRole("combobox").fill("OpenAI Codex");
-    await expect(dialog.locator('[role="option"][id="fd-search-option-resource:codex"]')).toBeVisible();
-  } finally { release(); }
+    await expect(
+      dialog.locator('[role="option"][id="fd-search-option-resource:codex"]'),
+    ).toBeVisible();
+  } finally {
+    release();
+  }
 });
 
 test("home featured showcase is user controlled, keyboard usable and image only", async ({

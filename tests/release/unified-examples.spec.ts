@@ -17,10 +17,18 @@ const research = researchGamesForExamples(
 );
 const total = examples.length + research.length + importedThreejs.length;
 const totalWithGameplay =
-  [...examples, ...importedThreejs].filter((entry) => content.sources.gameplayScreenshots?.[entry.key] || content.sources.learningMedia[entry.id]).length +
-  research.filter((entry) => content.sources.researchGameMedia[entry.id]).length;
+  [...examples, ...importedThreejs].filter(
+    (entry) =>
+      content.sources.gameplayScreenshots?.[entry.key] ||
+      content.sources.learningMedia[entry.id],
+  ).length +
+  research.filter((entry) => content.sources.researchGameMedia[entry.id])
+    .length;
 const totalWithPageCovers = [...examples, ...importedThreejs].filter(
-  (entry) => content.sources.pageCovers[entry.key] && !content.sources.gameplayScreenshots?.[entry.key] && !content.sources.learningMedia[entry.id],
+  (entry) =>
+    content.sources.pageCovers[entry.key] &&
+    !content.sources.gameplayScreenshots?.[entry.key] &&
+    !content.sources.learningMedia[entry.id],
 ).length;
 const totalWithMedia = totalWithGameplay + totalWithPageCovers;
 const completeRecord = content.chineseMessages["Complete record"];
@@ -36,8 +44,12 @@ test("one image-card grid contains every game with no origin headings", async ({
   await expect(page.locator("#game-examples .example-image > img")).toHaveCount(
     totalWithMedia,
   );
-  await expect(page.locator('#game-examples > [data-cover-kind="gameplay"]')).toHaveCount(totalWithGameplay);
-  await expect(page.locator('#game-examples > [data-cover-kind$="-page"]')).toHaveCount(totalWithPageCovers);
+  await expect(
+    page.locator('#game-examples > [data-cover-kind="gameplay"]'),
+  ).toHaveCount(totalWithGameplay);
+  await expect(
+    page.locator('#game-examples > [data-cover-kind$="-page"]'),
+  ).toHaveCount(totalWithPageCovers);
   for (const name of ["研究库中的可玩游戏", "创作者开发案例"])
     await expect(page.getByRole("heading", { name, exact: true })).toHaveCount(
       0,

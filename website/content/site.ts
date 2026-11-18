@@ -17,9 +17,24 @@ export const siteOrigin = "https://openenvision.github.io";
 const demoDetailBase = "/showcase/";
 /** The only declaration of routes and navigation. URL helpers use these paths. */
 export const pages = {
-  account: { path: "/account/", module: "routes/account.tsx", title: "My account", nav: "hidden" },
-  submit: { path: "/submit/", module: "routes/submit.tsx", title: "Submit a game", nav: "hidden" },
-  works: { path: "/works/", module: "routes/work.tsx", title: "Community work", nav: "hidden" },
+  account: {
+    path: "/account/",
+    module: "routes/account.tsx",
+    title: "My account",
+    nav: "hidden",
+  },
+  submit: {
+    path: "/submit/",
+    module: "routes/submit.tsx",
+    title: "Submit a game",
+    nav: "hidden",
+  },
+  works: {
+    path: "/works/",
+    module: "routes/work.tsx",
+    title: "Community work",
+    nav: "hidden",
+  },
   threejsGames: {
     path: "/threejs-games/",
     module: "routes/threejs-games.tsx",

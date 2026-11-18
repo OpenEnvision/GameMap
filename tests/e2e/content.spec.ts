@@ -50,12 +50,18 @@ test("papers remain directly discoverable after the Explore directory is retired
   const manifest = await inventory(request, baseURL);
   for (const prefix of ["", "zh/"]) {
     for (const query of ["", "?kind=paper", "?q=research"]) {
-      const retired = await request.get(new URL(prefix + "explore/" + query, baseURL).href);
+      const retired = await request.get(
+        new URL(prefix + "explore/" + query, baseURL).href,
+      );
       expect(retired.status()).toBe(404);
     }
     await page.goto(prefix);
-    await expect(page.locator('main [data-content-ref^="paper:"]')).toHaveCount(0);
-    await expect(page.locator('a[data-collection-id="papers"]')).toHaveAttribute("href", new RegExp(`/${prefix}papers/$`));
+    await expect(page.locator('main [data-content-ref^="paper:"]')).toHaveCount(
+      0,
+    );
+    await expect(
+      page.locator('a[data-collection-id="papers"]'),
+    ).toHaveAttribute("href", new RegExp(`/${prefix}papers/$`));
     await page.goto(prefix + "papers/");
     await expect(page.locator("main h1")).toBeVisible();
     await expect(page.locator(".catalog-paper-row")).toHaveCount(
@@ -78,9 +84,18 @@ test("homepage navigation and global search retain every deliverable's direct ad
   );
   if (!deliverable || deliverable.type !== "text")
     throw new Error("Missing declared deliverable fixture");
-  await page.getByRole("textbox", { name: "Search all game development content", exact: true }).fill(deliverable.value);
-  await page.getByRole("button", { name: "Search all content from home", exact: true }).click();
-  const result = page.getByRole("dialog").locator(`[role="option"][id="fd-search-option-${step.key}"]`);
+  await page
+    .getByRole("textbox", {
+      name: "Search all game development content",
+      exact: true,
+    })
+    .fill(deliverable.value);
+  await page
+    .getByRole("button", { name: "Search all content from home", exact: true })
+    .click();
+  const result = page
+    .getByRole("dialog")
+    .locator(`[role="option"][id="fd-search-option-${step.key}"]`);
   await expect(result).toBeVisible();
   await result.click();
   await expect(page).toHaveURL(

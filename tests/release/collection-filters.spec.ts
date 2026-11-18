@@ -153,7 +153,9 @@ test("static collections expose every record and canonical Chinese guides hydrat
       "All records are shown",
     );
     await page.goto("threejs-games/");
-    await expect(page.locator(".catalog-game-card")).toHaveCount(content.registry.all("threejs-game").length);
+    await expect(page.locator(".catalog-game-card")).toHaveCount(
+      content.registry.all("threejs-game").length,
+    );
   } finally {
     await context.close();
   }

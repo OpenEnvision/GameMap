@@ -6,14 +6,18 @@ import { resolve, extname, sep } from "node:path";
 const root = resolve("dist");
 let base, build;
 try {
-  build = JSON.parse(await readFile(resolve(root,'site-manifest.json'),'utf8'));
-  ({base}=build);
+  build = JSON.parse(
+    await readFile(resolve(root, "site-manifest.json"), "utf8"),
+  );
+  ({ base } = build);
 } catch {
   throw new Error(
     "No built site found. Run npm run build before npm run preview.",
   );
 }
-console.log(`Build ${build.commit || 'unknown'} · ${build.builtAt || 'unknown time'}; rebuild after pulling source changes.`);
+console.log(
+  `Build ${build.commit || "unknown"} · ${build.builtAt || "unknown time"}; rebuild after pulling source changes.`,
+);
 const args = process.argv.slice(2);
 const option = (name, fallback) =>
   args.includes(name) ? args[args.indexOf(name) + 1] : fallback;
@@ -75,8 +79,10 @@ const server = createServer(async (request, response) => {
     if (!info.isFile()) throw new Error("Not a file");
   } catch {
     status = 404;
-    const relative=path.startsWith(base)?path.slice(base.length):'';
-    file = /^(?:zh(?:\/|$)|docs\/zh(?:\/|$))/.test(relative)?resolve(root,'zh/404/index.html'):resolve(root,'404.html');
+    const relative = path.startsWith(base) ? path.slice(base.length) : "";
+    file = /^(?:zh(?:\/|$)|docs\/zh(?:\/|$))/.test(relative)
+      ? resolve(root, "zh/404/index.html")
+      : resolve(root, "404.html");
     info = await stat(file);
   }
   const headers = {

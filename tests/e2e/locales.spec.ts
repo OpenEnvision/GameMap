@@ -231,17 +231,30 @@ test("homepage navigation reaches Chinese documents without a separate content d
   page,
 }) => {
   await page.goto("");
-  await expect(page.locator('main [data-content-ref^="document:"]')).toHaveCount(0);
+  await expect(
+    page.locator('main [data-content-ref^="document:"]'),
+  ).toHaveCount(0);
   const menu = page.locator("#mobile-navigation-button");
   if (await menu.isVisible()) {
     await menu.click();
-    await page.locator("#mobile-navigation").getByRole("link", { name: "Guides & notes", exact: true }).click();
+    await page
+      .locator("#mobile-navigation")
+      .getByRole("link", { name: "Guides & notes", exact: true })
+      .click();
   } else {
     await page.locator('a[data-collection-id="docs"]').click();
   }
-  await page.locator(".documentation-language").getByRole("link", { name: "中文", exact: true }).click();
-  const source = page.locator('[data-content-ref="document:zh/practical-guide"]');
-  await expect(source).toHaveAttribute("href", /\/docs\/zh\/practical-guide\/$/);
+  await page
+    .locator(".documentation-language")
+    .getByRole("link", { name: "中文", exact: true })
+    .click();
+  const source = page.locator(
+    '[data-content-ref="document:zh/practical-guide"]',
+  );
+  await expect(source).toHaveAttribute(
+    "href",
+    /\/docs\/zh\/practical-guide\/$/,
+  );
   await source.click();
   await expect(page.locator("html")).toHaveAttribute("lang", "zh-CN");
 });

@@ -71,17 +71,22 @@ test("retiring the Showcase listing preserves recordings under their resource ow
   const retired = new Set(["/showcase/", "/zh/showcase/"]);
   for (const page of Object.values(context.pages))
     assert.ok(!retired.has(page.path));
-  for (const page of context.navigation)
-    assert.ok(!retired.has(page.path));
+  for (const page of context.navigation) assert.ok(!retired.has(page.path));
   for (const path of context.staticPagePaths(registry))
     assert.ok(!retired.has(path));
 
   const demos = registry.all("demo");
-  assert.deepEqual(demos.map((entry) => entry.data), collectDemos(sources));
+  assert.deepEqual(
+    demos.map((entry) => entry.data),
+    collectDemos(sources),
+  );
   const chinese = context.localizedRegistry(registry, "zh");
   for (const entry of demos) {
     assert.equal(entry.url, `/showcase/${encodeURIComponent(entry.id)}/`);
-    assert.equal(entry.collectionUrl, context.url.resource(entry.data.resourceId));
+    assert.equal(
+      entry.collectionUrl,
+      context.url.resource(entry.data.resourceId),
+    );
     assert.ok(registry.get("resource", entry.data.resourceId));
     const localized = chinese.require("demo", entry.id);
     assert.equal(localized.url, "/zh" + entry.url);

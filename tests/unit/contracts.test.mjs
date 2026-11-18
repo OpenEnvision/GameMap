@@ -1,7 +1,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { loadContent } from "../../scripts/lib/content.mjs";
-import { loadMigrations, migrationNames } from "../../scripts/lib/migrations.mjs";
+import {
+  loadMigrations,
+  migrationNames,
+} from "../../scripts/lib/migrations.mjs";
 import { createImportBundle } from "../../scripts/lib/platform.mjs";
 import {
   kindAdapters,

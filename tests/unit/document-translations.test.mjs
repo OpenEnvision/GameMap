@@ -8,7 +8,10 @@ import remarkStringify from "remark-stringify";
 import { skillPackages } from "../../scripts/lib/skill-packages.mjs";
 import { remarkHeading } from "fumadocs-core/mdx-plugins";
 import { visit } from "unist-util-visit";
-import { readDocuments, preparedMarkdown } from "../../scripts/lib/documents.mjs";
+import {
+  readDocuments,
+  preparedMarkdown,
+} from "../../scripts/lib/documents.mjs";
 import {
   isFormalDocument,
   translatedDocumentLink,
@@ -273,7 +276,10 @@ test("the Chinese level-design download includes every translated reference, tem
 test("all formal documents have complete, source-bound Chinese counterparts in matching topic groups", async () => {
   const fingerprints = JSON.parse(
     await readFile(
-      new URL("../../website/content/i18n/docs.zh.sources.json", import.meta.url),
+      new URL(
+        "../../website/content/i18n/docs.zh.sources.json",
+        import.meta.url,
+      ),
       "utf8",
     ),
   );

@@ -119,9 +119,10 @@ export async function readDocuments() {
     )
     .map((file) => ({
       file,
-      slug: relative(resolve(root, "docs"), file) === "AWESOME.md"
-        ? "catalog"
-        : slash(relative(resolve(root, "docs"), file)).slice(0, -3),
+      slug:
+        relative(resolve(root, "docs"), file) === "AWESOME.md"
+          ? "catalog"
+          : slash(relative(resolve(root, "docs"), file)).slice(0, -3),
     }));
   const rootSlugs = {
     "README.md": "overview",
