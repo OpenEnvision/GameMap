@@ -467,6 +467,14 @@
       }
     }
   },
+  "website/src/data/open3dRound5Games.ts": {
+    "exports": {
+      "open3dRound5Games": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
+  },
   "website/src/data/browserPortGames.ts": {
     "exports": {
       "browserPortGames": {
@@ -489,6 +497,15 @@
         "shape": "metadata",
         "kind": "example",
         "reason": "Complete original fourth directory, hash, source-only game/prototype admissions and other-category exclusions; no independent source/release/license/runtime certification."
+      }
+    }
+  },
+  "data/segments/open-3d-import-round5.json": {
+    "exports": {
+      "default": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "Complete supplied AI game list (411 rows), its hash and the HTML original's hash, the GitHub availability/license/README check for every row, existing-record mappings and the one unavailable exclusion; model mentions repeat README text and are not authorship verification."
       }
     }
   },

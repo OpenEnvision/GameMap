@@ -1002,6 +1002,9 @@ const englishFiles = [
 // Preserve the language-switch label and the exact bilingual label in the archived art source.
 const sourceQuotes = {
   "README.md": ["中文指南"],
+  "website/public/open-3d-games-import-round5.json": [
+    "AI游戏扩充清单_411条.html",
+  ],
   "website/public/docs/project/art/prompts.md": ["原创概念插图"],
 };
 function englishRenderedCopy(node, inherited = "en") {
@@ -1096,6 +1099,11 @@ await Promise.all(
         "data/segments/open-3d-import-round4.json",
         88,
         75,
+      ],
+      "website/public/open-3d-games-import-round5.json": [
+        "data/segments/open-3d-import-round5.json",
+        411,
+        410,
       ],
     };
     if (directoryExports[path]) {

@@ -22,6 +22,7 @@ test("Examples headings omit intake-download/toolkit shortcuts without deleting 
     "open-3d-games-import-round3.json",
     "itch-3d-games-import.json",
     "open-3d-games-import-round4.json",
+    "open-3d-games-import-round5.json",
     "browser-port-research.json",
     "page-cover-sources.json",
   ]) {

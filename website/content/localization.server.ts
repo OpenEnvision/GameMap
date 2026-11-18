@@ -8,6 +8,7 @@ import open3dRound2Games from "./i18n/content/open3d-games-round2.zh.json";
 import open3dRound3Games from "./i18n/content/open3d-games-round3.zh.json";
 import itch3dGames from "./i18n/content/itch-3d-games.zh.json";
 import open3dRound4Games from "./i18n/content/open3d-games-round4.zh.json";
+import open3dRound5Games from "./i18n/content/open3d-games-round5.zh.json";
 import browserPorts from "./i18n/content/browser-ports.zh.json";
 import toolkit from "./i18n/content/toolkit.zh.json";
 import testing from "./i18n/content/testing.zh.json";
@@ -53,6 +54,7 @@ for (const group of [
   itch3dGames,
   open3dRound4Games,
   browserPorts,
+  open3dRound5Games,
   toolkit,
   testing,
 ])

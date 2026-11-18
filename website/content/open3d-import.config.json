@@ -113,6 +113,11 @@
       "dataset": "open_3d_games_round4_additions.jsonl",
       "sha256": "c71434ca7a69fa55bb28fcb3c9343621125453dd6e86fc0379265164ad6fd224",
       "includedLegacyThreejsIds": []
+    },
+    {
+      "dataset": "ai_3d_game_list_round5.jsonl",
+      "sha256": "5d0f5251faf228c843df351d4540009f616cf806cb7d1b455ee665283dbde25a",
+      "includedLegacyThreejsIds": []
     }
   ]
 }
