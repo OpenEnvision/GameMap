@@ -1,0 +1,30 @@
+/* Only the large Examples catalogue uses the denser browsing layout. */
+.game-listing-page #game-examples .example-body > p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  min-height: 0;
+  max-block-size: 5.4em;
+  align-self: start;
+}
+
+@media (min-width: 1200px) {
+  .site-main.game-listing-page {
+    width: min(1600px, calc(100% - 64px));
+  }
+  .game-listing-page #game-examples {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .game-listing-page #game-examples .example-body {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .game-listing-page #game-examples {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

@@ -3,13 +3,15 @@ import { Link, useSiteI18n } from "../lib/i18n";
 import { ArrowLeft } from "lucide-react";
 import { contentFor, sources } from "../../content/registry.server";
 import { contentKinds } from "../../content/models";
-import { detailRoutes, pages, url } from "../../content/site";
+import { detailRoutes, pages } from "../../content/site";
 import {
   ContentDocument,
   ContentCard,
   RelatedDemos,
 } from "../components/content";
 import ResourceIcon from "../../src/components/ResourceIcon";
+import { PaperDocument } from "../components/paper-document";
+import { CommunityPanel } from "../components/community";
 
 export function loader({ params, request }: LoaderFunctionArgs) {
   const content = contentFor(request);
@@ -24,6 +26,11 @@ export function loader({ params, request }: LoaderFunctionArgs) {
   if (!entry) throw new Response("Content not found", { status: 404 });
   return {
     entry,
+    communityKey: ["example", "foundation", "threejs-game"].includes(entry.kind)
+      ? entry.key
+      : entry.kind === "repository-research" && entry.data.game_access
+        ? content.collectionDiscoveryFor(entry).key
+        : null,
     identity:
       entry.kind === "resource"
         ? sources.identities[entry.id as keyof typeof sources.identities]
@@ -41,11 +48,14 @@ export function loader({ params, request }: LoaderFunctionArgs) {
 }
 export default function ContentPage() {
   const { t } = useSiteI18n();
-  const { entry, identity, steps, cases, demos } =
+  const { entry, identity, steps, cases, demos, communityKey } =
     useLoaderData<typeof loader>();
   const collection = pages[contentKinds[entry.kind].page];
   return (
-    <main id="main-content" className="site-main content-page">
+    <main
+      id="main-content"
+      className={`site-main content-page${entry.kind === "paper" ? " paper-page" : ""}`}
+    >
       <title>{`${entry.title} — GameMap`}</title>
       <meta name="description" content={entry.description} />
       <nav className="content-breadcrumb" aria-label={t("Breadcrumb")}>
@@ -53,15 +63,19 @@ export default function ContentPage() {
           <ArrowLeft size={15} />
           {t(collection.title)}
         </Link>
-        <Link to={url.page("explore")}>{t("All content")}</Link>
       </nav>
       {entry.kind === "resource" && (
         <div className="content-resource-mark">
           <ResourceIcon resource={entry.data} identity={identity!} size={56} />
         </div>
       )}
-      <ContentDocument entry={entry} />
+      {entry.kind === "paper" ? (
+        <PaperDocument entry={entry} />
+      ) : (
+        <ContentDocument entry={entry} />
+      )}
       {entry.kind === "resource" && <RelatedDemos demos={demos} />}
+      {communityKey && <CommunityPanel gameKey={communityKey} />}
       {steps.length > 0 && (
         <section
           className="path-steps"

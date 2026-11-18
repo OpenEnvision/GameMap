@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link, useSiteI18n, SourceLanguage } from "../lib/i18n";
 import type { ContentBlock, ContentEntry, Fact } from "../../content/models";
@@ -84,7 +84,7 @@ function Facts({ items }: { items: Fact[] }) {
     </dl>
   );
 }
-function Block({
+export function ContentBlockView({
   block,
   heading = "h1",
 }: {
@@ -167,11 +167,11 @@ function Block({
             <span>{t(block.label)}</span>
             {block.source ? (
               <ContentLink href={block.source}>
-                {block.credit || t("Image source")}
+                {block.credit ? t(block.credit) : t("Image source")}
                 <ArrowUpRight size={12} />
               </ContentLink>
             ) : (
-              block.credit && <span>{block.credit}</span>
+              block.credit && <span>{t(block.credit)}</span>
             )}
           </figcaption>
         </figure>
@@ -206,6 +206,31 @@ export function ContentDocument({
 }) {
   const { t } = useSiteI18n(),
     anchor = entry.url.split("#")[1];
+  const sections = (
+    ["intro", "media", "guidance", "resources", "provenance"] as const
+  )
+    .map((section) => ({
+      section,
+      blocks: entry.blocks.filter(
+        (block) =>
+          (block.type === "title" || block.type === "lead"
+            ? "intro"
+            : block.type === "image" || block.type === "video"
+              ? "media"
+              : block.section ||
+                (block.type === "links" ? "resources" : "guidance")) ===
+          section,
+      ),
+    }))
+    .filter(({ blocks }) => blocks.length > 0);
+  const sectionLabels = {
+    intro: "Overview",
+    media: "Media",
+    guidance: "Details",
+    resources: "Links & resources",
+    provenance: "Sources & evidence",
+  };
+  const outline = heading === "h1" && sections.length >= 3;
   return (
     <article
       id={anchor}
@@ -228,31 +253,30 @@ export function ContentDocument({
           )
         }
       />
-      {(["intro", "media", "guidance", "resources", "provenance"] as const).map(
-        (section) => {
-          const blocks = entry.blocks.filter(
-            (block) =>
-              (block.type === "title" || block.type === "lead"
-                ? "intro"
-                : block.type === "image" || block.type === "video"
-                  ? "media"
-                  : block.section ||
-                    (block.type === "links" ? "resources" : "guidance")) ===
-              section,
-          );
-          return blocks.length ? (
-            <div className={`record-section record-${section}`} key={section}>
-              {blocks.map((block, index) => (
-                <Block
-                  key={`${block.field}-${index}`}
-                  block={block}
-                  heading={heading}
-                />
-              ))}
-            </div>
-          ) : null;
-        },
+      {outline && (
+        <nav className="record-outline" aria-label={t("On this record")}>
+          {sections.map(({ section }) => (
+            <a key={section} href={`#record-${section}`}>
+              {t(sectionLabels[section])}
+            </a>
+          ))}
+        </nav>
       )}
+      {sections.map(({ section, blocks }) => (
+        <div
+          className={`record-section record-${section}`}
+          id={outline ? `record-${section}` : undefined}
+          key={section}
+        >
+          {blocks.map((block, index) => (
+            <ContentBlockView
+              key={`${block.field}-${index}`}
+              block={block}
+              heading={heading}
+            />
+          ))}
+        </div>
+      ))}
     </article>
   );
 }
@@ -304,87 +328,5 @@ export function RelatedDemos({ demos }: { demos: ContentEntry<"demo">[] }) {
         ))}
       </div>
     </section>
-  );
-}
-export function RecordingCard({ views }: { views: ContentEntry<"demo">[] }) {
-  const { t } = useSiteI18n(),
-    [id, setId] = useState(views[0].id),
-    entry = views.find((view) => view.id === id) || views[0];
-  return (
-    <div
-      className="recording-container"
-      data-recording-id={entry.data.recordingId}
-    >
-      {views.length > 1 && (
-        <label className="preview-selector">
-          {t("View")}
-          <select
-            aria-label={t("View of {title}", { title: views[0].title })}
-            value={entry.id}
-            onChange={(event) => setId(event.target.value)}
-          >
-            {views.map((view) => (
-              <option key={view.key} value={view.id}>
-                {view.title} · {t(view.data.role)}
-              </option>
-            ))}
-          </select>
-        </label>
-      )}
-      <DemoCard key={entry.key} entry={entry} />
-      {views.length > 1 && (
-        <nav
-          className="recording-view-links"
-          aria-label={t("Other recording views")}
-        >
-          {views
-            .filter((view) => view.key !== entry.key)
-            .map((view) => (
-              <Link key={view.key} data-content-ref={view.key} to={view.url}>
-                {t(
-                  view.data.role === "excerpt"
-                    ? "Preview details"
-                    : "Original recording details",
-                )}
-              </Link>
-            ))}
-        </nav>
-      )}
-    </div>
-  );
-}
-export function DemoCard({ entry }: { entry: ContentEntry<"demo"> }) {
-  const { t } = useSiteI18n(),
-    video = entry.blocks.find((block) => block.type === "video");
-  return (
-    <article className="demo-card" data-content-ref={entry.key}>
-      {video?.type === "video" && <MediaPreview block={video} />}
-      <div className="demo-card-body">
-        <span className="small-label">
-          {entry.data.track.toUpperCase()} ·{" "}
-          {t(
-            entry.data.role === "excerpt"
-              ? "CURATED EXCERPT"
-              : "SOURCE RECORDING",
-          )}
-        </span>
-        <h2>
-          <Link to={entry.url}>
-            {entry.title}
-            <ArrowRight size={16} />
-          </Link>
-        </h2>
-        <p lang={entry.descriptionLanguage === "en" ? "en" : undefined}>
-          {entry.description}
-        </p>
-        <small>{entry.data.credit}</small>
-        <div className="example-links">
-          <a href={entry.data.originalUrl} target="_blank" rel="noreferrer">
-            {t("Original video")}
-            <ArrowUpRight size={13} />
-          </a>
-        </div>
-      </div>
-    </article>
   );
 }

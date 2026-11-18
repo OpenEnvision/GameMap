@@ -20,7 +20,7 @@ test.afterEach(async ({ page }) => {
   ).toEqual([]);
 });
 
-test("home search leads to usable filtered resources", async ({ page }) => {
+test("home search opens canonical resource results in the global dialog", async ({ page }) => {
   await page.goto("");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
     "Playable worlds",
@@ -32,10 +32,13 @@ test("home search leads to usable filtered resources", async ({ page }) => {
   await page
     .getByRole("button", { name: "Search all content from home", exact: true })
     .click();
-  await expect(page).toHaveURL(/explore\/\?q=OpenAI/);
-  await expect(
-    page.getByRole("heading", { name: "OpenAI Codex", exact: true }),
-  ).toBeVisible();
+  const dialog = page.getByRole("dialog");
+  await expect(dialog.getByRole("combobox")).toHaveValue("OpenAI Codex");
+  const result = dialog.locator('[role="option"][id="fd-search-option-resource:codex"]');
+  await expect(result).toBeVisible();
+  await result.click();
+  await expect(page).toHaveURL(/\/resources\/codex\/$/);
+  await expect(page.getByRole("heading", { name: "OpenAI Codex", exact: true })).toBeVisible();
 });
 
 test("filters, shareable details, bookmarks, persistence, and export", async ({
@@ -138,9 +141,9 @@ test("examples and test-library filters retain source details", async ({
     await request.get(baseURL + "content-manifest.json")
   ).json();
   await page.goto("examples/");
-  await expect(page.locator(".example-card")).toHaveCount(
-    catalog.counts.example,
-  );
+  await expect(
+    page.locator('.example-card[data-content-ref^="example:"]'),
+  ).toHaveCount(catalog.counts.example);
   await page.getByRole("button", { name: "2D", exact: true }).click();
   await expect(page).toHaveURL(/track=2d/);
   const card = page.locator(".example-card").first();

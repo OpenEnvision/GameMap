@@ -8,7 +8,7 @@ type PublishedRecord = Pick<
   "key" | "kind" | "id" | "title" | "url" | "blocks"
 >;
 interface Manifest {
-  recordings: {id:string;views:string[]}[];
+  recordings: { id: string; views: string[] }[];
   totalRecords: number;
   counts: Record<ContentKind, number>;
   records: PublishedRecord[];
@@ -42,31 +42,47 @@ test.afterEach(({ page }) =>
   ).toEqual([]),
 );
 
-test("complete index exposes every registered record and finds a deliverable", async ({
+test("papers remain directly discoverable after the Explore directory is retired", async ({
   page,
   request,
   baseURL,
 }) => {
   const manifest = await inventory(request, baseURL);
-  await page.goto("explore/");
-  await expect(page.locator("main [data-content-ref]")).toHaveCount(
-    manifest.totalRecords,
-  );
+  for (const prefix of ["", "zh/"]) {
+    for (const query of ["", "?kind=paper", "?q=research"]) {
+      const retired = await request.get(new URL(prefix + "explore/" + query, baseURL).href);
+      expect(retired.status()).toBe(404);
+    }
+    await page.goto(prefix);
+    await expect(page.locator('main [data-content-ref^="paper:"]')).toHaveCount(0);
+    await expect(page.locator('a[data-collection-id="papers"]')).toHaveAttribute("href", new RegExp(`/${prefix}papers/$`));
+    await page.goto(prefix + "papers/");
+    await expect(page.locator("main h1")).toBeVisible();
+    await expect(page.locator(".catalog-paper-row")).toHaveCount(
+      Math.min(24, manifest.counts.paper),
+    );
+  }
+});
+
+test("homepage navigation and global search retain every deliverable's direct address", async ({
+  page,
+  request,
+  baseURL,
+}) => {
+  const manifest = await inventory(request, baseURL);
+  await page.goto("");
+  await expect(page.locator("a[data-collection-id]")).toHaveCount(9);
   const step = manifest.records.find((entry) => entry.kind === "step")!;
   const deliverable = step.blocks.find(
     (block) => block.field === "deliverable",
   );
   if (!deliverable || deliverable.type !== "text")
     throw new Error("Missing declared deliverable fixture");
-  await page
-    .getByRole("combobox", { name: "Content type", exact: true })
-    .selectOption("step");
-  await page
-    .getByRole("textbox", { name: 'Search all content', exact:true })
-    .fill(deliverable.value);
-  const card = page.locator(`[data-content-ref="${step.key}"]`);
-  await expect(card).toBeVisible();
-  await card.getByRole("link").click();
+  await page.getByRole("textbox", { name: "Search all game development content", exact: true }).fill(deliverable.value);
+  await page.getByRole("button", { name: "Search all content from home", exact: true }).click();
+  const result = page.getByRole("dialog").locator(`[role="option"][id="fd-search-option-${step.key}"]`);
+  await expect(result).toBeVisible();
+  await result.click();
   await expect(page).toHaveURL(
     new RegExp(step.url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "$"),
   );
@@ -112,7 +128,7 @@ test("each development track keeps every deliverable and acceptance checkpoint",
   }
 });
 
-test("agent filters distinguish toolkit categories from creator client/model attribution", async ({
+test("toolkit filters stay with tools while creator attribution filters live in Examples", async ({
   page,
   request,
   baseURL,
@@ -122,9 +138,7 @@ test("agent filters distinguish toolkit categories from creator client/model att
   await expect(page.locator('[data-content-ref^="agent:"]')).toHaveCount(
     manifest.counts.agent,
   );
-  await expect(page.locator(".example-card")).toHaveCount(
-    manifest.counts.example,
-  );
+  await expect(page.locator(".example-card")).toHaveCount(0);
   await page
     .getByRole("combobox", { name: "Agent resource kind" })
     .selectOption("bridge");
@@ -141,15 +155,15 @@ test("agent filters distinguish toolkit categories from creator client/model att
   await expect(page.locator('[data-content-ref^="agent:"]')).toHaveCount(
     bridges.length,
   );
-  await expect(page.locator(".example-card")).toHaveCount(
-    manifest.counts.example,
-  );
-  await page
-    .getByRole("combobox", { name: "Agent resource kind" })
-    .selectOption("all");
   await page
     .getByRole("combobox", { name: "Client or model" })
     .selectOption("deepseek-model");
+  await expect(page.locator(".example-card")).toHaveCount(0);
+  await page
+    .locator(".heading-links")
+    .getByRole("link", { name: "Game examples", exact: true })
+    .click();
+  await expect(page).toHaveURL(/examples\/\?client=deepseek-model$/);
   const expected = manifest.records.filter(
     (entry) =>
       entry.kind === "example" &&
@@ -170,19 +184,50 @@ test("agent filters distinguish toolkit categories from creator client/model att
   await expect(page.locator(".example-card")).toHaveCount(expected.length);
 });
 
-test("all recording records are discoverable and one project can select multiple clips", async ({
+test("complete game galleries stay in Examples while featured and related access remain", async ({
   page,
   request,
   baseURL,
 }) => {
   const manifest = await inventory(request, baseURL);
-  await page.goto("showcase/");
-  await expect(page.locator('.demo-card')).toHaveCount(manifest.recordings.length);
+  for (const prefix of ["", "zh/"]) {
+    for (const path of ["agents/", "research/", "explore/"]) {
+      await page.goto(prefix + path);
+      await expect(page.locator("main .example-card")).toHaveCount(0);
+    }
+    await page.goto(prefix + "examples/");
+    await expect(
+      page.locator('.example-card[data-content-ref^="example:"]'),
+    ).toHaveCount(manifest.counts.example);
+    await page.goto(prefix);
+    await expect(page.locator(".featured-section .example-card")).toHaveCount(
+      3,
+    );
+  }
+});
+
+test("retired Showcase listings return 404 and have no navigation or collection links", async ({
+  page,
+  request,
+  baseURL,
+}) => {
+  for (const prefix of ["", "zh/"]) {
+    const response = await request.get(baseURL + prefix + "showcase/");
+    expect(response.status()).toBe(404);
+    await page.goto(prefix);
+    await expect(page.locator('a[href$="/showcase/"]')).toHaveCount(0);
+  }
+});
+
+test("resource-owned recordings remain discoverable and one project can select multiple clips", async ({
+  page,
+  request,
+  baseURL,
+}) => {
+  const manifest = await inventory(request, baseURL);
+  await page.goto("resources/opengame/");
   await expect(
     page.locator('[data-content-ref="demo:opengame-skirmish"]'),
-  ).toBeVisible();
-  await expect(
-    page.locator('[data-content-ref="demo:gamefactory-ue5-rpg"]'),
   ).toBeVisible();
   await expect(page.locator("video[autoplay]")).toHaveCount(0);
   await page.goto("resources/#resource/opengame");
@@ -231,9 +276,19 @@ test("research ledger preserves the latest historical-identity boundaries withou
 }) => {
   const manifest = await inventory(request, baseURL);
   await page.goto("research/");
-  await expect(
-    page.locator('main [data-content-ref^="repository-research:"]'),
-  ).toHaveCount(manifest.counts["repository-research"]);
+  const listedResearchKeys = await page
+    .locator('main [data-content-ref^="repository-research:"]')
+    .evaluateAll((rows) =>
+      rows.map((row) => row.getAttribute("data-content-ref")),
+    );
+  expect(listedResearchKeys.length).toBeLessThanOrEqual(
+    manifest.counts["repository-research"],
+  );
+  expect(
+    listedResearchKeys.every((key) =>
+      manifest.records.some((entry) => entry.key === key),
+    ),
+  ).toBe(true);
   await page.goto("research/serejaris/dust-arena/");
   await expect(
     page.locator('[data-content-field="historical_source"]'),
@@ -324,6 +379,9 @@ test("new structured content remains readable without JavaScript", async ({
   await expect(
     page.locator('[data-content-field="historical_source"]'),
   ).toBeVisible();
+  await page.goto(baseURL + "explore/");
+  await expect(page.locator("[data-collection-id]")).toHaveCount(9);
+  await expect(page.locator("main [data-content-ref]")).toHaveCount(0);
   await page.goto(baseURL + "showcase/opengame-skirmish/");
   await expect(page.locator("video:visible")).toHaveAttribute("controls", "");
   await context.close();

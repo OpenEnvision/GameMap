@@ -1,0 +1,182 @@
+/* Related cards share row tracks instead of clipping text into fixed heights. */
+.site-main .example-grid,
+.site-main .testing-grid {
+  align-items: stretch;
+}
+.example-grid > .example-card,
+.testing-grid > .testing-card,
+.foundation-grid > article {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.example-grid .example-image {
+  aspect-ratio: 16 / 9;
+  flex: none;
+}
+.example-grid .example-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.example-grid .example-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.example-grid .example-body > .example-links,
+.testing-grid > .testing-card > .example-links,
+.foundation-grid > article > .example-links,
+.resource-grid .resource-card-footer {
+  margin-top: auto;
+}
+.example-grid .example-body > .build-notes,
+.testing-grid > .testing-card > .build-notes,
+.foundation-grid > article > p,
+.resource-grid .resource-tags {
+  margin-bottom: 20px;
+}
+.example-grid .example-links,
+.testing-grid .example-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.example-grid .example-links a,
+.testing-grid .example-links a {
+  min-width: 0;
+  align-items: flex-start;
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+}
+.example-grid .example-links a svg,
+.testing-grid .example-links a svg {
+  flex: none;
+  margin-top: 2px;
+}
+/* Subgrid aligns images, headings, descriptions, disclosures and action bars.
+   Opening a disclosure expands only its row; no source content is truncated. */
+@supports (grid-template-rows: subgrid) {
+  .example-grid > .example-card,
+  .testing-grid > .testing-card,
+  .resource-grid > .resource-tile,
+  .foundation-grid > article {
+    display: grid;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+  .example-grid > .example-card {
+    grid-row: span 7;
+  }
+  .example-grid > .example-card > .example-image {
+    grid-row: 1;
+  }
+  .example-grid .example-body {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: 2 / span 6;
+    row-gap: 0;
+  }
+  .example-grid .example-body > .card-meta {
+    grid-row: 1;
+  }
+  .example-grid .example-body > h3 {
+    grid-row: 2;
+  }
+  .example-grid .example-body > .source-language {
+    grid-row: 3;
+  }
+  .example-grid .example-body > p {
+    grid-row: 4;
+  }
+  .example-grid .example-body > .build-notes {
+    grid-row: 5;
+    margin-top: 18px;
+    margin-bottom: 0;
+  }
+  .example-grid .example-body > .example-links {
+    grid-row: 6;
+    margin-top: 20px;
+  }
+  .testing-grid > .testing-card {
+    grid-row: span 8;
+  }
+  .testing-grid > .testing-card > .testing-symbol {
+    grid-row: 1;
+  }
+  .testing-grid > .testing-card > .small-label {
+    grid-row: 2;
+  }
+  .testing-grid > .testing-card > .source-language {
+    grid-row: 3;
+  }
+  .testing-grid > .testing-card > h2 {
+    grid-row: 4;
+  }
+  .testing-grid > .testing-card > p {
+    grid-row: 5;
+  }
+  .testing-grid > .testing-card > .tag-list {
+    grid-row: 6;
+  }
+  .testing-grid > .testing-card > .build-notes {
+    grid-row: 7;
+    margin-bottom: 0;
+  }
+  .testing-grid > .testing-card > .example-links {
+    grid-row: 8;
+    margin-top: 20px;
+  }
+  .resource-grid > .resource-tile {
+    grid-row: span 8;
+  }
+  .resource-grid > .resource-tile > .resource-card-top {
+    grid-row: 1;
+  }
+  .resource-grid > .resource-tile > .small-label {
+    grid-row: 2;
+  }
+  .resource-grid > .resource-tile > .source-language {
+    grid-row: 3;
+  }
+  .resource-grid > .resource-tile > h2 {
+    grid-row: 4;
+  }
+  .resource-grid > .resource-tile > .resource-affiliation {
+    grid-row: 5;
+  }
+  .resource-grid > .resource-tile > .resource-description {
+    grid-row: 6;
+  }
+  .resource-grid > .resource-tile > .resource-tags {
+    grid-row: 7;
+    margin-bottom: 0;
+  }
+  .resource-grid > .resource-tile > .resource-card-footer {
+    grid-row: 8;
+    margin-top: 22px;
+  }
+  .foundation-grid > article {
+    grid-row: span 4;
+  }
+  .foundation-grid > article > .small-label {
+    grid-row: 1;
+  }
+  .foundation-grid > article > h3 {
+    grid-row: 2;
+  }
+  .foundation-grid > article > p {
+    grid-row: 3;
+    margin-bottom: 0;
+  }
+  .foundation-grid > article > .example-links {
+    grid-row: 4;
+    margin-top: 20px;
+  }
+  @media (max-width: 680px) {
+    .site-main .example-grid > .example-card.compact:last-child {
+      display: grid;
+    }
+  }
+}

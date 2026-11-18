@@ -19,9 +19,7 @@ test("every main Chinese view has a real localized title and no overflow", async
     ["zh/agents/", "让代理接入实际开发流程。"],
     ["zh/paths/", "按步骤推进，而不是堆叠工具。"],
     ["zh/testing/", "用实际任务检验改动。"],
-    ["zh/showcase/", "从演示回到原始记录。"],
     ["zh/research/", "找到值得研究的项目。"],
-    ["zh/explore/", "在全部内容中查找。"],
     ["docs/zh/", "中文文档"],
   ];
   for (const [path, title] of pages) {
@@ -129,56 +127,126 @@ test("Chinese and English queries return localized canonical search results", as
   await expect(page).toHaveURL(/\/zh\/resources\/codex\/$/);
 });
 
-test("untranslated articles keep Chinese navigation and explicitly English bodies", async ({
+test("retired archives stay absent while current guides retain full language navigation", async ({
   page,
+  request,
 }) => {
-  await page.goto("zh/docs/agents-notes/");
+  for (const path of [
+    "docs/remote/asset-selection-feedback/",
+    "zh/docs/remote/asset-selection-feedback/",
+  ])
+    expect((await request.get(path)).status()).toBe(404);
+  await page.goto("docs/zh/asset-selection-feedback/");
   await expect(page.locator("html")).toHaveAttribute("lang", "zh-CN");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "编程代理与游戏工具集成",
+    "资产候选选择与视觉反馈创作",
   );
-  await expect(page.locator(".document-source-language")).toHaveText(
-    "英文原文",
+  await expect(page.locator("#nd-page .prose")).toHaveAttribute(
+    "lang",
+    "zh-CN",
   );
-  await expect(page.locator("#nd-page .prose")).toHaveAttribute("lang", "en");
-  await expect(page.locator("#nd-page .prose")).toContainText(
-    "Choose the model",
+  await expect(page.locator("#nd-page .prose")).not.toContainText(
+    "Rendered-page reconstruction",
   );
   await page
     .locator(".documentation-language")
     .getByRole("link", { name: "English", exact: true })
     .click();
-  await expect(page).toHaveURL(/\/docs\/agents-notes\/$/);
+  await expect(page).toHaveURL(/\/docs\/asset-selection-feedback\/$/);
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
 });
 
-test("explicit English source links are not redirected back to their Chinese guide", async ({
+test("formal articles have complete Chinese bodies and language switches preserve the same section", async ({
+  page,
+}) => {
+  const structure = () =>
+    page.locator("#nd-page .prose").evaluate((body) => ({
+      headings: [...body.querySelectorAll("h2, h3, h4, h5, h6")].map((node) => [
+        node.tagName,
+        node.id,
+      ]),
+      listItems: body.querySelectorAll("li").length,
+      rows: body.querySelectorAll("tr").length,
+      cells: body.querySelectorAll("td, th").length,
+      code: [...body.querySelectorAll("pre code")].map(
+        (node) => node.textContent,
+      ),
+    }));
+  for (const slug of [
+    "practical-guide",
+    "agents-notes",
+    "asset-validation-contracts",
+  ]) {
+    await page.goto(`docs/${slug}/`);
+    const original = await structure();
+    const section = original.headings[0][1];
+    await page.goto(`docs/${slug}/?view=source#${section}`);
+    await page
+      .locator(".documentation-language")
+      .getByRole("link", { name: "中文", exact: true })
+      .click();
+    await expect
+      .poll(() => new URL(page.url()).pathname)
+      .toMatch(new RegExp(`/docs/zh/${slug}/$`));
+    expect(new URL(page.url()).search).toBe("?view=source");
+    expect(new URL(page.url()).hash).toBe(`#${section}`);
+    await expect(page.locator("#nd-page .prose")).toHaveAttribute(
+      "lang",
+      "zh-CN",
+    );
+    await expect(page.locator("#nd-page .prose")).toContainText(
+      /[\p{Script=Han}]/u,
+    );
+    await expect(page.locator(".document-source-language")).toHaveCount(0);
+    await expect.poll(structure).toEqual(original);
+    await expect(page.locator(`[id="${section}"]`)).toBeAttached();
+    await page
+      .locator(".documentation-language")
+      .getByRole("link", { name: "English", exact: true })
+      .click();
+    await expect
+      .poll(() => new URL(page.url()).pathname)
+      .toMatch(new RegExp(`/docs/${slug}/$`));
+    expect(new URL(page.url()).hash).toBe(`#${section}`);
+    await expect(page.locator("#nd-page .prose")).toHaveAttribute("lang", "en");
+  }
+});
+
+test("Chinese document references open their full Chinese counterparts", async ({
   page,
 }) => {
   await page.goto("docs/zh/practical-guide/");
   await page
-    .getByRole("link", { name: "完整实践参考（英文）", exact: true })
+    .locator('#nd-page .prose a[href$="/docs/zh/world-model-notes/"]')
     .click();
-  await expect(page).toHaveURL(/\/docs\/practical-guide\/$/);
-  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page).toHaveURL(/\/docs\/zh\/world-model-notes\/$/);
+  await expect(page.locator("#nd-page .prose")).toHaveAttribute(
+    "lang",
+    "zh-CN",
+  );
+  await expect(page.locator(".document-source-language")).toHaveCount(0);
 });
 
-test("the English index retains direct discovery of Chinese source documents", async ({
+test("homepage navigation reaches Chinese documents without a separate content directory", async ({
   page,
 }) => {
-  await page.goto("explore/?kind=document");
-  const source = page.locator(
-    '[data-content-ref="document:zh/practical-guide"]',
-  );
-  await expect(source.getByRole("link")).toHaveAttribute(
-    "href",
-    /\/docs\/zh\/practical-guide\/$/,
-  );
-  await source.getByRole("link").click();
+  await page.goto("");
+  await expect(page.locator('main [data-content-ref^="document:"]')).toHaveCount(0);
+  const menu = page.locator("#mobile-navigation-button");
+  if (await menu.isVisible()) {
+    await menu.click();
+    await page.locator("#mobile-navigation").getByRole("link", { name: "Guides & notes", exact: true }).click();
+  } else {
+    await page.locator('a[data-collection-id="docs"]').click();
+  }
+  await page.locator(".documentation-language").getByRole("link", { name: "中文", exact: true }).click();
+  const source = page.locator('[data-content-ref="document:zh/practical-guide"]');
+  await expect(source).toHaveAttribute("href", /\/docs\/zh\/practical-guide\/$/);
+  await source.click();
   await expect(page.locator("html")).toHaveAttribute("lang", "zh-CN");
 });
 
-test("Chinese resources, paths and English source articles work without JavaScript", async ({
+test("Chinese resources, paths and complete translated articles work without JavaScript", async ({
   browser,
   baseURL,
 }) => {
@@ -196,11 +264,16 @@ test("Chinese resources, paths and English source articles work without JavaScri
     await expect(
       page.locator('[data-content-field="deliverable"]').first(),
     ).toContainText("一页游戏简报");
-    await page.goto(baseURL + "zh/docs/agents-notes/");
-    await expect(page.locator("#nd-page .prose")).toHaveAttribute("lang", "en");
-    await expect(page.locator("#nd-page .prose")).toContainText(
-      "Choose the model",
+    await page.goto(baseURL + "docs/zh/agents-notes/");
+    await expect(page.locator("#nd-page .prose")).toHaveAttribute(
+      "lang",
+      "zh-CN",
     );
+    await expect(page.locator("#nd-page .prose")).toContainText("MCP");
+    await expect(page.locator("#nd-page .prose")).toContainText(
+      /[\p{Script=Han}]/u,
+    );
+    await expect(page.locator(".document-source-language")).toHaveCount(0);
   } finally {
     await context.close();
   }

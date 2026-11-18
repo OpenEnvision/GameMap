@@ -1,6 +1,6 @@
 import { useLoaderData, type LoaderFunctionArgs } from "react-router";
 import { Search, ArrowRight } from "lucide-react";
-import { contentFor, sources } from "../../content/registry.server";
+import { contentFor } from "../../content/registry.server";
 import { url } from "../../content/site";
 import { matchesSearch } from "../../content/matching";
 import {
@@ -9,27 +9,16 @@ import {
   type AgentId,
 } from "../../src/data/agentGameTypes";
 import { ContentCard } from "../components/content";
-import { ExampleCard } from "../components/example-card";
 import { useClientQuery } from "../lib/client-query";
 import { searchableText } from "../../content/search";
 import { Link, useSiteI18n } from "../lib/i18n";
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
-  return {
-    tools: content.all("agent"),
-    examples: content.all("example"),
-    attribution: sources.gameCaseAgents,
-    media: sources.learningMedia,
-  };
+  return { tools: content.all("agent") };
 }
 export default function Agents() {
   const { t } = useSiteI18n(),
-    {
-      tools: allTools,
-      examples,
-      attribution,
-      media,
-    } = useLoaderData<typeof loader>(),
+    { tools: allTools } = useLoaderData<typeof loader>(),
     [params, setParams] = useClientQuery();
   const query = params.get("q") || "",
     client = params.get("client") || "all",
@@ -40,11 +29,6 @@ export default function Agents() {
       (client === "all" ||
         entry.data.agents.includes(client as AgentId) ||
         entry.data.agents.includes("agent-neutral")) &&
-      matchesSearch(searchableText(entry), query),
-  );
-  const games = examples.filter(
-    (entry) =>
-      (client === "all" || attribution[entry.id].includes(client as AgentId)) &&
       matchesSearch(searchableText(entry), query),
   );
   const change = (key: string, value: string) =>
@@ -62,21 +46,24 @@ export default function Agents() {
       <title>{t("Agent toolkit & game code — GameMap")}</title>
       <meta
         name="description"
-        content={t(
-          "Find instructions, engine bridges, and source code. Game attribution follows creator evidence—not related-tool links. A model name alone does not identify a coding client.",
-        )}
+        content={t("Find instructions, engine bridges, and source code.")}
       />
       <header className="page-heading">
         <span className="eyebrow">
           {t("CLIENTS, SKILLS & ACTUAL GAME CODE")}
         </span>
         <h1>{t("From an agent to a working loop.")}</h1>
-        <p>
-          {t(
-            "Find instructions, engine bridges, and source code. Game attribution follows creator evidence—not related-tool links. A model name alone does not identify a coding client.",
-          )}
-        </p>
+        <p>{t("Find instructions, engine bridges, and source code.")}</p>
         <div className="heading-links">
+          <Link
+            to={
+              url.page("examples") +
+              (client === "all" ? "" : `?client=${encodeURIComponent(client)}`)
+            }
+          >
+            {t("Game examples")}
+            <ArrowRight size={14} />
+          </Link>
           <Link to={url.document("coding-agent-game-code")}>
             {t("Read the evidence & boundaries")}
             <ArrowRight size={14} />
@@ -120,10 +107,7 @@ export default function Agents() {
       </div>
       <div className="results-meta">
         <span aria-live="polite">
-          {t("{tools} toolkit entries · {games} attributed game examples", {
-            tools: tools.length,
-            games: games.length,
-          })}
+          {t("{count} toolkit entries", { count: tools.length })}
         </span>
         <span>
           {t("Agent-neutral tools remain included when filtering a client.")}
@@ -140,31 +124,6 @@ export default function Agents() {
           <p className="empty-state">
             {t(
               "No matching toolkit entries. Try another category or fewer keywords.",
-            )}
-          </p>
-        )}
-      </section>
-      <section className="content-index-section">
-        <h2>{t("Creator-attributed game examples")}</h2>
-        <p className="reading-note">
-          {t(
-            "Toolkit category filters apply to tools only. Game examples are filtered by attribution and keywords; they are not evidence that every listed integration was used.",
-          )}
-        </p>
-        <div className="example-grid">
-          {games.map((entry) => (
-            <ExampleCard
-              key={entry.key}
-              game={entry.data}
-              descriptionLanguage={entry.descriptionLanguage}
-              media={media[entry.id]}
-            />
-          ))}
-        </div>
-        {!games.length && (
-          <p className="empty-state">
-            {t(
-              "No reviewed game case matches this attribution. This is not a claim about the client’s capabilities.",
             )}
           </p>
         )}

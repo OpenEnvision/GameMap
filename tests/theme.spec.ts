@@ -17,14 +17,66 @@ function contrast(first: string, second: string) {
   return (high + 0.05) / (low + 0.05);
 }
 
-test("warm-neutral themes stay consistent across the site and Fumadocs", async ({
+test("selected resource filters keep labels and counts readable", async ({
+  page,
+}) => {
+  await page.goto("resources/");
+  for (const theme of ["light", "dark"] as const) {
+    const isDark = await page
+      .locator("html")
+      .evaluate((root) => root.classList.contains("dark"));
+    if (isDark !== (theme === "dark"))
+      await page.getByRole("button", { name: "Toggle color theme" }).click();
+    await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute(
+      "content",
+      theme === "light" ? "#fffcfb" : "#090f1b",
+    );
+    for (const index of [0, 1]) {
+      const filter = page.locator(".category-filters button").nth(index);
+      await filter.click();
+      await expect(filter).toHaveAttribute("aria-pressed", "true");
+      await expect
+        .poll(async () => {
+          const palette = await filter.evaluate((button) => {
+            const styles = getComputedStyle(button);
+            const count = getComputedStyle(button.querySelector("span")!);
+            const channels = (value: string) =>
+              (value.match(/[\d.]+/g) || []).map(Number);
+            const background = channels(styles.backgroundColor);
+            const composite = (color: string, opacity: string) => {
+              const foreground = channels(color);
+              const alpha = Number(opacity) * (foreground[3] ?? 1);
+              return `rgb(${background
+                .slice(0, 3)
+                .map(
+                  (channel, i) => foreground[i] * alpha + channel * (1 - alpha),
+                )
+                .join(", ")})`;
+            };
+            return {
+              background: styles.backgroundColor,
+              label: composite(styles.color, styles.opacity),
+              count: composite(count.color, count.opacity),
+            };
+          });
+          return Math.min(
+            contrast(palette.label, palette.background),
+            contrast(palette.count, palette.background),
+          );
+        })
+        .toBeGreaterThanOrEqual(4.5);
+    }
+  }
+});
+
+test("atlas themes stay consistent across the site and Fumadocs", async ({
   page,
 }) => {
   for (const theme of ["light", "dark"] as const) {
     await page.goto("");
     if (theme === "dark")
       await page.getByRole("button", { name: "Toggle color theme" }).click();
-    const background = theme === "light" ? "#fffcfb" : "#1d1d1d";
+    const background = theme === "light" ? "#fffcfb" : "#090f1b";
     await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute(
       "content",
       background,

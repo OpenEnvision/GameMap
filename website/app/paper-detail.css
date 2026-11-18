@@ -1,0 +1,298 @@
+.content-page.paper-page {
+  max-width: 900px;
+  padding-bottom: 88px;
+}
+.paper-page .content-breadcrumb {
+  margin-bottom: 42px;
+}
+.paper-document {
+  color: var(--body);
+  overflow-wrap: anywhere;
+}
+.paper-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.paper-title {
+  max-width: 32ch;
+  margin: 16px 0 18px;
+  color: var(--ink);
+  font-size: clamp(29px, 3.7vw, 46px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.14;
+  text-wrap: balance;
+}
+.paper-byline {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.paper-byline [data-content-field="publication"] {
+  max-width: 72ch;
+}
+.paper-introduction {
+  margin: 22px 0 0;
+  max-width: 66ch;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--body);
+}
+.paper-hero > .source-language {
+  margin-top: 12px;
+}
+.paper-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+.paper-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 17px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1.5;
+}
+.paper-action-primary a {
+  background: var(--action);
+  border-color: var(--action);
+  color: var(--on-action);
+}
+.paper-action-primary a:hover {
+  background: var(--action-hover);
+  border-color: var(--action-hover);
+}
+.paper-action-secondary a:hover {
+  background: var(--hover);
+}
+.paper-actions a:focus-visible,
+.paper-evidence > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.paper-taxonomy {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 22px 0 28px;
+  border-block-start: 1px solid var(--border);
+}
+.paper-taxonomy > div {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+}
+.paper-taxonomy-label {
+  flex: 0 0 46px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+.paper-taxonomy ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.paper-taxonomy li {
+  padding: 3px 9px;
+  border-radius: 4px;
+  background: var(--soft);
+  color: var(--body);
+  font-size: 11px;
+  line-height: 1.65;
+}
+.paper-taxonomy-roles li {
+  text-transform: capitalize;
+}
+.paper-page .paper-availability {
+  margin-top: 4px;
+  padding: 26px 0 30px;
+  border-top: 1px solid var(--border);
+}
+.paper-availability > h2 {
+  margin: 0 0 20px;
+  color: var(--ink);
+  font-size: 21px;
+  font-weight: 550;
+  letter-spacing: -0.025em;
+}
+.paper-page .paper-document .content-field {
+  padding: 15px 0;
+  border: 0;
+}
+.paper-page .paper-document .content-field > :is(h2, h3, h4) {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.paper-document .content-field :is(p, li) {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.paper-document .content-links {
+  gap: 10px;
+}
+.paper-document .content-links a {
+  font-size: 14px;
+}
+.paper-document .content-links li p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.paper-page .paper-access-fields > .content-field:first-child {
+  padding-top: 0;
+  padding-bottom: 21px;
+}
+.paper-access-fields > .content-field:first-child > h3 {
+  display: none;
+}
+.paper-access-fields > .content-field:first-child .metadata-facts {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 16px;
+  margin: 0;
+  padding: 18px 20px;
+  border-radius: 7px;
+  background: var(--soft);
+}
+.paper-access-fields .metadata-facts > div {
+  display: block;
+  border: 0;
+  padding: 0;
+}
+.paper-access-fields .metadata-facts dt {
+  margin-bottom: 7px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.paper-access-fields .metadata-facts dd {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.paper-absence ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+}
+.paper-absence .content-field li {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+.paper-related {
+  padding-bottom: 26px;
+}
+.paper-evidence {
+  border-block: 1px solid var(--border);
+}
+.paper-evidence > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 64px;
+  padding: 16px 0;
+  color: var(--body);
+  font-size: 14px;
+  cursor: pointer;
+  list-style: none;
+}
+.paper-evidence > summary::-webkit-details-marker {
+  display: none;
+}
+.paper-evidence[open] > summary > svg {
+  transform: rotate(180deg);
+}
+.paper-evidence-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 32px;
+  padding: 0 0 24px;
+}
+.paper-evidence-body > [data-content-field="origins"],
+.paper-evidence-body > [data-content-field="citedSections"],
+.paper-evidence-body > [data-content-field="classification"],
+.paper-evidence-body > [data-content-field="access"] {
+  grid-column: 1 / -1;
+}
+@media (max-width: 640px) {
+  .paper-page .content-breadcrumb {
+    margin-bottom: 28px;
+  }
+  .paper-title {
+    max-width: none;
+    font-size: 30px;
+    line-height: 1.18;
+    letter-spacing: -0.035em;
+  }
+  .paper-byline {
+    display: block;
+  }
+  .paper-byline > span {
+    display: block;
+  }
+  .paper-byline > .paper-byline-divider {
+    display: none;
+  }
+  .paper-introduction {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .paper-actions {
+    margin-top: 22px;
+  }
+  .paper-taxonomy {
+    gap: 12px;
+    margin-top: 24px;
+    padding-bottom: 22px;
+  }
+  .paper-taxonomy > div {
+    gap: 10px;
+  }
+  .paper-page
+    .paper-access-fields
+    > .content-field:first-child
+    .metadata-facts {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 18px;
+  }
+  .paper-evidence-body {
+    grid-template-columns: 1fr;
+  }
+  .paper-page .paper-availability {
+    padding-top: 24px;
+  }
+  .paper-availability > h2 {
+    font-size: 20px;
+  }
+}

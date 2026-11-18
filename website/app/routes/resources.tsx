@@ -32,6 +32,14 @@ export function loader({ request }: LoaderFunctionArgs) {
     identities: sources.identities,
   };
 }
+function supportedFilter(
+  value: string | null,
+  options: readonly string[],
+  fallback = "all",
+) {
+  return value && options.includes(value) ? value : fallback;
+}
+
 export default function Resources() {
   const { t } = useSiteI18n(),
     { entries, demos, identities } = useLoaderData<typeof loader>();
@@ -80,10 +88,18 @@ export default function Resources() {
         : [...previous, id],
     );
   const query = params.get("q") || "",
-    category = params.get("category") || "all",
-    type = params.get("type") || "all",
-    stage = params.get("stage") || "all",
-    track = params.get("track") || params.get("dimension") || "all",
+    category = supportedFilter(
+      params.get("category"),
+      categories.map(({ id }) => id),
+    ),
+    type = supportedFilter(params.get("type"), Object.keys(typeLabels)),
+    stage = supportedFilter(params.get("stage"), Object.keys(stageLabels)),
+    track = supportedFilter(params.get("track") || params.get("dimension"), [
+      "2d",
+      "3d",
+      "world",
+    ]),
+    sort = supportedFilter(params.get("sort"), ["curated", "name"], "curated"),
     savedOnly = params.get("saved") === "1";
   const update = (key: string, value: string) =>
     setParams(
@@ -106,9 +122,7 @@ export default function Resources() {
         (!savedOnly || saved.includes(resource.id)) &&
         matchesSearch(searchText.get(resource.id) || "", query),
     )
-    .sort((a, b) =>
-      params.get("sort") === "name" ? a.name.localeCompare(b.name) : 0,
-    );
+    .sort((a, b) => (sort === "name" ? a.name.localeCompare(b.name) : 0));
   let activeId = "";
   try {
     if (hydrated && location.hash.startsWith("#resource/"))
@@ -273,7 +287,7 @@ export default function Resources() {
         <label className="sort-filter">
           <span className="sr-only">{t("Sort resources")}</span>
           <select
-            value={params.get("sort") || "curated"}
+            value={sort}
             onChange={(event) => update("sort", event.target.value)}
           >
             <option value="curated">{t("Curated order")}</option>
