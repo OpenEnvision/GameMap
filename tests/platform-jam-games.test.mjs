@@ -111,7 +111,7 @@ test('community v3 is append-only: v1/v2 do not silently accept the new category
   }
   assert.equal(context.versionedContracts.example[3].payload.safeParse(example).success, true);
   assert.equal(context.versionedContracts.example[3].attachments.safeParse({}).success, true);
-  assert.equal(context.contentKinds.example.schemaVersion, 7);
+  assert.equal(context.contentKinds.example.schemaVersion, 8);
   assert.equal(context.versionedContracts.example[4].payload.safeParse(example).success, true);
 });
 

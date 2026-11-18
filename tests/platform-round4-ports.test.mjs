@@ -26,8 +26,8 @@ test("fourth directory retains all 88 original rows and admits only 75 game/prot
   }
 });
 test("append-only example v5 separates observed project pages from source and playable/download links", () => {
-  assert.equal(context.contentKinds.example.schemaVersion, 7);
-  for (const v of [1, 2, 3, 4, 5, 6, 7])
+  assert.equal(context.contentKinds.example.schemaVersion, 8);
+  for (const v of [1, 2, 3, 4, 5, 6, 7, 8])
     assert.ok(context.versionedContracts.example[v]);
   for (const id of ports.projectReferenceIds) {
     const e = context.registry.require("example", id),
