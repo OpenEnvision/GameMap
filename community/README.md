@@ -1,52 +1,52 @@
-# GameMap 社区：本地运行与权限边界
+# GameMap community: local setup and permission boundaries
 
-此版本先用于 `http://127.0.0.1:4191` 的真实本地验证；不需要 Railway 账号，也不会执行云部署。
+This version is for real local verification at `http://127.0.0.1:4191`. It needs no Railway account and performs no cloud deployment.
 
-## 能力
+## Features
 
-- 邮箱＋密码注册/登录、邮箱确认与免密登录链接。
-- GitHub PKCE 接入：没有 OAuth 应用时入口明确禁用，不模拟登录。
-- 每个用户每款游戏一份 1–5 星评分，可修改；卡片展示均分和人数，详情页讨论。
-- 纯文本评论、作者删除、举报、审核员处理。
-- 已验证邮箱用户提交资料、HTTPS 试玩/下载链接、可选源码和 1–5 张真实截图。
-- 投稿先审核；批准后立即进入现有案例卡片列表，不修改或激活目录快照。
+- Email-and-password sign-up and sign-in, email confirmation, and passwordless sign-in links.
+- GitHub sign-in with PKCE. Without an OAuth app the entry point is explicitly disabled; sign-in is never simulated.
+- One 1–5 star rating per user per game, which the user can change. Cards show the average and the number of ratings; detail pages host the discussion.
+- Plain-text comments, deletion by the author, reports, and moderator handling.
+- Users with a verified email can submit game details, an HTTPS play or download link, an optional source repository, and 1–5 real screenshots.
+- Submissions are reviewed first. Once approved they appear immediately in the existing example card list, without modifying or activating the catalog snapshot.
 
-## 本地启用
+## Enable locally
 
-先启动 Docker Desktop。现有数据库和发布文件必须保留，**不要使用 reset**。
+Start Docker Desktop first. The existing database and published files must be preserved: **do not use reset**.
 
 ```sh
 npm run local:backup
 node scripts/platform/community.mjs setup
-# 如果本次修改了 supabase/config.toml，使用所属本地栈包装命令重载：
+# If this change edited supabase/config.toml, reload through the owning local-stack wrapper:
 npm run local:stop
 npm run local:start
 node scripts/platform/community.mjs setup
-# 4191 的服务应为以下入口，不应切回读取 Git-only dist 的普通 preview：
+# Port 4191 must serve this entry point, not the ordinary preview that reads the Git-only dist:
 node scripts/platform/local-publication.mjs serve --port 4191
 ```
 
-端口已占用时，先核对监听进程，不要启动第二个服务或结束不相关进程。公开页面须另用最新完整目录快照重新构建；setup 不负责构建、审核或激活目录。
+If a port is already in use, check which process is listening first; do not start a second server or stop unrelated processes. Public pages must be rebuilt separately from the latest complete catalog snapshot; setup does not build, review, or activate the catalog.
 
-- 邮件在本地 Mailpit 中捕获：`http://127.0.0.1:54324`。在发起注册/免密登录的**同一浏览器**中打开确认链接。
-- 公开社区入口：`/zh/account/`、`/zh/submit/`。
-- 私有 Studio：`http://127.0.0.1:5174`（原来的本地工作台）。具有 reviewer/admin 角色的后台账号可进入“社区审核”。
-- 生成的 `.build/catalog-local/community.json` 含随机会话密钥和专用数据库登录，**不得提交、粘贴到聊天或放到公开目录**。
-- 普通注册用户不会获得 `catalog.memberships`，也不能登录 Studio。自助注册不等于后台邀请。
+- Mail is captured locally in Mailpit at `http://127.0.0.1:54324`. Open confirmation links in the **same browser** that started the sign-up or passwordless sign-in.
+- Public community entry points: `/account/` and `/submit/` (Chinese site: `/zh/account/` and `/zh/submit/`).
+- Private Studio: `http://127.0.0.1:5174` (the existing local workbench). Back-office accounts with the reviewer or admin role can open the community moderation view, labelled “社区审核” in the Chinese-only Studio interface.
+- The generated `.build/catalog-local/community.json` contains a random session secret and a dedicated database login. **Never commit it, paste it into a chat, or place it in a public directory.**
+- Ordinary registered users do not receive `catalog.memberships` and cannot sign in to Studio. Self-service sign-up is not a back-office invitation.
 
-## GitHub OAuth：需要你创建真实应用
+## GitHub OAuth: you must create a real app
 
-1. 在 GitHub Settings → Developer settings → OAuth Apps 创建应用。
-2. 本地 Homepage URL：`http://127.0.0.1:4191`。
-3. Authorization callback URL：`http://127.0.0.1:54321/auth/v1/callback`。这是 **Supabase Auth** 回调，不是网站最终回调。不要启用 Device Flow。
-4. 将 Client ID 和 Client Secret 自行写入根目录已忽略的私有 `.env`：
+1. Create an app under GitHub Settings → Developer settings → OAuth Apps.
+2. Local Homepage URL: `http://127.0.0.1:4191`.
+3. Authorization callback URL: `http://127.0.0.1:54321/auth/v1/callback`. This is the **Supabase Auth** callback, not the site's final callback. Do not enable Device Flow.
+4. Write the Client ID and Client Secret yourself into the private, git-ignored `.env` at the repository root:
 
    ```dotenv
-   GAMEMAP_GITHUB_CLIENT_ID=自行填写
-   GAMEMAP_GITHUB_CLIENT_SECRET=自行填写
+   GAMEMAP_GITHUB_CLIENT_ID=your-client-id
+   GAMEMAP_GITHUB_CLIENT_SECRET=your-client-secret
    ```
 
-5. 修改 `supabase/config.toml` 中现有 GitHub 小节（不要重复添加小节）：
+5. Edit the existing GitHub section in `supabase/config.toml` (do not add a second section):
 
    ```toml
    [auth.external.github]
@@ -55,38 +55,38 @@ node scripts/platform/local-publication.mjs serve --port 4191
    secret = "env(GAMEMAP_GITHUB_CLIENT_SECRET)"
    ```
 
-6. 让 CLI 子进程从私有环境读取配置，重载所属本地栈：
+6. Reload the owning local stack so that the CLI child processes read the private environment:
 
    ```sh
    node --env-file=.env scripts/platform/local-catalog.mjs stop
    node --env-file=.env scripts/platform/local-catalog.mjs start
    ```
 
-7. 检查 `/api/community/config` 的 `github` 为 true，然后使用真实 GitHub 账号验证完整授权/回调。
+7. Check that `github` is `true` in `/api/community/config`, then verify the complete authorization and callback flow with a real GitHub account.
 
-网站最终回调是 `http://127.0.0.1:4191/auth/callback`，已加入本地 Auth redirect allowlist。它使用一次性 PKCE verifier 和浏览器绑定的状态 Cookie。不要用 token fragment、假用户或关闭验证的方式代替真正授权。
+The site's final callback is `http://127.0.0.1:4191/auth/callback`, which is already in the local Auth redirect allowlist. It uses a one-time PKCE verifier and a browser-bound state cookie. Do not replace real authorization with token fragments, fake users, or disabled verification.
 
-**没有 OAuth 凭据之前，只能验证接入代码、不可用状态和安全边界，不能宣称真实 GitHub 登录已验收。**
+**Until OAuth credentials exist, only the integration code, the unavailable state, and the security boundaries can be verified. Do not claim that real GitHub sign-in has passed acceptance.**
 
-## 安全与数据
+## Security and data
 
-- 新增数据在独立 `community` schema，普通浏览器角色无原始表权限；普通 Auth JWT 也不能直接调用写入或上传登记 RPC。写入仅通过专用 BFF 角色，避免绕过图片规范化、同源校验和 HTTP 限流。
-- 专用社区后端不能读取私有目录表；Studio 的审核仍要求其原有已验证会话、CSRF 和 reviewer/admin 资格。
-- 访问/刷新令牌只保存在服务端加密会话中；浏览器仅收 HttpOnly Cookie 和 CSRF nonce。
-- 写入校验精确 Origin、会话和 CSRF；评分、评论、举报、上传及投稿均有数量限制。
-- 截图完整解码、移除 EXIF、转为内容寻址 WebP；不接受 SVG、HTML 或游戏二进制。
-- 待审截图仅作者和审核员可读取。批准后可公开展示；投稿修改生成新版本，不直接覆盖已经批准的作品版本。作者可以撤下已公开作品，审核员也可记录原因后下架。
-- 用户声明和评价不是平台独立试玩、AI 来源证明或版权认证。
-- 每次目录发布变化后，从实际生效的完整快照更新可评价作品索引，不用 Git 缺省数据补齐业务行。
+- New data lives in a separate `community` schema. Ordinary browser roles have no privileges on the raw tables, and an ordinary Auth JWT cannot call the write or upload-registration RPCs directly. Writes go only through a dedicated BFF role, so image normalization, same-origin checks, and HTTP rate limits cannot be bypassed.
+- The dedicated community backend cannot read the private catalog tables. Studio moderation still requires its existing verified session, CSRF protection, and reviewer or admin eligibility.
+- Access and refresh tokens are stored only in encrypted server-side sessions; the browser receives only an HttpOnly cookie and a CSRF nonce.
+- Writes check the exact Origin, the session, and the CSRF nonce. Ratings, comments, reports, uploads, and submissions all have quantity limits.
+- Screenshots are fully decoded, stripped of EXIF data, and converted to content-addressed WebP. SVG, HTML, and game binaries are not accepted.
+- Screenshots awaiting review are readable only by the author and moderators, and can be shown publicly once approved. Revising a submission creates a new revision instead of overwriting the approved version. Authors can withdraw a published work, and moderators can take one down after recording a reason.
+- User declarations and ratings are not independent playtests by the platform, proof of AI provenance, or copyright certification.
+- After every catalog publication change, update the index of ratable works from the complete snapshot that is actually in effect; do not fill in business rows from Git default data.
 
-## 验证
+## Verification
 
 ```sh
 npm run test:community
 ```
 
-专项测试覆盖评分更新、评论和举报所有权、投稿版本审批、私有图片边界、普通用户与 Studio 权限隔离、服务端令牌与 PKCE。只读页面回归位于 `tests/release/community.spec.ts`；它使用明确标注的展示数据，不冒充真实登录验收。本地真实 Auth 和浏览器写入/审核验收证据保存在被忽略的 `.build/community-platform/`；其中测试账号文件含凭据，不能公开。
+These tests cover rating updates, ownership of comments and reports, submission revision approval, private image boundaries, permission isolation between ordinary users and Studio, server-side tokens, and PKCE. Read-only page regressions live in `tests/release/community.spec.ts`; they use clearly labelled display data and do not pass themselves off as real sign-in acceptance. Evidence from local real-Auth and browser write and moderation acceptance is kept in the ignored `.build/community-platform/` directory. The test account files there contain credentials and must not be published.
 
-## 上线边界
+## Production boundaries
 
-本地验证不等于生产上线。正式使用仍需独立生产实例/realm、HTTPS 同源 API 代理、真正可投递的邮件服务、GitHub 正式回调、持久媒体存储与备份、反滥用与运营审核。仅上传静态 `dist/` 或仅部署 `supabase/` 目录不能运行完整社区。
+Local verification is not a production launch. Real use still requires a separate production instance and realm, an HTTPS same-origin API proxy, a mail service that actually delivers, a production GitHub callback, persistent media storage with backups, and anti-abuse measures with operational moderation. Uploading only the static `dist/`, or deploying only the `supabase/` directory, cannot run the full community.
