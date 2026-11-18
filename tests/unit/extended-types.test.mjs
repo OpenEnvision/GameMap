@@ -774,26 +774,33 @@ test("optional native v2 contracts preserve installed v1 payloads and historical
     if (!Object.hasOwn(legacyV2Fields, record.kind)) continue;
     assert.equal(
       context.contentKinds[record.kind].schemaVersion,
-      record.kind === "example" ? 7 : 2,
+      record.kind === "example" ? 8 : 2,
     );
     if (
       record.kind === "example" &&
       record.body.payload.demo.kind === "reference"
     ) {
-      assert.equal(record.schema_version, 5);
+      assert.equal(record.schema_version, 8);
       assert.equal(
         context.versionedContracts.example[4].payload.safeParse(
           record.body.payload,
         ).success,
         false,
       );
-      continue; // Project pages are neither source nor release links.
+      assert.equal(
+        context.versionedContracts.example[5].payload.safeParse(
+          record.body.payload,
+        ).success,
+        true,
+      );
+      record.schema_version = 5;
+      continue; // Project pages are neither source nor release links; preserve the installed v5 reader.
     }
     if (
       record.kind === "example" &&
       record.body.payload.demo.kind === "source"
     ) {
-      assert.equal(record.schema_version, 5);
+      assert.equal(record.schema_version, 8);
       assert.equal(
         context.versionedContracts.example[3].payload.safeParse(
           record.body.payload,
@@ -842,7 +849,7 @@ test("optional native v2 contracts preserve installed v1 payloads and historical
     }
     record.schema_version = 1;
   }
-  assert.equal(context.contentKinds.foundation.schemaVersion, 3);
+  assert.equal(context.contentKinds.foundation.schemaVersion, 4);
   assert.equal(context.contentKinds.agent.schemaVersion, 1);
   await validateSelection(context, historical, bundle.snapshot.translations);
   const oldExample = bundle.snapshot.entries.find(
