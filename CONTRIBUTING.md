@@ -104,6 +104,7 @@ World model entries should also explain where authoritative state lives: an exec
 - Put concrete version requirements, unavailable artifacts, licensing conditions, and untested assumptions beside the operation they affect. Keep sources and attribution.
 - Name a proposed check or work-order template as such; do not describe it as a completed integration or measured result.
 - Keep audit timestamps and internal identifiers in source records or maintenance ledgers, not reader-facing introductions.
+- Put a new guide in the `docs/` topic folder that matches its navigation group. `docs/README.md` lists the folders, the generated pages, and the naming and title conventions.
 - Chinese guides live under `docs/zh/`. Mark links to untranslated material as English. Do not rewrite the separately licensed, preserved skill package to change its tone.
 
 ## Translations

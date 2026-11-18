@@ -23,7 +23,7 @@ npm run dev
 
 ## 文档与内部链接
 
-`docs/` 下的 Markdown（包括 `docs/reference/catalog.md`）以及 `CONTRIBUTING.md`，都会在构建时渲染。文章包含导航、目录、代码高亮、标题链接和全文搜索。通过 Git 编写的长篇 Markdown 仍是权威来源，可通过来源链接访问。已注册的目录指南是结构化数据的生成视图；其来源链接指向可信生成器，而不是暗示旧的 Git 导出文件是另一个并行编写来源。
+`docs/` 下的 Markdown（包括 `docs/reference/catalog.md`）以及 `CONTRIBUTING.md`，都会在构建时渲染；文件夹索引 `docs/README.md` 和 `docs/zh/README.md` 仅供在代码仓库中阅读。文章包含导航、目录、代码高亮、标题链接和全文搜索。通过 Git 编写的长篇 Markdown 仍是权威来源，可通过来源链接访问。已注册的目录指南是结构化数据的生成视图；其来源链接指向可信生成器，而不是暗示旧的 Git 导出文件是另一个并行编写来源。
 
 `scripts/build/prepare-docs.mjs` 会在 `website/.content/` 中创建可丢弃的副本。它会推导标题、将内部 Markdown 链接改写为文档路由，并将本地文档图片暂存到被忽略的 `website/public/docs-assets/` 目录。原始研究文本不会被改写。`website/docs.config.json` 控制导航分组和短标签；未分组文章仍可在“更多笔记”下访问。开发时编辑源 Markdown 后，重新运行此准备脚本或重启 `npm run dev`，以刷新准备好的副本。
 
