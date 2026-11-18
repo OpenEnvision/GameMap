@@ -21,6 +21,8 @@ import {
 } from "lucide-react";
 import { categories, publicAsset } from "../lib/catalog";
 import { ExampleCard } from "../components/example-card";
+import { Starfield } from "../components/cosmos/starfield";
+import { CategoryOrbits } from "../components/cosmos/orbit-map";
 import { useOpenAtlasSearch } from "../lib/search-state";
 
 const categoryIcons = [Code2, Boxes, Gamepad2, Layers3, Sparkles, Orbit];
@@ -34,11 +36,18 @@ export function loader({ request }: LoaderFunctionArgs) {
   const featured = featuredIds.map((id) => content.require("example", id).data);
   return {
     featured,
+    // Show the three largest published collections that actually have records;
+    // Git-only builds have no papers or Three.js games yet.
     collections: [
       {
         path: "/resources/",
         label: "Resources",
         count: content.all("resource").length,
+      },
+      {
+        path: "/examples/",
+        label: "Game examples",
+        count: content.all("example").length + content.all("foundation").length,
       },
       { path: "/papers/", label: "Papers", count: content.all("paper").length },
       {
@@ -46,7 +55,14 @@ export function loader({ request }: LoaderFunctionArgs) {
         label: "Three.js games",
         count: content.all("threejs-game").length,
       },
-    ],
+      {
+        path: "/agents/",
+        label: "Agent toolkit",
+        count: content.all("agent").length,
+      },
+    ]
+      .filter((collection) => collection.count > 0)
+      .slice(0, 3),
     media: Object.fromEntries(
       featured.map((game) => [game.id, sources.learningMedia[game.id]]),
     ),
@@ -108,6 +124,9 @@ export default function Home() {
         )}
       />
       <section className="home-hero">
+        <div className="hero-sky" aria-hidden="true">
+          <Starfield className="hero-starfield" />
+        </div>
         <div className="hero-copy">
           <span className="eyebrow">
             <span className="status-dot" />
@@ -116,7 +135,7 @@ export default function Home() {
           <h1>
             {t("Small ideas.")}
             <br />
-            {t("Playable worlds")}
+            <span className="hero-highlight">{t("Playable worlds")}</span>
             <span className="brand-period">.</span>
           </h1>
           <p>
@@ -244,29 +263,11 @@ export default function Home() {
             <ArrowRight size={16} />
           </Link>
         </div>
-        <div className="category-grid">
-          {categories.map((category, index) => {
-            const Icon = categoryIcons[index];
-            return (
-              <Link
-                key={category.id}
-                to={"/resources/?category=" + category.id}
-                className="category-tile"
-              >
-                <span className="category-symbol">
-                  <Icon size={23} strokeWidth={1.6} />
-                </span>
-                <span>
-                  <strong>{t(category.label)}</strong>
-                  <small>{t(category.description)}</small>
-                </span>
-                <span className="category-count">
-                  {categoryCounts[category.id]}
-                </span>
-              </Link>
-            );
-          })}
-        </div>
+        <CategoryOrbits
+          categories={categories}
+          counts={categoryCounts}
+          icons={categoryIcons}
+        />
       </section>
       <section className="featured-section">
         <div className="section-top">
