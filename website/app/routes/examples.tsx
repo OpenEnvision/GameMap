@@ -6,7 +6,6 @@ import {
   CommunityWorkCard,
   useCommunityWorks,
 } from "../components/community-work-card";
-import { useCommunityText } from "../lib/community";
 import { ImportedThreejsCard } from "../components/imported-threejs-card";
 import open3dImport from "../../content/open3d-import.config.json";
 import { researchGamesForExamples } from "../../content/research-games";
@@ -89,7 +88,6 @@ export default function Examples() {
     error: worksUnavailable,
     refresh: refreshWorks,
   } = useCommunityWorks();
-  const communityText = useCommunityText();
   const query = params.get("q") || "",
     track = params.get("track") || "all",
     client = Object.hasOwn(agentLabels, params.get("client") || "")
@@ -236,13 +234,10 @@ export default function Examples() {
       </div>
       {worksUnavailable && (
         <p className="community-error" role="status">
-          {communityText(
+          {t(
             "Community submissions could not be loaded. Existing catalog games remain available.",
-            "用户投稿暂时无法加载，已有目录游戏仍可正常浏览。",
           )}{" "}
-          <button onClick={() => void refreshWorks()}>
-            {communityText("Retry", "重试")}
-          </button>
+          <button onClick={() => void refreshWorks()}>{t("Retry")}</button>
         </p>
       )}
       {gameCount > 0 && (

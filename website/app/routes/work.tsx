@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { useClientQuery } from "../lib/client-query";
-import {
-  useCommunity,
-  useCommunityText,
-  type CommunityWork,
-} from "../lib/community";
-import { Link } from "../lib/i18n";
+import { useCommunity, type CommunityWork } from "../lib/community";
+import { Link, useSiteI18n } from "../lib/i18n";
 import { CommunityPanel } from "../components/community";
 
 export default function Work() {
@@ -14,7 +10,7 @@ export default function Work() {
     id = params.get("id") || "",
     community = useCommunity(),
     request = community?.request,
-    text = useCommunityText();
+    { t } = useSiteI18n();
   const [work, setWork] = useState<CommunityWork | null>(null),
     [error, setError] = useState("");
   useEffect(() => {
@@ -30,12 +26,7 @@ export default function Work() {
       })
       .catch(() => {
         if (active)
-          setError(
-            text(
-              "This work is not public, or is still under review.",
-              "作品尚未公开、仍在审核中，或暂时无法读取。",
-            ),
-          );
+          setError(t("This work is not public, or is still under review."));
       });
     return () => {
       active = false;
@@ -44,44 +35,33 @@ export default function Work() {
   return (
     <main id="main-content" className="site-main community-work-page">
       <title>
-        {work
-          ? `${work.title} — GameMap`
-          : text("Community work — GameMap", "用户作品 — GameMap")}
+        {work ? `${work.title} — GameMap` : t("Community work — GameMap")}
       </title>
       <nav className="content-breadcrumb">
-        <Link to="/examples/">{text("Game examples", "游戏案例")}</Link>
+        <Link to="/examples/">{t("Game examples")}</Link>
       </nav>
       {!id ? (
         <div className="page-heading">
-          <h1>
-            {text(
-              "Discover what people are building.",
-              "发现大家正在创作的游戏。",
-            )}
-          </h1>
-          <Link to="/examples/">
-            {text("Browse all games", "浏览全部游戏")}
-          </Link>
+          <h1>{t("Discover what people are building.")}</h1>
+          <Link to="/examples/">{t("Browse all games")}</Link>
         </div>
       ) : error ? (
         <div className="page-heading">
-          <h1>{text("Work unavailable", "暂时无法查看作品")}</h1>
+          <h1>{t("Work unavailable")}</h1>
           <p role="status">{error}</p>
         </div>
       ) : !work ? (
         <div className="page-heading">
-          <h1>{text("Loading work…", "正在加载作品…")}</h1>
+          <h1>{t("Loading work…")}</h1>
         </div>
       ) : (
         <>
           <header className="page-heading">
-            <span className="eyebrow">
-              {text("CREATED BY THE COMMUNITY", "用户创作")}
-            </span>
+            <span className="eyebrow">{t("CREATED BY THE COMMUNITY")}</span>
             <h1>{work.title}</h1>
             <p>
-              {text("By ", "作者：")}
-              {work.author} · {work.track.toUpperCase()} / {work.engine}
+              {t("By {author}", { author: work.author })} ·{" "}
+              {work.track.toUpperCase()} / {work.engine}
             </p>
             <div className="heading-links">
               <a
@@ -91,13 +71,13 @@ export default function Work() {
                 rel="noreferrer"
               >
                 {work.accessKind === "playable"
-                  ? text("Play the game", "试玩游戏")
-                  : text("Get the game", "下载游戏")}
+                  ? t("Play the game")
+                  : t("Get the game")}
                 <ArrowUpRight size={16} />
               </a>
               {work.sourceUrl && (
                 <a href={work.sourceUrl} target="_blank" rel="noreferrer">
-                  {text("Project source", "项目源码")}
+                  {t("Project source")}
                   <ArrowUpRight size={15} />
                 </a>
               )}
@@ -113,57 +93,43 @@ export default function Work() {
               >
                 <img
                   src={`/community-media/${image}.webp`}
-                  alt={text(
-                    `${work.title} screenshot ${index + 1}`,
-                    `${work.title} 游戏截图 ${index + 1}`,
-                  )}
+                  alt={t("{title} screenshot {number}", {
+                    title: work.title,
+                    number: index + 1,
+                  })}
                 />
               </a>
             ))}
           </div>
           <section className="community-work-description">
-            <h2>{text("About the game", "作品介绍")}</h2>
+            <h2>{t("About the game")}</h2>
             <p>{work.description}</p>
             <dl>
               <div>
-                <dt>{text("License", "许可与复用")}</dt>
+                <dt>{t("License")}</dt>
                 <dd>
                   {work.license ||
-                    text(
-                      "Not specified. Inclusion does not grant reuse rights.",
-                      "作者未说明，收录不代表可以自由复用。",
-                    )}
+                    t("Not specified. Inclusion does not grant reuse rights.")}
                 </dd>
               </div>
               <div>
-                <dt>{text("AI use declaration", "AI 使用声明")}</dt>
+                <dt>{t("AI use declaration")}</dt>
                 <dd>
                   {work.aiUse === "none"
-                    ? text(
-                        "The author states no AI was used.",
-                        "作者声明未使用 AI。",
-                      )
+                    ? t("The author states no AI was used.")
                     : work.aiUse === "assisted"
-                      ? text(
-                          "The author states AI assisted development.",
-                          "作者声明使用 AI 辅助开发。",
-                        )
+                      ? t("The author states AI assisted development.")
                       : work.aiUse === "generated"
-                        ? text(
+                        ? t(
                             "The author states this was primarily AI-generated.",
-                            "作者声明作品主要由 AI 生成。",
                           )
-                        : text(
-                            "The author has not made an AI-use claim.",
-                            "作者未作 AI 使用声明。",
-                          )}
+                        : t("The author has not made an AI-use claim.")}
                 </dd>
               </div>
             </dl>
             <p className="community-disclaimer">
-              {text(
+              {t(
                 "Approval permits community display; it is not an independent playtest or a copyright certification.",
-                "审核通过仅表示允许在社区展示，不代表平台已独立试玩或认证版权。",
               )}
             </p>
           </section>

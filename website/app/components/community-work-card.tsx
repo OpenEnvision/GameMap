@@ -1,10 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { GameCard } from "./game-card";
-import {
-  useCommunity,
-  useCommunityText,
-  type CommunityWork,
-} from "../lib/community";
+import { useCommunity, type CommunityWork } from "../lib/community";
+import { useSiteI18n } from "../lib/i18n";
 
 export function useCommunityWorks() {
   const community = useCommunity(),
@@ -37,7 +34,7 @@ export function useCommunityWorks() {
   return { works, error, refresh };
 }
 export function CommunityWorkCard({ work }: { work: CommunityWork }) {
-  const text = useCommunityText(),
+  const { t } = useSiteI18n(),
     first = work.screenshots[0];
   return (
     <GameCard
@@ -53,7 +50,7 @@ export function CommunityWorkCard({ work }: { work: CommunityWork }) {
         first
           ? {
               src: `/community-media/${first}.webp`,
-              alt: `${work.title} — ${text("author-submitted screenshot", "作者投稿截图")}`,
+              alt: `${work.title} — ${t("author-submitted screenshot")}`,
               width: work.preview?.width || 1280,
               height: work.preview?.height || 720,
             }
@@ -61,17 +58,10 @@ export function CommunityWorkCard({ work }: { work: CommunityWork }) {
       }
       notes={
         <details className="build-notes">
-          <summary>{text("Community submission", "用户投稿")}</summary>
-          <p>
-            {text("Created by ", "作者：")}
-            {work.author}
-          </p>
+          <summary>{t("Community submission")}</summary>
+          <p>{t("Created by {author}", { author: work.author })}</p>
           <p className="source-note">
-            {work.license ||
-              text(
-                "Reuse rights have not been specified.",
-                "作者未说明复用许可。",
-              )}
+            {work.license || t("Reuse rights have not been specified.")}
           </p>
         </details>
       }

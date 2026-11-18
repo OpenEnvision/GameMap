@@ -8,7 +8,6 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { useSiteI18n } from "./i18n";
 export type CommunityUser = { id: string; email: string; displayName: string };
 export type GameStats = {
   average: number;
@@ -52,11 +51,6 @@ const Context = createContext<State | null>(null);
 export function useCommunity() {
   return useContext(Context);
 }
-export function useCommunityText() {
-  const { locale } = useSiteI18n();
-  return (english: string, chinese: string) =>
-    locale === "zh" ? chinese : english;
-}
 export function CommunityProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<CommunityUser | null>(null),
     [ready, setReady] = useState(false),
@@ -95,7 +89,7 @@ export function CommunityProvider({ children }: { children: ReactNode }) {
       try {
         value = await response.json();
       } catch {
-        throw new Error("Community service is unavailable / 社区服务暂不可用");
+        throw new Error("Community service is unavailable");
       }
       if (!response.ok) {
         if (response.status === 401) {
@@ -106,7 +100,7 @@ export function CommunityProvider({ children }: { children: ReactNode }) {
           setStats({});
           setVersion((old) => old + 1);
         }
-        throw new Error(value.error?.message || "Request failed / 请求失败");
+        throw new Error(value.error?.message || "Request failed");
       }
       return value as T;
     },
