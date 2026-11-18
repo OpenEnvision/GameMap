@@ -87,6 +87,6 @@ if (built) {
     context.localizedRegistry(registry, "zh"),
   );
   console.log(
-    `Rendered coverage passed: ${result.records} canonical records with field-level proofs, owning collections, complete-index links, ${documents.length} full Markdown bodies, static search, and matching source digests.`,
+    `Rendered coverage passed: ${result.records} canonical records with field-level proofs, owning collections, collection-directory entrances, ${documents.length} full Markdown bodies, static search, and matching source digests.`,
   );
 }

@@ -13,6 +13,7 @@ import {
 import { connectPublicationDatabase } from "./lib/catalog/publication-database.mjs";
 import { createLocalPublisher } from "./lib/catalog/publication.mjs";
 import { createPublicationServer } from "./lib/catalog/publication-server.mjs";
+import { createCommunityRuntime } from "./lib/community/runtime.mjs";
 const directory = join(localDirectory, "publication");
 export async function localPublisher() {
   const status = await readLocalStatus();
@@ -42,7 +43,7 @@ const help = `Local-only, independent publication operator (never GitHub/product
   npm run local:publish -- --input ARTIFACT --expected DIGEST_OR_none --expected-release UUID_OR_none --run LABEL
   npm run local:rollback -- --artifact PREVIOUS_DIGEST --expected CURRENT_DIGEST --expected-release CURRENT_RELEASE --run LABEL
   npm run local:publication-recover
-  npm run local:publication-serve -- --port 4190
+  npm run local:publication-serve -- --port 4191
 Only previously activated retained artifacts can be rollback targets. Read status first.
 `;
 async function main() {
@@ -79,9 +80,15 @@ async function main() {
       Object.keys(options).every((key) => key === "--port"),
       help,
     );
-    const port = Number(options["--port"] || 4190);
+    // 4190 is a browser-blocked Sieve port; keep the default browser-accessible.
+    const port = Number(options["--port"] || 4191);
     assert.ok(Number.isInteger(port) && port > 0 && port < 65536);
-    const server = createPublicationServer(directory);
+    const community = await createCommunityRuntime({
+      directory,
+      configFile: join(localDirectory, "community.json"),
+      origin: `http://127.0.0.1:${port}`,
+    });
+    const server = createPublicationServer(directory, { community });
     server.listen(port, "127.0.0.1", () =>
       console.log(
         `Anonymous local snapshot preview: http://127.0.0.1:${port}/ (use its configured base, e.g. /GameMap/)`,
@@ -91,6 +98,7 @@ async function main() {
       process.once(signal, () => {
         server.closeAllConnections();
         server.close();
+        void community.close();
       });
     return;
   }

@@ -1,3 +1,4 @@
+import { inspectMp4 } from "./lib/mp4.mjs";
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
@@ -6,6 +7,7 @@ import {build} from 'esbuild';
 import {parse} from 'parse5';
 import {categories,loadCatalog,validate,renderAwesome} from './catalog.mjs';
 import {loadLearningContent,renderLearningGuide} from './learning.mjs';
+import {loadContent as loadRegistryContent} from './lib/content.mjs';
 import {loadAgentCodeContent,validateAgentCodeContent,renderAgentCodeGuide} from './agent-code.mjs';
 import {loadTestingContent,validateTestingContent,renderTestingGuide,testingManifest} from './testing.mjs';
 import {loadRepositoryResearch,validateRepositoryResearch,renderRepositoryResearch} from './repository-research.mjs';
@@ -14,8 +16,8 @@ const checkBuilt=process.argv.includes('--built');
 const records=validate(await loadCatalog());
 const expected=JSON.stringify(records,null,2)+'\n';
 for(const path of ['data/resources.json','website/src/data/resources.json','website/public/resources.json'])assert.equal(await readFile(new URL('../'+path,import.meta.url),'utf8'),expected,`Stale generated file: ${path}`);
-const awesome=renderAwesome(records);
-assert.equal(await readFile(new URL('../AWESOME.md',import.meta.url),'utf8'),awesome,'Regenerate AWESOME.md');
+const awesome=renderAwesome(records,{source:'docs/AWESOME.md'});
+assert.equal(await readFile(new URL('../docs/AWESOME.md',import.meta.url),'utf8'),awesome,'Regenerate docs/AWESOME.md');
 for(const r of records)assert.ok(awesome.includes(`](${r.url})`),`Resource missing from awesome list: ${r.id}`);
 const summary=Object.fromEntries(categories.map(([c])=>[c,records.filter(r=>r.category===c).length]));
 console.log(`Catalog checks passed: ${records.length} unique entries. ${JSON.stringify(summary)}`);
@@ -23,39 +25,49 @@ console.log(`Catalog checks passed: ${records.length} unique entries. ${JSON.str
 // Keep every starter path connected to a tutorial, real game build, and complete project.
 const {learningPaths,foundationPaths,communityCollections}=await loadLearningContent();
 const pathIds=new Set();
+const gameRegistry=(await loadRegistryContent()).registry;
 const learningGuide=await readFile(new URL('../docs/tutorials-and-demos.md',import.meta.url),'utf8');
 assert.equal(learningGuide,renderLearningGuide(learningPaths,foundationPaths,records,communityCollections),'Regenerate the AI game-build guide');
 for(const path of [...learningPaths,...foundationPaths]){
+ const entry=gameRegistry.require(path.category==='foundation'?'foundation':'example',path.id);
+ assert.equal(entry.url,`/examples/${path.id}/`,'Games retain canonical Examples records');
  assert.ok(!pathIds.has(path.id),`Duplicate learning path: ${path.id}`);pathIds.add(path.id);
  for(const field of ['title','description','engine','aiUse'])assert.ok(path[field]?.trim(),`Missing learning path ${field}: ${path.id}`);
  assert.ok(path.steps?.length&&path.steps.every(step=>typeof step==='string'&&step.trim()),`Missing project steps: ${path.id}`);
  for(const key of ['tutorial','demo','source']){
   assert.ok(path[key]?.label?.trim(),`Missing ${key} label: ${path.id}`);
   assert.equal(new URL(path[key].url).protocol,'https:',`Use HTTPS: ${path.id}/${key}`);
-  assert.ok(learningGuide.includes(path[key].url),`Missing ${key} from downloadable guide: ${path.id}`);
+  assert.equal(entry.data[key].url,path[key].url,`Missing ${key} from Examples record: ${path.id}`);
  }
- assert.ok(['playable','download'].includes(path.demo.kind),`A starter demo must be a real game, not a video or tool: ${path.id}`);
+ if(path.demo.kind==='source'){
+  assert.equal(path.demo.url,path.source.url,`Source-only cards link to the supplied source, not a fabricated release: ${path.id}`);
+  assert.ok(path.intake&&path.source.scope==='unverified-project',`Keep imported provenance and unknown scope explicit: ${path.id}`);
+ }else if(path.demo.kind==='reference'){
+  assert.ok(path.intake&&path.source.scope==='project-reference');assert.equal(path.demo.url,path.source.url);assert.equal(path.intake.homepage,path.demo.url);
+ }else assert.ok(['playable','download'].includes(path.demo.kind),`A starter demo must be a real game, not a video or tool: ${path.id}`);
  assert.ok(path.demo.note?.trim()&&path.source.note?.trim(),`Explain game and source availability: ${path.id}`);
  assert.ok(Array.isArray(path.resourceIds)&&path.resourceIds.every(id=>records.some(resource=>resource.id===id)),`Unknown related resource: ${path.id}`);
  assert.ok(['2d','3d'].includes(path.track),`Missing learning track: ${path.id}`);
 }
 for(const path of learningPaths){
- assert.ok(['ai-generated','ai-assisted'].includes(path.category),`Featured games must document AI creation: ${path.id}`);
- assert.ok(path.evidence?.label?.trim()&&path.evidence?.note?.trim(),`Missing creator AI evidence: ${path.id}`);
+ assert.ok(['ai-generated','ai-assisted','community'].includes(path.category),`Unknown complete-game category: ${path.id}`);
+ assert.ok(path.evidence?.label?.trim()&&path.evidence?.note?.trim(),`Missing primary game evidence: ${path.id}`);
  assert.equal(new URL(path.evidence.url).protocol,'https:');
- assert.ok(learningGuide.includes(path.evidence.url),`Missing creator evidence from guide: ${path.id}`);
- assert.equal(path.source.scope,'complete-project',`Feature actual complete game projects: ${path.id}`);
+ assert.equal(gameRegistry.require('example',path.id).data.evidence.url,path.evidence.url,`Missing creator evidence from Examples: ${path.id}`);
+ assert.equal(path.source.scope,path.demo.kind==='source'?'unverified-project':path.demo.kind==='reference'?'project-reference':'complete-project',`Do not certify an unreviewed source reference as a complete project: ${path.id}`);
  assert.ok(['prompt','build-log','tutorial','quickstart','disclosure'].includes(path.tutorial.kind),`Label the actual learning material: ${path.id}`);
 }
-assert.ok(foundationPaths.every(path=>path.category==='foundation'),'Keep ordinary engine references in the foundation section');
+assert.ok(foundationPaths.every(path=>path.category==='foundation'),'Preserve engine-reference identity without inventing AI authorship');
+assert.match(learningGuide,/\[Game examples\]\(\/examples\/\)/,'Retired guide points to Examples');
+assert.ok(!learningGuide.includes('| Game |'),'Do not regenerate a duplicate document game catalog');
 assert.equal(await readFile(new URL('../website/public/tutorials-and-demos.md',import.meta.url),'utf8'),learningGuide,'Regenerate the downloadable tutorial guide');
-console.log(`Learning-link checks passed: ${learningPaths.length} documented AI game builds, ${foundationPaths.length} optional engine foundations, and matched project/evidence links.`);
+console.log(`Learning-link checks passed: ${learningPaths.filter(path=>['playable','download'].includes(path.demo.kind)).length} release-linked examples, ${learningPaths.filter(path=>path.demo.kind==='source').length} source-only imports, ${learningPaths.filter(path=>path.demo.kind==='reference').length} project references, ${foundationPaths.length} engine foundations, and matched project/evidence links.`);
 
 const {agentGameResources,gameCaseAgents,agentLabels,agentResourceKinds}=await loadAgentCodeContent();
 validateAgentCodeContent(agentGameResources,learningPaths,gameCaseAgents,agentLabels,agentResourceKinds);
 const agentGuide=renderAgentCodeGuide(agentGameResources,learningPaths,gameCaseAgents,agentLabels,agentResourceKinds);
 for(const path of ['docs/coding-agent-game-code.md','website/public/coding-agent-game-code.md'])assert.equal(await readFile(new URL('../'+path,import.meta.url),'utf8'),agentGuide,`Regenerate agent game-code guide: ${path}`);
-console.log(`Agent-code checks passed: ${agentGameResources.length} source-reviewed resources and ${learningPaths.length} exact client/model game attributions.`);
+console.log(`Agent-code checks passed: ${agentGameResources.length} source-reviewed resources and ${Object.keys(gameCaseAgents).length} exact client/model game attributions; community games need no AI claim.`);
 
 const testingContent=await loadTestingContent();
 const testingResources=validateTestingContent(testingContent);
@@ -96,23 +108,36 @@ function inspectWebp(bytes,label){
 }
 const learningMediaBundle=await build({absWorkingDir:fileURLToPath(new URL('../',import.meta.url)),entryPoints:['website/src/data/learningMedia.ts'],bundle:true,write:false,format:'esm',platform:'node'});
 const {learningMedia}=await import('data:text/javascript;base64,'+Buffer.from(learningMediaBundle.outputFiles[0].text).toString('base64'));
-assert.deepEqual(Object.keys(learningMedia).sort(),learningPaths.map(path=>path.id).sort(),'Every featured AI game needs one real screenshot; engine foundations are excluded');
+const previewPaths=learningPaths.filter(path=>path.category!=='community'||learningMedia[path.id]);
+assert.deepEqual(Object.keys(learningMedia).sort(),previewPaths.map(path=>path.id).sort(),'Every AI-attributed game needs one real screenshot; community games may omit it without inventing imagery');
 const learningManifestText=await readFile(new URL('../website/public/media/learning/manifest.json',import.meta.url),'utf8');
 const learningManifest=JSON.parse(learningManifestText);
 assert.equal(learningManifest.kind,'gameplay-screenshots');
-assert.deepEqual(learningManifest.previews.map(preview=>preview.id),learningPaths.map(path=>path.id),'Gameplay provenance must follow the rendered cases');
+assert.deepEqual(learningManifest.previews.map(preview=>preview.id),previewPaths.map(path=>path.id),'Gameplay provenance must follow the cases with real screenshots');
 const mediaSources=await readFile(new URL('../docs/media-sources.md',import.meta.url),'utf8');
+const screenshotLedgerText=await readFile(new URL('../data/segments/jam-game-media.json',import.meta.url),'utf8');
+assert.equal(await readFile(new URL('../website/public/game-screenshot-sources.json',import.meta.url),'utf8'),screenshotLedgerText,'Community screenshot evidence download differs from its reviewed source');
+if(checkBuilt)assert.equal(await readFile(new URL('../dist/game-screenshot-sources.json',import.meta.url),'utf8'),screenshotLedgerText,'Rebuild the community screenshot evidence download');
+const screenshotCredits=new Map(JSON.parse(screenshotLedgerText).records.map(row=>[row.id,row]));
 let gameplayPreviewBytes=0;
 for(const path of learningPaths){
  const preview=learningMedia[path.id],provenance=learningManifest.previews.find(item=>item.id===path.id);
+ if(path.category==='community'&&!preview)continue; // Never fabricate screenshots for source-reviewed games.
  assert.equal(preview.src,`media/learning/${path.id}.webp`,`Gameplay screenshots must be bundled locally: ${path.id}`);
  for(const field of ['alt','caption'])assert.ok(preview[field]?.trim(),`Missing gameplay screenshot ${field}: ${path.id}`);
  assert.equal(new URL(preview.sourceUrl).protocol,'https:');
+ const screenshotCredit=screenshotCredits.get(path.id);
+ if(screenshotCredit){
+  assert.deepEqual(screenshotCredit.media,preview,`Community screenshot attachment differs from its source ledger: ${path.id}`);
+  assert.equal(screenshotCredit.processing.crop,false,`Preserve the complete source frame: ${path.id}`);
+  assert.equal(screenshotCredit.processing.generatedSceneContent,false,`Use actual game pixels: ${path.id}`);
+ }
+ const attributionText=screenshotCredit?JSON.stringify(screenshotCredit):mediaSources;
  const creatorScreenshot=preview.origin==='creator-screenshot';
  assert.ok(!preview.origin||['browser-capture','local-capture','creator-screenshot'].includes(preview.origin),`Unknown screenshot origin: ${path.id}`);
  if(creatorScreenshot){
   assert.equal(new URL(preview.originalImageUrl).protocol,'https:',`Creator screenshots need their original image URL: ${path.id}`);
-  assert.ok(mediaSources.includes(preview.originalImageUrl),`Credit the original creator image: ${path.id}`);
+  assert.ok(attributionText.includes(preview.originalImageUrl),`Credit the original creator image: ${path.id}`);
   assert.ok(!preview.capturedAt,`Do not claim a GameMap capture date for creator images: ${path.id}`);
  }else if(preview.origin==='local-capture'){
   assert.equal(preview.sourceUrl,path.source.url,`Identify the locally captured source project: ${path.id}`);
@@ -122,7 +147,7 @@ for(const path of learningPaths){
  assert.ok(Number.isFinite(Date.parse(screenshotDate)),`Invalid screenshot review/capture date: ${path.id}`);
  assert.ok(Number.isInteger(preview.width)&&Number.isInteger(preview.height)&&preview.width>=320&&preview.height>=180,`Invalid screenshot dimensions: ${path.id}`);
  assert.equal(preview.width*9,preview.height*16,`Keep gameplay previews in a consistent 16:9 frame: ${path.id}`);
- assert.ok(mediaSources.includes(preview.sourceUrl)&&mediaSources.includes(preview.src),`Missing gameplay provenance: ${path.id}`);
+ assert.ok(attributionText.includes(preview.sourceUrl)&&attributionText.includes(preview.src),`Missing gameplay provenance: ${path.id}`);
  const bytes=await readFile(new URL('../website/public/'+preview.src,import.meta.url));
  assert.ok(bytes.length>512&&bytes.length<2_000_000,`Keep gameplay screenshot files intact and lightweight: ${path.id}`);
  assert.deepEqual(inspectWebp(bytes,path.id),{width:preview.width,height:preview.height},`Screenshot dimensions must match the image: ${path.id}`);
@@ -133,7 +158,7 @@ for(const path of learningPaths){
 assert.deepEqual((await readdir(new URL('../website/public/media/learning/',import.meta.url))).filter(name=>name.endsWith('.webp')).sort(),Object.values(learningMedia).map(preview=>preview.src.split('/').at(-1)).sort(),'Record every bundled gameplay screenshot');
 if(checkBuilt)assert.equal(await readFile(new URL('../dist/media/learning/manifest.json',import.meta.url),'utf8'),learningManifestText,'Rebuild deployed gameplay provenance');
 assert.equal(await readFile(new URL('../website/public/media-sources.md',import.meta.url),'utf8'),mediaSources.replaceAll('../website/public/','./'),'Regenerate public media attribution');
-console.log(`Learning-preview checks passed: ${learningPaths.length} real-game screenshots, matched source URLs, 16:9 WebP pixels, ${checkBuilt?'public/deployment':'public'} integrity, ${(gameplayPreviewBytes/1_000_000).toFixed(2)} MB total.`);
+console.log(`Learning-preview checks passed: ${previewPaths.length} real-game screenshots, matched source URLs, 16:9 WebP pixels, ${checkBuilt?'public/deployment':'public'} integrity, ${(gameplayPreviewBytes/1_000_000).toFixed(2)} MB total.`);
 
 // Catch missing assignments, accidental remote dependencies, and damaged assets.
 const identities=JSON.parse(await readFile(new URL('../website/src/data/resourceIdentities.json',import.meta.url),'utf8'));
@@ -170,58 +195,6 @@ for(const resource of records){
 const publicIdentities=await readFile(new URL('../website/public/logo-sources.json',import.meta.url),'utf8');
 assert.equal(publicIdentities,JSON.stringify(identities,null,2)+'\n','Regenerate public logo attribution');
 console.log(`Logo checks passed: ${records.length-textOnly.length} resources, ${logoAssets.size} local marks; ${textOnly.length} unbranded projects use verified maintainer names.`);
-
-// Read actual MP4 atoms so manifest claims cannot hide an incompatible or damaged video.
-function inspectMp4(bytes,label){
- function boxes(start,end){
-  const result=[];
-  let offset=start;
-  while(offset<end){
-   assert.ok(offset+8<=end,`Incomplete MP4 box header: ${label}`);
-   let size=bytes.readUInt32BE(offset),header=8;
-   const type=bytes.toString('ascii',offset+4,offset+8);
-   if(size===1){assert.ok(offset+16<=end);size=Number(bytes.readBigUInt64BE(offset+8));header=16;}
-   if(size===0)size=end-offset;
-   assert.ok(Number.isSafeInteger(size)&&size>=header&&offset+size<=end,`Invalid MP4 ${type} box: ${label}`);
-   result.push({type,start:offset,body:offset+header,end:offset+size});
-   offset+=size;
-  }
-  return result;
- }
- const children=box=>boxes(box.body,box.end);
- const required=(list,type)=>{const box=list.find(box=>box.type===type);assert.ok(box,`Missing MP4 ${type} box: ${label}`);return box;};
- const top=boxes(0,bytes.length);
- assert.equal(top[0]?.type,'ftyp',`Invalid MP4 signature: ${label}`);
- const moov=required(top,'moov'),mdat=required(top,'mdat');
- assert.ok(moov.start<mdat.start,`Video must start progressively: ${label}`);
- const tracks=children(moov).filter(box=>box.type==='trak').map(trak=>{
-  const trackBoxes=children(trak),mdia=required(trackBoxes,'mdia'),mediaBoxes=children(mdia);
-  const hdlr=required(mediaBoxes,'hdlr');
-  return {trackBoxes,mediaBoxes,handler:bytes.toString('ascii',hdlr.body+8,hdlr.body+12)};
- });
- const videos=tracks.filter(track=>track.handler==='vide');
- assert.equal(videos.length,1,`One video track required: ${label}`);
- const video=videos[0],tkhd=required(video.trackBoxes,'tkhd'),mdhd=required(video.mediaBoxes,'mdhd');
- const version=bytes[mdhd.body];
- assert.ok(version===0||version===1,`Unsupported media header: ${label}`);
- const timescale=bytes.readUInt32BE(mdhd.body+(version===1?20:12));
- const duration=version===1?Number(bytes.readBigUInt64BE(mdhd.body+24)):bytes.readUInt32BE(mdhd.body+16);
- assert.ok(timescale>0&&duration>0);
- const stbl=required(children(required(video.mediaBoxes,'minf')),'stbl');
- const tables=children(stbl),stsd=required(tables,'stsd'),stts=required(tables,'stts');
- assert.equal(bytes.readUInt32BE(stsd.body+4),1,`One video sample format required: ${label}`);
- const sampleEntries=boxes(stsd.body+8,stsd.end);
- assert.equal(sampleEntries[0]?.type,'avc1',`Browser-compatible H.264 required: ${label}`);
- const timingEntries=bytes.readUInt32BE(stts.body+4);
- let samples=0,ticks=0;
- assert.equal(stts.body+8+timingEntries*8,stts.end,`Invalid sample timing table: ${label}`);
- for(let index=0;index<timingEntries;index++){
-  const offset=stts.body+8+index*8,count=bytes.readUInt32BE(offset),delta=bytes.readUInt32BE(offset+4);
-  samples+=count;ticks+=count*delta;
- }
- assert.ok(samples>0&&ticks>0);
- return {width:bytes.readUInt32BE(tkhd.end-8)/65536,height:bytes.readUInt32BE(tkhd.end-4)/65536,durationSeconds:duration/timescale,frameRate:samples/(ticks/timescale),audioTracks:tracks.filter(track=>track.handler==='soun').length,codec:sampleEntries[0].type};
-}
 
 const {clips,variants=[],libraryClips=[]}=JSON.parse(await readFile(new URL('../website/public/media/showcase/manifest.json',import.meta.url),'utf8'));
 const bundle=await build({absWorkingDir:fileURLToPath(new URL('../',import.meta.url)),entryPoints:['website/src/data/recordings.ts'],bundle:true,write:false,format:'esm',platform:'node',define:{'import.meta.env.BASE_URL':'"./"'}});
@@ -312,7 +285,15 @@ async function englishSources(directory){
  const nested=await Promise.all(entries.map(entry=>entry.isDirectory()?englishSources(`${directory}/${entry.name}`):/\.(?:tsx?|json)$/.test(entry.name)?[`${directory}/${entry.name}`]:[]));
  return nested.flat();
 }
-const englishFiles=[...await englishSources('website/src'),...await englishSources('website/app'),...(checkBuilt?['dist/index.html']:[]),'README.md','AWESOME.md',...(await readdir(new URL('../website/public/',import.meta.url))).filter(name=>/\.(md|json)$/.test(name)).map(name=>'website/public/'+name)];
+// This is a bilingual source-evidence document, not English interface copy.
+// Its raw download must still match the generated reader source exactly.
+const sourceIndex=await readFile(new URL('../docs/remote-source-index.md',import.meta.url),'utf8').catch(error=>{if(error.code==='ENOENT')return null;throw error;});
+if(sourceIndex!==null){
+ const download=await readFile(new URL('../website/public/remote-source-index.md',import.meta.url),'utf8');
+ assert.equal(download,sourceIndex.trimEnd()+'\n','Rebuild the complete bilingual source-index download');
+ if(checkBuilt)assert.equal(await readFile(new URL('../dist/remote-source-index.md',import.meta.url),'utf8'),download,'Rebuild the deployed source-index download');
+}
+const englishFiles=[...await englishSources('website/src'),...await englishSources('website/app'),...(checkBuilt?['dist/index.html']:[]),'README.md','docs/AWESOME.md',...(await readdir(new URL('../website/public/',import.meta.url))).filter(name=>/\.(md|json)$/.test(name)&&!(sourceIndex!==null&&name==='remote-source-index.md')).map(name=>'website/public/'+name)];
 // Preserve the language-switch label and the exact bilingual label in the archived art source.
 const sourceQuotes={'README.md':['中文指南'],'website/public/editorial-art-prompts.md':['原创概念插图']};
 function englishRenderedCopy(node,inherited='en'){
@@ -323,6 +304,34 @@ function englishRenderedCopy(node,inherited='en'){
 }
 await Promise.all(englishFiles.map(async path=>{
  let source=await readFile(new URL('../'+path,import.meta.url),'utf8');
+ if(path==='website/public/jam-discovery.json'){
+  // This is structured bilingual evidence, not an English UI string bundle.
+  // Keep original passages and Chinese translations; check English-authored reader copy separately.
+  assert.equal(source,await readFile(new URL('../data/segments/jam-games.json',import.meta.url),'utf8'),'Jam evidence download differs from its reviewed source');
+  if(checkBuilt)assert.equal(await readFile(new URL('../dist/jam-discovery.json',import.meta.url),'utf8'),source,'Rebuild the deployed Jam evidence ledger');
+  const ledger=JSON.parse(source);
+  const chinese=JSON.parse(await readFile(new URL('../website/content/i18n/content/jam-games.zh.json',import.meta.url),'utf8'));
+  for(const row of ledger.accepted)if(row.descriptionZh!==undefined){
+   assert.match(row.descriptionZh,/\p{Script=Han}/u,`Missing Chinese description: ${row.id}`);
+   assert.equal(chinese[`example:${row.id}`]?.description,row.descriptionZh,`Jam source and Chinese introduction differ: ${row.id}`);
+  }
+  source=JSON.stringify(ledger.accepted.map(({description,sourceNote,suggestedSteps})=>({description,sourceNote,suggestedSteps})));
+ }
+ const directoryExports={'website/public/open-3d-games-import.json':['data/segments/open-3d-import.json',192,133],'website/public/open-3d-games-import-round2.json':['data/segments/open-3d-import-round2.json',117,95],'website/public/open-3d-games-import-round3.json':['data/segments/open-3d-import-round3.json',115,96],'website/public/itch-3d-games-import.json':['data/segments/itch-3d-import.json',145,145],'website/public/open-3d-games-import-round4.json':['data/segments/open-3d-import-round4.json',88,75]};
+ if(directoryExports[path]){
+  // Preserve original-language evidence, never silently exempt rendered UI copy.
+  const [dataPath,rows,mappings]=directoryExports[path];
+  assert.equal(source,await readFile(new URL('../'+dataPath,import.meta.url),'utf8'),'3D intake download differs from its source');
+  if(checkBuilt)assert.equal(await readFile(new URL('../dist/'+path.slice('website/public/'.length),import.meta.url),'utf8'),source,'Rebuild the 3D intake evidence export');
+  const raw=JSON.parse(source);assert.equal((raw.inputRecords||raw.suppliedDirectory.games).length,rows);assert.equal(raw.mappings.length,mappings);
+  source=JSON.stringify({source:raw.source,mappings:raw.mappings,newExampleIds:raw.newExampleIds,excludedIds:raw.excludedIds});
+ }
+ if(path==='website/public/browser-port-research.json'){
+  assert.equal(source,await readFile(new URL('../data/segments/browser-port-research.json',import.meta.url),'utf8'));
+  if(checkBuilt)assert.equal(await readFile(new URL('../dist/browser-port-research.json',import.meta.url),'utf8'),source);
+  const raw=JSON.parse(source);assert.equal(raw.records.length,25);assert.equal(raw.mappings.length,25);assert.equal(createHash('sha256').update(raw.source.originalInputText).digest('hex'),raw.source.inputSha256);
+  source=JSON.stringify({mappings:raw.mappings,records:raw.records.map(({descriptionZh,conditionsZh,...english})=>english)});
+ }
  for(const quote of sourceQuotes[path]||[])source=source.replaceAll(quote,'');
  if(path==='dist/index.html')source=englishRenderedCopy(parse(source));
  assert.doesNotMatch(source,/\p{Script=Han}/u,`Unlocalized Chinese copy remains in the English interface: ${path}`);

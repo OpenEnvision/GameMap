@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {canonicalValue} from './lib/catalog/codec.mjs';
 import {readFile} from 'node:fs/promises';
+import documentRedirects from '../website/content/document-redirects.json' with {type:'json'};
 
 export async function loadRepositoryResearch(){
  return validateRepositoryResearch(JSON.parse(await readFile(new URL('../data/segments/repository-research.json',import.meta.url),'utf8')));
@@ -34,6 +35,7 @@ export function validateRepositoryResearch(data){
 
 const cell=value=>String(value).replaceAll('|','\\|').replaceAll('\n',' ');
 export function renderRepositoryResearch(data){
+ if(documentRedirects['/docs/cadle-repositories/'])return '# Game examples\n\nThis catalog has moved to [Game examples](/examples/).\n';
  data=canonicalValue(data);
  const counts={};for(const row of data.records)counts[row.disposition]=(counts[row.disposition]||0)+1;
  let out=`# Cadle-like repository research import\n\nFind projects for game generation, agents, scene editing, and evaluation. The table tracks repository names, available source, licensing, and related coverage.\n\nImported from the [Cadle repository corpus](${data.source.url}). For original group membership, historical rankings, and source revisions, use the [machine-readable ledger](../website/public/repository-research.json).\n\n## Reading the status\n\n- **existing**: related coverage already exists in GameMap; the row links it rather than creating a duplicate card\n- **new-research**: newly documented source material; inclusion is not a reproduction or production-readiness endorsement\n- **qualified**: useful source material with material scope, maturity, licensing, identity or access qualifications\n- **unavailable**: the requested location could not be inspected; this does not prove deletion or global inaccessibility\n\nCheck code, asset, and service terms separately before adapting a project. For changing repositories, use the recorded README revision to identify the inspected material.\n\n## Highest-value corrections\n\n${data.findings.map(value=>`- ${value}`).join('\n')}\n\n`;

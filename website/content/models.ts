@@ -16,53 +16,117 @@ export interface ContentKindDefinition {
 }
 /** UI, import, and database registry checks share these versioned kind declarations. */
 export const contentKinds = {
+  paper: {
+    label: "Paper",
+    plural: "Papers",
+    page: "papers",
+    owner: "database",
+    schemaVersion: 1,
+    validatorKey: "gamemap.paper",
+  },
+  "threejs-game": {
+    label: "Three.js game",
+    plural: "Three.js games",
+    page: "threejsGames",
+    owner: "database",
+    schemaVersion: 4,
+    validatorKey: "gamemap.threejs-game",
+  },
   resource: {
-    label: "Resource", plural: "Resources", page: "resources",
-    owner: "database", schemaVersion: 1, validatorKey: "gamemap.resource",
+    label: "Resource",
+    plural: "Resources",
+    page: "resources",
+    owner: "database",
+    schemaVersion: 1,
+    validatorKey: "gamemap.resource",
   },
   example: {
-    label: "Game example", plural: "Game examples", page: "examples",
-    owner: "database", schemaVersion: 1, validatorKey: "gamemap.example",
+    label: "Game example",
+    plural: "Game examples",
+    page: "examples",
+    owner: "database",
+    schemaVersion: 8,
+    validatorKey: "gamemap.example",
   },
   foundation: {
-    label: "Engine foundation", plural: "Engine foundations", page: "examples",
-    owner: "database", schemaVersion: 1, validatorKey: "gamemap.foundation",
+    label: "Engine foundation",
+    plural: "Engine foundations",
+    page: "examples",
+    owner: "database",
+    schemaVersion: 4,
+    validatorKey: "gamemap.foundation",
   },
   agent: {
-    label: "Agent resource", plural: "Agent toolkit", page: "agents",
-    owner: "database", schemaVersion: 1, validatorKey: "gamemap.agent",
+    label: "Agent resource",
+    plural: "Agent toolkit",
+    page: "agents",
+    owner: "database",
+    schemaVersion: 1,
+    validatorKey: "gamemap.agent",
   },
   testing: {
-    label: "Testing resource", plural: "Testing library", page: "testing",
-    owner: "database", schemaVersion: 1, validatorKey: "gamemap.testing",
+    label: "Testing resource",
+    plural: "Testing library",
+    page: "testing",
+    owner: "database",
+    schemaVersion: 1,
+    validatorKey: "gamemap.testing",
   },
   "testing-pack": {
-    label: "Testing starter", plural: "Testing starter tasks", page: "testing",
-    owner: "database", schemaVersion: 1, validatorKey: "gamemap.testing-pack",
+    label: "Testing starter",
+    plural: "Testing starter tasks",
+    page: "testing",
+    owner: "database",
+    schemaVersion: 2,
+    validatorKey: "gamemap.testing-pack",
   },
   "repository-research": {
-    label: "Repository research record", plural: "Repository research", page: "research",
-    owner: "database", schemaVersion: 1, validatorKey: "gamemap.repository-research",
+    label: "Repository research record",
+    plural: "Repository research",
+    page: "research",
+    owner: "database",
+    schemaVersion: 3,
+    validatorKey: "gamemap.repository-research",
   },
   path: {
-    label: "Development path", plural: "Development paths", page: "paths",
-    owner: "database", schemaVersion: 1, validatorKey: "gamemap.path",
+    label: "Development path",
+    plural: "Development paths",
+    page: "paths",
+    owner: "database",
+    schemaVersion: 1,
+    validatorKey: "gamemap.path",
   },
   step: {
-    label: "Path step", plural: "Steps & checkpoints", page: "paths",
-    owner: "database", schemaVersion: 1, validatorKey: "gamemap.step",
+    label: "Path step",
+    plural: "Steps & checkpoints",
+    page: "paths",
+    owner: "database",
+    schemaVersion: 2,
+    validatorKey: "gamemap.step",
   },
   demo: {
-    label: "Project demo", plural: "Project demos", page: "demos",
-    owner: "database", schemaVersion: 1, validatorKey: "gamemap.demo",
+    label: "Project demo",
+    plural: "Project demos",
+    page: "resources",
+    owner: "database",
+    schemaVersion: 2,
+    validatorKey: "gamemap.demo",
   },
   collection: {
-    label: "Discovery collection", plural: "Community discovery", page: "examples",
-    owner: "database", schemaVersion: 1, validatorKey: "gamemap.collection",
+    label: "Discovery collection",
+    plural: "Community discovery",
+    page: "examples",
+    owner: "database",
+    schemaVersion: 1,
+    validatorKey: "gamemap.collection",
   },
   document: {
-    label: "Document", plural: "Guides & notes", page: "docs",
-    owner: "git", schemaVersion: 1, validatorKey: "gamemap.document",
+    label: "Document",
+    plural: "Guides & notes",
+    page: "docs",
+    owner: "git",
+    schemaVersion: 1,
+    validatorKey: "gamemap.document",
   },
 } as const satisfies Record<ContentKind, ContentKindDefinition>;
 
@@ -91,6 +155,7 @@ type ImageBlock = {
   credit?: string;
   width?: number;
   height?: number;
+  localizations?: { zh: { alt: string; caption: string; sourceHash: string } };
 };
 type VideoBlock = {
   type: "video";
@@ -146,9 +211,14 @@ export interface ContentRegistry {
   require<K extends ContentKind>(kind: K, id: string): ContentEntry<K>;
   all<K extends ContentKind>(kind: K): ContentEntry<K>[];
   byKey(key: string): ContentEntry | undefined;
+  collectionDiscoveryFor(entry: ContentEntry): {
+    key: string;
+    url: string;
+    collectionUrl: string;
+  };
   examplesFor(ref: { kind: "resource"; id: string }): ContentEntry<"example">[];
   demosFor(resourceId: string): ContentEntry<"demo">[];
   attributionFor(
     exampleId: string,
-  ): readonly ContentModels["agent"]["agents"][number][];
+  ): readonly import("../src/data/agentGameTypes").AttributionAgentId[];
 }

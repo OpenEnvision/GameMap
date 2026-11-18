@@ -65,13 +65,21 @@ function containsText(nodes, value, context) {
     `${context}: missing visible text ${JSON.stringify(value).slice(0, 160)}`,
   );
 }
-function containsURL(nodes, value, context, base, page, attr = "href") {
+function containsURL(
+  nodes,
+  value,
+  context,
+  base,
+  page,
+  attr = "href",
+  normalize = (url) => url,
+) {
   assert.ok(
     nodes.some(
       (node) =>
         attributes(node)[attr] &&
-        address(attributes(node)[attr], base, page) ===
-          address(value, base, page),
+        normalize(address(attributes(node)[attr], base, page)) ===
+          normalize(address(value, base, page)),
     ),
     `${context}: missing ${attr} ${value}`,
   );
@@ -194,7 +202,7 @@ export async function assertRenderedCoverage(
   registry,
   readPage,
   base = "/",
-  indexUrl = "/explore/",
+  indexUrl = "/",
 ) {
   const cache = new Map();
   const page = async (url) => {
@@ -203,6 +211,30 @@ export async function assertRenderedCoverage(
     return cache.get(path);
   };
   const index = await page(indexUrl);
+  // The retired directory is replaced by real homepage navigation links. Canonical
+  // field proofs and each record's owning/discovery collection remain mandatory.
+  const directories = index.nodes.filter(
+    (node) => attributes(node)["data-collection-id"],
+  );
+  assert.equal(
+    new Set(directories.map((node) => attributes(node)["data-collection-id"]))
+      .size,
+    directories.length,
+    "Each collection must have only one primary navigation entrance",
+  );
+  directories.forEach((node) => {
+    assert.ok(
+      node.tagName === "a" && attributes(node).href,
+      "A collection navigation entrance must be a native link",
+    );
+    visible(node, "Collection navigation entrance");
+  });
+  const directoryLinks = directories.flatMap((node) =>
+    elements(node).flatMap((element) => {
+      const href = attributes(element).href;
+      return href ? [new URL(address(href, base, indexUrl))] : [];
+    }),
+  );
   for (const entry of registry.entries) {
     const canonical = await page(entry.url);
     const records = canonical.nodes.filter(
@@ -222,30 +254,32 @@ export async function assertRenderedCoverage(
         `${entry.key}: missing canonical anchor ${anchor}`,
       );
     assertRecordFields(entry, records[0], base);
-    const refs = index.nodes.filter(
-      (node) => attributes(node)["data-content-ref"] === entry.key,
+    const discovery = registry.collectionDiscoveryFor?.(entry) ?? {
+      key: entry.key,
+      url: entry.url,
+      collectionUrl: entry.collectionUrl,
+    };
+    const ownerAddress = new URL(
+      address(discovery.collectionUrl, base, indexUrl),
     );
     assert.ok(
-      refs.length,
-      `${entry.key}: missing from the complete content index`,
+      directoryLinks.some(
+        (link) =>
+          link.origin === ownerAddress.origin &&
+          link.pathname !== "/" &&
+          ownerAddress.pathname.startsWith(link.pathname),
+      ),
+      `${entry.key}: missing owning collection entrance in site navigation`,
     );
-    for (const ref of refs) visible(ref, `Discovery entry ${entry.key}`);
-    containsURL(
-      refs.flatMap((node) => elements(node)),
-      entry.url,
-      `Index discovery ${entry.key}`,
-      base,
-      indexUrl,
-    );
-    const collection = await page(entry.collectionUrl);
+    const collection = await page(discovery.collectionUrl);
     const owners = collection.nodes.filter(
       (node) =>
-        attributes(node)["data-content-ref"] === entry.key ||
-        attributes(node)["data-content-key"] === entry.key,
+        attributes(node)["data-content-ref"] === discovery.key ||
+        attributes(node)["data-content-key"] === discovery.key,
     );
     assert.ok(
       owners.length,
-      `${entry.key}: missing from owning collection ${entry.collectionUrl}`,
+      `${entry.key}: missing from ${discovery.collectionUrl === entry.collectionUrl ? "owning" : "discovery"} collection ${discovery.collectionUrl}`,
     );
     owners.forEach((node) =>
       visible(node, `Collection discovery ${entry.key}`),
@@ -254,10 +288,10 @@ export async function assertRenderedCoverage(
       if (attributes(owner)["data-content-ref"])
         containsURL(
           elements(owner),
-          entry.url,
+          discovery.url,
           `Collection discovery ${entry.key}`,
           base,
-          entry.collectionUrl,
+          discovery.collectionUrl,
         );
   }
   return { records: registry.entries.length, pages: cache.size };
@@ -291,6 +325,20 @@ export function assertMarkdownCoverage(
     containsText([body], frontmatter, `${metadata.source} frontmatter`);
   const tree = processor.parse(sourceBody);
   const rewrite = documentLinkResolver(documents, base);
+  const normalizeDocumentAddress = (value) => {
+    const url = new URL(value);
+    // Root-relative Markdown links lose a trailing slash during path resolution.
+    // Reader links may use either spelling. Only known local docs are equivalent;
+    // queries, fragments, external URLs and unknown paths still compare exactly.
+    const match = /^\/docs\/(.+?)\/?$/.exec(url.pathname);
+    if (
+      url.origin === "https://content.test" &&
+      match &&
+      documents.some((doc) => doc.slug === match[1])
+    )
+      url.pathname = `/docs/${match[1]}/`;
+    return url.href;
+  };
   visit(tree, (node) => {
     if (
       node.type === "text" ||
@@ -315,6 +363,8 @@ export function assertMarkdownCoverage(
         metadata.source,
         base,
         "/docs/" + metadata.slug + "/",
+        "href",
+        normalizeDocumentAddress,
       );
     else if (node.type === "image")
       containsURL(

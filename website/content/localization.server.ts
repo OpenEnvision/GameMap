@@ -2,6 +2,13 @@ import { createHash } from "node:crypto";
 import resources from "./i18n/content/resources.zh.json";
 import paths from "./i18n/content/paths.zh.json";
 import examples from "./i18n/content/examples.zh.json";
+import jamGames from "./i18n/content/jam-games.zh.json";
+import open3dGames from "./i18n/content/open3d-games.zh.json";
+import open3dRound2Games from "./i18n/content/open3d-games-round2.zh.json";
+import open3dRound3Games from "./i18n/content/open3d-games-round3.zh.json";
+import itch3dGames from "./i18n/content/itch-3d-games.zh.json";
+import open3dRound4Games from "./i18n/content/open3d-games-round4.zh.json";
+import browserPorts from "./i18n/content/browser-ports.zh.json";
 import toolkit from "./i18n/content/toolkit.zh.json";
 import testing from "./i18n/content/testing.zh.json";
 import fingerprints from "./i18n/content.zh.sources.json";
@@ -35,7 +42,20 @@ export type TranslationCatalogs = Partial<
   >
 >;
 export const chineseContent: ContentTranslations = {};
-for (const group of [resources, paths, examples, toolkit, testing])
+for (const group of [
+  resources,
+  paths,
+  examples,
+  jamGames,
+  open3dGames,
+  open3dRound2Games,
+  open3dRound3Games,
+  itch3dGames,
+  open3dRound4Games,
+  browserPorts,
+  toolkit,
+  testing,
+])
   for (const [key, fields] of Object.entries(group)) {
     if (chineseContent[key])
       throw new Error(`Duplicate translation identity: ${key}`);
@@ -65,6 +85,26 @@ export const localizationSnapshot = {
 };
 export const translationHash = (value: unknown) =>
   createHash("sha256").update(JSON.stringify(value)).digest("hex");
+export function localizeGameplayMedia<
+  T extends {
+    alt: string;
+    caption: string;
+    localizations?: {
+      zh: { alt: string; caption: string; sourceHash: string };
+    };
+  },
+>(media: T, locale: Locale): T {
+  const copy = media.localizations?.zh;
+  if (
+    copy &&
+    copy.sourceHash !==
+      translationHash({ alt: media.alt, caption: media.caption })
+  )
+    throw new Error("Stale gameplay screenshot translation");
+  return locale === "zh" && copy
+    ? { ...media, alt: copy.alt, caption: copy.caption }
+    : media;
+}
 const structural = new Set([
   "id",
   "slug",
@@ -84,6 +124,15 @@ const structural = new Set([
   "official",
   "catalogResourceId",
   "recordingId",
+  "arxivId",
+  "doi",
+  "referenceType",
+  "primaryRole",
+  "roles",
+  "dimension",
+  "demoType",
+  "exampleId",
+  "testingIds",
 ]);
 export function canTranslate(
   entry: Pick<ContentEntry, "blocks" | "data">,
@@ -172,6 +221,26 @@ function localBlock(
         url: localizedPath(item.url, "zh", documents),
       })),
     };
+  if (block.type === "image") {
+    const media = localizeGameplayMedia(
+      {
+        alt: block.alt,
+        caption: block.label,
+        localizations: block.localizations,
+      },
+      "zh",
+    );
+    return {
+      ...block,
+      ...label,
+      alt: media.alt,
+      ...(block.localizations ? { label: media.caption } : {}),
+      ...(block.credit ? { credit: translate("zh", block.credit) } : {}),
+      ...(block.source
+        ? { source: localizedPath(block.source, "zh", documents) }
+        : {}),
+    };
+  }
   return { ...block, ...label };
 }
 export function localizeEntry<K extends ContentKind>(

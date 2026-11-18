@@ -10,6 +10,7 @@ import {
 import type { Json, Dictionary, Issue, Schema } from "./api";
 import { fieldId, labelFor } from "./api";
 import { FormOutline } from "./FormOutline";
+import { EnumChoices } from "./EnumChoices";
 
 function publicUrl(value: string | number) {
   try {
@@ -428,24 +429,13 @@ export function SchemaForm(props: Props) {
           </legend>
           {variant}
           {validationMessage}
-          <div className="checkbox-grid">
-            {item.enum.map((option) => (
-              <label key={String(option)}>
-                <input
-                  type="checkbox"
-                  checked={values.includes(option)}
-                  onChange={(event) =>
-                    onChange(
-                      event.target.checked
-                        ? [...values, option]
-                        : values.filter((item) => item !== option),
-                    )
-                  }
-                />
-                {String(option)}
-              </label>
-            ))}
-          </div>
+          <EnumChoices
+            options={item.enum}
+            values={values}
+            label={label}
+            id={id}
+            onChange={onChange}
+          />
         </fieldset>
       );
     return (

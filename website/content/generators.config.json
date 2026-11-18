@@ -1,6 +1,7 @@
 {
   "resource-catalog": {
-    "source": "AWESOME.md",
+    "source": "docs/AWESOME.md",
+    "legacySources": ["AWESOME.md"],
     "renderer": "scripts/catalog.mjs"
   },
   "game-builds": {

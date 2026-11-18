@@ -225,7 +225,7 @@ test("read-only documents and release pages do not retain an editable mobile sav
 
 test("late initial catalog loading cannot override an active search page", async ({
   page,
-}) => {
+}, info) => {
   await openAgent(page);
   let release!: () => void;
   const gate = new Promise<void>((resolve) => {
@@ -242,7 +242,8 @@ test("late initial catalog loading cannot override an active search page", async
       name: "切换内容目录",
       exact: true,
     });
-    if (await toggle.isVisible()) await toggle.click();
+    // Wait for hydration on mobile instead of sampling a not-yet-mounted toggle.
+    if (info.project.name === "mobile") await toggle.click();
     await page.getByLabel("搜索内容", { exact: true }).fill("document:catalog");
     release();
     await expect(

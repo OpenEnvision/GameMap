@@ -7,9 +7,18 @@ export const documentGenerators = JSON.parse(
     "utf8",
   ),
 );
+const ownsSource = (definition, source) =>
+  definition.source === source || definition.legacySources?.includes(source);
+
+export function canonicalDocumentSource(source) {
+  return Object.values(documentGenerators).find((definition) =>
+    ownsSource(definition, source),
+  )?.source ?? source;
+}
+
 export function documentOrigin(source) {
   const generator = Object.entries(documentGenerators).find(
-    ([, definition]) => definition.source === source,
+    ([, definition]) => ownsSource(definition, source),
   );
   return generator
     ? { sourceMode: "generated", generatorKey: generator[0] }
@@ -39,9 +48,8 @@ export function documentGenerator(document) {
     "Unregistered document generator",
   );
   const definition = documentGenerators[document.generatorKey];
-  assert.equal(
-    definition.source,
-    document.source,
+  assert.ok(
+    ownsSource(definition, document.source),
     "Document generator does not own this address",
   );
   return definition;

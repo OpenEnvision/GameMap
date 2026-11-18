@@ -8,7 +8,8 @@ import { MediaUploadBusyError } from "./media.mjs";
 import { ContentValidationError } from "./validation.mjs";
 import { canonicalJSON, safePath, readArtifact } from "./codec.mjs";
 import { first } from "./database.mjs";
-import { canonicalAddress } from "./adapters.mjs";
+import { canonicalAddress, collectionAddress } from "./adapters.mjs";
+import { handleCommunityModeration } from "../community/server.mjs";
 
 const uuid = z.uuid();
 const draftInput = z.strictObject({
@@ -241,6 +242,17 @@ export function createStudioServer({
         });
         return;
       }
+      if (
+        await handleCommunityModeration({
+          path,
+          request,
+          res,
+          session,
+          database,
+          media,
+        })
+      )
+        return;
       if (request.method === "POST" && path === "/api/logout") {
         response(
           res,
@@ -262,6 +274,64 @@ export function createStudioServer({
             ).entries,
         );
         response(res, 200, { entries });
+        return;
+      }
+      if (request.method === "GET" && path === "/api/research-sources") {
+        const query = z
+          .string()
+          .max(256)
+          .parse(url.searchParams.get("q") || "");
+        const offset = z.coerce
+          .number()
+          .int()
+          .min(0)
+          .max(100000)
+          .parse(url.searchParams.get("offset") || 0);
+        const result = await database.user(
+          session.user.id,
+          async (client) =>
+            (
+              await first(
+                client,
+                "select public.catalog_research_search($1,$2,40) as result",
+                [query, offset],
+              )
+            ).result,
+        );
+        response(res, 200, result);
+        return;
+      }
+      if (
+        request.method === "GET" &&
+        path.startsWith("/api/research-sources/")
+      ) {
+        const key = z
+          .string()
+          .regex(/^[a-f0-9]{64}$/)
+          .parse(path.slice("/api/research-sources/".length));
+        const source = await database.user(
+          session.user.id,
+          async (client) =>
+            (
+              await first(
+                client,
+                "select public.catalog_research_source($1) as source",
+                [key],
+              )
+            ).source,
+        );
+        response(
+          res,
+          source ? 200 : 404,
+          source
+            ? { source }
+            : {
+                error: {
+                  code: "not_found",
+                  message: "Research source not found",
+                },
+              },
+        );
         return;
       }
       if (request.method === "GET" && path === "/api/contracts") {
@@ -335,10 +405,8 @@ export function createStudioServer({
             ),
             { status: 409 },
           );
-        const [title, summary] = context.textFields[input.kind];
         const body = {
-          title: input.payload[title],
-          summary: input.payload[summary],
+          ...context.envelopeText(input.kind, input.payload),
           payload: input.payload,
           attachments: input.attachments,
         };
@@ -366,7 +434,7 @@ export function createStudioServer({
                 input.identifier,
                 input.payload,
               ),
-              context.pages[definition.page].path,
+              collectionAddress(context, input.kind, input.payload),
               canonicalJSON(body),
               input.expectedHead,
             ],

@@ -58,9 +58,31 @@ const projectionTables = {
 export function createCatalogWorker(
   database,
   context,
-  { sourceFiles = [], readAsset, realm } = {},
+  { sourceFiles = [], readAsset, realm, selectionKeys } = {},
 ) {
   const expectedRealm = parseReleaseRealm(realm);
+  // A trusted operator may publish a source-defined cohort without importing
+  // unrelated validated fixtures into validation or generated document bodies.
+  // This is worker configuration, never a browser request or a permission bypass.
+  let selectedKeys = null;
+  if (selectionKeys !== undefined) {
+    assert.ok(
+      Array.isArray(selectionKeys) &&
+        selectionKeys.length > 0 &&
+        selectionKeys.length <= 5000 &&
+        selectionKeys.every(
+          (key) => typeof key === "string" && key.length > 0,
+        ) &&
+        new Set(selectionKeys).size === selectionKeys.length,
+      "Selection keys must be a nonempty unique source-defined cohort",
+    );
+    selectedKeys = [...selectionKeys].sort();
+    const allowed = new Set(selectedKeys);
+    assert.ok(
+      context.registry.entries.every((entry) => allowed.has(entry.key)),
+      "A publication cohort must preserve every current source record",
+    );
+  }
   const configuration = context.configurationFromSources(
     context.sources,
     context.registry.entries,
@@ -80,7 +102,7 @@ export function createCatalogWorker(
     return role;
   }
   async function selection(client, { candidate, approved = false, ids } = {}) {
-    const params = [candidate ?? null, approved, ids ?? null];
+    const params = [candidate ?? null, approved, ids ?? null, selectedKeys];
     const rows = (
       await client.query(
         `select e.key, e.kind, e.identifier, e.owner, e.canonical_path, e.collection_path,
@@ -90,7 +112,7 @@ export function createCatalogWorker(
            when $2::boolean then r.state = 'approved'
            else r.id = $1::uuid or exists(select 1 from catalog.validation_receipts v where v.revision_id = r.id) end)
         order by (r.id = $1::uuid) desc nulls last, (r.state = 'approved') desc, r.sequence desc limit 1
-      ) r on true order by e.key`,
+      ) r on true where ($4::text[] is null or e.key = any($4::text[])) order by e.key`,
         params,
       )
     ).rows;

@@ -9,12 +9,16 @@ import type {
 } from "./models";
 import { contentKinds } from "./models";
 import { fieldRules, presentFields, assertKeys } from "./fields";
-import { pages, tracks, url, detailRoutes } from "./site";
+import { pages, tracks, url, detailRoutes, documentRedirects } from "./site";
 import type { Dimension } from "../src/types";
 import type { LearningMedia } from "../src/data/learningMedia";
 import type { ResourceIdentity } from "../src/data/resourceIdentities";
 import { publicAsset } from "../src/publicAsset";
 import { localizedPath, documentLanguages } from "./locale";
+import { researchExampleListings } from "./research-games";
+import open3dImport from "./open3d-import.config.json";
+import { anyPageCoverSchema, gameplayMediaSchema } from "./contracts";
+import type { GameplayMedia } from "../src/data/gameplayScreenshots";
 
 const imageKeys = {
   src: true,
@@ -48,6 +52,8 @@ const learningMediaKeys = {
   height: true,
 } satisfies Record<keyof LearningMedia, true>;
 const sourcePaths: Record<ContentKind, string> = {
+  paper: "website/content/extended-data.ts",
+  "threejs-game": "website/content/extended-data.ts",
   resource: "website/src/data/resources.json",
   example: "website/src/data/learningPaths.ts",
   foundation: "website/src/data/learningPaths.ts",
@@ -102,6 +108,85 @@ export function collectDemos(sources: ContentSources): DemoContent[] {
   });
 }
 
+function appendGameplayScreenshot(
+  entry: ContentEntry,
+  media: LearningMedia | GameplayMedia,
+  sourceKey: "learningMedia" | "researchGameMedia" | "gameplayScreenshots",
+) {
+  const complete =
+    "provenance" in media ? gameplayMediaSchema.parse(media) : undefined;
+  if (!complete)
+    assertKeys(media, learningMediaKeys, `${sourceKey}:${entry.id}`);
+  entry.blocks.push({
+    type: "image",
+    field: "gameplay",
+    label: media.caption,
+    src: /^(?:https?:|\/)/.test(media.src) ? media.src : publicAsset(media.src),
+    alt: media.alt,
+    source: media.sourceUrl,
+    width: media.width,
+    height: media.height,
+    ...(complete ? { localizations: complete.localizations } : {}),
+    credit:
+      media.origin === "creator-screenshot"
+        ? "Creator-published screenshot"
+        : media.origin === "local-capture"
+          ? "GameMap local capture"
+          : "GameMap browser capture",
+  });
+  if (media.capturedAt)
+    entry.blocks.push({
+      type: "text",
+      field: "captureDate",
+      label: "Screenshot captured",
+      value: media.capturedAt,
+    });
+  if (media.reviewedAt)
+    entry.blocks.push({
+      type: "text",
+      field: "mediaReviewed",
+      label: "Screenshot source reviewed",
+      value: media.reviewedAt,
+    });
+  if (media.originalImageUrl)
+    entry.blocks.push({
+      type: "links",
+      field: "originalImage",
+      label: "Original creator image",
+      items: [{ label: "Original creator image", url: media.originalImageUrl }],
+    });
+  if (complete)
+    entry.blocks.push(
+      {
+        type: "links",
+        field: "gameplayOriginalFiles",
+        section: "provenance",
+        label: "Screenshot source files",
+        items: [
+          {
+            label: "Preserved original screenshot",
+            url: publicAsset(complete.original.src),
+          },
+          {
+            label: "Complete screenshot frame",
+            url: publicAsset(complete.frame.src),
+          },
+          {
+            label: "Screenshot provenance",
+            url: publicAsset(complete.provenance.src),
+          },
+        ],
+      },
+      {
+        type: "text",
+        field: "gameplayRights",
+        section: "provenance",
+        label: "Screenshot rights",
+        value: complete.rights,
+      },
+    );
+}
+
 export function createRegistry(
   sources: ContentSources,
   documents: readonly DocumentMetadata[],
@@ -146,6 +231,10 @@ export function createRegistry(
     keys.set(key, entry as ContentEntry);
     return entry;
   }
+  for (const item of sources.papers)
+    add("paper", item.id, item, url.paper(item.id));
+  for (const item of sources.threejsGames)
+    add("threejs-game", item.id, item, url.threejsGame(item.id));
   for (const item of sources.resources) {
     const entry = add("resource", item.id, item, url.resource(item.id));
     const image = sources.projectMedia[item.id];
@@ -188,6 +277,13 @@ export function createRegistry(
     ["projectMedia", sources.projectMedia, resourceIds],
     ["identities", sources.identities, resourceIds],
     ["learningMedia", sources.learningMedia, caseIds],
+    [
+      "researchGameMedia",
+      sources.researchGameMedia,
+      new Set(
+        sources.repositoryResearch.records.map((item) => item.requested_repo),
+      ),
+    ],
   ] as const)
     for (const id of Object.keys(values))
       check(owners.has(id), `Orphan ${name} attachment: ${id}`);
@@ -195,66 +291,28 @@ export function createRegistry(
     check(caseIds.has(id), `Attribution refers to missing game case: ${id}`);
   for (const item of sources.learningPaths) {
     const attribution = sources.gameCaseAgents[item.id];
-    check(
-      attribution?.length,
-      `Missing creator-attributed client/model mapping: ${item.id}`,
-    );
+    if (item.category !== "community")
+      check(
+        attribution?.length,
+        `Missing creator-attributed client/model mapping: ${item.id}`,
+      );
     const entry = add("example", item.id, item, url.example(item.id));
-    entry.blocks.push({
-      type: "list",
-      field: "attribution",
-      label:
-        "Creator-attributed clients / models (not inferred from related tools)",
-      items: attribution.map((id) => {
-        const name = sources.agentLabels[id];
-        check(name, `Unknown attribution: ${id}`);
-        return name;
-      }),
-    });
+    if (attribution?.length)
+      entry.blocks.push({
+        type: "list",
+        field: "attribution",
+        label:
+          "Creator-attributed clients / models (not inferred from related tools)",
+        items: attribution.map((id) => {
+          const name = sources.agentLabels[id];
+          check(name, `Unknown attribution: ${id}`);
+          return name;
+        }),
+      });
     const media = sources.learningMedia[item.id];
-    check(media, `Missing gameplay screenshot: ${item.id}`);
-    assertKeys(media, learningMediaKeys, `learningMedia:${item.id}`);
-    entry.blocks.push({
-      type: "image",
-      field: "gameplay",
-      label: media.caption,
-      src: /^(?:https?:|\/)/.test(media.src)
-        ? media.src
-        : publicAsset(media.src),
-      alt: media.alt,
-      source: media.sourceUrl,
-      width: media.width,
-      height: media.height,
-      credit:
-        media.origin === "creator-screenshot"
-          ? "Creator-published screenshot"
-          : media.origin === "local-capture"
-            ? "GameMap local capture"
-            : "GameMap browser capture",
-    });
-    if (media.capturedAt)
-      entry.blocks.push({
-        type: "text",
-        field: "captureDate",
-        label: "Screenshot captured",
-        value: media.capturedAt,
-      });
-    if (media.reviewedAt)
-      entry.blocks.push({
-        type: "text",
-        field: "mediaReviewed",
-        label: "Screenshot source reviewed",
-        value: media.reviewedAt,
-      });
-    if (media.originalImageUrl)
-      entry.blocks.push({
-        type: "links",
-        field: "originalImage",
-        label: "Original creator image",
-        items: [
-          { label: "Original creator image", url: media.originalImageUrl },
-        ],
-      });
+    if (item.category !== "community")
+      check(media, `Missing gameplay screenshot: ${item.id}`);
+    if (media) appendGameplayScreenshot(entry, media, "learningMedia");
     for (const id of item.resourceIds)
       check(
         resourceIds.has(id),
@@ -263,13 +321,16 @@ export function createRegistry(
   }
   for (const item of sources.foundationPaths)
     add("foundation", item.id, item, url.example(item.id));
-  for (const item of sources.repositoryResearch.records)
-    add(
+  for (const item of sources.repositoryResearch.records) {
+    const entry = add(
       "repository-research",
       item.requested_repo,
       item,
       url.research(item.requested_repo),
     );
+    const media = sources.researchGameMedia[item.requested_repo];
+    if (media) appendGameplayScreenshot(entry, media, "researchGameMedia");
+  }
   for (const item of sources.agentGameResources) {
     if (item.catalogResourceId)
       check(
@@ -296,7 +357,15 @@ export function createRegistry(
     const art = sources.editorial[track];
     assertKeys(
       art,
-      { src: true, title: true, description: true, alt: true, index: true, credit: true, sourceUrl: true },
+      {
+        src: true,
+        title: true,
+        description: true,
+        alt: true,
+        index: true,
+        credit: true,
+        sourceUrl: true,
+      },
       `editorial:${track}`,
     );
     path.blocks.push({
@@ -343,13 +412,111 @@ export function createRegistry(
       resourceIds.has(item.resourceId),
       `Demo ${item.id} refers to missing resource ${item.resourceId}`,
     );
-    add("demo", item.id, item, url.demo(item.id));
+    const entry = add("demo", item.id, item, url.demo(item.id));
+    entry.collectionUrl = url.resource(item.resourceId);
   }
   for (const item of sources.communityCollections)
     add("collection", item.id, item, url.collection(item.id));
   for (const item of documents) {
     const entry = add("document", item.slug, item, url.document(item.slug));
     if (item.slug.startsWith("zh/")) entry.collectionUrl = "/docs/zh/";
+  }
+  for (const [key, value] of Object.entries(
+    sources.gameplayScreenshots || {},
+  )) {
+    const entry = keys.get(key);
+    check(
+      entry && ["example", "foundation", "threejs-game"].includes(entry.kind),
+      `Orphan gameplay screenshot: ${key}`,
+    );
+    check(
+      !entry.blocks.some((block) => block.field === "gameplay"),
+      `Duplicate gameplay screenshot: ${key}`,
+    );
+    appendGameplayScreenshot(entry, value.media, "gameplayScreenshots");
+    if (value.archivedPageCover) {
+      const cover = anyPageCoverSchema.parse(value.archivedPageCover);
+      entry.blocks.push({
+        type: "links",
+        field: "archivedPageCover",
+        section: "provenance",
+        label:
+          cover.origin === "catalog-page-capture"
+            ? "Earlier GameMap record cover — not gameplay"
+            : "Earlier project page cover — not gameplay",
+        items: [
+          {
+            label: "Original page capture",
+            url: publicAsset(cover.original.src),
+          },
+        ],
+      });
+    }
+  }
+  for (const [key, value] of Object.entries(sources.pageCovers || {})) {
+    const entry = keys.get(key);
+    check(
+      entry && ["example", "foundation", "threejs-game"].includes(entry.kind),
+      `Orphan page cover: ${key}`,
+    );
+    check(
+      !entry.blocks.some((block) => block.field === "gameplay"),
+      `Page cover cannot replace reviewed gameplay: ${key}`,
+    );
+    const cover = anyPageCoverSchema.parse(value);
+    entry.blocks.push(
+      {
+        type: "image",
+        field: "pageCover",
+        section: "media",
+        label: cover.caption,
+        src: publicAsset(cover.src),
+        alt: cover.alt,
+        source: /^(?:https?:)/.test(cover.sourceUrl)
+          ? cover.sourceUrl
+          : publicAsset(cover.sourceUrl),
+        credit:
+          cover.origin === "catalog-page-capture"
+            ? "GameMap record — not upstream or gameplay"
+            : "Project page cover — not gameplay",
+        width: cover.width,
+        height: cover.height,
+      },
+      {
+        type: "text",
+        field: "pageCoverCaptured",
+        section: "provenance",
+        label: "Page captured",
+        value: cover.capturedAt,
+      },
+      {
+        type: "links",
+        field: "pageCoverOriginal",
+        section: "provenance",
+        label: "Original page capture",
+        items: [
+          {
+            label: "Original page capture",
+            url: publicAsset(cover.original.src),
+          },
+        ],
+      },
+      {
+        type: "text",
+        field: "pageCoverRights",
+        section: "provenance",
+        label: "Page cover rights",
+        value: cover.rights,
+      },
+    );
+    if (cover.origin === "catalog-page-capture")
+      entry.blocks.push({
+        type: "text",
+        field: "pageCoverSnapshot",
+        section: "provenance",
+        label: "Source snapshot",
+        value: `${cover.sourceSnapshot.releaseId} · ${cover.sourceSnapshot.artifactSha256} · ${cover.sourceSnapshot.recordRevision}`,
+      });
   }
   const addresses = new Map<string, ContentEntry>();
   for (const entry of entries) {
@@ -364,6 +531,24 @@ export function createRegistry(
           if (target && item.label === target.id) item.label = target.title;
         }
   }
+  const researchListings = researchExampleListings(
+    entries.filter(
+      (entry): entry is ContentEntry<"repository-research"> =>
+        entry.kind === "repository-research",
+    ),
+    entries.filter(
+      (
+        entry,
+      ): entry is
+        | ContentEntry<"example">
+        | ContentEntry<"foundation">
+        | ContentEntry<"threejs-game"> =>
+        entry.kind === "example" ||
+        entry.kind === "foundation" ||
+        (entry.kind === "threejs-game" &&
+          open3dImport.includedLegacyThreejsIds.includes(entry.id)),
+    ),
+  );
   const registry: ContentRegistry = {
     entries,
     get: <K extends ContentKind>(kind: K, id: string) =>
@@ -376,6 +561,23 @@ export function createRegistry(
     all: <K extends ContentKind>(kind: K) =>
       entries.filter((entry) => entry.kind === kind) as ContentEntry<K>[],
     byKey: (key) => keys.get(key),
+    collectionDiscoveryFor: (entry) => {
+      const listed = researchListings.get(entry.key);
+      return listed
+        ? {
+            key: listed.key,
+            url: localizedPath(listed.url, entry.locale || "en"),
+            collectionUrl: localizedPath(
+              pages.examples.path,
+              entry.locale || "en",
+            ),
+          }
+        : {
+            key: entry.key,
+            url: entry.url,
+            collectionUrl: entry.collectionUrl,
+          };
+    },
     examplesFor: (ref) => {
       check(
         ref.kind === "resource" && resourceIds.has(ref.id),
@@ -403,6 +605,8 @@ export function expectedContentKeys(
   documents: readonly DocumentMetadata[],
 ) {
   return [
+    ...sources.papers.map((item) => `paper:${item.id}`),
+    ...sources.threejsGames.map((item) => `threejs-game:${item.id}`),
     ...sources.repositoryResearch.records.map(
       (item) => `repository-research:${item.requested_repo}`,
     ),
@@ -472,6 +676,7 @@ export function staticPagePaths(registry: ContentRegistry) {
       ...original.map((path) => localizedPath(path, "zh", documents)),
       "/zh/docs/",
       "/zh/404/",
+      ...Object.keys(documentRedirects),
     ]),
   ];
 }

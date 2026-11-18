@@ -48,7 +48,8 @@ export function validate(records){
  return records;
 }
 const tableSafe=s=>s.replaceAll('|','\\|').replaceAll('\n',' ');
-export function renderAwesome(records){
+export function renderAwesome(records, {source='AWESOME.md'}={}){
+ if(!['AWESOME.md','docs/AWESOME.md'].includes(source))throw Error('Unsupported resource catalog source path');
  records=canonicalValue(records);
  const total=records.length;
  let text=`# Awesome AI Game Development
@@ -112,5 +113,6 @@ export function renderAwesome(records){
 
 Edit only \`data/segments/*.json\` for catalog content. Run \`npm run build\` to regenerate the list and website, and \`npm run check\` to validate the data and generated outputs. There is no automatic scraping or scheduled updating. Code, weights, data, and services may have different licenses; read the relevant official terms before use. External projects belong to their respective authors.
 `;
+ if(source==='docs/AWESOME.md')text=text.replaceAll('](docs/','](').replaceAll('](CONTRIBUTING.md)','](../CONTRIBUTING.md)').replaceAll('](data/resources.json)','](../data/resources.json)');
  return text;
 }

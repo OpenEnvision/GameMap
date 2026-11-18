@@ -1,9 +1,19 @@
 {
   "website/src/data/resources.json": {
-    "exports": { "default": { "shape": "array", "kind": "resource" } }
+    "exports": {
+      "default": {
+        "shape": "array",
+        "kind": "resource"
+      }
+    }
   },
   "data/resources.json": {
-    "exports": { "default": { "shape": "array", "kind": "resource" } }
+    "exports": {
+      "default": {
+        "shape": "array",
+        "kind": "resource"
+      }
+    }
   },
   "data/segments/repository-research.json": {
     "exports": {
@@ -30,46 +40,90 @@
   },
   "website/src/data/learningPaths.ts": {
     "exports": {
-      "learningPaths": { "shape": "array", "kind": "example" },
-      "foundationPaths": { "shape": "array", "kind": "foundation" },
-      "communityCollections": { "shape": "array", "kind": "collection" }
+      "learningPaths": {
+        "shape": "array",
+        "kind": "example"
+      },
+      "foundationPaths": {
+        "shape": "array",
+        "kind": "foundation"
+      },
+      "communityCollections": {
+        "shape": "array",
+        "kind": "collection"
+      }
     }
   },
   "website/src/data/ai3dCases.ts": {
-    "exports": { "ai3dCases": { "shape": "array", "kind": "example" } }
+    "exports": {
+      "ai3dCases": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
   },
   "website/src/data/aiCommunityCases.ts": {
-    "exports": { "aiCommunityCases": { "shape": "array", "kind": "example" } }
+    "exports": {
+      "aiCommunityCases": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
   },
   "website/src/data/openGameCases.ts": {
-    "exports": { "openGameCases": { "shape": "array", "kind": "example" } }
+    "exports": {
+      "openGameCases": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
   },
   "website/src/data/community2dExpansion.ts": {
     "exports": {
-      "community2dExpansion": { "shape": "array", "kind": "example" }
+      "community2dExpansion": {
+        "shape": "array",
+        "kind": "example"
+      }
     }
   },
   "website/src/data/community3dExpansion.ts": {
     "exports": {
-      "community3dExpansion": { "shape": "array", "kind": "example" }
+      "community3dExpansion": {
+        "shape": "array",
+        "kind": "example"
+      }
     }
   },
   "website/src/data/diverseCommunityCases.ts": {
     "exports": {
-      "diverseCommunityCases": { "shape": "array", "kind": "example" }
+      "diverseCommunityCases": {
+        "shape": "array",
+        "kind": "example"
+      }
     }
   },
   "website/src/data/geminiCliCases.ts": {
-    "exports": { "geminiCliCases": { "shape": "array", "kind": "example" } }
+    "exports": {
+      "geminiCliCases": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
   },
   "website/src/data/communityResearch.ts": {
     "exports": {
-      "communityCollections": { "shape": "array", "kind": "collection" }
+      "communityCollections": {
+        "shape": "array",
+        "kind": "collection"
+      }
     }
   },
   "website/src/data/agentGameResources.ts": {
     "exports": {
-      "agentGameResources": { "shape": "array", "kind": "agent" },
+      "agentGameResources": {
+        "shape": "array",
+        "kind": "agent"
+      },
       "gameCaseAgents": {
         "shape": "lookup",
         "kind": "example",
@@ -98,6 +152,11 @@
   },
   "website/src/data/agentGameTypes.ts": {
     "exports": {
+      "agentLabelsV1": {
+        "shape": "metadata",
+        "kind": "agent",
+        "reason": "Frozen vocabulary for installed v1 tool and example attachment readers."
+      },
       "agentLabels": {
         "shape": "metadata",
         "kind": "agent",
@@ -107,6 +166,40 @@
         "shape": "metadata",
         "kind": "agent",
         "reason": "Shared category schema, not a separate material collection."
+      }
+    }
+  },
+  "website/src/data/open3dGames.ts": {
+    "exports": {
+      "open3dGames": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
+  },
+  "data/segments/open-3d-import.json": {
+    "exports": {
+      "default": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "Immutable user-supplied intake, source hashes, category exclusions and deduplication mappings; not independent source, license, build or gameplay verification. Accepted rows have typed example owners through open3dGames.ts."
+      }
+    }
+  },
+  "website/src/data/jamGames.ts": {
+    "exports": {
+      "jamGames": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
+  },
+  "data/segments/jam-games.json": {
+    "exports": {
+      "default": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "Primary-source discovery evidence, deferred candidates and duplicate decisions for jamGames; published in website/public/jam-discovery.json and referenced in the game guide. Not execution certification."
       }
     }
   },
@@ -135,8 +228,14 @@
   },
   "website/src/data/testingResources.ts": {
     "exports": {
-      "testingResources": { "shape": "array", "kind": "testing" },
-      "testingStarterPacks": { "shape": "array", "kind": "testing-pack" },
+      "testingResources": {
+        "shape": "array",
+        "kind": "testing"
+      },
+      "testingStarterPacks": {
+        "shape": "array",
+        "kind": "testing-pack"
+      },
       "testingReviewDate": {
         "shape": "metadata",
         "kind": "testing",
@@ -160,21 +259,44 @@
     }
   },
   "website/src/data/testingProjects.ts": {
-    "exports": { "testingProjects": { "shape": "array", "kind": "testing" } }
+    "exports": {
+      "testingProjects": {
+        "shape": "array",
+        "kind": "testing"
+      }
+    }
   },
   "website/src/data/testingEnvironments.ts": {
     "exports": {
-      "testingEnvironments": { "shape": "array", "kind": "testing" }
+      "testingEnvironments": {
+        "shape": "array",
+        "kind": "testing"
+      }
     }
   },
   "website/src/data/testingAssets.ts": {
-    "exports": { "testingAssets": { "shape": "array", "kind": "testing" } }
+    "exports": {
+      "testingAssets": {
+        "shape": "array",
+        "kind": "testing"
+      }
+    }
   },
   "website/src/data/testingMotion.ts": {
-    "exports": { "testingMotion": { "shape": "array", "kind": "testing" } }
+    "exports": {
+      "testingMotion": {
+        "shape": "array",
+        "kind": "testing"
+      }
+    }
   },
   "website/src/data/plans.ts": {
-    "exports": { "plans": { "shape": "plans", "kind": "step" } }
+    "exports": {
+      "plans": {
+        "shape": "plans",
+        "kind": "step"
+      }
+    }
   },
   "website/src/data/showcase.ts": {
     "exports": {
@@ -186,7 +308,12 @@
     }
   },
   "website/src/data/recordings.ts": {
-    "exports": { "recordings": { "shape": "media", "kind": "demo" } }
+    "exports": {
+      "recordings": {
+        "shape": "media",
+        "kind": "demo"
+      }
+    }
   },
   "website/src/data/projectMedia.ts": {
     "exports": {
@@ -203,6 +330,33 @@
         "shape": "lookup",
         "kind": "example",
         "sourceKey": "learningMedia"
+      }
+    }
+  },
+  "website/src/data/jamGameMedia.ts": {
+    "exports": {
+      "jamGameMedia": {
+        "shape": "lookup",
+        "kind": "example",
+        "sourceKey": "learningMedia"
+      }
+    }
+  },
+  "data/segments/jam-game-media.json": {
+    "exports": {
+      "default": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "Source attribution, unchanged source-frame hashes, visual-review decisions and explicit gaps for jamGameMedia; published as website/public/game-screenshot-sources.json and linked from the bilingual media-source guide. Not rights or execution clearance."
+      }
+    }
+  },
+  "website/src/data/researchGameMedia.ts": {
+    "exports": {
+      "researchGameMedia": {
+        "shape": "lookup",
+        "kind": "repository-research",
+        "sourceKey": "researchGameMedia"
       }
     }
   },
@@ -239,6 +393,138 @@
         "shape": "metadata",
         "kind": "resource",
         "reason": "Rendering adapter for the independently registered identity JSON, used by ResourceIcon."
+      }
+    }
+  },
+  "website/content/extended-data.ts": {
+    "exports": {
+      "papers": {
+        "shape": "array",
+        "kind": "paper"
+      },
+      "threejsGames": {
+        "shape": "array",
+        "kind": "threejs-game"
+      }
+    }
+  },
+  "website/src/data/open3dRound2Games.ts": {
+    "exports": {
+      "open3dRound2Games": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
+  },
+  "data/segments/open-3d-import-round2.json": {
+    "exports": {
+      "default": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "Immutable second supplied directory with original rows, hash, admissions, canonical aliases and exclusions. Not independent source/release/license/runtime certification."
+      }
+    }
+  },
+  "website/src/data/open3dRound3Games.ts": {
+    "exports": {
+      "open3dRound3Games": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
+  },
+  "data/segments/open-3d-import-round3.json": {
+    "exports": {
+      "default": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "Immutable third supplied directory, original rows, source hash, admissions, deduplication and category exclusions. Not independent source/release/license/runtime certification."
+      }
+    }
+  },
+  "website/src/data/itch3dGames.ts": {
+    "exports": {
+      "itch3dGames": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
+  },
+  "data/segments/itch-3d-import.json": {
+    "exports": {
+      "default": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "Complete original itch directory, hash, source-only admission decisions, recovery provenance, candidate/exclusion boundaries and related-edition identity mappings; no independent rights/runtime quality certification."
+      }
+    }
+  },
+  "website/src/data/open3dRound4Games.ts": {
+    "exports": {
+      "open3dRound4Games": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
+  },
+  "website/src/data/browserPortGames.ts": {
+    "exports": {
+      "browserPortGames": {
+        "shape": "array",
+        "kind": "example"
+      }
+    }
+  },
+  "website/src/data/browserPortCollections.ts": {
+    "exports": {
+      "browserPortCollections": {
+        "shape": "array",
+        "kind": "collection"
+      }
+    }
+  },
+  "data/segments/open-3d-import-round4.json": {
+    "exports": {
+      "default": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "Complete original fourth directory, hash, source-only game/prototype admissions and other-category exclusions; no independent source/release/license/runtime certification."
+      }
+    }
+  },
+  "data/segments/browser-port-research.json": {
+    "exports": {
+      "default": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "All 25 supplied references, original structured text/hash, fetched text evidence and denied/speculative probes, explicit game/project/candidate/aggregation dispositions. Source ports, decompilation, reimplementation and emulation are distinct; code is not asset permission and no game was executed."
+      }
+    }
+  },
+  "website/src/data/gameplayScreenshots.ts": {
+    "exports": {
+      "gameplayScreenshots": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "Empty Git default for database-owned complete gameplay screenshots, keyed by full example/foundation/threejs-game content keys; selected attachments hydrate this map without exporting database records to Git."
+      }
+    }
+  },
+  "website/src/data/pageCovers.ts": {
+    "exports": {
+      "pageCovers": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "Empty Git default for explicitly imported database-owned page-cover attachments. Full content keys span example, foundation and threejs-game; no gameplay screenshots or remote business records are copied into Git defaults."
+      }
+    }
+  },
+  "data/segments/project-page-covers.json": {
+    "exports": {
+      "default": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "Explicitly imported, reviewed fallback page-cover evidence for published example/foundation/threejs-game full keys; preserves originals, hashes, source snapshots and non-gameplay/source-access qualifications. Not Git authoring business records or gameplay proof."
       }
     }
   }

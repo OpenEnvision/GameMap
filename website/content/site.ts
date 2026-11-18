@@ -1,15 +1,32 @@
 import type { Dimension } from "../src/types";
+import retiredDocumentRoutes from "./document-redirects.json";
+
+export const documentRedirects: Record<string, string> = retiredDocumentRoutes;
+export function retiredDocumentTarget(pathname: string, base = "/") {
+  const prefix = base.replace(/\/$/, "");
+  const relative = pathname.startsWith(prefix + "/")
+    ? pathname.slice(prefix.length)
+    : pathname;
+  const target =
+    documentRedirects[relative.endsWith("/") ? relative : relative + "/"];
+  return target ? prefix + target : null;
+}
 
 export const siteOrigin = "https://openenvision.github.io";
+// Recording details remain addressable from resources after the gallery is retired.
+const demoDetailBase = "/showcase/";
 /** The only declaration of routes and navigation. URL helpers use these paths. */
 export const pages = {
-  home: { path: "/", module: "routes/home.tsx", title: "Home", nav: "hidden" },
-  explore: {
-    path: "/explore/",
-    module: "routes/explore.tsx",
-    title: "All content",
+  account: { path: "/account/", module: "routes/account.tsx", title: "My account", nav: "hidden" },
+  submit: { path: "/submit/", module: "routes/submit.tsx", title: "Submit a game", nav: "hidden" },
+  works: { path: "/works/", module: "routes/work.tsx", title: "Community work", nav: "hidden" },
+  threejsGames: {
+    path: "/threejs-games/",
+    module: "routes/threejs-games.tsx",
+    title: "Three.js games",
     nav: "secondary",
   },
+  home: { path: "/", module: "routes/home.tsx", title: "Home", nav: "hidden" },
   resources: {
     path: "/resources/",
     module: "routes/resources.tsx",
@@ -20,6 +37,12 @@ export const pages = {
     path: "/examples/",
     module: "routes/examples.tsx",
     title: "Game examples",
+    nav: "primary",
+  },
+  papers: {
+    path: "/papers/",
+    module: "routes/papers.tsx",
+    title: "Papers",
     nav: "primary",
   },
   agents: {
@@ -38,12 +61,6 @@ export const pages = {
     path: "/paths/",
     module: "routes/paths.tsx",
     title: "Development paths",
-    nav: "secondary",
-  },
-  demos: {
-    path: "/showcase/",
-    module: "routes/showcase.tsx",
-    title: "Project demos",
     nav: "secondary",
   },
   testing: {
@@ -67,6 +84,20 @@ export const pages = {
 } as const;
 export type PageId = keyof typeof pages;
 export const detailRoutes = [
+  {
+    id: "paper-detail",
+    path: "/papers/:paperId",
+    param: "paperId",
+    kinds: ["paper"],
+    module: "routes/content.tsx",
+  },
+  {
+    id: "threejs-game-detail",
+    path: "/threejs-games/:gameId",
+    param: "gameId",
+    kinds: ["threejs-game"],
+    module: "routes/content.tsx",
+  },
   {
     id: "resource-detail",
     path: "/resources/:resourceId",
@@ -97,7 +128,7 @@ export const detailRoutes = [
   },
   {
     id: "demo-detail",
-    path: "/showcase/:demoId",
+    path: `${demoDetailBase}:demoId`,
     param: "demoId",
     kinds: ["demo"],
     module: "routes/content.tsx",
@@ -130,6 +161,9 @@ export const navigation = Object.entries(pages)
   .map(([id, definition]) => ({ id: id as PageId, ...definition }))
   .filter((page) => page.nav !== "hidden");
 export const url = {
+  paper: (id: string) => `${pages.papers.path}${encodeURIComponent(id)}/`,
+  threejsGame: (id: string) =>
+    `${pages.threejsGames.path}${encodeURIComponent(id)}/`,
   page: (id: PageId) => pages[id].path,
   resource: (id: string) => `${pages.resources.path}${encodeURIComponent(id)}/`,
   example: (id: string) => `${pages.examples.path}${encodeURIComponent(id)}/`,
@@ -137,7 +171,7 @@ export const url = {
   testing: (id: string) => `${pages.testing.path}${encodeURIComponent(id)}/`,
   testingPack: (id: string) =>
     `${pages.testing.path}#pack-${encodeURIComponent(id)}`,
-  demo: (id: string) => `${pages.demos.path}${encodeURIComponent(id)}/`,
+  demo: (id: string) => `${demoDetailBase}${encodeURIComponent(id)}/`,
   path: (id: string) => `${pages.paths.path}${encodeURIComponent(id)}/`,
   step: (track: string, id: string) =>
     `${pages.paths.path}${encodeURIComponent(track)}/#${encodeURIComponent(id)}`,

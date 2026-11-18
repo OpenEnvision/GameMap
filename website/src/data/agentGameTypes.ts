@@ -1,6 +1,7 @@
 import type { PayloadModels } from '../../content/contracts';
 
-export const agentLabels = {
+// Historical v1 tool/attachment vocabulary must not expand when attribution readers evolve.
+export const agentLabelsV1 = {
   codex: 'Codex',
   'claude-code': 'Claude Code',
   'gemini-cli': 'Gemini CLI',
@@ -26,7 +27,14 @@ export const agentLabels = {
   other: 'Other / unspecified agent',
 } as const;
 
-export type AgentId = keyof typeof agentLabels;
+// Source-attributed clients in the preserved agents loader; not verified endorsements.
+export const agentLabels = {
+  ...agentLabelsV1,
+  'claude-cowork': 'Claude Cowork',
+  'roo-code': 'Roo Code',
+} as const;
+export type AgentId = keyof typeof agentLabelsV1;
+export type AttributionAgentId = keyof typeof agentLabels;
 
 export const agentResourceKinds = {
   skill: 'Skills & instructions',

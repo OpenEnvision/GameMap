@@ -1,6 +1,7 @@
 import {build} from 'esbuild';
 import {canonicalValue} from './lib/catalog/codec.mjs';
 import {fileURLToPath} from 'node:url';
+import documentRedirects from '../website/content/document-redirects.json' with {type:'json'};
 
 export async function loadAgentCodeContent(){
  const bundle=await build({
@@ -91,6 +92,7 @@ export function validateAgentCodeContent(resources,cases,caseAgents,labels,kinds
   if(!idPattern.test(game.id))fail(`Invalid agent-code game case ID: ${game.id}`);
   if(caseIds.has(game.id))fail(`Duplicate agent-code game case ID: ${game.id}`);
   caseIds.add(game.id);
+  if(game.category==='community'&&!Object.hasOwn(caseAgents,game.id))continue;
   if(!Object.hasOwn(caseAgents,game.id))fail(`Missing game agent attribution: ${game.id}`);
   requireAgents(caseAgents[game.id],labels,game.id);
   requireHttps(game.source?.url,'game source',game.id);
@@ -116,6 +118,9 @@ const agentNames=(agents,labels)=>agents.map(agent=>inline(labels[agent])).join(
 export function renderAgentCodeGuide(resources,cases,caseAgents,labels,kinds){
  [resources,cases,caseAgents,labels,kinds]=canonicalValue([resources,cases,caseAgents,labels,kinds]);
  validateAgentCodeContent(resources,cases,caseAgents,labels,kinds);
+ if(documentRedirects['/docs/coding-agent-game-code/'])return '# Game examples\n\nThis catalog has moved to [Game examples](/examples/).\n';
+ // This guide is about evidenced AI attribution, not the complete game catalog.
+ cases=cases.filter(game=>caseAgents[game.id]?.length);
  let text=`# Coding agents × game development: code resources and game sources
 
 Find engine bridges, implementation code, and setup instructions for coding agents. To study a complete project, use the [game cases](tutorials-and-demos.md); to check permissions and reset behavior, use the [interface notes](agent-interface-evidence.md).

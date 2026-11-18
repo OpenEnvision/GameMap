@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile, stat, access } from "node:fs/promises";
 import { resolve, sep } from "node:path";
 import { parse } from "parse5";
+import { assertHistoricalDocumentEvidence } from "./lib/remote-document-evidence.mjs";
 
 const root = resolve("dist");
 const site = JSON.parse(
@@ -47,7 +48,7 @@ for (const path of site.pages) {
     1,
     `One clear page title: ${path || "/"}`,
   );
-  assert.ok(!html.includes("chatgpt.site"), `Legacy hosting URL in ${path}`);
+  assertHistoricalDocumentEvidence(html, path);
   if (site.docs.some(document=>path===`docs/${document.slug}/`)) {
     const body = tree.find((node) =>
       node.attrs.some(

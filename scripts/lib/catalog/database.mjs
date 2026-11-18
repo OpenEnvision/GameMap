@@ -10,20 +10,39 @@ export const first = async (client, text, values = []) =>
   (await client.query(text, values)).rows[0];
 
 /** All request identities come from verified Auth sessions, never body parameters. */
-export function databaseAdapter(transaction, close = async () => {}) {
+export function databaseAdapter(
+  transaction,
+  close = async () => {},
+  {
+    backendRole = "catalog_backend",
+    userRole = "authenticated",
+    anonymousRole = "anon",
+  } = {},
+) {
+  if (
+    !["catalog_backend", "community_backend"].includes(backendRole) ||
+    !["authenticated", "community_user"].includes(userRole) ||
+    !["anon", "community_anon"].includes(anonymousRole)
+  )
+    throw new Error("Unknown backend role");
   return {
     system: (run) =>
       transaction(async (client) => {
-        await client.query("set local role catalog_backend");
+        await client.query(`set local role ${backendRole}`);
+        return run(client);
+      }),
+    anonymous: (run) =>
+      transaction(async (client) => {
+        await client.query(`set local role ${anonymousRole}`);
         return run(client);
       }),
     async user(userId, run) {
       if (!uuid.test(userId)) throw new Error("Invalid authenticated identity");
       return transaction(async (client) => {
-        await client.query("set local role authenticated");
+        await client.query(`set local role ${userRole}`);
         await client.query(
           "select set_config('request.jwt.claim.sub', $1, true), set_config('request.jwt.claims', $2, true)",
-          [userId, JSON.stringify({ sub: userId, role: "authenticated" })],
+          [userId, JSON.stringify({ sub: userId, role: userRole })],
         );
         return run(client);
       });
@@ -31,7 +50,7 @@ export function databaseAdapter(transaction, close = async () => {}) {
     close,
   };
 }
-export function connectDatabase(url) {
+export function connectDatabase(url, options = {}) {
   let host;
   try {
     const parsed = new URL(url);
@@ -77,5 +96,6 @@ export function connectDatabase(url) {
         }),
       ),
     () => sql.end({ timeout: 5 }),
+    options,
   );
 }

@@ -67,6 +67,34 @@ test("all source kinds, fragments, attachments, and raw exports have registered 
     ) > registry.entries.length,
   );
 });
+test("retiring the Showcase listing preserves recordings under their resource owners", () => {
+  const retired = new Set(["/showcase/", "/zh/showcase/"]);
+  for (const page of Object.values(context.pages))
+    assert.ok(!retired.has(page.path));
+  for (const page of context.navigation)
+    assert.ok(!retired.has(page.path));
+  for (const path of context.staticPagePaths(registry))
+    assert.ok(!retired.has(path));
+
+  const demos = registry.all("demo");
+  assert.deepEqual(demos.map((entry) => entry.data), collectDemos(sources));
+  const chinese = context.localizedRegistry(registry, "zh");
+  for (const entry of demos) {
+    assert.equal(entry.url, `/showcase/${encodeURIComponent(entry.id)}/`);
+    assert.equal(entry.collectionUrl, context.url.resource(entry.data.resourceId));
+    assert.ok(registry.get("resource", entry.data.resourceId));
+    const localized = chinese.require("demo", entry.id);
+    assert.equal(localized.url, "/zh" + entry.url);
+    assert.equal(localized.collectionUrl, "/zh" + entry.collectionUrl);
+  }
+  for (const entry of registry.entries) {
+    assert.ok(!retired.has(entry.collectionUrl), entry.key);
+    for (const block of entry.blocks)
+      if (block.type === "links")
+        for (const item of block.items)
+          assert.ok(!retired.has(item.url), `${entry.key}.${block.field}`);
+  }
+});
 test("ignored and hidden local notes cannot be published as documentation", () => {
   const visible = new Set(["docs/public.md"]);
   assert.equal(publishablePath(".env.notes.md", visible), false);
@@ -404,11 +432,15 @@ test("site language links preserve filters, anchors and explicit document counte
   );
   assert.equal(
     context.localizedPath("/docs/zh/reading-guide/", "en", languages),
-    "/docs/",
+    "/docs/reading-guide/",
   );
   assert.equal(
     context.localizedPath("/docs/agents-notes/", "zh", languages),
-    "/zh/docs/agents-notes/",
+    "/docs/zh/agents-notes/",
+  );
+  assert.equal(
+    context.localizedPath("/docs/asset-validation-contracts/", "zh", languages),
+    "/docs/zh/asset-validation-contracts/",
   );
   assert.equal(
     context.localizedPath("/media/source.webm", "zh", languages),

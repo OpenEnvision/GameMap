@@ -30,7 +30,7 @@ test("migration is deterministic and independently covers every current kind and
   const report = await verifyImportBundle(bundle, { filesRoot: root, context });
   assert.equal(report.entries, context.registry.entries.length);
   for (const kind of Object.keys(context.contentKinds))
-    assert.equal(report.counts[kind], context.registry.all(kind).length);
+    assert.equal(report.counts[kind] ?? 0, context.registry.all(kind).length);
   assert.deepEqual(
     new Set(bundle.snapshot.entries.map((row) => row.canonical_path)),
     new Set(context.registry.entries.map((row) => row.url)),

@@ -24,8 +24,9 @@ const types = {
   ".data": "text/x-script",
 };
 /** Only the current site's files are served, never its receipt, journal, credentials or older HTML. */
-export function createPublicationServer(directory) {
+export function createPublicationServer(directory, { community } = {}) {
   return createServer(async (request, response) => {
+    if (community && (await community.handle(request, response))) return;
     if (!["GET", "HEAD"].includes(request.method)) {
       response.writeHead(405);
       response.end();

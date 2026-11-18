@@ -36,6 +36,16 @@ import type {
 } from "./api";
 import { emptyValue, SchemaForm } from "./SchemaForm";
 import { kindLabelFor } from "./field-labels";
+import { RevisionDiff } from "./RevisionDiff";
+import { ResearchEvidence } from "./ResearchEvidence";
+import { CommunityModeration } from "./CommunityModeration";
+import { ActionRequirements, requirementId } from "./ActionRequirements";
+import {
+  operationMessages,
+  reviewBlocker,
+  type Operation,
+  type ReviewAction,
+} from "./workflow";
 
 const states: Record<string, string> = {
   draft: "草稿",
@@ -71,30 +81,6 @@ const nested = (value: Dictionary, path: string[], next: Json): Dictionary => {
       : next,
   };
 };
-function differences(
-  before: unknown,
-  after: unknown,
-  prefix = "",
-): { field: string; before: unknown; after: unknown }[] {
-  if (JSON.stringify(before) === JSON.stringify(after)) return [];
-  if (
-    before &&
-    after &&
-    typeof before === "object" &&
-    typeof after === "object" &&
-    !Array.isArray(before) &&
-    !Array.isArray(after)
-  ) {
-    const left = before as Record<string, unknown>,
-      right = after as Record<string, unknown>;
-    return [...new Set([...Object.keys(left), ...Object.keys(right)])].flatMap(
-      (key) =>
-        differences(left[key], right[key], prefix ? `${prefix}.${key}` : key),
-    );
-  }
-  return [{ field: prefix, before, after }];
-}
-
 function StudioBrand() {
   return (
     <div className="brand" aria-label="GameMap Studio">
@@ -122,10 +108,12 @@ export default function App() {
     [translations, setTranslations] = useState<Translation[]>([]);
   const [sourceHashes, setSourceHashes] = useState<Record<string, string>>({});
   const [dirty, setDirty] = useState(false),
-    [busy, setBusy] = useState(false),
+    [pendingAction, setPendingAction] = useState<Operation | null>(null),
     [notice, setNotice] = useState(""),
     [error, setError] = useState(""),
     [issues, setIssues] = useState<Issue[]>([]);
+  const operationRef = useRef<Operation | null>(null);
+  const busy = pendingAction !== null;
   const [query, setQuery] = useState(""),
     [kindFilter, setKindFilter] = useState("all"),
     [stateFilter, setStateFilter] = useState("all"),
@@ -215,21 +203,44 @@ export default function App() {
   const parent = history.find(
     (candidate) => candidate.id === revision?.parent_id,
   );
-  const changes = useMemo(
-    () => differences(parent?.body, revision?.body),
-    [parent, revision],
-  );
-  const canSubmit = Boolean(
-    revision &&
-    revision.state === "draft" &&
-    revision.validated &&
-    (revision.created_by === session?.user?.id || session?.role === "admin"),
-  );
-  const canReview = Boolean(
-    reviewer &&
-    revision?.state === "in_review" &&
-    revision.created_by !== session?.user?.id,
-  );
+  const reviewReason = (action: ReviewAction, batch = false) => {
+    if (batch && selectedEntries.length !== selected.size)
+      return "所选修订已变化，请重新选择。";
+    return reviewBlocker({
+      action,
+      revisions: batch ? selectedEntries : revision ? [revision] : [],
+      role: session?.role,
+      userId: session?.user?.id,
+      dirty,
+      note,
+    });
+  };
+  const reviewRequirements = [
+    { id: "submit-help", label: "提交审核", reason: reviewReason("submit") },
+    { id: "approve-help", label: "批准修订", reason: reviewReason("approve") },
+    { id: "reject-help", label: "退回修改", reason: reviewReason("reject") },
+  ];
+  const bulkRequirements = [
+    {
+      id: "bulk-submit-help",
+      label: "提交审核",
+      reason: reviewReason("submit", true),
+    },
+    {
+      id: "bulk-approve-help",
+      label: "批准",
+      reason: reviewReason("approve", true),
+    },
+  ];
+  const actionDescription = (id: string, batch = false) =>
+    busy
+      ? "operation-status"
+      : requirementId(batch ? bulkRequirements : reviewRequirements, id);
+  const validationReason = dirty
+    ? "请先保存本地修改，再校验已保存修订。"
+    : !baseId
+      ? "先保存草稿，再进行校验。"
+      : "";
   const outgoing = {
     kind,
     identifier,
@@ -248,8 +259,11 @@ export default function App() {
       setSession({ configured: true, signedIn: false });
     }
   };
-  const perform = async (run: () => Promise<void>) => {
-    setBusy(true);
+  const perform = async (action: Operation, run: () => Promise<void>) => {
+    if (operationRef.current) return;
+    operationRef.current = action;
+    setPendingAction(action);
+    setNotice("");
     setError("");
     setIssues([]);
     try {
@@ -257,7 +271,8 @@ export default function App() {
     } catch (problem) {
       handleError(problem);
     } finally {
-      setBusy(false);
+      operationRef.current = null;
+      setPendingAction(null);
     }
   };
   const refresh = async () => {
@@ -269,7 +284,11 @@ export default function App() {
     setReleases(versions.releases);
     return catalog.entries;
   };
-  const openEntry = async (target: Entry, id = target.head_revision_id) => {
+  const openEntry = async (
+    target: Entry,
+    id = target.head_revision_id,
+    navigate = true,
+  ) => {
     const result = await api<{ history: Revision[] }>(
       `/history?key=${encodeURIComponent(target.key)}`,
     );
@@ -291,7 +310,7 @@ export default function App() {
     setPreview(null);
     setNote("");
     setTab("content");
-    setSection("catalog");
+    if (navigate) setSection("catalog");
     setIssues([]);
     setError("");
     window.history.replaceState(
@@ -316,7 +335,7 @@ export default function App() {
   }, []);
   useEffect(() => {
     if (!session?.signedIn) return;
-    void perform(async () => {
+    void perform("load", async () => {
       const metadata = await api<Contracts>("/contracts");
       setContracts(metadata);
       const loaded = await refresh();
@@ -326,7 +345,8 @@ export default function App() {
       if (target) {
         if (!activeFilters.current)
           setPage(Math.floor(loaded.indexOf(target) / 30));
-        await openEntry(target);
+        // Loading the default record must not pull a user out of another workspace.
+        await openEntry(target, target.head_revision_id, false);
       }
     });
   }, [session?.signedIn]);
@@ -390,7 +410,7 @@ export default function App() {
     window.history.replaceState(null, "", location.pathname);
   };
   const save = () =>
-    perform(async () => {
+    perform("save", async () => {
       if (!identifier.trim())
         throw new Error("填写稳定标识；发布后不会随标题变化。");
       if (translations.some((row) => !/^[a-f0-9]{64}$/.test(row.source_hash)))
@@ -409,7 +429,7 @@ export default function App() {
       );
     });
   const validate = () =>
-    perform(async () => {
+    perform("validate", async () => {
       if (!baseId || dirty)
         throw new Error("先保存当前改动，再校验这份不可变修订。");
       const result = await api<{ preview: typeof preview; note: string }>(
@@ -423,26 +443,30 @@ export default function App() {
       );
       setTab("preview");
     });
-  const review = (action: string, ids: string[]) =>
-    perform(async () => {
-      if (dirty) throw new Error("先保存或放弃本地改动，再操作已保存的修订。");
-      await api("/review", {
-        method: "POST",
-        body: { action, ids, ...(action === "submit" ? {} : { note }) },
-        csrf: session?.csrf,
-      });
-      setSelected(new Set());
-      await refreshRevision();
-      setNotice(
-        action === "submit"
-          ? "已提交审核。仍未发布。"
-          : action === "approve"
-            ? "审核已批准。批准不等于部署；可到发布页冻结快照。"
-            : "已退回，修改时请保存新的修订。",
-      );
-    });
+  const review = (action: ReviewAction, ids: string[], batch = false) =>
+    perform(
+      batch && action !== "reject" ? `bulk-${action}` : action,
+      async () => {
+        if (dirty)
+          throw new Error("先保存或放弃本地改动，再操作已保存的修订。");
+        await api("/review", {
+          method: "POST",
+          body: { action, ids, ...(action === "submit" ? {} : { note }) },
+          csrf: session?.csrf,
+        });
+        setSelected(new Set());
+        await refreshRevision();
+        setNotice(
+          action === "submit"
+            ? "已提交审核。仍未发布。"
+            : action === "approve"
+              ? "审核已批准。批准不等于部署；可到发布页冻结快照。"
+              : "已退回，修改时请保存新的修订。",
+        );
+      },
+    );
   const upload = async (path: string, file: File) => {
-    await perform(async () => {
+    await perform("upload", async () => {
       const result = await api<{
         path: string;
         sha256: string;
@@ -555,7 +579,7 @@ export default function App() {
           onSubmit={(event) => {
             event.preventDefault();
             const data = new FormData(event.currentTarget);
-            void perform(async () => {
+            void perform("login", async () => {
               const result = await api<Session>("/login", {
                 method: "POST",
                 body: {
@@ -629,6 +653,24 @@ export default function App() {
             内容
           </button>
           <button
+            className={section === "research" ? "is-current" : ""}
+            aria-current={section === "research" ? "page" : undefined}
+            onClick={() => setSection("research")}
+          >
+            <Search size={15} />
+            研究证据
+          </button>
+          {reviewer && (
+            <button
+              className={section === "community" ? "is-current" : ""}
+              aria-current={section === "community" ? "page" : undefined}
+              onClick={() => setSection("community")}
+            >
+              <ShieldCheck size={15} />
+              社区审核
+            </button>
+          )}
+          <button
             className={section === "releases" ? "is-current" : ""}
             aria-current={section === "releases" ? "page" : undefined}
             onClick={() => setSection("releases")}
@@ -655,7 +697,7 @@ export default function App() {
             disabled={busy}
             onClick={() => {
               if (discard())
-                void perform(async () => {
+                void perform("logout", async () => {
                   await api("/logout", { method: "POST", csrf: session.csrf });
                   setSession({ configured: true, signedIn: false });
                   clearPrivateWorkspace();
@@ -687,13 +729,25 @@ export default function App() {
           此工作台不会自动上线
         </strong>
       </div>
-      {(notice || error) && (
+      {(notice || error || pendingAction) && (
         <div
-          className={`notice ${error ? "is-error" : ""}`}
+          id="operation-status"
+          tabIndex={-1}
+          className={`notice ${error ? "is-error" : pendingAction ? "is-progress" : ""}`}
           role={error ? "alert" : "status"}
+          aria-atomic="true"
         >
-          {error ? <AlertCircle size={17} /> : <CheckCircle2 size={17} />}
-          <span className="notice-message">{error || notice}</span>
+          {error ? (
+            <AlertCircle size={17} />
+          ) : pendingAction ? (
+            <CircleDashed size={17} />
+          ) : (
+            <CheckCircle2 size={17} />
+          )}
+          <span className="notice-message">
+            {error ||
+              (pendingAction ? operationMessages[pendingAction] : notice)}
+          </span>
           {error && issues.length > 0 && (
             <ul>
               {issues.slice(0, 30).map((issue, index) => (
@@ -740,6 +794,7 @@ export default function App() {
           <button
             className="quiet"
             aria-label="关闭提示"
+            disabled={busy}
             onClick={() => {
               setError("");
               setNotice("");
@@ -750,7 +805,19 @@ export default function App() {
           </button>
         </div>
       )}
-      {section === "releases" ? (
+      {section === "community" ? (
+        <CommunityModeration csrf={session.csrf} />
+      ) : section === "research" ? (
+        <ResearchEvidence
+          onOpenEntry={(key) => {
+            const target = entries.find((entry) => entry.key === key);
+            if (target) {
+              if (discard()) void perform("open", () => openEntry(target));
+            } else
+              setError("该来源关联的条目尚未导入当前目录，历史证据仍保留。");
+          }}
+        />
+      ) : section === "releases" ? (
         <main id="editor" className="release-page" tabIndex={-1}>
           <div className="page-title">
             <div>
@@ -763,8 +830,16 @@ export default function App() {
             <button
               className="button primary"
               disabled={busy || !reviewer}
+              aria-busy={pendingAction === "freeze"}
+              aria-describedby={
+                busy
+                  ? "operation-status"
+                  : !reviewer
+                    ? "freeze-help"
+                    : undefined
+              }
               onClick={() =>
-                void perform(async () => {
+                void perform("freeze", async () => {
                   if (
                     dirty &&
                     !window.confirm(
@@ -784,9 +859,14 @@ export default function App() {
               }
             >
               <GitBranch size={17} />
-              冻结已批准内容
+              {pendingAction === "freeze" ? "正在冻结…" : "冻结已批准内容"}
             </button>
           </div>
+          {!reviewer && (
+            <p className="action-help release-action-help" id="freeze-help">
+              冻结快照需要审核员或管理员权限；编辑仍可查看快照记录。
+            </p>
+          )}
           <div className="release-summary">
             <div>
               <small>当前已批准内容</small>
@@ -998,12 +1078,15 @@ export default function App() {
               <button
                 className="quiet"
                 onClick={() =>
-                  void perform(async () => {
+                  void perform("refresh", async () => {
                     await refresh();
                     setNotice("目录已刷新。未保存的表单没有被覆盖。");
                   })
                 }
                 aria-label="刷新目录"
+                disabled={busy}
+                aria-busy={pendingAction === "refresh"}
+                aria-describedby={busy ? "operation-status" : undefined}
               >
                 <RefreshCw size={14} />
               </button>
@@ -1042,7 +1125,8 @@ export default function App() {
                     title={record.body.title}
                     disabled={busy}
                     onClick={() => {
-                      if (discard()) void perform(() => openEntry(record));
+                      if (discard())
+                        void perform("open", () => openEntry(record));
                     }}
                   >
                     <span className="entry-kind">
@@ -1086,8 +1170,10 @@ export default function App() {
               <button
                 className="button secondary sync-git-button"
                 disabled={busy}
+                aria-busy={pendingAction === "sync"}
+                aria-describedby={busy ? "operation-status" : undefined}
                 onClick={() =>
-                  void perform(async () => {
+                  void perform("sync", async () => {
                     const result = await api<{ changed: number }>(
                       "/documents/sync",
                       { method: "POST", body: {}, csrf: session.csrf },
@@ -1100,7 +1186,9 @@ export default function App() {
                 }
               >
                 <GitBranch size={14} />
-                同步文档来源索引
+                {pendingAction === "sync"
+                  ? "正在同步索引…"
+                  : "同步文档来源索引"}
               </button>
             )}
             <div className="pagination">
@@ -1129,6 +1217,7 @@ export default function App() {
                 <strong>已选 {selected.size} 条修订</strong>
                 <textarea
                   aria-label="批量审核说明"
+                  disabled={busy}
                   placeholder="批准或退回前，记录审核依据与边界"
                   value={note}
                   onChange={(event) => setNote(event.target.value)}
@@ -1137,44 +1226,37 @@ export default function App() {
                 <div>
                   <button
                     className="button secondary small"
-                    disabled={
-                      busy ||
-                      !selectedEntries.every(
-                        (entry) =>
-                          entry.state === "draft" &&
-                          entry.validated &&
-                          (session.role === "admin" ||
-                            entry.created_by === session.user?.id),
-                      )
-                    }
-                    onClick={() => void review("submit", [...selected])}
+                    disabled={busy || Boolean(reviewReason("submit", true))}
+                    aria-busy={pendingAction === "bulk-submit"}
+                    aria-describedby={actionDescription(
+                      "bulk-submit-help",
+                      true,
+                    )}
+                    onClick={() => void review("submit", [...selected], true)}
                   >
-                    提交审核
+                    {pendingAction === "bulk-submit" ? "正在提交…" : "提交审核"}
                   </button>
                   <button
                     className="button secondary small"
-                    disabled={
-                      busy ||
-                      !reviewer ||
-                      !note.trim() ||
-                      !selectedEntries.every(
-                        (entry) =>
-                          entry.state === "in_review" &&
-                          entry.validated &&
-                          entry.created_by !== session.user?.id,
-                      )
-                    }
-                    onClick={() => void review("approve", [...selected])}
+                    disabled={busy || Boolean(reviewReason("approve", true))}
+                    aria-busy={pendingAction === "bulk-approve"}
+                    aria-describedby={actionDescription(
+                      "bulk-approve-help",
+                      true,
+                    )}
+                    onClick={() => void review("approve", [...selected], true)}
                   >
-                    批准
+                    {pendingAction === "bulk-approve" ? "正在批准…" : "批准"}
                   </button>
                   <button
                     className="quiet"
+                    disabled={busy}
                     onClick={() => setSelected(new Set())}
                   >
                     清除选择
                   </button>
                 </div>
+                {!busy && <ActionRequirements items={bulkRequirements} />}
               </div>
             )}
           </aside>
@@ -1247,42 +1329,77 @@ export default function App() {
                     <button
                       className="button secondary"
                       disabled={busy || !baseId || dirty}
-                      aria-describedby="revision-validation-status"
-                      title={
-                        dirty
-                          ? "请先保存本地修改，再校验已保存修订。"
-                          : !baseId
-                            ? "先保存草稿，再进行校验。"
-                            : "校验已保存修订并生成私有预览"
+                      aria-busy={pendingAction === "validate"}
+                      aria-describedby={
+                        busy
+                          ? "operation-status"
+                          : readonly
+                            ? "revision-validation-status"
+                            : "revision-validation-status editor-action-help"
                       }
+                      title={validationReason || "校验已保存修订并生成私有预览"}
                       onClick={() => void validate()}
                     >
                       <ShieldCheck size={16} />
-                      校验与预览
+                      {pendingAction === "validate"
+                        ? "正在校验…"
+                        : "校验与预览"}
                     </button>
                     <button
                       className="button primary"
                       disabled={busy || readonly}
+                      aria-busy={pendingAction === "save"}
+                      aria-describedby={
+                        busy
+                          ? "operation-status"
+                          : gitOwned
+                            ? "git-owned-help"
+                            : unsupportedVersion
+                              ? "schema-version-help"
+                              : "editor-action-help"
+                      }
                       onClick={() => void save()}
                     >
                       <Save size={16} />
-                      {busy ? "处理中…" : "保存草稿"}
+                      {pendingAction === "save" ? "正在保存…" : "保存草稿"}
                     </button>
                     {!readonly && (
                       <span
                         className={`editor-save-state ${dirty ? "is-dirty" : ""}`}
                       >
-                        <span className="editor-save-copy">
-                          {dirty ? (
+                        <span
+                          className="editor-save-copy"
+                          id="editor-action-help"
+                        >
+                          {error ? (
+                            <AlertCircle size={12} />
+                          ) : dirty ? (
                             <span className="status-dot" />
                           ) : (
                             <Check size={12} />
                           )}
-                          {dirty
-                            ? "更改尚未保存"
-                            : baseId
-                              ? "当前修订已保存"
-                              : "保存后生成新修订"}
+                          {error ? (
+                            <button
+                              type="button"
+                              className="save-feedback-link"
+                              onClick={() => {
+                                const message =
+                                  document.getElementById("operation-status");
+                                message?.focus({ preventScroll: true });
+                                message?.scrollIntoView({ block: "center" });
+                              }}
+                            >
+                              操作未完成，查看原因
+                            </button>
+                          ) : busy ? (
+                            "操作进行中，请稍候"
+                          ) : dirty ? (
+                            "先保存，再校验"
+                          ) : baseId ? (
+                            "当前修订已保存"
+                          ) : (
+                            "保存后可校验"
+                          )}
                         </span>
                         <span className="mobile-action-note">
                           仅保存草稿，不会自动上线
@@ -1296,8 +1413,10 @@ export default function App() {
                     当前查看的不是最新修订。未保存内容已保留；保存会被冲突保护拦截。
                     <button
                       className="quiet"
+                      disabled={busy}
                       onClick={() => {
-                        if (discard()) void perform(() => openEntry(entry));
+                        if (discard())
+                          void perform("open", () => openEntry(entry));
                       }}
                     >
                       查看最新版本
@@ -1305,14 +1424,14 @@ export default function App() {
                   </div>
                 )}
                 {gitOwned && (
-                  <div className="inline-info">
+                  <div className="inline-info" id="git-owned-help">
                     <GitBranch size={16} />
                     此类型由 Git
                     管理，不能通过表单修改。可以校验、查看差异和审核。
                   </div>
                 )}
                 {unsupportedVersion && (
-                  <div className="inline-warning">
+                  <div className="inline-warning" id="schema-version-help">
                     此修订版本没有已安装的表单适配器，仅可查看历史差异。请部署对应版本的契约后再编辑。
                   </div>
                 )}
@@ -1469,6 +1588,7 @@ export default function App() {
                         className="form-surface"
                       >
                         <SchemaForm
+                          key={`${key}:${baseId}:${kind}:payload`}
                           schema={form.payload}
                           value={payload}
                           path="payload"
@@ -1517,6 +1637,7 @@ export default function App() {
                           className="form-surface"
                         >
                           <SchemaForm
+                            key={`${key}:${baseId}:${kind}:attachments`}
                             schema={form.attachments}
                             value={attachments}
                             path="attachments"
@@ -1739,6 +1860,7 @@ export default function App() {
                         <label htmlFor="review-note">审核说明</label>
                         <textarea
                           id="review-note"
+                          disabled={busy}
                           rows={4}
                           placeholder="检查了哪些来源、修改是否有依据、哪些内容未实际运行…"
                           value={note}
@@ -1747,40 +1869,47 @@ export default function App() {
                         <div className="review-actions">
                           <button
                             className="button secondary"
-                            disabled={busy || !canSubmit || dirty}
+                            disabled={busy || Boolean(reviewReason("submit"))}
+                            aria-busy={pendingAction === "submit"}
+                            aria-describedby={actionDescription("submit-help")}
                             onClick={() =>
                               baseId && void review("submit", [baseId])
                             }
                           >
-                            提交审核
+                            {pendingAction === "submit"
+                              ? "正在提交…"
+                              : "提交审核"}
                           </button>
                           <button
                             className="button primary"
-                            disabled={
-                              busy ||
-                              !canReview ||
-                              !revision?.validated ||
-                              !note.trim() ||
-                              dirty
-                            }
+                            disabled={busy || Boolean(reviewReason("approve"))}
+                            aria-busy={pendingAction === "approve"}
+                            aria-describedby={actionDescription("approve-help")}
                             onClick={() =>
                               baseId && void review("approve", [baseId])
                             }
                           >
-                            批准修订
+                            {pendingAction === "approve"
+                              ? "正在批准…"
+                              : "批准修订"}
                           </button>
                           <button
                             className="button secondary danger"
-                            disabled={
-                              busy || !canReview || !note.trim() || dirty
-                            }
+                            disabled={busy || Boolean(reviewReason("reject"))}
+                            aria-busy={pendingAction === "reject"}
+                            aria-describedby={actionDescription("reject-help")}
                             onClick={() =>
                               baseId && void review("reject", [baseId])
                             }
                           >
-                            退回修改
+                            {pendingAction === "reject"
+                              ? "正在退回…"
+                              : "退回修改"}
                           </button>
                         </div>
+                        {!busy && (
+                          <ActionRequirements items={reviewRequirements} />
+                        )}
                         {revision?.review_note && (
                           <p className="recorded-note">
                             上次审核：{revision.review_note}
@@ -1793,9 +1922,13 @@ export default function App() {
                           <button
                             className={`history-row ${revision.id === baseId ? "is-selected" : ""}`}
                             key={revision.id}
+                            disabled={busy}
+                            aria-current={
+                              revision.id === baseId ? "true" : undefined
+                            }
                             onClick={() => {
                               if (entry && discard())
-                                void perform(async () => {
+                                void perform("open", async () => {
                                   await openEntry(entry, revision.id);
                                   setTab("review");
                                 });
@@ -1815,36 +1948,11 @@ export default function App() {
                           </button>
                         ))}
                       </section>
-                      <section className="diff-section">
-                        <h2>
-                          相对父修订的差异 <span>{changes.length}</span>
-                        </h2>
-                        {changes.length ? (
-                          changes.map((change) => (
-                            <div className="diff-row" key={change.field}>
-                              <code>{change.field}</code>
-                              <div>
-                                <pre className="diff-before">
-                                  {change.before === undefined
-                                    ? "（不存在）"
-                                    : typeof change.before === "string"
-                                      ? change.before
-                                      : JSON.stringify(change.before, null, 2)}
-                                </pre>
-                                <pre className="diff-after">
-                                  {change.after === undefined
-                                    ? "（已移除）"
-                                    : typeof change.after === "string"
-                                      ? change.after
-                                      : JSON.stringify(change.after, null, 2)}
-                                </pre>
-                              </div>
-                            </div>
-                          ))
-                        ) : (
-                          <p>没有正文差异。译文在其独立面板中逐字段核对。</p>
-                        )}
-                      </section>
+                      <RevisionDiff
+                        revision={revision}
+                        parent={parent}
+                        dirty={dirty}
+                      />
                     </>
                   )}
                   {tab === "preview" &&
@@ -1889,10 +1997,28 @@ export default function App() {
                         <button
                           className="button secondary"
                           disabled={busy || !baseId || dirty}
+                          aria-busy={pendingAction === "validate"}
+                          aria-describedby={
+                            busy
+                              ? "operation-status"
+                              : validationReason
+                                ? "preview-validation-help"
+                                : undefined
+                          }
                           onClick={() => void validate()}
                         >
-                          校验并生成私有预览
+                          {pendingAction === "validate"
+                            ? "正在生成预览…"
+                            : "校验并生成私有预览"}
                         </button>
+                        {validationReason && (
+                          <p
+                            className="action-help"
+                            id="preview-validation-help"
+                          >
+                            {validationReason}
+                          </p>
+                        )}
                       </div>
                     ))}
                 </div>

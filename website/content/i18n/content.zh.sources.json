@@ -1082,5 +1082,2520 @@
   },
   "testing:mixamo": {
     "summary": "67d3fa8269d273f6b8a79d74024165f5c479858fa0344ab3bde5860f52341bec"
+  },
+  "example:jam-foursight": {
+    "description": "25c5ace10b1afe450a622845513001aac365a5cf46de3ba21b26a2a5e8b5ea13"
+  },
+  "example:jam-secret-sugar": {
+    "description": "6e04919036c6debce72658752a3fc221544ab3343da05e6226ac0c39306ff514"
+  },
+  "example:jam-scales-of-the-golden-dragon": {
+    "description": "e13b9ceb7d8282cf43c54eb7bf2f7080d34e0487928f05af61a284f6ddfbc609"
+  },
+  "example:jam-enchanted-towers-realm-defenders": {
+    "description": "fdd295acecbbe49dc1d2544ff273c50b5cb8d1f896980d1345c3ed597e5d6e7c"
+  },
+  "example:jam-wave-of-fate": {
+    "description": "db6c612a5ea53ec77d6b3639a019e6bdeef3e1d7c518b1eda3e259527542637d"
+  },
+  "example:jam-surwave": {
+    "description": "ffa3f799d35a8981b40a7d3b3b848b1a897981545fbf19d9ac3b0388d73c4bc1"
+  },
+  "example:jam-dash-splash": {
+    "description": "ab27645e34f4b84bb1f94db0802f8565b8fc703f43a92e3f1831d2dcfb577d5c"
+  },
+  "example:jam-canvas-chaos": {
+    "description": "9eb8ca4f35293f4d5c766004a3a28eaed6c6c4d0810848e5410e23139f849926"
+  },
+  "example:jam-the-roots-of-all-our-problems": {
+    "description": "80369298e8191edbe4c95fb07c1b0c097d76dd5ee49cd6fb6d1c0e81ba645005"
+  },
+  "example:jam-gmtk2023-duck-dodge": {
+    "description": "a4df40f476a67e5a3c871a5a93d900bbc9165cc8ff9a0d0cc3905d7257cacd92"
+  },
+  "example:jam-gmtk2023-humansters": {
+    "description": "1cf8995428c058660f6454bac99fd16b59890ff2762b215214332e415e38889d"
+  },
+  "example:jam-gmtk2021-conductor": {
+    "description": "90907b0a6c9b7e38195754636ed733e57a66bb54525eab72b8928ede5ba4e2b3"
+  },
+  "example:jam-tower-of-bricks": {
+    "description": "c783f3358155a77ec2d8fefd5dd7f35b2a66759b69f582ef7f6b9e3788c5adfd"
+  },
+  "example:jam-lasso-sheriff": {
+    "description": "871aa38874f492dfbf5396f101fce3a8af6687669891698d8cbd109e8e262c98"
+  },
+  "example:jam-fairy-catch": {
+    "description": "a0eebca57e2145313dea188f54a4ee97bce05b6ea5c6ddf4f8461f481d097e86"
+  },
+  "example:jam-sand-slide": {
+    "description": "3d40223aee00cf07531e61c4bec1bc3603f6a1a5edf6d7c89d71f4b31c5b2da6"
+  },
+  "example:jam-agarust": {
+    "description": "b416bb54db8ef8b70e35dcdb73930e2cc60a7eb83f523fd57e7c9be2d5f48ac5"
+  },
+  "example:jam-flingsort": {
+    "description": "ccfccc47ca9f6b225938a9fa42de42665d288df39b09fa175524ab27fdb64121"
+  },
+  "example:jam-puddle-of-forever-time": {
+    "description": "433f9e4f741ad41edbe99939c58817d02874e63340b7f5de75a0313b70c69fa8"
+  },
+  "example:jam-ld50-plant": {
+    "description": "2c65dea9d7891d8af290760e7bdf190c60d3903f9176db6260972ba28962e4c3"
+  },
+  "example:jam-ld49-keep-talking-bob": {
+    "description": "dfec5d0aa762b8dbaa111350bd7129107e0b68309cc418808500d68ddd1289f1"
+  },
+  "example:jam-ld49-eye-of-glower-on": {
+    "description": "a6a4b8e744a040fefef7d9f3d97248bbbe8b18e4b4e1e0860152109bdd9d7625"
+  },
+  "example:jam-capsized-ld54": {
+    "description": "9fe25bccb82cd3f5f33eac2ff80183fa46b61174a294addd9cad9824d49abfc2"
+  },
+  "example:jam-gogogodots-ld54": {
+    "description": "44290058b54396ad952e0d03aa75f7608d43d0057984c5664353293bb2160dfe"
+  },
+  "example:jam-critter-catchers-ld56": {
+    "description": "9940128b14a6af0b0970296143ef0f76fa32c635d7fd040e82db7f4700360a62"
+  },
+  "example:jam-heroes-of-keys-and-kingdoms-ld55": {
+    "description": "6cac8a8cb721e5714838d403749b58f2c670d1613417c7934ab30e674597aa36"
+  },
+  "example:jam-the-thirteenth-offering": {
+    "description": "6508f990a52418ab9f45e5892173a438c17e9e3bf14474fae774e387f045e2b5"
+  },
+  "example:jam-spirit-hunter": {
+    "description": "96a263f16f6d5bccb2f19bed15475ad2ae0132a7ec60a4ee00b22eeffcbdde30"
+  },
+  "example:jam-gecko-blaster": {
+    "description": "832472af82cec4face5a8a4b7525d61e6fd8706a940d247ab6b490d8033b389d"
+  },
+  "example:jam-crazy-bike": {
+    "description": "d962da5ad17d4ecf6eda59fb718013ea180940db96fd7bfd12adb62bcdd60f5c"
+  },
+  "example:jam-bevy-five-bullet-heaven": {
+    "description": "31c8782ba0d0f9bee34f0be8a0b612d32ab8f94310855661f6b15e4b50ed4a0d"
+  },
+  "example:jam-ocean-king-gwj41": {
+    "description": "8137153cea6f771053be43ed67b96b53d1e9d945ae657e9af0244d63c44e55c7"
+  },
+  "example:jam-wild-fishing-gwj41": {
+    "description": "03d8c5c817c3fb50ca1f5add6ce35da930ddf5c88e5f730d075f98d62dbd0d8d"
+  },
+  "example:jam-stars-exhumed-gwj57": {
+    "description": "07257143823797467c360e49e0007623ce8baeb378320750788ac48f007e88b6"
+  },
+  "example:jam-unavoidable-katakana": {
+    "description": "b63cb98c85cbc6181b50c3199655a6dc7ccaf4043ee0123e78bea3c489d432ef"
+  },
+  "example:jam-blind-box-co": {
+    "description": "601c1bda6e9bc4bc70780da500ebbe9b6d54619ea41b2aa7e9d02c460d6514b7"
+  },
+  "example:jam-furball-siege": {
+    "description": "949dcb52bb4f12607cc0475f069b0e58ce1036c0285599ca534d3c1229d0876b"
+  },
+  "example:jam-silent-hare": {
+    "description": "3f8ccc500d6576f0fef75f96158f0105420420ba21fcc514abf7ae5865adb800"
+  },
+  "example:jam-bigger-eater": {
+    "description": "142c4b70feb0ab6a7cd693c6d359d62413e51e22a756e2b7b74484894d0db763"
+  },
+  "example:jam-freezing-shooter": {
+    "description": "f7c8f20cae0a36714b8614db0ffcfb9ba027c97abb7a1ea854b7211483994ea9"
+  },
+  "example:jam-lovelands-leap": {
+    "description": "e069e2ea4842cd695a0ca4e5156bf14efd5a0a4e1beb967a5b925b7dfc5be3f8"
+  },
+  "example:jam-void-orusliox": {
+    "description": "90d01dba87b5b3c0b246ae2ef4fdd52eb33a7dd18573e0317b5a775cd0d56cbb"
+  },
+  "example:jam-wind-up-racer": {
+    "description": "f4cea8f5e1a8fe76db20346397f029a09c952057d207dadab801bcc80cb130c7"
+  },
+  "example:jam-the-game-that-never-ends": {
+    "description": "650130f87364f5398c21088be69a46b78138038d5c951bc829b696f6c9f3b61b"
+  },
+  "example:jam-dash-slash": {
+    "description": "cba4d244c8d9ce4f7c03a4641d92196155abfb7f13acc7415ea30a2463f028f8"
+  },
+  "example:jam-twokoban": {
+    "description": "58ed06296ba71b2fbfe0150b3fd45bae1d8f7e8862f89d7d5511bb5b1b72aeb7"
+  },
+  "example:jam-recharge": {
+    "description": "9b26fb6dc7f87fe59f6b69022328732a2230ab6e00c29e9b1e23bd91d4be59ba"
+  },
+  "example:jam-magickal-powers": {
+    "description": "60bcebb8cbd0ab227753d450537c51af916714beeafb27a83fdb671788d3cefc"
+  },
+  "example:jam-my-little-tree": {
+    "description": "efcee4b0e70ccda13be1e693edaf67330349020045e3214748a3c132f0bb73b3"
+  },
+  "example:jam-untitled-dinosaur-game": {
+    "description": "77144dcc13948b1ef670b4f3c47005326a24c8fe809368bd84fa4618decf1a50"
+  },
+  "example:jam-cosmic-coder": {
+    "description": "758989e56b8a3e716b68d0949a083a87774107fc37d190c6c1cc36935e2d05ec"
+  },
+  "example:jam-metashift": {
+    "description": "0ce87bdd8a82c944d89e685e58c6353012a980e9f1af40bea8214fa1176b61ec"
+  },
+  "example:jam-demon-reaper": {
+    "description": "514d72893367c7ab7d660266bae8eb3cdd26867ee66aa93d3824da4e6e655238"
+  },
+  "example:jam-neon-desert": {
+    "description": "d9ba186a34a01cef9f52c5c5d84291a6f60cd6e45e5abf702fb5c1996ab85762"
+  },
+  "example:jam-frostbite-farm": {
+    "description": "3443ad747b1285036f3422f936ba6603108416266efce2ec8be39ebc9e9dc05c"
+  },
+  "example:jam-my-little-pit-stop": {
+    "description": "17ba8e22033756d5e04b6a89e2eff40af21f2ebaf2b6b68b4a1ba2b89e946abd"
+  },
+  "example:jam-virus-shooter": {
+    "description": "705f7ca6c731f832154fc8a3aff3f2b9dc3e92367393ee18f2e47fdb9922dc8e"
+  },
+  "example:jam-skeletons-ate-my-plants": {
+    "description": "ce995eb4338ad82011f7b94b7054081d64fb878e54839df998e7f22d51b7b893"
+  },
+  "example:jam-rhythm-gauntlet": {
+    "description": "a781c61229699a4c7a955c5c8a1cd99b3ea8dd33fcb3fce79c419855dcacbeb7"
+  },
+  "example:jam-bugs-out": {
+    "description": "a0e6c4b9699b04edba28d5827b5925a87523f16c230b24302ac5bc61ccf82423"
+  },
+  "example:jam-killstreak": {
+    "description": "a208f979a74113bcd6803748dcf6ca2eaba68de2a79a2021d7e81e98d524c9f5"
+  },
+  "example:jam-center-of-maat": {
+    "description": "b78ff7eff3f08815d9c4d1d8857511fc311e5dc22773a04f10f8b00126eeeb2a"
+  },
+  "example:jam-weapon-ball-scroller": {
+    "description": "33175f83ea46bcf805dfa93009c01c9276059dd9993d2f2381fd8f0844192a5b"
+  },
+  "example:jam-notepad-ace": {
+    "description": "718d0606b06a67dab02902367212fde2e61aa228a68448700e3b46ad728b7226"
+  },
+  "example:jam-memory-pizza": {
+    "description": "65b61193299c3d28f2bea1d0a5e0284da7eaeed69b8bd05df9616accd92422e1"
+  },
+  "example:jam-work-horse": {
+    "description": "8ac2d3b27c81ad8499ae5766c3a1c95c90892a49359f63c667b2a6325ef34bc6"
+  },
+  "example:jam-pigeon-in-town": {
+    "description": "64e61e8d439bed64c76264285e30fb519ec0a58e10bcc89c513fc056cbcf3e66"
+  },
+  "example:jam-unpetrify": {
+    "description": "93a5ce566c15c6c2be4b4f02ece922fceae3e033a8b824a3ae1fe528808d229d"
+  },
+  "example:jam-scrap-signal": {
+    "description": "ec37541d3d7a68428382d4cbf5e8f0e0b7f02358ca3526b86ab0b58ac98effca"
+  },
+  "example:jam-vaporcade-td": {
+    "description": "d3463429f8e43e28281806b8843cf30455002f28fe8e50ad1d2dc98687ea9d08"
+  },
+  "example:jam-the-curse-of-household-chaos": {
+    "description": "87ef3da04febdcb58f8371526bbb1a0d3058fa43c7802dd99e3ac76bf49b71ed"
+  },
+  "example:jam-omens-ascent": {
+    "description": "f91a96273c74d626c8fb60b7f3a9ce455d9bf25428e790f15b5245f7c35fd6f1"
+  },
+  "example:jam-cannon-and-commerce": {
+    "description": "450f526fc01604b9c8341c6120bcbb7470e2c4dc2ad778c2daf035482ad6daf3"
+  },
+  "example:jam-grounded": {
+    "description": "35d82d372347f2a6b6e894a23c87cf508564d3fe1c93185d5b2ad810dcba7979"
+  },
+  "example:jam-the-hunt-of-croakzilla": {
+    "description": "257ee43031722992ff40df7a8697292b88ccd79f0ad1829fc9693b56e39a36b5"
+  },
+  "example:jam-the-adventures-of-the-heroic-fox": {
+    "description": "9b1d8bf71fda4af7861846317ab2e210b2e64b1358b0c54054279cc062aed350"
+  },
+  "example:jam-stargazer-novastrike": {
+    "description": "856da63ef3aec57011cd1053a391f708bfa807e3778a153e9dafef2798f7fd0d"
+  },
+  "example:jam-that-time-i-got-reincarnated-as-a-barn": {
+    "description": "b073628a5642a207820c2eacb3f396fa9a5679e012b4259b8f7e9d4a7f90fa44"
+  },
+  "example:jam-decked-mini-jame-gam-53": {
+    "description": "21ab1e15713100180f7cdcda34c4c798d8b7a7baf30bc1f2f019241b46629409"
+  },
+  "example:jam-the-clicking-hour": {
+    "description": "bcf91644b045de0b85aa3a19f0da08745214c6571fafd453b95b873e3bf593fa"
+  },
+  "example:jam-turbulent-tinctures": {
+    "description": "9a18acb74dc57b6376ffa94e2b6fb3e47f93cb9567cd8223e8cd54e7a8e4284a"
+  },
+  "example:jam-sky-conquerors": {
+    "description": "fdeed4cb8ffb0f68f337a92b99e493a56cfb6cc457b6287745f64df1a21659e0"
+  },
+  "example:jam-kamikamace": {
+    "description": "708e415c9933cfca9f1f526e1acaa8ed8ce19741f14c6247e5147c3b0e396e8d"
+  },
+  "example:jam-strange-winds": {
+    "description": "0035d2ba1e6bd591fe1612596a7a59ac2295091222d0c81692e29e807e62a808"
+  },
+  "example:jam-overforged": {
+    "description": "6c799ac13718c2908dbd4743f1932dce0adca02a09103e3e65758a3e493b4743"
+  },
+  "example:jam-fractured-drift": {
+    "description": "9c4fbcc7926a226b696dad5ee814f165d6c3447b645973229165dec1d30c3dce"
+  },
+  "example:jam-run-for-it": {
+    "description": "8c93d559f573487fb92116201f941d603552da8103c24c1b6b4bc49266a4f0fc"
+  },
+  "example:jam-possess-and-destroy": {
+    "description": "f9e070ef2a24137ed46a31291fb16031a115809468d1eab0deac8c60203f9024"
+  },
+  "example:jam-perdio-boca": {
+    "description": "98a420b0c710adb07f46c80ee2c4a487b4f8f87b3adf21dfb7b9fe3bafe45698"
+  },
+  "example:jam-solar-charged": {
+    "description": "048ae985aedbc260c66174ad72dc0c5f2df7bd05fe492ca5b4a0f5b7aa741306"
+  },
+  "example:jam-ceres": {
+    "description": "823c20d9e723522801ac9bff3b3d87f830309c25a5b1051297758adf1ea9c579"
+  },
+  "example:jam-sombra": {
+    "description": "b7c0c97b34c66a5f66f5cefe35daa71c1787eed8e055c9506eebb026ce8db4ae"
+  },
+  "example:jam-egg-hunt": {
+    "description": "06fca6f958814a911e5215fa54aef5cf09c9731a87e285eff856c6340f826467"
+  },
+  "example:jam-the-house-always-wins": {
+    "description": "2b30d797a3e327c5d1fae133cc3243ecb4d45de6377e43aa92a8adc6bee4d0e9"
+  },
+  "example:jam-hue-protocol": {
+    "description": "0e7b48806ce3f403072d7b8877351017af315a39b7f3e1bda4d44d5e0df5e30c"
+  },
+  "example:jam-life-in-2-dimensions": {
+    "description": "36df85956df722569f37ab6a45afd13526f44b92fb1c91ef8520bd094f3548bc"
+  },
+  "example:jam-ancient-secrets": {
+    "description": "2ab315d70114359d596ea835a782f8e5ef19138469433592df62cc4b7b7ae8e9"
+  },
+  "example:jam-clown-panic": {
+    "description": "92a495e7c22bea44ea0ef0bef2889ad87e8f0864560506c06a253a49a583fb7d"
+  },
+  "example:jam-morse-morse-revolution": {
+    "description": "21230522b7d8fcb6d1161479e05d25bb17a20d470b64996f3d01ff25737db9f0"
+  },
+  "example:jam-splitrun": {
+    "description": "8c23ae14948add336f45bdc8909c7b1a1ab3e042d5a01723c786640daa7bfbda"
+  },
+  "example:jam-crate-crusher": {
+    "description": "808d2ca1b3172c579e501e32aff0537a97742b6f30c872a3b1198b3412c8eed5"
+  },
+  "example:jam-terrapy": {
+    "description": "873ef50def9b1b1f1058a05ab7c015ab6916978559042962757c46a9e9dd445b"
+  },
+  "example:jam-robo-blocks": {
+    "description": "6d06d98e65ec7b58c19e2ec082a089469822756b1377a929649ebc34370c8ec5"
+  },
+  "example:jam-fungal-protocol": {
+    "description": "5a40147257feebd75f0d4b6ab6bce88ff1f639d01bf5055746017f23b17028e7"
+  },
+  "example:jam-lost-and-found-gamejam26": {
+    "description": "20d8cca8ffc093116f64719dd3e3df534fab4ffd8d6c4c3edb78c650c957a74f"
+  },
+  "example:jam-shoot-into-the-void": {
+    "description": "2d4f096558b2a8a212e9d7789f0154774340c2e54ade8d29672455900574c43d"
+  },
+  "example:jam-loop-sproker": {
+    "description": "a3a07bb0496e01825ddb62d938cb2d943cc28ad35720ef1b70cb467164b3eda6"
+  },
+  "example:jam-meteor-power": {
+    "description": "cf8c1909ac9ffd36a83f2c89220a77594d372afe73e6a62ecaf193dd425a0139"
+  },
+  "example:jam-the-curse-of-the-ancients": {
+    "description": "16f9b929918ec84ff7596fb0a21b954d8f9d200aadc8a09df19308e87382b3c0"
+  },
+  "example:jam-primrose": {
+    "description": "430fc9b557438b9b9c720a5332d4e60c0b1331c235db7b5dca5cbdcdb42395d3"
+  },
+  "example:jam-2wcocsdajnr2d": {
+    "description": "8ea06adfb60bf1f8f9b60adcd3ee2593363a395837695464fa6d42393bab9fc4"
+  },
+  "example:jam-sticktorio": {
+    "description": "c455f4a8700c640b017a1da197e2e1c0d7afb132c41cd8bbdf315a4ddbf741ad"
+  },
+  "example:jam-avoid-the-void": {
+    "description": "6aa55f970a97724ff7320d77231fc40625fb14e0c3e8d1c6c552b2836ff6f971"
+  },
+  "example:jam-zombies-are-dumb": {
+    "description": "6532b395068595c856e9be29c1c113060c45a164a0f709cfb508644974bf73c8"
+  },
+  "example:jam-new-phone-who-dis": {
+    "description": "0068c3df7210d48151c1c4b55eea8414c8109c25c0b4e25c43ceaccccc6f75b8"
+  },
+  "example:jam-mecha-shells": {
+    "description": "d4aed5b7d5ecf484216deab5104c8ec481fd4e979e3466a8abe894a7fced03ac"
+  },
+  "example:jam-magic-engineering": {
+    "description": "3fcbd5a39991f9e6155438d5a0e22968f4a230badab9100ad7059687dff270fc"
+  },
+  "example:jam-stuck-in-a-loop": {
+    "description": "bd5e95e3c9ae79c9f6b3ae91fc6d3b9966f621e07b3919e67123039bdb218df0"
+  },
+  "example:jam-hughs-chromatic-adventure": {
+    "description": "844b9b3b88b6451f408146c44efbbbce9e5d16e48ab76b16786892ff9fdaaa05"
+  },
+  "example:jam-darkness-falls": {
+    "description": "b41cbb90b0e7a98c2722e9d4e63fa7a3ebb4ada789824308a633bf132e2b4214"
+  },
+  "example:jam-grim-at-your-service": {
+    "description": "706b2edc35297d3cfb2af216838539ffec5cc2f19b8d36340138335919e8a0cd"
+  },
+  "example:jam-luxel": {
+    "description": "75220b7049bc54daa9245620c07818ca1586378d09a4aea1509b8e4a29b48dc0"
+  },
+  "example:jam-bamboozled": {
+    "description": "dfb949fd6424a2f03908c73ed24624b21120004aada7518a6fbea49d1b736e07"
+  },
+  "example:jam-squirrel-family": {
+    "description": "9182f3e2bc11a3ce6f2f05270412b6195b0509f6722e1c1de7ae7099f7f3660e"
+  },
+  "example:jam-bubble-bubble": {
+    "description": "e5434ad34a24168c66e4f57f27ebb43150592357106d89675699398f4b9aefa3"
+  },
+  "example:jam-fun-fox-biscuit-bash": {
+    "description": "bda7c4acd11c94f7cc45e97c041811d8e9571f1bdae2e4d4db7c6d3d92c990a8"
+  },
+  "example:jam-itsy-bitsy": {
+    "description": "d6aa6957289b00ad21d7a7738d29c5d83bff88dc5b2bf467ca5363bac5d159f1"
+  },
+  "example:jam-operation-spin": {
+    "description": "2d022d9f2387f56640cf5e9671812c1439db17a0495d2e9db8a31dc5234203ba"
+  },
+  "example:jam-autumn-preserves": {
+    "description": "feee5bfbda068d42540c63a871eca7f498cee1ec7b8b32870fa88c955a6bbefa"
+  },
+  "example:jam-bug-bounty": {
+    "description": "44e5fc965137281f484a2346c269313a9e73f4eb52a99d6e62dbe86a442d1025"
+  },
+  "example:jam-decay-runner": {
+    "description": "b799efb6d181abab7c5462e2b8fc4f37777f1bfb38d701a24c16771ac592707c"
+  },
+  "example:jam-sacred-guardian": {
+    "description": "adfd3d9b2f42b99b697b74403cba20fcc9c80b7efb0263278dfa575fbeaf4c47"
+  },
+  "example:jam-oubliette": {
+    "description": "f43d4df85ca481efd12cc22105ec60233af9b76c81ac1a90f90f8d8c7bb1d4d4"
+  },
+  "example:jam-whispers-of-the-carnival": {
+    "description": "1c77c6ce14a936e6abc0bbaea4acfe280b066de97c96eeef7fee96f0c2f43a39"
+  },
+  "example:jam-booouuhgie": {
+    "description": "c4e8f19fa7797cc2ccd680ff162c1e66423c7ade2434bdee0bfda94ade047dcc"
+  },
+  "example:jam-constraktor": {
+    "description": "2f506a047c21ad22e48c2c2fa01e95176dbf0a3cc23be6ee71683885bc339b12"
+  },
+  "example:jam-readers-block": {
+    "description": "51c6cc3e1ec35f60fcff6aedb986ac0107d6c3226faa3f65c684bb3a9cb604bb"
+  },
+  "example:jam-everything-survivor": {
+    "description": "3cac8942867c49d0747f4fcd8fa8b2ec877a035a36d157e61c0f88e3c6fadb85"
+  },
+  "example:jam-lizards-tower": {
+    "description": "caed57f061f90ba15b7c9af77ccfbaa01b06874fe54999e15589fe37e578127a"
+  },
+  "example:jam-invite-only": {
+    "description": "5a085a738a27bf27729246d5d880c343e8292993533ead8c2a33c7952b8cd510"
+  },
+  "example:jam-kiwi-airborne": {
+    "description": "f69f98564e6bc96b0ef2b7fd7b2b6b13f4bc230b5888e9462bcdd21873693527"
+  },
+  "example:jam-unknowable": {
+    "description": "212e6a33bb5f6a76d7681f25dd2e42c0998acd1e82b1e1f8f64ae9b4f6eca73a"
+  },
+  "example:jam-carveout": {
+    "description": "064d1ea0c021598a6bcd43237998732c5268bbeeb731cb5b0c0568e26fe23b54"
+  },
+  "example:jam-blackwater": {
+    "description": "7645eae68188ab7dc765a3ed618a721ffa69a1d0b441a6881ca6bf334f9ca67e"
+  },
+  "example:jam-sonic-shock": {
+    "description": "7c527492fb87897ccd9ff795d869a6a4710a08c37c2de6d7ec22081bad3a2b1f"
+  },
+  "example:jam-square-in-10-seconds-or-less": {
+    "description": "fa396743b2ec8828e1648c371c2af8b1893a27547ebf2532feb6cbd0880c4889"
+  },
+  "example:jam-flypost": {
+    "description": "0777c1a56b7703532a813a4f9cdcbadafe0dec4bafe20323114e8255c8866118"
+  },
+  "example:jam-tidal-towns": {
+    "description": "1ada972a00cea10d1e46240b806264db7659d24bc0381e8e675cb90c36c45270"
+  },
+  "example:jam-revenge-of-the-cursed": {
+    "description": "329aa0a0be2eac627f30c15356502f0d242d5ae53104d0fa85e4d30c5ff96bfe"
+  },
+  "example:jam-orbital-clash": {
+    "description": "45469eb13da683eb36145197d27cef80061ea31a0fda53292d90246886a619eb"
+  },
+  "example:jam-polygon-protocol": {
+    "description": "f836e0f6dcb476e5d77cbb2c785c37e1d8d2b1739b052cbbd7d2d712ae2dbfee"
+  },
+  "example:jam-plomes-i-piulades": {
+    "description": "45aeff21b2009b3c0969c1787587705acb8dd1db01aa3ad02562105d79bdec27"
+  },
+  "example:jam-minisode-madness": {
+    "description": "a6ed422aa0e417965ac7dad834ad0f5ede11d1dc38a4d9acb12b4d8429cf92ee"
+  },
+  "example:jam-ocean-commander": {
+    "description": "d8a28877af2832f27cc75e0948d41088972a84d6e366e5cb681d29f90101c36c"
+  },
+  "example:jam-planet-escape": {
+    "description": "e4fa063c260d42b5c58594a264185c97617903d5cfec4c5ac14fb532e902822b"
+  },
+  "example:jam-bag-of-beholding": {
+    "description": "20fe83fa80531ae66f2bd4c823e65b6f16d2d30aa8eafb7ece626425ea10a181"
+  },
+  "example:jam-nekogotchi": {
+    "description": "5628a1cee68aad8af5a0e04c572888d59ac9b3e1df4095b2e2e7a0437bbbaf97"
+  },
+  "example:jam-whisperstone": {
+    "description": "fe0a0e3a28ed0ec11cafa50bee943d8430cf577e5c598a7b86bc5df6a4f8751c"
+  },
+  "example:jam-cool-shoot": {
+    "description": "d2e227ee727a4feee6cfc6d0764be6de121b0c739c1deccb3a26112eb9532147"
+  },
+  "example:jam-hola-soy-fish": {
+    "description": "6c2410f9bcc4148600bb4cbb6911678f95b56e0e6cdc80541716e1017734bf80"
+  },
+  "example:jam-slam-to-the-laughter": {
+    "description": "0dd6cbe6f4c616361d18bd3f1b9b39c4f03769a9fd206ecda332f05e7fbf11ab"
+  },
+  "example:jam-nicas-bubble-tea": {
+    "description": "d3e3bb4753aa32efb0950b308322cc3ebe954aca971a8afb6e1b640f917a4bfb"
+  },
+  "example:jam-loopdale": {
+    "description": "d3cd134dd6f3b52fed0813f6a081bd94602324d9a4ab5b341bc4305443a4b870"
+  },
+  "example:jam-mousewheel": {
+    "description": "97440bb3ac1d8c7e4a79ceffa8ceb63de4cf6c927119c02b3af4445ece607808"
+  },
+  "example:jam-froglet-frenzy": {
+    "description": "36a8da82675a9581883886c1d0dba882bcb722ad68afc426267982bb966215ea"
+  },
+  "example:jam-pulss": {
+    "description": "bdfec1389a8a8339a3a01412f2f80f868492d3da6a6abb6e0cdae73f35f0ef47"
+  },
+  "example:jam-flicky-bee": {
+    "description": "70cfc76623f523c774feb71fb81ee336559c073f16b71210b964898c13f6c053"
+  },
+  "example:jam-the-fat-hand": {
+    "description": "ed26fa9f055fd57d530b3418d3081b58d853d2d56ffd0e023fa9e7c2ff7d33ee"
+  },
+  "example:jam-aim-assist": {
+    "description": "0fa7258eea460fe7d10780c66c3cd10f04fc6c28c90fd4a0bba8e8050bb4e540"
+  },
+  "example:jam-bubble-wizard": {
+    "description": "78bd17e0c22fd731ed3c3b832c0a0175d0e9eac0358d35115a64425b50593943"
+  },
+  "example:jam-roll-of-the-dice-fabiomix": {
+    "description": "ad471fef79691c5a9c3d271761ab0047b086c4c6faa24eb76af6b793b56713db"
+  },
+  "example:jam-diedie": {
+    "description": "eb3b7759ebab175ed3db6a2b06b35da636b7dd9b7db8b13c0e43a0318c3d5177"
+  },
+  "example:jam-tetrogue": {
+    "description": "455a100034c3997c910dcfed8b8c83675b54f17a50fd8da40329ade541431dcb"
+  },
+  "example:jam-cheekydice": {
+    "description": "41766f0dacddd8c9141b577acaaf51e6032dde8a438c69fe30a851450d272a17"
+  },
+  "example:jam-cycle-delver": {
+    "description": "2516581f436540312c716f43d899c6d9ca0c8772b209af9b2a07f0b7d236098b"
+  },
+  "example:jam-space-escapers": {
+    "description": "91bd2f801f3bb5ee3a82a8dedcb03d96edd32fe223dec27061427e61d687218e"
+  },
+  "example:jam-bombario": {
+    "description": "214d0627057836d802a519a5ebf5827272705e82aee1765afbd92f9a984ee4ba"
+  },
+  "example:jam-personal-delivery-conglomerate": {
+    "description": "45d9dd495a53fdd646f42dc5a40eeb103e60ebd51a151e3dda83576e28eb829a"
+  },
+  "example:jam-bonbon-and-the-deep-below": {
+    "description": "3b1cf33e813fa7f8f003d33b3ab37b0d5e85967d2334c2ee27dc2c238cd9339b"
+  },
+  "example:jam-potat-os": {
+    "description": "ef720ad16b1a762e5f4ac1992b6de9bc8fd768b646d6a0a14f337671d6647c2b"
+  },
+  "example:jam-tensecbox": {
+    "description": "2f77fa1849c0a6820e342fa37e3feeefe9d458c116242895b687f24c4d374fe2"
+  },
+  "example:jam-raft-blaster": {
+    "description": "9e34a3622737c2505ebea6e194a2f9f51e7eefb57ff8b8ade6745cef4b4e4564"
+  },
+  "example:jam-tiny-shop": {
+    "description": "f32f5617a3e59d55cfdaed40d9d3db41f4fed5d3e4fe9a0401308b99f1457c7c"
+  },
+  "example:jam-summer-survival": {
+    "description": "6567f607cd3d0c37893de6720a78be094c426a2114f03ae97e4c30ca2bd9f006"
+  },
+  "example:jam-ant-colony-tycoon-deluxe": {
+    "description": "0f9a3a1874a5449cf0a53864cd2e6525fc412d4c2cd122ccb29ff19b2d6ebba1"
+  },
+  "example:jam-tiny-hawk-pro-skater": {
+    "description": "f4037c4149bf97de448399d73f9c89a8977eea0c6da84a243a50292e0259245a"
+  },
+  "example:jam-raid-in-abyss": {
+    "description": "ec40f4c4f82adc484e8f7126a6bca3d2e3fa3ecba9aebc21bd5fb34eb5f2b1c1"
+  },
+  "example:jam-st-amsel": {
+    "description": "a20c613a3379569728985543275933a1c9a6d7914a4db8ec6ac37e86592cf2b1"
+  },
+  "example:jam-gunshift": {
+    "description": "8c73d562495f28144ed49e4c75c490c779692da30cb67519b9dd9515d41771c2"
+  },
+  "example:jam-mid-sized-monsters": {
+    "description": "5d0380e5124715a54f646af7b66cbf2b39b2665b7c8941c94590dc5d830b1902"
+  },
+  "example:jam-99-shotguns": {
+    "description": "bb1464b6d36cb95910674e138ee06c5a093c206130fb8be00ba5c08f7fc6afe5"
+  },
+  "example:jam-collectors-coast": {
+    "description": "15d4a78e95876652c0c21bc22bd019665b2b194ca04f1675a73968aaf1012022"
+  },
+  "example:jam-cannon-ball-wok": {
+    "description": "7e97cf70da6120bbcf510ab279c29ee12b8d23dc4ba59d397c0aa49f6455f76d"
+  },
+  "example:jam-13-steps-to-escape": {
+    "description": "1a4853413f0753656bb5b5871ab255cbbca274c9e225a1add00dffd6165063f2"
+  },
+  "example:jam-save-the-princess-mister-knight": {
+    "description": "9b67d67e347089489bc525f3866678cd3e962bf5daf1b90386ac8c6fede3e86f"
+  },
+  "example:jam-rollermaze": {
+    "description": "84f7617fdf03b6ea6b335997cb8bcdd020c2518153d9f5c8e512f0c18f6b1f5b"
+  },
+  "example:jam-close-encounters-of-the-jeff-kind": {
+    "description": "c93142a84f432231dfaa0a3c34995aa4abdd037db0faefe757eafcc9c2f82b31"
+  },
+  "example:jam-the-last-dodo": {
+    "description": "f6eeb25de503ae0df4cde6c2c170f1f1e8b01f7df389cca7c431f838d4c24bfc"
+  },
+  "example:jam-you-wake-up-in-a-forest-its-raining": {
+    "description": "e407a9860894d82f0a70ff20ebca876ff081deb969fd8d79db7e2fd9930aa4d7"
+  },
+  "example:jam-out-of-bounds": {
+    "description": "951e0cdb36e3e3eb02bd2651d844c2415afaa4da3464005c012b1e9284a01500"
+  },
+  "example:jam-doors": {
+    "description": "eadc0abe8ab2da4da6361a6372667b8ab9c76f752c9fa54428dee54adff36ef8"
+  },
+  "example:jam-knight-helper": {
+    "description": "ed6bba0ba1cd5734cd8e2a9482d1cfff83350d9f900229709a6186eb382d3f35"
+  },
+  "example:jam-eggs-with-legs": {
+    "description": "a2e837c2edf1ef1c1145beaad19fe8520a3e46c7dcbdc883e2484a6308a1f459"
+  },
+  "example:jam-cat-crop-collector": {
+    "description": "db5439673309a12986c9cdf3877a6fbdcf34d8a752ec4a7c7c652aa034cc94ea"
+  },
+  "example:jam-pinos-perfect-public-pizza-party": {
+    "description": "003542b4a31a9ed430325b38a430ac032eb192a125a4eec3c402bc41d4a16880"
+  },
+  "example:jam-tableaoom": {
+    "description": "dd0c1baee672c2470b7b695f761ff1c11129ec7dc9cbdf13922936b73a6dc952"
+  },
+  "example:jam-necro-crypt": {
+    "description": "6abdf2d0167c0ecba254893fcd7792442cde511f0122abc94f7542102f8527d6"
+  },
+  "example:jam-spacecell": {
+    "description": "e8e5d255755979b5449d00ee41b5a20e513d7e88c821e463ed08951f60d21c5e"
+  },
+  "example:jam-living-lift": {
+    "description": "4bce077375a441aad9f60833464a27da824629a937443799c3164898d046ee82"
+  },
+  "example:jam-scrap-repair": {
+    "description": "7d08205810fc6d3201895e592d79ce7dc6e94feabf6439dcae7d0a725dce9ca7"
+  },
+  "example:jam-catalyst": {
+    "description": "57eb43bbca48a7efa08c0bc89a467f8d4f8970ee158b3c17b8878772e30e4079"
+  },
+  "example:jam-arthur-fisher-intelligence": {
+    "description": "ba4ccd3ff5422ab4c58078e36ed7dfe169cd3f65df707ec6c339b7d22bdd6548"
+  },
+  "example:jam-codeware": {
+    "description": "33340e5f10e672fdf4766237070ce130b2180db8eacc5e37718cd7b22d13d1c1"
+  },
+  "example:jam-dont-blink": {
+    "description": "7079d81ff59f720ad73ac73bd2d9f84d61da9f33a28eca32c7dcb0c4514420a5"
+  },
+  "example:jam-monsters-night": {
+    "description": "3689b91528e184b14fe0fac2c8e0bf9ee4e1a5b47a98074e2b3c4ab98b89c58c"
+  },
+  "example:jam-for-the-great-belly": {
+    "description": "b4fe61f4d5b857ad4eb3f5382bed57ef2c5a8442831722af6408e46c09960a5b"
+  },
+  "example:jam-shadow-wielder": {
+    "description": "9fff3b401452cd8749d5b8fc39bb5e197b1ac92922f1b041569d90890bb0b307"
+  },
+  "example:jam-chrono-banana-farm": {
+    "description": "5c607d8a8ff53930255bdac513f62ce29fab9e134d305815a491e40447f1ee45"
+  },
+  "example:jam-ragged-sails": {
+    "description": "549412155ecf751b3cb7b8025256c56000b40317a86422cf30d3229e3b32ae5b"
+  },
+  "example:jam-monstersweeper": {
+    "description": "0021569f7df85e4bb1716eb2c9904531ba3ebeed716ed81c5e1d31a02064bbd5"
+  },
+  "example:jam-only-so-many-places": {
+    "description": "f7f45260df1d64eac5e5d8eaa242110d4fdd4559417d42e9e7dbdc35cde9530d"
+  },
+  "example:jam-live-square-repeat": {
+    "description": "231d29efe3c1accb3462aa1650938152b67fdb0695ea94245391163548fe9d40"
+  },
+  "example:jam-bucket-brews": {
+    "description": "db43de2732fb14d7405cce41b2843ad794b86a9b052ff3b47a13ad6c53deb835"
+  },
+  "example:jam-noumenon": {
+    "description": "5434f0b825e524ef7eb7e7994f65ad9fbd2133472a73458c9abe3dff356357b6"
+  },
+  "example:jam-utterly-from-outer-space": {
+    "description": "b4a373008f24584d7d4ae75e7a1ab4437bfb061117b88879c0c3e3b79b7eaf68"
+  },
+  "example:jam-faulty-robot": {
+    "description": "23859acbd5f02da14e44179073127f76abf5ebc93521f3062c6029ae33ac19d9"
+  },
+  "example:jam-afrogalypse": {
+    "description": "4373034ec51a33dbb2021ab31fa5353fd32a13b10aaf41ff5c9f594b6c1e9bdd"
+  },
+  "example:jam-elder-angler": {
+    "description": "1c953259be74de2698cd42a38df364988012c83605ae6753f6203016928ddbf4"
+  },
+  "example:jam-falling-casino": {
+    "description": "2fdc88cd6d6e4d6c1747309d1d4ff15bf828c79f16decab5425e75a7de9b55ec"
+  },
+  "example:jam-the-bloody-raise": {
+    "description": "8f212abe62aadca1651976bacf7c308697adb9487626b2a1a56a951c53f4751a"
+  },
+  "example:jam-plungewing-mcaquaquack": {
+    "description": "d63ed0bb21d6037c7a6cef33dd7911d204752acbf1d5f5dedb1a1612ba08b79e"
+  },
+  "example:jam-bash": {
+    "description": "14028f9faa56837877607fab79acd3e86e8e78bf983241c23762753b0c60a1a7"
+  },
+  "example:jam-last-one-dancing": {
+    "description": "86f9698b65b57f6259179cf21090760dd0107cb6a1477161a7120843f956ae5e"
+  },
+  "example:jam-phaseshifter": {
+    "description": "bb38a163951e2587280a7c901269dc57437ffe732fb777983c6b43b28acdc5d0"
+  },
+  "example:jam-keep-it-bombganized": {
+    "description": "2daa47bcdd9894448002bd93218ff9f78a086c8f24b007239468d2cc4df0ee01"
+  },
+  "example:jam-ball-entanglement": {
+    "description": "b0900633543a2e4756212a7c7920fc83da7d38c550d6693284c99d30f6362b7d"
+  },
+  "example:jam-interrogation": {
+    "description": "51ca3f12f558e6c206a487d22565e3da054614698c4459680e30921d81597bb5"
+  },
+  "example:jam-far-lands": {
+    "description": "951cd5075e4f35dfeacc1f5728283224dd312115d44ee1848236507f0fd0d046"
+  },
+  "example:jam-drunk-space-odyssey": {
+    "description": "4af566c96b5adbbedfba0101a9ca46897f08f7a6544f5e52512af31d87722958"
+  },
+  "example:jam-oblivision": {
+    "description": "e06cb5115f4890efc5e02a916a8abc4a23655dd2d43d30e00768f40d3f4eead8"
+  },
+  "example:jam-trix": {
+    "description": "5954c4cde229eb210815b428ddbde794157e5d2210104e017233ec8a3942019c"
+  },
+  "example:jam-unshelled": {
+    "description": "0a2c67fce30056820d4f4fa58fb1f27a69d23d67dd257af1de61a031dd8e9cba"
+  },
+  "example:jam-castaway-grid-farmer": {
+    "description": "ba4b53dcb083d85e56bf27124facbb0ea90ee2ac3956f6db3387249b46a6e2ce"
+  },
+  "example:jam-13th-floor": {
+    "description": "007283312cd7f08f799d6be55af32faf9886bf336b9a8c1ccea15ae30016386a"
+  },
+  "example:jam-those-final-seconds": {
+    "description": "ec53190c3dae63a6fcbf065311b93d76c9578434670b97b801e90bc249d5cf4c"
+  },
+  "example:jam-nebula-m09": {
+    "description": "fbf13c27dec0d7b181a7b5c544209c15ceca99588f8b24a6cd3908a58375f484"
+  },
+  "example:jam-unborn": {
+    "description": "ba8dbc2295f5f5baa324ef43ccbe9519d287e9d0cec2b5b62f71b7911d107159"
+  },
+  "example:jam-big-black-book-of-magic": {
+    "description": "08d6c48e126f47da3da9e704159f9eb2ea7e114672b179a7ec5161bea74c5d4f"
+  },
+  "example:jam-supercritical-post-apocalyptic-bonsai": {
+    "description": "33600ab3af407b1fdb423a36e99e3a9327d92f7ef40a325024510212a93e3e55"
+  },
+  "example:jam-moon-run": {
+    "description": "d16613f219af413504fa8ab86beb32745d8e95a410c87af6a14f7aa2197604d4"
+  },
+  "example:jam-dream-tail": {
+    "description": "36f3cb3e219cf4dc85b205532937ef7cfd471f1aae7cb880ec63e82981c3a347"
+  },
+  "example:jam-buildings-eraser": {
+    "description": "569fb983f2e44a8171123d7dcd3b0002ac4c602d98682d9d1370fb211d6bcedc"
+  },
+  "example:jam-the-golden-rule": {
+    "description": "dd3732a2882a5e7a53e8248cf99918755a7d21033a4aa1c06a88921c467a59c5"
+  },
+  "example:jam-devotion-gwj81": {
+    "description": "9e00b5f5d9df348327b2ee9e7f726eacc38d32717649a263d994ccf538fe33d5"
+  },
+  "example:jam-seasonal-consequences": {
+    "description": "96f209252ce93a1df2cd5996bab2118f4ba2b706351cd08c46477e79aeef627a"
+  },
+  "example:jam-automnia": {
+    "description": "433c9abc7814a94ff799b022b3419151816b5009d4bd021ab89aa51c67ba9cf7"
+  },
+  "example:jam-haunted-circuits": {
+    "description": "043033fdb57eb60a4f64cc30ef3e737e1e64aec2b4a9a6804b314ba24e101dd3"
+  },
+  "example:jam-absurd-herd": {
+    "description": "4e3c9ee5498f1e94d87f685c5dff4d98206799bf0a7e4760bc886552f9d8b0ce"
+  },
+  "example:jam-superspeed-spa": {
+    "description": "0c288643c63e5a4d31da132f78ed5ba85dca0dfb61db68a4e28698895cf7c967"
+  },
+  "example:jam-happy-hermit-crab-turbo-adventure": {
+    "description": "3c0f7e794bb2f3611b6ce7ed16d80da472c47b0bfcb1dff0948373594c6b8366"
+  },
+  "example:jam-terminal-ggj23": {
+    "description": "aa4ffcb45a91fab17276fffc7eac8fc1b36b2134424a2487ff873fb1f644c7ae"
+  },
+  "example:jam-man-versus-the-crowd": {
+    "description": "5e4c06255de368143b6882cbd0a73b80ec403a7fb378d129a7748fa75a1c241c"
+  },
+  "example:jam-the-necrobotanist": {
+    "description": "667f539fa46a223c99ae01835249d6f931d2278d5ca996a5db0e52ba82bb29d5"
+  },
+  "example:jam-jest-to-impress": {
+    "description": "062191f838b9c900a115f0f126b7c41fdb497d7d338f6a8ae3c85369dc708e1b"
+  },
+  "example:jam-blub-blub-pop": {
+    "description": "e0e8c7edf049f267e0e49f3386626fbfa59e2ed4d443d0cf6dbda3721b6bef8f"
+  },
+  "example:jam-funky-drive-through": {
+    "description": "d6ed02fe80f2ad7c096117a70d18d2273eaef22c88cffb35d5bd4b751bce5efa"
+  },
+  "example:jam-sitcom-simulator": {
+    "description": "129e8fc6e1023a76691a56f5902c38f2c350eb11f082498ec1e229683ba9b60e"
+  },
+  "example:jam-rooted-journey": {
+    "description": "f4faa69668e5d24c06b8c94dc13c92bf693149a716a1afe5d83ff33e84604425"
+  },
+  "example:jam-dual-crystal": {
+    "description": "40b19c2a276461ecdb6f54bf5b390c59029f597aee09ef1d11cc795eaa523b76"
+  },
+  "example:jam-ooboloo": {
+    "description": "073d7fffea148a529e1c678c8181cc0922ad2e9095dd896c0e318a2019847ccd"
+  },
+  "example:jam-lovely-masqueraid": {
+    "description": "27861817454bca4a4c27e7ee9abb984f80c64758a379291e76583a98490889a9"
+  },
+  "example:jam-compy-destroys-the-world": {
+    "description": "58b0c852e72fae137dd3d8fcad753f75abb4f16ce441482098bdda243740f1c5"
+  },
+  "example:jam-priests-holy-quest": {
+    "description": "af815bb21f10ed95271f8961b5871142cd718401544c8ad14d25a6a7ba767969"
+  },
+  "example:jam-snatch-n-sniff": {
+    "description": "a3d58ec6576145519ab632c943959250ba01389cd0642cbbbaba3e389c09e46d"
+  },
+  "example:jam-repair-raider": {
+    "description": "e6fc709e87955a74781a1b7bd9fee36c29c96758f4822c5bb362c75152e05dec"
+  },
+  "example:jam-poungi": {
+    "description": "6f4760f2ebac0829e7c6007771443679b02e0166637afe69859d594d86f8a8b4"
+  },
+  "example:jam-shadow-of-the-mask": {
+    "description": "9b8179b218b1535b833aac086ffeacaa7eed543a456b7a1c5f5ae9dd0af460f7"
+  },
+  "example:jam-under-the-horizon": {
+    "description": "03cba83e063688e5ccb4357b4f9103e1f4d5414efe692b45b517e2f3f08d959b"
+  },
+  "example:jam-catfluencer": {
+    "description": "595a452396bef12bb01405c231e670cd59bef2c56c82ea2a1a5601c6db0a50ca"
+  },
+  "example:jam-supertuxworld": {
+    "description": "cd15358af226be69fb68c72b93076c91949ca11afb5bc68411987dcbfaf682d5"
+  },
+  "example:jam-crystal-dash": {
+    "description": "f1c50216aff9e258165374265786ccfea9bc8d0ecf2da3426954fc0b13f94c6d"
+  },
+  "example:jam-deepwood": {
+    "description": "5cc21bd451b4efc3fc17187c849fc553f2f99c6027ab2ab6b0268e79cdb8d99a"
+  },
+  "example:jam-zacks-dress-up": {
+    "description": "29230d0c3bf61ac48e24b74fc21f467af398a52a0f858fc840862c0758341d77"
+  },
+  "example:jam-mongoose-feast": {
+    "description": "5aa6f7b41fc0e7d550c72099d4b144464463eac03fdbd4913996ca8a375aba50"
+  },
+  "example:jam-weekend-space-command-prototype": {
+    "description": "5974183d663bb5ac39c38cace8bbbe1b7d3ea107b08e77fc04484ef0c2602fb9"
+  },
+  "example:jam-depot-gato": {
+    "description": "deb4da4224cf3d4313d6675904f98592e4ffa4d347201c32692f07843614ba90"
+  },
+  "example:jam-shooting-gallery-sparrowworks": {
+    "description": "576502443ceeb437eaacce23ce2db831a2d3f55899ecbcbab792df27342841b7"
+  },
+  "example:jam-forgotten-crypt": {
+    "description": "c6ffda3a8f98409635853aa273c5684208d319adcf2e515b7d4ce8222d3049af"
+  },
+  "example:jam-reia-pre-alpha": {
+    "description": "a1552f14abdda6959db46787564da8943ee63a70a3b723906c4846e8cd99ad43"
+  },
+  "example:jam-poder-solar": {
+    "description": "dcf816f2ac8c7b34325073c05c9e7e18811e1e36476c9c4a15a89d998c601e29"
+  },
+  "example:jam-bread-adventure": {
+    "description": "400660236b7d7f7094366be2b23573a48b0e0ccd8293f761f5a8032bfe5ea3dc"
+  },
+  "example:jam-radius-rumble": {
+    "description": "ba0015835b117a07cf156f0605a13ac58c6f0bf3b5a372bf3393793e0400cdd3"
+  },
+  "example:jam-miras-journal": {
+    "description": "5695b7fc2f5b45142a64c6f62248a7edf5eada0b8ada55f953458cd71015e485"
+  },
+  "example:jam-asteroids-revenge": {
+    "description": "95510b99560dab391053b074dab0c5f94fe39b299f961d6ce03d6e3f1e09272c"
+  },
+  "example:jam-marble-mechanical-flower": {
+    "description": "1fbe536240def9405b0010c4d135fff76cab0048ad22e64551f3b8fd1fd895d5"
+  },
+  "example:jam-expland": {
+    "description": "f9bd82a34c7ff91e1c5eda635da9b9c509caba24c7bb0c3ec5c625171f9887a9"
+  },
+  "example:jam-the-jade-crypt": {
+    "description": "90636a100c6f5d6fcbcb767aca6d89802e9674b1f2f1df9438d38c96612bd232"
+  },
+  "example:jam-horde-survival-3d": {
+    "description": "9c8fd043ca355135a61c684baec1a239ef577e1555db3b1c1bd25782f4edaf78"
+  },
+  "example:jam-cutting-plane-game-2": {
+    "description": "10eb308be04e9a6c753118ac0b5ccfe8a72090968b491cbcd5de4c12f15c24d8"
+  },
+  "example:jam-not-named-yet-gamedev": {
+    "description": "b866c0bfd28f24c40273097340f3cad2badb3a092ced8d991594889e139bc613"
+  },
+  "example:jam-moon-mishap": {
+    "description": "0e2be104b7fa56cf2b0bc7ed27e2f9b6df3a4724136acd228532d2b69546dfea"
+  },
+  "example:jam-dragon-city-clone-escalopa": {
+    "description": "f604700d44821eb61828ed497263a30bb4b415697154102c6b68f163b5728e19"
+  },
+  "example:jam-marble-runner-kaushalmeena": {
+    "description": "8386290fc0dbb409b03e0d632ea7debf82ff9ab0f96f4827f5f34dbf1c062d01"
+  },
+  "example:jam-holonomy": {
+    "description": "5069168910dd8c8fa086bf93ace043b911b918744bb6c6e313e736492a2b373c"
+  },
+  "example:jam-cards-n-castles": {
+    "description": "ef4096d4bdb090bd8bfc0417c60a202b114287b6230ee23a77ad699e2d79fffd"
+  },
+  "example:jam-lithic": {
+    "description": "99ebcb824a8350a6860ed40ab35cb649976a4b6f3267fc31bea1830611a1c09a"
+  },
+  "example:jam-caliditas": {
+    "description": "f26289cc93992a014c542ed45d61aff4d739cd471a1fc727d4cb589c530829f6"
+  },
+  "example:jam-cybertale": {
+    "description": "8aec09daaaa826d81f83740bf0f874dad9d0a7eb83c91a918c51c67fa0c10dd0"
+  },
+  "example:jam-crux-swarm": {
+    "description": "6d1768566365d68dd918b5db0dd2fb4707fdf8bdda69e8ee5d47070db3316def"
+  },
+  "example:jam-untitled-glue-game": {
+    "description": "0ce18eada8f72f2951cff7ecd98bea462f270f0ca441cb6f577ff0ee0da2746e"
+  },
+  "example:jam-power-cut": {
+    "description": "f2c9e6b386ef018c0299910bcc0ba656fda5b1d76f7b90a80fb431487acc8a20"
+  },
+  "example:jam-hide-and-sick": {
+    "description": "be827fba7dccfe136553c084b26379bdcba23f4be56c7a9c35c8ede6ffb78183"
+  },
+  "example:jam-cozy-snow": {
+    "description": "3bcdd0881e3ce48cca3f184c3cf736e34c7b040e7a8042448c8eaba84dc11d6a"
+  },
+  "example:jam-electro-havoc-v2": {
+    "description": "e8841ecf132262634559a40b5f0c1d84668c6803175f0a9b991f04214b6be1fb"
+  },
+  "example:jam-laugh-equilibrium": {
+    "description": "dee8618423da27e220edd1eba2e864fb52bd1026b646bb8c945ccdcc0a67aa47"
+  },
+  "example:jam-blood-moon-game-off-2020": {
+    "description": "a87387f7eb1114eb5aff24e2d058a64821a49e4b49c77685cededf475af4150c"
+  },
+  "example:jam-archetype-cssa": {
+    "description": "18eab3810d464567850967363fe46bccc481e2268aafe6fe7ffcd4c845e01a1e"
+  },
+  "example:jam-d3bugged": {
+    "description": "fcfdce6049863dbdc1f1aebb73809c20b890cda7eb2fd7afbb0807cb92104ec6"
+  },
+  "example:jam-fusion-farmer": {
+    "description": "125579a63004ea2cbd5c75471b1cf4d96a5133e85d5dc85a38181367ea5cabc0"
+  },
+  "example:jam-equal-to-p": {
+    "description": "77e975db337ec4add8e7592a7c5718fc51b469da32126e28341d0302837d3b2e"
+  },
+  "example:jam-hackerspiele": {
+    "description": "7b0d0120c0bdf862a248d67ede215f628b3d8e9bb2e40e5e96058a275f33f0a5"
+  },
+  "example:jam-super-repair-bros": {
+    "description": "e9f4c3e1b3ded228ab06f9743df9f25222882b383164a086f33b04729cf40a4c"
+  },
+  "example:jam-hare-der-lage": {
+    "description": "cf30a05e9a0f6b2d80c3868774e933daf5bde407086c71a6f8f48b80561cc971"
+  },
+  "example:jam-clickbait": {
+    "description": "d55bcdcbb183deb9e6efeab97c08d25880fca2a75d8702ac792f110f180d6c5d"
+  },
+  "example:jam-sabotage-express": {
+    "description": "873661608571be9215852887173ecaf01b2ffe618d49e72a21f3db2d910e2215"
+  },
+  "example:jam-totally-terrifying-turns": {
+    "description": "602343d27f8301af9308474ee6f0f2c3aab8b296c80118a40a68271cda7ca5db"
+  },
+  "example:jam-tree-of-eden": {
+    "description": "941e48daab45d1d347326c2e28ed89e81830eec6ce1e8e12eba9c5552fc3395c"
+  },
+  "example:jam-immunity-attack": {
+    "description": "1174af2243d125b977aa484be4b2be9ac24590ee3ccabdd7cf3e83ef9819c568"
+  },
+  "example:jam-triangle-run": {
+    "description": "2fc15fd37131bbd79f981f4e3a353c1475ca0bee31294fd811738f1ce12bb4a2"
+  },
+  "example:jam-cave-empire": {
+    "description": "cab3fed6800b82ada2b1e56d3dbd5fc09c91f8b3053b290714c01d496543af57"
+  },
+  "example:jam-monke-sim": {
+    "description": "1c030dd7c9e64b2e731b39ebb4e353295fd42c40d3bcabb808d0d57b61196111"
+  },
+  "example:jam-wild-and-free": {
+    "description": "c93b505d16736e2d6237b2025ceed7778d0db22f9dc02d3a7daccc965bb6f2e2"
+  },
+  "example:jam-re-pairing": {
+    "description": "82a0e5be4bd0158b38e24fa2fe1e0cbcc3efa6350fe2dfcf6e57f26569d719ae"
+  },
+  "example:jam-cordyception": {
+    "description": "ec148b1b60239a035e28ce4471f171c8df8847dd95aa3a71e725eaaec057538c"
+  },
+  "example:jam-grave-harvest": {
+    "description": "7dd1e2f83979ea0a6e3435bd1265226763fcdcbf6c2d7f2eb09e13364f19fc53"
+  },
+  "example:jam-greenway": {
+    "description": "2c69c9ba7115399b0cd2a24fb1c4682466dea999584605249df6456b35552f8e"
+  },
+  "example:jam-to-catch-a-wizard": {
+    "description": "cda2e3443d2f4153d2cf11c755648e508f07933ead354827f278e5081cdf2e17"
+  },
+  "example:jam-evergrove": {
+    "description": "056ecfa347b71ebdfabf39c4b30e4a5da46a18ab2aeb83fb99bc44187f3c42bb"
+  },
+  "example:jam-outward": {
+    "description": "8979637eb0e782773eeffa10aef08628b842690b9f7c2f882d5eaaf0c53052a3"
+  },
+  "example:jam-giggle-groove": {
+    "description": "8a0b55e74bf6d5d28158806ca0ff39a55be79af6a1f86e6bd72dcbef2c602e68"
+  },
+  "example:jam-second-interval": {
+    "description": "a7a20c03cd92ac6fbd8f992706ade172a882ce3aca94e82b9b63bfd25b5a9498"
+  },
+  "example:jam-pizza-game": {
+    "description": "efcb50f6b3b958b4627a7bd4a26a119190d75e716a2fa84aea77137597486c13"
+  },
+  "example:jam-daemon-limbs": {
+    "description": "0f9f5d53d4492dcc65b03aaac5916198b5557ffae0bd5a1353a48994dc5b1422"
+  },
+  "example:jam-pot-life": {
+    "description": "21ed33b7d7640afb9ba283b843429745ff68d1651e2f2518977a2f5794a021a7"
+  },
+  "example:jam-delive": {
+    "description": "4293e560e3898e3514719ff686ea7914bd0b60e0f241411f1d90958ce3af48fa"
+  },
+  "example:jam-halt": {
+    "description": "9ee009ebfd04a054eff132890175a4d6620c408bc252f82d248f6b996a4d58a9"
+  },
+  "example:jam-zip-drone-dash": {
+    "description": "f11b8b00f9f4e9de070abb1be1551724045b765b40f9ff60a1b6a5bd719aceff"
+  },
+  "example:jam-blorts-big-adventure": {
+    "description": "5840e23f527cd327271dac8b25a596e4544adc4419f3ad3c994b736499b23925"
+  },
+  "example:jam-wild-magic-dice": {
+    "description": "d78e752948376a82d1e86f9999de5a6d2b0d533128d31527916fdeb87a4477ea"
+  },
+  "example:jam-pineapple-run": {
+    "description": "d12b7f42711959738deac8eefd43ba5963db8a52d4284776bedefbc73deb2662"
+  },
+  "example:jam-a-flicker-in-the-dark": {
+    "description": "481711c911133cb1b42d6a988d9d0503b4c5d07da7da9cc3e3bc6e0260762860"
+  },
+  "example:jam-1d-puzzle": {
+    "description": "060cf150e4878c474253488863e4d057dd14e8353d29d8f73944d79e7e5f4e22"
+  },
+  "example:jam-lockerworlds": {
+    "description": "3cdabcf5cd40d9e64bb43a8a470613d344a769d015ac490a7e7a49fa47296dac"
+  },
+  "example:jam-shadow-summoner": {
+    "description": "a4eb4cce5db48fc2b8d6cff1fa5c03969df6115f2ae934391d8441f65c4d770e"
+  },
+  "example:jam-echo-chamber": {
+    "description": "7635f5852dd5455fa552db4a0ed2464e929299801d88fd40931555fe6a6f924f"
+  },
+  "example:jam-illuminat": {
+    "description": "8c73e54b4494398834368353b7d1e3c9eae063f5d37bcdeb77d0d0733553171b"
+  },
+  "example:jam-bumpy-drilly": {
+    "description": "dce23882eedf3e71d904d5f16eb8406addbeb07623ebdbc94407af7111997b63"
+  },
+  "example:jam-ld54-train-routes": {
+    "description": "4236d13c33a411eb628e1d9a9fdb084bd67963f6d044893b6f2c341918cfd481"
+  },
+  "example:jam-risky-rule": {
+    "description": "f13cdb7011c71adc180e9bd4b1b705b5eec0d26455ae217e56726ee2bb656e1f"
+  },
+  "example:jam-bosskeeper": {
+    "description": "5da51cc938e74d012b332d9bb356cee451ffe4e6faeee309965ba74f88f6cfbb"
+  },
+  "example:jam-a-cat-in-the-aliens-lair": {
+    "description": "77354bb35757d25bf9f96d7fb4f281deae51c7e0a31f8912bef3120f7137a8bf"
+  },
+  "example:jam-shelf-shift": {
+    "description": "b5314b924b43cfeec47c6cb181c2ff54bbee6d258d91f3c9feef3e913cae31b6"
+  },
+  "example:jam-the-boy-on-the-first-floor": {
+    "description": "dabc755bf1be903a7bfa8196031bc4464207d2e380a0efca127b72ede0e07ca6"
+  },
+  "example:jam-between-my-shadows": {
+    "description": "1f626d4102d576aea04a0ad23cd5354ae55e2fdcd8ebb7d8be4806ebc02aec1a"
+  },
+  "example:jam-monster-match": {
+    "description": "cc8810dbe68c7450301f3d25a78acd1d053bdfd649aa85f3ca86d657260ee771"
+  },
+  "example:jam-tiny-tinker": {
+    "description": "b3f1dc91649504e037c27dd2d6ddf7f2494d2be1770fbbc87b95cece2185f82a"
+  },
+  "example:jam-dark-ritual": {
+    "description": "af22776d6cad382ce1d1bea02f2f90e4990a238dd58829aaa3d9fc159d9c94da"
+  },
+  "example:jam-while-the-lantern-burns": {
+    "description": "093bc596c041728d3bff34c156f90e49f4edb11b664df8c80925f856e4ae8cfd"
+  },
+  "example:jam-beet-farmer": {
+    "description": "116935a5b2b132b61d32fa9040e87dab9732af3257b5edf3d986458d02a81fea"
+  },
+  "example:jam-crisis-in-banana-republic": {
+    "description": "f342a97beb43352db179d84ddcacd8542cd8812d738d8bc222bb862c5173cd47"
+  },
+  "example:jam-monster-hunter-pocket": {
+    "description": "04188e752ba82658d14a275794542f03b5a38c41c01715863373fb229e1bb2bc"
+  },
+  "example:jam-otica-hero": {
+    "description": "b55d4c8442b9cbbc929557d0f184754052035e9d7359fe4ab9188f3e6738b290"
+  },
+  "example:jam-sketchy-characters": {
+    "description": "8bcd3b5d055c90313ad50740bd542e0ca2a9ccd693acf2e7379088a77f010f73"
+  },
+  "example:jam-state-of-order": {
+    "description": "e0306e0dc2ccac67650e881403b4016aa9af6e274c468fab83d698b649903f41"
+  },
+  "example:jam-graceful-descend": {
+    "description": "65f9fe6c1c4a78b60d2740fbc2e3a031edba84c349c4306b8222963c833aac69"
+  },
+  "example:jam-cattle-quest": {
+    "description": "5e5fa378ef40cadf25aa73ca626999e966f3988afb0ebffb1890e67e7d265ddd"
+  },
+  "example:jam-collaboration-brothers-adventure": {
+    "description": "da04b713297771dde815cd0ecde7dec5a1972cccf4832d227dd22f36e32576a4"
+  },
+  "example:jam-bahama-banana": {
+    "description": "d07b7b3afd0bbc46a3dbf35e1856c74f579b4bf2602ed7b0fcc0102c5f688a29"
+  },
+  "example:jam-orbeater": {
+    "description": "f8e7811e1443096cd31d9fae6300143e602c26f91b39216de4a1d6225f2e7e40"
+  },
+  "example:jam-green-dusk": {
+    "description": "7bfc34f616ea20a8b390c4242cca0af15299d755f0f3c5ba71926e276709d2d8"
+  },
+  "example:jam-dezombification": {
+    "description": "eed11f7dc2816967e504d67df51affc1663208fcad41a41a347b1fa78c3904f6"
+  },
+  "example:jam-dakota-duck-dark-slime-dungeon": {
+    "description": "2bf66839e3f5949dc54f7cc215ca9c703e7224d3115e6f2859c43e8782e8a79b"
+  },
+  "example:jam-rated-t-for-trash": {
+    "description": "783761791371a6d6506c5dbebe335935e348b9d7ff782c52552639647fc13a53"
+  },
+  "example:jam-escape-space": {
+    "description": "ed6f880bf195dd1e8737ac032612ad0464d52d59630b2ad80c0e7cc86ff65ae4"
+  },
+  "example:jam-scaling-up-industries": {
+    "description": "b07332fcf90c7a507bfedc70cc0281f0ecd5977dfe8a716a7b9d48fe619dcebd"
+  },
+  "example:jam-hammer-space": {
+    "description": "aff414a786e97fb9fceb0f438aa3677bcd1993e87bc3c944e40fff41ffdd8b2e"
+  },
+  "example:jam-lurelink": {
+    "description": "0f06f301f258aaa7d4eb5d0018a881c23ece52098a92e9adb3a41ee3863ef63d"
+  },
+  "example:jam-the-guardrooms": {
+    "description": "4101e77f3a159016f267411272336c2a23745d07fac212ff4ae3425db718bbbe"
+  },
+  "example:jam-chores": {
+    "description": "71650ecf6c275d58db1ac9c56d28c9b61b82c9106d6e42fc5b0d68ba1d0417b8"
+  },
+  "example:jam-mocas-no-survivor-game": {
+    "description": "31e166a9fa32918ec5c1669fa29b115d9e501e81ac8908d4ba6d1b62ab31aeff"
+  },
+  "example:jam-255-ping-mirror-conflict": {
+    "description": "d6f57721fd9615bb0c9403e579c4a7c45040bceefa247f98153e2a3160ffb15d"
+  },
+  "example:jam-onoff": {
+    "description": "efa5f3c5a63d3bd19885fac761269a6faf7b51d9c5ab9053d14217da7356dca7"
+  },
+  "example:jam-triangle-back-to-home": {
+    "description": "89aaa2bcdb5b7283e9f899c37e865dd5f367f926a967ec96f5947a1a15c36395"
+  },
+  "example:jam-off-the-line": {
+    "description": "2b07967ed0b9f2c815f69211184cc214c27bb9c2d91cb2d0c24289bafd48cade"
+  },
+  "example:jam-spacecraft": {
+    "description": "f7c7c53dd9ef732fd32ff6dcb3bad8fa6f4d4b0e0d178f1362bbad3ae69d7294"
+  },
+  "example:jam-raven": {
+    "description": "72d63395cac95326db682a3f058712930418038d91f7be6918a9c80538e8e206"
+  },
+  "example:jam-super-chrono-portal-maker": {
+    "description": "ad2213f5b98fa0bc8a0c2a3b770fbe68e80eb400a87991739b448f2e34ddb982"
+  },
+  "example:jam-evil-glitch": {
+    "description": "f0314fe3321a9184541fc8e43eeebb52f89b2a45e8d18c63ba8c9f7293c71739"
+  },
+  "example:jam-glitch-buster": {
+    "description": "67ee82d473b0acb3fe9b8e6f8cd896583c22e05aa511aafd339d0a0a60e830f6"
+  },
+  "example:jam-xx142-b2exe": {
+    "description": "9e5b15365ec692e4dd447f052e5c5554dcb18a1bc3c4d1d9b11cc0c840a0f801"
+  },
+  "example:jam-mumuy-pacman": {
+    "description": "108f7059f1dbe25e9e35c8a2dfd1e51a7203f4a7a3f91081ccdfd97b23994c5f"
+  },
+  "example:open3d-arcade-3d": {
+    "description": "63c1ae5b1a8e6f67fdf8292af441839e3c93aa09e5741c6c28b756a9bd47e494"
+  },
+  "example:open3d-ashlands": {
+    "description": "65383989bc8afb03222ac4d25cbefa53790149d861fe2c738b65c0068fbde22e"
+  },
+  "example:open3d-bridge-horror-house": {
+    "description": "3836d507432b5b3bd9952d77bb483196635ce9924f82d40f8d4f513da195c87e"
+  },
+  "example:open3d-claude-bandicoot": {
+    "description": "21f33495c5b51797b82dc4602ef9087ab875fbb4dffe12ea005ce62974db644d"
+  },
+  "example:open3d-flight-sim": {
+    "description": "f231a34971fdf6040e2f52604fb657d65b4153af9200bf8637e56cb146c965c6"
+  },
+  "example:open3d-house-arkanum": {
+    "description": "c08eee14a44831cd7349b56f68162044f4684c284a4d2eca5042facb69bdecfe"
+  },
+  "example:open3d-langenium": {
+    "description": "4da7369a8b42d35933669c69a9fa4d3f05d7acdd74ef65a055f07ae418950333"
+  },
+  "example:open3d-leonida": {
+    "description": "ce969203faba9af8bbb068cf7d3ce7ab70ccf474529196348ab8050cf070858e"
+  },
+  "example:open3d-liminal": {
+    "description": "0a523cbab80d5f92a29100c164e8e728c6c3cd61da9f4be7a4d0ba350f5aa799"
+  },
+  "example:open3d-the-maze": {
+    "description": "04989420ab7be879af9873fa116fb2b2a2c8d408bac3fc5d372c450a77b16043"
+  },
+  "example:open3d-the-soul-foundry": {
+    "description": "b7498dacd6873ae3a01eb46b7bab84d633c4196e246f996718cdf35dbc790ff7"
+  },
+  "example:open3d-tower-defense": {
+    "description": "01e2bbf1787ff107506f30854211de4e334bd5a9259902666fb0cb0bad9f15ce"
+  },
+  "example:open3d-trigger-rally-online-edition": {
+    "description": "2d1f2805908213012c7ff15b37afa1a54ccafb049d5d24534c538a0890ae5c64"
+  },
+  "example:open3d-404-race": {
+    "description": "1941bda6890d880f97c167ce12a4cd709b8de6ba346fe26b20a1f002a985bde2"
+  },
+  "example:open3d-invaders": {
+    "description": "618ab978f2a4b28c47678e2050897128a904a8377e2520004546d89ecc75a321"
+  },
+  "example:open3d-cat-shooter-ritual-catacombs": {
+    "description": "8824f06733578ba7c5397e263078dc007887fc85302be23228d4e937f45f6fbf"
+  },
+  "example:open3d-minipunk": {
+    "description": "28c7911d9a8ecf06bc86ea655c4bd61360a71fb9be050da6ea39af573de1b700"
+  },
+  "example:open3d-scriptfox13k": {
+    "description": "cf92a094219024f2189f66b3917a3c73f332018df64cea4c938dcffc45924466"
+  },
+  "example:open3d-the-adventures-of-captain-callisto": {
+    "description": "14e1587f24a7d961fcb0fcb27a45b46ae357529007e9983f78a5064ddd3345c7"
+  },
+  "example:open3d-underrun": {
+    "description": "e933f893f50fcebafb81ddb3880c9cfcc136cfc27059f95e400933f831b417b2"
+  },
+  "example:open3d-3d-horror-game-yassine-mathlouthi": {
+    "description": "aaff9a8e6d75c27e37763cfd44b4f60f26861728d8708b8c955551a859043f1e"
+  },
+  "example:open3d-3d-horror-proto": {
+    "description": "e85a3125386bf32cc95bdca168b1ae39ea3988df402f1a4ee8e978b6947f3f62"
+  },
+  "example:open3d-all-alone": {
+    "description": "b4cb55bbd89d310df520c6d480b9ee2894218ef710a666d03f2d99d814fb9c54"
+  },
+  "example:open3d-boom": {
+    "description": "20f0c6b9a33bb20dd00058df2246faec4fc69addf137893ea32304ca87e8bba3"
+  },
+  "example:open3d-broken-seals": {
+    "description": "4d64e5449cc4a830d6be1ed5457fb6a875ba2bb7c3627367b61590faf0c5a70f"
+  },
+  "example:open3d-cypress-motel": {
+    "description": "e9b04f61bb0467f2dbacf9b6af19e8f006ce73d2e2160744d76dbcf474bb7f90"
+  },
+  "example:open3d-delta-park": {
+    "description": "9d6d5da17beb62cc8ab22c4552052d26fe1a5963d491dc5aafcbf3ec6ea009cc"
+  },
+  "example:open3d-dogwalk": {
+    "description": "ec811b448d7922c2ccc364b1bf615b5ce4986dd1bf7e18658dd05f93473a7c7f"
+  },
+  "example:open3d-ghost-snap": {
+    "description": "698638c8d302e196af1c5b169e6f8b563b296703d2b8736003981d13e9950a93"
+  },
+  "example:open3d-hazy-road": {
+    "description": "20f27950fc5627491b94b67702076a31b33efde9a21f0974c8947f9ff998c77d"
+  },
+  "example:open3d-hurry-curry": {
+    "description": "67d76f9ce76ac076adff6bd2172f332f9fc6a35c3901f8311e242b162fba211b"
+  },
+  "example:open3d-in-the-blue-mist": {
+    "description": "e485683c5cc084985124a7c1c2e07de8c41b3a28bca706b331d8273c56fb1270"
+  },
+  "example:open3d-keep-going-trick-box": {
+    "description": "0ade14aa69fb02ee8333e51fca7394b159701c43fc07039b0c5c4ecbdbd0ee4c"
+  },
+  "example:open3d-kilvault": {
+    "description": "42e3920fc24bfecf33be41484ac681a7d187fbb4c5f70f273d36055b9e12e12d"
+  },
+  "example:open3d-liblast": {
+    "description": "da6e9a2a88b01ec46ae30eb981c08c7b12030f39669a331040804a44e875aaa4"
+  },
+  "example:open3d-libre-trainsim": {
+    "description": "61b20ca3d48026f80505e653944a35fe922d21bf497ad67005b843ff1c367df1"
+  },
+  "example:open3d-libreaim": {
+    "description": "df3520533977bac334ffb58aa7c45558441be760ce1775549316d4de603bb026"
+  },
+  "example:open3d-lost-souls": {
+    "description": "962625cb2d40ed9d2a02bae970c817fa4abdabdc4e9019a35b2c2071cb8d65d9"
+  },
+  "example:open3d-meteorite": {
+    "description": "d7d3066dfdb08bccaf0c904151694baafac337d7f2613f3395d2566e084fc232"
+  },
+  "example:open3d-panik": {
+    "description": "6df6b57e29bc08b3748d627d9eadd01b86d5e2e9c10a5014bab8497aa10d71b9"
+  },
+  "example:open3d-racing-game-cyteon": {
+    "description": "8fc6ce42dd5a968d17c4ab37e380cd13e41601224db002b7369e3602a83e280e"
+  },
+  "example:open3d-rapid-rescue": {
+    "description": "7db59ba00e34b34549c3a48de5997939c895d7fbb6fd8ccc67c73f4f8de7de27"
+  },
+  "example:open3d-return-null": {
+    "description": "2afc85799a0fa5a6bae436b1c553be16274c14a2077a2e29e38dac518bac58ac"
+  },
+  "example:open3d-rooted-shadow": {
+    "description": "09c80c5905d7a6c0610da840afa38a6a392846df5a7db5764c1fc06c72a37160"
+  },
+  "example:open3d-scavenge-drill": {
+    "description": "18dd6dcb00f478b07a04a2cd5a5568ed3e3d621712428468892f581705442e58"
+  },
+  "example:open3d-super-tux-party": {
+    "description": "be7512a1c789f2955bd866eda107e346761c19a52813f2d546e8ab0dbabeaf93"
+  },
+  "example:open3d-tabletop-club": {
+    "description": "faa2f09e798a7369e6d6af109ebcd161788ff6bda583e284a17ddbb9c249dc19"
+  },
+  "example:open3d-tanks-of-freedom-ii": {
+    "description": "e8eeafeefb4ddb66c7c41bd3beb31d0124a59e39e15fbb867dbd6ce6bab379f7"
+  },
+  "example:open3d-thrive": {
+    "description": "6b88b793f00eb3e0539286575ac901abc8eb37762a1d12d46407a865ca3acbcb"
+  },
+  "example:open3d-under-the-cover-of-night": {
+    "description": "7b6dcf43fb96ea1bf51304268ce81c9ebf458b0d9cf068f3310368fc5d03ad5e"
+  },
+  "example:open3d-analogvhs": {
+    "description": "f190cb5b23257ef0eda8a11a762253e913b40973a110f05ad28ec62e9357d858"
+  },
+  "example:open3d-antura-learn-with-antura": {
+    "description": "7c88c923487412d382ce65f5044a26f01f8c8e4fb46d9cb256528bc61b9b77ef"
+  },
+  "example:open3d-backrooms-esyverse": {
+    "description": "26f86f6019e5d76aa4f6d18473ea59de97e08e2d66749a99eb6d0f71f4eec769"
+  },
+  "example:open3d-cat-sanctuary": {
+    "description": "83cf9d83b7d4b705f53dfb50208ac8629955d412ec7148b94d29f323ee920e8c"
+  },
+  "example:open3d-classroom-404": {
+    "description": "b46b5d1a5fb19d37088e16217abedd7ae45d675b4502ecfea4e68d2e80809c3f"
+  },
+  "example:open3d-delivery-beyond-game-off-2022": {
+    "description": "2e9d5673ef721e7e04a2d1d6b9f2253bdffa071c3e8102f276976db44ead03e5"
+  },
+  "example:open3d-doggy-man-3d": {
+    "description": "55d666a26a09bef34d76d6b8419aea28ed0da3fb88bb57321e87a501600cf53c"
+  },
+  "example:open3d-hoptons-trip": {
+    "description": "480121f246d691fc23121b406da97fd6de2fcdae338b799c2af7146cbe7676eb"
+  },
+  "example:open3d-lockdown-breakout": {
+    "description": "3038542fb6680cfd5e98131959a11a5b984b0e28864984c667bc683b3e3895dd",
+    "title": "261f877779fd89d4774577e17f702ef848817a82675f7092ca2cc257f8564750"
+  },
+  "example:open3d-metal-nest": {
+    "description": "e3cb8691ec1d5a727da9bb67320385217b346e8bcffc7009568578e2aa8188f2"
+  },
+  "example:open3d-nodulus": {
+    "description": "8f1a97c1ab85dc8f86cdd3b626e0ffbb1407532e54ede518801f730830e7c5a5"
+  },
+  "example:open3d-november": {
+    "description": "6ae0861cf8b98c990441c5c3fd9e08d7bd2e5dec0bec9133e8d92d2810ee6165"
+  },
+  "example:open3d-polyrace": {
+    "description": "f3552edbc8deed2856d70cc61a1ecfa98e9ee6559bf6ce127dcc2832f2982c0f"
+  },
+  "example:open3d-red-planet-rampage": {
+    "description": "39a7f01cd2a4c495b063a60211e72020123ed35716c1f1552faa2d7d9b811409"
+  },
+  "example:open3d-team-capture": {
+    "description": "45c9debf86385e9159d84c72d2fb2e1b2f58b4328a592093b2be32782a23eee3"
+  },
+  "example:open3d-the-machine-of-dr-jeffrey-wright": {
+    "description": "d98226dc9c0fe0392a0cd01ce88c580faf8abb63d0d9ac0c78de722ad9f01bf5"
+  },
+  "example:open3d-theseus-the-descent": {
+    "description": "1e6b3547c3548641ce8d25cd0befd465d13feea80c5c1644c86bf3186ccf91da"
+  },
+  "example:open3d-bomberrage": {
+    "description": "9638f8c2041380483c7193002251b36179904483291400be3c23bf1b4bc8168d"
+  },
+  "example:open3d-budget-backrooms": {
+    "description": "d79a33e4c9a3400ccbb66c0b8e1c27728f5078b5d88eed87f6b0eac44eb2c05d"
+  },
+  "example:open3d-avolition-2": {
+    "description": "0d1e36be8cbbcd2ea010b3df84083f00071dd9af05a469cc33c591cf8a335674"
+  },
+  "example:open3d-yorg": {
+    "description": "e1b62a599bd5716ddc11eabb99356190a40b729d754d3a555ac2a88d4214cdcf"
+  },
+  "example:open3d-sintel-the-game": {
+    "description": "b092de0b2171d0a82533dfc42d13b66d363bc670ad5daa73a469a225241f5d17"
+  },
+  "example:open3d-yo-frankie": {
+    "description": "a77a9f8387c8fb6bfa56aac6dbbeb147bad6876a1d9883df2334bff367492f6b"
+  },
+  "example:open3d-0-a-d": {
+    "description": "beac0a79fda598568e77dadbc7df0cdaf2d07428d6aa099daaeb464d03e46261"
+  },
+  "example:open3d-alien-arena": {
+    "description": "bba6c15c8811186994b4fb8c1ae4d017e2ca93ba50864cb8d6739bd9305361a3"
+  },
+  "example:open3d-armagetron-advanced": {
+    "description": "03e2267fd9c6a0e877e1b7ce1cdbd24a0422fdd33efc80ddc5c5e3ca600bc89c"
+  },
+  "example:open3d-assaultcube": {
+    "description": "529daa3841b56c57959d1f915e942c090e966c71c2cf347dd6e6bd58fff0a98e"
+  },
+  "example:open3d-beyond-all-reason": {
+    "description": "fa71b369d547faa3d245e11f612179e983a5f357906c200ce98bdca9258bbc5a"
+  },
+  "example:open3d-bzflag": {
+    "description": "be71e2548350d21147b1747ebcce40707dd04de1681d5c273ff2e0b8ffbf311e"
+  },
+  "example:open3d-colobot-gold-edition": {
+    "description": "af269caa1ae090be60711df027ae663266a198a05236fd4dbdacb1ebfc04c4d0"
+  },
+  "example:open3d-craft": {
+    "description": "677eedc2119b09f9250680fadd42b4f63d30e473372ecdc260fe5a09cbcd1f72"
+  },
+  "example:open3d-cube-2-sauerbraten": {
+    "description": "d74e5075ff35e21f410cf6395a15a6710343c44d31c7da34125c97d0fa8516d4"
+  },
+  "example:open3d-egoboo": {
+    "description": "d1f339049242c10b1a10bd6ed55fefdc2a447a99ca8d74878711f3e81f04a7e1"
+  },
+  "example:open3d-flightgear": {
+    "description": "5d63459acf1d77c0f5b851d63907a7064267380d1f0577a1bd2f013f6c11d176"
+  },
+  "example:open3d-lips-of-suna": {
+    "description": "08493c11f56b5176533b2aca724decce870c6b972098d85d529f9f428ee77b40"
+  },
+  "example:open3d-lugaru": {
+    "description": "4019f304593a359f238f239f12a19631c7e46a3ea6b446c382e836dc042f564b"
+  },
+  "example:open3d-megaglest": {
+    "description": "56caf3894d7ef3e78349a9aa5a45c7339e8adc665bfcbaed3042c73facc63a86"
+  },
+  "example:open3d-mineclonia": {
+    "description": "cfb532bffbe035a283962a0259d0d425f3b28174ffdfe6408ca5851f8034d547"
+  },
+  "example:open3d-minetest-game": {
+    "description": "eb49b7d799e491e5edcfbddc07c75f0277e0eaecda66cd0eed1f4da8b1ff902c"
+  },
+  "example:open3d-neverball-neverputt": {
+    "description": "138649fa8967fcc3ae00540146ae2486b6087303fa51b5bceaaea44f09f2d6fc"
+  },
+  "example:open3d-oolite": {
+    "description": "0e4d1388206ad08de022bf8272a772aefb3990cd15a1543ffc675b322844e91f"
+  },
+  "example:open3d-openarena": {
+    "description": "b941f8356331c2a3a06dfbdade6f343b091540a20bf746fb319fdec524764815"
+  },
+  "example:open3d-opendungeons": {
+    "description": "fb4017e08c2382566c0a9bf7d0fe291d43f8fe30bcce623ab31c7d43cdf8ffde"
+  },
+  "example:open3d-opendungeonsplus": {
+    "description": "0f220e95a2df6695e2f8d96eddafbe4acdb8bcc206a56af6f6122c85ff420cc5"
+  },
+  "example:open3d-pioneer": {
+    "description": "2ff6f8e5544f9214b06c4fa4aa68d2ac9a98f9e66925ee3a24678b55105b97a0"
+  },
+  "example:open3d-quetoo": {
+    "description": "42fb859d4dfbbf5293ce27c0c59207aad9a905c0d8393a8faca4aab21c010e47"
+  },
+  "example:open3d-red-eclipse": {
+    "description": "31d09aa8169ef66a72d413eb69c99adc2dc19d2e042d9c280a77b2f5a1b5d58e"
+  },
+  "example:open3d-rigs-of-rods": {
+    "description": "a71b9e8196b1e164adaa8ba776bfe4d02af73fbe5a0f3994b56b524ff41e3ebd"
+  },
+  "example:open3d-scorched3d": {
+    "description": "34b4e348ebd60d25817464acc581875c24a417175dd016dd76e1f50ed5ac759b"
+  },
+  "example:open3d-scp-containment-breach": {
+    "description": "5d7087bc72668dae94ef608e85b8563bf8be9b0b766dc217c2cb11de130da475"
+  },
+  "example:open3d-smokin-guns": {
+    "description": "baf1d1a1d09c9ba33033d4188fbd383613d25f36ad66bd37bd0d9f547a3ce0d0"
+  },
+  "example:open3d-speed-dreams": {
+    "description": "0d87b5dfd6826136cac74094ede725165c9ecaae470ec0da5d95cd03267c8f0a"
+  },
+  "example:open3d-stunt-rally-3": {
+    "description": "5903f72bb9a1fbf560cab7bfdab7fdc0fde28f0bff3972cdfa695a1d362ab4d1"
+  },
+  "example:open3d-supertuxkart": {
+    "description": "819a1cf03bf09fa9089cbb351497fe12d6b003a5ceedada76ad7eff0169d44fd"
+  },
+  "example:open3d-terasology": {
+    "description": "cfdba28c3fb76f85f85245161c5d6d557f1411751c51f8ee64650c7e91050f4d"
+  },
+  "example:open3d-tesseract": {
+    "description": "2f6a312a8a26f23cc5524fcacc400dffef36c9e94a0fef59f004356ceda91e61"
+  },
+  "example:open3d-the-dark-mod": {
+    "description": "eb846b65c12dad4db3965223ef2878f35a1a94f0fbf32b4d9860db76ae942de0"
+  },
+  "example:open3d-torcs": {
+    "description": "6fcbe1c5dad7c4f0f61315eb0e071dc35c149eedb36517165bb89319d74426ad"
+  },
+  "example:open3d-tremulous": {
+    "description": "71f65d0816e6baee19a04322ad190e8a1f448d15503604dfc2a443451d2efd38"
+  },
+  "example:open3d-trigger-rally": {
+    "description": "748bf5170e02d8cee5a3d8de1b7e91ab014be468d02f8ff2e97b6b3c2b86fd31"
+  },
+  "example:open3d-ufo-alien-invasion": {
+    "description": "22e152364399d419dc5223f6762019cf71eb6cd2349d49bc4733a1e92bdf6241"
+  },
+  "example:open3d-unvanquished": {
+    "description": "ca7a0dbc632addc8c4ff07200fbd0bffb670516b59a5d20421e9700d351eb911"
+  },
+  "example:open3d-vdrift": {
+    "description": "6e810b6910f8d271dc9106dd015e81f0f7f878bbfeea178ebfacfe4f11f5b937"
+  },
+  "example:open3d-vega-strike": {
+    "description": "d49921ee9ff1d3a0315c106426bdd9d3567236b9f2c70ea30e5c5ad64071b7d9"
+  },
+  "example:open3d-veloren": {
+    "description": "3544548b54344f3b500ca827159555e98c72aa96f08e3c99721eb8e509d66765"
+  },
+  "example:open3d-voxelibre": {
+    "description": "6e096cee6bc2e522fe86a385af392d44e67e8e646d30d9b0adaef6f004765a8e"
+  },
+  "example:open3d-warfork": {
+    "description": "2b8f19d3f55cbe36ea0daea4992f45b2b5f03111f84f704239a4d4d0a09f5abd"
+  },
+  "example:open3d-warzone-2100": {
+    "description": "a014a5bca7cf3b4675ed82fc7b04a7180656cdff4d51d896707aacd4500ed64f"
+  },
+  "example:open3d-world-of-padman": {
+    "description": "49032464ecd5c5fe6f549148a10f3b0357b577984c1e22bcfb39da796e65942d"
+  },
+  "example:open3d-xonotic": {
+    "description": "4eb2ba2fb145ff9a83a041b0cbe951b8ab7ba21798e9e94ea517741699997bf0"
+  },
+  "example:open3d-zero-k": {
+    "description": "9005dff24ef7caa241aaedc3aee7316936eca6404d45c0fc2610e25f67a76c5d"
+  },
+  "example:open3d-apex-formula": {
+    "description": "b22906871c472dbb0e8cc256e2c3801d019410b860109fb8b8a92e4f6e51889e"
+  },
+  "example:open3d-apophenoth": {
+    "description": "f6e25588d335537bf3ec1922370af554d4f9cfe73504518359cf6744b0d7365b"
+  },
+  "example:open3d-ashworth-station": {
+    "description": "88290a3edb252b93a85d305d5663d67c54f4bb7386904f73ff8c6d43c93201f7"
+  },
+  "example:open3d-combat-arena": {
+    "description": "e4a9111197956fcf483b55a96f5a42629b85593f8de299ba3b421a2e38e59721"
+  },
+  "example:open3d-cyber-arena-3d-fps": {
+    "description": "38bb6d88d98401d2019162ce9ac29e8b645c4743c7ed84f139857be4860e4d58"
+  },
+  "example:open3d-darkroom": {
+    "description": "a3a77ff1187319141e86477d944e540c3dbe57165b89821a77addf3a37a79c1d"
+  },
+  "example:open3d-dead-signal-exclusion-zone": {
+    "description": "5c7f0c8fb8901618a8bedeceb8f825467d8d6a6cf0f93ffe3a1f0d4c7d865ff6"
+  },
+  "example:open3d-superposition-backrooms": {
+    "description": "61535deb848f9d159aa499fc62ff2dc5b70538bef980bd186cd574f6baee006d"
+  },
+  "example:open3d-turno-da-madrugada-br-040": {
+    "description": "5de2f5a33085f7e16d8bb64a4bbf8f389b52be272aaff38c1486e3b4d3e8cd55"
+  },
+  "example:open3d-voxelcraft-bridgemind": {
+    "description": "d697ecfb4425bfeab63f9fe8d8362c154f0b3b088321ab37b043d32a544ba67c"
+  },
+  "example:open3d-voxellab": {
+    "description": "18283c2c284f6313d8a486f6d1db536b01d6798373dfea93450998aa1f827bdb"
+  },
+  "example:open3d-delixia": {
+    "description": "7f953271ca2b03f923f4f56c5bdcac6657de0cb435e998d1b685f9d264166eed"
+  },
+  "example:open3d-endless-runner-remarkablegames": {
+    "description": "41e49ce3fe7e074dab086cacc2e36e02b3bb926a654f70a1b5121808d9071732"
+  },
+  "example:open3d-insane-behaviors-tournament": {
+    "description": "e9fcb823b9afaad4da08e7f825a8db0e1c69b05942a4f92f81f0737d92255af0"
+  },
+  "example:open3d-shadows-of-the-abandoned": {
+    "description": "95d2b9192d53adbbc189f4369edf2f4d0c9737ed8564b207ebcd1de58aeeb486"
+  },
+  "example:open3d-stellar-abyss-echoes-of-exile": {
+    "description": "4134606486e7a9cfa5853aec2e68fa09cde986c0a3f7627f3bcb8c111a798f0a"
+  },
+  "example:open3d-survival-game-cptnope": {
+    "description": "3f52618c97e729340f6a68dd10d344aadda3c4da1fc5a4eed351a7da6d529747"
+  },
+  "example:open3d-moon-rider": {
+    "description": "8b06e320c903f94363dfd182773a39bc9eea9fce0a8e4fbd4c97e48f4934d7bb"
+  },
+  "example:open3d-atop": {
+    "description": "c2db61c012cafa453d26140afbcffbf1d8bf11495f8fe8e25046c73b76204b8f"
+  },
+  "example:open3d-back-into-the-cave": {
+    "description": "5a1519576a03bfec509dc70c919a38ad98d89a0f517b941c46412d583b3b33a1"
+  },
+  "example:open3d-bathysphere": {
+    "description": "3a648cf1053114a0d34f5330232f65cf37d64f00aa5b7c1e4fbfa4a6e1f170aa"
+  },
+  "example:open3d-brick-up": {
+    "description": "8cad78351f07f843e7f57f8e19c67a575ed540fa19e29c9ac2787f086327db05"
+  },
+  "example:open3d-callsign-hangman": {
+    "description": "57c99500dc34a08a863c09b720295cf8c7a0b4d9c9649cfb41f1e409176b7f2f"
+  },
+  "example:open3d-drill-deeper": {
+    "description": "219f768b9974a95a0519d9583665a23e29c30eb63a7c47e5bf04aaa59e827970"
+  },
+  "example:open3d-drop-dead-delivery": {
+    "description": "00a8fae5d02fd4472fa5b55a9293f9df2fb1ff03c7db510c4d1c77bf0f337f29"
+  },
+  "example:open3d-ex-aeternum-redux": {
+    "description": "d2a1d46c70f64d04d9d4c8258491cbe811ef0c99f10e1897b79994b7d72a0de5"
+  },
+  "example:open3d-flingshot": {
+    "description": "7ce4500bd87fb86e583eb49280c617cb8b95373bc4b448bc4e27c04a3f9e69c6"
+  },
+  "example:open3d-gnome-space-program": {
+    "description": "185082ea99a78feab530e1eeb98fbe97fc107b86773f1965979755dbec7e1b47"
+  },
+  "example:open3d-long-jump-cliffs": {
+    "description": "5f35b0976e9bcdfe4a7308bd5a09ca72d97c78faafd28e7ab8a3228e20fd2aec"
+  },
+  "example:open3d-maze-flyer": {
+    "description": "9715ab1ac597231ac20ff666ec61459547cde104aea4d370f79774ddc25d2fef"
+  },
+  "example:open3d-melon-crusade": {
+    "description": "a5fbc467112c28b73c3902d602074bda9605854306746ef42dd34d04edb95718"
+  },
+  "example:open3d-penguin-s-platforming-christmas-adventure": {
+    "description": "82354b391f97bfd3cecf490f1320a77664133876808695740034ea7fd125b09d"
+  },
+  "example:open3d-premonition": {
+    "description": "d47c2517d8bb16ce69bebd9f46c09e2f6a172771904b5f352858326c81c8ade8"
+  },
+  "example:open3d-profundus": {
+    "description": "63a3f8c4ff67e121d0bfaa5b01f7b7e1fe23cc4118840639c21e935e632fac92"
+  },
+  "example:open3d-red-hat-runner": {
+    "description": "3205da0cadd517a19e670527cc16edb0f5d42264c8b948896b075aca594b5206"
+  },
+  "example:open3d-silmance": {
+    "description": "98197599e6ae9d76d91cfaf5356e915a6971e8f8d79d8e255cced4e0bce75b98"
+  },
+  "example:open3d-six-ways-to-suffer": {
+    "description": "67b57e22af7eaa402492670315942162ced5e7b5a6199e6c91e205a4820a56ea"
+  },
+  "example:open3d-super-golden-speedster-3d": {
+    "description": "0164b131dd62d6d3807cd4821119f9dac76c7517bcc26fa7e8ce4283477b070d"
+  },
+  "example:open3d-super-poli-ball": {
+    "description": "f6b876df4062f4ac28f47b7eaa81919d754f8f2068b30d237e3ebb99b25823d5"
+  },
+  "example:open3d-the-aberratron": {
+    "description": "f539272233a0313e9cc4e91fad3bfa536d798605add91efcb0703f83808f672f"
+  },
+  "example:open3d-the-scary-outlet": {
+    "description": "5356edc12d1321356a1256418f15be897bda72d3e96cb8038d40e56ad7ea276e"
+  },
+  "example:open3d-to-shed-new-light": {
+    "description": "4ee241c5ac3905ae0e791e28dbf7520b24f14f98ad19291a8c1fe4f18056e7f3"
+  },
+  "example:open3d-towards-the-sunrise": {
+    "description": "86e24f7ff70e973011ad6d2ab64b60d3778d3928565826ed5cf46ed417839f06"
+  },
+  "example:open3d-voidquest": {
+    "description": "157ea99c317cf123ecf5df51136fd4972569b62870b96435fe8e3a95b073efe1"
+  },
+  "example:open3d-another-night": {
+    "description": "88850b94a7be09cd06c7a6e7c50f5324d15e7b80c4a34a9d0c3a81f0638b28a3"
+  },
+  "example:open3d-bloodew-valley": {
+    "description": "fa73e70d6b95b6614622d8fe5cf3b73a1bd10b783a860e53534ccddc80225c3f"
+  },
+  "example:open3d-crazy-driver": {
+    "description": "2356a98186a285d8d42791c1453b3b3144e59bc7aa8a75eb032575dff37e60c6"
+  },
+  "example:open3d-dgs-dystopian-generic-shooter": {
+    "description": "4d7f58ec5d63abed7eb492ad0767a7eaf9fd85ca5474deda50abed76a508751c"
+  },
+  "example:open3d-fly-dangerous": {
+    "description": "3341cbca33fba0a6f3a6a036be6474bce9cc8f7a5176719d498cc85b6a1a2da8"
+  },
+  "example:open3d-food-dynasty": {
+    "description": "1475a0516a09ef185fa38c10b15847d15c7190d2f9eca8165db534d4e6179aa3"
+  },
+  "example:open3d-geographical-adventures": {
+    "description": "ab188761a100e4db4a67d9850ade0a9df8922fd3a99f14f0c8b0420051893f13"
+  },
+  "example:open3d-project-zero": {
+    "description": "081bbd0b3c4e66693ca9d7057a084e020e7aecb3bf8a84b3bfee43d6b9a83a04"
+  },
+  "example:open3d-quota-qrunch": {
+    "description": "250000a5212a15c80735cb39f2caf729a728c62ec25837bb2634dad2d028e982"
+  },
+  "example:open3d-velocity": {
+    "description": "4c05eb928b6a1ad478fb2585ddd87ed548994bee5557352a0198a60169b88d69"
+  },
+  "example:open3d-blackout-facility": {
+    "description": "172134f223676400dd04bedc8a02d0b9a2651ff32de5ad3a772bab5fbd98c578"
+  },
+  "example:open3d-dark-lab": {
+    "description": "ee8e74a8b3ff5169482f9242d18dbf7d61b166a21f9aece8ee1e8e0c68bbf4b2"
+  },
+  "example:open3d-devils-tower": {
+    "description": "75a7eb402de29150127ed075683bbc63fd1b10e2e69bb214060e565740458785"
+  },
+  "example:open3d-hobot-s-ascent": {
+    "description": "e308761dd2035a6140a34dd1fc9929271d897b3da66b3a3ddcdb4a02a24c9246"
+  },
+  "example:open3d-logs-odysseys": {
+    "description": "84a5299c90fb06946bc67d9d828627af50402c539c58694bc3b0c5a9df893a02"
+  },
+  "example:open3d-pollen": {
+    "description": "574dc34b855324aef30ed9d99975543b52c65b9d023a76d5573e9a6ece20846e"
+  },
+  "example:open3d-pirate-run": {
+    "description": "8098841c590a59325fbf25fe98f826ffac77a53751898fab712cb8752871aeb8"
+  },
+  "example:open3d-adagate": {
+    "description": "58bc0be4392393326ca3dc4f745b17401ecba7a6e95fa6d8dfe1676f220e2701"
+  },
+  "example:open3d-avara": {
+    "description": "99cb377ba32ad3e1f5f2b070ee2c90aa8aeaf3a0c68671bf3976446782926f92"
+  },
+  "example:open3d-balazar-brothers": {
+    "description": "69415e981d652bbf51e2529659df98ad955c6ec89623617df9d4527bd5a38082"
+  },
+  "example:open3d-billardgl": {
+    "description": "ee90d8d1f6bc1d0fc6e133beea635c51677c26ffa9092ae5d0cebfd9b6c199af"
+  },
+  "example:open3d-blockout-ii": {
+    "description": "06d53330b7d8e6a15e0f2ab23b7f6319bda19ee44a981e1adaa367d706a46cba"
+  },
+  "example:open3d-cubyz": {
+    "description": "83bc9db58b9a7077a8d75951effacdbc5d0b883e83e1b1099254bbb8222a4079"
+  },
+  "example:open3d-danger-from-the-deep": {
+    "description": "355d6da59cf7451daba684573905ebcfbc9013ba8be8b6c14ae59248fda813af"
+  },
+  "example:open3d-dreamchess": {
+    "description": "eb8ceb60fa6afc65e2bb5de4dedb1fcb39bd3cfaa1edbbfeb04cb1680aea2dd0"
+  },
+  "example:open3d-extreme-tux-racer": {
+    "description": "59786f91823386e5ee6243d9b480dea51f804c0c4d11c3aaeb315762ac0b9e44"
+  },
+  "example:open3d-foobillard": {
+    "description": "566aee4e574fbedfe56c3eb0a375d32025de9702624038136d8d78dec84cac40"
+  },
+  "example:open3d-freeallegiance-allegiance": {
+    "description": "8ad510282f11427c800fedf34f6a23959f76e5ee9c2525cf04776978f0f059df"
+  },
+  "example:open3d-glportal": {
+    "description": "2717ad718f670a5009136e9751deaa9220c1ff4bd229832f27806fd1d04eba5c"
+  },
+  "example:open3d-gltron": {
+    "description": "0905811d517d3e0b8959a6fd47704ccec6aa4b552c50bf761fe27bbd95624448"
+  },
+  "example:open3d-hexon": {
+    "description": "27920a6834f1aca7906f0b06553741538aa9465ab31af57870d4daa2a0f99385"
+  },
+  "example:open3d-infiniminer": {
+    "description": "e2af995d5bf7fafa61de677ccf1935f19b8ac16cbca2215ceadbadde6793da55"
+  },
+  "example:open3d-kubrick": {
+    "description": "303b051c88da256ca9bced61fb2aec1f332059afd029ca9612e5a912526eb2c2"
+  },
+  "example:open3d-lasercrabs-deceiver": {
+    "description": "648887fc90ecb1981a6aaa9c3770dca2f1603f96f6fa07409f43467ccc7720a2"
+  },
+  "example:open3d-linux-air-combat": {
+    "description": "3c7de39a3a75f556c98319b085afb3f6ee55e385213cb7dfbca021611965dd79"
+  },
+  "example:open3d-maniadrive": {
+    "description": "4985a1fd2716d53fa64851c7ac4ff33d8e2fd217c62e0f6a905c567e148ef19c"
+  },
+  "example:open3d-openbve": {
+    "description": "42a369b63a9266110deaa64875f37e0fec96a86bda1972b71207f947085cefc5"
+  },
+  "example:open3d-openspades": {
+    "description": "9b58edc0bcd1deade692303b73306b8b996b6b809a6a6b8b0a76d6e88e8832d8"
+  },
+  "example:open3d-search-and-rescue-ii": {
+    "description": "52bf1bfa9d9002815eb5415666001044a937ae4e27d7de945064c1b0dab0b0df"
+  },
+  "example:open3d-trackballs": {
+    "description": "1bca6386702a6c351ee7ba399507a7b0a8a227ca2ae0cc76aaf8297d8afdfc6a"
+  },
+  "example:open3d-ultimate-stunts": {
+    "description": "82432e0c04f760cab50bfc1af347dd304f687d10115948625ad1a0cb0f84eb40"
+  },
+  "example:open3d-voxelands": {
+    "description": "4e0151cc7c5c84f2c10383d5f935b35f9a3cc7ae106e1b4adc03c1c87b74a832"
+  },
+  "example:open3d-ysflight": {
+    "description": "f003c3634ae09e92a322da90f7a267f5f1a1197287bdad29584868894ba5f995"
+  },
+  "example:open3d-aetherium-the-hollow-war": {
+    "description": "d142b2b1af4e880ab598c2c949ab0f6deb8c9e6c928fc642036e55a23bbbdbce"
+  },
+  "example:open3d-back-rooms-ron-picard": {
+    "description": "5604899f1306d158fae1060add2c985c75e7758ce1631fc26e6ee668dfa3443f"
+  },
+  "example:open3d-circuit-board-city": {
+    "description": "b308b84cdb535628b9ffb6d271d6e113eb91a7723b31ecb74dddf7946f6df653"
+  },
+  "example:open3d-death-and-taxes": {
+    "description": "87b4efbd474c09f0ec773880bca1eebb26ba42721eb4d294ba400b95e3171358"
+  },
+  "example:open3d-g-escape": {
+    "description": "3b10ce2062cb0582d0a00518cca93caa270575af42489771422ee1ee051a3b8a"
+  },
+  "example:open3d-hudson-s-3d-obby-blockjumper": {
+    "description": "a2e01839eb3f2cb875b0f94812f6762116bfff515f9258c7377fa1d5862f26f1"
+  },
+  "example:open3d-junk-magnet": {
+    "description": "524ae21a4127582dfb1e680081da93a95817b4f1b76a709c9f3d024f85ca8c27"
+  },
+  "example:open3d-sky-isles": {
+    "description": "22555c14b984aa0acb5d78b22d187c81fc3bde761a03244d20f0ea3fe651ede9"
+  },
+  "example:open3d-tic-tac-woe": {
+    "description": "20efc2deb5287034d561d181cac8b5672fff90914e1456d2451653de35dcfa76"
+  },
+  "example:open3d-dante": {
+    "description": "5a805ef9d141aef901b5745d61a6536a78de61bbf00feb0b5af546b7c1b04793"
+  },
+  "example:open3d-island-not-found": {
+    "description": "31657c3b941f4cbf64cf3fbec7939718596e7a82d90970ec75258cf0acde21af"
+  },
+  "example:open3d-jurassic-nursery": {
+    "description": "02ab8bc47910c5f147f188a857a742da57438ed682a1df05a5ae17447fbdf43a"
+  },
+  "example:open3d-knights-of-acre": {
+    "description": "eab93a8fc69c4a3f439ba2ce6ceec505c6a43389049eef4496c96039f0dc7868"
+  },
+  "example:open3d-mawlight": {
+    "description": "775f7ff570710f7f6eb9590f16fdc7b351eddc8752af78187ccb08356063ff7c"
+  },
+  "example:open3d-the-city-without-that-number": {
+    "description": "f057ab7ab7b7ba2eea22d1702496e9a5b142a37e5f61b53129b3147d8fda5d15"
+  },
+  "example:open3d-tube-masters": {
+    "description": "546ac9e72c417da3d684847b1242f9d5a5296d59544c07c4df09c9f91855c42f"
+  },
+  "example:open3d-whiskers-witch-adventure": {
+    "description": "12fb18f3974433196ad1e8f546fb4d2d6657327cc2d0e7e62eccb6346c1bbe60"
+  },
+  "example:open3d-neotrap": {
+    "description": "5a0e5872b53fddb0b8d9138acfd652652706b2009b2f5f07ce13db31090f7e72"
+  },
+  "example:open3d-nexus-arena-the-last-earth-sport": {
+    "description": "d9f531379e402c1da31b45cf76a410f951ad798e32378f0a1c30782df3673782"
+  },
+  "example:open3d-endless-death": {
+    "description": "a5ec8883cf019dbb6b46cfc74fde1bb16135c08f8efb5f3d455d131518e05af8"
+  },
+  "example:open3d-voyager-simulator": {
+    "description": "4aca828aeb3e1778b1d0000eabefcdf88a97d442246ab406c4809210517ff08e"
+  },
+  "example:open3d-3d-sledding": {
+    "description": "74c42ee3b918b4ae7cdda1451cb5bd19b6c4b191c223bdb99a34881a20264404"
+  },
+  "example:open3d-chuffelabs": {
+    "description": "3dc5a3a6180cb96aa5cb8cbef94a63446983d8a5c96fb4c12851f4b934484d6b"
+  },
+  "example:open3d-closer": {
+    "description": "0776ea1a978ba248ad99164947d1efeb55479eedbce72bd985e141e27da02e45"
+  },
+  "example:open3d-combine-derby": {
+    "description": "8f34d89e8b9f31c667705b152080f481c2e38f0b45d47486672b3de591e75787"
+  },
+  "example:open3d-composure": {
+    "description": "87270c55cb0e414e4573ab1f5268d0d2cd8f53623cdee98b27726c61ad4990e3"
+  },
+  "example:open3d-corner-store": {
+    "description": "4fba8715b45b9e535a4ffc50ff18e72f6f34704b4a4934ae7d4749cee52e65d6"
+  },
+  "example:open3d-crappy-contraptions": {
+    "description": "11490fff4364724a80d9d4cf62291e892f817bb6b79f45286c2f2afb326bcb67"
+  },
+  "example:open3d-crazy-chocolate-driver": {
+    "description": "daf35f7ae42381268e12a515117ed8c1b1aa35a3857ed26ed5427941c084165e"
+  },
+  "example:open3d-deepinthewoods": {
+    "description": "c814134a6da9647f017b73a460765a8728c71fe2613724c5c9ffa9b43efee683"
+  },
+  "example:open3d-dungeon-of-cor": {
+    "description": "0530ef17bb674b61cac6097bfd4c99c15fc7e599f0896d98f2f1400e70e9ed7b"
+  },
+  "example:open3d-flatris": {
+    "description": "3a251d5c1e33eca25fe4656d6fc186fd401aacb8ea0c814f2a6a04ecfa815f19"
+  },
+  "example:open3d-gati-os-iguali-os": {
+    "description": "bfee55cf9b640c48fefb7feef0d6d3a95fbdf1f1ae870d66664c6ed60f278d58"
+  },
+  "example:open3d-gdtlancer": {
+    "description": "7c5d23572dbf6b60b1fb01eb171c292c958bc4b976aace6dc4c6364a4c66a810"
+  },
+  "example:open3d-gesichtsunfall": {
+    "description": "7c8b7914d8c6b126db315d8dc9bc1db2ffab96213ae434967246c5c2d08476e4"
+  },
+  "example:open3d-janitory-activity": {
+    "description": "d7b82cd8d1017c0844a55595f9dbffd7479423509b5cb4b2acb66f46234babaa"
+  },
+  "example:open3d-kyro": {
+    "description": "3e53ed5c4eac77d5b63474d04fe2b8de2c05fb053fea5cd4f6956d62e1bd9996"
+  },
+  "example:open3d-marble-momentum": {
+    "description": "43d37c7b7b85cfa979439cebc4ec6a54375ec21ece9dc7d82e4408979cd65ea4"
+  },
+  "example:open3d-paper-town-attack-of-the-bristling-boars": {
+    "description": "a25fa383d8b8bc702f0d311044128802ce1ca22d777fbfe4f646c77ebf1ddc77"
+  },
+  "example:open3d-pew-pew-dungeon": {
+    "description": "7ea5bb873c3fe6ca405f8875a3a2b2e043c68b5046db3d50481efcc58400f4cd"
+  },
+  "example:open3d-riftbreakers": {
+    "description": "44b6ae5effb890884bfa97dbd54c57f0c6d13908d538bd2fb50b193fc42a1a5c"
+  },
+  "example:open3d-sigint": {
+    "description": "980430138144755dd930b8d67f11e1b1c246ac86922ce595107e2a199818b64e"
+  },
+  "example:open3d-solus-stunts": {
+    "description": "d1839761c7bce06e0f98a7238612b875d18b9be578c69fa98b5068b2b5039b47"
+  },
+  "example:open3d-spaceship-startup": {
+    "description": "0b6fcd3a83cedca9c71db378485132f99699748713c456d920f58ac4c3bdbdc0"
+  },
+  "example:open3d-stackdoku": {
+    "description": "04e5665c43ef78e579da72c1a6041160aca0f2b10a9b6fef029538ea5d14fccf"
+  },
+  "example:open3d-tank-carnival": {
+    "description": "040cf4b55c4d4d2a927355f60c07edcff5ca9fb34d0c309af534546cb3bfb381"
+  },
+  "example:open3d-tanks-remi-rampin": {
+    "description": "28edbcf21edc46e96fccff8c1d5e4776e732cad756c508c6ac0afbce9e8f27cb"
+  },
+  "example:open3d-the-end-of-the-tunnel": {
+    "description": "ac144df727fae2c2fbdd08c9f1abd1f9fe4d2d02fe68e01fc5f1739b95f10789"
+  },
+  "example:open3d-the-misty-unfamilar": {
+    "description": "a1da783df4acc3044136667f061c051d5e269c104a86c4767171c0aa859dc7ab"
+  },
+  "example:open3d-verdigris": {
+    "description": "7eb9442d46add0299933db48ceb2dad698b9463c3765f0b410928e36d27533ec"
+  },
+  "example:open3d-way-out": {
+    "description": "97356fd258d7663697a772c5c5fb23bb895da79a44ec67e5fe32cd11ec9be105"
+  },
+  "example:open3d-abyssalkart": {
+    "description": "d54aacbd8f5e0bca63e0b753f64cb33c868d3494e66da4b11a8e78ba6e5afc3e"
+  },
+  "example:open3d-defective": {
+    "description": "bd33732a41b41c82dcd696e741a208ec52af2fb6bf7da70a0c5d52c5634c9a57"
+  },
+  "example:open3d-floor-nowhere": {
+    "description": "ac96d28f1ace60327f0de611e884d41a2f84ab3421a1e8ab6c5b2e75e4ecf5d6"
+  },
+  "example:open3d-grand-theft-audio-3": {
+    "description": "6e5d02890cb6d48d03f5cee08aa301b92708cd71fc00e560457a864dc247ee65"
+  },
+  "example:open3d-keep-firing-3d": {
+    "description": "71daa5afbe1891dbbfbed91e7c0b58f933771498fa19795fe55ef42da25096c6"
+  },
+  "example:open3d-leldoom": {
+    "description": "5dd8989edd8f88299a0e8ef732e09bd3b6b08d01dcd3e2e924d475282175cf50"
+  },
+  "example:open3d-orakyubu": {
+    "description": "ba8b875f17636478acc69f427a9d50bad391de26382135c9dc0cc268d1b781ef"
+  },
+  "example:open3d-orange-the-cat-super-nekokun": {
+    "description": "a23ba023d4cf8ff5adbc514d9bdd0fb9704425c88f91a804965bf40e264a20bc"
+  },
+  "example:open3d-qb": {
+    "description": "1b650d1c3deb3708bf9f425611ddd3ea308f9451b877a002efa3d34e36e0252b"
+  },
+  "example:open3d-retime": {
+    "description": "86e31184a6741b961d270e3ec77476e875ae58006a46a6dec2040924aae4fded"
+  },
+  "example:open3d-space-valet": {
+    "description": "cd2921c7de462fc5e670f06aca761179da9e376f42b4ae170b71b7c136cd204f"
+  },
+  "example:open3d-university-simulator": {
+    "description": "4e37351c0b47c327e0a7b654daf99e56bfb4bd750ce277e7651e441e581c1da3"
+  },
+  "example:open3d-vane": {
+    "description": "9bc25cfc2a0f78df296e75b8d9b45289f1696b268fb1c1e8ba3039008b0f44b0"
+  },
+  "example:open3d-chromode": {
+    "description": "c6932a717dd824d2a98968ddcdf068aa620c4809b2c9f227e43bbecdb2afc0af"
+  },
+  "example:open3d-kosmic-hunters": {
+    "description": "bbbdd3b4a7a82d438326dcbb164e3828b6c9d8eab0e6ab63def42edda3050158"
+  },
+  "example:open3d-stuck-inside": {
+    "description": "46d244a238e2ccd165ecf417fe0f84cdb5323b13480053ee15218a302c5c8481"
+  },
+  "example:open3d-xyz": {
+    "description": "74c42aad64592ab3d05d20872afa3bffac13abeea02b5a1dddd7bf64cc1c4040"
+  },
+  "example:open3d-zombie-carnage": {
+    "description": "2ed94b9147542229d7636827deb6e974333a776c2cd74dbbc1302273a27401d2"
+  },
+  "example:open3d-the-traveling-fox": {
+    "description": "cd94c0bed97f37d9d609a381646204f15f1f83a411a1556f5e6e4aa1ed7470f2"
+  },
+  "example:open3d-dani-s-race": {
+    "description": "e1c9feceb8206e1c7ba5b71e990a358d0ac26569abc260344ecbfa1bcbb41652"
+  },
+  "example:open3d-flax-engine-top-down-shooter": {
+    "description": "2ee0bf00ae01a6d0a9a592e33ab0437094bed22ddd3e600c784f2753660653ae"
+  },
+  "example:open3d-bevy-blast-ultra": {
+    "description": "3c05ff3719e9aa37a726a84b9e2a10cb2f22b0ce2c9e6d852d231c2d263a7e24"
+  },
+  "example:open3d-bones-collector": {
+    "description": "c15d47717c05122e02f055814aa84f45c48002ef9f522795971e895cbaccc1ac"
+  },
+  "example:open3d-cannon-smash": {
+    "description": "af67d17970687ab6e9e996c92a797c38454f8b8e53d7a553f268ebd894ce8552"
+  },
+  "example:open3d-classicube": {
+    "description": "22ffb6fce851c395d185078a5100790744752a69154158d30404efb180e6ef4a"
+  },
+  "example:open3d-fastest-pizza-delivery": {
+    "description": "b557637b2683def8ca6ffc944af99d840f09dbd906fa0b274bef6eb3e6a08dde"
+  },
+  "example:open3d-golab": {
+    "description": "80883516b557570484b6eb6ee5c63ad2431fe9dea61325a4144c1b88cf5068f2"
+  },
+  "example:open3d-h-craft-championship": {
+    "description": "d263d5c28f8fcecef5e18fc4393df0518cb170aa58840f2fc08ed60d5820c769"
+  },
+  "example:open3d-jme3-maze": {
+    "description": "fd0179920851cd20d4fcb3993548a3fc10ed13537083d0d98d118b1f37d66d7a"
+  },
+  "example:open3d-manic-digger": {
+    "description": "ab283d18f1eaa26e19c7a75f334b0686a36154bd1ea54db46f31ac1c041a9a67"
+  },
+  "example:open3d-minilanding3d": {
+    "description": "b51ed6f6434a5ac99afc4af108357c93b2fec18f7814e8be444e9f2dceec638e"
+  },
+  "example:open3d-open-rails": {
+    "description": "6fa050cd1c6396883f8c00aadfd6039e5b5d1088cb4f187092805dc8c9195901"
+  },
+  "example:open3d-openmrac": {
+    "description": "84aa8da043a0039edf78c9a377fcf285cf89c43cbcc22cad0589d20745af833f"
+  },
+  "example:open3d-polexod": {
+    "description": "ff91cad8b8b0e55a4ef604b7d60d079118c05c8bdbdaed5d169ad05c79fc845e"
+  },
+  "example:open3d-slune": {
+    "description": "2ce74004048c0b0533a56fa83fdf2f97b2fbee7d616a1120522015e41de75ca6"
+  },
+  "example:open3d-space-nerds-in-space": {
+    "description": "3cd1688b04dab8921f4ec13cfeb6e4c45d8abc199b530d89f9a683487295fe05"
+  },
+  "example:open3d-star-ruler-2": {
+    "description": "460afca455f5aaff21e4aee3137798f973fc99602c3fbe159c47388fb5bdc5ce"
+  },
+  "example:open3d-stickman-3d-first-round": {
+    "description": "5dc5e4b2d039d1b1934d1946915b00651c67d6f991ba707d8229d3111e8e6794"
+  },
+  "example:open3d-stormbaan-coureur": {
+    "description": "d8c68c18b4b9f94cb432c7ec03ec7b9632dd2b38935e2b5c2b38c74b3e1eebf8"
+  },
+  "example:open3d-summoning-wars": {
+    "description": "a7a498f5054aaaffc163b03766b36e2ff3a563f00a140b9c120ee1a68e061ec6"
+  },
+  "example:open3d-uebergame": {
+    "description": "fb4c629b601b166df1cf04d5fe9f35f32fa80cb2c66f8b25f4cf22879b9a48b9"
+  },
+  "example:itch3d-g002": {
+    "description": "e0f514895ff44b72f4f36891dd3a53843c6f047800990432ed0931e6c456a714"
+  },
+  "example:itch3d-g003": {
+    "description": "c942ed8b1d356c12ba88ae3c71d831a668c9c22e4ea53f526fe2364d30d0b8a3"
+  },
+  "example:itch3d-g004": {
+    "description": "e59cdcd541ef4953d2858ce4e8aff52f5e9c362c1bf4f5371f78a822088fa1ac"
+  },
+  "example:itch3d-g007": {
+    "description": "ddf02e12a2a1b5516abeea72af0eddb1637336571c8f268aed7bdbbecb68a3e0"
+  },
+  "example:itch3d-g009": {
+    "description": "bad290d6e1c4749aa909324b27951b565c7c99636432722e0c05cf594aac5187"
+  },
+  "example:itch3d-g010": {
+    "description": "c039c6694efb977124f0f1dc05f2d18bc22799b1cd1e5794c42e873d94a8a43f"
+  },
+  "example:itch3d-g014": {
+    "description": "9f162e372d616df7e37d0be07074507edd88d21aab64995650ba15f10ff6f3de"
+  },
+  "example:itch3d-g018": {
+    "description": "8af9337ad63ada22ac9e148b31d1828f90b1a1a87e39167cf7579821242ec247"
+  },
+  "example:itch3d-g022": {
+    "description": "a0baf982967f51e2b935b1625555ebcfe86d7ac49c284cf456bcd4bb444db29c"
+  },
+  "example:itch3d-g023": {
+    "description": "57142a011927ff54cc5147747b06ef45536ee13543fb59cb97acec73f9311028"
+  },
+  "example:itch3d-g025": {
+    "description": "c7c829936eed569e29e023bdecc6a540ef58a0f72362fa115243313c804afaa2"
+  },
+  "example:itch3d-g027": {
+    "description": "44269a83d66625f6783dc78d90a1f7f43472e047de7b9bd8007630f94d19bc2b"
+  },
+  "example:itch3d-g030": {
+    "description": "b28711b19187ca7b700826e1b89ea24cf3ff861e4c1c2ad98048c3cbfabb1c10",
+    "title": "1c0e3ce52c020837bdeab1f39a71cf164dbd8eaa5efcb1c7a4f4a1853e78287c"
+  },
+  "example:itch3d-g031": {
+    "description": "2872e5ad9e6ca6f8923cdc9a36e7f1605464c625dca06aabdc91cf04b6d24c91",
+    "title": "a9a721df7aa0a72771fb67b9c5c9740ab4af74b8db1e6f2ccba0c3c876eea4be"
+  },
+  "example:itch3d-g032": {
+    "description": "d5327dae8dfa3c90b69496d474599a4f1782cb818a0451eaff4937fa7188b49e"
+  },
+  "example:itch3d-g034": {
+    "description": "340ccc4bc19cbe5ba6f255409bdb5d5418a121890e627f009f7c8796dca80a2f"
+  },
+  "example:itch3d-g035": {
+    "description": "4a3c0ff4c71f3fb346a88465b9f950de5cbac389c3d8dde5749e46c24fbe88a7"
+  },
+  "example:itch3d-g037": {
+    "description": "3349d8f22a8a03216f489c2c0705034ce2d8e70a9275b6b55d5ad57c00075f4f"
+  },
+  "example:itch3d-g038": {
+    "description": "8166aedc46128518a4582263737d4da9642429abc9e236f672cc2e1326b84c29"
+  },
+  "example:itch3d-g039": {
+    "description": "ea3ac318355a2c90810e3434cccb5be38502184288378fc5538cde0e5d0bd637"
+  },
+  "example:itch3d-g040": {
+    "description": "27cd445c549d26b3b707c3207fe9cc2fce3b156cf949cea4343f423cdfacc718"
+  },
+  "example:itch3d-g041": {
+    "description": "bc1e7a861072bc76be5328a12bf2ae512ed17fa85b45b05d4a6712379c800b03"
+  },
+  "example:itch3d-g042": {
+    "description": "55cf1a88347f4021357ad00c7d7aaa2e1a4c4459dfbdddb84f108a385048b638"
+  },
+  "example:itch3d-g043": {
+    "description": "dbf4fdac6a7d71fa657b31d5f78b6159b80a31a9b82d9935aabaf48aebccc2b5"
+  },
+  "example:itch3d-g044": {
+    "description": "344565ac9f6f00d475216d9229a6cb693f0a0770a850d898045c4890ea0f9aa7"
+  },
+  "example:itch3d-g045": {
+    "description": "68623a883f23cbfbcda4a3251d936fa2189159a51db083b7804f40e5433be06b"
+  },
+  "example:itch3d-g047": {
+    "description": "3ba768e5a062b830f5ec2131265adb2032c17308755d392a813dc0246b9809c7"
+  },
+  "example:itch3d-g050": {
+    "description": "ba4f326bed268c320ab48512f891f732c0df764c3565bdf71ad71ca254913e8c"
+  },
+  "example:itch3d-g052": {
+    "description": "9ce8d3ba428ead59e929457edf32ef77a702ba338f840a9ede5c14894acebd97"
+  },
+  "example:itch3d-g053": {
+    "description": "904cfa33bad7da7f86b1d41cba20711c73f4b8a4f23127fa681a8ebcb522de6f"
+  },
+  "example:itch3d-g055": {
+    "description": "e4acd88c9a1851223ad95c5f7e7683ca4379eb7f9af5d417c80f7b00d860ee26"
+  },
+  "example:itch3d-g057": {
+    "description": "e5706e9d92d673db2c58efa0cdb0d08f80602d1e71b8f6bb08dd7e05a79030cd"
+  },
+  "example:itch3d-g058": {
+    "description": "9a73ec152936bcbc6d617f0b7f80f681dea30958e4a41a432159f39bfb8a9d2a"
+  },
+  "example:itch3d-g059": {
+    "description": "f8e76b0f3393082e8930371eb10fa9d2128c5feb611e15d8a2b54b32732c5a3f"
+  },
+  "example:itch3d-g060": {
+    "description": "0bad2b4174c12ddc5f93d543790931cf539ce96dca1f5290549a7a012ea4069f"
+  },
+  "example:itch3d-g061": {
+    "description": "854c8aea2833fe73b983467e377d069629d649ca41ad49d962c51fab4cbe7ba5"
+  },
+  "example:itch3d-g062": {
+    "description": "5c1800656e047dce065c8bce779539058706d91a76d5f92c608344bd5d6e852c"
+  },
+  "example:itch3d-g063": {
+    "description": "ad26ad982f2a72543a4d0c4604a2eaebd93e33dec3114621ceeff39f13a05022"
+  },
+  "example:itch3d-g066": {
+    "description": "5651253d60604dcd6d50df6ac58c1fc414d4fc5909c2028906774c7ae2a392a7"
+  },
+  "example:itch3d-g067": {
+    "description": "6a47643a85787cf64e8e4773625449ff299ad1afd81a1f200275033bf4ba510e"
+  },
+  "example:itch3d-g068": {
+    "description": "f022ca788ca675c33bbc76899c1fbf5146fde77d27e46fbc47bc15b76e0285bb"
+  },
+  "example:itch3d-g069": {
+    "description": "93d57ea89a0c7af39eb4c41e8d76eed337903beab0f55d9596bb22e4b8594cbe"
+  },
+  "example:itch3d-g070": {
+    "description": "12347a68efe53fa03ef49d7ece2835d1fdde7fa906b5e125f9b75871100a2f46"
+  },
+  "example:itch3d-g071": {
+    "description": "5bd2b8d5d2623f134764c39f74bb4b1d42ec0f0dbecbf239d86d126710af192d"
+  },
+  "example:itch3d-g094": {
+    "description": "6daf0aeadda01c60c11be591c917d03c10842a5f3fbdaefb891cbec039cf576f"
+  },
+  "example:itch3d-g098": {
+    "description": "ca18cdf98bd6e813e227ec935249076e2dd8acb8393d2bb17786c713218b9f93"
+  },
+  "example:itch3d-g102": {
+    "description": "9cabbfdc03292b4490bc38f0253950f00adfa8df04ca24a0c2fed880391fa941"
+  },
+  "example:itch3d-g107": {
+    "description": "52a50f7b30c974fa4c11269e4d55f1051ba045d20de25aea79c7149662e371ce"
+  },
+  "example:itch3d-g118": {
+    "description": "fccc3e91508450b7d2545c9dc4716dda4a966d2a2408d769611a2d182c18b20e"
+  },
+  "example:itch3d-g128": {
+    "description": "fa4b881e05f45198d6e7e6e2284f81a7ecc140c0d1053d1cee2e564400284ffa"
+  },
+  "example:itch3d-g132": {
+    "description": "ea1e80c90cfe7bb9a40e494535acf2d4932f6142b8eeb316935b1987c3107c38"
+  },
+  "example:itch3d-g134": {
+    "description": "c137bde8daf47d2fcabef5784a8facac56490382150673e00cbfba9bfd9ea566"
+  },
+  "example:itch3d-g138": {
+    "description": "6122b687f30698898284ffd486578c05436401e93149d1e6295a3a9db50b2d12"
+  },
+  "example:open3d-baller": {
+    "description": "c3c9db940b34e4b7ff86d494b9af301a281f51238523b0145e1db40232937809"
+  },
+  "example:open3d-glenn-explore": {
+    "description": "510b40b56e645bdc0ca956b3317106c35521e793743c6160c910d0da03c74195"
+  },
+  "example:open3d-gravity-game-js": {
+    "description": "39393a4c8d5884ea6234d7edc715614324cd348d104db4fda20c10e884c6bb1f"
+  },
+  "example:open3d-ironbane-mmo": {
+    "description": "7677d9f1092acdc8b46b7b34d56029fc4fff49446d6f99d4b93d5eb64c484eaa"
+  },
+  "example:open3d-jelly-colosseum": {
+    "description": "af1c254c054829328aa8783a297253c4d26736a629f9b33674c4c3871cebdb83"
+  },
+  "example:open3d-sandy-s-table-quest-3d": {
+    "description": "56e1802e5fd2cdf55832f9b74615ca5ceb8b1071e93a2d0b7e76438bb479265d"
+  },
+  "example:open3d-serpentine": {
+    "description": "e124f394a9abb7e0d872877daf6e7083138b1fcbce7c871f599ad1c0242410e1"
+  },
+  "example:open3d-castle-defender-vr": {
+    "description": "2c8508f388c02aae8aa7e6794743b4c78161dfab482e2aef5524a8850e103369"
+  },
+  "example:open3d-castle-wars-js": {
+    "description": "9a45b268e777d2ebb989b361ddb8c68d3f6f984da12e3520fd2f2648db55cc3f"
+  },
+  "example:open3d-feast-night": {
+    "description": "6a1cf0affdb7e57ad3e74f47028b78d12ecc3f2a03cd84d9c4a9abb4b26e69ef"
+  },
+  "example:open3d-cube-fortress": {
+    "description": "8bc8d68dd1cf1a459c000d74e13b1a357472a06073be544d7d3500b7a978bd94"
+  },
+  "example:open3d-freemazes3d": {
+    "description": "ba3afb155786f9a9b0ca1eae079493e7ff4214e99bd8501102599afb6a27c6f6"
+  },
+  "example:open3d-ironveil": {
+    "description": "f0e2fa432f33709dcc7f7d6c2a9f887e34095347820be0ef60bb81c09e174905"
+  },
+  "example:open3d-multiplayer-zombie-survival-babylonjs": {
+    "description": "6b7769e0b4cbf3782bb3902dcc35e1c07bb26bfc43a63a422c126a26dec4328d"
+  },
+  "example:open3d-assembik-s-ruquired": {
+    "description": "7d0b042b5b8e5490f5f52de16a84f0a923d56e4c90197ea711d8edef16b87a53"
+  },
+  "example:open3d-asteroid-farming": {
+    "description": "e3f61155c77cb5dfb283a27402b517dc6975cfc48b4f9eb6a9102b688ca68310"
+  },
+  "example:open3d-beware-the-living-room": {
+    "description": "330a1aeb7114934aa9b601c68403a894060a2456872ccd22cdfdc5cf5c2b141f"
+  },
+  "example:open3d-boatconf": {
+    "description": "ab91736575ce4d73f4fb4d8bb43dd6aea9a9c690c0f13912051454de64df3cee"
+  },
+  "example:open3d-dreams-of-fire": {
+    "description": "f8a0e927b27f76b9b7c343461efda74942de6ceb893512614c658adecf9f131a"
+  },
+  "example:open3d-earthquake-survive-from-the-earthquake": {
+    "description": "50fdbe72638326716bf235a7c1c18f69ed078c365b9ffa206707edb75de1dce9"
+  },
+  "example:open3d-goddel": {
+    "description": "595b9c29c3890239a1bbb822ac91946082cc1e4ec64f0463047e243c12922a6e"
+  },
+  "example:open3d-grgridid": {
+    "description": "108991016887962fcab4ccf5bfa3368233cb5e43dda07bf8e18bd189a5fc81ba"
+  },
+  "example:open3d-hackb0t": {
+    "description": "65006497e8245135d516dca18c2994448e0f5968d2c500e8b62eb294bf5070ae"
+  },
+  "example:open3d-locked-and-toasted": {
+    "description": "3a047e516c51a9c607d6adf80fa230cebdf69b116049b5a57118ffd7e5cd073b"
+  },
+  "example:open3d-mildly-haunted": {
+    "description": "5a2c1ebab15d0488486acd431ea764e398bfd180342f6c5b1f039005eccec229"
+  },
+  "example:open3d-pinball-but-it-s-only-multiball": {
+    "description": "bf3d75e7bd7b4ae7fe46798dc2c952b6a8d03c742a2fbe282bc4584f6e5e1303"
+  },
+  "example:open3d-pirate-zombies": {
+    "description": "fb363f7f91192bda77c4cae21c6ba2543f0cd5500b1935263f550a4867c535a3"
+  },
+  "example:open3d-pixel-sabotage-adventure": {
+    "description": "30f2b1544fa8c27d417db592c8a8626870566627bcbc8d4f5b7575c468187b49"
+  },
+  "example:open3d-segmentation-fault": {
+    "description": "22b5cd1b24e3ee8851884b8649675c257f823e5edce5aec5533693a11762f785"
+  },
+  "example:open3d-solaria": {
+    "description": "7cfbe0457696a417e212350e4f6c6da5ca1c609b514a9c6246fdca07a960dbdb"
+  },
+  "example:open3d-the-chamber-crowd": {
+    "description": "f1120642a212353f198f3295770e9c94737193ea421c3058f42f347406e497c5"
+  },
+  "example:open3d-the-typing-experiment": {
+    "description": "f5e20ae22e81d8f8ccace70ef65f87164db77f155fc426b73cdf1e7823074fde"
+  },
+  "example:open3d-void-sys": {
+    "description": "51321e65654cc5af51eba41b0faa5d83611b96c4bbccae187c91f9130af169de"
+  },
+  "example:open3d-warden-of-the-isles-hernz": {
+    "description": "58739f7db78ab8cfe876d64be1e2d454b2837f2de75cd04b1604c7355626c2d4"
+  },
+  "example:open3d-windy-seas": {
+    "description": "cb9aff42327bf966c93a09e7d1e5ec01924268c8e5152ce8032fbc1bf07b7737"
+  },
+  "example:open3d-camp-shepherd": {
+    "description": "6e0a2ba2f40ad4037e5cf5ac8caaf6833499569ad358873f9861430a5ea2b419"
+  },
+  "example:open3d-living-dead": {
+    "description": "19c7280a804f278dc5eb825758853afeb6a286cea62ebb85bcf5a0cd181c138c"
+  },
+  "example:open3d-lunaculture": {
+    "description": "fef881fd1824b3f53809fa7057750d4a7a78bada2c203b0b9b0d50794bea7cae"
+  },
+  "example:open3d-masquerade-hunt": {
+    "description": "4cf211845be03b72e372aceb6bbafc28486ccdae272773f9b79c6a6050cab21c"
+  },
+  "example:open3d-need-for-cookies": {
+    "description": "1cb4a659b8535fa16e64e69dfd28c799637c7b923c17836977b8c8a0c2af7346"
+  },
+  "example:open3d-punchline": {
+    "description": "ae22f91b2183c1bbabb67afdb6e6ec92df2e8a6d8e5696e3bdf3912217e0e5c2"
+  },
+  "example:open3d-shuffle-company": {
+    "description": "741be92f78d58986f13d2cc661d14d814f700ac8da04ee9ce9d3883846fe71bf"
+  },
+  "example:open3d-the-village-sacrifice": {
+    "description": "05943723de03950635aa368d92f1f22812314503373fa957ba6ecb1dfb0aba13"
+  },
+  "example:open3d-ghostie-hunt": {
+    "description": "3a704569c33006ee64a9ec31bbefe58d4a09b33bd4de0169b840edaeb820fe4d"
+  },
+  "example:open3d-gone-rogue": {
+    "description": "b42286f8e2ae97fc02680c8911ee02999e4a3f1eec811270ef94340a93dee242"
+  },
+  "example:open3d-pirate-bay": {
+    "description": "fbdfe8dca13c5ce662500a3c2c71bbcdc54ae8892d879e60f75c724a65389eeb"
+  },
+  "example:open3d-poladro-d": {
+    "description": "62972b0ecc3c9c9dcb20030ee83d3da6b7e23aa733249a0175af392458792af8"
+  },
+  "example:open3d-rootin-n-shootin": {
+    "description": "b82913b16a92163d180326611bf54a382977301b03d7df98ff4f88dfa1973c8d"
+  },
+  "example:open3d-the-last-mask-unmasked-discharged": {
+    "description": "00ca6efe775c333dd2e361253ceac113319fcfd6f5bc76a9434b0288610bada6"
+  },
+  "example:open3d-rally-mandaw": {
+    "description": "4e546f49e2b0f3e31e06a065025d6204e0469a9f02bd2c1cc828697bddfac70f"
+  },
+  "example:open3d-six-shootin-cats": {
+    "description": "a52b36bb9138da15ee171d9d80644a760624688014b948a83911290ed4b32d7d"
+  },
+  "example:open3d-the-little-drop": {
+    "description": "80fa0905b6829ad64cefdeda1797dba10fb8a24f38391642a8d117ace5cb4f51"
+  },
+  "example:open3d-the-martian-thirst": {
+    "description": "da2a222ae2de7ed077fe3a8031439b7fb73db0b1bd38c262b1185ffb43f29426"
+  },
+  "example:open3d-sheer-fish-attack": {
+    "description": "73b2cd1b6918cea7fdf663d1b76727a7379b35f7f34d6995390fea8dfc82ef8c"
+  },
+  "example:open3d-3d-game-experiment-akuli": {
+    "description": "0a086218d6d87b7905d2c473df9318f682c9e8b66478bfac7e39c334e19784df"
+  },
+  "example:open3d-arcane-realm-3d": {
+    "description": "ef604401316a9624d93d244ab6536cd014238fd85a21f4c62127819c8e9208b4"
+  },
+  "example:open3d-cave9": {
+    "description": "c027ed01c9c0ddba4b15f3c7a8c23cbe3212f78f25c9b71247a00f8798f0b988"
+  },
+  "example:open3d-cubosphere": {
+    "description": "771ca7a86e4fb1b76a642f967a1be257356818eb3019778b602c8685a0cb2366"
+  },
+  "example:open3d-digital-extinction": {
+    "description": "154703c8643eeb8f03cae6aa7699392101c1e5fc5b67fa4f437bd9852b4d1a77"
+  },
+  "example:open3d-glitch": {
+    "description": "c57aa5741ead033c843bb970b2b9a244d016a569b263994cf3bb178913493c75"
+  },
+  "example:open3d-irrlamb": {
+    "description": "540468f6910d7cdb35e6f7467a3d9857379400e0329b7709a91a03fb13cc5541"
+  },
+  "example:open3d-keep-it-rollin": {
+    "description": "833160e2b9e61041550d884d600707af00416f143f6ca01af1110930629a71d8"
+  },
+  "example:open3d-kiki-the-nano-bot": {
+    "description": "aec3109b87f71411a63316582c027c18d5fa1d3e3f8ccaa11cd6c287daa8c372"
+  },
+  "example:open3d-laborgeist": {
+    "description": "ea30bbd63b6c78d28c74687dea4293dce6fb7573b5794f4f58df7f400c9b40f5"
+  },
+  "example:open3d-lazarr": {
+    "description": "922ce8a9149a2a839ed0c3ca0091169b9881d74cdb3d68bfd6ae12b269ff5d98"
+  },
+  "example:open3d-maze-ascension-the-labyrinth-of-echoes": {
+    "description": "a15d0318b5a405c09ca44cab7e3831fa721d624a09db14eff1dbb4f207baf5da"
+  },
+  "example:open3d-nodecore": {
+    "description": "9f88b97d225cf6cb70b95e13094a8145d2c3345dbbe36bb709d26f1a671e85e2"
+  },
+  "example:open3d-not-snake": {
+    "description": "dfe32f63cfd367c7cbc491536df7ca040976f143b5bfa7d8cc081aeaf0e33b08"
+  },
+  "example:open3d-pigami": {
+    "description": "78d2b7b43e6ab14c3e98f00d393b162343a0c0258b74d05866e347490075a2c0"
+  },
+  "example:open3d-pilot-garden": {
+    "description": "4c405159884c4a9734d06724e36dd6a32d0ca395dca178e5a9af74759c781159"
+  },
+  "example:open3d-repixture": {
+    "description": "6aa63f9bd811ca612cc0ce2578f96fb2d3db10012656be766be90343d7de2e30"
+  },
+  "example:open3d-vacuumulate": {
+    "description": "6fd6d79e59d29fbf1dae6d3611ebbf3de590c2304a476dde9fcae7191dde1aff"
+  },
+  "example:browser-port-02": {
+    "description": "860a83ad7003d826afcb7f4ff8e3465dae52f936d229d8719f3251c4a535af23"
+  },
+  "example:browser-port-03": {
+    "description": "57f204a5244c107e6493c77b14656ba7ee9d7d7cc2434a7e82862bb4799353e4"
+  },
+  "example:browser-port-06": {
+    "description": "f635d3e34c337cb3b9d7555155afadbf09a8b0004426e37054e505411a62b66a"
+  },
+  "example:browser-port-08": {
+    "description": "853b92c66a910e0e5114382f4cb9408b60bcad4a10290be4fe0548ce528d535b"
+  },
+  "example:browser-port-12": {
+    "description": "12e78e76c2f72486d00c262ec72b21caf59340fd831b89179ff43bfbcb57bb83",
+    "title": "5d6f518b8e839c3b89a735ce1fd9a233b402a9b0b1c6942102a4ab7c249bdfcf"
+  },
+  "example:browser-port-15": {
+    "description": "ea2e28972481e20874eb25a62a0329f3d8c0c1d0ebb36ac39934935268a86f37"
+  },
+  "example:browser-port-17": {
+    "description": "aa1fdf97241196cc11fc052bf2c8da56a4db329b3943ed9ac0ff9c8a3c44acfb"
+  },
+  "example:browser-port-19": {
+    "description": "8bf98e45b0775bb713f619b4df248046ce3f29ba42cc4100bedb6384e56e318a"
+  },
+  "example:browser-port-21": {
+    "description": "6a54cec4b5c4c328a147e4f60ceb86bc9a7ca4de0ff72b17c71cac23d8219b5a"
+  },
+  "example:browser-port-22": {
+    "description": "245da7ce15e078852fb679e3da69b44951255c4da5e4129558c2d82e9f7380d5"
+  },
+  "collection:wasm-arcade-repository-catalogue": {
+    "description": "b6be16b083b7cd9b2f7a1ca40770c249f252b0e3e21e0e1deb88d2626cee84e9"
   }
 }

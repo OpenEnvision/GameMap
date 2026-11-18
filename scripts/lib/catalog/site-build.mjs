@@ -86,12 +86,22 @@ async function copyCheckout(directory) {
   )
     .split("\0")
     .filter(Boolean);
+  const deleted = new Set(
+    execFileSync("git", ["ls-files", "-z", "--deleted"], {
+      cwd: root,
+      encoding: "utf8",
+    })
+      .split("\0")
+      .filter(Boolean),
+  );
   const allowed = (file) =>
     /^(?:scripts|website|data|docs|tests)\//.test(file) ||
     /^(?:package(?:-lock)?\.json|(?:react-router|playwright(?:\.release)?|vite)\.config\.ts|tsconfig\.json|README\.md|CONTRIBUTING\.md|AWESOME\.md)$/.test(
       file,
     );
-  for (const file of files.filter(allowed)) {
+  for (const file of files.filter(
+    (file) => allowed(file) && !deleted.has(file),
+  )) {
     if (
       file
         .split("/")

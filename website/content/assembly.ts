@@ -1,3 +1,4 @@
+import { gameplayMediaSchema } from "./contracts";
 import type { ContentSources } from "./source-data";
 import type {
   ContentKind,
@@ -65,6 +66,8 @@ export function assembleSources(
       a.key.localeCompare(b.key),
   );
   const empty = {
+    papers: [],
+    threejsGames: [],
     resources: [],
     repositoryResearch: { ...configuration.research, records: [] },
     learningPaths: [],
@@ -84,6 +87,9 @@ export function assembleSources(
     showcaseByTrack: {},
     projectMedia: {},
     learningMedia: {},
+    researchGameMedia: {},
+    pageCovers: {},
+    gameplayScreenshots: {},
     editorial: {},
     identities: {},
     pathDefinitions: {},
@@ -98,10 +104,30 @@ export function assembleSources(
     keys.add(record.key);
     const data = record.body.payload;
     const attachments = record.body.attachments;
+    if (attachments.pageCover)
+      sources.pageCovers[record.key] = attachments.pageCover as never;
+    const gameplay =
+      ["example", "foundation", "threejs-game"].includes(record.kind) &&
+      gameplayMediaSchema.safeParse(attachments.learningMedia).success;
+    if (gameplay)
+      sources.gameplayScreenshots[record.key] = {
+        media: attachments.learningMedia as never,
+        ...(attachments.archivedPageCover
+          ? { archivedPageCover: attachments.archivedPageCover as never }
+          : {}),
+      };
     const id = record.identifier;
     // These adapters deliberately target typed collections consumed by the existing renderer.
     // New kinds must implement a renderer/assembly adapter, not fall back to arbitrary JSON.
     switch (record.kind) {
+      case "paper":
+        sources.papers.push(data as ContentSources["papers"][number]);
+        break;
+      case "threejs-game":
+        sources.threejsGames.push(
+          data as ContentSources["threejsGames"][number],
+        );
+        break;
       case "resource":
         sources.resources.push(data as ContentSources["resources"][number]);
         if (attachments.identity)
@@ -114,8 +140,10 @@ export function assembleSources(
         sources.learningPaths.push(
           data as ContentSources["learningPaths"][number],
         );
-        sources.learningMedia[id] = attachments.learningMedia as never;
-        sources.gameCaseAgents[id] = attachments.agentAttribution as never;
+        if (attachments.learningMedia && !gameplay)
+          sources.learningMedia[id] = attachments.learningMedia as never;
+        if (attachments.agentAttribution)
+          sources.gameCaseAgents[id] = attachments.agentAttribution as never;
         break;
       case "foundation":
         sources.foundationPaths.push(
@@ -141,6 +169,8 @@ export function assembleSources(
         sources.repositoryResearch.records.push(
           data as ContentSources["repositoryResearch"]["records"][number],
         );
+        if (attachments.learningMedia)
+          sources.researchGameMedia[id] = attachments.learningMedia as never;
         break;
       case "collection":
         sources.communityCollections.push(

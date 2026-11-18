@@ -22,6 +22,9 @@ dist/
 /website/.content/
 /website/public/docs-assets/
 
+# Local upstream collection archives; imported catalog data stays versioned.
+/collections/
+
 # TypeScript, Vite, lint, and other disposable tool caches.
 *.tsbuildinfo
 .vite/
@@ -100,6 +103,6 @@ $RECYCLE.BIN/
 # Skill distribution archives are reproducibly generated from docs/skills/.
 /website/public/skills/
 
-# Intentionally versioned: README.md, AWESOME.md, docs/, data/, package-lock.json,
+# Intentionally versioned: README.md, docs/ (including AWESOME.md), data/, package-lock.json,
 # website/app/, website/src/, and website/public/ assets/downloads.
 # Some are generated editorial outputs; CI checks that they match their sources.

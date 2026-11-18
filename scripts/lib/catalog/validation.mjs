@@ -14,8 +14,12 @@ import {
   renderGeneratedDocuments,
   resolveDocumentBody,
 } from "./generated-documents.mjs";
-import { documentGenerator } from "./generated-registry.mjs";
+import {
+  documentGenerator,
+  canonicalDocumentSource,
+} from "./generated-registry.mjs";
 import { frozenReleaseRealm } from "./release-realm.mjs";
+import { validateGameplayAttachment } from "./gameplay-media.mjs";
 
 export class ContentValidationError extends Error {
   constructor(issues) {
@@ -128,6 +132,36 @@ export async function validateSelection(
     }
     if (
       record.kind === "example" &&
+      record.schema_version >= 3 &&
+      record.body.payload.category !== "community" &&
+      (!record.body.attachments.learningMedia ||
+        !record.body.attachments.agentAttribution?.length ||
+        !record.body.payload.evidence)
+    )
+      issues.push(
+        issue(
+          record.key,
+          "attachments",
+          "AI-attributed examples require creator evidence, agent attribution and a gameplay screenshot",
+        ),
+      );
+    if (
+      record.kind === "repository-research" &&
+      record.schema_version === 3 &&
+      record.body.payload.game_access &&
+      !record.body.attachments.learningMedia
+    )
+      issues.push(
+        issue(
+          record.key,
+          "attachments.learningMedia",
+          "Research game builds require a gameplay screenshot",
+        ),
+      );
+    if (
+      ["example", "foundation", "threejs-game", "repository-research"].includes(
+        record.kind,
+      ) &&
       record.body.attachments.learningMedia?.origin === "creator-screenshot" &&
       !record.body.attachments.learningMedia.originalImageUrl
     )
@@ -148,7 +182,7 @@ export async function validateSelection(
         issue(
           record.key,
           "payload.category",
-          "Engine foundations and AI-created game examples are distinct kinds",
+          "Engine foundations and complete game examples are distinct kinds",
         ),
       );
   }
@@ -199,6 +233,31 @@ export async function validateSelection(
 
   const artifacts = new Map();
   for (const record of records) {
+    for (const field of ["pageCover", "archivedPageCover"]) {
+      const cover = record.body.attachments[field];
+      if (
+        cover?.origin === "catalog-page-capture" &&
+        cover.sourceSnapshot.canonicalPath !== record.canonical_path
+      )
+        issues.push(
+          issue(
+            record.key,
+            `attachments.${field}.sourceSnapshot.canonicalPath`,
+            "A catalog page cover must depict its own canonical record",
+          ),
+        );
+    }
+    try {
+      await validateGameplayAttachment(record, readAsset);
+    } catch (error) {
+      issues.push(
+        issue(
+          record.key,
+          "attachments.learningMedia",
+          `Gameplay provenance verification failed: ${error.message}`,
+        ),
+      );
+    }
     const references = [];
     walkValues(record.body, (value, field) => {
       if (
@@ -221,6 +280,48 @@ export async function validateSelection(
             sha256: sha256(bytes),
           });
         }
+        if (
+          /^attachments\.(?:pageCover|archivedPageCover)\.(?:original\.)?src$/.test(
+            reference.field,
+          )
+        ) {
+          const original = reference.field.endsWith("original.src");
+          const cover = record.body.attachments[reference.field.split(".")[1]];
+          const declared = original ? cover.original : cover;
+          const file = artifacts.get(reference.path);
+          assert.equal(
+            file.sha256,
+            declared.sha256,
+            "Page cover checksum differs from its file",
+          );
+          assert.equal(
+            file.bytes,
+            declared.bytes,
+            "Page cover byte count differs from its file",
+          );
+          const image = await sharp(await readAsset(reference.path), {
+            limitInputPixels: 40000000,
+          }).metadata();
+          assert.equal(
+            image.format,
+            original ? "png" : "webp",
+            "Page cover encoding differs from its contract",
+          );
+          assert.equal(
+            image.width,
+            declared.width,
+            "Page cover width differs from its file",
+          );
+          assert.equal(
+            image.height,
+            declared.height,
+            "Page cover height differs from its file",
+          );
+          assert.ok(
+            !image.pages || image.pages === 1,
+            "A page cover must be one complete viewport frame",
+          );
+        }
         if (reference.field === "attachments.identity.asset")
           assert.equal(
             artifacts.get(reference.path).sha256,
@@ -228,7 +329,12 @@ export async function validateSelection(
             "Verified mark checksum differs from its file",
           );
         if (
-          record.kind === "example" &&
+          [
+            "example",
+            "foundation",
+            "threejs-game",
+            "repository-research",
+          ].includes(record.kind) &&
           reference.field === "attachments.learningMedia.src"
         ) {
           const image = await sharp(await readAsset(reference.path), {
@@ -331,8 +437,11 @@ export async function validateSelection(
       documentGenerator(document);
       assert.equal(
         document.slug,
-        context.documents.find((known) => known.source === document.source)
-          ?.slug,
+        context.documents.find(
+          (known) =>
+            canonicalDocumentSource(known.source) ===
+            canonicalDocumentSource(document.source),
+        )?.slug,
         "Document source has another canonical identity",
       );
     } catch (error) {

@@ -22,6 +22,10 @@ async function inventory(sql) {
   return result;
 }
 const allowedSource = (path) =>
+  [
+    "config/research-archive-receipt.json",
+    "config/research-archive-remainder-receipt.json",
+  ].includes(path) ||
   /^(?:scripts|website|studio|supabase|data|docs|tests)\//.test(path) ||
   /^(?:package(?:-lock)?\.json|.*\.config\.ts|tsconfig\.json|README\.md|CONTRIBUTING\.md|AWESOME\.md|LICENSE(?:\.md)?|\.env\.example)$/.test(
     path,
@@ -82,6 +86,14 @@ export async function backupLocalCatalog(mediaRoot) {
     await owner.end({ timeout: 5 });
   }
   const source = [];
+  const deleted = new Set(
+    execFileSync("git", ["ls-files", "-z", "--deleted"], {
+      cwd: root,
+      encoding: "utf8",
+    })
+      .split("\0")
+      .filter(Boolean),
+  );
   const files = execFileSync(
     "git",
     ["ls-files", "-z", "--cached", "--others", "--exclude-standard"],
@@ -90,7 +102,8 @@ export async function backupLocalCatalog(mediaRoot) {
     .split("\0")
     .filter(Boolean)
     .filter(allowedSource)
-    .filter(secretFreePath);
+    .filter(secretFreePath)
+    .filter((path) => !deleted.has(path));
   for (const path of files) {
     const bytes = await readArtifact(root, path),
       target = join(directory, "source", path);

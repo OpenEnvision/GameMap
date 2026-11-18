@@ -255,19 +255,84 @@ export const exampleFields: FieldRules<ContentModels["example"]> = {
     {
       "ai-generated": "AI-generated (creator attribution)",
       "ai-assisted": "AI-assisted (creator attribution)",
+      community: "Community game — no AI-authorship claim",
       foundation: "Human-authored engine foundation — not an AI-created game",
     },
     "provenance",
   ),
   aiUse: text("AI workflow / foundation context"),
+  intake: {
+    section: "provenance",
+    present: (value) =>
+      value
+        ? [
+            {
+              type: "facts",
+              label: "Imported directory provenance",
+              items: [
+                { type: "text", label: "Input dataset", value: value.dataset },
+                { type: "text", label: "Original entry", value: value.rowId },
+                {
+                  type: "text",
+                  label: "Original metadata date",
+                  value: value.sourceDate,
+                },
+                { type: "text", label: "Imported", value: value.importedAt },
+                { type: "text", label: "SHA-256", value: value.sha256 },
+                {
+                  type: "text",
+                  label: "Verification boundary",
+                  value: value.verification,
+                },
+                ...(value.homepage
+                  ? [
+                      {
+                        type: "link" as const,
+                        label:
+                          "Supplied project website — not a verified play link",
+                        url: value.homepage,
+                      },
+                    ]
+                  : []),
+              ],
+            },
+          ]
+        : [],
+  },
+  assetTools: list("Creator-attributed asset tools"),
+  distribution: {
+    section: "provenance",
+    present: (values) =>
+      (values ?? []).flatMap(({ platform, ...item }) =>
+        describedLink("Distribution", { label: platform, ...item }, demoKeys),
+      ),
+  },
   steps: list("Study this workflow", true),
   tutorial: {
     present: (value) =>
       describedLink("Build story / tutorial", value, tutorialKeys),
   },
-  demo: { present: (value) => describedLink("Play or run", value, demoKeys) },
+  demo: {
+    present: (value) =>
+      describedLink(
+        value.kind === "source"
+          ? "Source reference — release unverified"
+          : value.kind === "reference"
+            ? "Project reference — source unverified"
+            : "Play or run",
+        value,
+        demoKeys,
+      ),
+  },
   source: {
-    present: (value) => describedLink("Project source", value, sourceKeys),
+    present: (value) =>
+      describedLink(
+        value.scope === "project-reference"
+          ? "Project reference — source unverified"
+          : "Project source",
+        value,
+        sourceKeys,
+      ),
   },
   evidence: {
     present: (value) =>
@@ -363,6 +428,17 @@ export const testingPackFields: FieldRules<ContentModels["testing-pack"]> = {
   resources: lead,
   task: text("Task"),
   measure: text("Measure"),
+  check: text("Checkpoint"),
+  testingIds: {
+    section: "resources",
+    present: (ids) => [
+      {
+        type: "links",
+        label: "Testing resources",
+        items: (ids ?? []).map((id) => ({ label: id, url: url.testing(id) })),
+      },
+    ],
+  },
 };
 export const pathFields: FieldRules<ContentModels["path"]> = {
   id: skip("Track identity is the canonical route."),
@@ -379,6 +455,16 @@ export const stepFields: FieldRules<ContentModels["step"]> = {
   description: lead,
   deliverable: text("Deliverable"),
   check: text("Checkpoint"),
+  resourceIds: {
+    section: "resources",
+    present: (ids) => [
+      {
+        type: "links",
+        label: "Related resources",
+        items: (ids ?? []).map((id) => ({ label: id, url: url.resource(id) })),
+      },
+    ],
+  },
 };
 export const collectionFields: FieldRules<ContentModels["collection"]> = {
   id: skip("Stable identity is the canonical anchor."),
@@ -387,6 +473,22 @@ export const collectionFields: FieldRules<ContentModels["collection"]> = {
   url: link("Browse collection"),
 };
 export const demoFields: FieldRules<ContentModels["demo"]> = {
+  demoType: text("Demo content type", "provenance"),
+  limitations: text("Limitations", "provenance"),
+  engine: text("Engine"),
+  exampleId: {
+    section: "resources",
+    present: (id) =>
+      id
+        ? [
+            {
+              type: "links",
+              label: "Related example",
+              items: [{ label: id, url: url.example(id) }],
+            },
+          ]
+        : [],
+  },
   recordingId: skip(
     "Validated original-media identity used to group renditions; canonical presentation URLs remain distinct.",
   ),
@@ -599,6 +701,16 @@ export const repositoryResearchFields: FieldRules<
     "Original discovery group (not a capability or authorship claim)",
     repositoryResearch.group_titles,
   ),
+  game_access: factObject("Linked game build", {
+    title: "Game title",
+    track: "Game dimension",
+    engine: "Engine / stack",
+    kind: "Build access",
+    url: "Play or download",
+    source_url: "Build link evidence",
+    checked_at: "Build link checked",
+    note: "Access conditions — not a playtest",
+  }),
   license_note: text("License and rights boundary"),
   ai_note: text("AI attribution boundary"),
   limitations: list("Qualifications and limitations"),
@@ -727,9 +839,279 @@ export const documentFields: FieldRules<ContentModels["document"]> = {
     "Checked against the source Markdown by source/build validation.",
   ),
 };
+/** Keep native nested labels and every caveat visible, including false, null and empty lists.
+ * These values come from the strict paper/game contracts, never arbitrary body attachments. */
+function nativeFact(label: string, value: unknown): Fact {
+  if (Array.isArray(value))
+    return {
+      type: "group",
+      label,
+      items: value.length
+        ? value.map((item, index) => nativeFact(String(index + 1), item))
+        : [{ type: "text", label: "Items", value: "0" }],
+    };
+  if (value !== null && typeof value === "object")
+    return {
+      type: "group",
+      label,
+      items: Object.entries(value).map(([key, item]) => nativeFact(key, item)),
+    };
+  if (typeof value === "string" && /^https?:\/\//.test(value))
+    return { type: "link", label, url: value };
+  return {
+    type: "text",
+    label,
+    value: value === null ? "null" : String(value),
+  };
+}
+const nativeFacts = (
+  label: string,
+  section: ContentSection = "provenance",
+) => ({
+  section,
+  present: (value: unknown): BlockValue[] => [
+    { type: "facts", label, items: [nativeFact(label, value)] },
+  ],
+});
+const paperCodeLabels = {
+  restricted: "Restricted code access",
+  "not-found": "Implementation not located",
+  "open-source": "Open-source code",
+  "not-released": "Code not released",
+  unverified: "Code availability unverified",
+  "source-available": "Source-available code",
+};
+const repositoryKindLabels = {
+  implementation: "Implementation",
+  "data-tools": "Data and tools",
+  "research-index": "Research index",
+  materials: "Materials",
+  benchmark: "Benchmark",
+  partial: "Partial implementation",
+};
+const paperLicenseLabels = {
+  restricted: "Restricted license",
+  "open-source": "Open-source license",
+  unspecified: "License unspecified",
+};
+function paperAccessBlocks(
+  value: ContentModels["paper"]["access"],
+): BlockValue[] {
+  const blocks: BlockValue[] = [
+    {
+      type: "facts",
+      label: "Access and review",
+      items: [
+        {
+          type: "text",
+          label: "Code availability",
+          value: paperCodeLabels[value.codeStatus],
+        },
+        {
+          type: "text",
+          label: "Review status",
+          value:
+            value.reviewStatus === "source-reviewed"
+              ? "Source reviewed"
+              : "Review unverified",
+        },
+        { type: "text", label: "Source checked", value: value.checkedAt },
+      ],
+    },
+  ];
+  if (value.repositories.length) {
+    blocks.push({
+      type: "links",
+      label: "Code repositories",
+      items: value.repositories.map((repo) => ({
+        label: repo.label,
+        url: repo.url,
+        note: `${repositoryKindLabels[repo.kind]} · ${paperLicenseLabels[repo.license.status]} · ${repo.license.name}`,
+      })),
+    });
+    const licenses = value.repositories
+      .filter((repo) => repo.license.url)
+      .map((repo) => ({
+        label: `${repo.label} — ${repo.license.name}`,
+        url: repo.license.url!,
+      }));
+    if (licenses.length)
+      blocks.push({
+        type: "links",
+        label: "Repository licenses",
+        items: licenses,
+      });
+  }
+  if (value.projects.length)
+    blocks.push(...linkedObjects("Project pages", value.projects));
+  if (value.demos.length)
+    blocks.push({
+      type: "links",
+      label: "Demos and downloads",
+      items: value.demos.map((demo) => ({
+        label: demo.label,
+        url: demo.url,
+        note: `${{ download: "Download", local: "Local setup", interactive: "Interactive demo" }[demo.kind]} · ${{ request: "Access on request", setup: "Requires setup", public: "Public access", signup: "Requires sign-up" }[demo.access]}. ${demo.note}`,
+      })),
+    });
+  if (value.notes.length)
+    blocks.push({
+      type: "list",
+      label: "Availability notes",
+      items: value.notes,
+    });
+  if (value.evidence.length)
+    blocks.push(...linkedObjects("Review evidence", value.evidence));
+  const absent = [
+    !value.repositories.length && "No code repositories listed.",
+    !value.projects.length && "No project pages listed.",
+    !value.demos.length && "No demos listed.",
+    !value.notes.length && "No additional availability notes listed.",
+    !value.evidence.length && "No review evidence links listed.",
+  ].filter((item): item is string => Boolean(item));
+  if (absent.length)
+    blocks.push({
+      type: "list",
+      label: "Not listed in this record",
+      items: absent,
+    });
+  // Original enum values are review evidence too. Keep their exact spelling in
+  // the source disclosure rather than leaking database codes into the reading surface.
+  const classifications: Fact[] = [
+    {
+      type: "text",
+      label: "Code status (source value)",
+      value: value.codeStatus,
+    },
+    {
+      type: "text",
+      label: "Review status (source value)",
+      value: value.reviewStatus,
+    },
+  ];
+  for (const repo of value.repositories)
+    classifications.push({
+      type: "group",
+      label: repo.label,
+      items: [
+        { type: "text", label: "Repository kind", value: repo.kind },
+        { type: "text", label: "License status", value: repo.license.status },
+      ],
+    });
+  for (const demo of value.demos)
+    classifications.push({
+      type: "group",
+      label: demo.label,
+      items: [
+        { type: "text", label: "Demo kind", value: demo.kind },
+        { type: "text", label: "Access requirement", value: demo.access },
+      ],
+    });
+  blocks.push({
+    type: "facts",
+    label: "Recorded source classifications",
+    items: classifications,
+  });
+  return blocks;
+}
+const paperFields: FieldRules<ContentModels["paper"]> = {
+  id: text("Stable ID", "provenance"),
+  title,
+  description: lead,
+  authors: text("Authors", "provenance"),
+  year: text("Year", "provenance"),
+  publication: text("Publication", "provenance"),
+  referenceType: text("Reference type", "provenance"),
+  primaryRole: text("Primary role", "provenance"),
+  roles: list("Roles"),
+  topics: list("Topics"),
+  url: {
+    present: (value) => [
+      {
+        type: "links",
+        label: "Original source",
+        items: [{ label: "Read original", url: value }],
+      },
+    ],
+  },
+  pdfUrl: {
+    present: (value) =>
+      value
+        ? [
+            {
+              type: "links",
+              label: "PDF",
+              items: [{ label: "Read PDF", url: value }],
+            },
+          ]
+        : [],
+  },
+  arxivId: text("arXiv ID", "provenance"),
+  doi: text("DOI", "provenance"),
+  resourceIds: {
+    section: "resources",
+    present: (ids) => [
+      {
+        type: "links",
+        label: "Related resources",
+        items: ids.map((id) => ({ label: id, url: url.resource(id) })),
+      },
+    ],
+  },
+  origins: {
+    section: "provenance",
+    present: (value) =>
+      value.length
+        ? linkedObjects("Origins", value)
+        : [
+            {
+              type: "text",
+              label: "Origins",
+              value: "No origin links listed.",
+            },
+          ],
+  },
+  citedSections: {
+    section: "provenance",
+    present: (value) =>
+      value.length
+        ? linkedObjects("Cited sections", value)
+        : [
+            {
+              type: "text",
+              label: "Cited sections",
+              value: "No cited sections listed.",
+            },
+          ],
+  },
+  classification: text("Classification caveat", "provenance"),
+  access: { section: "provenance", present: paperAccessBlocks },
+};
+const threejsGameFields: FieldRules<ContentModels["threejs-game"]> = {
+  id: text("Stable ID", "provenance"),
+  name: title,
+  repository_url: nativeFacts("Source repository", "resources"),
+  genres: list("Genres"),
+  dimension: text("Game dimension", "provenance"),
+  stack: nativeFacts("Renderer and dependency evidence"),
+  gameplay_evidence: {
+    section: "provenance",
+    present: (value) => [
+      { type: "lead", value: value.claim },
+      ...nativeFacts("Gameplay evidence").present(value),
+    ],
+  },
+  license: nativeFacts("License and asset caveats"),
+  demo: nativeFacts("Demo availability (not playtesting)"),
+  maturity: nativeFacts("Maturity evidence"),
+  verification: nativeFacts("Source review (not publication approval)"),
+  limitations: { ...list("Limitations"), section: "provenance" },
+};
 export const fieldRules: {
   [K in keyof ContentModels]: FieldRules<ContentModels[K]>;
 } = {
+  paper: paperFields,
+  "threejs-game": threejsGameFields,
   resource: resourceFields,
   example: exampleFields,
   foundation: exampleFields,

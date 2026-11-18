@@ -16,8 +16,9 @@ import {
 } from "./codec.mjs";
 function linkRole(path) {
   if (/license|terms|notice/i.test(path)) return "rights";
-  if (/evidence|source_urls/i.test(path)) return "evidence";
-  if (/demo|originalUrl/i.test(path)) return "demo";
+  if (/evidence|source_urls|payload\.game_access\.source_url/i.test(path))
+    return "evidence";
+  if (/demo|originalUrl|payload\.game_access\.url/i.test(path)) return "demo";
   if (/codeUrl|payload\.source\.url/.test(path)) return "code";
   return "reference"; // A URL alone does not establish official status or support a claim.
 }
@@ -155,7 +156,16 @@ export function projectSnapshot(
           revision_id: entry.revision_id,
           field,
           url: value,
-          role: linkRole(field),
+          role:
+            entry.kind === "example" &&
+            entry.body.payload.demo.kind === "reference" &&
+            ["payload.demo.url", "payload.source.url"].includes(field)
+              ? "reference"
+              : entry.kind === "example" &&
+                  entry.body.payload.demo.kind === "source" &&
+                  field === "payload.demo.url"
+                ? "code"
+                : linkRole(field),
         });
       }
       if (

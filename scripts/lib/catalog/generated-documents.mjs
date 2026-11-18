@@ -7,6 +7,7 @@ import { renderRepositoryResearch } from "../../repository-research.mjs";
 import {
   documentGenerators,
   documentGenerator,
+  canonicalDocumentSource,
 } from "./generated-registry.mjs";
 import { assertMarkdownSafety } from "./markdown-safety.mjs";
 import { sha256, canonicalJSON } from "./codec.mjs";
@@ -30,7 +31,8 @@ export async function resolveDocumentBody(
   { knownSources, readSource, verify = true },
 ) {
   assert.ok(
-    knownSources.has(document.source),
+    knownSources.has(document.source) ||
+      knownSources.has(canonicalDocumentSource(document.source)),
     "Document is not a registered public source",
   );
   const generator = documentGenerator(document);
@@ -57,7 +59,7 @@ export function renderGeneratedDocuments(input) {
   // JSONB and canonical package serialization reorder maps. Only arrays carry editorial order.
   const sources = JSON.parse(canonicalJSON(input));
   const renderers = {
-    "resource-catalog": () => renderAwesome(sources.resources),
+    "resource-catalog": (source) => renderAwesome(sources.resources, { source }),
     "game-builds": () =>
       renderLearningGuide(
         sources.learningPaths,
@@ -80,12 +82,14 @@ export function renderGeneratedDocuments(input) {
       renderLogoAttribution(sources.resources, sources.identities),
   };
   return Object.fromEntries(
-    Object.entries(documentGenerators).map(([key, definition]) => {
+    Object.entries(documentGenerators).flatMap(([key, definition]) => {
       assert.ok(
         Object.hasOwn(renderers, key),
         `Uninstalled document generator: ${key}`,
       );
-      return [definition.source, renderers[key]()];
+      return [definition.source, ...(definition.legacySources || [])].map(
+        (source) => [source, renderers[key](source)],
+      );
     }),
   );
 }

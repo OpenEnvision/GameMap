@@ -1,4 +1,5 @@
 import { communityMedia } from "./communityMedia";
+import { jamGameMedia } from "./jamGameMedia";
 
 import type { z } from "zod";
 import type { learningMediaSchema } from "../../content/contracts";
@@ -11,6 +12,7 @@ export type LearningMedia = Omit<CanonicalLearningMedia, "origin"> & {
 // Browser/local captures and attributed creator screenshots. See docs/media-sources.md.
 export const learningMedia: Record<string, LearningMedia> = {
   ...communityMedia,
+  ...jamGameMedia,
   "moonlight-mayhem-codex": {
     src: "media/learning/moonlight-mayhem-codex.webp",
     alt: "A playable raccoon character in a 3D museum, with crew rescue objectives and security patrols.",

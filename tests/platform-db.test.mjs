@@ -216,7 +216,15 @@ test("database registries agree with the typed declarations and every private ta
         "select kind, version, validator_key from catalog.content_schemas order by kind, version",
       )
     ).rows,
-    bundle.snapshot.schemas,
+    Object.entries(context.versionedContracts)
+      .flatMap(([kind, versions]) =>
+        Object.entries(versions).map(([version, contract]) => ({
+          kind,
+          version: Number(version),
+          validator_key: contract.validatorKey,
+        })),
+      )
+      .sort((a, b) => a.kind.localeCompare(b.kind) || a.version - b.version),
   );
   for (const table of ["locales", "link_roles", "relation_types"])
     assert.deepEqual(

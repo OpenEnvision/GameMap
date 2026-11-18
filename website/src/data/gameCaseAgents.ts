@@ -1,8 +1,8 @@
-import type { AgentId } from './agentGameTypes';
+import type { AttributionAgentId } from './agentGameTypes';
 
 // Attribution follows the creator evidence for each game, not its related-tool links.
 // A model name alone does not establish which coding-agent client was used.
-export const gameCaseAgents: Record<string, AgentId[]> = {
+export const gameCaseAgents: Record<string, AttributionAgentId[]> = {
   'cloud-crush-gemini-cli': ['gemini-cli'],
   'dinosaur-offline-gemini-cli': ['gemini-cli'],
   'moonlight-mayhem-codex': ['codex'],

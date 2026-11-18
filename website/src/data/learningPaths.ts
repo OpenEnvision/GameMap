@@ -1,4 +1,5 @@
 import type { LearningPath } from './learningTypes'
+import type { PayloadModels } from '../../content/contracts'
 import { ai3dCases } from './ai3dCases'
 import { aiCommunityCases } from './aiCommunityCases'
 import { openGameCases } from './openGameCases'
@@ -6,17 +7,25 @@ import { community2dExpansion } from './community2dExpansion'
 import { community3dExpansion } from './community3dExpansion'
 import { diverseCommunityCases } from './diverseCommunityCases'
 import { geminiCliCases } from './geminiCliCases'
+import { jamGames } from './jamGames'
+import { open3dGames } from './open3dGames'
+import { open3dRound2Games } from './open3dRound2Games'
+import { open3dRound3Games } from './open3dRound3Games'
+import { itch3dGames } from './itch3dGames'
+import { open3dRound4Games } from './open3dRound4Games'
+import { browserPortGames } from './browserPortGames'
 export { communityCollections } from './communityResearch'
 export type { LearningPath } from './learningTypes'
 
-// AI-built games lead the page. Engine references stay in the optional section.
+// Games and prototypes share the catalog; source-only status and AI-attribution limits remain explicit.
 export const learningPaths:LearningPath[] = [
   ...geminiCliCases,
   ai3dCases[0], ai3dCases[2], ...aiCommunityCases, ai3dCases[1], ...openGameCases,
   ...community3dExpansion, ...community2dExpansion, ...diverseCommunityCases,
+  ...jamGames, ...open3dGames, ...open3dRound2Games, ...open3dRound3Games, ...itch3dGames, ...open3dRound4Games, ...browserPortGames,
 ]
 
-export const foundationPaths: LearningPath[] = [
+export const foundationPaths: PayloadModels['foundation'][] = [
   {
     id: 'godot-2d-dodge',
     category: 'foundation',

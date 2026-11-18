@@ -6,6 +6,7 @@ import { loadContent } from "./lib/content.mjs";
 import { writeIfChanged } from "./lib/files.mjs";
 import { root } from "./lib/documents.mjs";
 import { contentDigest } from "./lib/content.mjs";
+import { assertFormalDocumentTranslations } from "./lib/document-translations.mjs";
 import {
   assertRenderedCoverage,
   assertSearchCoverage,
@@ -15,6 +16,13 @@ import {
 } from "./lib/rendered-coverage.mjs";
 const context = await loadContent(),
   { registry, canTranslate, translationHash } = context;
+if (context.inputMode === "git") {
+  const documentFingerprints = JSON.parse(
+    await readFile(resolve(root, "website/content/i18n/docs.zh.sources.json"), "utf8"),
+  );
+  const count = await assertFormalDocumentTranslations(context.documents, documentFingerprints);
+  console.log(`Complete document translation checks passed: ${count} English/Chinese pairs.`);
+}
 const translated = context.chineseContent;
 const sourcePath = resolve(
   root,
@@ -166,7 +174,7 @@ if (process.argv.includes("--built")) {
     zh,
     readPage,
     site.base,
-    "/zh/explore/",
+    "/zh/",
   );
   for (const entry of zh.entries) {
     const html = await readPage(entry.url),
@@ -199,14 +207,14 @@ if (process.argv.includes("--built")) {
         },
       );
     }
-    if (entry.kind === "document" && !entry.id.startsWith("zh/")) {
+    if (entry.kind === "document") {
       const body = page.nodes.find((node) =>
         attributes(node).class?.split(/\s+/).includes("prose"),
       );
       assert.equal(
         attributes(body).lang,
-        "en",
-        `${entry.key}: untranslated body must be marked English`,
+        context.documentBodyLocale(entry.id) === "zh" ? "zh-CN" : "en",
+        `${entry.key}: document body must retain its declared source language`,
       );
     }
   }

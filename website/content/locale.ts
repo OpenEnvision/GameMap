@@ -1,4 +1,4 @@
-import { pages } from "./site";
+import { pages, detailRoutes } from "./site";
 import chinese from "./i18n/zh.json";
 import documentMessages from "./i18n/docs.zh.json";
 export type Locale = "en" | "zh";
@@ -47,6 +47,7 @@ export function localizedPath(
     path === "/" ||
     /^\/404\/?$/.test(path) ||
     Object.values(pages).some((page) => page.path.split("/")[1] === root) ||
+    detailRoutes.some((page) => page.path.split("/")[1] === root) ||
     path === "/search-index.json";
   if (!isApp) return value;
   if (/^\/docs(?:\/|$)/.test(path)) {
