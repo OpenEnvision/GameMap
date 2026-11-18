@@ -36,7 +36,7 @@ import { documentBodyLocale, docMessages } from "../../content/doc-language";
 import { localeFromPath } from "../../content/locale";
 import { url } from "../../content/site";
 import { Link, useSiteI18n } from "../lib/i18n";
-import "../docs-home.css";
+import "../styles/docs-home.css";
 
 export function loader({ request }: LoaderFunctionArgs) {
   return {
