@@ -231,25 +231,25 @@ html[lang='zh-CN'] .resource-description, html[lang='zh-CN'] .content-lead, html
   border-radius: 10px;
   background: var(--panel);
 }
-.content-card h3 {
+.content-card :is(h2, h3) {
   font-size: 17px;
   line-height: 1.5;
   letter-spacing: -0.025em;
   margin: 12px 0 10px;
   overflow-wrap: anywhere;
 }
-.content-card h3 a {
+.content-card :is(h2, h3) a {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 12px;
 }
-.content-card h3 svg {
+.content-card :is(h2, h3) svg {
   flex: none;
   margin-top: 5px;
   color: var(--muted);
 }
-.content-card h3 a:hover {
+.content-card :is(h2, h3) a:hover {
   color: var(--accent);
 }
 .content-card > p {

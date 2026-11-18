@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   useLocation,
   useLoaderData,
@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { categories, publicAsset } from "../lib/catalog";
 import { ExampleCard } from "../components/example-card";
+import { useOpenAtlasSearch } from "../lib/search-state";
 
 const categoryIcons = [Code2, Boxes, Gamepad2, Layers3, Sparkles, Orbit];
 const featuredIds = [
@@ -33,7 +34,19 @@ export function loader({ request }: LoaderFunctionArgs) {
   const featured = featuredIds.map((id) => content.require("example", id).data);
   return {
     featured,
-    spotlight: featured[0],
+    collections: [
+      {
+        path: "/resources/",
+        label: "Resources",
+        count: content.all("resource").length,
+      },
+      { path: "/papers/", label: "Papers", count: content.all("paper").length },
+      {
+        path: "/threejs-games/",
+        label: "Three.js games",
+        count: content.all("threejs-game").length,
+      },
+    ],
     media: Object.fromEntries(
       featured.map((game) => [game.id, sources.learningMedia[game.id]]),
     ),
@@ -50,12 +63,15 @@ export function loader({ request }: LoaderFunctionArgs) {
 
 export default function Home() {
   const { t } = useSiteI18n();
+  const openSearch = useOpenAtlasSearch();
   const {
     featured,
-    spotlight,
+    collections,
     media: learningMedia,
     categories: categoryCounts,
   } = useLoaderData<typeof loader>();
+  const [featuredIndex, setFeaturedIndex] = useState(0);
+  const spotlight = featured[featuredIndex];
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
@@ -113,10 +129,7 @@ export default function Home() {
             onSubmit={(event) => {
               event.preventDefault();
               const form = new FormData(event.currentTarget);
-              navigate(
-                "/explore/?q=" +
-                  encodeURIComponent(String(form.get("q") || "")),
-              );
+              openSearch(String(form.get("q") || ""));
             }}
           >
             <Search size={20} />
@@ -142,8 +155,22 @@ export default function Home() {
               <ArrowUpRight size={16} />
             </Link>
           </div>
+          <nav
+            className="home-collection-links"
+            aria-label={t("The atlas at a glance")}
+          >
+            {collections.map((collection) => (
+              <Link key={collection.path} to={collection.path}>
+                <strong>{collection.count}</strong>
+                <span>
+                  {t(collection.label)}
+                  <ArrowUpRight size={12} aria-hidden="true" />
+                </span>
+              </Link>
+            ))}
+          </nav>
         </div>
-        <div className="hero-spotlight">
+        <section className="hero-spotlight" aria-label={t("Featured games")}>
           <div className="spotlight-label">
             <span>
               <Compass size={15} />
@@ -171,7 +198,11 @@ export default function Home() {
               <ArrowUpRight size={15} />
             </span>
           </a>
-          <div className="spotlight-caption">
+          <div
+            className="spotlight-caption"
+            aria-live="polite"
+            aria-atomic="true"
+          >
             <span className="small-label">
               {t("A PLAYABLE STARTING POINT")}
             </span>
@@ -182,7 +213,25 @@ export default function Home() {
               <ArrowUpRight size={15} />
             </a>
           </div>
-        </div>
+          <div
+            className="showcase-controls"
+            role="group"
+            aria-label={t("Choose a featured game")}
+          >
+            {featured.map((game, index) => (
+              <button
+                key={game.id}
+                type="button"
+                aria-pressed={featuredIndex === index}
+                aria-label={t("Show {title}", { title: game.title })}
+                onClick={() => setFeaturedIndex(index)}
+              >
+                <span className="showcase-number">0{index + 1}</span>
+                <span>{game.title}</span>
+              </button>
+            ))}
+          </div>
+        </section>
       </section>
       <section className="browse-section">
         <div className="section-top">

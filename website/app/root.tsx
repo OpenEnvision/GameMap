@@ -13,11 +13,17 @@ import {
 } from "react-router";
 import { RootProvider } from "fumadocs-ui/provider/react-router";
 import AtlasSearch from "./components/search";
+import { SearchStateProvider } from "./lib/search-state";
 import { FrameworkLink } from "./components/framework-link";
 import { SiteFooter, SiteHeader } from "./components/site-shell";
 import "@fontsource-variable/inter";
 import "./styles.css";
+import "./community.css";
+import { CommunityProvider } from "./lib/community";
 import { useHydrated } from "./lib/client-query";
+// The root loader only supplies the immutable document-language manifest.
+// Client-side filters must not refetch it on every query-string update.
+export { shouldRevalidateCollection as shouldRevalidate } from "./lib/collection-query";
 import { localeFromPath, docMessages } from "../content/doc-language";
 import {
   documentLanguages,
@@ -81,15 +87,19 @@ export function Layout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <LocaleProvider locale={locale} documents={data?.documents}>
-          <RootProvider
-            components={{ Link: FrameworkLink }}
-            theme={{ defaultTheme: "light" }}
-            search={{ SearchDialog: AtlasSearch }}
-            i18n={{ locale, translations: docMessages(locale).ui }}
-          >
-            <ThemeColor />
-            {children}
-          </RootProvider>
+          <CommunityProvider>
+            <SearchStateProvider>
+              <RootProvider
+                components={{ Link: FrameworkLink }}
+                theme={{ defaultTheme: "light" }}
+                search={{ SearchDialog: AtlasSearch }}
+                i18n={{ locale, translations: docMessages(locale).ui }}
+              >
+                <ThemeColor />
+                {children}
+              </RootProvider>
+            </SearchStateProvider>
+          </CommunityProvider>
         </LocaleProvider>
         <ScrollRestoration />
         <Scripts />
