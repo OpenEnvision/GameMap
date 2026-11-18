@@ -53,6 +53,9 @@ export function releaseBuildEnvironment(directory, digest, base) {
     PAGES_BASE_PATH: base,
     CATALOG_SITE_INPUT: join(directory, "website/.content/release-input.json"),
     CATALOG_SITE_DIGEST: digest,
+    // Release sites are served by the publication server, which mounts the
+    // community API, so they include the community UI. Not a credential.
+    VITE_GAMEMAP_COMMUNITY: "1",
   };
 }
 

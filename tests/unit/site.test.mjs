@@ -83,6 +83,7 @@ test("release builders do not receive Auth, database, session, or Vite-prefixed 
     for (const name of names) assert.equal(env[name], undefined);
     assert.equal(env.CATALOG_SITE_DIGEST, "f".repeat(64));
     assert.equal(env.PAGES_BASE_PATH, "/GameMap/");
+    assert.equal(env.VITE_GAMEMAP_COMMUNITY, "1");
   } finally {
     for (const name of names)
       before[name] === undefined

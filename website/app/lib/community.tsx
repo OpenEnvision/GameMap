@@ -8,6 +8,13 @@ import {
   useState,
   type ReactNode,
 } from "react";
+/** Community accounts, ratings, comments and submissions need the community API
+ * (scripts/lib/community/server.mjs). Builds that are served together with that
+ * API set VITE_GAMEMAP_COMMUNITY=1; plain static builds such as GitHub Pages do not.
+ * Vite inlines the value in both the client and the prerender bundle; outside Vite
+ * (node:test imports of app modules) import.meta.env is undefined, so it reads false. */
+export const communityEnabled =
+  import.meta.env?.VITE_GAMEMAP_COMMUNITY === "1";
 export type CommunityUser = { id: string; email: string; displayName: string };
 export type GameStats = {
   average: number;
