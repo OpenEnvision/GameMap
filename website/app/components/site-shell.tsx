@@ -51,6 +51,7 @@ export function SiteHeader() {
   const headerRef = useRef<HTMLElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const hoverTimer = useRef<number | undefined>(undefined);
+  const hoverOpenedAt = useRef(0);
   const isActive = usePillarActive();
   const panels = () =>
     Array.from(
@@ -111,6 +112,7 @@ export function SiteHeader() {
     window.clearTimeout(hoverTimer.current);
     hoverTimer.current = window.setTimeout(() => {
       closePanels(panel);
+      if (!panel.open) hoverOpenedAt.current = Date.now();
       panel.open = true;
     }, 90);
   };
@@ -150,7 +152,18 @@ export function SiteHeader() {
                 if (event.currentTarget.open) closePanels(event.currentTarget);
               }}
             >
-              <summary>{t(pillar.label)}</summary>
+              <summary
+                onClick={(event) => {
+                  // A click right after hover-open confirms the panel instead of closing it.
+                  if (
+                    event.currentTarget.parentElement?.hasAttribute("open") &&
+                    Date.now() - hoverOpenedAt.current < 600
+                  )
+                    event.preventDefault();
+                }}
+              >
+                {t(pillar.label)}
+              </summary>
               <div className="nav-panel">
                 <div className="nav-panel-intro">
                   <span className="eyebrow">{t(pillar.kicker)}</span>
