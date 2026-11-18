@@ -84,7 +84,7 @@ test("research search and disposition filtering never bring listed games back", 
   await expect(
     page.locator(`[data-content-ref="${remaining[0].key}"]`),
   ).toBeVisible();
-  const allowed = new Set(remaining.map((entry) => entry.key));
+  const allowed = new Set<string>(remaining.map((entry) => entry.key));
   const keys = await page
     .locator(selector)
     .evaluateAll((rows) =>

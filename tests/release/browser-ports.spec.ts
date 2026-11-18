@@ -21,12 +21,17 @@ test("fourth-batch source references and browser project pages never become fabr
   }
   for (const id of ports.projectReferenceIds) {
     const entry = context.registry.require("example", id),
-      card = page.locator('[data-content-ref="example:' + id + '"]');
+      card = page.locator('[data-content-ref="example:' + id + '"]'),
+      homepage = entry.data.intake?.homepage;
+    expect(
+      homepage,
+      `${id}: a project reference links its homepage`,
+    ).toBeTruthy();
     await expect(card).toHaveCount(1);
     await expect(card).toHaveAttribute("data-access-kind", "reference");
     await expect(card.locator(".example-image")).toHaveAttribute(
       "href",
-      entry.data.intake.homepage,
+      homepage!,
     );
     await expect(card.locator(".image-action")).toContainText("查看项目");
     await expect(card.locator(".image-action")).not.toContainText("试玩");
@@ -40,7 +45,8 @@ test("fourth-batch source references and browser project pages never become fabr
       );
   }
   for (const m of ports.mappings.filter(
-    (m) => m.status === "research-candidate",
+    (m: { status: string; inputId: string }) =>
+      m.status === "research-candidate",
   ))
     await expect(
       page.locator('[data-content-ref="example:' + m.inputId + '"]'),

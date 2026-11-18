@@ -45,14 +45,16 @@ test("selected snapshot records render and hydrate under the deployment base", a
       ),
     ).toBe(true);
     const images = page.locator("img");
-    await images.evaluateAll((elements) =>
+    await images.evaluateAll((elements: HTMLImageElement[]) =>
       elements.forEach((element) => {
         element.loading = "eager";
       }),
     );
     for (const image of await images.all())
       await expect
-        .poll(() => image.evaluate((element) => element.naturalWidth))
+        .poll(() =>
+          image.evaluate((element: HTMLImageElement) => element.naturalWidth),
+        )
         .toBeGreaterThan(0);
   }
   expect(errors).toEqual([]);
