@@ -2791,6 +2791,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-cypress-motel": {
+    src: "media/learning/open3d-cypress-motel.webp",
+    alt: "A first-person flashlight lights a foggy motel service path, with a stone wall and green dumpsters.",
+    caption:
+      "Creator-published gameplay screenshot from Cypress Motel, showing the service area after dark.",
+    sourceUrl: "https://obsidianblk.itch.io/cypress-motel",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1hZ2UvMzA1NjcxOS8xODI4NjM5NS5qcGc=/original/G56ZYY.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-delta-park": {
     src: "media/learning/open3d-delta-park.webp",
     alt: "A first-person nighttime view of roller coaster loops from the water in Delta Park.",
@@ -2970,6 +2983,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://img.itch.zone/aW1hZ2UvMTkwODYxNC8xMTIyOTgyMi5wbmc=/original/AcHnZg.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-scavenge-drill": {
+    src: "media/learning/open3d-scavenge-drill.webp",
+    alt: "Two tethered underwater machines explore a rocky seabed while dialogue, a power gauge and a treasure objective are visible.",
+    caption:
+      "Creator-published Scavenge & Drill gameplay screenshot from the underwater exploration section.",
+    sourceUrl: "https://fruityfusion.itch.io/scavenge-drill",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1hZ2UvMTY0MDc3OS85NzIyMDE0LnBuZw==/original/r5w637.png",
     width: 1280,
     height: 720,
   },
@@ -3178,6 +3204,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-19",
     originalImageUrl:
       "https://raw.githubusercontent.com/echo-devim/Avolition2/HEAD/screenshots/screenshot1.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-yorg": {
+    src: "media/learning/open3d-yorg.webp",
+    alt: "Yorg racing gameplay with a yellow car drifting on a dirt track, lap and speed HUD, damage indicator and minimap.",
+    caption:
+      "Creator-published Yorg gameplay screenshot from Ya2’s official itch.io gallery. Image rights remain with their respective owners.",
+    sourceUrl: "https://ya2.itch.io/yorg",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1hZ2UvMTMzMjAxLzI0NDY5OTQuanBn/original/NEG38x.jpg",
     width: 1280,
     height: 720,
   },

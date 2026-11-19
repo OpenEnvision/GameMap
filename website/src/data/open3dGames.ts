@@ -1144,10 +1144,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Cypress Motel",
-      "url": "https://github.com/ObsidianBlk/TheMotel",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows or Linux build",
+      "url": "https://obsidianblk.itch.io/cypress-motel",
+      "kind": "download",
+      "note": "The developers' official itch.io page lists Windows and Linux game builds. Package names and platform labels were verified on 2026-11-19; neither package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1594,10 +1594,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Libre TrainSim",
-      "url": "https://github.com/Libre-TrainSim/Libre-TrainSim",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Libre Trainsim v0.8.1",
+      "url": "https://github.com/Libre-TrainSim/Libre-TrainSim/releases/tag/v0.8.1",
+      "kind": "download",
+      "note": "Author GitHub stable release v0.8.1 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1999,10 +1999,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Scavenge & Drill",
-      "url": "https://github.com/nwallenfang/scavenge-and-drill",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows or Linux build",
+      "url": "https://fruityfusion.itch.io/scavenge-drill",
+      "kind": "download",
+      "note": "The developers' official itch.io page lists Windows and Linux game builds. Package names and platform labels were verified on 2026-11-19; neither package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2089,10 +2089,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Tabletop Club",
-      "url": "https://github.com/drwhut/tabletop-club",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Tabletop Club v0.1.5",
+      "url": "https://github.com/drwhut/tabletop-club/releases/tag/v0.1.5",
+      "kind": "download",
+      "note": "Author GitHub stable release v0.1.5 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2179,10 +2179,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Thrive",
-      "url": "https://github.com/Revolutionary-Games/Thrive",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Thrive v1.7.0",
+      "url": "https://github.com/Revolutionary-Games/Thrive/releases/tag/v1.7.0",
+      "kind": "download",
+      "note": "Author GitHub stable release v1.7.0 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3169,10 +3169,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Yorg",
-      "url": "https://github.com/cflavio/yorg",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Yorg 0.11.1 for Linux",
+      "url": "https://github.com/cflavio/yorg/releases/tag/v0.11.0",
+      "kind": "download",
+      "note": "Author GitHub release provides the Linux amd64 game package yorg-0.11.1-linux-amd64.tar.gz. The release tag is v0.11.0 but its body and binary filename identify version 0.11.1. Release metadata verified on 2026-11-19; no native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3439,10 +3439,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for AssaultCube",
-      "url": "https://github.com/assaultcube/AC",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Assaultcube v1.3.0.2",
+      "url": "https://github.com/assaultcube/AC/releases/tag/v1.3.0.2",
+      "kind": "download",
+      "note": "Author GitHub stable release v1.3.0.2 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4249,10 +4249,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Pioneer",
-      "url": "https://github.com/pioneerspacesim/pioneer",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Pioneer 20260907",
+      "url": "https://github.com/pioneerspacesim/pioneer/releases/tag/20260907",
+      "kind": "download",
+      "note": "Author GitHub stable release 20260907 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4384,10 +4384,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Rigs of Rods",
-      "url": "https://github.com/RigsOfRods/rigs-of-rods",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Rigs Of Rods 2026.01",
+      "url": "https://github.com/RigsOfRods/rigs-of-rods/releases/tag/2026.01",
+      "kind": "download",
+      "note": "Author GitHub stable release 2026.01 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4654,10 +4654,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for SuperTuxKart",
-      "url": "https://github.com/supertuxkart/stk-code",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Supertuxkart 1.5",
+      "url": "https://github.com/supertuxkart/stk-code/releases/tag/1.5",
+      "kind": "download",
+      "note": "Author GitHub stable release 1.5 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -5284,10 +5284,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Warzone 2100",
-      "url": "https://github.com/Warzone2100/warzone2100",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Warzone 2100 4.7.0",
+      "url": "https://github.com/Warzone2100/warzone2100/releases/tag/4.7.0",
+      "kind": "download",
+      "note": "Author GitHub stable release 4.7.0 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

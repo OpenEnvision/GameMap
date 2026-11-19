@@ -3664,10 +3664,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for OpenSpades",
-      "url": "https://github.com/yvt/openspades",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Openspades v0.1.3",
+      "url": "https://github.com/yvt/openspades/releases/tag/v0.1.3",
+      "kind": "download",
+      "note": "Author GitHub stable release v0.1.3 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

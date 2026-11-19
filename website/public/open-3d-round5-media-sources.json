@@ -8313,6 +8313,41 @@
       "bytes": 57668
     },
     {
+      "id": "open3d-cypress-motel",
+      "title": "Cypress Motel",
+      "media": {
+        "src": "media/learning/open3d-cypress-motel.webp",
+        "alt": "A first-person flashlight lights a foggy motel service path, with a stone wall and green dumpsters.",
+        "caption": "Creator-published gameplay screenshot from Cypress Motel, showing the service area after dark.",
+        "sourceUrl": "https://obsidianblk.itch.io/cypress-motel",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1hZ2UvMzA1NjcxOS8xODI4NjM5NS5qcGc=/original/G56ZYY.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "1feb0d34d9a30ef85d5e903d94f46cdee0e7dab263b69d5bd2de26d833ef10bf",
+        "sourceFrameSHA256": "9048352ef1f34516a5161ddb9fe957a9586aed22ee6e7a2782d892992913632f",
+        "sourceWidth": 632,
+        "sourceHeight": 362,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "The credited developer itch page links the exact source repository and displays the selected original in its screenshot gallery. The first-person held flashlight is visible at lower right, illuminating a brick service wall, alley and dumpsters. This is a single game frame without title graphics. Exact HTTPS image returned HTTP 200 without redirects."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "196bad6c88e1a71fab8635f9e25e5c52c48aba930e1c6f001a936deadbf52f77",
+      "bytes": 28522
+    },
+    {
       "id": "open3d-delta-park",
       "title": "Delta Park",
       "media": {
@@ -8808,6 +8843,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "01320a8b1b27b9f393b5e3f79e812598d28e10faa9468af7fcefb9c301371ae0",
       "bytes": 138532
+    },
+    {
+      "id": "open3d-scavenge-drill",
+      "title": "Scavenge & Drill",
+      "media": {
+        "src": "media/learning/open3d-scavenge-drill.webp",
+        "alt": "Two tethered underwater machines explore a rocky seabed while dialogue, a power gauge and a treasure objective are visible.",
+        "caption": "Creator-published Scavenge & Drill gameplay screenshot from the underwater exploration section.",
+        "sourceUrl": "https://fruityfusion.itch.io/scavenge-drill",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1hZ2UvMTY0MDc3OS85NzIyMDE0LnBuZw==/original/r5w637.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "ff994691aaedefffce7fc7ec033da9a7244332774a867db2eb604146562d62da",
+        "sourceFrameSHA256": "9c23c7f2c48f5d0e011b264eac87bc218311d965fa49f3c143233d837c097fb5",
+        "sourceWidth": 1020,
+        "sourceHeight": 600,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Reviewed the game team's original itch screenshot. The third-person underwater scene shows the connected submersible machines, power and gem gauges, an exploration objective and character dialogue over the live scene. No title or presentation collage. Exact HTTPS image returned HTTP 200 without redirects."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "8de4ada0f5a666edbe19160dbf99f1518f31d2133b842dc5b57fe14f6b98053a",
+      "bytes": 57342
     },
     {
       "id": "open3d-super-tux-party",
@@ -9399,6 +9469,41 @@
       "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
       "sha256": "c7b729f3e725f7a0a3079fb9917ddda38b7e20d23cd84131806e42ada73bfc3b",
       "bytes": 36158
+    },
+    {
+      "id": "open3d-yorg",
+      "title": "Yorg",
+      "media": {
+        "src": "media/learning/open3d-yorg.webp",
+        "alt": "Yorg racing gameplay with a yellow car drifting on a dirt track, lap and speed HUD, damage indicator and minimap.",
+        "caption": "Creator-published Yorg gameplay screenshot from Ya2’s official itch.io gallery. Image rights remain with their respective owners.",
+        "sourceUrl": "https://ya2.itch.io/yorg",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1hZ2UvMTMzMjAxLzI0NDY5OTQuanBn/original/NEG38x.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "031cccf635f608483fa0205347eb7052f25c3abb97c859c4e1f7236909c0588a",
+        "sourceFrameSHA256": "6b1afa46ce1a4443785412db2f7f5be64671cf5f419fa4b93dabc7f8f2793388",
+        "sourceWidth": 1858,
+        "sourceHeight": 1057,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed full 1858×1057 frame. Yellow player car follows a dirt racing circuit with tire marks, speed 87, lap 2/2, rank 4, time and best lap, damage indicator and race minimap. Single coherent game frame, not a cover or montage. Creator gallery explicitly links this original-size asset; permitted img.itch.zone origin, HTTPS and unchanged reviewFrame passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "9a27de3d0ea67cb72c4dea2e0c7c9dbd39a1515275fe2b59756d7d28903f5a22",
+      "bytes": 175412
     },
     {
       "id": "open3d-0-a-d",
@@ -31825,43 +31930,6 @@
       ]
     },
     {
-      "id": "open3d-cypress-motel",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/ObsidianBlk/TheMotel/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/ObsidianBlk/TheMotel",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/ObsidianBlk/TheMotel/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/ObsidianBlk/TheMotel/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/ObsidianBlk/TheMotel",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/ObsidianBlk/TheMotel/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-in-the-blue-mist",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -32004,43 +32072,6 @@
         },
         {
           "url": "https://github.com/arran-nz/RapidRescue/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-scavenge-drill",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/nwallenfang/scavenge-and-drill/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/nwallenfang/scavenge-and-drill",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/nwallenfang/scavenge-and-drill/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/nwallenfang/scavenge-and-drill/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/nwallenfang/scavenge-and-drill",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/nwallenfang/scavenge-and-drill/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
@@ -32399,43 +32430,6 @@
         },
         {
           "url": "https://github.com/surya-sk/theseus-the-descent/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-yorg",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/cflavio/yorg/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/cflavio/yorg",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/cflavio/yorg/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/cflavio/yorg/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/cflavio/yorg",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/cflavio/yorg/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
@@ -36876,6 +36870,55 @@
         }
       },
       {
+        "id": "open3d-cypress-motel",
+        "sourceUrl": "https://github.com/ObsidianBlk/TheMotel",
+        "demo": {
+          "label": "Download Windows or Linux build",
+          "url": "https://obsidianblk.itch.io/cypress-motel",
+          "kind": "download",
+          "note": "The developers' official itch.io page lists Windows and Linux game builds. Package names and platform labels were verified on 2026-11-19; neither package was downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://obsidianblk.itch.io/cypress-motel",
+            "checkedAt": "2026-11-19",
+            "result": "Official itch.io page returned HTTP 200 with individually labeled Windows and Linux game archives in the download list. No archive fetched or run."
+          },
+          {
+            "url": "https://github.com/ObsidianBlk/TheMotel",
+            "checkedAt": "2026-11-19",
+            "result": "Matched credited developers and repository identity to the itch.io publication."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://obsidianblk.itch.io/cypress-motel",
+          "authorVerification": "The itch.io page is published by credited developers ObsidianBlk and CoboltGames and links the exact ObsidianBlk/TheMotel source repository.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The official presentation lists distinct downloadable, platform-labeled Windows and Linux game archives, rather than source or video assets.",
+          "assets": [
+            {
+              "url": "https://obsidianblk.itch.io/cypress-motel",
+              "name": "CypressMotel_Win64_ScreamJam2024.zip",
+              "platform": "Windows 64-bit",
+              "kind": "game-binary",
+              "publicationLabel": true,
+              "uploadId": "11803293",
+              "platformEvidence": "Download for Windows"
+            },
+            {
+              "url": "https://obsidianblk.itch.io/cypress-motel",
+              "name": "CypressMotel_ScreamJam2024.x86_64.tar.gz",
+              "platform": "Linux 64-bit",
+              "kind": "game-binary",
+              "publicationLabel": true,
+              "uploadId": "11803321",
+              "platformEvidence": "Download for Linux"
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-hazy-road",
         "sourceUrl": "https://github.com/MechanicalFlower/HazyRoad",
         "demo": {
@@ -36920,6 +36963,62 @@
               "url": "https://mechanical-flower.itch.io/hazy-road",
               "kind": "game-binary",
               "platform": "Linux"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-libre-trainsim",
+        "sourceUrl": "https://github.com/Libre-TrainSim/Libre-TrainSim",
+        "demo": {
+          "label": "Download Libre Trainsim v0.8.1",
+          "url": "https://github.com/Libre-TrainSim/Libre-TrainSim/releases/tag/v0.8.1",
+          "kind": "download",
+          "note": "Author GitHub stable release v0.8.1 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/Libre-TrainSim/Libre-TrainSim/releases/latest",
+            "checkedAt": "2026-11-19",
+            "result": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/Libre-TrainSim/Libre-TrainSim",
+          "authorVerification": "Release and uploaded assets belong to the exact author source repository supplied for this example.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed.",
+          "releaseTag": "v0.8.1",
+          "publishedAt": "2025-03-19T21:19:50Z",
+          "assets": [
+            {
+              "url": "https://github.com/Libre-TrainSim/Libre-TrainSim/releases/download/v0.8.1/Libre_TrainSim-linux-x32.zip",
+              "name": "Libre_TrainSim-linux-x32.zip",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 262015125
+            },
+            {
+              "url": "https://github.com/Libre-TrainSim/Libre-TrainSim/releases/download/v0.8.1/Libre_TrainSim-linux-x64.zip",
+              "name": "Libre_TrainSim-linux-x64.zip",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 261505575
+            },
+            {
+              "url": "https://github.com/Libre-TrainSim/Libre-TrainSim/releases/download/v0.8.1/Libre_TrainSim-mac.zip",
+              "name": "Libre_TrainSim-mac.zip",
+              "platform": "macOS",
+              "kind": "game-binary",
+              "size": 278391823
+            },
+            {
+              "url": "https://github.com/Libre-TrainSim/Libre-TrainSim/releases/download/v0.8.1/Libre_TrainSim-win64.zip",
+              "name": "Libre_TrainSim-win64.zip",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 260941596
             }
           ]
         }
@@ -37109,6 +37208,144 @@
         }
       },
       {
+        "id": "open3d-scavenge-drill",
+        "sourceUrl": "https://github.com/nwallenfang/scavenge-and-drill",
+        "demo": {
+          "label": "Download Windows or Linux build",
+          "url": "https://fruityfusion.itch.io/scavenge-drill",
+          "kind": "download",
+          "note": "The developers' official itch.io page lists Windows and Linux game builds. Package names and platform labels were verified on 2026-11-19; neither package was downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://fruityfusion.itch.io/scavenge-drill",
+            "checkedAt": "2026-11-19",
+            "result": "Official itch.io page returned HTTP 200 with individually labeled Windows and Linux game archives in the download list. No archive fetched or run."
+          },
+          {
+            "url": "https://github.com/nwallenfang/scavenge-and-drill",
+            "checkedAt": "2026-11-19",
+            "result": "Matched credited developers and repository identity to the itch.io publication."
+          },
+          {
+            "url": "https://github.com/nwallenfang/multiplayer-jam",
+            "checkedAt": "2026-11-19",
+            "result": "The old source link on the itch.io page redirects to the exact current source repository."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://fruityfusion.itch.io/scavenge-drill",
+          "authorVerification": "The itch page credits repository owner Nils Wallenfang (nilolo) as co-developer. Its source link uses the former nwallenfang/multiplayer-jam name, which GitHub redirects to the exact nwallenfang/scavenge-and-drill repository.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The official presentation lists distinct downloadable, platform-labeled Windows and Linux game archives, rather than source or video assets.",
+          "assets": [
+            {
+              "url": "https://fruityfusion.itch.io/scavenge-drill",
+              "name": "scavenge_drill_win.zip",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "publicationLabel": true,
+              "uploadId": "6298278",
+              "platformEvidence": "Download for Windows"
+            },
+            {
+              "url": "https://fruityfusion.itch.io/scavenge-drill",
+              "name": "scavenge_drill_linux.zip",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "publicationLabel": true,
+              "uploadId": "6298277",
+              "platformEvidence": "Download for Linux"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-tabletop-club",
+        "sourceUrl": "https://github.com/drwhut/tabletop-club",
+        "demo": {
+          "label": "Download Tabletop Club v0.1.5",
+          "url": "https://github.com/drwhut/tabletop-club/releases/tag/v0.1.5",
+          "kind": "download",
+          "note": "Author GitHub stable release v0.1.5 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/drwhut/tabletop-club/releases/latest",
+            "checkedAt": "2026-11-19",
+            "result": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/drwhut/tabletop-club",
+          "authorVerification": "Release and uploaded assets belong to the exact author source repository supplied for this example.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed.",
+          "releaseTag": "v0.1.5",
+          "publishedAt": "2026-08-30T11:55:01Z",
+          "assets": [
+            {
+              "url": "https://github.com/drwhut/tabletop-club/releases/download/v0.1.5/TabletopClub_v0.1.5_Linux_32.zip",
+              "name": "TabletopClub_v0.1.5_Linux_32.zip",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 86698267,
+              "publisherSha256": "395186c847af717ef1987981c8028ee5f079b26d593107a5b065516e33b5633e"
+            },
+            {
+              "url": "https://github.com/drwhut/tabletop-club/releases/download/v0.1.5/TabletopClub_v0.1.5_Linux_64.zip",
+              "name": "TabletopClub_v0.1.5_Linux_64.zip",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 87001718,
+              "publisherSha256": "f5be97020a11d2271afa3be0d04be7cb2a677435db325fbc979aca4ab444ddb5"
+            },
+            {
+              "url": "https://github.com/drwhut/tabletop-club/releases/download/v0.1.5/TabletopClub_v0.1.5_Linux_ARM32.zip",
+              "name": "TabletopClub_v0.1.5_Linux_ARM32.zip",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 85345239,
+              "publisherSha256": "d9ade016b8dfee235a5bb9a53412197c9b805341b0f6970e09a25f7e630470b2"
+            },
+            {
+              "url": "https://github.com/drwhut/tabletop-club/releases/download/v0.1.5/TabletopClub_v0.1.5_Linux_ARM64.zip",
+              "name": "TabletopClub_v0.1.5_Linux_ARM64.zip",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 85704405,
+              "publisherSha256": "77179364bc02751d004b1886fd91534b9d3fc2ecc09fd93c0b49d9cecb967bae"
+            },
+            {
+              "url": "https://github.com/drwhut/tabletop-club/releases/download/v0.1.5/TabletopClub_v0.1.5_OSX_Universal.zip",
+              "name": "TabletopClub_v0.1.5_OSX_Universal.zip",
+              "platform": "macOS",
+              "kind": "game-binary",
+              "size": 96492693,
+              "publisherSha256": "1384f99a18aa6be1c640615a3fea4071f7f25161e3b5d8a63ea73e0f3dacc9b5"
+            },
+            {
+              "url": "https://github.com/drwhut/tabletop-club/releases/download/v0.1.5/TabletopClub_v0.1.5_Windows_32.zip",
+              "name": "TabletopClub_v0.1.5_Windows_32.zip",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 86355055,
+              "publisherSha256": "199bd0c925f5eb9ed0b3bbe88f8623ee55e5d0720bb3983ffcbf622821e5954a"
+            },
+            {
+              "url": "https://github.com/drwhut/tabletop-club/releases/download/v0.1.5/TabletopClub_v0.1.5_Windows_64.zip",
+              "name": "TabletopClub_v0.1.5_Windows_64.zip",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 87171733,
+              "publisherSha256": "8f95510b8329a8c2ce01f7266e210855ec6f71473414b77e103889d904a6d95f"
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-tanks-of-freedom-ii",
         "sourceUrl": "https://github.com/P1X-in/tanks-of-freedom-ii",
         "demo": {
@@ -37148,6 +37385,58 @@
               "publicationLabel": true,
               "uploadId": "13218560",
               "platformEvidence": "Download for Windows"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-thrive",
+        "sourceUrl": "https://github.com/Revolutionary-Games/Thrive",
+        "demo": {
+          "label": "Download Thrive v1.7.0",
+          "url": "https://github.com/Revolutionary-Games/Thrive/releases/tag/v1.7.0",
+          "kind": "download",
+          "note": "Author GitHub stable release v1.7.0 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/Revolutionary-Games/Thrive/releases/latest",
+            "checkedAt": "2026-11-19",
+            "result": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/Revolutionary-Games/Thrive",
+          "authorVerification": "Release and uploaded assets belong to the exact author source repository supplied for this example.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed.",
+          "releaseTag": "v1.7.0",
+          "publishedAt": "2026-10-24T08:53:13Z",
+          "assets": [
+            {
+              "url": "https://github.com/Revolutionary-Games/Thrive/releases/download/v1.7.0/Thrive_1.7.0.0_linux_x11.7z",
+              "name": "Thrive_1.7.0.0_linux_x11.7z",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 606164294,
+              "publisherSha256": "e3f4aa04e592e9314b51ee6ba724378567245c1fcef0c08b432f6f42e7395713"
+            },
+            {
+              "url": "https://github.com/Revolutionary-Games/Thrive/releases/download/v1.7.0/Thrive_1.7.0.0_mac_osx.zip",
+              "name": "Thrive_1.7.0.0_mac_osx.zip",
+              "platform": "macOS",
+              "kind": "game-binary",
+              "size": 765408600,
+              "publisherSha256": "4b9fed3b128e08c4d95ee78fe2a086e29d7a9191abe6f9ceee452059fea499c7"
+            },
+            {
+              "url": "https://github.com/Revolutionary-Games/Thrive/releases/download/v1.7.0/Thrive_1.7.0.0_windows_desktop.7z",
+              "name": "Thrive_1.7.0.0_windows_desktop.7z",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 612291153,
+              "publisherSha256": "04876dcf15937379a92c387e2cafdc5aef9bb59a86f8f04687ab122fd97f3ac1"
             }
           ]
         }
@@ -37342,6 +37631,295 @@
         }
       },
       {
+        "id": "open3d-yorg",
+        "sourceUrl": "https://github.com/cflavio/yorg",
+        "demo": {
+          "label": "Download Yorg 0.11.1 for Linux",
+          "url": "https://github.com/cflavio/yorg/releases/tag/v0.11.0",
+          "kind": "download",
+          "note": "Author GitHub release provides the Linux amd64 game package yorg-0.11.1-linux-amd64.tar.gz. The release tag is v0.11.0 but its body and binary filename identify version 0.11.1. Release metadata verified on 2026-11-19; no native package was downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/cflavio/yorg/releases/latest",
+            "checkedAt": "2026-11-19",
+            "result": "GitHub latest release metadata lists one manually uploaded Linux amd64 game package yorg-0.11.1-linux-amd64.tar.gz (642828499 bytes; asset ID 69299632), separate from automatic source archives. Release tag is v0.11.0, while the author body and uploaded filename explicitly identify game build v0.11.1. No package downloaded or executed."
+          },
+          {
+            "url": "https://ya2.itch.io/yorg",
+            "checkedAt": "2026-11-19",
+            "result": "Author Ya2 identifies Yorg as its downloadable desktop game and directly links the exact cflavio/yorg repository as Source code. Windows/Linux/macOS file labels are visible, but numeric upload IDs are not exposed in page HTML; these itch assets are not used for the demo decision."
+          },
+          {
+            "url": "https://www.ya2.it",
+            "checkedAt": "2026-11-19",
+            "result": "Official Ya2 homepage identifies Flavio Calva projects and links Yorg directly to https://ya2.itch.io/yorg."
+          },
+          {
+            "url": "https://ya2.itch.io/yorg/purchase",
+            "checkedAt": "2026-11-19",
+            "result": "Read-only page request returned HTTP429. Stopped that route without retry, form submission or binary download. Numeric itch upload IDs could not be verified, so itch assets are not used for this demo upgrade."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/cflavio/yorg",
+          "authorVerification": "The downloadable asset belongs to cflavio/yorg, the exact catalog source repository. The official Ya2 game page explicitly links this repository as Source code, and the Ya2 project homepage links this exact itch page.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "GitHub latest release metadata lists one manually uploaded Linux amd64 game package yorg-0.11.1-linux-amd64.tar.gz (642828499 bytes; asset ID 69299632), separate from automatic source archives. Release tag is v0.11.0, while the author body and uploaded filename explicitly identify game build v0.11.1. No package downloaded or executed.",
+          "releaseTag": "v0.11.0",
+          "publishedAt": "2022-06-22T20:33:13Z",
+          "assets": [
+            {
+              "url": "https://github.com/cflavio/yorg/releases/download/v0.11.0/yorg-0.11.1-linux-amd64.tar.gz",
+              "name": "yorg-0.11.1-linux-amd64.tar.gz",
+              "platform": "Linux amd64",
+              "kind": "game-binary",
+              "size": 642828499,
+              "releaseAssetId": 69299632
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-assaultcube",
+        "sourceUrl": "https://github.com/assaultcube/AC",
+        "demo": {
+          "label": "Download Assaultcube v1.3.0.2",
+          "url": "https://github.com/assaultcube/AC/releases/tag/v1.3.0.2",
+          "kind": "download",
+          "note": "Author GitHub stable release v1.3.0.2 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/assaultcube/AC/releases/latest",
+            "checkedAt": "2026-11-19",
+            "result": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/assaultcube/AC",
+          "authorVerification": "Release and uploaded assets belong to the exact author source repository supplied for this example.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed.",
+          "releaseTag": "v1.3.0.2",
+          "publishedAt": "2022-03-25T07:49:30Z",
+          "assets": [
+            {
+              "url": "https://github.com/assaultcube/AC/releases/download/v1.3.0.2/AssaultCube_v1.3.0.2_LockdownEdition.dmg",
+              "name": "AssaultCube_v1.3.0.2_LockdownEdition.dmg",
+              "platform": "macOS",
+              "kind": "game-binary",
+              "size": 61307908
+            },
+            {
+              "url": "https://github.com/assaultcube/AC/releases/download/v1.3.0.2/AssaultCube_v1.3.0.2_LockdownEdition.exe",
+              "name": "AssaultCube_v1.3.0.2_LockdownEdition.exe",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 48253246
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-pioneer",
+        "sourceUrl": "https://github.com/pioneerspacesim/pioneer",
+        "demo": {
+          "label": "Download Pioneer 20260907",
+          "url": "https://github.com/pioneerspacesim/pioneer/releases/tag/20260907",
+          "kind": "download",
+          "note": "Author GitHub stable release 20260907 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/pioneerspacesim/pioneer/releases/latest",
+            "checkedAt": "2026-11-19",
+            "result": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/pioneerspacesim/pioneer",
+          "authorVerification": "Release and uploaded assets belong to the exact author source repository supplied for this example.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed.",
+          "releaseTag": "20260907",
+          "publishedAt": "2026-09-07T07:52:03Z",
+          "assets": [
+            {
+              "url": "https://github.com/pioneerspacesim/pioneer/releases/download/20260907/pioneer-20260907-win.exe",
+              "name": "pioneer-20260907-win.exe",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 569216250,
+              "publisherSha256": "ac3a158ccc5acc47dca536e633e1fc24ad38e4bb6b9663f5be936a9c045ab68b"
+            },
+            {
+              "url": "https://github.com/pioneerspacesim/pioneer/releases/download/20260907/pioneer-linux-x64-20260907.tar.gz",
+              "name": "pioneer-linux-x64-20260907.tar.gz",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 779336260,
+              "publisherSha256": "c75348b337b563d260c4d6969bc139b80c43511f5b8005b2fe82afab5f24dac6"
+            },
+            {
+              "url": "https://github.com/pioneerspacesim/pioneer/releases/download/20260907/Pioneer-x86_64.AppImage",
+              "name": "Pioneer-x86_64.AppImage",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 718268920,
+              "publisherSha256": "f2c9d45d9c428c13a106f9141e56e5915236039a102b34abec782fea147ff02c"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-rigs-of-rods",
+        "sourceUrl": "https://github.com/RigsOfRods/rigs-of-rods",
+        "demo": {
+          "label": "Download Rigs Of Rods 2026.01",
+          "url": "https://github.com/RigsOfRods/rigs-of-rods/releases/tag/2026.01",
+          "kind": "download",
+          "note": "Author GitHub stable release 2026.01 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/RigsOfRods/rigs-of-rods/releases/latest",
+            "checkedAt": "2026-11-19",
+            "result": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/RigsOfRods/rigs-of-rods",
+          "authorVerification": "Release and uploaded assets belong to the exact author source repository supplied for this example.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed.",
+          "releaseTag": "2026.01",
+          "publishedAt": "2026-01-04T10:28:35Z",
+          "assets": [
+            {
+              "url": "https://github.com/RigsOfRods/rigs-of-rods/releases/download/2026.01/rigs-of-rods-2026.01.exe",
+              "name": "rigs-of-rods-2026.01.exe",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 158220929,
+              "publisherSha256": "5a66fbfe2a2bcf4e689c5d3ea23587a58feb3d8e151b23c16c1a997bd56a930c"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-supertuxkart",
+        "sourceUrl": "https://github.com/supertuxkart/stk-code",
+        "demo": {
+          "label": "Download Supertuxkart 1.5",
+          "url": "https://github.com/supertuxkart/stk-code/releases/tag/1.5",
+          "kind": "download",
+          "note": "Author GitHub stable release 1.5 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/supertuxkart/stk-code/releases/latest",
+            "checkedAt": "2026-11-19",
+            "result": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/supertuxkart/stk-code",
+          "authorVerification": "Release and uploaded assets belong to the exact author source repository supplied for this example.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed.",
+          "releaseTag": "1.5",
+          "publishedAt": "2025-10-20T16:48:01Z",
+          "assets": [
+            {
+              "url": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-installer-aarch64.exe",
+              "name": "SuperTuxKart-1.5-installer-aarch64.exe",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 752427840,
+              "publisherSha256": "a2b2e80ef5be7d40ee72a63829c0b40d0e096c0d8b686dd142d681123b46e875"
+            },
+            {
+              "url": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-installer-i686.exe",
+              "name": "SuperTuxKart-1.5-installer-i686.exe",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 723623185,
+              "publisherSha256": "9270bb5c5e8e798fdd436567ca3626f88949c54f20eacfd2dfde4daf81d9e899"
+            },
+            {
+              "url": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-installer-x86_64.exe",
+              "name": "SuperTuxKart-1.5-installer-x86_64.exe",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 723247478,
+              "publisherSha256": "a1260ebb73dd9da13ec3e37f526f29e494b3b66c00c05fd70767b30a4497d95e"
+            },
+            {
+              "url": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-linux-arm64.tar.gz",
+              "name": "SuperTuxKart-1.5-linux-arm64.tar.gz",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 734267951,
+              "publisherSha256": "961b4b691b44547cdcada7ba39dad1561a6e7e766c90b22ca2df1fa18aa2e477"
+            },
+            {
+              "url": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-linux-armv7.tar.gz",
+              "name": "SuperTuxKart-1.5-linux-armv7.tar.gz",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 732429716,
+              "publisherSha256": "8d0611db0908bb58fb739c447f37486bd7e7405535c0d28056adf935907f0730"
+            },
+            {
+              "url": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-linux-riscv64.tar.gz",
+              "name": "SuperTuxKart-1.5-linux-riscv64.tar.gz",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 734661462,
+              "publisherSha256": "c89e785e0cecdb74b7a5eed665bf6e9504437fceac2120f91594dad82e07c60c"
+            },
+            {
+              "url": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-linux-x86.tar.gz",
+              "name": "SuperTuxKart-1.5-linux-x86.tar.gz",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 735512814,
+              "publisherSha256": "b13e7b8e7455ed66b8a82f29d7f7ce4f05df7a533ae9f45c91d7d0bea32a38eb"
+            },
+            {
+              "url": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-linux-x86_64.tar.gz",
+              "name": "SuperTuxKart-1.5-linux-x86_64.tar.gz",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 735211939,
+              "publisherSha256": "57090b6c2163eb691f20104ae9712204acbb4e8341059dee0a5ff5315efc401b"
+            },
+            {
+              "url": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-mac-signed.zip",
+              "name": "SuperTuxKart-1.5-mac-signed.zip",
+              "platform": "macOS",
+              "kind": "game-binary",
+              "size": 750212461,
+              "publisherSha256": "c266acdb8a63a3fe30f52652d9b749f5beba4abeb9e54382fbb934b00c53b303"
+            },
+            {
+              "url": "https://github.com/supertuxkart/stk-code/releases/download/1.5/SuperTuxKart-1.5-win.zip",
+              "name": "SuperTuxKart-1.5-win.zip",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 922430727,
+              "publisherSha256": "9df7e2d67e8562127a3bb633030f1bd4ee77fa9e7f0ae110897473025af8acdc"
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-terasology",
         "sourceUrl": "https://github.com/MovingBlocks/Terasology",
         "demo": {
@@ -37378,6 +37956,98 @@
               "kind": "game-binary",
               "size": 177679599,
               "publisherSha256": "1893074c9e021d78d8a85204ba92cabd9108fe54e30c6d07dfed997f178e3cc2"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-warzone-2100",
+        "sourceUrl": "https://github.com/Warzone2100/warzone2100",
+        "demo": {
+          "label": "Download Warzone 2100 4.7.0",
+          "url": "https://github.com/Warzone2100/warzone2100/releases/tag/4.7.0",
+          "kind": "download",
+          "note": "Author GitHub stable release 4.7.0 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/Warzone2100/warzone2100/releases/latest",
+            "checkedAt": "2026-11-19",
+            "result": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/Warzone2100/warzone2100",
+          "authorVerification": "Release and uploaded assets belong to the exact author source repository supplied for this example.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed.",
+          "releaseTag": "4.7.0",
+          "publishedAt": "2026-04-07T15:47:54Z",
+          "assets": [
+            {
+              "url": "https://github.com/Warzone2100/warzone2100/releases/download/4.7.0/warzone2100_macOS_universal.zip",
+              "name": "warzone2100_macOS_universal.zip",
+              "platform": "macOS",
+              "kind": "game-binary",
+              "size": 1118311765,
+              "publisherSha256": "a7d8152bdcc3c1d26c6ced2debe93e7995bf6c2125142093d9ab2834ebdd8507"
+            },
+            {
+              "url": "https://github.com/Warzone2100/warzone2100/releases/download/4.7.0/warzone2100_macOS_universal_novideos.zip",
+              "name": "warzone2100_macOS_universal_novideos.zip",
+              "platform": "macOS",
+              "kind": "game-binary",
+              "size": 546291974,
+              "publisherSha256": "925dde05b4580eae247ed77ffb611b3746686afa890f4ebf6b378a232e37e29a"
+            },
+            {
+              "url": "https://github.com/Warzone2100/warzone2100/releases/download/4.7.0/warzone2100_ubuntu22.04_amd64.deb",
+              "name": "warzone2100_ubuntu22.04_amd64.deb",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 393141150,
+              "publisherSha256": "3d3701651fe1ec30afc33d8b352d978752f8bfcd611017ac741fb324ce502ef4"
+            },
+            {
+              "url": "https://github.com/Warzone2100/warzone2100/releases/download/4.7.0/warzone2100_ubuntu24.04_amd64.deb",
+              "name": "warzone2100_ubuntu24.04_amd64.deb",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 393126664,
+              "publisherSha256": "5c6ad94cb6753cd8cfec9b38a4c0686d04802eaf1aa55289eda40d1f1709cd72"
+            },
+            {
+              "url": "https://github.com/Warzone2100/warzone2100/releases/download/4.7.0/warzone2100_win_arm64_archive.zip",
+              "name": "warzone2100_win_arm64_archive.zip",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 391613783,
+              "publisherSha256": "d83027595e4d35ca4a494d712559c80b0698c56a921df5c06b4ad3dcb928c195"
+            },
+            {
+              "url": "https://github.com/Warzone2100/warzone2100/releases/download/4.7.0/warzone2100_win_installer.exe",
+              "name": "warzone2100_win_installer.exe",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 389464648,
+              "publisherSha256": "80ee0913413bdf9b6edef8c53a31f89e6613db3b7324cdd98cae8d3cd571b7cf"
+            },
+            {
+              "url": "https://github.com/Warzone2100/warzone2100/releases/download/4.7.0/warzone2100_win_x64_archive.zip",
+              "name": "warzone2100_win_x64_archive.zip",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 392936210,
+              "publisherSha256": "2deed0a8cfe30a188681f1fea11d75fdcdef30075254b1cd90799868ce1c6104"
+            },
+            {
+              "url": "https://github.com/Warzone2100/warzone2100/releases/download/4.7.0/warzone2100_win_x86_archive.zip",
+              "name": "warzone2100_win_x86_archive.zip",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 393747010,
+              "publisherSha256": "39cdce8e6dede25623aecb48878c9ef74b19f0bcecb7eed55a8b5fe28174caac"
             }
           ]
         }
@@ -38303,6 +38973,48 @@
             "result": "The Miniputs game page links directly to the PirateRun repository. Both identify the same Flax Engine runner."
           }
         ]
+      },
+      {
+        "id": "open3d-openspades",
+        "sourceUrl": "https://github.com/yvt/openspades",
+        "demo": {
+          "label": "Download Openspades v0.1.3",
+          "url": "https://github.com/yvt/openspades/releases/tag/v0.1.3",
+          "kind": "download",
+          "note": "Author GitHub stable release v0.1.3 provides desktop game packages. Verified author release metadata and listed binary assets on 2026-11-19; no native package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/yvt/openspades/releases/latest",
+            "checkedAt": "2026-11-19",
+            "result": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/yvt/openspades",
+          "authorVerification": "Release and uploaded assets belong to the exact author source repository supplied for this example.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author latest stable release lists platform-specific downloadable game distributions as manually uploaded assets, separate from automatic source archives. No package downloaded or executed.",
+          "releaseTag": "v0.1.3",
+          "publishedAt": "2019-01-04T13:43:00Z",
+          "assets": [
+            {
+              "url": "https://github.com/yvt/openspades/releases/download/v0.1.3/OpenSpades-0.1.3-OSX.zip",
+              "name": "OpenSpades-0.1.3-OSX.zip",
+              "platform": "macOS",
+              "kind": "game-binary",
+              "size": 14550694
+            },
+            {
+              "url": "https://github.com/yvt/openspades/releases/download/v0.1.3/OpenSpades-0.1.3-Windows.zip",
+              "name": "OpenSpades-0.1.3-Windows.zip",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 14608242
+            }
+          ]
+        }
       },
       {
         "id": "open3d-3d-sledding",
@@ -63896,43 +64608,6 @@
         ]
       },
       {
-        "id": "open3d-cypress-motel",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/ObsidianBlk/TheMotel/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/ObsidianBlk/TheMotel",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/ObsidianBlk/TheMotel/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/ObsidianBlk/TheMotel/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/ObsidianBlk/TheMotel",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/ObsidianBlk/TheMotel/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
         "id": "open3d-delta-park",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -64224,58 +64899,6 @@
         ]
       },
       {
-        "id": "open3d-libre-trainsim",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://www.libretrainsim.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/Libre-TrainSim/Libre-TrainSim/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/Libre-TrainSim/Libre-TrainSim",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/Libre-TrainSim/Libre-TrainSim/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/Libre-TrainSim/Libre-TrainSim/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/Libre-TrainSim/Libre-TrainSim",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/Libre-TrainSim/Libre-TrainSim/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://www.libretrainsim.org/",
-            "checkedAt": "2026-11-18",
-            "result": "A rendered rail-level view looks toward a city station, with tracks, overhead wires, a red train and pedestrians. The reviewed frame is an in-game scene rather than a title, loading screen or promotional collage."
-          },
-          {
-            "url": "https://www.libretrainsim.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN www.libretrainsim.org"
-          }
-        ]
-      },
-      {
         "id": "open3d-meteorite",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -64464,43 +65087,6 @@
         ]
       },
       {
-        "id": "open3d-scavenge-drill",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/nwallenfang/scavenge-and-drill/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/nwallenfang/scavenge-and-drill",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/nwallenfang/scavenge-and-drill/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/nwallenfang/scavenge-and-drill/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/nwallenfang/scavenge-and-drill",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/nwallenfang/scavenge-and-drill/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
         "id": "open3d-super-tux-party",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -64514,90 +65100,6 @@
             "url": "https://supertux.party/",
             "checkedAt": "2026-11-18",
             "result": "Public retrieval failed: getaddrinfo EAI_AGAIN supertux.party"
-          }
-        ]
-      },
-      {
-        "id": "open3d-tabletop-club",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/drwhut/tabletop-club/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/drwhut/tabletop-club",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/drwhut/tabletop-club/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/drwhut/tabletop-club/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/drwhut/tabletop-club",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/drwhut/tabletop-club/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://tabletopclub.net/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN tabletopclub.net"
-          }
-        ]
-      },
-      {
-        "id": "open3d-thrive",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/Revolutionary-Games/Thrive/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/Revolutionary-Games/Thrive",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/Revolutionary-Games/Thrive/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/Revolutionary-Games/Thrive/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/Revolutionary-Games/Thrive",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/Revolutionary-Games/Thrive/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://www.revolutionarygamesstudio.com/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN www.revolutionarygamesstudio.com"
           }
         ]
       },
@@ -65244,43 +65746,6 @@
         ]
       },
       {
-        "id": "open3d-yorg",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/cflavio/yorg/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/cflavio/yorg",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/cflavio/yorg/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/cflavio/yorg/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/cflavio/yorg",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/cflavio/yorg/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
         "id": "open3d-sintel-the-game",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -65500,68 +65965,6 @@
           },
           {
             "url": "https://www.armagetronad.org/screenshots.php",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
-        "id": "open3d-assaultcube",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://assault.cubers.net/media.html",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/assaultcube/AC/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/assaultcube/AC",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/assaultcube/AC/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://assault.cubers.net/media.html",
-            "checkedAt": "2026-11-18",
-            "result": "A first-person shotgun encounter unfolds inside a brick room, with a minimap, health and ammunition counters. The reviewed frame is an in-game scene rather than a title, loading screen or promotional collage."
-          },
-          {
-            "url": "https://assault.cubers.net/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/assaultcube/AC/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/assaultcube/AC",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/assaultcube/AC/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://assault.cubers.net/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN assault.cubers.net"
-          },
-          {
-            "url": "https://assault.cubers.net/media.html",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
           }
@@ -66307,58 +66710,6 @@
         ]
       },
       {
-        "id": "open3d-pioneer",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://pioneerspacesim.net/",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/pioneerspacesim/pioneer/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/pioneerspacesim/pioneer",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/pioneerspacesim/pioneer/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://pioneerspacesim.net/",
-            "checkedAt": "2026-11-18",
-            "result": "A dark spacecraft silhouette crosses a dense star field beneath the edge of a large celestial body. The reviewed frame is an in-game scene rather than a title, loading screen or promotional collage."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/pioneerspacesim/pioneer/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/pioneerspacesim/pioneer",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/pioneerspacesim/pioneer/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://pioneerspacesim.net/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN pioneerspacesim.net"
-          }
-        ]
-      },
-      {
         "id": "open3d-quetoo",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -66464,53 +66815,6 @@
             "url": "https://www.redeclipse.net/",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
-        "id": "open3d-rigs-of-rods",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://www.rigsofrods.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/RigsOfRods/rigs-of-rods/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/RigsOfRods/rigs-of-rods",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/RigsOfRods/rigs-of-rods/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://www.rigsofrods.org/",
-            "checkedAt": "2026-11-18",
-            "result": "A brightly painted off-road truck is airborne above a dirt ridge in a rendered outdoor scene. The reviewed frame is an in-game scene rather than a title, loading screen or promotional collage."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/RigsOfRods/rigs-of-rods/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/RigsOfRods/rigs-of-rods",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/RigsOfRods/rigs-of-rods/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
           }
         ]
       },
@@ -66681,48 +66985,6 @@
             "url": "https://cryham.org/stuntrally/gallery/",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
-        "id": "open3d-supertuxkart",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/supertuxkart/stk-code/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/supertuxkart/stk-code",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/supertuxkart/stk-code/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://supertuxkart.net/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/supertuxkart/stk-code/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/supertuxkart/stk-code",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/supertuxkart/stk-code/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
           }
         ]
       },
@@ -67095,48 +67357,6 @@
           },
           {
             "url": "https://github.com/TeamForbiddenLLC/warfork-qfusion/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
-        "id": "open3d-warzone-2100",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/Warzone2100/warzone2100/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/Warzone2100/warzone2100",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/Warzone2100/warzone2100/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://wz2100.net/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/Warzone2100/warzone2100/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/Warzone2100/warzone2100",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/Warzone2100/warzone2100/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
           }
@@ -69435,48 +69655,6 @@
           },
           {
             "url": "https://github.com/leezer3/OpenBVE/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
-        "id": "open3d-openspades",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/yvt/openspades/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/yvt/openspades",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/yvt/openspades/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://openspades.yvt.jp/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/yvt/openspades/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/yvt/openspades",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/yvt/openspades/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
           }
