@@ -215,9 +215,11 @@ test("complete game galleries stay in Examples while featured and related access
       page.locator('.example-card[data-content-ref^="example:"]'),
     ).toHaveCount(manifest.counts.example);
     await page.goto(prefix);
-    await expect(page.locator(".featured-section .example-card")).toHaveCount(
-      3,
-    );
+    // Home features games through its wall of real screenshots, not cards.
+    await expect(page.locator("main .example-card")).toHaveCount(0);
+    await expect(
+      page.locator('.game-wall-card[href*="/examples/"]').first(),
+    ).toBeAttached();
   }
 });
 

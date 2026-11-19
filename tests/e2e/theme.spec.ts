@@ -29,7 +29,7 @@ test("selected resource filters keep labels and counts readable", async ({
       await page.getByRole("button", { name: "Toggle color theme" }).click();
     await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute(
       "content",
-      theme === "light" ? "#fffcfb" : "#090f1b",
+      theme === "light" ? "#f4f4f0" : "#050505",
     );
     for (const index of [0, 1]) {
       const filter = page.locator(".category-filters button").nth(index);
@@ -74,9 +74,12 @@ test("atlas themes stay consistent across the site and Fumadocs", async ({
 }) => {
   for (const theme of ["light", "dark"] as const) {
     await page.goto("");
-    if (theme === "dark")
+    const isDark = await page
+      .locator("html")
+      .evaluate((root) => root.classList.contains("dark"));
+    if (isDark !== (theme === "dark"))
       await page.getByRole("button", { name: "Toggle color theme" }).click();
-    const background = theme === "light" ? "#fffcfb" : "#090f1b";
+    const background = theme === "light" ? "#f4f4f0" : "#050505";
     await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute(
       "content",
       background,
@@ -144,5 +147,22 @@ test("atlas themes stay consistent across the site and Fumadocs", async ({
         () => document.documentElement.scrollWidth <= window.innerWidth,
       ),
     ).toBeTruthy();
+  }
+});
+
+test("first visits default to the dark theme, with and without JavaScript", async ({
+  browser,
+  baseURL,
+}) => {
+  for (const javaScriptEnabled of [true, false]) {
+    const context = await browser.newContext({ javaScriptEnabled });
+    const page = await context.newPage();
+    await page.goto(baseURL!);
+    await expect(page.locator("html")).toHaveClass(/\bdark\b/);
+    await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute(
+      "content",
+      "#050505",
+    );
+    await context.close();
   }
 });

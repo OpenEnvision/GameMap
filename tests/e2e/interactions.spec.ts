@@ -31,8 +31,10 @@ for (const width of [390, 800]) {
     await page.keyboard.press("Escape");
     await expect(toggle).toBeFocused();
     await expect(navigation).toHaveCount(0);
+    // The menu is a full-screen sheet; the toggle (now "Close navigation") dismisses it.
     await toggle.click();
-    await page.locator("h1").click({ position: { x: 8, y: 8 } });
+    await expect(toggle).toHaveAttribute("aria-label", "Close navigation");
+    await toggle.click();
     await expect(navigation).toHaveCount(0);
     await toggle.click();
     await navigation
@@ -43,12 +45,12 @@ for (const width of [390, 800]) {
   });
 }
 
-test("site-shell More keeps native keyboard activation and dismisses", async ({
+test("site-shell pillar panels keep native keyboard activation and dismiss", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("resources/");
-  const menu = page.locator(".more-navigation");
+  const menu = page.locator('.nav-pillar[data-pillar="tools"]');
   const summary = menu.locator("summary");
   await summary.focus();
   await page.keyboard.press("Enter");
@@ -205,7 +207,7 @@ test("a delayed index response cannot restore a cleared dialog query", async ({
   }
 });
 
-test("home featured showcase is user controlled, keyboard usable and image only", async ({
+test("home wall of games is image only, lazy and leads into the full gallery", async ({
   page,
 }) => {
   const mediaRequests: string[] = [];
@@ -214,17 +216,23 @@ test("home featured showcase is user controlled, keyboard usable and image only"
       mediaRequests.push(request.url());
   });
   await page.goto("");
-  const showcase = page.getByRole("region", { name: "Featured games" });
-  const choices = showcase.getByRole("button");
-  await expect(choices).toHaveCount(3);
-  await expect(choices.first()).toHaveAttribute("aria-pressed", "true");
-  await choices.nth(1).focus();
-  await page.keyboard.press("Enter");
-  await expect(choices.nth(1)).toHaveAttribute("aria-pressed", "true");
-  await expect(showcase.getByRole("heading")).toHaveText(
-    "Marvel Avengers: Infinity Strike",
-  );
-  await expect(showcase.locator("img")).toHaveAttribute("src", /marvel/);
+  const wall = page.getByRole("region", {
+    name: "Made with AI. Ready to explore.",
+  });
+  await expect(wall).toBeVisible();
+  // The tilted wall is decorative: hidden from assistive technology and the tab order.
+  const stage = wall.locator(".game-wall-stage");
+  await expect(stage).toHaveAttribute("aria-hidden", "true");
+  const tiles = stage.locator("a.game-wall-card");
+  expect(await tiles.count()).toBeGreaterThan(40);
+  for (const tile of await tiles.all())
+    await expect(tile).toHaveAttribute("tabindex", "-1");
+  await expect(stage.locator("img").first()).toHaveAttribute("loading", "lazy");
+  // The accessible way in is the call to action with the live total.
+  const total = (await wall.locator(".game-wall-count").innerText()).trim();
+  expect(Number(total)).toBeGreaterThan(1000);
+  await wall.getByRole("link", { name: new RegExp(total) }).click();
+  await expect(page).toHaveURL(/\/examples\/$/);
   await expect(page.locator("video")).toHaveCount(0);
   expect(mediaRequests).toEqual([]);
 });
@@ -255,9 +263,8 @@ for (const width of [320, 390, 800, 1050, 1440]) {
             `${locale}${route} ${theme}`,
           ).toBe(true);
           if (!route) {
-            await expect(page.locator(".showcase-controls button")).toHaveCount(
-              3,
-            );
+            await expect(page.locator(".game-wall")).toHaveCount(1);
+            await expect(page.locator(".hero-search input")).toBeVisible();
             await expect(page.locator(".header-controls")).toBeInViewport();
           }
         }
@@ -265,3 +272,27 @@ for (const width of [320, 390, 800, 1050, 1440]) {
     }
   });
 }
+
+test("navigation marks the current pillar and section in static and hydrated pages", async ({
+  browser,
+  baseURL,
+}) => {
+  for (const javaScriptEnabled of [false, true]) {
+    const context = await browser.newContext({
+      javaScriptEnabled,
+      viewport: { width: 1440, height: 1000 },
+    });
+    const page = await context.newPage();
+    await page.goto(baseURL + "examples/");
+    await expect(
+      page.locator('.desktop-navigation a[aria-current="page"]'),
+    ).toHaveText(/Game examples/);
+    await expect(
+      page.locator('.nav-pillar[data-pillar="games"]'),
+    ).toHaveAttribute("data-active", "true");
+    await expect(
+      page.locator('.site-header .site-language a[hreflang="zh-CN"]'),
+    ).toHaveAttribute("href", /\/zh\/examples\/$/);
+    await context.close();
+  }
+});

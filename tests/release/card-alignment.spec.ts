@@ -168,20 +168,6 @@ test("case, resource and testing cards align across languages, themes and column
   expect(errors).toEqual([]);
 });
 
-test("home case cards share aligned frames and footers", async ({ page }) => {
-  await page.goto("");
-  await expect(page.locator('[data-client-ready="true"]')).toHaveCount(1);
-  alignedRows(
-    await geometry(
-      page,
-      ".example-grid > .example-card",
-      "h3",
-      ".example-body > p",
-      ".example-links",
-    ),
-  );
-});
-
 test("expanded case notes retain all text, align the current row and leave later row sizes unchanged", async ({
   page,
 }) => {

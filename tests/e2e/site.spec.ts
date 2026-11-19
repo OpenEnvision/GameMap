@@ -233,8 +233,10 @@ test("responsive layout, theme toggle, and navigation", async ({
       () => document.documentElement.scrollWidth <= window.innerWidth,
     ),
   ).toBeTruthy();
+  // Dark is the default; the toggle switches to the light theme.
+  await expect(page.locator("html")).toHaveClass(/\bdark\b/);
   await page.getByRole("button", { name: "Toggle color theme" }).click();
-  await expect(page.locator("html")).toHaveClass(/dark/);
+  await expect(page.locator("html")).toHaveClass(/\blight\b/);
   if (isMobile) {
     await page
       .getByRole("button", { name: "Open navigation", exact: true })

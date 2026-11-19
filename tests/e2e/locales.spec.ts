@@ -13,7 +13,7 @@ test("every main Chinese view has a real localized title and no overflow", async
   page,
 }) => {
   const pages = [
-    ["zh/", "从一个想法，到可玩的世界."],
+    ["zh/", "从一个想法，到可玩的世界。"],
     ["zh/resources/", "选择合适的开发工具。"],
     ["zh/examples/", "从一个可玩的项目开始。"],
     ["zh/agents/", "让代理接入实际开发流程。"],

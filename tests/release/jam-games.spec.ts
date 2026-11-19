@@ -82,7 +82,7 @@ test("Chinese game introductions remain localized and the public evidence ledger
       "暂无已核实的游戏截图",
     );
   }
-  await expect(page.locator(".page-heading .heading-links")).toHaveCount(0);
+  await expect(page.locator(".gallery-hero .heading-links")).toHaveCount(0);
   const response = await request.get("jam-discovery.json");
   expect(response.ok()).toBe(true);
   const ledger = await response.json();
