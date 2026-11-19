@@ -75,7 +75,9 @@ export function GameWall({
           <div
             key={rowIndex}
             className="game-wall-row"
-            style={{ "--wall-speed": `${ROW_SPEED[rowIndex]}s` } as CSSProperties}
+            style={
+              { "--wall-speed": `${ROW_SPEED[rowIndex]}s` } as CSSProperties
+            }
           >
             <div className="game-wall-track">
               {[0, 1].map((copy) =>

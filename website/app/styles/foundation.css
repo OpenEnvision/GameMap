@@ -29,9 +29,21 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 80% 55% at 50% -18%, var(--nebula-b), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 92% 4%, var(--nebula-a), transparent 72%),
-    radial-gradient(ellipse 45% 35% at 4% 30%, color-mix(in srgb, var(--nebula-b) 60%, transparent), transparent 70%);
+    radial-gradient(
+      ellipse 80% 55% at 50% -18%,
+      var(--nebula-b),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 92% 4%,
+      var(--nebula-a),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 45% 35% at 4% 30%,
+      color-mix(in srgb, var(--nebula-b) 60%, transparent),
+      transparent 70%
+    );
 }
 body::after {
   content: "";
@@ -105,7 +117,12 @@ html[lang="zh-CN"] :is(.display-hero, .display-xl, .display-l, .display-m) {
   text-wrap: pretty;
 }
 .text-gradient {
-  background: linear-gradient(100deg, var(--ink) 20%, var(--accent) 60%, var(--signal));
+  background: linear-gradient(
+    100deg,
+    var(--ink) 20%,
+    var(--accent) 60%,
+    var(--signal)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -251,8 +268,7 @@ kbd {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(180deg, var(--surface-sheen), transparent 40%),
-    var(--panel);
+    linear-gradient(180deg, var(--surface-sheen), transparent 40%), var(--panel);
   box-shadow: var(--shadow-1);
 }
 .surface-card::before {
@@ -329,7 +345,9 @@ kbd {
 }
 
 /* --- 8. Fallbacks. --------------------------------------------------------- */
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+@supports not (
+  (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+) {
   .glass,
   .button-secondary,
   .atlas-search-content {

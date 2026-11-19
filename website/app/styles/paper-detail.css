@@ -272,8 +272,7 @@ html[lang="zh-CN"] .paper-taxonomy-label {
   gap: 9px;
   padding: 11% 11% 10%;
   background:
-    linear-gradient(180deg, var(--surface-sheen), transparent 40%),
-    var(--panel);
+    linear-gradient(180deg, var(--surface-sheen), transparent 40%), var(--panel);
   box-shadow:
     var(--shadow-2),
     0 50px 120px -50px var(--glow-signal);
@@ -375,7 +374,11 @@ html[lang="zh-CN"] .paper-taxonomy-label {
   line-height: 1.6;
   text-transform: uppercase;
 }
-html[lang="zh-CN"] .paper-page .paper-document .content-field > :is(h2, h3, h4) {
+html[lang="zh-CN"]
+  .paper-page
+  .paper-document
+  .content-field
+  > :is(h2, h3, h4) {
   font-family: var(--font-sans);
   font-size: 12px;
   letter-spacing: 0.04em;
@@ -472,10 +475,12 @@ html[lang="zh-CN"] .paper-page .paper-document .content-field > :is(h2, h3, h4) 
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   background:
-    linear-gradient(180deg, var(--surface-sheen), transparent 60%),
-    var(--panel);
+    linear-gradient(180deg, var(--surface-sheen), transparent 60%), var(--panel);
 }
-.paper-access-fields > .content-field:first-child .metadata-facts > div:first-child {
+.paper-access-fields
+  > .content-field:first-child
+  .metadata-facts
+  > div:first-child {
   border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
   box-shadow: 0 30px 70px -45px var(--glow-accent);
 }
@@ -514,8 +519,7 @@ html[lang="zh-CN"] .paper-page .paper-document .content-field > :is(h2, h3, h4) 
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(180deg, var(--surface-sheen), transparent 40%),
-    var(--panel);
+    linear-gradient(180deg, var(--surface-sheen), transparent 40%), var(--panel);
 }
 .paper-evidence > summary {
   display: flex;

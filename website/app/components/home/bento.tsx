@@ -215,7 +215,7 @@ export function AtlasBento({
                   style={
                     {
                       "--planet": `var(--tax-${category.id})`,
-                      "--x": `${round(50 + (Math.cos(radians) * ring.rx))}%`,
+                      "--x": `${round(50 + Math.cos(radians) * ring.rx)}%`,
                       "--y": `${round(50 + ((Math.sin(radians) * ring.ry) / 44) * 100)}%`,
                       "--size": `${10 + (index % 3) * 4}px`,
                     } as CSSProperties
@@ -238,7 +238,11 @@ export function AtlasBento({
                     <Link
                       to={"/resources/?category=" + category.id}
                       data-category={category.id}
-                      style={{ "--planet": `var(--tax-${category.id})` } as CSSProperties}
+                      style={
+                        {
+                          "--planet": `var(--tax-${category.id})`,
+                        } as CSSProperties
+                      }
                     >
                       <span className="hm-direction-icon">
                         <Icon size={17} strokeWidth={1.7} aria-hidden="true" />

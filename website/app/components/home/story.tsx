@@ -99,10 +99,16 @@ function IdeaScene() {
           <circle cx="110" cy="37.8" r="5" className="hm-idea-dot is-hot" />
         </g>
       </svg>
-      <span className="hm-idea-node" style={{ "--x": "6%", "--y": "56%" } as CSSProperties}>
+      <span
+        className="hm-idea-node"
+        style={{ "--x": "6%", "--y": "56%" } as CSSProperties}
+      >
         {t("Explore")}
       </span>
-      <span className="hm-idea-node" style={{ "--x": "64%", "--y": "18%" } as CSSProperties}>
+      <span
+        className="hm-idea-node"
+        style={{ "--x": "64%", "--y": "18%" } as CSSProperties}
+      >
         {t("Collect")}
       </span>
       <span
@@ -151,7 +157,10 @@ function BuildScene({ tools }: { tools: readonly MarqueeTool[] }) {
             fill="#e53a32"
             d="M31 3 48.3 13 35.5 20.4 31 17.8 13.5 27.9v20.2L31 58.2l17.5-10.1V43H31V30.5h30v23.9L31 71.7 1 54.4V20.3L31 3Z"
           />
-          <path fill="#9e1218" d="m1 20.3 12.5 7.6v20.2L31 58.2v13.5L1 54.4V20.3Z" />
+          <path
+            fill="#9e1218"
+            d="m1 20.3 12.5 7.6v20.2L31 58.2v13.5L1 54.4V20.3Z"
+          />
           <path fill="#e53a32" d="m61 1 8 4.6v9.2l-8 4.6-8-4.6V5.6L61 1Z" />
         </svg>
         <b>{t("Your game")}</b>
@@ -160,7 +169,9 @@ function BuildScene({ tools }: { tools: readonly MarqueeTool[] }) {
         <span
           key={tool.id}
           className="hm-build-node"
-          style={{ "--x": `${x}%`, "--y": `${y}%`, "--i": index } as CSSProperties}
+          style={
+            { "--x": `${x}%`, "--y": `${y}%`, "--i": index } as CSSProperties
+          }
         >
           <span className="hm-logo" data-background={tool.background}>
             <img
@@ -318,9 +329,7 @@ export function HomeStory({
                     <li key={link.path}>
                       <Link to={link.path}>
                         <span>{t(link.title)}</span>
-                        {counts[link.path] ? (
-                          <b>{counts[link.path]}</b>
-                        ) : null}
+                        {counts[link.path] ? <b>{counts[link.path]}</b> : null}
                         <ArrowUpRight size={15} aria-hidden="true" />
                       </Link>
                     </li>

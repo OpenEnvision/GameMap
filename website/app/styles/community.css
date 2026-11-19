@@ -359,7 +359,11 @@ html[lang="zh-CN"] :is(.community-section-heading, .community-form-heading) h2 {
   border: 1px solid var(--line-strong);
   border-radius: 50%;
   background:
-    radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 70%),
+    radial-gradient(
+      circle at 30% 25%,
+      color-mix(in srgb, var(--accent) 30%, transparent),
+      transparent 70%
+    ),
     var(--soft);
   color: var(--ink);
   font-size: 14px;
@@ -543,7 +547,12 @@ html[lang="zh-CN"] :is(.community-section-heading, .community-form-heading) h2 {
   width: 18px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #ffd8d4, var(--action) 55%, #240305);
+  background: radial-gradient(
+    circle at 35% 30%,
+    #ffd8d4,
+    var(--action) 55%,
+    #240305
+  );
   box-shadow: 0 0 40px 6px var(--glow-accent);
   scale: 1 2.5;
 }
@@ -659,8 +668,7 @@ html[lang="zh-CN"] .community-page .page-heading h1 {
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
   background:
-    linear-gradient(180deg, var(--surface-sheen), transparent 40%),
-    var(--glass);
+    linear-gradient(180deg, var(--surface-sheen), transparent 40%), var(--glass);
   -webkit-backdrop-filter: blur(24px) saturate(1.4);
   backdrop-filter: blur(24px) saturate(1.4);
   box-shadow:

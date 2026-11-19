@@ -387,7 +387,8 @@ export function PlanetHero() {
       height = stage.clientHeight;
       if (!width || !height) return;
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      scale = Math.min(dpr, Math.sqrt(PIXEL_BUDGET / (width * height))) * quality;
+      scale =
+        Math.min(dpr, Math.sqrt(PIXEL_BUDGET / (width * height))) * quality;
       scale = Math.max(scale, 0.5);
       canvas.width = Math.round(width * scale);
       canvas.height = Math.round(height * scale);
@@ -408,7 +409,8 @@ export function PlanetHero() {
       scroll += (scrollTarget - scroll) * (reduced ? 1 : 1 - Math.exp(-dt * 6));
       const s = reduced ? 0 : scroll;
       const time = reduced ? 34 : 34 + (now - start) / 1000;
-      const radius = Math.max(width * radiusW, height * radiusH) * (1 + 0.28 * s);
+      const radius =
+        Math.max(width * radiusW, height * radiusH) * (1 + 0.28 * s);
       const top = horizon * height - s * 0.4 * height;
       const cx = width / 2 + pointer.x * width * 0.012;
       const cy = top + radius;
@@ -445,7 +447,8 @@ export function PlanetHero() {
         canvas.dataset.state = "live";
         // Slow GPUs: sustained long frames lower the internal resolution.
         if (now - start > 1500 && quality > 0.55) {
-          slowFrames = interval > 28 ? slowFrames + 1 : Math.max(0, slowFrames - 1);
+          slowFrames =
+            interval > 28 ? slowFrames + 1 : Math.max(0, slowFrames - 1);
           if (slowFrames > 24) {
             quality *= 0.8;
             slowFrames = 0;

@@ -327,8 +327,16 @@ html[lang="zh-CN"] .nav-panel-intro p {
   overflow-y: auto;
   border: 0;
   background:
-    radial-gradient(ellipse 80% 50% at 80% 0%, var(--nebula-a), transparent 70%),
-    radial-gradient(ellipse 70% 50% at 0% 100%, var(--nebula-b), transparent 70%),
+    radial-gradient(
+      ellipse 80% 50% at 80% 0%,
+      var(--nebula-a),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 0% 100%,
+      var(--nebula-b),
+      transparent 70%
+    ),
     var(--paper);
   pointer-events: auto;
 }
@@ -470,11 +478,16 @@ html[data-menu-open] {
   display: block;
   max-width: none;
   margin: clamp(80px, 10vw, 160px) 0 0;
-  padding: clamp(56px, 7vw, 96px) max(var(--gutter), calc((100% - var(--content-max)) / 2)) 0;
+  padding: clamp(56px, 7vw, 96px)
+    max(var(--gutter), calc((100% - var(--content-max)) / 2)) 0;
   overflow: hidden;
   border-top: 1px solid var(--line);
   background:
-    radial-gradient(ellipse 60% 70% at 50% 120%, var(--nebula-a), transparent 70%),
+    radial-gradient(
+      ellipse 60% 70% at 50% 120%,
+      var(--nebula-a),
+      transparent 70%
+    ),
     transparent;
 }
 .footer-top {
@@ -580,7 +593,12 @@ html[lang="zh-CN"] .footer-intro p {
 .footer-wordmark {
   margin: clamp(8px, 2vw, 24px) 0 -0.16em;
   color: transparent;
-  background: linear-gradient(to bottom, var(--ink) 0%, color-mix(in srgb, var(--ink) 30%, transparent) 55%, transparent 95%);
+  background: linear-gradient(
+    to bottom,
+    var(--ink) 0%,
+    color-mix(in srgb, var(--ink) 30%, transparent) 55%,
+    transparent 95%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   font-family: var(--font-display);

@@ -8,7 +8,8 @@ function LostArt({ signal }: { signal: string }) {
   const stars = Array.from({ length: 90 }, (_, index) => ({
     x: Math.round(random() * 1600),
     y: Math.round(random() * 700),
-    r: Math.round((random() < 0.88 ? 0.6 + random() : 1.6 + random()) * 10) / 10,
+    r:
+      Math.round((random() < 0.88 ? 0.6 + random() : 1.6 + random()) * 10) / 10,
     o: Math.round((0.2 + random() * 0.8) * 100) / 100,
     twinkle: index % 7 === 0,
   }));
@@ -93,11 +94,7 @@ function LostArt({ signal }: { signal: string }) {
         </svg>
         <span className="lost-digit">4</span>
       </div>
-      <svg
-        className="lost-trajectory"
-        viewBox="0 0 600 300"
-        focusable="false"
-      >
+      <svg className="lost-trajectory" viewBox="0 0 600 300" focusable="false">
         <path className="lost-path" d="M 40 270 C 180 250 320 170 560 30" />
         <g className="lost-probe">
           <rect x="-7" y="-5" width="14" height="10" rx="2" />

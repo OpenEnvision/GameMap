@@ -156,9 +156,7 @@ html[lang="zh-CN"] :is(.hm-title, .hm-hero-title) em {
     var(--hm-horizon) * 100% + var(--hm-r) - sin(var(--hm-sun-angle) * 1deg) *
       var(--hm-r) * 1.012
   );
-  left: calc(
-    50% + cos(var(--hm-sun-angle) * 1deg) * var(--hm-r) * 1.012
-  );
+  left: calc(50% + cos(var(--hm-sun-angle) * 1deg) * var(--hm-r) * 1.012);
   width: clamp(240px, calc(0.36 * var(--hm-stage-w)), 620px);
   aspect-ratio: 1;
   border-radius: 50%;
@@ -759,7 +757,11 @@ html[lang="zh-CN"] .hm-hero-title em {
   background:
     linear-gradient(180deg, rgb(0 0 0 / 0.45), transparent 26%),
     linear-gradient(0deg, rgb(0 0 0 / 0.55), transparent 40%),
-    repeating-linear-gradient(0deg, rgb(255 255 255 / 0.03) 0 1px, transparent 1px 3px);
+    repeating-linear-gradient(
+      0deg,
+      rgb(255 255 255 / 0.03) 0 1px,
+      transparent 1px 3px
+    );
 }
 .hm-play-hud {
   position: absolute;
@@ -889,7 +891,9 @@ html[lang="zh-CN"] .hm-hero-title em {
   min-height: 94svh;
   padding-block: 8svh;
 }
-.hm-story[data-mode="live"] .hm-chapter[data-on="false"] :is(h3, .hm-chapter-body) {
+.hm-story[data-mode="live"]
+  .hm-chapter[data-on="false"]
+  :is(h3, .hm-chapter-body) {
   color: var(--muted);
 }
 .hm-story[data-mode="live"] .hm-scene {
@@ -939,8 +943,7 @@ html[lang="zh-CN"] .hm-hero-title em {
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
   background:
-    linear-gradient(180deg, var(--surface-sheen), transparent 40%),
-    var(--panel);
+    linear-gradient(180deg, var(--surface-sheen), transparent 40%), var(--panel);
   box-shadow: var(--shadow-1);
 }
 .hm-tile::after {
@@ -1120,11 +1123,8 @@ html[lang="zh-CN"] .hm-hero-title em {
   border: 1px solid var(--line-strong);
   border-radius: 12px;
   background:
-    repeating-linear-gradient(
-      180deg,
-      transparent 0 14px,
-      var(--line) 14px 15px
-    ) 16px 34px / calc(100% - 32px) 70% no-repeat,
+    repeating-linear-gradient(180deg, transparent 0 14px, var(--line) 14px 15px)
+      16px 34px / calc(100% - 32px) 70% no-repeat,
     var(--soft);
   box-shadow: var(--shadow-1);
 }
@@ -1543,7 +1543,8 @@ html[lang="zh-CN"] .hm-guide-text strong {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: clamp(64px, 10vw, 160px) clamp(22px, 6vw, 96px) clamp(120px, 16vw, 240px);
+  padding: clamp(64px, 10vw, 160px) clamp(22px, 6vw, 96px)
+    clamp(120px, 16vw, 240px);
   overflow: clip;
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
@@ -1862,14 +1863,20 @@ html[lang="zh-CN"] .hm-closing-inner h2 {
       opacity 600ms var(--ease-out),
       translate 900ms var(--ease-expo);
   }
-  .hm-story[data-mode="live"] .hm-scene[data-on="true"] :is(.hm-idea-node, .hm-idea-prompt) {
+  .hm-story[data-mode="live"]
+    .hm-scene[data-on="true"]
+    :is(.hm-idea-node, .hm-idea-prompt) {
     opacity: 1;
     translate: 0 0;
   }
-  .hm-story[data-mode="live"] .hm-scene[data-on="true"] .hm-idea-node:nth-of-type(2) {
+  .hm-story[data-mode="live"]
+    .hm-scene[data-on="true"]
+    .hm-idea-node:nth-of-type(2) {
     transition-delay: 120ms;
   }
-  .hm-story[data-mode="live"] .hm-scene[data-on="true"] .hm-idea-node:nth-of-type(3) {
+  .hm-story[data-mode="live"]
+    .hm-scene[data-on="true"]
+    .hm-idea-node:nth-of-type(3) {
     transition-delay: 240ms;
   }
   .hm-story[data-mode="live"] .hm-scene[data-on="true"] .hm-idea-prompt {

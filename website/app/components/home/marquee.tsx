@@ -32,7 +32,9 @@ function ToolChip({ tool }: { tool: MarqueeTool }) {
       </span>
       <span className="hm-tool-text">
         <strong>{tool.name}</strong>
-        <small style={{ "--tax": `var(--tax-${tool.category})` } as CSSProperties}>
+        <small
+          style={{ "--tax": `var(--tax-${tool.category})` } as CSSProperties}
+        >
           {t(categoryLabel[tool.category] ?? "Resources")}
         </small>
       </span>

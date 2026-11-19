@@ -163,8 +163,7 @@ export function loader({ request }: LoaderFunctionArgs) {
   );
   const tool = (id: string): MarqueeTool | null => {
     const entry = resources.get(id);
-    const identity =
-      sources.identities[id as keyof typeof sources.identities];
+    const identity = sources.identities[id as keyof typeof sources.identities];
     if (!entry || !identity?.asset) return null;
     return {
       id,
@@ -225,9 +224,7 @@ export function loader({ request }: LoaderFunctionArgs) {
       },
     },
     marquee: marqueeRows.map(tools),
-    bentoShots: [
-      ...new Set([...mosaicIds, ...pool.map((entry) => entry.id)]),
-    ]
+    bentoShots: [...new Set([...mosaicIds, ...pool.map((entry) => entry.id)])]
       .filter((id) => exampleById.has(id) && media[id])
       .slice(0, 4)
       .map((id) => media[id].src),
@@ -328,10 +325,7 @@ export default function Home() {
               {t("Explore the resources")}
               <ArrowRight size={16} />
             </Link>
-            <Link
-              className="button button-secondary"
-              to={data.docs.start}
-            >
+            <Link className="button button-secondary" to={data.docs.start}>
               {t("Find a starting point")}
               <ArrowUpRight size={16} />
             </Link>
@@ -398,7 +392,9 @@ export default function Home() {
       <section className="hm-guides" aria-labelledby="hm-guides-title">
         <div className="hm-guides-head">
           <p className="kicker">{t("LESS GUESSWORK, MORE CONTEXT")}</p>
-          <h2 id="hm-guides-title" className="hm-title">{t("There is a guide for that.")}</h2>
+          <h2 id="hm-guides-title" className="hm-title">
+            {t("There is a guide for that.")}
+          </h2>
           <p>
             {t(
               "From your first playable loop to asset pipelines and world models. Read the notes without leaving the atlas.",

@@ -28,7 +28,3 @@ website/src/data/jamGameMedia.ts
 website/src/data/jamGames.ts
 website/src/data/open3d*Games.ts
 website/src/data/resources.json
-
-# Temporary: the site redesign is rewriting website/app/ and formats it when it
-# lands. Delete this entry in that commit, then run `npm run format`.
-website/app/
