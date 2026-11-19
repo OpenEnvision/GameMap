@@ -4789,10 +4789,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for AI Slop Arena",
-      "url": "https://github.com/gtko/ai-slop-arena",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows, Linux, or Android builds",
+      "url": "https://github.com/gtko/ai-slop-arena/releases/tag/v0.18.2",
+      "kind": "download",
+      "note": "The project publishes platform-labeled Windows and Linux builds and a debug-signed Android APK. Release notes and asset metadata were checked on 2026-11-19; none was run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -14599,10 +14599,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Pulsebreak",
-      "url": "https://github.com/xindomusic/pulsebreak",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download the macOS build",
+      "url": "https://github.com/xindomusic/pulsebreak/releases/tag/v2.0.0",
+      "kind": "download",
+      "note": "The creator published an ad-hoc-signed, non-notarized macOS universal game build. Release notes and asset metadata were checked on 2026-11-19; the app was not run."
     },
     "source": {
       "label": "Inspect the supplied source reference",

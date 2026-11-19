@@ -3257,6 +3257,41 @@
       "sha256": "7d02259a654d762d780ef24b9c7fbe24d57d3ef37585ad9db39727a44a3e8fac"
     },
     {
+      "id": "open3d-blameless",
+      "title": "Blameless",
+      "media": {
+        "src": "media/learning/open3d-blameless.webp",
+        "alt": "First-person neon arena combat with a golden weapon, enemies and live HUD.",
+        "caption": "Blameless creator-published gameplay screenshot.",
+        "sourceUrl": "https://github.com/Petyok/blameless/blob/HEAD/assets/og.jpg",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/Petyok/blameless/HEAD/assets/og.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "2c2ede9807b71e61a2d9a3cf395aec7639556b1c45c1e6e94ce798fdd47b3744",
+        "sourceFrameSHA256": "a5b8fb455574fca10c33f07d44e86c6ce90f24ae0baedca921182d20fec8744d",
+        "sourceWidth": 1200,
+        "sourceHeight": 630,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed entire 1200×630 raster. Actual first-person weapon and enemy arena, kill feed, streak x27, radar and sudo ability prompt are visible. This individual file is genuine gameplay despite its og.jpg filename; it is not the separately rejected four-image screenshots.jpg collage, a title card or promotional composition. Original raw GitHub response has no redirects; imageOriginAllowed and reviewFrame passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "6e00d9ac85090e8877224ead7acdf02f41e898c1ffccf740f9ff7fbae0076697",
+      "bytes": 88658
+    },
+    {
       "id": "open3d-petalwake",
       "title": "Petalwake",
       "media": {
@@ -7107,6 +7142,41 @@
       "sha256": "7903b12cb50d41fb6525837faeeda677af40a89dd86de4149ed70da465905b21"
     },
     {
+      "id": "open3d-country-lane-demo-horror-game",
+      "title": "Country Lane",
+      "media": {
+        "src": "media/learning/open3d-country-lane-demo-horror-game.webp",
+        "alt": "Lightning illuminates the rain-soaked village lane from the player camera.",
+        "caption": "Creator-published in-game frame from Country Lane during a thunderstorm.",
+        "sourceUrl": "https://github.com/MingqiZhang0/country-lane-demo-horror-game/blob/HEAD/tools/v3_segE_flash.png",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/MingqiZhang0/country-lane-demo-horror-game/HEAD/tools/v3_segE_flash.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "cd231c9210904130234b110ad1cbb82933dd89acb0fd1fbaa568893586ef4bad",
+        "sourceFrameSHA256": "5870663f56f93ec5424916397e7520aec5c413a4d4675d77affb5854ebc0a8ed",
+        "sourceWidth": 1600,
+        "sourceHeight": 900,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed complete 1600×900 frame: first-person rainy lane with houses, trees and red lantern in a lightning flash, no menu, promotional lettering or collage. Authenticity independently corroborated by author tools/storm_v3_test.gd: instantiates main.tscn, calls main.ui._start_game(), sets the actual player view and saves viewport at lightning event to this exact path. This is a creator automated in-game visual-test capture, not our execution. HTTP header log shows no redirect, original raw GitHub URL allowed by imageOriginAllowed, reviewFrame passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "5f251215c8459e53a0eab795418fa8d135fe38812f3bc3f3aaaa6f988d982467",
+      "bytes": 157840
+    },
+    {
       "id": "open3d-flappy-anna-3d",
       "title": "flappy-anna-3d",
       "media": {
@@ -9644,6 +9714,41 @@
       "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
       "sha256": "2e2982912aec830bdb7533ddc0c6eedf3502ad1e704eed473896dd8097ac61c1",
       "bytes": 53880
+    },
+    {
+      "id": "open3d-openarena",
+      "title": "OpenArena",
+      "media": {
+        "src": "media/learning/open3d-openarena.webp",
+        "alt": "OpenArena first-person gameplay in a torch-lit wooden corridor with weapon, crosshair, pickups and status HUD.",
+        "caption": "Creator-published OpenArena gameplay screenshot from the official media gallery. Image rights remain with their respective owners.",
+        "sourceUrl": "https://openarena.ws/media.html",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://openarena.ws/shots/czestdm1-2.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "a2cd68f8405f615eb3c796437594f9ca6fb832a2073dca4be3db2086e4e9ba2d",
+        "sourceFrameSHA256": "7d6378ec1915dabb2249c9ffa7ca4a24716a95d525a97812bbc359f62297da91",
+        "sourceWidth": 1280,
+        "sourceHeight": 960,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed the full reviewFrame PNG. Genuine first-person game scene with visible weapon, crosshair, pickups, ammo, health and score HUD. No title screen, cover, montage or cropping. Original gallery HTTP asset link was acquired successfully over HTTPS on the same official host; exact origin validator passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "ff53546d95a8def65934925f9f837423458015c9d8f5a83e0b1d341dc3de2a5d",
+      "bytes": 76558
     },
     {
       "id": "open3d-opendungeons",
@@ -22897,48 +23002,6 @@
       ]
     },
     {
-      "id": "open3d-blameless",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README explicitly labels screenshots.jpg as four screenshots; do not use a promotional collage as the single game screenshot.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/Petyok/blameless/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Petyok/blameless",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Petyok/blameless/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://blameless.petruha.ge",
-          "checkedAt": "2026-11-18",
-          "result": "Public retrieval failed: getaddrinfo EAI_AGAIN blameless.petruha.ge"
-        },
-        {
-          "url": "https://blameless.petruha.ge",
-          "checkedAt": "2026-11-18",
-          "result": "Static web retrieval was blocked by the tool; this is not evidence that the publication does not exist."
-        },
-        {
-          "url": "https://github.com/Petyok/blameless",
-          "checkedAt": "2026-11-18",
-          "result": "Recorded source-review outcome: research-incomplete."
-        },
-        {
-          "url": "https://blameless.petruha.ge",
-          "checkedAt": "2026-11-18",
-          "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
-        }
-      ]
-    },
-    {
       "id": "open3d-soccer-3d",
       "status": "research-incomplete",
       "reason": "Research incomplete or access-limited: Inspected the README content and repository root/release metadata. No non-badge image was found in the reviewed README; this does not establish absence from child directories or the author website.",
@@ -27267,58 +27330,6 @@
         },
         {
           "url": "https://github.com/andreasknopke/Skiing-Game",
-          "checkedAt": "2026-11-18",
-          "result": "Recorded source-review outcome: research-incomplete."
-        }
-      ]
-    },
-    {
-      "id": "open3d-country-lane-demo-horror-game",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README publication and media references reviewed. No accepted image from the inspected README; deeper source media and browser evidence remain unverified.",
-      "checkedSources": [
-        {
-          "url": "https://github.com/MingqiZhang0/country-lane-demo-horror-game/releases/tag/v0.1.1-demo",
-          "checkedAt": "2026-11-18",
-          "result": "The author README and release notes identify a Windows game ZIP containing the game executable; source archives are separately listed."
-        },
-        {
-          "url": "https://github.com/MingqiZhang0/country-lane-demo-horror-game/releases/expanded_assets/v0.1.1-demo",
-          "checkedAt": "2026-11-18",
-          "result": "HTTP 200 asset list publishes Country-Lane-Demo-v0.1.1-Windows-x86_64.zip separately from Source code archives."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/MingqiZhang0/country-lane-demo-horror-game/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/MingqiZhang0/country-lane-demo-horror-game",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/MingqiZhang0/country-lane-demo-horror-game/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/MingqiZhang0/country-lane-demo-horror-game/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-        },
-        {
-          "url": "https://github.com/MingqiZhang0/country-lane-demo-horror-game",
-          "checkedAt": "2026-11-18",
-          "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-        },
-        {
-          "url": "https://github.com/MingqiZhang0/country-lane-demo-horror-game/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-        },
-        {
-          "url": "https://github.com/MingqiZhang0/country-lane-demo-horror-game",
           "checkedAt": "2026-11-18",
           "result": "Recorded source-review outcome: research-incomplete."
         }
@@ -32748,53 +32759,6 @@
       ]
     },
     {
-      "id": "open3d-openarena",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/OpenArena/gamecode/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/OpenArena/gamecode",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/OpenArena/gamecode/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://openarena.ws/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/OpenArena/gamecode/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/OpenArena/gamecode",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/OpenArena/gamecode/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://openarena.ws/",
-          "checkedAt": "2026-11-18",
-          "result": "Public retrieval failed: getaddrinfo EAI_AGAIN openarena.ws"
-        }
-      ]
-    },
-    {
       "id": "open3d-scorched3d",
       "status": "research-incomplete",
       "reason": "No qualifying image verified. Author/source access was limited: Failed to fetch https://www.scorched3d.co.uk/: (400) Timeout fetching This is not evidence that no screenshot exists.",
@@ -36221,6 +36185,61 @@
         }
       },
       {
+        "id": "open3d-ai-slop-arena",
+        "sourceUrl": "https://github.com/gtko/ai-slop-arena",
+        "demo": {
+          "label": "Download Windows, Linux, or Android builds",
+          "url": "https://github.com/gtko/ai-slop-arena/releases/tag/v0.18.2",
+          "kind": "download",
+          "note": "The project publishes platform-labeled Windows and Linux builds and a debug-signed Android APK. Release notes and asset metadata were checked on 2026-11-19; none was run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/gtko/ai-slop-arena/releases/tag/v0.18.2",
+          "authorVerification": "The platform builds are published in GitHub Releases on the exact source repository recorded for this example.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The maintainer release lists separately named Windows and Linux game packages and a debug-signed Android package.",
+          "assets": [
+            {
+              "name": "AISlopArena-steam-windows.zip",
+              "platform": "Windows x64",
+              "url": "https://github.com/gtko/ai-slop-arena/releases/download/v0.18.2/AISlopArena-steam-windows.zip",
+              "kind": "game-binary"
+            },
+            {
+              "name": "AISlopArena-epic-windows.zip",
+              "platform": "Windows x64",
+              "url": "https://github.com/gtko/ai-slop-arena/releases/download/v0.18.2/AISlopArena-epic-windows.zip",
+              "kind": "game-binary"
+            },
+            {
+              "name": "AISlopArena-steam-linux.tar.gz",
+              "platform": "Linux x64",
+              "url": "https://github.com/gtko/ai-slop-arena/releases/download/v0.18.2/AISlopArena-steam-linux.tar.gz",
+              "kind": "game-binary"
+            },
+            {
+              "name": "AISlopArena-android.apk",
+              "platform": "Android",
+              "url": "https://github.com/gtko/ai-slop-arena/releases/download/v0.18.2/AISlopArena-android.apk",
+              "kind": "game-binary"
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://github.com/gtko/ai-slop-arena/releases/tag/v0.18.2",
+            "checkedAt": "2026-11-19",
+            "result": "The maintainer release lists separately named Windows and Linux game packages and a debug-signed Android package."
+          },
+          {
+            "url": "https://api.github.com/repos/gtko/ai-slop-arena/releases/403040929",
+            "checkedAt": "2026-11-19",
+            "result": "GitHub release metadata lists each matching authored binary asset with a direct release download URL and nonzero size; no asset was downloaded or run."
+          }
+        ]
+      },
+      {
         "id": "open3d-fableflight",
         "sourceUrl": "https://github.com/Rolandjg/fableflight",
         "demo": {
@@ -36711,6 +36730,43 @@
             }
           ]
         }
+      },
+      {
+        "id": "open3d-pulsebreak",
+        "sourceUrl": "https://github.com/xindomusic/pulsebreak",
+        "demo": {
+          "label": "Download the macOS build",
+          "url": "https://github.com/xindomusic/pulsebreak/releases/tag/v2.0.0",
+          "kind": "download",
+          "note": "The creator published an ad-hoc-signed, non-notarized macOS universal game build. Release notes and asset metadata were checked on 2026-11-19; the app was not run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/xindomusic/pulsebreak/releases/tag/v2.0.0",
+          "authorVerification": "The platform builds are published in GitHub Releases on the exact source repository recorded for this example.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The release identifies the universal packaged macOS game, distinguishes its checksum file, and states that the app is ad-hoc signed but not notarized.",
+          "assets": [
+            {
+              "name": "Pulsebreak-2.0.0-macOS-universal.zip",
+              "platform": "macOS x86_64 and arm64",
+              "url": "https://github.com/xindomusic/pulsebreak/releases/download/v2.0.0/Pulsebreak-2.0.0-macOS-universal.zip",
+              "kind": "game-binary"
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://github.com/xindomusic/pulsebreak/releases/tag/v2.0.0",
+            "checkedAt": "2026-11-19",
+            "result": "The release identifies the universal packaged macOS game, distinguishes its checksum file, and states that the app is ad-hoc signed but not notarized."
+          },
+          {
+            "url": "https://api.github.com/repos/xindomusic/pulsebreak/releases/424374122",
+            "checkedAt": "2026-11-19",
+            "result": "GitHub release metadata lists each matching authored binary asset with a direct release download URL and nonzero size; no asset was downloaded or run."
+          }
+        ]
       },
       {
         "id": "open3d-desert-velocity",
@@ -47733,53 +47789,6 @@
         ]
       },
       {
-        "id": "open3d-ai-slop-arena",
-        "status": "research-incomplete",
-        "reason": "Research incomplete: no new author distribution or sandbox-rendered game was verified in this review. Existing demo data is preserved; this does not establish that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://github.com/gtko/ai-slop-arena",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/gtko/ai-slop-arena/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/gtko/ai-slop-arena",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/gtko/ai-slop-arena/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://ai-slop-arena.gtux-prog.workers.dev/play",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN ai-slop-arena.gtux-prog.workers.dev"
-          },
-          {
-            "url": "https://ai-slop-arena.gtux-prog.workers.dev/play",
-            "checkedAt": "2026-11-18",
-            "result": "Static web retrieval was blocked by the tool; this is not evidence that the publication does not exist."
-          },
-          {
-            "url": "https://github.com/gtko/ai-slop-arena",
-            "checkedAt": "2026-11-18",
-            "result": "Recorded source-review outcome: research-incomplete."
-          },
-          {
-            "url": "https://ai-slop-arena.gtux-prog.workers.dev/play",
-            "checkedAt": "2026-11-18",
-            "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
-          }
-        ]
-      },
-      {
         "id": "open3d-cini-ustasi",
         "status": "research-incomplete",
         "reason": "Research incomplete: no new author distribution or sandbox-rendered game was verified in this review. Existing demo data is preserved; this does not establish that no release exists.",
@@ -57093,53 +57102,6 @@
             "url": "https://krasimirkralev.github.io/harvest-hollow/",
             "checkedAt": "2026-11-18",
             "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
-          }
-        ]
-      },
-      {
-        "id": "open3d-pulsebreak",
-        "status": "research-incomplete",
-        "reason": "Research incomplete: no new author distribution or sandbox-rendered game was verified in this review. Existing demo data is preserved; this does not establish that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://github.com/xindomusic/pulsebreak",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/xindomusic/pulsebreak/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/xindomusic/pulsebreak",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/xindomusic/pulsebreak/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/xindomusic/pulsebreak/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-          },
-          {
-            "url": "https://github.com/xindomusic/pulsebreak",
-            "checkedAt": "2026-11-18",
-            "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-          },
-          {
-            "url": "https://github.com/xindomusic/pulsebreak/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-          },
-          {
-            "url": "https://github.com/xindomusic/pulsebreak",
-            "checkedAt": "2026-11-18",
-            "result": "Recorded source-review outcome: research-incomplete."
           }
         ]
       },

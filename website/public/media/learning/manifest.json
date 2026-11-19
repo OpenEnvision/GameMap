@@ -6265,6 +6265,20 @@
       "sha256": "2e2982912aec830bdb7533ddc0c6eedf3502ad1e704eed473896dd8097ac61c1"
     },
     {
+      "id": "open3d-openarena",
+      "src": "media/learning/open3d-openarena.webp",
+      "alt": "OpenArena first-person gameplay in a torch-lit wooden corridor with weapon, crosshair, pickups and status HUD.",
+      "caption": "Creator-published OpenArena gameplay screenshot from the official media gallery. Image rights remain with their respective owners.",
+      "sourceUrl": "https://openarena.ws/media.html",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://openarena.ws/shots/czestdm1-2.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 76558,
+      "sha256": "ff53546d95a8def65934925f9f837423458015c9d8f5a83e0b1d341dc3de2a5d"
+    },
+    {
       "id": "open3d-opendungeons",
       "src": "media/learning/open3d-opendungeons.webp",
       "alt": "An overhead dungeon view shows robed figures, bookshelves and stone rooms beneath resource and minimap indicators.",
@@ -10617,6 +10631,20 @@
       "sha256": "7d02259a654d762d780ef24b9c7fbe24d57d3ef37585ad9db39727a44a3e8fac"
     },
     {
+      "id": "open3d-blameless",
+      "src": "media/learning/open3d-blameless.webp",
+      "alt": "First-person neon arena combat with a golden weapon, enemies and live HUD.",
+      "caption": "Blameless creator-published gameplay screenshot.",
+      "sourceUrl": "https://github.com/Petyok/blameless/blob/HEAD/assets/og.jpg",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/Petyok/blameless/HEAD/assets/og.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 88658,
+      "sha256": "6e00d9ac85090e8877224ead7acdf02f41e898c1ffccf740f9ff7fbae0076697"
+    },
+    {
       "id": "open3d-petalwake",
       "src": "media/learning/open3d-petalwake.webp",
       "alt": "A small rider flies low over a flower meadow, leaving a visible wake through the flowers.",
@@ -12154,6 +12182,20 @@
       "height": 720,
       "bytes": 141888,
       "sha256": "7903b12cb50d41fb6525837faeeda677af40a89dd86de4149ed70da465905b21"
+    },
+    {
+      "id": "open3d-country-lane-demo-horror-game",
+      "src": "media/learning/open3d-country-lane-demo-horror-game.webp",
+      "alt": "Lightning illuminates the rain-soaked village lane from the player camera.",
+      "caption": "Creator-published in-game frame from Country Lane during a thunderstorm.",
+      "sourceUrl": "https://github.com/MingqiZhang0/country-lane-demo-horror-game/blob/HEAD/tools/v3_segE_flash.png",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/MingqiZhang0/country-lane-demo-horror-game/HEAD/tools/v3_segE_flash.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 157840,
+      "sha256": "5f251215c8459e53a0eab795418fa8d135fe38812f3bc3f3aaaa6f988d982467"
     },
     {
       "id": "open3d-flappy-anna-3d",

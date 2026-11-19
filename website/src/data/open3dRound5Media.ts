@@ -898,6 +898,18 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-blameless": {
+    src: "media/learning/open3d-blameless.webp",
+    alt: "First-person neon arena combat with a golden weapon, enemies and live HUD.",
+    caption: "Blameless creator-published gameplay screenshot.",
+    sourceUrl: "https://github.com/Petyok/blameless/blob/HEAD/assets/og.jpg",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/Petyok/blameless/HEAD/assets/og.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-petalwake": {
     src: "media/learning/open3d-petalwake.webp",
     alt: "A small rider flies low over a flower meadow, leaving a visible wake through the flowers.",
@@ -2346,6 +2358,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-country-lane-demo-horror-game": {
+    src: "media/learning/open3d-country-lane-demo-horror-game.webp",
+    alt: "Lightning illuminates the rain-soaked village lane from the player camera.",
+    caption:
+      "Creator-published in-game frame from Country Lane during a thunderstorm.",
+    sourceUrl:
+      "https://github.com/MingqiZhang0/country-lane-demo-horror-game/blob/HEAD/tools/v3_segE_flash.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/MingqiZhang0/country-lane-demo-horror-game/HEAD/tools/v3_segE_flash.png",
+    width: 1280,
+    height: 720,
+  },
   "open3d-flappy-anna-3d": {
     src: "media/learning/open3d-flappy-anna-3d.webp",
     alt: "A small flying character passes stone pillars above a low-poly landscape with a score visible.",
@@ -3266,6 +3292,18 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-19",
     originalImageUrl:
       "https://neverball.org/images/screenshots/neverball-01.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-openarena": {
+    src: "media/learning/open3d-openarena.webp",
+    alt: "OpenArena first-person gameplay in a torch-lit wooden corridor with weapon, crosshair, pickups and status HUD.",
+    caption:
+      "Creator-published OpenArena gameplay screenshot from the official media gallery. Image rights remain with their respective owners.",
+    sourceUrl: "https://openarena.ws/media.html",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl: "https://openarena.ws/shots/czestdm1-2.jpg",
     width: 1280,
     height: 720,
   },
