@@ -11618,6 +11618,42 @@
       "bytes": 140444
     },
     {
+      "id": "open3d-vega-strike",
+      "title": "Vega Strike",
+      "media": {
+        "src": "media/learning/open3d-vega-strike.webp",
+        "alt": "Vega Strike cockpit view with a central aiming reticle, a bright nebula and displays for fuel, weapons and the targeted planet.",
+        "caption": "Creator-published gameplay: A gameplay frame from a flight recording published by a Vega Strike contributor. The cockpit is banking across a bright patch of stars. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/vegastrike/Vega-Strike-Engine-Source/issues/1264",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://github.com/user-attachments/assets/1717ac23-c451-4822-b3d1-29deaa81c07e",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "4101fd8b1cbceeffb00d7aed991a7db437ef7eab1c583da372c63ebce785ba79",
+        "sourceFrameSHA256": "35a5a599bcdd563c20967b5ce983576a09714186b8591371d5942ca511a59312",
+        "sourceWidth": 1920,
+        "sourceHeight": 1080,
+        "originalFormat": "mp4",
+        "frameIndex": 5,
+        "sourceFrames": 117,
+        "visualFinding": "Personally inspected uncropped frame 5 in the original contributor MP4. The first-person ship banks through a field of stars with a targeting reticle, weapon and communications displays, fuel gauges and a planet target preview. This is a single live flight frame with no menu, title, watermark, crop or editor panel. The exact engine contributor evertvorster published his flight while testing the engine and assets directly from their master branch; his contributions include the merged upstream pull request #1871. The complete MP4 and exact extracted frame were hashed, and existing origin and frame checks passed.",
+        "frameOffsetSeconds": 0.166667
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "c2332efdcfc1e210ab0e8c183c6797e201a4e9556416129b7f0969fe6db6e69b",
+      "bytes": 39370
+    },
+    {
       "id": "open3d-veloren",
       "title": "Veloren",
       "media": {
@@ -20825,6 +20861,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 27964,
       "sha256": "9aa0c3c43dc7cbe2f0a7fa630736266a2ab17c1e743c8171d227e3121220f1c9"
+    },
+    {
+      "id": "open3d-six-shootin-cats",
+      "title": "Six Shootin’ Cats",
+      "media": {
+        "src": "media/learning/open3d-six-shootin-cats.webp",
+        "alt": "Two low-poly cartoon cats sit across a table strewn with green bills in a dim billiard room.",
+        "caption": "Creator-published screenshot of the in-game table scene in Six Shootin’ Cats. Image rights remain with the respective creator.",
+        "sourceUrl": "https://entikan.itch.io/six-shootin-cats",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1hZ2UvMzk4NDg0LzE5NzQ1NzkucG5n/original/SlMEo9.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "222505829bc7a3fd7a17d237884aea9bbba0250311c08edaa9a768d83116a0af",
+        "sourceFrameSHA256": "317e43a40ff1f7138cbfe54bf640c2671e935afed266a4a58af610a0be58d4b9",
+        "sourceWidth": 835,
+        "sourceHeight": 539,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally reviewed all four standalone creator gallery originals. This wide view shows both in-game cats at the table, with bills, drinks, hanging lamps and a pool table around them; there is no menu, title, advertising overlay or collage."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "759827cbdef89043d1fbda9007a67255ee7d910491c39f176bac5f68699391d1",
+      "bytes": 21326
     },
     {
       "id": "open3d-the-little-drop",
@@ -34510,6 +34581,11 @@
           "url": "https://codeberg.org/mineclonia/mineclonia",
           "checkedAt": "2026-11-19",
           "result": "Canonical repository refused Web retrieval through robots restrictions; no bypass attempted. The repository listed by third-party mirrors does not establish independently qualifying original image evidence."
+        },
+        {
+          "url": "https://content.luanti.org/packages/ryvnf/mineclonia/",
+          "result": "Previously cached exact ContentDB package titles Mineclonia, credits ryvnf and links source and Mineclonia-org wiki. Its gallery originals explicitly link cdn.content.luanti.org/uploads (e.g. Farm-0.99, village, Warped Forest), a different origin rejected by imageOriginAllowed, not changed. Linked Mineclonia wiki and same-origin home-mcla-view.png fetch HTTP 200. Physically reviewed the full panorama 1920×480: wide staged settlement/farm header, no HUD or active play, so rejected. Other exact wiki candidate tool images visually checked are isolated sprites; inventory-help images are container UI rather than landscape gameplay. Official Codeberg source repository previously blocked by robots; no retry/bypass.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -34562,6 +34638,11 @@
           "url": "https://content.luanti.org/packages/Minetest/minetest_game/",
           "checkedAt": "2026-11-19",
           "result": "Observed redirect from requested package page; no exact creator original verified."
+        },
+        {
+          "url": "https://content.luanti.org/packages/Luanti/minetest_game/",
+          "result": "Author official package formerly /packages/Minetest/minetest_game/ redirects onto this canonical Luanti-owned package, which displayed Anubis proof-of-work challenge. No CAPTCHA or JS challenge attempted. Exact 350×233 raw package screenshot thumbnail visually reviewed: grass, forest and tower, no player or input/HUD indicating active play. Official developer Luanti gallery's birch forest is real engine output but neither the asset nor publishing page establishes exact unmodified Minetest Game and no play is visible. Luanti Android engine F-Droid screenshot PR explicitly acknowledges various games are shown and does not establish exact Minetest Game identity. No engine figure or mod substituted.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -34749,88 +34830,6 @@
       ]
     },
     {
-      "id": "open3d-vega-strike",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Original official install page and exact SourceForge release list legacy standalone Windows native game package. Newer engine-only and data-only packages not recorded as whole game; official legacy same-origin gallery images 404 and original forum gallery redirects away. Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/vegastrike/Vega-Strike-Engine-Source/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/vegastrike/Vega-Strike-Engine-Source",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/vegastrike/Vega-Strike-Engine-Source/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://www.vega-strike.org/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/vegastrike/Vega-Strike-Engine-Source/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/vegastrike/Vega-Strike-Engine-Source",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/vegastrike/Vega-Strike-Engine-Source/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://vegastrike.sourceforge.net/getfiles/",
-          "checkedAt": "2026-11-19",
-          "result": "Original official install page and exact SourceForge release list legacy standalone Windows native game package. Newer engine-only and data-only packages not recorded as whole game; official legacy same-origin gallery images 404 and original forum gallery redirects away."
-        },
-        {
-          "url": "https://api.github.com/repos/vegastrike/Vega-Strike-Engine-Source/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-19",
-          "result": "Inspected complete author repository tree (1372 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
-        },
-        {
-          "url": "https://www.vega-strike.org/",
-          "checkedAt": "2026-11-19",
-          "result": "Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted."
-        },
-        {
-          "url": "https://www.vega-strike.org/about/",
-          "checkedAt": "2026-11-19",
-          "result": "Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted."
-        },
-        {
-          "url": "https://www.vega-strike.org/games/vs-upon-the-coldest-sea/",
-          "checkedAt": "2026-11-19",
-          "result": "Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted."
-        },
-        {
-          "url": "https://vegastrike.sourceforge.net/gallery/",
-          "checkedAt": "2026-11-19",
-          "result": "Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted."
-        },
-        {
-          "url": "https://forums.vega-strike.org/cpg/thumbnails.php?album=11",
-          "checkedAt": "2026-11-19",
-          "result": "Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted."
-        },
-        {
-          "url": "https://wiki.vega-strike.org",
-          "checkedAt": "2026-11-19",
-          "result": "Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted."
-        }
-      ]
-    },
-    {
       "id": "open3d-voxelibre",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -34869,6 +34868,11 @@
           "url": "https://github.com/VoxeLibre/VoxeLibre/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://content.luanti.org/packages/wuzzy/mineclone2/",
+          "result": "The project organization's mirror README expressly identifies the canonical source and exact Wuzzy ContentDB account; official RELEASE.md names the same account as the maintainers' release channel, not an arbitrary mirror. Exact ContentDB page showed Anubis; no challenge attempted. Voxelibre.org returned 503 in fresh direct read-only check, and canonical Mesehub read was robots-blocked. Prior raw package screenshot physically reviewed as 300×200 ambiguous avatar/lava thumbnail, no activity/HUD. No eligible first-party video/frame or screenshot confirmed.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -35880,7 +35884,7 @@
     {
       "id": "open3d-billardgl",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No reachable official repository capture or publisher-owned original was verified. The developer domain redirects away from game content and the expected upstream SourceForge SVN route returns 404. Existing distro/editorial reports and university comparison figure are not first-party gameplay originals.",
       "checkedSources": [
         {
           "url": "https://billardgl.sourceforge.net/",
@@ -35891,6 +35895,21 @@
           "url": "https://www.billardgl.de/",
           "checkedAt": "2026-11-19",
           "result": "Legacy official developer site failed to fetch in this cloud; no alternative screenshot accepted."
+        },
+        {
+          "url": "https://svn.code.sf.net/p/billardgl/code/",
+          "result": "HTTP 404 for expected project SVN host path; no upstream resource directory verified.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://www.billardgl.de/",
+          "result": "HTTP 301 to apex domain; prior exact follow-up found an unrelated German directory.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://sourceforge.net/projects/billardgl/",
+          "result": "Original project and source package listing identified; no source-origin gameplay original confirmed.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -36626,6 +36645,21 @@
           "url": "https://lvmorap.github.io/nexus-arena/",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://api.github.com/repos/lvmorap/nexus-arena/git/trees/HEAD?recursive=1",
+          "result": "HTTP 200; untruncated 74-entry author tree contains no standalone raster or video path in the checked formats.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/lvmorap/nexus-arena/issues?state=all&per_page=50",
+          "result": "HTTP 200; all eight returned public issue/PR bodies reviewed. The only two image attachments are explicitly labeled menu scene/screens and posted by Copilot (#1 and #4), not active gameplay. No download performed for already disqualified menu assets.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/lvmorap/nexus-arena",
+          "result": "Indexed exact repository confirms author Pages and WebGL2 source. Focused discovery did not identify a separate creator devlog or eligible gameplay image. No game rendering attempt was made.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -36673,6 +36707,31 @@
           "url": "https://js13kgames.com/2022/games/endless-death",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://api.github.com/repos/js13kGames/endless-death",
+          "result": "HTTP 200; competition mirror metadata confirms developer’s original dth12/JS13K.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://js13kgames.com/people/dth12",
+          "result": "Contest author profile names Dongyun Shin and exact 2022 entry. Focused public author-name discovery did not establish an independent authored gameplay original.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/dth12/JS13K/git/trees/HEAD?recursive=1",
+          "result": "HTTP 200; untruncated 67-entry author tree contains game sprites, template/logo images and one screenshot.png candidate.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/dth12/JS13K/HEAD/screenshot.png",
+          "result": "Personally inspected original 699×535 PNG: browser address bar on localhost and a plain white A-Frame starter cube, not the exact game. Rejected. Original SHA256 a861e99030224f0487e7f2dc4c259bf7f12e9dffc0d43e435a262586db8402f7.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/dth12/JS13K/issues?state=all&per_page=35",
+          "result": "HTTP 200; most recent 35 public issue/PR records obtained from the developer’s repository. No independently verified creator gameplay image emerged in this bounded pass.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -36782,6 +36841,16 @@
           "url": "https://api.github.com/repos/matzebond/gesichtsunfall/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (626 items); inventoried 11 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://cloud.maschm.de/s/Pdgr6zdstFHPjS6",
+          "result": "Checked public author release metadata for both platform folders. The directories contain the actual native executables and runtime libraries, but no screenshots or video.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/matzebond/gesichtsunfall",
+          "result": "The author source tree contains screenshot-taking code, textures, banners and icons, but no separate qualifying published gameplay frame.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -36931,6 +37000,21 @@
           "url": "https://itch.io/jam/cpp-halloween-horror-jam-2022/rate/1749527",
           "checkedAt": "2026-11-19",
           "result": "Exact creator submission, no separately published gameplay screenshot visible."
+        },
+        {
+          "url": "https://api.github.com/repos/whattheheckman/cppHalloweenJam/issues?state=all&per_page=35",
+          "result": "HTTP 200 and empty; no creator issue attachments.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://itch.io/jam/cpp-halloween-horror-jam-2022/rate/1749527",
+          "result": "Fresh indexed discovery for both the submitted spelling and corrected alternate spelling leads back to exact composer’s previously checked jam entry. No independent creator publication surfaced; no prior blocked direct access retried.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://whattheheckman.itch.io/misty",
+          "result": "Stored exact author-page evidence has no original screenshot/video section assets. Existing verified desktop download retained unchanged; no package requested.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -37117,6 +37201,21 @@
           "url": "https://github.com/thmsgntz/bone-collector",
           "checkedAt": "2026-11-19",
           "result": "Viewed exact root bone-collector2.png. A logo and skeleton build-up illustration with arrows, not gameplay."
+        },
+        {
+          "url": "https://api.github.com/repos/thmsgntz/bone-collector/issues?state=all&per_page=50",
+          "result": "HTTP 200; reviewed all 20 returned public issue/PR bodies. Creator thmsgntz’s issue #5 links a YouTube video, not a direct standalone raster. No eligible image attachment in the returned issues.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://itch.io/jam/bevy-jam-2/rate/1682052",
+          "result": "Exact official entry identified from the cached author publication; HTTP 429 on one request, stopped without retry or alternate path.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://drusyc123.itch.io/bone-collector",
+          "result": "Existing cached HTML corroborates exact author and jam entry. Sole linked original matches previously rejected promotional build-up collage; no repeated image transfer.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -37185,7 +37284,7 @@
     {
       "id": "open3d-stormbaan-coureur",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The author homepage and download page were read. The reviewed suspension image is an isolated vehicle model and the animated candidate is a stereoscopic-glasses promotional graphic; neither is an eligible game scene. Reviewed same-origin originals contain suspension render, unrelated logo and VR glasses diagram, respectively, not singular gameplay. The web page's recordings are YouTube embeds without stable original media on an approved origin.",
+      "reason": "Research incomplete or access-limited: The author homepage and download page were read. The reviewed suspension image is an isolated vehicle model and the animated candidate is a stereoscopic-glasses promotional graphic; neither is an eligible game scene. Reviewed same-origin originals contain suspension render, unrelated logo and VR glasses diagram, respectively, not singular gameplay. The web page's recordings are YouTube embeds without stable original media on an approved origin. The creator site provides title and suspension art, YouTube and packages, not a standalone original in-play image. Bram's older credited submission to The Linux Game Tome survives only via a different archival mirror that does not qualify; neither its screenshot nor a crop of cover art was imported.",
       "checkedSources": [
         {
           "url": "https://www.stolk.org/stormbaancoureur/download/",
@@ -37221,6 +37320,21 @@
           "url": "https://www.stolk.org/stormbaancoureur/vr_anim.gif",
           "checkedAt": "2026-11-19",
           "result": "Reviewed same-origin originals contain suspension render, unrelated logo and VR glasses diagram, respectively, not singular gameplay. The web page's recordings are YouTube embeds without stable original media on an approved origin."
+        },
+        {
+          "url": "https://www.stolk.org/stormbaancoureur/",
+          "result": "HTTP 200. Current page titled and credited to Bram Stolk. Newly downloaded header2.png was visually confirmed to be plain project title; prior suspension graphic was rejected.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://www.stolk.org/stormbaancoureur/download/",
+          "result": "HTTP 200 for exact download directory page. Lists source and packages, no gameplay media. No package downloaded or executed.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://happypenguin.yeold.org/games/stormbaan-coureur.html",
+          "result": "HTTP 200 archival mirror, historical listing submitted by author account mazarax. Served screenshot points to mirror-local screenshots/dump.png, not an independently reachable first-party original.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -37626,53 +37740,11 @@
           "url": "https://globalgamejam.org/2023/games/rootin-n-shootin-1",
           "checkedAt": "2026-11-19",
           "result": "HTTP 403; no bypass."
-        }
-      ]
-    },
-    {
-      "id": "open3d-six-shootin-cats",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Author competition gallery found, but original images use s3.eu-west-2.amazonaws.com, outside the existing allowed image origins. The exact author itch page publishes a header only, with no gameplay gallery. The original GitHub repo route redirects; the canonical tree request was denied. PyWeek creator screenshots follow the previously rejected cross-origin pairing, so those images were not retried or relabeled.",
-      "checkedSources": [
-        {
-          "url": "https://pyweek.org/e/secretgame/",
-          "checkedAt": "2026-11-18",
-          "result": "Read the author publication and identified native platform package names; no package was downloaded or executed."
         },
         {
-          "url": "https://raw.githubusercontent.com/momojohobo/pyweek27-six/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/momojohobo/pyweek27-six",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 301; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://github.com/momojohobo/pyweek27-six/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 301; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://pyweek.org/e/secretgame/",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://entikan.itch.io/six-shootin-cats",
-          "checkedAt": "2026-11-19",
-          "result": "Confirmed same PyWeek entry/team; indexed author page shows a header but no separate gallery."
-        },
-        {
-          "url": "https://api.github.com/repositories/177671882/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-19",
-          "result": "HTTP 403 after following the legacy endpoint’s canonical public repository ID; no access bypass attempted."
-        },
-        {
-          "url": "https://pyweek.org/e/secretgame/",
-          "checkedAt": "2026-11-19",
-          "result": "Creator jam listing names screenshots, but its known image-origin pairing is not permitted; not retried."
+          "url": "https://github.com/henriksen-marcus/Game-Jam-2023",
+          "result": "The exact author README contains an in-game montage and a team photo; neither is a standalone gameplay frame. The historical jam link from the author README remained inaccessible to the lookup tool, and exact project/author/description and jam-slug searches surfaced no independent credited team portfolio or standalone gameplay original. Similarly named releases do not match the floating islands and 2v2 root bridge system. Previously verified Windows release remains unchanged.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -44415,6 +44487,59 @@
               "kind": "game-binary",
               "platform": "Android",
               "uploadId": "6565452"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-gesichtsunfall",
+        "sourceUrl": "https://github.com/matzebond/gesichtsunfall",
+        "demo": {
+          "kind": "download",
+          "label": "Download Windows or Linux build",
+          "url": "https://cloud.maschm.de/s/Pdgr6zdstFHPjS6",
+          "note": "The project’s official release share lists Windows and Linux native builds. Download the full platform folder, including its FMOD libraries. Public release metadata verified on 2026-11-19; no package was downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://globalgamejam.org/games/2026/gesichtsunfall-4",
+            "checkedAt": "2026-11-19",
+            "result": "Exact creator-submitted project explicitly links the author cloud share for the post-jam native release and explains why the game has no browser build."
+          },
+          {
+            "url": "https://cloud.maschm.de/s/Pdgr6zdstFHPjS6",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200 on the project-specific public share named Gesichtsunfall, branded Matthias’ Nextcloud. No login required; no files were downloaded."
+          },
+          {
+            "url": "https://cloud.maschm.de/public.php/dav/files/Pdgr6zdstFHPjS6/Gesichtsunfall_win/",
+            "checkedAt": "2026-11-19",
+            "result": "Public WebDAV listing returned HTTP 207 and exposes Gesichtsunfall.exe (308578280 bytes, application/x-ms-dos-executable) and bundled FMOD DLLs."
+          },
+          {
+            "url": "https://cloud.maschm.de/public.php/dav/files/Pdgr6zdstFHPjS6/Gesichtsunfall_linux/",
+            "checkedAt": "2026-11-19",
+            "result": "Public WebDAV listing returned HTTP 207 and exposes gesichtsunfall.x86_64 (275141144 bytes) and bundled FMOD shared libraries."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://cloud.maschm.de/s/Pdgr6zdstFHPjS6",
+          "authorVerification": "The exact official Global Game Jam project links this public share for the developer’s post-jam release. The share is named Gesichtsunfall and identifies Matthias, the repository’s copyright holder.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Public read-only listing metadata shows the exact platform game executables with sizes and their runtime libraries in two platform folders. These are post-jam game distributions, not an automatic source archive.",
+          "assets": [
+            {
+              "name": "Gesichtsunfall.exe",
+              "url": "https://cloud.maschm.de/public.php/dav/files/Pdgr6zdstFHPjS6/Gesichtsunfall_win/Gesichtsunfall.exe",
+              "kind": "game-binary",
+              "platform": "Windows"
+            },
+            {
+              "name": "gesichtsunfall.x86_64",
+              "url": "https://cloud.maschm.de/public.php/dav/files/Pdgr6zdstFHPjS6/Gesichtsunfall_linux/gesichtsunfall.x86_64",
+              "kind": "game-binary",
+              "platform": "Linux"
             }
           ]
         }
@@ -74267,58 +74392,6 @@
             "url": "https://queenofsquiggles.itch.io/chuffelabs",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
-        "id": "open3d-gesichtsunfall",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No browser-rendered author game or sufficiently evidenced native binary publication has been verified in this review; existing demo remains unchanged. Research incomplete or access-limited: No browser-rendered author game or sufficiently evidenced native binary publication has been verified in this review; existing demo remains unchanged. Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/matzebond/gesichtsunfall/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/matzebond/gesichtsunfall",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/matzebond/gesichtsunfall/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/matzebond/gesichtsunfall/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Source retrieval HTTP 200; not a browser playability check."
-          },
-          {
-            "url": "https://github.com/matzebond/gesichtsunfall",
-            "checkedAt": "2026-11-18",
-            "result": "Source retrieval HTTP 200; not a browser playability check."
-          },
-          {
-            "url": "https://github.com/matzebond/gesichtsunfall/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Source retrieval HTTP 200; not a browser playability check."
-          },
-          {
-            "url": "https://globalgamejam.org/games/2026/gesichtsunfall-4",
-            "checkedAt": "2026-11-18",
-            "result": "Author publication request returned HTTP 403."
-          },
-          {
-            "url": "https://globalgamejam.org/games/2026/gesichtsunfall-4",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 403; this is a retrieval outcome, not proof that the game or release is absent."
-          },
-          {
-            "url": "https://github.com/matzebond/gesichtsunfall/releases",
-            "checkedAt": "2026-11-19",
-            "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
           }
         ]
       },

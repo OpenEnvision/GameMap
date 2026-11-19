@@ -3998,6 +3998,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-vega-strike": {
+    src: "media/learning/open3d-vega-strike.webp",
+    alt: "Vega Strike cockpit view with a central aiming reticle, a bright nebula and displays for fuel, weapons and the targeted planet.",
+    caption:
+      "Creator-published gameplay: A gameplay frame from a flight recording published by a Vega Strike contributor. The cockpit is banking across a bright patch of stars. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/vegastrike/Vega-Strike-Engine-Source/issues/1264",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://github.com/user-attachments/assets/1717ac23-c451-4822-b3d1-29deaa81c07e",
+    width: 1280,
+    height: 720,
+  },
   "open3d-veloren": {
     src: "media/learning/open3d-veloren.webp",
     alt: "A blocky forest surrounds a tall decorated totem in a rendered outdoor game scene.",
@@ -7014,6 +7028,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     caption:
       "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-rally-mandaw.webp",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-six-shootin-cats": {
+    src: "media/learning/open3d-six-shootin-cats.webp",
+    alt: "Two low-poly cartoon cats sit across a table strewn with green bills in a dim billiard room.",
+    caption:
+      "Creator-published screenshot of the in-game table scene in Six Shootin’ Cats. Image rights remain with the respective creator.",
+    sourceUrl: "https://entikan.itch.io/six-shootin-cats",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1hZ2UvMzk4NDg0LzE5NzQ1NzkucG5n/original/SlMEo9.png",
     width: 1280,
     height: 720,
   },

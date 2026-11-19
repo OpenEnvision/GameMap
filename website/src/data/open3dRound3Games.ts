@@ -1549,10 +1549,10 @@ export const open3dRound3Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Gesichtsunfall",
-      "url": "https://github.com/matzebond/gesichtsunfall",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download Windows or Linux build",
+      "url": "https://cloud.maschm.de/s/Pdgr6zdstFHPjS6",
+      "note": "The project’s official release share lists Windows and Linux native builds. Download the full platform folder, including its FMOD libraries. Public release metadata verified on 2026-11-19; no package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
