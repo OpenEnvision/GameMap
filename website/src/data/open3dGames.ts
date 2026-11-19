@@ -1054,10 +1054,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Boom",
-      "url": "https://github.com/FelicePollano/Boom",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Boom v0.2.0",
+      "url": "https://github.com/FelicePollano/Boom/releases/tag/v0.2.0",
+      "kind": "download",
+      "note": "The author’s v0.2.0 release contains a finished first level and an incomplete second level. It lists native Windows and Linux builds with a separate matching Boom.pck game-data file required alongside the executable. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1864,10 +1864,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Rapid Rescue",
-      "url": "https://github.com/arran-nz/RapidRescue",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Rapid Rescue v0.2.1",
+      "url": "https://github.com/arran-nz/RapidRescue/releases/tag/v0.2.1",
+      "kind": "download",
+      "note": "The official v0.2.1 release metadata confirms native game builds for 64-bit Windows and Linux, not auto-generated source archives. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2539,10 +2539,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Doggy Man 3D",
-      "url": "https://github.com/0xMartin/DoggyMan3D",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Doggy Man 3D v0.3.1",
+      "url": "https://github.com/0xMartin/DoggyMan3D/releases/tag/0.3.1",
+      "kind": "download",
+      "note": "The author v0.3.1 release identifies desktop builds for Windows, Linux and Apple Silicon macOS, and Android APKs, separately from source archives. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4519,10 +4519,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Smokin’ Guns",
-      "url": "https://github.com/smokin-guns/SmokinGuns",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Smokin’ Guns 1.1",
+      "url": "https://www.smokin-guns.org/downloads",
+      "kind": "download",
+      "note": "The original game’s 1.1 download page lists a Windows EXE and Debian i386 DEB separately from mirrors, the universal archive and the unofficial Mac build. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -5104,10 +5104,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Vega Strike",
-      "url": "https://github.com/vegastrike/Vega-Strike-Engine-Source",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Vega Strike 0.5.1 (Windows)",
+      "url": "https://sourceforge.net/projects/vegastrike/files/vegastrike/0.5.1/",
+      "kind": "download",
+      "note": "The predecessor standalone Vega Strike 0.5.1.r1 release provides a native Windows game installer rather than an engine-only binary or assets-only archive. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

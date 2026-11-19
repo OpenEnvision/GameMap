@@ -2449,10 +2449,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Blackout Facility",
-      "url": "https://github.com/FahimKamal/UE5_MazeEscape",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Blackout Facility v1.0",
+      "url": "https://github.com/FahimKamal/UE5_MazeEscape/releases/tag/V-1.00",
+      "kind": "download",
+      "note": "The author release identifies the downloadable full Windows game with the BlackoutFacility executable. The exact uploaded game package is listed separately from the generated source archives. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

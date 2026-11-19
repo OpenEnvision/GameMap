@@ -8735,6 +8735,42 @@
       "bytes": 17780
     },
     {
+      "id": "open3d-the-adventures-of-captain-callisto",
+      "title": "The Adventures of Captain Callisto",
+      "media": {
+        "src": "media/learning/open3d-the-adventures-of-captain-callisto.webp",
+        "alt": "Captain Callisto jumps along floating tiled platforms near a green alien, with a star counter and jetpack controls on screen.",
+        "caption": "Creator-published gameplay recording of The Adventures of Captain Callisto, shown mid-jump on floating platforms. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/codyebberson/js13k-callisto/blob/main/README.md",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://user-images.githubusercontent.com/749094/133300747-98fbe8bd-565e-45a5-8b70-4fd4c5529d7e.mp4",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "ed3aec75193a23fd844dfcc454e14071105c9a2eff56873b136831bdea85557f",
+        "sourceFrameSHA256": "40787d69749e9ff5f2b40511294a78885cfc587282c7534344bbbd971cfa5604",
+        "sourceWidth": 854,
+        "sourceHeight": 480,
+        "originalFormat": "mp4",
+        "frameIndex": 1350,
+        "sourceFrames": 1686,
+        "visualFinding": "Personally inspected frame 1350 at 45.0 seconds from Cody Ebberson’s 854×480 README demo recording, distinct from his later commentary clip and the still with no HUD. A small astronaut, jump trail, giant green alien, floating tiled pathways and pickup dots are visible alongside the live 2/18 star tally, 0% jetpack indicator, 5.4 section timer and control overlay. No title or cinematic overlay.",
+        "frameOffsetSeconds": 45
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "19d9d5877eb21dbdca39573c4adf86506e099bfc17f6463698bbceee3db5244d",
+      "bytes": 30332
+    },
+    {
       "id": "open3d-underrun",
       "title": "Underrun",
       "media": {
@@ -9344,6 +9380,41 @@
       "bytes": 36044
     },
     {
+      "id": "open3d-rapid-rescue",
+      "title": "Rapid Rescue",
+      "media": {
+        "src": "media/learning/open3d-rapid-rescue.webp",
+        "alt": "Purple and orange pieces occupy a river maze as the mouse points at a movable tile.",
+        "caption": "Creator-published Rapid Rescue gameplay frame from the developer’s animated input demonstration. Image rights remain with their respective owners.",
+        "sourceUrl": "https://github.com/arran-nz/RapidRescue/blob/master/README.rst",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/arran-nz/RapidRescue/master/Images/input.gif",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "ffdb8eece30097c9654e463ac0e7d47d6d5c545ee7f323ef32495ba815a071a0",
+        "sourceFrameSHA256": "876b5209645fe8645499326dba2fcbd92a037ae3d58e701dffc0c8f574284fe4",
+        "sourceWidth": 683,
+        "sourceHeight": 589,
+        "originalFormat": "gif",
+        "frameIndex": 581,
+        "sourceFrames": 1163,
+        "visualFinding": "Personally viewed the selected full gameplay frame: a river maze has white directional arrows around the edges, a visible hand cursor, a protruding river tile on the left, and purple and orange pieces. The official README embeds this exact animated original to demonstrate the controls. Not title art, montage, or an editor."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "9a34c14a7694b9416fc09b069df85f29cafda13bbf9300e03816c2c58cd52232",
+      "bytes": 56778
+    },
+    {
       "id": "open3d-return-null",
       "title": "RETURN NULL",
       "media": {
@@ -9758,6 +9829,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "9dd983b249340e105c102aee5f507c4024d49ff5f98701671adba971652d7b47",
       "bytes": 91428
+    },
+    {
+      "id": "open3d-doggy-man-3d",
+      "title": "Doggy Man 3D",
+      "media": {
+        "src": "media/learning/open3d-doggy-man-3d.webp",
+        "alt": "Doggy Man stands with a sword and shield on a dark path beside on-screen Android controls.",
+        "caption": "Creator-published Doggy Man 3D gameplay screenshot from the original project’s Android build. Image rights remain with their respective owners.",
+        "sourceUrl": "https://github.com/0xMartin/DoggyMan3D/blob/main/README.md",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/0xMartin/DoggyMan3D/main/doc/android_screenshot.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "d551af1da630c58b614bbdf28b209e1a881191436b1156664d014fee50036a39",
+        "sourceFrameSHA256": "e3d973a8f0a28dd4a699d606847ee456eb10844999f62ab94b1260727ee43a3f",
+        "sourceWidth": 2048,
+        "sourceHeight": 917,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed the full original Android game frame showing the player with sword and shield at Level 1, Home in fire, health and stamina meters, inventory slots, and movement and action touch controls. The author source README labels this exact original Android screenshot. No title screen, montage or editor."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "7011f1fce98c13e286f8fd7efbec90fad9192417045e8d4186e19f6ad256e2ce",
+      "bytes": 42840
     },
     {
       "id": "open3d-hoptons-trip",
@@ -13306,6 +13412,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "d7cc453cf290cabf7cc34b55a70f9ca1b9c91229f98f577493d49e7f855bc32a",
       "bytes": 113452
+    },
+    {
+      "id": "open3d-kubrick",
+      "title": "Kubrick",
+      "media": {
+        "src": "media/learning/open3d-kubrick.webp",
+        "alt": "A scrambled three-by-three cube shown from the front and back inside Kubrick.",
+        "caption": "Creator-published Kubrick gameplay screenshot from KDE’s AppStream source-image listing. Image rights remain with their respective owners.",
+        "sourceUrl": "https://metadata.neon.kde.org/appstream/release_noble/html/noble/main/metainfo/kubrick.html",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://metadata.neon.kde.org/appstream/release_noble/media/pool/org/kde/kubrick/79143f2a1f88523b53d95f3d328249a8/screenshots/image-1_orig.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "2a35fe76e2e7fa71ede747dbe623003e987694a963db34156e864a23bb3b6b36",
+        "sourceFrameSHA256": "6f15439af2f3ef4ee6e6f8be7dcde0443116fea830eac7cbd14ad1356375de4b",
+        "sourceWidth": 835,
+        "sourceHeight": 683,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed the complete 835 by 683 screenshot of the live Kubrick application: the front and back views display a scrambled cube, a status line reports four shuffling moves and the move field shows Singmaster notation. KDE Neon’s official metadata lists this as source-image, not a thumbnail. A separately fetched KDE Apps linked author CDN original decodes to exactly identical RGBA pixels at the same dimensions. No logo, splash, collage or title screen."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "5a60dbcd0db34ec1404421cd93f0bc0540141b971626751647839da6b3937d00",
+      "bytes": 39338
     },
     {
       "id": "open3d-lasercrabs-deceiver",
@@ -20483,6 +20624,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 46292,
       "sha256": "c853a92f07a2450ce1adaabe885b77915da9eedc5d3567006c540116e90e1ba5"
+    },
+    {
+      "id": "open3d-nodecore",
+      "title": "NodeCore",
+      "media": {
+        "src": "media/learning/open3d-nodecore.webp",
+        "alt": "A voxel workshop with fire, crafting shelves and held items seen above the NodeCore inventory bar.",
+        "caption": "Creator-published NodeCore gameplay screenshot from the author’s official source repository. Image rights remain with their respective owners.",
+        "sourceUrl": "https://gitlab.com/sztest/nodecore/-/blob/master/screenshot.png",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://gitlab.com/sztest/nodecore/-/raw/master/screenshot.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "e6622bf9cc05d920358182085001072372768aede06fadc1b400b795db4d6b16",
+        "sourceFrameSHA256": "b23bdb00d5df528f39f2c25b9fef97879fb3e4ca8963e175867585731910d351",
+        "sourceWidth": 360,
+        "sourceHeight": 240,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed the full original 360 by 240 gameplay image: a first-person view over a voxel workshop with torches and fire, built shelving and blocks, and an occupied inventory hotbar along the bottom. The author’s official ContentDB listing links to this same maintainer repository, and its original screenshot.png is a single coherent game image, not a promotional logo or a collage."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "2d531581f7aa44404923e4d39c13a20a7e5d3dfdd1d84d04f457ad41ce4ad8ef",
+      "bytes": 53562
     },
     {
       "id": "open3d-not-snake",
@@ -32666,48 +32842,6 @@
       ]
     },
     {
-      "id": "open3d-the-adventures-of-captain-callisto",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/codyebberson/js13k-callisto/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/codyebberson/js13k-callisto",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/codyebberson/js13k-callisto/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/codyebberson/js13k-callisto/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/codyebberson/js13k-callisto",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/codyebberson/js13k-callisto/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://js13kgames.com/entries/the-adventures-of-captain-callisto",
-          "checkedAt": "2026-11-18",
-          "result": "Public retrieval failed: getaddrinfo EAI_AGAIN js13kgames.com"
-        }
-      ]
-    },
-    {
       "id": "open3d-3d-horror-proto",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -32893,43 +33027,6 @@
       ]
     },
     {
-      "id": "open3d-rapid-rescue",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/arran-nz/RapidRescue/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://github.com/arran-nz/RapidRescue",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/arran-nz/RapidRescue/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/arran-nz/RapidRescue/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 404; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/arran-nz/RapidRescue",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/arran-nz/RapidRescue/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-under-the-cover-of-night",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -33035,43 +33132,6 @@
         },
         {
           "url": "https://github.com/Amna-Hassan04/Cat-Sanctuary/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-doggy-man-3d",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/0xMartin/DoggyMan3D/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/0xMartin/DoggyMan3D",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/0xMartin/DoggyMan3D/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/0xMartin/DoggyMan3D/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/0xMartin/DoggyMan3D",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/0xMartin/DoggyMan3D/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
@@ -34715,18 +34775,6 @@
       ]
     },
     {
-      "id": "open3d-kubrick",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://apps.kde.org/kubrick/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        }
-      ]
-    },
-    {
       "id": "open3d-maniadrive",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -36333,23 +36381,6 @@
       ]
     },
     {
-      "id": "open3d-nodecore",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Official project screenshots found, but cdn.content.luanti.org is outside existing allowed image origins.",
-      "checkedSources": [
-        {
-          "url": "https://content.luanti.org/packages/Warr1024/nodecore/",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://content.luanti.org/packages/Warr1024/nodecore/",
-          "checkedAt": "2026-11-19",
-          "result": "Confirmed maintainer package and full gallery attachments, but exact originals point to cdn.content.luanti.org which is not an accepted origin from the package page. User attachments elsewhere in comments are not substituted."
-        }
-      ]
-    },
-    {
       "id": "open3d-pilot-garden",
       "status": "research-incomplete",
       "reason": "Research incomplete or access-limited: The sole author gallery candidate is promotional artwork showing a banana and a smiling gnome, not gameplay.",
@@ -37822,6 +37853,49 @@
         }
       },
       {
+        "id": "open3d-boom",
+        "sourceUrl": "https://github.com/FelicePollano/Boom",
+        "demo": {
+          "label": "Download Boom v0.2.0",
+          "url": "https://github.com/FelicePollano/Boom/releases/tag/v0.2.0",
+          "kind": "download",
+          "note": "The author’s v0.2.0 release contains a finished first level and an incomplete second level. It lists native Windows and Linux builds with a separate matching Boom.pck game-data file required alongside the executable. Verified publication metadata on 2026-11-19; no package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://github.com/FelicePollano/Boom/releases/tag/v0.2.0",
+            "result": "The publisher distinguishes the complete first level and incomplete second level.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://github.com/FelicePollano/Boom/releases/expanded_assets/v0.2.0",
+            "result": "Official release assets list the named EXE and x86_64 program alongside the matching Boom.pck and separate generated source archives; no package downloaded.",
+            "checkedAt": "2026-11-19"
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/FelicePollano/Boom",
+          "authorVerification": "The exact original developer repository hosts this named native build release.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author’s v0.2.0 release contains a finished first level and an incomplete second level. It lists native Windows and Linux builds with a separate matching Boom.pck game-data file required alongside the executable.",
+          "assets": [
+            {
+              "url": "https://github.com/FelicePollano/Boom/releases/download/v0.2.0/Boom.exe",
+              "name": "Boom.exe",
+              "platform": "Windows",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://github.com/FelicePollano/Boom/releases/download/v0.2.0/Boom.x86_64",
+              "name": "Boom.x86_64",
+              "platform": "Linux x86_64",
+              "kind": "game-binary"
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-cypress-motel",
         "sourceUrl": "https://github.com/ObsidianBlk/TheMotel",
         "demo": {
@@ -38114,6 +38188,51 @@
             "result": "The creator name Cyteon and the Godot racing game match the supplied GitHub project and the linked itch.io publication."
           }
         ]
+      },
+      {
+        "id": "open3d-rapid-rescue",
+        "sourceUrl": "https://github.com/arran-nz/RapidRescue",
+        "demo": {
+          "label": "Download Rapid Rescue v0.2.1",
+          "url": "https://github.com/arran-nz/RapidRescue/releases/tag/v0.2.1",
+          "kind": "download",
+          "note": "The official v0.2.1 release metadata confirms native game builds for 64-bit Windows and Linux, not auto-generated source archives. Verified publication metadata on 2026-11-19; no package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://github.com/arran-nz/RapidRescue",
+            "result": "Original project README directs users to the release for the operating system.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://api.github.com/repos/arran-nz/RapidRescue/releases/latest",
+            "result": "Official asset metadata confirms published native executables without transferring the files.",
+            "checkedAt": "2026-11-19"
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/arran-nz/RapidRescue",
+          "authorVerification": "The developer publishes these builds in the exact original project repository and recommends the native release in the project README.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The official v0.2.1 release metadata confirms native game builds for 64-bit Windows and Linux, not auto-generated source archives.",
+          "assets": [
+            {
+              "url": "https://github.com/arran-nz/RapidRescue/releases/download/v0.2.1/RapidRescue-Linux-0.2.1.x86_64",
+              "name": "RapidRescue-Linux-0.2.1.x86_64",
+              "size": 54935952,
+              "kind": "game-binary",
+              "platform": "Linux x86_64"
+            },
+            {
+              "url": "https://github.com/arran-nz/RapidRescue/releases/download/v0.2.1/RapidRescue-Win64-0.2.1.exe",
+              "name": "RapidRescue-Win64-0.2.1.exe",
+              "size": 51895520,
+              "kind": "game-binary",
+              "platform": "Windows 64-bit"
+            }
+          ]
+        }
       },
       {
         "id": "open3d-rooted-shadow",
@@ -38469,6 +38588,72 @@
               "kind": "game-binary",
               "platform": "Windows",
               "uploadId": "12304715"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-doggy-man-3d",
+        "sourceUrl": "https://github.com/0xMartin/DoggyMan3D",
+        "demo": {
+          "label": "Download Doggy Man 3D v0.3.1",
+          "url": "https://github.com/0xMartin/DoggyMan3D/releases/tag/0.3.1",
+          "kind": "download",
+          "note": "The author v0.3.1 release identifies desktop builds for Windows, Linux and Apple Silicon macOS, and Android APKs, separately from source archives. Verified publication metadata on 2026-11-19; no package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://github.com/0xMartin/DoggyMan3D/releases/tag/0.3.1",
+            "result": "Author release notes explicitly label Windows, Linux, Android and macOS game builds.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://api.github.com/repos/0xMartin/DoggyMan3D/releases/latest",
+            "result": "Latest author release asset metadata returned the exact manually uploaded distributions and byte counts; none downloaded.",
+            "checkedAt": "2026-11-19"
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/0xMartin/DoggyMan3D",
+          "authorVerification": "The author publishes the exact native files in the Releases of the original source repository.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author v0.3.1 release identifies desktop builds for Windows, Linux and Apple Silicon macOS, and Android APKs, separately from source archives.",
+          "assets": [
+            {
+              "url": "https://github.com/0xMartin/DoggyMan3D/releases/download/0.3.1/DoggyMan3D.zip",
+              "name": "DoggyMan3D.zip",
+              "size": 495097322,
+              "kind": "game-binary",
+              "platform": "Windows"
+            },
+            {
+              "url": "https://github.com/0xMartin/DoggyMan3D/releases/download/0.3.1/DoggyMan3DLinux.zip",
+              "name": "DoggyMan3DLinux.zip",
+              "size": 472248750,
+              "kind": "game-binary",
+              "platform": "Linux"
+            },
+            {
+              "url": "https://github.com/0xMartin/DoggyMan3D/releases/download/0.3.1/DoggyMan3Dv0.3.1.apk",
+              "name": "DoggyMan3Dv0.3.1.apk",
+              "size": 455237547,
+              "kind": "game-binary",
+              "platform": "Android"
+            },
+            {
+              "url": "https://github.com/0xMartin/DoggyMan3D/releases/download/0.3.1/DoggyMan3D_arm64.apk",
+              "name": "DoggyMan3D_arm64.apk",
+              "size": 489482123,
+              "kind": "game-binary",
+              "platform": "Android ARM64"
+            },
+            {
+              "url": "https://github.com/0xMartin/DoggyMan3D/releases/download/0.3.1/DoggyMan3D_MacOS_apple_silicon.zip",
+              "name": "DoggyMan3D_MacOS_apple_silicon.zip",
+              "size": 488095434,
+              "kind": "game-binary",
+              "platform": "macOS Apple Silicon"
             }
           ]
         }
@@ -39158,6 +39343,44 @@
         }
       },
       {
+        "id": "open3d-smokin-guns",
+        "sourceUrl": "https://github.com/smokin-guns/SmokinGuns",
+        "demo": {
+          "label": "Download Smokin’ Guns 1.1",
+          "url": "https://www.smokin-guns.org/downloads",
+          "kind": "download",
+          "note": "The original game’s 1.1 download page lists a Windows EXE and Debian i386 DEB separately from mirrors, the universal archive and the unofficial Mac build. Verified publication metadata on 2026-11-19; no package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://www.smokin-guns.org/downloads",
+            "result": "Original developer release site returned HTTP 200 and lists both exact native artifacts and their checksums.",
+            "checkedAt": "2026-11-19"
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://www.smokin-guns.org/downloads",
+          "authorVerification": "The original Smokin’ Guns project site and its official release announcement label the Windows installer and Debian build and identify the developers who packaged them.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The original game’s 1.1 download page lists a Windows EXE and Debian i386 DEB separately from mirrors, the universal archive and the unofficial Mac build.",
+          "assets": [
+            {
+              "url": "https://www.smokin-guns.org/downloads/Smokin_Guns_1.1.exe",
+              "name": "Smokin_Guns_1.1.exe",
+              "platform": "Windows",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://www.smokin-guns.org/downloads/smokinguns_1.1-1_i386.deb",
+              "name": "smokinguns_1.1-1_i386.deb",
+              "platform": "Debian Linux i386",
+              "kind": "game-binary"
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-supertuxkart",
         "sourceUrl": "https://github.com/supertuxkart/stk-code",
         "demo": {
@@ -39382,6 +39605,48 @@
               "url": "https://sourceforge.net/projects/ufoai/files/UFO_AI%202.x/2.5/ufoai-2.5-win32.exe/download",
               "name": "ufoai-2.5-win32.exe",
               "platform": "Windows 32-bit",
+              "kind": "game-binary"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-vega-strike",
+        "sourceUrl": "https://github.com/vegastrike/Vega-Strike-Engine-Source",
+        "demo": {
+          "label": "Download Vega Strike 0.5.1 (Windows)",
+          "url": "https://sourceforge.net/projects/vegastrike/files/vegastrike/0.5.1/",
+          "kind": "download",
+          "note": "The predecessor standalone Vega Strike 0.5.1.r1 release provides a native Windows game installer rather than an engine-only binary or assets-only archive. Verified publication metadata on 2026-11-19; no package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://vegastrike.sourceforge.net/getfiles/",
+            "result": "Official older project download page identifies the stable Windows game installer.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://sourceforge.net/projects/vegastrike/files/vegastrike/0.5.1/",
+            "result": "Exact SourceForge release lists the Windows EXE separately from source, music and data-only packages.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://www.vega-strike.org/install/",
+            "result": "The current project documents installing its newer engine and game assets separately. This evidence does not claim compatibility for an older installer.",
+            "checkedAt": "2026-11-19"
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://vegastrike.sourceforge.net/getfiles/",
+          "authorVerification": "The original release website labels the standalone game and links the exact SourceForge project; it also links the same current developer-owned engine repository as this catalog item.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The predecessor standalone Vega Strike 0.5.1.r1 release provides a native Windows game installer rather than an engine-only binary or assets-only archive.",
+          "assets": [
+            {
+              "url": "https://sourceforge.net/projects/vegastrike/files/vegastrike/0.5.1/VS%20Setup%200.5.1%20r1.exe/download",
+              "name": "VS Setup 0.5.1 r1.exe",
+              "platform": "Windows",
               "kind": "game-binary"
             }
           ]
@@ -40393,6 +40658,48 @@
               "kind": "game-binary",
               "platform": "Linux",
               "uploadId": "10566265"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-blackout-facility",
+        "sourceUrl": "https://github.com/FahimKamal/UE5_MazeEscape",
+        "demo": {
+          "label": "Download Blackout Facility v1.0",
+          "url": "https://github.com/FahimKamal/UE5_MazeEscape/releases/tag/V-1.00",
+          "kind": "download",
+          "note": "The author release identifies the downloadable full Windows game with the BlackoutFacility executable. The exact uploaded game package is listed separately from the generated source archives. Verified publication metadata on 2026-11-19; no package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://github.com/FahimKamal/UE5_MazeEscape",
+            "result": "The creator README links the exact packaged PC release.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://github.com/FahimKamal/UE5_MazeEscape/releases/tag/V-1.00",
+            "result": "The author release description identifies a packaged game ZIP containing BlackoutFacility.exe.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://github.com/FahimKamal/UE5_MazeEscape/releases/expanded_assets/V-1.00",
+            "result": "Asset list confirms the exact punctuation of the uploaded 367 MB game ZIP and its checksum, independently of the underscore-style example in the description. No package fetched.",
+            "checkedAt": "2026-11-19"
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/FahimKamal/UE5_MazeEscape",
+          "authorVerification": "The exact original developer repository links its packaged PC build, published by its own maintainer in Releases.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author release identifies the downloadable full Windows game with the BlackoutFacility executable. The exact uploaded game package is listed separately from the generated source archives.",
+          "assets": [
+            {
+              "url": "https://github.com/FahimKamal/UE5_MazeEscape/releases/download/V-1.00/Blackout.Facility.zip",
+              "name": "Blackout.Facility.zip",
+              "platform": "Windows",
+              "kind": "game-binary"
             }
           ]
         }
@@ -66841,43 +67148,6 @@
         ]
       },
       {
-        "id": "open3d-boom",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/FelicePollano/Boom/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/FelicePollano/Boom",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/FelicePollano/Boom/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/FelicePollano/Boom/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/FelicePollano/Boom",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/FelicePollano/Boom/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
         "id": "open3d-broken-seals",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -67305,43 +67575,6 @@
         ]
       },
       {
-        "id": "open3d-rapid-rescue",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/arran-nz/RapidRescue/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-          },
-          {
-            "url": "https://github.com/arran-nz/RapidRescue",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/arran-nz/RapidRescue/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/arran-nz/RapidRescue/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 404; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/arran-nz/RapidRescue",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/arran-nz/RapidRescue/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
         "id": "open3d-return-null",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -67607,43 +67840,6 @@
             "url": "https://failcake.itch.io/gameoff-2022",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
-        "id": "open3d-doggy-man-3d",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/0xMartin/DoggyMan3D/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/0xMartin/DoggyMan3D",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/0xMartin/DoggyMan3D/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/0xMartin/DoggyMan3D/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/0xMartin/DoggyMan3D",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/0xMartin/DoggyMan3D/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
           }
         ]
       },
@@ -68822,48 +69018,6 @@
         ]
       },
       {
-        "id": "open3d-smokin-guns",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/smokin-guns/SmokinGuns/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/smokin-guns/SmokinGuns",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/smokin-guns/SmokinGuns/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://www.smokin-guns.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/smokin-guns/SmokinGuns/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/smokin-guns/SmokinGuns",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/smokin-guns/SmokinGuns/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
         "id": "open3d-speed-dreams",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -69109,48 +69263,6 @@
           },
           {
             "url": "https://github.com/VDrift/vdrift/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
-        "id": "open3d-vega-strike",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/vegastrike/Vega-Strike-Engine-Source/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/vegastrike/Vega-Strike-Engine-Source",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/vegastrike/Vega-Strike-Engine-Source/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://www.vega-strike.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/vegastrike/Vega-Strike-Engine-Source/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/vegastrike/Vega-Strike-Engine-Source",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/vegastrike/Vega-Strike-Engine-Source/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
           }
@@ -70743,43 +70855,6 @@
             "url": "https://bowlmonkeylabs.itch.io/ludum-dare-50",
             "checkedAt": "2026-11-19",
             "result": "Official page advertises Unity HTML5. Viewed original GIF’s title artwork, not gameplay; no browser claim."
-          }
-        ]
-      },
-      {
-        "id": "open3d-blackout-facility",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/FahimKamal/UE5_MazeEscape/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/FahimKamal/UE5_MazeEscape",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/FahimKamal/UE5_MazeEscape/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/FahimKamal/UE5_MazeEscape/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/FahimKamal/UE5_MazeEscape",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/FahimKamal/UE5_MazeEscape/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
           }
         ]
       },

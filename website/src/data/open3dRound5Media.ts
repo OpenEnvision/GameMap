@@ -2948,6 +2948,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-the-adventures-of-captain-callisto": {
+    src: "media/learning/open3d-the-adventures-of-captain-callisto.webp",
+    alt: "Captain Callisto jumps along floating tiled platforms near a green alien, with a star counter and jetpack controls on screen.",
+    caption:
+      "Creator-published gameplay recording of The Adventures of Captain Callisto, shown mid-jump on floating platforms. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/codyebberson/js13k-callisto/blob/main/README.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://user-images.githubusercontent.com/749094/133300747-98fbe8bd-565e-45a5-8b70-4fd4c5529d7e.mp4",
+    width: 1280,
+    height: 720,
+  },
   "open3d-underrun": {
     src: "media/learning/open3d-underrun.webp",
     alt: "An overhead shooter scene with a small character in a dim industrial corridor lit by orange and purple lights.",
@@ -3169,6 +3183,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-rapid-rescue": {
+    src: "media/learning/open3d-rapid-rescue.webp",
+    alt: "Purple and orange pieces occupy a river maze as the mouse points at a movable tile.",
+    caption:
+      "Creator-published Rapid Rescue gameplay frame from the developer’s animated input demonstration. Image rights remain with their respective owners.",
+    sourceUrl: "https://github.com/arran-nz/RapidRescue/blob/master/README.rst",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/arran-nz/RapidRescue/master/Images/input.gif",
+    width: 1280,
+    height: 720,
+  },
   "open3d-return-null": {
     src: "media/learning/open3d-return-null.webp",
     alt: "A spacecraft cockpit faces a bright black hole, with a radar display, hull and fuel indicators and drifting debris.",
@@ -3307,6 +3334,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://img.itch.zone/aW1hZ2UvMTgxMDMzNS8xMDY0NzAzMC5naWY=/original/ArNG7T.gif",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-doggy-man-3d": {
+    src: "media/learning/open3d-doggy-man-3d.webp",
+    alt: "Doggy Man stands with a sword and shield on a dark path beside on-screen Android controls.",
+    caption:
+      "Creator-published Doggy Man 3D gameplay screenshot from the original project’s Android build. Image rights remain with their respective owners.",
+    sourceUrl: "https://github.com/0xMartin/DoggyMan3D/blob/main/README.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/0xMartin/DoggyMan3D/main/doc/android_screenshot.jpg",
     width: 1280,
     height: 720,
   },
@@ -4589,6 +4629,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     origin: "creator-screenshot",
     reviewedAt: "2026-11-18",
     originalImageUrl: "https://www.zachtronics.com/infiniminer/infiniminer.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-kubrick": {
+    src: "media/learning/open3d-kubrick.webp",
+    alt: "A scrambled three-by-three cube shown from the front and back inside Kubrick.",
+    caption:
+      "Creator-published Kubrick gameplay screenshot from KDE’s AppStream source-image listing. Image rights remain with their respective owners.",
+    sourceUrl:
+      "https://metadata.neon.kde.org/appstream/release_noble/html/noble/main/metainfo/kubrick.html",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://metadata.neon.kde.org/appstream/release_noble/media/pool/org/kde/kubrick/79143f2a1f88523b53d95f3d328249a8/screenshots/image-1_orig.png",
     width: 1280,
     height: 720,
   },
@@ -6831,6 +6885,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     caption:
       "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-maze-ascension-the-labyrinth-of-echoes.webp",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-nodecore": {
+    src: "media/learning/open3d-nodecore.webp",
+    alt: "A voxel workshop with fire, crafting shelves and held items seen above the NodeCore inventory bar.",
+    caption:
+      "Creator-published NodeCore gameplay screenshot from the author’s official source repository. Image rights remain with their respective owners.",
+    sourceUrl:
+      "https://gitlab.com/sztest/nodecore/-/blob/master/screenshot.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://gitlab.com/sztest/nodecore/-/raw/master/screenshot.png",
     width: 1280,
     height: 720,
   },
