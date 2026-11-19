@@ -40,7 +40,17 @@ html[lang="zh-CN"] :is(.hm-title, .home-page h3) {
   letter-spacing: -0.02em;
   line-height: 1.16;
 }
+/* Chinese breaks between any two characters: balance the lines and keep the
+   second phrase whole, so a title breaks after its full-width comma rather
+   than inside a word or before a one-character orphan. */
+html[lang="zh-CN"] .hm-title {
+  text-wrap: balance;
+}
+html[lang="zh-CN"] .hm-title > span {
+  display: inline-block;
+}
 html[lang="zh-CN"] :is(.hm-title, .hm-hero-title) em {
+  display: inline-block;
   padding-right: 0;
   font-family: var(--font-display);
   font-style: normal;
@@ -78,19 +88,25 @@ html[lang="zh-CN"] :is(.hm-title, .hm-hero-title) em {
     var(--paper)
   );
 }
+/* No size container here: Chrome drops the layout of size containers right
+   after hydration, which collapsed the canvas and the art to 0×0. The stage
+   size comes from planet-hero.tsx (--hm-w/--hm-h in px); until it has run,
+   the small viewport is a close stand-in (the hero is 100svh tall and
+   full-width, and clips its overflow). */
 .hm-hero-stage {
   --hm-horizon: 0.66;
   --hm-radius-w: 0.62;
   --hm-radius-h: 0.78;
   --hm-sun-angle: 64;
+  --hm-stage-w: var(--hm-w, 100svw);
+  --hm-stage-h: var(--hm-h, 100svh);
   --hm-r: max(
-    calc(var(--hm-radius-w) * 100cqw),
-    calc(var(--hm-radius-h) * 100cqh)
+    calc(var(--hm-radius-w) * var(--hm-stage-w)),
+    calc(var(--hm-radius-h) * var(--hm-stage-h))
   );
   position: absolute;
   inset: 0;
   z-index: -2;
-  container-type: size;
   pointer-events: none;
 }
 .hm-planet-canvas {
@@ -143,7 +159,7 @@ html[lang="zh-CN"] :is(.hm-title, .hm-hero-title) em {
   left: calc(
     50% + cos(var(--hm-sun-angle) * 1deg) * var(--hm-r) * 1.012
   );
-  width: clamp(240px, 36cqw, 620px);
+  width: clamp(240px, calc(0.36 * var(--hm-stage-w)), 620px);
   aspect-ratio: 1;
   border-radius: 50%;
   translate: -50% -50%;
@@ -1231,6 +1247,33 @@ html[lang="zh-CN"] .hm-hero-title em {
 .hm-directions a:hover strong {
   color: var(--accent);
 }
+/* Until the bento gives the Games tile two rows, the tile is short: its
+   copy sits on solid panel and the screenshots fade out above it, so the
+   mosaic never runs under the kicker or the title. */
+@media (max-width: 1099px) {
+  .hm-tile-games {
+    min-height: 600px;
+  }
+  .hm-tile-games .hm-tile-body {
+    padding-top: 64px;
+    background: linear-gradient(180deg, transparent, var(--panel) 56px);
+  }
+}
+/* One column: two screenshots sit in flow above the copy, like the Tools
+   logos. */
+@media (max-width: 719px) {
+  .hm-tile-games {
+    min-height: 0;
+  }
+  .hm-tile-mosaic {
+    position: relative;
+    inset: auto;
+    margin: 4px -30% -56px -12%;
+  }
+  .hm-tile-mosaic span:nth-child(n + 3) {
+    display: none;
+  }
+}
 @media (min-width: 720px) {
   .hm-bento {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1390,6 +1433,13 @@ a.hm-tool:hover {
 .hm-guides-head .inline-link {
   margin-top: 28px;
 }
+/* Two lines of about six characters. A fixed measure keeps the break of the
+   eleven-character Chinese title between words; balancing split the
+   two-character word that ends its first line. */
+html[lang="zh-CN"] .hm-guides-head .hm-title {
+  max-width: 6.5em;
+  text-wrap: wrap;
+}
 .hm-guide-list {
   margin: 0;
   padding: 0;
@@ -1477,6 +1527,10 @@ html[lang="zh-CN"] .hm-guide-text strong {
     position: sticky;
     top: calc(var(--header-h) + 32px);
   }
+  /* Sized for the narrow sticky column. */
+  html[lang="zh-CN"] .hm-guides-head .hm-title {
+    font-size: clamp(34px, 3.6vw, 56px);
+  }
 }
 
 /* --- 7. Closing horizon -------------------------------------------------------- */
@@ -1546,6 +1600,10 @@ html[lang="zh-CN"] .hm-guide-text strong {
 .hm-closing-inner h2 {
   max-width: 14ch;
 }
+/* 1ch is the width of a Latin "0": far too narrow for full-width glyphs. */
+html[lang="zh-CN"] .hm-closing-inner h2 {
+  max-width: 11em;
+}
 .hm-closing-inner > p:not(.kicker) {
   margin-inline: auto;
 }
@@ -1584,7 +1642,7 @@ html[lang="zh-CN"] .hm-guide-text strong {
     font-size: clamp(40px, 13.4vw, 64px);
   }
   html[lang="zh-CN"] .hm-hero-title {
-    font-size: clamp(40px, 11.5vw, 56px);
+    font-size: clamp(32px, 11.5vw, 56px);
   }
   .hm-hero-lede {
     font-size: 16px;
@@ -1615,6 +1673,18 @@ html[lang="zh-CN"] .hm-guide-text strong {
   }
   .hm-title {
     font-size: clamp(38px, 11vw, 52px);
+  }
+  /* The padded closing panel is narrower: "Made something" keeps one line. */
+  .hm-closing-inner .hm-title {
+    font-size: clamp(30px, 9.6vw, 46px);
+  }
+  /* Full-width glyphs: a nine-character phrase still fits one line at 390
+     (inside the padded closing panel too). */
+  html[lang="zh-CN"] .hm-title {
+    font-size: clamp(30px, 9.2vw, 46px);
+  }
+  html[lang="zh-CN"] .hm-closing-inner .hm-title {
+    font-size: clamp(28px, 8.2vw, 40px);
   }
   .hm-chapter h3 {
     font-size: clamp(32px, 9vw, 44px);

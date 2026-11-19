@@ -11,6 +11,13 @@ import { retiredDocumentTarget } from "../../content/site";
 import { categories, publicAsset } from "../lib/catalog";
 import { pillars } from "../lib/pillars";
 import { seeded } from "../lib/motion";
+import { communityEnabled } from "../lib/community";
+import {
+  exampleGameFacets,
+  exampleGames,
+  gameStats,
+  researchLedger,
+} from "../lib/collection-stats";
 import { useOpenAtlasSearch } from "../lib/search-state";
 import { PlanetHero } from "../components/home/planet-hero";
 import { HomeStory } from "../components/home/story";
@@ -77,6 +84,7 @@ const marqueeRows = [
 /** Reading-room picks. Documents move between topic folders, so the loader
  *  follows the site's redirect table to each guide's current address. */
 const startGuide = "/docs/practical-guide/";
+const contributingGuide = "/docs/contributing/";
 const guides = [
   [
     startGuide,
@@ -118,20 +126,38 @@ export function loader({ request }: LoaderFunctionArgs) {
     alt: media[entry.id].alt,
     url: base + entry.url.replace(/^\/+/, ""),
   }));
+  // Every figure is counted the way the page it links to counts it.
+  const games = exampleGames(content);
+  const gameFigures = gameStats(exampleGameFacets(games));
   const counts: Record<string, number> = {
-    "/examples/": total("example") + total("foundation"),
+    "/examples/": gameFigures.total,
     "/threejs-games/": total("threejs-game"),
     "/resources/": total("resource"),
     "/agents/": total("agent"),
     "/testing/": total("testing"),
     "/papers/": total("paper"),
-    "/research/": total("repository-research"),
+    "/research/": researchLedger(content).length,
     // One logical guide per English/Chinese pair, in either locale.
     "/docs/": new Set(
       content.all("document").map((entry) => entry.id.replace(/^zh\//, "")),
     ).size,
     "/paths/": total("path"),
   };
+  // A pillar counts each record once: the legacy three.js games imported into
+  // the examples gallery are listed on /threejs-games/ as well.
+  const pillarCounts = Object.fromEntries(
+    pillars.map((pillar) => {
+      const paths = pillar.links.map((link) => link.path);
+      const shared =
+        paths.includes("/examples/") && paths.includes("/threejs-games/")
+          ? games.imported.length
+          : 0;
+      return [
+        pillar.id,
+        paths.reduce((sum, path) => sum + (counts[path] ?? 0), 0) - shared,
+      ];
+    }),
+  );
   const resources = new Map(
     content.all("resource").map((entry) => [entry.id, entry]),
   );
@@ -163,16 +189,13 @@ export function loader({ request }: LoaderFunctionArgs) {
     docs: {
       start: retiredDocumentTarget(startGuide) ?? startGuide,
       guides: guides.map(([path]) => retiredDocumentTarget(path) ?? path),
+      contributing:
+        retiredDocumentTarget(contributingGuide) ?? contributingGuide,
     },
     wall,
-    wallStats: {
-      total: counts["/examples/"],
-      threeD: examples.filter((entry) => entry.data.track === "3d").length,
-      twoD: examples.filter((entry) => entry.data.track === "2d").length,
-      playable: examples.filter((entry) => entry.data.demo.kind === "playable")
-        .length,
-    },
+    wallStats: gameFigures,
     counts,
+    pillarCounts,
     stats: [
       { path: "/examples/", label: "Game examples" },
       { path: "/resources/", label: "Resources" },
@@ -213,7 +236,10 @@ export function loader({ request }: LoaderFunctionArgs) {
 }
 
 export default function Home() {
-  const { t } = useSiteI18n();
+  const { t, locale } = useSiteI18n();
+  // Chinese headlines close with full-width punctuation and need no space
+  // between two translated segments; Latin text keeps its period and spaces.
+  const zh = locale === "zh";
   const openSearch = useOpenAtlasSearch();
   const data = useLoaderData<typeof loader>();
   const location = useLocation();
@@ -243,16 +269,6 @@ export default function Home() {
       navigate("/resources/" + location.hash, { replace: true });
   }, [location.search, location.hash, navigate]);
 
-  const pillarCounts = Object.fromEntries(
-    pillars.map((pillar) => [
-      pillar.id,
-      pillar.links.reduce(
-        (sum, link) => sum + (data.counts[link.path] ?? 0),
-        0,
-      ),
-    ]),
-  );
-
   return (
     <main id="main-content" className="site-main home-page">
       <title>{t("GameMap — Find your next playable idea")}</title>
@@ -273,8 +289,11 @@ export default function Home() {
           <h1 id="hm-hero-title" className="hm-hero-title">
             {t("Small ideas.")}
             <br />
-            <em>{t("Playable worlds")}</em>
-            <span className="brand-period">.</span>
+            <em>
+              {t("Playable worlds")}
+              {zh ? "\u3002" : null}
+            </em>
+            {zh ? null : <span className="brand-period">.</span>}
           </h1>
           <p className="hm-hero-lede">
             {t(
@@ -349,7 +368,7 @@ export default function Home() {
 
       {/* 4. The map: four pillars and six directions. */}
       <AtlasBento
-        pillarCounts={pillarCounts}
+        pillarCounts={data.pillarCounts}
         counts={data.counts}
         categoryCounts={data.categoryCounts}
         shots={data.bentoShots}
@@ -362,7 +381,9 @@ export default function Home() {
           <div>
             <p className="kicker">{t("IN THE TOOLKIT")}</p>
             <h2 id="hm-toolkit-title" className="hm-title">
-              {t("Pick a tool.")} <em>{t("Start making.")}</em>
+              <span>{t("Pick a tool.")}</span>
+              {zh ? null : " "}
+              <em>{t("Start making.")}</em>
             </h2>
           </div>
           <Link className="inline-link" to="/resources/">
@@ -415,21 +436,48 @@ export default function Home() {
             <br />
             <em>{t("Put it on the map.")}</em>
           </h2>
-          <p>
-            {t(
-              "Share a playable link, the build story and the source. Other makers play it, rate it and learn from it.",
-            )}
-          </p>
-          <div className="hm-closing-actions">
-            <Link className="button button-primary" to="/submit/">
-              {t("Submit your game")}
-              <ArrowUpRight size={16} />
-            </Link>
-            <Link className="button button-secondary" to="/examples/">
-              {t("All game examples")}
-              <ArrowRight size={16} />
-            </Link>
-          </div>
+          {/* Submissions need the community API; static builds point to the
+              catalog and to the contribution guide instead. */}
+          {communityEnabled ? (
+            <>
+              <p>
+                {t(
+                  "Share a playable link, the build story and the source. Other makers play it, rate it and learn from it.",
+                )}
+              </p>
+              <div className="hm-closing-actions">
+                <Link className="button button-primary" to="/submit/">
+                  {t("Submit your game")}
+                  <ArrowUpRight size={16} />
+                </Link>
+                <Link className="button button-secondary" to="/examples/">
+                  {t("All game examples")}
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </>
+          ) : (
+            <>
+              <p>
+                {t(
+                  "See what other makers shipped, then add yours with a playable link, the build story and the source. The contribution guide shows how.",
+                )}
+              </p>
+              <div className="hm-closing-actions">
+                <Link className="button button-primary" to="/examples/">
+                  {t("Browse all games")}
+                  <ArrowRight size={16} />
+                </Link>
+                <Link
+                  className="button button-secondary"
+                  to={data.docs.contributing}
+                >
+                  {t("Contribute")}
+                  <ArrowUpRight size={16} />
+                </Link>
+              </div>
+            </>
+          )}
         </div>
       </section>
     </main>

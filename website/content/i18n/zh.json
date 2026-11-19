@@ -1073,5 +1073,6 @@
   "{count} min read": "约 {count} 分钟阅读",
   "1 section": "1 个章节",
   "{count} sections": "{count} 个章节",
-  "Accounts, ratings, comments and game submissions need the GameMap community server, which this static site does not include.": "账号、评分、评论和作品投稿需要 GameMap 社区服务端，本站为纯静态部署，不包含这些功能。"
+  "Accounts, ratings, comments and game submissions need the GameMap community server, which this static site does not include.": "账号、评分、评论和作品投稿需要 GameMap 社区服务端，本站为纯静态部署，不包含这些功能。",
+  "See what other makers shipped, then add yours with a playable link, the build story and the source. The contribution guide shows how.": "先看看其他创作者做出了什么，再附上可试玩链接、开发过程与源码，把你的作品也加进来。贡献指南会说明具体做法。"
 }

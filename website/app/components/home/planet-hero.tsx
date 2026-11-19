@@ -10,6 +10,12 @@ import { REDUCED_MOTION, clamp, matches, watchMedia } from "../../lib/motion";
  * The CSS art underneath (`.hm-planet-art`) uses the same geometry custom
  * properties, so static HTML, reduced motion without WebGL and lost contexts
  * all show a matching frame. Reduced motion renders one still WebGL frame.
+ *
+ * The art needs the stage's size. A size container (cqw/cqh) would provide
+ * it, but Chrome drops the layout of size containers right after hydration
+ * here (the canvas and the art collapse to 0×0), so a ResizeObserver writes
+ * the size as --hm-w/--hm-h instead; home.css falls back to viewport units
+ * until it has run.
  */
 
 const VERTEX = `
@@ -260,6 +266,20 @@ const PIXEL_BUDGET = 2_300_000;
 export function PlanetHero() {
   const stageRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  // Stage size for the CSS art, independent of WebGL support.
+  useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage) return;
+    const measure = () => {
+      stage.style.setProperty("--hm-w", `${stage.clientWidth}px`);
+      stage.style.setProperty("--hm-h", `${stage.clientHeight}px`);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(stage);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const stage = stageRef.current;

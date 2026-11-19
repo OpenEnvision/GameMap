@@ -101,7 +101,7 @@ export function AtlasBento({
   shots: readonly string[];
   tools: readonly MarqueeTool[];
 }) {
-  const { t } = useSiteI18n();
+  const { t, locale } = useSiteI18n();
   const gridRef = useRef<HTMLDivElement>(null);
   const tile = (id: Pillar["id"]) => pillars.find((item) => item.id === id)!;
   // One listener for the whole grid writes the glow position on the hovered tile.
@@ -119,7 +119,11 @@ export function AtlasBento({
         <div>
           <p className="kicker">{t("CHOOSE YOUR DIRECTION")}</p>
           <h2 id="hm-atlas-title" className="hm-title">
-            {t("A whole toolkit,")} <em>{t("mapped out.")}</em>
+            {/* Two phrases; Chinese ends the first in a full-width comma, so
+                only Latin text needs the space between them. */}
+            <span>{t("A whole toolkit,")}</span>
+            {locale === "zh" ? null : " "}
+            <em>{t("mapped out.")}</em>
           </h2>
         </div>
         <Link className="inline-link" to="/resources/">

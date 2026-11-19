@@ -162,6 +162,7 @@
 }
 .game-wall-copy h2 {
   margin: 0;
+  text-wrap: balance;
 }
 .game-wall-copy .lede {
   max-width: 640px;

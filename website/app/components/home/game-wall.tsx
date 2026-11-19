@@ -2,6 +2,7 @@ import { useEffect, useRef, type CSSProperties } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link, useSiteI18n } from "../../lib/i18n";
 import { REDUCED_MOTION, matches } from "../../lib/motion";
+import type { GameStats } from "../../lib/collection-stats";
 import "../../styles/home-wall.css";
 
 export type WallGame = {
@@ -11,12 +12,9 @@ export type WallGame = {
   alt: string;
   url: string;
 };
-export type WallStats = {
-  total: number;
-  threeD: number;
-  twoD: number;
-  playable: number;
-};
+/** The examples page header figures (lib/collection-stats.ts), so every
+ *  number here matches the gallery the call to action opens. */
+export type WallStats = GameStats;
 
 const ROWS = 5;
 /** Seconds per loop for each row; neighbouring rows drift in opposite directions. */
@@ -128,7 +126,7 @@ export function GameWall({
           </li>
           <li>
             <strong>{stats.playable}</strong>
-            <span>{t("Play in the browser")}</span>
+            <span>{t("Playable builds")}</span>
           </li>
         </ul>
         <Link className="button button-primary" to="/examples/">
