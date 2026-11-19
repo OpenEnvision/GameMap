@@ -137,10 +137,10 @@
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
   /* Nested inside the blurred pill, so it cannot blur the page itself:
-     a nearly opaque fill keeps the copy behind it out of the way. */
+     an opaque fill keeps the page behind it out of the way. */
   background:
     radial-gradient(ellipse 70% 90% at 0% 0%, var(--nebula-a), transparent 70%),
-    color-mix(in srgb, var(--panel) 97%, transparent);
+    var(--panel);
   box-shadow:
     inset 0 1px 0 var(--glass-highlight),
     var(--shadow-2);

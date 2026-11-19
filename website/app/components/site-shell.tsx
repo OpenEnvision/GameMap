@@ -4,6 +4,7 @@ import { ArrowUpRight, Menu, Moon, Search, Sun, X } from "lucide-react";
 import { useSearchContext } from "fumadocs-ui/contexts/search";
 import { useTheme } from "next-themes";
 import { CommunityAccountLink } from "./community";
+import { communityEnabled } from "../lib/community";
 import {
   Link,
   NavLink,
@@ -249,14 +250,16 @@ export function SiteHeader() {
               ))}
             </section>
           ))}
-          <div className="mobile-utility">
-            <Link to="/submit/" onClick={() => setOpen(false)}>
-              {t("Submit a game")}
-            </Link>
-            <Link to="/account/" onClick={() => setOpen(false)}>
-              {t("My account")}
-            </Link>
-          </div>
+          {communityEnabled && (
+            <div className="mobile-utility">
+              <Link to="/submit/" onClick={() => setOpen(false)}>
+                {t("Submit a game")}
+              </Link>
+              <Link to="/account/" onClick={() => setOpen(false)}>
+                {t("My account")}
+              </Link>
+            </div>
+          )}
         </nav>
       )}
     </header>
@@ -275,7 +278,7 @@ export function SiteFooter() {
           <p>{t("A little direction for your next playable world.")}</p>
           <div className="footer-links">
             <Link to="/docs/contributing/">{t("Contribute")}</Link>
-            <Link to="/docs/media-sources/">{t("Credits")}</Link>
+            <Link to="/docs/reference/media-sources/">{t("Credits")}</Link>
           </div>
         </div>
         <nav className="footer-columns" aria-label={t("Site map")}>

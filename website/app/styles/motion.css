@@ -107,8 +107,10 @@
       opacity: 0;
     }
   }
-  /* The header stays put while pages change beneath it. */
-  .site-header {
+  /* The navigation pill stays put while pages change beneath it. The name sits
+     on the pill, not the header: a named element is a backdrop root, so naming
+     the header would stop the pill from blurring the page behind it. */
+  .nav-pill {
     view-transition-name: gm-header;
   }
   ::view-transition-group(gm-header) {

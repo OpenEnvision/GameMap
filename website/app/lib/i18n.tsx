@@ -23,6 +23,7 @@ import {
   type Locale,
   type DocumentLanguages,
 } from "../../content/locale";
+import { useHydrated } from "./client-query";
 const defaultValue = {
   locale: "en" as Locale,
   documents: emptyDocumentLanguages,
@@ -126,7 +127,10 @@ export function LanguageSwitcher({
   className?: string;
 }) {
   const { locale, documents, t } = useSiteI18n(),
-    location = useLocation();
+    location = useLocation(),
+    // Prerendered HTML has no query string or fragment; add them only after
+    // hydration so the static and hydrated hrefs match.
+    hydrated = useHydrated();
   return (
     <nav className={className} aria-label={t("Switch language")}>
       {(["zh", "en"] as const).map((language, index) => (
@@ -139,8 +143,7 @@ export function LanguageSwitcher({
           <RouterLink
             to={localizedPath(
               withTrailingSlash(location.pathname) +
-                location.search +
-                location.hash,
+                (hydrated ? location.search + location.hash : ""),
               language,
               documents,
             )}

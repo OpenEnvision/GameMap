@@ -298,6 +298,14 @@ kbd {
     var(--shadow-2),
     0 0 120px -40px var(--glow-accent);
 }
+/* The field itself shows focus; the bare input inside it should not draw a
+   square outline inside the rounded dialog. */
+.atlas-search-content input:focus-visible {
+  outline: none;
+}
+.atlas-search-content :has(> input:focus-visible) {
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
 .atlas-search-content [aria-selected="true"] {
   box-shadow: inset 2px 0 0 var(--accent);
 }

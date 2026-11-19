@@ -1,4 +1,5 @@
 import { pages, type PageId } from "../../content/site";
+import { communityEnabled } from "./community";
 
 /** One destination inside a pillar. Collection pages keep their stable
  *  `data-collection-id`; other links (such as community work) do not. */
@@ -40,11 +41,16 @@ export const pillars: readonly Pillar[] = [
         "Playable starting points with source and build stories.",
       ),
       collection("threejsGames", "Browser games built with Three.js."),
-      {
-        path: pages.works.path,
-        title: pages.works.title,
-        blurb: "Games shared and rated by the community.",
-      },
+      // Community pages need the community API; static builds leave them out.
+      ...(communityEnabled
+        ? [
+            {
+              path: pages.works.path,
+              title: pages.works.title,
+              blurb: "Games shared and rated by the community.",
+            },
+          ]
+        : []),
     ],
   },
   {
