@@ -166,11 +166,11 @@
   min-width: 0;
   max-width: 980px;
 }
-/* Pillar tabs (.ix-siblings, collections.css) then a full-width kicker. */
+/* The full-width kicker opens the hero copy. */
 .gallery-hero-copy > .gallery-kicker {
   display: flex;
   align-items: flex-start;
-  margin: clamp(26px, 3vw, 44px) 0 0;
+  margin: 0;
 }
 /* When the kicker wraps (narrow phones), its dot stays on the first line. */
 .gallery-kicker::before {

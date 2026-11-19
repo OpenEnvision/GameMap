@@ -22,7 +22,7 @@ import {
 import type { ContentEntry } from "../../content/models";
 import { searchableText } from "../../content/search";
 import { paperConferencePublication } from "../lib/paper-publication";
-import { Link, NavLink, SourceLanguage, useSiteI18n } from "../lib/i18n";
+import { Link, SourceLanguage, useSiteI18n } from "../lib/i18n";
 import { pillars, type Pillar } from "../lib/pillars";
 import { seeded, useReducedMotion } from "../lib/motion";
 import { useClientQuery } from "../lib/client-query";
@@ -262,35 +262,6 @@ const pillarTones: Record<Pillar["id"], string> = {
   learn: "var(--tax-2d)",
 };
 
-/** The tab row of one pillar: its name, then every sibling collection.
- *  NavLink marks the page being viewed with aria-current. The row carries its
- *  own tone, so it can sit on any page, not only inside an IndexHero. */
-export function PillarTabs({
-  current,
-  className = "",
-}: {
-  current: Pillar["id"];
-  className?: string;
-}) {
-  const { t } = useSiteI18n();
-  const group = pillars.find((item) => item.id === current);
-  if (!group) return null;
-  return (
-    <nav
-      className={`ix-siblings ${className}`.trim()}
-      aria-label={t("{pillar} collections", { pillar: t(group.label) })}
-      style={{ "--ix-tone": pillarTones[current] } as CSSProperties}
-    >
-      <span className="ix-pillar">{t(group.label)}</span>
-      {group.links.map((link) => (
-        <NavLink key={link.path} to={link.path}>
-          {t(link.title)}
-        </NavLink>
-      ))}
-    </nav>
-  );
-}
-
 /** The header band shared by every collection index. */
 export function IndexHero({
   pillar,
@@ -343,7 +314,6 @@ export function IndexHero({
     >
       <div className="ix-hero-inner">
         <div className="ix-hero-copy">
-          <PillarTabs current={pillar} />
           <p className="kicker ix-kicker">{t(kicker)}</p>
           <h1 className="ix-title">
             <AccentTitle text={t(title)} />

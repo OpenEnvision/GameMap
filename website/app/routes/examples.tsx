@@ -20,9 +20,7 @@ import { agentLabels, type AgentId } from "../../src/data/agentGameTypes";
 import { searchableText } from "../../content/search";
 import { ContentBlockView, ContentLink } from "../components/content";
 import { contentKinds, type ContentEntry } from "../../content/models";
-import { NavLink, SourceLanguage, useSiteI18n } from "../lib/i18n";
-import { pillars } from "../lib/pillars";
-import { communityEnabled } from "../lib/community";
+import { SourceLanguage, useSiteI18n } from "../lib/i18n";
 export { shouldRevalidateCollection as shouldRevalidate } from "../lib/collection-query";
 
 /** Reviewed gameplay captures that make up the drifting header collage.
@@ -48,13 +46,6 @@ const mosaicPicks = [
   "jam-dragon-city-clone-escalopa",
 ];
 const mosaicRows = 3;
-
-/** The Games pillar tabs, as on every other collection index. Community work
- *  needs the community API, so static builds leave it out. */
-const gamesPillar = pillars.find((pillar) => pillar.id === "games")!;
-const gamesTabs = gamesPillar.links.filter(
-  (link) => link.collection || communityEnabled,
-);
 
 /** "github.com/owner" or "itch.io": where a community collection lives. */
 function collectionHost(href: string) {
@@ -366,19 +357,6 @@ export default function Examples() {
         </div>
         <div className="gallery-hero-inner">
           <div className="gallery-hero-copy">
-            <nav
-              className="ix-siblings gallery-siblings"
-              aria-label={t("{pillar} collections", {
-                pillar: t(gamesPillar.label),
-              })}
-            >
-              <span className="ix-pillar">{t(gamesPillar.label)}</span>
-              {gamesTabs.map((link) => (
-                <NavLink key={link.path} to={link.path}>
-                  {t(link.title)}
-                </NavLink>
-              ))}
-            </nav>
             <p className="kicker gallery-kicker">
               <DotList
                 items={t(

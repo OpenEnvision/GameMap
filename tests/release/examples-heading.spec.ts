@@ -6,15 +6,11 @@ test("Examples headings omit intake-download/toolkit shortcuts without deleting 
 }) => {
   for (const locale of ["", "zh/"]) {
     await page.goto(locale + "examples/");
-    // The gallery hero only carries the Games pillar tabs: no intake-download
-    // or toolkit shortcuts.
+    // The header switches collections; the gallery hero carries no links:
+    // no pillar tabs, intake downloads or toolkit shortcuts.
     await expect(page.locator(".gallery-hero .heading-links")).toHaveCount(0);
-    await expect(
-      page.locator(".gallery-hero a:not(.ix-siblings a)"),
-    ).toHaveCount(0);
-    await expect(
-      page.locator('.gallery-hero .ix-siblings a[aria-current="page"]'),
-    ).toHaveCount(1);
+    await expect(page.locator(".gallery-hero .ix-siblings")).toHaveCount(0);
+    await expect(page.locator(".gallery-hero a")).toHaveCount(0);
     await expect(
       page.locator("#game-examples > .example-card").first(),
     ).toBeVisible();
