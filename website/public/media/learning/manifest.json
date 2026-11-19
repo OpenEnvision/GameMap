@@ -6433,6 +6433,20 @@
       "sha256": "5b5b2be789e62c56ebee9a1dd43b6b4c608c663e4783cec7d77df3493888db81"
     },
     {
+      "id": "open3d-beyond-all-reason",
+      "src": "media/learning/open3d-beyond-all-reason.webp",
+      "alt": "Red and blue robot forces trade fire beside a river and rocky slopes in a Beyond All Reason skirmish.",
+      "caption": "Creator-published skirmish screenshot from Beyond All Reason, shown using the game camera without its HUD. Image rights remain with the respective creator.",
+      "sourceUrl": "https://github.com/beyond-all-reason/BYAR-Chobby/pull/1211/files",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/beyond-all-reason/BYAR-Chobby/e4f14e5/LuaMenu/images/skirmish/gameType/3v3.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 193874,
+      "sha256": "a258d501e4c340c74d0feb43f8d9cf776b1daf326eb06ee775c70f98ad9ecabb"
+    },
+    {
       "id": "open3d-bzflag",
       "src": "media/learning/open3d-bzflag.webp",
       "alt": "A wide in-game arena view shows tanks exchanging projectiles among blocky towers, pyramids and elevated platforms.",
@@ -10112,6 +10126,20 @@
       "height": 720,
       "bytes": 27546,
       "sha256": "427870e326457a4e04e588d645985af03bad05c8ef66b8da8f656bc650e4c501"
+    },
+    {
+      "id": "open3d-digital-extinction",
+      "src": "media/learning/open3d-digital-extinction.webp",
+      "alt": "An overhead view of units and low-poly structures on sandy terrain with a minimap.",
+      "caption": "Creator-published gameplay: A unit moves between structures while the minimap tracks both sides in an early development build.",
+      "sourceUrl": "https://mgn.cz/blog/de05/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://mgn.cz/blog/de05/screenshot.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 36372,
+      "sha256": "08a113675a5fc358f59d2b99dde2379f36d7182e3241f6bf385c75daad319694"
     },
     {
       "id": "open3d-glitch",

@@ -3629,6 +3629,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-beyond-all-reason": {
+    src: "media/learning/open3d-beyond-all-reason.webp",
+    alt: "Red and blue robot forces trade fire beside a river and rocky slopes in a Beyond All Reason skirmish.",
+    caption:
+      "Creator-published skirmish screenshot from Beyond All Reason, shown using the game camera without its HUD. Image rights remain with the respective creator.",
+    sourceUrl:
+      "https://github.com/beyond-all-reason/BYAR-Chobby/pull/1211/files",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/beyond-all-reason/BYAR-Chobby/e4f14e5/LuaMenu/images/skirmish/gameType/3v3.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-bzflag": {
     src: "media/learning/open3d-bzflag.webp",
     alt: "A wide in-game arena view shows tanks exchanging projectiles among blocky towers, pyramids and elevated platforms.",
@@ -7039,6 +7053,18 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     caption:
       "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-3d-game-experiment-akuli.webp",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-digital-extinction": {
+    src: "media/learning/open3d-digital-extinction.webp",
+    alt: "An overhead view of units and low-poly structures on sandy terrain with a minimap.",
+    caption:
+      "Creator-published gameplay: A unit moves between structures while the minimap tracks both sides in an early development build.",
+    sourceUrl: "https://mgn.cz/blog/de05/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl: "https://mgn.cz/blog/de05/screenshot.png",
     width: 1280,
     height: 720,
   },

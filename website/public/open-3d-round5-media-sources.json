@@ -10603,6 +10603,41 @@
       "bytes": 72006
     },
     {
+      "id": "open3d-beyond-all-reason",
+      "title": "Beyond All Reason",
+      "media": {
+        "src": "media/learning/open3d-beyond-all-reason.webp",
+        "alt": "Red and blue robot forces trade fire beside a river and rocky slopes in a Beyond All Reason skirmish.",
+        "caption": "Creator-published skirmish screenshot from Beyond All Reason, shown using the game camera without its HUD. Image rights remain with the respective creator.",
+        "sourceUrl": "https://github.com/beyond-all-reason/BYAR-Chobby/pull/1211/files",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/beyond-all-reason/BYAR-Chobby/e4f14e5/LuaMenu/images/skirmish/gameType/3v3.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "ff254a3ecb74f9b4508db9d87610902415054a2e93de11ef46dfd523f6eee735",
+        "sourceFrameSHA256": "1fd423728059a77765e3eac3c11d2e64404c278686669a9468b844d86021d789",
+        "sourceWidth": 2560,
+        "sourceHeight": 1368,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the original image through its full-frame display at review size. A single clearly rendered in-game skirmish viewpoint shows red units at the river, blue units near the slope, advancing missiles, projectile trails, impact flames, unit formations and terrain. The official project calls these skirmish screenshots and ships the original in its first-party launcher source; this is the standalone image with no menu, titles, collage or marketing overlays. The HUD is not shown and the individual photographer is not specified."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "a258d501e4c340c74d0feb43f8d9cf776b1daf326eb06ee775c70f98ad9ecabb",
+      "bytes": 193874
+    },
+    {
       "id": "open3d-bzflag",
       "title": "BZFlag",
       "media": {
@@ -20923,6 +20958,42 @@
       "sha256": "427870e326457a4e04e588d645985af03bad05c8ef66b8da8f656bc650e4c501"
     },
     {
+      "id": "open3d-digital-extinction",
+      "title": "Digital Extinction",
+      "media": {
+        "src": "media/learning/open3d-digital-extinction.webp",
+        "alt": "An overhead view of units and low-poly structures on sandy terrain with a minimap.",
+        "caption": "Creator-published gameplay: A unit moves between structures while the minimap tracks both sides in an early development build.",
+        "sourceUrl": "https://mgn.cz/blog/de05/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://mgn.cz/blog/de05/screenshot.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "9e6b546d049f4c5882c9cacdda7addfb0f314a495e0a40e0e358cd3e2fdf1ea4",
+        "sourceFrameSHA256": "1e4d6c1ed3d8912fd80fab93638c5772dad959523acc43920e0ea519f8221bea",
+        "sourceWidth": 1280,
+        "sourceHeight": 720,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the full same-origin original: sandy RTS playfield, in-play units with a visible health bar and ring marker, low-poly structures, and a minimap tracking opposing teams. No video overlay, menu, or collage.",
+        "versionNote": "An early 2023 development-build screenshot published by Digital Extinction creator Martin Indra (Indy2222) in his exact project's March development update."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "08a113675a5fc358f59d2b99dde2379f36d7182e3241f6bf385c75daad319694",
+      "bytes": 36372
+    },
+    {
       "id": "open3d-glitch",
       "title": "Glitch",
       "media": {
@@ -24945,7 +25016,7 @@
     {
       "id": "open3d-deadwood-open",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Inspected the README content and repository root/release metadata. No non-badge image was found in the reviewed README; this does not establish absence from child directories or the author website.",
+      "reason": "Research incomplete or access-limited: Inspected the README content and repository root/release metadata. No non-badge image was found in the reviewed README; this does not establish absence from child directories or the author website. Exact author homepage presents a browser game interface, not a published gameplay screenshot. The repo-linked LOB7 listing currently resolves to the different Solo Open variant and cannot evidence the exact online cooperative edition.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/cedricbernadac/deadwood-open/HEAD/README.md",
@@ -24986,6 +25057,21 @@
           "url": "https://api.github.com/repos/cedricbernadac/deadwood-open/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Public GitHub recursive source listing (non-truncated, 676 repository entries): inventoried 59 tracked raster/video path(s). Listing alone does not establish what those images show, release eligibility, or browser rendering."
+        },
+        {
+          "url": "https://playdeadwood.com/",
+          "result": "HTTP 200; exact game HTML, no visible gallery, video or OG screenshot.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/cedricbernadac/deadwood-open/issues?state=all&per_page=30",
+          "result": "HTTP 200; returned an empty issue/PR list.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://lob7.com/games/bg_s_07513039-c17e-4900-afac-bb2509cac6c4",
+          "result": "The exact README’s LOB7 link now resolves to a page titled Deadwood Solo Open; not used as exact cooperative screenshot evidence.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -26762,7 +26848,7 @@
     {
       "id": "open3d-web-arena-game",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No raster or video file appears in the complete inspected repository tree; README and repository/release evidence did not yield a creator screenshot. No verified playable browser rendering is available for capture. A known hosted build was not browser-render verified, so potential browser capture remains unverified.",
+      "reason": "Research incomplete or access-limited: No raster or video file appears in the complete inspected repository tree; README and repository/release evidence did not yield a creator screenshot. No verified playable browser rendering is available for capture. A known hosted build was not browser-render verified, so potential browser capture remains unverified. Exact developer site is statically reachable but has no published gameplay raster or video. The linked creator social thread was not accessible through the public lookup, and no alternate approved exact original was verified.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/tombuildsstuff/web-arena-game/HEAD/README.md",
@@ -26808,6 +26894,21 @@
           "url": "https://arena.ibuildstuff.eu",
           "checkedAt": "2026-11-18",
           "result": "Public page text retrieved and inspected for publication evidence; actual gameplay rendering was not verified by this text retrieval."
+        },
+        {
+          "url": "https://arena.ibuildstuff.eu/",
+          "result": "HTTP 200; game lobby has an empty avatar element but no gameplay original, video or OG image.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/tombuildsstuff/web-arena-game/issues?state=all&per_page=30",
+          "result": "HTTP 200; returned an empty issue/PR list.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://bsky.app/profile/tombuildsstuff.bsky.social/post/3mcevpvi2vs24",
+          "result": "Public lookup unavailable. Original post was referenced by the same developer when introducing this exact source and deployed URL.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -26856,7 +26957,7 @@
     {
       "id": "open3d-palworldsoulultra",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The README explicitly identifies its title illustration, creature portraits and UI texture as AI-generated presentation assets. These are excluded; no verified gameplay capture was obtained.",
+      "reason": "Research incomplete or access-limited: The README explicitly identifies its title illustration, creature portraits and UI texture as AI-generated presentation assets. These are excluded; no verified gameplay capture was obtained. The project’s complete tree contains six raster files that are title art, UI paper and portraits or their sources, not in-game captures. The project’s official umbrella README describes a local-only Vite launch.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/oh-ashen-one/palworldsoulultra/HEAD/README.md",
@@ -26887,6 +26988,21 @@
           "url": "https://github.com/oh-ashen-one/palworldsoulultra/releases",
           "checkedAt": "2026-11-18",
           "result": "Author releases page explicitly lists no published releases."
+        },
+        {
+          "url": "https://api.github.com/repos/oh-ashen-one/palworldsoulultra/git/trees/HEAD?recursive=1",
+          "result": "HTTP 200; complete 29-entry source tree; all raster names identify title, portrait or UI art.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/oh-ashen-one/palworldsoulultra/issues?state=all&per_page=30",
+          "result": "HTTP 200; returned an empty issue/PR list.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/oh-ashen-one/ashen-ai-gaming-repos",
+          "result": "Developer explicitly names exact Wildkin Frontier and says browser titles are local Vite launches.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -28541,7 +28657,7 @@
     {
       "id": "open3d-pixel-tactical-shooter",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README describes a local Vite/Three.js shooter and provides no screenshot. Releases are empty; full-tree review was blocked by the shared GitHub API rate limit. The exact repo's successful author-pushed Pages action prints this actual deployment URL. The deployed game creates the bundled Three.js renderer as new U0({antialias:!1,alpha:!1,powerPreference:'high-performance'}); the 2D application context is MinimapRenderer only. No alternative CPU main renderer verified.",
+      "reason": "Research incomplete or access-limited: README describes a local Vite/Three.js shooter and provides no screenshot. Releases are empty; full-tree review was blocked by the shared GitHub API rate limit. The exact repo's successful author-pushed Pages action prints this actual deployment URL. The deployed game creates the bundled Three.js renderer as new U0({antialias:!1,alpha:!1,powerPreference:'high-performance'}); the 2D application context is MinimapRenderer only. No alternative CPU main renderer verified. Complete exact repository issues and tree now accessible; no creator gameplay image or footage found, and the reported exact Pages deployment is Three.js/WebGL rather than independent screenshot publication.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/Vadaski/pixel-tactical-shooter/HEAD/README.md",
@@ -28592,13 +28708,28 @@
           "url": "https://vadaski.github.io/pixel-tactical-shooter/assets/index-CBFU7aN6.js",
           "checkedAt": "2026-11-19",
           "result": "The exact repo's successful author-pushed Pages action prints this actual deployment URL. The deployed game creates the bundled Three.js renderer as new U0({antialias:!1,alpha:!1,powerPreference:'high-performance'}); the 2D application context is MinimapRenderer only. No alternative CPU main renderer verified."
+        },
+        {
+          "url": "https://api.github.com/repos/Vadaski/pixel-tactical-shooter/git/trees/HEAD?recursive=1",
+          "result": "HTTP 200; complete 86-entry source tree; no raster or video.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/Vadaski/pixel-tactical-shooter/issues?state=all&per_page=30",
+          "result": "HTTP 200; returned an empty issue/PR list.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/Vadaski/pixel-tactical-shooter",
+          "result": "Developer documentation describes exact Three.js project.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
     {
       "id": "open3d-snakeboard",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README.md returned 404 but the repository exists. This is not interpreted as absence of all README variants or game media; deeper listing review was blocked by API rate limiting.",
+      "reason": "Research incomplete or access-limited: README.md returned 404 but the repository exists. This is not interpreted as absence of all README variants or game media; deeper listing review was blocked by API rate limiting. The author’s deployed page exists but does not publish an embedded gameplay still. Source requires Three.js WebGPURenderer; no sandbox-rendered frame was verified. A creator social clip was referenced by a third-party index, but no matching original under an approved origin was confirmed.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/thebuggeddev/snakeboard/HEAD/README.md",
@@ -28629,6 +28760,26 @@
           "url": "https://github.com/thebuggeddev/snakeboard/releases",
           "checkedAt": "2026-11-18",
           "result": "Author releases page explicitly lists no published releases."
+        },
+        {
+          "url": "https://snakeboard.wasmer.app/",
+          "result": "HTTP 200; served exact index and script, no OG/gallery image.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/thebuggeddev/snakeboard/blob/HEAD/src/main.js",
+          "result": "Exact game source imports three/webgpu and initializes WebGPURenderer.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/thebuggeddev/snakeboard/git/trees/HEAD?recursive=1",
+          "result": "HTTP 200; complete 7-entry source tree; no raster or video.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/thebuggeddev/snakeboard/issues?state=all&per_page=30",
+          "result": "HTTP 200; returned an empty issue/PR list.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -28734,7 +28885,7 @@
     {
       "id": "open3d-quoridor-3d",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README describes a self-contained WebGL2 board game with no external assets. The supplied author Pages URL could not be verified through static retrieval; no real gameplay frame was obtained.",
+      "reason": "Research incomplete or access-limited: README describes a self-contained WebGL2 board game with no external assets. The supplied author Pages URL could not be verified through static retrieval; no real gameplay frame was obtained. The author GitHub Pages route is now statically reachable, but it contains no creator image and directly requests WebGL2. A rendered frame was not verified.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/kccqzy/quoridor-3d/HEAD/README.md",
@@ -28765,6 +28916,21 @@
           "url": "https://github.com/kccqzy/quoridor-3d/releases",
           "checkedAt": "2026-11-18",
           "result": "Author releases page explicitly lists no published releases."
+        },
+        {
+          "url": "https://kccqzy.github.io/quoridor-3d/",
+          "result": "HTTP 200 for exact author deployment, HTML has getContext(webgl2) and no image/video or preview metadata.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/kccqzy/quoridor-3d/git/trees/HEAD?recursive=1",
+          "result": "HTTP 200; complete 3-entry source tree; no raster or video.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/kccqzy/quoridor-3d/issues?state=all&per_page=30",
+          "result": "HTTP 200; returned an empty issue/PR list.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -33106,6 +33272,21 @@
           "url": "https://github.com/tricsi/spacecraft/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://github.com/tricsi/spacecraft/issues",
+          "result": "Public open-issue view showed zero results; no additional author attachment evidence through this limited route. Closed filtered view was unavailable through this tool.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://tricsi.github.io",
+          "result": "Public discovery and author-name searches did not establish a distinct creator devlog or standalone original from this route. Previously checked author-hosted game was not re-run.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://www.leetdom.com/games/spacecraft",
+          "result": "Third-party game mirror surfaced again, not accepted as author publication. No raster sourced from it.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -34245,73 +34426,6 @@
           "url": "https://www.sintelgame.org/",
           "checkedAt": "2026-11-19",
           "result": "Dedicated old project website returned unavailable; no original creator image verified."
-        }
-      ]
-    },
-    {
-      "id": "open3d-beyond-all-reason",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Project images use external Webflow CDN, and promotional loop recording unrelated to actual HUD and cross-origin; no exact public official Steam store page located.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/beyond-all-reason/Beyond-All-Reason/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/beyond-all-reason/Beyond-All-Reason",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/beyond-all-reason/Beyond-All-Reason/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://www.beyondallreason.info/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/beyond-all-reason/Beyond-All-Reason/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/beyond-all-reason/Beyond-All-Reason",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/beyond-all-reason/Beyond-All-Reason/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://www.beyondallreason.info/",
-          "checkedAt": "2026-11-18",
-          "result": "Public retrieval failed: getaddrinfo EAI_AGAIN www.beyondallreason.info"
-        },
-        {
-          "url": "https://www.beyondallreason.info/screenshots",
-          "checkedAt": "2026-11-19",
-          "result": "Official gallery renders full attachments on cdn.prod.website-files.com; imageOriginAllowed rejects that cross-origin host."
-        },
-        {
-          "url": "https://api.github.com/repos/beyond-all-reason/Beyond-All-Reason/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-19",
-          "result": "Inspected complete author repository tree (19290 items); inventoried 7191 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
-        },
-        {
-          "url": "https://www.beyondallreason.info/screenshots",
-          "checkedAt": "2026-11-19",
-          "result": "Project images use external Webflow CDN, and promotional loop recording unrelated to actual HUD and cross-origin; no exact public official Steam store page located."
-        },
-        {
-          "url": "https://www.beyondallreason.info/promokit",
-          "checkedAt": "2026-11-19",
-          "result": "Project images use external Webflow CDN, and promotional loop recording unrelated to actual HUD and cross-origin; no exact public official Steam store page located."
         }
       ]
     },
@@ -36248,6 +36362,31 @@
           "url": "https://www.tamats.com/games/xiii/",
           "checkedAt": "2026-11-19",
           "result": "Inventoried exact author directory. Personally viewed the linked original thumbnail.PNG: lone horseback character posed before a castle, no active gameplay feedback or HUD and explicitly a thumbnail. Author competition archives are web source builds rather than native distributions."
+        },
+        {
+          "url": "https://api.github.com/repos/js13kGames/knights-of-acre",
+          "result": "Direct HTTP 200 identifies jagenjo/js13k2023 as source and parent of the contest mirror, with the game developer credited in mirror description.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/js13kGames/knights-of-acre/commits?path=preview.png&per_page=20",
+          "result": "Direct HTTP 200 returned an empty path-filtered history for the root preview.png. The previous raw 404 was not repeated; absence on alternate paths is not inferred.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/js13kGames/knights-of-acre",
+          "result": "Current indexed repository page did not contain a preview.png reference; no recoverable exact author original was established from this bounded route.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/jagenjo/js13k2023",
+          "result": "Author's source repository describes the exact 2023 WebGL competition entry and links the tamats.com demo. Main README has no standalone screenshot and the repository landing page lists no releases.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://www.tamats.com/games/xiii/",
+          "result": "Prior exact author directory inspection and original thumbnail review retained without another transfer. Author-hosted thumbnail was a posed horseback scene with no established gameplay feedback; competition archives are web source, not native distributions. No browser demo was newly tested.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -36352,6 +36491,11 @@
           "url": "https://roblouie.com/article/1316/the-making-of-whiskers-witch-adventure-js13k-2025/",
           "checkedAt": "2026-11-19",
           "result": "Exact developer post discovered with screenshot-labelled media but page HTTP 403 in public evidence browser; no bypass attempted. Competition asset URLs use a distinct play.js13kgames.com origin."
+        },
+        {
+          "url": "https://roblouie.com/article/1316/the-making-of-whiskers-witch-adventure-js13k-2025/",
+          "result": "Indexed creator postmortem links the exact 2025 game and includes possible screenshots, one labelled with a September 14 date, alongside renderer debugging illustrations. Actual page access returned HTTP 403, no stable original URL or direct visual review obtained; not imported.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -36561,7 +36705,7 @@
     {
       "id": "open3d-riftbreakers",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The available author gallery image was personally inspected and rejected as a title/logo promotional cover. No eligible gameplay frame was verified. Author gallery and official repository issues show no new genuine gameplay frame.",
+      "reason": "Research incomplete or access-limited: The available author gallery image was personally inspected and rejected as a title/logo promotional cover. No eligible gameplay frame was verified. Author gallery and official repository issues show no new genuine gameplay frame. A focused search of original developer handles and the diploma-project description produced no separate creator devlog or standalone gameplay original. Exact available creator page still points to the same pre-existing branded raster. Cached source inventory has no capture or evidence filenames, and unverified same-name media was excluded.",
       "checkedSources": [
         {
           "url": "https://konstantinet.itch.io/riftbreakers",
@@ -36622,6 +36766,16 @@
           "url": "https://konstantinet.itch.io/riftbreakers",
           "checkedAt": "2026-11-19",
           "result": "HTTP 200; single original gallery image already rejected as promotional title cover."
+        },
+        {
+          "url": "https://konstantinet.itch.io/riftbreakers",
+          "result": "Exact creator confirms diploma project and client repo. The indexed entry contains no developer devlog or alternate capture link.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/KonstantinKolo/RiftBreakers/git/trees/HEAD?recursive=1",
+          "result": "Rechecked cached exact complete tree filenames; raster paths are only assets/ and addons/, with no named screenshot, gameplay, capture or video.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -37023,6 +37177,21 @@
           "url": "https://greweb.itch.io/amaz3d",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://greweb.me/",
+          "result": "Author-domain archive and focused searches for AMAZ3D did not surface a distinct author devlog or source-proven gameplay raster in this pass.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/gre/js13k-2017/issues",
+          "result": "Checked public repository issue route; no usable additional authored attachment in the open-list response. Closed filtered view was unavailable.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/gre/js13k-2017/tree/master/doc",
+          "result": "Prior actual visual evidence retained: two title renders and an annotated graphics technique image, none eligible. No duplicate asset transfers or unapproved social/video imports.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -37050,6 +37219,16 @@
           "url": "https://bluemagnificent.com/baller/",
           "checkedAt": "2026-11-18",
           "result": "Public retrieval failed: curl: (28) Connection timed out after 8046 milliseconds"
+        },
+        {
+          "url": "https://discourse.threejs.org/t/baller-simple-rolling-ball-game/7166",
+          "result": "The original poster identifies the game as their own and links the exact BlueMagnificent/baller source and bluemagnificent.com deployment. The post contains one attached 1366×659 Baller image, but the explicit original is hosted on a different CDN outside the existing image-origin contract. No image pixels imported from this source.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://canada1.discourse-cdn.com/flex035/uploads/threejs/original/2X/a/a2c3f508bc9ca5caffe409c631b49d4d8b195895.png",
+          "result": "Original attachment URL as linked by the first-party forum post. Its cross-origin CDN host is not covered by imageOriginAllowed; no import, rehosting, or visual judgment asserted.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -37093,7 +37272,7 @@
     {
       "id": "open3d-ironbane-mmo",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run. Historic exact-creator publications were found but their known images are published across unapproved Wikia, Google CDN and slides S3 origins; exact repository issues lack creator media. A separate later revival is not the cataloged project.",
+      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run. Historic exact-creator publications were found but their known images are published across unapproved Wikia, Google CDN and slides S3 origins; exact repository issues lack creator media. A separate later revival is not the cataloged project. The original project lead's contemporaneous post links exact original screenshot paths at ironbane.com, but those paths now return HTML rather than image data. Related official source trees contain asset sprites and textures, not verification of those originals. No alternate approved original was identified.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/ironbane/ironbane/HEAD/README.md",
@@ -37134,6 +37313,31 @@
           "url": "https://github.com/nickjanssen/PatrolJS",
           "checkedAt": "2026-11-19",
           "result": "Creator links a YouTube recording explicitly captioned Usage inside Ironbane MMO; no verified directly published original under permitted origin."
+        },
+        {
+          "url": "https://opengameart.org/node/16067",
+          "result": "HTTP 200. Original developer Nikke's 2013 announcement links four first-party files under ironbane.com/images/screenshots; not the Wikia set reviewed earlier.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://ironbane.com/images/screenshots/1.png",
+          "result": "HEAD HTTP 200 but content-type text/html, not a usable original image.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://ironbane.com/images/screenshots/2.png",
+          "result": "HEAD HTTP 200 but content-type text/html, not a usable original image.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/ironbane/IronbaneAssetsLegacy/git/trees/HEAD?recursive=1",
+          "result": "HTTP 200; complete 4,251-entry first-party legacy asset tree, primarily game textures, sprites and UI, lacking the named screenshots.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/ironbane/ironbane-client/git/trees/HEAD?recursive=1",
+          "result": "HTTP 200; complete 554-entry official client tree, no gameplay screenshot or recording path.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -37214,7 +37418,7 @@
     {
       "id": "open3d-cube-fortress",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run. Exact repository README explains past playtest and local client and server, not an active deployment or public screenshot. The tracked image paths are named thomas.jpg; no authoritative publication linked them as gameplay.",
+      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run. Exact repository README explains past playtest and local client and server, not an active deployment or public screenshot. The tracked image paths are named thomas.jpg; no authoritative publication linked them as gameplay. Official Global Game Jam Curitiba 2026 PUCPR organizer listing identifies the exact game, but direct lookup of the expected submission path was denied. No original image URL or pixels were recovered from the official page. No access bypass attempted.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/JooJ-Joestar/ggj-cube-game/HEAD/README.md",
@@ -37240,6 +37444,16 @@
           "url": "https://github.com/JooJ-Joestar/ggj-cube-game",
           "checkedAt": "2026-11-19",
           "result": "Creator describes Babylon.js browser plus required Colyseus server; local route only for current users."
+        },
+        {
+          "url": "https://globalgamejam.org/group/31108/games?page=1",
+          "result": "Indexed official Curitiba PUCPR list includes exact Cube Fortress and the browser-MMO/map-drawing wording matching the developer source.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://globalgamejam.org/games/2026/cube-fortress",
+          "result": "Expected title slug returned HTTP 403. Exact individual page link not independently verified.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -37477,48 +37691,6 @@
           "url": "https://cubosphere.sourceforge.net/",
           "checkedAt": "2026-11-19",
           "result": "Small hosted document did not publish an independently verified frame."
-        }
-      ]
-    },
-    {
-      "id": "open3d-digital-extinction",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The README video.png candidate returned content rejected by reviewFrame as not a supported raster; the checked home page provided no accepted gameplay frame. No native package was run. Author native archives were published previously; project home and linked tutorial had only operating system icons and site favicon, no qualifying original screenshot. Author repo thumbnail handed off for independent check.",
-      "checkedSources": [
-        {
-          "url": "https://de-game.org/",
-          "checkedAt": "2026-11-18",
-          "result": "Read the author publication and identified native platform package names; no package was downloaded or executed."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/DigitalExtinction/Game/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/DigitalExtinction/Game",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/DigitalExtinction/Game/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://de-game.org/",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://de-game.org/",
-          "checkedAt": "2026-11-19",
-          "result": "Author native archives were published previously; project home and linked tutorial had only operating system icons and site favicon, no qualifying original screenshot. Author repo thumbnail handed off for independent check."
-        },
-        {
-          "url": "https://docs.de-game.org/tutorial/index.html",
-          "checkedAt": "2026-11-19",
-          "result": "Author native archives were published previously; project home and linked tutorial had only operating system icons and site favicon, no qualifying original screenshot. Author repo thumbnail handed off for independent check."
         }
       ]
     },
@@ -54297,6 +54469,21 @@
             "url": "https://github.com/cedricbernadac/deadwood-open/releases",
             "checkedAt": "2026-11-19",
             "result": "The public GitHub Releases listing explicitly showed no published releases. No native build was retrieved or executed; other publication sites are not ruled out."
+          },
+          {
+            "url": "https://playdeadwood.com/",
+            "result": "HTTP 200; exact game HTML, no visible gallery, video or OG screenshot.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://api.github.com/repos/cedricbernadac/deadwood-open/issues?state=all&per_page=30",
+            "result": "HTTP 200; returned an empty issue/PR list.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://lob7.com/games/bg_s_07513039-c17e-4900-afac-bb2509cac6c4",
+            "result": "The exact README’s LOB7 link now resolves to a page titled Deadwood Solo Open; not used as exact cooperative screenshot evidence.",
+            "checkedAt": "2026-11-19"
           }
         ]
       },
@@ -58072,6 +58259,21 @@
             "url": "https://arena.ibuildstuff.eu",
             "checkedAt": "2026-11-18",
             "result": "Public page text retrieved and inspected for publication evidence; actual gameplay rendering was not verified by this text retrieval."
+          },
+          {
+            "url": "https://arena.ibuildstuff.eu/",
+            "result": "HTTP 200; game lobby has an empty avatar element but no gameplay original, video or OG image.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://api.github.com/repos/tombuildsstuff/web-arena-game/issues?state=all&per_page=30",
+            "result": "HTTP 200; returned an empty issue/PR list.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://bsky.app/profile/tombuildsstuff.bsky.social/post/3mcevpvi2vs24",
+            "result": "Public lookup unavailable. Original post was referenced by the same developer when introducing this exact source and deployed URL.",
+            "checkedAt": "2026-11-19"
           }
         ]
       },
@@ -58151,6 +58353,21 @@
             "url": "https://github.com/oh-ashen-one/palworldsoulultra/releases",
             "checkedAt": "2026-11-18",
             "result": "Author releases page explicitly lists no published releases."
+          },
+          {
+            "url": "https://api.github.com/repos/oh-ashen-one/palworldsoulultra/git/trees/HEAD?recursive=1",
+            "result": "HTTP 200; complete 29-entry source tree; all raster names identify title, portrait or UI art.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://api.github.com/repos/oh-ashen-one/palworldsoulultra/issues?state=all&per_page=30",
+            "result": "HTTP 200; returned an empty issue/PR list.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://github.com/oh-ashen-one/ashen-ai-gaming-repos",
+            "result": "Developer explicitly names exact Wildkin Frontier and says browser titles are local Vite launches.",
+            "checkedAt": "2026-11-19"
           }
         ]
       },
@@ -61341,6 +61558,26 @@
             "url": "https://github.com/thebuggeddev/snakeboard/releases",
             "checkedAt": "2026-11-18",
             "result": "Author releases page explicitly lists no published releases."
+          },
+          {
+            "url": "https://snakeboard.wasmer.app/",
+            "result": "HTTP 200; served exact index and script, no OG/gallery image.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://github.com/thebuggeddev/snakeboard/blob/HEAD/src/main.js",
+            "result": "Exact game source imports three/webgpu and initializes WebGPURenderer.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://api.github.com/repos/thebuggeddev/snakeboard/git/trees/HEAD?recursive=1",
+            "result": "HTTP 200; complete 7-entry source tree; no raster or video.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://api.github.com/repos/thebuggeddev/snakeboard/issues?state=all&per_page=30",
+            "result": "HTTP 200; returned an empty issue/PR list.",
+            "checkedAt": "2026-11-19"
           }
         ]
       },
@@ -61878,6 +62115,21 @@
             "url": "https://github.com/kccqzy/quoridor-3d/releases",
             "checkedAt": "2026-11-18",
             "result": "Author releases page explicitly lists no published releases."
+          },
+          {
+            "url": "https://kccqzy.github.io/quoridor-3d/",
+            "result": "HTTP 200 for exact author deployment, HTML has getContext(webgl2) and no image/video or preview metadata.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://api.github.com/repos/kccqzy/quoridor-3d/git/trees/HEAD?recursive=1",
+            "result": "HTTP 200; complete 3-entry source tree; no raster or video.",
+            "checkedAt": "2026-11-19"
+          },
+          {
+            "url": "https://api.github.com/repos/kccqzy/quoridor-3d/issues?state=all&per_page=30",
+            "result": "HTTP 200; returned an empty issue/PR list.",
+            "checkedAt": "2026-11-19"
           }
         ]
       },
@@ -69318,6 +69570,11 @@
             "url": "https://github.com/js13kGames/invaders/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://github.com/andykswong/_INVADERS",
+            "result": "Official competition entry attributes the exact 2021 game to Andy Wong. Same author's primary README explicitly states game graphics rendered by mugl micro WebGL library and requires a WebGL 1.0 enabled browser and listed GPU features. Offline single-player removes network requirements, not rendering requirement. No need to trigger camera upload/online co-op flags.",
+            "checkedAt": "2026-11-19"
           }
         ]
       },
@@ -73588,6 +73845,11 @@
             "url": "https://js13kgames.com/2024/games/the-city-without-that-number",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          },
+          {
+            "url": "https://sites.engineering.ucsb.edu/~mdupree/blog/JS13K_2024_Postmortem.html",
+            "result": "Creator's own postmortem directly links this exact competition entry, original source and archive fork. Archive fork's README explicitly calls this a custom WebGL2 city-building puzzler; AI demo mode runs actual game logic, not an alternate renderer. No CPU fallback verified.",
+            "checkedAt": "2026-11-19"
           }
         ]
       },
@@ -73635,6 +73897,11 @@
             "url": "https://github.com/zackurben/js13k-2019/releases",
             "checkedAt": "2026-11-18",
             "result": "Source retrieval HTTP 200; not a browser playability check."
+          },
+          {
+            "url": "https://zackurben.com/",
+            "result": "The creator's portfolio links this exact repository and the original competition submission and lists WebGL among the game's technologies. The repo's collected engine is custom WebGL 2 in catalogue source. The official archive is reachable as metadata/permalink only in this check (page shell); no actual non-WebGL playable engine or browser rendering verified.",
+            "checkedAt": "2026-11-19"
           }
         ]
       },
@@ -73734,6 +74001,11 @@
             "url": "https://omarxo.itch.io/neotrap",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          },
+          {
+            "url": "https://html-classic.itch.zone/html/194782/game/game.js",
+            "result": "The itch.io creator page credits omarxo, links the original Omar Huseynov repository rather than the preserved copy, and links this genuine HTML5 build. The live code gates setup on BABYLON.Engine.isSupported(), creates new BABYLON.Engine(canvas,true), and calls scene.render() in the engine's render loop. No Canvas2D fallback is attempted. Additionally the actual build displays a photosensitive-seizure warning requiring acknowledgement; none entered. Direct itch shell returned 429 once, no retry or bypass attempted; embedded linked HTML was read for source only.",
+            "checkedAt": "2026-11-19"
           }
         ]
       },
@@ -74713,6 +74985,11 @@
             "url": "https://github.com/ufrshubham/FastestPizzaDelivery/releases",
             "checkedAt": "2026-11-19",
             "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
+          },
+          {
+            "url": "https://ufrshubham.itch.io/fastest-pizza-delivery",
+            "result": "The exact repo-linked DevKage page describes the Engineless Jam game, credits Raylib, and links the source back. The accessible page was labelled a downloadable game, but exposed no named upload, version/platform listing, or browser Run control; its label alone does not verify a playable or a specific native package.",
+            "checkedAt": "2026-11-19"
           }
         ]
       },
