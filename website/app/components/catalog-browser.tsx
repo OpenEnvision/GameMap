@@ -74,12 +74,13 @@ const referenceLabels: Record<string, string> = {
    ========================================================================== */
 
 /** English headlines set their last word in Instrument Serif italics.
- *  Chinese headlines stay upright (no serif italics for CJK). */
+ *  Chinese headlines stay upright (no serif italics for CJK), and so does a
+ *  one-word title: the contrast needs an upright word beside the italic one. */
 export function AccentTitle({ text }: { text: string }) {
   const { locale } = useSiteI18n();
   if (locale !== "en") return <>{text}</>;
-  const match = /^(.*\s)(\S+)$/.exec(text);
-  if (!match) return <em>{text}</em>;
+  const match = /^(.*\s)(\S+)$/.exec(text.trim());
+  if (!match) return <>{text}</>;
   return (
     <>
       {match[1]}
@@ -261,6 +262,35 @@ const pillarTones: Record<Pillar["id"], string> = {
   learn: "var(--tax-2d)",
 };
 
+/** The tab row of one pillar: its name, then every sibling collection.
+ *  NavLink marks the page being viewed with aria-current. The row carries its
+ *  own tone, so it can sit on any page, not only inside an IndexHero. */
+export function PillarTabs({
+  current,
+  className = "",
+}: {
+  current: Pillar["id"];
+  className?: string;
+}) {
+  const { t } = useSiteI18n();
+  const group = pillars.find((item) => item.id === current);
+  if (!group) return null;
+  return (
+    <nav
+      className={`ix-siblings ${className}`.trim()}
+      aria-label={t("{pillar} collections", { pillar: t(group.label) })}
+      style={{ "--ix-tone": pillarTones[current] } as CSSProperties}
+    >
+      <span className="ix-pillar">{t(group.label)}</span>
+      {group.links.map((link) => (
+        <NavLink key={link.path} to={link.path}>
+          {t(link.title)}
+        </NavLink>
+      ))}
+    </nav>
+  );
+}
+
 /** The header band shared by every collection index. */
 export function IndexHero({
   pillar,
@@ -282,9 +312,9 @@ export function IndexHero({
   children?: ReactNode;
 }) {
   const { t } = useSiteI18n();
-  const group = pillars.find((item) => item.id === pillar)!;
   const reduced = useReducedMotion();
   const counter = useRef<HTMLElement>(null);
+  const orbitSeed = seed ?? pillar.length * 13 + count;
   // The count rolls up once on arrival. Static HTML (and reduced motion)
   // always shows the final number; only the text node's value changes.
   useEffect(() => {
@@ -313,17 +343,7 @@ export function IndexHero({
     >
       <div className="ix-hero-inner">
         <div className="ix-hero-copy">
-          <nav
-            className="ix-siblings"
-            aria-label={t("{pillar} collections", { pillar: t(group.label) })}
-          >
-            <span className="ix-pillar">{t(group.label)}</span>
-            {group.links.map((link) => (
-              <NavLink key={link.path} to={link.path}>
-                {t(link.title)}
-              </NavLink>
-            ))}
-          </nav>
+          <PillarTabs current={pillar} />
           <p className="kicker ix-kicker">{t(kicker)}</p>
           <h1 className="ix-title">
             <AccentTitle text={t(title)} />
@@ -331,14 +351,21 @@ export function IndexHero({
           <p className="lede ix-lede">{t(lede)}</p>
           {children}
         </div>
-        <div className="ix-hero-stage">
-          <OrbitArt seed={seed ?? pillar.length * 13 + count} />
-          <p className="ix-count collection-total">
-            <strong ref={counter}>{count}</strong>
-            <span>{t(countLabel)}</span>
-          </p>
+        <div className="ix-hero-stage" data-count={count ? undefined : "none"}>
+          <OrbitArt seed={orbitSeed} />
+          {count > 0 ? (
+            <p className="ix-count collection-total">
+              <strong ref={counter}>{count}</strong>
+              <span>{t(countLabel)}</span>
+            </p>
+          ) : (
+            // Nothing published yet: no oversized zero, just a quiet label.
+            <p className="ix-count ix-count-uncharted">
+              <span>{t("Uncharted")}</span>
+            </p>
+          )}
           <OrbitArt
-            seed={seed ?? pillar.length * 13 + count}
+            seed={orbitSeed}
             layer="front"
             className="ix-orbit-art ix-orbit-front"
           />
@@ -348,25 +375,29 @@ export function IndexHero({
   );
 }
 
-/** A designed empty result: a quiet uncharted system and a way forward. */
+/** A designed empty result: a quiet uncharted system and a way forward.
+ *  `art={false}` keeps only the compass, for pages whose header band already
+ *  draws the orbit. */
 export function IndexEmpty({
   title,
   body,
   className = "",
   seed = 23,
+  art = true,
   children,
 }: {
   title: string;
   body: string;
   className?: string;
   seed?: number;
+  art?: boolean;
   children?: ReactNode;
 }) {
   const { t } = useSiteI18n();
   return (
     <div className={`empty-state ix-empty ${className}`.trim()}>
-      <div className="ix-empty-art">
-        <OrbitArt seed={seed} className="ix-orbit-art" />
+      <div className="ix-empty-art" data-art={art ? undefined : "mark"}>
+        {art && <OrbitArt seed={seed} className="ix-orbit-art" />}
         <Compass size={26} strokeWidth={1.4} aria-hidden="true" />
       </div>
       <h2>{t(title)}</h2>
@@ -700,6 +731,56 @@ export function TypedCollection({
         </button>
       </nav>
     );
+  const hero = (
+    <IndexHero
+      pillar={isPaper ? "research" : "games"}
+      kicker={isPaper ? "Research & evidence" : "SOURCE-REVIEWED GAMES"}
+      title={title}
+      lede={description}
+      count={entries.length}
+      countLabel={isPaper ? "research records" : "game records"}
+    />
+  );
+  // An unpublished collection is not a search result: no toolbar, facets or
+  // record count, only the band and a way on to a charted neighbour of the
+  // same pillar.
+  if (entries.length === 0)
+    return (
+      <main
+        id="main-content"
+        className={`ix-page collection-page ${isPaper ? "paper-collection" : "game-collection"}`}
+        data-collection-state="uncharted"
+      >
+        <title>{`${t(title)} — GameMap`}</title>
+        <meta name="description" content={t(description)} />
+        {hero}
+        <div className="ix-wrap ix-catalog ix-uncharted">
+          <IndexEmpty
+            className="catalog-empty"
+            title="This part of the map is still uncharted."
+            body="No records have been published in this collection yet. Explore a neighbouring collection while it is charted."
+            art={false}
+          >
+            {pillars
+              .find((item) => item.id === (isPaper ? "research" : "games"))!
+              .links.filter(
+                (link) =>
+                  link.collection !== (isPaper ? "papers" : "threejsGames"),
+              )
+              .map((link) => (
+                <Link
+                  key={link.path}
+                  className="button button-secondary"
+                  to={link.path}
+                >
+                  {t(link.title)}
+                  <ArrowRight size={15} aria-hidden="true" />
+                </Link>
+              ))}
+          </IndexEmpty>
+        </div>
+      </main>
+    );
   return (
     <main
       id="main-content"
@@ -707,14 +788,7 @@ export function TypedCollection({
     >
       <title>{`${t(title)} — GameMap`}</title>
       <meta name="description" content={t(description)} />
-      <IndexHero
-        pillar={isPaper ? "research" : "games"}
-        kicker={isPaper ? "Research & evidence" : "SOURCE-REVIEWED GAMES"}
-        title={title}
-        lede={description}
-        count={entries.length}
-        countLabel={isPaper ? "research records" : "game records"}
-      />
+      {hero}
       <div className="ix-wrap ix-catalog">
         {survey && (
           <Link className="catalog-survey" to={survey.url}>
@@ -1017,43 +1091,13 @@ export function TypedCollection({
             {filtered.length === 0 && (
               <IndexEmpty
                 className="catalog-empty"
-                title={
-                  entries.length
-                    ? "No matching records."
-                    : "This part of the map is still uncharted."
-                }
-                body={
-                  entries.length
-                    ? "Try another topic, a different year, or fewer filters."
-                    : "No records have been published in this collection yet. Explore a neighbouring collection while it is charted."
-                }
+                title="No matching records."
+                body="Try another topic, a different year, or fewer filters."
                 seed={isPaper ? 31 : 47}
               >
-                {(entries.length > 0 || active.length > 0) && (
-                  <button className="button button-secondary" onClick={clear}>
-                    {t("Clear filters")}
-                  </button>
-                )}
-                {entries.length === 0 &&
-                  pillars
-                    .find(
-                      (item) => item.id === (isPaper ? "research" : "games"),
-                    )!
-                    .links.filter(
-                      (link) =>
-                        link.collection !==
-                        (isPaper ? "papers" : "threejsGames"),
-                    )
-                    .map((link) => (
-                      <Link
-                        key={link.path}
-                        className="button button-secondary"
-                        to={link.path}
-                      >
-                        {t(link.title)}
-                        <ArrowRight size={15} aria-hidden="true" />
-                      </Link>
-                    ))}
+                <button className="button button-secondary" onClick={clear}>
+                  {t("Clear filters")}
+                </button>
               </IndexEmpty>
             )}
             <div className="catalog-bottom-pagination">{paging("bottom")}</div>

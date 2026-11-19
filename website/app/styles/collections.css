@@ -319,6 +319,31 @@ html[lang="zh-CN"] .ix-title {
 html[lang="zh-CN"] .ix-count span {
   letter-spacing: 0.08em;
 }
+/* Nothing published yet: the orbit stays, the number gives way to a small
+   mono label with a hollow (uncharted) marker. */
+.ix-count-uncharted span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px 9px 14px;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--paper) 84%, transparent);
+  color: var(--ink);
+  font-size: 11.5px;
+}
+.ix-count-uncharted span::before {
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  box-sizing: border-box;
+  border: 1.5px solid var(--ix-tone);
+  border-radius: 50%;
+  box-shadow: 0 0 10px color-mix(in srgb, var(--ix-tone) 60%, transparent);
+}
+.ix-hero-stage[data-count="none"] .ix-orbit-art:not(.ix-orbit-front) {
+  opacity: 0.8;
+}
 
 /* Paths: a short table of contents inside the band. */
 .ix-path-index {
@@ -721,6 +746,12 @@ html[lang="zh-CN"] :is(.ix-meta strong, .ix-meta-title) {
   width: 100%;
   height: 100%;
 }
+/* Compass only: used under a header band that already draws the orbit. */
+.ix-empty-art[data-art="mark"] {
+  width: auto;
+  aspect-ratio: auto;
+  margin-bottom: 10px;
+}
 .ix-empty-art > svg:last-child {
   position: relative;
   padding: 14px;
@@ -755,6 +786,10 @@ html[lang="zh-CN"] .ix-page .ix-empty h2 {
   justify-content: center;
   gap: 10px;
   margin-top: 12px;
+}
+/* An unpublished collection: the empty state follows the band directly. */
+.ix-uncharted .ix-empty {
+  padding-block: clamp(44px, 6vw, 80px);
 }
 
 /* --- 7. Resource library: logo-forward tool cards ------------------------ */
@@ -914,6 +949,47 @@ html[lang="zh-CN"] .ix-page .ix-empty h2 {
 }
 .resource-card-top .resource-icon img {
   padding: 8px;
+}
+/* No verified logo: the category's neutral glyph in a muted tile, and a
+   quieter orbit around it. Shared by the cards and the record dialog. */
+.resource-glyph {
+  display: grid;
+  flex: none;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, var(--surface-sheen), transparent 70%),
+    color-mix(in srgb, var(--soft) 72%, var(--panel));
+  color: var(--muted);
+  box-shadow:
+    inset 0 1px 0 var(--glass-highlight),
+    0 14px 32px -18px rgb(0 0 0 / 0.5);
+}
+.resource-glyph svg {
+  width: 40%;
+  height: 40%;
+}
+.resource-grid > .resource-tile > .resource-card-top[data-logo="none"] {
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      color-mix(in srgb, var(--tone) 12%, transparent),
+      transparent 44%
+    ),
+    linear-gradient(
+      180deg,
+      var(--soft),
+      color-mix(in srgb, var(--soft) 50%, var(--panel))
+    );
+}
+.resource-grid > .resource-tile > .resource-card-top[data-logo="none"]::before {
+  background: repeating-radial-gradient(
+    circle at 50% 50%,
+    transparent 0 41px,
+    var(--line) 41px 42px
+  );
+  opacity: 0.9;
 }
 .ix-tile-index {
   position: absolute;
@@ -1120,13 +1196,46 @@ html[lang="zh-CN"] .resource-grid > .resource-tile > .resource-description {
 .resource-dialog .rd-close:hover {
   background: var(--hover);
 }
+/* Wide screens: the rail (stage, actions, facts) spans the left column; the
+   head (category, title, maintainer, summary) and the record read on the
+   right. The head comes first in the source so narrow screens lead with it. */
 .rd-layout {
   display: grid;
   grid-template-columns: 300px minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
   align-items: start;
   min-width: 0;
 }
+.rd-head {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  padding: 30px clamp(24px, 3.4vw, 48px) 0;
+}
+.rd-head-text {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  min-width: 0;
+}
+.resource-dialog .rd-head .content-title {
+  max-width: 100%;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.resource-dialog .rd-head .content-lead {
+  max-width: 62ch;
+  margin: 20px 0 0;
+}
+/* The small mark beside the title belongs to narrow screens only. */
+.rd-mark {
+  display: none;
+}
 .rd-rail {
+  grid-column: 1;
+  grid-row: 1 / span 2;
   position: sticky;
   top: 65px;
   display: grid;
@@ -1135,13 +1244,9 @@ html[lang="zh-CN"] .resource-grid > .resource-tile > .resource-description {
   border-right: 1px solid var(--line);
   min-width: 0;
 }
-.resource-dialog .detail-identity {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  justify-content: stretch;
-  justify-items: start;
-  gap: 8px;
-  margin: 0;
+.rd-main {
+  grid-column: 2;
+  grid-row: 2;
 }
 .resource-dialog .related-content > h2 {
   margin: 0 0 6px;
@@ -1159,7 +1264,6 @@ html[lang="zh-CN"] .resource-grid > .resource-tile > .resource-description {
   justify-self: stretch;
   width: 100%;
   height: 164px;
-  margin-bottom: 10px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
@@ -1184,12 +1288,44 @@ html[lang="zh-CN"] .resource-grid > .resource-tile > .resource-description {
   -webkit-mask-image: radial-gradient(circle, #000 25%, transparent 72%);
   mask-image: radial-gradient(circle, #000 25%, transparent 72%);
 }
+.rd-stage[data-logo="none"] {
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      color-mix(in srgb, var(--tone) 12%, transparent),
+      transparent 52%
+    ),
+    var(--soft);
+}
+.rd-stage[data-logo="none"]::before {
+  background: repeating-radial-gradient(
+    circle at 50% 50%,
+    transparent 0 44px,
+    var(--line) 44px 45px
+  );
+}
 .rd-stage .resource-icon {
   border: 0;
   border-radius: 20px;
   box-shadow:
     0 0 0 1px color-mix(in srgb, var(--ink) 8%, transparent),
     0 24px 50px -18px color-mix(in srgb, var(--tone) 80%, transparent);
+}
+.rd-stage .resource-glyph {
+  border-radius: 20px;
+}
+.rd-mark .resource-icon {
+  border: 0;
+  border-radius: 15px;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--ink) 8%, transparent),
+    0 14px 30px -14px color-mix(in srgb, var(--tone) 80%, transparent);
+}
+.rd-mark .resource-icon img {
+  padding: 6px;
+}
+.rd-mark .resource-glyph {
+  border-radius: 15px;
 }
 .rd-category {
   display: inline-flex;
@@ -1204,10 +1340,12 @@ html[lang="zh-CN"] .resource-grid > .resource-tile > .resource-description {
   background: var(--tone);
 }
 .rd-organization {
-  color: var(--ink);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: -0.015em;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
 }
 .resource-dialog .detail-actions {
   display: grid;
@@ -1267,7 +1405,7 @@ html[lang="zh-CN"] .resource-grid > .resource-tile > .resource-description {
 }
 .rd-main {
   min-width: 0;
-  padding: 30px clamp(24px, 3.4vw, 48px) 44px;
+  padding: 28px clamp(24px, 3.4vw, 48px) 44px;
 }
 .resource-dialog .detail-media {
   margin: 0 0 30px;
@@ -2869,22 +3007,66 @@ html[lang="zh-CN"] .ix-context-head h2 {
     grid-template-columns: 220px minmax(0, 1fr);
     gap: 24px;
   }
+  /* One column: the head leads, its small mark beside the title; Visit and
+     Save follow the summary, and the large stage steps aside. */
   .rd-layout {
     grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+  }
+  .rd-head,
+  .rd-rail,
+  .rd-main {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .rd-head {
+    grid-template-columns: 52px minmax(0, 1fr);
+    column-gap: 18px;
+    align-items: center;
+    padding: 28px 28px 0;
+  }
+  .rd-mark {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+    place-items: center;
+  }
+  .rd-head-text {
+    grid-column: 2;
+    grid-row: 1;
+    gap: 8px;
+  }
+  .resource-dialog .rd-head .content-lead {
+    grid-column: 1 / -1;
+    margin-top: 18px;
   }
   .rd-rail {
     position: static;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: start;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 22px 28px 26px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
-  .rd-rail > .detail-identity,
-  .rd-rail > .copy-notice {
-    grid-column: 1 / -1;
+  .rd-rail > .rd-stage {
+    display: none;
   }
-  .rd-stage {
-    height: 140px;
+  .resource-dialog .detail-actions {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    max-width: 520px;
+  }
+  .rd-facts {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    column-gap: 24px;
+  }
+  .resource-dialog .detail-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 26px;
+  }
+  .rd-main {
+    padding-top: 24px;
   }
 }
 @media (max-width: 900px) {
@@ -2968,6 +3150,11 @@ html[lang="zh-CN"] .ix-context-head h2 {
   }
   .ix-search {
     flex-basis: auto;
+  }
+  /* The catalog bar stacks too: the flex-basis given to its selects at
+     tablet widths must not turn into height here. */
+  .catalog-main .ix-bar > .collection-select {
+    flex: 0 0 auto;
   }
   .ix-bar-selects {
     display: grid;
@@ -3080,6 +3267,11 @@ html[lang="zh-CN"] .ix-context-head h2 {
   .resource-card-top .resource-icon img {
     padding: 5px;
   }
+  .resource-card-top .resource-glyph {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px;
+  }
   .ix-tile-index {
     display: none;
   }
@@ -3169,12 +3361,50 @@ html[lang="zh-CN"] .ix-context-head h2 {
   .resource-dialog .detail-toolbar {
     padding-left: 18px;
   }
+  .rd-head {
+    column-gap: 14px;
+    padding: 22px 20px 0;
+  }
+  .resource-dialog .rd-head .content-title {
+    font-size: clamp(25px, 7vw, 30px);
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+  }
+  html[lang="zh-CN"] .resource-dialog .rd-head .content-title {
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  .resource-dialog .rd-head .content-lead {
+    margin-top: 14px;
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
   .rd-rail {
+    gap: 18px;
+    padding: 18px 20px 22px;
+  }
+  .resource-dialog .detail-actions .button {
+    padding-inline: 16px;
+    font-size: 13.5px;
+  }
+  .rd-facts {
     grid-template-columns: minmax(0, 1fr);
-    padding: 20px;
   }
   .rd-main {
-    padding: 24px 20px 32px;
+    padding: 22px 20px 32px;
+  }
+}
+/* Large phones: the catalog's two selects still share a row under the search
+   field, as on tablets, instead of stacking. */
+@media (min-width: 560px) and (max-width: 720px) {
+  .catalog-main .ix-bar {
+    flex-direction: row;
+  }
+  .catalog-main .ix-bar > .ix-search {
+    flex-basis: 100%;
+  }
+  .catalog-main .ix-bar > .collection-select {
+    flex: 1 1 0;
   }
 }
 @media (max-width: 420px) {
@@ -3291,7 +3521,7 @@ html[lang="zh-CN"] .ix-context-head h2 {
   .catalog-paper-row::after {
     transition: opacity var(--dur-base) var(--ease-out);
   }
-  .resource-card-top .resource-icon,
+  .resource-card-top :is(.resource-icon, .resource-glyph),
   .resource-grid > .resource-tile > .resource-card-top::before {
     transition:
       scale var(--dur-slow) var(--ease-expo),
@@ -3313,7 +3543,7 @@ html[lang="zh-CN"] .ix-context-head h2 {
     .ix-mission-track > .content-record:hover {
       translate: 0 -4px;
     }
-    .resource-grid > .resource-tile:hover .resource-icon {
+    .resource-grid > .resource-tile:hover :is(.resource-icon, .resource-glyph) {
       scale: 1.08;
     }
     .resource-grid > .resource-tile:hover > .resource-card-top::before {

@@ -17,12 +17,10 @@ import { Link, useNavigate, useSiteI18n, SourceLanguage } from "../lib/i18n";
 import { contentFor, sources } from "../../content/registry.server";
 import { matchesSearch } from "../../content/matching";
 import { searchableText } from "../../content/search";
-import ResourceIcon, {
-  ResourceAttribution,
-} from "../../src/components/ResourceIcon";
+import { ResourceAttribution } from "../../src/components/ResourceIcon";
 import { type Dimension, type Stage } from "../../src/types";
 import { categories, stageLabels, typeLabels } from "../lib/catalog";
-import { ResourceDetail } from "../components/resource-detail";
+import { ResourceDetail, ResourceMark } from "../components/resource-detail";
 import { url } from "../../content/site";
 import { useClientQuery } from "../lib/client-query";
 import { IndexEmpty, IndexHero } from "../components/catalog-browser";
@@ -192,7 +190,7 @@ export default function Resources() {
         countLabel="curated tools"
       >
         <div className="heading-links">
-          <Link to="/docs/catalog-review-coverage/">
+          <Link to="/docs/evaluation/review-coverage/">
             {t("How we review sources")}
             <ArrowUpRight size={14} />
           </Link>
@@ -383,11 +381,14 @@ export default function Resources() {
                   data-content-ref={entry.key}
                   style={tone(resource.category)}
                 >
-                  <div className="resource-card-top">
+                  <div
+                    className="resource-card-top"
+                    data-logo={identity.asset ? undefined : "none"}
+                  >
                     <span className="ix-tile-index" aria-hidden="true">
                       {String(index + 1).padStart(3, "0")}
                     </span>
-                    <ResourceIcon
+                    <ResourceMark
                       resource={resource}
                       identity={identity}
                       size={56}

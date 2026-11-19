@@ -1,13 +1,69 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { useHref } from "react-router";
 import { Link, useSiteI18n, LanguageSwitcher } from "../lib/i18n";
-import { ArrowUpRight, Bookmark, Check, Link2, X } from "lucide-react";
+import {
+  ArrowUpRight,
+  Bookmark,
+  Boxes,
+  Check,
+  Code2,
+  Compass,
+  Gamepad2,
+  Layers3,
+  Link2,
+  Orbit,
+  Sparkles,
+  X,
+  type LucideIcon,
+} from "lucide-react";
 import type { Resource } from "../../src/types";
 import type { ResourceIdentity } from "../../src/data/resourceIdentities";
 import ResourceIcon from "../../src/components/ResourceIcon";
 import type { ContentEntry } from "../../content/models";
-import { ContentDocument, RelatedDemos, MediaPreview } from "./content";
+import {
+  ContentBlockView,
+  ContentDocument,
+  RelatedDemos,
+  MediaPreview,
+} from "./content";
 import { categories, stageLabels, typeLabels } from "../lib/catalog";
+
+/** The taxonomy glyphs of the home page's "Six directions" list. */
+const categoryGlyphs: Record<string, LucideIcon> = {
+  agents: Code2,
+  engines: Boxes,
+  "2d": Gamepad2,
+  "3d": Layers3,
+  production: Sparkles,
+  world: Orbit,
+};
+
+/** A resource's verified logo. Without one, the neutral glyph of its
+ *  category sits in a muted tile: never a monogram or a generated mark.
+ *  The glyph is decorative; the category is always named in text nearby. */
+export function ResourceMark({
+  resource,
+  identity,
+  size,
+}: {
+  resource: Resource;
+  identity: ResourceIdentity;
+  size: number;
+}) {
+  if (identity.asset)
+    return <ResourceIcon resource={resource} identity={identity} size={size} />;
+  const Glyph = categoryGlyphs[resource.category] ?? Compass;
+  return (
+    <span
+      className="resource-glyph"
+      style={{ width: size, height: size }}
+      aria-hidden="true"
+      data-logo="none"
+    >
+      <Glyph size={Math.round(size * 0.4)} strokeWidth={1.5} />
+    </span>
+  );
+}
 
 export function ResourceDetail({
   entry,
@@ -50,6 +106,17 @@ export function ResourceDetail({
     };
   }, []);
   const category = categories.find((item) => item.id === resource.category);
+  // The record's title and summary lead the dialog on every screen; the rest
+  // of the record reads below them.
+  const intro = entry.blocks.filter(
+    (block) => block.type === "title" || block.type === "lead",
+  );
+  const heading = intro.find((block) => block.type === "title");
+  const record = {
+    ...entry,
+    blocks: entry.blocks.filter((block) => !intro.includes(block)),
+  };
+  const logo = identity.asset ? undefined : "none";
   return (
     <dialog
       ref={dialog}
@@ -84,18 +151,39 @@ export function ResourceDetail({
         </button>
       </div>
       <div className="rd-layout">
-        <aside className="rd-rail">
-          <div className="detail-identity">
-            <span className="rd-stage">
-              <ResourceIcon resource={resource} identity={identity} size={72} />
-            </span>
+        <div className="rd-head">
+          {/* Narrow screens: the mark sits beside the title. Wide screens show
+              it on the rail's stage instead. */}
+          <span className="rd-mark" data-logo={logo}>
+            <ResourceMark resource={resource} identity={identity} size={52} />
+          </span>
+          <div className="rd-head-text">
             {category && (
               <span className="small-label rd-category">
                 {t(category.label)}
               </span>
             )}
+            {heading ? (
+              <ContentBlockView block={heading} heading="h2" />
+            ) : (
+              <h2 className="content-title">{resource.name}</h2>
+            )}
             <span className="rd-organization">{identity.organization}</span>
           </div>
+          {intro
+            .filter((block) => block.type === "lead")
+            .map((block, index) => (
+              <ContentBlockView
+                key={`${block.field}-${index}`}
+                block={block}
+                heading="h2"
+              />
+            ))}
+        </div>
+        <aside className="rd-rail">
+          <span className="rd-stage" data-logo={logo}>
+            <ResourceMark resource={resource} identity={identity} size={72} />
+          </span>
           <div className="detail-actions">
             <a
               className="button button-primary"
@@ -219,7 +307,7 @@ export function ResourceDetail({
               <p>{demo.description}</p>
             </figure>
           )}
-          <ContentDocument entry={entry} heading="h2" />
+          <ContentDocument entry={record} heading="h2" />
           <RelatedDemos demos={demos} />
         </div>
       </div>

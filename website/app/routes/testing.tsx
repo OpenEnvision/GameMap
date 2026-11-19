@@ -72,11 +72,11 @@ export default function Testing() {
         countLabel="testing resources"
       >
         <div className="heading-links">
-          <Link to="/docs/game-testing-library/">
+          <Link to="/docs/reference/testing-library/">
             {t("Read the testing guide")}
             <ArrowUpRight size={14} />
           </Link>
-          <Link to="/docs/game-development-evaluation/">
+          <Link to="/docs/evaluation/development-evaluation/">
             {t("What should you measure?")}
             <ArrowUpRight size={14} />
           </Link>
