@@ -5649,6 +5649,20 @@
       "sha256": "7b240ee4f5c3c556d2e99beadc0313b24137f3061b5dfc713220695968c67b33"
     },
     {
+      "id": "open3d-3d-horror-game-yassine-mathlouthi",
+      "src": "media/learning/open3d-3d-horror-game-yassine-mathlouthi.webp",
+      "alt": "First-person horror gameplay showing a key on a table, an interaction prompt and a virtual movement control.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://raw.githubusercontent.com/yassine-mathlouthi/3d-horror-game/HEAD/README.md",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://github.com/user-attachments/assets/80ff801f-0212-4819-89a3-9d96d2d48334",
+      "width": 1280,
+      "height": 720,
+      "bytes": 46502,
+      "sha256": "07caf856971c9e92f503b0d32c0a22f79411116c1e33b322b1175a50f770b05a"
+    },
+    {
       "id": "open3d-all-alone",
       "src": "media/learning/open3d-all-alone.webp",
       "alt": "A first-person shotgun view shows an enemy and airborne debris inside a dimly lit room.",
@@ -5733,6 +5747,20 @@
       "sha256": "8f0749eb1e1750d51cefe27ac6b68568bc9b24e8905135ce5baebefc82ee30f3"
     },
     {
+      "id": "open3d-keep-going-trick-box",
+      "src": "media/learning/open3d-keep-going-trick-box.webp",
+      "alt": "Keep Going Trick Box platforming gameplay with red and green cubes, narrow raised paths and touch movement and jump controls.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://raw.githubusercontent.com/MajdLHB/Keep-Going-Trick-Box--Godot-Game-Project/HEAD/README.md",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://github.com/user-attachments/assets/68abd420-c2e2-4c60-b043-37b0e16472e1",
+      "width": 1280,
+      "height": 720,
+      "bytes": 13324,
+      "sha256": "b2ddf83692e5acf71157340fc75ea8be791e8d0fb272b162d3135a0f6f4abdb2"
+    },
+    {
       "id": "open3d-liblast",
       "src": "media/learning/open3d-liblast.webp",
       "alt": "A first-person arena shooter view with an energy weapon, a kill notification, health and jetpack indicators.",
@@ -5801,6 +5829,20 @@
       "height": 720,
       "bytes": 22044,
       "sha256": "abc1e704c8f80dce42757a7ad525ce2aac48c60244431af81b700aaf0c3bf180"
+    },
+    {
+      "id": "open3d-racing-game-cyteon",
+      "src": "media/learning/open3d-racing-game-cyteon.webp",
+      "alt": "A red and blue car races on a straight gray road through low-poly scenery.",
+      "caption": "Creator-published gameplay from the project’s itch.io screenshot gallery. Image rights remain with the original creator.",
+      "sourceUrl": "https://cyteon.itch.io/racing-game",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1hZ2UvMzEyOTAyNS8xODcxMzM4Mi5wbmc=/original/R8hFhJ.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 36044,
+      "sha256": "6b809426c5e0a91f5852e3e1f1154eac4152511ed7a0beac935e2bd65d7bfb02"
     },
     {
       "id": "open3d-return-null",
@@ -6013,6 +6055,20 @@
       "sha256": "cab454a97af4c957566f45143f2362645a78b2d69ed58b640bf7f1de218f9a24"
     },
     {
+      "id": "open3d-avolition-2",
+      "src": "media/learning/open3d-avolition-2.webp",
+      "alt": "Avolition 2 dungeon combat with a sword-wielding player, skeleton enemies, health bar and currency counter.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://raw.githubusercontent.com/echo-devim/Avolition2/HEAD/README.md",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/echo-devim/Avolition2/HEAD/screenshots/screenshot1.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 36158,
+      "sha256": "c7b729f3e725f7a0a3079fb9917ddda38b7e20d23cd84131806e42ada73bfc3b"
+    },
+    {
       "id": "open3d-0-a-d",
       "src": "media/learning/open3d-0-a-d.webp",
       "alt": "A rendered formation of ancient archers releases a dense volley of arrows beneath a cloudy sky.",
@@ -6209,6 +6265,20 @@
       "sha256": "31912aefbf1d7a7184da0ea1ff42f9fb57aaefcc43ecb38e3c09d018d860fc7a"
     },
     {
+      "id": "open3d-scp-containment-breach",
+      "src": "media/learning/open3d-scp-containment-breach.webp",
+      "alt": "SCP Containment Breach gameplay in a dark industrial room with the blink and stamina HUD at lower left.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://www.scpcbgame.com/info.html",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://www.scpcbgame.com/images/aaa1.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 14008,
+      "sha256": "422a6edf93d48a047621a890fecb4e60570c6531e123a3566427ce6e28ccd4e3"
+    },
+    {
       "id": "open3d-speed-dreams",
       "src": "media/learning/open3d-speed-dreams.webp",
       "alt": "A rear chase-camera view follows a blue racing car along a circuit beside pit garages and grandstands.",
@@ -6375,6 +6445,48 @@
       "height": 720,
       "bytes": 64816,
       "sha256": "f1302747978574b8362b7f7a7d457d7c14d8ca178fbcc652b93b6e9a189404b2"
+    },
+    {
+      "id": "open3d-ashworth-station",
+      "src": "media/learning/open3d-ashworth-station.webp",
+      "alt": "Ashworth Station first-person zombie combat on a subway platform, with wave, health, ammunition and touch controls.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://raw.githubusercontent.com/AUAggy/ashworth-station/HEAD/README.md",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/AUAggy/ashworth-station/HEAD/og-image.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 88596,
+      "sha256": "139fe86914d980c305768cea2ea2c417b218f4b2840a5c25245f1e0a91061887"
+    },
+    {
+      "id": "open3d-voxelcraft-bridgemind",
+      "src": "media/learning/open3d-voxelcraft-bridgemind.webp",
+      "alt": "VoxelCraft creative-mode gameplay showing voxel trees and terrain, a crosshair, inventory hotbar and status overlay.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://raw.githubusercontent.com/bridge-mind/voxelcraft/HEAD/README.md",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/bridge-mind/voxelcraft/HEAD/docs/screenshot.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 99186,
+      "sha256": "f675be1ac68c495726236c1ed6cb8738f479117c87d9c8966213f83d65761803"
+    },
+    {
+      "id": "open3d-stellar-abyss-echoes-of-exile",
+      "src": "media/learning/open3d-stellar-abyss-echoes-of-exile.webp",
+      "alt": "A spacecraft flies among asteroids in a dark star field with mission text, a central reticle and ship-status readouts.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/jeffotoni/deathstar",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/jeffotoni/deathstar/main/deathstar.jpeg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 15504,
+      "sha256": "54f8441aaf2870257b462d1419f9a31a92ff688166d9fffbb6b66a2f0bc5e7bc"
     },
     {
       "id": "open3d-atop",
@@ -6839,6 +6951,20 @@
       "sha256": "e8cd3f5134c9ba6b0f5a8f336f9b5c46a03149a56be168c5544ba10db0344e12"
     },
     {
+      "id": "open3d-adagate",
+      "src": "media/learning/open3d-adagate.webp",
+      "alt": "A first-person game view shows a flooded wood-paneled room, a small held object and a center crosshair.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/fastrgv/AdaGate",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/fastrgv/AdaGate/master/AGdynCubemap.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 65984,
+      "sha256": "c23f526f2757c36ca581404e9bd02b67f8891afd42a368636b5d4a0f31a5d58c"
+    },
+    {
       "id": "open3d-balazar-brothers",
       "src": "media/learning/open3d-balazar-brothers.webp",
       "alt": "Two characters stand on giant mushroom platforms near floating treasure chests and game counters.",
@@ -6851,6 +6977,20 @@
       "height": 720,
       "bytes": 32458,
       "sha256": "20971443b99be5d29ebb48c06acef9fcb392fadd814cb990a37589c8821ed736"
+    },
+    {
+      "id": "open3d-blockout-ii",
+      "src": "media/learning/open3d-blockout-ii.webp",
+      "alt": "Colored blocks occupy a three-dimensional wireframe pit, alongside score and cubes-played counters.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://www.blockout.net/blockout2/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://www.blockout.net/blockout2/screenshots/scr1.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 31102,
+      "sha256": "4293cfd1cd6e76c97a7ea135f93893a6d21a1913385efd6fe32372b1c70c5e2a"
     },
     {
       "id": "open3d-dreamchess",
@@ -6909,6 +7049,20 @@
       "sha256": "d7cc453cf290cabf7cc34b55a70f9ca1b9c91229f98f577493d49e7f855bc32a"
     },
     {
+      "id": "open3d-linux-air-combat",
+      "src": "media/learning/open3d-linux-air-combat.webp",
+      "alt": "A combat flight cockpit shows radar, flight gauges and ammunition counters while pursuing aircraft above a coastline.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://askmisterwizard.com/2019/LinuxAirCombat/LinuxAirCombat.htm",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://askmisterwizard.com/2019/LinuxAirCombat/NewCockpitAA.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 37900,
+      "sha256": "7aea1cd5f06ef4dfdcc67594e3d7339b12e18bfd1c7202eee299a5a4a0742b51"
+    },
+    {
       "id": "open3d-openspades",
       "src": "media/learning/open3d-openspades.webp",
       "alt": "A first-person view through a sunlit forest of voxel trees and blocky hills.",
@@ -6935,6 +7089,20 @@
       "height": 720,
       "bytes": 80860,
       "sha256": "ac998ea1578aabee26fe1c50fe41d378148b5549fda8ffb8f17e6b563b0133d2"
+    },
+    {
+      "id": "open3d-ultimate-stunts",
+      "src": "media/learning/open3d-ultimate-stunts.webp",
+      "alt": "A racing-game cockpit shows a cracked windshield, steering wheel, speed and RPM gauges, and a track minimap.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://www.ultimatestunts.nl/index.php?page=1&lang=en",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://www.ultimatestunts.nl/screenshots/0731.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 80146,
+      "sha256": "db82f8c7f6c6fefe63e12eb61abae65c810b130a0b1a69a413a5559fd90a0bc6"
     },
     {
       "id": "open3d-junk-magnet",
@@ -7651,6 +7819,20 @@
       "sha256": "0eace817c8d4932284ba4c1a62c3d18524f27243396dec496476da87459e5bb5"
     },
     {
+      "id": "open3d-h-craft-championship",
+      "src": "media/learning/open3d-h-craft-championship.webp",
+      "alt": "A futuristic hovercraft races along an elevated curved track under an orange sky, with lap and position displays.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://flipmode3d.com/h-craft-championship-ingamescreenshotsdemo/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://flipmode3d.com/images/hcraft/hcraft_f01.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 70770,
+      "sha256": "3ea1da4147b1f8217e883b21f0c213958eb5cadde27e25a296c9107242912477"
+    },
+    {
       "id": "open3d-minilanding3d",
       "src": "media/learning/open3d-minilanding3d.webp",
       "alt": "A lunar-lander instrument view shows wireframe terrain alongside velocity, altitude and propellant readouts.",
@@ -7665,6 +7847,20 @@
       "sha256": "989a87a594b2688bab7226619fdbbb2d4a6c4665e53822179e18e5380decf70e"
     },
     {
+      "id": "open3d-open-rails",
+      "src": "media/learning/open3d-open-rails.webp",
+      "alt": "A steam locomotive stands on a railway turntable in a station yard, with an in-game track monitor visible.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://open-rails.readthedocs.io/en/unstable/driving.html",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://open-rails.readthedocs.io/en/unstable/_images/driving-turntable.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 136336,
+      "sha256": "30d301de1e878bedc90eeb4091bc336924a2ea2b0d6bdc1661b6eaed7def8f7f"
+    },
+    {
       "id": "open3d-polexod",
       "src": "media/learning/open3d-polexod.webp",
       "alt": "An orange character navigates a small stone maze with a maze number and countdown timer.",
@@ -7677,6 +7873,20 @@
       "height": 720,
       "bytes": 25424,
       "sha256": "31264518292624cf9a9a93fefbb5b839c25710798eacc147ccd75611fddd1aa1"
+    },
+    {
+      "id": "open3d-slune",
+      "src": "media/learning/open3d-slune.webp",
+      "alt": "A penguin-like character crosses a snowy mountainside with a glowing blue trail, route map and status bar.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://www.lesfleursdunormal.fr/static/informatique/old/slune/screenshots_en.html",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://www.lesfleursdunormal.fr/static/_images/slune21.jpeg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 26466,
+      "sha256": "c2fb97235f3b1cfaa7319807bd5b6f7d7d8706110b580c1e4f97e12fc998cc9c"
     },
     {
       "id": "open3d-space-nerds-in-space",
@@ -7803,6 +8013,20 @@
       "height": 720,
       "bytes": 43874,
       "sha256": "111c4d8327bc05ccd3aaffcdd9855cb5a5b1218aa7dbc92d98a02209ba831983"
+    },
+    {
+      "id": "itch3d-g018",
+      "src": "media/learning/itch3d-g018.webp",
+      "alt": "A group of axe-wielding units attacks watchtowers above a grassy ravine.",
+      "caption": "Creator-published gameplay from the project’s itch.io screenshot gallery. Image rights remain with the original creator.",
+      "sourceUrl": "https://rcubdev.itch.io/tribal-trouble-resurrected",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1hZ2UvMzg2NjI5NC8yNjY2MTc1Ny5wbmc=/original/WmHCAs.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 107574,
+      "sha256": "e9b79c4433addceb487b6fe3a29472d413b2296f9da522617295b994f26a096e"
     },
     {
       "id": "itch3d-g022",
@@ -8029,6 +8253,20 @@
       "sha256": "836ac44fd30404e03d3768b785fdf93063a0cb14904b9c97adab1435b6c168dc"
     },
     {
+      "id": "itch3d-g045",
+      "src": "media/learning/itch3d-g045.webp",
+      "alt": "A player view points upward between stone walls at a small airborne figure.",
+      "caption": "Creator-published gameplay from the project’s itch.io screenshot gallery. Image rights remain with the original creator.",
+      "sourceUrl": "https://ue4split.itch.io/random-game",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1hZ2UvNzAzNDYxLzQwODYwOTIuanBn/original/eNu6S8.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 63670,
+      "sha256": "67f0beab62acf1e80215db340a155a7b431c8ef508206a0607f890c2d059627f"
+    },
+    {
       "id": "itch3d-g047",
       "origin": "creator-screenshot",
       "sourceUrl": "https://vegeta897.itch.io/spinblocks",
@@ -8169,6 +8407,20 @@
       "sha256": "275eeb1431493b8efcf304ee77683ad84926c80dfeb0bc50a03de557eaa82143"
     },
     {
+      "id": "itch3d-g066",
+      "src": "media/learning/itch3d-g066.webp",
+      "alt": "An in-game room contains a blocky bearded character, display weapons, a chalkboard and orange-lit counters.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://blendogames.itch.io/thirtyflightsofloving",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1hZ2UvNDQ0NjU3LzIyNDA4ODAuanBn/original/ORAeUa.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 53334,
+      "sha256": "802db78bd2c3c12dc127dfa0f0ac38eba7e6da439e72a102db58eee1f5ad8c17"
+    },
+    {
       "id": "itch3d-g067",
       "origin": "creator-screenshot",
       "sourceUrl": "https://gvaliente.itch.io/varooom-3d",
@@ -8209,6 +8461,20 @@
       "height": 720,
       "bytes": 16420,
       "sha256": "be8ff6f281435e37d0281b504bb0a60b294972a4534e82edfc9e5b6bbaa00b74"
+    },
+    {
+      "id": "itch3d-g070",
+      "src": "media/learning/itch3d-g070.webp",
+      "alt": "A first-person weapon points at a sloping white platform in a rocket-jump level.",
+      "caption": "Creator-published gameplay from the project’s itch.io screenshot gallery. Image rights remain with the original creator.",
+      "sourceUrl": "https://mickeon.itch.io/team-fortress-jumper",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1nLzE3NTk2MTI5LmdpZg==/original/7MUxJy.gif",
+      "width": 1280,
+      "height": 720,
+      "bytes": 22328,
+      "sha256": "3ce4d8a0fb2080e09a0eee6585c5d22b0e9fcba0034b6914cdfd2b546fd3d38c"
     },
     {
       "id": "itch3d-g071",
@@ -8657,6 +8923,20 @@
       "height": 720,
       "bytes": 106204,
       "sha256": "20af12dbb6d81cb77bf291a0c72dd8a2a6432261fb856bb3c7fb683060a42a2d"
+    },
+    {
+      "id": "open3d-void-sys",
+      "src": "media/learning/open3d-void-sys.webp",
+      "alt": "A green strategy interface shows connected objects, radial selection and resource meters in space.",
+      "caption": "Creator-published gameplay from the project’s itch.io screenshot gallery. Image rights remain with the original creator.",
+      "sourceUrl": "https://icaruschild.itch.io/voidsys",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1hZ2UvMzYyNDAzMC8yMTU2NzkzNS5wbmc=/original/KSLD%2B0.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 112172,
+      "sha256": "e85984c6ebd95622be24c677ba4f84fe707136a46836ecd05084d59d1a04c780"
     },
     {
       "id": "open3d-warden-of-the-isles-hernz",
@@ -9205,6 +9485,20 @@
       "sha256": "80ef294a7e2a07d3c3ca7e5824eab89ecc642dbeff2324a252ee81e7c9653ab5"
     },
     {
+      "id": "open3d-fable-city",
+      "src": "media/learning/open3d-fable-city.webp",
+      "alt": "A car drives through Fable City at dusk, with speed, traffic and city simulation controls visible.",
+      "caption": "Creator-published gameplay screenshot. A car drives through Fable City at dusk, with speed, traffic and city simulation controls visible. Image rights remain with the original creator and respective rights holders.",
+      "sourceUrl": "https://github.com/fatihlabsai/Claude/blob/78bb77258fb27dd1c7b469e795c710d070351113/fable-city/screenshot-driving.png",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/fatihlabsai/Claude/78bb77258fb27dd1c7b469e795c710d070351113/fable-city/screenshot-driving.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 41794,
+      "sha256": "c24524040a8d271cff9a941d46a79926a3a3df6e258ae1335a74450bd16c1373"
+    },
+    {
       "id": "open3d-solstice-racing",
       "src": "media/learning/open3d-solstice-racing.webp",
       "alt": "A rear chase-camera view shows a white racing car on the starting grid of a forest circuit.",
@@ -9499,6 +9793,20 @@
       "sha256": "14949273720838683c8ec9eb84b9d075b155a7c6a2a4c73efbd663bc27c1f1cf"
     },
     {
+      "id": "open3d-apex-lap-fable-5-2",
+      "src": "media/learning/open3d-apex-lap-fable-5-2.webp",
+      "alt": "Apex Lap shows four cars racing with position, lap, speed and track-map indicators.",
+      "caption": "Creator-published gameplay screenshot. Apex Lap shows four cars racing with position, lap, speed and track-map indicators. Image rights remain with the original creator and respective rights holders.",
+      "sourceUrl": "https://github.com/ololo-dev/apex-lap-fable-5-2/blob/fcf9117cc1c3b0a9ed063a168f0e9873c57bc28b/docs/race/rival.png",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/ololo-dev/apex-lap-fable-5-2/fcf9117cc1c3b0a9ed063a168f0e9873c57bc28b/docs/race/rival.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 67832,
+      "sha256": "6d638972062b90cd6485ecd230196511c5b1407867cb125d0b84371b749dfd4b"
+    },
+    {
       "id": "open3d-skyfall",
       "src": "media/learning/open3d-skyfall.webp",
       "alt": "A jet flies above Lyon in a third-person view with altitude, speed, mission and weapons displays.",
@@ -9511,6 +9819,20 @@
       "height": 720,
       "bytes": 151678,
       "sha256": "8c071575b8ede27a58a64b3ed16955603c0b768289a66c9ee507fd85bf1fd767"
+    },
+    {
+      "id": "open3d-claude-fable-5-2-high",
+      "src": "media/learning/open3d-claude-fable-5-2-high.webp",
+      "alt": "Ashfall Covenant from the Fable 5.2 build set: a player fights a Soot Archer with loot, health, skills and quest indicators.",
+      "caption": "Creator-published gameplay screenshot. Ashfall Covenant from the Fable 5.2 build set: a player fights a Soot Archer with loot, health, skills and quest indicators. Image rights remain with the original creator and respective rights holders.",
+      "sourceUrl": "https://github.com/JamesTsetsekas/oneshot-arcade/blob/1fb964814e1d6971d1dfa8232a4d20e789cc6930/builds/claude-fable-5.2-high/ashfall/oneshot/08-combat-2.png",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/JamesTsetsekas/oneshot-arcade/1fb964814e1d6971d1dfa8232a4d20e789cc6930/builds/claude-fable-5.2-high/ashfall/oneshot/08-combat-2.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 39678,
+      "sha256": "cb56c89d698144eefb0404227a2223d4432a08236f68ff9093193f44782429cc"
     },
     {
       "id": "open3d-fable-5-2",
@@ -9583,6 +9905,20 @@
       "sha256": "724403a87c900dc11efad31c1959b19307dedf20868bb2331449d8885714c81a"
     },
     {
+      "id": "open3d-101-chess-characters",
+      "src": "media/learning/open3d-101-chess-characters.webp",
+      "alt": "A 3D chess match shows expressive pieces, speech bubbles, move history and a negotiation dialog.",
+      "caption": "Creator-published gameplay screenshot. A 3D chess match shows expressive pieces, speech bubbles, move history and a negotiation dialog. Image rights remain with the original creator and respective rights holders.",
+      "sourceUrl": "https://github.com/swan4er/opus-100-projects/blob/6c98846c00d667b8958c4c777025025a57fda0e9/101-chess-characters/preview.jpg",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/swan4er/opus-100-projects/6c98846c00d667b8958c4c777025025a57fda0e9/101-chess-characters/preview.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 105700,
+      "sha256": "97927ba261f48fdd3b0dbbb2de641df74a062d9ac48ce531cd50d87997cb8fc1"
+    },
+    {
       "id": "open3d-aiplane",
       "src": "media/learning/open3d-aiplane.webp",
       "alt": "A jet with glowing blue exhaust flies through a rocky river valley in an external flight view.",
@@ -9595,6 +9931,20 @@
       "height": 720,
       "bytes": 84948,
       "sha256": "2f9a44c094900f2b648f4b0719ad768cc464d2317c5e52d95bf868c3117e4ff7"
+    },
+    {
+      "id": "open3d-yolo-mini-fps",
+      "src": "media/learning/open3d-yolo-mini-fps.webp",
+      "alt": "A first-person player aims at targets in DOCK ZERO with hit feedback and ammunition indicators.",
+      "caption": "Creator-published gameplay screenshot. A first-person player aims at targets in DOCK ZERO with hit feedback and ammunition indicators. Image rights remain with the original creator and respective rights holders.",
+      "sourceUrl": "https://github.com/cyancity/yolo-mini-fps/blob/2065f3d25bf11dbef877948a3ea8a5d4f666e8e2/docs/images/range.jpg",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/cyancity/yolo-mini-fps/2065f3d25bf11dbef877948a3ea8a5d4f666e8e2/docs/images/range.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 75060,
+      "sha256": "1b082884cbad74ef5832329237205172cf663e2a3c209f645cae2d9e699163d6"
     },
     {
       "id": "open3d-forja-abisal",
@@ -9707,6 +10057,20 @@
       "height": 720,
       "bytes": 40590,
       "sha256": "8cb108cdf005aedc43513c938b096dfcc606f82ca509d69583a99e83ed12d02d"
+    },
+    {
+      "id": "open3d-haynes-quest",
+      "src": "media/learning/open3d-haynes-quest.webp",
+      "alt": "A fantasy adventurer faces a toy-like enemy in Rat Casino After Hours, with health, coins and movement/combat controls visible.",
+      "caption": "Creator-published gameplay screenshot. A fantasy adventurer faces a toy-like enemy in Rat Casino After Hours, with health, coins and movement/combat controls visible. Image rights remain with the original creator and respective rights holders.",
+      "sourceUrl": "https://github.com/thaynes43/haynes-quest/blob/2ebad3f74e24dc509ddf4e51d597bad5fc2de803/.agents/evidence/family-world-v5/a4-hosted-first-fight.png",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/thaynes43/haynes-quest/2ebad3f74e24dc509ddf4e51d597bad5fc2de803/.agents/evidence/family-world-v5/a4-hosted-first-fight.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 47800,
+      "sha256": "c165deeb61de0ac623e2ee93589853e00a8d35f21f91258c025f24f78713f428"
     },
     {
       "id": "open3d-firstlight",
@@ -9833,6 +10197,20 @@
       "height": 720,
       "bytes": 74622,
       "sha256": "92c0e9ad45f27482c24a930574f9c120cf20b80417bce7a1e232ad0aba124a5d"
+    },
+    {
+      "id": "open3d-fps",
+      "src": "media/learning/open3d-fps.webp",
+      "alt": "The Claude 3.7 Sonnet FPS benchmark build shows a first-person corridor, enemies, minimap, score and ammunition.",
+      "caption": "Creator-published gameplay screenshot. The Claude 3.7 Sonnet FPS benchmark build shows a first-person corridor, enemies, minimap, score and ammunition. Image rights remain with the original creator and respective rights holders.",
+      "sourceUrl": "https://github.com/sammwyy/ai-code-gen-benchmark/blob/f75ab11d8c0d90e1b457d547ab15954812c18b57/fps/claude-3_7-sonnet/screenshots/v1.jpg",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/sammwyy/ai-code-gen-benchmark/f75ab11d8c0d90e1b457d547ab15954812c18b57/fps/claude-3_7-sonnet/screenshots/v1.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 12222,
+      "sha256": "39c2d1d745cec8e5fa03375a0d980b2ea46f81631147222e88ac70c611f75993"
     },
     {
       "id": "open3d-iridium-reach-demo",
@@ -11290,6 +11668,20 @@
       "sha256": "4052ae883eb1112cb2b1d7a8d73e31435a7bd198310585d088533d094a74a123"
     },
     {
+      "id": "open3d-codex-3d-racing-game",
+      "src": "media/learning/open3d-codex-3d-racing-game.webp",
+      "alt": "Codex Racing Game gameplay with a red car rounding a night circuit, lap timer and minimap",
+      "caption": "Creator-published gameplay. Frame at 8 seconds from the author-published racing demo. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/dante01yoon/codex-3d-racing-game/blob/main/README.md",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/dante01yoon/codex-3d-racing-game/main/assets/racing_demo.mp4",
+      "width": 1280,
+      "height": 720,
+      "bytes": 29778,
+      "sha256": "03793e763399657ab0a44f952251089a0e208256288f915d641c1aa4e72d27c8"
+    },
+    {
       "id": "open3d-skyward-isles",
       "src": "media/learning/open3d-skyward-isles.webp",
       "alt": "A character fights a blue slime near a floating-island village and a large glowing gateway, with abilities and damage numbers visible.",
@@ -11456,6 +11848,20 @@
       "height": 720,
       "bytes": 101276,
       "sha256": "76b6e242aef8ba74b4c5a90f5f93adb3568d43a54ba94ca8ea064cc7a256bbd3"
+    },
+    {
+      "id": "open3d-round1",
+      "src": "media/learning/open3d-round1.webp",
+      "alt": "Bonsai Skate Runner round 1 gameplay with a skateboarder, road obstacles, coins and trick score",
+      "caption": "Creator-published gameplay. Frame at 46 seconds from the creator’s Skate Runner demonstration, showing round 1 coins and tricks. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/PrismML-Eng/Bonsai-demo/blob/main/AGENT-DEMO.md",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/PrismML-Eng/Bonsai-demo/main/demos/skateboard/skate-runner/demo_clip_seed42_59s.mp4",
+      "width": 1280,
+      "height": 720,
+      "bytes": 11142,
+      "sha256": "9393daf936636d41d70a7cd4af79bd81b88dd42576bac416768f5ed0272bcaf8"
     },
     {
       "id": "open3d-neon-racer",

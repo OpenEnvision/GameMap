@@ -1222,6 +1222,41 @@
       "bytes": 113352
     },
     {
+      "id": "open3d-fable-city",
+      "title": "Fable City",
+      "media": {
+        "src": "media/learning/open3d-fable-city.webp",
+        "alt": "A car drives through Fable City at dusk, with speed, traffic and city simulation controls visible.",
+        "caption": "Creator-published gameplay screenshot. A car drives through Fable City at dusk, with speed, traffic and city simulation controls visible. Image rights remain with the original creator and respective rights holders.",
+        "sourceUrl": "https://github.com/fatihlabsai/Claude/blob/78bb77258fb27dd1c7b469e795c710d070351113/fable-city/screenshot-driving.png",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/fatihlabsai/Claude/78bb77258fb27dd1c7b469e795c710d070351113/fable-city/screenshot-driving.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "84aa13f41f0801539d52cceca6f228a40d4820abdb8daf0dc90b2a5e7612bc64",
+        "sourceFrameSHA256": "84aa13f41f0801539d52cceca6f228a40d4820abdb8daf0dc90b2a5e7612bc64",
+        "sourceWidth": 1280,
+        "sourceHeight": 800,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected author screenshot-driving.png from the exact fable-city subproject. The driver car, 56 km/h speed, Exit car control and procedural city traffic are visible. Single actual game/simulation frame, not branding or cover art."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "c24524040a8d271cff9a941d46a79926a3a3df6e258ae1335a74450bd16c1373",
+      "bytes": 41794
+    },
+    {
       "id": "open3d-solstice-racing",
       "title": "Solstice Racing",
       "media": {
@@ -1957,6 +1992,41 @@
       "bytes": 98946
     },
     {
+      "id": "open3d-apex-lap-fable-5-2",
+      "title": "Apex Lap",
+      "media": {
+        "src": "media/learning/open3d-apex-lap-fable-5-2.webp",
+        "alt": "Apex Lap shows four cars racing with position, lap, speed and track-map indicators.",
+        "caption": "Creator-published gameplay screenshot. Apex Lap shows four cars racing with position, lap, speed and track-map indicators. Image rights remain with the original creator and respective rights holders.",
+        "sourceUrl": "https://github.com/ololo-dev/apex-lap-fable-5-2/blob/fcf9117cc1c3b0a9ed063a168f0e9873c57bc28b/docs/race/rival.png",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/ololo-dev/apex-lap-fable-5-2/fcf9117cc1c3b0a9ed063a168f0e9873c57bc28b/docs/race/rival.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "8333a020a78947457e991aab783b8a0016fa08de2109b235026ee9eec863044a",
+        "sourceFrameSHA256": "8333a020a78947457e991aab783b8a0016fa08de2109b235026ee9eec863044a",
+        "sourceWidth": 1280,
+        "sourceHeight": 720,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected creator docs/race/rival.png: the orange player car and three opponents race at 144 km/h with lap and position HUD. The game is in its built-in self-driving demo mode, explicitly shown by the banner; this is actual game rendering, not a title/menu screen or evidence that I played it."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "6d638972062b90cd6485ecd230196511c5b1407867cb125d0b84371b749dfd4b",
+      "bytes": 67832
+    },
+    {
       "id": "open3d-skyfall",
       "title": "Skyfall",
       "media": {
@@ -1990,6 +2060,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "8c071575b8ede27a58a64b3ed16955603c0b768289a66c9ee507fd85bf1fd767",
       "bytes": 151678
+    },
+    {
+      "id": "open3d-claude-fable-5-2-high",
+      "title": "oneshot-arcade: Fable 5.2 folder",
+      "media": {
+        "src": "media/learning/open3d-claude-fable-5-2-high.webp",
+        "alt": "Ashfall Covenant from the Fable 5.2 build set: a player fights a Soot Archer with loot, health, skills and quest indicators.",
+        "caption": "Creator-published gameplay screenshot. Ashfall Covenant from the Fable 5.2 build set: a player fights a Soot Archer with loot, health, skills and quest indicators. Image rights remain with the original creator and respective rights holders.",
+        "sourceUrl": "https://github.com/JamesTsetsekas/oneshot-arcade/blob/1fb964814e1d6971d1dfa8232a4d20e789cc6930/builds/claude-fable-5.2-high/ashfall/oneshot/08-combat-2.png",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/JamesTsetsekas/oneshot-arcade/1fb964814e1d6971d1dfa8232a4d20e789cc6930/builds/claude-fable-5.2-high/ashfall/oneshot/08-combat-2.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "cf755b4f7c5e5c35330ee871543afd3dda356b5b800edfa28b71738c1a5f31be",
+        "sourceFrameSHA256": "cf755b4f7c5e5c35330ee871543afd3dda356b5b800edfa28b71738c1a5f31be",
+        "sourceWidth": 1600,
+        "sourceHeight": 900,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected exact Fable 5.2 high Ashfall subproject screenshot 08-combat-2.png. A rendered player and Soot Archer, health, loot, skill cooldowns and quest HUD are visible. Specific game evidence within the listed model build collection, not a cross-model comparison collage."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "cb56c89d698144eefb0404227a2223d4432a08236f68ff9093193f44782429cc",
+      "bytes": 39678
     },
     {
       "id": "open3d-fable-5-2",
@@ -2167,6 +2272,41 @@
       "bytes": 20750
     },
     {
+      "id": "open3d-101-chess-characters",
+      "title": "3D Chess Project",
+      "media": {
+        "src": "media/learning/open3d-101-chess-characters.webp",
+        "alt": "A 3D chess match shows expressive pieces, speech bubbles, move history and a negotiation dialog.",
+        "caption": "Creator-published gameplay screenshot. A 3D chess match shows expressive pieces, speech bubbles, move history and a negotiation dialog. Image rights remain with the original creator and respective rights holders.",
+        "sourceUrl": "https://github.com/swan4er/opus-100-projects/blob/6c98846c00d667b8958c4c777025025a57fda0e9/101-chess-characters/preview.jpg",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/swan4er/opus-100-projects/6c98846c00d667b8958c4c777025025a57fda0e9/101-chess-characters/preview.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "7322a12551d30ef1af79c59157aac6f7df601a9a83334207d5bccdd2b8fecb78",
+        "sourceFrameSHA256": "7322a12551d30ef1af79c59157aac6f7df601a9a83334207d5bccdd2b8fecb78",
+        "sourceWidth": 1440,
+        "sourceHeight": 900,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected exact 101-chess-characters preview.jpg. Actual board game state on move 6, opponent pieces, selected knight, dialogue and move-history UI are present. This is an in-game decision screen, not a title/start menu or promotional illustration."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "97927ba261f48fdd3b0dbbb2de641df74a062d9ac48ce531cd50d87997cb8fc1",
+      "bytes": 105700
+    },
+    {
       "id": "open3d-aiplane",
       "title": "AIPlane",
       "media": {
@@ -2200,6 +2340,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "2f9a44c094900f2b648f4b0719ad768cc464d2317c5e52d95bf868c3117e4ff7",
       "bytes": 84948
+    },
+    {
+      "id": "open3d-yolo-mini-fps",
+      "title": "DOCK ZERO",
+      "media": {
+        "src": "media/learning/open3d-yolo-mini-fps.webp",
+        "alt": "A first-person player aims at targets in DOCK ZERO with hit feedback and ammunition indicators.",
+        "caption": "Creator-published gameplay screenshot. A first-person player aims at targets in DOCK ZERO with hit feedback and ammunition indicators. Image rights remain with the original creator and respective rights holders.",
+        "sourceUrl": "https://github.com/cyancity/yolo-mini-fps/blob/2065f3d25bf11dbef877948a3ea8a5d4f666e8e2/docs/images/range.jpg",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/cyancity/yolo-mini-fps/2065f3d25bf11dbef877948a3ea8a5d4f666e8e2/docs/images/range.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "cb8e57ec53f18196ddf3ff4fd5f6dd49f0d72e983b9c1e4e7821218df6c93ec9",
+        "sourceFrameSHA256": "cb8e57ec53f18196ddf3ff4fd5f6dd49f0d72e983b9c1e4e7821218df6c93ec9",
+        "sourceWidth": 960,
+        "sourceHeight": 540,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected author README-linked range.jpg: first-person weapon sights, target hits, health, ammo, compass and accuracy HUD in the actual dock training range. This distinct gameplay image resolves the prior rejected empty hero-night scene. No crop or composite."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "1b082884cbad74ef5832329237205172cf663e2a3c209f645cae2d9e699163d6",
+      "bytes": 75060
     },
     {
       "id": "open3d-forja-abisal",
@@ -2480,6 +2655,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 40590,
       "sha256": "8cb108cdf005aedc43513c938b096dfcc606f82ca509d69583a99e83ed12d02d"
+    },
+    {
+      "id": "open3d-haynes-quest",
+      "title": "Haynes Quest",
+      "media": {
+        "src": "media/learning/open3d-haynes-quest.webp",
+        "alt": "A fantasy adventurer faces a toy-like enemy in Rat Casino After Hours, with health, coins and movement/combat controls visible.",
+        "caption": "Creator-published gameplay screenshot. A fantasy adventurer faces a toy-like enemy in Rat Casino After Hours, with health, coins and movement/combat controls visible. Image rights remain with the original creator and respective rights holders.",
+        "sourceUrl": "https://github.com/thaynes43/haynes-quest/blob/2ebad3f74e24dc509ddf4e51d597bad5fc2de803/.agents/evidence/family-world-v5/a4-hosted-first-fight.png",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/thaynes43/haynes-quest/2ebad3f74e24dc509ddf4e51d597bad5fc2de803/.agents/evidence/family-world-v5/a4-hosted-first-fight.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "42a676186ff8b3a28abe3575e52b6e3d7daefb8f594d25fad5a3b2d4b8749c38",
+        "sourceFrameSHA256": "42a676186ff8b3a28abe3575e52b6e3d7daefb8f594d25fad5a3b2d4b8749c38",
+        "sourceWidth": 1280,
+        "sourceHeight": 760,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected creator public repository evidence a4-hosted-first-fight.png. Actual third-person adventure scene with player, enemy, collectibles and HUD. Screen explicitly labels fictional memories and candidate artwork; README describes fictional demo fixtures. No private home-network URL was visited, no real personal photographs shown, and private-playtest classification remains unchanged."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "c165deeb61de0ac623e2ee93589853e00a8d35f21f91258c025f24f78713f428",
+      "bytes": 47800
     },
     {
       "id": "open3d-firstlight",
@@ -2795,6 +3005,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 74622,
       "sha256": "92c0e9ad45f27482c24a930574f9c120cf20b80417bce7a1e232ad0aba124a5d"
+    },
+    {
+      "id": "open3d-fps",
+      "title": "AI Code Generation Benchmark",
+      "media": {
+        "src": "media/learning/open3d-fps.webp",
+        "alt": "The Claude 3.7 Sonnet FPS benchmark build shows a first-person corridor, enemies, minimap, score and ammunition.",
+        "caption": "Creator-published gameplay screenshot. The Claude 3.7 Sonnet FPS benchmark build shows a first-person corridor, enemies, minimap, score and ammunition. Image rights remain with the original creator and respective rights holders.",
+        "sourceUrl": "https://github.com/sammwyy/ai-code-gen-benchmark/blob/f75ab11d8c0d90e1b457d547ab15954812c18b57/fps/claude-3_7-sonnet/screenshots/v1.jpg",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/sammwyy/ai-code-gen-benchmark/f75ab11d8c0d90e1b457d547ab15954812c18b57/fps/claude-3_7-sonnet/screenshots/v1.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "0a95d393c65f094c47d3c90789d6c80f63685ac99f9dee1cf5ee864f6cfe7488",
+        "sourceFrameSHA256": "0a95d393c65f094c47d3c90789d6c80f63685ac99f9dee1cf5ee864f6cfe7488",
+        "sourceWidth": 850,
+        "sourceHeight": 669,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected single native Python game screenshot from the exact fps/claude-3_7-sonnet subfolder, not a result chart or another benchmark genre. Full original window screenshot retained. Source media only: does not establish a browser build or verified installation."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "39c2d1d745cec8e5fa03375a0d980b2ea46f81631147222e88ac70c611f75993",
+      "bytes": 12222
     },
     {
       "id": "open3d-iridium-reach-demo",
@@ -6436,6 +6681,41 @@
       "sha256": "4052ae883eb1112cb2b1d7a8d73e31435a7bd198310585d088533d094a74a123"
     },
     {
+      "id": "open3d-codex-3d-racing-game",
+      "title": "3D Racing Game",
+      "media": {
+        "src": "media/learning/open3d-codex-3d-racing-game.webp",
+        "alt": "Codex Racing Game gameplay with a red car rounding a night circuit, lap timer and minimap",
+        "caption": "Creator-published gameplay. Frame at 8 seconds from the author-published racing demo. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/dante01yoon/codex-3d-racing-game/blob/main/README.md",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/dante01yoon/codex-3d-racing-game/main/assets/racing_demo.mp4",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "ac6e80b12dadcd49de03352c9c8c1a7242999b5fc3276a4d89a57016e8552ade",
+        "sourceFrameSHA256": "abfe5962e601de5d084dd94231f6be488f05ad72a0561eba4aad7a505c377d3d",
+        "sourceWidth": 1918,
+        "sourceHeight": 1074,
+        "originalFormat": "mp4",
+        "frameIndex": 480,
+        "sourceFrames": 3536,
+        "visualFinding": "Personally inspected full 1918x1074 video frame at 8 seconds (60 fps, frame 480). Red player car on a curved guarded track, roadside lights and trees, live lap 1 timer 3:24.215, 4/16 checkpoints, 600 points, minimap. Single gameplay view, no title menu, facecam, comparison split or fabricated visual."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "03793e763399657ab0a44f952251089a0e208256288f915d641c1aa4e72d27c8",
+      "bytes": 29778
+    },
+    {
       "id": "open3d-skyward-isles",
       "title": "skyward-isles",
       "media": {
@@ -6856,6 +7136,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 101276,
       "sha256": "76b6e242aef8ba74b4c5a90f5f93adb3568d43a54ba94ca8ea064cc7a256bbd3"
+    },
+    {
+      "id": "open3d-round1",
+      "title": "Skate Runner",
+      "media": {
+        "src": "media/learning/open3d-round1.webp",
+        "alt": "Bonsai Skate Runner round 1 gameplay with a skateboarder, road obstacles, coins and trick score",
+        "caption": "Creator-published gameplay. Frame at 46 seconds from the creator’s Skate Runner demonstration, showing round 1 coins and tricks. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/PrismML-Eng/Bonsai-demo/blob/main/AGENT-DEMO.md",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/PrismML-Eng/Bonsai-demo/main/demos/skateboard/skate-runner/demo_clip_seed42_59s.mp4",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "a1437748ff537dd179761eb3f597b5fce1fa633a4dbc81cde9f1ed7b667abe11",
+        "sourceFrameSHA256": "3398de8d13084c90c6a60d05adbd8319a791bc96cb18db4050b351d6558de9bf",
+        "sourceWidth": 1600,
+        "sourceHeight": 1000,
+        "originalFormat": "mp4",
+        "frameIndex": 1380,
+        "sourceFrames": 1779,
+        "visualFinding": "Personally inspected full 1600x1000 frame at 46 seconds, 30fps/frame 1380. Shows skateboarder on road, trees, colored obstacles and coins, distance 125 m, 3 coins, tricks +250. Author AGENT-DEMO.md identifies this clip and round 1 as flips/coins addition, matching visible coin/trick HUD. Single gameplay view with letterboxing, no comparison split or title overlay. No cropping performed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "9393daf936636d41d70a7cd4af79bd81b88dd42576bac416768f5ed0272bcaf8",
+      "bytes": 11142
     },
     {
       "id": "open3d-neon-racer",
@@ -7469,6 +7784,41 @@
       "bytes": 54638
     },
     {
+      "id": "open3d-3d-horror-game-yassine-mathlouthi",
+      "title": "3D Horror Game (Yassine Mathlouthi)",
+      "media": {
+        "src": "media/learning/open3d-3d-horror-game-yassine-mathlouthi.webp",
+        "alt": "First-person horror gameplay showing a key on a table, an interaction prompt and a virtual movement control.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://raw.githubusercontent.com/yassine-mathlouthi/3d-horror-game/HEAD/README.md",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://github.com/user-attachments/assets/80ff801f-0212-4819-89a3-9d96d2d48334",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "f5bf3a0e8bb611c0870c5b18e26ebde9902e4c20802dc49af586d5fc3e5533fa",
+        "sourceFrameSHA256": "b06b719cd1c61a5d6275dd2eb1ecdd837007f18034fa2c3b1b72f26ff2f7067c",
+        "sourceWidth": 1151,
+        "sourceHeight": 647,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the creator README Pickup System screenshot: key in a three-dimensional room with Press E interaction prompt and on-screen movement control. A single full gameplay frame, not a cover, menu, montage or editor."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "07caf856971c9e92f503b0d32c0a22f79411116c1e33b322b1175a50f770b05a",
+      "bytes": 46502
+    },
+    {
       "id": "open3d-all-alone",
       "title": "All Alone",
       "media": {
@@ -7679,6 +8029,41 @@
       "bytes": 88338
     },
     {
+      "id": "open3d-keep-going-trick-box",
+      "title": "Keep Going / Trick Box",
+      "media": {
+        "src": "media/learning/open3d-keep-going-trick-box.webp",
+        "alt": "Keep Going Trick Box platforming gameplay with red and green cubes, narrow raised paths and touch movement and jump controls.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://raw.githubusercontent.com/MajdLHB/Keep-Going-Trick-Box--Godot-Game-Project/HEAD/README.md",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://github.com/user-attachments/assets/68abd420-c2e2-4c60-b043-37b0e16472e1",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "d24b02b752e2bf0afbb7e802e299643a37be59b4bf9f106b86553a476722e984",
+        "sourceFrameSHA256": "5178f68ff3db6bf64065c2955ee32fbec78b23f14e8fe93e7ff370e2836ae2a6",
+        "sourceWidth": 2559,
+        "sourceHeight": 1446,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the creator-published README screenshot. The level contains red and green cubes on a raised obstacle path, with pause, joystick and jump controls visible. One full gameplay frame, not cover art, montage, setup or editor."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "b2ddf83692e5acf71157340fc75ea8be791e8d0fb272b162d3135a0f6f4abdb2",
+      "bytes": 13324
+    },
+    {
       "id": "open3d-liblast",
       "title": "Liblast",
       "media": {
@@ -7859,6 +8244,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "abc1e704c8f80dce42757a7ad525ce2aac48c60244431af81b700aaf0c3bf180",
       "bytes": 22044
+    },
+    {
+      "id": "open3d-racing-game-cyteon",
+      "title": "Racing Game (Cyteon)",
+      "media": {
+        "src": "media/learning/open3d-racing-game-cyteon.webp",
+        "alt": "A red and blue car races on a straight gray road through low-poly scenery.",
+        "caption": "Creator-published gameplay from the project’s itch.io screenshot gallery. Image rights remain with the original creator.",
+        "sourceUrl": "https://cyteon.itch.io/racing-game",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1hZ2UvMzEyOTAyNS8xODcxMzM4Mi5wbmc=/original/R8hFhJ.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "b8ee5077afbea9ffd93f16973f323ade68314136ffa68163fc13535b4a6dc544",
+        "sourceFrameSHA256": "db40f34c29435657c6df45fcad50772d272b4376b0763fecb5d8f89c033c5180",
+        "sourceWidth": 1919,
+        "sourceHeight": 1079,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "The car is moving at 17 km/h, with the active race timer and road-course environment visible. This is a live race frame, not a title or countdown."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "6b809426c5e0a91f5852e3e1f1154eac4152511ed7a0beac935e2bd65d7bfb02",
+      "bytes": 36044
     },
     {
       "id": "open3d-return-null",
@@ -8417,6 +8837,41 @@
       "bytes": 183182
     },
     {
+      "id": "open3d-avolition-2",
+      "title": "Avolition 2",
+      "media": {
+        "src": "media/learning/open3d-avolition-2.webp",
+        "alt": "Avolition 2 dungeon combat with a sword-wielding player, skeleton enemies, health bar and currency counter.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://raw.githubusercontent.com/echo-devim/Avolition2/HEAD/README.md",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/echo-devim/Avolition2/HEAD/screenshots/screenshot1.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "5c75e19fce084354004589bde9b362f3e1e0fc732385353c96511a7977a9f9aa",
+        "sourceFrameSHA256": "26296a9412a11c49839f65e8c8a3b3e3dbaba5b69eb03f4f120e20de5b038cbb",
+        "sourceWidth": 797,
+        "sourceHeight": 594,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the official repository gameplay screenshot. The player faces skeleton enemies in a three-dimensional dungeon, with health and currency HUD. One continuous game frame, not the character-selection/title screen, shop menu, editor or cover."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "c7b729f3e725f7a0a3079fb9917ddda38b7e20d23cd84131806e42ada73bfc3b",
+      "bytes": 36158
+    },
+    {
       "id": "open3d-0-a-d",
       "title": "0 A.D.",
       "media": {
@@ -8907,6 +9362,41 @@
       "bytes": 58012
     },
     {
+      "id": "open3d-scp-containment-breach",
+      "title": "SCP – Containment Breach",
+      "media": {
+        "src": "media/learning/open3d-scp-containment-breach.webp",
+        "alt": "SCP Containment Breach gameplay in a dark industrial room with the blink and stamina HUD at lower left.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://www.scpcbgame.com/info.html",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://www.scpcbgame.com/images/aaa1.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "b75b4f5b2a49374fe64b7f753fdaf1ef8d75db11db3757ab2f307ac762d2eab6",
+        "sourceFrameSHA256": "2505153ec22a58716283165f3cb4dd7d97fa547ea4138ee2d9dc033b298fb675",
+        "sourceWidth": 1440,
+        "sourceHeight": 900,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected one complete screenshot linked by the official information page. The first-person industrial environment includes the game blink and stamina bars. It is actual gameplay, not cover art, a menu, montage, or loading screen."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "422a6edf93d48a047621a890fecb4e60570c6531e123a3566427ce6e28ccd4e3",
+      "bytes": 14008
+    },
+    {
       "id": "open3d-speed-dreams",
       "title": "Speed Dreams",
       "media": {
@@ -9325,6 +9815,118 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "f1302747978574b8362b7f7a7d457d7c14d8ca178fbcc652b93b6e9a189404b2",
       "bytes": 64816
+    },
+    {
+      "id": "open3d-ashworth-station",
+      "title": "Ashworth Station",
+      "media": {
+        "src": "media/learning/open3d-ashworth-station.webp",
+        "alt": "Ashworth Station first-person zombie combat on a subway platform, with wave, health, ammunition and touch controls.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://raw.githubusercontent.com/AUAggy/ashworth-station/HEAD/README.md",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/AUAggy/ashworth-station/HEAD/og-image.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "5d0ae4720386a0cea20e9639185f88677c36a06ef8eccbb0f1a7025e539860f5",
+        "sourceFrameSHA256": "6d1d08ccd5b948a93d1636bf67e190ac6f9114c3f847cfb9a74ee0745d9f04aa",
+        "sourceWidth": 1200,
+        "sourceHeight": 630,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the creator repository image: a full first-person gameplay scene with pistol, zombie opponent, wave counter, health/ammunition values and touch controls. Although named og-image.jpg, it is an authentic gameplay frame without promotional title, collage or editor."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "139fe86914d980c305768cea2ea2c417b218f4b2840a5c25245f1e0a91061887",
+      "bytes": 88596
+    },
+    {
+      "id": "open3d-voxelcraft-bridgemind",
+      "title": "Voxelcraft (BridgeMind)",
+      "media": {
+        "src": "media/learning/open3d-voxelcraft-bridgemind.webp",
+        "alt": "VoxelCraft creative-mode gameplay showing voxel trees and terrain, a crosshair, inventory hotbar and status overlay.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://raw.githubusercontent.com/bridge-mind/voxelcraft/HEAD/README.md",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/bridge-mind/voxelcraft/HEAD/docs/screenshot.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "1f14981c20c154c296402981a54b00b604ca75266e08808f99a3f93c1773f757",
+        "sourceFrameSHA256": "6a1c69d238abfad737dbf5b96419f263b610b313ee6fbc89494cf4e6cc9316b9",
+        "sourceWidth": 1280,
+        "sourceHeight": 800,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the creator README screenshot of the running voxel game. One full first-person viewport with crosshair, block inventory hotbar, creative-mode label and coordinates/FPS gameplay-debug overlay. No title cover, montage, loading screen or game-editor chrome."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "f675be1ac68c495726236c1ed6cb8738f479117c87d9c8966213f83d65761803",
+      "bytes": 99186
+    },
+    {
+      "id": "open3d-stellar-abyss-echoes-of-exile",
+      "title": "Stellar Abyss / Echoes of Exile",
+      "media": {
+        "src": "media/learning/open3d-stellar-abyss-echoes-of-exile.webp",
+        "alt": "A spacecraft flies among asteroids in a dark star field with mission text, a central reticle and ship-status readouts.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/jeffotoni/deathstar",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/jeffotoni/deathstar/main/deathstar.jpeg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "743e970f117572cc2b5004e2675877bcce1126516ec3c3b95b4d96bd1d28ccc6",
+        "sourceFrameSHA256": "b8846fa914d1a948376328f075348a4296df904a661f2be1ba88d86c05909264",
+        "sourceWidth": 3504,
+        "sourceHeight": 1887,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: A spacecraft flies among asteroids in a dark star field with mission text, a central reticle and ship-status readouts. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://github.com/jeffotoni/deathstar",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "54f8441aaf2870257b462d1419f9a31a92ff688166d9fffbb6b66a2f0bc5e7bc",
+      "bytes": 15504
     },
     {
       "id": "open3d-atop",
@@ -10503,6 +11105,48 @@
       "bytes": 133136
     },
     {
+      "id": "open3d-adagate",
+      "title": "AdaGate",
+      "media": {
+        "src": "media/learning/open3d-adagate.webp",
+        "alt": "A first-person game view shows a flooded wood-paneled room, a small held object and a center crosshair.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/fastrgv/AdaGate",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/fastrgv/AdaGate/master/AGdynCubemap.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "476da57ac5479f50be09675b4004a73ef884a62460f1ca6afb8bbef0107d5365",
+        "sourceFrameSHA256": "41fc9304cb6c5b1aaab2ef9619114b53b3432052ead9fda17f21766aee04e91e",
+        "sourceWidth": 1920,
+        "sourceHeight": 1080,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: A first-person game view shows a flooded wood-paneled room, a small held object and a center crosshair. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://github.com/fastrgv/AdaGate",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "c23f526f2757c36ca581404e9bd02b67f8891afd42a368636b5d4a0f31a5d58c",
+      "bytes": 65984
+    },
+    {
       "id": "open3d-balazar-brothers",
       "title": "Balazar Brothers",
       "media": {
@@ -10536,6 +11180,48 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "20971443b99be5d29ebb48c06acef9fcb392fadd814cb990a37589c8821ed736",
       "bytes": 32458
+    },
+    {
+      "id": "open3d-blockout-ii",
+      "title": "BlockOut II",
+      "media": {
+        "src": "media/learning/open3d-blockout-ii.webp",
+        "alt": "Colored blocks occupy a three-dimensional wireframe pit, alongside score and cubes-played counters.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://www.blockout.net/blockout2/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://www.blockout.net/blockout2/screenshots/scr1.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "2952edc95b3cf88a91b16da8ceece701de099ae1cb2983eba9d65ff33d0c02ac",
+        "sourceFrameSHA256": "52f27dc081630061410e2a8638b50375ef18ff71fdf4a9d66f6652dfe6e1d7f7",
+        "sourceWidth": 512,
+        "sourceHeight": 384,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: Colored blocks occupy a three-dimensional wireframe pit, alongside score and cubes-played counters. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://www.blockout.net/blockout2/",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "4293cfd1cd6e76c97a7ea135f93893a6d21a1913385efd6fe32372b1c70c5e2a",
+      "bytes": 31102
     },
     {
       "id": "open3d-dreamchess",
@@ -10685,6 +11371,48 @@
       "bytes": 113452
     },
     {
+      "id": "open3d-linux-air-combat",
+      "title": "Linux Air Combat",
+      "media": {
+        "src": "media/learning/open3d-linux-air-combat.webp",
+        "alt": "A combat flight cockpit shows radar, flight gauges and ammunition counters while pursuing aircraft above a coastline.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://askmisterwizard.com/2019/LinuxAirCombat/LinuxAirCombat.htm",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://askmisterwizard.com/2019/LinuxAirCombat/NewCockpitAA.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "e0cb1f21de29be23afa86fc20412ebc35049b81ab875412a983e86caa254e441",
+        "sourceFrameSHA256": "55658fc07f32e80c16b07b0c40ce93b4773b5c6a94409ee1a71f31de5012e626",
+        "sourceWidth": 1280,
+        "sourceHeight": 720,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: A combat flight cockpit shows radar, flight gauges and ammunition counters while pursuing aircraft above a coastline. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://askmisterwizard.com/2019/LinuxAirCombat/LinuxAirCombat.htm",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "7aea1cd5f06ef4dfdcc67594e3d7339b12e18bfd1c7202eee299a5a4a0742b51",
+      "bytes": 37900
+    },
+    {
       "id": "open3d-openspades",
       "title": "OpenSpades",
       "media": {
@@ -10753,6 +11481,48 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "ac998ea1578aabee26fe1c50fe41d378148b5549fda8ffb8f17e6b563b0133d2",
       "bytes": 80860
+    },
+    {
+      "id": "open3d-ultimate-stunts",
+      "title": "Ultimate Stunts",
+      "media": {
+        "src": "media/learning/open3d-ultimate-stunts.webp",
+        "alt": "A racing-game cockpit shows a cracked windshield, steering wheel, speed and RPM gauges, and a track minimap.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://www.ultimatestunts.nl/index.php?page=1&lang=en",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://www.ultimatestunts.nl/screenshots/0731.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "65e57d4b1da8acc0585358159e0aad7d47a3018065e678ca845e50614621b492",
+        "sourceFrameSHA256": "785526f0896325ad0c6e51f27cd8fa2951b37a62383a7aaa3283685397ad2c76",
+        "sourceWidth": 810,
+        "sourceHeight": 629,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: A racing-game cockpit shows a cracked windshield, steering wheel, speed and RPM gauges, and a track minimap. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://www.ultimatestunts.nl/index.php?page=1&lang=en",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "db82f8c7f6c6fefe63e12eb61abae65c810b130a0b1a69a413a5559fd90a0bc6",
+      "bytes": 80146
     },
     {
       "id": "open3d-junk-magnet",
@@ -12590,6 +13360,48 @@
       "sha256": "0eace817c8d4932284ba4c1a62c3d18524f27243396dec496476da87459e5bb5"
     },
     {
+      "id": "open3d-h-craft-championship",
+      "title": "H-Craft Championship",
+      "media": {
+        "src": "media/learning/open3d-h-craft-championship.webp",
+        "alt": "A futuristic hovercraft races along an elevated curved track under an orange sky, with lap and position displays.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://flipmode3d.com/h-craft-championship-ingamescreenshotsdemo/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://flipmode3d.com/images/hcraft/hcraft_f01.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "1b2548e60d2c93a3132e911e4f9103419d98b147b27b61f7dee1a74bcfb0e15c",
+        "sourceFrameSHA256": "7862e7f63b493111c50cdf981ea9ad146c613e77a28670a65dcc4353664e2739",
+        "sourceWidth": 800,
+        "sourceHeight": 600,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: A futuristic hovercraft races along an elevated curved track under an orange sky, with lap and position displays. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://flipmode3d.com/h-craft-championship-ingamescreenshotsdemo/",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "3ea1da4147b1f8217e883b21f0c213958eb5cadde27e25a296c9107242912477",
+      "bytes": 70770
+    },
+    {
       "id": "open3d-minilanding3d",
       "title": "MiniLanding3D",
       "media": {
@@ -12626,6 +13438,48 @@
       "sha256": "989a87a594b2688bab7226619fdbbb2d4a6c4665e53822179e18e5380decf70e"
     },
     {
+      "id": "open3d-open-rails",
+      "title": "Open Rails",
+      "media": {
+        "src": "media/learning/open3d-open-rails.webp",
+        "alt": "A steam locomotive stands on a railway turntable in a station yard, with an in-game track monitor visible.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://open-rails.readthedocs.io/en/unstable/driving.html",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://open-rails.readthedocs.io/en/unstable/_images/driving-turntable.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "a7fd10b0d16246697868a10982189e41f6db37a2216d5696040ad9452026b44d",
+        "sourceFrameSHA256": "f94eb7aec5d6ea0091d3225002e9d2ac369074f28973ab559e07be9939f4c77b",
+        "sourceWidth": 680,
+        "sourceHeight": 384,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: A steam locomotive stands on a railway turntable in a station yard, with an in-game track monitor visible. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://open-rails.readthedocs.io/en/unstable/driving.html",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "30d301de1e878bedc90eeb4091bc336924a2ea2b0d6bdc1661b6eaed7def8f7f",
+      "bytes": 136336
+    },
+    {
       "id": "open3d-polexod",
       "title": "polexod",
       "media": {
@@ -12660,6 +13514,48 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 25424,
       "sha256": "31264518292624cf9a9a93fefbb5b839c25710798eacc147ccd75611fddd1aa1"
+    },
+    {
+      "id": "open3d-slune",
+      "title": "Slune",
+      "media": {
+        "src": "media/learning/open3d-slune.webp",
+        "alt": "A penguin-like character crosses a snowy mountainside with a glowing blue trail, route map and status bar.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://www.lesfleursdunormal.fr/static/informatique/old/slune/screenshots_en.html",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://www.lesfleursdunormal.fr/static/_images/slune21.jpeg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "fb24cfeadd62de2e6785110b558da1ef63fe76024d2df488d64b4f9e0e60f9fd",
+        "sourceFrameSHA256": "f41940c9ac16db4fdd1c5523e2cc8455ab923c91044de56be005807d392d362b",
+        "sourceWidth": 800,
+        "sourceHeight": 600,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: A penguin-like character crosses a snowy mountainside with a glowing blue trail, route map and status bar. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://www.lesfleursdunormal.fr/static/informatique/old/slune/screenshots_en.html",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "c2fb97235f3b1cfaa7319807bd5b6f7d7d8706110b580c1e4f97e12fc998cc9c",
+      "bytes": 26466
     },
     {
       "id": "open3d-space-nerds-in-space",
@@ -12984,6 +13880,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 43874,
       "sha256": "111c4d8327bc05ccd3aaffcdd9855cb5a5b1218aa7dbc92d98a02209ba831983"
+    },
+    {
+      "id": "itch3d-g018",
+      "title": "Tribal Trouble: Resurrected",
+      "media": {
+        "src": "media/learning/itch3d-g018.webp",
+        "alt": "A group of axe-wielding units attacks watchtowers above a grassy ravine.",
+        "caption": "Creator-published gameplay from the project’s itch.io screenshot gallery. Image rights remain with the original creator.",
+        "sourceUrl": "https://rcubdev.itch.io/tribal-trouble-resurrected",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1hZ2UvMzg2NjI5NC8yNjY2MTc1Ny5wbmc=/original/WmHCAs.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "70862323b9c65d4596268d5ea090ab03fe436ad6fe16d2c0f3e985fbd73867b3",
+        "sourceFrameSHA256": "b3aa083ea452b5b3199ad6816b19aa92bf3eecd2ba3dc72e667a8b302cb3a1a6",
+        "sourceWidth": 1920,
+        "sourceHeight": 1080,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "The project publisher gallery shows the game’s terrain, tower-mounted defenders, moving units, flying axes and combat dust during a single in-game battle."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "e9b79c4433addceb487b6fe3a29472d413b2296f9da522617295b994f26a096e",
+      "bytes": 107574
     },
     {
       "id": "itch3d-g022",
@@ -13622,6 +14553,41 @@
       "sha256": "836ac44fd30404e03d3768b785fdf93063a0cb14904b9c97adab1435b6c168dc"
     },
     {
+      "id": "itch3d-g045",
+      "title": "Random Game",
+      "media": {
+        "src": "media/learning/itch3d-g045.webp",
+        "alt": "A player view points upward between stone walls at a small airborne figure.",
+        "caption": "Creator-published gameplay from the project’s itch.io screenshot gallery. Image rights remain with the original creator.",
+        "sourceUrl": "https://ue4split.itch.io/random-game",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1hZ2UvNzAzNDYxLzQwODYwOTIuanBn/original/eNu6S8.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "dbed534d83c7e9b376e7b911afc6c6d6129c9e51b84f68482ce6fffea5cdbfec",
+        "sourceFrameSHA256": "ead3002d2bd40b6caafaf22c12893744700a4aa1d7fabc5edede602111552cb7",
+        "sourceWidth": 1920,
+        "sourceHeight": 1200,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "The author gallery frame shows the prototype level in an active player view, including the value 49 in the in-game HUD and an airborne object above the stone walls."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "67f0beab62acf1e80215db340a155a7b431c8ef508206a0607f890c2d059627f",
+      "bytes": 63670
+    },
+    {
       "id": "itch3d-g047",
       "title": "SpinBlocks",
       "media": {
@@ -14102,6 +15068,48 @@
       "sha256": "275eeb1431493b8efcf304ee77683ad84926c80dfeb0bc50a03de557eaa82143"
     },
     {
+      "id": "itch3d-g066",
+      "title": "Thirty Flights of Loving",
+      "media": {
+        "src": "media/learning/itch3d-g066.webp",
+        "alt": "An in-game room contains a blocky bearded character, display weapons, a chalkboard and orange-lit counters.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://blendogames.itch.io/thirtyflightsofloving",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1hZ2UvNDQ0NjU3LzIyNDA4ODAuanBn/original/ORAeUa.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "4bda2760a461855ff348a5ec6575e1491bb9fbc718264fa3cfa8c5dc2b812250",
+        "sourceFrameSHA256": "60d01123925cc815c62ad53ea1456a1b84fea60d13987df5a6eaa2314458ded8",
+        "sourceWidth": 1920,
+        "sourceHeight": 1080,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: An in-game room contains a blocky bearded character, display weapons, a chalkboard and orange-lit counters. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://blendogames.itch.io/thirtyflightsofloving",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "802db78bd2c3c12dc127dfa0f0ac38eba7e6da439e72a102db58eee1f5ad8c17",
+      "bytes": 53334
+    },
+    {
       "id": "itch3d-g067",
       "title": "Varooom 3D",
       "media": {
@@ -14244,6 +15252,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 16420,
       "sha256": "be8ff6f281435e37d0281b504bb0a60b294972a4534e82edfc9e5b6bbaa00b74"
+    },
+    {
+      "id": "itch3d-g070",
+      "title": "Team Fortress Jumper",
+      "media": {
+        "src": "media/learning/itch3d-g070.webp",
+        "alt": "A first-person weapon points at a sloping white platform in a rocket-jump level.",
+        "caption": "Creator-published gameplay from the project’s itch.io screenshot gallery. Image rights remain with the original creator.",
+        "sourceUrl": "https://mickeon.itch.io/team-fortress-jumper",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1nLzE3NTk2MTI5LmdpZg==/original/7MUxJy.gif",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "04b36b035de2bef73057f1eb81f1c11ef03f54fbf74779cf00bf74fe5f2becb7",
+        "sourceFrameSHA256": "2aac44b60c6b95eee581174eb2fd2e873c2a59a2920a0cc553ac9fc1028a107e",
+        "sourceWidth": 315,
+        "sourceHeight": 250,
+        "originalFormat": "gif",
+        "frameIndex": 75,
+        "sourceFrames": 151,
+        "visualFinding": "The full creator GIF frame shows the weapon, aiming reticle and playable platform geometry, not the promotional image or a title screen."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "3ce4d8a0fb2080e09a0eee6585c5d22b0e9fcba0034b6914cdfd2b546fd3d38c",
+      "bytes": 22328
     },
     {
       "id": "itch3d-g071",
@@ -15780,6 +16823,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 106204,
       "sha256": "20af12dbb6d81cb77bf291a0c72dd8a2a6432261fb856bb3c7fb683060a42a2d"
+    },
+    {
+      "id": "open3d-void-sys",
+      "title": "Void.sys",
+      "media": {
+        "src": "media/learning/open3d-void-sys.webp",
+        "alt": "A green strategy interface shows connected objects, radial selection and resource meters in space.",
+        "caption": "Creator-published gameplay from the project’s itch.io screenshot gallery. Image rights remain with the original creator.",
+        "sourceUrl": "https://icaruschild.itch.io/voidsys",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1hZ2UvMzYyNDAzMC8yMTU2NzkzNS5wbmc=/original/KSLD%2B0.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "3a64b20fe7b05a025773b77f00afe49287b73d7f7dfa7408a145d2a09900fa6f",
+        "sourceFrameSHA256": "5961caca7c6e191fb641b630ef0a1c8dc28d44081e23a2a673e5b3f022d717f6",
+        "sourceWidth": 1920,
+        "sourceHeight": 1080,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "A complete in-game frame from the creator-linked release gallery shows its tactical map, active HUD, resource and threat indicators, selection, and the game’s action status message."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "e85984c6ebd95622be24c677ba4f84fe707136a46836ecd05084d59d1a04c780",
+      "bytes": 112172
     },
     {
       "id": "open3d-warden-of-the-isles-hernz",
@@ -17794,58 +18872,6 @@
       ]
     },
     {
-      "id": "open3d-fable-city",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot was acquired. https://fatihlabsai.github.io/Claude/fable-city/: Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/fatihlabsai/Claude/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/fatihlabsai/Claude",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/fatihlabsai/Claude/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/fatihlabsai/Claude/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved and reviewed author README for published game links and creator media."
-        },
-        {
-          "url": "https://github.com/fatihlabsai/Claude",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://github.com/fatihlabsai/Claude/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://fatihlabsai.github.io/Claude/fable-city/",
-          "checkedAt": "2026-11-18",
-          "result": "Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent."
-        },
-        {
-          "url": "https://github.com/fatihlabsai/Claude/tree/main/fable-city",
-          "checkedAt": "2026-11-18",
-          "result": "Recorded source-review outcome: research-incomplete."
-        },
-        {
-          "url": "https://fatihlabsai.github.io/Claude/fable-city/",
-          "checkedAt": "2026-11-18",
-          "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
-        }
-      ]
-    },
-    {
       "id": "open3d-aaron-portfolio",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot was acquired. https://www.xuweinan.com/tools/prompt-lab/entries/fable-5-2-pelican-run-01/: Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent.",
@@ -19745,63 +20771,6 @@
       ]
     },
     {
-      "id": "open3d-apex-lap-fable-5-2",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot was acquired. https://ololo-dev.github.io/apex-lap-fable-5-2/: Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/ololo-dev/apex-lap-fable-5-2/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/ololo-dev/apex-lap-fable-5-2",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/ololo-dev/apex-lap-fable-5-2/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/ololo-dev/apex-lap-fable-5-2/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved and reviewed author README for published game links and creator media."
-        },
-        {
-          "url": "https://github.com/ololo-dev/apex-lap-fable-5-2",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://github.com/ololo-dev/apex-lap-fable-5-2/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/ololo-dev/apex-lap-fable-5-2/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Reviewed source content; README explicitly links author ololo-dev GitHub Pages Apex Lap build; browser verification pending, no image accepted."
-        },
-        {
-          "url": "https://ololo-dev.github.io/apex-lap-fable-5-2/",
-          "checkedAt": "2026-11-18",
-          "result": "Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent."
-        },
-        {
-          "url": "https://github.com/ololo-dev/apex-lap-fable-5-2",
-          "checkedAt": "2026-11-18",
-          "result": "Recorded source-review outcome: research-incomplete."
-        },
-        {
-          "url": "https://ololo-dev.github.io/apex-lap-fable-5-2/",
-          "checkedAt": "2026-11-18",
-          "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
-        }
-      ]
-    },
-    {
       "id": "open3d-everyday-game",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot was acquired. https://zhgarylu.github.io/everyday-game/: Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent.",
@@ -19853,63 +20822,6 @@
         },
         {
           "url": "https://zhgarylu.github.io/everyday-game/",
-          "checkedAt": "2026-11-18",
-          "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
-        }
-      ]
-    },
-    {
-      "id": "open3d-claude-fable-5-2-high",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot was acquired. https://jamestsetsekas.github.io/oneshot-arcade/: Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/JamesTsetsekas/oneshot-arcade/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/JamesTsetsekas/oneshot-arcade",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/JamesTsetsekas/oneshot-arcade/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/JamesTsetsekas/oneshot-arcade/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved and reviewed author README for published game links and creator media."
-        },
-        {
-          "url": "https://github.com/JamesTsetsekas/oneshot-arcade",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://github.com/JamesTsetsekas/oneshot-arcade/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/JamesTsetsekas/oneshot-arcade/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Reviewed source content; README is multi-model Oneshot Arcade; target nested builds/claude-fable-5.2-high must be resolved. Example JSON screenshot string does not establish an actual image."
-        },
-        {
-          "url": "https://jamestsetsekas.github.io/oneshot-arcade/",
-          "checkedAt": "2026-11-18",
-          "result": "Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent."
-        },
-        {
-          "url": "https://github.com/JamesTsetsekas/oneshot-arcade/tree/main/builds/claude-fable-5.2-high",
-          "checkedAt": "2026-11-18",
-          "result": "Recorded source-review outcome: research-incomplete."
-        },
-        {
-          "url": "https://jamestsetsekas.github.io/oneshot-arcade/",
           "checkedAt": "2026-11-18",
           "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
         }
@@ -20223,63 +21135,6 @@
       ]
     },
     {
-      "id": "open3d-101-chess-characters",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot was acquired. https://swan4er.github.io/opus-100-projects/: Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/swan4er/opus-100-projects/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/swan4er/opus-100-projects",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/swan4er/opus-100-projects/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/swan4er/opus-100-projects/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved and reviewed author README for published game links and creator media."
-        },
-        {
-          "url": "https://github.com/swan4er/opus-100-projects",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://github.com/swan4er/opus-100-projects/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/swan4er/opus-100-projects/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Reviewed source content; Root README covers 121 projects; exact 101-chess-characters subdirectory must be reviewed. Homepage index itself is not verified game."
-        },
-        {
-          "url": "https://swan4er.github.io/opus-100-projects/",
-          "checkedAt": "2026-11-18",
-          "result": "Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent."
-        },
-        {
-          "url": "https://github.com/swan4er/opus-100-projects/tree/main/101-chess-characters",
-          "checkedAt": "2026-11-18",
-          "result": "Recorded source-review outcome: research-incomplete."
-        },
-        {
-          "url": "https://swan4er.github.io/opus-100-projects/",
-          "checkedAt": "2026-11-18",
-          "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
-        }
-      ]
-    },
-    {
       "id": "open3d-opus-vs-sol",
       "status": "missing",
       "reason": "Reviewed author README and complete non-truncated recursive source tree (238 entries); no raster gameplay image or video is present. Release assets are game/model archives, not screenshots. No screenshot acquired; Windows download remains separately verified.",
@@ -20398,63 +21253,6 @@
         },
         {
           "url": "https://3d-golf-sonnet.vercel.app",
-          "checkedAt": "2026-11-18",
-          "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
-        }
-      ]
-    },
-    {
-      "id": "open3d-yolo-mini-fps",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Rejected candidate: Personally viewed: empty cinematic dock overview without player/HUD; prefer actual gameplay frame rather than a hero environment image. No qualifying screenshot was acquired. https://cyancity.github.io/yolo-mini-fps/: Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/cyancity/yolo-mini-fps/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/cyancity/yolo-mini-fps",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/cyancity/yolo-mini-fps/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/cyancity/yolo-mini-fps/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved and reviewed author README for published game links and creator media."
-        },
-        {
-          "url": "https://github.com/cyancity/yolo-mini-fps",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://github.com/cyancity/yolo-mini-fps/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/cyancity/yolo-mini-fps/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Reviewed source content; README links author Pages and hero-night/tod scene images; need inspect pixels to distinguish environment from gameplay. No image downloaded or accepted."
-        },
-        {
-          "url": "https://cyancity.github.io/yolo-mini-fps/",
-          "checkedAt": "2026-11-18",
-          "result": "Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent."
-        },
-        {
-          "url": "https://github.com/cyancity/yolo-mini-fps",
-          "checkedAt": "2026-11-18",
-          "result": "Recorded source-review outcome: research-incomplete."
-        },
-        {
-          "url": "https://cyancity.github.io/yolo-mini-fps/",
           "checkedAt": "2026-11-18",
           "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
         }
@@ -20617,33 +21415,6 @@
       ]
     },
     {
-      "id": "open3d-haynes-quest",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README calls its playtest private and home-network-only. Public availability not established; do not attempt private-network access. No embedded screenshots or releases; docs/public subdirectories remain unreviewed.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/thaynes43/haynes-quest/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/thaynes43/haynes-quest",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/thaynes43/haynes-quest/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/thaynes43/haynes-quest",
-          "checkedAt": "2026-11-18",
-          "result": "Recorded source-review outcome: research-incomplete."
-        }
-      ]
-    },
-    {
       "id": "open3d-gridx",
       "status": "research-incomplete",
       "reason": "Research incomplete or access-limited: README links author Pages arena game but has no embedded screenshot. No releases. Asset/docs subdirectories remain unreviewed.",
@@ -20778,33 +21549,6 @@
           "url": "https://playdeadwood.com",
           "checkedAt": "2026-11-18",
           "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
-        }
-      ]
-    },
-    {
-      "id": "open3d-fps",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: This is the FPS subdirectory of a benchmark. Root README describes multiple games; the supplied FPS subdirectory must be inspected before attributing game-specific evidence.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/sammwyy/ai-code-gen-benchmark/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/sammwyy/ai-code-gen-benchmark",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/sammwyy/ai-code-gen-benchmark/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/sammwyy/ai-code-gen-benchmark/tree/main/fps",
-          "checkedAt": "2026-11-18",
-          "result": "Recorded source-review outcome: research-incomplete."
         }
       ]
     },
@@ -21152,7 +21896,7 @@
     {
       "id": "open3d-sf-bay-area-transit-fable-5-2-game",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Inspected the README content and repository root/release metadata. No non-badge image was found in the reviewed README; this does not establish absence from child directories or the author website.",
+      "reason": "No candidate author image was accepted from the reviewed README or repository root. The author-linked GitHub Pages demo opened in the cloud browser but did not render a game scene because its Three.js WebGL context failed to initialize.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/jakozaur/sf_bay_area_transit_fable_5_2_game/HEAD/README.md",
@@ -21188,6 +21932,11 @@
           "url": "https://jakozaur.github.io/sf_bay_area_transit_fable_5_2_game/",
           "checkedAt": "2026-11-18",
           "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
+        },
+        {
+          "url": "https://jakozaur.github.io/sf_bay_area_transit_fable_5_2_game/",
+          "checkedAt": "2026-11-19",
+          "result": "Opened the author Pages build. It displayed Game stopped: THREE.WebGLRenderer: Error creating WebGL context; the error page was rejected."
         }
       ]
     },
@@ -23447,7 +24196,7 @@
     {
       "id": "open3d-scoundrel-solitaire",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No raster or video file appears in the complete inspected repository tree; README and repository/release evidence did not yield a creator screenshot. No verified playable browser rendering is available for capture. A known hosted build was not browser-render verified, so potential browser capture remains unverified.",
+      "reason": "No eligible first-party screenshot was located in the inspected repository tree. The author site renders the companion 2D Scoundrel game, but its separate 3D implementation is the specific file referenced by this entry. The companion screenshot is not used for the 3D entry, and the 3D renderer did not load in the cloud browser.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/konstantint/scoundrel-solitaire/HEAD/README.md",
@@ -23493,6 +24242,16 @@
           "url": "https://konstantint.github.io/scoundrel-solitaire/",
           "checkedAt": "2026-11-18",
           "result": "Public page text retrieved and inspected for publication evidence; actual gameplay rendering was not verified by this text retrieval."
+        },
+        {
+          "url": "https://konstantint.github.io/scoundrel-solitaire/",
+          "checkedAt": "2026-11-19",
+          "result": "Opened the standard 2D game and advanced into a room to reveal cards; its menu links separately to the 3D version."
+        },
+        {
+          "url": "https://konstantint.github.io/scoundrel-solitaire/index-3d.html",
+          "checkedAt": "2026-11-19",
+          "result": "Separate author 3D version did not create a WebGL context in the sandbox browser; no game pixels are accepted."
         }
       ]
     },
@@ -25286,48 +26045,6 @@
       ]
     },
     {
-      "id": "open3d-codex-3d-racing-game",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README publication and media references reviewed. No accepted image from the inspected README; deeper source media and browser evidence remain unverified.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/dante01yoon/codex-3d-racing-game/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/dante01yoon/codex-3d-racing-game",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/dante01yoon/codex-3d-racing-game/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/dante01yoon/codex-3d-racing-game/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-        },
-        {
-          "url": "https://github.com/dante01yoon/codex-3d-racing-game",
-          "checkedAt": "2026-11-18",
-          "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-        },
-        {
-          "url": "https://github.com/dante01yoon/codex-3d-racing-game/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-        },
-        {
-          "url": "https://github.com/dante01yoon/codex-3d-racing-game",
-          "checkedAt": "2026-11-18",
-          "result": "Recorded source-review outcome: research-incomplete."
-        }
-      ]
-    },
-    {
       "id": "open3d-constellation-defense",
       "status": "research-incomplete",
       "reason": "Research incomplete or access-limited: README publication and media references reviewed. No accepted image from the inspected README; deeper source media and browser evidence remain unverified.",
@@ -26467,58 +27184,6 @@
           "url": "https://github.com/oh-ashen-one/minecraft-kimi-k3",
           "checkedAt": "2026-11-18",
           "result": "Recorded source-review outcome: research-incomplete."
-        }
-      ]
-    },
-    {
-      "id": "open3d-round1",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README publication and media references reviewed. No accepted image from the inspected README; deeper source media and browser evidence remain unverified.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/PrismML-Eng/Bonsai-demo/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/PrismML-Eng/Bonsai-demo",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/PrismML-Eng/Bonsai-demo/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/PrismML-Eng/Bonsai-demo/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-        },
-        {
-          "url": "https://github.com/PrismML-Eng/Bonsai-demo",
-          "checkedAt": "2026-11-18",
-          "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-        },
-        {
-          "url": "https://github.com/PrismML-Eng/Bonsai-demo/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-        },
-        {
-          "url": "https://prismml.com/",
-          "checkedAt": "2026-11-18",
-          "result": "Static author page inspected; runtime game rendering was not verified."
-        },
-        {
-          "url": "https://github.com/PrismML-Eng/Bonsai-demo/blob/main/demos/skateboard/skate-runner/pages/round1.html",
-          "checkedAt": "2026-11-18",
-          "result": "Recorded source-review outcome: research-incomplete."
-        },
-        {
-          "url": "https://prismml.com/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for publication evidence; actual gameplay rendering was not verified by this text retrieval."
         }
       ]
     },
@@ -30284,43 +30949,6 @@
       ]
     },
     {
-      "id": "open3d-3d-horror-game-yassine-mathlouthi",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The inspected author frame is dominated by an open inventory panel; no sufficiently clear gameplay replacement was reviewed.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/yassine-mathlouthi/3d-horror-game/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/yassine-mathlouthi/3d-horror-game",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/yassine-mathlouthi/3d-horror-game/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/yassine-mathlouthi/3d-horror-game/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/yassine-mathlouthi/3d-horror-game",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/yassine-mathlouthi/3d-horror-game/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-3d-horror-proto",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -30506,43 +31134,6 @@
       ]
     },
     {
-      "id": "open3d-keep-going-trick-box",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The inspected README image is dominated by the KG Trick Box logo and cover composition, not a verified gameplay frame.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/MajdLHB/Keep-Going-Trick-Box--Godot-Game-Project/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/MajdLHB/Keep-Going-Trick-Box--Godot-Game-Project",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/MajdLHB/Keep-Going-Trick-Box--Godot-Game-Project/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/MajdLHB/Keep-Going-Trick-Box--Godot-Game-Project/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/MajdLHB/Keep-Going-Trick-Box--Godot-Game-Project",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/MajdLHB/Keep-Going-Trick-Box--Godot-Game-Project/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-kilvault",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -30613,58 +31204,6 @@
           "url": "https://github.com/GuaraProductions/Panik/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-racing-game-cyteon",
-      "status": "research-incomplete",
-      "reason": "No qualifying image verified. Author/source access was limited: Author page fetch HTTP 429; extracted 0 media candidates; each requires individual visual review. This is not evidence that no screenshot exists.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/Cyteon/racing-game/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Cyteon/racing-game",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Cyteon/racing-game/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://cyteon.itch.io/racing-game",
-          "checkedAt": "2026-11-18",
-          "result": "Author page fetch HTTP 429; extracted 0 media candidates; each requires individual visual review."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/Cyteon/racing-game/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/Cyteon/racing-game",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/Cyteon/racing-game/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://cyteon.itch.io/racing-game",
-          "checkedAt": "2026-11-18",
-          "result": "Public retrieval failed: getaddrinfo EAI_AGAIN cyteon.itch.io"
-        },
-        {
-          "url": "https://cyteon.itch.io/racing-game",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 429; this is a retrieval outcome, not proof that the game or release is absent."
         }
       ]
     },
@@ -31174,43 +31713,6 @@
         },
         {
           "url": "https://github.com/dabardibid/Budget-Backrooms/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-avolition-2",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/echo-devim/Avolition2/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/echo-devim/Avolition2",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/echo-devim/Avolition2/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/echo-devim/Avolition2/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/echo-devim/Avolition2",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/echo-devim/Avolition2/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
@@ -31767,48 +32269,6 @@
       ]
     },
     {
-      "id": "open3d-scp-containment-breach",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/Regalis11/scpcb/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Regalis11/scpcb",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Regalis11/scpcb/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://www.scpcbgame.com/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/Regalis11/scpcb/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/Regalis11/scpcb",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/Regalis11/scpcb/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-smokin-guns",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -32221,48 +32681,6 @@
       ]
     },
     {
-      "id": "open3d-ashworth-station",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/AUAggy/ashworth-station/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/AUAggy/ashworth-station",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/AUAggy/ashworth-station/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://auaggy.github.io/ashworth-station/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/AUAggy/ashworth-station/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/AUAggy/ashworth-station",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/AUAggy/ashworth-station/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-combat-arena",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -32485,43 +32903,6 @@
       ]
     },
     {
-      "id": "open3d-voxelcraft-bridgemind",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/bridge-mind/voxelcraft/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/bridge-mind/voxelcraft",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/bridge-mind/voxelcraft/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/bridge-mind/voxelcraft/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/bridge-mind/voxelcraft",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/bridge-mind/voxelcraft/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-voxellab",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -32711,48 +33092,6 @@
         },
         {
           "url": "https://github.com/justhashim/shadows-of-abandoned/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-stellar-abyss-echoes-of-exile",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/jeffotoni/deathstar/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/jeffotoni/deathstar",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/jeffotoni/deathstar/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://jeffotoni.github.io/deathstar/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/jeffotoni/deathstar/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/jeffotoni/deathstar",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/jeffotoni/deathstar/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
@@ -33288,43 +33627,6 @@
       ]
     },
     {
-      "id": "open3d-adagate",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/fastrgv/AdaGate/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/fastrgv/AdaGate",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/fastrgv/AdaGate/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/fastrgv/AdaGate/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/fastrgv/AdaGate",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/fastrgv/AdaGate/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-avara",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -33373,18 +33675,6 @@
       "checkedSources": [
         {
           "url": "https://billardgl.sourceforge.net/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        }
-      ]
-    },
-    {
-      "id": "open3d-blockout-ii",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://www.blockout.net/blockout2/",
           "checkedAt": "2026-11-18",
           "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
         }
@@ -33592,18 +33882,6 @@
       ]
     },
     {
-      "id": "open3d-linux-air-combat",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://askmisterwizard.com/2019/LinuxAirCombat/LinuxAirCombat.htm",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        }
-      ]
-    },
-    {
       "id": "open3d-maniadrive",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -33694,48 +33972,6 @@
         },
         {
           "url": "https://github.com/SearchAndRescue2/sar2/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-ultimate-stunts",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/cornwarecjp/ultimatestunts/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://github.com/cornwarecjp/ultimatestunts",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/cornwarecjp/ultimatestunts/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://www.ultimatestunts.nl/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/cornwarecjp/ultimatestunts/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 404; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/cornwarecjp/ultimatestunts",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/cornwarecjp/ultimatestunts/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
@@ -34905,38 +35141,6 @@
       ]
     },
     {
-      "id": "open3d-h-craft-championship",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The supplied author source page and an alternate games page both returned 502; image and native-publication verification remain incomplete.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/mzeilfelder/hc1/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/mzeilfelder/hc1",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/mzeilfelder/hc1/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://www.irrgheist.com/hcraftsource.htm",
-          "checkedAt": "2026-11-18",
-          "result": "The supplied author source page and an alternate games page both returned 502; image and native-publication verification remain incomplete."
-        },
-        {
-          "url": "https://www.irrgheist.com/games.htm",
-          "checkedAt": "2026-11-18",
-          "result": "The supplied author source page and an alternate games page both returned 502; image and native-publication verification remain incomplete."
-        }
-      ]
-    },
-    {
       "id": "open3d-jme3-maze",
       "status": "research-incomplete",
       "reason": "Research incomplete or access-limited: The repository README and root file listing were read. They describe building with Gradle; no eligible screenshot or native build was verified in this pass.",
@@ -34991,53 +35195,6 @@
       ]
     },
     {
-      "id": "open3d-open-rails",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The official homepage and program downloads page were read. The homepage banner is attributed to a route contributor, not verified as this project author screenshot; no image accepted.",
-      "checkedSources": [
-        {
-          "url": "https://www.openrails.org/download/program/",
-          "checkedAt": "2026-11-18",
-          "result": "The official project download page directly links the versioned Windows installer in the matching project release repository."
-        },
-        {
-          "url": "https://www.openrails.org/download/program/",
-          "checkedAt": "2026-11-18",
-          "result": "Read author publication page; native download publication verified, not executed."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/openrails/openrails/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://github.com/openrails/openrails",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/openrails/openrails/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://www.openrails.org/",
-          "checkedAt": "2026-11-18",
-          "result": "The official homepage and program downloads page were read. The homepage banner is attributed to a route contributor, not verified as this project author screenshot; no image accepted."
-        },
-        {
-          "url": "https://www.openrails.org/download/program/",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://www.openrails.org/",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        }
-      ]
-    },
-    {
       "id": "open3d-openmrac",
       "status": "research-incomplete",
       "reason": "Research incomplete or access-limited: The supplied official game page timed out on two static retrieval attempts. Images and native-publication verification remain incomplete.",
@@ -35066,23 +35223,6 @@
           "url": "https://www.franticware.com/openmrac/",
           "checkedAt": "2026-11-18",
           "result": "The supplied official game page timed out on two static retrieval attempts. Images and native-publication verification remain incomplete."
-        }
-      ]
-    },
-    {
-      "id": "open3d-slune",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The author site and its install page were read. The fetched gameplay thumbnail is only 200 by 150 and was rejected as insufficient visual detail. A full-resolution author original has not been obtained.",
-      "checkedSources": [
-        {
-          "url": "https://www.lesfleursdunormal.fr/static/informatique/old/slune/index_en.html",
-          "checkedAt": "2026-11-18",
-          "result": "The author site and its install page were read. The fetched gameplay thumbnail is only 200 by 150 and was rejected as insufficient visual detail. A full-resolution author original has not been obtained."
-        },
-        {
-          "url": "https://www.lesfleursdunormal.fr/static/informatique/old/slune/download_en.html",
-          "checkedAt": "2026-11-18",
-          "result": "The author site and its install page were read. The fetched gameplay thumbnail is only 200 by 150 and was rejected as insufficient visual detail. A full-resolution author original has not been obtained."
         }
       ]
     },
@@ -35195,43 +35335,6 @@
       ]
     },
     {
-      "id": "itch3d-g018",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The reviewed image shows gameplay, but the current itch publication is Tribal Trouble: Resurrected; its relationship to the original catalog source could not be sufficiently verified. No image or build is attributed across that unresolved version/author boundary.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/Tribal-Trouble/tribaltrouble/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Tribal-Trouble/tribaltrouble",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://rcubdev.itch.io/tribal-trouble-resurrected",
-          "checkedAt": "2026-11-18",
-          "result": "Read author page description, gallery links, repository backlinks where present, and native upload names/platform labels. This was not a browser playability check."
-        },
-        {
-          "url": "https://rcubdev.itch.io/tribal-trouble-resurrected",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Tribal-Trouble/tribaltrouble",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for publication evidence; actual gameplay rendering was not verified by this text retrieval."
-        }
-      ]
-    },
-    {
       "id": "itch3d-g031",
       "status": "research-incomplete",
       "reason": "Research incomplete or access-limited: The sole author gallery candidate is a MINI GOLF logo, not gameplay.",
@@ -35260,33 +35363,6 @@
           "url": "https://llamacademy.itch.io/minigolf",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        }
-      ]
-    },
-    {
-      "id": "itch3d-g045",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: At least one author evidence request was blocked, rate limited or timed out; unavailable evidence does not establish absence.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/ue4split/random_game/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/ue4split/random_game",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/ue4split/random_game/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://ue4split.itch.io/random-game",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 429; this is a retrieval outcome, not proof that the game or release is absent."
         }
       ]
     },
@@ -35341,60 +35417,6 @@
           "url": "https://llamacademy.itch.io/chicken-defense",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        }
-      ]
-    },
-    {
-      "id": "itch3d-g066",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: At least one author evidence request was blocked, rate limited or timed out; unavailable evidence does not establish absence.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/blendogames/thirtyflightsofloving/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/blendogames/thirtyflightsofloving",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/blendogames/thirtyflightsofloving/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://blendogames.itch.io/thirtyflightsofloving",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 429; this is a retrieval outcome, not proof that the game or release is absent."
-        }
-      ]
-    },
-    {
-      "id": "itch3d-g070",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: At least one author evidence request was blocked, rate limited or timed out; unavailable evidence does not establish absence.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/Mickeon/team-fortress-jumper/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Mickeon/team-fortress-jumper",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Mickeon/team-fortress-jumper/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://mickeon.itch.io/team-fortress-jumper",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 429; this is a retrieval outcome, not proof that the game or release is absent."
         }
       ]
     },
@@ -35635,33 +35657,6 @@
           "url": "https://github.com/JooJ-Joestar/ggj-cube-game/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        }
-      ]
-    },
-    {
-      "id": "open3d-void-sys",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: At least one author evidence request was blocked, rate limited or timed out; unavailable evidence does not establish absence.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/MrNavaStar/ASJ2025/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/MrNavaStar/ASJ2025",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 301; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://github.com/MrNavaStar/ASJ2025/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 301; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://icaruschild.itch.io/voidsys",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 429; this is a retrieval outcome, not proof that the game or release is absent."
         }
       ]
     },
@@ -49024,7 +49019,7 @@
       {
         "id": "open3d-sf-bay-area-transit-fable-5-2-game",
         "status": "research-incomplete",
-        "reason": "Research incomplete: no new author distribution or sandbox-rendered game was verified in this review. Existing demo data is preserved; this does not establish that no release exists.",
+        "reason": "The author GitHub Pages build opened, but the sandbox browser failed to create its WebGL context and did not render the game. Source is retained; this is not evidence that the game cannot run in other browsers.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/jakozaur/sf_bay_area_transit_fable_5_2_game/HEAD/README.md",
@@ -49060,6 +49055,11 @@
             "url": "https://jakozaur.github.io/sf_bay_area_transit_fable_5_2_game/",
             "checkedAt": "2026-11-18",
             "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
+          },
+          {
+            "url": "https://jakozaur.github.io/sf_bay_area_transit_fable_5_2_game/",
+            "checkedAt": "2026-11-19",
+            "result": "The exact Pages build loaded an error page rather than actual gameplay."
           }
         ]
       },
@@ -53458,7 +53458,7 @@
       {
         "id": "open3d-scoundrel-solitaire",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No sandbox-browser rendering was verified in this review. Keep source unchanged; source instructions, static HTML and source archives are not playable/download verification.",
+        "reason": "The author-published alternate 2D version rendered cards in the cloud browser, but the exact 3D implementation linked by this entry requires a WebGL context and did not render. The alternate build is not substituted for the listed variant.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/konstantint/scoundrel-solitaire/HEAD/README.md",
@@ -53504,6 +53504,16 @@
             "url": "https://konstantint.github.io/scoundrel-solitaire/",
             "checkedAt": "2026-11-18",
             "result": "Public page text retrieved and inspected for publication evidence; actual gameplay rendering was not verified by this text retrieval."
+          },
+          {
+            "url": "https://konstantint.github.io/scoundrel-solitaire/",
+            "checkedAt": "2026-11-19",
+            "result": "Existing public companion 2D build rendered the card room; the page links separately to its 3D variant."
+          },
+          {
+            "url": "https://konstantint.github.io/scoundrel-solitaire/index-3d.html",
+            "checkedAt": "2026-11-19",
+            "result": "The author 3D variant reported a WebGL context error in the sandbox browser."
           }
         ]
       },
