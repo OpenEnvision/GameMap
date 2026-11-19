@@ -2740,6 +2740,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-delta-park": {
+    src: "media/learning/open3d-delta-park.webp",
+    alt: "A first-person nighttime view of roller coaster loops from the water in Delta Park.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://store.steampowered.com/app/2632680/Delta_Park/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2632680/ss_2a22645ce2ef9630f367397fb7a4271dcb6f5a13.1920x1080.jpg?t=1749047846",
+    width: 1280,
+    height: 720,
+  },
   "open3d-dogwalk": {
     src: "media/learning/open3d-dogwalk.webp",
     alt: "A dog pulls a child on a leash along a snowy woodland path in an overhead game view.",
@@ -3078,6 +3091,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-budget-backrooms": {
+    src: "media/learning/open3d-budget-backrooms.webp",
+    alt: "A flashlight illuminates yellow corridors in Budget Backrooms, with sanity and stamina indicators visible.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://store.steampowered.com/app/2589200/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2589200/e27f478d9ff37b576524f2d1726959dcc4160e8e/ss_e27f478d9ff37b576524f2d1726959dcc4160e8e.1920x1080.jpg?t=1792968125",
+    width: 1280,
+    height: 720,
+  },
   "open3d-avolition-2": {
     src: "media/learning/open3d-avolition-2.webp",
     alt: "Avolition 2 dungeon combat with a sword-wielding player, skeleton enemies, health bar and currency counter.",
@@ -3245,6 +3271,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-opendungeonsplus": {
+    src: "media/learning/open3d-opendungeonsplus.webp",
+    alt: "A large dungeon in OpenDungeonsPlus with creatures, rooms, resource counters, command panel and minimap.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/tomluchowski/OpenDungeonsPlus",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/tomluchowski/OpenDungeonsPlus/HEAD/screenshots/Screenshot_2024-09-16_19-26-05.png",
+    width: 1280,
+    height: 720,
+  },
   "open3d-pioneer": {
     src: "media/learning/open3d-pioneer.webp",
     alt: "A dark spacecraft silhouette crosses a dense star field beneath the edge of a large celestial body.",
@@ -3340,6 +3379,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-19",
     originalImageUrl:
       "https://supertuxkart.net/assets/gallery/SuperTuxKart_1.5_1.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-the-dark-mod": {
+    src: "media/learning/open3d-the-dark-mod.webp",
+    alt: "A guard stands in a torchlit courtyard in The Dark Mod, with the stealth visibility indicator at the bottom.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://www.thedarkmod.com/media/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://www.thedarkmod.com/wp-content/gallery/screenshots/screen001.jpg",
     width: 1280,
     height: 720,
   },
@@ -3443,6 +3495,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-19",
     originalImageUrl:
       "https://img.itch.zone/aW1hZ2UvNzA1MTAwLzM4OTc0NTQucG5n/original/dQVQJg.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-world-of-padman": {
+    src: "media/learning/open3d-world-of-padman.webp",
+    alt: "First-person World of Padman combat in a giant kitchen with weapon, crosshair, ammunition and timer visible.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://worldofpadman.net/media/pictures-of-the-week/2023-pictures-of-the-week/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://worldofpadman.net/wp-content/uploads/potw_2023-49.jpg",
     width: 1280,
     height: 720,
   },
@@ -4033,6 +4099,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-freeallegiance-allegiance": {
+    src: "media/learning/open3d-freeallegiance-allegiance.webp",
+    alt: "Spacecraft exchange fire beside an asteroid, with target names and tactical markers overlaid on the combat scene.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://store.steampowered.com/app/700480/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/700480/ss_db5bf84f9d15d1febd86fdc004b8bc95db1b21e8.1920x1080.jpg?t=1719293526",
+    width: 1280,
+    height: 720,
+  },
   "open3d-glportal": {
     src: "media/learning/open3d-glportal.webp",
     alt: "A first-person view holds a blue device in a white-and-gray puzzle chamber with a timer and crosshair.",
@@ -4106,6 +4185,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     origin: "creator-screenshot",
     reviewedAt: "2026-11-19",
     originalImageUrl: "https://openspades.yvt.jp/media/images/ss1.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-search-and-rescue-ii": {
+    src: "media/learning/open3d-search-and-rescue-ii.webp",
+    alt: "An aerial rescue-simulator scene shows smoke rising among city buildings with faint flight-status readouts along the bottom.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://searchandrescue2.github.io/sar2/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://searchandrescue2.github.io/sar2/images/screenshots/sar1.jpg",
     width: 1280,
     height: 720,
   },
@@ -4937,6 +5029,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-star-ruler-2": {
+    src: "media/learning/open3d-star-ruler-2.webp",
+    alt: "Large spacecraft exchange bright laser fire above a glowing orange planet in a space battle.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://store.steampowered.com/app/282590/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/282590/ss_e9eff5d2afe94de9611512ce712844a85d0c7d35.1920x1080.jpg?t=1462039153",
+    width: 1280,
+    height: 720,
+  },
   "open3d-stickman-3d-first-round": {
     src: "media/learning/open3d-stickman-3d-first-round.webp",
     alt: "Two black stick figures face each other in a rainy arena with health and round indicators.",
@@ -4947,6 +5052,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
       "https://img.itch.zone/aW1hZ2UvNTk2MDM4LzMxNTU1MTQucG5n/original/A2fc5w.png",
     origin: "creator-screenshot",
     reviewedAt: "2026-11-18",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-uebergame": {
+    src: "media/learning/open3d-uebergame.webp",
+    alt: "A third-person soldier advances through grass near a lighthouse, with health and weapon indicators visible.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://store.steampowered.com/app/391780/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/391780/ss_1893fde78d1df0a036dab306cd03016ef9237d8e.1920x1080.jpg?t=1587592603",
     width: 1280,
     height: 720,
   },

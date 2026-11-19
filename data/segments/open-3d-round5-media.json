@@ -8169,6 +8169,41 @@
       "bytes": 57668
     },
     {
+      "id": "open3d-delta-park",
+      "title": "Delta Park",
+      "media": {
+        "src": "media/learning/open3d-delta-park.webp",
+        "alt": "A first-person nighttime view of roller coaster loops from the water in Delta Park.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://store.steampowered.com/app/2632680/Delta_Park/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2632680/ss_2a22645ce2ef9630f367397fb7a4271dcb6f5a13.1920x1080.jpg?t=1749047846",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "645ebfac1691e74ca1fa5a6fab492e0d08a34172937dec9df8cf42cb36cf0421",
+        "sourceFrameSHA256": "f0efab51177b8e89d623e9358a0530a5ad11aa2944d956033552355b2c7a15bd",
+        "sourceWidth": 1920,
+        "sourceHeight": 1080,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Full original developer-published Steam screenshot from the store linked by the creator repository. Shows the playable first-person nighttime park and water scene with the game’s low-resolution visual filter. No cover/title text, promotional collage, menu or editor. This atmospheric game view has no HUD."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "5330a5f304ccf974e15ccd8b32f3653fa951327863ba9e77e12fdcb2ef8107cc",
+      "bytes": 63000
+    },
+    {
       "id": "open3d-dogwalk",
       "title": "DOGWALK",
       "media": {
@@ -9117,6 +9152,41 @@
       "bytes": 183182
     },
     {
+      "id": "open3d-budget-backrooms",
+      "title": "Budget Backrooms",
+      "media": {
+        "src": "media/learning/open3d-budget-backrooms.webp",
+        "alt": "A flashlight illuminates yellow corridors in Budget Backrooms, with sanity and stamina indicators visible.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://store.steampowered.com/app/2589200/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2589200/e27f478d9ff37b576524f2d1726959dcc4160e8e/ss_e27f478d9ff37b576524f2d1726959dcc4160e8e.1920x1080.jpg?t=1792968125",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "81560ceaad3801d5d4601b8a4bec9b4089d96e789fd9c34b1f511d239c134c56",
+        "sourceFrameSHA256": "292ac3ea62f7aa827b9fec3cfa42bcfa26c36d5c4d51d1f8fdba4da824ea61b1",
+        "sourceWidth": 1920,
+        "sourceHeight": 1080,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Full original publisher Steam gameplay screenshot. First-person flashlight, yellow maze environment, sanity percentage and stamina bar are visible. Creator repository specifically links screenshots for Steam app 2589200; live publisher store matches Budget Backrooms. No collage, cover/title text, menu, or editor chrome."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "0974005cdd946a690f1cad8cdab367f4085025996dc8b32a882fdd2447e8476a",
+      "bytes": 31204
+    },
+    {
       "id": "open3d-avolition-2",
       "title": "Avolition 2",
       "media": {
@@ -9572,6 +9642,41 @@
       "bytes": 81720
     },
     {
+      "id": "open3d-opendungeonsplus",
+      "title": "OpenDungeonsPlus",
+      "media": {
+        "src": "media/learning/open3d-opendungeonsplus.webp",
+        "alt": "A large dungeon in OpenDungeonsPlus with creatures, rooms, resource counters, command panel and minimap.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/tomluchowski/OpenDungeonsPlus",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/tomluchowski/OpenDungeonsPlus/HEAD/screenshots/Screenshot_2024-09-16_19-26-05.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "7c48a354834b829a6e4b441dc1422a9ace1ed46d117e50ee442713b61b6427a3",
+        "sourceFrameSHA256": "d6c6d7320fa90723f81d42f1919e1e0e97fe41117c0695bb83ec54c76c3fda00",
+        "sourceWidth": 1920,
+        "sourceHeight": 1200,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Full original gameplay screenshot from the project repository screenshots folder, verified through its public GitHub tree. Overhead playable dungeon with creatures, game notifications, resource HUD, room/command buttons and minimap. No title/menu, promotional collage, cover art, or editor chrome."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "26d53feefb5bf3764abb30e30f09d249414e58f9c6bbf1e922e22c107191dc6a",
+      "bytes": 112100
+    },
+    {
       "id": "open3d-pioneer",
       "title": "Pioneer",
       "media": {
@@ -9852,6 +9957,41 @@
       "bytes": 93224
     },
     {
+      "id": "open3d-the-dark-mod",
+      "title": "The Dark Mod",
+      "media": {
+        "src": "media/learning/open3d-the-dark-mod.webp",
+        "alt": "A guard stands in a torchlit courtyard in The Dark Mod, with the stealth visibility indicator at the bottom.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://www.thedarkmod.com/media/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://www.thedarkmod.com/wp-content/gallery/screenshots/screen001.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "dd91d27e5fc5aa6167c1656ef33784372edc593e2221e51c014d166847a87810",
+        "sourceFrameSHA256": "448de4db0b1156f47a16aea5d3f6ced490ed340a63d2846c2f5cfd88a3751037",
+        "sourceWidth": 800,
+        "sourceHeight": 600,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Full original gameplay screenshot from official media Screenshots gallery. First-person courtyard view contains a guard and the game’s bottom-center visibility indicator. No collage, cover/title graphics, menu, or editor chrome."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "7edf73b5848c90c262279e2b2f6a3ce6d2da529deeb9fd10bd47b424cefd2486",
+      "bytes": 49638
+    },
+    {
       "id": "open3d-torcs",
       "title": "TORCS",
       "media": {
@@ -10130,6 +10270,41 @@
       "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
       "sha256": "ffbd42366e8aa79c5f03f03b6b8f47ce9af7a08d4ba26e0d72acf2a814995cba",
       "bytes": 42638
+    },
+    {
+      "id": "open3d-world-of-padman",
+      "title": "World of PADMAN",
+      "media": {
+        "src": "media/learning/open3d-world-of-padman.webp",
+        "alt": "First-person World of Padman combat in a giant kitchen with weapon, crosshair, ammunition and timer visible.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://worldofpadman.net/media/pictures-of-the-week/2023-pictures-of-the-week/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://worldofpadman.net/wp-content/uploads/potw_2023-49.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "386c07c4a8a29a0117546302a6e2106fa8cb0e2a4ac0057bdc71aca1f4696c98",
+        "sourceFrameSHA256": "add9fcec95f515fea66eb584046dcd4f0c4f19a0a781c56169d0255fa8068867",
+        "sourceWidth": 1280,
+        "sourceHeight": 720,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Full original 1280 by 720 screenshot linked by the official 2023 Pictures of the Week gallery. Shows active first-person combat, weapon, crosshair, character effects, timer and game HUD. Original small game watermark retained. No collage, cover/title graphics, menu, editor, or cropping."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "fe0c92f2587002ad995fbf96887c76f624c63b6823c422acb199097f7b7a3308",
+      "bytes": 93676
     },
     {
       "id": "open3d-xonotic",
@@ -11782,6 +11957,48 @@
       "bytes": 45164
     },
     {
+      "id": "open3d-freeallegiance-allegiance",
+      "title": "FreeAllegiance / Allegiance",
+      "media": {
+        "src": "media/learning/open3d-freeallegiance-allegiance.webp",
+        "alt": "Spacecraft exchange fire beside an asteroid, with target names and tactical markers overlaid on the combat scene.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://store.steampowered.com/app/700480/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/700480/ss_db5bf84f9d15d1febd86fdc004b8bc95db1b21e8.1920x1080.jpg?t=1719293526",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "7bd46488c2d16188e77441c7dd60cb9658fa1d5ba7bf8bfa8a037b61d329b139",
+        "sourceFrameSHA256": "03cc942345e1bcdf40dd7272a5c6555299030a3722cdaa3bb9074843b4b1e519",
+        "sourceWidth": 1728,
+        "sourceHeight": 1080,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: Spacecraft exchange fire beside an asteroid, with target names and tactical markers overlaid on the combat scene. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://store.steampowered.com/app/700480/",
+            "checkedAt": "2026-11-19",
+            "result": "Official publisher Steam store page embeds this original full-size image in its screenshot gallery (not community screenshots)."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "5d8387fc7c5dd0546ffb424a60a726030e6e0de8b3970f1ace6d5ea192c4fe86",
+      "bytes": 28964
+    },
+    {
       "id": "open3d-glportal",
       "title": "GlPortal",
       "media": {
@@ -12004,6 +12221,48 @@
       "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
       "sha256": "5e81b9d6c78354a5a76cc87071251212dfb390e7d35d729da5151c31b121e128",
       "bytes": 22718
+    },
+    {
+      "id": "open3d-search-and-rescue-ii",
+      "title": "Search and Rescue II",
+      "media": {
+        "src": "media/learning/open3d-search-and-rescue-ii.webp",
+        "alt": "An aerial rescue-simulator scene shows smoke rising among city buildings with faint flight-status readouts along the bottom.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://searchandrescue2.github.io/sar2/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://searchandrescue2.github.io/sar2/images/screenshots/sar1.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "935c0b24f0f5db5529f942c80b1e29d0be2173f5b2274eb4ff438c8b492d2963",
+        "sourceFrameSHA256": "89e0148aa47ce552b1f967506d80530e22ff765039f8f93841286b184a64c293",
+        "sourceWidth": 1024,
+        "sourceHeight": 550,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: An aerial rescue-simulator scene shows smoke rising among city buildings with faint flight-status readouts along the bottom. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://searchandrescue2.github.io/sar2/",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "fa8ed0b435b22ddabc2c1ccd18f066f34614ec450225069cc18bb40bafd8227d",
+      "bytes": 69544
     },
     {
       "id": "open3d-trackballs",
@@ -14355,6 +14614,48 @@
       "sha256": "80fcd6bd20ddd7940a2fa8db4fe7b72bb406ac22414b2ce2dc09b2bdc75b523c"
     },
     {
+      "id": "open3d-star-ruler-2",
+      "title": "Star Ruler 2",
+      "media": {
+        "src": "media/learning/open3d-star-ruler-2.webp",
+        "alt": "Large spacecraft exchange bright laser fire above a glowing orange planet in a space battle.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://store.steampowered.com/app/282590/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/282590/ss_e9eff5d2afe94de9611512ce712844a85d0c7d35.1920x1080.jpg?t=1462039153",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "d5e4e0f835d3c0e7033844a8a4378bb160c7ceeec79747345b76508685fcded0",
+        "sourceFrameSHA256": "aa732d59864ec24f99dc0b61c809f36990f58f11027be312f91d5a24115acacd",
+        "sourceWidth": 1920,
+        "sourceHeight": 1018,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: Large spacecraft exchange bright laser fire above a glowing orange planet in a space battle. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://store.steampowered.com/app/282590/",
+            "checkedAt": "2026-11-19",
+            "result": "Official publisher Steam store page embeds this original full-size image in its screenshot gallery (not community screenshots)."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "3778c263ec313e36ab7acdc9498f8421b475057e7215dc19a9715695a5b9bf27",
+      "bytes": 94796
+    },
+    {
       "id": "open3d-stickman-3d-first-round",
       "title": "StickMan 3D: First Round",
       "media": {
@@ -14389,6 +14690,48 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 24528,
       "sha256": "9dbfc41694b2544dbede1fc26197168c986ef0bf34b1092f4b36ff563003025c"
+    },
+    {
+      "id": "open3d-uebergame",
+      "title": "Uebergame",
+      "media": {
+        "src": "media/learning/open3d-uebergame.webp",
+        "alt": "A third-person soldier advances through grass near a lighthouse, with health and weapon indicators visible.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://store.steampowered.com/app/391780/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/391780/ss_1893fde78d1df0a036dab306cd03016ef9237d8e.1920x1080.jpg?t=1587592603",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "a90c2f211095f97cbb182491609e558090d0e54e08683dadc2a10eb1bb7f948b",
+        "sourceFrameSHA256": "dc973b25a4c87662ed509f7004713e8213590bbd700d1517398d328d85b3cb70",
+        "sourceWidth": 1920,
+        "sourceHeight": 1080,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: A third-person soldier advances through grass near a lighthouse, with health and weapon indicators visible. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://store.steampowered.com/app/391780/",
+            "checkedAt": "2026-11-19",
+            "result": "Official publisher Steam store page embeds this original full-size image in its screenshot gallery (not community screenshots)."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "0572e0dd525f08da56c84a8e137e5ee2a6a6910d33a18d7ab03c9bf3b91ae010",
+      "bytes": 104152
     },
     {
       "id": "itch3d-g002",
@@ -31443,43 +31786,6 @@
       ]
     },
     {
-      "id": "open3d-delta-park",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/Eibriel/DeltaKayak/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Eibriel/DeltaKayak",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Eibriel/DeltaKayak/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/Eibriel/DeltaKayak/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/Eibriel/DeltaKayak",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/Eibriel/DeltaKayak/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-in-the-blue-mist",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -32065,43 +32371,6 @@
       ]
     },
     {
-      "id": "open3d-budget-backrooms",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/dabardibid/Budget-Backrooms/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/dabardibid/Budget-Backrooms",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/dabardibid/Budget-Backrooms/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/dabardibid/Budget-Backrooms/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/dabardibid/Budget-Backrooms",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/dabardibid/Budget-Backrooms/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-yorg",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -32539,43 +32808,6 @@
       ]
     },
     {
-      "id": "open3d-opendungeonsplus",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/tomluchowski/OpenDungeonsPlus/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/tomluchowski/OpenDungeonsPlus",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/tomluchowski/OpenDungeonsPlus/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/tomluchowski/OpenDungeonsPlus/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/tomluchowski/OpenDungeonsPlus",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/tomluchowski/OpenDungeonsPlus/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-scorched3d",
       "status": "research-incomplete",
       "reason": "No qualifying image verified. Author/source access was limited: Failed to fetch https://www.scorched3d.co.uk/: (400) Timeout fetching This is not evidence that no screenshot exists.",
@@ -32680,18 +32912,6 @@
           "url": "https://tesseract.gg/",
           "checkedAt": "2026-11-18",
           "result": "Failed to fetch https://tesseract.gg/: (400) Timeout fetching"
-        }
-      ]
-    },
-    {
-      "id": "open3d-the-dark-mod",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://www.thedarkmod.com/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
         }
       ]
     },
@@ -32816,48 +33036,6 @@
         },
         {
           "url": "https://github.com/VoxeLibre/VoxeLibre/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-world-of-padman",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/PadWorld-Entertainment/worldofpadman/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/PadWorld-Entertainment/worldofpadman",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/PadWorld-Entertainment/worldofpadman/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://worldofpadman.net/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/PadWorld-Entertainment/worldofpadman/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/PadWorld-Entertainment/worldofpadman",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/PadWorld-Entertainment/worldofpadman/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
@@ -33910,48 +34088,6 @@
       ]
     },
     {
-      "id": "open3d-freeallegiance-allegiance",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/FreeAllegiance/Allegiance/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/FreeAllegiance/Allegiance",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/FreeAllegiance/Allegiance/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://www.freeallegiance.org/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/FreeAllegiance/Allegiance/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/FreeAllegiance/Allegiance",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/FreeAllegiance/Allegiance/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-gltron",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -34049,48 +34185,6 @@
         },
         {
           "url": "https://github.com/leezer3/OpenBVE/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-search-and-rescue-ii",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/SearchAndRescue2/sar2/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/SearchAndRescue2/sar2",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/SearchAndRescue2/sar2/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://searchandrescue2.github.io/sar2/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/SearchAndRescue2/sar2/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/SearchAndRescue2/sar2",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/SearchAndRescue2/sar2/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
@@ -35171,33 +35265,6 @@
       ]
     },
     {
-      "id": "open3d-star-ruler-2",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The repository README was read; its launcher is not a standalone game build. The linked official homepage timed out. No eligible screenshot was verified.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/BlindMindStudios/StarRuler2-Source/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/BlindMindStudios/StarRuler2-Source",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/BlindMindStudios/StarRuler2-Source/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/BlindMindStudios/StarRuler2-Source",
-          "checkedAt": "2026-11-18",
-          "result": "The repository README was read; its launcher is not a standalone game build. The linked official homepage timed out. No eligible screenshot was verified."
-        }
-      ]
-    },
-    {
       "id": "open3d-stormbaan-coureur",
       "status": "research-incomplete",
       "reason": "Research incomplete or access-limited: The author homepage and download page were read. The reviewed suspension image is an isolated vehicle model and the animated candidate is a stereoscopic-glasses promotional graphic; neither is an eligible game scene.",
@@ -35243,38 +35310,6 @@
           "url": "https://github.com/SummoningWars/summoning-wars",
           "checkedAt": "2026-11-18",
           "result": "The repository README and its linked original SourceForge project page were read; project samples were not exposed in the static response and no specific native asset was verified."
-        }
-      ]
-    },
-    {
-      "id": "open3d-uebergame",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The official game and download pages timed out. No image or native publication was verified; this is an access limitation, not proof none exists.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/Duion/Uebergame/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://github.com/Duion/Uebergame",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://github.com/Duion/Uebergame/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://duion.com/games/uebergame/main",
-          "checkedAt": "2026-11-18",
-          "result": "The official game and download pages timed out. No image or native publication was verified; this is an access limitation, not proof none exists."
-        },
-        {
-          "url": "https://duion.com/games/uebergame/downloads",
-          "checkedAt": "2026-11-18",
-          "result": "The official game and download pages timed out. No image or native publication was verified; this is an access limitation, not proof none exists."
         }
       ]
     },

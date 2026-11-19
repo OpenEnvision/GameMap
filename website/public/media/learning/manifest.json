@@ -5705,6 +5705,20 @@
       "sha256": "75cd55a249d69835471a0b5757511b53a361b3c10552af4aa43938c741ba77ad"
     },
     {
+      "id": "open3d-delta-park",
+      "src": "media/learning/open3d-delta-park.webp",
+      "alt": "A first-person nighttime view of roller coaster loops from the water in Delta Park.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://store.steampowered.com/app/2632680/Delta_Park/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2632680/ss_2a22645ce2ef9630f367397fb7a4271dcb6f5a13.1920x1080.jpg?t=1749047846",
+      "width": 1280,
+      "height": 720,
+      "bytes": 63000,
+      "sha256": "5330a5f304ccf974e15ccd8b32f3653fa951327863ba9e77e12fdcb2ef8107cc"
+    },
+    {
       "id": "open3d-dogwalk",
       "src": "media/learning/open3d-dogwalk.webp",
       "alt": "A dog pulls a child on a leash along a snowy woodland path in an overhead game view.",
@@ -6069,6 +6083,20 @@
       "sha256": "cab454a97af4c957566f45143f2362645a78b2d69ed58b640bf7f1de218f9a24"
     },
     {
+      "id": "open3d-budget-backrooms",
+      "src": "media/learning/open3d-budget-backrooms.webp",
+      "alt": "A flashlight illuminates yellow corridors in Budget Backrooms, with sanity and stamina indicators visible.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://store.steampowered.com/app/2589200/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2589200/e27f478d9ff37b576524f2d1726959dcc4160e8e/ss_e27f478d9ff37b576524f2d1726959dcc4160e8e.1920x1080.jpg?t=1792968125",
+      "width": 1280,
+      "height": 720,
+      "bytes": 31204,
+      "sha256": "0974005cdd946a690f1cad8cdab367f4085025996dc8b32a882fdd2447e8476a"
+    },
+    {
       "id": "open3d-avolition-2",
       "src": "media/learning/open3d-avolition-2.webp",
       "alt": "Avolition 2 dungeon combat with a sword-wielding player, skeleton enemies, health bar and currency counter.",
@@ -6251,6 +6279,20 @@
       "sha256": "561bdcc661ea6911e9619d16d6c10b4a00dbc4eabf0c971b9ffae613b078f01c"
     },
     {
+      "id": "open3d-opendungeonsplus",
+      "src": "media/learning/open3d-opendungeonsplus.webp",
+      "alt": "A large dungeon in OpenDungeonsPlus with creatures, rooms, resource counters, command panel and minimap.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/tomluchowski/OpenDungeonsPlus",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/tomluchowski/OpenDungeonsPlus/HEAD/screenshots/Screenshot_2024-09-16_19-26-05.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 112100,
+      "sha256": "26d53feefb5bf3764abb30e30f09d249414e58f9c6bbf1e922e22c107191dc6a"
+    },
+    {
       "id": "open3d-pioneer",
       "src": "media/learning/open3d-pioneer.webp",
       "alt": "A dark spacecraft silhouette crosses a dense star field beneath the edge of a large celestial body.",
@@ -6363,6 +6405,20 @@
       "sha256": "e08c1fbd007e48e103f986fdca857dc91dfc53a4a2a09d7c870526a38410873b"
     },
     {
+      "id": "open3d-the-dark-mod",
+      "src": "media/learning/open3d-the-dark-mod.webp",
+      "alt": "A guard stands in a torchlit courtyard in The Dark Mod, with the stealth visibility indicator at the bottom.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://www.thedarkmod.com/media/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://www.thedarkmod.com/wp-content/gallery/screenshots/screen001.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 49638,
+      "sha256": "7edf73b5848c90c262279e2b2f6a3ce6d2da529deeb9fd10bd47b424cefd2486"
+    },
+    {
       "id": "open3d-torcs",
       "src": "media/learning/open3d-torcs.webp",
       "alt": "A pack of colorful racing cars rounds a paved circuit corner beside guardrails and gravel runoff.",
@@ -6473,6 +6529,20 @@
       "height": 720,
       "bytes": 42638,
       "sha256": "ffbd42366e8aa79c5f03f03b6b8f47ce9af7a08d4ba26e0d72acf2a814995cba"
+    },
+    {
+      "id": "open3d-world-of-padman",
+      "src": "media/learning/open3d-world-of-padman.webp",
+      "alt": "First-person World of Padman combat in a giant kitchen with weapon, crosshair, ammunition and timer visible.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://worldofpadman.net/media/pictures-of-the-week/2023-pictures-of-the-week/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://worldofpadman.net/wp-content/uploads/potw_2023-49.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 93676,
+      "sha256": "fe0c92f2587002ad995fbf96887c76f624c63b6823c422acb199097f7b7a3308"
     },
     {
       "id": "open3d-xonotic",
@@ -7105,6 +7175,20 @@
       "sha256": "790dd774749cf989e2ecaf771f5e6d93a42e80f1084e8d59705f6e1b90da24ac"
     },
     {
+      "id": "open3d-freeallegiance-allegiance",
+      "src": "media/learning/open3d-freeallegiance-allegiance.webp",
+      "alt": "Spacecraft exchange fire beside an asteroid, with target names and tactical markers overlaid on the combat scene.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://store.steampowered.com/app/700480/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/700480/ss_db5bf84f9d15d1febd86fdc004b8bc95db1b21e8.1920x1080.jpg?t=1719293526",
+      "width": 1280,
+      "height": 720,
+      "bytes": 28964,
+      "sha256": "5d8387fc7c5dd0546ffb424a60a726030e6e0de8b3970f1ace6d5ea192c4fe86"
+    },
+    {
       "id": "open3d-glportal",
       "src": "media/learning/open3d-glportal.webp",
       "alt": "A first-person view holds a blue device in a white-and-gray puzzle chamber with a timer and crosshair.",
@@ -7187,6 +7271,20 @@
       "height": 720,
       "bytes": 22718,
       "sha256": "5e81b9d6c78354a5a76cc87071251212dfb390e7d35d729da5151c31b121e128"
+    },
+    {
+      "id": "open3d-search-and-rescue-ii",
+      "src": "media/learning/open3d-search-and-rescue-ii.webp",
+      "alt": "An aerial rescue-simulator scene shows smoke rising among city buildings with faint flight-status readouts along the bottom.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://searchandrescue2.github.io/sar2/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://searchandrescue2.github.io/sar2/images/screenshots/sar1.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 69544,
+      "sha256": "fa8ed0b435b22ddabc2c1ccd18f066f34614ec450225069cc18bb40bafd8227d"
     },
     {
       "id": "open3d-trackballs",
@@ -8085,6 +8183,20 @@
       "sha256": "80fcd6bd20ddd7940a2fa8db4fe7b72bb406ac22414b2ce2dc09b2bdc75b523c"
     },
     {
+      "id": "open3d-star-ruler-2",
+      "src": "media/learning/open3d-star-ruler-2.webp",
+      "alt": "Large spacecraft exchange bright laser fire above a glowing orange planet in a space battle.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://store.steampowered.com/app/282590/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/282590/ss_e9eff5d2afe94de9611512ce712844a85d0c7d35.1920x1080.jpg?t=1462039153",
+      "width": 1280,
+      "height": 720,
+      "bytes": 94796,
+      "sha256": "3778c263ec313e36ab7acdc9498f8421b475057e7215dc19a9715695a5b9bf27"
+    },
+    {
       "id": "open3d-stickman-3d-first-round",
       "src": "media/learning/open3d-stickman-3d-first-round.webp",
       "alt": "Two black stick figures face each other in a rainy arena with health and round indicators.",
@@ -8097,6 +8209,20 @@
       "height": 720,
       "bytes": 24528,
       "sha256": "9dbfc41694b2544dbede1fc26197168c986ef0bf34b1092f4b36ff563003025c"
+    },
+    {
+      "id": "open3d-uebergame",
+      "src": "media/learning/open3d-uebergame.webp",
+      "alt": "A third-person soldier advances through grass near a lighthouse, with health and weapon indicators visible.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://store.steampowered.com/app/391780/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/391780/ss_1893fde78d1df0a036dab306cd03016ef9237d8e.1920x1080.jpg?t=1587592603",
+      "width": 1280,
+      "height": 720,
+      "bytes": 104152,
+      "sha256": "0572e0dd525f08da56c84a8e137e5ee2a6a6910d33a18d7ab03c9bf3b91ae010"
     },
     {
       "id": "itch3d-g002",
