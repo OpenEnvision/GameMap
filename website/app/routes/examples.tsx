@@ -1,6 +1,7 @@
-import type { ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
 import { useLoaderData, type LoaderFunctionArgs } from "react-router";
-import { ArrowDown, ArrowUpRight, ChevronDown, Search } from "lucide-react";
+import { ArrowDown, ArrowUpRight, ChevronDown, Search, X } from "lucide-react";
+import { IndexEmpty } from "../components/catalog-browser";
 import { ExampleCard } from "../components/example-card";
 import { ResearchGameCard } from "../components/research-game-card";
 import {
@@ -126,6 +127,29 @@ function emphasize(text: string): ReactNode {
     );
 }
 
+/** "A · B · C" as one phrase per item: the separators are drawn by CSS
+ *  (.gallery-dots), so a wrapped line never starts or ends with a dot and a
+ *  phrase never splits from its count. */
+function DotList({
+  items,
+  className = "",
+}: {
+  items: string[];
+  className?: string;
+}) {
+  return (
+    <span className={`gallery-dots ${className}`.trim()}>
+      {items.map((item) => (
+        <span key={item}>{item}</span>
+      ))}
+    </span>
+  );
+}
+
+/** The URL keys this page filters by; anything else in the query (campaign
+ *  tags and the like) survives clearing. */
+const filterKeys = ["q", "track", "client"] as const;
+
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
   const nativeGames = [...content.all("example"), ...content.all("foundation")];
@@ -214,6 +238,7 @@ export default function Examples() {
     client = Object.hasOwn(agentLabels, params.get("client") || "")
       ? params.get("client")!
       : "all";
+  const summary = useRef<HTMLSpanElement>(null);
   const update = (key: string, value: string) => {
     // History updates before the large grid commits. Compose rapid edits from
     // the current URL so clearing search and clicking a filter cannot revive it.
@@ -226,6 +251,30 @@ export default function Examples() {
       flushSync: true,
     });
   };
+  /** Clearing from the empty state removes the control that had focus; keep
+   *  keyboard users in place on the live results summary just above. */
+  const settleFocus = () => summary.current?.focus({ preventScroll: true });
+  const removeFilter = (key: (typeof filterKeys)[number]) => {
+    update(key, "");
+    settleFocus();
+  };
+  const clearFilters = () => {
+    const next = new URLSearchParams(window.location.search);
+    for (const key of filterKeys) next.delete(key);
+    setParams(next, {
+      replace: true,
+      preventScrollReset: true,
+      flushSync: true,
+    });
+    settleFocus();
+  };
+  const activeFilters = [
+    ...(query ? ([["q", `“${query}”`]] as const) : []),
+    ...(track !== "all" ? ([["track", track.toUpperCase()]] as const) : []),
+    ...(client !== "all"
+      ? ([["client", t(agentLabels[client as AgentId])]] as const)
+      : []),
+  ];
   const games = examples.filter(
     (entry) =>
       (track === "all" || entry.data.track === track) &&
@@ -331,7 +380,11 @@ export default function Examples() {
               ))}
             </nav>
             <p className="kicker gallery-kicker">
-              {t("Creator evidence · Playable builds · Project source")}
+              <DotList
+                items={t(
+                  "Creator evidence · Playable builds · Project source",
+                ).split(" · ")}
+              />
             </p>
             <h1 className="gallery-title">
               {emphasize(t("Real games. *Open* starting points."))}
@@ -370,7 +423,19 @@ export default function Examples() {
                 aria-label={t("Search game examples")}
                 placeholder={t("Find a game, engine, or AI workflow…")}
                 value={query}
+                autoComplete="off"
+                autoCapitalize="none"
+                spellCheck={false}
+                enterKeyHint="search"
                 onChange={(event) => update("q", event.target.value)}
+                onKeyDown={(event) => {
+                  // A plain text field (its role stays "textbox"), so Escape
+                  // clears it the way a native search field would.
+                  if (event.key === "Escape" && query) {
+                    event.preventDefault();
+                    update("q", "");
+                  }
+                }}
               />
             </label>
             <div className="gallery-select">
@@ -409,25 +474,26 @@ export default function Examples() {
             </div>
           </div>
           <div className="gallery-results">
-            <span aria-live="polite">
-              {t("{count} game examples", { count: gameCount })}
+            <span
+              className="gallery-dots gallery-summary"
+              ref={summary}
+              tabIndex={-1}
+              aria-live="polite"
+            >
+              <span>{t("{count} game examples", { count: gameCount })}</span>
               {sourceOnlyCount > 0 && (
-                <>
-                  {" "}
-                  ·{" "}
+                <span>
                   {t("{count} source-only / unverified", {
                     count: sourceOnlyCount,
                   })}
-                </>
+                </span>
               )}
               {referenceOnlyCount > 0 && (
-                <>
-                  {" "}
-                  ·{" "}
+                <span>
                   {t("{count} project references / source unverified", {
                     count: referenceOnlyCount,
                   })}
-                </>
+                </span>
               )}
             </span>
             {collections.length > 0 && (
@@ -450,6 +516,7 @@ export default function Examples() {
           <div
             id="game-examples"
             className="example-grid"
+            role="region"
             aria-label={t("Game examples")}
           >
             {linkedGames.map((entry) => (
@@ -482,16 +549,41 @@ export default function Examples() {
           </div>
         )}
         {!gameCount && (
-          <div className="empty-state gallery-empty">
-            <h2>{t("No games found.")}</h2>
-            <p>{t("Try another title, engine, or AI tool.")}</p>
+          <IndexEmpty
+            title="No games found."
+            body="Try another title, engine, or AI tool."
+            className="gallery-empty"
+            seed={29}
+          >
+            {activeFilters.length > 0 && (
+              <ul
+                className="gallery-empty-filters"
+                aria-label={t("Active filters")}
+              >
+                {activeFilters.map(([key, label]) => (
+                  <li key={key}>
+                    <button
+                      type="button"
+                      onClick={() => removeFilter(key)}
+                      aria-label={t("Remove filter: {filter}", {
+                        filter: label,
+                      })}
+                    >
+                      <span>{label}</span>
+                      <X size={13} aria-hidden="true" />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
             <button
+              type="button"
               className="button button-secondary"
-              onClick={() => setParams({})}
+              onClick={clearFilters}
             >
               {t("Clear filters")}
             </button>
-          </div>
+          </IndexEmpty>
         )}
       </div>
       <section id="community-collections" className="gallery-collections">

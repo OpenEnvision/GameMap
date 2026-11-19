@@ -37,7 +37,10 @@ export default function Work() {
   }, [id, request]);
   const cover = work?.screenshots[0];
   const crumb = (
-    <nav className="content-breadcrumb gallery-work-crumb">
+    <nav
+      className="content-breadcrumb gallery-work-crumb"
+      aria-label={t("Breadcrumb")}
+    >
       <Link to="/examples/">
         <ArrowLeft size={14} aria-hidden="true" />
         {t("Game examples")}
@@ -175,12 +178,7 @@ export default function Work() {
               <dl>
                 <div>
                   <dt>{t("License")}</dt>
-                  <dd>
-                    {work.license ||
-                      t(
-                        "Not specified. Inclusion does not grant reuse rights.",
-                      )}
-                  </dd>
+                  <dd>{work.license || t("Not specified")}</dd>
                 </div>
                 <div>
                   <dt>{t("AI use declaration")}</dt>
@@ -197,11 +195,6 @@ export default function Work() {
                   </dd>
                 </div>
               </dl>
-              <p className="community-disclaimer">
-                {t(
-                  "Approval permits community display; it is not an independent playtest or a copyright certification.",
-                )}
-              </p>
             </aside>
           </section>
           <CommunityPanel gameKey={"submission:" + id} />

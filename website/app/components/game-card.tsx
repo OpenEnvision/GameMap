@@ -3,7 +3,7 @@ import { Link, SourceLanguage, useSiteI18n } from "../lib/i18n";
 import { publicAsset } from "../lib/catalog";
 import type { LearningMedia } from "../../src/data/learningMedia";
 import type { PageCover } from "../../src/data/pageCovers";
-import type { Locale } from "../../content/locale";
+import { chineseMessages, type Locale } from "../../content/locale";
 import { RatingSummary } from "./community";
 
 const accessLabels = {
@@ -53,11 +53,18 @@ export function GameCard({
   extraLink?: { label: string; url: string };
   compact?: boolean;
 }) {
-  const { t } = useSiteI18n();
+  const { t, locale } = useSiteI18n();
   const sourceOnly = demo.kind === "source",
     referenceOnly = demo.kind === "reference";
   const fallback = media ? undefined : pageCover;
   const image = media || fallback;
+  // Build-story labels come from the records; one without a translation stays
+  // English on Chinese pages, so say so for screen readers.
+  const extraEnglish =
+    locale === "zh" &&
+    !!extraLink &&
+    !Object.hasOwn(chineseMessages, extraLink.label) &&
+    !/\p{Script=Han}/u.test(extraLink.label);
   return (
     <article
       className={`example-card${compact ? " compact" : ""}`}
@@ -164,6 +171,7 @@ export function GameCard({
               target="_blank"
               rel="noreferrer"
               title={t(extraLink.label)}
+              lang={extraEnglish ? "en" : undefined}
             >
               {t(extraLink.label)}
             </a>
