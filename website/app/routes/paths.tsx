@@ -4,6 +4,7 @@ import { contentFor } from "../../content/registry.server";
 import { ContentCard } from "../components/content";
 import { publicAsset } from "../../src/publicAsset";
 import { Link, useSiteI18n } from "../lib/i18n";
+import { AccentTitle, IndexHero } from "../components/catalog-browser";
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
   return {
@@ -19,8 +20,11 @@ export function loader({ request }: LoaderFunctionArgs) {
 export default function Paths() {
   const { t } = useSiteI18n(),
     { paths, steps: allSteps, notes } = useLoaderData<typeof loader>();
+  const stepCount = allSteps.filter((step) =>
+    paths.some((path) => path.id === step.data.track),
+  ).length;
   return (
-    <main id="main-content" className="site-main listing-page">
+    <main id="main-content" className="ix-page ix-paths">
       <title>{t("Development paths — GameMap")}</title>
       <meta
         name="description"
@@ -28,65 +32,103 @@ export default function Paths() {
           "Choose a track. Every step keeps its purpose, deliverable, and acceptance checkpoint together.",
         )}
       />
-      <header className="page-heading">
-        <span className="eyebrow">{t("MAKE THE NEXT STEP SMALL")}</span>
-        <h1>{t("A path, not a pile of tools.")}</h1>
-        <p>
-          {t(
-            "Choose a track. Every step keeps its purpose, deliverable, and acceptance checkpoint together.",
-          )}
-        </p>
-      </header>
-      <div className="path-grid">
-        {paths.map((path) => {
-          const steps = allSteps.filter((step) => step.data.track === path.id),
-            art = path.blocks.find((block) => block.type === "image");
-          return (
-            <article
-              className="path-card"
-              data-content-ref={path.key}
-              key={path.key}
-            >
-              {art?.type === "image" && (
-                <img src={publicAsset(art.src)} alt={art.alt} loading="lazy" />
-              )}
-              <div>
-                <span className="small-label">
-                  {t("{count} STEPS · DELIVERABLES & CHECKPOINTS", {
-                    count: steps.length,
-                  })}
+      <IndexHero
+        pillar="learn"
+        kicker="MAKE THE NEXT STEP SMALL"
+        title="A path, not a pile of tools."
+        lede="Choose a track. Every step keeps its purpose, deliverable, and acceptance checkpoint together."
+        count={stepCount}
+        countLabel="guided steps"
+      >
+        <ol className="ix-path-index">
+          {paths.map((path, index) => (
+            <li key={path.key}>
+              <a href={`#path-${path.id}`}>
+                <span aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
-                <h2>
-                  <Link to={path.url}>
-                    {path.title}
-                    <ArrowRight size={17} />
-                  </Link>
-                </h2>
-                <p>{path.description}</p>
-                <ol>
-                  {steps.map((step) => (
+                {path.title}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </IndexHero>
+      <div className="ix-wrap">
+        <div className="path-grid">
+          {paths.map((path, index) => {
+            const steps = allSteps.filter(
+                (step) => step.data.track === path.id,
+              ),
+              art = path.blocks.find((block) => block.type === "image");
+            return (
+              <article
+                className="path-card"
+                id={`path-${path.id}`}
+                data-content-ref={path.key}
+                key={path.key}
+              >
+                <div className="path-stage">
+                  {art?.type === "image" && (
+                    <img
+                      src={publicAsset(art.src)}
+                      alt={art.alt}
+                      width={art.width}
+                      height={art.height}
+                      loading="lazy"
+                    />
+                  )}
+                  <div className="path-copy">
+                    <span className="small-label">
+                      <b>
+                        {t("Path {number}", {
+                          number: String(index + 1).padStart(2, "0"),
+                        })}
+                      </b>
+                      {t("{count} STEPS · DELIVERABLES & CHECKPOINTS", {
+                        count: steps.length,
+                      })}
+                    </span>
+                    <h2>
+                      <Link to={path.url}>
+                        <AccentTitle text={path.title} />
+                        <ArrowRight size={22} />
+                      </Link>
+                    </h2>
+                    <p>{path.description}</p>
+                    <Link className="button button-primary" to={path.url}>
+                      {t("Follow this path")}
+                      <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                </div>
+                <ol className="path-steps">
+                  {steps.map((step, stepIndex) => (
                     <li key={step.key} data-content-ref={step.key}>
-                      <Link to={step.url}>{step.title}</Link>
+                      <Link to={step.url}>
+                        <span className="path-step-num" aria-hidden="true">
+                          {String(stepIndex + 1).padStart(2, "0")}
+                        </span>
+                        <span className="path-step-title">{step.title}</span>
+                      </Link>
                     </li>
                   ))}
                 </ol>
-                <Link className="inline-link" to={path.url}>
-                  {t("Follow this path")}
-                  <ArrowRight size={15} />
-                </Link>
-              </div>
-            </article>
-          );
-        })}
-      </div>
-      <section className="related-content">
-        <h2>{t("Keep some context nearby.")}</h2>
-        <div className="content-grid">
-          {notes.map((entry) => (
-            <ContentCard key={entry.key} entry={entry} />
-          ))}
+              </article>
+            );
+          })}
         </div>
-      </section>
+        <section className="related-content ix-context">
+          <div className="ix-context-head">
+            <p className="kicker">{t("Field notes")}</p>
+            <h2>{t("Keep some context nearby.")}</h2>
+          </div>
+          <div className="content-grid ix-ledger">
+            {notes.map((entry) => (
+              <ContentCard key={entry.key} entry={entry} />
+            ))}
+          </div>
+        </section>
+      </div>
     </main>
   );
 }

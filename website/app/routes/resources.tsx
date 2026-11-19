@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import {
   useLocation,
   useLoaderData,
   type LoaderFunctionArgs,
 } from "react-router";
 import {
+  ArrowDownUp,
   ArrowRight,
   ArrowUpRight,
   Bookmark,
@@ -24,6 +25,7 @@ import { categories, stageLabels, typeLabels } from "../lib/catalog";
 import { ResourceDetail } from "../components/resource-detail";
 import { url } from "../../content/site";
 import { useClientQuery } from "../lib/client-query";
+import { IndexEmpty, IndexHero } from "../components/catalog-browser";
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
   return {
@@ -44,6 +46,7 @@ export default function Resources() {
   const { t } = useSiteI18n(),
     { entries, demos, identities } = useLoaderData<typeof loader>();
   const resources = entries.map((entry) => entry.data),
+    entryById = new Map(entries.map((entry) => [entry.id, entry])),
     searchText = new Map(
       entries.map((entry) => [entry.id, searchableText(entry)]),
     );
@@ -163,8 +166,16 @@ export default function Resources() {
     anchor.click();
     setTimeout(() => URL.revokeObjectURL(address), 1000);
   };
+  const counts = Object.fromEntries(
+    categories.map((item) => [
+      item.id,
+      resources.filter((resource) => resource.category === item.id).length,
+    ]),
+  );
+  const tone = (id: string) =>
+    ({ "--tone": `var(--tax-${id})` }) as CSSProperties;
   return (
-    <main id="main-content" className="site-main listing-page">
+    <main id="main-content" className="ix-page ix-resources">
       <title>{t("Resource library — GameMap")}</title>
       <meta
         name="description"
@@ -172,266 +183,312 @@ export default function Resources() {
           "Useful tools, frameworks, and ideas. Clear context about what each one actually does.",
         )}
       />
-      <header className="page-heading">
-        <span className="eyebrow">{t("THE RESOURCE LIBRARY")}</span>
-        <h1>{t("Your next building block.")}</h1>
-        <p>
-          {t(
-            "Useful tools, frameworks, and ideas. Clear context about what each one actually does.",
-          )}
-        </p>
-      </header>
-      <div className="catalog-toolbar">
-        <div className="filter-search">
-          <Search size={20} />
-          <input
-            id="resource-search"
-            aria-label={t("Search resources")}
-            placeholder={t("Search tools, engines, topics…")}
-            value={query}
-            onChange={(event) => update("q", event.target.value)}
-          />
-        </div>
-        <button
-          className={`button collection-button ${savedOnly ? "is-active" : ""}`}
-          aria-pressed={savedOnly}
-          onClick={() => update("saved", savedOnly ? "" : "1")}
-        >
-          <Bookmark size={17} />
-          {t("Saved")}
-          <span>{saved.length}</span>
-        </button>
-        {savedOnly && saved.length > 0 && (
-          <button
-            className="quiet-icon"
-            onClick={exportSaved}
-            aria-label={t("Export saved collection as Markdown")}
-          >
-            <Download size={19} />
-          </button>
-        )}
-      </div>
-      <div
-        className="category-filters"
-        role="group"
-        aria-label={t("Resource category")}
+      <IndexHero
+        pillar="tools"
+        kicker="THE RESOURCE LIBRARY"
+        title="Your next building block."
+        lede="Useful tools, frameworks, and ideas. Clear context about what each one actually does."
+        count={resources.length}
+        countLabel="curated tools"
       >
-        <button
-          aria-pressed={category === "all"}
-          onClick={() => update("category", "all")}
-        >
-          {t("All resources")}
-          <span>{resources.length}</span>
-        </button>
-        {categories.map((item) => (
-          <button
-            key={item.id}
-            aria-pressed={category === item.id}
-            onClick={() => update("category", item.id)}
-          >
-            {t(item.label)}
-            <span>
-              {
-                resources.filter((resource) => resource.category === item.id)
-                  .length
-              }
-            </span>
-          </button>
-        ))}
-      </div>
-      <div className="secondary-filters">
-        <span>
-          <SlidersHorizontal size={15} />
-          {t("Narrow it down")}
-        </span>
-        <label>
-          <span className="sr-only">{t("Resource type")}</span>
-          <select
-            value={type}
-            onChange={(event) => update("type", event.target.value)}
-          >
-            <option value="all">{t("All types")}</option>
-            {Object.entries(typeLabels).map(([id, label]) => (
-              <option key={id} value={id}>
-                {t(label)}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          <span className="sr-only">{t("Development stage")}</span>
-          <select
-            value={stage}
-            onChange={(event) => update("stage", event.target.value)}
-          >
-            <option value="all">{t("All stages")}</option>
-            {Object.entries(stageLabels).map(([id, label]) => (
-              <option key={id} value={id}>
-                {t(label)}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          <span className="sr-only">{t("Development track")}</span>
-          <select
-            value={track}
-            onChange={(event) => update("track", event.target.value)}
-          >
-            <option value="all">{t("All tracks")}</option>
-            <option value="2d">2D</option>
-            <option value="3d">3D</option>
-            <option value="world">{t("World models")}</option>
-          </select>
-        </label>
-        <label className="sort-filter">
-          <span className="sr-only">{t("Sort resources")}</span>
-          <select
-            value={sort}
-            onChange={(event) => update("sort", event.target.value)}
-          >
-            <option value="curated">{t("Curated order")}</option>
-            <option value="name">{t("Name: A–Z")}</option>
-          </select>
-        </label>
-      </div>
-      {notice && (
-        <p className="inline-notice" role="status">
-          {t(notice)}
-        </p>
-      )}
-      <div className="results-meta">
-        <span aria-live="polite">
-          {t(filtered.length === 1 ? "{count} resource" : "{count} resources", {
-            count: filtered.length,
-          })}
-          {savedOnly ? t(" in your collection") : ""}
-        </span>
-        <Link to="/docs/catalog-review-coverage/">
-          {t("How we review sources")}
-          <ArrowUpRight size={13} />
-        </Link>
-      </div>
-      {filtered.length ? (
-        <div className="resource-grid">
-          {filtered.map((resource) => {
-            const entry = entries.find((entry) => entry.id === resource.id)!;
-            return (
-              <article
-                className="resource-tile"
-                key={resource.id}
-                data-content-ref={entry.key}
-              >
-                <div className="resource-card-top">
-                  <ResourceIcon
-                    resource={resource}
-                    identity={
-                      identities[resource.id as keyof typeof identities]
-                    }
-                    size={42}
-                  />
-                  <button
-                    className="quiet-icon bookmark-button"
-                    aria-label={t(
-                      saved.includes(resource.id)
-                        ? "Unsave {title}"
-                        : "Save {title}",
-                      { title: resource.name },
-                    )}
-                    aria-pressed={saved.includes(resource.id)}
-                    onClick={() => toggleSave(resource.id)}
-                  >
-                    <Bookmark
-                      size={17}
-                      fill={
-                        saved.includes(resource.id) ? "currentColor" : "none"
-                      }
-                    />
-                  </button>
-                </div>
-                <span className="small-label">
-                  {t(
-                    categories.find(
-                      (category) => category.id === resource.category,
-                    )?.label || "",
-                  )}
-                </span>
-                <SourceLanguage english={entry.descriptionLanguage === "en"} />
-                <h2>
-                  <Link to={url.resource(resource.id)}>{resource.name}</Link>
-                </h2>
-                <ResourceAttribution
-                  identity={identities[resource.id as keyof typeof identities]}
-                />
-                <p
-                  className="resource-description"
-                  lang={entry.descriptionLanguage === "en" ? "en" : undefined}
-                >
-                  {resource.summary}
-                </p>
-                <div className="resource-tags">
-                  <span>{t(typeLabels[resource.type])}</span>
-                  <span>
-                    {resource.dimensions.length === 3
-                      ? t("All tracks")
-                      : resource.dimensions
-                          .map((track) =>
-                            track === "world"
-                              ? t("World models")
-                              : track.toUpperCase(),
-                          )
-                          .join(" / ")}
-                  </span>
-                </div>
-                <div className="resource-card-footer">
-                  <button onClick={() => selectResource(resource.id)}>
-                    {t("View details")}
-                    <ArrowRight size={15} />
-                  </button>
-                  <a
-                    href={resource.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={t("Visit {title} project", {
-                      title: resource.name,
-                    })}
-                  >
-                    <ArrowUpRight size={17} />
-                  </a>
-                </div>
-              </article>
-            );
-          })}
+        <div className="heading-links">
+          <Link to="/docs/catalog-review-coverage/">
+            {t("How we review sources")}
+            <ArrowUpRight size={14} />
+          </Link>
         </div>
-      ) : (
-        <div className="empty-state">
-          <Search size={28} />
-          <h2>
-            {t(
+      </IndexHero>
+      <div className="ix-wrap">
+        <div className="ix-bar">
+          <label className="ix-search">
+            <Search size={18} aria-hidden="true" />
+            <input
+              id="resource-search"
+              aria-label={t("Search resources")}
+              placeholder={t("Search tools, engines, topics…")}
+              value={query}
+              onChange={(event) => update("q", event.target.value)}
+            />
+          </label>
+          <div className="ix-bar-selects">
+            <span className="ix-bar-hint">
+              <SlidersHorizontal size={14} aria-hidden="true" />
+              {t("Narrow it down")}
+            </span>
+            <label className="ix-select">
+              <span className="sr-only">{t("Resource type")}</span>
+              <select
+                value={type}
+                onChange={(event) => update("type", event.target.value)}
+              >
+                <option value="all">{t("All types")}</option>
+                {Object.entries(typeLabels).map(([id, label]) => (
+                  <option key={id} value={id}>
+                    {t(label)}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="ix-select">
+              <span className="sr-only">{t("Development stage")}</span>
+              <select
+                value={stage}
+                onChange={(event) => update("stage", event.target.value)}
+              >
+                <option value="all">{t("All stages")}</option>
+                {Object.entries(stageLabels).map(([id, label]) => (
+                  <option key={id} value={id}>
+                    {t(label)}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="ix-select">
+              <span className="sr-only">{t("Development track")}</span>
+              <select
+                value={track}
+                onChange={(event) => update("track", event.target.value)}
+              >
+                <option value="all">{t("All tracks")}</option>
+                <option value="2d">2D</option>
+                <option value="3d">3D</option>
+                <option value="world">{t("World models")}</option>
+              </select>
+            </label>
+            <label className="ix-select ix-select-sort">
+              <ArrowDownUp size={14} aria-hidden="true" />
+              <span className="sr-only">{t("Sort resources")}</span>
+              <select
+                value={sort}
+                onChange={(event) => update("sort", event.target.value)}
+              >
+                <option value="curated">{t("Curated order")}</option>
+                <option value="name">{t("Name: A–Z")}</option>
+              </select>
+            </label>
+          </div>
+          <div className="ix-bar-actions">
+            <button
+              className="ix-saved"
+              aria-pressed={savedOnly}
+              onClick={() => update("saved", savedOnly ? "" : "1")}
+            >
+              <Bookmark
+                size={16}
+                fill={savedOnly ? "currentColor" : "none"}
+                aria-hidden="true"
+              />
+              {t("Saved")}
+              <span>{saved.length}</span>
+            </button>
+            {savedOnly && saved.length > 0 && (
+              <button
+                className="ix-icon-button"
+                onClick={exportSaved}
+                aria-label={t("Export saved collection as Markdown")}
+              >
+                <Download size={17} />
+              </button>
+            )}
+          </div>
+        </div>
+        <div className="ix-cats">
+          <div
+            className="category-filters"
+            role="group"
+            aria-label={t("Resource category")}
+          >
+            <button
+              aria-pressed={category === "all"}
+              onClick={() => update("category", "all")}
+            >
+              <i className="ix-dot ix-dot-all" aria-hidden="true" />
+              {t("All resources")}
+              <span>{resources.length}</span>
+            </button>
+            {categories.map((item) => (
+              <button
+                key={item.id}
+                aria-pressed={category === item.id}
+                onClick={() => update("category", item.id)}
+                style={tone(item.id)}
+              >
+                <i className="ix-dot" aria-hidden="true" />
+                {t(item.label)}
+                <span>{counts[item.id]}</span>
+              </button>
+            ))}
+          </div>
+          <div
+            className="ix-spectrum"
+            aria-hidden="true"
+            data-filtered={category !== "all" || undefined}
+          >
+            {categories.map((item) => (
+              <i
+                key={item.id}
+                style={{ ...tone(item.id), flexGrow: counts[item.id] }}
+                data-active={category === item.id || undefined}
+              />
+            ))}
+          </div>
+        </div>
+        {notice && (
+          <p className="inline-notice" role="status">
+            {t(notice)}
+          </p>
+        )}
+        <div className="ix-meta">
+          <span aria-live="polite">
+            <strong>
+              {t(
+                filtered.length === 1
+                  ? "{count} resource"
+                  : "{count} resources",
+                { count: filtered.length },
+              )}
+            </strong>
+            {savedOnly ? t(" in your collection") : ""}
+          </span>
+          <span className="ix-meta-rule" aria-hidden="true" />
+          <span>
+            {[
+              category === "all"
+                ? ""
+                : t(categories.find((item) => item.id === category)!.label),
+              type === "all"
+                ? ""
+                : t(typeLabels[type as keyof typeof typeLabels]),
+              stage === "all" ? "" : t(stageLabels[stage as Stage]),
+              track === "all"
+                ? ""
+                : track === "world"
+                  ? t("World models")
+                  : track.toUpperCase(),
+            ]
+              .filter(Boolean)
+              .join(" · ") || t("All resources")}
+          </span>
+        </div>
+        {filtered.length ? (
+          <div className="resource-grid">
+            {filtered.map((resource, index) => {
+              const entry = entryById.get(resource.id)!,
+                identity = identities[resource.id as keyof typeof identities],
+                isSaved = saved.includes(resource.id);
+              return (
+                <article
+                  className="resource-tile"
+                  key={resource.id}
+                  data-content-ref={entry.key}
+                  style={tone(resource.category)}
+                >
+                  <div className="resource-card-top">
+                    <span className="ix-tile-index" aria-hidden="true">
+                      {String(index + 1).padStart(3, "0")}
+                    </span>
+                    <ResourceIcon
+                      resource={resource}
+                      identity={identity}
+                      size={56}
+                    />
+                    <button
+                      className="quiet-icon bookmark-button"
+                      aria-label={t(
+                        isSaved ? "Unsave {title}" : "Save {title}",
+                        {
+                          title: resource.name,
+                        },
+                      )}
+                      aria-pressed={isSaved}
+                      onClick={() => toggleSave(resource.id)}
+                    >
+                      <Bookmark
+                        size={16}
+                        fill={isSaved ? "currentColor" : "none"}
+                      />
+                    </button>
+                  </div>
+                  <span className="small-label">
+                    {t(
+                      categories.find(
+                        (category) => category.id === resource.category,
+                      )?.label || "",
+                    )}
+                  </span>
+                  <SourceLanguage
+                    english={entry.descriptionLanguage === "en"}
+                  />
+                  <h2>
+                    <Link to={url.resource(resource.id)}>{resource.name}</Link>
+                  </h2>
+                  <ResourceAttribution identity={identity} />
+                  <p
+                    className="resource-description"
+                    lang={entry.descriptionLanguage === "en" ? "en" : undefined}
+                  >
+                    {resource.summary}
+                  </p>
+                  <div className="resource-tags">
+                    <span>{t(typeLabels[resource.type])}</span>
+                    <span>
+                      {resource.dimensions.length === 3
+                        ? t("All tracks")
+                        : resource.dimensions
+                            .map((track) =>
+                              track === "world"
+                                ? t("World models")
+                                : track.toUpperCase(),
+                            )
+                            .join(" / ")}
+                    </span>
+                  </div>
+                  <div className="resource-card-footer">
+                    <button onClick={() => selectResource(resource.id)}>
+                      {t("View details")}
+                      <ArrowRight size={15} />
+                    </button>
+                    <a
+                      href={resource.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={t("Visit {title} project", {
+                        title: resource.name,
+                      })}
+                    >
+                      <ArrowUpRight size={16} />
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        ) : (
+          <IndexEmpty
+            title={
               savedOnly
                 ? "Your collection has room to grow."
-                : "No resources on this path.",
-            )}
-          </h2>
-          <p>
-            {t(
+                : "No resources on this path."
+            }
+            body={
               savedOnly
                 ? "Save a few useful tools with the bookmark button, then find them here."
-                : "Try another search or loosen the filters a little.",
-            )}
-          </p>
-          <button
-            className="button button-secondary"
-            onClick={() => setParams({})}
+                : "Try another search or loosen the filters a little."
+            }
           >
-            {t("Browse all resources")}
-          </button>
-        </div>
-      )}
+            <button
+              className="button button-secondary"
+              onClick={() => setParams({})}
+            >
+              {t("Browse all resources")}
+            </button>
+          </IndexEmpty>
+        )}
+      </div>
       {active && (
         <ResourceDetail
           key={active.id}
-          entry={entries.find((entry) => entry.id === active.id)!}
+          entry={entryById.get(active.id)!}
           identity={identities[active.id as keyof typeof identities]}
           demos={demos.filter((demo) => demo.data.resourceId === active.id)}
           saved={saved.includes(active.id)}

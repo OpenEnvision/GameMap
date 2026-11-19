@@ -8,6 +8,7 @@ import open3dImport from "../../content/open3d-import.config.json";
 import { ContentCard } from "../components/content";
 import { useClientQuery } from "../lib/client-query";
 import { Link, useSiteI18n } from "../lib/i18n";
+import { IndexEmpty, IndexHero } from "../components/catalog-browser";
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
   return {
@@ -43,8 +44,11 @@ export default function RepositoryResearch() {
       },
       { replace: true, preventScrollReset: true },
     );
+  const dispositions = [
+    ...new Set(records.map((entry) => entry.data.disposition)),
+  ];
   return (
-    <main id="main-content" className="site-main listing-page">
+    <main id="main-content" className="ix-page ix-research">
       <title>{t("Repository research ledger — GameMap")}</title>
       <meta
         name="description"
@@ -52,68 +56,73 @@ export default function RepositoryResearch() {
           "Repositories not yet included in game examples. Already-listed games are omitted here.",
         )}
       />
-      <header className="page-heading">
-        <span className="eyebrow">{t("DISCOVERY IS NOT VALIDATION")}</span>
-        <h1>{t("The repository research ledger.")}</h1>
-        <p>
-          {t(
-            "Repositories not yet included in game examples. Already-listed games are omitted here.",
-          )}
-        </p>
+      <IndexHero
+        pillar="research"
+        kicker="DISCOVERY IS NOT VALIDATION"
+        title="The repository research ledger."
+        lede="Repositories not yet included in game examples. Already-listed games are omitted here."
+        count={records.length}
+        countLabel="repositories reviewed"
+      >
         <div className="heading-links">
           <Link to="/examples/#game-examples">
             {t("Game examples")}
             <ArrowRight size={14} />
           </Link>
         </div>
-      </header>
-      <div className="catalog-toolbar">
-        <div className="filter-search">
-          <Search size={19} />
-          <input
-            aria-label={t("Search repository research")}
-            placeholder={t(
-              "Search repository, scope, license, or qualification…",
-            )}
-            value={query}
-            onChange={(event) => update("q", event.target.value)}
-          />
+      </IndexHero>
+      <div className="ix-wrap">
+        <div className="ix-bar">
+          <label className="ix-search">
+            <Search size={18} aria-hidden="true" />
+            <input
+              aria-label={t("Search repository research")}
+              placeholder={t(
+                "Search repository, scope, license, or qualification…",
+              )}
+              value={query}
+              onChange={(event) => update("q", event.target.value)}
+            />
+          </label>
+          <div className="ix-bar-selects">
+            <label className="ix-select ix-select-wide">
+              <select
+                aria-label={t("Research disposition")}
+                value={status}
+                onChange={(event) => update("status", event.target.value)}
+              >
+                <option value="all">{t("All dispositions")}</option>
+                {dispositions.map((value) => (
+                  <option key={value} value={value}>
+                    {t(value)}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
         </div>
-        <select
-          aria-label={t("Research disposition")}
-          value={status}
-          onChange={(event) => update("status", event.target.value)}
-        >
-          <option value="all">{t("All dispositions")}</option>
-          {[...new Set(records.map((entry) => entry.data.disposition))].map(
-            (value) => (
-              <option key={value} value={value}>
-                {t(value)}
-              </option>
-            ),
-          )}
-        </select>
+        <div className="ix-meta">
+          <h2 className="ix-meta-title" aria-live="polite">
+            {t("{count} of {total} research records", {
+              count: filtered.length,
+              total: records.length,
+            })}
+          </h2>
+          <span className="ix-meta-rule" aria-hidden="true" />
+          <span>{t("Numbered in ledger order")}</span>
+        </div>
+        <div className="content-grid ix-ledger ix-ledger-numbered">
+          {filtered.map((entry) => (
+            <ContentCard key={entry.key} entry={entry} />
+          ))}
+        </div>
+        {!filtered.length && (
+          <IndexEmpty
+            title="No matching research records."
+            body="Try fewer words or another disposition."
+          />
+        )}
       </div>
-      <div className="results-meta">
-        <span aria-live="polite">
-          {t("{count} of {total} research records", {
-            count: filtered.length,
-            total: records.length,
-          })}
-        </span>
-      </div>
-      <div className="content-grid">
-        {filtered.map((entry) => (
-          <ContentCard key={entry.key} entry={entry} />
-        ))}
-      </div>
-      {!filtered.length && (
-        <p className="empty-state">
-          {t(
-            "No matching research records. Try fewer words or another disposition.",
-          )}
-        </p>
-      )}
     </main>
   );
 }
