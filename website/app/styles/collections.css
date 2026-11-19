@@ -2612,7 +2612,8 @@ html[lang="zh-CN"] .ix-context-head h2 {
   justify-content: center;
   margin-top: 32px;
 }
-/* Paper rows: an editorial reading list. */
+/* Paper rows: a compact reading list. Tags share the last line with the
+   source status and links; every other part spans the full row. */
 .catalog-paper-list {
   border-top: 1px solid var(--line);
 }
@@ -2620,9 +2621,48 @@ html[lang="zh-CN"] .ix-context-head h2 {
   position: relative;
   isolation: isolate;
   display: grid;
-  gap: 10px;
-  padding: 28px clamp(12px, 1.6vw, 24px);
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 20px;
+  padding: 18px clamp(12px, 1.6vw, 24px);
   border-bottom: 1px solid var(--line);
+}
+.catalog-paper-row > :not(.catalog-record-tags, .catalog-record-bottom) {
+  grid-column: 1 / -1;
+}
+.catalog-paper-row > :is(.catalog-record-tags, .catalog-record-bottom) {
+  align-self: center;
+  margin-top: 4px;
+}
+.catalog-paper-row .catalog-authors {
+  overflow: hidden;
+  font-size: 12.5px;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.catalog-paper-row .catalog-record-summary {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.catalog-paper-row .catalog-record-tags > span {
+  padding: 2px 9px;
+}
+.catalog-paper-row .catalog-record-actions a {
+  min-height: 28px;
+  padding: 0 11px;
+}
+@media (max-width: 720px) {
+  .catalog-paper-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .catalog-paper-row > .catalog-record-bottom {
+    margin-top: 2px;
+  }
 }
 .catalog-paper-row::after {
   content: "";
@@ -2668,6 +2708,9 @@ html[lang="zh-CN"] .ix-context-head h2 {
   font-weight: 600;
   line-height: 1.22;
   letter-spacing: -0.03em;
+}
+.catalog-paper-row h2 {
+  font-size: clamp(17px, 1.35vw, 20px);
 }
 .catalog-paper-row h2 a,
 .catalog-game-card h2 a {
