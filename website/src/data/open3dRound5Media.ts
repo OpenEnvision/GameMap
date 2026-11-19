@@ -3389,6 +3389,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-lockdown-breakout": {
+    src: "media/learning/open3d-lockdown-breakout.webp",
+    alt: "Lockdown: Breakout VR gameplay with a first-person hand and a bright green slowing weapon aimed at a creature in a hallway.",
+    caption:
+      "Gameplay frame at 2:13 in the creator-published Lockdown: Breakout demonstration. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/painfulmoments/lockdown_breakout/releases/tag/lockdown-english-video-2026-11-20",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://github.com/painfulmoments/lockdown_breakout/releases/download/lockdown-english-video-2026-11-20/lockdown-breakout-english-demo.mp4",
+    width: 1280,
+    height: 720,
+  },
   "open3d-metal-nest": {
     src: "media/learning/open3d-metal-nest.webp",
     alt: "First-person Metal Nest view down a dark industrial shaft among chains and faint red lamps.",
@@ -4059,6 +4073,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-19",
     originalImageUrl:
       "https://raw.githubusercontent.com/jeffotoni/deathstar/main/deathstar.jpeg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-moon-rider": {
+    src: "media/learning/open3d-moon-rider.webp",
+    alt: "Moon Rider VR gameplay with two colored virtual gloves striking star-shaped targets on a neon track.",
+    caption:
+      "Creator-published Moon Rider gameplay screenshot showing the action described in the project’s Punch Mode. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/supermedium/moonrider",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://user-images.githubusercontent.com/674727/58050969-b8621780-7b05-11e9-9494-1db7cee9f69b.jpeg",
     width: 1280,
     height: 720,
   },
@@ -4789,6 +4816,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-back-rooms-ron-picard": {
+    src: "media/learning/open3d-back-rooms-ron-picard.webp",
+    alt: "Back Rooms first-person gameplay in a dim office maze with desks, monitors and the objective to find the exit.",
+    caption:
+      "Creator-published Back Rooms gameplay screenshot showing the office maze and its active objective. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/ronpicard/back-rooms-game-web-app/blob/14d9e288ba13f4701ffcf842543c9c6cd7702629/public/social-preview.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/ronpicard/back-rooms-game-web-app/14d9e288ba13f4701ffcf842543c9c6cd7702629/public/social-preview.png",
+    width: 1280,
+    height: 720,
+  },
   "open3d-junk-magnet": {
     src: "media/learning/open3d-junk-magnet.webp",
     alt: "An overhead robot battle takes place among barrels and tires with experience, ability and timer indicators.",
@@ -4799,6 +4840,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://playjunkmagnet.com/assets/gameplay-800-Bwu3N44a.webp",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-sky-isles": {
+    src: "media/learning/open3d-sky-isles.webp",
+    alt: "Sky Isles gameplay with the caped character beside the koi waterfall, floating islands and the Chimes progress HUD.",
+    caption:
+      "Creator-published Sky Isles gameplay screenshot showing the koi waterfall island. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/stas4000/sky-isles/blob/efdc8a8bc1b76a36222a22f5a211fee859fc84f7/README.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/stas4000/sky-isles/efdc8a8bc1b76a36222a22f5a211fee859fc84f7/shots/desktop-koi-waterfall.png",
     width: 1280,
     height: 720,
   },
@@ -7030,6 +7085,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     caption:
       "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/browser-port-02.webp",
+    width: 1280,
+    height: 720,
+  },
+  "browser-port-03": {
+    src: "media/learning/browser-port-03.webp",
+    alt: "Q3JS gameplay in Quake III Arena with opponents, a live shot trail, health and on-screen touch controls.",
+    caption:
+      "Creator-published Q3JS gameplay screenshot demonstrating mobile touch controls. Image rights remain with their respective owners.",
+    sourceUrl:
+      "https://github.com/lklacar/q3js/blob/efcb0fe1b76210db0232068a5d4187677c3d8c46/website/public/features/q3js-mobile-touch-controls.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/lklacar/q3js/efcb0fe1b76210db0232068a5d4187677c3d8c46/website/public/features/q3js-mobile-touch-controls.png",
     width: 1280,
     height: 720,
   },

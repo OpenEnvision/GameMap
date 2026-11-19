@@ -9972,6 +9972,41 @@
       "bytes": 133262
     },
     {
+      "id": "open3d-lockdown-breakout",
+      "title": "Lockdown: Breakout",
+      "media": {
+        "src": "media/learning/open3d-lockdown-breakout.webp",
+        "alt": "Lockdown: Breakout VR gameplay with a first-person hand and a bright green slowing weapon aimed at a creature in a hallway.",
+        "caption": "Gameplay frame at 2:13 in the creator-published Lockdown: Breakout demonstration. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/painfulmoments/lockdown_breakout/releases/tag/lockdown-english-video-2026-11-20",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://github.com/painfulmoments/lockdown_breakout/releases/download/lockdown-english-video-2026-11-20/lockdown-breakout-english-demo.mp4",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "d0d8f87789ccd6c29e4c7b3d3d060581291c4f660862202e652f4799c6f44564",
+        "sourceFrameSHA256": "8f8a36037e4fa2e5516683056a1938ef130b68e7937d74b99b3ef0ccdadc4c87",
+        "sourceWidth": 960,
+        "sourceHeight": 544,
+        "originalFormat": "mp4",
+        "frameIndex": 3990,
+        "sourceFrames": 5050,
+        "visualFinding": "Personally viewed the exact uncropped 960×544 PNG frame 3990 at 2:13. A VR first-person hand and weapon are visible as a bright green ring effect travels toward a black pursuing creature in a paneled hallway. The frame is fullscreen action, with no title, subtitle, external watermark, facecam, desktop window or comparison. The exact author GitHub release names the uploaded final Lockdown: Breakout gameplay MP4, distinct from older Escape the Villa / SURF experiment. The full 57,600,454-byte HEVC release asset, 5050 frames at 30 fps, and exact extracted PNG were hashed. Unchanged origin check and reviewFrame passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "f65f1e5f0d8e7694c07bc5909f657fb2739f0225ae8a066e63cb821a87c82ec0",
+      "bytes": 34964
+    },
+    {
       "id": "open3d-metal-nest",
       "title": "METAL NEST",
       "media": {
@@ -11798,6 +11833,41 @@
       "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
       "sha256": "54f8441aaf2870257b462d1419f9a31a92ff688166d9fffbb6b66a2f0bc5e7bc",
       "bytes": 15504
+    },
+    {
+      "id": "open3d-moon-rider",
+      "title": "Moon Rider",
+      "media": {
+        "src": "media/learning/open3d-moon-rider.webp",
+        "alt": "Moon Rider VR gameplay with two colored virtual gloves striking star-shaped targets on a neon track.",
+        "caption": "Creator-published Moon Rider gameplay screenshot showing the action described in the project’s Punch Mode. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/supermedium/moonrider",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://user-images.githubusercontent.com/674727/58050969-b8621780-7b05-11e9-9494-1db7cee9f69b.jpeg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "6135f1ae4a0abcf352a6303c563209059fc3eab4dbd2b97ce080016c7e99d32d",
+        "sourceFrameSHA256": "100027db4255ba78c77910f426d0b01d1153dff69c79304fe69796aced04d7a7",
+        "sourceWidth": 512,
+        "sourceHeight": 256,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed the full 512×256 JPEG: cyan and magenta first-person virtual gloves, flying star shapes and shards, and a neon lane running toward a triangular gate. The author README publishes this exact image immediately before the play-mode descriptions, including the punch-to-crush-stars mechanic shown here. The image has no title art, menus, promo text or collage and is distinct from the hero wordmark and empty-lane GIF on the same page. Unchanged origin and reviewFrame passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "2d5aeab4fecce77440824d3b2daed6cf34e6add7e22347ca94dbf34f962b6385",
+      "bytes": 34998
     },
     {
       "id": "open3d-atop",
@@ -13863,6 +13933,41 @@
       "bytes": 42978
     },
     {
+      "id": "open3d-back-rooms-ron-picard",
+      "title": "Back Rooms (Ron Picard)",
+      "media": {
+        "src": "media/learning/open3d-back-rooms-ron-picard.webp",
+        "alt": "Back Rooms first-person gameplay in a dim office maze with desks, monitors and the objective to find the exit.",
+        "caption": "Creator-published Back Rooms gameplay screenshot showing the office maze and its active objective. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/ronpicard/back-rooms-game-web-app/blob/14d9e288ba13f4701ffcf842543c9c6cd7702629/public/social-preview.png",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/ronpicard/back-rooms-game-web-app/14d9e288ba13f4701ffcf842543c9c6cd7702629/public/social-preview.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "c1abc75002bba5171466cee6b1eb52b8d4d910e08477f84ed42479ffd7480d41",
+        "sourceFrameSHA256": "1015ff24477f1628158fcb3c9e6e72cd68c84c5f5f59854b277e7e2426b00077",
+        "sourceWidth": 1024,
+        "sourceHeight": 548,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed exact 1024×548 PNG: single live first-person office viewport with a Find the exit objective, contextual narrative text and Esc opens settings in-game feedback. No title, promotional lettering, collage or browser UI, even though the exact creator uses the file for a social preview. The source repository publishes the original gameplay image in its public folder. Full original hash, blob and unchanged reviewFrame/origin checks passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "7fce5e2a3f8e8a668b0e4a68e9004ca7fec35cb1f6cd615df47d9d09cb33b8d8",
+      "bytes": 25152
+    },
+    {
       "id": "open3d-junk-magnet",
       "title": "Junk Magnet",
       "media": {
@@ -13896,6 +14001,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "47e7613117c39ef433b6e63a64c48e0603e30be85bac16e8659afee9b92ae5b3",
       "bytes": 62862
+    },
+    {
+      "id": "open3d-sky-isles",
+      "title": "Sky Isles",
+      "media": {
+        "src": "media/learning/open3d-sky-isles.webp",
+        "alt": "Sky Isles gameplay with the caped character beside the koi waterfall, floating islands and the Chimes progress HUD.",
+        "caption": "Creator-published Sky Isles gameplay screenshot showing the koi waterfall island. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/stas4000/sky-isles/blob/efdc8a8bc1b76a36222a22f5a211fee859fc84f7/README.md",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/stas4000/sky-isles/efdc8a8bc1b76a36222a22f5a211fee859fc84f7/shots/desktop-koi-waterfall.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "87ae80b91e2aea79c467e0d04a044e9e5cbd4adc787115154f5c673e2985986e",
+        "sourceFrameSHA256": "24a71d672efd84d11fbc5dc8e4f04b6c78505142f802823684c01e211658b633",
+        "sourceWidth": 1440,
+        "sourceHeight": 900,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed the complete 1440×900 PNG. The playable caped character stands at a rippling pond and waterfall on a grass-topped floating island, with neighboring islands, a jump pod and the in-game Chimes counter visible. The creator README explicitly publishes this as the Koi waterfall screenshot, distinct from the rejected Sky Isles title menu. The game scene is one unmodified runtime frame, not the surrounding README gallery. Exact original Git blob, unchanged origin and reviewFrame passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "637725362bd5ae8ad76003ab24875293a9c30c646aa4f64d6212eacf0867c34d",
+      "bytes": 23616
     },
     {
       "id": "open3d-dante",
@@ -21081,6 +21221,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 101634,
       "sha256": "db79e23b7620b0ebf27a5a5cba69d832c8437eb2dc3b6f3cb54e81064493afea"
+    },
+    {
+      "id": "browser-port-03",
+      "title": "Quake 3",
+      "media": {
+        "src": "media/learning/browser-port-03.webp",
+        "alt": "Q3JS gameplay in Quake III Arena with opponents, a live shot trail, health and on-screen touch controls.",
+        "caption": "Creator-published Q3JS gameplay screenshot demonstrating mobile touch controls. Image rights remain with their respective owners.",
+        "sourceUrl": "https://github.com/lklacar/q3js/blob/efcb0fe1b76210db0232068a5d4187677c3d8c46/website/public/features/q3js-mobile-touch-controls.png",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/lklacar/q3js/efcb0fe1b76210db0232068a5d4187677c3d8c46/website/public/features/q3js-mobile-touch-controls.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "a0e01578d185652c10ef27da9e2a913d0bdb471cc0ccad0cb1e038f172431e7f",
+        "sourceFrameSHA256": "6b82b096787756e50130a041bc90ef14daaf412572e5abd6e1a63a9828700692",
+        "sourceWidth": 1686,
+        "sourceHeight": 774,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed the complete original PNG. Full browser-port game viewport without browser chrome shows the gun, several opponents on floating platforms, a projectile trail, health 115 and visible touch joystick, Jump, Fire and Duck buttons. The exact port creator publishes this unmodified source PNG in its public features folder. The author README establishes the same Q3JS port. Original Git blob, unchanged origin rule and reviewFrame passed. No browser runtime promotion."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "b5cf9e75f987bc92bbe6b6b114f3939477a814a9c3a9aa3b1ffab78c1a710299",
+      "bytes": 46698
     },
     {
       "id": "browser-port-08",
@@ -33436,53 +33611,6 @@
       ]
     },
     {
-      "id": "open3d-lockdown-breakout",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. The author explicitly distinguishes clean editor validation from a connected-headset playtest or native build. A source archive is not a playable download, and achievement photos are not game imagery.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/painfulmoments/lockdown_breakout/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/painfulmoments/lockdown_breakout",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/painfulmoments/lockdown_breakout/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/painfulmoments/lockdown_breakout/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/painfulmoments/lockdown_breakout",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/painfulmoments/lockdown_breakout/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/painfulmoments/lockdown_breakout",
-          "checkedAt": "2026-11-19",
-          "result": "The author explicitly distinguishes clean editor validation from a connected-headset playtest or native build. A source archive is not a playable download, and achievement photos are not game imagery."
-        },
-        {
-          "url": "https://api.github.com/repos/painfulmoments/lockdown_breakout/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-20",
-          "result": "The untruncated exact author repository tree (4834 entries; Git object 4e9d09a977661a93a9236a0f3e9d71d3b97b0cc2) contains 482 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
-        }
-      ]
-    },
-    {
       "id": "open3d-team-capture",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -34582,48 +34710,6 @@
       ]
     },
     {
-      "id": "open3d-moon-rider",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/supermedium/moonrider/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/supermedium/moonrider",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/supermedium/moonrider/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://moonrider.xyz/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/supermedium/moonrider/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/supermedium/moonrider",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/supermedium/moonrider/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-gnome-space-program",
       "status": "research-incomplete",
       "reason": "Research incomplete or access-limited: The inspected author gallery image is the GSP logo, not a gameplay frame. Research incomplete or access-limited: The inspected author gallery image is the GSP logo, not a gameplay frame. Author newer orbital-mechanics update is a different unreleased development build. Embedded YouTube playback is not a durable exact image URL satisfying current origin rules; existing official install links unchanged.",
@@ -35162,43 +35248,6 @@
       ]
     },
     {
-      "id": "open3d-back-rooms-ron-picard",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/ronpicard/back-rooms-game-web-app/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/ronpicard/back-rooms-game-web-app",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/ronpicard/back-rooms-game-web-app/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/ronpicard/back-rooms-game-web-app/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/ronpicard/back-rooms-game-web-app",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/ronpicard/back-rooms-game-web-app/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-circuit-board-city",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -35346,48 +35395,6 @@
         },
         {
           "url": "https://github.com/madebyhudson/blockjumper/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-sky-isles",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/stas4000/sky-isles/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/stas4000/sky-isles",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/stas4000/sky-isles/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://sky-isles.bles-software.com/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/stas4000/sky-isles/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/stas4000/sky-isles",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/stas4000/sky-isles/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
@@ -36701,53 +36708,6 @@
           "url": "https://carrascomj.itch.io/pilot-garden",
           "checkedAt": "2026-11-19",
           "result": "Visually reviewed full original background with low-poly garden and tools, no gameplay indicators. The author also explicitly discloses AI-assisted graphics; exact frame origin and activity insufficient, not used."
-        }
-      ]
-    },
-    {
-      "id": "browser-port-03",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run. Q3JS by Luka Klačar is ioquake3 compiled with Emscripten. The same author publishes q3js.com, and the catalog also references Pieter’s Q3JS-powered alternate server. The shell fetch of the author page returned 403 without a bypass; readable indexed text showed launch buttons, scoreboards and source linkage, not rendered gameplay. Pieter’s page includes a gameplay MP4 (redirects to a media origin denied against the publishing page) and landscape level thumbnails, not a confirmed active gameplay raster. No browser rendering asserted.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/lklacar/q3js/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/lklacar/q3js",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/lklacar/q3js/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://q3js.com/",
-          "checkedAt": "2026-11-19",
-          "result": "Read author credits, original project source linkage, and public demo-data offering via indexed author text; direct read-only retrieval returned 403."
-        },
-        {
-          "url": "https://q3js.com/quake-3-webassembly",
-          "checkedAt": "2026-11-19",
-          "result": "Read the author’s ioquake3 plus Emscripten+WASM explanation; no confirmed standalone raster gameplay found."
-        },
-        {
-          "url": "https://q3.pieter.com/",
-          "checkedAt": "2026-11-19",
-          "result": "Downloaded HTTP 200 public landing HTML; author credits the Q3JS developer and publisher; lists level thumbnails and a background gameplay MP4, not a publisher-confirmed standalone raster gameplay screenshot."
-        },
-        {
-          "url": "https://q3.pieter.com/q3demoout_small.mp4",
-          "checkedAt": "2026-11-19",
-          "result": "Author HTML links this media URL; its GET returns HTTP 302 with an HTML response, not the original video."
-        },
-        {
-          "url": "https://r2.pieter.com/q3/v1/q3demoout_small.mp4",
-          "checkedAt": "2026-11-19",
-          "result": "This exact media destination is declared in the published URL response Location header. Existing imageOriginAllowed rejects it against the author publishing page origin; original recording was not downloaded or used."
         }
       ]
     },
