@@ -695,6 +695,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-fableflight": {
+    src: "media/learning/open3d-fableflight.webp",
+    alt: "A cockpit view above snowy fields with the aircraft instruments visible.",
+    caption:
+      "Creator-published gameplay frame from the FableFlight recording linked in the project README. Map attribution is retained; rights remain with their respective holders.",
+    sourceUrl: "https://github.com/Rolandjg/fableflight/blob/main/README.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://github.com/user-attachments/assets/4f8833da-13c0-4d20-a50b-c0acf2d88df1",
+    width: 1280,
+    height: 720,
+  },
   "open3d-uno-com-escada": {
     src: "media/learning/open3d-uno-com-escada.webp",
     alt: "A small blue car carrying a roof ladder corners on a racing circuit beside a guardrail.",
@@ -822,6 +835,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://raw.githubusercontent.com/cktang88/3d-fps/HEAD/docs/screenshots/action.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-srak-l-zit-2": {
+    src: "media/learning/open3d-srak-l-zit-2.webp",
+    alt: "A cockroach explores an isometric kitchen at night with oil counters, a time bar and mobile controls visible.",
+    caption:
+      "Creator-published gameplay screenshot. A cockroach explores an isometric kitchen at night with oil counters, a time bar and mobile controls visible. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/gavilanbe/srak-l-zit-2/blob/main/play/screenshots/partida.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/gavilanbe/srak-l-zit-2/main/play/screenshots/partida.png",
     width: 1280,
     height: 720,
   },
@@ -956,6 +983,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-yarn-planet": {
+    src: "media/learning/open3d-yarn-planet.webp",
+    alt: "A character lays blue yarn through a pencil-sketch village beside a waterwheel.",
+    caption:
+      "Creator-published gameplay screenshot. A character lays blue yarn through a pencil-sketch village beside a waterwheel. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/makerjackie/yarn-planet/blob/main/docs/making-of.en.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/makerjackie/yarn-planet/main/docs/media/lay-thread.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-shadow-protocol": {
     src: "media/learning/open3d-shadow-protocol.webp",
     alt: "A cockpit targeting display shows distant enemies over a wireframe landscape, with radar, flight instruments and a missile warning.",
@@ -1032,6 +1073,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://raw.githubusercontent.com/andyhuo520/grandma-gta/HEAD/docs/media/play-carjack.gif",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-tides-of-fortune": {
+    src: "media/learning/open3d-tides-of-fortune.webp",
+    alt: "A sailing ship travels between tropical islands with navigation, crew, provisions and combat controls visible.",
+    caption:
+      "Creator-published gameplay screenshot. A sailing ship travels between tropical islands with navigation, crew, provisions and combat controls visible. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/silvestroz/tides-of-fortune/blob/main/README.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/silvestroz/tides-of-fortune/main/docs/refboard/01-navire-chasse.jpg",
     width: 1280,
     height: 720,
   },
@@ -1205,6 +1260,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-last-light-academy": {
+    src: "media/learning/open3d-last-light-academy.webp",
+    alt: "An astronaut walking through a lunar station corridor with mission and storm-protection indicators.",
+    caption:
+      "Creator-published gameplay screenshot. An astronaut walking through a lunar station corridor with mission and storm-protection indicators. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/SadManQT/Last-Light-Academy/blob/main/README.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/SadManQT/Last-Light-Academy/main/docs/media/readme/gameplay.gif",
+    width: 1280,
+    height: 720,
+  },
   "open3d-doodle-sumo": {
     src: "media/learning/open3d-doodle-sumo.webp",
     alt: "Toy fighters collide on a bedroom desk with round indicators, a countdown and a creator-added explanation of live articulation.",
@@ -1346,6 +1415,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://raw.githubusercontent.com/ammaarreshi/argon-games/HEAD/docs/screenshots/argon-tennis.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-ocean-battle-racing": {
+    src: "media/learning/open3d-ocean-battle-racing.webp",
+    alt: "Low-poly motorboats race across pale blue water, with a position indicator and steering controls on screen.",
+    caption:
+      "Creator-published gameplay frame from the Ocean Battle Racing README recording. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/fraher/ocean_battle_racing",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/fraher/ocean_battle_racing/HEAD/ocean_battle_race.gif",
     width: 1280,
     height: 720,
   },
@@ -1846,6 +1928,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-desert-velocity": {
+    src: "media/learning/open3d-desert-velocity.webp",
+    alt: "A desert rally car approaches the finish with speed, fuel, integrity and checkpoint indicators.",
+    caption:
+      "Creator-published gameplay screenshot. A desert rally car approaches the finish with speed, fuel, integrity and checkpoint indicators. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/sim7575/desert-velocity/blob/main/README.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/sim7575/desert-velocity/main/screenshots/playable_visual_integration_pilot/g1g/20_gameplay_hero_final.png",
+    width: 1280,
+    height: 720,
+  },
   "open3d-claude-of-tanks": {
     src: "media/learning/open3d-claude-of-tanks.webp",
     alt: "A tank fires beside desert fortifications with match scores, ammunition and a minimap visible.",
@@ -2170,6 +2265,30 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "jam-raven": {
+    src: "media/learning/jam-raven.webp",
+    alt: "A small character stands in a cyan-lit tiled room beside a larger teal chamber bounded by purple walls.",
+    caption:
+      "Raven gameplay rendered in a sandboxed cloud browser after advancing past the opening narrative. Game artwork belongs to its original creator.",
+    sourceUrl: "https://play.js13kgames.com/raven/",
+    origin: "browser-capture",
+    capturedAt: "2026-11-19T06:41:43.279Z",
+    width: 1280,
+    height: 720,
+  },
+  "jam-xx142-b2exe": {
+    src: "media/learning/jam-xx142-b2exe.webp",
+    alt: "A blue maze with a magenta player marker, a red object, and an orange countdown.",
+    caption:
+      "Creator-published xx142-b2.exe gameplay screenshot from the original project README. Image rights remain with the original creators.",
+    sourceUrl: "https://github.com/bencoder/js13k-2019",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/bencoder/js13k-2019/master/screenshots/400x250-submission-screenshot.png",
+    width: 1280,
+    height: 720,
+  },
   "open3d-the-soul-foundry": {
     src: "media/learning/open3d-the-soul-foundry.webp",
     alt: "An overhead settlement scene shows huts and a central fire beneath resource totals, quota and construction controls.",
@@ -2206,6 +2325,18 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://raw.githubusercontent.com/dkozhukhar/cat-shooter/main/preview_img/preview_800x500_200kb.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-underrun": {
+    src: "media/learning/open3d-underrun.webp",
+    alt: "An overhead shooter scene with a small character in a dim industrial corridor lit by orange and purple lights.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://phoboslab.org/log/2018/09/underrun-making-of",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl: "https://phoboslab.org/content/assets/underrun.png",
     width: 1280,
     height: 720,
   },
@@ -2287,6 +2418,18 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-liblast": {
+    src: "media/learning/open3d-liblast.webp",
+    alt: "A first-person arena shooter view with an energy weapon, a kill notification, health and jetpack indicators.",
+    caption:
+      "Creator-published Liblast gameplay screenshot from the official project gallery. This depicts an earlier game build; image rights remain with the original creator.",
+    sourceUrl: "https://libla.st/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl: "https://libla.st/images/screenshots/01.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-libre-trainsim": {
     src: "media/learning/open3d-libre-trainsim.webp",
     alt: "A rendered rail-level view looks toward a city station, with tracks, overhead wires, a red train and pedestrians.",
@@ -2365,6 +2508,31 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-super-tux-party": {
+    src: "media/learning/open3d-super-tux-party.webp",
+    alt: "A memory-card minigame with a grid of face-up and face-down cards, four player markers and team scores.",
+    caption:
+      "Creator-published Super Tux Party memory minigame screenshot from the alpha 0.8 release announcement. Image rights remain with the original creator.",
+    sourceUrl: "https://supertux.party/posts/alpha-v0.8-released/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://supertux.party/img/0abb1b184ae75ee02943e71cb70d9e890b7db48ba4fac0a6834df83663df5b2f.webp",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-tabletop-club": {
+    src: "media/learning/open3d-tabletop-club.webp",
+    alt: "A three-dimensional green card table with playing cards, colored chips and transparent player-hand areas.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://tabletopclub.net/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl: "https://tabletopclub.net/assets/images/screenshot_0.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-tanks-of-freedom-ii": {
     src: "media/learning/open3d-tanks-of-freedom-ii.webp",
     alt: "An isometric battlefield shows red and blue tanks, soldiers and helicopters among roads, houses and grassy tiles.",
@@ -2375,6 +2543,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://img.itch.zone/aW1nLzE0OTQwMTI5LnBuZw==/original/Q%2Bexo0.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-thrive": {
+    src: "media/learning/open3d-thrive.webp",
+    alt: "A microbe in a purple aquatic environment with compound levels, population and health indicators.",
+    caption:
+      "Creator-published Thrive gameplay screenshot from the official Steam gallery. Image rights remain with the original creator.",
+    sourceUrl: "https://store.steampowered.com/app/1779200/Thrive/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1779200/e3654c049c7728023c9929b06c7efab3bef87508/ss_e3654c049c7728023c9929b06c7efab3bef87508.1920x1080.jpg?t=1765967062",
     width: 1280,
     height: 720,
   },
@@ -2534,6 +2715,31 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-craft": {
+    src: "media/learning/open3d-craft.webp",
+    alt: "Craft voxel-sandbox gameplay showing grassy hills, trees, flowers and clouds, with a central crosshair and game statistics.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/fogleman/Craft",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl: "https://i.imgur.com/SH7wcas.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-cube-2-sauerbraten": {
+    src: "media/learning/open3d-cube-2-sauerbraten.webp",
+    alt: "Sauerbraten first-person gameplay in a rocky pool, with a shotgun, red health pickup, crosshair, health and ammunition counters.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://sauerbraten.sourceforge.net/screenshots.html",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://sauerbraten.sourceforge.net/newerer/screenshot_2073037.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-flightgear": {
     src: "media/learning/open3d-flightgear.webp",
     alt: "A rendered yellow and white light aircraft stands on an airport apron beneath forested mountains.",
@@ -2544,6 +2750,18 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://www.flightgear.org/_astro/C172p-preview2.DO9M7qvf_Z153aYw.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-megaglest": {
+    src: "media/learning/open3d-megaglest.webp",
+    alt: "MegaGlest real-time strategy battle with flying units attacking buildings, a minimap and resource counters.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://megaglest.org/media/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl: "https://megaglest.org/media/pics/a1.jpg",
     width: 1280,
     height: 720,
   },
@@ -2633,6 +2851,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-supertuxkart": {
+    src: "media/learning/open3d-supertuxkart.webp",
+    alt: "A red kart approaches a luminous green ball on an orange arena floor.",
+    caption:
+      "Creator-published SuperTuxKart 1.5 soccer mode, from the official gallery. Image rights remain with the original creator.",
+    sourceUrl: "https://supertuxkart.net/Gallery",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://supertuxkart.net/assets/gallery/SuperTuxKart_1.5_1.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-torcs": {
     src: "media/learning/open3d-torcs.webp",
     alt: "A pack of colorful racing cars rounds a paved circuit corner beside guardrails and gravel runoff.",
@@ -2681,6 +2912,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://veloren.net/processed_images/gallery-0.50cacb0aa6b9efab.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-warzone-2100": {
+    src: "media/learning/open3d-warzone-2100.webp",
+    alt: "Blue armored units gather below a burning base, with a strategy minimap in the corner.",
+    caption:
+      "Creator-published Warzone 2100 gameplay, from the official project itch.io gallery. Image rights remain with the original creator.",
+    sourceUrl: "https://warzone-2100.itch.io/warzone2100",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1hZ2UvNzA1MTAwLzM4OTc0NTQucG5n/original/dQVQJg.png",
     width: 1280,
     height: 720,
   },
@@ -3135,6 +3379,18 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     origin: "creator-screenshot",
     reviewedAt: "2026-11-18",
     originalImageUrl: "https://www.zachtronics.com/infiniminer/infiniminer.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-openspades": {
+    src: "media/learning/open3d-openspades.webp",
+    alt: "A first-person view through a sunlit forest of voxel trees and blocky hills.",
+    caption:
+      "Creator-published OpenSpades gameplay, from the official project gallery. Image rights remain with the original creator.",
+    sourceUrl: "https://openspades.yvt.jp/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl: "https://openspades.yvt.jp/media/images/ss1.jpg",
     width: 1280,
     height: 720,
   },
