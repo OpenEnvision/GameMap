@@ -550,8 +550,30 @@ function hashText(text: string) {
 }
 const round = (value: number) => Math.round(value * 10) / 10;
 
+/** Catalogue designations for the art hero's annotation ("TOOL · 6019"). */
+const kindCodes: Partial<Record<ContentKind, string>> = {
+  paper: "PAPER",
+  "threejs-game": "GAME",
+  resource: "TOOL",
+  example: "GAME",
+  foundation: "ENGINE",
+  agent: "AGENT",
+  testing: "TEST",
+  "testing-pack": "TEST",
+  "repository-research": "REPO",
+  path: "PATH",
+  step: "STEP",
+  demo: "DEMO",
+  collection: "SET",
+  document: "DOC",
+};
+const catalogueCode = (entry: ContentEntry) =>
+  `${kindCodes[entry.kind] || entry.kind.slice(0, 4).toUpperCase()} · ${hashText(entry.key).toString(16).slice(0, 4).toUpperCase()}`;
+
 /** A deterministic "uncharted world" for records without imagery: a ringed
- *  planet, a few moons and a star field, all seeded by the record key. */
+ *  planet, a few moons and a star field, all seeded by the record key. The
+ *  optional label is drawn as a survey annotation: a leader line from the
+ *  planet's rim to a mono catalogue code, with moons and stars kept clear. */
 export function OrbitArt({
   seed,
   label,
@@ -572,13 +594,46 @@ export function OrbitArt({
     ry: round(radius * scale * (0.22 + random() * 0.1)),
     index,
   }));
+  // The annotation (relative to the planet's centre): rim point at -60deg,
+  // an elbow up and out, a short horizontal tail, then the label. It stays
+  // left of x≈800, the part of the viewBox every layout keeps on screen.
+  const rimAngle = (-60 * Math.PI) / 180;
+  const rim = {
+    x: round(Math.cos(rimAngle) * radius * 1.04),
+    y: round(Math.sin(rimAngle) * radius * 1.04),
+  };
+  const elbow = { x: round(rim.x + radius * 0.2), y: round(rim.y - 40) };
+  const tail = { x: round(elbow.x + 30), y: elbow.y };
+  // Generous box around the label text (13px mono, wide tracking).
+  const labelBox = label
+    ? {
+        x0: tail.x - 6,
+        x1: tail.x + 16 + label.length * 11,
+        y0: tail.y - 20,
+        y1: tail.y + 14,
+      }
+    : null;
+  const inLabel = (x: number, y: number, pad = 0) =>
+    labelBox !== null &&
+    x > labelBox.x0 - pad &&
+    x < labelBox.x1 + pad &&
+    y > labelBox.y0 - pad &&
+    y < labelBox.y1 + pad;
+  const tiltRad = (tilt * Math.PI) / 180;
   const moons = rings.map((ring, index) => {
     const angle = random() * Math.PI * 2;
-    return {
+    const moon = {
       x: round(Math.cos(angle) * ring.rx),
       y: round(Math.sin(angle) * ring.ry),
       r: round(index === 2 ? 7 + random() * 6 : 3 + random() * 4),
     };
+    // Moons live in the tilted ring frame; one that would sit on the label
+    // moves to the opposite side of its ring.
+    const worldX = moon.x * Math.cos(tiltRad) - moon.y * Math.sin(tiltRad),
+      worldY = moon.x * Math.sin(tiltRad) + moon.y * Math.cos(tiltRad);
+    return inLabel(worldX, worldY, moon.r + 6)
+      ? { ...moon, x: -moon.x, y: -moon.y }
+      : moon;
   });
   const bands = Array.from({ length: 4 }, () => ({
     y: round((random() - 0.5) * radius * 1.5),
@@ -591,7 +646,7 @@ export function OrbitArt({
     r: round(random() < 0.85 ? 0.5 + random() * 0.9 : 1.4 + random() * 1.2),
     o: round(0.2 + random() * 0.8),
     twinkle: index % 9 === 0,
-  }));
+  })).filter((star) => !inLabel(star.x - cx, star.y - cy, 8));
   const front = (rx: number, ry: number) =>
     `M ${-rx} 0 A ${rx} ${ry} 0 0 0 ${rx} 0`;
   return (
@@ -704,13 +759,24 @@ export function OrbitArt({
         </g>
       </g>
       {label && (
-        <text
-          className="orbit-art-label"
-          x={round(cx + radius * 1.1)}
-          y={round(cy - radius * 1.15)}
+        <g
+          className="orbit-art-annotation"
+          transform={`translate(${cx} ${cy})`}
         >
-          {label}
-        </text>
+          <path
+            className="orbit-art-leader"
+            d={`M ${rim.x} ${rim.y} L ${elbow.x} ${elbow.y} H ${tail.x}`}
+          />
+          <circle className="orbit-art-pin" cx={rim.x} cy={rim.y} r={2.6} />
+          <text
+            className="orbit-art-label"
+            x={round(tail.x + 10)}
+            y={tail.y}
+            dominantBaseline="central"
+          >
+            {label}
+          </text>
+        </g>
       )}
     </svg>
   );
@@ -851,27 +917,40 @@ export function RecordDocument({
   ].slice(0, 3);
   const title = intro?.find((block) => block.type === "title");
   const heading = title?.type === "title" ? title.value : entry.title;
-  const code = `${entry.kind.slice(0, 3).toUpperCase()} · ${hashText(entry.key).toString(16).slice(0, 4).toUpperCase()}`;
+  const code = catalogueCode(entry);
   const outlineKey = outline.map((item) => item.id).join(" ");
   const [active, setActive] = useState<string | null>(null);
+  // The current section is the last one whose top has passed a reading line
+  // a little above the middle of the screen; at the very end of the page the
+  // last section that is on screen wins, so short closing sections light up.
   useEffect(() => {
-    if (typeof IntersectionObserver === "undefined") return;
     const ids = outlineKey.split(" ");
-    const seen = new Map<string, boolean>();
-    const observer = new IntersectionObserver(
-      (records) => {
-        for (const record of records)
-          seen.set(record.target.id, record.isIntersecting);
-        const current = ids.find((id) => seen.get(id));
-        if (current) setActive(current);
-      },
-      { rootMargin: "-35% 0px -55% 0px" },
-    );
-    for (const id of ids) {
-      const target = document.getElementById(id);
-      if (target) observer.observe(target);
-    }
-    return () => observer.disconnect();
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const line = window.innerHeight * 0.4;
+      const atEnd =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 4;
+      let current = ids[0];
+      for (const id of ids) {
+        const top = document.getElementById(id)?.getBoundingClientRect().top;
+        if (top === undefined) continue;
+        if (top <= line || (atEnd && top < window.innerHeight)) current = id;
+      }
+      setActive(current);
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
   }, [outlineKey]);
   return (
     <article
