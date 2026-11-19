@@ -4234,6 +4234,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-gnome-space-program": {
+    src: "media/learning/open3d-gnome-space-program.webp",
+    alt: "A small rocket fires its engine above a curved coastline, with flight instruments and a gnome portrait on screen.",
+    caption:
+      "Creator-published gameplay: Creator-contributor screenshot of an active flight in Gnome Space Program. The rocket burns above the ocean while the panel shows altitude and velocity. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/Sushutt/Gnome-Space-Program/issues/7",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://github.com/user-attachments/assets/b2124866-d200-4b9b-b2cc-b613e16759bf",
+    width: 1280,
+    height: 720,
+  },
   "open3d-long-jump-cliffs": {
     src: "media/learning/open3d-long-jump-cliffs.webp",
     alt: "A first-person view looks across stepped gray cliff platforms, with elapsed-time and death counters.",
@@ -6869,6 +6882,18 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     caption:
       "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-the-village-sacrifice.webp",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-ghostie-hunt": {
+    src: "media/learning/open3d-ghostie-hunt.webp",
+    alt: "A first-person view of a warm-lit room with a fireplace, floating books, a small aiming dot, and a countdown timer.",
+    caption:
+      "Creator-published Ghostie Hunt gameplay screenshot from the Ludum Dare submission, showing a timed search in a room with a lit fireplace. Image rights remain with the original creators.",
+    sourceUrl: "https://ldjam.com/events/ludum-dare/56/ghostie-hunt",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl: "https://static.ldjam.com/raw/fda/55/z/6761d.png",
     width: 1280,
     height: 720,
   },

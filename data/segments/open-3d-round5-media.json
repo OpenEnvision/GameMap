@@ -12255,6 +12255,41 @@
       "bytes": 64640
     },
     {
+      "id": "open3d-gnome-space-program",
+      "title": "Gnome Space Program",
+      "media": {
+        "src": "media/learning/open3d-gnome-space-program.webp",
+        "alt": "A small rocket fires its engine above a curved coastline, with flight instruments and a gnome portrait on screen.",
+        "caption": "Creator-published gameplay: Creator-contributor screenshot of an active flight in Gnome Space Program. The rocket burns above the ocean while the panel shows altitude and velocity. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/Sushutt/Gnome-Space-Program/issues/7",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://github.com/user-attachments/assets/b2124866-d200-4b9b-b2cc-b613e16759bf",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "ae3788fc2c7df0a08c3ab9174ce436440cd521e0abc13776a33b8c1f397c8f54",
+        "sourceFrameSHA256": "1cee6b73d1ddd8b0ee5801d039937e50a96b15093854dd15c9432d0a5d51c509",
+        "sourceWidth": 1916,
+        "sourceHeight": 1080,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the exact single contributor PNG. A rocket with an active exhaust plume flies above the curved coast; the altitude, velocity, throttle, navigation sphere and crew portrait show active flight, not a title/menu or composite. The GitHub issue submits this exact image, and the same GitHub contributor has authored merged source commits in this exact repository, e.g. commit 6641fffd2e2c685fda5af6da531e316d5eff4ec8. Source image and checked frame passed the existing validator."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "3187260576e7169740bb36c20f2b2689ee50c602243511a5279037f02df175d2",
+      "bytes": 20880
+    },
+    {
       "id": "open3d-long-jump-cliffs",
       "title": "Long Jump Cliffs",
       "media": {
@@ -20374,6 +20409,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 21246,
       "sha256": "a226114472998bf2b8bf648a1ebffdb1085b8167bb50401eaba007c9cfa6bff5"
+    },
+    {
+      "id": "open3d-ghostie-hunt",
+      "title": "Ghostie Hunt",
+      "media": {
+        "src": "media/learning/open3d-ghostie-hunt.webp",
+        "alt": "A first-person view of a warm-lit room with a fireplace, floating books, a small aiming dot, and a countdown timer.",
+        "caption": "Creator-published Ghostie Hunt gameplay screenshot from the Ludum Dare submission, showing a timed search in a room with a lit fireplace. Image rights remain with the original creators.",
+        "sourceUrl": "https://ldjam.com/events/ludum-dare/56/ghostie-hunt",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://static.ldjam.com/raw/fda/55/z/6761d.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "8ea60b1f5066fd388cac3a25cae8ce40cca7c64ac916c3d1d069f69482fdc898",
+        "sourceFrameSHA256": "0cf5858ccb062ba457d968e02783f6a3bc9414b69cf3ee56f15f2ec9b57af193",
+        "sourceWidth": 1830,
+        "sourceHeight": 1073,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the full original PNG. The playable first-person view shows floating books, candles, a lit fireplace, a centered aiming dot and the 02:06.01 countdown. This is a single game frame, not the branded itch cover or the separate instructional image. The exact repository README links the coauthors’ Ludum Dare submission, whose official node 399331 includes this uploaded original as Screenshot_20241008_014124.png. Unchanged origin and frame validation passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "c41a45a99060b1b0e915fbe4f9d23b278b051f32ecb4cf07c6950281c35eb699",
+      "bytes": 77792
     },
     {
       "id": "open3d-gone-rogue",
@@ -35126,76 +35196,9 @@
       ]
     },
     {
-      "id": "open3d-gnome-space-program",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The inspected author gallery image is the GSP logo, not a gameplay frame. Research incomplete or access-limited: The inspected author gallery image is the GSP logo, not a gameplay frame. Author newer orbital-mechanics update is a different unreleased development build. Embedded YouTube playback is not a durable exact image URL satisfying current origin rules; existing official install links unchanged.",
-      "checkedSources": [
-        {
-          "url": "https://sushut.itch.io/gnome-space-program",
-          "checkedAt": "2026-11-18",
-          "result": "Read creator description and native upload names/platform labels in the author download section."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/Sushutt/Gnome-Space-Program/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Sushutt/Gnome-Space-Program",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Sushutt/Gnome-Space-Program/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://sushut.itch.io/gnome-space-program",
-          "checkedAt": "2026-11-18",
-          "result": "Author page fetch HTTP 200; extracted 1 media candidates; each requires individual visual review."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/Sushutt/Gnome-Space-Program/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/Sushutt/Gnome-Space-Program",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/Sushutt/Gnome-Space-Program/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://sushut.itch.io/gnome-space-program",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://sushut.itch.io/gnome-space-program",
-          "checkedAt": "2026-11-19",
-          "result": "Viewed exact original header with game-name lettering and rocket artwork; not gameplay."
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=eyUL-50_UcI",
-          "checkedAt": "2026-11-19",
-          "result": "Author newer orbital-mechanics update is a different unreleased development build. Embedded YouTube playback is not a durable exact image URL satisfying current origin rules; existing official install links unchanged."
-        },
-        {
-          "url": "https://api.github.com/repos/Sushutt/Gnome-Space-Program/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-19",
-          "result": "Inspected complete author repository tree (689 items); inventoried 61 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
-        }
-      ]
-    },
-    {
       "id": "open3d-voidquest",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The inspected author gallery image is a skull logo, not a gameplay frame.",
+      "reason": "Research incomplete or access-limited: The inspected author gallery image is a skull logo, not a gameplay frame. The exact author gallery still contains only the previously rejected logo; no replacement in the verified creator devlog or repository issues.",
       "checkedSources": [
         {
           "url": "https://alexpyslar.itch.io/voidquest",
@@ -35251,6 +35254,21 @@
           "url": "https://api.github.com/repos/alex-pyslar/VoidQuest/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (200 items); inventoried 17 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://api.github.com/repos/alex-pyslar/VoidQuest/issues?state=all&per_page=40",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; exact repo issues/PR list did not return a creator gameplay attachment."
+        },
+        {
+          "url": "https://alexpyslar.itch.io/voidquest",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; gallery lists one existing original already rejected as skull logo."
+        },
+        {
+          "url": "https://alexpyslar.itch.io/voidquest/devlog/1442890/v011-alpha",
+          "checkedAt": "2026-11-19",
+          "result": "Author devlog has no visible attached original."
         }
       ]
     },
@@ -35319,7 +35337,7 @@
     {
       "id": "open3d-velocity",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The inspected author gallery contains a large letter V logo; no gameplay replacement was acquired.",
+      "reason": "Research incomplete or access-limited: The inspected author gallery contains a large letter V logo; no gameplay replacement was acquired. No alternative creator footage or raster was verified. The developer devlog had no indexed image; original page HTTP 429 not retried.",
       "checkedSources": [
         {
           "url": "https://lunakittyyy.itch.io/velocity",
@@ -35370,6 +35388,16 @@
           "url": "https://api.github.com/repos/BrokenSt0ne/Velocity/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (2820 items); inventoried 416 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://api.github.com/repos/BrokenSt0ne/Velocity/issues?state=all&per_page=40",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; exact repo issues/PR list did not return a creator gameplay attachment."
+        },
+        {
+          "url": "https://lunakittyyy.itch.io/velocity/devlog/741571/welcome-to-velocity",
+          "checkedAt": "2026-11-19",
+          "result": "Indexed post text no media; HTTP 429 raw, no retry."
         }
       ]
     },
@@ -36357,7 +36385,7 @@
     {
       "id": "open3d-riftbreakers",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The available author gallery image was personally inspected and rejected as a title/logo promotional cover. No eligible gameplay frame was verified.",
+      "reason": "Research incomplete or access-limited: The available author gallery image was personally inspected and rejected as a title/logo promotional cover. No eligible gameplay frame was verified. Author gallery and official repository issues show no new genuine gameplay frame.",
       "checkedSources": [
         {
           "url": "https://konstantinet.itch.io/riftbreakers",
@@ -36408,13 +36436,23 @@
           "url": "https://api.github.com/repos/KonstantinKolo/RiftBreakers/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (2331 items); inventoried 484 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://api.github.com/repos/KonstantinKolo/RiftBreakers/issues?state=all&per_page=40",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; exact repo issues/PR list did not return a creator gameplay attachment."
+        },
+        {
+          "url": "https://konstantinet.itch.io/riftbreakers",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; single original gallery image already rejected as promotional title cover."
         }
       ]
     },
     {
       "id": "open3d-the-misty-unfamilar",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No eligible screenshot has yet been verified from the checked material; additional source review may still be needed. Research incomplete or access-limited: No eligible screenshot has yet been verified from the checked material; additional source review may still be needed. Jam page corroborates author identity and game publication, not an independent original gameplay image. Existing desktop download left in place.",
+      "reason": "Research incomplete or access-limited: No eligible screenshot has yet been verified from the checked material; additional source review may still be needed. Research incomplete or access-limited: No eligible screenshot has yet been verified from the checked material; additional source review may still be needed. Jam page corroborates author identity and game publication, not an independent original gameplay image. Existing desktop download left in place. Author page has empty screenshot and video sections; exact game jam entry had no author screenshot in visible content.",
       "checkedSources": [
         {
           "url": "https://whattheheckman.itch.io/misty",
@@ -36470,13 +36508,23 @@
           "url": "https://api.github.com/repos/whattheheckman/cppHalloweenJam/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (93 items); inventoried 2 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://whattheheckman.itch.io/misty",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200, empty gameplay image and video sections."
+        },
+        {
+          "url": "https://itch.io/jam/cpp-halloween-horror-jam-2022/rate/1749527",
+          "checkedAt": "2026-11-19",
+          "result": "Exact creator submission, no separately published gameplay screenshot visible."
         }
       ]
     },
     {
       "id": "open3d-verdigris",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The only author gallery image inspected is an isolated creature close-up without clear gameplay context. No eligible screenshot was verified.",
+      "reason": "Research incomplete or access-limited: The only author gallery image inspected is an isolated creature close-up without clear gameplay context. No eligible screenshot was verified. The remaining itch links point to YouTube; no direct original under the permitted source/image origin pairing. The single itch raster is the prior unqualified isolated creature image.",
       "checkedSources": [
         {
           "url": "https://germanalen.itch.io/verdigris",
@@ -36532,13 +36580,18 @@
           "url": "https://api.github.com/repos/germanalen/Stop-The-Cheese-Monster/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (56 items); inventoried 3 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://germanalen.itch.io/verdigris",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; only prior gallery original and YouTube embeds TnYzNBRenEw and NVytT3s2FZA."
         }
       ]
     },
     {
       "id": "open3d-vane",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The only author gallery image reviewed is a VANE title/cover illustration, not gameplay.",
+      "reason": "Research incomplete or access-limited: The only author gallery image reviewed is a VANE title/cover illustration, not gameplay. Exact author itch page embeds a Unity WebGL game plus a prior title cover. The additional posted image is by a player, not the creator. No browser capture was performed in this evidence lane. The exact author-hosted Unity web build opened to a WebGL compatibility error after the public Run game action. No gameplay rendered and no browser capture was used. Previously verified native distributions remain unchanged.",
       "checkedSources": [
         {
           "url": "https://mcatin.itch.io/vane",
@@ -36574,6 +36627,21 @@
           "url": "https://api.github.com/repos/igaryhe/Vane/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (438 items); inventoried 50 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://mcatin.itch.io/vane",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; exact repo link, browser embed and credits. Image in comments belongs to BloodyOrchidDC, not credited creator."
+        },
+        {
+          "url": "https://mcatin.itch.io/vane",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200 author itch page names the credited creators and links the same catalog source repository; clicked Run game once in the cloud sandbox."
+        },
+        {
+          "url": "https://html-classic.itch.zone/html/1656346/Vane-WebGL/index.html?v=1783021416",
+          "checkedAt": "2026-11-19",
+          "result": "The exact embedded Unity game displayed “Your browser does not support WebGL.” No rendered gameplay, capture, permission grant or retry."
         }
       ]
     },
@@ -37021,41 +37089,9 @@
       ]
     },
     {
-      "id": "open3d-ghostie-hunt",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The sole author gallery candidate is a Ghostie Hunt cover with platform logos, not gameplay; checked repository evidence supplied no acceptable replacement.",
-      "checkedSources": [
-        {
-          "url": "https://madmonki.itch.io/ghostie-hunt",
-          "checkedAt": "2026-11-18",
-          "result": "Read the author publication and identified native platform package names; no package was downloaded or executed."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/madmonki/GhostieHunt/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/madmonki/GhostieHunt",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/madmonki/GhostieHunt/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://madmonki.itch.io/ghostie-hunt",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        }
-      ]
-    },
-    {
       "id": "open3d-rootin-n-shootin",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README screenshots combine two views into a montage; the other README image is labeled as the team photograph. Neither is an acceptable single gameplay frame.",
+      "reason": "Research incomplete or access-limited: README screenshots combine two views into a montage; the other README image is labeled as the team photograph. Neither is an acceptable single gameplay frame. The exact repo issues list is empty. The developer-linked exact historical Global Game Jam page was inaccessible, so no creator image from that page was verified. Existing repository montage was not reused.",
       "checkedSources": [
         {
           "url": "https://github.com/henriksen-marcus/Game-Jam-2023",
@@ -37081,6 +37117,16 @@
           "url": "https://github.com/henriksen-marcus/Game-Jam-2023/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://api.github.com/repos/henriksen-marcus/Game-Jam-2023/issues?state=all&per_page=40",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; exact repo issues/PR list did not return a creator gameplay attachment."
+        },
+        {
+          "url": "https://globalgamejam.org/2023/games/rootin-n-shootin-1",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 403; no bypass."
         }
       ]
     },
@@ -37324,7 +37370,7 @@
     {
       "id": "browser-port-06",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The README image is a skating-crab mascot/logo, not gameplay. The exact native Windows experimental build was verified, but no qualified gameplay raster or exact author-hosted web build was verified. README mascot is not gameplay; do not substitute a separate fork or browser port.",
+      "reason": "Research incomplete or access-limited: The README image is a skating-crab mascot/logo, not gameplay. The exact native Windows experimental build was verified, but no qualified gameplay raster or exact author-hosted web build was verified. README mascot is not gameplay; do not substitute a separate fork or browser port. Repository review found collaborator images from development fork builds or external origin; no creator screenshot was isolated from the exact upstream qualified version.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/SK8-ENGINE/skate-3-rust-engine/HEAD/README.md",
@@ -37350,6 +37396,16 @@
           "url": "https://github.com/SK8-ENGINE/skate-3-rust-engine/releases/expanded_assets/experimental",
           "checkedAt": "2026-11-19",
           "result": "Actual Windows x64 build 49 ZIP; archive not downloaded or run."
+        },
+        {
+          "url": "https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/issues?state=all&per_page=40",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; #52 and #68 unmerged development-fork images; merged #30 and #58 media only on unapproved external image host."
+        },
+        {
+          "url": "https://github.com/SK8-ENGINE/skate-3-rust-engine/pull/52",
+          "checkedAt": "2026-11-19",
+          "result": "Author explicitly identifies images as separate combined fork branch development footage."
         }
       ]
     },
@@ -37420,7 +37476,7 @@
     {
       "id": "browser-port-17",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Repository README exposes an Android launcher image rather than a confirmed gameplay frame; image review remains incomplete. No native software was installed or run. Exact author native release separately verified. Author site resolves to a games portal Halo launcher; exact author’s README explicitly requires WebGL 2 and authorized game data. README image is described as launcher UI, not a gameplay frame; browser capture not performed.",
+      "reason": "Research incomplete or access-limited: Repository README exposes an Android launcher image rather than a confirmed gameplay frame; image review remains incomplete. No native software was installed or run. Exact author native release separately verified. Author site resolves to a games portal Halo launcher; exact author’s README explicitly requires WebGL 2 and authorized game data. README image is described as launcher UI, not a gameplay frame; browser capture not performed. Public creator portal points to a distinct cross-origin storage host not approved by the screenshot contract, and author build needs authorized game data and WebGL2.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/OMG-Guest/Halo-Mobile/HEAD/README.md",
@@ -37456,6 +37512,21 @@
           "url": "https://api.github.com/repos/OMG-Guest/Halo-Mobile/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (7605 items); inventoried 11 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://api.github.com/repos/OMG-Guest/Halo-Mobile/issues?state=all&per_page=40",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; exact repo issues/PR list did not return a creator gameplay attachment."
+        },
+        {
+          "url": "https://games.omgithub.com/?g=halo-ce-phone&search=halo",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; exact author feed card only links a cross-origin r2.dev image; original not fetched or relabeled."
+        },
+        {
+          "url": "https://github.com/OMG-Guest/Halo-Mobile",
+          "checkedAt": "2026-11-19",
+          "result": "Author docs distinguish Android launcher image from gameplay and require separately authorized game data."
         }
       ]
     },
