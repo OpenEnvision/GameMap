@@ -16494,6 +16494,41 @@
       "sha256": "9dbfc41694b2544dbede1fc26197168c986ef0bf34b1092f4b36ff563003025c"
     },
     {
+      "id": "open3d-summoning-wars",
+      "title": "Summoning Wars",
+      "media": {
+        "src": "media/learning/open3d-summoning-wars.webp",
+        "alt": "A spellcaster attacks a zombie with a blue ice burst inside a cave while red damage numbers appear above the target.",
+        "caption": "Creator-published gameplay: Summoning Wars gameplay screenshot published by the project team. Image rights remain with their respective owners.",
+        "sourceUrl": "https://sumwars.org/wiki/File:The_blizzard_-_highly_effective_when_used_correct.jpg",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://sumwars.org/mediawiki/images/2/2c/The_blizzard_-_highly_effective_when_used_correct.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "4117cd2a38b9d8b29315606acd254d7997aa89d5a618d1a88e9ad78be8c0e999",
+        "sourceFrameSHA256": "b1b2ce1ca49de53dd9e9f951c60b3ba533dd9a96b1667989929e5d8adb6ab475",
+        "sourceWidth": 500,
+        "sourceHeight": 375,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the complete 500 by 375 original JPEG. The active Zombie target bar, red damage numbers, blizzard particles, action slots and German in-game controls identify live play. The project file page lists Protogenes as the uploader; both the official team page and the source AUTHORS.md identify Protogenes as project team member Michael Kunz."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "f03b267cab07203b9822ed4c2baa7a82b80f473817520a1dbf7d59594a357de2",
+      "bytes": 61050
+    },
+    {
       "id": "open3d-uebergame",
       "title": "Uebergame",
       "media": {
@@ -20544,6 +20579,76 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 27964,
       "sha256": "9aa0c3c43dc7cbe2f0a7fa630736266a2ab17c1e743c8171d227e3121220f1c9"
+    },
+    {
+      "id": "open3d-the-little-drop",
+      "title": "The Little Drop",
+      "media": {
+        "src": "media/learning/open3d-the-little-drop.webp",
+        "alt": "Two blue water-drop characters on a rocky bank beneath shafts of light, with an on-screen seed-planting prompt.",
+        "caption": "Creator-published gameplay screenshot from The Little Drop showing a seed-planting spot and the points and water counters. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/grimfang/pyweek21/blob/2de43c3ae7b0217a11312e3d80f6ca90d2afb336/Design/Manual/inGameScreens/Planting.png",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/grimfang/pyweek21/2de43c3ae7b0217a11312e3d80f6ca90d2afb336/Design/Manual/inGameScreens/Planting.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "a73eb40e9a42022632ee5e88aa3f3cb7d8188416c8a442bc618bf646d03f644d",
+        "sourceFrameSHA256": "c7c1ae88a9297c0ae5cdd3496239f47b6d285874de8a45e2827feaa0ab27478e",
+        "sourceWidth": 640,
+        "sourceHeight": 480,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the exact image. The active third-person view shows blue droplet characters near rocks and mushrooms, a Plant Seed interaction prompt, and points and remaining-water counters. The original PNG matches the author repository blob and passed the unchanged frame and origin checks."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "75c783523dc07775c6c778ec39dccf238affffbab8794b40dde2ec301c7fbed9",
+      "bytes": 50944
+    },
+    {
+      "id": "open3d-the-martian-thirst",
+      "title": "The Martian Thirst",
+      "media": {
+        "src": "media/learning/open3d-the-martian-thirst.webp",
+        "alt": "Pixel-art side view of a firefight in a Martian facility, with ammunition icons at the top of the screen.",
+        "caption": "Creator-published gameplay screenshot from The Martian Thirst. Silhouetted characters trade shots in a corridor with windows looking out onto Mars. Image rights remain with the original creator.",
+        "sourceUrl": "https://entikan.itch.io/the-martian-thirst",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1hZ2UvNDExNDQ0MS8yNDUyMDQ0NC5qcGc=/original/YchogW.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "92ae8cc570f5f0189c00c846bd04e95a3228b3c52fcc43e6f197b681074b6859",
+        "sourceFrameSHA256": "0f5bac8deb9f89e29d963c3db1cfd9779a27d509b77b96d85df14280b6b4d668",
+        "sourceWidth": 1280,
+        "sourceHeight": 720,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the original JPEG from the coauthor’s public itch screenshot carousel, separate from its page header and cover. An active firefight is underway in a side-view room, with a shot trail, enemies reacting, and three ammunition HUD icons visible. The unchanged origin and frame checks passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "47fdbf3b87703d01e06cab86a7ee56180f2946831326e5a368462e3a0ba8423d",
+      "bytes": 27896
     },
     {
       "id": "open3d-sheer-fish-attack",
@@ -33771,7 +33876,7 @@
     {
       "id": "open3d-team-capture",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Project landing page presented release/description without a gameplay image. Repo media was previously examined, not re-fetched.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/Voltstro-Studios/Team-Capture/HEAD/README.md",
@@ -33812,6 +33917,11 @@
           "url": "https://tc.voltstro.dev/",
           "checkedAt": "2026-11-18",
           "result": "Public retrieval failed: getaddrinfo EAI_AGAIN tc.voltstro.dev"
+        },
+        {
+          "url": "https://tc.voltstro.dev/",
+          "checkedAt": "2026-11-19",
+          "result": "Project landing page presented release/description without a gameplay image. Repo media was previously examined, not re-fetched."
         }
       ]
     },
@@ -33860,7 +33970,7 @@
     {
       "id": "open3d-beyond-all-reason",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Project images use external Webflow CDN, and promotional loop recording unrelated to actual HUD and cross-origin; no exact public official Steam store page located.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/beyond-all-reason/Beyond-All-Reason/HEAD/README.md",
@@ -33911,13 +34021,23 @@
           "url": "https://api.github.com/repos/beyond-all-reason/Beyond-All-Reason/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (19290 items); inventoried 7191 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://www.beyondallreason.info/screenshots",
+          "checkedAt": "2026-11-19",
+          "result": "Project images use external Webflow CDN, and promotional loop recording unrelated to actual HUD and cross-origin; no exact public official Steam store page located."
+        },
+        {
+          "url": "https://www.beyondallreason.info/promokit",
+          "checkedAt": "2026-11-19",
+          "result": "Project images use external Webflow CDN, and promotional loop recording unrelated to actual HUD and cross-origin; no exact public official Steam store page located."
         }
       ]
     },
     {
       "id": "open3d-colobot-gold-edition",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. The project and exact author release blog pages published logos and an author avatar, not a gameplay original.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/colobot/colobot/HEAD/README.md",
@@ -33978,6 +34098,16 @@
           "url": "https://api.github.com/repos/colobot/colobot/git/trees/dev?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Complete source tree of 875 entries has no named gameplay/screenshot path; earlier improve-screenshots commit modifies build documentation screenshots only."
+        },
+        {
+          "url": "https://colobot.info/colobot-gold-edition/",
+          "checkedAt": "2026-11-19",
+          "result": "The project and exact author release blog pages published logos and an author avatar, not a gameplay original."
+        },
+        {
+          "url": "https://colobot.info/2019/02/24/update-0-1-12-technical-update/",
+          "checkedAt": "2026-11-19",
+          "result": "The project and exact author release blog pages published logos and an author avatar, not a gameplay original."
         }
       ]
     },
@@ -34107,7 +34237,7 @@
     {
       "id": "open3d-smokin-guns",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Official native Windows EXE and Debian DEB labels and checksums verified. Project screenshot gallery delegates images to an old forum subdomain that fails cloud HTTPS and is cross-origin. Homepage image examples are map panoramas, not independently established active play.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Official native Windows EXE and Debian DEB labels and checksums verified. Project screenshot gallery delegates images to an old forum subdomain that fails cloud HTTPS and is cross-origin. Homepage image examples are map panoramas, not independently established active play. Official screenshots embed a different forum origin, and its direct JPEG returned 503. The similarly different official mapper Wiki origin returned 503. The media panoramas are not evidence of active play; manual did not provide a corresponding same-origin gameplay still.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/smokin-guns/SmokinGuns/HEAD/README.md",
@@ -34153,6 +34283,36 @@
           "url": "https://api.github.com/repos/smokin-guns/SmokinGuns/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (1257 items); inventoried 11 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://www.smokin-guns.org/media",
+          "checkedAt": "2026-11-19",
+          "result": "Official screenshots embed a different forum origin, and its direct JPEG returned 503. The similarly different official mapper Wiki origin returned 503. The media panoramas are not evidence of active play; manual did not provide a corresponding same-origin gameplay still."
+        },
+        {
+          "url": "https://www.smokin-guns.org/media/screenshots",
+          "checkedAt": "2026-11-19",
+          "result": "Official screenshots embed a different forum origin, and its direct JPEG returned 503. The similarly different official mapper Wiki origin returned 503. The media panoramas are not evidence of active play; manual did not provide a corresponding same-origin gameplay still."
+        },
+        {
+          "url": "https://forum.smokin-guns.org/pics/ui/ui_ingame01.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Official screenshots embed a different forum origin, and its direct JPEG returned 503. The similarly different official mapper Wiki origin returned 503. The media panoramas are not evidence of active play; manual did not provide a corresponding same-origin gameplay still."
+        },
+        {
+          "url": "https://www.smokin-guns.org/manual",
+          "checkedAt": "2026-11-19",
+          "result": "Official screenshots embed a different forum origin, and its direct JPEG returned 503. The similarly different official mapper Wiki origin returned 503. The media panoramas are not evidence of active play; manual did not provide a corresponding same-origin gameplay still."
+        },
+        {
+          "url": "https://www.smokin-guns.org/media/panoramas",
+          "checkedAt": "2026-11-19",
+          "result": "Official screenshots embed a different forum origin, and its direct JPEG returned 503. The similarly different official mapper Wiki origin returned 503. The media panoramas are not evidence of active play; manual did not provide a corresponding same-origin gameplay still."
+        },
+        {
+          "url": "https://wiki.smokin-guns.org/wiki/SmokinGuns/Breli",
+          "checkedAt": "2026-11-19",
+          "result": "Official screenshots embed a different forum origin, and its direct JPEG returned 503. The similarly different official mapper Wiki origin returned 503. The media panoramas are not evidence of active play; manual did not provide a corresponding same-origin gameplay still."
         }
       ]
     },
@@ -34181,7 +34341,7 @@
     {
       "id": "open3d-ufo-alien-invasion",
       "status": "research-incomplete",
-      "reason": "No qualifying image verified. Author/source access was limited: Failed to fetch https://ufoai.org/: (403) Forbidden This is not evidence that no screenshot exists.",
+      "reason": "No qualifying image verified. Author/source access was limited: Failed to fetch https://ufoai.org/: (403) Forbidden This is not evidence that no screenshot exists. Official project gallery provides originals hosted across origins at a.fsdn.com, not permitted by current validator.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/ufoaiorg/ufoai/HEAD/README.md",
@@ -34227,13 +34387,18 @@
           "url": "https://api.github.com/repos/ufoaiorg/ufoai/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (11288 items); inventoried 5264 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://sourceforge.net/projects/ufoai/",
+          "checkedAt": "2026-11-19",
+          "result": "Official project gallery provides originals hosted across origins at a.fsdn.com, not permitted by current validator."
         }
       ]
     },
     {
       "id": "open3d-vega-strike",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Original official install page and exact SourceForge release list legacy standalone Windows native game package. Newer engine-only and data-only packages not recorded as whole game; official legacy same-origin gallery images 404 and original forum gallery redirects away.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Original official install page and exact SourceForge release list legacy standalone Windows native game package. Newer engine-only and data-only packages not recorded as whole game; official legacy same-origin gallery images 404 and original forum gallery redirects away. Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/vegastrike/Vega-Strike-Engine-Source/HEAD/README.md",
@@ -34279,6 +34444,36 @@
           "url": "https://api.github.com/repos/vegastrike/Vega-Strike-Engine-Source/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (1372 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://www.vega-strike.org/",
+          "checkedAt": "2026-11-19",
+          "result": "Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted."
+        },
+        {
+          "url": "https://www.vega-strike.org/about/",
+          "checkedAt": "2026-11-19",
+          "result": "Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted."
+        },
+        {
+          "url": "https://www.vega-strike.org/games/vs-upon-the-coldest-sea/",
+          "checkedAt": "2026-11-19",
+          "result": "Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted."
+        },
+        {
+          "url": "https://vegastrike.sourceforge.net/gallery/",
+          "checkedAt": "2026-11-19",
+          "result": "Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted."
+        },
+        {
+          "url": "https://forums.vega-strike.org/cpg/thumbnails.php?album=11",
+          "checkedAt": "2026-11-19",
+          "result": "Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted."
+        },
+        {
+          "url": "https://wiki.vega-strike.org",
+          "checkedAt": "2026-11-19",
+          "result": "Modern site contains logo only. Legacy gallery returned 404 and current forum gallery and wiki 503. Alternate third-party screenshots not substituted."
         }
       ]
     },
@@ -35265,7 +35460,7 @@
     {
       "id": "open3d-logs-odysseys",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. The creator repository contains river-design rasters and a duck texture, not a published gameplay screenshot. Personally reviewed outfield.png and verified it is a flow map. The release array is empty and PyWeek explicitly describes its ZIP as source code.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/omn14/pyweek39/HEAD/README.md",
@@ -35306,6 +35501,21 @@
           "url": "https://api.github.com/repos/omn14/pyweek39/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (27 items); inventoried 4 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://github.com/omn14/pyweek39",
+          "checkedAt": "2026-11-19",
+          "result": "Complete 27-entry exact source tree and source-only launch README reviewed."
+        },
+        {
+          "url": "https://api.github.com/repos/omn14/pyweek39/releases?per_page=10",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; release JSON array empty."
+        },
+        {
+          "url": "https://pyweek.org/39/entries/",
+          "checkedAt": "2026-11-19",
+          "result": "Official jam listing explicitly labels the submission archive as game source code."
         }
       ]
     },
@@ -35376,7 +35586,7 @@
     {
       "id": "open3d-danger-from-the-deep",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Official project gallery provides originals hosted across origins at a.fsdn.com, not permitted by current validator.",
       "checkedSources": [
         {
           "url": "https://sourceforge.net/projects/dangerdeep/",
@@ -35387,13 +35597,18 @@
           "url": "https://dangerdeep.sourceforge.net/",
           "checkedAt": "2026-11-19",
           "result": "Legacy home did not provide an independently verified eligible screenshot."
+        },
+        {
+          "url": "https://sourceforge.net/projects/dangerdeep/",
+          "checkedAt": "2026-11-19",
+          "result": "Official project gallery provides originals hosted across origins at a.fsdn.com, not permitted by current validator."
         }
       ]
     },
     {
       "id": "open3d-extreme-tux-racer",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Official site redirects to SourceForge project; project gallery full links use unpermitted a.fsdn.com and distro appstream original links are distro copies without confirmed first-party publishing provenance.",
       "checkedSources": [
         {
           "url": "https://sourceforge.net/projects/extremetuxracer/",
@@ -35404,13 +35619,28 @@
           "url": "https://sourceforge.net/projects/extremetuxracer/",
           "checkedAt": "2026-11-19",
           "result": "Original developer project existing metadata uses a.fsdn.com cross-origin images that current validator rejects. Unaffiliated Wikimedia screenshots not substituted; existing native download unchanged."
+        },
+        {
+          "url": "https://extremetuxracer.sourceforge.net/",
+          "checkedAt": "2026-11-19",
+          "result": "Official site redirects to SourceForge project; project gallery full links use unpermitted a.fsdn.com and distro appstream original links are distro copies without confirmed first-party publishing provenance."
+        },
+        {
+          "url": "https://sourceforge.net/projects/extremetuxracer/",
+          "checkedAt": "2026-11-19",
+          "result": "Official site redirects to SourceForge project; project gallery full links use unpermitted a.fsdn.com and distro appstream original links are distro copies without confirmed first-party publishing provenance."
+        },
+        {
+          "url": "https://appstream.debian.org/bookworm/main/metainfo/extremetuxracer.html",
+          "checkedAt": "2026-11-19",
+          "result": "Official site redirects to SourceForge project; project gallery full links use unpermitted a.fsdn.com and distro appstream original links are distro copies without confirmed first-party publishing provenance."
         }
       ]
     },
     {
       "id": "open3d-gltron",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Old official site redirects to SourceForge; official project media gallery originals are cross-origin a.fsdn.com, not permitted by current validator.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/sgothel/gltron/HEAD/README.md",
@@ -35461,6 +35691,16 @@
           "url": "https://api.github.com/repos/sgothel/gltron/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (651 items); inventoried 85 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://gltron.sourceforge.net/",
+          "checkedAt": "2026-11-19",
+          "result": "Old official site redirects to SourceForge; official project media gallery originals are cross-origin a.fsdn.com, not permitted by current validator."
+        },
+        {
+          "url": "https://sourceforge.net/projects/gltron/",
+          "checkedAt": "2026-11-19",
+          "result": "Old official site redirects to SourceForge; official project media gallery originals are cross-origin a.fsdn.com, not permitted by current validator."
         }
       ]
     },
@@ -36491,7 +36731,7 @@
     {
       "id": "open3d-stormbaan-coureur",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The author homepage and download page were read. The reviewed suspension image is an isolated vehicle model and the animated candidate is a stereoscopic-glasses promotional graphic; neither is an eligible game scene.",
+      "reason": "Research incomplete or access-limited: The author homepage and download page were read. The reviewed suspension image is an isolated vehicle model and the animated candidate is a stereoscopic-glasses promotional graphic; neither is an eligible game scene. Reviewed same-origin originals contain suspension render, unrelated logo and VR glasses diagram, respectively, not singular gameplay. The web page's recordings are YouTube embeds without stable original media on an approved origin.",
       "checkedSources": [
         {
           "url": "https://www.stolk.org/stormbaancoureur/download/",
@@ -36507,33 +36747,26 @@
           "url": "https://www.stolk.org/stormbaancoureur/",
           "checkedAt": "2026-11-18",
           "result": "The author homepage and download page were read. The reviewed suspension image is an isolated vehicle model and the animated candidate is a stereoscopic-glasses promotional graphic; neither is an eligible game scene."
-        }
-      ]
-    },
-    {
-      "id": "open3d-summoning-wars",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The repository README and its linked original SourceForge project page were read; project samples were not exposed in the static response and no specific native asset was verified.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/SummoningWars/summoning-wars/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
         },
         {
-          "url": "https://github.com/SummoningWars/summoning-wars",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          "url": "https://www.stolk.org/stormbaancoureur/",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed same-origin originals contain suspension render, unrelated logo and VR glasses diagram, respectively, not singular gameplay. The web page's recordings are YouTube embeds without stable original media on an approved origin."
         },
         {
-          "url": "https://github.com/SummoningWars/summoning-wars/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          "url": "https://www.stolk.org/stormbaancoureur/suspension.png",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed same-origin originals contain suspension render, unrelated logo and VR glasses diagram, respectively, not singular gameplay. The web page's recordings are YouTube embeds without stable original media on an approved origin."
         },
         {
-          "url": "https://github.com/SummoningWars/summoning-wars",
-          "checkedAt": "2026-11-18",
-          "result": "The repository README and its linked original SourceForge project page were read; project samples were not exposed in the static response and no specific native asset was verified."
+          "url": "https://www.stolk.org/stormbaancoureur/howski.png",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed same-origin originals contain suspension render, unrelated logo and VR glasses diagram, respectively, not singular gameplay. The web page's recordings are YouTube embeds without stable original media on an approved origin."
+        },
+        {
+          "url": "https://www.stolk.org/stormbaancoureur/vr_anim.gif",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed same-origin originals contain suspension render, unrelated logo and VR glasses diagram, respectively, not singular gameplay. The web page's recordings are YouTube embeds without stable original media on an approved origin."
         }
       ]
     },
@@ -36896,7 +37129,7 @@
     {
       "id": "open3d-six-shootin-cats",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Author competition gallery found, but original images use s3.eu-west-2.amazonaws.com, outside the existing allowed image origins.",
+      "reason": "Research incomplete or access-limited: Author competition gallery found, but original images use s3.eu-west-2.amazonaws.com, outside the existing allowed image origins. The exact author itch page publishes a header only, with no gameplay gallery. The original GitHub repo route redirects; the canonical tree request was denied. PyWeek creator screenshots follow the previously rejected cross-origin pairing, so those images were not retried or relabeled.",
       "checkedSources": [
         {
           "url": "https://pyweek.org/e/secretgame/",
@@ -36922,50 +37155,21 @@
           "url": "https://pyweek.org/e/secretgame/",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        }
-      ]
-    },
-    {
-      "id": "open3d-the-little-drop",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Author competition gallery found, but original images use s3.eu-west-2.amazonaws.com, outside the existing allowed image origins.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/grimfang/pyweek21/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
         },
         {
-          "url": "https://github.com/grimfang/pyweek21",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          "url": "https://entikan.itch.io/six-shootin-cats",
+          "checkedAt": "2026-11-19",
+          "result": "Confirmed same PyWeek entry/team; indexed author page shows a header but no separate gallery."
         },
         {
-          "url": "https://github.com/grimfang/pyweek21/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          "url": "https://api.github.com/repositories/177671882/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 403 after following the legacy endpoint’s canonical public repository ID; no access bypass attempted."
         },
         {
-          "url": "https://pyweek.org/e/Little_Drop/",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        }
-      ]
-    },
-    {
-      "id": "open3d-the-martian-thirst",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Author competition gallery found, but original images use s3.eu-west-2.amazonaws.com, outside the existing allowed image origins.",
-      "checkedSources": [
-        {
-          "url": "https://pyweek.org/e/GMars/",
-          "checkedAt": "2026-11-18",
-          "result": "Read the author publication and identified native platform package names; no package was downloaded or executed."
-        },
-        {
-          "url": "https://pyweek.org/e/GMars/",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          "url": "https://pyweek.org/e/secretgame/",
+          "checkedAt": "2026-11-19",
+          "result": "Creator jam listing names screenshots, but its known image-origin pairing is not permitted; not retried."
         }
       ]
     },
@@ -37083,7 +37287,7 @@
     {
       "id": "open3d-digital-extinction",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The README video.png candidate returned content rejected by reviewFrame as not a supported raster; the checked home page provided no accepted gameplay frame. No native package was run.",
+      "reason": "Research incomplete or access-limited: The README video.png candidate returned content rejected by reviewFrame as not a supported raster; the checked home page provided no accepted gameplay frame. No native package was run. Author native archives were published previously; project home and linked tutorial had only operating system icons and site favicon, no qualifying original screenshot. Author repo thumbnail handed off for independent check.",
       "checkedSources": [
         {
           "url": "https://de-game.org/",
@@ -37109,6 +37313,16 @@
           "url": "https://de-game.org/",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://de-game.org/",
+          "checkedAt": "2026-11-19",
+          "result": "Author native archives were published previously; project home and linked tutorial had only operating system icons and site favicon, no qualifying original screenshot. Author repo thumbnail handed off for independent check."
+        },
+        {
+          "url": "https://docs.de-game.org/tutorial/index.html",
+          "checkedAt": "2026-11-19",
+          "result": "Author native archives were published previously; project home and linked tutorial had only operating system icons and site favicon, no qualifying original screenshot. Author repo thumbnail handed off for independent check."
         }
       ]
     },
@@ -40440,6 +40654,53 @@
         }
       },
       {
+        "id": "open3d-zero-k",
+        "sourceUrl": "https://github.com/ZeroK-RTS/Zero-K",
+        "demo": {
+          "label": "Download Zero-K",
+          "url": "https://zero-k.info/Wiki/Download",
+          "kind": "download",
+          "note": "The developer lists the Zero-K game installer and a Windows/Linux semi-portable distribution. The portable downloader retrieves additional game files. Publication and downloader headers were verified on 2026-11-19; no package was downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://github.com/ZeroK-RTS/Zero-K",
+            "checkedAt": "2026-11-19",
+            "result": "The original source repository identifies zero-k.info as the project website and directs players to the official game lobby download."
+          },
+          {
+            "url": "https://zero-k.info/Wiki/Download",
+            "checkedAt": "2026-11-19",
+            "result": "The developer download page explicitly links Zero-K.exe as the portable game downloader and links the Zero-K Team’s semi-portable publication."
+          },
+          {
+            "url": "https://zerok.itch.io/zero-k",
+            "checkedAt": "2026-11-19",
+            "result": "The developer’s itch.io publication lists the game’s installer and 3.3 GB semi-portable package and gives Windows and Linux game launch commands; no download was triggered."
+          },
+          {
+            "url": "https://zero-k.info/Lobby/Zero-K.exe",
+            "checkedAt": "2026-11-19",
+            "result": "Header-only request returned HTTP 200, application/octet-stream and Content-Length 7608832; no payload was transferred or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://zero-k.info/Wiki/Download",
+          "authorVerification": "The same owner’s catalog source repository links the Zero-K website and instructs players to use this official download to play the exact game.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author identifies Zero-K.exe as the native portable game downloader rather than game source or an unrelated engine. The author-published semi-portable distribution is also listed with Windows and Linux game launch instructions. Only public metadata and exact downloader response headers were checked.",
+          "assets": [
+            {
+              "url": "https://zero-k.info/Lobby/Zero-K.exe",
+              "name": "Zero-K.exe",
+              "platform": "Windows",
+              "kind": "game-binary"
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-back-into-the-cave",
         "sourceUrl": "https://bitbucket.org/JohnGabrielUK/back-into-the-cave",
         "demo": {
@@ -41400,6 +41661,44 @@
         }
       },
       {
+        "id": "open3d-devils-tower",
+        "sourceUrl": "https://github.com/tcdude/pyweek28",
+        "demo": {
+          "label": "Download for Windows",
+          "url": "https://github.com/tcdude/pyweek28/releases/download/v0.1/Devils.Tower-0.1_win_amd64.zip",
+          "kind": "download",
+          "note": "Author-published Windows x64 binary archive listed under the v0.1 GitHub release and identified as a binary in the repository README. Release metadata verified on 2026-11-19; the package was not downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/tcdude/pyweek28/releases?per_page=10",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; official final PyWeek release v0.1 lists an uploaded 77,029,587-byte Windows x64 ZIP."
+          },
+          {
+            "url": "https://github.com/tcdude/pyweek28#readme",
+            "checkedAt": "2026-11-19",
+            "result": "Author instructs Windows 64-bit users to obtain the binary from Releases."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/tcdude/pyweek28/releases/tag/v0.1",
+          "authorVerification": "The exact catalog source repository publishes this release as the creator’s final PyWeek 28 submission.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author README distinguishes the Windows 64-bit binary release from source; the release API identifies the uploaded ZIP by name and size.",
+          "assets": [
+            {
+              "url": "https://github.com/tcdude/pyweek28/releases/download/v0.1/Devils.Tower-0.1_win_amd64.zip",
+              "name": "Devils.Tower-0.1_win_amd64.zip",
+              "platform": "Windows x64",
+              "kind": "game-binary",
+              "size": 77029587
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-pollen",
         "sourceUrl": "https://github.com/rdb/pollen",
         "demo": {
@@ -41610,6 +41909,72 @@
               "name": "dangerdeep-setup-0.4.0.0_pre3327.exe",
               "platform": "Windows 32-bit",
               "kind": "game-binary"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-dreamchess",
+        "sourceUrl": "https://github.com/dreamchess/dreamchess",
+        "demo": {
+          "label": "Download for Windows",
+          "url": "https://github.com/dreamchess/dreamchess/releases/download/0.3.0/DreamChess-0.3.0-win64.msi",
+          "kind": "download",
+          "note": "Developer-published Windows x64 installer from the official DreamChess 0.3.0 GitHub release. Release metadata verified on 2026-11-19; no package was downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/dreamchess/dreamchess/releases/tags/0.3.0",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; official release API returned five uploaded native assets with exact filenames and byte sizes."
+          },
+          {
+            "url": "https://github.com/dreamchess/dreamchess/releases/expanded_assets/0.3.0",
+            "checkedAt": "2026-11-19",
+            "result": "Platform labels identify separate macOS 10.11+ disk image and Windows 7/8/10 x64 and x86 installers and ZIP distributions; source archives are listed separately."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/dreamchess/dreamchess/releases/tag/0.3.0",
+          "authorVerification": "The official release and its native assets are published by the exact source repository; the release notes describe the development team publishing official binaries.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The release asset list labels the MSI as a Windows x64 installer. The maintainer also supplies alternative Windows archives and a macOS disk image.",
+          "assets": [
+            {
+              "url": "https://github.com/dreamchess/dreamchess/releases/download/0.3.0/DreamChess-0.3.0-macOS.dmg",
+              "name": "DreamChess-0.3.0-macOS.dmg",
+              "platform": "macOS 10.11+",
+              "kind": "game-binary",
+              "size": 10325224
+            },
+            {
+              "url": "https://github.com/dreamchess/dreamchess/releases/download/0.3.0/DreamChess-0.3.0-win32.msi",
+              "name": "DreamChess-0.3.0-win32.msi",
+              "platform": "Windows x86",
+              "kind": "game-binary",
+              "size": 10583304
+            },
+            {
+              "url": "https://github.com/dreamchess/dreamchess/releases/download/0.3.0/DreamChess-0.3.0-win32.zip",
+              "name": "DreamChess-0.3.0-win32.zip",
+              "platform": "Windows x86",
+              "kind": "game-binary",
+              "size": 11370632
+            },
+            {
+              "url": "https://github.com/dreamchess/dreamchess/releases/download/0.3.0/DreamChess-0.3.0-win64.msi",
+              "name": "DreamChess-0.3.0-win64.msi",
+              "platform": "Windows x64",
+              "kind": "game-binary",
+              "size": 10775656
+            },
+            {
+              "url": "https://github.com/dreamchess/dreamchess/releases/download/0.3.0/DreamChess-0.3.0-win64.zip",
+              "name": "DreamChess-0.3.0-win64.zip",
+              "platform": "Windows x64",
+              "kind": "game-binary",
+              "size": 11560647
             }
           ]
         }
@@ -55504,8 +55869,8 @@
       },
       {
         "id": "open3d-duskline",
-        "status": "research-incomplete",
-        "reason": "The creator's deployed build opened in the cloud sandbox and requested an email and password before access beyond its sign-in screen. There was no guest option shown; nothing was entered. Research incomplete: no new author distribution or sandbox-rendered game was verified in this review. Existing demo data is preserved; this does not establish that no release exists. The exact author web deployment reached a mandatory sign-in screen and did not offer a visible guest mode. The creator's AWS article did not list a downloadable distribution.",
+        "status": "missing",
+        "reason": "The developer-hosted deployment led to mandatory sign-in in the cloud browser, and the exact creator repository listed no GitHub Releases. No author-published native asset or publicly reachable playable build was verified.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/blackshadowog/duskline/HEAD/README.md",
@@ -55556,6 +55921,11 @@
             "url": "https://builder.aws.com/content/3KCH1lCKDVDv4FJlPFdoAEb0vEX/building-duskline-from-an-idea-to-a-live-d-browser-game-with-kiro-and-antideploy",
             "checkedAt": "2026-11-19",
             "result": "Read the developer's exact AWS Builder Center article. It links the deployed game and source repository; its article body does not publish a gameplay raster."
+          },
+          {
+            "url": "https://api.github.com/repos/blackshadowog/duskline/releases?per_page=10",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; release JSON array empty."
           }
         ]
       },
@@ -70247,58 +70617,6 @@
         ]
       },
       {
-        "id": "open3d-zero-k",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/ZeroK-RTS/Zero-K/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/ZeroK-RTS/Zero-K",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/ZeroK-RTS/Zero-K/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://zero-k.info/Wiki/Media",
-            "checkedAt": "2026-11-18",
-            "result": "Author page fetch HTTP 200; extracted 0 media candidates; each requires individual visual review."
-          },
-          {
-            "url": "https://zero-k.info/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/ZeroK-RTS/Zero-K/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/ZeroK-RTS/Zero-K",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/ZeroK-RTS/Zero-K/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://zero-k.info/Wiki/Media",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
         "id": "open3d-apex-formula",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: The creator-linked build opened as a black page; Three.js failed to create a WebGL context in the cloud sandbox. No gameplay was rendered. The build was not upgraded to playable; this does not establish the game is unavailable on a browser with working WebGL.",
@@ -71709,43 +72027,6 @@
         ]
       },
       {
-        "id": "open3d-devils-tower",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/tcdude/pyweek28/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/tcdude/pyweek28",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/tcdude/pyweek28/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/tcdude/pyweek28/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/tcdude/pyweek28",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/tcdude/pyweek28/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
         "id": "open3d-hobot-s-ascent",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -71800,7 +72081,7 @@
       {
         "id": "open3d-logs-odysseys",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. The creator repository contains river-design rasters and a duck texture, not a published gameplay screenshot. Personally reviewed outfield.png and verified it is a flow map. The release array is empty and PyWeek explicitly describes its ZIP as source code.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/omn14/pyweek39/HEAD/README.md",
@@ -71836,6 +72117,21 @@
             "url": "https://github.com/omn14/pyweek39/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://github.com/omn14/pyweek39",
+            "checkedAt": "2026-11-19",
+            "result": "Complete 27-entry exact source tree and source-only launch README reviewed."
+          },
+          {
+            "url": "https://api.github.com/repos/omn14/pyweek39/releases?per_page=10",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; release JSON array empty."
+          },
+          {
+            "url": "https://pyweek.org/39/entries/",
+            "checkedAt": "2026-11-19",
+            "result": "Official jam listing explicitly labels the submission archive as game source code."
           }
         ]
       },
@@ -71937,48 +72233,6 @@
           },
           {
             "url": "https://github.com/PixelGuys/Cubyz/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
-        "id": "open3d-dreamchess",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/dreamchess/dreamchess/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/dreamchess/dreamchess",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/dreamchess/dreamchess/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://www.dreamchess.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/dreamchess/dreamchess/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/dreamchess/dreamchess",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/dreamchess/dreamchess/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
           }
@@ -76398,7 +76652,7 @@
       {
         "id": "open3d-the-little-drop",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item.",
+        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item. The author’s project page links a .p3d package that requires an external Panda3D runtime. No author-published standalone native package or rendered browser gameplay was verified. The new gameplay screenshot is qualified separately.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/grimfang/pyweek21/HEAD/README.md",
@@ -76419,6 +76673,11 @@
             "url": "https://pyweek.org/e/Little_Drop/",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          },
+          {
+            "url": "https://grimfang-studio.org/games/owp/fireclawProject3.html",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; game download points to LittleDrop.p3d, not a native installer."
           }
         ]
       },

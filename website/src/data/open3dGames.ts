@@ -5419,10 +5419,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Zero-K",
-      "url": "https://github.com/ZeroK-RTS/Zero-K",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Zero-K",
+      "url": "https://zero-k.info/Wiki/Download",
+      "kind": "download",
+      "note": "The developer lists the Zero-K game installer and a Windows/Linux semi-portable distribution. The portable downloader retrieves additional game files. Publication and downloader headers were verified on 2026-11-19; no package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

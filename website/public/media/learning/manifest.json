@@ -8701,6 +8701,20 @@
       "sha256": "9dbfc41694b2544dbede1fc26197168c986ef0bf34b1092f4b36ff563003025c"
     },
     {
+      "id": "open3d-summoning-wars",
+      "src": "media/learning/open3d-summoning-wars.webp",
+      "alt": "A spellcaster attacks a zombie with a blue ice burst inside a cave while red damage numbers appear above the target.",
+      "caption": "Creator-published gameplay: Summoning Wars gameplay screenshot published by the project team. Image rights remain with their respective owners.",
+      "sourceUrl": "https://sumwars.org/wiki/File:The_blizzard_-_highly_effective_when_used_correct.jpg",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://sumwars.org/mediawiki/images/2/2c/The_blizzard_-_highly_effective_when_used_correct.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 61050,
+      "sha256": "f03b267cab07203b9822ed4c2baa7a82b80f473817520a1dbf7d59594a357de2"
+    },
+    {
       "id": "open3d-uebergame",
       "src": "media/learning/open3d-uebergame.webp",
       "alt": "A third-person soldier advances through grass near a lighthouse, with health and weapon indicators visible.",
@@ -9972,6 +9986,34 @@
       "height": 720,
       "bytes": 27964,
       "sha256": "9aa0c3c43dc7cbe2f0a7fa630736266a2ab17c1e743c8171d227e3121220f1c9"
+    },
+    {
+      "id": "open3d-the-little-drop",
+      "src": "media/learning/open3d-the-little-drop.webp",
+      "alt": "Two blue water-drop characters on a rocky bank beneath shafts of light, with an on-screen seed-planting prompt.",
+      "caption": "Creator-published gameplay screenshot from The Little Drop showing a seed-planting spot and the points and water counters. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/grimfang/pyweek21/blob/2de43c3ae7b0217a11312e3d80f6ca90d2afb336/Design/Manual/inGameScreens/Planting.png",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/grimfang/pyweek21/2de43c3ae7b0217a11312e3d80f6ca90d2afb336/Design/Manual/inGameScreens/Planting.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 50944,
+      "sha256": "75c783523dc07775c6c778ec39dccf238affffbab8794b40dde2ec301c7fbed9"
+    },
+    {
+      "id": "open3d-the-martian-thirst",
+      "src": "media/learning/open3d-the-martian-thirst.webp",
+      "alt": "Pixel-art side view of a firefight in a Martian facility, with ammunition icons at the top of the screen.",
+      "caption": "Creator-published gameplay screenshot from The Martian Thirst. Silhouetted characters trade shots in a corridor with windows looking out onto Mars. Image rights remain with the original creator.",
+      "sourceUrl": "https://entikan.itch.io/the-martian-thirst",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1hZ2UvNDExNDQ0MS8yNDUyMDQ0NC5qcGc=/original/YchogW.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 27896,
+      "sha256": "47fdbf3b87703d01e06cab86a7ee56180f2946831326e5a368462e3a0ba8423d"
     },
     {
       "id": "open3d-sheer-fish-attack",

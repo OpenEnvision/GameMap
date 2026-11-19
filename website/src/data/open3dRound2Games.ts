@@ -2539,10 +2539,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Devils Tower",
-      "url": "https://github.com/tcdude/pyweek28",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download for Windows",
+      "url": "https://github.com/tcdude/pyweek28/releases/download/v0.1/Devils.Tower-0.1_win_amd64.zip",
+      "kind": "download",
+      "note": "Author-published Windows x64 binary archive listed under the v0.1 GitHub release and identified as a binary in the repository README. Release metadata verified on 2026-11-19; the package was not downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3079,10 +3079,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for DreamChess",
-      "url": "https://github.com/dreamchess/dreamchess",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download for Windows",
+      "url": "https://github.com/dreamchess/dreamchess/releases/download/0.3.0/DreamChess-0.3.0-win64.msi",
+      "kind": "download",
+      "note": "Developer-published Windows x64 installer from the official DreamChess 0.3.0 GitHub release. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",

@@ -5728,6 +5728,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-summoning-wars": {
+    src: "media/learning/open3d-summoning-wars.webp",
+    alt: "A spellcaster attacks a zombie with a blue ice burst inside a cave while red damage numbers appear above the target.",
+    caption:
+      "Creator-published gameplay: Summoning Wars gameplay screenshot published by the project team. Image rights remain with their respective owners.",
+    sourceUrl:
+      "https://sumwars.org/wiki/File:The_blizzard_-_highly_effective_when_used_correct.jpg",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://sumwars.org/mediawiki/images/2/2c/The_blizzard_-_highly_effective_when_used_correct.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-uebergame": {
     src: "media/learning/open3d-uebergame.webp",
     alt: "A third-person soldier advances through grass near a lighthouse, with health and weapon indicators visible.",
@@ -6906,6 +6920,33 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     caption:
       "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-rally-mandaw.webp",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-the-little-drop": {
+    src: "media/learning/open3d-the-little-drop.webp",
+    alt: "Two blue water-drop characters on a rocky bank beneath shafts of light, with an on-screen seed-planting prompt.",
+    caption:
+      "Creator-published gameplay screenshot from The Little Drop showing a seed-planting spot and the points and water counters. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/grimfang/pyweek21/blob/2de43c3ae7b0217a11312e3d80f6ca90d2afb336/Design/Manual/inGameScreens/Planting.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/grimfang/pyweek21/2de43c3ae7b0217a11312e3d80f6ca90d2afb336/Design/Manual/inGameScreens/Planting.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-the-martian-thirst": {
+    src: "media/learning/open3d-the-martian-thirst.webp",
+    alt: "Pixel-art side view of a firefight in a Martian facility, with ammunition icons at the top of the screen.",
+    caption:
+      "Creator-published gameplay screenshot from The Martian Thirst. Silhouetted characters trade shots in a corridor with windows looking out onto Mars. Image rights remain with the original creator.",
+    sourceUrl: "https://entikan.itch.io/the-martian-thirst",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1hZ2UvNDExNDQ0MS8yNDUyMDQ0NC5qcGc=/original/YchogW.jpg",
     width: 1280,
     height: 720,
   },
