@@ -107,7 +107,7 @@ Adaptation: if extending it, explicitly provide mechanics and test readable susp
 
 Light a simple blockout using manually placed direct and fill/bounce lights. Disable automatic/precomputed help relevant to the exercise. Start with grayscale surfaces and desaturated light if color obscures the lesson.
 
-This is a learning constraint for understanding light, not a claim that production should avoid modern lighting systems.
+Limiting the lighting tools in this exercise isolates the effect of light.
 
 ### Whiteboard 2D — outline
 

@@ -165,7 +165,7 @@ Godot 内部的 `release_pressed_events()` 先刷新缓冲输入，再清除若�
 
 RNA 目标定义区分了与活动材质图像纹理节点关联的图像数据块，以及活动网格颜色属性。图像目标验证检查 UV 是否存在以及图像是否初始化。没有活动图像的材质槽可能生成信息性报告后继续，因此预期目标清单需要独立检查；不要从单一操作器状态推断每种材质都收到了结果。[目标定义][light-blender-rna]、[验证，第 499–589 行][light-blender-bake]
 
-操作器公开了外部文件路径和保存模式枚举，但所检查的初始化显式将 EXTERNAL 改写为 INTERNAL。因此，在此版本中，提供文件路径不能证明纹理已写出。图像输出被标记为脏。显式的 `Image.save` 路径报告保存失败；`Image.pack` 可在内存中打包脏图像数据。仅打包不会将包含它的 `.blend` 保存到磁盘。这些是可用的持久化路径，并非声称其他所有方式都无效。应保留输出报告、保存的字节及冷启动重新打开的观测，而非接受内存内预览。[公开的模式，第 446–453 行][light-blender-rna]、[强制模式，第 1918–1922 行；文件路径，第 2253–2257 行；脏图像，第 331 行][light-blender-bake]、[图像保存／打包，第 91–145 和 303–329 行][light-blender-image]
+操作器公开了外部文件路径和保存模式枚举，但所检查的初始化显式将 EXTERNAL 改写为 INTERNAL。因此，在此版本中，提供文件路径不能证明纹理已写出。图像输出被标记为脏。显式的 `Image.save` 路径报告保存失败；`Image.pack` 可在内存中打包脏图像数据。仅打包不会将包含它的 `.blend` 保存到磁盘。应保留输出报告、保存的字节及冷启动重新打开的观测，而非接受内存内预览。[公开的模式，第 446–453 行][light-blender-rna]、[强制模式，第 1918–1922 行；文件路径，第 2253–2257 行；脏图像，第 331 行][light-blender-bake]、[图像保存／打包，第 91–145 和 303–329 行][light-blender-image]
 
 在没有烘焙作业运行时，invoke 路径启动一个作业并返回 RUNNING_MODAL；已有烘焙作业时则返回 CANCELLED。一旦该作业不再存在，模态处理程序就报告 FINISHED；仅此条件不能区分烘焙成功、取消或失败。同步执行路径返回烘焙结果，但其非选中到活动的批处理循环反复赋值结果，并返回最后一个值。  **对适配器的启示：**  分别记录派发模式、目标／对象清单、逐对象报告、输出变化和持久化。未复现批处理失败或取消行为。[调用，第 2171–2220 行；模态，第 139–151 行；同步路径，第 1931–1989 行][light-blender-bake]
 
@@ -333,7 +333,7 @@ Godot 的 [AudioServer 参考](https://docs.godotengine.org/en/4.5/classes/class
 
 浏览器引擎观测与导出也有独立的完成接口：[Three.js 异步渲染目标回读](https://threejs.org/docs/pages/WebGLRenderer)解析得到像素数据，而 [GLTFExporter.parseAsync](https://threejs.org/docs/pages/GLTFExporter.html)解析得到导出数据，压缩纹理还要求使用渲染器专用工具。任何一个 Promise 单独都不会保存证据文件，也不能证明下游导入器保真度。[Babylon NullEngine](https://github.com/BabylonJS/Documentation/blob/master/content/setup/support/serverSide.md)不要求 WebGL 设备，但不产生渲染；其下的服务器／测试／导入支持不能确立视觉正确性。取消、幂等重试和输出持久性仍未经验证。
 
-[Houdini 许可](https://www.sidefx.com/docs/houdini/licensing/system.html)记载了可配置的产品／模式选择层级。拟议部署证据应记录所选产品、模式和实际许可配置；主机 UI 或无头入口可工作，不代表具有使用权。不声明价格、免费层级或通用许可签出顺序。
+[Houdini 许可](https://www.sidefx.com/docs/houdini/licensing/system.html)记载了可配置的产品／模式选择层级。拟议部署证据应记录所选产品、模式和实际许可配置；部署前请确认实际许可覆盖所选的 UI 或无头运行方式。
 
 [Epic 的行为树概述](https://dev.epicgames.com/documentation/en-us/unreal-engine/behavior-tree-in-unreal-engine---overview)，按 UE 5.8 文档检查，描述了所观察的 Blackboard 条件中止低优先级分支，以及 Simple Parallel／服务如何组织行为。概念上的并行不等于操作系统线程并行，也不能确立通用取消契约。
 

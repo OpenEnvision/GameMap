@@ -129,7 +129,7 @@
   },
   "resource:epic-developer-community": {
     "summary": "Epic 的 UE 社区入口，汇集作者教程、学习资料和版本相关讨论。",
-    "detail": "适合查找官方参考之外的材质、动画、Blueprint 和性能排错经验。使用具体贡献时检查作者、日期、引擎版本及可复现项目，社区入口本身不代表所有文章均已验证。"
+    "detail": "适合查找官方参考之外的材质、动画、Blueprint 和性能排错经验。查阅社区文章时，可按作者、发布日期、引擎版本和配套项目筛选。"
   },
   "resource:threejs": {
     "summary": "面向浏览器的 JavaScript 3D 渲染库，提供场景、相机、材质和资源加载器。",
@@ -181,7 +181,7 @@
   },
   "resource:opengame": {
     "summary": "使用可复用模板与调试技能生成浏览器游戏项目。",
-    "detail": "通过 Template Skill 和 Debug Skill 将自然语言需求转成 Canvas、Phaser、three.js 等网页项目。公开 CLI 支持 OpenAI 兼容模型端点，论文另介绍 GameCoder-27B。浏览器执行与视觉评判检查构建、可用性和意图对齐；README 仍将独立评估流程列为后续发布内容，框架公开本身不代表模型权重和完整评估均可复现。"
+    "detail": "通过 Template Skill 和 Debug Skill 将自然语言需求转成 Canvas、Phaser、three.js 等网页项目。公开 CLI 支持 OpenAI 兼容模型端点，论文另介绍 GameCoder-27B。浏览器执行与视觉评判检查构建、可用性和意图对齐；README 将独立评估流程列为后续发布内容。"
   },
   "resource:gamedevbench": {
     "summary": "在已有 Godot 项目中评估编程代理完成开发任务的能力。",

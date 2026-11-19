@@ -8,10 +8,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Three.js / TypeScript",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -22,18 +22,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/tailuge/billiards",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/tailuge/billiards",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: Repository: GPL-3.0; itch lists LGPLv3, a license conflict. Asset statement: Main repository GPLv3; dependencies and assets require their own notices. Individual sound effects and textures have not all been audited. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Conservatively use the repository GPLv3 file, not the itch LGPLv3 tag, and clarify before reuse. Online service availability is untested. Three cushion billiards is another mode from the same repository, not a separate game. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: Repository: GPL-3.0; itch lists LGPLv3, a license conflict. Asset statement: Main repository GPLv3; dependencies and assets require their own notices. Individual sound effects and textures have not all been audited. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Conservatively use the repository GPLv3 file, not the itch LGPLv3 tag, and clarify before reuse. Online service availability is untested. Three cushion billiards is another mode from the same repository, not a separate game. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://tailuge.itch.io/billiards",
-      "note": "Imported itch-open-source-3d-games.json, row G002, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://tailuge.itch.io/billiards https://github.com/tailuge/billiards https://github.com/tailuge/billiards/blob/master/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G002, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://tailuge.itch.io/billiards https://github.com/tailuge/billiards https://github.com/tailuge/billiards/blob/master/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -53,10 +53,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Godot 3.6; Vita branch: 3.5",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -73,12 +73,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/POtOSoftware/HTRAGS-232",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT. Asset statement: Third-party assets need separate confirmation; MIT code does not automatically cover all assets. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Each run is very short, not a long-form adventure. The author's new HTRAGS-232 repository supersedes the old repository and should be preferred. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT. Asset statement: Third-party assets need separate confirmation; MIT code does not automatically cover all assets. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Each run is very short, not a long-form adventure. The author's new HTRAGS-232 repository supersedes the old repository and should be preferred. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://poto-software.itch.io/how-to-rob-a-gas-station",
-      "note": "Imported itch-open-source-3d-games.json, row G003, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://poto-software.itch.io/how-to-rob-a-gas-station https://github.com/POtOSoftware/HTRAGS-232"
+      "note": "Imported itch-open-source-3d-games.json, row G003, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://poto-software.itch.io/how-to-rob-a-gas-station https://github.com/POtOSoftware/HTRAGS-232"
     },
     "resourceIds": [],
     "intake": {
@@ -98,10 +98,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -118,12 +118,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/POtOSoftware/HTRAGS-2",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: GPL-3.0. Asset statement: Third-party resources require separate verification. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Substantive development has stopped. The repository contains unfinished 2.0 work, so source may not match stable binaries; the author describes disorganized project structure. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: GPL-3.0. Asset statement: Third-party resources require separate verification. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Substantive development has stopped. The repository contains unfinished 2.0 work, so source may not match stable binaries; the author describes disorganized project structure. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://poto-software.itch.io/how-to-rob-a-gas-station-2",
-      "note": "Imported itch-open-source-3d-games.json, row G004, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://poto-software.itch.io/how-to-rob-a-gas-station-2 https://github.com/POtOSoftware/HTRAGS-2 https://poto-software.itch.io/how-to-rob-a-gas-station-2/devlog/457401/htrags-2-le-postmortem"
+      "note": "Imported itch-open-source-3d-games.json, row G004, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://poto-software.itch.io/how-to-rob-a-gas-station-2 https://github.com/POtOSoftware/HTRAGS-2 https://poto-software.itch.io/how-to-rob-a-gas-station-2/devlog/457401/htrags-2-le-postmortem"
     },
     "resourceIds": [],
     "intake": {
@@ -143,10 +143,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "C++ / SFML; custom fractal ray-marching renderer",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -163,12 +163,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/HackerPoet/MarbleMarcher",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: GPL-2.0, explicitly identified as the code license on itch. Asset statement: Individual asset licenses have not been verified; check the repository before reusing music or other assets. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. Qualifications: High GPU requirements; the original version's updates are old, and a community edition is another option. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: GPL-2.0, explicitly identified as the code license on itch. Asset statement: Individual asset licenses have not been verified; check the repository before reusing music or other assets. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. High GPU requirements; the original version's updates are old, and a community edition is another option. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://codeparade.itch.io/marblemarcher",
-      "note": "Imported itch-open-source-3d-games.json, row G007, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://codeparade.itch.io/marblemarcher https://github.com/HackerPoet/MarbleMarcher https://github.com/HackerPoet/MarbleMarcher/blob/master/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G007, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://codeparade.itch.io/marblemarcher https://github.com/HackerPoet/MarbleMarcher https://github.com/HackerPoet/MarbleMarcher/blob/master/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -188,10 +188,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -208,12 +208,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/m4ym4y/museum-of-all-things",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT. Asset statement: AmbientCG textures: CC0; Cormorant Garamond font: OFL. Dynamic Wikipedia/Wikimedia exhibits each retain their own licenses. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Requires an internet connection to fetch exhibits. Not a traditional combat or goal-completion game. Encyclopedia content must not be treated as MIT assets. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT. Asset statement: AmbientCG textures: CC0; Cormorant Garamond font: OFL. Dynamic Wikipedia/Wikimedia exhibits each retain their own licenses. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Requires an internet connection to fetch exhibits. Not a traditional combat or goal-completion game. Encyclopedia content must not be treated as MIT assets. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://mayeclair.itch.io/museum-of-all-things",
-      "note": "Imported itch-open-source-3d-games.json, row G009, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://mayeclair.itch.io/museum-of-all-things https://github.com/m4ym4y/museum-of-all-things https://may.as/moat/"
+      "note": "Imported itch-open-source-3d-games.json, row G009, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://mayeclair.itch.io/museum-of-all-things https://github.com/m4ym4y/museum-of-all-things https://may.as/moat/"
     },
     "resourceIds": [],
     "intake": {
@@ -233,10 +233,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Quake-derived engine / QuakeC",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -253,12 +253,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/nzp-team/nzportable",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: GPL-2.0, explicitly stated in the itch text. Asset statement: CC BY-SA 4.0, explicitly stated in the itch text. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. Qualifications: A fan demake, not an official Activision product; most original maps and special mechanics remain unreplicated. Code and asset licenses do not grant trademark rights. The main source repository is a hub linking engine, quakec and assets repositories. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: GPL-2.0, explicitly stated in the itch text. Asset statement: CC BY-SA 4.0, explicitly stated in the itch text. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. A fan demake, not an official Activision product; most original maps and special mechanics remain unreplicated. Code and asset licenses do not grant trademark rights. The main source repository is a hub linking engine, quakec and assets repositories. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://nzp-team.itch.io/nazi-zombies-portable",
-      "note": "Imported itch-open-source-3d-games.json, row G010, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://nzp-team.itch.io/nazi-zombies-portable https://github.com/nzp-team/nzportable https://github.com/nzp-team/quakec"
+      "note": "Imported itch-open-source-3d-games.json, row G010, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://nzp-team.itch.io/nazi-zombies-portable https://github.com/nzp-team/nzportable https://github.com/nzp-team/quakec"
     },
     "resourceIds": [],
     "intake": {
@@ -278,10 +278,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Three.js",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -292,18 +292,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/SamadiPour/snack-hole-game",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/SamadiPour/snack-hole-game",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT. Asset statement: The supplied review says the full MIT text was read. The author discloses AI-assisted code and images; the root license cannot guarantee third-party rights for all generated assets. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Recently released; long-term balance remains uncertain. Comments mention grind in some progression and balance issues with the largest airport plane. Not playtested. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT. Asset statement: The supplied review says the full MIT text was read. The author discloses AI-assisted code and images; the root license cannot guarantee third-party rights for all generated assets. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Recently released; long-term balance remains uncertain. Comments mention grind in some progression and balance issues with the largest airport plane. Not playtested. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://samadipour.itch.io/snack-hole",
-      "note": "Imported itch-open-source-3d-games.json, row G014, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://samadipour.itch.io/snack-hole https://github.com/SamadiPour/snack-hole-game https://github.com/SamadiPour/snack-hole-game/blob/main/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G014, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://samadipour.itch.io/snack-hole https://github.com/SamadiPour/snack-hole-game https://github.com/SamadiPour/snack-hole-game/blob/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -323,10 +323,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Java / custom 3D engine",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -343,12 +343,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/Tribal-Trouble/tribaltrouble",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: GPL-2.0, per itch and repository LICENSE. Asset statement: Assets are included in the repository, but their separate licensing scope has not been checked individually; verify before reuse. Access/price snapshot: Free / optional payment. Supplied price/access snapshot, not a fresh check. Qualifications: A community revival supported by the original author, not a new game from the original company. Extended features remain in development; itch labels it Released, but some downloads are marked prerelease. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: GPL-2.0, per itch and repository LICENSE. Asset statement: Assets are included in the repository, but their separate licensing scope has not been checked individually; verify before reuse. Access/price snapshot: Free / optional payment. Supplied price/access snapshot, not a fresh check. A community revival supported by the original author, not a new game from the original company. Extended features remain in development; itch labels it Released, but some downloads are marked prerelease. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://rcubdev.itch.io/tribal-trouble-resurrected",
-      "note": "Imported itch-open-source-3d-games.json, row G018, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://rcubdev.itch.io/tribal-trouble-resurrected https://github.com/Tribal-Trouble/tribaltrouble"
+      "note": "Imported itch-open-source-3d-games.json, row G018, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://rcubdev.itch.io/tribal-trouble-resurrected https://github.com/Tribal-Trouble/tribaltrouble"
     },
     "resourceIds": [],
     "intake": {
@@ -368,10 +368,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -388,12 +388,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/HauntedBees/bag-witch",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: Repository LICENSE identifies AGPL-3.0; itch's license selector instead says GPL-3.0, a conflict requiring confirmation. Asset statement: Itch lists CC BY 4.0. The repository separately credits third-party art and audio; check their individual licenses. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Follow the repository license and seek further confirmation rather than relying on the conflicting itch GPL-3.0 selector. The author reports Windows crashes and AI problems and recommends Linux. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: Repository LICENSE identifies AGPL-3.0; itch's license selector instead says GPL-3.0, a conflict requiring confirmation. Asset statement: Itch lists CC BY 4.0. The repository separately credits third-party art and audio; check their individual licenses. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Follow the repository license and seek further confirmation rather than relying on the conflicting itch GPL-3.0 selector. The author reports Windows crashes and AI problems and recommends Linux. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://hauntedbees.itch.io/bag-witch",
-      "note": "Imported itch-open-source-3d-games.json, row G022, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://hauntedbees.itch.io/bag-witch https://github.com/HauntedBees/bag-witch https://itch.io/devlog/1608863/bag-witch-ready-for-showtime-a-retrospective.amp"
+      "note": "Imported itch-open-source-3d-games.json, row G022, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://hauntedbees.itch.io/bag-witch https://github.com/HauntedBees/bag-witch https://itch.io/devlog/1608863/bag-witch-ready-for-showtime-a-retrospective.amp"
     },
     "resourceIds": [],
     "intake": {
@@ -413,10 +413,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Three.js / Vue",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -427,18 +427,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/Underclassity/brains-out",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/Underclassity/brains-out",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT; Copyright 2023 Ivan Hornovski. Asset statement: OpenGameArt music and sound effects credit several independent authors. Each audio license has not been checked, so they cannot all be treated as MIT. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: The author warns that sessionStorage may lose scores/settings when the page closes and does not recommend mobile. Repository and itch completion labels differ. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT; Copyright 2023 Ivan Hornovski. Asset statement: OpenGameArt music and sound effects credit several independent authors. Each audio license has not been checked, so they cannot all be treated as MIT. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. The author warns that sessionStorage may lose scores/settings when the page closes and does not recommend mobile. Repository and itch completion labels differ. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://underclassity.itch.io/brains-out",
-      "note": "Imported itch-open-source-3d-games.json, row G023, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://underclassity.itch.io/brains-out https://github.com/Underclassity/brains-out https://github.com/Underclassity/brains-out/blob/master/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G023, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://underclassity.itch.io/brains-out https://github.com/Underclassity/brains-out https://github.com/Underclassity/brains-out/blob/master/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -458,10 +458,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Unity / C#",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -472,18 +472,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/bearlikelion/Cube3-2btn-Jam",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/bearlikelion/Cube3-2btn-Jam",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT. Asset statement: Music explicitly uses CC BY-SA 4.0; the Lazer84 font license needs separate verification. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Simple content and restricted planar movement despite 3D presentation. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT. Asset statement: Music explicitly uses CC BY-SA 4.0; the Lazer84 font license needs separate verification. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Simple content and restricted planar movement despite 3D presentation. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://bearlikelion.itch.io/cube3",
-      "note": "Imported itch-open-source-3d-games.json, row G025, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://bearlikelion.itch.io/cube3 https://github.com/bearlikelion/Cube3-2btn-Jam https://github.com/bearlikelion/Cube3-2btn-Jam/blob/master/LICENSE.md"
+      "note": "Imported itch-open-source-3d-games.json, row G025, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://bearlikelion.itch.io/cube3 https://github.com/bearlikelion/Cube3-2btn-Jam https://github.com/bearlikelion/Cube3-2btn-Jam/blob/master/LICENSE.md"
     },
     "resourceIds": [],
     "intake": {
@@ -503,10 +503,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "C++20 / SDL2 / Dantares OpenGL; Emscripten-WebGL2 browser version",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -523,12 +523,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/esotericpig/EkoScape",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: GPL-3.0-or-later, explicitly stated in the README. Asset statement: Monogram font, Kronbits starfield textures and other resources have separate credits. Newer realistic textures use generative AI; the author says the code is handwritten. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Small retro maze game. Its supplied itch 5.0/5 snapshot has only one vote and does not establish broad acclaim. Not playtested. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: GPL-3.0-or-later, explicitly stated in the README. Asset statement: Monogram font, Kronbits starfield textures and other resources have separate credits. Newer realistic textures use generative AI; the author says the code is handwritten. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Small retro maze game. Its supplied itch 5.0/5 snapshot has only one vote and does not establish broad acclaim. Not playtested. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://esotericpig.itch.io/ekoscape",
-      "note": "Imported itch-open-source-3d-games.json, row G027, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://esotericpig.itch.io/ekoscape https://github.com/esotericpig/EkoScape https://github.com/esotericpig/EkoScape/blob/main/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G027, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://esotericpig.itch.io/ekoscape https://github.com/esotericpig/EkoScape https://github.com/esotericpig/EkoScape/blob/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -548,10 +548,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Three.js / Rapier / TypeScript",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -562,18 +562,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/saomin0317/knight-duel",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/saomin0317/knight-duel",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: GPL-3.0. Asset statement: Code GPLv3; the author identifies KayKit models and Kenney sound effects as CC0, and the US Marine Band performance of The Blue Danube as public domain. Retain third-party notices. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Author labels violence/gore and age 15+. The itch version has local saves only; the official website separately provides cloud features. AI-assisted development is disclosed. Not playtested. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: GPL-3.0. Asset statement: Code GPLv3; the author identifies KayKit models and Kenney sound effects as CC0, and the US Marine Band performance of The Blue Danube as public domain. Retain third-party notices. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Author labels violence/gore and age 15+. The itch version has local saves only; the official website separately provides cloud features. AI-assisted development is disclosed. Not playtested. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://saomin.itch.io/knightswaltz",
-      "note": "Imported itch-open-source-3d-games.json, row G030, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://saomin.itch.io/knightswaltz https://github.com/saomin0317/knight-duel https://github.com/saomin0317/knight-duel/blob/main/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G030, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://saomin.itch.io/knightswaltz https://github.com/saomin0317/knight-duel https://github.com/saomin0317/knight-duel/blob/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -593,10 +593,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Unity 6 / C# / URP",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -613,12 +613,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/llamacademy/minigolf",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT. Asset statement: Individual asset directories have not been separately audited for licensing. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Portrait/mobile-first design; desktop control adaptation is limited. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT. Asset statement: Individual asset directories have not been separately audited for licensing. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Portrait/mobile-first design; desktop control adaptation is limited. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://llamacademy.itch.io/minigolf",
-      "note": "Imported itch-open-source-3d-games.json, row G031, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://llamacademy.itch.io/minigolf https://github.com/llamacademy/minigolf https://github.com/llamacademy/minigolf/blob/main/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G031, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://llamacademy.itch.io/minigolf https://github.com/llamacademy/minigolf https://github.com/llamacademy/minigolf/blob/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -638,10 +638,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "C++ / HyperRogue–RogueViz",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -658,12 +658,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/zenorogue/hyperrogue/",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: Source-file headers specify GPL-2.0-or-later and reference hyper.cpp; itch metadata says GPL-3.0, a version conflict. Asset statement: Music: CC BY-SA 3.0. Check upstream file licenses for other resources. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. Qualifications: Download names include demo. Present as a mathematical/physics experiment, not a content-heavy full commercial game. Confirm the applicable version from specific source declarations rather than relying on conflicting itch metadata. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: Source-file headers specify GPL-2.0-or-later and reference hyper.cpp; itch metadata says GPL-3.0, a version conflict. Asset statement: Music: CC BY-SA 3.0. Check upstream file licenses for other resources. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. Download names include demo. Present as a mathematical/physics experiment, not a content-heavy full commercial game. Confirm the applicable version from specific source declarations rather than relying on conflicting itch metadata. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://zenorogue.itch.io/nil-rider",
-      "note": "Imported itch-open-source-3d-games.json, row G032, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://zenorogue.itch.io/nil-rider https://github.com/zenorogue/hyperrogue/ https://raw.githubusercontent.com/zenorogue/hyperrogue/master/hyper.cpp https://raw.githubusercontent.com/zenorogue/hyperrogue/master/rogueviz/nilrider/nilrider.cpp"
+      "note": "Imported itch-open-source-3d-games.json, row G032, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://zenorogue.itch.io/nil-rider https://github.com/zenorogue/hyperrogue/ https://raw.githubusercontent.com/zenorogue/hyperrogue/master/hyper.cpp https://raw.githubusercontent.com/zenorogue/hyperrogue/master/rogueviz/nilrider/nilrider.cpp"
     },
     "resourceIds": [],
     "intake": {
@@ -683,10 +683,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Rust / Bevy",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -703,12 +703,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/Solype/Asteroid",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: GPL-3.0; the supplied review says the game repository LICENSE and README were read. Do not add an unverified -only or -or-later qualifier. Asset statement: README assigns individual licenses within assets; unspecified assets share the project's GPL v3. Not all models/audio have been individually audited. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. Qualifications: Academic, small-scale project. The supplied GPL v3 confirmation does not resolve an -only versus -or-later qualifier. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: GPL-3.0; the supplied review says the game repository LICENSE and README were read. Do not add an unverified -only or -or-later qualifier. Asset statement: README assigns individual licenses within assets; unspecified assets share the project's GPL v3. Not all models/audio have been individually audited. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. Academic, small-scale project. The supplied GPL v3 confirmation does not resolve an -only versus -or-later qualifier. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://mael-rabot.itch.io/ast3roid",
-      "note": "Imported itch-open-source-3d-games.json, row G034, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://mael-rabot.itch.io/ast3roid https://github.com/Solype/Asteroid https://github.com/Solype/Asteroid/blob/main/LICENSE https://github.com/Solype/Asteroid/blob/main/README.md https://github.com/Solype/Asteroid/tree/main"
+      "note": "Imported itch-open-source-3d-games.json, row G034, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://mael-rabot.itch.io/ast3roid https://github.com/Solype/Asteroid https://github.com/Solype/Asteroid/blob/main/LICENSE https://github.com/Solype/Asteroid/blob/main/README.md https://github.com/Solype/Asteroid/tree/main"
     },
     "resourceIds": [],
     "intake": {
@@ -728,10 +728,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Godot 4.7",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -748,12 +748,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/bearlikelion/BoomerShooter",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT. Asset statement: Third-party models, audio, fonts and other assets require separate checks. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Do not recommend as a finished product. Only one review; more appropriate as an FPS implementation reference. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT. Asset statement: Third-party models, audio, fonts and other assets require separate checks. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Do not recommend as a finished product. Only one review; more appropriate as an FPS implementation reference. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://bearlikelion.itch.io/boomer-shooter",
-      "note": "Imported itch-open-source-3d-games.json, row G035, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://bearlikelion.itch.io/boomer-shooter https://github.com/bearlikelion/BoomerShooter"
+      "note": "Imported itch-open-source-3d-games.json, row G035, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://bearlikelion.itch.io/boomer-shooter https://github.com/bearlikelion/BoomerShooter"
     },
     "resourceIds": [],
     "intake": {
@@ -773,10 +773,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Three.js",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -787,18 +787,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/wiz-code/cross-star-island",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/wiz-code/cross-star-island",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT; Copyright 2024 wiz-code, reportedly checked in the supplied review. Asset statement: Non-code resources have not been individually cleared. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Insufficient ratings or third-party completion evidence. Treat as a study example, not a strong high-quality recommendation. Not playtested. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT; Copyright 2024 wiz-code, reportedly checked in the supplied review. Asset statement: Non-code resources have not been individually cleared. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Insufficient ratings or third-party completion evidence. Treat as a study example, not a strong high-quality recommendation. Not playtested. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://wiz-code.itch.io/cross-star-island",
-      "note": "Imported itch-open-source-3d-games.json, row G037, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://wiz-code.itch.io/cross-star-island https://github.com/wiz-code/cross-star-island https://github.com/wiz-code/cross-star-island/blob/main/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G037, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://wiz-code.itch.io/cross-star-island https://github.com/wiz-code/cross-star-island https://github.com/wiz-code/cross-star-island/blob/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -818,10 +818,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Custom JavaScript / WebGL / glMatrix",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -832,18 +832,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/invadium/dronepolis",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/invadium/dronepolis",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: Apache-2.0. Asset statement: The supplied review reports reading the full Apache 2.0 file; glMatrix and other third-party components require their own notices. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: README lists unresolved AI wall collisions, shooting through walls and collision/infinite-shield issues. Not a polished defect-free product; legacy build stack. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: Apache-2.0. Asset statement: The supplied review reports reading the full Apache 2.0 file; glMatrix and other third-party components require their own notices. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. README lists unresolved AI wall collisions, shooting through walls and collision/infinite-shield issues. Not a polished defect-free product; legacy build stack. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://invadium.itch.io/dronepolis",
-      "note": "Imported itch-open-source-3d-games.json, row G038, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://invadium.itch.io/dronepolis https://github.com/invadium/dronepolis https://github.com/invadium/dronepolis/blob/master/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G038, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://invadium.itch.io/dronepolis https://github.com/invadium/dronepolis https://github.com/invadium/dronepolis/blob/master/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -863,10 +863,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Godot 4.6 / C#",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -883,12 +883,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/SirNeirda/godot_procedural_infinite_world",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT. Asset statement: LICENSE lists third-party robot and nature-model sources; check each asset pack's license. MIT code alone does not permit commercial use of the whole package. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Not a complete commercial game; some world-persistence and swimming features remain unimplemented. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT. Asset statement: LICENSE lists third-party robot and nature-model sources; check each asset pack's license. MIT code alone does not permit commercial use of the whole package. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Not a complete commercial game; some world-persistence and swimming features remain unimplemented. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://bouncerocksoftware.itch.io/infinite-runner",
-      "note": "Imported itch-open-source-3d-games.json, row G039, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://bouncerocksoftware.itch.io/infinite-runner https://github.com/SirNeirda/godot_procedural_infinite_world https://github.com/SirNeirda/godot_procedural_infinite_world/blob/main/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G039, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://bouncerocksoftware.itch.io/infinite-runner https://github.com/SirNeirda/godot_procedural_infinite_world https://github.com/SirNeirda/godot_procedural_infinite_world/blob/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -908,10 +908,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Three.js / custom marching-cubes destructible terrain",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -922,18 +922,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/sdsds222/Interstellar-Demolition-Office",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/sdsds222/Interstellar-Demolition-Office",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT. Asset statement: MIT Copyright 2026 sdsds222. The author says no AI was used. Dependencies and non-original resources have not been fully audited. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Explicitly a proof of concept, not a polished large game; better suited to studying destruction effects and gameplay prototyping. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT. Asset statement: MIT Copyright 2026 sdsds222. The author says no AI was used. Dependencies and non-original resources have not been fully audited. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Explicitly a proof of concept, not a polished large game; better suited to studying destruction effects and gameplay prototyping. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://sdsds222.itch.io/interstellar-demolition-office",
-      "note": "Imported itch-open-source-3d-games.json, row G040, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://sdsds222.itch.io/interstellar-demolition-office https://github.com/sdsds222/Interstellar-Demolition-Office https://github.com/sdsds222/Interstellar-Demolition-Office/blob/main/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G040, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://sdsds222.itch.io/interstellar-demolition-office https://github.com/sdsds222/Interstellar-Demolition-Office https://github.com/sdsds222/Interstellar-Demolition-Office/blob/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -953,10 +953,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Unity / C# / Leap Motion",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -973,12 +973,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/39M/LMix",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT for code. Asset statement: Demo songs and music copyrights need separate confirmation; MIT code does not make songs freely reusable. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Legacy Leap Motion/Unity SDK compatibility needs attention. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT for code. Asset statement: Demo songs and music copyrights need separate confirmation; MIT code does not make songs freely reusable. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Legacy Leap Motion/Unity SDK compatibility needs attention. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://39.itch.io/lmix",
-      "note": "Imported itch-open-source-3d-games.json, row G041, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://39.itch.io/lmix https://github.com/39M/LMix"
+      "note": "Imported itch-open-source-3d-games.json, row G041, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://39.itch.io/lmix https://github.com/39M/LMix"
     },
     "resourceIds": [],
     "intake": {
@@ -998,10 +998,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "A-Frame / Three.js / WebVR",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1012,18 +1012,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/elocnatsirt/off-killter",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/elocnatsirt/off-killter",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: WTFPL-2.0, described as a free-software license but not OSI-approved. Asset statement: Original code uses WTFPL; the author's development log explicitly retains separate licenses for third-party assets and libraries, so not everything is WTFPL. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Legacy WebVR implementation; the author tested only Firefox with HTC Vive. A player reports Quest 3 failure, and low frame rates affect playback. Historical technology/design reference only. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: WTFPL-2.0, described as a free-software license but not OSI-approved. Asset statement: Original code uses WTFPL; the author's development log explicitly retains separate licenses for third-party assets and libraries, so not everything is WTFPL. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Legacy WebVR implementation; the author tested only Firefox with HTC Vive. A player reports Quest 3 failure, and low frame rates affect playback. Historical technology/design reference only. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://elocnat.itch.io/off-killter",
-      "note": "Imported itch-open-source-3d-games.json, row G042, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://elocnat.itch.io/off-killter https://github.com/elocnatsirt/off-killter https://github.com/elocnatsirt/off-killter/blob/master/LICENSE https://elocnat.itch.io/off-killter/devlog/151104/welcome-to-killter-innovations"
+      "note": "Imported itch-open-source-3d-games.json, row G042, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://elocnat.itch.io/off-killter https://github.com/elocnatsirt/off-killter https://github.com/elocnatsirt/off-killter/blob/master/LICENSE https://elocnat.itch.io/off-killter/devlog/151104/welcome-to-killter-innovations"
     },
     "resourceIds": [],
     "intake": {
@@ -1043,10 +1043,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Godot 4.0.1",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1057,18 +1057,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/teeeece/godot_open_star_fighter",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/teeeece/godot_open_star_fighter",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT. Asset statement: Itch declares CC0. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Template/prototype, not a full single-player campaign; very small rating sample. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT. Asset statement: Itch declares CC0. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Template/prototype, not a full single-player campaign; very small rating sample. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://teeeece.itch.io/open-star-fighter",
-      "note": "Imported itch-open-source-3d-games.json, row G043, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://teeeece.itch.io/open-star-fighter https://github.com/teeeece/godot_open_star_fighter"
+      "note": "Imported itch-open-source-3d-games.json, row G043, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://teeeece.itch.io/open-star-fighter https://github.com/teeeece/godot_open_star_fighter"
     },
     "resourceIds": [],
     "intake": {
@@ -1088,10 +1088,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Godot 3.5",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1108,12 +1108,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/teeeece/godot_open_target_shooter",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT. Asset statement: Blender files: CC BY 4.0; individual asset directories have their own licenses. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Not a long-form commercial finished product; better for learning, modification and short play sessions. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT. Asset statement: Blender files: CC BY 4.0; individual asset directories have their own licenses. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Not a long-form commercial finished product; better for learning, modification and short play sessions. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://teeeece.itch.io/open-target-shooter",
-      "note": "Imported itch-open-source-3d-games.json, row G044, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://teeeece.itch.io/open-target-shooter https://github.com/teeeece/godot_open_target_shooter"
+      "note": "Imported itch-open-source-3d-games.json, row G044, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://teeeece.itch.io/open-target-shooter https://github.com/teeeece/godot_open_target_shooter"
     },
     "resourceIds": [],
     "intake": {
@@ -1133,10 +1133,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Unreal Engine / Blueprint",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1153,12 +1153,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/ue4split/random_game",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT for project code. Asset statement: Third-party resources and Unreal Engine itself have separate terms; a complete art audit has not been performed. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Workshop-learning prototype, not comparable to mature finished products for recommendations. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT for project code. Asset statement: Third-party resources and Unreal Engine itself have separate terms; a complete art audit has not been performed. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Workshop-learning prototype, not comparable to mature finished products for recommendations. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://ue4split.itch.io/random-game",
-      "note": "Imported itch-open-source-3d-games.json, row G045, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://ue4split.itch.io/random-game https://github.com/ue4split/random_game"
+      "note": "Imported itch-open-source-3d-games.json, row G045, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://ue4split.itch.io/random-game https://github.com/ue4split/random_game"
     },
     "resourceIds": [],
     "intake": {
@@ -1178,10 +1178,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Three.js",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1192,18 +1192,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/vegeta897/spin-blocks",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/vegeta897/spin-blocks",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT. Asset statement: MIT Copyright 2022 Devin Spikowski. Geometry is described as procedurally generated in style; not all dependencies or sound effects have been audited. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: The author calls it an experiment. Insufficient independent reputation evidence; suitable for studying spatial-gameplay code, not a claim of a mature major game. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT. Asset statement: MIT Copyright 2022 Devin Spikowski. Geometry is described as procedurally generated in style; not all dependencies or sound effects have been audited. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. The author calls it an experiment. Insufficient independent reputation evidence; suitable for studying spatial-gameplay code, not a claim of a mature major game. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://vegeta897.itch.io/spinblocks",
-      "note": "Imported itch-open-source-3d-games.json, row G047, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://vegeta897.itch.io/spinblocks https://github.com/vegeta897/spin-blocks https://github.com/vegeta897/spin-blocks/blob/main/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G047, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://vegeta897.itch.io/spinblocks https://github.com/vegeta897/spin-blocks https://github.com/vegeta897/spin-blocks/blob/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -1223,10 +1223,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "C++ / Cube 2-derived engine",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1243,12 +1243,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/tomatenquark/code",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: zlib, per itch and repository. Asset statement: Itch lists CC BY 4.0; specific resources follow their file-level licenses. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. Qualifications: Repository archived on January 6, 2024; not actively maintained. Treat as a historical/extended recommendation. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: zlib, per itch and repository. Asset statement: Itch lists CC BY 4.0; specific resources follow their file-level licenses. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. Repository archived on January 6, 2024; not actively maintained. Treat as a historical/extended recommendation. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://tomatenquark.itch.io/tomatenquark",
-      "note": "Imported itch-open-source-3d-games.json, row G050, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://tomatenquark.itch.io/tomatenquark https://github.com/tomatenquark/code"
+      "note": "Imported itch-open-source-3d-games.json, row G050, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://tomatenquark.itch.io/tomatenquark https://github.com/tomatenquark/code"
     },
     "resourceIds": [],
     "intake": {
@@ -1268,10 +1268,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Unity / C#",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1282,18 +1282,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/Marshal666/ZR",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/Marshal666/ZR",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT. Asset statement: Separate asset permissions have not been verified. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Distinctive small student work, not a highly finished large game. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT. Asset statement: Separate asset permissions have not been verified. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Distinctive small student work, not a highly finished large game. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://marshal666.itch.io/zr",
-      "note": "Imported itch-open-source-3d-games.json, row G052, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://marshal666.itch.io/zr https://github.com/Marshal666/ZR"
+      "note": "Imported itch-open-source-3d-games.json, row G052, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://marshal666.itch.io/zr https://github.com/Marshal666/ZR"
     },
     "resourceIds": [],
     "intake": {
@@ -1313,10 +1313,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Godot 4.7 / GDScript / Jolt",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1327,18 +1327,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/squabix/craftlander",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/squabix/craftlander",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT. Asset statement: Author's code and art use MIT; audio is deliberately excluded. Fonts and third-party content have separate licenses; JHCSineas font may not be redistributed independently. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Source builds have no audio by default; provide replacements. Importing .blend files requires Blender. Steam DLLs are not included in the repository. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT. Asset statement: Author's code and art use MIT; audio is deliberately excluded. Fonts and third-party content have separate licenses; JHCSineas font may not be redistributed independently. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Source builds have no audio by default; provide replacements. Importing .blend files requires Blender. Steam DLLs are not included in the repository. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://squabix.itch.io/craftlander",
-      "note": "Imported itch-open-source-3d-games.json, row G053, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://squabix.itch.io/craftlander https://github.com/squabix/craftlander"
+      "note": "Imported itch-open-source-3d-games.json, row G053, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://squabix.itch.io/craftlander https://github.com/squabix/craftlander"
     },
     "resourceIds": [],
     "intake": {
@@ -1358,10 +1358,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "C# / FNA, originally XNA",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1378,12 +1378,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/blendogames/flotilla",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: zlib, from the author's source repository. Asset statement: Proprietary commercial assets; the repository explicitly requires purchased game data and prohibits redistribution. Access/price snapshot: US$9.99. Supplied price/access snapshot, not a fresh check. Qualifications: The source author warns of legacy designs from a learning period. Assets must be legally purchased. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: zlib, from the author's source repository. Asset statement: Proprietary commercial assets; the repository explicitly requires purchased game data and prohibits redistribution. Access/price snapshot: US$9.99. Supplied price/access snapshot, not a fresh check. The source author warns of legacy designs from a learning period. Assets must be legally purchased. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://blendogames.itch.io/flotilla",
-      "note": "Imported itch-open-source-3d-games.json, row G055, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://blendogames.itch.io/flotilla https://github.com/blendogames/flotilla"
+      "note": "Imported itch-open-source-3d-games.json, row G055, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://blendogames.itch.io/flotilla https://github.com/blendogames/flotilla"
     },
     "resourceIds": [],
     "intake": {
@@ -1403,10 +1403,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Custom C++ 3D engine",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1417,18 +1417,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/WolfireGames/overgrowth",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/WolfireGames/overgrowth",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: Apache-2.0, explicitly stated by Wolfire's source repository. Asset statement: Game assets, levels and related content are proprietary, require legal purchase and cannot be redistributed without permission. Access/price snapshot: US$19.99. Supplied price/access snapshot, not a fresh check. Qualifications: Code only is open source; full playable commercial data still requires purchase. Includes bloody combat. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: Apache-2.0, explicitly stated by Wolfire's source repository. Asset statement: Game assets, levels and related content are proprietary, require legal purchase and cannot be redistributed without permission. Access/price snapshot: US$19.99. Supplied price/access snapshot, not a fresh check. Code only is open source; full playable commercial data still requires purchase. Includes bloody combat. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://wolfiregames.itch.io/overgrowth",
-      "note": "Imported itch-open-source-3d-games.json, row G057, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://wolfiregames.itch.io/overgrowth https://github.com/WolfireGames/overgrowth"
+      "note": "Imported itch-open-source-3d-games.json, row G057, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://wolfiregames.itch.io/overgrowth https://github.com/WolfireGames/overgrowth"
     },
     "resourceIds": [],
     "intake": {
@@ -1448,10 +1448,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "id Tech 4 / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1468,12 +1468,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/blendogames/quadrilateralcowboy",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: GPL-3.0, per the author's repository README/license. Asset statement: Art, models, sounds and other assets are proprietary; open-source code does not grant redistribution rights for commercial assets. Access/price snapshot: US$20. Supplied price/access snapshot, not a fresh check. Qualifications: Code only is open source. Running the full game requires purchasing assets; the entire game package is not a GPL resource for free reuse. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: GPL-3.0, per the author's repository README/license. Asset statement: Art, models, sounds and other assets are proprietary; open-source code does not grant redistribution rights for commercial assets. Access/price snapshot: US$20. Supplied price/access snapshot, not a fresh check. Code only is open source. Running the full game requires purchasing assets; the entire game package is not a GPL resource for free reuse. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://blendogames.itch.io/quadrilateralcowboy",
-      "note": "Imported itch-open-source-3d-games.json, row G058, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://blendogames.itch.io/quadrilateralcowboy https://github.com/blendogames/quadrilateralcowboy"
+      "note": "Imported itch-open-source-3d-games.json, row G058, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://blendogames.itch.io/quadrilateralcowboy https://github.com/blendogames/quadrilateralcowboy"
     },
     "resourceIds": [],
     "intake": {
@@ -1493,10 +1493,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Java / custom OpenGL engine",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1507,18 +1507,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://sourceforge.net/p/sulphur-nimbus-hel-s-elixir/code/ci/default/tree/",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://sourceforge.net/p/sulphur-nimbus-hel-s-elixir/code/ci/default/tree/",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MPL-2.0, explicitly identified by the author and SourceForge. Asset statement: Assets in res are all rights reserved, with some third-party content. The author explicitly disallows automatically treating assets as MPL. Access/price snapshot: US$6. Supplied price/access snapshot, not a fresh check. Qualifications: Six-degree-of-freedom/momentum flight requires practice. Code only is open source; assets visible alongside source do not automatically carry redistribution permission. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MPL-2.0, explicitly identified by the author and SourceForge. Asset statement: Assets in res are all rights reserved, with some third-party content. The author explicitly disallows automatically treating assets as MPL. Access/price snapshot: US$6. Supplied price/access snapshot, not a fresh check. Six-degree-of-freedom/momentum flight requires practice. Code only is open source; assets visible alongside source do not automatically carry redistribution permission. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://oddwarg.itch.io/sulphur-nimbus-hels-elixir",
-      "note": "Imported itch-open-source-3d-games.json, row G059, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://oddwarg.itch.io/sulphur-nimbus-hels-elixir https://sourceforge.net/p/sulphur-nimbus-hel-s-elixir/code/ci/default/tree/ https://sourceforge.net/projects/sulphur-nimbus-hel-s-elixir/ https://itch.io/post/1191969"
+      "note": "Imported itch-open-source-3d-games.json, row G059, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://oddwarg.itch.io/sulphur-nimbus-hels-elixir https://sourceforge.net/p/sulphur-nimbus-hel-s-elixir/code/ci/default/tree/ https://sourceforge.net/projects/sulphur-nimbus-hel-s-elixir/ https://itch.io/post/1191969"
     },
     "resourceIds": [],
     "intake": {
@@ -1538,10 +1538,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Unity / C#",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1552,18 +1552,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/llamacademy/chicken-defense",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/llamacademy/chicken-defense",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT for code. Asset statement: README says most art is not MIT. Llama model is copyrighted and may not be used in any published game or work; some OpenGameArt resources are CC0. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Suitable for code study; do not publish using the art unchanged. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT for code. Asset statement: README says most art is not MIT. Llama model is copyrighted and may not be used in any published game or work; some OpenGameArt resources are CC0. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Suitable for code study; do not publish using the art unchanged. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://llamacademy.itch.io/chicken-defense",
-      "note": "Imported itch-open-source-3d-games.json, row G060, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://llamacademy.itch.io/chicken-defense https://github.com/llamacademy/chicken-defense"
+      "note": "Imported itch-open-source-3d-games.json, row G060, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://llamacademy.itch.io/chicken-defense https://github.com/llamacademy/chicken-defense"
     },
     "resourceIds": [],
     "intake": {
@@ -1583,10 +1583,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Unity 6 / C#",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1603,12 +1603,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/llamacademy/dino-attack",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT for code. Asset statement: polyperfect art is educational-use only, may not be redistributed, and requires a separately purchased license for noneducational use. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Not an all-assets-open game. Extremely small rating sample. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT for code. Asset statement: polyperfect art is educational-use only, may not be redistributed, and requires a separately purchased license for noneducational use. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Not an all-assets-open game. Extremely small rating sample. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://llamacademy.itch.io/dino-attack",
-      "note": "Imported itch-open-source-3d-games.json, row G061, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://llamacademy.itch.io/dino-attack https://github.com/llamacademy/dino-attack"
+      "note": "Imported itch-open-source-3d-games.json, row G061, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://llamacademy.itch.io/dino-attack https://github.com/llamacademy/dino-attack"
     },
     "resourceIds": [],
     "intake": {
@@ -1628,10 +1628,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Unity / C#",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1642,18 +1642,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/KamelMahjoub/Dish-Dash",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/KamelMahjoub/Dish-Dash",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT for code. Asset statement: CREDITS lists Freepik/Flaticon icons, KayKit, Unity Asset Store models and third-party music; the root MIT license does not cover them all. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Some logic is based on a Code Monkey tutorial. Small learning project with weak independent review evidence. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT for code. Asset statement: CREDITS lists Freepik/Flaticon icons, KayKit, Unity Asset Store models and third-party music; the root MIT license does not cover them all. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Some logic is based on a Code Monkey tutorial. Small learning project with weak independent review evidence. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://kamelmahjoub.itch.io/dishdash",
-      "note": "Imported itch-open-source-3d-games.json, row G062, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://kamelmahjoub.itch.io/dishdash https://github.com/KamelMahjoub/Dish-Dash https://github.com/KamelMahjoub/Dish-Dash/blob/main/CREDITS.txt"
+      "note": "Imported itch-open-source-3d-games.json, row G062, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://kamelmahjoub.itch.io/dishdash https://github.com/KamelMahjoub/Dish-Dash https://github.com/KamelMahjoub/Dish-Dash/blob/main/CREDITS.txt"
     },
     "resourceIds": [],
     "intake": {
@@ -1673,10 +1673,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Quake II / id Tech 2",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1687,18 +1687,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/blendogames/gravitybone",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/blendogames/gravitybone",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: GPL-2.0, per repository README/license. Asset statement: Assets are not open source; free play does not imply free asset reuse. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. Qualifications: Very short. In the same series as Thirty Flights of Loving and bundled with it; note this when counting works. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: GPL-2.0, per repository README/license. Asset statement: Assets are not open source; free play does not imply free asset reuse. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. Very short. In the same series as Thirty Flights of Loving and bundled with it; note this when counting works. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://blendogames.itch.io/gravitybone",
-      "note": "Imported itch-open-source-3d-games.json, row G063, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://blendogames.itch.io/gravitybone https://github.com/blendogames/gravitybone"
+      "note": "Imported itch-open-source-3d-games.json, row G063, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://blendogames.itch.io/gravitybone https://github.com/blendogames/gravitybone"
     },
     "resourceIds": [],
     "intake": {
@@ -1718,10 +1718,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Quake II / id Tech 2",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1732,18 +1732,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/blendogames/thirtyflightsofloving",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/blendogames/thirtyflightsofloving",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: GPL-2.0, per repository README and gnu.txt Version 2. Asset statement: Commercial assets are outside GPL; the author's repository explicitly provides code only. Access/price snapshot: US$4.99. Supplied price/access snapshot, not a fresh check. Qualifications: Very short, focused on interactive narrative rather than shooting. Assets are proprietary. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: GPL-2.0, per repository README and gnu.txt Version 2. Asset statement: Commercial assets are outside GPL; the author's repository explicitly provides code only. Access/price snapshot: US$4.99. Supplied price/access snapshot, not a fresh check. Very short, focused on interactive narrative rather than shooting. Assets are proprietary. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://blendogames.itch.io/thirtyflightsofloving",
-      "note": "Imported itch-open-source-3d-games.json, row G066, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://blendogames.itch.io/thirtyflightsofloving https://github.com/blendogames/thirtyflightsofloving https://raw.githubusercontent.com/blendogames/thirtyflightsofloving/master/gnu.txt"
+      "note": "Imported itch-open-source-3d-games.json, row G066, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://blendogames.itch.io/thirtyflightsofloving https://github.com/blendogames/thirtyflightsofloving https://raw.githubusercontent.com/blendogames/thirtyflightsofloving/master/gnu.txt"
     },
     "resourceIds": [],
     "intake": {
@@ -1763,10 +1763,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "C++ / Butano / Game Boy Advance",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1777,18 +1777,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/GValiente/butano/tree/master/games/varooom-3d",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/GValiente/butano/tree/master/games/varooom-3d",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: zlib, per itch code metadata and Butano game source. Asset statement: CC BY-NC-SA 4.0; noncommercial restriction means assets are not fully free. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. Qualifications: A GBA ROM requiring hardware or a compatible emulator. NC-restricted assets prevent describing both code and resources as fully free. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: zlib, per itch code metadata and Butano game source. Asset statement: CC BY-NC-SA 4.0; noncommercial restriction means assets are not fully free. Access/price snapshot: Free. Supplied price/access snapshot, not a fresh check. A GBA ROM requiring hardware or a compatible emulator. NC-restricted assets prevent describing both code and resources as fully free. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://gvaliente.itch.io/varooom-3d",
-      "note": "Imported itch-open-source-3d-games.json, row G067, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://gvaliente.itch.io/varooom-3d https://github.com/GValiente/butano/tree/master/games/varooom-3d https://raw.githubusercontent.com/GValiente/butano/master/games/varooom-3d/src/main.cpp"
+      "note": "Imported itch-open-source-3d-games.json, row G067, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://gvaliente.itch.io/varooom-3d https://github.com/GValiente/butano/tree/master/games/varooom-3d https://raw.githubusercontent.com/GValiente/butano/master/games/varooom-3d/src/main.cpp"
     },
     "resourceIds": [],
     "intake": {
@@ -1808,10 +1808,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Three.js / Vite",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1822,18 +1822,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/vero-code/pointfall",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/vero-code/pointfall",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT can only be confirmed for original code in the supplied record. Asset statement: Mixamo models and AI narrative, voice and music tools have their own terms; the entire asset package cannot be treated as MIT-licensed for commercial use. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Prototype, not a long-form finished game. Award-percentile claims are the author's statements, not independent quality evidence. Not playtested. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT can only be confirmed for original code in the supplied record. Asset statement: Mixamo models and AI narrative, voice and music tools have their own terms; the entire asset package cannot be treated as MIT-licensed for commercial use. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Prototype, not a long-form finished game. Award-percentile claims are the author's statements, not independent quality evidence. Not playtested. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://vero-game.itch.io/pointfall",
-      "note": "Imported itch-open-source-3d-games.json, row G068, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://vero-game.itch.io/pointfall https://github.com/vero-code/pointfall https://github.com/vero-code/pointfall/blob/master/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G068, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://vero-game.itch.io/pointfall https://github.com/vero-code/pointfall https://github.com/vero-code/pointfall/blob/master/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -1853,10 +1853,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Unity / C#",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1873,12 +1873,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/sma7560/stuck_in_the_dark",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT for code. Asset statement: Includes Unity Asset Store monster/hospital scene packs and third-party sound effects; not all assets are open source. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Known browser mouse-capture problems. Quality/stability fall below the source's leading recommendations. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT for code. Asset statement: Includes Unity Asset Store monster/hospital scene packs and third-party sound effects; not all assets are open source. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Known browser mouse-capture problems. Quality/stability fall below the source's leading recommendations. Repository and explicit open-source license confirmation are supplied claims, not independent verification here. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://jollygoodfellow.itch.io/stuck-in-the-dark",
-      "note": "Imported itch-open-source-3d-games.json, row G069, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://jollygoodfellow.itch.io/stuck-in-the-dark https://github.com/sma7560/stuck_in_the_dark"
+      "note": "Imported itch-open-source-3d-games.json, row G069, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://jollygoodfellow.itch.io/stuck-in-the-dark https://github.com/sma7560/stuck_in_the_dark"
     },
     "resourceIds": [],
     "intake": {
@@ -1898,10 +1898,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Godot 4.1+",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1918,12 +1918,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/Mickeon/team-fortress-jumper",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: MIT for code. Asset statement: Includes Team Fortress 2/Valve and community-map-related assets; these cannot be assumed open or commercially reusable as a complete package. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Significant original-IP and asset-rights restrictions. The author reports collision and web-performance issues; not a fully free open-source finished package. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: MIT for code. Asset statement: Includes Team Fortress 2/Valve and community-map-related assets; these cannot be assumed open or commercially reusable as a complete package. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Significant original-IP and asset-rights restrictions. The author reports collision and web-performance issues; not a fully free open-source finished package. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://mickeon.itch.io/team-fortress-jumper",
-      "note": "Imported itch-open-source-3d-games.json, row G070, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://mickeon.itch.io/team-fortress-jumper https://github.com/Mickeon/team-fortress-jumper"
+      "note": "Imported itch-open-source-3d-games.json, row G070, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://mickeon.itch.io/team-fortress-jumper https://github.com/Mickeon/team-fortress-jumper"
     },
     "resourceIds": [],
     "intake": {
@@ -1943,10 +1943,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Bevy / Rust / bevy_ahoy",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -1957,18 +1957,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/janhohenheim/bevy_ahoy",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/janhohenheim/bevy_ahoy",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: Code MIT; repository offers MIT/Apache dual licensing. Map: CC-BY-NC-ND-4.0. Asset statement: surf_utopia_njv by xen is based on surf_utopia_v3 by Panzerhandschuh. Itch labels the map CC-BY-NC-ND-4.0, restricting commercial use and adaptations; the whole package is not freely reusable assets. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Qualifications: Use only after clearly separating code and map rights. The author warns of mouse-look issues in some browsers and recommends Chromium. Not playtested. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: Code MIT; repository offers MIT/Apache dual licensing. Map: CC-BY-NC-ND-4.0. Asset statement: surf_utopia_njv by xen is based on surf_utopia_v3 by Panzerhandschuh. Itch labels the map CC-BY-NC-ND-4.0, restricting commercial use and adaptations; the whole package is not freely reusable assets. Access/price snapshot: Price not separately checked in the supplied record; consult the current itch page. Use only after clearly separating code and map rights. The author warns of mouse-look issues in some browsers and recommends Chromium. Not playtested. All review dates, ratings, release and verification claims are supplied statements, not independently checked here or quality certification. Original intake evidence, including the full original name, remains in input.json."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://janhohenheim.itch.io/surf",
-      "note": "Imported itch-open-source-3d-games.json, row G071, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://janhohenheim.itch.io/surf https://github.com/janhohenheim/bevy_ahoy https://github.com/janhohenheim/bevy_ahoy/blob/main/license-mit.txt"
+      "note": "Imported itch-open-source-3d-games.json, row G071, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://janhohenheim.itch.io/surf https://github.com/janhohenheim/bevy_ahoy https://github.com/janhohenheim/bevy_ahoy/blob/main/license-mit.txt"
     },
     "resourceIds": [],
     "intake": {
@@ -1988,10 +1988,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Engine unverified",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -2002,18 +2002,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/gre/js13k-2017",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/gre/js13k-2017",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: Unverified; no complete reuse grant was established. Asset statement: Asset rights are unverified and cannot be inferred from code licensing. Access/price snapshot: Price not independently checked; consult the current author page. Qualifications: The directory reports no root LICENSE and no confirmed complete grant. The repository is archived. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: Unverified; no complete reuse grant was established. Asset statement: Asset rights are unverified and cannot be inferred from code licensing. Access/price snapshot: Price not independently checked; consult the current author page. The directory reports no root LICENSE and no confirmed complete grant. The repository is archived."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://greweb.itch.io/amaz3d",
-      "note": "Imported itch-open-source-3d-games.json, row G094, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://greweb.itch.io/amaz3d https://github.com/gre/js13k-2017"
+      "note": "Imported itch-open-source-3d-games.json, row G094, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://greweb.itch.io/amaz3d https://github.com/gre/js13k-2017"
     },
     "resourceIds": [],
     "intake": {
@@ -2033,10 +2033,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Engine unverified",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -2053,12 +2053,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/rameshvarun/BlueScreen",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: Unverified; no explicit open-source license was located by the directory author. Asset statement: Asset rights are unverified and cannot be inferred from code licensing. Access/price snapshot: Price not independently checked; consult the current author page. Qualifications: The directory records 4.1/5 from 16 ratings, not a fresh quality check. No explicit game license was found in the root or README. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: Unverified; no explicit open-source license was located by the directory author. Asset statement: Asset rights are unverified and cannot be inferred from code licensing. Access/price snapshot: Price not independently checked; consult the current author page. The directory records 4.1/5 from 16 ratings, not a fresh quality check. No explicit game license was found in the root or README."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://varunramesh.itch.io/blue-screen",
-      "note": "Imported itch-open-source-3d-games.json, row G098, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://varunramesh.itch.io/blue-screen https://github.com/rameshvarun/BlueScreen"
+      "note": "Imported itch-open-source-3d-games.json, row G098, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://varunramesh.itch.io/blue-screen https://github.com/rameshvarun/BlueScreen"
     },
     "resourceIds": [],
     "intake": {
@@ -2078,10 +2078,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Three.js / Electron / PHP backend",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -2098,12 +2098,12 @@ export const itch3dGames: LearningPath[] = [
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/solcloud/Counter-Strike",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: Unverified; no LICENSE granting reuse of the game code was located by the directory author. Asset statement: Asset rights are unverified and cannot be inferred from code licensing. Access/price snapshot: Price not independently checked; consult the current author page. Qualifications: The directory found no game-code reuse grant in the repository or README. Three.js being MIT does not make the game MIT. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: Unverified; no LICENSE granting reuse of the game code was located by the directory author. Asset statement: Asset rights are unverified and cannot be inferred from code licensing. Access/price snapshot: Price not independently checked; consult the current author page. The directory found no game-code reuse grant in the repository or README. Three.js being MIT does not make the game MIT."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://solcloud.itch.io/counter-strike-football",
-      "note": "Imported itch-open-source-3d-games.json, row G102, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://solcloud.itch.io/counter-strike-football https://github.com/solcloud/Counter-Strike"
+      "note": "Imported itch-open-source-3d-games.json, row G102, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://solcloud.itch.io/counter-strike-football https://github.com/solcloud/Counter-Strike"
     },
     "resourceIds": [],
     "intake": {
@@ -2123,10 +2123,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "A-Frame",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -2137,18 +2137,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/althruist/EnvVR",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/althruist/EnvVR",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: Unverified; the directory reports an empty license field and no license file for the game itself. Asset statement: Asset rights are unverified and cannot be inferred from code licensing. Access/price snapshot: Price not independently checked; consult the current author page. Qualifications: The framework's permissions do not establish a grant for this game. No game license file was located by the directory author. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: Unverified; the directory reports an empty license field and no license file for the game itself. Asset statement: Asset rights are unverified and cannot be inferred from code licensing. Access/price snapshot: Price not independently checked; consult the current author page. The framework's permissions do not establish a grant for this game. No game license file was located by the directory author."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://althruist.itch.io/envvr",
-      "note": "Imported itch-open-source-3d-games.json, row G107, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://althruist.itch.io/envvr https://github.com/althruist/EnvVR"
+      "note": "Imported itch-open-source-3d-games.json, row G107, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://althruist.itch.io/envvr https://github.com/althruist/EnvVR"
     },
     "resourceIds": [],
     "intake": {
@@ -2168,10 +2168,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Java / OpenGL / LWJGL / jMonkeyEngine; versions and runtime unverified",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -2182,18 +2182,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/OxillenGlow/MtSharpGrain",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/OxillenGlow/MtSharpGrain",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: The directory reports MIT/CC0 labels; fresh GitHub metadata lists MIT. Actual file-level coverage was not independently audited. Asset statement: Individual asset rights remain unverified; supplied MIT/CC0 labels are not a complete asset ledger. Access/price snapshot: Price not independently checked; consult the current author page. Qualifications: The official itch page links the repository. Its README describes an unfinished sandbox, incomplete physics and multiplayer plans. No native build, project, mod or game was executed; completion and quality were not certified. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: The directory reports MIT/CC0 labels; fresh GitHub metadata lists MIT. Actual file-level coverage was not independently audited. Asset statement: Individual asset rights remain unverified; supplied MIT/CC0 labels are not a complete asset ledger. Access/price snapshot: Price not independently checked; consult the current author page. The official itch page links the repository. Its README describes an unfinished sandbox, incomplete physics and multiplayer plans. No native build, project, mod or game was executed; completion and quality were not certified."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://oxillenglowdist.itch.io/mt-sharpgrain",
-      "note": "Imported itch-open-source-3d-games.json, row G118, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://oxillenglowdist.itch.io/mt-sharpgrain https://github.com/OxillenGlow/MtSharpGrain"
+      "note": "Imported itch-open-source-3d-games.json, row G118, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://oxillenglowdist.itch.io/mt-sharpgrain https://github.com/OxillenGlow/MtSharpGrain"
     },
     "resourceIds": [],
     "intake": {
@@ -2213,10 +2213,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Engine unverified",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -2227,18 +2227,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/KilledByAPixel/SP13KTRA",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/KilledByAPixel/SP13KTRA",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: All rights reserved according to the supplied directory; not an open-source reuse grant. Asset statement: Asset rights are unverified and cannot be inferred from source visibility. Access/price snapshot: Price not independently checked; consult the current author page. Qualifications: The supplied LICENSE allows viewing, playing and competition judging only. Copying, modification, distribution and derivative use require written permission. Do not treat visible source as freely reusable. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: All rights reserved according to the supplied directory; not an open-source reuse grant. Asset statement: Asset rights are unverified and cannot be inferred from source visibility. Access/price snapshot: Price not independently checked; consult the current author page. The supplied LICENSE allows viewing, playing and competition judging only. Copying, modification, distribution and derivative use require written permission. Do not treat visible source as freely reusable."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://killedbyapixel.itch.io/sp13ktra",
-      "note": "Imported itch-open-source-3d-games.json, row G128, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://killedbyapixel.itch.io/sp13ktra https://github.com/KilledByAPixel/SP13KTRA https://api.github.com/repos/KilledByAPixel/SP13KTRA/contents/LICENSE"
+      "note": "Imported itch-open-source-3d-games.json, row G128, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://killedbyapixel.itch.io/sp13ktra https://github.com/KilledByAPixel/SP13KTRA https://api.github.com/repos/KilledByAPixel/SP13KTRA/contents/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -2258,10 +2258,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Three.js",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -2272,18 +2272,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/Eric-Gurt/StarDefenders3D",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/Eric-Gurt/StarDefenders3D",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: Unverified; no LICENSE was located by the directory author. Asset statement: Asset rights are unverified and cannot be inferred from source visibility. Access/price snapshot: Price not independently checked; consult the current author page. Qualifications: An author comment calls it open source, but no repository LICENSE was found. Tags or comments alone do not establish redistribution permission. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: Unverified; no LICENSE was located by the directory author. Asset statement: Asset rights are unverified and cannot be inferred from source visibility. Access/price snapshot: Price not independently checked; consult the current author page. An author comment calls it open source, but no repository LICENSE was found. Tags or comments alone do not establish redistribution permission."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://eric-gurt.itch.io/star-defenders-3d",
-      "note": "Imported itch-open-source-3d-games.json, row G132, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://eric-gurt.itch.io/star-defenders-3d https://github.com/Eric-Gurt/StarDefenders3D"
+      "note": "Imported itch-open-source-3d-games.json, row G132, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://eric-gurt.itch.io/star-defenders-3d https://github.com/Eric-Gurt/StarDefenders3D"
     },
     "resourceIds": [],
     "intake": {
@@ -2303,10 +2303,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Engine unverified",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -2317,18 +2317,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/mhipley/tapalapsplash",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/mhipley/tapalapsplash",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: Conflicting supplied labels: itch says MIT for code, but repository LICENSE/README apply CC BY 4.0 to the whole work. Asset statement: Itch lists CC BY 4.0 assets; actual version and file-level license scope require clarification. Access/price snapshot: Price not independently checked; consult the current author page. Qualifications: The repository's whole-work CC BY 4.0 statement conflicts with itch's MIT-code label. This is not a license-consistent confirmed-open-source listing; gameplay scope and release access remain unverified. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: Conflicting supplied labels: itch says MIT for code, but repository LICENSE/README apply CC BY 4.0 to the whole work. Asset statement: Itch lists CC BY 4.0 assets; actual version and file-level license scope require clarification. Access/price snapshot: Price not independently checked; consult the current author page. The repository's whole-work CC BY 4.0 statement conflicts with itch's MIT-code label. This is not a license-consistent confirmed-open-source listing; gameplay scope and release access remain unverified."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://everyoneisugly.itch.io/tap-a-lap-splash",
-      "note": "Imported itch-open-source-3d-games.json, row G134, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://everyoneisugly.itch.io/tap-a-lap-splash https://github.com/mhipley/tapalapsplash"
+      "note": "Imported itch-open-source-3d-games.json, row G134, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://everyoneisugly.itch.io/tap-a-lap-splash https://github.com/mhipley/tapalapsplash"
     },
     "resourceIds": [],
     "intake": {
@@ -2348,10 +2348,10 @@ export const itch3dGames: LearningPath[] = [
     "engine": "Three.js / TypeScript",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    "aiUse": "From the supplied itch.io 3D game directory.",
     "steps": [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build."
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied author/project reference",
@@ -2362,18 +2362,18 @@ export const itch3dGames: LearningPath[] = [
       "label": "View the supplied source reference",
       "url": "https://github.com/peterwangsc/trainsim",
       "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
       "url": "https://github.com/peterwangsc/trainsim",
       "scope": "unverified-project",
-      "note": "Supplied directory code-license statement: Unresolved conflict: itch lists MIT, no repository LICENSE was found, and TermsPage.ts reportedly imposes personal noncommercial entertainment terms. Asset statement: The directory reports AI image, audio and code disclosures; an open license must not be assumed to cover them. Access/price snapshot: Price not independently checked; consult the current author page. Qualifications: TermsPage.ts reportedly restricts extracting code/assets for redistribution and grants browser-play rights only. The author must clarify the conflict with the supplied MIT label. No playtest, source/license audit or AI-authorship verification was performed. These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification."
+      "note": "Supplied directory code-license statement: Unresolved conflict: itch lists MIT, no repository LICENSE was found, and TermsPage.ts reportedly imposes personal noncommercial entertainment terms. Asset statement: The directory reports AI image, audio and code disclosures; an open license must not be assumed to cover them. Access/price snapshot: Price not independently checked; consult the current author page. TermsPage.ts reportedly restricts extracting code/assets for redistribution and grants browser-play rights only. The author must clarify the conflict with the supplied MIT label. No playtest, source/license audit or AI-authorship verification was performed."
     },
     "evidence": {
       "label": "Read supplied author and directory references",
       "url": "https://peterwangsc.itch.io/trainsim-3d",
-      "note": "Imported itch-open-source-3d-games.json, row G138, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: https://peterwangsc.itch.io/trainsim-3d https://github.com/peterwangsc/trainsim https://github.com/peterwangsc/trainsim/blob/main/src/legal/TermsPage.ts"
+      "note": "Imported itch-open-source-3d-games.json, row G138, supplied metadata date 2026-10-24. Input SHA-256: 456fd40b4d667270c10d797186da74b8d141f273f3b8d18aea3a492cdd26f6e9. References: https://peterwangsc.itch.io/trainsim-3d https://github.com/peterwangsc/trainsim https://github.com/peterwangsc/trainsim/blob/main/src/legal/TermsPage.ts"
     },
     "resourceIds": [],
     "intake": {

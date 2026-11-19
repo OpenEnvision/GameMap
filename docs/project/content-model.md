@@ -25,7 +25,9 @@ The resource directory, game examples, agent toolkit, testing library, developme
 
 ## Identity and ownership
 
-Each material record has a stable key of `kind:id`, a canonical URL or anchor, and an owning collection. IDs are authored, not generated from array positions or mutable titles. Duplicate keys and canonical addresses are errors rather than last-write-wins assignments.
+Each material record has a stable key of `kind:id`. Public records also have a canonical URL or anchor and an owning collection. IDs are authored, not generated from array positions or mutable titles. Duplicate keys and canonical addresses are errors rather than last-write-wins assignments.
+
+Development paths (`path`) and their steps (`step`) are authoring-only records. Their source data, database revisions, stable identities and content-manifest entries remain validated. Retained `/paths/` addresses identify these records but are not published routes. Neither kind appears in public navigation, pre-rendered pages or global search.
 
 Development steps belong to a track and retain separate description, deliverable, and checkpoint fields. Testing starters retain their task and measurement fields. Case attribution records creator evidence; a related resource link or model name does not establish the coding-agent client.
 
@@ -35,28 +37,28 @@ Data fragments are checked independently of their aggregate exports. Adding a ca
 
 A resource may have multiple curated excerpts and original project recordings. The registry does not index recordings by resource ID alone and does not mutate original video or poster collections to select a preferred clip.
 
-`website/src/data/recordings.ts` authors each original film once and nests its explicitly identified presentations. A resource can reference multiple originals, and each original can have multiple excerpts or responsive renditions. The gallery groups shared originals rather than duplicating the same movie card. Every previous presentation URL and credit remains addressable. Original links, creator credit, prompts, alternate previews, and responsive variants are retained. Previews require user playback; they never autoplay.
+`website/src/data/recordings.ts` authors each original film once and nests its explicitly identified presentations. A resource can reference multiple originals, and each original can have multiple excerpts or responsive renditions. Resource pages group shared originals rather than duplicating the same movie card. Every previous presentation URL and credit remains addressable. Original links, creator credit, prompts, alternate previews, and responsive variants are retained. Previews require user playback; they never autoplay.
 
 ## Documents and search
 
 Every Markdown file under `docs/` and at the repository root—including the hand-maintained README, full catalog, and contribution guide—is discovered automatically. Configured groups provide labels and order; unconfigured documents appear under More notes. Missing configured sources and duplicate slugs are errors.
 
-The same registry feeds navigation, canonical links, static routes, the complete content index, and global search. Global search includes article bodies and structured fields across all kinds. The homepage, complete index, and search dialog share full-text matching over a compact static document export, without shipping a large inverted database. Collection filters use the same token-matching rules within their explicitly scoped structured fields. The full source registry is server-only; client bundles do not import the research ledger. Client-only form controls remain disabled until hydration restores browser query state; native links, disclosures, and article reading remain available without JavaScript. This prevents an early selection from being consumed by a static placeholder state.
+The registry feeds navigation, canonical links, static routes and global search for public records. Homepage navigation leads to each owning collection rather than a separate full-content directory. Global search includes article bodies and structured fields across public kinds. The homepage and search dialog share full-text matching over a compact static document export, without shipping a large inverted database. Collection filters use the same token-matching rules within their explicitly scoped structured fields. The full source registry is server-only; client bundles do not import the research ledger. Client-only form controls remain disabled until hydration restores browser query state; native links, disclosures, and article reading remain available without JavaScript. This prevents an early selection from being consumed by a static placeholder state.
 
 Source Markdown remains authoritative and is never rewritten by documentation preparation. Reviewed native HTML such as disclosures, summary text, inline code, and explicit anchors is preserved. New raw HTML tags or attributes require an explicit policy rather than being silently discarded or executed.
 
 ## Validation layers
 
 1. **Source inventory:** compare registered keys with raw collections and independently loaded fragment exports. Reject unclassified modules, unhandled fields, duplicates, orphan attachments, missing attribution, and invalid references.
-2. **Static route inventory:** derive pre-rendered paths, sitemap entries, and build manifests from canonical registry addresses rather than maintaining another page list.
-3. **Rendered coverage:** require every record on its canonical HTML page or anchor, a real discovery entry, and the visible text, links, images, and recording sources of its reader-facing blocks. Source-only metadata remains in the manifest. Article text and links are checked against the original Markdown.
+2. **Static route inventory:** derive pre-rendered paths, sitemap entries, and build manifests from public canonical registry addresses rather than maintaining another page list.
+3. **Rendered coverage:** require every public record on its canonical HTML page or anchor, a real discovery entry, and the visible text, links, images, and recording sources of its reader-facing blocks. Source-only metadata remains in the manifest. Article text and links are checked against the original Markdown.
 4. **Freshness:** compare source and content digests so an old build cannot pass after source changes.
 5. **Regression tests:** deliberately omit records, fragment rows, fields, routes, and media references to verify that validation fails.
 6. **Browser checks:** exercise filtering, client/model attribution, multi-recording selection, mobile layout, direct URLs, global search, and reading without JavaScript.
 
 Run `npm run check` before building. Run `PAGES_BASE_PATH=/GameMap/ npm run build`, then `npm run check:build` and `npm run test:web`. Source checks do not require an existing build directory.
 
-The build publishes a machine-readable `content-manifest.json` alongside the complete content index. Counts are derived from current source records; they are not manually maintained here. These checks establish content exposure and internal consistency, not execution, licensing clearance, production readiness, or factual verification of external projects.
+The build publishes a machine-readable `content-manifest.json` containing all registered records, including authoring-only paths and steps. Public records are discoverable through their owning collections and global search. Counts are derived from current source records; they are not manually maintained here. These checks establish content exposure and internal consistency, not execution, licensing clearance, production readiness, or factual verification of external projects.
 
 ## Development and packages
 
@@ -66,15 +68,15 @@ Catalog arrays and the repository research ledger share `data/segments/`, with e
 
 ## Documentation languages
 
-English URLs remain unchanged. Chinese application views use `/zh/`; the existing `/docs/zh/` guides retain their addresses. Language links preserve collection filters and detail anchors. Matching document slugs select the actual Chinese guide; untranslated articles are readable under `/zh/docs/` with Chinese navigation, an English-source label, and an English-language article body. A Chinese reading index prefers translated counterparts without duplicating the same article.
+English URLs remain unchanged. Chinese application views use `/zh/`; the existing `/docs/zh/` guides retain their addresses. Language links preserve collection filters and detail anchors. Matching document slugs select the actual Chinese guide; untranslated articles are readable under `/zh/docs/` with Chinese navigation, an English-source label, and an English-language article body. Documentation entrances open a starting guide in the selected language. The sidebar prefers translated counterparts without duplicating the same article.
 
 Interface messages live under `website/content/i18n/`. Content translations are server-only overlays keyed by the original `kind:id` and source text field. They do not create resource records or change IDs, enum values, source URLs, creator credits, or licenses. Each translated field has a reviewed English-source fingerprint; a changed source falls back to English and fails locale validation until reviewed. The level-design toolkit view inherits its translated title and summary from the catalog entity.
 
-Both locales are pre-rendered and checked for visible fields, owning collections, complete-index discovery, Markdown bodies, language-aware internal links, source-language markers, and static search. A localization digest prevents a stale build from passing after translation changes. Native language links and reading work without JavaScript.
+Public records in both locales are pre-rendered and checked for visible fields, owning collections, navigation discovery, Markdown bodies, language-aware internal links, source-language markers, and static search. A localization digest prevents a stale build from passing after translation changes. Native language links and reading work without JavaScript.
 
 ## Adding content
 
-- Add a row to an existing typed collection and keep its source evidence and limitations. Its existing adapter registers and renders it automatically.
+- Add a row to an existing typed collection and keep its source evidence and limitations. Its existing adapter registers it automatically; public kinds also render on the website.
 - For a new data module or export, declare its owner and shape in the source inventory. A fragment must also be included in its aggregate collection; independent inventory checks detect omissions.
 - For a new field or content kind, define its type and explicit presentation before publishing. Structural omissions require an explanation; unknown runtime fields fail validation. Declare its runtime schema in `contracts.ts`, derive the TypeScript type, declare its version, owner and validator key in `contentKinds`, implement its import/assembly strategies, and register the contract in a new ordered database migration. See the [content-platform extension guide](content-platform.md). Payload upgrades create successor revisions; they never rewrite old approved content.
 - Add Markdown anywhere under `docs/`. Navigation, static rendering, search, and coverage discovery follow automatically. Add an optional label to `website/docs.config.json` for deliberate placement.

@@ -8,15 +8,15 @@ The previews retain every part of the source frame, including original game inte
 
 The [community screenshot ledger](../../website/public/game-screenshot-sources.json) records each reviewed game image, its author page and original image URL or browser-capture origin, review or capture date, source-frame and preview checksums, and any unresolved gaps. Images are visually checked for actual gameplay rather than title art, logos, loading screens or error pages, then proportionally contained in a 1280 × 720 WebP without cropping the source frame.
 
-Creator-published images retain their original attribution and rights; inclusion is not blanket permission to reuse them. Browser fallback uses isolated, sandboxed contexts without native game execution, accounts, purchases or granted device permissions. A screenshot does not certify compilation, game stability, security, complete playtesting or L1/L2/L3 validation.
+Creator-published images retain their original attribution and rights. Browser captures use isolated, sandboxed sessions with guest access and default device permissions.
 
 ## AI game tutorial screenshots
 
-Reviewed October 18, 2026. Each AI game case has a real-game preview with explicit provenance: 27 GameMap captures from linked browser builds, 2 local source-project captures, and 15 creator-published gameplay screenshots or recording stills. The page badges distinguish these origins. Creator images have a source-review date, not an invented capture date. These are game pixels, not generated illustrations or reconstructed promotional artwork. Optional engine foundations are excluded.
+Reviewed October 18, 2026. Each AI game case has a real-game preview with explicit provenance: 27 GameMap captures from linked browser builds, 2 local source-project captures, and 15 creator-published gameplay screenshots or recording stills. The page badges identify each origin. For creator-published images, we record the date the image source was checked.
 
 Images are proportionally resized and centered on a 1280 × 720 canvas without cropping game content. The [manifest](../../website/public/media/learning/manifest.json) records origin, source URL, capture or review date, dimensions, file size, and SHA-256. Creator images also retain their original image URL. Underlying art, characters, and interfaces remain credited to their creators and rights holders.
 
-Tower of Time is captured from the [embedded build](https://html-classic.itch.zone/html/14174112-1308836/index.html?v=1782540129) exposed by the author’s Run game button. Its complete 640 × 480 canvas is centered on a dark matte. Other browser captures retain their complete viewport. Agent Arcade uses zero-based frame 20 from the creator’s Ninja Runner GIF; its transparent desktop overlay is part of the actual game presentation. No scene, character, HUD element, or text was generated or added.
+Tower of Time is captured from the [embedded build](https://html-classic.itch.zone/html/14174112-1308836/index.html?v=1782540129) exposed by the author’s Run game button. Its complete 640 × 480 canvas is centered on a dark matte. Other browser captures retain their complete viewport. Agent Arcade uses zero-based frame 20 from the creator’s Ninja Runner GIF; its transparent desktop overlay is part of the actual game presentation.
 
 | Game | Screenshot origin | Source record | Original creator image | Local preview |
 | --- | --- | --- | --- | --- |

@@ -307,7 +307,7 @@ The official README directly identifies the author team as CUHK MMLab and lists 
 
 ### GameDevBench
 
-The paper lists first author Wayne Chi and most coauthors at Carnegie Mellon; one coauthor is at Princeton. This represents the first author's affiliation, not a claim of exclusive authorship. The 900px square logo is the image displayed on CMU's official brand standards University Logo page.
+The paper lists first author Wayne Chi and most coauthors at Carnegie Mellon; one coauthor is at Princeton. The 900px square logo is the image displayed on CMU's official brand standards University Logo page.
 
 ### GameXpert-Bench
 
@@ -347,7 +347,7 @@ Independent project maintained by 0x0funky. No separate public project logo or i
 
 ### OpenAI Image Generation
 
-Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.
+Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
 
 ### 3AGameFactory
 
@@ -407,7 +407,7 @@ The public implementation is maintained by yxwan123. No independent project mark
 
 ### Tripo Model Generation API
 
-Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.
+Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
 
 ### Scenario
 
@@ -451,15 +451,15 @@ Official documentation identifies the publisher of this interface. The existing 
 
 ### ElevenLabs Music
 
-Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.
+Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
 
 ### ElevenLabs Speech Generation
 
-Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.
+Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
 
 ### Xbox Accessibility Guidelines
 
-Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.
+Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
 
 ### MSDF Atlas Generator
 
@@ -471,11 +471,11 @@ Official project or publisher attribution is supported by the linked primary sou
 
 ### DirectX Shader Compiler
 
-Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.
+Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
 
 ### Playwright Test
 
-Official project or publisher attribution is supported by the linked primary source. The existing bundled mark identifies the same organization or product; inclusion is not an endorsement.
+Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
 
 ### Level Design Book · unofficial design skill
 

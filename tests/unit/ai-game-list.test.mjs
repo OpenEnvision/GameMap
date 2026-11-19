@@ -93,13 +93,13 @@ test("model attribution repeats only what the checked README states", () => {
       assert.match(aiUse, /does not name that model/);
     if (!mentioned.length) {
       assert.doesNotMatch(aiUse, /mentions /);
-      assert.match(aiUse, /no AI-authorship attribution is inferred/i);
+      assert.match(aiUse, /does not name that model|names no AI model/);
     } else
       for (const term of aiUse
         .match(/mentions ([^()]+?)(?: \(GitHub check|\))/)?.[1]
         .split(/, | and /) || [])
         assert.ok(mentioned.includes(term), `${entry.key}: ${term}`);
-    assert.match(aiUse, /does not infer the AI client|attribution is inferred/);
+    assert.equal(context.sources.gameCaseAgents[entry.id], undefined);
   }
 });
 

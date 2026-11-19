@@ -4,7 +4,7 @@
 
 ## codex-official-browser-game-workflow
 
-OpenAI 的游戏工作流链接到 Playwright Interactive。在所检查的修订版本中，这项特定技能需要 js_repl、项目本地的 Playwright 配置，以及禁用沙箱的 Codex 执行环境。这一提升权限的前提条件适用于所链接的技能；并非声称所有 Codex 浏览器工作流都需要如此。
+OpenAI 的游戏工作流链接到 Playwright Interactive。在所检查的修订版本中，这项特定技能需要 js_repl、项目本地的 Playwright 配置，以及禁用沙箱的 Codex 执行环境。
 
 来源：[Playwright Interactive 的前提条件与配置](https://github.com/openai/skills/blob/ecc1fb8bc0b82f1d3c7a92a82167ae8e8e613a67/skills/.curated/playwright-interactive/SKILL.md)
 
@@ -54,7 +54,7 @@ gda 假定目标项目可信。其 README 说明，当项目操作启动面向�
 
 ## agent2unity-cli
 
-对所引用守护进程的静态检查显示，它有一个 localhost 监听器，其请求路由在未进行认证检查的情况下分派 /execute 命令。任何能够访问该端口的进程都可以调用已注册的编辑器操作。这是对实现信任边界的观察，并非声称已复现远程攻击，也不是完整的安全审计。
+对所引用守护进程的静态检查显示，它有一个 localhost 监听器，其请求路由在未进行认证检查的情况下分派 /execute 命令。任何能够访问该端口的进程都可以调用已注册的编辑器操作。这一发现来自静态源码检查。
 
 来源：[Agent2UnityDaemon.cs：监听器、请求路由与主线程分派](https://github.com/jkpp/agent2unity-cli/blob/647becab081597b1a29cf2bb4bae489dbdd6040a/unity-plugin/Agent2Unity/Editor/Core/Agent2UnityDaemon.cs)
 

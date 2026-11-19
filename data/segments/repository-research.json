@@ -318,7 +318,7 @@
       "disposition": "qualified",
       "summary": "A browser MMO with a shared deterministic game core for an authoritative multiplayer server, an offline world, and a headless Gymnasium environment.",
       "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. MIT covers source code only. README separates per-asset media, restricted/NC media, and unlicensed branding; consult CREDITS before redistribution.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Code is MIT, but media and branding have separate terms, including non-redistributable and noncommercial assets. Hosted service and optional web3 features are separate from source reuse.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -359,7 +359,7 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A Brazilian-satire browser FPS with bot matches, multiplayer beta, procedural and imported assets, and documented visual-evaluation tooling.",
-      "license_note": "License evidence: GNU Affero General Public License v3.0. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
+      "license_note": "License evidence: GNU Affero General Public License v3.0. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
       "ai_note": "README explicitly attributes paired development to Claude, Kimi, Codex/GPT, and GLM and links its original prompt.",
       "limitations": [
         "Multiplayer and mobile PWA are beta. The current code license is AGPL-3.0. README identifies CS BRASIL as the former game name.",
@@ -402,7 +402,7 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "An armored-combat browser game with plate-level armor, ballistics, destructible battlefields, fixed-step authority, multiplayer, and a scene/vehicle inspection studio.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
       "ai_note": "README explicitly credits an end-to-end multi-agent Claude/Codex development pipeline.",
       "limitations": [
         "Documented capabilities and content counts are author claims, not results of this review; no performance or network validation was run.",
@@ -538,7 +538,7 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A browser FPS combining wave survival, host-authoritative WebRTC multiplayer, a round-based bomb mode, a map editor, and OpenStreetMap-based battlefields.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
       "ai_note": "README claims code, tests, and documentation were written by Claude Code under natural-language direction.",
       "limitations": [
         "Multiplayer depends on peer-to-peer host authority rather than a dedicated authoritative game server. External map/network services and their terms remain separate.",
@@ -582,7 +582,7 @@
       "disposition": "qualified",
       "summary": "A Three.js arena shooter with mutant-enemy waves, bosses, progression, an item economy, multiplayer lobbies, and touch controls.",
       "license_note": "License evidence: Unknown. No reuse license established for this repository. README says educational use/as-is but does not establish a standard permissive license.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README describes educational use and supplies no standard reusable license; source availability alone does not establish reuse rights.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -622,7 +622,7 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A seeded procedural open-world renderer with generated terrain, erosion, vegetation, water, atmosphere, and documented screenshot/profiling checks.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
       "ai_note": "README claims roughly 99% model-built development with Claude Fable 5, including verification tooling and human steering.",
       "limitations": [
         "Requires desktop Chromium WebGPU; README excludes Safari, Firefox, mobile, and a WebGL fallback. Performance work and open issues remain.",
@@ -665,8 +665,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A browser RTS documenting worker-based ECS simulation, fixed-step deterministic logic, lockstep WebRTC play, desync diagnostics, and GPU rendering.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Source review does not validate multiplayer determinism, performance, or production readiness. Gameplay AI is not evidence of AI-authored development.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -707,8 +707,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A Babylon.js space-exploration game with procedural planetary worlds, seamless surface exploration, browser/Electron delivery, and documented unit/E2E tests.",
-      "license_note": "License evidence: GNU Affero General Public License v3.0. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "license_note": "License evidence: GNU Affero General Public License v3.0. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README labels the project alpha. Code is AGPL-3.0; no AI-development attribution was established from the inspected sources.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -750,7 +750,7 @@
       "disposition": "unavailable",
       "summary": "The requested Dust Arena repository remains unavailable. The same owner’s earlier claude-fable monorepo preserves historical source and a dated pointer into the requested repository.",
       "license_note": "Current license and reuse scope could not be established at the requested location.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Repository metadata and README both returned 404; exact-name GitHub search found no replacement. The reason for unavailability is unknown.",
         "Historical source at 8c6d5f8d939a706b60fa8fa74d2eeed5243bbec8 and the later migration pointer establish provenance only; they do not establish current requested-repository availability, current code, a present license, or runtime validation."
@@ -823,8 +823,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A browser survival shooter with monster waves, pickups, movement-dependent gun accuracy, changing maps, and a minimap.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Current capabilities are documented only; the game was not launched and AI authorship was not established.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -866,7 +866,7 @@
       "disposition": "qualified",
       "summary": "A haunted driving-survival game with dynamic enemies, camp missions, world events, vehicle combat, instancing, and object pooling.",
       "license_note": "License evidence: Unknown. No reuse license established for this repository. Unknown is not permission to reuse.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "No standard license was detected in metadata or established in the README. Local-server setup and performance claims were not executed.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -906,8 +906,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A low-poly multiplayer FPS prototype with React Three Fiber, a Node authoritative server, Rapier physics, client prediction, and hitscan combat.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Explicit MVP/proof of concept. The current README says Socket.IO/TCP; the earlier index's geckos.io description is stale.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -949,7 +949,7 @@
       "disposition": "new-research",
       "summary": "An FPS example with an entity/component architecture, Ammo.js rigid-body controls, root-motion NPC animation, and pathfinding.",
       "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. MIT code; README credits CC-BY-4.0 models, CC0 environment material, and Mixamo content separately.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README says still under development. MIT code includes third-party assets with separate attribution and licensing requirements.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -990,8 +990,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A client-side procedural survival game where mutations change creature form and mechanics across generations, with energy, warmth, predators, and touch controls.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "The organization name is not evidence of AI-written code; no AI-development claim was established. Runtime quality was not tested.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -1160,7 +1160,7 @@
       "disposition": "qualified",
       "summary": "A browser wave-survival shooter with multiple weapons, an open terrain/building scene, zombie behaviors, HUD, and audio hooks.",
       "license_note": "License evidence: Unknown. No reuse license established for this repository. Unknown is not permission to reuse.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Uses a CDN-hosted Three.js version and an HTTP server. Sound files may be absent and silently skipped; no standard source license was established.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -1201,7 +1201,7 @@
       "disposition": "qualified",
       "summary": "A Babylon.js episodic-FPS monorepo with a browser/PWA/Electron client and Colyseus server-authoritative multiplayer architecture.",
       "license_note": "License evidence: Unknown. No reuse license established for this repository. Unknown is not permission to reuse.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Multiplayer is alpha. README lists unbuilt mission/assets/auth work and unmet launch/legal/load-testing gates despite promotional/demo sections; no source license was established.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -1283,8 +1283,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A procedural WebGL2 spell-effects forge with data-driven emitters, GPU particle simulation, deterministic replay, and visual measurement workflows.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "A VFX authoring example rather than a complete game; requires WebGL2. No AI-authorship claim was established.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -1326,7 +1326,7 @@
       "disposition": "unavailable",
       "summary": "The supplied Moonfall Ark repository could not be inspected at its requested GitHub address.",
       "license_note": "Current license and reuse scope could not be established at the requested location.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Repository metadata and README both returned 404; exact-name GitHub search found no replacement. Do not carry forward unverified rover/digital-twin claims."
       ],
@@ -1365,7 +1365,7 @@
       "disposition": "qualified",
       "summary": "A Three.js aim trainer and world editor with procedural targets, reusable block components, transforms, undo/redo, and scenario import/export.",
       "license_note": "License evidence: Redblock Community License 1.0. Repository material under the inspected license, with separately licensed dependencies/assets excluded. LICENSE.md says Redblock Community License 1.0, including branding and equivalent public/commercial/hosted-service restrictions; README's MIT claim is inconsistent.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "The multiplayer server is not included. LICENSE.md is the restrictive Redblock Community License, contradicting the README's MIT claim; branding and equivalent hosted services are restricted.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -1413,7 +1413,7 @@
       "disposition": "new-research",
       "summary": "Reimplements the Little Big Adventure games with explorable scenes and an editor for inspecting objects, variables, and actor scripts.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README says the game is not yet completable.",
         "Running it requires assets from a legally owned original game; those assets are outside the MIT code license."
@@ -1458,7 +1458,7 @@
       "disposition": "qualified",
       "summary": "Nik Lever’s Three.js course resources include the Lost Treasure mystery-puzzle RPG example and a separate FBX animation-mixer example. Inspected source implements collectible and door actions, camera switching and an on-screen joystick.",
       "license_note": "No project-wide reuse license was found in the inspected first-party tree or manifests. Public source visibility does not establish permission to redistribute; dependencies and media may have separate terms.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected first-party material; naming, gameplay AI and procedural generation are not authorship evidence.",
+      "ai_note": "The project’s own materials do not describe AI use during development.",
       "limitations": [
         "No root README or project-wide license was found. This is a versioned course-resource repository; the examples’ completeness, current browser compatibility and asset permissions were not established.",
         "Read-only documentation, manifest and bounded static source inspection only; no repository code executed, dependencies installed, game opened, or runtime, gameplay, networking, build or performance behavior verified."
@@ -1536,7 +1536,7 @@
       "disposition": "qualified",
       "summary": "Browser RPG technology sandbox with an entity-component architecture and separate rendering and physics threads communicating through shared memory.",
       "license_note": "License evidence: All rights reserved. README reserves copyright for game/original content and forbids copying or redistribution without consent.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Author describes a technology sandbox rather than a finished RPG.",
         "README reserves copyright and prohibits copying/redistribution without permission."
@@ -1581,7 +1581,7 @@
       "disposition": "qualified",
       "summary": "Small multiplayer 3D RPG combat project with a linked gameplay video and credited programming, model, and animation contributors.",
       "license_note": "License evidence: Unknown. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README only documents combat and dates the project to summer 2018; no full RPG claim is established.",
         "No explicit project-code license was identified from the inspected metadata/README; public source visibility does not establish reuse permission."
@@ -1626,7 +1626,7 @@
       "disposition": "qualified",
       "summary": "Legacy 2D MMORPG and extensible game code descended from BrowserQuest, with server infrastructure and map tooling.",
       "license_note": "License evidence: MPL-2.0 plus Omnia Public License (README). README combines MPL-2.0 with additional OPL use restrictions; assets described as CC-BY-SA-3.0. Do not flatten this to unqualified MPL-2.0.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README says the open-source version has not been updated for years and the author will not support it.",
         "Current Kaetram is no longer open-source according to the README.",
@@ -1674,7 +1674,7 @@
       "disposition": "new-research",
       "summary": "Framework for persistent, self-hosted 3D worlds with in-world editing, JavaScript applications, multiplayer collaboration, physics, and VR support.",
       "license_note": "License evidence: GPL-3.0. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "World-building framework rather than a standalone authored game; deployment requires a server environment."
       ],
@@ -1718,7 +1718,7 @@
       "disposition": "new-research",
       "summary": "Runs a Minecraft client in the browser through a WebSocket-to-TCP proxy, with world rendering, player movement, and block interactions.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Requires a WebSocket-to-TCP proxy and a compatible Minecraft server.",
         "README lists inventories/containers, sound, and further interactions on the roadmap."
@@ -1763,7 +1763,7 @@
       "disposition": "qualified",
       "summary": "Minecraft-style learning sandbox implementing voxel terrain, lighting, movement, rendering, UI, and multiplayer protocol features.",
       "license_note": "License evidence: CC-BY-NC-4.0. Inspected root LICENSE uses Creative Commons Attribution-NonCommercial 4.0; third-party resources retain separate rights.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Noncommercial license; original Minecraft material and third-party sounds require separate rights review."
       ],
@@ -1808,7 +1808,7 @@
       "disposition": "new-research",
       "summary": "Third-person voxel-style world demo with procedural biomes, character movement, camera collision handling, and an evolving combat system.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Lock-on combat and interactions/portals are marked in development.",
         "README says some design documents may differ from implementation; planned Suno audio is explicitly not generated yet."
@@ -1898,7 +1898,7 @@
       "disposition": "qualified",
       "summary": "Browser tank-combat game using WebRTC host/client networking for playing against friends.",
       "license_note": "License evidence: Apache-2.0. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README requires a Chromium-based browser and says Firefox/Safari are unsupported.",
         "WebRTC connectivity may expose peer IP addresses."
@@ -2033,7 +2033,7 @@
       "disposition": "new-research",
       "summary": "Synthwave obstacle-avoidance game with increasing speed, music-synchronized effects, local high scores, and touch controls.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [],
       "source_urls": [
         "https://api.github.com/repos/akarlsten/cuberun",
@@ -2075,7 +2075,7 @@
       "disposition": "new-research",
       "summary": "Minimal tile-based top-down game example extracted from Colmen’s Quest, demonstrating React game architecture and whole-tile movement.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Author explicitly does not intend to maintain this demo or recommend it as a project foundation.",
         "Movement can be buggy after stripping turn-based logic; collision is tile-based."
@@ -2120,7 +2120,7 @@
       "disposition": "qualified",
       "summary": "AudioSurf-inspired 3D music game that connects to Spotify and lets players switch lanes through an audio-reactive scene.",
       "license_note": "License evidence: Unknown. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Spotify Premium is required; setup depends on Spotify integration and environment configuration.",
         "No explicit project-code license was identified from the inspected metadata/README; public source visibility does not establish reuse permission."
@@ -2210,7 +2210,7 @@
       "disposition": "qualified",
       "summary": "Minimalist time-trial racing game with vehicle physics, checkpoints, movable obstacles, and a three-lap personal-best challenge.",
       "license_note": "License evidence: Unknown. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Mobile devices are not supported; browser hardware acceleration is required.",
         "No explicit project-code license was identified from the inspected metadata/README; public source visibility does not establish reuse permission."
@@ -2255,7 +2255,7 @@
       "disposition": "new-research",
       "summary": "Visual widget-based game engine and editor for placing programmable React components, manipulating scenes, and saving layouts.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README explicitly says development has stopped."
       ],
@@ -2299,7 +2299,7 @@
       "disposition": "qualified",
       "summary": "Small 3D tic-tac-toe project with local development instructions.",
       "license_note": "License evidence: Unknown. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README is brief and does not establish AI provenance, multiplayer, or production readiness.",
         "No explicit project-code license was identified from the inspected metadata/README; public source visibility does not establish reuse permission."
@@ -2344,7 +2344,7 @@
       "disposition": "qualified",
       "summary": "Prefab-based scene framework with a visual editor, reusable JSON-compatible scene trees, and React-defined behavior.",
       "license_note": "License evidence: Custom Pockit license. Inspected LICENSE is a short nonstandard license rather than MIT or another recognized permissive license.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Requires a WebGPU-capable browser.",
         "Custom nonstandard license is not a recognized permissive open-source license."
@@ -2390,7 +2390,7 @@
       "disposition": "qualified",
       "summary": "Rudimentary pool-table simulation with a custom physics implementation and a hosted demo.",
       "license_note": "License evidence: Unknown. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README explicitly says this is not a complete game and describes physics as rough.",
         "No explicit project-code license was identified from the inspected metadata/README; public source visibility does not establish reuse permission."
@@ -2435,7 +2435,7 @@
       "disposition": "new-research",
       "summary": "Collection of minimal game-development examples covering health bars, damage feedback, weapon trails, camera effects, interpolation, and entity-state patterns.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "A collection of isolated development recipes rather than one complete game."
       ],
@@ -2479,7 +2479,7 @@
       "disposition": "new-research",
       "summary": "Endless runner with deterministic daily courses, server replay verification, leaderboards, and documented onchain prize-vault integration.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README says the migration branch is not deployed and no relayer is running, despite live contracts.",
         "Existing production soundtrack is excluded and must not be deployed until replaced with licensed music.",
@@ -2525,7 +2525,7 @@
       "disposition": "new-research",
       "summary": "Obstacle-course game in which a controllable beach ball jumps through a level to reach a goal star.",
       "license_note": "License evidence: AGPL-3.0. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "AGPL-3.0 code license has copyleft requirements; inspect full terms before reuse."
       ],
@@ -2569,7 +2569,7 @@
       "disposition": "new-research",
       "summary": "Procedural voxel exploration game with block placement/destruction, robot NPCs, chunked terrain, and desktop/touch input.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [],
       "source_urls": [
         "https://api.github.com/repos/EVEDensity/MineWorld",
@@ -2611,7 +2611,7 @@
       "disposition": "new-research",
       "summary": "Fork of yakudoo’s The Aviator: steer a plane to collect fuel, dodge obstacles, and progress through increasingly fast levels.",
       "license_note": "License evidence: MIT (README claim). README asserts MIT; queried root LICENSE was absent. Upstream/third-party scope was not independently resolved.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Uses old Three.js r75; README identifies it as a fork of yakudoo/TheAviator.",
         "MIT is asserted only in README; no root LICENSE was found at the queried path."
@@ -2661,7 +2661,7 @@
       "disposition": "new-research",
       "summary": "Starter for VRM-character games with humanoid animation retargeting, foot IK, BVH-based collision, touch/gamepad input, and an in-browser level editor.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Requires WebGPU support.",
         "Bundled sample avatars/animations and other media are outside the MIT code license."
@@ -2706,7 +2706,7 @@
       "disposition": "qualified",
       "summary": "Flight game that turns a GitHub contribution graph into a city and scores low-altitude passes and near misses through contribution-based buildings.",
       "license_note": "License evidence: Unknown. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Live contribution/leaderboard behavior depends on external data and backend validation, neither executed here.",
         "No explicit project-code license was identified from the inspected metadata/README; public source visibility does not establish reuse permission."
@@ -2751,7 +2751,7 @@
       "disposition": "qualified",
       "summary": "Web/Android driving simulator using real track geometry, custom high-frequency vehicle physics, weather, synthesized engine audio, racing lines, and ghost laps.",
       "license_note": "License evidence: MIT (code only). Inspected LICENSE limits MIT to source code; OSM track data is ODbL-1.0 and models/fonts have separate licenses.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Code, OSM track data, fonts, and vehicle models have different license scopes, including a noncommercial vehicle model.",
         "This is a fan project; vehicle/track marks do not imply endorsement."
@@ -2842,7 +2842,7 @@
       "disposition": "new-research",
       "summary": "Self-contained downhill mountain-bike racing tribute with rival riders, aerial tricks, boosts, combat, and desktop/mobile/gamepad controls.",
       "license_note": "License evidence: Apache-2.0. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Fan tribute, not affiliated with the original rights holders; the README says no original game assets are used."
       ],
@@ -3023,7 +3023,7 @@
       "disposition": "new-research",
       "summary": "Side-scrolling platformer combining 3D terrain with billboard sprites, jump assistance, enemy stomping, collectibles, moving platforms, and timed levels.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [],
       "source_urls": [
         "https://api.github.com/repos/StarKnightt/Pixel-Quest",
@@ -3065,7 +3065,7 @@
       "disposition": "new-research",
       "summary": "Educational datacenter-management game connecting rack revenue to power-chain capacity, cooling, heat propagation, outages, and efficiency metrics.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [],
       "source_urls": [
         "https://api.github.com/repos/pshenok/datacenter-survival",
@@ -3112,7 +3112,7 @@
       "disposition": "qualified",
       "summary": "Companion data/model explorer that extracts a locally owned Heroes of Might and Magic: Olden Era installation and presents its data through a local web interface.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Requires a locally owned game installation and extracts its proprietary content; the repository does not include game assets.",
         "Asset viewer/companion tool, not a browser game; Unity export omits some VFX and shader effects."
@@ -3157,7 +3157,7 @@
       "disposition": "qualified",
       "summary": "Customized slow-roads-style endless driving experience with two-way traffic, collision feedback, movable touch controls, and an offline-capable PWA shell.",
       "license_note": "License evidence: Unknown; upstream terms unresolved. README defers to upstream project/history without identifying clear project terms.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README points to upstream/history for license terms without establishing an explicit project license.",
         "Derivative driving experience; do not infer rights to upstream assets/code from public availability."
@@ -3202,7 +3202,7 @@
       "disposition": "new-research",
       "summary": "Procedural browser fishing game with casting and tension-based reeling, equipment progression, location unlocks, weather/time effects, and a species journal.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "ES modules require an HTTP server; Three.js is fetched from a CDN on first load."
       ],
@@ -3292,7 +3292,7 @@
       "disposition": "new-research",
       "summary": "Brutalist city-design toy with direct building-massing controls, procedural compositions, urban activity, multiple analytical and cinematic views, and local saves.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Design toy with no economy or win-state gate, as explicitly described by its author."
       ],
@@ -3471,7 +3471,7 @@
       "disposition": "qualified",
       "summary": "Synthwave driving experience that turns a DEV Community user’s articles and profile statistics into roadside billboards and signs.",
       "license_note": "License evidence: Unknown. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Uses DEV Community article/profile data; external data access was not exercised.",
         "No explicit project-code license was identified from the inspected metadata/README; public source visibility does not establish reuse permission."
@@ -3516,7 +3516,7 @@
       "disposition": "new-research",
       "summary": "Interactive 3D educational/gamification platform for explaining digital-payment products through an explorable web experience.",
       "license_note": "License evidence: AGPL-3.0. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "AGPL-3.0 code; media assets retain their own licenses.",
         "Educational/promotional platform rather than a conventional standalone game."
@@ -3606,7 +3606,7 @@
       "disposition": "qualified",
       "summary": "Stairwell Iliad is a Three.js exploration/puzzle game whose inspected source wires a player, collision octree and item interactions; its ending code includes speech-recognition behavior and an alternate path when the speech helper is unavailable.",
       "license_note": "GPL-3.0 is declared in package.json and a GPLv3 LICENSE is present. Media is mixed-license: credits and the key model’s notice identify CC-BY-NC-4.0 content, alongside CC-BY and CC0 assets. Credited soundtrack material has no reuse grant established by this inspection; the code label must not be applied to all bundled media.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected first-party material; naming, gameplay AI and procedural generation are not authorship evidence.",
+      "ai_note": "The project’s own materials do not describe AI use during development.",
       "limitations": [
         "The one-line README is supplemented by HTML UI guidance, credits and static implementation. The landing page requests Chromium, audio and microphone for the ending; the inspected ending also has a fallback path, but actual compatibility and permissions were not tested.",
         "Bundled media includes a noncommercial model and separately credited soundtrack material; GPL source licensing is not blanket asset clearance.",
@@ -3709,7 +3709,7 @@
       "disposition": "qualified",
       "summary": "Small driving/racing demo with keyboard controls, thrust adjustment, and documented checkpoint shortcuts and time-step behavior.",
       "license_note": "License evidence: Unknown. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README documents checkpoint skipping and tab-switch/time-step jumps.",
         "No explicit project-code license was identified from the inspected metadata/README; public source visibility does not establish reuse permission."
@@ -3754,7 +3754,7 @@
       "disposition": "new-research",
       "summary": "Minimalist 3D endless-runner ball game in which each tap changes direction to stay on a narrow suspended path.",
       "license_note": "License evidence: AGPL-3.0. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "AGPL-3.0 code license has copyleft requirements."
       ],
@@ -3798,7 +3798,7 @@
       "disposition": "new-research",
       "summary": "Native/browser game engine with scene/world primitives, sprites, a procedural-noise example, a CLI, and documented Deno/browser entry points.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Engine examples require a Deno/native or browser setup; no runtime was tested."
       ],
@@ -3842,7 +3842,7 @@
       "disposition": "qualified",
       "summary": "Experimental editable voxel-world engine in which blocks are themselves built from smaller blocks, with CPU/GPU rendering and desktop/browser applications.",
       "license_note": "License evidence: MIT OR Apache-2.0. README expressly offers a choice of MIT or Apache-2.0 despite metadata identifying only Apache-2.0.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README describes an incomplete hobby project with regularly breaking APIs and no stable save-compatibility promise.",
         "Multiplayer/server functionality remains aspirational; current server package is a static HTTP server."
@@ -3887,7 +3887,7 @@
       "disposition": "new-research",
       "summary": "Small ECS-based C# engine with modular input/audio/UI systems and native/browser targets.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Early-development project; browser/WASM support is still a prototype.",
         "README lists broken browser fullscreen and other binding/build limitations."
@@ -3932,7 +3932,7 @@
       "disposition": "qualified",
       "summary": "A TypeScript/Vite workspace containing a WebGPU engine and a Pong example. Inspected source connects an ECS world, game loop and renderer, with player/CPU paddles, scoring and synthesized scoring sound in the example.",
       "license_note": "No project-wide reuse license was found in the inspected first-party tree or manifests. Public source visibility does not establish permission to redistribute; dependencies and media may have separate terms.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected first-party material; naming, gameplay AI and procedural generation are not authorship evidence.",
+      "ai_note": "The project’s own materials do not describe AI use during development.",
       "limitations": [
         "The inspected renderer explicitly requests WebGPU and throws when no device is available; no fallback was established.",
         "A Pong example is present in source. The repository description’s lightweight/js13k goals are not measured bundle-size, performance or broad engine-completeness results.",
@@ -4028,7 +4028,7 @@
       "disposition": "qualified",
       "summary": "Work-in-progress ECS game engine targeting browser and native Deno use, with rendering backends still listed as development tasks.",
       "license_note": "License evidence: MIT. Repository license classification from GitHub metadata; bundled media and dependencies are not assumed to share it.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "README warns of breaking changes and lists major rendering backends as unfinished."
       ],
@@ -4071,8 +4071,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Three.js/Ammo.js FPS playground with first- and third-person views, weapon animation, GLB map loading and several environment demos.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Author warns that Three.js dependencies are old and points to a separate replacement project.",
@@ -4120,8 +4120,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Educational multiplayer 3D shooting website using Three.js, Socket.io and Node.js, with a Chinese-language implementation walkthrough.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Educational homework-era implementation; README still names older song-hao/AdWebHW2 links.",
@@ -4170,7 +4170,7 @@
       "disposition": "qualified",
       "summary": "Halo-inspired browser FPS with multiplayer lobbies, bots, multiple maps and weapons; networking uses Gametime.js and PubNub.",
       "license_note": "License evidence: MIT. Project code; asset credits include separate CC BY, CC BY-NC-SA and CC0 terms.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Multiplayer depends on PubNub/Gametime.js; live service was not tested.",
@@ -4218,7 +4218,7 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Three.js port of Descent, including the Episode 1 shareware data and support for user-supplied registered game files.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
       "ai_note": "README credits the Three.js port to mrdoob with Claude.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
@@ -4267,8 +4267,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "BulletStorm Arena browser FPS with Three.js rendering, Socket.io multiplayer, character movement and documented server-side movement/hit validation.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -4362,8 +4362,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "First- and third-person zombie survival shooter with configurable Ammo.js/BVH physics, aiming, weapon switching and visual-effects settings.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "GitHub metadata marks this repository archived."
@@ -4410,8 +4410,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Three.js multiplayer FPS using Rapier kinematic movement, GLB map colliders, procedural weapon motion and Socket.io synchronization.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -4457,7 +4457,7 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Single-HTML browser FPS with a timed hostile-clearance objective, procedural world, weapons and audio, plus a published five-prompt AI build account.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
       "ai_note": "README says an AI agent built it from five prompts and links PROMPTS.md.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
@@ -4506,8 +4506,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "TypeScript browser-FPS scaffold documenting hero classes, game modes, movement physics and validated network schemas; core combat and rendering remain unchecked.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README checklist leaves combat resolution, server game core and Three.js client/HUD incomplete; headline classes/maps/modes are scope, not verified playable content."
@@ -4554,8 +4554,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Historical Three.js/Node.js/Socket.io authoritative-server movement example with multiplayer character synchronization, but no shooting implementation.",
-      "license_note": "License evidence: GPL-3.0. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: GPL-3.0. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Author explicitly calls it outdated and unsuitable as an example of correct implementation.",
@@ -4603,8 +4603,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Procedural Three.js single-player extraction FPS with a street arena, four weapons, hostile AI, supply chests and synthesized audio.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Requires HTTP origin, desktop WebGL and Pointer Lock; no touch scheme.",
@@ -4652,8 +4652,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Quake-style browser railgun FPS with documented authoritative multiplayer, lag compensation, offline bots, ranked duels, replays and configurable accessibility features.",
-      "license_note": "License evidence: AGPL-3.0. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: AGPL-3.0. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Source is AGPL-3.0; game models/audio have separate NOTICE terms.",
@@ -4702,8 +4702,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Low-poly Three.js arena FPS with team deathmatch versus bots, destructible cover, three weapons and a separately hosted WebSocket multiplayer server.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Static GitHub Pages hosts only the client; real-time multiplayer needs the separate WebSocket server.",
@@ -4751,7 +4751,7 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Small browser FPS with enemies, health, score and reloading, accompanied by a beginner guide for extending the project using Claude Code or Codex.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
       "ai_note": "README teaches extension using Claude Code or Codex; does not establish the authorship of the existing code.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
@@ -4800,8 +4800,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Three.js browser FPS project intended to support multiplayer lobbies and matches; the short README supplies a game-directory start command.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Very short README describes intended multiplayer scope; completeness and lobby/match behavior are unverified.",
@@ -4850,7 +4850,7 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Static Three.js zombie-survival FPS set in a 1960s village, with grappling, a random-weapon box and documented zombie spawning/navigation systems.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
       "ai_note": "AGENTS.md describes the project; no explicit author AI-creation disclosure was found in inspected sources.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
@@ -4900,8 +4900,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Procedural Three.js/WebGL2 FPS derived from mshumer/Claude-of-Duty, adding graphics presets, texture caching and weapon/character fixes.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Derivative of mshumer/Claude-of-Duty; keep upstream attribution and do not infer this maintainer’s AI authorship from the title."
@@ -4949,7 +4949,7 @@
       "disposition": "new-research",
       "summary": "Pastel-styled Three.js FPS with solo bots and up-to-four-player host-authoritative rooms over a WebSocket relay.",
       "license_note": "License evidence: All rights reserved. README explicitly says Private. All rights reserved.; no reuse permission inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README explicitly reserves all rights; public readability is not an open-source/reuse license.",
@@ -4998,7 +4998,7 @@
       "disposition": "qualified",
       "summary": "A Three.js first-person RPG source tree with implemented skill-XP and quest-state/reward logic, plus a WebSocket multiplayer client and separate Node ws server package.",
       "license_note": "Project-wide license remains unestablished. server/package.json declares ISC for the server package only; no project-wide license text or client/media grant was found in the inspected tree. Do not extend that server manifest declaration to the whole repository.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected first-party material; naming, gameplay AI and procedural generation are not authorship evidence.",
+      "ai_note": "The project’s own materials do not describe AI use during development.",
       "limitations": [
         "No root README or project-wide license was found; capability evidence now comes from inspected source and HTML controls.",
         "Client and server files establish an intended multiplayer implementation, not tested synchronization, security, availability or authoritative-server behavior.",
@@ -5096,7 +5096,7 @@
       "disposition": "new-research",
       "summary": "Single-page Three.js FPS with gun-game, deathmatch, survival and timed modes, five arenas, weapon progression and procedural audio.",
       "license_note": "License evidence: ISC. README license statement; no separate license file inspected.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -5142,7 +5142,7 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Three.js browser FPS with wave modes, training, Search & Destroy, Team Deathmatch, a map editor and documented Colyseus dedicated-server multiplayer.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
       "ai_note": "AGENTS.md and CLAUDE.md document agent-compatible workflows; these alone do not prove AI authorship.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
@@ -5195,7 +5195,7 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Procedural Three.js/Node browser FPS for self-hosted 5v5 team deathmatch, with bots, authoritative hit checks, client prediction and synthesized assets.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
       "ai_note": "README says most code was written using OpenRouter ox alpha while the human directed and reviewed.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
@@ -5242,8 +5242,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Experimental Vite/Three.js multiplayer movement prototype with Socket.io synchronization and an explicitly unfinished combat/physics roadmap.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README roadmap leaves collisions/physics/gravity, weapons/combat, character models, persistent data and lobbies unfinished.",
@@ -5431,7 +5431,7 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Phase-0 browser FPS scaffold planning scoutzknivez-style movement and kill-to-advance gun-game, with shared TypeScript simulation and authoritative networking architecture.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
       "ai_note": "Repository description says it was built by an AI orchestrator-and-auditor loop; README status remains Phase 0.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
@@ -5479,8 +5479,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Browser multiplayer FPS whose metadata describes Three.js/Node, WebSocket state synchronization, hitscan combat and portals; the README is only a brief title.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README contains only a title and multiplayer-FPS label; detailed capabilities come from metadata and are not validated.",
@@ -5528,8 +5528,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Browser zombie/bodycam-style FPS with a smartphone gyroscope controller, WebSocket input transport, Three.js/React rendering and Rapier ragdolls.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README identifies an MVP; phone sensors, cross-device pairing and advertised 120 Hz input/60 FPS were not tested."
@@ -5577,7 +5577,7 @@
       "disposition": "qualified",
       "summary": "Frenzy Fighters is a Three.js zombie-arena FPS whose repository controls page describes score-based levels, a multishot power-up and a multi-phase rock-throwing boss. Inspected JavaScript constructs the renderer, arena and zombie models.",
       "license_note": "No project-wide reuse license was found in the inspected first-party tree or manifests. Public source visibility does not establish permission to redistribute; dependencies and media may have separate terms.",
-      "ai_note": "The repository description explicitly says it was built using Codex. The controls and implementation now establish more than filenames, but no development transcript or independent authorship audit was reviewed.",
+      "ai_note": "The repository description explicitly says it was built using Codex.",
       "limitations": [
         "No README or project license was found. Boss, progression and controls are documented in the repository; their runtime behavior and balancing remain untested.",
         "Read-only documentation, manifest and bounded static source inspection only; no repository code executed, dependencies installed, game opened, or runtime, gameplay, networking, build or performance behavior verified."
@@ -5665,7 +5665,7 @@
       "disposition": "new-research",
       "summary": "Three.js/Rapier browser FPS with streamed city chunks, tactical enemies, multiple weapons, spatial audio and relay objectives.",
       "license_note": "License evidence: ISC. Source code, confirmed in the inspected ISC license despite API NOASSERTION.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Keyboard/mouse controls; the repository name is not evidence of AI authorship."
@@ -5714,7 +5714,7 @@
       "disposition": "new-research",
       "summary": "Babylon.js/WebGL browser FPS with a live-preview link and bundled HTML documentation, presented as a simple clean-code-oriented project.",
       "license_note": "License evidence: MIT. Source code; music, rifle model, skull and skybox use separate terms.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Music requires Eric Matyas attribution or separate licensing; models/textures have separate credits and terms."
@@ -5762,7 +5762,7 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Pure-JavaScript fantasy FPS with many themed levels, weapons, pickups and enemy types; the author discloses selective AI coding and image-generation assistance.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
       "ai_note": "README author account discloses using image generation and coding agents for selected mathematical and artistic work.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
@@ -5809,8 +5809,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Class-oriented Three.js/Ammo.js FPS framework and demo with map loading, browser ES modules and OpenVidu/Kurento or legacy WebRTC multiplayer.",
-      "license_note": "License evidence: GPL-3.0. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: GPL-3.0. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README distinguishes current OpenVidu/Kurento networking from old MultiRTC3 code and says old frontend netcode was removed."
@@ -5857,8 +5857,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Three.js campaign shooter with mission waves, bosses, crystals, between-mission ship upgrades, multilingual UI and local progression saves.",
-      "license_note": "License evidence: 0BSD. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: 0BSD. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Audio/assets have separate distribution-source terms; the 0BSD code license does not cover all materials.",
@@ -5906,8 +5906,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Modular extension of the Three.js FPS example with an animated weapon rig, octree collisions, movement, projectile spheres and audio.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Template/example rather than a complete campaign; FPS Rig AKM model is separately CC BY credited."
@@ -5955,7 +5955,7 @@
       "disposition": "new-research",
       "summary": "Three.js browser FPS with sprint/jump movement, pursuing enemies, health bars, shooting and reloading, under restrictive custom code terms.",
       "license_note": "License evidence: Custom noncommercial modification-required license. Source code only; public redistribution requires substantial changes. Models separately CC BY 4.0.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Custom code license forbids commercial use and original/slightly modified republication, requiring substantial changes and attribution.",
@@ -6005,8 +6005,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Browser multiplayer shooter client with Solana/Phantom-wallet integration; networking server and on-chain code are linked as separate repositories.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Client only; server and on-chain implementations are separate.",
@@ -6055,8 +6055,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Vite/TypeScript/Three.js FPS starter with controls, collisions, weapon animations and flashlight, with sound, particles and UI marked work in progress.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Sound, particle effects and UI are explicitly work in progress.",
@@ -6104,8 +6104,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Babylon.js browser FPS with multiple world areas, animated weapons and enemies, consumables, sprint energy and an enemy-clearance objective.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README warns first startup may require reload; model rights remain separate from code licensing."
@@ -6153,7 +6153,7 @@
       "disposition": "unavailable",
       "summary": "Requested repository could not be inspected: GitHub returned 404 and owner-scoped repository search found no match.",
       "license_note": "Current license and reuse scope could not be established at the requested location.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "GitHub 404 can mean missing or inaccessible; deletion is not established. No substitute was silently invented.",
@@ -6193,8 +6193,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Babylon.js/nengi multiplayer template demonstrating predicted movement, server reconciliation, deterministic inputs and rewind lag compensation.",
-      "license_note": "License evidence: Apache-2.0. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Apache-2.0. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Shots only log hits; no damage is applied.",
@@ -6242,8 +6242,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Dude Particle Shooter port to Babylon Lite, with detailed notes on replacing Babylon.js APIs for a WebGPU-only renderer.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "WebGPU-capable browser required; no WebGL fallback.",
@@ -6292,8 +6292,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Legacy Babylon.js FPS demonstration with raycasts, A* enemies, pickups, headshots, mobile controls and models extracted from Counter-Strike 1.6.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README says all models were extracted from Counter-Strike 1.6 and the author owns none; reuse rights are not established.",
@@ -6526,7 +6526,7 @@
       "disposition": "qualified",
       "summary": "A React Three Fiber/Three.js runner whose inspected source implements lane movement, jumping/sliding, obstacle and coin handling, synthesized audio and a browser-local top-ten leaderboard.",
       "license_note": "No project-wide reuse license was found in the inspected first-party tree or manifests. Public source visibility does not establish permission to redistribute; dependencies and media may have separate terms.",
-      "ai_note": "The repository description says the game was built entirely with Claude Code. The inspected deployment-config commit has a Claude Sonnet 4.6 co-author trailer; this is narrower corroboration, not an independent all-code authorship audit.",
+      "ai_note": "The repository description says the game was built entirely with Claude Code. The inspected deployment-config commit has a Claude Sonnet 4.6 co-author trailer.",
       "limitations": [
         "The inspected leaderboard reads and writes localStorage and retains ten entries; it is a browser-local score list, not an established shared online leaderboard.",
         "No README or project-wide license was found. Gameplay, touch usability, audio and performance were not run or tested.",
@@ -6762,7 +6762,7 @@
       "disposition": "unavailable",
       "summary": "The requested repository could not be read; no current capability claim is established.",
       "license_note": "Current license and reuse scope could not be established at the requested location.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "GitHub metadata and root-content requests returned 404; this cannot distinguish deletion, privacy, or another availability cause.",
         "No explicit project-code license was identified from the inspected metadata/README; public source visibility does not establish reuse permission."
@@ -6801,7 +6801,7 @@
       "disposition": "qualified",
       "summary": "Unofficial browser reimplementation of Command & Conquer: Generals – Zero Hour, using the released engine source as reference and a user’s own game assets.",
       "license_note": "License evidence: GPL-3.0 with Electronic Arts Section 7 additional terms. Inspected LICENSE.md includes GPL-3.0 and EA additional terms; original game assets are explicitly excluded.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata/README. Game AI, procedural generation, repository naming, and supplied category were not treated as authorship evidence.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Work in progress; full original-game parity is not reached.",
         "Requires an owned original game and local assets; no assets are distributed here.",
@@ -6942,7 +6942,7 @@
       "disposition": "qualified",
       "summary": "A carom-style billiards project with a Pygame desktop implementation and Flask/Socket.IO browser routes for local play and two-player rooms. The homepage calls it 3D carom billiards, and the inspected desktop scoring code awards a point after contacting both other balls.",
       "license_note": "No project-wide reuse license was found in the inspected first-party tree or manifests. Public source visibility does not establish permission to redistribute; dependencies and media may have separate terms.",
-      "ai_note": "The repository description calls the game vibe-coded but names no model or tool. A branch name containing Claude was not treated as proof of code authorship.",
+      "ai_note": "The repository description calls the game vibe-coded but names no model or tool.",
       "limitations": [
         "The repository name says English billiards, but its homepage and inspected scoring logic describe carom-style play; do not label it a verified implementation of official English-billiards rules.",
         "Online source relays player shots and end-of-turn state; no live synchronization or authoritative-physics behavior was verified.",
@@ -7137,8 +7137,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A Codex/Claude Code skill pack with a director, gameplay/rendering guidance, a bundled Vite/TypeScript scaffold, and deterministic Playwright QA templates.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "Core workflow does not require a paid asset API; optional generation providers have separate costs and terms. Instructions do not guarantee finished-game quality.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7179,8 +7179,8 @@
       "availability": "available",
       "disposition": "existing",
       "summary": "A cross-engine skill collection and router that select engine-specific gameplay, asset, testing, and production instructions.",
-      "license_note": "License evidence: Apache License 2.0. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: Apache License 2.0. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "Already represented by GameMap's gamedev-agent-skills-router. Version and agent-compatibility claims remain tied to upstream documentation.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7225,7 +7225,7 @@
       "disposition": "new-research",
       "summary": "A Claude Code plugin that assembles game-development agent teams, routes engine/domain tasks, persists project knowledge, and injects skill fragments.",
       "license_note": "License evidence: MIT. Author's README declaration for project code README-only MIT declaration; no license file in inspected root listing.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "Claude Code plugin/native Teams only; README excludes Codex/Gemini backends and generic terminal orchestration. README declares MIT, but no root license file was found.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7266,8 +7266,8 @@
       "availability": "available",
       "disposition": "existing",
       "summary": "A coordinated studio template of role-specific agents, implementation skills, quality gates, hooks, and engine-specific workflows.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "Already represented by GameMap's claude-code-game-studios. Requires a compatible agent and separate engine project; published agent/skill counts are not independent validation.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7311,8 +7311,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A project-local, provider-neutral studio framework with shared agent/skill definitions and adapters for Claude, Codex, Cursor, and browser/native engines.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "Local plugin manifests are not published marketplace packages and do not guarantee command exposure. Human decisions and approvals remain part of the documented workflow.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7354,7 +7354,7 @@
       "disposition": "new-research",
       "summary": "A browser-game skill workflow for Phaser and Three.js that scaffolds projects, creates assets/audio, runs documented QA stages, and integrates deployment/monetization.",
       "license_note": "License evidence: MIT. Author's README declaration for project code README-only MIT declaration; no root license file. README says games using @strudel/web audio need an AGPL-3.0-compatible license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "README declares MIT without a root license file; generated games using @strudel/web require AGPL-compatible licensing. Deployment and Play.fun monetization involve separate services/accounts.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7395,7 +7395,7 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A Three.js dodge-game starter with architecture rules, reusable skills, feature prompts, and a separate blank-game branch for agent-assisted extension.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
       "ai_note": "README states the Cube Runner branch was built from the blank starter in a single agent session; no particular model is established.",
       "limitations": [
         "Default branch is cube-runner rather than main. The advertised paid Pro Kit is separate; runtime behavior was not tested.",
@@ -7438,8 +7438,8 @@
       "availability": "available",
       "disposition": "existing",
       "summary": "A local-first 2D game IDE combining Codex/Claude workflows, a visual scene editor, sprite generation, and JavaScript/Canvas output.",
-      "license_note": "License evidence: Apache License 2.0. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: Apache License 2.0. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "Already represented by agent-game-forge. Described as pre-launch; Godot/Unity outputs remain roadmap items and optional image services may incur charges.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7488,8 +7488,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "A Codex production-workflow pack for game planning, tool selection, procedural Three.js modeling, assets, editor integrations, reversible changes, and QA gates.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "Workflow/skills rather than a bundled engine. External tools, providers, editor bridges, OS/GPU compatibility, and permissions require separate validation.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7572,8 +7572,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A generator source that publishes thin agent-ready game repositories for Godot, Bevy, Babylon.js, or Three.js with asset and runtime-evidence workflows.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "The repository is a generator, not a finished game. Engine/agent runtimes are separate; optional asset providers can cost money and force-publish can overwrite a target.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7614,8 +7614,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A CLI from Normal that creates or augments Unity projects with Claude commands, skills, an MCP bridge, and build/playtest workflows.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "Requires Unity and Claude Code. README says art/audio/3D assets are not created by the tool and screenshot-based MCP iteration has latency.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7657,7 +7657,7 @@
       "disposition": "qualified",
       "summary": "A text-to-game workflow layer for Godot with external agent runners, iterative build/fix/evaluation, visual QA, and export packaging.",
       "license_note": "License evidence: Business Source License 1.1. Repository material under the inspected license, with separately licensed dependencies/assets excluded. BUSL-1.1; additional grant permits game development/output sales but excludes competing commercial offerings. Inspected license gives change date 2030-09-11 and Apache-2.0 as change license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "Public-alpha preparation; README lists unsupported pixel-art/TileMap/audio workflows and variable visual wiring. BUSL-1.1 is source-available, not open source; competing commercial services are restricted.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7698,8 +7698,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A Unity-focused bundle combining studio agents, engine/middleware skills, workflow plugins, and director quality gates.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "Requires Unity and an appropriately licensed Claude runtime. README explicitly credits Donchitos' Game Studios template; retain that derivation rather than counting it as an unrelated invention.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7753,8 +7753,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A game-development plugin marketplace and manual spanning engines, rendering, multiplayer, audio, testing, and general-development plugins.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "Instruction/plugin library with separate runtime dependencies. README contains differing counts in sections; do not treat those counts or all compatibility statements as verified.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7795,8 +7795,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A Claude Code repackaging of OpenAI's game-studio skills for browser-game architecture, Phaser/Three.js/R3F, asset pipelines, and playtesting.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "README explicitly identifies it as an adaptation of OpenAI content; preserve upstream attribution. Repackaging does not establish separate engine or generation capabilities.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7844,8 +7844,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A Codex skill set for procedural low-poly Three.js models/glTF export and React/Vite/Babylon.js prototype bootstrapping.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "A reusable instruction/model-factory package rather than a complete game. README describes npm use after publication; registry availability was not verified.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7886,8 +7886,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "A documented fork of Three.js Game Skills that adds a Phaser 3 director and 2D browser-game workflow.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "Upstream Three.js content and demos are inherited; several install examples still name upstream. Keep the distinct Phaser addition while avoiding duplicate claims for the original suite.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -7979,8 +7979,8 @@
       "availability": "available",
       "disposition": "existing",
       "summary": "A multi-engine, multi-agent scaffold of rules, commands, skills, adapters, hooks, and examples for design, implementation, assets, and QA.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "README documents an AI-agent workflow or integration; that does not establish that the repository itself was authored by AI.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The README describes an AI-agent workflow or integration.",
       "limitations": [
         "Already represented by everything-game-dev-code. The full-game workflow is experimental and optional asset-generation providers have independent costs/terms.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -8025,7 +8025,7 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "A fork of affaan-m/ECC whose inspected README describes general agent-harness skills, memory, security, hooks, and workflow configuration.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
       "ai_note": "The inherited README documents generic agent-harness workflows; upstream autobiographical claims must not be attributed to the fork owner.",
       "limitations": [
         "The requested name suggests a game enhancer, but the current README does not establish a distinct game-development extension. Preserve as a generic fork pending specific evidence.",
@@ -8073,8 +8073,8 @@
       "availability": "available",
       "disposition": "existing",
       "summary": "General-purpose JavaScript 3D library with WebGL/WebGPU renderers and SVG/CSS3D addons, plus examples and documentation.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -8125,8 +8125,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "JavaScript/TypeScript game and rendering engine with a playground, typed npm packages, documentation and an exporter ecosystem.",
-      "license_note": "License evidence: Apache-2.0. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Apache-2.0. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README says the project CDN is for learning/experimentation and should not be used for production hosting."
@@ -8174,8 +8174,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "WebGL2/WebGPU game and graphics runtime supporting 3D applications, Gaussian splats, XR and browser delivery.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -8221,8 +8221,8 @@
       "availability": "available",
       "disposition": "existing",
       "summary": "React renderer for Three.js, expressing scenes as reusable interactive components integrated with React state and lifecycle.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Major versions must match React: README pairs Fiber 8 with React 18 and Fiber 9 with React 19."
@@ -8274,8 +8274,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Collection of reusable helpers and ready-made abstractions for React Three Fiber, using the standalone three-stdlib package.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Requires React Three Fiber; native entry does not export web-only Html or Loader helpers."
@@ -8322,8 +8322,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "TypeScript framework adding Ammo.js physics to Three.js and 3D functionality to Phaser 3, with standalone packages and examples.",
-      "license_note": "License evidence: LGPL-3.0. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: LGPL-3.0. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -8369,8 +8369,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "React Three Fiber wrapper for Rapier WASM physics, exposing rigid bodies, colliders, joints, events and debugging helpers.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README pairs Rapier wrapper v2 with Fiber 9/React 19; React 18 uses wrapper v1/Fiber 8."
@@ -8418,8 +8418,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Archived former repository for official Rapier JavaScript bindings; its README now points to the main Rapier repository's typescript directory.",
-      "license_note": "License evidence: Apache-2.0. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Apache-2.0. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Archived and merged into dimforge/rapier/typescript; prefer the successor for new work and retain this row as migration history."
@@ -8466,8 +8466,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Type-safe ESM/CommonJS fork of cannon.js with tree shaking, trigger bodies, collision/force corrections and modern packaging.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -8515,7 +8515,7 @@
       "disposition": "new-research",
       "summary": "Emscripten port of Bullet physics to JavaScript/WASM, with rigid-body, soft-body, heightmap and vehicle examples.",
       "license_note": "License evidence: Zlib. ammo.js code; README also explicitly identifies zlib/Bullet licensing.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -8562,8 +8562,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Three.js postprocessing library with an effect composer, merged fullscreen effects, color-management guidance and antialiasing/bloom/blur effects.",
-      "license_note": "License evidence: Zlib. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Zlib. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "GitHub API moved-permanently response and stable repository ID 47623348 resolve to pmndrs/postprocessing."
@@ -8611,8 +8611,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Bounding-volume-hierarchy acceleration for Three.js raycasting and spatial queries, with shape casts, skinned geometry and worker generation examples.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -8658,8 +8658,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Engine-independent JavaScript game-AI library for agents, steering, navigation meshes, perception, triggers, fuzzy logic and JSON state serialization.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -8705,8 +8705,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Experimental JavaScript ECS framework with scoped worlds, reactive queries, ordered systems and pooled entities/components.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README calls it highly experimental; GitHub also marks the repository archived."
@@ -8753,8 +8753,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Minimal data-oriented TypeScript ECS with queries, relational entities, serialization and thread-friendly architecture.",
-      "license_note": "License evidence: MPL-2.0. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MPL-2.0. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -8800,8 +8800,8 @@
       "availability": "not_found_or_inaccessible",
       "disposition": "unavailable",
       "summary": "Independently verified alternative hmans/miniplex is a TypeScript entity manager using plain JavaScript objects, archetypal queries and optional React bindings.",
-      "license_note": "Requested-location license unknown. Alternative hmans/miniplex: License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "Requested-location license unknown. Alternative hmans/miniplex: License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Requested pmndrs/miniplex returns 404. hmans/miniplex is a verified project-name/README correction, not a proven GitHub redirect.",
@@ -8865,8 +8865,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Three.js orbit-style camera controller with smooth transitions, dolly/pan, framing, boundaries and configurable mouse/touch interaction.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Owner capitalization normalized by GitHub metadata to yomotsu."
@@ -8915,8 +8915,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Standalone TypeScript packaging of Three.js example utilities for ESM/CommonJS, with browser, worker and Node support.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -8962,8 +8962,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Emscripten bindings for Jolt Physics offering WASM, asm.js, debug and multithreaded builds with the C++-style interface.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -9009,8 +9009,8 @@
       "availability": "available",
       "disposition": "existing",
       "summary": "Authoritative multiplayer framework for Node.js with client SDKs, room matchmaking and state synchronization.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed."
       ],
@@ -9058,8 +9058,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "WebRTC data-channel transport for real-time client/server communication over UDP, using a Node.js server and browser clients.",
-      "license_note": "License evidence: BSD-3-Clause. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: BSD-3-Clause. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Transport library, not a complete game or authoritative simulation. README recommends simpler alternatives for beginners.",
@@ -9107,8 +9107,8 @@
       "availability": "not_found_or_inaccessible",
       "disposition": "unavailable",
       "summary": "Independently verified alternative timetocode/nengi is a Node.js/HTML5 multiplayer networking engine with binary state snapshots, interpolation, client prediction and lag compensation.",
-      "license_note": "Requested-location license unknown. Alternative timetocode/nengi: License evidence: Apache-2.0. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "Requested-location license unknown. Alternative timetocode/nengi: License evidence: Apache-2.0. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Requested nengi/nengi returns 404. timetocode/nengi is a verified project-name/README correction, not a proven GitHub redirect.",
@@ -9161,8 +9161,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Node.js multiplayer server/client framework with binary WebSocket networking, interpolation, prediction/re-enactment and debugging tools.",
-      "license_note": "License evidence: Apache-2.0. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Apache-2.0. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README lists UDP/WebRTC, full-stack testing and replay saving as future pipeline items; do not claim these as shipped features."
@@ -9209,8 +9209,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A-Frame framework for multi-user web VR with component synchronization and WebRTC/WebSocket adapters, including voice/video support.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Adapter capabilities differ; README identifies the native WebRTC adapter as work in progress with no maintainer."
@@ -9258,7 +9258,7 @@
       "disposition": "new-research",
       "summary": "React/Three.js GPU terrain-authoring studio with tiled/infinite/planet modes, noise layers, real-world terrain, exports and Unity/Blender integrations.",
       "license_note": "License evidence: MIT; Blender extension GPL-3.0-or-later. Core and Unity package MIT; Blender extension GPL-3.0-or-later.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Unity integration is explicitly alpha; core/Unity are MIT while Blender extension is GPL-3.0-or-later."
@@ -9305,7 +9305,7 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Three.js procedural terrain library with noise/fractal generators, filtering, seeded randomness, mesh scattering and import/export helpers.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
       "ai_note": "README links a SKILL.md to help agents use the library; no AI-written-code claim established.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
@@ -9353,8 +9353,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Early TypeScript/Three.js game-engine framework combining Rapier physics, geckos.io networking, shared client/server entities and editor/debugging features.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Explicit early WIP; engine APIs and level editor are still changing."
@@ -9401,8 +9401,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Older Hyperfy reference implementation with server and website packages; metadata identifies hyperfy-xyz/hyperfy as its current successor.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Metadata identifies it as the old reference repository; successor is hyperfy-xyz/hyperfy, not an independent current engine.",
@@ -9450,8 +9450,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Hyperfy SDK examples for synchronized elevators/doors, NPC dialogue, proximity video, teleporters and blockchain interactions.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "SDK recipes, not a complete standalone game; no code license was established from inspected metadata/README.",
@@ -9549,8 +9549,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Blender addon for Hyperfy assets, providing rigid-body/LOD/collider setup, Mixamo/VRM rig conversion, GLB export, snap points and batch renaming.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Blender asset-authoring addon, not a browser engine/game; no code license was established from inspected metadata/README.",
@@ -9599,7 +9599,7 @@
       "disposition": "new-research",
       "summary": "Futuristic HTML5 racing game with public stable source and separate full-resolution texture assets.",
       "license_note": "License evidence: MIT. README says code and resources are MIT unless a file states otherwise.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README says development is on hiatus; this is a legacy browser-game reference."
@@ -9647,7 +9647,7 @@
       "disposition": "qualified",
       "summary": "Client-side rally racing game storing tracks and runs in IndexedDB and exchanging them as JSON; current README says online features are unavailable.",
       "license_note": "License evidence: GPL-3.0. Source code only; Content uses separate restrictive terms in the same license file.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Current README says online features are unavailable.",
@@ -9697,7 +9697,7 @@
       "disposition": "new-research",
       "summary": "Emscripten web port of Cube 2/Sauerbraten with bot combat, visual effects and an integrated editor; development has stopped in favor of the Sour continuation.",
       "license_note": "License evidence: Zlib. Code; artwork separately CC BY / CC BY-SA with directory-specific notices.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "No longer under active development; README points to cfoust/sour continuation.",
@@ -9746,7 +9746,7 @@
       "disposition": "new-research",
       "summary": "Sauerbraten server and web client that bridge browser/mobile players with native desktop clients, using Emscripten, WebGL2, Go and a React frontend.",
       "license_note": "License evidence: MIT plus retained upstream licenses. MIT for author glue/modifications; inherited components retain original licenses.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Forked projects retain their licenses; MIT applies to the author’s glue code and modifications, not automatically all bundled engine/assets.",
@@ -9794,8 +9794,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "Compact 2021 js13k FPS with two levels, enemies, three weapons, procedural textures, dynamic lighting and spatial audio.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Small two-level jam game; Sonant-X-derived audio library is separately zlib licensed."
@@ -9842,8 +9842,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "HTML5/WebGL Quake source port with a Node.js dedicated server and cross-play with native Quake clients, requiring user-supplied game data.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Requires Quake resource files and HTTP Range support; README says HTTPS-hosted clients cannot join multiplayer.",
@@ -9892,8 +9892,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Emscripten port of Quake II/R1Q2 with browser WebGL/WebSocket support and native dedicated-server builds.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Requires separately obtained Quake II data; game assets are not licensed by source availability.",
@@ -9943,8 +9943,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Quake III Arena port targeting pre-ES2015 JavaScript/asm.js without WebAssembly, loading user-selected PK3 game data.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Multiplayer is not available in this port; commercial play requires the matching Point Release 1.32 PK3 files.",
@@ -9993,8 +9993,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Archived Three.js/cannon.js third-person playground with character controls, cars, aircraft and Blender-authored GLB scenes.",
-      "license_note": "License evidence: MIT. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: MIT. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "Author ended development and archived the project in February 2023; it is a historical mechanics reference."
@@ -10041,8 +10041,8 @@
       "availability": "available",
       "disposition": "qualified",
       "summary": "Legacy collection of reusable Three.js game components and tutorial-derived examples, pointing readers to a newer Partisan Games repository.",
-      "license_note": "License evidence: Unknown. Top-level repository/code classification only; no blanket license for assets or dependencies inferred.",
-      "ai_note": "No explicit AI-authorship disclosure established in the inspected sources; gameplay AI and names are not provenance.",
+      "license_note": "License evidence: Unknown. Check the terms for assets and dependencies separately.",
+      "ai_note": "The inspected sources do not document AI use during development.",
       "limitations": [
         "Source/documentation review only; no installation, runtime, gameplay or performance verification was performed.",
         "README points to partisan-games/partisan-games.github.io as a newer version.",
@@ -10092,7 +10092,7 @@
       "disposition": "qualified",
       "summary": "A public fork of levy-street/world-of-claudecraft carrying the same browser MMO, deterministic simulation, server, and headless-environment documentation.",
       "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. MIT code; this fork's README separately identifies CC0 art and MIT water maps. Do not substitute the current upstream's media register for this revision.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Metadata explicitly identifies levy-street as parent. Do not count this as a separate original game; fork-specific changes were not diff-reviewed. Asset licenses are separate from MIT code.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -10139,8 +10139,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "An external userscript addon platform with an in-game marketplace, combat/inventory UI extensions, typed APIs, and a development harness.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Read-only by design, not a gameplay automation bot. Addons execute in the page and may access session data; the API is not a security boundary.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -10182,7 +10182,7 @@
       "disposition": "qualified",
       "summary": "The current default tree contains only a one-line README naming world-of-claudecraft-rs.",
       "license_note": "License evidence: Unknown. No reuse license established for this repository. Unknown is not permission to reuse.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "No Rust implementation or capability can be verified from the default tree. Repository size/history is not evidence of current source availability; license is unknown.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -10264,7 +10264,7 @@
       "disposition": "unavailable",
       "summary": "The supplied game-agent repository could not be inspected at its requested GitHub address.",
       "license_note": "Current license and reuse scope could not be established at the requested location.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Metadata and README returned 404; exact-name GitHub search found no replacement. Capability and license remain unknown."
       ],
@@ -10303,7 +10303,7 @@
       "disposition": "unavailable",
       "summary": "The supplied WRKR demo repository could not be inspected at its requested GitHub address.",
       "license_note": "Current license and reuse scope could not be established at the requested location.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Metadata and README returned 404; exact-name GitHub search found no replacement. Capability and license remain unknown."
       ],
@@ -10341,8 +10341,8 @@
       "availability": "available",
       "disposition": "new-research",
       "summary": "A Node/WebSocket game bot with questing, combat, healing, reconnect behavior, optional coordinated fleets, and a live dashboard.",
-      "license_note": "License evidence: MIT License. Repository code/material covered by the license; third-party assets and dependencies may have separate terms. No claim is made that all third-party assets or external services share this license.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "license_note": "License evidence: MIT License. The repository license covers its own code and material. Check the terms for third-party assets, dependencies, and external services separately.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Research locally against an authorized server; live-realm botting terms were not reviewed. README mentions embedded credentials; none were accessed or used. The name alone does not prove LLM-based control or Claude authorship.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -10384,7 +10384,7 @@
       "disposition": "new-research",
       "summary": "A curated catalog of source-available games, engines, maps, addons, and related resources across browser, native, and mobile platforms.",
       "license_note": "License evidence: Creative Commons Zero v1.0 Universal. Catalog text; linked projects excluded. CC0 applies to the catalog, not every linked game.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "A discovery list rather than one game or engine. Its CC0 catalog license does not apply to linked projects; linked availability and rights need separate checks.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -10426,7 +10426,7 @@
       "disposition": "qualified",
       "summary": "A historical catalog of GitHub-hosted games, engines, maps, addons, and related projects across platforms.",
       "license_note": "License evidence: CC-BY-NC-SA-4.0. Catalog only README licenses the catalog under CC BY-NC-SA-4.0; linked projects are independent.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "Repository is archived and README confirms maintenance has ended. Catalog is CC BY-NC-SA-4.0; linked project licenses remain independent.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."
@@ -10468,7 +10468,7 @@
       "disposition": "new-research",
       "summary": "A community-curated index of Babylon.js documentation, playgrounds, demos, scenes, games, examples, and tools.",
       "license_note": "License evidence: Creative Commons Zero v1.0 Universal. Catalog text; linked projects excluded. CC0 applies to the catalog, not every linked project.",
-      "ai_note": "No explicit AI-development attribution was established from the inspected metadata and README.",
+      "ai_note": "The repository metadata and README do not describe AI use during development.",
       "limitations": [
         "A discovery catalog, not the Babylon.js engine. CC0 applies to the list; linked projects and assets keep their own terms.",
         "Read-only metadata, README, and license research; no repository code was executed, no dependencies installed, and no live demo or performance claims tested."

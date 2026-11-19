@@ -1,1613 +1,1613 @@
 {
   "example:open3d-blocks-openworld": {
     "description": "第三人称开放世界浏览器游戏，城市分为六个街区，玩家可步行、驾驶四种载具、用武器轮盘射击，并躲避一至五星的警察通缉。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.1、claude-code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.1、claude-code（2026-11-19 GitHub 核查）。",
     "title": "BLOCKS 开放世界"
   },
   "example:open3d-fable-5-1-one-prompt-game": {
     "description": "打包为单个 HTML 文件的 3D 竞技场游戏，由一次提示完成，资源包括 Blender 模型、生成贴图、场内视频和合成器音乐循环；仓库附原始 prompt。 注意：素材由 Blender 及图像、视频、音乐生成工具（FLUX.2、LTX、ACE-Step）制作。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.1、claude-code、GLM-5.3（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.1、claude-code、GLM-5.3（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-ai-model-benchmark-3d-game-vision": {
     "description": "多模型同题对比仓库：六个模型按同一提示各做一款可玩 3D 游戏和一个实时摄像头人脸、手势与姿态项目，原样保存各自产出，如金库竞技场游戏 Neon Heist。 注意：多模型产出合集；其中一个模型结果部分丢失，另一个没有产出数据。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5、Claude Opus 4.8、Claude Code、Gemini 3.6 Flash（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5、Claude Opus 4.8、Claude Code、Gemini 3.6 Flash（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-saltline-fable-5-2": {
     "description": "浏览器第一人称射击游戏，单一关卡设在雨中的集装箱港口，玩家需切断三个上行中继站，同时躲避无人机和机器狗的追猎；模型、音效和贴图均由代码生成。 注意：第三方镜像仓库，并非原作者发布；仅移除了 claude.ai 运行框架脚本。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-turbo-kart-rush": {
     "description": "马里奥赛车风格的街机卡丁车游戏：从八名车手中选择，与七名 AI 对手跑三圈，可漂移获得加速并使用道具；所有模型、贴图、音效和音乐均由代码生成。 注意：面向支持 WebGL2 的桌面浏览器。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.1、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.1、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-turbo-kart-grand-prix": {
     "description": "受马里奥赛车启发的 Three.js 3D 卡丁车游戏，包含一条带坡道、发夹弯和减速弯的 1.2 公里赛道、加速带、场景装饰以及低多边形素材。 注意：3D 素材由 Tripo 在后续一次提示中生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.1、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.1、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-nightfall-call-of-duty-remake-fable-5-1": {
     "description": "非官方粉丝制作的《使命召唤》风格战术第一人称射击浏览器游戏，支持移动、开镜瞄准、冲刺、跳跃和换弹。 注意：非官方粉丝作品；需桌面浏览器并联网加载 Three.js。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.1（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.1（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-rocket-arena-rocket-league-remake-fable-5-1": {
     "description": "非官方粉丝制作的 3v3 汽车足球浏览器游戏，风格类似《火箭联盟》，支持驾驶、跳跃翻转、加速、漂移、空中翻滚、球视角和手柄。 注意：非官方粉丝作品；需桌面浏览器并联网加载 Three.js。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.1（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.1（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-worldbuild-bench": {
     "description": "AI 生成 3D 浏览器游戏的评测框架：各模型使用相同需求和工具，可玩构建公开对比；其中一轮题目是三圈环道赛车 Sunset Apex。 注意：评测框架与合集，并非单个游戏，包含多个模型的构建。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5、Claude Opus 4.8、Claude Sonnet 5、gemini（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5、Claude Opus 4.8、Claude Sonnet 5、gemini（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-fable52-fps-repro": {
     "description": "复现实验仓库，含四个一句话提示生成的单文件浏览器演示及提示词、运行脚本和成本数据；仅第 04 项 SUBLEVEL 07 是完整 FPS，用红点卡宾枪迎击三波悬浮无人机。 注意：四个演示中仅一个是游戏，其余为音效、材质和建模演示。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 claude-fable-5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 claude-fable-5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-fable52-gta6": {
     "description": "以大阪通天阁、新世界至天王寺、阿倍野一带为舞台的原创 3D 开放世界沙盒，地图基于公开数据；可驾驶汽车、直升机和客机，使用武器并执行任务。 注意：面向桌面版 Chrome；两个人物模型由参考照片生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 fable52（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 fable52（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-tria-prima": {
     "description": "第一人称黑暗奇幻炼金冒险：采集九种材料，炼制七种能改变世界的药剂，抵达三种原质所在之处并重燃岛上的炼金炉；完整流程约一小时。 注意：最终版本经过美术方向调整并修复了三个反馈的 bug，并非严格零反馈单次生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-worm-rider": {
     "description": "单场景可玩原型：玩家驾驭巨型沙虫沿环形道路行进，在运输车队驶回大门前将其吞掉；模型和贴图均由代码生成。 注意：原型作品；四个授权音频和背景图文件未包含，游戏改用程序化替代。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-bayhaven": {
     "description": "原创 Three.js 开放世界犯罪游戏，按会话逐步实时编写；仓库包含开发计划、模块约定、自动检查和更新日志。 注意：早期骨架版本，仍在开发中；规划和美术由人类工作室提供。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-shuttlestrike": {
     "description": "浏览器第一人称羽毛球游戏，通过摄像头追踪手势来握拍和挥拍，可打出扣杀、高远球和吊球；也支持鼠标模式。 注意：需联网加载 CDN 库；摄像头模式需在 HTTPS 或 localhost 下运行。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 claude fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 claude fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-farm-ca": {
     "description": "面向儿童的回合制 5v5 农场主题浏览器射击游戏，动物阵营需在时限内击中农场工人，含两张地图、商店、金币和电脑玩家。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-emberdeep": {
     "description": "浏览器程序化第一人称迷宫探索游戏，角色和物件使用复古精灵图，支持点对点联机，好友共享同一迷宫、碎片和钥匙。 注意：3D 场景搭配 2D 精灵角色，接近复古 2.5D 风格。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-fable-experiment": {
     "description": "Hidden Ember：单个 HTML 文件中的 3D 动漫风忍者村，含约 60 栋房屋、集市、训练场和可攀登的宝塔，有三名可玩角色；仓库另含一个摄像头手印识别网站。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-fable5-2demo": {
     "description": "包含多个浏览器 3D 游戏的仓库：水下探索 Tidebell、仙侠御剑飞行《青云宗》、赛博朋克城市驾驶 Mothlight 和第一人称记忆屋探索 MISREMEMBER，另有一段渲染短片。 注意：多游戏合集；MISREMEMBER 的贴图和照片由 Codex 生成，且仅含五晚中的前两晚。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-opus-v-fable": {
     "description": "Three.js 第一人称遗物盗取游戏；仓库为评测结果页，收录同一题目在不同模型和推理强度下的六个可玩构建、源码及评分标准。 注意：对比合集：同一题目由两个模型在不同推理强度下生成的多个版本，并非独立游戏。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2、Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2、Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-fable-5-2-potatobench": {
     "description": "以策略游戏方式进行的土豆农场经营：选择田地向工人下令，应对看不见的地下作物生长和天气，扩建土地与建筑、雇人并履行合同；为 PotatoBench 评测的参赛作品。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-claude-fable-5-2-flight-sim": {
     "description": "Three.js 浏览器飞行模拟器，可在完全由代码生成的 3D 星球上空飞行，支持俯仰、横滚、偏航和推力控制、爬升至轨道及视角切换；仓库附所用提示词。 注意：需本地 Web 服务器运行；属同题对比测试，其他版本在另一仓库。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2、Opus 5.5、claude-sonnet、Haiku 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2、Opus 5.5、claude-sonnet、Haiku 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-dafeiyu": {
     "description": "网页第一人称射击恶搞游戏，武器是一条蓝色大肥鱼，敌人全是 Claude 造型的怪物；所在仓库其余内容为 WebGL 3D 短片。 注意：改编自黑哥的《几猫》，关卡、玩法和画面沿用原作，仅更换了怪物、武器和名称。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型（提到 Claude Opus、Claude Sonnet、Claude Haiku）。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型（提到 Claude Opus、Claude Sonnet、Claude Haiku）。",
     "title": "大肥鱼大战 Claude"
   },
   "example:open3d-fable-5-2-high-rail-shooter": {
     "description": "使用 WebGL2 和三维相机的轨道射击游戏，大量使用精灵图，以单个 HTML 文件形式收录在一个 AI 制作游戏与实验的合集仓库中。 注意：大量使用精灵图，属复古 3D / 2.5D 边界案例；所在仓库混合了多个模型的作品。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 fable-5.1-xhigh、Opus 5.5、Sonnet 4.6、gemini-3.6-flash（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 fable-5.1-xhigh、Opus 5.5、Sonnet 4.6、gemini-3.6-flash（2026-11-19 GitHub 核查）。",
     "title": "Galloper 轨道射击源码"
   },
   "example:open3d-fable-city": {
     "description": "单个 HTML 文件中的程序化低多边形 3D 城市，含遵守信号灯的交通、行人、昼夜循环、可查看信息的建筑，以及带追尾视角的可驾驶车辆。 注意：偏驾驶沙盒，未见完整任务系统的说明。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-aaron-portfolio": {
     "description": "Three.js 交互小游戏，玩家操控骑自行车的鹈鹕环绕小星球骑行，可跳跃和切换视角。 注意：收录在作者个人作品集网站仓库中；更偏交互体验而非完整游戏。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。",
     "title": "Tiny Planet Tour / 小星球环骑"
   },
   "example:open3d-ceba": {
     "description": "类《时之笛》的低多边形 3D 冒险，主角是一颗甜洋葱，洋葱层代表生命和体型；含村庄、层叠谜题地牢和 Boss 战，采用 picoCAD 风格与 PICO-8 调色板。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-null-horizon": {
     "description": "原创未来题材浏览器潜行射击游戏，含三关战役、敌人寻路、四种武器、光学迷彩和无声击杀；模型和贴图均由代码生成。 注意：预告片、仓库整理及 ElevenLabs 配音配乐为后续请求；游戏平衡尚未充分测试。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-lanternfall": {
     "description": "单页 Three.js 放置战斗游戏：英雄小队在灯笼照亮的防线上抵御怪物潮，战斗自动进行，玩家负责组队、用战利品升级换装并适时发射照明弹。 注意：共经 17 条消息完成，并非严格单次生成；README 本身未注明模型。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-solstice-racing": {
     "description": "浏览器赛车游戏，驾驶 GT3 赛车在三公里海岛赛道上沿悬崖、穿树林行驶，含精细车辆物理模型和分段计时，支持键盘或手柄。 注意：基于作者已有的 Solstice 渲染器；需 Chrome、Edge 等支持 WebGPU 的浏览器。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-holdout": {
     "description": "浏览器第一人称射击游戏，原创设定为被占领的俄勒冈小镇；玩家与两名队友穿过街区，炸毁干扰车，可使用卡宾枪、手枪和手雷。 注意：基于已有 Solstice 引擎，使用第三方人物与动画；需桌面 WebGPU，关卡约 520 MB 流式加载。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-cayley-flight-simulator": {
     "description": "浏览器飞行模拟器，含九种依据公开几何数据建模的飞机、六自由度飞行模型、可操作驾驶舱、合成音效，以及全球真实地形上的实时天气。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-takeoff-flight-sim": {
     "description": "浏览器飞行模拟器，含十二种按比例建模的波音、空客和战斗机，六自由度飞行模型，美国西南部真实地形与机场，以及玻璃座舱、自动驾驶和空管。 注意：交互式模拟器，无明确胜负目标；可选的 AI 空管需自备 API key。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-biubiu": {
     "description": "打包后不足 1 MB 的网页多人射击游戏，支持单人、合作和联机对战；单人版可离线运行，联机版需自建 Node.js 服务器，带排行榜。 注意：货场、无人机和机器狗设定与 Saltline 相似，是否改编未核实；安装命令指向另一仓库，执行前请先审查。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。",
     "title": "BiuBiu 行动"
   },
   "example:open3d-fable-5-2-random-game": {
     "description": "一个仓库含两款单文件 3D 动作游戏：以罗马内战为背景的开放世界游戏 Aquila，含八章主线、潜行、战斗及骑马和桨帆船旅行；以及规模较小、以点亮灯塔为目标的奇幻游戏 Dawnward。 注意：一个仓库包含两款独立游戏。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-fable5-2game": {
     "description": "第一人称时间循环射击游戏，舞台是被风暴困住的集装箱场：每次闪电回溯 70 秒，之前的行动化为“回响”重复，玩家借此在一个循环内同时锁定三个中继点。 注意：经多轮对话制作；使用 Poly Haven 的 CC0 扫描模型和贴图，并非纯程序化素材。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型（提到 Claude）。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型（提到 Claude）。"
   },
   "example:open3d-fable-5-2-game-test": {
     "description": "Apex Circuit：以 HTML 仓库形式发布的浏览器游戏项目，仓库未附 README，未说明具体玩法。 注意：无 README 或玩法说明。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目仓库简介未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目仓库简介未提及该模型。"
   },
   "example:open3d-vaquitas-de-bloque": {
     "description": "浏览器第一人称 3D 方块世界游戏：为三个全息投影填入正确毛色以召唤三头奶牛，夜间防御偷牛贼并赢取收藏玩偶；有冒险和自由两种模式及三档难度。 注意：据 README，游戏会发送匿名分析事件。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-voxel-gt-fable": {
     "description": "《GT 赛车》风格的浏览器体素赛车游戏，含五辆受真实车型启发的赛车和三条受真实赛道启发的赛道，以及 AI 对手、计圈、追尾与车头视角和程序化引擎音效。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.1（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.1（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-mario-kart-snow": {
     "description": "浏览器马里奥赛车风格低多边形卡丁车游戏：八辆卡丁车在雪地赛道跑三圈，含追尾视角、道具和完整 HUD；是 fable-arcade 单文件游戏合集中的一项。 注意：多游戏合集仓库中的一项。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.1（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.1（2026-11-19 GitHub 核查）。",
     "title": "Frostline Kart 雪地赛车"
   },
   "example:open3d-voxel-gta-city": {
     "description": "单文件浏览器 GTA 风格游戏，舞台是方块体素城市，有恶搞店招、按车道行驶的车流、行人和命名街区；唯一任务是在市中心教训告密者。属于 fable-arcade 合集。 注意：多游戏合集仓库中的一项。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.1（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.1（2026-11-19 GitHub 核查）。",
     "title": "Fable Theft Auto 体素城市"
   },
   "example:open3d-single-html-game-bench": {
     "description": "零样本评测仓库，收录多种模型与客户端组合在同一提示下的首轮产出：在单个 HTML 文件中完成含 RPG 和 Roguelike 元素的 3D 恐怖游戏。 注意：多模型对比合集；附带的排名为作者主观试玩结果。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5 Max、Opus 5.5、Sonnet 4.6、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5 Max、Opus 5.5、Sonnet 4.6、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-decarlo-boyz": {
     "description": "浏览器开放世界第三人称动作游戏，含任务、车辆和三兄弟角色；基于 Three.js，没有美术素材文件，所有贴图、模型、动画和音效均在加载时程序化生成。 注意：由两个模型分阶段完成：一个搭建初版城市，另一个负责后续质量与内容迭代；建议使用桌面端。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5、Claude Opus 4.8（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5、Claude Opus 4.8（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-car-game-fable-5-test": {
     "description": "简单的 3D 浏览器驾驶游戏，玩家在日落时分的城市中开车兜风；主体由单次提示生成，源码位于 sunset-drive/ 目录。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-fable5-gta": {
     "description": "基于 Vite、TypeScript 和 Three.js 的 GTA 风格浏览器 3D 开放城市驾驶破坏游戏，几何、贴图和音效均程序化生成，含自制街机车辆物理、武器、连击计分，并可导入真实街道地图。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 fable 5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 fable 5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-kite-post": {
     "description": "Three.js 3D 风筝滑翔送信游戏，需完成八次配送；是一个面向 AI 代理的游戏设计技能仓库中的可玩示例。 注意：设计工具插件仓库中的示例；未注明具体模型，也未区分设计与实现所用模型。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型（提到 Claude Code、Gemini、Codex、Copilot）。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型（提到 Claude Code、Gemini、Codex、Copilot）。"
   },
   "example:open3d-vesper-street": {
     "description": "等距视角生存恐怖游戏，以 Three.js 程序化体素构建被淹没的小镇，共三章，需寻找残页和电话，手电筒是唯一武器。 注意：面向桌面浏览器（Chrome、Edge 或 Firefox）。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-hellgrid": {
     "description": "单个 HTML 文件的 Doom 风格第一人称射击游戏：清空三个区域的敌人以开启裂隙门前进；贴图、精灵、音效和关卡均在运行时由代码生成。 注意：虽用 3D 渲染，但移动与碰撞主要为二维，敌人为 2D 精灵，更接近 2.5D。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-world-of-claudecraft": {
     "description": "基于 Three.js 和 TypeScript 的经典风格浏览器 MMO RPG，可在手工打造的世界中做任务、组队和打副本，并支持一键自建服务器。 注意：仅首个可玩版本由 AI 制作，此后由社区持续扩展；包含 web3 功能。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型（提到 GEMINI、Codex、CLAUDE）。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型（提到 GEMINI、Codex、CLAUDE）。"
   },
   "example:open3d-fable-gta": {
     "description": "俯视角 GTA 2 风格浏览器驾驶动作原型：街机式驾驶、下车步行、拾取武器、引爆油桶并计分；玩法数值由可编辑 JSON 驱动，附浏览器内素材与配置编辑器。 注意：作者称其为原型，尚非完成品。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-downhill-mayhem": {
     "description": "向《Downhill Domination》致敬的粉丝自制浏览器游戏：与五名 AI 对手进行一段长距离下山自行车赛，空中特技可积攒加速槽，还能拳打脚踢对手。 注意：非官方粉丝致敬作品，与索尼及原开发者无关。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-cs-clone-fable5": {
     "description": "Counter-Strike 风格的多人 FPS，包含回合、武器、计分和 Node.js 游戏服务器，素材程序化生成；仓库保留了原始提示词。 注意：多人联机需运行附带的 Node.js 服务器。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-pebble": {
     "description": "以 Swift 和 Metal 编写的 macOS 原生体素生存游戏，仿照 Minecraft: Java Edition，包含世界生成、生物、红石、合成、附魔、村庄和 Boss 战等内容。 注意：仅限 macOS 14+，单人 beta；移植自早期 TS 版，用第三方 Faithful 32x 材质。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-tarkov-customs": {
     "description": "单个 HTML 文件的塔科夫风格第一人称撤离射击游戏：在藏身处买卖和改装装备，进入工业地图对抗 AI 敌人、搜刮战利品，并在倒计时结束前撤离。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 claude-fable-5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 claude-fable-5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-claude-fps": {
     "description": "浏览器第一人称英雄射击游戏：操控 Vesper 对战 1–3 个机器人，或通过 PeerJS 与好友点对点对决，技能包括双枪、瞬移、回溯和粘性炸弹大招。 注意：仓库未说明各版本或各部分代码对应的模型。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-escape-from-claudov": {
     "description": "桌面浏览器撤离射击游戏：选择装备，单人或最多三人小队进入封锁的港口小镇 Claudov，与守卫及其他小队交战、搜刮，并在时限内撤离。 注意：基于已有开源游戏 Riposte: Frontline 改造；仍在开发的垂直切片，尚未经人工试玩。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-shutterpine": {
     "description": "带轻度恐怖元素的第一人称叙事悬疑游戏：沿失踪摄影师的路线登山，对照她最后一卷胶片的照片，用相机阻止追击者；分章节，有两个结局。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-cold-smoke": {
     "description": "单个 HTML 文件的无尽休闲下山滑雪游戏：在不重复的山地中转弯、跳跃、压低身体，光线从早到晚变化；没有计分或解锁，画面和声音均由代码生成。 注意：经多天人工试玩与反馈迭代制作，并非单次提示生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。",
     "title": "雪迹 / Cold Smoke"
   },
   "example:open3d-passage": {
     "description": "Passage 是 Three.js 3D 空间解谜游戏，玩家调整立体形状使其穿过对应孔洞，含计分和自由模式；是该仓库五个浏览器项目之一。 注意：仓库含五个单次提示的浏览器项目，未附 README。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目仓库简介未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目仓库简介未提及该模型。"
   },
   "example:open3d-paletterider": {
     "description": "Three.js 3D 骑行游戏，城市取材自克利、梵高和莫奈的名画：收集掉落的太阳、星星或花朵并在黎明前送回，跳跃落地不稳会丢失一半货物。 注意：仅为候选收录，仓库未注明所用模型。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型（提到 Claude）。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型（提到 Claude）。"
   },
   "example:open3d-the-lost-storm": {
     "description": "基于 Three.js 和 TypeScript 的等距视角浏览器动作 RPG，含战斗、法术、掉落、升级、125 节点技能树和存档；藏身处、聊天、交易和拍卖行为玩家共享。 注意：Alpha 版本每日更新，第一幕仍在逐区域开发；共享功能需服务器。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-tumblebuds": {
     "description": "面向手机和桌面的小型 3D 解谜游戏，玩家引导二十个昏昏欲睡的小芽穿过 Honeydew Hollow 回家；可从浏览器安装并离线游玩。 注意：保留所有权利：源码公开，但未授权复制、修改或再分发。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-last-return": {
     "description": "第一人称恐怖游戏，原名 No Return，手持激光雷达扫描仪是唯一的视觉手段：进入封闭无光的泵站附属设施回收三卷勘测数据，看不见的怪物只会在扫描点云中显形。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-valle-morta": {
     "description": "第一人称僵尸生存射击游戏，舞台是战火摧残的阿尔卑斯山谷，有波次防守的生存模式和含直升机撤离与永久武器升级的行动模式；所有视觉素材均由代码生成。 注意：音效和音乐为授权的第三方录音。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-pelican-ride": {
     "description": "程序化生成的 3D 无尽跑酷游戏：鹈鹕骑复古单车沿海岸追鱼攒连击，可跳跃、滑翔、做空中特技并躲避障碍；有冒险、每日挑战和悠闲骑行三种模式。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2、claude-opus-5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2、claude-opus-5（2026-11-19 GitHub 核查）。",
     "title": "鹈鹕骑单车 · 海岸大冒险"
   },
   "example:open3d-what-the-water-keeps": {
     "description": "Three.js 3D 划船探索体验，侧重在景观中穿行，没有胜负目标。 注意：第三方从原作闭源构建逆向重建的代码，非原作者源码；未列许可证。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-midnight-grid": {
     "description": "单文件 Three.js 开放城市驾驶游戏，含 64 个街区、60 辆 AI 车辆、行人、红绿灯、昼夜循环和电台；撞车会触发通缉和警车追逐，甩掉警车后通缉降级。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-thirty-days": {
     "description": "以黄仁勋和 NVIDIA 历程为题材的 Three.js 3D 叙事探索游戏，分三个时代，包含经营决策、对话和芯片布线谜题。 注意：据公开资料戏剧化改编，对话为虚构；与 NVIDIA 无关，未获其认可。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2、ChatGPT、DeepSeek（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2、ChatGPT、DeepSeek（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-duel-knights": {
     "description": "火光映照的浏览器 3D 中世纪骑士对决：选择骑士、对手和竞技场，先赢三局者胜，可轻击、重击、佯攻、格挡、弹反和闪避，有多种武器。 注意：由 Ashen Crown 评测作品扩展而来，后续新增内容未必出自同一模型；需桌面键鼠。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-maze-exit": {
     "description": "旋转 3D 迷宫、让液体在重力作用下流向出口的解谜游戏，可通过种子链接分享同一迷宫。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-maple-run-fable": {
     "description": "枫叶季乡村铁路上的三轨无尽跑酷：换轨、跳跃、翻滚、躲避列车、跑上车顶并收集金叶，同时躲避站长的追赶。 注意：跑者为外部 API 生成的 PINOC 高斯泼溅角色；需 WebGPU（桌面 Chrome 等）。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-escape-the-fable": {
     "description": "基于 Three.js 的第一人称 20 世纪中叶风格密室生成器：一键生成保证可解的房间，含钥匙、挂锁、密码盘和机关家具；可在关卡工坊搭建或改编房间并以链接分享。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-mazar-rawza-race": {
     "description": "以阿富汗马扎里沙里夫哈兹拉特·阿里圣陵周边真实街道为赛道的 3D 街头赛车，基于 OpenStreetMap 数据，支持键盘和手机触屏操作。 注意：手机触屏、全屏和横屏功能为测试后由人工添加，不属于原始生成内容。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-catslop": {
     "description": "模型测试仓库：每个模型按同一需求制作关于猫的 3D 浏览器游戏，所有尝试并列保存，附展示页、无头检查工具和评分标准。 注意：游戏合集与评测框架合一，各尝试可能来自不同模型。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 claude-fable-5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 claude-fable-5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-out-of-reach": {
     "description": "为 NASA Space Apps Challenge 2026 制作的 Windows 第一人称 3D 太空生存游戏：在质量、预算和电力限制内装载物资，遭碎片撞击后修船、太空行走并坚持 30 天。 注意：仅 Windows 的 Unity 构建，由两人黑客松团队制作；仓库提及多个 AI 模型。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2、Claude Opus 5.5、Claude Sonnet 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2、Claude Opus 5.5、Claude Sonnet 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-castle-valley": {
     "description": "油画笔触风格的 Three.js 可玩游戏：手持火把和剑走出黑暗森林，前往城堡下的村庄，途中与哥布林和巨魔战斗；重现了 @de5imulate 的像素动画短片。 注意：画面创意重现自其他创作者的像素动画帖子。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-phantom-blade-zero-fable": {
     "description": "仿《影之刃零》Boss 战的第三人称浏览器剑斗：独行剑客在雨中神社庭院对战两阶段长柄刀大师，含闪避、格挡、弹反、破架势和连招中切换武器。 注意：非官方粉丝致敬作品，与 S-GAME 无关；3D 美术和动画由驱动 Blender 的 Python 脚本生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型（提到 Claude）。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型（提到 Claude）。"
   },
   "example:open3d-fable": {
     "description": "Three.js 3D 怪兽游戏，包含城市破坏、关卡、Boss 和升级系统；是一个双模型同题对比仓库中的一项。 注意：双模型对比仓库中的一个子目录，仓库另含赛车、体素场景和频道片头。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2、Claude Code、Gemini 3.8 Flash（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2、Claude Code、Gemini 3.8 Flash（2026-11-19 GitHub 核查）。",
     "title": "Pocket Kaiju 的 Fable 版源码"
   },
   "example:open3d-apex-lap-fable-5-2": {
     "description": "Three.js 3D 赛车游戏，含三圈比赛、AI 对手、加速和最佳圈幽灵车；在一次 ololo 会话的三个限时开发回合中完成，并由评委评分。 注意：仓库未列许可证；经三个开发回合完成，并非单次提示生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-everyday-game": {
     "description": "每天一个小游戏的网页合集，基于 three.js，选题取材生活日常，如送外卖、搓澡、挤地铁等，每局两到五分钟，操作方式各异。 注意：合集共 13 个小游戏，并非全部为 3D；经人工选题与多轮反馈制作，配音使用外部语音合成服务。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。",
     "title": "回声游戏厅"
   },
   "example:open3d-skyfall": {
     "description": "浏览器 3D 空战原型：驾驶七种现代战机在带贴图的 3D 里昂上空自由飞行，或完成包含空战和地面目标的四幕战役任务。 注意：未披露所用模型；使用现成飞机素材，需桌面版 Chrome 并在本地下载地图压缩包。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-claude-fable-5-2-high": {
     "description": "多模型单次生成浏览器游戏对比仓库中的一个模型目录，含 8 个 Three.js / Babylon.js 项目：RTS、ARPG、街机与战术 FPS、MOBA、大逃杀、开放世界快递冒险和出租车驾驶。 注意：八款游戏的合集目录；仓库其他目录为其他模型的构建。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 claude-fable-5.2、claude-opus-5.5、claude-sonnet-5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 claude-fable-5.2、claude-opus-5.5、claude-sonnet-5.5、Claude Code（2026-11-19 GitHub 核查）。",
     "title": "oneshot-arcade 的 Fable 5.2 目录"
   },
   "example:open3d-fable-5-2": {
     "description": "根据著名的“基里尔需求”梗制作的浏览器 3D 动作游戏：可扮演森林精灵、宫廷卫队或反派并抢劫商队，含近战与远程战斗、交易、伤势、任务和四地地图。 注意：多模型对比仓库中的一个子目录，其他目录为其他模型的版本。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Fable；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。",
     "title": "Korovany — fable-5.2 目录"
   },
   "example:open3d-zombies": {
     "description": "回合制浏览器僵尸射击游戏：在路边餐馆和加油站坚守整夜，封堵窗户、赚取分数、开放新区域、购买武器并恢复供电，僵尸一轮比一轮强。 注意：混合模型作品：主控模型协调其他模型子代理；排行榜需可选的 Cloudflare Worker 后端。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-nightshift-fable": {
     "description": "在无尽雨夜高速公路上的驾驶游戏：穿梭车流、使用氮气加速，躲过两段油罐车事故剧情，看在车辆报废前能跑多远。 注意：混合模型作品，含子代理参与；人工在试玩中反馈 bug；用于与另一模型版本对比。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.2、Claude Opus 5.5、Claude Code、Gemini 4（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.2、Claude Opus 5.5、Claude Code、Gemini 4（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-guizang-game-skill": {
     "description": "仙侠题材俯视角 3D 动作游戏，含一个场景、一段小怪遭遇战和二阶段 Boss 战，有剧情和配音；战斗有连招、闪避、格挡、弹反、处决和御剑；是一个 AI 游戏制作 Skill 仓库的演示作品。 注意：混合模型；角色和道具借助即梦、Tripo 等外部工具生成；游戏位于 gh-pages 分支；AGPL-3.0 许可。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5.2、Opus 5.5、Claude Code、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5.2、Opus 5.5、Claude Code、Codex（2026-11-19 GitHub 核查）。",
     "title": "雾锁山门"
   },
   "example:open3d-valley-ride": {
     "description": "平静的骑马游戏：沿 2.5 公里山谷小径经过灯笼骑向山顶篝火，抵达时正值日落；没有分数、敌人或失败条件，可切换时段。 注意：主体由一个模型制作，另一模型仅负责骑手；需桌面 WebGPU，首次需下载约 74 MB。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.2、Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.2、Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-cold-boot": {
     "description": "受《毁灭战士 3》启发的简短浏览器第一人称恐怖射击游戏，作为娱乐性实验制作。 注意：两个模型合作的混合作品；角色头部使用第三方扫描和 MakeHuman 素材（CC BY 3.0 与 CC0）。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5.2、Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5.2、Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-fable5-2-salt-online": {
     "description": "浏览器多人在线 3D 港口枪战，所有玩家互为敌人，倒下 5 秒后重生；基于 Node.js、Express、WebSocket 和 Three.js，带排行榜，另提供 Android 客户端。 注意：Saltline 的非官方多人改版，后续改造使用了其他模型；并非独立新游戏。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5.2、deepseek（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5.2、deepseek（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-gist-30166e7c": {
     "description": "单文件浏览器飞行模拟器，标题为 SKYWARD — Dawn Patrol，以 GitHub Gist 形式发布；出自一个让多个模型使用同一组题目的评测。 注意：为 Gist 而非完整仓库；属于跨模型对照题组。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目仓库简介提到 GPT-6.1（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目仓库简介提到 GPT-6.1（2026-11-19 GitHub 核查）。",
     "title": "飞行模拟器"
   },
   "example:open3d-minecraft": {
     "description": "Blockhaven：单文件浏览器 Minecraft 风格体素游戏，以 GitHub Gist 形式发布，出自一个让多个模型使用同一组题目的评测。 注意：为 Gist 而非完整仓库；属于跨模型对照题组。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目仓库简介提到 GPT-6.1（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目仓库简介提到 GPT-6.1（2026-11-19 GitHub 核查）。",
     "title": "Minecraft 风格体素游戏"
   },
   "example:open3d-glm-5-3-one-prompt-game": {
     "description": "3D 探索游戏：在日蚀倒计时结束前收集碎片并完成封印；与此前一个对照案例使用同一单次提示词。 注意：素材还使用了 Blender 及 FLUX.2、LTX-2.5、ACE-Step 生成工具；仓库没有 README。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目仓库简介提到 Fable 5.1、GLM-5.3（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目仓库简介提到 Fable 5.1、GLM-5.3（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-gta-manucho-online": {
     "description": "基于 Three.js 的浏览器 3D 开放世界游戏，含城市、交通、警察通缉、帮派、从汽车到直升机、坦克和马匹的多种载具、可购房产、任务以及好友联机模式。 注意：混合模型项目，作者列出四个不同模型。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5、Gemini 3.5 Pro、ChatGPT（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5、Gemini 3.5 Pro、ChatGPT（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-101-chess-characters": {
     "description": "完整规则的 3D 国际象棋，每个棋子有各自性格，面对危险走法可能拒绝执行，玩家需劝说、讨好或强令；会记录信任度和棋子对话。 注意：棋子对话经 OpenRouter 调用外部模型，需自备密钥，否则为演示模式；所属合集包含大量非游戏项目。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Opus 5.5、DeepSeek（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Opus 5.5、DeepSeek（2026-11-19 GitHub 核查）。",
     "title": "3D 国际象棋项目"
   },
   "example:open3d-opus-vs-sol": {
     "description": "对比仓库，收录两款 80 年代迈阿密风格的类 GTA 3D 开放世界游戏，由两个模型按同一提示词分三轮用 Godot 制作，含驾驶与射击，提供 Windows 构建。 注意：两款游戏的对比合集；37 个共用模型由 ChatGPT 图像、混元 3D 和 Mixamo 制作；需 Vulkan。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5.5、Claude Code、GPT-6.1（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5.5、Claude Code、GPT-6.1（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-aiplane": {
     "description": "基于 Three.js 的 3D 喷气战斗机原型，含可切换风格的程序化 LOD 地形、激光武器战斗、自由镜头漂浮模式和动态光影。 注意：多个模型参与且未披露具体版本；地形基于已有项目。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Gemini、Codex、Grok、Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Gemini、Codex、Grok、Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-3d-golf-sonnet": {
     "description": "浏览器 3D 冒险迷你高尔夫，含九个主题球洞、第一人称瞄准、卡通着色画面和合成音效；所有模型、贴图和声音均由代码生成。 注意：仓库名提及一个模型，但初始提交署名的是另一个模型。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-yolo-mini-fps": {
     "description": "浏览器 FPS 学习案例：一张码头地图、三个时段，配步枪、爪刀和烟雾弹，需依次肃清士兵与无人机据守的五个区域，另有练习场。 注意：混合模型项目，使用四套外部照片贴图；非成品，仅一张地图，无剧情与存档；需带独显的电脑。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.2、Opus 5.5、Sonnet 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.2、Opus 5.5、Sonnet 5.5（2026-11-19 GitHub 核查）。",
     "title": "零号码头 DOCK ZERO"
   },
   "example:open3d-waterslide-game-sonnet-5-5": {
     "description": "Splash Rush 是面向移动端的 3D 水滑梯竞速游戏，玩家与 12 名对手沿倾斜弯道滑梯竞速，途经跳台、螺旋和飞跃捷径。它是同一作者同题水滑梯赛车的模型对照版本之一。 注意：同一作者同题零样本模型对照版本，并非全新游戏概念。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Sonnet 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Sonnet 5.5（2026-11-19 GitHub 核查）。",
     "title": "Claude Sonnet 5.5 版"
   },
   "example:open3d-waterslide-game-astra": {
     "description": "Splashline 是面向移动端的 3D 水滑梯竞速游戏，13 名程序生成的泳者在 704 米热带赛道上竞速，有倾斜弯道、两个跳台和可跳跃捷径。它是同一作者同题水滑梯赛车的模型对照版本之一。 注意：同一作者同题零样本模型对照版本，并非全新游戏概念。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 gpt-6-astra（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 gpt-6-astra（2026-11-19 GitHub 核查）。",
     "title": "GPT-6 Astra 版"
   },
   "example:open3d-forja-abisal": {
     "description": "Forja Abisal 是致敬 90 年代第一人称射击游戏的复古 3D 浏览器 FPS，包含迷宫式立体关卡、大量敌人、钥匙、秘密和自动地图，所有模型、贴图、音效和关卡均由代码生成。 注意：作者说明为混合模型工作流，另一模型参与关卡指南分析；README 为西班牙语。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5.5、Claude Sonnet 5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5.5、Claude Sonnet 5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-tribal-gods": {
     "description": "Tribal Gods 是浏览器 3D 即时上帝游戏，舞台是一个小型球形世界，玩家发展部落、建造住所、训练战士、学习法术并改造地形，以对抗最多三个敌对神祇。 注意：提交记录中有多个模型署名。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-fable-chess": {
     "description": "楚汉争锋是以战场形式呈现的 3D 中国象棋，有七种兵种、吃子过场动画和真实河流，支持本地与联网对战、人机对战以及电脑互弈观战。 注意：提交记录中有多个模型署名。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此",
     "title": "楚汉争锋"
   },
   "example:open3d-glory": {
     "description": "《荣耀 Glory》是《全职高手》非官方同人作品，把小说中的网游《荣耀》做成浏览器第一人称动作游戏，包含多个职业角色，支持键鼠、触屏和联机。 注意：非官方、非商业同人作品；后续代码由其他模型修改，角色和配音使用其他生成工具。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5.5、Claude Code、Gemini 3.8 Flash、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5.5、Claude Code、Gemini 3.8 Flash、Codex（2026-11-19 GitHub 核查）。",
     "title": "荣耀 Glory"
   },
   "example:open3d-red-panda-vibes": {
     "description": "Red Panda Vibes 是 3D 浏览器平台游戏，玩家扮演小熊猫在程序生成的地形中探索、躲避追击的油污敌人并寻找竹子，关卡无限且难度递增。 注意：代码主要由两个模型编写，其中一个版本未注明；3D 模型、动画和配乐使用了其他 AI 工具。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Sonnet 3.7、Gemini、Grok（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Sonnet 3.7、Gemini、Grok（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-supermarket-simulator": {
     "description": "Supermarket Simulator 是实验性的 Unity 第一人称超市经营游戏，玩家订购商品、拆箱、上架并在收银台为顾客结账。 注意：实验性原型，由多个模型制作；发布版为 Windows 可执行文件，3D 模型由其他生成工具制作。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 4、Claude Sonnet 4、Gemini 2.5 Pro、Cursor AI（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 4、Claude Sonnet 4、Gemini 2.5 Pro、Cursor AI（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-ai-slop-arena": {
     "description": "AI Slop Arena 是俯视角 3D 大乱斗，采用八人淘汰赛模式，玩家选择角色、藏身草丛、打破箱子获取能量方块，在毒气收缩中争取存活到最后，可与机器人或朋友在线对战。 注意：由人工提示和监督完成；素材使用了多种其他 AI 工具。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5.5、Claude Code、Gemini 2.5 Flash（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5.5、Claude Code、Gemini 2.5 Flash（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-cini-ustasi": {
     "description": "Çini Ustası 是设在瓷砖工坊中的 3D 拼接解谜游戏，玩家旋转、交换和翻转伊兹尼克瓷砖使图案相连，共 3 章 30 关，完成后将面板送入窑中烧制。 注意：混合制作：后续素材由另一模型协调并使用其他生成工具制作。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.1、Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.1、Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-wobble-rush-3d": {
     "description": "Wobble Rush 3D 是玩具风格的浏览器 3D 障碍竞速游戏，可单人对战 AI 赛手或在共享大厅联机，玩家躲避旋转横杆、跳跃浮岛、穿越弹板区冲向终点。 注意：由一个模型主导、另一模型的子 agent 协作；联机功能运行在 Cloudflare Workers 上。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Opus 5、Kimi K3（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Opus 5、Kimi K3（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-haynes-quest": {
     "description": "Haynes Quest 是以人生阶段为线索的私人 3D 浏览器冒险游戏，玩家搜寻装备、对抗各时期的敌人和 Boss，并取回记忆以成长到下一年龄段。 注意：多方参与项目，处于试玩测试阶段且有未完成内容；试玩入口限私人网络，无公开在线版。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-gridx": {
     "description": "GRIDX 是受 Geometry Wars 启发的 3D 双摇杆竞技场射击游戏，战场为霓虹球面，有武器拾取、几何敌潮、小 Boss、最终 Boss 和全球排行榜。 注意：混合模型：一个模型迭代单文件游戏，另一个将其还原为模块化代码，第三个负责整合与审核。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 GPT 5.6、Codex、GLM 5.2、Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 GPT 5.6、Codex、GLM 5.2、Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-firstlight": {
     "description": "FIRSTLIGHT 是免费的浏览器多人开放世界游戏，有三颗可行走星球和一个中枢，采用服务器权威战斗，包含 PvE 生物、团队 Boss、任务和勋章，死亡后背包物品会掉落供他人拾取。 注意：由一个模型构建、其他模型审查；需桌面浏览器和键鼠，为依赖服务器的在线游戏。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5.5、Sonnet 5.5、Claude Code、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5.5、Sonnet 5.5、Claude Code、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-vibedgames-benchmark": {
     "description": "VibedGames 是收录完全由 AI 编写的 Three.js 网页游戏的仓库，以戏仿“基准测试”形式呈现，包含一款有战斗、背包和任务的体素 RPG，以及一款程序地形与物理推石游戏。 注意：由不同模型制作的游戏合集；作者声明该“基准测试”是戏仿，不具科学意义。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 4.6、GPT 5.4（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 4.6、GPT 5.4（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-courier-dash": {
     "description": "Courier Dash 是一个游戏开发入门套件中的网页 3D 示例游戏，玩家需在 90 秒内将五件包裹送过玩具小镇，同时躲避巡逻机器人。 注意：入门套件仓库中的示例，使用 Kenney CC0 模型；作者保留游戏代码权利，素材各有许可；后经另一模型审查。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-kale-savunmasi": {
     "description": "Hisar 是低多边形 3D 塔防游戏，玩家建造并升级弓箭塔、火炮堡垒和焦油锅，守住海边城堡抵挡 15 波敌人，之后可进入无尽模式。 注意：后续美术素材使用了其他生成工具。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-thelongsilence": {
     "description": "The Long Silence 是程序生成的浏览器太空探索游戏，玩家驾驶勘测飞船绘制星系、扫描并降落星球，与七座共鸣器调谐以开启终点。 注意：后续视觉改进据称由另一模型完成，该说法来自未经核实的第三方转录。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-manifest": {
     "description": "Manifest 是单人科幻即时战略原型，背景为科技魔法后启示录荒原，玩家指挥特种小队在战争迷雾中夺取远古信标，为 2025 Vibe Game Jam 参赛作品。 注意：原型作品；代码由多种 AI 模型和工具生成，由人工整合。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Code、Gemini（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Code、Gemini（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-nightshift": {
     "description": "NIGHTSHIFT 是浏览器 3D 雨夜高速公路赛车游戏，有密集车流、近距离超车计分倍率和氮气加速，与另一模型根据同一提示词制作的版本构成对照。 注意：仅支持桌面和键盘；仓库中后加的视频工具由另一模型编写。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.2、Gemini 4（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.2、Gemini 4（2026-11-19 GitHub 核查）。",
     "title": "NIGHTSHIFT，Gemini 版"
   },
   "example:open3d-scrapland": {
     "description": "SCRAPLAND 是受 Rust 启发的倾斜视角 3D 生存射击游戏，玩家搜集废料、建造加固基地、在交易区武装自己，在大型程序地图上与 7 支 AI 队伍竞争。 注意：跨模型迭代：由另一模型制作的早期俯视 2D 版本重写而来。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5 Max、Opus 4.8（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5 Max、Opus 4.8（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-client": {
     "description": "CORO SOLTO 是讽刺风格的浏览器 FPS，包含夸张化的巴西阵营、原创角色、地图和武器，可与机器人进行回合战和夺旗，多人模式处于 beta 阶段。 注意：使用多种 AI 工具开发，版本未确认；多人模式为 beta，音频素材和数据库 schema 未公开，仓库仅含客户端。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5、Claude Opus、claude-code、Gemini（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5、Claude Opus、claude-code、Gemini（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-drive-game": {
     "description": "Nürburgring Drive 是第一人称驾驶模拟，赛道基于 OpenStreetMap 几何数据，采用自制 240 Hz 物理引擎，含纽博格林、斯帕和练习赛道，支持天气时间切换、圈速与幽灵车。 注意：初版由一个模型制作，后由另一模型继续开发并经人工调校；作者称赛道并非精确复刻；另有 Android 版。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-deadwood-open": {
     "description": "DEADWOOD — Last Light 是浏览器合作 3D 僵尸生存 FPS，1 至 4 名玩家坚守避难所 20 波后撤离，由其中一名玩家主机托管游戏。 注意：用多种 AI 工具，版本未注明；开放版因许可缺部分原始音效；主机需 Node.js 22+；媒体为 CC BY 4.0。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Codex、Kimi、Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Codex、Kimi、Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-gta-claude-fable": {
     "description": "PORT MERIDIAN 是受 GTA 启发的第三人称开放世界城市游戏，舞台为虚构港口小镇，包含驾驶、射击、通缉等级与警察追捕、三个剧情任务和十枚隐藏代币。 注意：README 称在线版尚未发布，需本地构建；角色等使用第三方 CC0 素材；仓库名与实际模型不符。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 claude-fable、Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 claude-fable、Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-fps": {
     "description": "多模型对比仓库，四个 AI 模型分别根据同一提示用 Python 编写 FPS。作者报告一个版本可移动射击，一个为击中敌人会崩溃的 3D 原型，另两个未通过。 注意：对比合集而非单一完整游戏；可玩性为作者测试结论，四个版本中仅一个报告可用。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 GPT-4、Grok 3、Deepseek V3、Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 GPT-4、Grok 3、Deepseek V3、Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-iridium-reach-demo": {
     "description": "Iridium Reach 是驾驶舱视角太空射击技术演示，模型、星球和音效均为程序生成，玩家在星系中迎战海盗波次、管理会过热的光子炮和护盾，再跃迁到更难的星系。 注意：技术演示，由两个模型多智能体协作并经人类指导和试玩；飞船电脑语音使用其他语音工具。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5、Opus 5、claude-code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Fable 5、Opus 5、claude-code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-fableflight": {
     "description": "FableFlight 是用 Rust 编写的开放世界飞行模拟器，有从轻型机到喷气机的多种机型，含燃油与电气故障、可点击座舱、真实 METAR 天气、实时 ADS-B 航班、多人联机和街机模式。 注意：混合模型，一个用于复杂渲染，另一个为主要开发模型；为桌面程序，需自行编译或下载发布版；城市使用 GIS 与地图数据。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.2、Opus 5.5、copilot（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.2、Opus 5.5、copilot（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-der-koloss-ce": {
     "description": "Der Koloss 是致敬 Der Riese 的浏览器回合制僵尸生存 FPS，支持单人或最多四人合作，玩家修复路障、逐个开启工厂房间、购买武器和增益，尽可能存活更多回合。 注意：混合流程：初版由一个模型编写，视觉与音效由另一模型重做；使用少量 CC0 和 AI 生成音效；为正式版的开源快照。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5、Claude Code、Kimi K3（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Opus 5、Claude Code、Kimi K3（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-uno-com-escada": {
     "description": "浏览器赛车游戏，驾驶车顶绑着铝梯的 1996 款 Fiat Uno 跑赛道。仓库收录三个模型根据同一提示词制作的版本，每版均为使用 WebGPU 的单个 HTML 文件。 注意：模型对照合集；两个版本的音效和菜单后由同一模型补写，并非纯粹对照；需支持 WebGPU 的桌面浏览器；许可证限制商用。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.2、Claude Opus 5.5、GPT-6.2 Astra（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 Claude Fable 5.2、Claude Opus 5.5、GPT-6.2 Astra（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-boat-astra-deepseek": {
     "description": "Tidebreak: Corsair Run 是 3D 武装快艇竞速游戏，包含检查点、海洞、瀑布跳跃和敌艇战斗，是收录 AI 制作网页游戏的 bench-portal 合集仓库中的一款。 注意：属于多游戏 bench-portal 合集，并非独立仓库；一个模型主导、另一模型子代理参与；在线入口可用性未验证。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-tiktok-chameleon-grok-game": {
     "description": "TikTok Chameleon 是浏览器猫咪涂色伪装捉迷藏游戏，躲藏者给猫咪上色以融入三张地图之一，寻找者开枪搜寻，一局三回合。它与另一版本是同一需求的模型对照实现。 注意：受 MECCHA CHAMELEON 启发的同人复刻，供教育或个人用途；在线匹配为模拟；与另一模型版本同题对照。",
-    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 grok（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单，归入多模型协作与对照合集；项目 README 提到 grok（2026-11-19 GitHub 核查）。",
     "title": "TikTok Chameleon — Grok 版候选"
   },
   "example:open3d-realms": {
     "description": "Hexcrown 是适合与孩子一起玩的回合制奇幻六角地图策略游戏，六个王国发展城镇、建造设施、派英雄在回合制战斗中对抗怪物，争先集齐三颗王冠宝石。 注意：混合模型：一个编码，一个审阅截图视频，素材用多个模型；源码在无关大仓库子目录；为 Windows/Linux 桌面游戏。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此",
     "title": "Hexcrown 源码目录"
   },
   "example:open3d-dustfall": {
     "description": "Dustfall 是浏览器西部开放世界游戏，舞台为 Sorrel Basin，玩家驯马骑行，使用左轮、步枪和弓，狩猎、钓鱼、玩二十一点，并体验六章剧情。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-ironvale": {
     "description": "Ironvale 是 3D 即时战略游戏，玩家采集资源、建造、跨越三个时代并击败 Crimson March，提供四章剧情战役和五种地图、四种尺寸的遭遇战。 注意：仅支持桌面，可用 Windows 可执行文件或桌面浏览器配合键鼠；暂不支持移动端。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-tuktuk": {
     "description": "TukTuk 是埃及街道 3D 驾驶游戏，玩家左右操控嘟嘟车穿过小巴、出租车和西瓜车之间，收取车费并留意减速带，所有图形、材质和声音均由代码生成。 注意：README 为埃及阿拉伯语。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-blameless": {
     "description": "Blameless 是“值班”主题射击游戏：凌晨 3:07 生产环境宕机，玩家亲自进入生产环境消灭导致崩溃的对象，共十个事故、四台主机，结局生成基于玩家行为的事后复盘。 注意：需键盘和鼠标游玩；手机端只能观看自动演示和排行榜。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、minimax（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、minimax（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-soccer-3d": {
     "description": "Soccer 3D 是面向手机和平板的七人制 3D 足球游戏，单个 HTML 文件，包含犯规、红黄牌、越位、点球、战术、换人、进球回放和八个难度等级。 注意：音效、解说和开始界面插画由其他 AI 工具生成。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-petalwake": {
     "description": "Petalwake 是骑扫帚低空高速飞越岛屿草地、海崖和海面的浏览器游戏，扫帚尾流会卷起花瓣、压倒草丛、掀起浪花，玩家降落在塔楼上投递包裹。 注意：作者称未读过任何代码；需支持 WebGL2 的桌面浏览器，首次加载约 95 MB。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-riposte": {
     "description": "Riposte 是光剑风格的 3D 格挡反弹游戏，玩家无法主动攻击，只能用能量剑把光弹弹回，包含护盾、节奏、五种剑刃和段位系统，可用手机充当光剑。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-before-the-divine-wind": {
     "description": "Before the Divine Wind 是电影化 3D 武士冒险游戏，背景为 1274 年蒙古入侵时的壹岐岛，包含剑斗、格挡、潜行、探索和剧情过场，配日语语音和英文字幕。 注意：日语语音由其他工具生成；需用 Python 3 本地服务器并在桌面浏览器运行。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-bumblebee-echo-garden": {
     "description": "Bumblebee: Echo Garden 是 3D 空中竞速游戏，玩家扮演蜜蜂穿越巨大花园，过往比赛的幽灵会同行，花园会根据玩家的比赛历史发生变化。 注意：推荐在配备键盘的笔记本或台式机上游玩。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-black-door": {
     "description": "Black Door 是单关卡浏览器第一人称射击游戏，玩家作为四名 SAS 队员之一，保卫首相和唐宁街 10 号抵御武装民兵政变，共七个带检查点的任务阶段，场景可破坏。 注意：需桌面浏览器和键盘，无触屏操作；需联网加载 Three.js。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-kekenon-cotonou": {
     "description": "Kekenon Cotonou 是以贝宁科托努亚马逊广场一带为舞台的小型 3D 开放世界游戏，玩家扮演摩托出租车司机，搭载乘客、按路线送达并赚取西非法郎。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-indys-adventure-3d": {
     "description": "Indy’s Adventure 3D 是非暴力浏览器 3D 平台游戏，猫咪 Indy 在游乐园节庆之夜沿一整段连续关卡攀登坦佩雷的 Näsinneula 观景塔，可奔跑、跳跃、扑击和攀爬。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-sf-bay-area-transit-fable-5-2-game": {
     "description": "Boring Game 是体素风格的旧金山湾区轨道交通建设游戏，玩家规划线路、设置车站、通过审批，并驾驶或自动操控盾构机掘进隧道开通新线。 注意：经 15 次提示完成，并非一次生成。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Code（2026-11-19 GitHub 核查）。",
     "title": "Boring Game：湾区轨道交通"
   },
   "example:open3d-feng-3afps-demo": {
     "description": "Feng-3afps-demo 是浏览器 FPS《盐线行动》（Saltline）的改编版，调整了切断中继的交互：增加 650 毫秒中断宽容、放慢进度回退，并显示百分比、剩余时间和状态提示。 注意：基于既有游戏 Saltline 的改编版，并非新游戏；改造所用模型未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-ai-f1-racing-game": {
     "description": "AI F1 Racing Game 是浏览器 F1 赛车模拟，包含 20 辆赛车、起步灯、DRS、ERS、圈速计时、AI 车手、车载视角和实时排名，赛车、赛道和看台均由代码生成。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-3d-fps": {
     "description": "3D FPS（README 中名为 IRONLINE）是浏览器战术第一人称射击游戏，采用 Rapier 物理、导航网格机器人和后期处理管线，场景包括仓库和集装箱堆场等。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 claude opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 claude opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-amar-io": {
     "description": "AMAR.IO 是 3D 版 agar.io，玩家可向任意方向飞行，通过分裂、喷射和吞噬光球及其他球体成长，支持即时点对点浏览器多人联机和 AI 机器人，长到与场地等大即获胜。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-palmera-bay": {
     "description": "Palmera Bay 是自由驾驶浏览器游戏，玩家驾驶高速敞篷车在黄昏时分的程序生成热带海滨城市中兜风，没有对手和目标。 注意：初版由一条提示生成，之后又经多次提示迭代。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-srak-l-zit-2": {
     "description": "Srak l’Zit 2 是像素画风格的 3D 潜行游戏，一只摩洛哥蟑螂逐夜偷取屋内的油，在四个场景中躲避看守，把油滴运回巢穴。 注意：README 为西班牙语；与作者早先的 Srak l-Zit 是不同的游戏。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-browser-shooter": {
     "description": "Browser Shooter 是浏览器 3D FPS，包含单人波次生存、点对点 CS 式竞技（含炸弹目标、经济系统和购买菜单）、地图编辑器，以及基于真实 OpenStreetMap 地形的星球模式。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-claude-of-duty": {
     "description": "Claude of Duty 是浏览器第一人称射击游戏，包含敌人 AI、武器、物理和程序生成的市场街道地图，所有贴图、模型、动画和声音均在加载时由代码生成。 注意：由多个协同编排的 AI 代理编写。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-spiderbench": {
     "description": "SpiderBench 是第三人称浏览器蛛丝摆荡游戏，可在程序生成的曼哈顿式岛屿上飞荡、跑墙、停驻和冲刺，城市有建筑、车流和行人，为粉丝项目兼基准测试。 注意：非商业粉丝项目，许可证限制商用和再分发；由人类通过反馈和参考图指导；推荐独立显卡。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-claude-code-games": {
     "description": "复古街机风格浏览器游戏合集，含忍者潜行 Katana Creed、太空战机 X-Fighter、飞车竞速 Sandstorm Circuit 和 Daido Dog Sim 等，另有 2D 游戏。 注意：合集中也包含 2D 游戏；多款为既有游戏的重制。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-little-rain-cloud": {
     "description": "小雨云是网页交互作品，小狐狸头顶跟着一朵专属雨云走过沙漠，雨落之处长草开花，留下一条绿色足迹。 注意：偏交互体验而非目标明确的游戏；狐狸模型为外部素材，需联网从 CDN 加载。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。",
     "title": "小雨云"
   },
   "example:open3d-three-quake": {
     "description": "three-quake 是将 id Software 的 Quake 移植到 Three.js 的浏览器版本，内含共享版第一章数据可在线游玩，完整版可替换为正版数据文件。 注意：AI 辅助移植既有游戏 Quake，并非从零生成；代码为 GPL v2；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-driftwing": {
     "description": "DRIFTWING 是悠闲的无限飞行游戏，飞越程序生成的山峰、山谷、沙漠和岛屿，没有失败条件，玩家可穿越圆环、发现各种事件，并有名为 WREN 的 AI 副驾驶。 注意：v1 由一条提示生成，但遇限额后两次用“continue”恢复；v2 为进行中的多阶段多提示迭代。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、claude-haiku-4、Claude Code、copilot（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、claude-haiku-4、Claude Code、copilot（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-surgeonsimulator": {
     "description": "Surgeon Simulator 是第一人称 3D 手术模拟游戏，玩家用一只不听使唤的手和一盘器械，在时间和失血压力下完成七步心脏移植手术。仓库含 WebGL 版和 Unreal 版。 注意：源码位于分支中；Unreal Engine 5 C++ 版缺少编辑器资源且未编译，仅网页版完整可玩。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此",
     "title": "Surgeon Simulator 源码分支"
   },
   "example:open3d-kaiju-dokan": {
     "description": "Kaiju Dokan 是 3D 浏览器游戏，玩家操纵巨型怪兽破坏黄昏时分的海湾城市，目标是在 4 分钟内达到 40% 破坏率，同时击退坦克和武装直升机。 注意：README 为日语。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-spirit-call": {
     "description": "Spirit Call 是面向手机的俯视角动作游戏，以四分钟一场的战斗为核心，玩家组建三只元素精灵的队伍，在战斗中切换角色并对成群敌人打出连招。 注意：经数周迭代完成；具体编码模型未确认。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-peri-golf": {
     "description": "Peri Golf 是以卡帕多奇亚仙人烟囱地貌为背景的 3D 物理迷你高尔夫，共 12 个手工设计的球洞，有陶轮、过路毛驴等动态障碍，每洞可获三颗星。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.1、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.1、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-bogaz-vapuru": {
     "description": "Boğaz Vapuru 是低多边形博斯普鲁斯海峡上的 3D 渡轮船长游戏，玩家驾驶城市渡轮往返六个码头，在水流和风中平稳靠岸、准点运送乘客，含八个班次和无尽模式。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.1、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.1、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-gr-kart-game": {
     "description": "GR KART · Sakura Circuit 是粉丝自制浏览器卡丁车竞速游戏，玩家在富士山下一条 860 米樱花虚构赛道上与七辆 AI 卡丁车比赛，支持键盘、手柄、触屏和体感转向。 注意：粉丝自制项目，与丰田无关。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-openmmo": {
     "description": "OpenMMO 是斜视角 3D 多人在线角色扮演游戏，世界为程序生成的 32 公里见方地图，有战斗、装备、建造与住房、昼夜循环和实时同步，AI 代理与人类玩家使用同一协议接入。 注意：个人开发，素材混合 AI 生成、程序生成和网络来源；依赖服务器，需 Google 登录游玩。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-vibe-coding-browser-game-orange-shift": {
     "description": "Orange Shift 是单 HTML 文件的简易迷宫生存游戏，玩家扮演橙色小球穿行程序生成的迷宫，躲避黑色敌人、把白色角色变成橙色并寻找出口。 注意：为 3D 渲染的方向键迷宫，并非可自由移动的开放 3D 世界；需桌面浏览器。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini 2.5 Pro（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini 2.5 Pro（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-webgl-flight-simulator": {
     "description": "WebGL Flight Simulator 是简易 3D 飞行游戏，玩家驾驶方块风格飞机穿越圆环得分并躲避障碍，需在时间耗尽或生命值归零前尽量得分。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini 2.5 Pro（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini 2.5 Pro（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-yarn-planet": {
     "description": "毛线星球是小星球散步游戏，玩家背着线轴走过铅笔速写风格的星球，沿途铺下彩线连接灯塔、水车等设施，让小镇恢复色彩。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Claude Sonnet 5.5、Claude Code、DeepSeek（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Claude Sonnet 5.5、Claude Code、DeepSeek（2026-11-19 GitHub 核查）。",
     "title": "毛线星球 Yarn Planet"
   },
   "example:open3d-maze-hunter-fps": {
     "description": "Maze Hunter 是单文件 3D 第一人称射击游戏，场景为街机风格砖墙迷宫，会寻路的幽灵追捕玩家，拾取能量球可反过来猎杀，还可触发限时精英波次。 注意：非商业实验演示；需联网加载 Three.js；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-threejs-experiment": {
     "description": "3D Action Game 是浏览器实时 3D 动作生存游戏，包含二段跳平台动作、会追击玩家的刷新敌人，以及基于距离的近身战斗和生命值管理。 注意：实验项目；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-xo-beta": {
     "description": "Xo Beta 是浏览器 3D 大逃杀游戏，支持最多四名真人的私人点对点房间，并以机器人补足十人，在三张竞技场中完成跳伞、搜刮和缩圈的完整对局，具备多种高级移动动作。 注意：仓库已归档为只读；使用第三方 CC0 美术和音频；仅支持桌面浏览器，点对点直连可能失败。 仓库已归档（只读）。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-stickfight": {
     "description": "Stick Fight 是第三人称搞笑近战游戏，戴安全帽的建筑工人在竞技场中用木棍对抗怪物，作为记录完整开发与验证过程的 AI 辅助开发学习案例。 注意：角色模型为外部提供且无动画；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-neon-drift": {
     "description": "Neon Drift 是支持电脑和手机的开放世界 3D 街头漂移游戏，含三张泰国地图、漂移连击计分、检查点竞速模式、可购买车辆与升级、氮气和 AI 车流。 注意：车辆模型为第三方 Kenney CC0 素材；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-shadow-protocol": {
     "description": "Shadow Protocol 是单个浏览器文件的赛博朋克隐形战机游戏，包含 10 个任务的战役、五架可解锁飞机、雷达锁定与武器系统、防空导弹阵地、任务评级和进度保存。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-survival-island": {
     "description": "Survival Island 是 Unity3D 教学演示的浏览器重建版，机器人漂流者探索有火山、农场和前哨站的小岛，解开小谜题打开地堡，并在天黑前点燃篝火。 注意：作者早期 Unity3D 教学游戏的重建版，并非全新原创；本地运行需通过 HTTP 服务器。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini、Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini、Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-games": {
     "description": "游戏制作工具仓库，其示例目录收录由简短提示做成的游戏：体素漂移赛车 Block Racer、恐怖游戏 Hollow House、GTA 风城市 Sunset District 及一款 2D 游戏。 注意：工具仓库中的多款示例游戏，其中一款为 2D；使用共享工具包和 CC0 素材；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code、Gemini、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code、Gemini、Codex（2026-11-19 GitHub 核查）。",
     "title": "Game Forge 示例游戏"
   },
   "example:open3d-block-fps": {
     "description": "Block Arena 是第一人称射击游戏，玩家用 WASD 移动、按住鼠标射击，是一个浏览器游戏演示合集仓库中的 3D 作品，合集中其余多为 2D 游戏。 注意：多游戏演示合集中的一款；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-kids-games": {
     "description": "Crystal Rooms 是在水晶洞穴中寻找字母的 3D 游戏，是一个由五岁孩子构思的手机浏览器小游戏合集仓库中的一款。 注意：多游戏网站仓库中的一款；由孩子提出想法、家长审查代码；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-breakout-game": {
     "description": "Breakout 是以 3D 渲染、街机机台风格呈现的经典打砖块游戏，具备圆与矩形碰撞、按球拍击球位置控制角度、粒子特效和本地最高分记录。 注意：3D 渲染、2D 平面玩法，并非完整 3D 空间游戏；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-cranegame": {
     "description": "3D Crane Game 是带物理模拟的浏览器抓娃娃游戏，玩家移动吊臂到奖品上方放下爪子，抓起的奖品被送到得分区并落入箱中即可得分。 注意：模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-cube-minesweeper": {
     "description": "Cube Minesweeper 是在可旋转立方体上进行的 3D 扫雷，六个面各 5×5 格，共 150 格、25 颗雷，相邻雷数会跨越棱和角计算。 注意：使用单 HTML 文件中的 CSS 3D 变换而非 3D 引擎；经多轮指令完成；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-open-game-works-game-iso-survivors": {
     "description": "Iso Survivors 是 Vampire Survivors 风格的 macOS 等距 3D 割草生存游戏，玩家只需移动，武器自动攻击，升级时三选一卡牌，并会遭遇骷髅骑士小 Boss。 注意：暂无发布版，需配置 open-game-works 开发环境；许可证限制商用及演绎；具体模型未确认。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-grandma-gta": {
     "description": "以虚构台湾乡村小镇为舞台的浏览器 3D 开放世界，主角是 72 岁的阿嬷，含 13 关主线、抢车、警察追逐、广场舞节奏对决、近战打斗及抓大鹅等支线。 注意：角色与动作由其他 3D 生成工具制作；代码为 MIT，但 3D 资产商用需另查该工具条款；首次加载约 80 MB。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code、Codex（2026-11-19 GitHub 核查）。",
     "title": "老奶奶 GTA · 阿嬷侠盗"
   },
   "example:open3d-sands-of-the-restless": {
     "description": "Sands of the Restless 是古埃及背景的第一人称波次射击游戏，采用僵尸模式式积分经济，包含多种武器、敌人、可购买开启的门和 Boss。 注意：作者标注部分谜题未完成；需本地静态服务器运行；使用 CC0 HDRI 和扫描材质；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-tides-of-fortune": {
     "description": "Tides of Fortune 是以 17 世纪加勒比海为背景的浏览器开放世界海盗与私掠船游戏，包含航海、海战、登船剑斗、港口、贸易和总督任务。 注意：在人工指导下开发；许可证限制商用；需桌面键鼠；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-cinderbelt": {
     "description": "Cinderbelt 是俯视角 3D 太空游戏，玩家在网格上用零件组装飞船，零件布局影响飞行物理，随后在无限种子宇宙中开采小行星、贸易、接取合约并对抗海盗。 注意：处于早期开发；人工负责设计，代理编写代码、Blender 脚本美术和音乐；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-polytrack-racing-game": {
     "description": "PolyTrack Racing Game 是低多边形 3D 赛车游戏，具备车辆物理、带高低起伏的弯道赛道、检查点、三圈计时与最佳成绩、加速带和触屏操作。 注意：PolyTrack 的仿制演示项目；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-race-to-the-shuk": {
     "description": "Race to the Shuk 是穿越耶路撒冷街道的 3D 换道跑酷竞速，两名播客主持人角色躲避滚动的炸豆丸子、行人和公交车，争抢市场里最后一个皮塔饼。 注意：角色模型来自其他 3D 生成工具；可选真实世界模式需自备 Google Maps API 密钥；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-vite-endless-runner-game": {
     "description": "Endless Runner 是 Subway Surfers 风格的浏览器 3D 无尽跑酷游戏，带有程序化音频、粒子特效和排行榜。 注意：模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目仓库简介提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目仓库简介提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-hearsay": {
     "description": "Hearsay 是第三人称 3D 村庄游戏，用于演示基于图数据库的 NPC 记忆引擎：村民目击玩家行为并以流言传播和夸大，另含七步任务。 注意：主要是黑客松 NPC 记忆系统演示，并非完整游戏；游戏内对话使用另一语言模型；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-vibenstein3d": {
     "description": "Vibenstein ThreeD 是复古风格的简易第一人称射击游戏，有迷宫式关卡、钥匙、门和密道、即时命中武器、简单追击敌人以及内置关卡编辑器。 注意：作者称其较为简陋、粗糙；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-labyrinthbox": {
     "description": "LabyrinthBox 是后室风格的恐怖迷宫游戏，包含物品收集、关卡目标和生命系统。 注意：由人类团队与 AI 代理合作编写；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目仓库简介提到 claude-code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目仓库简介提到 claude-code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-prismdefense3d": {
     "description": "Prism Defense 3D 是 3D 塔防示例游戏，包含敌人波次、多种防御塔和最终 Boss，收录于一个 AI 辅助游戏开发脚手架仓库中。 注意：游戏开发脚手架仓库中的示例，并非独立项目；具体模型未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code、Codex、Grok（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code、Codex、Grok（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-pokebrawl": {
     "description": "PokeBrawl 是非营利的实时 3D 宝可梦对战同人游戏，有十只宝可梦和三座场馆，可对战 AI 或线上 1v1，可自选招式和特性。 注意：同人演示版，使用第三方 Cobblemon 模型，素材许可与 MIT 代码分开；有 Windows 版；模型版本未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-fable52-hang-glider": {
     "description": "单文件浏览器滑翔游戏，包含飞行和落地计分，是一个基准测试页面合集仓库中的一页，该仓库按生成模型发布各模型的输出。 注意：属于模型输出基准测试合集；目录标记为 fable52，但模型版本未经独立确认。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Qwen3.6、GLM 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Qwen3.6、GLM 5.2（2026-11-19 GitHub 核查）。",
     "title": "滑翔挑战 Thermal"
   },
   "example:open3d-workmelt": {
     "description": "Workmelt 是可与同事联机的浏览器多人第一人称射击游戏，提供多张地图、机器人守军和好友房间，贴图、模型和动画均为程序生成。 注意：派生自 Claude of Duty，并非独立原创项目；由多个 AI 代理编写，具体模型未注明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 claude-code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 claude-code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-duskline": {
     "description": "Duskline 是浏览器 3D 狙击任务游戏，玩家需观察场景、识别目标并瞄准射击。 注意：开发由 AI 辅助实现和迭代，不能认定为完全由 AI 生成；具体模型未披露。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目仓库简介未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目仓库简介未提及任何 AI 模型，因此"
   },
   "example:open3d-tartarusarena": {
     "description": "Unreal Engine 5.8 制作的 5v5 MOBA 原型，包含 11 名英雄、两张地图上的两种模式、兵线、防御塔、机器人、训练中心和局域网对战。 注意：原型；使用 Epic 免费 Paragon 素材（仓库不含）。人类负责目标、试玩反馈和决策。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-rocket-arena": {
     "description": "浏览器多人汽车足球游戏，两队驾驶物理车辆把球撞进对方球门，支持 3v3 快速匹配和最多 4v4 的自定义房间。 注意：玩法由权威服务器运行；快速匹配需凑齐六名真人玩家。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 ChatGPT（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 ChatGPT（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-haymaker-boxing": {
     "description": "第一人称 3D 拳击游戏，含自建拳手、提升排名的生涯模式和自由对战模式，支持键盘、手柄、触屏及摄像头手势操作。 注意：README 将游戏设计与代码署名为人类作者。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-unsung-vale": {
     "description": "第三人称奇幻 RPG demo，玩家扮演蒙面骑士探索山谷、击败守卫构造体、完成任务与 Boss 挑战，唤醒八座调音塔；地形、贴图和模型均由代码生成。 注意：音乐和音效来自外部来源并单独署名；需要支持 WebGL 2 的新版 Chrome 或 Edge。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-claude-of-legends": {
     "description": "浏览器 5v5 MOBA，含三条兵线、11 名英雄、野区、战争迷雾、道具、机器人练习和经权威服务器的在线对战，另有大逃杀模式和英雄工坊。 注意：使用第三方角色素材；在线对战依赖项目服务器。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-grindline": {
     "description": "THPS2 风格的街机滑板可玩切片，场景为工业广场，包含推进、豚跳、带平衡条的磨轨，以及按连击计分的两分钟限时挑战。 注意：未完成的可玩切片，缺少花式、抓板、角色名单和结算画面；需用 Godot 4.7 运行；人类编写规格并审看画面。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 claude-code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 claude-code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-lowpolycartjs": {
     "description": "低多边形卡丁车驾驶原型，含程序化布景、坦克式操控、碰撞、倒计时、圈速与最佳成绩记录、小地图和可导出的赛道布局。 注意：驾驶原型而非完整竞速游戏，检查点仍待开发；3D 素材由 Meshy.ai 生成。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-breakout-3d": {
     "description": "本地模型代码生成评测仓库：12 个本地模型配置用同一提示词分别生成 2D 与 3D 打砖块，公开各版本可玩源码、提示词、评测报告和评分。 注意：多模型对照合集；3D 版为 3D 渲染的平面玩法，通过与否由作者自评。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 gpt-20、Qwen3.8（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 gpt-20、Qwen3.8（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-fiat-ludus": {
     "description": "把文本转为可玩 3D 网页游戏的开源模型与工具流水线，涵盖概念图、图生 3D、绑定动画和音乐，并附用其产出制作的示例游戏 Lantern Meadow。 注意：流水线使用多个生成模型；运行需 11 GB 显存和约 95 GB 磁盘空间。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、DeepSeek V4.1（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、DeepSeek V4.1（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-3d-game-poc": {
     "description": "浏览器 3D 跑酷概念验证，玩家换道躲避追赶的狼，需在被追上前抵达 200 米处的宝箱。 注意：概念验证；模型、贴图和动画分别由 Meshy、Tripo、Flux 等 AI 工具生成。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。",
     "title": "森林追逐 3D Game POC"
   },
   "example:open3d-summitclimber": {
     "description": "基于程序化开放世界 demo 改造的 3D 登山游戏，玩家从营地出发登顶并返回，同时管理体力、体温、饥饿和氧气。 注意：派生自 Braffolk/fable5-world-demo（LAAS），README 仍为原说明；需 WebGPU。 GitHub 标记其为 Braffolk/fable5-world-demo 的分支。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5（2026-11-19 GitHub 核查）。",
     "title": "登极者 / Summit Climber"
   },
   "example:open3d-145-korat-cyberpunk": {
     "description": "浏览器 3D 赛车游戏，赛道依据泰国呵叻府旧城护城河一带的 OpenStreetMap 街道数据制作，含火箭跑车、加速、跳跃、在线排行榜和幽灵车。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Claude Code、ChatGPT、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Claude Code、ChatGPT、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-voxel-sandbox": {
     "description": "浏览器 3D 体素沙盒，可放置和破坏方块，并能在游戏中放置显示器加载真实网页。 注意：本地运行需在环境文件中配置 Gemini API 密钥。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-craftmine": {
     "description": "单 HTML 文件的 Minecraft 风格体素游戏，含程序化地形与生物群系、46 种方块、36 种生物、19 种武器、昼夜循环及带机器人的 P2P 多人模式。 注意：作者提出功能需求，亲友参与测试。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-holdfast": {
     "description": "纯键盘操作的 3D 生存指挥 roguelite，共五个世界，玩家招募小队、占领区域、建造炮塔和路障，并用威胁旋钮调节敌人强度。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-cyberpunk": {
     "description": "浏览器赛博朋克第一人称射击游戏，含等离子步枪、能量手枪和能量光剑三种武器、会巡逻追击的敌人，以及霓虹小巷地图中的生存玩法。 注意：AI 辅助而非纯 AI 制作，作者说明代码经过人工修改。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-web-arena-game": {
     "description": "实时 3D 多人策略游戏，玩家操控可直接射击的士兵，购买坦克、直升机和步兵，占领炮塔与据点，在五分钟内比拼得分，可对战真人或电脑。 注意：多人对战依赖 Go 编写的 WebSocket 服务器。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-last-light-academy": {
     "description": "面向 10 至 15 岁的免费离线 3D 月球基地任务训练游戏，基于 NASA 数据，为 NASA Space Apps 2026 学生团队作品，仓库含游戏工程和离线数据。 注意：多个 AI 模型参与辅助；学生团队项目，未获 NASA 背书；以 Windows 和 macOS 版本发布。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini、ChatGPT、Codex、Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini、ChatGPT、Codex、Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-claude-3d-shooter": {
     "description": "设定在程序生成迷宫中的第一人称射击游戏，含五种武器、三档难度的敌人、掉落拾取、可开关的门、小地图和计分。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-palworldsoulultra": {
     "description": "单人 3D 生物生存与营地自动化游戏，玩家采集制作、驯养生物、建造由其劳作的营地、培育幼崽，击败守护者 Boss 并修复信标，一局约 8–12 分钟。 注意：标题图等图片使用另外的图像生成工具制作。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-doodle-sumo": {
     "description": "3D 相扑派对游戏，玩家手绘涂鸦生成带骨骼的 3D 玩偶，再用蓄力推撞、翻滚和道具把对手推下巨大书桌。 注意：混合工具流程：角色模型和动画由 Aholo Lux3D 生成；为黑客松参赛作品。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code、Gemini（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code、Gemini（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-runner": {
     "description": "使用低多边形 3D 模型的横版无尽跑酷，玩家操控狐狸跳跃、滑铲躲避木头、石头和水坑并收集金币，速度逐渐加快。 注意：3D 渲染的横版玩法，并非自由 3D 移动。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Grok（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Grok（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-jungle-survival": {
     "description": "第三人称 3D 波次生存射击游戏，玩家选择角色和武器，在丛林竞技场抵御怪物波次，用医疗包回血，成绩实时进入全球排行榜。 注意：全栈作品集项目；登录与排行榜需 Node.js/Express 后端和 PostgreSQL。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-alchemists-of-prague": {
     "description": "以中世纪布拉格为背景的动作 RPG 原型，老城广场、查理大桥、小城区和高堡连成一个开放世界，可探索、战斗、交易、进入房屋，还能把敌人扔下桥和城墙。 注意：由垂直切片逐步扩展而成的原型。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code、ChatGPT（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code、ChatGPT（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-undead-siege-3d": {
     "description": "受《使命召唤》僵尸模式启发的僵尸波次生存 FPS，含四种武器、神秘箱、武器升级、增益道具、修复防线及多人模式，为 Vibe Jam 2026 参赛作品。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-game-abyssal-raid": {
     "description": "3D roguelite 地牢游戏，玩家选择初始战斗流派，突袭四个程序生成的森林区域，升级时叠加强化，寻找传送门带着战利品撤离。 注意：使用多种 AI 辅助工具制作，包括用于 3D 素材的 Tripo。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-aetheria": {
     "description": "方块动漫风浏览器 MMORPG，含无限区块世界、五种生物群系、战斗、飞行、合成、宠物、种田、钓鱼、房屋、公会，以及基于 Colyseus 服务器的实时多人。 注意：README 提醒项目尚未针对公开部署加固；多人模式需本地服务器和数据库。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-minecraft-clone-by-ai": {
     "description": "用 C++ 和 OpenGL 编写的桌面 Minecraft 风格体素沙盒，含无限程序化地形、区块渲染、第一人称移动以及放置和破坏方块。 注意：需从源码编译的桌面程序，README 提供 Windows 编译步骤。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Copilot（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Copilot（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-medieval-duel-bench": {
     "description": "中世纪剑斗对照合集，收录用同一提示词由不同模型或运行生成的四个独立剑斗游戏，含程序化模型、动画、战斗与音效，并附构建笔记和评分规则。 注意：多模型对照；作者注明并非严格受控排名，缺少可比的试玩、成本和性能数据；需桌面键鼠。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Opus 5.5、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.2、Claude Opus 5.5、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-neon-kart-rush-unity": {
     "description": "Unity 6 街机 3D 卡丁车，与七名电脑对手进行三圈竞速，含漂移加速、道具和解锁内容；仓库提供 Unity 工程及构建说明。 注意：仓库不含构建版本，需用 Unity 6 打开或构建（说明以 macOS 为主）。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-godot-cyberpunk-neon-city": {
     "description": "Godot 4.7 开放世界 3D 城市驾驶游戏，含程序化城市、车辆物理、漂移、氮气、车流与行人、天气和警车追逐，可通过 WebAssembly 在浏览器游玩。 注意：README 称由两个 AI 模型分工：一个编写代码和初始贴图，另一个优化贴图。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini 3.7 Flash、GLM-5.3（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini 3.7 Flash、GLM-5.3（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-103-barista-shift": {
     "description": "俄语 3D 咖啡亭经营游戏，玩家接单、磨豆、压粉、萃取、打奶泡并出餐，顾客会对实际饮品作出反应，最后按收入和评价结算。 注意：出自百项目合集仓库；顾客 AI 对话需自备 OpenRouter 密钥，否则使用预设台词的演示模式。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Opus 5.5、DeepSeek（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Opus 5.5、DeepSeek（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-mini-royale": {
     "description": "受 Free Fire 启发的第一人称 3D 大逃杀，玩家与 35 个机器人同场，拾取武器和物资并在缩圈中生存，支持桌面和移动端。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Copilot（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Copilot（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-sanctuarys-end": {
     "description": "浏览器暗黑风 3D 动作 RPG，含四个职业、技能与装备、无尽程序化地牢和 Boss。 注意：代码为 MIT 许可，第三方素材各有授权。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-crazy-uber": {
     "description": "受《疯狂出租车》启发的 3D 驾驶小游戏，玩家接送乘客赚取车费，可漂移并开关小地图。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-roguelike-dungeon-crawler": {
     "description": "Roguelike 地牢游戏，含程序化地牢、第一人称 3D 探索、d20 战术战斗、隐藏门、谜题、八个主题楼层及 Boss，并有排行榜和幽灵回放等在线功能。 注意：网页版需通过 Docker 启动后端在本地运行；另含 Python 终端客户端。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 4.5、ChatGPT、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 4.5、ChatGPT、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-blocksbeyondthestars": {
     "description": "方块风 3D 太空生存建造游戏，可探索多个星系的程序化星球、采矿合成、驯养生物、建造飞船、基地和空间站，支持单人及多人。 注意：由父亲和十岁孩子主导的实验性家庭项目；包含 Unity 客户端和可自托管的 .NET 服务端。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Codex、Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Codex、Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-vibeage": {
     "description": "浏览器多人 3D 动作 RPG 原型，含五个种族、七个职业及专精、升级、怪物、小 Boss、地牢、队伍掉落和游戏内百科，服务端使用 Colyseus。 注意：原型；多人状态由独立游戏服务器维护。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-civitas": {
     "description": "多人城市建设游戏，玩家铺路、规划地块并设定税率，每位居民都会被模拟在住所与工作地之间通勤，并模拟经济。 注意：公开多人服务器标为关闭，README 说明可在浏览器本地离线游玩。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-game-barrel-shooter": {
     "description": "3D 物理射击游戏，玩家蓄力发射弹丸击倒桶堆、纸牌屋、石堡和塔楼等可破坏目标，带刚体坍塌模拟和计分。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 claude-code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 claude-code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-canvas-wire": {
     "description": "双翼机空战飞行游戏，以单个 HTML 文件形式发布在 gist 上。 注意：单文件 gist，无 README，玩法细节未见说明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目仓库简介提到 Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单；项目仓库简介提到 Fable 5.2（2026-11-19 GitHub 核查）。",
     "title": "Canvas & Wire 飞行空战"
   },
   "example:open3d-gist-minecraft": {
     "description": "单 HTML 文件的 Minecraft 风格体素游戏，发布在 gist 上，含挖方块、物品栏和生命值显示。 注意：单文件 gist，无 README，玩法细节未见说明。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目仓库简介提到 Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "收录于所提供的 AI 游戏清单；项目仓库简介提到 Fable 5.2（2026-11-19 GitHub 核查）。",
     "title": "Minecraft 风格游戏"
   },
   "example:open3d-argon-games": {
     "description": "六款 3D 网页游戏合集，含 Argon Tennis、Grand Theft Argon、The Corridor 等，涵盖网球、空管、开放世界动作、生活模拟和恐怖。 注意：合集；Argon Towers 为 2.5D。部分游戏（如带多人中继的网球）需本地 Python 服务器运行。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini 4（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini 4（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-indian-subway-surfer-game-gemini-html": {
     "description": "印度铁路主题、Subway Surfers 风格的 3D 无尽跑酷，含三车道移动、跳跃与滑铲、行驶的火车、金币、计分和逐步提高的难度。 注意：经多轮迭代和手动修复完成；源码配套 YouTube 教程。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini、ChatGPT、Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini、ChatGPT、Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-vibecoded-submarine": {
     "description": "多人 3D 潜艇游戏，玩家在小湖中向鱼发射彩弹，把鱼染成自己的颜色，按记分板上的鱼数争夺胜利。 注意：仓库已归档；基于 Multisynq 多人示例代码，并借助 Multisynq 联机。 仓库已归档（只读）。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini 2.5 Pro（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini 2.5 Pro（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-ocean-battle-racing": {
     "description": "单 HTML 文件的 3D 街机海上竞速游戏，含波浪物理、用于击沉对手的舷炮、程序化赛道、三档难度和移动端触控。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini 3 Pro（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini 3 Pro（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-tinyprd-demo": {
     "description": "3D 波次射击游戏，作为研究游戏生成流程的示例项目收录在一个仓库中。 注意：基于 AI Studio 应用模板；本地运行需 Gemini API 密钥。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini（2026-11-19 GitHub 核查）。",
     "title": "Snow Arena，Gemini 3.0 Flash 版本"
   },
   "example:open3d-swordsman-game": {
     "description": "赛博朋克 3D 动作游戏，霓虹剑客斩杀敌群、营救会跟随的少女，升级解锁远程与爆炸武器，最终挑战 Boss。 注意：通过第三方工具 Devokai 分五轮提示词制作。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini 3（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini 3（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-rougelike-vibe": {
     "description": "带 3D 角色的回合制格子地牢游戏，玩家以战士、法师或盗贼身份深入 20 层地牢，学习法术并挑战最终 Boss。 注意：回合制格子玩法，并非自由 3D 空间移动。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 gemini 3 pro（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 gemini 3 pro（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-x-wing": {
     "description": "单 HTML 文件 3D 游戏，玩家驾驶 X 翼战机穿越死星战壕，躲避障碍并发射激光，显示得分与护盾。 注意：出自面向中小学的 vibe coding 课程仓库示例；同仓库另有高对比度改版，未单独收录。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini，但 2026-11-19 核查时项目 README 未提及该模型。",
     "title": "X-Wing Trench Run 源码"
   },
   "example:open3d-vibe-coded-web-voxel-engine": {
     "description": "浏览器 Minecraft 风格体素引擎，含 Perlin 噪声无限地形、第一人称操控、放置与破坏方块、物品栏和水下效果。 注意：无通关目标的沙盒原型；作者称继续开发需亲自修改代码。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini 3 Pro（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini 3 Pro（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-vibefighter": {
     "description": "街霸与真人快打风格的一对一格斗游戏，角色、对战背景和特殊技能均可即时生成。 注意：运行时生成依赖多个外部 AI 服务，需 API 密钥及 Supabase、R2；音乐音效来自其他 AI 工具。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini 2.5 flash（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini 2.5 flash（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-3d-car-racing-game": {
     "description": "3D 汽车跑酷游戏，玩家左右避让敌车并收集积分，发生碰撞即结束。 注意：车辆模型从外部加载；仓库 README 没有说明内容。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-ai-horror-games": {
     "description": "多模型恐怖游戏实验仓库：三个 AI 模型以相同任务、提示词、25 美元预算和三小时各做恐怖游戏；含第一人称 3D 恐怖游戏 Protocol: Don’t Look，可行走和使用相机闪光。 注意：多模型合集；收录条目为其中一款，其他作品并非全为 3D。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Claude Opus 5.5、Claude Code、Gemini 4、Kimi K3.1（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Claude Opus 5.5、Claude Code、Gemini 4、Kimi K3.1（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-scoundrel-solitaire": {
     "description": "Zach Gage 与 Kurt Bieg 设计的地牢主题单人纸牌游戏 Scoundrel 的实现，仓库含 3D 版本代码和所用提示词。 注意：3D 牌桌呈现，不是 3D 动作游戏；改编自现有纸牌游戏设计。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 Gemini（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-tiktok-chameleon-gemini": {
     "description": "浏览器猫咪伪装捉迷藏派对游戏，复刻 Meccha Chameleon，玩家可扮演躲藏者匹配表面颜色伪装，或扮演搜寻者，场景含后室和画廊。 注意：复刻商业游戏 Meccha Chameleon；在线大厅和聊天由机器人模拟。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 GEMINI（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 GEMINI（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-furiousreqman-3d": {
     "description": "第一人称 3D 射击游戏，对抗象征失控需求的僵尸猪，含程序化竞技场中的生存街机模式和多关卡战役模式。 注意：游戏由作者设计，AI 辅助编程。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 gemini（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Google Gemini；项目 README 提到 gemini（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-nightfall": {
     "description": "第一人称森林夜间恐怖游戏，玩家借助手电和有限体力在雾林中寻找五块发光狐火石，在高大怪物追上前逃离。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-claude-opus-5-5-games": {
     "description": "三款浏览器游戏合集：科幻竞技场射击 Neon Siege、一对一格斗 Mortal Clash 和第一人称狙击 Rooftop Sniper: Last Light。 注意：三款游戏合集；建议在桌面端 Chrome 或 Edge 用键鼠游玩。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-opus55-3d-games": {
     "description": "三款单文件 3D 网页游戏合集，每款由一句提示词生成：海岸公路鹈鹕骑车、还原《穿越火线》运输船地图的团队 FPS，以及含四条赛道的《QQ 飞车》式漂移竞速。 注意：还原商业游戏地图玩法；与 riba2534/claude-opus-5-5-demo 内容相同，或为镜像；零改动系自述。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-tidewater": {
     "description": "海岛钓鱼游戏，可在码头、海滩或船上抛竿，靠控制鱼线张力搏鱼，卖鱼并升级装备，还能开船、潜游礁区；使用自写 WebGPU/WGSL 渲染器。 注意：需支持 WebGPU 的浏览器和性能较好的显卡；首次加载需编译数百个着色器。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-tatertotsflightsim": {
     "description": "浏览器飞行模拟器，可驾驶塞斯纳 172RG、F-16C、A-10C 和波音 747-400 飞越农田、城镇、海岸和山地，含真实飞行物理，喷气机可攻击坦克和敌机。 注意：标为测试版；仓库有后续迭代，不是一次性生成成品。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-last-courier": {
     "description": "受《死亡搁浅》启发的 3D 配送游戏，配送机器人背负堆叠货物保持平衡，穿越河流峡谷、躲避腐蚀雨和“回声”，重新连接七个据点。 注意：日语游戏，面向 PC 浏览器。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-wild-fields-1648": {
     "description": "以 1648 年乌克兰草原为背景的即时战略游戏，建设哥萨克城镇，耕种并采集木材、石料和黄金，训练长枪兵、火枪手、骑兵和野战炮，摧毁敌方市政厅。 注意：使用 20 个 CC0 Poly Haven 模型和 12 张贴图，其余由代码生成；面向桌面浏览器。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-ink-arcade": {
     "description": "两款浏览器墨水主题射击游戏：INK RAIL 为 3D 轨道射击，射击与音乐节拍同步，含连击和 Boss；INK DASH 为 90 秒团队涂色对战。 注意：两款游戏合集；由人类策划监修，通过多轮对话制作，并非一次生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-fishslop-opus5-5": {
     "description": "3D 水下养鱼经营游戏，驾驶深潜器喂鱼收集金币、扩建珊瑚礁、购买新鱼种和潜艇升级，并用声纳寻找隐形稀有鱼。 注意：受 Theo（t3.gg）的 Fishslop 演示启发，代码与素材为新作。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-overrun-claude-opus-5-5": {
     "description": "设定在码头的 3D 波次生存第一人称射击游戏，是一个 AI 制作游戏静态目录仓库中的一款。 注意：多模型 benchmark 目录中的一款；仓库其他游戏由不同模型制作。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-neon-zenith": {
     "description": "3D 飞车计时赛，场景为超过 9000 栋建筑的雨夜赛博朋克垂直城市，从香港夜市街道出发，含奖牌与收集要素。 注意：作者负责方向与审阅。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-voxel-musou": {
     "description": "三国无双风格体素动作游戏，含七名武将、四个历史章节、三项排名试炼和四档难度，有连招、无双技及与数百士兵的混战。 注意：分阶段多轮制作，并非一次提示生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-video-to-game": {
     "description": "把生成的游戏视频转为浏览器游戏的编码 agent 技能，附 31 个据此制作的单文件小游戏（如在飞鲸间滑翔的 Skyfarer）及生成记录。 注意：多模型合集：参考视频、图片、3D 模型和音效由其他生成模型经 fal 生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code、Gemini、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code、Gemini、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-celadon": {
     "description": "3D 制陶游戏，在转盘上拉坯、晾干修坯、按化学配方上釉、入窑烧制并获得评分。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5、codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5、codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-clawd-7-8": {
     "description": "变拍子浏览器节奏游戏，含 3D 四轨音符通道、节拍判定、计分和三档难度，旁边有吉祥物角色随拍舞蹈。 注意：3D 渲染的音游，非自由移动 3D 世界；Clawd 角色为同人创作，不在 MIT 许可范围内。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-claudopoly": {
     "description": "3D 浏览器地产棋盘游戏，22 条伦敦街道采用 2026 年英国土地登记处真实价格，致敬 The Landlord's Game，玩家以租金收益竞争。 注意：3D 棋盘游戏，而非自由探索游戏。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-backroad-rally": {
     "description": "俯视角立体模型风格拉力赛车，含四个年代的五辆车、六条点对点赛段、多种天气与时段，以及对阵九名模拟对手的简短生涯模式。 注意：非商业 demo，移植自早期 UE5 桌面版；人类负责构思和试玩；音效音乐由 ElevenLabs 生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、claude-code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、claude-code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-voxel-strike": {
     "description": "Minecraft 风格第一人称体素波次生存射击游戏，场景为程序化岛屿，含四种武器、可破坏与建造的地形、四类怪物和每五波出现的 Boss。 注意：位于收录多个模型作品的混合合集仓库子目录中。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Gemini 4（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Gemini 4（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-vibe-gaming-interactive-playbook": {
     "description": "借助编码 agent 用一条提示词制作 3D 网页游戏的流程，先做灰盒再替换 Tripo 模型，附滑雪、巷战和竞技场射击三个示例游戏。 注意：代码与 Tripo 素材混合流程；仓库不含 Tripo 模型，克隆后为灰盒效果。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 claude-opus-5、Claude Code、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 claude-opus-5、Claude Code、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-opuscraft": {
     "description": "复刻 Minecraft Java 版 1.21 的浏览器生存沙盒，含生物群系、洞穴、结构、下界、生物、配方和多人联机，贴图与音效均由代码生成。 注意：非官方复刻，与 Mojang 和微软无关；由人指定方向并试玩反馈，历时约一周，非一次生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-opus-fps": {
     "description": "Godot 4 制作的 PS1 风格第一人称射击游戏，玩家在含村庄、前哨和遗迹的山谷或海岛上猎杀怪物，可引爆油桶、收集宝石和穿越传送门。 注意：经多次迭代开发，非单次生成；模型与音效由仓库内脚本生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-kagit-kart": {
     "description": "设定在立体书中的卡丁车竞速，含四个章节、八名动物车手、八种文具道具和包括大奖赛在内的三种模式，支持英语和土耳其语。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-emilius-wingsuit": {
     "description": "3D 翼装飞行低空跳伞游戏，从山顶起跳贴地飞越门框，开伞后降落到目标点，每次跳跃都会生成新世界。 注意：经过多小时迭代完成，非一次生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-out-of-the-box": {
     "description": "3D 潜行游戏，玩家扮演受评估的 AI，躲避研究员、摄像头、无人机、扫描波和激光门逃出实验室沙盒，前任 agent 留下的留言板作为检查点。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-radikal-bikers": {
     "description": "街机风送披萨摩托竞速游戏，卡通渲染的代码生成 3D 画面，含五条路线、两名车手和加时检查点，另有以瓦伦西亚为灵感的关卡，支持西班牙语和英语。 注意：游戏内名为 Radikal Riders，灵感来自 Gaelco 1998 年街机游戏 Radikal Bikers。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Copilot（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Copilot（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-neonbay": {
     "description": "程序生成海滨城市中的开放世界驾驶游戏，含七辆车、模拟级车辆物理、车流、通缉星级与警察追逐、桥梁、地下车库和跳台。 注意：偏驾驶原型，暂无任务、步行、音效和存档。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-threejs-multiplayer-fps": {
     "description": "受《使命召唤：现代战争》（2019）启发的多人第一人称射击游戏，含团队死斗和死斗模式、多张地图、五种武器和可配置房间，使用 Node.js 游戏服务器。 注意：联机需运行 Node.js 游戏服务器。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-saintdoom": {
     "description": "第一人称射击游戏，复活的圣徒对抗恶魔入侵，共十个章节和两个隐藏区域，含多种武器、剑格挡、Boss 和圣怒技能。 注意：位于多游戏仓库子目录；需桌面浏览器并联网加载 CDN 上的 Three.js。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-pixel-tactical-shooter": {
     "description": "像素风 3D 战术 FPS，在两张地图上与机器人进行回合制对战，含三种武器、难度预设和持久生涯数据。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-snakeboard": {
     "description": "3D 蛇梯棋游戏。 注意：README 为空，信息仅来自仓库简介。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目仓库简介提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目仓库简介提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-mineclaude": {
     "description": "用 Rust 和 Bevy 编写的 Minecraft 风格 3D 体素生存游戏，含地形生成、洞穴、采矿、合成、战斗、饥饿、种田和生物。 注意：由多个协作 agent 构建；人类仅偶尔试玩并报告问题。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 4.6、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 4.6、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-neon-breach": {
     "description": "单人科幻射击游戏，含 12 关战役和无尽竞技场，有二段跳和冲刺的 Quake 式移动、六种武器和 Boss。 注意：面向桌面浏览器，需键鼠操作。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-castle-vibes": {
     "description": "使用 Castle Game Engine 制作的 3D 城堡探索游戏，任务是击败六只哥布林。 注意：基于现有引擎模板和示例，并非从零生成；作者称其为娱乐实验，网页版运行较慢。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 4.6、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 4.6、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-quest-ai": {
     "description": "面向 7 至 11 岁儿童的 3D 创作游戏，孩子输入描述后生成带旁白的动画场景，描述含糊会出现滑稽失败并获得提示。 注意：运行时由在线大模型 API 生成场景脚本并有缓存兜底；使用现成 3D 素材；黑客松项目，偏互动叙事沙盒。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 4.6、claude-code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 4.6、claude-code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-gravewake": {
     "description": "面向手机的暗黑奇幻双摇杆生存射击游戏，巫师抵挡亡灵波次、在波次间选择增益并挑战两名首领；仓库含源码、Blender 模型脚本和试玩链接。 注意：首个可玩版本由一次提示生成，之后经多轮调整。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-jiggle-kings": {
     "description": "最多四人合作的 3D 生存 roguelike，玩家扮演果冻国王在玩具岛上抵御糖果怪物 15 分钟，使用自动开火的玩具武器、升级并挑战三个 Boss。 注意：仓库主要为网页构建产物，多人服务端未公开，并非完整源码。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-core-business": {
     "description": "Flash 挖矿游戏《Motherload》的 2.5D 重制，采用 3D 表现，还原原作的钻探、世界生成和价格等机制。 注意：非商业同人技术演示，非完整产品，与 XGen Studios 无关；玩法 2.5D；音频由 ElevenLabs 生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-forge-depthbound-mobile-dungeon-game": {
     "description": "面向手机的 3D 动作 roguelite，囚犯需在水位上涨前清理逐渐被淹的地牢各层，共十层两个 Boss，含技能、装备和营地。 注意：已结束的实验项目：有粗糙之处的可玩 MVP，不再开发；模型由 Meshy 生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-tidewright": {
     "description": "基于 GPU 的 3D 沙堡模拟游戏，含九次潮汐的计分战役和沙盒模式，不用引擎，以 JavaScript 和 GLSL 在 WebGL2 上实现。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5、Claude Code、codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5、Claude Code、codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-claude-opus-5-5-demo": {
     "description": "三款单文件 3D 网页游戏合集，每款由一句提示词生成：海岸公路鹈鹕骑车、还原《穿越火线》运输船地图的团队 FPS，以及含四条赛道的《QQ 飞车》式漂移竞速。 注意：还原商业游戏地图玩法；与 xiiyioozzz/opus55-3d-games 内容相同，或为镜像；零改动系自述。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-racing-web-game": {
     "description": "使用 WebGPU 渲染的 3D 浏览器赛车游戏，玩家与对手竞速，需在弯前刹车并走好路线取胜。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 claude opus-4（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 claude opus-4（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-vogelsimulator": {
     "description": "浏览器 3D 鸟类飞行模拟器，玩家在程序化岛屿上飞行、滑翔、俯冲、降落和捕鱼，可用键盘、可选摄像头手势或手机陀螺仪操控。 注意：偏飞行模拟体验，未确认有完整胜负或关卡机制；摄像头控制为可选。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 4.6、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 4.6、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-quoridor-3d": {
     "description": "以 WebGL2 渲染的 3D 版 Quoridor 双人棋，单个 HTML 文件；每回合移动棋子或放置墙板，先到达 9×9 棋盘对边者获胜。 注意：移植既有桌游；3D 棋盘上的格子规则玩法，并非自由移动的 3D 游戏。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-ludo-3d": {
     "description": "单 HTML 文件的 3D 飞行棋（Ludo），支持 2 或 4 人本地轮流对战和电脑对手，包含掷骰、吃子、安全格和胜负判定。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 4.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 4.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-bejewelled-clone": {
     "description": "公主与龙主题的宝石三消游戏，六位公主各有特殊技能，小规模消除会激怒恶龙，含连击、强化宝石、提示和洗牌。 注意：Bejeweled 的仿制作品，加入了新机制。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 4.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 4.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-narihitom-hellgrid": {
     "description": "浏览器第一人称波次生存射击，含四种武器、三类会寻路的敌人、最多三名 AI 队友、补给拾取与计分。 注意：用 Canvas 2D 光线投射和精灵呈现伪 3D；与 markcastle/hellgrid 不是同一仓库。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-sunset-down": {
     "description": "第一人称僵尸波次生存游戏，场景为村庄广场，含五种武器和购买菜单，每五波出现 Boss；纹理、模型和音效大多在运行时生成。 注意：需桌面端键鼠与 WebGL 2；附带三张图片素材。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-blockworld": {
     "description": "Minecraft 风格的第一人称体素沙盒，游戏代码为单个 JS 文件，可探索、飞行及破坏或放置方块；README 附有制作日志。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-by-opus": {
     "description": "仓库包含三个 3D 网页游戏：鹈鹕骑车捉鱼、《穿越火线》运输船风格 FPS，以及《QQ 飞车》风格漂移赛车，均由一句话提示生成。 注意：一个仓库内含三款独立游戏的合集。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-opus-5-three-games": {
     "description": "三款对战机器人的单人游戏合集：Unreal 3D 岛屿射击 STORMFALL、Godot 3D 战术射击 STRIKE PROTOCOL 和 Godot 2.5D Boss 战 TEACUP。 注意：二进制素材未提交，克隆后需重新生成；TEACUP 为 2.5D；能否完整运行未验证。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Opus；项目 README 提到 Claude Opus 5、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-chess3dastra": {
     "description": "单 HTML 文件的 3D/2D 国际象棋，可与电脑对弈，含完整规则、三档难度、悔棋与走棋记录；README 记录了四轮提示迭代。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Claude Sonnet 5、GPT-6 Astra、Copilot（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Claude Sonnet 5、GPT-6 Astra、Copilot（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-gogh-strike": {
     "description": "梵高小镇背景的画家主题浏览器射击游戏，玩家从十二位画家中选角，与机器人组队进行颜料对战，先达 20 次击杀或三分钟后得分高者获胜。 注意：仅单人对战机器人；需桌面键鼠。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 ChatGPT、Mistral（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 ChatGPT、Mistral（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-gpt-6-astra-game": {
     "description": "两款 3D 网页游戏合集：仿《文明5》希腊的六角格回合制策略 HELLAS，以及 5v5 实时海战 IRON TIDE，附源码与原始提示词。 注意：两款游戏合集；README 未确认仓库名中的具体模型变体。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 claude-opus-5、gpt-6-astra、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 claude-opus-5、gpt-6-astra、Codex（2026-11-19 GitHub 核查）。",
     "title": "GPT-6 游戏合集"
   },
   "example:open3d-magiccarpetwizard": {
     "description": "在小型球形世界上飞行的无尽魔毯街机游戏，含火球、闪电、风爆法术，以及敌人、Boss、连击计分与竞速检查点。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT 6 Astra（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT 6 Astra（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-astrafloor": {
     "description": "单人 3D 僵尸生存 FPS，在工业园区中清理波次、赚取点数、在回合间商店购买武器与升级，并在第 7 波击败最终 Boss。 注意：使用两种 AI 工具，其中一种底层模型未注明；面向 PC 键鼠，无存档。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-gpt6-astra-one-shot-games": {
     "description": "面向手机浏览器的 3D 单键飞行游戏，以单 HTML 文件重制点击振翅玩法；所在仓库还收录另一款半流体西瓜游戏。 注意：仓库含两款 one-shot 测试游戏，本条目仅对应 Mosswing。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-hallowmere": {
     "description": "黑暗奇幻动作 RPG，可往返两座村庄、与四名角色对话、战斗并收集装备，击败 Bellkeeper 后探索三个更难区域。 注意：游戏需要 WebSocket 后端，静态托管需连接已部署的服务器。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-gpt-6-astra-smash-karts": {
     "description": "受 Smash Karts 启发的多人 3D 卡丁车对战，最多 8 人、11 种武器，可与机器人对战，每局三分钟混战；公开了制作会话轨迹。 注意：在线多人需可访问的 Node 服务器；为受 Smash Karts 启发的独立实现。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-web-3d-game": {
     "description": "等距视角浏览器僵尸生存射击 MVP，含瞄准、换弹、翻滚闪避和敌人波次，仓库附 Blender 场景与角色源文件。 注意：MVP 阶段；素材经 Blender MCP 制作；README 记录了后续修复，并非严格 one-shot。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 gpt 6 astra、codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 gpt 6 astra、codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-gpt-6-astra-2026-09-11": {
     "description": "Three.js 竞技场生存第一人称射击游戏，收录于 AI 制作浏览器游戏目录 Bench Portal。 注意：属于多模型 benchmark 仓库中的单个游戏，模型仅由其 game.json 标明。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-voidrunner-astra": {
     "description": "Three.js 反重力战斗赛车游戏，收录于 AI 制作浏览器游戏目录 Bench Portal。 注意：属于多模型 benchmark 仓库中的单个游戏，模型仅由其 game.json 标明。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-gpt-6-1-sol-light-games": {
     "description": "七个 Three.js 浏览器游戏原型合集，涵盖滑板、僵尸生存、城市驾驶、街头赛车、潜入、破坏沙盒和城堡战斗，附原始提示词和本地运行说明。 注意：原型合集，每个为独立 Vite 项目；未逐个验证运行。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6.1（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6.1（2026-11-19 GitHub 核查）。",
     "title": "GPT-6.1 Sol light 的 7 个游戏原型"
   },
   "example:open3d-platformer-3d": {
     "description": "第三人称 3D 跑酷平台游戏，属于一个以少量提示制作游戏的合集仓库。 注意：仓库已归档，其余子项目为 2D 游戏。 仓库已归档（只读）。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-meridian-wake-g6a": {
     "description": "以积木风格 3D 重新构想太空游戏 Endless Sky 的浏览器版，可贸易、载客、采矿、改装飞船、指挥护航并推进 Free Worlds 等剧情。 注意：改编自 Endless Sky，使用上游故事数据和音频素材；GPL-3.0 许可。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-turbo-rumble": {
     "description": "2–8 人共屏派对赛车，用手机作为手柄，含三张地图、漂移、火箭、地雷、氮气和颁奖台，也支持键盘与机器人。 注意：设计方向与试玩反馈由人提供；许可仅限非商业使用。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6.1、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6.1、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-pine-island-demo": {
     "description": "等距视角 3D 海岛原型，玩家砍树收集木材并建造小屋，低多边形模型由 Blender Python 脚本生成。 注意：原型，并非完整游戏；素材使用 Blender 制作。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-threejs-forest-census": {
     "description": "受马力欧派对小游戏启发的单场景 3D 小游戏，玩家需在 20 秒内数出体素森林中的黄色小鸡。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-highest-wins": {
     "description": "3D 平台跳跃游戏，操控 Roblox 风格角色在浮空平台间跳跃、挑战最高高度，含计分与排行榜接口，发布于 VIVERSE Worlds。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 ChatGPT（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 ChatGPT（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-snake-3d-fps": {
     "description": "第一人称 3D 贪吃蛇，从蛇的视角操控，收集金币变长，躲避尾巴和墙壁并射击游荡的敌人。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 ChatGPT（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 ChatGPT（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-how-to-suck": {
     "description": "1–4 人第一人称合作 Unity 游戏，清洁工用强力吸尘器吸取财物、发射物品攻击敌人、完成交付指标并击败 Boss。 注意：音效另用音频生成工具制作；可玩版本为 Windows 版。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra、Codex、Qwen2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra、Codex、Qwen2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-harvest-hollow": {
     "description": "双人合作浏览器 3D 农场游戏，可种植、收获、养动物、制作物品，并实时共享同一农场；可在线游玩或自托管。 注意：混合工具开发：一个负责主要开发，另一个提供审查意见；自托管需 Node 服务器。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Claude Code、ChatGPT、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Claude Code、ChatGPT、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-pulsebreak": {
     "description": "Mac 原生 3D 竞技场 roguelite，操控有翼机甲冲刺吸收弹幕能量、释放脉冲，并在生成的关卡中安装升级。 注意：仅限 macOS 原生应用；临时签名，未经 Apple 公证。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-desert-velocity": {
     "description": "3D 街机沙漠竞速，含耐力模式和计时赛段、六个检查点、两款车辆，以及加速、损伤与恢复系统。 注意：AI 辅助开发，经人工审查与测试；以 Windows 版本发布。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-5.6 Codex、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-5.6 Codex、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-claude-of-tanks": {
     "description": "仿《坦克世界》的浏览器坦克战斗游戏，含 311 辆载具、33 张可破坏战场和 14 种模式，涵盖单人、多人、合作与战役，模拟装甲与弹道。 注意：由多智能体流程构建，混合两家模型，版本未注明。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Codex、Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Codex、Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-octane-arena": {
     "description": "仿 Rocket League 的 3D 汽车足球游戏，含街机驾驶、空中动作、对战机器人，以及与好友 1v1 或 2v2 联机。 注意：作者称约 99% 由 AI 完成；需桌面浏览器及键盘或手柄，不支持触屏。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-codecraft": {
     "description": "受 Minecraft 启发的浏览器体素生存与建造游戏，含确定性地形、采矿、合成、战斗、原创生物、本地存档和创作工具，素材均由代码生成。 注意：目前为 Alpha 版本。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Codex、Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Codex、Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-codex-3d-racing-game": {
     "description": "浏览器 3D 赛车原型，程序生成霓虹赛道，含检查点、计圈计时、AI 车流、小地图和赛道选择。 注意：原型作品。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-constellation-defense": {
     "description": "结合三消与王国防御的实时策略游戏，3D 场景中在 6×6 棋盘交换星星驱动英雄守路，并沿星图远征招募同伴、升级城堡。 注意：由人主导设计，AI 协助实现。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-snake-3d-game": {
     "description": "3D 渲染棋盘上的经典贪吃蛇，含食物、变长、碰撞、计分与最高分，可暂停和重开。 注意：仅为 3D 渲染，核心玩法仍在平面棋盘上。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-skyward-isles": {
     "description": "单人 3D 动作 RPG 原型，在一座岛上接委托、清理史莱姆、点亮三座风晶祭坛并击败 Boss 开启星门，含剑术战斗、闪避、升级与存档。 注意：仅一座岛的原型；模型由另一生成工具制作，并使用现成动作素材。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 Codex（2026-11-19 GitHub 核查）。",
     "title": "云屿纪行 / Skyward Isles"
   },
   "example:open3d-3d-html-game": {
     "description": "单个 HTML 文件的小型 3D 跑酷游戏，玩家操控长方体跳跃、翻倒和旋转。 注意：在线页面已下线，需下载 HTML 运行；AI 参与比例未注明。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-vibecraft": {
     "description": "Minecraft 风格的浏览器体素沙盒，自行实现区块、地形生成、网格化与光照，可探索、飞行、破坏和放置方块。 注意：偏创造模式，无通关目标；音效来自 Minetest Game。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-saber-battle": {
     "description": "3D 光剑地牢动作游戏，探索五层神殿，含轻击连段、重劈、格挡与原力冲击、战争迷雾、守卫敌人和关间遗物。 注意：3D 素材借助图像生成与 Blender 制作。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6 Astra、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-surge-for-oinja": {
     "description": "Oinja 世界观的第三人称生存游戏，在两张地图中对抗机械敌群、组合自动释放的电系技能，并在 15 分钟内击败 Boss。 注意：仅支持桌面浏览器和键盘，不支持触屏。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-weeping-angels": {
     "description": "第一人称浏览器恐怖实验作品，教堂中的天使雕像只在视线外移动，玩家借手电筒恢复供电、找到钥匙后逃离。 注意：实验性演示；模型、材质与声音另用多种生成模型和 Blender；需桌面键鼠。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6-Astra、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 OpenAI GPT / Astra / Codex；项目 README 提到 GPT-6-Astra、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-deepseek-game": {
     "description": "Three.js 第一人称 3D 游戏，场景为城市地图，含射击、敌人和生命机制。 注意：城市模型来自 Sketchfab 第三方素材。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 deepseek-r1（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 deepseek-r1（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-ten-memories-game": {
     "description": "3D 老街短篇叙事游戏，主角从七岁走到七十七岁，通过十件旧物及各自的小游戏推进故事，无战斗、无失败。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 DEEPSEEK（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 DEEPSEEK（2026-11-19 GitHub 核查）。",
     "title": "十段旧时光"
   },
   "example:open3d-pyopengl-3d-racing-game": {
     "description": "基于榛名山真实地形数据的 3D 山路赛车模拟，Python 开发，含 PBR 渲染、车辆物理、漂移和沟渠跑法过弯。 注意：多个模型与平台参与制作；采用非商业许可。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 DeepSeek V4.1、GLM 5.3（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 DeepSeek V4.1、GLM 5.3（2026-11-19 GitHub 核查）。",
     "title": "榛名山 3D 赛车"
   },
   "example:open3d-skiing-game": {
     "description": "程序生成山坡上的高山滑雪回转赛，需穿过 18 个旗门，漏门加罚 2 秒，含物理滑行与计时。 注意：混合模型：一个生成主要代码，另一个辅助审查；用户参与修复问题。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Qwen 3.6、DeepSeek V4（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Qwen 3.6、DeepSeek V4（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-country-lane-demo-horror-game": {
     "description": "短篇第一人称心理恐怖游戏，场景为暴雨夜的中国乡村小巷，侧重手电筒探索和环境谜题，无战斗。 注意：v0.1.0 演示版；设计与测试由人完成，并使用第三方素材。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Deepseek V4（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Deepseek V4（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-flappy-anna-3d": {
     "description": "卡通渲染的 3D Flappy Bird 式横版游戏，点击振翅穿过石柱间隙得分。 注意：2.5D 横向玩法，非自由移动 3D；为作者早年 2D 游戏的 3D 升级版。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 DeepSeek V4（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 DeepSeek V4（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-3d-space-dodge": {
     "description": "模型对比仓库：18 个模型用相同提示词分别制作同一款 Three.js 躲避游戏，保存了各版本、提示词和测试记录。 注意：同一游戏由多个模型实现；部分版本失败或有运行错误。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 fable5、Qwen 3.5、DeepSeek V4、GLM-4（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 fable5、Qwen 3.5、DeepSeek V4、GLM-4（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-embervale": {
     "description": "斜俯视角体素动作游戏，玩家用双手大剑连击清理敌人波次，每五波迎战 Boss，目标是坚持到第 15 波。 注意：音效另用音频生成工具制作。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Grok 4.5、CLAUDE（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Grok 4.5、CLAUDE（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-virgilezzz-tower-defense": {
     "description": "浏览器版 Roblox《Tower Defense Simulator》重制，放置并升级士兵塔抵御敌人波次，模型由 Three.js 基本体构建，音效为合成。 注意：重制既有 Roblox 游戏。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 qwen3.8（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 qwen3.8（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-3d-football-game": {
     "description": "与 AI 球员对战的 3D 足球游戏，带球射门并防守己方球门，比赛限时三分钟。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Grok（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Grok（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-3d-chess": {
     "description": "浏览器 3D 国际象棋，含风格化棋子和标准规则，支持走子校验、回合提示、吃子和升变。 注意：两种 AI 工具协作编写代码，人工负责设计、审查与整合。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Claude Code、DeepSeek-V4（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Claude Code、DeepSeek-V4（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-cricket-doodle-inspired": {
     "description": "3D 昆虫板球游戏，单键把握击球时机，打出四分、六分，跑分并避免被甲虫守场员接杀，挑战高分。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Grok（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Grok（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-dsh-games": {
     "description": "提示词生成游戏工具的测试游戏合集，包含 3D 版本，如小熊猫收集竹笋并躲避野猪、狐狸收集灯笼等。 注意：合集；各游戏所用模型未逐一确认。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等），但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等），但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-godot-3d-bowenjourney": {
     "description": "Godot 第三人称开放世界探索与战斗原型，含玩家、敌人、攻击与防御代码。 注意：原型；KayKit 角色素材未收录，可能无法直接运行；多个本地模型参与，分工不明。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Qwen 3.5、Copilot（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Qwen 3.5、Copilot（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-blocksfield": {
     "description": "将创意描述生成可玩游戏的系统，可输出 Three.js 网页游戏或 Roblox 场景；仓库 web/games 收录多个生成游戏及制作记录。 注意：混合模型流程，代码、美术与音乐由不同模型生成；使用预制游戏组件。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 GPT-6 Astra、Qwen3.8（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 GPT-6 Astra、Qwen3.8（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-x-game-template": {
     "description": "可嵌入 X 帖子播放卡片的 Three.js 游戏模板，示例游戏 Macaw 中点击让鸟跳跃收集金币得分。 注意：模板项目；3D 渲染、平面玩法，偏 2.5D。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Grok（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Grok（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-microkarts-qwen3-8-27b": {
     "description": "餐桌赛道上的街机卡丁车，含漂移、道具和三圈竞速，部分赛道有高低起伏；几何、纹理与音频均在运行时生成。 注意：多人模式需运行配套游戏服务器。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 qwen 3.8（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 qwen 3.8（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-grok-xforce": {
     "description": "太空飞船竞速射击游戏，重制自 xforce.live。 注意：重制既有游戏，使用外部素材；README 未明确模型说明是否涵盖此版本。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Grok 3（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Grok 3（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-qwen27craft": {
     "description": "Minecraft 风格体素沙盒，含程序地形、方块建造与破坏、生命饥饿氧气、生物，以及滑板、火箭车、FPV 无人机等彩蛋。 注意：镜像仓库，原作由其他用户发布于 Reddit。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Qwen3.8（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Qwen3.8（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-space-salvage": {
     "description": "Godot 太空回收游戏，驾驶破旧飞船穿越残骸带，用牵引光束回收货舱并躲避小行星。 注意：人负责规格、测试与干预；使用 Kenney 的 CC0 第三方素材。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Qwen3.8（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Qwen3.8（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-rpg": {
     "description": "仿《魔法门6》的第一人称地牢 RPG，含四种职业、装备、六件神器和 Boss，移动与战斗为回合制格子。 注意：初版后作者有扩充；代码为 MIT，生成素材适用生成平台条款。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Grok（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Grok（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-minecraft-from-kimi-k3": {
     "description": "Minecraft 风格的浏览器体素创造沙盒，含无限生成地形、挖掘与放置、昼夜循环与自动存档，并附门户站；纹理和音效均程序生成。 注意：创造沙盒，无明确通关目标。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Kimi K3（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Kimi K3（2026-11-19 GitHub 核查）。",
     "title": "方块纪元 VOXELVERSE"
   },
   "example:open3d-kimi-minicraft": {
     "description": "第一人称体素建造沙盒，含随机地形、方块破坏与放置，借助内置 Node.js WebSocket 服务器支持局域网联机。 注意：方块纹理来自 Minetest Game（CC BY-SA 3.0）；联机需 Node 服务器。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Kimi K3（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Kimi K3（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-minecraft-web": {
     "description": "浏览器 Minecraft 风格游戏，包含创造和生存模式。 注意：贴图来自 Faithful 32x、音效来自 Minetest Game，适用各自许可。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Kimi K3（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Kimi K3（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-cozy-isle": {
     "description": "动森风低多边形 3D 小岛游戏，可散步、与村民聊天、摇树和钓鱼，完成每日任务后参加篝火庆典。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Kimi K3（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Kimi K3（2026-11-19 GitHub 核查）。",
     "title": "悠然小岛 Cozy Isle"
   },
   "example:open3d-3d-game": {
     "description": "使用 Cannon.js 物理的 3D 太空小游戏，操控飞船收集星星、躲避红色障碍，含生命值与 Supabase 高分记录。 注意：README 未明确游戏代码由模型生成；高分记录需配置 Supabase。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Claude Code、Qwen3 Coder（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Claude Code、Qwen3 Coder（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-voxelcraft": {
     "description": "Minecraft 风格浏览器体素沙盒，含 11 种群系、洞穴、矿石、合成、工具等级，以及创造与生存模式，世界改动存于 IndexedDB。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 GLM 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 GLM 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-minecraft-kimi-k3": {
     "description": "Godot 体素生存沙盒，含无限程序生成世界、采矿、合成、熔炼、敌对生物、第一/第三人称视角与自动存档。 注意：模型归属未确认，仅见于仓库名；需本地 Godot 4.7，目标平台为 macOS Apple Silicon。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等），但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等），但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-round1": {
     "description": "3D 滑板跑酷游戏，含障碍、金币、跳跃和空中特技，作为演示页面存放于本地小模型运行仓库中。 注意：位于模型演示仓库中的示例文件，并非独立游戏项目。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等），但 2026-11-19 核查时项目 README 未提及该模型（提到 ChatGPT）。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等），但 2026-11-19 核查时项目 README 未提及该模型（提到 ChatGPT）。",
     "title": "Skate Runner 源码"
   },
   "example:open3d-game-jellyjungle": {
     "description": "第三人称平台跳跃游戏，操控粉色果冻借助三段跳、弹簧蘑菇和检查点穿越 13 座浮岛并收集水晶。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Qwen3.8（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 Qwen3.8（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-neon-racer": {
     "description": "单文件 3D 霓虹夜景赛车，赛道为程序生成环线，含驾驶、手刹漂移、计圈计时和触屏控制。 注意：仓库已归档；首次加载需联网从 CDN 获取 Three.js。 仓库已归档（只读）。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 DeepSeek-V4.1（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 DeepSeek-V4.1（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-whiteout-protocol-glm-5-3": {
     "description": "Three.js 北极生存第一人称射击，含射击、换弹、敌人波次和死亡重开，收录于 Bench Portal 游戏目录。 注意：属于多模型 benchmark 仓库中的单个游戏。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等），但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等），但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-vision-3d-game": {
     "description": "示例目录：根据迷宫图片生成第一人称 3D 迷宫探索游戏，后改为带机器人、计时和记分板的 CS 风格 FPS，并公开提示词。 注意：插件仓库中的示例，含两款游戏；复现需 API Key；具体模型版本未核实。",
-    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 deepseek-v4（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。",
+    "aiUse": "所提供的 AI 游戏清单将其归入其他模型（Grok / Kimi / Qwen / DeepSeek / GLM 等）；项目 README 提到 deepseek-v4（2026-11-19 GitHub 核查）。",
     "title": "dsh-turbo 的 3D 游戏目录"
   },
   "example:open3d-feiticeir0-github-io": {
     "description": "单 HTML 文件的第一人称赛博朋克穿门游戏，在隧道中加速飞行，穿过霓虹门得分，撞到门框扣命，分多个关卡。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Sonnet；项目 README 提到 Claude Sonnet（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Sonnet；项目 README 提到 Claude Sonnet（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-peak-district-downhill": {
     "description": "以峰区马道为背景的 3D 山地自行车下坡游戏，含蹬踏体力、转向、刹车和跳跃。 注意：1.0 前试玩测试阶段；代码经人工审阅；自行车模型与地形数据并非全由 AI 生成。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Sonnet，但 2026-11-19 核查时项目 README 未提及该模型。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Sonnet，但 2026-11-19 核查时项目 README 未提及该模型。"
   },
   "example:open3d-sonnet-5-5-zombies-game": {
     "description": "第一人称僵尸撤离射击，在隔离区完成两项任务、升级装备，呼叫直升机并撑过最后尸潮后登机撤离。 注意：需支持 WebGL 2 与指针锁定的桌面浏览器。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Sonnet；项目 README 提到 Claude Sonnet 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Sonnet；项目 README 提到 Claude Sonnet 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-sonnet-test": {
     "description": "第一人称宝可梦同人游戏，场景为全尺寸关都地区，可瞄准投掷精灵球捕捉、实时战斗、挑战道馆和冠军。 注意：同人作品，作为测试代理 harness 的工作负载。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Sonnet；项目 README 提到 Claude Sonnet（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Sonnet；项目 README 提到 Claude Sonnet（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-loki-run-wroclaw": {
     "description": "竖屏 3D 游戏，作者的狗 Loki 在风格化的弗罗茨瓦夫集市广场跑跳，收集骨头、寻找 9 个小矮人，另含自动展示模式。 注意：为 9:16 竖屏视频制作的实验项目，非商业产品。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Sonnet；项目 README 提到 Claude Sonnet 5.5、Claude Code（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Sonnet；项目 README 提到 Claude Sonnet 5.5、Claude Code（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-viben-ring": {
     "description": "Elden Ring 风格的迷你 3D 动作游戏，可在浏览器中游玩。",
-    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Sonnet，但 2026-11-19 核查时项目 README 未提及该模型（提到 Claude）。不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "所提供的 AI 游戏清单将其归入 Claude Sonnet，但 2026-11-19 核查时项目 README 未提及该模型（提到 Claude）。"
   },
   "example:open3d-pacphi-neon-drift": {
     "description": "浏览器 3D 合成波风格卡丁车，含霓虹赛车、三条长度递增的赛道、三名 AI 对手及加速、电击、油渍等道具。 注意：作者称其为 MVP 版本。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-mathl33t": {
     "description": "面向儿童的 3D 世界数学游戏，制作所用提示词公开在单独页面。 注意：作者自称不够完善，计划加入多人和难度选择等功能。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-blockbusters": {
     "description": "Three.js 3D 益智游戏，托管于 ASP.NET Core Razor Pages 应用并使用 SQLite 排行榜，可作为 .NET 集成模板。 注意：排行榜依赖 ASP.NET Core 后端。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-forget-to-foresee": {
     "description": "3D 浏览器动作 RPG，玩家扮演 Iris 探索经济运行于 NEAR 测试网的山城，含脚本交易者、NFT 角色与龙、宝箱、怪物和多人模式。 注意：混合多种模型与工具；依赖区块链测试网和服务器后端。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.1、Claude Opus 5.5、Claude Code、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Fable 5.1、Claude Opus 5.5、Claude Code、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-santa-game": {
     "description": "3D 圣诞街机游戏，在 60 秒内驾驶圣诞老人雪橇飞越北欧村庄，把礼物投进烟囱，连中可叠加倍率。 注意：由一个提示开始，之后又经后续迭代。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 GPT-6.2 Astra（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 GPT-6.2 Astra（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-pitch-patrol": {
     "description": "3D 浏览器音准练习游戏，唱出或弹出生物上方显示的音高来发射脉冲击退它，含连击、全屏技能、生存与练习模式。 注意：混合多种模型与工具；人声模式需麦克风权限。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini、Codex（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Gemini、Codex（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-viberacer": {
     "description": "浏览器 3D 街机赛车，每个网址对应一条赛道，可在吸附网格编辑器中搭建环形赛道并分享链接，与好友比拼圈速。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Codex、Claude（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Codex、Claude（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-vineet-777-neon-racer": {
     "description": "无尽霓虹公路赛车游戏，变道躲避障碍、加速和刹车，记录速度与分数，支持键盘和手机触屏。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-raptor-race-fable": {
     "description": "面向 iPhone 的竖屏 3D 跑酷游戏，玩家扮演有羽毛的恐龙，在其生活的地点与时代中奔跑；模型由 Blender 脚本生成。 注意：为此前由另一模型制作的 Raptor Race 的重制版。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Fable 5.2、Opus 5.5（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Fable 5.2、Opus 5.5（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-readme": {
     "description": "浮空岛城市上的浏览器游戏，驾驶发光球收集 8 个能量球点亮城市并为中央尖塔供能，支持种子布局与回放。 注意：需通过 Web 服务器从仓库根目录运行，不能直接打开文件。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Fable 5.2（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-odoakersaquariumspiel": {
     "description": "面向儿童的 3D 浏览器水族箱游戏，可孵蛋、喂食、清洁，驱赶偷食的螃蟹和饥饿的鲨鱼，并在商店购买饲料、蛋和装饰。 注意：德语界面，可用 ?lang=en 切换英语；游戏创意来自 Odoaker。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-helgaskatzenspiel": {
     "description": "面向儿童的 3D 浏览器游戏，女孩照顾猫咪：抚摸、喂食、抱着飞行，上学赚金币、购物、做饭和换装，无武器和战斗。 注意：仅德语界面；与孩子 Helga 共同设计并由她决定内容。",
-    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此不推断 AI 作者身份。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单，但未注明模型；2026-11-19 核查时项目 README 未提及任何 AI 模型，因此"
   },
   "example:open3d-a-wedding-game": {
     "description": "短篇可重玩喜剧游戏，玩家扮演花园婚礼上的新郎，完成妈妈的清单、摸狗并示意长笛手，可自定义新人名字和面孔。 注意：可选的面孔生成功能需 ComfyUI 服务器。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Qwen-（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus 5.5、Qwen-（2026-11-19 GitHub 核查）。"
   },
   "example:open3d-hollowreach": {
     "description": "C++ 原生第一人称类 Minecraft 体素沙盒，自研 OpenGL 引擎，可采矿、熔炼、合成、建造、绘制地图、过夜生存及局域网联机。 注意：早期 WebGL2 浏览器版的 C++ 移植分支；混合模型；作者提示可能有缺陷与平衡问题。",
-    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus（2026-11-19 GitHub 核查）。这是作者自述，GameMap 未核实制作过程，也不推断所用的 AI 客户端。未核实构建、可玩性、素材许可和源码完整性，也未运行任何游戏代码。"
+    "aiUse": "收录于所提供的 AI 游戏清单；项目 README 提到 Claude Opus（2026-11-19 GitHub 核查）。"
   }
 }

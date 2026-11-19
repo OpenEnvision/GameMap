@@ -19,7 +19,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     src: "media/learning/open3d-fable-5-1-one-prompt-game.webp",
     alt: "A glowing player mech and enemy drones on a hexagonal floating platform, with wave and hull-integrity HUD.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     sourceUrl: "https://nipale-ai.github.io/fable-5-1-one-prompt-game/",
     origin: "creator-screenshot",
     reviewedAt: "2026-11-18",
@@ -5528,7 +5528,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A space battle shows ships with health bars amid fragmented asteroids and glowing projectiles.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g040.webp",
     width: 1280,
     height: 720,
@@ -5541,7 +5541,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A virtual hand strikes rhythm markers against a star field, with score, combo and timing judgments displayed.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g041.webp",
     width: 1280,
     height: 720,
@@ -5554,7 +5554,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "First-person virtual hands hold an open robot-factory handbook beside a chair and workbench.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g042.webp",
     width: 1280,
     height: 720,
@@ -5567,7 +5567,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A spacecraft cockpit targets an enemy ship enclosed in a green shield against a star field.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g043.webp",
     width: 1280,
     height: 720,
@@ -5580,7 +5580,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A purple third-person character aims a pistol at red and green practice targets among wooden crates.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g044.webp",
     width: 1280,
     height: 720,
@@ -5606,7 +5606,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "Five colored cubes float in a wireframe chamber facing a pink shape-matching wall.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g047.webp",
     width: 1280,
     height: 720,
@@ -5619,7 +5619,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A green dinosaur stands on a grassy pillar in a dark stone-walled platforming area.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g052.webp",
     width: 1280,
     height: 720,
@@ -5632,7 +5632,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A low-poly green landscape contains angular trees, mushrooms and rocks under a blue sky.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g053.webp",
     width: 1280,
     height: 720,
@@ -5645,7 +5645,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "Polygonal spacecraft exchange fire among floating debris and bright explosions in orange space.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g055.webp",
     width: 1280,
     height: 720,
@@ -5658,7 +5658,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "Anthropomorphic fighters exchange kicks in a misty forest beneath a wooden bridge.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g057.webp",
     width: 1280,
     height: 720,
@@ -5671,7 +5671,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A dimly lit workshop contains CRT monitors, electronics benches, shelving and a large control console.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g058.webp",
     width: 1280,
     height: 720,
@@ -5684,7 +5684,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A small armored bird character runs across an arena beneath floating cannons, with a health bar visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g059.webp",
     width: 1280,
     height: 720,
@@ -5697,7 +5697,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A low-poly dinosaur confronts a fire-wielding figure beside wooden fences and a decorated hut.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g061.webp",
     width: 1280,
     height: 720,
@@ -5710,7 +5710,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A chef prepares food in a checkerboard-floor kitchen while burger orders and a timer remain visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g062.webp",
     width: 1280,
     height: 720,
@@ -5723,7 +5723,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person view looks over a reel-to-reel recorder toward a tray and drink marked by yellow objective arrows.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g063.webp",
     width: 1280,
     height: 720,
@@ -5749,7 +5749,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "Small racing cars turn along a gray track with lap, time, position and fuel indicators visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g067.webp",
     width: 1280,
     height: 720,
@@ -5762,7 +5762,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person character speaks to survivors in a rusty corridor, with dialogue options, inventory and an objective displayed.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g068.webp",
     width: 1280,
     height: 720,
@@ -5775,7 +5775,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A flashlight illuminates a series of doorways in a dark tiled corridor, with energy and collected-key counters visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g069.webp",
     width: 1280,
     height: 720,
@@ -5801,7 +5801,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person view looks through a tall geometric chamber with glass skylights, angular platforms, a crosshair and timer.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g071.webp",
     width: 1280,
     height: 720,
@@ -5814,7 +5814,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A tilted first-person view peers past a dark column into a red-lit industrial corridor with mechanical creatures.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g098.webp",
     width: 1280,
     height: 720,
@@ -5827,7 +5827,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person sniper rifle overlooks a stone courtyard, with minimap, score, timer, health and ammunition indicators.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g102.webp",
     width: 1280,
     height: 720,
@@ -5840,7 +5840,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person crosshair overlooks grassy cliffs connected by wooden bridges and stairs, with white location markers.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g107.webp",
     width: 1280,
     height: 720,
@@ -5853,7 +5853,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person crosshair points across an uneven red voxel landscape with block-selection instructions and performance counters.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g118.webp",
     width: 1280,
     height: 720,
@@ -5866,7 +5866,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "Neon racing vehicles leave bright trails on a banked circuit, with fourth-place, lap and elapsed-time indicators.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g128.webp",
     width: 1280,
     height: 720,
@@ -5879,7 +5879,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "An armored third-person character stands on metal walkways in a purple-lit space environment.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g132.webp",
     width: 1280,
     height: 720,
@@ -5892,7 +5892,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "Dolphins leap above a low-poly blue sea against a pink sky and bright sun in the swimming rhythm game.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g134.webp",
     width: 1280,
     height: 720,
@@ -5905,7 +5905,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A cab view follows railway tracks through a night landscape, with speed, throttle, route and stop controls visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/itch3d-g138.webp",
     width: 1280,
     height: 720,
@@ -5917,7 +5917,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "An aerial view of a rendered waterfront city with a minimap, speed and distance HUD, and in-game navigation controls.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-glenn-explore.webp",
     width: 1280,
     height: 720,
@@ -5930,7 +5930,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person character aims at a blocky showroom opponent, with table-collection objectives, health and paint counters visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-sandy-s-table-quest-3d.webp",
     width: 1280,
     height: 720,
@@ -5954,7 +5954,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person maze chamber contains lava, colored switches and a floating firearm, with score, timer and portal-gem inventory shown.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-freemazes3d.webp",
     width: 1280,
     height: 720,
@@ -5967,7 +5967,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "An armored warrior targets creatures in a forest clearing, with health bars, minimap and ability slots visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-ironveil.webp",
     width: 1280,
     height: 720,
@@ -5981,7 +5981,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A rifle is held in a cobbled courtyard beside weapon and medical pickups, with health, ammunition and round indicators displayed.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-multiplayer-zombie-survival-babylonjs.webp",
     width: 1280,
     height: 720,
@@ -5994,7 +5994,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "Colored puzzle cube pieces float above a circular plinth while current and best-time counters remain visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-assembik-s-ruquired.webp",
     width: 1280,
     height: 720,
@@ -6007,7 +6007,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A floating food truck hovers beside a small space farm with orange crops, soil rows and water channels.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-asteroid-farming.webp",
     width: 1280,
     height: 720,
@@ -6020,7 +6020,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person view examines a combination lock beside a wooden door and a numbered clue above a light switch.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-beware-the-living-room.webp",
     width: 1280,
     height: 720,
@@ -6033,7 +6033,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A low-poly sailing ship burns on blue water while a second dark-sailed ship approaches.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-boatconf.webp",
     width: 1280,
     height: 720,
@@ -6046,7 +6046,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A glowing flame character floats above a stone structure against a warm swirling sky.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-dreams-of-fire.webp",
     width: 1280,
     height: 720,
@@ -6059,7 +6059,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A small purple character shelters among tables and red falling spheres, with life and elapsed-time counters visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-earthquake-survive-from-the-earthquake.webp",
     width: 1280,
     height: 720,
@@ -6072,7 +6072,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A small blue character stands on an elevated maze with ore markers, with health, remaining-ore and storage counters visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-goddel.webp",
     width: 1280,
     height: 720,
@@ -6085,7 +6085,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A pixel-style character with an orange visor stands on narrow blue-gray block platforms viewed from above.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-grgridid.webp",
     width: 1280,
     height: 720,
@@ -6098,7 +6098,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A small robot stands on a floating rocky platform beside a tree, with a remaining-time display and jump counter.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-hackb0t.webp",
     width: 1280,
     height: 720,
@@ -6111,7 +6111,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person view shows a hand-held appliance facing a cartoon chef among dining tables and chairs.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-locked-and-toasted.webp",
     width: 1280,
     height: 720,
@@ -6124,7 +6124,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A flashlight illuminates a low-resolution bedroom with a bed, two bedside lamps and a ceiling fan.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-mildly-haunted.webp",
     width: 1280,
     height: 720,
@@ -6137,7 +6137,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A blue pinball table shows red flippers, bumpers, lightning motifs and a digital score counter.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-pinball-but-it-s-only-multiball.webp",
     width: 1280,
     height: 720,
@@ -6150,7 +6150,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person weapon faces a tropical island with palm trees and a cannon tower, with round time and health displayed.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-pirate-zombies.webp",
     width: 1280,
     height: 720,
@@ -6163,7 +6163,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person crosshair faces a closed door in a worn room, with health and collected-item icons visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-pixel-sabotage-adventure.webp",
     width: 1280,
     height: 720,
@@ -6176,7 +6176,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A small wheeled robot with a glowing lamp moves through a dark green angular cavern.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-segmentation-fault.webp",
     width: 1280,
     height: 720,
@@ -6189,7 +6189,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A potted plant sits beside a fountain on a floating island, with growth timers and plant-care controls visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-solaria.webp",
     width: 1280,
     height: 720,
@@ -6202,7 +6202,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "Colorful figures move around a white arena with scattered furniture, with seven targets and remaining time displayed.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-the-chamber-crowd.webp",
     width: 1280,
     height: 720,
@@ -6215,7 +6215,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A dim first-person room contains an old desktop computer, chair, ceiling fan, wall clock and barred window.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-the-typing-experiment.webp",
     width: 1280,
     height: 720,
@@ -6241,7 +6241,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A blue flying creature glides between grassy floating islands, with health hearts and a crystal counter visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-warden-of-the-isles-hernz.webp",
     width: 1280,
     height: 720,
@@ -6254,7 +6254,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A small blue boat steams between icy islands and floating barrels, with compass headings and a collection counter visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-windy-seas.webp",
     width: 1280,
     height: 720,
@@ -6267,7 +6267,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A small vehicle follows a dotted path across an overhead course with trees, rocks, bridges and rotating markers.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-camp-shepherd.webp",
     width: 1280,
     height: 720,
@@ -6280,7 +6280,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A creator-recorded first-person frame shows a weapon aimed down an industrial passage with armed enemies and a weapon HUD.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-living-dead.webp",
     width: 1280,
     height: 720,
@@ -6293,7 +6293,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A small character tends rows of crops inside purple-framed transparent domes in a low-poly lunar farm.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-lunaculture.webp",
     width: 1280,
     height: 720,
@@ -6306,7 +6306,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A masked woman in purple speaks on a balcony, with six dialogue choices displayed below.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-masquerade-hunt.webp",
     width: 1280,
     height: 720,
@@ -6319,7 +6319,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "Four simultaneous player views show differently colored spherical vehicles navigating the same maze in a running Unity game view.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-need-for-cookies.webp",
     width: 1280,
     height: 720,
@@ -6332,7 +6332,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "Large red heckling words approach a performer on a comedy-club stage, with score, timer and audience meter visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-punchline.webp",
     width: 1280,
     height: 720,
@@ -6345,7 +6345,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person view peers around a stone dungeon corner toward a dim blue light.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-the-village-sacrifice.webp",
     width: 1280,
     height: 720,
@@ -6358,7 +6358,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A green first-person energy weapon fires toward enemies in a white arena, with timer, health and overheating indicators visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-gone-rogue.webp",
     width: 1280,
     height: 720,
@@ -6371,7 +6371,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A small pirate stands beside a treasure chest and burning torches at a skull-shaped island cave entrance.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-pirate-bay.webp",
     width: 1280,
     height: 720,
@@ -6384,7 +6384,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person view faces stacked wooden crates and a cardboard box marked with movement keys in a dim room.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-poladro-d.webp",
     width: 1280,
     height: 720,
@@ -6397,7 +6397,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person horror-game room with masks on a cabinet, a glowing orange display, scattered papers and a shadow behind a glass door.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-the-last-mask-unmasked-discharged.webp",
     width: 1280,
     height: 720,
@@ -6410,7 +6410,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "Red and orange low-poly rally cars slide around a dirt bend, scattering square dust particles.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-rally-mandaw.webp",
     width: 1280,
     height: 720,
@@ -6423,7 +6423,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A cartoon cat sits on a wooden pier holding a bent fishing rod over bright blue water.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-sheer-fish-attack.webp",
     width: 1280,
     height: 720,
@@ -6436,7 +6436,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "Two simultaneous player views show colorful oval characters navigating cyan maze walls in a split-screen game window.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-3d-game-experiment-akuli.webp",
     width: 1280,
     height: 720,
@@ -6449,7 +6449,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person view inside a tall gray voxel chamber with floating blue collectibles, translucent walkways and a central crosshair.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-glitch.webp",
     width: 1280,
     height: 720,
@@ -6461,7 +6461,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A glowing blue player orb in a brick-walled chamber with wooden crates and a bright goal on a raised pedestal.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-irrlamb.webp",
     width: 1280,
     height: 720,
@@ -6474,7 +6474,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A glowing ball rolls along green platforms between upright obstacles, with time, panel count and speed shown.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-keep-it-rollin.webp",
     width: 1280,
     height: 720,
@@ -6486,7 +6486,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A red-lit three-dimensional grid puzzle chamber with suspended cubic obstacles and a glowing orange object.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-kiki-the-nano-bot.webp",
     width: 1280,
     height: 720,
@@ -6499,7 +6499,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A first-person crosshair points toward a CRT computer displaying a green smiling face beside a keyboard and speaker.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-laborgeist.webp",
     width: 1280,
     height: 720,
@@ -6512,7 +6512,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A voxel puzzle room filled with mirror blocks redirecting red, green and blue laser beams across wooden platforms.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-lazarr.webp",
     width: 1280,
     height: 720,
@@ -6525,7 +6525,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A blue player piece navigates stacked hexagonal mazes toward colored goal cells, with movement-key prompts visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-maze-ascension-the-labyrinth-of-echoes.webp",
     width: 1280,
     height: 720,
@@ -6538,7 +6538,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A pink segmented creature winds around a tiled puzzle platform with raised blocks, a collectible and a five-item goal counter.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-not-snake.webp",
     width: 1280,
     height: 720,
@@ -6550,7 +6550,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A rectangular block stands on floating metal-tile platforms above clouds, facing a square goal opening.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-pigami.webp",
     width: 1280,
     height: 720,
@@ -6563,7 +6563,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A block-built sheep stands among grassy terrain and fruit-bearing trees in a sunlit voxel forest.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-repixture.webp",
     width: 1280,
     height: 720,
@@ -6576,7 +6576,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A robot vacuum moves across a checkerboard room floor scattered with debris and red objects, with score counters visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-vacuumulate.webp",
     width: 1280,
     height: 720,
@@ -6589,7 +6589,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A red-suited third-person character stands on a city street at night, with traffic, pedestrians, a minimap and health indicators visible.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/browser-port-02.webp",
     width: 1280,
     height: 720,
@@ -6602,7 +6602,7 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     alt: "A creator-published browser window shows a first-person view through a metal doorway into the Black Mesa reception area.",
     caption:
-      "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
+      "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/browser-port-21.webp",
     width: 1280,
     height: 720,

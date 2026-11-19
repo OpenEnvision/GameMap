@@ -162,7 +162,7 @@ Legacy scene generation takes scene seed, ordered scene Gin configs/overrides, a
 
 Crucially, the pinned [Hello World guide](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/docs/source/HelloWorld.md) still warns that identical commands may yield differently arranged scenes, runtimes, and memory use on many platforms. This is a documentation warning, not a reproduction experiment performed here. A fixed seed is therefore an identity/provenance field, not proof of bitwise or geometric determinism.
 
-The legacy task entry point explicitly asserts Blender `4.2.0`; the package also pins `bpy==4.2.0`. Record code SHA plus installed version, Blender/Python/dependency versions, platform, hardware, complete command, config contents/ordering, overrides, seed(s), and camera trajectory. These are proposed acceptance records, not a claimed built-in manifest. [Task source](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/src/infinigen/core/execute_tasks.py#L347-L378), [package declaration](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/pyproject.toml).
+The legacy task entry point explicitly asserts Blender `4.2.0`; the package also pins `bpy==4.2.0`. Record code SHA plus installed version, Blender/Python/dependency versions, platform, hardware, complete command, config contents/ordering, overrides, seed(s), and camera trajectory. Use these fields to assemble an acceptance record. [Task source](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/src/infinigen/core/execute_tasks.py#L347-L378), [package declaration](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/pyproject.toml).
 
 #### Outputs, reuse, and resume
 
@@ -203,7 +203,7 @@ Primary sources: [Official documentation or repository](https://unity.com/produc
 
 ### Procedural layout constraints and solver verdicts
 
-Check generated topology before export and [navigation testing](engine-operations.md#navigation-after-procedural-world-edits). The WFC and DeBroglie interfaces below are separate approaches, not tooling attributed to Dead Cells.
+Check generated topology before export and [navigation testing](engine-operations.md#navigation-after-procedural-world-edits). The following WFC and DeBroglie examples explore alternative ways to build the generator.
 
 #### Exact upstream scope
 

@@ -162,7 +162,7 @@ Steam 的 depot 构建、测试分支及内容更新分发系统。上传指南�
 
 尤其需要注意，固定版本的 [Hello World 指南](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/docs/source/HelloWorld.md)仍警告，在许多平台上，相同命令可能产生不同的场景布局、运行时间及内存用量。这是文档中的警告，并非此处执行过复现实验。因此固定种子是身份/来源字段，而非逐位或几何确定性的证明。
 
-旧版任务入口显式断言 Blender 为 `4.2.0`；包也固定了 `bpy==4.2.0`。记录代码 SHA 及安装版本、Blender/Python/依赖版本、平台、硬件、完整命令、配置内容/顺序、覆盖项、种子，以及相机轨迹。这些是拟议的验收记录，并非声称存在内置清单。[任务源码](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/src/infinigen/core/execute_tasks.py#L347-L378)、[包声明](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/pyproject.toml)。
+旧版任务入口显式断言 Blender 为 `4.2.0`；包也固定了 `bpy==4.2.0`。记录代码 SHA 及安装版本、Blender/Python/依赖版本、平台、硬件、完整命令、配置内容/顺序、覆盖项、种子，以及相机轨迹。把这些字段纳入验收记录。[任务源码](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/src/infinigen/core/execute_tasks.py#L347-L378)、[包声明](https://github.com/princeton-vl/infinigen/blob/224598d4a2ff95b4fc928e72c222598b7122c698/pyproject.toml)。
 
 #### 输出、复用与恢复
 
@@ -203,7 +203,7 @@ Steam 的 depot 构建、测试分支及内容更新分发系统。上传指南�
 
 ### 程序化布局约束与求解器判定
 
-在导出及[导航测试](engine-operations.md#navigation-after-procedural-world-edits)前检查生成的拓扑。下列 WFC 与 DeBroglie 接口是独立方案，并非声称 Dead Cells 使用了这些工具。
+在导出及[导航测试](engine-operations.md#navigation-after-procedural-world-edits)前检查生成的拓扑。下文用 WFC 和 DeBroglie 展示构建生成器的其他方法。
 
 #### 精确的上游范围
 

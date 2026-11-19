@@ -110,7 +110,7 @@ Native accessibility adds a semantic observation/action surface alongside pixels
 
 ### Source and version scope
 
-The inspected Godot `4.5-stable` tag resolves to commit `876b290332ec6f2e6d173d08162a02aa7e6ca46d`, verified through the official GitHub ref API. This is historical, version-specific source evidence, not a claim about all later Godot releases. Its third-party inventory identifies **accesskit-c 0.17.0**, upstream revision `f69571eca23151be07a41bf493ca48a2b44b6a8b`, MIT. That inventory identifies vendored headers, not an installed dynamic library. [Tag](https://api.github.com/repos/godotengine/godot/git/refs/tags/4.5-stable), [inventory](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/thirdparty/README.md#L8-L17).
+The inspected Godot `4.5-stable` tag resolves to commit `876b290332ec6f2e6d173d08162a02aa7e6ca46d`, verified through the official GitHub ref API. Its third-party inventory identifies **accesskit-c 0.17.0**, upstream revision `f69571eca23151be07a41bf493ca48a2b44b6a8b`, MIT. That inventory identifies vendored headers, not an installed dynamic library. [Tag](https://api.github.com/repos/godotengine/godot/git/refs/tags/4.5-stable), [inventory](https://github.com/godotengine/godot/blob/876b290332ec6f2e6d173d08162a02aa7e6ca46d/thirdparty/README.md#L8-L17).
 
 Godot's release announcement calls the 4.5 integration experimental and describes incomplete editor support. Do not translate that launch statement into a current-release limitation without checking the target release. [Official announcement](https://godotengine.org/releases/4.5/).
 

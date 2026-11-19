@@ -268,12 +268,10 @@ for (const row of games) {
     engine: en.engine,
     track: "3d",
     category: "community",
-    aiUse: githubChecked
-      ? en.aiUse
-      : "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    aiUse: githubChecked ? en.aiUse : "From the supplied 3D game directory.",
     steps: [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission.",
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data.",
     ],
     tutorial: {
       label: "Read the supplied project reference",
@@ -284,7 +282,7 @@ for (const row of games) {
       label: "View source for " + title,
       url: row.repo_url,
       kind: "source",
-      note: "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link.",
+      note: "Release: none listed in this record.",
     },
     source: {
       label: "Inspect the supplied source reference",
@@ -295,16 +293,14 @@ for (const row of games) {
           en.codeLicenseNote +
           ". Asset licenses: " +
           en.assetLicenseNote +
-          ". Qualification: " +
-          en.caveat +
-          " These are repository metadata and supplied statements, not independent license, asset or complete-project verification."
+          ". " +
+          en.caveat
         : "Supplied directory lists code license: " +
           en.codeLicenseNote +
           ". Asset notes from that directory: " +
           en.assetLicenseNote +
-          ". Qualification: " +
-          en.caveat +
-          " These are imported statements, not independent license, asset or complete-project verification.",
+          ". " +
+          en.caveat,
     },
     evidence: {
       label: "Read supplied directory references",
@@ -320,7 +316,7 @@ for (const row of games) {
         row.checked_on +
         ". Input SHA-256: " +
         digest +
-        ". The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: " +
+        ". References: " +
         references.join(" "),
     },
     resourceIds: [],

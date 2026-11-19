@@ -73,7 +73,7 @@ Its inspected editor bounds reduce transformed **centers**; they are not full Ga
 
 Evidence: [zero-survivor source](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L549-L559), [early return](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L632-L650), [success return](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/file-handler.ts#L789-L797), [writer close/abort](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/io/write/browser-file-system.ts#L25-L43), [center bounds](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/data-processor/calc-bound.ts#L59-L80), [view color](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Shaders/SplatUtilities.compute#L240-L248), [viewer camera settings](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/export-options.ts#L55-L118), [Unity camera input](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Editor/GaussianSplatAssetCreator.cs#L1068-L1096).
 
-No inspected splat-export interface produces mesh connectivity, gameplay rules or collision acceptance. Separate collision-generation tools may exist; this note does not claim Gaussian-splat applications can never support collision.
+No inspected splat-export interface produces mesh connectivity, gameplay rules or collision acceptance. Separate collision-generation tools may exist.
 
 #### Proposed GameMap round-trip fixture, not documented or executed behavior
 
@@ -89,7 +89,7 @@ Pinned [SuperSplat LICENSE](https://github.com/playcanvas/supersplat/blob/f2a1b4
 
 ## 2. Preserve USD composition and resolve managed assets deliberately
 
-**Documented operations and fields.** [UsdStage](https://openusd.org/release/api/class_usd_stage.html) exposes composition, variants, payload loading, save and flatten operations. `Save()` excludes session layers; dirty anonymous layers require explicit export. Flattening resolves composition rather than retaining the original editable structure. `GetUsedLayers()` is a snapshot affected by load set and variant selections, not an inventory of every possible configuration. `GetTimeCodesPerSecond()` returns the stage time-code rate, with documented metadata fallback rules. The broader [OpenUSD documentation](https://openusd.org/release/index.html) describes the scene-composition toolset. [Blender 4.4 USD interchange](https://docs.blender.org/manual/en/4.4/files/import_export/usd.html) supports a subset of USD data and documents USDZ limitations including UDIM textures; this is not a claim about later Blender versions.
+**Documented operations and fields.** [UsdStage](https://openusd.org/release/api/class_usd_stage.html) exposes composition, variants, payload loading, save and flatten operations. `Save()` excludes session layers; dirty anonymous layers require explicit export. Flattening resolves composition rather than retaining the original editable structure. `GetUsedLayers()` is a snapshot affected by load set and variant selections, not an inventory of every possible configuration. `GetTimeCodesPerSecond()` returns the stage time-code rate, with documented metadata fallback rules. The broader [OpenUSD documentation](https://openusd.org/release/index.html) describes the scene-composition toolset. [Blender 4.4 USD interchange](https://docs.blender.org/manual/en/4.4/files/import_export/usd.html) supports a subset of USD data and documents USDZ limitations including UDIM textures. The behavior is version-specific.
 
 [OpenAssetIO examples](https://docs.openassetio.org/OpenAssetIO/examples.html) require a concrete manager plugin; some examples explicitly cannot work without one. An asset-management API does not supply a configured asset database or guarantee a resolvable entity.
 
@@ -140,7 +140,7 @@ Sources checked 2026-10-18; full reproduction not performed. This focused additi
 
 #### Source and version scope
 
-GitHub's tag endpoint resolves MaterialX v1.39.4 to `270b5cf2ae2be24a3b6ef4b0569f1c93038dda1d`. This is a selected reproducible version, not a claim about the latest release or the user's installed version.
+GitHub's tag endpoint resolves MaterialX v1.39.4 to `270b5cf2ae2be24a3b6ef4b0569f1c93038dda1d`.
 
 - [Tag reference](https://api.github.com/repos/AcademySoftwareFoundation/MaterialX/git/ref/tags/v1.39.4)
 - [Shader-generation guide](https://github.com/AcademySoftwareFoundation/MaterialX/blob/270b5cf2ae2be24a3b6ef4b0569f1c93038dda1d/documents/DeveloperGuide/ShaderGeneration.md): generation produces source, requires a shading-language compiler and renderer, and needs implementations for the chosen target; renderer variants can require different generators. Host-side uniforms, textures and geometry bindings remain application responsibilities.
@@ -154,7 +154,7 @@ GitHub's tag endpoint resolves MaterialX v1.39.4 to `270b5cf2ae2be24a3b6ef4b0569
 1. `doc.validate()` returns a validity flag and diagnostics. The sample prints a warning for false and proceeds into shader generation. A resulting file therefore does not demonstrate document validation passed.
 2. The optional `validateCode` wrapper returns decoded output for both successful subprocess execution and `CalledProcessError`, discarding the latter's return code. The caller labels nonempty output failure and empty output success. Consequently, if a compiler succeeds but emits informational output, it is classified as failed; if a compiler fails silently and the element’s other validation calls also emit no output, the element is classified as passed on this path. These are conditional consequences of inspected control flow, not observed compiler behavior.
 3. With no validator supplied, the wrapper returns empty text, and the caller prints a validation-passed message. This establishes neither external compiler invocation nor target compatibility.
-4. The renderable-element loop can be empty without populating `failedShaders`; the final failure check alone does not establish that any expected material was generated. An expected-output inventory is needed for a harness. This is not a claim that valid production documents normally have no renderables.
+4. The renderable-element loop can be empty without populating `failedShaders`; the final failure check alone does not establish that any expected material was generated. An expected-output inventory is needed for a harness.
 5. Output files are written directly before external validation. The script establishes no atomic all-material transaction or rollback on later failure. Persisting a source artifact and accepting it must be separate records.
 
 #### Proposed acceptance contract

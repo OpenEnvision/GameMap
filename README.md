@@ -22,6 +22,8 @@ npm run dev
 
 Documentation and catalog changes refresh automatically. The website is static, built with Fumadocs, React Router, TypeScript, and Vite; no application backend or API key is required.
 
+If a local publication exists, the dev server previews its published papers using the current interface. It reads the retained public snapshot without connecting to the database. Restart the dev server after publishing updated papers. Production builds remain Git-driven.
+
 See [development & deployment](docs/project/deployment.md) for production builds and GitHub Pages configuration.
 
 ## Private content Studio
@@ -43,7 +45,7 @@ The public website is **not switched to database releases yet**. Git remains its
 
 ## Incremental game collection
 
-Examples accept ordinary games as well as evidenced AI-assisted projects. A game-jam entry needs real game source, an author-linked playable or downloadable release, and primary-source evidence; a source-available repository is not necessarily licensed for reuse. Godot 4 / 2D projects are preferred, not mandatory.
+Examples accept ordinary games as well as evidenced AI-assisted projects. A game-jam entry needs real game source, an author-linked playable or downloadable release, and primary-source evidence. Check the project’s license before reusing its code or assets. Godot 4 / 2D projects are preferred, not mandatory.
 
 ```sh
 # Import bounded research reports; re-running preserves existing reviewed games.
@@ -51,12 +53,12 @@ npm run examples:import -- --reports /path/to/reviewed-json-reports
 npm run test:examples:import
 ```
 
-`data/segments/jam-games.json` retains accepted records, deferred candidates, source passages, version/license uncertainty and deduplication decisions. The same ledger is published as `website/public/jam-discovery.json`; `website/src/data/jamGames.ts` is generated from it. Importing requires explicit `accepted` evidence: candidates are never automatically promoted, and no background scheduler is installed. Source review does **not** certify the paper's line-count thresholds, compilation, a 30-second run or independent playtesting. Missing screenshots are labeled, not fabricated. The existing AI-workflow guide remains an AI-specific subset of the broader Examples catalog.
+`data/segments/jam-games.json` retains accepted records, deferred candidates, source passages, version/license uncertainty and deduplication decisions. The same ledger is published as `website/public/jam-discovery.json`; `website/src/data/jamGames.ts` is generated from it. Importing uses records marked `accepted`. The Examples catalog lists each game’s source and available builds. The existing AI-workflow guide remains an AI-specific subset of the broader Examples catalog.
 
 Browser play is optional: use `download` for author-published desktop builds or an explicitly available Steam demo, and distinguish free demos from paid full games. The `/releases` restriction applies only to GitHub-hosted download URLs; it does not exclude itch.io or official download pages. Repository roots, source archives and videos are not game builds.
 
 ## Sources & reuse
 
-Original projects and media retain their respective rights. Inclusion is not an endorsement or a claim of independent reproduction.
+Original projects and media remain with their respective rights holders.
 
 The bundled level-design adaptation is **CC BY-NC-SA 4.0**, with noncommercial and share-alike conditions. Read its [attribution and license](docs/skills/level-design/LICENSE.md) before reuse.

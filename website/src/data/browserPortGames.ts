@@ -8,10 +8,10 @@ export const browserPortGames: LearningPath[] = [
     "engine": "re3/reVC lineage via reVCDOS; Emscripten/WebAssembly, Vite browser wrapper",
     "track": "3d",
     "category": "community",
-    "aiUse": "Source/project reference intake, not AI-authorship attribution. Public text, README and user-supplied assertions are distinguished from runtime tests. No source-completeness, license/asset coverage, buildability, gameplay, safety or L1/L2/L3 certification. No game, native project, original-game asset, ROM, multiplayer session, conversion or emulator was executed.",
+    "aiUse": "Project details from the browser-port directory and linked sources.",
     "steps": [
       "Inspect the exact project, source/engine lineage and edition before interpreting this reference.",
-      "Check original-data ownership, proprietary assets, access restrictions, source correspondence and runtime requirements separately; code licensing is not a commercial-asset grant."
+      "Check runtime requirements and the terms for code, assets, and original game data."
     ],
     "tutorial": {
       "label": "Read the identified project reference",
@@ -22,7 +22,7 @@ export const browserPortGames: LearningPath[] = [
       "label": "Inspect the identified source reference",
       "url": "https://github.com/joncodeofficial/gta-vice-city-wasm",
       "kind": "source",
-      "note": "Reference only; no play link published. Supply lawfully obtained Vice City data. README features (touch, offline storage, saves) are author claims, not runtime verification. Wrapper source is not proof of complete corresponding engine source. No verified play/download link is published."
+      "note": "Reference only; no play link published. Supply lawfully obtained Vice City data. README features (touch, offline storage, saves) are author claims, not runtime verification. Wrapper source is not proof of complete corresponding engine source."
     },
     "source": {
       "label": "Source reference, scope unverified",
@@ -33,7 +33,7 @@ export const browserPortGames: LearningPath[] = [
     "evidence": {
       "label": "Read the observed reference and retained research evidence",
       "url": "https://github.com/joncodeofficial/gta-vice-city-wasm",
-      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. The supplied date is not our playtest date. Exact public-text quotes, real access times, hashes, denied hosts and unresolved claims are retained in browser-port-research.json. Evidence URLs: https://api.github.com/repos/joncodeofficial/gta-vice-city-wasm/readme https://api.github.com/repos/joncodeofficial/gta-vice-city-wasm/readme https://api.github.com/repos/joncodeofficial/gta-vice-city-wasm/readme"
+      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. References: https://api.github.com/repos/joncodeofficial/gta-vice-city-wasm/readme https://api.github.com/repos/joncodeofficial/gta-vice-city-wasm/readme https://api.github.com/repos/joncodeofficial/gta-vice-city-wasm/readme"
     },
     "resourceIds": [],
     "intake": {
@@ -53,10 +53,10 @@ export const browserPortGames: LearningPath[] = [
     "engine": "ioquake3 / Q3JS",
     "track": "3d",
     "category": "community",
-    "aiUse": "Source/project reference intake, not AI-authorship attribution. Public text, README and user-supplied assertions are distinguished from runtime tests. No source-completeness, license/asset coverage, buildability, gameplay, safety or L1/L2/L3 certification. No game, native project, original-game asset, ROM, multiplayer session, conversion or emulator was executed.",
+    "aiUse": "Project details from the browser-port directory and linked sources.",
     "steps": [
       "Inspect the exact project, source/engine lineage and edition before interpreting this reference.",
-      "Check original-data ownership, proprietary assets, access restrictions, source correspondence and runtime requirements separately; code licensing is not a commercial-asset grant."
+      "Check runtime requirements and the terms for code, assets, and original game data."
     ],
     "tutorial": {
       "label": "Read the identified project reference",
@@ -67,7 +67,7 @@ export const browserPortGames: LearningPath[] = [
       "label": "Inspect the identified source reference",
       "url": "https://github.com/lklacar/q3js",
       "kind": "source",
-      "note": "Multiplayer/demo scope only; do not join public servers. Demo assets are not free-licensed merely because the engine is GPL. Public text only; no runtime, asset loading, account access or multiplayer participation tested. No verified play/download link is published."
+      "note": "Multiplayer/demo scope only; do not join public servers. Demo assets are not free-licensed merely because the engine is GPL. Public text only; no runtime, asset loading, account access or multiplayer participation tested."
     },
     "source": {
       "label": "Source reference, scope unverified",
@@ -78,7 +78,7 @@ export const browserPortGames: LearningPath[] = [
     "evidence": {
       "label": "Read the observed reference and retained research evidence",
       "url": "https://github.com/lklacar/q3js",
-      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. The supplied date is not our playtest date. Exact public-text quotes, real access times, hashes, denied hosts and unresolved claims are retained in browser-port-research.json. Evidence URLs: https://q3.pieter.com/ https://q3js.com/"
+      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. References: https://q3.pieter.com/ https://q3js.com/"
     },
     "resourceIds": [],
     "intake": {
@@ -98,10 +98,10 @@ export const browserPortGames: LearningPath[] = [
     "engine": "Rust / Bevy; SDL3 input",
     "track": "3d",
     "category": "community",
-    "aiUse": "Source/project reference intake, not AI-authorship attribution. Public text, README and user-supplied assertions are distinguished from runtime tests. No source-completeness, license/asset coverage, buildability, gameplay, safety or L1/L2/L3 certification. No game, native project, original-game asset, ROM, multiplayer session, conversion or emulator was executed.",
+    "aiUse": "Project details from the browser-port directory and linked sources.",
     "steps": [
       "Inspect the exact project, source/engine lineage and edition before interpreting this reference.",
-      "Check original-data ownership, proprietary assets, access restrictions, source correspondence and runtime requirements separately; code licensing is not a commercial-asset grant."
+      "Check runtime requirements and the terms for code, assets, and original game data."
     ],
     "tutorial": {
       "label": "Read the identified project reference",
@@ -112,18 +112,18 @@ export const browserPortGames: LearningPath[] = [
       "label": "Inspect the identified source reference",
       "url": "https://github.com/SK8-ENGINE/skate-3-rust-engine",
       "kind": "source",
-      "note": "Candidate for this browser intake: exact browser edition not established. Experimental gameplay lacks parity; original commercial data and conversion required. No native build, conversion, download or game execution performed. Admitted as an experimental native game-source reference, NOT a confirmed browser edition. No verified play/download link is published."
+      "note": "Candidate for this browser intake: exact browser edition not established. Experimental gameplay lacks parity; original commercial data and conversion required. No native build, conversion, download or game execution performed. The linked project is an experimental native edition."
     },
     "source": {
       "label": "Source reference, scope unverified",
       "url": "https://github.com/SK8-ENGINE/skate-3-rust-engine",
       "scope": "unverified-project",
-      "note": "Technique: Rust/Bevy mechanics reimplementation informed by reverse-engineering research; current rewrite not established as static recompilation or Xbox 360 emulation. Source boundary: README describes Rust rewrite and historical recompilation separately; no source-tree/build audit, no full reproduction claim. Code: README states GPL-3.0-only for original project code unless noted; third-party/vendor code retains separate licenses. License file not fetched. Assets: Skate 3 assets explicitly not included. Setup requires owned Xbox 360 ISO or extracted default.xex/data; converted game assets remain proprietary. GPL does not grant EA or third-party asset rights. Access/runtime: Public source README accessible; documents experimental Windows distribution, not a verified browser entry. Conditions: Candidate for this browser intake: exact browser edition not established. Experimental gameplay lacks parity; original commercial data and conversion required. No native build, conversion, download or game execution performed. Admitted as an experimental native game-source reference, NOT a confirmed browser edition."
+      "note": "Technique: Rust/Bevy mechanics reimplementation informed by reverse-engineering research; current rewrite not established as static recompilation or Xbox 360 emulation. Source boundary: README describes Rust rewrite and historical recompilation separately; no source-tree/build audit, no full reproduction claim. Code: README states GPL-3.0-only for original project code unless noted; third-party/vendor code retains separate licenses. License file not fetched. Assets: Skate 3 assets explicitly not included. Setup requires owned Xbox 360 ISO or extracted default.xex/data; converted game assets remain proprietary. GPL does not grant EA or third-party asset rights. Access/runtime: Public source README accessible; documents experimental Windows distribution, not a verified browser entry. Conditions: Candidate for this browser intake: exact browser edition not established. Experimental gameplay lacks parity; original commercial data and conversion required. No native build, conversion, download or game execution performed. The linked project is an experimental native edition."
     },
     "evidence": {
       "label": "Read the observed reference and retained research evidence",
       "url": "https://github.com/SK8-ENGINE/skate-3-rust-engine",
-      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. The supplied date is not our playtest date. Exact public-text quotes, real access times, hashes, denied hosts and unresolved claims are retained in browser-port-research.json. Evidence URLs: https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme"
+      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. References: https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme https://api.github.com/repos/SK8-ENGINE/skate-3-rust-engine/readme"
     },
     "resourceIds": [],
     "intake": {
@@ -143,10 +143,10 @@ export const browserPortGames: LearningPath[] = [
     "engine": "Devilution-derived C/C++ engine compiled to WebAssembly with JS interface",
     "track": "2d",
     "category": "community",
-    "aiUse": "Source/project reference intake, not AI-authorship attribution. Public text, README and user-supplied assertions are distinguished from runtime tests. No source-completeness, license/asset coverage, buildability, gameplay, safety or L1/L2/L3 certification. No game, native project, original-game asset, ROM, multiplayer session, conversion or emulator was executed.",
+    "aiUse": "Project details from the browser-port directory and linked sources.",
     "steps": [
       "Inspect the exact project, source/engine lineage and edition before interpreting this reference.",
-      "Check original-data ownership, proprietary assets, access restrictions, source correspondence and runtime requirements separately; code licensing is not a commercial-asset grant."
+      "Check runtime requirements and the terms for code, assets, and original game data."
     ],
     "tutorial": {
       "label": "Read the identified project reference",
@@ -157,7 +157,7 @@ export const browserPortGames: LearningPath[] = [
       "label": "Inspect the identified source reference",
       "url": "https://github.com/d07RiV/diabloweb",
       "kind": "source",
-      "note": "Text reference only; no demo or play link published. Shareware and full-owned-data modes must remain distinct. No asset rights, complete source, save compatibility or actual operation verified. No verified play/download link is published."
+      "note": "Text reference only; no demo or play link published. Shareware and full-owned-data modes must remain distinct. No asset rights, complete source, save compatibility or actual operation verified."
     },
     "source": {
       "label": "Source reference, scope unverified",
@@ -168,7 +168,7 @@ export const browserPortGames: LearningPath[] = [
     "evidence": {
       "label": "Read the observed reference and retained research evidence",
       "url": "https://github.com/d07RiV/diabloweb",
-      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. The supplied date is not our playtest date. Exact public-text quotes, real access times, hashes, denied hosts and unresolved claims are retained in browser-port-research.json. Evidence URLs: https://api.github.com/repos/d07RiV/diabloweb/readme https://api.github.com/repos/d07RiV/diabloweb/readme https://api.github.com/repos/d07RiV/diabloweb/readme"
+      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. References: https://api.github.com/repos/d07RiV/diabloweb/readme https://api.github.com/repos/d07RiV/diabloweb/readme https://api.github.com/repos/d07RiV/diabloweb/readme"
     },
     "resourceIds": [],
     "intake": {
@@ -188,10 +188,10 @@ export const browserPortGames: LearningPath[] = [
     "engine": "ioUrbanTerror",
     "track": "3d",
     "category": "community",
-    "aiUse": "Source/project reference intake, not AI-authorship attribution. Public text, README and user-supplied assertions are distinguished from runtime tests. No source-completeness, license/asset coverage, buildability, gameplay, safety or L1/L2/L3 certification. No game, native project, original-game asset, ROM, multiplayer session, conversion or emulator was executed.",
+    "aiUse": "Project details from the browser-port directory and linked sources.",
     "steps": [
       "Inspect the exact project, source/engine lineage and edition before interpreting this reference.",
-      "Check original-data ownership, proprietary assets, access restrictions, source correspondence and runtime requirements separately; code licensing is not a commercial-asset grant."
+      "Check runtime requirements and the terms for code, assets, and original game data."
     ],
     "tutorial": {
       "label": "Read the identified project reference",
@@ -202,7 +202,7 @@ export const browserPortGames: LearningPath[] = [
       "label": "View the observed project page",
       "url": "https://ut.pieter.com/",
       "kind": "reference",
-      "note": "Project/landing reference only. Corresponding browser-port source is not located; no verified play/download link is published."
+      "note": "Project page. Browser-port source and release links are unavailable in this record."
     },
     "source": {
       "label": "Project reference, corresponding source unverified",
@@ -213,7 +213,7 @@ export const browserPortGames: LearningPath[] = [
     "evidence": {
       "label": "Read the observed reference and retained research evidence",
       "url": "https://ut.pieter.com/",
-      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. The supplied date is not our playtest date. Exact public-text quotes, real access times, hashes, denied hosts and unresolved claims are retained in browser-port-research.json. Evidence URLs: https://ut.pieter.com/ https://ut.pieter.com/"
+      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. References: https://ut.pieter.com/ https://ut.pieter.com/"
     },
     "resourceIds": [],
     "intake": {
@@ -233,10 +233,10 @@ export const browserPortGames: LearningPath[] = [
     "engine": "FTE QuakeWorld",
     "track": "3d",
     "category": "community",
-    "aiUse": "Source/project reference intake, not AI-authorship attribution. Public text, README and user-supplied assertions are distinguished from runtime tests. No source-completeness, license/asset coverage, buildability, gameplay, safety or L1/L2/L3 certification. No game, native project, original-game asset, ROM, multiplayer session, conversion or emulator was executed.",
+    "aiUse": "Project details from the browser-port directory and linked sources.",
     "steps": [
       "Inspect the exact project, source/engine lineage and edition before interpreting this reference.",
-      "Check original-data ownership, proprietary assets, access restrictions, source correspondence and runtime requirements separately; code licensing is not a commercial-asset grant."
+      "Check runtime requirements and the terms for code, assets, and original game data."
     ],
     "tutorial": {
       "label": "Read the identified project reference",
@@ -247,7 +247,7 @@ export const browserPortGames: LearningPath[] = [
       "label": "View the observed project page",
       "url": "https://q1.pieter.com/",
       "kind": "reference",
-      "note": "Project/landing reference only. Corresponding browser-port source is not located; no verified play/download link is published."
+      "note": "Project page. Browser-port source and release links are unavailable in this record."
     },
     "source": {
       "label": "Project reference, corresponding source unverified",
@@ -258,7 +258,7 @@ export const browserPortGames: LearningPath[] = [
     "evidence": {
       "label": "Read the observed reference and retained research evidence",
       "url": "https://q1.pieter.com/",
-      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. The supplied date is not our playtest date. Exact public-text quotes, real access times, hashes, denied hosts and unresolved claims are retained in browser-port-research.json. Evidence URLs: https://q1.pieter.com/ https://q1.pieter.com/"
+      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. References: https://q1.pieter.com/ https://q1.pieter.com/"
     },
     "resourceIds": [],
     "intake": {
@@ -278,10 +278,10 @@ export const browserPortGames: LearningPath[] = [
     "engine": "Halo CE decompilation; Emscripten/WebAssembly, WebGL 2, OffscreenCanvas, OPFS",
     "track": "3d",
     "category": "community",
-    "aiUse": "Source/project reference intake, not AI-authorship attribution. Public text, README and user-supplied assertions are distinguished from runtime tests. No source-completeness, license/asset coverage, buildability, gameplay, safety or L1/L2/L3 certification. No game, native project, original-game asset, ROM, multiplayer session, conversion or emulator was executed.",
+    "aiUse": "Project details from the browser-port directory and linked sources.",
     "steps": [
       "Inspect the exact project, source/engine lineage and edition before interpreting this reference.",
-      "Check original-data ownership, proprietary assets, access restrictions, source correspondence and runtime requirements separately; code licensing is not a commercial-asset grant."
+      "Check runtime requirements and the terms for code, assets, and original game data."
     ],
     "tutorial": {
       "label": "Read the identified project reference",
@@ -292,7 +292,7 @@ export const browserPortGames: LearningPath[] = [
       "label": "Inspect the identified source reference",
       "url": "https://github.com/OMG-Guest/Halo-Mobile",
       "kind": "source",
-      "note": "Source reference only, entryUrl withheld. Requires authorized compatible game data. Claimed campaign, saves, touch support and System Link not tested. No full campaign/completeness or rights certification. Experimental presentation modes and third-party service dependencies may differ. No verified play/download link is published."
+      "note": "Source reference only, entryUrl withheld. Requires authorized compatible game data. Claimed campaign, saves, touch support and System Link not tested. No full campaign/completeness or rights certification. Experimental presentation modes and third-party service dependencies may differ."
     },
     "source": {
       "label": "Source reference, scope unverified",
@@ -303,7 +303,7 @@ export const browserPortGames: LearningPath[] = [
     "evidence": {
       "label": "Read the observed reference and retained research evidence",
       "url": "https://github.com/OMG-Guest/Halo-Mobile",
-      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. The supplied date is not our playtest date. Exact public-text quotes, real access times, hashes, denied hosts and unresolved claims are retained in browser-port-research.json. Evidence URLs: https://api.github.com/repos/OMG-Guest/Halo-Mobile/readme https://api.github.com/repos/OMG-Guest/Halo-Mobile/readme https://api.github.com/repos/OMG-Guest/Halo-Mobile/readme"
+      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. References: https://api.github.com/repos/OMG-Guest/Halo-Mobile/readme https://api.github.com/repos/OMG-Guest/Halo-Mobile/readme https://api.github.com/repos/OMG-Guest/Halo-Mobile/readme"
     },
     "resourceIds": [],
     "intake": {
@@ -323,10 +323,10 @@ export const browserPortGames: LearningPath[] = [
     "engine": "iortcw + Wwasm (page spelling)",
     "track": "3d",
     "category": "community",
-    "aiUse": "Source/project reference intake, not AI-authorship attribution. Public text, README and user-supplied assertions are distinguished from runtime tests. No source-completeness, license/asset coverage, buildability, gameplay, safety or L1/L2/L3 certification. No game, native project, original-game asset, ROM, multiplayer session, conversion or emulator was executed.",
+    "aiUse": "Project details from the browser-port directory and linked sources.",
     "steps": [
       "Inspect the exact project, source/engine lineage and edition before interpreting this reference.",
-      "Check original-data ownership, proprietary assets, access restrictions, source correspondence and runtime requirements separately; code licensing is not a commercial-asset grant."
+      "Check runtime requirements and the terms for code, assets, and original game data."
     ],
     "tutorial": {
       "label": "Read the identified project reference",
@@ -337,7 +337,7 @@ export const browserPortGames: LearningPath[] = [
       "label": "View the observed project page",
       "url": "https://rtcw.pieter.com/",
       "kind": "reference",
-      "note": "Project/landing reference only. Corresponding browser-port source is not located; no verified play/download link is published."
+      "note": "Project page. Browser-port source and release links are unavailable in this record."
     },
     "source": {
       "label": "Project reference, corresponding source unverified",
@@ -348,7 +348,7 @@ export const browserPortGames: LearningPath[] = [
     "evidence": {
       "label": "Read the observed reference and retained research evidence",
       "url": "https://rtcw.pieter.com/",
-      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. The supplied date is not our playtest date. Exact public-text quotes, real access times, hashes, denied hosts and unresolved claims are retained in browser-port-research.json. Evidence URLs: https://rtcw.pieter.com/ https://rtcw.pieter.com/"
+      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. References: https://rtcw.pieter.com/ https://rtcw.pieter.com/"
     },
     "resourceIds": [],
     "intake": {
@@ -368,10 +368,10 @@ export const browserPortGames: LearningPath[] = [
     "engine": "WebXash / Xash3D-FWGS",
     "track": "3d",
     "category": "community",
-    "aiUse": "Source/project reference intake, not AI-authorship attribution. Public text, README and user-supplied assertions are distinguished from runtime tests. No source-completeness, license/asset coverage, buildability, gameplay, safety or L1/L2/L3 certification. No game, native project, original-game asset, ROM, multiplayer session, conversion or emulator was executed.",
+    "aiUse": "Project details from the browser-port directory and linked sources.",
     "steps": [
       "Inspect the exact project, source/engine lineage and edition before interpreting this reference.",
-      "Check original-data ownership, proprietary assets, access restrictions, source correspondence and runtime requirements separately; code licensing is not a commercial-asset grant."
+      "Check runtime requirements and the terms for code, assets, and original game data."
     ],
     "tutorial": {
       "label": "Read the identified project reference",
@@ -382,7 +382,7 @@ export const browserPortGames: LearningPath[] = [
       "label": "Inspect the identified source reference",
       "url": "https://github.com/x8BitRain/webXash",
       "kind": "source",
-      "note": "Owned valve/cstrike files required. Mod compatibility is limited, mobile keyboard/mouse caveats apply, CS saves disabled, internet server discovery unavailable and direct websocket server setup required. Published frontend URL is README-only evidence, not a validated play link. Public text only; no runtime, asset loading, account access or multiplayer participation tested. No verified play/download link is published."
+      "note": "Owned valve/cstrike files required. Mod compatibility is limited, mobile keyboard/mouse caveats apply, CS saves disabled, internet server discovery unavailable and direct websocket server setup required. Published frontend URL is README-only evidence, not a validated play link. Public text only; no runtime, asset loading, account access or multiplayer participation tested."
     },
     "source": {
       "label": "Source reference, scope unverified",
@@ -393,7 +393,7 @@ export const browserPortGames: LearningPath[] = [
     "evidence": {
       "label": "Read the observed reference and retained research evidence",
       "url": "https://github.com/x8BitRain/webXash",
-      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. The supplied date is not our playtest date. Exact public-text quotes, real access times, hashes, denied hosts and unresolved claims are retained in browser-port-research.json. Evidence URLs: https://api.github.com/repos/x8BitRain/webXash/readme https://api.github.com/repos/x8BitRain/webXash/readme https://api.github.com/repos/x8BitRain/webXash/readme"
+      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. References: https://api.github.com/repos/x8BitRain/webXash/readme https://api.github.com/repos/x8BitRain/webXash/readme https://api.github.com/repos/x8BitRain/webXash/readme"
     },
     "resourceIds": [],
     "intake": {
@@ -413,10 +413,10 @@ export const browserPortGames: LearningPath[] = [
     "engine": "FTE QuakeWorld",
     "track": "3d",
     "category": "community",
-    "aiUse": "Source/project reference intake, not AI-authorship attribution. Public text, README and user-supplied assertions are distinguished from runtime tests. No source-completeness, license/asset coverage, buildability, gameplay, safety or L1/L2/L3 certification. No game, native project, original-game asset, ROM, multiplayer session, conversion or emulator was executed.",
+    "aiUse": "Project details from the browser-port directory and linked sources.",
     "steps": [
       "Inspect the exact project, source/engine lineage and edition before interpreting this reference.",
-      "Check original-data ownership, proprietary assets, access restrictions, source correspondence and runtime requirements separately; code licensing is not a commercial-asset grant."
+      "Check runtime requirements and the terms for code, assets, and original game data."
     ],
     "tutorial": {
       "label": "Read the identified project reference",
@@ -427,7 +427,7 @@ export const browserPortGames: LearningPath[] = [
       "label": "View the observed project page",
       "url": "https://q2.pieter.com/",
       "kind": "reference",
-      "note": "Project/landing reference only. Corresponding browser-port source is not located; no verified play/download link is published."
+      "note": "Project page. Browser-port source and release links are unavailable in this record."
     },
     "source": {
       "label": "Project reference, corresponding source unverified",
@@ -438,7 +438,7 @@ export const browserPortGames: LearningPath[] = [
     "evidence": {
       "label": "Read the observed reference and retained research evidence",
       "url": "https://q2.pieter.com/",
-      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. The supplied date is not our playtest date. Exact public-text quotes, real access times, hashes, denied hosts and unresolved claims are retained in browser-port-research.json. Evidence URLs: https://q2.pieter.com/ https://q2.pieter.com/"
+      "note": "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: d0aee2031da132cd71ae75411d969d5186d2507bf724a4575c732e71b15a59bd. References: https://q2.pieter.com/ https://q2.pieter.com/"
     },
     "resourceIds": [],
     "intake": {

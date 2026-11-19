@@ -176,10 +176,8 @@ for (const [key, decision] of [...accepted].sort(([a], [b]) =>
       : decision.sourceKind || receipt.sourceType,
     src,
     alt: local
-      ? "GameMap catalog record for " +
-        job.title +
-        "; not an upstream page or gameplay screenshot."
-      : "Public project page for " + job.title + "; not a gameplay screenshot.",
+      ? `GameMap catalog record for ${job.title}.`
+      : `Project page for ${job.title}.`,
     caption: local
       ? "Captured GameMap catalog record; not an upstream page or gameplay screenshot."
       : "Captured project page; not a gameplay screenshot.",

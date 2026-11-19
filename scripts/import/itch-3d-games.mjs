@@ -233,11 +233,10 @@ for (const row of supplied.games) {
     engine: text.engine,
     track: "3d",
     category: "community",
-    aiUse:
-      "Imported from a supplied itch 3D directory. No AI-authorship attribution is inferred. Source completeness, game/source correspondence, code and asset license coverage, builds, playability, safety and L1/L2/L3 were not independently certified. No native game, source project or mod was executed.",
+    aiUse: "From the supplied itch.io 3D game directory.",
     steps: [
-      "Read the supplied author and source references, including exact edition, access and license restrictions.",
-      "Check code, media, commercial original-data, third-party services and runtime requirements separately. Visible source is not reuse permission or a verified playable build.",
+      "Check the project page for available editions and system requirements.",
+      "Check the terms for code, assets, and required services or original game data.",
     ],
     tutorial: {
       label: "Read the supplied author/project reference",
@@ -248,7 +247,7 @@ for (const row of supplied.games) {
       label: "View the supplied source reference",
       url: source,
       kind: "source",
-      note: "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link.",
+      note: "Release: none listed in this record.",
     },
     source: {
       label: "Inspect the supplied project/source reference",
@@ -261,9 +260,8 @@ for (const row of supplied.games) {
         text.assetLicenseNote +
         " Access/price snapshot: " +
         text.priceAccess +
-        " Qualifications: " +
-        text.caveat +
-        " These are attributed intake statements, not a new complete-project, rights, runtime or AI-authorship certification.",
+        " " +
+        text.caveat,
     },
     evidence: {
       label: "Read supplied author and directory references",
@@ -277,7 +275,7 @@ for (const row of supplied.games) {
         row.checked_at +
         ". Input SHA-256: " +
         sha256 +
-        ". Original ratings, dates, access statements, classification and evidence URLs remain in the raw intake download; they are not fresh playtests or quality grades. References: " +
+        ". References: " +
         references.join(" "),
     },
     resourceIds: [],

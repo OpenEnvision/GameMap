@@ -98,7 +98,7 @@ For an automatic level, investigate:
 - Rhythm, camera, readability, and spectatorship.
 - What interruption means and whether recovery is needed.
 
-These are adapted evaluation questions, not a claim that every automatic level should become deterministic or conventionally fair. The source also discusses chance-based automatic courses.
+Use these questions to match the evaluation to an automatic level’s design goals. The source also discusses chance-based automatic courses.
 
 ## 5. Architecture is more than drafting
 

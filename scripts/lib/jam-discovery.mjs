@@ -218,7 +218,7 @@ export function jamExample(row) {
     engine: `${row.engine}${row.engineVersion === "unknown" ? " · version unverified" : ` ${row.engineVersion}`}`,
     track: row.track,
     category: "community",
-    aiUse: `Source-reviewed community game; AI creation is not a requirement and no AI-authorship attribution is asserted. ${row.jam}. Reviewed ${row.checkedAt}. L1 file integrity, L2 compilation, L3 30-second runtime and code-line thresholds were not independently verified.`,
+    aiUse: `${row.jam === "Community release (jam attribution unverified)" ? "Community release" : row.jam}. Source checked ${row.checkedAt}.`,
     steps: row.suggestedSteps,
     tutorial: {
       label: "Read the creator’s project notes",
@@ -232,13 +232,20 @@ export function jamExample(row) {
           : `Download ${row.title}`,
       url: row.gameUrl,
       kind: row.demoKind,
-      note: "Author-linked published game page; build execution and current playability have not been independently tested. Check the page for platform and input requirements.",
+      note: "Creator-published release.",
     },
     source: {
       label: "Open the game project",
       url: row.repository,
       scope: "complete-project",
-      note: `${row.sourceNote} ${license} ${row.commit ? `Reviewed revision: ${row.commit}.` : "No pinned commit was established; source links can change."} ${dateLimitations.join(" ")}`,
+      note: [
+        row.sourceNote,
+        license,
+        row.commit && `Reviewed revision: ${row.commit}.`,
+        ...dateLimitations,
+      ]
+        .filter(Boolean)
+        .join(" "),
     },
     evidence: {
       label: "Inspect the primary source evidence",

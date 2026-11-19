@@ -37,7 +37,7 @@ test("every admitted Jam game is registered as a first-class non-AI-required exa
       context.payloadSchemas.example.safeParse(entry.data).success,
       true,
     );
-    assert.match(entry.data.aiUse, /not independently verified/);
+    assert.ok(entry.data.aiUse.includes(`Source checked ${row.checkedAt}.`));
     assert.ok(
       !context.sources.gameCaseAgents[row.id],
       "Do not invent AI attribution",

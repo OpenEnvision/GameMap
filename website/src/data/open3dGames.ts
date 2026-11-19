@@ -8,10 +8,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Three.js + Next.js",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -22,18 +22,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Arcade 3D",
       "url": "https://github.com/webgl-games/arcade-3d",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/webgl-games/arcade-3d",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Specific third-party assets: pending review.. Qualification: Counted as one project; online modes and service features require a backend. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Specific third-party assets: pending review.. Counted as one project; online modes and service features require a backend."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/webgl-games/arcade-3d",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row arcade-3d, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/webgl-games/arcade-3d https://raw.githubusercontent.com/webgl-games/arcade-3d/main/README.md https://raw.githubusercontent.com/webgl-games/arcade-3d/main/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row arcade-3d, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/webgl-games/arcade-3d https://raw.githubusercontent.com/webgl-games/arcade-3d/main/README.md https://raw.githubusercontent.com/webgl-games/arcade-3d/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -53,10 +53,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Three.js + WebGL2",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -67,18 +67,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Ashlands",
       "url": "https://github.com/addable-labs/ashlands",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/addable-labs/ashlands",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Terrain, models, materials, sky, music, and sound effects are all procedurally generated.. Qualification: The author explicitly describes this as an agentic development experiment; it should not be treated as a finished product of commercial game quality. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Terrain, models, materials, sky, music, and sound effects are all procedurally generated.. The author explicitly describes this as an agentic development experiment; it should not be treated as a finished product of commercial game quality."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/addable-labs/ashlands",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row ashlands, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/addable-labs/ashlands https://raw.githubusercontent.com/addable-labs/ashlands/main/README.md https://raw.githubusercontent.com/addable-labs/ashlands/main/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row ashlands, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/addable-labs/ashlands https://raw.githubusercontent.com/addable-labs/ashlands/main/README.md https://raw.githubusercontent.com/addable-labs/ashlands/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -98,10 +98,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Three.js + Vite",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -112,18 +112,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Bridge Horror House",
       "url": "https://github.com/bridge-mind/bridge-horror-house",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/bridge-mind/bridge-horror-house",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: The README explicitly states that there are no external asset files; textures and sound effects are procedurally generated.. Qualification: Includes SYSTEM_PROMPT.md for studying the generation prompt and project implementation. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: The README explicitly states that there are no external asset files; textures and sound effects are procedurally generated.. Includes SYSTEM_PROMPT.md for studying the generation prompt and project implementation."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/bridge-mind/bridge-horror-house",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row bridge-horror-house, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/bridge-mind/bridge-horror-house https://raw.githubusercontent.com/bridge-mind/bridge-horror-house/main/README.md https://raw.githubusercontent.com/bridge-mind/bridge-horror-house/main/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row bridge-horror-house, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/bridge-mind/bridge-horror-house https://raw.githubusercontent.com/bridge-mind/bridge-horror-house/main/README.md https://raw.githubusercontent.com/bridge-mind/bridge-horror-house/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -143,10 +143,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Three.js",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -157,18 +157,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Claude Bandicoot",
       "url": "https://github.com/atiqur-rahman-pro/claude-bandicoot",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/atiqur-rahman-pro/claude-bandicoot",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Models and sound effects are procedurally generated; includes references to commercial game character and item names.. Qualification: A fan-inspired work; the code license does not grant rights to the associated brands or characters. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Models and sound effects are procedurally generated; includes references to commercial game character and item names.. A fan-inspired work; the code license does not grant rights to the associated brands or characters."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/atiqur-rahman-pro/claude-bandicoot",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row claude-bandicoot, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/atiqur-rahman-pro/claude-bandicoot https://raw.githubusercontent.com/atiqur-rahman-pro/claude-bandicoot/main/README.md https://raw.githubusercontent.com/atiqur-rahman-pro/claude-bandicoot/main/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row claude-bandicoot, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/atiqur-rahman-pro/claude-bandicoot https://raw.githubusercontent.com/atiqur-rahman-pro/claude-bandicoot/main/README.md https://raw.githubusercontent.com/atiqur-rahman-pro/claude-bandicoot/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -188,10 +188,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Three.js + Next.js",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -202,18 +202,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Flight Sim",
       "url": "https://github.com/webgl-games/flight-sim",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/webgl-games/flight-sim",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Procedural scenery and Web Audio; other assets: pending review.. Qualification: Some auxiliary features depend on a backend. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Procedural scenery and Web Audio; other assets: pending review.. Some auxiliary features depend on a backend."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/webgl-games/flight-sim",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row flight-sim, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/webgl-games/flight-sim https://raw.githubusercontent.com/webgl-games/flight-sim/main/README.md https://raw.githubusercontent.com/webgl-games/flight-sim/main/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row flight-sim, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/webgl-games/flight-sim https://raw.githubusercontent.com/webgl-games/flight-sim/main/README.md https://raw.githubusercontent.com/webgl-games/flight-sim/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -233,10 +233,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "React Three Fiber + Next.js",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -247,18 +247,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for House Arkanum",
       "url": "https://github.com/Arz472/House-arkanum",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Arz472/House-arkanum",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Author-created low-poly models and recordings; third-party dependencies have separate licenses.. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Author-created low-poly models and recordings; third-party dependencies have separate licenses.. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Arz472/House-arkanum",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row house-arkanum, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Arz472/House-arkanum https://raw.githubusercontent.com/Arz472/House-arkanum/main/README.md https://raw.githubusercontent.com/Arz472/House-arkanum/main/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row house-arkanum, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Arz472/House-arkanum https://raw.githubusercontent.com/Arz472/House-arkanum/main/README.md https://raw.githubusercontent.com/Arz472/House-arkanum/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -278,10 +278,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Three.js + Node.js",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -292,18 +292,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Langenium",
       "url": "https://github.com/OpenStudiosCo/Langenium",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/OpenStudiosCo/Langenium",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: See CREDITS.md for third-party content; individual items have not been audited.. Qualification: Availability of the author's public server is not guaranteed; you can deploy your own server. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: See CREDITS.md for third-party content; individual items have not been audited.. Availability of the author's public server is not guaranteed; you can deploy your own server."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/OpenStudiosCo/Langenium",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row langenium, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/OpenStudiosCo/Langenium https://raw.githubusercontent.com/OpenStudiosCo/Langenium/master/README.md https://raw.githubusercontent.com/OpenStudiosCo/Langenium/master/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row langenium, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/OpenStudiosCo/Langenium https://raw.githubusercontent.com/OpenStudiosCo/Langenium/master/README.md https://raw.githubusercontent.com/OpenStudiosCo/Langenium/master/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -323,10 +323,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Three.js + Rapier",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -337,18 +337,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for LEONIDA",
       "url": "https://github.com/bridge-mind/leonida",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/bridge-mind/leonida",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT (code). Asset notes from that directory: Scenery, characters, vehicles, and audio are generated by code; fan-work names and settings are not licensed under MIT.. Qualification: The README describes a noncommercial fan test project; the code license is separate from rights to characters and settings. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT (code). Asset notes from that directory: Scenery, characters, vehicles, and audio are generated by code; fan-work names and settings are not licensed under MIT.. The README describes a noncommercial fan test project; the code license is separate from rights to characters and settings."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/bridge-mind/leonida",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row leonida, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/bridge-mind/leonida https://raw.githubusercontent.com/bridge-mind/leonida/main/README.md https://raw.githubusercontent.com/bridge-mind/leonida/main/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row leonida, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/bridge-mind/leonida https://raw.githubusercontent.com/bridge-mind/leonida/main/README.md https://raw.githubusercontent.com/bridge-mind/leonida/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -368,10 +368,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Three.js + Vite",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -382,18 +382,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for LIMINAL",
       "url": "https://github.com/Onandthegr8/liminal",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Onandthegr8/liminal",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Textures, music, and sound effects are procedurally generated.. Qualification: Uses the original author's repository; the source-liminal mirror is not counted separately. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Textures, music, and sound effects are procedurally generated.. Uses the original author's repository; the source-liminal mirror is not counted separately."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Onandthegr8/liminal",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row liminal, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Onandthegr8/liminal https://raw.githubusercontent.com/Onandthegr8/liminal/main/README.md https://raw.githubusercontent.com/Onandthegr8/liminal/main/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row liminal, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Onandthegr8/liminal https://raw.githubusercontent.com/Onandthegr8/liminal/main/README.md https://raw.githubusercontent.com/Onandthegr8/liminal/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -413,10 +413,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Three.js",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -427,18 +427,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for The Maze",
       "url": "https://github.com/duysqubix/web-arcade",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/duysqubix/web-arcade",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Procedurally generated models, materials, and sound effects; Three.js is loaded from a CDN.. Qualification: The Maze in the repository is counted as one entry; the entire collection is not counted again as additional games. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Procedurally generated models, materials, and sound effects; Three.js is loaded from a CDN.. The Maze in the repository is counted as one entry; the entire collection is not counted again as additional games."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/duysqubix/web-arcade",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row the-maze, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/duysqubix/web-arcade https://raw.githubusercontent.com/duysqubix/web-arcade/main/README.md https://raw.githubusercontent.com/duysqubix/web-arcade/main/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row the-maze, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/duysqubix/web-arcade https://raw.githubusercontent.com/duysqubix/web-arcade/main/README.md https://raw.githubusercontent.com/duysqubix/web-arcade/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -458,10 +458,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Three.js",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -472,18 +472,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for The Soul Foundry",
       "url": "https://github.com/aurph/the-soul-foundry",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/aurph/the-soul-foundry",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Low-poly buildings and characters are procedurally generated.. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Low-poly buildings and characters are procedurally generated.. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/aurph/the-soul-foundry",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row the-soul-foundry, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/aurph/the-soul-foundry https://raw.githubusercontent.com/aurph/the-soul-foundry/main/README.md https://raw.githubusercontent.com/aurph/the-soul-foundry/main/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row the-soul-foundry, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/aurph/the-soul-foundry https://raw.githubusercontent.com/aurph/the-soul-foundry/main/README.md https://raw.githubusercontent.com/aurph/the-soul-foundry/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -503,10 +503,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Three.js",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -517,18 +517,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Tower Defense",
       "url": "https://github.com/Casmo/tower-defense",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Casmo/tower-defense",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: pending review. Qualification: The README lists waves, upgrades, levels, and saving as still unfinished. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: pending review. The README lists waves, upgrades, levels, and saving as still unfinished."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Casmo/tower-defense",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row tower-defense, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Casmo/tower-defense https://raw.githubusercontent.com/Casmo/tower-defense/master/README.md https://raw.githubusercontent.com/Casmo/tower-defense/master/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row tower-defense, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Casmo/tower-defense https://raw.githubusercontent.com/Casmo/tower-defense/master/README.md https://raw.githubusercontent.com/Casmo/tower-defense/master/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -548,10 +548,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Three.js + Node.js",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -562,18 +562,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Trigger Rally Online Edition",
       "url": "https://github.com/CodeArtemis/TriggerRally",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/CodeArtemis/TriggerRally",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: The README states that directories including server/public use mixed licenses.. Qualification: A different code project from native Trigger Rally; old dependencies require adaptation. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: The README states that directories including server/public use mixed licenses.. A different code project from native Trigger Rally; old dependencies require adaptation."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/CodeArtemis/TriggerRally",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row trigger-rally-online-edition, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/CodeArtemis/TriggerRally https://raw.githubusercontent.com/CodeArtemis/TriggerRally/master/README.md"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row trigger-rally-online-edition, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/CodeArtemis/TriggerRally https://raw.githubusercontent.com/CodeArtemis/TriggerRally/master/README.md"
     },
     "resourceIds": [],
     "intake": {
@@ -593,10 +593,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom WebGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -607,18 +607,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for 404 Race",
       "url": "https://github.com/viljami/404race-js13k",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/viljami/404race-js13k",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Custom lightweight 3D rendering; dependencies are listed separately.. Qualification: The author removed LAN multiplayer from the final version. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Custom lightweight 3D rendering; dependencies are listed separately.. The author removed LAN multiplayer from the final version."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/viljami/404race-js13k",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row 404-race, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/viljami/404race-js13k https://raw.githubusercontent.com/viljami/404race-js13k/master/README.md https://raw.githubusercontent.com/viljami/404race-js13k/master/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row 404-race, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/viljami/404race-js13k https://raw.githubusercontent.com/viljami/404race-js13k/master/README.md https://raw.githubusercontent.com/viljami/404race-js13k/master/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -638,10 +638,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "mugl / WebGL + TypeScript",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -652,18 +652,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for _INVADERS",
       "url": "https://github.com/js13kGames/invaders",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/js13kGames/invaders",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Sound effects generated with Web Audio; dependencies have their own licenses.. Qualification: Optional networking/image-saving services may be outdated; the offline core can be studied independently. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Sound effects generated with Web Audio; dependencies have their own licenses.. Optional networking/image-saving services may be outdated; the offline core can be studied independently."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/js13kGames/invaders",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row invaders, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/js13kGames/invaders https://raw.githubusercontent.com/js13kGames/invaders/master/README.md https://raw.githubusercontent.com/js13kGames/invaders/master/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row invaders, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/js13kGames/invaders https://raw.githubusercontent.com/js13kGames/invaders/master/README.md https://raw.githubusercontent.com/js13kGames/invaders/master/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -683,10 +683,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "WebGL / raymarching",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -697,18 +697,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Cat Shooter: Ritual Catacombs",
       "url": "https://github.com/dkozhukhar/cat-shooter",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/dkozhukhar/cat-shooter",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Primarily procedural rendering; dependencies are licensed separately.. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Primarily procedural rendering; dependencies are licensed separately.. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/dkozhukhar/cat-shooter",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row cat-shooter-ritual-catacombs, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/dkozhukhar/cat-shooter https://raw.githubusercontent.com/dkozhukhar/cat-shooter/main/README.md https://raw.githubusercontent.com/dkozhukhar/cat-shooter/main/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row cat-shooter-ritual-catacombs, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/dkozhukhar/cat-shooter https://raw.githubusercontent.com/dkozhukhar/cat-shooter/main/README.md https://raw.githubusercontent.com/dkozhukhar/cat-shooter/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -728,10 +728,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "JavaScript + custom WebGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -742,18 +742,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Minipunk",
       "url": "https://github.com/codyebberson/js13k-minipunk",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/codyebberson/js13k-minipunk",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Procedural content; see the repository for specific dependencies.. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Procedural content; see the repository for specific dependencies.. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/codyebberson/js13k-minipunk",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row minipunk, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/codyebberson/js13k-minipunk https://raw.githubusercontent.com/codyebberson/js13k-minipunk/master/README.md https://raw.githubusercontent.com/codyebberson/js13k-minipunk/master/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row minipunk, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/codyebberson/js13k-minipunk https://raw.githubusercontent.com/codyebberson/js13k-minipunk/master/README.md https://raw.githubusercontent.com/codyebberson/js13k-minipunk/master/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -773,10 +773,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "JavaScript / custom WebGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -787,18 +787,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for ScriptFox13k",
       "url": "https://github.com/js13kGames/ScriptFox13k",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/js13kGames/ScriptFox13k",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: SoundBox-generated audio; dependencies have separate licenses.. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: SoundBox-generated audio; dependencies have separate licenses.. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/js13kGames/ScriptFox13k",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row scriptfox13k, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/js13kGames/ScriptFox13k https://raw.githubusercontent.com/js13kGames/ScriptFox13k/main/README.md https://raw.githubusercontent.com/js13kGames/ScriptFox13k/main/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row scriptfox13k, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/js13kGames/ScriptFox13k https://raw.githubusercontent.com/js13kGames/ScriptFox13k/main/README.md https://raw.githubusercontent.com/js13kGames/ScriptFox13k/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -818,10 +818,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "TypeScript + custom WebGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -832,18 +832,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for The Adventures of Captain Callisto",
       "url": "https://github.com/codyebberson/js13k-callisto",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/codyebberson/js13k-callisto",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: The project includes the required generation code; dependencies are licensed separately.. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: The project includes the required generation code; dependencies are licensed separately.. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/codyebberson/js13k-callisto",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row the-adventures-of-captain-callisto, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/codyebberson/js13k-callisto https://raw.githubusercontent.com/codyebberson/js13k-callisto/main/README.md https://raw.githubusercontent.com/codyebberson/js13k-callisto/main/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row the-adventures-of-captain-callisto, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/codyebberson/js13k-callisto https://raw.githubusercontent.com/codyebberson/js13k-callisto/main/README.md https://raw.githubusercontent.com/codyebberson/js13k-callisto/main/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -863,10 +863,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "JavaScript + custom WebGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -877,18 +877,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Underrun",
       "url": "https://github.com/phoboslab/underrun",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/phoboslab/underrun",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Sonant-X uses the zlib license.. Qualification: Top-down gameplay with 3D rendering. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Sonant-X uses the zlib license.. Top-down gameplay with 3D rendering."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/phoboslab/underrun",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row underrun, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/phoboslab/underrun https://raw.githubusercontent.com/phoboslab/underrun/master/README.md https://raw.githubusercontent.com/phoboslab/underrun/master/LICENSE.md"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row underrun, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/phoboslab/underrun https://raw.githubusercontent.com/phoboslab/underrun/master/README.md https://raw.githubusercontent.com/phoboslab/underrun/master/LICENSE.md"
     },
     "resourceIds": [],
     "intake": {
@@ -908,10 +908,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 4.5",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -922,18 +922,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for 3D Horror Game (Yassine Mathlouthi)",
       "url": "https://github.com/yassine-mathlouthi/3d-horror-game",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/yassine-mathlouthi/3d-horror-game",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: Apache-2.0. Asset notes from that directory: Uses third-party resources including Mixamo; individual asset licenses have not been audited.. Qualification: The README explicitly states that it is in development and should not be treated as a finished game with a complete playthrough; the Apache license does not automatically cover all third-party assets. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: Apache-2.0. Asset notes from that directory: Uses third-party resources including Mixamo; individual asset licenses have not been audited.. The README explicitly states that it is in development and should not be treated as a finished game with a complete playthrough; the Apache license does not automatically cover all third-party assets."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/yassine-mathlouthi/3d-horror-game",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row 3d-horror-game-yassine-mathlouthi, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/yassine-mathlouthi/3d-horror-game"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row 3d-horror-game-yassine-mathlouthi, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/yassine-mathlouthi/3d-horror-game"
     },
     "resourceIds": [],
     "intake": {
@@ -953,10 +953,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 4",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -967,18 +967,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for 3D Horror Proto",
       "url": "https://github.com/RenWinterfox/3d-horror-godot",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/RenWinterfox/3d-horror-godot",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: pending review. Qualification: The README calls it a proto; it should not be treated as a complete game. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: pending review. The README calls it a proto; it should not be treated as a complete game."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/RenWinterfox/3d-horror-godot",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row 3d-horror-proto, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/RenWinterfox/3d-horror-godot"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row 3d-horror-proto, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/RenWinterfox/3d-horror-godot"
     },
     "resourceIds": [],
     "intake": {
@@ -998,10 +998,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 3.5.1 / C#",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1012,18 +1012,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for All Alone",
       "url": "https://github.com/teeeece/all_alone",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/teeeece/all_alone",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Some Zapsplat audio is excluded because of licensing; see attributions.txt for the remaining assets.. Qualification: The original thelastflapjack repository has moved to teeeece; audio must be obtained separately according to missing_audio_info.txt, and MIT must not be extended to the excluded resources. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Some Zapsplat audio is excluded because of licensing; see attributions.txt for the remaining assets.. The original thelastflapjack repository has moved to teeeece; audio must be obtained separately according to missing_audio_info.txt, and MIT must not be extended to the excluded resources."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/teeeece/all_alone",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row all-alone, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/teeeece/all_alone"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row all-alone, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/teeeece/all_alone"
     },
     "resourceIds": [],
     "intake": {
@@ -1043,10 +1043,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 3.5.1",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1057,18 +1057,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Boom",
       "url": "https://github.com/FelicePollano/Boom",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/FelicePollano/Boom",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Mixed third-party assets; some models are CC BY and fonts are CC BY-SA; monsters and other assets require separate review.. Qualification: Some lightmaps are not included and must be rebaked locally; assets come from sources including Realm667. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Mixed third-party assets; some models are CC BY and fonts are CC BY-SA; monsters and other assets require separate review.. Some lightmaps are not included and must be rebaked locally; assets come from sources including Realm667."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/FelicePollano/Boom",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row boom, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/FelicePollano/Boom"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row boom, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/FelicePollano/Boom"
     },
     "resourceIds": [],
     "intake": {
@@ -1088,10 +1088,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Pandemonium / custom Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1102,18 +1102,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Broken Seals",
       "url": "https://github.com/Relintai/broken_seals",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Relintai/broken_seals",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: pending review. Qualification: Requires custom Godot and engine modules; the README notes that multiplayer still has defects. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: pending review. Requires custom Godot and engine modules; the README notes that multiplayer still has defects."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Relintai/broken_seals",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row broken-seals, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Relintai/broken_seals"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row broken-seals, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Relintai/broken_seals"
     },
     "resourceIds": [],
     "intake": {
@@ -1133,10 +1133,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 4.3",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1153,12 +1153,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/ObsidianBlk/TheMotel",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Third-party sound effects and music from Freesound and OpenGameArt; individual licenses are pending review.. Qualification: The supplied directory describes the code license as explicit; redistribution rights for individual assets require separate review. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Third-party sound effects and music from Freesound and OpenGameArt; individual licenses are pending review.. The supplied directory describes the code license as explicit; redistribution rights for individual assets require separate review."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/ObsidianBlk/TheMotel",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row cypress-motel, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/ObsidianBlk/TheMotel"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row cypress-motel, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/ObsidianBlk/TheMotel"
     },
     "resourceIds": [],
     "intake": {
@@ -1178,10 +1178,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 4",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1192,18 +1192,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Delta Park",
       "url": "https://github.com/Eibriel/DeltaKayak",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Eibriel/DeltaKayak",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: Includes third-party audio and fonts; the README provides some CC BY 3.0/4.0 attributions.. Qualification: The repository is named DeltaKayak, while the README's product name is Delta Park; full release status has not been tested firsthand. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: Includes third-party audio and fonts; the README provides some CC BY 3.0/4.0 attributions.. The repository is named DeltaKayak, while the README's product name is Delta Park; full release status has not been tested firsthand."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Eibriel/DeltaKayak",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row delta-park, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Eibriel/DeltaKayak"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row delta-park, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Eibriel/DeltaKayak"
     },
     "resourceIds": [],
     "intake": {
@@ -1223,10 +1223,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1237,18 +1237,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for DOGWALK",
       "url": "https://github.com/nikitalita/DOGWALK",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/nikitalita/DOGWALK",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT (the official page explicitly applies this to code scripts). Asset notes from that directory: Official source package and assets: CC BY 4.0, excluding trademarks and logos. This community mirror contains glTF files and textures, but not the original .blend files.. Qualification: repo_url is an unofficial mirror. Official production files and original Blender projects are on Blender Studio, where some downloads may require a subscription; the mirror must not be equated with the complete original art project. The supplied directory states that the current official script license is MIT, rather than the GPL reported in older coverage. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT (the official page explicitly applies this to code scripts). Asset notes from that directory: Official source package and assets: CC BY 4.0, excluding trademarks and logos. This community mirror contains glTF files and textures, but not the original .blend files.. repo_url is an unofficial mirror. Official production files and original Blender projects are on Blender Studio, where some downloads may require a subscription; the mirror must not be equated with the complete original art project. The supplied directory states that the current official script license is MIT, rather than the GPL reported in older coverage."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/nikitalita/DOGWALK",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row dogwalk, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/nikitalita/DOGWALK https://blenderstudio.itch.io/dogwalk https://studio.blender.org/projects/dogwalk/3e3fa4dfd790bc/ https://github.com/nikitalita/DOGWALK/blob/main/LISCENCE.md"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row dogwalk, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/nikitalita/DOGWALK https://blenderstudio.itch.io/dogwalk https://studio.blender.org/projects/dogwalk/3e3fa4dfd790bc/ https://github.com/nikitalita/DOGWALK/blob/main/LISCENCE.md"
     },
     "resourceIds": [],
     "intake": {
@@ -1268,10 +1268,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 4",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1282,18 +1282,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Ghost Snap",
       "url": "https://github.com/MechanicalFlower/GhostSnap",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/MechanicalFlower/GhostSnap",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Includes LICENSES, CREDITS, and REUSE metadata; specific asset licenses await item-by-item review.. Qualification: Suitable for small interaction, camera, and visual feedback tasks; not a large-scale horror game. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Includes LICENSES, CREDITS, and REUSE metadata; specific asset licenses await item-by-item review.. Suitable for small interaction, camera, and visual feedback tasks; not a large-scale horror game."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/MechanicalFlower/GhostSnap",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row ghost-snap, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/MechanicalFlower/GhostSnap"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row ghost-snap, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/MechanicalFlower/GhostSnap"
     },
     "resourceIds": [],
     "intake": {
@@ -1313,10 +1313,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 4",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1333,12 +1333,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/MechanicalFlower/HazyRoad",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: CREDITS lists CC0 models and most textures, CC-BY 3.0/4.0 for some audio and textures, OFL fonts, and MIT plugins.. Qualification: A short Game Jam work; requires installation of the Godot plugins listed in the repository. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: CREDITS lists CC0 models and most textures, CC-BY 3.0/4.0 for some audio and textures, OFL fonts, and MIT plugins.. A short Game Jam work; requires installation of the Godot plugins listed in the repository."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/MechanicalFlower/HazyRoad",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row hazy-road, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/MechanicalFlower/HazyRoad https://github.com/MechanicalFlower/HazyRoad/blob/main/CREDITS.md"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row hazy-road, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/MechanicalFlower/HazyRoad https://github.com/MechanicalFlower/HazyRoad/blob/main/CREDITS.md"
     },
     "resourceIds": [],
     "intake": {
@@ -1358,10 +1358,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 4",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1372,18 +1372,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Hurry Curry!",
       "url": "https://codeberg.org/hurrycurry/hurrycurry",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://codeberg.org/hurrycurry/hurrycurry",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: AGPL-3.0-only. Asset notes from that directory: pending review. Qualification: The official repository is on Codeberg; the primary-source official website explicitly states the code license, while the scope of individual asset licenses is pending review. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: AGPL-3.0-only. Asset notes from that directory: pending review. The official repository is on Codeberg; the primary-source official website explicitly states the code license, while the scope of individual asset licenses is pending review."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://codeberg.org/hurrycurry/hurrycurry",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row hurry-curry, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://codeberg.org/hurrycurry/hurrycurry https://hurrycurry.org/"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row hurry-curry, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://codeberg.org/hurrycurry/hurrycurry https://hurrycurry.org/"
     },
     "resourceIds": [],
     "intake": {
@@ -1403,10 +1403,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1417,18 +1417,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for In The Blue Mist",
       "url": "https://github.com/cnharlan/GD_BlueMist",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/cnharlan/GD_BlueMist",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: pending review. Qualification: The public repository includes TestMap/Prototype; maturity is limited. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: pending review. The public repository includes TestMap/Prototype; maturity is limited."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/cnharlan/GD_BlueMist",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row in-the-blue-mist, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/cnharlan/GD_BlueMist"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row in-the-blue-mist, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/cnharlan/GD_BlueMist"
     },
     "resourceIds": [],
     "intake": {
@@ -1448,10 +1448,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 4.2",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1462,18 +1462,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Keep Going / Trick Box",
       "url": "https://github.com/MajdLHB/Keep-Going-Trick-Box--Godot-Game-Project",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/MajdLHB/Keep-Going-Trick-Box--Godot-Game-Project",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: pending review. Qualification: The README explicitly says it is unfinished and unreleased; suitable for studying the implementation, not for recommending as a finished product. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: pending review. The README explicitly says it is unfinished and unreleased; suitable for studying the implementation, not for recommending as a finished product."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/MajdLHB/Keep-Going-Trick-Box--Godot-Game-Project",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row keep-going-trick-box, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/MajdLHB/Keep-Going-Trick-Box--Godot-Game-Project"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row keep-going-trick-box, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/MajdLHB/Keep-Going-Trick-Box--Godot-Game-Project"
     },
     "resourceIds": [],
     "intake": {
@@ -1493,10 +1493,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1507,18 +1507,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Kilvault",
       "url": "https://github.com/GravityI/kilvault",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/GravityI/kilvault",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT, with exceptions for State Machine/Enemy AI scripts pending review.. Asset notes from that directory: The README declares the art assets CC0.. Qualification: Two categories of external scripts are not covered by the author's MIT declaration; dependency versions have not been checked. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT, with exceptions for State Machine/Enemy AI scripts pending review.. Asset notes from that directory: The README declares the art assets CC0.. Two categories of external scripts are not covered by the author's MIT declaration; dependency versions have not been checked."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/GravityI/kilvault",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row kilvault, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/GravityI/kilvault"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row kilvault, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/GravityI/kilvault"
     },
     "resourceIds": [],
     "intake": {
@@ -1538,10 +1538,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 4",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1552,18 +1552,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Liblast",
       "url": "https://codeberg.org/liblast/liblast",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://codeberg.org/liblast/liblast",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: pending review. Asset notes from that directory: The official website states that code and source files for sounds and 3D assets are public; specific current licenses are pending review.. Qualification: The GitHub/unfa mirror is archived; the old mirror should not be treated as the current main development line. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: pending review. Asset notes from that directory: The official website states that code and source files for sounds and 3D assets are public; specific current licenses are pending review.. The GitHub/unfa mirror is archived; the old mirror should not be treated as the current main development line."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://codeberg.org/liblast/liblast",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row liblast, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://codeberg.org/liblast/liblast https://libla.st/"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row liblast, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://codeberg.org/liblast/liblast https://libla.st/"
     },
     "resourceIds": [],
     "intake": {
@@ -1583,10 +1583,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1603,12 +1603,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Libre-TrainSim/Libre-TrainSim",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: pending review. Qualification: Far removed from the horror genre; separate licensing for assets and additional routes requires further checking. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: pending review. Far removed from the horror genre; separate licensing for assets and additional routes requires further checking."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Libre-TrainSim/Libre-TrainSim",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row libre-trainsim, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Libre-TrainSim/Libre-TrainSim https://jean28518.itch.io/libre-train-sim"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row libre-trainsim, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Libre-TrainSim/Libre-TrainSim https://jean28518.itch.io/libre-train-sim"
     },
     "resourceIds": [],
     "intake": {
@@ -1628,10 +1628,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 4",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1648,12 +1648,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://codeberg.org/Nokorpo/LibreAim",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: pending review. Qualification: Intended for training, with no narrative levels; primary development has moved to Codeberg, and the old GitHub repository is archived. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: pending review. Intended for training, with no narrative levels; primary development has moved to Codeberg, and the old GitHub repository is archived."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://codeberg.org/Nokorpo/LibreAim",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row libreaim, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://codeberg.org/Nokorpo/LibreAim https://antimundo.itch.io/libreaim https://antimundo.es/projects/libreaim/ https://github.com/Nokorpo/LibreAim"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row libreaim, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://codeberg.org/Nokorpo/LibreAim https://antimundo.itch.io/libreaim https://antimundo.es/projects/libreaim/ https://github.com/Nokorpo/LibreAim"
     },
     "resourceIds": [],
     "intake": {
@@ -1673,10 +1673,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1693,12 +1693,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/EdiCM/LostSouls",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT (explicitly listed on the author's official itch page). Asset notes from that directory: pending review (the author disclosed using AI-assisted imagery). Qualification: The MIT attribution is based on the author's official release page; third-party image and audio licenses have not been individually reviewed, and the game has not been played firsthand. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT (explicitly listed on the author's official itch page). Asset notes from that directory: pending review (the author disclosed using AI-assisted imagery). The MIT attribution is based on the author's official release page; third-party image and audio licenses have not been individually reviewed, and the game has not been played firsthand."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/EdiCM/LostSouls",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row lost-souls, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/EdiCM/LostSouls https://edimon4884.itch.io/lost-souls"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row lost-souls, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/EdiCM/LostSouls https://edimon4884.itch.io/lost-souls"
     },
     "resourceIds": [],
     "intake": {
@@ -1718,10 +1718,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 3.0.4",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1732,18 +1732,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Meteorite",
       "url": "https://github.com/Bauxitedev/meteorite",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Bauxitedev/meteorite",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Main assets: CC BY-SA 4.0; the Uni 05_53 font is not in the repository and must be obtained separately or replaced.. Qualification: An old-version dependency is specified; the font cannot be freely redistributed with the repository. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Main assets: CC BY-SA 4.0; the Uni 05_53 font is not in the repository and must be obtained separately or replaced.. An old-version dependency is specified; the font cannot be freely redistributed with the repository."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Bauxitedev/meteorite",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row meteorite, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Bauxitedev/meteorite https://bauxite.itch.io/meteorite"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row meteorite, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Bauxitedev/meteorite https://bauxite.itch.io/meteorite"
     },
     "resourceIds": [],
     "intake": {
@@ -1763,10 +1763,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 4.3",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1777,18 +1777,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Panik",
       "url": "https://github.com/GuaraProductions/Panik",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/GuaraProductions/Panik",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: MIT explicitly covers code only; third-party models, textures, and audio have individual licenses.. Qualification: The README requires Godot 4.3; the older Terrain3D has compatibility issues with 4.4. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: MIT explicitly covers code only; third-party models, textures, and audio have individual licenses.. The README requires Godot 4.3; the older Terrain3D has compatibility issues with 4.4."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/GuaraProductions/Panik",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row panik, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/GuaraProductions/Panik"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row panik, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/GuaraProductions/Panik"
     },
     "resourceIds": [],
     "intake": {
@@ -1808,10 +1808,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1828,12 +1828,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Cyteon/racing-game",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: pending review. Qualification: Licenses for third-party vehicles, tracks, music, and other assets have not been individually verified. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: pending review. Licenses for third-party vehicles, tracks, music, and other assets have not been individually verified."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Cyteon/racing-game",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row racing-game-cyteon, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Cyteon/racing-game https://cyteon.itch.io/racing-game"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row racing-game-cyteon, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Cyteon/racing-game https://cyteon.itch.io/racing-game"
     },
     "resourceIds": [],
     "intake": {
@@ -1853,10 +1853,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1867,18 +1867,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Rapid Rescue",
       "url": "https://github.com/arran-nz/RapidRescue",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/arran-nz/RapidRescue",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: pending review. Qualification: More board-game strategy than first-person exploration; asset permissions have not been individually verified. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: pending review. More board-game strategy than first-person exploration; asset permissions have not been individually verified."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/arran-nz/RapidRescue",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row rapid-rescue, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/arran-nz/RapidRescue"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row rapid-rescue, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/arran-nz/RapidRescue"
     },
     "resourceIds": [],
     "intake": {
@@ -1898,10 +1898,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1912,18 +1912,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for RETURN//NULL",
       "url": "https://github.com/The-Shady-Shade/RETURN-NULL",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/The-Shady-Shade/RETURN-NULL",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: pending review. Qualification: The repository describes it as a 3D experience; its length and completeness have not been tested firsthand. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: pending review. The repository describes it as a 3D experience; its length and completeness have not been tested firsthand."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/The-Shady-Shade/RETURN-NULL",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row return-null, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/The-Shady-Shade/RETURN-NULL https://theshadyshade.itch.io/return-null"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row return-null, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/The-Shady-Shade/RETURN-NULL https://theshadyshade.itch.io/return-null"
     },
     "resourceIds": [],
     "intake": {
@@ -1943,10 +1943,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -1963,12 +1963,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/MechanicalFlower/RootedShadow",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: The repository includes REUSE and LICENSES directories, and the release page lists model and texture sources; individual third-party asset licenses await auditing.. Qualification: A short work suitable for learning the structure of a small stealth horror game; the MIT code license cannot substitute for all asset licenses. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: The repository includes REUSE and LICENSES directories, and the release page lists model and texture sources; individual third-party asset licenses await auditing.. A short work suitable for learning the structure of a small stealth horror game; the MIT code license cannot substitute for all asset licenses."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/MechanicalFlower/RootedShadow",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row rooted-shadow, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/MechanicalFlower/RootedShadow"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row rooted-shadow, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/MechanicalFlower/RootedShadow"
     },
     "resourceIds": [],
     "intake": {
@@ -1988,10 +1988,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2008,12 +2008,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/nwallenfang/scavenge-and-drill",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Creator-made sounds, music, 2D assets, and 3D assets: CC BY; see CREDITS for third-party resources.. Qualification: Networked operation depends on signaling service configuration; this is not a purely offline project. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Creator-made sounds, music, 2D assets, and 3D assets: CC BY; see CREDITS for third-party resources.. Networked operation depends on signaling service configuration; this is not a purely offline project."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/nwallenfang/scavenge-and-drill",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row scavenge-drill, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/nwallenfang/scavenge-and-drill"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row scavenge-drill, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/nwallenfang/scavenge-and-drill"
     },
     "resourceIds": [],
     "intake": {
@@ -2033,10 +2033,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2047,18 +2047,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Super Tux Party",
       "url": "https://gitlab.com/SuperTuxParty/SuperTuxParty",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://gitlab.com/SuperTuxParty/SuperTuxParty",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: The author's official itch page lists assets as CC BY 4.0; individual third-party exceptions have not been audited.. Qualification: Official information says the game is unfinished; alpha and beta have different features, with online multiplayer belonging to the newer beta branch. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: The author's official itch page lists assets as CC BY 4.0; individual third-party exceptions have not been audited.. Official information says the game is unfinished; alpha and beta have different features, with online multiplayer belonging to the newer beta branch."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://gitlab.com/SuperTuxParty/SuperTuxParty",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row super-tux-party, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://gitlab.com/SuperTuxParty/SuperTuxParty https://supertux.party/ https://anti.itch.io/super-tux-party"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row super-tux-party, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://gitlab.com/SuperTuxParty/SuperTuxParty https://supertux.party/ https://anti.itch.io/super-tux-party"
     },
     "resourceIds": [],
     "intake": {
@@ -2078,10 +2078,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2098,12 +2098,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/drwhut/tabletop-club",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Some assets use other open licenses; the project provides LICENSES.tres and asset .cfg files.. Qualification: An open-ended sandbox in which players enforce most gameplay rules themselves. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Some assets use other open licenses; the project provides LICENSES.tres and asset .cfg files.. An open-ended sandbox in which players enforce most gameplay rules themselves."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/drwhut/tabletop-club",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row tabletop-club, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/drwhut/tabletop-club https://tabletopclub.net/ https://docs.tabletopclub.net/en/stable/general/about.html"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row tabletop-club, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/drwhut/tabletop-club https://tabletopclub.net/ https://docs.tabletopclub.net/en/stable/general/about.html"
     },
     "resourceIds": [],
     "intake": {
@@ -2123,10 +2123,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot 4.2+",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2143,12 +2143,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/P1X-in/tanks-of-freedom-ii",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Main game graphics: MIT; audio: CC BY / CC BY-SA; marketing media in docs: proprietary.. Qualification: Do not confuse it with the 2D predecessor; see LICENSE.md for license exceptions. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Main game graphics: MIT; audio: CC BY / CC BY-SA; marketing media in docs: proprietary.. Do not confuse it with the 2D predecessor; see LICENSE.md for license exceptions."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/P1X-in/tanks-of-freedom-ii",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row tanks-of-freedom-ii, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/P1X-in/tanks-of-freedom-ii https://czlowiekimadlo.itch.io/tanks-of-freedom-ii https://github.com/P1X-in/tanks-of-freedom-ii/blob/master/LICENSE.md"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row tanks-of-freedom-ii, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/P1X-in/tanks-of-freedom-ii https://czlowiekimadlo.itch.io/tanks-of-freedom-ii https://github.com/P1X-in/tanks-of-freedom-ii/blob/master/LICENSE.md"
     },
     "resourceIds": [],
     "intake": {
@@ -2168,10 +2168,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot + C# / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2188,12 +2188,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Revolutionary-Games/Thrive",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0-or-later + mod exception. Asset notes from that directory: Assets are in the repository/Git LFS, with a separate editable-assets repository; individual licenses are pending review.. Qualification: 3D presentation, but microbial-stage controls operate mainly on a plane; not all macroscopic evolutionary stages are complete. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0-or-later + mod exception. Asset notes from that directory: Assets are in the repository/Git LFS, with a separate editable-assets repository; individual licenses are pending review.. 3D presentation, but microbial-stage controls operate mainly on a plane; not all macroscopic evolutionary stages are complete."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Revolutionary-Games/Thrive",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row thrive, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Revolutionary-Games/Thrive https://www.revolutionarygamesstudio.com/ https://github.com/Revolutionary-Games/Thrive/blob/master/LICENSE.txt"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row thrive, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Revolutionary-Games/Thrive https://www.revolutionarygamesstudio.com/ https://github.com/Revolutionary-Games/Thrive/blob/master/LICENSE.txt"
     },
     "resourceIds": [],
     "intake": {
@@ -2213,10 +2213,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Godot Mono / C#",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2227,18 +2227,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Under the Cover of Night",
       "url": "https://github.com/pashudzu/UnderTheCoverOfNight",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/pashudzu/UnderTheCoverOfNight",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: pending review. Qualification: The author states that development has stopped; the README claims approximately 45–60 minutes, which has not been tested firsthand. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: pending review. The author states that development has stopped; the README claims approximately 45–60 minutes, which has not been tested firsthand."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/pashudzu/UnderTheCoverOfNight",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row under-the-cover-of-night, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/pashudzu/UnderTheCoverOfNight"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row under-the-cover-of-night, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/pashudzu/UnderTheCoverOfNight"
     },
     "resourceIds": [],
     "intake": {
@@ -2258,10 +2258,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2272,18 +2272,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for AnalogVHS",
       "url": "https://github.com/VargasCardona/AnalogVHS",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/VargasCardona/AnalogVHS",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: Uses third-party PSX Industrial Environment assets and videos; separate permissions are pending verification.. Qualification: The repository's GPL must not be taken to mean third-party videos and assets are open; the project uses Unity 2022.3.19f1. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0. Asset notes from that directory: Uses third-party PSX Industrial Environment assets and videos; separate permissions are pending verification.. The repository's GPL must not be taken to mean third-party videos and assets are open; the project uses Unity 2022.3.19f1."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/VargasCardona/AnalogVHS",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row analogvhs, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/VargasCardona/AnalogVHS"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row analogvhs, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/VargasCardona/AnalogVHS"
     },
     "resourceIds": [],
     "intake": {
@@ -2303,10 +2303,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2323,12 +2323,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/vgwb/Antura",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: BSD-2-Clause. Asset notes from that directory: Unless otherwise stated, art, 3D models, animation, sounds, and music are CC-BY-4.0.. Qualification: Includes 2D interfaces and various minigames; far removed from horror FPS themes, and included as an additional candidate for a complete 3D product. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: BSD-2-Clause. Asset notes from that directory: Unless otherwise stated, art, 3D models, animation, sounds, and music are CC-BY-4.0.. Includes 2D interfaces and various minigames; far removed from horror FPS themes, and included as an additional candidate for a complete 3D product."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/vgwb/Antura",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row antura-learn-with-antura, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/vgwb/Antura"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row antura-learn-with-antura, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/vgwb/Antura"
     },
     "resourceIds": [],
     "intake": {
@@ -2348,10 +2348,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2362,18 +2362,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Backrooms (Esyverse)",
       "url": "https://esyverse.itch.io/backrooms",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://esyverse.itch.io/backrooms",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: Unlicense (declared on the author's release page). Asset notes from that directory: pending review. Qualification: The source package requires payment and covers only v1.5.0, without Oculus Quest configuration; repo_url is the official source download page. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: Unlicense (declared on the author's release page). Asset notes from that directory: pending review. The source package requires payment and covers only v1.5.0, without Oculus Quest configuration; repo_url is the official source download page."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://esyverse.itch.io/backrooms",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row backrooms-esyverse, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://esyverse.itch.io/backrooms"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row backrooms-esyverse, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://esyverse.itch.io/backrooms"
     },
     "resourceIds": [],
     "intake": {
@@ -2393,10 +2393,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2407,18 +2407,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Cat Sanctuary",
       "url": "https://github.com/Amna-Hassan04/Cat-Sanctuary",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Amna-Hassan04/Cat-Sanctuary",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT (README declaration; a standalone LICENSE has not been verified). Asset notes from that directory: Assets from OpenGameArt, Freesound, and other sources; individual licenses: pending review.. Qualification: The standalone LICENSE link and third-party asset licenses still require review; a broad README statement alone cannot establish that all assets are freely licensed. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT (README declaration; a standalone LICENSE has not been verified). Asset notes from that directory: Assets from OpenGameArt, Freesound, and other sources; individual licenses: pending review.. The standalone LICENSE link and third-party asset licenses still require review; a broad README statement alone cannot establish that all assets are freely licensed."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Amna-Hassan04/Cat-Sanctuary",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row cat-sanctuary, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Amna-Hassan04/Cat-Sanctuary"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row cat-sanctuary, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Amna-Hassan04/Cat-Sanctuary"
     },
     "resourceIds": [],
     "intake": {
@@ -2438,10 +2438,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2458,12 +2458,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Nianyi-GSND-Projects/Classroom-404",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT (declared on the author's release page). Asset notes from that directory: CC-BY-NC-4.0; assets are restricted to noncommercial use.. Qualification: Code and assets have different licenses; the whole game cannot be described as having entirely free assets. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT (declared on the author's release page). Asset notes from that directory: CC-BY-NC-4.0; assets are restricted to noncommercial use.. Code and assets have different licenses; the whole game cannot be described as having entirely free assets."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Nianyi-GSND-Projects/Classroom-404",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row classroom-404, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Nianyi-GSND-Projects/Classroom-404 https://nianyi-wang.itch.io/classroom-404"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row classroom-404, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Nianyi-GSND-Projects/Classroom-404 https://nianyi-wang.itch.io/classroom-404"
     },
     "resourceIds": [],
     "intake": {
@@ -2483,10 +2483,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2497,18 +2497,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Delivery & Beyond (Game Off 2022)",
       "url": "https://github.com/edunad/delivery-beyond-gamejam",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/edunad/delivery-beyond-gamejam",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Includes Valve textures and models, Freesound content, and other third-party assets; assets do not share a single open license.. Qualification: The asset list includes Valve content; the MIT code license cannot be extended to all game assets. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Includes Valve textures and models, Freesound content, and other third-party assets; assets do not share a single open license.. The asset list includes Valve content; the MIT code license cannot be extended to all game assets."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/edunad/delivery-beyond-gamejam",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row delivery-beyond-game-off-2022, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/edunad/delivery-beyond-gamejam https://failcake.itch.io/gameoff-2022"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row delivery-beyond-game-off-2022, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/edunad/delivery-beyond-gamejam https://failcake.itch.io/gameoff-2022"
     },
     "resourceIds": [],
     "intake": {
@@ -2528,10 +2528,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2542,18 +2542,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Doggy Man 3D",
       "url": "https://github.com/0xMartin/DoggyMan3D",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/0xMartin/DoggyMan3D",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Includes creator-made assets, Unity Asset Store content, Freesound, and the MediEvil soundtrack; not all assets can be treated as open.. Qualification: The README explicitly states use of the MediEvil 1 remastered soundtrack; music and other third-party assets should be replaced or their permissions checked before reuse. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Includes creator-made assets, Unity Asset Store content, Freesound, and the MediEvil soundtrack; not all assets can be treated as open.. The README explicitly states use of the MediEvil 1 remastered soundtrack; music and other third-party assets should be replaced or their permissions checked before reuse."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/0xMartin/DoggyMan3D",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row doggy-man-3d, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/0xMartin/DoggyMan3D"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row doggy-man-3d, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/0xMartin/DoggyMan3D"
     },
     "resourceIds": [],
     "intake": {
@@ -2573,10 +2573,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity URP",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2587,18 +2587,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Hoptons Trip",
       "url": "https://ethanashulman.itch.io/hoptons-trip",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://ethanashulman.itch.io/hoptons-trip",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT (declared on the author's release page). Asset notes from that directory: The author declares both code and assets MIT.. Qualification: The author's page provides a Project Files/Source Code download entry; the supplied directory reports that the download target could not be retrieved during its check. repo_url is the official source access page, not a Git repository. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT (declared on the author's release page). Asset notes from that directory: The author declares both code and assets MIT.. The author's page provides a Project Files/Source Code download entry; the supplied directory reports that the download target could not be retrieved during its check. repo_url is the official source access page, not a Git repository."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://ethanashulman.itch.io/hoptons-trip",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row hoptons-trip, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://ethanashulman.itch.io/hoptons-trip"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row hoptons-trip, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://ethanashulman.itch.io/hoptons-trip"
     },
     "resourceIds": [],
     "intake": {
@@ -2618,10 +2618,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity + OpenXR",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2632,18 +2632,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Lockdown: Breakout",
       "url": "https://github.com/painfulmoments/lockdown_breakout",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/painfulmoments/lockdown_breakout",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT (original code). Asset notes from that directory: Third-party assets retain separate terms; the author says redistribution permission has been confirmed.. Qualification: Open code does not cover third-party assets; not all complete original asset packages have been made public. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT (original code). Asset notes from that directory: Third-party assets retain separate terms; the author says redistribution permission has been confirmed.. Open code does not cover third-party assets; not all complete original asset packages have been made public."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/painfulmoments/lockdown_breakout",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row lockdown-breakout, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/painfulmoments/lockdown_breakout"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row lockdown-breakout, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/painfulmoments/lockdown_breakout"
     },
     "resourceIds": [],
     "intake": {
@@ -2663,10 +2663,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity + FMOD + HPSXRP",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2677,18 +2677,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for METAL NEST",
       "url": "https://github.com/snoodledev/MetalNest",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/snoodledev/MetalNest",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Assets are public with the project; FMOD and third-party dependencies have separate terms that have not been individually verified.. Qualification: Depends on Unity 2020.2.7f1 and FMOD 2.02.13; the full scope of asset openness awaits item-by-item verification. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Assets are public with the project; FMOD and third-party dependencies have separate terms that have not been individually verified.. Depends on Unity 2020.2.7f1 and FMOD 2.02.13; the full scope of asset openness awaits item-by-item verification."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/snoodledev/MetalNest",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row metal-nest, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/snoodledev/MetalNest https://snoodlegames.itch.io/metal-nest"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row metal-nest, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/snoodledev/MetalNest https://snoodlegames.itch.io/metal-nest"
     },
     "resourceIds": [],
     "intake": {
@@ -2708,10 +2708,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2722,18 +2722,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Nodulus",
       "url": "https://github.com/Hyperparticle/nodulus",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Hyperparticle/nodulus",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Includes third-party Unity assets that require item-by-item checking against the README.. Qualification: Gameplay takes place on a flat grid with 3D presentation; this is not a free-roaming 3D game. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT. Asset notes from that directory: Includes third-party Unity assets that require item-by-item checking against the README.. Gameplay takes place on a flat grid with 3D presentation; this is not a free-roaming 3D game."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Hyperparticle/nodulus",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row nodulus, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Hyperparticle/nodulus"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row nodulus, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Hyperparticle/nodulus"
     },
     "resourceIds": [],
     "intake": {
@@ -2753,10 +2753,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2773,12 +2773,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Chikanz/november",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT (stated on the author's itch page).. Asset notes from that directory: Author-made models: CC-BY; audio mixes Freesound material and public-domain material.. Qualification: The supplied directory reports no separate code LICENSE in the repository; the MIT attribution is based on the author's itch metadata. Retain source attribution for each sound effect. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT (stated on the author's itch page).. Asset notes from that directory: Author-made models: CC-BY; audio mixes Freesound material and public-domain material.. The supplied directory reports no separate code LICENSE in the repository; the MIT attribution is based on the author's itch metadata. Retain source attribution for each sound effect."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Chikanz/november",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row november, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Chikanz/november https://snootboop.itch.io/november"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row november, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Chikanz/november https://snootboop.itch.io/november"
     },
     "resourceIds": [],
     "intake": {
@@ -2798,10 +2798,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2812,18 +2812,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for PolyRace",
       "url": "https://github.com/vthem/PolyRace",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/vthem/PolyRace",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT.. Asset notes from that directory: The author states that source code and assets are included in the repository; third-party libraries, fonts and icons have separately listed terms.. Qualification: Online features including daily races, missions and challenges have been removed; Blender is required to import models. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT.. Asset notes from that directory: The author states that source code and assets are included in the repository; third-party libraries, fonts and icons have separately listed terms.. Online features including daily races, missions and challenges have been removed; Blender is required to import models."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/vthem/PolyRace",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row polyrace, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/vthem/PolyRace"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row polyrace, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/vthem/PolyRace"
     },
     "resourceIds": [],
     "intake": {
@@ -2843,10 +2843,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2863,12 +2863,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/hackerspace-ntnu/Red-Planet-Rampage",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: BSD-4-Clause.. Asset notes from that directory: Assets are publicly available with the Unity project; the scope of third-party asset permissions is pending review.. Qualification: The four-clause BSD license includes an advertising acknowledgment obligation; third-party assets have not been individually audited. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: BSD-4-Clause.. Asset notes from that directory: Assets are publicly available with the Unity project; the scope of third-party asset permissions is pending review.. The four-clause BSD license includes an advertising acknowledgment obligation; third-party assets have not been individually audited."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/hackerspace-ntnu/Red-Planet-Rampage",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row red-planet-rampage, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/hackerspace-ntnu/Red-Planet-Rampage https://github.com/hackerspace-ntnu/Red-Planet-Rampage/blob/dev/LICENSE.md"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row red-planet-rampage, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/hackerspace-ntnu/Red-Planet-Rampage https://github.com/hackerspace-ntnu/Red-Planet-Rampage/blob/dev/LICENSE.md"
     },
     "resourceIds": [],
     "intake": {
@@ -2888,10 +2888,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity + Mirror",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2902,18 +2902,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Team-Capture",
       "url": "https://github.com/Voltstro-Studios/Team-Capture",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Voltstro-Studios/Team-Capture",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: AGPL-3.0.. Asset notes from that directory: Third-party code and assets are listed separately in the repository.. Qualification: The README explicitly describes a very early alpha; build the .NET source generator before building the Unity project. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: AGPL-3.0.. Asset notes from that directory: Third-party code and assets are listed separately in the repository.. The README explicitly describes a very early alpha; build the .NET source generator before building the Unity project."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Voltstro-Studios/Team-Capture",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row team-capture, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Voltstro-Studios/Team-Capture"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row team-capture, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Voltstro-Studios/Team-Capture"
     },
     "resourceIds": [],
     "intake": {
@@ -2933,10 +2933,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2953,12 +2953,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/MarkusSecundus/TheMachineOfDrJeffreyWright_AdventureGame",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT.. Asset notes from that directory: The author says their own artwork is openly available; the itch page text says MIT, while its asset metadata says CC0. Third-party fonts and sound effects are listed separately.. Qualification: Check third-party fonts and sound effects against the sources listed in the README. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT.. Asset notes from that directory: The author says their own artwork is openly available; the itch page text says MIT, while its asset metadata says CC0. Third-party fonts and sound effects are listed separately.. Check third-party fonts and sound effects against the sources listed in the README."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/MarkusSecundus/TheMachineOfDrJeffreyWright_AdventureGame",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row the-machine-of-dr-jeffrey-wright, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/MarkusSecundus/TheMachineOfDrJeffreyWright_AdventureGame https://markussecundus.itch.io/the-machine-of-dr-jeffrey-wright"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row the-machine-of-dr-jeffrey-wright, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/MarkusSecundus/TheMachineOfDrJeffreyWright_AdventureGame https://markussecundus.itch.io/the-machine-of-dr-jeffrey-wright"
     },
     "resourceIds": [],
     "intake": {
@@ -2978,10 +2978,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unity",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -2992,18 +2992,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Theseus: The Descent",
       "url": "https://github.com/surya-sk/theseus-the-descent",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/surya-sk/theseus-the-descent",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: The original soundtrack is outside the license and repository scope; other assets need to be checked against the credits.. Qualification: Music requires separate permission from its author, Drkblu; store installation was not verified in the supplied directory's review. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: The original soundtrack is outside the license and repository scope; other assets need to be checked against the credits.. Music requires separate permission from its author, Drkblu; store installation was not verified in the supplied directory's review."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/surya-sk/theseus-the-descent",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row theseus-the-descent, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/surya-sk/theseus-the-descent"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row theseus-the-descent, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/surya-sk/theseus-the-descent"
     },
     "resourceIds": [],
     "intake": {
@@ -3023,10 +3023,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unreal Engine 5",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3037,18 +3037,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Bomberrage",
       "url": "https://github.com/JanSeliv/Bomber",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/JanSeliv/Bomber",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT.. Asset notes from that directory: Full game content and a stripped-down Blockout version are separate; third-party content needs review.. Qualification: The current repository contains stripped-down content; obtain the full Maya map content from Releases. UE itself is subject to Epic's license. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT.. Asset notes from that directory: Full game content and a stripped-down Blockout version are separate; third-party content needs review.. The current repository contains stripped-down content; obtain the full Maya map content from Releases. UE itself is subject to Epic's license."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/JanSeliv/Bomber",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row bomberrage, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/JanSeliv/Bomber"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row bomberrage, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/JanSeliv/Bomber"
     },
     "resourceIds": [],
     "intake": {
@@ -3068,10 +3068,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Unreal Engine 4",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3082,18 +3082,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Budget Backrooms",
       "url": "https://github.com/dabardibid/Budget-Backrooms",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/dabardibid/Budget-Backrooms",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0 (as labeled in the repository).. Asset notes from that directory: Third-party sound effects and assets need to be checked against CREDITS.. Qualification: The repository's GPL label does not mean the UE engine is open source; compatibility with the engine EULA and third-party sound effects has not been audited. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0 (as labeled in the repository).. Asset notes from that directory: Third-party sound effects and assets need to be checked against CREDITS.. The repository's GPL label does not mean the UE engine is open source; compatibility with the engine EULA and third-party sound effects has not been audited."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/dabardibid/Budget-Backrooms",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row budget-backrooms, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/dabardibid/Budget-Backrooms"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row budget-backrooms, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/dabardibid/Budget-Backrooms"
     },
     "resourceIds": [],
     "intake": {
@@ -3113,10 +3113,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Panda3D + Python",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3127,18 +3127,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Avolition 2",
       "url": "https://github.com/echo-devim/Avolition2",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/echo-devim/Avolition2",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: Models, music and sound effects are included with the project; see acknowledgements for third-party sources. Individual licenses await review.. Qualification: A derivative of wezu/Avolition, not to be double-counted alongside the original as an independent major game; the author warns of stability issues. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: Models, music and sound effects are included with the project; see acknowledgements for third-party sources. Individual licenses await review.. A derivative of wezu/Avolition, not to be double-counted alongside the original as an independent major game; the author warns of stability issues."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/echo-devim/Avolition2",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row avolition-2, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/echo-devim/Avolition2"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row avolition-2, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/echo-devim/Avolition2"
     },
     "resourceIds": [],
     "intake": {
@@ -3158,10 +3158,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Panda3D + Python",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3178,12 +3178,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/cflavio/yorg",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: The remaining author-made assets are CC-BY-SA; some OpenGameArt assets use different CC licenses.. Qualification: Requires recursively cloning the yyagl/yracing submodules and generating assets; non-developers can choose the stable branch. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: The remaining author-made assets are CC-BY-SA; some OpenGameArt assets use different CC licenses.. Requires recursively cloning the yyagl/yracing submodules and generating assets; non-developers can choose the stable branch."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/cflavio/yorg",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row yorg, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/cflavio/yorg https://github.com/cflavio/yorg/blob/master/license.txt"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row yorg, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/cflavio/yorg https://github.com/cflavio/yorg/blob/master/license.txt"
     },
     "resourceIds": [],
     "intake": {
@@ -3203,10 +3203,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Blender Game Engine 2.68 / Python",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3217,18 +3217,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Sintel The Game",
       "url": "https://github.com/jonburesh/sintelgame",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/jonburesh/sintelgame",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT (explicitly stated in the current repository, according to the supplied directory).. Asset notes from that directory: The repository contains Blender scenes and game assets; separate asset licenses and exceptions for original film assets have not been individually checked.. Qualification: An old project dependent on Blender 2.68/BGE; it cannot run directly in modern Blender and is not a complete release-grade long-form game. Do not automatically apply the current code's MIT license to all film assets. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT (explicitly stated in the current repository, according to the supplied directory).. Asset notes from that directory: The repository contains Blender scenes and game assets; separate asset licenses and exceptions for original film assets have not been individually checked.. An old project dependent on Blender 2.68/BGE; it cannot run directly in modern Blender and is not a complete release-grade long-form game. Do not automatically apply the current code's MIT license to all film assets."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/jonburesh/sintelgame",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row sintel-the-game, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/jonburesh/sintelgame"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row sintel-the-game, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/jonburesh/sintelgame"
     },
     "resourceIds": [],
     "intake": {
@@ -3248,10 +3248,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Blender Game Engine",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3262,18 +3262,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Yo Frankie!",
       "url": "https://github.com/BlenderVR/yofrankie",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/BlenderVR/yofrankie",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0-or-later (Python scripts).. Asset notes from that directory: Game media assets: CC BY 3.0; see COPYING.. Qualification: repo_url points to a historical mirror; the README requires a compatible environment such as the old Blender 2.49a. Modern BGE/UPBGE requires porting. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0-or-later (Python scripts).. Asset notes from that directory: Game media assets: CC BY 3.0; see COPYING.. repo_url points to a historical mirror; the README requires a compatible environment such as the old Blender 2.49a. Modern BGE/UPBGE requires porting."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/BlenderVR/yofrankie",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row yo-frankie, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/BlenderVR/yofrankie https://github.com/BlenderVR/yofrankie/blob/master/COPYING https://apricot.blender.org/"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row yo-frankie, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/BlenderVR/yofrankie https://github.com/BlenderVR/yofrankie/blob/master/COPYING https://apricot.blender.org/"
     },
     "resourceIds": [],
     "intake": {
@@ -3293,10 +3293,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Pyrogenesis / C++ / JavaScript",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3307,18 +3307,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for 0 A.D.",
       "url": "https://gitea.wildfiregames.com/0ad/0ad",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://gitea.wildfiregames.com/0ad/0ad",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: Official artwork is mainly CC-BY-SA-3.0; follow individual file notices for exceptions.. Qualification: The supplied directory states that the GitHub 0ad/0ad mirror was deprecated following a 2024 migration; use the official Gitea repository. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: Official artwork is mainly CC-BY-SA-3.0; follow individual file notices for exceptions.. The supplied directory states that the GitHub 0ad/0ad mirror was deprecated following a 2024 migration; use the official Gitea repository."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://gitea.wildfiregames.com/0ad/0ad",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row 0-a-d, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://gitea.wildfiregames.com/0ad/0ad https://github.com/0ad/0ad https://play0ad.com/game-info/project-overview/"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row 0-a-d, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://gitea.wildfiregames.com/0ad/0ad https://github.com/0ad/0ad https://play0ad.com/game-info/project-overview/"
     },
     "resourceIds": [],
     "intake": {
@@ -3338,10 +3338,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "CRX / id Tech 2 derivative / C",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3352,18 +3352,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Alien Arena",
       "url": "https://github.com/alienarena/alienarena",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/alienarena/alienarena",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: pending review. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: pending review. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/alienarena/alienarena",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row alien-arena, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/alienarena/alienarena"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row alien-arena, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/alienarena/alienarena"
     },
     "resourceIds": [],
     "intake": {
@@ -3383,10 +3383,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C++ / OpenGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3397,18 +3397,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Armagetron Advanced",
       "url": "https://github.com/ArmagetronAd/armagetronad",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/ArmagetronAd/armagetronad",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: pending review. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: pending review. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/ArmagetronAd/armagetronad",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row armagetron-advanced, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/ArmagetronAd/armagetronad"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row armagetron-advanced, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/ArmagetronAd/armagetronad"
     },
     "resourceIds": [],
     "intake": {
@@ -3428,10 +3428,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Cube / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3448,12 +3448,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/assaultcube/AC",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: zlib-family; see the documentation for source-file terms and additional conditions.. Asset notes from that directory: Mixed licenses; official terms allow redistribution of the unmodified complete package, but this does not imply that all assets may be freely adapted.. Qualification: Review the official license page item by item. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: zlib-family; see the documentation for source-file terms and additional conditions.. Asset notes from that directory: Mixed licenses; official terms allow redistribution of the unmodified complete package, but this does not imply that all assets may be freely adapted.. Review the official license page item by item."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/assaultcube/AC",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row assaultcube, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/assaultcube/AC https://assault.cubers.net/docs/license.html"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row assaultcube, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/assaultcube/AC https://assault.cubers.net/docs/license.html"
     },
     "resourceIds": [],
     "intake": {
@@ -3473,10 +3473,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Recoil / Spring / Lua",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3487,18 +3487,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Beyond All Reason",
       "url": "https://github.com/beyond-all-reason/Beyond-All-Reason",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/beyond-all-reason/Beyond-All-Reason",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0-or-later (individual files may state otherwise).. Asset notes from that directory: Most models: CC-BY-NC-ND-4.0; some sound effects: all rights reserved; some models: CC-BY-SA.. Qualification: Do not treat the assets as a whole as FOSS or as a pool freely available for adaptation or redistribution. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0-or-later (individual files may state otherwise).. Asset notes from that directory: Most models: CC-BY-NC-ND-4.0; some sound effects: all rights reserved; some models: CC-BY-SA.. Do not treat the assets as a whole as FOSS or as a pool freely available for adaptation or redistribution."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/beyond-all-reason/Beyond-All-Reason",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row beyond-all-reason, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/beyond-all-reason/Beyond-All-Reason"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row beyond-all-reason, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/beyond-all-reason/Beyond-All-Reason"
     },
     "resourceIds": [],
     "intake": {
@@ -3518,10 +3518,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C++ / OpenGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3532,18 +3532,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for BZFlag",
       "url": "https://github.com/BZFlag-Dev/bzflag",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/BZFlag-Dev/bzflag",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: LGPL-2.1 OR MPL-2.0.. Asset notes from that directory: pending review. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: LGPL-2.1 OR MPL-2.0.. Asset notes from that directory: pending review. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/BZFlag-Dev/bzflag",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row bzflag, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/BZFlag-Dev/bzflag"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row bzflag, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/BZFlag-Dev/bzflag"
     },
     "resourceIds": [],
     "intake": {
@@ -3563,10 +3563,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C++ / CBot",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3577,18 +3577,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Colobot: Gold Edition",
       "url": "https://github.com/colobot/colobot",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/colobot/colobot",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: The official colobot-data repository is distributed separately.. Qualification: The supplied directory considers it particularly suited to agent research linking code with 3D execution results; data must be fetched recursively. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: The official colobot-data repository is distributed separately.. The supplied directory considers it particularly suited to agent research linking code with 3D execution results; data must be fetched recursively."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/colobot/colobot",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row colobot-gold-edition, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/colobot/colobot https://github.com/colobot/colobot-data"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row colobot-gold-edition, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/colobot/colobot https://github.com/colobot/colobot-data"
     },
     "resourceIds": [],
     "intake": {
@@ -3608,10 +3608,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C / OpenGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3622,18 +3622,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Craft",
       "url": "https://github.com/fogleman/Craft",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/fogleman/Craft",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: MIT.. Asset notes from that directory: pending review. Qualification: The old public server has shut down; a Python server can be self-hosted. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: MIT.. Asset notes from that directory: pending review. The old public server has shut down; a Python server can be self-hosted."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/fogleman/Craft",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row craft, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/fogleman/Craft"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row craft, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/fogleman/Craft"
     },
     "resourceIds": [],
     "intake": {
@@ -3653,10 +3653,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Cube 2 / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3667,18 +3667,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Cube 2: Sauerbraten",
       "url": "https://github.com/jsrmalvarez/sauerbraten",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/jsrmalvarez/sauerbraten",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: zlib.. Asset notes from that directory: The official README explicitly states that the game media is not open source as a whole.. Qualification: The listed GitHub repository is an SVN mirror; do not treat all artwork as freely reusable templates. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: zlib.. Asset notes from that directory: The official README explicitly states that the game media is not open source as a whole.. The listed GitHub repository is an SVN mirror; do not treat all artwork as freely reusable templates."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/jsrmalvarez/sauerbraten",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row cube-2-sauerbraten, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/jsrmalvarez/sauerbraten"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row cube-2-sauerbraten, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/jsrmalvarez/sauerbraten"
     },
     "resourceIds": [],
     "intake": {
@@ -3698,10 +3698,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C++ / OpenGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3712,18 +3712,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Egoboo",
       "url": "https://github.com/egoboo/egoboo",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/egoboo/egoboo",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: The data submodule contains separate content; per-asset review is pending.. Qualification: Building requires recursively fetching submodules. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: The data submodule contains separate content; per-asset review is pending.. Building requires recursively fetching submodules."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/egoboo/egoboo",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row egoboo, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/egoboo/egoboo"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row egoboo, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/egoboo/egoboo"
     },
     "resourceIds": [],
     "intake": {
@@ -3743,10 +3743,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "SimGear / OpenSceneGraph / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3757,18 +3757,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for FlightGear",
       "url": "https://github.com/FlightGear/flightgear",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/FlightGear/flightgear",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Aircraft and scenery data are obtained separately; licenses must be checked for each package.. Qualification: Included under the directory's expanded simulator scope; the GitHub repository is labeled as a mirror. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Aircraft and scenery data are obtained separately; licenses must be checked for each package.. Included under the directory's expanded simulator scope; the GitHub repository is labeled as a mirror."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/FlightGear/flightgear",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row flightgear, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/FlightGear/flightgear"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row flightgear, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/FlightGear/flightgear"
     },
     "resourceIds": [],
     "intake": {
@@ -3788,10 +3788,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C / C++ / Lua",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3802,18 +3802,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Lips of Suna",
       "url": "https://sourceforge.net/p/lipsofsuna/code/",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://sourceforge.net/p/lipsofsuna/code/",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: LGPL-3.0.. Asset notes from that directory: CC-BY-SA-3.0.. Qualification: An old project; its current build and maintenance status await practical testing. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: LGPL-3.0.. Asset notes from that directory: CC-BY-SA-3.0.. An old project; its current build and maintenance status await practical testing."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://sourceforge.net/p/lipsofsuna/code/",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row lips-of-suna, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://sourceforge.net/p/lipsofsuna/code/"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row lips-of-suna, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://sourceforge.net/p/lipsofsuna/code/"
     },
     "resourceIds": [],
     "intake": {
@@ -3833,10 +3833,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C++ / SDL / OpenGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3847,18 +3847,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Lugaru",
       "url": "https://gitlab.com/osslugaru/lugaru",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://gitlab.com/osslugaru/lugaru",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: CC-BY-SA-3.0 and CC-BY-SA-4.0; see CONTENT-LICENSE.txt.. Qualification: Distinguish the official WolfireGames repository from the community continuation on GitLab. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: CC-BY-SA-3.0 and CC-BY-SA-4.0; see CONTENT-LICENSE.txt.. Distinguish the official WolfireGames repository from the community continuation on GitLab."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://gitlab.com/osslugaru/lugaru",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row lugaru, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://gitlab.com/osslugaru/lugaru https://github.com/osslugaru/lugaru https://github.com/WolfireGames/lugaru"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row lugaru, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://gitlab.com/osslugaru/lugaru https://github.com/osslugaru/lugaru https://github.com/WolfireGames/lugaru"
     },
     "resourceIds": [],
     "intake": {
@@ -3878,10 +3878,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Glest derivative / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3898,12 +3898,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/MegaGlest/megaglest-source",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0 (the supplied directory cites the official release page; the only/or-later suffix awaits review).. Asset notes from that directory: The official release page lists media as CC-BY-SA-3.0; third-party faction and map packages need separate checks.. Qualification: Not merely an engine demo; the directory states that official complete game releases exist. Cloning the engine still requires obtaining data. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0 (the supplied directory cites the official release page; the only/or-later suffix awaits review).. Asset notes from that directory: The official release page lists media as CC-BY-SA-3.0; third-party faction and map packages need separate checks.. Not merely an engine demo; the directory states that official complete game releases exist. Cloning the engine still requires obtaining data."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/MegaGlest/megaglest-source",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row megaglest, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/MegaGlest/megaglest-source https://sourceforge.net/projects/megaglest/"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row megaglest, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/MegaGlest/megaglest-source https://sourceforge.net/projects/megaglest/"
     },
     "resourceIds": [],
     "intake": {
@@ -3923,10 +3923,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Luanti / Lua",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3937,18 +3937,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Mineclonia",
       "url": "https://codeberg.org/mineclonia/mineclonia",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://codeberg.org/mineclonia/mineclonia",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0-or-later.. Asset notes from that directory: Separate asset licenses await review.. Qualification: The supplied directory reports restricted direct access to Codeberg and ContentDB content during its review, relying instead on search information from the author's official release page; VoxeLibre shares its lineage but develops independently. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0-or-later.. Asset notes from that directory: Separate asset licenses await review.. The supplied directory reports restricted direct access to Codeberg and ContentDB content during its review, relying instead on search information from the author's official release page; VoxeLibre shares its lineage but develops independently."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://codeberg.org/mineclonia/mineclonia",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row mineclonia, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://codeberg.org/mineclonia/mineclonia https://content.luanti.org/packages/ryvnf/mineclonia/"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row mineclonia, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://codeberg.org/mineclonia/mineclonia https://content.luanti.org/packages/ryvnf/mineclonia/"
     },
     "resourceIds": [],
     "intake": {
@@ -3968,10 +3968,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Luanti / Lua",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -3982,18 +3982,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Minetest Game",
       "url": "https://github.com/luanti-org/minetest_game",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/luanti-org/minetest_game",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: LGPL-2.1 (the supplied directory cites the root LICENSE; individual mod declarations and the or-later suffix await review).. Asset notes from that directory: The root LICENSE lists media as CC-BY-SA-3.0; each mod's README/license governs its authorship and exceptions.. Qualification: Count separately from the Luanti engine; do not treat it as a complete Minecraft equivalent. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: LGPL-2.1 (the supplied directory cites the root LICENSE; individual mod declarations and the or-later suffix await review).. Asset notes from that directory: The root LICENSE lists media as CC-BY-SA-3.0; each mod's README/license governs its authorship and exceptions.. Count separately from the Luanti engine; do not treat it as a complete Minecraft equivalent."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/luanti-org/minetest_game",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row minetest-game, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/luanti-org/minetest_game https://github.com/luanti-org/minetest_game/blob/master/LICENSE.txt"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row minetest-game, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/luanti-org/minetest_game https://github.com/luanti-org/minetest_game/blob/master/LICENSE.txt"
     },
     "resourceIds": [],
     "intake": {
@@ -4013,10 +4013,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C / OpenGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4027,18 +4027,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Neverball / Neverputt",
       "url": "https://github.com/neverball/neverball",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/neverball/neverball",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0-or-later (main project; some files have exceptions such as GPLv3 or MIT).. Asset notes from that directory: Main project: GPLv2-or-later; fonts and third-party assets such as Octocat have separate licenses or permissions. See LICENSE.md.. Qualification: Combined into one entry as part of the same release lineage to avoid inflating counts through sub-games. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0-or-later (main project; some files have exceptions such as GPLv3 or MIT).. Asset notes from that directory: Main project: GPLv2-or-later; fonts and third-party assets such as Octocat have separate licenses or permissions. See LICENSE.md.. Combined into one entry as part of the same release lineage to avoid inflating counts through sub-games."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/neverball/neverball",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row neverball-neverputt, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/neverball/neverball https://github.com/Neverball/neverball/blob/master/LICENSE.md"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row neverball-neverputt, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/neverball/neverball https://github.com/Neverball/neverball/blob/master/LICENSE.md"
     },
     "resourceIds": [],
     "intake": {
@@ -4058,10 +4058,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / Objective-C / OpenGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4072,18 +4072,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Oolite",
       "url": "https://github.com/OoliteProject/oolite",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/OoliteProject/oolite",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: Included artwork and configuration may be used under either GPL or CC-BY-NC-SA-3.0; third-party exceptions are listed separately.. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: Included artwork and configuration may be used under either GPL or CC-BY-NC-SA-3.0; third-party exceptions are listed separately.. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/OoliteProject/oolite",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row oolite, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/OoliteProject/oolite https://github.com/OoliteProject/oolite/blob/master/LICENSE.md"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row oolite, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/OoliteProject/oolite https://github.com/OoliteProject/oolite/blob/master/LICENSE.md"
     },
     "resourceIds": [],
     "intake": {
@@ -4103,10 +4103,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "ioquake3 / C",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4117,18 +4117,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for OpenArena",
       "url": "https://github.com/OpenArena/gamecode",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/OpenArena/gamecode",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Official standalone game data package; assets were not individually checked in the supplied directory's review.. Qualification: See OpenArena/engine for the engine; do not confuse the commercial Quake data requirements in ioquake3's generic README with OpenArena's own requirements. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Official standalone game data package; assets were not individually checked in the supplied directory's review.. See OpenArena/engine for the engine; do not confuse the commercial Quake data requirements in ioquake3's generic README with OpenArena's own requirements."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/OpenArena/gamecode",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row openarena, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/OpenArena/gamecode https://github.com/OpenArena/engine"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row openarena, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/OpenArena/gamecode https://github.com/OpenArena/engine"
     },
     "resourceIds": [],
     "intake": {
@@ -4148,10 +4148,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "OGRE / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4162,18 +4162,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for OpenDungeons",
       "url": "https://github.com/OpenDungeons/OpenDungeons",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/OpenDungeons/OpenDungeons",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0-or-later.. Asset notes from that directory: See CREDITS and licenses for individual asset licenses.. Qualification: The official README describes years of low activity and recommends also examining OpenDungeonsPlus. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0-or-later.. Asset notes from that directory: See CREDITS and licenses for individual asset licenses.. The official README describes years of low activity and recommends also examining OpenDungeonsPlus."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/OpenDungeons/OpenDungeons",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row opendungeons, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/OpenDungeons/OpenDungeons"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row opendungeons, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/OpenDungeons/OpenDungeons"
     },
     "resourceIds": [],
     "intake": {
@@ -4193,10 +4193,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "OGRE / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4207,18 +4207,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for OpenDungeonsPlus",
       "url": "https://github.com/tomluchowski/OpenDungeonsPlus",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/tomluchowski/OpenDungeonsPlus",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0-or-later.. Asset notes from that directory: See CREDITS and licenses for individual asset licenses.. Qualification: Shares a lineage with OpenDungeons; they may be grouped as a family for statistical counts. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0-or-later.. Asset notes from that directory: See CREDITS and licenses for individual asset licenses.. Shares a lineage with OpenDungeons; they may be grouped as a family for statistical counts."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/tomluchowski/OpenDungeonsPlus",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row opendungeonsplus, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/tomluchowski/OpenDungeonsPlus"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row opendungeonsplus, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/tomluchowski/OpenDungeonsPlus"
     },
     "resourceIds": [],
     "intake": {
@@ -4238,10 +4238,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C++ / Lua",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4258,12 +4258,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/pioneerspacesim/pioneer",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: pending review. Qualification: The project's contribution policy does not accept code primarily generated by AI; treat research involving local modifications separately from upstream submissions. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: pending review. The project's contribution policy does not accept code primarily generated by AI; treat research involving local modifications separately from upstream submissions."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/pioneerspacesim/pioneer",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row pioneer, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/pioneerspacesim/pioneer"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row pioneer, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/pioneerspacesim/pioneer"
     },
     "resourceIds": [],
     "intake": {
@@ -4283,10 +4283,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "id Tech 2 derivative / SDL3",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4297,18 +4297,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Quetoo",
       "url": "https://github.com/jdolan/quetoo",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/jdolan/quetoo",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Official quetoo-data: CC-BY-SA-4.0.. Qualification: The game can fetch assets automatically at startup; compiling the current code requires its SDL3 branch. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Official quetoo-data: CC-BY-SA-4.0.. The game can fetch assets automatically at startup; compiling the current code requires its SDL3 branch."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/jdolan/quetoo",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row quetoo, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/jdolan/quetoo https://github.com/jdolan/quetoo-data"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row quetoo, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/jdolan/quetoo https://github.com/jdolan/quetoo-data"
     },
     "resourceIds": [],
     "intake": {
@@ -4328,10 +4328,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Tesseract / Cube 2 derivative / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4348,12 +4348,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/redeclipse/base",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: zlib.. Asset notes from that directory: pending review. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: zlib.. Asset notes from that directory: pending review. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/redeclipse/base",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row red-eclipse, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/redeclipse/base https://www.redeclipse.net/license"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row red-eclipse, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/redeclipse/base https://www.redeclipse.net/license"
     },
     "resourceIds": [],
     "intake": {
@@ -4373,10 +4373,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "OGRE / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4393,12 +4393,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/RigsOfRods/rigs-of-rods",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: Official content and community mods each have their own licenses.. Qualification: A simulation sandbox, not a story-driven level-based game. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: Official content and community mods each have their own licenses.. A simulation sandbox, not a story-driven level-based game."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/RigsOfRods/rigs-of-rods",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row rigs-of-rods, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/RigsOfRods/rigs-of-rods"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row rigs-of-rods, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/RigsOfRods/rigs-of-rods"
     },
     "resourceIds": [],
     "intake": {
@@ -4418,10 +4418,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C++ / OpenGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4432,18 +4432,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Scorched3D",
       "url": "https://sourceforge.net/projects/scorched3d/",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://sourceforge.net/projects/scorched3d/",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: pending review. Qualification: An older project; building on modern systems requires practical testing. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: pending review. An older project; building on modern systems requires practical testing."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://sourceforge.net/projects/scorched3d/",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row scorched3d, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://sourceforge.net/projects/scorched3d/"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row scorched3d, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://sourceforge.net/projects/scorched3d/"
     },
     "resourceIds": [],
     "intake": {
@@ -4463,10 +4463,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Blitz3D / BlitzBasic",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4477,18 +4477,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for SCP – Containment Breach",
       "url": "https://github.com/Regalis11/scpcb",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Regalis11/scpcb",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: CC-BY-SA-3.0 (source is public; code uses a CC content-oriented license).. Asset notes from that directory: The game is released under CC-BY-SA-3.0; third-party components need separate checks.. Qualification: Uses the old Blitz3D toolchain; the project also places its code under CC-BY-SA-3.0. Creative Commons officially discourages using CC licenses for software, so present it separately from open-source projects using common software licenses. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: CC-BY-SA-3.0 (source is public; code uses a CC content-oriented license).. Asset notes from that directory: The game is released under CC-BY-SA-3.0; third-party components need separate checks.. Uses the old Blitz3D toolchain; the project also places its code under CC-BY-SA-3.0. Creative Commons officially discourages using CC licenses for software, so present it separately from open-source projects using common software licenses."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Regalis11/scpcb",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row scp-containment-breach, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Regalis11/scpcb https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row scp-containment-breach, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Regalis11/scpcb https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software"
     },
     "resourceIds": [],
     "intake": {
@@ -4508,10 +4508,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "ioquake3 / C",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4522,18 +4522,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Smokin’ Guns",
       "url": "https://github.com/smokin-guns/SmokinGuns",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/smokin-guns/SmokinGuns",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL (specific version pending review).. Asset notes from that directory: pending review. Qualification: Artwork and code licenses need separate checks. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL (specific version pending review).. Asset notes from that directory: pending review. Artwork and code licenses need separate checks."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/smokin-guns/SmokinGuns",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row smokin-guns, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/smokin-guns/SmokinGuns"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row smokin-guns, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/smokin-guns/SmokinGuns"
     },
     "resourceIds": [],
     "intake": {
@@ -4553,10 +4553,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "TORCS derivative / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4567,18 +4567,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Speed Dreams",
       "url": "https://forge.a-lec.org/speed-dreams/speed-dreams-code",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://forge.a-lec.org/speed-dreams/speed-dreams-code",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: Base assets are distributed in a separate repository; per-asset permissions await review.. Qualification: The official main repository is hosted on Forgejo. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: Base assets are distributed in a separate repository; per-asset permissions await review.. The official main repository is hosted on Forgejo."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://forge.a-lec.org/speed-dreams/speed-dreams-code",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row speed-dreams, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://forge.a-lec.org/speed-dreams/speed-dreams-code"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row speed-dreams, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://forge.a-lec.org/speed-dreams/speed-dreams-code"
     },
     "resourceIds": [],
     "intake": {
@@ -4598,10 +4598,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Ogre-Next 3 / VDrift / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4612,18 +4612,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Stunt Rally 3",
       "url": "https://github.com/stuntrally/stuntrally3",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/stuntrally/stuntrally3",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0-or-later.. Asset notes from that directory: Artwork licenses are listed separately in _*.txt files under data.. Qualification: Part of the same series as the older Stunt Rally; the directory does not count the older version separately. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0-or-later.. Asset notes from that directory: Artwork licenses are listed separately in _*.txt files under data.. Part of the same series as the older Stunt Rally; the directory does not count the older version separately."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/stuntrally/stuntrally3",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row stunt-rally-3, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/stuntrally/stuntrally3 https://github.com/stuntrally/stuntrally3/blob/main/Readme.md"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row stunt-rally-3, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/stuntrally/stuntrally3 https://github.com/stuntrally/stuntrally3/blob/main/Readme.md"
     },
     "resourceIds": [],
     "intake": {
@@ -4643,10 +4643,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom rendering / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4663,12 +4663,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/supertuxkart/stk-code",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL (see COPYING for the specific version).. Asset notes from that directory: Assets have separate sources and licenses; do not interpret them solely under the code's GPL license.. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL (see COPYING for the specific version).. Asset notes from that directory: Assets have separate sources and licenses; do not interpret them solely under the code's GPL license.. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/supertuxkart/stk-code",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row supertuxkart, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/supertuxkart/stk-code"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row supertuxkart, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/supertuxkart/stk-code"
     },
     "resourceIds": [],
     "intake": {
@@ -4688,10 +4688,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / Java / LWJGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4708,12 +4708,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/MovingBlocks/Terasology",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: Apache-2.0.. Asset notes from that directory: Separate module and asset licenses await review.. Qualification: A game-module combination must be specified; the core engine alone should not be treated as a complete task target. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: Apache-2.0.. Asset notes from that directory: Separate module and asset licenses await review.. A game-module combination must be specified; the core engine alone should not be treated as a complete task target."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/MovingBlocks/Terasology",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row terasology, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/MovingBlocks/Terasology"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row terasology, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/MovingBlocks/Terasology"
     },
     "resourceIds": [],
     "intake": {
@@ -4733,10 +4733,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Tesseract / Cube 2 derivative / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4747,18 +4747,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Tesseract",
       "url": "https://websvn.tuxfamily.org/tesseract/main/",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://websvn.tuxfamily.org/tesseract/main/",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: zlib-family (specific files require rechecking).. Asset notes from that directory: Mixed asset licenses; consult the data documentation.. Qualification: The supplied directory reports a 502 response when directly accessing the official site during its review; it reports confirming the source index and source-code entry point, but not testing a build. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: zlib-family (specific files require rechecking).. Asset notes from that directory: Mixed asset licenses; consult the data documentation.. The supplied directory reports a 502 response when directly accessing the official site during its review; it reports confirming the source index and source-code entry point, but not testing a build."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://websvn.tuxfamily.org/tesseract/main/",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row tesseract, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://websvn.tuxfamily.org/tesseract/main/ https://tesseract.gg/"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row tesseract, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://websvn.tuxfamily.org/tesseract/main/ https://tesseract.gg/"
     },
     "resourceIds": [],
     "intake": {
@@ -4778,10 +4778,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "id Tech 4 derivative / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4792,18 +4792,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for The Dark Mod",
       "url": "https://svn.thedarkmod.com/publicsvn/darkmod_src/trunk/",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://svn.thedarkmod.com/publicsvn/darkmod_src/trunk/",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0 (third-party components are noted separately).. Asset notes from that directory: Default: CC-BY-NC-SA-3.0; community missions have separate terms, and some third-party assets have additional restrictions.. Qualification: Described as a standalone game, with no purchase of Doom 3 required. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0 (third-party components are noted separately).. Asset notes from that directory: Default: CC-BY-NC-SA-3.0; community missions have separate terms, and some third-party assets have additional restrictions.. Described as a standalone game, with no purchase of Doom 3 required."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://svn.thedarkmod.com/publicsvn/darkmod_src/trunk/",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row the-dark-mod, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://svn.thedarkmod.com/publicsvn/darkmod_src/trunk/ https://github.com/stgatilov/darkmod_src https://github.com/stgatilov/darkmod_src/blob/trunk/LICENSE.txt"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row the-dark-mod, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://svn.thedarkmod.com/publicsvn/darkmod_src/trunk/ https://github.com/stgatilov/darkmod_src https://github.com/stgatilov/darkmod_src/blob/trunk/LICENSE.txt"
     },
     "resourceIds": [],
     "intake": {
@@ -4823,10 +4823,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4837,18 +4837,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for TORCS",
       "url": "https://sourceforge.net/projects/torcs/",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://sourceforge.net/projects/torcs/",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Mixed assets; check the permissions for each resource.. Qualification: SourceForge is the official release and source-code entry point. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Mixed assets; check the permissions for each resource.. SourceForge is the official release and source-code entry point."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://sourceforge.net/projects/torcs/",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row torcs, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://sourceforge.net/projects/torcs/"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row torcs, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://sourceforge.net/projects/torcs/"
     },
     "resourceIds": [],
     "intake": {
@@ -4868,10 +4868,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "id Tech 3 / C",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4882,18 +4882,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Tremulous",
       "url": "https://github.com/darklegion/tremulous",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/darklegion/tremulous",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL (specific version pending review).. Asset notes from that directory: pending review. Qualification: Distinguish the original project from the GrangerHub continuation; historical dependencies may need adaptation. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL (specific version pending review).. Asset notes from that directory: pending review. Distinguish the original project from the GrangerHub continuation; historical dependencies may need adaptation."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/darklegion/tremulous",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row tremulous, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/darklegion/tremulous"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row tremulous, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/darklegion/tremulous"
     },
     "resourceIds": [],
     "intake": {
@@ -4913,10 +4913,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C++ / OpenGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4927,18 +4927,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Trigger Rally",
       "url": "https://sourceforge.net/p/trigger-rally/code/",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://sourceforge.net/p/trigger-rally/code/",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0 (the supplied directory cites the official README; the only/or-later suffix awaits review).. Asset notes from that directory: Data has different authors and licenses; check doc/DATA_AUTHORS.txt item by item.. Qualification: This entry is the native C++ game; do not confuse it with CodeArtemis's web project of the same name. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0 (the supplied directory cites the official README; the only/or-later suffix awaits review).. Asset notes from that directory: Data has different authors and licenses; check doc/DATA_AUTHORS.txt item by item.. This entry is the native C++ game; do not confuse it with CodeArtemis's web project of the same name."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://sourceforge.net/p/trigger-rally/code/",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row trigger-rally, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://sourceforge.net/p/trigger-rally/code/ https://sourceforge.net/p/trigger-rally/code/HEAD/tree/doc/"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row trigger-rally, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://sourceforge.net/p/trigger-rally/code/ https://sourceforge.net/p/trigger-rally/code/HEAD/tree/doc/"
     },
     "resourceIds": [],
     "intake": {
@@ -4958,10 +4958,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "id Tech 2 derivative / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -4972,18 +4972,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for UFO: Alien Invasion",
       "url": "https://github.com/ufoaiorg/ufoai",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/ufoaiorg/ufoai",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Game data must be built separately; per-asset permissions await review.. Qualification: Not the 2D OpenXcom; this project uses 3D scenes. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Game data must be built separately; per-asset permissions await review.. Not the 2D OpenXcom; this project uses 3D scenes."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/ufoaiorg/ufoai",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row ufo-alien-invasion, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/ufoaiorg/ufoai"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row ufo-alien-invasion, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/ufoaiorg/ufoai"
     },
     "resourceIds": [],
     "intake": {
@@ -5003,10 +5003,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Dæmon / id Tech 3 derivative",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -5017,18 +5017,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Unvanquished",
       "url": "https://github.com/Unvanquished/Unvanquished",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Unvanquished/Unvanquished",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0-or-later (some exceptions use compatible licenses).. Asset notes from that directory: The official COPYING lists media collectively as CC-BY-SA-2.5; individual asset packages should still be checked.. Qualification: The game-logic repository, engine and assets are separate. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0-or-later (some exceptions use compatible licenses).. Asset notes from that directory: The official COPYING lists media collectively as CC-BY-SA-2.5; individual asset packages should still be checked.. The game-logic repository, engine and assets are separate."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Unvanquished/Unvanquished",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row unvanquished, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Unvanquished/Unvanquished https://github.com/Unvanquished/Unvanquished/blob/master/COPYING.txt"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row unvanquished, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Unvanquished/Unvanquished https://github.com/Unvanquished/Unvanquished/blob/master/COPYING.txt"
     },
     "resourceIds": [],
     "intake": {
@@ -5048,10 +5048,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C++ / OpenGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -5062,18 +5062,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for VDrift",
       "url": "https://github.com/VDrift/vdrift",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/VDrift/vdrift",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: Cars and tracks have separate data sources; specific licenses await review.. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: Cars and tracks have separate data sources; specific licenses await review.. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/VDrift/vdrift",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row vdrift, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/VDrift/vdrift"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row vdrift, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/VDrift/vdrift"
     },
     "resourceIds": [],
     "intake": {
@@ -5093,10 +5093,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C++ / Python / OpenGL",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -5107,18 +5107,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Vega Strike",
       "url": "https://github.com/vegastrike/Vega-Strike-Engine-Source",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/vegastrike/Vega-Strike-Engine-Source",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0 (the supplied directory cites the root LICENSE; the only/or-later suffix awaits review).. Asset notes from that directory: Original assets are distributed in a separate game-data repository; licensing awaits review.. Qualification: The engine repository must be paired with the official game data. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0 (the supplied directory cites the root LICENSE; the only/or-later suffix awaits review).. Asset notes from that directory: Original assets are distributed in a separate game-data repository; licensing awaits review.. The engine repository must be paired with the official game data."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/vegastrike/Vega-Strike-Engine-Source",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row vega-strike, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/vegastrike/Vega-Strike-Engine-Source https://github.com/vegastrike/Vega-Strike-Engine-Source/blob/master/LICENSE"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row vega-strike, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/vegastrike/Vega-Strike-Engine-Source https://github.com/vegastrike/Vega-Strike-Engine-Source/blob/master/LICENSE"
     },
     "resourceIds": [],
     "intake": {
@@ -5138,10 +5138,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / Rust",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -5152,18 +5152,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Veloren",
       "url": "https://gitlab.com/veloren/veloren",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://gitlab.com/veloren/veloren",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: pending review. Qualification: GitHub veloren/veloren is an official mirror. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: pending review. GitHub veloren/veloren is an official mirror."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://gitlab.com/veloren/veloren",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row veloren, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://gitlab.com/veloren/veloren https://github.com/veloren/veloren"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row veloren, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://gitlab.com/veloren/veloren https://github.com/veloren/veloren"
     },
     "resourceIds": [],
     "intake": {
@@ -5183,10 +5183,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Luanti / Lua",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -5197,18 +5197,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for VoxeLibre",
       "url": "https://github.com/VoxeLibre/VoxeLibre",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/VoxeLibre/VoxeLibre",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: See LEGAL.md and TEXTURES.md for separate asset licenses.. Qualification: Formerly MineClone2; GitHub is a mirror. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0.. Asset notes from that directory: See LEGAL.md and TEXTURES.md for separate asset licenses.. Formerly MineClone2; GitHub is a mirror."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/VoxeLibre/VoxeLibre",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row voxelibre, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/VoxeLibre/VoxeLibre"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row voxelibre, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/VoxeLibre/VoxeLibre"
     },
     "resourceIds": [],
     "intake": {
@@ -5228,10 +5228,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Qfusion / id Tech 2 / C",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -5242,18 +5242,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Warfork",
       "url": "https://github.com/TeamForbiddenLLC/warfork-qfusion",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/TeamForbiddenLLC/warfork-qfusion",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: Assets are listed separately in assets/README.md; individual review is pending.. Qualification: Do not count the older Warsow project as an additional separate entry. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: Assets are listed separately in assets/README.md; individual review is pending.. Do not count the older Warsow project as an additional separate entry."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/TeamForbiddenLLC/warfork-qfusion",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row warfork, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/TeamForbiddenLLC/warfork-qfusion"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row warfork, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/TeamForbiddenLLC/warfork-qfusion"
     },
     "resourceIds": [],
     "intake": {
@@ -5273,10 +5273,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Custom engine / C++",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -5293,12 +5293,12 @@ export const open3dGames: LearningPath[] = [
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/Warzone2100/warzone2100",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: Described as an open-source release; a COPYING.NONGPL notice is present.. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0-or-later.. Asset notes from that directory: Described as an open-source release; a COPYING.NONGPL notice is present.. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/Warzone2100/warzone2100",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row warzone-2100, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/Warzone2100/warzone2100"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row warzone-2100, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/Warzone2100/warzone2100"
     },
     "resourceIds": [],
     "intake": {
@@ -5318,10 +5318,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "ioquake3 / C",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -5332,18 +5332,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for World of PADMAN",
       "url": "https://github.com/PadWorld-Entertainment/worldofpadman",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/PadWorld-Entertainment/worldofpadman",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Commercial use of artwork is prohibited without written permission; some third-party assets have separate licenses.. Qualification: The code is described as open source, but the artwork as a whole is not freely available for commercial reuse. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Commercial use of artwork is prohibited without written permission; some third-party assets have separate licenses.. The code is described as open source, but the artwork as a whole is not freely available for commercial reuse."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/PadWorld-Entertainment/worldofpadman",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row world-of-padman, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/PadWorld-Entertainment/worldofpadman"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row world-of-padman, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/PadWorld-Entertainment/worldofpadman"
     },
     "resourceIds": [],
     "intake": {
@@ -5363,10 +5363,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "DarkPlaces / C / QuakeC",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -5377,18 +5377,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Xonotic",
       "url": "https://gitlab.com/xonotic/xonotic",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://gitlab.com/xonotic/xonotic",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-3.0-or-later.. Asset notes from that directory: Described as an open-source release; each asset is governed by its accompanying license.. Qualification: GitHub xonotic/xonotic is a GitLab mirror. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-3.0-or-later.. Asset notes from that directory: Described as an open-source release; each asset is governed by its accompanying license.. GitHub xonotic/xonotic is a GitLab mirror."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://gitlab.com/xonotic/xonotic",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row xonotic, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://gitlab.com/xonotic/xonotic https://github.com/xonotic/xonotic"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row xonotic, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://gitlab.com/xonotic/xonotic https://github.com/xonotic/xonotic"
     },
     "resourceIds": [],
     "intake": {
@@ -5408,10 +5408,10 @@ export const open3dGames: LearningPath[] = [
     "engine": "Spring / Recoil / Lua",
     "track": "3d",
     "category": "community",
-    "aiUse": "Imported from a user-provided 3D game directory. No AI-authorship attribution is inferred. Repository availability, complete source scope, code and asset licenses, builds, playability, safety and L1/L2/L3 were not independently verified. No native game or source project was executed.",
+    "aiUse": "From the supplied 3D game directory.",
     "steps": [
-      "Inspect the linked project reference, README, current release information and actual source before choosing a setup.",
-      "Check code, asset, service and original-data requirements separately; the imported directory is not a playtest or reuse permission."
+      "Open the repository README for setup instructions and release links.",
+      "Check the terms for code, assets, and required services or original game data."
     ],
     "tutorial": {
       "label": "Read the supplied project reference",
@@ -5422,18 +5422,18 @@ export const open3dGames: LearningPath[] = [
       "label": "View source for Zero-K",
       "url": "https://github.com/ZeroK-RTS/Zero-K",
       "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "note": "Release: none listed in this record."
     },
     "source": {
       "label": "Inspect the supplied source reference",
       "url": "https://github.com/ZeroK-RTS/Zero-K",
       "scope": "unverified-project",
-      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Mixed asset licenses; check the origin notices in each directory.. Qualification: No additional caveat was stated in the supplied directory. These are imported statements, not independent license, asset or complete-project verification."
+      "note": "Supplied directory lists code license: GPL-2.0.. Asset notes from that directory: Mixed asset licenses; check the origin notices in each directory.. No additional caveat was stated in the supplied directory."
     },
     "evidence": {
       "label": "Read supplied directory references",
       "url": "https://github.com/ZeroK-RTS/Zero-K",
-      "note": "Imported input open_3d_games_2026-10-24.jsonl, row zero-k, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. The supplied review statement is retained in the original-language evidence download and is not a GameMap source-review claim. References: https://github.com/ZeroK-RTS/Zero-K"
+      "note": "Imported input open_3d_games_2026-10-24.jsonl, row zero-k, supplied metadata date 2026-10-24. Input SHA-256: d22d41a3b430c29b882952f090a058736323f182d543f589d49f4ef664b90a69. References: https://github.com/ZeroK-RTS/Zero-K"
     },
     "resourceIds": [],
     "intake": {

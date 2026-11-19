@@ -394,7 +394,7 @@ Eriksson separates authoring, disk and runtime representations, explicitly focus
 
 **Workflow template.** Make the intended experience an explicit design input: when should pressure accumulate, when should relief become possible, and which authored events may override it? A proposed fixture would record individual proxy inputs, their aggregation, director state, transitions and reasons, requested threat population, actual active threats, encounter timestamps and player progress on one timeline. Preserve the build, content, controller, difficulty configuration and randomness needed to explain the trace. Include a late-ending encounter, a lingering special threat, a boss interruption, split player condition and rapid forward progress. Assert transition policy and exception handling separately from actual recovery opportunities. Do not silently tune damage, health or aim while reporting a pacing-only comparison. Review the resulting sessions with people rather than assigning enjoyment from the proxy or a completion flag.
 
-**Boundary.** This reading establishes a reported design, not a calibrated emotion sensor, portable tuning constants, controlled enjoyment improvement or current executable director interface. The pacing/difficulty distinction applies to this described subsystem; it is not a claim that every Left 4 Dead system leaves difficulty unchanged. No fixture or player study was run here.
+**Boundary.** The source describes how this subsystem adjusts pacing and difficulty. The pacing/difficulty distinction applies to this described subsystem. No fixture or player study was run here.
 
 ## Valve playtesting: select evidence for the experience question being asked
 

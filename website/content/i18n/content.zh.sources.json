@@ -3600,1613 +3600,1613 @@
   },
   "example:open3d-blocks-openworld": {
     "description": "02400312eaf2ac571274c5f54005801c613a72e661c8d55878dd293ea3732ab4",
-    "aiUse": "7fb4efe5f20af12222c2d4e0f9c9cb9cb1afce75baa85f700f8b67841c49aa97",
+    "aiUse": "8aa4b407b6774fe6a4f5cfef9427ae61845739b645c168bb01f177003e8ae06f",
     "title": "72283c87d21c2218cf8ea78f95db814c14d5b76fa146051376b696dc4ef51848"
   },
   "example:open3d-fable-5-1-one-prompt-game": {
     "description": "f304fc3b26837c5d3bc58ca1701cb5e78dcb3fb2b1a27a99f09437a33e4b1df8",
-    "aiUse": "bf65acc870345b2761f63a398fe66bc7547b904ae1f28635a3f563196fd50640"
+    "aiUse": "1eb41dd39974739f6862b0ea8303294669f910d8bb34a643465489c3f64affdf"
   },
   "example:open3d-ai-model-benchmark-3d-game-vision": {
     "description": "c8fbd7fb73dcb01c7ee6711c18f116bca254c5a3ca21b31658e98f7d2770b247",
-    "aiUse": "f5774f8a84b2625842cf2be4787e6ac0cc45d0c533085566533380d9108a9478"
+    "aiUse": "cf8cfd92bbcd4ba739f1eea2ff5dafd1562e9dfa0f57fd77caaab3b5f0c5ae73"
   },
   "example:open3d-saltline-fable-5-2": {
     "description": "3152c1d1cfd7d2d81aab12291811327b79fa6770a3835c50af4fa2d2257e36fe",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377"
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a"
   },
   "example:open3d-turbo-kart-rush": {
     "description": "4c6775b966faea735cb9edebd1072c215072399ad7ac752f97d50d70c5e90104",
-    "aiUse": "edf614656e9cfe5f4916a6a53b58419b69b353bbb1d4a0b1886406685e11d8a8"
+    "aiUse": "a6fed30e8e1cb45cbe17ea57bf3916cd8d50bc36c9c695f7b9ee325a3ca95239"
   },
   "example:open3d-turbo-kart-grand-prix": {
     "description": "bd5bcba040d0017563562308f999ae275edb507033950bcb5b2d3c9fe6d5b328",
-    "aiUse": "edf614656e9cfe5f4916a6a53b58419b69b353bbb1d4a0b1886406685e11d8a8"
+    "aiUse": "a6fed30e8e1cb45cbe17ea57bf3916cd8d50bc36c9c695f7b9ee325a3ca95239"
   },
   "example:open3d-nightfall-call-of-duty-remake-fable-5-1": {
     "description": "27f2d110ad10b17690c365ab0ef74c0ba08f1d121b11302cc531a774be81f56c",
-    "aiUse": "59e12e9935f7c60df8e0cc1acb287c90368be2a02286e2bcf2cc2b13f018481c"
+    "aiUse": "a700b84dbc47acdcfc9f3e17b1555761498db0287f479b36b1262e8c73457ae1"
   },
   "example:open3d-rocket-arena-rocket-league-remake-fable-5-1": {
     "description": "5b89be7b2f7c32bfb658e97eaf95fcfe2ba5fd7775206aa6eb24a595b6f22b7e",
-    "aiUse": "59e12e9935f7c60df8e0cc1acb287c90368be2a02286e2bcf2cc2b13f018481c"
+    "aiUse": "a700b84dbc47acdcfc9f3e17b1555761498db0287f479b36b1262e8c73457ae1"
   },
   "example:open3d-worldbuild-bench": {
     "description": "87654ff49486130bb7d822365b88862e60359ddd92b12331f0fcd4f623033bd9",
-    "aiUse": "ae5bd9fb718e20587b3327b1d132315611787a11712e8689b603e03ac6af1df4"
+    "aiUse": "65f5ae5b4a2eab240ced42880faf29a29de46f919a3c3971e51d3c9be9279eb2"
   },
   "example:open3d-fable52-fps-repro": {
     "description": "6f3383384b021f6a22b1c11af488a94cb433116848cebe17431cdf7f4f607d4e",
-    "aiUse": "1aba99d394d455c29b5efaa383b24ba2b1d6979645ca1de140f0a89c035d333b"
+    "aiUse": "a054e7d7cf430616956d43021d9fdbe436aacc21a92e6bc357b90d32ce2d1311"
   },
   "example:open3d-fable52-gta6": {
     "description": "5aa2d289e238c60337892bbed2e1f04450f5bd707c1cd15b9a85de02c8947fd1",
-    "aiUse": "328c27ab8fdb2742597ed4f4f6838b9042b45d54af4b17d0289aa505a5e45fa6"
+    "aiUse": "e9bc4704df1dd1390d20b92225b012faf6f560d4281829df60842443a034d0fd"
   },
   "example:open3d-tria-prima": {
     "description": "dee0810cb86037bcc55564a57b9566bc9d0d684bea32b78cff9acf4124934a2a",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-worm-rider": {
     "description": "ed205dabf458fb8f515305ef5f7b7a385586509311d6afb6cbcd250ddcadc4f6",
-    "aiUse": "545cd661243c6c52a26f283b10026cf2bf29c4c44e04da92a38809bf51f83fb7"
+    "aiUse": "c3796cb5bbcbb44a05313e4edde4fc3345cc28ad429cda12b199076aebc6467c"
   },
   "example:open3d-bayhaven": {
     "description": "a10805c8a121ec4933b702fd98a746966ef5d05b1868a0a46a8f31f75c7ed06f",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377"
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a"
   },
   "example:open3d-shuttlestrike": {
     "description": "6c14a59144a7eb0e3080d68c7be229178283ade59d1a4a67645aca60a751a47d",
-    "aiUse": "f95502bf8e07ff6cc13289de1a5b55a5e7978febc7a3f0c0818b12d127224623"
+    "aiUse": "80f778156258bf6aa163e30a2fd7e2c5675d560d81c7b8b458c5b3179f04b965"
   },
   "example:open3d-farm-ca": {
     "description": "a1d87ad31f710807a04d2d2ab5b660c4725398534199e20cc07defa6da7f1d52",
-    "aiUse": "956a0a90f2cb10997dfc65b98d41d4ed2531adc26604abd62360c6d83e4ac9bc"
+    "aiUse": "ada44961038e4ad65f85f6e579ced5e9251c17d2d351011938c6f481fca2ae3a"
   },
   "example:open3d-emberdeep": {
     "description": "a992ee86d3436602abed6812a68ab1fbabdf5f1f8411c2fa91979e2464420891",
-    "aiUse": "956a0a90f2cb10997dfc65b98d41d4ed2531adc26604abd62360c6d83e4ac9bc"
+    "aiUse": "ada44961038e4ad65f85f6e579ced5e9251c17d2d351011938c6f481fca2ae3a"
   },
   "example:open3d-fable-experiment": {
     "description": "b950a7136df314d837bb06376b68b276c385114d526126208f7b7019c9b33ae9",
-    "aiUse": "545cd661243c6c52a26f283b10026cf2bf29c4c44e04da92a38809bf51f83fb7"
+    "aiUse": "c3796cb5bbcbb44a05313e4edde4fc3345cc28ad429cda12b199076aebc6467c"
   },
   "example:open3d-fable5-2demo": {
     "description": "d98ae69a76a2b2b2853c215083afff919a814e3a10853095d71756d1e65514ad",
-    "aiUse": "e11acd90a1c1d24d5ad3862dd8d3e0b3ffe21e6fd3b9ba055a7f2ad3f7d410b8"
+    "aiUse": "1578b1c5657c0cfe1b4f0c566cb6431c93959fb26a22b4a08c5696dbabe176be"
   },
   "example:open3d-opus-v-fable": {
     "description": "1b633379488a0eced65058d6d24e249f2a32a69ff28a978b7f60b4545d4413d8",
-    "aiUse": "8e83857a9dae1d30c49a3ac3fbb69d437ca31fd39c42b259f92074dcbe421d8b"
+    "aiUse": "e3a6675e28e0d8f8bd0969d23948fa47391eeb35f939dce484ae898d5a6b5df2"
   },
   "example:open3d-fable-5-2-potatobench": {
     "description": "a596610f636ca2a0d07b8a0c5ac53b647538e27d43d8b9e54c37c53be18d088a",
-    "aiUse": "545cd661243c6c52a26f283b10026cf2bf29c4c44e04da92a38809bf51f83fb7"
+    "aiUse": "c3796cb5bbcbb44a05313e4edde4fc3345cc28ad429cda12b199076aebc6467c"
   },
   "example:open3d-claude-fable-5-2-flight-sim": {
     "description": "78be2874e762486aa3988d8e6713257c4769a12d6c172c1776bea27872c17bd3",
-    "aiUse": "499bd29493d7d92d1d90825e3657afa40692ef7e5d6c859d9d734a823f908487"
+    "aiUse": "dbd09b28bf85cd8a27408742857b9a75bbfea5129d8c2f141f152fcf95cb2fd3"
   },
   "example:open3d-dafeiyu": {
     "description": "62baf2f24392fae1d2f55d1ff1124653a14c0ec71c18366a95ea4d28db20a344",
-    "aiUse": "c5502fe61e166a9bd65915b3d57782e440d3ce5d2265e71befe3685746f62ddb",
+    "aiUse": "48cd4bbd0ddf0d27da548a52a7c034b65c4972983658aead9dbaf7c8045d68bd",
     "title": "590ad5f038108389cbd4ea413285cb2af8c1bb020d5cf91b0dd694b14093fbae"
   },
   "example:open3d-fable-5-2-high-rail-shooter": {
     "description": "15e0af1c31fc9f906bbdf6598854f2b2251fb234370ede7009885a67ac598116",
-    "aiUse": "ad7a7271a0776c766999e27ecc9a494b3a2a456132e4d021950fa0c7f346805c",
+    "aiUse": "bb769f46984d3a35482f12c5c2e97017b1290b82591ea05e1107a24733b69c8e",
     "title": "533d25491649d50e040d2c0315db363429fecb39e6a646ae8427a57288f46db2"
   },
   "example:open3d-fable-city": {
     "description": "99ea960fae0dec9f3ec36fb7450f88380fc6573744843adce3338bbf9cf81ce0",
-    "aiUse": "851cf3a0b9ce9d5da0aa6ced8376f7d7795a23fdf9e73d557f0caac99ac71103"
+    "aiUse": "490f3986c6b985433924db1943c392ad84528757b454c358829e764e256bcc68"
   },
   "example:open3d-aaron-portfolio": {
     "description": "ad9acacd4ec3893c5c52003cbb58ab6c7911e69cbc13a0acf9de9e80bc7715bf",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377",
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a",
     "title": "9036335f5b8b91971874d62a308bb763be1bcc8df9654d8cfe446ad016dd01e9"
   },
   "example:open3d-ceba": {
     "description": "f2c8758d82541ae81c7a8addcbf5214606427ea6452af4e77dc0c7217e34d5b0",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377"
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a"
   },
   "example:open3d-null-horizon": {
     "description": "d6aeec33e3075c4a8757764b396ea60cfe25da9f6e89ca029b2cac328f2ff2b0",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-lanternfall": {
     "description": "d65d849e60437a93830a9c099052ad960e3a481e711a7e1889891ac326622ea2",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-solstice-racing": {
     "description": "d298d7d7369d126044051ad73b356b5cc4a5e8dcbbc8b44d5fe45af647f354f9",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-holdout": {
     "description": "55fe6afb26ca5a3cb516158f97e1a7cfb33106461236beeb03d1259e655269a4",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-cayley-flight-simulator": {
     "description": "69f94ff77f0f83f8e0f591b83c64f34d5f0c87dc0fd038a1992faacb09baca83",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-takeoff-flight-sim": {
     "description": "95d463dfcdb9c372a21c9debb4e8307173ffeaf7ff84c30024440e6aac86074c",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377"
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a"
   },
   "example:open3d-biubiu": {
     "description": "b7fd5b95fed0a4d5b3a5d845133679798c96fca5b9c0cf025ca8a9af0d69376e",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377",
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a",
     "title": "3718f02daae0599033b41f8d790c68d00d58d29716939d89f6a90df368e9e67a"
   },
   "example:open3d-fable-5-2-random-game": {
     "description": "c18f70dfb144f0c2ff65c3792834458824de3cd0d5a6a11e64d8566325b33ef2",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-fable5-2game": {
     "description": "cc97474182816edee0a3879355e59588e6a75cc2c8fa9f3fa134296f88ac624a",
-    "aiUse": "c110fbd855345418afecbd6c15efc0bd48d7f587006a363585d450ddffd6bc26"
+    "aiUse": "38e269b3ce4906711374591c7b9de0d409c8fe4ca3f1021900fa765923508466"
   },
   "example:open3d-fable-5-2-game-test": {
     "description": "e757a9e4056e0075850af5206fcd3e53bfeb214032b95c77fce6026ceddbcfe8",
-    "aiUse": "006d0e746bedefd63f474e406d3a3efd917db7391e1dd6091930c675cc9a5740"
+    "aiUse": "82158966391c8710ead7da30223e51c2cc457b933730da893647f3313e194322"
   },
   "example:open3d-vaquitas-de-bloque": {
     "description": "1e3baf2144054e72fe1919876f3a2c5e7e2e940c8b43e36bb22c3afc018a08ac",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377"
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a"
   },
   "example:open3d-voxel-gt-fable": {
     "description": "0d6b2d9fd0e0ceefc64138c19312c7042ebd6237be754827975cbfccece7d3a0",
-    "aiUse": "59e12e9935f7c60df8e0cc1acb287c90368be2a02286e2bcf2cc2b13f018481c"
+    "aiUse": "a700b84dbc47acdcfc9f3e17b1555761498db0287f479b36b1262e8c73457ae1"
   },
   "example:open3d-mario-kart-snow": {
     "description": "c78127b028800800381e3cf580d3cf2487da218491c816838361aac422729402",
-    "aiUse": "83bfb1a40e016010e1059f0d12e08164f28b945d5d4f47fefd8f8b619187b500",
+    "aiUse": "a40aea1e4ff3623de62885aa6f3e5c6ef83c147d6a62b820269bd1769b1c8fe6",
     "title": "8ac9dadf4ca9a32401ccae2733f845b50faeba698631364b4aecb9818bec2cde"
   },
   "example:open3d-voxel-gta-city": {
     "description": "869252d2310febf65a47d46e2f5bf3d4a1f5105558cb65913d5383998b920f92",
-    "aiUse": "83bfb1a40e016010e1059f0d12e08164f28b945d5d4f47fefd8f8b619187b500",
+    "aiUse": "a40aea1e4ff3623de62885aa6f3e5c6ef83c147d6a62b820269bd1769b1c8fe6",
     "title": "408792873b0247e433eec716abad447c73f71365138c85c394c07d7deb75f1d4"
   },
   "example:open3d-single-html-game-bench": {
     "description": "c31eee8289a361da5a4a8c7d5a0e2bc0510aedd3c68692cae2b2a7dfe355d6e9",
-    "aiUse": "81fabf3905d598d6b4d87d30a6a97efd0666646e6b5266413a57111dbd40b015"
+    "aiUse": "f08d5103e36e8b7480aeddc89e46286b66585c79fc690fde41ed2037980a5279"
   },
   "example:open3d-decarlo-boyz": {
     "description": "822eb86387edb499208b44bcc1b6dc76d62a57ef9fb5fe79c825965897cef786",
-    "aiUse": "23a3694a18a733f8857f3f887e770b6d0928a2d6f78affd620494aa0606ca761"
+    "aiUse": "f1f011148c2e00dcf505a89a4013dd09a8a4d20486b33bd54752f74bdde6c1c2"
   },
   "example:open3d-car-game-fable-5-test": {
     "description": "c1037c156f46fca70c23bda1fccc91523f75eb858a600119415477fb9c7003e1",
-    "aiUse": "e4345e80114c81f297cb7f2384b005b0d0e1a85b8644c81e2a42542b82ebc7e6"
+    "aiUse": "9d66eddb25bce101a39cfdf96ffaf59c24e1fa9930024a847fddfe6bb431489e"
   },
   "example:open3d-fable5-gta": {
     "description": "5582ef39038679b2433c3464538d94913dde1f4759da66d3ad39b5d4aafc09c8",
-    "aiUse": "8054bee391aee41e2252514ef4e4edd951118da9fe6b69036073a8174a32c70f"
+    "aiUse": "4d1150e1906f032e070497396ebba47b9859fac95d25d943fdae428729a35cd2"
   },
   "example:open3d-kite-post": {
     "description": "f2849e9212281a1e54ce9522d9abd91d5d1ea2edaa270ae6ac08dcf2510eaf30",
-    "aiUse": "c31d44a852f19abbd875578a95a55c23e677850c8e5a38b450b4960832939719"
+    "aiUse": "4340d82968cdabdcdeca4d2046b758a7dac48e73c13912859ab3729081f53c32"
   },
   "example:open3d-vesper-street": {
     "description": "5efbf2a85e8200da34a8f0565ec28859fd4fec823b7a7b70328f78c17a8764ac",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-hellgrid": {
     "description": "f212473bc0c367ebfb08e4c7a874d4e6cf4dbbe5e17b45aa98d3ea0f7627606b",
-    "aiUse": "5c9c4d8154b6fe4a8750678e8b9a1fcb1c7cef060fce784c5fa9892a64ed2b5a"
+    "aiUse": "cca2384d855fedaeecc7f9ab1c05b8733f36f148f818f58cbd13a931c0fabc4e"
   },
   "example:open3d-world-of-claudecraft": {
     "description": "e6a64fe18f1967c7c33a9d22eebc3d47c1da853c1ab2ebc17c483d43c82fb701",
-    "aiUse": "51757ec2b4d58279c602767d9565775ad91133f0898ee22eecb72663d3529cd6"
+    "aiUse": "fe573a115cbcf4982caea39af6a0a4f2cf475b49e2b59ed951c5611dddd6f501"
   },
   "example:open3d-fable-gta": {
     "description": "feddeaef8391c786297faa089fdf4e0184f5dc4263d855fc768bfab2d06fe089",
-    "aiUse": "09d0b0300bfe42a01ab43a5dae137fda29167e4b1bff209d85e9ed1057ac9397"
+    "aiUse": "69ae1fbdc9c0b8e252ed7fcd82f5744b653aea5366f5dbcb4427d376afbefed3"
   },
   "example:open3d-downhill-mayhem": {
     "description": "0923defc86324f18ba4fc82b7c4f8150d5b4266dac7017e43779d1f6d11647a6",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-cs-clone-fable5": {
     "description": "549bbeae54fbafa21a4f4e6fd55dbd10ba6b5aeaef1f685f4b72262dbd91d0d7",
-    "aiUse": "e4345e80114c81f297cb7f2384b005b0d0e1a85b8644c81e2a42542b82ebc7e6"
+    "aiUse": "9d66eddb25bce101a39cfdf96ffaf59c24e1fa9930024a847fddfe6bb431489e"
   },
   "example:open3d-pebble": {
     "description": "3f697e97564d399f55869ba4a351e8b51d245c835ae81bbf34dd72262a6b97d7",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-tarkov-customs": {
     "description": "415d999791fb8e456b714d394f3b0b85281455dad1ec8eddf8b2e69ce48b4cc9",
-    "aiUse": "1aba99d394d455c29b5efaa383b24ba2b1d6979645ca1de140f0a89c035d333b"
+    "aiUse": "a054e7d7cf430616956d43021d9fdbe436aacc21a92e6bc357b90d32ce2d1311"
   },
   "example:open3d-claude-fps": {
     "description": "a45a736c7120479d90835786f7a66f8f7f8143a962b0acbc306de576261c072c",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377"
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a"
   },
   "example:open3d-escape-from-claudov": {
     "description": "32b9857df68229f69754ec2c0328a61ed3a9f26ef362c9414739c4bf6ce69600",
-    "aiUse": "956a0a90f2cb10997dfc65b98d41d4ed2531adc26604abd62360c6d83e4ac9bc"
+    "aiUse": "ada44961038e4ad65f85f6e579ced5e9251c17d2d351011938c6f481fca2ae3a"
   },
   "example:open3d-shutterpine": {
     "description": "60e614bde7bb901acd5243de8b5f12a4456bc4b09525a85ba605f3713abb3b2c",
-    "aiUse": "956a0a90f2cb10997dfc65b98d41d4ed2531adc26604abd62360c6d83e4ac9bc"
+    "aiUse": "ada44961038e4ad65f85f6e579ced5e9251c17d2d351011938c6f481fca2ae3a"
   },
   "example:open3d-cold-smoke": {
     "description": "ec4679af5f37ab6a130a988933a031aa9406dbf64c2ddbf5c8987de21f026695",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377",
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a",
     "title": "a54ea35e8de0ff96c2c26e3644d8f6213a0abf9930e486716d102eabdff9371f"
   },
   "example:open3d-passage": {
     "description": "c60b652328491ef05646a425f645e8c01fd9d76d4173cd0b786e5aad7e30fe40",
-    "aiUse": "006d0e746bedefd63f474e406d3a3efd917db7391e1dd6091930c675cc9a5740"
+    "aiUse": "82158966391c8710ead7da30223e51c2cc457b933730da893647f3313e194322"
   },
   "example:open3d-paletterider": {
     "description": "55807385982dc7134b23c23bcd2174e084870fc8f2b6012bc52d17da7aa1855d",
-    "aiUse": "c110fbd855345418afecbd6c15efc0bd48d7f587006a363585d450ddffd6bc26"
+    "aiUse": "38e269b3ce4906711374591c7b9de0d409c8fe4ca3f1021900fa765923508466"
   },
   "example:open3d-the-lost-storm": {
     "description": "588ae0db14ada358f0335e3c30f9328ce536bc797598e3429649616f6a0d9d76",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-tumblebuds": {
     "description": "3afeadb37d5864fdd4cb289ea716ebad6073a0f9b9b3cb866abe0925e874419b",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-last-return": {
     "description": "5c19469d5d574088f8dbfdf9f186523cd4f02fb573bc2e628d2782715bf18fec",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377"
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a"
   },
   "example:open3d-valle-morta": {
     "description": "f82038997bdd1d569b2ad118ced244197de654dbf429b846d3b50dea49de757f",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-pelican-ride": {
     "description": "18fbd0b813df9edb656ea0fde6ccb6b70ba57a48380b2a605ce131c915783a21",
-    "aiUse": "1f3476cc6ba35368a073bce14fafb306d086642921ea4d61683009898c161af4",
+    "aiUse": "a9fe25a0a06275fcfef117a1a7af210e2f9caf5b9c4e84d358fc2a32505eaac3",
     "title": "ec642201aebba4fd9ec11107fd81a35313b8c36f8cfd7382e9dc15fde442ffa2"
   },
   "example:open3d-what-the-water-keeps": {
     "description": "ae7971eb3568852c50570c6fa32dc180a5d0f936da3eaf4ed3ae837ff32c0b1d",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-midnight-grid": {
     "description": "37d33171526a6247750a991e7a8db1ff27c18bfa6ae22ea6ec3a60744a9d20db",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-thirty-days": {
     "description": "e892e0c085fb728319284fde052c61471466075845d36a7ab81944ad3d4cdd2e",
-    "aiUse": "1659275e9eb9eae56d3d9a267a0ecdf46076b170d8e0d81057a02dce229bb0cb"
+    "aiUse": "7d12e822db7c87eab6ddf5023deb0eff0220d5c7340849b12494aa56f17211b0"
   },
   "example:open3d-duel-knights": {
     "description": "03bbf5c15ac38b66b33e1523913e3fbef9065b1abf1c198f8c21c940f11d2369",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377"
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a"
   },
   "example:open3d-maze-exit": {
     "description": "28d6f25d64b3ebb4a2e4424cdc07913144a9e05c9b8569f2310c5e4c82b2cba9",
-    "aiUse": "956a0a90f2cb10997dfc65b98d41d4ed2531adc26604abd62360c6d83e4ac9bc"
+    "aiUse": "ada44961038e4ad65f85f6e579ced5e9251c17d2d351011938c6f481fca2ae3a"
   },
   "example:open3d-maple-run-fable": {
     "description": "bb72258fc23b4aa33fab7c5e730dd079d7176ca670c8e0b223fc6671e1afe574",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377"
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a"
   },
   "example:open3d-escape-the-fable": {
     "description": "79965ebd8fe44997268a4dc3b2fd7498e9966c208ecd2fd76165910936202aec",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377"
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a"
   },
   "example:open3d-mazar-rawza-race": {
     "description": "50b454f3471f8e160e6215a550bbbb7479410bac790055e7e3da86c832316ba6",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377"
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a"
   },
   "example:open3d-catslop": {
     "description": "4a9c9f5aaa700a0c8d8d5753dc4e907301526d3a8851cdfc06d102b88d836513",
-    "aiUse": "2583770202e9e18d0c05d93643fcbb53bce166466cc44bd27aaf59cf3b17b389"
+    "aiUse": "621cd07d11e1c02583bbbba78616f06b68b6c26d8b4c73988a7388da8d985e6c"
   },
   "example:open3d-out-of-reach": {
     "description": "089dc132f551bc9abb5b54352232aa56c16fdbfabfe78c7dc37ffd5181bb2ec0",
-    "aiUse": "9eb7a7a316edd70747980662037dca1ffde1dc386d64264cc1a91fd70d9d961f"
+    "aiUse": "4684967f82f7f5e1a5eb626d160c9ad5db94be6cddc5adb7783b0cb8e4117654"
   },
   "example:open3d-castle-valley": {
     "description": "8a41e01eeb4ed80c6cddc3b11525b67a75070bec11f05eb3e0ff9ff7e082fb2e",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-phantom-blade-zero-fable": {
     "description": "26e4c6dcd4d29a7be8c09ac83ea0c5106ffa46d2bad7111fff1192f17500042b",
-    "aiUse": "c110fbd855345418afecbd6c15efc0bd48d7f587006a363585d450ddffd6bc26"
+    "aiUse": "38e269b3ce4906711374591c7b9de0d409c8fe4ca3f1021900fa765923508466"
   },
   "example:open3d-fable": {
     "description": "e1162c0db7d3719288d95208661e3e64d7af257c7cd8424f6f17e6f61947678a",
-    "aiUse": "58c985f6dc49de27e986cc11bc61b2a3b4aa3ca364c236b8aa14f53d3ed11a64",
+    "aiUse": "87da43ca8ada3a28144850565cabbf5057fc1deb2295601cb685d6b4983b0741",
     "title": "836a471e2dfb9ddf746cdc21b00a9608ca01caab248223211df194c5cfceea07"
   },
   "example:open3d-apex-lap-fable-5-2": {
     "description": "3989e81d39be0eb3ae3ecc1aac8d834b2029705b44a0233614f5baa8e7f6de42",
-    "aiUse": "7822a1ddd43505cd2ef8a376b9c541698eca4f02c6e7c552e5e087bc5cd60377"
+    "aiUse": "136eb6a5a3e9abd8c974eef89cbc655a85844b1d2bb3961c9620fd45140e738a"
   },
   "example:open3d-everyday-game": {
     "description": "690f329f8fd59c08ca7d71d1148488c6b8ad67a2f936982390958bbe3a25ae7b",
-    "aiUse": "851cf3a0b9ce9d5da0aa6ced8376f7d7795a23fdf9e73d557f0caac99ac71103",
+    "aiUse": "490f3986c6b985433924db1943c392ad84528757b454c358829e764e256bcc68",
     "title": "59a96385cc9a541a2d610ab361d0835409320ebfef1da2e68c83b15f8bae6722"
   },
   "example:open3d-skyfall": {
     "description": "be432b14e623a7d46582b39af9dbd82a73a271fbf4a14387ffb7c599f3afe309",
-    "aiUse": "a5cbf1c8c82370f7c50d9d96d3a12583503a4e0f157377154fc8848762201706"
+    "aiUse": "1b8daf83e6f9518940315733c6a39e56776972c5707289d22d3c0a81f6205b34"
   },
   "example:open3d-claude-fable-5-2-high": {
     "description": "f77f68bdd9d70fdaf3df28fa39f120526dbe00d6a0fc656d6ae7528c07929de4",
-    "aiUse": "8e0ed9f1c96038238684305b71c40d21fb2b28675d7d2911200d4b11f1085e00",
+    "aiUse": "e6ae827c5e369d05e3899ef9d8af1fac911df28b63b2f4091c9b76ad0a1594f6",
     "title": "0e8eec93a7cbc1a47233750bd55599e5e2c7d716d82bebf982796e3a1e7fac78"
   },
   "example:open3d-fable-5-2": {
     "description": "4dd413bd0a3350aebc782f491ef2a6213a1161ee2a61eb04a9bd913c8b0d3516",
-    "aiUse": "956a0a90f2cb10997dfc65b98d41d4ed2531adc26604abd62360c6d83e4ac9bc",
+    "aiUse": "ada44961038e4ad65f85f6e579ced5e9251c17d2d351011938c6f481fca2ae3a",
     "title": "69c7fb39d507adb5aa2aaf9a7b4fff154a0c7b749d1d6fc2120edcad56c1eb68"
   },
   "example:open3d-zombies": {
     "description": "87c8d6fcabf69ed797e6c858918869367d8b6b89731afc3027bc50aecc4c3f0a",
-    "aiUse": "251e44d853162715f7911c17898afe955ba3d2725eb8648f5dcdd93b927e54d4"
+    "aiUse": "3ddb7b3dcb8c9913a9bbf63c0c7c00052c55645610bcb62abf383aff2bff85ad"
   },
   "example:open3d-nightshift-fable": {
     "description": "2e2b185370e573e518225f509cbd7a8a5e517a23fa5e0ba840f16327bbc517ff",
-    "aiUse": "38818ff4807b6b9d9639e5c73a7c077ed255d7d9d0e21d995d5af12072c94656"
+    "aiUse": "c2d9e1ef1b171c02535d6c03cf0d8664a7a03746640ffe78f6e98678f5279492"
   },
   "example:open3d-guizang-game-skill": {
     "description": "0ce9c46f1ed4590ff8d9d1f54ebcb9e59daca3549d6aa2d13b26f273cb2c4744",
-    "aiUse": "7116ad331de758b3792a55914784531adbaa3ad5036fcc15c176369816713669",
+    "aiUse": "6e7836d9871c21f131e9cf5a48e7b6bf582c881833bc40191dfc07e48b43e932",
     "title": "e055c50acd5e984f35e2d74d0ecd4924046f221e6da26855116adc2f942bf901"
   },
   "example:open3d-valley-ride": {
     "description": "82135dab938dc845f5455c7ba6929ece70bb9daed6395116631afd26ed8bc2b4",
-    "aiUse": "44673c4c5cbceb8ebd83d997fcf6e36a8299d49d31881a878ea3c532d4039f5b"
+    "aiUse": "7b0e44dc6f6225a0240f2e3ee8373df822fb71d6173ed818ec1ddac88d23f4c4"
   },
   "example:open3d-cold-boot": {
     "description": "2e69dce982b0128912ade8891461ccf5940f87c19488cefff91c0f8dff79112f",
-    "aiUse": "a5d815acceb82ade6d922fb319892b993ee5d817e5f111ecaed28b38081ffe84"
+    "aiUse": "ee0fb98ef6eea818b52a8acfc6c1a3a375be6190e3d4fb89dac8b2e57473dfde"
   },
   "example:open3d-fable5-2-salt-online": {
     "description": "cf31027b2b2aa076fa75a93e9fd46064dc0586a68b1f35735fba57db60806346",
-    "aiUse": "3c2e190cf608a9b2daeef5e218531cb6ad4d1fe317ca0468f0321f095b3c379e"
+    "aiUse": "d3a6aed34e63260cdfe27531d79bc119b25383e96060ed160bca6074817d507c"
   },
   "example:open3d-gist-30166e7c": {
     "description": "1cdf7214795c16386b9458d8d4fe514052f530898a6a820cca73eb48027fef24",
-    "aiUse": "63ca61310d9bd7986e7ca3db66056fde9fdaef0c379d8271159c9e6f993bb203",
+    "aiUse": "00b6712dba596c8b48903a94d5931fb7ac848a35947f2c1666b6884baef1f3e0",
     "title": "c52c733bb751dfc21327ddbd158be6684bbcefc1e1e52f2544e24b9c1f9396dc"
   },
   "example:open3d-minecraft": {
     "description": "58d3a2caba934d56b3ebd8ef119f736c347d663931cf805b9a67a7c90f98690b",
-    "aiUse": "63ca61310d9bd7986e7ca3db66056fde9fdaef0c379d8271159c9e6f993bb203",
+    "aiUse": "00b6712dba596c8b48903a94d5931fb7ac848a35947f2c1666b6884baef1f3e0",
     "title": "7bf2fa0dc5b3a23a192042fb528686505f5fbd688a36c6f5d56a5bc764250079"
   },
   "example:open3d-glm-5-3-one-prompt-game": {
     "description": "bd0f1608e9e06ff5daa5bd4af90b1008c0f572283f3cccf43c68ec01a496f7b7",
-    "aiUse": "c89f7dc712f17c64d04a03403c83ebea92517edba6f665f97d4ac4cb6e8b3534"
+    "aiUse": "be04f63c3494add66e851c7f50c5c2c06ad326c4ae6a065980b65aab28d5182c"
   },
   "example:open3d-gta-manucho-online": {
     "description": "a77a306ce035c8825ed0e74729391782a1ced0c1d3155c4f435a78b27f433e75",
-    "aiUse": "4d663c9877681c8d880fbaf6aa059e79238c5c132d2e7a3786b5e348660b10cc"
+    "aiUse": "49c2b0f8fb662a87230a370fd42168be6fac9b019ce02920f024a171fd241bfc"
   },
   "example:open3d-101-chess-characters": {
     "description": "1702e680894f87afe083114fd85201aa710d15ba82590ed0deb4869296a82007",
-    "aiUse": "65b84373c9d5a32d52df377bf61d3ffadbcbd6c96270b6e09937aeb7af04160e",
+    "aiUse": "f979bcabdb65552600a9cccb0b87140f62bf008f98166a1a4fc0e5c3a536bb08",
     "title": "afb0fe2863813d64dcd8870899572160adc526fbc313cbe3f70de177c558ab64"
   },
   "example:open3d-opus-vs-sol": {
     "description": "efd984a6b8d85930a5128f7aada4e8fa50406175ac4984acf2a9557481531e7f",
-    "aiUse": "e49ae5cc0bafbadfb05306b432d69a04c15bd520c1263f9bb240281cd087a8b7"
+    "aiUse": "13e2e6571ebbbecd6df53f8d7658b0835924eaca87f329065648ea244d7d5fe0"
   },
   "example:open3d-aiplane": {
     "description": "2edfa6802ba486f6395b2804052240578d341d8cfcf761b9847b383dce0c1e05",
-    "aiUse": "85c69b9c82282bbf9c5c5ae85c3a924f80b89f1ebfaf17cf202bdb1615c037e2"
+    "aiUse": "eb489058560303a140201fb0ef6eec172bfef0929c3820063460dc16c389c155"
   },
   "example:open3d-3d-golf-sonnet": {
     "description": "0c6ea52c366cf5282f926c6371e069d8ce19aff7facd786ab170df1daf445a93",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-yolo-mini-fps": {
     "description": "f55d934b58b4d162908f8cbadc9e9d0aaae46217b9f3c799f5d5d5e01b937c15",
-    "aiUse": "f05477199eea1a5fdb7868add677fcfc377336152296608749f6901836db5069",
+    "aiUse": "38c733e2d85fbf9182ee2a480e22fbad081a7c520bc8b1ee47cf8acfd21d6f81",
     "title": "d38fd629d6ab0306c05162c9ba4757407b7c632d7c95f1f2d25885205ce17147"
   },
   "example:open3d-waterslide-game-sonnet-5-5": {
     "description": "4e193a7cb5f0661bb79e3906d8670594d28afdf322180dd5f286857671923d08",
-    "aiUse": "50fd7af748081df4c539fc1645eec471ca6c13309bb436299066ad0590562e67",
+    "aiUse": "a5b7f691db0d1a4b99ac503ade207b44a35d105a2ad2cefe37f932d1e38977aa",
     "title": "18056f71d063f5950da21eb2d87f356815320b4726b5b2b6cb8185d090312d9c"
   },
   "example:open3d-waterslide-game-astra": {
     "description": "28e0b871de3edc9110d2823c1a712b1d4d68fc2fc6e1cdd0f8b948d32566469a",
-    "aiUse": "ef0da0193af2931d1175986cd7b925a6af82bc8d9257571957bc0a1410884062",
+    "aiUse": "148a86161de46ab4b3a45ee5cae7ac3265a7e3608f8dcb06dba4d249b64a076f",
     "title": "c4216ac5e4a2616ffd4447796ebd958e4326a4578fa17b770149d9b84b013978"
   },
   "example:open3d-forja-abisal": {
     "description": "46c36680162a394b7daf669e5b6f94612bd8a41231423c467bb224635ef97084",
-    "aiUse": "7c12872e684b4848a91dbfdc473c4f46e55baeb5be203b8a1b5763fed47b5d85"
+    "aiUse": "11fe714ea0e10b2a4c577d7ab3c357c8eee0301a74e7ac3209e5a3cde6450553"
   },
   "example:open3d-tribal-gods": {
     "description": "2d1026356be456e51821af8cacbd546dbd657098a25b5dab0b049d9c3dd18be3",
-    "aiUse": "85b07a6685326a5a01816e1db9569432b977f7fa7f70f61b8dc9b8975ee09ee5"
+    "aiUse": "4d3bbd262330dbca0e0ec9018aa4a6c6f5a36784705084a3ad69722fe60c4263"
   },
   "example:open3d-fable-chess": {
     "description": "6db6a76e881eca09a85d467465c5747ec97a4dea459ab5739349d407c038d78c",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d",
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee",
     "title": "7cb8e463ed718855ecd114a748b3f72dc46b27e79cced5a1bea040705a000660"
   },
   "example:open3d-glory": {
     "description": "2111578bc7f7a68e3882972b465faded53e488b9691508453818eeee81c00a3e",
-    "aiUse": "564f2ee23e67fb44fd13ceb6aff77a4ac8948d998a9e7a4fd09ae8843d009d67",
+    "aiUse": "00678ec21f9490856e3ebbcd46dfd9347145d4a0454e9890e03b3530eb39af4e",
     "title": "a61b5212bc99582bf82af51e9fa95516321fbe400356bf83a0c5a273f9a56be5"
   },
   "example:open3d-red-panda-vibes": {
     "description": "bc8726d9e633180fccb0b1bb845f87fb3a7cb67434c1a0bc0b90f5174d4757ce",
-    "aiUse": "2f7af83b6f1ea18409a848b5ea8e2acfae9c97985d27c62c0278e04bfc742f22"
+    "aiUse": "f84e72164f788e0a6dae356110f75b96ea11095041be62245291fa078a161630"
   },
   "example:open3d-supermarket-simulator": {
     "description": "f1df83f18f4143364551a62e5c6362d140ea9408d6c82198f0bb3150ca8d8749",
-    "aiUse": "9fa8e837d2d4b41147be8138c20130ef4bab9b90f99b60e49b8baf1af18ae6ff"
+    "aiUse": "be9655ef4376bf5b5bbcf067adca5e65888b11fca9a2fa0ca48677e34819a3c6"
   },
   "example:open3d-ai-slop-arena": {
     "description": "6c0e70d63bd897dcb62f4772a633ea889909d6bdb3095f8dcda2ea9789d18436",
-    "aiUse": "ee6519a55c758652e1f1da766a417d4b91c5ecf3892134bad1bcb79001fec235"
+    "aiUse": "2a6cc9496bb682515f0b79b9a7df12e09e9a75a414d694effb9adf2863ccc4c1"
   },
   "example:open3d-cini-ustasi": {
     "description": "39a77c9c5eed1a66a005021e7a5561311e8e24bf0f50ae0660cfe7ca13bd55c3",
-    "aiUse": "3db7936a83410e2cd045626ea820e936edea04eecc5be1995d0db8d899fa27a7"
+    "aiUse": "962e797eecfe1d63fff6676e2e43f651b2ae88a85a30bedb7db24129d92b38d5"
   },
   "example:open3d-wobble-rush-3d": {
     "description": "980fbd28ff56ef4492e451ab18c43176970eccc92b8e9fc22d509322415e1857",
-    "aiUse": "7ec1b7b3ac7868eae5f2307ba261cb616b1edf914bdec0d0509e1e53c1528abf"
+    "aiUse": "ffb627b5c429bb8ca3364dfc32a0a4acd4c21c18edd52071503e5c7ab3678679"
   },
   "example:open3d-haynes-quest": {
     "description": "12669bd7dc991f81a3a4774194d56434b7a2a3c9520dbfb2ba72dbc0b4c0bd3f",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-gridx": {
     "description": "8cb62f82d72f86ccd44eb806f5ca7f3277671741a3aa3ab4e16ea11833d483ff",
-    "aiUse": "3fd15db2a0c1b6743ef6da214e786cb644c7d3d3fdee7c15ec17e96dd1d60c13"
+    "aiUse": "fcb5e4f20cfcdd0d8faff246fca741a0f387b33d44ec33b52db3928f6d83e0b8"
   },
   "example:open3d-firstlight": {
     "description": "81c1c851776f2806c8086d79fe8780c6936a64bd9980a8ce9df49aa5188ba184",
-    "aiUse": "c15880d2c749b24c084df19d846e2bc38e701790a426dc0cf3c2c3662d6a041c"
+    "aiUse": "d093f088b89913552f88207a1c5d8dfe8cc29c8e91e1da66523bb75d4e9eae19"
   },
   "example:open3d-vibedgames-benchmark": {
     "description": "cc001e1e7d3e836b5767be88c2fb7eb130b70a9717509716ea3d3fbe8da5d35a",
-    "aiUse": "3c5fcfce0d4b41411c76309418c8c91a2528f188858d37342f416b97c050fb38"
+    "aiUse": "2cac50180d4d9fc90b3b97514eda4404e48a72e5908483512ae9041bceb581f2"
   },
   "example:open3d-courier-dash": {
     "description": "5cb9274d484885019639be2228c1ecb65442e805eb3d20bea702e794506f6f53",
-    "aiUse": "75ebdec4e156ff5809f71ca6bb36c788566180dc486750b3a9e16d5e2b21dd79"
+    "aiUse": "7565e46aff72b1738d1b949b1c237b1e41cfd1523582363ed7fdb5899d9e52ba"
   },
   "example:open3d-kale-savunmasi": {
     "description": "c5078f71aadc93c3e5643b39d75d62e4d5add84deb6d00a2ffb67ae65a67d0df",
-    "aiUse": "b3fa537e66bba7278d08edb243b485ff2271c243e9d35664978a0e54d46ff0a7"
+    "aiUse": "362ba617dfffd5ed701a46593d57cdddc8f0d623147d9258905f8b45e02fbc1e"
   },
   "example:open3d-thelongsilence": {
     "description": "6ddba04914519d2d24589a24056e20776f5aba33afbe3cff6f401c43334bae46",
-    "aiUse": "5cdf872b6e1a07c653b209e33b12dc4e8d53d76f677c05d9f75c3dddd89bdf99"
+    "aiUse": "04c01d20a3fd90287e38954e84972a5a1eaad3c134cabefa394e42bcca6b34df"
   },
   "example:open3d-manifest": {
     "description": "33c913bcfaeab3a699b0ec5d176f723302b20015b3749244ec15078b82029de0",
-    "aiUse": "aa8599d0b08c11bab4838ff983973b5b4a547c6398dd30fbf7ecad0b793660e4"
+    "aiUse": "b1f21165711ad4e4d44102ffe08f51e14f86d58f0a50be309acbc052827d3cc4"
   },
   "example:open3d-nightshift": {
     "description": "b40a42a260dd7f3269e01b20890a07daec193b9965fe34ad9c4b0a21f7df9ed5",
-    "aiUse": "819b07b1e66f3415e1ae2a04b0ef411b1aae1217d1627abd86dd29a4dfb8678f",
+    "aiUse": "3e640477366c9a194978e403e951cbfc7a7c7036dc52b614d6713dc905fcc61e",
     "title": "fdc5de5370e967435894e81ef1de3728b77422365b88034a998004b54dc5b7f7"
   },
   "example:open3d-scrapland": {
     "description": "46aae6c76fe7d67b97ebdf6ba1eb13d86aab84496675dbef1853f078c5a07962",
-    "aiUse": "7a77d8592e1e1cd09cb2f766a400fd9a3a37a11889aa5443c02e2c2364128ebf"
+    "aiUse": "30c38996a08c652431ab270ce3434f31a4e5bec3577faf51263eb799286b71d1"
   },
   "example:open3d-client": {
     "description": "4324ec2e07679e10648c58d0adbadbf38958dbd4232d144d201a22c528ef5313",
-    "aiUse": "dbc4e66a77acbd0fb1dd280bfe44983aa8766799f590554557e9962167f2f4e2"
+    "aiUse": "cfa9ad47f6ee28f6ada10a8c19399979e0a7341913b750b2ee28d9a14ac54ad3"
   },
   "example:open3d-drive-game": {
     "description": "ea3b90a031c5b8bf818242b866abeccc49d31c3f5c2cc1878ca75bce21c491d9",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-deadwood-open": {
     "description": "e7fd84b6998d647610f1d66213b74fbfb950d26862978e0a5117eea70d409254",
-    "aiUse": "302ee3b0df500a8e11c1823fc9fd7af64499f8296ab889baa2d453fdac607ab0"
+    "aiUse": "57fd99e40fe4cc388bab97952e7dd1233f8e33779c8a9009fd48088037d6e884"
   },
   "example:open3d-gta-claude-fable": {
     "description": "3db96c32eac2295c1743abe4ed015babdf2f0605d59e1634d62ff1c7788d1360",
-    "aiUse": "f012f8c45101ea6db6b86eea6cbeb71f47de8dbcbc01fecd485d66183bf1f660"
+    "aiUse": "9e7e3583e23b3b738980e362eea8b8a696e312a24fdaa690e873be034669a7d0"
   },
   "example:open3d-fps": {
     "description": "8ba5cc1b1e627bacc362d037c39918f6760b555a772630e3f99c7e5e11559a02",
-    "aiUse": "036e71612635e97ccf44a0fbb8b7f69dc7264f877a20c00eefbae99aaa9a9355"
+    "aiUse": "e6a204c23ba456684dacdff249ec17cb79e2a1f31a744e45a42b3dd7ca4096ff"
   },
   "example:open3d-iridium-reach-demo": {
     "description": "0b20b84034f26b78c6138ed7448be7ce2afa9f89da1181961474f1029dd40945",
-    "aiUse": "5167bedb888e22155876c54481e81d6ecf2fa5c3a3ee9cc8ca52601f8f8b9273"
+    "aiUse": "344870acd535d74c24399092f9d196ae8e81c7c755b68bc4bb6cc638649e9fc2"
   },
   "example:open3d-fableflight": {
     "description": "b0e14c56d0dbf9b9f9c4e0b3b8e605db07c5de90cff965c5cea270502276bf42",
-    "aiUse": "af76e7b7b65ae3a23f26356af0d5a692627f9096cae1328c3db0372c9d1155dd"
+    "aiUse": "cd396c999bca8ae0c5f303e7907ff5ff29c3876a8d962a3a005bb753d106129f"
   },
   "example:open3d-der-koloss-ce": {
     "description": "3b1e8cf483f37ee0d81e9d362974a7f503e8ffb2c30fd31ce046974d145255ca",
-    "aiUse": "5ac0c3b37e7a89f510cba0635f5ec4d4e5ffc46090e291161947e2c1b328a841"
+    "aiUse": "39d7ccc20865decd22f40f0b0268553201e8d8c0eafda2f0d29b695a45e1db01"
   },
   "example:open3d-uno-com-escada": {
     "description": "5dd810b396a7d680ec853d59ecb5115fb473959b46cc2ee016951e29089fce55",
-    "aiUse": "15238f68cf60c63ccb4833049efc38890ba147af3ffe988b4bc25d1bd9ade9a9"
+    "aiUse": "0b2ea1fb6371b9fddc6332aa6b055614350c8d93348102dae61338720e1fda09"
   },
   "example:open3d-boat-astra-deepseek": {
     "description": "a3dd22a5eb07099d24797ded45eb68db4d9b3edf0a01f10253f173b99db9681c",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-tiktok-chameleon-grok-game": {
     "description": "ad370e53ad04314d45f262535ed4cd6b31ac674562ea0231c5357adaeb2c9b7b",
-    "aiUse": "6ff55d0625dd2beec5286e42f223a15114a288340e4cb02221b40f903772ffea",
+    "aiUse": "db5ced9f9fa780c7054afb721e8b9febd635f14e47ac93db507722c8c471f826",
     "title": "f10da90e81d08a4c8f938d1f25f62da2c27e620acd5756a56228e1ae7e08cc06"
   },
   "example:open3d-realms": {
     "description": "3c4b7043adf96f20e5245f9666997557cd88d3ebbbb9bfa329cc01e9913935fb",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d",
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee",
     "title": "b6a26c2c10bd2ecb879fbe6ca49fa768ecd78717b9e805d309344dd309a01604"
   },
   "example:open3d-dustfall": {
     "description": "fadcb9eb749348d85285d52d1f83e98347fa5a167c331aa43c1e4bfea6a96730",
-    "aiUse": "5c62a81934d309f3a0edd8692fd4d2d7be1294541d3ed9780465b876a287a33a"
+    "aiUse": "1884f855150cee10c06e10fea10a0a9b97b134cd04e11d77758f0413b6161d3d"
   },
   "example:open3d-ironvale": {
     "description": "91e37ee11b9d1855399776a6f876053c482c9d0414fc21852b212bb88b883933",
-    "aiUse": "5c62a81934d309f3a0edd8692fd4d2d7be1294541d3ed9780465b876a287a33a"
+    "aiUse": "1884f855150cee10c06e10fea10a0a9b97b134cd04e11d77758f0413b6161d3d"
   },
   "example:open3d-tuktuk": {
     "description": "8f063ca93cb8f9ef54c798ac1736f4385ed394963ca2aa084c9ee359802bedc9",
-    "aiUse": "9df8739a4cea537dc9294689098a9ebb7df6542a6180a748cc6013f263d91b8f"
+    "aiUse": "3a51c49ebdd1add78f40b57a147215b1b1555643b5c22bc3ea29d1793c7a77f2"
   },
   "example:open3d-blameless": {
     "description": "4e977bc8091d0075b3661f83d3392a4a26ebd3df34e9296c69fb46377daa3bd3",
-    "aiUse": "38ea6f03c0c9c9f9cf38e9010bfe7a51a8a637e8e6f4b26204a075b6500d2664"
+    "aiUse": "7bfd2055783ec44764549dabc478a5a7b4d903adc5dac8fb23e1251edbf4df14"
   },
   "example:open3d-soccer-3d": {
     "description": "ded05f195f7d7a92fb77a3c2d0803830d3420f2459d1f42c713c0ad69535cefb",
-    "aiUse": "9df8739a4cea537dc9294689098a9ebb7df6542a6180a748cc6013f263d91b8f"
+    "aiUse": "3a51c49ebdd1add78f40b57a147215b1b1555643b5c22bc3ea29d1793c7a77f2"
   },
   "example:open3d-petalwake": {
     "description": "f4eaa30444d2841865d01b064d195d44d75da807908e15cdb7b256ea0e6822a8",
-    "aiUse": "5c62a81934d309f3a0edd8692fd4d2d7be1294541d3ed9780465b876a287a33a"
+    "aiUse": "1884f855150cee10c06e10fea10a0a9b97b134cd04e11d77758f0413b6161d3d"
   },
   "example:open3d-riposte": {
     "description": "b42e450db1a43e582bd802917f230c109b49bbbce609d634c584bcc78575c79f",
-    "aiUse": "499c97eb4f571c68f9c1cec467c2e06a3b10deb7a7af9f83c34e59bdbc46a411"
+    "aiUse": "395fe4609a7da8732d64b4a7beaac5c0dcf03f7b153268ba6e76d9f2d1d10c4b"
   },
   "example:open3d-before-the-divine-wind": {
     "description": "96a261be884c2d82ee29a664d165dde65467651a62f5e30244e37b654b0fd190",
-    "aiUse": "499c97eb4f571c68f9c1cec467c2e06a3b10deb7a7af9f83c34e59bdbc46a411"
+    "aiUse": "395fe4609a7da8732d64b4a7beaac5c0dcf03f7b153268ba6e76d9f2d1d10c4b"
   },
   "example:open3d-bumblebee-echo-garden": {
     "description": "7403f43b687bcd7998575cc8cceb076bd8eec680c7532183dcce2c0094b094ca",
-    "aiUse": "5c62a81934d309f3a0edd8692fd4d2d7be1294541d3ed9780465b876a287a33a"
+    "aiUse": "1884f855150cee10c06e10fea10a0a9b97b134cd04e11d77758f0413b6161d3d"
   },
   "example:open3d-black-door": {
     "description": "a0ddd5b61028a805098a20b161bcb5d0ebedceefd679a1df76b46666ffde7852",
-    "aiUse": "5c62a81934d309f3a0edd8692fd4d2d7be1294541d3ed9780465b876a287a33a"
+    "aiUse": "1884f855150cee10c06e10fea10a0a9b97b134cd04e11d77758f0413b6161d3d"
   },
   "example:open3d-kekenon-cotonou": {
     "description": "e5d8ac91dc97d3e17afc7d3a0af0bbe6f22e88be31ce0725fc94cd5cda4b7402",
-    "aiUse": "9df8739a4cea537dc9294689098a9ebb7df6542a6180a748cc6013f263d91b8f"
+    "aiUse": "3a51c49ebdd1add78f40b57a147215b1b1555643b5c22bc3ea29d1793c7a77f2"
   },
   "example:open3d-indys-adventure-3d": {
     "description": "c74ae81ea177022105d91546600f4fba626ea19238a3a2e1001bf5edd8a4027d",
-    "aiUse": "5c62a81934d309f3a0edd8692fd4d2d7be1294541d3ed9780465b876a287a33a"
+    "aiUse": "1884f855150cee10c06e10fea10a0a9b97b134cd04e11d77758f0413b6161d3d"
   },
   "example:open3d-sf-bay-area-transit-fable-5-2-game": {
     "description": "2009391073307aa777541c1b9b5a066a681bde1de2947fee87d2023b956b4161",
-    "aiUse": "5c62a81934d309f3a0edd8692fd4d2d7be1294541d3ed9780465b876a287a33a",
+    "aiUse": "1884f855150cee10c06e10fea10a0a9b97b134cd04e11d77758f0413b6161d3d",
     "title": "cf079c9216d252c549a9a677290ce457d6aaee813993f505f38a1f4fae4b9473"
   },
   "example:open3d-feng-3afps-demo": {
     "description": "3024732d7902b4f854235a3acb2aef789cb06fb34ce000d2e20f1a7664353d54",
-    "aiUse": "9df8739a4cea537dc9294689098a9ebb7df6542a6180a748cc6013f263d91b8f"
+    "aiUse": "3a51c49ebdd1add78f40b57a147215b1b1555643b5c22bc3ea29d1793c7a77f2"
   },
   "example:open3d-ai-f1-racing-game": {
     "description": "59e32439d0643602009bae6e8b44d6bd5735fa7555b1551bf98f4d3a712632bd",
-    "aiUse": "8d5d3dd4c4df3bc48c3639e5c0d3efd3dcbaf50637228e394e02a6e7f9c776ab"
+    "aiUse": "c795fb929f8fd066fa7bde8f93ba04ebdd02e2ae1cff4059a7ac5fd508f5deb6"
   },
   "example:open3d-3d-fps": {
     "description": "7eebef262d0a9dfdfc2327b44853ea356545e2db50271f048d581df0887ac348",
-    "aiUse": "2fdcbda1f061245e12e212301c5b8e58f371c4383dd3c882d640e5d24400c912"
+    "aiUse": "3282dd89e52a14a1fb06ea62accf11711277f141e5fddcd4af01d12f11d89d67"
   },
   "example:open3d-amar-io": {
     "description": "669aa87d52137981e5f217a681a581d60b88efd8d630ccb856a466c7a8aecdd2",
-    "aiUse": "299e83edc549539d357218110a8bacab8d5898afc150097f63adeb9bb15cdafc"
+    "aiUse": "088739f07fd8f502eaddb3813f825b7172c2f8eac5288746380017da53e135e1"
   },
   "example:open3d-palmera-bay": {
     "description": "820703cc66085ce5bdef79c3205940b914f5916ddfe0df256c33d85ec5401b40",
-    "aiUse": "8d5d3dd4c4df3bc48c3639e5c0d3efd3dcbaf50637228e394e02a6e7f9c776ab"
+    "aiUse": "c795fb929f8fd066fa7bde8f93ba04ebdd02e2ae1cff4059a7ac5fd508f5deb6"
   },
   "example:open3d-srak-l-zit-2": {
     "description": "606644d14a35209e78eef4d1decba62f9b94f1ecfaca940f22cb559b249ae42a",
-    "aiUse": "299e83edc549539d357218110a8bacab8d5898afc150097f63adeb9bb15cdafc"
+    "aiUse": "088739f07fd8f502eaddb3813f825b7172c2f8eac5288746380017da53e135e1"
   },
   "example:open3d-browser-shooter": {
     "description": "4d9c4fb38df56c630a74963c7be57ff0438e182f8c3a65cbba5dbf0c41dfa453",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-claude-of-duty": {
     "description": "2a1f255e6c99c10abf3d8a2c9d135b38d6dafeea427a3e334bf5bf914c0eb9ce",
-    "aiUse": "02c3dd7e127905014d2fdd16f323800948e31c3d77759c8488b9861e826414be"
+    "aiUse": "dfed428655eb4eff4788b0bacce68c18f6812211624061072dc186a52586cc4e"
   },
   "example:open3d-spiderbench": {
     "description": "02c538a33f705b76707d116a974318cc433c6f27efc315748934bc6eb9c70772",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-claude-code-games": {
     "description": "84b36211ae85ed30bd3fe94282453b9b23d89843423708fc4bcdab884294508d",
-    "aiUse": "05be417755a5ef753d0f8a0358df4773886a60ab3622361814ff9b053f58e4b1"
+    "aiUse": "0bfd835c5f535b53de09932c6e52f37ee7491b4f6259dfcb1eb1018fd5c0f739"
   },
   "example:open3d-little-rain-cloud": {
     "description": "417c6789c477a378742251ebfd2d60936bf3b68eca327164b1a8744c566c272a",
-    "aiUse": "8d5d3dd4c4df3bc48c3639e5c0d3efd3dcbaf50637228e394e02a6e7f9c776ab",
+    "aiUse": "c795fb929f8fd066fa7bde8f93ba04ebdd02e2ae1cff4059a7ac5fd508f5deb6",
     "title": "0ee560e8beeb7619c9fddd065e5a38f179940d083762401ebf06e95ed37e2326"
   },
   "example:open3d-three-quake": {
     "description": "0b7075ab941689f83893a074b383ba27b3a3cacff8beaa094272447170dda074",
-    "aiUse": "d8d661d0a87cc41a42604cae53de0d8ba000bc66c7c2801e2d58af41928ac63f"
+    "aiUse": "286a48cd15ccde2155d4d93ca457440560bcb5c5d584666da00d7a037cc2dcb0"
   },
   "example:open3d-driftwing": {
     "description": "522db954ef5de48410980f512a3c89ea2f746bd3bf323764c8f008b5cdf2db3f",
-    "aiUse": "8c3aadc37a464f4f541f3585a43827b7ad5eb19ac60be7a4c0536d05c89dd1a7"
+    "aiUse": "dd3de958465e399c1df68f789c7628dd022edfa07e3edf2f4d3a71d85abd057c"
   },
   "example:open3d-surgeonsimulator": {
     "description": "5ef7817b9bbab9b46290a7309f1eb71f5948c6a1e8988f6f823d1093d47a288f",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d",
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee",
     "title": "f08f686f8a48b1c77f21eab4c842e39ad1fd18d1532bfc14bd45dca7c2af790e"
   },
   "example:open3d-kaiju-dokan": {
     "description": "1a6cdf91e2652677a32cce6507a9eb78ad7908ca2a6d1ae7d0b4e23fc1fe2cc4",
-    "aiUse": "8d5d3dd4c4df3bc48c3639e5c0d3efd3dcbaf50637228e394e02a6e7f9c776ab"
+    "aiUse": "c795fb929f8fd066fa7bde8f93ba04ebdd02e2ae1cff4059a7ac5fd508f5deb6"
   },
   "example:open3d-spirit-call": {
     "description": "d113979d75d22093baefe65540ff15762852624abf373059b22acd4265251374",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-peri-golf": {
     "description": "a7906ae86bc7063c5ad1b05bbba881c9b5a4dfa7cbf05f412a1f334cfb6d2606",
-    "aiUse": "f4bac6b2018a741d9c9f03241206ad43c6a01bc113fe3c11333a83181514478f"
+    "aiUse": "7c6a79d327f6df697e5ab4a024b87c8bb6d82bcbbd692d5bb41678cb3c89342e"
   },
   "example:open3d-bogaz-vapuru": {
     "description": "bb4cf6e4f853fa552e4df46ac9cbdba69f2a7439cb4ada427c5844c4899c10e2",
-    "aiUse": "f4bac6b2018a741d9c9f03241206ad43c6a01bc113fe3c11333a83181514478f"
+    "aiUse": "7c6a79d327f6df697e5ab4a024b87c8bb6d82bcbbd692d5bb41678cb3c89342e"
   },
   "example:open3d-gr-kart-game": {
     "description": "42b8119c1c3dcafd0c1fa1f7023c183dbd8c4e3042e8520d9860708809b3da4b",
-    "aiUse": "299e83edc549539d357218110a8bacab8d5898afc150097f63adeb9bb15cdafc"
+    "aiUse": "088739f07fd8f502eaddb3813f825b7172c2f8eac5288746380017da53e135e1"
   },
   "example:open3d-openmmo": {
     "description": "30e8a683d40aaf5ed25434bc42ee857979017e226c7ca71f1f99b13784b06a07",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-vibe-coding-browser-game-orange-shift": {
     "description": "d666090e286b11beade5e0090d7822b03b2280a64a788b34974e83c0316514e5",
-    "aiUse": "596b842aeea94979c4ee9e5cd50c4fc656a7abd413142a1cbee42a4ad9fd0363"
+    "aiUse": "cd5cf53566832bc8262a6070a48ec45cc8871c6890fc3e744766dbfcbb5a0b77"
   },
   "example:open3d-webgl-flight-simulator": {
     "description": "ac4222486a2bc19a055f19724d4f4ce29be8381a6030727af62bf507c910cde3",
-    "aiUse": "596b842aeea94979c4ee9e5cd50c4fc656a7abd413142a1cbee42a4ad9fd0363"
+    "aiUse": "cd5cf53566832bc8262a6070a48ec45cc8871c6890fc3e744766dbfcbb5a0b77"
   },
   "example:open3d-yarn-planet": {
     "description": "0594037f7d961d008716cee92473b76320e4b52572f20299aa3a4027c735530a",
-    "aiUse": "16149797e5908fcf955e3524a42e3b61b025afcb4908655df02b7b92f92ede13",
+    "aiUse": "eaa09164337532618152f067446f0db0563c963aa08dfcd960399f387c5b3c1c",
     "title": "0b755986aa47efe5182ecb7e6ae2fa5bbc0fc0c9646f95b80261664efe58081d"
   },
   "example:open3d-maze-hunter-fps": {
     "description": "164cf237cf5cb347e83aedce76db4f1bd42f7679ee2042b7655839de0fdde76b",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-threejs-experiment": {
     "description": "e9d6e8cac2016f05a298f8a069288aeb50aba98f447f8ea85b0acff3b029e209",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-xo-beta": {
     "description": "392f21b13d6b48188796eac1fd88aaa1e2c8e72319dc1e57b102962041ed380a",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-stickfight": {
     "description": "8955151d18ee202ab156aa41e3a30c413b27b1508e0aef214cbf7c00df0a3b8f",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-neon-drift": {
     "description": "2154d81baf3ed37660c300c5e8a9a255a68120e910720d0303891d5bb8a2e165",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-shadow-protocol": {
     "description": "161a5fee2cd68e2fc1687651582f4a137621a2d411d3da013ff2e35df0d0630c",
-    "aiUse": "02c3dd7e127905014d2fdd16f323800948e31c3d77759c8488b9861e826414be"
+    "aiUse": "dfed428655eb4eff4788b0bacce68c18f6812211624061072dc186a52586cc4e"
   },
   "example:open3d-survival-island": {
     "description": "85467c071463aa950448bc2e71c23e6f36c33285f07fd522d70335b49249b537",
-    "aiUse": "c9157338e68abcf945d9a76ea4c61e909fcdcda9c80886f3403b4f48327dd01e"
+    "aiUse": "3c39b21a7746c2ff0a8c9d6b6fedf1b85aa22e59034090eb4302572dba89e2ea"
   },
   "example:open3d-games": {
     "description": "ca3021dc0d7a9c702b4e0860029d9ae659227fcec654795b8aa083cb1fd99d94",
-    "aiUse": "f755f5c92f94cb1c19b57fc73b0b78432d6bbe6a049984a01535ce5bacfa7a71",
+    "aiUse": "d59f348254fba32fbf4dcb87e6e93d039d260be3f4fb98a9f46841a48ff6d737",
     "title": "48ffa4eaea05e720aa3493de1298c1f78452709b04f142fa6f1ae5f34125ec8e"
   },
   "example:open3d-block-fps": {
     "description": "0d93c4d907aa84258c9f61ce99637f148d3c389a88d74d642ff5cb3020d73527",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-kids-games": {
     "description": "f456b8f1a2639df912f17348aedd960e456b60893f6daa7157175949a611a341",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-breakout-game": {
     "description": "bb1216f521520959e131c3ff01026d9bd06b4cbaf17badb52851882347a044d2",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-cranegame": {
     "description": "d9414b99f74feab34dca705df937fc6799ae593043c7a76ea543a379013f3707",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-cube-minesweeper": {
     "description": "ebfbcc265da429480b526c1cc020d0b1f1bd66c38df3dd2b5ad0b3f996567d8d",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-open-game-works-game-iso-survivors": {
     "description": "bf270b2250727d5ad025f0bc367a0f8f21e5deb48d434e7337eab7270651492b",
-    "aiUse": "f240292166382e4d5bc5bd24f0c245ce3eca6fe8f3d96248f4aea4ab0df15a41"
+    "aiUse": "8207cf92841aafbd0a4d9319880f9c1e07c3f432a4d802377ced241958582ed3"
   },
   "example:open3d-grandma-gta": {
     "description": "c43be049a25a9f5dbb93878b9e1492cf465c1888220aa498524e179ee0d97cee",
-    "aiUse": "f240292166382e4d5bc5bd24f0c245ce3eca6fe8f3d96248f4aea4ab0df15a41",
+    "aiUse": "8207cf92841aafbd0a4d9319880f9c1e07c3f432a4d802377ced241958582ed3",
     "title": "036436d16e9d1d834a837b2295eaafdba0e67f823ac7677fe638f4a424ca3ce0"
   },
   "example:open3d-sands-of-the-restless": {
     "description": "9ed9942c96ef6fa1bfd8ac8d8316c61682dbc9a2a2e10b5f2f3d1eb65edd3dbc",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-tides-of-fortune": {
     "description": "faa927aa25b85bffc6bb7e2c28b7db9e73d989c1a3ee72207f178cd01b64915d",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-cinderbelt": {
     "description": "158c9d3852afe91ae003829fc2192e509a2a4fa4697b95c765b65b28b5876baa",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-polytrack-racing-game": {
     "description": "aa6acc32bbc73c0b5080c671a0cf9e2723761da90ebe2bee8809d71a95b37d81",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-race-to-the-shuk": {
     "description": "994f14a2d2a3f64cbf31a96e439b20519f369f52df415e0e3289266200f5dc8c",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-vite-endless-runner-game": {
     "description": "9f18b8f3d22398e598a300d4d0f5c24fae175e0f219aa825ca8df6a9e485660c",
-    "aiUse": "28bcfbe3dc31e0c3cc58907d70f0dc8599aabb6ab2e24f437448f96345d19f02"
+    "aiUse": "7db14fb7662b73c757ad24da683ded4f3123d2dc05bd78fd0e6b85a263759eb7"
   },
   "example:open3d-hearsay": {
     "description": "93bb12dce18b84becc44b4c1b3710bfe4006914abbadd6e57404ab94eff9e3b2",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-vibenstein3d": {
     "description": "a685759c8f86ca9d67565437f848ba157758f57444d71af0d835a6f3656ed6d0",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-labyrinthbox": {
     "description": "2ae6b0eabc4556f36ed84f721139d31378579df59d71cb70112b94a1ad067ec9",
-    "aiUse": "cce45025cf8aeaf273704e10e55a3a58008cd3eb16fc3b54f43d72b92f348567"
+    "aiUse": "04888df4276173c795e9699102b617de8083daf63c02d5f192306015c7fc7966"
   },
   "example:open3d-prismdefense3d": {
     "description": "9deb24dcea121fa11613af4b455992535da1d5264cff4cf41796a80ce8483ccb",
-    "aiUse": "b2510e8bb53eb6276e60405b1d0b41a61ae48fd41f5b5f5a331a171aa5bdeb2c"
+    "aiUse": "35d92550e32343dfcd65660bc50f8baa68c3e4f137896acdcaede9491a24d0a6"
   },
   "example:open3d-pokebrawl": {
     "description": "77215b07d4565f5dceb5348976d1e43830e674f8a58e839594b0d7876f532d53",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-fable52-hang-glider": {
     "description": "f99e57697a2324ce04d86764489be1c27de02f7b03ab53fffe7850421fbbb0d7",
-    "aiUse": "1eef7220d1504856555c62471c0c1ff4114b16e18fad3f8b6833a05c97394807",
+    "aiUse": "8efe77c2ad607cb690a360d4df88c967f94bc278eac6b8778604449472eee44c",
     "title": "7139f0820e9beaba092daf13c7e94cde74680d26680421646b11fdbde3a4012b"
   },
   "example:open3d-workmelt": {
     "description": "e1480d77a44aff04b7b69442a29f28c50820b61698ab2e591b8272b090dbe11a",
-    "aiUse": "4d2b24d944b2fbe31b8bc71ce07040d4abef776662d614562a2002311a013ba2"
+    "aiUse": "7f79f78f9b213357946681ae96b52a7066da1d17e5e5c32981fa8812fb110c60"
   },
   "example:open3d-duskline": {
     "description": "abb9eb71880538128202182cbc2379a77cea920b34708d98d0722336cafda01e",
-    "aiUse": "f7f6dba41e8cad52c988d24f199dd735564c757b38aa8bd73b9f1fa1164e9aad"
+    "aiUse": "ab07ae3a9cb2f196c5cd534ef655ff90e5c25aa16497718d6e46650ccfc1f6e3"
   },
   "example:open3d-tartarusarena": {
     "description": "a15ea1f3480386d4f034fcc3547ad5692712e17cc42c39788c1236daae7fd616",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-rocket-arena": {
     "description": "cbe628ac1e70ef7f4078e7e8e8cd67ea7ae393c6fba0792422fff49391731456",
-    "aiUse": "7bc08ee7c52ce6026ae681e48f37946735a8efa3b1bca271e1d810314ee3348e"
+    "aiUse": "9cf1c8f50bf47941073a4c140e5332bcd0e7cd0020b54088715e1db73fb5a322"
   },
   "example:open3d-haymaker-boxing": {
     "description": "7ccc3fceb331fc169b2b74e299d415b55b4ab5e7d61a2d860e5139e922787d5c",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-unsung-vale": {
     "description": "8dcb483036b7620318ea1a3605c7064ded46e95a014a74c95c3c0a4f01270201",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-claude-of-legends": {
     "description": "4019ae5ea40b27d872500401b3a03fe959282b87d131524de5ab7f6590d349c7",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-grindline": {
     "description": "3c7f5c5f8b99d1639e17810ff92cca9c7da0e36f6c391cb9eb119ae55f8432a3",
-    "aiUse": "4d2b24d944b2fbe31b8bc71ce07040d4abef776662d614562a2002311a013ba2"
+    "aiUse": "7f79f78f9b213357946681ae96b52a7066da1d17e5e5c32981fa8812fb110c60"
   },
   "example:open3d-lowpolycartjs": {
     "description": "132af6e078bcba3dbf1dd96fc2ed31557f0719cec531f036d404744be25d0afd",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-breakout-3d": {
     "description": "bb0bc75d6ca1e259e64497db72979afb3f209a4d1b57fa5e8be2a6d512f2dda3",
-    "aiUse": "10663ec328f746c408f11821f878c9e1c239bde849381de6d6e9137eef01fdc8"
+    "aiUse": "282e3d473203cdfaaec2f1ed4b3cac5ba99d5688910df655644d18c2b995018a"
   },
   "example:open3d-fiat-ludus": {
     "description": "a36b4f9701230c1755a55dab750d81fa302dbba62a7187d535fd79bb511cf439",
-    "aiUse": "3db038238124536f948796194c7aea8942bd79d78d19cfdda2cddc613a44567e"
+    "aiUse": "c7c9af918d80ec0707053263b5756007d93475719468ab0e8fee01e74ac2634a"
   },
   "example:open3d-3d-game-poc": {
     "description": "48658b936bb155f4967146f78bfa29c05ac48244ee859ad60b51632cf043c912",
-    "aiUse": "02c3dd7e127905014d2fdd16f323800948e31c3d77759c8488b9861e826414be",
+    "aiUse": "dfed428655eb4eff4788b0bacce68c18f6812211624061072dc186a52586cc4e",
     "title": "7e38ed94bbed4f56df2e0bcfae773719856f2030cfe20080eac47b3cebc3470f"
   },
   "example:open3d-summitclimber": {
     "description": "def34842b97816da5419fca4fc7a1b6f131cc143dd339666db4aa01f5c9360a4",
-    "aiUse": "cee70bb729ea183b297907683f0f31d4536fb89131327408946145923b22c79f",
+    "aiUse": "090f7698c83184f5560713a44c4bf42dfdba5c264451d20a1e561a606b854661",
     "title": "bf9f5e3e09f6654fd7a0435e3f74298cc5dd0fbaae715fc3c945c9a2a6cae55e"
   },
   "example:open3d-145-korat-cyberpunk": {
     "description": "772c350664566418300a225513407af1d7e66dc7b5297edb8d28bf6e515e0f56",
-    "aiUse": "db62693043b64b027a3bab501b80c22abea24b48ac38bf0a35e17f84414515a3"
+    "aiUse": "282888e890352b65dd7578513b2fde6fa2e48a3f0a843b3e6d89cc9c59f864e7"
   },
   "example:open3d-voxel-sandbox": {
     "description": "1f1392c00861de30e888e2f8ab33bb7cfb09b1e2dd1e853e45ff6ba9fadb44f4",
-    "aiUse": "3f0900b7fdba9f64ec7cad5fb5d42c43e65da30d962d4ca4d6eca31cd181ecae"
+    "aiUse": "424abe78b019b4899eb6eaae7c3b30ee0427a57ceebf38976c4906ff1f1194e0"
   },
   "example:open3d-craftmine": {
     "description": "111d2be1d6f08e27a32053faa15e37d9adc8f6c3202a2818339916cd447a6ea7",
-    "aiUse": "02c3dd7e127905014d2fdd16f323800948e31c3d77759c8488b9861e826414be"
+    "aiUse": "dfed428655eb4eff4788b0bacce68c18f6812211624061072dc186a52586cc4e"
   },
   "example:open3d-holdfast": {
     "description": "a0089c451989e5c83c1fb99428109f5bb2c3c60a863d126ce26eec69126877e1",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-cyberpunk": {
     "description": "28f257e7bbefea4ce7b9a7c92ae93d1d45e3c16346094ebb1d0a4ced2940406d",
-    "aiUse": "02c3dd7e127905014d2fdd16f323800948e31c3d77759c8488b9861e826414be"
+    "aiUse": "dfed428655eb4eff4788b0bacce68c18f6812211624061072dc186a52586cc4e"
   },
   "example:open3d-web-arena-game": {
     "description": "40a72d462df3b5886f829a1522d74bd4da1246e07046befb412e89f1b914158c",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-last-light-academy": {
     "description": "bfb9818ffb62cc5a890e80ceb1c00bb7fb1377a7f39ce476e720da88e743e809",
-    "aiUse": "f76f9cf94bca8f8aeb77c35268372c0daf91af1f4fcbb432543d3b01533aa90e"
+    "aiUse": "a1133787878c69a061bd68ebd4ee02ac6cf83968f89d0adc8e1ac36c7b8e6c50"
   },
   "example:open3d-claude-3d-shooter": {
     "description": "244e3f9e46b24fe79954f58da00ce577da3c017656f8a946af534218b364555b",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-palworldsoulultra": {
     "description": "3be8155f229bae16e4152e5637c1fbb36753e807395da53fc9dd97bc293a35b0",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-doodle-sumo": {
     "description": "bfac1b7ca6ff454e4ba9848f97fc45d50173ae24d08ccd50e75eacdb684611ce",
-    "aiUse": "8eada24b8113ca3b1864844425bb53ba751a419567314c0ad6a6ba3e54b84f48"
+    "aiUse": "58bebdacfed4f9593261fec04de9277abe5c6c875d9674bf23d6dcbe25e56349"
   },
   "example:open3d-runner": {
     "description": "05b8de4e16e466df552a45ed6280d3edf667ec472270f963f78b4d315bb65493",
-    "aiUse": "4ae60cda554b05f4a1032ce2b50ea5bae28588362c981fe95d364762cd582f2f"
+    "aiUse": "5a04f49f43c52deebaddb0c6c7bcb9ce7d068e78b5423a338bff2c090f85ea1d"
   },
   "example:open3d-jungle-survival": {
     "description": "59bfb50195eeeb0e16b7ab8691a874f005c722539304cc57e970dd575b7f492b",
-    "aiUse": "02c3dd7e127905014d2fdd16f323800948e31c3d77759c8488b9861e826414be"
+    "aiUse": "dfed428655eb4eff4788b0bacce68c18f6812211624061072dc186a52586cc4e"
   },
   "example:open3d-alchemists-of-prague": {
     "description": "ff6d6d4b70e9bbe412a6aa3148cca0dad17e53071d8439ea9319a385a8da7bef",
-    "aiUse": "5d014cee24ce6f82ab33713fb98a45e3d33cc345b73189fbf6ed6430184bdc03"
+    "aiUse": "d90758cf73e7af4c1ef18f7f9f57b755fe224fbf166f0f5dcc7272ab819caf1f"
   },
   "example:open3d-undead-siege-3d": {
     "description": "361bc851ace069805254e3d9d17ae6052c09d8307f22d617a5e8276ebc4ca86b",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-game-abyssal-raid": {
     "description": "5106671eec383342192995bb18126a750fbdd4ccec7a8244358509ee7b4bfc1e",
-    "aiUse": "02c3dd7e127905014d2fdd16f323800948e31c3d77759c8488b9861e826414be"
+    "aiUse": "dfed428655eb4eff4788b0bacce68c18f6812211624061072dc186a52586cc4e"
   },
   "example:open3d-aetheria": {
     "description": "c39747dac9cc079825a6dc9c2a08b21a08a701902db622f477810a6c551a16e7",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-minecraft-clone-by-ai": {
     "description": "ab9ba72598b1f6c2d190150d501457b6410bf7b9ac833fa9d866446b3d79ad63",
-    "aiUse": "5c733af9d2c9a3b694ed5e687328c138c7a33a73627f414f39eeb3f078013016"
+    "aiUse": "7312fc678b6c7c41cb28ffd5699b58aa478d24f6936353cecb9d3ac7bf041016"
   },
   "example:open3d-medieval-duel-bench": {
     "description": "82383022c2cdf59492c628a08dc9a17f6586b19fb4832cd0eb5e8ec5865a03bd",
-    "aiUse": "967cffa2de3a6eba198e2cebf8be5b872cf538215d6bd12ec781ae3b2967d6cd"
+    "aiUse": "002b4477c1b8ccd4801afa538c453c9707389ba5bcb737a43353f55b8a2c3fa7"
   },
   "example:open3d-neon-kart-rush-unity": {
     "description": "97eac7c9db38244a8bace6500c0bbe98d6b6a34127a78bd51b199fbcaaec5148",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-godot-cyberpunk-neon-city": {
     "description": "c032f743466508fef4031459dc83a2381777c5f58250b5115d439f6e1e300127",
-    "aiUse": "0812223284d6a98ad8a3725063087291525d9eb777a2b7cd010ad510fd82e875"
+    "aiUse": "eec51f1478d790c2048849344936d4bfaacd2b8ef3dbbc2cded7872e0957f00d"
   },
   "example:open3d-103-barista-shift": {
     "description": "55a1b504fb4a268013d6399fc386dba07a9c10b650ddb5a7219cc44f443ba0d3",
-    "aiUse": "cebc7bbf0fabafe9fd39059fc654c75d6414a93b5042cbc9dd03ff4e1cb1eeb3"
+    "aiUse": "14163045bd47b0c2eb940c06100966ca4eef1a46443d75185addd33db10266aa"
   },
   "example:open3d-mini-royale": {
     "description": "5910c5b78de282392d67ed9009fb2a875cf834a0c8bb7a284a405f3573155f27",
-    "aiUse": "5c733af9d2c9a3b694ed5e687328c138c7a33a73627f414f39eeb3f078013016"
+    "aiUse": "7312fc678b6c7c41cb28ffd5699b58aa478d24f6936353cecb9d3ac7bf041016"
   },
   "example:open3d-sanctuarys-end": {
     "description": "35790445ef7ea3f0ba4b40e3c6b6b6ed2983f5402b02db1ffbad69d54dc1a0b5",
-    "aiUse": "1472a9af5d94fcd6756bc1324596755225f2244f86bd4887d5779a00282b7f94"
+    "aiUse": "a70803822f9853dacb8eb59e947f47460c7765c49f139211bd474249bf984b85"
   },
   "example:open3d-crazy-uber": {
     "description": "8a7718e78e82106b34725f6c5e45b2a90add9729a8485df08cf18ffdaafe0d39",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-roguelike-dungeon-crawler": {
     "description": "820139acc6be1c03c9a5fabac21c4e93030d5945f85e7924cf72df2df85ea01b",
-    "aiUse": "030b58474521c7934fb929e16cc95f1de3485c13b428a022acc72f8eb5b876ef"
+    "aiUse": "839992237296b0a179ce6547cbaf4604ea5ea74bbfe97837fbfb60516d97acc5"
   },
   "example:open3d-blocksbeyondthestars": {
     "description": "71933378a73c9338fe1ea8c64187573c835e1d39aecb9367e922dbe650444cb2",
-    "aiUse": "88b7854d2aa1d26f8fd2b73708b758ca26d55e913369eddd9d1559c090697380"
+    "aiUse": "d05567cba6e3ffff22e53813b7d84d3d6a7d2fc2174179167f7a2c9a9bdde446"
   },
   "example:open3d-vibeage": {
     "description": "a1a5045ca90bc96c506963046f78d242ab1c93fd570511d73d474d8dac23dab3",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-civitas": {
     "description": "8915f41eeb199fd2213530b70465740fb6f22d5b6e04c51b635d34b1e5625f49",
-    "aiUse": "464e7d19e746fae2ce2abcd814e805778671f946770d92bf90907e5c9120bce3"
+    "aiUse": "62d5a3b10ae9da015b727272589d4df88412633d637f10811804d7c4a496b10f"
   },
   "example:open3d-game-barrel-shooter": {
     "description": "1310fea18937df4e2e03711730a3d2c2156613c955d1f73bbe045b375c66145a",
-    "aiUse": "4d2b24d944b2fbe31b8bc71ce07040d4abef776662d614562a2002311a013ba2"
+    "aiUse": "7f79f78f9b213357946681ae96b52a7066da1d17e5e5c32981fa8812fb110c60"
   },
   "example:open3d-canvas-wire": {
     "description": "8174f2dbfe53a5cb29a18fae96d1612beefba611d295ea19dd9728846f0dd86c",
-    "aiUse": "568ec2e335300c24532fde1645b213773c3e80480a50abef94d8c65d3effcf80",
+    "aiUse": "2df8b3136afb9c82436aa31182fc253c89ab14c36a24533fe01ce21924eef69f",
     "title": "f3f6cda882b4bd1830b3fb698cce00304be3d1982a419ec0168e3ca2ac6bbaa8"
   },
   "example:open3d-gist-minecraft": {
     "description": "1b9276589cf3aa1f1e0ccdd5b583fd4c20807ffa9892168c77ecab00e5c06f7d",
-    "aiUse": "568ec2e335300c24532fde1645b213773c3e80480a50abef94d8c65d3effcf80",
+    "aiUse": "2df8b3136afb9c82436aa31182fc253c89ab14c36a24533fe01ce21924eef69f",
     "title": "e9bd980db93d8df2e9b7670e4ab78917c2598140a7eb2933646ac0c0a98f3369"
   },
   "example:open3d-argon-games": {
     "description": "618fdda2d3fda597bb10c2a90097ff5171e04279cb90431e2d1938013bce3c7d",
-    "aiUse": "b12026596476902ce676cf7e490752d1729efcd86682113fb46699e53c8fc5f7"
+    "aiUse": "b38df17eac8e19956df9af6211d7a3f209752bd23cafbc2d6b56986bd2558f6f"
   },
   "example:open3d-indian-subway-surfer-game-gemini-html": {
     "description": "f000eb411b4c827a66e2617bdb6e86d65b107751707d097d32e25c52c5f42d88",
-    "aiUse": "0b5eeda770d1b4f55e20f32171fe4db780cdd8399ffe788992f5f6fe850c9cf8"
+    "aiUse": "f6c45e2346e7c9a700113390830ef7c9f51a4a7e0a17256f55848289e98a3727"
   },
   "example:open3d-vibecoded-submarine": {
     "description": "4761f94fe999adf7b7e79ab5fc0d947a986ef2e9755547cc8e0cde263203cbd3",
-    "aiUse": "3a8d035ab67dccb259d03a79bd9f83c4d0dd0f0d5897635b459b460be5a37bd6"
+    "aiUse": "7ce27eb6be5f16ba0b8e259aef9789471be56cdce9e2d217e892ec354d5e56af"
   },
   "example:open3d-ocean-battle-racing": {
     "description": "2bb9b9ef25fd83cacf2ceec8446451bfe46538a25b50f096dd3ef46e33609eaf",
-    "aiUse": "5eb050c9d873af4859446dbe83649c49785e2d86a33a480408e544ff424c3ee1"
+    "aiUse": "111b9d61fa7d1b12af36bc5d3b66c36c250f6a3ca2fee7b630650765cf1798db"
   },
   "example:open3d-tinyprd-demo": {
     "description": "f32e00be13c3cbfbc97f3c80f84d540ca85e57f3f6150425c4272ad8c5679eff",
-    "aiUse": "cf14279274a250906444edf03bef140d8b7f7c7b764242efb13040b95860af5b",
+    "aiUse": "5dfba1ee7f04bbbfbb05229cff290da591357fd6aace60cf7aa881fb487aeb02",
     "title": "326a5d7898208f116d3c551a80edd62f8ed0837e47bc3b32e1a760a0f589da5e"
   },
   "example:open3d-swordsman-game": {
     "description": "818652db8544c63e732df21691e12b7b9e3290380305fa1e0d0a8e3af613687f",
-    "aiUse": "521c7a6abb93db8c9a7bde0eaea274d8762bac0fd7b89608bffcaa356d3831c1"
+    "aiUse": "97bb0d5b9b4b3fc5ad325f4bcc126cb7282c70d2b80b4124ca786643e773e5b9"
   },
   "example:open3d-rougelike-vibe": {
     "description": "4bb9bb01a82371138a867034a05ce6169cb77ea0eaa2f4c8ed1abcb74a5285c7",
-    "aiUse": "ff32f1ba3a753907c6a243df31603d14d4a365c3be49a280a527cd335ca232dc"
+    "aiUse": "53de72921484a84fb5e294b6545410181ce3aba8c34bc1b51026fd2a24d50803"
   },
   "example:open3d-x-wing": {
     "description": "0714ad3922077780b797f72c120eaaa35077ab069a547bf83944d6da1db456b1",
-    "aiUse": "11b192baf1663e0561e144b0b463ffc3e902d13529573a9f56c76575bc2891bc",
+    "aiUse": "cfea86c3f4f0d5402bbded305ec5cab4aec4edbb7b58766eae61ef1a80ab7719",
     "title": "1669c0ade09e94716a9678115d8d701108dabcf43b48d915ab776c3c1da0a039"
   },
   "example:open3d-vibe-coded-web-voxel-engine": {
     "description": "77a35c3f9a3e69573581112667a9ad282161f25da3fc726cb9972dcd55bfdccb",
-    "aiUse": "5eb050c9d873af4859446dbe83649c49785e2d86a33a480408e544ff424c3ee1"
+    "aiUse": "111b9d61fa7d1b12af36bc5d3b66c36c250f6a3ca2fee7b630650765cf1798db"
   },
   "example:open3d-vibefighter": {
     "description": "696ea3bc204b5f7e2f3f1c64977cfa60af24832be41be13972989d6f51173ac2",
-    "aiUse": "e5345d8286243806828c1e0f45ed680704cb62ce74aaa57e309caeddd6c31036"
+    "aiUse": "791708d1264c5e2618c396c248c89a12e551c88289a440904fa4b7e11ea3b33a"
   },
   "example:open3d-3d-car-racing-game": {
     "description": "f2e231add6b80f21db7472c1461a6e39cae8b976e654b2432ac59d3d96c9e932",
-    "aiUse": "11b192baf1663e0561e144b0b463ffc3e902d13529573a9f56c76575bc2891bc"
+    "aiUse": "cfea86c3f4f0d5402bbded305ec5cab4aec4edbb7b58766eae61ef1a80ab7719"
   },
   "example:open3d-ai-horror-games": {
     "description": "bad563fd2eaa622bfc9443aff38988eba80be99f34628afdcc34961254bbaa8d",
-    "aiUse": "cfb2b426d3fc28180b8c29526cf235d414b1072b0226ff4b83a5a53b5ee7c00f"
+    "aiUse": "5dbcee8a366e30136b091500a83dab1d1a04ba6a084437976f4d868c91e4ddc4"
   },
   "example:open3d-scoundrel-solitaire": {
     "description": "5ae9438dd5cb0102d279a2bb6d9863df4d65feb1a22cd023c33ff535e2c75001",
-    "aiUse": "cf14279274a250906444edf03bef140d8b7f7c7b764242efb13040b95860af5b"
+    "aiUse": "5dfba1ee7f04bbbfbb05229cff290da591357fd6aace60cf7aa881fb487aeb02"
   },
   "example:open3d-tiktok-chameleon-gemini": {
     "description": "c3bba2b639ed657822e95157278de84db02498ff700636786764163b6a8cf3dd",
-    "aiUse": "17aad96c4d9c10dd682e4a247308aa7eff82105918a4f27f661153d433fa31ae"
+    "aiUse": "8f75c2da30e589be101457b1f07baeb8b1282708f00df92533eef15f02fb610d"
   },
   "example:open3d-furiousreqman-3d": {
     "description": "664381cbcd5f4cf09e0b17b827fecdad18de695f750bcb73413a8436f740c158",
-    "aiUse": "cd5096d815a3273fb20a603e6faf865f6cb8f750ec1ea3489a7c3622054bca04"
+    "aiUse": "6b064425f35df54eb2c89eebaa3fb8c10bbeaf6c6a872ae279adf888987acc4e"
   },
   "example:open3d-nightfall": {
     "description": "6717d95746bcbb482fb24fcfb60463750c931981b22264b45f1446250517c968",
-    "aiUse": "7c74a4a4b79c5f68dda9b71e920f2d57537fc984d30e5d1b5ff7880160df9c84"
+    "aiUse": "9d0cf6c84a9e1d294f3873ed97d8d6351a0905a02d1e02d82e2b941e3a8d3f47"
   },
   "example:open3d-claude-opus-5-5-games": {
     "description": "84252d56976ba5ed8bd213173700a35a2bdfc75fa7a3e1691c67aacab5c95a4e",
-    "aiUse": "b345ff4e02cd9724b0145950ae599d0a3a13de7bcb4c9f969fdbeff846952a8c"
+    "aiUse": "a07c8d2494234b0c1678e6ef54b0fa9e99e2e7d6d741e6ed84c086823c1c7286"
   },
   "example:open3d-opus55-3d-games": {
     "description": "84906180b87e72322fecec4b0e98ea36efd5ad65fa43417aeb4199425ffb6266",
-    "aiUse": "4c5d6f4290bea9ef346554ca27f401f4e2a0005c1436a2372433d5d42597440c"
+    "aiUse": "eaa12126fc30e65fafe0e93579cc85d6622e13eddaec2eeb06d1bef3abaaf9f1"
   },
   "example:open3d-tidewater": {
     "description": "10ef0803bb33fe273ad9807f6d89e8f3cf7cc417df2ff9b40ec020436bc3b184",
-    "aiUse": "7c74a4a4b79c5f68dda9b71e920f2d57537fc984d30e5d1b5ff7880160df9c84"
+    "aiUse": "9d0cf6c84a9e1d294f3873ed97d8d6351a0905a02d1e02d82e2b941e3a8d3f47"
   },
   "example:open3d-tatertotsflightsim": {
     "description": "6f8b354cc68a4b286d2bb25261ea2946316ee365678bd2f18bead07197ca6329",
-    "aiUse": "7c74a4a4b79c5f68dda9b71e920f2d57537fc984d30e5d1b5ff7880160df9c84"
+    "aiUse": "9d0cf6c84a9e1d294f3873ed97d8d6351a0905a02d1e02d82e2b941e3a8d3f47"
   },
   "example:open3d-last-courier": {
     "description": "4d6a3e2a405aa73ccce939916ea1c76a0b875d47ca473f94f7ee6fc92d0978fd",
-    "aiUse": "4c5d6f4290bea9ef346554ca27f401f4e2a0005c1436a2372433d5d42597440c"
+    "aiUse": "eaa12126fc30e65fafe0e93579cc85d6622e13eddaec2eeb06d1bef3abaaf9f1"
   },
   "example:open3d-wild-fields-1648": {
     "description": "1e5b33e8fa01ad77296d76211659b880f61dc77c197d8002284649b8099afd81",
-    "aiUse": "b345ff4e02cd9724b0145950ae599d0a3a13de7bcb4c9f969fdbeff846952a8c"
+    "aiUse": "a07c8d2494234b0c1678e6ef54b0fa9e99e2e7d6d741e6ed84c086823c1c7286"
   },
   "example:open3d-ink-arcade": {
     "description": "b12b9d38e1ed4af520d3c82f7b8ada4a73ce1bf84c6a5fdebd7d10558766f5f4",
-    "aiUse": "4c5d6f4290bea9ef346554ca27f401f4e2a0005c1436a2372433d5d42597440c"
+    "aiUse": "eaa12126fc30e65fafe0e93579cc85d6622e13eddaec2eeb06d1bef3abaaf9f1"
   },
   "example:open3d-fishslop-opus5-5": {
     "description": "97fdb675843dcd313807dae35b75a22e684f65eb81fcbae0ed1007814178e903",
-    "aiUse": "e83ae17c86e155256246ec292301e63cfbfe3126ca01d0b0c5b3a7c0e0b7347a"
+    "aiUse": "3cb021eda6eb037591090ae28a59591df526c156442525740d33d40ec7ecf4bc"
   },
   "example:open3d-overrun-claude-opus-5-5": {
     "description": "92bf191d4e0da5671540ba241be55738824d9585eaaa8e29eda8c996d19b09a2",
-    "aiUse": "e83ae17c86e155256246ec292301e63cfbfe3126ca01d0b0c5b3a7c0e0b7347a"
+    "aiUse": "3cb021eda6eb037591090ae28a59591df526c156442525740d33d40ec7ecf4bc"
   },
   "example:open3d-neon-zenith": {
     "description": "74cd9555e8798a8bf40e59c32e7b426caf6ec40d33fd123c98d1ecb770af36a7",
-    "aiUse": "4c5d6f4290bea9ef346554ca27f401f4e2a0005c1436a2372433d5d42597440c"
+    "aiUse": "eaa12126fc30e65fafe0e93579cc85d6622e13eddaec2eeb06d1bef3abaaf9f1"
   },
   "example:open3d-voxel-musou": {
     "description": "3d9ec9119e71ccd16c6a6b115c5a56be8588bf47688f64479620e4844fc78949",
-    "aiUse": "e83ae17c86e155256246ec292301e63cfbfe3126ca01d0b0c5b3a7c0e0b7347a"
+    "aiUse": "3cb021eda6eb037591090ae28a59591df526c156442525740d33d40ec7ecf4bc"
   },
   "example:open3d-video-to-game": {
     "description": "2447c8f6fc3c6016c464fba3401dfdd895819bd770f39261b0c0d3f537924c45",
-    "aiUse": "6e5fd0c9add92e3528490e1f8e981fea2f8de092cfb63964ff8597a7de5ae7f6"
+    "aiUse": "9534811184985c1150ea4ed9ff92b89f71977ea197219ce959f2c28b1cc4b046"
   },
   "example:open3d-celadon": {
     "description": "78849ae0b43101d6e7c6a717dc43f53d4ba1dc39a6ba336a715204bd774bab3c",
-    "aiUse": "7d14cde31a6e565190cd31c4e174d5fc76e163aedf65e773ea8796ff94961f79"
+    "aiUse": "8c43308d5d496a4fd875376f4cf332fb716f559bd45469e0382720a35a020f5d"
   },
   "example:open3d-clawd-7-8": {
     "description": "ec062cb5ff3be7ad57ba5c69c72c2884d3c234650385180d567d3f37090960aa",
-    "aiUse": "4c5d6f4290bea9ef346554ca27f401f4e2a0005c1436a2372433d5d42597440c"
+    "aiUse": "eaa12126fc30e65fafe0e93579cc85d6622e13eddaec2eeb06d1bef3abaaf9f1"
   },
   "example:open3d-claudopoly": {
     "description": "ae90c8031fd98605e6d8803af284d754e729fe1f8b6d13551b2319eb7506420c",
-    "aiUse": "f4642b33de25f6848bf1cb4df7349d204e18290e488b6c784aaa94399ef0836f"
+    "aiUse": "95d9d52ba9fe5356b998ba867d0f8ad339f293cd2a127f411a118fc594f35dad"
   },
   "example:open3d-backroad-rally": {
     "description": "0ef4b868b9cbff399cf6f6297b100d114face6840ea874d815b63023641813b9",
-    "aiUse": "32a0c45274fbd86c43d52d33d5b9ee0e8f20aa859cd50e72db415552da2a067c"
+    "aiUse": "1baad1e2e3ed06b2df80caea9a7b28aa3ddbf9195c5e7aa28d5fc044040ca8a3"
   },
   "example:open3d-voxel-strike": {
     "description": "34d7c0bd5ed97b11a9330d28bd4a4dbce4a635b1f86d1c31681fea075bfba813",
-    "aiUse": "640940130bb6a9deeaf30cf9c6d2c5c815cf9dfd7d28eaac0766e11a72abb775"
+    "aiUse": "f97b0e74cbad016f242e88130a1b19dc04a6e9bb80f79eccca7475823f4176cb"
   },
   "example:open3d-vibe-gaming-interactive-playbook": {
     "description": "20e4181b4891cce1ffd70995be0052ced3b2d7d64359c8ab6340436b1b013e13",
-    "aiUse": "d282cffc0d94aaa660655f419c618106a2328390f27bbd025d7bef12efaa30ac"
+    "aiUse": "c5a9c57f6fdc708e6d2c9ca8b9f5cb3705a0f06cae9c166783c33a81ce9d390c"
   },
   "example:open3d-opuscraft": {
     "description": "f892b389f050ac7c445ad776145c733299f9cb1ee59bde2472b6387d5ad3cb02",
-    "aiUse": "4c5d6f4290bea9ef346554ca27f401f4e2a0005c1436a2372433d5d42597440c"
+    "aiUse": "eaa12126fc30e65fafe0e93579cc85d6622e13eddaec2eeb06d1bef3abaaf9f1"
   },
   "example:open3d-opus-fps": {
     "description": "324957fc437f1070bf2e969d86028c58ce39a64b67946d455b4dc0e26019a043",
-    "aiUse": "7c74a4a4b79c5f68dda9b71e920f2d57537fc984d30e5d1b5ff7880160df9c84"
+    "aiUse": "9d0cf6c84a9e1d294f3873ed97d8d6351a0905a02d1e02d82e2b941e3a8d3f47"
   },
   "example:open3d-kagit-kart": {
     "description": "da329a043d3e36cb193064033425caddf7d403379dea9e7d75b5f09d30437ddc",
-    "aiUse": "e56a087b753a97ffc998ca2535a7167001a7d482bd8c6759ed974a3bdd1b9648"
+    "aiUse": "e66337f8cc048aaa1c19ffeaa6c028f17a6e7dff56448a6a622dfcec35d8b428"
   },
   "example:open3d-emilius-wingsuit": {
     "description": "4286191af44927479dbe44ff624233f2816c94e31aa377e57cf5dcf540168e83",
-    "aiUse": "b345ff4e02cd9724b0145950ae599d0a3a13de7bcb4c9f969fdbeff846952a8c"
+    "aiUse": "a07c8d2494234b0c1678e6ef54b0fa9e99e2e7d6d741e6ed84c086823c1c7286"
   },
   "example:open3d-out-of-the-box": {
     "description": "ec9c31ad3fb38322b158d790b7a2c090b39208584b62540ea2ff4f348a003e64",
-    "aiUse": "4c5d6f4290bea9ef346554ca27f401f4e2a0005c1436a2372433d5d42597440c"
+    "aiUse": "eaa12126fc30e65fafe0e93579cc85d6622e13eddaec2eeb06d1bef3abaaf9f1"
   },
   "example:open3d-radikal-bikers": {
     "description": "4e166eabc8d9e334e9433816f65644165634aedb30d4349df29a755c0596f247",
-    "aiUse": "aafad4f4c2abd8e5339441d3d237867bcdd08521f264b7184a64f525885d8337"
+    "aiUse": "1b538f88ebfd87cff5e568f93478cf5c32858259cf0512062125907fcbdd8e34"
   },
   "example:open3d-neonbay": {
     "description": "de711bdeb266c5a0c2966f7df86020befda00b863ada47ac5f7953f6ba9f9cff",
-    "aiUse": "4c5d6f4290bea9ef346554ca27f401f4e2a0005c1436a2372433d5d42597440c"
+    "aiUse": "eaa12126fc30e65fafe0e93579cc85d6622e13eddaec2eeb06d1bef3abaaf9f1"
   },
   "example:open3d-threejs-multiplayer-fps": {
     "description": "df18522e92b745ff1a8893bb6f9cf55ea821547daba24d0e1751543003c49223",
-    "aiUse": "7c74a4a4b79c5f68dda9b71e920f2d57537fc984d30e5d1b5ff7880160df9c84"
+    "aiUse": "9d0cf6c84a9e1d294f3873ed97d8d6351a0905a02d1e02d82e2b941e3a8d3f47"
   },
   "example:open3d-saintdoom": {
     "description": "663681be07c5ee4879f3d26491932f762e4952a4e82eab157075a5eb9e6d244e",
-    "aiUse": "e83ae17c86e155256246ec292301e63cfbfe3126ca01d0b0c5b3a7c0e0b7347a"
+    "aiUse": "3cb021eda6eb037591090ae28a59591df526c156442525740d33d40ec7ecf4bc"
   },
   "example:open3d-pixel-tactical-shooter": {
     "description": "9380ba89b03ce1b1309b741f7545e01cc3a8d30e3fc4bcf9f97d3bcac0378df9",
-    "aiUse": "e83ae17c86e155256246ec292301e63cfbfe3126ca01d0b0c5b3a7c0e0b7347a"
+    "aiUse": "3cb021eda6eb037591090ae28a59591df526c156442525740d33d40ec7ecf4bc"
   },
   "example:open3d-snakeboard": {
     "description": "b22f88e2dd6c41962eaf0e9f43a9bc7efb08b923af6afb870013066d4be934d5",
-    "aiUse": "7d56f053a0d9eb680371f333fe1bd719b0a31e65e59cb843ff3d3ca25cff810e"
+    "aiUse": "f3d0f1de70c7981a524914566290cdd757e2ef06cd2fe5347ceb743cdcfcba1e"
   },
   "example:open3d-mineclaude": {
     "description": "6880cffd62165fe923337f8eabfff502f71f96094367ee3756c74996a202f5f4",
-    "aiUse": "7562ed626d8d2c480214ed221b2d87300dad287329c5610c8544a18f17b3b449"
+    "aiUse": "1bf2362b22ac4d83a504bcb711994d8912f47c765d8902f6b9725d6d1494c3d3"
   },
   "example:open3d-neon-breach": {
     "description": "a8097eb83331972bed6704414141e3e78849ca0c148b3fa528053ef736f83637",
-    "aiUse": "b345ff4e02cd9724b0145950ae599d0a3a13de7bcb4c9f969fdbeff846952a8c"
+    "aiUse": "a07c8d2494234b0c1678e6ef54b0fa9e99e2e7d6d741e6ed84c086823c1c7286"
   },
   "example:open3d-castle-vibes": {
     "description": "3bdaada9dc987cb7350d8428da3d9524a90336853158ac7ac1a91347633dd20a",
-    "aiUse": "8d901a074f69ac8f1921bcb774a5fac9c42bd42b01fa2de632f109e272363896"
+    "aiUse": "146b5c0705763c42cc7d64aee39a9e352b58dc1be79392d1c7ac275b1880bd36"
   },
   "example:open3d-quest-ai": {
     "description": "3a948a6fb14e95b193d7c603e7e52ed126bafb0aedeff01c4e321b834d6766f3",
-    "aiUse": "ade0fff52a84904e1cb317cfdf95dda39a56ae9f2a16507658b0088d77644eeb"
+    "aiUse": "830981926fb5163e22f4b4c6081f9ffd41639690bb15b6d0dc38c1f2ad923679"
   },
   "example:open3d-gravewake": {
     "description": "ae7a0cd1ba4c0803fcec8158ab940f54409e3e2cd147f50e156937570d771730",
-    "aiUse": "e56a087b753a97ffc998ca2535a7167001a7d482bd8c6759ed974a3bdd1b9648"
+    "aiUse": "e66337f8cc048aaa1c19ffeaa6c028f17a6e7dff56448a6a622dfcec35d8b428"
   },
   "example:open3d-jiggle-kings": {
     "description": "f2f0ccedbc8040ee54c2dae82404613767b4a504898fca4b6d4ef95e1bea73a4",
-    "aiUse": "4c5d6f4290bea9ef346554ca27f401f4e2a0005c1436a2372433d5d42597440c"
+    "aiUse": "eaa12126fc30e65fafe0e93579cc85d6622e13eddaec2eeb06d1bef3abaaf9f1"
   },
   "example:open3d-core-business": {
     "description": "021cd769c72b0106a34aee783f35d178da718d36ac6139adf6b56d53b44ce10b",
-    "aiUse": "b345ff4e02cd9724b0145950ae599d0a3a13de7bcb4c9f969fdbeff846952a8c"
+    "aiUse": "a07c8d2494234b0c1678e6ef54b0fa9e99e2e7d6d741e6ed84c086823c1c7286"
   },
   "example:open3d-forge-depthbound-mobile-dungeon-game": {
     "description": "83ce232ff43993c6049d7f56d90f3957220b6d9f4d0dba57a2b6772523b5f7bc",
-    "aiUse": "4c5d6f4290bea9ef346554ca27f401f4e2a0005c1436a2372433d5d42597440c"
+    "aiUse": "eaa12126fc30e65fafe0e93579cc85d6622e13eddaec2eeb06d1bef3abaaf9f1"
   },
   "example:open3d-tidewright": {
     "description": "10ea27a8e30e876299f48f1a55c551599d1f95f8f360d95bee82bf62488b17d3",
-    "aiUse": "5b1ff8bb4d52f9f08309c7c69478f9a29e7d6f486e94a079f376503cce712116"
+    "aiUse": "5f6d932ce284defe311b4d90d61b9b2c23123dd9b26d9137ff99e1ed2c357e64"
   },
   "example:open3d-claude-opus-5-5-demo": {
     "description": "84906180b87e72322fecec4b0e98ea36efd5ad65fa43417aeb4199425ffb6266",
-    "aiUse": "4c5d6f4290bea9ef346554ca27f401f4e2a0005c1436a2372433d5d42597440c"
+    "aiUse": "eaa12126fc30e65fafe0e93579cc85d6622e13eddaec2eeb06d1bef3abaaf9f1"
   },
   "example:open3d-racing-web-game": {
     "description": "28a844d6bc9daa95688e9173431aa64e9311d5c63755e5ccef4317850f16f745",
-    "aiUse": "d48875cf3e4a1345c8a857618a5a792a48e3253e22e16ddcc17b35e9bd1da0c2"
+    "aiUse": "104a95a7d30fe56b5545c1468ce8e75b440e8d024f3fac746e724cd1af23db08"
   },
   "example:open3d-vogelsimulator": {
     "description": "617b2d51402aa3bea98409d29c98e7913f5c29076461fb3c20fe3553e0a9045f",
-    "aiUse": "7562ed626d8d2c480214ed221b2d87300dad287329c5610c8544a18f17b3b449"
+    "aiUse": "1bf2362b22ac4d83a504bcb711994d8912f47c765d8902f6b9725d6d1494c3d3"
   },
   "example:open3d-quoridor-3d": {
     "description": "174f0237c2963c94162e5c7e10abf7396d8871c276c1e4487c0954133d3e4ab3",
-    "aiUse": "e83ae17c86e155256246ec292301e63cfbfe3126ca01d0b0c5b3a7c0e0b7347a"
+    "aiUse": "3cb021eda6eb037591090ae28a59591df526c156442525740d33d40ec7ecf4bc"
   },
   "example:open3d-ludo-3d": {
     "description": "0f125a480ddeddeb28511132da670c0277200bb13dbb0d3ca636314b3ee58a1c",
-    "aiUse": "b1d816c7e03e7639376ec5c74b430c3bb098d26960e1ca2deadfb463551ee4e5"
+    "aiUse": "16587251d002e0a97b5bbb7413ff93ed60690e60ba8cd0cd5f8fe5a3c3b6292b"
   },
   "example:open3d-bejewelled-clone": {
     "description": "8381abd07edd1a472eec925844e5b7c930c5817c5ebf864368b59b75e0c379db",
-    "aiUse": "2810ff7c5d3f39177f11e3b97e9cd85b077c0352e4fc7a06c93f5de76b32faa0"
+    "aiUse": "f94f6333f5647a29ee27809dd0177fcab9ca1c9c149bd5b6897a9092c04de932"
   },
   "example:open3d-narihitom-hellgrid": {
     "description": "0739518a3b851232fabca62376c77aa587e8766397b6081bfc708b84a056abd7",
-    "aiUse": "b345ff4e02cd9724b0145950ae599d0a3a13de7bcb4c9f969fdbeff846952a8c"
+    "aiUse": "a07c8d2494234b0c1678e6ef54b0fa9e99e2e7d6d741e6ed84c086823c1c7286"
   },
   "example:open3d-sunset-down": {
     "description": "6bb8f558d89281ab5e546a82123edefdccf218b793a934daf230c8404288ff7d",
-    "aiUse": "f4642b33de25f6848bf1cb4df7349d204e18290e488b6c784aaa94399ef0836f"
+    "aiUse": "95d9d52ba9fe5356b998ba867d0f8ad339f293cd2a127f411a118fc594f35dad"
   },
   "example:open3d-blockworld": {
     "description": "bb66531fa7932739a89ed69c0aed7466dbd4df3bd6352e1c49fae59b2c3739bf",
-    "aiUse": "4c5d6f4290bea9ef346554ca27f401f4e2a0005c1436a2372433d5d42597440c"
+    "aiUse": "eaa12126fc30e65fafe0e93579cc85d6622e13eddaec2eeb06d1bef3abaaf9f1"
   },
   "example:open3d-by-opus": {
     "description": "adac9d316adccb1001898107ff8ddc98018a9bd7d5f8db74baa407514979f318",
-    "aiUse": "4c5d6f4290bea9ef346554ca27f401f4e2a0005c1436a2372433d5d42597440c"
+    "aiUse": "eaa12126fc30e65fafe0e93579cc85d6622e13eddaec2eeb06d1bef3abaaf9f1"
   },
   "example:open3d-opus-5-three-games": {
     "description": "952f6fe5817591bef4eca840768a8e0b6e37faffb20d12c9b2a9e3b7bf554aaa",
-    "aiUse": "2e86ebedad6891352dca7efe820f3c3fb2f78aa60b4dd7932e1248c0a2024f1c"
+    "aiUse": "773863bce67d87104a153c8a97ae0fc9b79e75f56c83e32b6d34a03c4b014715"
   },
   "example:open3d-chess3dastra": {
     "description": "e37307d7597c3a5a212325313a640cf48d5ba825a367e421139233a8250d6948",
-    "aiUse": "285d8767c50cfc01ef14a928f6cb2d2ce3956649835cab403ddc1ab04602ea49"
+    "aiUse": "62b03171efd0c4cb88c23de52fa0156d87abb1f5aaec0a103ebcb0b61440fbb3"
   },
   "example:open3d-gogh-strike": {
     "description": "30f30da5a1d2bebe75335c6c57ce80239665393800ce76c3bfbe219bb4ed59c7",
-    "aiUse": "165a646dfee450e582c6bdf01eeb3586520ea111f2e00da9a956c5acbb384643"
+    "aiUse": "78ab129b8e4850a997516d85922a53a2f3f7308940ffeb241908b3fbed4e5410"
   },
   "example:open3d-gpt-6-astra-game": {
     "description": "5027c28b8072d45e862a395172880504a4e2077a2ac4f7482642e154112cdfc9",
-    "aiUse": "c9814c187c83ce0305fcf242f8c727c38caf6eecf978d8b04d91b93ba0c74f67",
+    "aiUse": "d71b6f70e8f78fa8da3e272349f13f3f63b922328db196266ba00950223c9df4",
     "title": "2f6070f725e13b6c038522c755f5ccf00f83ac4cc4d779ee906fc68d60593c4c"
   },
   "example:open3d-magiccarpetwizard": {
     "description": "3857078b6754db9fe58aa5cbb600c83e0eeb4a54dfd6f995bec1633d67b05334",
-    "aiUse": "0e0fc533556a62e132416a8a851185159d51769dbf8b758e43598415aeb3490e"
+    "aiUse": "10e69373d7770ec397446f2fd3afc527c6998a42763f9156e134ed4010689199"
   },
   "example:open3d-astrafloor": {
     "description": "b106dc8acbcf14ca7a640173d0263538debac8ef87e6aa250689db85394e13dc",
-    "aiUse": "e9f6178631f2e0ce380dec747ce730ebb60eefc00a8af7065eea7141d849105d"
+    "aiUse": "82151d415aa44a61de84c4622c38c3ed6f50fdd1483879b24925392c7babf2eb"
   },
   "example:open3d-gpt6-astra-one-shot-games": {
     "description": "71e456d06d3c142d3920111a81a24f3dcb0e5313d057d22aee6cfb3700f15282",
-    "aiUse": "e9f6178631f2e0ce380dec747ce730ebb60eefc00a8af7065eea7141d849105d"
+    "aiUse": "82151d415aa44a61de84c4622c38c3ed6f50fdd1483879b24925392c7babf2eb"
   },
   "example:open3d-hallowmere": {
     "description": "55f67f6c99201ad6ec7ee3b9e9f1a5c142ac7f603a9c9ac43cd96e2971800e90",
-    "aiUse": "ce0364d18a6240f3180a8214741bbcc90e614176093cf3b8abe59e3b4189f834"
+    "aiUse": "5657a6b53fd4e11e232de5de2dd14b85f5af5a05f818f43cb96bfa88c7bd9ba2"
   },
   "example:open3d-gpt-6-astra-smash-karts": {
     "description": "b82d7b6000f0440dfbde980920d398584f7c7c71b0c54f655652aca253d28a12",
-    "aiUse": "581d7ff57dfc60cd55906c89ea5f97735a2fcfc39d6b8a0cb9461385e38b08c8"
+    "aiUse": "ae162fce3e74ed41734f31a63672e3b765d6330ccce4f99d17f844952e78c89e"
   },
   "example:open3d-web-3d-game": {
     "description": "aa1e5c505c449dd985c467d6d9e9a3e1fa8422aac0ef1713d29758b844531569",
-    "aiUse": "1fbbad8780f6a0d666919cd966e2eb2a53a2b8a92d66c0592bb93d8c8cb80299"
+    "aiUse": "e905b7b917126e0e616e097becaa89416f41b8e017739918bafdbc77e047ee65"
   },
   "example:open3d-gpt-6-astra-2026-09-11": {
     "description": "36356226b2cebbe82a9ae6528ffd52d71051014f960bfc181a68e7a2740fbe52",
-    "aiUse": "ce0364d18a6240f3180a8214741bbcc90e614176093cf3b8abe59e3b4189f834"
+    "aiUse": "5657a6b53fd4e11e232de5de2dd14b85f5af5a05f818f43cb96bfa88c7bd9ba2"
   },
   "example:open3d-voidrunner-astra": {
     "description": "9b1a59e343a4cb725b19b628ef7529e43e3397fcee8b0fc7824e5ae178fc070e",
-    "aiUse": "ce0364d18a6240f3180a8214741bbcc90e614176093cf3b8abe59e3b4189f834"
+    "aiUse": "5657a6b53fd4e11e232de5de2dd14b85f5af5a05f818f43cb96bfa88c7bd9ba2"
   },
   "example:open3d-gpt-6-1-sol-light-games": {
     "description": "dc60c7a4c94c6f6a75f83509516d2eda3b05f2159188f9a71070eb6958a9b041",
-    "aiUse": "c0817fa8e4ca7ee1b993652e67b4399448d0487b46eb1160c2c6bc38b8a7005e",
+    "aiUse": "2c0a74704a3d006e9b5e3c019b243c067d9a66ace447ca89ff01047f9e5a3855",
     "title": "b7a1b622b346774b159467d079f3b3d6e5af2d732223ed966969b13395c417d5"
   },
   "example:open3d-platformer-3d": {
     "description": "45efec13ef5d258e160dbf7e0751bfe7b9971ea7da9f6fb390de96c95ce81091",
-    "aiUse": "baff4d9ed6ef2b34383130848a5036505555bad62d16ab63460f62dc8bc7f892"
+    "aiUse": "798f2421ce16e0f69f355b691cc43c53d7e344c3f8d182161d3176227411821e"
   },
   "example:open3d-meridian-wake-g6a": {
     "description": "82cd1ab3f09161dbb041ec379e13baaae52567e913deb11b49610b655ee7381f",
-    "aiUse": "e9f6178631f2e0ce380dec747ce730ebb60eefc00a8af7065eea7141d849105d"
+    "aiUse": "82151d415aa44a61de84c4622c38c3ed6f50fdd1483879b24925392c7babf2eb"
   },
   "example:open3d-turbo-rumble": {
     "description": "9947f80261e3e239bcc785e977c839170bb1f13554a4ede9d39a404eb8e422d4",
-    "aiUse": "e90e8a6d2d8dabaa3558fbd778323ab0421cc3dff3fd343add46c9c04fe2b69c"
+    "aiUse": "2a38235d1c50c591ee124dacf75940454510b35602b2917318d953b791c4ebb4"
   },
   "example:open3d-pine-island-demo": {
     "description": "1a198f815eda76e4aecb252003fbb22bf86a3e341422400b6cbd7028f91deb19",
-    "aiUse": "e9f6178631f2e0ce380dec747ce730ebb60eefc00a8af7065eea7141d849105d"
+    "aiUse": "82151d415aa44a61de84c4622c38c3ed6f50fdd1483879b24925392c7babf2eb"
   },
   "example:open3d-threejs-forest-census": {
     "description": "715b48240cabafa9ddbdb6c4d5a5798f467da57347f9b0f0d3ac9b17e811578f",
-    "aiUse": "437b574e8787483f595f1eefcb7032e48eb287a6dd892c4108d1c80951165f88"
+    "aiUse": "e8e3a0ec9c87fed9e3b968bc25aae9d9aab59fa10f2462fc675b5f85faeee38b"
   },
   "example:open3d-highest-wins": {
     "description": "3d2a006cc58a3f7a90cd2359a104aec55b65e99d59a8f95f56964af8a9c4063f",
-    "aiUse": "42d9380330dc3f4ab6d14f98dd8aacf10dfa465cb3f06aaa42973838cd88dd3b"
+    "aiUse": "eecd24ec0afce596d79d6fb23a26eb6dfae5d7ce87c0f7fc3a9f92ec95a7d885"
   },
   "example:open3d-snake-3d-fps": {
     "description": "0655e940651717691a55961f2feeff6b4b86a87d43bee6113869873936e2eef4",
-    "aiUse": "42d9380330dc3f4ab6d14f98dd8aacf10dfa465cb3f06aaa42973838cd88dd3b"
+    "aiUse": "eecd24ec0afce596d79d6fb23a26eb6dfae5d7ce87c0f7fc3a9f92ec95a7d885"
   },
   "example:open3d-how-to-suck": {
     "description": "801962c0f4106370f39895f6fe67e3d0b9688544efa48edb9a586d00a8736a21",
-    "aiUse": "8b131720c4e5b24ff88ba55c7aca96a9587b3562bd7769d0b62f1151873cb01c"
+    "aiUse": "7edd57ef1ea655e47cf11011d94511c5e12c37892b532a9b2a571f1f578d4ab3"
   },
   "example:open3d-harvest-hollow": {
     "description": "8d3ca480ac5448ccbb1325bda514b046b1191788fa56453428720a60cf6c73da",
-    "aiUse": "43cd0384cf48799afd392c8ee2e27a312f9fc3ec7833fb6924c936534aaea384"
+    "aiUse": "c0a7e0c922f7c97db2d4812e6a597e87130940eb9f4f02021dff4a4dca02d3e5"
   },
   "example:open3d-pulsebreak": {
     "description": "ea3b31521cd898112993e28b2a628632e3e7019a8a6f089332e79628cfd0bfba",
-    "aiUse": "581d7ff57dfc60cd55906c89ea5f97735a2fcfc39d6b8a0cb9461385e38b08c8"
+    "aiUse": "ae162fce3e74ed41734f31a63672e3b765d6330ccce4f99d17f844952e78c89e"
   },
   "example:open3d-desert-velocity": {
     "description": "51308812b2995a68f577f13506a56e1edcd6af99eef82ee0db0452265dd6ffea",
-    "aiUse": "3cc35a0cf90c0c26cd6e55a019d89e3030713346e701c9a38280a3356da643cc"
+    "aiUse": "54ac24cad68124bcc0fcb8f4ad002d27c4b11871fe6f1590259abd5d4fb6b5df"
   },
   "example:open3d-claude-of-tanks": {
     "description": "54144ec9b74dc2c4297610dd66afe8bc3f8bd7c36ac0882e323d165c905efb8d",
-    "aiUse": "103321e4a623df05fcf1d08cdfefbb2098fec633cf816adb03e4558e12e74160"
+    "aiUse": "fce07f4f8b61e47f02487b2456b7f58c7248a7ea3b69b4d540aa829f22918007"
   },
   "example:open3d-octane-arena": {
     "description": "51d08d0145c716573367cc627abb6d687337f74983192ce13dbe7258014db115",
-    "aiUse": "581d7ff57dfc60cd55906c89ea5f97735a2fcfc39d6b8a0cb9461385e38b08c8"
+    "aiUse": "ae162fce3e74ed41734f31a63672e3b765d6330ccce4f99d17f844952e78c89e"
   },
   "example:open3d-codecraft": {
     "description": "ef6502fb2cf308ae11bd8618eba5ce72726dcbcc7b254799a25761a034b69a28",
-    "aiUse": "103321e4a623df05fcf1d08cdfefbb2098fec633cf816adb03e4558e12e74160"
+    "aiUse": "fce07f4f8b61e47f02487b2456b7f58c7248a7ea3b69b4d540aa829f22918007"
   },
   "example:open3d-codex-3d-racing-game": {
     "description": "748503c48e27f32f3477c92a5cbb1ca3c369b4ca0fd239e58d52aef4f4480f9e",
-    "aiUse": "734aff646cb9f058f13b4f7c2db4187f330c8e8953d904961c989e5b3995c427"
+    "aiUse": "0ed44927b1d77dddaedd47f869f359e7e8f98b6331ca9424ee6f658e9f5ed373"
   },
   "example:open3d-constellation-defense": {
     "description": "534e7728988ef70cce9beeb1f38f4ad3e4e8cbd289a2bad592e3e2f911d382ad",
-    "aiUse": "734aff646cb9f058f13b4f7c2db4187f330c8e8953d904961c989e5b3995c427"
+    "aiUse": "0ed44927b1d77dddaedd47f869f359e7e8f98b6331ca9424ee6f658e9f5ed373"
   },
   "example:open3d-snake-3d-game": {
     "description": "8e1502824c673032e85e861d7c9fc3d1f2e5eab0a1ad4e560ce8adcadd841972",
-    "aiUse": "734aff646cb9f058f13b4f7c2db4187f330c8e8953d904961c989e5b3995c427"
+    "aiUse": "0ed44927b1d77dddaedd47f869f359e7e8f98b6331ca9424ee6f658e9f5ed373"
   },
   "example:open3d-skyward-isles": {
     "description": "f790b7d5bd67b04fb9fd31bb2bd8015632d1938f63316c6cc288897dc3f310a1",
-    "aiUse": "734aff646cb9f058f13b4f7c2db4187f330c8e8953d904961c989e5b3995c427",
+    "aiUse": "0ed44927b1d77dddaedd47f869f359e7e8f98b6331ca9424ee6f658e9f5ed373",
     "title": "4b83177204156b941c1b4431bb2bdd1429dff5ad394d39b1cb398034bb5715d0"
   },
   "example:open3d-3d-html-game": {
     "description": "273f3f24977151a6b598e927cb90e962993d5ac8d50e04dddf56d12ac2218684",
-    "aiUse": "ce0364d18a6240f3180a8214741bbcc90e614176093cf3b8abe59e3b4189f834"
+    "aiUse": "5657a6b53fd4e11e232de5de2dd14b85f5af5a05f818f43cb96bfa88c7bd9ba2"
   },
   "example:open3d-vibecraft": {
     "description": "d60706989adcca866d40ee119a053a12106f4049a1a306a1e6d16deb43726711",
-    "aiUse": "c79a4ea1f5f017e58e74ea134ddba314dda957736ca8902c9f77c0015aac8f4d"
+    "aiUse": "f60ef5528eba7c65aeba7222e988d3e3cc94b65da911bd14b2d2e063b82665ab"
   },
   "example:open3d-saber-battle": {
     "description": "128a01c552a0099d00d449bff4df5b7ee7f2f5ac086360f679be35ee32d25b23",
-    "aiUse": "581d7ff57dfc60cd55906c89ea5f97735a2fcfc39d6b8a0cb9461385e38b08c8"
+    "aiUse": "ae162fce3e74ed41734f31a63672e3b765d6330ccce4f99d17f844952e78c89e"
   },
   "example:open3d-surge-for-oinja": {
     "description": "ab5e015443c9b486c681c924a94abe0aea367ac22aa58f7dfbe6337a9d5f5a18",
-    "aiUse": "ce0364d18a6240f3180a8214741bbcc90e614176093cf3b8abe59e3b4189f834"
+    "aiUse": "5657a6b53fd4e11e232de5de2dd14b85f5af5a05f818f43cb96bfa88c7bd9ba2"
   },
   "example:open3d-weeping-angels": {
     "description": "57016e2e82dbadfdd39f4a877af5f805e339e0be2303475782f51ea84c1fb389",
-    "aiUse": "03848e722c6a6a08aade90153dadd9498de1db22f42d69a2ea4bbe74864b4606"
+    "aiUse": "9ed021b580eda0d252060a3932f22ae6e34cf13a3d7bb0d2e7167954dd9a9cf2"
   },
   "example:open3d-deepseek-game": {
     "description": "d8309667aef6b6c9a34de2de790824930c55a39e1b91b748a5af6b538c514889",
-    "aiUse": "f5220f4ea8668583214def3787ac0a1da9e77f8901d7533eb9d0d32c3c55e45b"
+    "aiUse": "facf773c53964f3078e8c93df37b0281dc9aee4887f3b773715bbb20ce177c3a"
   },
   "example:open3d-ten-memories-game": {
     "description": "a37895757abea349a253dba6aedc7159fd93a02c7aee30a261b33af924c4b34f",
-    "aiUse": "922082a7569d48cf0f677676c4bcd09d839527ecfc55879100bdecf3937241f5",
+    "aiUse": "1644344f0329d3ff59984569d6a303e74bcc298d84131c77042b7b9d25aed452",
     "title": "ef47e08224fd85c0cfbb150367d5c94bd6f293950176ade24f849cb923067fae"
   },
   "example:open3d-pyopengl-3d-racing-game": {
     "description": "1f0f1b0c81ead0f771e1c2a5f048f6323b29d46eff4764c901b09ada476bd4c2",
-    "aiUse": "ce7c74f56687ac4514da05831f56f8c5a3dde663497fd40b6d11eb8fed5f56b2",
+    "aiUse": "066fd606aa8b7c13b0a2152d1d22ab9a7a3cfcd4adac85ba314eacb9be37a8a7",
     "title": "f2de1f81e14d5a73bf5ffba95a34f574269ca92cce01482d09681d267338f835"
   },
   "example:open3d-skiing-game": {
     "description": "fb72ebe5ca4de2a68aa88543aff1e287effcb6507552df531265121ece69a824",
-    "aiUse": "28fcf9fbb81d4864a61995e07dc1891a7a88c835696deba978006d7df817effa"
+    "aiUse": "d1b82921c7d043b470645cf5aff180a01974a9ac1cbf9f8e583a31dd6536efbd"
   },
   "example:open3d-country-lane-demo-horror-game": {
     "description": "f39257d8b350d6188b4a7c51337bcaf4c9d523f054d7223873328581cf66e252",
-    "aiUse": "4c38a27fff808384fa199ff8828b336373dbbe75c3754f43d8a3e091ce1906c9"
+    "aiUse": "ccf99cfddfe14e63454882c4c6757af6f4a8a7f8a6d1f24615af35be101c9f57"
   },
   "example:open3d-flappy-anna-3d": {
     "description": "99b0edbd8dac1c2edc6f3fe277c5f86d77e20b9a42c6388473be51c20684a898",
-    "aiUse": "26725839c8ddfce727069831c670e2b31277e7da31226de4d76cfdb7ad359ab9"
+    "aiUse": "7020c4115a8627b27ede1733d75ee44de9e70da8ece34d72d3e1b6845f096f9e"
   },
   "example:open3d-3d-space-dodge": {
     "description": "ac78d7fcec704a4a3bad30661ef83b80964f5d9655e0447fed034d443eeab829",
-    "aiUse": "fc26d6e5157b4be3c333fac311e4df1722e166071f18b33163b8e9676d2290b1"
+    "aiUse": "a44b3ad28b5fbde7ff682b9f86d75d03f516c2bd212c9bba3bf1ba775262bd49"
   },
   "example:open3d-embervale": {
     "description": "96942dfac568c37eac7a89e25831541c0df2d797f418ed80c37b26c4cf65b33e",
-    "aiUse": "ad8989e5ba85eb3da11810175826d5e672feaac62eca0e98ec3e6e192573e5cf"
+    "aiUse": "b66e7db822f918b822fdf8827930a2714e65393b5333e6bf694aa50fb19e0963"
   },
   "example:open3d-virgilezzz-tower-defense": {
     "description": "7a2340e8686f7ceedd3f34e3074b48ae2535b320155c8d068dc66999e3c3397e",
-    "aiUse": "491521800104aeabc1864057776e5f92084a20f8e51b9793deae2c3f1a993ac9"
+    "aiUse": "e5426e20df8433c3a0f71bd4470e7a0f004efa6545709d9ce36e3850fda8bd91"
   },
   "example:open3d-3d-football-game": {
     "description": "18dad31d7b18b0bc8229fef9f63d7143416b4e6e1f7cf3b81e105c19073b57a0",
-    "aiUse": "b1777e5a093be369067bc19735f8540cded1cdf9f45586f7ae90526b976cb58d"
+    "aiUse": "016ed4e36f47fc66e6725470dab9bc6b744e6e0797672336849492a72d3cd470"
   },
   "example:open3d-3d-chess": {
     "description": "e1b68be521e103c0d440b5f31fcbd7b6d06eefd8418e0b902c222d9f7d462207",
-    "aiUse": "9e6bf8764a2de24208cb31387f35582ace36a4853f96e274c90a86e4674d9a89"
+    "aiUse": "071fe813bcbfd92452c357c76c3fdd58a0ebdcc575cff46b1e3c6acf7461dd82"
   },
   "example:open3d-cricket-doodle-inspired": {
     "description": "35e7d4356664dae864476bae4ed9e41771451a3099d119dae2a1cfea170d80b8",
-    "aiUse": "b1777e5a093be369067bc19735f8540cded1cdf9f45586f7ae90526b976cb58d"
+    "aiUse": "016ed4e36f47fc66e6725470dab9bc6b744e6e0797672336849492a72d3cd470"
   },
   "example:open3d-dsh-games": {
     "description": "2a93e8b65aa66f9912cabbfa1391203ab1ba95bde2675f84571c0a5b0e194c7b",
-    "aiUse": "5bf545cffcfe5584eddf7bc142201e84768d9be6bc6eaeb93c35368ba6f48680"
+    "aiUse": "15ff916e33eecdbaab8951eee07ff2dbe0716097881d5580c3dbefc4419ae6d9"
   },
   "example:open3d-godot-3d-bowenjourney": {
     "description": "e0e2efb8f8465bf61afdb0a9a33b8383f905fec76d6e22b07cf361463346e69a",
-    "aiUse": "8d079f19da70b41738d2274ef4087a56a92d628838720554a2e7814f9a4f1c03"
+    "aiUse": "37dec427dbbc87e78832b9e3b4ae6e1fff10f4a8bd64699b3a8d34b588e4d524"
   },
   "example:open3d-blocksfield": {
     "description": "359dc65fb6131fdf1e59bad9fa3f865f0c36eb3edc3ea9ffcd7e42912ae5a2f1",
-    "aiUse": "9ea608f78a7ee1b1ae38b2e61f507d916cce7d1a96ebd4c58c85a2453b3e94f1"
+    "aiUse": "cf0ea24303c4428f9372db5d367a9e2a49758fae7f01a0049ce3e99e4507d511"
   },
   "example:open3d-x-game-template": {
     "description": "c43640a671c390283b910156c5e2b1b31239994b7dbc817dcf68bcbb17cbe400",
-    "aiUse": "b1777e5a093be369067bc19735f8540cded1cdf9f45586f7ae90526b976cb58d"
+    "aiUse": "016ed4e36f47fc66e6725470dab9bc6b744e6e0797672336849492a72d3cd470"
   },
   "example:open3d-microkarts-qwen3-8-27b": {
     "description": "cdc4c8fd28cdb8dd90b91ab77b0228f2848cb970645a6a60f175adb59e8ae039",
-    "aiUse": "282725894671ac63ac9bafa40d50667c30035c5c08a2a005c53c63092e84c484"
+    "aiUse": "b82f5d8826afe6f4bc6bd29f2d23f6a0ed86649676ebf7c8f2ec14774eb94d78"
   },
   "example:open3d-grok-xforce": {
     "description": "5737fa88afd0494ddc6b514b791a28f43729e2aaa4893a5dd39efb772eb18c23",
-    "aiUse": "4c38d41469c6297bf6757a602eb56a762822c97826b43f0b31185e6aaf6ef7a0"
+    "aiUse": "0e8e9582d03a831d4db971a9d1e0756d761c230e876f58f9e7bf1cab261461f6"
   },
   "example:open3d-qwen27craft": {
     "description": "22695966f515e09526e65f6a95875a4c12a14c1ca0d384d5454fef07ea563219",
-    "aiUse": "0c052db91a102cb6e9525fa0698908dd28baaaf5ff3ffa929110cd99d263a0f7"
+    "aiUse": "f84c4b89d5747980680f17985209a0b654324230316dc82e427ebc04461c0694"
   },
   "example:open3d-space-salvage": {
     "description": "74e40bef1ea4673701e36306b3d540eadfc8d2c7e4f9fe46c1a981cba06fb571",
-    "aiUse": "0c052db91a102cb6e9525fa0698908dd28baaaf5ff3ffa929110cd99d263a0f7"
+    "aiUse": "f84c4b89d5747980680f17985209a0b654324230316dc82e427ebc04461c0694"
   },
   "example:open3d-rpg": {
     "description": "24120ca0377f2d16910e9e95e5abf4d1157043ec38d1684c18dbb232df1774eb",
-    "aiUse": "b1777e5a093be369067bc19735f8540cded1cdf9f45586f7ae90526b976cb58d"
+    "aiUse": "016ed4e36f47fc66e6725470dab9bc6b744e6e0797672336849492a72d3cd470"
   },
   "example:open3d-minecraft-from-kimi-k3": {
     "description": "459ba3e0f73a59f31b4b7bb71b0ebf65c64d6316fcee48c614c7a4dcea7ab32c",
-    "aiUse": "c0abae18fc604aa2246ee64de977ad11c449b80a9ceafb30f76771c8d5a5ae6c",
+    "aiUse": "004dae9ec394fd29c442496e8fcae050ff7eeedaea9b00bf53e99acb1e2b4609",
     "title": "d97ddab79e5790f3c94095670c9a2694f9d563c2b6287c2ebb4d44185abd8f59"
   },
   "example:open3d-kimi-minicraft": {
     "description": "d8422854b127639a85c8a68b5ce17bcd551254a40b16e2dfa7ccbff3b798b261",
-    "aiUse": "c0abae18fc604aa2246ee64de977ad11c449b80a9ceafb30f76771c8d5a5ae6c"
+    "aiUse": "004dae9ec394fd29c442496e8fcae050ff7eeedaea9b00bf53e99acb1e2b4609"
   },
   "example:open3d-minecraft-web": {
     "description": "292923aaa5f05ac192b58049dacf44e78ac8fa61874892267627165f605f6429",
-    "aiUse": "c0abae18fc604aa2246ee64de977ad11c449b80a9ceafb30f76771c8d5a5ae6c"
+    "aiUse": "004dae9ec394fd29c442496e8fcae050ff7eeedaea9b00bf53e99acb1e2b4609"
   },
   "example:open3d-cozy-isle": {
     "description": "893ab841c187e5e7591f1f47ea393328442a75bf263616d5bce03e95c4886576",
-    "aiUse": "c0abae18fc604aa2246ee64de977ad11c449b80a9ceafb30f76771c8d5a5ae6c",
+    "aiUse": "004dae9ec394fd29c442496e8fcae050ff7eeedaea9b00bf53e99acb1e2b4609",
     "title": "3b1d629bb3c47b937edc876838e36dfad1201854a138a8afbd39362b448f1bab"
   },
   "example:open3d-3d-game": {
     "description": "d05836ede4527ff65cfb1cc22831466cfbdf84e0085724b2ba2a3cea4df8a949",
-    "aiUse": "cfd4094f8a1cb6716b9f09b4a3066c657a2e605e31852cd232132fa5189034a8"
+    "aiUse": "f15ae4e3d46d8aa1e96fb07b4098cb0e4ef2f0688be47054b2d725a32a1e22ef"
   },
   "example:open3d-voxelcraft": {
     "description": "572ea1e2832d393a73ed38b9f6bbe70baf31233f0a806e6428c99047f8f05bed",
-    "aiUse": "a73a2c5b915614b252a5417f21301697c1c0b2e37c0bc6f60e4ac897cb3cff1e"
+    "aiUse": "aead8d455b5f368269c4e9c9321e213f0b40649538fe0f1d371ff6a482ca480d"
   },
   "example:open3d-minecraft-kimi-k3": {
     "description": "fd8083fad8c4e5fe7289822c2cd6772b1e8f2176db6b498e1f4f191ea7b46150",
-    "aiUse": "5bf545cffcfe5584eddf7bc142201e84768d9be6bc6eaeb93c35368ba6f48680"
+    "aiUse": "15ff916e33eecdbaab8951eee07ff2dbe0716097881d5580c3dbefc4419ae6d9"
   },
   "example:open3d-round1": {
     "description": "4ff52edc7c795f4c16330a5ecd9ee4736a74b91a6c6a93d821c170c4a9515cc9",
-    "aiUse": "0e54b59ad0c98ccc83eec025ae01724797ebcc6dc824b7688c14dacaa0d4dd67",
+    "aiUse": "64cdd3a87e11acdced7815b649dd7deea251d09af99ea1e2676f863800ad3107",
     "title": "effab938d5329e34fa765674b0924cb52b0adf34f23518c0209a3a561ccb7b5c"
   },
   "example:open3d-game-jellyjungle": {
     "description": "9fa056926456114c81df12a65cd607b78740c03fb510bc1ccf7491f68e5638ee",
-    "aiUse": "0c052db91a102cb6e9525fa0698908dd28baaaf5ff3ffa929110cd99d263a0f7"
+    "aiUse": "f84c4b89d5747980680f17985209a0b654324230316dc82e427ebc04461c0694"
   },
   "example:open3d-neon-racer": {
     "description": "35d2f617813aa3eb2e25b3f358ebac2bd5373df7b5b5644d3e2cfe27fc450939",
-    "aiUse": "2530e3d0e5aefa2a334b591605b85f3a8ff545b064be2b249c7cf9b307f27e5f"
+    "aiUse": "41d115f2c1fb75b249e4a2861a87d9487ae8f0879a4b13eb598ba692311996a4"
   },
   "example:open3d-whiteout-protocol-glm-5-3": {
     "description": "871af7df2858ebf491f0b83793e5c7315d0be4d3cdab0d305ea5d9e688c623be",
-    "aiUse": "5bf545cffcfe5584eddf7bc142201e84768d9be6bc6eaeb93c35368ba6f48680"
+    "aiUse": "15ff916e33eecdbaab8951eee07ff2dbe0716097881d5580c3dbefc4419ae6d9"
   },
   "example:open3d-vision-3d-game": {
     "description": "4285901af39bc1eab2eee0a77b7f43efc90286cadecefb9e4270c4d7726cc8f8",
-    "aiUse": "5bdbab43a3c3ddcf5a646abf1371b61481317aebc7b565884bf40f044e28bf5e",
+    "aiUse": "bc4999210a14882ce5c4d279d8ba6ea5e2ede4609bad0d3a530d7e84f0ea71de",
     "title": "60668dc78bd0fc87124fa81cf6153251895daff30903463061f8be00892acba8"
   },
   "example:open3d-feiticeir0-github-io": {
     "description": "f899113750a00fdc1bad46c9f0cd69a5748f80599efdb38335da4425116f9277",
-    "aiUse": "aaf9371edc454dfaf4f2b426ff6ff73eb01fee4cce832c6f29d4a9bb77a51d4c"
+    "aiUse": "aa467bd09c14ef078993597e84bf8722bcba53fcdb1c18b50879db0e04f7a363"
   },
   "example:open3d-peak-district-downhill": {
     "description": "740f53002f4cf22f690ff41bb17549e1fb5e345f18f9c6881694b86f6f7c85da",
-    "aiUse": "68de4bd10ba156706e7c409c06e2a7307574df9179a87119780e49d7a8a48d4b"
+    "aiUse": "c203c8da62738ba74ee0ed446b6f8c9ada4e78df268dbac96a5604f7d9b98409"
   },
   "example:open3d-sonnet-5-5-zombies-game": {
     "description": "937e1924765f7bf0ac4dc8d22dd589a00f137587471bf9695a5bdb9bbafea4fc",
-    "aiUse": "aa8a0d665d1a1f4092796c2b98f5ecbb63b4832256c49392c8582a4c190978b1"
+    "aiUse": "480e3ae17e399fbb9793886b04e85f426243dde27ecb7b8b86ed45b0e6288e44"
   },
   "example:open3d-sonnet-test": {
     "description": "c288ee17558d041b8de7580c9d500779e95ccb60596de99b2666a54673892f01",
-    "aiUse": "aaf9371edc454dfaf4f2b426ff6ff73eb01fee4cce832c6f29d4a9bb77a51d4c"
+    "aiUse": "aa467bd09c14ef078993597e84bf8722bcba53fcdb1c18b50879db0e04f7a363"
   },
   "example:open3d-loki-run-wroclaw": {
     "description": "fa1bd70ee1979d8d00d9bee904cf3fdce1ee6cb8d7f807e884ff4634560aac3b",
-    "aiUse": "aa8a0d665d1a1f4092796c2b98f5ecbb63b4832256c49392c8582a4c190978b1"
+    "aiUse": "480e3ae17e399fbb9793886b04e85f426243dde27ecb7b8b86ed45b0e6288e44"
   },
   "example:open3d-viben-ring": {
     "description": "b9a6bb8b0bd708974a1ecc737d71f6ae29fa49996b4a99d4f3d489adb4e018b7",
-    "aiUse": "dc1c26667a1e68ebc2ea2e14eb61762c911d2dcc54189ba0a84c742fb959a8b9"
+    "aiUse": "52956e92f9979f397b95723c2b33d99958fa3217a520104712eec2fc7bed9d59"
   },
   "example:open3d-pacphi-neon-drift": {
     "description": "c02b650d7d704ec8f06d57b00bbc7790b4c96015e9c70efef220f6e3fd309ed9",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-mathl33t": {
     "description": "aceb3604160c916b3e428475c84e97cbef675deeac4b1de4a0a63d3f318af492",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-blockbusters": {
     "description": "5245633b8baf4a53afe428c1899a45f15e408da38e74baed0a055fcce387d7e9",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-forget-to-foresee": {
     "description": "e88a50a2036e888bd87cbc5be0c3a024e5b4c3999b6bab341b0399afe9c2d0cd",
-    "aiUse": "8a744601d6f0f3b8c9deca6dc73551694d73121048e31e2e9795b39fad71d1fa"
+    "aiUse": "0fa118087fd711b1cfba6afd3ba6b2691cdb4ce2b845d50d07cdb4660e566562"
   },
   "example:open3d-santa-game": {
     "description": "bf694b2d4178ac0182fcb1ec6d58ccea34d73f38e2bc203e1da38215b99da30e",
-    "aiUse": "622c040b18352a8ec7951eca6f427677521ab3ffd1ecadc5490f53373973002b"
+    "aiUse": "cf39a5d7cff1ebbc5822dfacd787f066d1c4b40db4533cac0abde990a8497f84"
   },
   "example:open3d-pitch-patrol": {
     "description": "79c83b1b3694a820d36ce91326ac21a7d6581313dab6824e5f9516eb33870e43",
-    "aiUse": "961582bd6923f08d28ad24dc0a341617e2349b6538c8cc8c0516eefaa26628a2"
+    "aiUse": "41dbd706cf78fae19cdd5df74a19fa5e15acb92f5dca23da3b32892c8b0ea0f0"
   },
   "example:open3d-viberacer": {
     "description": "e31d3a7481ad890843a49ddb783ca139975f76f7e280cd24bde35467fe4322df",
-    "aiUse": "88b7854d2aa1d26f8fd2b73708b758ca26d55e913369eddd9d1559c090697380"
+    "aiUse": "d05567cba6e3ffff22e53813b7d84d3d6a7d2fc2174179167f7a2c9a9bdde446"
   },
   "example:open3d-vineet-777-neon-racer": {
     "description": "aaa5412d4da69b5c571f33fc261c9fb0c8cf20b6b1e99a572aeb9556001cd7a3",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-raptor-race-fable": {
     "description": "adfd9a0d651ef7e11b3c2146da115910d852d692b789f39b9f0c31ae4f165298",
-    "aiUse": "fbc38d57a79bd76aeecf3c66504206175279e9ed9645c3d690ed9ebea9fb4257"
+    "aiUse": "1971af8eb5683c1441168b24c01a4757e035f2b28852a41550394065ea5f7193"
   },
   "example:open3d-readme": {
     "description": "e19e23cfb7d1abafcc4588107b6ba2c5ef4486b6e772fbbe1663f35b06d61c9b",
-    "aiUse": "499c97eb4f571c68f9c1cec467c2e06a3b10deb7a7af9f83c34e59bdbc46a411"
+    "aiUse": "395fe4609a7da8732d64b4a7beaac5c0dcf03f7b153268ba6e76d9f2d1d10c4b"
   },
   "example:open3d-odoakersaquariumspiel": {
     "description": "b2406a4fd56c02dbcb623d2218e9d805121949976e376a3e9f7a6c86f88b117d",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-helgaskatzenspiel": {
     "description": "b290779c4aa9867cb37b2ed0696123f8c1eca35f66335738eb2d32094c74bfa2",
-    "aiUse": "91e4d7be495ed89aaa759bafe867c0169e2d1df121374753b537742fd427dc3d"
+    "aiUse": "815f4276a9534f01273b0883f39caa8e0a35f4897bf8cdd28e515c3dff0ebbee"
   },
   "example:open3d-a-wedding-game": {
     "description": "1bfc9f547b81651bb76105176364869483368bdef6a0e8b40978c15a325668f6",
-    "aiUse": "fa64224de55133fb6d19cc4f8b7088724f5ca11852bc9a1e4bae5675465a58a2"
+    "aiUse": "2b36a8f279a1c1a5fedb96f7e3dfc055368aff89f0b6525c7a7415c0660c48eb"
   },
   "example:open3d-hollowreach": {
     "description": "cd51d7a7546f70c2c6e22a5f61396c8f943f376445b53755c165529b84416ff3",
-    "aiUse": "ef428066a45ea17276cf9df76bad55992f703b1a42b8d3eb59ad78cf6bb48fb0"
+    "aiUse": "b33a2354ebe72c29598bfd4e5f04b596cf12f7b11bca22ab62006059fcfa49e5"
   }
 }

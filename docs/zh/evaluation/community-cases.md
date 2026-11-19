@@ -129,7 +129,7 @@ Browser 插件不可用；使用了附带的 Playwright 和 Chromium 1208。在�
 | michi-neko-ai            | <https://github.com/c1t1zen1/Michi-Neko-The-Cat-Philosophers-Path> | 创作者 README 指出人工指导和多个 AI 模型，但未说明具体模型                               | main 树：201 个条目，63 个 JS/HTML 文件；程序化游戏、任务及存档逻辑。README 明确将许多插图标为期望中的灵感参考，因此绝不能把它们当作真实实机截图。明确说明处于早期 Alpha 阶段。                                                          | <https://c1t1zen1.github.io/Michi-Neko-The-Cat-Philosophers-Path/> |
 | fragarena-copilot        | <https://github.com/jonnyleigh/fragarena>                          | 作者的 Copilot 披露、Prompt.md、SoundEffectsPrompt.md、php2node_prompt.md | main 树：55 个条目，25 个 JS/HTML 文件；客户端／服务器、音乐 MP3 和 UI 图像均已提交。已阅读实际的 Prompt.md；不声称存在原始对话记录。                                                                             | <https://fragarena1.azurewebsites.net/>                            |
 
-所有最终教程／证据链接均指向第一手创作者材料。只有声明的条目使用 `tutorial.kind: 'disclosure'`。步骤是编辑提出的研究建议。源代码范围 `complete-project` 指源代码和游戏依赖可运行所述原型，并非声称达到生产级质量。
+所有最终教程／证据链接均指向第一手创作者材料。只有声明的条目使用 `tutorial.kind: 'disclosure'`。步骤是编辑提出的研究建议。源代码范围 `complete-project` 指源代码和游戏依赖可运行所述原型。
 
 ## 有意未加入浏览器集合的优质备选
 

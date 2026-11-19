@@ -68,7 +68,7 @@ for (const r of records) {
   const condition =
     r.conditionsEn +
     (id === "browser-port-06"
-      ? " Admitted as an experimental native game-source reference, NOT a confirmed browser edition."
+      ? " The linked project is an experimental native edition."
       : "");
   const game = {
     id,
@@ -78,10 +78,10 @@ for (const r of records) {
     track: r.track,
     category: "community",
     aiUse:
-      "Source/project reference intake, not AI-authorship attribution. Public text, README and user-supplied assertions are distinguished from runtime tests. No source-completeness, license/asset coverage, buildability, gameplay, safety or L1/L2/L3 certification. No game, native project, original-game asset, ROM, multiplayer session, conversion or emulator was executed.",
+      "Project details from the browser-port directory and linked sources.",
     steps: [
       "Inspect the exact project, source/engine lineage and edition before interpreting this reference.",
-      "Check original-data ownership, proprietary assets, access restrictions, source correspondence and runtime requirements separately; code licensing is not a commercial-asset grant.",
+      "Check runtime requirements and the terms for code, assets, and original game data.",
     ],
     tutorial: {
       label: "Read the identified project reference",
@@ -95,8 +95,8 @@ for (const r of records) {
       url,
       kind: reference ? "reference" : "source",
       note: reference
-        ? "Project/landing reference only. Corresponding browser-port source is not located; no verified play/download link is published."
-        : condition + " No verified play/download link is published.",
+        ? "Project page. Browser-port source and release links are unavailable in this record."
+        : condition,
     },
     source: {
       label: reference
@@ -124,7 +124,7 @@ for (const r of records) {
       note:
         "Structured user-provided 25-item directory, original supplied review date 2026-10-25. Input text SHA-256: " +
         inputHash +
-        ". The supplied date is not our playtest date. Exact public-text quotes, real access times, hashes, denied hosts and unresolved claims are retained in browser-port-research.json. Evidence URLs: " +
+        ". References: " +
         r.evidence.map((e) => e.url).join(" "),
     },
     resourceIds: [],

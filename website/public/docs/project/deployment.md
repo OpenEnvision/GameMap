@@ -86,7 +86,7 @@ MALLOC_ARENA_MAX=2 UV_THREADPOOL_SIZE=1 CATALOG_MEDIA_PROFILE=low-memory \
 
 Apply these settings to the runtime only, not dependency installation, builds or migrations. In particular, putting `MALLOC_ARENA_MAX` in a file loaded by Node's `--env-file` does not establish the tested pre-launch allocator environment. The V8 heap setting does **not** limit native image memory or total process memory. Other platforms/allocators require separate measurement.
 
-This policy is **not a guarantee that every workflow fits a 512 MiB host**. Resource probes are local, not provider acceptance. Large API responses, validation, freezing/export and concurrent non-upload requests still require full-workload measurement. Verify actual host architecture, restarts, persistent-volume capacity, cold starts, quotas, database/Auth connectivity, backup/recovery and mainland-China access before using a free tier. Do not automatically upgrade to a paid plan when a test or quota fails. HTTPS, private persistent storage, immutable release identity and independent publication approval remain mandatory.
+The **512 MiB target** comes from local resource probes. Measure the deployed workload on the actual host. Large API responses, validation, freezing/export and concurrent non-upload requests still require full-workload measurement. Verify actual host architecture, restarts, persistent-volume capacity, cold starts, quotas, database/Auth connectivity, backup/recovery and mainland-China access before using a free tier. Do not automatically upgrade to a paid plan when a test or quota fails. HTTPS, private persistent storage, immutable release identity and independent publication approval remain mandatory.
 
 ## Staging preparation (disabled, offline only)
 

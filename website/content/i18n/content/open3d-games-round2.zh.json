@@ -27,10 +27,10 @@
     "description": "以偏僻加油站夜班为背景，围绕日常工作、随机异常和理智系统展开。 注意：多结局、扩展探索区域和动态叙事仍在计划中，不能当作已完成内容。"
   },
   "example:open3d-voxelcraft-bridgemind": {
-    "description": "单HTML体素世界，含分块地形、挖掘建造、合成、生物、照明与资源包加载。 注意：CDN依赖Three.js与JSZip；支持外部资源包不代表附带原版Minecraft素材。"
+    "description": "单HTML体素世界，含分块地形、挖掘建造、合成、生物、照明与资源包加载。 通过 CDN 加载 Three.js 和 JSZip，可导入自备的资源包。"
   },
   "example:open3d-voxellab": {
-    "description": "建造、拆除与探索共享方块世界，含离线单人、多人同步和角色自定义。 注意：网络模式需Node服务端；README性能数字未经本轮测试；Lego风格角色不代表品牌授权。"
+    "description": "建造、拆除与探索共享方块世界，含离线单人、多人同步和角色自定义。 网络模式需要 Node 服务端。性能数据见项目 README。"
   },
   "example:open3d-delixia": {
     "description": "在日式厨房接单、取食材、加工组合、装盘和上菜，协作应对时间限制。 注意：需要Colyseus服务端；涉及Havok及第三方依赖。"

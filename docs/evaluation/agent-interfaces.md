@@ -4,7 +4,7 @@ Check permissions, dependencies, reset behavior, and result verification before 
 
 ## codex-official-browser-game-workflow
 
-The OpenAI game workflow links to Playwright Interactive. At the inspected revision, that particular skill requires js_repl, a project-local Playwright setup, and sandbox-disabled Codex execution. This elevated-permission prerequisite applies to the linked skill; it is not a claim that every Codex browser workflow requires it.
+The OpenAI game workflow links to Playwright Interactive. At the inspected revision, that particular skill requires js_repl, a project-local Playwright setup, and sandbox-disabled Codex execution.
 
 Source: [Playwright Interactive preconditions and setup](https://github.com/openai/skills/blob/ecc1fb8bc0b82f1d3c7a92a82167ae8e8e613a67/skills/.curated/playwright-interactive/SKILL.md)
 
@@ -54,7 +54,7 @@ Source: [Godot Agent Loop README: requirements, tool surface, runtime policy, an
 
 ## agent2unity-cli
 
-Static inspection of the cited daemon shows a localhost listener whose request route dispatches /execute commands without an authentication check. Any process able to reach that port can invoke registered editor operations. This is an implementation trust-boundary observation, not a claim of a reproduced remote attack or a complete security audit.
+Static inspection of the cited daemon shows a localhost listener whose request route dispatches /execute commands without an authentication check. Any process able to reach that port can invoke registered editor operations. The finding comes from static source inspection.
 
 Source: [Agent2UnityDaemon.cs: listener, request route, and main-thread dispatch](https://github.com/jkpp/agent2unity-cli/blob/647becab081597b1a29cf2bb4bae489dbdd6040a/unity-plugin/Agent2Unity/Editor/Core/Agent2UnityDaemon.cs)
 

@@ -12,7 +12,7 @@
 
 ## How to interpret coverage
 
-Every row was visited; **read** does not mean **complete source**. “Body” means substantive text, not a claim that the page is final. The entire book is under construction, and some substantive pages also contain TODOs.
+Each listed page was read. “Body” marks pages with substantive text. The entire book is under construction, and some substantive pages also contain TODOs.
 
 “Draft,” “short,” “outline,” and “STUB” describe the snapshot, not a judgment of importance. Where this skill extends a draft into practical checks, it identifies those checks as adaptations rather than attributing missing material to the original author.
 

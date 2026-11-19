@@ -107,7 +107,7 @@ The verified preview manifest is `/tmp/gamemap-2d-previews/verified-manifest.jso
 
 ### Community 3D expansion audit — 2026-10-18
 
-Prepared `website/src/data/community3dExpansion.ts`: 12 new games, all with creator-published browser URLs and actual game repositories. The root agent owns live browser capture and final inclusion. This research verified creator evidence and source trees; a URL listed here is not a claim that a complete playthrough was performed.
+Prepared `website/src/data/community3dExpansion.ts`: 12 new games, all with creator-published browser URLs and actual game repositories. The root agent owns live browser capture and final inclusion. The table links creator-published builds and their source repositories.
 
 ## Search coverage
 
@@ -130,7 +130,7 @@ Searched GitHub/web for Three.js, Godot, Unity, AI-generated, vibe-coded, Claude
 | michi-neko-ai | https://github.com/c1t1zen1/Michi-Neko-The-Cat-Philosophers-Path | Creator README identifies human direction and several AI models without naming exact models | main tree: 201 entries, 63 JS/HTML files; procedural game, quests and save logic. README explicitly labels many illustrations as aspirational inspiration, so never use them as actual gameplay screenshots. Early alpha stated plainly. | https://c1t1zen1.github.io/Michi-Neko-The-Cat-Philosophers-Path/ |
 | fragarena-copilot | https://github.com/jonnyleigh/fragarena | Author Copilot disclosure, Prompt.md, SoundEffectsPrompt.md, php2node_prompt.md | main tree: 55 entries, 25 JS/HTML files; client/server, music MP3s and UI image committed. Read actual Prompt.md; no raw transcript claim. | https://fragarena1.azurewebsites.net/ |
 
-All final tutorial/evidence pointers are primary creator material. Entries that only have a declaration use `tutorial.kind: 'disclosure'`. Steps are editorial study suggestions. Source scope `complete-project` means source and game dependencies can run the stated prototype, not a claim of production quality.
+All final tutorial/evidence pointers are primary creator material. Entries that only have a declaration use `tutorial.kind: 'disclosure'`. Steps are editorial study suggestions. Source scope `complete-project` means source and game dependencies can run the stated prototype.
 
 ## Strong alternates intentionally not added to browser set
 
@@ -191,7 +191,7 @@ Scope: actual AI-assisted game development, public complete project, playable br
 | deepseek-neon-snake | https://github.com/TwitchCaptain/snake author-controlled description: Classic Snake game - created by DeepSeek | README, recursive tree, complete 21KB game.js fetched; index.html/styles.css present. Actual Snake rules/levels/input | README explicitly links https://twitchcaptain.github.io/snake/ |
 | deepseek-mini-ksp | https://github.com/BairlyEmei/mini-ksp author-controlled description: mini-ksp game developed by deepseek harness | README fetched; recursive tree confirms index.html, 172KB js/game.js, tutorial/missions/manual, CSS, 94KB 3D workbench, vendored Three.js and 4 PNG textures | No hosted game advertised. Source ZIP honestly labeled download. README: open index.html or python3 start.py |
 
-During initial source discovery no generation API was called. The later local game smoke tests are recorded above. GitHub connector was used after web fetch returned cache misses for individual game files. Root agent has live URLs for runtime checks. Data does not claim gameplay was already verified.
+During initial source discovery no generation API was called. The later local game smoke tests are recorded above. GitHub connector was used after web fetch returned cache misses for individual game files. Root agent has live URLs for runtime checks.
 
 ## Excluded / deferred
 

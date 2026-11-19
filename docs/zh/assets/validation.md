@@ -73,7 +73,7 @@ Unity 仅将 `.ply` 和 `.spz` 路由至相应读取路径；其 PLY 读取器�
 
 证据：[零保留项源码](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L549-L559)、[提前返回](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/splat-serialize.ts#L632-L650)、[成功返回](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/file-handler.ts#L789-L797)、[写入器关闭／中止](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/io/write/browser-file-system.ts#L25-L43)、[中心边界](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/data-processor/calc-bound.ts#L59-L80)、[视图颜色](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Shaders/SplatUtilities.compute#L240-L248)、[查看器相机设置](https://github.com/playcanvas/supersplat/blob/f2a1b4975b4766e0ee0c95e63c2737dc2ecb6e5b/src/export-options.ts#L55-L118)、[Unity 相机输入](https://github.com/aras-p/UnityGaussianSplatting/blob/2c6fed37da67a217367261fcfcd3316d34c73e76/package/Editor/GaussianSplatAssetCreator.cs#L1068-L1096)。
 
-所检查的泼溅导出接口均不生成网格连接关系、玩法规则或碰撞验收结果。可能存在独立的碰撞生成工具；本说明并非声称高斯泼溅应用永远无法支持碰撞。
+所检查的泼溅导出接口均不生成网格连接关系、玩法规则或碰撞验收结果。可能存在独立的碰撞生成工具。
 
 #### 建议的 GameMap 往返测试夹具，并非文档记载或已执行的行为
 
@@ -154,7 +154,7 @@ GitHub 标签端点将 MaterialX v1.39.4 解析为 `270b5cf2ae2be24a3b6ef4b0569f
 1. `doc.validate()` 返回有效性标志及诊断信息。示例在其为 false 时打印警告，然后继续生成着色器。因此，生成了文件并不能证明文档验证通过。
 2. 可选的 `validateCode` 包装器在子进程执行成功和出现 `CalledProcessError` 时都会返回解码后的输出，并丢弃后者的返回码。调用方将非空输出标为失败，将空输出标为成功。因此，如果编译器成功但输出了提示信息，它会被归类为失败；如果编译器静默失败，且该元素的其他验证调用也未产生输出，则在这一路径上该元素会被归类为通过。这些是所检查控制流的条件性后果，并非实际观察到的编译器行为。
 3. 未提供验证器时，包装器返回空文本，调用方则打印验证通过消息。这既不能确立外部编译器已被调用，也不能确立目标兼容性。
-4. 可渲染元素循环可能为空，而不填充 `failedShaders`；仅凭最后的失败检查，不能确立任何预期材质都已生成。测试框架需要一份预期输出清单。这并非声称有效的生产文档通常没有可渲染项。
+4. 可渲染元素循环可能为空，而不填充 `failedShaders`；仅凭最后的失败检查，不能确立任何预期材质都已生成。测试框架需要一份预期输出清单。
 5. 输出文件在外部验证之前直接写入。脚本没有确立所有材质的原子事务，也没有确立后续失败时的回滚。源产物的持久化与验收必须分别记录。
 
 #### 建议的验收契约
@@ -284,7 +284,7 @@ Unity 要求在禁用清理或顶点焊接时提供替代验证器：关闭清�
 
 **尚未实现的测试夹具：**  移动后的包根目录、一个缺失源、混合速率片段，以及声明的代理／母版区别。本次审查未执行媒体解码或播放。
 
-**版本／许可证范围：**  引用的文件包教程专门针对 0.14，不代表对最新适配器的兼容性。该教程未确立 OTIO、适配器及媒体的许可证清单。
+**版本／许可证范围：**  文件包教程适用于 0.14；新版适配器的兼容性需另行测试。该教程未确立 OTIO、适配器及媒体的许可证清单。
 
 ### 影视剪辑交接：保留时间坐标和声明的特性
 
