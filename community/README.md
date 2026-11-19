@@ -11,6 +11,10 @@ This version is for real local verification at `http://127.0.0.1:4191`. It needs
 - Users with a verified email can submit game details, an HTTPS play or download link, an optional source repository, and 1–5 real screenshots.
 - Submissions are reviewed first. Once approved they appear immediately in the existing example card list, without modifying or activating the catalog snapshot.
 
+## Builds
+
+The community UI and its `/api/community` requests are switched on only in builds made with `VITE_GAMEMAP_COMMUNITY=1`; other builds still contain the code but never mount the community provider. Release builds (`npm run site:build`), which the publication server below serves, set it automatically. `npm run build` and `npm run dev` leave it unset, so GitHub Pages and other static copies make no community requests: ratings and discussions are hidden, community navigation links are not shown, and `/account/`, `/submit/` and `/works/` explain that the community server is required. Do not put the flag in `.env`: Vite reads that file during `npm run build` and would turn an ordinary static build into a community build.
+
 ## Enable locally
 
 Start Docker Desktop first. The existing database and published files must be preserved: **do not use reset**.
@@ -29,7 +33,7 @@ node scripts/platform/local-publication.mjs serve --port 4191
 If a port is already in use, check which process is listening first; do not start a second server or stop unrelated processes. Public pages must be rebuilt separately from the latest complete catalog snapshot; setup does not build, review, or activate the catalog.
 
 - Mail is captured locally in Mailpit at `http://127.0.0.1:54324`. Open confirmation links in the **same browser** that started the sign-up or passwordless sign-in.
-- Public community entry points: `/account/` and `/submit/` (Chinese site: `/zh/account/` and `/zh/submit/`).
+- Public community entry points in community builds: `/account/` and `/submit/` (Chinese site: `/zh/account/` and `/zh/submit/`).
 - Private Studio: `http://127.0.0.1:5174` (the existing local workbench). Back-office accounts with the reviewer or admin role can open the community moderation view, labelled “社区审核” in the Chinese-only Studio interface.
 - The generated `.build/catalog-local/community.json` contains a random session secret and a dedicated database login. **Never commit it, paste it into a chat, or place it in a public directory.**
 - Ordinary registered users do not receive `catalog.memberships` and cannot sign in to Studio. Self-service sign-up is not a back-office invitation.
@@ -85,7 +89,7 @@ The site's final callback is `http://127.0.0.1:4191/auth/callback`, which is alr
 npm run test:community
 ```
 
-These tests cover rating updates, ownership of comments and reports, submission revision approval, private image boundaries, permission isolation between ordinary users and Studio, server-side tokens, and PKCE. Read-only page regressions live in `tests/release/community.spec.ts`; they use clearly labelled display data and do not pass themselves off as real sign-in acceptance. Evidence from local real-Auth and browser write and moderation acceptance is kept in the ignored `.build/community-platform/` directory. The test account files there contain credentials and must not be published.
+These tests cover rating updates, ownership of comments and reports, submission revision approval, private image boundaries, permission isolation between ordinary users and Studio, server-side tokens, and PKCE. Static builds are covered by `tests/e2e/community-static.spec.ts` (`npm run build`, then `npm run test:web`). Read-only page regressions for community builds live in `tests/release/community.spec.ts`; they use clearly labelled display data and do not pass themselves off as real sign-in acceptance. Evidence from local real-Auth and browser write and moderation acceptance is kept in the ignored `.build/community-platform/` directory. The test account files there contain credentials and must not be published.
 
 ## Production boundaries
 

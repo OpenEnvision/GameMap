@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { ImagePlus, Send, X } from "lucide-react";
 import { Link, useSiteI18n } from "../lib/i18n";
 import { useCommunity } from "../lib/community";
+import { CommunityUnavailable } from "../components/community-unavailable";
 
 type Payload = {
   title: string;
@@ -96,7 +97,9 @@ export default function Submit() {
           </ol>
         </div>
         <div className="community-submit-main">
-          {!community?.ready ? (
+          {!community ? (
+            <CommunityUnavailable />
+          ) : !community.ready ? (
             <p role="status">{t("Checking your session…")}</p>
           ) : !community.user ? (
             <div className="community-account-card">

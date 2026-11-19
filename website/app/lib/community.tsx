@@ -11,10 +11,10 @@ import {
 /** Community accounts, ratings, comments and submissions need the community API
  * (scripts/lib/community/server.mjs). Builds that are served together with that
  * API set VITE_GAMEMAP_COMMUNITY=1; plain static builds such as GitHub Pages do not.
- * Vite inlines the value in both the client and the prerender bundle; outside Vite
- * (node:test imports of app modules) import.meta.env is undefined, so it reads false. */
-export const communityEnabled =
-  import.meta.env?.VITE_GAMEMAP_COMMUNITY === "1";
+ * When the variable is set, Vite inlines it in the client and prerender bundles;
+ * otherwise this evaluates to false at runtime, as it does outside Vite (node:test
+ * suites import app modules where import.meta.env is undefined). */
+export const communityEnabled = import.meta.env?.VITE_GAMEMAP_COMMUNITY === "1";
 export type CommunityUser = { id: string; email: string; displayName: string };
 export type GameStats = {
   average: number;
@@ -58,7 +58,17 @@ const Context = createContext<State | null>(null);
 export function useCommunity() {
   return useContext(Context);
 }
+/** Supplies community state only in builds served with the community API.
+ * Elsewhere useCommunity() returns null, so community UI renders nothing and no
+ * /api/community request is made. */
 export function CommunityProvider({ children }: { children: ReactNode }) {
+  return communityEnabled ? (
+    <ActiveCommunityProvider>{children}</ActiveCommunityProvider>
+  ) : (
+    children
+  );
+}
+function ActiveCommunityProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<CommunityUser | null>(null),
     [ready, setReady] = useState(false),
     [settings, setSettings] = useState<Settings>({ configured: false });

@@ -143,6 +143,7 @@ export function CommunityPanel({ gameKey }: { gameKey: string }) {
     encodeURIComponent(
       location.pathname + (hydrated ? location.search : "") + "#community",
     );
+  if (!community) return null;
   return (
     <section
       id="community"

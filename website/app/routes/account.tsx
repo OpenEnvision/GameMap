@@ -11,6 +11,7 @@ import {
 import { Link, useSiteI18n } from "../lib/i18n";
 import { useClientQuery } from "../lib/client-query";
 import { useCommunity } from "../lib/community";
+import { CommunityUnavailable } from "../components/community-unavailable";
 
 export default function Account() {
   const community = useCommunity(),
@@ -90,7 +91,9 @@ export default function Account() {
           </ul>
         </div>
         <div className="community-account-card">
-          {!community?.ready ? (
+          {!community ? (
+            <CommunityUnavailable />
+          ) : !community.ready ? (
             <p role="status">{t("Checking your session…")}</p>
           ) : !community.settings.configured ? (
             <p className="community-error" role="status">

@@ -4,6 +4,7 @@ import { useClientQuery } from "../lib/client-query";
 import { useCommunity, type CommunityWork } from "../lib/community";
 import { Link, useSiteI18n } from "../lib/i18n";
 import { CommunityPanel } from "../components/community";
+import { CommunityUnavailable } from "../components/community-unavailable";
 
 /** A community submission, staged like a game premiere: the first screenshot
  *  becomes the backdrop, the rest scroll in a horizontal reel. */
@@ -56,7 +57,12 @@ export default function Work() {
           <div className="gallery-work-backdrop" aria-hidden="true" />
           {crumb}
           <span className="kicker">{t("Community work")}</span>
-          {!id ? (
+          {!community ? (
+            <>
+              <h1>{t("Discover what people are building.")}</h1>
+              <CommunityUnavailable />
+            </>
+          ) : !id ? (
             <>
               <h1>{t("Discover what people are building.")}</h1>
               <div className="gallery-work-actions">
