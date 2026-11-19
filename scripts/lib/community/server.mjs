@@ -96,8 +96,22 @@ export function createCommunityHandler({
   origin,
   ensureIndex = async () => {},
   log = () => {},
+  // Development previews keep their own rows under prefixed keys. Published
+  // works are real submissions and stay shared.
+  keyPrefix = "",
 }) {
   const attempts = new Map();
+  const storageKey = (key) =>
+    keyPrefix && !key.startsWith("submission:") ? keyPrefix + key : key;
+  const statsFor = (value) => {
+    if (!keyPrefix || !value) return value;
+    return Object.fromEntries(
+      Object.entries(value).map(([key, stats]) => [
+        key.startsWith(keyPrefix) ? key.slice(keyPrefix.length) : key,
+        stats,
+      ]),
+    );
+  };
   function throttle(request, category, maximum, period) {
     const now = Date.now(),
       key = category + ":" + request.socket.remoteAddress;
@@ -428,10 +442,12 @@ export function createCommunityHandler({
         sendJSON(
           res,
           200,
-          await rpc(
-            session,
-            "select public.community_game_stats($1) as result",
-            [keys],
+          statsFor(
+            await rpc(
+              session,
+              "select public.community_game_stats($1) as result",
+              [keys.map(storageKey)],
+            ),
           ),
         );
         return true;
@@ -446,15 +462,15 @@ export function createCommunityHandler({
             throw Object.assign(new Error("Invalid comment page"), {
               status: 400,
             });
-          sendJSON(
-            res,
-            200,
-            await rpc(
-              session,
-              "select public.community_game($1,$2) as result",
-              [key, before],
-            ),
+          const result = await rpc(
+            session,
+            "select public.community_game($1,$2) as result",
+            [storageKey(key), before],
           );
+          sendJSON(res, 200, {
+            ...result,
+            stats: statsFor(result.stats)[key] || result.stats,
+          });
           return true;
         }
         if (request.method === "POST" && game[2] === "rating") {
@@ -462,15 +478,12 @@ export function createCommunityHandler({
             request,
             z.strictObject({ score: z.number().int().min(1).max(5) }),
           );
-          sendJSON(
-            res,
-            200,
-            await rpc(
-              session,
-              "select public.community_rate($1,$2) as result",
-              [key, input.score],
-            ),
+          const result = await rpc(
+            session,
+            "select public.community_rate($1,$2) as result",
+            [storageKey(key), input.score],
           );
+          sendJSON(res, 200, statsFor(result)[key] || result);
           return true;
         }
         if (request.method === "POST" && game[2] === "comments") {
@@ -482,7 +495,7 @@ export function createCommunityHandler({
             id: await rpc(
               session,
               "select public.community_comment($1,$2) as result",
-              [key, input.body],
+              [storageKey(key), input.body],
             ),
           });
           return true;

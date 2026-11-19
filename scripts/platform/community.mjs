@@ -15,12 +15,52 @@ import {
 } from "../lib/catalog/local-runtime.mjs";
 
 const root = resolve(import.meta.dirname, "../.."),
-  file = join(localDirectory, "community.json");
+  file = join(localDirectory, "community.json"),
+  developmentFile = join(localDirectory, "community-dev.json");
+
+/** The development server shares the local accounts and database login, but
+ *  indexes the working catalog under its own key prefix. */
+async function setupDevelopment() {
+  const status = await readLocalStatus(),
+    realm = await readLocalRealm();
+  assert.equal(realm.environment, "local");
+  const apiURL = assertLoopback(status.API_URL, ["http:"]);
+  await migrateLocal();
+  const runtime = JSON.parse(await readFile(file, "utf8"));
+  assert.equal(runtime.format, "gamemap.community-runtime");
+  assert.deepEqual(runtime.realm, realm);
+  assert.equal(new URL(runtime.supabaseURL).origin, apiURL.origin);
+  assertLoopback(runtime.databaseURL, ["postgres:", "postgresql:"]);
+  const config = {
+    format: "gamemap.community-development",
+    realm,
+    origin: "http://127.0.0.1:5174",
+    keyPrefix: "dev:",
+    databaseURL: runtime.databaseURL,
+    supabaseURL: runtime.supabaseURL,
+    publishableKey: runtime.publishableKey,
+    mediaRoot: runtime.mediaRoot,
+    sessionSecret: runtime.sessionSecret,
+  };
+  await mkdir(localDirectory, { recursive: true, mode: 0o700 });
+  await writeFile(developmentFile, JSON.stringify(config, null, 2), {
+    mode: 0o600,
+  });
+  await chmod(developmentFile, 0o600);
+  console.log(
+    "Development community provisioned for http://127.0.0.1:5174. Ratings and comments for working-catalog games stay separate from the published preview.",
+  );
+  console.log(
+    "Restart `npm run dev` so /api/community and the account links are mounted.",
+  );
+}
 const command = process.argv[2];
 if (!command || command === "--help") {
   console.log(
-    "Owned-local community setup: node scripts/platform/community.mjs setup | status. No cloud services, resets or public deployment.",
+    "Owned-local community setup: node scripts/platform/community.mjs setup | setup --dev | status. No cloud services, resets or public deployment.",
   );
+} else if (command === "setup" && process.argv[3] === "--dev") {
+  await setupDevelopment();
 } else if (command === "setup") {
   const status = await readLocalStatus(),
     realm = await readLocalRealm();
@@ -120,16 +160,23 @@ if (!command || command === "--help") {
     "After changing supabase/config.toml, apply Auth settings with the documented owned-local stop/start (data is retained; never reset). Restart the 4191 publication server to mount the community API.",
   );
 } else if (command === "status") {
-  let configured = false;
+  let configured = false,
+    development = false;
   try {
     const c = JSON.parse(await readFile(file, "utf8"));
     configured = c.format === "gamemap.community-runtime";
   } catch {}
+  try {
+    const c = JSON.parse(await readFile(developmentFile, "utf8"));
+    development = c.format === "gamemap.community-development";
+  } catch {}
   console.log(
     JSON.stringify({
       configured,
+      development,
       localOnly: true,
       runtimeConfig: ".build/catalog-local/community.json",
+      developmentConfig: ".build/catalog-local/community-dev.json",
     }),
   );
 } else

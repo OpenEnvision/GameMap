@@ -58,6 +58,7 @@
     "local:publication-recover": "node scripts/platform/local-publication.mjs recover",
     "local:publication-serve": "node scripts/platform/local-publication.mjs serve",
     "community:setup": "node scripts/platform/community.mjs setup",
+    "community:dev": "node scripts/platform/community.mjs setup --dev",
     "community:status": "node scripts/platform/community.mjs status"
   },
   "dependencies": {
@@ -85,7 +86,6 @@
     "@electric-sql/pglite": "0.5.11",
     "@playwright/test": "^1.64.1",
     "@react-router/dev": "7.18.4",
-    "@react-router/node": "^7.18.4",
     "@tailwindcss/vite": "^4.1.0",
     "@types/mdx": "^2.0.14",
     "@types/node": "^22.0.0",

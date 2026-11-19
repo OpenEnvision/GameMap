@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { watch } from "node:fs";
+import { existsSync, watch } from "node:fs";
 import { readFile, stat } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { resolve } from "node:path";
@@ -105,7 +105,15 @@ const vite = spawn(
     "127.0.0.1",
     ...args,
   ],
-  { cwd: root, stdio: "inherit" },
+  {
+    cwd: root,
+    stdio: "inherit",
+    // Accounts, ratings and comments for the working catalog, when the operator
+    // provisioned the development community (scripts/platform/community.mjs --dev).
+    env: existsSync(resolve(root, ".build/catalog-local/community-dev.json"))
+      ? { ...process.env, VITE_GAMEMAP_COMMUNITY: "1" }
+      : process.env,
+  },
 );
 function stop(signal) {
   watches.forEach((watcher) => watcher.close());

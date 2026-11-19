@@ -412,3 +412,71 @@ test("submission form rejects private network links, executable URLs and missing
     false,
   );
 });
+test("development games keep their own ratings and survive a published index", async () => {
+  const shared = "example:development-shared-fixture",
+    working = "example:development-working-fixture",
+    publishedOnly = "example:development-published-only-fixture";
+  await db.system((c) =>
+    c.query("select public.community_sync_games($1::jsonb)", [
+      JSON.stringify([
+        { key: shared, payload: { title: "Shared" } },
+        { key: publishedOnly, payload: { title: "Published only" } },
+      ]),
+    ]),
+  );
+  await db.system((c) =>
+    c.query("select public.community_sync_development_games($1::jsonb)", [
+      JSON.stringify([
+        { key: "dev:" + shared, payload: { title: "Shared" } },
+        { key: "dev:" + working, payload: { title: "Working only" } },
+      ]),
+    ]),
+  );
+  await db.system((c) =>
+    c.query("select public.community_sync_games($1::jsonb)", [
+      JSON.stringify([{ key: shared, payload: { title: "Shared" } }]),
+    ]),
+  );
+  const publicKeys = (
+    await pg.query("select key from community.games where public order by key")
+  ).rows.map((row) => row.key);
+  for (const key of ["dev:" + shared, "dev:" + working, shared])
+    assert.ok(publicKeys.includes(key), key);
+  assert.ok(!publicKeys.includes(publishedOnly));
+  await rpc(alice, "select public.community_rate($1,5) as result", [shared]);
+  await rpc(alice, "select public.community_rate($1,2) as result", [
+    "dev:" + shared,
+  ]);
+  const stats = async (key) =>
+    (
+      await rpc(alice, "select public.community_game_stats($1) as result", [
+        [key],
+      ])
+    )[key];
+  assert.equal((await stats(shared)).average, 5);
+  assert.equal((await stats("dev:" + shared)).average, 2);
+  assert.equal((await stats(shared)).count, 1);
+  await db.system((c) =>
+    c.query("select public.community_sync_development_games($1::jsonb)", [
+      JSON.stringify([
+        { key: "dev:" + shared, payload: { title: "Updated working title" } },
+        { key: "dev:" + working, payload: { title: "Working only" } },
+      ]),
+    ]),
+  );
+  const updated = await rpc(
+    alice,
+    "select public.community_game($1) as result",
+    ["dev:" + shared],
+  );
+  assert.equal(updated.game.title, "Updated working title");
+  assert.equal((await stats("dev:" + shared)).average, 2);
+  await assert.rejects(
+    db.system((c) =>
+      c.query("select public.community_sync_development_games($1::jsonb)", [
+        JSON.stringify([{ key: shared, payload: { title: "Unprefixed" } }]),
+      ]),
+    ),
+    /Invalid development game identity/,
+  );
+});

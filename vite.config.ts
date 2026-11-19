@@ -4,6 +4,7 @@ import { fumadocsMdx } from "fumadocs-mdx/vite";
 import { defineConfig } from "vite";
 import { fileURLToPath } from "node:url";
 import rehypeRaw from "rehype-raw";
+import { communityDevelopment } from "./scripts/dev/community.mjs";
 
 const base =
   "/" +
@@ -40,5 +41,6 @@ export default defineConfig({
     }),
     tailwindcss(),
     reactRouter(),
+    communityDevelopment(),
   ],
 });
