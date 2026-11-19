@@ -33,7 +33,10 @@ export default function AtlasSearch(props: SharedProps) {
           const element = returnFocus.current;
           // A dismissed programmatic dialog has no Radix Trigger to restore. Do
           // not focus the old page after a result has navigated somewhere else.
-          if (window.location.href === openedAt.current && element?.isConnected) {
+          if (
+            window.location.href === openedAt.current &&
+            element?.isConnected
+          ) {
             event.preventDefault();
             element.focus({ preventScroll: true });
           }

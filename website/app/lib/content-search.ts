@@ -29,19 +29,17 @@ export async function searchContent(query: string, locale: Locale = "en") {
   return rankDocuments((await loadSearchIndex(locale)).documents, query);
 }
 export async function dialogSearch(query: string, locale: Locale = "en") {
-  return (await searchContent(query, locale))
-    .slice(0, 30)
-    .map((document) => ({
-      id: document.key,
-      type: "page" as const,
-      url: document.url,
-      content: document.title,
-      breadcrumbs: [
-        translate(
-          locale,
-          (contentKinds as Record<string, { label: string }>)[document.kind]
-            ?.label || document.kind,
-        ),
-      ],
-    }));
+  return (await searchContent(query, locale)).slice(0, 30).map((document) => ({
+    id: document.key,
+    type: "page" as const,
+    url: document.url,
+    content: document.title,
+    breadcrumbs: [
+      translate(
+        locale,
+        (contentKinds as Record<string, { label: string }>)[document.kind]
+          ?.label || document.kind,
+      ),
+    ],
+  }));
 }
