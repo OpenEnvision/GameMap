@@ -1,11 +1,18 @@
 import documentData from "../.content/manifest.json";
-import { sources, catalogs } from "./source-data";
+import { sources as authoringSources, catalogs } from "./source-data";
 import { createRegistry } from "./registry-core";
+import { readPublishedPapers } from "./published-papers.server";
 import { localizedRegistry } from "./localization.server";
 import { localeFromPath, type Locale } from "./locale";
 import type { ContentRegistry, DocumentMetadata } from "./models";
 const documents = documentData as DocumentMetadata[];
 
+const publishedPapers = import.meta.env.DEV
+  ? await readPublishedPapers()
+  : null;
+export const sources = publishedPapers
+  ? { ...authoringSources, papers: publishedPapers }
+  : authoringSources;
 export const content = createRegistry(sources, documents);
 const localized = new Map<string, ContentRegistry>();
 export function contentIn(locale: Locale) {
@@ -21,4 +28,3 @@ export function contentFor(request: Request) {
 export { documents };
 export { contentKinds } from "./models";
 export { pages, navigation, url } from "./site";
-export { sources };

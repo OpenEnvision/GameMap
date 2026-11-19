@@ -1,5 +1,6 @@
 import type { Config } from "@react-router/dev/config";
 import { readFile } from "node:fs/promises";
+import { readPublishedPapers } from "./website/content/published-papers.server";
 
 const basename =
   "/" +
@@ -15,6 +16,11 @@ export default {
     const paths = JSON.parse(
       await readFile("website/.content/routes.json", "utf8"),
     ) as string[];
+    if (process.env.NODE_ENV === "development") {
+      const papers = await readPublishedPapers();
+      for (const paper of papers || [])
+        paths.push(`/papers/${paper.id}/`, `/zh/papers/${paper.id}/`);
+    }
     // Generated from the typed registry; React Router adds basename itself.
     return [
       ...paths.map((path) => (path === "/" ? "/" : path.replace(/\/$/, ""))),

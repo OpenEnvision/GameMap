@@ -1,14 +1,17 @@
 import { readFileSync, existsSync } from "node:fs";
 import { type RouteConfig, index, route } from "@react-router/dev/routes";
 import { pages, detailRoutes, systemRoutes } from "../content/site";
-// An empty collection has no static detail pages. With ssr:false React Router rejects
-// server loaders that have no prerender targets; release generation enables these
-// routes as soon as selected records exist, without inventing placeholder entries.
+import { readPublishedPapers } from "../content/published-papers.server";
+// Local paper previews have detail targets; empty collections do not.
+// With ssr:false every server-loaded route requires prerender targets.
 const generatedRoutes: string[] = existsSync("website/.content/routes.json")
   ? JSON.parse(readFileSync("website/.content/routes.json", "utf8"))
   : [];
+const publishedPapers =
+  process.env.NODE_ENV === "development" ? await readPublishedPapers() : null;
 const availableDetails = detailRoutes.filter(
   (page) =>
+    (page.id === "paper-detail" && Boolean(publishedPapers?.length)) ||
     !["paper-detail", "threejs-game-detail"].includes(page.id) ||
     generatedRoutes.some(
       (path) =>
