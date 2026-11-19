@@ -8074,10 +8074,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Cube Minesweeper",
-      "url": "https://github.com/shimanto/cube-minesweeper",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Play Cube Minesweeper",
+      "url": "https://shimanto.github.io/cube-minesweeper/",
+      "kind": "playable",
+      "note": "Author README links this same-owner GitHub Pages build. Loaded in a sandboxed cloud browser on 2026-11-19; the cube rendered and cells were revealed after one click. No complete playthrough is claimed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

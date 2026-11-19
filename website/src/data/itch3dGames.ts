@@ -1144,10 +1144,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/ue4split/random_game",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "View creator downloads",
+      "url": "https://ue4split.itch.io/random-game",
+      "kind": "download",
+      "note": "The author itch.io page lists native packages for Windows, Linux. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -1909,10 +1909,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/Mickeon/team-fortress-jumper",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "View creator downloads",
+      "url": "https://mickeon.itch.io/team-fortress-jumper",
+      "kind": "download",
+      "note": "The author itch.io page lists native packages for Windows. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",

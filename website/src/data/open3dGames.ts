@@ -1819,10 +1819,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Racing Game (Cyteon)",
-      "url": "https://github.com/Cyteon/racing-game",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View creator downloads",
+      "url": "https://cyteon.itch.io/racing-game",
+      "kind": "download",
+      "note": "The author itch.io page lists native packages for Windows, Linux, Android, macOS. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",

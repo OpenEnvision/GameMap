@@ -1459,10 +1459,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Void.sys",
-      "url": "https://github.com/MrNavaStar/ASJ2025",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "View creator downloads",
+      "url": "https://icaruschild.itch.io/voidsys",
+      "kind": "download",
+      "note": "The author itch.io page lists native packages for Windows, Linux. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",

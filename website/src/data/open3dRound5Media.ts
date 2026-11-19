@@ -539,6 +539,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-glory": {
+    src: "media/learning/open3d-glory.webp",
+    alt: "A first-person fighter faces an armed opponent in a stone courtyard with combat skills and health bars visible.",
+    caption:
+      "Creator-published gameplay screenshot. A first-person fighter faces an armed opponent in a stone courtyard with combat skills and health bars visible. Image rights remain with the original creator and respective rights holders.",
+    sourceUrl:
+      "https://github.com/athemeroy/glory/blob/8023e8c644965a5c5efb5bb8035f16fde71e9534/site/img/fp.jpg",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/athemeroy/glory/8023e8c644965a5c5efb5bb8035f16fde71e9534/site/img/fp.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-supermarket-simulator": {
     src: "media/learning/open3d-supermarket-simulator.webp",
     alt: "A first-person view shows the supermarket entrance and a pedestrian outside, with a money counter in the corner.",
@@ -588,6 +602,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://raw.githubusercontent.com/code-yeongyu/wobble-rush-3d/HEAD/docs/media/sweepers.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-firstlight": {
+    src: "media/learning/open3d-firstlight.webp",
+    alt: "A third-person player explores a grassy hub during the movement tutorial.",
+    caption:
+      "Creator-published gameplay screenshot. A third-person player explores a grassy hub during the movement tutorial. Image rights remain with the original creator and respective rights holders.",
+    sourceUrl:
+      "https://github.com/RostyslavDzhohola/firstlight/blob/7afbca81619efcb10fd08ba2192dd433a1018776/docs/e2e/live-tutorial.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/RostyslavDzhohola/firstlight/7afbca81619efcb10fd08ba2192dd433a1018776/docs/e2e/live-tutorial.png",
     width: 1280,
     height: 720,
   },
@@ -653,6 +681,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://github.com/user-attachments/assets/bef8cc61-8e0c-48a3-b043-1b9902499640",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-client": {
+    src: "media/learning/open3d-client.webp",
+    alt: "A first-person player holds a rifle in the Sertao da Treta map, with health, ammunition, radar and match timer visible.",
+    caption:
+      "Creator-published gameplay screenshot. A first-person player holds a rifle in the Sertao da Treta map, with health, ammunition, radar and match timer visible. Image rights remain with the original creator and respective rights holders.",
+    sourceUrl:
+      "https://github.com/corosolto/client/blob/b814e8b7b4c6b35bbdd41237a6998d53675984d3/tools/eval/asset-evidence/sertao-review/partida.jpg",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/corosolto/client/b814e8b7b4c6b35bbdd41237a6998d53675984d3/tools/eval/asset-evidence/sertao-review/partida.jpg",
     width: 1280,
     height: 720,
   },
@@ -865,6 +907,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-claude-code-games": {
+    src: "media/learning/open3d-claude-code-games.webp",
+    alt: "Sandstorm Circuit from Claude Code Games: a pod races a rival through a canyon at 630 km/h with lap and vehicle HUD visible.",
+    caption:
+      "Creator-published gameplay screenshot. Sandstorm Circuit from Claude Code Games: a pod races a rival through a canyon at 630 km/h with lap and vehicle HUD visible. Image rights remain with the original creator and respective rights holders.",
+    sourceUrl:
+      "https://github.com/opivankristovi/Claude_Code_Games/blob/93cef893e3e3a48a3f3a6da924d580062ae4527b/PodRace/screenshots/canyon.jpg",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/opivankristovi/Claude_Code_Games/93cef893e3e3a48a3f3a6da924d580062ae4527b/PodRace/screenshots/canyon.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-little-rain-cloud": {
     src: "media/learning/open3d-little-rain-cloud.webp",
     alt: "A fox walks across desert sand under a rain cloud and rainbow, leaving a green trail of plants.",
@@ -997,6 +1053,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-xo-beta": {
+    src: "media/learning/open3d-xo-beta.webp",
+    alt: "A first-person view of a lake and dock with battle royale health, inventory, minimap and survival counters visible.",
+    caption:
+      "Creator-published gameplay screenshot. A first-person view of a lake and dock with battle royale health, inventory, minimap and survival counters visible. Image rights remain with the original creator and respective rights holders.",
+    sourceUrl:
+      "https://github.com/TKY-27/Xo-Beta/blob/83a6be20094bff186df740f354d05901f8d76314/docs/water-evidence/online-after/host.jpg",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/TKY-27/Xo-Beta/83a6be20094bff186df740f354d05901f8d76314/docs/water-evidence/online-after/host.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-shadow-protocol": {
     src: "media/learning/open3d-shadow-protocol.webp",
     alt: "A cockpit targeting display shows distant enemies over a wireframe landscape, with radar, flight instruments and a missile warning.",
@@ -1007,6 +1077,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://github.com/user-attachments/assets/ff9d557b-c213-4d5c-a244-cb59512b8a2f",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-survival-island": {
+    src: "media/learning/open3d-survival-island.webp",
+    alt: "A robot explores the island farm among palm trees, a barn and animal pens, with battery and movement status visible.",
+    caption:
+      "Creator-published gameplay screenshot. A robot explores the island farm among palm trees, a barn and animal pens, with battery and movement status visible. Image rights remain with the original creator and respective rights holders.",
+    sourceUrl:
+      "https://github.com/ralphbutler/survival-island/blob/18116c24ac2fb80e40dacfafb0ae28c88d6946ec/docs/images/2_farm.jpg",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/ralphbutler/survival-island/18116c24ac2fb80e40dacfafb0ae28c88d6946ec/docs/images/2_farm.jpg",
     width: 1280,
     height: 720,
   },
@@ -1046,6 +1130,17 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://raw.githubusercontent.com/Rahul4u-stack/breakout-game/HEAD/docs/screenshot.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-cube-minesweeper": {
+    src: "media/learning/open3d-cube-minesweeper.webp",
+    alt: "A three-dimensional Minesweeper cube displays revealed numbered cells across its front, top and left faces.",
+    caption:
+      "Cube Minesweeper gameplay on the creator-linked GitHub Pages build. Original game artwork belongs to its creators.",
+    sourceUrl: "https://shimanto.github.io/cube-minesweeper/",
+    origin: "browser-capture",
+    capturedAt: "2026-11-19T08:26:32.163Z",
     width: 1280,
     height: 720,
   },
@@ -1204,6 +1299,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://raw.githubusercontent.com/ranton256/LowPolyCartJS/HEAD/screenshots/screenshot-gameplay.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-fiat-ludus": {
+    src: "media/learning/open3d-fiat-ludus.webp",
+    alt: "Fiat Ludus gameplay with a third-person hero, moss creatures and wind lanterns on a grassy coastal island",
+    caption:
+      "Creator-published gameplay frame showing the wind-lantern objective and live game HUD. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/bigerbigernerd/fiat-ludus/blob/HEAD/docs/figures/game-first-real-assets.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/bigerbigernerd/fiat-ludus/HEAD/docs/figures/game-first-real-assets.png",
     width: 1280,
     height: 720,
   },
@@ -2189,6 +2298,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-pitch-patrol": {
+    src: "media/learning/open3d-pitch-patrol.webp",
+    alt: "Pitch Patrol gameplay with a floating circular arena, note target and interactive piano keyboard",
+    caption:
+      "Creator-published gameplay showing the music arena, piano input and live charging indicator. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/jethfrane/pitch-patrol/blob/HEAD/public/gameplay.webp",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/jethfrane/pitch-patrol/HEAD/public/gameplay.webp",
+    width: 1280,
+    height: 720,
+  },
   "open3d-odoakersaquariumspiel": {
     src: "media/learning/open3d-odoakersaquariumspiel.webp",
     alt: "A character stands beside an aquarium containing fish, plants and ornaments, with feeding and care controls.",
@@ -2664,6 +2787,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-bomberrage": {
+    src: "media/learning/open3d-bomberrage.webp",
+    alt: "Bomberrage gameplay with characters, bombs and cross-shaped explosions in a three-dimensional grid arena.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://store.steampowered.com/app/1873240/Bomberrage/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1873240/a9514ec01f0be12e1e8146f4ffb8c86978b1c706/ss_a9514ec01f0be12e1e8146f4ffb8c86978b1c706.1920x1080.jpg?t=1785704671",
+    width: 1280,
+    height: 720,
+  },
   "open3d-0-a-d": {
     src: "media/learning/open3d-0-a-d.webp",
     alt: "A rendered formation of ancient archers releases a dense volley of arrows beneath a cloudy sky.",
@@ -2762,6 +2898,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     origin: "creator-screenshot",
     reviewedAt: "2026-11-19",
     originalImageUrl: "https://megaglest.org/media/pics/a1.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-neverball-neverputt": {
+    src: "media/learning/open3d-neverball-neverputt.webp",
+    alt: "Neverball gameplay with a rolling ball and collectible coins on a raised green course, plus timer and coin counters.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://neverball.org/screenshots",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://neverball.org/images/screenshots/neverball-01.jpg",
     width: 1280,
     height: 720,
   },
@@ -2889,6 +3038,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-trigger-rally": {
+    src: "media/learning/open3d-trigger-rally.webp",
+    alt: "Trigger Rally racing gameplay on a snowy road with a rally car, timer, checkpoint count, minimap and speedometer.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://trigger-rally.sourceforge.io/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://trigger-rally.sourceforge.io/img/trigger_screenshot_3.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-unvanquished": {
     src: "media/learning/open3d-unvanquished.webp",
     alt: "Glowing science-fiction equipment stands inside a rendered metal-walled game room.",
@@ -2902,6 +3064,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-vdrift": {
+    src: "media/learning/open3d-vdrift.webp",
+    alt: "VDrift racing gameplay showing a red sports car on a starting grid with the circuit map in the corner.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://raw.githubusercontent.com/VDrift/vdrift/HEAD/README.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/VDrift/vdrift/HEAD/vdrift/raw/2f19c79de4fac0c326fa099dba7d9f19362552d0/miura_vdrift_899.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-veloren": {
     src: "media/learning/open3d-veloren.webp",
     alt: "A blocky forest surrounds a tall decorated totem in a rendered outdoor game scene.",
@@ -2912,6 +3087,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://veloren.net/processed_images/gallery-0.50cacb0aa6b9efab.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-warfork": {
+    src: "media/learning/open3d-warfork.webp",
+    alt: "Warfork first-person arena combat with a visible weapon, opponents, timer, kill feed, health and ammunition HUD.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://store.steampowered.com/app/671610/Warfork/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/671610/ss_22d3ef7cb3bc736afb1fa527b3963e8d50a3e86e.1920x1080.jpg?t=1757726652",
     width: 1280,
     height: 720,
   },
@@ -3279,6 +3467,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-dgs-dystopian-generic-shooter": {
+    src: "media/learning/open3d-dgs-dystopian-generic-shooter.webp",
+    alt: "A first-person shooter scene in a dark purple city street with a visible gun, health bar and ammunition count.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://deadprocess.itch.io/dgs",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1hZ2UvMTg1NzIzMC8xMDkwNzYyMC5qcGc=/original/S3E4Go.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-fly-dangerous": {
     src: "media/learning/open3d-fly-dangerous.webp",
     alt: "A cockpit view races toward illuminated rings above mountains with speed, engine and race-time indicators.",
@@ -3302,6 +3503,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://img.itch.zone/aW1hZ2UvMjMxOTUxOC8xMzkyMzU5NS5wbmc=/original/TeHyU2.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-geographical-adventures": {
+    src: "media/learning/open3d-geographical-adventures.webp",
+    alt: "A yellow airplane flies over mountainous terrain toward a labeled country balloon, with flight instruments and destination choices visible.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://sebastian.itch.io/geographical-adventures",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1hZ2UvMTM5MTU3NC84ODE0Mjk4LmpwZw==/original/p6faLN.jpg",
     width: 1280,
     height: 720,
   },
@@ -3331,6 +3545,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-pirate-run": {
+    src: "media/learning/open3d-pirate-run.webp",
+    alt: "A third-person pirate runner moves along a tropical path lined with barrels and crates, with collision count and movement instructions visible.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://miniputs.itch.io/pirate-run",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1hZ2UvOTg0MDcyLzU1OTg0MjEuanBn/original/ge6aW%2B.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-balazar-brothers": {
     src: "media/learning/open3d-balazar-brothers.webp",
     alt: "Two characters stand on giant mushroom platforms near floating treasure chests and game counters.",
@@ -3342,6 +3569,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://www.lesfleursdunormal.fr/static/_images/miniature_balazar_brother9.jpeg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-dreamchess": {
+    src: "media/learning/open3d-dreamchess.webp",
+    alt: "A three-dimensional chessboard with gold and bronze pieces and player status panels against a starry background.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://www.dreamchess.org/screenshots",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://www.dreamchess.org/assets/images/screenshots/classic.png",
     width: 1280,
     height: 720,
   },
