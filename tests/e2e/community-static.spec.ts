@@ -55,6 +55,7 @@ test("static pages make no community requests and game pages have no discussion"
   ).toHaveCount(0);
   await visit(page, game);
   await expect(page.locator("#community")).toHaveCount(0);
+  await expect(page.locator('a[href="#community"]')).toHaveCount(0);
   expect(requests, "No /api/community requests in a static build").toEqual([]);
 });
 
