@@ -2584,10 +2584,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Cubosphere",
-      "url": "https://github.com/cubosphere/cubosphere-code",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Cubosphere beta 0.3a",
+      "url": "https://sourceforge.net/projects/cubosphere/files/",
+      "kind": "download",
+      "note": "The author SourceForge files list identifies the exact beta 0.3a Windows install executable, separate from old and source files. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

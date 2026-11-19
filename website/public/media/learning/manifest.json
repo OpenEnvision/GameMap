@@ -5157,6 +5157,20 @@
       "sha256": "d4aaf5d8238d9513148311d3715a947d90141f1bb24e505ac0e39744126880b5"
     },
     {
+      "id": "jam-between-my-shadows",
+      "src": "media/learning/jam-between-my-shadows.webp",
+      "alt": "A tall purple shadow with glowing red eyes approaches across a dark gridded floor.",
+      "caption": "Creator-published gameplay: A first-person encounter with a shadow in the author's Ludum Dare gameplay recording.",
+      "sourceUrl": "https://ldjam.com/events/ludum-dare/50/between-my-shadows",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://static.ldjam.com/raw/f89/c2/z/4969f.gif",
+      "width": 1280,
+      "height": 720,
+      "bytes": 48708,
+      "sha256": "55073da6519255bb07c407236fd638a7bb1a1c3691915c91cdc5c8dc5a6c982a"
+    },
+    {
       "id": "jam-monster-match",
       "src": "media/learning/jam-monster-match.webp",
       "alt": "A grid of colored geometric tiles sits above a sketched monster and city, with health, day, and time counters inside a phone frame.",
@@ -6083,6 +6097,20 @@
       "sha256": "c8ce8f6abcd2c90339250119363652d8e14f6a17e436e4d55a786f47a8fb6be5"
     },
     {
+      "id": "open3d-metal-nest",
+      "src": "media/learning/open3d-metal-nest.webp",
+      "alt": "First-person Metal Nest view down a dark industrial shaft among chains and faint red lamps.",
+      "caption": "Creator-published Metal Nest gameplay screenshot from the author’s itch.io screenshot gallery. Image rights remain with their respective owners.",
+      "sourceUrl": "https://snoodlegames.itch.io/metal-nest",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1hZ2UvMzEyNjQ0OS8xODY4MTI4MS5wbmc=/original/zv1%2B9Z.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 44092,
+      "sha256": "6f5d27c892d13b4ea8f4dd1908e16db82b8adae95d968f10f471a015b61f1c9d"
+    },
+    {
       "id": "open3d-nodulus",
       "src": "media/learning/open3d-nodulus.webp",
       "alt": "Blue block nodes and connecting bars fill a puzzle board, with a green goal node and move counter.",
@@ -6235,6 +6263,20 @@
       "height": 720,
       "bytes": 120206,
       "sha256": "03b28ccf3470a62ced1bf292df3d603b80bd1e5114fdbab1357d79dbc22a63e0"
+    },
+    {
+      "id": "open3d-alien-arena",
+      "src": "media/learning/open3d-alien-arena.webp",
+      "alt": "A first-person weapon fills the foreground of a red-railed industrial passage as a white firing effect crosses the corridor.",
+      "caption": "Creator-published Alien Arena gameplay screenshot from the COR Entertainment Steam gallery. Image rights remain with their respective owners.",
+      "sourceUrl": "https://store.steampowered.com/app/629540/Alien_Arena_Warriors_Of_Mars/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/629540/ss_1d1f090bdd83c2f456783b61f8f7121383ec455b.1920x1080.jpg?t=1696157905",
+      "width": 1280,
+      "height": 720,
+      "bytes": 145506,
+      "sha256": "e136f85bffaec66e1923e62c3b67bee1c43388b69684145fb7dcab719b386a26"
     },
     {
       "id": "open3d-armagetron-advanced",
@@ -6937,6 +6979,20 @@
       "sha256": "1f28b9502cdeada2190227b6a0694492057d0454a67f1a728c72fcc3353417fa"
     },
     {
+      "id": "open3d-premonition",
+      "src": "media/learning/open3d-premonition.webp",
+      "alt": "A sunlit room with a television, table and an onscreen message about the sofa.",
+      "caption": "Creator-published Premonition gameplay screenshot from the developer’s postmortem, showing the sofa interaction in a debug build. Image rights remain with their respective owners.",
+      "sourceUrl": "https://framebuffers.itch.io/premonition/devlog/812444/premonition-post-mortem-after-the-storm",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1nLzE4MTAwMjU0LnBuZw==/original/9gaoAs.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 177978,
+      "sha256": "8c517429b173d54bdd00f28a35886b1a0030a132f1f4680a6f9155f7dd424f1f"
+    },
+    {
       "id": "open3d-profundus",
       "src": "media/learning/open3d-profundus.webp",
       "alt": "A dark first-person mining scene targets a wooden cart, with a small instrument display and battery icon.",
@@ -7411,6 +7467,20 @@
       "height": 720,
       "bytes": 37900,
       "sha256": "7aea1cd5f06ef4dfdcc67594e3d7339b12e18bfd1c7202eee299a5a4a0742b51"
+    },
+    {
+      "id": "open3d-openbve",
+      "src": "media/learning/open3d-openbve.webp",
+      "alt": "OpenBVE train cab at Chiba station with departure countdown, instrument dials and a train alongside the platform.",
+      "caption": "Creator-published OpenBVE gameplay screenshot showing the driving cab after a station stop. Image rights remain with their respective owners.",
+      "sourceUrl": "https://github.com/leezer3/OpenBVE-Site/blob/gh-pages/images/driving_1.jpg",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/leezer3/OpenBVE-Site/gh-pages/images/driving_1.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 70618,
+      "sha256": "84856e7d542be9d459baa180247eb8ad0bc2a6c69c2d68be5f2fad36991009a1"
     },
     {
       "id": "open3d-openspades",
@@ -8589,6 +8659,20 @@
       "sha256": "52f98d849eaa42696dc3bcfee4a43081e3ed75aebae68cc88e0d6a489c4f22fc"
     },
     {
+      "id": "itch3d-g031",
+      "src": "media/learning/itch3d-g031.webp",
+      "alt": "A golf ball aimed at a wooden windmill on a bright green minigolf lane.",
+      "caption": "Creator-published gameplay: The windmill obstacle on level 10, with the aim arrow and stroke targets visible.",
+      "sourceUrl": "https://llamacademy.dev/consulting/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://llamacademy.dev/images/academy/consulting/minigolf-1.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 12628,
+      "sha256": "b1b846611a62ee9bf81906f90b6908fc0b363a7410b4cef8af4592e661edaac8"
+    },
+    {
       "id": "itch3d-g032",
       "src": "media/learning/itch3d-g032.webp",
       "alt": "A small colored rider follows a curving road across green checkered non-Euclidean terrain.",
@@ -8853,6 +8937,20 @@
       "height": 720,
       "bytes": 33038,
       "sha256": "2ddf825c74cb7421d0a5c7be86e842ee8417ece20c6c0184a6fd54e7ccfbf6e8"
+    },
+    {
+      "id": "itch3d-g060",
+      "src": "media/learning/itch3d-g060.webp",
+      "alt": "Chickens beside a wooden coop with a selected llama, a minimap, and resource counters.",
+      "caption": "Creator-published gameplay: A selected llama defends the chicken pen, with unit options and resource counts visible.",
+      "sourceUrl": "https://llamacademy.dev/consulting/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://llamacademy.dev/images/academy/consulting/chicken-defense-1.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 68656,
+      "sha256": "e2de9d1c88709be668dd0893427a4e7de0d2aeddbf66643fe271f4016b74cd44"
     },
     {
       "id": "itch3d-g061",
@@ -9834,6 +9932,33 @@
       "sha256": "db79e23b7620b0ebf27a5a5cba69d832c8437eb2dc3b6f3cb54e81064493afea"
     },
     {
+      "id": "browser-port-08",
+      "src": "media/learning/browser-port-08.webp",
+      "alt": "A warrior with a shield outside a thatched building by a stream, above Diablo’s red and blue HUD orbs.",
+      "caption": "The opening town in the author’s Diablo browser port, captured from the free shareware version.",
+      "sourceUrl": "https://d07riv.github.io/diabloweb/",
+      "origin": "browser-capture",
+      "capturedAt": "2026-11-19T18:13:11.541Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 81426,
+      "sha256": "642c55eb6b508ecca255552889d58bf88cc8da05d9b27b1cecc78fe9ad5422f5"
+    },
+    {
+      "id": "browser-port-19",
+      "src": "media/learning/browser-port-19.webp",
+      "alt": "First-person spectator view of a soldier holding a submachine gun beside an outdoor stairway, with a match HUD.",
+      "caption": "Creator-published screenshot from a Return to Castle Wolfenstein multiplayer match, shown from a first-person spectator camera.",
+      "sourceUrl": "https://rtcw.pieter.com/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://rtcw.pieter.com/rtcwbg.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 35566,
+      "sha256": "b47492295ac609a78a17a0b4011de7d96c3260fba3f2e68d5cbab2fe4311562b"
+    },
+    {
       "id": "browser-port-21",
       "origin": "creator-screenshot",
       "sourceUrl": "https://github.com/x8BitRain/webXash",
@@ -10013,6 +10138,20 @@
       "height": 720,
       "bytes": 41794,
       "sha256": "c24524040a8d271cff9a941d46a79926a3a3df6e258ae1335a74450bd16c1373"
+    },
+    {
+      "id": "open3d-null-horizon",
+      "src": "media/learning/open3d-null-horizon.webp",
+      "alt": "Null Horizon first-person gameplay in a rain-soaked city, looking toward a red jammer pylon with tactical radar and objectives.",
+      "caption": "Gameplay frame at 45 seconds in the creator-published Null Horizon trailer, showing the Iron Rain mission. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/dantecomedia/null-horizon/blob/4a426388f5dcbbfb0caed9bd8e25d3bb37262cef/README.md",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/dantecomedia/null-horizon/4a426388f5dcbbfb0caed9bd8e25d3bb37262cef/media/null-horizon-trailer.mp4",
+      "width": 1280,
+      "height": 720,
+      "bytes": 73200,
+      "sha256": "2c891fe1240c346d142d5213f1c8822a70aba712c3d1b8f2b1149ff4addd35fe"
     },
     {
       "id": "open3d-solstice-racing",
@@ -10407,6 +10546,20 @@
       "sha256": "b608356412560074c1b2dfa998d22e8743aee25f163682deb934d1c1e7ed20c4"
     },
     {
+      "id": "open3d-fable5-2-salt-online",
+      "src": "media/learning/open3d-fable5-2-salt-online.webp",
+      "alt": "Saltline Online mobile multiplayer on a sunlit pier, with a nearby player, touch controls, and live network HUD.",
+      "caption": "Creator-published gameplay screenshot of the unofficial Saltline Online multiplayer adaptation, not the original Saltline release. Image rights remain with their respective owners.",
+      "sourceUrl": "https://github.com/pcrock99/fable5-2-salt-online/blob/7917839e6f3e70faade0e2538d77859d5534c5c4/README.md",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/pcrock99/fable5-2-salt-online/7917839e6f3e70faade0e2538d77859d5534c5c4/docs/media/mobile-multiplayer.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 31738,
+      "sha256": "10d0f42e73e5c24fec0d3f8c82b290711a5e4c2e39664eeb0ca048f522560b44"
+    },
+    {
       "id": "open3d-glm-5-3-one-prompt-game",
       "src": "media/learning/open3d-glm-5-3-one-prompt-game.webp",
       "alt": "A first-person view explores a dark landscape under an aurora, with glowing collectible shards, a shard counter and a countdown HUD.",
@@ -10769,6 +10922,20 @@
       "height": 720,
       "bytes": 66266,
       "sha256": "9967479cabf9863ef588d868bda8238bb10bc419335e11fed49d979673363dc7"
+    },
+    {
+      "id": "open3d-boat-astra-deepseek",
+      "src": "media/learning/open3d-boat-astra-deepseek.webp",
+      "alt": "A speedboat heads for a gate across blue water, with a wake, score, and minimap visible.",
+      "caption": "Creator-published gameplay: Tidebreak: Corsair Run during a checkpoint run, with the boat moving at 155 km/h.",
+      "sourceUrl": "https://bench-portal.pages.dev/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-20",
+      "originalImageUrl": "https://bench-portal.pages.dev/games/boat-astra-deepseek/cover.webp",
+      "width": 1280,
+      "height": 720,
+      "bytes": 50448,
+      "sha256": "65f83a3076b9bdcbf772f7524a825ee5d416690eaa74f2bff32c5fb883e8e3ff"
     },
     {
       "id": "open3d-dustfall",
@@ -11147,6 +11314,20 @@
       "height": 720,
       "bytes": 111510,
       "sha256": "cd79a21a1bd896152ae4f8afc6b61427fe1644ce71028efc4922dd2ca8dee5f0"
+    },
+    {
+      "id": "open3d-block-fps",
+      "src": "media/learning/open3d-block-fps.webp",
+      "alt": "A cyan crosshair and angular blaster face red block enemies in a dark wireframe arena.",
+      "caption": "Creator-published gameplay: A first-person view of Block Arena, with red cube enemies and cyan arena outlines.",
+      "sourceUrl": "https://ai-browser-game-demos.vercel.app/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-20",
+      "originalImageUrl": "https://ai-browser-game-demos.vercel.app/games/block-fps/thumb.webp",
+      "width": 1280,
+      "height": 720,
+      "bytes": 9694,
+      "sha256": "9616f4abe4d98e3665ea5961836dd7f48cc81e63cdb5b1d8a9f65799f2edc522"
     },
     {
       "id": "open3d-kids-games",
@@ -11708,6 +11889,20 @@
       "sha256": "8d5b4298a8ea885dcd9e60d13e8c66a3b23baaa8a71db96252860d66dc6fb7ca"
     },
     {
+      "id": "open3d-overrun-claude-opus-5-5",
+      "src": "media/learning/open3d-overrun-claude-opus-5-5.webp",
+      "alt": "A first-person rifle points toward purple, yellow and red robots at a lit dockyard.",
+      "caption": "Creator-published gameplay: A double-kill notification appears during combat in Dockyard Nine.",
+      "sourceUrl": "https://bench-portal.pages.dev/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-20",
+      "originalImageUrl": "https://bench-portal.pages.dev/games/overrun-claude-opus-5.5/cover.webp",
+      "width": 1280,
+      "height": 720,
+      "bytes": 67530,
+      "sha256": "3b1bdbd22e3e7746a9be53db92e25fb009bb396558febef52cc9667aff02ff4d"
+    },
+    {
       "id": "open3d-neon-zenith",
       "src": "media/learning/open3d-neon-zenith.webp",
       "alt": "A flying car approaches a glowing ring above neon city towers, with race timer and speed display.",
@@ -12100,6 +12295,20 @@
       "sha256": "20bfd68b134b1c523acb8fef92dec6f816ba3bef00d524616c8069ec7cdecba4"
     },
     {
+      "id": "open3d-gpt-6-astra-2026-09-11",
+      "src": "media/learning/open3d-gpt-6-astra-2026-09-11.webp",
+      "alt": "A rifle and crosshair face a container-strewn industrial yard as the wave-one notification appears.",
+      "caption": "Creator-published gameplay: The first wave begins in the industrial arena, with the radar, player health and ammunition visible.",
+      "sourceUrl": "https://bench-portal.pages.dev/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-20",
+      "originalImageUrl": "https://bench-portal.pages.dev/games/gpt-6-astra-2026-09-11/cover.webp",
+      "width": 1280,
+      "height": 720,
+      "bytes": 48608,
+      "sha256": "b74c67f3239a3e7b96889d7fd4f8e5e9ef6d712adc18254fcd607aa2f9056040"
+    },
+    {
       "id": "open3d-turbo-rumble",
       "src": "media/learning/open3d-turbo-rumble.webp",
       "alt": "Small cars race around a curved track beside lap, room and standings panels.",
@@ -12476,6 +12685,20 @@
       "height": 720,
       "bytes": 44644,
       "sha256": "a2a75836c50a381d42d56127632e0887a1d78e91d3f581e46cdf14b1a271d6ee"
+    },
+    {
+      "id": "open3d-whiteout-protocol-glm-5-3",
+      "src": "media/learning/open3d-whiteout-protocol-glm-5-3.webp",
+      "alt": "A first-person rifle overlooks snow-covered cargo containers beneath green and pink auroras.",
+      "caption": "Creator-published gameplay: Whiteout Protocol in the snowy industrial arena, with the wave, health and ammunition displayed.",
+      "sourceUrl": "https://bench-portal.pages.dev/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-20",
+      "originalImageUrl": "https://bench-portal.pages.dev/games/whiteout-protocol-glm-5.3/cover.webp",
+      "width": 1280,
+      "height": 720,
+      "bytes": 95392,
+      "sha256": "200729ce327742668274901652e6e267487a42876aee148d2c86bee59fccf749"
     },
     {
       "id": "open3d-vision-3d-game",

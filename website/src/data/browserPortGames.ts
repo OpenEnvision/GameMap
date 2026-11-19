@@ -109,10 +109,10 @@ export const browserPortGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "Inspect the identified source reference",
-      "url": "https://github.com/SK8-ENGINE/skate-3-rust-engine",
-      "kind": "source",
-      "note": "Candidate for this browser intake: exact browser edition not established. Experimental gameplay lacks parity; original commercial data and conversion required. No native build, conversion, download or game execution performed. The linked project is an experimental native edition."
+      "kind": "download",
+      "label": "Download the experimental Windows build",
+      "url": "https://github.com/SK8-ENGINE/skate-3-rust-engine/releases/tag/experimental",
+      "note": "The author release lists the experimental Windows x64 game build 49. Requires authorized Skate 3 Xbox 360 game data and conversion. Release metadata verified on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Source reference, scope unverified",
@@ -154,10 +154,10 @@ export const browserPortGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "Inspect the identified source reference",
-      "url": "https://github.com/d07RiV/diabloweb",
-      "kind": "source",
-      "note": "Text reference only; no demo or play link published. Shareware and full-owned-data modes must remain distinct. No asset rights, complete source, save compatibility or actual operation verified."
+      "kind": "playable",
+      "label": "Play Diablo shareware in browser",
+      "url": "https://d07riv.github.io/diabloweb/",
+      "note": "The web port author links this GitHub Pages build in the README. The built-in free shareware version loaded to single-player gameplay in a sandboxed cloud browser on 2026-11-19. No original game upload is required for shareware."
     },
     "source": {
       "label": "Source reference, scope unverified",
@@ -289,10 +289,10 @@ export const browserPortGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "Inspect the identified source reference",
-      "url": "https://github.com/OMG-Guest/Halo-Mobile",
-      "kind": "source",
-      "note": "Source reference only, entryUrl withheld. Requires authorized compatible game data. Claimed campaign, saves, touch support and System Link not tested. No full campaign/completeness or rights certification. Experimental presentation modes and third-party service dependencies may differ."
+      "kind": "download",
+      "label": "Download the Halo Mobile native builds",
+      "url": "https://github.com/OMG-Guest/Halo-Mobile/releases/tag/build-1",
+      "note": "The author release lists build 1 native packages for Android, Linux, and Windows. Requires authorized Halo game data. Release metadata verified on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Source reference, scope unverified",

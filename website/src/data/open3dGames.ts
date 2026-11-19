@@ -3484,10 +3484,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Beyond All Reason",
-      "url": "https://github.com/beyond-all-reason/Beyond-All-Reason",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Beyond All Reason",
+      "url": "https://github.com/beyond-all-reason/BYAR-Chobby/releases/tag/v1.2988.0",
+      "kind": "download",
+      "note": "The official game download page identifies the Windows installer and Linux AppImage as its desktop game installation packages. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3574,10 +3574,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Colobot: Gold Edition",
-      "url": "https://github.com/colobot/colobot",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Colobot Gold 0.2.2-alpha",
+      "url": "https://colobot.info/download-colobot-gold/",
+      "kind": "download",
+      "note": "The project labels 0.2.2-alpha its official release and publishes platform-specific desktop distributions for Windows, Linux and macOS. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3799,10 +3799,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Lips of Suna",
-      "url": "https://sourceforge.net/p/lipsofsuna/code/",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Lips of Suna 0.8.0",
+      "url": "https://sourceforge.net/projects/lipsofsuna/files/lipsofsuna/0.8.0/",
+      "kind": "download",
+      "note": "The original project labels the exact 151.2 MB archive Windows binary 0.8.0, distinct from its source, SDK and patch uploads. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4069,10 +4069,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Oolite",
-      "url": "https://github.com/OoliteProject/oolite",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Oolite 1.92.1",
+      "url": "https://github.com/OoliteProject/oolite/releases/tag/1.92.1.0",
+      "kind": "download",
+      "note": "The latest official release lists the stable Windows installer and Linux AppImage separately from test, debug, and documentation packages. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4429,10 +4429,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Scorched3D",
-      "url": "https://sourceforge.net/projects/scorched3d/",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Scorched 3D 44",
+      "url": "https://sourceforge.net/projects/scorched3d/files/scorched3d/Version%2044/",
+      "kind": "download",
+      "note": "Version 44 is the stable release; the official list names the Windows executable separately from the beta, source and platform packages. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4969,10 +4969,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for UFO: Alien Invasion",
-      "url": "https://github.com/ufoaiorg/ufoai",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download UFO: Alien Invasion 2.5",
+      "url": "https://sourceforge.net/projects/ufoai/files/UFO_AI%202.x/2.5/",
+      "kind": "download",
+      "note": "The project’s 2.5 release folder lists a 1.3 GB Windows installer separately from game data, optional map packs and source. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

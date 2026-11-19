@@ -8,16 +8,44 @@ const context = await loadContent(),
   ports = JSON.parse(
     await readFile("data/segments/browser-port-research.json", "utf8"),
   );
-test("fourth-batch source references and browser project pages never become fabricated play links", async ({
+type VerifiedDemo = { kind: "playable" | "download"; url: string };
+const mediaReview = await readFile(
+  "data/segments/open-3d-round5-media.json",
+  "utf8",
+)
+  .then(JSON.parse)
+  .catch((error) => {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  });
+const verifiedDemos = new Map<string, VerifiedDemo>(
+  (mediaReview?.demos.records || []).map(
+    (row: { id: string; demo: VerifiedDemo }) => [row.id, row.demo],
+  ),
+);
+const actions = {
+  source: "查看源码",
+  playable: "试玩游戏",
+  download: "获取游戏",
+} as const;
+
+test("fourth-batch and browser-port cards expose only independently verified play or download links", async ({
   page,
   request,
 }) => {
   await page.goto("zh/examples/");
-  for (const id of round4.newExampleIds) {
+  for (const id of [...round4.newExampleIds, ...ports.sourceReferenceIds]) {
+    const entry = context.registry.require("example", id);
+    const verified = verifiedDemos.get(id);
+    const kind = verified?.kind ?? "source";
     const card = page.locator('[data-content-ref="example:' + id + '"]');
     await expect(card).toHaveCount(1);
-    await expect(card).toHaveAttribute("data-access-kind", "source");
-    await expect(card.locator(".image-action")).toContainText("查看源码");
+    await expect(card).toHaveAttribute("data-access-kind", kind);
+    await expect(card.locator(".example-image")).toHaveAttribute(
+      "href",
+      verified?.url ?? entry.data.source.url,
+    );
+    await expect(card.locator(".image-action")).toContainText(actions[kind]);
   }
   for (const id of ports.projectReferenceIds) {
     const entry = context.registry.require("example", id),

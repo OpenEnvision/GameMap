@@ -3012,10 +3012,10 @@ export const jamGames: LearningPath[] = [
       "kind": "quickstart"
     },
     "demo": {
-      "label": "Open The Clicking Hour : It's opening time !",
+      "kind": "download",
+      "label": "Download The Clicking Hour",
       "url": "https://flamasar.itch.io/the-clicking-hour-opening-time",
-      "kind": "playable",
-      "note": "Creator-published release."
+      "note": "The author itch page lists native game packages for Android, Linux, Windows; verified public release metadata on 2026-11-19. No package was downloaded or executed."
     },
     "source": {
       "label": "Open the game project",
@@ -4494,10 +4494,10 @@ export const jamGames: LearningPath[] = [
       "kind": "quickstart"
     },
     "demo": {
-      "label": "Open Hugh's Chromatic Adventure",
+      "kind": "download",
+      "label": "Download Hugh's Chromatic Adventure",
       "url": "https://sasspower.itch.io/hughs-chromatic-adventure",
-      "kind": "playable",
-      "note": "Creator-published release."
+      "note": "The author itch page lists native game packages for Windows, Linux, macOS; verified public release metadata on 2026-11-19. No package was downloaded or executed."
     },
     "source": {
       "label": "Open the game project",
@@ -5178,10 +5178,10 @@ export const jamGames: LearningPath[] = [
       "kind": "quickstart"
     },
     "demo": {
-      "label": "Open Reader's Block",
+      "kind": "download",
+      "label": "Download Reader's Block",
       "url": "https://manlok.itch.io/readers-block",
-      "kind": "playable",
-      "note": "Creator-published release."
+      "note": "The author itch page lists native game packages for Windows; verified public release metadata on 2026-11-19. No package was downloaded or executed."
     },
     "source": {
       "label": "Open the game project",
@@ -12152,10 +12152,10 @@ export const jamGames: LearningPath[] = [
       "kind": "quickstart"
     },
     "demo": {
-      "label": "Open Häckerspiele",
-      "url": "https://hackerspiele.isiko404.dev",
-      "kind": "playable",
-      "note": "Creator-published release."
+      "kind": "download",
+      "label": "Download Hackerspiele",
+      "url": "https://kit-gamejam.itch.io/gpn23-jam",
+      "note": "The author itch page lists native game packages for Windows, Linux, macOS; verified public release metadata on 2026-11-19. No package was downloaded or executed."
     },
     "source": {
       "label": "Open the game project",
@@ -14242,10 +14242,10 @@ export const jamGames: LearningPath[] = [
       "kind": "quickstart"
     },
     "demo": {
-      "label": "Open Cattle Quest",
-      "url": "https://carlos-michael.itch.io/ggj24",
-      "kind": "playable",
-      "note": "Creator-published release."
+      "kind": "download",
+      "label": "Download Cattle Quest",
+      "url": "https://carlos-michael.itch.io/moo",
+      "note": "The author itch page lists native game packages for Windows, macOS; verified public release metadata on 2026-11-19. No package was downloaded or executed."
     },
     "source": {
       "label": "Open the game project",

@@ -6,6 +6,7 @@ import { loadContent } from "../../scripts/lib/content.mjs";
 import { createImportBundle } from "../../scripts/lib/platform.mjs";
 import { validateSelection } from "../../scripts/lib/catalog/validation.mjs";
 import { digest } from "../../scripts/lib/catalog/codec.mjs";
+import { validateDemoDecision } from "../../scripts/lib/round5-media.mjs";
 import {
   repositoryIdentity,
   buildIdentity,
@@ -18,6 +19,22 @@ const context = await loadContent();
 const ledger = JSON.parse(
   await readFile("data/segments/jam-games.json", "utf8"),
 );
+const mediaReview = await readFile(
+  "data/segments/open-3d-round5-media.json",
+  "utf8",
+)
+  .then(JSON.parse)
+  .catch((error) => {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  });
+const verifiedDemos = new Map(
+  (mediaReview?.demos.records || []).map((row) => [row.id, row]),
+);
+const ownedMediaIds = new Set(mediaReview?.scopeIds || []);
+const frozenDemos = JSON.parse(
+  await readFile("website/content/round5-media.config.json", "utf8"),
+).baselineDemos;
 const first = ledger.accepted[0];
 const report = (rows) => ({
   source: "Test evidence fixture",
@@ -31,7 +48,14 @@ test("every admitted Jam game is registered as a first-class non-AI-required exa
   for (const row of ledger.accepted) {
     validateJamRecord(row);
     const entry = context.registry.require("example", row.id);
-    assert.deepEqual(entry.data, jamExample(row));
+    const { demo: baseDemo, ...base } = jamExample(row);
+    const { demo, ...actual } = entry.data;
+    const verified = verifiedDemos.get(row.id);
+    if (verified) validateDemoDecision(verified, entry.data);
+    assert.deepEqual(actual, base);
+    const baseline = ownedMediaIds.has(row.id) ? frozenDemos[row.id] : baseDemo;
+    assert.ok(baseline, `Missing expected demo baseline for ${row.id}`);
+    assert.deepEqual(demo, verified?.demo ?? baseline);
     assert.equal(entry.data.category, "community");
     assert.equal(
       context.payloadSchemas.example.safeParse(entry.data).success,

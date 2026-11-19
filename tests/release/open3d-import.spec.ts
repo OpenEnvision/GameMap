@@ -13,7 +13,28 @@ const legacy = context.registry
   .all("threejs-game")
   .filter((entry) => policy.includedLegacyThreejsIds.includes(entry.id));
 
-test("imported 3D games retain source-only status and never expose fabricated play/download actions", async ({
+type VerifiedDemo = { kind: "playable" | "download"; url: string };
+const mediaReview = await readFile(
+  "data/segments/open-3d-round5-media.json",
+  "utf8",
+)
+  .then(JSON.parse)
+  .catch((error) => {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  });
+const verifiedDemos = new Map<string, VerifiedDemo>(
+  (mediaReview?.demos.records || []).map(
+    (row: { id: string; demo: VerifiedDemo }) => [row.id, row.demo],
+  ),
+);
+const actions = {
+  source: "查看源码",
+  playable: "试玩游戏",
+  download: "获取游戏",
+} as const;
+
+test("imported 3D games show source unless play or download is independently verified", async ({
   page,
   request,
 }) => {
@@ -27,15 +48,21 @@ test("imported 3D games retain source-only status and never expose fabricated pl
   );
   for (const entry of imported) {
     const card = page.locator(`[data-content-ref="${entry.key}"]`);
+    const verified = verifiedDemos.get(entry.id);
+    const kind = verified?.kind ?? "source";
     await expect(card).toHaveCount(1);
     await expect(card).toHaveAttribute("data-game-track", "3d");
+    await expect(card).toHaveAttribute("data-access-kind", kind);
     await expect(card.locator(".example-image")).toHaveAttribute(
       "href",
-      entry.data.source.url,
+      verified?.url ?? entry.data.source.url,
     );
-    await expect(card.locator(".image-action")).toContainText("查看源码");
-    await expect(card.locator(".card-meta")).toContainText("仅源码");
-    await expect(card.getByRole("link", { name: /^试玩 / })).toHaveCount(0);
+    await expect(card.locator(".image-action")).toContainText(actions[kind]);
+    await expect(card.locator(".card-meta")).toContainText(
+      kind === "source" ? "仅源码" : kind === "playable" ? "可试玩" : "下载",
+    );
+    if (kind !== "playable")
+      await expect(card.getByRole("link", { name: /^试玩 / })).toHaveCount(0);
     const screenshot = context.sources.gameplayScreenshots?.[entry.key]?.media;
     const cover = context.sources.pageCovers[entry.key];
     await expect(card.locator("img")).toHaveCount(screenshot || cover ? 1 : 0);

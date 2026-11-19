@@ -2899,10 +2899,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for BillardGL",
-      "url": "https://sourceforge.net/projects/billardgl/",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download BillardGL 1.75",
+      "url": "https://sourceforge.net/projects/billardgl/files/billardgl/BillardGL%201.75/",
+      "kind": "download",
+      "note": "The developer SourceForge listing identifies a Windows setup executable named BillardGL-1.75-Setup.exe, separate from source and language packs. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3034,10 +3034,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Danger from the Deep",
-      "url": "https://sourceforge.net/projects/dangerdeep/",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Danger from the Deep Windows preview",
+      "url": "https://sourceforge.net/projects/dangerdeep/files/dftd-win32-installer/0.4.0.0/",
+      "kind": "download",
+      "note": "The original project files list this exact 200.6 MB Windows setup executable as its highlighted download. The filename identifies a preview build. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3574,10 +3574,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for ManiaDrive",
-      "url": "https://sourceforge.net/projects/maniadrive/",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download ManiaDrive 1.2",
+      "url": "https://sourceforge.net/projects/maniadrive/files/maniadrive/1.2/",
+      "kind": "download",
+      "note": "The author release lists native desktop game archives for Windows and Linux, separate from data-only, source and update-only archives. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3619,10 +3619,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for OpenBVE",
-      "url": "https://github.com/leezer3/OpenBVE",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download OpenBVE 1.14.1.4",
+      "url": "https://github.com/leezer3/OpenBVE/releases/tag/1.14.1.4",
+      "kind": "download",
+      "note": "The official download page identifies the Windows setup executable, Linux DEB package and macOS DMG as stable native OpenBVE distributions. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
