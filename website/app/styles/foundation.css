@@ -82,31 +82,13 @@ h3,
   font-weight: 400;
   letter-spacing: -0.01em;
 }
-.display-hero {
-  font-size: var(--text-hero);
-  font-weight: 600;
-  line-height: 0.92;
-  letter-spacing: -0.055em;
-}
-.display-xl {
-  font-size: var(--text-display);
-  font-weight: 600;
-  line-height: 0.98;
-  letter-spacing: -0.05em;
-}
 .display-l {
   font-size: var(--text-h1);
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.045em;
 }
-.display-m {
-  font-size: var(--text-h2);
-  font-weight: 600;
-  line-height: 1.04;
-  letter-spacing: -0.04em;
-}
-html[lang="zh-CN"] :is(.display-hero, .display-xl, .display-l, .display-m) {
+html[lang="zh-CN"] .display-l {
   letter-spacing: -0.02em;
   line-height: 1.12;
 }
@@ -115,17 +97,6 @@ html[lang="zh-CN"] :is(.display-hero, .display-xl, .display-l, .display-m) {
   font-size: var(--text-lead);
   line-height: 1.6;
   text-wrap: pretty;
-}
-.text-gradient {
-  background: linear-gradient(
-    100deg,
-    var(--ink) 20%,
-    var(--accent) 60%,
-    var(--signal)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
 .kicker,
 .eyebrow,
@@ -166,16 +137,8 @@ kbd {
   width: min(var(--content-max), calc(100% - 2 * var(--gutter)));
   margin-inline: auto;
 }
-.full-bleed {
-  width: 100%;
-  padding-inline: max(var(--gutter), calc((100% - var(--content-max)) / 2));
-}
 .section {
   padding-block: clamp(72px, 10vw, 160px);
-}
-.hairline {
-  border: 0;
-  border-top: 1px solid var(--line);
 }
 
 /* --- 4. Controls. ---------------------------------------------------------- */
@@ -211,25 +174,17 @@ kbd {
   background-color: var(--action-hover);
   border-color: transparent;
 }
-.button-secondary,
-.button-ghost {
+.button-secondary {
   color: var(--ink);
   background: var(--glass);
   border-color: var(--glass-border);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
-.button-secondary:hover,
-.button-ghost:hover {
+.button-secondary:hover {
   background: var(--hover);
   border-color: var(--line-strong);
 }
-.button-text {
-  min-height: 0;
-  padding-inline: 4px;
-  color: var(--ink);
-}
-.button-text:hover,
 .inline-link:hover {
   color: var(--accent);
 }
@@ -396,10 +351,6 @@ kbd {
   body::before,
   body::after {
     display: none;
-  }
-  .text-gradient {
-    background: none;
-    color: inherit;
   }
 }
 @media print {

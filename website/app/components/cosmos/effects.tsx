@@ -37,10 +37,9 @@ function replayEntrance(title: Element) {
   }
 }
 
-/** Site-wide signature motion: the card glow, cursor ring and label pill,
- *  magnetic controls, ambient light, view-transition origin and page entrance
- *  replays. Every node here is decorative, client-only (nothing is rendered
- *  into static HTML or under reduced motion) and ignores pointer events. */
+/** Site-wide motion: card glow, cursor ring and label pill, magnetic controls,
+ *  ambient light, view transitions and page entrances. Decorative nodes ignore
+ *  pointer events; media queries hide them when motion is reduced. */
 export function CosmosEffects() {
   const reduced = useReducedMotion();
   const fine = useFinePointerMotion();
@@ -108,10 +107,9 @@ export function CosmosEffects() {
     replayEntrance(title);
   }, [pathname, reduced]);
 
-  // The nodes are always rendered, in the static HTML too, and stay hidden
-  // (display: none) until the motion media queries in fx.css / motion.css
-  // apply. Inserting them after hydration made Chrome drop the layout of
-  // size containers that follow them inside the display: contents fieldset.
+  // Keep decorative nodes stable through hydration so the following size
+  // containers retain their layout inside the display: contents fieldset.
+  // fx.css and motion.css control visibility through motion media queries.
   return (
     <>
       <div className="fx-portal" aria-hidden="true" />
