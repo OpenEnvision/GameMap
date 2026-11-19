@@ -102,6 +102,11 @@ const guides = [
     "Code, engine state, and neural rendering.",
   ],
 ] as const;
+/** A chip names the product, not the page: "Godot Engine · Official
+ *  Documentation" and "Genie: Generative Interactive Environments" read as
+ *  "Godot Engine" and "Genie" (the full title stays on the link). */
+const productName = (title: string) =>
+  title.split(/\s+·\s+|:\s+/)[0]?.trim() || title;
 
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
@@ -168,6 +173,7 @@ export function loader({ request }: LoaderFunctionArgs) {
     return {
       id,
       name: entry.title,
+      short: productName(entry.title),
       url: url.resource(id),
       logo: identity.asset,
       background: identity.background === "dark" ? "dark" : "light",
@@ -353,6 +359,7 @@ export default function Home() {
       {/* 2. The story: idea, build, play. */}
       <HomeStory
         counts={data.counts}
+        pillarCounts={data.pillarCounts}
         tools={data.story.tools}
         play={data.story.play}
       />
@@ -381,7 +388,11 @@ export default function Home() {
             </h2>
           </div>
           <Link className="inline-link" to="/resources/">
-            {t("Browse everything")}
+            {data.counts["/resources/"]
+              ? t("Browse all {count} resources", {
+                  count: data.counts["/resources/"],
+                })
+              : t("Browse all resources")}
             <ArrowRight size={16} />
           </Link>
         </div>
