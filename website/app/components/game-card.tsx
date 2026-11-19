@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { ArrowUpRight } from "lucide-react";
 import { Link, SourceLanguage, useSiteI18n } from "../lib/i18n";
 import { publicAsset } from "../lib/catalog";
 import type { LearningMedia } from "../../src/data/learningMedia";
@@ -17,7 +16,10 @@ const accessLabels = {
 /** One card for games and prototypes, with explicit release/source-only status.
  *  The screenshot (or a generated "uncharted world" when none was reviewed) is
  *  the poster; the title sits on it, and the body keeps a fixed rhythm so rows
- *  line up without subgrid (cards can then skip rendering off-screen). */
+ *  line up without subgrid (cards can then skip rendering off-screen).
+ *  The examples page renders ~1300 of these, so the markup stays lean: the
+ *  external-link arrows are drawn by CSS (gallery.css) instead of five inline
+ *  SVG icons per card. */
 export function GameCard({
   contentKey,
   id,
@@ -123,7 +125,6 @@ export function GameCard({
                   ? "Play the game"
                   : "Get the game",
           )}
-          <ArrowUpRight size={14} aria-hidden="true" />
         </span>
       </a>
       <div className="example-body">
@@ -142,7 +143,6 @@ export function GameCard({
         <h3>
           <a href={demo.url} target="_blank" rel="noreferrer">
             {title}
-            <ArrowUpRight size={17} aria-hidden="true" />
           </a>
         </h3>
         <p lang={descriptionLanguage === "en" ? "en" : undefined}>
@@ -151,15 +151,11 @@ export function GameCard({
         <RatingSummary gameKey={contentKey} recordUrl={recordUrl} />
         <div className="example-links">
           <Link to={recordUrl} reloadDocument>
-            <span>{t("Complete record")}</span>
-            <ArrowUpRight size={13} aria-hidden="true" />
+            {t("Complete record")}
           </Link>
           {sourceUrl && (
             <a href={sourceUrl} target="_blank" rel="noreferrer">
-              <span>
-                {t(referenceOnly ? "Project reference" : "Project source")}
-              </span>
-              <ArrowUpRight size={13} aria-hidden="true" />
+              {t(referenceOnly ? "Project reference" : "Project source")}
             </a>
           )}
           {extraLink && (
@@ -169,8 +165,7 @@ export function GameCard({
               rel="noreferrer"
               title={t(extraLink.label)}
             >
-              <span>{t(extraLink.label)}</span>
-              <ArrowUpRight size={13} aria-hidden="true" />
+              {t(extraLink.label)}
             </a>
           )}
         </div>

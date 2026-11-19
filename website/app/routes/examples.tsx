@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { useLoaderData, type LoaderFunctionArgs } from "react-router";
-import { ChevronDown, Search } from "lucide-react";
+import { ArrowDown, ArrowUpRight, ChevronDown, Search } from "lucide-react";
 import { ExampleCard } from "../components/example-card";
 import { ResearchGameCard } from "../components/research-game-card";
 import {
@@ -17,8 +17,11 @@ import { localizeGameplayMedia } from "../../content/localization.server";
 import { matchesSearch } from "../../content/matching";
 import { agentLabels, type AgentId } from "../../src/data/agentGameTypes";
 import { searchableText } from "../../content/search";
-import { ContentDocument } from "../components/content";
-import { useSiteI18n } from "../lib/i18n";
+import { ContentBlockView, ContentLink } from "../components/content";
+import { contentKinds, type ContentEntry } from "../../content/models";
+import { NavLink, SourceLanguage, useSiteI18n } from "../lib/i18n";
+import { pillars } from "../lib/pillars";
+import { communityEnabled } from "../lib/community";
 export { shouldRevalidateCollection as shouldRevalidate } from "../lib/collection-query";
 
 /** Reviewed gameplay captures that make up the drifting header collage.
@@ -44,6 +47,74 @@ const mosaicPicks = [
   "jam-dragon-city-clone-escalopa",
 ];
 const mosaicRows = 3;
+
+/** The Games pillar tabs, as on every other collection index. Community work
+ *  needs the community API, so static builds leave it out. */
+const gamesPillar = pillars.find((pillar) => pillar.id === "games")!;
+const gamesTabs = gamesPillar.links.filter(
+  (link) => link.collection || communityEnabled,
+);
+
+/** "github.com/owner" or "itch.io": where a community collection lives. */
+function collectionHost(href: string) {
+  try {
+    const { hostname, pathname } = new URL(href);
+    const host = hostname.replace(/^www\./, "");
+    const owner = pathname.split("/")[1];
+    return host === "github.com" && owner ? `${host}/${owner}` : host;
+  } catch {
+    return "";
+  }
+}
+
+/** A community collection tile. It keeps the record contract of
+ *  ContentDocument (canonical anchor, content key, one element per field) but
+ *  labels its link row with where the collection lives instead of repeating
+ *  the button text. */
+function CollectionTile({ entry }: { entry: ContentEntry<"collection"> }) {
+  const { t } = useSiteI18n();
+  return (
+    <article
+      id={entry.url.split("#")[1]}
+      className="content-record content-collection"
+      data-content-key={entry.key}
+      data-content-kind={entry.kind}
+    >
+      <span className="eyebrow">{t(contentKinds[entry.kind].label)}</span>
+      <SourceLanguage english={entry.descriptionLanguage === "en"} />
+      {entry.blocks.map((block, index) =>
+        block.type === "links" ? (
+          <section
+            key={`${block.field}-${index}`}
+            className="content-field gallery-collection-links"
+            data-content-field={block.field}
+          >
+            <span className="gallery-collection-host" translate="no">
+              {collectionHost(block.items[0]?.url || "")}
+            </span>
+            <ul className="content-links">
+              {block.items.map((item, itemIndex) => (
+                <li key={`${itemIndex}-${item.url}`}>
+                  <ContentLink href={item.url}>
+                    {t(item.label)}
+                    <ArrowUpRight size={13} aria-hidden="true" />
+                  </ContentLink>
+                  {item.note && <p lang="en">{item.note}</p>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : (
+          <ContentBlockView
+            key={`${block.field}-${index}`}
+            block={block}
+            heading="h3"
+          />
+        ),
+      )}
+    </article>
+  );
+}
 
 /** "Real games. *Open* starting points." → one <em> accent; translators move
  *  the asterisks (Chinese keeps upright type, see gallery.css). */
@@ -246,7 +317,22 @@ export default function Examples() {
         </div>
         <div className="gallery-hero-inner">
           <div className="gallery-hero-copy">
-            <span className="kicker">{t("Games")}</span>
+            <nav
+              className="ix-siblings gallery-siblings"
+              aria-label={t("{pillar} collections", {
+                pillar: t(gamesPillar.label),
+              })}
+            >
+              <span className="ix-pillar">{t(gamesPillar.label)}</span>
+              {gamesTabs.map((link) => (
+                <NavLink key={link.path} to={link.path}>
+                  {t(link.title)}
+                </NavLink>
+              ))}
+            </nav>
+            <p className="kicker gallery-kicker">
+              {t("Creator evidence · Playable builds · Project source")}
+            </p>
             <h1 className="gallery-title">
               {emphasize(t("Real games. *Open* starting points."))}
             </h1>
@@ -344,9 +430,12 @@ export default function Examples() {
                 </>
               )}
             </span>
-            <span>
-              {t("Creator evidence · Playable builds · Project source")}
-            </span>
+            {collections.length > 0 && (
+              <a className="gallery-jump" href="#community-collections">
+                {t("Community collections")}
+                <ArrowDown size={13} aria-hidden="true" />
+              </a>
+            )}
           </div>
         </div>
         {worksUnavailable && (
@@ -405,7 +494,7 @@ export default function Examples() {
           </div>
         )}
       </div>
-      <section className="gallery-collections">
+      <section id="community-collections" className="gallery-collections">
         <header className="gallery-section-head">
           <span className="kicker">{t("Community")}</span>
           <h2>{emphasize(t("Community *collections*"))}</h2>
@@ -413,7 +502,7 @@ export default function Examples() {
         </header>
         <div className="content-grid community-collections">
           {collections.map((entry) => (
-            <ContentDocument key={entry.key} entry={entry} heading="h3" />
+            <CollectionTile key={entry.key} entry={entry} />
           ))}
         </div>
       </section>

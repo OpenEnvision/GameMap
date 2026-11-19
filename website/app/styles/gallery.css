@@ -3,8 +3,10 @@
    collections, and community work pages (/works/).
 
    Layout: a full-bleed cinematic header (drifting collage of real captures
-   under a scrim) → a sticky glass control dock that straddles the header's
-   lower edge → an image-forward poster grid → community collections.
+   under a scrim; the Games pillar tabs shared with every collection index)
+   → a sticky glass control dock that straddles the header's lower edge (its
+   results line also jumps to the community collections) → an image-forward
+   poster grid → community collections.
 
    Cards: the screenshot is the poster and carries the title; the body keeps a
    fixed rhythm (meta 2 lines · summary 3 lines · rating 1 line · links 2
@@ -33,6 +35,7 @@
 
 /* --- 1. Header ------------------------------------------------------------ */
 .gallery-hero {
+  --ix-tone: var(--accent);
   position: relative;
   isolation: isolate;
   display: flex;
@@ -160,7 +163,19 @@
   width: 100%;
 }
 .gallery-hero-copy {
+  min-width: 0;
   max-width: 980px;
+}
+/* Pillar tabs (.ix-siblings, collections.css) then a full-width kicker. */
+.gallery-hero-copy > .gallery-kicker {
+  display: flex;
+  align-items: flex-start;
+  margin: clamp(26px, 3vw, 44px) 0 0;
+}
+/* When the kicker wraps (narrow phones), its dot stays on the first line. */
+.gallery-kicker::before {
+  flex: none;
+  margin-top: calc(0.75em - 3px);
 }
 .gallery-title {
   margin: clamp(18px, 2vw, 28px) 0 clamp(22px, 2.4vw, 34px);
@@ -417,6 +432,25 @@ html[lang="zh-CN"] .gallery-stats dt {
 .gallery-results > span:first-child {
   color: var(--body);
 }
+.gallery-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+.gallery-jump:hover {
+  color: var(--ink);
+  text-decoration-color: currentColor;
+}
+.gallery-jump svg {
+  flex: none;
+}
 .gallery-atlas > .community-error {
   margin: 0 0 24px;
 }
@@ -477,9 +511,12 @@ html[lang="zh-CN"] .gallery-stats dt {
 }
 
 /* --- 4. Game card --------------------------------------------------------- */
+/* The external-link arrows are CSS masks rather than inline SVG: ~1300 cards
+   with five icons each added ~19k DOM nodes to the page. */
 .example-card {
   --card-pad: 16px;
   --scrim: 5 5 6;
+  --arrow-ne: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 7h10v10M7 17 17 7'/%3E%3C/svg%3E");
   position: relative;
   isolation: isolate;
   display: flex;
@@ -550,10 +587,10 @@ html[lang="zh-CN"] .gallery-stats dt {
   background: linear-gradient(
     180deg,
     rgb(var(--scrim) / 0.42) 0%,
-    rgb(var(--scrim) / 0) 24%,
-    rgb(var(--scrim) / 0) 40%,
-    rgb(var(--scrim) / 0.52) 66%,
-    rgb(var(--scrim) / 0.9) 100%
+    rgb(var(--scrim) / 0) 22%,
+    rgb(var(--scrim) / 0.18) 38%,
+    rgb(var(--scrim) / 0.72) 60%,
+    rgb(var(--scrim) / 0.94) 100%
   );
 }
 .example-card[data-cover-kind] .example-image::before {
@@ -605,6 +642,19 @@ html[lang="zh-CN"] .gallery-stats dt {
   line-height: 1;
   white-space: nowrap;
   box-shadow: 0 10px 24px -10px rgb(0 0 0 / 0.7);
+}
+.example-card .image-action::after,
+.example-card .example-body > h3 a::after,
+.example-card .example-links a::after {
+  content: "";
+  flex: none;
+  background: currentColor;
+  -webkit-mask: var(--arrow-ne) center / contain no-repeat;
+  mask: var(--arrow-ne) center / contain no-repeat;
+}
+.example-card .image-action::after {
+  width: 14px;
+  height: 14px;
 }
 .example-card:hover .image-action,
 .example-card .example-image:focus-visible .image-action {
@@ -661,23 +711,52 @@ html[lang="zh-CN"] .gallery-stats dt {
     font-size: clamp(21px, 1.7vw, 25px);
   }
 }
+/* A tight shadow keeps the title legible even on bright captures. */
 .example-card .example-body > h3 a {
   display: inline;
   color: var(--chip-ink);
-  text-shadow: 0 2px 18px rgb(0 0 0 / 0.55);
+  text-shadow:
+    0 1px 2px rgb(0 0 0 / 0.7),
+    0 2px 18px rgb(0 0 0 / 0.55);
   pointer-events: auto;
 }
-.example-card .example-body > h3 a svg {
+.example-card .example-body > h3 a::after {
   display: inline-block;
   width: 0.62em;
   height: 0.62em;
-  margin: 0 0 0 0.18em;
-  color: currentColor;
+  margin-left: 0.18em;
   opacity: 0.6;
   vertical-align: 0.02em;
 }
-.example-card .example-body > h3 a:hover svg {
+.example-card .example-body > h3 a:hover::after {
   opacity: 1;
+}
+/* Two lines at most where cards sit side by side; hovering or focusing the
+   card reveals the rest (the link's accessible name is always complete).
+   The padding gives the shadow room inside the clip; there is none below,
+   where the scrim is darkest, so a third line never peeks out. */
+@media (min-width: 600px) {
+  .example-card .example-body > h3 a {
+    display: -webkit-box;
+    margin: -14px -14px 0;
+    padding: 14px 14px 0;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  .example-card:is(:hover, :focus-within) .example-body > h3 a {
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+  }
+  /* Keyboard focus shows the whole title, so the ring can sit inside the
+     link's padding without crossing a clipped last line. */
+  .example-card .example-body > h3 a:focus-visible {
+    display: block;
+    margin-bottom: -8px;
+    padding-bottom: 8px;
+    outline-offset: -6px;
+  }
 }
 html[lang="zh-CN"] .example-card .example-body > h3 {
   letter-spacing: -0.02em;
@@ -829,20 +908,27 @@ html[lang="zh-CN"] .example-card .example-body > p {
   font-weight: 550;
   line-height: 1.4;
 }
+/* Each link is one ellipsised line; its arrow sits in the right padding. */
 .example-card .example-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+  position: relative;
+  display: block;
   max-width: 100%;
   min-width: 0;
   min-height: 26px;
+  padding-right: 17px;
+  overflow: hidden;
   color: var(--ink);
+  line-height: 26px;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
-.example-card .example-links a > span {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.example-card .example-links a::after {
+  position: absolute;
+  top: calc(50% - 6.5px);
+  right: 0;
+  width: 13px;
+  height: 13px;
+  background: var(--muted);
 }
 .example-card .example-links a[title] {
   grid-column: 1 / -1;
@@ -850,14 +936,11 @@ html[lang="zh-CN"] .example-card .example-body > p {
 .example-card .example-links a:first-child {
   color: var(--accent);
 }
-.example-card .example-links a svg {
-  flex: none;
-  margin: 0;
-  color: var(--muted);
-}
-.example-card .example-links a:hover,
-.example-card .example-links a:hover svg {
+.example-card .example-links a:hover {
   color: var(--accent);
+}
+.example-card .example-links a:hover::after {
+  background: var(--accent);
 }
 
 /* Evidence notes: a full-width drawer right under the links. */
@@ -938,8 +1021,9 @@ html[lang="zh-CN"] .example-card .build-notes > summary {
 }
 
 /* --- 5. Uncharted worlds: generated art for games without a screenshot. --- */
-/* Each world is a duotone of ink black and one light: signal red, ember,
-   silver, steel or rose. Position in the grid picks the light (every 5),
+/* Each world is a duotone of ink black and one light from the red / white /
+   black palette: signal red, smoke, crimson, silver or rose (no orange or
+   blue hues). Position in the grid picks the light (every 5),
    the composition (every 3) and the terrain/orbit (every 4), so neighbours
    rarely repeat. 3D worlds are a lit planet with an orbit over a perspective
    grid; 2D worlds are a striped pixel sun setting behind stepped terrain. */
@@ -977,11 +1061,11 @@ html[lang="zh-CN"] .example-card .build-notes > summary {
   );
 }
 .example-card:nth-child(5n + 2) {
-  --gp-hue: 250;
-  --gp-c: 0.32;
+  --gp-hue: 20;
+  --gp-c: 0.3;
 }
 .example-card:nth-child(5n + 3) {
-  --gp-hue: 55;
+  --gp-hue: 16;
   --gp-c: 0.9;
 }
 .example-card:nth-child(5n + 4) {
@@ -1345,6 +1429,8 @@ html[lang="zh-CN"] .gallery-section-head h2 {
   background:
     linear-gradient(180deg, var(--surface-sheen), transparent 40%), var(--panel);
   box-shadow: var(--shadow-1);
+  /* The root's scroll-padding already clears the floating header. */
+  scroll-margin-top: 16px;
 }
 .gallery-collections .content-record:nth-child(4n + 2) {
   --gp-hue: 90;
@@ -1352,14 +1438,14 @@ html[lang="zh-CN"] .gallery-section-head h2 {
   --gp-x: 30%;
 }
 .gallery-collections .content-record:nth-child(4n + 3) {
-  --gp-hue: 55;
+  --gp-hue: 16;
   --gp-c: 0.9;
   --gp-x: 58%;
   --gp-y: 38%;
 }
 .gallery-collections .content-record:nth-child(4n + 4) {
-  --gp-hue: 250;
-  --gp-c: 0.32;
+  --gp-hue: 20;
+  --gp-c: 0.12;
   --gp-x: 40%;
 }
 /* Each collection is a constellation: a band of night sky with a planet. */
@@ -1402,11 +1488,6 @@ html[lang="zh-CN"] .gallery-section-head h2 {
 .gallery-collections .content-record .document-source-language {
   margin: 0 0 10px;
 }
-.gallery-collections .record-section {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
 .gallery-collections .content-title {
   margin: 0 0 12px;
   font-size: clamp(22px, 2vw, 28px);
@@ -1415,33 +1496,46 @@ html[lang="zh-CN"] .gallery-section-head h2 {
   line-height: 1.1;
 }
 .gallery-collections .content-lead {
-  margin: 0;
+  margin: 0 0 22px;
   color: var(--body);
   font-size: 14px;
   line-height: 1.65;
 }
-.gallery-collections .record-resources {
-  margin-top: auto;
-  padding-top: 22px;
-}
-.gallery-collections .content-field {
+/* Footer row: where the collection lives, then the way in. */
+.gallery-collections .gallery-collection-links {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin: 0;
+  margin: auto 0 0;
   padding: 16px 0 0;
   border: 0;
   border-top: 1px solid var(--line);
 }
-.gallery-collections .content-field > h4 {
-  margin: 0;
+.gallery-collection-host {
+  min-width: 0;
+  overflow: hidden;
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 11.5px;
+  letter-spacing: 0.01em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gallery-collection-host::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 9px 1px 0;
+  border-radius: 50%;
+  background: var(--w-1);
+  box-shadow: 0 0 10px var(--w-glow);
+}
+.gallery-collections .content-links li > p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
 }
 .gallery-collections .content-links {
   display: flex;
@@ -1466,9 +1560,6 @@ html[lang="zh-CN"] .gallery-section-head h2 {
   border-color: transparent;
   background: var(--action);
   color: var(--on-action);
-}
-html[lang="zh-CN"] .gallery-collections .content-field > h4 {
-  letter-spacing: 0.06em;
 }
 
 /* --- 6b. Community work page (/works/) ---------------------------------- */
@@ -2003,16 +2094,19 @@ html[lang="zh-CN"] .gallery-work-hero h1 {
     animation: gallery-rise 1000ms var(--ease-expo) both;
   }
   .gallery-hero-copy > :nth-child(2) {
-    animation-delay: 80ms;
+    animation-delay: 60ms;
   }
   .gallery-hero-copy > :nth-child(3) {
-    animation-delay: 160ms;
+    animation-delay: 120ms;
   }
   .gallery-hero-copy > :nth-child(4) {
-    animation-delay: 220ms;
+    animation-delay: 180ms;
+  }
+  .gallery-hero-copy > :nth-child(n + 5) {
+    animation-delay: 240ms;
   }
   .gallery-stats {
-    animation-delay: 280ms;
+    animation-delay: 300ms;
   }
   .gallery-stat-total dt::before {
     animation: gallery-pulse 2.6s var(--ease-in-out) infinite;
@@ -2035,6 +2129,11 @@ html[lang="zh-CN"] .gallery-work-hero h1 {
     }
   }
 
+  .gallery-jump {
+    transition:
+      color var(--dur-fast) ease,
+      text-decoration-color var(--dur-base) var(--ease-out);
+  }
   .gallery-search,
   .gallery-select select,
   .gallery-segments button {
@@ -2052,8 +2151,12 @@ html[lang="zh-CN"] .gallery-work-hero h1 {
       box-shadow var(--dur-slow) var(--ease-expo);
   }
   .example-card::before,
-  .example-card .example-image::before {
+  .example-card .example-image::before,
+  .example-card .example-body > h3 a::after {
     transition: opacity var(--dur-base) var(--ease-out);
+  }
+  .example-card .example-links a::after {
+    transition: background-color var(--dur-fast) ease;
   }
   .example-card .example-image img,
   .example-card .game-preview-unavailable::before {
@@ -2134,6 +2237,12 @@ html[lang="zh-CN"] .gallery-work-hero h1 {
   .example-card .example-image::before,
   .example-card .example-image::after {
     display: none;
+  }
+  .example-card .image-action::after,
+  .example-card .example-body > h3 a::after,
+  .example-card .example-links a::after {
+    background: LinkText;
+    forced-color-adjust: none;
   }
   .gallery-title em,
   .gallery-section-head h2 em {
