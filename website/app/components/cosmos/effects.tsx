@@ -108,28 +108,27 @@ export function CosmosEffects() {
     replayEntrance(title);
   }, [pathname, reduced]);
 
-  if (reduced) return null;
+  // The nodes are always rendered, in the static HTML too, and stay hidden
+  // (display: none) until the motion media queries in fx.css / motion.css
+  // apply. Inserting them after hydration made Chrome drop the layout of
+  // size containers that follow them inside the display: contents fieldset.
   return (
     <>
       <div className="fx-portal" aria-hidden="true" />
-      {fine && (
-        <>
-          <div className="fx-ambient" ref={ambient} aria-hidden="true">
-            <span className="fx-ambient-warm" ref={warm} />
-            <span className="fx-ambient-cool" ref={cool} />
-          </div>
-          <div className="fx-cursor" ref={ring} aria-hidden="true" />
-          <div className="fx-cursor-pill" ref={pill} aria-hidden="true">
-            <span className="fx-cursor-pill-inner">
-              <Play className="fx-icon-play" size={11} fill="currentColor" />
-              <Code className="fx-icon-code" size={13} />
-              <ArrowUpRight className="fx-icon-visit fx-icon-open" size={13} />
-              <Download className="fx-icon-download" size={13} />
-              <span ref={pillLabel} />
-            </span>
-          </div>
-        </>
-      )}
+      <div className="fx-ambient" ref={ambient} aria-hidden="true">
+        <span className="fx-ambient-warm" ref={warm} />
+        <span className="fx-ambient-cool" ref={cool} />
+      </div>
+      <div className="fx-cursor" ref={ring} aria-hidden="true" />
+      <div className="fx-cursor-pill" ref={pill} aria-hidden="true">
+        <span className="fx-cursor-pill-inner">
+          <Play className="fx-icon-play" size={11} fill="currentColor" />
+          <Code className="fx-icon-code" size={13} />
+          <ArrowUpRight className="fx-icon-visit fx-icon-open" size={13} />
+          <Download className="fx-icon-download" size={13} />
+          <span ref={pillLabel} />
+        </span>
+      </div>
     </>
   );
 }
