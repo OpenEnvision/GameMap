@@ -2503,6 +2503,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "jam-graceful-descend": {
+    src: "media/learning/jam-graceful-descend.webp",
+    alt: "A pixel-art bird carries a maple seed through a pink sky filled with clouds.",
+    caption:
+      "Creator-published Graceful Descend game scene showing a bird and maple seed. Original artwork belongs to the creators. Image rights remain with the original creator.",
+    sourceUrl: "https://wofke.itch.io/graceful-descend",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1hZ2UvMTkzMzU2Ny8xMTM2ODY4Ni5wbmc=/original/ODirM3.png",
+    width: 1280,
+    height: 720,
+  },
   "jam-onoff": {
     src: "media/learning/jam-onoff.webp",
     alt: "A monochrome platform-game level with a square-headed player, a wide pit and a star on the opposite platform.",
@@ -3753,6 +3766,32 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-project-zero": {
+    src: "media/learning/open3d-project-zero.webp",
+    alt: "An overhead game world contains a green player character, a wooden structure, quick-access icons and a minimap.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/trolit/projectZero",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/trolit/projectZero/storage/photos/readme/10.PNG",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-dark-lab": {
+    src: "media/learning/open3d-dark-lab.webp",
+    alt: "An overhead character holds a lighter in a dark tiled laboratory room, with introductory instructions, an inventory indicator and a keycard panel.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/rinial/DarkLab",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://media.githubusercontent.com/media/rinial/DarkLab/master/Screenshots/Gameplay1.png",
+    width: 1280,
+    height: 720,
+  },
   "open3d-hobot-s-ascent": {
     src: "media/learning/open3d-hobot-s-ascent.webp",
     alt: "A rendered stone-walled courtyard contains a small tree, grass, a wooden shelf and a partly open roof.",
@@ -3941,6 +3980,32 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://playjunkmagnet.com/assets/gameplay-800-Bwu3N44a.webp",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-dante": {
+    src: "media/learning/open3d-dante.webp",
+    alt: "A red horned character and white ghosts occupy a rocky game level surrounded by lava, with gates and a lever.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/SalvatorePreviti/js13k-2022",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://user-images.githubusercontent.com/6913178/198019240-5bfa153e-e55c-44e3-bb8d-32278a51af18.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-jurassic-nursery": {
+    src: "media/learning/open3d-jurassic-nursery.webp",
+    alt: "Two low-poly dinosaurs meet on a light-colored game surface with floating pink hearts above them.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/Platane/jurassic-nursery",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/Platane/jurassic-nursery/master/doc/postmortem/images/mate.gif",
     width: 1280,
     height: 720,
   },
@@ -4602,6 +4667,31 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     origin: "creator-screenshot",
     reviewedAt: "2026-11-19",
     originalImageUrl: "https://flipmode3d.com/images/hcraft/hcraft_f01.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-jme3-maze": {
+    src: "media/learning/open3d-jme3-maze.webp",
+    alt: "A first-person maze scene shows stone walls, a seated character and on-screen movement controls.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/stephengold/jme3-maze",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl: "https://i.imgur.com/MzrLrNm.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-manic-digger": {
+    src: "media/learning/open3d-manic-digger.webp",
+    alt: "A large red-and-white block-built house with stepped gray roofing stands in a snowy voxel world under a blue sky.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/manicdigger/manicdigger",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/manicdigger/manicdigger-screenshots/master/2014-12-25_22-38-53.png",
     width: 1280,
     height: 720,
   },

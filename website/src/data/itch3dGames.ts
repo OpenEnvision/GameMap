@@ -334,10 +334,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/Tribal-Trouble/tribaltrouble",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "View creator downloads",
+      "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/tag/v2.2.207-103.1010",
+      "kind": "download",
+      "note": "Public creator release lists Windows, Linux and macOS game distributions. Metadata reviewed on 2026-11-19; no executable was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",
@@ -1234,10 +1234,10 @@ export const itch3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View the supplied source reference",
-      "url": "https://github.com/tomatenquark/code",
-      "kind": "source",
-      "note": "Source reference only; no playable or downloadable build was independently verified. The author page is retained as evidence, not a fabricated play link."
+      "label": "View creator downloads",
+      "url": "https://github.com/tomatenquark/code/releases/tag/v0.2.1",
+      "kind": "download",
+      "note": "Public creator release lists Windows, Linux and macOS game distributions. Metadata reviewed on 2026-11-19; no executable was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied project/source reference",

@@ -7524,6 +7524,41 @@
       "bytes": 19230
     },
     {
+      "id": "jam-graceful-descend",
+      "title": "Graceful Descend",
+      "media": {
+        "src": "media/learning/jam-graceful-descend.webp",
+        "alt": "A pixel-art bird carries a maple seed through a pink sky filled with clouds.",
+        "caption": "Creator-published Graceful Descend game scene showing a bird and maple seed. Original artwork belongs to the creators. Image rights remain with the original creator.",
+        "sourceUrl": "https://wofke.itch.io/graceful-descend",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1hZ2UvMTkzMzU2Ny8xMTM2ODY4Ni5wbmc=/original/ODirM3.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "038eb9c37124f6758a9f5b51861d5d54ff98a5d027fb30378217467849fc3202",
+        "sourceFrameSHA256": "7c05d69fc121afe99622e05f350828f7c3ef683a941b9f40a7c4fe8e59d0748e",
+        "sourceWidth": 1096,
+        "sourceHeight": 607,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the original image: it shows the game bird and attached seed against the scrolling cloud scene, without a title, menu, error or promotional collage. Published in the creator itch.io screenshot gallery; the source Bird.tscn references the bird sprite and player seed animation."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "26d83b49b27d0c39f02e8298c12b9902469b2573ac65162e1a1d27fe8a770211",
+      "bytes": 26258
+    },
+    {
       "id": "jam-onoff",
       "title": "ONOFF",
       "media": {
@@ -10993,6 +11028,95 @@
       "bytes": 125504
     },
     {
+      "id": "open3d-project-zero",
+      "title": "Project Zero",
+      "media": {
+        "src": "media/learning/open3d-project-zero.webp",
+        "alt": "An overhead game world contains a green player character, a wooden structure, quick-access icons and a minimap.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/trolit/projectZero",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/trolit/projectZero/storage/photos/readme/10.PNG",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "3a3f07eb78b7280497edef1cbe3dc3de8f3ec7335f168b29b06c9484ece935c9",
+        "sourceFrameSHA256": "3fdc66b79fd056b38ba28a1f1b3197f3463df503ec578c68ecb79b136e28253d",
+        "sourceWidth": 1546,
+        "sourceHeight": 867,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: An overhead game world contains a green player character, a wooden structure, quick-access icons and a minimap. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://github.com/trolit/projectZero",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "312405dfbbc945fd87fc31d9ed23c782040ae444a6c1c952a4c6dda8c94a5a04",
+      "bytes": 27062
+    },
+    {
+      "id": "open3d-dark-lab",
+      "title": "Dark Lab",
+      "media": {
+        "src": "media/learning/open3d-dark-lab.webp",
+        "alt": "An overhead character holds a lighter in a dark tiled laboratory room, with introductory instructions, an inventory indicator and a keycard panel.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/rinial/DarkLab",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://media.githubusercontent.com/media/rinial/DarkLab/master/Screenshots/Gameplay1.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "d43c4ce5d94e987e933622626b77af39d6fc56b17ab31c94c8d5149f85c45fa8",
+        "sourceFrameSHA256": "b3f020478f2a7db288f6d67b9e15bf845ed66046d1fbb05971e0dfbcfcd3b5ca",
+        "sourceWidth": 1919,
+        "sourceHeight": 1079,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: An overhead character holds a lighter in a dark tiled laboratory room, with introductory instructions, an inventory indicator and a keycard panel. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://github.com/rinial/DarkLab",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          },
+          {
+            "url": "https://raw.githubusercontent.com/rinial/DarkLab/master/Screenshots/Gameplay1.png",
+            "checkedAt": "2026-11-19",
+            "result": "Git LFS pointer SHA256 matches downloaded media.githubusercontent.com original exactly: d43c4ce5d94e987e933622626b77af39d6fc56b17ab31c94c8d5149f85c45fa8."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "4ba6c3e549bdb0b54838e5faa3ce786ec281902a16397aad980de8960c7cf2d3",
+      "bytes": 23012
+    },
+    {
       "id": "open3d-hobot-s-ascent",
       "title": "Hobot's Ascent",
       "media": {
@@ -11558,6 +11682,90 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "47e7613117c39ef433b6e63a64c48e0603e30be85bac16e8659afee9b92ae5b3",
       "bytes": 62862
+    },
+    {
+      "id": "open3d-dante",
+      "title": "Dante",
+      "media": {
+        "src": "media/learning/open3d-dante.webp",
+        "alt": "A red horned character and white ghosts occupy a rocky game level surrounded by lava, with gates and a lever.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/SalvatorePreviti/js13k-2022",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://user-images.githubusercontent.com/6913178/198019240-5bfa153e-e55c-44e3-bb8d-32278a51af18.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "28d379fd53e4fb19fecd14b862ecb7a1589d3af950a880fa9926919e56dc3c3f",
+        "sourceFrameSHA256": "9d2f70254385579117b936833d9109a01cfbb5801929385fa3f9510dad041be1",
+        "sourceWidth": 1024,
+        "sourceHeight": 512,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: A red horned character and white ghosts occupy a rocky game level surrounded by lava, with gates and a lever. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://github.com/SalvatorePreviti/js13k-2022",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "c1e1a3510d573454c44f7f670c0fa4d0dc690075ad7493b3111d3c311275dd6e",
+      "bytes": 57934
+    },
+    {
+      "id": "open3d-jurassic-nursery",
+      "title": "Jurassic Nursery",
+      "media": {
+        "src": "media/learning/open3d-jurassic-nursery.webp",
+        "alt": "Two low-poly dinosaurs meet on a light-colored game surface with floating pink hearts above them.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/Platane/jurassic-nursery",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/Platane/jurassic-nursery/master/doc/postmortem/images/mate.gif",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "c51394dab72842bfce56fdfabfc3fde28f070cdc7089aa969ce51b9fb1dc8fee",
+        "sourceFrameSHA256": "3b4103f609d3cce8e8139dd257094f5e43728a7ee4472893a5f79e45a4ced149",
+        "sourceWidth": 427,
+        "sourceHeight": 320,
+        "originalFormat": "gif",
+        "frameIndex": 60,
+        "sourceFrames": 120,
+        "visualFinding": "Personally inspected: Two low-poly dinosaurs meet on a light-colored game surface with floating pink hearts above them. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://github.com/Platane/jurassic-nursery",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "222565fb18b65bc27465ea57c29bfd9aeb19240ccd49f10e5c573b63c28925b6",
+      "bytes": 16372
     },
     {
       "id": "open3d-the-city-without-that-number",
@@ -13400,6 +13608,90 @@
       "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
       "sha256": "3ea1da4147b1f8217e883b21f0c213958eb5cadde27e25a296c9107242912477",
       "bytes": 70770
+    },
+    {
+      "id": "open3d-jme3-maze",
+      "title": "jme3-maze",
+      "media": {
+        "src": "media/learning/open3d-jme3-maze.webp",
+        "alt": "A first-person maze scene shows stone walls, a seated character and on-screen movement controls.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/stephengold/jme3-maze",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://i.imgur.com/MzrLrNm.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "c2ad2c4bfc83e6ecada0466bb96c80acf893699d51ed9a9fdc1c99f9991ba735",
+        "sourceFrameSHA256": "25a4db141fa9f7bf74f96b4a9e4dab64420bcccd1bd17a9eeee2b2f61ff63a4c",
+        "sourceWidth": 640,
+        "sourceHeight": 480,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: A first-person maze scene shows stone walls, a seated character and on-screen movement controls. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://github.com/stephengold/jme3-maze",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "2dcde100855b3ca32725d421ba49da6cdf6a346f14648cadb1465939097ee8f5",
+      "bytes": 45946
+    },
+    {
+      "id": "open3d-manic-digger",
+      "title": "Manic Digger",
+      "media": {
+        "src": "media/learning/open3d-manic-digger.webp",
+        "alt": "A large red-and-white block-built house with stepped gray roofing stands in a snowy voxel world under a blue sky.",
+        "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/manicdigger/manicdigger",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/manicdigger/manicdigger-screenshots/master/2014-12-25_22-38-53.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "498da15f972b4a7e33b6019d8c0d61f42b7cd930d3b31005a2cca0dcab69f173",
+        "sourceFrameSHA256": "d1df4a74a954671a21cf5e589a92b74a9984deba6a1bfb29c0d2aff3dd5a06c7",
+        "sourceWidth": 1280,
+        "sourceHeight": 720,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected: A large red-and-white block-built house with stepped gray roofing stands in a snowy voxel world under a blue sky. This is a game scene, not a logo, cover, loading screen or promotional collage.",
+        "checkedSources": [
+          {
+            "url": "https://github.com/manicdigger/manicdigger",
+            "checkedAt": "2026-11-19",
+            "result": "Author website or author itch.io gallery directly publishes this gameplay screenshot."
+          }
+        ]
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "e31de5f3cc70db4eb2e93e8b21992c682b31f9d33091eac46e66740c17019af3",
+      "bytes": 114118
     },
     {
       "id": "open3d-minilanding3d",
@@ -30136,68 +30428,6 @@
       ]
     },
     {
-      "id": "jam-graceful-descend",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Fresh author entry HTML was retrieved at https://wofke.itch.io/graceful-descend. Pixel-art duck against clouds; no established interactive playfield or gameplay state, so this illustration is not accepted. Graceful Descend title over a tree and sky, not gameplay. New cached repository/README/release checks: https://github.com/FreekDS/brackeys-2023.1 (HTTP 200); https://raw.githubusercontent.com/FreekDS/brackeys-2023.1/HEAD/README.md (HTTP 200); https://github.com/FreekDS/brackeys-2023.1/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-graceful-descend-fetch.log. Prior limitation retained: Three new protected attempts: menu, Play plus canvas drag, then focused Play/double-click. Directly read trace frames: the final attempt left the menu and reveals a faint maple seed at upper left on a darkened sky/tree scene, but no stable unobscured gameplay or demonstrated seed movement. Rejected title/gallery background and faint transitional frame rather than accept blue sky alone. Evidence: capture-graceful-play/jam-graceful-descend-capture.json; further browser attempts not made. The actual linked main README had no images; bounded main source-tree inspection exposed no screenshot-named/GIF candidate.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/FreekDS/brackeys-2023.1/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/FreekDS/brackeys-2023.1",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/FreekDS/brackeys-2023.1/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://wofke.itch.io/graceful-descend",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author entry HTML was retrieved at https://wofke.itch.io/graceful-descend. Pixel-art duck against clouds; no established interactive playfield or gameplay state, so this illustration is not accepted. Graceful Descend title over a tree and sky, not gameplay. New cached repository/README/release checks: https://github.com/FreekDS/brackeys-2023.1 (HTTP 200); https://raw.githubusercontent.com/FreekDS/brackeys-2023.1/HEAD/README.md (HTTP 200); https://github.com/FreekDS/brackeys-2023.1/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-graceful-descend-fetch.log. Prior limitation retained: Three new protected attempts: menu, Play plus canvas drag, then focused Play/double-click. Directly read trace frames: the final attempt left the menu and reveals a faint maple seed at upper left on a darkened sky/tree scene, but no stable unobscured gameplay or demonstrated seed movement. Rejected title/gallery background and faint transitional frame rather than accept blue sky alone. Evidence: capture-graceful-play/jam-graceful-descend-capture.json; further browser attempts not made. The actual linked main README had no images; bounded main source-tree inspection exposed no screenshot-named/GIF candidate."
-        },
-        {
-          "url": "https://github.com/FreekDS/brackeys-2023.1",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author entry HTML was retrieved at https://wofke.itch.io/graceful-descend. Pixel-art duck against clouds; no established interactive playfield or gameplay state, so this illustration is not accepted. Graceful Descend title over a tree and sky, not gameplay. New cached repository/README/release checks: https://github.com/FreekDS/brackeys-2023.1 (HTTP 200); https://raw.githubusercontent.com/FreekDS/brackeys-2023.1/HEAD/README.md (HTTP 200); https://github.com/FreekDS/brackeys-2023.1/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-graceful-descend-fetch.log. Prior limitation retained: Three new protected attempts: menu, Play plus canvas drag, then focused Play/double-click. Directly read trace frames: the final attempt left the menu and reveals a faint maple seed at upper left on a darkened sky/tree scene, but no stable unobscured gameplay or demonstrated seed movement. Rejected title/gallery background and faint transitional frame rather than accept blue sky alone. Evidence: capture-graceful-play/jam-graceful-descend-capture.json; further browser attempts not made. The actual linked main README had no images; bounded main source-tree inspection exposed no screenshot-named/GIF candidate."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/FreekDS/brackeys-2023.1/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author entry HTML was retrieved at https://wofke.itch.io/graceful-descend. Pixel-art duck against clouds; no established interactive playfield or gameplay state, so this illustration is not accepted. Graceful Descend title over a tree and sky, not gameplay. New cached repository/README/release checks: https://github.com/FreekDS/brackeys-2023.1 (HTTP 200); https://raw.githubusercontent.com/FreekDS/brackeys-2023.1/HEAD/README.md (HTTP 200); https://github.com/FreekDS/brackeys-2023.1/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-graceful-descend-fetch.log. Prior limitation retained: Three new protected attempts: menu, Play plus canvas drag, then focused Play/double-click. Directly read trace frames: the final attempt left the menu and reveals a faint maple seed at upper left on a darkened sky/tree scene, but no stable unobscured gameplay or demonstrated seed movement. Rejected title/gallery background and faint transitional frame rather than accept blue sky alone. Evidence: capture-graceful-play/jam-graceful-descend-capture.json; further browser attempts not made. The actual linked main README had no images; bounded main source-tree inspection exposed no screenshot-named/GIF candidate."
-        },
-        {
-          "url": "https://github.com/FreekDS/brackeys-2023.1/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author entry HTML was retrieved at https://wofke.itch.io/graceful-descend. Pixel-art duck against clouds; no established interactive playfield or gameplay state, so this illustration is not accepted. Graceful Descend title over a tree and sky, not gameplay. New cached repository/README/release checks: https://github.com/FreekDS/brackeys-2023.1 (HTTP 200); https://raw.githubusercontent.com/FreekDS/brackeys-2023.1/HEAD/README.md (HTTP 200); https://github.com/FreekDS/brackeys-2023.1/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-graceful-descend-fetch.log. Prior limitation retained: Three new protected attempts: menu, Play plus canvas drag, then focused Play/double-click. Directly read trace frames: the final attempt left the menu and reveals a faint maple seed at upper left on a darkened sky/tree scene, but no stable unobscured gameplay or demonstrated seed movement. Rejected title/gallery background and faint transitional frame rather than accept blue sky alone. Evidence: capture-graceful-play/jam-graceful-descend-capture.json; further browser attempts not made. The actual linked main README had no images; bounded main source-tree inspection exposed no screenshot-named/GIF candidate."
-        },
-        {
-          "url": "https://github.com/FreekDS/brackeys-2023.1",
-          "checkedAt": "2026-11-18",
-          "result": "HTTP 200. Retrieved author repository/README/release page; no qualifying gameplay raster was established from this page."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/FreekDS/brackeys-2023.1/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "HTTP 200. Retrieved author repository/README/release page; no qualifying gameplay raster was established from this page."
-        },
-        {
-          "url": "https://github.com/FreekDS/brackeys-2023.1/releases",
-          "checkedAt": "2026-11-18",
-          "result": "HTTP 200. Retrieved author repository/README/release page; no qualifying gameplay raster was established from this page."
-        },
-        {
-          "url": "https://wofke.itch.io/graceful-descend",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved author page HTML; image candidates were extracted for direct review."
-        }
-      ]
-    },
-    {
       "id": "jam-cattle-quest",
       "status": "research-incomplete",
       "reason": "Research incomplete or access-limited: Fresh author entry HTML was retrieved at https://carlos-michael.itch.io/ggj24. Cattle Quest title artwork styled as a console box cover, not gameplay. New cached repository/README/release checks: https://github.com/flower-water-games/moo-plunger (HTTP 200); https://raw.githubusercontent.com/flower-water-games/moo-plunger/HEAD/README.md (HTTP 200); https://github.com/flower-water-games/moo-plunger/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-cattle-quest-fetch.log. New public repository tree review found no screenshot-named or GIF candidate; listed raster paths were asset/UI/icon material, not verified gameplay screenshots. Tree evidence: trees/jam-cattle-quest/c270b6ba06fb237b842e0d1ee12ce2ae122dbc3d46ac91bb7d85602e657bd109.body. Prior limitation retained: Cache-backed author source redirected from /ggj24 to /moo; its only image is Cattle Quest cover art (directly read, rejected). New sandbox attempt in capture-jam-cattle-quest/jam-cattle-quest-capture.json was blocked before any frames with Browser resource transfer budget exceeded. No limits were raised. Need creator gameplay imagery within limits.",
@@ -33338,43 +33568,6 @@
       ]
     },
     {
-      "id": "open3d-project-zero",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/trolit/projectZero/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/trolit/projectZero",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/trolit/projectZero/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/trolit/projectZero/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/trolit/projectZero",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/trolit/projectZero/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-quota-qrunch",
       "status": "research-incomplete",
       "reason": "No qualifying image verified. Author/source access was limited: Author page fetch HTTP unavailable; Command failed: curl -q --proto =https --max-redirs 0 --connect-timeout 20 --max-time 40 --max-filesize 4000000 -sS -D [private work artifact omitted] -o [private work artifact omitted] -w %{http_code} https://bowlmonkeylabs.itch.io/ludum-dare-50 curl: (28) Connection timed out after 20002 milliseconds This is not evidence that no screenshot exists.",
@@ -33505,43 +33698,6 @@
         },
         {
           "url": "https://github.com/FahimKamal/UE5_MazeEscape/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-dark-lab",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/rinial/DarkLab/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/rinial/DarkLab",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/rinial/DarkLab/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/rinial/DarkLab/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/rinial/DarkLab",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/rinial/DarkLab/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
@@ -34343,43 +34499,6 @@
       ]
     },
     {
-      "id": "open3d-dante",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/SalvatorePreviti/js13k-2022/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/SalvatorePreviti/js13k-2022",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/SalvatorePreviti/js13k-2022/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/SalvatorePreviti/js13k-2022/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/SalvatorePreviti/js13k-2022",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/SalvatorePreviti/js13k-2022/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-island-not-found",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -34411,48 +34530,6 @@
         },
         {
           "url": "https://github.com/SalvatorePreviti/js13k-2020/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-jurassic-nursery",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/Platane/jurassic-nursery/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Platane/jurassic-nursery",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Platane/jurassic-nursery/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://platane.github.io/jurassic-nursery/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/Platane/jurassic-nursery/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/Platane/jurassic-nursery",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/Platane/jurassic-nursery/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
@@ -35137,60 +35214,6 @@
           "url": "https://github.com/NiiightmareXD/golab",
           "checkedAt": "2026-11-18",
           "result": "The repository README was read and describes building with Rust. The assets/Github directory could not be retrieved by the static reader. No eligible image or native release was verified."
-        }
-      ]
-    },
-    {
-      "id": "open3d-jme3-maze",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The repository README and root file listing were read. They describe building with Gradle; no eligible screenshot or native build was verified in this pass.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/stephengold/jme3-maze/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/stephengold/jme3-maze",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/stephengold/jme3-maze/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/stephengold/jme3-maze",
-          "checkedAt": "2026-11-18",
-          "result": "The repository README and root file listing were read. They describe building with Gradle; no eligible screenshot or native build was verified in this pass."
-        }
-      ]
-    },
-    {
-      "id": "open3d-manic-digger",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The README and linked author release were read. The release asset section failed to load in the static reader; no exact native asset or eligible screenshot was verified.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/manicdigger/manicdigger/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/manicdigger/manicdigger",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/manicdigger/manicdigger/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/manicdigger/manicdigger",
-          "checkedAt": "2026-11-18",
-          "result": "The README and linked author release were read. The release asset section failed to load in the static reader; no exact native asset or eligible screenshot was verified."
         }
       ]
     },
@@ -42102,6 +42125,117 @@
             "url": "https://github.com/MrNavaStar/ASJ2025",
             "checkedAt": "2026-11-19",
             "result": "The source repository README directly links the IcarusChild itch.io release and the itch.io page credits and links the same project repository."
+          }
+        ]
+      },
+      {
+        "id": "itch3d-g050",
+        "sourceUrl": "https://github.com/tomatenquark/code",
+        "demo": {
+          "label": "View creator downloads",
+          "url": "https://github.com/tomatenquark/code/releases/tag/v0.2.1",
+          "kind": "download",
+          "note": "Public creator release lists Windows, Linux and macOS game distributions. Metadata reviewed on 2026-11-19; no executable was downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://tomatenquark.itch.io/tomatenquark",
+          "authorVerification": "The cached creator itch publication explicitly lists latest-release native download URLs in tomatenquark/code with these exact three filenames. Public GitHub release metadata resolves them to v0.2.1.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Named native client release assets, excluding source archives, server and bugserver packages.",
+          "assets": [
+            {
+              "url": "https://github.com/tomatenquark/code/releases/download/v0.2.1/tomatenquark_macos.zip",
+              "name": "tomatenquark_macos.zip",
+              "platform": "macOS",
+              "platformEvidence": "Creator release asset filename identifies macOS, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://github.com/tomatenquark/code/releases/download/v0.2.1/tomatenquark_ubuntu.zip",
+              "name": "tomatenquark_ubuntu.zip",
+              "platform": "Linux",
+              "platformEvidence": "Creator release asset filename identifies Linux, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://github.com/tomatenquark/code/releases/download/v0.2.1/tomatenquark_windows.zip",
+              "name": "tomatenquark_windows.zip",
+              "platform": "Windows",
+              "platformEvidence": "Creator release asset filename identifies Windows, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://tomatenquark.itch.io/tomatenquark",
+            "checkedAt": "2026-11-19",
+            "result": "Read existing cached creator publication only; no new itch.io request. The cached creator itch publication explicitly lists latest-release native download URLs in tomatenquark/code with these exact three filenames. Public GitHub release metadata resolves them to v0.2.1."
+          },
+          {
+            "url": "https://github.com/tomatenquark/code/releases/tag/v0.2.1",
+            "checkedAt": "2026-11-19",
+            "result": "Public GitHub releases/latest metadata returned exact native client asset names and download URLs. No binary fetched."
+          }
+        ]
+      },
+      {
+        "id": "itch3d-g018",
+        "sourceUrl": "https://github.com/Tribal-Trouble/tribaltrouble",
+        "demo": {
+          "label": "View creator downloads",
+          "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/tag/v2.2.207-103.1010",
+          "kind": "download",
+          "note": "Public creator release lists Windows, Linux and macOS game distributions. Metadata reviewed on 2026-11-19; no executable was downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://rcubdev.itch.io/tribal-trouble-resurrected",
+          "authorVerification": "The cached Resurrected publisher page credits RcubDev, TimmyTonkaBuilder and OmarMokhtar and links github.com/OmarAMokhtar/tribaltrouble. That repository redirects to Tribal-Trouble/tribaltrouble. Its README explicitly names Tribal Trouble: Resurrected and points players to this repository releases. The release tag matches the native version listed by the Resurrected publisher, not an unrelated archive of the 2004 game.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Named native client release assets, excluding source archives, server and bugserver packages.",
+          "assets": [
+            {
+              "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/download/v2.2.207-103.1010/tribal-trouble-linux-appimage_v2.2.207-103.1010.AppImage",
+              "name": "tribal-trouble-linux-appimage_v2.2.207-103.1010.AppImage",
+              "platform": "Linux",
+              "platformEvidence": "Creator release asset filename identifies Linux, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/download/v2.2.207-103.1010/tribal-trouble-mac-arm64_v2.2.207-103.1010.dmg",
+              "name": "tribal-trouble-mac-arm64_v2.2.207-103.1010.dmg",
+              "platform": "macOS",
+              "platformEvidence": "Creator release asset filename identifies macOS, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/download/v2.2.207-103.1010/tribal-trouble-mac-x86_v2.2.207-103.1010.dmg",
+              "name": "tribal-trouble-mac-x86_v2.2.207-103.1010.dmg",
+              "platform": "macOS",
+              "platformEvidence": "Creator release asset filename identifies macOS, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/download/v2.2.207-103.1010/tribal-trouble-windows_v2.2.207-103.1010.zip",
+              "name": "tribal-trouble-windows_v2.2.207-103.1010.zip",
+              "platform": "Windows",
+              "platformEvidence": "Creator release asset filename identifies Windows, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://rcubdev.itch.io/tribal-trouble-resurrected",
+            "checkedAt": "2026-11-19",
+            "result": "Read existing cached creator publication only; no new itch.io request. The cached Resurrected publisher page credits RcubDev, TimmyTonkaBuilder and OmarMokhtar and links github.com/OmarAMokhtar/tribaltrouble. That repository redirects to Tribal-Trouble/tribaltrouble. Its README explicitly names Tribal Trouble: Resurrected and points players to this repository releases. The release tag matches the native version listed by the Resurrected publisher, not an unrelated archive of the 2004 game."
+          },
+          {
+            "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/tag/v2.2.207-103.1010",
+            "checkedAt": "2026-11-19",
+            "result": "Public GitHub releases/latest metadata returned exact native client asset names and download URLs. No binary fetched."
           }
         ]
       }
@@ -71798,43 +71932,6 @@
         ]
       },
       {
-        "id": "itch3d-g018",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No independently browser-rendered author web game or sufficiently evidenced native download was verified in this pass. The existing demo remains unchanged; absence is not asserted.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/Tribal-Trouble/tribaltrouble/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/Tribal-Trouble/tribaltrouble",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://rcubdev.itch.io/tribal-trouble-resurrected",
-            "checkedAt": "2026-11-18",
-            "result": "Read author page description, gallery links, repository backlinks where present, and native upload names/platform labels. This was not a browser playability check."
-          },
-          {
-            "url": "https://rcubdev.itch.io/tribal-trouble-resurrected",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/Tribal-Trouble/tribaltrouble",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for publication evidence; actual gameplay rendering was not verified by this text retrieval."
-          }
-        ]
-      },
-      {
         "id": "itch3d-g023",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No independently browser-rendered author web game or sufficiently evidenced native download was verified in this pass. The existing demo remains unchanged; absence is not asserted.",
@@ -72187,33 +72284,6 @@
           },
           {
             "url": "https://img.itch.zone/aW1hZ2UvMTQ2MDY5OS84NTMzMDAxLnBuZw==/original/Iz4PQr.png",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
-        "id": "itch3d-g050",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/tomatenquark/code/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/tomatenquark/code",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/tomatenquark/code/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://tomatenquark.itch.io/tomatenquark",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
           }
