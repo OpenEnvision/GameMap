@@ -2,6 +2,7 @@ import { test, expect, type APIRequestContext } from "@playwright/test";
 import type { ContentEntry, ContentKind } from "../../website/content/models";
 import { agentResourceKinds } from "../../website/src/data/agentGameTypes";
 import { navigation, url } from "../../website/content/site";
+import { parsePage, attributes } from "../../scripts/lib/rendered-coverage.mjs";
 
 type PublishedRecord = Pick<
   ContentEntry,
@@ -148,13 +149,17 @@ test("toolkit filters stay with tools while creator attribution filters live in 
       ),
   );
   expect(expected.length).toBeGreaterThan(0);
-  await expect(page.locator(".example-card")).toHaveCount(expected.length);
-  for (const entry of expected)
+  await expect(page.locator(".example-card")).toHaveCount(
+    Math.min(48, expected.length),
+  );
+  for (const entry of expected.slice(0, 48))
     await expect(
       page.locator(`[data-content-ref="${entry.key}"]`),
     ).toBeVisible();
   await page.reload();
-  await expect(page.locator(".example-card")).toHaveCount(expected.length);
+  await expect(page.locator(".example-card")).toHaveCount(
+    Math.min(48, expected.length),
+  );
 });
 
 test("complete game galleries stay in Examples while featured and related access remain", async ({
@@ -169,10 +174,23 @@ test("complete game galleries stay in Examples while featured and related access
       await page.goto(prefix + path);
       await expect(page.locator("main .example-card")).toHaveCount(0);
     }
+    const html = await (await request.get(prefix + "examples/")).text();
+    const keys = parsePage(html)
+      .nodes.filter((node) =>
+        attributes(node).class?.split(" ").includes("example-card"),
+      )
+      .map((node) => attributes(node)["data-content-ref"] as string);
+    expect(keys.filter((key) => key.startsWith("example:"))).toHaveLength(
+      manifest.counts.example,
+    );
     await page.goto(prefix + "examples/");
-    await expect(
-      page.locator('.example-card[data-content-ref^="example:"]'),
-    ).toHaveCount(manifest.counts.example);
+    const cards = page.locator("#game-examples > .example-card");
+    await expect(cards).toHaveCount(Math.min(48, keys.length));
+    expect(
+      await cards.evaluateAll((nodes) =>
+        nodes.map((node) => node.getAttribute("data-content-ref")),
+      ),
+    ).toEqual(keys.slice(0, 48));
     await page.goto(prefix);
     // Home features games through its wall of real screenshots, not cards.
     await expect(page.locator("main .example-card")).toHaveCount(0);

@@ -17,9 +17,8 @@ const accessLabels = {
  *  The screenshot (or a generated "uncharted world" when none was reviewed) is
  *  the poster; the title sits on it, and the body keeps a fixed rhythm so rows
  *  line up without subgrid (cards can then skip rendering off-screen).
- *  The examples page renders ~1300 of these, so the markup stays lean: the
- *  external-link arrows are drawn by CSS (gallery.css) instead of five inline
- *  SVG icons per card. */
+ *  Static HTML retains the full catalog, so the markup stays lean: external-link
+ *  arrows are drawn by CSS (gallery.css) instead of five inline SVG icons per card. */
 export function GameCard({
   contentKey,
   id,

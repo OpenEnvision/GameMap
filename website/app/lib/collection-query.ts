@@ -178,7 +178,11 @@ export function updateCollectionQuery(
   const next = new URLSearchParams(previous);
   if (!Object.hasOwn(values, "page")) next.delete("page");
   for (const [key, value] of Object.entries(values)) {
-    if (!value || value === "all" || (key === "page" && value === "1"))
+    if (
+      !value ||
+      (key !== "q" && value === "all") ||
+      (key === "page" && value === "1")
+    )
       next.delete(key);
     else next.set(key, value);
   }

@@ -31,7 +31,6 @@ import {
   collectionFacets,
   collectionFilters,
   collectionPage,
-  collectionPageSize,
   paperAreas,
   selectCollection,
   updateCollectionQuery,
@@ -377,6 +376,47 @@ export function IndexEmpty({
   );
 }
 
+export function CollectionPagination({
+  pagination,
+  onPageChange,
+  label = "Collection pages",
+}: {
+  pagination: ReturnType<typeof collectionPage>;
+  onPageChange: (page: number) => void;
+  label?: "Collection pages" | "More collection pages";
+}) {
+  const { t } = useSiteI18n();
+  if (pagination.pages <= 1) return null;
+  return (
+    <nav className="catalog-pagination" aria-label={t(label)}>
+      <button
+        type="button"
+        aria-label={t("Previous page")}
+        disabled={pagination.page <= 1}
+        onClick={() => onPageChange(pagination.page - 1)}
+      >
+        <ArrowLeft size={15} aria-hidden="true" />
+        <span>{t("Previous")}</span>
+      </button>
+      <span>
+        {t("Page {page} of {pages}", {
+          page: pagination.page,
+          pages: pagination.pages,
+        })}
+      </span>
+      <button
+        type="button"
+        aria-label={t("Next page")}
+        disabled={pagination.page >= pagination.pages}
+        onClick={() => onPageChange(pagination.page + 1)}
+      >
+        <span>{t("Next")}</span>
+        <ArrowRight size={15} aria-hidden="true" />
+      </button>
+    </nav>
+  );
+}
+
 function OutsideLink({
   href,
   children,
@@ -669,37 +709,14 @@ export function TypedCollection({
     summary?.scrollIntoView({ block: "start" });
   };
   const paging = (position: string) =>
-    hydrated &&
-    filtered.length > collectionPageSize && (
-      <nav
-        className="catalog-pagination"
-        aria-label={t(
-          position === "top" ? "Collection pages" : "More collection pages",
-        )}
-      >
-        <button
-          aria-label={t("Previous page")}
-          disabled={pagination.page <= 1}
-          onClick={() => turnPage(pagination.page - 1)}
-        >
-          <ArrowLeft size={15} aria-hidden="true" />
-          <span>{t("Previous")}</span>
-        </button>
-        <span>
-          {t("Page {page} of {pages}", {
-            page: pagination.page,
-            pages: pagination.pages,
-          })}
-        </span>
-        <button
-          aria-label={t("Next page")}
-          disabled={pagination.page >= pagination.pages}
-          onClick={() => turnPage(pagination.page + 1)}
-        >
-          <span>{t("Next")}</span>
-          <ArrowRight size={15} aria-hidden="true" />
-        </button>
-      </nav>
+    hydrated && (
+      <CollectionPagination
+        pagination={pagination}
+        onPageChange={turnPage}
+        label={
+          position === "top" ? "Collection pages" : "More collection pages"
+        }
+      />
     );
   const hero = (
     <IndexHero

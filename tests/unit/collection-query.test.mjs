@@ -191,6 +191,45 @@ test("game filters do not equate an existing demo URL with playtesting or a work
   );
   assert.equal(games[1].data.demo.status, "reader-error");
 });
+test("48-record pages preserve combined game batches without gaps or repeats", () => {
+  const games = [
+    ...Array.from({ length: 20 }, (_, i) => `research:${i}`),
+    ...Array.from({ length: 31 }, (_, i) => `imported:${i}`),
+    ...Array.from({ length: 7 }, (_, i) => `submission:${i}`),
+    ...Array.from({ length: 65 }, (_, i) => `example:${i}`),
+  ];
+  const pages = ["1", "2", "3"].map((value) => {
+    const range = query.collectionPage(value, games.length, 48);
+    return games.slice(range.start - 1, range.end);
+  });
+  assert.deepEqual(
+    pages.map((page) => page.length),
+    [48, 48, 27],
+  );
+  assert.deepEqual(pages.flat(), games);
+  assert.deepEqual(query.collectionPage("999", 97, 48), {
+    page: 3,
+    pages: 3,
+    start: 97,
+    end: 97,
+  });
+  assert.equal(query.collectionPage("2", 48, 48).page, 1);
+  assert.equal(query.collectionPage("2", 0, 48).start, 0);
+  assert.equal(query.collectionPage("2", 49).start, 25);
+});
+test("game filters reset page state while page turns retain filters and unrelated query values", () => {
+  const original = new URLSearchParams("track=3d&page=4&campaign=keep");
+  const next = query.updateCollectionQuery(original, { page: "5" });
+  assert.equal(next.toString(), "track=3d&page=5&campaign=keep");
+  const first = query.updateCollectionQuery(next, { page: "1" });
+  assert.equal(first.toString(), "track=3d&campaign=keep");
+  const search = query.updateCollectionQuery(next, { q: "all" });
+  assert.equal(search.get("q"), "all");
+  assert.equal(search.has("page"), false);
+  assert.equal(search.get("track"), "3d");
+  assert.equal(search.get("campaign"), "keep");
+  assert.equal(original.get("page"), "4");
+});
 test("pagination clamps malformed or out-of-range state and resets only owned query parameters", () => {
   for (const value of [
     null,

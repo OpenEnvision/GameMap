@@ -1,7 +1,10 @@
 import { useRef, type ReactNode } from "react";
 import { useLoaderData, type LoaderFunctionArgs } from "react-router";
 import { ArrowUpRight, ChevronDown, Search, X } from "lucide-react";
-import { IndexEmpty } from "../components/catalog-browser";
+import {
+  CollectionPagination,
+  IndexEmpty,
+} from "../components/catalog-browser";
 import { ExampleCard } from "../components/example-card";
 import { ResearchGameCard } from "../components/research-game-card";
 import {
@@ -11,6 +14,7 @@ import {
 import { ImportedThreejsCard } from "../components/imported-threejs-card";
 import { exampleGames } from "../lib/collection-stats";
 import { useClientQuery } from "../lib/client-query";
+import { collectionPage, updateCollectionQuery } from "../lib/collection-query";
 import { publicAsset } from "../lib/catalog";
 import { contentFor, sources } from "../../content/registry.server";
 import { localizeGameplayMedia } from "../../content/localization.server";
@@ -139,6 +143,7 @@ function DotList({
 /** The URL keys this page filters by; anything else in the query (campaign
  *  tags and the like) survives clearing. */
 const filterKeys = ["q", "track", "client"] as const;
+const pageSize = 48;
 
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
@@ -213,7 +218,7 @@ export default function Examples() {
       attribution,
       mosaic,
     } = useLoaderData<typeof loader>(),
-    [params, setParams] = useClientQuery();
+    [params, setParams, hydrated] = useClientQuery();
   const {
     works,
     error: worksUnavailable,
@@ -225,17 +230,23 @@ export default function Examples() {
       ? params.get("client")!
       : "all";
   const summary = useRef<HTMLInputElement>(null);
+  const results = useRef<HTMLParagraphElement>(null);
   const update = (key: string, value: string) => {
-    // History updates before the large grid commits. Compose rapid edits from
-    // the current URL so clearing search and clicking a filter cannot revive it.
-    const next = new URLSearchParams(window.location.search);
-    if (!value || value === "all") next.delete(key);
-    else next.set(key, value);
+    // Compose rapid edits from the current URL; filter changes reset the page.
+    const next = updateCollectionQuery(
+      new URLSearchParams(window.location.search),
+      { [key]: value },
+    );
     setParams(next, {
-      replace: true,
+      replace: key !== "page",
       preventScrollReset: true,
       flushSync: true,
     });
+  };
+  const turnPage = (page: number) => {
+    update("page", String(page));
+    results.current?.focus({ preventScroll: true });
+    results.current?.scrollIntoView({ block: "start", behavior: "instant" });
   };
   /** Clearing from the empty state removes the control that had focus; return
    *  keyboard users to the search field just above. */
@@ -247,6 +258,7 @@ export default function Examples() {
   const clearFilters = () => {
     const next = new URLSearchParams(window.location.search);
     for (const key of filterKeys) next.delete(key);
+    next.delete("page");
     setParams(next, {
       replace: true,
       preventScrollReset: true,
@@ -289,11 +301,19 @@ export default function Examples() {
         query,
       ),
   );
-  const gameCount =
-    games.length +
-    linkedGames.length +
-    importedGames.length +
-    submittedGames.length;
+  const allGames = [
+    ...linkedGames.map((entry) => ({ type: "research" as const, entry })),
+    ...importedGames.map((entry) => ({ type: "imported" as const, entry })),
+    ...submittedGames.map((work) => ({ type: "submitted" as const, work })),
+    ...games.map((entry) => ({ type: "native" as const, entry })),
+  ];
+  const gameCount = allGames.length;
+  const pagination = collectionPage(params.get("page"), gameCount, pageSize);
+  // Static HTML retains the complete catalog; the browser pages the combined
+  // result so research, imported, submitted and native games share one range.
+  const visibleGames = hydrated
+    ? allGames.slice(pagination.start - 1, pagination.end)
+    : allGames;
   // Live header figures follow the same filters as the grid.
   const shown = [
     ...games.map((entry) => [entry.data.track, entry.data.demo.kind]),
@@ -442,6 +462,13 @@ export default function Examples() {
             </div>
           </div>
         </div>
+        <noscript>
+          <p className="catalog-sidebar-note">
+            {t(
+              "All games are shown. Enable JavaScript to filter and browse by page.",
+            )}
+          </p>
+        </noscript>
         {worksUnavailable && (
           <p className="community-error" role="status">
             {t(
@@ -451,40 +478,77 @@ export default function Examples() {
           </p>
         )}
         {gameCount > 0 && (
-          <div
-            id="game-examples"
-            className="example-grid"
-            role="region"
-            aria-label={t("Game examples")}
-          >
-            {linkedGames.map((entry) => (
-              <ResearchGameCard
-                key={entry.key}
-                entry={entry}
-                media={researchMedia[entry.id]}
-              />
-            ))}
-            {importedGames.map((entry) => (
-              <ImportedThreejsCard
-                key={entry.key}
-                entry={entry}
-                media={gameplayMedia[entry.key]}
-                pageCover={pageCovers[entry.key]}
-              />
-            ))}
-            {submittedGames.map((work) => (
-              <CommunityWorkCard work={work} key={work.key} />
-            ))}
-            {games.map((entry) => (
-              <ExampleCard
-                key={entry.key}
-                game={entry.data}
-                descriptionLanguage={entry.descriptionLanguage}
-                media={gameplayMedia[entry.key] || media[entry.id]}
-                pageCover={pageCovers[entry.key]}
-              />
-            ))}
-          </div>
+          <>
+            <div className="catalog-results-bar gallery-results">
+              <p
+                id="game-results"
+                ref={results}
+                tabIndex={-1}
+                aria-live="polite"
+              >
+                {hydrated
+                  ? t("{start}–{end} of {count} records", {
+                      start: pagination.start,
+                      end: pagination.end,
+                      count: gameCount,
+                    })
+                  : t("{count} records", { count: gameCount })}
+              </p>
+            </div>
+            <div
+              id="game-examples"
+              className="example-grid"
+              role="region"
+              aria-label={t("Game examples")}
+            >
+              {visibleGames.map((item) => {
+                switch (item.type) {
+                  case "research":
+                    return (
+                      <ResearchGameCard
+                        key={item.entry.key}
+                        entry={item.entry}
+                        media={researchMedia[item.entry.id]}
+                      />
+                    );
+                  case "imported":
+                    return (
+                      <ImportedThreejsCard
+                        key={item.entry.key}
+                        entry={item.entry}
+                        media={gameplayMedia[item.entry.key]}
+                        pageCover={pageCovers[item.entry.key]}
+                      />
+                    );
+                  case "submitted":
+                    return (
+                      <CommunityWorkCard work={item.work} key={item.work.key} />
+                    );
+                  case "native":
+                    return (
+                      <ExampleCard
+                        key={item.entry.key}
+                        game={item.entry.data}
+                        descriptionLanguage={item.entry.descriptionLanguage}
+                        media={
+                          gameplayMedia[item.entry.key] || media[item.entry.id]
+                        }
+                        pageCover={pageCovers[item.entry.key]}
+                      />
+                    );
+                }
+              })}
+            </div>
+            {hydrated && pagination.pages > 1 && (
+              <div className="catalog-bottom-pagination gallery-pagination">
+                <CollectionPagination
+                  pagination={pagination}
+                  onPageChange={turnPage}
+                  label="More collection pages"
+                />
+              </div>
+            )}
+          </>
         )}
         {!gameCount && (
           <IndexEmpty

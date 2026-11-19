@@ -147,9 +147,12 @@ test("examples and test-library filters retain source details", async ({
     await request.get(baseURL + "content-manifest.json")
   ).json();
   await page.goto("examples/");
-  await expect(
-    page.locator('.example-card[data-content-ref^="example:"]'),
-  ).toHaveCount(catalog.counts.example);
+  const total = Number(
+    await page.locator(".gallery-stat-total dd").innerText(),
+  );
+  await expect(page.locator("#game-examples > .example-card")).toHaveCount(
+    Math.min(48, total),
+  );
   await page.getByRole("button", { name: "2D", exact: true }).click();
   await expect(page).toHaveURL(/track=2d/);
   await expect(page.locator("#game-examples .build-notes")).toHaveCount(0);
