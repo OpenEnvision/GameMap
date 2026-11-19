@@ -6,8 +6,11 @@ import { contentKinds } from "../../content/models";
 import { detailRoutes, pages } from "../../content/site";
 import {
   ContentDocument,
-  ContentCard,
-  RelatedDemos,
+  RecordDocument,
+  RecordSectionHead,
+  RecordShelf,
+  recordingOrder,
+  type RecordOutlineItem,
 } from "../components/content";
 import ResourceIcon from "../../src/components/ResourceIcon";
 import { PaperDocument } from "../components/paper-document";
@@ -51,56 +54,97 @@ export default function ContentPage() {
   const { entry, identity, steps, cases, demos, communityKey } =
     useLoaderData<typeof loader>();
   const collection = pages[contentKinds[entry.kind].page];
+  if (entry.kind === "paper")
+    return (
+      <main
+        id="main-content"
+        className="site-main content-page paper-page record-page"
+      >
+        <title>{`${entry.title} — GameMap`}</title>
+        <meta name="description" content={entry.description} />
+        <nav
+          className="content-breadcrumb paper-breadcrumb"
+          aria-label={t("Breadcrumb")}
+        >
+          <Link to={collection.path}>
+            <ArrowLeft size={15} aria-hidden="true" />
+            {t(collection.title)}
+          </Link>
+        </nav>
+        <PaperDocument entry={entry} />
+      </main>
+    );
+  const recordings = recordingOrder(demos);
+  const extras: RecordOutlineItem[] = [
+    ...(steps.length
+      ? [{ id: "record-steps", label: t("Steps & checkpoints") }]
+      : []),
+    ...(recordings.length
+      ? [{ id: "record-recordings", label: t("All project recordings") }]
+      : []),
+    ...(communityKey
+      ? [{ id: "community", label: t("Ratings & discussion") }]
+      : []),
+    ...(cases.length
+      ? [{ id: "record-related", label: t("Related examples") }]
+      : []),
+  ];
   return (
     <main
       id="main-content"
-      className={`site-main content-page${entry.kind === "paper" ? " paper-page" : ""}`}
+      className={`site-main content-page record-page record-page-${entry.kind}`}
     >
       <title>{`${entry.title} — GameMap`}</title>
       <meta name="description" content={entry.description} />
-      <nav className="content-breadcrumb" aria-label={t("Breadcrumb")}>
-        <Link to={collection.path}>
-          <ArrowLeft size={15} />
-          {t(collection.title)}
-        </Link>
-      </nav>
-      {entry.kind === "resource" && (
-        <div className="content-resource-mark">
-          <ResourceIcon resource={entry.data} identity={identity!} size={56} />
-        </div>
-      )}
-      {entry.kind === "paper" ? (
-        <PaperDocument entry={entry} />
-      ) : (
-        <ContentDocument entry={entry} />
-      )}
-      {entry.kind === "resource" && <RelatedDemos demos={demos} />}
-      {communityKey && <CommunityPanel gameKey={communityKey} />}
-      {steps.length > 0 && (
-        <section
-          className="path-steps"
-          aria-label={t("Steps and acceptance checkpoints")}
-        >
-          {steps.map((step, index) => (
-            <section className="path-step" key={step.key}>
-              <span className="step-number">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <ContentDocument entry={step} heading="h2" />
-            </section>
-          ))}
-        </section>
-      )}
-      {cases.length > 0 && (
-        <section className="related-content">
-          <h2>{t("Related examples")}</h2>
-          <div className="content-grid">
-            {cases.map((game) => (
-              <ContentCard entry={game} key={game.key} />
-            ))}
-          </div>
-        </section>
-      )}
+      <RecordDocument
+        entry={entry}
+        extras={extras}
+        leadAction={
+          steps.length
+            ? { href: "#record-steps", label: t("Start the path") }
+            : undefined
+        }
+        mark={
+          entry.kind === "resource" && identity ? (
+            <ResourceIcon resource={entry.data} identity={identity} size={64} />
+          ) : undefined
+        }
+      >
+        {steps.length > 0 && (
+          <section
+            className="record-section record-steps"
+            id="record-steps"
+            aria-label={t("Steps and acceptance checkpoints")}
+          >
+            <RecordSectionHead
+              title={t("Steps & checkpoints")}
+              count={steps.length}
+            />
+            <ol className="path-steps">
+              {steps.map((step, index) => (
+                <li className="path-step" key={step.key}>
+                  <span className="step-number" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <ContentDocument entry={step} heading="h3" />
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+        <RecordShelf
+          id="record-recordings"
+          title={t("All project recordings")}
+          note={t("Choose a preview or open the original recording.")}
+          entries={recordings}
+        />
+        {communityKey && <CommunityPanel gameKey={communityKey} />}
+        <RecordShelf
+          id="record-related"
+          title={t("Related examples")}
+          entries={cases}
+        />
+      </RecordDocument>
     </main>
   );
 }
