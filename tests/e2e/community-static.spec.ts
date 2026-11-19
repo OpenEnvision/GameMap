@@ -63,7 +63,7 @@ test("static community pages explain that the community server is required", asy
   page,
 }) => {
   const requests = communityRequests(page);
-  for (const path of ["account/", "submit/", "works/"]) {
+  for (const path of ["account/", "submit/"]) {
     await visit(page, path);
     await expect(page.getByText(notice.en)).toBeVisible();
   }

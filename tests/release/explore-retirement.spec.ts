@@ -1,4 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
+import { navigation } from "../../website/content/site";
 
 async function searchFromHome(page: Page, query: string, prefix = "") {
   await page.goto(prefix);
@@ -38,7 +39,7 @@ test("static homepage navigation reaches each collection without a directory or 
     for (const prefix of ["", "zh/"]) {
       await page.goto(prefix);
       const links = page.locator("a[data-collection-id]");
-      await expect(links).toHaveCount(9);
+      await expect(links).toHaveCount(navigation.length);
       const paths = await links.evaluateAll((nodes) =>
         nodes.map((node) => node.getAttribute("href")!),
       );

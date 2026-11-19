@@ -1,6 +1,5 @@
 import { test, expect } from "@playwright/test";
 import { loadContent } from "../../scripts/lib/content.mjs";
-import open3dImport from "../../website/content/open3d-import.config.json" with { type: "json" };
 import { researchGamesForExamples } from "../../website/content/research-games";
 
 const context = await loadContent();
@@ -8,9 +7,7 @@ const examples = [
   ...context.registry.all("example"),
   ...context.registry.all("foundation"),
 ];
-const importedThreejs = context.registry
-  .all("threejs-game")
-  .filter((entry) => open3dImport.includedLegacyThreejsIds.includes(entry.id));
+const importedThreejs = context.registry.all("threejs-game");
 const games = researchGamesForExamples(
   context.registry.all("repository-research"),
   [...examples, ...importedThreejs],
@@ -62,10 +59,7 @@ test("all games share one card grid and retain complete source records", async (
     "rel",
     "noreferrer",
   );
-  await expect(first.locator(".build-notes > summary")).toContainText(
-    "项目说明",
-  );
-  await first.locator(".build-notes > summary").click();
+  await expect(first.locator(".build-notes")).toHaveCount(0);
   await expect(
     first.getByRole("link", { name: "入口来源证据", exact: true }),
   ).toBeVisible();
@@ -82,6 +76,10 @@ test("all games share one card grid and retain complete source records", async (
   await expect(
     page.locator('[data-content-field="game_access"]'),
   ).toContainText("试玩或下载");
+  await expect(page.locator('[data-content-field="ai_note"]')).toBeVisible();
+  await expect(
+    page.locator('[data-content-field="license_note"]'),
+  ).toBeVisible();
 });
 
 test("shared search and 2D/3D filters include every game and preserve URL state", async ({

@@ -1,6 +1,5 @@
 import { Fragment, useEffect, useId, useState, type ReactNode } from "react";
 import {
-  ArrowDown,
   ArrowLeft,
   ArrowRight,
   ArrowUp,
@@ -233,14 +232,14 @@ const sectionLabels: Record<ReaderSection, string> = {
   resources: "Links & resources",
   provenance: "Sources & evidence",
 };
-function sectionOf(block: ContentBlock): ContentSection {
+export function sectionOf(block: ContentBlock): ContentSection {
   return block.type === "title" || block.type === "lead"
     ? "intro"
     : block.type === "image" || block.type === "video"
       ? "media"
       : block.section || (block.type === "links" ? "resources" : "guidance");
 }
-function englishSource(entry: ContentEntry) {
+export function englishSource(entry: ContentEntry) {
   return (
     entry.descriptionLanguage === "en" ||
     entry.blocks.some(
@@ -412,9 +411,9 @@ function specBlocks(blocks: readonly ContentBlock[]) {
   );
 }
 
-type ActionIcon =
-  "play" | "download" | "code" | "book" | "film" | "down" | "link";
-type HeroAction = { href: string; label: string; icon: ActionIcon };
+export type ActionIcon =
+  "play" | "download" | "code" | "book" | "film" | "link";
+export type HeroAction = { href: string; label: string; icon: ActionIcon };
 const actionFields: Partial<Record<ContentKind, readonly string[]>> = {
   example: ["demo", "source", "tutorial"],
   foundation: ["demo", "source", "tutorial"],
@@ -449,7 +448,7 @@ function firstFactLink(
   }
   return undefined;
 }
-function heroActions(
+export function heroActions(
   entry: ContentEntry,
   t: (key: string) => string,
 ): HeroAction[] {
@@ -487,7 +486,7 @@ function heroActions(
   }
   return actions;
 }
-function ActionGlyph({ icon }: { icon: ActionIcon }) {
+export function ActionGlyph({ icon }: { icon: ActionIcon }) {
   const props = { size: 17, "aria-hidden": true } as const;
   switch (icon) {
     case "play":
@@ -500,13 +499,11 @@ function ActionGlyph({ icon }: { icon: ActionIcon }) {
       return <BookOpen {...props} />;
     case "film":
       return <Clapperboard {...props} />;
-    case "down":
-      return <ArrowDown {...props} />;
     default:
       return <ArrowUpRight {...props} />;
   }
 }
-function ActionLink({
+export function ActionLink({
   href,
   className,
   children,
@@ -567,7 +564,7 @@ const kindCodes: Partial<Record<ContentKind, string>> = {
   collection: "SET",
   document: "DOC",
 };
-const catalogueCode = (entry: ContentEntry) =>
+export const catalogueCode = (entry: ContentEntry) =>
   `${kindCodes[entry.kind] || entry.kind.slice(0, 4).toUpperCase()} · ${hashText(entry.key).toString(16).slice(0, 4).toUpperCase()}`;
 
 /** A deterministic "uncharted world" for records without imagery: a ringed
@@ -782,7 +779,7 @@ export function OrbitArt({
   );
 }
 
-const titleScale = (text: string) =>
+export const titleScale = (text: string) =>
   text.length <= 18
     ? "is-xl"
     : text.length <= 34
@@ -792,7 +789,7 @@ const titleScale = (text: string) =>
         : "is-s";
 /** The last Latin word of a display title takes the serif italic; repository
  *  slugs may break after each slash. Text content is unchanged. */
-function DisplayTitle({ text }: { text: string }) {
+export function DisplayTitle({ text }: { text: string }) {
   const space = text.lastIndexOf(" "),
     last = space > 0 ? text.slice(space + 1) : "";
   const accent =
@@ -865,13 +862,11 @@ export type RecordOutlineItem = { id: string; label: string };
 export function RecordDocument({
   entry,
   mark,
-  leadAction,
   extras = [],
   children,
 }: {
   entry: ContentEntry;
   mark?: ReactNode;
-  leadAction?: { href: string; label: string };
   extras?: RecordOutlineItem[];
   children?: ReactNode;
 }) {
@@ -912,7 +907,6 @@ export function RecordDocument({
           },
         ]
       : []),
-    ...(leadAction ? [{ ...leadAction, icon: "down" as const }] : []),
     ...heroActions(entry, t),
   ].slice(0, 3);
   const title = intro?.find((block) => block.type === "title");

@@ -9,6 +9,12 @@ export interface Recording {
   originalUrl: string;
   views: RecordingView[];
 }
+export function pageCoverAlt(alt: string) {
+  return alt
+    .replace("; not an upstream page or gameplay screenshot.", ".")
+    .replace("; not a gameplay screenshot.", ".");
+}
+
 export function groupRecordings<T extends { data: DemoContent }>(
   views: readonly T[],
 ) {

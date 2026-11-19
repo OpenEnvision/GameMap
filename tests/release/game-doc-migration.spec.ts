@@ -23,11 +23,7 @@ test("official foundations share the searchable game grid exactly once without A
       "href",
       `/zh/examples/${entry.id}/`,
     );
-    await expect(card).toContainText(
-      content.chineseMessages[
-        "Official engine examples, not AI-authorship claims."
-      ],
-    );
+    await expect(card).toContainText("官方引擎示例");
   }
   const search = page.locator("input").first();
   await search.fill(foundations[0].data.title);

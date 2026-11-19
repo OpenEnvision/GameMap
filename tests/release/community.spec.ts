@@ -38,13 +38,7 @@ async function readOnlyAPI(page: Page, showWork = false) {
         ? { user: null, csrf: "" }
         : path.endsWith("/works")
           ? { items: showWork ? [work] : [], count: showWork ? 1 : 0 }
-          : path.endsWith(`/games/${work.key}`)
-            ? {
-                game: work,
-                stats: { average: 0, count: 0, comments: 0 },
-                comments: [],
-              }
-            : {};
+          : {};
     await route.fulfill({ json });
   });
   return writes;
@@ -71,7 +65,7 @@ for (const prefix of ["", "zh/"]) {
     await expect(page.locator('input[name="password"]')).toHaveCount(0);
     expect(writes).toEqual([]);
   });
-  test(`${prefix || "en/"}approved-work presentation uses the same grid and a navigable detail route`, async ({
+  test(`${prefix || "en/"}approved work stays a playable card without a community record page`, async ({
     page,
   }) => {
     const writes = await readOnlyAPI(page, true);
@@ -84,18 +78,10 @@ for (const prefix of ["", "zh/"]) {
         `.example-grid .example-card[data-content-ref="${work.key}"]`,
       ),
     ).toHaveCount(1);
-    await page.bringToFront();
-    await card
-      .getByRole("link", {
-        name: prefix ? "查看详情" : "Complete record",
-        exact: true,
-      })
-      .click();
-    await expect(page).toHaveURL(new RegExp(`${prefix}works/\\?id=${id}`));
-    await expect(
-      page.getByRole("heading", { name: work.title, exact: true }),
-    ).toBeVisible();
-    await expect(page.locator(".community-score")).toBeVisible();
+    // No record page and no discussion entry point for an approved submission.
+    await expect(card.locator("a[href^='/works/']")).toHaveCount(0);
+    await expect(card.locator(".game-rating-summary")).toHaveCount(0);
+    await expect(card.locator(`a[href="${work.url}"]`).first()).toBeVisible();
     expect(writes).toEqual([]);
   });
 }

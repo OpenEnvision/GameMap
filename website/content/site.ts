@@ -13,6 +13,10 @@ export function retiredDocumentTarget(pathname: string, base = "/") {
 }
 
 export const siteOrigin = "https://openenvision.github.io";
+/** Old Three.js addresses and their Examples targets identify the same game. */
+export function canonicalGamePath(path: string) {
+  return path.replace(/^\/(zh\/)?threejs-games(?=\/|$)/, "/$1examples");
+}
 // Recording details remain addressable from resources after the gallery is retired.
 const demoDetailBase = "/showcase/";
 /** The only declaration of routes and navigation. URL helpers use these paths. */
@@ -29,17 +33,11 @@ export const pages = {
     title: "Submit a game",
     nav: "hidden",
   },
-  works: {
-    path: "/works/",
-    module: "routes/work.tsx",
-    title: "Community work",
-    nav: "hidden",
-  },
   threejsGames: {
     path: "/threejs-games/",
     module: "routes/threejs-games.tsx",
     title: "Three.js games",
-    nav: "secondary",
+    nav: "hidden",
   },
   home: { path: "/", module: "routes/home.tsx", title: "Home", nav: "hidden" },
   resources: {
@@ -70,12 +68,6 @@ export const pages = {
     path: "/research/",
     module: "routes/research.tsx",
     title: "Repository research",
-    nav: "secondary",
-  },
-  paths: {
-    path: "/paths/",
-    module: "routes/paths.tsx",
-    title: "Development paths",
     nav: "secondary",
   },
   testing: {
@@ -111,7 +103,7 @@ export const detailRoutes = [
     path: "/threejs-games/:gameId",
     param: "gameId",
     kinds: ["threejs-game"],
-    module: "routes/content.tsx",
+    module: "routes/threejs-games.tsx",
   },
   {
     id: "resource-detail",
@@ -124,7 +116,7 @@ export const detailRoutes = [
     id: "example-detail",
     path: "/examples/:exampleId",
     param: "exampleId",
-    kinds: ["example", "foundation"],
+    kinds: ["example", "foundation", "threejs-game"],
     module: "routes/content.tsx",
   },
   {
@@ -155,13 +147,6 @@ export const detailRoutes = [
     kinds: ["repository-research"],
     module: "routes/content.tsx",
   },
-  {
-    id: "path-detail",
-    path: "/paths/:track",
-    param: "track",
-    kinds: ["path"],
-    module: "routes/content.tsx",
-  },
 ] as const;
 export const systemRoutes = [
   { id: "document", path: "/docs/*", module: "routes/docs.tsx" },
@@ -178,7 +163,7 @@ export const navigation = Object.entries(pages)
 export const url = {
   paper: (id: string) => `${pages.papers.path}${encodeURIComponent(id)}/`,
   threejsGame: (id: string) =>
-    `${pages.threejsGames.path}${encodeURIComponent(id)}/`,
+    `${pages.examples.path}${encodeURIComponent(id)}/`,
   page: (id: PageId) => pages[id].path,
   resource: (id: string) => `${pages.resources.path}${encodeURIComponent(id)}/`,
   example: (id: string) => `${pages.examples.path}${encodeURIComponent(id)}/`,
@@ -187,9 +172,9 @@ export const url = {
   testingPack: (id: string) =>
     `${pages.testing.path}#pack-${encodeURIComponent(id)}`,
   demo: (id: string) => `${demoDetailBase}${encodeURIComponent(id)}/`,
-  path: (id: string) => `${pages.paths.path}${encodeURIComponent(id)}/`,
+  path: (id: string) => `/paths/${encodeURIComponent(id)}/`,
   step: (track: string, id: string) =>
-    `${pages.paths.path}${encodeURIComponent(track)}/#${encodeURIComponent(id)}`,
+    `/paths/${encodeURIComponent(track)}/#${encodeURIComponent(id)}`,
   collection: (id: string) =>
     `${pages.examples.path}#collection-${encodeURIComponent(id)}`,
   research: (repository: string) =>

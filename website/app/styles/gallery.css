@@ -1,16 +1,16 @@
 /* ==========================================================================
-   Gallery template — the Games showcase (/examples/), its community
-   collections, and community work pages (/works/).
+   Gallery template — the Games showcase (/examples/) and its community
+   collections.
 
    Layout: a full-bleed cinematic header (drifting collage of real captures
    under a scrim; the Games pillar tabs shared with every collection index)
-   → a sticky glass control dock that straddles the header's lower edge (its
-   results line also jumps to the community collections) → an image-forward
-   poster grid → community collections.
+   → a sticky glass control dock that straddles the header's lower edge
+   → an image-forward poster grid → community collections.
 
    Cards: the screenshot is the poster and carries the title; the body keeps a
    fixed rhythm (meta 2 lines · summary 3 lines · rating 1 line · links 2
-   lines · notes drawer). Rows therefore align without subgrid, and every card
+   lines). How a game was built lives on its complete record. Rows therefore
+   align without subgrid, and every card
    can use content-visibility to skip rendering while off-screen (~900-1300
    cards on one page). No size containers on cards: with that many, Chrome
    dropped card layout for seconds after hydration.
@@ -461,56 +461,6 @@ html[lang="zh-CN"] .gallery-stats dt {
 .gallery-segments button:focus-visible {
   outline-offset: -2px;
 }
-.gallery-results {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 4px 24px;
-  padding: 9px 14px 3px;
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.02em;
-  line-height: 1.6;
-}
-.gallery-summary {
-  --dot-gap: 1.5em;
-  color: var(--body);
-  font-variant-numeric: tabular-nums;
-}
-/* Focus lands here after clearing filters from the empty state. */
-.gallery-summary:focus {
-  outline: none;
-}
-.gallery-summary:focus-visible {
-  border-radius: 4px;
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
-html[lang="zh-CN"] .gallery-results {
-  letter-spacing: 0;
-}
-.gallery-jump {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-left: auto;
-  border-radius: 4px;
-  color: var(--accent);
-  font-weight: 600;
-  white-space: nowrap;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-underline-offset: 3px;
-}
-.gallery-jump:hover {
-  color: var(--ink);
-  text-decoration-color: currentColor;
-}
-.gallery-jump svg {
-  flex: none;
-}
 .gallery-atlas > .community-error {
   margin: 0 0 24px;
 }
@@ -639,12 +589,12 @@ html[lang="zh-CN"] .gallery-empty.ix-empty h2 {
 #game-examples > .example-card {
   grid-row: auto;
   content-visibility: auto;
-  contain-intrinsic-size: auto 470px;
+  contain-intrinsic-size: auto 424px;
 }
 /* Keyboard focus never parks under the sticky dock: Shift+Tab scrolls a card
    control in below the header and the dock (which sticks from 960px). */
 @media (min-width: 960px) {
-  #game-examples :is(a, summary) {
+  #game-examples a {
     scroll-margin-top: 116px;
   }
 }
@@ -1057,8 +1007,8 @@ html[lang="zh-CN"] .example-card .example-body > p {
   font-size: 12px;
   white-space: nowrap;
 }
-/* Two fixed lines: record + source, then the build story (ellipsised; the
-   full label stays in the accessible name and the title tooltip). */
+/* Two fixed lines: record + source, then the build-story link (ellipsised;
+   the full label stays in the accessible name and the title tooltip). */
 .example-card .example-links {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr);
@@ -1066,7 +1016,7 @@ html[lang="zh-CN"] .example-card .example-body > p {
   justify-items: start;
   gap: 2px 14px;
   min-height: 54px;
-  margin: 12px 0 14px;
+  margin: 12px 0 16px;
   padding: 0;
   border: 0;
   font-size: 12.5px;
@@ -1111,83 +1061,6 @@ html[lang="zh-CN"] .example-card .example-body > p {
 }
 .example-card .example-links a:hover::after {
   background: var(--accent);
-}
-
-/* Evidence notes: a full-width drawer right under the links. */
-.example-card .build-notes {
-  margin: 0 calc(-1 * var(--card-pad));
-  padding: 0;
-  border-top: 1px solid var(--line);
-}
-.example-card .build-notes > summary {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 46px;
-  margin: 0;
-  padding: 0 var(--card-pad);
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  line-height: 1.4;
-  text-transform: uppercase;
-  list-style: none;
-  cursor: pointer;
-}
-.example-card .build-notes > summary::-webkit-details-marker {
-  display: none;
-}
-.example-card .build-notes > summary::after {
-  content: "";
-  flex: none;
-  width: 9px;
-  height: 9px;
-  margin-left: auto;
-  background:
-    linear-gradient(currentColor 0 0) center / 100% 1.5px no-repeat,
-    linear-gradient(currentColor 0 0) center / 1.5px 100% no-repeat;
-}
-.example-card .build-notes > summary:hover,
-.example-card .build-notes[open] > summary {
-  color: var(--ink);
-}
-.example-card .build-notes > summary:focus-visible {
-  outline-offset: -3px;
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-}
-.example-card .build-notes[open] > summary {
-  margin-bottom: 2px;
-}
-.example-card .build-notes[open] > summary::after {
-  rotate: 45deg;
-}
-.example-card .build-notes[open] {
-  padding-bottom: 16px;
-  background: color-mix(in srgb, var(--soft) 55%, transparent);
-}
-.example-card .build-notes > :not(summary) {
-  margin-inline: var(--card-pad);
-}
-.example-card .build-notes p,
-.example-card .build-notes li {
-  font-size: 13px;
-  line-height: 1.7;
-}
-.example-card .build-notes p {
-  margin-block: 8px;
-}
-.example-card .build-notes .source-note {
-  color: var(--muted);
-  font-size: 12px;
-}
-.example-card .build-notes .source-language {
-  font-size: 9.5px;
-  letter-spacing: 0.08em;
-}
-html[lang="zh-CN"] .example-card .build-notes > summary {
-  letter-spacing: 0.04em;
 }
 
 /* --- 5. Uncharted worlds: generated art for games without a screenshot. --- */
@@ -1340,8 +1213,7 @@ html[lang="zh-CN"] .example-card .build-notes > summary {
 }
 /* The palette of one world, derived from its light. */
 .example-card .game-preview-unavailable,
-.gallery-collections .content-record,
-.gallery-work-hero-plain {
+.gallery-collections .content-record {
   --w-hi: oklch(0.96 calc(0.05 * var(--gp-c)) var(--gp-hue));
   --w-1: oklch(0.76 calc(0.17 * var(--gp-c)) var(--gp-hue));
   --w-2: oklch(0.5 calc(0.18 * var(--gp-c)) var(--gp-hue));
@@ -1734,395 +1606,6 @@ html[lang="zh-CN"] .gallery-section-head h2 {
   color: var(--on-action);
 }
 
-/* --- 6b. Community work page (/works/) ---------------------------------- */
-.site-main.gallery-work-page {
-  width: 100%;
-  max-width: none;
-  margin-inline: 0;
-  padding: 0 0 clamp(96px, 12vw, 180px);
-}
-.gallery-work-page > :not(.gallery-work-hero) {
-  width: min(var(--content-max), calc(100% - 2 * var(--gutter)));
-  margin-inline: auto;
-}
-.gallery-work-hero {
-  --gp-hue: 27;
-  --gp-c: 1;
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  min-height: clamp(540px, 80svh, 840px);
-  margin-top: calc(-1 * var(--header-h));
-  padding: calc(var(--header-h) + 40px)
-    max(var(--gutter), calc((100% - var(--content-max)) / 2))
-    clamp(56px, 7vw, 104px);
-  overflow: clip;
-}
-.gallery-work-hero-plain {
-  min-height: clamp(520px, 84svh, 860px);
-}
-.gallery-work-backdrop {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-  background: var(--media-bg);
-}
-.gallery-work-backdrop img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.78;
-  filter: blur(2px) saturate(1.2);
-  scale: 1.06;
-}
-.gallery-work-backdrop::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      0deg,
-      var(--paper) 0%,
-      color-mix(in srgb, var(--paper) 80%, transparent) 34%,
-      color-mix(in srgb, var(--paper) 30%, transparent) 72%,
-      color-mix(in srgb, var(--paper) 60%, transparent) 100%
-    ),
-    linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--paper) 88%, transparent) 0%,
-      color-mix(in srgb, var(--paper) 50%, transparent) 45%,
-      transparent 75%
-    );
-}
-@media (max-width: 699px) {
-  .gallery-work-backdrop::after {
-    background: linear-gradient(
-      0deg,
-      var(--paper) 0%,
-      color-mix(in srgb, var(--paper) 84%, transparent) 40%,
-      color-mix(in srgb, var(--paper) 72%, transparent) 100%
-    );
-  }
-}
-/* Without a cover, the page gets the same generated world as the cards. */
-.gallery-work-hero-plain .gallery-work-backdrop {
-  background:
-    radial-gradient(
-      1.4px 1.4px at 12% 30%,
-      rgb(255 255 255 / 0.9),
-      transparent
-    ),
-    radial-gradient(1px 1px at 46% 16%, rgb(255 255 255 / 0.8), transparent),
-    radial-gradient(
-      1.2px 1.2px at 88% 44%,
-      rgb(255 255 255 / 0.8),
-      transparent
-    ),
-    radial-gradient(circle, rgb(255 255 255 / 0.45) 0 0.7px, transparent 1.2px)
-      11px 17px / 83px 59px,
-    radial-gradient(circle, rgb(255 255 255 / 0.3) 0 0.6px, transparent 1px)
-      37px 5px / 113px 71px,
-    radial-gradient(ellipse 60% 70% at 74% 34%, var(--w-haze), transparent 70%),
-    linear-gradient(180deg, #040404 0%, var(--w-4) 60%, #040404 100%);
-}
-.gallery-work-hero-plain .gallery-work-backdrop::before {
-  content: "";
-  position: absolute;
-  top: 44%;
-  left: 76%;
-  width: clamp(150px, 24%, 360px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  translate: -50% -50%;
-  background: var(--w-planet);
-  box-shadow:
-    0 0 0 1px oklch(0.88 calc(0.1 * var(--gp-c)) var(--gp-hue) / 0.22),
-    0 0 120px -10px var(--w-glow),
-    inset -30px -36px 80px rgb(0 0 0 / 0.6);
-}
-.gallery-work-hero-plain .gallery-work-backdrop::after {
-  top: auto;
-  right: -30%;
-  bottom: 0;
-  left: -30%;
-  height: 52%;
-  background:
-    repeating-linear-gradient(90deg, var(--w-line) 0 1px, transparent 1px 64px),
-    repeating-linear-gradient(0deg, var(--w-line) 0 1px, transparent 1px 48px);
-  opacity: 0.75;
-  transform: perspective(420px) rotateX(66deg);
-  transform-origin: 50% 100%;
-  -webkit-mask-image: linear-gradient(0deg, #000 8%, transparent 90%);
-  mask-image: linear-gradient(0deg, #000 8%, transparent 90%);
-}
-/* Copy over generated art keeps light-on-dark in both themes. */
-.gallery-work-hero-plain {
-  --ink: #f5f3ee;
-  --body: #d6d3cc;
-  --muted: #a9a59d;
-  --line: rgb(255 255 255 / 0.14);
-  --glass: rgb(16 16 22 / 0.58);
-  --glass-border: rgb(255 255 255 / 0.14);
-  color: var(--ink);
-}
-/* On the paper studio the night sky reads as a framed screen. */
-:root:not(.dark) .gallery-work-hero-plain {
-  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
-  box-shadow: var(--shadow-2);
-}
-.dark .gallery-work-hero-plain::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  z-index: -1;
-  height: 140px;
-  background: linear-gradient(0deg, var(--paper), transparent);
-  pointer-events: none;
-}
-.gallery-work-hero .gallery-work-crumb {
-  margin: 0 0 auto;
-  padding: 0 0 48px;
-  border: 0;
-}
-.gallery-work-hero .gallery-work-crumb a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 36px;
-  padding: 0 14px 0 12px;
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-pill);
-  background: var(--glass);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  color: var(--ink);
-  font-size: 13px;
-  font-weight: 550;
-}
-.gallery-work-hero .gallery-work-crumb a:hover {
-  color: var(--accent);
-}
-.gallery-work-hero h1 {
-  max-width: 16ch;
-  margin: 20px 0 22px;
-  font-size: var(--text-display);
-  font-weight: 600;
-  letter-spacing: -0.05em;
-  line-height: 0.96;
-  overflow-wrap: anywhere;
-}
-html[lang="zh-CN"] .gallery-work-hero h1 {
-  letter-spacing: -0.02em;
-  line-height: 1.12;
-}
-.gallery-work-hero .lede {
-  max-width: 40em;
-  margin: 0;
-}
-/* Static builds: the community notice reads as the lede, and its way out
-   is the page's one primary action rather than an unstyled inline link. */
-.gallery-work-hero .community-unavailable {
-  max-width: 40em;
-  margin: 0;
-  color: var(--body);
-  font-size: var(--text-lead);
-  line-height: 1.6;
-  text-wrap: pretty;
-}
-.gallery-work-hero .community-unavailable a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: fit-content;
-  min-height: 48px;
-  margin-top: 32px;
-  padding: 12px 20px 12px 22px;
-  border-radius: var(--radius-pill);
-  background-color: var(--action);
-  background-image: linear-gradient(180deg, transparent 35%, rgb(0 0 0 / 0.16));
-  box-shadow: var(--shadow-glow-accent);
-  color: var(--on-action);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-}
-.gallery-work-hero .community-unavailable a::after {
-  content: "";
-  width: 16px;
-  height: 16px;
-  background: currentColor;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E")
-    center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E")
-    center / contain no-repeat;
-}
-.gallery-work-hero .community-unavailable a:hover {
-  background-color: var(--action-hover);
-}
-.gallery-work-byline {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 16px;
-  margin: 0;
-  color: var(--body);
-  font-size: var(--text-lead);
-}
-.gallery-work-spec {
-  padding: 4px 12px;
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius-pill);
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.gallery-work-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 32px;
-}
-.gallery-work-actions a {
-  gap: 10px;
-}
-/* A full-bleed reel: frames align with the content column and the next
-   frame peeks in from the viewport edge. */
-.gallery-work-page > .community-work-gallery {
-  --reel-inset: max(var(--gutter), calc((100% - var(--content-max)) / 2));
-  width: 100%;
-  margin-inline: 0;
-  padding-inline: var(--reel-inset);
-  scroll-padding-inline: var(--reel-inset);
-}
-.gallery-work-page .community-work-gallery {
-  display: grid;
-  grid-template-columns: none;
-  grid-auto-columns: min(64%, 920px);
-  grid-auto-flow: column;
-  gap: 18px;
-  margin-block: clamp(32px, 4vw, 56px) 0;
-  padding-bottom: 14px;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
-}
-.gallery-work-page
-  .community-work-gallery:is([data-count="1"], [data-count="2"]) {
-  grid-auto-columns: minmax(0, 1fr);
-}
-.gallery-work-page .community-work-gallery a {
-  position: relative;
-  grid-column: auto;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background: var(--media-bg);
-  scroll-snap-align: start;
-}
-.gallery-work-page .community-work-gallery a:focus-visible {
-  outline-offset: -3px;
-}
-.gallery-work-page .community-work-gallery img {
-  width: 100%;
-  height: 100%;
-  max-height: none;
-  object-fit: contain;
-  border-radius: 0;
-  background: var(--media-bg);
-}
-.gallery-work-index {
-  position: absolute;
-  bottom: 12px;
-  left: 14px;
-  padding: 3px 9px;
-  border-radius: var(--radius-pill);
-  background: var(--chip-bg);
-  color: var(--chip-ink);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-}
-.gallery-work-page .community-work-description {
-  display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  gap: clamp(32px, 6vw, 96px);
-  align-items: start;
-  max-width: none;
-  margin-top: clamp(56px, 7vw, 112px);
-}
-.gallery-work-about h2 {
-  margin: 0 0 22px;
-  font-size: var(--text-h2);
-  font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 1.02;
-}
-.gallery-work-about p {
-  max-width: 62ch;
-  margin: 0;
-  color: var(--body);
-  font-size: 17px;
-  line-height: 1.8;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-.gallery-work-facts {
-  position: sticky;
-  top: calc(var(--header-h) + 24px);
-  padding: 8px 26px 22px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background:
-    linear-gradient(180deg, var(--surface-sheen), transparent 40%), var(--panel);
-  box-shadow: var(--shadow-1);
-}
-.gallery-work-page .gallery-work-facts dl {
-  margin: 0;
-  border: 0;
-}
-.gallery-work-page .gallery-work-facts dl > div {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 6px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 14px;
-  line-height: 1.7;
-}
-.gallery-work-facts dt {
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.gallery-work-facts dd {
-  margin: 0;
-  color: var(--ink);
-}
-@media (max-width: 860px) {
-  .gallery-work-page .community-work-description {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .gallery-work-facts {
-    position: static;
-  }
-  .gallery-work-page .community-work-gallery,
-  .gallery-work-page .community-work-gallery[data-count="2"] {
-    grid-auto-columns: 86%;
-  }
-}
-
 /* --- 7. Responsive -------------------------------------------------------- */
 @media (max-width: 1100px) {
   .gallery-select {
@@ -2242,10 +1725,6 @@ html[lang="zh-CN"] .gallery-work-hero h1 {
     min-width: 0;
     padding: 0 14px;
   }
-  .gallery-results {
-    padding-inline: 10px;
-    font-size: 10.5px;
-  }
   .gallery-collections .community-collections {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -2266,10 +1745,6 @@ html[lang="zh-CN"] .gallery-work-hero h1 {
   .gallery-segments {
     padding: 3px;
   }
-  .gallery-jump {
-    margin-block: -12px;
-    padding-block: 12px;
-  }
   .example-card .example-links {
     row-gap: 0;
     min-height: 88px;
@@ -2279,9 +1754,6 @@ html[lang="zh-CN"] .gallery-work-hero h1 {
   .example-card .example-links a {
     min-height: 44px;
     line-height: 44px;
-  }
-  .example-card .build-notes > summary {
-    min-height: 48px;
   }
 }
 
@@ -2368,11 +1840,6 @@ html[lang="zh-CN"] .gallery-work-hero h1 {
     }
   }
 
-  .gallery-jump {
-    transition:
-      color var(--dur-fast) ease,
-      text-decoration-color var(--dur-base) var(--ease-out);
-  }
   .gallery-search,
   .gallery-select select {
     transition:
@@ -2427,9 +1894,6 @@ html[lang="zh-CN"] .gallery-work-hero h1 {
       background-color var(--dur-base) var(--ease-out),
       color var(--dur-base) var(--ease-out),
       border-color var(--dur-base) var(--ease-out);
-  }
-  .example-card .build-notes > summary::after {
-    transition: rotate var(--dur-base) var(--ease-expo);
   }
   @media (hover: hover) and (pointer: fine) {
     .example-card:hover {

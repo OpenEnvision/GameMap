@@ -9,9 +9,14 @@ import {
   ArrowRight,
   ArrowUpRight,
   Bookmark,
+  Compass,
   Download,
+  LayoutGrid,
+  Route,
   Search,
   SlidersHorizontal,
+  Tags,
+  X,
 } from "lucide-react";
 import { Link, useNavigate, useSiteI18n, SourceLanguage } from "../lib/i18n";
 import { contentFor, sources } from "../../content/registry.server";
@@ -19,11 +24,18 @@ import { matchesSearch } from "../../content/matching";
 import { searchableText } from "../../content/search";
 import { ResourceAttribution } from "../../src/components/ResourceIcon";
 import { type Dimension, type Stage } from "../../src/types";
-import { categories, stageLabels, typeLabels } from "../lib/catalog";
+import {
+  categories,
+  categoryGlyphs,
+  stageLabels,
+  typeLabels,
+} from "../lib/catalog";
 import { ResourceDetail, ResourceMark } from "../components/resource-detail";
 import { url } from "../../content/site";
 import { useClientQuery } from "../lib/client-query";
 import { IndexEmpty, IndexHero } from "../components/catalog-browser";
+import { ResourceOverview } from "../components/resource-overview";
+import { ResourceCardInfo } from "../components/resource-card-info";
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
   return {
@@ -172,22 +184,65 @@ export default function Resources() {
   );
   const tone = (id: string) =>
     ({ "--tone": `var(--tax-${id})` }) as CSSProperties;
+  const selectedCategory = categories.find((item) => item.id === category);
+  const CategoryGlyph = selectedCategory
+    ? categoryGlyphs[selectedCategory.id]
+    : LayoutGrid;
+  const activeFilters = [
+    { key: "q", value: query, label: t("Search: {query}", { query }) },
+    {
+      key: "category",
+      value: category,
+      label: t(selectedCategory?.label || "All resources"),
+    },
+    {
+      key: "type",
+      value: type,
+      label: t(typeLabels[type as keyof typeof typeLabels] || "All types"),
+    },
+    {
+      key: "stage",
+      value: stage,
+      label: t(stageLabels[stage as Stage] || "All stages"),
+    },
+    {
+      key: "track",
+      value: track,
+      label: track === "world" ? t("World models") : track.toUpperCase(),
+    },
+    { key: "saved", value: savedOnly ? "1" : "", label: t("Saved only") },
+  ].filter(({ value }) => value && value !== "all");
+  const clearFilters = () =>
+    setParams(
+      (previous) => {
+        const next = new URLSearchParams(previous);
+        for (const key of [
+          "q",
+          "category",
+          "type",
+          "stage",
+          "track",
+          "dimension",
+          "saved",
+        ])
+          next.delete(key);
+        return next;
+      },
+      { replace: true, preventScrollReset: true },
+    );
+  const lede =
+    "Find coding agents, game engines, asset pipelines and world models. Explore what they do, where they fit and how to get started.";
   return (
     <main id="main-content" className="ix-page ix-resources">
       <title>{t("Resource library — GameMap")}</title>
-      <meta
-        name="description"
-        content={t(
-          "Useful tools, frameworks, and ideas. Clear context about what each one actually does.",
-        )}
-      />
+      <meta name="description" content={t(lede)} />
       <IndexHero
         pillar="tools"
         kicker="THE RESOURCE LIBRARY"
         title="Your next building block."
-        lede="Useful tools, frameworks, and ideas. Clear context about what each one actually does."
+        lede={lede}
         count={resources.length}
-        countLabel="curated tools"
+        countLabel="curated resources"
       >
         <div className="heading-links">
           <Link to="/docs/evaluation/review-coverage/">
@@ -213,7 +268,8 @@ export default function Resources() {
               <SlidersHorizontal size={14} aria-hidden="true" />
               {t("Narrow it down")}
             </span>
-            <label className="ix-select">
+            <label className="ix-select ix-select-icon">
+              <Tags size={14} aria-hidden="true" />
               <span className="sr-only">{t("Resource type")}</span>
               <select
                 value={type}
@@ -227,7 +283,8 @@ export default function Resources() {
                 ))}
               </select>
             </label>
-            <label className="ix-select">
+            <label className="ix-select ix-select-icon">
+              <Route size={14} aria-hidden="true" />
               <span className="sr-only">{t("Development stage")}</span>
               <select
                 value={stage}
@@ -241,7 +298,8 @@ export default function Resources() {
                 ))}
               </select>
             </label>
-            <label className="ix-select">
+            <label className="ix-select ix-select-icon">
+              <Compass size={14} aria-hidden="true" />
               <span className="sr-only">{t("Development track")}</span>
               <select
                 value={track}
@@ -300,22 +358,25 @@ export default function Resources() {
               aria-pressed={category === "all"}
               onClick={() => update("category", "all")}
             >
-              <i className="ix-dot ix-dot-all" aria-hidden="true" />
+              <LayoutGrid size={15} aria-hidden="true" />
               {t("All resources")}
               <span>{resources.length}</span>
             </button>
-            {categories.map((item) => (
-              <button
-                key={item.id}
-                aria-pressed={category === item.id}
-                onClick={() => update("category", item.id)}
-                style={tone(item.id)}
-              >
-                <i className="ix-dot" aria-hidden="true" />
-                {t(item.label)}
-                <span>{counts[item.id]}</span>
-              </button>
-            ))}
+            {categories.map((item) => {
+              const Glyph = categoryGlyphs[item.id];
+              return (
+                <button
+                  key={item.id}
+                  aria-pressed={category === item.id}
+                  onClick={() => update("category", item.id)}
+                  style={tone(item.id)}
+                >
+                  <Glyph size={15} aria-hidden="true" />
+                  {t(item.label)}
+                  <span>{counts[item.id]}</span>
+                </button>
+              );
+            })}
           </div>
           <div
             className="ix-spectrum"
@@ -331,11 +392,47 @@ export default function Resources() {
             ))}
           </div>
         </div>
+        {selectedCategory && (
+          <p
+            className="resource-category-context"
+            style={tone(selectedCategory.id)}
+          >
+            <CategoryGlyph size={17} aria-hidden="true" />
+            {t(selectedCategory.description)}
+          </p>
+        )}
+        {activeFilters.length > 0 && (
+          <div
+            className="resource-active-filters"
+            role="group"
+            aria-label={t("Active filters")}
+          >
+            {activeFilters.map(({ key, label }) => (
+              <button
+                key={key}
+                onClick={() => update(key, "")}
+                aria-label={t("Remove filter: {filter}", { filter: label })}
+              >
+                {label}
+                <X size={12} aria-hidden="true" />
+              </button>
+            ))}
+            <button className="resource-clear-filters" onClick={clearFilters}>
+              {t("Clear filters")}
+            </button>
+          </div>
+        )}
         {notice && (
           <p className="inline-notice" role="status">
             {t(notice)}
           </p>
         )}
+        <ResourceOverview
+          resources={filtered}
+          total={resources.length}
+          filters={{ category, type, stage, track }}
+          onFilter={update}
+        />
         <div className="ix-meta">
           <span aria-live="polite">
             <strong>
@@ -373,7 +470,8 @@ export default function Resources() {
             {filtered.map((resource, index) => {
               const entry = entryById.get(resource.id)!,
                 identity = identities[resource.id as keyof typeof identities],
-                isSaved = saved.includes(resource.id);
+                isSaved = saved.includes(resource.id),
+                Glyph = categoryGlyphs[resource.category];
               return (
                 <article
                   className="resource-tile"
@@ -411,6 +509,7 @@ export default function Resources() {
                     </button>
                   </div>
                   <span className="small-label">
+                    <Glyph size={12} aria-hidden="true" />
                     {t(
                       categories.find(
                         (category) => category.id === resource.category,
@@ -430,20 +529,10 @@ export default function Resources() {
                   >
                     {resource.summary}
                   </p>
-                  <div className="resource-tags">
-                    <span>{t(typeLabels[resource.type])}</span>
-                    <span>
-                      {resource.dimensions.length === 3
-                        ? t("All tracks")
-                        : resource.dimensions
-                            .map((track) =>
-                              track === "world"
-                                ? t("World models")
-                                : track.toUpperCase(),
-                            )
-                            .join(" / ")}
-                    </span>
-                  </div>
+                  <ResourceCardInfo
+                    entry={entry}
+                    onTopic={(topic) => update("q", topic)}
+                  />
                   <div className="resource-card-footer">
                     <button onClick={() => selectResource(resource.id)}>
                       {t("View details")}
@@ -477,10 +566,7 @@ export default function Resources() {
                 : "Try another search or loosen the filters a little."
             }
           >
-            <button
-              className="button button-secondary"
-              onClick={() => setParams({})}
-            >
+            <button className="button button-secondary" onClick={clearFilters}>
               {t("Browse all resources")}
             </button>
           </IndexEmpty>

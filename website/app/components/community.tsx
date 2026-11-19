@@ -82,7 +82,13 @@ type Discussion = {
   stats: GameStats;
   comments: Comment[];
 };
-export function CommunityPanel({ gameKey }: { gameKey: string }) {
+export function CommunityPanel({
+  gameKey,
+  sectionIndex,
+}: {
+  gameKey: string;
+  sectionIndex?: number;
+}) {
   const community = useCommunity(),
     { locale, t } = useSiteI18n();
   const request = community?.request,
@@ -96,7 +102,8 @@ export function CommunityPanel({ gameKey }: { gameKey: string }) {
   const [hasMore, setHasMore] = useState(false);
   const [body, setBody] = useState(""),
     [reportId, setReportId] = useState(""),
-    [reason, setReason] = useState("");
+    [reason, setReason] = useState(""),
+    [pendingScore, setPendingScore] = useState(0);
   const reload = useCallback(async () => {
     if (!request) {
       setLoading(false);
@@ -144,30 +151,26 @@ export function CommunityPanel({ gameKey }: { gameKey: string }) {
       location.pathname + (hydrated ? location.search : "") + "#community",
     );
   if (!community) return null;
+  const rated = Boolean(score?.count);
+  const activeScore = pendingScore || score?.mine || 0;
   return (
     <section
       id="community"
       className="community-panel"
       aria-labelledby="community-heading"
     >
-      <div className="community-section-heading">
-        <div>
-          <span className="eyebrow">{t("PLAYER COMMUNITY")}</span>
-          <h2 id="community-heading">{t("Ratings & discussion")}</h2>
-        </div>
-        <button
-          className="button button-secondary"
-          onClick={() => void reload()}
-          disabled={busy || loading}
-        >
-          {t("Refresh")}
-        </button>
-      </div>
-      <p className="community-disclaimer">
-        {t(
-          "Community opinions are not editorial verification or an AI-authorship claim.",
+      <div
+        className={sectionIndex ? "game-section-head" : "record-section-head"}
+      >
+        {sectionIndex ? (
+          <span className="game-section-index" aria-hidden="true">
+            {String(sectionIndex).padStart(2, "0")}
+          </span>
+        ) : (
+          <span className="record-section-index" aria-hidden="true" />
         )}
-      </p>
+        <h2 id="community-heading">{t("Ratings & discussion")}</h2>
+      </div>
       <noscript>
         <p>
           {t(
@@ -175,7 +178,11 @@ export function CommunityPanel({ gameKey }: { gameKey: string }) {
           )}
         </p>
       </noscript>
-      {loading && <p role="status">{t("Loading discussion…")}</p>}
+      {loading && !discussion && (
+        <p className="community-status" role="status">
+          {t("Loading discussion…")}
+        </p>
+      )}
       {error && (
         <p className="community-error" role="alert">
           {t(error)}
@@ -187,244 +194,264 @@ export function CommunityPanel({ gameKey }: { gameKey: string }) {
         </p>
       )}
       {discussion && (
-        <div className="community-board">
-          <div className="community-board-score">
-            <div className="community-score">
-              <strong>
-                {score?.count ? Number(score.average).toFixed(1) : "—"}
-                <small>/ 5</small>
-              </strong>
-              <span className="community-score-meter" aria-hidden="true">
-                <span
-                  style={{
-                    width: `${((score?.count ? Number(score.average) : 0) / 5) * 100}%`,
-                  }}
-                />
-              </span>
-              <span>
-                {t("{count} player ratings", { count: score?.count || 0 })}
-              </span>
-            </div>
-            {community?.user ? (
-              <fieldset className="community-stars" disabled={busy}>
-                <legend>{t("Your rating · you can change it")}</legend>
-                {[1, 2, 3, 4, 5].map((value) => (
-                  <label
-                    key={value}
-                    title={t("{count} stars", { count: value })}
-                  >
-                    <input
-                      type="radio"
-                      name={`rating-${gameKey}`}
-                      aria-label={t("{count} stars", { count: value })}
-                      checked={score?.mine === value}
-                      onChange={() =>
-                        void action(async () => {
-                          const next = await request!<GameStats>(
-                            "/games/" + encodeURIComponent(gameKey) + "/rating",
-                            { method: "POST", body: { score: value } },
-                          );
-                          setDiscussion((old) =>
-                            old ? { ...old, stats: next } : old,
-                          );
-                          updateStats?.(gameKey, next);
-                          setNotice(t("Rating saved"));
-                        })
-                      }
-                    />
-                    <Star
-                      size={29}
-                      fill={
-                        (score?.mine || 0) >= value ? "currentColor" : "none"
-                      }
-                      aria-hidden="true"
-                    />
-                  </label>
-                ))}
-              </fieldset>
-            ) : (
-              <p>
+        <>
+          <section className="content-field">
+            <h3>{t("Rating")}</h3>
+            <div className="community-rating">
+              {rated && (
+                <div className="community-rating-figure">
+                  <strong>{Number(score?.average).toFixed(1)}</strong>
+                  <span>/ 5</span>
+                </div>
+              )}
+              <p className="community-rating-line">
+                <span>
+                  {rated
+                    ? t("{count} player ratings", { count: score?.count || 0 })
+                    : t("Not rated yet")}
+                </span>
+                <button
+                  type="button"
+                  className="community-text-button"
+                  onClick={() => void reload()}
+                  disabled={busy || loading}
+                >
+                  {t("Refresh")}
+                </button>
+              </p>
+              {community.user ? (
+                <fieldset
+                  className="community-stars"
+                  disabled={busy}
+                  onMouseLeave={() => setPendingScore(0)}
+                >
+                  <legend>{t("Your rating · you can change it")}</legend>
+                  {[1, 2, 3, 4, 5].map((value) => (
+                    <label
+                      key={value}
+                      className={activeScore >= value ? "is-lit" : undefined}
+                      title={t("{count} stars", { count: value })}
+                      onMouseEnter={() => setPendingScore(value)}
+                    >
+                      <input
+                        type="radio"
+                        name={`rating-${gameKey}`}
+                        aria-label={t("{count} stars", { count: value })}
+                        checked={score?.mine === value}
+                        onChange={() =>
+                          void action(async () => {
+                            const next = await request!<GameStats>(
+                              "/games/" +
+                                encodeURIComponent(gameKey) +
+                                "/rating",
+                              { method: "POST", body: { score: value } },
+                            );
+                            setDiscussion((old) =>
+                              old ? { ...old, stats: next } : old,
+                            );
+                            updateStats?.(gameKey, next);
+                            setNotice(t("Rating saved"));
+                            setPendingScore(0);
+                          })
+                        }
+                      />
+                      <Star
+                        size={18}
+                        fill={activeScore >= value ? "currentColor" : "none"}
+                        aria-hidden="true"
+                      />
+                    </label>
+                  ))}
+                </fieldset>
+              ) : (
                 <Link to={loginURL} className="community-login-prompt">
                   {t("Sign in to rate or comment")}
                 </Link>
-              </p>
-            )}
-          </div>
-          <div className="community-board-thread">
-            <div className="community-comments-heading">
-              <h3>
-                {t("Comments")} <span>{score?.comments || 0}</span>
-              </h3>
-              <span>{t("Be constructive and respectful.")}</span>
+              )}
             </div>
-            {community?.user && (
-              <form
-                method="post"
-                className="community-comment-form"
-                onSubmit={(event) => {
-                  event.preventDefault();
-                  void action(async () => {
-                    await request!(
-                      "/games/" + encodeURIComponent(gameKey) + "/comments",
-                      { method: "POST", body: { body } },
-                    );
-                    setBody("");
-                    await reload();
-                    setNotice(t("Comment published"));
-                  });
-                }}
-              >
-                <label htmlFor="new-game-comment">{t("Your comment")}</label>
-                <textarea
-                  id="new-game-comment"
-                  value={body}
-                  onChange={(event) => setBody(event.target.value)}
-                  minLength={1}
-                  maxLength={2000}
-                  rows={4}
-                  required
-                  placeholder={t("What did you enjoy? What could be improved?")}
-                />
-                <div>
-                  <small>{body.length} / 2000</small>
-                  <button
-                    className="button button-primary"
-                    disabled={busy || !body.trim()}
-                  >
-                    {busy ? t("Sending…") : t("Post comment")}
-                  </button>
-                </div>
-              </form>
-            )}
-            {!discussion.comments.length && (
-              <p className="community-empty">
-                {t("No comments yet. Start the conversation.")}
-              </p>
-            )}
-            <div className="community-comment-list">
-              {discussion.comments.map((comment) => (
-                <article
-                  key={comment.id}
-                  className="community-comment"
-                  data-comment-id={comment.id}
+          </section>
+          <section className="content-field">
+            <h3>
+              {t("Comments")}
+              {(score?.comments || 0) > 0 && (
+                <span className="community-count">{score?.comments}</span>
+              )}
+            </h3>
+            <div className="community-thread">
+              {community.user && (
+                <form
+                  method="post"
+                  className="community-comment-form"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    void action(async () => {
+                      await request!(
+                        "/games/" + encodeURIComponent(gameKey) + "/comments",
+                        { method: "POST", body: { body } },
+                      );
+                      setBody("");
+                      await reload();
+                      setNotice(t("Comment published"));
+                    });
+                  }}
                 >
+                  <label htmlFor="new-game-comment">
+                    {t("Be constructive and respectful.")}
+                  </label>
+                  <textarea
+                    id="new-game-comment"
+                    value={body}
+                    onChange={(event) => setBody(event.target.value)}
+                    minLength={1}
+                    maxLength={2000}
+                    rows={3}
+                    required
+                    placeholder={t(
+                      "What did you enjoy? What could be improved?",
+                    )}
+                  />
                   <div>
-                    <span className="community-avatar" aria-hidden="true">
-                      {comment.author.slice(0, 1).toUpperCase()}
-                    </span>
-                    <strong>{comment.author}</strong>
-                    <time dateTime={comment.createdAt}>
-                      {new Intl.DateTimeFormat(
-                        locale === "zh" ? "zh-CN" : "en",
-                        {
-                          dateStyle: "medium",
-                          timeStyle: "short",
-                        },
-                      ).format(new Date(comment.createdAt))}
-                    </time>
-                  </div>
-                  <p>{comment.body}</p>
-                  {community?.user && (
-                    <div className="community-comment-actions">
-                      {comment.mine ? (
-                        <button
-                          disabled={busy}
-                          onClick={() => {
-                            if (window.confirm(t("Delete your comment?")))
-                              void action(async () => {
-                                await request!("/comments/" + comment.id, {
-                                  method: "DELETE",
-                                });
-                                await reload();
-                              });
-                          }}
-                        >
-                          {t("Delete")}
-                        </button>
-                      ) : (
-                        <button
-                          onClick={() => {
-                            setReportId(
-                              reportId === comment.id ? "" : comment.id,
-                            );
-                            setReason("");
-                          }}
-                        >
-                          {t("Report")}
-                        </button>
-                      )}
-                    </div>
-                  )}
-                  {reportId === comment.id && (
-                    <form
-                      method="post"
-                      className="community-report"
-                      onSubmit={(event) => {
-                        event.preventDefault();
-                        void action(async () => {
-                          await request!(
-                            "/comments/" + comment.id + "/report",
-                            {
-                              method: "POST",
-                              body: { reason },
-                            },
-                          );
-                          setReportId("");
-                          setNotice(t("Report sent to moderators"));
-                        });
-                      }}
+                    <small>{body.length} / 2000</small>
+                    <button
+                      className="button button-primary"
+                      disabled={busy || !body.trim()}
                     >
-                      <label>
-                        {t("Reason for reporting")}
-                        <textarea
-                          minLength={5}
-                          maxLength={1000}
-                          value={reason}
-                          onChange={(event) => setReason(event.target.value)}
-                          required
-                        />
-                      </label>
-                      <button
-                        className="button button-secondary"
-                        disabled={busy}
+                      {busy ? t("Sending…") : t("Post comment")}
+                    </button>
+                  </div>
+                </form>
+              )}
+              {!discussion.comments.length && !community.user && (
+                <p className="community-thread-empty">
+                  {t("No comments yet.")}
+                </p>
+              )}
+              <div className="community-comment-list">
+                {discussion.comments.map((comment) => (
+                  <article
+                    key={comment.id}
+                    className="community-comment"
+                    data-comment-id={comment.id}
+                  >
+                    <div>
+                      <span className="community-avatar" aria-hidden="true">
+                        {comment.author.slice(0, 1).toUpperCase()}
+                      </span>
+                      <strong>{comment.author}</strong>
+                      <time dateTime={comment.createdAt}>
+                        {new Intl.DateTimeFormat(
+                          locale === "zh" ? "zh-CN" : "en",
+                          {
+                            dateStyle: "medium",
+                            timeStyle: "short",
+                          },
+                        ).format(new Date(comment.createdAt))}
+                      </time>
+                    </div>
+                    <p>{comment.body}</p>
+                    {community?.user && (
+                      <div className="community-comment-actions">
+                        {comment.mine ? (
+                          <button
+                            disabled={busy}
+                            onClick={() => {
+                              if (window.confirm(t("Delete your comment?")))
+                                void action(async () => {
+                                  await request!("/comments/" + comment.id, {
+                                    method: "DELETE",
+                                  });
+                                  await reload();
+                                });
+                            }}
+                          >
+                            {t("Delete")}
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => {
+                              setReportId(
+                                reportId === comment.id ? "" : comment.id,
+                              );
+                              setReason("");
+                            }}
+                          >
+                            {t("Report")}
+                          </button>
+                        )}
+                      </div>
+                    )}
+                    {reportId === comment.id && (
+                      <form
+                        method="post"
+                        className="community-report"
+                        onSubmit={(event) => {
+                          event.preventDefault();
+                          void action(async () => {
+                            await request!(
+                              "/comments/" + comment.id + "/report",
+                              {
+                                method: "POST",
+                                body: { reason },
+                              },
+                            );
+                            setReportId("");
+                            setNotice(t("Report sent to moderators"));
+                          });
+                        }}
                       >
-                        {t("Submit report")}
-                      </button>
-                    </form>
-                  )}
-                </article>
-              ))}
+                        <label>
+                          {t("Reason for reporting")}
+                          <textarea
+                            minLength={5}
+                            maxLength={1000}
+                            value={reason}
+                            onChange={(event) => setReason(event.target.value)}
+                            required
+                          />
+                        </label>
+                        <button
+                          className="button button-secondary"
+                          disabled={busy}
+                        >
+                          {t("Submit report")}
+                        </button>
+                      </form>
+                    )}
+                  </article>
+                ))}
+              </div>
+              {hasMore && (
+                <button
+                  type="button"
+                  className="community-text-button"
+                  disabled={busy}
+                  onClick={() =>
+                    void action(async () => {
+                      const before = discussion.comments.at(-1)!.createdAt;
+                      const next = await request!<Discussion>(
+                        "/games/" +
+                          encodeURIComponent(gameKey) +
+                          "?before=" +
+                          encodeURIComponent(before),
+                      );
+                      setDiscussion((old) =>
+                        old
+                          ? {
+                              ...old,
+                              comments: [...old.comments, ...next.comments],
+                            }
+                          : old,
+                      );
+                      setHasMore(next.comments.length === 30);
+                    })
+                  }
+                >
+                  {t("Load earlier comments")}
+                </button>
+              )}
             </div>
-            {hasMore && (
-              <button
-                className="button button-secondary"
-                disabled={busy}
-                onClick={() =>
-                  void action(async () => {
-                    const before = discussion.comments.at(-1)!.createdAt;
-                    const next = await request!<Discussion>(
-                      "/games/" +
-                        encodeURIComponent(gameKey) +
-                        "?before=" +
-                        encodeURIComponent(before),
-                    );
-                    setDiscussion((old) =>
-                      old
-                        ? {
-                            ...old,
-                            comments: [...old.comments, ...next.comments],
-                          }
-                        : old,
-                    );
-                    setHasMore(next.comments.length === 30);
-                  })
-                }
-              >
-                {t("Load earlier comments")}
-              </button>
-            )}
-          </div>
-        </div>
+          </section>
+        </>
       )}
     </section>
   );

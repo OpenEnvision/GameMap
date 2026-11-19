@@ -147,7 +147,7 @@ test("versioned page-cover assets round-trip through assembly and projection wit
   );
   assert.equal(
     entry.blocks.find((b) => b.field === "pageCover").label,
-    cover.caption,
+    "Project page screenshot",
   );
   assert.equal(
     entry.blocks.find((b) => b.field === "pageCoverOriginal").items[0].url,
@@ -238,8 +238,8 @@ test("catalog fallback uses appended readers, relative record addresses and pinn
     result = await validateSelection(context, records, [], { readAsset });
   const entry = result.registry.all("foundation")[0];
   assert.equal(
-    entry.blocks.find((b) => b.field === "pageCover").credit,
-    "GameMap record — not upstream or gameplay",
+    entry.blocks.find((b) => b.field === "pageCover").label,
+    "GameMap page screenshot",
   );
   assert.ok(
     entry.blocks

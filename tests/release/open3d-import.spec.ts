@@ -23,7 +23,7 @@ test("imported 3D games retain source-only status and never expose fabricated pl
     context.registry
       .all("example")
       .filter((entry) => entry.data.demo.kind === "source").length +
-      legacy.length,
+      context.registry.all("threejs-game").length,
   );
   for (const entry of imported) {
     const card = page.locator(`[data-content-ref="${entry.key}"]`);
@@ -53,7 +53,7 @@ test("imported 3D games retain source-only status and never expose fabricated pl
       ).toBe(true);
     } else if (cover)
       await expect(card.locator(".page-cover-label")).toContainText(
-        "非游戏截图",
+        /(?:GameMap 资料页|项目页面)截图/,
       );
   }
   for (const entry of legacy)
@@ -65,20 +65,17 @@ test("imported 3D games retain source-only status and never expose fabricated pl
   expect(await response.json()).toEqual(raw);
 });
 
-test("imported record details preserve input provenance and real Chinese descriptions without claiming source review", async ({
+test("imported record details keep real Chinese descriptions and leave catalog bookkeeping off the page", async ({
   page,
 }) => {
   const first = imported[0];
   await page.goto("zh/examples/" + first.id + "/");
-  await expect(page.locator('[data-content-field="intake"]')).toContainText(
-    "open_3d_games_2026-10-24.jsonl",
-  );
-  await expect(page.locator('[data-content-field="intake"]')).toContainText(
-    raw.source.sha256,
-  );
-  await expect(page.locator('[data-content-field="intake"]')).toContainText(
-    "未独立复核",
-  );
+  await expect(page.locator('[data-content-field="intake"]')).toHaveCount(0);
+  await expect(page.getByText(raw.source.sha256)).toHaveCount(0);
+  await expect(page.getByText("open_3d_games_2026-10-24.jsonl")).toHaveCount(0);
+  await expect(
+    page.getByText("Read supplied directory references"),
+  ).toHaveCount(0);
   await expect(
     page.locator('[data-content-field="description"]'),
   ).toContainText(
@@ -87,6 +84,6 @@ test("imported record details preserve input provenance and real Chinese descrip
     ).description_zh,
   );
   await expect(page.locator('[data-content-field="aiUse"]')).toContainText(
-    "not independently verified",
+    "收录自 3D 游戏目录。",
   );
 });

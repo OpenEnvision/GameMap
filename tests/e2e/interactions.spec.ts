@@ -37,9 +37,7 @@ for (const width of [390, 800]) {
     await toggle.click();
     await expect(navigation).toHaveCount(0);
     await toggle.click();
-    await navigation
-      .getByRole("link", { name: "Game examples", exact: true })
-      .click();
+    await navigation.getByRole("link", { name: "Games", exact: true }).click();
     await expect(page).toHaveURL(/examples\/$/);
     await expect(navigation).toHaveCount(0);
   });
@@ -285,12 +283,10 @@ test("navigation marks the current pillar and section in static and hydrated pag
     });
     const page = await context.newPage();
     await page.goto(baseURL + "examples/");
-    await expect(
-      page.locator('.desktop-navigation a[aria-current="page"]'),
-    ).toHaveText(/Game examples/);
-    await expect(
-      page.locator('.nav-pillar[data-pillar="games"]'),
-    ).toHaveAttribute("data-active", "true");
+    const games = page.locator('.desktop-navigation a[data-pillar="games"]');
+    await expect(games).toHaveText("Games");
+    await expect(games).toHaveAttribute("aria-current", "page");
+    await expect(games).toHaveAttribute("data-collection-id", "examples");
     await expect(
       page.locator('.site-header .site-language a[hreflang="zh-CN"]'),
     ).toHaveAttribute("href", /\/zh\/examples\/$/);

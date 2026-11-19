@@ -48,7 +48,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  width: min(1180px, 100%);
+  width: max-content;
+  max-width: 100%;
   height: var(--nav-h);
   margin-inline: auto;
   padding: 0 8px 0 20px;
@@ -102,14 +103,14 @@
   display: flex;
   align-items: center;
   gap: 2px;
-  margin-inline: auto;
   font-size: 14px;
   color: var(--body);
 }
 .nav-pillar {
   position: static;
 }
-.nav-pillar > summary {
+.nav-pillar > summary,
+.nav-direct {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -130,14 +131,17 @@
   display: none;
 }
 .nav-pillar > summary:hover,
-.nav-pillar[open] > summary {
+.nav-pillar[open] > summary,
+.nav-direct:hover {
   color: var(--ink);
   background: var(--hover);
 }
-.nav-pillar[data-active] > summary {
+.nav-pillar[data-active] > summary,
+.nav-direct.active {
   color: var(--ink);
 }
-.nav-pillar[data-active] > summary::after {
+.nav-pillar[data-active] > summary::after,
+.nav-direct.active::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -154,10 +158,10 @@
   top: calc(100% + 12px);
   left: 50%;
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: 24px;
-  width: min(780px, calc(100vw - 32px));
-  padding: 26px;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.2fr);
+  gap: 12px 20px;
+  width: min(640px, calc(100vw - 32px));
+  padding: 14px;
   translate: -50% 0;
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
@@ -173,28 +177,22 @@
 .nav-panel-intro {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 8px 4px 4px;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 8px 6px 12px;
 }
 .nav-panel-intro .eyebrow {
   color: var(--accent);
 }
 .nav-panel-intro p {
   margin: 0;
-  color: var(--ink);
-  font-family: var(--font-serif);
-  font-size: 30px;
-  font-style: italic;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
+  color: var(--body);
+  font-size: 14px;
+  line-height: 1.45;
 }
 html[lang="zh-CN"] .nav-panel-intro p {
-  font-family: var(--font-display);
-  font-style: normal;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 1.4;
+  font-size: 13px;
+  line-height: 1.55;
 }
 .nav-panel-links {
   display: grid;
@@ -208,7 +206,7 @@ html[lang="zh-CN"] .nav-panel-intro p {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 2px 14px;
   align-items: center;
-  padding: 14px 16px;
+  padding: 10px 12px;
   border-radius: var(--radius-md);
   transition: background-color var(--dur-fast) ease;
 }
@@ -365,7 +363,8 @@ html[lang="zh-CN"] .nav-panel-intro p {
     var(--paper);
   pointer-events: auto;
 }
-.mobile-pillar {
+.mobile-pillar,
+.mobile-direct {
   display: grid;
   gap: 2px;
 }
@@ -616,21 +615,25 @@ html[lang="zh-CN"] .footer-intro p {
   font-size: 13px;
 }
 .footer-wordmark {
-  margin: clamp(8px, 2vw, 24px) 0 -0.16em;
+  /* Seven letters at this size stay inside the column, so the final p is not
+     clipped by the footer. The line box and padding keep its descender, and
+     the fade keeps a floor so the tail is still a letter. */
+  margin: clamp(8px, 2vw, 24px) 0 0;
+  padding-bottom: 0.18em;
   color: transparent;
   background: linear-gradient(
     to bottom,
     var(--ink) 0%,
-    color-mix(in srgb, var(--ink) 30%, transparent) 55%,
-    transparent 95%
+    color-mix(in srgb, var(--ink) 58%, transparent) 70%,
+    color-mix(in srgb, var(--ink) 36%, transparent) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
   font-family: var(--font-display);
-  font-size: clamp(76px, 19.5vw, 330px);
+  font-size: clamp(64px, 11.5vw, 196px);
   font-weight: 700;
-  letter-spacing: -0.065em;
-  line-height: 1;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
   text-align: center;
   white-space: nowrap;
   user-select: none;

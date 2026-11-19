@@ -103,9 +103,15 @@ test("import provenance and original caveats survive without private filepaths o
     );
     assert.match(
       entry.data.source.note,
-      /imported statements, not independent/,
+      /^Supplied directory lists code license: /,
     );
     const block = entry.blocks.find((x) => x.field === "intake");
-    assert.ok(block);
+    assert.equal(block.section, "metadata");
+    assert.ok(
+      !context.searchableText(entry).includes(entry.data.intake.sha256),
+    );
+    assert.ok(
+      block.items.some((item) => item.value === "Supplied directory metadata"),
+    );
   }
 });

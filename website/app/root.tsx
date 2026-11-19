@@ -20,7 +20,7 @@ import "@fontsource-variable/inter/opsz.css";
 import "@fontsource/instrument-serif/400.css";
 import "@fontsource/instrument-serif/400-italic.css";
 import "@fontsource-variable/jetbrains-mono";
-// Cascade order is deliberate: legacy component rules, then the design system,
+// Cascade order is deliberate: shared component rules, then the design system,
 // the shell, one stylesheet per page template, and finally all motion.
 import "./styles/index.css";
 import "./styles/community.css";
@@ -30,6 +30,7 @@ import "./styles/home.css";
 import "./styles/gallery.css";
 import "./styles/collections.css";
 import "./styles/detail.css";
+import "./styles/game-detail.css";
 import "./styles/docs.css";
 import "./styles/motion.css";
 import "./styles/fx.css";
@@ -133,6 +134,7 @@ export default function App() {
   const { pathname } = useLocation();
   const logical = unlocalizedPath(pathname);
   const docs = logical === "/docs" || logical.startsWith("/docs/");
+  const docsHome = /^\/docs(?:\/zh)?\/?$/.test(logical);
   const hydrated = useHydrated();
   return (
     <>
@@ -147,8 +149,12 @@ export default function App() {
         disabled={!hydrated}
         data-client-ready={hydrated}
       >
-        <CosmosEffects />
-        <FxIntro />
+        {!docsHome && (
+          <>
+            <CosmosEffects />
+            <FxIntro />
+          </>
+        )}
         {!docs && <SiteHeader />}
         <Outlet />
         {!docs && <SiteFooter />}

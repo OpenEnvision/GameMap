@@ -90,40 +90,35 @@ test("paper research, year and source filters compose and retain source status",
   expect(params.get("campaign")).toBe("keep");
 });
 
-test("game genre and license filters expose evidence without claiming playtesting", async ({
+test("Three.js games use shared search and dimensions while retaining complete evidence", async ({
   page,
 }) => {
-  test.skip(!full, "Requires the full remote snapshot");
+  const projects = content.registry.all("threejs-game");
+  test.skip(!projects.length, "Requires Three.js game records");
+  const project = projects[0];
   await page.goto("threejs-games/");
-  await expect(page.locator(".catalog-game-card")).toHaveCount(24);
+  await expect(page).toHaveURL(/\/examples\/$/);
   await page
-    .getByRole("combobox", { name: "Genre", exact: true })
-    .selectOption("puzzle");
-  await page.locator(".catalog-refinements > summary").click();
-  await page
-    .getByRole("combobox", { name: "License", exact: true })
-    .selectOption("MIT");
-  const matching = content.registry
-    .all("threejs-game")
-    .filter(
-      (entry) =>
-        entry.data.genres.includes("puzzle") &&
-        entry.data.license.spdx === "MIT",
-    );
-  await expect(page.locator(".catalog-game-card")).toHaveCount(
-    Math.min(24, matching.length),
+    .getByRole("textbox", { name: "Search game examples", exact: true })
+    .fill(project.data.name);
+  await page.getByRole("button", { name: "3D", exact: true }).click();
+  const card = page.locator(
+    `#game-examples > [data-content-ref="${project.key}"]`,
   );
-  await expect(page.locator(".catalog-game-card").first()).toBeVisible();
-  for (const card of await page.locator(".catalog-game-card").all()) {
-    await expect(card.locator(".catalog-license")).toHaveText("MIT");
-    await expect(card.locator(".catalog-game-review")).toContainText(
-      "Not playtested",
-    );
-  }
-  const first = page.locator(".catalog-game-card").first();
-  const key = await first.getAttribute("data-content-ref");
-  await first.locator("h2 a").click();
-  await expect(page.locator(`[data-content-key="${key}"]`)).toBeVisible();
+  await expect(card).toHaveCount(1);
+  await expect(card).toHaveAttribute("data-access-kind", "source");
+  const detail = card.getByRole("link", {
+    name: "Complete record",
+    exact: true,
+  });
+  await expect(detail).toHaveAttribute(
+    "href",
+    new RegExp(`/examples/${project.id}/$`),
+  );
+  await detail.click();
+  await expect(
+    page.locator(`[data-content-key="${project.key}"]`),
+  ).toBeVisible();
   const outline = page.getByRole("navigation", {
     name: "On this record",
     exact: true,
@@ -153,9 +148,10 @@ test("static collections expose every record and canonical Chinese guides hydrat
       "All records are shown",
     );
     await page.goto("threejs-games/");
-    await expect(page.locator(".catalog-game-card")).toHaveCount(
-      content.registry.all("threejs-game").length,
-    );
+    await expect(page).toHaveURL(/\/examples\/$/);
+    await expect(
+      page.locator('#game-examples > [data-content-ref^="threejs-game:"]'),
+    ).toHaveCount(content.registry.all("threejs-game").length);
   } finally {
     await context.close();
   }
@@ -196,7 +192,7 @@ test("catalog layouts fit narrow screens and both themes without clipping contro
         (value) => localStorage.setItem("theme", value),
         theme,
       );
-      for (const path of ["zh/", "zh/papers/", "zh/threejs-games/"]) {
+      for (const path of ["zh/", "zh/papers/", "zh/examples/"]) {
         await page.goto(path);
         await expect(page.locator("html")).toHaveClass(new RegExp(theme));
         await expect(page.locator('[data-client-ready="true"]')).toHaveCount(1);
@@ -207,7 +203,7 @@ test("catalog layouts fit narrow screens and both themes without clipping contro
           `${width}px ${theme} ${path}`,
         ).toBe(true);
         await expect(page.locator("h1")).toBeVisible();
-        if (width >= 1120 && path !== "zh/") {
+        if (width >= 1120 && path === "zh/papers/") {
           const contrast = await page
             .locator('.catalog-area-list button[aria-pressed="true"]')
             .evaluate((element) => {

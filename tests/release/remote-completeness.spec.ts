@@ -21,11 +21,7 @@ test("the full remote snapshot retains native collections and canonical guides",
   ).toHaveLength(content.registry.all("threejs-game").length);
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
-  for (const path of [
-    "papers/",
-    "threejs-games/",
-    "docs/guides/practical-guide/",
-  ]) {
+  for (const path of ["papers/", "examples/", "docs/guides/practical-guide/"]) {
     await page.goto(path);
     await expect(page.locator("h1")).toBeVisible();
     expect(

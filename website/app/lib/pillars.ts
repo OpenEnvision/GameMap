@@ -1,8 +1,6 @@
 import { pages, type PageId } from "../../content/site";
-import { communityEnabled } from "./community";
 
-/** One destination inside a pillar. Collection pages keep their stable
- *  `data-collection-id`; other links (such as community work) do not. */
+/** One destination inside a pillar, with its canonical collection identity. */
 export type PillarLink = {
   path: string;
   title: string;
@@ -40,17 +38,6 @@ export const pillars: readonly Pillar[] = [
         "examples",
         "Playable starting points with source and build stories.",
       ),
-      collection("threejsGames", "Browser games built with Three.js."),
-      // Community pages need the community API; static builds leave them out.
-      ...(communityEnabled
-        ? [
-            {
-              path: pages.works.path,
-              title: pages.works.title,
-              blurb: "Games shared and rated by the community.",
-            },
-          ]
-        : []),
     ],
   },
   {
@@ -84,10 +71,7 @@ export const pillars: readonly Pillar[] = [
     id: "learn",
     label: "Learn",
     kicker: "Learn",
-    description: "Guides and paths from a first idea to a released game.",
-    links: [
-      collection("docs", "Practical guides and field notes."),
-      collection("paths", "Step-by-step paths from idea to release."),
-    ],
+    description: "Guides from a first idea to a released game.",
+    links: [collection("docs", "Practical guides and field notes.")],
   },
 ];

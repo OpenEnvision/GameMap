@@ -461,9 +461,15 @@ export default function Submit() {
                     )}
                     <div className="community-submission-actions">
                       {item.published && (
-                        <Link to={`/works/?id=${item.id}`}>
-                          {t("View work")}
-                        </Link>
+                        <a
+                          href={item.payload.url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {item.payload.accessKind === "playable"
+                            ? t("Play the game")
+                            : t("Get the game")}
+                        </a>
                       )}
                       {item.published && (
                         <button

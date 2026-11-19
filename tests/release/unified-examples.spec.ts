@@ -1,6 +1,5 @@
 import { test, expect } from "@playwright/test";
 import { loadContent } from "../../scripts/lib/content.mjs";
-import open3dImport from "../../website/content/open3d-import.config.json" with { type: "json" };
 import { researchGamesForExamples } from "../../website/content/research-games";
 
 const content = await loadContent();
@@ -8,9 +7,7 @@ const examples = [
   ...content.registry.all("example"),
   ...content.registry.all("foundation"),
 ];
-const importedThreejs = content.registry
-  .all("threejs-game")
-  .filter((entry) => open3dImport.includedLegacyThreejsIds.includes(entry.id));
+const importedThreejs = content.registry.all("threejs-game");
 const research = researchGamesForExamples(
   content.registry.all("repository-research"),
   [...examples, ...importedThreejs],

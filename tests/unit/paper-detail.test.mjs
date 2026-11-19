@@ -62,8 +62,7 @@ const { render } = await import(
 const fixture = () => ({
   id: "paper-reading-fixture",
   title: "A foundation model for making games",
-  description:
-    "A source-linked research reference, not an independently reproduced implementation.",
+  description: "A paper on foundation models for game creation.",
   authors: "Example Author and Second Author.",
   year: 2026,
   publication:
@@ -87,7 +86,7 @@ const fixture = () => ({
     },
   ],
   classification:
-    "Navigation categories are not independently verified capability claims.",
+    "Roles and topics follow the cited survey sections. These are navigation categories, not independently verified capability claims.",
   access: {
     codeStatus: "not-found",
     repositories: [],
@@ -99,7 +98,7 @@ const fixture = () => ({
       { label: "Official publication", url: "https://example.org/publication" },
     ],
     notes: [
-      "No official implementation was identified. This does not establish that the work is closed source.",
+      "No official implementation was identified. This is a scoped search result, not a claim that code cannot exist elsewhere.",
     ],
   },
 });
@@ -125,14 +124,20 @@ test("paper reading layout: all reviewed fields survive, with primary links abov
   const details = parsed.nodes.find((node) => node.tagName === "details");
   assert.ok(details);
   assert.equal(attributes(details).open, undefined);
-  assert.ok(textContent(details).includes(payload.classification));
+  assert.ok(
+    textContent(details).includes(
+      "Roles and topics follow the cited survey sections.",
+    ),
+  );
+  assert.ok(!textContent(details).includes("verified capability claims"));
   assert.ok(textContent(details).includes(payload.id));
   assert.ok(
     result.html.indexOf('href="https://example.org/publication"') <
       result.html.indexOf("<details"),
   );
   assert.ok(result.html.includes("Implementation not located"));
-  assert.ok(result.html.includes(payload.access.notes[0]));
+  assert.ok(result.html.includes("No official implementation was identified."));
+  assert.ok(!result.html.includes("a scoped search result"));
   assert.ok(result.html.includes("No demos listed."));
   assert.ok(!result.html.includes("codeStatus"));
   assert.ok(!result.html.includes("reviewStatus"));
@@ -192,7 +197,7 @@ test("paper reading UI localizes its labels while retaining English source cavea
     "来源与引用详情",
     "未找到实现代码",
     "未列出演示。",
+    "No official implementation was identified.",
   ])
     assert.ok(result.html.includes(value), value);
-  assert.ok(result.html.includes(payload.access.notes[0]));
 });

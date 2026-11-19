@@ -201,12 +201,16 @@ export async function validateSelection(
       assert.ok(entry, `Missing normalized record: ${record.key}`);
       assert.equal(
         entry.url,
-        record.canonical_path,
+        record.kind === "threejs-game"
+          ? context.canonicalGamePath(record.canonical_path)
+          : record.canonical_path,
         `Canonical address changed: ${record.key}`,
       );
       assert.equal(
         entry.collectionUrl,
-        record.collection_path,
+        record.kind === "threejs-game"
+          ? context.canonicalGamePath(record.collection_path)
+          : record.collection_path,
         `Owning collection changed: ${record.key}`,
       );
       assert.equal(
@@ -235,10 +239,16 @@ export async function validateSelection(
   for (const record of records) {
     for (const field of ["pageCover", "archivedPageCover"]) {
       const cover = record.body.attachments[field];
-      if (
-        cover?.origin === "catalog-page-capture" &&
-        cover.sourceSnapshot.canonicalPath !== record.canonical_path
-      )
+      if (cover?.origin !== "catalog-page-capture") continue;
+      const capturedPath =
+        record.kind === "threejs-game"
+          ? context.canonicalGamePath(cover.sourceSnapshot.canonicalPath)
+          : cover.sourceSnapshot.canonicalPath;
+      const recordPath =
+        record.kind === "threejs-game"
+          ? context.canonicalGamePath(record.canonical_path)
+          : record.canonical_path;
+      if (capturedPath !== recordPath)
         issues.push(
           issue(
             record.key,

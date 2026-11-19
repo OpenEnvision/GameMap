@@ -14,6 +14,11 @@ export const textContent = (node) =>
     ? node.value
     : (node.childNodes || []).map(textContent).join("");
 const normalizeText = (text) => text.replace(/\s+/g, " ").trim();
+// Paths and steps remain authoring records but have no public pages or search results.
+export const publicEntries = (registry) =>
+  registry.entries.filter(
+    (entry) => entry.kind !== "path" && entry.kind !== "step",
+  );
 export function elements(node, result = []) {
   if (node.tagName) result.push(node);
   for (const child of node.childNodes || []) elements(child, result);
@@ -235,7 +240,8 @@ export async function assertRenderedCoverage(
       return href ? [new URL(address(href, base, indexUrl))] : [];
     }),
   );
-  for (const entry of registry.entries) {
+  const entries = publicEntries(registry);
+  for (const entry of entries) {
     const canonical = await page(entry.url);
     const records = canonical.nodes.filter(
       (node) => attributes(node)["data-content-key"] === entry.key,
@@ -271,6 +277,9 @@ export async function assertRenderedCoverage(
       ),
       `${entry.key}: missing owning collection entrance in site navigation`,
     );
+    // Guides are read from the sidebar. /docs/ and /docs/zh/ open the practical
+    // guide instead of repeating that list on a directory page.
+    if (entry.kind === "document") continue;
     const collection = await page(discovery.collectionUrl);
     const owners = collection.nodes.filter(
       (node) =>
@@ -294,7 +303,7 @@ export async function assertRenderedCoverage(
           discovery.collectionUrl,
         );
   }
-  return { records: registry.entries.length, pages: cache.size };
+  return { records: entries.length, pages: cache.size };
 }
 /** Compare original Markdown, not merely MDX metadata or a nonempty prose wrapper. */
 export function assertMarkdownCoverage(
@@ -392,7 +401,8 @@ export function assertSearchCoverage(
     index.documents.length,
     "Search identities must be unique",
   );
-  for (const entry of registry.entries) {
+  const entries = publicEntries(registry);
+  for (const entry of entries) {
     const document = pages.get(entry.key);
     assert.ok(document, `Search omits ${entry.key}`);
     assert.equal(
@@ -472,7 +482,7 @@ export function assertSearchCoverage(
   }
   assert.equal(
     pages.size,
-    registry.entries.length,
-    "Search contains unregistered or duplicate page identities",
+    entries.length,
+    "Search contains unregistered or non-public page identities",
   );
 }

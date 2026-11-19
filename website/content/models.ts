@@ -3,7 +3,6 @@ export type ContentModels = PayloadModels;
 export type RepositoryResearchRecord = PayloadModels["repository-research"];
 export type DocumentMetadata = PayloadModels["document"];
 export type PathContent = PayloadModels["path"];
-export type StepContent = PayloadModels["step"];
 export type DemoContent = PayloadModels["demo"];
 export type ContentKind = keyof ContentModels;
 export interface ContentKindDefinition {
@@ -27,7 +26,7 @@ export const contentKinds = {
   "threejs-game": {
     label: "Three.js game",
     plural: "Three.js games",
-    page: "threejsGames",
+    page: "examples",
     owner: "database",
     schemaVersion: 4,
     validatorKey: "gamemap.threejs-game",
@@ -91,7 +90,7 @@ export const contentKinds = {
   path: {
     label: "Development path",
     plural: "Development paths",
-    page: "paths",
+    page: "docs",
     owner: "database",
     schemaVersion: 1,
     validatorKey: "gamemap.path",
@@ -99,7 +98,7 @@ export const contentKinds = {
   step: {
     label: "Path step",
     plural: "Steps & checkpoints",
-    page: "paths",
+    page: "docs",
     owner: "database",
     schemaVersion: 2,
     validatorKey: "gamemap.step",
@@ -184,7 +183,10 @@ export type FieldRule<T, K extends keyof T> =
   | {
       section?: ContentSection;
       includeNull?: boolean;
-      present: (value: T[K], record: T) => BlockValue[];
+      present: (
+        value: T[K],
+        record: T,
+      ) => (BlockValue & { section?: ContentSection })[];
     };
 export type FieldRules<T> = { [K in keyof T]-?: FieldRule<T, K> };
 export interface BaseContent<K extends ContentKind> {

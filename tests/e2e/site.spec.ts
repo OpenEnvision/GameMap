@@ -152,12 +152,20 @@ test("examples and test-library filters retain source details", async ({
   ).toHaveCount(catalog.counts.example);
   await page.getByRole("button", { name: "2D", exact: true }).click();
   await expect(page).toHaveURL(/track=2d/);
+  await expect(page.locator("#game-examples .build-notes")).toHaveCount(0);
   const card = page.locator(".example-card").first();
-  await card.locator("summary").click();
-  await expect(card.locator(".build-notes")).toHaveAttribute("open", "");
   await expect(
     card.getByRole("link", { name: "Project source", exact: true }),
   ).toHaveAttribute("href", /^https:/);
+  const record = page.locator("#opengame-tower-defense");
+  await record
+    .getByRole("link", { name: "Complete record", exact: true })
+    .click();
+  await expect(page).toHaveURL(/\/examples\/opengame-tower-defense\/$/);
+  await expect(page.locator('[data-content-field="steps"]')).toContainText(
+    "Open the live game",
+  );
+  await expect(page.locator('[data-content-field="aiUse"]')).toBeVisible();
   await page.goto("testing/");
   await expect(page.locator(".testing-card")).toHaveCount(
     catalog.counts.testing,
@@ -197,9 +205,6 @@ test("documents render on the server and navigate without an API server", async 
   );
   if (isMobile) await page.keyboard.press("Escape");
   await page.goto("docs/");
-  await page
-    .getByRole("link", { name: "New here? Start with the practical guide." })
-    .click();
   await expect(page).toHaveURL(/docs\/guides\/practical-guide\/$/);
   await expect(page.locator("#nd-page .prose")).toContainText(
     "Define the deliverable",
@@ -243,7 +248,7 @@ test("responsive layout, theme toggle, and navigation", async ({
       .click();
     await page
       .getByRole("navigation", { name: "Mobile navigation", exact: true })
-      .getByRole("link", { name: "Game examples" })
+      .getByRole("link", { name: "Games", exact: true })
       .click();
     await expect(
       page.getByRole("button", { name: "Open navigation", exact: true }),
@@ -283,12 +288,11 @@ test("Chinese documentation has localized navigation and an English counterpart"
     .locator(".documentation-language")
     .getByRole("link", { name: "中文", exact: true })
     .click();
-  await expect(page).toHaveURL(/\/docs\/zh\/$/);
+  await expect(page).toHaveURL(/\/docs\/zh\/guides\/practical-guide\/$/);
   await expect(page.locator("html")).toHaveAttribute("lang", "zh-CN");
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("中文文档");
-  await page
-    .getByRole("link", { name: "第一次来？从实践指南开始。", exact: false })
-    .click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "从资源地图到可运行的游戏",
+  );
   await expect(page.locator("#nd-page .prose")).toContainText(
     "先定义交付物，再选择工具",
   );

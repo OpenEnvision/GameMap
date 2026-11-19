@@ -1,16 +1,16 @@
-import type { ReactNode } from "react";
 import { Link, SourceLanguage, useSiteI18n } from "../lib/i18n";
 import { publicAsset } from "../lib/catalog";
 import type { LearningMedia } from "../../src/data/learningMedia";
 import type { PageCover } from "../../src/data/pageCovers";
 import { chineseMessages, type Locale } from "../../content/locale";
+import { pageCoverAlt } from "../../content/media";
 import { RatingSummary } from "./community";
 
 const accessLabels = {
   playable: "Playable build",
   download: "Downloadable build",
-  source: "Source only / release unverified",
-  reference: "Project reference / source unverified",
+  source: "Source link",
+  reference: "Project reference",
 } as const;
 
 /** One card for games and prototypes, with explicit release/source-only status.
@@ -33,7 +33,6 @@ export function GameCard({
   sourceUrl,
   media,
   pageCover,
-  notes,
   extraLink,
   compact = false,
 }: {
@@ -45,11 +44,10 @@ export function GameCard({
   track: "2d" | "3d";
   engine: string;
   demo: { url: string; kind: "playable" | "download" | "source" | "reference" };
-  recordUrl: string;
+  recordUrl?: string;
   sourceUrl?: string;
   media?: Pick<LearningMedia, "src" | "alt" | "width" | "height">;
   pageCover?: PageCover;
-  notes?: ReactNode;
   extraLink?: { label: string; url: string };
   compact?: boolean;
 }) {
@@ -101,7 +99,7 @@ export function GameCard({
         {image && (
           <img
             src={publicAsset(image.src)}
-            alt={image.alt}
+            alt={fallback ? pageCoverAlt(image.alt) : image.alt}
             width={image.width}
             height={image.height}
             loading="lazy"
@@ -112,14 +110,14 @@ export function GameCard({
           <span className="page-cover-label">
             {t(
               fallback.origin === "catalog-page-capture"
-                ? "GameMap record · not upstream or gameplay"
-                : "Project page · not gameplay",
+                ? "GameMap page screenshot"
+                : "Project page screenshot",
             )}
           </span>
         )}
         {!image && (
           <span className="game-preview-unavailable">
-            {t("No reviewed screenshot")}
+            {t("No screenshot available")}
           </span>
         )}
         <span className="image-action">
@@ -155,11 +153,15 @@ export function GameCard({
         <p lang={descriptionLanguage === "en" ? "en" : undefined}>
           {description}
         </p>
-        <RatingSummary gameKey={contentKey} recordUrl={recordUrl} />
+        {recordUrl && (
+          <RatingSummary gameKey={contentKey} recordUrl={recordUrl} />
+        )}
         <div className="example-links">
-          <Link to={recordUrl} reloadDocument>
-            {t("Complete record")}
-          </Link>
+          {recordUrl && (
+            <Link to={recordUrl} reloadDocument>
+              {t("Complete record")}
+            </Link>
+          )}
           {sourceUrl && (
             <a href={sourceUrl} target="_blank" rel="noreferrer">
               {t(referenceOnly ? "Project reference" : "Project source")}
@@ -177,7 +179,6 @@ export function GameCard({
             </a>
           )}
         </div>
-        {!compact && notes}
       </div>
     </article>
   );

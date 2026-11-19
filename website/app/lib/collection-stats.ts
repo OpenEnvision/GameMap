@@ -1,4 +1,3 @@
-import open3dImport from "../../content/open3d-import.config.json";
 import {
   researchGamesForExamples,
   researchNotInExamples,
@@ -11,7 +10,7 @@ import type { ContentRegistry } from "../../content/models";
  * a number never changes between the link and the page it opens:
  * - the examples header (routes/examples.tsx) lists native examples and engine
  *   foundations, source-reviewed research games with their own build, legacy
- *   three.js games imported into the gallery and approved community
+ *   Three.js games and approved community
  *   submissions;
  * - the research ledger (routes/research.tsx) omits every repository that is
  *   already listed as a game example.
@@ -44,11 +43,7 @@ export type GameStats = {
 function catalogGames(content: Collections) {
   return {
     native: [...content.all("example"), ...content.all("foundation")],
-    imported: content
-      .all("threejs-game")
-      .filter((entry) =>
-        open3dImport.includedLegacyThreejsIds.includes(entry.id),
-      ),
+    imported: content.all("threejs-game"),
   };
 }
 
@@ -89,14 +84,6 @@ export function gameStats(facets: readonly GameFacet[]): GameStats {
     threeD: facets.filter(([track]) => track === "3d").length,
     twoD: facets.filter(([track]) => track === "2d").length,
   };
-}
-
-/** The examples header figures for the whole catalog (no filters). */
-export function exampleStats(
-  content: Collections,
-  submitted: readonly SubmittedGame[] = [],
-): GameStats {
-  return gameStats(exampleGameFacets(exampleGames(content), submitted));
 }
 
 /** The records the research ledger lists: repositories that are not already

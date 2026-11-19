@@ -1,13 +1,5 @@
 import { useState } from "react";
-import {
-  GitBranch,
-  KeyRound,
-  Mail,
-  MessageCircle,
-  Star,
-  Upload,
-  UserRound,
-} from "lucide-react";
+import { GitBranch, KeyRound, Mail, UserRound } from "lucide-react";
 import { Link, useSiteI18n } from "../lib/i18n";
 import { useClientQuery } from "../lib/client-query";
 import { useCommunity } from "../lib/community";
@@ -66,27 +58,18 @@ export default function Account() {
           </header>
           <ul className="community-perks">
             <li>
-              <Star size={18} aria-hidden="true" />
-              <span>
-                <strong>{t("Rate games")}</strong>
-                {t("Score playable records from one to five stars.")}
-              </span>
+              <strong>{t("Rate games")}</strong>
+              {t("Score playable records from one to five stars.")}
             </li>
             <li>
-              <MessageCircle size={18} aria-hidden="true" />
-              <span>
-                <strong>{t("Join the discussion")}</strong>
-                {t("Comment on games and flag problems for moderators.")}
-              </span>
+              <strong>{t("Join the discussion")}</strong>
+              {t("Comment on games and flag problems for moderators.")}
             </li>
             <li>
-              <Upload size={18} aria-hidden="true" />
-              <span>
-                <strong>{t("Submit your game")}</strong>
-                {t(
-                  "Send your own work for review; it stays private until approved.",
-                )}
-              </span>
+              <strong>{t("Submit your game")}</strong>
+              {t(
+                "Send your own work for review; it stays private until approved.",
+              )}
             </li>
           </ul>
         </div>

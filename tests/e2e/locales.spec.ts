@@ -17,10 +17,9 @@ test("every main Chinese view has a real localized title and no overflow", async
     ["zh/resources/", "选择合适的开发工具。"],
     ["zh/examples/", "从一个可玩的项目开始。"],
     ["zh/agents/", "让代理接入实际开发流程。"],
-    ["zh/paths/", "按步骤推进，而不是堆叠工具。"],
     ["zh/testing/", "用实际任务检验改动。"],
     ["zh/research/", "找到值得研究的项目。"],
-    ["docs/zh/", "中文文档"],
+    ["docs/zh/guides/practical-guide/", "从资源地图到可运行的游戏"],
   ];
   for (const [path, title] of pages) {
     const response = await page.goto(path);
@@ -239,39 +238,51 @@ test("homepage navigation reaches Chinese documents without a separate content d
     await menu.click();
     await page
       .locator("#mobile-navigation")
-      .getByRole("link", { name: "Guides & notes", exact: true })
+      .getByRole("link", { name: "Learn", exact: true })
       .click();
   } else {
-    // Guides live in the Learn pillar panel of the floating navigation.
-    await page.locator('.nav-pillar[data-pillar="learn"] > summary').click();
     await page.locator('a[data-collection-id="docs"]').click();
   }
+  await expect(page).toHaveURL(/\/docs\/guides\/practical-guide\/$/);
   await page
     .locator(".documentation-language")
     .getByRole("link", { name: "中文", exact: true })
     .click();
-  const source = page.locator(
-    '[data-content-ref="document:zh/guides/practical-guide"]',
-  );
-  await expect(source).toHaveAttribute(
-    "href",
-    /\/docs\/zh\/guides\/practical-guide\/$/,
-  );
-  // The complete directory lists every guide inside native disclosures.
-  const group = page.locator("details", { has: source });
-  if ((await group.count()) && !(await group.first().getAttribute("open")))
-    await group.first().locator("summary").first().click();
-  await source.click();
+  await expect(page).toHaveURL(/\/docs\/zh\/guides\/practical-guide\/$/);
   await expect(page.locator("html")).toHaveAttribute("lang", "zh-CN");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "从资源地图到可运行的游戏",
+  );
 });
 
-test("Chinese resources, paths and complete translated articles work without JavaScript", async ({
+test("resources, translated articles and guide entrances work without JavaScript", async ({
   browser,
   baseURL,
 }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   try {
     const page = await context.newPage();
+    for (const [entrance, target, title] of [
+      [
+        "docs/",
+        "docs/guides/practical-guide/",
+        "From resource map to runnable game",
+      ],
+      [
+        "docs/zh/",
+        "docs/zh/guides/practical-guide/",
+        "从资源地图到可运行的游戏",
+      ],
+      [
+        "zh/docs/",
+        "docs/zh/guides/practical-guide/",
+        "从资源地图到可运行的游戏",
+      ],
+    ]) {
+      await page.goto(new URL(entrance, baseURL).href);
+      await expect(page).toHaveURL(new URL(target, baseURL).href);
+      await expect(page.getByRole("heading", { level: 1 })).toHaveText(title);
+    }
     await page.goto(baseURL + "zh/resources/");
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(
       "选择合适的开发工具。",
@@ -279,10 +290,6 @@ test("Chinese resources, paths and complete translated articles work without Jav
     await expect(
       page.locator('[data-content-ref="resource:codex"]'),
     ).toContainText("本地仓库");
-    await page.goto(baseURL + "zh/paths/2d/");
-    await expect(
-      page.locator('[data-content-field="deliverable"]').first(),
-    ).toContainText("一页游戏简报");
     await page.goto(baseURL + "docs/zh/ecosystem/agents/");
     await expect(page.locator("#nd-page .prose")).toHaveAttribute(
       "lang",

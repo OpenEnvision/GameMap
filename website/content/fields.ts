@@ -59,7 +59,7 @@ export function presentFields<T extends object>(
       ...shown.map((block) => ({
         ...block,
         field: String(key),
-        section: rule.section,
+        section: block.section ?? rule.section,
       })),
     );
   }
@@ -255,14 +255,14 @@ export const exampleFields: FieldRules<ContentModels["example"]> = {
     {
       "ai-generated": "AI-generated (creator attribution)",
       "ai-assisted": "AI-assisted (creator attribution)",
-      community: "Community game — no AI-authorship claim",
-      foundation: "Human-authored engine foundation — not an AI-created game",
+      community: "Community game",
+      foundation: "Official engine example",
     },
     "provenance",
   ),
-  aiUse: text("AI workflow / foundation context"),
+  aiUse: text("Development context"),
   intake: {
-    section: "provenance",
+    section: "metadata",
     present: (value) =>
       value
         ? [
@@ -281,15 +281,18 @@ export const exampleFields: FieldRules<ContentModels["example"]> = {
                 { type: "text", label: "SHA-256", value: value.sha256 },
                 {
                   type: "text",
-                  label: "Verification boundary",
-                  value: value.verification,
+                  label: "Review basis",
+                  value:
+                    value.verification ===
+                    "Provided directory; source, release, code and asset licenses not independently rechecked"
+                      ? "Supplied directory metadata"
+                      : value.verification,
                 },
                 ...(value.homepage
                   ? [
                       {
                         type: "link" as const,
-                        label:
-                          "Supplied project website — not a verified play link",
+                        label: "Project website",
                         url: value.homepage,
                       },
                     ]
@@ -316,9 +319,9 @@ export const exampleFields: FieldRules<ContentModels["example"]> = {
     present: (value) =>
       describedLink(
         value.kind === "source"
-          ? "Source reference — release unverified"
+          ? "Source reference"
           : value.kind === "reference"
-            ? "Project reference — source unverified"
+            ? "Project reference"
             : "Play or run",
         value,
         demoKeys,
@@ -328,15 +331,26 @@ export const exampleFields: FieldRules<ContentModels["example"]> = {
     present: (value) =>
       describedLink(
         value.scope === "project-reference"
-          ? "Project reference — source unverified"
+          ? "Project reference"
           : "Project source",
         value,
         sourceKeys,
       ),
   },
   evidence: {
-    present: (value) =>
-      value ? describedLink("Creator evidence", value, evidenceKeys) : [],
+    present: (value) => {
+      if (!value) return [];
+      const blocks = describedLink("Creator evidence", value, evidenceKeys);
+      const imported =
+        value.label === "Read supplied directory references" ||
+        value.note?.startsWith("Imported input ");
+      return imported
+        ? blocks.map((block) => ({
+            ...block,
+            section: "metadata" as const,
+          }))
+        : blocks;
+    },
   },
   resourceIds: {
     present: (value) => [
@@ -377,7 +391,7 @@ export const agentFields: FieldRules<ContentModels["agent"]> = {
     instructions: "Instructions",
     mixed: "Mixed implementation and instructions",
   }),
-  codeScope: text("What the source actually contains"),
+  codeScope: text("Source contents"),
   limitations: text("Limitations"),
   publisher: text("Publisher"),
   official: {
@@ -415,7 +429,7 @@ export const testingFields: FieldRules<ContentModels["testing"]> = {
   terms: mapped("Terms category", testingTerms, "provenance"),
   licenseUrl: link("Read the terms"),
   evidence: { present: (value) => linkedObjects("Supporting evidence", value) },
-  aiUseNote: text("AI use and evaluation boundary"),
+  aiUseNote: text("AI use in testing"),
   testTasks: list("Try these tasks"),
   setup: list("Setup", true),
   limitations: text("Limitations"),
@@ -637,8 +651,7 @@ const alternativeLabels = {
   merged_at: "Historical merge date",
   merge_commit_sha: "Merge commit",
   old_link: "Historical link",
-  replacement_link:
-    "Replacement mentioned by the source (not an authenticated redirect)",
+  replacement_link: "Replacement mentioned by the source",
   attribution: "Evidence and interpretation boundary",
 };
 const evidenceLabels = {
@@ -646,7 +659,7 @@ const evidenceLabels = {
   line_start: "First line",
   line_end: "Last line",
   url: "Pinned source",
-  finding: "Static source finding (not runtime verification)",
+  finding: "Source inspection findings",
 };
 function factArray(
   label: string,
@@ -688,19 +701,14 @@ export const repositoryResearchFields: FieldRules<
     },
     "provenance",
   ),
-  disposition: text(
-    "Research disposition (not resource or playable-case status)",
-  ),
+  disposition: text("Research disposition"),
   availability: text("Recorded availability"),
   canonical_repo: nullableText(
     "Current identity recorded in the ledger",
     "provenance",
     true,
   ),
-  group: mapped(
-    "Original discovery group (not a capability or authorship claim)",
-    repositoryResearch.group_titles,
-  ),
+  group: mapped("Original discovery group", repositoryResearch.group_titles),
   game_access: factObject("Linked game build", {
     title: "Game title",
     track: "Game dimension",
@@ -709,7 +717,7 @@ export const repositoryResearchFields: FieldRules<
     url: "Play or download",
     source_url: "Build link evidence",
     checked_at: "Build link checked",
-    note: "Access conditions — not a playtest",
+    note: "Access conditions",
   }),
   license_note: text("License and rights boundary"),
   ai_note: text("AI attribution boundary"),
@@ -730,15 +738,10 @@ export const repositoryResearchFields: FieldRules<
     ],
   },
   revision: {
-    ...factObject(
-      "Inspected revision — not an installed release",
-      revisionLabels,
-    ),
+    ...factObject("Inspected revision", revisionLabels),
     section: "metadata",
   },
-  readme_blob_sha: nullableText(
-    "Inspected README blob SHA — not a repository release pin",
-  ),
+  readme_blob_sha: nullableText("Inspected README blob SHA"),
   maintainer: {
     ...factObject("Recorded maintainer / account", maintainerLabels),
     section: "metadata",
@@ -784,16 +787,11 @@ export const repositoryResearchFields: FieldRules<
         path: "Related path",
       }),
   },
-  alternative_repo: nullableText(
-    "Separately identified alternative — not an authenticated redirect",
-  ),
+  alternative_repo: nullableText("Separately identified alternative"),
   alternative_url: link("Separately identified alternative source"),
-  historical_source: factObject(
-    "Historical source — not current availability",
-    historicalSourceLabels,
-  ),
+  historical_source: factObject("Historical source", historicalSourceLabels),
   historical_pointer: factObject(
-    "Historical migration pointer — not a live replacement",
+    "Historical migration pointer",
     historicalPointerLabels,
   ),
   source_evidence: {
@@ -958,7 +956,14 @@ function paperAccessBlocks(
     blocks.push({
       type: "list",
       label: "Availability notes",
-      items: value.notes,
+      items: value.notes.map((note) =>
+        note
+          .replace(
+            " This is a scoped search result, not a claim that code cannot exist elsewhere.",
+            "",
+          )
+          .replace(" This is not a claim that the work is closed source.", ""),
+      ),
     });
   if (value.evidence.length)
     blocks.push(...linkedObjects("Review evidence", value.evidence));
@@ -1084,7 +1089,16 @@ const paperFields: FieldRules<ContentModels["paper"]> = {
             },
           ],
   },
-  classification: text("Classification caveat", "provenance"),
+  classification: {
+    section: "provenance",
+    present: (value) =>
+      text("Classification notes").present(
+        value.replace(
+          " These are navigation categories, not independently verified capability claims.",
+          "",
+        ),
+      ),
+  },
   access: { section: "provenance", present: paperAccessBlocks },
 };
 const threejsGameFields: FieldRules<ContentModels["threejs-game"]> = {
@@ -1101,10 +1115,10 @@ const threejsGameFields: FieldRules<ContentModels["threejs-game"]> = {
       ...nativeFacts("Gameplay evidence").present(value),
     ],
   },
-  license: nativeFacts("License and asset caveats"),
-  demo: nativeFacts("Demo availability (not playtesting)"),
+  license: nativeFacts("License and asset terms"),
+  demo: nativeFacts("Demo availability"),
   maturity: nativeFacts("Maturity evidence"),
-  verification: nativeFacts("Source review (not publication approval)"),
+  verification: nativeFacts("Source review"),
   limitations: { ...list("Limitations"), section: "provenance" },
 };
 export const fieldRules: {

@@ -7,12 +7,10 @@ import type { DocumentMetadata } from "../../content/models";
 import { pages, url } from "../../content/site";
 import {
   docLocale,
-  docHome,
   docMessages,
   type DocLocale,
 } from "../../content/doc-language";
-import { communityEnabled } from "./community";
-import { pillars, type Pillar } from "./pillars";
+import { pillars } from "./pillars";
 import { LanguageSwitcher, Link, useSiteI18n } from "./i18n";
 export function documentGroups(manifest: readonly DocumentMetadata[]) {
   return [...new Set(manifest.map((page) => page.group))].map((title) => {
@@ -52,13 +50,6 @@ export function DocumentationLanguage(_props: {
   return <LanguageSwitcher className="documentation-language" />;
 }
 
-/** A pillar's destinations as the docs link them. Community pages need the
- *  community API, so builds without it leave that link out. */
-function destinations(pillar: Pillar) {
-  return pillar.links.filter(
-    (link) => communityEnabled || link.path !== pages.works.path,
-  );
-}
 /** The docs are the "Learn" pillar's guides: marked, not aria-current, so the
  *  sidebar's current document stays the page's only current link. */
 const isDocs = (path: string) => path === pages.docs.path;
@@ -80,7 +71,7 @@ function PillarRail() {
         >
           <span className="docs-pillar-label">{t(pillar.label)}</span>
           <ul>
-            {destinations(pillar).map((link) => (
+            {pillar.links.map((link) => (
               <li key={link.path}>
                 <Link
                   to={link.path}
@@ -116,7 +107,7 @@ export function DocumentationSiteBand() {
             <div key={pillar.id} data-pillar={pillar.id}>
               <h2>{t(pillar.label)}</h2>
               <ul>
-                {destinations(pillar).map((link) => (
+                {pillar.links.map((link) => (
                   <li key={link.path}>
                     <Link to={link.path}>{t(link.title)}</Link>
                   </li>
@@ -158,11 +149,6 @@ export function DocumentationLayout({
   const tree: Root = {
     name: text.title,
     children: [
-      {
-        type: "page",
-        name: text.home,
-        url: href(docHome(locale)).replace(/\/$/, ""),
-      },
       ...documentGroups(selected).map((group) => ({
         type: "folder" as const,
         name: t(group.title),

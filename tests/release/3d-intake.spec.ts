@@ -48,7 +48,7 @@ test("all new directory cases retain source-only actions and original Chinese in
       ).toBe(true);
     } else if (cover)
       await expect(card.locator(".page-cover-label")).toContainText(
-        "非游戏截图",
+        /(?:GameMap 资料页|项目页面)截图/,
       );
     await expect(card.locator(".example-body > p")).toContainText(
       context.translationCatalogs.zh.content[entry.key].description,

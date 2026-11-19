@@ -1,6 +1,5 @@
 import { test, expect } from "@playwright/test";
 import { loadContent } from "../../scripts/lib/content.mjs";
-import open3dImport from "../../website/content/open3d-import.config.json" with { type: "json" };
 import {
   researchGamesForExamples,
   researchNotInExamples,
@@ -13,11 +12,7 @@ const examples = content.registry.all("example");
 const nativeGames = [
   ...examples,
   ...content.registry.all("foundation"),
-  ...content.registry
-    .all("threejs-game")
-    .filter((entry) =>
-      open3dImport.includedLegacyThreejsIds.includes(entry.id),
-    ),
+  ...projects,
 ];
 const repositories = content.registry.all("repository-research");
 const researchGames = researchGamesForExamples(repositories, nativeGames);
@@ -57,12 +52,19 @@ for (const prefix of ["", "zh/"]) {
       String(papers.length),
     );
     await page.goto(`${prefix}threejs-games/`);
-    await expect(page.locator(".catalog-game-card")).toHaveCount(
-      Math.min(24, projects.length),
-    );
-    await page.goto(`${prefix}examples/`);
+    await expect(page).toHaveURL(new RegExp(`/${prefix}examples/$`));
     await expect(page.locator("#game-examples > .example-card")).toHaveCount(
       nativeGames.length + researchGames.length,
+    );
+    const threejsCard = page.locator(`[data-content-ref="${projects[0].key}"]`);
+    await expect(
+      threejsCard.getByRole("link", {
+        name: content.translate(prefix ? "zh" : "en", "Complete record"),
+        exact: true,
+      }),
+    ).toHaveAttribute(
+      "href",
+      new RegExp(`/${prefix}examples/${projects[0].id}/$`),
     );
     const gameKeys = await page
       .locator("#game-examples > .example-card")

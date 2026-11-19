@@ -818,13 +818,6 @@ export function TypedCollection({
                   </button>
                 ))}
             </nav>
-            <p className="catalog-sidebar-note">
-              {t(
-                isPaper
-                  ? "One paper can belong to several research areas. Classification is a reading aid, not a verified capability claim."
-                  : "Genres come from the source records. Source review does not mean the games were playtested.",
-              )}
-            </p>
           </aside>
           <div className="catalog-main">
             <div className="catalog-mobile-category">

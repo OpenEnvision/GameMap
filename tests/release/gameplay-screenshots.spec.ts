@@ -74,7 +74,7 @@ test("gameplay details keep localized descriptions, original files and explicitl
     if (value.archivedPageCover)
       await expect(
         page.locator('[data-content-field="archivedPageCover"]'),
-      ).toContainText("非游戏截图");
+      ).toContainText(/(?:GameMap 资料页|项目页面)截图/);
   }
 });
 

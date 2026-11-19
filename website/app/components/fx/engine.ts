@@ -16,12 +16,6 @@ export const GLOW_SELECTOR = [
   ".content-card",
   ".catalog-game-card",
   ".catalog-paper-row",
-  ".path-card",
-  ".demo-card",
-  ".category-tile",
-  ".docs-start",
-  ".docs-home-task",
-  ".hero-spotlight",
 ].join(",");
 
 /** Controls that lean toward the pointer. Templates may opt in with data-magnetic. */
@@ -448,8 +442,9 @@ export function startPageFx() {
     if (anchor.target !== "_blank") retireIntro();
   };
   window.addEventListener("click", onClick, { capture: true });
-  // The intro is pure CSS and over after ~1.4s; later pages skip its delays.
-  const timer = window.setTimeout(retireIntro, 2600);
+  // The intro is pure CSS and over after ~4.1s; later pages skip its delays.
+  // Retire it only once the entrance it holds back has finished as well.
+  const timer = window.setTimeout(retireIntro, 5000);
   return () => {
     window.removeEventListener("click", onClick, { capture: true });
     window.clearTimeout(timer);

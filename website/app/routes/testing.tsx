@@ -65,7 +65,7 @@ export default function Testing() {
       />
       <IndexHero
         pillar="tools"
-        kicker="A WORKBENCH, NOT A LEADERBOARD"
+        kicker="TESTING WORKBENCH"
         title="Give your ideas a real test."
         lede="Working projects, environments, and assets for a more grounded development workflow."
         count={entries.length}

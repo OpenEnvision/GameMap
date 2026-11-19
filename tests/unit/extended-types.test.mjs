@@ -22,6 +22,7 @@ import {
 import { projectSnapshot } from "../../scripts/lib/catalog/projection.mjs";
 import { walkValues, digest } from "../../scripts/lib/catalog/codec.mjs";
 import { validateSelection } from "../../scripts/lib/catalog/validation.mjs";
+import { assertSiteInput } from "../../scripts/lib/catalog/site-input.mjs";
 import { studioFixture } from "../helpers/studio-fixture.mjs";
 
 const context = await loadContent();
@@ -278,7 +279,15 @@ test("extended contracts, adapters, forms, assembly and canonical routes have re
   );
   assert.equal(
     canonicalAddress(context, "threejs-game", game.id, game),
-    `/threejs-games/${game.id}/`,
+    `/examples/${game.id}/`,
+  );
+  assert.equal(context.contentKinds["threejs-game"].page, "examples");
+  assert.deepEqual(
+    context.languageAlternates(`/zh/threejs-games/${game.id}/`),
+    {
+      en: `/examples/${game.id}/`,
+      zh: `/zh/examples/${game.id}/`,
+    },
   );
   assert.equal(
     canonicalAddress(context, "paper", paper.id, paper),
@@ -295,9 +304,13 @@ test("extended contracts, adapters, forms, assembly and canonical routes have re
 
 test("static paper/game detail routes activate only for generated records, in both locales", async () => {
   for (const populated of [false, true]) {
-    const paths = ["/papers/", "/threejs-games/"];
+    const paths = ["/papers/", "/examples/", "/threejs-games/"];
     if (populated)
-      paths.push(`/papers/${paper.id}/`, `/threejs-games/${game.id}/`);
+      paths.push(
+        `/papers/${paper.id}/`,
+        `/examples/${game.id}/`,
+        `/threejs-games/${game.id}/`,
+      );
     const compiled = await build({
       entryPoints: [resolve("website/app/routes.ts")],
       bundle: true,
@@ -341,6 +354,8 @@ test("static paper/game detail routes activate only for generated records, in bo
       "threejsGames",
       "zh-papers",
       "zh-threejsGames",
+      "example-detail",
+      "zh-example-detail",
       "resource-detail",
     ])
       assert.ok(
@@ -497,6 +512,9 @@ test("generic projections render every native evidence/license/review value and 
     "/papers/",
     "/threejs-games/",
     `/papers/${paper.id}/`,
+    `/examples/${game.id}/`,
+    `/zh/examples/${game.id}/`,
+    `/threejs-games/${game.id}/`,
     `/zh/threejs-games/${game.id}/`,
   ])
     assert.ok(context.staticPagePaths(registry).includes(path));
@@ -519,6 +537,18 @@ test("generic projections render every native evidence/license/review value and 
     false,
   );
   const localized = context.localizedRegistry(registry, "zh");
+  assert.equal(
+    registry.require("threejs-game", game.id).collectionUrl,
+    "/examples/",
+  );
+  assert.equal(
+    localized.require("threejs-game", game.id).url,
+    `/zh/examples/${game.id}/`,
+  );
+  assert.equal(
+    localized.require("threejs-game", game.id).collectionUrl,
+    "/zh/examples/",
+  );
   assert.ok(
     localized
       .require("threejs-game", game.id)
@@ -527,6 +557,21 @@ test("generic projections render every native evidence/license/review value and 
   await validateSelection(context, snapshot.entries, snapshot.translations, {
     configuration,
   });
+  const legacy = structuredClone(snapshot.entries);
+  const legacyGame = legacy.find((row) => row.kind === "threejs-game");
+  legacyGame.canonical_path = `/threejs-games/${game.id}/`;
+  legacyGame.collection_path = "/threejs-games/";
+  await validateSelection(context, legacy, snapshot.translations, {
+    configuration,
+  });
+  assertSiteInput({ ...context, registry }, { records: legacy });
+  legacyGame.canonical_path = "/threejs-games/another-game/";
+  await assert.rejects(
+    validateSelection(context, legacy, snapshot.translations, {
+      configuration,
+    }),
+    /Canonical address changed/,
+  );
   const wrong = structuredClone(snapshot.entries);
   const changed = wrong.find((row) => row.kind === "threejs-game");
   changed.body.summary = "Falsely claims playtesting";

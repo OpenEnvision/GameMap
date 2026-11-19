@@ -9,11 +9,11 @@ This version is for real local verification at `http://127.0.0.1:4191`. It needs
 - One 1–5 star rating per user per game, which the user can change. Cards show the average and the number of ratings; detail pages host the discussion.
 - Plain-text comments, deletion by the author, reports, and moderator handling.
 - Users with a verified email can submit game details, an HTTPS play or download link, an optional source repository, and 1–5 real screenshots.
-- Submissions are reviewed first. Once approved they appear immediately in the existing example card list, without modifying or activating the catalog snapshot.
+- Submissions are reviewed first. Once approved they appear immediately in the existing example card list, without modifying or activating the catalog snapshot; their cards open the published game and keep no separate community record page.
 
 ## Builds
 
-The community UI and its `/api/community` requests are switched on only in builds made with `VITE_GAMEMAP_COMMUNITY=1`; other builds still contain the code but never mount the community provider. Release builds (`npm run site:build`), which the publication server below serves, set it automatically. `npm run build` and `npm run dev` leave it unset, so GitHub Pages and other static copies make no community requests: ratings and discussions are hidden, community navigation links are not shown, and `/account/`, `/submit/` and `/works/` explain that the community server is required. Do not put the flag in `.env`: Vite reads that file during `npm run build` and would turn an ordinary static build into a community build.
+The community UI and its `/api/community` requests are switched on only in builds made with `VITE_GAMEMAP_COMMUNITY=1`; other builds still contain the code but never mount the community provider. Release builds (`npm run site:build`), which the publication server below serves, set it automatically. `npm run build` leaves it unset, so GitHub Pages and other static copies make no community requests: ratings and discussions are hidden, community navigation links are not shown, and `/account/` and `/submit/` explain that the community server is required. `npm run dev` sets it only when a development community has been provisioned. Do not put the flag in `.env`: Vite reads that file during `npm run build` and would turn an ordinary static build into a community build.
 
 ## Enable locally
 
@@ -90,6 +90,17 @@ npm run test:community
 ```
 
 These tests cover rating updates, ownership of comments and reports, submission revision approval, private image boundaries, permission isolation between ordinary users and Studio, server-side tokens, and PKCE. Static builds are covered by `tests/e2e/community-static.spec.ts` (`npm run build`, then `npm run test:web`). Read-only page regressions for community builds live in `tests/release/community.spec.ts`; they use clearly labelled display data and do not pass themselves off as real sign-in acceptance. Evidence from local real-Auth and browser write and moderation acceptance is kept in the ignored `.build/community-platform/` directory. The test account files there contain credentials and must not be published.
+
+## Development preview
+
+The Vite dev server can serve the same accounts, ratings and comments for the catalog you are currently editing, not just for the last published snapshot:
+
+```sh
+npm run community:dev
+# restart `npm run dev`
+```
+
+This writes `.build/catalog-local/community-dev.json` (private, origin `http://127.0.0.1:5174`) and indexes every game the examples page lists. Working-catalog games get `dev:`-prefixed rows, so ratings and comments made while editing stay out of the published preview's records; approved submissions remain shared. The dev server mounts `/api/community`, `/auth/callback` and `/community-media/`, and `npm run dev` then turns on the account links and rating summaries. Sign up at `/account/` and confirm the address in Mailpit at `http://127.0.0.1:54324`; `http://127.0.0.1:5174/auth/callback` is already in the local redirect allowlist. Without `community-dev.json` the dev server stays a plain static preview.
 
 ## Production boundaries
 

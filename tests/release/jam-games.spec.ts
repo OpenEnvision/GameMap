@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { loadContent } from "../../scripts/lib/content.mjs";
+import { pageCoverAlt } from "../../website/content/media";
 
 const content = await loadContent();
 const game = content.registry
@@ -22,15 +23,18 @@ test("ordinary source-reviewed games are searchable without invented AI attribut
     await expect(card.locator("img")).toHaveAttribute("alt", screenshot.alt);
     await expect(card.locator(".game-preview-unavailable")).toHaveCount(0);
   } else if (pageCover) {
-    await expect(card.locator("img")).toHaveAttribute("alt", pageCover.alt);
+    await expect(card.locator("img")).toHaveAttribute(
+      "alt",
+      pageCoverAlt(pageCover.alt),
+    );
     await expect(card.locator(".page-cover-label")).toHaveText(
       pageCover.origin === "catalog-page-capture"
-        ? "GameMap record · not upstream or gameplay"
-        : "Project page · not gameplay",
+        ? "GameMap page screenshot"
+        : "Project page screenshot",
     );
   } else {
     await expect(card.locator(".game-preview-unavailable")).toHaveText(
-      "No reviewed screenshot",
+      "No screenshot available",
     );
     await expect(card.locator("img")).toHaveCount(0);
   }
@@ -53,10 +57,10 @@ test("ordinary source-reviewed games are searchable without invented AI attribut
     .getByRole("link", { name: "Complete record", exact: true })
     .click();
   await expect(page.locator('[data-content-field="category"]')).toContainText(
-    "Community game — no AI-authorship claim",
+    "Community game",
   );
   await expect(page.locator('[data-content-field="aiUse"]')).toContainText(
-    "not independently verified",
+    "Source checked",
   );
 });
 
@@ -76,10 +80,12 @@ test("Chinese game introductions remain localized and the public evidence ledger
     await expect(card.locator(".game-preview-unavailable")).toHaveCount(0);
   } else if (pageCover) {
     await expect(card.locator("img")).toHaveCount(1);
-    await expect(card.locator(".page-cover-label")).toContainText("非游戏截图");
+    await expect(card.locator(".page-cover-label")).toContainText(
+      /(?:GameMap 资料页|项目页面)截图/,
+    );
   } else {
     await expect(card.locator(".game-preview-unavailable")).toHaveText(
-      "暂无已核实的游戏截图",
+      "暂无截图",
     );
   }
   await expect(page.locator(".gallery-hero .heading-links")).toHaveCount(0);

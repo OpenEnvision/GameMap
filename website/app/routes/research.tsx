@@ -3,24 +3,19 @@ import { Search, ArrowRight } from "lucide-react";
 import { contentFor } from "../../content/registry.server";
 import { matchesSearch } from "../../content/matching";
 import { searchableText } from "../../content/search";
-import { researchNotInExamples } from "../../content/research-games";
-import open3dImport from "../../content/open3d-import.config.json";
+import { researchLedger } from "../lib/collection-stats";
 import { ContentCard } from "../components/content";
 import { useClientQuery } from "../lib/client-query";
 import { Link, useSiteI18n } from "../lib/i18n";
 import { IndexEmpty, IndexHero } from "../components/catalog-browser";
+
+const description =
+  "Browse more game repositories beyond the examples gallery.";
+
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
   return {
-    records: researchNotInExamples(content.all("repository-research"), [
-      ...content.all("example"),
-      ...content.all("foundation"),
-      ...content
-        .all("threejs-game")
-        .filter((entry) =>
-          open3dImport.includedLegacyThreejsIds.includes(entry.id),
-        ),
-    ]),
+    records: researchLedger(content),
   };
 }
 export default function RepositoryResearch() {
@@ -50,17 +45,12 @@ export default function RepositoryResearch() {
   return (
     <main id="main-content" className="ix-page ix-research">
       <title>{t("Repository research ledger — GameMap")}</title>
-      <meta
-        name="description"
-        content={t(
-          "Repositories not yet included in game examples. Already-listed games are omitted here.",
-        )}
-      />
+      <meta name="description" content={t(description)} />
       <IndexHero
         pillar="research"
-        kicker="DISCOVERY IS NOT VALIDATION"
+        kicker="GAME REPOSITORIES"
         title="The repository research ledger."
-        lede="Repositories not yet included in game examples. Already-listed games are omitted here."
+        lede={description}
         count={records.length}
         countLabel="repositories reviewed"
       >

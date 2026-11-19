@@ -19,6 +19,7 @@ import { researchExampleListings } from "./research-games";
 import open3dImport from "./open3d-import.config.json";
 import { anyPageCoverSchema, gameplayMediaSchema } from "./contracts";
 import type { GameplayMedia } from "../src/data/gameplayScreenshots";
+import { pageCoverAlt } from "./media";
 
 const imageKeys = {
   src: true,
@@ -182,7 +183,10 @@ function appendGameplayScreenshot(
         field: "gameplayRights",
         section: "provenance",
         label: "Screenshot rights",
-        value: complete.rights,
+        value: complete.rights.replace(
+          "; no reuse permission or runtime certification is inferred.",
+          ".",
+        ),
       },
     );
 }
@@ -301,8 +305,7 @@ export function createRegistry(
       entry.blocks.push({
         type: "list",
         field: "attribution",
-        label:
-          "Creator-attributed clients / models (not inferred from related tools)",
+        label: "Creator-reported clients and models",
         items: attribution.map((id) => {
           const name = sources.agentLabels[id];
           check(name, `Unknown attribution: ${id}`);
@@ -442,8 +445,8 @@ export function createRegistry(
         section: "provenance",
         label:
           cover.origin === "catalog-page-capture"
-            ? "Earlier GameMap record cover — not gameplay"
-            : "Earlier project page cover — not gameplay",
+            ? "Earlier GameMap page screenshot"
+            : "Earlier project page screenshot",
         items: [
           {
             label: "Original page capture",
@@ -469,16 +472,15 @@ export function createRegistry(
         type: "image",
         field: "pageCover",
         section: "media",
-        label: cover.caption,
+        label:
+          cover.origin === "catalog-page-capture"
+            ? "GameMap page screenshot"
+            : "Project page screenshot",
         src: publicAsset(cover.src),
-        alt: cover.alt,
+        alt: pageCoverAlt(cover.alt),
         source: /^(?:https?:)/.test(cover.sourceUrl)
           ? cover.sourceUrl
           : publicAsset(cover.sourceUrl),
-        credit:
-          cover.origin === "catalog-page-capture"
-            ? "GameMap record — not upstream or gameplay"
-            : "Project page cover — not gameplay",
         width: cover.width,
         height: cover.height,
       },
@@ -506,7 +508,8 @@ export function createRegistry(
         field: "pageCoverRights",
         section: "provenance",
         label: "Page cover rights",
-        value: cover.rights,
+        value:
+          "Page text, logos, and images belong to their respective rights holders.",
       },
     );
     if (cover.origin === "catalog-page-capture")
@@ -650,7 +653,11 @@ export function assertRegistryCoverage(
   );
   for (const entry of registry.entries) {
     const path = entry.url.split("#")[0];
-    if (["document", "step", "collection", "testing-pack"].includes(entry.kind))
+    if (
+      ["document", "step", "path", "collection", "testing-pack"].includes(
+        entry.kind,
+      )
+    )
       continue;
     check(
       detailRoutes.some(
@@ -665,7 +672,15 @@ export function assertRegistryCoverage(
 export function staticPagePaths(registry: ContentRegistry) {
   const original = [
     ...Object.values(pages).map((page) => page.path),
-    ...registry.entries.map((entry) => entry.url.split("#")[0]),
+    ...registry.entries
+      .filter((entry) => entry.kind !== "path" && entry.kind !== "step")
+      .map((entry) => entry.url.split("#")[0]),
+    // Prerender the old addresses as redirects on static hosts as well.
+    ...registry
+      .all("threejs-game")
+      .map(
+        (entry) => `${pages.threejsGames.path}${encodeURIComponent(entry.id)}/`,
+      ),
   ];
   const documents = documentLanguages(
     registry.all("document").map((entry) => entry.data),

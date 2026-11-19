@@ -101,24 +101,27 @@ for (const [name, research, props] of [
     assert.equal(attributes(image).height, String(media.height));
     assert.equal(attributes(image).loading, "lazy");
     assert.match(attributes(image).src, /^\/media\//);
-    for (const name of ["card-meta", "build-notes", "example-links"])
+    for (const name of ["card-meta", "example-links"])
       assert.ok(
         page.nodes.some((node) => hasClass(node, name)),
         `Missing shared ${name}`,
       );
+    assert.equal(
+      page.nodes.filter((node) => node.tagName === "details").length,
+      0,
+      "Build notes belong on the complete record, not the card",
+    );
     const links = page.nodes.find((node) => hasClass(node, "example-links"));
     assert.equal(
       links.childNodes.filter((node) => node.tagName === "a").length,
       3,
     );
-    if (research) {
-      assert.ok(textContent(article).includes(record.data.ai_note));
+    if (research)
       assert.equal(
         page.nodes.filter((node) => node.tagName === "ol").length,
         0,
         "Do not invent a creator workflow for research games",
       );
-    }
   });
 
 test("compact creator cards still preserve images and omit expanded workflows", () => {
@@ -132,7 +135,7 @@ test("compact creator cards still preserve images and omit expanded workflows", 
   );
 });
 
-test("foundation provenance stays inside notes without overlapping the shared description row", () => {
+test("foundation cards keep one description and leave provenance on the record", () => {
   for (const entry of context.registry.all("foundation")) {
     const page = parsePage(render(false, { game: entry.data }));
     const body = page.nodes.find((node) => hasClass(node, "example-body"));
@@ -142,12 +145,7 @@ test("foundation provenance stays inside notes without overlapping the shared de
     );
     assert.equal(
       body.childNodes.filter((node) => node.tagName === "details").length,
-      1,
-    );
-    assert.ok(
-      textContent(body).includes(
-        "Official engine examples, not AI-authorship claims.",
-      ),
+      0,
     );
   }
 });
@@ -169,7 +167,7 @@ test("source-only imported cards expose source actions, not invented play or dow
   const action = page.nodes.find((node) => hasClass(node, "image-action"));
   assert.match(textContent(action), /View source/);
   assert.doesNotMatch(textContent(action), /Play the game|Get the game/);
-  assert.ok(textContent(article).includes("Source only / release unverified"));
+  assert.ok(textContent(article).includes("Source link"));
 });
 
 test("project references expose an observed project page, never a source or play/download claim", () => {
@@ -188,9 +186,7 @@ test("project references expose an observed project page, never a source or play
     textContent(action),
     /View source|Play the game|Get the game/,
   );
-  assert.ok(
-    textContent(article).includes("Project reference / source unverified"),
-  );
+  assert.ok(textContent(article).includes("Project reference"));
 });
 
 test("page covers are visibly non-gameplay fallback media without changing access actions", () => {
@@ -206,7 +202,7 @@ test("page covers are visibly non-gameplay fallback media without changing acces
   );
   assert.equal(
     textContent(page.nodes.find((n) => hasClass(n, "page-cover-label"))),
-    "Project page · not gameplay",
+    "Project page screenshot",
   );
   assert.equal(
     page.nodes.some((n) => hasClass(n, "game-preview-unavailable")),
@@ -240,7 +236,7 @@ test("catalog-record covers are visibly distinct from upstream pages and gamepla
   );
   assert.equal(
     textContent(page.nodes.find((n) => hasClass(n, "page-cover-label"))),
-    "GameMap record · not upstream or gameplay",
+    "GameMap page screenshot",
   );
   assert.equal(
     attributes(page.nodes.find((n) => hasClass(n, "example-image"))).href,

@@ -1,4 +1,4 @@
-import { pages, detailRoutes } from "./site";
+import { pages, detailRoutes, canonicalGamePath } from "./site";
 import chinese from "./i18n/zh.json";
 import documentMessages from "./i18n/docs.zh.json";
 export type Locale = "en" | "zh";
@@ -73,6 +73,7 @@ export function languageAlternates(
   path: string,
   documents = emptyDocumentLanguages,
 ): Partial<Record<Locale, string>> {
+  path = canonicalGamePath(path);
   const logical = unlocalizedPath(path).replace(/\/$/, "") || "/";
   if (logical.startsWith("/docs/") && logical !== "/docs/zh") {
     const slug = logical.slice("/docs/".length).replace(/^zh\//, "");

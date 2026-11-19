@@ -1,6 +1,6 @@
 import { use, useEffect } from "react";
 import { useLoaderData, type LoaderFunctionArgs } from "react-router";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { DocsBody, DocsPage, DocsTitle } from "fumadocs-ui/layouts/docs/page";
 import { docs, source } from "../lib/source";
 import {
@@ -9,11 +9,7 @@ import {
   DocumentationSiteBand,
 } from "../lib/docs";
 import { Brand } from "../components/site-shell";
-import {
-  docHome,
-  documentBodyLocale,
-  docMessages,
-} from "../../content/doc-language";
+import { documentBodyLocale, docMessages } from "../../content/doc-language";
 import { localeFromPath } from "../../content/locale";
 import { contentFor } from "../../content/registry.server";
 import { retiredDocumentTarget } from "../../content/site";
@@ -158,8 +154,6 @@ function Document({
       <header className="reader-masthead">
         <div className="reader-masthead-bar">
           <nav className="reader-trail" aria-label={t("Breadcrumb")}>
-            <Link to={docHome(locale)}>{text.title}</Link>
-            <ChevronRight size={13} aria-hidden="true" />
             <span>{t(info.group)}</span>
           </nav>
           <DocumentationLanguage

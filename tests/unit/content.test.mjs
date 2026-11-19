@@ -379,6 +379,51 @@ test("reader guides start with the task, not editorial disclaimers", async () =>
     );
   }
 });
+test("import ledgers remain internal while creator evidence and source links stay public in both locales", () => {
+  const imported = registry
+    .all("example")
+    .find(
+      (entry) =>
+        entry.data.intake &&
+        entry.data.evidence?.note?.startsWith("Imported input "),
+    );
+  const attributed = registry
+    .all("example")
+    .find((entry) => entry.data.evidence && !entry.data.intake);
+  assert.ok(imported);
+  assert.ok(attributed);
+  for (const current of [registry, context.localizedRegistry(registry, "zh")]) {
+    const entry = current.require("example", imported.id);
+    const metadata = entry.blocks.filter((block) =>
+      ["intake", "evidence"].includes(block.field),
+    );
+    assert.deepEqual(
+      [...new Set(metadata.map((block) => block.field))].sort(),
+      ["evidence", "intake"],
+    );
+    assert.ok(metadata.every((block) => block.section === "metadata"));
+    const text = context.searchableText(entry);
+    assert.ok(!text.includes(imported.data.intake.sha256));
+    assert.ok(!text.includes(imported.data.intake.dataset));
+    const sources = entry.blocks.filter((block) => block.field === "source");
+    assert.ok(sources.length);
+    for (const block of sources) {
+      assert.notEqual(block.section, "metadata");
+      assert.ok(text.includes(context.blockText(block)));
+    }
+    const creator = current.require("example", attributed.id);
+    const evidence = creator.blocks.filter(
+      (block) => block.field === "evidence",
+    );
+    assert.ok(evidence.length);
+    for (const block of evidence) {
+      assert.notEqual(block.section, "metadata");
+      assert.ok(
+        context.searchableText(creator).includes(context.blockText(block)),
+      );
+    }
+  }
+});
 test("source-only metadata is preserved in blocks but omitted from reader search", () => {
   const entry = {
     ...registry.entries[0],
@@ -597,25 +642,27 @@ test("document URL policy preserves rendered routes, source assets, and deployme
     /Unregistered Markdown/,
   );
 });
-test("static search contains every canonical identity and rejects missing text", () => {
-  const documents = registry.entries.map((entry) => ({
-    key: entry.key,
-    kind: entry.kind,
-    title: entry.title,
-    url: entry.url,
-    text: [
-      ...new Set(
-        [
-          entry.title,
-          entry.description,
-          ...entry.blocks
-            .filter((block) => block.section !== "metadata")
-            .map(context.blockText),
-          entry.kind === "document" ? "Article body fixture" : "",
-        ].filter(Boolean),
-      ),
-    ].join("\n"),
-  }));
+test("static search contains every public canonical identity and rejects missing text", () => {
+  const documents = registry.entries
+    .filter((entry) => entry.kind !== "path" && entry.kind !== "step")
+    .map((entry) => ({
+      key: entry.key,
+      kind: entry.kind,
+      title: entry.title,
+      url: entry.url,
+      text: [
+        ...new Set(
+          [
+            entry.title,
+            entry.description,
+            ...entry.blocks
+              .filter((block) => block.section !== "metadata")
+              .map(context.blockText),
+            entry.kind === "document" ? "Article body fixture" : "",
+          ].filter(Boolean),
+        ),
+      ].join("\n"),
+    }));
   assert.doesNotThrow(() =>
     assertSearchCoverage(
       registry,

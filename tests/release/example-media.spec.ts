@@ -27,7 +27,7 @@ test("reviewed community previews load as real image pixels and preserve explici
     const card = page.locator(`[data-content-ref="example:${row.id}"]`);
     await expect(card.locator("img")).toHaveCount(0);
     await expect(card.locator(".game-preview-unavailable")).toHaveText(
-      "暂无已核实的游戏截图",
+      "暂无截图",
     );
   }
   const decoded = await page.evaluate(async () => {

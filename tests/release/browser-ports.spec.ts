@@ -41,7 +41,7 @@ test("fourth-batch source references and browser project pages never become fabr
     );
     if (context.sources.pageCovers[entry.key])
       await expect(card.locator(".page-cover-label")).toContainText(
-        "非游戏截图",
+        /(?:GameMap 资料页|项目页面)截图/,
       );
   }
   for (const m of ports.mappings.filter(

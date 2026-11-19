@@ -11,6 +11,7 @@ import {
   assertRenderedCoverage,
   assertSearchCoverage,
   assertMarkdownCoverage,
+  publicEntries,
   parsePage,
   attributes,
 } from "../lib/rendered-coverage.mjs";
@@ -185,7 +186,7 @@ if (process.argv.includes("--built")) {
       "utf8",
     );
   const result = await assertRenderedCoverage(zh, readPage, site.base, "/zh/");
-  for (const entry of zh.entries) {
+  for (const entry of publicEntries(zh)) {
     const html = await readPage(entry.url),
       page = parsePage(html),
       element = page.nodes.find((node) => node.tagName === "html");

@@ -1,7 +1,7 @@
 import { test, expect, type APIRequestContext } from "@playwright/test";
 import type { ContentEntry, ContentKind } from "../../website/content/models";
 import { agentResourceKinds } from "../../website/src/data/agentGameTypes";
-import { url } from "../../website/content/site";
+import { navigation, url } from "../../website/content/site";
 
 type PublishedRecord = Pick<
   ContentEntry,
@@ -77,70 +77,28 @@ test("homepage navigation and global search retain every deliverable's direct ad
 }) => {
   const manifest = await inventory(request, baseURL);
   await page.goto("");
-  await expect(page.locator("a[data-collection-id]")).toHaveCount(9);
-  const step = manifest.records.find((entry) => entry.kind === "step")!;
-  const deliverable = step.blocks.find(
-    (block) => block.field === "deliverable",
+  await expect(page.locator("a[data-collection-id]")).toHaveCount(
+    navigation.length,
   );
-  if (!deliverable || deliverable.type !== "text")
-    throw new Error("Missing declared deliverable fixture");
+  const resource = manifest.records.find((entry) => entry.kind === "resource")!;
   await page
     .getByRole("textbox", {
       name: "Search all game development content",
       exact: true,
     })
-    .fill(deliverable.value);
+    .fill(resource.title);
   await page
     .getByRole("button", { name: "Search all content from home", exact: true })
     .click();
   const result = page
     .getByRole("dialog")
-    .locator(`[role="option"][id="fd-search-option-${step.key}"]`);
+    .locator(`[role="option"][id="fd-search-option-${resource.key}"]`);
   await expect(result).toBeVisible();
   await result.click();
   await expect(page).toHaveURL(
-    new RegExp(step.url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "$"),
+    new RegExp(resource.url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "$"),
   );
-  await expect(
-    page.locator(
-      `[data-content-key="${step.key}"] [data-content-field="deliverable"]`,
-    ),
-  ).toContainText(deliverable.value);
-});
-
-test("each development track keeps every deliverable and acceptance checkpoint", async ({
-  page,
-  request,
-  baseURL,
-}) => {
-  const manifest = await inventory(request, baseURL);
-  for (const track of manifest.records.filter(
-    (entry) => entry.kind === "path",
-  )) {
-    await page.goto(route(track.url));
-    const steps = manifest.records.filter(
-      (entry) => entry.kind === "step" && entry.url.split("#")[0] === track.url,
-    );
-    await expect(page.locator('[data-content-kind="step"]')).toHaveCount(
-      steps.length,
-    );
-    for (const step of steps)
-      for (const field of ["deliverable", "check"]) {
-        const block = step.blocks.find((block) => block.field === field);
-        if (!block || block.type !== "text")
-          throw new Error(`Missing fixture ${step.key}.${field}`);
-        await expect(
-          page.locator(
-            `[data-content-key="${step.key}"] [data-content-field="${field}"]`,
-          ),
-        ).toContainText(block.value);
-      }
-    expect(
-      await page.evaluate(
-        () => document.documentElement.scrollWidth <= window.innerWidth,
-      ),
-    ).toBeTruthy();
-  }
+  await expect(page.locator("h1")).toContainText(resource.title);
 });
 
 test("toolkit filters stay with tools while creator attribution filters live in Examples", async ({
@@ -379,13 +337,6 @@ test("new structured content remains readable without JavaScript", async ({
     viewport: configuredPage.viewportSize(),
   });
   const page = await context.newPage();
-  await page.goto(baseURL + "paths/2d/");
-  expect(
-    await page.locator('[data-content-field="deliverable"]').count(),
-  ).toBeGreaterThan(0);
-  await expect(
-    page.locator('[data-content-field="deliverable"]').first(),
-  ).toBeVisible();
   await page.goto(baseURL + "testing/");
   await expect(
     page.getByRole("textbox", { name: "Search testing resources" }),
@@ -398,7 +349,9 @@ test("new structured content remains readable without JavaScript", async ({
     page.locator('[data-content-field="historical_source"]'),
   ).toBeVisible();
   await page.goto(baseURL + "explore/");
-  await expect(page.locator("[data-collection-id]")).toHaveCount(9);
+  await expect(page.locator("[data-collection-id]")).toHaveCount(
+    navigation.length,
+  );
   await expect(page.locator("main [data-content-ref]")).toHaveCount(0);
   await page.goto(baseURL + "showcase/opengame-skirmish/");
   await expect(page.locator("video:visible")).toHaveAttribute("controls", "");

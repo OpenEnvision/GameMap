@@ -157,12 +157,11 @@
   backdrop-filter: blur(24px) saturate(1.4);
 }
 
-/* The site's four pillars sit above the document tree as a small site map:
-   a mono label per pillar and its destinations, two pillars to a row. */
+/* The site's four pillars sit above the document tree as a small site map.
+   One column: Chinese labels such as 论文与研究资料 do not fit two abreast. */
 .docs-pillar-rail {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px 12px;
+  gap: 14px;
   margin: 0 0 6px;
   padding: 6px 8px 18px;
   border-bottom: 1px solid var(--line);
@@ -847,19 +846,8 @@ html[lang="zh-CN"] #nd-page .document-information > summary {
   gap: 14px;
   margin-top: 20px;
 }
-#nd-page.docs-home .reader-pager {
-  margin-top: clamp(80px, 10vw, 140px);
-}
 /* A lone "next" card sits in the right-hand column, like a page turn. */
 @container reader (min-width: 600px) {
-  #nd-page .reader-pager {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  #nd-page .reader-pager > a.text-end:only-child {
-    grid-column: 2;
-  }
-}
-@container docs-home (min-width: 600px) {
   #nd-page .reader-pager {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -915,8 +903,7 @@ html[lang="zh-CN"] #nd-page .document-information > summary {
 /* root.tsx leaves the site header and footer out of the docs (Fumadocs owns
    that layout), so the reading room closes like the rest of GameMap: brand,
    the four pillars and the wordmark, cropped by the bottom of the page. */
-#nd-page.reader-page:has(> .reader-site-band),
-#nd-page.docs-home:has(> .reader-site-band) {
+#nd-page.reader-page:has(> .reader-site-band) {
   padding-bottom: 0;
 }
 #nd-page .reader-site-band {

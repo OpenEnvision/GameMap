@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { createHash } from "node:crypto";
 import { loadContent } from "../../scripts/lib/content.mjs";
+import { pageCoverAlt } from "../../website/content/media";
 const content = await loadContent();
 const covers = Object.entries(content.sources.pageCovers);
 const retainedCovers = { ...content.sources.pageCovers };
@@ -38,10 +39,13 @@ test("fallback page covers keep explicit non-gameplay labels and source provenan
     );
     await expect(card.locator(".page-cover-label")).toHaveText(
       cover.origin === "catalog-page-capture"
-        ? "GameMap资料页 · 非官网／非游戏截图"
-        : "项目页面 · 非游戏截图",
+        ? "GameMap 资料页截图"
+        : "项目页面截图",
     );
-    await expect(card.locator("img")).toHaveAttribute("alt", cover.alt);
+    await expect(card.locator("img")).toHaveAttribute(
+      "alt",
+      pageCoverAlt(cover.alt),
+    );
     const src = (await card.locator("img").getAttribute("src"))!;
     expect(src.endsWith("/" + cover.src)).toBe(true);
     const picture = await request.get(src);
@@ -63,7 +67,7 @@ test("page-cover details preserve the original frame, source and capture date wi
     await page.goto("zh" + entry.url);
     await expect(
       page.locator('[data-content-field="pageCover"]'),
-    ).toContainText("非游戏");
+    ).toContainText(/(?:GameMap 资料页|项目页面)截图/);
     const sourceHref = await page
       .locator('[data-content-field="pageCover"] a')
       .getAttribute("href");
@@ -105,7 +109,7 @@ test("page covers and truthful actions survive without JavaScript", async ({
     for (const [key] of covers.slice(0, 4)) {
       const card = page.locator(`[data-content-ref="${key}"]`);
       await expect(card.locator(".page-cover-label")).toContainText(
-        "非游戏截图",
+        /(?:GameMap 资料页|项目页面)截图/,
       );
       await expect(card.locator("img")).toHaveCount(1);
     }

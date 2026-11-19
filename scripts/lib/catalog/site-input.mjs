@@ -94,7 +94,9 @@ export function assertSiteInput(context, input) {
     );
     assert.equal(
       entry.url,
-      record.canonical_path,
+      record.kind === "threejs-game"
+        ? context.canonicalGamePath(record.canonical_path)
+        : record.canonical_path,
       `Release address changed: ${record.key}`,
     );
   }

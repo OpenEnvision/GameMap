@@ -31,13 +31,6 @@ const storyPlayIds = [
   "long-wind-claude",
   "moonlight-mayhem-codex",
 ];
-/** Screenshots for the Games tile of the bento; the wall order fills gaps. */
-const mosaicIds = [
-  "long-wind-claude",
-  "nova-lancer-claude",
-  "jam-scales-of-the-golden-dragon",
-  "dragons-reach-claude",
-];
 /** The wall shows a fixed, seeded shuffle so prerendered HTML is stable. */
 const WALL_SIZE = 80;
 const WALL_SEED = 0x6a3e;
@@ -47,9 +40,10 @@ const buildToolIds = [
   "gemini-cli",
   "godot-engine",
   "unity-engine",
-  "blender",
   "threejs",
+  "blender",
   "meshy",
+  "pixellab",
 ];
 const marqueeRows = [
   [
@@ -81,27 +75,10 @@ const marqueeRows = [
     "marble",
   ],
 ];
-/** Reading-room picks. Documents move between topic folders, so the loader
- *  follows the site's redirect table to each guide's current address. */
+/** Documents move between topic folders, so the loader follows the site's
+ *  redirect table to each guide's current address. */
 const startGuide = "/docs/practical-guide/";
 const contributingGuide = "/docs/contributing/";
-const guides = [
-  [
-    startGuide,
-    "Start with a working game loop",
-    "Define the smallest thing worth playing.",
-  ],
-  [
-    "/docs/agents-notes/",
-    "Understand your coding toolkit",
-    "Models, harnesses, skills, and engine bridges.",
-  ],
-  [
-    "/docs/world-model-notes/",
-    "Know what keeps the world in sync",
-    "Code, engine state, and neural rendering.",
-  ],
-] as const;
 /** A chip names the product, not the page: "Godot Engine · Official
  *  Documentation" and "Genie: Generative Interactive Environments" read as
  *  "Godot Engine" and "Genie" (the full title stays on the link). */
@@ -136,7 +113,6 @@ export function loader({ request }: LoaderFunctionArgs) {
   const gameFigures = gameStats(exampleGameFacets(games));
   const counts: Record<string, number> = {
     "/examples/": gameFigures.total,
-    "/threejs-games/": total("threejs-game"),
     "/resources/": total("resource"),
     "/agents/": total("agent"),
     "/testing/": total("testing"),
@@ -146,22 +122,12 @@ export function loader({ request }: LoaderFunctionArgs) {
     "/docs/": new Set(
       content.all("document").map((entry) => entry.id.replace(/^zh\//, "")),
     ).size,
-    "/paths/": total("path"),
   };
-  // A pillar counts each record once: the legacy three.js games imported into
-  // the examples gallery are listed on /threejs-games/ as well.
   const pillarCounts = Object.fromEntries(
-    pillars.map((pillar) => {
-      const paths = pillar.links.map((link) => link.path);
-      const shared =
-        paths.includes("/examples/") && paths.includes("/threejs-games/")
-          ? games.imported.length
-          : 0;
-      return [
-        pillar.id,
-        paths.reduce((sum, path) => sum + (counts[path] ?? 0), 0) - shared,
-      ];
-    }),
+    pillars.map((pillar) => [
+      pillar.id,
+      pillar.links.reduce((sum, link) => sum + (counts[link.path] ?? 0), 0),
+    ]),
   );
   const resources = new Map(
     content.all("resource").map((entry) => [entry.id, entry]),
@@ -183,17 +149,21 @@ export function loader({ request }: LoaderFunctionArgs) {
   };
   const tools = (ids: readonly string[]) =>
     ids.map(tool).filter((value): value is MarqueeTool => value !== null);
-  const play = (
-    storyPlayIds
-      .map((id) => exampleById.get(id))
-      .find((entry) => entry && media[entry.id]) ??
-    pool[0] ??
-    examples[0]
-  ).data;
+  const playCandidates = [
+    ...storyPlayIds.map((id) => exampleById.get(id)),
+    ...pool,
+    ...examples,
+  ].filter(
+    (entry, index, list): entry is (typeof examples)[number] =>
+      Boolean(entry && media[entry.id]) &&
+      list.findIndex((item) => item?.id === entry?.id) === index,
+  );
+  const play = (playCandidates[0] ?? examples[0]).data;
+  const companion = playCandidates[1]?.data;
+  const secondary = playCandidates[2]?.data;
   return {
     docs: {
       start: retiredDocumentTarget(startGuide) ?? startGuide,
-      guides: guides.map(([path]) => retiredDocumentTarget(path) ?? path),
       contributing:
         retiredDocumentTarget(contributingGuide) ?? contributingGuide,
     },
@@ -207,7 +177,6 @@ export function loader({ request }: LoaderFunctionArgs) {
       { path: "/papers/", label: "Papers" },
       { path: "/research/", label: "Repository research" },
       { path: "/agents/", label: "Agent toolkit" },
-      { path: "/threejs-games/", label: "Three.js games" },
     ]
       .map((stat) => ({ ...stat, count: counts[stat.path] }))
       .filter((stat) => stat.count > 0)
@@ -226,15 +195,27 @@ export function loader({ request }: LoaderFunctionArgs) {
         title: play.title,
         track: play.track,
         engine: play.engine,
+        summary: play.description,
         media: media[play.id],
+        companion: companion
+          ? {
+              title: companion.title,
+              track: companion.track,
+              engine: companion.engine,
+              media: media[companion.id],
+            }
+          : undefined,
+        secondary: secondary
+          ? {
+              title: secondary.title,
+              track: secondary.track,
+              engine: secondary.engine,
+              media: media[secondary.id],
+            }
+          : undefined,
       },
     },
     marquee: marqueeRows.map(tools),
-    bentoShots: [...new Set([...mosaicIds, ...pool.map((entry) => entry.id)])]
-      .filter((id) => exampleById.has(id) && media[id])
-      .slice(0, 4)
-      .map((id) => media[id].src),
-    bentoTools: tools(buildToolIds.slice(0, 5)),
   };
 }
 
@@ -359,7 +340,6 @@ export default function Home() {
       {/* 2. The story: idea, build, play. */}
       <HomeStory
         counts={data.counts}
-        pillarCounts={data.pillarCounts}
         tools={data.story.tools}
         play={data.story.play}
       />
@@ -372,8 +352,6 @@ export default function Home() {
         pillarCounts={data.pillarCounts}
         counts={data.counts}
         categoryCounts={data.categoryCounts}
-        shots={data.bentoShots}
-        tools={data.bentoTools}
       />
 
       {/* 5. The toolkit in motion. */}
@@ -399,42 +377,7 @@ export default function Home() {
         <ToolMarquee rows={data.marquee} />
       </section>
 
-      {/* 6. Reading room. */}
-      <section className="hm-guides" aria-labelledby="hm-guides-title">
-        <div className="hm-guides-head">
-          <p className="kicker">{t("LESS GUESSWORK, MORE CONTEXT")}</p>
-          <h2 id="hm-guides-title" className="hm-title">
-            {t("There is a guide for that.")}
-          </h2>
-          <p>
-            {t(
-              "From your first playable loop to asset pipelines and world models. Read the notes without leaving the atlas.",
-            )}
-          </p>
-          <Link className="inline-link" to="/docs/">
-            {t("Open the reading room")}
-            <ArrowRight size={16} />
-          </Link>
-        </div>
-        <ol className="hm-guide-list">
-          {guides.map(([path, title, description], index) => (
-            <li key={path}>
-              <Link className="hm-guide" to={data.docs.guides[index]}>
-                <span className="hm-guide-number">0{index + 1}</span>
-                <span className="hm-guide-text">
-                  <strong>{t(title)}</strong>
-                  <span>{t(description)}</span>
-                </span>
-                <span className="hm-guide-arrow" aria-hidden="true">
-                  <ArrowUpRight size={22} />
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      {/* 7. Closing band. */}
+      {/* 6. Closing band. */}
       <section className="hm-closing" aria-labelledby="hm-closing-title">
         <div className="hm-closing-inner">
           <p className="kicker">{t("YOUR TURN")}</p>

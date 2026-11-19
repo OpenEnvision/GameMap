@@ -13,7 +13,7 @@ export default function Papers() {
       kind="paper"
       entries={entries}
       title="Papers"
-      description="Research references with source evidence, code availability and licensing caveats. Editorial categories are not verified capability claims."
+      description="Browse papers on game design, development, game agents, and world models."
     />
   );
 }

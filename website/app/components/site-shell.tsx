@@ -141,53 +141,66 @@ export function SiteHeader() {
           aria-label={t("Main navigation")}
           ref={navRef}
         >
-          {pillars.map((pillar) => (
-            <details
-              key={pillar.id}
-              className="nav-pillar"
-              data-pillar={pillar.id}
-              data-active={isActive(pillar) || undefined}
-              onPointerEnter={hoverOpen}
-              onPointerLeave={hoverClose}
-              onToggle={(event) => {
-                if (event.currentTarget.open) closePanels(event.currentTarget);
-              }}
-            >
-              <summary
-                onClick={(event) => {
-                  // A click right after hover-open confirms the panel instead of closing it.
-                  if (
-                    event.currentTarget.parentElement?.hasAttribute("open") &&
-                    Date.now() - hoverOpenedAt.current < 600
-                  )
-                    event.preventDefault();
-                }}
+          {pillars.map((pillar) =>
+            pillar.links.length === 1 ? (
+              <NavLink
+                key={pillar.id}
+                to={pillar.links[0].path}
+                className="nav-direct"
+                data-pillar={pillar.id}
+                data-collection-id={pillar.links[0].collection}
               >
                 {t(pillar.label)}
-              </summary>
-              <div className="nav-panel">
-                <div className="nav-panel-intro">
-                  <span className="eyebrow">{t(pillar.kicker)}</span>
-                  <p>{t(pillar.description)}</p>
+              </NavLink>
+            ) : (
+              <details
+                key={pillar.id}
+                className="nav-pillar"
+                data-pillar={pillar.id}
+                data-active={isActive(pillar) || undefined}
+                onPointerEnter={hoverOpen}
+                onPointerLeave={hoverClose}
+                onToggle={(event) => {
+                  if (event.currentTarget.open)
+                    closePanels(event.currentTarget);
+                }}
+              >
+                <summary
+                  onClick={(event) => {
+                    // A click right after hover-open confirms the panel instead of closing it.
+                    if (
+                      event.currentTarget.parentElement?.hasAttribute("open") &&
+                      Date.now() - hoverOpenedAt.current < 600
+                    )
+                      event.preventDefault();
+                  }}
+                >
+                  {t(pillar.label)}
+                </summary>
+                <div className="nav-panel">
+                  <div className="nav-panel-intro">
+                    <span className="eyebrow">{t(pillar.kicker)}</span>
+                    <p>{t(pillar.description)}</p>
+                  </div>
+                  <ul className="nav-panel-links">
+                    {pillar.links.map((link) => (
+                      <li key={link.path}>
+                        <NavLink
+                          to={link.path}
+                          data-collection-id={link.collection}
+                          onClick={() => closePanels()}
+                        >
+                          <strong>{t(link.title)}</strong>
+                          <small>{t(link.blurb)}</small>
+                          <ArrowUpRight size={16} aria-hidden="true" />
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="nav-panel-links">
-                  {pillar.links.map((link) => (
-                    <li key={link.path}>
-                      <NavLink
-                        to={link.path}
-                        data-collection-id={link.collection}
-                        onClick={() => closePanels()}
-                      >
-                        <strong>{t(link.title)}</strong>
-                        <small>{t(link.blurb)}</small>
-                        <ArrowUpRight size={16} aria-hidden="true" />
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </details>
-          ))}
+              </details>
+            ),
+          )}
         </nav>
         <div className="header-controls">
           <button
@@ -232,24 +245,36 @@ export function SiteHeader() {
           id="mobile-navigation"
           aria-label={t("Mobile navigation")}
         >
-          {pillars.map((pillar, index) => (
-            <section
-              key={pillar.id}
-              className="mobile-pillar"
-              style={{ "--i": index } as React.CSSProperties}
-            >
-              <h2>{t(pillar.label)}</h2>
-              {pillar.links.map((link) => (
-                <NavLink
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setOpen(false)}
-                >
-                  {t(link.title)}
-                </NavLink>
-              ))}
-            </section>
-          ))}
+          {pillars.map((pillar, index) =>
+            pillar.links.length === 1 ? (
+              <NavLink
+                key={pillar.id}
+                to={pillar.links[0].path}
+                className="mobile-direct"
+                style={{ "--i": index } as React.CSSProperties}
+                onClick={() => setOpen(false)}
+              >
+                {t(pillar.label)}
+              </NavLink>
+            ) : (
+              <section
+                key={pillar.id}
+                className="mobile-pillar"
+                style={{ "--i": index } as React.CSSProperties}
+              >
+                <h2>{t(pillar.label)}</h2>
+                {pillar.links.map((link) => (
+                  <NavLink
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setOpen(false)}
+                  >
+                    {t(link.title)}
+                  </NavLink>
+                ))}
+              </section>
+            ),
+          )}
           {communityEnabled && (
             <div className="mobile-utility">
               <Link to="/submit/" onClick={() => setOpen(false)}>

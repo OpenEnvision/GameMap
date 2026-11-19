@@ -1,8 +1,10 @@
-/* First-visit brand moment. The markup is static (identical on server and
- * client) and the whole sequence, including its removal, is a CSS animation in
- * styles/fx.css, so it can never block a visitor without JavaScript. It only
- * shows under prefers-reduced-motion: no-preference, never takes pointer
- * events, and FX_INTRO_SCRIPT skips it for the rest of the browser session. */
+/* First-visit brand moment. The OpenEnvision swan draws itself, gives a gentle
+ * wingbeat, then settles into a lockup as the GameMap mark assembles beside it.
+ * The markup is static (identical on server and client) and the whole
+ * sequence, including its removal, is a CSS animation in styles/fx.css, so it
+ * can never block a visitor without JavaScript. It only shows under
+ * prefers-reduced-motion: no-preference, never takes pointer events, and
+ * FX_INTRO_SCRIPT skips it for the rest of the browser session. */
 
 /** Runs in <head> before first paint. */
 export const FX_INTRO_SCRIPT =
@@ -14,26 +16,101 @@ const BODY =
 const FACE = "m1 20.3 12.5 7.6v20.2L31 58.2v13.5L1 54.4V20.3Z";
 const DOT = "m61 1 8 4.6v9.2l-8 4.6-8-4.6V5.6L61 1Z";
 
+// The OpenEnvision black swan (openenvision.org brand mark), split into its
+// parts: the open ring, the body with the eye cut out, the wing and the beak.
+const SWAN_RING =
+  "M231.5 449c-4.8-.2-10.9-.7-13.5-1c-2.6-.3-6.4-.8-8.5-1c-5.4-.6-11.5-1.7-17.7-3c-2.3-.5-3.9-.8-8.8-2c-1-.2-3.6-.9-5.8-1.5c-2.1-.6-4.7-1.3-5.7-1.6c-4-1.1-4.9-1.3-7.7-2.3c-6.6-2.2-12.8-4.6-22.3-8.7c-22.6-9.5-49.7-28.4-69.2-48.1c-34.4-34.9-57-79.3-63.8-125c-3.5-24-3-52.6 1.2-72c.8-3.6 1.3-5.7 1.8-8.6c.6-2.5 2-8.3 3.5-14c10.7-40.4 40.7-83.7 76.5-110.1c18.7-13.7 47.2-28.3 64.7-33.1c.9-.2 3.1-.9 5-1.5c4.5-1.4 10.5-3 13-3.5c1.1-.2 3.3-.7 4.8-1c4.8-1.1 6.9-1.4 18.8-3c15.2-2 44.8-1.6 59.4 1c1.7.3 4.4.7 6 1c1.7.2 3.5.6 4 .7c.6.1 2.4.5 4 .8c3.6.7 6.9 1.4 9.3 2c1 .2 2.9.7 4.3 1c1.3.3 3 .8 3.7 1c.7.2 2.3.7 3.5 1c1.2.3 3.8 1.2 5.8 1.9c1.9.6 4.1 1.4 5 1.6c4.4 1.1 20.3 8 30.7 13.2c7.5 3.7 29 17.5 29 18.5c0 .2-.5.1-1.1-.3c-18-11.6-39.4-21.4-57.2-26.4c-.8-.3-2.3-.7-3.4-1c-1.2-.3-2.8-.8-3.7-1c-6.8-2-9-2.5-16.3-4c-6.5-1.3-7.7-1.5-21-3c-6.9-.9-33.9-1.2-40-.5c-7 .7-12.9 1.4-16 2c-1.4.2-4.1.7-6 1c-15.6 2.4-34.6 8.1-48.2 14.3c-1.4.7-2.8 1.2-2.9 1.2c-.6 0-15.7 7.8-20.2 10.4c-34.2 20-61.4 48.9-79.6 84.6c-1.7 3.4-3.6 7.3-4.1 8.5c-.5 1.2-1.2 2.9-1.6 3.7c-3.4 7.8-7.2 19.5-9.3 28.8c-.3 1.2-.7 3.2-1 4.2c-1.4 6.6-3.1 17.2-4 25c-.8 7.7-1.1 32.2-.4 38.8c1 10.6 1.9 17.1 3 22.2c.2 1.2.7 3.4 1 5c13.5 65.2 65.6 127.3 127 151.5c1.2.5 2.9 1.2 3.7 1.5c1.7.8 3.9 1.6 13.8 5.2c6.2 2.3 8.1 2.9 13 4.2c1 .3 2.4.7 3.2.9c.9.2 3.7.9 6.3 1.5c2.6.6 5.5 1.3 6.5 1.5c3.8 1 7.9 1.1 6.8.3c-.6-.5-1.5-.8-2.1-.8c-.6 0-1.7-.2-2.5-.4c-.8-.3-3.1-1-5.2-1.6c-2.1-.6-4.8-1.5-6.2-2.1c-1.3-.5-2.7-.9-3.1-.9c-.4 0-1.1-.2-1.6-.5c-1.3-.6-5.6-2.5-5.8-2.5c-.8 0-14.4-6.6-14.1-6.8c.1-.1 1.7.3 3.7 1c39 13.3 89.1 12.1 130.8-3.1c7.7-2.9 4.6-2.8 27.1-.8c9.1.7 18.5.7 34.2-.1c4.8-.2 4.8-.2 3 .7c-3.1 1.6-4 2.3-4 3.4c0 .9-.5 1.3-1.9 1.7c-2.6.9-8.8 4-8.4 4.3c.5.5 14.1-4.4 19.5-7c8-3.8 13.2-6.4 15.7-7.8c3.2-1.7 3.1-.9-.2 1.5c-13.1 9.2-21 13.7-35.9 20.5c-4.2 1.9-16.5 6.2-22.8 8c-1.2.3-2.8.8-3.5 1c-2.3.7-7.7 2.1-11.7 3c-1.4.3-3.3.8-4.3 1c-1 .2-2.5.6-3.5.7c-1 .1-3.1.5-4.8.8c-20.4 3.7-44.6 5.1-71.7 4z";
+const SWAN_BODY =
+  "M219 429c-11.8-1.1-29.7-4-33.8-5.6c-27.4-10.6-49.3-31.3-57.6-54.5c-2.4-6.8-3.3-11.1-4.1-20c-.7-7-.2-18.4 1-23.6c2.6-11.2 4-15.5 8.3-23.9c11.5-23 27.6-39.8 63.7-66.9c38.2-28.5 51.3-43.9 55.8-64.7c.8-4.2 1-16 .2-19c-.3-1.1-.8-3-1.1-4c-4-14.6-16.9-24.8-31.6-24.8c-10.1 0-15.6 3.8-21.2 14.9c-5.5 10.7-10.1 15.6-18.7 20c-4.5 2.3-5.5 3-6.4 4.8c-3.8 6.8-9.4 13.1-23.6 26.5c-10.1 9.5-10.8 9.9-12.6 6.8c-1.3-2.2 2-11.4 3.5-9.9c.3.3-1.5 3.8-2.3 4.6c-.9 1-.4 4.8.6 4.8c1.4 0 10.7-9.7 16.3-17c6.4-8.4 8.3-10.7 13.2-15.8c3.2-3.3 3.1-3.9-2-9.3c-2.2-2.3-4.1-4.6-4.2-5.1c-.3-1.7-1.8-1.5-3.8.5c-1.1 1.1-2.7 2.4-3.7 3c-.9.5-1.9 1.5-2.2 2.1c-.6 1.1-.6 1.1-1.1.3c-.4-.8-.7-.8-1.8-.3c-2.2 1-3.8.8-4.3-.7c-.7-1.7-.6-13.9 0-17.3c1.3-6.2 1.6-7.7 2.1-9.1c7.5-21.5 26.9-37.2 52.4-42.3c1.5-.3 3.7-.8 4.9-1c2.9-.7 17.9-.6 22 0c6.6 1.1 11.4 2.2 15.9 3.6c36 11.7 58 53 49.4 92.9c-.4 1.8-.9 4.3-1.2 5.5c-.2 1.2-.8 3.4-1.2 4.7c-.5 1.4-1 3.3-1.3 4.3c-1.2 3.9-5.7 13.7-9 19.7c-4.3 7.7-11.2 18-17.4 25.8c-6.3 7.9-8.9 10.8-36.1 40.5c-15.2 16.6-24.1 29.5-27.9 40.7c-2.7 8-3.9 19.2-2.6 24.9c.2 1.2.7 3.4 1 4.9c3.4 16.3 19.2 29.6 53 44.6c11.2 5 29.9 10.8 45.3 14c7 1.4 11.8 2.2 20.1 3.2c2.7.4 2.7.4-2 2.3c-27.4 11.5-64.8 17.4-93.9 14.9zM165.3 140.4c2.8-1.9 4.7-4.2 4.7-5.8c0-1.4 1.1-4.8 1.7-5.4c.5-.6.4-2.2-.2-2.2c-1.9 0-7.9 4.9-9.4 7.7c-3.7 6.9-2.2 9.4 3.2 5.7z";
+const SWAN_WING =
+  "M318.5 408.8c-.2-.1-2.6-.5-5.5-.8c-7.8-.8-15.1-2-19.5-3c-1.2-.3-3.1-.7-4.3-1c-1.7-.4-5.1-1.3-11.4-3c-6.3-1.7-21.6-7.4-30-11.2c-67.2-29.9-52.6-83.4 37.7-138.6c65.7-40.2 81.9-52.2 102.4-76c16.8-19.3 29.7-43.2 34.5-63.7c.5-2.1.8-3.4 2.1-9.9c.3-1.5.5-6.3.5-10.7c0-9.2-.5-13.1-2.8-20.3c-.8-2.6-.8-2.8-.2-2.3c.5.3 6 11.3 6 11.9c0 .2.8 2 1.7 3.9c3 6.3 6.9 16.6 8.4 21.8c.2.9.6 2.4.9 3.5c.9 3 1.8 7.1 3.5 15.8c2.4 12.5 2.4 33.9 0 45.2c-6 27.7-20.2 47.9-47.6 67.9c-2.3 1.7-5.1 3.7-6.3 4.4c-1.2.7-4.7 3-7.9 5.1c-3.2 2.1-6.2 3.9-6.6 4.1c-.5.2-2.8 1.4-5.1 2.8c-4.7 2.7-23.5 12.3-31.2 15.9c-10.3 4.8-13.8 6.4-14 6.4c-.8 0-37.6 18.1-39 19.2c-1.2.9-.3 1.1 1.1.3c.8-.5 3.6-1.7 14.7-6.5c2.6-1.1 5.5-2.4 6.6-2.9c3.3-1.6 6.8-3.1 7-3.1c.2 0 1.5-.5 2.9-1.2c1.5-.7 3.8-1.7 5.2-2.2c1.3-.6 4.2-1.8 6.3-2.8c2.2-1 4-1.8 4.2-1.8c.1 0 3-1.3 6.4-2.9c3.3-1.6 7.1-3.4 8.3-3.9c3.9-1.7 25.1-12.5 31.3-16c45.7-25.9 73.4-52.8 85.2-83c2.1-5.3 3.5-9.6 4.5-14.1c.9-3.9 1.4-3.5 2.5 2.4c.2 1.2.7 3.6 1 5.3c1.3 6.8 1.6 9.8 1.9 17.4c.4 9.1 0 20.6-.9 25.3c-1.1 6.1-1.4 7.7-1.9 9.7c-10.3 41.3-36.7 63.3-94.3 78.3c-1.2.3-2.7.8-3.6 1c-.8.2-2.6.7-4 1c-1.3.3-3.2.8-4.2 1c-1 .2-2.8.7-4 .9c-1.2.3-3.7.9-5.5 1.3c-1.8.4-5.1 1.1-7.3 1.5c-2.1.5-5.8 1.3-8.1 1.8c-5.8 1.4-12.4 3-15.1 3.6c-1.2.2-3.1.7-4.2 1c-1.2.3-2.8.7-3.8.9c-1 .3-3.3.9-5.2 1.5c-2 .5-4.4 1.3-5.6 1.6c-1.1.3-3.2.9-4.7 1.4c-1.5.5-4.9 1.6-7.6 2.4c-5.5 1.8-10.7 4-10.3 4.4c.2.1 2.3-.4 4.7-1.2c6.8-2.2 14.2-4.4 19.2-5.6c1-.2 2.5-.7 3.5-.9c3.9-1.1 7.4-2 10.2-2.6c1.7-.3 3.8-.8 4.8-1c3.5-.9 6.3-1.5 12-2.5c3.2-.6 6.6-1.3 7.8-1.5c1.1-.2 3.1-.7 4.4-.9c2.5-.5 3.9-.8 11.8-2.3c2.1-.5 5.8-1.2 8.2-1.8c2.5-.5 6.3-1.3 8.5-1.8c3.3-.6 9.6-2.2 15.1-3.7c.8-.2 2.8-.8 4.4-1.2c1.7-.5 3.7-1.1 4.6-1.3c17.2-5.6 20.6-6.8 28.1-10c4.9-2.1 11.8-5.5 15.1-7.4c14.8-8.5 23.9-15.7 32.4-25.8c2.3-2.8 3-2.8 2.2.1c-.3 1.1-.6 2.7-.6 3.5c0 .8-.2 2.7-.5 4.2c-.3 1.5-.8 3.9-1.1 5.4c-.5 2.4-.8 3.8-2.4 9.7c-8.5 32.4-32.9 55-64.8 59.8c-1.3.2-4 .7-6 1c-8 1.3-16.8 1.6-50 2c-33.6.4-42.1.8-49.2 1.9c-1.8.3-4.7.8-6.5 1.1c-1.8.3-4.3.7-5.5 1c-1.2.3-3.3.7-4.5 1c-3 .5-7.1 2-7.7 2.6c-.6.5.1.4 5-.7c4.5-1 6.9-1.4 19.4-2.9c6.4-.8 38-1.2 46.3-.6c30.1 2.3 51.9 1.7 73.7-2c4.4-.7 7.9-1.4 9.3-1.9c.7-.2 2.3-.7 3.5-1c6.9-2 11.9-3.9 18.1-7c3.4-1.7 3.5-1.4 1.1 2.7c-17.7 29.7-37.8 41.9-69.2 42c-10.5 0-15.6-.5-27.8-3c-2.1-.5-4.5-.9-5.2-1c-.7-.2-3.2-.7-5.5-1.3c-2.3-.5-5.3-1.2-6.5-1.5c-1.2-.2-3-.7-4-.9c-2.4-.6-5.9-1.4-8-1.8c-1-.2-2.6-.5-3.8-.8c-6.4-1.4-14.8-2.4-24.2-2.7c-9.9-.4-10 .2-.3 1.4c7.4.9 12.7 1.6 14.8 2.2c.7.1 2.3.5 3.5.8c1.2.2 3 .7 4 .9c1 .3 3.2.8 5 1.2c1.8.5 4.9 1.3 7 1.8c2.1.6 5.4 1.5 7.5 2.1c4.3 1.1 5.4 1.4 10.4 2.9c9 2.5 11.1 3.1 14.6 4.1c4 1 5 1.3 11 2.6c6.5 1.4 8.6 1.8 19.2 3.3c5.3.8 20.1.7 22.7 0c4.1-1.3 2.9.7-1.9 3.1c-1.2.6-3.4 1.8-4.7 2.7c-2.4 1.5-14.5 7.5-17.6 8.8c-18.1 7.1-35.4 11.5-52.8 13.4c-4.6.5-27.5.7-27.9.3z";
+const SWAN_BEAK =
+  "M137.8 194.7c-2-2.1 11.6-40.1 15.8-44c7.1-6.6 7.7-6.6 13.4.4c6.2 7.8 6.7 6.1-6.1 21.4c-15.8 19-21.1 24.1-23.1 22.2z";
+// Reveal masks: a brush stroke along the ring and a wedge that turns around
+// the wing's shoulder (205, 405), opening the feathers from the lowest up.
+const SWAN_SWEEP = "M384.7 71.8A220 220 0 1 0 395 366";
+const SWAN_FAN = "M205 405 694 583 383 894-55 855-307 495Z";
+
 export function FxIntro() {
   return (
     <div className="fx-intro" aria-hidden="true">
       <div className="fx-intro-stage">
-        <svg
-          className="fx-intro-mark"
-          viewBox="-2 -2 76 76"
-          width="76"
-          height="76"
-          focusable="false"
-        >
-          <path className="fx-intro-body" d={BODY} />
-          <path className="fx-intro-face" d={FACE} />
-          <path className="fx-intro-dot" d={DOT} />
-          <path className="fx-intro-trace" d={BODY} pathLength={1} />
-        </svg>
-        <span className="fx-intro-word">
-          <span>Game</span>
-          <span className="fx-intro-accent">Map</span>
-        </span>
+        <div className="fx-intro-lockup">
+          <span className="fx-intro-swan">
+            <svg
+              className="fx-intro-swan-mark"
+              viewBox="0 0 487 455"
+              width="88"
+              height="82"
+              focusable="false"
+            >
+              <defs>
+                <mask
+                  id="fx-intro-ring-mask"
+                  maskUnits="userSpaceOnUse"
+                  x="-60"
+                  y="-60"
+                  width="620"
+                  height="580"
+                >
+                  <path
+                    className="fx-intro-swan-sweep"
+                    d={SWAN_SWEEP}
+                    pathLength={1}
+                  />
+                </mask>
+                <mask
+                  id="fx-intro-wing-mask"
+                  maskUnits="userSpaceOnUse"
+                  x="-60"
+                  y="-60"
+                  width="620"
+                  height="580"
+                >
+                  <path className="fx-intro-swan-fan" d={SWAN_FAN} />
+                </mask>
+              </defs>
+              <path
+                className="fx-intro-swan-ring"
+                d={SWAN_RING}
+                mask="url(#fx-intro-ring-mask)"
+              />
+              <g className="fx-intro-swan-bird">
+                <path className="fx-intro-swan-beak" d={SWAN_BEAK} />
+                <path
+                  className="fx-intro-swan-body"
+                  d={SWAN_BODY}
+                  fillRule="evenodd"
+                />
+                <g className="fx-intro-swan-wing">
+                  <g mask="url(#fx-intro-wing-mask)">
+                    <path className="fx-intro-swan-feathers" d={SWAN_WING} />
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <span className="fx-intro-credit">
+              <span>OpenEnvision</span>
+            </span>
+          </span>
+          <span className="fx-intro-rule" />
+          <svg
+            className="fx-intro-mark"
+            viewBox="-2 -2 76 76"
+            width="76"
+            height="76"
+            focusable="false"
+          >
+            <path className="fx-intro-body" d={BODY} />
+            <path className="fx-intro-face" d={FACE} />
+            <path className="fx-intro-dot" d={DOT} />
+            <path className="fx-intro-trace" d={BODY} pathLength={1} />
+          </svg>
+          <span className="fx-intro-word">
+            <span>Game</span>
+            <span className="fx-intro-accent">Map</span>
+          </span>
+        </div>
       </div>
       <span className="fx-intro-meter">
         <span className="fx-intro-count" />

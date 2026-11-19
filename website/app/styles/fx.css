@@ -34,6 +34,10 @@
   /* The two reds of public/brand/gamemap-mark.svg. */
   --fx-mark: #e53a32;
   --fx-mark-shade: #9e1218;
+  /* First-visit intro timeline (section 5): reveal, wingbeat, a short hold,
+     then the GameMap lockup and curtain. */
+  --fx-intro-handoff: 2200ms;
+  --fx-intro-curtain: 3500ms;
 }
 .dark {
   --fx-light-warm: rgb(223 31 38 / 0.15);
@@ -290,21 +294,21 @@
   }
   /* While the first-visit intro plays, the entrance waits for the curtain. */
   html:not([data-fx-intro="off"]) :where(main, #nd-page) h1 {
-    animation-delay: 1000ms;
+    animation-delay: calc(var(--fx-intro-curtain) + 100ms);
   }
   html:not([data-fx-intro="off"]) :where(main, #nd-page) :where(:has(+ h1)) {
-    animation-delay: 940ms;
+    animation-delay: calc(var(--fx-intro-curtain) + 40ms);
   }
   html:not([data-fx-intro="off"]) :where(main, #nd-page) :where(h1 + *) {
-    animation-delay: 1180ms;
+    animation-delay: calc(var(--fx-intro-curtain) + 280ms);
   }
   html:not([data-fx-intro="off"]) :where(main, #nd-page) :where(h1 + * + *) {
-    animation-delay: 1260ms;
+    animation-delay: calc(var(--fx-intro-curtain) + 360ms);
   }
   html:not([data-fx-intro="off"])
     :where(main, #nd-page)
     :where(h1 + * + * + *) {
-    animation-delay: 1340ms;
+    animation-delay: calc(var(--fx-intro-curtain) + 440ms);
   }
 }
 
@@ -424,10 +428,12 @@
   }
 }
 
-/* --- 5. First-visit intro (components/fx/intro.tsx): the mark assembles,
-   the wordmark wipes in, a counter runs to 100 and the curtain lifts. The
-   whole sequence and the removal are CSS, so it can never block a visitor;
-   a head script marks later visits in the session with data-fx-intro="off". */
+/* --- 5. First-visit intro (components/fx/intro.tsx): the OpenEnvision swan
+   draws itself (ring, body, wing, beak), gives a gentle wingbeat, then glides
+   into a lockup as the GameMap mark assembles beside it; a counter runs to 100
+   and the curtain lifts. The whole sequence and the removal are CSS, so it can
+   never block a visitor; a head script marks later visits in the session with
+   data-fx-intro="off". */
 @media (prefers-reduced-motion: no-preference) {
   html:not([data-fx-intro="off"]) .fx-intro {
     position: fixed;
@@ -444,7 +450,8 @@
         transparent 72%
       ),
       var(--paper);
-    animation: fx-intro-lift 640ms var(--fx-vt-ease) 900ms forwards;
+    animation: fx-intro-lift 640ms var(--fx-vt-ease) var(--fx-intro-curtain)
+      forwards;
   }
   @keyframes fx-intro-lift {
     from {
@@ -456,10 +463,8 @@
     }
   }
   .fx-intro-stage {
-    display: flex;
-    align-items: center;
-    gap: clamp(14px, 1.6vw, 22px);
-    animation: fx-intro-stage 640ms var(--fx-vt-ease) 900ms forwards;
+    animation: fx-intro-stage 640ms var(--fx-vt-ease) var(--fx-intro-curtain)
+      forwards;
   }
   @keyframes fx-intro-stage {
     to {
@@ -467,9 +472,195 @@
       translate: 0 -48px;
     }
   }
-  .fx-intro-mark {
-    width: clamp(50px, 6vw, 72px);
+
+  /* The lockup is laid out in its final form. Until the handoff it is shifted
+     so that the swan, drawn --fx-swan-k times larger, sits in the centre;
+     then the row slides home while the swan shrinks from its left edge,
+     quickly enough to clear the space before the GameMap mark draws. */
+  .fx-intro-lockup {
+    --fx-swan: clamp(46px, 6.2vw, 88px);
+    --fx-swan-k: 2.5;
+    --fx-gap: clamp(12px, 1.9vw, 28px);
+    display: flex;
+    align-items: center;
+    translate: calc(50% - var(--fx-swan) * var(--fx-swan-k) / 2) 0;
+    animation: fx-intro-handoff 640ms var(--fx-vt-ease) var(--fx-intro-handoff)
+      forwards;
+  }
+  @keyframes fx-intro-handoff {
+    to {
+      translate: 0 0;
+    }
+  }
+  .fx-intro-swan {
+    position: relative;
+    flex: none;
+    width: calc(var(--fx-swan) * var(--fx-swan-k));
+    margin-right: calc(var(--fx-swan) * (1 - var(--fx-swan-k)));
+    transform-origin: 0 50%;
+    animation: fx-intro-settle 640ms var(--ease-out) var(--fx-intro-handoff)
+      forwards;
+  }
+  @keyframes fx-intro-settle {
+    to {
+      scale: calc(1 / var(--fx-swan-k));
+    }
+  }
+  .fx-intro-swan-mark {
+    display: block;
+    width: 100%;
     height: auto;
+    overflow: visible;
+    fill: var(--ink);
+    /* Its reveal masks are luminance masks drawn in white. */
+    forced-color-adjust: none;
+  }
+  /* A brush stroke along the ring, from the open tip round to the tail. */
+  .fx-intro-swan-sweep {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 60;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: fx-intro-draw 560ms var(--ease-in-out) 40ms forwards;
+  }
+  /* The body rises from the water line. The wipe runs past the top so its
+     edge crosses the head at speed instead of easing out over it. */
+  .fx-intro-swan-body {
+    clip-path: inset(100% 0 0 0);
+    translate: 0 14px;
+    animation: fx-intro-rise 600ms var(--ease-out) 140ms forwards;
+  }
+  @keyframes fx-intro-rise {
+    to {
+      clip-path: inset(-25% 0 0 0);
+      translate: 0 0;
+    }
+  }
+  /* The body follows the wingbeat with a small, delayed lift. The ring
+     stays still, and every part returns to the original mark at rest. */
+  .fx-intro-swan-bird {
+    transform-origin: 205px 405px;
+    animation: fx-intro-buoy 1000ms var(--ease-in-out) 1000ms forwards;
+  }
+  @keyframes fx-intro-buoy {
+    0%,
+    100% {
+      translate: 0 0;
+      rotate: 0deg;
+    }
+    24% {
+      translate: 0 2px;
+      rotate: 0.5deg;
+    }
+    48% {
+      translate: 0 -8px;
+      rotate: -1deg;
+    }
+    78% {
+      translate: 0 -2px;
+      rotate: 0.3deg;
+    }
+  }
+  /* The reveal mask travels with the wing during its short downstroke and
+     slower recovery. A separate inner transform unfolds the feathers. */
+  .fx-intro-swan-wing {
+    transform-origin: 205px 405px;
+    animation: fx-intro-beat 1000ms var(--ease-in-out) 1000ms forwards;
+  }
+  .fx-intro-swan-feathers {
+    transform-origin: 205px 405px;
+    rotate: 12deg;
+    animation: fx-intro-unfold 380ms var(--ease-expo) 260ms forwards;
+  }
+  @keyframes fx-intro-unfold {
+    to {
+      rotate: 0deg;
+    }
+  }
+  @keyframes fx-intro-beat {
+    0%,
+    100% {
+      rotate: 0deg;
+      scale: 1 1;
+    }
+    28% {
+      rotate: 10deg;
+      scale: 1 0.96;
+    }
+    70% {
+      rotate: -3deg;
+      scale: 1 1.01;
+    }
+  }
+  .fx-intro-swan-fan {
+    fill: #ffffff;
+    transform-origin: 205px 405px;
+    animation: fx-intro-fan 520ms var(--ease-out) 260ms forwards;
+  }
+  @keyframes fx-intro-fan {
+    to {
+      rotate: -110deg;
+    }
+  }
+  /* The red beak slides out from under the head. */
+  .fx-intro-swan-beak {
+    fill: var(--action);
+    opacity: 0;
+    translate: 9px -15px;
+    animation: fx-intro-beak 420ms var(--ease-expo) 500ms forwards;
+  }
+  @keyframes fx-intro-beak {
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  .fx-intro-credit {
+    position: absolute;
+    top: calc(100% + 18px);
+    right: -50%;
+    left: -50%;
+    color: var(--body);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    animation: fx-intro-fade 200ms ease var(--fx-intro-handoff) forwards;
+  }
+  .fx-intro-credit > span {
+    display: inline-block;
+    padding-left: 0.32em;
+    clip-path: inset(0 100% 0 0);
+    translate: 0 0.22em;
+    animation: fx-intro-word 600ms var(--ease-expo) 380ms forwards;
+  }
+  .fx-intro-rule {
+    flex: none;
+    width: 1px;
+    height: calc(var(--fx-swan) * 0.7);
+    margin: 0 var(--fx-gap);
+    background: var(--line-strong);
+    scale: 1 0;
+    animation: fx-intro-rule 520ms var(--ease-expo)
+      calc(var(--fx-intro-handoff) + 200ms) forwards;
+  }
+  @keyframes fx-intro-rule {
+    to {
+      scale: 1 1;
+    }
+  }
+
+  /* The GameMap mark assembles and the wordmark wipes in as the row arrives. */
+  .fx-intro-mark {
+    flex: none;
+    width: clamp(44px, 6vw, 72px);
+    height: auto;
+    margin-right: clamp(12px, 1.6vw, 22px);
     overflow: visible;
   }
   .fx-intro-trace {
@@ -480,8 +671,9 @@
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
     animation:
-      fx-intro-draw 560ms var(--ease-in-out) 40ms forwards,
-      fx-intro-fade 300ms ease 560ms forwards;
+      fx-intro-draw 480ms var(--ease-in-out)
+        calc(var(--fx-intro-handoff) + 200ms) forwards,
+      fx-intro-fade 300ms ease calc(var(--fx-intro-handoff) + 640ms) forwards;
   }
   @keyframes fx-intro-draw {
     to {
@@ -496,7 +688,8 @@
   .fx-intro-body {
     fill: var(--fx-mark);
     clip-path: inset(100% 0 0 0);
-    animation: fx-intro-fill 460ms var(--ease-expo) 330ms forwards;
+    animation: fx-intro-fill 420ms var(--ease-expo)
+      calc(var(--fx-intro-handoff) + 380ms) forwards;
   }
   @keyframes fx-intro-fill {
     to {
@@ -507,7 +700,8 @@
     fill: var(--fx-mark-shade);
     opacity: 0;
     translate: -6px 0;
-    animation: fx-intro-face 520ms var(--ease-expo) 430ms forwards;
+    animation: fx-intro-face 460ms var(--ease-expo)
+      calc(var(--fx-intro-handoff) + 440ms) forwards;
   }
   @keyframes fx-intro-face {
     to {
@@ -521,8 +715,8 @@
     transform-origin: center;
     scale: 0;
     rotate: -120deg;
-    animation: fx-intro-dot 640ms cubic-bezier(0.34, 1.56, 0.64, 1) 480ms
-      forwards;
+    animation: fx-intro-dot 560ms cubic-bezier(0.34, 1.56, 0.64, 1)
+      calc(var(--fx-intro-handoff) + 480ms) forwards;
   }
   @keyframes fx-intro-dot {
     to {
@@ -534,7 +728,7 @@
     display: inline-flex;
     color: var(--ink);
     font-family: var(--font-display);
-    font-size: clamp(34px, 4.6vw, 60px);
+    font-size: clamp(30px, 4.6vw, 60px);
     font-weight: 650;
     letter-spacing: -0.045em;
     line-height: 1;
@@ -543,11 +737,12 @@
     display: inline-block;
     clip-path: inset(0 100% 0 0);
     translate: 0 0.22em;
-    animation: fx-intro-word 680ms var(--ease-expo) 220ms forwards;
+    animation: fx-intro-word 620ms var(--ease-expo)
+      calc(var(--fx-intro-handoff) + 160ms) forwards;
   }
   .fx-intro-word > .fx-intro-accent {
     color: var(--accent);
-    animation-delay: 340ms;
+    animation-delay: calc(var(--fx-intro-handoff) + 260ms);
   }
   @keyframes fx-intro-word {
     to {
@@ -567,7 +762,7 @@
     font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.16em;
-    animation: fx-intro-fade 300ms ease 900ms forwards;
+    animation: fx-intro-fade 300ms ease var(--fx-intro-curtain) forwards;
   }
   .fx-intro-count {
     order: 2;
@@ -577,7 +772,8 @@
   .fx-intro-count::before {
     counter-reset: fx-n var(--fx-count);
     content: counter(fx-n, decimal-leading-zero);
-    animation: fx-intro-count 860ms cubic-bezier(0.45, 0, 0.2, 1) forwards;
+    animation: fx-intro-count calc(var(--fx-intro-curtain) - 80ms)
+      cubic-bezier(0.45, 0, 0.2, 1) forwards;
   }
   @keyframes fx-intro-count {
     to {
@@ -598,7 +794,8 @@
     background: var(--accent);
     transform-origin: 0 50%;
     scale: 0 1;
-    animation: fx-intro-bar 860ms cubic-bezier(0.45, 0, 0.2, 1) forwards;
+    animation: fx-intro-bar calc(var(--fx-intro-curtain) - 80ms)
+      cubic-bezier(0.45, 0, 0.2, 1) forwards;
   }
   @keyframes fx-intro-bar {
     to {

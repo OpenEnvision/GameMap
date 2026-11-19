@@ -4,15 +4,21 @@ import { Link, useSiteI18n, LanguageSwitcher } from "../lib/i18n";
 import {
   ArrowUpRight,
   Bookmark,
+  BookOpen,
+  Box,
   Boxes,
   Check,
-  Code2,
-  Compass,
-  Gamepad2,
-  Layers3,
+  Film,
   Link2,
-  Orbit,
-  Sparkles,
+  Map,
+  Network,
+  Plug,
+  Route,
+  Shapes,
+  Type,
+  Users,
+  Waves,
+  Workflow,
   X,
   type LucideIcon,
 } from "lucide-react";
@@ -26,21 +32,34 @@ import {
   RelatedDemos,
   MediaPreview,
 } from "./content";
-import { categories, stageLabels, typeLabels } from "../lib/catalog";
+import {
+  categories,
+  categoryGlyphs,
+  dimensionGlyphs,
+  stageGlyphs,
+  stageLabels,
+  typeGlyphs,
+  typeLabels,
+} from "../lib/catalog";
 
-/** The taxonomy glyphs of the home page's "Six directions" list. */
-const categoryGlyphs: Record<string, LucideIcon> = {
-  agents: Code2,
-  engines: Boxes,
-  "2d": Gamepad2,
-  "3d": Layers3,
-  production: Sparkles,
-  world: Orbit,
+const functionGlyphs: Record<string, LucideIcon> = {
+  "level-design-book-skill": Map,
+  "godot-mcp": Plug,
+  "mcp-for-blender": Shapes,
+  "unreal-mcp": Network,
+  "threejs-crowd-experience": Users,
+  text2game: BookOpen,
+  "agent-sprite-forge": Film,
+  "mcp-unity": Plug,
+  "godot-3d-asset-skill": Box,
+  autoue: Workflow,
+  unigen: Workflow,
+  "msdf-atlas-gen": Type,
+  "fastnoise-lite": Waves,
 };
 
-/** A resource's verified logo. Without one, the neutral glyph of its
- *  category sits in a muted tile: never a monogram or a generated mark.
- *  The glyph is decorative; the category is always named in text nearby. */
+/** Verified project artwork, or a neutral function glyph in a muted tile.
+ *  Function glyphs are decorative, not project branding. */
 export function ResourceMark({
   resource,
   identity,
@@ -50,15 +69,18 @@ export function ResourceMark({
   identity: ResourceIdentity;
   size: number;
 }) {
+  const { t } = useSiteI18n();
   if (identity.asset)
     return <ResourceIcon resource={resource} identity={identity} size={size} />;
-  const Glyph = categoryGlyphs[resource.category] ?? Compass;
+  const Glyph = functionGlyphs[resource.id] || typeGlyphs[resource.type];
   return (
     <span
       className="resource-glyph"
       style={{ width: size, height: size }}
       aria-hidden="true"
       data-logo="none"
+      data-resource-id={resource.id}
+      title={t("Function icon: {type}", { type: t(typeLabels[resource.type]) })}
     >
       <Glyph size={Math.round(size * 0.4)} strokeWidth={1.5} />
     </span>
@@ -106,6 +128,12 @@ export function ResourceDetail({
     };
   }, []);
   const category = categories.find((item) => item.id === resource.category);
+  const CategoryGlyph = categoryGlyphs[resource.category];
+  const TypeGlyph = typeGlyphs[resource.type];
+  const TrackGlyph =
+    resource.dimensions.length === 1
+      ? dimensionGlyphs[resource.dimensions[0]]
+      : Boxes;
   // The record's title and summary lead the dialog on every screen; the rest
   // of the record reads below them.
   const intro = entry.blocks.filter(
@@ -160,6 +188,7 @@ export function ResourceDetail({
           <div className="rd-head-text">
             {category && (
               <span className="small-label rd-category">
+                <CategoryGlyph size={13} aria-hidden="true" />
                 {t(category.label)}
               </span>
             )}
@@ -205,11 +234,17 @@ export function ResourceDetail({
           </div>
           <dl className="rd-facts">
             <div>
-              <dt>{t("Resource type")}</dt>
+              <dt>
+                <TypeGlyph size={13} aria-hidden="true" />
+                {t("Resource type")}
+              </dt>
               <dd>{t(typeLabels[resource.type])}</dd>
             </div>
             <div>
-              <dt>{t("Development track")}</dt>
+              <dt>
+                <TrackGlyph size={13} aria-hidden="true" />
+                {t("Development track")}
+              </dt>
               <dd>
                 {resource.dimensions.length === 3
                   ? t("All tracks")
@@ -224,11 +259,20 @@ export function ResourceDetail({
             </div>
             {resource.stages.length > 0 && (
               <div>
-                <dt>{t("Development stage")}</dt>
-                <dd>
-                  {resource.stages
-                    .map((stage) => t(stageLabels[stage]))
-                    .join(" · ")}
+                <dt>
+                  <Route size={13} aria-hidden="true" />
+                  {t("Development stage")}
+                </dt>
+                <dd className="rd-stage-tags">
+                  {resource.stages.map((stage) => {
+                    const Glyph = stageGlyphs[stage];
+                    return (
+                      <span key={stage}>
+                        <Glyph size={12} aria-hidden="true" />
+                        {t(stageLabels[stage])}
+                      </span>
+                    );
+                  })}
                 </dd>
               </div>
             )}

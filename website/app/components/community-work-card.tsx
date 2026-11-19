@@ -44,7 +44,6 @@ export function CommunityWorkCard({ work }: { work: CommunityWork }) {
       track={work.track}
       engine={work.engine}
       demo={{ url: work.url, kind: work.accessKind }}
-      recordUrl={`/works/?id=${work.id}`}
       sourceUrl={work.sourceUrl || undefined}
       media={
         first
@@ -55,15 +54,6 @@ export function CommunityWorkCard({ work }: { work: CommunityWork }) {
               height: work.preview?.height || 720,
             }
           : undefined
-      }
-      notes={
-        <details className="build-notes">
-          <summary>{t("Community submission")}</summary>
-          <p>{t("Created by {author}", { author: work.author })}</p>
-          <p className="source-note">
-            {work.license || t("Reuse rights have not been specified.")}
-          </p>
-        </details>
       }
     />
   );

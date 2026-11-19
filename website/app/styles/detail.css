@@ -1,6 +1,6 @@
 /* ==========================================================================
    Detail template — record pages (examples, resources, agents, testing,
-   research, paths, demos, Three.js games), papers, community forms and the
+   research, demos, Three.js games), papers, community forms and the
    lost-in-space error page.
 
    A record page is one <article data-content-key>:
@@ -365,8 +365,8 @@ html[lang="zh-CN"] .record-page .record-lead {
 .record-hero[data-hero="art"] .orbit-art {
   position: absolute;
   top: 0;
-  right: -12%;
-  width: 70%;
+  right: -4%;
+  width: 64%;
   height: 100%;
 }
 .record-hero[data-hero="art"] .record-hero-copy {
@@ -858,68 +858,7 @@ html[lang="zh-CN"] .record-page .record-flow .content-field :is(p, li) {
   font-size: 16px;
 }
 
-/* --- 4. Development path steps. ------------------------------------------ */
-.record-page .path-steps {
-  display: grid;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.record-page .path-step {
-  display: grid;
-  grid-template-columns: clamp(64px, 8vw, 120px) minmax(0, 1fr);
-  gap: clamp(16px, 3vw, 44px);
-  padding: clamp(36px, 4.4vw, 64px) 0;
-  border-top: 1px solid var(--line);
-}
-.record-page .path-step:first-child {
-  border-top: 0;
-}
-.record-page .step-number {
-  position: sticky;
-  top: calc(var(--header-h) + 28px);
-  align-self: start;
-  padding: 0;
-  background: linear-gradient(
-    180deg,
-    var(--accent),
-    color-mix(in srgb, var(--accent) 10%, transparent)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-family: var(--font-display);
-  font-size: clamp(44px, 5.6vw, 92px);
-  font-weight: 600;
-  letter-spacing: -0.06em;
-  line-height: 0.9;
-}
-.record-page .path-step .content-record {
-  min-width: 0;
-  padding: 0;
-  border: 0;
-  background: none;
-  scroll-margin-top: calc(var(--header-h) + 24px);
-}
-.record-page .path-step .content-record > .eyebrow {
-  display: flex;
-}
-.record-page .path-step .content-title {
-  margin: 12px 0 14px;
-  font-size: clamp(28px, 2.8vw, 42px);
-  letter-spacing: -0.045em;
-  line-height: 1.06;
-}
-.record-page .path-step .content-lead {
-  margin: 0 0 8px;
-  color: var(--body);
-  font-size: 17px;
-}
-.record-page .path-step .record-section {
-  scroll-margin-top: calc(var(--header-h) + 24px);
-}
-
-/* --- 5. Related records: image-led mini cards. --------------------------- */
+/* --- 4. Related records: image-led mini cards. --------------------------- */
 .record-shelf-note {
   max-width: 60ch;
   margin: 18px 0 0;
@@ -1058,12 +997,7 @@ html[lang="zh-CN"] .record-page .record-flow .content-field :is(p, li) {
   overflow-wrap: anywhere;
 }
 
-/* --- 6. Community panel in the flow (layout shared with community.css). -- */
-.record-flow > .community-panel .community-section-heading {
-  counter-increment: record-section;
-}
-
-/* --- 7. Responsive. ------------------------------------------------------- */
+/* --- 5. Responsive. ------------------------------------------------------- */
 @media (max-width: 1100px) {
   .record-body {
     grid-template-columns: minmax(0, 1fr);
@@ -1206,14 +1140,6 @@ html[lang="zh-CN"] .record-page .record-flow .content-field :is(p, li) {
   .record-page .record-flow .metadata-facts > div {
     grid-template-columns: minmax(0, 1fr);
   }
-  .record-page .path-step {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 4px;
-  }
-  .record-page .step-number {
-    position: static;
-    font-size: 48px;
-  }
   .record-mini {
     grid-template-columns: 112px minmax(0, 1fr);
     gap: 12px;
@@ -1226,7 +1152,7 @@ html[lang="zh-CN"] .record-page .record-flow .content-field :is(p, li) {
   }
 }
 
-/* --- 8. Motion (opt-in). ------------------------------------------------- */
+/* --- 6. Motion (opt-in). ------------------------------------------------- */
 @media (prefers-reduced-motion: no-preference) {
   @keyframes record-rise {
     from {
@@ -1350,7 +1276,7 @@ html[lang="zh-CN"] .record-page .record-flow .content-field :is(p, li) {
   }
 }
 
-/* --- 9. Forced colours and print. ---------------------------------------- */
+/* --- 7. Forced colours and print. ---------------------------------------- */
 @media (forced-colors: active) {
   .record-hero-backdrop {
     display: none;

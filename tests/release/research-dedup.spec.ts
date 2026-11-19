@@ -1,6 +1,5 @@
 import { test, expect } from "@playwright/test";
 import { loadContent } from "../../scripts/lib/content.mjs";
-import open3dImport from "../../website/content/open3d-import.config.json" with { type: "json" };
 import {
   researchGamesForExamples,
   researchNotInExamples,
@@ -11,11 +10,7 @@ const records = content.registry.all("repository-research");
 const examples = [
   ...content.registry.all("example"),
   ...content.registry.all("foundation"),
-  ...content.registry
-    .all("threejs-game")
-    .filter((entry) =>
-      open3dImport.includedLegacyThreejsIds.includes(entry.id),
-    ),
+  ...content.registry.all("threejs-game"),
 ];
 const promoted = researchGamesForExamples(records, examples);
 const remaining = researchNotInExamples(records, examples);

@@ -1,6 +1,6 @@
 import { useRef, type ReactNode } from "react";
 import { useLoaderData, type LoaderFunctionArgs } from "react-router";
-import { ArrowDown, ArrowUpRight, ChevronDown, Search, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Search, X } from "lucide-react";
 import { IndexEmpty } from "../components/catalog-browser";
 import { ExampleCard } from "../components/example-card";
 import { ResearchGameCard } from "../components/research-game-card";
@@ -9,8 +9,7 @@ import {
   useCommunityWorks,
 } from "../components/community-work-card";
 import { ImportedThreejsCard } from "../components/imported-threejs-card";
-import open3dImport from "../../content/open3d-import.config.json";
-import { researchGamesForExamples } from "../../content/research-games";
+import { exampleGames } from "../lib/collection-stats";
 import { useClientQuery } from "../lib/client-query";
 import { publicAsset } from "../lib/catalog";
 import { contentFor, sources } from "../../content/registry.server";
@@ -143,12 +142,11 @@ const filterKeys = ["q", "track", "client"] as const;
 
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
-  const nativeGames = [...content.all("example"), ...content.all("foundation")];
-  const importedThreejs = content
-    .all("threejs-game")
-    .filter((entry) =>
-      open3dImport.includedLegacyThreejsIds.includes(entry.id),
-    );
+  const {
+    native: nativeGames,
+    imported: importedThreejs,
+    linked: researchGames,
+  } = exampleGames(content);
   const captures = new Map(
     Object.values(sources.learningMedia).map((media) => [
       media.src.replace(/^.*\/|\.\w+$/g, ""),
@@ -164,10 +162,7 @@ export function loader({ request }: LoaderFunctionArgs) {
       descriptionLanguage: entry.descriptionLanguage,
       searchText: searchableText(entry).split(/(https?:\/\/\S+)/),
     })),
-    researchGames: researchGamesForExamples(
-      content.all("repository-research"),
-      [...nativeGames, ...importedThreejs],
-    ).map((entry) => ({
+    researchGames: researchGames.map((entry) => ({
       key: entry.key,
       id: entry.id,
       data: entry.data,
@@ -229,7 +224,7 @@ export default function Examples() {
     client = Object.hasOwn(agentLabels, params.get("client") || "")
       ? params.get("client")!
       : "all";
-  const summary = useRef<HTMLSpanElement>(null);
+  const summary = useRef<HTMLInputElement>(null);
   const update = (key: string, value: string) => {
     // History updates before the large grid commits. Compose rapid edits from
     // the current URL so clearing search and clicking a filter cannot revive it.
@@ -242,8 +237,8 @@ export default function Examples() {
       flushSync: true,
     });
   };
-  /** Clearing from the empty state removes the control that had focus; keep
-   *  keyboard users in place on the live results summary just above. */
+  /** Clearing from the empty state removes the control that had focus; return
+   *  keyboard users to the search field just above. */
   const settleFocus = () => summary.current?.focus({ preventScroll: true });
   const removeFilter = (key: (typeof filterKeys)[number]) => {
     update(key, "");
@@ -299,12 +294,6 @@ export default function Examples() {
     linkedGames.length +
     importedGames.length +
     submittedGames.length;
-  const sourceOnlyCount =
-    games.filter((entry) => entry.data.demo.kind === "source").length +
-    importedGames.length;
-  const referenceOnlyCount = games.filter(
-    (entry) => entry.data.demo.kind === "reference",
-  ).length;
   // Live header figures follow the same filters as the grid.
   const shown = [
     ...games.map((entry) => [entry.data.track, entry.data.demo.kind]),
@@ -398,6 +387,7 @@ export default function Examples() {
             <label className="gallery-search">
               <Search size={18} aria-hidden="true" />
               <input
+                ref={summary}
                 aria-label={t("Search game examples")}
                 placeholder={t("Find a game, engine, or AI workflow…")}
                 value={query}
@@ -450,36 +440,6 @@ export default function Examples() {
                 </button>
               ))}
             </div>
-          </div>
-          <div className="gallery-results">
-            <span
-              className="gallery-dots gallery-summary"
-              ref={summary}
-              tabIndex={-1}
-              aria-live="polite"
-            >
-              <span>{t("{count} game examples", { count: gameCount })}</span>
-              {sourceOnlyCount > 0 && (
-                <span>
-                  {t("{count} source-only / unverified", {
-                    count: sourceOnlyCount,
-                  })}
-                </span>
-              )}
-              {referenceOnlyCount > 0 && (
-                <span>
-                  {t("{count} project references / source unverified", {
-                    count: referenceOnlyCount,
-                  })}
-                </span>
-              )}
-            </span>
-            {collections.length > 0 && (
-              <a className="gallery-jump" href="#community-collections">
-                {t("Community collections")}
-                <ArrowDown size={13} aria-hidden="true" />
-              </a>
-            )}
           </div>
         </div>
         {worksUnavailable && (
