@@ -21,7 +21,8 @@ export default function AtlasSearch(props: SharedProps) {
   const { t } = useSiteI18n();
   // The first query downloads the search index; until results arrive the list
   // has nothing to show, so say what is happening instead of an empty panel.
-  const pending = search.isLoading && !search.data && search.search.trim() !== "";
+  const pending =
+    search.isLoading && !search.data && search.search.trim() !== "";
   const returnFocus = useRef<HTMLElement | null>(null);
   const openedAt = useRef("");
   return (
