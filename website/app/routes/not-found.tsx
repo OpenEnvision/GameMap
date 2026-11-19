@@ -106,7 +106,7 @@ function LostArt({ signal }: { signal: string }) {
           <line x1="0" y1="-5" x2="0" y2="-14" />
           <circle cx="0" cy="-15" r="2" />
         </g>
-        <text className="lost-signal" x="596" y="78">
+        <text className="lost-signal" x="596" y="104">
           {signal}
         </text>
       </svg>

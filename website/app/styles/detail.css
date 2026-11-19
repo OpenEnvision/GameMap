@@ -239,9 +239,9 @@ html[lang="zh-CN"] .record-page .record-lead {
 /* 2a. Media hero: the screenshot is the stage. Theme-independent dark so the
    imagery reads the same in both themes; text sits on the scrim's solid end. */
 .record-hero[data-hero="media"] {
-  --hero-ink: #f6f4ef;
-  --hero-body: rgb(246 244 239 / 0.82);
-  --hero-muted: rgb(246 244 239 / 0.66);
+  --hero-ink: var(--chip-ink);
+  --hero-body: color-mix(in srgb, var(--chip-ink) 84%, transparent);
+  --hero-muted: color-mix(in srgb, var(--chip-ink) 68%, transparent);
   min-height: min(100svh, 1060px);
   background: var(--media-bg);
   color: var(--hero-ink);
@@ -269,9 +269,9 @@ html[lang="zh-CN"] .record-page .record-lead {
     ),
     linear-gradient(
       90deg,
-      rgb(5 5 6 / 0.82) 0%,
-      rgb(5 5 6 / 0.4) 40%,
-      rgb(5 5 6 / 0) 70%
+      rgb(5 5 6 / 0.88) 0%,
+      rgb(5 5 6 / 0.55) 45%,
+      rgb(5 5 6 / 0) 72%
     );
 }
 .record-hero[data-hero="media"] .record-title {
@@ -285,11 +285,18 @@ html[lang="zh-CN"] .record-page .record-lead {
 .record-hero[data-hero="media"] .record-kicker-pillar {
   color: var(--hero-muted);
 }
+/* Small labels can land on a bright screenshot: a tight shadow keeps them
+   legible, and the signal red is lifted toward white for the dark stage. */
+.record-hero[data-hero="media"] .record-kicker {
+  text-shadow:
+    0 1px 2px rgb(0 0 0 / 0.8),
+    0 0 14px rgb(0 0 0 / 0.55);
+}
 .record-hero[data-hero="media"] .record-kicker .kicker {
-  color: #ff6a5d;
+  color: color-mix(in srgb, var(--action) 60%, var(--chip-ink));
 }
 .record-hero[data-hero="media"] .record-kicker .kicker::before {
-  background: #ff4b3e;
+  background: var(--action);
 }
 .record-hero[data-hero="media"] :is(.record-kicker-pillar, .source-language) {
   border-color: rgb(255 255 255 / 0.22);
@@ -517,12 +524,29 @@ html[lang="zh-CN"] .record-page .record-rail-title {
   background: var(--accent);
   opacity: 0;
 }
+.record-outline-index {
+  flex: none;
+  min-width: 15px;
+}
 .record-outline-index::before {
   content: counter(outline, decimal-leading-zero);
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.06em;
+}
+/* Overview jumps back to the hero: an arrow instead of a number, and it does
+   not count, so the outline's 01… match the flow's numbered sections. */
+.record-page .record-outline a.record-outline-top {
+  counter-increment: none;
+}
+.record-outline-top .record-outline-index::before {
+  content: none;
+}
+.record-outline-index svg {
+  display: inline-block;
+  color: var(--muted);
+  vertical-align: -1px;
 }
 .record-page .record-outline a:hover {
   background: var(--hover);
@@ -535,13 +559,14 @@ html[lang="zh-CN"] .record-page .record-rail-title {
 .record-page .record-outline a.is-active::before {
   opacity: 1;
 }
-.record-page .record-outline a.is-active .record-outline-index::before {
+.record-page .record-outline a.is-active .record-outline-index::before,
+.record-page .record-outline a.is-active .record-outline-index svg {
   color: var(--accent);
 }
 
 /* The reading flow. */
 .record-flow {
-  counter-reset: record-section 1;
+  counter-reset: record-section;
   display: grid;
   gap: clamp(72px, 9vw, 140px);
   min-width: 0;
@@ -956,7 +981,7 @@ html[lang="zh-CN"] .record-page .record-flow .content-field :is(p, li) {
     radial-gradient(circle at 84% 18%, rgb(255 255 255 / 0.5) 0 1px, transparent 1.5px),
     radial-gradient(circle at 30% 80%, rgb(255 255 255 / 0.4) 0 1px, transparent 1.5px),
     radial-gradient(ellipse 80% 70% at 60% 50%, color-mix(in srgb, var(--art-a) 22%, transparent), transparent 70%),
-    #07070b;
+    var(--media-bg);
 }
 .record-mini-play {
   position: absolute;
@@ -1091,10 +1116,19 @@ html[lang="zh-CN"] .record-page .record-flow .content-field :is(p, li) {
     inset: 0 0 auto;
     aspect-ratio: 10 / 11;
   }
+  /* The kicker lands on the screenshot's lower third: keep it on a dark
+     enough band, and darken the left edge a little where labels start. */
   .record-hero[data-hero="media"] .record-hero-backdrop::after {
     background:
       linear-gradient(180deg, rgb(5 5 6 / 0.6) 0%, rgb(5 5 6 / 0) 30%),
-      linear-gradient(0deg, var(--media-bg) 0%, rgb(5 5 6 / 0.7) 22%, rgb(5 5 6 / 0) 55%);
+      linear-gradient(
+        0deg,
+        var(--media-bg) 0%,
+        rgb(5 5 6 / 0.88) 26%,
+        rgb(5 5 6 / 0.62) 44%,
+        rgb(5 5 6 / 0) 66%
+      ),
+      linear-gradient(90deg, rgb(5 5 6 / 0.4) 0%, rgb(5 5 6 / 0) 62%);
   }
   .record-hero[data-hero="media"] .record-hero-copy {
     padding-top: 62%;
@@ -1325,11 +1359,16 @@ html[lang="zh-CN"] .record-page .record-flow .content-field :is(p, li) {
   grid-template-columns: minmax(0, 1fr);
   align-content: center;
   justify-items: center;
-  width: min(var(--content-max), calc(100% - 2 * var(--gutter)));
+  width: 100%;
   max-width: none;
   min-height: calc(100svh - var(--header-h));
-  margin: 0 auto;
-  padding: clamp(48px, 8vw, 120px) 0 clamp(72px, 10vw, 140px);
+  margin: 0;
+  /* A full-width box around a content-width grid: art may drift into the
+     gutters and is clipped at the viewport edge, never widening the page. */
+  padding: clamp(48px, 8vw, 120px)
+    max(var(--gutter), calc((100% - var(--content-max)) / 2))
+    clamp(72px, 10vw, 140px);
+  overflow-x: clip;
   text-align: center;
 }
 .error-page h1 {
@@ -1358,7 +1397,10 @@ html[lang="zh-CN"] .error-page h1 {
   color: var(--accent);
 }
 
-/* The boundary page has no art markup: a tilted orbit and a planet in CSS. */
+/* The boundary page has no art markup: a tilted orbit and a planet in CSS.
+   The orbit is placed in the heading's grid row (eyebrow, h1, p, button) and
+   is exactly as tall as the h1, so it rings the headline and never crosses
+   the lede or the button. */
 .error-page:not(.lost-page)::before,
 .error-page:not(.lost-page)::after {
   content: "";
@@ -1368,16 +1410,19 @@ html[lang="zh-CN"] .error-page h1 {
   pointer-events: none;
 }
 .error-page:not(.lost-page)::before {
-  top: 50%;
-  width: min(92%, 980px);
-  aspect-ratio: 3 / 1;
+  grid-row: 2 / 3; /* explicit end lines: an abspos auto line would be the */
+  grid-column: 1 / 2; /* container's padding edge, not the h1 row */
+  top: 22px; /* the h1's top margin */
+  bottom: 0;
+  width: min(100%, 11.5em);
   border: 1px solid var(--orbit-line);
   border-radius: 50%;
-  translate: -50% -50%;
-  rotate: -9deg;
+  font-size: clamp(42px, 6vw, 96px); /* the h1's size */
+  translate: -50% 0;
+  rotate: -5deg;
   box-shadow:
-    inset 0 0 0 26px color-mix(in srgb, var(--paper) 100%, transparent),
-    inset 0 0 0 27px var(--orbit-line);
+    inset 0 0 0 0.26em color-mix(in srgb, var(--paper) 100%, transparent),
+    inset 0 0 0 calc(0.26em + 1px) var(--orbit-line);
 }
 .error-page:not(.lost-page)::after {
   top: 18%;
@@ -1394,11 +1439,13 @@ html[lang="zh-CN"] .error-page h1 {
   box-shadow: 0 0 80px 10px color-mix(in srgb, var(--art-a) 40%, transparent);
 }
 
-/* The 404 stage. */
+/* The 404 stage. One size drives the numerals; on wide but short screens it
+   is capped by the viewport height so the recovery buttons stay inside the
+   first screen (1366x768 and up). */
 .lost-page {
-  overflow-x: clip;
+  --lost-size: min(clamp(116px, 31vw, 460px), 36svh);
   align-content: start;
-  padding-top: clamp(12px, 3vw, 40px);
+  padding-top: clamp(0px, 1vw, 12px);
 }
 .lost-stage {
   position: relative;
@@ -1422,7 +1469,7 @@ html[lang="zh-CN"] .error-page h1 {
   align-items: center;
   justify-content: center;
   gap: clamp(0px, 1vw, 16px);
-  height: clamp(150px, 30vw, 440px);
+  height: max(150px, calc(var(--lost-size) * 0.96));
 }
 .lost-digit {
   background: linear-gradient(
@@ -1434,7 +1481,7 @@ html[lang="zh-CN"] .error-page h1 {
   background-clip: text;
   color: transparent;
   font-family: var(--font-display);
-  font-size: clamp(116px, 31vw, 460px);
+  font-size: var(--lost-size);
   font-weight: 600;
   letter-spacing: -0.08em;
   line-height: 0.8;
@@ -1480,8 +1527,8 @@ html[lang="zh-CN"] .error-page h1 {
   stroke-dasharray: 3 8;
 }
 .lost-probe {
-  translate: 470px 82px;
-  rotate: -28deg;
+  translate: 409px 117px;
+  rotate: -29deg;
   fill: var(--ink);
   stroke: var(--ink);
   stroke-width: 1;
@@ -1501,7 +1548,13 @@ html[lang="zh-CN"] .error-page h1 {
 .lost-copy {
   display: grid;
   justify-items: center;
-  margin-top: clamp(12px, 2vw, 28px);
+  margin-top: clamp(12px, 1.4vw, 20px);
+}
+.lost-page h1 {
+  font-size: max(34px, min(clamp(42px, 6vw, 96px), 8.4svh));
+}
+.lost-page p {
+  margin: 20px 0 30px;
 }
 .lost-actions {
   display: flex;
@@ -1517,6 +1570,29 @@ html[lang="zh-CN"] .error-page h1 {
   }
   .error-page p {
     margin: 18px 0 28px;
+  }
+}
+/* Short laptop screens (1024x600): a smaller stage keeps the buttons in view. */
+@media (min-width: 721px) and (max-height: 680px) {
+  .lost-page {
+    --lost-size: min(clamp(116px, 31vw, 460px), 30svh);
+  }
+  .lost-page p {
+    margin: 16px 0 24px;
+  }
+  .lost-trajectory {
+    width: min(34%, 420px);
+  }
+}
+@media (max-width: 640px) {
+  .error-page:not(.lost-page)::after {
+    top: 6%;
+    width: clamp(64px, 20vw, 92px);
+    translate: 60% 0;
+  }
+  /* At phone size the label would be a few pixels tall, under the probe. */
+  .lost-signal {
+    display: none;
   }
 }
 @media (prefers-reduced-motion: no-preference) {

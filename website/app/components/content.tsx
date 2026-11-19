@@ -3,6 +3,7 @@ import {
   ArrowDown,
   ArrowLeft,
   ArrowRight,
+  ArrowUp,
   ArrowUpRight,
   BookOpen,
   Clapperboard,
@@ -470,7 +471,14 @@ function heroActions(
           ? firstFactLink(block.items)
           : undefined;
     if (!link || actions.some((action) => action.href === link.url)) continue;
-    const icon = actionIcons[field] || "link";
+    // A demo field that only points at source or a project page is not a play
+    // link (fields.ts labels those blocks "Source/Project reference — …").
+    const kind = block?.label || "";
+    const icon: ActionIcon = kind.startsWith("Source reference")
+      ? "code"
+      : kind.startsWith("Project reference")
+        ? "link"
+        : actionIcons[field] || "link";
     actions.push({
       href: link.url,
       label: t(link.label),
@@ -981,16 +989,29 @@ export function RecordDocument({
               <span className="record-rail-title" aria-hidden="true">
                 {t("On this record")}
               </span>
-              {outline.map((item) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className={active === item.id ? "is-active" : undefined}
-                >
-                  <span className="record-outline-index" aria-hidden="true" />
-                  {item.label}
-                </a>
-              ))}
+              {/* Overview returns to the hero and stays unnumbered, so the
+                  outline's 01, 02… match the numbered sections in the flow. */}
+              {outline.map((item) => {
+                const top = item.id === "record-intro";
+                const className = [
+                  top ? "record-outline-top" : "",
+                  active === item.id ? "is-active" : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ");
+                return (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    className={className || undefined}
+                  >
+                    <span className="record-outline-index" aria-hidden="true">
+                      {top && <ArrowUp size={12} strokeWidth={2.25} />}
+                    </span>
+                    {item.label}
+                  </a>
+                );
+              })}
             </nav>
           )}
         </aside>

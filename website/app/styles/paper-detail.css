@@ -57,7 +57,7 @@
   pointer-events: none;
   background: radial-gradient(
     ellipse 50% 55% at 60% 45%,
-    color-mix(in srgb, var(--art-a, #9b80f2) 16%, transparent),
+    color-mix(in srgb, var(--art-a, var(--action)) 16%, transparent),
     transparent 70%
   );
 }
