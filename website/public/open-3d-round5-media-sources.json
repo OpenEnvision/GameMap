@@ -10638,6 +10638,41 @@
       "bytes": 50402
     },
     {
+      "id": "open3d-colobot-gold-edition",
+      "title": "Colobot: Gold Edition",
+      "media": {
+        "src": "media/learning/open3d-colobot-gold-edition.webp",
+        "alt": "An astronaut and a tracked robot holding a green object stand on a marked platform, with unit controls visible in the upper left.",
+        "caption": "Creator-published gameplay: Colobot: Gold Edition gameplay screenshot published by TerranovaTeam for version 0.1.5. Image rights remain with their respective owners.",
+        "sourceUrl": "https://colobot.info/2015/06/10/version-0-1-5-is-finally-there/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://colobot.info/wordpress/wp-content/uploads/alpha-0.1.5.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "45545bf28782f66e87910e47920429fbdcfffce618a768517fda25af2cc3b77f",
+        "sourceFrameSHA256": "c3a6a98346197fc43bdec55ea4cb8c24308ceae7b796fba5cb5945c6a0e6f8d6",
+        "sourceWidth": 800,
+        "sourceHeight": 600,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the complete 800 by 600 original PNG. An astronaut, a tracked manipulator holding a glowing green object, unit-selection controls and the mouse pointer are visible in the rendered game. The official 0.1.5 release announcement publishes the exact original in its og:image metadata and a square derivative as the post image. The source repository desktop appdata independently names the same exact original and dimensions."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "b8ef177bdd11bca0ba78775f8d9f3ad5eaa104e282000303d6e87008bcf5eadb",
+      "bytes": 79908
+    },
+    {
       "id": "open3d-craft",
       "title": "Craft",
       "media": {
@@ -34035,83 +34070,6 @@
       ]
     },
     {
-      "id": "open3d-colobot-gold-edition",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. The project and exact author release blog pages published logos and an author avatar, not a gameplay original.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/colobot/colobot/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/colobot/colobot",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/colobot/colobot/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://colobot.info/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/colobot/colobot/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/colobot/colobot",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/colobot/colobot/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://colobot.info/",
-          "checkedAt": "2026-11-18",
-          "result": "Public retrieval failed: getaddrinfo EAI_AGAIN colobot.info"
-        },
-        {
-          "url": "https://colobot.info/colobot-gold-edition/",
-          "checkedAt": "2026-11-19",
-          "result": "Official edition description provides no eligible picture."
-        },
-        {
-          "url": "https://colobot.info/wordpress/wp-content/uploads/Working-Dead.png",
-          "checkedAt": "2026-11-19",
-          "result": "Visually reviewed developer post header with two positioned robots on lunar terrain and no gameplay UI; not enough to establish active play."
-        },
-        {
-          "url": "https://www.moddb.com/games/colobot-gold-edition/images",
-          "checkedAt": "2026-11-19",
-          "result": "Developer-linked photo gallery points to media.moddb.com, which imageOriginAllowed rejects for the page."
-        },
-        {
-          "url": "https://api.github.com/repos/colobot/colobot/git/trees/dev?recursive=1",
-          "checkedAt": "2026-11-19",
-          "result": "Complete source tree of 875 entries has no named gameplay/screenshot path; earlier improve-screenshots commit modifies build documentation screenshots only."
-        },
-        {
-          "url": "https://colobot.info/colobot-gold-edition/",
-          "checkedAt": "2026-11-19",
-          "result": "The project and exact author release blog pages published logos and an author avatar, not a gameplay original."
-        },
-        {
-          "url": "https://colobot.info/2019/02/24/update-0-1-12-technical-update/",
-          "checkedAt": "2026-11-19",
-          "result": "The project and exact author release blog pages published logos and an author avatar, not a gameplay original."
-        }
-      ]
-    },
-    {
       "id": "open3d-lips-of-suna",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -39808,6 +39766,111 @@
         }
       },
       {
+        "id": "open3d-0-a-d",
+        "sourceUrl": "https://gitea.wildfiregames.com/0ad/0ad",
+        "demo": {
+          "label": "Download 0 A.D. Release 28",
+          "url": "https://play0ad.com/download/",
+          "kind": "download",
+          "note": "Wildfire Games lists exact Windows installers, macOS disk images and an official Linux AppImage for Release 28: Boiorix. Verified public distribution metadata on 2026-11-19; no package was downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://play0ad.com/download/",
+            "checkedAt": "2026-11-19",
+            "result": "Official developer download page names Release 28: Boiorix and links all five native distributions and the exact catalog source; no payload retrieved."
+          },
+          {
+            "url": "https://play0ad.com/new-release-0-a-d-release-28-boiorix/",
+            "checkedAt": "2026-11-19",
+            "result": "Wildfire Games release announcement confirms the exact standalone game version and native distributions, including the official AppImage."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://play0ad.com/download/",
+          "authorVerification": "The Wildfire Games download page links the exact 0 A.D. catalog source on the studio’s Gitea and identifies Wildfire Games as the publisher.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Five exact direct links in the official Release 28 download page belong to the developer release host and are explicitly identified as native game installers, disk images or AppImage, separate from the source archives.",
+          "assets": [
+            {
+              "url": "https://releases.wildfiregames.com/0ad-0.28.0-win64.exe",
+              "name": "0ad-0.28.0-win64.exe",
+              "platform": "Windows x64",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://releases.wildfiregames.com/0ad-0.28.0-win32.exe",
+              "name": "0ad-0.28.0-win32.exe",
+              "platform": "Windows x86",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://releases.wildfiregames.com/0ad-0.28.0-macos-aarch64.dmg",
+              "name": "0ad-0.28.0-macos-aarch64.dmg",
+              "platform": "macOS Apple silicon",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://releases.wildfiregames.com/0ad-0.28.0-macos-x86_64.dmg",
+              "name": "0ad-0.28.0-macos-x86_64.dmg",
+              "platform": "macOS Intel",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://releases.wildfiregames.com/0ad-0.28.0-x86_64.AppImage",
+              "name": "0ad-0.28.0-x86_64.AppImage",
+              "platform": "Linux x64",
+              "kind": "game-binary"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-armagetron-advanced",
+        "sourceUrl": "https://github.com/ArmagetronAd/armagetronad",
+        "demo": {
+          "kind": "download",
+          "label": "Download Armagetron Advanced 0.2.9.3.1",
+          "url": "https://armagetronad.org/downloads.php",
+          "note": "The developers list 0.2.9.3.1 desktop game builds for Windows, Linux and macOS separately from the dedicated server and source downloads. Release metadata checked on 2026-11-19; no package downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://armagetronad.org/downloads.php",
+          "authorVerification": "The cataloged ArmagetronAd project links the game website, which publishes the named stable client binaries on the project Launchpad.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The developers list 0.2.9.3.1 desktop game builds for Windows, Linux and macOS separately from the dedicated server and source downloads.",
+          "assets": [
+            {
+              "url": "https://launchpad.net/armagetronad/0.2.9/0.2.9.3.1/+download/armagetronad-0.2.9.3.1.win32.exe",
+              "name": "armagetronad-0.2.9.3.1.win32.exe",
+              "platform": "Windows",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://launchpad.net/armagetronad/0.2.9/0.2.9.3.1/+download/ArmagetronAdvanced.AppImage",
+              "name": "ArmagetronAdvanced.AppImage",
+              "platform": "Linux x86_64",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://launchpad.net/armagetronad/0.2.9/0.2.9.3.1/+download/armagetronad-0.2.9.3.1.dmg",
+              "name": "armagetronad-0.2.9.3.1.dmg",
+              "platform": "macOS",
+              "kind": "game-binary"
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://armagetronad.org/downloads.php",
+            "checkedAt": "2026-11-19",
+            "result": "Official release metadata returned HTTP 200. The developers list 0.2.9.3.1 desktop game builds for Windows, Linux and macOS separately from the dedicated server and source downloads."
+          }
+        ]
+      },
+      {
         "id": "open3d-assaultcube",
         "sourceUrl": "https://github.com/assaultcube/AC",
         "demo": {
@@ -39888,6 +39951,44 @@
         }
       },
       {
+        "id": "open3d-bzflag",
+        "sourceUrl": "https://github.com/BZFlag-Dev/bzflag",
+        "demo": {
+          "kind": "download",
+          "label": "Download BZFlag 2.4.32",
+          "url": "https://www.bzflag.org/downloads/",
+          "note": "The official download page separately identifies the BZFlag 2.4.32 Windows game installer, macOS application archive and source code. Release metadata checked on 2026-11-19; no package downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://www.bzflag.org/downloads/",
+          "authorVerification": "The cataloged BZFlag development team links this official site, which links named native game binaries on download.bzflag.org.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The official download page separately identifies the BZFlag 2.4.32 Windows game installer, macOS application archive and source code.",
+          "assets": [
+            {
+              "url": "https://download.bzflag.org/bzflag/windows/2.4.32/bzflag-2.4.32.exe",
+              "name": "bzflag-2.4.32.exe",
+              "platform": "Windows",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://download.bzflag.org/bzflag/macos/2.4.32/BZFlag-2.4.32-macOS.zip",
+              "name": "BZFlag-2.4.32-macOS.zip",
+              "platform": "macOS",
+              "kind": "game-binary"
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://www.bzflag.org/downloads/",
+            "checkedAt": "2026-11-19",
+            "result": "Official release metadata returned HTTP 200. The official download page separately identifies the BZFlag 2.4.32 Windows game installer, macOS application archive and source code."
+          }
+        ]
+      },
+      {
         "id": "open3d-colobot-gold-edition",
         "sourceUrl": "https://github.com/colobot/colobot",
         "demo": {
@@ -39935,6 +40036,87 @@
             }
           ]
         }
+      },
+      {
+        "id": "open3d-egoboo",
+        "sourceUrl": "https://github.com/egoboo/egoboo",
+        "demo": {
+          "kind": "download",
+          "label": "Download for Windows",
+          "url": "https://downloads.sourceforge.net/project/egoboo/Windows%20Distro%20%2832-bit%29/2.8.1%20%28Stable%29/ego281_win32.exe",
+          "note": "The Egoboo team labels this .exe its stable version 2.8.1 Windows game installer, which installs all required components. Release metadata verified on 2026-11-19; no package was downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://egoboo.sourceforge.net/download.html",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; stable installer and separate nightly binaries and data are listed."
+          },
+          {
+            "url": "https://downloads.sourceforge.net/project/egoboo/Windows%20Distro%20%2832-bit%29/2.8.1%20%28Stable%29/ego281_win32.exe",
+            "checkedAt": "2026-11-19",
+            "result": "HEAD HTTP 302 to SourceForge project distribution mirror for the same installer filename."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://egoboo.sourceforge.net/download.html",
+          "authorVerification": "The project’s Egoboo community download page publishes the exact stable installer in its own SourceForge project and links the same GitHub organization for nightly builds.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The Egoboo team labels this .exe its stable version 2.8.1 Windows game installer, which installs all required components.",
+          "assets": [
+            {
+              "kind": "game-binary",
+              "name": "ego281_win32.exe",
+              "platform": "Windows x86",
+              "url": "https://downloads.sourceforge.net/project/egoboo/Windows%20Distro%20%2832-bit%29/2.8.1%20%28Stable%29/ego281_win32.exe"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-flightgear",
+        "sourceUrl": "https://github.com/FlightGear/flightgear",
+        "demo": {
+          "kind": "download",
+          "label": "Download FlightGear 2024.1.7",
+          "url": "https://www.flightgear.org/download/",
+          "note": "The official stable 2024.1.7 page identifies a Windows installer, a universal macOS disk image and a Linux AppImage for the flight simulator. Additional scenery can be obtained separately. Release metadata checked on 2026-11-19; no package downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://www.flightgear.org/download/",
+          "authorVerification": "The FlightGear repository and manuals point to this project download page. It explicitly links the three named stable game builds at the project distribution mirror.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The official stable 2024.1.7 page identifies a Windows installer, a universal macOS disk image and a Linux AppImage for the flight simulator. Additional scenery can be obtained separately.",
+          "assets": [
+            {
+              "url": "https://mirrors.ibiblio.org/flightgear/ftp/release-2024.1/flightgear-2024.1.7-windows-amd64.exe",
+              "name": "flightgear-2024.1.7-windows-amd64.exe",
+              "platform": "Windows x86_64",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://mirrors.ibiblio.org/flightgear/ftp/release-2024.1/flightgear-2024.1.7-linux-amd64.AppImage",
+              "name": "flightgear-2024.1.7-linux-amd64.AppImage",
+              "platform": "Linux x86_64",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://mirrors.ibiblio.org/flightgear/ftp/release-2024.1/flightgear-2024.1.7-macos-universal.dmg",
+              "name": "flightgear-2024.1.7-macos-universal.dmg",
+              "platform": "macOS universal",
+              "kind": "game-binary"
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://www.flightgear.org/download/",
+            "checkedAt": "2026-11-19",
+            "result": "Official release metadata returned HTTP 200. The official stable 2024.1.7 page identifies a Windows installer, a universal macOS disk image and a Linux AppImage for the flight simulator. Additional scenery can be obtained separately."
+          }
+        ]
       },
       {
         "id": "open3d-lips-of-suna",
@@ -40028,6 +40210,44 @@
         }
       },
       {
+        "id": "open3d-neverball-neverputt",
+        "sourceUrl": "https://github.com/neverball/neverball",
+        "demo": {
+          "kind": "download",
+          "label": "Download for Windows",
+          "url": "https://neverball.org/neverball-1.6.0.zip",
+          "note": "The Neverball project publishes the stable Neverball and Neverputt 1.6.0 Windows ZIP separately from its source tarball. Release metadata verified on 2026-11-19; no package was downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://neverball.org/download",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; lists this ZIP under Microsoft Windows."
+          },
+          {
+            "url": "https://neverball.org/neverball-1.6.0.zip",
+            "checkedAt": "2026-11-19",
+            "result": "HEAD redirected to the official distribution mirror; HTTP 200 application/zip, 75,802,818 bytes."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://neverball.org/download",
+          "authorVerification": "The project download site links directly to the matching Neverball source organization and publishes the two-game distribution.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The Neverball project publishes the stable Neverball and Neverputt 1.6.0 Windows ZIP separately from its source tarball.",
+          "assets": [
+            {
+              "kind": "game-binary",
+              "name": "neverball-1.6.0.zip",
+              "platform": "Windows",
+              "url": "https://neverball.org/neverball-1.6.0.zip",
+              "size": 75802818
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-oolite",
         "sourceUrl": "https://github.com/OoliteProject/oolite",
         "demo": {
@@ -40068,6 +40288,76 @@
               "size": 240797216,
               "platform": "Windows",
               "kind": "game-binary"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-openarena",
+        "sourceUrl": "https://github.com/OpenArena/gamecode",
+        "demo": {
+          "kind": "download",
+          "label": "Download OpenArena 0.8.8",
+          "url": "https://sourceforge.net/projects/oarena/files/",
+          "note": "The original project release listing identifies the 425.2 MB OpenArena 0.8.8 full game as a unified package for Windows, Linux and macOS, separate from two patch archives and source. Release metadata checked on 2026-11-19; no package downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://sourceforge.net/projects/oarena/files/",
+          "authorVerification": "The OpenArena project release README specifies these files are the same versions as openarena.ws and explicitly labels this exact archive as the full game.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The original project release listing identifies the 425.2 MB OpenArena 0.8.8 full game as a unified package for Windows, Linux and macOS, separate from two patch archives and source.",
+          "assets": [
+            {
+              "url": "https://sourceforge.net/projects/oarena/files/openarena-0.8.8.zip/download",
+              "name": "openarena-0.8.8.zip",
+              "platform": "Windows, Linux, macOS",
+              "kind": "game-binary"
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://sourceforge.net/projects/oarena/files/",
+            "checkedAt": "2026-11-19",
+            "result": "Official release metadata returned HTTP 200. The original project release listing identifies the 425.2 MB OpenArena 0.8.8 full game as a unified package for Windows, Linux and macOS, separate from two patch archives and source."
+          }
+        ]
+      },
+      {
+        "id": "open3d-opendungeons",
+        "sourceUrl": "https://github.com/OpenDungeons/OpenDungeons",
+        "demo": {
+          "kind": "download",
+          "label": "Download for Windows",
+          "url": "https://download.tuxfamily.org/opendungeons/0.7/OpenDungeons-0.7.1-Win32-MSVS2013.zip",
+          "note": "The OpenDungeons developers label this release as the version 0.7.1 Windows 32-bit game binary and list the source archive separately. Release metadata verified on 2026-11-19; no package was downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://opendungeons.github.io/downloads.html",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; project labels this archive as its Windows 32-bit binary."
+          },
+          {
+            "url": "https://download.tuxfamily.org/opendungeons/0.7/OpenDungeons-0.7.1-Win32-MSVS2013.zip",
+            "checkedAt": "2026-11-19",
+            "result": "HEAD HTTP 200 application/zip, 157,553,084 bytes."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://opendungeons.github.io/downloads.html",
+          "authorVerification": "The OpenDungeons organization publishes this download page from its GitHub Pages project and links the exact source repository.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The OpenDungeons developers label this release as the version 0.7.1 Windows 32-bit game binary and list the source archive separately.",
+          "assets": [
+            {
+              "kind": "game-binary",
+              "name": "OpenDungeons-0.7.1-Win32-MSVS2013.zip",
+              "platform": "Windows x86",
+              "url": "https://download.tuxfamily.org/opendungeons/0.7/OpenDungeons-0.7.1-Win32-MSVS2013.zip",
+              "size": 157553084
             }
           ]
         }
@@ -40290,6 +40580,44 @@
         }
       },
       {
+        "id": "open3d-stunt-rally-3",
+        "sourceUrl": "https://github.com/stuntrally/stuntrally3",
+        "demo": {
+          "kind": "download",
+          "label": "Download for Windows",
+          "url": "https://github.com/stuntrally/stuntrally3/releases/download/3.2/StuntRally-3.2-installer.exe",
+          "note": "Official Stunt Rally 3.2 standalone Windows installer. The installation guide also documents the companion portable Linux game archive; version 3.3 is distributed separately on SourceForge. Release metadata verified on 2026-11-19; no package was downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/stuntrally/stuntrally3/releases?per_page=3",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; official release metadata confirms uploader, filename and byte size."
+          },
+          {
+            "url": "https://github.com/stuntrally/stuntrally3/blob/main/docs/Install.md",
+            "checkedAt": "2026-11-19",
+            "result": "Official Stunt Rally 3.2 standalone Windows installer. The installation guide also documents the companion portable Linux game archive; version 3.3 is distributed separately on SourceForge."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/stuntrally/stuntrally3/releases/tag/3.2",
+          "authorVerification": "The release and uploaded platform packages are published by the exact game source repository.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Official Stunt Rally 3.2 standalone Windows installer. The installation guide also documents the companion portable Linux game archive; version 3.3 is distributed separately on SourceForge.",
+          "assets": [
+            {
+              "url": "https://github.com/stuntrally/stuntrally3/releases/download/3.2/StuntRally-3.2-installer.exe",
+              "name": "StuntRally-3.2-installer.exe",
+              "size": 2113915253,
+              "platform": "Windows x64",
+              "kind": "game-binary"
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-supertuxkart",
         "sourceUrl": "https://github.com/supertuxkart/stk-code",
         "demo": {
@@ -40483,6 +40811,44 @@
         }
       },
       {
+        "id": "open3d-the-dark-mod",
+        "sourceUrl": "https://svn.thedarkmod.com/publicsvn/darkmod_src/trunk/",
+        "demo": {
+          "kind": "download",
+          "label": "Download The Dark Mod installer",
+          "url": "https://www.thedarkmod.com/downloads/",
+          "note": "The official project supplies Windows and Linux 64-bit installers for a fresh installation of the standalone game. Extract and run the installer to fetch game data; the installer archive is not the full offline game. Release metadata checked on 2026-11-19; no package downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://www.thedarkmod.com/downloads/",
+          "authorVerification": "The Dark Mod download page links the named native installers from the project update server and separates them from the source archive and unofficial alternatives.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The official project supplies Windows and Linux 64-bit installers for a fresh installation of the standalone game. Extract and run the installer to fetch game data; the installer archive is not the full offline game.",
+          "assets": [
+            {
+              "url": "https://update.thedarkmod.com/zipsync/tdm_installer.exe.zip",
+              "name": "tdm_installer.exe.zip",
+              "platform": "Windows 64-bit",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://update.thedarkmod.com/zipsync/tdm_installer.linux64.zip",
+              "name": "tdm_installer.linux64.zip",
+              "platform": "Linux 64-bit",
+              "kind": "game-binary"
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://www.thedarkmod.com/downloads/",
+            "checkedAt": "2026-11-19",
+            "result": "Official release metadata returned HTTP 200. The official project supplies Windows and Linux 64-bit installers for a fresh installation of the standalone game. Extract and run the installer to fetch game data; the installer archive is not the full offline game."
+          }
+        ]
+      },
+      {
         "id": "open3d-ufo-alien-invasion",
         "sourceUrl": "https://github.com/ufoaiorg/ufoai",
         "demo": {
@@ -40518,6 +40884,82 @@
             }
           ]
         }
+      },
+      {
+        "id": "open3d-unvanquished",
+        "sourceUrl": "https://github.com/Unvanquished/Unvanquished",
+        "demo": {
+          "kind": "download",
+          "label": "Download the universal game ZIP",
+          "url": "https://github.com/Unvanquished/Unvanquished/releases/download/v0.56.2/unvanquished_0.56.2.zip",
+          "note": "The project documents the v0.56.2 universal ZIP as its advanced native distribution, with prebuilt game engine and data for supported platforms, separate from the launcher and checksum. Release metadata verified on 2026-11-19; no package was downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/Unvanquished/Unvanquished/releases?per_page=3",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; official release metadata confirms uploader, filename and byte size."
+          },
+          {
+            "url": "https://unvanquished.net/download/",
+            "checkedAt": "2026-11-19",
+            "result": "The project documents the v0.56.2 universal ZIP as its advanced native distribution, with prebuilt game engine and data for supported platforms, separate from the launcher and checksum."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/Unvanquished/Unvanquished/releases/tag/v0.56.2",
+          "authorVerification": "The release and uploaded platform packages are published by the exact game source repository.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The project documents the v0.56.2 universal ZIP as its advanced native distribution, with prebuilt game engine and data for supported platforms, separate from the launcher and checksum.",
+          "assets": [
+            {
+              "url": "https://github.com/Unvanquished/Unvanquished/releases/download/v0.56.2/unvanquished_0.56.2.zip",
+              "name": "unvanquished_0.56.2.zip",
+              "size": 626828717,
+              "platform": "Windows, Linux, and macOS",
+              "kind": "game-binary"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-vdrift",
+        "sourceUrl": "https://github.com/VDrift/vdrift",
+        "demo": {
+          "kind": "download",
+          "label": "Download VDrift 2014-10-20",
+          "url": "https://vdrift.net/",
+          "note": "The developer site lists the legacy 2014-10-20 64-bit Windows installer and macOS disk image separately from source; compatibility with modern systems is not verified. Release metadata checked on 2026-11-19; no package downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://vdrift.net/",
+          "authorVerification": "The VDrift project links its Windows and Mac builds from its official home to the matching official SourceForge project distribution.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The developer site lists the legacy 2014-10-20 64-bit Windows installer and macOS disk image separately from source; compatibility with modern systems is not verified.",
+          "assets": [
+            {
+              "url": "https://sourceforge.net/projects/vdrift/files/vdrift/vdrift-2014-10-20/vdrift-win64-2014-10-20.exe/download",
+              "name": "vdrift-win64-2014-10-20.exe",
+              "platform": "Windows 64-bit",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://sourceforge.net/projects/vdrift/files/vdrift/vdrift-2014-10-20/vdrift-mac-2014-10-20.dmg/download",
+              "name": "vdrift-mac-2014-10-20.dmg",
+              "platform": "macOS",
+              "kind": "game-binary"
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://vdrift.net/",
+            "checkedAt": "2026-11-19",
+            "result": "Official release metadata returned HTTP 200. The developer site lists the legacy 2014-10-20 64-bit Windows installer and macOS disk image separately from source; compatibility with modern systems is not verified."
+          }
+        ]
       },
       {
         "id": "open3d-vega-strike",
@@ -40652,6 +41094,83 @@
             }
           ]
         }
+      },
+      {
+        "id": "open3d-world-of-padman",
+        "sourceUrl": "https://github.com/PadWorld-Entertainment/worldofpadman",
+        "demo": {
+          "kind": "download",
+          "label": "Download for Windows",
+          "url": "https://github.com/PadWorld-Entertainment/worldofpadman/releases/download/v1.7.0/wop-1.7.0-installer.exe",
+          "note": "Official World of PADMAN 1.7.0 full Windows x64 game installer. The project also publishes a unified portable distribution. Release metadata verified on 2026-11-19; no package was downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/PadWorld-Entertainment/worldofpadman/releases?per_page=3",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; official release metadata confirms uploader, filename and byte size."
+          },
+          {
+            "url": "https://worldofpadman.net/en/download/",
+            "checkedAt": "2026-11-19",
+            "result": "Official World of PADMAN 1.7.0 full Windows x64 game installer. The project also publishes a unified portable distribution."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/PadWorld-Entertainment/worldofpadman/releases/tag/v1.7.0",
+          "authorVerification": "The release and uploaded platform packages are published by the exact game source repository.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Official World of PADMAN 1.7.0 full Windows x64 game installer. The project also publishes a unified portable distribution.",
+          "assets": [
+            {
+              "url": "https://github.com/PadWorld-Entertainment/worldofpadman/releases/download/v1.7.0/wop-1.7.0-installer.exe",
+              "name": "wop-1.7.0-installer.exe",
+              "size": 1188532880,
+              "platform": "Windows x64",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://github.com/PadWorld-Entertainment/worldofpadman/releases/download/v1.7.0/wop-1.7.0-unified.zip",
+              "name": "wop-1.7.0-unified.zip",
+              "size": 1200906511,
+              "platform": "Windows, Linux, and macOS",
+              "kind": "game-binary"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-xonotic",
+        "sourceUrl": "https://gitlab.com/xonotic/xonotic",
+        "demo": {
+          "kind": "download",
+          "label": "Download Xonotic 0.8.6",
+          "url": "https://xonotic.org/download/",
+          "note": "The official release page lists a complete Xonotic 0.8.6 game ZIP containing prebuilt launchers for Windows, Linux and macOS, separate from the source-only and mapping-support ZIPs. Release metadata checked on 2026-11-19; no package downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://xonotic.org/download/",
+          "authorVerification": "The Xonotic project source README directs readers to this official release page, which publishes the exact game ZIP from the project download host.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The official release page lists a complete Xonotic 0.8.6 game ZIP containing prebuilt launchers for Windows, Linux and macOS, separate from the source-only and mapping-support ZIPs.",
+          "assets": [
+            {
+              "url": "https://dl.xonotic.org/xonotic-0.8.6.zip",
+              "name": "xonotic-0.8.6.zip",
+              "platform": "Windows, Linux, macOS",
+              "kind": "game-binary"
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://xonotic.org/download/",
+            "checkedAt": "2026-11-19",
+            "result": "Official release metadata returned HTTP 200. The official release page lists a complete Xonotic 0.8.6 game ZIP containing prebuilt launchers for Windows, Linux and macOS, separate from the source-only and mapping-support ZIPs."
+          }
+        ]
       },
       {
         "id": "open3d-zero-k",
@@ -42271,6 +42790,54 @@
               "platform": "Windows",
               "kind": "game-binary",
               "size": 14608242
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-ysflight",
+        "sourceUrl": "https://github.com/captainys/YSFLIGHT",
+        "demo": {
+          "kind": "download",
+          "label": "Download for Windows",
+          "url": "https://ysflight.org/files/20181124YsflightForWindows.zip",
+          "note": "Soji Yamakawa's published YSFlight 20181124 Windows distribution, provided by the documented official mirror. Publication and package metadata verified on 2026-11-19; the archive was not downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://ysflight.in.coocan.jp/main/e2019.html",
+            "checkedAt": "2026-11-19",
+            "result": "Indexed author release announcement explicitly names the YS Flight Simulator 20181124 download."
+          },
+          {
+            "url": "https://www.vector.co.jp/download/file/winnt/game/fh710909.html",
+            "checkedAt": "2026-11-19",
+            "result": "The publisher file listing gives author Soji Yamakawa, exact release 20181124 and Windows ZIP size 13,852,945 bytes."
+          },
+          {
+            "url": "https://ysflight.org/download/",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; documents this as the official mirror of the same release and attributes it to Soji Yamakawa."
+          },
+          {
+            "url": "https://ysflight.org/files/20181124YsflightForWindows.zip",
+            "checkedAt": "2026-11-19",
+            "result": "HEAD HTTP 200 application/zip with the same 13,852,945-byte size listed by the publisher."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://ysflight.in.coocan.jp/main/e2019.html",
+          "authorVerification": "The creator website lists the exact stable release and separately links the matching captainys/YSFLIGHT source; the supported file is the author distribution from the documented official mirror, not an independent port.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The original author distribution listing labels the archive Windows and names the same release version and size as the official mirrored file. The unofficial WebAssembly port was excluded.",
+          "assets": [
+            {
+              "url": "https://ysflight.org/files/20181124YsflightForWindows.zip",
+              "name": "YsflightForWindows.zip",
+              "kind": "game-binary",
+              "platform": "Windows x86 and x64",
+              "size": 13852945
             }
           ]
         }
@@ -69427,38 +69994,6 @@
         ]
       },
       {
-        "id": "open3d-0-a-d",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://play0ad.com/media/screenshots/",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://play0ad.com/media/screenshots/",
-            "checkedAt": "2026-11-18",
-            "result": "A rendered formation of ancient archers releases a dense volley of arrows beneath a cloudy sky. The reviewed frame is an in-game scene rather than a title, loading screen or promotional collage."
-          },
-          {
-            "url": "https://play0ad.com/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://play0ad.com/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN play0ad.com"
-          },
-          {
-            "url": "https://play0ad.com/media/screenshots/",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
         "id": "open3d-alien-arena",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -69507,120 +70042,6 @@
             "url": "https://store.steampowered.com/app/629540/Alien_Arena_Warriors_Of_Mars/",
             "checkedAt": "2026-11-19",
             "result": "Official COR Entertainment developer/publisher Steam gallery, verified full single first-person scene. Steam installation offer is not a direct binary release link."
-          }
-        ]
-      },
-      {
-        "id": "open3d-armagetron-advanced",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://www.armagetronad.org/screenshots.php",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/ArmagetronAd/armagetronad/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/ArmagetronAd/armagetronad",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/ArmagetronAd/armagetronad/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://www.armagetronad.org/screenshots.php",
-            "checkedAt": "2026-11-18",
-            "result": "A green lightcycle leaves a glowing trail across a grid arena while multiplayer status text is displayed. The reviewed frame is an in-game scene rather than a title, loading screen or promotional collage."
-          },
-          {
-            "url": "https://www.armagetronad.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/ArmagetronAd/armagetronad/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/ArmagetronAd/armagetronad",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/ArmagetronAd/armagetronad/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://www.armagetronad.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN www.armagetronad.org"
-          },
-          {
-            "url": "https://www.armagetronad.org/screenshots.php",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
-        "id": "open3d-bzflag",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://www.bzflag.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/BZFlag-Dev/bzflag/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-          },
-          {
-            "url": "https://github.com/BZFlag-Dev/bzflag",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/BZFlag-Dev/bzflag/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://www.bzflag.org/",
-            "checkedAt": "2026-11-18",
-            "result": "A wide in-game arena view shows tanks exchanging projectiles among blocky towers, pyramids and elevated platforms. The reviewed frame is an in-game scene rather than a title, loading screen or promotional collage."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/BZFlag-Dev/bzflag/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 404; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/BZFlag-Dev/bzflag",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/BZFlag-Dev/bzflag/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://www.bzflag.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN www.bzflag.org"
           }
         ]
       },
@@ -69719,105 +70140,6 @@
         ]
       },
       {
-        "id": "open3d-egoboo",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/egoboo/egoboo/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/egoboo/egoboo",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/egoboo/egoboo/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://egoboo.github.io/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/egoboo/egoboo/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/egoboo/egoboo",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/egoboo/egoboo/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://egoboo.github.io/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN egoboo.github.io"
-          }
-        ]
-      },
-      {
-        "id": "open3d-flightgear",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://www.flightgear.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/FlightGear/flightgear/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/FlightGear/flightgear",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/FlightGear/flightgear/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://www.flightgear.org/",
-            "checkedAt": "2026-11-18",
-            "result": "A rendered yellow and white light aircraft stands on an airport apron beneath forested mountains. The reviewed frame is an in-game scene rather than a title, loading screen or promotional collage."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/FlightGear/flightgear/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/FlightGear/flightgear",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/FlightGear/flightgear/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://www.flightgear.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN www.flightgear.org"
-          }
-        ]
-      },
-      {
         "id": "open3d-lugaru",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -69895,167 +70217,6 @@
             "url": "https://content.luanti.org/packages/Minetest/minetest_game/",
             "checkedAt": "2026-11-18",
             "result": "Public retrieval failed: getaddrinfo EAI_AGAIN content.luanti.org"
-          }
-        ]
-      },
-      {
-        "id": "open3d-neverball-neverputt",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/neverball/neverball/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/neverball/neverball",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/neverball/neverball/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://neverball.org/screenshots",
-            "checkedAt": "2026-11-18",
-            "result": "Author page fetch HTTP unavailable; Command failed: curl -q --proto =https --max-redirs 0 --connect-timeout 15 --max-time 40 --max-filesize 4000000 -sS -o [private work artifact omitted] -w %{http_code} https://neverball.org/screenshots curl: (28) Connection timed out after 15003 milliseconds"
-          },
-          {
-            "url": "https://neverball.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/neverball/neverball/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/neverball/neverball",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/neverball/neverball/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://neverball.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN neverball.org"
-          },
-          {
-            "url": "https://neverball.org/screenshots",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: Command failed: curl -q --proto =https --max-redirs 0 --connect-timeout 15 --max-time 40 --max-filesize 4000000 -sS -o [private work artifact omitted] -w %{http_code} https://neverball.org/screenshots curl: (28) Connection timed out after 15003 milliseconds"
-          }
-        ]
-      },
-      {
-        "id": "open3d-openarena",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/OpenArena/gamecode/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/OpenArena/gamecode",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/OpenArena/gamecode/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://openarena.ws/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/OpenArena/gamecode/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/OpenArena/gamecode",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/OpenArena/gamecode/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://openarena.ws/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN openarena.ws"
-          }
-        ]
-      },
-      {
-        "id": "open3d-opendungeons",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://opendungeons.github.io/",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/OpenDungeons/OpenDungeons/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/OpenDungeons/OpenDungeons",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/OpenDungeons/OpenDungeons/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://opendungeons.github.io/",
-            "checkedAt": "2026-11-18",
-            "result": "An overhead dungeon view shows robed figures, bookshelves and stone rooms beneath resource and minimap indicators. The reviewed frame is an in-game scene rather than a title, loading screen or promotional collage."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/OpenDungeons/OpenDungeons/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/OpenDungeons/OpenDungeons",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/OpenDungeons/OpenDungeons/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://opendungeons.github.io/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN opendungeons.github.io"
-          },
-          {
-            "url": "https://opendungeons.github.io/",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
           }
         ]
       },
@@ -70213,75 +70374,6 @@
         ]
       },
       {
-        "id": "open3d-stunt-rally-3",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://cryham.org/stuntrally/gallery/",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/stuntrally/stuntrally3/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-          },
-          {
-            "url": "https://github.com/stuntrally/stuntrally3",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/stuntrally/stuntrally3/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://cryham.org/stuntrally/gallery/",
-            "checkedAt": "2026-11-18",
-            "result": "A chase camera follows a car along a tropical dirt track with a colored racing line and speedometer. The reviewed frame is an in-game scene rather than a title, loading screen or promotional collage."
-          },
-          {
-            "url": "https://cryham.org/stuntrally/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/stuntrally/stuntrally3/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 404; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/stuntrally/stuntrally3",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/stuntrally/stuntrally3/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://cryham.org/stuntrally/gallery/",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
-        "id": "open3d-the-dark-mod",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://www.thedarkmod.com/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          }
-        ]
-      },
-      {
         "id": "open3d-torcs",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -70354,95 +70446,6 @@
             "url": "https://trigger-rally.sourceforge.io/",
             "checkedAt": "2026-11-18",
             "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          }
-        ]
-      },
-      {
-        "id": "open3d-unvanquished",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://unvanquished.net/",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/Unvanquished/Unvanquished/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/Unvanquished/Unvanquished",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/Unvanquished/Unvanquished/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://unvanquished.net/",
-            "checkedAt": "2026-11-18",
-            "result": "Glowing science-fiction equipment stands inside a rendered metal-walled game room. The reviewed frame is an in-game scene rather than a title, loading screen or promotional collage."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/Unvanquished/Unvanquished/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/Unvanquished/Unvanquished",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/Unvanquished/Unvanquished/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
-        "id": "open3d-vdrift",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/VDrift/vdrift/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/VDrift/vdrift",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/VDrift/vdrift/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://vdrift.net/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/VDrift/vdrift/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/VDrift/vdrift",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/VDrift/vdrift/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
           }
         ]
       },
@@ -70544,75 +70547,6 @@
             "url": "https://github.com/TeamForbiddenLLC/warfork-qfusion/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
-        "id": "open3d-world-of-padman",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/PadWorld-Entertainment/worldofpadman/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/PadWorld-Entertainment/worldofpadman",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/PadWorld-Entertainment/worldofpadman/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://worldofpadman.net/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/PadWorld-Entertainment/worldofpadman/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/PadWorld-Entertainment/worldofpadman",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/PadWorld-Entertainment/worldofpadman/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
-        "id": "open3d-xonotic",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://xonotic.org/images/",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://xonotic.org/images/",
-            "checkedAt": "2026-11-18",
-            "result": "A first-person weapon faces brightly colored combatants in a stone arena with health, armor, keys and a minimap visible. The reviewed frame is an in-game scene rather than a title, loading screen or promotional collage."
-          },
-          {
-            "url": "https://xonotic.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://xonotic.org/images/",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
           }
         ]
       },
@@ -72595,48 +72529,6 @@
             "url": "https://voxelands.neocities.org/download",
             "checkedAt": "2026-11-19",
             "result": "Looked through old public landing and Downloads; exact original-source project is cross-linked, but download forum redirects away to a parked site, external native package listings are third-party, and no official complete native package or creator screenshot established in the current pass."
-          }
-        ]
-      },
-      {
-        "id": "open3d-ysflight",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/captainys/YSFLIGHT/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-          },
-          {
-            "url": "https://github.com/captainys/YSFLIGHT",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/captainys/YSFLIGHT/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://www.ysflight.com/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/captainys/YSFLIGHT/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 404; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/captainys/YSFLIGHT",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/captainys/YSFLIGHT/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
           }
         ]
       },

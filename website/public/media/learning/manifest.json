@@ -6447,6 +6447,20 @@
       "sha256": "a0a09b80a44b681efd70e1b753b4be62800e83bf13529834a8b21aea6ed4bca4"
     },
     {
+      "id": "open3d-colobot-gold-edition",
+      "src": "media/learning/open3d-colobot-gold-edition.webp",
+      "alt": "An astronaut and a tracked robot holding a green object stand on a marked platform, with unit controls visible in the upper left.",
+      "caption": "Creator-published gameplay: Colobot: Gold Edition gameplay screenshot published by TerranovaTeam for version 0.1.5. Image rights remain with their respective owners.",
+      "sourceUrl": "https://colobot.info/2015/06/10/version-0-1-5-is-finally-there/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://colobot.info/wordpress/wp-content/uploads/alpha-0.1.5.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 79908,
+      "sha256": "b8ef177bdd11bca0ba78775f8d9f3ad5eaa104e282000303d6e87008bcf5eadb"
+    },
+    {
       "id": "open3d-craft",
       "src": "media/learning/open3d-craft.webp",
       "alt": "Craft voxel-sandbox gameplay showing grassy hills, trees, flowers and clouds, with a central crosshair and game statistics.",

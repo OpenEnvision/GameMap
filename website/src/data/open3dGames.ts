@@ -3304,10 +3304,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for 0 A.D.",
-      "url": "https://gitea.wildfiregames.com/0ad/0ad",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download 0 A.D. Release 28",
+      "url": "https://play0ad.com/download/",
+      "kind": "download",
+      "note": "Wildfire Games lists exact Windows installers, macOS disk images and an official Linux AppImage for Release 28: Boiorix. Verified public distribution metadata on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3394,10 +3394,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Armagetron Advanced",
-      "url": "https://github.com/ArmagetronAd/armagetronad",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download Armagetron Advanced 0.2.9.3.1",
+      "url": "https://armagetronad.org/downloads.php",
+      "note": "The developers list 0.2.9.3.1 desktop game builds for Windows, Linux and macOS separately from the dedicated server and source downloads. Release metadata checked on 2026-11-19; no package downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3529,10 +3529,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for BZFlag",
-      "url": "https://github.com/BZFlag-Dev/bzflag",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download BZFlag 2.4.32",
+      "url": "https://www.bzflag.org/downloads/",
+      "note": "The official download page separately identifies the BZFlag 2.4.32 Windows game installer, macOS application archive and source code. Release metadata checked on 2026-11-19; no package downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3709,10 +3709,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Egoboo",
-      "url": "https://github.com/egoboo/egoboo",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download for Windows",
+      "url": "https://downloads.sourceforge.net/project/egoboo/Windows%20Distro%20%2832-bit%29/2.8.1%20%28Stable%29/ego281_win32.exe",
+      "note": "The Egoboo team labels this .exe its stable version 2.8.1 Windows game installer, which installs all required components. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3754,10 +3754,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for FlightGear",
-      "url": "https://github.com/FlightGear/flightgear",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download FlightGear 2024.1.7",
+      "url": "https://www.flightgear.org/download/",
+      "note": "The official stable 2024.1.7 page identifies a Windows installer, a universal macOS disk image and a Linux AppImage for the flight simulator. Additional scenery can be obtained separately. Release metadata checked on 2026-11-19; no package downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4024,10 +4024,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Neverball / Neverputt",
-      "url": "https://github.com/neverball/neverball",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download for Windows",
+      "url": "https://neverball.org/neverball-1.6.0.zip",
+      "note": "The Neverball project publishes the stable Neverball and Neverputt 1.6.0 Windows ZIP separately from its source tarball. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4114,10 +4114,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for OpenArena",
-      "url": "https://github.com/OpenArena/gamecode",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download OpenArena 0.8.8",
+      "url": "https://sourceforge.net/projects/oarena/files/",
+      "note": "The original project release listing identifies the 425.2 MB OpenArena 0.8.8 full game as a unified package for Windows, Linux and macOS, separate from two patch archives and source. Release metadata checked on 2026-11-19; no package downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4159,10 +4159,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for OpenDungeons",
-      "url": "https://github.com/OpenDungeons/OpenDungeons",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download for Windows",
+      "url": "https://download.tuxfamily.org/opendungeons/0.7/OpenDungeons-0.7.1-Win32-MSVS2013.zip",
+      "note": "The OpenDungeons developers label this release as the version 0.7.1 Windows 32-bit game binary and list the source archive separately. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4609,10 +4609,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Stunt Rally 3",
-      "url": "https://github.com/stuntrally/stuntrally3",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download for Windows",
+      "url": "https://github.com/stuntrally/stuntrally3/releases/download/3.2/StuntRally-3.2-installer.exe",
+      "note": "Official Stunt Rally 3.2 standalone Windows installer. The installation guide also documents the companion portable Linux game archive; version 3.3 is distributed separately on SourceForge. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4789,10 +4789,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for The Dark Mod",
-      "url": "https://svn.thedarkmod.com/publicsvn/darkmod_src/trunk/",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download The Dark Mod installer",
+      "url": "https://www.thedarkmod.com/downloads/",
+      "note": "The official project supplies Windows and Linux 64-bit installers for a fresh installation of the standalone game. Extract and run the installer to fetch game data; the installer archive is not the full offline game. Release metadata checked on 2026-11-19; no package downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -5014,10 +5014,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Unvanquished",
-      "url": "https://github.com/Unvanquished/Unvanquished",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download the universal game ZIP",
+      "url": "https://github.com/Unvanquished/Unvanquished/releases/download/v0.56.2/unvanquished_0.56.2.zip",
+      "note": "The project documents the v0.56.2 universal ZIP as its advanced native distribution, with prebuilt game engine and data for supported platforms, separate from the launcher and checksum. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -5059,10 +5059,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for VDrift",
-      "url": "https://github.com/VDrift/vdrift",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download VDrift 2014-10-20",
+      "url": "https://vdrift.net/",
+      "note": "The developer site lists the legacy 2014-10-20 64-bit Windows installer and macOS disk image separately from source; compatibility with modern systems is not verified. Release metadata checked on 2026-11-19; no package downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -5329,10 +5329,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for World of PADMAN",
-      "url": "https://github.com/PadWorld-Entertainment/worldofpadman",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download for Windows",
+      "url": "https://github.com/PadWorld-Entertainment/worldofpadman/releases/download/v1.7.0/wop-1.7.0-installer.exe",
+      "note": "Official World of PADMAN 1.7.0 full Windows x64 game installer. The project also publishes a unified portable distribution. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -5374,10 +5374,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Xonotic",
-      "url": "https://gitlab.com/xonotic/xonotic",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download Xonotic 0.8.6",
+      "url": "https://xonotic.org/download/",
+      "note": "The official release page lists a complete Xonotic 0.8.6 game ZIP containing prebuilt launchers for Windows, Linux and macOS, separate from the source-only and mapping-support ZIPs. Release metadata checked on 2026-11-19; no package downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",

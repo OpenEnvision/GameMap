@@ -3889,10 +3889,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for YSFlight",
-      "url": "https://github.com/captainys/YSFLIGHT",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download for Windows",
+      "url": "https://ysflight.org/files/20181124YsflightForWindows.zip",
+      "note": "Soji Yamakawa's published YSFlight 20181124 Windows distribution, provided by the documented official mirror. Publication and package metadata verified on 2026-11-19; the archive was not downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
