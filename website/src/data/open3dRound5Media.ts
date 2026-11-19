@@ -3024,6 +3024,18 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-antura-learn-with-antura": {
+    src: "media/learning/open3d-antura-learn-with-antura.webp",
+    alt: "Antura stands behind a large red ball on a rooftop overlooking a colorful city, with counters and action buttons visible.",
+    caption:
+      "Creator-published gameplay screenshot of a physics minigame in Learn with Antura.",
+    sourceUrl: "https://antura.org/en/about/learn-with-antura",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl: "https://antura.org/assets/gameplay_physics.B5WoE-RH.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-backrooms-esyverse": {
     src: "media/learning/open3d-backrooms-esyverse.webp",
     alt: "A first-person yellow corridor scene displays an escape objective overlay and an active 4:55 countdown.",
@@ -3442,6 +3454,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-19",
     originalImageUrl:
       "https://supertuxkart.net/assets/gallery/SuperTuxKart_1.5_1.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-terasology": {
+    src: "media/learning/open3d-terasology.webp",
+    alt: "Terasology multiplayer playtest with named avatars beside block-built crops and a forest stream.",
+    caption:
+      "Creator-published August 2022 multiplayer playtest screenshot from the official Terasology gallery. Image rights remain with their respective owners.",
+    sourceUrl: "https://terasology.org/gallery/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://terasology.org/_astro/Playtest_Session_August_2022.Cc3ZBZ_W_f7Jua.webp",
     width: 1280,
     height: 720,
   },
@@ -4985,6 +5010,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     originalImageUrl: "https://cannonsmash.sourceforge.net/game1.jpg",
     origin: "creator-screenshot",
     reviewedAt: "2026-11-18",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-classicube": {
+    src: "media/learning/open3d-classicube.webp",
+    alt: "ClassiCube mobile gameplay showing a block coastline, crosshair, block inventory, and touch controls.",
+    caption:
+      "Creator-published October 2020 mobile webclient gameplay screenshot from the official ClassiCube touch-controls announcement. Image rights remain with their respective owners.",
+    sourceUrl:
+      "https://f.classicube.net/topic/396-improved-touch-controls-added-to-mobile-webclient/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://f.classicube.net/uploads/monthly_2020_10/mobile.jpg.613ad29e9c1f60dffd84a81b6cb988e7.jpg",
     width: 1280,
     height: 720,
   },

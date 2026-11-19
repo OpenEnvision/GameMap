@@ -8981,6 +8981,41 @@
       "bytes": 49292
     },
     {
+      "id": "open3d-antura-learn-with-antura",
+      "title": "Antura / Learn with Antura",
+      "media": {
+        "src": "media/learning/open3d-antura-learn-with-antura.webp",
+        "alt": "Antura stands behind a large red ball on a rooftop overlooking a colorful city, with counters and action buttons visible.",
+        "caption": "Creator-published gameplay screenshot of a physics minigame in Learn with Antura.",
+        "sourceUrl": "https://antura.org/en/about/learn-with-antura",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://antura.org/assets/gameplay_physics.B5WoE-RH.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "62ff44760756d9c5370e2bd0de4bf5298895dc5f0ee333e97b7e3607dc104080",
+        "sourceFrameSHA256": "cbec6f6ecda65625f0997de4b12c18a030d935bb9bd705645c0c89e50e28b056",
+        "sourceWidth": 1920,
+        "sourceHeight": 1080,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "The official Learn with Antura gallery labels this full 1920 by 1080 JPEG as a physics minigame. The visible third-person character, large red ball, city scenery, counters and action buttons confirm an in-game frame rather than a cover or title screen. The original returned HTTP 200 without redirects."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "f27bda7aed8c93bfd24484da0f1ec7e49c2bb32cff50f14767e1af83af8df99f",
+      "bytes": 85974
+    },
+    {
       "id": "open3d-backrooms-esyverse",
       "title": "Backrooms (Esyverse)",
       "media": {
@@ -10134,6 +10169,41 @@
       "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
       "sha256": "e08c1fbd007e48e103f986fdca857dc91dfc53a4a2a09d7c870526a38410873b",
       "bytes": 93224
+    },
+    {
+      "id": "open3d-terasology",
+      "title": "Terasology",
+      "media": {
+        "src": "media/learning/open3d-terasology.webp",
+        "alt": "Terasology multiplayer playtest with named avatars beside block-built crops and a forest stream.",
+        "caption": "Creator-published August 2022 multiplayer playtest screenshot from the official Terasology gallery. Image rights remain with their respective owners.",
+        "sourceUrl": "https://terasology.org/gallery/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://terasology.org/_astro/Playtest_Session_August_2022.Cc3ZBZ_W_f7Jua.webp",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "f455796bb4fc09c454d06ac793a6768f96309c81e63a754073a850e6227676d0",
+        "sourceFrameSHA256": "ebac683b6b50ac5b4936e5e8b0118970b706d0a13b59e31c60ec357a7cef4c65",
+        "sourceWidth": 1200,
+        "sourceHeight": 675,
+        "originalFormat": "webp",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed full 1200×675 frame. Multiple player avatars have in-game floating name tags beside planted crop blocks, a crafting station and a stream, demonstrating a live multiplayer playtest rather than environment-only promotional art. Official gallery supplies this exact full-size asset as Playtest Session August 2022; unmodified reviewFrame and same-origin HTTPS checks passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "3a8e4c230b6ff4a57de03725bab4700518fe80f12567830c20fa7c43dfda9786",
+      "bytes": 82312
     },
     {
       "id": "open3d-the-dark-mod",
@@ -14473,6 +14543,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 68752,
       "sha256": "0eace817c8d4932284ba4c1a62c3d18524f27243396dec496476da87459e5bb5"
+    },
+    {
+      "id": "open3d-classicube",
+      "title": "ClassiCube",
+      "media": {
+        "src": "media/learning/open3d-classicube.webp",
+        "alt": "ClassiCube mobile gameplay showing a block coastline, crosshair, block inventory, and touch controls.",
+        "caption": "Creator-published October 2020 mobile webclient gameplay screenshot from the official ClassiCube touch-controls announcement. Image rights remain with their respective owners.",
+        "sourceUrl": "https://f.classicube.net/topic/396-improved-touch-controls-added-to-mobile-webclient/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://f.classicube.net/uploads/monthly_2020_10/mobile.jpg.613ad29e9c1f60dffd84a81b6cb988e7.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "166c1e2bf2bd1d00561ad050799831a788255df5c79a5c5fa3d80535f8aef822",
+        "sourceFrameSHA256": "1b0bdef1769d2222571279fc4940f411be829b76c10b4df027dbedcde9a64e15",
+        "sourceWidth": 937,
+        "sourceHeight": 433,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed the complete 937×433 image: first-person voxel world with a held block, centered crosshair, block-selection inventory, position/FPS display and Up/Down/Delete/More touch controls. This is live game UI, not cover art or a montage. Official creator forum post embeds the exact original image, also syndicated on classicube.net; same-origin HTTPS and unchanged reviewFrame checks passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "ac7a78ed059a8dec03a156924812e887e9b94abc84a85d56b5752ab7d6f1ab24",
+      "bytes": 96342
     },
     {
       "id": "open3d-h-craft-championship",
@@ -32016,48 +32121,6 @@
       ]
     },
     {
-      "id": "open3d-antura-learn-with-antura",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/vgwb/Antura/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/vgwb/Antura",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/vgwb/Antura/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/vgwb/Antura/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/vgwb/Antura",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/vgwb/Antura/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://antura.org/",
-          "checkedAt": "2026-11-18",
-          "result": "Public retrieval failed: getaddrinfo EAI_AGAIN antura.org"
-        }
-      ]
-    },
-    {
       "id": "open3d-cat-sanctuary",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -32780,48 +32843,6 @@
         },
         {
           "url": "https://github.com/smokin-guns/SmokinGuns/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-terasology",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The inspected homepage cover combines mascot artwork and source-control screenshots into a promotional collage; it is excluded.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/MovingBlocks/Terasology/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/MovingBlocks/Terasology",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/MovingBlocks/Terasology/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://terasology.org/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/MovingBlocks/Terasology/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/MovingBlocks/Terasology",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/MovingBlocks/Terasology/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
@@ -35056,48 +35077,6 @@
       ]
     },
     {
-      "id": "open3d-classicube",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The official homepage and downloads page were read. The author itch page request timed out; no eligible screenshot was verified.",
-      "checkedSources": [
-        {
-          "url": "https://www.classicube.net/",
-          "checkedAt": "2026-11-18",
-          "result": "The official homepage links the matching GitHub source and its download page lists the Windows 64-bit binary on the project CDN."
-        },
-        {
-          "url": "https://www.classicube.net/download/",
-          "checkedAt": "2026-11-18",
-          "result": "Read author publication page; native download publication verified, not executed."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/ClassiCube/ClassiCube/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://github.com/ClassiCube/ClassiCube",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/ClassiCube/ClassiCube/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://andrewph.itch.io/classicube",
-          "checkedAt": "2026-11-18",
-          "result": "Public retrieval failed: Command failed: curl -q --proto =https --max-redirs 0 --connect-timeout 20 --max-time 40 --max-filesize 4000000 -sS -o [private work artifact omitted] -w %{http_code} https://andrewph.itch.io/classicube curl: (28) Connection timed out after 20002 milliseconds"
-        },
-        {
-          "url": "https://www.classicube.net/download/",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        }
-      ]
-    },
-    {
       "id": "open3d-fastest-pizza-delivery",
       "status": "research-incomplete",
       "reason": "Research incomplete or access-limited: The reviewed animated candidate shows only a pizza truck scene; active gameplay versus promotional model animation could not be established.",
@@ -36779,6 +36758,50 @@
         }
       },
       {
+        "id": "open3d-pyopengl-3d-racing-game",
+        "sourceUrl": "https://github.com/a5ease/PyOpenGL-3D-racing-game",
+        "demo": {
+          "label": "Download Windows 64-bit build",
+          "url": "https://github.com/a5ease/PyOpenGL-3D-racing-game/releases/tag/v1.0.0",
+          "kind": "download",
+          "note": "Author GitHub release v1.0.0 lists a Windows 64-bit one-click runnable ZIP, separately from source archives. Verified the author release metadata and expanded assets on 2026-11-19; no native package was downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/a5ease/PyOpenGL-3D-racing-game/releases?per_page=10",
+            "checkedAt": "2026-11-19",
+            "result": "GitHub API returned author release v1.0.0 with a manually uploaded 415937402-byte win64 ZIP asset; v1.0.1 has no binary assets."
+          },
+          {
+            "url": "https://github.com/a5ease/PyOpenGL-3D-racing-game/releases/expanded_assets/v1.0.0",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200 asset listing explicitly labels RacingHaruna-v1.0.0-win64.zip as Windows 64bit one-click runnable package, separate from automatic Source code archives; publisher SHA256 ffbbabff277c922e13a54d222817d5c9368e5c0abb7d5f44842dbe301b311de1."
+          },
+          {
+            "url": "https://raw.githubusercontent.com/a5ease/PyOpenGL-3D-racing-game/HEAD/README.md",
+            "checkedAt": "2026-11-19",
+            "result": "Author README identifies the game, Windows launch script and PyInstaller build_release.bat / .spec packaging. No package downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/a5ease/PyOpenGL-3D-racing-game",
+          "authorVerification": "The release asset is published under the exact same author-owned source repository supplied for this example.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "GitHub expanded release assets explicitly label the manually uploaded archive Windows 64bit one-click runnable package. The README documents Windows PyInstaller packaging. Automatic Source code archives excluded.",
+          "assets": [
+            {
+              "url": "https://github.com/a5ease/PyOpenGL-3D-racing-game/releases/download/v1.0.0/RacingHaruna-v1.0.0-win64.zip",
+              "name": "RacingHaruna-v1.0.0-win64.zip",
+              "platform": "Windows 64-bit",
+              "kind": "game-binary",
+              "size": 415937402,
+              "publisherSha256": "ffbbabff277c922e13a54d222817d5c9368e5c0abb7d5f44842dbe301b311de1"
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-country-lane-demo-horror-game",
         "sourceUrl": "https://github.com/MingqiZhang0/country-lane-demo-horror-game",
         "demo": {
@@ -37130,6 +37153,48 @@
         }
       },
       {
+        "id": "open3d-antura-learn-with-antura",
+        "sourceUrl": "https://github.com/vgwb/Antura",
+        "demo": {
+          "label": "Download Learn with Antura for Windows",
+          "url": "https://vgwb.itch.io/antura",
+          "kind": "download",
+          "note": "Author itch page and official project download page inspected on 2026-11-19. The Windows game upload is antura-windows.zip, version 2026.10.12 (1 GB). No native package was downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://antura.org/en/download",
+            "checkedAt": "2026-11-19",
+            "result": "The official download page links vgwb/Antura as source code and vgwb.itch.io/antura as the Windows download."
+          },
+          {
+            "url": "https://vgwb.itch.io/antura",
+            "checkedAt": "2026-11-19",
+            "result": "The current author itch page identifies a downloadable Windows game and lists antura-windows.zip (1 GB), upload ID 15526738, version 2026.10.12, dated 12 October 2026 at 15:25 UTC. The author Windows build devlog explicitly identifies it as the new Learn with Antura game, not the predecessor. No binary was downloaded or executed."
+          },
+          {
+            "url": "https://vgwb.itch.io/antura/devlog/1114752/windows-build",
+            "checkedAt": "2026-11-19",
+            "result": "The creator announces the Windows build of the new Learn with Antura game; the historical post lists version 2025.11.76, not the current version."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://antura.org/en/download",
+          "authorVerification": "The official antura.org download page links both the exact vgwb/Antura repository and the vgwb.itch.io/antura Windows distribution; the itch page names Video Games Without Borders as creator.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The current author itch page identifies a downloadable Windows game and lists antura-windows.zip (1 GB), upload ID 15526738, version 2026.10.12, dated 12 October 2026 at 15:25 UTC. The author Windows build devlog explicitly identifies it as the new Learn with Antura game, not the predecessor. No binary was downloaded or executed.",
+          "assets": [
+            {
+              "name": "antura-windows.zip",
+              "url": "https://vgwb.itch.io/antura",
+              "kind": "game-binary",
+              "platform": "Windows"
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-classroom-404",
         "sourceUrl": "https://github.com/Nianyi-GSND-Projects/Classroom-404",
         "demo": {
@@ -37272,6 +37337,47 @@
               "url": "https://markussecundus.itch.io/the-machine-of-dr-jeffrey-wright",
               "kind": "game-binary",
               "platform": "Windows"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-terasology",
+        "sourceUrl": "https://github.com/MovingBlocks/Terasology",
+        "demo": {
+          "label": "Download Terasology Omega 5.4.0",
+          "url": "https://github.com/MovingBlocks/Terasology/releases/tag/v5.4.0",
+          "kind": "download",
+          "note": "Author GitHub latest stable release v5.4.0 provides the TerasologyOmega.zip desktop distribution. Release metadata and author README verified on 2026-11-19; README requires Java 17 for direct downloads. No native package was downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/MovingBlocks/Terasology/releases/latest",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; latest stable v5.4.0, prerelease=false, draft=false, published 2026-10-31; manually uploaded TerasologyOmega.zip (177679599 bytes), separate from automatic source archives. Release notes direct users to the Omega package."
+          },
+          {
+            "url": "https://raw.githubusercontent.com/MovingBlocks/Terasology/HEAD/README.md",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200; author README identifies Windows, macOS and Linux 64-bit platforms; direct-download stable game builds are published under this exact repository releases path and require Java 17."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/MovingBlocks/Terasology",
+          "authorVerification": "Latest stable release and its uploaded asset belong to the exact author-owned source repository supplied for this example, MovingBlocks/Terasology.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Official release notes identify the Omega package; author README explicitly identifies GitHub releases as stable direct-download builds, distinct from the source checkout and automatic source archives. Native package not downloaded or executed.",
+          "releaseTag": "v5.4.0",
+          "publishedAt": "2026-10-31T19:54:01Z",
+          "assets": [
+            {
+              "url": "https://github.com/MovingBlocks/Terasology/releases/download/v5.4.0/TerasologyOmega.zip",
+              "name": "TerasologyOmega.zip",
+              "platform": "Windows, macOS and Linux (64-bit); Java 17 required",
+              "kind": "game-binary",
+              "size": 177679599,
+              "publisherSha256": "1893074c9e021d78d8a85204ba92cabd9108fe54e30c6d07dfed997f178e3cc2"
             }
           ]
         }
@@ -57817,58 +57923,6 @@
         ]
       },
       {
-        "id": "open3d-pyopengl-3d-racing-game",
-        "status": "research-incomplete",
-        "reason": "Research incomplete: no new author distribution or sandbox-rendered game was verified in this review. Existing demo data is preserved; this does not establish that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://github.com/a5ease/PyOpenGL-3D-racing-game",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/a5ease/PyOpenGL-3D-racing-game/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/a5ease/PyOpenGL-3D-racing-game",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/a5ease/PyOpenGL-3D-racing-game/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/a5ease/PyOpenGL-3D-racing-game/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-          },
-          {
-            "url": "https://github.com/a5ease/PyOpenGL-3D-racing-game",
-            "checkedAt": "2026-11-18",
-            "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-          },
-          {
-            "url": "https://github.com/a5ease/PyOpenGL-3D-racing-game/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Cached public source request returned HTTP 200. README media and publication references inspected; no source code executed."
-          },
-          {
-            "url": "https://github.com/a5ease/PyOpenGL-3D-racing-game/releases/expanded_assets/v1.0.1",
-            "checkedAt": "2026-11-18",
-            "result": "Only source archive assets listed; no installable distribution verified."
-          },
-          {
-            "url": "https://github.com/a5ease/PyOpenGL-3D-racing-game",
-            "checkedAt": "2026-11-18",
-            "result": "Recorded source-review outcome: research-incomplete."
-          }
-        ]
-      },
-      {
         "id": "open3d-skiing-game",
         "status": "research-incomplete",
         "reason": "Research incomplete: no new author distribution or sandbox-rendered game was verified in this review. Existing demo data is preserved; this does not establish that no release exists.",
@@ -64622,48 +64676,6 @@
         ]
       },
       {
-        "id": "open3d-antura-learn-with-antura",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/vgwb/Antura/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/vgwb/Antura",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/vgwb/Antura/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/vgwb/Antura/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/vgwb/Antura",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/vgwb/Antura/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://antura.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN antura.org"
-          }
-        ]
-      },
-      {
         "id": "open3d-backrooms-esyverse",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -66709,48 +66721,6 @@
           },
           {
             "url": "https://github.com/supertuxkart/stk-code/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
-        "id": "open3d-terasology",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/MovingBlocks/Terasology/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/MovingBlocks/Terasology",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/MovingBlocks/Terasology/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://terasology.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/MovingBlocks/Terasology/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/MovingBlocks/Terasology",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/MovingBlocks/Terasology/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
           }

@@ -5971,6 +5971,20 @@
       "sha256": "709a9d2e4b3fd5a4c4ca9c77f9ae06c6a18cd44bb290b76a616cc9d3f1a5d862"
     },
     {
+      "id": "open3d-antura-learn-with-antura",
+      "src": "media/learning/open3d-antura-learn-with-antura.webp",
+      "alt": "Antura stands behind a large red ball on a rooftop overlooking a colorful city, with counters and action buttons visible.",
+      "caption": "Creator-published gameplay screenshot of a physics minigame in Learn with Antura.",
+      "sourceUrl": "https://antura.org/en/about/learn-with-antura",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://antura.org/assets/gameplay_physics.B5WoE-RH.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 85974,
+      "sha256": "f27bda7aed8c93bfd24484da0f1ec7e49c2bb32cff50f14767e1af83af8df99f"
+    },
+    {
       "id": "open3d-backrooms-esyverse",
       "src": "media/learning/open3d-backrooms-esyverse.webp",
       "alt": "A first-person yellow corridor scene displays an escape objective overlay and an active 4:55 countdown.",
@@ -6431,6 +6445,20 @@
       "height": 720,
       "bytes": 93224,
       "sha256": "e08c1fbd007e48e103f986fdca857dc91dfc53a4a2a09d7c870526a38410873b"
+    },
+    {
+      "id": "open3d-terasology",
+      "src": "media/learning/open3d-terasology.webp",
+      "alt": "Terasology multiplayer playtest with named avatars beside block-built crops and a forest stream.",
+      "caption": "Creator-published August 2022 multiplayer playtest screenshot from the official Terasology gallery. Image rights remain with their respective owners.",
+      "sourceUrl": "https://terasology.org/gallery/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://terasology.org/_astro/Playtest_Session_August_2022.Cc3ZBZ_W_f7Jua.webp",
+      "width": 1280,
+      "height": 720,
+      "bytes": 82312,
+      "sha256": "3a8e4c230b6ff4a57de03725bab4700518fe80f12567830c20fa7c43dfda9786"
     },
     {
       "id": "open3d-the-dark-mod",
@@ -8097,6 +8125,20 @@
       "height": 720,
       "bytes": 68752,
       "sha256": "0eace817c8d4932284ba4c1a62c3d18524f27243396dec496476da87459e5bb5"
+    },
+    {
+      "id": "open3d-classicube",
+      "src": "media/learning/open3d-classicube.webp",
+      "alt": "ClassiCube mobile gameplay showing a block coastline, crosshair, block inventory, and touch controls.",
+      "caption": "Creator-published October 2020 mobile webclient gameplay screenshot from the official ClassiCube touch-controls announcement. Image rights remain with their respective owners.",
+      "sourceUrl": "https://f.classicube.net/topic/396-improved-touch-controls-added-to-mobile-webclient/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://f.classicube.net/uploads/monthly_2020_10/mobile.jpg.613ad29e9c1f60dffd84a81b6cb988e7.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 96342,
+      "sha256": "ac7a78ed059a8dec03a156924812e887e9b94abc84a85d56b5752ab7d6f1ab24"
     },
     {
       "id": "open3d-h-craft-championship",

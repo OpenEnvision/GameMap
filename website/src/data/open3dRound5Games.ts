@@ -15319,10 +15319,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Mount Haruna 3D Racing",
-      "url": "https://github.com/a5ease/PyOpenGL-3D-racing-game",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows 64-bit build",
+      "url": "https://github.com/a5ease/PyOpenGL-3D-racing-game/releases/tag/v1.0.0",
+      "kind": "download",
+      "note": "Author GitHub release v1.0.0 lists a Windows 64-bit one-click runnable ZIP, separately from source archives. Verified the author release metadata and expanded assets on 2026-11-19; no native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

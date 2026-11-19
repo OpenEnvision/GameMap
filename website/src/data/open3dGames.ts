@@ -2314,10 +2314,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Antura / Learn with Antura",
-      "url": "https://github.com/vgwb/Antura",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Learn with Antura for Windows",
+      "url": "https://vgwb.itch.io/antura",
+      "kind": "download",
+      "note": "Author itch page and official project download page inspected on 2026-11-19. The Windows game upload is antura-windows.zip, version 2026.10.12 (1 GB). No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4699,10 +4699,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Terasology",
-      "url": "https://github.com/MovingBlocks/Terasology",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Terasology Omega 5.4.0",
+      "url": "https://github.com/MovingBlocks/Terasology/releases/tag/v5.4.0",
+      "kind": "download",
+      "note": "Author GitHub latest stable release v5.4.0 provides the TerasologyOmega.zip desktop distribution. Release metadata and author README verified on 2026-11-19; README requires Java 17 for direct downloads. No native package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
