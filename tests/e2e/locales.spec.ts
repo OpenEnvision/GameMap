@@ -257,6 +257,10 @@ test("homepage navigation reaches Chinese documents without a separate content d
     "href",
     /\/docs\/zh\/guides\/practical-guide\/$/,
   );
+  // The complete directory lists every guide inside native disclosures.
+  const group = page.locator("details", { has: source });
+  if ((await group.count()) && !(await group.first().getAttribute("open")))
+    await group.first().locator("summary").first().click();
   await source.click();
   await expect(page.locator("html")).toHaveAttribute("lang", "zh-CN");
 });
