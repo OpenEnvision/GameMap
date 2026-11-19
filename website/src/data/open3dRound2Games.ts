@@ -2944,10 +2944,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for BlockOut II",
-      "url": "https://sourceforge.net/projects/blockout/",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download BlockOut II 2.5",
+      "url": "https://sourceforge.net/projects/blockout/files/blockout/BlockOut%202.5/",
+      "note": "Jean-Luc Pons’s official 2.5 release lists native Windows installers and Linux x86/x64 archives separately from the source archive. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3529,10 +3529,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Linux Air Combat",
-      "url": "https://sourceforge.net/projects/linuxaircombat/",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download Linux x86-64 AppImage",
+      "url": "https://sourceforge.net/projects/linuxaircombat/files/Choose%20Your%20Platform/Precompiled%20binaries%20%28no%20source%20code%29/",
+      "note": "The developer’s official SourceForge listing names the precompiled Linux x86-64 AppImage for version 9.94. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",

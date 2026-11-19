@@ -11548,6 +11548,41 @@
       "bytes": 90146
     },
     {
+      "id": "open3d-ufo-alien-invasion",
+      "title": "UFO: Alien Invasion",
+      "media": {
+        "src": "media/learning/open3d-ufo-alien-invasion.webp",
+        "alt": "An isometric tactical battle with soldiers amid smoke and flames, and a squad roster along the bottom.",
+        "caption": "Creator-published UFO: Alien Invasion gameplay screenshot from the official battle tutorial assets. Image rights remain with the original creators.",
+        "sourceUrl": "https://github.com/ufoaiorg/ufoai/blob/763173ed036ebbee32c2a7bf6aefa19748df89ff/base/pics/tutorial/battleFireAndSmoke.png",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/ufoaiorg/ufoai/763173ed036ebbee32c2a7bf6aefa19748df89ff/base/pics/tutorial/battleFireAndSmoke.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "3c56463614c1a6979a8bcce3e1c6cca260965c63f3f67d78ceb74bb773cc062a",
+        "sourceFrameSHA256": "245b0b368cb2fd9ea62f4cb48c79e7f7971677c6c7670951ae9611fe709c8da3",
+        "sourceWidth": 820,
+        "sourceHeight": 615,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally examined the original 820 by 615 PNG from the exact upstream source tree. The isometric battlescape shows selected soldiers amid smoke and fire, squad roster, unit controls and health/status indicators in the live HUD. The image is a single gameplay frame, not a title, annotation overlay, game menu or collage. The downloaded full file matches the upstream Git blob at the recorded source revision. Existing reviewFrame and origin checks passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "3e52c2080ad4fd85835adce67dfa56e0fa735ab7cb0931198cda0fe36966c79e",
+      "bytes": 74164
+    },
+    {
       "id": "open3d-unvanquished",
       "title": "Unvanquished",
       "media": {
@@ -34538,7 +34573,7 @@
     {
       "id": "open3d-lips-of-suna",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. The original developer homepage now serves a parked address, and the project's former SourceForge web host redirects to its project summary. The reachable official source repository docs and misc trees show Doxygen configuration and application icons, not a standalone gameplay screenshot. The old developer-release quote directs users to the now-parked project website rather than publishing an independent image.",
       "checkedSources": [
         {
           "url": "https://sourceforge.net/projects/lipsofsuna/",
@@ -34554,6 +34589,31 @@
           "url": "https://lipsofsuna.sourceforge.net/",
           "checkedAt": "2026-11-19",
           "result": "Project homepage redirected; no original paired creator raster established."
+        },
+        {
+          "url": "https://lipsofsuna.org/",
+          "result": "HTTP 200 is a domain-for-sale script, not the game's historical site.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://lipsofsuna.sourceforge.net/",
+          "result": "HTTP 302 to official SourceForge project summary.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://sourceforge.net/p/lipsofsuna/code/ci/3f477f10cffccef886729067c54fa8ff31b652de/tree/docs/",
+          "result": "HTTP 200; documentation subtree only Doxyfile.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://sourceforge.net/p/lipsofsuna/code/ci/master/tree/misc/",
+          "result": "HTTP 200; .desktop, .png and .svg application artwork.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://forums.roguetemple.com/index.php?topic=1728.0",
+          "result": "Historical third-party forum quotes exact developer release blurb saying screenshots are on its project website; not a creator image publication.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -34769,63 +34829,6 @@
           "url": "https://www.moddb.com/games/tesseract-game/downloads/tesseract-first-edition-windows",
           "checkedAt": "2026-11-19",
           "result": "Exact file metadata names an uploader not verified as the original author; did not adopt the file."
-        }
-      ]
-    },
-    {
-      "id": "open3d-ufo-alien-invasion",
-      "status": "research-incomplete",
-      "reason": "No qualifying image verified. Author/source access was limited: Failed to fetch https://ufoai.org/: (403) Forbidden This is not evidence that no screenshot exists. Official project gallery provides originals hosted across origins at a.fsdn.com, not permitted by current validator.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/ufoaiorg/ufoai/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/ufoaiorg/ufoai",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/ufoaiorg/ufoai/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://ufoai.org/",
-          "checkedAt": "2026-11-18",
-          "result": "Failed to fetch https://ufoai.org/: (403) Forbidden"
-        },
-        {
-          "url": "https://raw.githubusercontent.com/ufoaiorg/ufoai/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/ufoaiorg/ufoai",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/ufoaiorg/ufoai/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://sourceforge.net/projects/ufoai/",
-          "checkedAt": "2026-11-19",
-          "result": "Official project gallery labels image previews but hosts originals on a.fsdn.com, disallowed for this source page."
-        },
-        {
-          "url": "https://api.github.com/repos/ufoaiorg/ufoai/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-19",
-          "result": "Inspected complete author repository tree (11288 items); inventoried 5264 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
-        },
-        {
-          "url": "https://sourceforge.net/projects/ufoai/",
-          "checkedAt": "2026-11-19",
-          "result": "Official project gallery provides originals hosted across origins at a.fsdn.com, not permitted by current validator."
         }
       ]
     },
@@ -35769,6 +35772,31 @@
           "url": "https://api.github.com/repos/tcdude/pyweek28/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (45 items); inventoried 7 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://pyweek.org/e/tizilogic/",
+          "result": "Recovered exact independently authored PyWeek entry and diary, demonstrably tied to tcdude/pyweek28. Published screenshot links go to the developer's unavailable tizilogic.com host or the contest's existing disallowed cross-origin S3 hostname; neither used as a replacement.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://www.tizilogic.com/",
+          "result": "HTTP 503; no independently verifiable creator publication page obtained.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://www.tizilogic.com/wp-content/uploads/2019/09/Screenshot-from-2019-09-28-23-55-02.png",
+          "result": "Original exact README/creator PyWeek image URL returned HTTP 503, serving non-image text. No retry, alternate host or upload attempt.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://tcdude.itch.io/devils-tower",
+          "result": "The writer’s distinct exact release page is indexed and links back to the exact author repository and PyWeek entry. Direct HTTP 429, stopped without retry or alternate path.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/tcdude/pyweek28/issues?state=all&per_page=40",
+          "result": "HTTP 200, empty public issue/PR list. Existing author binary evidence is unchanged; no binary was downloaded.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -35831,6 +35859,21 @@
           "url": "https://pyweek.org/39/entries/",
           "checkedAt": "2026-11-19",
           "result": "Official jam listing explicitly labels the submission archive as game source code."
+        },
+        {
+          "url": "https://pyweek.org/u/omnia/",
+          "result": "Exact author profile names Logs Odysseys and its award entries, but does not link an independent image-publishing site.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://pyweek.org/e/omnia/",
+          "result": "Exact attributed public entry explicitly labels its one screenshot upload 00screenshot.png, but the original link is on previously rejected s3.eu-west-2.amazonaws.com. No proxy or alternate-origin workaround. Final ZIP described as source, not a playable native release.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/omn14/pyweek39/issues?state=all&per_page=40",
+          "result": "HTTP 200, empty public issue/PR list; this route did not add an authoritative image.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -35916,7 +35959,7 @@
     {
       "id": "open3d-danger-from-the-deep",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Official project gallery provides originals hosted across origins at a.fsdn.com, not permitted by current validator.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Official project gallery provides originals hosted across origins at a.fsdn.com, not permitted by current validator. A credited team contributor published an exact gameplay screenshot gallery link, but the developer-owned gallery returned HTTP 503. The contributor's blog embeds externally cached previews, not a currently reachable same-origin original eligible for import. The historical project home is redirected and the original SVN route timed out. No other origin was substituted.",
       "checkedSources": [
         {
           "url": "https://sourceforge.net/projects/dangerdeep/",
@@ -35932,6 +35975,26 @@
           "url": "https://sourceforge.net/projects/dangerdeep/",
           "checkedAt": "2026-11-19",
           "result": "Official project gallery provides originals hosted across origins at a.fsdn.com, not permitted by current validator."
+        },
+        {
+          "url": "https://itnomad.wordpress.com/category/dangerdeep/",
+          "result": "HTTP 200; contributor Alexander W. Janssen's release-candidate post shows previews and links his original Yalla screenshot directory. The thumbnails use a cross-origin WordPress proxy.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://yalla.ynfonatic.de/media/dangerdeep-0.3.0-RC2/",
+          "result": "HTTP 503 from exact contributor-linked gallery; did not use thumbnail proxy or historical mirrors.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://dangerdeep.sourceforge.net/",
+          "result": "HTTP 302 to SourceForge project summary, not a separate game gallery.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://svn.code.sf.net/p/dangerdeep/code/",
+          "result": "Connection timed out with zero bytes before a tree could be verified.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -36784,6 +36847,21 @@
           "url": "https://api.github.com/repos/PillCrew/voyager-simulator/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (103 items); inventoried 29 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://api.github.com/repos/PillCrew/voyager-simulator/issues?state=all&per_page=40",
+          "result": "HTTP 200; sole returned issue is an unrelated host’s invitation to publish the game. It does not establish a published game image.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/PillCrew/PillCrew",
+          "result": "Creator’s alternate profile repository references exact WebXR project as a related link, not a source of a standalone gameplay raster.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://heyvr.io/arcade/games/voyager-simulator",
+          "result": "Cached exact publisher request is a generic application shell with site icons, not source-proven in-game original. No new WebXR execution or unverified gallery origin used.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -37592,6 +37670,16 @@
           "url": "https://samg-coder.github.io/Jelly-Colosseum/src/render.js",
           "checkedAt": "2026-11-19",
           "result": "Read the deployed renderer entry; Three.js WebGL scene rendering is required. No live gameplay render or CPU fallback verified."
+        },
+        {
+          "url": "https://api.github.com/repos/SamG-Coder/Jelly-Colosseum/issues?state=all&per_page=40",
+          "result": "HTTP 200; empty public issue/PR list.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/SamG-Coder/Jelly-Colosseum",
+          "result": "Exact creator README names the deployed game and credits a separate Jelly-Baby project for base code. Focused author-site discovery did not surface a distinct screenshot; media from the separate upstream Jelly-Baby would not prove actual Jelly Colosseum gameplay. Existing rendering limitation not retested.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -43416,6 +43504,61 @@
         }
       },
       {
+        "id": "open3d-blockout-ii",
+        "sourceUrl": "https://sourceforge.net/projects/blockout/",
+        "demo": {
+          "kind": "download",
+          "label": "Download BlockOut II 2.5",
+          "url": "https://sourceforge.net/projects/blockout/files/blockout/BlockOut%202.5/",
+          "note": "Jean-Luc Pons’s official 2.5 release lists native Windows installers and Linux x86/x64 archives separately from the source archive. Release metadata verified on 2026-11-19; no package was downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://www.blockout.net/blockout2/",
+            "checkedAt": "2026-11-19",
+            "result": "The official Jean-Luc Pons project page links this exact HTTPS release folder under Download and provides the GPL source archive separately."
+          },
+          {
+            "url": "https://sourceforge.net/projects/blockout/files/blockout/BlockOut%202.5/",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200 release listing from the author account identifies two Windows installer executables and two Linux architecture-specific archives. The author release README describes Windows Setup and Linux archive extraction separately from compiling the source. No package was downloaded or run."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://sourceforge.net/projects/blockout/files/blockout/BlockOut%202.5/",
+          "authorVerification": "The official BlockOut II homepage links this exact release folder. The SourceForge author account and included release README identify the same author, Jean-Luc Pons, and link back to the official homepage.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Published filenames and author installation notes distinguish the native setup executables and Linux binary archives from bl25-src.tar.gz, which is excluded.",
+          "assets": [
+            {
+              "name": "Blockout25_setup.exe",
+              "url": "https://sourceforge.net/projects/blockout/files/blockout/BlockOut%202.5/Blockout25_setup.exe/download",
+              "kind": "game-binary",
+              "platform": "Windows"
+            },
+            {
+              "name": "Blockout25_setup_ia64.exe",
+              "url": "https://sourceforge.net/projects/blockout/files/blockout/BlockOut%202.5/Blockout25_setup_ia64.exe/download",
+              "kind": "game-binary",
+              "platform": "Windows"
+            },
+            {
+              "name": "bl25-linux-x86.tar.gz",
+              "url": "https://sourceforge.net/projects/blockout/files/blockout/BlockOut%202.5/bl25-linux-x86.tar.gz/download",
+              "kind": "game-binary",
+              "platform": "Linux"
+            },
+            {
+              "name": "bl25-linux-x64.tar.gz",
+              "url": "https://sourceforge.net/projects/blockout/files/blockout/BlockOut%202.5/bl25-linux-x64.tar.gz/download",
+              "kind": "game-binary",
+              "platform": "Linux"
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-cubyz",
         "sourceUrl": "https://github.com/PixelGuys/Cubyz",
         "demo": {
@@ -43711,6 +43854,43 @@
               "url": "https://cdn.kde.org/ci-builds/games/kubrick/master/macos-x86_64/kubrick-master-1009-macos-clang-x86_64.dmg",
               "platform": "macOS Intel",
               "kind": "game-binary"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-linux-air-combat",
+        "sourceUrl": "https://sourceforge.net/projects/linuxaircombat/",
+        "demo": {
+          "kind": "download",
+          "label": "Download Linux x86-64 AppImage",
+          "url": "https://sourceforge.net/projects/linuxaircombat/files/Choose%20Your%20Platform/Precompiled%20binaries%20%28no%20source%20code%29/",
+          "note": "The developer’s official SourceForge listing names the precompiled Linux x86-64 AppImage for version 9.94. Release metadata verified on 2026-11-19; no package was downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://askmisterwizard.com/2019/LinuxAirCombat/LinuxAirCombat.htm",
+            "checkedAt": "2026-11-19",
+            "result": "The developer’s Linux Air Combat website links its online download instructions and documentation."
+          },
+          {
+            "url": "https://sourceforge.net/projects/linuxaircombat/files/Choose%20Your%20Platform/Precompiled%20binaries%20%28no%20source%20code%29/",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200 on the catalog project’s official SourceForge binary folder, maintained by bbosen. Exact linked AppImage filename and author notes explicitly identify the self-contained Linux Air Combat 9.94 precompiled executable. Only release metadata was read."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://sourceforge.net/projects/linuxaircombat/files/Choose%20Your%20Platform/Precompiled%20binaries%20%28no%20source%20code%29/",
+          "authorVerification": "The release folder belongs to the same catalog SourceForge project, is credited to project maintainer bbosen, and links the official AskMisterWizard documentation and changelog.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The author identifies the exact AppImage as a precompiled, self-contained executable that launches Linux Air Combat 9.94. Its public download href appears in the version listing, separately from source-code distributions.",
+          "assets": [
+            {
+              "name": "Lac994E-x86_64.AppImage",
+              "url": "https://sourceforge.net/projects/linuxaircombat/files/Choose%20Your%20Platform/Precompiled%20binaries%20%28no%20source%20code%29/Lac994E-x86_64.AppImage/download",
+              "kind": "game-binary",
+              "platform": "Linux"
             }
           ]
         }
@@ -73159,18 +73339,6 @@
         ]
       },
       {
-        "id": "open3d-blockout-ii",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://www.blockout.net/blockout2/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          }
-        ]
-      },
-      {
         "id": "open3d-freeallegiance-allegiance",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -73362,18 +73530,6 @@
             "url": "https://github.com/etodd/lasercrabs/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
-        "id": "open3d-linux-air-combat",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://askmisterwizard.com/2019/LinuxAirCombat/LinuxAirCombat.htm",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
           }
         ]
       },

@@ -3972,6 +3972,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-ufo-alien-invasion": {
+    src: "media/learning/open3d-ufo-alien-invasion.webp",
+    alt: "An isometric tactical battle with soldiers amid smoke and flames, and a squad roster along the bottom.",
+    caption:
+      "Creator-published UFO: Alien Invasion gameplay screenshot from the official battle tutorial assets. Image rights remain with the original creators.",
+    sourceUrl:
+      "https://github.com/ufoaiorg/ufoai/blob/763173ed036ebbee32c2a7bf6aefa19748df89ff/base/pics/tutorial/battleFireAndSmoke.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/ufoaiorg/ufoai/763173ed036ebbee32c2a7bf6aefa19748df89ff/base/pics/tutorial/battleFireAndSmoke.png",
+    width: 1280,
+    height: 720,
+  },
   "open3d-unvanquished": {
     src: "media/learning/open3d-unvanquished.webp",
     alt: "Glowing science-fiction equipment stands inside a rendered metal-walled game room.",
