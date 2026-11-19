@@ -1104,5 +1104,6 @@
   "guides": "篇指南",
   "tools": "个工具",
   "games": "款游戏",
-  "Browse all {count} resources": "浏览全部 {count} 项资源"
+  "Browse all {count} resources": "浏览全部 {count} 项资源",
+  "Searching the atlas…": "正在搜索图谱…"
 }

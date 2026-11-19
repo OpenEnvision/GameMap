@@ -18,6 +18,31 @@
 .site-header::after {
   content: none;
 }
+/* Once the page scrolls, a soft frosted band behind the pill keeps content that
+   scrolls under the header (and past sticky control bars) from peeking out
+   around the pill. It fades to nothing at its lower edge. */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--paper) 94%, transparent) 0%,
+    color-mix(in srgb, var(--paper) 86%, transparent) 78%,
+    transparent 100%
+  );
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  -webkit-mask-image: linear-gradient(to bottom, #000 84%, transparent);
+  mask-image: linear-gradient(to bottom, #000 84%, transparent);
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+.site-header[data-scrolled]::before {
+  opacity: 1;
+}
 .nav-pill {
   position: relative;
   display: flex;
@@ -456,7 +481,7 @@ html[data-menu-open] {
 }
 /* The narrowest phones keep the mark and drop the wordmark so every control
    (search, language, theme, menu) fits inside the pill. */
-@media (max-width: 400px) {
+@media (max-width: 360px) {
   .nav-brand .brand-wordmark {
     display: none;
   }
