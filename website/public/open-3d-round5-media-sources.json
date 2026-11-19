@@ -1222,6 +1222,45 @@
       "bytes": 113352
     },
     {
+      "id": "open3d-fable-5-2-potatobench",
+      "title": "The County / PotatoBench",
+      "media": {
+        "src": "media/learning/open3d-fable-5-2-potatobench.webp",
+        "alt": "Overhead farm fields with planting orders, crew portraits, weather and a year-one budget.",
+        "caption": "The County gameplay: the farm crew begins planting in the first season.",
+        "sourceUrl": "https://themizeguy.github.io/fable-5.2-potatobench/",
+        "origin": "browser-capture",
+        "capturedAt": "2026-11-19T12:28:21.503Z",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "browserSandbox": true,
+        "inputActions": [
+          "Clicked Play on the title screen.",
+          "Clicked Play without tips to dismiss the onboarding dialog.",
+          "Clicked Plant all to start planting and advance the simulation."
+        ],
+        "sourceFrameSHA256": "0bcf151e6a0ed8bc907f16246957127dd2b6fefd5191f24971755231fcd87e0d",
+        "sourceWidth": 1331,
+        "sourceHeight": 894,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the active farm view: overhead crop plots and crew portraits are visible, with a year-one weather and finance HUD, planting orders, and an in-game confirmation that planting started."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "510115a1d74d57efc619e55441489d335fc8747e3bf7338cb427b0b59f919331",
+      "bytes": 41678
+    },
+    {
       "id": "open3d-fable-city",
       "title": "Fable City",
       "media": {
@@ -19801,58 +19840,6 @@
       ]
     },
     {
-      "id": "open3d-fable-5-2-potatobench",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot was acquired. https://themizeguy.github.io/fable-5.2-potatobench/: Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/TheMizeGuy/fable-5.2-potatobench/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/TheMizeGuy/fable-5.2-potatobench",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/TheMizeGuy/fable-5.2-potatobench/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/TheMizeGuy/fable-5.2-potatobench/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved and reviewed author README for published game links and creator media."
-        },
-        {
-          "url": "https://github.com/TheMizeGuy/fable-5.2-potatobench",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://github.com/TheMizeGuy/fable-5.2-potatobench/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://themizeguy.github.io/fable-5.2-potatobench/",
-          "checkedAt": "2026-11-18",
-          "result": "Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent."
-        },
-        {
-          "url": "https://github.com/TheMizeGuy/fable-5.2-potatobench",
-          "checkedAt": "2026-11-18",
-          "result": "Recorded source-review outcome: research-incomplete."
-        },
-        {
-          "url": "https://themizeguy.github.io/fable-5.2-potatobench/",
-          "checkedAt": "2026-11-18",
-          "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
-        }
-      ]
-    },
-    {
       "id": "open3d-claude-fable-5-2-flight-sim",
       "status": "missing",
       "reason": "Reviewed author root README, nested fable-5.2/README.md, root listing, complete non-truncated 24-entry recursive tree and empty releases page. No raster screenshot/video exists in the tree; both READMEs describe local serving rather than a published game URL. The related Opus/Sonnet repository is a different model comparison, not this game build; community/training links are not demos.",
@@ -36071,6 +36058,42 @@
   "demos": {
     "records": [
       {
+        "id": "open3d-fable-5-2-potatobench",
+        "sourceUrl": "https://github.com/TheMizeGuy/fable-5.2-potatobench",
+        "demo": {
+          "kind": "playable",
+          "label": "Play The County",
+          "url": "https://themizeguy.github.io/fable-5.2-potatobench/",
+          "note": "The author README links this GitHub Pages build. Loaded in a sandboxed cloud browser on 2026-11-19; the farm rendered and accepted a planting order. No complete playthrough is claimed."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/TheMizeGuy/fable-5.2-potatobench",
+          "authorVerification": "The matching author-owned source repository explicitly links this game on its GitHub Pages origin.",
+          "reviewedAt": "2026-11-19",
+          "browserSandbox": true,
+          "renderedGame": true,
+          "loadedUrl": "https://themizeguy.github.io/fable-5.2-potatobench/",
+          "visualFinding": "Personally inspected the active farm view: overhead crop plots and crew portraits are visible, with a year-one weather and finance HUD, planting orders, and an in-game confirmation that planting started.",
+          "inputActions": [
+            "Clicked Play on the title screen.",
+            "Clicked Play without tips to dismiss the onboarding dialog.",
+            "Clicked Plant all to start planting and advance the simulation."
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://github.com/TheMizeGuy/fable-5.2-potatobench",
+            "checkedAt": "2026-11-19",
+            "result": "The repository README links the author-hosted web build for this exact project."
+          },
+          {
+            "url": "https://themizeguy.github.io/fable-5.2-potatobench/",
+            "checkedAt": "2026-11-19",
+            "result": "Personally inspected the active farm view: overhead crop plots and crew portraits are visible, with a year-one weather and finance HUD, planting orders, and an in-game confirmation that planting started."
+          }
+        ]
+      },
+      {
         "id": "open3d-out-of-reach",
         "sourceUrl": "https://github.com/alex-slovakia/out-of-reach",
         "demo": {
@@ -36313,6 +36336,40 @@
             }
           ]
         }
+      },
+      {
+        "id": "open3d-cube-minesweeper",
+        "sourceUrl": "https://github.com/shimanto/cube-minesweeper",
+        "demo": {
+          "label": "Play Cube Minesweeper",
+          "url": "https://shimanto.github.io/cube-minesweeper/",
+          "kind": "playable",
+          "note": "Author README links this same-owner GitHub Pages build. Loaded in a sandboxed cloud browser on 2026-11-19; the cube rendered and cells were revealed after one click. No complete playthrough is claimed."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/shimanto/cube-minesweeper",
+          "authorVerification": "The same-owner project README links the exact public GitHub Pages game, whose title and rendered game agree with the repository.",
+          "reviewedAt": "2026-11-19",
+          "browserSandbox": true,
+          "renderedGame": true,
+          "loadedUrl": "https://shimanto.github.io/cube-minesweeper/",
+          "visualFinding": "Personally inspected the running scene: the CSS 3D cube has revealed blue numbers and empty cells, with mine count and elapsed time visible above it; this is an active puzzle, not a title or loading screen.",
+          "inputActions": [
+            "Clicked a front-face cube cell at viewport coordinates (624, 532) to reveal connected safe cells."
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://github.com/shimanto/cube-minesweeper",
+            "checkedAt": "2026-11-19",
+            "result": "Read the author project README and confirmed that it links the exact Pages build."
+          },
+          {
+            "url": "https://shimanto.github.io/cube-minesweeper/",
+            "checkedAt": "2026-11-19",
+            "result": "Personally inspected the running scene: the CSS 3D cube has revealed blue numbers and empty cells, with mine count and elapsed time visible above it; this is an active puzzle, not a title or loading screen."
+          }
+        ]
       },
       {
         "id": "open3d-pokebrawl",
@@ -36887,6 +36944,73 @@
             }
           ]
         }
+      },
+      {
+        "id": "open3d-racing-game-cyteon",
+        "sourceUrl": "https://github.com/Cyteon/racing-game",
+        "demo": {
+          "label": "View creator downloads",
+          "url": "https://cyteon.itch.io/racing-game",
+          "kind": "download",
+          "note": "The author itch.io page lists native packages for Windows, Linux, Android, macOS. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://cyteon.itch.io/racing-game",
+          "authorVerification": "The creator name Cyteon and the Godot racing game match the supplied GitHub project and the linked itch.io publication.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "These are separately named and platform-labelled game distributions shown in the creator page Download section, not source archives or the embedded web build.",
+          "assets": [
+            {
+              "url": "https://cyteon.itch.io/racing-game",
+              "name": "windows.zip",
+              "platform": "Windows",
+              "platformEvidence": "Download for Windows",
+              "uploadId": "12285326",
+              "kind": "game-binary",
+              "publicationLabel": true
+            },
+            {
+              "url": "https://cyteon.itch.io/racing-game",
+              "name": "linux.zip",
+              "platform": "Linux",
+              "platformEvidence": "Download for Linux",
+              "uploadId": "12285327",
+              "kind": "game-binary",
+              "publicationLabel": true
+            },
+            {
+              "url": "https://cyteon.itch.io/racing-game",
+              "name": "Racing Game.apk",
+              "platform": "Android",
+              "platformEvidence": "Download for Android",
+              "uploadId": "12285301",
+              "kind": "game-binary",
+              "publicationLabel": true
+            },
+            {
+              "url": "https://cyteon.itch.io/racing-game",
+              "name": "Racing Game.dmg",
+              "platform": "macOS",
+              "platformEvidence": "Download for macOS",
+              "uploadId": "12676975",
+              "kind": "game-binary",
+              "publicationLabel": true
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://cyteon.itch.io/racing-game",
+            "checkedAt": "2026-11-19",
+            "result": "Read the public creator itch.io Download list; platform-labelled native uploads named windows.zip, linux.zip, Racing Game.apk, Racing Game.dmg. No file was acquired or executed."
+          },
+          {
+            "url": "https://github.com/Cyteon/racing-game",
+            "checkedAt": "2026-11-19",
+            "result": "The creator name Cyteon and the Godot racing game match the supplied GitHub project and the linked itch.io publication."
+          }
+        ]
       },
       {
         "id": "open3d-rooted-shadow",
@@ -38004,6 +38128,46 @@
             }
           ]
         }
+      },
+      {
+        "id": "open3d-pirate-run",
+        "sourceUrl": "https://github.com/Miniputs/PirateRun",
+        "demo": {
+          "label": "View creator downloads",
+          "url": "https://miniputs.itch.io/pirate-run",
+          "kind": "download",
+          "note": "The author itch.io page lists native packages for Windows. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://miniputs.itch.io/pirate-run",
+          "authorVerification": "The Miniputs game page links directly to the PirateRun repository. Both identify the same Flax Engine runner.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "These are separately named and platform-labelled game distributions shown in the creator page Download section, not source archives or the embedded web build.",
+          "assets": [
+            {
+              "url": "https://miniputs.itch.io/pirate-run",
+              "name": "PirateRun.zip",
+              "platform": "Windows",
+              "platformEvidence": "Download for Windows",
+              "uploadId": "3604491",
+              "kind": "game-binary",
+              "publicationLabel": true
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://miniputs.itch.io/pirate-run",
+            "checkedAt": "2026-11-19",
+            "result": "Read the public creator itch.io Download list; platform-labelled native uploads named PirateRun.zip. No file was acquired or executed."
+          },
+          {
+            "url": "https://github.com/Miniputs/PirateRun",
+            "checkedAt": "2026-11-19",
+            "result": "The Miniputs game page links directly to the PirateRun repository. Both identify the same Flax Engine runner."
+          }
+        ]
       },
       {
         "id": "open3d-3d-sledding",
@@ -40001,6 +40165,65 @@
         }
       },
       {
+        "id": "itch3d-g018",
+        "sourceUrl": "https://github.com/Tribal-Trouble/tribaltrouble",
+        "demo": {
+          "label": "View creator downloads",
+          "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/tag/v2.2.207-103.1010",
+          "kind": "download",
+          "note": "Public creator release lists Windows, Linux and macOS game distributions. Metadata reviewed on 2026-11-19; no executable was downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://rcubdev.itch.io/tribal-trouble-resurrected",
+          "authorVerification": "The cached Resurrected publisher page credits RcubDev, TimmyTonkaBuilder and OmarMokhtar and links github.com/OmarAMokhtar/tribaltrouble. That repository redirects to Tribal-Trouble/tribaltrouble. Its README explicitly names Tribal Trouble: Resurrected and points players to this repository releases. The release tag matches the native version listed by the Resurrected publisher, not an unrelated archive of the 2004 game.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Named native client release assets, excluding source archives, server and bugserver packages.",
+          "assets": [
+            {
+              "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/download/v2.2.207-103.1010/tribal-trouble-linux-appimage_v2.2.207-103.1010.AppImage",
+              "name": "tribal-trouble-linux-appimage_v2.2.207-103.1010.AppImage",
+              "platform": "Linux",
+              "platformEvidence": "Creator release asset filename identifies Linux, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/download/v2.2.207-103.1010/tribal-trouble-mac-arm64_v2.2.207-103.1010.dmg",
+              "name": "tribal-trouble-mac-arm64_v2.2.207-103.1010.dmg",
+              "platform": "macOS",
+              "platformEvidence": "Creator release asset filename identifies macOS, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/download/v2.2.207-103.1010/tribal-trouble-mac-x86_v2.2.207-103.1010.dmg",
+              "name": "tribal-trouble-mac-x86_v2.2.207-103.1010.dmg",
+              "platform": "macOS",
+              "platformEvidence": "Creator release asset filename identifies macOS, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/download/v2.2.207-103.1010/tribal-trouble-windows_v2.2.207-103.1010.zip",
+              "name": "tribal-trouble-windows_v2.2.207-103.1010.zip",
+              "platform": "Windows",
+              "platformEvidence": "Creator release asset filename identifies Windows, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://rcubdev.itch.io/tribal-trouble-resurrected",
+            "checkedAt": "2026-11-19",
+            "result": "Read existing cached creator publication only; no new itch.io request. The cached Resurrected publisher page credits RcubDev, TimmyTonkaBuilder and OmarMokhtar and links github.com/OmarAMokhtar/tribaltrouble. That repository redirects to Tribal-Trouble/tribaltrouble. Its README explicitly names Tribal Trouble: Resurrected and points players to this repository releases. The release tag matches the native version listed by the Resurrected publisher, not an unrelated archive of the 2004 game."
+          },
+          {
+            "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/tag/v2.2.207-103.1010",
+            "checkedAt": "2026-11-19",
+            "result": "Public GitHub releases/latest metadata returned exact native client asset names and download URLs. No binary fetched."
+          }
+        ]
+      },
+      {
         "id": "itch3d-g022",
         "sourceUrl": "https://github.com/HauntedBees/bag-witch",
         "demo": {
@@ -40391,6 +40614,107 @@
         }
       },
       {
+        "id": "itch3d-g045",
+        "sourceUrl": "https://github.com/ue4split/random_game",
+        "demo": {
+          "label": "View creator downloads",
+          "url": "https://ue4split.itch.io/random-game",
+          "kind": "download",
+          "note": "The author itch.io page lists native packages for Windows, Linux. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://ue4split.itch.io/random-game",
+          "authorVerification": "The ue4split itch.io release links directly to the UE4 Split Random Game project on GitHub.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "These are separately named and platform-labelled game distributions shown in the creator page Download section, not source archives or the embedded web build.",
+          "assets": [
+            {
+              "url": "https://ue4split.itch.io/random-game",
+              "name": "RandomGame_Win64.zip",
+              "platform": "Windows",
+              "platformEvidence": "Download for Windows",
+              "uploadId": "4357223",
+              "kind": "game-binary",
+              "publicationLabel": true
+            },
+            {
+              "url": "https://ue4split.itch.io/random-game",
+              "name": "RandomGame_Linux.zip",
+              "platform": "Linux",
+              "platformEvidence": "Download for Linux",
+              "uploadId": "2747114",
+              "kind": "game-binary",
+              "publicationLabel": true
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://ue4split.itch.io/random-game",
+            "checkedAt": "2026-11-19",
+            "result": "Read the public creator itch.io Download list; platform-labelled native uploads named RandomGame_Win64.zip, RandomGame_Linux.zip. No file was acquired or executed."
+          },
+          {
+            "url": "https://github.com/ue4split/random_game",
+            "checkedAt": "2026-11-19",
+            "result": "The ue4split itch.io release links directly to the UE4 Split Random Game project on GitHub."
+          }
+        ]
+      },
+      {
+        "id": "itch3d-g050",
+        "sourceUrl": "https://github.com/tomatenquark/code",
+        "demo": {
+          "label": "View creator downloads",
+          "url": "https://github.com/tomatenquark/code/releases/tag/v0.2.1",
+          "kind": "download",
+          "note": "Public creator release lists Windows, Linux and macOS game distributions. Metadata reviewed on 2026-11-19; no executable was downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://tomatenquark.itch.io/tomatenquark",
+          "authorVerification": "The cached creator itch publication explicitly lists latest-release native download URLs in tomatenquark/code with these exact three filenames. Public GitHub release metadata resolves them to v0.2.1.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Named native client release assets, excluding source archives, server and bugserver packages.",
+          "assets": [
+            {
+              "url": "https://github.com/tomatenquark/code/releases/download/v0.2.1/tomatenquark_macos.zip",
+              "name": "tomatenquark_macos.zip",
+              "platform": "macOS",
+              "platformEvidence": "Creator release asset filename identifies macOS, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://github.com/tomatenquark/code/releases/download/v0.2.1/tomatenquark_ubuntu.zip",
+              "name": "tomatenquark_ubuntu.zip",
+              "platform": "Linux",
+              "platformEvidence": "Creator release asset filename identifies Linux, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            },
+            {
+              "url": "https://github.com/tomatenquark/code/releases/download/v0.2.1/tomatenquark_windows.zip",
+              "name": "tomatenquark_windows.zip",
+              "platform": "Windows",
+              "platformEvidence": "Creator release asset filename identifies Windows, corroborated by creator publication native platform list.",
+              "kind": "game-binary"
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://tomatenquark.itch.io/tomatenquark",
+            "checkedAt": "2026-11-19",
+            "result": "Read existing cached creator publication only; no new itch.io request. The cached creator itch publication explicitly lists latest-release native download URLs in tomatenquark/code with these exact three filenames. Public GitHub release metadata resolves them to v0.2.1."
+          },
+          {
+            "url": "https://github.com/tomatenquark/code/releases/tag/v0.2.1",
+            "checkedAt": "2026-11-19",
+            "result": "Public GitHub releases/latest metadata returned exact native client asset names and download URLs. No binary fetched."
+          }
+        ]
+      },
+      {
         "id": "itch3d-g055",
         "sourceUrl": "https://github.com/blendogames/flotilla",
         "demo": {
@@ -40561,6 +40885,46 @@
         }
       },
       {
+        "id": "itch3d-g070",
+        "sourceUrl": "https://github.com/Mickeon/team-fortress-jumper",
+        "demo": {
+          "label": "View creator downloads",
+          "url": "https://mickeon.itch.io/team-fortress-jumper",
+          "kind": "download",
+          "note": "The author itch.io page lists native packages for Windows. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://mickeon.itch.io/team-fortress-jumper",
+          "authorVerification": "The project README directly links this same-author itch.io game page under Mickeon, which separately lists a native Windows upload.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "These are separately named and platform-labelled game distributions shown in the creator page Download section, not source archives or the embedded web build.",
+          "assets": [
+            {
+              "url": "https://mickeon.itch.io/team-fortress-jumper",
+              "name": "team-fortress-jumper-windows.zip",
+              "platform": "Windows",
+              "platformEvidence": "Download for Windows",
+              "uploadId": "14670694",
+              "kind": "game-binary",
+              "publicationLabel": true
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://mickeon.itch.io/team-fortress-jumper",
+            "checkedAt": "2026-11-19",
+            "result": "Read the public creator itch.io Download list; platform-labelled native uploads named team-fortress-jumper-windows.zip. No file was acquired or executed."
+          },
+          {
+            "url": "https://github.com/Mickeon/team-fortress-jumper",
+            "checkedAt": "2026-11-19",
+            "result": "The project README directly links this same-author itch.io game page under Mickeon, which separately lists a native Windows upload."
+          }
+        ]
+      },
+      {
         "id": "itch3d-g098",
         "sourceUrl": "https://github.com/rameshvarun/BlueScreen",
         "demo": {
@@ -40653,6 +41017,41 @@
             }
           ]
         }
+      },
+      {
+        "id": "open3d-castle-wars-js",
+        "sourceUrl": "https://github.com/js13kGames/castle-wars",
+        "demo": {
+          "label": "Play Castle Wars",
+          "url": "https://play.js13kgames.com/castle-wars/",
+          "kind": "playable",
+          "note": "The creator-submitted js13kGames entry links this build and the exact source repository. Loaded in a sandboxed cloud browser on 2026-11-19; the Canvas-rendered tutorial battlefield displayed and troop counts advanced. No complete playthrough is claimed."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://js13kgames.com/2023/games/castle-wars",
+          "authorVerification": "The official js13kGames competition entry identifies the published project and links the submitted playable build and matching public project source.",
+          "reviewedAt": "2026-11-19",
+          "browserSandbox": true,
+          "renderedGame": true,
+          "loadedUrl": "https://play.js13kgames.com/castle-wars/",
+          "visualFinding": "Personally inspected the saved original frame: the active tutorial battlefield shows blue, red and gray castles, troop counters and an in-game instruction. It is not the title or level-selection screen; counts increased while the scene ran.",
+          "inputActions": [
+            "Clicked start at viewport (586,519) on the title screen.",
+            "Clicked start at viewport (586,519) to begin the selected tutorial level."
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://js13kgames.com/2023/games/castle-wars",
+            "checkedAt": "2026-11-19",
+            "result": "Read the creator-submitted competition entry and confirmed the playable build and linked source correspond to the project."
+          },
+          {
+            "url": "https://play.js13kgames.com/castle-wars/",
+            "checkedAt": "2026-11-19",
+            "result": "Personally inspected the saved original frame: the active tutorial battlefield shows blue, red and gray castles, troop counters and an in-game instruction. It is not the title or level-selection screen; counts increased while the scene ran."
+          }
+        ]
       },
       {
         "id": "open3d-beware-the-living-room",
@@ -41168,6 +41567,55 @@
             }
           ]
         }
+      },
+      {
+        "id": "open3d-void-sys",
+        "sourceUrl": "https://github.com/MrNavaStar/ASJ2025",
+        "demo": {
+          "label": "View creator downloads",
+          "url": "https://icaruschild.itch.io/voidsys",
+          "kind": "download",
+          "note": "The author itch.io page lists native packages for Windows, Linux. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://icaruschild.itch.io/voidsys",
+          "authorVerification": "The source repository README directly links the IcarusChild itch.io release and the itch.io page credits and links the same project repository.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "These are separately named and platform-labelled game distributions shown in the creator page Download section, not source archives or the embedded web build.",
+          "assets": [
+            {
+              "url": "https://icaruschild.itch.io/voidsys",
+              "name": "void.sys.exe",
+              "platform": "Windows",
+              "platformEvidence": "Download for Windows",
+              "uploadId": "13934816",
+              "kind": "game-binary",
+              "publicationLabel": true
+            },
+            {
+              "url": "https://icaruschild.itch.io/voidsys",
+              "name": "void.sys.x86_64",
+              "platform": "Linux",
+              "platformEvidence": "Download for Linux",
+              "uploadId": "13934815",
+              "kind": "game-binary",
+              "publicationLabel": true
+            }
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://icaruschild.itch.io/voidsys",
+            "checkedAt": "2026-11-19",
+            "result": "Read the public creator itch.io Download list; platform-labelled native uploads named void.sys.exe, void.sys.x86_64. No file was acquired or executed."
+          },
+          {
+            "url": "https://github.com/MrNavaStar/ASJ2025",
+            "checkedAt": "2026-11-19",
+            "result": "The source repository README directly links the IcarusChild itch.io release and the itch.io page credits and links the same project repository."
+          }
+        ]
       },
       {
         "id": "open3d-windy-seas",
@@ -41782,431 +42230,6 @@
             }
           ]
         }
-      },
-      {
-        "id": "open3d-cube-minesweeper",
-        "sourceUrl": "https://github.com/shimanto/cube-minesweeper",
-        "demo": {
-          "label": "Play Cube Minesweeper",
-          "url": "https://shimanto.github.io/cube-minesweeper/",
-          "kind": "playable",
-          "note": "Author README links this same-owner GitHub Pages build. Loaded in a sandboxed cloud browser on 2026-11-19; the cube rendered and cells were revealed after one click. No complete playthrough is claimed."
-        },
-        "evidence": {
-          "authorPublicationUrl": "https://github.com/shimanto/cube-minesweeper",
-          "authorVerification": "The same-owner project README links the exact public GitHub Pages game, whose title and rendered game agree with the repository.",
-          "reviewedAt": "2026-11-19",
-          "browserSandbox": true,
-          "renderedGame": true,
-          "loadedUrl": "https://shimanto.github.io/cube-minesweeper/",
-          "visualFinding": "Personally inspected the running scene: the CSS 3D cube has revealed blue numbers and empty cells, with mine count and elapsed time visible above it; this is an active puzzle, not a title or loading screen.",
-          "inputActions": [
-            "Clicked a front-face cube cell at viewport coordinates (624, 532) to reveal connected safe cells."
-          ]
-        },
-        "checkedSources": [
-          {
-            "url": "https://github.com/shimanto/cube-minesweeper",
-            "checkedAt": "2026-11-19",
-            "result": "Read the author project README and confirmed that it links the exact Pages build."
-          },
-          {
-            "url": "https://shimanto.github.io/cube-minesweeper/",
-            "checkedAt": "2026-11-19",
-            "result": "Personally inspected the running scene: the CSS 3D cube has revealed blue numbers and empty cells, with mine count and elapsed time visible above it; this is an active puzzle, not a title or loading screen."
-          }
-        ]
-      },
-      {
-        "id": "open3d-racing-game-cyteon",
-        "sourceUrl": "https://github.com/Cyteon/racing-game",
-        "demo": {
-          "label": "View creator downloads",
-          "url": "https://cyteon.itch.io/racing-game",
-          "kind": "download",
-          "note": "The author itch.io page lists native packages for Windows, Linux, Android, macOS. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
-        },
-        "evidence": {
-          "authorPublicationUrl": "https://cyteon.itch.io/racing-game",
-          "authorVerification": "The creator name Cyteon and the Godot racing game match the supplied GitHub project and the linked itch.io publication.",
-          "reviewedAt": "2026-11-19",
-          "binaryRelease": true,
-          "binaryVerification": "These are separately named and platform-labelled game distributions shown in the creator page Download section, not source archives or the embedded web build.",
-          "assets": [
-            {
-              "url": "https://cyteon.itch.io/racing-game",
-              "name": "windows.zip",
-              "platform": "Windows",
-              "platformEvidence": "Download for Windows",
-              "uploadId": "12285326",
-              "kind": "game-binary",
-              "publicationLabel": true
-            },
-            {
-              "url": "https://cyteon.itch.io/racing-game",
-              "name": "linux.zip",
-              "platform": "Linux",
-              "platformEvidence": "Download for Linux",
-              "uploadId": "12285327",
-              "kind": "game-binary",
-              "publicationLabel": true
-            },
-            {
-              "url": "https://cyteon.itch.io/racing-game",
-              "name": "Racing Game.apk",
-              "platform": "Android",
-              "platformEvidence": "Download for Android",
-              "uploadId": "12285301",
-              "kind": "game-binary",
-              "publicationLabel": true
-            },
-            {
-              "url": "https://cyteon.itch.io/racing-game",
-              "name": "Racing Game.dmg",
-              "platform": "macOS",
-              "platformEvidence": "Download for macOS",
-              "uploadId": "12676975",
-              "kind": "game-binary",
-              "publicationLabel": true
-            }
-          ]
-        },
-        "checkedSources": [
-          {
-            "url": "https://cyteon.itch.io/racing-game",
-            "checkedAt": "2026-11-19",
-            "result": "Read the public creator itch.io Download list; platform-labelled native uploads named windows.zip, linux.zip, Racing Game.apk, Racing Game.dmg. No file was acquired or executed."
-          },
-          {
-            "url": "https://github.com/Cyteon/racing-game",
-            "checkedAt": "2026-11-19",
-            "result": "The creator name Cyteon and the Godot racing game match the supplied GitHub project and the linked itch.io publication."
-          }
-        ]
-      },
-      {
-        "id": "open3d-pirate-run",
-        "sourceUrl": "https://github.com/Miniputs/PirateRun",
-        "demo": {
-          "label": "View creator downloads",
-          "url": "https://miniputs.itch.io/pirate-run",
-          "kind": "download",
-          "note": "The author itch.io page lists native packages for Windows. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
-        },
-        "evidence": {
-          "authorPublicationUrl": "https://miniputs.itch.io/pirate-run",
-          "authorVerification": "The Miniputs game page links directly to the PirateRun repository. Both identify the same Flax Engine runner.",
-          "reviewedAt": "2026-11-19",
-          "binaryRelease": true,
-          "binaryVerification": "These are separately named and platform-labelled game distributions shown in the creator page Download section, not source archives or the embedded web build.",
-          "assets": [
-            {
-              "url": "https://miniputs.itch.io/pirate-run",
-              "name": "PirateRun.zip",
-              "platform": "Windows",
-              "platformEvidence": "Download for Windows",
-              "uploadId": "3604491",
-              "kind": "game-binary",
-              "publicationLabel": true
-            }
-          ]
-        },
-        "checkedSources": [
-          {
-            "url": "https://miniputs.itch.io/pirate-run",
-            "checkedAt": "2026-11-19",
-            "result": "Read the public creator itch.io Download list; platform-labelled native uploads named PirateRun.zip. No file was acquired or executed."
-          },
-          {
-            "url": "https://github.com/Miniputs/PirateRun",
-            "checkedAt": "2026-11-19",
-            "result": "The Miniputs game page links directly to the PirateRun repository. Both identify the same Flax Engine runner."
-          }
-        ]
-      },
-      {
-        "id": "itch3d-g045",
-        "sourceUrl": "https://github.com/ue4split/random_game",
-        "demo": {
-          "label": "View creator downloads",
-          "url": "https://ue4split.itch.io/random-game",
-          "kind": "download",
-          "note": "The author itch.io page lists native packages for Windows, Linux. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
-        },
-        "evidence": {
-          "authorPublicationUrl": "https://ue4split.itch.io/random-game",
-          "authorVerification": "The ue4split itch.io release links directly to the UE4 Split Random Game project on GitHub.",
-          "reviewedAt": "2026-11-19",
-          "binaryRelease": true,
-          "binaryVerification": "These are separately named and platform-labelled game distributions shown in the creator page Download section, not source archives or the embedded web build.",
-          "assets": [
-            {
-              "url": "https://ue4split.itch.io/random-game",
-              "name": "RandomGame_Win64.zip",
-              "platform": "Windows",
-              "platformEvidence": "Download for Windows",
-              "uploadId": "4357223",
-              "kind": "game-binary",
-              "publicationLabel": true
-            },
-            {
-              "url": "https://ue4split.itch.io/random-game",
-              "name": "RandomGame_Linux.zip",
-              "platform": "Linux",
-              "platformEvidence": "Download for Linux",
-              "uploadId": "2747114",
-              "kind": "game-binary",
-              "publicationLabel": true
-            }
-          ]
-        },
-        "checkedSources": [
-          {
-            "url": "https://ue4split.itch.io/random-game",
-            "checkedAt": "2026-11-19",
-            "result": "Read the public creator itch.io Download list; platform-labelled native uploads named RandomGame_Win64.zip, RandomGame_Linux.zip. No file was acquired or executed."
-          },
-          {
-            "url": "https://github.com/ue4split/random_game",
-            "checkedAt": "2026-11-19",
-            "result": "The ue4split itch.io release links directly to the UE4 Split Random Game project on GitHub."
-          }
-        ]
-      },
-      {
-        "id": "itch3d-g070",
-        "sourceUrl": "https://github.com/Mickeon/team-fortress-jumper",
-        "demo": {
-          "label": "View creator downloads",
-          "url": "https://mickeon.itch.io/team-fortress-jumper",
-          "kind": "download",
-          "note": "The author itch.io page lists native packages for Windows. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
-        },
-        "evidence": {
-          "authorPublicationUrl": "https://mickeon.itch.io/team-fortress-jumper",
-          "authorVerification": "The project README directly links this same-author itch.io game page under Mickeon, which separately lists a native Windows upload.",
-          "reviewedAt": "2026-11-19",
-          "binaryRelease": true,
-          "binaryVerification": "These are separately named and platform-labelled game distributions shown in the creator page Download section, not source archives or the embedded web build.",
-          "assets": [
-            {
-              "url": "https://mickeon.itch.io/team-fortress-jumper",
-              "name": "team-fortress-jumper-windows.zip",
-              "platform": "Windows",
-              "platformEvidence": "Download for Windows",
-              "uploadId": "14670694",
-              "kind": "game-binary",
-              "publicationLabel": true
-            }
-          ]
-        },
-        "checkedSources": [
-          {
-            "url": "https://mickeon.itch.io/team-fortress-jumper",
-            "checkedAt": "2026-11-19",
-            "result": "Read the public creator itch.io Download list; platform-labelled native uploads named team-fortress-jumper-windows.zip. No file was acquired or executed."
-          },
-          {
-            "url": "https://github.com/Mickeon/team-fortress-jumper",
-            "checkedAt": "2026-11-19",
-            "result": "The project README directly links this same-author itch.io game page under Mickeon, which separately lists a native Windows upload."
-          }
-        ]
-      },
-      {
-        "id": "open3d-void-sys",
-        "sourceUrl": "https://github.com/MrNavaStar/ASJ2025",
-        "demo": {
-          "label": "View creator downloads",
-          "url": "https://icaruschild.itch.io/voidsys",
-          "kind": "download",
-          "note": "The author itch.io page lists native packages for Windows, Linux. Publication listing reviewed on 2026-11-19; no package was downloaded or run."
-        },
-        "evidence": {
-          "authorPublicationUrl": "https://icaruschild.itch.io/voidsys",
-          "authorVerification": "The source repository README directly links the IcarusChild itch.io release and the itch.io page credits and links the same project repository.",
-          "reviewedAt": "2026-11-19",
-          "binaryRelease": true,
-          "binaryVerification": "These are separately named and platform-labelled game distributions shown in the creator page Download section, not source archives or the embedded web build.",
-          "assets": [
-            {
-              "url": "https://icaruschild.itch.io/voidsys",
-              "name": "void.sys.exe",
-              "platform": "Windows",
-              "platformEvidence": "Download for Windows",
-              "uploadId": "13934816",
-              "kind": "game-binary",
-              "publicationLabel": true
-            },
-            {
-              "url": "https://icaruschild.itch.io/voidsys",
-              "name": "void.sys.x86_64",
-              "platform": "Linux",
-              "platformEvidence": "Download for Linux",
-              "uploadId": "13934815",
-              "kind": "game-binary",
-              "publicationLabel": true
-            }
-          ]
-        },
-        "checkedSources": [
-          {
-            "url": "https://icaruschild.itch.io/voidsys",
-            "checkedAt": "2026-11-19",
-            "result": "Read the public creator itch.io Download list; platform-labelled native uploads named void.sys.exe, void.sys.x86_64. No file was acquired or executed."
-          },
-          {
-            "url": "https://github.com/MrNavaStar/ASJ2025",
-            "checkedAt": "2026-11-19",
-            "result": "The source repository README directly links the IcarusChild itch.io release and the itch.io page credits and links the same project repository."
-          }
-        ]
-      },
-      {
-        "id": "itch3d-g050",
-        "sourceUrl": "https://github.com/tomatenquark/code",
-        "demo": {
-          "label": "View creator downloads",
-          "url": "https://github.com/tomatenquark/code/releases/tag/v0.2.1",
-          "kind": "download",
-          "note": "Public creator release lists Windows, Linux and macOS game distributions. Metadata reviewed on 2026-11-19; no executable was downloaded or run."
-        },
-        "evidence": {
-          "authorPublicationUrl": "https://tomatenquark.itch.io/tomatenquark",
-          "authorVerification": "The cached creator itch publication explicitly lists latest-release native download URLs in tomatenquark/code with these exact three filenames. Public GitHub release metadata resolves them to v0.2.1.",
-          "reviewedAt": "2026-11-19",
-          "binaryRelease": true,
-          "binaryVerification": "Named native client release assets, excluding source archives, server and bugserver packages.",
-          "assets": [
-            {
-              "url": "https://github.com/tomatenquark/code/releases/download/v0.2.1/tomatenquark_macos.zip",
-              "name": "tomatenquark_macos.zip",
-              "platform": "macOS",
-              "platformEvidence": "Creator release asset filename identifies macOS, corroborated by creator publication native platform list.",
-              "kind": "game-binary"
-            },
-            {
-              "url": "https://github.com/tomatenquark/code/releases/download/v0.2.1/tomatenquark_ubuntu.zip",
-              "name": "tomatenquark_ubuntu.zip",
-              "platform": "Linux",
-              "platformEvidence": "Creator release asset filename identifies Linux, corroborated by creator publication native platform list.",
-              "kind": "game-binary"
-            },
-            {
-              "url": "https://github.com/tomatenquark/code/releases/download/v0.2.1/tomatenquark_windows.zip",
-              "name": "tomatenquark_windows.zip",
-              "platform": "Windows",
-              "platformEvidence": "Creator release asset filename identifies Windows, corroborated by creator publication native platform list.",
-              "kind": "game-binary"
-            }
-          ]
-        },
-        "checkedSources": [
-          {
-            "url": "https://tomatenquark.itch.io/tomatenquark",
-            "checkedAt": "2026-11-19",
-            "result": "Read existing cached creator publication only; no new itch.io request. The cached creator itch publication explicitly lists latest-release native download URLs in tomatenquark/code with these exact three filenames. Public GitHub release metadata resolves them to v0.2.1."
-          },
-          {
-            "url": "https://github.com/tomatenquark/code/releases/tag/v0.2.1",
-            "checkedAt": "2026-11-19",
-            "result": "Public GitHub releases/latest metadata returned exact native client asset names and download URLs. No binary fetched."
-          }
-        ]
-      },
-      {
-        "id": "itch3d-g018",
-        "sourceUrl": "https://github.com/Tribal-Trouble/tribaltrouble",
-        "demo": {
-          "label": "View creator downloads",
-          "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/tag/v2.2.207-103.1010",
-          "kind": "download",
-          "note": "Public creator release lists Windows, Linux and macOS game distributions. Metadata reviewed on 2026-11-19; no executable was downloaded or run."
-        },
-        "evidence": {
-          "authorPublicationUrl": "https://rcubdev.itch.io/tribal-trouble-resurrected",
-          "authorVerification": "The cached Resurrected publisher page credits RcubDev, TimmyTonkaBuilder and OmarMokhtar and links github.com/OmarAMokhtar/tribaltrouble. That repository redirects to Tribal-Trouble/tribaltrouble. Its README explicitly names Tribal Trouble: Resurrected and points players to this repository releases. The release tag matches the native version listed by the Resurrected publisher, not an unrelated archive of the 2004 game.",
-          "reviewedAt": "2026-11-19",
-          "binaryRelease": true,
-          "binaryVerification": "Named native client release assets, excluding source archives, server and bugserver packages.",
-          "assets": [
-            {
-              "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/download/v2.2.207-103.1010/tribal-trouble-linux-appimage_v2.2.207-103.1010.AppImage",
-              "name": "tribal-trouble-linux-appimage_v2.2.207-103.1010.AppImage",
-              "platform": "Linux",
-              "platformEvidence": "Creator release asset filename identifies Linux, corroborated by creator publication native platform list.",
-              "kind": "game-binary"
-            },
-            {
-              "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/download/v2.2.207-103.1010/tribal-trouble-mac-arm64_v2.2.207-103.1010.dmg",
-              "name": "tribal-trouble-mac-arm64_v2.2.207-103.1010.dmg",
-              "platform": "macOS",
-              "platformEvidence": "Creator release asset filename identifies macOS, corroborated by creator publication native platform list.",
-              "kind": "game-binary"
-            },
-            {
-              "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/download/v2.2.207-103.1010/tribal-trouble-mac-x86_v2.2.207-103.1010.dmg",
-              "name": "tribal-trouble-mac-x86_v2.2.207-103.1010.dmg",
-              "platform": "macOS",
-              "platformEvidence": "Creator release asset filename identifies macOS, corroborated by creator publication native platform list.",
-              "kind": "game-binary"
-            },
-            {
-              "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/download/v2.2.207-103.1010/tribal-trouble-windows_v2.2.207-103.1010.zip",
-              "name": "tribal-trouble-windows_v2.2.207-103.1010.zip",
-              "platform": "Windows",
-              "platformEvidence": "Creator release asset filename identifies Windows, corroborated by creator publication native platform list.",
-              "kind": "game-binary"
-            }
-          ]
-        },
-        "checkedSources": [
-          {
-            "url": "https://rcubdev.itch.io/tribal-trouble-resurrected",
-            "checkedAt": "2026-11-19",
-            "result": "Read existing cached creator publication only; no new itch.io request. The cached Resurrected publisher page credits RcubDev, TimmyTonkaBuilder and OmarMokhtar and links github.com/OmarAMokhtar/tribaltrouble. That repository redirects to Tribal-Trouble/tribaltrouble. Its README explicitly names Tribal Trouble: Resurrected and points players to this repository releases. The release tag matches the native version listed by the Resurrected publisher, not an unrelated archive of the 2004 game."
-          },
-          {
-            "url": "https://github.com/Tribal-Trouble/tribaltrouble/releases/tag/v2.2.207-103.1010",
-            "checkedAt": "2026-11-19",
-            "result": "Public GitHub releases/latest metadata returned exact native client asset names and download URLs. No binary fetched."
-          }
-        ]
-      },
-      {
-        "id": "open3d-castle-wars-js",
-        "sourceUrl": "https://github.com/js13kGames/castle-wars",
-        "demo": {
-          "label": "Play Castle Wars",
-          "url": "https://play.js13kgames.com/castle-wars/",
-          "kind": "playable",
-          "note": "The creator-submitted js13kGames entry links this build and the exact source repository. Loaded in a sandboxed cloud browser on 2026-11-19; the Canvas-rendered tutorial battlefield displayed and troop counts advanced. No complete playthrough is claimed."
-        },
-        "evidence": {
-          "authorPublicationUrl": "https://js13kgames.com/2023/games/castle-wars",
-          "authorVerification": "The official js13kGames competition entry identifies the published project and links the submitted playable build and matching public project source.",
-          "reviewedAt": "2026-11-19",
-          "browserSandbox": true,
-          "renderedGame": true,
-          "loadedUrl": "https://play.js13kgames.com/castle-wars/",
-          "visualFinding": "Personally inspected the saved original frame: the active tutorial battlefield shows blue, red and gray castles, troop counters and an in-game instruction. It is not the title or level-selection screen; counts increased while the scene ran.",
-          "inputActions": [
-            "Clicked start at viewport (586,519) on the title screen.",
-            "Clicked start at viewport (586,519) to begin the selected tutorial level."
-          ]
-        },
-        "checkedSources": [
-          {
-            "url": "https://js13kgames.com/2023/games/castle-wars",
-            "checkedAt": "2026-11-19",
-            "result": "Read the creator-submitted competition entry and confirmed the playable build and linked source correspond to the project."
-          },
-          {
-            "url": "https://play.js13kgames.com/castle-wars/",
-            "checkedAt": "2026-11-19",
-            "result": "Personally inspected the saved original frame: the active tutorial battlefield shows blue, red and gray castles, troop counters and an in-game instruction. It is not the title or level-selection screen; counts increased while the scene ran."
-          }
-        ]
       }
     ],
     "missing": [
@@ -42942,58 +42965,6 @@
             "url": "https://eval-forge.github.io/opus-v-fable/",
             "checkedAt": "2026-11-18",
             "result": "Read author comparison homepage; six linked images explicitly labelled Main menu, excluded."
-          }
-        ]
-      },
-      {
-        "id": "open3d-fable-5-2-potatobench",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: Keep source unchanged: no browser-render verification was performed by this media review. Author URL inspection encountered the recorded access/rendering limitations. This does not imply the author has no release.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/TheMizeGuy/fable-5.2-potatobench/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/TheMizeGuy/fable-5.2-potatobench",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/TheMizeGuy/fable-5.2-potatobench/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/TheMizeGuy/fable-5.2-potatobench/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Retrieved and reviewed author README for published game links and creator media."
-          },
-          {
-            "url": "https://github.com/TheMizeGuy/fable-5.2-potatobench",
-            "checkedAt": "2026-11-18",
-            "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-          },
-          {
-            "url": "https://github.com/TheMizeGuy/fable-5.2-potatobench/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-          },
-          {
-            "url": "https://themizeguy.github.io/fable-5.2-potatobench/",
-            "checkedAt": "2026-11-18",
-            "result": "Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent."
-          },
-          {
-            "url": "https://github.com/TheMizeGuy/fable-5.2-potatobench",
-            "checkedAt": "2026-11-18",
-            "result": "Recorded source-review outcome: research-incomplete."
-          },
-          {
-            "url": "https://themizeguy.github.io/fable-5.2-potatobench/",
-            "checkedAt": "2026-11-18",
-            "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
           }
         ]
       },

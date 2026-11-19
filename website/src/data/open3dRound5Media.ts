@@ -133,6 +133,17 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-fable-5-2-potatobench": {
+    src: "media/learning/open3d-fable-5-2-potatobench.webp",
+    alt: "Overhead farm fields with planting orders, crew portraits, weather and a year-one budget.",
+    caption:
+      "The County gameplay: the farm crew begins planting in the first season.",
+    sourceUrl: "https://themizeguy.github.io/fable-5.2-potatobench/",
+    origin: "browser-capture",
+    capturedAt: "2026-11-19T12:28:21.503Z",
+    width: 1280,
+    height: 720,
+  },
   "open3d-fable-city": {
     src: "media/learning/open3d-fable-city.webp",
     alt: "A car drives through Fable City at dusk, with speed, traffic and city simulation controls visible.",

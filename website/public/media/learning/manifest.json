@@ -9806,6 +9806,19 @@
       "sha256": "80ef294a7e2a07d3c3ca7e5824eab89ecc642dbeff2324a252ee81e7c9653ab5"
     },
     {
+      "id": "open3d-fable-5-2-potatobench",
+      "src": "media/learning/open3d-fable-5-2-potatobench.webp",
+      "alt": "Overhead farm fields with planting orders, crew portraits, weather and a year-one budget.",
+      "caption": "The County gameplay: the farm crew begins planting in the first season.",
+      "sourceUrl": "https://themizeguy.github.io/fable-5.2-potatobench/",
+      "origin": "browser-capture",
+      "capturedAt": "2026-11-19T12:28:21.503Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 41678,
+      "sha256": "510115a1d74d57efc619e55441489d335fc8747e3bf7338cb427b0b59f919331"
+    },
+    {
       "id": "open3d-fable-city",
       "src": "media/learning/open3d-fable-city.webp",
       "alt": "A car drives through Fable City at dusk, with speed, traffic and city simulation controls visible.",

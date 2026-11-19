@@ -919,10 +919,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for The County / PotatoBench",
-      "url": "https://github.com/TheMizeGuy/fable-5.2-potatobench",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "kind": "playable",
+      "label": "Play The County",
+      "url": "https://themizeguy.github.io/fable-5.2-potatobench/",
+      "note": "The author README links this GitHub Pages build. Loaded in a sandboxed cloud browser on 2026-11-19; the farm rendered and accepted a planting order. No complete playthrough is claimed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
