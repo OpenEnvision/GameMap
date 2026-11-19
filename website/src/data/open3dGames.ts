@@ -2899,10 +2899,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Team-Capture",
-      "url": "https://github.com/Voltstro-Studios/Team-Capture",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Team-Capture v0.2 preview",
+      "url": "https://github.com/Voltstro-Studios/Team-Capture/releases/tag/v0.2-preview",
+      "kind": "download",
+      "note": "The developer labels v0.2 a preview, with separate 64-bit Windows and Linux game builds listed alongside distinct source archives. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3259,10 +3259,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Yo Frankie!",
-      "url": "https://github.com/BlenderVR/yofrankie",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Yo Frankie 1.1b",
+      "url": "https://archive.blender.org/www/blenderorg/blender-institute/apricot-open-game/index.html",
+      "kind": "download",
+      "note": "The Blender Institute release announcement lists this exact Yo Frankie 1.1b archive as containing Linux 32-bit, Linux 64-bit and Windows 32-bit players, with no bundled Mac binary. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4744,10 +4744,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Tesseract",
-      "url": "https://websvn.tuxfamily.org/tesseract/main/",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Tesseract First Edition",
+      "url": "https://download.tuxfamily.org/tesseract/",
+      "kind": "download",
+      "note": "The original project-hosted file index identifies first-edition native Windows EXE, Linux archive and macOS DMG, with distinct platform labels. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

@@ -2809,10 +2809,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Avara",
-      "url": "https://github.com/avaraline/Avara",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Avara nightly builds",
+      "url": "https://github.com/avaraline/Avara/releases/tag/0.7.0-nightly.20201230",
+      "kind": "download",
+      "note": "The release notes identify native nightly builds of the modern port for macOS and Windows; these are not the 1996 original or the source archives. Verified publication metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

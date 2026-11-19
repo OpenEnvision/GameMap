@@ -211,6 +211,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-biubiu": {
+    src: "media/learning/open3d-biubiu.webp",
+    alt: "Operation BiuBiu first-person gameplay in a shipping yard with drones, a radar display and live wave and ammunition indicators.",
+    caption:
+      "Creator-published gameplay screenshot of Operation BiuBiu during the first drone wave. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/Gezeek/biubiu/blob/77e9cbe14e0ab4a9973f18c88c2ff641f0be895a/README.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/Gezeek/biubiu/77e9cbe14e0ab4a9973f18c88c2ff641f0be895a/docs/shot-drone.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-fable5-2game": {
     src: "media/learning/open3d-fable5-2game.webp",
     alt: "A first-person rifle view faces a translucent echo in a container yard, with capture points, a storm timer and ammunition HUD.",
@@ -778,6 +792,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://raw.githubusercontent.com/Furkiozknn/kale-savunmasi/HEAD/docs/remaster-battle.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-thelongsilence": {
+    src: "media/learning/open3d-thelongsilence.webp",
+    alt: "The Long Silence cockpit during flight, with a blue planet and moon above illuminated survey instruments.",
+    caption:
+      "Creator-published gameplay: Creator-captured gameplay screenshot from The Long Silence, looking at a blue world from the survey vessel cockpit. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/achimala/TheLongSilence/blob/4845c1df02e71edcb54dd14e902663d51e0434eb/index.html",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/achimala/TheLongSilence/4845c1df02e71edcb54dd14e902663d51e0434eb/public/og.jpg",
     width: 1280,
     height: 720,
   },
@@ -1409,6 +1437,17 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://raw.githubusercontent.com/xjoje6/PokeBrawl/HEAD/docs/images/battle.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-fable52-hang-glider": {
+    src: "media/learning/open3d-fable52-hang-glider.webp",
+    alt: "A banked hang glider crosses a terraced green island beneath a golden checkpoint ring.",
+    caption:
+      "Thermal in flight: a hang glider banks toward a checkpoint ring over a terraced island.",
+    sourceUrl: "https://loktar00.github.io/llm-test-pages/fable52-hang-glider/",
+    origin: "browser-capture",
+    capturedAt: "2026-11-19T18:31:40.445Z",
     width: 1280,
     height: 720,
   },
@@ -2491,6 +2530,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-dsh-games": {
+    src: "media/learning/open3d-dsh-games.webp",
+    alt: "A red panda navigates a blocky bamboo grove between glowing shoots and boars, with hearts, pickups and a timer visible.",
+    caption:
+      "Creator-published screenshot of the Red Panda Bamboo game from the DSH Games collection. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/ZSeven-W/dsh-game-studio#games-made-with-it",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/ZSeven-W/dsh-game-studio/HEAD/docs/images/dsh-game-studio-play-panda-3d.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-blocksfield": {
     src: "media/learning/open3d-blocksfield.webp",
     alt: "A platformer reaches the glowing exit portal on a floating island.",
@@ -2815,6 +2867,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-19",
     originalImageUrl:
       "https://raw.githubusercontent.com/bencoder/js13k-2019/master/screenshots/400x250-submission-screenshot.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-langenium": {
+    src: "media/learning/open3d-langenium.webp",
+    alt: "A hovercraft flies over reflective water with a compass, altitude, airspeed and touch flight controls.",
+    caption:
+      "Creator-published Langenium gameplay screenshot from the developer’s official itch.io gallery. Image rights remain with their respective owners.",
+    sourceUrl: "https://openstudiosco.itch.io/langenium",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1hZ2UvNTExNjQ5Ny8zMDYzMTk5NS5wbmc=/original/GtpD3X.png",
     width: 1280,
     height: 720,
   },
@@ -3378,6 +3443,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-yo-frankie": {
+    src: "media/learning/open3d-yo-frankie.webp",
+    alt: "Frankie pauses on a rock platform over a lava river, with the collectible counter visible.",
+    caption:
+      "Creator-published gameplay recording frame from Blender Institute’s Yo Frankie demo. Image rights remain with their respective owners.",
+    sourceUrl: "https://download.blender.org/apricot/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://download.blender.org/apricot/apricot_gameplay_demo.ogv",
+    width: 1280,
+    height: 720,
+  },
   "open3d-0-a-d": {
     src: "media/learning/open3d-0-a-d.webp",
     alt: "A rendered formation of ancient archers releases a dense volley of arrows beneath a cloudy sky.",
@@ -3529,6 +3607,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-19",
     originalImageUrl:
       "https://neverball.org/images/screenshots/neverball-01.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-oolite": {
+    src: "media/learning/open3d-oolite.webp",
+    alt: "Asteroids and an orange burst ahead of the Oolite cockpit HUD during a training buoy exercise.",
+    caption:
+      "Creator-published Oolite gameplay screenshot from the official website repository’s gallery. Image rights remain with their respective owners.",
+    sourceUrl:
+      "https://github.com/OoliteProject/oolite-web/blob/master/images/gallery/large/Tutorial.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/OoliteProject/oolite-web/master/images/gallery/large/Tutorial.png",
     width: 1280,
     height: 720,
   },

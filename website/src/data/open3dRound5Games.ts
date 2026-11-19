@@ -8704,10 +8704,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Thermal: Gliding Challenge",
-      "url": "https://github.com/loktar00/llm-test-pages/tree/main/fable52-hang-glider",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "playable",
+      "label": "Play Thermal in browser",
+      "url": "https://loktar00.github.io/llm-test-pages/fable52-hang-glider/",
+      "note": "The matching author-hosted GitHub Pages build rendered live gliding gameplay and responded to steering input in a sandboxed cloud browser on 2026-11-19."
     },
     "source": {
       "label": "Inspect the supplied source reference",

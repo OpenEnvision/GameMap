@@ -5649,6 +5649,20 @@
       "sha256": "62ef19250b12f84a5d49cd6c182ebfd31fa47908d55b0ec2b67756017619366e"
     },
     {
+      "id": "open3d-langenium",
+      "src": "media/learning/open3d-langenium.webp",
+      "alt": "A hovercraft flies over reflective water with a compass, altitude, airspeed and touch flight controls.",
+      "caption": "Creator-published Langenium gameplay screenshot from the developer’s official itch.io gallery. Image rights remain with their respective owners.",
+      "sourceUrl": "https://openstudiosco.itch.io/langenium",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1hZ2UvNTExNjQ5Ny8zMDYzMTk5NS5wbmc=/original/GtpD3X.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 87384,
+      "sha256": "a56cb208f197e8ee4b98cfaced4e67cb10c36df9c105991a2f160d3eefc7536f"
+    },
+    {
       "id": "open3d-the-soul-foundry",
       "src": "media/learning/open3d-the-soul-foundry.webp",
       "alt": "An overhead settlement scene shows huts and a central fire beneath resource totals, quota and construction controls.",
@@ -6251,6 +6265,20 @@
       "sha256": "9a27de3d0ea67cb72c4dea2e0c7c9dbd39a1515275fe2b59756d7d28903f5a22"
     },
     {
+      "id": "open3d-yo-frankie",
+      "src": "media/learning/open3d-yo-frankie.webp",
+      "alt": "Frankie pauses on a rock platform over a lava river, with the collectible counter visible.",
+      "caption": "Creator-published gameplay recording frame from Blender Institute’s Yo Frankie demo. Image rights remain with their respective owners.",
+      "sourceUrl": "https://download.blender.org/apricot/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://download.blender.org/apricot/apricot_gameplay_demo.ogv",
+      "width": 1280,
+      "height": 720,
+      "bytes": 56980,
+      "sha256": "290edc7bb36bab2661381dce0ef5b66b087b27c70c1f1351f57e99f33e91a822"
+    },
+    {
       "id": "open3d-0-a-d",
       "src": "media/learning/open3d-0-a-d.webp",
       "alt": "A rendered formation of ancient archers releases a dense volley of arrows beneath a cloudy sky.",
@@ -6417,6 +6445,20 @@
       "height": 720,
       "bytes": 53880,
       "sha256": "2e2982912aec830bdb7533ddc0c6eedf3502ad1e704eed473896dd8097ac61c1"
+    },
+    {
+      "id": "open3d-oolite",
+      "src": "media/learning/open3d-oolite.webp",
+      "alt": "Asteroids and an orange burst ahead of the Oolite cockpit HUD during a training buoy exercise.",
+      "caption": "Creator-published Oolite gameplay screenshot from the official website repository’s gallery. Image rights remain with their respective owners.",
+      "sourceUrl": "https://github.com/OoliteProject/oolite-web/blob/master/images/gallery/large/Tutorial.png",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/OoliteProject/oolite-web/master/images/gallery/large/Tutorial.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 74016,
+      "sha256": "67ec5b3085c53db514f129dacb61a4ca59f267954e14ae16b95920ebc3ddd860"
     },
     {
       "id": "open3d-openarena",
@@ -10196,6 +10238,20 @@
       "sha256": "d69db01a2b9bb3dd81fa89084c92dad6e397d3ea9c10695f84e6b4714f40b213"
     },
     {
+      "id": "open3d-biubiu",
+      "src": "media/learning/open3d-biubiu.webp",
+      "alt": "Operation BiuBiu first-person gameplay in a shipping yard with drones, a radar display and live wave and ammunition indicators.",
+      "caption": "Creator-published gameplay screenshot of Operation BiuBiu during the first drone wave. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/Gezeek/biubiu/blob/77e9cbe14e0ab4a9973f18c88c2ff641f0be895a/README.md",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/Gezeek/biubiu/77e9cbe14e0ab4a9973f18c88c2ff641f0be895a/docs/shot-drone.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 58966,
+      "sha256": "40e843a8bac359fe35e3252db132e98fcadeb54a016062ad953ca35958cebf30"
+    },
+    {
       "id": "open3d-fable5-2game",
       "src": "media/learning/open3d-fable5-2game.webp",
       "alt": "A first-person rifle view faces a translucent echo in a container yard, with capture points, a storm timer and ammunition HUD.",
@@ -10796,6 +10852,20 @@
       "height": 720,
       "bytes": 156766,
       "sha256": "4718adddca6e936893e6a9b9d1ea8f85decd4948b4727ed0f43ce2770ce839df"
+    },
+    {
+      "id": "open3d-thelongsilence",
+      "src": "media/learning/open3d-thelongsilence.webp",
+      "alt": "The Long Silence cockpit during flight, with a blue planet and moon above illuminated survey instruments.",
+      "caption": "Creator-published gameplay: Creator-captured gameplay screenshot from The Long Silence, looking at a blue world from the survey vessel cockpit. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/achimala/TheLongSilence/blob/4845c1df02e71edcb54dd14e902663d51e0434eb/index.html",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/achimala/TheLongSilence/4845c1df02e71edcb54dd14e902663d51e0434eb/public/og.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 59490,
+      "sha256": "0669de8411d479629a69966ea21e651386fdb2d9894ab4821bd7678913cbec87"
     },
     {
       "id": "open3d-nightshift",
@@ -11467,6 +11537,19 @@
       "height": 720,
       "bytes": 98396,
       "sha256": "03e39a06872ba2e49cf583c827a00fb417dcd29c2fe8bb039bfbe1a23598ff44"
+    },
+    {
+      "id": "open3d-fable52-hang-glider",
+      "src": "media/learning/open3d-fable52-hang-glider.webp",
+      "alt": "A banked hang glider crosses a terraced green island beneath a golden checkpoint ring.",
+      "caption": "Thermal in flight: a hang glider banks toward a checkpoint ring over a terraced island.",
+      "sourceUrl": "https://loktar00.github.io/llm-test-pages/fable52-hang-glider/",
+      "origin": "browser-capture",
+      "capturedAt": "2026-11-19T18:31:40.445Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 172756,
+      "sha256": "3904aea10b374583ae993e1c89c923eb4996c56efe061218c1eded72fba90f08"
     },
     {
       "id": "open3d-tartarusarena",
@@ -12615,6 +12698,20 @@
       "height": 720,
       "bytes": 35984,
       "sha256": "ff5cd17e018ef153a19970fe1a4018860a78bec257a06e31c8377ccd6004c664"
+    },
+    {
+      "id": "open3d-dsh-games",
+      "src": "media/learning/open3d-dsh-games.webp",
+      "alt": "A red panda navigates a blocky bamboo grove between glowing shoots and boars, with hearts, pickups and a timer visible.",
+      "caption": "Creator-published screenshot of the Red Panda Bamboo game from the DSH Games collection. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/ZSeven-W/dsh-game-studio#games-made-with-it",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/ZSeven-W/dsh-game-studio/HEAD/docs/images/dsh-game-studio-play-panda-3d.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 129770,
+      "sha256": "dd325eb5c3afbbc974c609deaef1f9c47798e3ef9a0320ba6f88fad1e800acc8"
     },
     {
       "id": "open3d-blocksfield",
