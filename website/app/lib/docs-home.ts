@@ -140,3 +140,31 @@ export function revealDocumentationGroup(id: string) {
   target.open = true;
   target.querySelector("summary")?.focus({ preventScroll: true });
 }
+
+export type TopicTileLayout = {
+  /** Twelve-column bento: one feature tile, two stacked beside it, then rows of thirds. */
+  desktop: "feature" | "stack" | "third" | "half" | "full";
+  /** Two-column grid: the feature and an unpaired last tile span both columns. */
+  tablet: "full" | "half";
+};
+/** Deterministic bento placement for any number of topics. */
+export function topicTileLayout(index: number, total: number): TopicTileLayout {
+  const tablet =
+    index === 0 || (index === total - 1 && (total - 1) % 2 === 1)
+      ? "full"
+      : "half";
+  if (total < 3)
+    return {
+      desktop: total === 1 ? "full" : "half",
+      tablet: total === 1 ? "full" : "half",
+    };
+  if (index === 0) return { desktop: "feature", tablet };
+  if (index < 3) return { desktop: "stack", tablet };
+  const rest = total - 3,
+    position = index - 3,
+    remainder = rest % 3,
+    lastRow = position >= rest - remainder;
+  if (remainder && lastRow)
+    return { desktop: remainder === 1 ? "full" : "half", tablet };
+  return { desktop: "third", tablet };
+}

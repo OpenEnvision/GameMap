@@ -5,6 +5,9 @@ import type { PortalTaskId } from "./docs-home";
 type Topic = { title: string; description: string };
 type HomeCopy = {
   eyebrow: string;
+  taglineBefore: string;
+  taglineAccent: string;
+  taglineAfter: string;
   introduction: string;
   searchLabel: string;
   searchPlaceholder: string;
@@ -39,6 +42,9 @@ type HomeCopy = {
 
 const en: HomeCopy = {
   eyebrow: "THE GAMEMAP FIELD GUIDE",
+  taglineBefore: "A reading room for ",
+  taglineAccent: "game makers",
+  taglineAfter: ".",
   introduction:
     "Choose your tools, make something playable, and check the results. Find a clear next step for the game you want to build.",
   searchLabel: "Find a guide",

@@ -1,5 +1,8 @@
 {
   "eyebrow": "GAMEMAP · 开发指南",
+  "taglineBefore": "写给游戏创作者的",
+  "taglineAccent": "阅读室",
+  "taglineAfter": "。",
   "introduction": "选好工具，做出可玩的原型，再验证结果。从你正在做的事情出发，找到清晰的下一步。",
   "searchLabel": "找一篇指南",
   "searchPlaceholder": "搜索指南、主题或工具…",

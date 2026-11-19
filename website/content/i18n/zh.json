@@ -1069,5 +1069,8 @@
   "Approved games join the game list with community ratings.": "通过审核的游戏会进入游戏列表，并开放社区评分。",
   "The game": "游戏信息",
   "Play & source": "试玩与源码",
-  "Rights & media": "授权与素材"
+  "Rights & media": "授权与素材",
+  "{count} min read": "约 {count} 分钟阅读",
+  "1 section": "1 个章节",
+  "{count} sections": "{count} 个章节"
 }

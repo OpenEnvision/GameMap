@@ -1,1 +1,904 @@
-/* docs template — see the design spec. */
+/* ==========================================================================
+   Documentation — the Fumadocs chrome (sidebar, top bar, table of contents,
+   pager) and the long-form reader. Fumadocs' --color-fd-* mapping in
+   index.css is left untouched; everything here styles properties.
+   ========================================================================== */
+
+/* --- Stage: a quiet nebula over the top of every docs page. -------------- */
+#nd-docs-layout {
+  position: relative;
+  isolation: isolate;
+}
+#nd-docs-layout::before,
+#nd-docs-layout::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 auto;
+  height: min(760px, 92vh);
+  pointer-events: none;
+}
+#nd-docs-layout::before {
+  background:
+    radial-gradient(
+      ellipse 42% 62% at 64% -12%,
+      var(--nebula-a),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 34% 52% at 90% 4%,
+      var(--nebula-b),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 26% 38% at 38% -4%,
+      color-mix(in srgb, var(--accent) 10%, transparent),
+      transparent 72%
+    );
+}
+#nd-docs-layout::after {
+  opacity: 0.7;
+  background-image:
+    radial-gradient(1.2px 1.2px at 22% 18%, var(--star), transparent 70%),
+    radial-gradient(1px 1px at 48% 8%, var(--star), transparent 70%),
+    radial-gradient(1.4px 1.4px at 71% 26%, var(--star), transparent 70%),
+    radial-gradient(1px 1px at 86% 12%, var(--star), transparent 70%),
+    radial-gradient(1px 1px at 58% 34%, var(--star), transparent 70%),
+    radial-gradient(1.2px 1.2px at 93% 38%, var(--star), transparent 70%),
+    radial-gradient(1px 1px at 34% 30%, var(--star), transparent 70%),
+    radial-gradient(1px 1px at 78% 4%, var(--star), transparent 70%);
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent 70%);
+  mask-image: linear-gradient(180deg, #000, transparent 70%);
+}
+/* Replaces the legacy grid backdrop drawn on the article itself. */
+#nd-page::before,
+#nd-page::after {
+  content: none;
+}
+
+/* --- Sidebar ---------------------------------------------------------------- */
+#nd-sidebar {
+  border-inline-end-color: var(--line);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--panel) 46%, transparent),
+    color-mix(in srgb, var(--paper) 78%, transparent) 60%
+  );
+  -webkit-backdrop-filter: blur(22px) saturate(1.3);
+  backdrop-filter: blur(22px) saturate(1.3);
+}
+#nd-sidebar[data-collapsed="true"] {
+  border-color: var(--glass-border);
+  border-radius: var(--radius-lg);
+  background: var(--glass-strong);
+  box-shadow: var(--shadow-2);
+}
+#nd-sidebar .atlas-brand {
+  font-size: 21px;
+  letter-spacing: -0.03em;
+}
+#nd-sidebar [data-search-full] {
+  min-height: 42px;
+  padding-inline: 14px 6px;
+  border-color: var(--line);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--panel) 70%, transparent);
+  color: var(--muted);
+  font-size: 13px;
+}
+#nd-sidebar [data-search-full]:hover {
+  border-color: var(--line-strong);
+  background: var(--hover);
+  color: var(--ink);
+}
+#nd-sidebar [data-search-full] kbd {
+  border-color: var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  font-family: var(--font-mono);
+}
+:is(#nd-sidebar, #nd-sidebar-mobile)
+  [data-radix-scroll-area-viewport]
+  :is(a[data-active], button[aria-expanded]) {
+  padding-block: 7px;
+  border-radius: var(--radius-pill);
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+}
+:is(#nd-sidebar, #nd-sidebar-mobile)
+  [data-radix-scroll-area-viewport]
+  :is(a[data-active], button[aria-expanded]):hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--hover) 80%, transparent);
+}
+:is(#nd-sidebar, #nd-sidebar-mobile)
+  [data-radix-scroll-area-viewport]
+  button[aria-expanded="true"] {
+  color: var(--ink);
+  font-weight: 600;
+}
+:is(#nd-sidebar, #nd-sidebar-mobile) a[data-active="true"] {
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  font-weight: 600;
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+/* Nested active items: the indicator line becomes a small glowing star. */
+:is(#nd-sidebar, #nd-sidebar-mobile) a[data-active="true"]::before {
+  width: 5px;
+  height: 5px;
+  inset-block: auto;
+  top: calc(50% - 2.5px);
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--glow-accent);
+}
+:is(#nd-sidebar, #nd-sidebar-mobile)
+  [data-radix-scroll-area-viewport]
+  [data-state]::before {
+  background: var(--line);
+}
+#nd-sidebar > div:last-child > div {
+  border-color: var(--line);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--panel) 60%, transparent);
+}
+#nd-sidebar > div:last-child > div > :is(a, button) {
+  border-radius: var(--radius-pill);
+}
+
+#nd-sidebar-mobile {
+  border-color: var(--line);
+  background: var(--glass-strong);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  backdrop-filter: blur(24px) saturate(1.4);
+}
+
+/* --- Top bar (narrow screens) and the table-of-contents bar. ------------ */
+#nd-subnav {
+  border-bottom-color: var(--line);
+  background: var(--glass-strong);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  backdrop-filter: blur(18px) saturate(1.4);
+}
+#nd-subnav .atlas-brand {
+  font-size: 19px;
+}
+#nd-subnav button {
+  border-radius: var(--radius-pill);
+}
+[data-toc-popover] > header {
+  border-bottom-color: var(--line);
+  background: var(--glass-strong);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  backdrop-filter: blur(18px) saturate(1.4);
+}
+[data-toc-popover-trigger] {
+  color: var(--muted);
+  font-size: 13px;
+}
+[data-toc-popover-content] a {
+  font-size: 13.5px;
+}
+
+/* --- Table of contents ------------------------------------------------------ */
+#nd-toc {
+  padding-top: clamp(40px, 5vw, 76px);
+}
+#nd-toc #toc-title {
+  gap: 10px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+html[lang="zh-CN"] #nd-toc #toc-title {
+  letter-spacing: 0.06em;
+}
+#nd-toc #toc-title > svg {
+  color: var(--accent);
+}
+#nd-toc a {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+#nd-toc a:hover {
+  color: var(--ink);
+}
+#nd-toc a[data-active="true"] {
+  color: var(--ink);
+}
+#nd-toc .bg-fd-primary {
+  background: var(--accent);
+  box-shadow: 0 0 10px 1px var(--glow-accent);
+}
+
+/* --- Shared: the language switch is a segmented pill. -------------------- */
+.documentation-language {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--panel) 60%, transparent);
+  font-size: 12.5px;
+}
+.documentation-language a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 4px 13px;
+  border-radius: var(--radius-pill);
+  color: var(--muted);
+  font-weight: 500;
+}
+.documentation-language a:hover {
+  color: var(--ink);
+  background: var(--hover);
+}
+.documentation-language a[aria-current] {
+  color: var(--ink);
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+.documentation-language .language-separator {
+  display: none;
+}
+
+/* --- Reader: masthead ------------------------------------------------------ */
+#nd-page.reader-page {
+  gap: 0;
+  max-width: 940px;
+  padding-top: clamp(28px, 5vw, 72px);
+  padding-bottom: clamp(56px, 8vw, 112px);
+  container: reader / inline-size;
+}
+.reader-masthead {
+  position: relative;
+  isolation: isolate;
+  margin-bottom: clamp(30px, 6cqi, 56px);
+}
+.reader-masthead-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  margin-bottom: clamp(30px, 7cqi, 64px);
+}
+.reader-trail {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  min-width: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+html[lang="zh-CN"] .reader-trail {
+  letter-spacing: 0.06em;
+}
+.reader-trail a {
+  color: var(--muted);
+}
+.reader-trail a:hover {
+  color: var(--ink);
+}
+.reader-trail > svg {
+  color: var(--line-strong);
+}
+.reader-trail > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+}
+.reader-trail > span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--glow-accent);
+}
+#nd-page .reader-title {
+  max-width: 100%;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: clamp(36px, 7.4cqi, 70px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+html[lang="zh-CN"] #nd-page .reader-title {
+  font-size: clamp(32px, 6.4cqi, 58px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.reader-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: clamp(22px, 4cqi, 32px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.reader-meta > li,
+.reader-meta > .document-source-language {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  margin: 0;
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+html[lang="zh-CN"] .reader-meta > li {
+  letter-spacing: 0.04em;
+}
+.reader-meta > li:first-child {
+  color: var(--body);
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--line));
+}
+
+/* --- Reader: long-form typography ---------------------------------------- */
+#nd-page .reader-prose {
+  counter-reset: reader-section;
+  color: var(--body);
+  font-size: 17px;
+  line-height: 1.78;
+  overflow-wrap: break-word;
+}
+#nd-page .reader-prose[lang="zh-CN"] {
+  line-height: 1.95;
+}
+#nd-page
+  .reader-prose
+  > :is(p, ul, ol, blockquote, h2, h3, h4, h5, h6, dl, details) {
+  max-width: 70ch;
+}
+#nd-page .reader-prose > p:first-child {
+  max-width: 40em;
+  margin: 0 0 2.2em;
+  color: color-mix(in srgb, var(--ink) 86%, var(--body));
+  font-size: clamp(19px, 2.7cqi, 23px);
+  line-height: 1.55;
+  letter-spacing: -0.012em;
+  text-wrap: pretty;
+}
+#nd-page .reader-prose[lang="zh-CN"] > p:first-child {
+  line-height: 1.75;
+  letter-spacing: 0;
+}
+#nd-page .reader-prose p {
+  margin-block: 0 1.15em;
+}
+#nd-page .reader-prose strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+#nd-page .reader-prose :is(h2, h3, h4) {
+  color: var(--ink);
+  font-family: var(--font-display);
+  scroll-margin-top: 96px;
+}
+#nd-page .reader-prose h2 {
+  counter-increment: reader-section;
+  flex-wrap: wrap;
+  row-gap: 14px;
+  margin: 2.5em 0 0.75em;
+  padding-top: 0;
+  border-top: 0;
+  font-size: clamp(25px, 4.4cqi, 36px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.036em;
+}
+#nd-page .reader-prose h2::before {
+  content: counter(reader-section, decimal-leading-zero);
+  content: counter(reader-section, decimal-leading-zero) / "";
+  flex-basis: 100%;
+  order: -1;
+  padding-block: 2px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  background: linear-gradient(90deg, var(--line-strong), transparent 92%)
+    no-repeat left 3.4em center / calc(100% - 3.4em) 1px;
+}
+#nd-page .reader-prose h3 {
+  margin: 2.2em 0 0.6em;
+  font-size: clamp(20px, 3.2cqi, 24px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+#nd-page .reader-prose h4 {
+  margin: 1.9em 0 0.5em;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.012em;
+}
+html[lang="zh-CN"] #nd-page .reader-prose :is(h2, h3, h4) {
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+#nd-page .reader-prose :is(h2, h3, h4) > a[data-card] {
+  color: inherit;
+  text-decoration: none;
+}
+#nd-page .reader-prose :is(h2, h3, h4) > button {
+  color: var(--muted);
+}
+
+/* Lists. */
+#nd-page .reader-prose :is(ul, ol) {
+  margin-block: 0 1.3em;
+  padding-inline-start: 1.35em;
+}
+#nd-page .reader-prose li {
+  margin-block: 0.5em;
+  padding-inline-start: 0.35em;
+}
+#nd-page .reader-prose li > p {
+  margin-block: 0.4em;
+}
+#nd-page .reader-prose ul > li::marker {
+  color: var(--accent);
+}
+#nd-page .reader-prose ol > li::marker {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  font-weight: 500;
+}
+
+/* Links. */
+#nd-page .reader-prose a:not([data-card]) {
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration-line: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.26em;
+}
+#nd-page .reader-prose a:not([data-card]):hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* Inline code and code blocks. */
+#nd-page .reader-prose :not(pre) > code {
+  padding: 0.14em 0.42em;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--ink);
+  background: var(--soft);
+  font-family: var(--font-mono);
+  font-size: 0.84em;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+#nd-page .reader-prose :not(pre) > code::before,
+#nd-page .reader-prose :not(pre) > code::after {
+  content: none;
+}
+#nd-page .reader-prose figure.shiki {
+  margin-block: 1.8em;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--ink) 3%, transparent),
+      transparent 120px
+    ),
+    var(--panel);
+  box-shadow:
+    var(--shadow-1),
+    0 40px 100px -70px var(--glow-signal);
+}
+/* A quiet window bar for untitled blocks; the copy button sits inside it. */
+#nd-page .reader-prose figure.shiki:has(> div.absolute:first-child)::before {
+  content: "";
+  display: block;
+  height: 40px;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(
+      circle at 20px 50%,
+      var(--line-strong) 4px,
+      transparent 4.5px
+    ),
+    radial-gradient(
+      circle at 36px 50%,
+      var(--line-strong) 4px,
+      transparent 4.5px
+    ),
+    radial-gradient(
+      circle at 52px 50%,
+      var(--line-strong) 4px,
+      transparent 4.5px
+    );
+}
+#nd-page .reader-prose figure.shiki > div.absolute:first-child {
+  top: 4px;
+  right: 6px;
+  border-radius: var(--radius-pill);
+}
+#nd-page .reader-prose figure.shiki [role="region"] {
+  padding-block: 16px;
+  font-size: 13.5px;
+  line-height: 1.75;
+}
+#nd-page .reader-prose figure.shiki code {
+  font-family: var(--font-mono);
+}
+
+/* Tables: a framed, quietly striped ledger that scrolls on its own. */
+#nd-page .reader-prose :where(div):has(> table) {
+  max-width: 100%;
+  margin-block: 2em;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--panel) 82%, transparent);
+  box-shadow: var(--shadow-1);
+}
+#nd-page .reader-prose table {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  line-height: 1.65;
+}
+#nd-page .reader-prose :is(th, td) {
+  padding: 13px 16px;
+  border: 0;
+  text-align: start;
+  vertical-align: top;
+}
+#nd-page .reader-prose th {
+  min-width: 120px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  background: color-mix(in srgb, var(--soft) 80%, transparent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+html[lang="zh-CN"] #nd-page .reader-prose th {
+  letter-spacing: 0.04em;
+}
+#nd-page .reader-prose td {
+  min-width: 150px;
+  color: var(--body);
+  line-height: 1.65;
+}
+#nd-page .reader-prose tbody tr + tr > td {
+  border-top: 1px solid var(--line);
+}
+#nd-page .reader-prose td:first-child {
+  color: var(--ink);
+  font-weight: 500;
+}
+#nd-page .reader-prose tbody tr:hover > td {
+  background: color-mix(in srgb, var(--hover) 45%, transparent);
+}
+
+/* Quotes, rules, images and disclosures. */
+#nd-page .reader-prose blockquote {
+  margin-block: 2em;
+  padding: 18px 24px;
+  border: 0;
+  border-inline-start: 2px solid var(--accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  color: var(--body);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent) 9%, transparent),
+    transparent 90%
+  );
+  font-style: normal;
+  quotes: none;
+}
+#nd-page .reader-prose blockquote p::before,
+#nd-page .reader-prose blockquote p::after {
+  content: none;
+}
+#nd-page .reader-prose blockquote > :first-child {
+  margin-top: 0;
+}
+#nd-page .reader-prose blockquote > :last-child {
+  margin-bottom: 0;
+}
+#nd-page .reader-prose hr {
+  height: 1px;
+  margin-block: 3em;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--line-strong),
+    transparent
+  );
+}
+#nd-page .reader-prose img {
+  height: auto;
+  max-width: 100%;
+  margin-block: 1.8em;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--media-bg);
+  box-shadow: var(--shadow-1);
+}
+#nd-page .reader-prose details {
+  margin-block: 1.2em;
+  padding: 2px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--panel) 80%, transparent);
+}
+#nd-page .reader-prose details > summary {
+  padding-block: 12px;
+  color: var(--ink);
+  font-weight: 600;
+  cursor: pointer;
+}
+#nd-page .reader-prose details[open] > summary {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 12px;
+}
+
+/* --- Reader: information and pager -------------------------------------- */
+#nd-page .document-information {
+  margin-top: clamp(48px, 9cqi, 88px);
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--panel) 80%, transparent);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+#nd-page .document-information > summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 14px 20px;
+  color: var(--body);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  list-style: none;
+  text-transform: uppercase;
+}
+html[lang="zh-CN"] #nd-page .document-information > summary {
+  letter-spacing: 0.06em;
+}
+#nd-page .document-information > summary::-webkit-details-marker {
+  display: none;
+}
+#nd-page .document-information > summary::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 10px var(--glow-signal);
+}
+#nd-page .document-information > summary::after {
+  content: "+";
+  content: "+" / "";
+  margin-inline-start: auto;
+  color: var(--muted);
+  font-size: 16px;
+}
+#nd-page .document-information[open] > summary::after {
+  content: "\2013";
+  content: "\2013" / "";
+}
+#nd-page .document-information > summary:hover {
+  color: var(--ink);
+}
+#nd-page .document-information > p {
+  margin: 0;
+  padding: 0 20px 14px;
+}
+#nd-page .document-information > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  margin: 0 20px 20px;
+  padding: 6px 16px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+#nd-page .document-information > a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+#nd-page .reader-pager {
+  gap: 14px;
+  margin-top: 20px;
+}
+#nd-page.docs-home .reader-pager {
+  margin-top: clamp(80px, 10vw, 140px);
+}
+/* A lone "next" card sits in the right-hand column, like a page turn. */
+@container reader (min-width: 600px) {
+  #nd-page .reader-pager {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #nd-page .reader-pager > a.text-end:only-child {
+    grid-column: 2;
+  }
+}
+@container docs-home (min-width: 600px) {
+  #nd-page .reader-pager {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #nd-page .reader-pager > a.text-end:only-child {
+    grid-column: 2;
+  }
+}
+#nd-page .reader-pager > a {
+  position: relative;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 10px;
+  min-height: 112px;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, var(--surface-sheen), transparent 40%), var(--panel);
+}
+#nd-page .reader-pager > a:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  background:
+    radial-gradient(
+      90% 120% at 50% 0%,
+      color-mix(in srgb, var(--accent) 10%, transparent),
+      transparent 70%
+    ),
+    var(--panel);
+  color: var(--ink);
+}
+#nd-page .reader-pager > a > p {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+#nd-page .reader-pager > a > div {
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: clamp(17px, 2.4cqi, 21px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.024em;
+}
+#nd-page .reader-pager > a > div > svg {
+  color: var(--accent);
+}
+
+/* --- Narrow reading widths ---------------------------------------------- */
+@container reader (max-width: 560px) {
+  #nd-page .reader-prose {
+    font-size: 16px;
+  }
+  #nd-page .reader-prose :is(th, td) {
+    padding: 11px 13px;
+  }
+  #nd-page .reader-prose td {
+    min-width: 132px;
+  }
+  #nd-page .reader-prose blockquote {
+    padding: 14px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Reading progress: a hairline of light across the top of the viewport. */
+  @supports (animation-timeline: scroll()) {
+    @keyframes reader-progress {
+      from {
+        scale: 0 1;
+      }
+      to {
+        scale: 1 1;
+      }
+    }
+    [data-layout-main]:has(> .reader-page)::before {
+      content: "";
+      position: fixed;
+      z-index: 45;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 2px;
+      pointer-events: none;
+      transform-origin: 0 50%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent) 30%,
+        color-mix(in srgb, var(--accent) 60%, var(--ink))
+      );
+      box-shadow: 0 0 12px var(--glow-accent);
+      animation: reader-progress linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+  #nd-page .reader-pager > a > div > svg {
+    transition: translate var(--dur-base) var(--ease-expo);
+  }
+  #nd-page .reader-pager > a:first-child:not(:last-child):hover > div > svg {
+    translate: -4px 0;
+  }
+  #nd-page .reader-pager > a:last-child:hover > div > svg {
+    translate: 4px 0;
+  }
+}
+@media print {
+  #nd-docs-layout::before,
+  #nd-docs-layout::after {
+    display: none;
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  #nd-sidebar,
+  #nd-sidebar-mobile,
+  #nd-subnav,
+  [data-toc-popover] > header {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: var(--paper);
+  }
+}
+
+/* Chinese titles and headings break at punctuation where they can. */
+html[lang="zh-CN"]
+  :is(#nd-page .reader-title, #nd-page .reader-prose :is(h2, h3, h4)) {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}

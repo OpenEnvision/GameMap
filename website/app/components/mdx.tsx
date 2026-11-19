@@ -1,4 +1,4 @@
-import { Children, type ComponentProps } from "react";
+import { Children, type ComponentProps, type ReactNode } from "react";
 import { Link as SourceLink } from "react-router";
 import { Link } from "../lib/i18n";
 import { isEnglishSourceLabel } from "../../content/locale";
@@ -30,4 +30,13 @@ function DocumentLink({ href = "", children, ...props }: ComponentProps<"a">) {
     </a>
   );
 }
-export const mdxComponents = { ...defaults, a: DocumentLink };
+/** Document images sit below the reader masthead: load them lazily. */
+function DocumentImage(props: ComponentProps<"img">) {
+  const Image = defaults.img as (props: ComponentProps<"img">) => ReactNode;
+  return <Image loading="lazy" decoding="async" {...props} />;
+}
+export const mdxComponents = {
+  ...defaults,
+  a: DocumentLink,
+  img: DocumentImage,
+};
