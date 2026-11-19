@@ -6470,6 +6470,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-castle-defender-vr": {
+    src: "media/learning/open3d-castle-defender-vr.webp",
+    alt: "A first-person bow and arrow aimed over a castle wall toward low-poly knight formations.",
+    caption:
+      "Creator-published gameplay: In the creator's development build, the archer aims from the battlement as knights gather below.",
+    sourceUrl:
+      "https://timmykokke.com/blog/2023/2023-09-04-js13kgames-devlog-1/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://timmykokke.com/images/2023/09/QuestScreenshot1.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-castle-wars-js": {
     src: "media/learning/open3d-castle-wars-js.webp",
     alt: "Blue, red and neutral gray castles stand on a green tiled battlefield with troop counts above them.",
@@ -6478,6 +6492,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     sourceUrl: "https://play.js13kgames.com/castle-wars/",
     origin: "browser-capture",
     capturedAt: "2026-11-19T09:09:27.810Z",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-feast-night": {
+    src: "media/learning/open3d-feast-night.webp",
+    alt: "First-person view of a pixelated forest at dusk, with bare trees around a pale moon and a hand cannon at the lower right.",
+    caption:
+      "Creator-published Feast Night gameplay frame showing a first-person forest scene with the hand cannon equipped. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/wololoa/js13k2023/blob/main/postmortem.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/wololoa/js13k2023/main/screens/forest.jpg",
     width: 1280,
     height: 720,
   },

@@ -18898,6 +18898,42 @@
       "sha256": "2c53e4a8ec835a7acd5472873ebb692722e088c997fe0bff5e8033babd5b6e74"
     },
     {
+      "id": "open3d-castle-defender-vr",
+      "title": "Castle Defender VR",
+      "media": {
+        "src": "media/learning/open3d-castle-defender-vr.webp",
+        "alt": "A first-person bow and arrow aimed over a castle wall toward low-poly knight formations.",
+        "caption": "Creator-published gameplay: In the creator's development build, the archer aims from the battlement as knights gather below.",
+        "sourceUrl": "https://timmykokke.com/blog/2023/2023-09-04-js13kgames-devlog-1/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://timmykokke.com/images/2023/09/QuestScreenshot1.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "dbcaf23617daa775ff981bcb798ddfccebc4268b3219fa7632e7737d4310c423",
+        "sourceFrameSHA256": "4d0fd4bb83d75f8446c0e219659d8ae1b3f8a290fb333dfa72f907c4870f0004",
+        "sourceWidth": 1440,
+        "sourceHeight": 1440,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the full original device frame: nocked arrow and first-person bow, the castle wall at lower left, and two enemy knight formations across the grass, with no title, menu, developer interface, or collage.",
+        "versionNote": "Published by developer Timmy Kokke (sorskoot) in the exact game's September 4, 2023, pre-submission devlog. The scene comes from an early Quest 2 build, not a new browser playtest."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "b394d7b78e50583b056084f60801322fa6992fb65c55a1058240164bc0973a4f",
+      "bytes": 32870
+    },
+    {
       "id": "open3d-castle-wars-js",
       "title": "Castle Wars JS",
       "media": {
@@ -18934,6 +18970,41 @@
       "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
       "sha256": "270a6d03cd7ca513e2da1cf76db84bc1ce97fe74c067e0397ddac2660ab29e76",
       "bytes": 43416
+    },
+    {
+      "id": "open3d-feast-night",
+      "title": "Feast Night",
+      "media": {
+        "src": "media/learning/open3d-feast-night.webp",
+        "alt": "First-person view of a pixelated forest at dusk, with bare trees around a pale moon and a hand cannon at the lower right.",
+        "caption": "Creator-published Feast Night gameplay frame showing a first-person forest scene with the hand cannon equipped. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/wololoa/js13k2023/blob/main/postmortem.md",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/wololoa/js13k2023/main/screens/forest.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "f9d9530c9a8786c63b37bc902cc6be012a2314de52cd5513455a3f6049458048",
+        "sourceFrameSHA256": "76a6fd3a0ae7864f4ac814a749abca7be46adfc1f15f5c03e29145238d77dd3d",
+        "sourceWidth": 1528,
+        "sourceHeight": 947,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the exact original JPEG. The frame shows the playable first-person view with the hand cannon held at lower right and silhouettes against a moonlit forest; it contains no title, montage, or promotional overlay. The official jam entry explicitly links Almar Suarez’s postmortem, and he embeds the exact original while explaining the hand cannon seen in the game. An unchanged reviewFrame and origin check passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "ad97bcde3cb4be3a2d732456696d8ef6917442a4628147cd3d4aef3155014ba2",
+      "bytes": 17330
     },
     {
       "id": "open3d-freemazes3d",
@@ -24837,7 +24908,7 @@
     {
       "id": "open3d-manifest",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README points to HTTP-only ieve.me/manifest author page, not yet visited or HTTPS verified. No embedded screenshots; media search incomplete.",
+      "reason": "Research incomplete or access-limited: README points to HTTP-only ieve.me/manifest author page, not yet visited or HTTPS verified. No embedded screenshots; media search incomplete. The developer’s exact HTTPS deployment is reachable but its HTML contains no creator preview image, embedded original or screenshot metadata. The Three.js renderer needs WebGL; no successful browser capture was verified.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/ieve-rothe/manifest/HEAD/README.md",
@@ -24858,6 +24929,16 @@
           "url": "https://github.com/ieve-rothe/manifest",
           "checkedAt": "2026-11-18",
           "result": "Recorded source-review outcome: research-incomplete."
+        },
+        {
+          "url": "https://github.com/ieve-rothe/manifest",
+          "checkedAt": "2026-11-19",
+          "result": "Creator README names the same deployment."
+        },
+        {
+          "url": "https://ieve.me/manifest/",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; exact game title and UI. The HTML has no OG or Twitter image, img, video or screenshot reference."
         }
       ]
     },
@@ -25490,7 +25571,7 @@
     {
       "id": "open3d-spiderbench",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README describes a noncommercial web-swinging benchmark and local launch instructions; no author-hosted runtime has been verified.",
+      "reason": "Research incomplete or access-limited: README describes a noncommercial web-swinging benchmark and local launch instructions; no author-hosted runtime has been verified. Developer source links local run only; issues had no creator gameplay attachment. A third-party catalog shows a derivative frame of a creator video; no in-policy exact original was verified.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/xikhar/spiderbench/HEAD/README.md",
@@ -25516,6 +25597,21 @@
           "url": "https://api.github.com/repos/xikhar/spiderbench/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Public GitHub recursive source listing (non-truncated, 249 repository entries): inventoried 61 tracked raster/video path(s). Listing alone does not establish what those images show, release eligibility, or browser rendering."
+        },
+        {
+          "url": "https://github.com/xikhar/spiderbench",
+          "checkedAt": "2026-11-19",
+          "result": "Developer states WebGL2 required; no public deployment linked."
+        },
+        {
+          "url": "https://api.github.com/repos/xikhar/spiderbench/issues?state=all&per_page=30",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; eight issues or PRs, no matching media attachment."
+        },
+        {
+          "url": "https://playgroundarcade.com/games/ink-arcade/",
+          "checkedAt": "2026-11-19",
+          "result": "Third-party card labels its image as taken from a creator video; derivative image was not imported."
         }
       ]
     },
@@ -25668,7 +25764,7 @@
     {
       "id": "open3d-maze-hunter-fps",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Inspected the README content and repository root/release metadata. Author-published image references were identified; accepted frames, if any, are separately recorded after visual inspection.",
+      "reason": "Research incomplete or access-limited: Inspected the README content and repository root/release metadata. Author-published image references were identified; accepted frames, if any, are separately recorded after visual inspection. Author's public Gist links exact 3D Maze Hunter on the same owner's Pages, separately from 2D Classic Maze Arcade. Exact deployed file constructs THREE.WebGLRenderer; 2D texture contexts are ancillary. Author social-preview.png was personally seen: MAZE HUNTER text, crossed reticle and promotional copy only, no gameplay.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/ehsanhaque/maze-hunter-fps/HEAD/README.md",
@@ -25694,6 +25790,21 @@
           "url": "https://api.github.com/repos/ehsanhaque/maze-hunter-fps/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Public GitHub recursive source listing (non-truncated, 3 repository entries): inventoried 1 tracked raster/video path(s). Listing alone does not establish what those images show, release eligibility, or browser rendering."
+        },
+        {
+          "url": "https://github.com/ehsanhaque/maze-hunter-fps",
+          "checkedAt": "2026-11-19",
+          "result": "Author's public Gist links exact 3D Maze Hunter on the same owner's Pages, separately from 2D Classic Maze Arcade. Exact deployed file constructs THREE.WebGLRenderer; 2D texture contexts are ancillary. Author social-preview.png was personally seen: MAZE HUNTER text, crossed reticle and promotional copy only, no gameplay."
+        },
+        {
+          "url": "https://gist.github.com/ehsanhaque/87e3c29ba94134753198cd6c2d7b99d8",
+          "checkedAt": "2026-11-19",
+          "result": "Author's public Gist links exact 3D Maze Hunter on the same owner's Pages, separately from 2D Classic Maze Arcade. Exact deployed file constructs THREE.WebGLRenderer; 2D texture contexts are ancillary. Author social-preview.png was personally seen: MAZE HUNTER text, crossed reticle and promotional copy only, no gameplay."
+        },
+        {
+          "url": "https://ehsanhaque.github.io/maze-hunter-fps/",
+          "checkedAt": "2026-11-19",
+          "result": "Author's public Gist links exact 3D Maze Hunter on the same owner's Pages, separately from 2D Classic Maze Arcade. Exact deployed file constructs THREE.WebGLRenderer; 2D texture contexts are ancillary. Author social-preview.png was personally seen: MAZE HUNTER text, crossed reticle and promotional copy only, no gameplay."
         }
       ]
     },
@@ -25873,7 +25984,7 @@
     {
       "id": "open3d-sands-of-the-restless",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Inspected the README content and repository root/release metadata. No non-badge image was found in the reviewed README; this does not establish absence from child directories or the author website.",
+      "reason": "Research incomplete or access-limited: Inspected the README content and repository root/release metadata. No non-badge image was found in the reviewed README; this does not establish absence from child directories or the author website. Developer documents creation of local WebGL screenshot output, but did not track the screenshot outputs in the checked public tree or publish a verified image with the release. The local test harness or source was not run.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/eddiebelaval/sands-of-the-restless/HEAD/README.md",
@@ -25899,6 +26010,21 @@
           "url": "https://api.github.com/repos/eddiebelaval/sands-of-the-restless/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Public GitHub recursive source listing (non-truncated, 251 repository entries): inventoried 23 tracked raster/video path(s). Listing alone does not establish what those images show, release eligibility, or browser rendering."
+        },
+        {
+          "url": "https://github.com/eddiebelaval/sands-of-the-restless",
+          "checkedAt": "2026-11-19",
+          "result": "The developer README describes local-only browser launch and a test harness that writes shots/."
+        },
+        {
+          "url": "https://api.github.com/repos/eddiebelaval/sands-of-the-restless/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Complete cached tree has the shot-test sources, no named gameplay screenshot outputs."
+        },
+        {
+          "url": "https://api.github.com/repos/eddiebelaval/sands-of-the-restless/issues?state=all&per_page=30",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 503; no conclusion about issues."
         }
       ]
     },
@@ -26073,7 +26199,7 @@
     {
       "id": "open3d-prismdefense3d",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Root README is a multi-engine development scaffold, not evidence for PrismDefense3D itself. The supplied samples/PrismDefense3D subtree is queued for separate inspection.",
+      "reason": "Research incomplete or access-limited: Root README is a multi-engine development scaffold, not evidence for PrismDefense3D itself. The supplied samples/PrismDefense3D subtree is queued for separate inspection. The exact original sample directory has code and design documents, but no screenshot. The developer says the published URL now serves a separately authored Visuals sample; did not substitute its screenshots for the original sample.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/MRCalderon3D/everything-game-dev-code/HEAD/README.md",
@@ -26094,6 +26220,16 @@
           "url": "https://github.com/MRCalderon3D/everything-game-dev-code/tree/main/samples/PrismDefense3D",
           "checkedAt": "2026-11-18",
           "result": "Recorded source-review outcome: research-incomplete."
+        },
+        {
+          "url": "https://api.github.com/repos/MRCalderon3D/everything-game-dev-code/contents/samples/PrismDefense3D",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; exact sample directory inventory."
+        },
+        {
+          "url": "https://github.com/MRCalderon3D/everything-game-dev-code/blob/main/CHANGELOG.md",
+          "checkedAt": "2026-11-19",
+          "result": "Developer identifies the later deployed Visuals variant, distinct from exact original source subtree."
         }
       ]
     },
@@ -27237,7 +27373,7 @@
     {
       "id": "open3d-canvas-wire",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The author Gist could not be retrieved through the research tool; its code/media and any hosted game remain unverified.",
+      "reason": "Research incomplete or access-limited: The author Gist could not be retrieved through the research tool; its code/media and any hosted game remain unverified. Author's benchmark index links the exact Fable 5.2 flight simulator preview alongside the exact named Gist, not Skyward/Blockhaven. Both Gist and deployed Canvas & Wire HTML construct THREE.WebGLRenderer({ canvas: glCanvas, antialias: true, powerPreference: 'high-performance' }); Canvas2D only paints the separate HUD. C toggles chase/cockpit in a supported sandbox. No deployment or source says CPU fallback.",
       "checkedSources": [
         {
           "url": "https://gist.github.com/senko/afbc29324f082fdb6c3dbf35540b08e6",
@@ -27248,6 +27384,21 @@
           "url": "https://gist.github.com/senko/afbc29324f082fdb6c3dbf35540b08e6",
           "checkedAt": "2026-11-18",
           "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
+        },
+        {
+          "url": "https://gist.github.com/senko/afbc29324f082fdb6c3dbf35540b08e6",
+          "checkedAt": "2026-11-19",
+          "result": "Author's benchmark index links the exact Fable 5.2 flight simulator preview alongside the exact named Gist, not Skyward/Blockhaven. Both Gist and deployed Canvas & Wire HTML construct THREE.WebGLRenderer({ canvas: glCanvas, antialias: true, powerPreference: 'high-performance' }); Canvas2D only paints the separate HUD. C toggles chase/cockpit in a supported sandbox. No deployment or source says CPU fallback."
+        },
+        {
+          "url": "https://senko.net/vibecode-bench/",
+          "checkedAt": "2026-11-19",
+          "result": "Author's benchmark index links the exact Fable 5.2 flight simulator preview alongside the exact named Gist, not Skyward/Blockhaven. Both Gist and deployed Canvas & Wire HTML construct THREE.WebGLRenderer({ canvas: glCanvas, antialias: true, powerPreference: 'high-performance' }); Canvas2D only paints the separate HUD. C toggles chase/cockpit in a supported sandbox. No deployment or source says CPU fallback."
+        },
+        {
+          "url": "https://senko.net/vibecode-bench/2026/flysim-fable-5.2.html",
+          "checkedAt": "2026-11-19",
+          "result": "Author's benchmark index links the exact Fable 5.2 flight simulator preview alongside the exact named Gist, not Skyward/Blockhaven. Both Gist and deployed Canvas & Wire HTML construct THREE.WebGLRenderer({ canvas: glCanvas, antialias: true, powerPreference: 'high-performance' }); Canvas2D only paints the separate HUD. C toggles chase/cockpit in a supported sandbox. No deployment or source says CPU fallback."
         }
       ]
     },
@@ -28348,7 +28499,7 @@
     {
       "id": "open3d-saintdoom",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Root README identifies SaintDoom as a nested browser game but gives local-launch instructions. No screenshot was found in root evidence; nested game investigation remains incomplete after API rate limiting.",
+      "reason": "Research incomplete or access-limited: Root README identifies SaintDoom as a nested browser game but gives local-launch instructions. No screenshot was found in root evidence; nested game investigation remains incomplete after API rate limiting. Root author README explicitly identifies exact nested SaintDoom as Three.js browser WebGL, depending on local-launch instructions. Public source index has no homepage. No exact author-hosted browser URL or matching screenshot verified; other collection projects are different games.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/jsnider3/LanguageGames/HEAD/README.md",
@@ -28379,13 +28530,18 @@
           "url": "https://github.com/jsnider3/LanguageGames/releases",
           "checkedAt": "2026-11-18",
           "result": "Author releases page explicitly lists no published releases."
+        },
+        {
+          "url": "https://github.com/jsnider3/LanguageGames/tree/main/SaintDoom",
+          "checkedAt": "2026-11-19",
+          "result": "Root author README explicitly identifies exact nested SaintDoom as Three.js browser WebGL, depending on local-launch instructions. Public source index has no homepage. No exact author-hosted browser URL or matching screenshot verified; other collection projects are different games."
         }
       ]
     },
     {
       "id": "open3d-pixel-tactical-shooter",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README describes a local Vite/Three.js shooter and provides no screenshot. Releases are empty; full-tree review was blocked by the shared GitHub API rate limit.",
+      "reason": "Research incomplete or access-limited: README describes a local Vite/Three.js shooter and provides no screenshot. Releases are empty; full-tree review was blocked by the shared GitHub API rate limit. The exact repo's successful author-pushed Pages action prints this actual deployment URL. The deployed game creates the bundled Three.js renderer as new U0({antialias:!1,alpha:!1,powerPreference:'high-performance'}); the 2D application context is MinimapRenderer only. No alternative CPU main renderer verified.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/Vadaski/pixel-tactical-shooter/HEAD/README.md",
@@ -28416,6 +28572,26 @@
           "url": "https://github.com/Vadaski/pixel-tactical-shooter/releases",
           "checkedAt": "2026-11-18",
           "result": "Author releases page explicitly lists no published releases."
+        },
+        {
+          "url": "https://github.com/Vadaski/pixel-tactical-shooter",
+          "checkedAt": "2026-11-19",
+          "result": "The exact repo's successful author-pushed Pages action prints this actual deployment URL. The deployed game creates the bundled Three.js renderer as new U0({antialias:!1,alpha:!1,powerPreference:'high-performance'}); the 2D application context is MinimapRenderer only. No alternative CPU main renderer verified."
+        },
+        {
+          "url": "https://github.com/Vadaski/pixel-tactical-shooter/actions/runs/22515086623",
+          "checkedAt": "2026-11-19",
+          "result": "The exact repo's successful author-pushed Pages action prints this actual deployment URL. The deployed game creates the bundled Three.js renderer as new U0({antialias:!1,alpha:!1,powerPreference:'high-performance'}); the 2D application context is MinimapRenderer only. No alternative CPU main renderer verified."
+        },
+        {
+          "url": "https://vadaski.github.io/pixel-tactical-shooter/",
+          "checkedAt": "2026-11-19",
+          "result": "The exact repo's successful author-pushed Pages action prints this actual deployment URL. The deployed game creates the bundled Three.js renderer as new U0({antialias:!1,alpha:!1,powerPreference:'high-performance'}); the 2D application context is MinimapRenderer only. No alternative CPU main renderer verified."
+        },
+        {
+          "url": "https://vadaski.github.io/pixel-tactical-shooter/assets/index-CBFU7aN6.js",
+          "checkedAt": "2026-11-19",
+          "result": "The exact repo's successful author-pushed Pages action prints this actual deployment URL. The deployed game creates the bundled Three.js renderer as new U0({antialias:!1,alpha:!1,powerPreference:'high-performance'}); the 2D application context is MinimapRenderer only. No alternative CPU main renderer verified."
         }
       ]
     },
@@ -36880,7 +37056,7 @@
     {
       "id": "open3d-gravity-game-js",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The README cover image shows the GRAVITY mission-selection title interface, not gameplay.",
+      "reason": "Research incomplete or access-limited: The README cover image shows the GRAVITY mission-selection title interface, not gameplay. Directly linked by the author's README, and the deployed HTML links back to the exact catalog repository. The actual game initialization constructs this._renderer = new THREE.WebGLRenderer({ antialias: true }); bundled CanvasRenderer is a deprecated no-op; the application 2D context is the cockpit gyroscope. The HTML documents C to change camera and wheel to zoom, for use only in a supported sandbox.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/b4rtaz/gravity-game-js/HEAD/README.md",
@@ -36896,13 +37072,28 @@
           "url": "https://github.com/b4rtaz/gravity-game-js/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://github.com/b4rtaz/gravity-game-js",
+          "checkedAt": "2026-11-19",
+          "result": "Directly linked by the author's README, and the deployed HTML links back to the exact catalog repository. The actual game initialization constructs this._renderer = new THREE.WebGLRenderer({ antialias: true }); bundled CanvasRenderer is a deprecated no-op; the application 2D context is the cockpit gyroscope. The HTML documents C to change camera and wheel to zoom, for use only in a supported sandbox."
+        },
+        {
+          "url": "https://n4no.com/projects/gravity/",
+          "checkedAt": "2026-11-19",
+          "result": "Directly linked by the author's README, and the deployed HTML links back to the exact catalog repository. The actual game initialization constructs this._renderer = new THREE.WebGLRenderer({ antialias: true }); bundled CanvasRenderer is a deprecated no-op; the application 2D context is the cockpit gyroscope. The HTML documents C to change camera and wheel to zoom, for use only in a supported sandbox."
+        },
+        {
+          "url": "https://n4no.com/projects/gravity/dist/app.js",
+          "checkedAt": "2026-11-19",
+          "result": "Directly linked by the author's README, and the deployed HTML links back to the exact catalog repository. The actual game initialization constructs this._renderer = new THREE.WebGLRenderer({ antialias: true }); bundled CanvasRenderer is a deprecated no-op; the application 2D context is the cockpit gyroscope. The HTML documents C to change camera and wheel to zoom, for use only in a supported sandbox."
         }
       ]
     },
     {
       "id": "open3d-ironbane-mmo",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run.",
+      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run. Historic exact-creator publications were found but their known images are published across unapproved Wikia, Google CDN and slides S3 origins; exact repository issues lack creator media. A separate later revival is not the cataloged project.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/ironbane/ironbane/HEAD/README.md",
@@ -36923,6 +37114,26 @@
           "url": "https://api.github.com/repos/ironbane/ironbane/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (1004 items); inventoried 470 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://www.html5gamedevs.com/topic/10151-ironbane-mmo-looking-for-programmers-3d-modelers-level-designers/",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200; creator recruitment post links legacy Wikia-hosted media."
+        },
+        {
+          "url": "https://gamedev.net/forums/topic/662469-ironbane-mmo-010-pre-alpha/",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 403; no restriction bypass attempted."
+        },
+        {
+          "url": "https://experiments.withgoogle.com/ironbane-mmo",
+          "checkedAt": "2026-11-19",
+          "result": "Ironbane Team credited; still images from distinct unapproved lh3.googleusercontent.com origin."
+        },
+        {
+          "url": "https://github.com/nickjanssen/PatrolJS",
+          "checkedAt": "2026-11-19",
+          "result": "Creator links a YouTube recording explicitly captioned Usage inside Ironbane MMO; no verified directly published original under permitted origin."
         }
       ]
     },
@@ -37001,53 +37212,9 @@
       ]
     },
     {
-      "id": "open3d-castle-defender-vr",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/sorskoot/JS13K2023/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/sorskoot/JS13K2023",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/sorskoot/JS13K2023/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        }
-      ]
-    },
-    {
-      "id": "open3d-feast-night",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The README banner is FEAST NIGHT cover artwork, not a verified gameplay frame.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/js13kGames/feast-night/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/js13kGames/feast-night",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/js13kGames/feast-night/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        }
-      ]
-    },
-    {
       "id": "open3d-cube-fortress",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run.",
+      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run. Exact repository README explains past playtest and local client and server, not an active deployment or public screenshot. The tracked image paths are named thomas.jpg; no authoritative publication linked them as gameplay.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/JooJ-Joestar/ggj-cube-game/HEAD/README.md",
@@ -37063,13 +37230,23 @@
           "url": "https://github.com/JooJ-Joestar/ggj-cube-game/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://api.github.com/repos/JooJ-Joestar/ggj-cube-game/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200, complete 67-entry tree; two JPEG paths both named thomas.jpg."
+        },
+        {
+          "url": "https://github.com/JooJ-Joestar/ggj-cube-game",
+          "checkedAt": "2026-11-19",
+          "result": "Creator describes Babylon.js browser plus required Colyseus server; local route only for current users."
         }
       ]
     },
     {
       "id": "open3d-shuffle-company",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run.",
+      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run. The developer’s archived forum announcement was indexed as containing an image, but page access returned 403 and no original URL or gameplay pixels were verified. Source tree image paths are individual textures only.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/JMRante/Shuffle-Company/HEAD/README.md",
@@ -37085,6 +37262,16 @@
           "url": "https://github.com/JMRante/Shuffle-Company/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://www.pcpuzzle.com/forum/viewtopic.php?p=370101",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 403. Indexed post describes exact author’s prototype and shows one unverified image reference; no access bypass attempted."
+        },
+        {
+          "url": "https://api.github.com/repos/JMRante/Shuffle-Company/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "HTTP 200, complete 343-entry tree; tracked PNGs are asset textures and icons, not gameplay screenshots."
         }
       ]
     },
@@ -37222,7 +37409,7 @@
     {
       "id": "open3d-cave9",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The checked official page exposed only a small image that failed the minimum reviewFrame dimensions; the repository page and README response supplied no acceptable replacement. No native program was run.",
+      "reason": "Research incomplete or access-limited: The checked official page exposed only a small image that failed the minimum reviewFrame dimensions; the repository page and README response supplied no acceptable replacement. No native program was run. Exact author project page describes a native C/OpenGL/SDL platform, links source on GitHub and a Source and Data ZIP, and embeds external YouTube recordings (rjsrBZPeltA and qH1LwQshU9g). None is a first-party browser build; no package downloaded. Prior small raster did not pass reviewFrame and author page shows no alternative eligible raster/video origin.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/bart9h/cave9/HEAD/README.md",
@@ -37248,6 +37435,11 @@
           "url": "https://github.com/bart9h/cave9/releases",
           "checkedAt": "2026-11-19",
           "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
+        },
+        {
+          "url": "https://pseudogames.com/rls/cave9/",
+          "checkedAt": "2026-11-19",
+          "result": "Exact author project page describes a native C/OpenGL/SDL platform, links source on GitHub and a Source and Data ZIP, and embeds external YouTube recordings (rjsrBZPeltA and qH1LwQshU9g). None is a first-party browser build; no package downloaded. Prior small raster did not pass reviewFrame and author page shows no alternative eligible raster/video origin."
         }
       ]
     },
@@ -56020,7 +56212,7 @@
       {
         "id": "open3d-maze-hunter-fps",
         "status": "research-incomplete",
-        "reason": "Research incomplete: no new author distribution or sandbox-rendered game was verified in this review. Existing demo data is preserved; this does not establish that no release exists. The source repository's GitHub Releases page explicitly showed no published releases in this check.",
+        "reason": "Research incomplete: no new author distribution or sandbox-rendered game was verified in this review. Existing demo data is preserved; this does not establish that no release exists. The source repository's GitHub Releases page explicitly showed no published releases in this check. Author's public Gist links exact 3D Maze Hunter on the same owner's Pages, separately from 2D Classic Maze Arcade. Exact deployed file constructs THREE.WebGLRenderer; 2D texture contexts are ancillary. Author social-preview.png was personally seen: MAZE HUNTER text, crossed reticle and promotional copy only, no gameplay.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/ehsanhaque/maze-hunter-fps/HEAD/README.md",
@@ -56051,6 +56243,21 @@
             "url": "https://github.com/ehsanhaque/maze-hunter-fps/releases",
             "checkedAt": "2026-11-19",
             "result": "The public GitHub Releases listing explicitly showed no published releases. No native build was retrieved or executed; other publication sites are not ruled out."
+          },
+          {
+            "url": "https://github.com/ehsanhaque/maze-hunter-fps",
+            "checkedAt": "2026-11-19",
+            "result": "Author's public Gist links exact 3D Maze Hunter on the same owner's Pages, separately from 2D Classic Maze Arcade. Exact deployed file constructs THREE.WebGLRenderer; 2D texture contexts are ancillary. Author social-preview.png was personally seen: MAZE HUNTER text, crossed reticle and promotional copy only, no gameplay."
+          },
+          {
+            "url": "https://gist.github.com/ehsanhaque/87e3c29ba94134753198cd6c2d7b99d8",
+            "checkedAt": "2026-11-19",
+            "result": "Author's public Gist links exact 3D Maze Hunter on the same owner's Pages, separately from 2D Classic Maze Arcade. Exact deployed file constructs THREE.WebGLRenderer; 2D texture contexts are ancillary. Author social-preview.png was personally seen: MAZE HUNTER text, crossed reticle and promotional copy only, no gameplay."
+          },
+          {
+            "url": "https://ehsanhaque.github.io/maze-hunter-fps/",
+            "checkedAt": "2026-11-19",
+            "result": "Author's public Gist links exact 3D Maze Hunter on the same owner's Pages, separately from 2D Classic Maze Arcade. Exact deployed file constructs THREE.WebGLRenderer; 2D texture contexts are ancillary. Author social-preview.png was personally seen: MAZE HUNTER text, crossed reticle and promotional copy only, no gameplay."
           }
         ]
       },
@@ -58831,7 +59038,7 @@
       {
         "id": "open3d-canvas-wire",
         "status": "missing",
-        "reason": "No sandbox-browser rendering was verified in this review. Keep source unchanged; source instructions, static HTML and source archives are not playable/download verification.",
+        "reason": "No sandbox-browser rendering was verified in this review. Keep source unchanged; source instructions, static HTML and source archives are not playable/download verification. Author's benchmark index links the exact Fable 5.2 flight simulator preview alongside the exact named Gist, not Skyward/Blockhaven. Both Gist and deployed Canvas & Wire HTML construct THREE.WebGLRenderer({ canvas: glCanvas, antialias: true, powerPreference: 'high-performance' }); Canvas2D only paints the separate HUD. C toggles chase/cockpit in a supported sandbox. No deployment or source says CPU fallback.",
         "checkedSources": [
           {
             "url": "https://gist.github.com/senko/afbc29324f082fdb6c3dbf35540b08e6",
@@ -58842,6 +59049,21 @@
             "url": "https://gist.github.com/senko/afbc29324f082fdb6c3dbf35540b08e6",
             "checkedAt": "2026-11-18",
             "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
+          },
+          {
+            "url": "https://gist.github.com/senko/afbc29324f082fdb6c3dbf35540b08e6",
+            "checkedAt": "2026-11-19",
+            "result": "Author's benchmark index links the exact Fable 5.2 flight simulator preview alongside the exact named Gist, not Skyward/Blockhaven. Both Gist and deployed Canvas & Wire HTML construct THREE.WebGLRenderer({ canvas: glCanvas, antialias: true, powerPreference: 'high-performance' }); Canvas2D only paints the separate HUD. C toggles chase/cockpit in a supported sandbox. No deployment or source says CPU fallback."
+          },
+          {
+            "url": "https://senko.net/vibecode-bench/",
+            "checkedAt": "2026-11-19",
+            "result": "Author's benchmark index links the exact Fable 5.2 flight simulator preview alongside the exact named Gist, not Skyward/Blockhaven. Both Gist and deployed Canvas & Wire HTML construct THREE.WebGLRenderer({ canvas: glCanvas, antialias: true, powerPreference: 'high-performance' }); Canvas2D only paints the separate HUD. C toggles chase/cockpit in a supported sandbox. No deployment or source says CPU fallback."
+          },
+          {
+            "url": "https://senko.net/vibecode-bench/2026/flysim-fable-5.2.html",
+            "checkedAt": "2026-11-19",
+            "result": "Author's benchmark index links the exact Fable 5.2 flight simulator preview alongside the exact named Gist, not Skyward/Blockhaven. Both Gist and deployed Canvas & Wire HTML construct THREE.WebGLRenderer({ canvas: glCanvas, antialias: true, powerPreference: 'high-performance' }); Canvas2D only paints the separate HUD. C toggles chase/cockpit in a supported sandbox. No deployment or source says CPU fallback."
           }
         ]
       },
@@ -60989,7 +61211,7 @@
       {
         "id": "open3d-saintdoom",
         "status": "missing",
-        "reason": "No sandbox-browser rendering was verified in this review. Keep source unchanged; source instructions, static HTML and source archives are not playable/download verification.",
+        "reason": "No sandbox-browser rendering was verified in this review. Keep source unchanged; source instructions, static HTML and source archives are not playable/download verification. Root author README explicitly identifies exact nested SaintDoom as Three.js browser WebGL, depending on local-launch instructions. Public source index has no homepage. No exact author-hosted browser URL or matching screenshot verified; other collection projects are different games.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/jsnider3/LanguageGames/HEAD/README.md",
@@ -61020,13 +61242,18 @@
             "url": "https://github.com/jsnider3/LanguageGames/releases",
             "checkedAt": "2026-11-18",
             "result": "Author releases page explicitly lists no published releases."
+          },
+          {
+            "url": "https://github.com/jsnider3/LanguageGames/tree/main/SaintDoom",
+            "checkedAt": "2026-11-19",
+            "result": "Root author README explicitly identifies exact nested SaintDoom as Three.js browser WebGL, depending on local-launch instructions. Public source index has no homepage. No exact author-hosted browser URL or matching screenshot verified; other collection projects are different games."
           }
         ]
       },
       {
         "id": "open3d-pixel-tactical-shooter",
         "status": "missing",
-        "reason": "No sandbox-browser rendering was verified in this review. Keep source unchanged; source instructions, static HTML and source archives are not playable/download verification.",
+        "reason": "No sandbox-browser rendering was verified in this review. Keep source unchanged; source instructions, static HTML and source archives are not playable/download verification. The exact repo's successful author-pushed Pages action prints this actual deployment URL. The deployed game creates the bundled Three.js renderer as new U0({antialias:!1,alpha:!1,powerPreference:'high-performance'}); the 2D application context is MinimapRenderer only. No alternative CPU main renderer verified.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/Vadaski/pixel-tactical-shooter/HEAD/README.md",
@@ -61057,6 +61284,26 @@
             "url": "https://github.com/Vadaski/pixel-tactical-shooter/releases",
             "checkedAt": "2026-11-18",
             "result": "Author releases page explicitly lists no published releases."
+          },
+          {
+            "url": "https://github.com/Vadaski/pixel-tactical-shooter",
+            "checkedAt": "2026-11-19",
+            "result": "The exact repo's successful author-pushed Pages action prints this actual deployment URL. The deployed game creates the bundled Three.js renderer as new U0({antialias:!1,alpha:!1,powerPreference:'high-performance'}); the 2D application context is MinimapRenderer only. No alternative CPU main renderer verified."
+          },
+          {
+            "url": "https://github.com/Vadaski/pixel-tactical-shooter/actions/runs/22515086623",
+            "checkedAt": "2026-11-19",
+            "result": "The exact repo's successful author-pushed Pages action prints this actual deployment URL. The deployed game creates the bundled Three.js renderer as new U0({antialias:!1,alpha:!1,powerPreference:'high-performance'}); the 2D application context is MinimapRenderer only. No alternative CPU main renderer verified."
+          },
+          {
+            "url": "https://vadaski.github.io/pixel-tactical-shooter/",
+            "checkedAt": "2026-11-19",
+            "result": "The exact repo's successful author-pushed Pages action prints this actual deployment URL. The deployed game creates the bundled Three.js renderer as new U0({antialias:!1,alpha:!1,powerPreference:'high-performance'}); the 2D application context is MinimapRenderer only. No alternative CPU main renderer verified."
+          },
+          {
+            "url": "https://vadaski.github.io/pixel-tactical-shooter/assets/index-CBFU7aN6.js",
+            "checkedAt": "2026-11-19",
+            "result": "The exact repo's successful author-pushed Pages action prints this actual deployment URL. The deployed game creates the bundled Three.js renderer as new U0({antialias:!1,alpha:!1,powerPreference:'high-performance'}); the 2D application context is MinimapRenderer only. No alternative CPU main renderer verified."
           }
         ]
       },
@@ -75825,7 +76072,7 @@
       {
         "id": "open3d-gravity-game-js",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item.",
+        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item. Directly linked by the author's README, and the deployed HTML links back to the exact catalog repository. The actual game initialization constructs this._renderer = new THREE.WebGLRenderer({ antialias: true }); bundled CanvasRenderer is a deprecated no-op; the application 2D context is the cockpit gyroscope. The HTML documents C to change camera and wheel to zoom, for use only in a supported sandbox.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/b4rtaz/gravity-game-js/HEAD/README.md",
@@ -75841,6 +76088,21 @@
             "url": "https://github.com/b4rtaz/gravity-game-js/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          },
+          {
+            "url": "https://github.com/b4rtaz/gravity-game-js",
+            "checkedAt": "2026-11-19",
+            "result": "Directly linked by the author's README, and the deployed HTML links back to the exact catalog repository. The actual game initialization constructs this._renderer = new THREE.WebGLRenderer({ antialias: true }); bundled CanvasRenderer is a deprecated no-op; the application 2D context is the cockpit gyroscope. The HTML documents C to change camera and wheel to zoom, for use only in a supported sandbox."
+          },
+          {
+            "url": "https://n4no.com/projects/gravity/",
+            "checkedAt": "2026-11-19",
+            "result": "Directly linked by the author's README, and the deployed HTML links back to the exact catalog repository. The actual game initialization constructs this._renderer = new THREE.WebGLRenderer({ antialias: true }); bundled CanvasRenderer is a deprecated no-op; the application 2D context is the cockpit gyroscope. The HTML documents C to change camera and wheel to zoom, for use only in a supported sandbox."
+          },
+          {
+            "url": "https://n4no.com/projects/gravity/dist/app.js",
+            "checkedAt": "2026-11-19",
+            "result": "Directly linked by the author's README, and the deployed HTML links back to the exact catalog repository. The actual game initialization constructs this._renderer = new THREE.WebGLRenderer({ antialias: true }); bundled CanvasRenderer is a deprecated no-op; the application 2D context is the cockpit gyroscope. The HTML documents C to change camera and wheel to zoom, for use only in a supported sandbox."
           }
         ]
       },
@@ -76795,7 +77057,7 @@
       {
         "id": "open3d-cave9",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item. Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item. Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications.",
+        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item. Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item. Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications. Exact author project page describes a native C/OpenGL/SDL platform, links source on GitHub and a Source and Data ZIP, and embeds external YouTube recordings (rjsrBZPeltA and qH1LwQshU9g). None is a first-party browser build; no package downloaded. Prior small raster did not pass reviewFrame and author page shows no alternative eligible raster/video origin.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/bart9h/cave9/HEAD/README.md",
@@ -76821,6 +77083,11 @@
             "url": "https://github.com/bart9h/cave9/releases",
             "checkedAt": "2026-11-19",
             "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
+          },
+          {
+            "url": "https://pseudogames.com/rls/cave9/",
+            "checkedAt": "2026-11-19",
+            "result": "Exact author project page describes a native C/OpenGL/SDL platform, links source on GitHub and a Source and Data ZIP, and embeds external YouTube recordings (rjsrBZPeltA and qH1LwQshU9g). None is a first-party browser build; no package downloaded. Prior small raster did not pass reviewFrame and author page shows no alternative eligible raster/video origin."
           }
         ]
       },
