@@ -2044,6 +2044,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-gpt6-astra-one-shot-games": {
+    src: "media/learning/open3d-gpt6-astra-one-shot-games.webp",
+    alt: "Mosswing flies between stone pillars with a live score of one.",
+    caption:
+      "Creator-published gameplay. Mosswing flies between stone pillars with a live score of one. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/Ayi1337/gpt6-astra-one-shot-games/blob/HEAD/mosswing/src/design/play-mobile.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/Ayi1337/gpt6-astra-one-shot-games/HEAD/mosswing/src/design/play-mobile.png",
+    width: 1280,
+    height: 720,
+  },
   "open3d-hallowmere": {
     src: "media/learning/open3d-hallowmere.webp",
     alt: "A character stands among torchlit village houses with quest text, a minimap and ability indicators.",
@@ -2067,6 +2081,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://raw.githubusercontent.com/amsminn/gpt-6-astra-smash-karts/HEAD/docs/media/gameplay.gif",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-web-3d-game": {
+    src: "media/learning/open3d-web-3d-game.webp",
+    alt: "Rain Court survivor confronts zombies in an isometric industrial arena.",
+    caption:
+      "Creator-published gameplay. Rain Court survivor confronts zombies in an isometric industrial arena. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/IanOliverU/web-3d-game/blob/HEAD/public/gameplay-final-clean.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/IanOliverU/web-3d-game/HEAD/public/gameplay-final-clean.png",
     width: 1280,
     height: 720,
   },
@@ -2202,6 +2230,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-constellation-defense": {
+    src: "media/learning/open3d-constellation-defense.webp",
+    alt: "Constellation Defense combat with a match-three board and 3D battlefield.",
+    caption:
+      "Creator-published gameplay. Constellation Defense combat with a match-three board and 3D battlefield. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/Hakhyun-Kim/constellation-defense/blob/HEAD/docs/evidence/art-v2/verdant-desktop-high-art-v2.jpg",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/Hakhyun-Kim/constellation-defense/HEAD/docs/evidence/art-v2/verdant-desktop-high-art-v2.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-skyward-isles": {
     src: "media/learning/open3d-skyward-isles.webp",
     alt: "A character fights a blue slime near a floating-island village and a large glowing gateway, with abilities and damage numbers visible.",
@@ -2332,6 +2374,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-blocksfield": {
+    src: "media/learning/open3d-blocksfield.webp",
+    alt: "A platformer reaches the glowing exit portal on a floating island.",
+    caption:
+      "Creator-published gameplay. A platformer reaches the glowing exit portal on a floating island. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/Hcoder10/blocksfield/blob/HEAD/web/games/_demo_look/shots/play__sky_islands__platformer_won.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/Hcoder10/blocksfield/HEAD/web/games/_demo_look/shots/play__sky_islands__platformer_won.png",
+    width: 1280,
+    height: 720,
+  },
   "open3d-rpg": {
     src: "media/learning/open3d-rpg.webp",
     alt: "A first-person dungeon view faces a dark stone wall with four party portraits, health bars and an interaction log.",
@@ -2385,6 +2441,34 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-vision-3d-game": {
+    src: "media/learning/open3d-vision-3d-game.webp",
+    alt: "First-person dungeon corridor with a collectible orb and maze minimap.",
+    caption:
+      "Creator-published gameplay. First-person dungeon corridor with a collectible orb and maze minimap. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/weijiafu14/dsh-turbo/blob/HEAD/docs/posting-kit/assets/01-dungeon-crawler.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/weijiafu14/dsh-turbo/HEAD/docs/posting-kit/assets/01-dungeon-crawler.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-viben-ring": {
+    src: "media/learning/open3d-viben-ring.webp",
+    alt: "Player confronts the Viben Lord boss in a forest arena.",
+    caption:
+      "Creator-published Viben Ring gameplay video, frame at 12 seconds. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/SabrinaRamonov/viben-ring/blob/main/README.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://github.com/user-attachments/assets/3e62fa30-7bdf-4f6d-948a-bf410d0991a7",
+    width: 1280,
+    height: 720,
+  },
   "open3d-mathl33t": {
     src: "media/learning/open3d-mathl33t.webp",
     alt: "A blocky character stands among numbered cubes while a multiplication question and four answer buttons appear above the scene.",
@@ -2435,6 +2519,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-19",
     originalImageUrl:
       "https://raw.githubusercontent.com/jethfrane/pitch-patrol/HEAD/public/gameplay.webp",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-raptor-race-fable": {
+    src: "media/learning/open3d-raptor-race-fable.webp",
+    alt: "A feathered raptor follows glowing amber through a forest trail.",
+    caption:
+      "Creator-published gameplay. A feathered raptor follows glowing amber through a forest trail. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/drew879/raptor-race-fable/blob/HEAD/docs/ux/shots/chase.jpg",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/drew879/raptor-race-fable/HEAD/docs/ux/shots/chase.jpg",
     width: 1280,
     height: 720,
   },
@@ -3070,6 +3168,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-egoboo": {
+    src: "media/learning/open3d-egoboo.webp",
+    alt: "A character fights small enemies in Egoboo’s stone dungeon, with player statistics visible.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://egoboo.sourceforge.net/about.html",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://egoboo.sourceforge.net/screenshots/screen000.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-flightgear": {
     src: "media/learning/open3d-flightgear.webp",
     alt: "A rendered yellow and white light aircraft stands on an airport apron beneath forested mountains.",
@@ -3080,6 +3191,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://www.flightgear.org/_astro/C172p-preview2.DO9M7qvf_Z153aYw.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-lugaru": {
+    src: "media/learning/open3d-lugaru.webp",
+    alt: "Two rabbit fighters clash with swords on a snowy hillside in Lugaru.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://www.wolfire.com/lugaru/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://www.wolfire.com/assets/images/games/lugaru-hd-screenshot-3.c2edefff354118bb53de20d804df994b.jpg",
     width: 1280,
     height: 720,
   },
@@ -3332,6 +3456,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://xonotic.org/m/uploads/2011/09/stormkeep-keyhunt-3.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-zero-k": {
+    src: "media/learning/open3d-zero-k.webp",
+    alt: "A real-time strategy battlefield with bright energy beams, units, resource meters and a minimap.",
+    caption:
+      "Creator-published Zero-K gameplay screenshot from the developer Steam gallery. Image rights remain with the original creator.",
+    sourceUrl: "https://store.steampowered.com/app/334920/ZeroK/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/334920/ss_24eb34e9fbc9b3d19b56a1bc9751b25602eaca08.1920x1080.jpg?t=1722263050",
     width: 1280,
     height: 720,
   },
@@ -3870,6 +4007,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-cubyz": {
+    src: "media/learning/open3d-cubyz.webp",
+    alt: "A first-person voxel forest scene includes trees, a crosshair, health bars and an inventory hotbar.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://zenith391.itch.io/cubyz",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1hZ2UvNDgzNDk4LzU4MTkzMTcucG5n/original/QnARwB.png",
+    width: 1280,
+    height: 720,
+  },
   "open3d-dreamchess": {
     src: "media/learning/open3d-dreamchess.webp",
     alt: "A three-dimensional chessboard with gold and bronze pieces and player status panels against a starry background.",
@@ -3920,6 +4070,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-lasercrabs-deceiver": {
+    src: "media/learning/open3d-lasercrabs-deceiver.webp",
+    alt: "A neon purple and blue three-dimensional arena contains luminous outlined platforms and suspended architecture.",
+    caption:
+      "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+    sourceUrl: "https://store.steampowered.com/app/728100/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/728100/ss_a204bec6cca367e0e641538729b8952fcb61d454.1920x1080.jpg?t=1778809593",
+    width: 1280,
+    height: 720,
+  },
   "open3d-linux-air-combat": {
     src: "media/learning/open3d-linux-air-combat.webp",
     alt: "A combat flight cockpit shows radar, flight gauges and ammunition counters while pursuing aircraft above a coastline.",
@@ -3967,6 +4130,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     origin: "creator-screenshot",
     reviewedAt: "2026-11-19",
     originalImageUrl: "https://www.ultimatestunts.nl/screenshots/0731.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-ysflight": {
+    src: "media/learning/open3d-ysflight.webp",
+    alt: "A green flight instrument display overlays a jet cockpit banking above a cloud layer.",
+    caption:
+      "Creator-published YSFlight gameplay screenshot from the flight simulator author’s project page. Image rights remain with the original creator.",
+    sourceUrl: "https://ysflight.in.coocan.jp/ysflight/ysflight/e.html",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://ysflight.in.coocan.jp/ysflight/ysflight/scrnshot/ss20130104-1.png",
     width: 1280,
     height: 720,
   },
@@ -5433,6 +5609,17 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     caption:
       "Creator-published gameplay image. Copyright remains with the original creator; no reuse permission is implied.",
     src: "media/learning/open3d-sandy-s-table-quest-3d.webp",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-castle-wars-js": {
+    src: "media/learning/open3d-castle-wars-js.webp",
+    alt: "Blue, red and neutral gray castles stand on a green tiled battlefield with troop counts above them.",
+    caption:
+      "Castle Wars tutorial gameplay on the creator-submitted js13kGames build. Original artwork belongs to its creator.",
+    sourceUrl: "https://play.js13kgames.com/castle-wars/",
+    origin: "browser-capture",
+    capturedAt: "2026-11-19T09:09:27.810Z",
     width: 1280,
     height: 720,
   },

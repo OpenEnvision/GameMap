@@ -379,10 +379,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Castle Wars JS",
-      "url": "https://github.com/js13kGames/castle-wars",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Play Castle Wars",
+      "url": "https://play.js13kgames.com/castle-wars/",
+      "kind": "playable",
+      "note": "The creator-submitted js13kGames entry links this build and the exact source repository. Loaded in a sandboxed cloud browser on 2026-11-19; the Canvas-rendered tutorial battlefield displayed and troop counts advanced. No complete playthrough is claimed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

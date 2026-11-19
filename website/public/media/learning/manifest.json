@@ -6167,6 +6167,20 @@
       "sha256": "19ab46d6ab73a1f1ab406e87f68889e62d299541f1bd5d7b30606498d9177142"
     },
     {
+      "id": "open3d-egoboo",
+      "src": "media/learning/open3d-egoboo.webp",
+      "alt": "A character fights small enemies in Egoboo’s stone dungeon, with player statistics visible.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://egoboo.sourceforge.net/about.html",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://egoboo.sourceforge.net/screenshots/screen000.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 45298,
+      "sha256": "7afdea9eec27310d4b13d9a8420a6b2ea62d3927a71f8a1a4203d324d5e91a1e"
+    },
+    {
       "id": "open3d-flightgear",
       "src": "media/learning/open3d-flightgear.webp",
       "alt": "A rendered yellow and white light aircraft stands on an airport apron beneath forested mountains.",
@@ -6179,6 +6193,20 @@
       "height": 720,
       "bytes": 98602,
       "sha256": "16e1950703ae4d5732bb68e40b0e97ac52e8f86f1913a796ffe115813532fab7"
+    },
+    {
+      "id": "open3d-lugaru",
+      "src": "media/learning/open3d-lugaru.webp",
+      "alt": "Two rabbit fighters clash with swords on a snowy hillside in Lugaru.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://www.wolfire.com/lugaru/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://www.wolfire.com/assets/images/games/lugaru-hd-screenshot-3.c2edefff354118bb53de20d804df994b.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 49456,
+      "sha256": "d9513b6614533d4aad2815c97742c05849dd247845cff19c1af2539866dfb713"
     },
     {
       "id": "open3d-megaglest",
@@ -6459,6 +6487,20 @@
       "height": 720,
       "bytes": 64816,
       "sha256": "f1302747978574b8362b7f7a7d457d7c14d8ca178fbcc652b93b6e9a189404b2"
+    },
+    {
+      "id": "open3d-zero-k",
+      "src": "media/learning/open3d-zero-k.webp",
+      "alt": "A real-time strategy battlefield with bright energy beams, units, resource meters and a minimap.",
+      "caption": "Creator-published Zero-K gameplay screenshot from the developer Steam gallery. Image rights remain with the original creator.",
+      "sourceUrl": "https://store.steampowered.com/app/334920/ZeroK/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/334920/ss_24eb34e9fbc9b3d19b56a1bc9751b25602eaca08.1920x1080.jpg?t=1722263050",
+      "width": 1280,
+      "height": 720,
+      "bytes": 132472,
+      "sha256": "9804dd73dc009ac088788e779b3b0c8725bc39a53b32a3f1596a78f02588e221"
     },
     {
       "id": "open3d-ashworth-station",
@@ -7035,6 +7077,20 @@
       "sha256": "4293cfd1cd6e76c97a7ea135f93893a6d21a1913385efd6fe32372b1c70c5e2a"
     },
     {
+      "id": "open3d-cubyz",
+      "src": "media/learning/open3d-cubyz.webp",
+      "alt": "A first-person voxel forest scene includes trees, a crosshair, health bars and an inventory hotbar.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://zenith391.itch.io/cubyz",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1hZ2UvNDgzNDk4LzU4MTkzMTcucG5n/original/QnARwB.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 130170,
+      "sha256": "84a593a0cf5756d221e29207343ec2e71ef7acc7719746be7f19f85afa230c9b"
+    },
+    {
       "id": "open3d-dreamchess",
       "src": "media/learning/open3d-dreamchess.webp",
       "alt": "A three-dimensional chessboard with gold and bronze pieces and player status panels against a starry background.",
@@ -7091,6 +7147,20 @@
       "sha256": "d7cc453cf290cabf7cc34b55a70f9ca1b9c91229f98f577493d49e7f855bc32a"
     },
     {
+      "id": "open3d-lasercrabs-deceiver",
+      "src": "media/learning/open3d-lasercrabs-deceiver.webp",
+      "alt": "A neon purple and blue three-dimensional arena contains luminous outlined platforms and suspended architecture.",
+      "caption": "Creator-published gameplay screenshot. Image rights remain with the original creator.",
+      "sourceUrl": "https://store.steampowered.com/app/728100/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/728100/ss_a204bec6cca367e0e641538729b8952fcb61d454.1920x1080.jpg?t=1778809593",
+      "width": 1280,
+      "height": 720,
+      "bytes": 140386,
+      "sha256": "4d1042e2d630a285fc8b6faa1b08b1d378edf93f299ad72bb9bd597323746dca"
+    },
+    {
       "id": "open3d-linux-air-combat",
       "src": "media/learning/open3d-linux-air-combat.webp",
       "alt": "A combat flight cockpit shows radar, flight gauges and ammunition counters while pursuing aircraft above a coastline.",
@@ -7145,6 +7215,20 @@
       "height": 720,
       "bytes": 80146,
       "sha256": "db82f8c7f6c6fefe63e12eb61abae65c810b130a0b1a69a413a5559fd90a0bc6"
+    },
+    {
+      "id": "open3d-ysflight",
+      "src": "media/learning/open3d-ysflight.webp",
+      "alt": "A green flight instrument display overlays a jet cockpit banking above a cloud layer.",
+      "caption": "Creator-published YSFlight gameplay screenshot from the flight simulator author’s project page. Image rights remain with the original creator.",
+      "sourceUrl": "https://ysflight.in.coocan.jp/ysflight/ysflight/e.html",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://ysflight.in.coocan.jp/ysflight/ysflight/scrnshot/ss20130104-1.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 42978,
+      "sha256": "e7c3bdd032ffca275c00c4d8432fc2f022a7e7722ee85854cbd976d90e0c0516"
     },
     {
       "id": "open3d-junk-magnet",
@@ -8727,6 +8811,19 @@
       "height": 720,
       "bytes": 42880,
       "sha256": "2c53e4a8ec835a7acd5472873ebb692722e088c997fe0bff5e8033babd5b6e74"
+    },
+    {
+      "id": "open3d-castle-wars-js",
+      "src": "media/learning/open3d-castle-wars-js.webp",
+      "alt": "Blue, red and neutral gray castles stand on a green tiled battlefield with troop counts above them.",
+      "caption": "Castle Wars tutorial gameplay on the creator-submitted js13kGames build. Original artwork belongs to its creator.",
+      "sourceUrl": "https://play.js13kgames.com/castle-wars/",
+      "origin": "browser-capture",
+      "capturedAt": "2026-11-19T09:09:27.810Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 43416,
+      "sha256": "270a6d03cd7ca513e2da1cf76db84bc1ce97fe74c067e0397ddac2660ab29e76"
     },
     {
       "id": "open3d-freemazes3d",
@@ -11612,6 +11709,20 @@
       "sha256": "61ff28a6f9f0703bc0b34a538b7cb259f3b42b71ab036aff3b07b0f1506e2e70"
     },
     {
+      "id": "open3d-gpt6-astra-one-shot-games",
+      "src": "media/learning/open3d-gpt6-astra-one-shot-games.webp",
+      "alt": "Mosswing flies between stone pillars with a live score of one.",
+      "caption": "Creator-published gameplay. Mosswing flies between stone pillars with a live score of one. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/Ayi1337/gpt6-astra-one-shot-games/blob/HEAD/mosswing/src/design/play-mobile.png",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/Ayi1337/gpt6-astra-one-shot-games/HEAD/mosswing/src/design/play-mobile.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 9146,
+      "sha256": "fea6ee7aaae603b11fe1efb43f3a464e1280c911e63573c33eea3d5651922896"
+    },
+    {
       "id": "open3d-hallowmere",
       "src": "media/learning/open3d-hallowmere.webp",
       "alt": "A character stands among torchlit village houses with quest text, a minimap and ability indicators.",
@@ -11638,6 +11749,20 @@
       "height": 720,
       "bytes": 44776,
       "sha256": "701f3a6c89c6b3360be54cffc64a1ffc71627592f904053876bd7994a25d2315"
+    },
+    {
+      "id": "open3d-web-3d-game",
+      "src": "media/learning/open3d-web-3d-game.webp",
+      "alt": "Rain Court survivor confronts zombies in an isometric industrial arena.",
+      "caption": "Creator-published gameplay. Rain Court survivor confronts zombies in an isometric industrial arena. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/IanOliverU/web-3d-game/blob/HEAD/public/gameplay-final-clean.png",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/IanOliverU/web-3d-game/HEAD/public/gameplay-final-clean.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 23350,
+      "sha256": "20bfd68b134b1c523acb8fef92dec6f816ba3bef00d524616c8069ec7cdecba4"
     },
     {
       "id": "open3d-turbo-rumble",
@@ -11780,6 +11905,20 @@
       "sha256": "03793e763399657ab0a44f952251089a0e208256288f915d641c1aa4e72d27c8"
     },
     {
+      "id": "open3d-constellation-defense",
+      "src": "media/learning/open3d-constellation-defense.webp",
+      "alt": "Constellation Defense combat with a match-three board and 3D battlefield.",
+      "caption": "Creator-published gameplay. Constellation Defense combat with a match-three board and 3D battlefield. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/Hakhyun-Kim/constellation-defense/blob/HEAD/docs/evidence/art-v2/verdant-desktop-high-art-v2.jpg",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/Hakhyun-Kim/constellation-defense/HEAD/docs/evidence/art-v2/verdant-desktop-high-art-v2.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 81750,
+      "sha256": "2a1b012ad222265dc8dc5034fcfa302ef0b8d1e754062848c01c9ad20a6fdfba"
+    },
+    {
       "id": "open3d-skyward-isles",
       "src": "media/learning/open3d-skyward-isles.webp",
       "alt": "A character fights a blue slime near a floating-island village and a large glowing gateway, with abilities and damage numbers visible.",
@@ -11920,6 +12059,20 @@
       "sha256": "ff5cd17e018ef153a19970fe1a4018860a78bec257a06e31c8377ccd6004c664"
     },
     {
+      "id": "open3d-blocksfield",
+      "src": "media/learning/open3d-blocksfield.webp",
+      "alt": "A platformer reaches the glowing exit portal on a floating island.",
+      "caption": "Creator-published gameplay. A platformer reaches the glowing exit portal on a floating island. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/Hcoder10/blocksfield/blob/HEAD/web/games/_demo_look/shots/play__sky_islands__platformer_won.png",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/Hcoder10/blocksfield/HEAD/web/games/_demo_look/shots/play__sky_islands__platformer_won.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 108922,
+      "sha256": "d039ce6a6f6f1b3f8fa9502a23d6dca44e8466de8cad9bbc12afb1ca446cde9a"
+    },
+    {
       "id": "open3d-rpg",
       "src": "media/learning/open3d-rpg.webp",
       "alt": "A first-person dungeon view faces a dark stone wall with four party portraits, health bars and an interaction log.",
@@ -11976,6 +12129,34 @@
       "sha256": "a2a75836c50a381d42d56127632e0887a1d78e91d3f581e46cdf14b1a271d6ee"
     },
     {
+      "id": "open3d-vision-3d-game",
+      "src": "media/learning/open3d-vision-3d-game.webp",
+      "alt": "First-person dungeon corridor with a collectible orb and maze minimap.",
+      "caption": "Creator-published gameplay. First-person dungeon corridor with a collectible orb and maze minimap. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/weijiafu14/dsh-turbo/blob/HEAD/docs/posting-kit/assets/01-dungeon-crawler.png",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/weijiafu14/dsh-turbo/HEAD/docs/posting-kit/assets/01-dungeon-crawler.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 33478,
+      "sha256": "f755df5cb9a383b903094af05d71e10b8410b5549aa3033f95175ad907c420de"
+    },
+    {
+      "id": "open3d-viben-ring",
+      "src": "media/learning/open3d-viben-ring.webp",
+      "alt": "Player confronts the Viben Lord boss in a forest arena.",
+      "caption": "Creator-published Viben Ring gameplay video, frame at 12 seconds. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/SabrinaRamonov/viben-ring/blob/main/README.md",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://github.com/user-attachments/assets/3e62fa30-7bdf-4f6d-948a-bf410d0991a7",
+      "width": 1280,
+      "height": 720,
+      "bytes": 94048,
+      "sha256": "2fb7a54a93d77e7055bb0962a90557a9dc17eea0dae8f3ae6062f2a25b0aab90"
+    },
+    {
       "id": "open3d-mathl33t",
       "src": "media/learning/open3d-mathl33t.webp",
       "alt": "A blocky character stands among numbered cubes while a multiplication question and four answer buttons appear above the scene.",
@@ -12030,6 +12211,20 @@
       "height": 720,
       "bytes": 32220,
       "sha256": "5ecc6f8bc0aaa58f72c6cf620ab2eb178f0167c096594679181a4bcd0261e89d"
+    },
+    {
+      "id": "open3d-raptor-race-fable",
+      "src": "media/learning/open3d-raptor-race-fable.webp",
+      "alt": "A feathered raptor follows glowing amber through a forest trail.",
+      "caption": "Creator-published gameplay. A feathered raptor follows glowing amber through a forest trail. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/drew879/raptor-race-fable/blob/HEAD/docs/ux/shots/chase.jpg",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/drew879/raptor-race-fable/HEAD/docs/ux/shots/chase.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 33590,
+      "sha256": "e52727b54ced7b166f4f309db550d8b49d1280a0dee06798d7b7954f30f7c6ab"
     },
     {
       "id": "open3d-odoakersaquariumspiel",
