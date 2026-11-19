@@ -9555,6 +9555,20 @@
       "sha256": "2c53e4a8ec835a7acd5472873ebb692722e088c997fe0bff5e8033babd5b6e74"
     },
     {
+      "id": "open3d-serpentine",
+      "src": "media/learning/open3d-serpentine.webp",
+      "alt": "A purple segmented snake turns across a blue 3D grid, with a golden pickup and the score display visible.",
+      "caption": "Creator-published gameplay: Mid-run on medium difficulty, the snake crosses the grid with walls enabled.",
+      "sourceUrl": "https://s-sujan-s.itch.io/serpentine-3d-snake",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1hZ2UvNDM0MDQ4My8yNTkxMDA5OS5wbmc=/original/5efPBi.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 19514,
+      "sha256": "7f64a50e40495cbf0586b71d7f2dc8f490a9d4b0ec593a049c27d5b8988bd4f3"
+    },
+    {
       "id": "open3d-castle-defender-vr",
       "src": "media/learning/open3d-castle-defender-vr.webp",
       "alt": "A first-person bow and arrow aimed over a castle wall toward low-poly knight formations.",
@@ -10014,6 +10028,20 @@
       "height": 720,
       "bytes": 49848,
       "sha256": "c0b986b0f550c42d6e3b6b094f7f78e530dda33a5575f3f9358908214faa55b6"
+    },
+    {
+      "id": "open3d-shuffle-company",
+      "src": "media/learning/open3d-shuffle-company.webp",
+      "alt": "A green round character stands in a pink 3D puzzle maze near ladders, a blue switch, and yellow pickups.",
+      "caption": "Creator-published gameplay: The Unity prototype’s puzzle view shows ladders, a purple key, and a checkered goal.",
+      "sourceUrl": "https://github.com/JMRante/JMRante.github.io/blob/bfb9faf80fb45ae89d12be2baeb244283324e263/projects/shufflecompany.html",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/JMRante/JMRante.github.io/bfb9faf80fb45ae89d12be2baeb244283324e263/projects/images/shufflecompany/source/shufflecompany_source_1.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 24636,
+      "sha256": "a361352d302a72d4d68887f4e3d7fc6288cbe1e0ee8600f12bd9688c6b3b0c93"
     },
     {
       "id": "open3d-the-village-sacrifice",

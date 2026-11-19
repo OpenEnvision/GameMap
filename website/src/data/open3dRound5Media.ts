@@ -6526,6 +6526,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-serpentine": {
+    src: "media/learning/open3d-serpentine.webp",
+    alt: "A purple segmented snake turns across a blue 3D grid, with a golden pickup and the score display visible.",
+    caption:
+      "Creator-published gameplay: Mid-run on medium difficulty, the snake crosses the grid with walls enabled.",
+    sourceUrl: "https://s-sujan-s.itch.io/serpentine-3d-snake",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1hZ2UvNDM0MDQ4My8yNTkxMDA5OS5wbmc=/original/5efPBi.png",
+    width: 1280,
+    height: 720,
+  },
   "open3d-castle-defender-vr": {
     src: "media/learning/open3d-castle-defender-vr.webp",
     alt: "A first-person bow and arrow aimed over a castle wall toward low-poly knight formations.",
@@ -6952,6 +6965,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     caption:
       "Creator-published gameplay screenshot. Copyright remains with the creator.",
     src: "media/learning/open3d-punchline.webp",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-shuffle-company": {
+    src: "media/learning/open3d-shuffle-company.webp",
+    alt: "A green round character stands in a pink 3D puzzle maze near ladders, a blue switch, and yellow pickups.",
+    caption:
+      "Creator-published gameplay: The Unity prototype’s puzzle view shows ladders, a purple key, and a checkered goal.",
+    sourceUrl:
+      "https://github.com/JMRante/JMRante.github.io/blob/bfb9faf80fb45ae89d12be2baeb244283324e263/projects/shufflecompany.html",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/JMRante/JMRante.github.io/bfb9faf80fb45ae89d12be2baeb244283324e263/projects/images/shufflecompany/source/shufflecompany_source_1.jpg",
     width: 1280,
     height: 720,
   },

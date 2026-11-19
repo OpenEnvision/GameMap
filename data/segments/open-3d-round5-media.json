@@ -19039,6 +19039,41 @@
       "sha256": "2c53e4a8ec835a7acd5472873ebb692722e088c997fe0bff5e8033babd5b6e74"
     },
     {
+      "id": "open3d-serpentine",
+      "title": "Serpentine",
+      "media": {
+        "src": "media/learning/open3d-serpentine.webp",
+        "alt": "A purple segmented snake turns across a blue 3D grid, with a golden pickup and the score display visible.",
+        "caption": "Creator-published gameplay: Mid-run on medium difficulty, the snake crosses the grid with walls enabled.",
+        "sourceUrl": "https://s-sujan-s.itch.io/serpentine-3d-snake",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1hZ2UvNDM0MDQ4My8yNTkxMDA5OS5wbmc=/original/5efPBi.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "14cd416e41232578530a7e0c577bf0abed2ce96753d668a94a61d2d402237617",
+        "sourceFrameSHA256": "6ed99f19ff502ee72e5512a7f275cfc3675cf5fccb871a76a8f7d02dd7edb564",
+        "sourceWidth": 1919,
+        "sourceHeight": 1079,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the full creator gallery original: the growing snake has a visible turn, the yellow pickup is live on the playing field, and score 45, length 14, difficulty and active wall status are present. No title, menu, ending overlay, or montage."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "7f64a50e40495cbf0586b71d7f2dc8f490a9d4b0ec593a049c27d5b8988bd4f3",
+      "bytes": 19514
+    },
+    {
       "id": "open3d-castle-defender-vr",
       "title": "Castle Defender VR",
       "media": {
@@ -20573,6 +20608,42 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 49848,
       "sha256": "c0b986b0f550c42d6e3b6b094f7f78e530dda33a5575f3f9358908214faa55b6"
+    },
+    {
+      "id": "open3d-shuffle-company",
+      "title": "Shuffle Company",
+      "media": {
+        "src": "media/learning/open3d-shuffle-company.webp",
+        "alt": "A green round character stands in a pink 3D puzzle maze near ladders, a blue switch, and yellow pickups.",
+        "caption": "Creator-published gameplay: The Unity prototype’s puzzle view shows ladders, a purple key, and a checkered goal.",
+        "sourceUrl": "https://github.com/JMRante/JMRante.github.io/blob/bfb9faf80fb45ae89d12be2baeb244283324e263/projects/shufflecompany.html",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/JMRante/JMRante.github.io/bfb9faf80fb45ae89d12be2baeb244283324e263/projects/images/shufflecompany/source/shufflecompany_source_1.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "43276e676377389b8a34ed9b7bb64b18158f089970708ed381c74cdafc376a44",
+        "sourceFrameSHA256": "060945275f284d10c890676ca69173ae91042a976b9f86e02222422bd71a5f14",
+        "sourceWidth": 2560,
+        "sourceHeight": 1440,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the full creator-published in-level view of the exact Unity puzzle game: a green player avatar, yellow pickups, blue floor switch, purple key and gate, ladders, checkered goal, and visible collectible and key counters. No title, menu, editor overlay, or montage.",
+        "versionNote": "Published in Joshua Stark's author-controlled portfolio source, whose project text explicitly links the exact JMRante/Shuffle-Company Unity repository. The commit-pinned original matches the visually inspected bytes."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "a361352d302a72d4d68887f4e3d7fc6288cbe1e0ee8600f12bd9688c6b3b0c93",
+      "bytes": 24636
     },
     {
       "id": "open3d-the-village-sacrifice",
@@ -30985,6 +31056,21 @@
           "url": "https://github.com/bridge-mind/sonnet-5-5-zombies-game",
           "checkedAt": "2026-11-18",
           "result": "Recorded source-review outcome: research-incomplete."
+        },
+        {
+          "url": "https://api.github.com/repos/bridge-mind/sonnet-5-5-zombies-game/issues?state=all&per_page=40",
+          "result": "HTTP 200 and empty public issue/PR list.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/bridge-mind",
+          "result": "Official developer profile lists distinct Sonnet and Opus versions sharing the title Dead Signal: Exclusion Zone; no version was substituted. Cached exact Sonnet tree has no tracked gameplay raster/video.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://onhatch.gg/games/8f2a8b2f-cc8a-46a2-9ec4-ca408e7d6244",
+          "result": "A new discovery lead but page explicitly declares BridgeMind did not submit or endorse that community edition, and identifies its image as a title screen. No use or runtime check.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -34813,7 +34899,7 @@
     {
       "id": "open3d-tesseract",
       "status": "research-incomplete",
-      "reason": "No qualifying image verified. Author/source access was limited: Failed to fetch https://tesseract.gg/: (400) Timeout fetching This is not evidence that no screenshot exists.",
+      "reason": "No qualifying image verified. Author/source access was limited: Failed to fetch https://tesseract.gg/: (400) Timeout fetching This is not evidence that no screenshot exists. The exact archived lsalzman FPS source tree contains branding and interface files, not an identified gameplay original. Its one issue attachment mentioning screenshots is a build error. The newly tracked Flathub artwork resolves to a community wiki image, not independently verified developer publication.",
       "checkedSources": [
         {
           "url": "https://tesseract.gg/",
@@ -34829,6 +34915,26 @@
           "url": "https://www.moddb.com/games/tesseract-game/downloads/tesseract-first-edition-windows",
           "checkedAt": "2026-11-19",
           "result": "Exact file metadata names an uploader not verified as the original author; did not adopt the file."
+        },
+        {
+          "url": "https://api.github.com/repos/lsalzman/tesseract/git/trees/HEAD?recursive=1",
+          "result": "Public GitHub connector returned complete 555-entry original first-person shooter source tree. Rasters are logos, interface frames, icons, and textures.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/lsalzman/tesseract/issues/19",
+          "result": "Exact repo screenshot issue documents compilation error, not gameplay.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://flathub.org/en/apps/gg.tesseract.Tesseract",
+          "result": "HTTP 200; exact title featured, but package explicitly identified as community-only and unaffiliated with the author.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/flathub/gg.tesseract.Tesseract/blob/master/gg.tesseract.Tesseract.metainfo.xml",
+          "result": "Distribution metadata identifies its screenshot source as a Libregamewiki upload, not a first-party author asset.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -37684,38 +37790,6 @@
       ]
     },
     {
-      "id": "open3d-serpentine",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No creator-published gameplay screenshot was located in the checked page and available source evidence. Browser capture remains unavailable because the cloud browser WebGL renderer is disabled; this item was not independently rendered or declared broken.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/S-SUJAN-S/serpentine-game/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/S-SUJAN-S/serpentine-game",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/S-SUJAN-S/serpentine-game/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://serpentine-game.netlify.app/",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://api.github.com/repos/S-SUJAN-S/serpentine-game/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-19",
-          "result": "Inspected complete author repository tree (6 items); inventoried 1 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
-        }
-      ]
-    },
-    {
       "id": "open3d-cube-fortress",
       "status": "research-incomplete",
       "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run. Exact repository README explains past playtest and local client and server, not an active deployment or public screenshot. The tracked image paths are named thomas.jpg; no authoritative publication linked them as gameplay. Official Global Game Jam Curitiba 2026 PUCPR organizer listing identifies the exact game, but direct lookup of the expected submission path was denied. No original image URL or pixels were recovered from the official page. No access bypass attempted.",
@@ -37754,38 +37828,6 @@
           "url": "https://globalgamejam.org/games/2026/cube-fortress",
           "result": "Expected title slug returned HTTP 403. Exact individual page link not independently verified.",
           "checkedAt": "2026-11-19"
-        }
-      ]
-    },
-    {
-      "id": "open3d-shuffle-company",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run. The developer’s archived forum announcement was indexed as containing an image, but page access returned 403 and no original URL or gameplay pixels were verified. Source tree image paths are individual textures only.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/JMRante/Shuffle-Company/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://github.com/JMRante/Shuffle-Company",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/JMRante/Shuffle-Company/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://www.pcpuzzle.com/forum/viewtopic.php?p=370101",
-          "checkedAt": "2026-11-19",
-          "result": "HTTP 403. Indexed post describes exact author’s prototype and shows one unverified image reference; no access bypass attempted."
-        },
-        {
-          "url": "https://api.github.com/repos/JMRante/Shuffle-Company/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-19",
-          "result": "HTTP 200, complete 343-entry tree; tracked PNGs are asset textures and icons, not gameplay screenshots."
         }
       ]
     },
@@ -37875,13 +37917,23 @@
           "url": "https://api.github.com/repos/hami9/Arcane-Realm-3D/releases?per_page=6",
           "checkedAt": "2026-11-19",
           "result": "The exact creator v1.0.0 GitHub release explicitly labels its manually uploaded ArcaneRealm.exe a standalone Windows 64-bit game build. Verified name, URL and size in release metadata; no package was downloaded or run."
+        },
+        {
+          "url": "https://api.github.com/repos/hami9/Arcane-Realm-3D/issues?state=all&per_page=40",
+          "result": "HTTP 200; examined both returned public issue/PR bodies. No standalone player screenshot attachment.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://hami9.ir/",
+          "result": "Fresh indexed author-domain review names the exact native Arcane Realm 3D project; the linked portfolio listing remains a repository-style summary, not an independently published gameplay raster. Prior verified Windows build unchanged; nothing downloaded or executed.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
     {
       "id": "open3d-cave9",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The checked official page exposed only a small image that failed the minimum reviewFrame dimensions; the repository page and README response supplied no acceptable replacement. No native program was run. Exact author project page describes a native C/OpenGL/SDL platform, links source on GitHub and a Source and Data ZIP, and embeds external YouTube recordings (rjsrBZPeltA and qH1LwQshU9g). None is a first-party browser build; no package downloaded. Prior small raster did not pass reviewFrame and author page shows no alternative eligible raster/video origin.",
+      "reason": "Research incomplete or access-limited: The checked official page exposed only a small image that failed the minimum reviewFrame dimensions; the repository page and README response supplied no acceptable replacement. No native program was run. Exact author project page describes a native C/OpenGL/SDL platform, links source on GitHub and a Source and Data ZIP, and embeds external YouTube recordings (rjsrBZPeltA and qH1LwQshU9g). None is a first-party browser build; no package downloaded. Prior small raster did not pass reviewFrame and author page shows no alternative eligible raster/video origin. The credited coauthor portfolio has no standalone gameplay image. It embeds two YouTube clips and identifies its only OG PNG as branding. Other discovered screenshots are from magazine or community publishers, not independently verified creator originals.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/bart9h/cave9/HEAD/README.md",
@@ -37912,13 +37964,23 @@
           "url": "https://pseudogames.com/rls/cave9/",
           "checkedAt": "2026-11-19",
           "result": "Exact author project page describes a native C/OpenGL/SDL platform, links source on GitHub and a Source and Data ZIP, and embeds external YouTube recordings (rjsrBZPeltA and qH1LwQshU9g). None is a first-party browser build; no package downloaded. Prior small raster did not pass reviewFrame and author page shows no alternative eligible raster/video origin."
+        },
+        {
+          "url": "https://pseudogames.com/rls/cave9/",
+          "result": "HTTP 200; exact author page names Carlo Caputo and Rodolfo Borges, links exact repo, embeds YouTube videos rjsrBZPeltA and qH1LwQshU9g, and supplies no creator gameplay PNG. The OG image is a site logo by its own alt.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://www.linuxcenter.ru/lf/pdf/108.pdf",
+          "result": "Indexed magazine page identifies same game and an actual gameplay illustration, but is not a creator publication.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
     {
       "id": "open3d-cubosphere",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Project screenshot gallery found on SourceForge, but a.fsdn.com is outside existing allowed image origins.",
+      "reason": "Research incomplete or access-limited: Project screenshot gallery found on SourceForge, but a.fsdn.com is outside existing allowed image origins. The exact maintained code and associated game-data projects contain no named tracked gameplay capture or recording. The official historical news says images were added but does not link a separate original beyond the previously blocked gallery. No unapproved CDN or fan images were substituted.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/cubosphere/cubosphere-code/HEAD/README.md",
@@ -37949,6 +38011,31 @@
           "url": "https://cubosphere.sourceforge.net/",
           "checkedAt": "2026-11-19",
           "result": "Small hosted document did not publish an independently verified frame."
+        },
+        {
+          "url": "https://api.github.com/repos/cubosphere/cubosphere-code/git/trees/HEAD?recursive=1",
+          "result": "Public GitHub connector returned full 112-entry tree, no named capture or video.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/cubosphere/cubosphere-data/git/trees/HEAD?recursive=1",
+          "result": "Public GitHub connector returned full 2,993-entry official data tree. No named capture/video; large assets examined in listing are skybox images.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/cubosphere/cubosphere-code/wiki/Basics",
+          "result": "Official wiki contains editor instructions, no embedded gameplay image.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/cubosphere/cubosphere-code/issues",
+          "result": "Exact issue-text search finds screenshot template prompts, not published originals; no user-attachments issue text.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://sourceforge.net/p/cubosphere/news/2010/08/two-indev-screenshots/",
+          "result": "Project news confirms historic developer screenshots but supplies no independent original URL.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
