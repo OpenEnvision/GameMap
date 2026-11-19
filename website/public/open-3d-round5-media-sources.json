@@ -8701,6 +8701,41 @@
       "bytes": 23468
     },
     {
+      "id": "open3d-trigger-rally-online-edition",
+      "title": "Trigger Rally Online Edition",
+      "media": {
+        "src": "media/learning/open3d-trigger-rally-online-edition.webp",
+        "alt": "Trigger Rally Online Edition third-person driving view, with a rally car at the start of a desert route and a race timer.",
+        "caption": "Creator-published Trigger Rally Online Edition gameplay screenshot showing the rendered driving view at the start of a run. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/CodeArtemis/TriggerRally/blob/079ac53216b74598b652ce3bf11478beb5c6832b/server/public/images/screen1.jpg",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/CodeArtemis/TriggerRally/079ac53216b74598b652ce3bf11478beb5c6832b/server/public/images/screen1.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "5756f34308926f818d13d04f8ad282bc8c3d3ba3dbf16991ce1e1ee96f420f1c",
+        "sourceFrameSHA256": "6a2aea0b016c53ac27fa2ce0cd17d5f6c84eb58d87662023dd8542c51df85b18",
+        "sourceWidth": 600,
+        "sourceHeight": 419,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the exact 600×419 JPEG. The normal third-person race camera is behind a rally car, looking toward a glowing checkpoint through trees and desert cliffs. The 0:00.00 race timer is visible before the run, with no title, button menu, promotional text or comparison panel. The publisher’s exact online edition repository tracks this original as server/public/images/screen1.jpg. The original matches the pinned Git blob; the unchanged reviewFrame and origin check passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "6bbf24a3c2a5f8def0038fca4f45a1db746ed0b72e7284a25135edb157c77ec5",
+      "bytes": 86860
+    },
+    {
       "id": "open3d-invaders",
       "title": "_INVADERS",
       "media": {
@@ -30658,6 +30693,11 @@
           "url": "https://api.github.com/repos/jerryshell/agarust/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (114 entries; Git object b41722b8dd7758dc162347e9cde40cc3298293dd) contains 2 tracked raster/video paths in the scanned formats. This inventory is not a pixel review. Listed candidates: client/assets/blob.png, client/assets/icon.png."
+        },
+        {
+          "url": "https://api.github.com/repos/jerryshell/agarust/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (114 items); inventoried 2 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -30817,6 +30857,11 @@
           "url": "https://api.github.com/repos/AinaVT/CritterCatchers-LD/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (294 entries; Git object bb3e7dab0e52833d462f5b8812b548ab1911e9f5) contains 11 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/AinaVT/CritterCatchers-LD/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (294 items); inventoried 11 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -30894,6 +30939,11 @@
           "url": "https://api.github.com/repos/ClarkThyLord/Wild-Fishing/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (418 entries; Git object 185250d8914e802925136d63b5ccabf67b5ac439) contains 156 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/ClarkThyLord/Wild-Fishing/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (418 items); inventoried 156 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -32717,6 +32767,11 @@
           "url": "https://webgl-games.github.io/arcade-3d/",
           "checkedAt": "2026-11-18",
           "result": "Public page text retrieved and inspected for publication evidence; actual gameplay rendering was not verified by this text retrieval."
+        },
+        {
+          "url": "https://api.github.com/repos/webgl-games/arcade-3d/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (104 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -32764,13 +32819,18 @@
           "url": "https://api.github.com/repos/addable-labs/ashlands/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (310 entries; Git object 126437d6bb4ce95e28ea15f06056f71dec06808f) contains 0 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/addable-labs/ashlands/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (310 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
     {
       "id": "open3d-bridge-horror-house",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. The author README describes randomized key hunts and a Three.js/WebGL2 source game with procedurally painted textures/audio, not a published capture. The source was not executed.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/bridge-mind/bridge-horror-house/HEAD/README.md",
@@ -32806,6 +32866,16 @@
           "url": "https://api.github.com/repos/bridge-mind/bridge-horror-house/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (21 entries; Git object c63aa7ca07109ac73736917db15543d363549400) contains 0 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/bridge-mind/bridge-horror-house/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (21 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/bridge-mind/bridge-horror-house/HEAD/README.md",
+          "result": "The author README describes randomized key hunts and a Three.js/WebGL2 source game with procedurally painted textures/audio, not a published capture. The source was not executed.",
+          "checkedAt": "2026-11-20"
         }
       ]
     },
@@ -32853,6 +32923,11 @@
           "url": "https://atiqur-rahman-pro.github.io/claude-bandicoot/",
           "checkedAt": "2026-11-18",
           "result": "Public page text retrieved and inspected for publication evidence; actual gameplay rendering was not verified by this text retrieval."
+        },
+        {
+          "url": "https://api.github.com/repos/atiqur-rahman-pro/claude-bandicoot/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (15 items); inventoried 8 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -32890,6 +32965,11 @@
           "url": "https://github.com/webgl-games/flight-sim/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/webgl-games/flight-sim/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (45 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -32927,13 +33007,18 @@
           "url": "https://github.com/Arz472/House-arkanum/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/Arz472/House-arkanum/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (243 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
     {
       "id": "open3d-leonida",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Inspected full scene PNGs for downtown, causeway, Ocean Drive and foundation phase 1. Downtown tracking log proves a browser boot capture after scripted teleport/camera placement with a limited systems set only; not a confirmed active gameplay interaction or progression. No capture imported.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/bridge-mind/leonida/HEAD/README.md",
@@ -32974,13 +33059,23 @@
           "url": "https://bridge-mind.github.io/leonida/",
           "checkedAt": "2026-11-18",
           "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
+        },
+        {
+          "url": "https://api.github.com/repos/bridge-mind/leonida/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (407 items); inventoried 6 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://github.com/bridge-mind/leonida/blob/main/docs/screenshots/view-downtown.log",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected full scene PNGs for downtown, causeway, Ocean Drive and foundation phase 1. Downtown tracking log proves a browser boot capture after scripted teleport/camera placement with a limited systems set only; not a confirmed active gameplay interaction or progression. No capture imported."
         }
       ]
     },
     {
       "id": "open3d-liminal",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. The complete author README links the exact Vercel deployment; no download is provided there. A static fetch error is not browser gameplay evidence. The author's README links the exact public Vercel site and describes a pure static bundle with no server, account or API calls. Deployed game initializes this.renderer=new tf({canvas:this.canvas,antialias:!t,powerPreference:\"high-performance\"}); Three's export table identifies tf as WebGLRenderer. Canvas2D creates procedural texture tiles, not the scene renderer. No meaningful live gameplay capture in the existing no-WebGL cloud.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/Onandthegr8/liminal/HEAD/README.md",
@@ -33026,6 +33121,26 @@
           "url": "https://api.github.com/repos/Onandthegr8/liminal/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (34 entries; Git object 5c26e6419a21d1ff7026df8c7ca98010fc5edcf5) contains 0 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/Onandthegr8/liminal/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (34 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/Onandthegr8/liminal/HEAD/README.md",
+          "result": "The complete author README links the exact Vercel deployment; no download is provided there. A static fetch error is not browser gameplay evidence.",
+          "checkedAt": "2026-11-20"
+        },
+        {
+          "url": "https://liminal-tau.vercel.app/",
+          "checkedAt": "2026-11-19",
+          "result": "The author's README links the exact public Vercel site and describes a pure static bundle with no server, account or API calls. Deployed game initializes this.renderer=new tf({canvas:this.canvas,antialias:!t,powerPreference:\"high-performance\"}); Three's export table identifies tf as WebGLRenderer. Canvas2D creates procedural texture tiles, not the scene renderer. No meaningful live gameplay capture in the existing no-WebGL cloud."
+        },
+        {
+          "url": "https://liminal-tau.vercel.app/assets/index-D3YI3sN3.js",
+          "checkedAt": "2026-11-19",
+          "result": "Read the deployed renderer entry; Three.js WebGL scene rendering is required. No live gameplay render or CPU fallback verified."
         }
       ]
     },
@@ -33063,6 +33178,11 @@
           "url": "https://github.com/duysqubix/web-arcade/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/duysqubix/web-arcade/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (10 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -33100,53 +33220,11 @@
           "url": "https://github.com/Casmo/tower-defense/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-trigger-rally-online-edition",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/CodeArtemis/TriggerRally/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
         },
         {
-          "url": "https://github.com/CodeArtemis/TriggerRally",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/CodeArtemis/TriggerRally/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/CodeArtemis/TriggerRally/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/CodeArtemis/TriggerRally",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/CodeArtemis/TriggerRally/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://triggerrally.com/",
-          "checkedAt": "2026-11-18",
-          "result": "Public retrieval failed: getaddrinfo EAI_AGAIN triggerrally.com"
-        },
-        {
-          "url": "https://triggerrally.com/",
-          "checkedAt": "2026-11-18",
-          "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
+          "url": "https://api.github.com/repos/Casmo/tower-defense/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (94 items); inventoried 28 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -33184,13 +33262,18 @@
           "url": "https://github.com/viljami/404race-js13k/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/viljami/404race-js13k/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (24 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
     {
       "id": "open3d-minipunk",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Competition exact developer submission points its displayed original at separate play.js13kgames.com origin. No qualified author raster from this path.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Competition exact developer submission points its displayed original at separate play.js13kgames.com origin. No qualified author raster from this path. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Competition exact developer submission points its displayed original at separate play.js13kgames.com origin. No qualified author raster from this path. Viewed original big-screenshot.png and small-screenshot.png. Both include overlaid MINIPUNK title; not eligible as gameplay despite visible character. External gameplay GIF publication handled separately.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/codyebberson/js13k-minipunk/HEAD/README.md",
@@ -33241,6 +33324,16 @@
           "url": "https://api.github.com/repos/codyebberson/js13k-minipunk/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (42 entries; Git object 6b486f8e3aea8343c5cbbbed90a1fdc033290f00) contains 2 tracked raster/video paths in the scanned formats. This inventory is not a pixel review. Listed candidates: big-screenshot.png, small-screenshot.png."
+        },
+        {
+          "url": "https://api.github.com/repos/codyebberson/js13k-minipunk/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (42 items); inventoried 2 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://github.com/codyebberson/js13k-minipunk",
+          "checkedAt": "2026-11-19",
+          "result": "Viewed original big-screenshot.png and small-screenshot.png. Both include overlaid MINIPUNK title; not eligible as gameplay despite visible character. External gameplay GIF publication handled separately."
         }
       ]
     },
@@ -33278,6 +33371,11 @@
           "url": "https://github.com/js13kGames/ScriptFox13k/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/js13kGames/ScriptFox13k/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (76 items); inventoried 2 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -33382,13 +33480,23 @@
           "url": "https://api.github.com/repos/cnharlan/GD_BlueMist/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (236 entries; Git object af526dc2261fc465a78f7d299e561ab4f486ce65) contains 17 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/cnharlan/GD_BlueMist/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (236 items); inventoried 17 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://github.com/cnharlan/GD_BlueMist/releases",
+          "checkedAt": "2026-11-19",
+          "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
         }
       ]
     },
     {
       "id": "open3d-kilvault",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Author README refers to local executable files stored in a source-tree folder called releases, not verified authored GitHub Releases assets under the required path. Search for exact Kagerowo developer blog yielded no independently identified official post with a full frame.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Author README refers to local executable files stored in a source-tree folder called releases, not verified authored GitHub Releases assets under the required path. Search for exact Kagerowo developer blog yielded no independently identified official post with a full frame. The exact author README points to development logs on Kagerowo’s own blog, but the blog could not be retrieved in the public lookup and no matching logged gameplay original was established. Files in the source tree were not treated as formal releases or executed.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/GravityI/kilvault/HEAD/README.md",
@@ -33434,6 +33542,21 @@
           "url": "https://api.github.com/repos/GravityI/kilvault/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (130 entries; Git object 187f2db740cb7227e6a287ebf9a8de111986f1fa) contains 67 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://kagerowo.wordpress.com/",
+          "checkedAt": "2026-11-19",
+          "result": "The exact author blog linked from the Kilvault README was inaccessible through public lookup; targeted site search returned no matching Kilvault publication."
+        },
+        {
+          "url": "https://api.github.com/repos/GravityI/kilvault/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (130 items); inventoried 67 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://github.com/GravityI/kilvault/releases",
+          "checkedAt": "2026-11-19",
+          "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
         }
       ]
     },
@@ -33476,6 +33599,16 @@
           "url": "https://api.github.com/repos/GuaraProductions/Panik/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (1171 entries; Git object 3552c66b3f640c299f72cfd2707b8894de180384) contains 190 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/GuaraProductions/Panik/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (1171 items); inventoried 190 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://github.com/GuaraProductions/Panik/releases",
+          "checkedAt": "2026-11-19",
+          "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
         }
       ]
     },
@@ -33518,6 +33651,16 @@
           "url": "https://api.github.com/repos/pashudzu/UnderTheCoverOfNight/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (1080 entries; Git object 83466e9d8fd96ab083d5898ab84db3aca77d0e90) contains 203 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/pashudzu/UnderTheCoverOfNight/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (1080 items); inventoried 203 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://github.com/pashudzu/UnderTheCoverOfNight/releases",
+          "checkedAt": "2026-11-19",
+          "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
         }
       ]
     },
@@ -33565,6 +33708,11 @@
           "url": "https://api.github.com/repos/VargasCardona/AnalogVHS/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (793 entries; Git object 0b11b8ad39ae9da3726f3fa74847b26f98c40431) contains 133 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/VargasCardona/AnalogVHS/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (793 items); inventoried 133 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -33607,6 +33755,16 @@
           "url": "https://api.github.com/repos/Amna-Hassan04/Cat-Sanctuary/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (5725 entries; Git object 76bd496cebc68b81357467b68d03cedb96de5c57) contains 166 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/Amna-Hassan04/Cat-Sanctuary/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (5725 items); inventoried 166 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://github.com/Amna-Hassan04/Cat-Sanctuary/releases",
+          "checkedAt": "2026-11-19",
+          "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
         }
       ]
     },
@@ -33748,6 +33906,11 @@
           "url": "https://www.beyondallreason.info/screenshots",
           "checkedAt": "2026-11-19",
           "result": "Official gallery renders full attachments on cdn.prod.website-files.com; imageOriginAllowed rejects that cross-origin host."
+        },
+        {
+          "url": "https://api.github.com/repos/beyond-all-reason/Beyond-All-Reason/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (19290 items); inventoried 7191 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -33985,6 +34148,11 @@
           "url": "https://www.smokin-guns.org/downloads",
           "checkedAt": "2026-11-19",
           "result": "Official native Windows EXE and Debian DEB labels and checksums verified. Project screenshot gallery delegates images to an old forum subdomain that fails cloud HTTPS and is cross-origin. Homepage image examples are map panoramas, not independently established active play."
+        },
+        {
+          "url": "https://api.github.com/repos/smokin-guns/SmokinGuns/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (1257 items); inventoried 11 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34054,6 +34222,11 @@
           "url": "https://sourceforge.net/projects/ufoai/",
           "checkedAt": "2026-11-19",
           "result": "Official project gallery labels image previews but hosts originals on a.fsdn.com, disallowed for this source page."
+        },
+        {
+          "url": "https://api.github.com/repos/ufoaiorg/ufoai/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (11288 items); inventoried 5264 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34101,6 +34274,11 @@
           "url": "https://vegastrike.sourceforge.net/getfiles/",
           "checkedAt": "2026-11-19",
           "result": "Original official install page and exact SourceForge release list legacy standalone Windows native game package. Newer engine-only and data-only packages not recorded as whole game; official legacy same-origin gallery images 404 and original forum gallery redirects away."
+        },
+        {
+          "url": "https://api.github.com/repos/vegastrike/Vega-Strike-Engine-Source/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (1372 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34195,13 +34373,18 @@
           "url": "https://bridge-mind.github.io/apex-formula/",
           "checkedAt": "2026-11-19",
           "result": "The creator-linked build opened as a black page; Three.js failed to create a WebGL context in the cloud sandbox. No gameplay was rendered."
+        },
+        {
+          "url": "https://api.github.com/repos/bridge-mind/apex-formula/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (169 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
     {
       "id": "open3d-apophenoth",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. The author README links the exact Pages build and describes a single-file, no-account 3D browser game. Its documented renderer is Three.js; the README was not run. The original README explicitly names this public route and says no account is needed. Exact route returns GitHub Pages Site not found (404). README documents Three.js r128 driving the full 3D scene, not a CPU fallback. Cached author file inventory exposes only index.html among web/renderable/media paths; no publisher raster/video candidate established.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/IzzoSol/Apophenoth/HEAD/README.md",
@@ -34242,6 +34425,21 @@
           "url": "https://api.github.com/repos/IzzoSol/Apophenoth/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (4 entries; Git object 7cd904f7e3e76438fa59104ea5ca571d51233a9b) contains 0 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/IzzoSol/Apophenoth/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (4 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IzzoSol/Apophenoth/HEAD/README.md",
+          "result": "The author README links the exact Pages build and describes a single-file, no-account 3D browser game. Its documented renderer is Three.js; the README was not run.",
+          "checkedAt": "2026-11-20"
+        },
+        {
+          "url": "https://izzoizzoizzo.github.io/Apophenoth/",
+          "checkedAt": "2026-11-19",
+          "result": "The original README explicitly names this public route and says no account is needed. Exact route returns GitHub Pages Site not found (404). README documents Three.js r128 driving the full 3D scene, not a CPU fallback. Cached author file inventory exposes only index.html among web/renderable/media paths; no publisher raster/video candidate established."
         }
       ]
     },
@@ -34279,6 +34477,11 @@
           "url": "https://github.com/3MROBOT/combat-arena-fps/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/3MROBOT/combat-arena-fps/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (32 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34316,6 +34519,11 @@
           "url": "https://github.com/JohnBPowers/3D-Game-Practice/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/JohnBPowers/3D-Game-Practice/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (16 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34353,6 +34561,11 @@
           "url": "https://github.com/adityamittl/DarkRoom/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/adityamittl/DarkRoom/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (56 items); inventoried 13 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34390,6 +34603,11 @@
           "url": "https://github.com/bridge-mind/claude-opus-5.5-zombies-game/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/bridge-mind/claude-opus-5.5-zombies-game/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (60 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34427,6 +34645,11 @@
           "url": "https://github.com/developerrutu/superposition-backrooms/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/developerrutu/superposition-backrooms/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (19 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34464,6 +34687,11 @@
           "url": "https://github.com/Ismael-Brito/gas-station-Three-JS/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/Ismael-Brito/gas-station-Three-JS/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (611 items); inventoried 153 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34501,6 +34729,11 @@
           "url": "https://github.com/Peter0923/VoxelLab/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/Peter0923/VoxelLab/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (65 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34543,6 +34776,11 @@
           "url": "https://github.com/TriForMine/Delixia/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/TriForMine/Delixia/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (632 items); inventoried 288 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34595,6 +34833,11 @@
           "url": "https://remarkablegames.org/endless-runner/",
           "checkedAt": "2026-11-19",
           "result": "The creator-linked build reached its loading spinner, but Babylon reported WebGL not supported in the cloud sandbox and no gameplay was rendered."
+        },
+        {
+          "url": "https://api.github.com/repos/remarkablegames/endless-runner/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (154 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34632,6 +34875,11 @@
           "url": "https://github.com/Hatscat/Insane_Behaviors_Tournament/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/Hatscat/Insane_Behaviors_Tournament/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (1159 items); inventoried 122 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34669,13 +34917,18 @@
           "url": "https://github.com/justhashim/shadows-of-abandoned/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/justhashim/shadows-of-abandoned/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (44 items); inventoried 5 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
     {
       "id": "open3d-survival-game-cptnope",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Viewed exact original social raster. Large The Wilds title overlays a posed character and campfire; cover art, not active gameplay.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/CptNope/survival-game/HEAD/README.md",
@@ -34706,6 +34959,16 @@
           "url": "https://github.com/CptNope/survival-game/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/CptNope/Survival-Game/main/icons/the-wilds-social.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Viewed exact original social raster. Large The Wilds title overlays a posed character and campfire; cover art, not active gameplay."
+        },
+        {
+          "url": "https://api.github.com/repos/CptNope/survival-game/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (98 items); inventoried 3 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34768,6 +35031,11 @@
           "url": "https://www.youtube.com/watch?v=eyUL-50_UcI",
           "checkedAt": "2026-11-19",
           "result": "Author newer orbital-mechanics update is a different unreleased development build. Embedded YouTube playback is not a durable exact image URL satisfying current origin rules; existing official install links unchanged."
+        },
+        {
+          "url": "https://api.github.com/repos/Sushutt/Gnome-Space-Program/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (689 items); inventoried 61 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34825,6 +35093,11 @@
           "url": "https://alexpyslar.itch.io/voidquest",
           "checkedAt": "2026-11-19",
           "result": "Existing desktop links preserved; cached page has standalone skull logo only. Author devlog text describes fixes and shows no independently verified gameplay frame."
+        },
+        {
+          "url": "https://api.github.com/repos/alex-pyslar/VoidQuest/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (200 items); inventoried 17 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34882,6 +35155,11 @@
           "url": "https://ldjam.com/events/ludum-dare/50/quota-qrunch",
           "checkedAt": "2026-11-19",
           "result": "Official jam page relies on JavaScript; no accepted creator raster identified by public text retrieval."
+        },
+        {
+          "url": "https://api.github.com/repos/bowlmonkeylabs/LudumDare50/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (952 items); inventoried 63 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34934,6 +35212,11 @@
           "url": "https://lunakittyyy.itch.io/velocity",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://api.github.com/repos/BrokenSt0ne/Velocity/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (2820 items); inventoried 416 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -34971,6 +35254,11 @@
           "url": "https://github.com/tcdude/pyweek28/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/tcdude/pyweek28/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (45 items); inventoried 7 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -35013,6 +35301,11 @@
           "url": "https://github.com/omn14/pyweek39/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/omn14/pyweek39/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (27 items); inventoried 4 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -35055,6 +35348,11 @@
           "url": "https://github.com/avaraline/Avara/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/avaraline/Avara/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (4567 items); inventoried 26 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -35158,6 +35456,11 @@
           "url": "https://api.github.com/repos/sgothel/gltron/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (651 entries; Git object ef52798c1a0e2bfb6266421fb6bebeb419236700) contains 85 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/sgothel/gltron/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (651 items); inventoried 85 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -35281,6 +35584,11 @@
           "url": "https://github.com/CiscoPonce/3d-platformer-game/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/CiscoPonce/3d-platformer-game/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (126 items); inventoried 12 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -35318,6 +35626,16 @@
           "url": "https://github.com/js13kGames/death-and-taxes/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/js13kGames/death-and-taxes/master/screenshot-400x250.png",
+          "checkedAt": "2026-11-19",
+          "result": "Viewed exact linked 400×250 original. A grid, 3D scene objects and editor axes are visible; no playable gameplay demonstrated."
+        },
+        {
+          "url": "https://api.github.com/repos/js13kGames/death-and-taxes/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (39 items); inventoried 4 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -35360,6 +35678,11 @@
           "url": "https://github.com/rheeeuro/g-escape/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/rheeeuro/g-escape/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (154 items); inventoried 58 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -35768,6 +36091,11 @@
           "url": "https://heyvr.io/arcade/games/voyager-simulator",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://api.github.com/repos/PillCrew/voyager-simulator/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (103 items); inventoried 29 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -35815,6 +36143,16 @@
           "url": "https://globalgamejam.org/games/2026/gesichtsunfall-4",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 403; this is a retrieval outcome, not proof that the game or release is absent."
+        },
+        {
+          "url": "https://github.com/matzebond/gesichtsunfall/releases",
+          "checkedAt": "2026-11-19",
+          "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
+        },
+        {
+          "url": "https://api.github.com/repos/matzebond/gesichtsunfall/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (626 items); inventoried 11 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -35867,6 +36205,11 @@
           "url": "https://konstantinet.itch.io/riftbreakers",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://api.github.com/repos/KonstantinKolo/RiftBreakers/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (2331 items); inventoried 484 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -35924,6 +36267,11 @@
           "url": "https://itch.io/jam/cpp-halloween-horror-jam-2022/rate/1749527",
           "checkedAt": "2026-11-19",
           "result": "Jam page corroborates author identity and game publication, not an independent original gameplay image. Existing desktop download left in place."
+        },
+        {
+          "url": "https://api.github.com/repos/whattheheckman/cppHalloweenJam/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (93 items); inventoried 2 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -35981,6 +36329,11 @@
           "url": "https://api.github.com/repos/germanalen/Stop-The-Cheese-Monster/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (56 entries; Git object 6a119639d253746b2ef08616f9735c5fda056b65) contains 3 tracked raster/video paths in the scanned formats. This inventory is not a pixel review. Listed candidates: gui/virgo.sv.png, icon.png, scenes/sky.png."
+        },
+        {
+          "url": "https://api.github.com/repos/germanalen/Stop-The-Cheese-Monster/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (56 items); inventoried 3 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -36018,13 +36371,18 @@
           "url": "https://api.github.com/repos/igaryhe/Vane/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (438 entries; Git object 8c35a722a1363f27228c729db9be83c98bf23703) contains 50 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/igaryhe/Vane/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (438 items); inventoried 50 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
     {
       "id": "open3d-bones-collector",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The author gallery candidate is a character-parts promotional collage, not a game scene.",
+      "reason": "Research incomplete or access-limited: The author gallery candidate is a character-parts promotional collage, not a game scene. Research incomplete or access-limited: The author gallery candidate is a character-parts promotional collage, not a game scene. Viewed exact root bone-collector2.png. A logo and skeleton build-up illustration with arrows, not gameplay.",
       "checkedSources": [
         {
           "url": "https://drusyc123.itch.io/bone-collector",
@@ -36055,13 +36413,23 @@
           "url": "https://api.github.com/repos/thmsgntz/bone-collector/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (92 entries; Git object cb3938e43a85cb0bd2169025d41431be2e60969c) contains 18 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/thmsgntz/bone-collector/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (92 items); inventoried 18 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://github.com/thmsgntz/bone-collector",
+          "checkedAt": "2026-11-19",
+          "result": "Viewed exact root bone-collector2.png. A logo and skeleton build-up illustration with arrows, not gameplay."
         }
       ]
     },
     {
       "id": "open3d-fastest-pizza-delivery",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The reviewed animated candidate shows only a pizza truck scene; active gameplay versus promotional model animation could not be established.",
+      "reason": "Research incomplete or access-limited: The reviewed animated candidate shows only a pizza truck scene; active gameplay versus promotional model animation could not be established. Research incomplete or access-limited: The reviewed animated candidate shows only a pizza truck scene; active gameplay versus promotional model animation could not be established. Reviewed exact author README-linked 69-frame branding/demo.gif and sampled throughout. Fixed framing of pizza truck on a scrolling road with one approaching car, no explicit player interaction, deliveries or status feedback to distinguish gameplay from prototype animation; not imported. The author README identifies branding/demo.gif under Demo and links the author itch.io release. The GIF was visually reviewed separately; the repository inventory shows its other rasters are under model texture paths.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/ufrshubham/FastestPizzaDelivery/HEAD/README.md",
@@ -36097,6 +36465,26 @@
           "url": "https://api.github.com/repos/ufrshubham/FastestPizzaDelivery/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-20",
           "result": "The untruncated exact author repository tree (85 entries; Git object a94edde1a16d6a3de4a9a98095344594cff7bca6) contains 14 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
+        },
+        {
+          "url": "https://api.github.com/repos/ufrshubham/FastestPizzaDelivery/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (85 items); inventoried 14 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://github.com/ufrshubham/FastestPizzaDelivery/releases",
+          "checkedAt": "2026-11-19",
+          "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
+        },
+        {
+          "url": "https://github.com/ufrshubham/FastestPizzaDelivery",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed exact author README-linked 69-frame branding/demo.gif and sampled throughout. Fixed framing of pizza truck on a scrolling road with one approaching car, no explicit player interaction, deliveries or status feedback to distinguish gameplay from prototype animation; not imported."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/ufrshubham/FastestPizzaDelivery/HEAD/README.md",
+          "result": "The author README identifies branding/demo.gif under Demo and links the author itch.io release. The GIF was visually reviewed separately; the repository inventory shows its other rasters are under model texture paths.",
+          "checkedAt": "2026-11-20"
         }
       ]
     },
@@ -36271,13 +36659,18 @@
           "url": "https://github.com/ironbane/ironbane/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://api.github.com/repos/ironbane/ironbane/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (1004 items); inventoried 470 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
     {
       "id": "open3d-jelly-colosseum",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No creator-published gameplay screenshot was located in the checked page and available source evidence. Browser capture remains unavailable because the cloud browser WebGL renderer is disabled; this item was not independently rendered or declared broken.",
+      "reason": "Research incomplete or access-limited: No creator-published gameplay screenshot was located in the checked page and available source evidence. Browser capture remains unavailable because the cloud browser WebGL renderer is disabled; this item was not independently rendered or declared broken. Exact README links this author Pages deployment and describes no login or external game service. Actual live render.js line 10 creates new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'high-performance',preserveDrawingBuffer:false}). Low quality only changes pixel ratio, shadows and transmission; render() still uses that renderer. Exact HTML handles failure by telling users to enable hardware acceleration. No CPU fallback or creator screenshot was verified.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/SamG-Coder/Jelly-Colosseum/HEAD/README.md",
@@ -36298,6 +36691,21 @@
           "url": "https://samg-coder.github.io/Jelly-Colosseum/",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://api.github.com/repos/SamG-Coder/Jelly-Colosseum/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (48 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://samg-coder.github.io/Jelly-Colosseum/",
+          "checkedAt": "2026-11-19",
+          "result": "Exact README links this author Pages deployment and describes no login or external game service. Actual live render.js line 10 creates new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'high-performance',preserveDrawingBuffer:false}). Low quality only changes pixel ratio, shadows and transmission; render() still uses that renderer. Exact HTML handles failure by telling users to enable hardware acceleration. No CPU fallback or creator screenshot was verified."
+        },
+        {
+          "url": "https://samg-coder.github.io/Jelly-Colosseum/src/render.js",
+          "checkedAt": "2026-11-19",
+          "result": "Read the deployed renderer entry; Three.js WebGL scene rendering is required. No live gameplay render or CPU fallback verified."
         }
       ]
     },
@@ -36325,6 +36733,11 @@
           "url": "https://serpentine-game.netlify.app/",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://api.github.com/repos/S-SUJAN-S/serpentine-game/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (6 items); inventoried 1 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -36559,7 +36972,7 @@
     {
       "id": "open3d-arcane-realm-3d",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run.",
+      "reason": "Research incomplete or access-limited: No gameplay screenshot was present in the checked source repository page, README response and release listing. Badges or source files are not gameplay evidence; no native program was run. The developer’s first-party site lists the exact project as a native C++ and Raylib game. The reviewed profile and homepage list descriptions and GitHub source, not a gameplay still. The independently verified Windows release is retained; no package downloaded or run.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/hami9/Arcane-Realm-3D/HEAD/README.md",
@@ -36575,6 +36988,26 @@
           "url": "https://github.com/hami9/Arcane-Realm-3D/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://hami9.ir/en/about/",
+          "checkedAt": "2026-11-19",
+          "result": "Read the exact developer’s project section: Arcane-Realm-3D is described as a native C++17 and Raylib game; no gameplay still is published in that section."
+        },
+        {
+          "url": "https://hami9.ir/en/",
+          "checkedAt": "2026-11-19",
+          "result": "The developer’s GitHub project index lists the exact title and repository with text but no associated gameplay still."
+        },
+        {
+          "url": "https://api.github.com/repos/hami9/Arcane-Realm-3D/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (60 items); inventoried 0 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://api.github.com/repos/hami9/Arcane-Realm-3D/releases?per_page=6",
+          "checkedAt": "2026-11-19",
+          "result": "The exact creator v1.0.0 GitHub release explicitly labels its manually uploaded ArcaneRealm.exe a standalone Windows 64-bit game build. Verified name, URL and size in release metadata; no package was downloaded or run."
         }
       ]
     },
@@ -36602,6 +37035,11 @@
           "url": "https://pseudogames.com/rls/cave9/",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://github.com/bart9h/cave9/releases",
+          "checkedAt": "2026-11-19",
+          "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
         }
       ]
     },
@@ -36841,6 +37279,11 @@
           "url": "https://github.com/OMG-Guest/Halo-Mobile/releases/expanded_assets/build-1",
           "checkedAt": "2026-11-19",
           "result": "Official purpose-built Android, Linux, and Windows native binaries verified through the author’s release metadata; no native software downloaded or run."
+        },
+        {
+          "url": "https://api.github.com/repos/OMG-Guest/Halo-Mobile/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-19",
+          "result": "Inspected complete author repository tree (7605 items); inventoried 11 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
         }
       ]
     },
@@ -66780,7 +67223,7 @@
       {
         "id": "open3d-liminal",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. The author's README links the exact public Vercel site and describes a pure static bundle with no server, account or API calls. Deployed game initializes this.renderer=new tf({canvas:this.canvas,antialias:!t,powerPreference:\"high-performance\"}); Three's export table identifies tf as WebGLRenderer. Canvas2D creates procedural texture tiles, not the scene renderer. No meaningful live gameplay capture in the existing no-WebGL cloud.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/Onandthegr8/liminal/HEAD/README.md",
@@ -66821,6 +67264,16 @@
             "url": "https://liminal-tau.vercel.app/",
             "checkedAt": "2026-11-18",
             "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
+          },
+          {
+            "url": "https://liminal-tau.vercel.app/",
+            "checkedAt": "2026-11-19",
+            "result": "The author's README links the exact public Vercel site and describes a pure static bundle with no server, account or API calls. Deployed game initializes this.renderer=new tf({canvas:this.canvas,antialias:!t,powerPreference:\"high-performance\"}); Three's export table identifies tf as WebGLRenderer. Canvas2D creates procedural texture tiles, not the scene renderer. No meaningful live gameplay capture in the existing no-WebGL cloud."
+          },
+          {
+            "url": "https://liminal-tau.vercel.app/assets/index-D3YI3sN3.js",
+            "checkedAt": "2026-11-19",
+            "result": "Read the deployed renderer entry; Three.js WebGL scene rendering is required. No live gameplay render or CPU fallback verified."
           }
         ]
       },
@@ -67655,7 +68108,7 @@
       {
         "id": "open3d-in-the-blue-mist",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Author original repository describes the game and local Godot source. No first-party independent publisher page, original gameplay raster or native binary was established in the current search.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Author original repository describes the game and local Godot source. No first-party independent publisher page, original gameplay raster or native binary was established in the current search. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Author original repository describes the game and local Godot source. No first-party independent publisher page, original gameplay raster or native binary was established in the current search. Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/cnharlan/GD_BlueMist/HEAD/README.md",
@@ -67696,6 +68149,11 @@
             "url": "https://raw.githubusercontent.com/cnharlan/GD_BlueMist/HEAD/README.md",
             "checkedAt": "2026-11-20",
             "result": "The complete creator README only identifies the public Godot repository and describes the PSX-style survival horror game. It links no media, public playable build or distribution."
+          },
+          {
+            "url": "https://github.com/cnharlan/GD_BlueMist/releases",
+            "checkedAt": "2026-11-19",
+            "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
           }
         ]
       },
@@ -67739,7 +68197,7 @@
       {
         "id": "open3d-kilvault",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Author README refers to local executable files stored in a source-tree folder called releases, not verified authored GitHub Releases assets under the required path. Search for exact Kagerowo developer blog yielded no independently identified official post with a full frame.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Author README refers to local executable files stored in a source-tree folder called releases, not verified authored GitHub Releases assets under the required path. Search for exact Kagerowo developer blog yielded no independently identified official post with a full frame. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Author README refers to local executable files stored in a source-tree folder called releases, not verified authored GitHub Releases assets under the required path. Search for exact Kagerowo developer blog yielded no independently identified official post with a full frame. Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/GravityI/kilvault/HEAD/README.md",
@@ -67780,6 +68238,11 @@
             "url": "https://raw.githubusercontent.com/GravityI/kilvault/HEAD/README.md",
             "checkedAt": "2026-11-20",
             "result": "The complete creator README distinguishes a source-tree releases folder from a GitHub Releases publication, names local native executables, and explicitly links the creator’s Kagerowo WordPress devlogs and the project Trello. These public links were read, not followed in this offline reconciliation."
+          },
+          {
+            "url": "https://github.com/GravityI/kilvault/releases",
+            "checkedAt": "2026-11-19",
+            "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
           }
         ]
       },
@@ -67860,7 +68323,7 @@
       {
         "id": "open3d-panik",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/GuaraProductions/Panik/HEAD/README.md",
@@ -67891,6 +68354,11 @@
             "url": "https://github.com/GuaraProductions/Panik/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://github.com/GuaraProductions/Panik/releases",
+            "checkedAt": "2026-11-19",
+            "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
           }
         ]
       },
@@ -67971,7 +68439,7 @@
       {
         "id": "open3d-under-the-cover-of-night",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/pashudzu/UnderTheCoverOfNight/HEAD/README.md",
@@ -68002,6 +68470,11 @@
             "url": "https://github.com/pashudzu/UnderTheCoverOfNight/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://github.com/pashudzu/UnderTheCoverOfNight/releases",
+            "checkedAt": "2026-11-19",
+            "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
           }
         ]
       },
@@ -68077,7 +68550,7 @@
       {
         "id": "open3d-cat-sanctuary",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/Amna-Hassan04/Cat-Sanctuary/HEAD/README.md",
@@ -68108,6 +68581,11 @@
             "url": "https://github.com/Amna-Hassan04/Cat-Sanctuary/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://github.com/Amna-Hassan04/Cat-Sanctuary/releases",
+            "checkedAt": "2026-11-19",
+            "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
           }
         ]
       },
@@ -69875,7 +70353,7 @@
       {
         "id": "open3d-apophenoth",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. The original README explicitly names this public route and says no account is needed. Exact route returns GitHub Pages Site not found (404). README documents Three.js r128 driving the full 3D scene, not a CPU fallback. Cached author file inventory exposes only index.html among web/renderable/media paths; no publisher raster/video candidate established.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/IzzoSol/Apophenoth/HEAD/README.md",
@@ -69911,6 +70389,11 @@
             "url": "https://github.com/IzzoSol/Apophenoth/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://izzoizzoizzo.github.io/Apophenoth/",
+            "checkedAt": "2026-11-19",
+            "result": "The original README explicitly names this public route and says no account is needed. Exact route returns GitHub Pages Site not found (404). README documents Three.js r128 driving the full 3D scene, not a CPU fallback. Cached author file inventory exposes only index.html among web/renderable/media paths; no publisher raster/video candidate established."
           }
         ]
       },
@@ -72845,7 +73328,7 @@
       {
         "id": "open3d-gesichtsunfall",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No browser-rendered author game or sufficiently evidenced native binary publication has been verified in this review; existing demo remains unchanged.",
+        "reason": "Research incomplete or access-limited: No browser-rendered author game or sufficiently evidenced native binary publication has been verified in this review; existing demo remains unchanged. Research incomplete or access-limited: No browser-rendered author game or sufficiently evidenced native binary publication has been verified in this review; existing demo remains unchanged. Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/matzebond/gesichtsunfall/HEAD/README.md",
@@ -72886,6 +73369,11 @@
             "url": "https://globalgamejam.org/games/2026/gesichtsunfall-4",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 403; this is a retrieval outcome, not proof that the game or release is absent."
+          },
+          {
+            "url": "https://github.com/matzebond/gesichtsunfall/releases",
+            "checkedAt": "2026-11-19",
+            "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
           }
         ]
       },
@@ -73619,7 +74107,7 @@
       {
         "id": "open3d-fastest-pizza-delivery",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No independently browser-rendered author web game or sufficiently evidenced native download was verified in this pass. The existing demo remains unchanged; absence is not asserted.",
+        "reason": "Research incomplete or access-limited: No independently browser-rendered author web game or sufficiently evidenced native download was verified in this pass. The existing demo remains unchanged; absence is not asserted. Research incomplete or access-limited: No independently browser-rendered author web game or sufficiently evidenced native download was verified in this pass. The existing demo remains unchanged; absence is not asserted. Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/ufrshubham/FastestPizzaDelivery/HEAD/README.md",
@@ -73645,6 +74133,11 @@
             "url": "https://ufrshubham.itch.io/fastest-pizza-delivery",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          },
+          {
+            "url": "https://github.com/ufrshubham/FastestPizzaDelivery/releases",
+            "checkedAt": "2026-11-19",
+            "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
           }
         ]
       },
@@ -75048,7 +75541,7 @@
       {
         "id": "open3d-jelly-colosseum",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item.",
+        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item. Exact README links this author Pages deployment and describes no login or external game service. Actual live render.js line 10 creates new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'high-performance',preserveDrawingBuffer:false}). Low quality only changes pixel ratio, shadows and transmission; render() still uses that renderer. Exact HTML handles failure by telling users to enable hardware acceleration. No CPU fallback or creator screenshot was verified.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/SamG-Coder/Jelly-Colosseum/HEAD/README.md",
@@ -75069,6 +75562,16 @@
             "url": "https://samg-coder.github.io/Jelly-Colosseum/",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          },
+          {
+            "url": "https://samg-coder.github.io/Jelly-Colosseum/",
+            "checkedAt": "2026-11-19",
+            "result": "Exact README links this author Pages deployment and describes no login or external game service. Actual live render.js line 10 creates new THREE.WebGLRenderer({canvas,antialias:true,alpha:false,powerPreference:'high-performance',preserveDrawingBuffer:false}). Low quality only changes pixel ratio, shadows and transmission; render() still uses that renderer. Exact HTML handles failure by telling users to enable hardware acceleration. No CPU fallback or creator screenshot was verified."
+          },
+          {
+            "url": "https://samg-coder.github.io/Jelly-Colosseum/src/render.js",
+            "checkedAt": "2026-11-19",
+            "result": "Read the deployed renderer entry; Three.js WebGL scene rendering is required. No live gameplay render or CPU fallback verified."
           }
         ]
       },
@@ -75959,7 +76462,7 @@
       {
         "id": "open3d-cave9",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item.",
+        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item. Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item. Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/bart9h/cave9/HEAD/README.md",
@@ -75980,6 +76483,11 @@
             "url": "https://pseudogames.com/rls/cave9/",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          },
+          {
+            "url": "https://github.com/bart9h/cave9/releases",
+            "checkedAt": "2026-11-19",
+            "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
           }
         ]
       },

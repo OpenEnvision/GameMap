@@ -2935,6 +2935,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-trigger-rally-online-edition": {
+    src: "media/learning/open3d-trigger-rally-online-edition.webp",
+    alt: "Trigger Rally Online Edition third-person driving view, with a rally car at the start of a desert route and a race timer.",
+    caption:
+      "Creator-published Trigger Rally Online Edition gameplay screenshot showing the rendered driving view at the start of a run. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/CodeArtemis/TriggerRally/blob/079ac53216b74598b652ce3bf11478beb5c6832b/server/public/images/screen1.jpg",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/CodeArtemis/TriggerRally/079ac53216b74598b652ce3bf11478beb5c6832b/server/public/images/screen1.jpg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-invaders": {
     src: "media/learning/open3d-invaders.webp",
     alt: "A first-person orange weapon faces a formation of hovering enemies and an explosion, with lives and score counters.",
