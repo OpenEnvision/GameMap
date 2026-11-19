@@ -1025,5 +1025,11 @@
   "Playable games with build stories and project source. Every one opens a real build, its code and the story of how it was made.": "附带制作过程与项目源码的可玩游戏。每一款都能打开真实的构建、它的代码，以及它是怎样做出来的。",
   "3D worlds": "3D 世界",
   "Play in the browser": "浏览器即玩",
-  "Browse all {count} games": "浏览全部 {count} 款游戏"
+  "Browse all {count} games": "浏览全部 {count} 款游戏",
+  "Real games. *Open* starting points.": "从一个*可玩*的项目开始。",
+  "Games in view": "当前显示的游戏",
+  "Playable builds": "可试玩版本",
+  "Community *collections*": "社区*项目集*",
+  "Playable build": "可试玩版本",
+  "Downloadable build": "可下载版本"
 }

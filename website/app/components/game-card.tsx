@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { ArrowUpRight, Code2 } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link, SourceLanguage, useSiteI18n } from "../lib/i18n";
 import { publicAsset } from "../lib/catalog";
 import type { LearningMedia } from "../../src/data/learningMedia";
@@ -7,7 +7,17 @@ import type { PageCover } from "../../src/data/pageCovers";
 import type { Locale } from "../../content/locale";
 import { RatingSummary } from "./community";
 
-/** One card for games and prototypes, with explicit release/source-only status. */
+const accessLabels = {
+  playable: "Playable build",
+  download: "Downloadable build",
+  source: "Source only / release unverified",
+  reference: "Project reference / source unverified",
+} as const;
+
+/** One card for games and prototypes, with explicit release/source-only status.
+ *  The screenshot (or a generated "uncharted world" when none was reviewed) is
+ *  the poster; the title sits on it, and the body keeps a fixed rhythm so rows
+ *  line up without subgrid (cards can then skip rendering off-screen). */
 export function GameCard({
   contentKey,
   id,
@@ -53,7 +63,15 @@ export function GameCard({
       data-content-ref={contentKey}
       data-game-track={track}
       data-access-kind={demo.kind}
-      data-cover-kind={media ? "gameplay" : fallback?.origin === "catalog-page-capture" ? "catalog-page" : fallback ? "project-page" : undefined}
+      data-cover-kind={
+        media
+          ? "gameplay"
+          : fallback?.origin === "catalog-page-capture"
+            ? "catalog-page"
+            : fallback
+              ? "project-page"
+              : undefined
+      }
     >
       <a
         className="example-image"
@@ -78,9 +96,18 @@ export function GameCard({
             width={image.width}
             height={image.height}
             loading="lazy"
+            decoding="async"
           />
         )}
-        {fallback && <span className="page-cover-label">{t(fallback.origin === "catalog-page-capture" ? "GameMap record · not upstream or gameplay" : "Project page · not gameplay")}</span>}
+        {fallback && (
+          <span className="page-cover-label">
+            {t(
+              fallback.origin === "catalog-page-capture"
+                ? "GameMap record · not upstream or gameplay"
+                : "Project page · not gameplay",
+            )}
+          </span>
+        )}
         {!image && (
           <span className="game-preview-unavailable">
             {t("No reviewed screenshot")}
@@ -96,50 +123,58 @@ export function GameCard({
                   ? "Play the game"
                   : "Get the game",
           )}
-          <ArrowUpRight size={14} />
+          <ArrowUpRight size={14} aria-hidden="true" />
         </span>
       </a>
       <div className="example-body">
         <div className="card-meta">
-          <span>
-            {track.toUpperCase()} / {engine}
-            {sourceOnly && <> · {t("Source only / release unverified")}</>}
-            {referenceOnly && (
-              <> · {t("Project reference / source unverified")}</>
-            )}
+          <span className="card-spec">
+            <span className="card-track">{track.toUpperCase()}</span>{" "}
+            <span className="card-engine" title={engine}>
+              {engine}
+            </span>{" "}
+            <SourceLanguage english={descriptionLanguage === "en"} />
+          </span>{" "}
+          <span className="card-access" data-access={demo.kind}>
+            {t(accessLabels[demo.kind])}
           </span>
-          <Code2 size={15} />
         </div>
         <h3>
           <a href={demo.url} target="_blank" rel="noreferrer">
             {title}
-            <ArrowUpRight size={17} />
+            <ArrowUpRight size={17} aria-hidden="true" />
           </a>
         </h3>
-        <SourceLanguage english={descriptionLanguage === "en"} />
         <p lang={descriptionLanguage === "en" ? "en" : undefined}>
           {description}
         </p>
         <RatingSummary gameKey={contentKey} recordUrl={recordUrl} />
-        {!compact && notes}
         <div className="example-links">
           <Link to={recordUrl} reloadDocument>
-            {t("Complete record")}
-            <ArrowUpRight size={13} />
+            <span>{t("Complete record")}</span>
+            <ArrowUpRight size={13} aria-hidden="true" />
           </Link>
           {sourceUrl && (
             <a href={sourceUrl} target="_blank" rel="noreferrer">
-              {t(referenceOnly ? "Project reference" : "Project source")}
-              <ArrowUpRight size={13} />
+              <span>
+                {t(referenceOnly ? "Project reference" : "Project source")}
+              </span>
+              <ArrowUpRight size={13} aria-hidden="true" />
             </a>
           )}
           {extraLink && (
-            <a href={extraLink.url} target="_blank" rel="noreferrer">
-              {t(extraLink.label)}
-              <ArrowUpRight size={13} />
+            <a
+              href={extraLink.url}
+              target="_blank"
+              rel="noreferrer"
+              title={t(extraLink.label)}
+            >
+              <span>{t(extraLink.label)}</span>
+              <ArrowUpRight size={13} aria-hidden="true" />
             </a>
           )}
         </div>
+        {!compact && notes}
       </div>
     </article>
   );

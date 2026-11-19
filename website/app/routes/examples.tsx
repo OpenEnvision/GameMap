@@ -1,5 +1,6 @@
+import type { ReactNode } from "react";
 import { useLoaderData, type LoaderFunctionArgs } from "react-router";
-import { Search } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
 import { ExampleCard } from "../components/example-card";
 import { ResearchGameCard } from "../components/research-game-card";
 import {
@@ -10,6 +11,7 @@ import { ImportedThreejsCard } from "../components/imported-threejs-card";
 import open3dImport from "../../content/open3d-import.config.json";
 import { researchGamesForExamples } from "../../content/research-games";
 import { useClientQuery } from "../lib/client-query";
+import { publicAsset } from "../lib/catalog";
 import { contentFor, sources } from "../../content/registry.server";
 import { localizeGameplayMedia } from "../../content/localization.server";
 import { matchesSearch } from "../../content/matching";
@@ -18,6 +20,41 @@ import { searchableText } from "../../content/search";
 import { ContentDocument } from "../components/content";
 import { useSiteI18n } from "../lib/i18n";
 export { shouldRevalidateCollection as shouldRevalidate } from "../lib/collection-query";
+
+/** Reviewed gameplay captures that make up the drifting header collage.
+ *  Purely decorative: every one of them also appears as a card below. */
+const mosaicPicks = [
+  "dragons-reach-claude",
+  "jam-blub-blub-pop",
+  "jam-crystal-dash",
+  "jam-polygon-protocol",
+  "jam-autumn-preserves",
+  "jam-blackwater",
+  "flux-codex-runner",
+  "jam-codeware",
+  "jam-enchanted-towers-realm-defenders",
+  "jam-nekogotchi",
+  "jam-bevy-five-bullet-heaven",
+  "jam-luxel",
+  "jam-cordyception",
+  "jam-lovely-masqueraid",
+  "jam-foursight",
+  "jam-cat-crop-collector",
+  "jam-marble-mechanical-flower",
+  "jam-dragon-city-clone-escalopa",
+];
+const mosaicRows = 3;
+
+/** "Real games. *Open* starting points." → one <em> accent; translators move
+ *  the asterisks (Chinese keeps upright type, see gallery.css). */
+function emphasize(text: string): ReactNode {
+  return text
+    .split(/\*([^*]+)\*/)
+    .map((part, index) =>
+      index % 2 ? <em key={index}>{part}</em> : part || null,
+    );
+}
+
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);
   const nativeGames = [...content.all("example"), ...content.all("foundation")];
@@ -26,6 +63,12 @@ export function loader({ request }: LoaderFunctionArgs) {
     .filter((entry) =>
       open3dImport.includedLegacyThreejsIds.includes(entry.id),
     );
+  const captures = new Map(
+    Object.values(sources.learningMedia).map((media) => [
+      media.src.replace(/^.*\/|\.\w+$/g, ""),
+      media,
+    ]),
+  );
   return {
     // Full evidence stays on detail pages; avoid duplicating its field blocks in the grid.
     examples: nativeGames.map((entry) => ({
@@ -67,6 +110,12 @@ export function loader({ request }: LoaderFunctionArgs) {
     researchMedia: sources.researchGameMedia,
     pageCovers: sources.pageCovers,
     attribution: sources.gameCaseAgents,
+    mosaic: mosaicPicks.flatMap((name) => {
+      const media = captures.get(name);
+      return media
+        ? [{ src: media.src, width: media.width, height: media.height }]
+        : [];
+    }),
   };
 }
 export default function Examples() {
@@ -81,6 +130,7 @@ export default function Examples() {
       researchMedia,
       pageCovers,
       attribution,
+      mosaic,
     } = useLoaderData<typeof loader>(),
     [params, setParams] = useClientQuery();
   const {
@@ -144,6 +194,22 @@ export default function Examples() {
   const referenceOnlyCount = games.filter(
     (entry) => entry.data.demo.kind === "reference",
   ).length;
+  // Live header figures follow the same filters as the grid.
+  const shown = [
+    ...games.map((entry) => [entry.data.track, entry.data.demo.kind]),
+    ...linkedGames.map((entry) => [
+      entry.data.game_access.track,
+      entry.data.game_access.kind,
+    ]),
+    ...importedGames.map(() => ["3d", "source"]),
+    ...submittedGames.map((work) => [work.track, work.accessKind]),
+  ];
+  const stats = [
+    ["Playable builds", shown.filter(([, kind]) => kind === "playable").length],
+    ["3D games", shown.filter(([dimension]) => dimension === "3d").length],
+    ["2D games", shown.filter(([dimension]) => dimension === "2d").length],
+  ] as const;
+  const perRow = Math.ceil(mosaic.length / mosaicRows);
   return (
     <main
       id="main-content"
@@ -156,146 +222,195 @@ export default function Examples() {
           "Play a game, follow the creator’s process, and explore the project behind it.",
         )}
       />
-      <header className="page-heading">
-        <span className="eyebrow">{t("LEARN BY EXPLORING")}</span>
-        <h1>{t("Real games. Open starting points.")}</h1>
-        <p>
-          {t(
-            "Play a game, follow the creator’s process, and explore the project behind it.",
-          )}
-        </p>
-        <p>
-          {t(
-            "AI authorship is optional. Community games retain source evidence and explicit verification limits.",
-          )}
-        </p>
-      </header>
-      <div className="catalog-toolbar">
-        <div className="filter-search">
-          <Search size={19} />
-          <input
-            aria-label={t("Search game examples")}
-            placeholder={t("Find a game, engine, or AI workflow…")}
-            value={query}
-            onChange={(event) => update("q", event.target.value)}
-          />
-        </div>
-        <select
-          aria-label={t("Client or model")}
-          value={client}
-          onChange={(event) => update("client", event.target.value)}
-        >
-          <option value="all">{t("All clients & models")}</option>
-          {Object.entries(agentLabels).map(([id, label]) => (
-            <option key={id} value={id}>
-              {t(label)}
-            </option>
-          ))}
-        </select>
-        <div className="segmented-control" aria-label={t("Game dimension")}>
-          {[
-            ["all", "All games"],
-            ["2d", "2D"],
-            ["3d", "3D"],
-          ].map(([id, label]) => (
-            <button
-              key={id}
-              aria-pressed={track === id}
-              onClick={() => update("track", id)}
-            >
-              {t(label)}
-            </button>
-          ))}
-        </div>
-      </div>
-      <div className="results-meta">
-        <span aria-live="polite">
-          {t("{count} game examples", { count: gameCount })}
-          {sourceOnlyCount > 0 && (
-            <>
-              {" "}
-              ·{" "}
-              {t("{count} source-only / unverified", {
-                count: sourceOnlyCount,
-              })}
-            </>
-          )}
-          {referenceOnlyCount > 0 && (
-            <>
-              {" "}
-              ·{" "}
-              {t("{count} project references / source unverified", {
-                count: referenceOnlyCount,
-              })}
-            </>
-          )}
-        </span>
-        <span>{t("Creator evidence · Playable builds · Project source")}</span>
-      </div>
-      {worksUnavailable && (
-        <p className="community-error" role="status">
-          {t(
-            "Community submissions could not be loaded. Existing catalog games remain available.",
-          )}{" "}
-          <button onClick={() => void refreshWorks()}>{t("Retry")}</button>
-        </p>
-      )}
-      {gameCount > 0 && (
-        <div
-          id="game-examples"
-          className="example-grid"
-          aria-label={t("Game examples")}
-        >
-          {linkedGames.map((entry) => (
-            <ResearchGameCard
-              key={entry.key}
-              entry={entry}
-              media={researchMedia[entry.id]}
-            />
-          ))}
-          {importedGames.map((entry) => (
-            <ImportedThreejsCard
-              key={entry.key}
-              entry={entry}
-              media={gameplayMedia[entry.key]}
-              pageCover={pageCovers[entry.key]}
-            />
-          ))}
-          {submittedGames.map((work) => (
-            <CommunityWorkCard work={work} key={work.key} />
-          ))}
-          {games.map((entry) => (
-            <ExampleCard
-              key={entry.key}
-              game={entry.data}
-              descriptionLanguage={entry.descriptionLanguage}
-              media={gameplayMedia[entry.key] || media[entry.id]}
-              pageCover={pageCovers[entry.key]}
-            />
-          ))}
-        </div>
-      )}
-      {!gameCount && (
-        <div className="empty-state">
-          <h2>{t("No games found.")}</h2>
-          <p>{t("Try another title, engine, or AI tool.")}</p>
-          <button
-            className="button button-secondary"
-            onClick={() => setParams({})}
-          >
-            {t("Clear filters")}
-          </button>
-        </div>
-      )}
-      <section className="content-index-section">
-        <div className="section-top">
-          <div>
-            <h2>{t("Community collections")}</h2>
-            <p>
-              {t("Discover more projects in community-curated collections.")}
-            </p>
+      <header className="gallery-hero">
+        <div className="gallery-hero-backdrop" aria-hidden="true">
+          <div className="gallery-mosaic">
+            {Array.from({ length: mosaicRows }, (_, row) => (
+              <div className="gallery-mosaic-row" key={row}>
+                {mosaic
+                  .slice(row * perRow, row * perRow + perRow)
+                  .map((image) => (
+                    <img
+                      key={image.src}
+                      src={publicAsset(image.src)}
+                      alt=""
+                      width={image.width}
+                      height={image.height}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ))}
+              </div>
+            ))}
           </div>
         </div>
+        <div className="gallery-hero-inner">
+          <div className="gallery-hero-copy">
+            <span className="kicker">{t("Games")}</span>
+            <h1 className="gallery-title">
+              {emphasize(t("Real games. *Open* starting points."))}
+            </h1>
+            <p className="lede">
+              {t(
+                "Play a game, follow the creator’s process, and explore the project behind it.",
+              )}
+            </p>
+            <p className="gallery-hero-note">
+              {t(
+                "AI authorship is optional. Community games retain source evidence and explicit verification limits.",
+              )}
+            </p>
+          </div>
+          <dl className="gallery-stats">
+            <div className="gallery-stat-total">
+              <dt>{t("Games in view")}</dt>
+              <dd>{gameCount}</dd>
+            </div>
+            {stats.map(([label, value]) => (
+              <div key={label}>
+                <dt>{t(label)}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </header>
+      <div className="gallery-atlas">
+        <div className="gallery-dock">
+          <div className="gallery-controls">
+            <label className="gallery-search">
+              <Search size={18} aria-hidden="true" />
+              <input
+                aria-label={t("Search game examples")}
+                placeholder={t("Find a game, engine, or AI workflow…")}
+                value={query}
+                onChange={(event) => update("q", event.target.value)}
+              />
+            </label>
+            <div className="gallery-select">
+              <select
+                aria-label={t("Client or model")}
+                value={client}
+                onChange={(event) => update("client", event.target.value)}
+              >
+                <option value="all">{t("All clients & models")}</option>
+                {Object.entries(agentLabels).map(([id, label]) => (
+                  <option key={id} value={id}>
+                    {t(label)}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown size={16} aria-hidden="true" />
+            </div>
+            <div
+              className="gallery-segments"
+              role="group"
+              aria-label={t("Game dimension")}
+            >
+              {[
+                ["all", "All games"],
+                ["2d", "2D"],
+                ["3d", "3D"],
+              ].map(([id, label]) => (
+                <button
+                  key={id}
+                  aria-pressed={track === id}
+                  onClick={() => update("track", id)}
+                >
+                  {t(label)}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="gallery-results">
+            <span aria-live="polite">
+              {t("{count} game examples", { count: gameCount })}
+              {sourceOnlyCount > 0 && (
+                <>
+                  {" "}
+                  ·{" "}
+                  {t("{count} source-only / unverified", {
+                    count: sourceOnlyCount,
+                  })}
+                </>
+              )}
+              {referenceOnlyCount > 0 && (
+                <>
+                  {" "}
+                  ·{" "}
+                  {t("{count} project references / source unverified", {
+                    count: referenceOnlyCount,
+                  })}
+                </>
+              )}
+            </span>
+            <span>
+              {t("Creator evidence · Playable builds · Project source")}
+            </span>
+          </div>
+        </div>
+        {worksUnavailable && (
+          <p className="community-error" role="status">
+            {t(
+              "Community submissions could not be loaded. Existing catalog games remain available.",
+            )}{" "}
+            <button onClick={() => void refreshWorks()}>{t("Retry")}</button>
+          </p>
+        )}
+        {gameCount > 0 && (
+          <div
+            id="game-examples"
+            className="example-grid"
+            aria-label={t("Game examples")}
+          >
+            {linkedGames.map((entry) => (
+              <ResearchGameCard
+                key={entry.key}
+                entry={entry}
+                media={researchMedia[entry.id]}
+              />
+            ))}
+            {importedGames.map((entry) => (
+              <ImportedThreejsCard
+                key={entry.key}
+                entry={entry}
+                media={gameplayMedia[entry.key]}
+                pageCover={pageCovers[entry.key]}
+              />
+            ))}
+            {submittedGames.map((work) => (
+              <CommunityWorkCard work={work} key={work.key} />
+            ))}
+            {games.map((entry) => (
+              <ExampleCard
+                key={entry.key}
+                game={entry.data}
+                descriptionLanguage={entry.descriptionLanguage}
+                media={gameplayMedia[entry.key] || media[entry.id]}
+                pageCover={pageCovers[entry.key]}
+              />
+            ))}
+          </div>
+        )}
+        {!gameCount && (
+          <div className="empty-state gallery-empty">
+            <h2>{t("No games found.")}</h2>
+            <p>{t("Try another title, engine, or AI tool.")}</p>
+            <button
+              className="button button-secondary"
+              onClick={() => setParams({})}
+            >
+              {t("Clear filters")}
+            </button>
+          </div>
+        )}
+      </div>
+      <section className="gallery-collections">
+        <header className="gallery-section-head">
+          <span className="kicker">{t("Community")}</span>
+          <h2>{emphasize(t("Community *collections*"))}</h2>
+          <p>{t("Discover more projects in community-curated collections.")}</p>
+        </header>
         <div className="content-grid community-collections">
           {collections.map((entry) => (
             <ContentDocument key={entry.key} entry={entry} heading="h3" />

@@ -1,9 +1,5 @@
+/* Research-library games render through the shared GameCard; their styling
+   lives in gallery.css. */
 #game-examples {
-  scroll-margin-top: 100px;
-}
-.example-card .example-image {
-  aspect-ratio: 16 / 9;
-}
-.example-card .example-links {
-  flex-wrap: wrap;
+  scroll-margin-top: calc(var(--header-h) + 140px);
 }

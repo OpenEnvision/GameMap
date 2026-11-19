@@ -1,103 +1,50 @@
-/* Related cards share row tracks instead of clipping text into fixed heights. */
-.site-main .example-grid,
+/* Related cards share row tracks instead of clipping text into fixed heights.
+   Game cards (.example-card) no longer use subgrid: they keep a fixed body
+   rhythm (see gallery.css) so rows align while off-screen cards skip
+   rendering with content-visibility. */
 .site-main .testing-grid {
   align-items: stretch;
 }
-.example-grid > .example-card,
 .testing-grid > .testing-card,
 .foundation-grid > article {
   display: flex;
   flex-direction: column;
   min-width: 0;
 }
-.example-grid .example-image {
-  aspect-ratio: 16 / 9;
-  flex: none;
-}
-.example-grid .example-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.example-grid .example-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 0;
-}
-.example-grid .example-body > .example-links,
 .testing-grid > .testing-card > .example-links,
 .foundation-grid > article > .example-links,
 .resource-grid .resource-card-footer {
   margin-top: auto;
 }
-.example-grid .example-body > .build-notes,
 .testing-grid > .testing-card > .build-notes,
 .foundation-grid > article > p,
 .resource-grid .resource-tags {
   margin-bottom: 20px;
 }
-.example-grid .example-links,
 .testing-grid .example-links {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
-.example-grid .example-links a,
 .testing-grid .example-links a {
   min-width: 0;
   align-items: flex-start;
   overflow-wrap: anywhere;
   line-height: 1.7;
 }
-.example-grid .example-links a svg,
 .testing-grid .example-links a svg {
   flex: none;
   margin-top: 2px;
 }
-/* Subgrid aligns images, headings, descriptions, disclosures and action bars.
+/* Subgrid aligns headings, descriptions, disclosures and action bars.
    Opening a disclosure expands only its row; no source content is truncated. */
 @supports (grid-template-rows: subgrid) {
-  .example-grid > .example-card,
   .testing-grid > .testing-card,
   .resource-grid > .resource-tile,
   .foundation-grid > article {
     display: grid;
     grid-template-rows: subgrid;
     row-gap: 0;
-  }
-  .example-grid > .example-card {
-    grid-row: span 7;
-  }
-  .example-grid > .example-card > .example-image {
-    grid-row: 1;
-  }
-  .example-grid .example-body {
-    display: grid;
-    grid-template-rows: subgrid;
-    grid-row: 2 / span 6;
-    row-gap: 0;
-  }
-  .example-grid .example-body > .card-meta {
-    grid-row: 1;
-  }
-  .example-grid .example-body > h3 {
-    grid-row: 2;
-  }
-  .example-grid .example-body > .source-language {
-    grid-row: 3;
-  }
-  .example-grid .example-body > p {
-    grid-row: 4;
-  }
-  .example-grid .example-body > .build-notes {
-    grid-row: 5;
-    margin-top: 18px;
-    margin-bottom: 0;
-  }
-  .example-grid .example-body > .example-links {
-    grid-row: 6;
-    margin-top: 20px;
   }
   .testing-grid > .testing-card {
     grid-row: span 8;
@@ -173,10 +120,5 @@
   .foundation-grid > article > .example-links {
     grid-row: 4;
     margin-top: 20px;
-  }
-  @media (max-width: 680px) {
-    .site-main .example-grid > .example-card.compact:last-child {
-      display: grid;
-    }
   }
 }
