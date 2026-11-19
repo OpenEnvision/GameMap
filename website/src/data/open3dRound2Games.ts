@@ -2989,10 +2989,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Cubyz",
-      "url": "https://github.com/PixelGuys/Cubyz",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download for Windows",
+      "url": "https://github.com/PixelGuys/Cubyz/releases/download/0.4.2/Windows-x86_64.zip",
+      "note": "The developers publish these platform-specific prebuilt game distributions as separate Windows and Linux x86-64 and ARM64 release attachments; the name identifies this as the Windows x64 client ZIP. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3754,10 +3754,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Trackballs",
-      "url": "https://github.com/trackballs/trackballs",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download original Windows release",
+      "url": "https://downloads.sourceforge.net/project/trackballs/trackballs/1.1.2/trackballs-1.1.2.exe",
+      "note": "Original Trackballs 1.1.2 Windows self-extracting game release, published by the original maintainer. This is the historical release, not the current fork build. Release metadata verified on 2026-11-19; the package was not downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3799,10 +3799,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Ultimate Stunts",
-      "url": "https://github.com/cornwarecjp/ultimatestunts",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download Ultimate Stunts 0.7.7 release 1",
+      "url": "https://www.ultimatestunts.nl/index.php?page=2&lang=en",
+      "note": "The official game website names the 26.5 MB Windows installer for the experimental 0.7.7 release 1. It is the Windows build with game data, separate from source. Compatibility with modern systems is not verified. Release metadata checked on 2026-11-19; no package downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",

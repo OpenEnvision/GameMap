@@ -1234,10 +1234,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for DOGWALK",
-      "url": "https://github.com/nikitalita/DOGWALK",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download for Windows",
+      "url": "https://blenderstudio.itch.io/dogwalk",
+      "note": "Blender Studio publishes separate named version 1.0.4 native game ZIP uploads for Windows, Linux, and macOS on its official itch page, separate from the source bundle. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1369,10 +1369,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Hurry Curry!",
-      "url": "https://codeberg.org/hurrycurry/hurrycurry",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download for Windows",
+      "url": "https://hurrycurry-download.metamuffin.org/windows-installer-x86_64.exe",
+      "note": "The official project identifies this as the Windows 64-bit game installer, separately from bare client/server binaries and game data. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -1909,10 +1909,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for RETURN//NULL",
-      "url": "https://github.com/The-Shady-Shade/RETURN-NULL",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download for Windows",
+      "url": "https://github.com/The-Shady-Shade/RETURN-NULL/releases/download/v1.0.2/Windows.zip",
+      "note": "The creator publishes Windows.zip as the platform-specific attachment for the stable v1.0.2 tag, distinct from GitHub source archives. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -2044,10 +2044,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Super Tux Party",
-      "url": "https://gitlab.com/SuperTuxParty/SuperTuxParty",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download for Windows",
+      "url": "https://supertux.party/download/latest/windows.zip",
+      "note": "The Super Tux Party developers label this ZIP their Windows v0.9 release and provide a separate source ZIP and server package. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3034,10 +3034,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Bomberrage",
-      "url": "https://github.com/JanSeliv/Bomber",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download for Windows",
+      "url": "https://github.com/JanSeliv/Bomber/releases/download/23-06-2026/Bomberrage_build_23-06-2026.zip",
+      "note": "The developer explicitly labels this Windows archive Play the Build and lists the Unreal project download separately. Release metadata verified on 2026-11-19; no package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3844,10 +3844,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Lugaru",
-      "url": "https://gitlab.com/osslugaru/lugaru",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download Open Source Lugaru HD 1.2",
+      "url": "https://osslugaru.gitlab.io/",
+      "note": "The OSS Lugaru team identifies its stable 1.2 release and lists playable Windows 64-bit, Windows 32-bit and Linux 64-bit builds separately from the source tarball. The official release notes confirm the open game includes the Lugaru HD assets. Release metadata checked on 2026-11-19; no package downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4474,10 +4474,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for SCP – Containment Breach",
-      "url": "https://github.com/Regalis11/scpcb",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download SCP: Containment Breach 1.3.11",
+      "url": "https://www.scpcbgame.com/",
+      "note": "The original game site lists the 235 MB SCP: Containment Breach 1.3.11 game archive. The original documentation identifies the Windows executable within the game folder; this is not a source archive or a community remake. Release metadata checked on 2026-11-19; no package downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4834,10 +4834,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for TORCS",
-      "url": "https://sourceforge.net/projects/torcs/",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download TORCS 1.3.10",
+      "url": "https://torcs.sourceforge.net/download/",
+      "note": "The TORCS download page identifies the stable 1.3.10 Windows installer and separates it from the all-in-one source archive. Linux instructions on that page are for building from source. Release metadata checked on 2026-11-19; no package downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4879,10 +4879,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Tremulous",
-      "url": "https://github.com/darklegion/tremulous",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download original Tremulous 1.1.0",
+      "url": "https://sourceforge.net/projects/tremulous/files/tremulous/1.1/",
+      "note": "The original 1.1 developer directory lists the standalone Tremulous 1.1.0 Windows installer. This is the original game, not the later Game Play Preview patch, a source archive, or a community client. Release metadata checked on 2026-11-19; no package downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -5149,10 +5149,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Veloren",
-      "url": "https://gitlab.com/veloren/veloren",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "download",
+      "label": "Download Veloren via Airshipper",
+      "url": "https://veloren.net/download/",
+      "note": "Veloren provides Airshipper builds for Windows, Linux and macOS as its official game installer and launcher. Airshipper fetches the Veloren game when the user starts installation; the download is not an offline copy of the game. Release metadata checked on 2026-11-19; no package downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
