@@ -2314,10 +2314,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Project Zero",
-      "url": "https://github.com/trolit/projectZero",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Project Zero v0.92 for Windows",
+      "url": "https://github.com/trolit/projectZero/releases/download/v0.92/ProjectZero_installer.exe",
+      "kind": "download",
+      "note": "The author’s GitHub v0.92 release lists a standalone Windows installer. Verified the uploaded asset metadata on 2026-11-19; no package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

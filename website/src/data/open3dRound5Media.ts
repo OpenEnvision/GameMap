@@ -238,6 +238,18 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-single-html-game-bench": {
+    src: "media/learning/open3d-single-html-game-bench.webp",
+    alt: "A first-person revolver and minimap inside a dark stone dungeon, with six loaded rounds and a two-seal objective.",
+    caption:
+      "Depth I gameplay in The Hollow Below, the benchmark’s ChatGPT GPT-5.6 Sol Pro 0709 variant.",
+    sourceUrl:
+      "https://chojondocho.github.io/single-html-game-bench/chatgpt-gpt-5-6-sol-pro-0709.html",
+    origin: "browser-capture",
+    capturedAt: "2026-11-19T18:38:52.098Z",
+    width: 1280,
+    height: 720,
+  },
   "open3d-decarlo-boyz": {
     src: "media/learning/open3d-decarlo-boyz.webp",
     alt: "A player character stands on a rainy nighttime city street among pedestrians and traffic.",
@@ -2039,6 +2051,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://raw.githubusercontent.com/michaliskambi/castle-vibes/HEAD/screenshots/screenshot_1.png",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-quest-ai": {
+    src: "media/learning/open3d-quest-ai.webp",
+    alt: "Quest AI Cooking Catastrophe gameplay, with two stylized wizards by a kitchen and sentence-building controls.",
+    caption:
+      "Creator-published gameplay screenshot from the Quest AI visual regression archive, showing the interactive Cooking Catastrophe quest. Image rights remain with the original creator.",
+    sourceUrl:
+      "https://github.com/DrewWasem/quest_ai/blob/16add5d034816ba6c242ee7da156a74eec6ad8cc/frontend/tests/screenshots/stage-07-mage-kitchen.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/DrewWasem/quest_ai/16add5d034816ba6c242ee7da156a74eec6ad8cc/frontend/tests/screenshots/stage-07-mage-kitchen.png",
     width: 1280,
     height: 720,
   },

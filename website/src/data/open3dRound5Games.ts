@@ -1864,10 +1864,10 @@ export const open3dRound5Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Single HTML Game Bench",
-      "url": "https://github.com/chojondocho/single-html-game-bench",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "kind": "playable",
+      "label": "Play The Hollow Below benchmark variant",
+      "url": "https://chojondocho.github.io/single-html-game-bench/chatgpt-gpt-5-6-sol-pro-0709.html",
+      "note": "The author's benchmark index links this variant. It loaded the first-person dungeon and HUD in a sandboxed cloud browser on 2026-11-19."
     },
     "source": {
       "label": "Inspect the supplied source reference",

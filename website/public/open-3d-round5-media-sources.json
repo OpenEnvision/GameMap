@@ -1507,6 +1507,45 @@
       "bytes": 56956
     },
     {
+      "id": "open3d-single-html-game-bench",
+      "title": "Single HTML Game Bench",
+      "media": {
+        "src": "media/learning/open3d-single-html-game-bench.webp",
+        "alt": "A first-person revolver and minimap inside a dark stone dungeon, with six loaded rounds and a two-seal objective.",
+        "caption": "Depth I gameplay in The Hollow Below, the benchmark’s ChatGPT GPT-5.6 Sol Pro 0709 variant.",
+        "sourceUrl": "https://chojondocho.github.io/single-html-game-bench/chatgpt-gpt-5-6-sol-pro-0709.html",
+        "origin": "browser-capture",
+        "capturedAt": "2026-11-19T18:38:52.098Z",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "browserSandbox": true,
+        "inputActions": [
+          "Opened the exact The Hollow Below variant linked from the author’s benchmark index.",
+          "Clicked Begin a new descent and entered the first dungeon floor.",
+          "Held D for 550 milliseconds to move right, then captured the gameplay HUD."
+        ],
+        "sourceFrameSHA256": "dc01ad3aed2ad6c3d83afe3dcbdd084be91cab6f5a28d6deec69aea04dc58417",
+        "sourceWidth": 1180,
+        "sourceHeight": 757,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "The first-person Depth I dungeon has block walls, an on-screen revolver, a minimap, and HUD counters showing six loaded rounds and zero of two seals recovered."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "676eedc4052f6995e71ae49d78b4bf35a96f6db54f95842f2edbb4489529c6e1",
+      "bytes": 19494
+    },
+    {
       "id": "open3d-decarlo-boyz",
       "title": "Decarlo Boyz",
       "media": {
@@ -6303,6 +6342,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "89522070c051feb53020f1e69eef29d7898777f440df828613a938f1c6bd1da6",
       "bytes": 38908
+    },
+    {
+      "id": "open3d-quest-ai",
+      "title": "Quest AI",
+      "media": {
+        "src": "media/learning/open3d-quest-ai.webp",
+        "alt": "Quest AI Cooking Catastrophe gameplay, with two stylized wizards by a kitchen and sentence-building controls.",
+        "caption": "Creator-published gameplay screenshot from the Quest AI visual regression archive, showing the interactive Cooking Catastrophe quest. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/DrewWasem/quest_ai/blob/16add5d034816ba6c242ee7da156a74eec6ad8cc/frontend/tests/screenshots/stage-07-mage-kitchen.png",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/DrewWasem/quest_ai/16add5d034816ba6c242ee7da156a74eec6ad8cc/frontend/tests/screenshots/stage-07-mage-kitchen.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "926d73fca86b5a0294b49e82326679c4c89b3fb10fd6410a83c223754339c04c",
+        "sourceFrameSHA256": "a62b0e49ec65591741e0196ac26855d2b0b2594318d675d32b3fbea78e2f42db",
+        "sourceWidth": 1280,
+        "sourceHeight": 900,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed the complete 1280×900 original: two colorful wizards stand next to a rendered kitchen and a cake in a 3D village; the active Cooking Catastrophe quest, Leave Quest button, quest progress, spell/target/result dropdowns, randomization and Go control are visible. This is playable-scene interface, not title, introduction, cover or comparison. The original creator published the exact PNG under frontend/tests/screenshots in the exact Quest AI repository; the author README describes the same natural-language 3D quest game and nearby test scripts document direct browser captures of running scenes. Source Git blob d773f06476794d9b11ec51ac59f184ea98272722 matches pinned source. Unchanged origin and reviewFrame validation passed. No test or game code was executed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "f2dc6c2054bd981c05b27dd664cdb6436608f9a6de79f001b42e074cf3e15936",
+      "bytes": 51996
     },
     {
       "id": "open3d-gravewake",
@@ -22121,73 +22195,6 @@
       ]
     },
     {
-      "id": "open3d-single-html-game-bench",
-      "status": "research-incomplete",
-      "reason": "The author benchmark appendix link named codex-arcanine-47s.png was downloaded and visually reviewed. It depicts a Codex conversation and code-generation error, not a game scene. No qualifying creator screenshot was accepted.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/chojondocho/single-html-game-bench/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/chojondocho/single-html-game-bench",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/chojondocho/single-html-game-bench/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/chojondocho/single-html-game-bench/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved and reviewed author README for published game links and creator media."
-        },
-        {
-          "url": "https://github.com/chojondocho/single-html-game-bench",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://github.com/chojondocho/single-html-game-bench/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/chojondocho/single-html-game-bench/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Reviewed source content; Author benchmark homepage was statically read. Its appendix explicitly links codex-arcanine-47s.png for one named game build; this creator image is queued for pixel review, not assumed to be gameplay."
-        },
-        {
-          "url": "https://chojondocho.github.io/single-html-game-bench/",
-          "checkedAt": "2026-11-18",
-          "result": "Read the author page as text; game links or UI are present but this is not visual rendering verification."
-        },
-        {
-          "url": "https://github.com/chojondocho/single-html-game-bench",
-          "checkedAt": "2026-11-18",
-          "result": "Recorded source-review outcome: research-incomplete."
-        },
-        {
-          "url": "https://chojondocho.github.io/single-html-game-bench/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for publication evidence; actual gameplay rendering was not verified by this text retrieval."
-        },
-        {
-          "url": "https://chojondocho.github.io/single-html-game-bench/codex-arcanine-47s.png",
-          "checkedAt": "2026-11-19",
-          "result": "Opened the exact author-linked PNG and reviewed its pixels; it is a Codex conversation and error, not gameplay."
-        },
-        {
-          "url": "https://api.github.com/repos/chojondocho/single-html-game-bench/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-19",
-          "result": "Public GitHub recursive source listing (non-truncated, 35 repository entries): inventoried 3 tracked raster/video path(s). Listing alone does not establish what those images show, release eligibility, or browser rendering."
-        }
-      ]
-    },
-    {
       "id": "open3d-car-game-fable-5-test",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot was acquired. https://car-game-fable-5-test.vercel.app: Public-page text tool could not access this URL; this is a tool access failure, not evidence that the website is absent.",
@@ -27568,58 +27575,6 @@
           "url": "https://github.com/thebuggeddev/snakeboard/releases",
           "checkedAt": "2026-11-18",
           "result": "Author releases page explicitly lists no published releases."
-        }
-      ]
-    },
-    {
-      "id": "open3d-quest-ai",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README screenshot markup is commented out with a note to uncomment after capture, and screenshot URLs returned non-image responses. The live Vercel page was not verifiable through the static tool.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/DrewWasem/quest_ai/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/DrewWasem/quest_ai",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/DrewWasem/quest_ai/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/DrewWasem/quest_ai/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Inspected author README for screenshots, hosted games and download links."
-        },
-        {
-          "url": "https://github.com/DrewWasem/quest_ai",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved author source evidence (HTTP 200); retrieval does not establish browser rendering."
-        },
-        {
-          "url": "https://github.com/DrewWasem/quest_ai/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Author releases page explicitly lists no published releases."
-        },
-        {
-          "url": "https://quest-ai-smoky.vercel.app",
-          "checkedAt": "2026-11-18",
-          "result": "Public-page text retrieval was unavailable in the research tool; this does not establish that the site is absent."
-        },
-        {
-          "url": "https://quest-ai-smoky.vercel.app/",
-          "checkedAt": "2026-11-18",
-          "result": "Public-page text retrieval was unavailable in the research tool; this does not establish that the site is absent."
-        },
-        {
-          "url": "https://quest-ai-smoky.vercel.app/",
-          "checkedAt": "2026-11-18",
-          "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
         }
       ]
     },
@@ -36673,6 +36628,47 @@
         ]
       },
       {
+        "id": "open3d-single-html-game-bench",
+        "sourceUrl": "https://github.com/chojondocho/single-html-game-bench",
+        "demo": {
+          "kind": "playable",
+          "label": "Play The Hollow Below benchmark variant",
+          "url": "https://chojondocho.github.io/single-html-game-bench/chatgpt-gpt-5-6-sol-pro-0709.html",
+          "note": "The author's benchmark index links this variant. It loaded the first-person dungeon and HUD in a sandboxed cloud browser on 2026-11-19."
+        },
+        "evidence": {
+          "authorPublicationUrl": "https://chojondocho.github.io/single-html-game-bench/",
+          "authorVerification": "The same-owner GitHub Pages benchmark index links this exact build from the cataloged repository.",
+          "reviewedAt": "2026-11-19",
+          "browserSandbox": true,
+          "renderedGame": true,
+          "loadedUrl": "https://chojondocho.github.io/single-html-game-bench/chatgpt-gpt-5-6-sol-pro-0709.html",
+          "visualFinding": "The first-person Depth I dungeon has block walls, an on-screen revolver, a minimap, and HUD counters showing six loaded rounds and zero of two seals recovered.",
+          "inputActions": [
+            "Opened the exact The Hollow Below variant linked from the author’s benchmark index.",
+            "Clicked Begin a new descent and entered the first dungeon floor.",
+            "Held D for 550 milliseconds to move right, then captured the gameplay HUD."
+          ]
+        },
+        "checkedSources": [
+          {
+            "url": "https://github.com/chojondocho/single-html-game-bench",
+            "checkedAt": "2026-11-19",
+            "result": "The same-owner repository contains the cataloged single-file benchmark variants."
+          },
+          {
+            "url": "https://chojondocho.github.io/single-html-game-bench/",
+            "checkedAt": "2026-11-19",
+            "result": "The author benchmark index links the ChatGPT GPT-5.6 Sol Pro 0709 build."
+          },
+          {
+            "url": "https://chojondocho.github.io/single-html-game-bench/chatgpt-gpt-5-6-sol-pro-0709.html",
+            "checkedAt": "2026-11-19",
+            "result": "The Hollow Below variant rendered first-person gameplay after selecting Begin a new descent and showed the dungeon HUD after movement."
+          }
+        ]
+      },
+      {
         "id": "open3d-out-of-reach",
         "sourceUrl": "https://github.com/alex-slovakia/out-of-reach",
         "demo": {
@@ -40324,6 +40320,39 @@
               "displaySize": "374 MB",
               "publicationLabel": true,
               "platformEvidence": "Download for Linux"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-project-zero",
+        "sourceUrl": "https://github.com/trolit/projectZero",
+        "demo": {
+          "label": "Download Project Zero v0.92 for Windows",
+          "url": "https://github.com/trolit/projectZero/releases/download/v0.92/ProjectZero_installer.exe",
+          "kind": "download",
+          "note": "The author’s GitHub v0.92 release lists a standalone Windows installer. Verified the uploaded asset metadata on 2026-11-19; no package was downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/trolit/projectZero/releases/tags/v0.92",
+            "checkedAt": "2026-11-19",
+            "result": "Official GitHub release metadata for the exact author repository verifies v0.92 and a separate uploaded 353,689,960-byte native Windows installer, not an automatically generated source archive. No package was downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/trolit/projectZero/releases/tag/v0.92",
+          "authorVerification": "The exact source repository author trolit publishes this release and directly uploads the named installer.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Official GitHub release metadata for the exact author repository verifies v0.92 and a separate uploaded 353,689,960-byte native Windows installer, not an automatically generated source archive. No package was downloaded or executed.",
+          "assets": [
+            {
+              "url": "https://github.com/trolit/projectZero/releases/download/v0.92/ProjectZero_installer.exe",
+              "name": "ProjectZero_installer.exe",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 353689960
             }
           ]
         }
@@ -47217,73 +47246,6 @@
           },
           {
             "url": "https://github.com/sorrycc/fable-arcade/releases",
-            "checkedAt": "2026-11-19",
-            "result": "The public GitHub Releases listing explicitly showed no published releases. No native build was retrieved or executed; other publication sites are not ruled out."
-          }
-        ]
-      },
-      {
-        "id": "open3d-single-html-game-bench",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: Keep source unchanged: no browser-render verification was performed by this media review. Published candidates or local-source instructions alone do not establish a rendered author build. The source repository's GitHub Releases page explicitly showed no published releases in this check.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/chojondocho/single-html-game-bench/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/chojondocho/single-html-game-bench",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/chojondocho/single-html-game-bench/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/chojondocho/single-html-game-bench/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Retrieved and reviewed author README for published game links and creator media."
-          },
-          {
-            "url": "https://github.com/chojondocho/single-html-game-bench",
-            "checkedAt": "2026-11-18",
-            "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-          },
-          {
-            "url": "https://github.com/chojondocho/single-html-game-bench/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Retrieved public repository/release evidence (HTTP 200); retrieval alone does not establish a playable release or screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/chojondocho/single-html-game-bench/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Reviewed source content; Author benchmark homepage was statically read. Its appendix explicitly links codex-arcanine-47s.png for one named game build; this creator image is queued for pixel review, not assumed to be gameplay."
-          },
-          {
-            "url": "https://chojondocho.github.io/single-html-game-bench/",
-            "checkedAt": "2026-11-18",
-            "result": "Read the author page as text; game links or UI are present but this is not visual rendering verification."
-          },
-          {
-            "url": "https://github.com/chojondocho/single-html-game-bench",
-            "checkedAt": "2026-11-18",
-            "result": "Recorded source-review outcome: research-incomplete."
-          },
-          {
-            "url": "https://chojondocho.github.io/single-html-game-bench/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for publication evidence; actual gameplay rendering was not verified by this text retrieval."
-          },
-          {
-            "url": "https://github.com/chojondocho/single-html-game-bench/releases",
-            "checkedAt": "2026-11-20",
-            "result": "The public GitHub Releases listing explicitly showed no published releases. No native build was retrieved or executed; other publication sites are not ruled out."
-          },
-          {
-            "url": "https://github.com/chojondocho/single-html-game-bench/releases",
             "checkedAt": "2026-11-19",
             "result": "The public GitHub Releases listing explicitly showed no published releases. No native build was retrieved or executed; other publication sites are not ruled out."
           }
@@ -70729,43 +70691,6 @@
             "url": "https://deadprocess.itch.io/dgs",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
-        "id": "open3d-project-zero",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/trolit/projectZero/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/trolit/projectZero",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/trolit/projectZero/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/trolit/projectZero/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/trolit/projectZero",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/trolit/projectZero/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
           }
         ]
       },

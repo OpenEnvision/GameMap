@@ -10266,6 +10266,19 @@
       "sha256": "0c3a571dfeb67f234745f3c392a8926f197c3ccc856afe5ed7ab2f30dcb17cfc"
     },
     {
+      "id": "open3d-single-html-game-bench",
+      "src": "media/learning/open3d-single-html-game-bench.webp",
+      "alt": "A first-person revolver and minimap inside a dark stone dungeon, with six loaded rounds and a two-seal objective.",
+      "caption": "Depth I gameplay in The Hollow Below, the benchmark’s ChatGPT GPT-5.6 Sol Pro 0709 variant.",
+      "sourceUrl": "https://chojondocho.github.io/single-html-game-bench/chatgpt-gpt-5-6-sol-pro-0709.html",
+      "origin": "browser-capture",
+      "capturedAt": "2026-11-19T18:38:52.098Z",
+      "width": 1280,
+      "height": 720,
+      "bytes": 19494,
+      "sha256": "676eedc4052f6995e71ae49d78b4bf35a96f6db54f95842f2edbb4489529c6e1"
+    },
+    {
       "id": "open3d-decarlo-boyz",
       "src": "media/learning/open3d-decarlo-boyz.webp",
       "alt": "A player character stands on a rainy nighttime city street among pedestrians and traffic.",
@@ -12180,6 +12193,20 @@
       "height": 720,
       "bytes": 38908,
       "sha256": "89522070c051feb53020f1e69eef29d7898777f440df828613a938f1c6bd1da6"
+    },
+    {
+      "id": "open3d-quest-ai",
+      "src": "media/learning/open3d-quest-ai.webp",
+      "alt": "Quest AI Cooking Catastrophe gameplay, with two stylized wizards by a kitchen and sentence-building controls.",
+      "caption": "Creator-published gameplay screenshot from the Quest AI visual regression archive, showing the interactive Cooking Catastrophe quest. Image rights remain with the original creator.",
+      "sourceUrl": "https://github.com/DrewWasem/quest_ai/blob/16add5d034816ba6c242ee7da156a74eec6ad8cc/frontend/tests/screenshots/stage-07-mage-kitchen.png",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://raw.githubusercontent.com/DrewWasem/quest_ai/16add5d034816ba6c242ee7da156a74eec6ad8cc/frontend/tests/screenshots/stage-07-mage-kitchen.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 51996,
+      "sha256": "f2dc6c2054bd981c05b27dd664cdb6436608f9a6de79f001b42e074cf3e15936"
     },
     {
       "id": "open3d-gravewake",
