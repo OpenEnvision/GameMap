@@ -240,13 +240,13 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
   },
   "open3d-single-html-game-bench": {
     src: "media/learning/open3d-single-html-game-bench.webp",
-    alt: "A first-person revolver and minimap inside a dark stone dungeon, with six loaded rounds and a two-seal objective.",
+    alt: "A first-person revolver points into a stone corridor framed by block walls, with a minimap and seal objective.",
     caption:
-      "Depth I gameplay in The Hollow Below, the benchmark’s ChatGPT GPT-5.6 Sol Pro 0709 variant.",
+      "Approaching a stone corridor on Depth I in The Hollow Below, the benchmark’s ChatGPT GPT-5.6 Sol Pro 0709 variant.",
     sourceUrl:
       "https://chojondocho.github.io/single-html-game-bench/chatgpt-gpt-5-6-sol-pro-0709.html",
     origin: "browser-capture",
-    capturedAt: "2026-11-19T18:38:52.098Z",
+    capturedAt: "2026-11-19T18:59:16.525Z",
     width: 1280,
     height: 720,
   },
@@ -2796,6 +2796,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "jam-hughs-chromatic-adventure": {
+    src: "media/learning/jam-hughs-chromatic-adventure.webp",
+    alt: "A pixel-art penguin between green ledges and translucent pink platforms.",
+    caption:
+      "Creator-published gameplay: The penguin navigates moving platforms in the second level.",
+    sourceUrl: "https://github.com/tessapower/ggj-2026/issues/104",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://github.com/user-attachments/assets/e09ce969-f177-4e13-bc57-1daf54d21f0a",
+    width: 1280,
+    height: 720,
+  },
   "jam-absurd-herd": {
     src: "media/learning/jam-absurd-herd.webp",
     alt: "A character stands among colorful water, fire and bomb creatures in a grassy paddock, with delivery goals shown on the left.",
@@ -2998,6 +3011,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-18",
     originalImageUrl:
       "https://img.itch.zone/aW1hZ2UvMTkyMTM0OS8xMTI5NTY4NC5naWY=/original/jhfhRl.gif",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-boom": {
+    src: "media/learning/open3d-boom.webp",
+    alt: "A first-person view down a brick corridor toward a glowing green portal, with the health meter at 65.",
+    caption:
+      "Creator-published Boom gameplay screenshot from the developer’s debug build. Image rights remain with their respective owners.",
+    sourceUrl: "https://github.com/FelicePollano/Boom/blob/main/README.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://raw.githubusercontent.com/FelicePollano/Boom/main/screenshots/Screenshot%20from%202023-01-02%2010-24-45.png",
     width: 1280,
     height: 720,
   },
@@ -4453,6 +4479,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-blackout-facility": {
+    src: "media/learning/open3d-blackout-facility.webp",
+    alt: "A first-person reticle faces the dark generator room beside a glowing yellow objective marker.",
+    caption:
+      "Creator-published Blackout Facility gameplay screenshot from the developer’s power-event play-mode capture. Image rights remain with their respective owners.",
+    sourceUrl:
+      "https://github.com/FahimKamal/UE5_MazeEscape/blob/main/README.md",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://github.com/user-attachments/assets/a27fe258-21d8-4da3-a433-f61e6fe3b083",
+    width: 1280,
+    height: 720,
+  },
   "open3d-dark-lab": {
     src: "media/learning/open3d-dark-lab.webp",
     alt: "An overhead character holds a lighter in a dark tiled laboratory room, with introductory instructions, an inventory indicator and a keycard panel.",
@@ -5411,6 +5451,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-flax-engine-top-down-shooter": {
+    src: "media/learning/open3d-flax-engine-top-down-shooter.webp",
+    alt: "A blue player, red enemy and yellow projectile glow against the dark top-down arena, with the score at one.",
+    caption:
+      "Creator-published Flax Engine Top-Down Shooter screenshot from an active round. Image rights remain with their respective owners.",
+    sourceUrl:
+      "https://forum.flaxengine.com/t/flax-engine-top-down-shooter-game-finished-source-code-available/534",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://forum.flaxengine.com/uploads/default/original/1X/3f2257e67828a40741e7ee82caa175c655e1b8e5.jpeg",
+    width: 1280,
+    height: 720,
+  },
   "open3d-bevy-blast-ultra": {
     src: "media/learning/open3d-bevy-blast-ultra.webp",
     alt: "Blue balls gather on a yellow platform beside glowing red pits, with goal and elapsed-time indicators.",
@@ -5447,6 +5501,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     reviewedAt: "2026-11-19",
     originalImageUrl:
       "https://f.classicube.net/uploads/monthly_2020_10/mobile.jpg.613ad29e9c1f60dffd84a81b6cb988e7.jpg",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-golab": {
+    src: "media/learning/open3d-golab.webp",
+    alt: "Golab first-person gameplay in an orange arena, aiming at a blue opponent with a glowing projectile and health and dash HUD.",
+    caption:
+      "Gameplay frame at 23 seconds in the creator-published Golab clip. Image rights remain with the original creator.",
+    sourceUrl: "https://github.com/NiiightmareXD/golab",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://github.com/user-attachments/assets/13641e96-2cb7-432f-8baf-5b4d6ce82ddd",
     width: 1280,
     height: 720,
   },

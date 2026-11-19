@@ -1511,28 +1511,28 @@
       "title": "Single HTML Game Bench",
       "media": {
         "src": "media/learning/open3d-single-html-game-bench.webp",
-        "alt": "A first-person revolver and minimap inside a dark stone dungeon, with six loaded rounds and a two-seal objective.",
-        "caption": "Depth I gameplay in The Hollow Below, the benchmark’s ChatGPT GPT-5.6 Sol Pro 0709 variant.",
+        "alt": "A first-person revolver points into a stone corridor framed by block walls, with a minimap and seal objective.",
+        "caption": "Approaching a stone corridor on Depth I in The Hollow Below, the benchmark’s ChatGPT GPT-5.6 Sol Pro 0709 variant.",
         "sourceUrl": "https://chojondocho.github.io/single-html-game-bench/chatgpt-gpt-5-6-sol-pro-0709.html",
         "origin": "browser-capture",
-        "capturedAt": "2026-11-19T18:38:52.098Z",
+        "capturedAt": "2026-11-19T18:59:16.525Z",
         "width": 1280,
         "height": 720
       },
       "evidence": {
         "browserSandbox": true,
         "inputActions": [
-          "Opened the exact The Hollow Below variant linked from the author’s benchmark index.",
-          "Clicked Begin a new descent and entered the first dungeon floor.",
-          "Held D for 550 milliseconds to move right, then captured the gameplay HUD."
+          "Opened the author’s exact The Hollow Below benchmark build and clicked Begin a new descent.",
+          "Held A for 850 ms, then A for 450 ms and W for 800 ms to explore the starting room.",
+          "Held S for 800 ms, D for 250 ms, D for 450 ms, and W for 900 ms to line up the corridor entrance."
         ],
-        "sourceFrameSHA256": "dc01ad3aed2ad6c3d83afe3dcbdd084be91cab6f5a28d6deec69aea04dc58417",
+        "sourceFrameSHA256": "cc0c29509929b40abecc1f2023b1840f1b1087bdf89c354f60759470cf8cb9eb",
         "sourceWidth": 1180,
         "sourceHeight": 757,
         "originalFormat": "jpeg",
         "frameIndex": 0,
         "sourceFrames": 1,
-        "visualFinding": "The first-person Depth I dungeon has block walls, an on-screen revolver, a minimap, and HUD counters showing six loaded rounds and zero of two seals recovered."
+        "visualFinding": "The revolver and crosshair are centered on an opening between two block walls on Depth I; the receding walls give the corridor visible depth, while the minimap, three player meters, and the seal and ammunition counters remain visible."
       },
       "processing": {
         "fit": "contain",
@@ -1542,8 +1542,8 @@
         "generatedSceneContent": false
       },
       "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
-      "sha256": "676eedc4052f6995e71ae49d78b4bf35a96f6db54f95842f2edbb4489529c6e1",
-      "bytes": 19494
+      "sha256": "16b23c63332814ecdd0a6694fc58f1ab6e61e180f4fa7f3149ad6318234aad42",
+      "bytes": 21240
     },
     {
       "id": "open3d-decarlo-boyz",
@@ -8306,6 +8306,42 @@
       "sha256": "d04605e56f62ef3ec89d8e821bd874047acab7c531e694b42f4771f7441853d9"
     },
     {
+      "id": "jam-hughs-chromatic-adventure",
+      "title": "Hugh's Chromatic Adventure",
+      "media": {
+        "src": "media/learning/jam-hughs-chromatic-adventure.webp",
+        "alt": "A pixel-art penguin between green ledges and translucent pink platforms.",
+        "caption": "Creator-published gameplay: The penguin navigates moving platforms in the second level.",
+        "sourceUrl": "https://github.com/tessapower/ggj-2026/issues/104",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://github.com/user-attachments/assets/e09ce969-f177-4e13-bc57-1daf54d21f0a",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "126bc7f3c6f4f521146a8949796e72f789d2ea8f7f1d1c0afa0265f0bb09651e",
+        "sourceFrameSHA256": "332135406ac69d98c2770c65b30fb8a843ed6598b34af6ec75f2356fcf55c933",
+        "sourceWidth": 639,
+        "sourceHeight": 353,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally reviewed the full submitted PNG: the gray penguin is partially occluded by a pink moving platform, with green ledges and translucent platform outlines in the level. The image shows the active platforming scene with no title, menu, or collage.",
+        "versionNote": "Published by credited project coauthor jdnl12 in the exact game repository’s second-level platform rendering report; the author-supplied image is a close view of the level and illustrates that occlusion."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "e2dfed4c30c2b5d3a1672764db5edfa0d1d9cfc357c7895ba040bc4675ba3a8b",
+      "bytes": 8528
+    },
+    {
       "id": "jam-absurd-herd",
       "title": "Absurd Herd",
       "media": {
@@ -8881,6 +8917,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "5fa45429e49289957b8a315b399e3afe93af77d40ef5990b9d57870b3a6b2b0c",
       "bytes": 17100
+    },
+    {
+      "id": "open3d-boom",
+      "title": "Boom",
+      "media": {
+        "src": "media/learning/open3d-boom.webp",
+        "alt": "A first-person view down a brick corridor toward a glowing green portal, with the health meter at 65.",
+        "caption": "Creator-published Boom gameplay screenshot from the developer’s debug build. Image rights remain with their respective owners.",
+        "sourceUrl": "https://github.com/FelicePollano/Boom/blob/main/README.md",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://raw.githubusercontent.com/FelicePollano/Boom/main/screenshots/Screenshot%20from%202023-01-02%2010-24-45.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "d92e67ccb1e8040b3cb27b9e2f98730a27ba81fcd45853381100602c3deda310",
+        "sourceFrameSHA256": "0c35c4b19637431cec83c3b6e7f9d9c87b9493be19fb5eb9e4af6ad194a91893",
+        "sourceWidth": 1026,
+        "sourceHeight": 638,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed the full 1026 by 638 author original, labelled Boom (DEBUG) in the standalone game window. The first-person weapon, visible health reading of 65, defeated sprite and active green portal establish play rather than a level editor, title screen or render comparison. The author’s README links this exact full screenshot in its gameplay-media section."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "ea050ae52f12ea736dbdb63ff4bbf4b5e3828df93450b058ec0071b685dc868f",
+      "bytes": 113462
     },
     {
       "id": "open3d-broken-seals",
@@ -12870,6 +12941,41 @@
       "bytes": 27062
     },
     {
+      "id": "open3d-blackout-facility",
+      "title": "Blackout Facility",
+      "media": {
+        "src": "media/learning/open3d-blackout-facility.webp",
+        "alt": "A first-person reticle faces the dark generator room beside a glowing yellow objective marker.",
+        "caption": "Creator-published Blackout Facility gameplay screenshot from the developer’s power-event play-mode capture. Image rights remain with their respective owners.",
+        "sourceUrl": "https://github.com/FahimKamal/UE5_MazeEscape/blob/main/README.md",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://github.com/user-attachments/assets/a27fe258-21d8-4da3-a433-f61e6fe3b083",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "374302426b21e6f7823c03274eb80bf9d90139d3c5b058bfdb40cb3bb130d779",
+        "sourceFrameSHA256": "0809c143ff36a048def6beb0e24b3e05c156d739d449f55419268ffaa4454f3a",
+        "sourceWidth": 2559,
+        "sourceHeight": 1389,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed this single full 2559 by 1389 play-mode frame. A centered aiming reticle, yellow objective marker, red equipment indicators and the Central Hub Lift and Generator sign are visible. A faint Click for Mouse Control prompt indicates a development play-mode session; there are no editor panels, title art, menus or montage. The original developer README directly embeds this exact attachment as its Power On event screenshot. The durable GitHub attachment resolves to the allowlisted GitHub asset CDN."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "66a3940128648c512f450e3f05c95a33c876c069c820f1c1624d00ef10342e15",
+      "bytes": 13060
+    },
+    {
       "id": "open3d-dark-lab",
       "title": "Dark Lab",
       "media": {
@@ -15604,6 +15710,41 @@
       "sha256": "a254574dc9faab053e2820472b6c6136cbaad5d1f53119d2a0c61b9f9bd27e2b"
     },
     {
+      "id": "open3d-flax-engine-top-down-shooter",
+      "title": "Flax Engine Top Down Shooter",
+      "media": {
+        "src": "media/learning/open3d-flax-engine-top-down-shooter.webp",
+        "alt": "A blue player, red enemy and yellow projectile glow against the dark top-down arena, with the score at one.",
+        "caption": "Creator-published Flax Engine Top-Down Shooter screenshot from an active round. Image rights remain with their respective owners.",
+        "sourceUrl": "https://forum.flaxengine.com/t/flax-engine-top-down-shooter-game-finished-source-code-available/534",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://forum.flaxengine.com/uploads/default/original/1X/3f2257e67828a40741e7ee82caa175c655e1b8e5.jpeg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "3ca132deb870db8bf82bfdd5971af98ae7383fe8f9d9688ace33623ac98d3cbe",
+        "sourceFrameSHA256": "36bed64448ff3d9c4bc33000c0f5b23bb12a9b86e0e7a0b9e9ed38038c735449",
+        "sourceWidth": 1180,
+        "sourceHeight": 703,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the full 1180 by 703 author original. The in-game score at one and distinct luminous game entities are clearly visible in the standalone game view; this is neither the main menu nor the separately posted Game Over screen. The author forum post links the exact repository; the same author identifies themselves as PrecisionRender, also known as Spectrix."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "9704df226818161a377d12dba0a8d02e533b1bceecfd52b4a736908926d5c8bc",
+      "bytes": 9438
+    },
+    {
       "id": "open3d-bevy-blast-ultra",
       "title": "Bevy Blast Ultra",
       "media": {
@@ -15709,6 +15850,42 @@
       "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
       "sha256": "ac7a78ed059a8dec03a156924812e887e9b94abc84a85d56b5752ab7d6f1ab24",
       "bytes": 96342
+    },
+    {
+      "id": "open3d-golab",
+      "title": "Golab",
+      "media": {
+        "src": "media/learning/open3d-golab.webp",
+        "alt": "Golab first-person gameplay in an orange arena, aiming at a blue opponent with a glowing projectile and health and dash HUD.",
+        "caption": "Gameplay frame at 23 seconds in the creator-published Golab clip. Image rights remain with the original creator.",
+        "sourceUrl": "https://github.com/NiiightmareXD/golab",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://github.com/user-attachments/assets/13641e96-2cb7-432f-8baf-5b4d6ce82ddd",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "44115afbd53f6df345d4d72d91bdfc729897e10e18a6b3fb6f98cc48ea4ae09d",
+        "sourceFrameSHA256": "22ba799182ed0d27d615500dc2ffdd33cefb03c43c1b6e1a718a8d1c763b0800",
+        "sourceWidth": 1920,
+        "sourceHeight": 1080,
+        "originalFormat": "mp4",
+        "frameIndex": 1380,
+        "sourceFrames": 1625,
+        "visualFinding": "Personally inspected the exact uncropped 1920×1080 frame 1380 at 23 seconds. The player aims a blue first-person weapon through an orange opening at a blue opponent labeled Golabi; a red projectile, crosshair, controls, ping, health 100/100 and dash cooldown are visible. This portion is fullscreen gameplay with no title, desktop chrome, facecam, cover art or montage. Exact project author README embeds the stable GitHub attachment under Click to watch the gameplay clip. The original HTTP 200 asset is 9,811,278 bytes, H.264 60fps, 1625 frames; exact PNG passes reviewFrame and unchanged origin validation.",
+        "frameOffsetSeconds": 23
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "597e2661ee058445e4b78b2f63c5f6b5a9fb54ef3f2827ef7554c521e33e1328",
+      "bytes": 31540
     },
     {
       "id": "open3d-h-craft-championship",
@@ -25549,8 +25726,8 @@
     },
     {
       "id": "open3d-duskline",
-      "status": "research-incomplete",
-      "reason": "The creator's deployed build opened in the cloud sandbox and requested an email and password before access beyond its sign-in screen. There was no guest option shown; nothing was entered. Research incomplete or access-limited: README.md returned 404; root has no rendered README and includes public/images, src and CLOUD_SETUP.md. Supplied AWS article and actual publication remain unvisited. No eligible Duskline gameplay capture was obtained in this audit. The developer's article links the exact source and publication, but has no gameplay raster in the body. All ten tracked candidate JPEGs are map-selection illustrations, menu art or story artwork. The developer's deployed site requires sign-in before gameplay; no credentials were entered.",
+      "status": "missing",
+      "reason": "No qualifying screenshot was found in the defined author sources checked. The creator's AWS article links the exact source and deployed build but publishes no in-body gameplay raster. The untruncated 54-entry repository tree has ten raster candidates, each personally inspected: five map-selection illustrations, one menu background and four story illustrations. The cloud browser reached a mandatory email/password sign-in and offered no visible guest mode; no credentials were entered, so no gameplay was observed or captured. This does not establish absence from other author publications.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/blackshadowog/duskline/HEAD/README.md",
@@ -25651,6 +25828,111 @@
           "url": "https://raw.githubusercontent.com/blackshadowog/duskline/HEAD/public/images/story-rescue.jpg",
           "checkedAt": "2026-11-19",
           "result": "Cinematic posed narrative scene in stone ruins, not a player view or identifiable gameplay."
+        },
+        {
+          "url": "https://github.com/blackshadowog/duskline/blob/main/public/images/map-city.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Exact author repository file page corresponding to the visually reviewed original: Illustrated rainy neon skyline with a posed figure on a balcony; no game UI or live first-person view."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/blackshadowog/duskline/HEAD/public/images/map-city.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed original 1408×768 JPEG, SHA-256 6ea979f0ea6a826e1f7ba082877b6aa41f9e9d25c25b77262425a38e590b4ef1. Illustrated rainy neon skyline with a posed figure on a balcony; no game UI or live first-person view."
+        },
+        {
+          "url": "https://github.com/blackshadowog/duskline/blob/main/public/images/map-desert.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Exact author repository file page corresponding to the visually reviewed original: Panoramic desert village illustration and dunes at sunset; no HUD or player action."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/blackshadowog/duskline/HEAD/public/images/map-desert.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed original 1408×768 JPEG, SHA-256 d2c3cdc5ead9687ba02be69d759bddfe3af01387653fe5885ba6883488e0fb68. Panoramic desert village illustration and dunes at sunset; no HUD or player action."
+        },
+        {
+          "url": "https://github.com/blackshadowog/duskline/blob/main/public/images/map-harbor.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Exact author repository file page corresponding to the visually reviewed original: Cinematic aerial shipping-port artwork with container stacks and cranes; no game UI or gameplay evidence."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/blackshadowog/duskline/HEAD/public/images/map-harbor.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed original 1408×768 JPEG, SHA-256 28a103b3ab2436887d5681c63b453cfe4e792368078af147f79d5c42bdad0875. Cinematic aerial shipping-port artwork with container stacks and cranes; no game UI or gameplay evidence."
+        },
+        {
+          "url": "https://github.com/blackshadowog/duskline/blob/main/public/images/map-marsh.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Exact author repository file page corresponding to the visually reviewed original: Illustrative marsh outpost environment with small posed figure; no game UI or credible live gameplay."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/blackshadowog/duskline/HEAD/public/images/map-marsh.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed original 1408×768 JPEG, SHA-256 d88beb52d16d9aeeb7a6636a37c287af406de4c4aa5c0b34bd2b517faa8511be. Illustrative marsh outpost environment with small posed figure; no game UI or credible live gameplay."
+        },
+        {
+          "url": "https://github.com/blackshadowog/duskline/blob/main/public/images/map-snow.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Exact author repository file page corresponding to the visually reviewed original: Cinematic valley outpost art with snow and a radar dome, not visibly gameplay."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/blackshadowog/duskline/HEAD/public/images/map-snow.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed original 1408×768 JPEG, SHA-256 6e61da27c309d8df6935af1edbbec87d059c6154d05eb8b81a4bdf086130b416. Cinematic valley outpost art with snow and a radar dome, not visibly gameplay."
+        },
+        {
+          "url": "https://github.com/blackshadowog/duskline/blob/main/public/images/menu-bg.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Exact author repository file page corresponding to the visually reviewed original: Sniper on a ruined ledge overlooking smoke and mountains; exact main menu background art, excluded."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/blackshadowog/duskline/HEAD/public/images/menu-bg.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed original 1584×672 JPEG, SHA-256 d53c90d9adb167df7fd9233cde82079419c5eb72a2027e23ea70bc94547ee492. Sniper on a ruined ledge overlooking smoke and mountains; exact main menu background art, excluded."
+        },
+        {
+          "url": "https://github.com/blackshadowog/duskline/blob/main/public/images/story-boss.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Exact author repository file page corresponding to the visually reviewed original: Cinematic posed adversary with red visor on a lit bridge, not observed gameplay."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/blackshadowog/duskline/HEAD/public/images/story-boss.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed original 1584×672 JPEG, SHA-256 9d6da9c7334df531fbd417f96ec8f52e52905343e7d3f2a9acc9922d72006f6a. Cinematic posed adversary with red visor on a lit bridge, not observed gameplay."
+        },
+        {
+          "url": "https://github.com/blackshadowog/duskline/blob/main/public/images/story-finale.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Exact author repository file page corresponding to the visually reviewed original: Illustrative shipping-harbor dusk with a posed marksman silhouette, not game UI."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/blackshadowog/duskline/HEAD/public/images/story-finale.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed original 1600×672 JPEG, SHA-256 2a4b30961b6f39ab8e9ea2c8dba319abc4dcf76ca7e7bb1c453b4fb76da5415a. Illustrative shipping-harbor dusk with a posed marksman silhouette, not game UI."
+        },
+        {
+          "url": "https://github.com/blackshadowog/duskline/blob/main/public/images/story-prologue.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Exact author repository file page corresponding to the visually reviewed original: Illustrated campaign notice board and photo arrangement, not a game scene."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/blackshadowog/duskline/HEAD/public/images/story-prologue.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed original 1376×768 JPEG, SHA-256 d56b8e9c4cef528802bfec859d289d8c64ed3a12dc7271e31ad560b4c5fae7eb. Illustrated campaign notice board and photo arrangement, not a game scene."
+        },
+        {
+          "url": "https://github.com/blackshadowog/duskline/blob/main/public/images/story-rescue.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Exact author repository file page corresponding to the visually reviewed original: Cinematic posed narrative scene in stone ruins, not a player view or identifiable gameplay."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/blackshadowog/duskline/HEAD/public/images/story-rescue.jpg",
+          "checkedAt": "2026-11-19",
+          "result": "Reviewed original 1584×672 JPEG, SHA-256 63021064c94f71d759d2dac55e86c63af8ada4a904ced08f6fef58f6fd5112f5. Cinematic posed narrative scene in stone ruins, not a player view or identifiable gameplay."
+        },
+        {
+          "url": "https://builder.aws.com/content/3KCH1lCKDVDv4FJlPFdoAEb0vEX/building-duskline-from-an-idea-to-a-live-3d-browser-game-with-kiro-and-antideploy",
+          "checkedAt": "2026-11-20",
+          "result": "The creator article links the exact Duskline repository and deployment and has no gameplay raster in its body."
         }
       ]
     },
@@ -30196,6 +30478,11 @@
           "url": "https://jerryshell.itch.io/agarust",
           "checkedAt": "2026-11-18",
           "result": "% Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 0 0 0 0 0 0 0 0 --:--:-- --:--:-- --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- 0:00:01 --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- 0:00:01 --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- 0:00:01 --:--:-- 0 curl: (22) The requested URL returned error: 403"
+        },
+        {
+          "url": "https://api.github.com/repos/jerryshell/agarust/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (114 entries; Git object b41722b8dd7758dc162347e9cde40cc3298293dd) contains 2 tracked raster/video paths in the scanned formats. This inventory is not a pixel review. Listed candidates: client/assets/blob.png, client/assets/icon.png."
         }
       ]
     },
@@ -30350,6 +30637,11 @@
           "url": "https://itsaina.itch.io/critter-catchers",
           "checkedAt": "2026-11-18",
           "result": "% Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 0 0 0 0 0 0 0 0 --:--:-- --:--:-- --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- 0:00:01 --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- 0:00:02 --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- 0:00:03 --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- 0:00:04 --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- 0:00:05 --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- 0:00:05 --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- 0:00:06 --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- 0:00:07 --:--:-- 0 curl: (22) The requested URL returned error: 404"
+        },
+        {
+          "url": "https://api.github.com/repos/AinaVT/CritterCatchers-LD/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (294 entries; Git object bb3e7dab0e52833d462f5b8812b548ab1911e9f5) contains 11 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -30422,6 +30714,11 @@
           "url": "https://raw.githubusercontent.com/ClarkThyLord/Wild-Fishing/HEAD/icon.splash.png",
           "checkedAt": "2026-11-18",
           "result": "reviewFrame rejected the README splash icon as too small for gameplay review."
+        },
+        {
+          "url": "https://api.github.com/repos/ClarkThyLord/Wild-Fishing/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (418 entries; Git object 185250d8914e802925136d63b5ccabf67b5ac439) contains 156 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -30740,68 +31037,6 @@
         },
         {
           "url": "https://andersonhn.itch.io/shadow",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved author page HTML; image candidates were extracted for direct review."
-        }
-      ]
-    },
-    {
-      "id": "jam-hughs-chromatic-adventure",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Fresh author entry HTML was retrieved at https://sasspower.itch.io/hughs-chromatic-adventure. Isolated stylized character surrounded by color shapes, cover artwork rather than gameplay. New cached repository/README/release checks: https://github.com/tessapower/ggj-2026 (HTTP 200); https://raw.githubusercontent.com/tessapower/ggj-2026/HEAD/README.md (HTTP 200); https://github.com/tessapower/ggj-2026/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-hughs-chromatic-adventure-fetch.log. Prior limitation retained: Cache-backed author page and repository README collection found only illustrated pixel cover art, directly read and rejected. Prior sandbox request exceeded the existing 100MB single-resource/180MB cumulative transfer budget; not retried with raised limits. Need an author gameplay image within image limits. Supplemental actual GitHub repository root, linked main README and bounded main source-tree inspection located no screenshot-named/GIF candidate; source evidence is in author-pages, author-trees and repo-readmes-final.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/tessapower/ggj-2026/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/tessapower/ggj-2026",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/tessapower/ggj-2026/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://sasspower.itch.io/hughs-chromatic-adventure",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author entry HTML was retrieved at https://sasspower.itch.io/hughs-chromatic-adventure. Isolated stylized character surrounded by color shapes, cover artwork rather than gameplay. New cached repository/README/release checks: https://github.com/tessapower/ggj-2026 (HTTP 200); https://raw.githubusercontent.com/tessapower/ggj-2026/HEAD/README.md (HTTP 200); https://github.com/tessapower/ggj-2026/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-hughs-chromatic-adventure-fetch.log. Prior limitation retained: Cache-backed author page and repository README collection found only illustrated pixel cover art, directly read and rejected. Prior sandbox request exceeded the existing 100MB single-resource/180MB cumulative transfer budget; not retried with raised limits. Need an author gameplay image within image limits. Supplemental actual GitHub repository root, linked main README and bounded main source-tree inspection located no screenshot-named/GIF candidate; source evidence is in author-pages, author-trees and repo-readmes-final."
-        },
-        {
-          "url": "https://github.com/tessapower/ggj-2026",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author entry HTML was retrieved at https://sasspower.itch.io/hughs-chromatic-adventure. Isolated stylized character surrounded by color shapes, cover artwork rather than gameplay. New cached repository/README/release checks: https://github.com/tessapower/ggj-2026 (HTTP 200); https://raw.githubusercontent.com/tessapower/ggj-2026/HEAD/README.md (HTTP 200); https://github.com/tessapower/ggj-2026/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-hughs-chromatic-adventure-fetch.log. Prior limitation retained: Cache-backed author page and repository README collection found only illustrated pixel cover art, directly read and rejected. Prior sandbox request exceeded the existing 100MB single-resource/180MB cumulative transfer budget; not retried with raised limits. Need an author gameplay image within image limits. Supplemental actual GitHub repository root, linked main README and bounded main source-tree inspection located no screenshot-named/GIF candidate; source evidence is in author-pages, author-trees and repo-readmes-final."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/tessapower/ggj-2026/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author entry HTML was retrieved at https://sasspower.itch.io/hughs-chromatic-adventure. Isolated stylized character surrounded by color shapes, cover artwork rather than gameplay. New cached repository/README/release checks: https://github.com/tessapower/ggj-2026 (HTTP 200); https://raw.githubusercontent.com/tessapower/ggj-2026/HEAD/README.md (HTTP 200); https://github.com/tessapower/ggj-2026/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-hughs-chromatic-adventure-fetch.log. Prior limitation retained: Cache-backed author page and repository README collection found only illustrated pixel cover art, directly read and rejected. Prior sandbox request exceeded the existing 100MB single-resource/180MB cumulative transfer budget; not retried with raised limits. Need an author gameplay image within image limits. Supplemental actual GitHub repository root, linked main README and bounded main source-tree inspection located no screenshot-named/GIF candidate; source evidence is in author-pages, author-trees and repo-readmes-final."
-        },
-        {
-          "url": "https://github.com/tessapower/ggj-2026/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author entry HTML was retrieved at https://sasspower.itch.io/hughs-chromatic-adventure. Isolated stylized character surrounded by color shapes, cover artwork rather than gameplay. New cached repository/README/release checks: https://github.com/tessapower/ggj-2026 (HTTP 200); https://raw.githubusercontent.com/tessapower/ggj-2026/HEAD/README.md (HTTP 200); https://github.com/tessapower/ggj-2026/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-hughs-chromatic-adventure-fetch.log. Prior limitation retained: Cache-backed author page and repository README collection found only illustrated pixel cover art, directly read and rejected. Prior sandbox request exceeded the existing 100MB single-resource/180MB cumulative transfer budget; not retried with raised limits. Need an author gameplay image within image limits. Supplemental actual GitHub repository root, linked main README and bounded main source-tree inspection located no screenshot-named/GIF candidate; source evidence is in author-pages, author-trees and repo-readmes-final."
-        },
-        {
-          "url": "https://github.com/tessapower/ggj-2026",
-          "checkedAt": "2026-11-18",
-          "result": "HTTP 200. Retrieved author repository/README/release page; no qualifying gameplay raster was established from this page."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/tessapower/ggj-2026/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "HTTP 200. Retrieved author repository/README/release page; no qualifying gameplay raster was established from this page."
-        },
-        {
-          "url": "https://github.com/tessapower/ggj-2026/releases",
-          "checkedAt": "2026-11-18",
-          "result": "HTTP 200. Retrieved author repository/README/release page; no qualifying gameplay raster was established from this page."
-        },
-        {
-          "url": "https://sasspower.itch.io/hughs-chromatic-adventure",
           "checkedAt": "2026-11-18",
           "result": "Retrieved author page HTML; image candidates were extracted for direct review."
         }
@@ -32313,7 +32548,7 @@
     {
       "id": "open3d-ashlands",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Original developer post includes one explicitly labelled cover from a generated game world plus charts, but no original independently verified full active gameplay image or public build. Technical repository materials describe a local Three.js WebGL build; no runtime claimed.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/addable-labs/ashlands/HEAD/README.md",
@@ -32344,6 +32579,16 @@
           "url": "https://github.com/addable-labs/ashlands/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://addablelabs.se/blog/ashlands-what-one-prompt-built/",
+          "checkedAt": "2026-11-19",
+          "result": "Original developer post includes one explicitly labelled cover from a generated game world plus charts, but no original independently verified full active gameplay image or public build. Technical repository materials describe a local Three.js WebGL build; no runtime claimed."
+        },
+        {
+          "url": "https://api.github.com/repos/addable-labs/ashlands/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (310 entries; Git object 126437d6bb4ce95e28ea15f06056f71dec06808f) contains 0 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -32381,6 +32626,11 @@
           "url": "https://github.com/bridge-mind/bridge-horror-house/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/bridge-mind/bridge-horror-house/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (21 entries; Git object c63aa7ca07109ac73736917db15543d363549400) contains 0 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -32596,6 +32846,11 @@
           "url": "https://liminal-tau.vercel.app/",
           "checkedAt": "2026-11-18",
           "result": "Public text retrieval failed or was unavailable; this does not establish that the author publication is absent."
+        },
+        {
+          "url": "https://api.github.com/repos/Onandthegr8/liminal/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (34 entries; Git object 5c26e6419a21d1ff7026df8c7ca98010fc5edcf5) contains 0 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -32760,7 +33015,7 @@
     {
       "id": "open3d-minipunk",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Competition exact developer submission points its displayed original at separate play.js13kgames.com origin. No qualified author raster from this path.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/codyebberson/js13k-minipunk/HEAD/README.md",
@@ -32801,6 +33056,16 @@
           "url": "https://js13kgames.com/entries/minipunk",
           "checkedAt": "2026-11-18",
           "result": "Public page text retrieved and inspected for publication evidence; actual gameplay rendering was not verified by this text retrieval."
+        },
+        {
+          "url": "https://js13kgames.com/games/minipunk",
+          "checkedAt": "2026-11-19",
+          "result": "Competition exact developer submission points its displayed original at separate play.js13kgames.com origin. No qualified author raster from this path."
+        },
+        {
+          "url": "https://api.github.com/repos/codyebberson/js13k-minipunk/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (42 entries; Git object 6b486f8e3aea8343c5cbbbed90a1fdc033290f00) contains 2 tracked raster/video paths in the scanned formats. This inventory is not a pixel review. Listed candidates: big-screenshot.png, small-screenshot.png."
         }
       ]
     },
@@ -32843,8 +33108,8 @@
     },
     {
       "id": "open3d-3d-horror-proto",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "status": "missing",
+      "reason": "No qualifying screenshot was found in the defined author sources checked. The exact repository's complete three-entry tree consists only of CHANGELOG.md, LICENSE and README.md; the full README describes controls and links no images, video or author-hosted browser build. The official prerelease identifies a ZIP attachment, not an independently published screenshot. Its native platform has not been verified; the archive was not downloaded or executed, and the demo status is tracked separately.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/RenWinterfox/3d-horror-godot/HEAD/README.md",
@@ -32875,50 +33140,28 @@
           "url": "https://github.com/RenWinterfox/3d-horror-godot/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
-      "id": "open3d-boom",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The inspected README image is a Godot editor viewport with grid and transform axes, not a running gameplay screenshot. No replacement frame was verified.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/FelicePollano/Boom/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
         },
         {
-          "url": "https://github.com/FelicePollano/Boom",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          "url": "https://github.com/RenWinterfox/3d-horror-godot/releases/tag/v0.0.1a",
+          "checkedAt": "2026-11-19",
+          "result": "Official prerelease has a separate 3d-horror-demo-v0.0.1a.zip attachment, but separately verified release description did not specify the native platform. Archive not downloaded and not accepted without stronger evidence."
         },
         {
-          "url": "https://github.com/FelicePollano/Boom/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          "url": "https://raw.githubusercontent.com/RenWinterfox/3d-horror-godot/HEAD/README.md",
+          "checkedAt": "2026-11-20",
+          "result": "The complete creator README describes the exact Godot 4 horror project and its controls. It contains no image/recording, public playable URL or supported platform for the release ZIP."
         },
         {
-          "url": "https://raw.githubusercontent.com/FelicePollano/Boom/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/FelicePollano/Boom",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/FelicePollano/Boom/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          "url": "https://api.github.com/repos/RenWinterfox/3d-horror-godot/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (3 entries; Git object fe66f6c68f6e5812225e74e2146a781bcf93f7d7) contains 0 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
     {
       "id": "open3d-in-the-blue-mist",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Author original repository describes the game and local Godot source. No first-party independent publisher page, original gameplay raster or native binary was established in the current search.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/cnharlan/GD_BlueMist/HEAD/README.md",
@@ -32949,13 +33192,28 @@
           "url": "https://github.com/cnharlan/GD_BlueMist/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://github.com/cnharlan/GD_BlueMist",
+          "checkedAt": "2026-11-19",
+          "result": "Author original repository describes the game and local Godot source. No first-party independent publisher page, original gameplay raster or native binary was established in the current search."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/cnharlan/GD_BlueMist/HEAD/README.md",
+          "checkedAt": "2026-11-20",
+          "result": "The complete creator README only identifies the public Godot repository and describes the PSX-style survival horror game. It links no media, public playable build or distribution."
+        },
+        {
+          "url": "https://api.github.com/repos/cnharlan/GD_BlueMist/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (236 entries; Git object af526dc2261fc465a78f7d299e561ab4f486ce65) contains 17 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
     {
       "id": "open3d-kilvault",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Author README refers to local executable files stored in a source-tree folder called releases, not verified authored GitHub Releases assets under the required path. Search for exact Kagerowo developer blog yielded no independently identified official post with a full frame.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/GravityI/kilvault/HEAD/README.md",
@@ -32986,6 +33244,21 @@
           "url": "https://github.com/GravityI/kilvault/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://github.com/GravityI/kilvault",
+          "checkedAt": "2026-11-19",
+          "result": "Author README refers to local executable files stored in a source-tree folder called releases, not verified authored GitHub Releases assets under the required path. Search for exact Kagerowo developer blog yielded no independently identified official post with a full frame."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/GravityI/kilvault/HEAD/README.md",
+          "checkedAt": "2026-11-20",
+          "result": "The complete creator README distinguishes a source-tree releases folder from a GitHub Releases publication, names local native executables, and explicitly links the creator’s Kagerowo WordPress devlogs and the project Trello. These public links were read, not followed in this offline reconciliation."
+        },
+        {
+          "url": "https://api.github.com/repos/GravityI/kilvault/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (130 entries; Git object 187f2db740cb7227e6a287ebf9a8de111986f1fa) contains 67 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -33023,6 +33296,11 @@
           "url": "https://github.com/GuaraProductions/Panik/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/GuaraProductions/Panik/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (1171 entries; Git object 3552c66b3f640c299f72cfd2707b8894de180384) contains 190 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -33060,13 +33338,18 @@
           "url": "https://github.com/pashudzu/UnderTheCoverOfNight/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/pashudzu/UnderTheCoverOfNight/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (1080 entries; Git object 83466e9d8fd96ab083d5898ab84db3aca77d0e90) contains 203 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
     {
       "id": "open3d-analogvhs",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Checked exact author archived Unity repository and README. It describes local clone/build and credits third-party analog video; no independently posted cursor/gameplay original or native release located.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/VargasCardona/AnalogVHS/HEAD/README.md",
@@ -33097,6 +33380,16 @@
           "url": "https://github.com/VargasCardona/AnalogVHS/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://github.com/VargasCardona/AnalogVHS",
+          "checkedAt": "2026-11-19",
+          "result": "Checked exact author archived Unity repository and README. It describes local clone/build and credits third-party analog video; no independently posted cursor/gameplay original or native release located."
+        },
+        {
+          "url": "https://api.github.com/repos/VargasCardona/AnalogVHS/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (793 entries; Git object 0b11b8ad39ae9da3726f3fa74847b26f98c40431) contains 133 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -33134,13 +33427,18 @@
           "url": "https://github.com/Amna-Hassan04/Cat-Sanctuary/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/Amna-Hassan04/Cat-Sanctuary/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (5725 entries; Git object 76bd496cebc68b81357467b68d03cedb96de5c57) contains 166 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
     {
       "id": "open3d-lockdown-breakout",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. The author explicitly distinguishes clean editor validation from a connected-headset playtest or native build. A source archive is not a playable download, and achievement photos are not game imagery.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/painfulmoments/lockdown_breakout/HEAD/README.md",
@@ -33171,6 +33469,16 @@
           "url": "https://github.com/painfulmoments/lockdown_breakout/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://github.com/painfulmoments/lockdown_breakout",
+          "checkedAt": "2026-11-19",
+          "result": "The author explicitly distinguishes clean editor validation from a connected-headset playtest or native build. A source archive is not a playable download, and achievement photos are not game imagery."
+        },
+        {
+          "url": "https://api.github.com/repos/painfulmoments/lockdown_breakout/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (4834 entries; Git object 4e9d09a977661a93a9236a0f3e9d71d3b97b0cc2) contains 482 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -33407,7 +33715,7 @@
     {
       "id": "open3d-mineclonia",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Canonical repository refused Web retrieval through robots restrictions; no bypass attempted. The repository listed by third-party mirrors does not establish independently qualifying original image evidence.",
       "checkedSources": [
         {
           "url": "https://content.luanti.org/packages/ryvnf/mineclonia/",
@@ -33423,6 +33731,11 @@
           "url": "https://content.luanti.org/packages/ryvnf/mineclonia/",
           "checkedAt": "2026-11-19",
           "result": "Confirmed maintainer package and full gallery attachments, but exact original links use cdn.content.luanti.org, not an accepted origin from the package page. User attachment URLs elsewhere in comments are not substituted."
+        },
+        {
+          "url": "https://codeberg.org/mineclonia/mineclonia",
+          "checkedAt": "2026-11-19",
+          "result": "Canonical repository refused Web retrieval through robots restrictions; no bypass attempted. The repository listed by third-party mirrors does not establish independently qualifying original image evidence."
         }
       ]
     },
@@ -33503,7 +33816,7 @@
     {
       "id": "open3d-smokin-guns",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Official native Windows EXE and Debian DEB labels and checksums verified. Project screenshot gallery delegates images to an old forum subdomain that fails cloud HTTPS and is cross-origin. Homepage image examples are map panoramas, not independently established active play.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/smokin-guns/SmokinGuns/HEAD/README.md",
@@ -33539,6 +33852,11 @@
           "url": "https://github.com/smokin-guns/SmokinGuns/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://www.smokin-guns.org/downloads",
+          "checkedAt": "2026-11-19",
+          "result": "Official native Windows EXE and Debian DEB labels and checksums verified. Project screenshot gallery delegates images to an old forum subdomain that fails cloud HTTPS and is cross-origin. Homepage image examples are map panoramas, not independently established active play."
         }
       ]
     },
@@ -33614,7 +33932,7 @@
     {
       "id": "open3d-vega-strike",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Original official install page and exact SourceForge release list legacy standalone Windows native game package. Newer engine-only and data-only packages not recorded as whole game; official legacy same-origin gallery images 404 and original forum gallery redirects away.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/vegastrike/Vega-Strike-Engine-Source/HEAD/README.md",
@@ -33650,6 +33968,11 @@
           "url": "https://github.com/vegastrike/Vega-Strike-Engine-Source/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://vegastrike.sourceforge.net/getfiles/",
+          "checkedAt": "2026-11-19",
+          "result": "Original official install page and exact SourceForge release list legacy standalone Windows native game package. Newer engine-only and data-only packages not recorded as whole game; official legacy same-origin gallery images 404 and original forum gallery redirects away."
         }
       ]
     },
@@ -33786,6 +34109,11 @@
           "url": "https://github.com/IzzoSol/Apophenoth/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/IzzoSol/Apophenoth/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (4 entries; Git object 7cd904f7e3e76438fa59104ea5ca571d51233a9b) contains 0 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -34298,7 +34626,7 @@
     {
       "id": "open3d-gnome-space-program",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The inspected author gallery image is the GSP logo, not a gameplay frame.",
+      "reason": "Research incomplete or access-limited: The inspected author gallery image is the GSP logo, not a gameplay frame. Research incomplete or access-limited: The inspected author gallery image is the GSP logo, not a gameplay frame. Author newer orbital-mechanics update is a different unreleased development build. Embedded YouTube playback is not a durable exact image URL satisfying current origin rules; existing official install links unchanged.",
       "checkedSources": [
         {
           "url": "https://sushut.itch.io/gnome-space-program",
@@ -34349,6 +34677,11 @@
           "url": "https://sushut.itch.io/gnome-space-program",
           "checkedAt": "2026-11-19",
           "result": "Viewed exact original header with game-name lettering and rocket artwork; not gameplay."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=eyUL-50_UcI",
+          "checkedAt": "2026-11-19",
+          "result": "Author newer orbital-mechanics update is a different unreleased development build. Embedded YouTube playback is not a durable exact image URL satisfying current origin rules; existing official install links unchanged."
         }
       ]
     },
@@ -34515,43 +34848,6 @@
           "url": "https://lunakittyyy.itch.io/velocity",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        }
-      ]
-    },
-    {
-      "id": "open3d-blackout-facility",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/FahimKamal/UE5_MazeEscape/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/FahimKamal/UE5_MazeEscape",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/FahimKamal/UE5_MazeEscape/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/FahimKamal/UE5_MazeEscape/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/FahimKamal/UE5_MazeEscape",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/FahimKamal/UE5_MazeEscape/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
       ]
     },
@@ -34771,6 +35067,11 @@
           "url": "https://sourceforge.net/projects/gltron/",
           "checkedAt": "2026-11-19",
           "result": "Official project homepage available previously; do not substitute its unspecified CDN screenshot; existing verified native download unchanged."
+        },
+        {
+          "url": "https://api.github.com/repos/sgothel/gltron/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (651 entries; Git object ef52798c1a0e2bfb6266421fb6bebeb419236700) contains 85 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -34794,7 +35095,7 @@
     {
       "id": "open3d-voxelands",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Looked through old public landing and Downloads; exact original-source project is cross-linked, but download forum redirects away to a parked site, external native package listings are third-party, and no official complete native package or creator screenshot established in the current pass.",
       "checkedSources": [
         {
           "url": "https://gitlab.com/voxelands/voxelands",
@@ -34810,6 +35111,11 @@
           "url": "https://voxelands.com/",
           "checkedAt": "2026-11-19",
           "result": "Developer homepage fetch timed out; independent newer publication remains open."
+        },
+        {
+          "url": "https://voxelands.neocities.org/download",
+          "checkedAt": "2026-11-19",
+          "result": "Looked through old public landing and Downloads; exact original-source project is cross-linked, but download forum redirects away to a parked site, external native package listings are third-party, and no official complete native package or creator screenshot established in the current pass."
         }
       ]
     },
@@ -35164,7 +35470,7 @@
     {
       "id": "open3d-knights-of-acre",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Repository README embeds preview.png, but the original raw image request returned HTTP404. The supplied author demo URL returned301 and no sandbox-rendered gameplay was verified; no screenshot was accepted.",
+      "reason": "Research incomplete or access-limited: Repository README embeds preview.png, but the original raw image request returned HTTP404. The supplied author demo URL returned301 and no sandbox-rendered gameplay was verified; no screenshot was accepted. Research incomplete or access-limited: Repository README embeds preview.png, but the original raw image request returned HTTP404. The supplied author demo URL returned301 and no sandbox-rendered gameplay was verified; no screenshot was accepted. Inventoried exact author directory. Personally viewed the linked original thumbnail.PNG: lone horseback character posed before a castle, no active gameplay feedback or HUD and explicitly a thumbnail. Author competition archives are web source builds rather than native distributions.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/js13kGames/knights-of-acre/HEAD/README.md",
@@ -35205,13 +35511,18 @@
           "url": "https://tamats.com/games/xiii/compo",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 301; this is a retrieval outcome, not proof that the game or release is absent."
+        },
+        {
+          "url": "https://www.tamats.com/games/xiii/",
+          "checkedAt": "2026-11-19",
+          "result": "Inventoried exact author directory. Personally viewed the linked original thumbnail.PNG: lone horseback character posed before a castle, no active gameplay feedback or HUD and explicitly a thumbnail. Author competition archives are web source builds rather than native distributions."
         }
       ]
     },
     {
       "id": "open3d-mawlight",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: README links a YouTube gameplay video but no directly usable image. The js13k page image is on a cross-subdomain origin rejected by the existing media policy. No sandbox-rendered game was verified.",
+      "reason": "Research incomplete or access-limited: README links a YouTube gameplay video but no directly usable image. The js13k page image is on a cross-subdomain origin rejected by the existing media policy. No sandbox-rendered game was verified. Research incomplete or access-limited: README links a YouTube gameplay video but no directly usable image. The js13k page image is on a cross-subdomain origin rejected by the existing media policy. No sandbox-rendered game was verified. Competition page exposes author gallery links on a distinct play.js13kgames.com origin; no independent original accepted.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/js13kGames/mawlight/HEAD/README.md",
@@ -35252,13 +35563,18 @@
           "url": "https://js13kgames.com/2026/games/mawlight",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://js13kgames.com/2026/games/mawlight",
+          "checkedAt": "2026-11-19",
+          "result": "Competition page exposes author gallery links on a distinct play.js13kgames.com origin; no independent original accepted."
         }
       ]
     },
     {
       "id": "open3d-whiskers-witch-adventure",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Repository README remains starter-kit documentation; inspected author submission HTML yields only a cross-subdomain image that fails the existing origin rule. No verified gameplay screenshot.",
+      "reason": "Research incomplete or access-limited: Repository README remains starter-kit documentation; inspected author submission HTML yields only a cross-subdomain image that fails the existing origin rule. No verified gameplay screenshot. Research incomplete or access-limited: Repository README remains starter-kit documentation; inspected author submission HTML yields only a cross-subdomain image that fails the existing origin rule. No verified gameplay screenshot. Exact developer post discovered with screenshot-labelled media but page HTTP 403 in public evidence browser; no bypass attempted. Competition asset URLs use a distinct play.js13kgames.com origin.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/roblouie/js13k-2025/HEAD/README.md",
@@ -35299,6 +35615,11 @@
           "url": "https://js13kgames.com/2025/games/whiskers-witch-adventure",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://roblouie.com/article/1316/the-making-of-whiskers-witch-adventure-js13k-2025/",
+          "checkedAt": "2026-11-19",
+          "result": "Exact developer post discovered with screenshot-labelled media but page HTTP 403 in public evidence browser; no bypass attempted. Competition asset URLs use a distinct play.js13kgames.com origin."
         }
       ]
     },
@@ -35545,7 +35866,7 @@
     {
       "id": "open3d-the-misty-unfamilar",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: No eligible screenshot has yet been verified from the checked material; additional source review may still be needed.",
+      "reason": "Research incomplete or access-limited: No eligible screenshot has yet been verified from the checked material; additional source review may still be needed. Research incomplete or access-limited: No eligible screenshot has yet been verified from the checked material; additional source review may still be needed. Jam page corroborates author identity and game publication, not an independent original gameplay image. Existing desktop download left in place.",
       "checkedSources": [
         {
           "url": "https://whattheheckman.itch.io/misty",
@@ -35591,6 +35912,11 @@
           "url": "https://whattheheckman.itch.io/misty",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://itch.io/jam/cpp-halloween-horror-jam-2022/rate/1749527",
+          "checkedAt": "2026-11-19",
+          "result": "Jam page corroborates author identity and game publication, not an independent original gameplay image. Existing desktop download left in place."
         }
       ]
     },
@@ -35643,6 +35969,11 @@
           "url": "https://germanalen.itch.io/verdigris",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://api.github.com/repos/germanalen/Stop-The-Cheese-Monster/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (56 entries; Git object 6a119639d253746b2ef08616f9735c5fda056b65) contains 3 tracked raster/video paths in the scanned formats. This inventory is not a pixel review. Listed candidates: gui/virgo.sv.png, icon.png, scenes/sky.png."
         }
       ]
     },
@@ -35675,38 +36006,11 @@
           "url": "https://mcatin.itch.io/vane",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        }
-      ]
-    },
-    {
-      "id": "open3d-flax-engine-top-down-shooter",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The source README and author release page were read. Native build publication is documented, but no eligible screenshot was verified.",
-      "checkedSources": [
-        {
-          "url": "https://github.com/PrecisionRender/Flax-Engine-Top-Down-Shooter",
-          "checkedAt": "2026-11-18",
-          "result": "The source repository README explicitly links this Windows game build under Game Downloads; the author release page was also read."
         },
         {
-          "url": "https://github.com/PrecisionRender/Flax-Engine-Top-Down-Shooter/releases/tag/v1.0.0",
-          "checkedAt": "2026-11-18",
-          "result": "Read author publication page; native download publication verified, not executed."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/PrecisionRender/Flax-Engine-Top-Down-Shooter/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/PrecisionRender/Flax-Engine-Top-Down-Shooter",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/PrecisionRender/Flax-Engine-Top-Down-Shooter/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+          "url": "https://api.github.com/repos/igaryhe/Vane/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (438 entries; Git object 8c35a722a1363f27228c729db9be83c98bf23703) contains 50 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -35739,6 +36043,11 @@
           "url": "https://drusyc123.itch.io/bone-collector",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
+        },
+        {
+          "url": "https://api.github.com/repos/thmsgntz/bone-collector/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (92 entries; Git object cb3938e43a85cb0bd2169025d41431be2e60969c) contains 18 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -35776,33 +36085,11 @@
           "url": "https://ufrshubham.itch.io/fastest-pizza-delivery",
           "checkedAt": "2026-11-19",
           "result": "Original cached poster depicts a truck without gameplay state; retain existing unresolved decision."
-        }
-      ]
-    },
-    {
-      "id": "open3d-golab",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The repository README was read and describes building with Rust. The assets/Github directory could not be retrieved by the static reader. No eligible image or native release was verified.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/NiiightmareXD/golab/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
         },
         {
-          "url": "https://github.com/NiiightmareXD/golab",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/NiiightmareXD/golab/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/NiiightmareXD/golab",
-          "checkedAt": "2026-11-18",
-          "result": "The repository README was read and describes building with Rust. The assets/Github directory could not be retrieved by the static reader. No eligible image or native release was verified."
+          "url": "https://api.github.com/repos/ufrshubham/FastestPizzaDelivery/git/trees/HEAD?recursive=1",
+          "checkedAt": "2026-11-20",
+          "result": "The untruncated exact author repository tree (85 entries; Git object a94edde1a16d6a3de4a9a98095344594cff7bca6) contains 14 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
         }
       ]
     },
@@ -36531,7 +36818,7 @@
     {
       "id": "browser-port-15",
       "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The author home page images are branding. The og.jpg original was fetched and visually reviewed as a Quake logo, not gameplay. Publisher uses FTE QuakeWorld and a separate full-engine WASM QuakeTV spectator feed, not a source raster. Prior original visual review rejected OG as branding. The public play route returned 403 to read-only retrieval; no browser rendering asserted.",
+      "reason": "Research incomplete or access-limited: The author home page images are branding. The og.jpg original was fetched and visually reviewed as a Quake logo, not gameplay. Publisher uses FTE QuakeWorld and a separate full-engine WASM QuakeTV spectator feed, not a source raster. Prior original visual review rejected OG as branding. The public play route returned 403 to read-only retrieval; no browser rendering asserted. In the cloud sandbox the exact author landing page opened but the hosted engine alerted that it was unable to set up WebGL. The visible landing page showed the server status but no rendered gameplay; the public spectator control was not visible. No account, nickname or game input was submitted.",
       "checkedSources": [
         {
           "url": "https://q1.pieter.com/",
@@ -36552,6 +36839,11 @@
           "url": "https://q1.pieter.com/play",
           "checkedAt": "2026-11-19",
           "result": "Read-only access returned 403; no bypass attempted."
+        },
+        {
+          "url": "https://q1.pieter.com/",
+          "checkedAt": "2026-11-19",
+          "result": "Opened exact creator page in cloud browser; the page alerted 'Unable to set up webgl context.' Only server status and controls were visible, not gameplay. The spectator link was not visible, and nothing was submitted."
         }
       ]
     },
@@ -45127,6 +45419,39 @@
               "url": "https://github.com/Akuli/3d-game-experiment/releases/download/master-2021-12-30/3D_game_master-2021-12-30.zip",
               "kind": "game-binary",
               "platform": "Windows"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-arcane-realm-3d",
+        "sourceUrl": "https://github.com/hami9/Arcane-Realm-3D",
+        "demo": {
+          "label": "Download Arcane Realm 3D for Windows",
+          "url": "https://github.com/hami9/Arcane-Realm-3D/releases/download/v1.0.0/ArcaneRealm.exe",
+          "kind": "download",
+          "note": "Author GitHub v1.0.0 release supplies a standalone Windows 64-bit game executable. Verified the uploaded asset metadata on 2026-11-19; no package was downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/hami9/Arcane-Realm-3D/releases?per_page=6",
+            "checkedAt": "2026-11-19",
+            "result": "The exact creator v1.0.0 GitHub release explicitly labels its manually uploaded ArcaneRealm.exe a standalone Windows 64-bit game build. Verified name, URL and size in release metadata; no package was downloaded or run."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/hami9/Arcane-Realm-3D/releases/tag/v1.0.0",
+          "authorVerification": "The original hami9 repository and its named game release are the same author publication.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The exact creator v1.0.0 GitHub release explicitly labels its manually uploaded ArcaneRealm.exe a standalone Windows 64-bit game build. Verified name, URL and size in release metadata; no package was downloaded or run.",
+          "assets": [
+            {
+              "url": "https://github.com/hami9/Arcane-Realm-3D/releases/download/v1.0.0/ArcaneRealm.exe",
+              "name": "ArcaneRealm.exe",
+              "platform": "Windows x64",
+              "kind": "game-binary",
+              "size": 2643414
             }
           ]
         }
@@ -66201,7 +66526,7 @@
       {
         "id": "open3d-ashlands",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Original developer post includes one explicitly labelled cover from a generated game world plus charts, but no original independently verified full active gameplay image or public build. Technical repository materials describe a local Three.js WebGL build; no runtime claimed.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/addable-labs/ashlands/HEAD/README.md",
@@ -66232,6 +66557,11 @@
             "url": "https://github.com/addable-labs/ashlands/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://addablelabs.se/blog/ashlands-what-one-prompt-built/",
+            "checkedAt": "2026-11-19",
+            "result": "Original developer post includes one explicitly labelled cover from a generated game world plus charts, but no original independently verified full active gameplay image or public build. Technical repository materials describe a local Three.js WebGL build; no runtime claimed."
           }
         ]
       },
@@ -67051,7 +67381,7 @@
       {
         "id": "open3d-3d-horror-proto",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Official prerelease has a separate 3d-horror-demo-v0.0.1a.zip attachment, but separately verified release description did not specify the native platform. Archive not downloaded and not accepted without stronger evidence.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/RenWinterfox/3d-horror-godot/HEAD/README.md",
@@ -67082,6 +67412,16 @@
             "url": "https://github.com/RenWinterfox/3d-horror-godot/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://github.com/RenWinterfox/3d-horror-godot/releases/tag/v0.0.1a",
+            "checkedAt": "2026-11-19",
+            "result": "Official prerelease has a separate 3d-horror-demo-v0.0.1a.zip attachment, but separately verified release description did not specify the native platform. Archive not downloaded and not accepted without stronger evidence."
+          },
+          {
+            "url": "https://raw.githubusercontent.com/RenWinterfox/3d-horror-godot/HEAD/README.md",
+            "checkedAt": "2026-11-20",
+            "result": "The complete creator README describes the exact Godot 4 horror project and its controls. It contains no image/recording, public playable URL or supported platform for the release ZIP."
           }
         ]
       },
@@ -67355,7 +67695,7 @@
       {
         "id": "open3d-in-the-blue-mist",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Author original repository describes the game and local Godot source. No first-party independent publisher page, original gameplay raster or native binary was established in the current search.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/cnharlan/GD_BlueMist/HEAD/README.md",
@@ -67386,6 +67726,16 @@
             "url": "https://github.com/cnharlan/GD_BlueMist/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://github.com/cnharlan/GD_BlueMist",
+            "checkedAt": "2026-11-19",
+            "result": "Author original repository describes the game and local Godot source. No first-party independent publisher page, original gameplay raster or native binary was established in the current search."
+          },
+          {
+            "url": "https://raw.githubusercontent.com/cnharlan/GD_BlueMist/HEAD/README.md",
+            "checkedAt": "2026-11-20",
+            "result": "The complete creator README only identifies the public Godot repository and describes the PSX-style survival horror game. It links no media, public playable build or distribution."
           }
         ]
       },
@@ -67429,7 +67779,7 @@
       {
         "id": "open3d-kilvault",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Author README refers to local executable files stored in a source-tree folder called releases, not verified authored GitHub Releases assets under the required path. Search for exact Kagerowo developer blog yielded no independently identified official post with a full frame.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/GravityI/kilvault/HEAD/README.md",
@@ -67460,6 +67810,16 @@
             "url": "https://github.com/GravityI/kilvault/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://github.com/GravityI/kilvault",
+            "checkedAt": "2026-11-19",
+            "result": "Author README refers to local executable files stored in a source-tree folder called releases, not verified authored GitHub Releases assets under the required path. Search for exact Kagerowo developer blog yielded no independently identified official post with a full frame."
+          },
+          {
+            "url": "https://raw.githubusercontent.com/GravityI/kilvault/HEAD/README.md",
+            "checkedAt": "2026-11-20",
+            "result": "The complete creator README distinguishes a source-tree releases folder from a GitHub Releases publication, names local native executables, and explicitly links the creator’s Kagerowo WordPress devlogs and the project Trello. These public links were read, not followed in this offline reconciliation."
           }
         ]
       },
@@ -67688,7 +68048,7 @@
       {
         "id": "open3d-analogvhs",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Checked exact author archived Unity repository and README. It describes local clone/build and credits third-party analog video; no independently posted cursor/gameplay original or native release located.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/VargasCardona/AnalogVHS/HEAD/README.md",
@@ -67719,6 +68079,11 @@
             "url": "https://github.com/VargasCardona/AnalogVHS/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://github.com/VargasCardona/AnalogVHS",
+            "checkedAt": "2026-11-19",
+            "result": "Checked exact author archived Unity repository and README. It describes local clone/build and credits third-party analog video; no independently posted cursor/gameplay original or native release located."
           }
         ]
       },
@@ -67873,7 +68238,7 @@
       {
         "id": "open3d-lockdown-breakout",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. The author explicitly distinguishes clean editor validation from a connected-headset playtest or native build. A source archive is not a playable download, and achievement photos are not game imagery.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/painfulmoments/lockdown_breakout/HEAD/README.md",
@@ -67904,6 +68269,11 @@
             "url": "https://github.com/painfulmoments/lockdown_breakout/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://github.com/painfulmoments/lockdown_breakout",
+            "checkedAt": "2026-11-19",
+            "result": "The author explicitly distinguishes clean editor validation from a connected-headset playtest or native build. A source archive is not a playable download, and achievement photos are not game imagery."
           }
         ]
       },
@@ -71512,7 +71882,7 @@
       {
         "id": "open3d-voxelands",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists. Looked through old public landing and Downloads; exact original-source project is cross-linked, but download forum redirects away to a parked site, external native package listings are third-party, and no official complete native package or creator screenshot established in the current pass.",
         "checkedSources": [
           {
             "url": "https://gitlab.com/voxelands/voxelands",
@@ -71523,6 +71893,11 @@
             "url": "https://gitlab.com/voxelands/voxelands",
             "checkedAt": "2026-11-19",
             "result": "Primary GitLab repository establishes the project; no named creator binary or eligible visual found in the accessed materials."
+          },
+          {
+            "url": "https://voxelands.neocities.org/download",
+            "checkedAt": "2026-11-19",
+            "result": "Looked through old public landing and Downloads; exact original-source project is cross-linked, but download forum redirects away to a parked site, external native package listings are third-party, and no official complete native package or creator screenshot established in the current pass."
           }
         ]
       },
@@ -72045,7 +72420,7 @@
       {
         "id": "open3d-knights-of-acre",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No browser-rendered author game or sufficiently evidenced native binary publication has been verified in this review; existing demo remains unchanged.",
+        "reason": "Research incomplete or access-limited: No browser-rendered author game or sufficiently evidenced native binary publication has been verified in this review; existing demo remains unchanged. Research incomplete or access-limited: No browser-rendered author game or sufficiently evidenced native binary publication has been verified in this review; existing demo remains unchanged. Inventoried exact author directory. Personally viewed the linked original thumbnail.PNG: lone horseback character posed before a castle, no active gameplay feedback or HUD and explicitly a thumbnail. Author competition archives are web source builds rather than native distributions.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/js13kGames/knights-of-acre/HEAD/README.md",
@@ -72086,6 +72461,11 @@
             "url": "https://tamats.com/games/xiii/compo",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 301; this is a retrieval outcome, not proof that the game or release is absent."
+          },
+          {
+            "url": "https://www.tamats.com/games/xiii/",
+            "checkedAt": "2026-11-19",
+            "result": "Inventoried exact author directory. Personally viewed the linked original thumbnail.PNG: lone horseback character posed before a castle, no active gameplay feedback or HUD and explicitly a thumbnail. Author competition archives are web source builds rather than native distributions."
           }
         ]
       },
@@ -75617,28 +75997,6 @@
         ]
       },
       {
-        "id": "open3d-arcane-realm-3d",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/hami9/Arcane-Realm-3D/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/hami9/Arcane-Realm-3D",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/hami9/Arcane-Realm-3D/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
         "id": "open3d-cave9",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item.",
@@ -76022,7 +76380,7 @@
       {
         "id": "browser-port-15",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item. Existing reference demo is preserved without claiming a new verification. The publisher HTML identifies FTE QuakeWorld and a separate WASM spectator feed. The exact play route returned 403 to read-only retrieval, which is not a browser gameplay test.",
+        "reason": "Research incomplete or access-limited: Existing demo is preserved. No new author browser build has been confirmed rendering in the sandbox for this item. Existing reference demo is preserved without claiming a new verification. The publisher HTML identifies FTE QuakeWorld and a separate WASM spectator feed. The exact play route returned 403 to read-only retrieval, which is not a browser gameplay test. The exact author-hosted page produced a WebGL initialization alert in the cloud sandbox and no gameplay was rendered. No sign-in or multiplayer join attempted.",
         "checkedSources": [
           {
             "url": "https://q1.pieter.com/",
@@ -76043,6 +76401,11 @@
             "url": "https://q1.pieter.com/play",
             "checkedAt": "2026-11-19",
             "result": "Read-only access returned 403; no bypass attempted."
+          },
+          {
+            "url": "https://q1.pieter.com/",
+            "checkedAt": "2026-11-19",
+            "result": "Browser load rendered the server landing page and produced an explicit WebGL context setup failure. No playable output verified."
           }
         ]
       },

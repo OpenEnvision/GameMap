@@ -2494,10 +2494,10 @@ export const open3dRound4Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Arcane Realm 3D",
-      "url": "https://github.com/hami9/Arcane-Realm-3D",
-      "kind": "source",
-      "note": "Release: none listed in this record."
+      "label": "Download Arcane Realm 3D for Windows",
+      "url": "https://github.com/hami9/Arcane-Realm-3D/releases/download/v1.0.0/ArcaneRealm.exe",
+      "kind": "download",
+      "note": "Author GitHub v1.0.0 release supplies a standalone Windows 64-bit game executable. Verified the uploaded asset metadata on 2026-11-19; no package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
