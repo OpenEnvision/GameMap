@@ -242,6 +242,8 @@ test("homepage navigation reaches Chinese documents without a separate content d
       .getByRole("link", { name: "Guides & notes", exact: true })
       .click();
   } else {
+    // Guides live in the Learn pillar panel of the floating navigation.
+    await page.locator('.nav-pillar[data-pillar="learn"] > summary').click();
     await page.locator('a[data-collection-id="docs"]').click();
   }
   await page

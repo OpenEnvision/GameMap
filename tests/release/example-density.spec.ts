@@ -6,6 +6,8 @@ test("Examples uses four desktop columns and five wide-screen columns with three
   page,
 }, info) => {
   test.skip(info.project.name !== "desktop", "One explicit responsive matrix");
+  // Nine full loads of the 1274-card gallery: allow more than the default 30 s.
+  test.setTimeout(150_000);
   for (const [width, columns] of [
     [390, 1],
     [800, 2],

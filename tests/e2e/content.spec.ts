@@ -206,7 +206,8 @@ test("complete game galleries stay in Examples while featured and related access
 }) => {
   const manifest = await inventory(request, baseURL);
   for (const prefix of ["", "zh/"]) {
-    for (const path of ["agents/", "research/", "explore/"]) {
+    // explore/ is retired (404) and covered by explore-retirement tests.
+    for (const path of ["agents/", "research/"]) {
       await page.goto(prefix + path);
       await expect(page.locator("main .example-card")).toHaveCount(0);
     }

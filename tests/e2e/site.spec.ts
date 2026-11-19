@@ -290,7 +290,7 @@ test("Chinese documentation has localized navigation and an English counterpart"
     .getByRole("link", { name: "第一次来？从实践指南开始。", exact: false })
     .click();
   await expect(page.locator("#nd-page .prose")).toContainText(
-    "先说清楚要交付什么",
+    "先定义交付物，再选择工具",
   );
   await expect(page.locator("#nd-page .prose")).not.toContainText(
     "不代表 GameMap",
@@ -315,10 +315,10 @@ test("Chinese documentation remains readable without JavaScript", async ({
     await page.goto(baseURL + "docs/zh/guides/practical-guide/");
     await expect(page.locator("html")).toHaveAttribute("lang", "zh-CN");
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-      "从想法到可玩的游戏",
+      "从资源地图到可运行的游戏",
     );
     await expect(page.locator("#nd-page .prose")).toContainText(
-      "先做出一个能开始、游玩、失败和重试的小循环",
+      "从一个小型可玩循环开始",
     );
     await expect(page.locator("#nd-page table").first()).toBeVisible();
     await expect(

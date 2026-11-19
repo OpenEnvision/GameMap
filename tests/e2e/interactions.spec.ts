@@ -62,7 +62,8 @@ test("site-shell pillar panels keep native keyboard activation and dismiss", asy
   await page.locator("h1").click({ position: { x: 8, y: 8 } });
   await expect(menu).not.toHaveAttribute("open", "");
   await summary.click();
-  await menu.getByRole("link", { name: "Agent toolkit", exact: true }).click();
+  // Panel links carry a one-line description after the destination name.
+  await menu.getByRole("link", { name: /^Agent toolkit\b/ }).click();
   await expect(menu).not.toHaveAttribute("open", "");
 });
 
