@@ -3754,10 +3754,10 @@ export const open3dRound3Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for OpenMRac",
-      "url": "https://github.com/Franticware/OpenMRac",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Windows build",
+      "url": "https://github.com/Franticware/OpenMRac/releases/tag/v1.2",
+      "kind": "download",
+      "note": "The developer site links the Windows build from the project’s GitHub v1.2 release. Verified the uploaded archive on 2026-11-19; the v1.3 release lists source only. No package was downloaded or run."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4069,10 +4069,10 @@ export const open3dRound3Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Summoning Wars",
-      "url": "https://github.com/SummoningWars/summoning-wars",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Summoning Wars for Windows",
+      "url": "https://sourceforge.net/projects/sumwars/files/0.5.8/",
+      "kind": "download",
+      "note": "Official SourceForge project file listing provides Sumwars-0.5.8-win32-installer.exe, a Windows installer. Verified the project listing and exact installer link on 2026-11-19; no native package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

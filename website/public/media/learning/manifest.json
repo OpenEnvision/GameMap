@@ -4568,6 +4568,20 @@
       "sha256": "9e721600e7f4fe5a03d559c7a668ac8fa3fda2efec7dd49b118c1ef4fc726f00"
     },
     {
+      "id": "jam-archetype-cssa",
+      "src": "media/learning/jam-archetype-cssa.webp",
+      "alt": "An archer faces shield-bearing enemies in a moonlit pixel-art arena.",
+      "caption": "Creator-published Archetype gameplay screenshot showing wave two and the health HUD. Image rights remain with the original creator.",
+      "sourceUrl": "https://revokeseven.itch.io/archetype",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1nLzQ5NTYyNzYucG5n/original/0Pape8.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 48904,
+      "sha256": "bf8dfb7e11981389906fabec5f63ee12bfc4716b1a93636f0be699f775f43dda"
+    },
+    {
       "id": "jam-d3bugged",
       "src": "media/learning/jam-d3bugged.webp",
       "alt": "A boy faces a horse-shaped enemy across teal and purple combat tiles, with a flame attack, two energy segments and an ability column.",
@@ -6097,6 +6111,20 @@
       "sha256": "17533f6c721175e1d8865b117814c210a587d0d9c73600b595ca9e259074bad9"
     },
     {
+      "id": "open3d-polyrace",
+      "src": "media/learning/open3d-polyrace.webp",
+      "alt": "PolyRace hovercraft racing through a low-poly canyon with speed, shield, distance and time HUD.",
+      "caption": "Creator-published PolyRace gameplay screenshot from its official Steam release gallery. Image rights remain with their respective owners.",
+      "sourceUrl": "https://store.steampowered.com/app/384330/PolyRace/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/384330/ss_a6cc46c7566af6a443253b376c6d415ff1f8e0af.1920x1080.jpg?t=1593002366",
+      "width": 1280,
+      "height": 720,
+      "bytes": 60820,
+      "sha256": "f656e81ea57ccdcbceb46067ed5b716942082216fb3f1f3da4b173069df16bd2"
+    },
+    {
       "id": "open3d-red-planet-rampage",
       "src": "media/learning/open3d-red-planet-rampage.webp",
       "alt": "A stylized robot cowboy runs past a sheriff building while green projectiles cross a bright orange arena.",
@@ -6123,6 +6151,20 @@
       "height": 720,
       "bytes": 52794,
       "sha256": "2d7e3c193b306c5bc4cb40d182bdef44a441e10282580dfa88ab0013bd81f90e"
+    },
+    {
+      "id": "open3d-theseus-the-descent",
+      "src": "media/learning/open3d-theseus-the-descent.webp",
+      "alt": "Theseus: The Descent first-person gameplay at sunset with crosshair and the objective to search the temple.",
+      "caption": "Creator-published Theseus: The Descent gameplay screenshot from the source project’s official Screenshots folder. Image rights remain with their respective owners.",
+      "sourceUrl": "https://github.com/surya-sk/theseus-the-descent/tree/master/Screenshots",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://github.com/surya-sk/theseus-the-descent/raw/refs/heads/master/Screenshots/3.0Desktop1.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 49820,
+      "sha256": "e7372d869ff48b37c8590cd4c76e9ffdc8ec39b5c0d57cc60a52cc809c82cc3e"
     },
     {
       "id": "open3d-bomberrage",
@@ -7273,6 +7315,20 @@
       "sha256": "790dd774749cf989e2ecaf771f5e6d93a42e80f1084e8d59705f6e1b90da24ac"
     },
     {
+      "id": "open3d-foobillard",
+      "src": "media/learning/open3d-foobillard.webp",
+      "alt": "FooBillard++ nine-ball gameplay with a cue aimed at the rack, shot-strength controls and player scores.",
+      "caption": "Creator-published FooBillard++ gameplay screenshot from the official project gallery, showing nine-ball play. Image rights remain with their respective owners.",
+      "sourceUrl": "https://foobillardplus.sourceforge.net/screenshots.html",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://foobillardplus.sourceforge.net/images/9ball.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 21968,
+      "sha256": "54106f352d8595c3497a6deeae357992cf155d01897ecfe847c9835b15ebb89b"
+    },
+    {
       "id": "open3d-freeallegiance-allegiance",
       "src": "media/learning/open3d-freeallegiance-allegiance.webp",
       "alt": "Spacecraft exchange fire beside an asteroid, with target names and tactical markers overlaid on the combat scene.",
@@ -8251,6 +8307,20 @@
       "height": 720,
       "bytes": 136336,
       "sha256": "30d301de1e878bedc90eeb4091bc336924a2ea2b0d6bdc1661b6eaed7def8f7f"
+    },
+    {
+      "id": "open3d-openmrac",
+      "src": "media/learning/open3d-openmrac.webp",
+      "alt": "MultiRacer single-player racing against a translucent ghost car, with lap, speed and timing HUD.",
+      "caption": "Creator-published legacy MultiRacer gameplay screenshot, the game released as the open-source OpenMRac edition. Image rights remain with their respective owners.",
+      "sourceUrl": "https://www.franticware.com/multiracer",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://www.franticware.com/images/multiracer02.jpg",
+      "width": 1280,
+      "height": 720,
+      "bytes": 56830,
+      "sha256": "6ff8ba93c07efd2f2ec254e22820ec3526f1f64bc438741d919fda228d58514f"
     },
     {
       "id": "open3d-polexod",

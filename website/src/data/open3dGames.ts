@@ -3889,10 +3889,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for MegaGlest",
-      "url": "https://github.com/MegaGlest/megaglest-source",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download MegaGlest 3.13.0",
+      "url": "https://github.com/MegaGlest/megaglest-source/releases/tag/3.13.0",
+      "kind": "download",
+      "note": "Author GitHub release 3.13.0 lists native game installers for Windows and desktop packages for Linux and macOS. Verified release metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -4339,10 +4339,10 @@ export const open3dGames: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Red Eclipse",
-      "url": "https://github.com/redeclipse/base",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Red Eclipse v2.0.0",
+      "url": "https://github.com/redeclipse/base/releases/tag/v2.0.0",
+      "kind": "download",
+      "note": "Author GitHub release v2.0.0 lists native game installers for Windows and desktop packages for Linux and macOS. Verified release metadata on 2026-11-19; no package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

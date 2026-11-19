@@ -3124,10 +3124,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Extreme Tux Racer",
-      "url": "https://sourceforge.net/projects/extremetuxracer/",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download Extreme Tux Racer for Windows",
+      "url": "https://sourceforge.net/projects/extremetuxracer/files/releases/0.8.4/",
+      "kind": "download",
+      "note": "Official SourceForge project file listing provides ExtremeTuxRacer.msi, a Windows installer. Verified the project listing and exact installer link on 2026-11-19; no native package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3169,10 +3169,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for FooBillard++",
-      "url": "https://sourceforge.net/p/foobillardplus/code/HEAD/tree/",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download FooBillard++ for Windows",
+      "url": "https://sourceforge.net/projects/foobillardplus/files/binaries/Windows-Setup/",
+      "kind": "download",
+      "note": "Official SourceForge project file listing provides setup-foobillardplus-3.42.exe, a Windows installer. Verified the project listing and exact installer link on 2026-11-19; no native package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3304,10 +3304,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for GLTron",
-      "url": "https://github.com/sgothel/gltron",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download GLTron for Windows",
+      "url": "https://sourceforge.net/projects/gltron/files/gltron-win32/0.70/",
+      "kind": "download",
+      "note": "Official SourceForge project file listing provides gltron-0.70-win32.exe, a Windows installer. Verified the project listing and exact installer link on 2026-11-19; no native package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
@@ -3439,10 +3439,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Kubrick",
-      "url": "https://invent.kde.org/games/kubrick",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "label": "Download macOS nightly build",
+      "url": "https://cdn.kde.org/ci-builds/games/kubrick/master/",
+      "kind": "download",
+      "note": "The official KDE Applications page links KDE's nightly installer directory. Verified separately listed macOS builds for Apple silicon and Intel on 2026-11-19. These are testing builds; no package was downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",

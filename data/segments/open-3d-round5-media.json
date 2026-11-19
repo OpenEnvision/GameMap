@@ -7877,6 +7877,41 @@
       "bytes": 125126
     },
     {
+      "id": "jam-archetype-cssa",
+      "title": "ArcheType",
+      "media": {
+        "src": "media/learning/jam-archetype-cssa.webp",
+        "alt": "An archer faces shield-bearing enemies in a moonlit pixel-art arena.",
+        "caption": "Creator-published Archetype gameplay screenshot showing wave two and the health HUD. Image rights remain with the original creator.",
+        "sourceUrl": "https://revokeseven.itch.io/archetype",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1nLzQ5NTYyNzYucG5n/original/0Pape8.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "a0aec9b94f0b484f0864404ed1369cdd87cd518cb8dce454668a535c3d44f6ba",
+        "sourceFrameSHA256": "ab45610a6a2825fbd6296a16d9fe4e24b0fe60c537c1c6a510973c2ad1827dd6",
+        "sourceWidth": 960,
+        "sourceHeight": 540,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the full original: the archer player and shield-bearing enemies are visible in a moonlit arena, with Total Kills 9, Wave 2, Enemies Remaining 4 and a 100/100 health bar. Although used as the author page header, it is a complete gameplay scene with no title or promotional lettering."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "bf8dfb7e11981389906fabec5f63ee12bfc4716b1a93636f0be699f775f43dda",
+      "bytes": 48904
+    },
+    {
       "id": "jam-equal-to-p",
       "title": "Equal to P (=P)",
       "media": {
@@ -9296,6 +9331,41 @@
       "bytes": 37374
     },
     {
+      "id": "open3d-polyrace",
+      "title": "PolyRace",
+      "media": {
+        "src": "media/learning/open3d-polyrace.webp",
+        "alt": "PolyRace hovercraft racing through a low-poly canyon with speed, shield, distance and time HUD.",
+        "caption": "Creator-published PolyRace gameplay screenshot from its official Steam release gallery. Image rights remain with their respective owners.",
+        "sourceUrl": "https://store.steampowered.com/app/384330/PolyRace/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/384330/ss_a6cc46c7566af6a443253b376c6d415ff1f8e0af.1920x1080.jpg?t=1593002366",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "9b416ed2a6b7d199e05f1c502b2208e209d18dcc36081768375dfdc7bc180d00",
+        "sourceFrameSHA256": "c9ff97c479a488db308590223bb34a5c67eea0e8d53c740e83365b48a5d63088",
+        "sourceWidth": 1920,
+        "sourceHeight": 1080,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed complete 1920×1080 frame: hovercraft following luminous canyon markers with speed 999 km/h, 100 percent shield, distance 2880m and elapsed time HUD. Single coherent live-game screenshot, not cover art or montage. Steam gallery exposes this exact full-size asset in its screenshots data. The source repository names creator Vincent Themereau and the same futuristic four-hovercraft game; Steam identifies BinaryDream and the corresponding commercial release. Official steamstatic CDN, HTTPS and unchanged reviewFrame passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "f656e81ea57ccdcbceb46067ed5b716942082216fb3f1f3da4b173069df16bd2",
+      "bytes": 60820
+    },
+    {
       "id": "open3d-red-planet-rampage",
       "title": "Red Planet Rampage",
       "media": {
@@ -9364,6 +9434,41 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "sha256": "2d7e3c193b306c5bc4cb40d182bdef44a441e10282580dfa88ab0013bd81f90e",
       "bytes": 52794
+    },
+    {
+      "id": "open3d-theseus-the-descent",
+      "title": "Theseus: The Descent",
+      "media": {
+        "src": "media/learning/open3d-theseus-the-descent.webp",
+        "alt": "Theseus: The Descent first-person gameplay at sunset with crosshair and the objective to search the temple.",
+        "caption": "Creator-published Theseus: The Descent gameplay screenshot from the source project’s official Screenshots folder. Image rights remain with their respective owners.",
+        "sourceUrl": "https://github.com/surya-sk/theseus-the-descent/tree/master/Screenshots",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://github.com/surya-sk/theseus-the-descent/raw/refs/heads/master/Screenshots/3.0Desktop1.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "9e486e560ba6323038c8fe05bd11e42aedc865528ca03b7b4c4e173e57d6fb60",
+        "sourceFrameSHA256": "2f5af69389eb4b8583da8ed46dcbf690fb6701c9ff7973fd4968593002fe0535",
+        "sourceWidth": 1918,
+        "sourceHeight": 902,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed complete 1918×902 frame. First-person view over a dark temple approach beneath an orange sky, with centered aiming reticle, ammunition display and active objective Search for the object in the temple. Genuine game UI in a single frame, not title artwork or an environment-only render. Original PNG linked through the creator repository Screenshots folder; GitHub raw redirect ends on permitted raw.githubusercontent.com and unchanged reviewFrame passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "e7372d869ff48b37c8590cd4c76e9ffdc8ec39b5c0d57cc60a52cc809c82cc3e",
+      "bytes": 49820
     },
     {
       "id": "open3d-bomberrage",
@@ -12311,6 +12416,41 @@
       "bytes": 45164
     },
     {
+      "id": "open3d-foobillard",
+      "title": "FooBillard++",
+      "media": {
+        "src": "media/learning/open3d-foobillard.webp",
+        "alt": "FooBillard++ nine-ball gameplay with a cue aimed at the rack, shot-strength controls and player scores.",
+        "caption": "Creator-published FooBillard++ gameplay screenshot from the official project gallery, showing nine-ball play. Image rights remain with their respective owners.",
+        "sourceUrl": "https://foobillardplus.sourceforge.net/screenshots.html",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://foobillardplus.sourceforge.net/images/9ball.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "8d9bb526dea63deb64a30c8d981b3095c67d8ba6caa5f6bfd25301dcdd8d4f8e",
+        "sourceFrameSHA256": "8142e3f2e33e710dac1c475f2a871f0c913ae94c42ac72b4ff698608c928cdc9",
+        "sourceWidth": 1036,
+        "sourceHeight": 803,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed full 1036×803 frame: actual desktop game window, cue and rack of balls on a 3D table, shot-strength slider at 70 percent, aiming controls and Spieler1/Computer1 score labels. Not title art, cover or montage. Official screenshot page labels this exact linked original as 9 Ball; same-origin HTTPS and unchanged reviewFrame passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "54106f352d8595c3497a6deeae357992cf155d01897ecfe847c9835b15ebb89b",
+      "bytes": 21968
+    },
+    {
       "id": "open3d-freeallegiance-allegiance",
       "title": "FreeAllegiance / Allegiance",
       "media": {
@@ -14887,6 +15027,41 @@
       "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
       "sha256": "30d301de1e878bedc90eeb4091bc336924a2ea2b0d6bdc1661b6eaed7def8f7f",
       "bytes": 136336
+    },
+    {
+      "id": "open3d-openmrac",
+      "title": "OpenMRac",
+      "media": {
+        "src": "media/learning/open3d-openmrac.webp",
+        "alt": "MultiRacer single-player racing against a translucent ghost car, with lap, speed and timing HUD.",
+        "caption": "Creator-published legacy MultiRacer gameplay screenshot, the game released as the open-source OpenMRac edition. Image rights remain with their respective owners.",
+        "sourceUrl": "https://www.franticware.com/multiracer",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://www.franticware.com/images/multiracer02.jpg",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "8fcb463768bb67a8ea81af6a05db5004e91296ad4d61556616597eabc800d1e0",
+        "sourceFrameSHA256": "080810dc07a6c6f6d5547e21d9440318988db86292dc2fb58002db355a02577d",
+        "sourceWidth": 512,
+        "sourceHeight": 320,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally viewed complete original 512×320 frame: blue player car racing beside a translucent ghost, lap 1/8, race timer and 61 km/h speed display. Single coherent gameplay image, not cover or montage. Official Franticware OpenMRac page explicitly calls OpenMRac an open-source edition of MultiRacer, and its linked MultiRacer gallery now links the same OpenMRac binary/source. This is explicitly labelled legacy MultiRacer imagery, not asserted to show the latest OpenMRac version. Same-origin HTTPS and unchanged reviewFrame passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "6ff8ba93c07efd2f2ec254e22820ec3526f1f64bc438741d919fda228d58514f",
+      "bytes": 56830
     },
     {
       "id": "open3d-polexod",
@@ -30708,73 +30883,6 @@
       ]
     },
     {
-      "id": "jam-archetype-cssa",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Fresh author-page request failed: curl: (22) The requested URL returned error: 403. New cached repository/README/release checks: https://github.com/ACubed/Archetype (HTTP 200); https://raw.githubusercontent.com/ACubed/Archetype/HEAD/README.md (HTTP 200); https://github.com/ACubed/Archetype/releases (HTTP 200). Repository image references remain unaccepted: https://avatars2.githubusercontent.com/u/33612287?s=460&v=4; https://avatars3.githubusercontent.com/u/29124297?s=460&u=a3056b42ea57a516d23f726b109916c1f2dc47e9&v=4; https://avatars2.githubusercontent.com/u/46728740?s=460&u=f074d2ef6f1a9548be2a5c7ab68e0afe6890269f&v=4. Contributor avatars and the prior rejected title image are not gameplay; all newly requested repository image candidates were resolved as recorded in additionalImageChecks; badges and contributor avatars are excluded structurally, not accepted as gameplay. Prior evidence, retained as historical context only: Prior evidence limitation (retained from input, not a new observation): Repaired collector checked assigned release page and supplied README; visually reviewed 1 candidate image(s), showing only pixel-art landscape without gameplay or HUD. No native binary or source project executed; repository asset subtrees were not exhaustively searched. Next evidence: an author-published gameplay screenshot or animation showing the game world. Current lane: cached repository raster paths reviewed (35 paths); no new qualifying gameplay screenshot established. See repository-path-review.json. Filename review is not pixel acceptance and does not exhaust public sources.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/ACubed/Archetype/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/ACubed/Archetype",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/ACubed/Archetype/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://revokeseven.itch.io/archetype",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author-page request failed: curl: (22) The requested URL returned error: 403. New cached repository/README/release checks: https://github.com/ACubed/Archetype (HTTP 200); https://raw.githubusercontent.com/ACubed/Archetype/HEAD/README.md (HTTP 200); https://github.com/ACubed/Archetype/releases (HTTP 200). Repository image references remain unaccepted: https://avatars2.githubusercontent.com/u/33612287?s=460&v=4; https://avatars3.githubusercontent.com/u/29124297?s=460&u=a3056b42ea57a516d23f726b109916c1f2dc47e9&v=4; https://avatars2.githubusercontent.com/u/46728740?s=460&u=f074d2ef6f1a9548be2a5c7ab68e0afe6890269f&v=4. Contributor avatars and the prior rejected title image are not gameplay; all newly requested repository image candidates were resolved as recorded in additionalImageChecks; badges and contributor avatars are excluded structurally, not accepted as gameplay. Prior evidence, retained as historical context only: Prior evidence limitation (retained from input, not a new observation): Repaired collector checked assigned release page and supplied README; visually reviewed 1 candidate image(s), showing only pixel-art landscape without gameplay or HUD. No native binary or source project executed; repository asset subtrees were not exhaustively searched. Next evidence: an author-published gameplay screenshot or animation showing the game world. Current lane: cached repository raster paths reviewed (35 paths); no new qualifying gameplay screenshot established. See repository-path-review.json. Filename review is not pixel acceptance and does not exhaust public sources."
-        },
-        {
-          "url": "https://github.com/ACubed/Archetype",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author-page request failed: curl: (22) The requested URL returned error: 403. New cached repository/README/release checks: https://github.com/ACubed/Archetype (HTTP 200); https://raw.githubusercontent.com/ACubed/Archetype/HEAD/README.md (HTTP 200); https://github.com/ACubed/Archetype/releases (HTTP 200). Repository image references remain unaccepted: https://avatars2.githubusercontent.com/u/33612287?s=460&v=4; https://avatars3.githubusercontent.com/u/29124297?s=460&u=a3056b42ea57a516d23f726b109916c1f2dc47e9&v=4; https://avatars2.githubusercontent.com/u/46728740?s=460&u=f074d2ef6f1a9548be2a5c7ab68e0afe6890269f&v=4. Contributor avatars and the prior rejected title image are not gameplay; all newly requested repository image candidates were resolved as recorded in additionalImageChecks; badges and contributor avatars are excluded structurally, not accepted as gameplay. Prior evidence, retained as historical context only: Prior evidence limitation (retained from input, not a new observation): Repaired collector checked assigned release page and supplied README; visually reviewed 1 candidate image(s), showing only pixel-art landscape without gameplay or HUD. No native binary or source project executed; repository asset subtrees were not exhaustively searched. Next evidence: an author-published gameplay screenshot or animation showing the game world. Current lane: cached repository raster paths reviewed (35 paths); no new qualifying gameplay screenshot established. See repository-path-review.json. Filename review is not pixel acceptance and does not exhaust public sources."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/ACubed/Archetype/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author-page request failed: curl: (22) The requested URL returned error: 403. New cached repository/README/release checks: https://github.com/ACubed/Archetype (HTTP 200); https://raw.githubusercontent.com/ACubed/Archetype/HEAD/README.md (HTTP 200); https://github.com/ACubed/Archetype/releases (HTTP 200). Repository image references remain unaccepted: https://avatars2.githubusercontent.com/u/33612287?s=460&v=4; https://avatars3.githubusercontent.com/u/29124297?s=460&u=a3056b42ea57a516d23f726b109916c1f2dc47e9&v=4; https://avatars2.githubusercontent.com/u/46728740?s=460&u=f074d2ef6f1a9548be2a5c7ab68e0afe6890269f&v=4. Contributor avatars and the prior rejected title image are not gameplay; all newly requested repository image candidates were resolved as recorded in additionalImageChecks; badges and contributor avatars are excluded structurally, not accepted as gameplay. Prior evidence, retained as historical context only: Prior evidence limitation (retained from input, not a new observation): Repaired collector checked assigned release page and supplied README; visually reviewed 1 candidate image(s), showing only pixel-art landscape without gameplay or HUD. No native binary or source project executed; repository asset subtrees were not exhaustively searched. Next evidence: an author-published gameplay screenshot or animation showing the game world. Current lane: cached repository raster paths reviewed (35 paths); no new qualifying gameplay screenshot established. See repository-path-review.json. Filename review is not pixel acceptance and does not exhaust public sources."
-        },
-        {
-          "url": "https://github.com/ACubed/Archetype/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author-page request failed: curl: (22) The requested URL returned error: 403. New cached repository/README/release checks: https://github.com/ACubed/Archetype (HTTP 200); https://raw.githubusercontent.com/ACubed/Archetype/HEAD/README.md (HTTP 200); https://github.com/ACubed/Archetype/releases (HTTP 200). Repository image references remain unaccepted: https://avatars2.githubusercontent.com/u/33612287?s=460&v=4; https://avatars3.githubusercontent.com/u/29124297?s=460&u=a3056b42ea57a516d23f726b109916c1f2dc47e9&v=4; https://avatars2.githubusercontent.com/u/46728740?s=460&u=f074d2ef6f1a9548be2a5c7ab68e0afe6890269f&v=4. Contributor avatars and the prior rejected title image are not gameplay; all newly requested repository image candidates were resolved as recorded in additionalImageChecks; badges and contributor avatars are excluded structurally, not accepted as gameplay. Prior evidence, retained as historical context only: Prior evidence limitation (retained from input, not a new observation): Repaired collector checked assigned release page and supplied README; visually reviewed 1 candidate image(s), showing only pixel-art landscape without gameplay or HUD. No native binary or source project executed; repository asset subtrees were not exhaustively searched. Next evidence: an author-published gameplay screenshot or animation showing the game world. Current lane: cached repository raster paths reviewed (35 paths); no new qualifying gameplay screenshot established. See repository-path-review.json. Filename review is not pixel acceptance and does not exhaust public sources."
-        },
-        {
-          "url": "https://revokeseven.itch.io/archetype",
-          "checkedAt": "2026-11-18",
-          "result": "Public retrieval failed: % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 0 0 0 0 0 0 0 0 --:--:-- --:--:-- --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- --:--:-- --:--:-- 0 curl: (22) The requested URL returned error: 403"
-        },
-        {
-          "url": "https://github.com/ACubed/Archetype",
-          "checkedAt": "2026-11-18",
-          "result": "HTTP 200. Retrieved author repository/README/release page; no qualifying gameplay raster was established from this page."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/ACubed/Archetype/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "HTTP 200. Retrieved author repository/README/release page; no qualifying gameplay raster was established from this page."
-        },
-        {
-          "url": "https://github.com/ACubed/Archetype/releases",
-          "checkedAt": "2026-11-18",
-          "result": "HTTP 200. Retrieved author repository/README/release page; no qualifying gameplay raster was established from this page."
-        },
-        {
-          "url": "https://revokeseven.itch.io/archetype",
-          "checkedAt": "2026-11-18",
-          "result": "% Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 0 0 0 0 0 0 0 0 --:--:-- --:--:-- --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- --:--:-- --:--:-- 0 curl: (22) The requested URL returned error: 403"
-        }
-      ]
-    },
-    {
       "id": "jam-hackerspiele",
       "status": "research-incomplete",
       "reason": "Research incomplete or access-limited: Fresh author entry HTML was retrieved at https://hackerspiele.isiko404.dev. No creator gameplay image was extracted from the HTML; this is not proof that no such image exists. New cached repository/README/release checks: https://github.com/KIT-GameJam/Hackerspiele (HTTP 200); https://raw.githubusercontent.com/KIT-GameJam/Hackerspiele/HEAD/README.md (HTTP 200); https://github.com/KIT-GameJam/Hackerspiele/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: New public title-screen source identifies a terminal Start button and focus behavior (source/title_screen.gd and source/title_screen.tscn). One unchanged protected capture waited for terminal print completion and used Enter; visually reviewed full after-input PNG still shows only the CRT launcher, HS icon and controls note, without a microgame board. Rejected as launcher, not gameplay. Report: capture-hackers-new-1/jam-hackerspiele-capture.json. New public repository tree review found no screenshot-named or GIF candidate; listed raster paths were asset/UI/icon material, not verified gameplay screenshots. Tree evidence: trees/jam-hackerspiele/6d4c731eea61758d268c080611e8fcc97a703ef42d5b7fec61dbfb82c6d0db95.body.",
@@ -32315,43 +32423,6 @@
       ]
     },
     {
-      "id": "open3d-polyrace",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/vthem/PolyRace/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/vthem/PolyRace",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/vthem/PolyRace/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/vthem/PolyRace/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/vthem/PolyRace",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/vthem/PolyRace/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        }
-      ]
-    },
-    {
       "id": "open3d-team-capture",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -32395,43 +32466,6 @@
           "url": "https://tc.voltstro.dev/",
           "checkedAt": "2026-11-18",
           "result": "Public retrieval failed: getaddrinfo EAI_AGAIN tc.voltstro.dev"
-        }
-      ]
-    },
-    {
-      "id": "open3d-theseus-the-descent",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/surya-sk/theseus-the-descent/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/surya-sk/theseus-the-descent",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/surya-sk/theseus-the-descent/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/surya-sk/theseus-the-descent/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/surya-sk/theseus-the-descent",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/surya-sk/theseus-the-descent/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
         }
       ]
     },
@@ -34035,18 +34069,6 @@
       ]
     },
     {
-      "id": "open3d-foobillard",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://sourceforge.net/projects/foobillardplus/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        }
-      ]
-    },
-    {
       "id": "open3d-gltron",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
@@ -35146,38 +35168,6 @@
           "url": "https://github.com/NiiightmareXD/golab",
           "checkedAt": "2026-11-18",
           "result": "The repository README was read and describes building with Rust. The assets/Github directory could not be retrieved by the static reader. No eligible image or native release was verified."
-        }
-      ]
-    },
-    {
-      "id": "open3d-openmrac",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The supplied official game page timed out on two static retrieval attempts. Images and native-publication verification remain incomplete.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/Franticware/OpenMRac/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Franticware/OpenMRac",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Franticware/OpenMRac/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://www.franticware.com/openmrac",
-          "checkedAt": "2026-11-18",
-          "result": "The supplied official game page timed out on two static retrieval attempts. Images and native-publication verification remain incomplete."
-        },
-        {
-          "url": "https://www.franticware.com/openmrac/",
-          "checkedAt": "2026-11-18",
-          "result": "The supplied official game page timed out on two static retrieval attempts. Images and native-publication verification remain incomplete."
         }
       ]
     },
@@ -37744,6 +37734,60 @@
         }
       },
       {
+        "id": "open3d-megaglest",
+        "sourceUrl": "https://github.com/MegaGlest/megaglest-source",
+        "demo": {
+          "label": "Download MegaGlest 3.13.0",
+          "url": "https://github.com/MegaGlest/megaglest-source/releases/tag/3.13.0",
+          "kind": "download",
+          "note": "Author GitHub release 3.13.0 lists native game installers for Windows and desktop packages for Linux and macOS. Verified release metadata on 2026-11-19; no package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/MegaGlest/megaglest-source/releases/latest",
+            "checkedAt": "2026-11-19",
+            "result": "Author release lists full desktop game installers and platform packages as manually uploaded assets, separately from source, binary-only components, checksums and torrents; no package downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/MegaGlest/megaglest-source",
+          "authorVerification": "Release and uploaded assets are published under the exact original source repository supplied for this game.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Author release lists full desktop game installers and platform packages as manually uploaded assets, separately from source, binary-only components, checksums and torrents; no package downloaded or executed.",
+          "assets": [
+            {
+              "url": "https://github.com/MegaGlest/megaglest-source/releases/download/3.13.0/MegaGlest-3.13.0-x86_64.AppImage",
+              "name": "MegaGlest-3.13.0-x86_64.AppImage",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 339223280
+            },
+            {
+              "url": "https://github.com/MegaGlest/megaglest-source/releases/download/3.13.0/MegaGlest-game-macos-3.13.0.dmg",
+              "name": "MegaGlest-game-macos-3.13.0.dmg",
+              "platform": "macOS",
+              "kind": "game-binary",
+              "size": 364135237
+            },
+            {
+              "url": "https://github.com/MegaGlest/megaglest-source/releases/download/3.13.0/MegaGlest-Installer-3.13.0_windows_32bit.exe",
+              "name": "MegaGlest-Installer-3.13.0_windows_32bit.exe",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 256573341
+            },
+            {
+              "url": "https://github.com/MegaGlest/megaglest-source/releases/download/3.13.0/MegaGlest-Installer-3.13.0_windows_64bit.exe",
+              "name": "MegaGlest-Installer-3.13.0_windows_64bit.exe",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 258303241
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-pioneer",
         "sourceUrl": "https://github.com/pioneerspacesim/pioneer",
         "demo": {
@@ -37791,6 +37835,60 @@
               "kind": "game-binary",
               "size": 718268920,
               "publisherSha256": "f2c9d45d9c428c13a106f9141e56e5915236039a102b34abec782fea147ff02c"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-red-eclipse",
+        "sourceUrl": "https://github.com/redeclipse/base",
+        "demo": {
+          "label": "Download Red Eclipse v2.0.0",
+          "url": "https://github.com/redeclipse/base/releases/tag/v2.0.0",
+          "kind": "download",
+          "note": "Author GitHub release v2.0.0 lists native game installers for Windows and desktop packages for Linux and macOS. Verified release metadata on 2026-11-19; no package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://api.github.com/repos/redeclipse/base/releases/latest",
+            "checkedAt": "2026-11-19",
+            "result": "Author release lists full desktop game installers and platform packages as manually uploaded assets, separately from source, binary-only components, checksums and torrents; no package downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://github.com/redeclipse/base",
+          "authorVerification": "Release and uploaded assets are published under the exact original source repository supplied for this game.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Author release lists full desktop game installers and platform packages as manually uploaded assets, separately from source, binary-only components, checksums and torrents; no package downloaded or executed.",
+          "assets": [
+            {
+              "url": "https://github.com/redeclipse/base/releases/download/v2.0.0/redeclipse_2.0.0_mac.tar.bz2",
+              "name": "redeclipse_2.0.0_mac.tar.bz2",
+              "platform": "macOS",
+              "kind": "game-binary",
+              "size": 949465495
+            },
+            {
+              "url": "https://github.com/redeclipse/base/releases/download/v2.0.0/redeclipse_2.0.0_nix.tar.bz2",
+              "name": "redeclipse_2.0.0_nix.tar.bz2",
+              "platform": "Linux",
+              "kind": "game-binary",
+              "size": 948705751
+            },
+            {
+              "url": "https://github.com/redeclipse/base/releases/download/v2.0.0/redeclipse_2.0.0_win.exe",
+              "name": "redeclipse_2.0.0_win.exe",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 925772617
+            },
+            {
+              "url": "https://github.com/redeclipse/base/releases/download/v2.0.0/redeclipse_2.0.0_win.zip",
+              "name": "redeclipse_2.0.0_win.zip",
+              "platform": "Windows",
+              "kind": "game-binary",
+              "size": 967974793
             }
           ]
         }
@@ -39054,6 +39152,165 @@
             "result": "The Miniputs game page links directly to the PirateRun repository. Both identify the same Flax Engine runner."
           }
         ]
+      },
+      {
+        "id": "open3d-extreme-tux-racer",
+        "sourceUrl": "https://sourceforge.net/projects/extremetuxracer/",
+        "demo": {
+          "label": "Download Extreme Tux Racer for Windows",
+          "url": "https://sourceforge.net/projects/extremetuxracer/files/releases/0.8.4/",
+          "kind": "download",
+          "note": "Official SourceForge project file listing provides ExtremeTuxRacer.msi, a Windows installer. Verified the project listing and exact installer link on 2026-11-19; no native package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://sourceforge.net/projects/extremetuxracer/files/",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200 official project files index; followed its observed release and platform folder links."
+          },
+          {
+            "url": "https://sourceforge.net/projects/extremetuxracer/files/releases/0.8.4/",
+            "checkedAt": "2026-11-19",
+            "result": "Official project file listing exposes the named Windows installer as a separate file, distinct from source archives. The exact download link was read from the author project listing; no installer was downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://sourceforge.net/projects/extremetuxracer/",
+          "authorVerification": "The original input record identifies this exact SourceForge project as the official homepage; its project file hierarchy publishes the game installer. Source reference retained unchanged.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Official project file listing exposes the named Windows installer as a separate file, distinct from source archives. The exact download link was read from the author project listing; no installer was downloaded or executed.",
+          "assets": [
+            {
+              "name": "ExtremeTuxRacer.msi",
+              "url": "https://sourceforge.net/projects/extremetuxracer/files/releases/0.8.4/ExtremeTuxRacer.msi/download",
+              "kind": "game-binary",
+              "platform": "Windows"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-foobillard",
+        "sourceUrl": "https://sourceforge.net/p/foobillardplus/code/HEAD/tree/",
+        "demo": {
+          "label": "Download FooBillard++ for Windows",
+          "url": "https://sourceforge.net/projects/foobillardplus/files/binaries/Windows-Setup/",
+          "kind": "download",
+          "note": "Official SourceForge project file listing provides setup-foobillardplus-3.42.exe, a Windows installer. Verified the project listing and exact installer link on 2026-11-19; no native package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://sourceforge.net/projects/foobillardplus/files/",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200 official project files index; followed its observed release and platform folder links."
+          },
+          {
+            "url": "https://sourceforge.net/projects/foobillardplus/files/binaries/Windows-Setup/",
+            "checkedAt": "2026-11-19",
+            "result": "Official project file listing exposes the named Windows installer as a separate file, distinct from source archives. The exact download link was read from the author project listing; no installer was downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://sourceforge.net/projects/foobillardplus/",
+          "authorVerification": "The original input record identifies this exact SourceForge project as the official homepage; its project file hierarchy publishes the game installer. Source reference retained unchanged.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Official project file listing exposes the named Windows installer as a separate file, distinct from source archives. The exact download link was read from the author project listing; no installer was downloaded or executed.",
+          "assets": [
+            {
+              "name": "setup-foobillardplus-3.42.exe",
+              "url": "https://sourceforge.net/projects/foobillardplus/files/binaries/Windows-Setup/setup-foobillardplus-3.42.exe/download",
+              "kind": "game-binary",
+              "platform": "Windows"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-gltron",
+        "sourceUrl": "https://github.com/sgothel/gltron",
+        "demo": {
+          "label": "Download GLTron for Windows",
+          "url": "https://sourceforge.net/projects/gltron/files/gltron-win32/0.70/",
+          "kind": "download",
+          "note": "Official SourceForge project file listing provides gltron-0.70-win32.exe, a Windows installer. Verified the project listing and exact installer link on 2026-11-19; no native package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://sourceforge.net/projects/gltron/files/",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200 official project files index; followed its observed release and platform folder links."
+          },
+          {
+            "url": "https://sourceforge.net/projects/gltron/files/gltron-win32/0.70/",
+            "checkedAt": "2026-11-19",
+            "result": "Official project file listing exposes the named Windows installer as a separate file, distinct from source archives. The exact download link was read from the author project listing; no installer was downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://sourceforge.net/projects/gltron/",
+          "authorVerification": "The original input record identifies this exact SourceForge project as the official homepage; its project file hierarchy publishes the game installer. Source reference retained unchanged.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Official project file listing exposes the named Windows installer as a separate file, distinct from source archives. The exact download link was read from the author project listing; no installer was downloaded or executed.",
+          "assets": [
+            {
+              "name": "gltron-0.70-win32.exe",
+              "url": "https://sourceforge.net/projects/gltron/files/gltron-win32/0.70/gltron-0.70-win32.exe/download",
+              "kind": "game-binary",
+              "platform": "Windows"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-kubrick",
+        "sourceUrl": "https://invent.kde.org/games/kubrick",
+        "demo": {
+          "label": "Download macOS nightly build",
+          "url": "https://cdn.kde.org/ci-builds/games/kubrick/master/",
+          "kind": "download",
+          "note": "The official KDE Applications page links KDE's nightly installer directory. Verified separately listed macOS builds for Apple silicon and Intel on 2026-11-19. These are testing builds; no package was downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://apps.kde.org/kubrick/",
+            "checkedAt": "2026-11-19",
+            "result": "Official KDE Kubrick listing names the game, links the KDE Download CDN for nightly installers for testing, and links the source project."
+          },
+          {
+            "url": "https://cdn.kde.org/ci-builds/games/kubrick/master/macos-arm64/",
+            "checkedAt": "2026-11-19",
+            "result": "Official KDE CDN directory listed Kubrick build 1009 as a macOS arm64 DMG."
+          },
+          {
+            "url": "https://cdn.kde.org/ci-builds/games/kubrick/master/macos-x86_64/",
+            "checkedAt": "2026-11-19",
+            "result": "Official KDE CDN directory listed Kubrick build 1009 as a macOS x86_64 DMG."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://apps.kde.org/kubrick/",
+          "authorVerification": "KDE's Kubrick application page links both the KDE Invent project and its own CDN for nightly installers; the exact project name in the CDN directory matches the source project.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The official nightly installer directory lists two versioned DMG files, distinguished by Apple silicon and Intel architectures. Neither binary was downloaded or run.",
+          "assets": [
+            {
+              "name": "kubrick-master-1009-macos-clang-arm64.dmg",
+              "url": "https://cdn.kde.org/ci-builds/games/kubrick/master/macos-arm64/kubrick-master-1009-macos-clang-arm64.dmg",
+              "platform": "macOS Apple silicon",
+              "kind": "game-binary"
+            },
+            {
+              "name": "kubrick-master-1009-macos-clang-x86_64.dmg",
+              "url": "https://cdn.kde.org/ci-builds/games/kubrick/master/macos-x86_64/kubrick-master-1009-macos-clang-x86_64.dmg",
+              "platform": "macOS Intel",
+              "kind": "game-binary"
+            }
+          ]
+        }
       },
       {
         "id": "open3d-openspades",
@@ -40734,6 +40991,44 @@
         }
       },
       {
+        "id": "open3d-openmrac",
+        "sourceUrl": "https://github.com/Franticware/OpenMRac",
+        "demo": {
+          "label": "Download Windows build",
+          "url": "https://github.com/Franticware/OpenMRac/releases/tag/v1.2",
+          "kind": "download",
+          "note": "The developer site links the Windows build from the project’s GitHub v1.2 release. Verified the uploaded archive on 2026-11-19; the v1.3 release lists source only. No package was downloaded or run."
+        },
+        "checkedSources": [
+          {
+            "url": "https://www.franticware.com/openmrac",
+            "checkedAt": "2026-11-19",
+            "result": "The creator’s exact OpenMRac project page labels this release asset Windows build (2023-03-09). It separately describes the original MultiRacer edition."
+          },
+          {
+            "url": "https://api.github.com/repos/Franticware/OpenMRac/releases/tags/v1.2",
+            "checkedAt": "2026-11-19",
+            "result": "Official author release metadata confirms a manually uploaded 6101480-byte game archive at the link published by the developer."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://www.franticware.com/openmrac",
+          "authorVerification": "Franticware publishes the OpenMRac project page and owns the exact linked Franticware/OpenMRac source and release.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "The official site specifically labels the exact manually uploaded v1.2 file a Windows build; it is separate from generated Source code archives.",
+          "assets": [
+            {
+              "url": "https://github.com/Franticware/OpenMRac/releases/download/v1.2/openmrac-20230309-win32.7z",
+              "name": "openmrac-20230309-win32.7z",
+              "platform": "Windows 32-bit",
+              "kind": "game-binary",
+              "size": 6101480
+            }
+          ]
+        }
+      },
+      {
         "id": "open3d-polexod",
         "sourceUrl": "https://kmitrich.itch.io/polexod",
         "demo": {
@@ -40833,6 +41128,43 @@
               "url": "https://www.stolk.org/stormbaancoureur/download/stormbaancoureur_2.1.3-1_i386.deb",
               "kind": "game-binary",
               "platform": "Linux"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-summoning-wars",
+        "sourceUrl": "https://github.com/SummoningWars/summoning-wars",
+        "demo": {
+          "label": "Download Summoning Wars for Windows",
+          "url": "https://sourceforge.net/projects/sumwars/files/0.5.8/",
+          "kind": "download",
+          "note": "Official SourceForge project file listing provides Sumwars-0.5.8-win32-installer.exe, a Windows installer. Verified the project listing and exact installer link on 2026-11-19; no native package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://sourceforge.net/projects/sumwars/files/",
+            "checkedAt": "2026-11-19",
+            "result": "HTTP 200 official project files index; followed its observed release and platform folder links."
+          },
+          {
+            "url": "https://sourceforge.net/projects/sumwars/files/0.5.8/",
+            "checkedAt": "2026-11-19",
+            "result": "Official project file listing exposes the named Windows installer as a separate file, distinct from source archives. The exact download link was read from the author project listing; no installer was downloaded or executed."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://sourceforge.net/projects/sumwars/",
+          "authorVerification": "The original input record identifies this exact SourceForge project as the official homepage; its project file hierarchy publishes the game installer. Source reference retained unchanged.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Official project file listing exposes the named Windows installer as a separate file, distinct from source archives. The exact download link was read from the author project listing; no installer was downloaded or executed.",
+          "assets": [
+            {
+              "name": "Sumwars-0.5.8-win32-installer.exe",
+              "url": "https://sourceforge.net/projects/sumwars/files/0.5.8/Sumwars-0.5.8-win32-installer.exe/download",
+              "kind": "game-binary",
+              "platform": "Windows"
             }
           ]
         }
@@ -66425,63 +66757,6 @@
         ]
       },
       {
-        "id": "open3d-megaglest",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/MegaGlest/megaglest-source/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/MegaGlest/megaglest-source",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/MegaGlest/megaglest-source/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://megaglest.org/media/",
-            "checkedAt": "2026-11-18",
-            "result": "Author page fetch HTTP unavailable; Command failed: curl -q --proto =https --max-redirs 0 --connect-timeout 15 --max-time 40 --max-filesize 4000000 -sS -o [private work artifact omitted] -w %{http_code} https://megaglest.org/media/ curl: (28) Connection timed out after 15002 milliseconds"
-          },
-          {
-            "url": "https://megaglest.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/MegaGlest/megaglest-source/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/MegaGlest/megaglest-source",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/MegaGlest/megaglest-source/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://megaglest.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: getaddrinfo EAI_AGAIN megaglest.org"
-          },
-          {
-            "url": "https://megaglest.org/media/",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: Command failed: curl -q --proto =https --max-redirs 0 --connect-timeout 15 --max-time 40 --max-filesize 4000000 -sS -o [private work artifact omitted] -w %{http_code} https://megaglest.org/media/ curl: (28) Connection timed out after 15002 milliseconds"
-          }
-        ]
-      },
-      {
         "id": "open3d-mineclonia",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -66842,58 +67117,6 @@
           },
           {
             "url": "https://quetoo.org/",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
-        "id": "open3d-red-eclipse",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://www.redeclipse.net/",
-            "checkedAt": "2026-11-18",
-            "result": "Creator publication and game pixels personally reviewed for the accepted screenshot."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/redeclipse/base/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-          },
-          {
-            "url": "https://github.com/redeclipse/base",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/redeclipse/base/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://www.redeclipse.net/",
-            "checkedAt": "2026-11-18",
-            "result": "A rendered science-fiction arena contains tall illuminated pillars, bright projectiles and a visible combatant. The reviewed frame is an in-game scene rather than a title, loading screen or promotional collage."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/redeclipse/base/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 404; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/redeclipse/base",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/redeclipse/base/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://www.redeclipse.net/",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
           }
@@ -69381,30 +69604,6 @@
         ]
       },
       {
-        "id": "open3d-extreme-tux-racer",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://sourceforge.net/projects/extremetuxracer/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          }
-        ]
-      },
-      {
-        "id": "open3d-foobillard",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://sourceforge.net/projects/foobillardplus/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-          }
-        ]
-      },
-      {
         "id": "open3d-freeallegiance-allegiance",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -69494,43 +69693,6 @@
         ]
       },
       {
-        "id": "open3d-gltron",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/sgothel/gltron/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/sgothel/gltron",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/sgothel/gltron/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://raw.githubusercontent.com/sgothel/gltron/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/sgothel/gltron",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/sgothel/gltron/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
         "id": "open3d-hexon",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
@@ -69596,18 +69758,6 @@
             "url": "https://github.com/gibbed/Infiniminer/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          }
-        ]
-      },
-      {
-        "id": "open3d-kubrick",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://apps.kde.org/kubrick/",
-            "checkedAt": "2026-11-18",
-            "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
           }
         ]
       },
@@ -71753,38 +71903,6 @@
         ]
       },
       {
-        "id": "open3d-openmrac",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No independently browser-rendered author web game or sufficiently evidenced native download was verified in this pass. The existing demo remains unchanged; absence is not asserted.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/Franticware/OpenMRac/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/Franticware/OpenMRac",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/Franticware/OpenMRac/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://www.franticware.com/openmrac",
-            "checkedAt": "2026-11-18",
-            "result": "The supplied official game page timed out on two static retrieval attempts. Images and native-publication verification remain incomplete."
-          },
-          {
-            "url": "https://www.franticware.com/openmrac/",
-            "checkedAt": "2026-11-18",
-            "result": "The supplied official game page timed out on two static retrieval attempts. Images and native-publication verification remain incomplete."
-          }
-        ]
-      },
-      {
         "id": "open3d-slune",
         "status": "research-incomplete",
         "reason": "Research incomplete or access-limited: No independently browser-rendered author web game or sufficiently evidenced native download was verified in this pass. The existing demo remains unchanged; absence is not asserted.",
@@ -71862,33 +71980,6 @@
             "url": "https://github.com/BlindMindStudios/StarRuler2-Source",
             "checkedAt": "2026-11-18",
             "result": "The repository README was read; its launcher is not a standalone game build. The linked official homepage timed out. No eligible screenshot was verified."
-          }
-        ]
-      },
-      {
-        "id": "open3d-summoning-wars",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No independently browser-rendered author web game or sufficiently evidenced native download was verified in this pass. The existing demo remains unchanged; absence is not asserted.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/SummoningWars/summoning-wars/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/SummoningWars/summoning-wars",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/SummoningWars/summoning-wars/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/SummoningWars/summoning-wars",
-            "checkedAt": "2026-11-18",
-            "result": "The repository README and its linked original SourceForge project page were read; project samples were not exposed in the static response and no specific native asset was verified."
           }
         ]
       },
