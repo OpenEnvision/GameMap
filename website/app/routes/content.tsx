@@ -15,6 +15,7 @@ import {
 import ResourceIcon from "../../src/components/ResourceIcon";
 import { PaperDocument } from "../components/paper-document";
 import { CommunityPanel } from "../components/community";
+import { communityEnabled } from "../lib/community";
 
 export function loader({ params, request }: LoaderFunctionArgs) {
   const content = contentFor(request);
@@ -53,6 +54,8 @@ export default function ContentPage() {
   const { t } = useSiteI18n();
   const { entry, identity, steps, cases, demos, communityKey } =
     useLoaderData<typeof loader>();
+  // Static builds have no community server: no panel, so no outline link to it.
+  const discussionKey = communityEnabled ? communityKey : null;
   const collection = pages[contentKinds[entry.kind].page];
   if (entry.kind === "paper")
     return (
@@ -82,7 +85,7 @@ export default function ContentPage() {
     ...(recordings.length
       ? [{ id: "record-recordings", label: t("All project recordings") }]
       : []),
-    ...(communityKey
+    ...(discussionKey
       ? [{ id: "community", label: t("Ratings & discussion") }]
       : []),
     ...(cases.length
@@ -138,7 +141,7 @@ export default function ContentPage() {
           note={t("Choose a preview or open the original recording.")}
           entries={recordings}
         />
-        {communityKey && <CommunityPanel gameKey={communityKey} />}
+        {discussionKey && <CommunityPanel gameKey={discussionKey} />}
         <RecordShelf
           id="record-related"
           title={t("Related examples")}
