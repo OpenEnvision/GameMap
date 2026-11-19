@@ -3796,6 +3796,20 @@
       "sha256": "26fab26bb9d2ebda950aa932e81a1a12db24f89366cee236c2cec621573d4e2a"
     },
     {
+      "id": "jam-absurd-herd",
+      "src": "media/learning/jam-absurd-herd.webp",
+      "alt": "A character stands among colorful water, fire and bomb creatures in a grassy paddock, with delivery goals shown on the left.",
+      "caption": "Creator-published Absurd Herd gameplay screenshot from co-creator Maaack. Image rights remain with the creators.",
+      "sourceUrl": "https://maaack.itch.io/godot-game-template/devlog/931778/updated-to-0200",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://img.itch.zone/aW1nLzIwODgxNTQ5LnBuZw%3D%3D/original/argGMx.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 125126,
+      "sha256": "b557bd900a755ea25a0a6792134d6323a0fe36e3d9b1afd8c6f4df7816341204"
+    },
+    {
       "id": "jam-superspeed-spa",
       "src": "media/learning/jam-superspeed-spa.webp",
       "alt": "Two hands apply a yellow face mask to a spa customer beneath stars, a progress bar, and floating hearts.",

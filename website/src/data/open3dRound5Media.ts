@@ -2625,6 +2625,20 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "jam-absurd-herd": {
+    src: "media/learning/jam-absurd-herd.webp",
+    alt: "A character stands among colorful water, fire and bomb creatures in a grassy paddock, with delivery goals shown on the left.",
+    caption:
+      "Creator-published Absurd Herd gameplay screenshot from co-creator Maaack. Image rights remain with the creators.",
+    sourceUrl:
+      "https://maaack.itch.io/godot-game-template/devlog/931778/updated-to-0200",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://img.itch.zone/aW1nLzIwODgxNTQ5LnBuZw%3D%3D/original/argGMx.png",
+    width: 1280,
+    height: 720,
+  },
   "jam-equal-to-p": {
     src: "media/learning/jam-equal-to-p.webp",
     alt: "A word-and-symbol puzzle with yellow-outlined character slots and selectable tiles on a gray playfield.",

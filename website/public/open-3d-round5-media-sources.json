@@ -7842,6 +7842,41 @@
       "sha256": "d04605e56f62ef3ec89d8e821bd874047acab7c531e694b42f4771f7441853d9"
     },
     {
+      "id": "jam-absurd-herd",
+      "title": "Absurd Herd",
+      "media": {
+        "src": "media/learning/jam-absurd-herd.webp",
+        "alt": "A character stands among colorful water, fire and bomb creatures in a grassy paddock, with delivery goals shown on the left.",
+        "caption": "Creator-published Absurd Herd gameplay screenshot from co-creator Maaack. Image rights remain with the creators.",
+        "sourceUrl": "https://maaack.itch.io/godot-game-template/devlog/931778/updated-to-0200",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://img.itch.zone/aW1nLzIwODgxNTQ5LnBuZw%3D%3D/original/argGMx.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "f5ba1ede41753f55eb44d5147047a7b3307ad92819f67f35d8652e5a6305320e",
+        "sourceFrameSHA256": "6003399604261f2eec23501e382ef4ea3214ef5406eeb0a5317849edb5a23307",
+        "sourceWidth": 1280,
+        "sourceHeight": 720,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the original 1280 by 720 image: a player character stands on grass among blue water creatures, orange fire creatures and a dark bomb creature, with a Delivery Goals HUD and fenced paddock visible. This is gameplay rather than a cover, title menu or promotional collage. The co-creator published this frame immediately beneath the link to the exact jam game in the linked devlog."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "b557bd900a755ea25a0a6792134d6323a0fe36e3d9b1afd8c6f4df7816341204",
+      "bytes": 125126
+    },
+    {
       "id": "jam-equal-to-p",
       "title": "Equal to P (=P)",
       "media": {
@@ -30268,68 +30303,6 @@
           "url": "https://saltyn.itch.io/automnia",
           "checkedAt": "2026-11-18",
           "result": "% Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 0 0 0 0 0 0 0 0 --:--:-- --:--:-- --:--:-- 0 0 0 0 0 0 0 0 0 --:--:-- --:--:-- --:--:-- 0 curl: (22) The requested URL returned error: 403"
-        }
-      ]
-    },
-    {
-      "id": "jam-absurd-herd",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: Fresh author entry HTML was retrieved at https://maaack.itch.io/absurd-herd. Illustrated cover with large Absurd Herd title, not gameplay. New cached repository/README/release checks: https://github.com/Maaack/gwj-80 (HTTP 200); https://raw.githubusercontent.com/Maaack/gwj-80/HEAD/README.md (HTTP 404); https://github.com/Maaack/gwj-80/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-absurd-herd-fetch.log. Prior limitation retained: Cache-backed author page yielded only illustrated title/cover art (directly read); no gameplay image candidate. The previous sandbox capture exceeded the existing transfer budget; limits were not raised and the oversized build was not rerun. Need author-published gameplay raster imagery. The actual GitHub root listed only project/assets folders and no README; a bounded source-tree API request timed out, so deeper source imagery remains unverified, not proven absent.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/Maaack/gwj-80/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://github.com/Maaack/gwj-80",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Maaack/gwj-80/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://maaack.itch.io/absurd-herd",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author entry HTML was retrieved at https://maaack.itch.io/absurd-herd. Illustrated cover with large Absurd Herd title, not gameplay. New cached repository/README/release checks: https://github.com/Maaack/gwj-80 (HTTP 200); https://raw.githubusercontent.com/Maaack/gwj-80/HEAD/README.md (HTTP 404); https://github.com/Maaack/gwj-80/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-absurd-herd-fetch.log. Prior limitation retained: Cache-backed author page yielded only illustrated title/cover art (directly read); no gameplay image candidate. The previous sandbox capture exceeded the existing transfer budget; limits were not raised and the oversized build was not rerun. Need author-published gameplay raster imagery. The actual GitHub root listed only project/assets folders and no README; a bounded source-tree API request timed out, so deeper source imagery remains unverified, not proven absent."
-        },
-        {
-          "url": "https://github.com/Maaack/gwj-80",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author entry HTML was retrieved at https://maaack.itch.io/absurd-herd. Illustrated cover with large Absurd Herd title, not gameplay. New cached repository/README/release checks: https://github.com/Maaack/gwj-80 (HTTP 200); https://raw.githubusercontent.com/Maaack/gwj-80/HEAD/README.md (HTTP 404); https://github.com/Maaack/gwj-80/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-absurd-herd-fetch.log. Prior limitation retained: Cache-backed author page yielded only illustrated title/cover art (directly read); no gameplay image candidate. The previous sandbox capture exceeded the existing transfer budget; limits were not raised and the oversized build was not rerun. Need author-published gameplay raster imagery. The actual GitHub root listed only project/assets folders and no README; a bounded source-tree API request timed out, so deeper source imagery remains unverified, not proven absent."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/Maaack/gwj-80/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author entry HTML was retrieved at https://maaack.itch.io/absurd-herd. Illustrated cover with large Absurd Herd title, not gameplay. New cached repository/README/release checks: https://github.com/Maaack/gwj-80 (HTTP 200); https://raw.githubusercontent.com/Maaack/gwj-80/HEAD/README.md (HTTP 404); https://github.com/Maaack/gwj-80/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-absurd-herd-fetch.log. Prior limitation retained: Cache-backed author page yielded only illustrated title/cover art (directly read); no gameplay image candidate. The previous sandbox capture exceeded the existing transfer budget; limits were not raised and the oversized build was not rerun. Need author-published gameplay raster imagery. The actual GitHub root listed only project/assets folders and no README; a bounded source-tree API request timed out, so deeper source imagery remains unverified, not proven absent."
-        },
-        {
-          "url": "https://github.com/Maaack/gwj-80/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Fresh author entry HTML was retrieved at https://maaack.itch.io/absurd-herd. Illustrated cover with large Absurd Herd title, not gameplay. New cached repository/README/release checks: https://github.com/Maaack/gwj-80 (HTTP 200); https://raw.githubusercontent.com/Maaack/gwj-80/HEAD/README.md (HTTP 404); https://github.com/Maaack/gwj-80/releases (HTTP 200). No gameplay raster candidate was extracted from the successfully retrieved repository pages in this pass; source asset trees were not exhaustively inspected. Prior evidence, retained as historical context only: Fresh creator-page retrieval failed at TLS handshake or certificate validation; host stopped without retry or bypass. Evidence: [private work artifact omitted] and jam-absurd-herd-fetch.log. Prior limitation retained: Cache-backed author page yielded only illustrated title/cover art (directly read); no gameplay image candidate. The previous sandbox capture exceeded the existing transfer budget; limits were not raised and the oversized build was not rerun. Need author-published gameplay raster imagery. The actual GitHub root listed only project/assets folders and no README; a bounded source-tree API request timed out, so deeper source imagery remains unverified, not proven absent."
-        },
-        {
-          "url": "https://github.com/Maaack/gwj-80",
-          "checkedAt": "2026-11-18",
-          "result": "HTTP 200. Retrieved author repository/README/release page; no qualifying gameplay raster was established from this page."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/Maaack/gwj-80/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "HTTP 404. This exact source endpoint did not return content; this does not establish that no screenshot or release exists."
-        },
-        {
-          "url": "https://github.com/Maaack/gwj-80/releases",
-          "checkedAt": "2026-11-18",
-          "result": "HTTP 200. Retrieved author repository/README/release page; no qualifying gameplay raster was established from this page."
-        },
-        {
-          "url": "https://maaack.itch.io/absurd-herd",
-          "checkedAt": "2026-11-18",
-          "result": "Retrieved author page HTML; image candidates were extracted for direct review."
         }
       ]
     },
