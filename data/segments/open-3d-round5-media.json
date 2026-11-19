@@ -32983,7 +32983,7 @@
     {
       "id": "open3d-apex-formula",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "Research incomplete or access-limited: The creator-linked build opened as a black page; Three.js failed to create a WebGL context in the cloud sandbox. No gameplay was rendered. No creator-published raster gameplay image has been visually verified.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/bridge-mind/apex-formula/HEAD/README.md",
@@ -33019,6 +33019,16 @@
           "url": "https://github.com/bridge-mind/apex-formula/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://github.com/bridge-mind/apex-formula#readme",
+          "checkedAt": "2026-11-19",
+          "result": "The author README links the public web build."
+        },
+        {
+          "url": "https://bridge-mind.github.io/apex-formula/",
+          "checkedAt": "2026-11-19",
+          "result": "The creator-linked build opened as a black page; Three.js failed to create a WebGL context in the cloud sandbox. No gameplay was rendered."
         }
       ]
     },
@@ -33368,7 +33378,7 @@
     {
       "id": "open3d-endless-runner-remarkablegames",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "Research incomplete or access-limited: The creator-linked build reached its loading spinner, but Babylon reported WebGL not supported in the cloud sandbox and no gameplay was rendered. No creator-published raster gameplay image has been visually verified.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/remarkablegames/endless-runner/HEAD/README.md",
@@ -33404,6 +33414,16 @@
           "url": "https://github.com/remarkablegames/endless-runner/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://github.com/remarkablegames/endless-runner#readme",
+          "checkedAt": "2026-11-19",
+          "result": "The author README links the public web build."
+        },
+        {
+          "url": "https://remarkablegames.org/endless-runner/",
+          "checkedAt": "2026-11-19",
+          "result": "The creator-linked build reached its loading spinner, but Babylon reported WebGL not supported in the cloud sandbox and no gameplay was rendered."
         }
       ]
     },
@@ -38831,6 +38851,67 @@
               "platform": "Linux",
               "publicationLabel": true,
               "uploadId": "9034819",
+              "platformEvidence": "Download for Linux"
+            }
+          ]
+        }
+      },
+      {
+        "id": "open3d-geographical-adventures",
+        "sourceUrl": "https://github.com/SebLague/Geographical-Adventures",
+        "demo": {
+          "kind": "download",
+          "label": "Download Geographical Adventures",
+          "url": "https://sebastian.itch.io/geographical-adventures",
+          "note": "Author itch page lists native Windows, macOS and Linux game packages. Verified the named packages, platform icons and numeric upload IDs in a sandboxed cloud browser on 2026-11-19. The author warns that the unsigned macOS build may crash. No package downloaded or executed."
+        },
+        "checkedSources": [
+          {
+            "url": "https://sebastian.itch.io/geographical-adventures",
+            "checkedAt": "2026-11-19",
+            "result": "Sebastian Lague author game page links the exact SebLague/Geographical-Adventures source repository, identifies version 1.0.7, and lists Windows/macOS/Linux packages with corresponding platform icons."
+          },
+          {
+            "url": "https://sebastian.itch.io/geographical-adventures/purchase",
+            "checkedAt": "2026-11-19",
+            "result": "Selected the explicit free No thanks, just take me to the downloads link without entering payment or personal information. Download listing showed named platform packages and numeric upload IDs 5877120 (Windows), 5877158 (macOS), 5877183 (Linux); did not click any package Download button."
+          }
+        ],
+        "evidence": {
+          "authorPublicationUrl": "https://sebastian.itch.io/geographical-adventures",
+          "authorVerification": "The itch page identifies Sebastian Lague and directly links the exact source repository https://github.com/SebLague/Geographical-Adventures.",
+          "reviewedAt": "2026-11-19",
+          "binaryRelease": true,
+          "binaryVerification": "Actual itch upload listing has three separately named native game packages with Windows, macOS and Linux platform icons, file sizes and numeric data-upload_id attributes. No binary downloaded or run. Author warns unsigned macOS version may crash.",
+          "assets": [
+            {
+              "name": "Geographical Adventures (windows)",
+              "url": "https://sebastian.itch.io/geographical-adventures",
+              "kind": "game-binary",
+              "platform": "Windows",
+              "uploadId": 5877120,
+              "displaySize": "374 MB",
+              "publicationLabel": true,
+              "platformEvidence": "Download for Windows"
+            },
+            {
+              "name": "Geographical Adventures (mac)",
+              "url": "https://sebastian.itch.io/geographical-adventures",
+              "kind": "game-binary",
+              "platform": "macOS",
+              "uploadId": 5877158,
+              "displaySize": "383 MB",
+              "publicationLabel": true,
+              "platformEvidence": "Download for macOS"
+            },
+            {
+              "name": "Geographical Adventures (linux)",
+              "url": "https://sebastian.itch.io/geographical-adventures",
+              "kind": "game-binary",
+              "platform": "Linux",
+              "uploadId": 5877183,
+              "displaySize": "374 MB",
+              "publicationLabel": true,
               "platformEvidence": "Download for Linux"
             }
           ]
@@ -67486,7 +67567,7 @@
       {
         "id": "open3d-apex-formula",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: The creator-linked build opened as a black page; Three.js failed to create a WebGL context in the cloud sandbox. No gameplay was rendered. The build was not upgraded to playable; this does not establish the game is unavailable on a browser with working WebGL.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/bridge-mind/apex-formula/HEAD/README.md",
@@ -67522,6 +67603,16 @@
             "url": "https://github.com/bridge-mind/apex-formula/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://github.com/bridge-mind/apex-formula#readme",
+            "checkedAt": "2026-11-19",
+            "result": "The author README links the public web build."
+          },
+          {
+            "url": "https://bridge-mind.github.io/apex-formula/",
+            "checkedAt": "2026-11-19",
+            "result": "The creator-linked build opened as a black page; Three.js failed to create a WebGL context in the cloud sandbox. No gameplay was rendered."
           }
         ]
       },
@@ -67950,7 +68041,7 @@
       {
         "id": "open3d-endless-runner-remarkablegames",
         "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
+        "reason": "Research incomplete or access-limited: The creator-linked build reached its loading spinner, but Babylon reported WebGL not supported in the cloud sandbox and no gameplay was rendered. The build was not upgraded to playable; this does not establish the game is unavailable on a browser with working WebGL.",
         "checkedSources": [
           {
             "url": "https://raw.githubusercontent.com/remarkablegames/endless-runner/HEAD/README.md",
@@ -67986,6 +68077,16 @@
             "url": "https://github.com/remarkablegames/endless-runner/releases",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+          },
+          {
+            "url": "https://github.com/remarkablegames/endless-runner#readme",
+            "checkedAt": "2026-11-19",
+            "result": "The author README links the public web build."
+          },
+          {
+            "url": "https://remarkablegames.org/endless-runner/",
+            "checkedAt": "2026-11-19",
+            "result": "The creator-linked build reached its loading spinner, but Babylon reported WebGL not supported in the cloud sandbox and no gameplay was rendered."
           }
         ]
       },
@@ -68776,53 +68877,6 @@
             "url": "https://deadprocess.itch.io/dgs",
             "checkedAt": "2026-11-18",
             "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          }
-        ]
-      },
-      {
-        "id": "open3d-geographical-adventures",
-        "status": "research-incomplete",
-        "reason": "Research incomplete or access-limited: No additional playable build has been browser-render verified, and no new native-download decision was completed. Keep existing demo unchanged; this does not assert that no release exists.",
-        "checkedSources": [
-          {
-            "url": "https://raw.githubusercontent.com/SebLague/Geographical-Adventures/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/SebLague/Geographical-Adventures",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://github.com/SebLague/Geographical-Adventures/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-          },
-          {
-            "url": "https://sebastian.itch.io/geographical-adventures",
-            "checkedAt": "2026-11-18",
-            "result": "Author page fetch HTTP unavailable; Command failed: curl -q --proto =https --max-redirs 0 --connect-timeout 20 --max-time 40 --max-filesize 4000000 -sS -D [private work artifact omitted] -o [private work artifact omitted] -w %{http_code} https://sebastian.itch.io/geographical-adventures curl: (28) Connection timed out after 20002 milliseconds"
-          },
-          {
-            "url": "https://raw.githubusercontent.com/SebLague/Geographical-Adventures/HEAD/README.md",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/SebLague/Geographical-Adventures",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://github.com/SebLague/Geographical-Adventures/releases",
-            "checkedAt": "2026-11-18",
-            "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-          },
-          {
-            "url": "https://sebastian.itch.io/geographical-adventures",
-            "checkedAt": "2026-11-18",
-            "result": "Public retrieval failed: Command failed: curl -q --proto =https --max-redirs 0 --connect-timeout 20 --max-time 40 --max-filesize 4000000 -sS -D [private work artifact omitted] -o [private work artifact omitted] -w %{http_code} https://sebastian.itch.io/geographical-adventures curl: (28) Connection timed out after 20002 milliseconds"
           }
         ]
       },

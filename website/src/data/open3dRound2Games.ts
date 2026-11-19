@@ -2269,10 +2269,10 @@ export const open3dRound2Games: LearningPath[] = [
       "kind": "disclosure"
     },
     "demo": {
-      "label": "View source for Geographical Adventures",
-      "url": "https://github.com/SebLague/Geographical-Adventures",
-      "kind": "source",
-      "note": "Source reference only. No playable build or published download was independently verified; the supplied homepage is not treated as a play link."
+      "kind": "download",
+      "label": "Download Geographical Adventures",
+      "url": "https://sebastian.itch.io/geographical-adventures",
+      "note": "Author itch page lists native Windows, macOS and Linux game packages. Verified the named packages, platform icons and numeric upload IDs in a sandboxed cloud browser on 2026-11-19. The author warns that the unsigned macOS build may crash. No package downloaded or executed."
     },
     "source": {
       "label": "Inspect the supplied source reference",
