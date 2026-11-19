@@ -1,16 +1,19 @@
 import type { ReactNode } from "react";
 import type { Root } from "fumadocs-core/page-tree";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
+import { ArrowUpRight } from "lucide-react";
 import { Brand } from "../components/site-shell";
 import type { DocumentMetadata } from "../../content/models";
-import { url } from "../../content/site";
+import { pages, url } from "../../content/site";
 import {
   docLocale,
   docHome,
   docMessages,
   type DocLocale,
 } from "../../content/doc-language";
-import { LanguageSwitcher, useSiteI18n } from "./i18n";
+import { communityEnabled } from "./community";
+import { pillars, type Pillar } from "./pillars";
+import { LanguageSwitcher, Link, useSiteI18n } from "./i18n";
 export function documentGroups(manifest: readonly DocumentMetadata[]) {
   return [...new Set(manifest.map((page) => page.group))].map((title) => {
     const documents = manifest.filter((page) => page.group === title);
@@ -48,6 +51,98 @@ export function DocumentationLanguage(_props: {
 }) {
   return <LanguageSwitcher className="documentation-language" />;
 }
+
+/** A pillar's destinations as the docs link them. Community pages need the
+ *  community API, so builds without it leave that link out. */
+function destinations(pillar: Pillar) {
+  return pillar.links.filter(
+    (link) => communityEnabled || link.path !== pages.works.path,
+  );
+}
+/** The docs are the "Learn" pillar's guides: marked, not aria-current, so the
+ *  sidebar's current document stays the page's only current link. */
+const isDocs = (path: string) => path === pages.docs.path;
+
+/** The site's four pillars at the top of the docs sidebar (and the mobile
+ *  drawer). root.tsx leaves the site header out of the reading room so that
+ *  Fumadocs owns the layout; this keeps every GameMap destination one click
+ *  away and works without JavaScript. */
+function PillarRail() {
+  const { t } = useSiteI18n();
+  return (
+    <nav className="docs-pillar-rail" aria-label={t("Main navigation")}>
+      {pillars.map((pillar) => (
+        <div
+          key={pillar.id}
+          className="docs-pillar"
+          data-pillar={pillar.id}
+          data-current={pillar.id === "learn" || undefined}
+        >
+          <span className="docs-pillar-label">{t(pillar.label)}</span>
+          <ul>
+            {destinations(pillar).map((link) => (
+              <li key={link.path}>
+                <Link
+                  to={link.path}
+                  data-current={isDocs(link.path) || undefined}
+                >
+                  {t(link.title)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </nav>
+  );
+}
+
+/** A compact site footer under the docs pager: the brand, the four pillars
+ *  and the wordmark, so the reading room ends like every other GameMap page.
+ *  Pass it to DocsPage as `footer.children`. */
+export function DocumentationSiteBand() {
+  const { t } = useSiteI18n();
+  return (
+    <div className="reader-site-band">
+      <div className="reader-site-band-top">
+        <div className="reader-site-band-intro">
+          <Link to="/" aria-label={t("GameMap home")}>
+            <Brand />
+          </Link>
+          <p>{t("A little direction for your next playable world.")}</p>
+        </div>
+        <nav className="reader-site-band-map" aria-label={t("Site map")}>
+          {pillars.map((pillar) => (
+            <div key={pillar.id} data-pillar={pillar.id}>
+              <h2>{t(pillar.label)}</h2>
+              <ul>
+                {destinations(pillar).map((link) => (
+                  <li key={link.path}>
+                    <Link to={link.path}>{t(link.title)}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </nav>
+      </div>
+      <div className="reader-site-band-bottom">
+        <a
+          href="https://github.com/OpenEnvision/GameMap"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+          <ArrowUpRight size={13} aria-hidden="true" />
+        </a>
+      </div>
+      <div className="reader-site-band-wordmark" aria-hidden="true">
+        GameMap
+      </div>
+    </div>
+  );
+}
+
 export function DocumentationLayout({
   children,
   manifest,
@@ -86,16 +181,7 @@ export function DocumentationLayout({
       tree={tree}
       nav={{ title: <Brand />, url: href("/") }}
       githubUrl="https://github.com/OpenEnvision/GameMap"
-      links={(["resources", "examples", "paths"] as const).map((id) => ({
-        text: t(
-          {
-            resources: "Resources",
-            examples: "Game examples",
-            paths: "Development paths",
-          }[id],
-        ),
-        url: href(url.page(id)),
-      }))}
+      links={[{ type: "custom", on: "menu", children: <PillarRail /> }]}
     >
       {children}
     </DocsLayout>

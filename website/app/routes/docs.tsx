@@ -1,9 +1,14 @@
 import { use, useEffect } from "react";
 import { useLoaderData, type LoaderFunctionArgs } from "react-router";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { DocsBody, DocsPage, DocsTitle } from "fumadocs-ui/layouts/docs/page";
 import { docs, source } from "../lib/source";
-import { DocumentationLayout, DocumentationLanguage } from "../lib/docs";
+import {
+  DocumentationLayout,
+  DocumentationLanguage,
+  DocumentationSiteBand,
+} from "../lib/docs";
+import { Brand } from "../components/site-shell";
 import {
   docHome,
   documentBodyLocale,
@@ -32,9 +37,22 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
     import.meta.env.BASE_URL,
   );
   const locale = localeFromPath(pathname, import.meta.env.BASE_URL);
-  if (redirectTarget)
-    return { redirectTarget, path: null, record: null, manifest: [], locale };
   const content = contentFor(request);
+  if (redirectTarget) {
+    // Name the new home of a document that moved into a topic folder.
+    const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+    const slug = redirectTarget
+      .slice(base.length)
+      .match(/^\/docs\/(.+?)\/?$/)?.[1];
+    return {
+      redirectTarget,
+      movedTitle: (slug && content.get("document", slug)?.title) || null,
+      path: null,
+      record: null,
+      manifest: [],
+      locale,
+    };
+  }
   const requested = (params["*"] || "").split("/").filter(Boolean).join("/");
   const id =
     locale === "zh" &&
@@ -51,20 +69,49 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
     manifest: content.all("document").map((entry) => entry.data),
     locale,
     redirectTarget: null,
+    movedTitle: null,
   };
 }
-function RetiredGameDocument({ target }: { target: string }) {
+/** A retired document address. Game catalogs moved to Game examples; other
+ *  documents moved into topic folders. Static hosts follow the meta refresh,
+ *  hydrated pages replace the location; either way this shows only briefly. */
+function MovedDocument({
+  target,
+  title,
+}: {
+  target: string;
+  title: string | null;
+}) {
   const { t } = useSiteI18n();
   useEffect(() => {
     window.location.replace(target);
   }, [target]);
+  const base = import.meta.env.BASE_URL.replace(/\/$/, ""),
+    games = /^\/(?:zh\/)?examples\//.test(
+      target.startsWith(base + "/") ? target.slice(base.length) : target,
+    );
   return (
-    <main id="main-content" className="site-main">
-      <title>{t("Game examples — GameMap")}</title>
+    <main id="main-content" className="site-main document-moved">
+      <title>
+        {games ? t("Game examples — GameMap") : t("Page moved — GameMap")}
+      </title>
       <meta httpEquiv="refresh" content={`0;url=${target}`} />
       <link rel="canonical" href={target} />
-      <h1>{t("Game examples")}</h1>
-      <a href={target}>{t("Game examples")}</a>
+      <Link
+        to="/"
+        className="document-moved-brand"
+        aria-label={t("GameMap home")}
+      >
+        <Brand />
+      </Link>
+      <h1>{games ? t("Game examples") : t("Page moved")}</h1>
+      <p>{t("This page now has a new address.")}</p>
+      <a className="document-moved-link" href={target}>
+        <span>
+          {games ? t("Game examples") : title || t("Go to the new page")}
+        </span>
+        <ArrowRight size={17} aria-hidden="true" />
+      </a>
     </main>
   );
 }
@@ -98,7 +145,10 @@ function Document({
       toc={toc}
       tabIndex={-1}
       breadcrumb={{ enabled: false }}
-      footer={{ className: "reader-pager" }}
+      footer={{
+        className: "reader-pager",
+        children: <DocumentationSiteBand />,
+      }}
       className="reader-page"
       data-content-key={record.key}
       data-content-kind="document"
@@ -157,9 +207,10 @@ function Document({
   );
 }
 export default function Docs() {
-  const { path, record, manifest, locale, redirectTarget } =
+  const { path, record, manifest, locale, redirectTarget, movedTitle } =
     useLoaderData<typeof loader>();
-  if (redirectTarget) return <RetiredGameDocument target={redirectTarget} />;
+  if (redirectTarget)
+    return <MovedDocument target={redirectTarget} title={movedTitle} />;
   if (!path || !record) throw new Error("Document is unavailable");
   return (
     <DocumentationLayout manifest={manifest} locale={locale}>

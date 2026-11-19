@@ -28,6 +28,7 @@ import { DocsPage, DocsTitle } from "fumadocs-ui/layouts/docs/page";
 import {
   DocumentationLayout,
   DocumentationLanguage,
+  DocumentationSiteBand,
   documentationViews,
 } from "../lib/docs";
 import {
@@ -320,7 +321,10 @@ export default function DocsIndex() {
         full
         tabIndex={-1}
         tableOfContent={{ enabled: false }}
-        footer={{ className: "reader-pager" }}
+        footer={{
+          className: "reader-pager",
+          children: <DocumentationSiteBand />,
+        }}
         className="docs-home"
       >
         <title>{`${text.title} — GameMap`}</title>

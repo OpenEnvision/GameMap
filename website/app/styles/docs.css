@@ -157,6 +157,80 @@
   backdrop-filter: blur(24px) saturate(1.4);
 }
 
+/* The site's four pillars sit above the document tree as a small site map:
+   a mono label per pillar and its destinations, two pillars to a row. */
+.docs-pillar-rail {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 12px;
+  margin: 0 0 6px;
+  padding: 6px 8px 18px;
+  border-bottom: 1px solid var(--line);
+}
+.docs-pillar {
+  min-width: 0;
+}
+.docs-pillar-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+html[lang="zh-CN"] .docs-pillar-label {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+.docs-pillar-label::before {
+  content: "";
+  flex: none;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+.docs-pillar[data-current] .docs-pillar-label {
+  color: var(--ink);
+}
+.docs-pillar[data-current] .docs-pillar-label::before {
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--glow-accent);
+}
+.docs-pillar ul {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.docs-pillar a {
+  display: block;
+  padding-block: 3px;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+.docs-pillar a:hover {
+  color: var(--ink);
+}
+.docs-pillar a[data-current] {
+  color: var(--ink);
+  font-weight: 600;
+}
+#nd-sidebar-mobile .docs-pillar a {
+  padding-block: 5px;
+  font-size: 14px;
+}
+
 /* --- Top bar (narrow screens) and the table-of-contents bar. ------------ */
 #nd-subnav {
   border-bottom-color: var(--line);
@@ -455,6 +529,15 @@ html[lang="zh-CN"] #nd-page .reader-prose :is(h2, h3, h4) {
 #nd-page .reader-prose :is(h2, h3, h4) > button {
   color: var(--muted);
 }
+#nd-page .reader-prose :is(h2, h3, h4) > button:focus-visible {
+  opacity: 1;
+}
+/* The section counter takes the h2's first row, so the row wraps. Leave room
+   for the copy-link button on the title's row: otherwise long titles push it
+   onto a row of its own, an empty band under the heading on phones. */
+#nd-page .reader-prose h2 > a[data-card] {
+  max-width: calc(100% - 2rem);
+}
 
 /* Lists. */
 #nd-page .reader-prose :is(ul, ol) {
@@ -558,6 +641,13 @@ html[lang="zh-CN"] #nd-page .reader-prose :is(h2, h3, h4) {
 }
 #nd-page .reader-prose figure.shiki code {
   font-family: var(--font-mono);
+}
+/* Comments: Shiki's GitHub themes paint them #6A737D, about 4:1 on the dark
+   panel. The muted token keeps them quiet and readable (about 5.8:1 in both
+   themes). Matching the value, not the exact declaration, also covers spans
+   React re-serialises after a client-side navigation. */
+#nd-page .reader-prose figure.shiki span[style*="6A737D" i] {
+  color: var(--muted);
 }
 
 /* Tables: a framed, quietly striped ledger that scrolls on its own. */
@@ -821,6 +911,150 @@ html[lang="zh-CN"] #nd-page .document-information > summary {
   color: var(--accent);
 }
 
+/* --- Reader: the site band — a compact footer under the pager ------------ */
+/* root.tsx leaves the site header and footer out of the docs (Fumadocs owns
+   that layout), so the reading room closes like the rest of GameMap: brand,
+   the four pillars and the wordmark, cropped by the bottom of the page. */
+#nd-page.reader-page:has(> .reader-site-band),
+#nd-page.docs-home:has(> .reader-site-band) {
+  padding-bottom: 0;
+}
+#nd-page .reader-site-band {
+  container: site-band / inline-size;
+  position: relative;
+  isolation: isolate;
+  margin-top: clamp(72px, 12cqi, 128px);
+  padding-top: clamp(36px, 6cqi, 56px);
+  border-top: 1px solid var(--line);
+  background: radial-gradient(
+    ellipse 70% 60% at 50% 115%,
+    var(--nebula-a),
+    transparent 72%
+  );
+}
+#nd-page .reader-site-band-top {
+  display: grid;
+  gap: 36px 48px;
+}
+#nd-page .reader-site-band-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 28px;
+  min-width: 0;
+}
+#nd-page .reader-site-band-intro .atlas-brand {
+  font-size: 19px;
+}
+#nd-page .reader-site-band-intro p {
+  max-width: 300px;
+  margin: 0;
+  color: var(--body);
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.15;
+}
+html[lang="zh-CN"] #nd-page .reader-site-band-intro p {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-style: normal;
+  line-height: 1.7;
+}
+#nd-page .reader-site-band-map {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 20px;
+}
+#nd-page .reader-site-band-map h2 {
+  margin: 0 0 14px;
+  padding: 0;
+  border: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+html[lang="zh-CN"] #nd-page .reader-site-band-map h2 {
+  letter-spacing: 0.06em;
+}
+#nd-page .reader-site-band-map ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#nd-page .reader-site-band-map a {
+  color: var(--body);
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+#nd-page .reader-site-band-map a:hover,
+#nd-page .reader-site-band-bottom a:hover {
+  color: var(--accent);
+}
+#nd-page .reader-site-band-bottom {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: clamp(36px, 6cqi, 56px);
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+#nd-page .reader-site-band-bottom a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--body);
+  font-size: 13px;
+}
+#nd-page .reader-site-band-wordmark {
+  height: 0.8em;
+  margin-top: clamp(20px, 4cqi, 40px);
+  overflow: hidden;
+  color: transparent;
+  background: linear-gradient(
+    to bottom,
+    var(--ink) 0%,
+    color-mix(in srgb, var(--ink) 30%, transparent) 62%,
+    transparent 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: var(--font-display);
+  font-size: clamp(56px, 21cqi, 300px);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+}
+@container site-band (min-width: 560px) {
+  #nd-page .reader-site-band-map {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@container site-band (min-width: 1000px) {
+  #nd-page .reader-site-band-top {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2.6fr);
+  }
+  #nd-page .reader-site-band-intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (forced-colors: active) {
+  #nd-page .reader-site-band-wordmark {
+    background: none;
+    color: CanvasText;
+  }
+}
+
 /* --- Narrow reading widths ---------------------------------------------- */
 @container reader (max-width: 560px) {
   #nd-page .reader-prose {
@@ -831,6 +1065,18 @@ html[lang="zh-CN"] #nd-page .document-information > summary {
   }
   #nd-page .reader-prose td {
     min-width: 132px;
+  }
+  /* Wide tables scroll inside their frame. Wrapping headers and a wider
+     table give prose columns room, so rows stay a few lines tall instead
+     of narrow towers of text. */
+  #nd-page .reader-prose th {
+    white-space: normal;
+  }
+  #nd-page .reader-prose table:has(tr > :nth-child(3)) {
+    min-width: 720px;
+  }
+  #nd-page .reader-prose table:has(tr > :nth-child(4)) {
+    min-width: 880px;
   }
   #nd-page .reader-prose blockquote {
     padding: 14px 18px;
@@ -881,7 +1127,8 @@ html[lang="zh-CN"] #nd-page .document-information > summary {
 }
 @media print {
   #nd-docs-layout::before,
-  #nd-docs-layout::after {
+  #nd-docs-layout::after,
+  #nd-page .reader-site-band {
     display: none;
   }
 }
@@ -901,4 +1148,68 @@ html[lang="zh-CN"]
   :is(#nd-page .reader-title, #nd-page .reader-prose :is(h2, h3, h4)) {
   word-break: keep-all;
   overflow-wrap: anywhere;
+}
+
+/* --- A retired document address ------------------------------------------ */
+/* Shown for a moment while the meta refresh (or the hydrated page) moves on
+   to the new location: a quiet, centred note with the way forward. */
+.site-main.document-moved {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  width: min(760px, calc(100% - 2 * var(--gutter)));
+  min-height: 100dvh;
+  padding-block: 56px;
+}
+.document-moved-brand {
+  margin-bottom: clamp(40px, 9vh, 88px);
+}
+.document-moved-brand .atlas-brand {
+  font-size: 20px;
+}
+.site-main.document-moved h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: clamp(44px, 9vw, 92px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  overflow-wrap: anywhere;
+}
+html[lang="zh-CN"] .site-main.document-moved h1 {
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.site-main.document-moved p {
+  max-width: 42ch;
+  margin: clamp(18px, 3vw, 26px) 0 0;
+  color: var(--body);
+  font-size: var(--text-lead);
+  line-height: 1.55;
+}
+.document-moved-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 100%;
+  min-height: 48px;
+  margin-top: clamp(28px, 4vw, 40px);
+  padding: 12px 22px;
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line));
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  background: var(--panel);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.document-moved-link:hover {
+  border-color: var(--accent);
+  box-shadow: 0 24px 60px -30px var(--glow-accent);
+}
+.document-moved-link > svg {
+  flex: none;
+  color: var(--accent);
 }
