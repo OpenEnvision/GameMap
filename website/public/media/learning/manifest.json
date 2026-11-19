@@ -7581,6 +7581,20 @@
       "sha256": "790dd774749cf989e2ecaf771f5e6d93a42e80f1084e8d59705f6e1b90da24ac"
     },
     {
+      "id": "open3d-extreme-tux-racer",
+      "src": "media/learning/open3d-extreme-tux-racer.webp",
+      "alt": "Tux slides toward a checkered finish banner on a snowy mountain course, with a timer, herring count, and speed gauge on screen.",
+      "caption": "Creator-published gameplay: Developer-published Extreme Tux Racer gameplay screenshot of a downhill race approaching the finish. Image rights remain with the original creators.",
+      "sourceUrl": "https://svn.code.sf.net/p/extremetuxracer/code/trunk/resources/screenshots/",
+      "origin": "creator-screenshot",
+      "reviewedAt": "2026-11-19",
+      "originalImageUrl": "https://svn.code.sf.net/p/extremetuxracer/code/trunk/resources/screenshots/Sourceforge2.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 92282,
+      "sha256": "82a9a6c2e60dcaa293c8155c36327b80282308acd078770f8537ae722c22770f"
+    },
+    {
       "id": "open3d-foobillard",
       "src": "media/learning/open3d-foobillard.webp",
       "alt": "FooBillard++ nine-ball gameplay with a cue aimed at the rack, shot-strength controls and player scores.",

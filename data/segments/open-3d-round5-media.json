@@ -13548,6 +13548,41 @@
       "bytes": 45164
     },
     {
+      "id": "open3d-extreme-tux-racer",
+      "title": "Extreme Tux Racer",
+      "media": {
+        "src": "media/learning/open3d-extreme-tux-racer.webp",
+        "alt": "Tux slides toward a checkered finish banner on a snowy mountain course, with a timer, herring count, and speed gauge on screen.",
+        "caption": "Creator-published gameplay: Developer-published Extreme Tux Racer gameplay screenshot of a downhill race approaching the finish. Image rights remain with the original creators.",
+        "sourceUrl": "https://svn.code.sf.net/p/extremetuxracer/code/trunk/resources/screenshots/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://svn.code.sf.net/p/extremetuxracer/code/trunk/resources/screenshots/Sourceforge2.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "8ccdfb6df8847ca336da1c1361bf4be853674dce80f0ab2ee763e37815086069",
+        "sourceFrameSHA256": "190282a316e5a137dc0dfd22a9a7d8ff6bf815550fb6fa8ce15c6c46e4145513",
+        "sourceWidth": 800,
+        "sourceHeight": 600,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the full 800 by 600 original. The racing camera follows the sliding penguin toward the finish banner, with elapsed time, herring count and speed displayed on the active gameplay HUD. No title, menu, collage or post-race result. The exact upstream project publishes this standalone capture in its public SourceForge SVN screenshots directory (not the CDN gallery). Unchanged image origin and frame validation passed."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "82a9a6c2e60dcaa293c8155c36327b80282308acd078770f8537ae722c22770f",
+      "bytes": 92282
+    },
+    {
       "id": "open3d-foobillard",
       "title": "FooBillard++",
       "media": {
@@ -35882,41 +35917,9 @@
       ]
     },
     {
-      "id": "open3d-extreme-tux-racer",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Official site redirects to SourceForge project; project gallery full links use unpermitted a.fsdn.com and distro appstream original links are distro copies without confirmed first-party publishing provenance.",
-      "checkedSources": [
-        {
-          "url": "https://sourceforge.net/projects/extremetuxracer/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://sourceforge.net/projects/extremetuxracer/",
-          "checkedAt": "2026-11-19",
-          "result": "Original developer project existing metadata uses a.fsdn.com cross-origin images that current validator rejects. Unaffiliated Wikimedia screenshots not substituted; existing native download unchanged."
-        },
-        {
-          "url": "https://extremetuxracer.sourceforge.net/",
-          "checkedAt": "2026-11-19",
-          "result": "Official site redirects to SourceForge project; project gallery full links use unpermitted a.fsdn.com and distro appstream original links are distro copies without confirmed first-party publishing provenance."
-        },
-        {
-          "url": "https://sourceforge.net/projects/extremetuxracer/",
-          "checkedAt": "2026-11-19",
-          "result": "Official site redirects to SourceForge project; project gallery full links use unpermitted a.fsdn.com and distro appstream original links are distro copies without confirmed first-party publishing provenance."
-        },
-        {
-          "url": "https://appstream.debian.org/bookworm/main/metainfo/extremetuxracer.html",
-          "checkedAt": "2026-11-19",
-          "result": "Official site redirects to SourceForge project; project gallery full links use unpermitted a.fsdn.com and distro appstream original links are distro copies without confirmed first-party publishing provenance."
-        }
-      ]
-    },
-    {
       "id": "open3d-gltron",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Old official site redirects to SourceForge; official project media gallery originals are cross-origin a.fsdn.com, not permitted by current validator.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Old official site redirects to SourceForge; official project media gallery originals are cross-origin a.fsdn.com, not permitted by current validator. The historical GLtron developer page that indexed an in-game image currently redirects to the project summary. Prior official gallery candidates were on the unapproved cross-origin SourceForge CDN. The exact catalog source tree contains only rendering art and capture source code, not a published standalone gameplay file.",
       "checkedSources": [
         {
           "url": "https://raw.githubusercontent.com/sgothel/gltron/HEAD/README.md",
@@ -35977,6 +35980,21 @@
           "url": "https://sourceforge.net/projects/gltron/",
           "checkedAt": "2026-11-19",
           "result": "Old official site redirects to SourceForge; official project media gallery originals are cross-origin a.fsdn.com, not permitted by current validator."
+        },
+        {
+          "url": "https://gltron.sourceforge.net/",
+          "result": "HTTP 302 to the SourceForge project summary; former developer homepage is not served here.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/sgothel/gltron",
+          "result": "Reviewed cached exact migration tree paths: game UI, texture, logo, and skybox assets, plus src/video/screenshot.c, no named capture original.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://sourceforge.net/projects/gltron/",
+          "result": "The exact author project exists. Prior reviewed gallery origin a.fsdn.com remains excluded; not used under a rewritten URL.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -36000,7 +36018,7 @@
     {
       "id": "open3d-voxelands",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Looked through old public landing and Downloads; exact original-source project is cross-linked, but download forum redirects away to a parked site, external native package listings are third-party, and no official complete native package or creator screenshot established in the current pass.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Looked through old public landing and Downloads; exact original-source project is cross-linked, but download forum redirects away to a parked site, external native package listings are third-party, and no official complete native package or creator screenshot established in the current pass. The Neocities preservation candidate has genuine older game frames, but the present-day account was created in 2022, identifies no owner, and is not linked as an official site by the developer repository. The published author domain is now a redirect. The verified screenshots must not be described as first-party originals without ownership or independently reachable author publishing provenance.",
       "checkedSources": [
         {
           "url": "https://gitlab.com/voxelands/voxelands",
@@ -36021,6 +36039,26 @@
           "url": "https://voxelands.neocities.org/download",
           "checkedAt": "2026-11-19",
           "result": "Looked through old public landing and Downloads; exact original-source project is cross-linked, but download forum redirects away to a parked site, external native package listings are third-party, and no official complete native package or creator screenshot established in the current pass."
+        },
+        {
+          "url": "https://gitlab.com/voxelands/voxelands",
+          "result": "Exact project identifies www.voxelands.com as its website and does not identify a Neocities successor.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://www.voxelands.com/about.html",
+          "result": "HTTP 302 to a ww547 parking-style subdomain; no relevant developer gallery was obtained.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://voxelands.neocities.org/about",
+          "result": "HTTP 200. Embedded survival and farming images visually checked at 300 by 176 and have actual in-game HUD. They are held for uncertain preservation-host ownership, not image contents.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://neocities.org/site/voxelands",
+          "result": "Host account says created Oct 13, 2022, with no identifiable first-party owner. It republishes historical site with 2017 version and older creator copyright; copyright alone does not establish ownership.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -36439,6 +36477,31 @@
           "url": "https://js13kgames.com/2026/games/mawlight",
           "checkedAt": "2026-11-19",
           "result": "Competition page exposes author gallery links on a distinct play.js13kgames.com origin; no independent original accepted."
+        },
+        {
+          "url": "https://api.github.com/repos/js13kGames/mawlight",
+          "result": "HTTP 200; contest mirror metadata identifies JustGibas/JS13kGame2026 as its original author repository.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/JustGibas/JS13kGame2026",
+          "result": "Primary source README credits Justinas Gibas and describes the exact MawLight build; it does not embed a separate raster and lists no releases.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/JustGibas/JS13kGame2026/git/trees/HEAD?recursive=1",
+          "result": "HTTP 200; complete untruncated 12-entry creator tree contains no raster/video or screenshot paths.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/JustGibas/JS13kGame2026/issues?state=all&per_page=35",
+          "result": "HTTP 200; public issue and PR list returned no entries.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://lt.linkedin.com/in/justinas-gibas",
+          "result": "Public index names creator's JS13k project, but direct evidence read returned HTTP 999 without any retrievable approved-origin original. Not retried. Unapproved social mirrors or prior competition cross-origin galleries were not used.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -36495,6 +36558,26 @@
         {
           "url": "https://roblouie.com/article/1316/the-making-of-whiskers-witch-adventure-js13k-2025/",
           "result": "Indexed creator postmortem links the exact 2025 game and includes possible screenshots, one labelled with a September 14 date, alongside renderer debugging illustrations. Actual page access returned HTTP 403, no stable original URL or direct visual review obtained; not imported.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://js13kgames.com/2025/blog",
+          "result": "Competition’s 2025 blog index credits Rob Louie and links the exact already discovered author postmortem, rather than publishing a separate authored game screenshot.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://roblouie.com/article/1316/the-making-of-whiskers-witch-adventure-js13k-2025/",
+          "result": "Prior evidence of HTTP 403, no usable exact cached image URL. Did not retry the host or attempt another access path.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/roblouie/js13k-2025/git/trees/HEAD?recursive=1",
+          "result": "HTTP 200; complete untruncated 90-entry creator repository contains no raster/video or screenshot paths.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://api.github.com/repos/roblouie/js13k-2025/issues?state=all&per_page=50",
+          "result": "HTTP 200; public issue/PR list empty. No alternate creator original emerged from this route.",
           "checkedAt": "2026-11-19"
         }
       ]
@@ -36915,6 +36998,21 @@
           "url": "https://germanalen.itch.io/verdigris",
           "checkedAt": "2026-11-19",
           "result": "HTTP 200; only prior gallery original and YouTube embeds TnYzNBRenEw and NVytT3s2FZA."
+        },
+        {
+          "url": "https://api.github.com/repos/germanalen/Stop-The-Cheese-Monster/issues?state=all&per_page=50",
+          "result": "HTTP 200; sole public issue is an unrelated contributor’s announcement of their Godot 3 fork. It contains no creator screenshot.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://germanalen.itch.io/verdigris",
+          "result": "Read cached previously retrieved author HTML. It has two YouTube iframes and one previously rejected creature close-up original; no additional raster candidate. Did not re-download that image or follow unsupported video/thumbnail origins.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://pedrobraiti.com/projetos/verdigris/",
+          "result": "Search title collision is not attributable to the credited game author. Not used.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
