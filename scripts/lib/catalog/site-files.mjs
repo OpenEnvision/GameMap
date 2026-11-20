@@ -3,7 +3,12 @@ import { sha256, readArtifact } from "./codec.mjs";
 import { documentDownloads } from "../document-downloads.mjs";
 
 /** Public downloads are derived from the selected revisions, never copied from Git business exports. */
-export async function siteDownloads(input, bodies, directory) {
+export async function siteDownloads(
+  input,
+  bodies,
+  directory,
+  { readAsset = (path) => readArtifact(directory, path) } = {},
+) {
   const { sources, documents } = input;
   const json = (value) => JSON.stringify(value, null, 2) + "\n";
   const dates = [
@@ -17,10 +22,7 @@ export async function siteDownloads(input, bodies, directory) {
       ...sources,
       testingReviewDate: dates.length === 1 ? dates[0] : null,
     }),
-    "favicon.svg": await readArtifact(
-      directory,
-      "website/public/brand/gamemap-mark.svg",
-    ),
+    "favicon.svg": await readAsset("website/public/brand/gamemap-mark.svg"),
   };
   Object.assign(output, documentDownloads(documents, bodies));
   const previews = [];
@@ -30,8 +32,7 @@ export async function siteDownloads(input, bodies, directory) {
       sources.learningMedia[row.id];
     // Community games can have no reviewed screenshot; never invent a media entry.
     if (!media) continue;
-    const bytes = await readArtifact(
-      directory,
+    const bytes = await readAsset(
       `website/public/${media.src.replace(/^\//, "")}`,
     );
     previews.push({
@@ -62,8 +63,7 @@ export async function siteDownloads(input, bodies, directory) {
     a.localeCompare(b),
   )) {
     for (const image of [cover, cover.original]) {
-      const bytes = await readArtifact(
-        directory,
+      const bytes = await readAsset(
         `website/public/${image.src.replace(/^\//, "")}`,
       );
       if (sha256(bytes) !== image.sha256 || bytes.length !== image.bytes)

@@ -68,14 +68,12 @@ export function projectSnapshot(
         value,
         typeof metadata === "string" ? metadata : metadata.label,
       );
-  const testingLabels =
-    context.sourceModules["website/src/data/testingTypes.ts"];
   for (const [scheme, labels] of Object.entries({
     "agent-client": archive.sources.agentLabels,
     "agent-kind": archive.sources.agentResourceKinds,
-    "testing-kind": testingLabels.testingKinds,
-    "testing-use": testingLabels.testingUses,
-    "testing-terms": testingLabels.testingTerms,
+    "testing-kind": archive.sources.testingKinds,
+    "testing-use": archive.sources.testingUses,
+    "testing-terms": archive.sources.testingTerms,
   }))
     for (const [value, label] of Object.entries(labels))
       term(scheme, value, label);

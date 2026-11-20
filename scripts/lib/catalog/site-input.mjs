@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { resolve } from "node:path";
-import { realpath } from "node:fs/promises";
+import { readFile, realpath } from "node:fs/promises";
 import { root } from "../documents.mjs";
 import { readArtifact, canonicalJSON, digest, sha256 } from "./codec.mjs";
 import { readReleaseData } from "./validation.mjs";
@@ -75,6 +75,35 @@ export async function readSiteInput() {
       record.fingerprint,
       `Release revision changed: ${record.key}`,
     );
+  return input;
+}
+
+export const developmentInputPath = resolve(
+  root,
+  "website/.content/development-input.json",
+);
+export const developmentPublicDirectory = resolve(
+  root,
+  ".build/catalog-local/development/public",
+);
+
+/** Working copies are explicit local inputs, never a production fallback. */
+export async function readDevelopmentInput() {
+  if (!process.env.CATALOG_DEVELOPMENT_INPUT) return null;
+  assert.equal(
+    process.env.NODE_ENV,
+    "development",
+    "Working content is development-only",
+  );
+  assert.equal(
+    resolve(process.env.CATALOG_DEVELOPMENT_INPUT),
+    developmentInputPath,
+  );
+  const input = JSON.parse(await readFile(developmentInputPath, "utf8"));
+  assert.equal(input.format, "gamemap.development-input");
+  assert.equal(input.version, 1);
+  assert.equal(input.source.mode, "database");
+  assert.equal(input.source.realm.environment, "local");
   return input;
 }
 

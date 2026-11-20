@@ -212,7 +212,7 @@ export function createRegistry(
       !keys.has(key),
       `Duplicate content key: ${key}; records must never overwrite each other.`,
     );
-    const blocks = presentFields(data, fieldRules[kind], key);
+    const blocks = presentFields(data, fieldRules[kind], key, sources);
     const title = blocks.find((block) => block.type === "title");
     const lead = blocks.find((block) => block.type === "lead");
     check(

@@ -84,9 +84,13 @@ export function applyTranslatedHeadingIds(tree, englishMarkdown) {
   const original = parser.parse(preparedMarkdown(englishMarkdown));
   unified().use(remarkHeading, { generateToc: false }).runSync(original);
   const ids = [];
-  visit(original, "heading", (node) => ids.push(node.data.hProperties.id));
+  visit(original, "heading", (node) => {
+    ids.push(node.data.hProperties.id);
+  });
   const headings = [];
-  visit(tree, "heading", (node) => headings.push(node));
+  visit(tree, "heading", (node) => {
+    headings.push(node);
+  });
   assert.equal(
     headings.length,
     ids.length,

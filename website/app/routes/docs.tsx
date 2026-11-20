@@ -50,12 +50,20 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
     };
   }
   const requested = (params["*"] || "").split("/").filter(Boolean).join("/");
+  const original = requested.startsWith("zh/") ? requested.slice(3) : null;
+  const workingFallback =
+    import.meta.env.DEV &&
+    original &&
+    !content.get("document", requested) &&
+    content.get("document", original)?.data.sourceMode === "generated";
   const id =
-    locale === "zh" &&
-    !requested.startsWith("zh/") &&
-    content.get("document", `zh/${requested}`)
-      ? `zh/${requested}`
-      : requested;
+    workingFallback && original
+      ? original
+      : locale === "zh" &&
+          !requested.startsWith("zh/") &&
+          content.get("document", `zh/${requested}`)
+        ? `zh/${requested}`
+        : requested;
   const page = source.getPage(id.split("/"));
   if (!page) throw new Response("Document not found", { status: 404 });
   await docs.getPage(page.path)?.preload();

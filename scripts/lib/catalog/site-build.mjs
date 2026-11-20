@@ -5,6 +5,7 @@ import { resolve, dirname, join, relative } from "node:path";
 import { tmpdir } from "node:os";
 import { createServer } from "node:net";
 import { root, walk } from "../documents.mjs";
+import { websiteEnvironment } from "../website-environment.mjs";
 import {
   assertPrivateDirectory,
   canonicalJSON,
@@ -29,26 +30,8 @@ export const catalogs = input.catalogs as TranslationCatalogs;
 export type { ContentSources } from './git-sources.server';\n`;
 
 export function releaseBuildEnvironment(directory, digest, base) {
-  const allowed = [
-    "PATH",
-    "HOME",
-    "TMPDIR",
-    "TMP",
-    "TEMP",
-    "SystemRoot",
-    "LANG",
-    "LC_ALL",
-    "TZ",
-    "CI",
-    "PLAYWRIGHT_BROWSERS_PATH",
-  ];
-  const env = Object.fromEntries(
-    allowed
-      .filter((key) => process.env[key] !== undefined)
-      .map((key) => [key, process.env[key]]),
-  );
   return {
-    ...env,
+    ...websiteEnvironment(),
     NODE_ENV: "production",
     PAGES_BASE_PATH: base,
     CATALOG_SITE_INPUT: join(directory, "website/.content/release-input.json"),

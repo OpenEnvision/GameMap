@@ -28,6 +28,8 @@ const assetBase = (
 ).replace(/\/+/g, "/");
 const context = await loadContent(process.env.PAGES_BASE_PATH);
 const manifest = context.documents;
+const readBody = async (source) =>
+  context.documentBodies?.[source] ?? readFile(resolve(root, source), "utf8");
 const rewriteLink = documentLinkResolver(manifest, assetBase);
 await mkdir(contentDir, { recursive: true });
 const expectedDocs = new Set(
@@ -48,15 +50,13 @@ for (const file of (await walk(docsDir)).filter(
 for (const page of manifest) {
   const file = resolve(root, page.source);
   const markdown = preparedMarkdown(
-    await readFile(file, "utf8"),
+    await readBody(page.source),
     page.slug.startsWith("zh/") ? "包元数据" : "Package metadata",
   );
   const original = page.slug.startsWith("zh/")
     ? manifest.find((entry) => entry.slug === page.slug.slice(3))
     : undefined;
-  const english = original
-    ? await readFile(resolve(root, original.source), "utf8")
-    : undefined;
+  const english = original ? await readBody(original.source) : undefined;
   const processor = unified()
     .use(remarkParse)
     .use(remarkGfm)

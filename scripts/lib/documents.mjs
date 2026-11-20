@@ -229,8 +229,16 @@ export function documentLinkResolver(documents, assetBase = "/") {
       const document = documents.find(
         (page) => resolve(root, page.source) === absolute,
       );
-      if (!document)
+      if (!document) {
+        const original = slug.startsWith("zh/")
+          ? documents.find(
+              (page) =>
+                page.slug === slug.slice(3) && page.sourceMode === "generated",
+            )
+          : undefined;
+        if (original) return "/zh/docs/" + original.slug + "/" + suffix;
         throw new Error(`Unregistered Markdown link in ${sourceFile}: ${url}`);
+      }
       return "/docs/" + document.slug + "/" + suffix;
     }
     const publicPath = slash(

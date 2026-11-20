@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "node scripts/build/dev.mjs",
+    "dev:git": "node scripts/build/dev.mjs --git",
     "build": "node scripts/build/generate.mjs && node scripts/build/prepare-docs.mjs && react-router typegen && tsc -b && react-router build && node scripts/build/finalize.mjs",
     "preview": "node scripts/build/preview.mjs",
     "format": "prettier --write .",
@@ -22,6 +23,7 @@
     "test:studio": "playwright test --config studio/playwright.config.ts",
     "test:local": "npm run studio:build && node tests/local/supabase.mjs",
     "test:local:publication": "node tests/local/publication.mjs",
+    "test:local:development": "node tests/local/development.mjs",
     "test:community": "node --test tests/unit/community*.test.mjs",
     "test:examples:import": "node --test tests/unit/jam-games.test.mjs",
     "test:examples:media": "node --test tests/unit/example-media.test.mjs",
@@ -48,6 +50,7 @@
     "local:status": "node scripts/platform/local-catalog.mjs status",
     "local:setup": "node scripts/platform/local-catalog.mjs setup",
     "local:migrate": "node scripts/platform/local-catalog.mjs migrate",
+    "local:import": "node scripts/platform/local-import.mjs",
     "local:realm-setup": "node scripts/platform/local-catalog.mjs realm-setup",
     "local:backup": "node scripts/platform/local-catalog.mjs backup",
     "local:restore-probe": "node scripts/platform/local-catalog.mjs restore-probe",

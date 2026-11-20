@@ -12,7 +12,7 @@ import { url } from "./site";
 import { docLocale, docMessages } from "./doc-language";
 import taxonomy from "./taxonomy.json";
 import documentGenerators from "./generators.config.json";
-import repositoryResearch from "../../data/segments/repository-research.json";
+import type { ContentSources } from "./source-data";
 import { agentLabels, agentResourceKinds } from "../src/data/agentGameTypes";
 import {
   testingKinds,
@@ -36,6 +36,7 @@ export function presentFields<T extends object>(
   record: T,
   rules: FieldRules<T>,
   context: string,
+  sources?: ContentSources,
 ): ContentBlock[] {
   assertKeys(record, rules, context);
   const blocks: ContentBlock[] = [];
@@ -50,7 +51,7 @@ export function presentFields<T extends object>(
     }
     const value = record[key];
     if (!hasValue(value) && !(rule.includeNull && value === null)) continue;
-    const shown = rule.present(value, record);
+    const shown = rule.present(value, record, sources);
     if (!shown.length)
       throw new Error(
         `${context}.${String(key)} has content but no presentation`,
@@ -708,7 +709,19 @@ export const repositoryResearchFields: FieldRules<
     "provenance",
     true,
   ),
-  group: mapped("Original discovery group", repositoryResearch.group_titles),
+  group: {
+    section: "metadata",
+    present: (value, _record, sources) => {
+      if (!sources)
+        throw new Error(
+          "Repository research needs its selected source metadata",
+        );
+      return mapped(
+        "Original discovery group",
+        sources.repositoryResearch.group_titles,
+      ).present(value);
+    },
+  },
   game_access: factObject("Linked game build", {
     title: "Game title",
     track: "Game dimension",
@@ -752,18 +765,22 @@ export const repositoryResearchFields: FieldRules<
   parent_repo: nullableText("Recorded parent repository"),
   repository_id: nullableText("Recorded repository ID"),
   existing_locations: {
-    present: (
-      value: ContentModels["repository-research"]["existing_locations"],
-    ): BlockValue[] => [
-      {
-        type: "links",
-        label: "Existing GameMap coverage at the import baseline",
-        items: value.map((path) => ({
-          label: path,
-          url: `https://github.com/OpenEnvision/GameMap/blob/${repositoryResearch.target_base}/${path}`,
-        })),
-      },
-    ],
+    present: (value, _record, sources): BlockValue[] => {
+      if (!sources)
+        throw new Error(
+          "Repository research needs its selected source metadata",
+        );
+      return [
+        {
+          type: "links",
+          label: "Existing GameMap coverage at the import baseline",
+          items: value.map((path) => ({
+            label: path,
+            url: `https://github.com/OpenEnvision/GameMap/blob/${sources.repositoryResearch.target_base}/${path}`,
+          })),
+        },
+      ];
+    },
   },
   related_existing_entries: {
     present: (

@@ -182,7 +182,7 @@ test("translation fixtures share source heading IDs in both languages, including
   const parse = (markdown) =>
     unified().use(remarkParse).use(remarkGfm).parse(preparedMarkdown(markdown));
   const original =
-    "# Guide\n\n## Verify and retry\n\n## Verify and retry\n\n## Fixed ID [#accepted-id]\n";
+    "# Guide\n\nIntroduction.\n\nAnother paragraph.\n\n## Verify and retry\n\nSource details.\n\n## Verify and retry\n\nMore details.\n\n## Fixed ID [#accepted-id]\n";
   const translated =
     "# 指南\n\n## 验证与重试\n\n## 验证与重试\n\n## 固定标识 [#accepted-id]\n";
   const prepared = applyTranslatedHeadingIds(parse(translated), original);

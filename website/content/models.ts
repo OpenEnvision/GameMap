@@ -186,6 +186,7 @@ export type FieldRule<T, K extends keyof T> =
       present: (
         value: T[K],
         record: T,
+        sources?: import("./source-data").ContentSources,
       ) => (BlockValue & { section?: ContentSection })[];
     };
 export type FieldRules<T> = { [K in keyof T]-?: FieldRule<T, K> };
