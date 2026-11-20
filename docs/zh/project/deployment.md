@@ -6,10 +6,19 @@ GameMap 使用  **Fumadocs、React Router、React、TypeScript 和 Vite** 。发
 
 使用 Node.js 22.22 或更新版本：
 
+启动 Docker Desktop，初始化本地目录：
+
 ```sh
 npm ci
+npm run local:start
+npm run local:migrate
+npm run local:setup
 npm run dev
 ```
+
+`npm run dev` 预览数据库中各条目的当前编辑版本，包括草稿。另开终端运行 `npm run studio:dev` 编辑内容。所有集合、译文、搜索结果和结构化下载都来自同一份工作数据。数据库变更每两秒检查一次，文档和契约变更通过文件监听刷新。此服务器仅监听本机，不审批、冻结或发布内容；数据库不可用时会报错，不回退到 Git。
+
+不连接数据库、仅查看当前线上构建来源时，使用 `npm run dev:git`。同一工作目录一次运行一个内容开发服务器。
 
 打开 React Router 输出的 URL。主要路由包括：
 
@@ -19,13 +28,15 @@ npm run dev
 - `/testing/` — 项目、环境、资产及动作数据参考资料。
 - `/docs/` — 渲染后的指南、研究笔记及来源署名。
 
-应用位于 `website/app/`。现有目录与案例数据保留在 `website/src/data/` 中；公共源资产保留在 `website/public/` 中。
+应用位于 `website/app/`。本地结构化内容由数据库管理。`website/src/data/` 和 `data/segments/` 保留 Git 生产构建输入与初始导入来源；公共源资产保留在 `website/public/` 中。数据库工作输入生成到被忽略的 `website/.content/`，下载文件与被引用的上传媒体放在 `.build/catalog-local/development/public/`。不要手动编辑这些生成视图。
+
+已有数据库可运行 `npm run local:import` 查看哪些 Git 记录会被补入、合并或需要审阅。完成本地备份后，运行 `npm run local:import -- --apply`，补入缺失记录，并把合并后的 Git 修改保存为草稿。数据库编辑和数据库独有记录保持不变；两边改法不同的字段写入 `.build/catalog-local/imports/` 下的报告。
 
 ## 文档与内部链接
 
 `docs/` 下的 Markdown（包括 `docs/reference/catalog.md`）以及 `CONTRIBUTING.md`，都会在构建时渲染；文件夹索引 `docs/README.md` 和 `docs/zh/README.md` 仅供在代码仓库中阅读。文章包含导航、目录、代码高亮、标题链接和全文搜索。通过 Git 编写的长篇 Markdown 仍是权威来源，可通过来源链接访问。已注册的目录指南是结构化数据的生成视图；其来源链接指向可信生成器，而不是暗示旧的 Git 导出文件是另一个并行编写来源。
 
-`scripts/build/prepare-docs.mjs` 会在 `website/.content/` 中创建可丢弃的副本。它会推导标题、将内部 Markdown 链接改写为文档路由，并将本地文档图片暂存到被忽略的 `website/public/docs-assets/` 目录。原始研究文本不会被改写。`website/docs.config.json` 控制导航分组和短标签；未分组文章仍可在“更多笔记”下访问。开发时编辑源 Markdown 后，重新运行此准备脚本或重启 `npm run dev`，以刷新准备好的副本。
+`scripts/build/prepare-docs.mjs` 会在 `website/.content/` 中创建可丢弃的副本。它会推导标题、将内部 Markdown 链接改写为文档路由，并将本地文档图片暂存到被忽略的 `website/public/docs-assets/` 目录。原始研究文本不会被改写。`website/docs.config.json` 控制导航分组和短标签；未分组文章仍可在“更多笔记”下访问。开发命令会在源 Markdown 变更后刷新准备好的副本。数据库模式基于工作数据重新生成目录指南，不改写 Git 中的已提交副本。
 
 文档源使用 Fumadocs MDX 的 Vite 集成，并以纯 Markdown 模式运行；目录正文无法执行 MDX 表达式或导入。客户端导航时按需加载文章正文，但每篇文档也会提供完整 HTML，因此直接链接及禁用 JavaScript 的阅读均可正常使用。全文搜索会将静态索引加载到浏览器中；生产环境没有 `/api/search` 服务器。
 

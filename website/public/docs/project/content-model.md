@@ -9,7 +9,7 @@ GameMap treats source content, presentation, and discovery as separate responsib
 | `website/content/contracts.ts` | Versioned runtime payload/attachment validation; inferred TypeScript models and generated Studio form schemas |
 | `website/content/models.ts` | Content kinds, per-kind schema version, authoring owner, validator key, presentation blocks, and registry API |
 | `website/content/assembly.ts` | Rehydrate selected database revisions without filling missing business rows from Git |
-| `website/content/source-data.ts` | Authoring provider boundary; Git by default, explicit snapshot materialization only in isolated builds |
+| `website/content/source-data.ts` | Complete provider boundary: Git for production builds, a database working input for local development, or a frozen release for isolated builds |
 | `website/content/generators.config.json` | Registered derived document addresses and trusted source renderers; no executable database recipes |
 | `website/content/sources.config.json` | Every data module, runtime export, fragment, attachment, and metadata owner |
 | `website/content/site.ts` | Route definitions, canonical URL helpers, and navigation |
@@ -62,7 +62,11 @@ The build publishes a machine-readable `content-manifest.json` containing all re
 
 ## Development and packages
 
-`npm run dev` watches original Markdown, data segments, source collections, and definitions. It refreshes generated mirrors and document inputs with change-aware writes, without deleting the active documentation tree. Static preview prints the build revision and timestamp; pulling source changes still requires a new production build.
+`npm run dev` reads all database-owned editing heads and their translations in one read-only transaction, including unpublished drafts. The working input feeds the registry, generated guides, search, routes, downloads and referenced uploads. Current long-form Markdown remains Git-owned. Research labels and baseline links use the selected catalog's metadata rather than importing a second data file inside the field renderer.
+
+Database changes are polled every two seconds; Markdown and contract changes are watched. Generated working input and public files are disposable, not editing stores. An invalid refresh leaves the last prepared input active and reports the error in the terminal. There is no automatic Git fallback.
+
+`npm run dev:git` explicitly previews the current Git production input and watches its source collections. `npm run local:import -- --apply` brings Git changes into an existing database as drafts: missing records are imported, existing ones are merged three ways, and same-field conflicts are reported for review. Database edits and database-only entries are kept. Static production previews still require a fresh build.
 
 Catalog arrays and the repository research ledger share `data/segments/`, with explicit kind declarations in the source inventory. The research ledger is not promoted into resource cards. Skill packages live under `docs/skills/`, preserve their separate licenses, and generate deterministic archives checked byte-for-byte against their sources.
 
@@ -76,7 +80,8 @@ Public records in both locales are pre-rendered and checked for visible fields, 
 
 ## Adding content
 
-- Add a row to an existing typed collection and keep its source evidence and limitations. Its existing adapter registers it automatically; public kinds also render on the website.
+- For local authoring, create or revise structured records in Studio or through a database importer, retaining source evidence and limitations. The current editing revision appears in the local working preview; publication still requires review and a release.
+- For the retained Git production input, add a row to an existing typed collection. Its adapter registers it automatically; this does not overwrite a local database record.
 - For a new data module or export, declare its owner and shape in the source inventory. A fragment must also be included in its aggregate collection; independent inventory checks detect omissions.
 - For a new field or content kind, define its type and explicit presentation before publishing. Structural omissions require an explanation; unknown runtime fields fail validation. Declare its runtime schema in `contracts.ts`, derive the TypeScript type, declare its version, owner and validator key in `contentKinds`, implement its import/assembly strategies, and register the contract in a new ordered database migration. See the [content-platform extension guide](./content-platform.md). Payload upgrades create successor revisions; they never rewrite old approved content.
 - Add Markdown anywhere under `docs/`. Navigation, static rendering, search, and coverage discovery follow automatically. Add an optional label to `website/docs.config.json` for deliberate placement.

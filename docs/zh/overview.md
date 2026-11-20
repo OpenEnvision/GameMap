@@ -15,14 +15,21 @@
 
 ## 开发
 
+本地内容开发使用 PostgreSQL/Supabase。启动 Docker Desktop 后运行：
+
 ```sh
 npm ci
+npm run local:start
+npm run local:migrate
+npm run local:setup
 npm run dev
 ```
 
-文档和目录变更会自动刷新。网站是静态的，使用 Fumadocs、React Router、TypeScript 和 Vite 构建；无需应用后端或 API 密钥。
+在私有 Studio（`npm run studio:dev`）中编辑结构化内容。网站预览每个数据库条目的当前编辑修订，包括草稿，并在保存后刷新。页面、搜索、译文、下载和上传媒体使用同一份工作数据。长篇 Markdown 与界面代码仍保留在 Git 中。
 
-本地已有发布版本时，开发服务器会用当前界面预览其中的论文。预览直接读取保留的公开快照，无需连接数据库。发布更新后请重启开发服务器。生产构建仍以 Git 为来源。
+已有目录可运行 `npm run local:import` 查看需要补入、合并或审阅的 Git 记录。`npm run local:import -- --apply` 补入缺失记录，并把 Git 的修改合并到已有记录，保存为草稿：数据库编辑保持不变，两边改法不同的字段列入待审清单。报告保存在 `.build/catalog-local/imports/`。
+
+不连接数据库、仅预览 Git 生产来源时，使用 `npm run dev:git`。公共网站仍是使用 Fumadocs、React Router、TypeScript 和 Vite 构建的静态站点。生产构建和 GitHub Pages 仍由 Git 驱动，本地草稿不会发布。
 
 生产构建和 GitHub Pages 配置见[开发与部署](project/deployment.md)。
 
@@ -43,7 +50,9 @@ Studio 与公共网站分开运行。未配置时，它显示设置说明，而�
 
 公共网站 **尚未切换到数据库发布** 。在切换门槛通过之前，Git 仍是其默认来源；Studio 从不部署或激活发布。已审阅的包已经可以通过隔离的 `site:build` / `site:verify` 路径构建，包括仅存在于数据库中的记录和上传媒体，而不改变检出目录的 `dist/`。现有 Pages 工作流仅发布 `dist/`，不发布私有 Studio 或私有快照产物。
 
-## 增量收集游戏
+## Git 目录导入
+
+检入的目录是当前生产输入与初始导入来源，不是本地 Studio 的编辑存储。后续本地编写使用 Studio 或数据库导入器；来源补录不会覆盖数据库修订。
 
 Examples 同时收录普通游戏与有证据支持的 AI 辅助项目。Game Jam 条目需要真实游戏源码、作者提供的可玩或可下载发布链接，以及一手来源证据。复用源码或素材前，请查阅项目许可。优先选择 Godot 4 / 2D 项目，但不设为强制要求。
 

@@ -15,14 +15,21 @@ A practical map of tools, playable projects, and production knowledge for buildi
 
 ## Development
 
+Local content development uses PostgreSQL/Supabase. Start Docker Desktop, then:
+
 ```sh
 npm ci
+npm run local:start
+npm run local:migrate
+npm run local:setup
 npm run dev
 ```
 
-Documentation and catalog changes refresh automatically. The website is static, built with Fumadocs, React Router, TypeScript, and Vite; no application backend or API key is required.
+Edit structured content in the private Studio (`npm run studio:dev`). The website previews every database entry's current editing revision, including drafts, and refreshes after saves. Pages, search, translations, downloads and uploaded media share that working selection. Long-form Markdown and interface code remain in Git.
 
-If a local publication exists, the dev server previews its published papers using the current interface. It reads the retained public snapshot without connecting to the database. Restart the dev server after publishing updated papers. Production builds remain Git-driven.
+For an existing catalog, `npm run local:import` reports Git records to add, merge or review. `npm run local:import -- --apply` imports missing records and merges Git changes into existing ones as drafts: database edits are kept, and fields changed differently on both sides are listed for review. Reports stay under `.build/catalog-local/imports/`.
+
+Use `npm run dev:git` for the Git-only production-source preview without a database. The public website remains static, built with Fumadocs, React Router, TypeScript, and Vite. Production builds and GitHub Pages remain Git-driven; local drafts are not published.
 
 See [development & deployment](docs/project/deployment.md) for production builds and GitHub Pages configuration.
 
@@ -43,7 +50,9 @@ Studio runs separately from the public website. Without configuration it shows s
 
 The public website is **not switched to database releases yet**. Git remains its default source until the cutover gates pass; Studio never deploys or activates a release. Reviewed packages can already be built through the isolated `site:build` / `site:verify` path, including database-only records and uploaded media, without changing the checkout's `dist/`. Only `dist/`, not the private Studio or private snapshot artifacts, is published by the existing Pages workflow.
 
-## Incremental game collection
+## Git catalog imports
+
+The checked-in catalog remains the current production input and an initial import source, not the local Studio's editing store. Use Studio or the database importers for ongoing local authoring; source completion never overwrites a database revision.
 
 Examples accept ordinary games as well as evidenced AI-assisted projects. A game-jam entry needs real game source, an author-linked playable or downloadable release, and primary-source evidence. Check the project’s license before reusing its code or assets. Godot 4 / 2D projects are preferred, not mandatory.
 

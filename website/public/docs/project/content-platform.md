@@ -1,6 +1,6 @@
 # Content platform: contracts, migration, and release boundaries
 
-GameMap is moving toward database-authored structured content, a reviewed editing workflow, and immutable website releases. Long-form guides remain Git-authored Markdown. The current website still reads the existing Git sources; installing the database does not change or publish it.
+GameMap uses database-authored structured content for local development, a reviewed editing workflow, and immutable website releases. Long-form guides remain Git-authored Markdown. `npm run dev` previews the database's current editing heads; the public website and ordinary production build still read the existing Git sources. Local editing does not publish the website.
 
 ## Implementation boundary
 
@@ -10,6 +10,7 @@ Implemented:
 - Registries for content kinds, per-kind schemas, authoring ownership, languages, link roles, and relationship types.
 - An offline exporter/verifier covering every existing kind, original data modules, Markdown, translations, provenance, attachments, and source assets.
 - A separate private React Studio: contract-driven forms, source/attachment editing, explicit translation fingerprint review, revision diffs, batch review, read-only Git documents, validated previews and frozen-release export.
+- A complete local database working provider for every structured kind, translation, search result, generated guide, download and referenced upload. Git changes are imported and merged three ways as drafts without replacing database edits; same-field conflicts remain in a private report.
 - A real trusted compiler that validates every current payload/attachment schema, canonical identity, cross-record references, media checksums, screenshot dimensions, and translations before issuing an exact revision receipt.
 - Supabase Auth integration through a same-origin backend, opaque HttpOnly sessions, server-side AES-GCM token storage, CSRF/origin checks, serialized refresh, immediate membership revocation and a scoped database worker role.
 - Fully decoded, EXIF-stripped, content-addressed WebP uploads to a private filesystem; portable release packages include only referenced media.
@@ -42,6 +43,8 @@ Migration filenames use sequential schema versions, **not timestamps**. Supabase
 | `0011_catalog_publication.sql` | Separate local deployment authority, immutable artifact receipts/events, target binding and artifact-level activation |
 | `0012_catalog_sync_authorship.sql` | Attribute human-triggered source synchronization and prevent self-review, including historical NULL-author sync records |
 | `0013_catalog_release_realm.sql` | Immutable environment/project/instance/target binding, versioned frozen identities, and restricted historical local rollback |
+| `0014`–`0029` | Extended content kinds, source imports, game/media contracts and community workflows |
+| `0030_catalog_source_configuration.sql` | Read-only authoring metadata for a complete working catalog, without exposing import archives |
 
 These files live under `supabase/migrations/`. The test runner discovers them in numeric order and pins every module in migration packages; there is no hardcoded one-file migration path. Append a new version for future changes. Never rename, reorder, or edit migrations that have been applied to a shared environment. This migration chain is exercised only against isolated local services and test databases; there is no shared or production deployment. Earlier undeployed drafts were consolidated, but further schema changes must append a new numbered migration.
 
@@ -54,6 +57,8 @@ Keep three version axes separate:
 A new dataset schema does not increment every resource schema or create a new date-suffixed database table. Current import packages use format 2; older draft packages must be regenerated, not silently interpreted as the new format.
 
 ## Ownership and data model
+
+The table describes production cutover. Local development already uses database revisions for structured content; `npm run dev:git` is the explicit preview of the retained Git production input.
 
 | Content | Before cutover | After cutover |
 | --- | --- | --- |
@@ -162,6 +167,25 @@ grant catalog_backend to gamemap_studio_login;
 ```
 
 Use a protected connection URL for that login. Remote database TLS certificates are verified; configure a trusted CA with `NODE_EXTRA_CA_CERTS` if needed instead of disabling verification. Never expose database credentials, session secrets or service keys to the browser.
+
+## Local working catalog
+
+After local setup and pending migrations, run `npm run studio:dev` for editing and `npm run dev` for the website. The website reads each database-owned entry's latest revision that reviewers have not rejected, with its translations and including drafts, in one read-only transaction. Records created by the local Supabase acceptance runner are excluded. It checks for changes every two seconds and stages one complete working input. No content kind is overlaid onto Git business rows. Catalog metadata comes from the database's active release context or its initial import; current Git Markdown and trusted generators remain code-owned.
+
+The Vite server uses the current interface with database content. Its generated input is `website/.content/development-input.json`; downloads and referenced private uploads are staged under `.build/catalog-local/development/public/`. These files are disposable views, not authoring sources. Credentials stay in the local backend configuration. The preview binds to loopback; its editing heads are not publication approvals or deployable release artifacts.
+
+For an existing database that lacks later Git records:
+
+```sh
+npm run local:backup
+npm run local:migrate
+npm run local:import
+npm run local:import -- --apply
+```
+
+Source completion imports missing database-owned records as drafts through the existing atomic import. Records present in both places are merged three ways against the Git version each record last incorporated: its first revision, or the version recorded by the previous merge in `.build/catalog-local/imports/git-base.json`. Fields changed only in Git are taken, fields changed in the database are kept, and a field changed differently on both sides is reported with its base, database and Git values. Resolve those conflicts in Studio. Reviewed gameplay media from Git supersedes a database fallback page cover, as the gameplay contract requires; a complete gameplay record keeps the displaced cover as its archived cover, and otherwise the cover remains in revision history. Merges are saved through the Studio draft path by the local administrator, with compare-and-swap on the current head. Nothing is submitted, approved or published, and re-running the command changes nothing until Git or the database changes again. Git-owned document records are not imported by this path; the working preview reads current Markdown directly, while frozen releases keep their reviewed document workflow.
+
+`npm run dev:git` previews only the Git production input without a database. `npm run build`, the Pages workflow and release activation remain separate from the working preview.
 
 ## Running the private Studio
 
@@ -331,7 +355,7 @@ Static snapshots cannot guarantee instant withdrawal from cached or offline page
 
 The [offline staging-readiness review](./staging-readiness.md) records the remaining environment/hosting/recovery blockers and a disabled planning configuration. Preparing that configuration is not cloud integration or permission to change the current Pages workflow.
 
-Before switching structured authoring to the database:
+Before switching the public production catalog to database releases:
 
 1. Repeat the now-exercised real local Auth/database acceptance in protected staging, including remote TLS, account provisioning and operational configuration. Local success is not cloud integration certification.
 2. Exercise the isolated release builder against a real reviewed staging catalog, reconcile migration results and approve the authoring-source cutover before removing Git authoring paths. Local fixture parity does not authorize a production switch.
@@ -339,4 +363,4 @@ Before switching structured authoring to the database:
 4. Add an emergency withdrawal mechanism and, if needed, a cloud object-store adapter with equivalent checksum and access guarantees.
 5. Switch each collection's authoring exactly once, retaining a read-only migration/source archive.
 
-Until those gates pass, keep using the existing Git workflow. The foundation is not a completed production CMS.
+Until those gates pass, keep the public production build Git-driven. Local database authoring and its working preview do not constitute a production CMS deployment.

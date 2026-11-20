@@ -4,7 +4,24 @@
 
 欢迎贡献可信资源、修正描述、修复链接，以及有证据支持的工程经验。GameMap 梳理编码智能体、引擎生态、2D 与 3D 开发以及世界模型。
 
-## 权威来源与生成工作流
+## 本地结构化内容
+
+本地数据库管理结构化资源、游戏、论文、集合、媒体元数据和译文。通过 Studio 或数据库导入器编写这些记录。`npm run dev` 读取当前编辑头，包括草稿，不审批或发布内容。网站、搜索和下载使用一份完整数据库工作输入，不从 Git 记录补填缺失值。
+
+从检入的目录补全已有数据库：
+
+```sh
+npm run local:backup
+npm run local:migrate
+npm run local:import
+npm run local:import -- --apply
+```
+
+导入会补入缺失的结构化记录，并把 Git 的修改合并到已有记录，保存为草稿。数据库编辑保持不变；Git 与数据库改法不同的字段写入 `.build/catalog-local/imports/` 下的报告。在 Studio 中处理这些冲突。导入不提交、不审批、不发布。长篇 Markdown、界面消息、契约和源资产仍由 Git 管理。
+
+## Git 生产来源与生成工作流
+
+此工作流适用于当前 GitHub Pages 输入及 `npm run dev:git`，不用于本地数据库编写。生产来源切换与本地工作预览分开进行。
 
 根目录的 `README.md` 是手动维护的项目概览。完整资源目录请保留在 `docs/reference/catalog.md` 中，发布细节请保留在[部署指南](project/deployment.md)中。
 
@@ -49,7 +66,7 @@ npm run check:build
 
 ## 内容平台过渡
 
-[内容平台指南](project/content-platform.md)介绍了带版本的数据库模型、离线迁移命令及剩余切换门槛。公共网站仍读取现有 Git 来源。请继续使用上述工作流；不要同时编辑同一集合的数据库副本和 Git 副本。迁移包保留在被忽略的 `.build/` 下，作为私有内容；首次导入会创建草稿，而不是发布或批准现有内容。
+[内容平台指南](project/content-platform.md)介绍了带版本的数据库模型、迁移命令及剩余生产切换门槛。本地编写使用数据库，公共网站仍读取现有 Git 来源。`npm run dev:git` 明确预览该生产输入。迁移包保留在被忽略的 `.build/` 下，作为私有内容；导入创建草稿，不发布或批准内容。
 
 ## 条目格式
 

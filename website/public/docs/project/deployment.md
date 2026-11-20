@@ -6,10 +6,19 @@ GameMap uses **Fumadocs, React Router, React, TypeScript, and Vite**. The publis
 
 Use Node.js 22.22 or newer:
 
+Start Docker Desktop and initialize the local catalog:
+
 ```sh
 npm ci
+npm run local:start
+npm run local:migrate
+npm run local:setup
 npm run dev
 ```
+
+`npm run dev` previews the database's current editing heads, including drafts. Run `npm run studio:dev` separately to edit content. Every collection, translation, search result and structured download comes from the same working selection. Changes are checked every two seconds; document and contract changes are watched. This server binds to loopback and does not approve, freeze or publish content. A missing database is an error, not a fallback to Git.
+
+To inspect the unchanged production source without a database, use `npm run dev:git`. Run one content development server per checkout.
 
 Open the URL printed by React Router. The main routes are:
 
@@ -19,13 +28,15 @@ Open the URL printed by React Router. The main routes are:
 - `/testing/` — projects, environments, assets, and motion-data references.
 - `/docs/` — rendered guides, research notes, and source attribution.
 
-The application lives in `website/app/`. Existing catalog and case data remain in `website/src/data/`; public source assets remain in `website/public/`.
+The application lives in `website/app/`. Structured local content is managed in the database. `website/src/data/` and `data/segments/` retain the Git production input and initial import sources; public source assets remain in `website/public/`. Database working inputs are generated under ignored `website/.content/`, with downloads and referenced uploads under `.build/catalog-local/development/public/`. Do not edit these generated views.
+
+For an existing catalog, run `npm run local:import` to see which Git records would be added, merged or need review. After a local backup, `npm run local:import -- --apply` imports missing records and saves merged Git changes as drafts. Database edits and database-only records are kept; fields changed differently on both sides are listed in the report under `.build/catalog-local/imports/`.
 
 ## Documents and internal links
 
 Markdown under `docs/` (including `docs/reference/catalog.md`), plus `CONTRIBUTING.md`, is rendered at build time; the folder indexes `docs/README.md` and `docs/zh/README.md` are for repository readers only. Articles include navigation, a table of contents, highlighted code, heading links, and full-text search. Git-authored long-form Markdown remains the source of truth and is available through its source link. Registered catalog guides are generated views of structured data; their source link identifies the trusted generator rather than implying that an old Git export is a competing authoring source.
 
-`scripts/build/prepare-docs.mjs` creates disposable copies in `website/.content/`. It derives titles, rewrites internal Markdown links to document routes, and stages local documentation images in the ignored `website/public/docs-assets/` directory. Original research text is not rewritten. `website/docs.config.json` controls navigation groups and short labels; ungrouped articles remain available under More notes. After editing source Markdown during development, rerun this preparation script or restart `npm run dev` to refresh the prepared copies.
+`scripts/build/prepare-docs.mjs` creates disposable copies in `website/.content/`. It derives titles, rewrites internal Markdown links to document routes, and stages local documentation images in the ignored `website/public/docs-assets/` directory. Original research text is not rewritten. `website/docs.config.json` controls navigation groups and short labels; ungrouped articles remain available under More notes. The development commands refresh prepared copies after source Markdown changes. Database mode regenerates catalog guides from the working selection without rewriting their checked-in Git copies.
 
 The document source uses Fumadocs MDX's Vite integration in Markdown-only mode; catalog prose cannot execute MDX expressions or imports. Article bodies are lazy-loaded on client navigation, but every document also ships as complete HTML, so direct links and reading without JavaScript work. Full-text search loads a static index into the browser; there is no `/api/search` server in production.
 
