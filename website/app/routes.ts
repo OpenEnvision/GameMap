@@ -1,9 +1,15 @@
 import { readFileSync, existsSync } from "node:fs";
+import { join } from "node:path";
 import { type RouteConfig, index, route } from "@react-router/dev/routes";
 import { pages, detailRoutes, systemRoutes } from "../content/site";
 // With ssr:false every server-loaded route requires generated prerender targets.
-const generatedRoutes: string[] = existsSync("website/.content/routes.json")
-  ? JSON.parse(readFileSync("website/.content/routes.json", "utf8"))
+// The database working preview prepares its routes in its own content directory.
+const routesFile = join(
+  process.env.CATALOG_CONTENT_DIRECTORY || "website/.content",
+  "routes.json",
+);
+const generatedRoutes: string[] = existsSync(routesFile)
+  ? JSON.parse(readFileSync(routesFile, "utf8"))
   : [];
 const availableDetails = detailRoutes.filter(
   (page) =>

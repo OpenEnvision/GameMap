@@ -139,8 +139,8 @@
       "translationHash": "bac1ad5f8a5d0bf591409f8aa74bdc5471bfdacf5fd65d54f25cef9f8ad174ff"
     },
     "project/deployment": {
-      "sourceHash": "09e07e5d31f8c29e1f4d113f4c7d236b60915f9b2f8393ccd9edf67fba7ce622",
-      "translationHash": "f906882154546a57efe0c2909a74246146cf98ee75155b17d05af8bc3628856f"
+      "sourceHash": "8f6c8ffcb7626d664f4488a50c4cb79d3d1801e401da53c3dbbf14c8e1205406",
+      "translationHash": "2ad18984d8b187c07fbb4d768fd547b2a69be4cbf4905b16067d4dc162de4421"
     },
     "project/content-model": {
       "sourceHash": "fd0122e5e66611a6d97120da36c96e55afbf08046df556d2ee819d33e0ac752e",
@@ -159,8 +159,8 @@
       "translationHash": "75e6201b0c7cd3573c6ae849e2f226ee7f1c66f790725116843c4c8986520166"
     },
     "project/content-platform": {
-      "sourceHash": "bf9145de2668e0e55bd98a1728eeb34e4054435f4563f5df4e01865e28a36e6a",
-      "translationHash": "0d90ca77b8cb6f530d69fe81b12d90ce8bd844c84fde587461660abba71ec8a3"
+      "sourceHash": "ef57abbd22ca4c9b090422ac0ad7c3781a6b90f55b84b4e0280afd4992328bd6",
+      "translationHash": "34bf25989750bd2978dc0035b5bc3b4a960205373b3c78b503b75e70bb2a83d6"
     },
     "project/design/v1/design-system": {
       "sourceHash": "8f22c11ba959f543a5fd0d641113d68d0ca00a58d4c8a0b41c2f130f61fd096a",

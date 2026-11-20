@@ -19,7 +19,12 @@ import { writeIfChanged } from "../lib/files.mjs";
 import { applyTranslatedHeadingIds } from "../lib/document-translations.mjs";
 
 const docsDir = resolve(root, "docs");
-const contentDir = resolve(root, "website/.content/docs");
+// The database working preview sets its own content directory; builds use website/.content.
+const contentRoot = resolve(
+  root,
+  process.env.CATALOG_CONTENT_DIRECTORY || "website/.content",
+);
+const contentDir = resolve(contentRoot, "docs");
 const assetsDir = resolve(root, "website/public/docs-assets");
 const assetBase = (
   "/" +
@@ -77,12 +82,12 @@ for (const page of manifest) {
   );
 }
 await writeIfChanged(
-  resolve(root, "website/.content/manifest.json"),
+  resolve(contentRoot, "manifest.json"),
   JSON.stringify(manifest, null, 2) + "\n",
 );
 const { registry, staticPagePaths } = context;
 await writeIfChanged(
-  resolve(root, "website/.content/routes.json"),
+  resolve(contentRoot, "routes.json"),
   JSON.stringify(staticPagePaths(registry), null, 2) + "\n",
 );
 console.log(

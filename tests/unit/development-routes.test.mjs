@@ -1,8 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { mkdtemp, mkdir, writeFile, rm } from "node:fs/promises";
+import { mkdtemp, mkdir, readFile, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { join, relative } from "node:path";
 import { build } from "esbuild";
 
 const checkout = process.cwd();
@@ -99,4 +99,65 @@ test("the production registry has no local working or publication reader", async
       /development-input|published-papers/.test(path),
     ),
   );
+});
+
+test("the working preview reads routes and documents from its own content directory", async () => {
+  const { developmentContentDirectory } =
+    await import("../../scripts/lib/catalog/site-input.mjs");
+  const source = await readFile("website/app/lib/working-source.ts", "utf8");
+  assert.ok(
+    source.includes(
+      `dir: "${relative(checkout, join(developmentContentDirectory, "docs"))}"`,
+    ),
+    "working-source.ts must read the preview's prepared documents",
+  );
+  const output = await build({
+    stdin: {
+      contents:
+        "export {default as routes} from './website/app/routes'; export {default as config} from './react-router.config';",
+      resolveDir: checkout,
+      loader: "ts",
+    },
+    bundle: true,
+    packages: "external",
+    write: false,
+    format: "esm",
+    platform: "node",
+    define: { "import.meta.env.BASE_URL": JSON.stringify("/") },
+  });
+  const modulePath = join(directory, "content-directory.mjs");
+  await writeFile(modulePath, output.outputFiles[0].text);
+  const root = await mkdtemp(join(tmpdir(), "gamemap-content-directory-"));
+  const previous = process.env.CATALOG_CONTENT_DIRECTORY;
+  try {
+    await mkdir(join(root, "website/.content"), { recursive: true });
+    await writeFile(
+      join(root, "website/.content/routes.json"),
+      JSON.stringify(["/"]),
+    );
+    await mkdir(join(root, "preview"), { recursive: true });
+    await writeFile(
+      join(root, "preview/routes.json"),
+      JSON.stringify(["/", "/papers/", "/papers/database-record/"]),
+    );
+    process.chdir(root);
+    process.env.CATALOG_CONTENT_DIRECTORY = "preview";
+    const { routes, config } = await import(`${modulePath}?preview`);
+    assert.ok(routes.some((route) => route.id === "paper-detail"));
+    // React Router validates loader routes against the same prerender targets.
+    assert.ok((await config.prerender()).includes("/papers/database-record"));
+    delete process.env.CATALOG_CONTENT_DIRECTORY;
+    const { routes: built, config: buildConfig } = await import(
+      `${modulePath}?build`
+    );
+    assert.ok(!built.some((route) => route.id === "paper-detail"));
+    assert.ok(
+      !(await buildConfig.prerender()).includes("/papers/database-record"),
+    );
+  } finally {
+    process.chdir(checkout);
+    if (previous === undefined) delete process.env.CATALOG_CONTENT_DIRECTORY;
+    else process.env.CATALOG_CONTENT_DIRECTORY = previous;
+    await rm(root, { recursive: true, force: true });
+  }
 });

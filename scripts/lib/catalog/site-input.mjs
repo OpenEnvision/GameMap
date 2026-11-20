@@ -78,13 +78,23 @@ export async function readSiteInput() {
   return input;
 }
 
-export const developmentInputPath = resolve(
+/** The database working preview prepares its own content, so concurrent Git builds of this
+ * checkout and the preview never overwrite each other's generated files. */
+export const developmentDirectory = resolve(
   root,
-  "website/.content/development-input.json",
+  ".build/catalog-local/development",
+);
+export const developmentContentDirectory = resolve(
+  developmentDirectory,
+  "content",
+);
+export const developmentInputPath = resolve(
+  developmentContentDirectory,
+  "input.json",
 );
 export const developmentPublicDirectory = resolve(
-  root,
-  ".build/catalog-local/development/public",
+  developmentDirectory,
+  "public",
 );
 
 /** Working copies are explicit local inputs, never a production fallback. */

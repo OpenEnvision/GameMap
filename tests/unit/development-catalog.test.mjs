@@ -21,6 +21,7 @@ import {
   planSourceImport,
   preferGameplay,
   prepareMergeDrafts,
+  recordFields,
   readMergeHistory,
   saveMergeDrafts,
 } from "../../scripts/lib/catalog/source-import.mjs";
@@ -524,6 +525,130 @@ test("Git changes merge three ways: database edits are kept and same-field chang
   );
   const withoutBase = (await plan(later, {})).result;
   assert.ok(withoutBase.conflicts.some((item) => item.key === original.key));
+
+  const keepDatabase = new Map([[conflicting.key, "database"]]);
+  const kept = (await plan(snapshot, bases)).result;
+  const resolving = planSourceImport(
+    snapshot,
+    await readWorkingCatalog(fixture.database, fixture.realm),
+    {
+      ...(await readMergeHistory(
+        fixture.database,
+        after.records.map((row) => row.key),
+      )),
+      bases,
+      resolutions: keepDatabase,
+    },
+  );
+  assert.ok(kept.conflicts.some((item) => item.key === conflicting.key));
+  assert.deepEqual(resolving.resolved, [
+    { key: conflicting.key, side: "database", fields: ["payload.verified"] },
+  ]);
+  const settled = resolving.unchanged.find(
+    (item) => item.key === conflicting.key,
+  );
+  assert.ok(settled, "Keeping database values needs no new revision");
+  bases[conflicting.key] = {
+    revision: settled.revision,
+    fields: settled.fields,
+  };
+  assert.ok(
+    !(await plan(snapshot, bases)).result.conflicts.some(
+      (item) => item.key === conflicting.key,
+    ),
+    "A resolved conflict is not reported again",
+  );
+  const takeGit = (await plan(snapshot, {})).result;
+  assert.ok(takeGit.conflicts.some((item) => item.key === conflicting.key));
+  const choosingGit = planSourceImport(
+    snapshot,
+    await readWorkingCatalog(fixture.database, fixture.realm),
+    {
+      ...(await readMergeHistory(
+        fixture.database,
+        after.records.map((row) => row.key),
+      )),
+      resolutions: new Map([[conflicting.key, "git"]]),
+    },
+  );
+  assert.equal(
+    choosingGit.merges.find((item) => item.key === conflicting.key).merged[
+      "payload.verified"
+    ],
+    "2026-11-02",
+  );
+});
+
+test("translations lost by a successor save are reported and restored on request", async () => {
+  // Earlier tests edit resources from the start of the list.
+  const record = [...fixture.bundle.snapshot.entries]
+    .reverse()
+    .find(
+      (row) =>
+        row.kind === "resource" &&
+        fixture.bundle.snapshot.translations.filter(
+          (t) => t.revision_id === row.revision_id,
+        ).length >= 2,
+    );
+  const current = await readWorkingCatalog(fixture.database, fixture.realm);
+  const head = current.records.find((row) => row.key === record.key);
+  // The Studio draft function, called directly: a successor saved without its translations.
+  await fixture.database.user(accounts.editor.id, (client) =>
+    client.query("select public.catalog_save_draft($1,$2,$3,$4,$5,$6,$7)", [
+      record.kind,
+      record.identifier,
+      head.schema_version,
+      head.canonical_path,
+      head.collection_path,
+      canonicalJSON(head.body),
+      head.revision_id,
+    ]),
+  );
+  const plan = async (restoreTranslations) => {
+    const working = await readWorkingCatalog(fixture.database, fixture.realm);
+    return planSourceImport(fixture.bundle.snapshot, working, {
+      ...(await readMergeHistory(
+        fixture.database,
+        working.records.map((row) => row.key),
+      )),
+      restoreTranslations,
+    });
+  };
+  const expected = fixture.bundle.snapshot.translations
+    .filter((t) => t.revision_id === record.revision_id)
+    .map((t) => `translations.${t.locale}:${t.field}`)
+    .sort();
+  const reported = await plan(false);
+  assert.deepEqual(
+    reported.missingTranslations
+      .find((item) => item.key === record.key)
+      .fields.sort(),
+    expected,
+  );
+  assert.ok(!reported.merges.some((item) => item.key === record.key));
+  const restoring = await plan(true);
+  const merge = restoring.merges.find((item) => item.key === record.key);
+  const { drafts, rejected } = prepareMergeDrafts(
+    fixture.context,
+    [merge],
+    new Map(
+      (await readWorkingCatalog(fixture.database, fixture.realm)).records.map(
+        (row) => [row.key, row],
+      ),
+    ),
+  );
+  assert.deepEqual(rejected, []);
+  assert.deepEqual(drafts[0].fromGit.sort(), expected);
+  assert.deepEqual(drafts[0].body.payload, head.body.payload);
+  assert.deepEqual(
+    (await saveMergeDrafts(fixture.database, accounts.admin.id, drafts)).failed,
+    [],
+  );
+  assert.ok(
+    !(await plan(false)).missingTranslations.some(
+      (item) => item.key === record.key,
+    ),
+  );
 });
 
 test("website subprocess settings exclude Studio credentials and explicit Git loading stays independent", async () => {
@@ -602,4 +727,40 @@ test("gameplay media from Git supersedes a database fallback cover", () => {
   assert.deepEqual(preferGameplay({ pageCover: cover }, schema), {
     attachments: { pageCover: cover },
   });
+});
+
+test("merges keep the stored identity and reject content that would move it", async () => {
+  const current = await readWorkingCatalog(fixture.database, fixture.realm);
+  const step = current.records.find((row) => row.kind === "step");
+  const database = recordFields(step.body);
+  const merge = (payload) => ({
+    key: step.key,
+    kind: step.kind,
+    identifier: step.identifier,
+    schemaVersion: step.schema_version,
+    expectedHead: step.revision_id,
+    database,
+    merged: recordFields({ ...step.body, payload }),
+    git: database,
+  });
+  // An entry stored under an earlier collection address keeps that address.
+  const stored = new Map([[step.key, { ...step, collection_path: "/paths/" }]]);
+  const kept = prepareMergeDrafts(
+    fixture.context,
+    [merge({ ...step.body.payload, description: "Merged description." })],
+    stored,
+  );
+  assert.deepEqual(kept.rejected, []);
+  assert.equal(kept.drafts[0].path, step.canonical_path);
+  assert.equal(kept.drafts[0].collectionPath, "/paths/");
+  const other = ["2d", "3d", "world"].find(
+    (track) => track !== step.body.payload.track,
+  );
+  const moved = prepareMergeDrafts(
+    fixture.context,
+    [merge({ ...step.body.payload, track: other })],
+    stored,
+  );
+  assert.deepEqual(moved.drafts, []);
+  assert.match(moved.rejected[0].reason, /moves the stable address/);
 });

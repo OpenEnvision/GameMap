@@ -14,6 +14,7 @@ import {
   localDirectory,
 } from "../../scripts/lib/catalog/local-runtime.mjs";
 import { readWorkingCatalog } from "../../scripts/lib/catalog/development.mjs";
+import { developmentInputPath } from "../../scripts/lib/catalog/site-input.mjs";
 
 // Read-only acceptance against the operator's local catalog; no fixture rows are inserted.
 const config = parseEnv(await readFile(join(root, ".env"), "utf8"));
@@ -30,6 +31,20 @@ const origin = `http://127.0.0.1:${port}`;
 const base = "/GameMap/";
 let log = "",
   browser;
+// Prepare this checkout the way a Git build does; the preview must not depend on it.
+const prepareGitBuild = () =>
+  new Promise((done, fail) => {
+    const build = spawn(process.execPath, ["scripts/build/prepare-docs.mjs"], {
+      cwd: root,
+      env: { PATH: process.env.PATH, HOME: process.env.HOME },
+      stdio: "ignore",
+    });
+    build.once("error", fail);
+    build.once("exit", (code) =>
+      code === 0 ? done() : fail(new Error("Git prepare-docs failed")),
+    );
+  });
+await prepareGitBuild();
 const child = spawn(
   process.execPath,
   ["scripts/build/dev.mjs", "--port", String(port), "--strictPort"],
@@ -73,12 +88,7 @@ try {
     await new Promise((done) => setTimeout(done, 500));
   }
   assert.ok(ready, `Development server did not start: ${log.slice(-8000)}`);
-  const input = JSON.parse(
-    await readFile(
-      join(root, "website/.content/development-input.json"),
-      "utf8",
-    ),
-  );
+  const input = JSON.parse(await readFile(developmentInputPath, "utf8"));
   assert.equal(input.source.mode, "database");
   assert.deepEqual(input.records, current.records);
   const keys = new Map(
@@ -179,6 +189,29 @@ try {
     visited.push({ key: original.key, url: `/zh/docs/${slug.slice(3)}/` });
   }
   assert.deepEqual(errors, []);
+  // A Git build preparing this checkout must not change what the preview serves.
+  const paper = registry.entries.find((entry) => entry.kind === "paper");
+  await prepareGitBuild();
+  const gitRoutes = JSON.parse(
+    await readFile(join(root, "website/.content/routes.json"), "utf8"),
+  );
+  assert.ok(!gitRoutes.includes(paper.url), "The Git build has no papers");
+  await new Promise((done) => setTimeout(done, 3000));
+  for (const path of [
+    paper.url,
+    ...(input.fallbackDocuments ?? []).map(
+      (slug) => `/zh/docs/${slug.slice(3)}/`,
+    ),
+  ]) {
+    const response = await fetch(address(path), {
+      signal: AbortSignal.timeout(120000),
+    });
+    assert.equal(
+      response.status,
+      200,
+      `Preview changed after a Git build: ${path}`,
+    );
+  }
   const upload = input.publicPaths.find((path) =>
     path.startsWith("media/catalog/"),
   );

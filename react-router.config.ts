@@ -1,5 +1,6 @@
 import type { Config } from "@react-router/dev/config";
 import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 const basename =
   "/" +
@@ -12,8 +13,15 @@ export default {
   ssr: false,
   routeDiscovery: { mode: "initial" },
   async prerender() {
+    // The same generated routes as website/app/routes.ts, including the database preview's.
     const paths = JSON.parse(
-      await readFile("website/.content/routes.json", "utf8"),
+      await readFile(
+        join(
+          process.env.CATALOG_CONTENT_DIRECTORY || "website/.content",
+          "routes.json",
+        ),
+        "utf8",
+      ),
     ) as string[];
     // Generated from the typed registry; React Router adds basename itself.
     return [

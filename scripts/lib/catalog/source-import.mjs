@@ -138,11 +138,30 @@ export async function readMergeHistory(database, keys) {
   });
 }
 
+/** Git translations the merged record lacks although they translate its current text,
+ * for example after a successor revision was saved without carrying them forward. */
+function lostTranslations(merged, git) {
+  return Object.keys(git).filter((name) => {
+    if (!name.startsWith("translations.") || name in merged) return false;
+    const field = name.slice(name.indexOf(":") + 1);
+    return (
+      sha256(JSON.stringify(merged[`payload.${field}`]) ?? "null") ===
+      git[name].source_hash
+    );
+  });
+}
+
 /** Missing Git records are imported; changed records are merged three ways. */
 export function planSourceImport(
   snapshot,
   current,
-  { histories = new Map(), heads = new Map(), bases = {} } = {},
+  {
+    histories = new Map(),
+    heads = new Map(),
+    bases = {},
+    resolutions = new Map(),
+    restoreTranslations = false,
+  } = {},
 ) {
   const records = snapshot.entries.filter(
     (record) => record.owner === "database",
@@ -156,7 +175,9 @@ export function planSourceImport(
   const additions = [],
     merges = [],
     conflicts = [],
-    unchanged = [];
+    unchanged = [],
+    resolved = [],
+    missingTranslations = [];
   for (const git of records) {
     const stored = existing.get(git.key);
     const gitFields = recordFields(
@@ -213,13 +234,31 @@ export function planSourceImport(
     }
     const result = mergeFields(base, databaseFields, gitFields);
     if (result.conflicts.length) {
-      conflicts.push({
+      const side = resolutions.get(git.key);
+      if (!side) {
+        conflicts.push({
+          key: git.key,
+          revision: stored.revision_id,
+          reason: "Changed differently in the database and Git",
+          fields: result.conflicts,
+        });
+        continue;
+      }
+      for (const { field } of result.conflicts) {
+        const value = (side === "git" ? gitFields : databaseFields)[field];
+        if (value !== undefined) result.merged[field] = value;
+      }
+      resolved.push({
         key: git.key,
-        revision: stored.revision_id,
-        reason: "Changed differently in the database and Git",
-        fields: result.conflicts,
+        side,
+        fields: result.conflicts.map(({ field }) => field),
       });
-      continue;
+    }
+    const missing = lostTranslations(result.merged, gitFields);
+    if (missing.length) {
+      missingTranslations.push({ key: git.key, fields: missing });
+      if (restoreTranslations)
+        for (const name of missing) result.merged[name] = gitFields[name];
     }
     if (isDeepStrictEqual(result.merged, databaseFields)) {
       unchanged.push(incorporated);
@@ -252,6 +291,8 @@ export function planSourceImport(
     merges,
     conflicts,
     unchanged,
+    resolved,
+    missingTranslations,
     databaseOnly: current.records
       .filter((record) => !incomingKeys.has(record.key))
       .map((record) => record.key),
@@ -314,18 +355,15 @@ export function prepareMergeDrafts(context, merges, entries) {
           `translations.${row.locale}:${row.field} no longer matches its merged source text`,
         );
     const entry = entries.get(merge.key);
-    let path, collectionPath;
-    if (!issues.length) {
-      path = canonicalAddress(context, merge.kind, merge.identifier, payload);
-      collectionPath = collectionAddress(context, merge.kind, payload);
-      if (
-        path !== entry.canonical_path ||
-        collectionPath !== entry.collection_path
-      )
-        issues.push(
-          `Merged content moves the stable address to ${path} in ${collectionPath}`,
-        );
-    }
+    // A merge keeps the record's stored identity. It is rejected only when the merged
+    // content itself would address the record differently from its database content.
+    const address = (content) =>
+      `${canonicalAddress(context, merge.kind, merge.identifier, content)} ${collectionAddress(context, merge.kind, content)}`;
+    if (
+      !issues.length &&
+      address(payload) !== address(splitFields(merge.database).payload)
+    )
+      issues.push("Merged content moves the stable address of this record");
     if (issues.length) {
       rejected.push({ key: merge.key, reason: issues.join("; ") });
       continue;
@@ -345,8 +383,8 @@ export function prepareMergeDrafts(context, merges, entries) {
       identifier: merge.identifier,
       schemaVersion: merge.schemaVersion,
       expectedHead: merge.expectedHead,
-      path,
-      collectionPath,
+      path: entry.canonical_path,
+      collectionPath: entry.collection_path,
       translations,
       fromGit: changedFields(merge.database, fields),
       ...(cover ? { cover } : {}),

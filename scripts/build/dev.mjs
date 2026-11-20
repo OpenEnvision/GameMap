@@ -20,7 +20,10 @@ import {
   createWorkingInput,
   stageWorkingInput,
 } from "../lib/catalog/development.mjs";
-import { developmentInputPath } from "../lib/catalog/site-input.mjs";
+import {
+  developmentContentDirectory,
+  developmentInputPath,
+} from "../lib/catalog/site-input.mjs";
 
 const args = process.argv.slice(2);
 const git = args[0] === "--git";
@@ -29,7 +32,12 @@ const environment = {
   ...websiteEnvironment(),
   NODE_ENV: "development",
   PAGES_BASE_PATH: process.env.PAGES_BASE_PATH || "",
-  ...(!git ? { CATALOG_DEVELOPMENT_INPUT: developmentInputPath } : {}),
+  ...(!git
+    ? {
+        CATALOG_DEVELOPMENT_INPUT: developmentInputPath,
+        CATALOG_CONTENT_DIRECTORY: developmentContentDirectory,
+      }
+    : {}),
   ...(existsSync(resolve(root, ".build/catalog-local/community-dev.json"))
     ? { VITE_GAMEMAP_COMMUNITY: "1" }
     : {}),

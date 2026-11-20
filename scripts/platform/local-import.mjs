@@ -27,6 +27,12 @@ import {
 const help = `npm run local:import            Report Git records to add, merge or review
 npm run local:import -- --apply  Import missing records and save merged Git changes as drafts
 
+Options for --apply:
+  --keep-database KEY[,KEY...]  Resolve reported conflicts with the database values
+  --take-git KEY[,KEY...]       Resolve reported conflicts with the Git values
+  --restore-translations        Restore Git translations a record lost although they
+                                still translate its current text
+
 Database edits are kept. A field changed differently in Git and the database is reported,
 not merged. Nothing is submitted, approved or published.`;
 // The Git version each record last incorporated, for the next three-way merge.
@@ -43,14 +49,35 @@ async function readBases() {
   }
 }
 
+function parseArguments(args) {
+  const options = { apply: false, resolutions: new Map(), restore: false };
+  for (let index = 0; index < args.length; index++) {
+    const flag = args[index];
+    if (flag === "--apply") options.apply = true;
+    else if (flag === "--restore-translations") options.restore = true;
+    else if (flag === "--keep-database" || flag === "--take-git") {
+      const keys = args[++index]?.split(",").filter(Boolean) ?? [];
+      assert.ok(keys.length, `${flag} needs record keys\n\n${help}`);
+      for (const key of keys) {
+        assert.ok(!options.resolutions.has(key), `Resolve ${key} once`);
+        options.resolutions.set(
+          key,
+          flag === "--take-git" ? "git" : "database",
+        );
+      }
+    } else assert.fail(`Unknown option: ${flag}\n\n${help}`);
+  }
+  assert.ok(
+    options.apply || (!options.resolutions.size && !options.restore),
+    "Resolutions and restored translations are applied with --apply",
+  );
+  return options;
+}
+
 async function main() {
   const args = process.argv.slice(2);
   if (args.includes("--help")) return console.log(help);
-  assert.ok(
-    args.length === 0 || (args.length === 1 && args[0] === "--apply"),
-    help,
-  );
-  const apply = args[0] === "--apply";
+  const { apply, resolutions, restore } = parseArguments(args);
   const status = await readLocalStatus();
   const realm = await readLocalRealm();
   const config = parseEnv(await readFile(resolve(root, ".env"), "utf8"));
@@ -94,7 +121,16 @@ async function main() {
     const plan = planSourceImport(bundle.snapshot, current, {
       ...(await readMergeHistory(database, shared)),
       bases,
+      resolutions,
+      restoreTranslations: restore,
     });
+    const unknown = [...resolutions.keys()].filter(
+      (key) => !plan.resolved.some((item) => item.key === key),
+    );
+    assert.ok(
+      !unknown.length,
+      `Not a reported conflict: ${unknown.join(", ")}`,
+    );
     const { drafts, rejected } = prepareMergeDrafts(
       context,
       plan.merges,
@@ -110,6 +146,9 @@ async function main() {
         ...(draft.cover ? { cover: draft.cover } : {}),
       })),
       conflicts: [...plan.conflicts, ...rejected],
+      resolved: plan.resolved,
+      missingTranslations: plan.missingTranslations,
+      translationsRestored: restore,
       unchanged: plan.unchanged.length,
       databaseOnly: plan.databaseOnly,
     };
@@ -155,9 +194,21 @@ async function main() {
       await writeReport(report);
     }
     const covers = report.merges.filter((row) => row.cover).length;
+    const lost = plan.missingTranslations.reduce(
+      (total, item) => total + item.fields.length,
+      0,
+    );
     console.log(
       `${report.additions.length} missing, ${report.merges.length} merged, ${report.conflicts.length} for review, ${report.unchanged} already current.`,
     );
+    if (plan.resolved.length)
+      console.log(`${plan.resolved.length} reported conflicts resolved.`);
+    if (lost)
+      console.log(
+        restore
+          ? `${lost} lost translations restored in ${plan.missingTranslations.length} records.`
+          : `${plan.missingTranslations.length} records lack ${lost} Git translations of their current text; --restore-translations restores them.`,
+      );
     if (covers)
       console.log(
         `${covers} merged records gain Git gameplay media; their fallback page covers are archived or kept in revision history.`,

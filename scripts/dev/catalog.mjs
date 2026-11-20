@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import { dirname, extname, resolve } from "node:path";
 import { root } from "../lib/documents.mjs";
 import {
+  developmentContentDirectory,
   developmentInputPath,
   developmentPublicDirectory,
   readDevelopmentInput,
@@ -10,8 +11,19 @@ import {
 import { safePath } from "../lib/catalog/codec.mjs";
 
 const provider = "\0gamemap:working-catalog";
-const sourceModule = resolve(root, "website/content/source-data");
-const routesPath = resolve(root, "website/.content/routes.json");
+// Modules the preview replaces: the Git provider, and the build's prepared documents.
+const redirects = new Map([
+  [resolve(root, "website/content/source-data"), provider],
+  [
+    resolve(root, "website/.content/manifest.json"),
+    resolve(developmentContentDirectory, "manifest.json"),
+  ],
+  [
+    resolve(root, "website/app/lib/source"),
+    resolve(root, "website/app/lib/working-source.ts"),
+  ],
+]);
+const routesPath = resolve(developmentContentDirectory, "routes.json");
 const types = {
   ".json": "application/json; charset=utf-8",
   ".md": "text/markdown; charset=utf-8",
@@ -29,8 +41,7 @@ export function catalogDevelopment() {
     resolveId(source, importer) {
       if (!importer || !source.startsWith(".")) return;
       const path = resolve(dirname(importer.split("?")[0]), source);
-      if (path === sourceModule || path === sourceModule + ".ts")
-        return provider;
+      return redirects.get(path) ?? redirects.get(path.replace(/\.ts$/, ""));
     },
     load(id) {
       if (id === provider)
