@@ -6,7 +6,8 @@ import {
 } from "@playwright/test";
 import { parsePage, attributes } from "../../scripts/lib/rendered-coverage.mjs";
 
-const pageSize = 48;
+const pageSize = 60;
+const page2 = `${pageSize + 1}–${pageSize * 2}`;
 const cards = (page: Page) => page.locator("#game-examples > .example-card");
 const keys = (page: Page) =>
   cards(page).evaluateAll((nodes) =>
@@ -34,7 +35,7 @@ test.beforeEach(({ page }) => {
 test.afterEach(({ page }) => expect(errors.get(page)).toEqual([]));
 
 for (const prefix of ["", "zh/"]) {
-  test(`${prefix || "en/"}3D results page in groups of 48 with reload, history and keyboard focus`, async ({
+  test(`${prefix || "en/"}3D results page in groups of ${pageSize} with reload, history and keyboard focus`, async ({
     page,
     request,
   }) => {
@@ -60,7 +61,7 @@ for (const prefix of ["", "zh/"]) {
     await next.focus();
     await page.keyboard.press("Enter");
     await expect(page).toHaveURL(/track=3d&campaign=keep&page=2$/);
-    await expect(results).toContainText("49–96");
+    await expect(results).toContainText(page2);
     await expect(results).toBeFocused();
     await expect(results).toBeInViewport();
     expect(await keys(page)).toEqual(expected.slice(pageSize, pageSize * 2));
@@ -71,13 +72,13 @@ for (const prefix of ["", "zh/"]) {
       expect(position!.y).toBeGreaterThanOrEqual(dock!.y + dock!.height);
 
     await page.reload();
-    await expect(results).toContainText("49–96");
+    await expect(results).toContainText(page2);
     expect(await keys(page)).toEqual(expected.slice(pageSize, pageSize * 2));
     await page.goBack();
-    await expect(results).toContainText("1–48");
+    await expect(results).toContainText(`1–${pageSize}`);
     expect(await keys(page)).toEqual(expected.slice(0, pageSize));
     await page.goForward();
-    await expect(results).toContainText("49–96");
+    await expect(results).toContainText(page2);
     await previous.click();
     await expect(page).toHaveURL(/track=3d&campaign=keep$/);
     await expect(previous).toBeDisabled();
@@ -97,8 +98,10 @@ test("all games, dimensions, client filters and search share pagination without 
   const all = await inventory(request);
   await page.goto("examples/?page=2&campaign=keep");
   const results = page.locator("#game-results");
-  await expect(results).toContainText("49–96");
-  expect(await keys(page)).toEqual(all.slice(48, 96).map((entry) => entry.key));
+  await expect(results).toContainText(page2);
+  expect(await keys(page)).toEqual(
+    all.slice(pageSize, pageSize * 2).map((entry) => entry.key),
+  );
   const loads: string[] = [];
   page.on("request", (request) => {
     if (new URL(request.url()).pathname.endsWith(".data"))
@@ -115,7 +118,7 @@ test("all games, dimensions, client filters and search share pagination without 
 
   await page.getByRole("button", { name: "All games", exact: true }).click();
   await page.getByRole("button", { name: "Next page", exact: true }).click();
-  await expect(results).toContainText("49–96");
+  await expect(results).toContainText(page2);
   await page
     .getByRole("combobox", { name: "Client or model" })
     .selectOption("deepseek-model");

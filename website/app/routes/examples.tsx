@@ -143,7 +143,9 @@ function DotList({
 /** The URL keys this page filters by; anything else in the query (campaign
  *  tags and the like) survives clearing. */
 const filterKeys = ["q", "track", "client"] as const;
-const pageSize = 48;
+// The grid shows 1–5 columns (gallery.css); 60 divides by each, so every
+// page except the last one ends on a full row.
+const pageSize = 60;
 
 export function loader({ request }: LoaderFunctionArgs) {
   const content = contentFor(request);

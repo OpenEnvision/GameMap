@@ -150,15 +150,15 @@ test("toolkit filters stay with tools while creator attribution filters live in 
   );
   expect(expected.length).toBeGreaterThan(0);
   await expect(page.locator(".example-card")).toHaveCount(
-    Math.min(48, expected.length),
+    Math.min(60, expected.length),
   );
-  for (const entry of expected.slice(0, 48))
+  for (const entry of expected.slice(0, 60))
     await expect(
       page.locator(`[data-content-ref="${entry.key}"]`),
     ).toBeVisible();
   await page.reload();
   await expect(page.locator(".example-card")).toHaveCount(
-    Math.min(48, expected.length),
+    Math.min(60, expected.length),
   );
 });
 
@@ -185,12 +185,12 @@ test("complete game galleries stay in Examples while featured and related access
     );
     await page.goto(prefix + "examples/");
     const cards = page.locator("#game-examples > .example-card");
-    await expect(cards).toHaveCount(Math.min(48, keys.length));
+    await expect(cards).toHaveCount(Math.min(60, keys.length));
     expect(
       await cards.evaluateAll((nodes) =>
         nodes.map((node) => node.getAttribute("data-content-ref")),
       ),
-    ).toEqual(keys.slice(0, 48));
+    ).toEqual(keys.slice(0, 60));
     await page.goto(prefix);
     // Home features games through its wall of real screenshots, not cards.
     await expect(page.locator("main .example-card")).toHaveCount(0);
