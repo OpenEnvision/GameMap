@@ -20,7 +20,7 @@ for (const locale of ["", "zh/"]) {
     await expect(atlas.locator("[data-pillar]")).toHaveCount(4);
     for (const [pillar, paths] of Object.entries(destinations)) {
       const card = atlas.locator(`[data-pillar="${pillar}"]`);
-      await expect(card.locator(".hm-tile-count")).toHaveText(/^\d+$/);
+      await expect(card.locator(".hm-pillar-count")).toHaveText(/^\d+$/);
       for (const path of paths) {
         const localized = locale
           ? path === "/docs/"
@@ -85,32 +85,53 @@ for (const width of [320, 640, 1100, 1440]) {
         await expect(page.locator("html")).toHaveClass(new RegExp(theme));
         const layout = await page.locator(".hm-atlas").evaluate((element) => {
           const rows = new Set(
-            [...element.querySelectorAll("[data-pillar]")].map((card) =>
-              Math.round(card.getBoundingClientRect().top),
+            [...element.querySelectorAll("[data-pillar]")].map((row) =>
+              Math.round(row.getBoundingClientRect().top),
             ),
           );
           const overflow = [
             ...element.querySelectorAll<HTMLElement>(
-              ".hm-tile, .hm-tile-head, .hm-tile-links a, .hm-direction-text strong, .hm-direction-text small",
+              ".hm-pillar, .hm-pillar-head, .hm-pillar-links a, .hm-direction-name strong, .hm-directions small",
             ),
           ].filter((node) => node.scrollWidth > node.clientWidth + 1);
+          // Directories and directions are ruled rows, not card surfaces.
+          const surfaces = [
+            ...element.querySelectorAll<HTMLElement>(
+              ".hm-index, .hm-pillar, .hm-pillar a, .hm-dirs, .hm-directions a",
+            ),
+          ].filter((node) => {
+            const style = getComputedStyle(node);
+            const boxed = ["Top", "Right", "Bottom", "Left"].every(
+              (side) =>
+                style.getPropertyValue(`border-${side.toLowerCase()}-width`) !==
+                "0px",
+            );
+            return (
+              style.backgroundColor !== "rgba(0, 0, 0, 0)" ||
+              style.backgroundImage !== "none" ||
+              style.boxShadow !== "none" ||
+              boxed
+            );
+          });
           return {
             height: element.getBoundingClientRect().height,
             rows: rows.size,
             overflow: overflow.map((node) => node.textContent),
+            surfaces: surfaces.map((node) => node.className),
             minTarget: Math.min(
-              ...[...element.querySelectorAll(".hm-tile a")].map(
-                (link) => link.getBoundingClientRect().height,
-              ),
+              ...[
+                ...element.querySelectorAll(".hm-pillar a, .hm-directions a"),
+              ].map((link) => link.getBoundingClientRect().height),
             ),
             bodySize: parseFloat(
-              getComputedStyle(element.querySelector(".hm-tile-text")!)
+              getComputedStyle(element.querySelector(".hm-pillar-text")!)
                 .fontSize,
             ),
           };
         });
         expect(layout.overflow, `${locale || "en"} ${theme}`).toEqual([]);
-        expect(layout.rows).toBe(width < 640 ? 4 : width < 1100 ? 2 : 1);
+        expect(layout.surfaces, `${locale || "en"} ${theme}`).toEqual([]);
+        expect(layout.rows).toBe(4);
         expect(layout.minTarget).toBeGreaterThanOrEqual(44);
         expect(layout.bodySize).toBeGreaterThanOrEqual(15);
         if (width >= 1100) expect(layout.height).toBeLessThan(900);

@@ -1,30 +1,10 @@
 import type { CSSProperties } from "react";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  BookOpen,
-  Boxes,
-  Code2,
-  FlaskConical,
-  Gamepad2,
-  Layers3,
-  Orbit,
-  Sparkles,
-  Wrench,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link, useSiteI18n } from "../../lib/i18n";
 import { categories } from "../../lib/catalog";
 import { pillars, type Pillar } from "../../lib/pillars";
 
-const pillarIcons = {
-  games: Gamepad2,
-  tools: Wrench,
-  research: FlaskConical,
-  learn: BookOpen,
-} as const;
-const categoryIcons = [Code2, Boxes, Gamepad2, Layers3, Sparkles, Orbit];
-
-function PillarTile({
+function PillarRow({
   pillar,
   total,
   counts,
@@ -34,33 +14,33 @@ function PillarTile({
   counts: Record<string, number>;
 }) {
   const { t } = useSiteI18n();
-  const Icon = pillarIcons[pillar.id];
   return (
-    <article className="hm-tile" data-pillar={pillar.id}>
-      <header className="hm-tile-head">
-        <span className="hm-tile-icon" aria-hidden="true">
-          <Icon size={18} strokeWidth={1.7} />
-        </span>
+    <li className="hm-pillar" data-pillar={pillar.id}>
+      <div className="hm-pillar-head">
         <h3>{t(pillar.label)}</h3>
-        {total > 0 && <p className="hm-tile-count">{total}</p>}
-      </header>
-      <p className="hm-tile-text">{t(pillar.description)}</p>
-      <ul className="hm-tile-links">
-        {pillar.links.map((link) => (
-          <li key={link.path}>
-            <Link to={link.path}>
-              <span>{t(link.title)}</span>
-              {counts[link.path] ? <b>{counts[link.path]}</b> : null}
-              <ArrowUpRight size={14} aria-hidden="true" />
-            </Link>
-          </li>
-        ))}
+        {total > 0 && <p className="hm-pillar-count">{total}</p>}
+      </div>
+      <p className="hm-pillar-text">{t(pillar.description)}</p>
+      <ul className="hm-pillar-links">
+        {pillar.links.map((link) => {
+          const count = counts[link.path];
+          return (
+            <li key={link.path}>
+              <Link to={link.path}>
+                <span>{t(link.title)}</span>
+                {/* A lone destination already carries the pillar total. */}
+                {count && count !== total ? <b>{count}</b> : null}
+                <ArrowUpRight size={14} aria-hidden="true" />
+              </Link>
+            </li>
+          );
+        })}
       </ul>
-    </article>
+    </li>
   );
 }
 
-/** Four collection directories and six resource categories. */
+/** Four collection directories as one ruled index, then six resource directions. */
 export function AtlasBento({
   pillarCounts,
   counts,
@@ -87,55 +67,42 @@ export function AtlasBento({
           <ArrowRight size={16} />
         </Link>
       </header>
-      <div className="hm-bento">
+      <ul className="hm-index">
         {pillars.map((pillar) => (
-          <PillarTile
+          <PillarRow
             key={pillar.id}
             pillar={pillar}
             total={pillarCounts[pillar.id]}
             counts={counts}
           />
         ))}
-        <article className="hm-tile hm-tile-directions">
-          <header className="hm-tile-head">
-            <span className="hm-tile-icon" aria-hidden="true">
-              <Orbit size={18} strokeWidth={1.7} />
-            </span>
-            <h3>{t("Six directions, one map.")}</h3>
-          </header>
-          <ul className="hm-directions">
-            {categories.map((category, index) => {
-              const Icon = categoryIcons[index % categoryIcons.length];
-              return (
-                <li key={category.id}>
-                  <Link
-                    to={"/resources/?category=" + category.id}
-                    data-category={category.id}
-                    style={
-                      {
-                        "--planet": `var(--tax-${category.id})`,
-                      } as CSSProperties
-                    }
-                  >
-                    <span className="hm-direction-icon">
-                      <Icon size={17} strokeWidth={1.7} aria-hidden="true" />
-                    </span>
-                    <span className="hm-direction-text">
-                      <strong>{t(category.label)}</strong>
-                      <small>{t(category.description)}</small>
-                    </span>
-                    <span className="hm-direction-end">
-                      {categoryCounts[category.id] ? (
-                        <b>{categoryCounts[category.id]}</b>
-                      ) : null}
-                      <ArrowUpRight size={14} aria-hidden="true" />
-                    </span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </article>
+      </ul>
+      <div className="hm-dirs">
+        <h3>{t("Six directions, one map.")}</h3>
+        <ul className="hm-directions">
+          {categories.map((category) => (
+            <li key={category.id}>
+              <Link
+                to={"/resources/?category=" + category.id}
+                data-category={category.id}
+                style={
+                  {
+                    "--planet": `var(--tax-${category.id})`,
+                  } as CSSProperties
+                }
+              >
+                <span className="hm-direction-name">
+                  <strong>{t(category.label)}</strong>
+                  {categoryCounts[category.id] ? (
+                    <b>{categoryCounts[category.id]}</b>
+                  ) : null}
+                  <ArrowUpRight size={14} aria-hidden="true" />
+                </span>
+                <small>{t(category.description)}</small>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

@@ -2,7 +2,7 @@
    Home — an immersive, scroll-driven story.
    1 hero planet (WebGL, CSS art underneath) · 2 pinned chapters ·
    3 the wall of worlds (components/home/game-wall.tsx, styles/home-wall.css) ·
-   4 atlas bento · 5 tool marquee · 6 closing horizon.
+   4 atlas index · 5 tool marquee · 6 closing horizon.
    Every animation lives in @media (prefers-reduced-motion: no-preference).
    ========================================================================== */
 
@@ -1679,7 +1679,7 @@ html[lang="zh-CN"] .hm-story-rail a {
   box-shadow: 0 0 14px var(--glow-accent);
 }
 
-/* --- 4. Atlas bento ---------------------------------------------------------- */
+/* --- 4. Atlas index ---------------------------------------------------------- */
 .hm-atlas {
   padding: clamp(48px, 5vw, 80px) var(--hm-pad) 0;
 }
@@ -1700,216 +1700,202 @@ html[lang="zh-CN"] .hm-story-rail a {
 html[lang="zh-CN"] .hm-atlas-head .hm-title {
   line-height: 1.08;
 }
-.hm-bento {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 12px;
-  margin-top: clamp(24px, 3vw, 36px);
+/* Four directories read as one ruled index: name and size, purpose, ways in. */
+.hm-index {
+  margin: clamp(28px, 3.4vw, 44px) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line-strong);
+  list-style: none;
 }
-.hm-tile {
+.hm-pillar {
+  display: grid;
+  grid-template-areas:
+    "head"
+    "text"
+    "links";
+  gap: 8px;
   min-width: 0;
-  padding: clamp(18px, 1.5vw, 24px);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background:
-    linear-gradient(180deg, var(--surface-sheen), transparent 40%), var(--panel);
-  box-shadow: inset 0 1px 0 var(--glass-highlight);
+  padding-block: 20px 8px;
+  border-bottom: 1px solid var(--line);
 }
-.hm-tile-head {
+.hm-pillar-head {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  grid-area: head;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
 }
-.hm-tile-icon {
-  display: grid;
-  flex: none;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
-  border-radius: var(--radius-sm);
-  background: color-mix(in srgb, var(--accent) 7%, transparent);
-  color: var(--accent);
-}
-.hm-tile h3 {
-  font-size: clamp(20px, 1.7vw, 24px);
+.hm-pillar h3 {
+  font-size: clamp(22px, 1.9vw, 28px);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.1;
   letter-spacing: -0.035em;
 }
-.hm-tile-count {
-  margin: 0 0 0 auto;
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 550;
-  letter-spacing: -0.04em;
+.hm-pillar-count {
+  margin: 0.2em 0 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
   line-height: 1;
   font-variant-numeric: tabular-nums;
 }
-.hm-tile-text {
-  margin: 12px 0 0;
+.hm-pillar-text {
+  grid-area: text;
+  max-width: 46ch;
+  margin: 0;
   color: var(--body);
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.55;
   text-wrap: pretty;
 }
-.hm-tile-links {
+.hm-pillar-links {
   display: grid;
-  margin: 16px 0 0;
+  grid-area: links;
+  margin: 0;
   padding: 0;
-  border-top: 1px solid var(--line);
   list-style: none;
 }
-.hm-tile-links li + li {
-  border-top: 1px solid var(--line);
-}
-.hm-tile-links a {
+.hm-pillar-links a {
   display: flex;
   align-items: center;
   gap: 8px;
   min-height: 44px;
-  padding: 6px 2px;
-  border-radius: var(--radius-xs);
   color: var(--ink);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.4;
 }
-.hm-tile-links a > span {
-  flex: 1;
+.hm-pillar-links a > span {
   min-width: 0;
 }
-.hm-tile-links b {
+.hm-pillar-links svg {
+  margin-left: auto;
+}
+.hm-atlas :is(.hm-pillar-links, .hm-direction-name) b {
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
-.hm-tile-links svg {
+.hm-atlas :is(.hm-pillar-links, .hm-direction-name) svg {
   flex: none;
   color: var(--muted);
 }
-.hm-tile-links a:is(:hover, :focus-visible),
-.hm-tile-links a:is(:hover, :focus-visible) :is(b, svg) {
+.hm-atlas :is(.hm-pillar-links, .hm-directions) a:is(:hover, :focus-visible),
+.hm-atlas
+  :is(.hm-pillar-links, .hm-directions)
+  a:is(:hover, :focus-visible)
+  :is(b, svg) {
   color: var(--accent);
 }
-.hm-tile-links a:is(:hover, :focus-visible),
-.hm-directions a:is(:hover, :focus-visible) {
-  background: color-mix(in srgb, var(--accent) 5%, transparent);
+.hm-pillar-links a > span,
+.hm-direction-name strong {
+  text-decoration: underline 1px transparent;
+  text-underline-offset: 4px;
 }
-.hm-tile a:focus-visible {
-  outline-offset: 2px;
+.hm-atlas a:is(:hover, :focus-visible) :is(span, strong) {
+  text-decoration-color: currentColor;
 }
-.hm-tile a:active {
-  background: var(--accent-soft);
+/* Six resource directions: each one keeps its taxonomy hue as a single rule. */
+.hm-dirs {
+  margin-top: clamp(40px, 4.6vw, 64px);
 }
-.hm-tile-directions {
-  grid-column: 1 / -1;
+.hm-dirs > h3 {
+  font-size: clamp(18px, 1.5vw, 21px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
 }
 .hm-directions {
   display: grid;
-  gap: 0 24px;
-  margin: 14px 0 0;
+  gap: 4px;
+  margin: 16px 0 0;
   padding: 0;
   list-style: none;
 }
 .hm-directions li {
   display: flex;
   min-width: 0;
-  border-top: 1px solid var(--line);
 }
 .hm-directions a {
   display: grid;
   flex: 1;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: start;
-  gap: 4px 10px;
+  align-content: start;
+  gap: 4px;
   min-width: 0;
-  min-height: 72px;
-  padding: 14px 2px;
-  border-radius: var(--radius-xs);
+  min-height: 44px;
+  padding: 10px 0 10px 14px;
+  border-left: 2px solid var(--planet);
   color: var(--ink);
 }
-.hm-direction-icon {
-  display: grid;
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  margin-top: 2px;
-  border-radius: var(--radius-sm);
-  background: color-mix(in srgb, var(--planet) 12%, transparent);
-  color: var(--ink);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--planet) 30%, transparent);
+.hm-direction-name {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
 }
-.hm-direction-text {
-  display: contents;
-}
-.hm-direction-text strong {
-  grid-column: 2;
-  grid-row: 1;
-  align-self: center;
+.hm-direction-name strong {
   min-width: 0;
   font-size: 15px;
   font-weight: 600;
+  line-height: 1.35;
   letter-spacing: -0.01em;
-  line-height: 1.3;
 }
-.hm-direction-text small {
-  grid-column: 2 / -1;
-  grid-row: 2;
-  min-width: 0;
+.hm-direction-name svg {
+  align-self: center;
+  margin-left: auto;
+}
+.hm-directions small {
   color: var(--muted);
-  font-size: 12.5px;
-  line-height: 1.45;
+  font-size: 13px;
+  line-height: 1.5;
   text-wrap: pretty;
 }
-.hm-direction-end {
-  display: flex;
-  grid-column: 3;
-  grid-row: 1;
-  align-self: center;
-  align-items: center;
-  gap: 8px;
-  color: var(--muted);
-}
-.hm-direction-end b {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-}
-.hm-directions a:is(:hover, :focus-visible) :is(strong, .hm-direction-end) {
-  color: var(--accent);
-}
-@media (max-width: 639px) {
-  .hm-direction-icon {
-    grid-row: 1;
-    margin-top: 0;
-  }
-  .hm-direction-text small {
-    grid-column: 1 / -1;
-    margin-top: 4px;
-  }
+.hm-directions a:is(:hover, :focus-visible) small {
+  color: var(--body);
 }
 @media (min-width: 640px) {
-  .hm-bento,
-  .hm-directions {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .hm-pillar {
+    grid-template-columns: minmax(140px, 0.7fr) minmax(0, 2fr);
+    grid-template-areas:
+      "head text"
+      "head links";
+    column-gap: clamp(24px, 4vw, 48px);
+    row-gap: 2px;
+    padding-block: 22px 10px;
   }
-  .hm-tile-text {
-    min-height: 3em;
+  .hm-pillar-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 28px;
   }
-}
-@media (min-width: 1100px) {
-  .hm-bento {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .hm-pillar-links svg {
+    margin-left: 0;
   }
   .hm-directions {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px clamp(20px, 2.4vw, 32px);
+  }
+  .hm-directions a {
+    padding: 14px 0 0;
+    border-top: 2px solid var(--planet);
+    border-left: 0;
+  }
+}
+/* One line per directory once the links fit beside the description. */
+@media (min-width: 1280px) {
+  .hm-pillar {
+    grid-template-columns: minmax(180px, 0.9fr) minmax(0, 1.5fr) minmax(0, 2fr);
+    grid-template-areas: "head text links";
+    align-items: baseline;
+    padding-block: 18px;
+  }
+}
+@media (min-width: 1360px) {
+  .hm-directions {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
 
@@ -2525,7 +2511,8 @@ html[lang="zh-CN"] .hm-closing-inner h2 {
         .hm-story-head,
         .hm-atlas-head,
         .hm-toolkit-head,
-        .hm-tile,
+        .hm-pillar,
+        .hm-dirs,
         .hm-closing-inner
       ) {
       animation: hm-reveal linear both;
