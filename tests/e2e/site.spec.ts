@@ -165,10 +165,12 @@ test("examples and test-library filters retain source details", async ({
     .getByRole("link", { name: "Complete record", exact: true })
     .click();
   await expect(page).toHaveURL(/\/examples\/opengame-tower-defense\/$/);
-  await expect(page.locator('[data-content-field="steps"]')).toContainText(
-    "Open the live game",
-  );
-  await expect(page.locator('[data-content-field="aiUse"]')).toBeVisible();
+  await expect(
+    page.locator('[data-content-field="demo"]').first(),
+  ).toContainText("Play Hajimi Defense");
+  await expect(
+    page.locator('[data-content-field="source"] a').first(),
+  ).toHaveAttribute("href", /^https:/);
   await page.goto("testing/");
   await expect(page.locator(".testing-card")).toHaveCount(
     catalog.counts.testing,

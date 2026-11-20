@@ -15,12 +15,9 @@ import {
   ArrowUp,
   ArrowUpRight,
   Calendar,
-  FileText,
   Gamepad2,
   Layers,
   Maximize2,
-  ShieldCheck,
-  Sparkles,
   X,
 } from "lucide-react";
 import { Link, SourceLanguage, useSiteI18n } from "../lib/i18n";
@@ -348,13 +345,10 @@ export function GameDocument({
     ),
   );
 
-  // 4. Build story & workflow (example / foundation)
-  const aiUseBlock = take(
-    (block) => block.field === "aiUse" && block.type === "text",
-  )[0];
-  const stepsBlock = take(
-    (block) => block.field === "steps" && block.type === "list",
-  )[0];
+  // 4. Catalog provenance and the generic study guidance stay in the record.
+  //    The same labels and "play it, read the source" steps recur on every
+  //    game, so they say nothing about this one.
+  take((block) => block.field === "aiUse" || block.field === "steps");
 
   // 5. Destinations (demo, source, tutorial; Three.js facts stay in the ledger)
   const destOrder = ["demo", "source", "tutorial"] as const;
@@ -375,17 +369,10 @@ export function GameDocument({
     (block) => block.field === "resourceIds" && block.type === "links",
   )[0];
 
-  // 7. Provenance & evidence (category, evidence, distribution)
-  const categoryBlock = take(
-    (block) => block.field === "category" && block.type === "text",
-  )[0];
-  const evidenceBlocks = take((block) => block.field === "evidence");
-  const distributionBlocks = take((block) => block.field === "distribution");
-
-  // 8. Remaining unclaimed blocks (e.g., threejs-game technical facts, limitations, repository_url, id)
+  // Remaining blocks for the workflow and access sections. Catalog provenance
+  // (category, intake, evidence) stays in the record and is not shown.
   const remainingGuidance = take((block) => sectionOf(block) === "guidance");
   const remainingResources = take((block) => sectionOf(block) === "resources");
-  const remainingProvenance = take(() => true);
 
   // Access icons follow structured metadata in every language.
   const demoIcon =
@@ -420,26 +407,16 @@ export function GameDocument({
     ?.blocks.find((block) => block.type === "text");
 
   // Sections present on this record
-  const hasWorkflow = Boolean(
-    aiUseBlock || stepsBlock || remainingGuidance.length > 0,
-  );
+  const hasWorkflow = remainingGuidance.length > 0;
   const hasAccess = Boolean(
     destinations.length > 0 ||
     resourceIdsBlock ||
     remainingResources.length > 0,
   );
-  const hasProvenance = Boolean(
-    categoryBlock ||
-    evidenceBlocks.length > 0 ||
-    distributionBlocks.length > 0 ||
-    remainingProvenance.length > 0,
-  );
-
   // Section numbers and outline navigation
   let sectionNo = 0;
   const workflowNo = hasWorkflow ? ++sectionNo : 0;
   const accessNo = hasAccess ? ++sectionNo : 0;
-  const provenanceNo = hasProvenance ? ++sectionNo : 0;
   const communityNo = hasCommunity ? ++sectionNo : 0;
 
   const outline: RecordOutlineItem[] = [
@@ -465,9 +442,6 @@ export function GameDocument({
             ),
           },
         ]
-      : []),
-    ...(hasProvenance
-      ? [{ id: "record-provenance", label: t("Sources & evidence") }]
       : []),
     ...(hasCommunity
       ? [{ id: "community", label: t("Ratings & discussion") }]
@@ -909,7 +883,7 @@ export function GameDocument({
 
       {/* Reading sections */}
       <div className="game-wrap game-sections">
-        {/* SECTION 01: HOW IT WAS BUILT & STUDY WORKFLOW */}
+        {/* SECTION 01: Record-specific details (Three.js technical facts) */}
         {hasWorkflow && (
           <section
             className="game-section game-workflow record-section record-guidance"
@@ -923,60 +897,6 @@ export function GameDocument({
                 entry.kind === "threejs-game" ? "Details" : "How it was built",
               )}
             />
-
-            {(aiUseBlock || stepsBlock) && (
-              <div
-                className={`game-workflow-grid${aiUseBlock && stepsBlock ? "" : " is-single"}`}
-              >
-                {aiUseBlock && aiUseBlock.type === "text" && (
-                  <section
-                    className="game-context-card"
-                    data-content-field={aiUseBlock.field}
-                  >
-                    <header className="game-card-eyebrow">
-                      <Sparkles size={14} aria-hidden="true" />
-                      <h3>{t(aiUseBlock.label || "")}</h3>
-                    </header>
-                    <p
-                      className="game-context-copy"
-                      lang={aiUseBlock.language === "en" ? "en" : undefined}
-                    >
-                      {t(aiUseBlock.value)}
-                    </p>
-                  </section>
-                )}
-
-                {stepsBlock && stepsBlock.type === "list" && (
-                  <section
-                    className="game-steps-panel"
-                    data-content-field={stepsBlock.field}
-                  >
-                    <header className="game-steps-head">
-                      <div className="game-card-eyebrow">
-                        <Layers size={14} aria-hidden="true" />
-                        <h3>{t(stepsBlock.label)}</h3>
-                      </div>
-                      <span className="game-steps-count">
-                        {t("{count} steps", { count: stepsBlock.items.length })}
-                      </span>
-                    </header>
-                    <ol
-                      className="game-steps-grid"
-                      lang={stepsBlock.language === "en" ? "en" : undefined}
-                    >
-                      {stepsBlock.items.map((step, index) => (
-                        <li key={`${index}-${step}`} className="game-step-card">
-                          <span className="game-step-num" aria-hidden="true">
-                            {String(index + 1).padStart(2, "0")}
-                          </span>
-                          <p>{t(step)}</p>
-                        </li>
-                      ))}
-                    </ol>
-                  </section>
-                )}
-              </div>
-            )}
 
             {/* Technical facts, primarily for Three.js records */}
             {remainingGuidance.length > 0 && (
@@ -1043,7 +963,7 @@ export function GameDocument({
               >
                 <div className="game-resources-head">
                   <h3>{t(resourceIdsBlock.label)}</h3>
-                  <span className="game-steps-count">
+                  <span className="game-count">
                     {resourceIdsBlock.items.length}
                   </span>
                 </div>
@@ -1112,184 +1032,6 @@ export function GameDocument({
                 )}
               </div>
             )}
-          </section>
-        )}
-
-        {/* SECTION 03: SOURCES & EVIDENCE LEDGER */}
-        {hasProvenance && (
-          <section
-            className="game-section game-provenance record-section record-provenance"
-            id="record-provenance"
-            aria-labelledby="game-provenance-heading"
-          >
-            <GameSectionHeader
-              index={provenanceNo}
-              id="game-provenance-heading"
-              title={t("Sources & evidence")}
-            />
-
-            <div className="game-provenance-ledger">
-              {(categoryBlock || evidenceBlocks.length > 0) && (
-                <div
-                  className={`game-provenance-top${categoryBlock && evidenceBlocks.length > 0 ? "" : " is-single"}`}
-                >
-                  {categoryBlock && categoryBlock.type === "text" && (
-                    <section
-                      className="game-prov-cell is-category"
-                      data-content-field={categoryBlock.field}
-                    >
-                      <header className="game-card-eyebrow">
-                        <ShieldCheck size={14} aria-hidden="true" />
-                        <h3>{t(categoryBlock.label || "")}</h3>
-                      </header>
-                      <p
-                        className="game-prov-category-value"
-                        lang={
-                          categoryBlock.language === "en" ? "en" : undefined
-                        }
-                      >
-                        {t(categoryBlock.value)}
-                      </p>
-                    </section>
-                  )}
-
-                  {evidenceBlocks.length > 0 && (
-                    <section
-                      className="game-prov-cell is-evidence"
-                      data-content-field="evidence"
-                    >
-                      <header className="game-card-eyebrow">
-                        <FileText size={14} aria-hidden="true" />
-                        <h3>
-                          {t(
-                            evidenceBlocks[0].type === "links" ||
-                              evidenceBlocks[0].type === "text"
-                              ? evidenceBlocks[0].label || "Creator evidence"
-                              : "Creator evidence",
-                          )}
-                        </h3>
-                      </header>
-                      <div className="game-prov-evidence-list">
-                        {evidenceBlocks.map((block, blockIndex) =>
-                          block.type === "links" ? (
-                            <ul
-                              key={`ev-${blockIndex}`}
-                              className="game-dest-links"
-                            >
-                              {block.items.map((item, itemIndex) => {
-                                const host = hostLabel(item.url);
-                                return (
-                                  <li key={`${itemIndex}-${item.url}`}>
-                                    <div className="game-dest-link-row">
-                                      <ContentLink href={item.url}>
-                                        <span className="game-dest-link-text">
-                                          {t(item.label)}
-                                        </span>
-                                        <ArrowUpRight
-                                          size={15}
-                                          aria-hidden="true"
-                                        />
-                                      </ContentLink>
-                                      {host && (
-                                        <span
-                                          className="game-dest-host"
-                                          translate="no"
-                                        >
-                                          {host}
-                                        </span>
-                                      )}
-                                    </div>
-                                    {item.note && (
-                                      <p className="game-dest-note" lang="en">
-                                        {item.note}
-                                      </p>
-                                    )}
-                                  </li>
-                                );
-                              })}
-                            </ul>
-                          ) : block.type === "text" ? (
-                            <p
-                              key={`ev-${blockIndex}`}
-                              className="game-dest-note"
-                              lang={block.language === "en" ? "en" : undefined}
-                            >
-                              {t(block.value)}
-                            </p>
-                          ) : null,
-                        )}
-                      </div>
-                    </section>
-                  )}
-                </div>
-              )}
-
-              {distributionBlocks.length > 0 && (
-                <section
-                  className="game-prov-block"
-                  data-content-field="distribution"
-                >
-                  <h3 className="game-card-title">{t("Distribution")}</h3>
-                  <div className="game-prov-extra-stack">
-                    {distributionBlocks.map((block, index) =>
-                      block.type === "links" ? (
-                        <ul key={`dist-${index}`} className="game-dest-links">
-                          {block.items.map((item, itemIndex) => (
-                            <li key={`${itemIndex}-${item.url}`}>
-                              <div className="game-dest-link-row">
-                                <ContentLink href={item.url}>
-                                  <span className="game-dest-link-text">
-                                    {t(item.label)}
-                                  </span>
-                                  <ArrowUpRight size={15} aria-hidden="true" />
-                                </ContentLink>
-                              </div>
-                              {item.note && (
-                                <p className="game-dest-note" lang="en">
-                                  {item.note}
-                                </p>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
-                      ) : block.type === "text" ? (
-                        <p
-                          key={`dist-${index}`}
-                          className="game-dest-note"
-                          lang={block.language === "en" ? "en" : undefined}
-                        >
-                          {t(block.value)}
-                        </p>
-                      ) : null,
-                    )}
-                  </div>
-                </section>
-              )}
-
-              {remainingProvenance.length > 0 && (
-                <div className="game-prov-remaining">
-                  {remainingProvenance.map((block, index) =>
-                    block.type === "facts" ? (
-                      <section
-                        key={`${block.field}-${index}`}
-                        className="game-prov-block"
-                        data-content-field={block.field}
-                      >
-                        <h3 className="game-card-title">{t(block.label)}</h3>
-                        <ProvenanceFacts items={block.items} />
-                      </section>
-                    ) : (
-                      <div
-                        key={`${block.field}-${index}`}
-                        className="game-prov-block"
-                      >
-                        <ContentBlockView block={block} heading="h2" />
-                      </div>
-                    ),
-                  )}
-                </div>
-              )}
-            </div>
           </section>
         )}
 

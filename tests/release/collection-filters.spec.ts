@@ -125,10 +125,10 @@ test("Three.js games use shared search and dimensions while retaining complete e
   });
   await expect(outline).toBeVisible();
   await outline
-    .getByRole("link", { name: "Sources & evidence", exact: true })
+    .getByRole("link", { name: "Links & resources", exact: true })
     .click();
-  await expect(page).toHaveURL(/#record-provenance$/);
-  await expect(page.locator(".record-provenance")).toBeVisible();
+  await expect(page).toHaveURL(/#record-resources$/);
+  await expect(page.locator("#record-resources")).toBeVisible();
 });
 
 test("static collections expose every record and canonical Chinese guides hydrate cleanly", async ({

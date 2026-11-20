@@ -56,12 +56,11 @@ test("ordinary source-reviewed games are searchable without invented AI attribut
   await card
     .getByRole("link", { name: "Complete record", exact: true })
     .click();
-  await expect(page.locator('[data-content-field="category"]')).toContainText(
-    "Community game",
-  );
-  await expect(page.locator('[data-content-field="aiUse"]')).toContainText(
-    "Source checked",
-  );
+  await expect(page.locator("#record-provenance")).toHaveCount(0);
+  await expect(page.locator('[data-content-field="category"]')).toHaveCount(0);
+  await expect(page.locator('[data-content-field="aiUse"]')).toHaveCount(0);
+  await expect(page.locator('[data-content-field="steps"]')).toHaveCount(0);
+  await expect(page.locator("#record-guidance")).toHaveCount(0);
 });
 
 test("Chinese game introductions remain localized and the public evidence ledger is accessible", async ({

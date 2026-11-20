@@ -692,82 +692,11 @@ html[lang="zh-CN"]
   letter-spacing: 0.04em;
 }
 
-/* Development context and a single, continuous numbered workflow. */
-.game-workflow-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
-  gap: clamp(32px, 6vw, 88px);
-  align-items: start;
-}
-.game-workflow-grid.is-single {
-  grid-template-columns: minmax(0, 1fr);
-}
-.game-context-card {
-  min-width: 0;
-  max-width: 46ch;
-}
-.game-context-copy {
-  margin: 18px 0 0;
-  color: var(--body);
-  font-size: clamp(16px, 1.25vw, 18px);
-  line-height: 1.85;
-  text-wrap: pretty;
-}
-html[lang="zh-CN"] .game-context-copy {
-  line-height: 1.95;
-}
-.game-steps-panel {
-  display: grid;
-  gap: 22px;
-  min-width: 0;
-}
-.game-steps-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-.game-steps-count {
+/* Result counts sit beside a list heading. */
+.game-count {
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 11px;
-}
-.game-steps-grid {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.game-step-card {
-  display: grid;
-  grid-template-columns: 32px minmax(0, 1fr);
-  gap: 20px;
-  min-width: 0;
-  padding-block: 22px;
-  border-top: 1px solid var(--line);
-}
-.game-step-card:first-child {
-  padding-top: 0;
-  border-top: 0;
-}
-.game-step-card:last-child {
-  padding-bottom: 0;
-}
-.game-step-num {
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 14px;
-  line-height: 1.9;
-}
-.game-step-card p {
-  margin: 0;
-  color: var(--body);
-  font-size: 16px;
-  line-height: 1.75;
-  overflow-wrap: anywhere;
-}
-html[lang="zh-CN"] .game-step-card p {
-  line-height: 1.85;
 }
 .game-tech-grid {
   display: grid;
@@ -1360,13 +1289,6 @@ body:has(.game-lightbox[open]) {
     padding-top: 12px;
     border-top: 1px solid var(--line);
   }
-  .game-workflow-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-  }
-  .game-context-card {
-    max-width: 68ch;
-  }
   .game-dest-card {
     grid-template-columns: 170px minmax(0, 1fr);
     gap: 28px;
@@ -1445,10 +1367,6 @@ body:has(.game-lightbox[open]) {
   .game-facts-grid > div {
     grid-template-columns: minmax(0, 1fr);
     gap: 4px;
-  }
-  .game-step-card {
-    grid-template-columns: 24px minmax(0, 1fr);
-    gap: 14px;
   }
   .game-sections > .community-panel > .content-field {
     grid-template-columns: minmax(0, 1fr);

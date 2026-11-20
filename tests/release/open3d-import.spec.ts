@@ -110,7 +110,6 @@ test("imported record details keep real Chinese descriptions and leave catalog b
       (r: { id: string }) => r.id === first.data.intake!.rowId,
     ).description_zh,
   );
-  await expect(page.locator('[data-content-field="aiUse"]')).toContainText(
-    "收录自 3D 游戏目录。",
-  );
+  await expect(page.locator('[data-content-field="aiUse"]')).toHaveCount(0);
+  await expect(page.locator('[data-content-field="steps"]')).toHaveCount(0);
 });

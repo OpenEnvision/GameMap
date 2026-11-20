@@ -5,24 +5,16 @@ const openSurfaces = [
   ".game-stage-media",
   ".game-console",
   ".game-spec-row",
-  ".game-context-card",
-  ".game-step-card",
   ".game-dest-card",
-  ".game-provenance",
-  ".game-provenance-ledger",
-  ".game-prov-cell",
   ".game-more-card",
 ].join(", ");
 const fields = [
   "title",
   "description",
   "engine",
-  "aiUse",
-  "steps",
   "demo",
   "source",
   "tutorial",
-  "evidence",
   "resourceIds",
 ];
 
@@ -50,6 +42,17 @@ async function expectFields(page: Page) {
   }
 }
 
+async function expectTemplateGuidanceAbsent(page: Page) {
+  await expect(page.locator("#record-guidance")).toHaveCount(0);
+  for (const field of ["aiUse", "steps", "category"])
+    await expect(
+      page.locator(`.game-doc [data-content-field="${field}"]`),
+    ).toHaveCount(0);
+  await expect(
+    page.getByRole("link", { name: "How it was built", exact: true }),
+  ).toHaveCount(0);
+}
+
 test("game details use open reading rows in both color themes", async ({
   page,
 }) => {
@@ -57,17 +60,18 @@ test("game details use open reading rows in both color themes", async ({
   await expect(page.locator('[data-client-ready="true"]')).toHaveCount(1);
   await expectFields(page);
   await expectOpenLayout(page);
+  await expectTemplateGuidanceAbsent(page);
 
-  const steps = await page.locator(".game-step-card").evaluateAll((elements) =>
+  const rows = await page.locator(".game-dest-card").evaluateAll((elements) =>
     elements.map((element) => {
       const { x, y, bottom } = element.getBoundingClientRect();
       return { x, y, bottom };
     }),
   );
-  expect(steps.length).toBeGreaterThan(1);
-  for (let index = 1; index < steps.length; index++) {
-    expect(steps[index].x).toBe(steps[0].x);
-    expect(steps[index].y).toBeGreaterThanOrEqual(steps[index - 1].bottom - 1);
+  expect(rows.length).toBeGreaterThan(1);
+  for (let index = 1; index < rows.length; index++) {
+    expect(rows[index].x).toBe(rows[0].x);
+    expect(rows[index].y).toBeGreaterThanOrEqual(rows[index - 1].bottom - 1);
   }
   await page.getByRole("button", { name: "Toggle color theme" }).click();
   await expect(page.locator("html")).toHaveClass(/light/);
@@ -194,14 +198,14 @@ test("play links, section anchors and screenshot inspection remain available", a
 
   const sourceLink = page
     .getByRole("navigation", { name: "On this record" })
-    .getByRole("link", { name: "Sources & evidence", exact: true });
+    .getByRole("link", { name: "Play & source", exact: true });
   await sourceLink.click();
-  await expect(page).toHaveURL(/#record-provenance$/);
+  await expect(page).toHaveURL(/#record-resources$/);
   await expect(sourceLink).toHaveAttribute("aria-current", "location");
-  await expect(page.locator("#game-provenance-heading")).toBeInViewport();
+  await expect(page.locator("#game-access-heading")).toBeInViewport();
   const position = await page.evaluate(() => ({
     section: document
-      .querySelector("#game-provenance-heading")!
+      .querySelector("#game-access-heading")!
       .getBoundingClientRect().top,
     navigation: document.querySelector(".game-subnav")!.getBoundingClientRect()
       .bottom,

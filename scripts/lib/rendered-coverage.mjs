@@ -89,6 +89,14 @@ function containsURL(
     `${context}: missing ${attr} ${value}`,
   );
 }
+// A game page carries the game, its entry points and its technical facts. The
+// catalog's provenance label and the repeated study guidance stay in the
+// manifest: every record shares those labels and the same "play it, read the
+// source" steps, so they are bookkeeping rather than reader content.
+const gamePageOmission = new Set(["category", "aiUse", "steps"]);
+const gamePageKinds = new Set(["example", "foundation", "threejs-game"]);
+const gamePageOmits = (entry, block) =>
+  gamePageKinds.has(entry.kind) && gamePageOmission.has(block.field);
 function factProof(fact, nodes, context, base, page) {
   containsText(nodes, fact.label, context);
   if (fact.type === "group")
@@ -102,6 +110,7 @@ export function assertRecordFields(entry, record, base = "/") {
   const nodes = elements(record);
   for (const block of entry.blocks) {
     if (block.section === "metadata") continue; // Source-only fields remain in the manifest, not the reader interface.
+    if (gamePageOmits(entry, block)) continue;
     const fields = nodes.filter(
       (node) => attributes(node)["data-content-field"] === block.field,
     );
