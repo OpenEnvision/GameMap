@@ -9867,6 +9867,42 @@
       "bytes": 49578
     },
     {
+      "id": "open3d-cat-sanctuary",
+      "title": "Cat Sanctuary",
+      "media": {
+        "src": "media/learning/open3d-cat-sanctuary.webp",
+        "alt": "Several small cats stand around benches and paths in a purple-lit courtyard.",
+        "caption": "Creator-published gameplay: An early first-person view of the sanctuary courtyard in the creator's Unity prototype.",
+        "sourceUrl": "https://amna-hassan04.github.io/games/cat-sanctuary/",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://amna-hassan04.github.io/games/cat-sanctuary/featured.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "34d27b4edae8140d4e2c3f633c726a762dbfd57db09df3ea5f75c6b61d06247e",
+        "sourceFrameSHA256": "2d400a9bdbc6a67a5b71a5f4ee8883496ea8216ce8954cb7e4a00709219d0aad",
+        "sourceWidth": 1920,
+        "sourceHeight": 1080,
+        "originalFormat": "jpeg",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the full original at eye level: cats, benches and the sanctuary path are visible under purple lighting, with no title, menu, text, editor interface or montage. The developer's exact game page describes exploration, dynamic lighting and cat-companion AI; the image is not a new playability test.",
+        "versionNote": "Amna Hassan's exact author-hosted game page identifies an in-development Unity prototype. The full-size original is JPEG despite its .png URL and has embedded description 'Cat Sanctuary - Prototype 1'."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "5726d898f77a896b94000517f6775f7fc5b385cdbb64e6e8cba47ba266f0d0b2",
+      "bytes": 47850
+    },
+    {
       "id": "open3d-classroom-404",
       "title": "Classroom 404",
       "media": {
@@ -13458,6 +13494,42 @@
       "bytes": 65984
     },
     {
+      "id": "open3d-avara",
+      "title": "Avara",
+      "media": {
+        "src": "media/learning/open3d-avara.webp",
+        "alt": "Mech cockpit aiming at a purple enemy beside a gray door beneath a red and purple overhang.",
+        "caption": "Creator-published gameplay: A targeting encounter on the Thorn map in the modern Avara port. The frame comes from an upstream contributor’s recording.",
+        "sourceUrl": "https://github.com/avaraline/Avara/issues/526",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-19",
+        "originalImageUrl": "https://github.com/user-attachments/assets/51c7dee3-2eaa-48ad-adf5-f3e915d2752f",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "e75633c29d4f29df2dc29357a486c6e2faba29d9609720e9cc42958f6966d786",
+        "sourceFrameSHA256": "e396aac826206ac4cc518d54ead67b5a3ec55bf2a7e8848345d74d4a7f9b9388",
+        "sourceWidth": 960,
+        "sourceHeight": 540,
+        "originalFormat": "mp4",
+        "frameIndex": 480,
+        "sourceFrames": 1265,
+        "visualFinding": "Viewed a single uncropped in-game frame with the player cockpit, active targeting indicator, an opposing purple Hector, the WallDoor and the live HUD timer. The exact port repository attributes the attached gameplay recording to upstream contributor shrizza. No menu, editor or loading overlay is visible.",
+        "frameOffsetSeconds": 16
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "81af4307adb42c9ef70158ba9a1416ee04330ffbb0cc9f5c59e046d94819a27a",
+      "bytes": 21596
+    },
+    {
       "id": "open3d-balazar-brothers",
       "title": "Balazar Brothers",
       "media": {
@@ -15842,6 +15914,42 @@
       "rights": "Copyright remains with the original creator; no reuse license is asserted.",
       "bytes": 20618,
       "sha256": "dd5bacd6f9a685b3ff5d84c182cbbecd117d146c67da30c23058b97a30fee17a"
+    },
+    {
+      "id": "open3d-vane",
+      "title": "Vane",
+      "media": {
+        "src": "media/learning/open3d-vane.webp",
+        "alt": "Four chicken-topped weather vanes stand on a floating grassy tile in Level 1.",
+        "caption": "Creator-published screenshot of the first puzzle, with its 1/1 counter and undo and reset controls.",
+        "sourceUrl": "https://itch.io/t/530858/vane-a-simple-puzzle-game",
+        "origin": "creator-screenshot",
+        "reviewedAt": "2026-11-20",
+        "originalImageUrl": "https://img.itch.zone/aW1nLzIzODQ5NjAucG5n/original/GSkNMc.png",
+        "width": 1280,
+        "height": 720
+      },
+      "evidence": {
+        "originalSHA256": "21c054d3e15163f968e9aa424f9fb46ea50b2fac570eea5a3c2b3d78d469275b",
+        "sourceFrameSHA256": "c829761aea6a358cee627ba1cad0b24abe4cf553885d30918887c496cb6cab2a",
+        "sourceWidth": 961,
+        "sourceHeight": 600,
+        "originalFormat": "png",
+        "frameIndex": 0,
+        "sourceFrames": 1,
+        "visualFinding": "Personally inspected the full original. It shows an isometric Level 1 puzzle board with four chicken-topped weather vanes, flowers and rocks, a 1/1 HUD counter, and undo and reset controls. No title, menu, cover, or montage is present.",
+        "versionNote": "Vane coauthor dan published this original in the August 2019 itch.io release announcement, which links the exact game. This is a creator screenshot, not a browser playability test."
+      },
+      "processing": {
+        "fit": "contain",
+        "width": 1280,
+        "height": 720,
+        "crop": false,
+        "generatedSceneContent": false
+      },
+      "rights": "Image rights remain with the original creator; no blanket reuse license is asserted.",
+      "sha256": "a2f39c66d06c3d6b8c172f8c13a2a13911f075f1ac177a4562a9ef7500d9298b",
+      "bytes": 64546
     },
     {
       "id": "open3d-chromode",
@@ -34511,58 +34619,6 @@
       ]
     },
     {
-      "id": "open3d-cat-sanctuary",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/Amna-Hassan04/Cat-Sanctuary/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Amna-Hassan04/Cat-Sanctuary",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/Amna-Hassan04/Cat-Sanctuary/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/Amna-Hassan04/Cat-Sanctuary/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/Amna-Hassan04/Cat-Sanctuary",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/Amna-Hassan04/Cat-Sanctuary/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://api.github.com/repos/Amna-Hassan04/Cat-Sanctuary/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-20",
-          "result": "The untruncated exact author repository tree (5725 entries; Git object 76bd496cebc68b81357467b68d03cedb96de5c57) contains 166 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
-        },
-        {
-          "url": "https://api.github.com/repos/Amna-Hassan04/Cat-Sanctuary/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-19",
-          "result": "Inspected complete author repository tree (5725 items); inventoried 166 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
-        },
-        {
-          "url": "https://github.com/Amna-Hassan04/Cat-Sanctuary/releases",
-          "checkedAt": "2026-11-19",
-          "result": "Exact official GitHub Releases API returned an empty list. This does not exclude elsewhere publications."
-        }
-      ]
-    },
-    {
       "id": "open3d-team-capture",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Project landing page presented release/description without a gameplay image. Repo media was previously examined, not re-fetched.",
@@ -34795,7 +34851,7 @@
     {
       "id": "open3d-scorched3d",
       "status": "research-incomplete",
-      "reason": "No qualifying image verified. Author/source access was limited: Failed to fetch https://www.scorched3d.co.uk/: (400) Timeout fetching This is not evidence that no screenshot exists.",
+      "reason": "No qualifying image verified. Author/source access was limited: Failed to fetch https://www.scorched3d.co.uk/: (400) Timeout fetching This is not evidence that no screenshot exists. The official upstream repository is currently readable, but its tracked documentation is third-party dependency readmes, server interface templates, and ordinary game UI art, with no identified exact creator gameplay frame. The official tracked backdrop is non-gameplay illustration.",
       "checkedSources": [
         {
           "url": "https://www.scorched3d.co.uk/",
@@ -34811,6 +34867,21 @@
           "url": "https://www.scorched3d.co.uk/screenshots/40.1/scorched40.1-1-large.jpg",
           "checkedAt": "2026-11-19",
           "result": "The documented original creator image was inaccessible in cloud; third-party Commons copy not substituted."
+        },
+        {
+          "url": "https://svn.code.sf.net/p/scorched3d/code/trunk/scorched/documentation/",
+          "result": "HTTP 200; directory contains dependency readme files but no actual player instruction captures.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://svn.code.sf.net/p/scorched3d/code/trunk/scorched/data/html/server/",
+          "result": "HTTP 200; application login/statistics/administration/configuration templates, not gameplay player documentation.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://svn.code.sf.net/p/scorched3d/code/trunk/scorched/data/images/",
+          "result": "HTTP 200; collection contains controls, bars, branding and splash assets. Exact backdrop.jpg personally examined: blurred island scene without gameplay context, rejected.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -35984,53 +36055,6 @@
       ]
     },
     {
-      "id": "open3d-avara",
-      "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
-      "checkedSources": [
-        {
-          "url": "https://raw.githubusercontent.com/avaraline/Avara/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/avaraline/Avara",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/avaraline/Avara/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://avara.gg/",
-          "checkedAt": "2026-11-18",
-          "result": "Public page text retrieved and inspected for creator media and published releases; retrieval is not browser-render verification."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/avaraline/Avara/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/avaraline/Avara",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://github.com/avaraline/Avara/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
-        },
-        {
-          "url": "https://api.github.com/repos/avaraline/Avara/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-19",
-          "result": "Inspected complete author repository tree (4567 items); inventoried 26 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
-        }
-      ]
-    },
-    {
       "id": "open3d-billardgl",
       "status": "research-incomplete",
       "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. No reachable official repository capture or publisher-owned original was verified. The developer domain redirects away from game content and the expected upstream SourceForge SVN route returns 404. Existing distro/editorial reports and university comparison figure are not first-party gameplay originals.",
@@ -36189,7 +36213,7 @@
     {
       "id": "open3d-maniadrive",
       "status": "research-incomplete",
-      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images.",
+      "reason": "No qualifying screenshot has completed visual/provenance review in this pass. Recorded sources are real checks, not a claim that the creator has no images. Author Xfennec published seven historical screenshots in the official development announcement, but the attachment hosts are not an approved origin pair. No independent approved author original was found.",
       "checkedSources": [
         {
           "url": "https://sourceforge.net/projects/maniadrive/",
@@ -36200,6 +36224,21 @@
           "url": "https://maniadrive.raydium.org/",
           "checkedAt": "2026-11-19",
           "result": "Independent official Raydium subdomain returned 503 in cloud."
+        },
+        {
+          "url": "https://memak.raydium.org/viewtopic.php?f=9&t=279",
+          "result": "HTTP 200; original ManiaDrive Party announcement directly embeds md1.jpg through md7.jpg from http://ftp.cqfd-corp.org/, cross-origin and not accepted. Bytes not downloaded.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://memak.raydium.org/viewforum.php?f=10",
+          "result": "HTTP 200 official ManiaDrive general forum. Indexed additional candidate mdg583 depicts a custom FreeBSD build by a forum user, not a verified author posting.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://maniadrive.raydium.org/",
+          "result": "Endpoint timed out without response; this does not establish that official images do not exist.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -36378,6 +36417,21 @@
           "url": "https://api.github.com/repos/js13kGames/death-and-taxes/git/trees/HEAD?recursive=1",
           "checkedAt": "2026-11-19",
           "result": "Inspected complete author repository tree (39 items); inventoried 4 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
+        },
+        {
+          "url": "https://api.github.com/repos/js13kGames/death-and-taxes",
+          "result": "HTTP 200. Official metadata proves creator chanibal/js13k-2021 is the exact original of this 2021 contest WebXR game, not the commercial same-title game.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/chanibal/js13k-2021",
+          "result": "Focused author-site and original-project discovery did not establish a newly attributable gameplay original. Current published source describes exact contest game; unrelated commercial images not used.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/js13kGames/death-and-taxes/master/screenshot-400x250.png",
+          "result": "Retained prior exact visual rejection: scene editor grid/axes and objects, no clear gameplay scene. No repeat image fetch.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -36536,6 +36590,21 @@
           "url": "https://github.com/SalvatorePreviti/js13k-2020/releases",
           "checkedAt": "2026-11-18",
           "result": "Public source retrieved with HTTP 200; cached repository evidence alone does not establish a release or visually verified screenshot."
+        },
+        {
+          "url": "https://api.github.com/repos/SalvatorePreviti/js13k-2020/git/trees/HEAD?recursive=1",
+          "result": "HTTP 200; untruncated exact developer source tree (102 entries) has no standalone raster/video gameplay image. The screen-named path is the TypeScript texture generator.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/js13kGames/island-not-found",
+          "result": "Official contest fork attributes the exact game to Ben Clark and Salvatore Previti. Both public author profiles link the exact repo or contest, but focused author-name discovery did not reveal a separate author-posted screenshot.",
+          "checkedAt": "2026-11-19"
+        },
+        {
+          "url": "https://github.com/bencoder",
+          "result": "Independently confirmed credited coauthor profile lists the exact game. Secondary mirrors surfaced in search, not established as developer originals; none used.",
+          "checkedAt": "2026-11-19"
         }
       ]
     },
@@ -37281,63 +37350,6 @@
           "url": "https://pedrobraiti.com/projetos/verdigris/",
           "result": "Search title collision is not attributable to the credited game author. Not used.",
           "checkedAt": "2026-11-19"
-        }
-      ]
-    },
-    {
-      "id": "open3d-vane",
-      "status": "research-incomplete",
-      "reason": "Research incomplete or access-limited: The only author gallery image reviewed is a VANE title/cover illustration, not gameplay. Exact author itch page embeds a Unity WebGL game plus a prior title cover. The additional posted image is by a player, not the creator. No browser capture was performed in this evidence lane. The exact author-hosted Unity web build opened to a WebGL compatibility error after the public Run game action. No gameplay rendered and no browser capture was used. Previously verified native distributions remain unchanged.",
-      "checkedSources": [
-        {
-          "url": "https://mcatin.itch.io/vane",
-          "checkedAt": "2026-11-18",
-          "result": "Read creator description, source-repository link and native upload names/platform labels in the author download section."
-        },
-        {
-          "url": "https://raw.githubusercontent.com/igaryhe/Vane/HEAD/README.md",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 404; this is a retrieval outcome, not proof that the game or release is absent."
-        },
-        {
-          "url": "https://github.com/igaryhe/Vane",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://github.com/igaryhe/Vane/releases",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://mcatin.itch.io/vane",
-          "checkedAt": "2026-11-18",
-          "result": "Public source retrieval returned HTTP 200; retrieval alone does not establish gameplay, a screenshot review or an installable release."
-        },
-        {
-          "url": "https://api.github.com/repos/igaryhe/Vane/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-20",
-          "result": "The untruncated exact author repository tree (438 entries; Git object 8c35a722a1363f27228c729db9be83c98bf23703) contains 50 tracked raster/video paths in the scanned formats. This inventory is not a pixel review."
-        },
-        {
-          "url": "https://api.github.com/repos/igaryhe/Vane/git/trees/HEAD?recursive=1",
-          "checkedAt": "2026-11-19",
-          "result": "Inspected complete author repository tree (438 items); inventoried 50 tracked raster/video paths. Inventory does not itself prove eligible screenshots, installable binaries or game rendering."
-        },
-        {
-          "url": "https://mcatin.itch.io/vane",
-          "checkedAt": "2026-11-19",
-          "result": "HTTP 200; exact repo link, browser embed and credits. Image in comments belongs to BloodyOrchidDC, not credited creator."
-        },
-        {
-          "url": "https://mcatin.itch.io/vane",
-          "checkedAt": "2026-11-19",
-          "result": "HTTP 200 author itch page names the credited creators and links the same catalog source repository; clicked Run game once in the cloud sandbox."
-        },
-        {
-          "url": "https://html-classic.itch.zone/html/1656346/Vane-WebGL/index.html?v=1783021416",
-          "checkedAt": "2026-11-19",
-          "result": "The exact embedded Unity game displayed “Your browser does not support WebGL.” No rendered gameplay, capture, permission grant or retry."
         }
       ]
     },

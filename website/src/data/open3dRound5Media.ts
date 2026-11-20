@@ -3351,6 +3351,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-cat-sanctuary": {
+    src: "media/learning/open3d-cat-sanctuary.webp",
+    alt: "Several small cats stand around benches and paths in a purple-lit courtyard.",
+    caption:
+      "Creator-published gameplay: An early first-person view of the sanctuary courtyard in the creator's Unity prototype.",
+    sourceUrl: "https://amna-hassan04.github.io/games/cat-sanctuary/",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://amna-hassan04.github.io/games/cat-sanctuary/featured.png",
+    width: 1280,
+    height: 720,
+  },
   "open3d-classroom-404": {
     src: "media/learning/open3d-classroom-404.webp",
     alt: "A first-person game view shows dark branching corridors with checkerboard flooring, ceiling lights and a wall-mounted floor map.",
@@ -4668,6 +4681,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
     width: 1280,
     height: 720,
   },
+  "open3d-avara": {
+    src: "media/learning/open3d-avara.webp",
+    alt: "Mech cockpit aiming at a purple enemy beside a gray door beneath a red and purple overhang.",
+    caption:
+      "Creator-published gameplay: A targeting encounter on the Thorn map in the modern Avara port. The frame comes from an upstream contributor’s recording.",
+    sourceUrl: "https://github.com/avaraline/Avara/issues/526",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-19",
+    originalImageUrl:
+      "https://github.com/user-attachments/assets/51c7dee3-2eaa-48ad-adf5-f3e915d2752f",
+    width: 1280,
+    height: 720,
+  },
   "open3d-balazar-brothers": {
     src: "media/learning/open3d-balazar-brothers.webp",
     alt: "Two characters stand on giant mushroom platforms near floating treasure chests and game counters.",
@@ -5509,6 +5535,19 @@ export const open3dRound5Media: Record<string, LearningMedia> = {
       "https://img.itch.zone/aW1hZ2UvMTM3MDc3Ni83OTgyMjk5LnBuZw==/original/vlOUBO.png",
     origin: "creator-screenshot",
     reviewedAt: "2026-11-18",
+    width: 1280,
+    height: 720,
+  },
+  "open3d-vane": {
+    src: "media/learning/open3d-vane.webp",
+    alt: "Four chicken-topped weather vanes stand on a floating grassy tile in Level 1.",
+    caption:
+      "Creator-published screenshot of the first puzzle, with its 1/1 counter and undo and reset controls.",
+    sourceUrl: "https://itch.io/t/530858/vane-a-simple-puzzle-game",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-20",
+    originalImageUrl:
+      "https://img.itch.zone/aW1nLzIzODQ5NjAucG5n/original/GSkNMc.png",
     width: 1280,
     height: 720,
   },
