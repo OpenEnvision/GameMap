@@ -1,10 +1,4 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useState,
-  type ReactNode,
-} from "react";
+import { useCallback, useContext, useState, type ReactNode } from "react";
 import {
   experimental_useSearch as useSearch,
   type UseSearchReturn,
@@ -12,8 +6,7 @@ import {
 import { useSearchContext } from "fumadocs-ui/contexts/search";
 import { dialogSearch } from "./content-search";
 import { useSiteI18n } from "./i18n";
-
-const State = createContext<UseSearchReturn | null>(null);
+import { SearchState } from "./search-state-context";
 
 // One query/result state serves the homepage form, header shortcut and dialog.
 // Keep it above Fumadocs' provider so its preloaded dialog and page children share it.
@@ -42,12 +35,14 @@ export function SearchStateProvider({ children }: { children: ReactNode }) {
   const data =
     search.data && settled?.locale === locale ? settled.data : undefined;
   return (
-    <State.Provider value={{ ...search, data }}>{children}</State.Provider>
+    <SearchState.Provider value={{ ...search, data }}>
+      {children}
+    </SearchState.Provider>
   );
 }
 
 export function useAtlasSearchState() {
-  const state = useContext(State);
+  const state = useContext(SearchState);
   if (!state) throw new Error("Atlas search requires SearchStateProvider");
   return state;
 }
