@@ -151,7 +151,7 @@ test("examples and test-library filters retain source details", async ({
     await page.locator(".gallery-stat-total dd").innerText(),
   );
   await expect(page.locator("#game-examples > .example-card")).toHaveCount(
-    Math.min(48, total),
+    Math.min(60, total),
   );
   await page.getByRole("button", { name: "2D", exact: true }).click();
   await expect(page).toHaveURL(/track=2d/);
