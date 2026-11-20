@@ -1463,11 +1463,16 @@ html[lang="zh-CN"] .gallery-section-head h2 {
   line-height: 1.5;
   text-wrap: pretty;
 }
-/* 4, 2 or 1 columns, so the eight collections always fill their rows. */
+/* Up to 4, 2 or 1 per row. The count differs by content source (4 from Git,
+   more from the database), so cards in a short last row widen to fill it. */
 .gallery-collections .community-collections {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  --per-row: 4;
+  display: flex;
+  flex-wrap: wrap;
   gap: 14px;
+}
+.gallery-collections .community-collections > .content-record {
+  flex: 1 1 calc((100% - (var(--per-row) - 1) * 14px) / var(--per-row));
 }
 .gallery-collections .content-record {
   --gp-hue: 27;
@@ -1654,7 +1659,7 @@ html[lang="zh-CN"] .gallery-section-head h2 {
     left: 18%;
   }
   .gallery-collections .community-collections {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    --per-row: 2;
   }
 }
 /* The dock only sticks where its controls fit on one row. */
@@ -1746,7 +1751,7 @@ html[lang="zh-CN"] .gallery-section-head h2 {
     padding: 0 14px;
   }
   .gallery-collections .community-collections {
-    grid-template-columns: minmax(0, 1fr);
+    --per-row: 1;
   }
   .gallery-section-head {
     grid-template-columns: minmax(0, 1fr);
