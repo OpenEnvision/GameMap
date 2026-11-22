@@ -167,8 +167,11 @@ jobs:
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
       - name: Commit CAS activation in Supabase publication ledger
-        if: ${{ secrets.CATALOG_PUBLISHER_DATABASE_URL != '' }}
         run: |
+          if [ -z "$CATALOG_PUBLISHER_DATABASE_URL" ]; then
+            echo "CATALOG_PUBLISHER_DATABASE_URL is not configured; skipping Supabase activation commit."
+            exit 0
+          fi
           mkdir -p .build/cloud-operator/retention
           printf '%s\n' "$OPERATOR_REALM_JSON" > .build/cloud-operator/realm.json
           printf '%s\n' "$OPERATOR_TARGET_JSON" > .build/cloud-operator/target.json
@@ -189,8 +192,11 @@ jobs:
           OPERATOR_REALM_JSON: ${{ secrets.CATALOG_RELEASE_REALM_JSON }}
           OPERATOR_TARGET_JSON: ${{ secrets.CATALOG_CLOUD_TARGET_JSON }}
       - name: Sync ratable catalog game index to community database (optional)
-        if: ${{ secrets.COMMUNITY_DATABASE_URL != '' }}
         run: |
+          if [ -z "$COMMUNITY_DATABASE_URL" ]; then
+            echo "COMMUNITY_DATABASE_URL is not configured; skipping community game index sync."
+            exit 0
+          fi
           npm run community:sync-games -- --site-dir .build/incoming-artifact/site
         env:
           NODE_ENV: production
