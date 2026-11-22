@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { ImagePlus, Send, X } from "lucide-react";
 import { Link, useSiteI18n } from "../lib/i18n";
-import { useCommunity } from "../lib/community";
+import { CommunityScreenshot, useCommunity } from "../lib/community";
 import { CommunityUnavailable } from "../components/community-unavailable";
 
 type Payload = {
@@ -299,8 +299,8 @@ export default function Submit() {
                   <div className="community-upload-previews">
                     {payload.screenshots.map((id) => (
                       <figure key={id}>
-                        <img
-                          src={`/community-media/${id}.webp`}
+                        <CommunityScreenshot
+                          id={id}
                           alt={t("Your submitted screenshot")}
                         />
                         <button

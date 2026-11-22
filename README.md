@@ -68,6 +68,6 @@ Browser play is optional: use `download` for author-published desktop builds or 
 
 ## Sources & reuse
 
-Original projects and media remain with their respective rights holders.
+Repository code and GameMap-authored documentation are licensed under the **MIT License** (`LICENSE`). Original projects, brand marks, and third-party media remain with their respective rights holders.
 
 The bundled level-design adaptation is **CC BY-NC-SA 4.0**, with noncommercial and share-alike conditions. Read its [attribution and license](docs/skills/level-design/LICENSE.md) before reuse.

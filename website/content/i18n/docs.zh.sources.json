@@ -119,12 +119,12 @@
       "translationHash": "b23bc9d482b88881f35c4698bebeb981699e37c4b652ccf676d1610abd0a5b20"
     },
     "overview": {
-      "sourceHash": "ffd76c8e27bfa5ccccfbb8b829beb1aa711252fe5be4a34cda2e56677a7af50c",
-      "translationHash": "a32bb29c0f15dc73892a9a84188b8bf5492da848a57003ff79d5a1eb6669f92d"
+      "sourceHash": "676b32d7be7c3f95d301ad188554bb633e258d9034b6d87d9c145da30fe6931d",
+      "translationHash": "fed40c11ff2d54fc01679942078ce118e744ae60979ce5f76c29c6ceb73564aa"
     },
     "reference/catalog": {
-      "sourceHash": "d48371654e1442de768436ec3704e0ea46a39c6ef085d71ae9280067db9899fb",
-      "translationHash": "e52fe9adb0de6c21e3102478df2fe6226e5d3d17efefd9a036edcc4f65e2018b"
+      "sourceHash": "b617304cea6fd91f49073f8876a1ac8e80ba429853e2e1311e3810829314d4ff",
+      "translationHash": "0e75a4774f2879f329b1ec477c2602385fecc0af8967d39b1bf29b1d2b3ad3bc"
     },
     "contributing": {
       "sourceHash": "782f85b715e425ad4dc90acfda0299728999f1323a9eeb8b7edb686a600de9b8",
@@ -135,12 +135,12 @@
       "translationHash": "b950494aabb4be7b9e8421f41166674b46ca47b27a4a96f62300bc184f80a588"
     },
     "reference/logo-sources": {
-      "sourceHash": "9ade27863ac14ca210d761d69a9b6d125d8ad8851f62d24239b5750e587ec1e0",
-      "translationHash": "bac1ad5f8a5d0bf591409f8aa74bdc5471bfdacf5fd65d54f25cef9f8ad174ff"
+      "sourceHash": "2da5a877360dd48f269a15b9fda86aca2217c83275098cac4eeee3bbb04fa9e6",
+      "translationHash": "5b21d1ed9ae1f7f1e309689a1b72152ed31ddb8686d4317bc90f2947a4d3d603"
     },
     "project/deployment": {
-      "sourceHash": "8f6c8ffcb7626d664f4488a50c4cb79d3d1801e401da53c3dbbf14c8e1205406",
-      "translationHash": "2ad18984d8b187c07fbb4d768fd547b2a69be4cbf4905b16067d4dc162de4421"
+      "sourceHash": "488e7a0259f4d0b50a997edae22b0c03c87adb9306bdd579376f0a35a05046ea",
+      "translationHash": "00c47190da0ed3c0a415065fb342e7e789ce6bde1c1bf4397773dd6b7d9199b2"
     },
     "project/content-model": {
       "sourceHash": "fd0122e5e66611a6d97120da36c96e55afbf08046df556d2ee819d33e0ac752e",
@@ -243,8 +243,8 @@
       "translationHash": "bac3ae9585d59196e4ad37509e0a7dbc8a6ce9c78fc69487a150ec294fa48f31"
     },
     "project/staging-readiness": {
-      "sourceHash": "65b7f62ddb7711333b65ea90bce01b424609843b38008c40912b6838c223fd3d",
-      "translationHash": "aec69a1872a0e9fcfd888e291392af5caaea0675ea2c3a036642329985f5fcc5"
+      "sourceHash": "9f62ce1fa2b794bcb2acbf66ac492c56ca3e56dd7d829d2a547ef3c9e2fe2cf4",
+      "translationHash": "e5c1b8e7b16e892e27533048a629ac2f57d4701e5fb8c542c62d61bc7645f4a8"
     }
   }
 }

@@ -8,14 +8,27 @@ import {
   useState,
   type ReactNode,
 } from "react";
-/** Community accounts, ratings, comments and submissions need the community API
- * (scripts/lib/community/server.mjs). Builds that are served together with that
- * API set VITE_GAMEMAP_COMMUNITY=1; plain static builds such as GitHub Pages do not.
- * When the variable is set, Vite inlines it in the client and prerender bundles;
- * otherwise this evaluates to false at runtime, as it does outside Vite (node:test
- * suites import app modules where import.meta.env is undefined). */
+import { createDirectCommunityClient } from "./community-direct";
+/** Community accounts, ratings, comments and submissions work either with the
+ * Node BFF (/api/community, VITE_GAMEMAP_COMMUNITY=1) or in BlogrXiv-style
+ * zero-server Supabase Direct Mode on GitHub Pages
+ * (VITE_GAMEMAP_COMMUNITY=1 + VITE_GAMEMAP_COMMUNITY_MODE=supabase-direct +
+ * VITE_SUPABASE_URL + VITE_SUPABASE_PUBLISHABLE_KEY). Plain static builds leave
+ * VITE_GAMEMAP_COMMUNITY unset so no community request is made. */
+export const defaultDirectSupabaseUrl =
+  "https://ckewjnufjwgwbcuapxiw.supabase.co";
+export const defaultDirectPublishableKey =
+  "sb_publishable_MhGapjdqxzzxgbWXyaUrRA_-x2CO2aC";
+export const communityDirectMode =
+  import.meta.env?.VITE_GAMEMAP_COMMUNITY === "1" &&
+  import.meta.env?.VITE_GAMEMAP_COMMUNITY_MODE === "supabase-direct";
 export const communityEnabled = import.meta.env?.VITE_GAMEMAP_COMMUNITY === "1";
-export type CommunityUser = { id: string; email: string; displayName: string };
+export type CommunityUser = {
+  id: string;
+  email: string;
+  displayName: string;
+  moderator?: boolean;
+};
 export type GameStats = {
   average: number;
   count: number;
@@ -46,6 +59,7 @@ type State = {
   settings: Settings;
   stats: Record<string, GameStats>;
   unavailable: boolean;
+  directMode: boolean;
   request: <T>(
     path: string,
     options?: { method?: string; body?: unknown; file?: File },
@@ -53,12 +67,36 @@ type State = {
   refreshSession: () => Promise<void>;
   loadStats: (keys: string[]) => void;
   updateStats: (key: string, stats: GameStats) => void;
+  mediaUrl: (id: string) => string;
+  resolveMediaUrl: (id: string) => Promise<string>;
+  startGitHubLogin?: (returnTo: string) => Promise<string>;
 };
 const Context = createContext<State | null>(null);
 export function useCommunity() {
   return useContext(Context);
 }
-/** Supplies community state only in builds served with the community API.
+export function CommunityScreenshot({ id, alt }: { id: string; alt: string }) {
+  const community = useCommunity();
+  const [src, setSrc] = useState<string>(() =>
+    community?.directMode ? "" : `/community-media/${id}.webp`,
+  );
+  useEffect(() => {
+    let cancelled = false;
+    if (!community?.directMode) {
+      setSrc(`/community-media/${id}.webp`);
+      return;
+    }
+    void community.resolveMediaUrl(id).then((url) => {
+      if (!cancelled) setSrc(url);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [community, id]);
+  if (!src) return null;
+  return <img src={src} alt={alt} />;
+}
+/** Supplies community state only in builds served with the community API or direct mode.
  * Elsewhere useCommunity() returns null, so community UI renders nothing and no
  * /api/community request is made. */
 export function CommunityProvider({ children }: { children: ReactNode }) {
@@ -81,11 +119,30 @@ function ActiveCommunityProvider({ children }: { children: ReactNode }) {
     loaded = useRef(new Set<string>()),
     scheduled = useRef(false),
     active = useRef(true);
+  const directClient = useMemo(
+    () =>
+      communityDirectMode
+        ? createDirectCommunityClient({
+            supabaseUrl: String(
+              import.meta.env?.VITE_SUPABASE_URL || defaultDirectSupabaseUrl,
+            ),
+            publishableKey: String(
+              import.meta.env?.VITE_SUPABASE_PUBLISHABLE_KEY ||
+                defaultDirectPublishableKey,
+            ),
+            basePath: String(import.meta.env?.BASE_URL || "/"),
+          })
+        : null,
+    [],
+  );
   const request = useCallback(
     async <T,>(
       path: string,
       options: { method?: string; body?: unknown; file?: File } = {},
     ): Promise<T> => {
+      if (directClient) {
+        return await directClient.request<T>(path, options);
+      }
       const response = await fetch("/api/community" + path, {
         method: options.method || "GET",
         credentials: "same-origin",
@@ -121,7 +178,21 @@ function ActiveCommunityProvider({ children }: { children: ReactNode }) {
       }
       return value as T;
     },
-    [],
+    [directClient],
+  );
+  const mediaUrl = useCallback(
+    (id: string) =>
+      directClient
+        ? directClient.publicMediaUrl(id)
+        : `/community-media/${id}.webp`,
+    [directClient],
+  );
+  const resolveMediaUrl = useCallback(
+    async (id: string) =>
+      directClient
+        ? await directClient.resolvePrivateMediaUrl(id)
+        : `/community-media/${id}.webp`,
+    [directClient],
   );
   const refreshSession = useCallback(async () => {
     try {
@@ -213,10 +284,14 @@ function ActiveCommunityProvider({ children }: { children: ReactNode }) {
       settings,
       stats,
       unavailable,
+      directMode: Boolean(directClient),
       request,
       refreshSession,
       loadStats,
       updateStats,
+      mediaUrl,
+      resolveMediaUrl,
+      startGitHubLogin: directClient?.startGitHubLogin,
     }),
     [
       user,
@@ -225,10 +300,13 @@ function ActiveCommunityProvider({ children }: { children: ReactNode }) {
       settings,
       stats,
       unavailable,
+      directClient,
       request,
       refreshSession,
       loadStats,
       updateStats,
+      mediaUrl,
+      resolveMediaUrl,
     ],
   );
   return <Context.Provider value={value}>{children}</Context.Provider>;

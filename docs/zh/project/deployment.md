@@ -105,6 +105,17 @@ MALLOC_ARENA_MAX=2 UV_THREADPOOL_SIZE=1 CATALOG_MEDIA_PROFILE=low-memory \
 
 此准备过程不会更改默认 Git 提供方或 `.github/workflows/deploy-pages.yml`，也不会创建资源、提交、推送或部署。
 
+## 云端平台运维
+
+仓库现已包含用于跨 GitHub Pages（独立预发布/生产发布仓库）、Supabase Cloud 及 TLS 反向代理后单实例持久卷 Node 主机运行 GameMap 的云端平台生产工具链：
+
+- **将本地已批准数据库记录同步到 Git：** `npm run local:export-git` 将已批准的数据库独有记录及已核实本地资产导出至 Git 源文件，使纯静态构建（`npm run build`）在不连接数据库的情况下保持内容完整。
+- **数据库初始化与最小权限审计：** 按顺序应用 `0001`–`0031` 迁移，使用 `npm run cloud:provision-sql` 生成专用 `NOINHERIT` 登录 SQL，通过 `npm run cloud:init-realm` 初始化不可变的非本地发布领域，并使用 `npm run cloud:verify-roles` 远程核实最小权限登录。Studio、社区服务端和云发布器在生产启动时也会强制执行 `assertLeastPrivilegeLogin()`。
+- **精确产物云端发布：** 参照 `config/deploy/cloud-target.example.json` 和 `.env.publisher.example` 准备私有目标描述文件，通过 `npm run cloud:claim-target` 认领目标，并使用 `npm run cloud:publish`、`npm run cloud:activate`、`npm run cloud:rollback` 与 `npm run cloud:recover` 提升已验证的发布产物。对于 GitHub Pages 提升，`.github/workflows/deploy-release-pages.yml` 在受保护的 GitHub Environment 中验证并部署预构建发布归档，不在部署步骤重新构建。
+- **独立社区 API 与反向代理：** 参照 `.env.community.example` 完成配置，使用 `npm run community:sync-games` 同步可评分游戏索引，并通过 `npm run community:start` 启动独立 API 服务（配合 `config/deploy/Caddyfile.example` 或 `config/deploy/nginx.conf.example` 使用 `COMMUNITY_TRUST_PROXY=1` 与 `CATALOG_TRUST_PROXY=1` 启用单跳 `X-Forwarded-For` 处理）。
+- **紧急撤回机制：** 通过 Studio（`/api/withdrawals`、`/api/withdrawals/lift`）或 `npm run cloud:withdraw` 记录或解除撤回，向 `npm run site:build` 传入 `--withdrawals POLICY_FILE` 以生成带 `noindex` 的静态墓碑 HTML 而不静默删除规范 URL，并在 `publication-server.mjs` 加载当前拒绝列表以在 Node 托管交付层即时返回 HTTP `410 Gone`。
+- **托管云配套备份与恢复探测：** 运行 `npm run cloud:backup`（基于 TLS `pg_dump` 并配套媒体、发布器状态与校验和）、`npm run cloud:backup-verify` 以及面向隔离临时数据库的 `npm run cloud:restore-probe`。
+
 ## GitHub Pages 设置
 
 仓库管理员、维护者，或拥有 Pages 管理权限的自定义角色必须：

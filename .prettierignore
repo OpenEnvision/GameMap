@@ -21,10 +21,12 @@ config/threejs-games-intake.json
 # Modules and settings written by scripts/import/.
 website/content/open3d-import.config.json
 website/content/i18n/
+website/src/data/approvedImported*.ts
 website/src/data/browserPortCollections.ts
 website/src/data/browserPortGames.ts
 website/src/data/itch3dGames.ts
 website/src/data/jamGameMedia.ts
 website/src/data/jamGames.ts
 website/src/data/open3d*Games.ts
+website/src/data/resourceIdentities.json
 website/src/data/resources.json

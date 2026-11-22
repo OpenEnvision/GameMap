@@ -1089,5 +1089,20 @@
   "Skip to ratings": "前往评分讨论",
   "{count} steps": "{count} 个步骤",
   "Keep exploring": "继续探索",
-  "Close preview": "关闭预览"
+  "Close preview": "关闭预览",
+  "Catalog game index synced ({count} games)": "目录可评分游戏索引已同步（{count} 款游戏）",
+  "Sync catalog games": "同步目录游戏索引",
+  "Pending game submissions": "待审核作品投稿",
+  "No pending game submissions.": "暂无待审核作品投稿。",
+  "Moderation note": "审核备注",
+  "Provide a review note": "请填写审核意见",
+  "Submission approved": "投稿已批准发布",
+  "Approve": "批准发布",
+  "Request changes": "退回修改",
+  "Open comment reports": "待处理评论举报",
+  "No open comment reports.": "暂无待处理评论举报。",
+  "Comment hidden": "评论已隐藏",
+  "Hide comment": "隐藏评论",
+  "Report dismissed": "举报已驳回",
+  "Keep comment": "保留评论"
 }

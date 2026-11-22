@@ -35,6 +35,7 @@ export function useCommunityWorks() {
 }
 export function CommunityWorkCard({ work }: { work: CommunityWork }) {
   const { t } = useSiteI18n(),
+    community = useCommunity(),
     first = work.screenshots[0];
   return (
     <GameCard
@@ -48,7 +49,8 @@ export function CommunityWorkCard({ work }: { work: CommunityWork }) {
       media={
         first
           ? {
-              src: `/community-media/${first}.webp`,
+              src:
+                community?.mediaUrl(first) || `/community-media/${first}.webp`,
               alt: `${work.title} — ${t("author-submitted screenshot")}`,
               width: work.preview?.width || 1280,
               height: work.preview?.height || 720,

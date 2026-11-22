@@ -69,6 +69,12 @@ lerna-debug.log*
 !.env.*.example
 !.env.*.sample
 !.env.*.template
+config/staging.json
+config/production.json
+config/deploy/*.json
+!config/deploy/*.example.json
+config/deploy/Caddyfile
+config/deploy/nginx.conf
 
 # Temporary files, editor backups, and merge leftovers.
 /tmp/

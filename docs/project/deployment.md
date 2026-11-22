@@ -105,6 +105,17 @@ See the [staging-readiness review](staging-readiness.md) before connecting a clo
 
 This preparation does not change the default Git provider or `.github/workflows/deploy-pages.yml`, create resources, commit, push or deploy.
 
+## Cloud platform operations
+
+The repository includes the production cloud platform tooling for running GameMap across GitHub Pages (independent staging/production release repository), Supabase Cloud, and a single-instance persistent-volume Node host behind a TLS reverse proxy:
+
+- **Sync approved local database records to Git:** `npm run local:export-git` exports approved database-only records and verified local assets into checked-in Git sources so pure static builds (`npm run build`) stay complete without database access.
+- **Database provisioning and role audit:** apply sequential migrations `0001`–`0031`, generate dedicated `NOINHERIT` login SQL with `npm run cloud:provision-sql`, initialize the immutable non-local release realm via `npm run cloud:init-realm`, and verify least-privilege logins remotely with `npm run cloud:verify-roles`. Studio, Community Server, and Cloud Publisher also enforce `assertLeastPrivilegeLogin()` at startup.
+- **Exact-artifact cloud publication:** configure a private target descriptor from `config/deploy/cloud-target.example.json` and `.env.publisher.example`, claim the target via `npm run cloud:claim-target`, and promote verified release artifacts using `npm run cloud:publish`, `npm run cloud:activate`, `npm run cloud:rollback`, and `npm run cloud:recover`. For GitHub Pages promotion, `.github/workflows/deploy-release-pages.yml` verifies and deploys a pre-built release archive inside a protected GitHub Environment without rebuilding in the deploy step.
+- **Standalone Community API and reverse proxy:** configure `.env.community.example`, synchronize the ratable game index with `npm run community:sync-games`, and start the standalone API service via `npm run community:start` (`COMMUNITY_TRUST_PROXY=1` and `CATALOG_TRUST_PROXY=1` enable single-hop `X-Forwarded-For` handling behind `config/deploy/Caddyfile.example` or `config/deploy/nginx.conf.example`).
+- **Emergency withdrawals:** record or lift withdrawals through Studio (`/api/withdrawals`, `/api/withdrawals/lift`) or `npm run cloud:withdraw`, pass `--withdrawals POLICY_FILE` to `npm run site:build` to emit `noindex` static tombstone HTML without silently dropping canonical URLs, and load the active denylist in `publication-server.mjs` for immediate HTTP `410 Gone` responses on Node-hosted delivery.
+- **Managed-cloud paired backups and restore probes:** run `npm run cloud:backup` (TLS `pg_dump` paired with media, publisher state, and checksums), `npm run cloud:backup-verify`, and `npm run cloud:restore-probe` against an isolated scratch database.
+
 ## GitHub Pages setup
 
 A repository administrator, maintainer, or custom role with Pages management permission must:

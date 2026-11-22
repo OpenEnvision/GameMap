@@ -68,6 +68,6 @@ npm run test:examples:import
 
 ## 来源与复用
 
-原始项目和媒体归各自权利人所有。
+仓库代码及 GameMap 自编文档采用 **MIT 许可证**（`LICENSE`）。原始项目、品牌标志与第三方媒体归各自权利人所有。
 
 随附的关卡设计改编内容采用  **CC BY-NC-SA 4.0** ，带有非商业使用和相同方式共享条件。复用前请阅读其[署名与许可证](skills/level-design/LICENSE.md)。

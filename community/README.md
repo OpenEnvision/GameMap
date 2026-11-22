@@ -102,6 +102,29 @@ npm run community:dev
 
 This writes `.build/catalog-local/community-dev.json` (private, origin `http://127.0.0.1:5174`) and indexes every game the examples page lists. Working-catalog games get `dev:`-prefixed rows, so ratings and comments made while editing stay out of the published preview's records; approved submissions remain shared. The dev server mounts `/api/community`, `/auth/callback` and `/community-media/`, and `npm run dev` then turns on the account links and rating summaries. Sign up at `/account/` and confirm the address in Mailpit at `http://127.0.0.1:54324`; `http://127.0.0.1:5174/auth/callback` is already in the local redirect allowlist. Without `community-dev.json` the dev server stays a plain static preview.
 
+## BlogrXiv-style zero-server hybrid mode (GitHub Pages + Supabase Free Tier, 0 VPS)
+
+If you want to host the entire public site and community platform (email/GitHub sign-in, 5-star ratings, comments, reports, screenshot submissions, and browser moderation) on **GitHub Pages + Supabase Cloud Free Tier** without provisioning a Linux VPS, Caddy reverse proxy, or persistent disk:
+
+1. Apply standard migrations `0001`–`0031` to your Supabase project, then generate and run the opt-in direct-mode SQL in the **Supabase SQL Editor**:
+
+   ```sh
+   npm run community:direct-sql -- \
+     --admin-email your-admin@example.com \
+     --with-games \
+     --out .build/community-direct-setup.sql
+   ```
+
+   This script executes [`supabase/direct-mode/enable-supabase-direct.sql`](../supabase/direct-mode/enable-supabase-direct.sql) to configure the `community-media-private` and `community-media-public` Supabase Storage buckets and RLS policies, enables verified-object upload registration (`public.community_direct_register_upload`), grants your admin account BlogrXiv-style `app_metadata.role = 'admin'` and moderator access, and seeds all 1,400+ ratable catalog games into `community.games`.
+2. In your GitHub repository, open **Settings → Secrets and variables → Actions → Variables** and add two public Repository Variables:
+   - `GAMEMAP_SUPABASE_URL` (e.g. `https://<project-ref>.supabase.co`)
+   - `GAMEMAP_SUPABASE_PUBLISHABLE_KEY` (`sb_publishable_...` or `anon` key; never put a `service_role` or database password here)
+3. In **Supabase Dashboard → Authentication → URL Configuration**, set `Site URL` to `https://<owner>.github.io/<repo>/` and add `https://<owner>.github.io/<repo>/account/` to **Redirect URLs**.
+4. Run the **Deploy GameMap + Supabase Direct Community to GitHub Pages** workflow ([`.github/workflows/deploy-pages-community.yml`](../.github/workflows/deploy-pages-community.yml)).
+5. Sign in at `/account/` with your admin email to review pending game submissions (which automatically promotes approved WebP screenshots from `community-media-private` to `community-media-public`), handle comment reports, or click **Sync catalog games** in the browser after catalog updates.
+
 ## Production boundaries
 
-Local verification is not a production launch. Real use still requires a separate production instance and realm, an HTTPS same-origin API proxy, a mail service that actually delivers, a production GitHub callback, persistent media storage with backups, and anti-abuse measures with operational moderation. Uploading only the static `dist/`, or deploying only the `supabase/` directory, cannot run the full community.
+Local verification is not a production launch. The repository now ships the standalone production community API entrypoint (`npm run community:start` / `scripts/platform/community-server.mjs`), the game-index synchronization command (`npm run community:sync-games`), startup least-privilege database role verification (`assertLeastPrivilegeLogin`), single-hop `X-Forwarded-For` reverse-proxy support (`COMMUNITY_TRUST_PROXY=1`), and deployment templates (`.env.community.example`, `config/deploy/Caddyfile.example`, `config/deploy/nginx.conf.example`).
+
+Real public operation still requires provisioning a separate production Supabase project and release realm, configuring an HTTPS same-origin reverse proxy with valid certificates, enabling a real mail service and production GitHub OAuth callback, attaching persistent media storage with paired cloud backups (`npm run cloud:backup` / `npm run cloud:restore-probe`), and completing live anti-abuse and moderation acceptance. Uploading only the static `dist/`, or deploying only the `supabase/` directory, cannot run the full community.

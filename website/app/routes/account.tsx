@@ -1,9 +1,354 @@
-import { useState } from "react";
-import { GitBranch, KeyRound, Mail, UserRound } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
+import {
+  GitBranch,
+  KeyRound,
+  Mail,
+  ShieldCheck,
+  UserRound,
+} from "lucide-react";
 import { Link, useSiteI18n } from "../lib/i18n";
 import { useClientQuery } from "../lib/client-query";
-import { useCommunity } from "../lib/community";
+import {
+  CommunityScreenshot,
+  useCommunity,
+  type CommunityWork,
+} from "../lib/community";
 import { CommunityUnavailable } from "../components/community-unavailable";
+
+type ModerationQueue = {
+  submissions: Array<{
+    id: string;
+    revision: number;
+    payload: CommunityWork & { screenshots: string[] };
+    author: string;
+    createdAt: string;
+  }>;
+  reports: Array<{
+    id: string;
+    commentId: string;
+    body: string;
+    reason: string;
+    gameKey: string;
+    createdAt: string;
+  }>;
+  published: Array<{
+    id: string;
+    title: string;
+    author: string;
+  }>;
+};
+
+function DirectModerationPanel() {
+  const community = useCommunity(),
+    { t } = useSiteI18n();
+  const [queue, setQueue] = useState<ModerationQueue | null>(null),
+    [notes, setNotes] = useState<Record<string, string>>({}),
+    [busy, setBusy] = useState(false),
+    [error, setError] = useState(""),
+    [notice, setNotice] = useState("");
+  const load = useCallback(async () => {
+    if (!community?.user?.moderator) return;
+    try {
+      setQueue(await community.request<ModerationQueue>("/moderation"));
+      setError("");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Request failed");
+    }
+  }, [community]);
+  useEffect(() => {
+    void load();
+  }, [load]);
+  if (!community?.user?.moderator) return null;
+  const run = async (work: () => Promise<void>) => {
+    setBusy(true);
+    setError("");
+    setNotice("");
+    try {
+      await work();
+      await load();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Request failed");
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <section
+      className="community-moderation-panel"
+      aria-label={t("Moderator review")}
+    >
+      <div className="community-section-heading">
+        <h2>
+          <ShieldCheck size={18} /> {t("Moderator review")}
+        </h2>
+        <div className="community-account-actions">
+          <button
+            type="button"
+            className="button button-secondary"
+            disabled={busy}
+            onClick={() =>
+              void run(async () => {
+                const res = await community.request<{ synced: number }>(
+                  "/moderation/sync-games",
+                  { method: "POST", body: {} },
+                );
+                setNotice(
+                  t("Catalog game index synced ({count} games)", {
+                    count: res.synced,
+                  }),
+                );
+              })
+            }
+          >
+            {t("Sync catalog games")}
+          </button>
+          <button
+            type="button"
+            className="button button-secondary"
+            disabled={busy}
+            onClick={() => void load()}
+          >
+            {t("Refresh")}
+          </button>
+        </div>
+      </div>
+      {error && (
+        <p className="community-error" role="alert">
+          {t(error)}
+        </p>
+      )}
+      {notice && (
+        <p className="community-notice" role="status">
+          {notice}
+        </p>
+      )}
+      {queue && (
+        <>
+          <h3>
+            {t("Pending game submissions")} ({queue.submissions.length})
+          </h3>
+          {!queue.submissions.length && (
+            <p className="community-empty">
+              {t("No pending game submissions.")}
+            </p>
+          )}
+          {queue.submissions.map((item) => {
+            const noteKey = `sub:${item.id}:${item.revision}`;
+            const noteValue = notes[noteKey] || "";
+            return (
+              <article key={noteKey} className="community-moderation-item">
+                <h4>
+                  {item.payload.title} · {item.author}
+                </h4>
+                <p>{item.payload.description}</p>
+                <p>
+                  <a href={item.payload.url} target="_blank" rel="noreferrer">
+                    {item.payload.url}
+                  </a>
+                </p>
+                <div className="community-upload-previews">
+                  {(item.payload.screenshots || []).map((sid) => (
+                    <figure key={sid}>
+                      <CommunityScreenshot
+                        id={sid}
+                        alt={t("Your submitted screenshot")}
+                      />
+                    </figure>
+                  ))}
+                </div>
+                <label>
+                  {t("Moderation note")}
+                  <input
+                    value={noteValue}
+                    onChange={(event) =>
+                      setNotes((old) => ({
+                        ...old,
+                        [noteKey]: event.target.value,
+                      }))
+                    }
+                    placeholder={t("Provide a review note")}
+                  />
+                </label>
+                <div className="community-account-actions">
+                  <button
+                    type="button"
+                    className="button button-primary"
+                    disabled={busy || !noteValue.trim()}
+                    onClick={() =>
+                      void run(async () => {
+                        await community.request("/moderation/review", {
+                          method: "POST",
+                          body: {
+                            id: item.id,
+                            revision: item.revision,
+                            approve: true,
+                            note: noteValue.trim(),
+                            screenshots: item.payload.screenshots || [],
+                          },
+                        });
+                        setNotice(t("Submission approved"));
+                      })
+                    }
+                  >
+                    {t("Approve")}
+                  </button>
+                  <button
+                    type="button"
+                    className="button button-secondary"
+                    disabled={busy || !noteValue.trim()}
+                    onClick={() =>
+                      void run(async () => {
+                        await community.request("/moderation/review", {
+                          method: "POST",
+                          body: {
+                            id: item.id,
+                            revision: item.revision,
+                            approve: false,
+                            note: noteValue.trim(),
+                          },
+                        });
+                        setNotice(t("Changes requested"));
+                      })
+                    }
+                  >
+                    {t("Request changes")}
+                  </button>
+                </div>
+              </article>
+            );
+          })}
+          <h3>
+            {t("Open comment reports")} ({queue.reports.length})
+          </h3>
+          {!queue.reports.length && (
+            <p className="community-empty">{t("No open comment reports.")}</p>
+          )}
+          {queue.reports.map((rep) => {
+            const noteKey = `rep:${rep.id}`;
+            const noteValue = notes[noteKey] || "";
+            return (
+              <article key={noteKey} className="community-moderation-item">
+                <p>
+                  <strong>{rep.gameKey}</strong>: {rep.body}
+                </p>
+                <p>
+                  {t("Reason for reporting")}: {rep.reason}
+                </p>
+                <label>
+                  {t("Moderation note")}
+                  <input
+                    value={noteValue}
+                    onChange={(event) =>
+                      setNotes((old) => ({
+                        ...old,
+                        [noteKey]: event.target.value,
+                      }))
+                    }
+                    placeholder={t("Provide a review note")}
+                  />
+                </label>
+                <div className="community-account-actions">
+                  <button
+                    type="button"
+                    className="button button-primary"
+                    disabled={busy || !noteValue.trim()}
+                    onClick={() =>
+                      void run(async () => {
+                        await community.request("/moderation/report", {
+                          method: "POST",
+                          body: {
+                            id: rep.id,
+                            hide: true,
+                            note: noteValue.trim(),
+                          },
+                        });
+                        setNotice(t("Comment hidden"));
+                      })
+                    }
+                  >
+                    {t("Hide comment")}
+                  </button>
+                  <button
+                    type="button"
+                    className="button button-secondary"
+                    disabled={busy || !noteValue.trim()}
+                    onClick={() =>
+                      void run(async () => {
+                        await community.request("/moderation/report", {
+                          method: "POST",
+                          body: {
+                            id: rep.id,
+                            hide: false,
+                            note: noteValue.trim(),
+                          },
+                        });
+                        setNotice(t("Report dismissed"));
+                      })
+                    }
+                  >
+                    {t("Keep comment")}
+                  </button>
+                </div>
+              </article>
+            );
+          })}
+          {queue.published.length > 0 && (
+            <>
+              <h3>
+                {t("Published")} ({queue.published.length})
+              </h3>
+              {queue.published.map((work) => {
+                const noteKey = `pub:${work.id}`;
+                const noteValue = notes[noteKey] || "";
+                return (
+                  <article key={noteKey} className="community-moderation-item">
+                    <h4>
+                      {work.title} · {work.author}
+                    </h4>
+                    <label>
+                      {t("Moderation note")}
+                      <input
+                        value={noteValue}
+                        onChange={(event) =>
+                          setNotes((old) => ({
+                            ...old,
+                            [noteKey]: event.target.value,
+                          }))
+                        }
+                        placeholder={t("Provide a review note")}
+                      />
+                    </label>
+                    <div className="community-account-actions">
+                      <button
+                        type="button"
+                        className="button button-secondary"
+                        disabled={busy || !noteValue.trim()}
+                        onClick={() =>
+                          void run(async () => {
+                            await community.request("/moderation/unpublish", {
+                              method: "POST",
+                              body: {
+                                id: work.id,
+                                note: noteValue.trim(),
+                              },
+                            });
+                            setNotice(t("Withdrawn"));
+                          })
+                        }
+                      >
+                        {t("Withdraw")}
+                      </button>
+                    </div>
+                  </article>
+                );
+              })}
+            </>
+          )}
+        </>
+      )}
+    </section>
+  );
+}
 
 export default function Account() {
   const community = useCommunity(),
@@ -153,6 +498,7 @@ export default function Account() {
                   "Your email is private. Other players see only your display name.",
                 )}
               </p>
+              <DirectModerationPanel />
             </>
           ) : (
             <>
@@ -314,13 +660,29 @@ export default function Account() {
                 <span>{t("or")}</span>
               </div>
               {community.settings.github ? (
-                <a
-                  className="button button-secondary community-github"
-                  href={`/api/community/auth/github?returnTo=${encodeURIComponent(returnTo)}`}
-                >
-                  <GitBranch size={17} />
-                  {t("Continue with GitHub")}
-                </a>
+                community.startGitHubLogin ? (
+                  <button
+                    type="button"
+                    className="button button-secondary community-github"
+                    disabled={busy}
+                    onClick={() =>
+                      void action(async () => {
+                        await community.startGitHubLogin!(returnTo);
+                      })
+                    }
+                  >
+                    <GitBranch size={17} />
+                    {t("Continue with GitHub")}
+                  </button>
+                ) : (
+                  <a
+                    className="button button-secondary community-github"
+                    href={`/api/community/auth/github?returnTo=${encodeURIComponent(returnTo)}`}
+                  >
+                    <GitBranch size={17} />
+                    {t("Continue with GitHub")}
+                  </a>
+                )
               ) : (
                 <>
                   <button
