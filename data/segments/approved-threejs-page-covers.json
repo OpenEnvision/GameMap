@@ -1,0 +1,1039 @@
+{
+  "threejs-game:3d-platformer-dan": {
+    "alt": "Public project page for 3D Platformer Game (Dan Art Projects); not a gameplay screenshot.",
+    "bytes": 29386,
+    "caption": "Captured project page; not a gameplay screenshot.",
+    "capturedAt": "2026-10-24T20:28:49.042Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "project-page-capture",
+    "original": {
+      "bytes": 101817,
+      "height": 900,
+      "sha256": "dd72edfe2ea8b6aa345ac802452eb00218b5fae7c51400a52f4f626efd54ebd8",
+      "src": "media/page-covers/originals/3d-platformer-dan-49f908a905-dd72edfe2ea8.png",
+      "width": 1600
+    },
+    "requestedUrl": "https://github.com/Dan-Art-Projects/3d-platformer-three",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "b8c33109090dcd95e692dc38265925131ae18b02e0af72e347f6f6ac02eb2639",
+    "sourceKind": "repository-page",
+    "sourceUrl": "https://github.com/Dan-Art-Projects/3d-platformer-three",
+    "src": "media/page-covers/3d-platformer-dan-49f908a905-b8c33109090d.webp",
+    "width": 1280
+  },
+  "threejs-game:ashen-ring": {
+    "alt": "Public project page for Ashen Ring; not a gameplay screenshot.",
+    "bytes": 14170,
+    "caption": "Captured project page; not a gameplay screenshot.",
+    "capturedAt": "2026-10-24T20:42:59.388Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "project-page-capture",
+    "original": {
+      "bytes": 431967,
+      "height": 900,
+      "sha256": "139b388bf1c14a9baf07975aa0a974acea58557c723035cd15d64150af535e3f",
+      "src": "media/page-covers/originals/ashen-ring-770b7ca27b-139b388bf1c1.png",
+      "width": 1600
+    },
+    "requestedUrl": "https://z-biz-game.github.io/z-biz-game-ashen-ring-cos/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "c09a5b7830fc78655918ad6eb1242081bfad4a7bac934d41cab84a1eca8fb1fc",
+    "sourceKind": "author-homepage",
+    "sourceUrl": "https://z-biz-game.github.io/z-biz-game-ashen-ring-cos/",
+    "src": "media/page-covers/ashen-ring-770b7ca27b-c09a5b7830fc.webp",
+    "width": 1280
+  },
+  "threejs-game:astray": {
+    "alt": "GameMap catalog record for Astray; not an upstream page or gameplay screenshot.",
+    "bytes": 17698,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:31.052Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 61627,
+      "height": 900,
+      "sha256": "0110f32e8d1b0b771e59dc6f45cbb1e9e2483008467c3407d489fb5023968054",
+      "src": "media/page-covers/originals/astray-ec17f55052-0110f32e8d1b.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/astray/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "66a155d4a75dab12c6f341c1b8c9cafdc33e6e2ae042368a6a45bceda1773012",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/astray/",
+      "recordRevision": "8efb3484-ea12-81a2-b49f-aabb9bb6657f",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/astray/",
+    "src": "media/page-covers/astray-ec17f55052-66a155d4a75d.webp",
+    "width": 1280
+  },
+  "threejs-game:carom-pool": {
+    "alt": "GameMap catalog record for Carom-Pool; not an upstream page or gameplay screenshot.",
+    "bytes": 25032,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:05:18.417Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 80589,
+      "height": 900,
+      "sha256": "18bacaedde211fb3ebcbf4c130c1f5cf3611e520c8050d269ce433034f7dce27",
+      "src": "media/page-covers/originals/carom-pool-b076f68750-18bacaedde21.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/carom-pool/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "efa6064c74062e1e49c734702bd20e358448df6cda8f7c37489cdfb22ebc5105",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/carom-pool/",
+      "recordRevision": "251bcb58-9174-4093-9102-b8191ff7655f",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/carom-pool/",
+    "src": "media/page-covers/carom-pool-b076f68750-efa6064c7406.webp",
+    "width": 1280
+  },
+  "threejs-game:chess-3d-terminats": {
+    "alt": "GameMap catalog record for Chess-3D (Terminats); not an upstream page or gameplay screenshot.",
+    "bytes": 22274,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:30.546Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 77818,
+      "height": 900,
+      "sha256": "ec769112f416f5d614366b6bdfadcc44b9c339f15699645cc2cd438fc4e75d51",
+      "src": "media/page-covers/originals/chess-3d-terminats-6623de3092-ec769112f416.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/chess-3d-terminats/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "7b2b0ea3660a1e1f23bd7cac32856af40fb295fd678d89a6f7e32c73cbbc1650",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/chess-3d-terminats/",
+      "recordRevision": "5166fc6f-c30e-84cd-8cd8-f21a3e177c5a",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/chess-3d-terminats/",
+    "src": "media/page-covers/chess-3d-terminats-6623de3092-7b2b0ea3660a.webp",
+    "width": 1280
+  },
+  "threejs-game:cinderbanner": {
+    "alt": "GameMap catalog record for Cinderbanner; not an upstream page or gameplay screenshot.",
+    "bytes": 25758,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:31.882Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 82100,
+      "height": 900,
+      "sha256": "7a0ac14438386debdaadb7bfbdb9272334dadd60145dedb88be7868c20024a41",
+      "src": "media/page-covers/originals/cinderbanner-c5d51ce996-7a0ac1443838.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/cinderbanner/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "bec3517ad9890f6f49d54465f42afc9c556d99afc95e74829aeaed51850a9c7e",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/cinderbanner/",
+      "recordRevision": "98795079-9fb6-41ec-b366-c8a6ce57c769",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/cinderbanner/",
+    "src": "media/page-covers/cinderbanner-c5d51ce996-bec3517ad989.webp",
+    "width": 1280
+  },
+  "threejs-game:dart-room": {
+    "alt": "GameMap catalog record for Dart Room; not an upstream page or gameplay screenshot.",
+    "bytes": 25146,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:10:25.533Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 80957,
+      "height": 900,
+      "sha256": "24f3b9163180b49acdff515db5f657e35a9e4ddf967547032560eccb9e15adaf",
+      "src": "media/page-covers/originals/dart-room-128ba90a7a-24f3b9163180.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/dart-room/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "808d3b8d52e80bea3608e267bd526b03d363c056d9b5cf880ab3fb0c6d1ccce3",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/dart-room/",
+      "recordRevision": "beaf415f-4fa6-44de-93b3-f0df7ed08971",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/dart-room/",
+    "src": "media/page-covers/dart-room-128ba90a7a-808d3b8d52e8.webp",
+    "width": 1280
+  },
+  "threejs-game:drakonas": {
+    "alt": "GameMap catalog record for Drakonas; not an upstream page or gameplay screenshot.",
+    "bytes": 20460,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:30.747Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 69107,
+      "height": 900,
+      "sha256": "510c23991550fa4471de529d973b63a0c2d09ead0f1c2b8ab85c05566ec510ea",
+      "src": "media/page-covers/originals/drakonas-b5eb3349d3-510c23991550.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/drakonas/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "5c1e93a10f45ab5317ff44023351ae205af611d729b55458fbff473feeac8d84",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/drakonas/",
+      "recordRevision": "1dd1497c-308a-87e7-99cd-63570b2ee32a",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/drakonas/",
+    "src": "media/page-covers/drakonas-b5eb3349d3-5c1e93a10f45.webp",
+    "width": 1280
+  },
+  "threejs-game:eight-ball-sk4rkr0w": {
+    "alt": "GameMap catalog record for 8ball-threejs-game; not an upstream page or gameplay screenshot.",
+    "bytes": 26100,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:31.251Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 84910,
+      "height": 900,
+      "sha256": "d92608dcd534da4b8655189d63f1206014869250166f4bd85b94c4cfca8ea816",
+      "src": "media/page-covers/originals/eight-ball-sk4rkr0w-ffa5331986-d92608dcd534.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/eight-ball-sk4rkr0w/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "6088b8a1287a0505c6a148e5d1d67bd274d94745dbf141771f182370efeaf979",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/eight-ball-sk4rkr0w/",
+      "recordRevision": "fc0dbe1c-0cfc-494a-b88a-d3829fb17980",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/eight-ball-sk4rkr0w/",
+    "src": "media/page-covers/eight-ball-sk4rkr0w-ffa5331986-6088b8a1287a.webp",
+    "width": 1280
+  },
+  "threejs-game:firn": {
+    "alt": "GameMap catalog record for Firn; not an upstream page or gameplay screenshot.",
+    "bytes": 26144,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:30.749Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 80959,
+      "height": 900,
+      "sha256": "aa56a2c96d97c5cdd103b90159da9d227a982ef7343546f60220a73252c5b5eb",
+      "src": "media/page-covers/originals/firn-d18addead0-aa56a2c96d97.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/firn/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "ad62582721661847ada459e7573cc7c0e742ad35004f71e2b87a29ced847e44a",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/firn/",
+      "recordRevision": "f97c1013-4154-47cf-bced-a0b45bf15d1f",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/firn/",
+    "src": "media/page-covers/firn-d18addead0-ad6258272166.webp",
+    "width": 1280
+  },
+  "threejs-game:harvest": {
+    "alt": "GameMap catalog record for Harvest; not an upstream page or gameplay screenshot.",
+    "bytes": 18558,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:25.865Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 65312,
+      "height": 900,
+      "sha256": "45a7940be94007cda567fe902ff31151e655acdc2cc6e7be4d482c335bd9efec",
+      "src": "media/page-covers/originals/harvest-ebaf95e04f-45a7940be940.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/harvest/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "450e25252ead5cdcc9391ac6541c8036f40a7010a7a46fb90476c9c0af1ce9fb",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/harvest/",
+      "recordRevision": "71bdda67-66b1-8d52-9d6e-f36b7cfaba9a",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/harvest/",
+    "src": "media/page-covers/harvest-ebaf95e04f-450e25252ead.webp",
+    "width": 1280
+  },
+  "threejs-game:in-the-dark-ld29": {
+    "alt": "Public project page for In The Dark — LD29; not a gameplay screenshot.",
+    "bytes": 41018,
+    "caption": "Captured project page; not a gameplay screenshot.",
+    "capturedAt": "2026-10-24T20:43:53.464Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "project-page-capture",
+    "original": {
+      "bytes": 95062,
+      "height": 900,
+      "sha256": "9632db57da426d1abab73059a50460fef8d873aafd8611571742ce9dc49c188f",
+      "src": "media/page-covers/originals/in-the-dark-ld29-3dc5baddad-9632db57da42.png",
+      "width": 1600
+    },
+    "requestedUrl": "https://catlinman.github.io/in-the-dark/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "cf219ce6fb23f89b93d0be1e9a6eb5e0d8d90e4bfe9db6219193cd0245ab4f06",
+    "sourceKind": "author-homepage",
+    "sourceUrl": "https://catlinman.github.io/in-the-dark/",
+    "src": "media/page-covers/in-the-dark-ld29-3dc5baddad-cf219ce6fb23.webp",
+    "width": 1280
+  },
+  "threejs-game:island-escape-lost-treasure": {
+    "alt": "GameMap catalog record for Island Escape 3D — The Lost Treasure; not an upstream page or gameplay screenshot.",
+    "bytes": 29434,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:32.077Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 94547,
+      "height": 900,
+      "sha256": "e3f158e3d0b8f61ff840627c2fa86d4ec801d7dd7d3130a58c6d16d1138bcfbf",
+      "src": "media/page-covers/originals/island-escape-lost-treasure-0f6d4da29a-e3f158e3d0b8.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/island-escape-lost-treasure/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "eeb00edcc3bcb0efe5314f72396e21b0ad9406788162ff0ac3007b58aeae959b",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/island-escape-lost-treasure/",
+      "recordRevision": "d69b49b5-010a-4b37-971f-348832184e0c",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/island-escape-lost-treasure/",
+    "src": "media/page-covers/island-escape-lost-treasure-0f6d4da29a-eeb00edcc3bc.webp",
+    "width": 1280
+  },
+  "threejs-game:island-survival": {
+    "alt": "GameMap catalog record for Island Survival; not an upstream page or gameplay screenshot.",
+    "bytes": 19624,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:30.950Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 68196,
+      "height": 900,
+      "sha256": "7b6a839f6f4c8defcec5746e8bcda0af549f536e891fe044e787608bb960ae7f",
+      "src": "media/page-covers/originals/island-survival-60a245a8e2-7b6a839f6f4c.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/island-survival/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "f20ade671eaa334461eae302537a7d578e0f24b293a178c84330d32872829973",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/island-survival/",
+      "recordRevision": "ee222d68-f1df-8179-89f4-4b3113efd911",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/island-survival/",
+    "src": "media/page-covers/island-survival-60a245a8e2-f20ade671eaa.webp",
+    "width": 1280
+  },
+  "threejs-game:junkyard-bandit": {
+    "alt": "GameMap catalog record for Junkyard Bandit; not an upstream page or gameplay screenshot.",
+    "bytes": 24984,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:24.736Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 81028,
+      "height": 900,
+      "sha256": "2699c749bcb2ac00c10e008f76995d128a7f12dd97b02870e0e225385d7fcb37",
+      "src": "media/page-covers/originals/junkyard-bandit-7682b4c6c6-2699c749bcb2.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/junkyard-bandit/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "51c1ce899f9e64175b71b278252d5d6fc83d82d6bc895a8fb582c6b1f20e9eeb",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/junkyard-bandit/",
+      "recordRevision": "baceb6e2-1884-4e4f-a960-d6b6699fc77a",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/junkyard-bandit/",
+    "src": "media/page-covers/junkyard-bandit-7682b4c6c6-51c1ce899f9e.webp",
+    "width": 1280
+  },
+  "threejs-game:liminality": {
+    "alt": "GameMap catalog record for Liminality; not an upstream page or gameplay screenshot.",
+    "bytes": 19872,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:25.252Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 67735,
+      "height": 900,
+      "sha256": "89bdf14c2f2ebb71ab7f5435e726f4e1d021be7b1136cb09162e95b3db4479dd",
+      "src": "media/page-covers/originals/liminality-650b1fbedf-89bdf14c2f2e.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/liminality/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "9632ebb243332207c1e8bd9be80e0dbbabb3bde9700cb6c766b8567cd9c4d087",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/liminality/",
+      "recordRevision": "7380cd91-e962-8074-b1ea-07ce63937559",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/liminality/",
+    "src": "media/page-covers/liminality-650b1fbedf-9632ebb24333.webp",
+    "width": 1280
+  },
+  "threejs-game:marble-loco": {
+    "alt": "GameMap catalog record for Marble Loco; not an upstream page or gameplay screenshot.",
+    "bytes": 24768,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:31.461Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 80715,
+      "height": 900,
+      "sha256": "6355e542d6aa0829f7cbedca4b6ea2d68f90caa4c7f992684b68e6978cd01661",
+      "src": "media/page-covers/originals/marble-loco-afaf1726d9-6355e542d6aa.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/marble-loco/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "b18ae63e9b9fc48b3b6c89d59fd907ebc00edc2f61c210a0e66910e1b036fa80",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/marble-loco/",
+      "recordRevision": "1256f520-d8da-494f-ba78-695da159ad75",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/marble-loco/",
+    "src": "media/page-covers/marble-loco-afaf1726d9-b18ae63e9b9f.webp",
+    "width": 1280
+  },
+  "threejs-game:mastermind-3d": {
+    "alt": "GameMap catalog record for Mastermind 3D; not an upstream page or gameplay screenshot.",
+    "bytes": 19512,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:30.954Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 67487,
+      "height": 900,
+      "sha256": "51648ab0aeac3057dea29e3c94b71942a6dd26445c7c0b66488c09021ccfbbb3",
+      "src": "media/page-covers/originals/mastermind-3d-6f7666bc50-51648ab0aeac.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/mastermind-3d/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "061104b344873ff261a68a298ab25c402d78f9d11346107aa9873a2c06f3ff3e",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/mastermind-3d/",
+      "recordRevision": "f7fc9da6-8994-8230-abf5-13ea933df290",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/mastermind-3d/",
+    "src": "media/page-covers/mastermind-3d-6f7666bc50-061104b34487.webp",
+    "width": 1280
+  },
+  "threejs-game:mega-battles": {
+    "alt": "GameMap catalog record for Mega Battles; not an upstream page or gameplay screenshot.",
+    "bytes": 25394,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:32.266Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 84087,
+      "height": 900,
+      "sha256": "bbcd251ee4af9d2cc26559a4cf9df3d4f735b9f0075f896dfde9aeab5f39d2aa",
+      "src": "media/page-covers/originals/mega-battles-61f477d44c-bbcd251ee4af.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/mega-battles/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "4147f13f28c444b681c6bde37c984fcd8fd88a919f97599ae818b26c99aabe17",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/mega-battles/",
+      "recordRevision": "fe497789-5a1b-48a6-b871-ef3f48da150e",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/mega-battles/",
+    "src": "media/page-covers/mega-battles-61f477d44c-4147f13f28c4.webp",
+    "width": 1280
+  },
+  "threejs-game:minecraft-adventure": {
+    "alt": "GameMap catalog record for Minecraft Adventure; not an upstream page or gameplay screenshot.",
+    "bytes": 21670,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:24.735Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 72562,
+      "height": 900,
+      "sha256": "0ce4c12b72cc697f463a86d8434b0a730d448bd9300fce7e5764eb84d37e0016",
+      "src": "media/page-covers/originals/minecraft-adventure-f6200e1c92-0ce4c12b72cc.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/minecraft-adventure/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "35a86ebc4e2ab0f56f07eae7274c25fc5e69358507dcfe06c36675689c0454e1",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/minecraft-adventure/",
+      "recordRevision": "9c9245f5-4552-89c2-b12b-046823f231b5",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/minecraft-adventure/",
+    "src": "media/page-covers/minecraft-adventure-f6200e1c92-35a86ebc4e2a.webp",
+    "width": 1280
+  },
+  "threejs-game:moshot": {
+    "alt": "Public project page for Moshot; not a gameplay screenshot.",
+    "bytes": 39190,
+    "caption": "Captured project page; not a gameplay screenshot.",
+    "capturedAt": "2026-10-24T20:44:24.054Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "project-page-capture",
+    "original": {
+      "bytes": 103770,
+      "height": 900,
+      "sha256": "bc4e1aa99338d319de388886f45950d23df6e604f425b172ac980289320b84b9",
+      "src": "media/page-covers/originals/moshot-e594d93822-bc4e1aa99338.png",
+      "width": 1600
+    },
+    "requestedUrl": "https://moshot.web.app/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "f57fe6af91393cc35ba537fa7f7c8b6fd9ea205c394db18a7478424ab41042af",
+    "sourceKind": "author-homepage",
+    "sourceUrl": "https://moshot.web.app/",
+    "src": "media/page-covers/moshot-e594d93822-f57fe6af9139.webp",
+    "width": 1280
+  },
+  "threejs-game:narayana-hadal-cycle": {
+    "alt": "GameMap catalog record for NARAYANA — The Hadal Cycle; not an upstream page or gameplay screenshot.",
+    "bytes": 28580,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:26.066Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 90543,
+      "height": 900,
+      "sha256": "d20f6ac69e8991a2d8df401ff15fb7d92ae4131991bb4d9315c9034d6a199d7c",
+      "src": "media/page-covers/originals/narayana-hadal-cycle-08afbf5988-d20f6ac69e89.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/narayana-hadal-cycle/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "ec75e34a9b6956840003b10a3d18c156b7d34e8d33f805c6f29133e0eada4283",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/narayana-hadal-cycle/",
+      "recordRevision": "412eb0f4-3f09-4643-9431-5807d1394378",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/narayana-hadal-cycle/",
+    "src": "media/page-covers/narayana-hadal-cycle-08afbf5988-ec75e34a9b69.webp",
+    "width": 1280
+  },
+  "threejs-game:otterpuck": {
+    "alt": "GameMap catalog record for Otterpuck; not an upstream page or gameplay screenshot.",
+    "bytes": 25218,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:31.153Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 81385,
+      "height": 900,
+      "sha256": "6839125d02002e88195fa4ec12aadeb057e7e4fa20c069ef154b51f939d7d6b8",
+      "src": "media/page-covers/originals/otterpuck-b25169c115-6839125d0200.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/otterpuck/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "d2da60de7d85ad7baa708c02e8c882a46a2b6aac50a8cdc140bcc218796bd7a7",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/otterpuck/",
+      "recordRevision": "1be8c224-fa70-4186-958e-04c1c21b9fcd",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/otterpuck/",
+    "src": "media/page-covers/otterpuck-b25169c115-d2da60de7d85.webp",
+    "width": 1280
+  },
+  "threejs-game:pool-quget": {
+    "alt": "GameMap catalog record for ThreeJS-Pool-Game — Quget; not an upstream page or gameplay screenshot.",
+    "bytes": 27072,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:24.951Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 88031,
+      "height": 900,
+      "sha256": "9467e9e399a175dea460fe23e0bc820dc710ad26ca1fac295a12988ae622cd86",
+      "src": "media/page-covers/originals/pool-quget-cb1d4d1f0c-9467e9e399a1.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/pool-quget/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "542c545897a54beacc3daf0620edb15f4ff9a60c6362087c5f4f644ba4fb2e39",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/pool-quget/",
+      "recordRevision": "f61a331b-4085-47ea-86b8-b852610d68d0",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/pool-quget/",
+    "src": "media/page-covers/pool-quget-cb1d4d1f0c-542c545897a5.webp",
+    "width": 1280
+  },
+  "threejs-game:power-tycoon": {
+    "alt": "GameMap catalog record for Power Tycoon; not an upstream page or gameplay screenshot.",
+    "bytes": 25618,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:25.459Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 84832,
+      "height": 900,
+      "sha256": "8f8a355e805b621632bce4e8db4d32ea688d8f4f98a521a9051d21f953754094",
+      "src": "media/page-covers/originals/power-tycoon-d614a18ecd-8f8a355e805b.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/power-tycoon/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "5c9cc4ab55e05769a9b6b54b0f865cfe4dd003dccefd5f2845fcc8220aff07e2",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/power-tycoon/",
+      "recordRevision": "730f1a5f-608b-4fd7-b93a-153752cbda0e",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/power-tycoon/",
+    "src": "media/page-covers/power-tycoon-d614a18ecd-5c9cc4ab55e0.webp",
+    "width": 1280
+  },
+  "threejs-game:shadow-protocol": {
+    "alt": "GameMap catalog record for Shadow Protocol; not an upstream page or gameplay screenshot.",
+    "bytes": 26454,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:24.954Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 84850,
+      "height": 900,
+      "sha256": "fa3c2461f4e1d39435077387f55f27c1d76e9a02013107b8c67c5677ac7f11c4",
+      "src": "media/page-covers/originals/shadow-protocol-874ff6777a-fa3c2461f4e1.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/shadow-protocol/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "07577497f27a42c67aa691ea7f84f58a465aefb22c64487d3d28c7d35be17b0e",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/shadow-protocol/",
+      "recordRevision": "b154051c-cf3b-49a9-a276-e18c18fa7ea8",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/shadow-protocol/",
+    "src": "media/page-covers/shadow-protocol-874ff6777a-07577497f27a.webp",
+    "width": 1280
+  },
+  "threejs-game:ski-3d-redux": {
+    "alt": "Public project page for SKI-3D; not a gameplay screenshot.",
+    "bytes": 22074,
+    "caption": "Captured project page; not a gameplay screenshot.",
+    "capturedAt": "2026-10-24T20:44:31.450Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "project-page-capture",
+    "original": {
+      "bytes": 56752,
+      "height": 900,
+      "sha256": "dad0c9162094fb167c1bdb7130a273148010230ff30f98ef76b600d0d0a9d71d",
+      "src": "media/page-covers/originals/ski-3d-redux-36a9d8458d-dad0c9162094.png",
+      "width": 1600
+    },
+    "requestedUrl": "https://pemmyz.github.io/js_laskettelu_redux/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "1b3f354d7f5558c4c8b55fced99137f139bb0e7b3bb14f7bf50b2176d2164739",
+    "sourceKind": "author-homepage",
+    "sourceUrl": "https://pemmyz.github.io/js_laskettelu_redux/",
+    "src": "media/page-covers/ski-3d-redux-36a9d8458d-1b3f354d7f55.webp",
+    "width": 1280
+  },
+  "threejs-game:the-warcrooms": {
+    "alt": "GameMap catalog record for The Warcrooms; not an upstream page or gameplay screenshot.",
+    "bytes": 22810,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:26.270Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 75477,
+      "height": 900,
+      "sha256": "d7cc0bf189124ba968a957dddfe8b383bb2fb6dc49e0c8ad44e71f88514fad44",
+      "src": "media/page-covers/originals/the-warcrooms-c890d5aa72-d7cc0bf18912.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/the-warcrooms/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "ab9effdbaff83f4e6998a809a970191dfea8701ec495d8cb844574f081f2ee74",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/the-warcrooms/",
+      "recordRevision": "581e665c-3c67-49be-8f5e-b3ae85f52c28",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/the-warcrooms/",
+    "src": "media/page-covers/the-warcrooms-c890d5aa72-ab9effdbaff8.webp",
+    "width": 1280
+  },
+  "threejs-game:threejs-chess-ironexcavater": {
+    "alt": "GameMap catalog record for threejs-chess — IronExcavater; not an upstream page or gameplay screenshot.",
+    "bytes": 28396,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:31.667Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 90218,
+      "height": 900,
+      "sha256": "4977da4d5a9d6af72322ddc1c5e978470579683c694dc70d1c49017fd54bf6f6",
+      "src": "media/page-covers/originals/threejs-chess-ironexcavater-c06225a417-4977da4d5a9d.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/threejs-chess-ironexcavater/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "599a6e217b2d475836db1943e6d7aa5a70cc7c06404353ebcaea9d2d3f95ff7f",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/threejs-chess-ironexcavater/",
+      "recordRevision": "8adf9ba7-4855-4803-92df-5fb6d1679ced",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/threejs-chess-ironexcavater/",
+    "src": "media/page-covers/threejs-chess-ironexcavater-c06225a417-599a6e217b2d.webp",
+    "width": 1280
+  },
+  "threejs-game:threejs-tower-defense": {
+    "alt": "GameMap catalog record for Tower Defense (djpav); not an upstream page or gameplay screenshot.",
+    "bytes": 21152,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:31.141Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 73722,
+      "height": 900,
+      "sha256": "414e6b645be03728d63897b24a3939590ab12ea51183b1cb8c12033bbabaaf65",
+      "src": "media/page-covers/originals/threejs-tower-defense-8df0dbe947-414e6b645be0.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/threejs-tower-defense/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "1ca09f0f7bd6b11dd9f62a6f6dedec41fb681170ab7f7ef4a06d442fdc6ea925",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/threejs-tower-defense/",
+      "recordRevision": "2cd7bbdf-9f9b-8cfc-b8df-29909b2be51b",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/threejs-tower-defense/",
+    "src": "media/page-covers/threejs-tower-defense-8df0dbe947-1ca09f0f7bd6.webp",
+    "width": 1280
+  },
+  "threejs-game:token-spire-first-person": {
+    "alt": "GameMap catalog record for TOKEN SPIRE: FIRST PERSON; not an upstream page or gameplay screenshot.",
+    "bytes": 28476,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:25.150Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 90710,
+      "height": 900,
+      "sha256": "9dbd0e057bd8f4eee9f3d580620c3ddae4adc1f815ff576d3b775b9db059b82d",
+      "src": "media/page-covers/originals/token-spire-first-person-800b061c50-9dbd0e057bd8.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/token-spire-first-person/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "16e49b1af56f2d1e6d14166d7b684d2dfed2311945c7ea469a03e4f31fca1ff4",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/token-spire-first-person/",
+      "recordRevision": "51e50947-0427-4e59-a566-c5477de7af2d",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/token-spire-first-person/",
+    "src": "media/page-covers/token-spire-first-person-800b061c50-16e49b1af56f.webp",
+    "width": 1280
+  },
+  "threejs-game:triangular-sphere-puzzle": {
+    "alt": "GameMap catalog record for Triangular Sphere Puzzle; not an upstream page or gameplay screenshot.",
+    "bytes": 28012,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:25.661Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 88360,
+      "height": 900,
+      "sha256": "a2ac22fa1bdf2631058675b2805a4be3af2e02f531326d6c52c206f93d0499d7",
+      "src": "media/page-covers/originals/triangular-sphere-puzzle-6048918fa6-a2ac22fa1bdf.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/triangular-sphere-puzzle/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "fcce513e9573f2a853d425ba58bc394f1cd3ac41e9ff4dbe6d26017b8e2c2f0c",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/triangular-sphere-puzzle/",
+      "recordRevision": "31f26756-3f65-4015-8ad7-308886f480ad",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/triangular-sphere-puzzle/",
+    "src": "media/page-covers/triangular-sphere-puzzle-6048918fa6-fcce513e9573.webp",
+    "width": 1280
+  },
+  "threejs-game:turbo-robot-league-lite": {
+    "alt": "Public project page for Turbo Robot League 3D (Lite); not a gameplay screenshot.",
+    "bytes": 12528,
+    "caption": "Captured project page; not a gameplay screenshot.",
+    "capturedAt": "2026-10-24T20:44:39.547Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "project-page-capture",
+    "original": {
+      "bytes": 366020,
+      "height": 900,
+      "sha256": "43ed3b9b57b70c25d5dc3d186464eff553bbe5e942ff2e28b5acedc19c7399b5",
+      "src": "media/page-covers/originals/turbo-robot-league-lite-6789028f91-43ed3b9b57b7.png",
+      "width": 1600
+    },
+    "requestedUrl": "https://pemmyz.github.io/js_carballgame/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "dbc26c4e2caab110036016450b9e789c77bf066cf3f467eaad256f4aaefc5ff3",
+    "sourceKind": "author-homepage",
+    "sourceUrl": "https://pemmyz.github.io/js_carballgame/",
+    "src": "media/page-covers/turbo-robot-league-lite-6789028f91-dbc26c4e2caa.webp",
+    "width": 1280
+  },
+  "threejs-game:ultimate-striker-run-v3": {
+    "alt": "GameMap catalog record for Ultimate Striker Run — standalone v3; not an upstream page or gameplay screenshot.",
+    "bytes": 26486,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:25.135Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 85821,
+      "height": 900,
+      "sha256": "0434f7cd30f3bf1b01eb53daf758d5e08a0c22e92c53c5305a39e7eb40e4751f",
+      "src": "media/page-covers/originals/ultimate-striker-run-v3-b2ac54236a-0434f7cd30f3.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/ultimate-striker-run-v3/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "89b13e7565580cc6b90e844c404645480055175af2104482a3d1c3cd6d338c6d",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/ultimate-striker-run-v3/",
+      "recordRevision": "c3414b3e-2781-4cdb-a585-7638634bada6",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/ultimate-striker-run-v3/",
+    "src": "media/page-covers/ultimate-striker-run-v3-b2ac54236a-89b13e756558.webp",
+    "width": 1280
+  },
+  "threejs-game:warlord-game": {
+    "alt": "GameMap catalog record for Warlord; not an upstream page or gameplay screenshot.",
+    "bytes": 23880,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:32.434Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 78528,
+      "height": 900,
+      "sha256": "506f149765f957810a2300402d15e095055af3ed3e6840ff4d73a0f19f512552",
+      "src": "media/page-covers/originals/warlord-game-f04e05a374-506f149765f9.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/warlord-game/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "19c6500b0bf45c32467b7f40943457ef82c2e3d8ce66483128c66d1ff9f3c352",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/warlord-game/",
+      "recordRevision": "f12065b3-0e17-4e20-bf4e-25c95179476d",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/warlord-game/",
+    "src": "media/page-covers/warlord-game-f04e05a374-19c6500b0bf4.webp",
+    "width": 1280
+  },
+  "threejs-game:wickhaven": {
+    "alt": "GameMap catalog record for WICKHAVEN; not an upstream page or gameplay screenshot.",
+    "bytes": 21634,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:31.356Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 74035,
+      "height": 900,
+      "sha256": "544460fe2ae03003d9f3e3a30be53b0e9ca56845cdccf86618c8cf44aa8a75dc",
+      "src": "media/page-covers/originals/wickhaven-81b8b5a085-544460fe2ae0.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/wickhaven/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "714dd0c483ab2131fcfee6039ddc9c0bfcd1bdc778778cd7eefce719201a8ef6",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/wickhaven/",
+      "recordRevision": "dfcb1f6c-69e6-4a3b-b8b1-f707a470d743",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/wickhaven/",
+    "src": "media/page-covers/wickhaven-81b8b5a085-714dd0c483ab.webp",
+    "width": 1280
+  },
+  "threejs-game:yet-another-zombie-horror": {
+    "alt": "GameMap catalog record for Yet Another Zombie Horror; not an upstream page or gameplay screenshot.",
+    "bytes": 22390,
+    "caption": "Captured GameMap catalog record; not an upstream page or gameplay screenshot.",
+    "capturedAt": "2026-10-24T21:07:26.471Z",
+    "height": 720,
+    "kind": "page-cover",
+    "origin": "catalog-page-capture",
+    "original": {
+      "bytes": 72370,
+      "height": 900,
+      "sha256": "25a2739a3a3ed588b732dffcabb6b311e993e72ebeb7baeccf7f05856167f7e2",
+      "src": "media/page-covers/originals/yet-another-zombie-horror-30c9f8e9c4-25a2739a3a3e.png",
+      "width": 1600
+    },
+    "requestedUrl": "/threejs-games/yet-another-zombie-horror/",
+    "rights": "Underlying text, logos and images retain their respective rights; no reuse permission or game verification is inferred.",
+    "sha256": "7f313e5745ccf455ad38d843d1c57ed206ff72cd7151bba8c8fb3b4a4d789442",
+    "sourceKind": "catalog-record",
+    "sourceSnapshot": {
+      "artifactSha256": "30384b0c5b9368ff122bc2d6e6730f6dba57c59e57fe10638a27c309df62fa69",
+      "canonicalPath": "/threejs-games/yet-another-zombie-horror/",
+      "recordRevision": "02fad583-1aff-84f8-b453-d65b077e117d",
+      "releaseId": "7e1c8137-010d-4b0e-a837-be821dce8ff5"
+    },
+    "sourceUrl": "/threejs-games/yet-another-zombie-horror/",
+    "src": "media/page-covers/yet-another-zombie-horror-30c9f8e9c4-7f313e5745cc.webp",
+    "width": 1280
+  }
+}

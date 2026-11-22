@@ -15,6 +15,7 @@ import { itch3dGames } from './itch3dGames'
 import { open3dRound4Games } from './open3dRound4Games'
 import { open3dRound5Games } from './open3dRound5Games'
 import { browserPortGames } from './browserPortGames'
+import { approvedImportedCases } from './approvedImportedCases'
 export { communityCollections } from './communityResearch'
 export type { LearningPath } from './learningTypes'
 
@@ -23,7 +24,7 @@ export const learningPaths:LearningPath[] = [
   ...geminiCliCases,
   ai3dCases[0], ai3dCases[2], ...aiCommunityCases, ai3dCases[1], ...openGameCases,
   ...community3dExpansion, ...community2dExpansion, ...diverseCommunityCases,
-  ...jamGames, ...open3dGames, ...open3dRound2Games, ...open3dRound3Games, ...itch3dGames, ...open3dRound4Games, ...browserPortGames, ...open3dRound5Games,
+  ...jamGames, ...open3dGames, ...open3dRound2Games, ...open3dRound3Games, ...itch3dGames, ...open3dRound4Games, ...browserPortGames, ...open3dRound5Games, ...approvedImportedCases,
 ]
 
 export const foundationPaths: PayloadModels['foundation'][] = [

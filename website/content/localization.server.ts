@@ -12,6 +12,7 @@ import open3dRound5Games from "./i18n/content/open3d-games-round5.zh.json";
 import browserPorts from "./i18n/content/browser-ports.zh.json";
 import toolkit from "./i18n/content/toolkit.zh.json";
 import testing from "./i18n/content/testing.zh.json";
+import approvedImportedCases from "./i18n/content/approved-imported-cases.zh.json";
 import fingerprints from "./i18n/content.zh.sources.json";
 import docsMessages from "./doc-messages.json";
 import type {
@@ -57,6 +58,7 @@ for (const group of [
   open3dRound5Games,
   toolkit,
   testing,
+  approvedImportedCases,
 ])
   for (const [key, fields] of Object.entries(group)) {
     if (chineseContent[key])

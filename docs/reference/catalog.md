@@ -2,7 +2,7 @@
 
 > A planning map for AI game development — from an idea to a playable world.
 
-**110 curated primary sources** connecting coding agents, game engines, AI for 2D and 3D development, production tools, and code world models. Main source review date: **October 18, 2026**. This is a research snapshot: reviewing a source does not imply reproducing its results or continuously monitoring it.
+**115 curated primary sources** connecting coding agents, game engines, AI for 2D and 3D development, production tools, and code world models. Main source review date: **October 18, 2026**. This is a research snapshot: reviewing a source does not imply reproducing its results or continuously monitoring it.
 
 - [Interactive GameMap website — GitHub Pages](https://openenvision.github.io/GameMap/)
 - [A practical guide from resources to a working project](../guides/practical-guide.md)
@@ -30,7 +30,7 @@
 - [2. Game engines, DCC tools, and ecosystems](#engines) — 24 resources
 - [3. AI for 2D game development](#2d) — 13 resources
 - [4. AI for 3D game development](#3d) — 15 resources
-- [5. Game production: art, animation, audio, testing, and runtime AI](#production) — 18 resources
+- [5. Game production: art, animation, audio, testing, and runtime AI](#production) — 23 resources
 - [6. Code world models and interactive worlds](#world) — 20 resources
 
 <a id="agents"></a>
@@ -964,6 +964,71 @@ Tags: `Shaders` · `HLSL` · `Build validation`. Source reviewed: 2026-10-18. Fu
 Screenshot assertions wait for two matching captures before comparison, but stable pixels do not prove application readiness. Record browser, fonts, viewport and capture options: animation disabling, masks and styles can alter evidence. DOM access is a different observation surface from screenshot-only control or Playwright MCP.
 
 Tags: `Browser testing` · `Visual regression` · `DOM`. Source reviewed: 2026-10-18. Further reading: [Actionability](https://playwright.dev/docs/actionability) · [Screenshot assertion API](https://playwright.dev/docs/api/class-pageassertions)
+
+</details>
+
+### Community
+
+| Resource | Purpose and scope | Stages |
+| --- | --- | --- |
+| [CrazyGames](https://developer.crazygames.com/) | Play browser games and prepare web builds for CrazyGames submission, testing, and launch. | Shipping |
+| [Epic Games Store](https://store.epicgames.com/en-US/distribution) | Browse game releases and prepare store distribution through Epic's self-service developer tools. | Shipping |
+| [GOG](https://www.gog.com/submit-your-game) | Discover DRM-free desktop releases and submit a game to GOG's curated catalog. | Shipping |
+| [itch.io](https://itch.io/developers) | Discover independent games and publish project pages with browser builds or downloadable releases. | Shipping |
+| [Steam](https://partner.steamgames.com/) | Discover desktop games and use Steamworks to prepare store pages, builds, testing, and release. | Shipping |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[CrazyGames](https://developer.crazygames.com/)**
+
+CrazyGames hosts browser games, with a separate developer portal and documentation for submission, technical requirements, SDK integration, and testing. Submissions receive QA review; Basic Launch and Full Launch have different requirements and availability. Supported web technologies span multiple engines. A playable portal build is a distribution artifact, not evidence that the complete game project is public or that AI developed it.
+
+Tags: `Publishing` · `Game discovery` · `Browser games`. Source reviewed: 2026-10-20. Further reading: [Browse games on CrazyGames](https://www.crazygames.com/) · [CrazyGames publishing documentation](https://docs.crazygames.com/) · [CrazyGames submission requirements](https://docs.crazygames.com/requirements/intro/)
+
+- **Demo · service:** [Browse games on CrazyGames](https://www.crazygames.com/). Browser-game portal. Individual titles have their own input, device, and network requirements.
+- **Source · unavailable:** Platform listing is not game source. Browser-delivered files are not automatically the complete maintainable project; verify creator-provided source separately.
+- **Tutorial · tutorial:** [CrazyGames publishing documentation](https://docs.crazygames.com/). Official requirements, SDK guides, testing tools, and launch workflow for web games.
+
+**[Epic Games Store](https://store.epicgames.com/en-US/distribution)**
+
+Epic Games Store offers a player storefront and publishing tools in the Epic Developer Portal for product pages, builds, offers, and updates. Distribution is engine-agnostic; using Unreal Engine is not a prerequisite. Developers still need account onboarding and must meet the store's content and product requirements. A store listing is distinct from a browser demo, an AI-development claim, or complete source code.
+
+Tags: `Publishing` · `Game discovery` · `Desktop games`. Source reviewed: 2026-10-20. Further reading: [Browse games on Epic Games Store](https://store.epicgames.com/en-US/) · [Epic Developer Portal documentation](https://dev.epicgames.com/docs/dev-portal)
+
+- **Demo · service:** [Browse games on Epic Games Store](https://store.epicgames.com/en-US/). Player storefront. Check each product's release status and supported systems; the store is not a playable project.
+- **Source · unavailable:** Platform listing is not game source. Game source and reuse rights must be checked independently of Epic Games Store availability.
+- **Tutorial · tutorial:** [Epic Games Store publishing overview](https://store.epicgames.com/en-US/distribution). Official overview and FAQ for self-service distribution, developer setup, and store requirements.
+
+**[GOG](https://www.gog.com/submit-your-game)**
+
+GOG is a curated digital game store with DRM-free releases and an optional desktop client. The official submission form is the developer entry point for proposing a game; submitting it does not guarantee acceptance or immediate publication. Verify each game's supported operating systems, edition, and release status. DRM-free distribution is different from publishing the game's source code.
+
+Tags: `Publishing` · `Game discovery` · `Desktop games`. Source reviewed: 2026-10-20. Further reading: [Browse games on GOG](https://www.gog.com/en/games) · [Submit a game to GOG](https://lp.gog.com/submit-your-game/en)
+
+- **Demo · service:** [Browse games on GOG](https://www.gog.com/en/games). Desktop game catalog. Check the individual product and system requirements rather than assuming browser play.
+- **Source · unavailable:** Platform listing is not game source. DRM-free describes distribution restrictions, not whether complete source or reusable assets are available.
+- **Tutorial · service:** [Submit a game to GOG](https://www.gog.com/submit-your-game). Official submission page with an embedded developer form. Catalog inclusion requires a separate publishing decision.
+
+**[itch.io](https://itch.io/developers)**
+
+itch.io lets creators manage game pages, screenshots, files, development logs, and updates. HTML5 builds can run in the browser; other releases can be provided as downloads with platform labels. A project's page can also contain a demo or work in development, so inspect the actual uploads and instructions. Publishing a playable build does not automatically make its source public.
+
+Tags: `Publishing` · `Game discovery` · `Browser games` · `Desktop games`. Source reviewed: 2026-10-20. Further reading: [Browse games on itch.io](https://itch.io/games) · [Create your first itch.io page](https://itch.io/docs/creators/getting-started)
+
+- **Demo · service:** [Browse games on itch.io](https://itch.io/games). Independent game catalog with both browser and downloadable games. Availability and license vary by project.
+- **Source · unavailable:** Platform listing is not game source. Creators may publish source separately, but a game page or downloadable binary alone is not complete project source.
+- **Tutorial · tutorial:** [Create your first itch.io page](https://itch.io/docs/creators/getting-started). Official guide to project information, uploads, classification, publishing, and updates.
+
+**[Steam](https://partner.steamgames.com/)**
+
+Valve's Steam storefront distributes released games; Steamworks is the developer portal for onboarding, store presence, build uploads, testing, and updates. Publishing requires partner setup and review of the store page and build. A Coming Soon page, a demo, and a released game are different states. Steam availability does not establish AI authorship or public game source.
+
+Tags: `Publishing` · `Game discovery` · `Desktop games`. Source reviewed: 2026-10-20. Further reading: [Browse games on Steam](https://store.steampowered.com/) · [Steamworks getting started](https://partner.steamgames.com/doc/gettingstarted)
+
+- **Demo · service:** [Browse games on Steam](https://store.steampowered.com/). Game storefront. Check each product's release status, supported systems, and acquisition requirements; this is not an embedded browser demo.
+- **Source · unavailable:** Platform listing is not game source. Complete source must be verified separately for each game; a Steam listing does not supply it.
+- **Tutorial · tutorial:** [Steamworks getting started](https://partner.steamgames.com/doc/gettingstarted). Official publishing workflow covering partner setup, builds, store presence, and release review.
 
 </details>
 

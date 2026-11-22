@@ -1197,5 +1197,60 @@
     "sha256": "22085429a7aceb666f12e64505268d95c73132d8cd2164b050db30f5e372738a",
     "background": "light",
     "wide": false
+  },
+  "crazygames": {
+    "asset": "logos/crazygames-c284e89a355c.jpg",
+    "background": "light",
+    "kind": "brand",
+    "logoSourceUrl": "https://imgs.crazygames.com/favicons/favicon-transparent.png?quality=95&metadata=none&width=196&height=196&fit=crop",
+    "notes": "Official transparent CrazyGames brand icon linked by the CrazyGames developer portal. The downloaded public image is bundled unchanged and identifies the platform, not an individual developer or an AI development tool.",
+    "organization": "CrazyGames",
+    "sha256": "c284e89a355c1b2ac365b1afb51777c268ea499f70cbca33d20fac4705b162c6",
+    "sourceUrl": "https://developer.crazygames.com/",
+    "wide": false
+  },
+  "epic-games-store": {
+    "asset": "logos/epic-games-unreal-engine-e0295cf4837c.png",
+    "background": "light",
+    "kind": "brand",
+    "logoSourceUrl": "https://github.com/EpicGames.png?size=256",
+    "notes": "Official Epic Games corporate mark, already bundled from the verified EpicGames organization profile. The mark identifies the publisher operating Epic Games Store; the storefront is engine-agnostic and is not the Unreal Engine runtime.",
+    "organization": "Epic Games / Epic Games Store",
+    "sha256": "22a06f67ab790bcef639f5618ae7396b7f0f7a943817ef01efc9c9cb15a0e056",
+    "sourceUrl": "https://store.epicgames.com/en-US/distribution",
+    "wide": false
+  },
+  "gog": {
+    "asset": "logos/gog-e8ee9c8c97d9.png",
+    "background": "light",
+    "kind": "brand",
+    "logoSourceUrl": "https://www.gog.com/pressroom/wp-content/uploads/2025/06/GOG_LOGO_DARK.png",
+    "notes": "Original dark GOG logo provided in the official GOG press kit. Original pixels, colors, transparency, and aspect ratio are retained. It represents the distribution platform; DRM-free availability does not imply public game source.",
+    "organization": "GOG",
+    "sha256": "e8ee9c8c97d9ccf47515838eb8a08cca481551876d5b35dc2fd3498e8fe47d51",
+    "sourceUrl": "https://www.gog.com/pressroom/press-kit/",
+    "wide": false
+  },
+  "itch-io": {
+    "asset": "logos/itch-io-7c7c74347fbf.svg",
+    "background": "light",
+    "kind": "brand",
+    "logoSourceUrl": "https://static.itch.io/images/app-icon.svg",
+    "notes": "Official itch.io app icon from the publisher’s press kit. The artwork is unchanged and bundled locally, following the request not to hotlink brand images. This mark identifies the platform rather than the creators of games hosted there.",
+    "organization": "itch.io",
+    "sha256": "7c7c74347fbfd5eefa0a9730028f6ca1df67580119b0ef645561046761080198",
+    "sourceUrl": "https://itch.io/press-kit",
+    "wide": false
+  },
+  "steamworks": {
+    "asset": "logos/steam-ec1098f56177.svg",
+    "background": "dark",
+    "kind": "brand",
+    "logoSourceUrl": "https://store.fastly.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016",
+    "notes": "Exact Steam wordmark used by the official Steam storefront. Bundled locally with colors and aspect ratio intact; only the XML declaration and external DTD header were removed. The Steam brand identifies Valve’s distribution platform, not authorship of any listed game.",
+    "organization": "Valve / Steam",
+    "sha256": "ec1098f56177d06dfbac75f8da5cc9b6249e789e42fc79992b48bfcbebf94851",
+    "sourceUrl": "https://partner.steamgames.com/",
+    "wide": true
   }
 }

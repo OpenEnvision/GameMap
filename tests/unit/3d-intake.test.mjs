@@ -42,8 +42,8 @@ test("pinned import policy stays versioned independently of the optional local a
   assert.equal(pr.newThreejsIds.length, 26);
   assert.equal(
     context.registry.all("threejs-game").length,
-    0,
-    "Git defaults never auto-import database-owned PR records",
+    pr.oldIds.length + pr.newThreejsIds.length,
+    "Approved threejs-game records match the reviewed 92 + 26 cohort",
   );
 });
 
@@ -79,8 +79,8 @@ test(
     for (const g of raw.games) context.payloadSchemas["threejs-game"].parse(g);
     assert.equal(
       context.registry.all("threejs-game").length,
-      0,
-      "Git defaults never auto-import database-owned PR records",
+      pr.oldIds.length + pr.newThreejsIds.length,
+      "Approved threejs-game records match the reviewed 92 + 26 cohort",
     );
     for (const id of pr.oldIds) {
       const game = raw.games.find((g) => g.id === id);

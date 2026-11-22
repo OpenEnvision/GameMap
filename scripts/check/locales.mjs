@@ -15,7 +15,11 @@ import {
   parsePage,
   attributes,
 } from "../lib/rendered-coverage.mjs";
-const context = await loadContent(),
+const built = process.argv.includes("--built");
+const siteManifest = built
+  ? JSON.parse(await readFile(resolve(root, "dist/site-manifest.json"), "utf8"))
+  : undefined;
+const context = await loadContent(siteManifest?.base || "/"),
   { registry, canTranslate, translationHash } = context;
 if (context.inputMode === "git") {
   const documentFingerprints = JSON.parse(

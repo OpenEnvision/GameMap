@@ -1,5 +1,6 @@
 import { publicAsset } from '../publicAsset';
 import type { Recording } from '../../content/media';
+import { approvedImportedRecordings } from './approvedImportedRecordings';
 
 /** One original asset, one or more explicitly identified presentations. */
 export const recordings: Recording[] = [
@@ -230,5 +231,6 @@ export const recordings: Recording[] = [
         "credit": "Holodeck authors · generated bohemian living room"
       }
     ]
-  }
+  },
+  ...approvedImportedRecordings
 ];

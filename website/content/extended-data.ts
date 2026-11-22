@@ -1,5 +1,8 @@
 import type { ContentModels } from "./models";
+import approvedPapers from "../../data/segments/approved-papers.json";
+import approvedThreejsGames from "../../data/segments/approved-threejs-games.json";
 
-// Database drafts are imported separately; Git defaults never copy remote records.
-export const papers: ContentModels["paper"][] = [];
-export const threejsGames: ContentModels["threejs-game"][] = [];
+// Approved database records exported deterministically for static GitHub Pages builds.
+export const papers = approvedPapers as unknown as ContentModels["paper"][];
+export const threejsGames =
+  approvedThreejsGames as unknown as ContentModels["threejs-game"][];

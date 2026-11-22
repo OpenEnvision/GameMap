@@ -1,0 +1,205 @@
+{
+  "resource:crazygames": {
+    "summary": "畅玩浏览器游戏，并准备用于 CrazyGames 提交、测试与上线的 Web 构建包。",
+    "detail": "CrazyGames 托管浏览器游戏，并提供独立的开发者门户与文档，涵盖提交规范、技术要求、SDK 集成与测试流程。提交作品需经过 QA 审核，Basic Launch 与 Full Launch 具有不同的要求和可用范围。支持的 Web 技术覆盖多种引擎。平台上的可玩构建属于发行产物，并不证明完整游戏源码公开或由 AI 开发。"
+  },
+  "resource:epic-games-store": {
+    "summary": "浏览游戏发行作品，并通过 Epic 自助开发者工具准备商店分发。",
+    "detail": "Epic Games Store 提供玩家商店与 Epic Developer Portal 发行工具，用于管理商品页、构建包、优惠活动与版本更新。分发不绑定特定引擎，使用 Unreal Engine 并非前提条件。开发者仍需完成账号入驻并满足商店的内容与产品要求。商店页面不同于浏览器试玩、AI 开发声明或完整源码。"
+  },
+  "resource:gog": {
+    "summary": "探索无 DRM 的桌面游戏发行版，并向 GOG 精选目录提交作品。",
+    "detail": "GOG 是精选式数字游戏商店，提供无 DRM 发行版及可选桌面客户端。官方提交表单是开发者提报作品的入口，但提交并不保证通过审核或立即上架。请核对每款游戏支持的操作系统、版本与发行状态。无 DRM 分发并不等同于公开游戏源代码。"
+  },
+  "resource:itch-io": {
+    "summary": "发掘独立游戏，并发布包含浏览器构建或可下载版本的项目主页。",
+    "detail": "itch.io 支持创作者管理游戏主页、截图、安装包、开发日志与更新记录。HTML5 构建可在浏览器中直接运行，其他版本可按平台标签提供下载。项目主页也可能仅包含试玩 Demo 或开发中版本，因此需检查实际上传文件与说明。发布可玩构建并不自动代表其源码公开。"
+  },
+  "resource:steamworks": {
+    "summary": "发现桌面游戏，并使用 Steamworks 准备商店页面、构建包、测试与发行。",
+    "detail": "Valve 的 Steam 商店面向玩家分发已发布游戏；Steamworks 是用于合作伙伴入驻、商店展示、构建上传、测试与更新的开发者门户。发布前需完成合作伙伴设置并通过商店页面及构建审核。“即将推出”页面、试玩 Demo 与正式发售属于不同阶段。上架 Steam 并不证明 AI 参与创作或公开游戏源码。"
+  },
+  "example:arkanoid-neon-claude": {
+    "description": "在八张霓虹砖块关卡中反弹小球、收集增益道具，并在关卡加速时保持连击。这款完整的浏览器游戏采用 Canvas 2D 与合成 Web Audio 实现。"
+  },
+  "example:astra-floor-ai": {
+    "description": "在第一人称工业竞技场中迎战六波僵尸与最终首领，在回合间隙管理弹药、后坐力、耐力与商店采购。"
+  },
+  "example:butch-graves-j2me": {
+    "description": "在五个万圣节射击章节中迎战首领、收集钥匙、探索隐藏区域并观看脚本过场动画，由面向 Java 功能机的轻量光线投射引擎渲染。"
+  },
+  "example:castle-clash-duel-claude": {
+    "description": "招募战士与弓箭手，在瓦片地图上展开双人战术对决。这款完整的 Phaser 原型结合了 Claude Code 实现与 Pixel Frog 的 Tiny Swords 美术素材。"
+  },
+  "example:claude-dreaming-godot": {
+    "description": "从像素风阁楼步入可交互的 3D 画作世界：梦幻花园、太空飞行、微型星球以及社区共建房间。"
+  },
+  "example:clockout-unseen-codex": {
+    "description": "在倒计时结束前潜行离开三间办公室，利用家具掩护、咖啡声东击西与临时文件夹伪装躲避巡逻视线并抵达电梯。"
+  },
+  "example:clowder-and-crest-agents": {
+    "description": "招募猫咪加入中世纪公会，在十五种小游戏委托中完成任务、培养羁绊，并沿着随公会声望演变的七章战役推进剧情。"
+  },
+  "example:core-business-claude": {
+    "description": "钻探矿藏、管理燃料与机身耐久，并在地表商店升级装备，这款受 Motherload 启发的非商业挖矿技术演示以 Three.js 渲染 2.5D 世界、用 Blender 脚本生成 3D 资产。"
+  },
+  "example:crown-defender-codex": {
+    "description": "在等距视角下操控英雄抵御三十波攻城敌人，选择升级路线以解锁装饰王冠。"
+  },
+  "example:deep-yellow-claude": {
+    "description": "在第一人称回合制 Roguelike 中探索程序化生成的后室空间。移动或待机都会触发战斗，装备搭配与理智值决定每局走向。"
+  },
+  "example:eight-second-crew-codex": {
+    "description": "录制八秒行动路线并作为分身回放，与先前的自己协作窃取钥匙并脱身。九个关卡逐步引入压力板、巡逻守卫与投射物机关。"
+  },
+  "example:fang-fox-gbc-claude": {
+    "description": "在真正的 Game Boy Color 游戏中探索浮空岛屿、挑战首领、解开谜题并追随小狐狸的冒险，支持通过浏览器模拟器或掌机 ROM 游玩。"
+  },
+  "example:fishslop-claude": {
+    "description": "驾驶深海潜艇穿梭沉没礁石，投喂鱼群、拾取掉落金币并购置新鱼种或潜艇部件。声呐可短暂显形原本隐身的 Veilfin。"
+  },
+  "example:fruit-ninja-dojo-astra": {
+    "description": "挥刀切开空中水果、串联连击并躲避炸弹，这款非官方水果忍者复刻包含经典、60 秒街机与 90 秒禅意三种模式。"
+  },
+  "example:golden-hour-skatepark-cursor": {
+    "description": "在原创海滨滑板公园自由滑行：弧面转弯、豚跳、翻板、卡杆、翘板、摔倒与起身。这款完整的第三人称沙盒提供瞬时连招与可切换时段，不设关卡或持久计分。"
+  },
+  "example:isocity-cursor": {
+    "description": "规划分区、道路、铁路、公共设施与模拟人口，建造一座等距视角城市。IsoCity 是作者归因于 Cursor 的完整 Canvas 浏览器游戏。"
+  },
+  "example:isocoaster-cursor": {
+    "description": "规划布局过山车、游乐设施与游客动线，打造主题公园。IsoCoaster 是作者使用 Cursor 辅助开发的 IsoCity 仓库中的独立可玩游戏与路由。"
+  },
+  "example:katana-kitsune-godot": {
+    "description": "选择狐狸武士并在等距视角动作 Roguelike 中迎战妖怪，包含武士刀战斗、耐力管理、拾取道具与递进地牢层数。静音原型支持本地多人，当前源码中还记录了更多联机派对系统。"
+  },
+  "example:magic-carpet-wizard-astra": {
+    "description": "驾驭飞毯掠过微型球形世界，穿越得分光环、施放三种法术并应对游荡敌人与首领。本地幽灵竞速支持两名玩家轮流挑战。"
+  },
+  "example:minimal-rogue-claude": {
+    "description": "探索单色地牢、击碎方块、管理耐力与装备，在支持英文与日文界面的 ASCII 风格 Roguelike 中步步深入。"
+  },
+  "example:morbreaker-unity-claude": {
+    "description": "使用挡板控制随每次反弹不断加速的小球，通关十个打砖块关卡，迎战逐步提升的砖块耐久度并本地保存最高分。"
+  },
+  "example:mosswing-astra": {
+    "description": "通过单指点击拍打翅膀让小生物保持浮空，穿过滚动石柱间隙，在紧凑的 3D 浏览器游戏中冲击更高分数。"
+  },
+  "example:nagi-home-cowork": {
+    "description": "照料住在程序化生成小屋中的小螃蟹 Nagi：投放食物、抛球互动、安排家具活动，并在日常需求变化中记录日记。这是一款支持进度存档的宁静生活模拟游戏。"
+  },
+  "example:novel-journey-to-west": {
+    "description": "一款改编自《西游记》三借芭蕉扇篇章的中文回合制 RPG，包含手绘行走地图、任务、装备、宠物与指令战斗系统。"
+  },
+  "example:overexposed-ai": {
+    "description": "在卡牌驱动的名利场模拟中引领新晋艺人度过一年职业抉择。打出卡牌提升技艺、资金与关注度，同时应对三家报纸的舆论反响，防止过度曝光演变为丑闻。"
+  },
+  "example:pelican-bike-claude": {
+    "description": "操控戴头盔的鹈鹕沿程序化海岸线骑行，变道捕鱼、跳跃并解锁小成就。这款完整的 Three.js 项目自带角色、自行车、海洋、音频与昼夜系统。"
+  },
+  "example:pixel-orchard-astra": {
+    "description": "翻开十二包种子卡找出六组匹配图案。记录步数、记住错配位置，并随时重排果园再来一局轻快的记忆翻牌。"
+  },
+  "example:pokemon-tactics-claude": {
+    "description": "在等距战场上调遣宝可梦，善用地形高低差并瞄准范围技能避免误伤友军。这款可玩的战棋同人作品将 TypeScript 模拟逻辑与 Babylon.js 地形上的 2D-HD 精灵结合。"
+  },
+  "example:polar-icecapade-claude": {
+    "description": "在覆冰的 3D 竞技场中滑行，借助三段近战连击向前推进，并利用发射投射物的后坐力向后借力。在这款短篇 Game Jam 冒险中开启闸门、收集金币并反抗老鼠政权。"
+  },
+  "example:project-plateau": {
+    "description": "受《失落的世界》启发的第一人称野外摄影探险：取景拍摄史前动物、规划四张感光干板、规避危险并在夜幕降临前返回营地。"
+  },
+  "example:rhythm-master-windsurf": {
+    "description": "一款以单个浏览器 HTML 文件实现的四轨音乐节奏游戏，包含程序合成音轨、难度设置、连击计分与特殊模式。"
+  },
+  "example:roo-code-action": {
+    "description": "一个轻量 SVG 俯视角动作原型，支持鼠标瞄准射击、敌人与前摇提示攻击，并附带详细的提示词驱动开发记录。"
+  },
+  "example:sakura-crossing-qwen": {
+    "description": "探索赛璐璐渲染风格的日式街区，包含运作中的铁路道口、街区居民、升降桥、可驾驶汽车与可游泳的河流。"
+  },
+  "example:silent-meridian-codex": {
+    "description": "调查定格在 00:17 的天文台，比对“当下”与“回响”两种状态，借助日志与可选提示解开横跨四章的十三个关联谜题。"
+  },
+  "example:spirit-of-kiro": {
+    "description": "收集奇特物品，在工作台上组合或转化素材，并将成品卖给 AI 鉴赏家，体验开放式合成制作玩法。"
+  },
+  "example:sprout-quest-claude": {
+    "description": "探索微型世界、参与实时竞技场战斗、采集材料、锻造装备并重建村庄。Sprout Quest 是一款移动端优先的冒险游戏，结合 2D 世界与实时渲染的 3D 角色和物品。"
+  },
+  "example:supermarket-simulator-cursor": {
+    "description": "以第一人称视角经营超市：订购货物、拆箱理货、上架补货并服务顾客。作者使用 Cursor 构建该 Unity 实验项目，并通过混元生成 3D 模型。"
+  },
+  "example:surge-for-oinja-codex": {
+    "description": "在两张交互地图中抵御机械蜂群并构筑电系流派。自动攻击让玩家专注于走位闪避、升级构筑与修复设施。"
+  },
+  "example:three-kingdoms-codex": {
+    "description": "统筹钱粮、发展城池并在十五座据点间调度武将。选择魏、蜀或吴势力，与两家电脑阵营角逐统一版图。"
+  },
+  "example:three-quake-claude-port": {
+    "description": "在 Three.js 浏览器移植版中游玩 Quake 共享软件章节，并研究经典射击游戏的渲染与运行时是如何借助 AI 辅助完成适配的。"
+  },
+  "example:thunderfall-astra": {
+    "description": "从三架战机中择一出击，穿梭五个星区的弹幕、激光与首领战。收集四种颜色武器并在关卡间挑选强化升级。"
+  },
+  "example:vibe-golf-bevy": {
+    "description": "在起伏多变的 3D 地形与道具场景中蓄力击球，在这款小巧的街机高尔夫沙盒中追击移动鸭子标靶。"
+  },
+  "example:vibe-racer-opencode": {
+    "description": "一款俯视角计时竞速游戏，支持最佳圈速保存、玩家与作者幽灵车、泥泞路面效果以及内置赛道编辑器。"
+  },
+  "example:word-rain-chatgpt": {
+    "description": "移动篮子按顺序接住字母，拼出打乱的单词并躲避红色危险物。护盾、通配符、完美单词连击与动态下落速度为街机拼词循环增添策略抉择。"
+  },
+  "demo:recording-agent-arcade-galaxy": {
+    "description": "一款 Phaser 太空射击游戏运行在编辑器上方的透明桌面浮层中。"
+  },
+  "demo:recording-autoue-workflow": {
+    "description": "官方演示展示了 Unreal Engine 编辑器内部的自动化生成工作流。"
+  },
+  "demo:recording-castle-clash": {
+    "description": "招募小队并派遣带动画的 Tiny Swords 单位向敌方城堡推进。"
+  },
+  "demo:recording-cwm-brain-cloud-harbor": {
+    "description": "官方录屏展示风帆小艇在云海港口中航行，画面同时呈现移动控制输入。"
+  },
+  "demo:recording-diamond-csgo": {
+    "description": "作者录制的键鼠交互片段，运行于使用 CS:GO 画面训练的扩散世界模型中。"
+  },
+  "demo:recording-genie3-jetski": {
+    "description": "Google DeepMind 录制的夜间可操控摩托艇世界，画面在生成的水面与灯笼之上叠加展示了方向输入。"
+  },
+  "demo:recording-hunyuan3d-assets": {
+    "description": "作者发布的旋转展示，呈现 Hunyuan3D 2.0 形状与纹理管线生成的带贴图 3D 角色。"
+  },
+  "demo:recording-marble-blue-diner": {
+    "description": "World Labs 漫游展示生成的蓝色餐馆，呈现由文本提示词创建的持久化 3D 室内空间。"
+  },
+  "demo:recording-moonlight-mayhem": {
+    "description": "在 Three.js 博物馆场景中躲避移动巡逻保安并解救浣熊同伴。"
+  },
+  "demo:recording-pokemon-tactics": {
+    "description": "在 Babylon.js 渲染的 2D-HD 战术战场上布置队伍站位并瞄准攻击目标。"
+  },
+  "demo:recording-raccoon-heist": {
+    "description": "在 Claude 构建的 Three.js 后院潜行小品中，避开扫射的手电筒巡逻并收集战利品。"
+  },
+  "demo:recording-sakura-crossing": {
+    "description": "漫步在本地 Qwen 模型生成的赛璐璐日式街区中，经过带动画的铁路道口。"
+  },
+  "demo:recording-solarwm-overview": {
+    "description": "官方概览展示由相机控制移动的生成雪村、风景、遗迹与其他世界。"
+  },
+  "demo:recording-sprite-forge": {
+    "description": "早期 0.3 版本介绍展示了 Ryo 从静态图像经视频动画到抠图精灵序列的工作流。"
+  },
+  "demo:recording-triposr-assets": {
+    "description": "在 TripoSR 官方预告片中将五张输入图与旋转重建的 3D 物体并排对照，完整保留输入与输出对照行。"
+  },
+  "demo:recording-video2game-garden": {
+    "description": "官方浏览器录屏展示了在由视频重建的花园场景中移动与发射小球的交互过程。"
+  },
+  "demo:recording-wonderworld-cathedral": {
+    "description": "官方分屏画面展示了随着用户选择新内容与相机方向，大教堂场景不断向外延展的过程。"
+  }
+}

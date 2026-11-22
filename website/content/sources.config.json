@@ -425,5 +425,66 @@
         "sourceKey": "learningMedia"
       }
     }
+  },
+  "data/segments/approved-papers.json": {
+    "exports": {
+      "default": { "shape": "array", "kind": "paper" }
+    }
+  },
+  "data/segments/approved-threejs-games.json": {
+    "exports": {
+      "default": { "shape": "array", "kind": "threejs-game" }
+    }
+  },
+  "data/segments/approved-threejs-page-covers.json": {
+    "exports": {
+      "default": {
+        "shape": "metadata",
+        "kind": "threejs-game",
+        "reason": "Approved fallback page-cover attachments for exported threejs-game records, hydrated through website/src/data/pageCovers.ts."
+      }
+    }
+  },
+  "data/segments/approved-imported-media.json": {
+    "exports": {
+      "default": {
+        "shape": "metadata",
+        "kind": "example",
+        "reason": "Reviewed gameplay screenshot provenance for approved imported example records."
+      }
+    }
+  },
+  "website/src/data/approvedImportedCollections.ts": {
+    "exports": {
+      "approvedImportedCollections": { "shape": "array", "kind": "collection" }
+    }
+  },
+  "website/src/data/approvedImportedCases.ts": {
+    "exports": {
+      "approvedImportedCases": { "shape": "array", "kind": "example" }
+    }
+  },
+  "website/src/data/approvedImportedMedia.ts": {
+    "exports": {
+      "approvedImportedMedia": {
+        "shape": "lookup",
+        "kind": "example",
+        "sourceKey": "learningMedia"
+      }
+    }
+  },
+  "website/src/data/approvedImportedAgents.ts": {
+    "exports": {
+      "approvedImportedAgents": {
+        "shape": "lookup",
+        "kind": "example",
+        "sourceKey": "gameCaseAgents"
+      }
+    }
+  },
+  "website/src/data/approvedImportedRecordings.ts": {
+    "exports": {
+      "approvedImportedRecordings": { "shape": "media", "kind": "demo" }
+    }
   }
 }

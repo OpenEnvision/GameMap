@@ -80,6 +80,11 @@
 | AutoUE                             | Pluto156                                                               | 创作者 | [一手来源](https://github.com/Pluto156/AutoUE)                                                                                       | 无已发布的项目标志                                                                                                                                                                                                                     | 仅显示维护者姓名                                                                                         |
 | UniGen                             | yxwan123                                                               | 创作者 | [一手来源](https://github.com/yxwan123/UniGen)                                                                                       | 无已发布的项目标志                                                                                                                                                                                                                     | 仅显示维护者姓名                                                                                         |
 | Tripo 模型生成 API                     | Tripo AI / VAST                                                        | 品牌  | [一手来源](https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html)                                                    | [原图](https://avatars.githubusercontent.com/u/149052137?v=4)                                                                                                                                                                   | <code>logos/tripo-ai-vast-50f52a476f35.png</code>                                                |
+| CrazyGames                         | CrazyGames                                                             | 品牌  | [一手来源](https://developer.crazygames.com/)                                                                                        | [原图](https://imgs.crazygames.com/favicons/favicon-transparent.png?quality=95&metadata=none&width=196&height=196&fit=crop)                                                                                                     | <code>logos/crazygames-c284e89a355c.jpg</code>                                                   |
+| Epic Games Store                   | Epic Games / Epic Games Store                                          | 品牌  | [一手来源](https://store.epicgames.com/en-US/distribution)                                                                           | [原图](https://github.com/EpicGames.png?size=256)                                                                                                                                                                               | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code>                                     |
+| GOG                                | GOG                                                                    | 品牌  | [一手来源](https://www.gog.com/pressroom/press-kit/)                                                                                 | [原图](https://www.gog.com/pressroom/wp-content/uploads/2025/06/GOG_LOGO_DARK.png)                                                                                                                                              | <code>logos/gog-e8ee9c8c97d9.png</code>                                                          |
+| itch.io                            | itch.io                                                                | 品牌  | [一手来源](https://itch.io/press-kit)                                                                                                | [原图](https://static.itch.io/images/app-icon.svg)                                                                                                                                                                              | <code>logos/itch-io-7c7c74347fbf.svg</code>                                                      |
+| Steam                              | Valve / Steam                                                          | 品牌  | [一手来源](https://partner.steamgames.com/)                                                                                          | [原图](https://store.fastly.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016)                                                                                                                                | <code>logos/steam-ec1098f56177.svg</code>                                                        |
 | Scenario                           | Scenario                                                               | 品牌  | [一手来源](https://github.com/scenario-labs/Scenario-Unity)                                                                          | [原图](https://avatars.githubusercontent.com/u/71755875?s=200\&v=4)                                                                                                                                                             | <code>logos/scenario-69c44818c77c.png</code>                                                     |
 | Meshy API                          | Meshy                                                                  | 品牌  | [一手来源](https://www.meshy.ai/media-kit)                                                                                           | [原图](https://cdn.meshy.ai/ti_w%3A2048%2Cq%3A75/landing-assets/media-kit/meshy-logo-general.webp)                                                                                                                              | <code>logos/meshy-a8d0b59eb31a.webp</code>                                                       |
 | HY-Motion 1.0                      | Tencent Hunyuan                                                        | 品牌  | [一手来源](https://github.com/Tencent-Hunyuan/HY-Motion-1.0)                                                                         | [原图](https://avatars.githubusercontent.com/u/210980732?v=4)                                                                                                                                                                   | <code>logos/tencent-hunyuan-547abf65938b.png</code>                                              |
@@ -408,6 +413,26 @@ Unity 自有产品文档标明了官方插件，其源码位于 Unity-Technologi
 ### Tripo 模型生成 API
 
 所链接的一手来源支持官方项目或发布者署名。随附标志对应同一组织或产品。
+
+### CrazyGames
+
+由 CrazyGames 开发者门户链接的官方透明品牌图标。下载的公开图像未经改动直接随本地打包，仅代表该平台，不代表个别开发者或 AI 开发工具。
+
+### Epic Games Store
+
+官方 Epic Games 企业标志，已从核实过的 EpicGames 组织资料页打包。该标志代表运营 Epic Games Store 的发行方；该商店不绑定特定引擎，也不等同于 Unreal Engine 运行时。
+
+### GOG
+
+官方 GOG 媒体资料包提供的原始深色 GOG 标志。保留原始像素、色彩、透明度与宽高比。它代表分发平台；无 DRM 分发并不意味着游戏源码公开。
+
+### itch.io
+
+发行方媒体资料包提供的官方 itch.io 应用图标。图像原样本地打包，遵循不盗链品牌图片的要求。该标志标识平台本身，而非托管于该平台的游戏创作者。
+
+### Steam
+
+官方 Steam 商店使用的精确 Steam 文字标志。在保留色彩与宽高比的前提下本地打包，仅移除了 XML 声明和外部 DTD 头部。Steam 品牌标识 Valve 的分发平台，不代表任何收录游戏的作者身份。
 
 ### Scenario
 

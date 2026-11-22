@@ -80,6 +80,11 @@ Original artwork is displayed with its aspect ratio and colors intact. Wide word
 | AutoUE | Pluto156 | creator | [Primary source](https://github.com/Pluto156/AutoUE) | No published project mark | Maintainer name only |
 | UniGen | yxwan123 | creator | [Primary source](https://github.com/yxwan123/UniGen) | No published project mark | Maintainer name only |
 | Tripo Model Generation API | Tripo AI / VAST | brand | [Primary source](https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html) | [Original image](https://avatars.githubusercontent.com/u/149052137?v=4) | <code>logos/tripo-ai-vast-50f52a476f35.png</code> |
+| CrazyGames | CrazyGames | brand | [Primary source](https://developer.crazygames.com/) | [Original image](https://imgs.crazygames.com/favicons/favicon-transparent.png?quality=95&metadata=none&width=196&height=196&fit=crop) | <code>logos/crazygames-c284e89a355c.jpg</code> |
+| Epic Games Store | Epic Games / Epic Games Store | brand | [Primary source](https://store.epicgames.com/en-US/distribution) | [Original image](https://github.com/EpicGames.png?size=256) | <code>logos/epic-games-unreal-engine-e0295cf4837c.png</code> |
+| GOG | GOG | brand | [Primary source](https://www.gog.com/pressroom/press-kit/) | [Original image](https://www.gog.com/pressroom/wp-content/uploads/2025/06/GOG_LOGO_DARK.png) | <code>logos/gog-e8ee9c8c97d9.png</code> |
+| itch.io | itch.io | brand | [Primary source](https://itch.io/press-kit) | [Original image](https://static.itch.io/images/app-icon.svg) | <code>logos/itch-io-7c7c74347fbf.svg</code> |
+| Steam | Valve / Steam | brand | [Primary source](https://partner.steamgames.com/) | [Original image](https://store.fastly.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016) | <code>logos/steam-ec1098f56177.svg</code> |
 | Scenario | Scenario | brand | [Primary source](https://github.com/scenario-labs/Scenario-Unity) | [Original image](https://avatars.githubusercontent.com/u/71755875?s=200&v=4) | <code>logos/scenario-69c44818c77c.png</code> |
 | Meshy API | Meshy | brand | [Primary source](https://www.meshy.ai/media-kit) | [Original image](https://cdn.meshy.ai/ti_w%3A2048%2Cq%3A75/landing-assets/media-kit/meshy-logo-general.webp) | <code>logos/meshy-a8d0b59eb31a.webp</code> |
 | HY-Motion 1.0 | Tencent Hunyuan | brand | [Primary source](https://github.com/Tencent-Hunyuan/HY-Motion-1.0) | [Original image](https://avatars.githubusercontent.com/u/210980732?v=4) | <code>logos/tencent-hunyuan-547abf65938b.png</code> |
@@ -408,6 +413,26 @@ The public implementation is maintained by yxwan123. No independent project mark
 ### Tripo Model Generation API
 
 Official project or publisher attribution is supported by the linked primary source. The bundled mark identifies that organization or product.
+
+### CrazyGames
+
+Official transparent CrazyGames brand icon linked by the CrazyGames developer portal. The downloaded public image is bundled unchanged and identifies the platform, not an individual developer or an AI development tool.
+
+### Epic Games Store
+
+Official Epic Games corporate mark, already bundled from the verified EpicGames organization profile. The mark identifies the publisher operating Epic Games Store; the storefront is engine-agnostic and is not the Unreal Engine runtime.
+
+### GOG
+
+Original dark GOG logo provided in the official GOG press kit. Original pixels, colors, transparency, and aspect ratio are retained. It represents the distribution platform; DRM-free availability does not imply public game source.
+
+### itch.io
+
+Official itch.io app icon from the publisher’s press kit. The artwork is unchanged and bundled locally, following the request not to hotlink brand images. This mark identifies the platform rather than the creators of games hosted there.
+
+### Steam
+
+Exact Steam wordmark used by the official Steam storefront. Bundled locally with colors and aspect ratio intact; only the XML declaration and external DTD header were removed. The Steam brand identifies Valve’s distribution platform, not authorship of any listed game.
 
 ### Scenario
 

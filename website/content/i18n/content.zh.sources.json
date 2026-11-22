@@ -5208,5 +5208,208 @@
   "example:open3d-hollowreach": {
     "description": "cd51d7a7546f70c2c6e22a5f61396c8f943f376445b53755c165529b84416ff3",
     "aiUse": "b33a2354ebe72c29598bfd4e5f04b596cf12f7b11bca22ab62006059fcfa49e5"
+  },
+  "resource:crazygames": {
+    "summary": "7bae63b8474648561a101f9d63ab8ebadfcd76fe19b3a49dd8f9ad7d4b04ba31",
+    "detail": "47955e6c98de6cd544e4da93c61b4ce13139d1081ef0aed66217cb68a4034e70"
+  },
+  "resource:epic-games-store": {
+    "summary": "d6961f6a135c6bd1d91c36cb65a996897bcbfb35ec7a3f729583453c2ce6aaf5",
+    "detail": "2baa6043ab959be77c2cf03aff001e0f34f2f9a34c714df388a037ab50c47b4a"
+  },
+  "resource:gog": {
+    "summary": "f4504aa50a4e60ae6c273eaa071839ac138834731770c09096944e4e70c41b5c",
+    "detail": "bd40de80ec4e5913654039cad4e646e4065bddc84a27bffbea59f14b884f904d"
+  },
+  "resource:itch-io": {
+    "summary": "b8c95ce569910e4cfcf4203438c612b578c2887a86d2068c761e644bbcd0ed0d",
+    "detail": "3c212cba75616a8f55972e11fbeab62bc4f6b26140238b11cc66519336b28c00"
+  },
+  "resource:steamworks": {
+    "summary": "63b3707be621a473f70515b67bc0599de0d553a47e4f321fd8ffbfc433252c3b",
+    "detail": "e2375366cbce2d7a7b9b2a2dd2834b6a0be11b46415f2662f27b251b165b0a96"
+  },
+  "example:arkanoid-neon-claude": {
+    "description": "19b10bdf6893fe43438bf6d5bf267bd9cce2ac733c7fa7b55e6dbb8d5c5ded56"
+  },
+  "example:astra-floor-ai": {
+    "description": "2679a20b7ab8051ebf6c35fd3b93779c364a9b30465bc0639bed942751a65374"
+  },
+  "example:butch-graves-j2me": {
+    "description": "acc748ff982452d7a6076d8d4526002c92d9d87cbc01f04315eaf961e5a99e74"
+  },
+  "example:castle-clash-duel-claude": {
+    "description": "2c088b926045c72c34cdae05c6207087b80c7c47bcda5e4b6d4535085e289a67"
+  },
+  "example:claude-dreaming-godot": {
+    "description": "ac8e509bbc42c070b9ce14d4195b0c285b8af512e664077fc8090cddcd4c5e24"
+  },
+  "example:clockout-unseen-codex": {
+    "description": "fe20e8618c5c27bc8ae69bea0b4237acb9326fd6aeb85eccd337c9992de653d2"
+  },
+  "example:clowder-and-crest-agents": {
+    "description": "7a2a4717ad6074325a421b979828858609c6eeda58961f8e87514bfd0e093b65"
+  },
+  "example:core-business-claude": {
+    "description": "d6a21912397e62636bf12b984940b4542721c8e728cf586d783e8719d6b7df0e"
+  },
+  "example:crown-defender-codex": {
+    "description": "48b6fbba6abd9317ca41c1bf4a432204206695f1fae36615ba3870a4d176e8ba"
+  },
+  "example:deep-yellow-claude": {
+    "description": "4770ecd69a5255fb1546f0b5c699d6b4dace39bc9b3cfc5e77e582717086a845"
+  },
+  "example:eight-second-crew-codex": {
+    "description": "2a405e67dd26452cb57d403b0e85c1e6d3352c429bc9a7fe9675ad23fc94ee48"
+  },
+  "example:fang-fox-gbc-claude": {
+    "description": "cc5935ebc8df1aaee4a518df01e02672a96f80a7e5386ffc686843901faed38c"
+  },
+  "example:fishslop-claude": {
+    "description": "138dbb8580c5f02e07464b71c80ca0920d08299f4ce84feb3b08d43a921e819f"
+  },
+  "example:fruit-ninja-dojo-astra": {
+    "description": "b176541f0d709c3d17e0cf2b46c216c055c0271c54a00bcf64d966e43e101103"
+  },
+  "example:golden-hour-skatepark-cursor": {
+    "description": "4ff4e46652312d4c1ba8005310442f863d190c6edc82ca8189d83155754b36b8"
+  },
+  "example:isocity-cursor": {
+    "description": "b65a60a7f0b80c481c118f6c0d617e65cbc1260dc631126e3d1348915ec12d3b"
+  },
+  "example:isocoaster-cursor": {
+    "description": "1a503c5fb74d05092d38fab3c971240cdc4d939a35c31e17cb147f1b3d309ba4"
+  },
+  "example:katana-kitsune-godot": {
+    "description": "9fdef3a8c8a1fdce5b363bcf10c6877ef76c280db06b300c19c92b00de6d80f6"
+  },
+  "example:magic-carpet-wizard-astra": {
+    "description": "d8f0c381881010b3bab457b5b55e719cbe30c8b915a0e6af76892b951f7318d5"
+  },
+  "example:minimal-rogue-claude": {
+    "description": "cb6e9d148768f28701dd5fabd3fb2c3dd1353fbc00f9e7171ea8bd0b2b823f04"
+  },
+  "example:morbreaker-unity-claude": {
+    "description": "7bdfa556cda240e9593e40dec4daee45ed222ae9e6d43e8561d6b71ddb82d6ef"
+  },
+  "example:mosswing-astra": {
+    "description": "27168b63191c256d33fc465b3af392a6680b8791702465061654d362b15e82d7"
+  },
+  "example:nagi-home-cowork": {
+    "description": "bc0901628eb83ee1168b1eb0af2d98ec769557444e09814d2fa4716b39209e20"
+  },
+  "example:novel-journey-to-west": {
+    "description": "b4f610d37541bdecb26feab1b79dc7ab4e83682b5c30f1b810281101403cf730"
+  },
+  "example:overexposed-ai": {
+    "description": "6bdebd48a4ca6214dc87aec46d6597da3455899408a24ca8324710a844953b1a"
+  },
+  "example:pelican-bike-claude": {
+    "description": "1582edaff23ff4f8ca8182c791abae8e07b56c24a135b516846fcee4ac350b53"
+  },
+  "example:pixel-orchard-astra": {
+    "description": "c90e99fb6385d1aef5a0978b0721525570c6cbc1ecc58c35c9e4e3370a07ea9c"
+  },
+  "example:pokemon-tactics-claude": {
+    "description": "2588a305d58b5769e0d17c73415da7b71e3706a372934676b72acb11fb2c5259"
+  },
+  "example:polar-icecapade-claude": {
+    "description": "6a8800b66c92f99a073e4d0c58dfac1860dce5b8fdfaa9ae087951aff8903b98"
+  },
+  "example:project-plateau": {
+    "description": "022a0e3447af2e0f716f0ea8658dbfabe45756fa8f70de380aebe8e5bd4a48b4"
+  },
+  "example:rhythm-master-windsurf": {
+    "description": "e60264db895955e54bc6f0deddb63f9c24d22fcbbf9bd775c883d37407e605e6"
+  },
+  "example:roo-code-action": {
+    "description": "7ca126ef259ba1b0e2ff98496dd5bf37b7ba557a9133c1a4bba8b0aa91cf34b0"
+  },
+  "example:sakura-crossing-qwen": {
+    "description": "7264f5012e3bf27b20180e3ef8f65e1aa4c8c9ab9225f236f4c620a7d6abaa43"
+  },
+  "example:silent-meridian-codex": {
+    "description": "f87bc0149d66348dee7b07fad741881d2ffb600b90cdee4ee108bf2f723f0fe5"
+  },
+  "example:spirit-of-kiro": {
+    "description": "575c608f68f90bdcb40c4d1f7f53313481ff2fefa74063e4eb0b397db1ca3e70"
+  },
+  "example:sprout-quest-claude": {
+    "description": "53da3aa349073e4d3b8a84291669068258b1b09ca1f48d7b8c14213158ac4649"
+  },
+  "example:supermarket-simulator-cursor": {
+    "description": "6f778ea1666698b4bb9e289be2a379749f961152617261503e0370c7e992bfd1"
+  },
+  "example:surge-for-oinja-codex": {
+    "description": "10698daf7d8784e372dbcdc667092acca368a0cf06ff1fa7c3379d55e580154f"
+  },
+  "example:three-kingdoms-codex": {
+    "description": "a1228514f9f51c7b83a92b9166f1be6cde9d1355d95edb2bcb5726a2708961e7"
+  },
+  "example:three-quake-claude-port": {
+    "description": "907aa51e9a698459c5177b4c7d4ca44b4f567101064fda582924110cb0a9ccac"
+  },
+  "example:thunderfall-astra": {
+    "description": "5f7707b43b1f040d8b9cbea22b52be01d6b7fb3a6dc52f23e2d5c257f2973567"
+  },
+  "example:vibe-golf-bevy": {
+    "description": "e86f90f4c4815fbcc8c72daa9bbb94fd36a1eeef53aa94f8ae76bf1a6413280f"
+  },
+  "example:vibe-racer-opencode": {
+    "description": "9cfd52aacc2197f126aaaeb54aedc2b0119291a416d40717601a2cc0fbaa9001"
+  },
+  "example:word-rain-chatgpt": {
+    "description": "04fef0d955094b822fbbdbd5d3b0f065cce4c9d08f5ee5296e1d5978885f26bd"
+  },
+  "demo:recording-agent-arcade-galaxy": {
+    "description": "c1a5ce6c381c8dc9e670cee9c0de09a015eae02b674b8667835684373c61bdea"
+  },
+  "demo:recording-autoue-workflow": {
+    "description": "985c1f141c9cb82654a6c440cc4befebb6ee7bc83f17c12f3b8f0f99024d3dbc"
+  },
+  "demo:recording-castle-clash": {
+    "description": "896638bf81097f71ddee70ed812ba1706a7953fd8357b6c80ebb917e6ab0fee2"
+  },
+  "demo:recording-cwm-brain-cloud-harbor": {
+    "description": "9affdc6ea155a5b31605e62ddabbfd3bffee24b0388d13e84565f5a652d7be08"
+  },
+  "demo:recording-diamond-csgo": {
+    "description": "a1ec8754ed7e40a1f4da647cfdb7e75a39d59da336dec2ad49166d7633c1197f"
+  },
+  "demo:recording-genie3-jetski": {
+    "description": "2b98db9ffc1a9bd41358336a832705fddbbc1c46b6925a7d599903e598c6bf4a"
+  },
+  "demo:recording-hunyuan3d-assets": {
+    "description": "97942601cb3bd472502efeb020fa96e47fbe3e6777a2661c265687b60cdb4dae"
+  },
+  "demo:recording-marble-blue-diner": {
+    "description": "a0aeb4d7764b0e4f744f964b45d7cf8032a1df929de1114171975bbc4df61650"
+  },
+  "demo:recording-moonlight-mayhem": {
+    "description": "e69cd85c7208a2b93253e726ebae8315c6065ee04aa1d2b2dca4ae9d98834f47"
+  },
+  "demo:recording-pokemon-tactics": {
+    "description": "6ad463d368b33ff79955957c736dc498fa6c2a969e26e72c8dda00663223a615"
+  },
+  "demo:recording-raccoon-heist": {
+    "description": "d6075f5fba482188352c608175e91e2b2afda0b2e8fbaee7b78187f3fa99bd3b"
+  },
+  "demo:recording-sakura-crossing": {
+    "description": "b91c51167919519b52d474f586e70a5b539318d310df7ce5c3feab2049ce1e58"
+  },
+  "demo:recording-solarwm-overview": {
+    "description": "5c711e3ae85f7cd556e816dbc9faee792d9968ff2f02ed33a82fa6b72f7152dd"
+  },
+  "demo:recording-sprite-forge": {
+    "description": "37d74f7c49d4efed2074aa2539a930d9474743d6e2a976cfae2b34eed7af088a"
+  },
+  "demo:recording-triposr-assets": {
+    "description": "5d42c0500865185e1a0e64081065294c107529ba19363029e8a871b517fe3448"
+  },
+  "demo:recording-video2game-garden": {
+    "description": "437570e5a811f35ebbafd90460d8e17d6a47b7c0b36940e49c5a695c00222740"
+  },
+  "demo:recording-wonderworld-cathedral": {
+    "description": "c187c6a4dc3297b2250edab22409eae3af8808f4e2bdd875e9ab65a23a10f7a9"
   }
 }

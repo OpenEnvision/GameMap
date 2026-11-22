@@ -2,7 +2,7 @@
 
 > 面向 AI 游戏开发的规划地图——从创意到可玩的世界。
 
-**110 项精选一手资料** ，串联编程智能体、游戏引擎、面向 2D 和 3D 开发的 AI、制作工具以及代码世界模型。主要资料审阅日期： **2026 年 10 月 18 日** 。这是一份研究快照：审阅资料并不意味着复现其结果，也不意味着持续跟踪。
+**115 项精选一手资料** ，串联编程智能体、游戏引擎、面向 2D 和 3D 开发的 AI、制作工具以及代码世界模型。主要资料审阅日期： **2026 年 10 月 18 日** 。这是一份研究快照：审阅资料并不意味着复现其结果，也不意味着持续跟踪。
 
 - [交互式 GameMap 网站——GitHub Pages](https://openenvision.github.io/GameMap/)
 - [从资源到可运行项目的实践指南](../guides/practical-guide.md)
@@ -30,7 +30,7 @@
 - [2. 游戏引擎、DCC 工具与生态](#engines) — 24 项资源
 - [3. 面向 2D 游戏开发的 AI](#2d) — 13 项资源
 - [4. 面向 3D 游戏开发的 AI](#3d) — 15 项资源
-- [5. 游戏制作：美术、动画、音频、测试与运行时 AI](#production) — 18 项资源
+- [5. 游戏制作：美术、动画、音频、测试与运行时 AI](#production) — 23 项资源
 - [6. 代码世界模型与交互式世界](#world) — 20 项资源
 
 <a id="agents"></a>
@@ -964,6 +964,71 @@ Convai 通过引擎集成将游戏角色连接到运行时对话与行为服务�
 截图断言在比较前会等待两次捕获结果一致，但像素稳定并不能证明应用已就绪。请记录浏览器、字体、视口和捕获选项：禁用动画、蒙版及样式都可能改变证据。DOM 访问是不同于纯截图控制或 Playwright MCP 的观测接口。
 
 标签：`Browser testing` · `Visual regression` · `DOM`。资料审阅日期：2026-10-18。延伸阅读：[可操作性](https://playwright.dev/docs/actionability) · [截图断言 API](https://playwright.dev/docs/api/class-pageassertions)
+
+</details>
+
+### 社区
+
+| 资源 | 用途与范围 | 阶段 |
+| --- | --- | --- |
+| [CrazyGames](https://developer.crazygames.com/) | 游玩浏览器游戏，并为 CrazyGames 提交、测试与发布准备 Web 构建。 | 交付 |
+| [Epic Games Store](https://store.epicgames.com/en-US/distribution) | 浏览游戏发布，并通过 Epic 的自助开发者工具准备商店分发。 | 交付 |
+| [GOG](https://www.gog.com/submit-your-game) | 发现无 DRM 的桌面端发行作品，并向 GOG 精选目录提交游戏。 | 交付 |
+| [itch.io](https://itch.io/developers) | 发现独立游戏，并发布附带浏览器构建或可下载发行版的项目页面。 | 交付 |
+| [Steam](https://partner.steamgames.com/) | 发现桌面游戏，并使用 Steamworks 准备商店页面、构建、测试与发布。 | 交付 |
+
+<details>
+<summary>输入、输出、局限与延伸阅读</summary>
+
+**[CrazyGames](https://developer.crazygames.com/)**
+
+CrazyGames 托管浏览器游戏，并提供独立的开发者门户和文档，涵盖提交、技术要求、SDK 集成与测试。提交内容需经过 QA 审阅；Basic Launch 与 Full Launch 具有不同的要求与可用范围。支持的 Web 技术横跨多种引擎。可游玩的门户构建属于分发产物，并非完整游戏项目公开或由 AI 开发的证据。
+
+标签：`Publishing` · `Game discovery` · `Browser games`。资料审阅日期：2026-10-20。延伸阅读：[在 CrazyGames 浏览游戏](https://www.crazygames.com/) · [CrazyGames 发布文档](https://docs.crazygames.com/) · [CrazyGames 提交要求](https://docs.crazygames.com/requirements/intro/)
+
+- **演示 · 服务：** [在 CrazyGames 浏览游戏](https://www.crazygames.com/)。浏览器游戏门户。各作品有各自的输入、设备和网络要求。
+- **源码 · 不可用：** 平台列表不是游戏源码。通过浏览器分发的文件并不自动等同于完整的可维护项目；需单独核实创作者提供的源码。
+- **教程 · 教程：** [CrazyGames 发布文档](https://docs.crazygames.com/)。官方 Web 游戏要求、SDK 指南、测试工具和发布工作流。
+
+**[Epic Games Store](https://store.epicgames.com/en-US/distribution)**
+
+Epic Games Store 提供玩家商店页面，并在 Epic Developer Portal 中提供用于产品页面、构建、优惠和更新的发布工具。分发不绑定特定引擎；使用 Unreal Engine 并非前提条件。开发者仍需完成账号入驻并满足商店的内容和产品要求。商店页面不同于浏览器演示、AI 开发声明或完整源码。
+
+标签：`Publishing` · `Game discovery` · `Desktop games`。资料审阅日期：2026-10-20。延伸阅读：[在 Epic Games Store 浏览游戏](https://store.epicgames.com/en-US/) · [Epic Developer Portal 文档](https://dev.epicgames.com/docs/dev-portal)
+
+- **演示 · 服务：** [在 Epic Games Store 浏览游戏](https://store.epicgames.com/en-US/)。玩家商店页面。请查看各产品的发布状态与支持系统；商店本身不是可玩项目。
+- **源码 · 不可用：** 平台列表不是游戏源码。游戏源码和复用许可必须独立于 Epic Games Store 上架状态单独核实。
+- **教程 · 教程：** [Epic Games Store 发布概览](https://store.epicgames.com/en-US/distribution)。官方自助分发概览与常见问题，涵盖开发者配置和商店要求。
+
+**[GOG](https://www.gog.com/submit-your-game)**
+
+GOG 是一个精选数字游戏商店，提供无 DRM 发行版和可选桌面客户端。官方提交表单是开发者提议游戏的入口；提交并不保证通过或立即上架。请核实各游戏支持的操作系统、版本与发布状态。无 DRM 分发不同于公开游戏源代码。
+
+标签：`Publishing` · `Game discovery` · `Desktop games`。资料审阅日期：2026-10-20。延伸阅读：[在 GOG 浏览游戏](https://www.gog.com/en/games) · [向 GOG 提交游戏](https://lp.gog.com/submit-your-game/en)
+
+- **演示 · 服务：** [在 GOG 浏览游戏](https://www.gog.com/en/games)。桌面游戏目录。请检查具体作品和系统要求，而不要假设可在浏览器游玩。
+- **源码 · 不可用：** 平台列表不是游戏源码。无 DRM 描述的是分发限制，而不是是否提供完整源码或可复用素材。
+- **教程 · 服务：** [向 GOG 提交游戏](https://www.gog.com/submit-your-game)。包含嵌入式开发者表单的官方提交页面。是否收录需另行审核决定。
+
+**[itch.io](https://itch.io/developers)**
+
+itch.io 让创作者管理游戏页面、截图、文件、开发日志与更新。HTML5 构建可在浏览器中运行；其他发行版可作为附带平台标签的下载文件提供。项目页面也可能只包含演示版或开发中版本，因此需检查实际上传内容和说明。发布可玩构建并不会自动公开其源码。
+
+标签：`Publishing` · `Game discovery` · `Browser games` · `Desktop games`。资料审阅日期：2026-10-20。延伸阅读：[在 itch.io 浏览游戏](https://itch.io/games) · [创建你的第一个 itch.io 页面](https://itch.io/docs/creators/getting-started)
+
+- **演示 · 服务：** [在 itch.io 浏览游戏](https://itch.io/games)。同时包含浏览器游戏和可下载游戏的独立游戏目录。可用性与许可因项目而异。
+- **源码 · 不可用：** 平台列表不是游戏源码。创作者可能会单独发布源码，但游戏页面或可下载二进制文件本身不等于完整项目源码。
+- **教程 · 教程：** [创建你的第一个 itch.io 页面](https://itch.io/docs/creators/getting-started)。官方指南，涵盖项目信息、上传、分类、发布和更新。
+
+**[Steam](https://partner.steamgames.com/)**
+
+Valve 的 Steam 商店用于分发已发布游戏；Steamworks 是用于合作伙伴入驻、商店页面管理、构建上传、测试和更新的开发者门户。发布需要完成合作伙伴设置，并通过商店页面与构建审阅。“即将推出”页面、演示版和正式发行游戏属于不同状态。在 Steam 上架并不能证明 AI 参与创作或游戏源码公开。
+
+标签：`Publishing` · `Game discovery` · `Desktop games`。资料审阅日期：2026-10-20。延伸阅读：[在 Steam 浏览游戏](https://store.steampowered.com/) · [Steamworks 入门](https://partner.steamgames.com/doc/gettingstarted)
+
+- **演示 · 服务：** [在 Steam 浏览游戏](https://store.steampowered.com/)。游戏商店页面。请查看各产品的发布状态、支持系统和获取要求；这不是嵌入式浏览器演示。
+- **源码 · 不可用：** 平台列表不是游戏源码。每款游戏的完整源码都必须单独核实；Steam 页面本身不提供源码。
+- **教程 · 教程：** [Steamworks 入门](https://partner.steamgames.com/doc/gettingstarted)。官方发布工作流，涵盖合作伙伴配置、构建、商店展示与发布审核。
 
 </details>
 

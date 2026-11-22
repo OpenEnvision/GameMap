@@ -1,0 +1,262 @@
+[
+  {
+    "access": {
+      "demo": {
+        "kind": "service",
+        "label": "Browse games on CrazyGames",
+        "note": "Browser-game portal. Individual titles have their own input, device, and network requirements.",
+        "url": "https://www.crazygames.com/"
+      },
+      "source": {
+        "kind": "unavailable",
+        "label": "Platform listing is not game source",
+        "note": "Browser-delivered files are not automatically the complete maintainable project; verify creator-provided source separately."
+      },
+      "tutorial": {
+        "kind": "tutorial",
+        "label": "CrazyGames publishing documentation",
+        "note": "Official requirements, SDK guides, testing tools, and launch workflow for web games.",
+        "url": "https://docs.crazygames.com/"
+      }
+    },
+    "category": "production",
+    "detail": "CrazyGames hosts browser games, with a separate developer portal and documentation for submission, technical requirements, SDK integration, and testing. Submissions receive QA review; Basic Launch and Full Launch have different requirements and availability. Supported web technologies span multiple engines. A playable portal build is a distribution artifact, not evidence that the complete game project is public or that AI developed it.",
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "id": "crazygames",
+    "links": [
+      {
+        "label": "Browse games on CrazyGames",
+        "url": "https://www.crazygames.com/"
+      },
+      {
+        "label": "CrazyGames publishing documentation",
+        "url": "https://docs.crazygames.com/"
+      },
+      {
+        "label": "CrazyGames submission requirements",
+        "url": "https://docs.crazygames.com/requirements/intro/"
+      }
+    ],
+    "name": "CrazyGames",
+    "stages": [
+      "ship"
+    ],
+    "summary": "Play browser games and prepare web builds for CrazyGames submission, testing, and launch.",
+    "tags": [
+      "Publishing",
+      "Game discovery",
+      "Browser games"
+    ],
+    "type": "community",
+    "url": "https://developer.crazygames.com/",
+    "verified": "2026-10-20"
+  },
+  {
+    "access": {
+      "demo": {
+        "kind": "service",
+        "label": "Browse games on Epic Games Store",
+        "note": "Player storefront. Check each product's release status and supported systems; the store is not a playable project.",
+        "url": "https://store.epicgames.com/en-US/"
+      },
+      "source": {
+        "kind": "unavailable",
+        "label": "Platform listing is not game source",
+        "note": "Game source and reuse rights must be checked independently of Epic Games Store availability."
+      },
+      "tutorial": {
+        "kind": "tutorial",
+        "label": "Epic Games Store publishing overview",
+        "note": "Official overview and FAQ for self-service distribution, developer setup, and store requirements.",
+        "url": "https://store.epicgames.com/en-US/distribution"
+      }
+    },
+    "category": "production",
+    "detail": "Epic Games Store offers a player storefront and publishing tools in the Epic Developer Portal for product pages, builds, offers, and updates. Distribution is engine-agnostic; using Unreal Engine is not a prerequisite. Developers still need account onboarding and must meet the store's content and product requirements. A store listing is distinct from a browser demo, an AI-development claim, or complete source code.",
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "id": "epic-games-store",
+    "links": [
+      {
+        "label": "Browse games on Epic Games Store",
+        "url": "https://store.epicgames.com/en-US/"
+      },
+      {
+        "label": "Epic Developer Portal documentation",
+        "url": "https://dev.epicgames.com/docs/dev-portal"
+      }
+    ],
+    "name": "Epic Games Store",
+    "stages": [
+      "ship"
+    ],
+    "summary": "Browse game releases and prepare store distribution through Epic's self-service developer tools.",
+    "tags": [
+      "Publishing",
+      "Game discovery",
+      "Desktop games"
+    ],
+    "type": "community",
+    "url": "https://store.epicgames.com/en-US/distribution",
+    "verified": "2026-10-20"
+  },
+  {
+    "access": {
+      "demo": {
+        "kind": "service",
+        "label": "Browse games on GOG",
+        "note": "Desktop game catalog. Check the individual product and system requirements rather than assuming browser play.",
+        "url": "https://www.gog.com/en/games"
+      },
+      "source": {
+        "kind": "unavailable",
+        "label": "Platform listing is not game source",
+        "note": "DRM-free describes distribution restrictions, not whether complete source or reusable assets are available."
+      },
+      "tutorial": {
+        "kind": "service",
+        "label": "Submit a game to GOG",
+        "note": "Official submission page with an embedded developer form. Catalog inclusion requires a separate publishing decision.",
+        "url": "https://www.gog.com/submit-your-game"
+      }
+    },
+    "category": "production",
+    "detail": "GOG is a curated digital game store with DRM-free releases and an optional desktop client. The official submission form is the developer entry point for proposing a game; submitting it does not guarantee acceptance or immediate publication. Verify each game's supported operating systems, edition, and release status. DRM-free distribution is different from publishing the game's source code.",
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "id": "gog",
+    "links": [
+      {
+        "label": "Browse games on GOG",
+        "url": "https://www.gog.com/en/games"
+      },
+      {
+        "label": "Submit a game to GOG",
+        "url": "https://lp.gog.com/submit-your-game/en"
+      }
+    ],
+    "name": "GOG",
+    "stages": [
+      "ship"
+    ],
+    "summary": "Discover DRM-free desktop releases and submit a game to GOG's curated catalog.",
+    "tags": [
+      "Publishing",
+      "Game discovery",
+      "Desktop games"
+    ],
+    "type": "community",
+    "url": "https://www.gog.com/submit-your-game",
+    "verified": "2026-10-20"
+  },
+  {
+    "access": {
+      "demo": {
+        "kind": "service",
+        "label": "Browse games on itch.io",
+        "note": "Independent game catalog with both browser and downloadable games. Availability and license vary by project.",
+        "url": "https://itch.io/games"
+      },
+      "source": {
+        "kind": "unavailable",
+        "label": "Platform listing is not game source",
+        "note": "Creators may publish source separately, but a game page or downloadable binary alone is not complete project source."
+      },
+      "tutorial": {
+        "kind": "tutorial",
+        "label": "Create your first itch.io page",
+        "note": "Official guide to project information, uploads, classification, publishing, and updates.",
+        "url": "https://itch.io/docs/creators/getting-started"
+      }
+    },
+    "category": "production",
+    "detail": "itch.io lets creators manage game pages, screenshots, files, development logs, and updates. HTML5 builds can run in the browser; other releases can be provided as downloads with platform labels. A project's page can also contain a demo or work in development, so inspect the actual uploads and instructions. Publishing a playable build does not automatically make its source public.",
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "id": "itch-io",
+    "links": [
+      {
+        "label": "Browse games on itch.io",
+        "url": "https://itch.io/games"
+      },
+      {
+        "label": "Create your first itch.io page",
+        "url": "https://itch.io/docs/creators/getting-started"
+      }
+    ],
+    "name": "itch.io",
+    "stages": [
+      "ship"
+    ],
+    "summary": "Discover independent games and publish project pages with browser builds or downloadable releases.",
+    "tags": [
+      "Publishing",
+      "Game discovery",
+      "Browser games",
+      "Desktop games"
+    ],
+    "type": "community",
+    "url": "https://itch.io/developers",
+    "verified": "2026-10-20"
+  },
+  {
+    "access": {
+      "demo": {
+        "kind": "service",
+        "label": "Browse games on Steam",
+        "note": "Game storefront. Check each product's release status, supported systems, and acquisition requirements; this is not an embedded browser demo.",
+        "url": "https://store.steampowered.com/"
+      },
+      "source": {
+        "kind": "unavailable",
+        "label": "Platform listing is not game source",
+        "note": "Complete source must be verified separately for each game; a Steam listing does not supply it."
+      },
+      "tutorial": {
+        "kind": "tutorial",
+        "label": "Steamworks getting started",
+        "note": "Official publishing workflow covering partner setup, builds, store presence, and release review.",
+        "url": "https://partner.steamgames.com/doc/gettingstarted"
+      }
+    },
+    "category": "production",
+    "detail": "Valve's Steam storefront distributes released games; Steamworks is the developer portal for onboarding, store presence, build uploads, testing, and updates. Publishing requires partner setup and review of the store page and build. A Coming Soon page, a demo, and a released game are different states. Steam availability does not establish AI authorship or public game source.",
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "id": "steamworks",
+    "links": [
+      {
+        "label": "Browse games on Steam",
+        "url": "https://store.steampowered.com/"
+      },
+      {
+        "label": "Steamworks getting started",
+        "url": "https://partner.steamgames.com/doc/gettingstarted"
+      }
+    ],
+    "name": "Steam",
+    "stages": [
+      "ship"
+    ],
+    "summary": "Discover desktop games and use Steamworks to prepare store pages, builds, testing, and release.",
+    "tags": [
+      "Publishing",
+      "Game discovery",
+      "Desktop games"
+    ],
+    "type": "community",
+    "url": "https://partner.steamgames.com/",
+    "verified": "2026-10-20"
+  }
+]

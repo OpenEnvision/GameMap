@@ -1,6 +1,7 @@
 import { open3dRound5Media } from "./open3dRound5Media";
 import { communityMedia } from "./communityMedia";
 import { jamGameMedia } from "./jamGameMedia";
+import { approvedImportedMedia } from "./approvedImportedMedia";
 
 import type { z } from "zod";
 import type { learningMediaSchema } from "../../content/contracts";
@@ -15,6 +16,7 @@ export const learningMedia: Record<string, LearningMedia> = {
   ...communityMedia,
   ...jamGameMedia,
   ...open3dRound5Media,
+  ...approvedImportedMedia,
   "moonlight-mayhem-codex": {
     src: "media/learning/moonlight-mayhem-codex.webp",
     alt: "A playable raccoon character in a 3D museum, with crew rescue objectives and security patrols.",

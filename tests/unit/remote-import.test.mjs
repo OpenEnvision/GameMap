@@ -695,13 +695,15 @@ test("remote-import: shared fidelity gate rejects schema-valid forged bodies and
 });
 
 test("remote-import: exact JPEG/WebP destination normalization retains strict byte/extension checks", async () => {
-  for (const [source, destination, format] of [
+  for (const [id, source, destination, format] of [
     [
+      "crazygames",
       "logos/crazygames-c284e89a355c.png",
       "logos/crazygames-c284e89a355c.jpg",
       "jpeg",
     ],
     [
+      "remote-normalized",
       "logos/stable-audio-open-e030c46f6897.png",
       "logos/stable-audio-open-e030c46f6897.webp",
       "webp",
@@ -712,7 +714,7 @@ test("remote-import: exact JPEG/WebP destination normalization retains strict by
     })
       .toFormat(format)
       .toBuffer();
-    const e = candidate("remote-normalized");
+    const e = candidate(id);
     e.body.attachments = structuredClone(e.body.attachments);
     e.body.attachments.identity.asset = source;
     e.body.attachments.identity.sha256 = sha256(bytes);

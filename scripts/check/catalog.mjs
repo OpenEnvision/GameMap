@@ -459,14 +459,32 @@ if (round5LedgerText !== null) {
     screenshotCredits.set(row.id, row);
   }
 }
+const approvedMediaLedgerText = await readFile(
+  new URL("../../data/segments/approved-imported-media.json", import.meta.url),
+  "utf8",
+).catch((error) => {
+  if (error.code === "ENOENT") return null;
+  throw error;
+});
+if (approvedMediaLedgerText !== null) {
+  for (const row of JSON.parse(approvedMediaLedgerText).records) {
+    assert.ok(
+      !screenshotCredits.has(row.id),
+      `Conflicting screenshot attribution: ${row.id}`,
+    );
+    screenshotCredits.set(row.id, row);
+  }
+}
 let gameplayPreviewBytes = 0;
 for (const path of learningPaths) {
   const preview = learningMedia[path.id],
     provenance = learningManifest.previews.find((item) => item.id === path.id);
   if (path.category === "community" && !preview) continue; // Never fabricate screenshots for source-reviewed games.
-  assert.equal(
-    preview.src,
-    `media/learning/${path.id}.webp`,
+  const isImportedMedia =
+    /^media\/imports\/[a-f0-9]{40}\/learning\/[^/]+\.webp$/.test(preview.src) &&
+    preview.src.endsWith(`/${path.id}.webp`);
+  assert.ok(
+    preview.src === `media/learning/${path.id}.webp` || isImportedMedia,
     `Gameplay screenshots must be bundled locally: ${path.id}`,
   );
   for (const field of ["alt", "caption"])
@@ -476,6 +494,11 @@ for (const path of learningPaths) {
     );
   assert.equal(new URL(preview.sourceUrl).protocol, "https:");
   const screenshotCredit = screenshotCredits.get(path.id);
+  if (isImportedMedia)
+    assert.ok(
+      screenshotCredit,
+      `Imported gameplay screenshot requires a provenance ledger entry: ${path.id}`,
+    );
   if (screenshotCredit) {
     assert.deepEqual(
       screenshotCredit.media,
@@ -524,7 +547,7 @@ for (const path of learningPaths) {
       path.source.url,
       `Identify the locally captured source project: ${path.id}`,
     );
-  } else
+  } else if (!isImportedMedia)
     assert.equal(
       preview.sourceUrl,
       path.demo.url,
@@ -598,6 +621,7 @@ assert.deepEqual(
     .filter((name) => name.endsWith(".webp"))
     .sort(),
   Object.values(learningMedia)
+    .filter((preview) => preview.src.startsWith("media/learning/"))
     .map((preview) => preview.src.split("/").at(-1))
     .sort(),
   "Record every bundled gameplay screenshot",
@@ -744,7 +768,11 @@ const { recordings } = await import(
 const showcaseCases = Object.fromEntries(
   recordings.flatMap((recording) =>
     recording.views
-      .filter((view) => view.role === "excerpt")
+      .filter(
+        (view) =>
+          view.role === "excerpt" &&
+          !String(view.previewSrc || "").includes("media/imports/"),
+      )
       .map((view) => [
         view.id,
         {

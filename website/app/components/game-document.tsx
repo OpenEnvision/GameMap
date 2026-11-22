@@ -348,7 +348,12 @@ export function GameDocument({
   // 4. Catalog provenance and the generic study guidance stay in the record.
   //    The same labels and "play it, read the source" steps recur on every
   //    game, so they say nothing about this one.
-  take((block) => block.field === "aiUse" || block.field === "steps");
+  take(
+    (block) =>
+      block.field === "aiUse" ||
+      block.field === "steps" ||
+      block.field === "category",
+  );
 
   // 5. Destinations (demo, source, tutorial; Three.js facts stay in the ledger)
   const destOrder = ["demo", "source", "tutorial"] as const;
@@ -369,10 +374,13 @@ export function GameDocument({
     (block) => block.field === "resourceIds" && block.type === "links",
   )[0];
 
-  // Remaining blocks for the workflow and access sections. Catalog provenance
-  // (category, intake, evidence) stays in the record and is not shown.
-  const remainingGuidance = take((block) => sectionOf(block) === "guidance");
-  const remainingResources = take((block) => sectionOf(block) === "resources");
+  // Remaining blocks for access and record-specific details (distribution links
+  // join Play & source; Three.js technical facts and page-cover provenance join Details).
+  const remainingResources = take(
+    (block) =>
+      sectionOf(block) === "resources" || block.field === "distribution",
+  );
+  const remainingGuidance = take(() => true);
 
   // Access icons follow structured metadata in every language.
   const demoIcon =

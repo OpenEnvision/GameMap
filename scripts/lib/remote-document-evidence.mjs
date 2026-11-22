@@ -102,9 +102,32 @@ export function assertHistoricalDocumentEvidence(html, page) {
     );
   const attr = (node, name) => node.attrs?.find((a) => a.name === name)?.value;
   const hasHost = (value) => /chatgpt\.site/i.test(value || "");
+  function isPinnedStructuredHostText(node) {
+    if (node.nodeName !== "#text") return false;
+    const text = (node.value || "").trim();
+    let matched = false;
+    let articleHeader = false;
+    for (let parent = node.parentNode; parent; parent = parent.parentNode) {
+      if (["nav", "script", "style", "footer"].includes(parent.tagName))
+        return false;
+      if (parent.tagName === "header") {
+        if (matched) return false;
+        articleHeader = true;
+      }
+      if (parent.tagName === "article") {
+        const key =
+          attr(parent, "data-content-key") || attr(parent, "data-content-ref");
+        const pinned = historicalDocumentEvidence.structuredSource.records[key];
+        if (pinned && text === new URL(pinned).host) matched = true;
+      }
+    }
+    return matched && (!articleHeader || matched);
+  }
   function check(node) {
     assert.ok(
-      !hasHost(node.value || node.data) || isPinnedRouterEvidence(node),
+      !hasHost(node.value || node.data) ||
+        isPinnedRouterEvidence(node) ||
+        isPinnedStructuredHostText(node),
       `Legacy hosting text outside an approved evidence link: ${page}`,
     );
     for (const attribute of node.attrs || []) {
@@ -113,6 +136,7 @@ export function assertHistoricalDocumentEvidence(html, page) {
       let article = false;
       let structuredEvidence = false;
       let chrome = false;
+      let articleHeader = false;
       for (let parent = node.parentNode; parent; parent = parent.parentNode) {
         if ((attr(parent, "class") || "").split(/\s+/).includes("prose"))
           prose = true;
@@ -129,13 +153,14 @@ export function assertHistoricalDocumentEvidence(html, page) {
             attribute.value
         )
           structuredEvidence = true;
-        if (
-          ["nav", "header", "footer", "script", "style"].includes(
-            parent.tagName,
-          )
-        )
-          chrome = true;
+        if (["nav", "script", "style"].includes(parent.tagName)) chrome = true;
+        if (["header", "footer"].includes(parent.tagName)) {
+          if (article || structuredEvidence || parent.tagName === "footer")
+            chrome = true;
+          else articleHeader = true;
+        }
       }
+      if (articleHeader && !structuredEvidence) chrome = true;
       assert.ok(
         node.tagName === "a" &&
           attribute.name === "href" &&

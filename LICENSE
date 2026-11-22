@@ -1,0 +1,33 @@
+MIT License
+
+Copyright (c) 2026 OpenEnvision / GameMap Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+Third-party notices and separate licenses:
+
+- The bundled level-design skill adaptation under `docs/skills/level-design/`
+  (and its Chinese counterpart under `docs/zh/skills/level-design/`) is
+  licensed under CC BY-NC-SA 4.0. See `docs/skills/level-design/LICENSE.md`.
+- Third-party icon packs under `website/public/icons/` retain their respective
+  licenses (see `website/public/icons/LICENSE-*.txt`).
+- External games, papers, tools, logos, screenshots, and linked recordings
+  remain the property of their respective rights holders.

@@ -1,5 +1,6 @@
 import type { PayloadModels } from "../../content/contracts";
-import { browserPortCollections } from './browserPortCollections';
+import { browserPortCollections } from "./browserPortCollections";
+import { approvedImportedCollections } from "./approvedImportedCollections";
 // Discovery collections are entry points, not individually verified game cases.
 export type CommunityCollection = PayloadModels["collection"];
 export const communityCollections = [
@@ -25,4 +26,5 @@ export const communityCollections = [
       "Discover creator demos and build accounts. This collection also includes films, tools, and experiments beyond games.",
   },
   ...browserPortCollections,
+  ...approvedImportedCollections,
 ] as const satisfies readonly CommunityCollection[];

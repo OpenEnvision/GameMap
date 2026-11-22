@@ -391,17 +391,28 @@ test("check-web: exact pinned creator links also render in their structured reco
   for (const [key, url] of Object.entries(
     historicalDocumentEvidence.structuredSource.records,
   )) {
-    for (const attr of ["data-content-key", "data-content-ref"])
+    const host = new URL(url).host;
+    for (const attr of ["data-content-key", "data-content-ref"]) {
       assert.doesNotThrow(() =>
         assertHistoricalDocumentEvidence(
-          `<article ${attr}="${key}"><a href="${url}">Play</a></article>`,
+          `<article ${attr}="${key}"><a href="${url}">Play</a><span>${host}</span></article>`,
           "examples/",
         ),
       );
+      assert.doesNotThrow(() =>
+        assertHistoricalDocumentEvidence(
+          `<article ${attr}="${key}"><header><a href="${url}">Play</a></header></article>`,
+          "examples/fruit-ninja-dojo-astra/",
+        ),
+      );
+    }
     for (const html of [
       `<article data-content-ref="example:another"><a href="${url}">Play</a></article>`,
+      `<article data-content-ref="example:another"><span>${host}</span></article>`,
+      `<article data-content-ref="${key}"><span>${host} extra</span></article>`,
       `<article data-content-ref="${key}"><a href="${url}unreviewed">Play</a></article>`,
       `<nav><article data-content-ref="${key}"><a href="${url}">Play</a></article></nav>`,
+      `<header><article data-content-ref="${key}"><a href="${url}">Play</a></article></header>`,
       `<article data-content-ref="${key}"><img src="${url}"></article>`,
       `<article data-content-ref="${key}"><script src="${url}"></script></article>`,
     ])

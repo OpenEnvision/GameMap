@@ -177,6 +177,7 @@ function project(papers = [paper], games = [game]) {
   const archive = structuredClone(bundle.snapshot.archive);
   archive.sources.papers = papers;
   archive.sources.threejsGames = games;
+  archive.sources.pageCovers = {};
   return projectSnapshot(
     context,
     archive,
@@ -267,11 +268,8 @@ test("extended contracts, adapters, forms, assembly and canonical routes have re
       false,
     );
     assert.equal(context.contentKinds[kind].owner, "database");
-    assert.equal(
-      context.registry.all(kind).length,
-      0,
-      "Git defaults must not import remote drafts",
-    );
+    for (const entry of context.registry.all(kind))
+      assert.doesNotThrow(() => context.payloadSchemas[kind].parse(entry.data));
   }
   assert.equal(
     context.contractForms()["threejs-game"].summaryField,
@@ -293,11 +291,13 @@ test("extended contracts, adapters, forms, assembly and canonical routes have re
     canonicalAddress(context, "paper", paper.id, paper),
     `/papers/${paper.id}/`,
   );
+  const fieldValue = (data, path) =>
+    path.split(".").reduce((value, part) => value?.[part], data);
   for (const entry of context.registry.entries) {
     const [title, summary] = context.textFields[entry.kind];
     assert.deepEqual(context.envelopeText(entry.kind, entry.data), {
-      title: entry.data[title],
-      summary: entry.data[summary],
+      title: fieldValue(entry.data, title),
+      summary: fieldValue(entry.data, summary),
     });
   }
 });
@@ -881,6 +881,38 @@ test("optional native v2 contracts preserve installed v1 payloads and historical
       );
       record.schema_version = 3;
       continue; // Preserve the installed community v3 reader while the active pointer advances.
+    }
+    const hasV2PayloadField = legacyV2Fields[record.kind].some(
+      (field) => record.body.payload[field] !== undefined,
+    );
+    const hasV2Attachment =
+      record.kind === "example" &&
+      !context.versionedContracts.example[1].attachments.safeParse(
+        record.body.attachments,
+      ).success;
+    if (hasV2PayloadField || hasV2Attachment) {
+      if (hasV2PayloadField) {
+        assert.equal(
+          context.versionedContracts[record.kind][1].payload.safeParse(
+            record.body.payload,
+          ).success,
+          false,
+        );
+      }
+      assert.equal(
+        context.versionedContracts[record.kind][2].payload.safeParse(
+          record.body.payload,
+        ).success,
+        true,
+      );
+      assert.equal(
+        context.versionedContracts[record.kind][2].attachments.safeParse(
+          record.body.attachments,
+        ).success,
+        true,
+      );
+      record.schema_version = 2;
+      continue; // Records using native v2 fields or v2 attributions remain valid at v2 and cannot downgrade to v1.
     }
     for (const version of [1, 2]) {
       const contract = context.versionedContracts[record.kind][version];

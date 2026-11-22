@@ -248,6 +248,17 @@ test("catalog fallback uses appended readers, relative record addresses and pinn
   );
 });
 
-test("Git authoring defaults never copy database-owned page-cover records", () => {
-  assert.deepEqual(context.sources.pageCovers, {});
+test("exported Git page-cover records belong to valid game entries and pass schema checks", () => {
+  for (const [key, value] of Object.entries(context.sources.pageCovers)) {
+    const entry = context.registry.byKey(key);
+    assert.ok(entry, `Orphan Git page cover: ${key}`);
+    assert.ok(["example", "foundation", "threejs-game"].includes(entry.kind));
+    assert.equal(
+      context.versionedContracts[entry.kind][
+        context.contentKinds[entry.kind].schemaVersion
+      ].attachments.safeParse({ pageCover: value }).success,
+      true,
+      `Invalid exported page cover: ${key}`,
+    );
+  }
 });

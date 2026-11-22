@@ -16,7 +16,6 @@ import type { ResourceIdentity } from "../src/data/resourceIdentities";
 import { publicAsset } from "../src/publicAsset";
 import { localizedPath, documentLanguages } from "./locale";
 import { researchExampleListings } from "./research-games";
-import open3dImport from "./open3d-import.config.json";
 import { anyPageCoverSchema, gameplayMediaSchema } from "./contracts";
 import type { GameplayMedia } from "../src/data/gameplayScreenshots";
 import { pageCoverAlt } from "./media";
@@ -478,9 +477,7 @@ export function createRegistry(
             : "Project page screenshot",
         src: publicAsset(cover.src),
         alt: pageCoverAlt(cover.alt),
-        source: /^(?:https?:)/.test(cover.sourceUrl)
-          ? cover.sourceUrl
-          : publicAsset(cover.sourceUrl),
+        source: cover.sourceUrl,
         width: cover.width,
         height: cover.height,
       },
@@ -548,8 +545,7 @@ export function createRegistry(
         | ContentEntry<"threejs-game"> =>
         entry.kind === "example" ||
         entry.kind === "foundation" ||
-        (entry.kind === "threejs-game" &&
-          open3dImport.includedLegacyThreejsIds.includes(entry.id)),
+        entry.kind === "threejs-game",
     ),
   );
   const registry: ContentRegistry = {
