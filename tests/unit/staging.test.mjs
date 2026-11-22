@@ -45,7 +45,10 @@ test("the staged topology is an explicitly disabled planning document, not deplo
     find(report, "database.production-isolation").status,
     "unverified",
   );
-  assert.equal(find(report, "publisher.hosting-adapter").status, "blocked");
+  assert.equal(find(report, "publisher.hosting-adapter").status, "pass");
+  assert.equal(find(report, "workflow.snapshot-delivery").status, "pass");
+  assert.equal(find(report, "content.withdrawal").status, "pass");
+  assert.equal(find(report, "content.cutover").status, "blocked");
 });
 test("implemented realm enforcement and complete planning values still cannot certify cloud identity or hosting controls", () => {
   const report = review(filled());

@@ -1,6 +1,6 @@
 import { randomUUID, timingSafeEqual } from "node:crypto";
 import { z } from "zod";
-import { first } from "../catalog/database.mjs";
+import { first, clientAddress } from "../catalog/database.mjs";
 import { MediaUploadBusyError } from "../catalog/media.mjs";
 
 const uuid = z.uuid(),
@@ -96,6 +96,7 @@ export function createCommunityHandler({
   origin,
   ensureIndex = async () => {},
   log = () => {},
+  trustProxy = false,
   // Development previews keep their own rows under prefixed keys. Published
   // works are real submissions and stay shared.
   keyPrefix = "",
@@ -114,7 +115,7 @@ export function createCommunityHandler({
   };
   function throttle(request, category, maximum, period) {
     const now = Date.now(),
-      key = category + ":" + request.socket.remoteAddress;
+      key = category + ":" + clientAddress(request, { trustProxy });
     if (attempts.size > 2000)
       for (const [id, value] of attempts)
         if (value.until < now) attempts.delete(id);

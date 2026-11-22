@@ -19,10 +19,38 @@ export function publicationQueries(query) {
         release,
         run,
       ]),
+    cloudStatus: () =>
+      value("select catalog.cloud_publication_status() as value"),
+    claimCloudTarget: ({
+      provider,
+      repository,
+      origin,
+      base,
+      approvalEnvironment,
+      targetDigest,
+    }) =>
+      value(
+        "select catalog.claim_cloud_publication_target($1,$2,$3,$4,$5,$6) as value",
+        [provider, repository, origin, base, approvalEnvironment, targetDigest],
+      ),
+    registerCloudArtifact: (text) =>
+      query("select catalog.register_cloud_publication_artifact($1)", [text]),
+    activateCloudPublication: (digest, expected, release, run, deployment) =>
+      value(
+        "select catalog.activate_cloud_publication($1,$2,$3,$4,$5::jsonb) as value",
+        [digest, expected, release, run, JSON.stringify(deployment)],
+      ),
+    activeWithdrawals: () =>
+      value("select catalog.active_withdrawals() as value"),
+    inspectLoginPrivileges: () =>
+      value("select public.inspect_login_privileges() as value"),
   };
 }
 /** Separate login and session-level lock: it survives COMMIT until journal cleanup finishes. */
-export function connectPublicationDatabase(url) {
+export function connectPublicationDatabase(
+  url,
+  { applicationName = "gamemap-local-publisher" } = {},
+) {
   const parsed = new URL(url);
   assert.ok(["postgres:", "postgresql:"].includes(parsed.protocol));
   const sql = postgres(url, {
@@ -32,7 +60,7 @@ export function connectPublicationDatabase(url) {
     ssl: ["127.0.0.1", "localhost", "[::1]"].includes(parsed.hostname)
       ? false
       : { rejectUnauthorized: true },
-    connection: { application_name: "gamemap-local-publisher" },
+    connection: { application_name: applicationName },
   });
   return {
     async withLock(run) {

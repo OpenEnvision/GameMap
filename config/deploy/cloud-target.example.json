@@ -1,0 +1,10 @@
+{
+  "format": "gamemap.cloud-target",
+  "version": 1,
+  "provider": "github-pages",
+  "repository": "replace-owner/GameMap-staging",
+  "origin": "https://replace-owner.github.io",
+  "base": "/GameMap-staging/",
+  "approvalEnvironment": "staging",
+  "branch": "gh-pages"
+}

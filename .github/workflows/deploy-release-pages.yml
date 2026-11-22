@@ -1,0 +1,198 @@
+name: Promote verified GameMap release artifact to GitHub Pages
+
+# Manual, protected exact-artifact promotion workflow.
+# Keeps .github/workflows/deploy-pages.yml unchanged for Git-authored default builds.
+# Never rebuilds the site inside the privileged deploy job.
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Protected GitHub deployment environment (staging or production)"
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+      artifact_run_id:
+        description: "Workflow run ID that produced the verified site artifact"
+        required: true
+        type: string
+      artifact_name:
+        description: "Uploaded verified site artifact archive name"
+        required: true
+        default: "gamemap-site-artifact"
+        type: string
+      expected_artifact:
+        description: "Expected currently active artifact SHA-256 (or 'none' on first publish)"
+        required: true
+        type: string
+      expected_release:
+        description: "Expected currently active release UUID (or 'none' on first publish)"
+        required: true
+        type: string
+      pipeline_run:
+        description: "Operator audit label for this promotion run"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gamemap-release-${{ inputs.environment }}
+  cancel-in-progress: false
+
+jobs:
+  verify-artifact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      artifact_digest: ${{ steps.verify.outputs.artifact_digest }}
+      release_id: ${{ steps.verify.outputs.release_id }}
+      git_commit: ${{ steps.verify.outputs.git_commit }}
+      site_base: ${{ steps.verify.outputs.site_base }}
+    steps:
+      - name: Check out pinned repository tooling
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install runtime dependencies
+        run: npm ci --omit=dev
+      - name: Download prebuilt verified site artifact
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          run-id: ${{ inputs.artifact_run_id }}
+          name: ${{ inputs.artifact_name }}
+          path: .build/incoming-artifact
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Independently verify exact site artifact inventory and non-development markers
+        id: verify
+        run: |
+          npm run site:verify -- --input .build/incoming-artifact
+          node --input-type=module <<'JS' >> "$GITHUB_OUTPUT"
+          import assert from 'node:assert/strict';
+          import { readFileSync } from 'node:fs';
+          const evidence = JSON.parse(readFileSync('.build/incoming-artifact/evidence.json', 'utf8'));
+          const site = JSON.parse(readFileSync('.build/incoming-artifact/site/site-manifest.json', 'utf8'));
+          assert.equal(evidence.version, 2);
+          assert.equal(evidence.development, false, 'Development artifacts cannot be promoted');
+          assert.equal(evidence.browserChecked, true, 'Browser gate is required before promotion');
+          assert.equal(evidence.realm.environment, process.env.TARGET_ENV, 'Artifact realm environment mismatch');
+          console.log(`artifact_digest=${evidence.artifactDigest}`);
+          console.log(`release_id=${evidence.release}`);
+          console.log(`git_commit=${evidence.gitCommit}`);
+          console.log(`site_base=${site.base}`);
+          JS
+        env:
+          TARGET_ENV: ${{ inputs.environment }}
+      - name: Upload verified site directory as Pages artifact (no rebuild)
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: .build/incoming-artifact/site
+
+  promote:
+    needs: verify-artifact
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      actions: read
+      pages: write
+      id-token: write
+    environment:
+      name: ${{ inputs.environment }}
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out pinned repository tooling
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install runtime dependencies
+        run: npm ci --omit=dev
+      - name: Re-download verified artifact for evidence receipt and retention
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          run-id: ${{ inputs.artifact_run_id }}
+          name: ${{ inputs.artifact_name }}
+          path: .build/incoming-artifact
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Verify downloaded artifact digest matches verify-artifact job
+        run: |
+          npm run site:verify -- --input .build/incoming-artifact
+          node --input-type=module -e "import assert from 'node:assert/strict'; import { readFileSync } from 'node:fs'; const e = JSON.parse(readFileSync('.build/incoming-artifact/evidence.json','utf8')); assert.equal(e.artifactDigest, process.env.EXPECTED_DIGEST);"
+        env:
+          EXPECTED_DIGEST: ${{ needs.verify-artifact.outputs.artifact_digest }}
+      - name: Deploy verified artifact to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d44e342629a3f51346 # v5.0.1
+      - name: Verify live deployed bytes match exact artifact manifest
+        run: |
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import { readFileSync } from 'node:fs';
+          import { createHash } from 'node:crypto';
+          const evidence = JSON.parse(readFileSync('.build/incoming-artifact/evidence.json', 'utf8'));
+          const expected = evidence.files.find((f) => f.path === 'site-manifest.json');
+          assert.ok(expected, 'Missing site-manifest.json in artifact evidence');
+          const url = new URL('site-manifest.json', process.env.PAGE_URL).href;
+          let matched = false;
+          for (let attempt = 1; attempt <= 6; attempt++) {
+            const res = await fetch(url, { headers: { 'Cache-Control': 'no-cache' } });
+            if (res.ok) {
+              const bytes = Buffer.from(await res.arrayBuffer());
+              if (createHash('sha256').update(bytes).digest('hex') === expected.sha256) {
+                matched = true;
+                break;
+              }
+            }
+            await new Promise((r) => setTimeout(r, 5000));
+          }
+          assert.ok(matched, `Live deployed manifest at ${url} did not match verified artifact digest`);
+          console.log(`Verified live deployed manifest bytes at ${url}`);
+          JS
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+      - name: Commit CAS activation in Supabase publication ledger
+        if: ${{ secrets.CATALOG_PUBLISHER_DATABASE_URL != '' }}
+        run: |
+          mkdir -p .build/cloud-operator/retention
+          printf '%s\n' "$OPERATOR_REALM_JSON" > .build/cloud-operator/realm.json
+          printf '%s\n' "$OPERATOR_TARGET_JSON" > .build/cloud-operator/target.json
+          chmod 600 .build/cloud-operator/realm.json .build/cloud-operator/target.json
+          npm run cloud:activate -- \
+            --realm .build/cloud-operator/realm.json \
+            --target .build/cloud-operator/target.json \
+            --retention .build/cloud-operator/retention \
+            --input .build/incoming-artifact \
+            --expected "${{ inputs.expected_artifact }}" \
+            --expected-release "${{ inputs.expected_release }}" \
+            --run "${{ inputs.pipeline_run }}" \
+            --deployment-url "${{ steps.deployment.outputs.page_url }}" \
+            --deployment-id "gh-pages:${{ github.run_id }}:${{ github.run_attempt }}" \
+            --deployed-commit "${{ needs.verify-artifact.outputs.git_commit }}"
+        env:
+          CATALOG_PUBLISHER_DATABASE_URL: ${{ secrets.CATALOG_PUBLISHER_DATABASE_URL }}
+          OPERATOR_REALM_JSON: ${{ secrets.CATALOG_RELEASE_REALM_JSON }}
+          OPERATOR_TARGET_JSON: ${{ secrets.CATALOG_CLOUD_TARGET_JSON }}
+      - name: Sync ratable catalog game index to community database (optional)
+        if: ${{ secrets.COMMUNITY_DATABASE_URL != '' }}
+        run: |
+          npm run community:sync-games -- --site-dir .build/incoming-artifact/site
+        env:
+          NODE_ENV: production
+          COMMUNITY_DATABASE_URL: ${{ secrets.COMMUNITY_DATABASE_URL }}
+          COMMUNITY_RELEASE_REALM_FILE: .build/cloud-operator/realm.json

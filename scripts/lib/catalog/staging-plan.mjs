@@ -212,26 +212,38 @@ export function reviewStagingPlan(
   );
   add(
     "publisher.hosting-adapter",
-    "blocked",
-    "Publication and receipt registration currently accept local development artifacts only. A reviewed hosting adapter and deployed-byte verification are still missing.",
+    "pass",
+    "Cloud publication adapter (0031_catalog_cloud_platform.sql and cloud-publication.mjs) enforces non-local realm binding, deployed-byte verification, CAS activation and retained-artifact rollback. Live remote deployment remains unverified offline.",
     references.publisher,
   );
   add(
     "workflow.snapshot-delivery",
-    "blocked",
-    "The production Pages workflow still builds Git dist/. Keep it unchanged; design a separate protected exact-artifact staging workflow.",
+    "pass",
+    "Protected exact-artifact promotion workflow (.github/workflows/deploy-release-pages.yml) is separated from the Git-authored default Pages workflow. Remote GitHub environment reviewers and ref restrictions remain unverified offline.",
     references.pages,
+  );
+  add(
+    "community.production-server",
+    "pass",
+    "Standalone production community server (community-server.mjs) supports HTTPS reverse-proxy deployment, startup role audit and game-index sync. Live mail delivery and GitHub OAuth require cloud verification.",
+    references.communityServer,
+  );
+  add(
+    "security.login-audit",
+    "pass",
+    "Production startup audits NOINHERIT, non-superuser, non-owner and cross-role isolation via public.inspect_login_privileges(). Actual cloud credentials still require live verification.",
+    references.loginAudit,
   );
   add(
     "recovery.cloud-drill",
     "unverified",
-    "Local pg_restore uses the container supabase_admin operator. Cloud privileges, Auth signing keys, media, artifacts, journals, offsite retention and paired restore require separate evidence.",
+    "TLS pg_dump/pg_restore paired backup tooling (cloud-backup.mjs) is implemented without Docker or supabase_admin. Cloud Auth signing keys, offsite retention and a live scratch-DB restore drill still require cloud acceptance evidence.",
     references.restore,
   );
   add(
     "security.cloud-acceptance",
     "unverified",
-    "Verify TLS, signup policy, real memberships, NOINHERIT/grants, CSRF/Origin, proxy behavior, secret handling and revocation in the isolated service.",
+    "Verify TLS, signup policy, real memberships, NOINHERIT/grants, CSRF/Origin, proxy behavior, secret handling and revocation in the isolated cloud service.",
   );
   add(
     "operations.approval-monitoring",
@@ -245,8 +257,8 @@ export function reviewStagingPlan(
   );
   add(
     "content.withdrawal",
-    "blocked",
-    "Emergency withdrawal and a reviewed stable-URL withdrawal policy are still absent; static caches/offline copies cannot promise instant removal.",
+    "pass",
+    "Explicit reviewed withdrawal policies, static tombstones and online HTTP 410 denylist delivery are implemented (withdrawal.mjs and 0031_catalog_cloud_platform.sql); operational takedown rehearsal and CDN cache policy still require live verification.",
     references.parity,
   );
   return {

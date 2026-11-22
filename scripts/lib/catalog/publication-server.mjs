@@ -3,6 +3,7 @@ import { join, extname } from "node:path";
 import { lstat, realpath } from "node:fs/promises";
 import { visibleArtifact } from "./publication.mjs";
 import { readArtifact, safePath } from "./codec.mjs";
+import { renderTombstoneHtml } from "./withdrawal.mjs";
 const types = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
@@ -24,7 +25,10 @@ const types = {
   ".data": "text/x-script",
 };
 /** Only the current site's files are served, never its receipt, journal, credentials or older HTML. */
-export function createPublicationServer(directory, { community } = {}) {
+export function createPublicationServer(
+  directory,
+  { community, denylist } = {},
+) {
   return createServer(async (request, response) => {
     if (community && (await community.handle(request, response))) return;
     if (!["GET", "HEAD"].includes(request.method)) {
@@ -62,6 +66,31 @@ export function createPublicationServer(directory, { community } = {}) {
         response.writeHead(308, { Location: base });
         response.end();
         return;
+      }
+      if (denylist) {
+        const withdrawn = await denylist.match(path, base);
+        if (withdrawn) {
+          const body = Buffer.from(
+            renderTombstoneHtml({
+              canonicalPath: withdrawn.canonicalPath,
+              publicNotice: withdrawn.publicNotice,
+              withdrawnAt: withdrawn.withdrawnAt,
+              locale: withdrawn.locale,
+              base,
+            }),
+            "utf8",
+          );
+          response.writeHead(410, {
+            "Content-Type": "text/html; charset=utf-8",
+            "Content-Length": body.length,
+            "Cache-Control": "no-store",
+            "X-Content-Type-Options": "nosniff",
+            "X-GameMap-Artifact": digest,
+            "X-GameMap-Withdrawn": "1",
+          });
+          response.end(request.method === "HEAD" ? undefined : body);
+          return;
+        }
       }
       let relative = path.startsWith(base) ? path.slice(base.length) : null;
       let bytes,

@@ -3,7 +3,10 @@ import { stat } from "node:fs/promises";
 import { root } from "../lib/documents.mjs";
 import { loadContent } from "../lib/content.mjs";
 import { createImportBundle } from "../lib/platform.mjs";
-import { connectDatabase } from "../lib/catalog/database.mjs";
+import {
+  connectDatabase,
+  assertLeastPrivilegeLogin,
+} from "../lib/catalog/database.mjs";
 import { createSupabaseAuth, createSessions } from "../lib/catalog/auth.mjs";
 import { createCatalogWorker } from "../lib/catalog/worker.mjs";
 import {
@@ -49,6 +52,17 @@ if (!missing.length) {
   if (realm.environment !== "local" && process.env.NODE_ENV !== "production")
     throw new Error("Non-local Studio realms require production security mode");
   database = connectDatabase(process.env.CATALOG_DATABASE_URL);
+  if (process.env.NODE_ENV === "production") {
+    await assertLeastPrivilegeLogin(database, "catalog_backend", {
+      forbiddenRoles: [
+        "catalog_deployer",
+        "community_backend",
+        "service_role",
+        "supabase_admin",
+        "postgres",
+      ],
+    });
+  }
   assertReleaseRealm(
     await database.system(
       async (client) =>
@@ -111,7 +125,15 @@ if (!missing.length) {
     sourceFiles: bundle.snapshot.source_files,
     readAsset: (path) => media.readAsset(path),
   });
-  options = { ...options, database, context, sessions, media, worker };
+  options = {
+    ...options,
+    database,
+    context,
+    sessions,
+    media,
+    worker,
+    trustProxy: process.env.CATALOG_TRUST_PROXY === "1",
+  };
 }
 const staticDirectory = resolve(root, ".build/studio");
 try {

@@ -21,6 +21,7 @@ import {
   parseReleaseRealm,
   assertReleaseRealm,
 } from "./release-realm.mjs";
+import { parseWithdrawalPolicy, renderTombstoneHtml } from "./withdrawal.mjs";
 
 const facade = `import input from '../.content/release-input.json';
 import type { ContentSources } from './git-sources.server';
@@ -42,15 +43,37 @@ export function releaseBuildEnvironment(directory, digest, base) {
   };
 }
 
-export function assertReleaseParity(context, pack) {
+export function assertReleaseParity(context, pack, { withdrawals } = {}) {
   const records = JSON.parse(pack.manifest_text).entries;
   const selected = new Map(records.map((row) => [row.key, row]));
+  const withdrawn = new Map(
+    (withdrawals ? parseWithdrawalPolicy(withdrawals).entries : []).map(
+      (row) => [row.key, row],
+    ),
+  );
+  for (const [key, item] of withdrawn) {
+    assert.ok(
+      !selected.has(key),
+      `Withdrawn entry must not remain in active release selection: ${key}`,
+    );
+    const existing = context.registry.byKey(key);
+    if (existing) {
+      assert.equal(
+        item.canonicalPath,
+        existing.url,
+        `Withdrawal policy path differs from canonical address: ${key}`,
+      );
+    }
+  }
   for (const entry of context.registry.entries) {
     const record = selected.get(entry.key);
-    assert.ok(
-      record,
-      `Release drops an existing address: ${entry.key}; withdrawals need an explicit migration policy`,
-    );
+    if (!record) {
+      assert.ok(
+        withdrawn.has(entry.key),
+        `Release drops an existing address: ${entry.key}; withdrawals need an explicit migration policy`,
+      );
+      continue;
+    }
     assert.equal(
       record.canonical_path,
       entry.url,
@@ -82,7 +105,7 @@ async function copyCheckout(directory) {
   );
   const allowed = (file) =>
     /^(?:scripts|website|data|docs|tests)\//.test(file) ||
-    /^(?:package(?:-lock)?\.json|(?:react-router|playwright(?:\.release)?|vite)\.config\.ts|tsconfig\.json|README\.md|CONTRIBUTING\.md|AWESOME\.md)$/.test(
+    /^(?:package(?:-lock)?\.json|(?:react-router|playwright(?:\.release)?|vite)\.config\.ts|tsconfig\.json|README\.md|CONTRIBUTING\.md|AWESOME\.md|LICENSE)$/.test(
       file,
     );
   for (const file of files.filter(
@@ -112,9 +135,9 @@ export async function prepareReleaseWorkspace(
   pack,
   packageDirectory,
   directory,
-  { development = false } = {},
+  { development = false, withdrawals } = {},
 ) {
-  assertReleaseParity(context, pack);
+  assertReleaseParity(context, pack, { withdrawals });
   await copyCheckout(directory);
   const input = materializeSiteInput(context, pack);
   input.source.development ||= development;
@@ -184,6 +207,7 @@ export async function buildReleaseSite(
     development = false,
     browser = false,
     realm: expectedRealm,
+    withdrawals,
   } = {},
 ) {
   const realm = assertReleaseRealm(
@@ -193,6 +217,9 @@ export async function buildReleaseSite(
     ),
     expectedRealm,
   );
+  const withdrawalPolicy = withdrawals
+    ? parseWithdrawalPolicy(withdrawals, realm)
+    : null;
   assert.equal(
     development,
     realm.environment === "local",
@@ -236,7 +263,7 @@ export async function buildReleaseSite(
       pack,
       packageDirectory,
       workspace,
-      { development },
+      { development, withdrawals: withdrawalPolicy || undefined },
     );
     const env = releaseBuildEnvironment(workspace, materialized.digest, base);
     if (browser) {
@@ -273,6 +300,30 @@ export async function buildReleaseSite(
         "playwright.release.config.ts",
       ]);
     for (const args of gates) await runNode(workspace, env, log.fd, args);
+    if (withdrawalPolicy?.entries.length) {
+      for (const item of withdrawalPolicy.entries) {
+        for (const [locale, prefix] of [
+          ["en", item.canonicalPath.replace(/^\//, "")],
+          ["zh", "zh/" + item.canonicalPath.replace(/^\//, "")],
+        ]) {
+          const target = safePath(
+            join(workspace, "dist"),
+            prefix + "index.html",
+          );
+          await mkdir(dirname(target), { recursive: true });
+          await writeFile(
+            target,
+            renderTombstoneHtml({
+              canonicalPath: item.canonicalPath,
+              publicNotice: item.publicNotice,
+              withdrawnAt: item.withdrawnAt,
+              locale,
+              base,
+            }),
+          );
+        }
+      }
+    }
     const files = [];
     for (const file of await walk(join(workspace, "dist"))) {
       const path = relative(join(workspace, "dist"), file)
@@ -294,6 +345,17 @@ export async function buildReleaseSite(
       files,
       artifactDigest: sha256(canonicalJSON(files)),
       records: materialized.input.records.length,
+      ...(withdrawalPolicy?.entries.length
+        ? {
+            withdrawals: withdrawalPolicy.entries.map(
+              ({ key, canonicalPath, withdrawnAt }) => ({
+                key,
+                canonicalPath,
+                withdrawnAt,
+              }),
+            ),
+          }
+        : {}),
       commands: gates,
       activated: false,
     };

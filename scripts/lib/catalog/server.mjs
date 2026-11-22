@@ -7,7 +7,7 @@ import { AuthenticationError } from "./auth.mjs";
 import { MediaUploadBusyError } from "./media.mjs";
 import { ContentValidationError } from "./validation.mjs";
 import { canonicalJSON, safePath, readArtifact } from "./codec.mjs";
-import { first } from "./database.mjs";
+import { first, clientAddress } from "./database.mjs";
 import { canonicalAddress, collectionAddress } from "./adapters.mjs";
 import { handleCommunityModeration } from "../community/server.mjs";
 
@@ -38,6 +38,15 @@ const bulkInput = z.strictObject({
 const loginInput = z.strictObject({
   email: z.email().max(254),
   password: z.string().min(1).max(200),
+});
+const withdrawInput = z.strictObject({
+  key: z.string().min(3).max(240),
+  reason: z.string().trim().min(5).max(2000),
+  publicNotice: z.string().trim().min(5).max(1000),
+});
+const liftWithdrawalInput = z.strictObject({
+  key: z.string().min(3).max(240),
+  note: z.string().trim().min(1).max(2000),
 });
 const response = (res, status, body, headers = {}) => {
   const bytes = Buffer.from(JSON.stringify(body));
@@ -95,6 +104,7 @@ export function createStudioServer({
   media,
   origin,
   staticDirectory,
+  trustProxy = false,
   missingConfiguration = [],
   log = (message) => console.error(message),
 }) {
@@ -149,6 +159,14 @@ export function createStudioServer({
         res.end(data);
         return;
       }
+      if (request.method === "GET" && path === "/api/healthz") {
+        response(res, 200, {
+          ok: true,
+          service: "gamemap-studio",
+          configured: !missingConfiguration.length,
+        });
+        return;
+      }
       if (request.method === "GET" && path === "/api/session") {
         if (missingConfiguration.length) {
           response(res, 200, {
@@ -194,7 +212,7 @@ export function createStudioServer({
         return;
       }
       if (request.method === "POST" && path === "/api/login") {
-        const key = request.socket.remoteAddress || "unknown",
+        const key = clientAddress(request, { trustProxy }),
           now = Date.now();
         for (const [key, value] of loginAttempts)
           if (value.until < now) loginAttempts.delete(key);
@@ -260,6 +278,48 @@ export function createStudioServer({
           { signedIn: false },
           { "Set-Cookie": await sessions.logout(session) },
         );
+        return;
+      }
+      if (request.method === "GET" && path === "/api/withdrawals") {
+        await worker.authorize(session.user.id, ["reviewer", "admin"]);
+        const withdrawals = await database.system(
+          async (client) =>
+            (
+              await first(
+                client,
+                "select catalog.active_withdrawals() as withdrawals",
+              )
+            ).withdrawals,
+        );
+        response(res, 200, { withdrawals });
+        return;
+      }
+      if (request.method === "POST" && path === "/api/withdrawals") {
+        const input = await jsonBody(request, withdrawInput);
+        const result = await database.user(session.user.id, (client) =>
+          first(
+            client,
+            "select public.catalog_withdraw_entry($1, $2, $3) as id",
+            [input.key, input.reason, input.publicNotice],
+          ),
+        );
+        response(res, 201, {
+          id: result.id,
+          key: input.key,
+          status: "active",
+          note: "Recorded withdrawal; rebuild or update the emergency denylist to apply publicly.",
+        });
+        return;
+      }
+      if (request.method === "POST" && path === "/api/withdrawals/lift") {
+        const input = await jsonBody(request, liftWithdrawalInput);
+        await database.user(session.user.id, (client) =>
+          client.query("select public.catalog_lift_withdrawal($1, $2)", [
+            input.key,
+            input.note,
+          ]),
+        );
+        response(res, 200, { ok: true, key: input.key, status: "lifted" });
         return;
       }
       if (request.method === "GET" && path === "/api/catalog") {

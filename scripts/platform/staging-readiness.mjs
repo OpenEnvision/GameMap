@@ -64,20 +64,30 @@ async function main() {
     ],
     [
       "publisher",
-      "supabase/migrations/0013_catalog_release_realm.sql",
-      "Local publication requires",
+      "scripts/lib/catalog/cloud-publication.mjs",
+      "createCloudPublisher",
     ],
-    ["pages", ".github/workflows/deploy-pages.yml", "run: npm run build"],
+    [
+      "pages",
+      ".github/workflows/deploy-release-pages.yml",
+      "Promote verified GameMap release artifact",
+    ],
     [
       "sessionRefresh",
       "scripts/lib/catalog/auth.mjs",
       "const refreshing = new Map()",
     ],
-    ["restore", "scripts/lib/catalog/local-backup.mjs", '"supabase_admin"'],
+    ["restore", "scripts/lib/catalog/cloud-backup.mjs", "backupCloudPlatform"],
+    ["parity", "scripts/lib/catalog/withdrawal.mjs", "parseWithdrawalPolicy"],
     [
-      "parity",
-      "scripts/lib/catalog/site-build.mjs",
-      "Release drops an existing address",
+      "communityServer",
+      "scripts/platform/community-server.mjs",
+      "createProductionCommunityService",
+    ],
+    [
+      "loginAudit",
+      "scripts/lib/catalog/database.mjs",
+      "assertLeastPrivilegeLogin",
     ],
   ]) {
     const bytes = await readFile(resolve(root, path));

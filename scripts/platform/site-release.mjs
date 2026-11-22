@@ -9,9 +9,10 @@ import {
   buildReleaseSite,
   verifySiteArtifact,
 } from "../lib/catalog/site-build.mjs";
+import { readWithdrawalPolicyFile } from "../lib/catalog/withdrawal.mjs";
 
 const help = `Private snapshot site builds (never upload or activate)
-  npm run site:build -- --input .build/releases/reviewed --out .build/site-artifacts/reviewed --realm OPERATOR_REALM_FILE --base /GameMap/ --browser
+  npm run site:build -- --input .build/releases/reviewed --out .build/site-artifacts/reviewed --realm OPERATOR_REALM_FILE --base /GameMap/ --browser [--withdrawals POLICY_FILE]
   npm run site:build -- --input PACKAGE --out OUTPUT --realm .build/catalog-local/realm.json --development
   npm run site:verify -- --input OUTPUT
 
@@ -31,6 +32,7 @@ async function main() {
         "--out",
         "--base",
         "--realm",
+        "--withdrawals",
         "--development",
         "--browser",
       ].includes(key) && !Object.hasOwn(options, key),
@@ -70,6 +72,9 @@ async function main() {
   const pack = JSON.parse(
     await readFile(join(directory, "release.json"), "utf8"),
   );
+  const withdrawals = options["--withdrawals"]
+    ? await readWithdrawalPolicyFile(resolve(options["--withdrawals"]), realm)
+    : undefined;
   const evidence = await buildReleaseSite(
     context,
     pack,
@@ -81,6 +86,7 @@ async function main() {
       base,
       development: Boolean(options["--development"]),
       browser: Boolean(options["--browser"]),
+      withdrawals,
     },
   );
   console.log(
