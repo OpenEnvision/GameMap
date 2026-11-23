@@ -52,7 +52,7 @@ export const pillars: readonly Pillar[] = [
       ),
       collection(
         "agents",
-        "Agent skills, MCP bridges and runners for engines.",
+        "Skills, bridges, frameworks, workflows, benchmarks and game code.",
       ),
       collection("testing", "Playtesting, QA automation and benchmarks."),
     ],

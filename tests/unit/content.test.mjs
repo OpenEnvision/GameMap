@@ -11,6 +11,7 @@ import {
   assertRecordFields,
   assertMarkdownCoverage,
   assertSearchCoverage,
+  researchRecordVisible,
 } from "../../scripts/lib/rendered-coverage.mjs";
 import {
   documentLinkResolver,
@@ -644,7 +645,12 @@ test("document URL policy preserves rendered routes, source assets, and deployme
 });
 test("static search contains every public canonical identity and rejects missing text", () => {
   const documents = registry.entries
-    .filter((entry) => entry.kind !== "path" && entry.kind !== "step")
+    .filter(
+      (entry) =>
+        entry.kind !== "path" &&
+        entry.kind !== "step" &&
+        researchRecordVisible(entry.kind, entry.data),
+    )
     .map((entry) => ({
       key: entry.key,
       kind: entry.kind,

@@ -16,16 +16,6 @@ import { retiredDocumentTarget } from "../../content/site";
 import type { ContentEntry, DocumentMetadata } from "../../content/models";
 import { mdxComponents } from "../components/mdx";
 import { Link, useSiteI18n } from "../lib/i18n";
-/** Reading time from the compiled document's own text: Latin words at
- *  ~230 per minute and CJK characters at ~400 per minute. */
-function readingMinutes(texts: readonly string[]) {
-  const text = texts.join(" ");
-  const cjk = text.match(/[\u3400-\u9fff\uf900-\ufaff]/g)?.length ?? 0;
-  const words =
-    text.replace(/[\u3400-\u9fff\uf900-\ufaff]/g, " ").match(/[\p{L}\p{N}]+/gu)
-      ?.length ?? 0;
-  return Math.max(1, Math.round(words / 230 + cjk / 400));
-}
 export async function loader({ params, request }: LoaderFunctionArgs) {
   const pathname = new URL(request.url).pathname;
   const redirectTarget = retiredDocumentTarget(
@@ -132,18 +122,14 @@ function Document({
     text = docMessages(locale),
     page = docs.getPage(path);
   if (!page) throw new Error("Document is unavailable");
-  const { toc, structuredData } = use(page.load()),
+  const { toc } = use(page.load()),
     Content = page.body,
     info = record.data,
     bodyLocale = documentBodyLocale(info.slug);
   const sourceLink = record.blocks.flatMap((block) =>
     block.field === "source" && block.type === "links" ? block.items : [],
   )[0];
-  const sections = toc.filter((item) => item.depth <= 2).length,
-    minutes = readingMinutes([
-      ...(structuredData?.headings ?? []).map((heading) => heading.content),
-      ...(structuredData?.contents ?? []).map((content) => content.content),
-    ]);
+  const sections = toc.filter((item) => item.depth <= 2).length;
   return (
     <DocsPage
       toc={toc}
@@ -161,9 +147,6 @@ function Document({
       <meta name="description" content={record.description} />
       <header className="reader-masthead">
         <div className="reader-masthead-bar">
-          <nav className="reader-trail" aria-label={t("Breadcrumb")}>
-            <span>{t(info.group)}</span>
-          </nav>
           <DocumentationLanguage
             locale={locale}
             slug={info.slug}
@@ -174,7 +157,6 @@ function Document({
           {record.title}
         </DocsTitle>
         <ul className="reader-meta">
-          <li>{t("{count} min read", { count: minutes })}</li>
           {sections > 0 && (
             <li>
               {sections === 1

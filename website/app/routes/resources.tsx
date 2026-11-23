@@ -238,7 +238,6 @@ export default function Resources() {
       <meta name="description" content={t(lede)} />
       <IndexHero
         pillar="tools"
-        kicker="THE RESOURCE LIBRARY"
         title="Your next building block."
         lede={lede}
         count={resources.length}

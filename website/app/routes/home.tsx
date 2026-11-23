@@ -18,6 +18,7 @@ import {
   gameStats,
   researchLedger,
 } from "../lib/collection-stats";
+import { researchRecordVisible } from "../../content/research-visibility";
 import { useOpenAtlasSearch } from "../lib/search-state";
 import { PlanetHero } from "../components/home/planet-hero";
 import { HomeStory } from "../components/home/story";
@@ -117,7 +118,9 @@ export function loader({ request }: LoaderFunctionArgs) {
     "/agents/": total("agent"),
     "/testing/": total("testing"),
     "/papers/": total("paper"),
-    "/research/": researchLedger(content).length,
+    "/research/": researchLedger(content).filter((entry) =>
+      researchRecordVisible("repository-research", entry.data),
+    ).length,
     // One logical guide per English/Chinese pair, in either locale.
     "/docs/": new Set(
       content.all("document").map((entry) => entry.id.replace(/^zh\//, "")),
@@ -267,11 +270,8 @@ export default function Home() {
       <section className="hm-hero" aria-labelledby="hm-hero-title">
         <PlanetHero />
         <div className="hm-hero-copy">
-          <p className="kicker hm-hero-kicker">
-            {t("A FIELD GUIDE FOR GAME MAKERS")}
-          </p>
           <h1 id="hm-hero-title" className="hm-hero-title">
-            {t("Small ideas.")}
+            {t("Ideas worth building.")}
             <br />
             <em>
               {t("Playable worlds")}
@@ -358,7 +358,6 @@ export default function Home() {
       <section className="hm-toolkit" aria-labelledby="hm-toolkit-title">
         <div className="hm-toolkit-head">
           <div>
-            <p className="kicker">{t("IN THE TOOLKIT")}</p>
             <h2 id="hm-toolkit-title" className="hm-title">
               <span>{t("Pick a tool.")}</span>
               {zh ? null : " "}
@@ -380,7 +379,6 @@ export default function Home() {
       {/* 6. Closing band. */}
       <section className="hm-closing" aria-labelledby="hm-closing-title">
         <div className="hm-closing-inner">
-          <p className="kicker">{t("YOUR TURN")}</p>
           <h2 id="hm-closing-title" className="hm-title">
             {t("Made something playable?")}
             <br />

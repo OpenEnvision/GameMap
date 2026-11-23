@@ -28,10 +28,10 @@
 .hm-title em,
 .hm-hero-title em {
   padding-right: 0.04em;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: inherit;
+  letter-spacing: inherit;
 }
 .home-page p.kicker {
   margin: 0 0 22px;
@@ -224,8 +224,12 @@ html[lang="zh-CN"] :is(.hm-title, .hm-hero-title) em {
 /* Inline (not inline-block): "worlds" and the brand period never separate. */
 .hm-hero-title em {
   padding-inline: 0.04em 0.06em;
-  font-size: 1.08em;
-  line-height: 0.95;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: inherit;
+  font-size: 1em;
+  line-height: inherit;
+  letter-spacing: inherit;
   background: linear-gradient(
     96deg,
     var(--ink) 18%,
@@ -2098,10 +2102,10 @@ html[lang="zh-CN"] .hm-closing-inner h2 {
     --hm-sun-angle: 62;
   }
   .hm-hero-title {
-    font-size: clamp(40px, 13.4vw, 64px);
+    font-size: clamp(28px, 10.5vw, 64px);
   }
   html[lang="zh-CN"] .hm-hero-title {
-    font-size: clamp(32px, 11.5vw, 56px);
+    font-size: clamp(22px, 9vw, 56px);
   }
   .hm-hero-lede {
     font-size: 16px;

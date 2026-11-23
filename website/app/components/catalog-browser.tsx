@@ -273,7 +273,7 @@ export function IndexHero({
   children,
 }: {
   pillar: Pillar["id"];
-  kicker: string;
+  kicker?: string;
   title: string;
   lede: string;
   count: number;
@@ -313,7 +313,7 @@ export function IndexHero({
     >
       <div className="ix-hero-inner">
         <div className="ix-hero-copy">
-          <p className="kicker ix-kicker">{t(kicker)}</p>
+          {kicker ? <p className="kicker ix-kicker">{t(kicker)}</p> : null}
           <h1 className="ix-title">
             <AccentTitle text={t(title)} />
           </h1>
@@ -721,7 +721,7 @@ export function TypedCollection({
   const hero = (
     <IndexHero
       pillar={isPaper ? "research" : "games"}
-      kicker={isPaper ? "Research & evidence" : "SOURCE-REVIEWED GAMES"}
+      kicker={isPaper ? undefined : "SOURCE-REVIEWED GAMES"}
       title={title}
       lede={description}
       count={entries.length}
@@ -918,6 +918,7 @@ export function TypedCollection({
                   {isPaper && (
                     <>
                       <option value="recent">{t("Newest first")}</option>
+                      <option value="oldest">{t("Oldest first")}</option>
                       <option value="practical">
                         {t("Demo & source links first")}
                       </option>

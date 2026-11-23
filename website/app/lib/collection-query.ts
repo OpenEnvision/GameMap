@@ -93,7 +93,9 @@ export function collectionFilters(
     project: kind === "paper" && params.get("project") === "1",
     sort: supported(
       params.get("sort"),
-      kind === "paper" ? ["recent", "practical", "title"] : ["title", "recent"],
+      kind === "paper"
+        ? ["recent", "oldest", "practical", "title"]
+        : ["title", "recent"],
       kind === "paper" ? "recent" : "title",
     ),
   };
@@ -134,10 +136,14 @@ export function selectCollection(
         Boolean(data.demo.url) === (filters.demo === "listed"))
     );
   });
-  const date = (entry: CollectionEntry) =>
-    entry.kind === "paper"
-      ? entry.data.year
-      : Number(entry.data.verification.date.replaceAll("-", ""));
+  const date = (entry: CollectionEntry) => {
+    if (entry.kind !== "paper")
+      return Number(entry.data.verification.date.replaceAll("-", ""));
+    const match = /^(\d{2})(\d{2})\.(\d+)$/.exec(entry.data.arxivId ?? "");
+    return match
+      ? +`20${match[1]}${match[2]}.${match[3]}`
+      : +`${entry.data.year}06`;
+  };
   const practical = (entry: CollectionEntry) =>
     entry.kind !== "paper"
       ? 0
@@ -151,7 +157,11 @@ export function selectCollection(
   return result.sort(
     (a, b) =>
       (filters.sort === "practical" ? practical(b) - practical(a) : 0) ||
-      (filters.sort !== "title" ? date(b) - date(a) : 0) ||
+      (filters.sort === "oldest"
+        ? date(a) - date(b)
+        : filters.sort !== "title"
+          ? date(b) - date(a)
+          : 0) ||
       a.title.localeCompare(b.title, "en") ||
       a.key.localeCompare(b.key, "en"),
   );

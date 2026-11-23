@@ -19,6 +19,19 @@ export const publicEntries = (registry) =>
   registry.entries.filter(
     (entry) => entry.kind !== "path" && entry.kind !== "step",
   );
+export function researchRecordVisible(kind, data) {
+  if (kind !== "repository-research" || !data || typeof data !== "object")
+    return true;
+  return !(
+    data.disposition === "unavailable" ||
+    data.review_status !== "source-reviewed" ||
+    (data.availability !== "available" &&
+      data.availability !== "public_available") ||
+    data.archived === true ||
+    data.is_fork === true ||
+    /placeholder|unavailable/i.test(data.inspection_scope ?? "")
+  );
+}
 export function elements(node, result = []) {
   if (node.tagName) result.push(node);
   for (const child of node.childNodes || []) elements(child, result);
@@ -288,7 +301,13 @@ export async function assertRenderedCoverage(
     );
     // Guides are read from the sidebar. /docs/ and /docs/zh/ open the practical
     // guide instead of repeating that list on a directory page.
-    if (entry.kind === "document") continue;
+    // Hidden research rows stay reachable at their canonical URL (with noindex)
+    // and downloadable ledger, but are intentionally omitted from /research/.
+    if (
+      entry.kind === "document" ||
+      !researchRecordVisible(entry.kind, entry.data)
+    )
+      continue;
     const collection = await page(discovery.collectionUrl);
     const owners = collection.nodes.filter(
       (node) =>
@@ -410,7 +429,9 @@ export function assertSearchCoverage(
     index.documents.length,
     "Search identities must be unique",
   );
-  const entries = publicEntries(registry);
+  const entries = publicEntries(registry).filter((entry) =>
+    researchRecordVisible(entry.kind, entry.data),
+  );
   for (const entry of entries) {
     const document = pages.get(entry.key);
     assert.ok(document, `Search omits ${entry.key}`);

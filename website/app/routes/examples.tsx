@@ -121,25 +121,6 @@ function emphasize(text: string): ReactNode {
     );
 }
 
-/** "A · B · C" as one phrase per item: the separators are drawn by CSS
- *  (.gallery-dots), so a wrapped line never starts or ends with a dot and a
- *  phrase never splits from its count. */
-function DotList({
-  items,
-  className = "",
-}: {
-  items: string[];
-  className?: string;
-}) {
-  return (
-    <span className={`gallery-dots ${className}`.trim()}>
-      {items.map((item) => (
-        <span key={item}>{item}</span>
-      ))}
-    </span>
-  );
-}
-
 /** The URL keys this page filters by; anything else in the query (campaign
  *  tags and the like) survives clearing. */
 const filterKeys = ["q", "track", "client"] as const;
@@ -368,13 +349,6 @@ export default function Examples() {
         </div>
         <div className="gallery-hero-inner">
           <div className="gallery-hero-copy">
-            <p className="kicker gallery-kicker">
-              <DotList
-                items={t(
-                  "Creator evidence · Playable builds · Project source",
-                ).split(" · ")}
-              />
-            </p>
             <h1 className="gallery-title">
               {emphasize(t("Real games. *Open* starting points."))}
             </h1>
@@ -592,7 +566,6 @@ export default function Examples() {
       </div>
       <section id="community-collections" className="gallery-collections">
         <header className="gallery-section-head">
-          <span className="kicker">{t("Community")}</span>
           <h2>{emphasize(t("Community *collections*"))}</h2>
           <p>{t("Discover more projects in community-curated collections.")}</p>
         </header>

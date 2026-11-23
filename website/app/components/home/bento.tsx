@@ -55,7 +55,6 @@ export function AtlasBento({
     <section className="hm-atlas" aria-labelledby="hm-atlas-title">
       <header className="hm-atlas-head">
         <div>
-          <p className="kicker">{t("CHOOSE YOUR DIRECTION")}</p>
           <h2 id="hm-atlas-title" className="hm-title">
             <span>{t("A whole toolkit,")}</span>
             {locale === "zh" ? null : " "}

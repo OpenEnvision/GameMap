@@ -3,6 +3,7 @@ import { Link, useSiteI18n } from "../lib/i18n";
 import { ArrowLeft } from "lucide-react";
 import { contentFor, sources } from "../../content/registry.server";
 import { contentKinds, type ContentEntry } from "../../content/models";
+import { researchRecordVisible } from "../../content/research-visibility";
 import { detailRoutes, pages } from "../../content/site";
 import {
   RecordDocument,
@@ -211,6 +212,9 @@ export default function ContentPage() {
     >
       <title>{`${entry.title} — GameMap`}</title>
       <meta name="description" content={entry.description} />
+      {!researchRecordVisible(entry.kind, entry.data) && (
+        <meta name="robots" content="noindex" />
+      )}
       <RecordDocument
         entry={entry}
         extras={extras}

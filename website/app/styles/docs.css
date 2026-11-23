@@ -347,6 +347,9 @@ html[lang="zh-CN"] #nd-toc #toc-title {
   gap: 14px 20px;
   margin-bottom: clamp(30px, 7cqi, 64px);
 }
+.reader-masthead-bar > .documentation-language {
+  margin-left: auto;
+}
 .reader-trail {
   display: flex;
   align-items: center;
@@ -937,9 +940,9 @@ html[lang="zh-CN"] #nd-page .document-information > summary {
   max-width: 300px;
   margin: 0;
   color: var(--body);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 22px;
-  font-style: italic;
+  font-style: normal;
   line-height: 1.15;
 }
 html[lang="zh-CN"] #nd-page .reader-site-band-intro p {

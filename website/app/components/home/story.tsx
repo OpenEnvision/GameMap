@@ -627,7 +627,6 @@ export function HomeStory({
       aria-labelledby="hm-story-title"
     >
       <header className="hm-story-head">
-        <p className="kicker">{t("FROM IDEA TO RELEASE")}</p>
         <h2 id="hm-story-title" className="hm-title">
           {t("From a spark")}
           <br />
