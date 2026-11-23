@@ -1081,13 +1081,12 @@ const englishFiles = [
     )
     .map((name) => "website/public/" + name),
 ];
-// Preserve the language-switch label and the exact bilingual label in the archived art source.
+// Preserve the language-switch label and the source filename in the round-5 import ledger.
 const sourceQuotes = {
   "README.md": ["中文指南"],
   "website/public/open-3d-games-import-round5.json": [
     "AI游戏扩充清单_411条.html",
   ],
-  "website/public/docs/project/art/prompts.md": ["原创概念插图"],
 };
 function englishRenderedCopy(node, inherited = "en") {
   if (["script", "style"].includes(node.tagName)) return "";

@@ -14,6 +14,7 @@ const sourceHTML = {
   br: [],
   code: [],
   details: ["open"],
+  div: ["align"],
   summary: [],
 };
 export function assertDocumentHTML(value, source) {

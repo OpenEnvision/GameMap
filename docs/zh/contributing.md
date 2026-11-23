@@ -4,24 +4,7 @@
 
 欢迎贡献可信资源、修正描述、修复链接，以及有证据支持的工程经验。GameMap 梳理编码智能体、引擎生态、2D 与 3D 开发以及世界模型。
 
-## 本地结构化内容
-
-本地数据库管理结构化资源、游戏、论文、集合、媒体元数据和译文。通过 Studio 或数据库导入器编写这些记录。`npm run dev` 读取当前编辑头，包括草稿，不审批或发布内容。网站、搜索和下载使用一份完整数据库工作输入，不从 Git 记录补填缺失值。
-
-从检入的目录补全已有数据库：
-
-```sh
-npm run local:backup
-npm run local:migrate
-npm run local:import
-npm run local:import -- --apply
-```
-
-导入会补入缺失的结构化记录，并把 Git 的修改合并到已有记录，保存为草稿。数据库编辑保持不变；Git 与数据库改法不同的字段写入 `.build/catalog-local/imports/` 下的报告。在 Studio 中处理这些冲突。导入不提交、不审批、不发布。长篇 Markdown、界面消息、契约和源资产仍由 Git 管理。
-
-## Git 生产来源与生成工作流
-
-此工作流适用于当前 GitHub Pages 输入及 `npm run dev:git`，不用于本地数据库编写。生产来源切换与本地工作预览分开进行。
+## Git 来源与生成工作流
 
 根目录的 `README.md` 是手动维护的项目概览。完整资源目录请保留在 `docs/reference/catalog.md` 中，发布细节请保留在[部署指南](project/deployment.md)中。
 
@@ -55,18 +38,11 @@ npm run check:build
 
 - `scripts/build/`：开发服务器、生成器、文档准备、构建收尾与预览。
 - `scripts/check/`：`npm run check` 和 `npm run check:build` 使用的源数据、内容、语言、翻译及构建站点检查。
-- `scripts/import/`：有边界的导入器，把审阅过的报告、归档和远程数据包转为带版本的数据。
-- `scripts/media/`：游戏截图、页面封面和仓库媒体的采集与下载工具。
-- `scripts/platform/`：Studio、本地服务、发布、数据包、版本发布及预发布就绪检查。
 - `scripts/lib/`：共享模块；`scripts/lib/guides/` 负责加载目录数据并渲染生成的指南。
-- `tests/unit/`：由 `npm run test:unit` 运行的 `node:test` 测试。`tests/e2e/`、`tests/release/` 和 `tests/studio/` 存放 Playwright 用例；`tests/local/` 验证本地 Supabase 服务。
+- `supabase/direct-mode/`：可选的零服务器 Supabase 直连社区 SQL。
 - `website/app/`：路由、组件和样式。`website/content/` 存放类型化契约与站点配置；`website/src/data/` 存放目录数据模块。
 
 提交前运行 `npm run format`。Prettier 负责格式化代码、样式和配置。`.prettierignore` 让 Markdown、生成产物、数据台账和公开下载文件保持逐字节不变；存在未格式化文件时 `npm run check` 会失败。
-
-## 内容平台过渡
-
-[内容平台指南](project/content-platform.md)介绍了带版本的数据库模型、迁移命令及剩余生产切换门槛。本地编写使用数据库，公共网站仍读取现有 Git 来源。`npm run dev:git` 明确预览该生产输入。迁移包保留在被忽略的 `.build/` 下，作为私有内容；导入创建草稿，不发布或批准内容。
 
 ## 条目格式
 

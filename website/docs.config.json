@@ -83,13 +83,7 @@
       ["overview", "Project overview"],
       ["contributing", "Contributing"],
       ["project/deployment", "Development & deployment"],
-      ["project/content-model", "Content model & coverage"],
-      ["project/content-platform", "Content platform"],
-      ["project/remote-import", "Remote import"],
-      ["project/staging-readiness", "Staging readiness"],
-      ["project/design/v2/design-system", "Design system"],
-      ["project/design/v1/design-system", "Design system (first edition)"],
-      ["project/art/prompts", "Editorial art prompts"]
+      ["project/content-model", "Content model & coverage"]
     ]
   }
 ]

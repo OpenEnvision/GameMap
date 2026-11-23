@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="98" viewBox="0 0 620 168" fill="none" role="img" aria-labelledby="gamemap-logo-title gamemap-logo-desc">
+  <title id="gamemap-logo-title">GameMap</title>
+  <desc id="gamemap-logo-desc">GameMap wordmark with geometric isometric G emblem</desc>
+  <style>
+    .word-game { fill: #14161a; }
+    .word-map { fill: #df1f26; }
+    @media (prefers-color-scheme: dark) {
+      .word-game { fill: #f4f4f0; }
+      .word-map { fill: #ff4a50; }
+    }
+  </style>
+  <g transform="translate(26 24) scale(1.66)">
+    <path fill="#e53a32" d="M31 3 48.3 13 35.5 20.4 31 17.8 13.5 27.9v20.2L31 58.2l17.5-10.1V43H31V30.5h30v23.9L31 71.7 1 54.4V20.3L31 3Z"/>
+    <path fill="#9e1218" d="m1 20.3 12.5 7.6v20.2L31 58.2v13.5L1 54.4V20.3Z"/>
+    <path fill="#e53a32" d="m61 1 8 4.6v9.2l-8 4.6-8-4.6V5.6L61 1Z"/>
+  </g>
+  <text x="164" y="119" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="92" font-weight="700" letter-spacing="-2.5">
+    <tspan class="word-game">Game</tspan><tspan class="word-map">Map</tspan>
+  </text>
+</svg>

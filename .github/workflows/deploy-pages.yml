@@ -1,5 +1,10 @@
 name: Deploy GameMap to GitHub Pages
 
+# Deploys the static GameMap site with BlogrXiv-style zero-server Supabase Direct Community mode.
+# Optionally override public Repository Variables in GitHub Settings -> Secrets and variables -> Actions -> Variables:
+#   GAMEMAP_SUPABASE_URL
+#   GAMEMAP_SUPABASE_PUBLISHABLE_KEY
+
 on:
   push:
     branches: [main]
@@ -39,10 +44,14 @@ jobs:
         run: |
           node scripts/build/generate.mjs
           git diff --exit-code -- data/resources.json website/src/data/resources.json website/public docs
-      - name: Build static website
+      - name: Build static website with Supabase Direct Community mode
         run: npm run build
         env:
           PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+          VITE_GAMEMAP_COMMUNITY: "1"
+          VITE_GAMEMAP_COMMUNITY_MODE: "supabase-direct"
+          VITE_SUPABASE_URL: ${{ vars.GAMEMAP_SUPABASE_URL || 'https://ckewjnufjwgwbcuapxiw.supabase.co' }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.GAMEMAP_SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_MhGapjdqxzzxgbWXyaUrRA_-x2CO2aC' }}
       - name: Validate built website
         run: npm run check:build
       - name: Upload GitHub Pages artifact
@@ -63,4 +72,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        uses: actions/deploy-pages@368f82528645a54fb793d4d44e342629a3f51346 # v5.0.1

@@ -1,24 +1,17 @@
 # 网站开发与部署
 
-GameMap 使用  **Fumadocs、React Router、React、TypeScript 和 Vite** 。发布目标为 [GitHub Pages](https://openenvision.github.io/GameMap/)。生产环境仅包含静态 HTML、CSS、JavaScript、媒体及浏览器端搜索索引，无需应用服务器或 API 密钥。
+GameMap 使用 **Fumadocs、React Router、React、TypeScript 和 Vite** 。发布目标为 [GitHub Pages](https://openenvision.org/GameMap/)。生产环境仅包含静态 HTML、CSS、JavaScript、媒体及浏览器端搜索索引，并可选开启零服务器 Supabase 直连社区功能。
 
 ## 本地开发
 
 使用 Node.js 22.22 或更新版本：
 
-启动 Docker Desktop，初始化本地目录：
-
 ```sh
 npm ci
-npm run local:start
-npm run local:migrate
-npm run local:setup
 npm run dev
 ```
 
-`npm run dev` 预览数据库中各条目的当前编辑版本，包括草稿。另开终端运行 `npm run studio:dev` 编辑内容。所有集合、译文、搜索结果和结构化下载都来自同一份工作数据。数据库变更每两秒检查一次，文档和契约变更通过文件监听刷新。此服务器仅监听本机，不审批、冻结或发布内容；数据库不可用时会报错，不回退到 Git。
-
-不连接数据库、仅查看当前线上构建来源时，使用 `npm run dev:git`。数据库预览运行期间可以同时构建，两者各自准备生成文件。
+`npm run dev` 会生成派生目录文件、准备 Markdown 文档、监听源文件变更，并启动本地 React Router 开发服务器。
 
 打开 React Router 输出的 URL。主要路由包括：
 
@@ -28,15 +21,13 @@ npm run dev
 - `/testing/` — 项目、环境、资产及动作数据参考资料。
 - `/docs/` — 渲染后的指南、研究笔记及来源署名。
 
-应用位于 `website/app/`。本地结构化内容由数据库管理。`website/src/data/` 和 `data/segments/` 保留 Git 生产构建输入与初始导入来源；公共源资产保留在 `website/public/` 中。数据库工作输入、准备好的文档和路由生成到被忽略的 `.build/catalog-local/development/content/`，下载文件与被引用的上传媒体放在 `.build/catalog-local/development/public/`。不要手动编辑这些生成视图。
-
-已有数据库可运行 `npm run local:import` 查看哪些 Git 记录会被补入、合并或需要审阅。完成本地备份后，运行 `npm run local:import -- --apply`，补入缺失记录，并把合并后的 Git 修改保存为草稿。数据库编辑和数据库独有记录保持不变；两边改法不同的字段写入 `.build/catalog-local/imports/` 下的报告。
+应用位于 `website/app/`。结构化目录数据位于 `data/segments/` 和 `website/src/data/`；公共源资产保留在 `website/public/` 中。
 
 ## 文档与内部链接
 
-`docs/` 下的 Markdown（包括 `docs/reference/catalog.md`）以及 `CONTRIBUTING.md`，都会在构建时渲染；文件夹索引 `docs/README.md` 和 `docs/zh/README.md` 仅供在代码仓库中阅读。文章包含导航、目录、代码高亮、标题链接和全文搜索。通过 Git 编写的长篇 Markdown 仍是权威来源，可通过来源链接访问。已注册的目录指南是结构化数据的生成视图；其来源链接指向可信生成器，而不是暗示旧的 Git 导出文件是另一个并行编写来源。
+`docs/` 下的 Markdown（包括 `docs/reference/catalog.md`）以及 `README.md` 和 `CONTRIBUTING.md`，都会在构建时渲染；文件夹索引 `docs/README.md` 和 `docs/zh/README.md` 仅供在代码仓库中阅读。文章包含导航、目录、代码高亮、标题链接和全文搜索。
 
-`scripts/build/prepare-docs.mjs` 会在 `website/.content/` 中创建可丢弃的副本；数据库预览使用自己的内容目录。它会推导标题、将内部 Markdown 链接改写为文档路由，并将本地文档图片暂存到被忽略的 `website/public/docs-assets/` 目录。原始研究文本不会被改写。`website/docs.config.json` 控制导航分组和短标签；未分组文章仍可在“更多笔记”下访问。开发命令会在源 Markdown 变更后刷新准备好的副本。数据库模式基于工作数据重新生成目录指南，不改写 Git 中的已提交副本。
+`scripts/build/prepare-docs.mjs` 会在 `website/.content/` 中创建可丢弃的副本。它会推导标题、将内部 Markdown 链接改写为文档路由，并将本地文档图片暂存到被忽略的 `website/public/docs-assets/` 目录。原始研究文本不会被改写。`website/docs.config.json` 控制导航分组和短标签；未分组文章仍可在“更多笔记”下访问。
 
 文档源使用 Fumadocs MDX 的 Vite 集成，并以纯 Markdown 模式运行；目录正文无法执行 MDX 表达式或导入。客户端导航时按需加载文章正文，但每篇文档也会提供完整 HTML，因此直接链接及禁用 JavaScript 的阅读均可正常使用。全文搜索会将静态索引加载到浏览器中；生产环境没有 `/api/search` 服务器。
 
@@ -50,11 +41,11 @@ npm run check:build
 ```
 
 - `generate.mjs` 同步资源目录及可下载的编辑文件，不会覆盖 README。
-- `npm run check` 验证源数据、公共源媒体及生成的编辑文件，不需要构建产物。
-- `npm run build` 准备文档、检查 TypeScript、预渲染路由，并组装静态 `dist/` 目录。框架临时输出保留在 `.build/website/` 中，与私有 Studio 输出、导入包和暂存媒体分离。构建公共网站绝不能清空整个 `.build/` 目录。
-- `npm run check:build` 还会检查部署后的文档和媒体、每篇渲染文章、内部链接和资产、静态搜索索引，以及真正的 404 页面。
+- `npm run check` 验证源数据、公共源媒体、双语译文与代码格式，不需要构建产物。
+- `npm run build` 准备文档、检查 TypeScript、预渲染路由，并组装静态 `dist/` 目录。
+- `npm run check:build` 检查部署后的文档和媒体、每篇渲染文章、内部链接和资产、静态搜索索引，以及真正的 404 页面。
 
-要复现 GitHub Pages 子路径：
+要在本地复现 GitHub Pages 子路径：
 
 ```sh
 PAGES_BASE_PATH=/GameMap/ npm run build
@@ -62,74 +53,29 @@ npm run check:build
 npm run preview
 ```
 
-预览命令从构建后的网站读取基础路径，并输出正确的 URL。它只提供静态文件，不带 SPA 回退，比开发服务器更接近 GitHub Pages。 **旧的根目录 `file://` 预览不再生成，也不再受支持。** 请使用 `npm run preview` 预览生产版本。
+预览命令从构建后的网站读取基础路径，并输出正确的 URL。它只提供静态文件，不带 SPA 回退，比开发服务器更接近 GitHub Pages。
 
-### 浏览器测试
+## Supabase 直连社区模式
 
-```sh
-npx playwright install chromium
-npm run test:web
-```
+GameMap 支持通过 Supabase Cloud 在静态站点中直接启用零服务器社区互动（邮箱/GitHub 登录、评分、评论、举报、截图投稿与浏览器端审核）。
 
-测试针对构建后的静态产物，覆盖桌面与移动布局、筛选、已保存收藏、资源对话框、点击播放预览、启用及禁用 JavaScript 的文档导航、静态搜索、主题和 404 行为。拉取请求会在 CI 中运行这些检查。`test-results/` 和浏览器报告已被忽略。
-
-### 私有发布包构建
-
-`npm run site:build -- --input PACKAGE --out PRIVATE_OUTPUT --realm OPERATOR_REALM_FILE --base /GameMap/ --browser` 会验证已审阅的发布包，并在独立临时工作区中构建。它不会改变常规构建源、工作树的 `dist/` 或 Pages 工作流。使用 `npm run site:verify -- --input PRIVATE_OUTPUT` 验证最终完成的确切产物。领域文件是独立配置的运维预期，而不是受信任的发布发送方文件。本地夹具要求 `--development`，并明确仅限本地；预发布与生产环境要求不可变领域身份匹配、干净且精确的源码，以及浏览器门禁通过。有关生成指南审阅、来源所有权、产物证据及剩余部署门槛，请参阅[内容平台运维](content-platform.md)。这些命令不会上传或激活任何内容。
-
-## 可选的低内存 Studio
-
-除非运维人员显式设置 `CATALOG_MEDIA_PROFILE=low-memory`，否则 Studio 会保持现有上传策略。未知的配置档值会导致启动失败，而非静默回退。低内存策略：
-
-- 每个新上传最多接受  **250 万像素** （包括 1920×1080），默认值则为 4000 万。两种配置档均保留 10 MB 编码及输出大小限制，以及 10,000 像素的尺寸限制。
-- 在读取请求体之前， **每个进程/存储一次仅允许一个上传** 。额外的已认证上传会收到 `429 media_busy`、`Retry-After: 1`，并关闭连接；图片不会在内存中排队。认证、成员资格、Origin 和 CSRF 检查仍先于准入执行。
-- 在 Studio 启动时禁用 Sharp 的进程级操作缓存，并使用一个原生图像处理线程。默认配置档不会改变这些原生设置。请运行一个 Studio 实例/存储；这不是分布式协调。
-- 显式拒绝超大图片，不进行缩放、裁剪，也不改变其来源信息。被接受的上传保持相同的无损、自动定向、移除 EXIF 的 WebP 规范化处理。现有较大媒体仍可读取和导出，而不改写其字节。
-
-已认证的 `/api/contracts` 响应包含 `mediaUpload`，即实际上传策略。即使浏览器未显示这些限制，服务端仍会强制执行。中止读取或解码、存储失败都会释放准入名额。
-
-对于小型  **Linux/glibc**  运行环境，本地资源探测还使用以下 **启动前** 分配器、工作池和 V8 设置。请另行提供常规私有 Studio 配置及预构建 UI：
-
-```sh
-MALLOC_ARENA_MAX=2 UV_THREADPOOL_SIZE=1 CATALOG_MEDIA_PROFILE=low-memory \
-  node --max-old-space-size=128 scripts/platform/studio.mjs --production
-```
-
-这些设置仅适用于运行环境，不适用于依赖安装、构建或迁移。尤其要注意，将 `MALLOC_ARENA_MAX` 放入由 Node 的 `--env-file` 加载的文件，并不能建立已测试的启动前分配器环境。V8 堆设置 **不会** 限制原生图像内存或进程总内存。其他平台或分配器需要单独测量。
-
-**512 MiB 目标**来自本地资源探测；部署前请在实际主机上测量完整负载。大型 API 响应、验证、冻结/导出以及并发的非上传请求仍需要完整工作负载测量。使用免费套餐前，应验证实际主机架构、重启、持久卷容量、冷启动、配额、数据库/Auth 连接、备份恢复及中国大陆访问情况。测试或配额失败时，不要自动升级到付费套餐。HTTPS、私有持久存储、不可变发布身份以及独立发布批准仍是强制要求。
-
-## 预发布准备（已禁用，仅限离线）
-
-连接云项目之前，请参阅[预发布就绪性审查](staging-readiness.md)。`config/staging.example.json` 提出隔离的预览仓库、Supabase 项目和单实例持久化 Studio 主机方案，但发布器不会使用此文件。`npm run staging:check -- --config config/staging.example.json --out NEW_PRIVATE_DIRECTORY` 会写入私有的脱敏报告及机密值留空的 Studio 环境模板，不会读取凭据存储或发起网络请求。退出码 2 表示受阻或尚未就绪。不可变领域强制校验已在本地实现并测试，但真实云身份、托管适配器及运维验收仍未验证或受阻；填写占位符不能授权部署。
-
-此准备过程不会更改默认 Git 提供方或 `.github/workflows/deploy-pages.yml`，也不会创建资源、提交、推送或部署。
-
-## 云端平台运维
-
-仓库现已包含用于跨 GitHub Pages（独立预发布/生产发布仓库）、Supabase Cloud 及 TLS 反向代理后单实例持久卷 Node 主机运行 GameMap 的云端平台生产工具链：
-
-- **将本地已批准数据库记录同步到 Git：** `npm run local:export-git` 将已批准的数据库独有记录及已核实本地资产导出至 Git 源文件，使纯静态构建（`npm run build`）在不连接数据库的情况下保持内容完整。
-- **数据库初始化与最小权限审计：** 按顺序应用 `0001`–`0031` 迁移，使用 `npm run cloud:provision-sql` 生成专用 `NOINHERIT` 登录 SQL，通过 `npm run cloud:init-realm` 初始化不可变的非本地发布领域，并使用 `npm run cloud:verify-roles` 远程核实最小权限登录。Studio、社区服务端和云发布器在生产启动时也会强制执行 `assertLeastPrivilegeLogin()`。
-- **精确产物云端发布：** 参照 `config/deploy/cloud-target.example.json` 和 `.env.publisher.example` 准备私有目标描述文件，通过 `npm run cloud:claim-target` 认领目标，并使用 `npm run cloud:publish`、`npm run cloud:activate`、`npm run cloud:rollback` 与 `npm run cloud:recover` 提升已验证的发布产物。对于 GitHub Pages 提升，`.github/workflows/deploy-release-pages.yml` 在受保护的 GitHub Environment 中验证并部署预构建发布归档，不在部署步骤重新构建。
-- **独立社区 API 与反向代理：** 参照 `.env.community.example` 完成配置，使用 `npm run community:sync-games` 同步可评分游戏索引，并通过 `npm run community:start` 启动独立 API 服务（配合 `config/deploy/Caddyfile.example` 或 `config/deploy/nginx.conf.example` 使用 `COMMUNITY_TRUST_PROXY=1` 与 `CATALOG_TRUST_PROXY=1` 启用单跳 `X-Forwarded-For` 处理）。
-- **紧急撤回机制：** 通过 Studio（`/api/withdrawals`、`/api/withdrawals/lift`）或 `npm run cloud:withdraw` 记录或解除撤回，向 `npm run site:build` 传入 `--withdrawals POLICY_FILE` 以生成带 `noindex` 的静态墓碑 HTML 而不静默删除规范 URL，并在 `publication-server.mjs` 加载当前拒绝列表以在 Node 托管交付层即时返回 HTTP `410 Gone`。
-- **托管云配套备份与恢复探测：** 运行 `npm run cloud:backup`（基于 TLS `pg_dump` 并配套媒体、发布器状态与校验和）、`npm run cloud:backup-verify` 以及面向隔离临时数据库的 `npm run cloud:restore-probe`。
+- 运行 `npm run community:direct-sql -- --with-games --out .build/setup.sql`，基于 `supabase/direct-mode/enable-supabase-direct.sql` 生成可直接执行的 SQL。
+- 构建时设置 `VITE_GAMEMAP_COMMUNITY=1`、`VITE_GAMEMAP_COMMUNITY_MODE=supabase-direct`、`VITE_SUPABASE_URL` 与 `VITE_SUPABASE_PUBLISHABLE_KEY`，或在 GitHub Actions 仓库变量中配置 `GAMEMAP_SUPABASE_URL` 和 `GAMEMAP_SUPABASE_PUBLISHABLE_KEY`。
 
 ## GitHub Pages 设置
 
 仓库管理员、维护者，或拥有 Pages 管理权限的自定义角色必须：
 
-1. 打开 **设置 → Pages** ，在 **构建与部署 → 来源** 下选择  **GitHub Actions** 。
+1. 打开 **设置 → Pages** ，在 **构建与部署 → 来源** 下选择 **GitHub Actions** 。
 2. 启用 Actions，并在 `github-pages` 环境中允许从 `main` 部署。
-3. 推送或合并到 `main`，或在 `main` 上选择  **Actions → Deploy GameMap to GitHub Pages → 运行工作流** 。
+3. 推送或合并到 `main`，或在 `main` 上选择 **Actions → Deploy GameMap to GitHub Pages → 运行工作流** 。
 
-只有启用 Pages 且部署成功后，该 URL 才会提供此网站。私有仓库需要支持 Pages 的套餐。启用 Pages 不会改变仓库可见性，但发布的网站可能可供公众访问。绝不能在公共资产中包含凭据或私有数据。
+只有启用 Pages 且部署成功后，该 URL 才会提供此网站。绝不能在公共资产中包含凭据或私有数据。
 
 ## 部署工作流
 
-- `.github/workflows/catalog.yml` 在拉取请求上验证生成内容、以 `/GameMap/` 基础路径构建、检查静态输出，并测试桌面和移动交互。它不会发布。
-- `.github/workflows/deploy-pages.yml` 在 `main` 上构建和验证，仅上传 `dist/`，并使用官方、固定到 SHA 的 Pages actions 发布。Pages/OIDC 写权限仅限部署作业。
+- `.github/workflows/catalog.yml` 在拉取请求上验证生成内容、运行 `npm run check`、以 `/GameMap/` 基础路径构建并运行 `npm run check:build`。它不会发布。
+- `.github/workflows/deploy-pages.yml` 在 `main` 上以 Supabase 直连社区模式构建和验证，仅上传 `dist/`，并使用官方、固定到 SHA 的 Pages actions 发布。Pages/OIDC 写权限仅限部署作业。
 - 发布构建从 Pages 元数据设置 `PAGES_BASE_PATH`。React Router 使用相同的 basename；构建收尾步骤会展平预渲染路由，避免发布目录嵌套在第二层 `GameMap/` 下。
 - 所有应用和文档路由都会预渲染。初始路由发现信息已嵌入，因此客户端导航从不依赖服务端路由清单 API。未知路径会收到真正的 404 页面。
 

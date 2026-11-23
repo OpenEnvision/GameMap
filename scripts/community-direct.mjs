@@ -3,8 +3,8 @@ import assert from "node:assert/strict";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
-import { loadContent } from "../lib/content.mjs";
-import { root } from "../lib/documents.mjs";
+import { loadContent } from "./lib/content.mjs";
+import { root } from "./lib/documents.mjs";
 
 const help = `BlogrXiv-style zero-server Supabase Direct Mode SQL generator
   npm run community:direct-sql -- [--admin-email EMAIL] [--with-games] [--out SQL_FILE]

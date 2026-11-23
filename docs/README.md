@@ -13,7 +13,7 @@ Guides, research dossiers, and reference pages for building games with AI. The w
 | [`evaluation/`](evaluation/) | Evaluation research, benchmarks, and review ledgers | [Evaluating agents](evaluation/development-evaluation.md) |
 | [`reference/`](reference/) | The full resource catalog, the testing library, and media and logo credits | [Resource catalog](reference/catalog.md) |
 | [`skills/`](skills/) | Installable agent skill packages | [Level design skill](skills/level-design/SKILL.md) |
-| [`project/`](project/) | Running and maintaining this site: deployment, content model, import, staging, design, and art | [Development and deployment](project/deployment.md) |
+| [`project/`](project/) | Running and maintaining this site: deployment and content model | [Development and deployment](project/deployment.md) |
 | [`zh/`](zh/) | The same tree in Chinese | [中文文档](zh/README.md) |
 
 ## Pages
@@ -73,11 +73,6 @@ Guides, research dossiers, and reference pages for building games with AI. The w
 
 - [Development and deployment](project/deployment.md): local development, builds, and GitHub Pages.
 - [Content model](project/content-model.md): source content, presentation, and coverage checks.
-- [Content platform](project/content-platform.md): database-authored content, review, and releases.
-- [Remote import](project/remote-import.md): import reviewed candidate packages as local drafts.
-- [Staging readiness](project/staging-readiness.md): what blocks a move to cloud staging.
-- [Design system, second edition](project/design/v2/design-system.md) and [first edition](project/design/v1/design-system.md): design records with their concept images.
-- [Editorial art prompts](project/art/prompts.md): prompts and originals for the editorial illustrations.
 
 The project overview and contribution guide are the repository's [README](../README.md) and [CONTRIBUTING](../CONTRIBUTING.md).
 

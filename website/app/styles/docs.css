@@ -1203,3 +1203,6 @@ html[lang="zh-CN"] .site-main.document-moved h1 {
   flex: none;
   color: var(--accent);
 }
+#nd-page .prose div[align="center"] img {
+  margin-inline: auto;
+}

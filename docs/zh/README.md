@@ -13,7 +13,7 @@
 | [`evaluation/`](evaluation/) | 评估研究、基准与核查记录 | [评估游戏创作智能体](evaluation/development-evaluation.md) |
 | [`reference/`](reference/) | 完整资源目录、测试资源库，以及媒体与标志来源 | [资源目录](reference/catalog.md) |
 | [`skills/`](skills/) | 可安装的智能体技能包 | [关卡设计 Skill](skills/level-design/SKILL.md) |
-| [`project/`](project/) | 网站的运行与维护：部署、内容模型、导入、预发布、设计与插图 | [开发与部署](project/deployment.md) |
+| [`project/`](project/) | 网站的运行与维护：部署与内容模型 | [开发与部署](project/deployment.md) |
 
 ## 页面
 
@@ -72,11 +72,6 @@
 
 - [开发与部署](project/deployment.md)：本地开发、构建与 GitHub Pages。
 - [内容模型](project/content-model.md)：源内容、呈现方式与完整性检查。
-- [内容平台](project/content-platform.md)：数据库编写的内容、审阅与发布。
-- [远程导入](project/remote-import.md)：将审阅过的候选包导入为本地草稿。
-- [预发布就绪评估](project/staging-readiness.md)：迁移到云端预发布环境前的阻碍。
-- [设计系统（第二版）](project/design/v2/design-system.md)与[第一版](project/design/v1/design-system.md)：附带概念图的设计记录。
-- [编辑插图提示词](project/art/prompts.md)：编辑插图的提示词与原图。
 
 项目介绍与贡献指南见 [项目介绍](overview.md) 与 [参与贡献](contributing.md)。
 

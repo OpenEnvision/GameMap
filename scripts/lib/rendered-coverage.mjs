@@ -231,11 +231,43 @@ export async function assertRenderedCoverage(
   base = "/",
   indexUrl = "/",
 ) {
+  const entries = publicEntries(registry);
+  const hits = new Map();
+  const countPath = (url) => {
+    const path = url.split("#")[0];
+    hits.set(path, (hits.get(path) || 0) + 1);
+  };
+  countPath(indexUrl);
+  for (const entry of entries) {
+    countPath(entry.url);
+    if (
+      entry.kind !== "document" &&
+      researchRecordVisible(entry.kind, entry.data)
+    ) {
+      const discovery = registry.collectionDiscoveryFor?.(entry) ?? {
+        key: entry.key,
+        url: entry.url,
+        collectionUrl: entry.collectionUrl,
+      };
+      countPath(discovery.collectionUrl);
+    }
+  }
+  const visited = new Set();
   const cache = new Map();
   const page = async (url) => {
     const path = url.split("#")[0];
-    if (!cache.has(path)) cache.set(path, parsePage(await readPage(path)));
-    return cache.get(path);
+    visited.add(path);
+    const remaining = (hits.get(path) || 1) - 1;
+    if (remaining <= 0) hits.delete(path);
+    else hits.set(path, remaining);
+    if (cache.has(path)) {
+      const parsed = cache.get(path);
+      if (remaining <= 0) cache.delete(path);
+      return parsed;
+    }
+    const parsed = parsePage(await readPage(path));
+    if (remaining > 0) cache.set(path, parsed);
+    return parsed;
   };
   const index = await page(indexUrl);
   // The retired directory is replaced by real homepage navigation links. Canonical
@@ -262,7 +294,6 @@ export async function assertRenderedCoverage(
       return href ? [new URL(address(href, base, indexUrl))] : [];
     }),
   );
-  const entries = publicEntries(registry);
   for (const entry of entries) {
     const canonical = await page(entry.url);
     const records = canonical.nodes.filter(
@@ -331,7 +362,7 @@ export async function assertRenderedCoverage(
           discovery.collectionUrl,
         );
   }
-  return { records: entries.length, pages: cache.size };
+  return { records: entries.length, pages: visited.size };
 }
 /** Compare original Markdown, not merely MDX metadata or a nonempty prose wrapper. */
 export function assertMarkdownCoverage(

@@ -4,8 +4,6 @@ import { fumadocsMdx } from "fumadocs-mdx/vite";
 import { defineConfig } from "vite";
 import { fileURLToPath } from "node:url";
 import rehypeRaw from "rehype-raw";
-import { communityDevelopment } from "./scripts/dev/community.mjs";
-import { catalogDevelopment } from "./scripts/dev/catalog.mjs";
 
 const base =
   "/" +
@@ -16,7 +14,6 @@ export default defineConfig({
   base: base.replace(/\/+/g, "/"),
   publicDir: fileURLToPath(new URL("./website/public", import.meta.url)),
   plugins: [
-    catalogDevelopment(),
     fumadocsMdx({
       globalOptions: {
         mdxOptions: {
@@ -43,6 +40,5 @@ export default defineConfig({
     }),
     tailwindcss(),
     reactRouter(),
-    communityDevelopment(),
   ],
 });

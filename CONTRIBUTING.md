@@ -4,24 +4,7 @@ Website content must follow the [content model and coverage contract](docs/proje
 
 Contributions of credible resources, corrected descriptions, repaired links, and evidence-backed engineering experience are welcome. GameMap maps coding agents, engine ecosystems, 2D and 3D development, and world models.
 
-## Local structured content
-
-The local database owns structured resources, games, papers, collections, media metadata and translations. Use Studio or a database importer to author these records. `npm run dev` reads their current editing heads, including drafts, without approving or publishing them. The website, search and downloads use one complete database working input; missing values are not filled from Git records.
-
-To complete an existing database from the checked-in catalog:
-
-```sh
-npm run local:backup
-npm run local:migrate
-npm run local:import
-npm run local:import -- --apply
-```
-
-The import adds missing structured records and merges Git changes into existing records as drafts. Database edits are kept; a field changed differently in Git and the database is listed in the report under `.build/catalog-local/imports/`. Resolve those conflicts in Studio. Nothing is submitted, approved or published. Long-form Markdown, interface messages, contracts and source assets remain Git-owned.
-
-## Git production source and generation workflow
-
-The following workflow applies to the current GitHub Pages input and `npm run dev:git`, not to local database authoring. Production cutover is separate from the local working preview.
+## Git source and generation workflow
 
 The root `README.md` is a hand-maintained project overview. Keep the full resource catalog in `docs/reference/catalog.md` and publishing details in [the deployment guide](docs/project/deployment.md).
 
@@ -55,18 +38,11 @@ The Cadle-like research inventory is maintained in `data/segments/repository-res
 
 - `scripts/build/`: development server, generators, document preparation, build finalization and preview.
 - `scripts/check/`: source, content, locale, translation and built-site checks used by `npm run check` and `npm run check:build`.
-- `scripts/import/`: bounded importers that turn reviewed reports, archives and remote packets into versioned data.
-- `scripts/media/`: capture and fetch helpers for gameplay screenshots, page covers and repository media.
-- `scripts/platform/`: Studio, local services, publication, packages, releases and staging readiness.
 - `scripts/lib/`: shared modules; `scripts/lib/guides/` loads catalog data and renders the generated guides.
-- `tests/unit/`: `node:test` suites run by `npm run test:unit`. `tests/e2e/`, `tests/release/` and `tests/studio/` hold Playwright specs; `tests/local/` exercises local Supabase services.
+- `supabase/direct-mode/`: optional zero-server Supabase Direct community SQL.
 - `website/app/`: routes, components and styles. `website/content/` holds typed contracts and site configuration; `website/src/data/` holds catalog modules.
 
 Run `npm run format` before committing. Prettier formats code, styles and configuration. `.prettierignore` leaves Markdown, generated outputs, data ledgers and public downloads byte for byte, and `npm run check` fails on unformatted files.
-
-## Content-platform transition
-
-The [content-platform guide](docs/project/content-platform.md) describes the versioned database model, migration commands, and remaining production cutover gates. Local authoring uses the database; the public website still reads the existing Git sources. `npm run dev:git` previews that production input explicitly. Migration packages stay private under ignored `.build/`, and imports create drafts rather than publishing or approving content.
 
 ## Entry format
 

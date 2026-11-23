@@ -1,24 +1,17 @@
 # Website development and deployment
 
-GameMap uses **Fumadocs, React Router, React, TypeScript, and Vite**. The publishing target is [GitHub Pages](https://openenvision.github.io/GameMap/). Production consists only of static HTML, CSS, JavaScript, media, and a browser-side search index. No application server or API key is required.
+GameMap uses **Fumadocs, React Router, React, TypeScript, and Vite**. The publishing target is [GitHub Pages](https://openenvision.org/GameMap/). Production consists of static HTML, CSS, JavaScript, media, and a browser-side search index, with optional zero-server Supabase Direct community features.
 
 ## Local development
 
 Use Node.js 22.22 or newer:
 
-Start Docker Desktop and initialize the local catalog:
-
 ```sh
 npm ci
-npm run local:start
-npm run local:migrate
-npm run local:setup
 npm run dev
 ```
 
-`npm run dev` previews the database's current editing heads, including drafts. Run `npm run studio:dev` separately to edit content. Every collection, translation, search result and structured download comes from the same working selection. Changes are checked every two seconds; document and contract changes are watched. This server binds to loopback and does not approve, freeze or publish content. A missing database is an error, not a fallback to Git.
-
-To inspect the unchanged production source without a database, use `npm run dev:git`. Builds can run while the database preview is open; each prepares its own generated files.
+`npm run dev` generates derived catalog files, prepares Markdown documents, watches source changes, and starts the local React Router development server.
 
 Open the URL printed by React Router. The main routes are:
 
@@ -28,15 +21,13 @@ Open the URL printed by React Router. The main routes are:
 - `/testing/` — projects, environments, assets, and motion-data references.
 - `/docs/` — rendered guides, research notes, and source attribution.
 
-The application lives in `website/app/`. Structured local content is managed in the database. `website/src/data/` and `data/segments/` retain the Git production input and initial import sources; public source assets remain in `website/public/`. Database working inputs, prepared documents and routes are generated under ignored `.build/catalog-local/development/content/`, with downloads and referenced uploads under `.build/catalog-local/development/public/`. Do not edit these generated views.
-
-For an existing catalog, run `npm run local:import` to see which Git records would be added, merged or need review. After a local backup, `npm run local:import -- --apply` imports missing records and saves merged Git changes as drafts. Database edits and database-only records are kept; fields changed differently on both sides are listed in the report under `.build/catalog-local/imports/`.
+The application lives in `website/app/`. Structured catalog data lives in `data/segments/` and `website/src/data/`; public source assets remain in `website/public/`.
 
 ## Documents and internal links
 
-Markdown under `docs/` (including `docs/reference/catalog.md`), plus `CONTRIBUTING.md`, is rendered at build time; the folder indexes `docs/README.md` and `docs/zh/README.md` are for repository readers only. Articles include navigation, a table of contents, highlighted code, heading links, and full-text search. Git-authored long-form Markdown remains the source of truth and is available through its source link. Registered catalog guides are generated views of structured data; their source link identifies the trusted generator rather than implying that an old Git export is a competing authoring source.
+Markdown under `docs/` (including `docs/reference/catalog.md`), plus `README.md` and `CONTRIBUTING.md`, is rendered at build time; the folder indexes `docs/README.md` and `docs/zh/README.md` are for repository readers only. Articles include navigation, a table of contents, highlighted code, heading links, and full-text search.
 
-`scripts/build/prepare-docs.mjs` creates disposable copies in `website/.content/`; the database preview uses its own content directory. It derives titles, rewrites internal Markdown links to document routes, and stages local documentation images in the ignored `website/public/docs-assets/` directory. Original research text is not rewritten. `website/docs.config.json` controls navigation groups and short labels; ungrouped articles remain available under More notes. The development commands refresh prepared copies after source Markdown changes. Database mode regenerates catalog guides from the working selection without rewriting their checked-in Git copies.
+`scripts/build/prepare-docs.mjs` creates disposable copies in `website/.content/`. It derives titles, rewrites internal Markdown links to document routes, and stages local documentation images in the ignored `website/public/docs-assets/` directory. Original research text is not rewritten. `website/docs.config.json` controls navigation groups and short labels; ungrouped articles remain available under More notes.
 
 The document source uses Fumadocs MDX's Vite integration in Markdown-only mode; catalog prose cannot execute MDX expressions or imports. Article bodies are lazy-loaded on client navigation, but every document also ships as complete HTML, so direct links and reading without JavaScript work. Full-text search loads a static index into the browser; there is no `/api/search` server in production.
 
@@ -50,11 +41,11 @@ npm run check:build
 ```
 
 - `generate.mjs` synchronizes the resource catalog and downloadable editorial files. It does not overwrite the README.
-- `npm run check` validates source data, public source media, and generated editorial files without requiring build output.
-- `npm run build` prepares documents, checks TypeScript, pre-renders routes, and assembles the static `dist/` directory. Temporary framework output stays in `.build/website/`, separate from private Studio output, import packages and staged media. Building the public website must never clear the whole `.build/` directory.
-- `npm run check:build` also checks deployed documents/media, every rendered article, internal links/assets, the static search index, and the real 404 page.
+- `npm run check` validates source data, public source media, bilingual translations, and formatting without requiring build output.
+- `npm run build` prepares documents, checks TypeScript, pre-renders routes, and assembles the static `dist/` directory.
+- `npm run check:build` validates deployed documents and media, every rendered article, internal links and assets, the static search index, and the real 404 page.
 
-To reproduce the GitHub Pages subpath:
+To reproduce the GitHub Pages subpath locally:
 
 ```sh
 PAGES_BASE_PATH=/GameMap/ npm run build
@@ -62,59 +53,14 @@ npm run check:build
 npm run preview
 ```
 
-The preview command reads the base path from the built site and prints the correct URL. It serves static files only, with no SPA fallback, matching GitHub Pages more closely than a development server. **The old root `file://` preview is no longer generated or supported.** Use `npm run preview` for production previews.
+The preview command reads the base path from the built site and prints the correct URL. It serves static files only, with no SPA fallback, matching GitHub Pages more closely than a development server.
 
-### Browser tests
+## Supabase Direct community mode
 
-```sh
-npx playwright install chromium
-npm run test:web
-```
+GameMap supports optional zero-server community interactions (email/GitHub sign-in, ratings, comments, reports, screenshot submissions, and browser moderation) using Supabase Cloud directly from the static site.
 
-Tests exercise desktop and mobile layouts, filtering, saved collections, resource dialogs, click-to-play previews, document navigation with and without JavaScript, static search, themes, and 404 behavior against the built static artifact. Pull requests run these checks in CI. `test-results/` and browser reports are ignored.
-
-### Private release-package builds
-
-`npm run site:build -- --input PACKAGE --out PRIVATE_OUTPUT --realm OPERATOR_REALM_FILE --base /GameMap/ --browser` verifies a reviewed release and builds it in a separate temporary workspace. It does not change the ordinary build source, the working tree's `dist/`, or the Pages workflow. Use `npm run site:verify -- --input PRIVATE_OUTPUT` to verify the exact completed artifact. The realm file is an independently provisioned operator expectation, not a file trusted from the release sender. Local fixtures require `--development` and remain explicitly local; staging/production require matching immutable realm identity, clean exact source and browser gates. See [content-platform operations](./content-platform.md) for generated-guide review, source ownership, artifact evidence and remaining deployment gates. Nothing is uploaded or activated by these commands.
-
-## Optional low-memory Studio
-
-Studio keeps its existing upload policy unless an operator explicitly sets `CATALOG_MEDIA_PROFILE=low-memory`. Unknown profile values fail startup rather than silently falling back. The low-memory policy:
-
-- Accepts at most **2.5 million pixels** per new upload (including 1920×1080), versus the default 40 million. Both profiles retain the 10 MB encoded/output limit and 10,000-pixel dimension limit.
-- Admits **one upload at a time per process/store**, before reading its request body. Extra authenticated uploads receive `429 media_busy`, `Retry-After: 1` and a closed connection; images are not queued in memory. Authentication, membership, Origin and CSRF checks still precede admission.
-- Disables Sharp's process-wide operation cache and uses one native image-processing thread at Studio startup. The default profile does not change these native settings. Run one Studio instance/store; this is not distributed coordination.
-- Rejects oversized images explicitly, without resizing, cropping or changing their provenance. Accepted uploads keep the same lossless, auto-oriented, EXIF-stripped WebP normalization. Existing larger media remains readable and exportable without rewriting its bytes.
-
-Authenticated `/api/contracts` responses include `mediaUpload`, the actual upload policy. Limits are enforced server-side even if a browser does not display them. Aborted reads and failed decoding/storage release admission slots.
-
-For a small **Linux/glibc** runtime, the local resource probe also uses the following **pre-launch** allocator, worker-pool and V8 settings. Supply the normal private Studio configuration and prebuilt UI separately:
-
-```sh
-MALLOC_ARENA_MAX=2 UV_THREADPOOL_SIZE=1 CATALOG_MEDIA_PROFILE=low-memory \
-  node --max-old-space-size=128 scripts/platform/studio.mjs --production
-```
-
-Apply these settings to the runtime only, not dependency installation, builds or migrations. In particular, putting `MALLOC_ARENA_MAX` in a file loaded by Node's `--env-file` does not establish the tested pre-launch allocator environment. The V8 heap setting does **not** limit native image memory or total process memory. Other platforms/allocators require separate measurement.
-
-The **512 MiB target** comes from local resource probes. Measure the deployed workload on the actual host. Large API responses, validation, freezing/export and concurrent non-upload requests still require full-workload measurement. Verify actual host architecture, restarts, persistent-volume capacity, cold starts, quotas, database/Auth connectivity, backup/recovery and mainland-China access before using a free tier. Do not automatically upgrade to a paid plan when a test or quota fails. HTTPS, private persistent storage, immutable release identity and independent publication approval remain mandatory.
-
-## Staging preparation (disabled, offline only)
-
-See the [staging-readiness review](./staging-readiness.md) before connecting a cloud project. `config/staging.example.json` proposes an isolated preview repository, Supabase project and single-instance persistent Studio host, but is not consumed by a publisher. `npm run staging:check -- --config config/staging.example.json --out NEW_PRIVATE_DIRECTORY` writes a private redacted report and blank-secret Studio environment template without reading credential stores or making network requests. Exit code 2 means blocked/not ready. Immutable realm enforcement is implemented and tested locally, but actual cloud identity, hosting-adapter and operational acceptance remain unverified or blocked; filling placeholders cannot authorize a deployment.
-
-This preparation does not change the default Git provider or `.github/workflows/deploy-pages.yml`, create resources, commit, push or deploy.
-
-## Cloud platform operations
-
-The repository includes the production cloud platform tooling for running GameMap across GitHub Pages (independent staging/production release repository), Supabase Cloud, and a single-instance persistent-volume Node host behind a TLS reverse proxy:
-
-- **Sync approved local database records to Git:** `npm run local:export-git` exports approved database-only records and verified local assets into checked-in Git sources so pure static builds (`npm run build`) stay complete without database access.
-- **Database provisioning and role audit:** apply sequential migrations `0001`–`0031`, generate dedicated `NOINHERIT` login SQL with `npm run cloud:provision-sql`, initialize the immutable non-local release realm via `npm run cloud:init-realm`, and verify least-privilege logins remotely with `npm run cloud:verify-roles`. Studio, Community Server, and Cloud Publisher also enforce `assertLeastPrivilegeLogin()` at startup.
-- **Exact-artifact cloud publication:** configure a private target descriptor from `config/deploy/cloud-target.example.json` and `.env.publisher.example`, claim the target via `npm run cloud:claim-target`, and promote verified release artifacts using `npm run cloud:publish`, `npm run cloud:activate`, `npm run cloud:rollback`, and `npm run cloud:recover`. For GitHub Pages promotion, `.github/workflows/deploy-release-pages.yml` verifies and deploys a pre-built release archive inside a protected GitHub Environment without rebuilding in the deploy step.
-- **Standalone Community API and reverse proxy:** configure `.env.community.example`, synchronize the ratable game index with `npm run community:sync-games`, and start the standalone API service via `npm run community:start` (`COMMUNITY_TRUST_PROXY=1` and `CATALOG_TRUST_PROXY=1` enable single-hop `X-Forwarded-For` handling behind `config/deploy/Caddyfile.example` or `config/deploy/nginx.conf.example`).
-- **Emergency withdrawals:** record or lift withdrawals through Studio (`/api/withdrawals`, `/api/withdrawals/lift`) or `npm run cloud:withdraw`, pass `--withdrawals POLICY_FILE` to `npm run site:build` to emit `noindex` static tombstone HTML without silently dropping canonical URLs, and load the active denylist in `publication-server.mjs` for immediate HTTP `410 Gone` responses on Node-hosted delivery.
-- **Managed-cloud paired backups and restore probes:** run `npm run cloud:backup` (TLS `pg_dump` paired with media, publisher state, and checksums), `npm run cloud:backup-verify`, and `npm run cloud:restore-probe` against an isolated scratch database.
+- Generate ready-to-run SQL with `npm run community:direct-sql -- --with-games --out .build/setup.sql`, backed by `supabase/direct-mode/enable-supabase-direct.sql`.
+- Set `VITE_GAMEMAP_COMMUNITY=1`, `VITE_GAMEMAP_COMMUNITY_MODE=supabase-direct`, `VITE_SUPABASE_URL`, and `VITE_SUPABASE_PUBLISHABLE_KEY` at build time, or configure `GAMEMAP_SUPABASE_URL` and `GAMEMAP_SUPABASE_PUBLISHABLE_KEY` as GitHub Actions repository variables.
 
 ## GitHub Pages setup
 
@@ -124,16 +70,16 @@ A repository administrator, maintainer, or custom role with Pages management per
 2. Enable Actions and allow deployments from `main` in the `github-pages` environment.
 3. Push or merge to `main`, or choose **Actions → Deploy GameMap to GitHub Pages → Run workflow** on `main`.
 
-The URL serves this site only after Pages is enabled and deployment succeeds. Private repositories require a plan that supports Pages. Enabling Pages does not change repository visibility, but the published website may be publicly accessible. Never include credentials or private data in public assets.
+The URL serves this site only after Pages is enabled and deployment succeeds. Never include credentials or private data in public assets.
 
 ## Deployment workflow
 
-- `.github/workflows/catalog.yml` validates generated content, builds with the `/GameMap/` base, checks static output, and tests desktop/mobile interactions on pull requests. It does not publish.
-- `.github/workflows/deploy-pages.yml` builds and validates on `main`, uploads only `dist/`, and publishes with official SHA-pinned Pages actions. Pages/OIDC write permissions are scoped to the deploy job.
+- `.github/workflows/catalog.yml` validates generated content, runs `npm run check`, builds with the `/GameMap/` base, and runs `npm run check:build` on pull requests. It does not publish.
+- `.github/workflows/deploy-pages.yml` builds and validates on `main` with Supabase Direct community enabled, uploads only `dist/`, and publishes with official SHA-pinned Pages actions. Pages/OIDC write permissions are scoped to the deploy job.
 - The publishing build sets `PAGES_BASE_PATH` from Pages metadata. React Router uses the same basename; build finalization flattens pre-rendered routes so the published directory is not nested under a second `GameMap/`.
 - All application and document routes are pre-rendered. Initial route discovery is embedded, so client navigation never depends on a server-side route-manifest API. Unknown paths receive a real 404 page.
 
-Source code, lockfiles, editorial files, and original media stay versioned. Build output, staged document copies/images, caches, and local secrets are ignored; see [the versioning policy](../../CONTRIBUTING.md#what-belongs-in-git).
+Source code, lockfiles, editorial files, and original media stay versioned. Build output, staged document copies and images, caches, and local secrets are ignored; see [the versioning policy](../../CONTRIBUTING.md#what-belongs-in-git).
 
 The site includes local Inter fonts. Upstream dependency and font license texts are collected in the built `THIRD-PARTY-NOTICES.txt` file. External creator demos, project pages, and source repositories still require internet access.
 

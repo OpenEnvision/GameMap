@@ -1,8 +1,0 @@
-{
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "rootDirs": ["."],
-    "tsBuildInfoFile": "../.build/studio-types.tsbuildinfo"
-  },
-  "include": ["src", "vite.config.ts"]
-}
