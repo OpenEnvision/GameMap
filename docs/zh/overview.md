@@ -4,7 +4,7 @@
 
 ![GameMap](../../website/public/brand/gamemap.svg)
 
-**Tencent · AI 游戏开发**
+**OpenEnvision X Tencent · AI 游戏开发**
 
 一份经过编辑策展、以一手证据为支撑的 AI 游戏开发图谱，汇集工具、可玩项目、研究论文与生产工程工作流。
 
