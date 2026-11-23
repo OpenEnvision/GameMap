@@ -488,4 +488,54 @@ export const testingProjects: TestingResource[] = [
     limitations: 'Not installed or run in this research pass. A comparatively heavy setup with engine-specific content and AI-use conditions; it is not part of the unrestricted open-license starter set.',
     reviewed: '2026-10-18',
   },
+  {
+    "id": "bevy-official-examples",
+    "title": "Bevy official examples",
+    "kind": "project",
+    "uses": [
+      "coding",
+      "pipeline"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "stack": "Rust · Bevy ECS · official examples for 2D, 3D, UI, animation, audio and glTF",
+    "summary": "The official runnable example set shipped with the engine, useful as a small versioned baseline for ECS, rendering, asset import and animation regressions.",
+    "sourceUrl": "https://github.com/bevyengine/bevy",
+    "access": {
+      "label": "Browse runnable examples",
+      "url": "https://bevyengine.org/examples/",
+      "note": "The official example browser groups examples by topic; running them requires cloning the repository and a Rust toolchain."
+    },
+    "codeLicense": "MIT or Apache-2.0 at your option for the engine source.",
+    "assetLicense": "Assets bundled under examples/ carry separate licenses listed in CREDITS.md; they are not distributed in the published crates.",
+    "terms": "mixed",
+    "licenseUrl": "https://github.com/bevyengine/bevy/blob/main/LICENSE-APACHE",
+    "evidence": [
+      {
+        "label": "Official example browser",
+        "url": "https://bevyengine.org/examples/"
+      },
+      {
+        "label": "Examples directory and coverage",
+        "url": "https://github.com/bevyengine/bevy/tree/main/examples"
+      },
+      {
+        "label": "CREDITS.md with per-asset license notes",
+        "url": "https://github.com/bevyengine/bevy/blob/main/CREDITS.md"
+      }
+    ],
+    "aiUseNote": "Pin a release tag before using an example as a baseline. The engine ships breaking releases on a regular cadence, and example assets are governed by their own licenses rather than the engine dual license.",
+    "testTasks": [
+      "Run one 2D and one 3D example on a pinned tag and compare frame output, asset loading and console warnings.",
+      "Change a single ECS system or imported glTF asset and check that the example still starts and records the same scene state."
+    ],
+    "setup": [
+      "Check out a release tag rather than main, and install the Rust toolchain required by that release.",
+      "Run one example with cargo run --example breakout, then record the tag, toolchain, adapter and asset licenses from CREDITS.md."
+    ],
+    "limitations": "Bevy describes itself as early-stage, with breaking API changes roughly every three months, so main is not a stable baseline. Example assets have separate licenses in CREDITS.md. Source reviewed, not built or run locally.",
+    "reviewed": "2026-11-22"
+  },
 ];

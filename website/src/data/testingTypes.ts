@@ -5,6 +5,7 @@ export const testingKinds = {
   environment: "AI evaluation environments",
   asset: "Asset libraries",
   motion: "Rigs & motion data",
+  fixture: "Input & data fixtures",
 } as const;
 
 export const testingUses = {

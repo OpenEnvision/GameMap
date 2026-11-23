@@ -88,10 +88,14 @@ export function validateTestingContent({
           ),
         `Missing ${field}: ${resource.id}`,
       );
-    assert.equal(
+    assert.match(
       resource.reviewed,
-      testingReviewDate,
+      /^\d{4}-\d{2}-\d{2}$/,
       `Record the review snapshot: ${resource.id}`,
+    );
+    assert.ok(
+      resource.reviewed <= testingReviewDate,
+      `Review date exceeds library snapshot: ${resource.id}`,
     );
     https(resource.sourceUrl, resource.id + "/source");
     https(resource.licenseUrl, resource.id + "/license");
@@ -113,7 +117,7 @@ export function validateTestingContent({
     Object.keys(testingKinds).every((kind) =>
       testingResources.some((resource) => resource.kind === kind),
     ),
-    "Keep all four testing resource types populated",
+    "Keep every testing resource type populated",
   );
   assert.deepEqual(
     testingStarterPacks.map((pack) => pack.use).sort(),

@@ -292,7 +292,7 @@ for (const path of [
     `Regenerate the testing manifest: ${path}`,
   );
 console.log(
-  `Testing-library checks passed: ${testingResources.length} reviewed resources, four resource types, three testing goals, and matched guide/JSON downloads.`,
+  `Testing-library checks passed: ${testingResources.length} reviewed resources, ${Object.keys(testingContent.testingKinds).length} resource types, three testing goals, and matched guide/JSON downloads.`,
 );
 
 // Every preview preserves real game pixels, bundled locally with capture/creator provenance.

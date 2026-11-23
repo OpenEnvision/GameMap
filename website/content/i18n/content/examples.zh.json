@@ -263,5 +263,64 @@
   "collection:claude-community-use-cases": {
     "title": "Claude 社区案例",
     "description": "寻找创作者演示和开发记录；此项目集也包含游戏之外的影片、工具与实验。"
+  },
+  "example:fable52-papertrails": {
+    "title": "纸径 · Papertrails",
+    "description": "一本可以走进去的无尽立体书：纸做村落随行走升起又折起，穿过五个生态区，收集压花、贝壳与夜星。以浏览器单文件形式发布的程序化探索游戏。",
+    "aiUse": "Fable 5.2 游戏街机将此作品标为「Claude Fable 5.2 + Claude Opus 5.5」，作者为 Shikhar（街机记录核于 2026-11-22）。这是聚合站元数据，不是独立的作者身份审计；GameMap 未运行该构建。"
+  },
+  "example:fable52-fault-line-echoes": {
+    "title": "断层回响 · Fault Line Echoes",
+    "description": "第一人称冒险，穿梭于白石都城与四片荒野：签署汛情报告、接取委托，并从四种战斗风格中选择其一。街机标注为约 7.4 MB 的单文件构建，使用 Three.js 与 Rapier 物理。",
+    "aiUse": "Fable 5.2 游戏街机将此作品归于 Claude Fable 5.2，作者为 Galok（街机记录核于 2026-11-22）。这是聚合站元数据，不是独立的作者身份审计；GameMap 未运行该构建。"
+  },
+  "example:fable52-boo-mas": {
+    "title": "Boo-mas 圣诞幽灵",
+    "description": "戴圣诞帽的幽灵绕着雪球星球拖出一串灯串：在午夜前合上一个回路，回路里的万物便会亮起。一个小型 Three.js 街机解谜游戏，游戏旁公开了最初的一次性提示词。",
+    "aiUse": "Fable 5.2 游戏街机将此作品归于 Claude Fable 5.2，作者为 robinduckett，并公开了原始提示词（街机记录核于 2026-11-22）。这是聚合站元数据，不是独立的作者身份审计；GameMap 未运行该构建。"
+  },
+  "example:fable52-lantern-drift": {
+    "title": "天灯漂流 · Lantern Drift（Fable 5.2 版）",
+    "description": "同一命题的模型对决中 Claude Fable 5.2 的那一版：操控剪纸天灯穿过屋檐、电线、飞鸟与雨云向上飘升，并让灯火不灭。同一作者把其它模型的版本放在同一个对比仓库里。",
+    "aiUse": "Fable 5.2 游戏街机将此作品归于 Claude Fable 5.2，作者为 jambocoder159（街机记录核于 2026-11-22）。它的价值在于作为「同一提示词、多模型对照」的一臂，而不是一个独立的作者身份断言。"
+  },
+  "example:fable52-crash-quota": {
+    "title": "碰撞配额 · Crash Quota",
+    "description": "试车场上的 60 秒 demolition derby：在班次计时结束前撞倒 40 个假人、撞毁五辆失控原型车，或跑完三圈。支持 WebGL2 与手柄的街机驾驶构建，公开了原始提示词。",
+    "aiUse": "Fable 5.2 游戏街机将此作品归于 Claude Fable 5.2，作者为 Mythfinity，并公开了原始提示词（街机记录核于 2026-11-22）。这是聚合站元数据，不是独立的作者身份审计；GameMap 未运行该构建。"
+  },
+  "example:fable52-chongqing": {
+    "title": "重庆（试玩版）· CHONGQING",
+    "description": "在浏览器标签里穿行重庆：李子坝穿楼的轨道交通、嘉陵江畔亮起的洪崖洞，以及两地之间的一段计时赛。以可玩预览形式发布的中文 3D 驾驶与探索作品。",
+    "aiUse": "Fable 5.2 游戏街机将此作品归于 Claude Fable 5.2，作者为 Gary 曹淦（英文界面转写为 Gary Cao Gan；街机记录核于 2026-11-22）。这是聚合站元数据，不是独立的作者身份审计；GameMap 未运行该构建。"
+  },
+  "example:fable52-mothlight": {
+    "title": "MOTHLIGHT // Vesper-9 霓虹街道竞速",
+    "description": "在雨后湿滑的赛博城市里穿行五个街区、穿过十二道光门。同一创作者仓库中的四个浏览器游戏之一，也是该合集里游玩量最高的作品。",
+    "aiUse": "Fable 5.2 游戏街机将此作品归于 Claude Fable 5.2，作者为 hahaliu1029（街机记录核于 2026-11-22）；同一仓库另有三个姊妹游戏。这是聚合站与 README 元数据，不是独立的作者身份审计。"
+  },
+  "example:fable52-tidebell": {
+    "title": "潮钟 · Tidebell",
+    "description": "驾驶小型潜水器从阳光下的珊瑚礁下沉至深渊，唤醒七口沉睡的潮钟。程序化生成的海底探索游戏，全部模型由代码生成并打包进一个自包含 HTML 文件。",
+    "aiUse": "Fable 5.2 游戏街机将此作品归于 Claude Fable 5.2，作者为 hahaliu1029，并公开了原始提示词（街机记录核于 2026-11-22）。这是聚合站与 README 元数据，不是独立的作者身份审计。"
+  },
+  "example:fable52-qingyun-sword-flight": {
+    "title": "青云宗 · 御剑采灵",
+    "description": "第三人称御剑飞行穿过云海：采集二十点灵气、点亮宗门山门并穿门而过。仙侠题材探索游戏，同属该创作者的四个构建之一。",
+    "aiUse": "Fable 5.2 游戏街机将此作品归于 Claude Fable 5.2，作者为 hahaliu1029，并公开了原始提示词（街机记录核于 2026-11-22）。这是聚合站与 README 元数据，不是独立的作者身份审计。"
+  },
+  "example:fable52-misremember": {
+    "title": "MISREMEMBER 记忆之屋",
+    "description": "有什么东西根据你的记忆重建了童年的家，而当你注视时一切都不再变化。第一人称记忆屋恐怖探索游戏；创作者注明已发布版本只包含计划中五个夜晚的两个。",
+    "aiUse": "Fable 5.2 游戏街机将此作品归于 Claude Fable 5.2，作者为 hahaliu1029（街机记录核于 2026-11-22）；仓库 README 另提到用 Codex 生成贴图与照片。这是聚合站与 README 元数据，不是独立的作者身份审计。"
+  },
+  "example:fable52-model-duel": {
+    "title": "同一命题、三个模型：天灯漂流与 Mall Action",
+    "description": "2026-11-20，两位创作者发布了用三个不同前沿模型完成的近似相同命题。天灯漂流有同一作者的 Claude Fable 5.2 版与 GPT-6.2 Astra 版；Mall Action 有另一作者的 GPT-6.2 Astra 版与 Claude Opus 5.5 版。四个可玩构建在街机里并列展示并附源码查看器，是可复现地比较同一命题在不同模型下如何被理解的一组材料。",
+    "aiUse": "这是一条关于多模型对照的方法条目，不是对单一代理的归因。街机为每个构建分别标注模型：Claude Fable 5.2、GPT-6.2 Astra 与 Claude Opus 5.5（街机记录核于 2026-11-22）。GameMap 只汇总已公开记录，未重跑构建，也未审计作者身份。"
+  },
+  "collection:fable52-games-arcade": {
+    "title": "Fable 5.2 游戏街机",
+    "description": "由前沿模型构建的浏览器游戏社区街机；最初的 fable52.games 入口现已跳转到此处。GameMap 于 2026-11-22 复核了公开构建索引：共列出 94 个构建，跨越多个模型版本，各构建是否公开提示词、源码仓库以及许可情况都不相同。这是一个发现入口，不是对每一款游戏的完整认证目录：GameMap 未运行这些构建，未审计作者身份，也未确认复用权利。较早的 Fable 相关卡片来自 2026-11-19 的供给目录；其模型标签只用于已核查 README 明确点名的版本，不是独立的作者身份审计，也不构成对所用编码客户端的判定。"
   }
 }

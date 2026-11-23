@@ -3,15 +3,17 @@ import { testingProjects } from "./testingProjects";
 import { testingEnvironments } from "./testingEnvironments";
 import { testingAssets } from "./testingAssets";
 import { testingMotion } from "./testingMotion";
+import { testingFixtures } from "./testingFixtures";
 export { testingKinds, testingUses, testingTerms } from "./testingTypes";
 export type { TestingResource } from "./testingTypes";
 
-export const testingReviewDate = "2026-10-18";
+export const testingReviewDate = "2026-11-22";
 export const testingResources = [
   ...testingProjects,
   ...testingEnvironments,
   ...testingAssets,
   ...testingMotion,
+  ...testingFixtures,
 ];
 
 export const testingStarterPacks: TestingStarterPack[] = [

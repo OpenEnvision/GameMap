@@ -106,5 +106,35 @@
   },
   "testing:mixamo": {
     "summary": "常见的游戏动画制作流程，用于 AI 测试的权限仍需另行确认。"
+  },
+  "testing:bevy-official-examples": {
+    "summary": "引擎官方自带的可运行示例集，可作为 ECS、渲染、资源导入与动画回归的小型版本化基线。"
+  },
+  "testing:arcade-learning-environment": {
+    "summary": "Atari 2600 的标准评测接口，覆盖 100 余款游戏，原生支持 Gymnasium，提供分数、终止信号与可设种子的评测协议。"
+  },
+  "testing:procgen-benchmark": {
+    "summary": "16 个高速程序化生成环境，用于衡量代理多快能学会可迁移到未见关卡的技能。"
+  },
+  "testing:google-research-football": {
+    "summary": "可配置场景、多智能体对战与多种观察表示的研究型足球环境，自带游戏引擎。"
+  },
+  "testing:overcooked-ai": {
+    "summary": "双代理协作烹饪基准，含手工与程序化布局，用于协调与人机协作研究。"
+  },
+  "testing:mujoco-physics": {
+    "summary": "带 Python 接口的确定性接触动力学引擎，适合作为模拟角色与物体的物理及确定性基线。"
+  },
+  "testing:gymnasium-classic-control": {
+    "summary": "状态方程完全公开的小型确定性控制环境，适合检验重置、种子与回合终止行为。"
+  },
+  "testing:khronos-gltf-sample-assets": {
+    "summary": "Khronos 官方 glTF 2.0 模型集合，附带专用于检验查看器、转换器与导入器的 Testing 列表。"
+  },
+  "testing:khronos-gltf-asset-generator": {
+    "summary": "官方 glTF 2.0 导入器测试资产生成器，按 Positive / Negative 分组覆盖访问器、动画、材质、网格与纹理要求。"
+  },
+  "testing:sdl-gamecontrollerdb": {
+    "summary": "社区维护的 SDL 手柄映射数据库，是可复现手柄输入与按键布局回归测试的纯文本夹具。"
   }
 }

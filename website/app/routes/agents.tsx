@@ -63,13 +63,14 @@ export default function Agents() {
       <title>{t("Agent toolkit & game code — GameMap")}</title>
       <meta
         name="description"
-        content={t("Find instructions, engine bridges, and source code.")}
+        content={t(
+          "Reviewed skills, bridges, clients, standards, workflows, frameworks, benchmarks and game code.",
+        )}
       />
       <IndexHero
         pillar="tools"
-        kicker="CLIENTS, SKILLS & ACTUAL GAME CODE"
         title="From an agent to a working loop."
-        lede="Find instructions, engine bridges, and source code."
+        lede="Reviewed skills, bridges, clients, standards, workflows, frameworks, benchmarks and game code."
         count={allTools.length}
         countLabel="toolkit entries"
       >
@@ -139,7 +140,9 @@ export default function Agents() {
           </span>
           <span className="ix-meta-rule" aria-hidden="true" />
           <span>
-            {t("Agent-neutral tools remain included when filtering a client.")}
+            {t(
+              "Reviewed, not exhaustive. Agent-neutral tools remain included when filtering a client.",
+            )}
           </span>
         </div>
         <div className="content-index-section ix-chapters">

@@ -5411,5 +5411,182 @@
   },
   "demo:recording-wonderworld-cathedral": {
     "description": "c187c6a4dc3297b2250edab22409eae3af8808f4e2bdd875e9ab65a23a10f7a9"
+  },
+  "example:fable52-papertrails": {
+    "title": "90d2adebe5013853d39576db882e0c715a38a0326c0c5f03f8779d3c4fecbaf9",
+    "description": "0dc1697288ef46b960ba38c7d7874cd49a9a62a9045557efb01858447181109c",
+    "aiUse": "95b9bef4c6c2f448c9101d02fd93e343d6aaf9959b0974c875334b72fe9c5094"
+  },
+  "example:fable52-fault-line-echoes": {
+    "title": "7d597658a9a3625718bedbbe011eb0b64cf2f4ba9d694c44fd5562e33437fda0",
+    "description": "248c45ebeed082a2a2fe109990b8537aec00f7855038466752c38cddf3bd8d80",
+    "aiUse": "e93a5ea5602501c5b16314ad1ec29bdd5ef796cca84075603e7cca34d08ebaf9"
+  },
+  "example:fable52-boo-mas": {
+    "title": "dd860c99e73a219f339074ab306f632c06ad5fb672b553ae4b1e011f7a545745",
+    "description": "39de6251b07ec80f25fd68a87d0c56dadec80857f7a716e7bbdaecb69c5819ef",
+    "aiUse": "5ae9b994208e9104ea4e11b6d7ce8ea511216b1d93277bb4b9ef219b3183bca7"
+  },
+  "example:fable52-lantern-drift": {
+    "title": "0786f64d2ac240465ec5b6c55409b8180e79aebe374e160096caf5bd91610296",
+    "description": "79133eb8effb5903b9134e8022d335dbdcca670f68ac7b0233986b0908e26d7b",
+    "aiUse": "b8cf90f7950f494a0049667de9dfaa84ef33e088fe9f3374ed28c3be70b3c443"
+  },
+  "example:fable52-crash-quota": {
+    "title": "14aeb4ec6fa69b96852d7a3f871d1ed916b3f2bd5f9cc60ce49e0e26115598c3",
+    "description": "ae5a3005188900c688d5fe0e5cec8f6f1d5612949276374cb337fbd18562a256",
+    "aiUse": "6f808c5ea52436bc3b109acf7bd595ad2cb3db648ea1a363704e1795cd3861b7"
+  },
+  "example:fable52-chongqing": {
+    "title": "e50ce6bcee4cdc6dc1fdd8605c8f99b3f0fe130ddd648d37805da210dcce0baa",
+    "description": "05f57ba87abd04329d95d190be71cfbaaaf72f3182da50b61ce58c4ff1f79eec",
+    "aiUse": "aaf8e7961be094474a1dc8d22779e149dec8ed6a82ca179f8c05424d7c4e6d95"
+  },
+  "example:fable52-mothlight": {
+    "title": "1faa1c3fe7c057cd7546a08321627aea7610855a8d7b6c9b3ca400b8795a6e3a",
+    "description": "1ce09a38fea5e0a685e03c691350be2c43df44d3b23c8be475e7dc5db88d0baa",
+    "aiUse": "c04e4ce1689abdc2ebb345ece7f649377a20e2f5fe9d677b57da1a8d98400201"
+  },
+  "example:fable52-tidebell": {
+    "title": "dfe7d737a71a1b1b40d175c0aadc04f686780907ae0e8dd075d2407a1136ab57",
+    "description": "33b0f6128b257d0d992530550cb821fa90aa864399da936a21f644dadf9bffa7",
+    "aiUse": "7f4af95e7a507bab8a073cfa76c093e5174c0e26d710e5daeba6a12e362ac349"
+  },
+  "example:fable52-qingyun-sword-flight": {
+    "title": "c5e38725fa0ece1b1b9a2fe911c0ce5c1bb59e63b1d5164482495ae001498d7d",
+    "description": "2362ec37a26619b4620ec7c17c8e59efa154ba0d0bfcb8691f1aea48807f4bc3",
+    "aiUse": "7f4af95e7a507bab8a073cfa76c093e5174c0e26d710e5daeba6a12e362ac349"
+  },
+  "example:fable52-misremember": {
+    "title": "6a6bc9433e038d21cec8ab5159766b0cf38c3dc7d5c2ae9453dafc010270b3b8",
+    "description": "7b7799a8f141ced4ee33288e5fed4220d15750b0f290bd7bc4291b5d321f3bb5",
+    "aiUse": "5ebbb48608c9b3078e0dc7f59133b2df7f3cbfcc3f5fc723c37e45c68be69ea7"
+  },
+  "example:fable52-model-duel": {
+    "title": "92758de78e764c8eaa7de69c679d6f9a37b89737edb630ac880b886fafa9776b",
+    "description": "a2c9d012c3c6a5b711fc16d0e42167953b7dc461e6731a9a5d8a92ef2f71ec18",
+    "aiUse": "6e4523c812d0638ecd681a0f7cf2746d2a30460454c4d2726f8aa2b115749b7c"
+  },
+  "collection:fable52-games-arcade": {
+    "title": "3f90f97865c2243a93636fe7cc30807cda24a57150432db8a84c981fa7b1a3a3",
+    "description": "1c0901bbbad490b854ec7ccfaba3447893fb8d751683c0a243655c52aac58ec5"
+  },
+  "agent:unity-ai-official-mcp": {
+    "title": "5554a6e757706124909691f81005bef15a7988ce8dd4287298a126d4eeab96a8",
+    "summary": "0b7d9252a1877159606eefdf6280ce886572387e59411fb530862c6c60fbf87c"
+  },
+  "agent:roblox-studio-official-mcp": {
+    "title": "41121221c6b63660ca2b9a7a010dbc0b9656c1e0a7e49253f596a06ea9d2d3e5",
+    "summary": "711ff7c09e645c8dcd7754f6ce8cf10e55f041f297b78a318b3dc04e1dc7febb"
+  },
+  "agent:epic-unreal-mcp-official": {
+    "title": "2f05cd635d03435c9ba5f682bc172cba7f71a6a72c940aa34000eb58b6e449b5",
+    "summary": "8b8754082aaf66b9845753082aab03fb2a8e5dc360404df70ee5eb63ff3f4c5b"
+  },
+  "agent:cocos-creator-mcp-extension": {
+    "title": "45b3557261ecb59842eda5e0cdf080ed4a1ba2a0bb25754c38a5b2df7c461685",
+    "summary": "628db4b8786ebf8523918ddd36b2184331a4bd1ce3649c7b6918c4fa827b7879"
+  },
+  "agent:antigravity-cli-official": {
+    "title": "b9d51fc47684a485df64e58cdf457af03d634c590c200282045ca1ea885ebd3e",
+    "summary": "b0eea7867741f32aa1186ec2d62312cd765bf12f300978f8b45e065b32588ab9"
+  },
+  "agent:github-copilot-agent-mode-mcp": {
+    "title": "f70d225595883a8e1efaf58317deedfb220170f97c68f478652667e102089189",
+    "summary": "86a71ab7f621956d27479c8bbc7cbeb6a0e1adc787068e0adb3c81096baf0907"
+  },
+  "agent:cursor-mcp-client": {
+    "title": "ace126fd877b5ecf1b596d5451327c0979bd5d8d28779b241366970023cb58ff",
+    "summary": "74d8ffe248b1ddfe889d3bbc50dfc672446ccc00211c11481a38e60ebd928e7e"
+  },
+  "agent:kiro-agentic-engineering": {
+    "title": "ab83af60dee52b729ce38550f82d5771992ee9eb1ae007b44f3d22354823a5dc",
+    "summary": "11d9396c2ad5bf6619b627b7f11e1e829796a1f755f95f4144ce608c14f04c5c"
+  },
+  "agent:qoder-cn-mcp-client": {
+    "title": "4ccc4f5cd44ff108202873ebfd672153b0afa18d44c0b4d9e2a1c948eba4a6e7",
+    "summary": "08587ac0a4eaf802fb7c581e1bd81eecae505aa3a6551bea70ae128d720b246d"
+  },
+  "agent:windsurf-cascade-mcp": {
+    "title": "8b0da6dab8e436b9cd4847899ed3e06b4c42f2cf03f88bb96672adfa58eb24e4",
+    "summary": "5ba999817bad4af94847329a5819dcd823dfaa8dcaa9a269508f9f318cee5364"
+  },
+  "agent:mcp-official-registry": {
+    "title": "d87079c81a4bd64f474381ab2efeb6daa5028677910cf10715c46346529eea47",
+    "summary": "f74f886d7aa6abfa43991413361272f90b360a0afd1d35d2c7fba79e9cea13e4"
+  },
+  "agent:a2a-protocol-standard": {
+    "title": "76c6260bba6cce7004c9cc223fcf9191919c1f5686e7457615322b01ca5b9744",
+    "summary": "8e780672d82300586845fb295ee1012762a0c8e39bdddf26b11ff085ad836f7a"
+  },
+  "agent:orak-game-agent-benchmark": {
+    "title": "527a77c2b66541f1eb4a82d4f6733da5c1d2f3895f34363d2f1d2e6d4735a551",
+    "summary": "d72d4c4659de86a5b7dcee41a97b387fa829e67c1d8a82e842f108835fd1c6f9"
+  },
+  "agent:balrog-game-agent-benchmark": {
+    "title": "117e1ce084e86699b67d63009b857431b0268f50f813bac6822bb1e6dac10ced",
+    "summary": "c4622339c994b8b89af7a3ffea63d10b4092a10d21a2b1af542905c5110b03df"
+  },
+  "agent:videogamebench-vlm-benchmark": {
+    "title": "74f5c5ff02458da324ebda0a8c4d097b2d6511a84d14dfe754279078fd10cdce",
+    "summary": "fa8d6472157f0351ef0505b8e23dd3765300bf6c97eb2cd981e0105a97ede75e"
+  },
+  "agent:agent-game-ci-evidence-workflow": {
+    "title": "0fcc9403a0f899d9505d9d444c341f7b1760a46996f540ced9fdfa29a3b4c3fd",
+    "summary": "e6a77a222f7becd9f75894e403711247fa7380416276f6beca5aa8eed1cc5700"
+  },
+  "agent:gamedevbench-development-benchmark": {
+    "title": "3e66802eceb50ea6fa8969ab8608f55bbf8640460ec1500ae44f0e1d37fdcff1",
+    "summary": "845c1e6937c89d54ab64b2558d49d25d1a252b665196a13c37ce6f5a52b1d312"
+  },
+  "agent:swe-game-development-benchmark": {
+    "title": "861e7c9aee39cb12e1fead1b5b043e363b380abba359a776305f0074626c5a9d",
+    "summary": "09aff05b5707b2c85fdffa16f35c527babbae330fc29fab1179bbb79700f986a"
+  },
+  "agent:cocos-pink-official-agent": {
+    "title": "2a33fe62edf089ebd9e647a1da8022ea788ce932da2b8f93900bfd5347f3189b",
+    "summary": "7ea5d386269233e79a5e1c165130bf9270e071939b13c60f336bd67ac7e38bcb"
+  },
+  "agent:accelbyte-ags-official-mcp": {
+    "title": "56323e52a508f32fc14316a307581e817e7b12e288a0b269daf85580aaa02c61",
+    "summary": "6ee0b5dbed86249bab3cdff68f17dd083e33933ef8f1a9c4a3b7b9d0b0759d79"
+  },
+  "agent:aura-autopilot-open-playtester": {
+    "title": "9192a8e9372cf219a39e7deaac000bacb8170b64db4f1b24d83554f568db73c4",
+    "summary": "15d8906e520611d008017128d35b801e79f53b3357bd7932723f1cb2e3373e2f"
+  },
+  "agent:godot-ai-assistant-hub": {
+    "title": "b8050b456a641423cff48ede48ffe7c1ec6fe6f5d8f53955ed10e6e7f8f5c67a",
+    "summary": "8a55a57d46f9147ce1829f3f6aa68701a02c2fedf046618ebb859a95de34d73c"
+  },
+  "testing:bevy-official-examples": {
+    "summary": "b69db0b936f5c16c29000ae980c717009cac6826ab245fcd9755536634cff9f4"
+  },
+  "testing:arcade-learning-environment": {
+    "summary": "c0793cc97b79bea8eed85b2bf6e3eab97b953d33f2e898512e3b57f2257c918b"
+  },
+  "testing:procgen-benchmark": {
+    "summary": "c036136cea658300c3e5a3c5305843c0effb42216a6e8cd777ea96891d53ebee"
+  },
+  "testing:google-research-football": {
+    "summary": "3d1a6068c7a3b81606bb04e79daf8389bfcd188644ce02d2998ed8edd3bd69ba"
+  },
+  "testing:overcooked-ai": {
+    "summary": "38f95231328e7d6258b458dac4b6e6f50b32e9dc378c01fd83672fd7dd83b6ba"
+  },
+  "testing:mujoco-physics": {
+    "summary": "14046fdf70257d0bfd1356d00a33fe1028d6bf2fbe3b65fda673bc8448b9ad4e"
+  },
+  "testing:gymnasium-classic-control": {
+    "summary": "2bc37a5bf147ec2faf77ee601220936879c155a1751f184b38b93d9b6cc03d00"
+  },
+  "testing:khronos-gltf-sample-assets": {
+    "summary": "aa9851ea88a08f3a01417597ad97fd947faacbd6331b57a3db95c86e2928679a"
+  },
+  "testing:khronos-gltf-asset-generator": {
+    "summary": "3a607ec570ac1e7d9c31c994f7d229be6f0d3353215b164464ddcc5e63469d30"
+  },
+  "testing:sdl-gamecontrollerdb": {
+    "summary": "d0a86d0421490b2a4bdb77dd727661530611628477e7b1c6695162cf76558759"
   }
 }

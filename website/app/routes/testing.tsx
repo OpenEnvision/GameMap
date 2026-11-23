@@ -1,5 +1,6 @@
 import { useLoaderData, type LoaderFunctionArgs } from "react-router";
-import { ArrowUpRight, FlaskConical, Search } from "lucide-react";
+import { ArrowUpRight, Search } from "lucide-react";
+import { LayoutGrid, testingKindGlyphs } from "../lib/catalog";
 import {
   testingKinds,
   testingTerms,
@@ -51,6 +52,7 @@ export default function Testing() {
     environment: "var(--tax-3d)",
     asset: "var(--tax-production)",
     motion: "var(--tax-world)",
+    fixture: "var(--tax-agents)",
   };
   const tone = (id: string) =>
     ({ "--tone": kindTones[id] || "var(--accent)" }) as CSSProperties;
@@ -65,7 +67,6 @@ export default function Testing() {
       />
       <IndexHero
         pillar="tools"
-        kicker="TESTING WORKBENCH"
         title="Give your ideas a real test."
         lede="Working projects, environments, and assets for a more grounded development workflow."
         count={entries.length}
@@ -148,24 +149,30 @@ export default function Testing() {
               aria-pressed={kind === "all"}
               onClick={() => update("kind", "all")}
             >
-              <i className="ix-dot ix-dot-all" aria-hidden="true" />
+              <LayoutGrid size={15} aria-hidden="true" />
               {t("All resources")}
               <span>{entries.length}</span>
             </button>
-            {Object.entries(testingKinds).map(([id, label]) => (
-              <button
-                key={id}
-                aria-pressed={kind === id}
-                onClick={() => update("kind", id)}
-                style={tone(id)}
-              >
-                <i className="ix-dot" aria-hidden="true" />
-                {t(label)}
-                <span>
-                  {entries.filter((entry) => entry.data.kind === id).length}
-                </span>
-              </button>
-            ))}
+            {(
+              Object.keys(testingKinds) as Array<keyof typeof testingKinds>
+            ).map((id) => {
+              const Glyph = testingKindGlyphs[id];
+              return (
+                <button
+                  key={id}
+                  aria-pressed={kind === id}
+                  onClick={() => update("kind", id)}
+                  style={tone(id)}
+                  data-kind={id}
+                >
+                  <Glyph size={15} aria-hidden="true" />
+                  {t(testingKinds[id])}
+                  <span>
+                    {entries.filter((entry) => entry.data.kind === id).length}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </div>
         <div className="ix-meta">
@@ -181,15 +188,17 @@ export default function Testing() {
           <div className="testing-grid">
             {filtered.map((entry) => {
               const item = entry.data;
+              const Glyph = testingKindGlyphs[item.kind];
               return (
                 <article
                   className="testing-card"
                   key={entry.key}
                   data-content-ref={entry.key}
+                  data-kind={item.kind}
                   style={tone(item.kind)}
                 >
                   <span className="testing-symbol">
-                    <FlaskConical size={21} />
+                    <Glyph size={21} aria-hidden="true" />
                   </span>
                   <span className="small-label">
                     {t(testingKinds[item.kind])}

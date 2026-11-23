@@ -202,6 +202,12 @@
   "website/src/data/testingMotion.ts": {
     "exports": { "testingMotion": { "shape": "array", "kind": "testing" } }
   },
+  "website/src/data/testingFixtures.ts": {
+    "exports": { "testingFixtures": { "shape": "array", "kind": "testing" } }
+  },
+  "website/src/data/fable52Games.ts": {
+    "exports": { "fable52Games": { "shape": "array", "kind": "example" } }
+  },
   "website/src/data/plans.ts": {
     "exports": { "plans": { "shape": "plans", "kind": "step" } }
   },

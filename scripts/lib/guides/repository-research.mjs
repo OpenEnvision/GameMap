@@ -20,8 +20,8 @@ export async function loadRepositoryResearch() {
 export function validateRepositoryResearch(data) {
   assert.equal(
     data.source.indexed_count,
-    212,
-    "This pinned source inventory contains 212 candidates",
+    253,
+    "This pinned source inventory contains 253 candidates",
   );
   assert.equal(new URL(data.source.url).protocol, "https:");
   assert.deepEqual(

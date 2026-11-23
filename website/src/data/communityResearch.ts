@@ -25,6 +25,12 @@ export const communityCollections = [
     description:
       "Discover creator demos and build accounts. This collection also includes films, tools, and experiments beyond games.",
   },
+  {
+    "id": "fable52-games-arcade",
+    "title": "Fable 5.2 Games Arcade",
+    "url": "https://aiarcade.games/",
+    "description": "Community arcade of browser games built with frontier models; the original fable52.games entry point now redirects here. GameMap reviewed the public build index on 2026-11-22: it listed 94 builds across several model versions, with prompts, source repositories and licensing varying by build. This is a discovery entry point, not a verified catalog of every game: GameMap did not run the builds, audit authorship, or confirm reuse rights. Older Fable-related cards came from a 2026-11-19 supplied directory; their model labels are limited to versions the checked README explicitly names, and are not independent authorship audits or coding-client claims."
+  },
   ...browserPortCollections,
   ...approvedImportedCollections,
 ] as const satisfies readonly CommunityCollection[];

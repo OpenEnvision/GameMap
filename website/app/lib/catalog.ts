@@ -10,10 +10,14 @@ import {
   FileText,
   FlaskConical,
   Gamepad2,
+  Joystick,
   Layers3,
+  LayoutGrid,
   Orbit,
   PackageCheck,
   Palette,
+  PersonStanding,
+  Radar,
   ScrollText,
   Sparkles,
   Square,
@@ -23,10 +27,12 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { Category, Dimension, ResourceType, Stage } from "../../src/types";
+import type { TestingResource } from "../../src/data/testingTypes";
 
 // Presentation helpers only. Source collections belong in route loaders, never client bundles.
 export { categories, stageLabels, typeLabels } from "../../src/types";
 export { publicAsset } from "../../src/publicAsset";
+export { LayoutGrid };
 
 export const categoryGlyphs: Record<Category, LucideIcon> = {
   agents: Code2,
@@ -64,6 +70,14 @@ export const dimensionGlyphs: Record<Dimension, LucideIcon> = {
   "2d": Square,
   "3d": Box,
   world: Orbit,
+};
+
+export const testingKindGlyphs: Record<TestingResource["kind"], LucideIcon> = {
+  project: Gamepad2,
+  environment: Radar,
+  asset: Boxes,
+  motion: PersonStanding,
+  fixture: Joystick,
 };
 
 export const shortStageLabels: Record<Stage, string> = {

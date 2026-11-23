@@ -99,7 +99,18 @@ test("model attribution repeats only what the checked README states", () => {
         .match(/mentions ([^()]+?)(?: \(GitHub check|\))/)?.[1]
         .split(/, | and /) || [])
         assert.ok(mentioned.includes(term), `${entry.key}: ${term}`);
-    assert.equal(context.sources.gameCaseAgents[entry.id], undefined);
+    const attr = context.sources.gameCaseAgents[entry.id];
+    if (attr !== undefined) {
+      assert.deepEqual(
+        attr,
+        ["fable"],
+        `${entry.key}: only README-confirmed Fable 5.2 rows may carry a model badge`,
+      );
+      assert.ok(
+        mentioned.some((term) => /fable/i.test(term)),
+        `${entry.key}: Fable attribution requires a README Fable mention`,
+      );
+    }
   }
 });
 

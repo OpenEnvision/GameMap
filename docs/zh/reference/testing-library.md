@@ -1,4 +1,4 @@
-# 游戏测试资源库
+# 游戏测试库
 
 根据要测试的行为，选择可运行的项目、AI 环境或资源集。从下列任务入手，然后遵循各项资源的配置与许可证说明。
 
@@ -30,44 +30,54 @@
 
 ## 资源索引
 
-| 资源                                     | 类型      | 维度      | 测试目标                       | 获取 / 运行                                                                                   | 来源                                                                                                    |
-| -------------------------------------- | ------- | ------- | -------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Godot 官方演示                             | 游戏与引擎项目 | 2D / 3D | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [游玩浏览器演示](https://godotengine.github.io/godot-demo-projects/)                             | [一手来源](https://github.com/godotengine/godot-demo-projects)                                            |
-| SuperTux                               | 游戏与引擎项目 | 2D      | 编码与自动化试玩；视觉、控制与规划          | [游玩官方浏览器构建](https://play.supertux.org/)                                                   | [一手来源](https://github.com/SuperTux/supertux)                                                          |
-| Endless Sky                            | 游戏与引擎项目 | 2D      | 编码与自动化试玩；视觉、控制与规划          | [免费 Steam 游戏](https://store.steampowered.com/app/404410/Endless_Sky/)                     | [一手来源](https://github.com/endless-sky/endless-sky)                                                    |
-| DDraceNetwork (DDNet)                  | 游戏与引擎项目 | 2D      | 编码与自动化试玩；视觉、控制与规划          | [免费 Steam 游戏](https://store.steampowered.com/app/412220/DDraceNetwork/)                   | [一手来源](https://github.com/ddnet/ddnet)                                                                |
-| The Battle for Wesnoth                 | 游戏与引擎项目 | 2D      | 编码与自动化试玩；视觉、控制与规划          | [免费 Steam 游戏](https://store.steampowered.com/app/599390/Battle_for_Wesnoth/)              | [一手来源](https://github.com/wesnoth/wesnoth)                                                            |
-| Mindustry                              | 游戏与引擎项目 | 2D      | 编码与自动化试玩；视觉、控制与规划          | [作者提供的免费下载](https://anuke.itch.io/mindustry)                                              | [一手来源](https://github.com/Anuken/Mindustry)                                                           |
-| OpenTTD                                | 游戏与引擎项目 | 2D      | 编码与自动化试玩；视觉、控制与规划          | [官方免费下载](https://www.openttd.org/downloads/openttd-releases/latest)                       | [一手来源](https://github.com/OpenTTD/OpenTTD)                                                            |
-| SuperTuxKart                           | 游戏与引擎项目 | 3D      | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [免费桌面版下载](https://supertuxkart.net/Download)                                              | [一手来源](https://github.com/supertuxkart/stk-code)                                                      |
-| Luanti + Minetest Game                 | 游戏与引擎项目 | 3D      | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [获取 Minetest Game](https://content.luanti.org/packages/Minetest/minetest_game/)           | [一手来源](https://github.com/luanti-org/luanti)                                                          |
-| Red Eclipse                            | 游戏与引擎项目 | 3D      | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [免费 Steam 游戏](https://store.steampowered.com/app/967460/Red_Eclipse/)                     | [一手来源](https://github.com/redeclipse/base)                                                            |
-| Zero-K                                 | 游戏与引擎项目 | 3D      | 编码与自动化试玩；视觉、控制与规划          | [免费 Steam 游戏](https://store.steampowered.com/app/334920/ZeroK/)                           | [一手来源](https://github.com/ZeroK-RTS/Zero-K)                                                           |
-| Unity BoatAttack                       | 游戏与引擎项目 | 3D      | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [获取 Unity 示例源码](https://github.com/Unity-Technologies/BoatAttack)                         | [一手来源](https://github.com/Unity-Technologies/BoatAttack)                                              |
-| Unreal Engine Lyra Starter Game        | 游戏与引擎项目 | 3D      | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [获取免费 Lyra 示例](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0?lang=en) | [一手来源](https://dev.epicgames.com/documentation/en-us/unreal-engine/lyra-sample-game-in-unreal-engine) |
-| MiniGrid / BabyAI                      | AI 评估环境 | 2D      | 编码与自动化试玩；视觉、控制与规划          | [免费 Python 软件包](https://minigrid.farama.org/)                                             | [一手来源](https://github.com/Farama-Foundation/Minigrid)                                                 |
-| Crafter                                | AI 评估环境 | 2D      | 编码与自动化试玩；视觉、控制与规划          | [免费软件包与可玩 GUI](https://github.com/danijar/crafter#play-yourself)                          | [一手来源](https://github.com/danijar/crafter)                                                            |
-| Craftax                                | AI 评估环境 | 2D      | 编码与自动化试玩；视觉、控制与规划          | [免费 Python 软件包](https://github.com/MichaelTMatthews/Craftax#readme)                       | [一手来源](https://github.com/MichaelTMatthews/Craftax)                                                   |
-| ViZDoom                                | AI 评估环境 | 3D      | 编码与自动化试玩；视觉、控制与规划          | [包含 Freedoom 资源的免费软件包](https://vizdoom.farama.org/)                                       | [一手来源](https://github.com/Farama-Foundation/ViZDoom)                                                  |
-| NetHack Learning Environment           | AI 评估环境 | 2D      | 编码与自动化试玩；视觉、控制与规划          | [免费软件包与源码](https://github.com/NetHack-LE/nle#installation)                                | [一手来源](https://github.com/NetHack-LE/nle)                                                             |
-| Godot RL Agents                        | AI 评估环境 | 2D / 3D | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [免费工具包与示例项目](https://github.com/edbeeching/godot_rl_agents#quickstart-guide)              | [一手来源](https://github.com/edbeeching/godot_rl_agents)                                                 |
-| Unity ML-Agents                        | AI 评估环境 | 2D / 3D | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [免费工具包；需要 Unity 编辑器](https://github.com/Unity-Technologies/ml-agents/releases)            | [一手来源](https://github.com/Unity-Technologies/ml-agents)                                               |
-| Kenney                                 | 资源库     | 2D / 3D | 编码与自动化试玩；资源与动画流水线          | [浏览免费资源包](https://kenney.nl/assets)                                                       | [一手来源](https://kenney.nl/assets)                                                                      |
-| Quaternius                             | 资源库     | 3D      | 编码与自动化试玩；资源与动画流水线          | [浏览创作者资源包](https://quaternius.com/)                                                       | [一手来源](https://quaternius.com/)                                                                       |
-| Poly Haven                             | 资源库     | 3D      | 视觉、控制与规划；资源与动画流水线          | [浏览 CC0 资源](https://polyhaven.com/all)                                                    | [一手来源](https://polyhaven.com/)                                                                        |
-| ambientCG                              | 资源库     | 3D      | 视觉、控制与规划；资源与动画流水线          | [浏览可下载资源](https://ambientcg.com/list)                                                     | [一手来源](https://ambientcg.com/)                                                                        |
-| OpenGameArt                            | 资源库     | 2D / 3D | 编码与自动化试玩；资源与动画流水线          | [浏览社区资源](https://opengameart.org/)                                                        | [一手来源](https://opengameart.org/)                                                                      |
-| Fab                                    | 资源库     | 2D / 3D | 资源与动画流水线                   | [浏览市场条目](https://www.fab.com/)                                                            | [一手来源](https://www.fab.com/)                                                                          |
-| Unity Asset Store                      | 资源库     | 2D / 3D | 资源与动画流水线                   | [浏览 Asset Store 软件包](https://assetstore.unity.com/)                                       | [一手来源](https://assetstore.unity.com/)                                                                 |
-| Kenney Animated Characters             | 绑定与动作数据 | 3D      | 资源与动画流水线                   | [下载角色包](https://kenney.nl/assets/animated-characters-protagonists)                        | [一手来源](https://kenney.nl/assets/animated-characters-protagonists)                                     |
-| Quaternius Universal Animation Library | 绑定与动作数据 | 3D      | 资源与动画流水线                   | [获取免费 Standard 版](https://quaternius.itch.io/universal-animation-library)                 | [一手来源](https://quaternius.itch.io/universal-animation-library)                                        |
-| 100STYLE                               | 绑定与动作数据 | 3D      | 视觉、控制与规划；资源与动画流水线          | [获取原始动作数据](https://www.ianxmason.com/100style/)                                           | [一手来源](https://www.ianxmason.com/100style/)                                                           |
-| CMU Motion Capture Database            | 绑定与动作数据 | 3D      | 视觉、控制与规划；资源与动画流水线          | [浏览受试者与动作](https://mocap.cs.cmu.edu/)                                                     | [一手来源](https://mocap.cs.cmu.edu/)                                                                     |
-| LaFAN1                                 | 绑定与动作数据 | 3D      | 资源与动画流水线                   | [打开数据集仓库](https://github.com/ubisoft/ubisoft-laforge-animation-dataset)                   | [一手来源](https://github.com/ubisoft/ubisoft-laforge-animation-dataset)                                  |
-| AMASS                                  | 绑定与动作数据 | 3D      | 视觉、控制与规划；资源与动画流水线          | [审阅访问与数据集条款](https://amass.is.tue.mpg.de/)                                                | [一手来源](https://amass.is.tue.mpg.de/)                                                                  |
-| SMPL-Body                              | 绑定与动作数据 | 3D      | 资源与动画流水线                   | [阅读身体子集许可证](https://smpl.is.tue.mpg.de/bodylicense.html)                                  | [一手来源](https://smpl.is.tue.mpg.de/)                                                                   |
-| SMPL-Model                             | 绑定与动作数据 | 3D      | 资源与动画流水线                   | [审阅模型访问条款](https://smpl.is.tue.mpg.de/modellicense.html)                                  | [一手来源](https://smpl.is.tue.mpg.de/)                                                                   |
-| Mixamo                                 | 绑定与动作数据 | 3D      | 资源与动画流水线                   | [先阅读服务常见问题](https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html)                   | [一手来源](https://www.mixamo.com/)                                                                       |
+| 资源 | 类型 | 维度 | 测试目标 | 获取 / 运行 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| Godot 官方演示 | 游戏与引擎项目 | 2D / 3D | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [游玩浏览器演示](https://godotengine.github.io/godot-demo-projects/) | [一手来源](https://github.com/godotengine/godot-demo-projects) |
+| SuperTux | 游戏与引擎项目 | 2D | 编码与自动化试玩；视觉、控制与规划 | [游玩官方浏览器构建](https://play.supertux.org/) | [一手来源](https://github.com/SuperTux/supertux) |
+| Endless Sky | 游戏与引擎项目 | 2D | 编码与自动化试玩；视觉、控制与规划 | [免费 Steam 游戏](https://store.steampowered.com/app/404410/Endless_Sky/) | [一手来源](https://github.com/endless-sky/endless-sky) |
+| DDraceNetwork (DDNet) | 游戏与引擎项目 | 2D | 编码与自动化试玩；视觉、控制与规划 | [免费 Steam 游戏](https://store.steampowered.com/app/412220/DDraceNetwork/) | [一手来源](https://github.com/ddnet/ddnet) |
+| The Battle for Wesnoth | 游戏与引擎项目 | 2D | 编码与自动化试玩；视觉、控制与规划 | [免费 Steam 游戏](https://store.steampowered.com/app/599390/Battle_for_Wesnoth/) | [一手来源](https://github.com/wesnoth/wesnoth) |
+| Mindustry | 游戏与引擎项目 | 2D | 编码与自动化试玩；视觉、控制与规划 | [作者提供的免费下载](https://anuke.itch.io/mindustry) | [一手来源](https://github.com/Anuken/Mindustry) |
+| OpenTTD | 游戏与引擎项目 | 2D | 编码与自动化试玩；视觉、控制与规划 | [官方免费下载](https://www.openttd.org/downloads/openttd-releases/latest) | [一手来源](https://github.com/OpenTTD/OpenTTD) |
+| SuperTuxKart | 游戏与引擎项目 | 3D | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [免费桌面版下载](https://supertuxkart.net/Download) | [一手来源](https://github.com/supertuxkart/stk-code) |
+| Luanti + Minetest Game | 游戏与引擎项目 | 3D | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [获取 Minetest Game](https://content.luanti.org/packages/Minetest/minetest_game/) | [一手来源](https://github.com/luanti-org/luanti) |
+| Red Eclipse | 游戏与引擎项目 | 3D | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [免费 Steam 游戏](https://store.steampowered.com/app/967460/Red_Eclipse/) | [一手来源](https://github.com/redeclipse/base) |
+| Zero-K | 游戏与引擎项目 | 3D | 编码与自动化试玩；视觉、控制与规划 | [免费 Steam 游戏](https://store.steampowered.com/app/334920/ZeroK/) | [一手来源](https://github.com/ZeroK-RTS/Zero-K) |
+| Unity BoatAttack | 游戏与引擎项目 | 3D | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [获取 Unity 示例源码](https://github.com/Unity-Technologies/BoatAttack) | [一手来源](https://github.com/Unity-Technologies/BoatAttack) |
+| Unreal Engine Lyra Starter Game | 游戏与引擎项目 | 3D | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [获取免费 Lyra 示例](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0?lang=en) | [一手来源](https://dev.epicgames.com/documentation/en-us/unreal-engine/lyra-sample-game-in-unreal-engine) |
+| Bevy official examples | 游戏与引擎项目 | 2D / 3D | 编码与自动化试玩；资源与动画流水线 | [浏览可运行示例](https://bevyengine.org/examples/) | [一手来源](https://github.com/bevyengine/bevy) |
+| MiniGrid / BabyAI | AI 评估环境 | 2D | 编码与自动化试玩；视觉、控制与规划 | [免费 Python 软件包](https://minigrid.farama.org/) | [一手来源](https://github.com/Farama-Foundation/Minigrid) |
+| Crafter | AI 评估环境 | 2D | 编码与自动化试玩；视觉、控制与规划 | [免费软件包与可玩 GUI](https://github.com/danijar/crafter#play-yourself) | [一手来源](https://github.com/danijar/crafter) |
+| Craftax | AI 评估环境 | 2D | 编码与自动化试玩；视觉、控制与规划 | [免费 Python 软件包](https://github.com/MichaelTMatthews/Craftax#readme) | [一手来源](https://github.com/MichaelTMatthews/Craftax) |
+| ViZDoom | AI 评估环境 | 3D | 编码与自动化试玩；视觉、控制与规划 | [包含 Freedoom 资源的免费软件包](https://vizdoom.farama.org/) | [一手来源](https://github.com/Farama-Foundation/ViZDoom) |
+| NetHack Learning Environment | AI 评估环境 | 2D | 编码与自动化试玩；视觉、控制与规划 | [免费软件包与源码](https://github.com/NetHack-LE/nle#installation) | [一手来源](https://github.com/NetHack-LE/nle) |
+| Godot RL Agents | AI 评估环境 | 2D / 3D | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [免费工具包与示例项目](https://github.com/edbeeching/godot_rl_agents#quickstart-guide) | [一手来源](https://github.com/edbeeching/godot_rl_agents) |
+| Unity ML-Agents | AI 评估环境 | 2D / 3D | 编码与自动化试玩；视觉、控制与规划；资源与动画流水线 | [免费工具包；需要 Unity 编辑器](https://github.com/Unity-Technologies/ml-agents/releases) | [一手来源](https://github.com/Unity-Technologies/ml-agents) |
+| Arcade Learning Environment (ALE) | AI 评估环境 | 2D | 编码与自动化试玩；视觉、控制与规划 | [官方文档与安装指南](https://ale.farama.org/) | [一手来源](https://github.com/Farama-Foundation/Arcade-Learning-Environment) |
+| Procgen Benchmark | AI 评估环境 | 2D | 编码与自动化试玩；视觉、控制与规划 | [安装 Python 软件包](https://github.com/openai/procgen#readme) | [一手来源](https://github.com/openai/procgen) |
+| Google Research Football | AI 评估环境 | 3D | 编码与自动化试玩；视觉、控制与规划 | [安装与场景指南](https://github.com/google-research/football#readme) | [一手来源](https://github.com/google-research/football) |
+| Overcooked-AI | AI 评估环境 | 2D | 编码与自动化试玩；视觉、控制与规划 | [安装与布局指南](https://github.com/HumanCompatibleAI/overcooked_ai#readme) | [一手来源](https://github.com/HumanCompatibleAI/overcooked_ai) |
+| MuJoCo | AI 评估环境 | 3D | 编码与自动化试玩；资源与动画流水线 | [官方文档](https://mujoco.readthedocs.io/en/stable/overview.html) | [一手来源](https://github.com/google-deepmind/mujoco) |
+| Gymnasium classic control | AI 评估环境 | 2D | 编码与自动化试玩；视觉、控制与规划 | [经典控制环境文档](https://gymnasium.farama.org/environments/classic_control/) | [一手来源](https://github.com/Farama-Foundation/Gymnasium) |
+| Kenney | 资源库 | 2D / 3D | 编码与自动化试玩；资源与动画流水线 | [浏览免费资源包](https://kenney.nl/assets) | [一手来源](https://kenney.nl/assets) |
+| Quaternius | 资源库 | 3D | 编码与自动化试玩；资源与动画流水线 | [浏览创作者资源包](https://quaternius.com/) | [一手来源](https://quaternius.com/) |
+| Poly Haven | 资源库 | 3D | 视觉、控制与规划；资源与动画流水线 | [浏览 CC0 资源](https://polyhaven.com/all) | [一手来源](https://polyhaven.com/) |
+| ambientCG | 资源库 | 3D | 视觉、控制与规划；资源与动画流水线 | [浏览可下载资源](https://ambientcg.com/list) | [一手来源](https://ambientcg.com/) |
+| OpenGameArt | 资源库 | 2D / 3D | 编码与自动化试玩；资源与动画流水线 | [浏览社区资源](https://opengameart.org/) | [一手来源](https://opengameart.org/) |
+| Fab | 资源库 | 2D / 3D | 资源与动画流水线 | [浏览市场条目](https://www.fab.com/) | [一手来源](https://www.fab.com/) |
+| Unity Asset Store | 资源库 | 2D / 3D | 资源与动画流水线 | [浏览 Asset Store 软件包](https://assetstore.unity.com/) | [一手来源](https://assetstore.unity.com/) |
+| Khronos glTF Sample Assets | 资源库 | 3D | 编码与自动化试玩；资源与动画流水线 | [浏览官方资源列表](https://github.khronos.org/glTF-Assets/) | [一手来源](https://github.com/KhronosGroup/glTF-Sample-Assets) |
+| Khronos glTF Asset Generator | 资源库 | 3D | 编码与自动化试玩；资源与动画流水线 | [浏览生成的测试资产](https://github.com/KhronosGroup/glTF-Asset-Generator/tree/main/Output/Positive) | [一手来源](https://github.com/KhronosGroup/glTF-Asset-Generator) |
+| Kenney Animated Characters | 绑定与动作数据 | 3D | 资源与动画流水线 | [下载角色包](https://kenney.nl/assets/animated-characters-protagonists) | [一手来源](https://kenney.nl/assets/animated-characters-protagonists) |
+| Quaternius Universal Animation Library | 绑定与动作数据 | 3D | 资源与动画流水线 | [获取免费 Standard 版](https://quaternius.itch.io/universal-animation-library) | [一手来源](https://quaternius.itch.io/universal-animation-library) |
+| 100STYLE | 绑定与动作数据 | 3D | 视觉、控制与规划；资源与动画流水线 | [获取原始动作数据](https://www.ianxmason.com/100style/) | [一手来源](https://www.ianxmason.com/100style/) |
+| CMU Motion Capture Database | 绑定与动作数据 | 3D | 视觉、控制与规划；资源与动画流水线 | [浏览受试者与动作](https://mocap.cs.cmu.edu/) | [一手来源](https://mocap.cs.cmu.edu/) |
+| LaFAN1 | 绑定与动作数据 | 3D | 资源与动画流水线 | [打开数据集仓库](https://github.com/ubisoft/ubisoft-laforge-animation-dataset) | [一手来源](https://github.com/ubisoft/ubisoft-laforge-animation-dataset) |
+| AMASS | 绑定与动作数据 | 3D | 视觉、控制与规划；资源与动画流水线 | [审阅访问与数据集条款](https://amass.is.tue.mpg.de/) | [一手来源](https://amass.is.tue.mpg.de/) |
+| SMPL-Body | 绑定与动作数据 | 3D | 资源与动画流水线 | [阅读身体子集许可证](https://smpl.is.tue.mpg.de/bodylicense.html) | [一手来源](https://smpl.is.tue.mpg.de/) |
+| SMPL-Model | 绑定与动作数据 | 3D | 资源与动画流水线 | [审阅模型访问条款](https://smpl.is.tue.mpg.de/modellicense.html) | [一手来源](https://smpl.is.tue.mpg.de/) |
+| Mixamo | 绑定与动作数据 | 3D | 资源与动画流水线 | [先阅读服务常见问题](https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html) | [一手来源](https://www.mixamo.com/) |
+| SDL GameControllerDB | 输入与数据夹具 | 2D / 3D | 编码与自动化试玩；视觉、控制与规划 | [下载 gamecontrollerdb.txt](https://github.com/mdqinc/SDL_GameControllerDB/blob/master/gamecontrollerdb.txt) | [一手来源](https://github.com/mdqinc/SDL_GameControllerDB) |
 
 ## 已审查资源
 
@@ -249,7 +259,7 @@
 
 - [核心代码许可证](https://github.com/wesnoth/wesnoth/blob/ca544b10b5d0a88f1336465d82500cefee67bfc9/copyright)
 - [文件级美术与音频清单](https://github.com/wesnoth/wesnoth/blob/ca544b10b5d0a88f1336465d82500cefee67bfc9/copyrights.csv)
-- [核心与附加组件的许可证政策](https://wiki.wesnoth.org/index.php?title=Wesnoth:Copyrights\&oldid=75641)
+- [核心与附加组件的许可证政策](https://wiki.wesnoth.org/index.php?title=Wesnoth:Copyrights&oldid=75641)
 - [Steam 发布版](https://store.steampowered.com/app/599390/Battle_for_Wesnoth/)
 - [官方开发与场景文档](https://wiki.wesnoth.org/Create)
 
@@ -545,6 +555,40 @@
 - [Fab 访问与内容字段](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0?lang=en)
 - [Unreal Engine EULA](https://www.unrealengine.com/en-US/eula/unreal)
 
+### Bevy official examples
+
+引擎官方自带的可运行示例集，可作为 ECS、渲染、资源导入与动画回归的小型版本化基线。
+
+**技术栈 / 格式：** Rust · Bevy ECS · 覆盖 2D、3D、UI、动画、音频与 glTF 的官方示例
+
+**类型：** 游戏与引擎项目 ·  **目标：** 编码与自动化试玩；资源与动画流水线 ·  **维度：** 2D / 3D
+
+[浏览可运行示例](https://bevyengine.org/examples/) — 官方示例浏览器按主题分组；运行示例需要克隆仓库并准备 Rust 工具链。
+
+[项目 / 来源记录](https://github.com/bevyengine/bevy) · [许可证 / 条款](https://github.com/bevyengine/bevy/blob/main/LICENSE-APACHE)
+
+- **许可证类别：** 代码 / 资源混合许可证
+- **代码：** 引擎源码可任选 MIT 或 Apache-2.0。
+- **资源 / 数据：** examples/ 下随附的资产各有单独许可，列于 CREDITS.md；这些资产不随已发布的 crate 分发。
+- **AI 用途：** 把示例用作基线前须固定发布标签。引擎按固定节奏发布含破坏性变更的版本，且示例资产受各自许可约束，而非引擎的双许可。
+- **实际局限：** Bevy 自述仍处早期阶段，约每三个月有破坏性 API 变更，因此 main 不是稳定基线。示例资产在 CREDITS.md 中另有许可。本次仅审阅来源，未在本地构建或运行。
+
+**建议测试任务**
+
+- 在固定标签上运行一个 2D 与一个 3D 示例，比较画面输出、资源加载与控制台警告。
+- 改动单个 ECS 系统或导入的 glTF 资产，检查示例仍能启动并记录相同场景状态。
+
+**开始使用**
+
+1. 检出发布标签而非 main，并安装该版本所需的 Rust 工具链。
+2. 用 cargo run --example breakout 运行一个示例，记录标签、工具链、图形适配器，以及 CREDITS.md 中的资产许可。
+
+**一手证据**
+
+- [官方示例浏览器](https://bevyengine.org/examples/)
+- [示例目录与覆盖范围](https://github.com/bevyengine/bevy/tree/main/examples)
+- [CREDITS.md 中的逐资产许可说明](https://github.com/bevyengine/bevy/blob/main/CREDITS.md)
+
 ### MiniGrid / BabyAI
 
 具有钥匙、门、物体和部分观察的小型导航与语言落地任务。是可重复规划测试的实用首选基线。
@@ -799,6 +843,215 @@
 - [第三方声明](https://github.com/Unity-Technologies/ml-agents/blob/develop/Third%20Party%20Notices.md)
 - [Unity 编辑器条款](https://unity.com/legal/editor-terms-of-service/software)
 
+### Arcade Learning Environment (ALE)
+
+覆盖 100 余款游戏的 Atari 2600 标准评测接口，原生支持 Gymnasium，提供分数与终止信号，以及可设种子的评测协议。
+
+**技术栈 / 格式：** C++ / Python · Stella Atari 2600 模拟器 · Gymnasium API
+
+**类型：** AI 评估环境 ·  **目标：** 编码与自动化试玩；视觉、控制与规划 ·  **维度：** 2D
+
+[官方文档与安装指南](https://ale.farama.org/) — 从 PyPI 安装 ale-py；pip 包内含 Atari ROM，项目另提供 WebAssembly 构建。
+
+[项目 / 来源记录](https://github.com/Farama-Foundation/Arcade-Learning-Environment) · [许可证 / 条款](https://github.com/Farama-Foundation/Arcade-Learning-Environment/blob/main/LICENSE.md)
+
+- **许可证类别：** 代码 / 资源混合许可证
+- **代码：** ALE 框架采用 GPL-2.0。
+- **资源 / 数据：** Atari ROM 随 pip 包提供；其权利与框架许可分离，再分发前需单独核查。
+- **AI 用途：** 比较代理前固定游戏、模式、难度、跳帧、重复动作概率与种子；分别说明观察来源（像素或 RAM）。随包提供 ROM 不等于允许再分发数据集。
+- **实际局限：** GPL-2.0 只适用于框架，pip 包内的 Atari ROM 属于第三方游戏资产，再分发需另行核查权利。本次仅审阅来源，未在本地安装，也未运行任何 Atari 评测。
+
+**建议测试任务**
+
+- 在相同动作预算下，比较同一游戏开启与关闭粘性动作时的固定种子得分。
+- 记录代理使用 RGB 像素还是 RAM 状态，并检查重置、截断与失去生命信号。
+- 回放固定动作序列，断言不同运行与依赖版本下的得分一致。
+
+**开始使用**
+
+1. 创建 Python 环境，安装 ale-py 与 Gymnasium，并列出可用的 ROM 标识。
+2. 以固定的模式、难度、跳帧、repeat_action_probability 和种子创建 Atari 环境。
+3. 逐回合记录得分、terminated 与 truncated；保留 ale-py 版本与 ROM 清单。
+
+**一手证据**
+
+- [功能、Gymnasium 支持与随包 ROM](https://github.com/Farama-Foundation/Arcade-Learning-Environment#readme)
+- [环境列表与评测协议](https://ale.farama.org/environments/)
+- [GPL-2.0 许可证文本](https://github.com/Farama-Foundation/Arcade-Learning-Environment/blob/main/LICENSE.md)
+
+### Procgen Benchmark
+
+16 个高速程序化生成环境，用于衡量代理多快能学会可迁移到未见关卡的技能。
+
+**技术栈 / 格式：** Python · Gym API · 16 个程序化生成的类游戏环境
+
+**类型：** AI 评估环境 ·  **目标：** 编码与自动化试玩；视觉、控制与规划 ·  **维度：** 2D
+
+[安装 Python 软件包](https://github.com/openai/procgen#readme) — 从仓库安装 procgen；这些环境在单核 CPU 上每秒可运行数千步。
+
+[项目 / 来源记录](https://github.com/openai/procgen) · [许可证 / 条款](https://github.com/openai/procgen/blob/master/LICENSE)
+
+- **许可证类别：** 开放许可证来源
+- **代码：** MIT。
+- **资源 / 数据：** 画面由程序化生成；标准环境不需要随包的第三方游戏美术。
+- **AI 用途：** 比较代理前须分离训练与测试关卡分布，并固定训练关卡数、种子和分布模式。步速快并不免除报告墙钟时间与样本预算的义务。
+- **实际局限：** 仓库声明处于维护模式，仅修复缺陷与小幅更新。CoinRun 与早期独立发布版存在差异，标准包装器还需要兼容的 Gym 版本。本次仅审阅来源，未在本地安装或运行。
+
+**建议测试任务**
+
+- 比较在小关卡集上训练与在完整分布上训练的代理，用留出种子评估。
+- 跨软件包版本回放固定种子，断言初始观察与动作掩码一致。
+- 测量单个环境每秒步数，并记录硬件与线程数。
+
+**开始使用**
+
+1. 创建 Python 环境，安装 procgen 与兼容的 Gym 或 Gymnasium 包装器。
+2. 以固定种子和分布模式创建一个环境，记录观察、奖励与结束信号。
+
+**一手证据**
+
+- [README 中的环境列表与速度说明](https://github.com/openai/procgen#readme)
+- [基准论文](https://arxiv.org/abs/1912.01588)
+- [MIT 许可证文本](https://github.com/openai/procgen/blob/master/LICENSE)
+
+### Google Research Football
+
+可配置场景、多智能体对战与多种观察表示的研究型足球环境，自带游戏引擎。
+
+**技术栈 / 格式：** C++ 游戏引擎 · Python Gym API · 多智能体足球场景
+
+**类型：** AI 评估环境 ·  **目标：** 编码与自动化试玩；视觉、控制与规划 ·  **维度：** 3D
+
+[安装与场景指南](https://github.com/google-research/football#readme) — 可从 PyPI 安装或从源码构建；仓库还提供使用预编译二进制的 Colab 笔记本。
+
+[项目 / 来源记录](https://github.com/google-research/football) · [许可证 / 条款](https://github.com/google-research/football/blob/master/LICENSE)
+
+- **许可证类别：** 开放许可证来源
+- **代码：** Apache-2.0。
+- **资源 / 数据：** 基于开源项目 Gameplay Football；随包资产与另行下载的引擎组件须分别核查。
+- **AI 用途：** 比较策略前固定场景、受控球员数、观察表示、动作集、种子与回合长度。预编译二进制只是便利条件，不构成可复现性保证。
+- **实际局限：** 该 GitHub 仓库已归档，最后一次推送为 2025 年 6 月，不应假定仍会维护。安装依赖平台专用二进制或源码构建，底层 Gameplay Football 资产另有来源。本次仅审阅来源，未在本地安装或运行。
+
+**建议测试任务**
+
+- 比较同一策略在像素、紧凑向量表示与完整状态表示下的表现。
+- 在两个软件包版本上以固定种子运行同一场景，核对得分与回合长度。
+- 检查多智能体场景在重置后是否出现角色分配与时序失同步。
+
+**开始使用**
+
+1. 从 PyPI 安装某个发布版或从源码构建，并确认引擎二进制与 Python 版本。
+2. 以固定种子创建一个场景，记录观察形状与动作集，并运行一局简短基线。
+
+**一手证据**
+
+- [README 中的安装、场景与表示说明](https://github.com/google-research/football#readme)
+- [基准论文](https://arxiv.org/abs/1907.11180)
+- [Apache-2.0 许可证文本](https://github.com/google-research/football/blob/master/LICENSE)
+
+### Overcooked-AI
+
+双代理协作烹饪基准，含手工与程序化布局，用于协调与人机协作研究。
+
+**技术栈 / 格式：** Python · Gym 风格 API · 双代理协作布局
+
+**类型：** AI 评估环境 ·  **目标：** 编码与自动化试玩；视觉、控制与规划 ·  **维度：** 2D
+
+[安装与布局指南](https://github.com/HumanCompatibleAI/overcooked_ai#readme) — 安装 overcooked-ai Python 包；布局与规划基线随包提供。
+
+[项目 / 来源记录](https://github.com/HumanCompatibleAI/overcooked_ai) · [许可证 / 条款](https://github.com/HumanCompatibleAI/overcooked_ai/blob/master/LICENSE)
+
+- **许可证类别：** 开放许可证来源
+- **代码：** MIT。
+- **资源 / 数据：** 仓库代码与布局定义适用 MIT；README 链接的人类研究数据另行处理。
+- **AI 用途：** 固定布局、回合长度、伙伴策略与种子。得分会掩盖协调失败，因此须分别记录联合动作、碰撞与空转步数。
+- **实际局限：** 仓库最后一次推送为 2025 年 3 月，README 指向的人类研究数据集有独立条款。布局名称与旧版 Gym API 需要固定。本次仅审阅来源，未在本地安装或运行。
+
+**建议测试任务**
+
+- 在同一布局上比较自对弈组合与固定启发式伙伴，报告得分与碰撞次数。
+- 回放固定的联合动作序列，断言重置后的状态转移一致。
+- 检查程序化生成的布局能否由记录的种子复现。
+
+**开始使用**
+
+1. 在 Python 环境中安装 overcooked-ai 并列出可用布局。
+2. 以具名布局、固定回合长度与种子创建双代理环境，记录联合观察与奖励。
+
+**一手证据**
+
+- [README 中的布局与安装说明](https://github.com/HumanCompatibleAI/overcooked_ai#readme)
+- [基准论文](https://arxiv.org/abs/1910.05789)
+- [MIT 许可证文本](https://github.com/HumanCompatibleAI/overcooked_ai/blob/master/LICENSE)
+
+### MuJoCo
+
+带 Python 接口的确定性接触动力学引擎，适合作为模拟角色与物体的物理及确定性基线。
+
+**技术栈 / 格式：** C/C++ 物理引擎 · MJCF / URDF 模型 · Python 绑定
+
+**类型：** AI 评估环境 ·  **目标：** 编码与自动化试玩；资源与动画流水线 ·  **维度：** 3D
+
+[官方文档](https://mujoco.readthedocs.io/en/stable/overview.html) — 可作为 mujoco Python 包安装；项目开源后不再需要单独的许可密钥。
+
+[项目 / 来源记录](https://github.com/google-deepmind/mujoco) · [许可证 / 条款](https://github.com/google-deepmind/mujoco/blob/main/LICENSE)
+
+- **许可证类别：** 开放许可证来源
+- **代码：** Apache-2.0。
+- **资源 / 数据：** 项目随附的 MJCF 模型与网格须单独核查来源；用户自备模型另行处理。
+- **AI 用途：** 物理回归应使用受控的 MJCF 模型、固定步长与求解器设置，并记录引擎版本，因为接触行为可能随版本变化。MuJoCo 是物理仿真器，不是游戏，也不是试玩基准。
+- **实际局限：** MuJoCo 面向机器人与生物力学而非游戏玩法；每项测试都需单独论证与游戏的相关性。随附模型与网格另有来源。本次仅审阅来源，未在本地构建或运行。
+
+**建议测试任务**
+
+- 在一个模型上回放固定控制序列，比较不同引擎版本下的最终刚体位置。
+- 把同一绑定分别导入为 MJCF 与 URDF，比较关节限制、质量属性与接触行为。
+
+**开始使用**
+
+1. 固定 mujoco 发布版，加载一个 MJCF 模型并记录步长、积分器与求解器设置。
+2. 以固定控制序列推进仿真，记录位置、速度与接触信息。
+
+**一手证据**
+
+- [README 中的安装与绑定说明](https://github.com/google-deepmind/mujoco#readme)
+- [官方文档概览](https://mujoco.readthedocs.io/en/stable/overview.html)
+- [Apache-2.0 许可证文本](https://github.com/google-deepmind/mujoco/blob/main/LICENSE)
+
+### Gymnasium classic control
+
+状态方程完全公开的小型确定性控制环境，适合检验重置、种子与回合终止行为。
+
+**技术栈 / 格式：** Python · Gymnasium API · CartPole、Pendulum、MountainCar 与 Acrobot
+
+**类型：** AI 评估环境 ·  **目标：** 编码与自动化试玩；视觉、控制与规划 ·  **维度：** 2D
+
+[经典控制环境文档](https://gymnasium.farama.org/environments/classic_control/) — 这些环境不需要外部游戏二进制、ROM 或模型下载。
+
+[项目 / 来源记录](https://github.com/Farama-Foundation/Gymnasium) · [许可证 / 条款](https://github.com/Farama-Foundation/Gymnasium/blob/main/LICENSE)
+
+- **许可证类别：** 开放许可证来源
+- **代码：** MIT。
+- **资源 / 数据：** 仅使用程序化渲染；这些环境不需要随包的第三方游戏资产。
+- **AI 用途：** 固定环境 id、种子、渲染模式与 Gymnasium 版本。这些玩具任务可用于验证代理流水线，但不得当作试玩证据报告。
+- **实际局限：** 经典控制任务是玩具级控制问题，不是游戏。此处仅将其作为确定性流水线检查；本次审阅未在本地安装或运行任何环境。
+
+**建议测试任务**
+
+- 以同一种子重置两个环境，断言初始观察与终止阈值一致。
+- 改动包装器或动作映射层，验证 step、terminated 与 truncated 契约仍成立。
+
+**开始使用**
+
+1. 安装固定的 gymnasium 发布版，并以固定种子创建一个经典控制环境。
+2. 记录观察边界、动作空间、终止条件与精确版本字符串。
+
+**一手证据**
+
+- [经典控制环境参考文档](https://gymnasium.farama.org/environments/classic_control/)
+- [Gymnasium README 与 API 范围](https://github.com/Farama-Foundation/Gymnasium#readme)
+- [MIT 许可证文本](https://github.com/Farama-Foundation/Gymnasium/blob/main/LICENSE)
+
 ### Kenney
 
 用于小型测试场景、资源替换、碰撞和 UI 回归的实用 CC0 起点。
@@ -1027,6 +1280,74 @@
 
 - [Asset Store 条款与 EULA](https://unity.com/legal/as-terms)
 - [2026 年条款更新与智能体访问说明](https://unity.com/legal)
+
+### Khronos glTF Sample Assets
+
+Khronos 官方 glTF 2.0 模型集合，附带专用于检验查看器、转换器与导入器的 Testing 列表。
+
+**技术栈 / 格式：** 带逐模型许可元数据的 glTF 2.0 / GLB 参考与测试模型
+
+**类型：** 资源库 ·  **目标：** 编码与自动化试玩；资源与动画流水线 ·  **维度：** 3D
+
+[浏览官方资源列表](https://github.khronos.org/glTF-Assets/) — 在线目录提供标签化模型列表、预览以及逐模型的许可与署名信息；可下载文件保存在仓库中。
+
+[项目 / 来源记录](https://github.com/KhronosGroup/glTF-Sample-Assets) · [许可证 / 条款](https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/README.md)
+
+- **许可证类别：** 代码 / 资源混合许可证
+- **代码：** 仓库文本采用 CC-BY-4.0；各模型在自身 README 中单独声明许可与署名要求。
+- **资源 / 数据：** 逐模型许可，常见为 CC-BY 4.0 或 CC0；复用前须查阅具体模型目录中的 README。
+- **AI 用途：** 用带标签的 Testing 模型作为确定性的导入与渲染夹具。仓库文本的 CC-BY 授权不覆盖每个模型、网站品牌或第三方展示图；须保留每个模型的署名行。
+- **实际局限：** 许可按模型而非按仓库授予；部分展示资产要求署名，另有资产因许可不合适而被移除。本次审阅未在本地下载或导入任何模型。
+
+**建议测试任务**
+
+- 将同一个 Testing 模型导入两款引擎，比较几何、材质、纹理方向与缩放。
+- 让一组固定的扩展模型与仅含核心特性的模型通过转换器，记录丢失了哪些特性。
+
+**开始使用**
+
+1. 固定仓库提交，从 Testing 与 Core Only 列表中选取一小组模型。
+2. 将每个下载文件对应的 README 署名与许可放在 .gltf/.glb 旁，并记录导入设置。
+
+**一手证据**
+
+- [面向查看器与转换器的测试模型](https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/Models-testing.md)
+- [含许可摘要的完整模型列表](https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/Models.md)
+- [仓库许可与逐模型署名规则](https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/README.md)
+
+### Khronos glTF Asset Generator
+
+官方 glTF 2.0 导入器测试资产生成器，按 Positive / Negative 分组覆盖访问器、动画、材质、网格与纹理要求。
+
+**技术栈 / 格式：** 生成 glTF 2.0 正向与负向一致性资产的 C# / .NET 生成器
+
+**类型：** 资源库 ·  **目标：** 编码与自动化试玩；资源与动画流水线 ·  **维度：** 3D
+
+[浏览生成的测试资产](https://github.com/KhronosGroup/glTF-Asset-Generator/tree/main/Output/Positive) — 预生成的 Positive 与 Negative 模型已提交在 Output 下；C# 解决方案可重新生成。
+
+[项目 / 来源记录](https://github.com/KhronosGroup/glTF-Asset-Generator) · [许可证 / 条款](https://github.com/KhronosGroup/glTF-Asset-Generator/blob/main/LICENSE)
+
+- **许可证类别：** 开放许可证来源
+- **代码：** 生成器源码采用 MIT。
+- **资源 / 数据：** 生成的输出资产适用仓库 MIT 许可；仍须记录所用的确切 Output 修订版本。
+- **AI 用途：** 将成对生成的资产作为导入器有标签的通过 / 失败夹具：Positive 文件必须可加载，Negative 文件必须被拒绝并给出明确诊断。一次通过导入并不能证明完全符合 glTF 规范。
+- **实际局限：** 覆盖范围仍在推进，README 明确说明后续会补充更多要求。该 C# 项目面向 Visual Studio / .NET 工作流；本次审阅未在本地构建或运行生成器。
+
+**建议测试任务**
+
+- 在同一导入器中加载全部 Positive 用例，记录不支持的特性，不要把警告当成崩溃。
+- 检查 Negative 用例是否以可操作的错误失败，而不是静默生成损坏的场景。
+
+**开始使用**
+
+1. 固定仓库提交，将 Output/Positive 与 Output/Negative 目录复制到受版本管理的夹具中。
+2. 记录导入器版本、每个用例的预期结果，以及负向用例的确切错误文本。
+
+**一手证据**
+
+- [项目范围与已支持要求](https://github.com/KhronosGroup/glTF-Asset-Generator#readme)
+- [负向测试输出](https://github.com/KhronosGroup/glTF-Asset-Generator/tree/main/Output/Negative)
+- [MIT 许可证文本](https://github.com/KhronosGroup/glTF-Asset-Generator/blob/main/LICENSE)
 
 ### Kenney Animated Characters
 
@@ -1325,6 +1646,40 @@
 
 - [当前服务常见问题](https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html)
 - [官方 2021 年附加条款](https://wwwimages2.adobe.com/content/dam/cc/en/legal/servicetou/Mixamo-Addl-Terms-en_US-20210623.pdf)
+
+### SDL GameControllerDB
+
+社区维护的 SDL 手柄映射数据库，是可复现手柄输入与按键布局回归测试的纯文本夹具。
+
+**技术栈 / 格式：** SDL2 / SDL3 · gamecontrollerdb.txt · 社区维护的 GUID 映射
+
+**类型：** 输入与数据夹具 ·  **目标：** 编码与自动化试玩；视觉、控制与规划 ·  **维度：** 2D / 3D
+
+[下载 gamecontrollerdb.txt](https://github.com/mdqinc/SDL_GameControllerDB/blob/master/gamecontrollerdb.txt) — 单个文本文件；SDL2 用 SDL_GameControllerAddMappingsFromFile 载入，SDL3 用 SDL_AddGamepadMappingsFromFile，兼容 SDL 2.0.10 及以上版本。
+
+[项目 / 来源记录](https://github.com/mdqinc/SDL_GameControllerDB) · [许可证 / 条款](https://github.com/mdqinc/SDL_GameControllerDB/blob/master/LICENSE)
+
+- **许可证类别：** 开放许可证来源
+- **代码：** 数据库文件采用 Zlib 许可。
+- **资源 / 数据：** 这不是媒体素材集合；映射是社区贡献的数据，适用 Zlib 授权。
+- **AI 用途：** 使用固定版本的 gamecontrollerdb.txt 作为确定性输入夹具。一条映射是社区贡献的数据，并不保证同一设备在不同平台或 SDL 版本上表现一致。
+- **实际局限：** 社区提交的映射可能在不同提交间被更正或移除，README 也要求贡献者不要提交 AI 生成内容。该数据库覆盖 SDL 2.0.10 及以上版本；本次审阅未在本地运行任何手柄或 SDL 构建。
+
+**建议测试任务**
+
+- 在两个 SDL 版本中载入同一份固定的 gamecontrollerdb.txt，比较同一 GUID 的按钮与轴索引。
+- 在载入与不载入数据库两种情况下回放固定输入序列，记录哪些设备回退到通用映射。
+
+**开始使用**
+
+1. 固定数据库的提交或发布版，把确切的 gamecontrollerdb.txt 放在测试项目旁。
+2. 通过 SDL_GameControllerAddMappingsFromFile（SDL2）或 SDL_AddGamepadMappingsFromFile（SDL3）载入文件，并记录检测到的手柄 GUID 与平台。
+
+**一手证据**
+
+- [README 中的 SDL2 / SDL3 载入调用](https://github.com/mdqinc/SDL_GameControllerDB#readme)
+- [含 GUID 映射的数据库文件](https://github.com/mdqinc/SDL_GameControllerDB/blob/master/gamecontrollerdb.txt)
+- [Zlib 许可证文本](https://github.com/mdqinc/SDL_GameControllerDB/blob/master/LICENSE)
 
 ## 记录可复现的测试
 

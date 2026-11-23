@@ -32,6 +32,7 @@ export const agentLabels = {
   ...agentLabelsV1,
   'claude-cowork': 'Claude Cowork',
   'roo-code': 'Roo Code',
+  fable: 'Claude Fable 5.2',
 } as const;
 export type AgentId = keyof typeof agentLabelsV1;
 export type AttributionAgentId = keyof typeof agentLabels;
@@ -43,6 +44,8 @@ export const agentResourceKinds = {
   evaluation: 'Development evaluations',
   workflow: 'Build workflows',
   'code-example': 'Runnable game code',
+  client: 'Clients & harnesses',
+  standard: 'Standards & registries',
 } as const;
 
 export type AgentGameResource = PayloadModels['agent'];

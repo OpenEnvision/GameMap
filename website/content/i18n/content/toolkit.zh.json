@@ -114,5 +114,93 @@
   "agent:aider-pong-game-editing-transcript": {
     "title": "Aider · 含实际代码改动的官方 Pong 开发记录",
     "summary": "Aider 官方示例记录制作 Pong，并调整球拍颜色、尺寸和球的行为。公开编辑块与已应用 Git 提交，使增量编程流程可以直接检查，而非只看最终截图。"
+  },
+  "agent:unity-ai-official-mcp": {
+    "title": "Unity CLI 1.0 与 Unity AI · 官方代理接口、unity mcp 与 AI Gateway",
+    "summary": "Unity 已弃用 com.unity.ai.assistant 包内的编辑器内 MCP Server，改由 Unity CLI 内置的 unity mcp 服务承接；CLI 还可通过 unity command 与 unity eval 直接驱动编辑器，而独立的 Unity AI 测试版提供编辑器内 Assistant 与 AI Gateway。"
+  },
+  "agent:roblox-studio-official-mcp": {
+    "title": "Roblox Studio · 官方 MCP Server、Assistant 与试玩代理",
+    "summary": "Roblox 官方记录了第一方 Studio MCP Server，以及 Assistant、Code Assist、屏幕截图、虚拟输入试玩和自带客户端的工作流；外部编程代理因此可以查看并修改正在运行的 place，而不只是编辑文件。"
+  },
+  "agent:epic-unreal-mcp-official": {
+    "title": "Epic Unreal MCP · 官方实验性编辑器工具集",
+    "summary": "Epic 官方 Unreal MCP 插件在编辑器内嵌 Model Context Protocol 服务，把 Actor、Blueprint、材质、Slate 检查、性能剖析与自动化测试等已注册工具集开放给兼容 MCP 的编程代理。"
+  },
+  "agent:cocos-creator-mcp-extension": {
+    "title": "Cocos Creator MCP · 社区编辑器自动化扩展",
+    "summary": "社区开发的 Cocos Creator MCP 扩展向外部编程代理开放场景、节点、组件、预制体、脚本、控制台、预览与校验工具，附带面向 Claude Code 的 stdio 桥接，并兼容其他 MCP 客户端。"
+  },
+  "agent:antigravity-cli-official": {
+    "title": "Google Antigravity CLI · 官方 Gemini CLI 迁移与代理运行环境",
+    "summary": "Google 的 Antigravity CLI 是统一的终端代理运行环境，通过官方迁移路径承接 Gemini CLI 工作流；Antigravity 整体文档还涵盖技能、规则、MCP、插件、子代理、hook、无头模式、权限、沙箱与 SDK。"
+  },
+  "agent:github-copilot-agent-mode-mcp": {
+    "title": "GitHub Copilot agent mode · MCP Server 与工具集",
+    "summary": "GitHub Copilot 的 agent 模式可调用本地或远程 MCP Server 的工具，官方文档明确了配置、工具集、注册表发现、企业策略、OAuth 与审批边界，用于多步骤编程工作流。"
+  },
+  "agent:cursor-mcp-client": {
+    "title": "Cursor MCP 客户端 · 传输方式、审批、沙箱与 MCP Apps",
+    "summary": "Cursor 官方 MCP 文档描述了一个通过 stdio、SSE 与 Streamable HTTP 把代理连接到外部工具的客户端，并支持 OAuth、工具审批、网络控制、MCP Apps 与图像响应。"
+  },
+  "agent:kiro-agentic-engineering": {
+    "title": "Kiro · 规格驱动代理、无头 CLI、ACP 与 MCP",
+    "summary": "AWS Kiro 将规格驱动开发、并行代理、基于属性的检查、用于 CI 的无头 CLI、Agent Client Protocol 兼容、AGENTS.md、Skills.md 与 MCP 配置结合在 IDE、CLI、Web 和移动端多种界面中。"
+  },
+  "agent:qoder-cn-mcp-client": {
+    "title": "Qoder / Qoder CN · Agent 模式、MCP Square 与国内模型",
+    "summary": "Qoder 文档说明 Agent 模式支持 STDIO、SSE 与 Streamable HTTP MCP Server，并提供 MCP Square 发现与工具确认；Qoder CN 是阿里云将 Lingma 更名后的产品系列，提供国内模型与部署选项。"
+  },
+  "agent:windsurf-cascade-mcp": {
+    "title": "Windsurf Cascade · MCP Marketplace、传输方式与工具治理",
+    "summary": "Windsurf 的 Cascade 代理可通过市场或原始 mcp_config.json 原生接入 MCP Server，支持 stdio、Streamable HTTP、SSE、OAuth、逐工具开关，并设有 100 个工具的工作集上限。"
+  },
+  "agent:mcp-official-registry": {
+    "title": "MCP Registry · 官方服务元数据与发现 API",
+    "summary": "官方 MCP Registry 是面向公开 MCP Server 的预览版元数据仓库，提供 server.json 记录、DNS 校验命名空间、REST API，以及供下游聚合方使用的标准 OpenAPI 契约。"
+  },
+  "agent:a2a-protocol-standard": {
+    "title": "A2A Protocol v1.0 · 代理间互操作标准",
+    "summary": "A2A 是一套稳定、与厂商无关的互操作标准，让彼此不透明的代理能够相互发现、委派任务并交换消息与产出物；它补足 MCP 的「代理—工具」层，目前是 Agentic AI Foundation 的 Growth Stage 项目。"
+  },
+  "agent:orak-game-agent-benchmark": {
+    "title": "Orak · 基于 MCP 的 LLM 游戏代理基准与轨迹数据",
+    "summary": "Orak 用独立的 MCP Server 承载游戏环境与代理模块，在 12 款真实电子游戏、六个类型上评测并训练 LLM 代理，并提供专家游玩轨迹、排行榜、对战竞技场与消融实验。"
+  },
+  "agent:balrog-game-agent-benchmark": {
+    "title": "BALROG · 文本与视觉游戏中的 LLM 与 VLM 推理",
+    "summary": "BALROG 在一系列强化学习游戏上评测 LLM 与 VLM 的代理式推理，任务难度从数秒可解到 NetHack Learning Environment，提供细粒度指标以及文本或视觉观测。"
+  },
+  "agent:videogamebench-vlm-benchmark": {
+    "title": "VideoGameBench · VLM 实时通关 1990 年代电子游戏",
+    "summary": "VideoGameBench 要求视觉语言模型仅凭原始截图和高层控制说明，实时通关十款 1990 年代游戏；Lite 模式会在模型推理时暂停游戏。"
+  },
+  "agent:agent-game-ci-evidence-workflow": {
+    "title": "可复现的代理游戏开发证据工作流",
+    "summary": "一份跨来源的工作流检查清单，用于让代理游戏开发可观察、可重复：选择引擎反馈回路，把编辑器状态当作数据处理，留存构建、画面与输入证据，固定版本与预算，并在比较代理前约束工具权限。"
+  },
+  "agent:gamedevbench-development-benchmark": {
+    "title": "GameDevBench · 面向代理游戏开发的 333 项 Godot 任务",
+    "summary": "ICML 2026 基准包含 333 项 Godot 4 游戏开发任务，用确定性的引擎状态检查而非模型自述评分，并提供编辑器截图 MCP 服务与运行时视频反馈以考察多模态推理。"
+  },
+  "agent:swe-game-development-benchmark": {
+    "title": "SWE-Game · 247 项可执行的构建、修复与移植任务",
+    "summary": "基准包含 247 项可执行游戏开发任务，基于 41 款可运行的 Godot 参考游戏，覆盖从 brief 到游戏、从 GDD 到游戏、骨架补全、注入故障修复与 Godot 到 Unity 移植，并以引擎状态检查和视觉语言评分表评估。"
+  },
+  "agent:cocos-pink-official-agent": {
+    "title": "Cocos PinK Beta · 官方 AI 原生 IDE、COCOS CLI 与 MCP 工具链",
+    "summary": "Cocos 发布的 PinK Beta 是 AI 原生 IDE，包含具备项目上下文的 PinK Agent、工具与 MCP 连接，以及驱动场景、脚本、资产、预览、构建和多平台发布的 COCOS CLI；官方架构文章还说明 MCP 之下有 MIT 开源的 CLI-CORE 命令分发器。"
+  },
+  "agent:accelbyte-ags-official-mcp": {
+    "title": "AccelByte AGS · 官方 API MCP Server 与 Extend SDK MCP Server",
+    "summary": "AGS 官方开发工具提供托管式 API MCP Server，可检索、解释并以已登录用户身份调用真实游戏后端接口；另有 Extend SDK MCP Server、可脚本化的 AGS CLI，以及带技能包的 AI 插件。"
+  },
+  "agent:aura-autopilot-open-playtester": {
+    "title": "Aura Autopilot · Apache-2.0 开源试玩代理，含引擎插件与 MCP",
+    "summary": "开源自动试玩系统由编辑器插件与本地代理服务组成，让编程代理编写项目专用测试框架、向运行中的游戏注入真实输入，并输出探索、测试、验证或目标达成结果，附带项目级记忆与可用于 CI 的无头退出码。"
+  },
+  "agent:godot-ai-assistant-hub": {
+    "title": "Godot AI Assistant Hub · 带逐工具权限的编辑器内插件",
+    "summary": "社区 Godot 插件在编辑器内提供可按任务配置的多个助手，支持脚本、场景、节点、资源、文件与项目分组工具，具备逐工具权限控制，并优先支持 Ollama、llama.cpp 等本地模型提供方。"
   }
 }

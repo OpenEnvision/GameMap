@@ -99,4 +99,102 @@ export const testingAssets: TestingResource[] = [
     setup: ['Record the package version, provider license and intended AI use.', 'Use a permitted Unity automation connection and obtain any required provider authorization.'],
     limitations: 'Free is not open source. Restricted assets and third-party components may have different terms; no package was downloaded or imported.', reviewed: '2026-10-18',
   },
+  {
+    "id": "khronos-gltf-sample-assets",
+    "title": "Khronos glTF Sample Assets",
+    "kind": "asset",
+    "uses": [
+      "coding",
+      "pipeline"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "stack": "glTF 2.0 / GLB reference and testing models with per-model license metadata",
+    "summary": "The official Khronos collection of glTF 2.0 models, including a dedicated Testing list built for exercising viewers, converters and importers.",
+    "sourceUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets",
+    "access": {
+      "label": "Browse the official asset lists",
+      "url": "https://github.khronos.org/glTF-Assets/",
+      "note": "The browsable catalog exposes tagged model lists, previews and per-model license and credit information; the repository holds the downloadable files."
+    },
+    "codeLicense": "Repository text is licensed CC-BY-4.0; individual models carry their own license and attribution in each model README.",
+    "assetLicense": "Per-model licenses, commonly CC-BY 4.0 or CC0; check the README in the exact model directory before reuse.",
+    "terms": "mixed",
+    "licenseUrl": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/README.md",
+    "evidence": [
+      {
+        "label": "Testing models for viewers and converters",
+        "url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/Models-testing.md"
+      },
+      {
+        "label": "Complete model list with license summaries",
+        "url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/Models.md"
+      },
+      {
+        "label": "Repository license and per-model credit rules",
+        "url": "https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/README.md"
+      }
+    ],
+    "aiUseNote": "Use the tagged Testing models as a deterministic import and render fixture. The CC-BY grant on the repository text does not extend to every model, website branding or third-party showcase art; retain each model credit line.",
+    "testTasks": [
+      "Import the same Testing model into two engines and compare geometry, materials, texture orientation and scale.",
+      "Run a fixed set of extension and core-only models through a converter and record which features are dropped."
+    ],
+    "setup": [
+      "Pin a repository commit and select a small set of models from the Testing and Core Only lists.",
+      "Copy the per-model README credit and license beside each downloaded .gltf/.glb and record import settings."
+    ],
+    "limitations": "Licenses are per model, not per repository; several showcase assets require attribution and some assets were removed for unsuitable licensing. No model was downloaded or imported locally in this review.",
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "khronos-gltf-asset-generator",
+    "title": "Khronos glTF Asset Generator",
+    "kind": "asset",
+    "uses": [
+      "coding",
+      "pipeline"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "stack": "C# / .NET generator producing positive and negative glTF 2.0 conformance assets",
+    "summary": "An official generator for glTF 2.0 importer test cases, with Positive and Negative output sets covering accessor, animation, material, mesh and texture requirements.",
+    "sourceUrl": "https://github.com/KhronosGroup/glTF-Asset-Generator",
+    "access": {
+      "label": "Browse generated test assets",
+      "url": "https://github.com/KhronosGroup/glTF-Asset-Generator/tree/main/Output/Positive",
+      "note": "Pre-generated Positive and Negative models are committed under Output; the C# solution regenerates them."
+    },
+    "codeLicense": "MIT for the generator source.",
+    "assetLicense": "Generated output assets are covered by the repository MIT license; still record the exact Output revision used.",
+    "terms": "open",
+    "licenseUrl": "https://github.com/KhronosGroup/glTF-Asset-Generator/blob/main/LICENSE",
+    "evidence": [
+      {
+        "label": "Project scope and supported requirements",
+        "url": "https://github.com/KhronosGroup/glTF-Asset-Generator#readme"
+      },
+      {
+        "label": "Negative test output",
+        "url": "https://github.com/KhronosGroup/glTF-Asset-Generator/tree/main/Output/Negative"
+      },
+      {
+        "label": "MIT license text",
+        "url": "https://github.com/KhronosGroup/glTF-Asset-Generator/blob/main/LICENSE"
+      }
+    ],
+    "aiUseNote": "Use the generated pairs as labelled pass/fail fixtures for an importer: Positive files must load, Negative files must be rejected with a specific diagnostic. A passing import does not prove full glTF conformance.",
+    "testTasks": [
+      "Load every Positive case in one importer and record unsupported features without treating a warning as a crash.",
+      "Check that Negative cases fail with an actionable error rather than silently producing a broken scene."
+    ],
+    "setup": [
+      "Pin a repository commit and copy the Output/Positive and Output/Negative directories into a versioned fixture.",
+      "Record the importer version, expected outcome for each case and the exact error text for negative cases."
+    ],
+    "limitations": "Coverage is a work in progress and the README states more requirements are coming. The C# project targets a Visual Studio / .NET workflow; no generator was built or run locally in this review.",
+    "reviewed": "2026-11-22"
+  },
 ];

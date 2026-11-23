@@ -636,5 +636,452 @@ export const agentGameResources: AgentGameResource[] = [
     "codeType": "instructions",
     "publisher": "Aider",
     "reviewed": "2026-10-18"
-  }
+  },
+  {
+    "id": "unity-ai-official-mcp",
+    "catalogResourceId": "unity-agent-plugin",
+    "title": "Unity CLI 1.0 and Unity AI: official agent interface, unity mcp, and AI Gateway",
+    "kind": "bridge",
+    "agents": [
+      "agent-neutral",
+      "claude-code",
+      "cursor",
+      "copilot",
+      "windsurf",
+      "gemini-cli"
+    ],
+    "engine": "Unity 6.0 LTS+ · Unity Editor · Unity Pipeline package",
+    "summary": "Unity deprecated the in-editor MCP server shipped in com.unity.ai.assistant and replaced it with the Unity CLI's own unity mcp server; the CLI also drives the Editor directly through unity command and unity eval, while the separate Unity AI beta provides an in-editor Assistant and AI Gateway.",
+    "sourceUrl": "https://docs.unity.com/en-us/unity-cli/replace-mcp-server-unity-cli",
+    "codeUrl": "https://github.com/Unity-Technologies/unity-agent-plugin",
+    "evidenceUrl": "https://docs.unity3d.com/Packages/com.unity.ai.assistant@2.19/manual/integration/mcp-configure.html",
+    "codeType": "mixed",
+    "codeScope": "The official migration page states that com.unity.ai.assistant's in-editor MCP server is deprecated, that unity mcp in the Unity CLI replaces it using the same protocol, and that MCP mode itself remains fully supported. It documents unity pipeline install, unity mcp configure, unity mcp configure --list, unity skill install, and the direct unity command / unity eval paths. The CLI can manage Editor versions, run headless builds, and run test suites without an AI agent; official skills cover Claude Code, Codex, Cursor, Copilot, Windsurf, and other clients. Third-party MCP packages are unaffected.",
+    "limitations": "The CLI is free and separate from Unity AI, but driving a running Editor through the Pipeline package requires Unity 6.0 LTS or later; the local pipeline server accepts localhost connections only. The separate Unity AI Assistant and AI Gateway remain beta, linked to Unity Cloud, and subject to trial or subscription terms; Unity Muse is deprecated. Assistant package versions before 2.13 conflict with the CLI. This entry separates the deprecated in-editor server from the supported CLI MCP mode; no local installation, engine run, or game-quality evaluation was performed.",
+    "publisher": "Unity Technologies",
+    "official": true,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "roblox-studio-official-mcp",
+    "title": "Roblox Studio MCP server, Assistant, Code Assist, and playtesting agent",
+    "kind": "bridge",
+    "agents": [
+      "agent-neutral",
+      "claude-code",
+      "cursor",
+      "codex"
+    ],
+    "engine": "Roblox Studio · Luau · DataModel",
+    "summary": "Roblox documents a first-party Studio MCP server alongside Assistant, Code Assist, screen capture, virtual-input playtesting, and bring-your-own-client workflows, so an external coding agent can inspect and mutate a live place instead of only editing files.",
+    "sourceUrl": "https://create.roblox.com/docs/ai/accelerated-workflows",
+    "codeUrl": "https://create.roblox.com/docs/studio/mcp",
+    "evidenceUrl": "https://create.roblox.com/docs/assistant/guide",
+    "codeType": "mixed",
+    "codeScope": "Official Creator Hub workflow pages describe enabling Studio as an MCP server, connecting an MCP-aware client, reading the DataModel, creating and running Luau scripts, editing instances, inserting Creator Store assets, capturing viewport screenshots, simulating input, and playtesting. Assistant supports Plan/Build/Test workflows, Code Assist offers editor completions, and Rojo plus Git is documented for file-system workflows.",
+    "limitations": "Many capabilities are beta features that must be enabled in Studio. Some screenshot and image-input flows require bring-your-own API keys. Generated scripts may not function without further edits; generated content remains subject to moderation, Community Standards, and creator data-sharing settings. GameMap reviewed documentation only and did not run a Roblox playtest or benchmark.",
+    "publisher": "Roblox",
+    "official": true,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "epic-unreal-mcp-official",
+    "title": "Epic Unreal MCP: official experimental editor toolsets",
+    "kind": "bridge",
+    "agents": [
+      "claude-code",
+      "codex",
+      "cursor",
+      "gemini-cli",
+      "copilot"
+    ],
+    "engine": "Unreal Engine 5.9 · Unreal Editor",
+    "summary": "Epic's official Unreal MCP plugin embeds a Model Context Protocol server inside the editor, exposing registered toolsets for actors, Blueprints, materials, Slate inspection, profiling, and automation tests to MCP-compatible coding agents.",
+    "sourceUrl": "https://dev.epicgames.com/documentation/unreal-engine/unreal-mcp-in-unreal-editor",
+    "codeUrl": "https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin",
+    "evidenceUrl": "https://dev.epicgames.com/documentation/unreal-engine/unreal-mcp-in-unreal-editor",
+    "codeType": "mixed",
+    "codeScope": "Epic documentation describes the ModelContextProtocol plugin, Toolset Registry, All Toolsets, GenerateClientConfig, MCP Inspector debugging, instance metadata, Python/C++ tool authoring, cooked-build AIRuntimeCallable tools, and Streamable HTTP or SSE transport. The MIT-licensed companion Claude Code plugin supplies skills and a session hook but is not the engine-side server.",
+    "limitations": "Experimental; APIs and data formats may change and Epic cautions against shipping a project with it. The server is loopback-only by default but has no authentication layer, so any local process or allowed-origin browser page can call editor tools. Tool calls run one at a time on the game thread. It does not support stdio or WebSocket, engine toolsets expose no MCP Resources or Prompts, Live Coding requires an editor restart for new C++ tools, and cooked builds expose only AIRuntimeCallable tools. This is separate from the community chongdashu/unreal-mcp bridge already in the resource library.",
+    "publisher": "Epic Games",
+    "official": true,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "cocos-creator-mcp-extension",
+    "title": "Cocos Creator MCP: community editor automation extension",
+    "kind": "bridge",
+    "agents": [
+      "claude-code",
+      "cursor",
+      "cline"
+    ],
+    "engine": "Cocos Creator 3.8+ · editor extension",
+    "summary": "A community Cocos Creator MCP extension exposes scene, node, component, prefab, script, console, preview, and validation tools to external coding agents, with a stdio bridge for Claude Code and compatibility with other MCP clients.",
+    "sourceUrl": "https://github.com/harady/cocos-creator-mcp",
+    "codeUrl": "https://github.com/harady/cocos-creator-mcp/blob/main/README.md",
+    "evidenceUrl": "https://github.com/harady/cocos-creator-mcp/blob/main/README.md",
+    "codeType": "mixed",
+    "codeScope": "README documents roughly 64-73 category_action tools, 12 read-only cocos:// resources, execute_editor_script, read_console, Streamable HTTP, a bundled stdio bridge, preview/screenshot/video recording, client scripts, auto start, tool-call logging, and regression assertions. The extension must be installed in a Cocos Creator project's extensions directory and built before the editor server starts.",
+    "limitations": "Community project, not official Cocos engine support. Requires Cocos Creator 3.8+, a configured local HTTP server, and client-specific MCP setup. execute_editor_script and editor_eval can run arbitrary JavaScript; the README warns to use them only in trusted projects. OAuth dummy endpoints are a workaround for some clients, not real authentication. No local installation, engine run, or code-quality benchmark was performed.",
+    "publisher": "harady",
+    "official": false,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "antigravity-cli-official",
+    "title": "Google Antigravity CLI: official Gemini CLI transition and agent harness",
+    "kind": "client",
+    "agents": [
+      "antigravity"
+    ],
+    "engine": "Engine-neutral · CLI / IDE / SDK",
+    "summary": "Google's Antigravity CLI is the consolidated terminal agent harness that inherits Gemini CLI workflows through an official migration path, while the broader Antigravity documentation covers skills, rules, MCP, plugins, subagents, hooks, headless mode, permissions, sandboxing, and an SDK.",
+    "sourceUrl": "https://antigravity.google/docs/cli/gcli-migration",
+    "codeUrl": "https://antigravity.google/docs/mcp/",
+    "evidenceUrl": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli",
+    "codeType": "instructions",
+    "codeScope": "Official migration guide covers converting Gemini CLI extensions to plugins, preserving GEMINI.md and AGENTS.md workspace rules, moving workspace skills to .agents/skills/, and reformatting MCP servers into mcp_config.json with serverUrl. Documentation navigation links MCP, MCP Apps, plugins, skills, rules, subagents, hooks, permissions, terminal sandbox, headless mode, ACP, SDK, artifacts, and review flows.",
+    "limitations": "The consumer transition stopped Gemini CLI and Gemini Code Assist IDE requests for free, Pro, and Ultra individual users on June 18, 2026; enterprise and paid API-key paths remain supported. Google stated there was no 1:1 feature parity at launch. This entry reviews official documentation, not local execution, billing, telemetry terms, game-engine support, or model quality. MCP config schemas and client paths can change with CLI releases.",
+    "publisher": "Google",
+    "official": true,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "github-copilot-agent-mode-mcp",
+    "title": "GitHub Copilot agent mode with MCP servers and toolsets",
+    "kind": "client",
+    "agents": [
+      "copilot"
+    ],
+    "engine": "Engine-neutral · VS Code / Visual Studio / GitHub",
+    "summary": "GitHub Copilot agent mode can call MCP tools from local or remote servers, with documented configuration, toolsets, registry discovery, enterprise policy, OAuth, and approval boundaries for multi-step coding workflows.",
+    "sourceUrl": "https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp/extend-copilot-chat-with-mcp",
+    "codeUrl": "https://docs.github.com/en/enterprise-cloud@latest/copilot/tutorials/enhance-agent-mode-with-mcp",
+    "evidenceUrl": "https://docs.github.com/en/enterprise-cloud@latest/copilot/tutorials/enhance-agent-mode-with-mcp",
+    "codeType": "instructions",
+    "codeScope": "GitHub documentation covers .vscode/mcp.json and settings.json configuration, the GitHub MCP Registry in public preview, agent-mode tool discovery, toolsets, MCP: List Servers, OAuth for GitHub MCP, least-permission guidance, connection audits, secret push protection, and a full agentic-loop accessibility example.",
+    "limitations": "The MCP servers in Copilot policy is disabled by default for organizations and enterprises on Business or Enterprise plans. The GitHub MCP Registry is a public preview and only listed servers can be installed through it. Copilot plus MCP is a general coding harness, not a game engine bridge; engine state, screenshots, input, and playtests still require separate integrations. No local execution or game benchmark was performed.",
+    "publisher": "GitHub",
+    "official": true,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "cursor-mcp-client",
+    "title": "Cursor MCP client: transports, approvals, sandboxing, and MCP Apps",
+    "kind": "client",
+    "agents": [
+      "cursor"
+    ],
+    "engine": "Engine-neutral · Cursor IDE / CLI",
+    "summary": "Cursor's official MCP documentation describes a client that connects agents to external tools through stdio, SSE, and Streamable HTTP, with OAuth, tool approval, network controls, MCP Apps, and image responses.",
+    "sourceUrl": "https://cursor.com/docs/mcp",
+    "codeUrl": "https://cursor.com/docs/mcp",
+    "evidenceUrl": "https://cursor.com/docs/mcp",
+    "codeType": "instructions",
+    "codeScope": "mcp.json configuration, CLI and remote server examples, static OAuth credentials, environment interpolation, tools/prompts/resources/roots/elicitation support, MCP Apps, image content, tool approval, Run Modes, local command sandboxing, network allow/deny modes, admin controls, MCP logs, and Cloud Agent sign-in separation.",
+    "limitations": "A general MCP client, not a game engine or playtest harness. Security depends on the installed server; official docs advise source review, least-privilege API keys, local stdio for sensitive data, and isolated environments. Feature support and config paths can vary by Cursor version. GameMap reviewed documentation only and did not execute a game workflow.",
+    "publisher": "Cursor",
+    "official": true,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "kiro-agentic-engineering",
+    "title": "Kiro: spec-driven agent, headless CLI, ACP, and MCP",
+    "kind": "client",
+    "agents": [
+      "kiro"
+    ],
+    "engine": "Engine-neutral · Kiro IDE / CLI / CI",
+    "summary": "AWS Kiro combines spec-driven development, parallel agents, property-based checks, a headless CI CLI, Agent Client Protocol compatibility, AGENTS.md, Skills.md, and MCP configuration across IDE, CLI, web, and mobile surfaces.",
+    "sourceUrl": "https://kiro.dev/",
+    "codeUrl": "https://kiro.dev/docs/mcp",
+    "evidenceUrl": "https://kiro.dev/docs/mcp",
+    "codeType": "instructions",
+    "codeScope": "Official product and MCP pages document local/remote MCP servers, OAuth sign-in for remote servers, mcp.json and agent-level mcpServers, server prompts/resources, install links, MCP logs, tool-validation rules, security best practices, headless CLI CI/CD review, ACP, AGENTS.md, Skills.md, property-based tests, and parallel/cloud agent execution.",
+    "limitations": "Built and operated by AWS with credit-based pricing, IAM/SSO, and enterprise governance; model choices and costs are outside this review. It is not a game engine bridge and does not by itself provide screenshots, input traces, or playtests. GameMap did not run Kiro, install an MCP server, or compare game-development performance.",
+    "publisher": "AWS",
+    "official": true,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "qoder-cn-mcp-client",
+    "title": "Qoder / Qoder CN: agent mode, MCP Square, and domestic model support",
+    "kind": "client",
+    "agents": [
+      "other"
+    ],
+    "engine": "Engine-neutral · Qoder IDE / Qoder CN CLI",
+    "summary": "Qoder documents Agent mode with STDIO, SSE, and Streamable HTTP MCP servers, MCP Square discovery, and tool confirmation; Qoder CN is Alibaba Cloud's renamed Lingma product family with domestic model and deployment options.",
+    "sourceUrl": "https://docs.qoder.com/user-guide/chat/model-context-protocol",
+    "codeUrl": "https://help.aliyun.com/zh/lingma/qoder-cn-update-log",
+    "evidenceUrl": "https://help.aliyun.com/zh/lingma/introduction-of-lingma",
+    "codeType": "instructions",
+    "codeScope": "Qoder MCP documentation covers My Servers, MCP Square, transport types, per-request timeout, confirmation before tool calls, STDIO/SSE/Streamable HTTP examples, and troubleshooting. Alibaba Cloud documentation describes Qoder CN as the renamed Lingma family, including IDE, CLI, cloud agents, Repowiki, Quest, Subagent, expert teams, MCP tools, and domestic model choices such as GLM, DeepSeek, Kimi, and MiniMax.",
+    "limitations": "Qoder CN and global Qoder have separate documentation and branding; Lingma was renamed Qoder CN on 2026-05-20. GameMap's frozen v1 client vocabulary has no qoder key, so this record uses the other attribution rather than expanding the historical label set. The reviewed material does not establish a game-engine bridge, playtest harness, or benchmark; no local execution was performed.",
+    "publisher": "Alibaba Cloud / Qoder",
+    "official": true,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "windsurf-cascade-mcp",
+    "title": "Windsurf Cascade: MCP Marketplace, transports, and tool governance",
+    "kind": "client",
+    "agents": [
+      "windsurf"
+    ],
+    "engine": "Engine-neutral · Windsurf / Devin Desktop · Cascade",
+    "summary": "Windsurf's Cascade agent natively integrates MCP servers through a marketplace or raw mcp_config.json, with stdio, Streamable HTTP, SSE, OAuth, per-tool toggles, and a 100-tool working-set cap.",
+    "sourceUrl": "https://docs.windsurf.com/windsurf/cascade/mcp",
+    "codeUrl": "https://docs.windsurf.com/windsurf/cascade/mcp",
+    "evidenceUrl": "https://docs.windsurf.com/windsurf/cascade/mcp",
+    "codeType": "instructions",
+    "codeScope": "Official documentation covers MCP Marketplace discovery, official server verification marks, mcp_config.json, stdio/Streamable HTTP/SSE transports, OAuth for each transport, enterprise enablement, per-server tool switches, and Cascade's 100-tool cap.",
+    "limitations": "Documentation and product naming are in transition under the Devin/Windsurf umbrella; older builds may read different configuration paths. Cascade is a general coding client, not an engine integration. The MCP spec revision supported by Windsurf is not named in the reviewed docs. No game workflow was executed and no benchmark is claimed.",
+    "publisher": "Cognition / Windsurf",
+    "official": true,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "mcp-official-registry",
+    "title": "MCP Registry: official server metadata and discovery API",
+    "kind": "standard",
+    "agents": [
+      "agent-neutral"
+    ],
+    "engine": "Engine-neutral · MCP server discovery",
+    "summary": "The official MCP Registry is a preview metadata repository for public MCP servers, providing server.json records, DNS-verified namespaces, a REST API, and a standard OpenAPI contract for downstream aggregators.",
+    "sourceUrl": "https://modelcontextprotocol.io/registry/about",
+    "codeUrl": "https://github.com/modelcontextprotocol/registry/blob/main/docs/reference/api/openapi.yaml",
+    "evidenceUrl": "https://modelcontextprotocol.io/registry/authentication",
+    "codeType": "instructions",
+    "codeScope": "Official pages define standardized server metadata, reverse-DNS names, package and remote URL references, command arguments, environment variables, namespace authentication through GitHub/DNS/HTTP challenges, REST and OpenAPI surfaces, relationships to package registries and downstream aggregators, spam prevention, and moderation policy.",
+    "limitations": "The registry is in preview; breaking changes or data resets may occur before general availability. It stores metadata, not code, and is not a curated quality directory or security review: security scanning is delegated to package registries and downstream aggregators. Private servers are out of scope, and host applications are expected to consume downstream registries rather than the official service directly. It is not a game engine tool.",
+    "publisher": "Model Context Protocol project / AAIF",
+    "official": true,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "a2a-protocol-standard",
+    "title": "A2A Protocol v1.0: agent-to-agent interoperability standard",
+    "kind": "standard",
+    "agents": [
+      "agent-neutral"
+    ],
+    "engine": "Engine-neutral · agent-to-agent interoperability",
+    "summary": "A2A is a stable, vendor-neutral standard for opaque agents to discover one another, delegate tasks, and exchange messages and artifacts; it complements MCP's agent-to-tool layer and is now an Agentic AI Foundation Growth Stage project.",
+    "sourceUrl": "https://a2a-protocol.org/latest/blog/2026/08/27/a-new-chapter-for-a2a-joining-the-agentic-ai-foundation/",
+    "codeUrl": "https://a2a-protocol.org/latest/tutorials/python/1-introduction/",
+    "evidenceUrl": "https://aaif.io/blog/a2a-joins-aaif",
+    "codeType": "instructions",
+    "codeScope": "Official documentation and AAIF materials describe Agent Cards, tasks, messages, parts, artifacts, supportedInterfaces, signed agent cards, JSON-RPC/gRPC/HTTP+JSON bindings, discovery, authentication, streaming, long-running tasks, the v1.0 stable specification, and relationships to MCP, AGENTS.md, goose, and agentgateway.",
+    "limitations": "A2A addresses coordination between agents, not an agent's connection to tools or a game engine, and is not a substitute for MCP. Production adoption examples cited by the foundation are enterprise and cloud infrastructure, not controlled game-development benchmarks. GameMap reviewed specifications and announcements only; no A2A agent was run.",
+    "publisher": "A2A Protocol / Agentic AI Foundation",
+    "official": true,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "orak-game-agent-benchmark",
+    "title": "Orak: MCP-grounded LLM game-agent benchmark and trajectories",
+    "kind": "evaluation",
+    "agents": [
+      "agent-neutral"
+    ],
+    "engine": "12 commercial video games · MCP plug-and-play interface",
+    "summary": "Orak evaluates and trains LLM agents across 12 real video games and six genres using independent MCP servers for game environments and agentic modules, with expert gameplay trajectories, leaderboards, battle arenas, and ablation studies.",
+    "sourceUrl": "https://arxiv.org/abs/2506.03610",
+    "codeUrl": "https://github.com/krafton-ai/Orak",
+    "evidenceUrl": "https://arxiv.org/html/2506.03610v2",
+    "codeType": "mixed",
+    "codeScope": "The paper and public project describe games such as Street Fighter III, Super Mario, Ace Attorney, Her Story, Pokemon Red, Darkest Dungeon, Minecraft, Stardew Valley, StarCraft II, Slay the Spire, Baba Is You, and 2048; MCP servers expose game state, actions, reflection, planning, memory, and tool-use modules; a fine-tuning dataset contains expert LLM trajectories.",
+    "limitations": "This benchmark measures agents playing games, not coding agents building games, and should not be compared directly with GameCraft-Bench or GameLogicBench. Reported model gaps, visual-input effects, and transfer results are the authors' experiments, not GameMap reproductions. Commercial game availability, licenses, and runtime setup are external dependencies. No local run was performed.",
+    "publisher": "KRAFTON / NVIDIA / collaborators",
+    "official": false,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "balrog-game-agent-benchmark",
+    "title": "BALROG: LLM and VLM reasoning across text and visual games",
+    "kind": "evaluation",
+    "agents": [
+      "agent-neutral"
+    ],
+    "engine": "BabyAI · Crafter · TextWorld · MiniHack · NetHack · BabaIsAI",
+    "summary": "BALROG benchmarks agentic LLM and VLM reasoning on a range of reinforcement-learning games, from tasks solvable in seconds to the NetHack Learning Environment, with fine-grained metrics and text or visual observations.",
+    "sourceUrl": "https://arxiv.org/abs/2411.13543",
+    "codeUrl": "https://balrogai.com/",
+    "evidenceUrl": "https://arxiv.org/html/2411.13543v2",
+    "codeType": "mixed",
+    "codeScope": "arXiv paper and project site describe a diverse game suite, fine-grained progress metrics, evaluations of open and closed LLM/VLM systems, text and screenshot observation modes, and an open leaderboard. The paper reports partial success on easier games, difficulty on long-horizon tasks, and weaker vision-based decision making for several models.",
+    "limitations": "BALROG evaluates game playing and long-horizon reasoning, not end-to-end game creation or coding-agent engineering. Model results and leaderboard values can become stale; the reviewed version does not establish current 2026 model rankings. GameMap did not reproduce results, run environments, or audit leaderboard cost/attempt counts.",
+    "publisher": "BALROG authors",
+    "official": false,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "videogamebench-vlm-benchmark",
+    "title": "VideoGameBench: real-time VLM completion of 1990s video games",
+    "kind": "evaluation",
+    "agents": [
+      "agent-neutral"
+    ],
+    "engine": "10 1990s video games · DOS / Game Boy · raw pixels",
+    "summary": "VideoGameBench asks vision-language models to complete ten 1990s games in real time from raw screenshots and high-level control descriptions, with a Lite mode that pauses the game while the model reasons.",
+    "sourceUrl": "https://arxiv.org/abs/2505.18134",
+    "codeUrl": "https://github.com/alexzhang13/VideoGameBench",
+    "evidenceUrl": "https://vgbench.com/",
+    "codeType": "mixed",
+    "codeScope": "The paper and project describe seven public and three secret games, raw visual inputs only, no game-specific scaffolding or auxiliary state, a ReAct-style VG-Agent scaffold, checkpoint scoring from visual progress, real-time and Lite settings, and open code/prompts/interface.",
+    "limitations": "This benchmark measures VLM gameplay, not coding agents building games. The published results use spring-2025 model configurations; a later revision does not by itself establish current model capability. Inference latency heavily affects real-time play, and best reported completion was 0.48% in real-time and 1.6% in Lite. GameMap did not reproduce the emulator runs or verify newer leaderboard entries.",
+    "publisher": "Princeton University / VideoGameBench authors",
+    "official": false,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "agent-game-ci-evidence-workflow",
+    "title": "Reproducible agent game-development evidence workflow",
+    "kind": "workflow",
+    "agents": [
+      "agent-neutral"
+    ],
+    "engine": "Engine-neutral · headless CI / editor MCP / browser playtests",
+    "summary": "A cross-source workflow checklist for making agent game development observable and repeatable: choose an engine feedback loop, treat editor state as data, capture build/visual/input evidence, pin versions and budgets, and gate tool permissions before comparing agents.",
+    "sourceUrl": "https://create.roblox.com/docs/ai/accelerated-workflows",
+    "codeUrl": "https://docs.github.com/en/enterprise-cloud@latest/copilot/tutorials/enhance-agent-mode-with-mcp",
+    "evidenceUrl": "https://dev.epicgames.com/documentation/unreal-engine/unreal-mcp-in-unreal-editor",
+    "codeType": "instructions",
+    "codeScope": "Synthesized from official Roblox Plan/Build/Test and Studio MCP guidance, GitHub Copilot agent-mode MCP best practices, and Epic Unreal MCP security/debug documentation, plus GameMap's existing five-step agent workflow. Required artifacts include headless or editor session startup, scene/hierarchy/property snapshots, build and console logs, screenshots and input traces, successful launch/export, model/harness/engine/tool versions, budget, seed, task, acceptance criteria, tool approvals, and sandbox or loopback boundaries.",
+    "limitations": "This is an editorial checklist, not a downloadable harness, installed plugin, or benchmark result. Each engine and client supplies its own bridge, permissions model, and runtime evidence; GameMap did not execute a cross-engine CI run. Cost, latency, and model comparisons require a controlled experiment with pinned versions and constant tasks.",
+    "publisher": "GameMap",
+    "official": false,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "gamedevbench-development-benchmark",
+    "catalogResourceId": "gamedevbench",
+    "title": "GameDevBench: 333 Godot tasks for agentic game development",
+    "kind": "evaluation",
+    "agents": [
+      "claude-code",
+      "codex",
+      "gemini-cli",
+      "opencode",
+      "agent-neutral"
+    ],
+    "engine": "Godot 4.4.1 · projects with shaders, sprites and animation",
+    "summary": "An ICML 2026 benchmark of 333 game-development tasks in Godot 4 projects, scored by deterministic engine-state checks rather than model-written claims, with an editor-screenshot MCP server and runtime-video feedback for multimodal reasoning.",
+    "sourceUrl": "https://github.com/waynchi/gamedevbench",
+    "codeUrl": "https://github.com/waynchi/gamedevbench",
+    "evidenceUrl": "https://proceedings.mlr.press/v306/chi26a.html",
+    "codeType": "implementation",
+    "codeScope": "The public repository distributes 333 zipped tasks with ground-truth solutions, a validation script, and built-in plans for Claude Code, Codex, Gemini CLI, OpenCode and OpenHands. Tasks span 2D graphics, 3D graphics, UI, and gameplay logic; success is checked through Godot's unit-test framework against the resulting engine state. The paper adds an editor-screenshot MCP server and runtime-video feedback and studies their effect on success rates.",
+    "limitations": "Measures bounded development tasks inside existing Godot projects, not the quality of a commercial game built from scratch. Official leaderboard runs require the exact Godot 4.4.1 build; other versions are not comparable. Reported model rankings and visual-feedback gains are the authors' experiments, not GameMap reproductions; most tasks involve non-text assets and setup requires separate agent CLI packages and API keys. No local run was performed.",
+    "publisher": "Carnegie Mellon University · Princeton University",
+    "official": false,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "swe-game-development-benchmark",
+    "title": "SWE-Game: 247 executable tasks for building, repairing and porting games",
+    "kind": "evaluation",
+    "agents": [
+      "agent-neutral"
+    ],
+    "engine": "Godot 4 · Unity · runtime instrumentation",
+    "summary": "A benchmark of 247 executable game-development tasks grounded in 41 reference Godot games, covering brief-to-game, GDD-to-game, skeleton completion, injected-fault repair, and Godot-to-Unity porting with engine-state checks and vision-language rubrics.",
+    "sourceUrl": "https://arxiv.org/abs/2609.33678",
+    "codeUrl": "https://arxiv.org/abs/2609.33678",
+    "evidenceUrl": "https://arxiv.org/abs/2609.33678",
+    "codeType": "instructions",
+    "codeScope": "The paper defines five task types, a shared instrumentation interface with evaluator-owned drivers and probes, certified reference-input replay, agent-authored feature demonstrations, and game-specific vision-language rubrics for visual presentation and gameplay clips. Executable behavioral checks are compared against a video-based VLM judge on human-labeled agent-built games.",
+    "limitations": "Preprint describing the authors' benchmark and six-model evaluation; no public task runner or reproduction was verified for this entry. Best construction scores remain below 60 out of 100, and requirement omissions plus gameplay-logic errors dominate failures. Engine-state checks, reference-input replay, and rubric scores are separate signals and should not be collapsed into one capability claim. No local run was performed.",
+    "publisher": "SWE-Game authors (arXiv:2609.33678)",
+    "official": false,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "cocos-pink-official-agent",
+    "title": "Cocos PinK Beta: official AI-native IDE, COCOS CLI and MCP toolchain",
+    "kind": "client",
+    "agents": [
+      "agent-neutral"
+    ],
+    "engine": "Cocos Creator 3.8.8+ · COCOS engine · COCOS CLI",
+    "summary": "Cocos publishes PinK Beta as an AI-native IDE with a project-aware PinK Agent, tool and MCP connections, and an underlying COCOS CLI that drives scenes, scripts, assets, previews, builds, and multi-platform publishing. An official architecture note describes an MIT-licensed CLI-CORE command dispatcher behind the MCP layer.",
+    "sourceUrl": "https://www.cocos.com/post/9CHxd08s1FwVtj9KH0zRnG2kz5pTDBWz",
+    "codeUrl": "https://pink.sud.tech/zh-cn",
+    "evidenceUrl": "https://www.cocos.com/post/gCyCFBeTO2POe6NfKgQBhZ8nVRXf5FU1",
+    "codeType": "mixed",
+    "codeScope": "The official PinK Beta announcement documents the Agent reading code, assets and scenes, using PinK, COCOS CLI and built-in tools to create scenes and scripts, attach components, generate image assets, trigger builds, open previews, and capture screenshots for verification; it also documents tool and MCP service connections with operation permissions and approvals. A separate official architecture note describes MCP requests, an MIT-licensed open-source CLI-CORE command parser and dispatcher, and a Generator framework for deterministic expansion from compact specifications.",
+    "limitations": "Public beta, not a stable release; the announcement recommends migrating Cocos Creator 3.8.8+ projects and lists further 3D, animation, video, Store, advertising and analytics work as roadmap rather than shipped capability. Feature lists are vendor documentation, not independent test results. This is distinct from the community Cocos Creator MCP extension recorded separately. No local installation, engine run, or code-quality benchmark was performed.",
+    "publisher": "Cocos",
+    "official": true,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "accelbyte-ags-official-mcp",
+    "title": "AccelByte AGS: official API MCP server and Extend SDK MCP server",
+    "kind": "bridge",
+    "agents": [
+      "agent-neutral",
+      "claude-code",
+      "cursor",
+      "copilot",
+      "gemini-cli",
+      "antigravity"
+    ],
+    "engine": "Game backend services · AGS API / Extend SDK",
+    "summary": "Official AGS developer tools expose a hosted API MCP server that searches, explains, and calls live game-backend endpoints as the authenticated user, plus an Extend SDK MCP server, a scriptable AGS CLI, and an AI plugin with skills for game-service development.",
+    "sourceUrl": "https://docs.gamingservices.xsolla.com/gaming-services/services/developer-tools/ags-api-mcp-server",
+    "codeUrl": "https://github.com/AccelByte/ags-extend-sdk-mcp-server",
+    "evidenceUrl": "https://docs.gamingservices.xsolla.com/gaming-services/services/developer-tools",
+    "codeType": "mixed",
+    "codeScope": "The official developer-tools documentation covers the hosted AGS API MCP server, the AGS Extend SDK MCP server for Go, C#, Java, and Python symbols, AGS CLI workflows with fixed steps and dry runs, and an AI plugin that installs skills, the CLI, and both MCP servers. Client setup is documented for Claude Code, Cursor, VS Code Copilot, Gemini CLI, and Antigravity; the Extend SDK server can also be self-hosted with Docker.",
+    "limitations": "Covers backend API and SDK context, not the game editor, scenes, or rendering. The hosted API server acts with the signed-in account's roles and permissions and can issue real API calls, so scope credentials to a test namespace and review each write. Requires an AGS account and a live environment; tool behavior and hosted endpoints are vendor-managed and may change. No account, API call, or local run was performed.",
+    "publisher": "AccelByte / Xsolla Gaming Services",
+    "official": true,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "aura-autopilot-open-playtester",
+    "title": "Aura Autopilot: Apache-2.0 playtesting agent with engine plugins and MCP",
+    "kind": "bridge",
+    "agents": [
+      "claude-code",
+      "codex",
+      "opencode",
+      "agent-neutral"
+    ],
+    "engine": "Unreal Engine 5.4-5.8 · Unity 6 · Godot 4.7+ · Roblox Studio",
+    "summary": "An open-source playtesting system that installs an editor plugin and a local agent service, lets a coding agent write project-specific harnesses, injects real input into a running game, and reports exploration, testing, verification, or goal outcomes with per-project memory and headless CI exit codes.",
+    "sourceUrl": "https://github.com/ramenvr/autopilot",
+    "codeUrl": "https://github.com/ramenvr/autopilot",
+    "evidenceUrl": "https://www.tryaura.dev/documentation/autopilot",
+    "codeType": "implementation",
+    "codeScope": "The public repository contains engine plugins, a Python agent service, and a Claude Code plugin; documented commands include autopilot connect, autopilot mcp, autopilot regress, and headless runs started from engine command lines with Playtest modes. MCP tools cover start_run, wait, probe, run_harness, snapshot, describe_frames, restart_level, report, and frames, with file tools constrained to the game folder. Verified CONFIRMED runs can be replayed without a model as regressions.",
+    "limitations": "Apache-2.0 but newly released (30 October 2026) and Windows/macOS only; requires an Aura account or bring-your-own model keys, and source builds are documented for Unreal only. The vendor's 7/7 versus 5/7 comparison is an author experiment on one Unreal project, not an independent reproduction. Data sharing of recordings, traces, memories, and MCP conversations is on by default and must be disabled explicitly (AUTOPILOT_SHARE=0) before using it on an unreleased game. No local installation or playtest was performed.",
+    "publisher": "Ramen (TribeVR)",
+    "official": false,
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "godot-ai-assistant-hub",
+    "title": "Godot AI Assistant Hub: in-editor plugin with per-tool permissions",
+    "kind": "bridge",
+    "agents": [
+      "agent-neutral",
+      "other"
+    ],
+    "engine": "Godot 4.3+ · editor plugin",
+    "summary": "A community Godot plugin that embeds configurable, task-specific assistants in the editor, with tools for scripts, scenes, nodes, resources, files, and project groups, per-tool permission control, and local-first LLM providers such as Ollama and llama.cpp.",
+    "sourceUrl": "https://godotengine.org/asset-library/asset/3427",
+    "codeUrl": "https://github.com/FlamxGames/godot-ai-assistant-hub",
+    "evidenceUrl": "https://store.godotengine.org/asset/flamxgames/ai-assistant-hub/",
+    "codeType": "implementation",
+    "codeScope": "The Godot Asset Library listing and project README describe Tools and Quick Prompts workflows, assistant definitions, per-tool permissions, undo, and an extensible provider layer covering Ollama, llama.cpp, Gemini, Jan, OpenRouter, OpenWebUI, and xAI. The plugin is GDScript and MIT-licensed, and its tools can create and edit scripts, scenes, node properties, signals, groups, resources, and text files.",
+    "limitations": "Community plugin, not official Godot support, and not an MCP bridge to external coding agents. It does not run models itself; a separate LLM provider must be configured. Tool-based multi-step edits can make mistakes, and the README does not specify partial-rollback semantics for a failed chain. No game-quality benchmark or independent verification was performed; no local installation was attempted.",
+    "publisher": "FlamxGames (community)",
+    "official": false,
+    "reviewed": "2026-11-22"
+  },
 ];

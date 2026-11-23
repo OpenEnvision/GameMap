@@ -45,6 +45,7 @@ Import a character, map its skeleton, and play a licensed motion clip.
 | Zero-K | Games & engine projects | 3D | Coding & automated playtests; Vision, control & planning | [Free Steam game](https://store.steampowered.com/app/334920/ZeroK/) | [Primary source](https://github.com/ZeroK-RTS/Zero-K) |
 | Unity BoatAttack | Games & engine projects | 3D | Coding & automated playtests; Vision, control & planning; Asset & animation pipelines | [Get Unity sample source](https://github.com/Unity-Technologies/BoatAttack) | [Primary source](https://github.com/Unity-Technologies/BoatAttack) |
 | Unreal Engine Lyra Starter Game | Games & engine projects | 3D | Coding & automated playtests; Vision, control & planning; Asset & animation pipelines | [Get free Lyra sample](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0?lang=en) | [Primary source](https://dev.epicgames.com/documentation/en-us/unreal-engine/lyra-sample-game-in-unreal-engine) |
+| Bevy official examples | Games & engine projects | 2D / 3D | Coding & automated playtests; Asset & animation pipelines | [Browse runnable examples](https://bevyengine.org/examples/) | [Primary source](https://github.com/bevyengine/bevy) |
 | MiniGrid / BabyAI | AI evaluation environments | 2D | Coding & automated playtests; Vision, control & planning | [Free Python package](https://minigrid.farama.org/) | [Primary source](https://github.com/Farama-Foundation/Minigrid) |
 | Crafter | AI evaluation environments | 2D | Coding & automated playtests; Vision, control & planning | [Free package and playable GUI](https://github.com/danijar/crafter#play-yourself) | [Primary source](https://github.com/danijar/crafter) |
 | Craftax | AI evaluation environments | 2D | Coding & automated playtests; Vision, control & planning | [Free Python package](https://github.com/MichaelTMatthews/Craftax#readme) | [Primary source](https://github.com/MichaelTMatthews/Craftax) |
@@ -52,6 +53,12 @@ Import a character, map its skeleton, and play a licensed motion clip.
 | NetHack Learning Environment | AI evaluation environments | 2D | Coding & automated playtests; Vision, control & planning | [Free package and source](https://github.com/NetHack-LE/nle#installation) | [Primary source](https://github.com/NetHack-LE/nle) |
 | Godot RL Agents | AI evaluation environments | 2D / 3D | Coding & automated playtests; Vision, control & planning; Asset & animation pipelines | [Free toolkit and example projects](https://github.com/edbeeching/godot_rl_agents#quickstart-guide) | [Primary source](https://github.com/edbeeching/godot_rl_agents) |
 | Unity ML-Agents | AI evaluation environments | 2D / 3D | Coding & automated playtests; Vision, control & planning; Asset & animation pipelines | [Free toolkit; Unity editor required](https://github.com/Unity-Technologies/ml-agents/releases) | [Primary source](https://github.com/Unity-Technologies/ml-agents) |
+| Arcade Learning Environment (ALE) | AI evaluation environments | 2D | Coding & automated playtests; Vision, control & planning | [Official documentation and install guide](https://ale.farama.org/) | [Primary source](https://github.com/Farama-Foundation/Arcade-Learning-Environment) |
+| Procgen Benchmark | AI evaluation environments | 2D | Coding & automated playtests; Vision, control & planning | [Install the Python package](https://github.com/openai/procgen#readme) | [Primary source](https://github.com/openai/procgen) |
+| Google Research Football | AI evaluation environments | 3D | Coding & automated playtests; Vision, control & planning | [Installation and scenario guide](https://github.com/google-research/football#readme) | [Primary source](https://github.com/google-research/football) |
+| Overcooked-AI | AI evaluation environments | 2D | Coding & automated playtests; Vision, control & planning | [Installation and layout guide](https://github.com/HumanCompatibleAI/overcooked_ai#readme) | [Primary source](https://github.com/HumanCompatibleAI/overcooked_ai) |
+| MuJoCo | AI evaluation environments | 3D | Coding & automated playtests; Asset & animation pipelines | [Official documentation](https://mujoco.readthedocs.io/en/stable/overview.html) | [Primary source](https://github.com/google-deepmind/mujoco) |
+| Gymnasium classic control | AI evaluation environments | 2D | Coding & automated playtests; Vision, control & planning | [Classic control environment docs](https://gymnasium.farama.org/environments/classic_control/) | [Primary source](https://github.com/Farama-Foundation/Gymnasium) |
 | Kenney | Asset libraries | 2D / 3D | Coding & automated playtests; Asset & animation pipelines | [Browse free asset packs](https://kenney.nl/assets) | [Primary source](https://kenney.nl/assets) |
 | Quaternius | Asset libraries | 3D | Coding & automated playtests; Asset & animation pipelines | [Browse creator packs](https://quaternius.com/) | [Primary source](https://quaternius.com/) |
 | Poly Haven | Asset libraries | 3D | Vision, control & planning; Asset & animation pipelines | [Browse CC0 assets](https://polyhaven.com/all) | [Primary source](https://polyhaven.com/) |
@@ -59,6 +66,8 @@ Import a character, map its skeleton, and play a licensed motion clip.
 | OpenGameArt | Asset libraries | 2D / 3D | Coding & automated playtests; Asset & animation pipelines | [Browse community assets](https://opengameart.org/) | [Primary source](https://opengameart.org/) |
 | Fab | Asset libraries | 2D / 3D | Asset & animation pipelines | [Browse marketplace listings](https://www.fab.com/) | [Primary source](https://www.fab.com/) |
 | Unity Asset Store | Asset libraries | 2D / 3D | Asset & animation pipelines | [Browse Asset Store packages](https://assetstore.unity.com/) | [Primary source](https://assetstore.unity.com/) |
+| Khronos glTF Sample Assets | Asset libraries | 3D | Coding & automated playtests; Asset & animation pipelines | [Browse the official asset lists](https://github.khronos.org/glTF-Assets/) | [Primary source](https://github.com/KhronosGroup/glTF-Sample-Assets) |
+| Khronos glTF Asset Generator | Asset libraries | 3D | Coding & automated playtests; Asset & animation pipelines | [Browse generated test assets](https://github.com/KhronosGroup/glTF-Asset-Generator/tree/main/Output/Positive) | [Primary source](https://github.com/KhronosGroup/glTF-Asset-Generator) |
 | Kenney Animated Characters | Rigs & motion data | 3D | Asset & animation pipelines | [Download character pack](https://kenney.nl/assets/animated-characters-protagonists) | [Primary source](https://kenney.nl/assets/animated-characters-protagonists) |
 | Quaternius Universal Animation Library | Rigs & motion data | 3D | Asset & animation pipelines | [Get the free Standard edition](https://quaternius.itch.io/universal-animation-library) | [Primary source](https://quaternius.itch.io/universal-animation-library) |
 | 100STYLE | Rigs & motion data | 3D | Vision, control & planning; Asset & animation pipelines | [Get the original motion data](https://www.ianxmason.com/100style/) | [Primary source](https://www.ianxmason.com/100style/) |
@@ -68,6 +77,7 @@ Import a character, map its skeleton, and play a licensed motion clip.
 | SMPL-Body | Rigs & motion data | 3D | Asset & animation pipelines | [Read the body subset license](https://smpl.is.tue.mpg.de/bodylicense.html) | [Primary source](https://smpl.is.tue.mpg.de/) |
 | SMPL-Model | Rigs & motion data | 3D | Asset & animation pipelines | [Review model access terms](https://smpl.is.tue.mpg.de/modellicense.html) | [Primary source](https://smpl.is.tue.mpg.de/) |
 | Mixamo | Rigs & motion data | 3D | Asset & animation pipelines | [Read service FAQ first](https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html) | [Primary source](https://www.mixamo.com/) |
+| SDL GameControllerDB | Input & data fixtures | 2D / 3D | Coding & automated playtests; Vision, control & planning | [Download gamecontrollerdb.txt](https://github.com/mdqinc/SDL_GameControllerDB/blob/master/gamecontrollerdb.txt) | [Primary source](https://github.com/mdqinc/SDL_GameControllerDB) |
 
 ## Reviewed resources
 
@@ -545,6 +555,40 @@ An official multiplayer starter game for ability systems, input, game-feature pl
 - [Fab access and content fields](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0?lang=en)
 - [Unreal Engine EULA](https://www.unrealengine.com/en-US/eula/unreal)
 
+### Bevy official examples
+
+The official runnable example set shipped with the engine, useful as a small versioned baseline for ECS, rendering, asset import and animation regressions.
+
+**Stack / format:** Rust · Bevy ECS · official examples for 2D, 3D, UI, animation, audio and glTF
+
+**Type:** Games & engine projects · **Goals:** Coding & automated playtests; Asset & animation pipelines · **Dimensions:** 2D / 3D
+
+[Browse runnable examples](https://bevyengine.org/examples/) — The official example browser groups examples by topic; running them requires cloning the repository and a Rust toolchain.
+
+[Project / source record](https://github.com/bevyengine/bevy) · [License / terms](https://github.com/bevyengine/bevy/blob/main/LICENSE-APACHE)
+
+- **License group:** Mixed code / asset licenses
+- **Code:** MIT or Apache-2.0 at your option for the engine source.
+- **Assets / data:** Assets bundled under examples/ carry separate licenses listed in CREDITS.md; they are not distributed in the published crates.
+- **AI use:** Pin a release tag before using an example as a baseline. The engine ships breaking releases on a regular cadence, and example assets are governed by their own licenses rather than the engine dual license.
+- **Practical limits:** Bevy describes itself as early-stage, with breaking API changes roughly every three months, so main is not a stable baseline. Example assets have separate licenses in CREDITS.md. Source reviewed, not built or run locally.
+
+**Suggested test tasks**
+
+- Run one 2D and one 3D example on a pinned tag and compare frame output, asset loading and console warnings.
+- Change a single ECS system or imported glTF asset and check that the example still starts and records the same scene state.
+
+**Get started**
+
+1. Check out a release tag rather than main, and install the Rust toolchain required by that release.
+2. Run one example with cargo run --example breakout, then record the tag, toolchain, adapter and asset licenses from CREDITS.md.
+
+**Primary evidence**
+
+- [Official example browser](https://bevyengine.org/examples/)
+- [Examples directory and coverage](https://github.com/bevyengine/bevy/tree/main/examples)
+- [CREDITS.md with per-asset license notes](https://github.com/bevyengine/bevy/blob/main/CREDITS.md)
+
 ### MiniGrid / BabyAI
 
 Small navigation and language-grounding tasks with keys, doors, objects and partial observations. A practical first baseline for repeatable planning tests.
@@ -799,6 +843,215 @@ An official toolkit and example scenes for physics, visual control, cooperation 
 - [Third-party notices](https://github.com/Unity-Technologies/ml-agents/blob/develop/Third%20Party%20Notices.md)
 - [Unity editor terms](https://unity.com/legal/editor-terms-of-service/software)
 
+### Arcade Learning Environment (ALE)
+
+The standard Atari 2600 evaluation interface for more than 100 games, with native Gymnasium support, score and terminal signals, and seeded evaluation protocols.
+
+**Stack / format:** C++ / Python · Stella Atari 2600 emulator · Gymnasium API
+
+**Type:** AI evaluation environments · **Goals:** Coding & automated playtests; Vision, control & planning · **Dimensions:** 2D
+
+[Official documentation and install guide](https://ale.farama.org/) — Install ale-py from PyPI; the pip package bundles Atari ROMs and the project also offers a WebAssembly build.
+
+[Project / source record](https://github.com/Farama-Foundation/Arcade-Learning-Environment) · [License / terms](https://github.com/Farama-Foundation/Arcade-Learning-Environment/blob/main/LICENSE.md)
+
+- **License group:** Mixed code / asset licenses
+- **Code:** GPL-2.0 for the ALE framework.
+- **Assets / data:** Atari ROMs are bundled in the pip package; their rights are separate from the framework license and need independent review before redistribution.
+- **AI use:** Fix the game, mode, difficulty, frame skip, repeat-action probability and seed before comparing agents; report the observation source (pixels or RAM) separately. Bundled ROM availability is not a license grant for redistributing a dataset.
+- **Practical limits:** GPL-2.0 applies to the framework, while Atari ROMs are third-party game assets bundled in the pip package and require separate rights review for redistribution. Source reviewed, not installed here; no Atari evaluation was run locally.
+
+**Suggested test tasks**
+
+- Compare seeded scores for one game with sticky actions enabled and disabled under the same action budget.
+- Record whether an agent uses RGB pixels or RAM state and check reset, truncation and life-loss signals.
+- Replay a fixed action sequence and assert identical scores across runs and dependency versions.
+
+**Get started**
+
+1. Create a Python environment, install ale-py and Gymnasium, and list the available ROM ids.
+2. Create an Atari environment with a fixed mode, difficulty, frame skip, repeat_action_probability and seed.
+3. Log score, terminated and truncated per episode; retain the ale-py version and ROM inventory.
+
+**Primary evidence**
+
+- [Features, Gymnasium support and bundled ROMs](https://github.com/Farama-Foundation/Arcade-Learning-Environment#readme)
+- [Environment list and evaluation protocols](https://ale.farama.org/environments/)
+- [GPL-2.0 license text](https://github.com/Farama-Foundation/Arcade-Learning-Environment/blob/main/LICENSE.md)
+
+### Procgen Benchmark
+
+Sixteen fast procedurally generated environments designed to measure how quickly an agent learns skills that generalize to unseen levels.
+
+**Stack / format:** Python · Gym API · 16 procedurally generated game-like environments
+
+**Type:** AI evaluation environments · **Goals:** Coding & automated playtests; Vision, control & planning · **Dimensions:** 2D
+
+[Install the Python package](https://github.com/openai/procgen#readme) — Install procgen from the repository; the environments run at thousands of steps per second on a single CPU core.
+
+[Project / source record](https://github.com/openai/procgen) · [License / terms](https://github.com/openai/procgen/blob/master/LICENSE)
+
+- **License group:** Open-license sources
+- **Code:** MIT.
+- **Assets / data:** Procedurally generated rendering; no bundled third-party game art is required for the standard environments.
+- **AI use:** Separate train and test level distributions and fix the number of training levels, seed and distribution mode before comparing agents. Fast step rates do not remove the need to report wall-clock and sample budgets.
+- **Practical limits:** The repository states it is in maintenance mode with bug fixes and minor updates only. CoinRun differs from the original standalone release, and the standard wrapper needs a compatible Gym version. Source reviewed, not installed or run locally.
+
+**Suggested test tasks**
+
+- Compare an agent trained on a small level set against one trained on the full distribution, evaluated on held-out seeds.
+- Replay a fixed seed across package versions and assert identical initial observations and action masks.
+- Measure steps per second for one environment and record the hardware and thread count.
+
+**Get started**
+
+1. Create a Python environment and install procgen with a compatible Gym or Gymnasium wrapper.
+2. Create one environment with a fixed seed and distribution mode, then log observations, rewards and done signals.
+
+**Primary evidence**
+
+- [README with environment list and speed claims](https://github.com/openai/procgen#readme)
+- [Benchmark paper](https://arxiv.org/abs/1912.01588)
+- [MIT license text](https://github.com/openai/procgen/blob/master/LICENSE)
+
+### Google Research Football
+
+A research football environment with configurable scenarios, multi-agent play, multiple observation formats and a built-in game engine.
+
+**Stack / format:** C++ game engine · Python Gym API · multi-agent football scenarios
+
+**Type:** AI evaluation environments · **Goals:** Coding & automated playtests; Vision, control & planning · **Dimensions:** 3D
+
+[Installation and scenario guide](https://github.com/google-research/football#readme) — Installable from PyPI or built from source; the repository also links a Colab notebook using prebuilt binaries.
+
+[Project / source record](https://github.com/google-research/football) · [License / terms](https://github.com/google-research/football/blob/master/LICENSE)
+
+- **License group:** Open-license sources
+- **Code:** Apache-2.0.
+- **Assets / data:** Based on the open-source Gameplay Football project; check bundled assets and any separately downloaded engine components.
+- **AI use:** Fix the scenario, number of controlled players, observation representation, action set, seed and episode length before comparing policies. A prebuilt binary is a convenience, not a reproducibility guarantee.
+- **Practical limits:** The GitHub repository is archived, with its last push in June 2025, so no further maintenance should be assumed. Installation depends on platform-specific binaries or a source build, and the underlying Gameplay Football assets have their own provenance. Source reviewed, not installed or run locally.
+
+**Suggested test tasks**
+
+- Compare the same policy using pixels, the compact vector representation and the full state representation.
+- Run a fixed scenario with a fixed seed on two package versions and check score and episode length.
+- Check multi-agent scenarios for role assignment and desynchronization after a reset.
+
+**Get started**
+
+1. Install a release from PyPI or build from source, then verify the engine binary and Python version.
+2. Create one scenario with a fixed seed, record the observation shape and action set, and run a short baseline episode.
+
+**Primary evidence**
+
+- [README with installation, scenarios and representations](https://github.com/google-research/football#readme)
+- [Benchmark paper](https://arxiv.org/abs/1907.11180)
+- [Apache-2.0 license text](https://github.com/google-research/football/blob/master/LICENSE)
+
+### Overcooked-AI
+
+A cooperative two-agent cooking benchmark with handcrafted and procedurally generated layouts, used for coordination and human-AI collaboration studies.
+
+**Stack / format:** Python · Gym-style API · cooperative two-agent layouts
+
+**Type:** AI evaluation environments · **Goals:** Coding & automated playtests; Vision, control & planning · **Dimensions:** 2D
+
+[Installation and layout guide](https://github.com/HumanCompatibleAI/overcooked_ai#readme) — Install the overcooked-ai Python package; layouts and planning baselines ship with the package.
+
+[Project / source record](https://github.com/HumanCompatibleAI/overcooked_ai) · [License / terms](https://github.com/HumanCompatibleAI/overcooked_ai/blob/master/LICENSE)
+
+- **License group:** Open-license sources
+- **Code:** MIT.
+- **Assets / data:** Repository code and layout definitions under MIT; human study data linked from the README is separate.
+- **AI use:** Fix a layout, horizon, partner policy and seed. Score alone hides coordination failures, so record joint actions, collisions and idle steps separately.
+- **Practical limits:** The last repository push was in March 2025 and the README points to separate human-study datasets with their own terms. Layout names and the legacy Gym API need pinning. Source reviewed, not installed or run locally.
+
+**Suggested test tasks**
+
+- Compare a self-play pair with a fixed heuristic partner on one layout and report score plus collision counts.
+- Replay a fixed joint-action sequence and assert identical state transitions after a reset.
+- Check that a generated layout is reproducible from its recorded seed.
+
+**Get started**
+
+1. Install overcooked-ai in a Python environment and list the available layouts.
+2. Create a two-agent environment with a named layout, fixed horizon and seed, then log joint observations and rewards.
+
+**Primary evidence**
+
+- [README with layouts and installation](https://github.com/HumanCompatibleAI/overcooked_ai#readme)
+- [Benchmark paper](https://arxiv.org/abs/1910.05789)
+- [MIT license text](https://github.com/HumanCompatibleAI/overcooked_ai/blob/master/LICENSE)
+
+### MuJoCo
+
+A deterministic contact dynamics engine with a Python interface, useful as a physics and determinism baseline for simulated characters and objects.
+
+**Stack / format:** C/C++ physics engine · MJCF / URDF models · Python bindings
+
+**Type:** AI evaluation environments · **Goals:** Coding & automated playtests; Asset & animation pipelines · **Dimensions:** 3D
+
+[Official documentation](https://mujoco.readthedocs.io/en/stable/overview.html) — Installable as the mujoco Python package; no separate licence key is required since the project was open sourced.
+
+[Project / source record](https://github.com/google-deepmind/mujoco) · [License / terms](https://github.com/google-deepmind/mujoco/blob/main/LICENSE)
+
+- **License group:** Open-license sources
+- **Code:** Apache-2.0.
+- **Assets / data:** MJCF models and meshes included with the project need their own provenance check; user-supplied models remain separate.
+- **AI use:** Use a controlled MJCF model, fixed timestep and solver settings for a physics regression; record the engine version because contact behaviour can change between releases. MuJoCo is a physics simulator, not a game or a playing benchmark.
+- **Practical limits:** MuJoCo targets robotics and biomechanics rather than gameplay; game-specific relevance must be established per test. Bundled models and meshes have separate provenance. Source reviewed, not built or run locally.
+
+**Suggested test tasks**
+
+- Replay a fixed control sequence on one model and compare final body positions across engine versions.
+- Import the same rig as MJCF and URDF and compare joint limits, mass properties and contact behaviour.
+
+**Get started**
+
+1. Pin the mujoco release, load one MJCF model and record timestep, integrator and solver settings.
+2. Step the simulation with a fixed control sequence and log positions, velocities and contacts.
+
+**Primary evidence**
+
+- [README with installation and bindings](https://github.com/google-deepmind/mujoco#readme)
+- [Official documentation overview](https://mujoco.readthedocs.io/en/stable/overview.html)
+- [Apache-2.0 license text](https://github.com/google-deepmind/mujoco/blob/main/LICENSE)
+
+### Gymnasium classic control
+
+Small deterministic control environments with fully documented state equations, a lightweight baseline for reset, seeding and episode-termination regressions.
+
+**Stack / format:** Python · Gymnasium API · CartPole, Pendulum, MountainCar and Acrobot
+
+**Type:** AI evaluation environments · **Goals:** Coding & automated playtests; Vision, control & planning · **Dimensions:** 2D
+
+[Classic control environment docs](https://gymnasium.farama.org/environments/classic_control/) — These environments need no external game binary, ROM or model download.
+
+[Project / source record](https://github.com/Farama-Foundation/Gymnasium) · [License / terms](https://github.com/Farama-Foundation/Gymnasium/blob/main/LICENSE)
+
+- **License group:** Open-license sources
+- **Code:** MIT.
+- **Assets / data:** Procedural rendering only; no bundled third-party game assets are needed for these environments.
+- **AI use:** Fix the environment id, seed, render mode and Gymnasium version. These toy tasks can validate an agent pipeline but must not be reported as game-playing evidence.
+- **Practical limits:** Classic control tasks are toy control problems, not games. They are included only as a deterministic pipeline check; no environment was installed or run locally in this review.
+
+**Suggested test tasks**
+
+- Reset two environments with the same seed and assert identical initial observations and termination limits.
+- Change a wrapper or action-mapping layer and verify the step, terminated and truncated contract still holds.
+
+**Get started**
+
+1. Install a pinned gymnasium release and create one classic control environment with a fixed seed.
+2. Record observation bounds, action space, termination condition and the exact version string.
+
+**Primary evidence**
+
+- [Classic control environment reference](https://gymnasium.farama.org/environments/classic_control/)
+- [Gymnasium README and API scope](https://github.com/Farama-Foundation/Gymnasium#readme)
+- [MIT license text](https://github.com/Farama-Foundation/Gymnasium/blob/main/LICENSE)
+
 ### Kenney
 
 A practical CC0 starting point for small test scenes, asset replacement, collision and UI regressions.
@@ -1027,6 +1280,74 @@ Package and import regression fixtures when provider rights and the permitted au
 
 - [Asset Store terms and EULA](https://unity.com/legal/as-terms)
 - [2026 terms update and agent access explanation](https://unity.com/legal)
+
+### Khronos glTF Sample Assets
+
+The official Khronos collection of glTF 2.0 models, including a dedicated Testing list built for exercising viewers, converters and importers.
+
+**Stack / format:** glTF 2.0 / GLB reference and testing models with per-model license metadata
+
+**Type:** Asset libraries · **Goals:** Coding & automated playtests; Asset & animation pipelines · **Dimensions:** 3D
+
+[Browse the official asset lists](https://github.khronos.org/glTF-Assets/) — The browsable catalog exposes tagged model lists, previews and per-model license and credit information; the repository holds the downloadable files.
+
+[Project / source record](https://github.com/KhronosGroup/glTF-Sample-Assets) · [License / terms](https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/README.md)
+
+- **License group:** Mixed code / asset licenses
+- **Code:** Repository text is licensed CC-BY-4.0; individual models carry their own license and attribution in each model README.
+- **Assets / data:** Per-model licenses, commonly CC-BY 4.0 or CC0; check the README in the exact model directory before reuse.
+- **AI use:** Use the tagged Testing models as a deterministic import and render fixture. The CC-BY grant on the repository text does not extend to every model, website branding or third-party showcase art; retain each model credit line.
+- **Practical limits:** Licenses are per model, not per repository; several showcase assets require attribution and some assets were removed for unsuitable licensing. No model was downloaded or imported locally in this review.
+
+**Suggested test tasks**
+
+- Import the same Testing model into two engines and compare geometry, materials, texture orientation and scale.
+- Run a fixed set of extension and core-only models through a converter and record which features are dropped.
+
+**Get started**
+
+1. Pin a repository commit and select a small set of models from the Testing and Core Only lists.
+2. Copy the per-model README credit and license beside each downloaded .gltf/.glb and record import settings.
+
+**Primary evidence**
+
+- [Testing models for viewers and converters](https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/Models-testing.md)
+- [Complete model list with license summaries](https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/Models/Models.md)
+- [Repository license and per-model credit rules](https://github.com/KhronosGroup/glTF-Sample-Assets/blob/main/README.md)
+
+### Khronos glTF Asset Generator
+
+An official generator for glTF 2.0 importer test cases, with Positive and Negative output sets covering accessor, animation, material, mesh and texture requirements.
+
+**Stack / format:** C# / .NET generator producing positive and negative glTF 2.0 conformance assets
+
+**Type:** Asset libraries · **Goals:** Coding & automated playtests; Asset & animation pipelines · **Dimensions:** 3D
+
+[Browse generated test assets](https://github.com/KhronosGroup/glTF-Asset-Generator/tree/main/Output/Positive) — Pre-generated Positive and Negative models are committed under Output; the C# solution regenerates them.
+
+[Project / source record](https://github.com/KhronosGroup/glTF-Asset-Generator) · [License / terms](https://github.com/KhronosGroup/glTF-Asset-Generator/blob/main/LICENSE)
+
+- **License group:** Open-license sources
+- **Code:** MIT for the generator source.
+- **Assets / data:** Generated output assets are covered by the repository MIT license; still record the exact Output revision used.
+- **AI use:** Use the generated pairs as labelled pass/fail fixtures for an importer: Positive files must load, Negative files must be rejected with a specific diagnostic. A passing import does not prove full glTF conformance.
+- **Practical limits:** Coverage is a work in progress and the README states more requirements are coming. The C# project targets a Visual Studio / .NET workflow; no generator was built or run locally in this review.
+
+**Suggested test tasks**
+
+- Load every Positive case in one importer and record unsupported features without treating a warning as a crash.
+- Check that Negative cases fail with an actionable error rather than silently producing a broken scene.
+
+**Get started**
+
+1. Pin a repository commit and copy the Output/Positive and Output/Negative directories into a versioned fixture.
+2. Record the importer version, expected outcome for each case and the exact error text for negative cases.
+
+**Primary evidence**
+
+- [Project scope and supported requirements](https://github.com/KhronosGroup/glTF-Asset-Generator#readme)
+- [Negative test output](https://github.com/KhronosGroup/glTF-Asset-Generator/tree/main/Output/Negative)
+- [MIT license text](https://github.com/KhronosGroup/glTF-Asset-Generator/blob/main/LICENSE)
 
 ### Kenney Animated Characters
 
@@ -1325,6 +1646,40 @@ A common ordinary game-animation workflow whose AI testing permission needs sepa
 
 - [Current service FAQ](https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html)
 - [Official 2021 additional terms](https://wwwimages2.adobe.com/content/dam/cc/en/legal/servicetou/Mixamo-Addl-Terms-en_US-20210623.pdf)
+
+### SDL GameControllerDB
+
+The community-maintained SDL controller mapping database, a plain-text fixture for repeatable gamepad input and button-layout regression tests.
+
+**Stack / format:** SDL2 / SDL3 · gamecontrollerdb.txt · community-maintained GUID mappings
+
+**Type:** Input & data fixtures · **Goals:** Coding & automated playtests; Vision, control & planning · **Dimensions:** 2D / 3D
+
+[Download gamecontrollerdb.txt](https://github.com/mdqinc/SDL_GameControllerDB/blob/master/gamecontrollerdb.txt) — A single text file; SDL2 loads it with SDL_GameControllerAddMappingsFromFile and SDL3 with SDL_AddGamepadMappingsFromFile. Compatible with SDL 2.0.10 and newer.
+
+[Project / source record](https://github.com/mdqinc/SDL_GameControllerDB) · [License / terms](https://github.com/mdqinc/SDL_GameControllerDB/blob/master/LICENSE)
+
+- **License group:** Open-license sources
+- **Code:** Zlib license for the database file.
+- **Assets / data:** Not a media asset collection; mappings are contributed data under the Zlib grant.
+- **AI use:** Use a pinned copy of gamecontrollerdb.txt as a deterministic input fixture. A mapping entry is community-contributed data, not a guarantee that one device behaves identically across platforms or SDL versions.
+- **Practical limits:** Community-sourced mappings can be corrected or removed between commits, and the README asks contributors not to submit AI-generated content. The database covers SDL 2.0.10 and newer; no controller or SDL build was run locally in this review.
+
+**Suggested test tasks**
+
+- Load one pinned gamecontrollerdb.txt in two SDL versions and compare button and axis indices for the same GUID.
+- Replay a fixed input sequence with and without the database and record which devices fall back to a generic mapping.
+
+**Get started**
+
+1. Pin a commit or release and store the exact gamecontrollerdb.txt beside the test project.
+2. Load the file through SDL_GameControllerAddMappingsFromFile (SDL2) or SDL_AddGamepadMappingsFromFile (SDL3) and log the detected controller GUID and platform.
+
+**Primary evidence**
+
+- [README with SDL2 and SDL3 loading calls](https://github.com/mdqinc/SDL_GameControllerDB#readme)
+- [Database file with GUID mappings](https://github.com/mdqinc/SDL_GameControllerDB/blob/master/gamecontrollerdb.txt)
+- [Zlib license text](https://github.com/mdqinc/SDL_GameControllerDB/blob/master/LICENSE)
 
 ## Record a reproducible test
 

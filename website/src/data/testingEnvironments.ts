@@ -262,4 +262,303 @@ export const testingEnvironments: TestingResource[] = [
     limitations: 'Source reviewed, not run here. Editor eligibility, platform builds and version compatibility need local checks. The develop branch is not a stable evaluation baseline.',
     reviewed: '2026-10-18',
   },
+  {
+    "id": "arcade-learning-environment",
+    "title": "Arcade Learning Environment (ALE)",
+    "kind": "environment",
+    "uses": [
+      "coding",
+      "playing"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "stack": "C++ / Python · Stella Atari 2600 emulator · Gymnasium API",
+    "summary": "The standard Atari 2600 evaluation interface for more than 100 games, with native Gymnasium support, score and terminal signals, and seeded evaluation protocols.",
+    "sourceUrl": "https://github.com/Farama-Foundation/Arcade-Learning-Environment",
+    "access": {
+      "label": "Official documentation and install guide",
+      "url": "https://ale.farama.org/",
+      "note": "Install ale-py from PyPI; the pip package bundles Atari ROMs and the project also offers a WebAssembly build."
+    },
+    "codeLicense": "GPL-2.0 for the ALE framework.",
+    "assetLicense": "Atari ROMs are bundled in the pip package; their rights are separate from the framework license and need independent review before redistribution.",
+    "terms": "mixed",
+    "licenseUrl": "https://github.com/Farama-Foundation/Arcade-Learning-Environment/blob/main/LICENSE.md",
+    "evidence": [
+      {
+        "label": "Features, Gymnasium support and bundled ROMs",
+        "url": "https://github.com/Farama-Foundation/Arcade-Learning-Environment#readme"
+      },
+      {
+        "label": "Environment list and evaluation protocols",
+        "url": "https://ale.farama.org/environments/"
+      },
+      {
+        "label": "GPL-2.0 license text",
+        "url": "https://github.com/Farama-Foundation/Arcade-Learning-Environment/blob/main/LICENSE.md"
+      }
+    ],
+    "aiUseNote": "Fix the game, mode, difficulty, frame skip, repeat-action probability and seed before comparing agents; report the observation source (pixels or RAM) separately. Bundled ROM availability is not a license grant for redistributing a dataset.",
+    "testTasks": [
+      "Compare seeded scores for one game with sticky actions enabled and disabled under the same action budget.",
+      "Record whether an agent uses RGB pixels or RAM state and check reset, truncation and life-loss signals.",
+      "Replay a fixed action sequence and assert identical scores across runs and dependency versions."
+    ],
+    "setup": [
+      "Create a Python environment, install ale-py and Gymnasium, and list the available ROM ids.",
+      "Create an Atari environment with a fixed mode, difficulty, frame skip, repeat_action_probability and seed.",
+      "Log score, terminated and truncated per episode; retain the ale-py version and ROM inventory."
+    ],
+    "limitations": "GPL-2.0 applies to the framework, while Atari ROMs are third-party game assets bundled in the pip package and require separate rights review for redistribution. Source reviewed, not installed here; no Atari evaluation was run locally.",
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "procgen-benchmark",
+    "title": "Procgen Benchmark",
+    "kind": "environment",
+    "uses": [
+      "coding",
+      "playing"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "stack": "Python · Gym API · 16 procedurally generated game-like environments",
+    "summary": "Sixteen fast procedurally generated environments designed to measure how quickly an agent learns skills that generalize to unseen levels.",
+    "sourceUrl": "https://github.com/openai/procgen",
+    "access": {
+      "label": "Install the Python package",
+      "url": "https://github.com/openai/procgen#readme",
+      "note": "Install procgen from the repository; the environments run at thousands of steps per second on a single CPU core."
+    },
+    "codeLicense": "MIT.",
+    "assetLicense": "Procedurally generated rendering; no bundled third-party game art is required for the standard environments.",
+    "terms": "open",
+    "licenseUrl": "https://github.com/openai/procgen/blob/master/LICENSE",
+    "evidence": [
+      {
+        "label": "README with environment list and speed claims",
+        "url": "https://github.com/openai/procgen#readme"
+      },
+      {
+        "label": "Benchmark paper",
+        "url": "https://arxiv.org/abs/1912.01588"
+      },
+      {
+        "label": "MIT license text",
+        "url": "https://github.com/openai/procgen/blob/master/LICENSE"
+      }
+    ],
+    "aiUseNote": "Separate train and test level distributions and fix the number of training levels, seed and distribution mode before comparing agents. Fast step rates do not remove the need to report wall-clock and sample budgets.",
+    "testTasks": [
+      "Compare an agent trained on a small level set against one trained on the full distribution, evaluated on held-out seeds.",
+      "Replay a fixed seed across package versions and assert identical initial observations and action masks.",
+      "Measure steps per second for one environment and record the hardware and thread count."
+    ],
+    "setup": [
+      "Create a Python environment and install procgen with a compatible Gym or Gymnasium wrapper.",
+      "Create one environment with a fixed seed and distribution mode, then log observations, rewards and done signals."
+    ],
+    "limitations": "The repository states it is in maintenance mode with bug fixes and minor updates only. CoinRun differs from the original standalone release, and the standard wrapper needs a compatible Gym version. Source reviewed, not installed or run locally.",
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "google-research-football",
+    "title": "Google Research Football",
+    "kind": "environment",
+    "uses": [
+      "coding",
+      "playing"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "stack": "C++ game engine · Python Gym API · multi-agent football scenarios",
+    "summary": "A research football environment with configurable scenarios, multi-agent play, multiple observation formats and a built-in game engine.",
+    "sourceUrl": "https://github.com/google-research/football",
+    "access": {
+      "label": "Installation and scenario guide",
+      "url": "https://github.com/google-research/football#readme",
+      "note": "Installable from PyPI or built from source; the repository also links a Colab notebook using prebuilt binaries."
+    },
+    "codeLicense": "Apache-2.0.",
+    "assetLicense": "Based on the open-source Gameplay Football project; check bundled assets and any separately downloaded engine components.",
+    "terms": "open",
+    "licenseUrl": "https://github.com/google-research/football/blob/master/LICENSE",
+    "evidence": [
+      {
+        "label": "README with installation, scenarios and representations",
+        "url": "https://github.com/google-research/football#readme"
+      },
+      {
+        "label": "Benchmark paper",
+        "url": "https://arxiv.org/abs/1907.11180"
+      },
+      {
+        "label": "Apache-2.0 license text",
+        "url": "https://github.com/google-research/football/blob/master/LICENSE"
+      }
+    ],
+    "aiUseNote": "Fix the scenario, number of controlled players, observation representation, action set, seed and episode length before comparing policies. A prebuilt binary is a convenience, not a reproducibility guarantee.",
+    "testTasks": [
+      "Compare the same policy using pixels, the compact vector representation and the full state representation.",
+      "Run a fixed scenario with a fixed seed on two package versions and check score and episode length.",
+      "Check multi-agent scenarios for role assignment and desynchronization after a reset."
+    ],
+    "setup": [
+      "Install a release from PyPI or build from source, then verify the engine binary and Python version.",
+      "Create one scenario with a fixed seed, record the observation shape and action set, and run a short baseline episode."
+    ],
+    "limitations": "The GitHub repository is archived, with its last push in June 2025, so no further maintenance should be assumed. Installation depends on platform-specific binaries or a source build, and the underlying Gameplay Football assets have their own provenance. Source reviewed, not installed or run locally.",
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "overcooked-ai",
+    "title": "Overcooked-AI",
+    "kind": "environment",
+    "uses": [
+      "coding",
+      "playing"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "stack": "Python · Gym-style API · cooperative two-agent layouts",
+    "summary": "A cooperative two-agent cooking benchmark with handcrafted and procedurally generated layouts, used for coordination and human-AI collaboration studies.",
+    "sourceUrl": "https://github.com/HumanCompatibleAI/overcooked_ai",
+    "access": {
+      "label": "Installation and layout guide",
+      "url": "https://github.com/HumanCompatibleAI/overcooked_ai#readme",
+      "note": "Install the overcooked-ai Python package; layouts and planning baselines ship with the package."
+    },
+    "codeLicense": "MIT.",
+    "assetLicense": "Repository code and layout definitions under MIT; human study data linked from the README is separate.",
+    "terms": "open",
+    "licenseUrl": "https://github.com/HumanCompatibleAI/overcooked_ai/blob/master/LICENSE",
+    "evidence": [
+      {
+        "label": "README with layouts and installation",
+        "url": "https://github.com/HumanCompatibleAI/overcooked_ai#readme"
+      },
+      {
+        "label": "Benchmark paper",
+        "url": "https://arxiv.org/abs/1910.05789"
+      },
+      {
+        "label": "MIT license text",
+        "url": "https://github.com/HumanCompatibleAI/overcooked_ai/blob/master/LICENSE"
+      }
+    ],
+    "aiUseNote": "Fix a layout, horizon, partner policy and seed. Score alone hides coordination failures, so record joint actions, collisions and idle steps separately.",
+    "testTasks": [
+      "Compare a self-play pair with a fixed heuristic partner on one layout and report score plus collision counts.",
+      "Replay a fixed joint-action sequence and assert identical state transitions after a reset.",
+      "Check that a generated layout is reproducible from its recorded seed."
+    ],
+    "setup": [
+      "Install overcooked-ai in a Python environment and list the available layouts.",
+      "Create a two-agent environment with a named layout, fixed horizon and seed, then log joint observations and rewards."
+    ],
+    "limitations": "The last repository push was in March 2025 and the README points to separate human-study datasets with their own terms. Layout names and the legacy Gym API need pinning. Source reviewed, not installed or run locally.",
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "mujoco-physics",
+    "title": "MuJoCo",
+    "kind": "environment",
+    "uses": [
+      "coding",
+      "pipeline"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "stack": "C/C++ physics engine · MJCF / URDF models · Python bindings",
+    "summary": "A deterministic contact dynamics engine with a Python interface, useful as a physics and determinism baseline for simulated characters and objects.",
+    "sourceUrl": "https://github.com/google-deepmind/mujoco",
+    "access": {
+      "label": "Official documentation",
+      "url": "https://mujoco.readthedocs.io/en/stable/overview.html",
+      "note": "Installable as the mujoco Python package; no separate licence key is required since the project was open sourced."
+    },
+    "codeLicense": "Apache-2.0.",
+    "assetLicense": "MJCF models and meshes included with the project need their own provenance check; user-supplied models remain separate.",
+    "terms": "open",
+    "licenseUrl": "https://github.com/google-deepmind/mujoco/blob/main/LICENSE",
+    "evidence": [
+      {
+        "label": "README with installation and bindings",
+        "url": "https://github.com/google-deepmind/mujoco#readme"
+      },
+      {
+        "label": "Official documentation overview",
+        "url": "https://mujoco.readthedocs.io/en/stable/overview.html"
+      },
+      {
+        "label": "Apache-2.0 license text",
+        "url": "https://github.com/google-deepmind/mujoco/blob/main/LICENSE"
+      }
+    ],
+    "aiUseNote": "Use a controlled MJCF model, fixed timestep and solver settings for a physics regression; record the engine version because contact behaviour can change between releases. MuJoCo is a physics simulator, not a game or a playing benchmark.",
+    "testTasks": [
+      "Replay a fixed control sequence on one model and compare final body positions across engine versions.",
+      "Import the same rig as MJCF and URDF and compare joint limits, mass properties and contact behaviour."
+    ],
+    "setup": [
+      "Pin the mujoco release, load one MJCF model and record timestep, integrator and solver settings.",
+      "Step the simulation with a fixed control sequence and log positions, velocities and contacts."
+    ],
+    "limitations": "MuJoCo targets robotics and biomechanics rather than gameplay; game-specific relevance must be established per test. Bundled models and meshes have separate provenance. Source reviewed, not built or run locally.",
+    "reviewed": "2026-11-22"
+  },
+  {
+    "id": "gymnasium-classic-control",
+    "title": "Gymnasium classic control",
+    "kind": "environment",
+    "uses": [
+      "coding",
+      "playing"
+    ],
+    "dimensions": [
+      "2d"
+    ],
+    "stack": "Python · Gymnasium API · CartPole, Pendulum, MountainCar and Acrobot",
+    "summary": "Small deterministic control environments with fully documented state equations, a lightweight baseline for reset, seeding and episode-termination regressions.",
+    "sourceUrl": "https://github.com/Farama-Foundation/Gymnasium",
+    "access": {
+      "label": "Classic control environment docs",
+      "url": "https://gymnasium.farama.org/environments/classic_control/",
+      "note": "These environments need no external game binary, ROM or model download."
+    },
+    "codeLicense": "MIT.",
+    "assetLicense": "Procedural rendering only; no bundled third-party game assets are needed for these environments.",
+    "terms": "open",
+    "licenseUrl": "https://github.com/Farama-Foundation/Gymnasium/blob/main/LICENSE",
+    "evidence": [
+      {
+        "label": "Classic control environment reference",
+        "url": "https://gymnasium.farama.org/environments/classic_control/"
+      },
+      {
+        "label": "Gymnasium README and API scope",
+        "url": "https://github.com/Farama-Foundation/Gymnasium#readme"
+      },
+      {
+        "label": "MIT license text",
+        "url": "https://github.com/Farama-Foundation/Gymnasium/blob/main/LICENSE"
+      }
+    ],
+    "aiUseNote": "Fix the environment id, seed, render mode and Gymnasium version. These toy tasks can validate an agent pipeline but must not be reported as game-playing evidence.",
+    "testTasks": [
+      "Reset two environments with the same seed and assert identical initial observations and termination limits.",
+      "Change a wrapper or action-mapping layer and verify the step, terminated and truncated contract still holds."
+    ],
+    "setup": [
+      "Install a pinned gymnasium release and create one classic control environment with a fixed seed.",
+      "Record observation bounds, action space, termination condition and the exact version string."
+    ],
+    "limitations": "Classic control tasks are toy control problems, not games. They are included only as a deterministic pipeline check; no environment was installed or run locally in this review.",
+    "reviewed": "2026-11-22"
+  },
 ];
