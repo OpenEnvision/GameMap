@@ -1,6 +1,6 @@
 # GameMap
 
-**Tencent IEG · AI 游戏开发**
+**Tencent · AI 游戏开发**
 
 一份经过编辑策展、以一手证据为支撑的 AI 游戏开发图谱，汇集工具、可玩项目、研究论文与生产工程工作流。
 
@@ -266,7 +266,7 @@ Supabase 直连模式 SQL 生成、GitHub Actions 变量、最小权限角色校
 ```bibtex
 @misc{openenvision_gamemap_2026,
   title        = {GameMap: An Evidence-Backed Atlas for AI Game Development},
-  author       = {{Tencent IEG} and {OpenEnvision}},
+  author       = {{Tencent} and {OpenEnvision}},
   year         = {2026},
   howpublished = {\url{https://github.com/OpenEnvision/GameMap}},
   note         = {Curated catalog, playable examples, and production engineering guides for AI game development}

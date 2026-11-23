@@ -1,6 +1,6 @@
 # GameMap
 
-**Tencent IEG · AI Game Development**
+**Tencent · AI Game Development**
 
 A curated, evidence-backed atlas of tools, playable projects, research papers, and production engineering workflows for building games with AI.
 
@@ -266,7 +266,7 @@ If GameMap is useful in academic research, technical writing, or engineering wor
 ```bibtex
 @misc{openenvision_gamemap_2026,
   title        = {GameMap: An Evidence-Backed Atlas for AI Game Development},
-  author       = {{Tencent IEG} and {OpenEnvision}},
+  author       = {{Tencent} and {OpenEnvision}},
   year         = {2026},
   howpublished = {\url{https://github.com/OpenEnvision/GameMap}},
   note         = {Curated catalog, playable examples, and production engineering guides for AI game development}
