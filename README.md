@@ -4,7 +4,7 @@
 
 ![GameMap](website/public/brand/gamemap.svg)
 
-**Tencent · AI Game Development**
+**OpenEnvision X Tencent · AI Game Development**
 
 A curated, evidence-backed atlas of tools, playable projects, research papers, and production engineering workflows for building games with AI.
 
