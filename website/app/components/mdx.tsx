@@ -6,7 +6,7 @@ import defaults from "fumadocs-ui/mdx";
 function DocumentLink({ href = "", children, ...props }: ComponentProps<"a">) {
   const internal =
     href === "/" ||
-    /^\/(?:docs|resources|examples|agents|testing|research|paths|showcase|explore|zh)(?:\/|$)/.test(
+    /^\/(?:docs|resources|examples|agents|testing|papers|research|paths|showcase|explore|zh)(?:[/?#]|$)/.test(
       href,
     );
   if (internal) {

@@ -6,7 +6,7 @@
 
 **OpenEnvision X Tencent · AI Game Development**
 
-A curated, evidence-backed atlas of tools, playable projects, research papers, and production engineering workflows for building games with AI.
+Game examples you can study, production guides you can use on a project, and source notes for evaluating AI in games.
 
 [Website](https://openenvision.org/GameMap/) · [Resource catalog](docs/reference/catalog.md) · [Documentation](docs/guides/practical-guide.md) · [中文指南](docs/zh/guides/reading-guide.md) · [Contributing](CONTRIBUTING.md)
 
@@ -14,9 +14,9 @@ A curated, evidence-backed atlas of tools, playable projects, research papers, a
 
 ## Abstract
 
-**GameMap** is an editorially curated, source-linked map of the AI game development ecosystem. It is designed for game engineers, independent developers, technical artists, and AI researchers who need to move from promising prototypes to reproducible, playable, and shippable game projects.
+Start with the job at hand. An engineer choosing a Godot reference can check the engine version and launch path before copying code. A technical artist importing a new rig can look up the checks for scale, textures, and foot contact. A researcher comparing development agents can check who controls the game, what each agent sees, and how failed runs enter the reported result.
 
-Rather than aggregating unverified links or launch announcements, GameMap organizes coding agents, engine integrations, 2D and 3D generation pipelines, playable game examples, world models, academic papers, and production engineering notes under explicit evidence and licensing boundaries. Every public entry is statically pre-rendered in English and Chinese with offline full-text search and downloadable machine-readable artifacts.
+Public entries have English and Chinese pages, and the site searches a static index in the browser. A case entry tells you how to find the project or build and what supports its creator attribution. Production notes point to the version behind an engine or tool behavior. For claims about an outside project, check the cited source and the recorded scope of any run.
 
 Production URL:
 
@@ -70,16 +70,22 @@ GameMap is not:
 
 ### Resource taxonomy
 
-Structured catalog entries are organized across six primary categories:
+Structured catalog entries have a purpose category and a separate collection describing how readers can use them:
 
 | Category | Scope | Guide |
 | --- | --- | --- |
-| `agents` | Coding agents, reusable skill packages, MCP servers, and engine-control loops. | [Agents, skills and MCP](docs/ecosystem/agents.md) |
-| `engines` | Game engine integrations, editor bridges, runtime APIs, and project foundations. | [Game engines](docs/ecosystem/engines.md) |
-| `2d` | 2D game frameworks, sprite and animation workflows, and browser or desktop prototypes. | [2D and 3D development](docs/ecosystem/2d-3d-development.md) |
-| `3d` | 3D scene composition, mesh and texture pipelines, rigging, and WebGL/Three.js tooling. | [2D and 3D development](docs/ecosystem/2d-3d-development.md) |
-| `production` | Studio engineering practices, asset validation, API boundaries, debugging, and work-order templates. | [Production overview](docs/production/overview.md) |
-| `world` | Interactive world models, neural rendering, action-conditioned video, and code-based worlds. | [World models](docs/ecosystem/world-models.md) |
+| `agents` | Agents & engine bridges: coding agents, skills, MCP servers, and editor-control loops. | [Agents, skills and MCP](docs/ecosystem/agents.md) |
+| `engines` | Engines & rendering: game engines, rendering libraries, and engine integration. | [Game engines](docs/ecosystem/engines.md) |
+| `2d` | 2D art & sprites: images, sprites, tilesets, and related asset workflows. | [2D and 3D development](docs/ecosystem/2d-3d-development.md) |
+| `3d` | 3D assets & animation: models, scenes, rigging, and character motion. | [2D and 3D development](docs/ecosystem/2d-3d-development.md) |
+| `audio` | Audio & voice: music, sound effects, dialogue, and speech assets. | [Production overview](docs/production/overview.md) |
+| `production` | Game creation & design: generated game projects, rules, gameplay, and level design. | [Production overview](docs/production/overview.md) |
+| `runtime` | Runtime AI & NPCs: conversational characters and in-game AI behavior. | [Production overview](docs/production/overview.md) |
+| `testing` | Testing & QA: game tests, accessibility reviews, and evaluation workflows. | [Testing library](docs/reference/testing-library.md) |
+| `publishing` | Publishing: stores, game distribution, and release workflows. | [Production overview](docs/production/overview.md) |
+| `world` | World models: learned simulation, code-based state, neural rendering, and interactive worlds. | [World models](docs/ecosystem/world-models.md) |
+
+The collections are `tools` (Tools & platforms), `learning` (Guides & examples), `research` (Research & benchmarks), and `reference` (Technical references). Papers and research prototypes remain distinguishable from usable tools; low-level operating-system or engine APIs remain technical references. The stable `2d` and `3d` category IDs describe asset work, while `dimensions` independently records whether a resource applies to 2D or 3D games.
 
 ### Collections and guides
 
@@ -88,9 +94,9 @@ Beyond the resource catalog, GameMap maintains dedicated collections and long-fo
 | Pillar | What it covers | Starting point |
 | --- | --- | --- |
 | Resource catalog | Searchable tools, frameworks, benchmarks, papers, and documentation entries. | [Full resource catalog](docs/reference/catalog.md) |
-| Games and workflows | Playable browser and desktop projects, creator build evidence, and complete game source. | [Tutorials and demos](docs/tutorials-and-demos.md) |
+| Games and workflows | Playable browser and desktop projects, creator build evidence, and complete game source. | [Game examples](/examples/) |
 | Production and testing | Practical engine interfaces, evaluation methods, testing starters, and evidence boundaries. | [Testing library](docs/reference/testing-library.md) |
-| Repository research | Audited open-source game and agent repository candidates kept separate from featured picks. | [Repository research](docs/cadle-repositories.md) |
+| Repository research | Repository evidence for games, engines, agents, tools, and research, with review scope and license status. | [Repository research](/research/) |
 | Level design skill | A complete skill package with spatial layout references and reusable review templates. | [Level design guide](docs/guides/level-design.md) |
 
 ## Editorial Standard
@@ -145,8 +151,9 @@ Structured resources follow versioned contracts declared in `website/content/con
 {
   "id": "example-resource",
   "name": "Official Project Name",
-  "category": "2d",
+  "category": "production",
   "type": "framework",
+  "collection": "tools",
   "summary": "One sentence explaining the problem it solves.",
   "detail": "Describe inputs, outputs, relevant stages, and key limitations. Distinguish released artifacts from planned work.",
   "url": "https://example.org/official-project",

@@ -330,8 +330,8 @@ export async function assertRenderedCoverage(
       ),
       `${entry.key}: missing owning collection entrance in site navigation`,
     );
-    // Guides are read from the sidebar. /docs/ and /docs/zh/ open the practical
-    // guide instead of repeating that list on a directory page.
+    // Guides are linked from the learning hub and the shared sidebar.
+    // Their complete source bodies are checked on their document pages.
     // Hidden research rows stay reachable at their canonical URL (with noindex)
     // and downloadable ledger, but are intentionally omitted from /research/.
     if (
@@ -486,15 +486,28 @@ export function assertSearchCoverage(
       `Search text omits title: ${entry.key}`,
     );
     // Check the serialized export independently of the route's block selection.
+    // Resource facets are reader-visible search fields; other metadata stays out.
     // Metadata may legitimately recur in article prose, so do not strip body text.
+    const readerBlocks = (record) => {
+      const blocks = record.blocks.filter(
+        (block) =>
+          block.section !== "metadata" ||
+          (record.kind === "resource" &&
+            ["category", "type", "collection"].includes(block.field)),
+      );
+      if (record.kind === "resource")
+        assert.ok(
+          blocks.every((block) => !["verified", "year"].includes(block.field)),
+          `Resource search must exclude review-date and year fields: ${record.key}`,
+        );
+      return blocks;
+    };
     const fields = [
       ...new Set(
         [
           entry.title,
           entry.description,
-          ...entry.blocks
-            .filter((block) => block.section !== "metadata")
-            .map(blockText),
+          ...readerBlocks(entry).map(blockText),
         ].filter(Boolean),
       ),
     ].join("\n");
@@ -511,33 +524,52 @@ export function assertSearchCoverage(
       assert.equal(
         document.text,
         fields,
-        `Search must include reader fields and exclude source-only metadata: ${entry.key}`,
+        `Search must include reader fields and resource facets, excluding review/year and other source-only metadata: ${entry.key}`,
       );
     }
     if (alternateRegistry) {
-      const other = alternateRegistry.byKey(entry.key);
+      const sourceSlug = entry.id.replace(/^zh\//, "");
+      const translatedKey =
+        entry.kind === "document" &&
+        sourceSlug !== "remote-source-index" &&
+        !sourceSlug.startsWith("remote/")
+          ? entry.id.startsWith("zh/")
+            ? `document:${sourceSlug}`
+            : `document:zh/${sourceSlug}`
+          : entry.key;
+      const other =
+        alternateRegistry.byKey(translatedKey) ||
+        alternateRegistry.byKey(entry.key);
       assert.ok(other, `Search alternate language omits ${entry.key}`);
       const otherFields = [
         ...new Set(
           [
             other.title,
             other.description,
-            ...other.blocks
-              .filter((block) => block.section !== "metadata")
-              .map(blockText),
+            ...readerBlocks(other).map(blockText),
           ].filter(Boolean),
         ),
       ].join("\n");
       assert.equal(
         document.alternateText || "",
         otherFields === fields ? "" : otherFields,
-        `Search alternate reader fields must exclude source-only metadata: ${entry.key}`,
+        `Search alternate reader fields must include resource facets and exclude review/year and other source-only metadata: ${entry.key}`,
+      );
+      assert.equal(
+        document.alternateTitle,
+        other.title === entry.title ? undefined : other.title,
+        `Search alternate title must match the counterpart reader: ${entry.key}`,
       );
     } else {
       assert.equal(
         document.alternateText,
         undefined,
         `Search alternate fields need an explicit source registry: ${entry.key}`,
+      );
+      assert.equal(
+        document.alternateTitle,
+        undefined,
+        `Search alternate title needs an explicit source registry: ${entry.key}`,
       );
     }
   }

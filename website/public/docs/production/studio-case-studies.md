@@ -1,6 +1,16 @@
 # Studio production case studies and acceptance lessons
 
-Study how game teams handle procedural generation, asset budgets, build feedback, and gameplay systems. Each case links the original engineering account and turns its lessons into a workflow template for your own project.
+These production accounts are useful when the team has a decision to make: preserve an artist's override, accept a stale preview, reduce runtime cost or change a handoff. Read the case closest to that decision, including what the team gave up. The aim is to borrow a reasoning process that fits your project, rather than copy a studio's numbers or tool stack.
+
+If the request is “make skin production faster,” start with a recently completed delivery and reconstruct where it waited, changed hands and came back for repair. Ubisoft Montréal's [Siege workflow account](https://montreal.ubisoft.com/en/value-stream-mapping-applied-to-video-game-production-the-rainbow-six-siege-case/) mapped task transfers with the participating team leads. It reports that gains were reinvested in quality within the existing schedule. That is a different production choice from shortening the calendar, and it changes what the automation should optimize.
+
+Bring three questions to the relevant case:
+
+- Where does the team lose time: authoring, waiting for a dependency, repeated review, rebuilding or fixing a rejected delivery? An exporter speedup helps only the part it changes.
+- Which authored choices must survive: a corrected encounter, a material exception, an animation contact or a locale-specific line? Identify their owner before introducing regeneration.
+- What would make this delivery acceptable: fewer escaped defects, more art iterations within the date, or an earlier date? Pick the actual goal with production and the receiving discipline before using task runtime as the success measure.
+
+For example, if a shader export finishes quickly but technical art repeatedly repairs material assignments in the engine, take the material handoff and consuming-scene case, not a GPU-budget case. Keep the failed delivery and the correction with the ticket. The case then informs a specific decision that the receiving team can review.
 
 ## Main conclusions
 

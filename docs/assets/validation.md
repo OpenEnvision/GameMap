@@ -1,6 +1,10 @@
 # Asset interchange and validation contracts
 
-Check generated assets at each handoff: file format, geometry, materials, animation, dependencies, and engine import. Use the format-specific requirements below to build acceptance checks for your target toolchain.
+An enemy looks correct in the generator's viewer, but arrives oversized, untextured or unable to animate in your game. Keep the original download and test the actual receiving importer before generating another candidate. Godot 4.5's [format guide](https://docs.godotengine.org/en/4.5/tutorials/assets_pipeline/importing_3d_scenes/available_formats.html) recommends glTF 2.0; direct Blender-file import also invokes Blender, so that path adds an installed-tool dependency.
+
+For a GLB handoff, retain the [Khronos Validator](https://github.com/KhronosGroup/glTF-Validator) report, resolve errors and review warnings against the extensions your importer supports. Then use a small receiving scene: a known-size reference, fixed lighting, the intended material and an animation you need. Reject missing textures, wrong scale or broken deformation against those declared requirements. A clean format report is the entry gate to this scene test.
+
+For a 2D sprite, inspect transparency over both light and dark backgrounds at gameplay size and camera zoom. Before regenerating a dark-fringed or blurry image, check filtering, alpha handling and mipmaps in the [Godot 4.5 image-import guide](https://docs.godotengine.org/en/4.5/tutorials/assets_pipeline/importing_images.html). Record the working import settings alongside the source image so the next reimport can be checked against them.
 
 ## 1. Validate a portable asset without confusing format validity with fidelity
 

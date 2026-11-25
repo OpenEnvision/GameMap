@@ -11,6 +11,7 @@ A useful learning loop is:
 A small playable level with several evidence-driven revisions is usually more informative for learning level design than a large static environment.
 
 Separate:
+
 - Theory and analytical vocabulary.
 - Technical construction and tool operation.
 - Playable design decisions.
@@ -32,15 +33,15 @@ Do not interpret these choices as a universal hierarchy of legitimate tools.
 
 This is an adapted sequence, not the source's official fixed curriculum.
 
-| Stage | Main task | Evidence |
-| --- | --- | --- |
-| Observe | Play and annotate a small existing level | A few specific action-space relationships |
-| Communicate | Sketch and pitch one encounter or route | Another person can explain its intent and options |
-| Build | Make it playable with existing mechanics | Start-to-finish blockout |
-| Test | Watch unfamiliar players | Located observations, not only opinions |
-| Revise | Change a supported relationship | Before/after evidence |
-| Finish | Package and document | Someone else can install and understand it |
-| Reflect | Compare intent, process, and outcome | A clear next learning goal |
+| Stage       | Main task                                | Evidence                                          |
+| ----------- | ---------------------------------------- | ------------------------------------------------- |
+| Observe     | Play and annotate a small existing level | A few specific action-space relationships         |
+| Communicate | Sketch and pitch one encounter or route  | Another person can explain its intent and options |
+| Build       | Make it playable with existing mechanics | Start-to-finish blockout                          |
+| Test        | Watch unfamiliar players                 | Located observations, not only opinions           |
+| Revise      | Change a supported relationship          | Before/after evidence                             |
+| Finish      | Package and document                     | Someone else can install and understand it        |
+| Reflect     | Compare intent, process, and outcome     | A clear next learning goal                        |
 
 Reduce scope when tool learning consumes the schedule. Do not remove testing to preserve decorative ambition.
 
@@ -82,6 +83,30 @@ The source suggests at least three external testers and short production timebox
 - What did the learner discover about their own process?
 
 Do not turn the exercise's suggested death counts or completion times into universal measures of quality.
+
+### Prepare a session that can reach revision
+
+This GameMap teaching supplement assumes research and tool setup are already complete. Before the session, use the [test-room procedure](tools-quake.md) to confirm that each learner can build, run, change, and package a room. The instructor records the chosen game/mod, engine, editor, and compiler versions and supplies a working starting project with permitted assets.
+
+For a concrete brief, use one Quake arena, two previously studied monster types, and one weapon. Ask learners to support two plausible ways to approach the encounter, then reach an exit. They decide which sightline, obstacle, or resource makes those approaches different. They must explain a tradeoff rather than simply draw two corridors.
+
+Two 60-minute studio sessions are an example planning budget after preparation, not a promise about beginner production speed:
+
+| Session | Work allocation                                                                                 | Keep at the end                                               |
+| ------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| First   | 15 minutes for alternative diagrams, 30 for a playable blockout, 15 for self-test and packaging | Labeled plan, runnable baseline, one question for testers     |
+| Second  | 20 minutes for external tests, 25 for a targeted revision, 10 for retest, 5 for reflection      | Located observations, revised build, before/after explanation |
+
+If construction overruns, simplify the arena or postpone decoration; keep a test of the central choice. Tell testers the goal and controls, then observe without coaching the route. The learner watches, a peer plays, and another peer can keep notes. Rotate those roles so that the author is not also the only source of feedback.
+
+| Review checkpoint | Evidence the learner supplies                                                                        | Question for the reviewer                                                    |
+| ----------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Choice            | Two marked approaches and their intended costs                                                       | What can the player gain or risk by choosing each?                           |
+| Test              | A specific position, action, and consequence, plus any hint given                                    | Did the player encounter the intended choice, or merely follow instructions? |
+| Revision          | Two separately saved and tested revisions: a spatial change, then an enemy/item change, with reasons | Which observation supports each change, and what else must be retested?      |
+| Reflection        | A prediction compared with the retest, including unresolved problems                                 | What would you test next, and why?                                           |
+
+If an AI assistant helps, keep the request, the resulting map/script changes, and the learner's explanation of their effect. Ask the learner to identify a change they accepted or rejected and demonstrate why in play. More generated code, a longer prompt history, or an assistant's confident self-review is not evidence that the learner understands the encounter.
 
 ## 5. Other projects: retain their draft status
 
@@ -138,6 +163,7 @@ Represent major elevations abstractly, omit minor height noise, reserve room for
 ## 6. Longer course structure
 
 The source offers an illustrative semester:
+
 - Brief pre-production.
 - Repeated layout communication and revision.
 - Substantial blockout and scripting time.
@@ -151,6 +177,7 @@ Pair discussion with shared play or observation. Use the culture and case-study 
 ## 7. Run useful critiques
 
 A critique begins with a brief statement of intent and method. Then:
+
 - Describe a specific strength worth preserving.
 - Describe a concrete problem that weakens it.
 - Use first-person, located observations.
@@ -169,6 +196,7 @@ See the [review template](../templates/review.md).
 [Level Design Portfolio](https://book.leveldesignbook.com/learning/projects/unfinished-wip-pages/level-design-portfolio) is an informal outline, not a definitive hiring standard.
 
 Practical adaptation:
+
 - State the desired role and show relevant work immediately.
 - Keep navigation and text concise.
 - Show representative play, labeled layouts, iteration, and individual contribution.

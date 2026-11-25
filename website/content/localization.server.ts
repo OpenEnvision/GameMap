@@ -12,6 +12,8 @@ import open3dRound5Games from "./i18n/content/open3d-games-round5.zh.json";
 import browserPorts from "./i18n/content/browser-ports.zh.json";
 import toolkit from "./i18n/content/toolkit.zh.json";
 import testing from "./i18n/content/testing.zh.json";
+import papers from "./i18n/content/papers.zh.json";
+import research from "./i18n/content/research.zh.json";
 import approvedImportedCases from "./i18n/content/approved-imported-cases.zh.json";
 import fingerprints from "./i18n/content.zh.sources.json";
 import docsMessages from "./doc-messages.json";
@@ -58,6 +60,8 @@ for (const group of [
   open3dRound5Games,
   toolkit,
   testing,
+  papers,
+  research,
   approvedImportedCases,
 ])
   for (const [key, fields] of Object.entries(group)) {
@@ -115,6 +119,7 @@ const structural = new Set([
   "source",
   "sourceHash",
   "category",
+  "collection",
   "type",
   "kind",
   "track",
@@ -223,6 +228,15 @@ function localBlock(
         ...item,
         label: translate("zh", item.label),
         url: localizedPath(item.url, "zh", documents),
+        ...(item.note
+          ? {
+              note: translate("zh", item.note),
+              noteLanguage:
+                nativeChinese || translate("zh", item.note) !== item.note
+                  ? ("zh" as const)
+                  : ("en" as const),
+            }
+          : {}),
       })),
     };
   if (block.type === "image") {

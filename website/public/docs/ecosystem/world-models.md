@@ -1,6 +1,6 @@
 # World models: categories and selection
 
-Compare executable world models, action-conditioned video, and engine-driven rendering by the state they represent and the outputs they produce. Use the release notes below to find code, weights, and data for each approach.
+A world-model demo can be useful to a game team without being the thing the team ships. Before assigning work, ask whether the next person needs editable geometry, executable rules, an agent-training environment or a video reference. The distinction determines the handoff, the remaining engine work and who can judge completion.
 
 ## Name clarification
 
@@ -18,6 +18,21 @@ Compare executable world models, action-conditioned video, and engine-driven ren
 | Explicit 3D scenes / `scene-generation` | Spatial assets such as splats, surfels, and meshes | Camera movement or scene editing; gameplay is implemented separately | Scene assets, level concepts, spatial exploration, and engine export | Mesh quality, walkability, collision, animation, and dynamic interaction |
 
 Here, Coding World Model mainly means representing an external world in code. Meta FAIR's [CWM: An Open-Weights LLM for Research on Code Generation with World Models](https://arxiv.org/abs/2510.02387) instead learns how code and commands affect Python or container environment state. It is an execution-aware coding model. The meanings are related but should not be classified as the same game world generation architecture. Another easily confused example is [Code2World](https://arxiv.org/abs/2602.09856), which generates renderable code to predict the next GUI state. It is a GUI world model and is not included here as a game world paper.
+
+## Test the claim with a return journey
+
+Use a project-owned key-and-door scene. Fix the initial condition, actions, observations and reset method. Record unsupported setup or observations; a different demo is not an equivalent test.
+
+| Probe | Evidence to inspect |
+| --- | --- |
+| Try the locked door before collecting the key | Visible response and, when exposed, authoritative lock/inventory state |
+| Collect once, open the door, leave its view and return | Object identity, pickup count, door state and visual continuity |
+| Repeat from the initial condition | Whether reset restores the intended state; record stochastic differences |
+| Deliver the result to the target project | Actual exported files and a reopened consumer scene, or an explicit lack of export support |
+
+Report rule violations, visual inconsistencies and unsupported operations separately. A convincing image cannot prove hidden inventory correctness; inspectable state does not prove faithful rendering. GameNGen's [v1 discussion](https://arxiv.org/html/2408.14837v1#S7) identifies limited history and unvisited interactions as limitations, motivating persistence probes without implying universal failure.
+
+For interactive use, measure input-to-visible-response delay on the full configured path and record hardware, buffering and sampling conditions. Keep this separate from generation throughput. The fixture above is a proposed qualification method, not a reproduced result for any listed system.
 
 ## Suggested reading order
 
@@ -50,6 +65,10 @@ A separate 2026-10-19 targeted paper check narrows two production-relevance boun
 A targeted 2026-10-19 product check separates Genie 3's [August 2025 research announcement](https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/) from [current Project Genie help](https://support.google.com/labs/answer/16875695?hl=en): research persistence over several minutes is not the prototype's session allowance. The latter documents 60-second exploration, personal-account sign-in, age 18+ and eligible Google AI Ultra access where available. Its video download is not an editable level export. Marble's web-app export tiers above were checked separately from API billing. No account, subscription, session, generation, export or download was tested; rolling product requirements can change.
 
 ## Choose a world representation
+
+For a playable town that must preserve inventory and quest state, assign those systems to an explicit game-state owner before discussing the renderer. A scene-generation delivery can enter that project as environment content; it should not quietly become the authority for whether an item was consumed or a quest completed. Write the receiving scene, coordinate/scale convention, editable outputs and collision responsibilities into the task.
+
+Marble's [mesh-export guide](https://docs.worldlabs.ai/marble/export/mesh) makes one handoff distinction explicit: collider meshes are simplified for physics and are not the visual-rendering asset; visual meshes can contain reconstruction artifacts. For an environment delivery, ask the artist for the chosen visual representation and the gameplay integrator for walkable openings, blocking surfaces and any repairs the level needs. Keep the original export alongside derivatives. If the system only delivers a video experience, route it to visual or interaction reference work; do not schedule downstream mesh editing against files it cannot supply.
 
 Choose the intended output first: **a shippable game project, an explorable neural video experience, reusable world assets, or a simulator for training and planning**. Then choose the world representation and agent workflow.
 

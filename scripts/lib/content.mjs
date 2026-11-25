@@ -25,7 +25,7 @@ export async function loadContentRuntime(base = "/", contracts) {
     .join(",");
   const result = await build({
     stdin: {
-      contents: `${imports.join("\n")}\nexport const sourceModules = {${moduleMap}}; export * from './website/content/registry-core'; export * from './website/content/site'; export * from './website/content/models'; export * from './website/content/contracts'; export { default as runtimeTaxonomy } from './website/content/taxonomy.json'; export * from './website/content/assembly'; export * from './website/content/matching'; export * from './website/content/doc-language'; export * from './website/content/locale'; export * from './website/content/localization.server'; export { blockText, searchableBlocks, searchFields, searchableText } from './website/content/search'; ${contracts ? "export { sources } from './website/content/git-sources.server';" : ""}`,
+      contents: `${imports.join("\n")}\nexport const sourceModules = {${moduleMap}}; export * from './website/content/registry-core'; export * from './website/content/site'; export * from './website/content/models'; export * from './website/content/contracts'; export { default as runtimeTaxonomy } from './website/content/taxonomy.json'; export * from './website/content/assembly'; export * from './website/content/matching'; export * from './website/content/doc-language'; export * from './website/content/locale'; export * from './website/content/localization.server'; export * from './website/content/resource-search'; export { blockText, searchableBlocks, searchFields, searchableText } from './website/content/search'; ${contracts ? "export { sources } from './website/content/git-sources.server';" : ""}`,
       resolveDir: root,
       loader: "ts",
     },
@@ -53,13 +53,6 @@ export async function loadContent(base = "/") {
   );
   const files = await sourceFiles();
   assertKnownSourceFiles(files, contracts);
-  for (const file of files.filter(
-    (file) =>
-      file.startsWith("data/segments/") && !Object.hasOwn(contracts, file),
-  ))
-    contracts[file] = {
-      exports: { default: { shape: "array", kind: "resource" } },
-    };
   const module = await loadContentRuntime(base, contracts);
   const sources = module.sources;
   const documents = await readDocuments();

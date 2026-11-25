@@ -1,5 +1,6 @@
 import { posix } from "node:path";
 import { canonicalDocumentSource } from "./catalog/generated-registry.mjs";
+import { repositoryResearchNotice } from "./guides/repository-research.mjs";
 import documentRedirects from "../../website/content/document-redirects.json" with { type: "json" };
 
 // Pages whose raw Markdown keeps a long-standing public name at the site root.
@@ -85,7 +86,9 @@ export function documentDownloads(documents, bodies) {
     if (!slug) continue;
     if (!target.startsWith("/docs/")) {
       output[`${slug}.md`] =
-        `# Game examples\n\nThis catalog has moved to [Game examples](${target}).\n`;
+        target === "/research/"
+          ? repositoryResearchNotice(target, "./repository-research.json")
+          : `# Game examples\n\nThis catalog has moved to [Game examples](${target}).\n`;
       continue;
     }
     const page = documents.find(

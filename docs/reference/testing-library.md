@@ -1,32 +1,46 @@
 # Game testing library
 
-Choose a runnable project, AI environment, or asset set for the behavior you want to test. Start with a task below, then follow the setup and license details for each resource.
+Pick a project you can reset at the point that matters. For a retry bug, a small Godot demo that reaches game over quickly gives you a short control run. For an animation import issue, choose a rig and a clip with a visible foot plant so you can compare the source and the imported motion in one scene.
+
+For a study of visual navigation, decide how much of the room the agent can see before choosing the task. MiniGrid offers both a full-grid RGB view and a partial RGB view. On DoorKey, a full grid gives the agent more information about where to look for the key. Keep the view, layout seed, and step limit fixed when comparing two agents. [MiniGrid's observation wrappers](https://minigrid.farama.org/api/wrappers/)
 
 ## Starter packs
 
 ### Coding & automated playtests
 
-**Start with:** Godot demos · SuperTux · Wesnoth.
+**Change a working game.**
+
+**Start with:** [Godot official demos](/testing/godot-demos/) · [SuperTux](/testing/supertux/) · [The Battle for Wesnoth](/testing/wesnoth/).
 
 Build the baseline, change one mechanic, then replay the same input sequence.
 
 **Measure:** Build success, requested behavior, regressions, and repair attempts.
 
+**Checkpoint:** In one selected project, define the expected outcomes and save an unchanged baseline run. After the edit, build again, exercise the requested mechanic, and replay the original input sequence to check existing behavior. Record commands and pass/fail evidence for all three checks.
+
 ### Vision, control & planning
 
-**Start with:** MiniGrid · Crafter · ViZDoom.
+**Give an agent a goal.**
+
+**Start with:** [MiniGrid / BabyAI](/testing/minigrid/) · [Crafter](/testing/crafter/) · [ViZDoom](/testing/vizdoom/).
 
 Fix the task, seed, action rate, observation source, and episode budget.
 
 **Measure:** Success rate, collisions, path length, resources, and task completion.
 
+**Checkpoint:** Before running, fix the environment and task, seed settings, observation mode, action rate and action/time budget. Record every scheduled episode through success, failure, timeout or error, saving its return, length, termination reason and action/observation trace. Include failed and unfinished runs in the reported results.
+
 ### Asset & animation pipelines
 
-**Start with:** Kenney · Quaternius Standard · 100STYLE.
+**Move an asset through the pipeline.**
+
+**Start with:** [Kenney](/testing/kenney/) · [Quaternius Universal Animation Library](/testing/quaternius-ual/) · [100STYLE](/testing/100style/).
 
 Import a character, map its skeleton, and play a licensed motion clip.
 
 **Measure:** Missing textures, scale, skinning, foot sliding, root motion, and loop seams.
+
+**Checkpoint:** Choose one rigged character and one compatible clip covered by the recorded licenses. Import them into a pinned engine, verify textures, units and skeleton mapping, then play one named clip and inspect skinning, foot contact, root travel and loop seams. Save import settings and results; record missing files or unmapped joints as failures.
 
 ## Resource index
 
@@ -61,8 +75,8 @@ Import a character, map its skeleton, and play a licensed motion clip.
 | Gymnasium classic control | AI evaluation environments | 2D | Coding & automated playtests; Vision, control & planning | [Classic control environment docs](https://gymnasium.farama.org/environments/classic_control/) | [Primary source](https://github.com/Farama-Foundation/Gymnasium) |
 | Kenney | Asset libraries | 2D / 3D | Coding & automated playtests; Asset & animation pipelines | [Browse free asset packs](https://kenney.nl/assets) | [Primary source](https://kenney.nl/assets) |
 | Quaternius | Asset libraries | 3D | Coding & automated playtests; Asset & animation pipelines | [Browse creator packs](https://quaternius.com/) | [Primary source](https://quaternius.com/) |
-| Poly Haven | Asset libraries | 3D | Vision, control & planning; Asset & animation pipelines | [Browse CC0 assets](https://polyhaven.com/all) | [Primary source](https://polyhaven.com/) |
-| ambientCG | Asset libraries | 3D | Vision, control & planning; Asset & animation pipelines | [Browse downloadable assets](https://ambientcg.com/list) | [Primary source](https://ambientcg.com/) |
+| Poly Haven | Asset libraries | 3D | Asset & animation pipelines | [Browse CC0 assets](https://polyhaven.com/all) | [Primary source](https://polyhaven.com/) |
+| ambientCG | Asset libraries | 3D | Asset & animation pipelines | [Browse downloadable assets](https://ambientcg.com/list) | [Primary source](https://ambientcg.com/) |
 | OpenGameArt | Asset libraries | 2D / 3D | Coding & automated playtests; Asset & animation pipelines | [Browse community assets](https://opengameart.org/) | [Primary source](https://opengameart.org/) |
 | Fab | Asset libraries | 2D / 3D | Asset & animation pipelines | [Browse marketplace listings](https://www.fab.com/) | [Primary source](https://www.fab.com/) |
 | Unity Asset Store | Asset libraries | 2D / 3D | Asset & animation pipelines | [Browse Asset Store packages](https://assetstore.unity.com/) | [Primary source](https://assetstore.unity.com/) |
@@ -70,10 +84,10 @@ Import a character, map its skeleton, and play a licensed motion clip.
 | Khronos glTF Asset Generator | Asset libraries | 3D | Coding & automated playtests; Asset & animation pipelines | [Browse generated test assets](https://github.com/KhronosGroup/glTF-Asset-Generator/tree/main/Output/Positive) | [Primary source](https://github.com/KhronosGroup/glTF-Asset-Generator) |
 | Kenney Animated Characters | Rigs & motion data | 3D | Asset & animation pipelines | [Download character pack](https://kenney.nl/assets/animated-characters-protagonists) | [Primary source](https://kenney.nl/assets/animated-characters-protagonists) |
 | Quaternius Universal Animation Library | Rigs & motion data | 3D | Asset & animation pipelines | [Get the free Standard edition](https://quaternius.itch.io/universal-animation-library) | [Primary source](https://quaternius.itch.io/universal-animation-library) |
-| 100STYLE | Rigs & motion data | 3D | Vision, control & planning; Asset & animation pipelines | [Get the original motion data](https://www.ianxmason.com/100style/) | [Primary source](https://www.ianxmason.com/100style/) |
-| CMU Motion Capture Database | Rigs & motion data | 3D | Vision, control & planning; Asset & animation pipelines | [Browse subjects and motions](https://mocap.cs.cmu.edu/) | [Primary source](https://mocap.cs.cmu.edu/) |
+| 100STYLE | Rigs & motion data | 3D | Asset & animation pipelines | [Get the original motion data](https://www.ianxmason.com/100style/) | [Primary source](https://www.ianxmason.com/100style/) |
+| CMU Motion Capture Database | Rigs & motion data | 3D | Asset & animation pipelines | [Browse subjects and motions](https://mocap.cs.cmu.edu/) | [Primary source](https://mocap.cs.cmu.edu/) |
 | LaFAN1 | Rigs & motion data | 3D | Asset & animation pipelines | [Open dataset repository](https://github.com/ubisoft/ubisoft-laforge-animation-dataset) | [Primary source](https://github.com/ubisoft/ubisoft-laforge-animation-dataset) |
-| AMASS | Rigs & motion data | 3D | Vision, control & planning; Asset & animation pipelines | [Review access and dataset terms](https://amass.is.tue.mpg.de/) | [Primary source](https://amass.is.tue.mpg.de/) |
+| AMASS | Rigs & motion data | 3D | Asset & animation pipelines | [Review access and dataset terms](https://amass.is.tue.mpg.de/) | [Primary source](https://amass.is.tue.mpg.de/) |
 | SMPL-Body | Rigs & motion data | 3D | Asset & animation pipelines | [Read the body subset license](https://smpl.is.tue.mpg.de/bodylicense.html) | [Primary source](https://smpl.is.tue.mpg.de/) |
 | SMPL-Model | Rigs & motion data | 3D | Asset & animation pipelines | [Review model access terms](https://smpl.is.tue.mpg.de/modellicense.html) | [Primary source](https://smpl.is.tue.mpg.de/) |
 | Mixamo | Rigs & motion data | 3D | Asset & animation pipelines | [Read service FAQ first](https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html) | [Primary source](https://www.mixamo.com/) |
@@ -563,7 +577,7 @@ The official runnable example set shipped with the engine, useful as a small ver
 
 **Type:** Games & engine projects · **Goals:** Coding & automated playtests; Asset & animation pipelines · **Dimensions:** 2D / 3D
 
-[Browse runnable examples](https://bevyengine.org/examples/) — The official example browser groups examples by topic; running them requires cloning the repository and a Rust toolchain.
+[Browse runnable examples](https://bevyengine.org/examples/) — Supported examples run directly in the browser through WASM and WebGL2, with a separate WebGPU example browser. Running or modifying the source locally requires a matching repository checkout and Rust toolchain.
 
 [Project / source record](https://github.com/bevyengine/bevy) · [License / terms](https://github.com/bevyengine/bevy/blob/main/LICENSE-APACHE)
 
@@ -571,7 +585,7 @@ The official runnable example set shipped with the engine, useful as a small ver
 - **Code:** MIT or Apache-2.0 at your option for the engine source.
 - **Assets / data:** Assets bundled under examples/ carry separate licenses listed in CREDITS.md; they are not distributed in the published crates.
 - **AI use:** Pin a release tag before using an example as a baseline. The engine ships breaking releases on a regular cadence, and example assets are governed by their own licenses rather than the engine dual license.
-- **Practical limits:** Bevy describes itself as early-stage, with breaking API changes roughly every three months, so main is not a stable baseline. Example assets have separate licenses in CREDITS.md. Source reviewed, not built or run locally.
+- **Practical limits:** The hosted examples are a subset of the repository and depend on browser graphics support; they are not a pinned local baseline. Bevy has breaking API releases, so record a release tag and matching Rust toolchain for local regression work. Example assets have separate licenses in CREDITS.md. Source and browser-entry documentation reviewed, not built or run locally.
 
 **Suggested test tasks**
 
@@ -586,6 +600,7 @@ The official runnable example set shipped with the engine, useful as a small ver
 **Primary evidence**
 
 - [Official example browser](https://bevyengine.org/examples/)
+- [Official live WebGPU examples](https://bevy.org/examples-webgpu/)
 - [Examples directory and coverage](https://github.com/bevyengine/bevy/tree/main/examples)
 - [CREDITS.md with per-asset license notes](https://github.com/bevyengine/bevy/blob/main/CREDITS.md)
 
@@ -894,23 +909,25 @@ Sixteen fast procedurally generated environments designed to measure how quickly
 - **License group:** Open-license sources
 - **Code:** MIT.
 - **Assets / data:** Procedurally generated rendering; no bundled third-party game art is required for the standard environments.
-- **AI use:** Separate train and test level distributions and fix the number of training levels, seed and distribution mode before comparing agents. Fast step rates do not remove the need to report wall-clock and sample budgets.
-- **Practical limits:** The repository states it is in maintenance mode with bug fixes and minor updates only. CoinRun differs from the original standalone release, and the standard wrapper needs a compatible Gym version. Source reviewed, not installed or run locally.
+- **AI use:** Separate train and test level distributions and fix the package version, wrapper, level selection, seed settings and distribution mode before comparing agents. Record the action sequence and episode boundaries; fast step rates do not remove the need to report wall-clock and sample budgets.
+- **Practical limits:** The native interface exposes a discrete action space without an action_masks field. Any added mask or Gymnasium adaptation belongs to a separately documented wrapper. Identical seeds do not guarantee identical trajectories across dependency upgrades. The repository is in maintenance mode; CoinRun differs from its original standalone release, and the standard wrapper needs a compatible Gym version. Source reviewed, not installed or run locally.
 
 **Suggested test tasks**
 
 - Compare an agent trained on a small level set against one trained on the full distribution, evaluated on held-out seeds.
-- Replay a fixed seed across package versions and assert identical initial observations and action masks.
+- Within one pinned version and wrapper, replay recorded actions from the same initial state and seed settings; compare observations, rewards and episode boundaries.
 - Measure steps per second for one environment and record the hardware and thread count.
 
 **Get started**
 
-1. Create a Python environment and install procgen with a compatible Gym or Gymnasium wrapper.
-2. Create one environment with a fixed seed and distribution mode, then log observations, rewards and done signals.
+1. Create a Python environment and pin procgen, its native Gym or Gym3 interface, and any additional wrapper dependencies.
+2. Fix num_envs, num_levels, start_level, rand_seed, distribution_mode and thread count; retain the initial state or reset/episode order and a recorded action sequence.
+3. Log observations, rewards and episode boundaries using the chosen interface; document any wrapper that converts these into terminated and truncated signals.
 
 **Primary evidence**
 
 - [README with environment list and speed claims](https://github.com/openai/procgen#readme)
+- [Native action space, seed options and state interface](https://github.com/openai/procgen/blob/master/procgen/env.py)
 - [Benchmark paper](https://arxiv.org/abs/1912.01588)
 - [MIT license text](https://github.com/openai/procgen/blob/master/LICENSE)
 
@@ -1123,7 +1140,7 @@ CC0 realistic assets for material, lighting, dependency and visual-domain regres
 
 **Stack / format:** PBR textures, HDRIs, 3D models and a public download API
 
-**Type:** Asset libraries · **Goals:** Vision, control & planning; Asset & animation pipelines · **Dimensions:** 3D
+**Type:** Asset libraries · **Goals:** Asset & animation pipelines · **Dimensions:** 3D
 
 [Browse CC0 assets](https://polyhaven.com/all) — Free downloads; the API has been free for personal, academic and commercial use since July 18, 2026.
 
@@ -1156,7 +1173,7 @@ A CC0 source for texture-channel, terrain, lighting and material-resolution test
 
 **Stack / format:** PBR materials, decals, atlases, HDRIs, terrain and models
 
-**Type:** Asset libraries · **Goals:** Vision, control & planning; Asset & animation pipelines · **Dimensions:** 3D
+**Type:** Asset libraries · **Goals:** Asset & animation pipelines · **Dimensions:** 3D
 
 [Browse downloadable assets](https://ambientcg.com/list) — Public asset downloads are free; optional support services are separate.
 
@@ -1330,23 +1347,25 @@ An official generator for glTF 2.0 importer test cases, with Positive and Negati
 - **License group:** Open-license sources
 - **Code:** MIT for the generator source.
 - **Assets / data:** Generated output assets are covered by the repository MIT license; still record the exact Output revision used.
-- **AI use:** Use the generated pairs as labelled pass/fail fixtures for an importer: Positive files must load, Negative files must be rejected with a specific diagnostic. A passing import does not prove full glTF conformance.
+- **AI use:** Define an expected result for each case from its documented properties, validator report and the glTF specification. The Negative directory is not a blanket instruction to reject an entire asset: without POSITION data, a client should skip rendering the affected primitive unless another mechanism supplies positions. Keep validator findings separate from importer diagnostics and rendering behavior; a passing case does not prove full glTF conformance.
 - **Practical limits:** Coverage is a work in progress and the README states more requirements are coming. The C# project targets a Visual Studio / .NET workflow; no generator was built or run locally in this review.
 
 **Suggested test tasks**
 
-- Load every Positive case in one importer and record unsupported features without treating a warning as a crash.
-- Check that Negative cases fail with an actionable error rather than silently producing a broken scene.
+- Load selected Positive cases and compare supported geometry, materials and animation with their documented expectations; record unsupported features and diagnostics separately.
+- For each Negative case, compare the observed result with its documented expected handling, including a skipped primitive where appropriate, and check that malformed input does not crash the importer.
 
 **Get started**
 
 1. Pin a repository commit and copy the Output/Positive and Output/Negative directories into a versioned fixture.
-2. Record the importer version, expected outcome for each case and the exact error text for negative cases.
+2. Record the importer and validator versions, supported extensions and a per-case expectation; capture the validation report, importer diagnostics and rendered result rather than requiring every Negative asset to fail.
 
 **Primary evidence**
 
 - [Project scope and supported requirements](https://github.com/KhronosGroup/glTF-Asset-Generator#readme)
 - [Negative test output](https://github.com/KhronosGroup/glTF-Asset-Generator/tree/main/Output/Negative)
+- [Mesh_NoPosition cases and attribute table](https://github.com/KhronosGroup/glTF-Asset-Generator/blob/main/Output/Negative/Mesh_NoPosition/README.md)
+- [glTF specification: using primitive data](https://github.com/KhronosGroup/glTF/blob/main/specification/2.0/Specification.adoc#using-primitive-data)
 - [MIT license text](https://github.com/KhronosGroup/glTF-Asset-Generator/blob/main/LICENSE)
 
 ### Kenney Animated Characters
@@ -1421,7 +1440,7 @@ Styled locomotion data for motion matching, gait diversity and cross-skeleton re
 
 **Stack / format:** BVH motion capture, 28-bone skeleton, 60 fps
 
-**Type:** Rigs & motion data · **Goals:** Vision, control & planning; Asset & animation pipelines · **Dimensions:** 3D
+**Type:** Rigs & motion data · **Goals:** Asset & animation pipelines · **Dimensions:** 3D
 
 [Get the original motion data](https://www.ianxmason.com/100style/) — Download the original BVH data; a skinned character is a separate asset.
 
@@ -1454,7 +1473,7 @@ A broad motion source for skeleton parsing, coordinate conversion and control or
 
 **Stack / format:** ASF skeletons and AMC motion files with subject-specific calibration
 
-**Type:** Rigs & motion data · **Goals:** Vision, control & planning; Asset & animation pipelines · **Dimensions:** 3D
+**Type:** Rigs & motion data · **Goals:** Asset & animation pipelines · **Dimensions:** 3D
 
 [Browse subjects and motions](https://mocap.cs.cmu.edu/) — Follow the site request to download only what is needed rather than mirror the whole database.
 
@@ -1521,7 +1540,7 @@ Research-scale human motion for pose pipelines and motion models in a common par
 
 **Stack / format:** Multiple mocap collections unified as parametric human motion
 
-**Type:** Rigs & motion data · **Goals:** Vision, control & planning; Asset & animation pipelines · **Dimensions:** 3D
+**Type:** Rigs & motion data · **Goals:** Asset & animation pipelines · **Dimensions:** 3D
 
 [Review access and dataset terms](https://amass.is.tue.mpg.de/) — Registration and agreement to the dataset terms are required; model/tool access is separate.
 

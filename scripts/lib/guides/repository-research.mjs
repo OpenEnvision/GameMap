@@ -89,9 +89,16 @@ export function validateRepositoryResearch(data) {
 
 const cell = (value) =>
   String(value).replaceAll("|", "\\|").replaceAll("\n", " ");
+export function repositoryResearchNotice(destination, ledger) {
+  return `# Repository research\n\nBrowse the [repository research catalog](${destination}) or download the [complete evidence ledger](${ledger}).\n`;
+}
 export function renderRepositoryResearch(data) {
-  if (documentRedirects["/docs/cadle-repositories/"])
-    return "# Game examples\n\nThis catalog has moved to [Game examples](/examples/).\n";
+  const destination = documentRedirects["/docs/cadle-repositories/"];
+  if (destination)
+    return repositoryResearchNotice(
+      destination,
+      "../website/public/repository-research.json",
+    );
   data = canonicalValue(data);
   const counts = {};
   for (const row of data.records)

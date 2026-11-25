@@ -1,0 +1,245 @@
+[
+  {
+    "id": "gdevelop-ai-mcp",
+    "name": "GDevelop AI & MCP",
+    "category": "engines",
+    "collection": "tools",
+    "type": "tool",
+    "summary": "A visual 2D and 3D game engine with an integrated AI helper and an official MCP connection for coding agents.",
+    "detail": "Turn a feature request into editable scenes, objects, behaviors and event logic, then preview the game or ask an agent to run gameplay tests. GDevelop also exports games for web, mobile and desktop. The MCP connection requires the desktop editor to remain open on the same computer; event generation and asset searches use online services and require sign-in. Review and save the changes in the editor before exporting.",
+    "url": "https://gdevelop.io/features",
+    "links": [
+      {
+        "label": "Official MCP setup and workflow",
+        "url": "https://wiki.gdevelop.io/gdevelop5/interface/ai/mcp/"
+      },
+      {
+        "label": "Engine source",
+        "url": "https://github.com/4ian/GDevelop"
+      }
+    ],
+    "tags": [
+      "GDevelop",
+      "Visual game editor",
+      "AI-assisted development",
+      "MCP"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-11-24"
+  },
+  {
+    "id": "inworld-agent-runtime",
+    "name": "Inworld Agent Runtime",
+    "category": "runtime",
+    "collection": "tools",
+    "type": "framework",
+    "summary": "An AI orchestration toolkit with Unity and Unreal SDKs for voice-driven characters, memory and conversational NPCs.",
+    "detail": "Compose speech recognition, language models, voice synthesis and character knowledge in a runtime graph, then connect character templates to a Unity or Unreal scene. The legacy Character Studio has retired; its workflows now use the Portal and Runtime SDKs. Detailed SDK guides currently require sign-in. Configure the model services and character logic for your project, and measure dialogue latency and behavior in the target game.",
+    "url": "https://docs.inworld.ai/character-studio-deprecation",
+    "links": [
+      {
+        "label": "Unity AI Runtime SDK guide (sign-in required)",
+        "url": "https://docs.inworld.ai/Unity/runtime/get-started"
+      },
+      {
+        "label": "Unreal Agent Runtime SDK guide (sign-in required)",
+        "url": "https://docs.inworld.ai/unreal-engine/runtime/overview"
+      },
+      {
+        "label": "Official game-development examples",
+        "url": "https://inworld.ai/blog/introducing-unreal-ai-runtime-sdk"
+      }
+    ],
+    "tags": [
+      "NPC",
+      "Dialogue",
+      "Voice",
+      "Unity",
+      "Unreal Engine"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "runtime"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-11-24"
+  },
+  {
+    "id": "mixamo",
+    "name": "Adobe Mixamo",
+    "category": "3d",
+    "collection": "tools",
+    "type": "tool",
+    "summary": "Automatically rigs humanoid characters and transfers motion-library animations to models for game asset workflows.",
+    "detail": "Upload a clean character mesh, fit a humanoid skeleton and choose motion clips, then download the rigged character and animations for your engine pipeline. The auto-rigger and animation library support bipedal humanoids; unusual proportions or extra limbs can fail. An Adobe ID is required, and the official FAQ excludes accounts with a China country code. Save results locally because Mixamo retains only the last used character.",
+    "url": "https://www.mixamo.com/",
+    "links": [
+      {
+        "label": "Official requirements and account restrictions",
+        "url": "https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html"
+      }
+    ],
+    "tags": [
+      "Character rigging",
+      "Skeletal animation",
+      "Humanoid",
+      "Animation library"
+    ],
+    "stages": [
+      "assets"
+    ],
+    "dimensions": [
+      "3d"
+    ],
+    "verified": "2026-11-24"
+  },
+  {
+    "id": "game-ci",
+    "name": "GameCI",
+    "category": "testing",
+    "collection": "tools",
+    "type": "framework",
+    "summary": "Community-maintained Unity build and test automation for CI, with reusable GitHub Actions and container workflows.",
+    "detail": "Run Unity Edit mode and Play mode tests, archive their reports, and build selected player targets from a repository. Pin the action, exact Editor version, runner OS and target toolchain; Unity activation and CI credentials must be configured separately. The reviewed unity-builder 6.0.0 and unity-test-runner 4.4.0 releases delegate to game-ci/cli, while the documentation still labels its examples v4. Check the release notes before copying an older workflow. Both action repositories declare MIT. That license does not include Unity Editor rights or hosted runner capacity. This community project is not affiliated with Unity Technologies.",
+    "url": "https://game.ci/docs/",
+    "links": [
+      {
+        "label": "Unity build workflow and Editor selection",
+        "url": "https://game.ci/docs/github/builder/"
+      },
+      {
+        "label": "Unity test reports and activation",
+        "url": "https://game.ci/docs/github/test-runner/"
+      },
+      {
+        "label": "Builder 6.0.0 release and CLI migration",
+        "url": "https://github.com/game-ci/unity-builder/releases/tag/v6.0.0"
+      },
+      {
+        "label": "Test runner 4.4.0 release",
+        "url": "https://github.com/game-ci/unity-test-runner/releases/tag/v4.4.0"
+      },
+      {
+        "label": "Builder source and MIT license",
+        "url": "https://github.com/game-ci/unity-builder#licence"
+      },
+      {
+        "label": "Test runner source and MIT license",
+        "url": "https://github.com/game-ci/unity-test-runner#license"
+      }
+    ],
+    "tags": [
+      "Unity",
+      "CI",
+      "GitHub Actions",
+      "Build automation",
+      "Test reports"
+    ],
+    "stages": [
+      "code",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-11-25"
+  },
+  {
+    "id": "gdunit4",
+    "name": "GdUnit4",
+    "category": "testing",
+    "collection": "tools",
+    "type": "framework",
+    "summary": "A Godot testing framework for GDScript, C# and scenes, with assertions, test doubles, scene inputs and CI reports.",
+    "detail": "Create a test suite for a gameplay rule or scene, drive its inputs with Scene Runner, and retain assertions and reports from editor or command-line runs. The reviewed 6.2.3 release is MIT-licensed. Its 6.2.x compatibility table lists Godot 4.5 through 4.7.1, while Godot 4.3/4.4 projects use the older 5.x line. Match the framework to the exact Godot version before installing. C# tests require the separately documented .NET setup. Scene assertions cover the conditions you write. They do not replace checking rendered appearance, controls and game feel in the target build.",
+    "url": "https://github.com/godot-gdunit-labs/gdUnit4",
+    "links": [
+      {
+        "label": "GdUnit4 installation and first test",
+        "url": "https://godot-gdunit-labs.github.io/gdUnit4/latest/"
+      },
+      {
+        "label": "GdUnit4 6.2.3 release",
+        "url": "https://github.com/godot-gdunit-labs/gdUnit4/releases/tag/v6.2.3"
+      },
+      {
+        "label": "Versioned Godot compatibility table",
+        "url": "https://github.com/godot-gdunit-labs/gdUnit4/blob/v6.2.3/README.md#compatibility-overview"
+      },
+      {
+        "label": "GdUnit4 6.2.3 MIT license",
+        "url": "https://github.com/godot-gdunit-labs/gdUnit4/blob/v6.2.3/LICENSE"
+      }
+    ],
+    "tags": [
+      "Godot",
+      "GDScript",
+      "C#",
+      "Scene testing",
+      "CLI",
+      "JUnit"
+    ],
+    "stages": [
+      "code",
+      "scene",
+      "test"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-11-25"
+  },
+  {
+    "id": "unreal-insights",
+    "name": "Unreal Insights",
+    "category": "testing",
+    "collection": "tools",
+    "type": "tool",
+    "summary": "Epic's Unreal Engine trace capture and analysis suite for investigating frame time, memory, networking and asset loading.",
+    "detail": "Record a representative game or editor session, preserve its .utrace file with the engine version, build configuration and enabled trace channels, then inspect the relevant timing, memory or loading tracks. The reviewed Epic documentation is labeled Unreal Engine 5.9. Insights ships with binary engine installations or can be built as the UnrealInsights target. Tracing setup and available workflows depend on the engine build and operating system. Engine use and source access follow the Unreal Engine EULA, not a permissive open-source license. A trace identifies measured work in that session. Compare equivalent workloads and hardware before treating a timing change as a regression.",
+    "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-insights-in-unreal-engine",
+    "links": [
+      {
+        "label": "Epic testing and performance tool directory",
+        "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/testing-and-optimizing-your-content"
+      },
+      {
+        "label": "Unreal Engine license and source-access terms",
+        "url": "https://www.unrealengine.com/eula/unreal"
+      }
+    ],
+    "tags": [
+      "Unreal Engine",
+      "Performance profiling",
+      "Trace capture",
+      "Memory",
+      "Asset loading"
+    ],
+    "stages": [
+      "code",
+      "test",
+      "ship"
+    ],
+    "dimensions": [
+      "2d",
+      "3d"
+    ],
+    "verified": "2026-11-25"
+  }
+]

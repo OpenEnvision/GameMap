@@ -1,6 +1,8 @@
 # 社区 AI 游戏案例审阅
 
-将游戏案例追溯至创作者的制作记录、可玩发行版和源代码项目。使用下方候选记录发现项目，或打开[游戏案例](../tutorials-and-demos.md)研究一个完整项目。
+想先试玩一款 AI 辅助开发的小游戏，可以打开作者托管的 Dinosaur Game Offline，按键开始、跳跃，再试一次重开。想研究作者如何把工作分给编码智能体，可以看 Cloud Crush 的分步教程和 Go 项目。两者都用了 Gemini CLI。下方原始审阅记录写明哪款玩过、哪款查过源码。
+
+做新的比较时，从作者的披露确认客户端和模型，从对应的源码版本查实现，再从发行页确认手里能启动的是哪一版。哪个字段缺依据，就保留未知。现有收录可查[游戏案例](../tutorials-and-demos.md)。本页的案例数量和试玩记录都对应有日期的审阅批次。
 
 ## 新增 Gemini CLI 案例
 
@@ -59,25 +61,25 @@ Mini KSP 从未经修改的公开源代码提供服务，并通过正常 UI 启�
 
 ## 源代码树检查
 
-公开 GitHub 源代码树 JSON 快照保存为 `/tmp/gamemap-2d-<owner>-<repo>-tree.json`（Garden 为 `/tmp/gamemap-2d-gameai-tree`）。它们包含源代码路径和固定的 HEAD SHA 值，而非下载的仓库代码。已核实的文件数量：GothicVania 40；Pixel Princess 176；塔防 89；Cursor 平台跳跃游戏 81；Gravity Birds 89；Agent Arcade 368；Mini Snake 3；Flux 22；Bash Fighter 385；Quasar Saz 1076；John Dilig 合集 171；GameAI 合集 1122；Dunkirk 212。数量包括配套文档、资源和测试，并非只有游戏代码。
+这批审阅通过公开的 GitHub 文件树快照核对特定提交中的文件。已核实的文件数量为 GothicVania 40、Pixel Princess 176、塔防 89、Cursor 平台跳跃游戏 81、Gravity Birds 89、Agent Arcade 368、Mini Snake 3、Flux 22、Bash Fighter 385、Quasar Saz 1076、John Dilig 合集 171、GameAI 合集 1122、Dunkirk 212。总数包含配套文档、资产和测试。要判断是不是完整游戏，得找到启动入口，查清它依赖哪些文件。单凭数量很难判断跑不跑得起来。
 
-额外获取的第一手材料：Cursor 对话摘要（`/tmp/gamemap-2d-cursor-conversation`）、Gravity Birds README 与完整开发历程 HTML（`/tmp/gamemap-2d-gravity-readme`、`/tmp/gamemap-2d-gravity-journey`），以及 Mini Snake 的完整 HTML（`/tmp/gamemap-2d-minisnake.html`）。还使用网页研究工具打开了 GitHub HTML／原始页面和 Copilot 创作者文章。缓存未命中错误不被视为已核实的网站失效；对于重要案例，通过直接公开获取／浏览器导航加以确认。
+审阅还读过表里链接的 Cursor 对话摘要、Gravity Birds README 和开发日志、Mini Snake 完整 HTML，以及 Copilot 创作者文章。来源读取工具打不开链接时，先用直接获取或浏览器访问核对，再记录是否可用。
 
 ## 可下载项目的创作者实机游戏图像
 
-- Gravity Birds：<https://raw.githubusercontent.com/az9713/grokbot-game-dev-demo/main/game_ui_2.png> — 已目视检查；真实的 Stairway 关卡，包含鸟、水果、出口和撤销／重启 UI。README 将其题为“打磨之后”。本地文件 `/tmp/gamemap-2d-gravity-game2.png`。
-- Quasar Saz：<https://raw.githubusercontent.com/cleak/quasar-saz/master/docs/screenshot_20260219_154704.png> — 已目视检查；真实的 Dissonance King 第 3 阶段战斗、玩家、攻击及能量／得分 HUD。本地文件 `/tmp/gamemap-2d-quasar-game-complete.png`。
-- Agent Arcade：<https://raw.githubusercontent.com/DanWahlin/agent-arcade/main/docs/images/agent-arcade-ninja.gif> — 创作者的实机游戏 GIF。在创作者链接的文章中，同一段录制被明确题为“Ninja Runner 实机游戏”。本地文件 `/tmp/gamemap-2d-previews/agent-arcade-copilot.gif`。
+- Gravity Birds。<https://raw.githubusercontent.com/az9713/grokbot-game-dev-demo/main/game_ui_2.png> 展示了 Stairway 谜题中的鸟、水果、出口和撤销／重启控件。README 将它题为“打磨之后”。
+- Quasar Saz。<https://raw.githubusercontent.com/cleak/quasar-saz/master/docs/screenshot_20260219_154704.png> 展示了 Dissonance King 第 3 阶段战斗中的玩家、攻击、能量和分数。
+- Agent Arcade。<https://raw.githubusercontent.com/DanWahlin/agent-arcade/main/docs/images/agent-arcade-ninja.gif> 是作者文章题为“Ninja Runner Gameplay”的录像。
 
-这些是创作者提供的实机游戏媒体，而不是我们自己试玩时截取的画面。主线集成保留了这一来源信息。
+图库将这三份画面署名归给各自的创作者。
 
 ## 浏览器核验
 
-Browser 插件不可用；使用了附带的 Playwright 和 Chromium 1208。在最初的导航测试中，全部 10 个浏览器入口 URL 均返回 HTTP 200，且页面标题正确。初始标题／加载画面的截图被有意排除在接受的展示库媒体之外。截图及每个案例的控制台／请求／操作元数据保存在 `/tmp/gamemap-2d-previews/` 下。对于资源加载或动画缓慢的案例，后续截图使用 Metal 渲染，并仅保留一个前台页面。
+首次导航使用 Playwright 和 Chromium 1208。10 个浏览器入口均返回 HTTP 200，页面标题符合预期。随后查看能否操作游戏，等标题或载入画面过后再截图。资源加载或动画过慢的游戏用 Metal 渲染再试一次，只留一个前台页面。
 
 已核实的实际交互：塔防游戏的伤害升级使 Lv0→Lv1、gold25→5；Cursor 平台跳跃游戏能够移动／跳跃，且分数增加；Mini Snake 通过方向键收集了两个食物（score0→2；length1→3），随后暂停以截图；Flux 进入运行状态并翻转重力；Bash Fighter 创建私人大厅、加入机器人启动，进入限时混战，并响应移动／跳跃／攻击；Running Man 启动、跳跃并跑到 19m；GothicVania 从其导出的 `title` 状态进入 `level`，玩家能够移动／跳跃，生命值为 4，敌人处于活动状态。GothicVania 的 Enter 输入必须持续跨过一个渲染帧，因为标题界面检查的是 Phaser `JustDown`。
 
-已核实的预览清单为 `/tmp/gamemap-2d-previews/verified-manifest.json`：七张真实浏览器实机游戏截图，以及一张创作者提供的 Pixel Princess 实机游戏截图。后者的公开版本进入了正常工作的菜单，但首次加载资源的时机不稳定，因此创作者现有的实机游戏截图是更可靠的预览：<https://raw.githubusercontent.com/VTvito/pixel-princess-platformer/main/assets/screenshot.png> （本地文件 `/tmp/gamemap-2d-pixel-creator.png`）。已目视检查，确认为真实的森林关卡游戏画面，包含女主角、敌人、拾取物和生命值／得分 HUD。Garden Match 的诊断／截图已交给 3D 研究智能体，Dunkirk 的截图交给主智能体，因此最终结果由那些智能体记录，而不在此声称完成。
+这次保留了七张浏览器实机截图，以及一张 Pixel Princess 作者截图。它的公开构建能进菜单，但首次加载资源有时快、有时慢。作者截图显示了森林关卡、玩家角色、敌人、拾取物和生命值、分数界面。<https://raw.githubusercontent.com/VTvito/pixel-princess-platformer/main/assets/screenshot.png>。Garden Match 和 Dunkirk 另有检查记录。
 
 ## 拒绝或暂缓的候选
 

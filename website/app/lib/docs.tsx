@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import type { Root } from "fumadocs-core/page-tree";
+import { useLocation } from "react-router";
+import type { Folder, Item, Root } from "fumadocs-core/page-tree";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { ArrowUpRight } from "lucide-react";
 import { Brand } from "../components/site-shell";
@@ -13,13 +14,30 @@ import {
 import { pillars } from "./pillars";
 import { LanguageSwitcher, Link, useSiteI18n } from "./i18n";
 export function documentGroups(manifest: readonly DocumentMetadata[]) {
-  return [...new Set(manifest.map((page) => page.group))].map((title) => {
-    const documents = manifest.filter((page) => page.group === title);
+  const sectionFor = (slug: string) => {
+    const path = slug.replace(/^zh\//, "");
+    if (path.startsWith("skills/level-design/references/"))
+      return "Level design references";
+    if (path.startsWith("skills/level-design/templates/"))
+      return "Practice templates";
+    return "";
+  };
+  const groupFor = (page: DocumentMetadata) =>
+    sectionFor(page.slug) ? "Skills & practice" : page.group;
+  return [...new Set(manifest.map(groupFor))].map((title) => {
+    const documents = manifest.filter((page) => groupFor(page) === title);
+    const pages = documents.map(
+      (page) => [page.slug, page.label] as [string, string],
+    );
     return {
       title,
       description: documents[0].description,
-      pages: documents.map(
-        (page) => [page.slug, page.label] as [string, string],
+      pages,
+      sections: [...new Set(pages.map(([slug]) => sectionFor(slug)))].map(
+        (name) => ({
+          title: name,
+          pages: pages.filter(([slug]) => sectionFor(slug) === name),
+        }),
       ),
     };
   });
@@ -50,40 +68,17 @@ export function DocumentationLanguage(_props: {
   return <LanguageSwitcher className="documentation-language" />;
 }
 
-/** The docs are the "Learn" pillar's guides: marked, not aria-current, so the
- *  sidebar's current document stays the page's only current link. */
-const isDocs = (path: string) => path === pages.docs.path;
-
-/** The site's four pillars at the top of the docs sidebar (and the mobile
- *  drawer). root.tsx leaves the site header out of the reading room so that
- *  Fumadocs owns the layout; this keeps every GameMap destination one click
- *  away and works without JavaScript. */
-function PillarRail() {
+/** Keep the reading room focused on Learn; site destinations live in its footer. */
+function LearningNavigation() {
   const { t } = useSiteI18n();
+  const { pathname } = useLocation();
+  const home = /^\/docs(?:\/zh)?\/?$/.test(pathname);
   return (
-    <nav className="docs-pillar-rail" aria-label={t("Main navigation")}>
-      {pillars.map((pillar) => (
-        <div
-          key={pillar.id}
-          className="docs-pillar"
-          data-pillar={pillar.id}
-          data-current={pillar.id === "learn" || undefined}
-        >
-          <span className="docs-pillar-label">{t(pillar.label)}</span>
-          <ul>
-            {pillar.links.map((link) => (
-              <li key={link.path}>
-                <Link
-                  to={link.path}
-                  data-current={isDocs(link.path) || undefined}
-                >
-                  {t(link.title)}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+    <nav className="docs-learn-nav" aria-label={t("Learn")}>
+      <span className="docs-learn-label">{t("Learn")}</span>
+      <Link to={pages.docs.path} aria-current={home ? "page" : undefined}>
+        {t("Guides & notes")}
+      </Link>
     </nav>
   );
 }
@@ -146,28 +141,77 @@ export function DocumentationLayout({
   const text = docMessages(locale),
     { t, href } = useSiteI18n(),
     selected = documentationViews(manifest, locale);
+  const { pathname } = useLocation();
+  const home = /^\/docs(?:\/zh)?\/?$/.test(pathname);
+  const leaf = ([slug, name]: [string, string]): Item => ({
+    type: "page",
+    name:
+      t(name) + (locale === "zh" && docLocale(slug) === "en" ? " · EN" : ""),
+    url: href(url.document(slug)).replace(/\/$/, ""),
+  });
+  const folderName = (title: string, count: number) => (
+    <span className="docs-folder-label">
+      <span className="docs-folder-title">{t(title)}</span>
+      <span className="docs-group-count" aria-hidden="true">
+        {count}
+      </span>
+    </span>
+  );
+  const groups = documentGroups(selected);
+  const supplementalStart = groups.findIndex(
+    (group) =>
+      !group.pages.some(([slug]) =>
+        /^(guides|ecosystem|production|assets|evaluation)\//.test(
+          slug.replace(/^zh\//, ""),
+        ),
+      ),
+  );
   const tree: Root = {
     name: text.title,
-    children: [
-      ...documentGroups(selected).map((group) => ({
-        type: "folder" as const,
-        name: t(group.title),
-        children: group.pages.map(([slug, name]) => ({
-          type: "page" as const,
-          name:
-            t(name) +
-            (locale === "zh" && docLocale(slug) === "en" ? " · EN" : ""),
-          url: href(url.document(slug)).replace(/\/$/, ""),
-        })),
-      })),
-    ],
+    children: groups.flatMap((group, index) => {
+      const folder: Folder = {
+        type: "folder",
+        name: folderName(group.title, group.pages.length),
+        defaultOpen:
+          home &&
+          group.pages.some(([slug]) =>
+            /^guides\//.test(slug.replace(/^zh\//, "")),
+          ),
+        children: group.sections.flatMap((section): (Folder | Item)[] =>
+          section.title
+            ? [
+                {
+                  type: "folder",
+                  name: folderName(section.title, section.pages.length),
+                  children: section.pages.map(leaf),
+                },
+              ]
+            : section.pages.map(leaf),
+        ),
+      };
+      return index === supplementalStart
+        ? [
+            {
+              type: "separator" as const,
+              name: (
+                <span className="docs-tree-label">
+                  {t("Templates & project notes")}
+                </span>
+              ),
+            },
+            folder,
+          ]
+        : [folder];
+    }),
   };
   return (
     <DocsLayout
       tree={tree}
+      tabs={false}
       nav={{ title: <Brand />, url: href("/") }}
       githubUrl="https://github.com/OpenEnvision/GameMap"
-      links={[{ type: "custom", on: "menu", children: <PillarRail /> }]}
+      sidebar={{ defaultOpenLevel: 0 }}
+      links={[{ type: "custom", on: "menu", children: <LearningNavigation /> }]}
     >
       {children}
     </DocsLayout>

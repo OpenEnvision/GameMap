@@ -1,6 +1,25 @@
 # Engines, rendering libraries, and content tools
 
-Choose a game engine for runtime and editing, a rendering library for custom graphics, and a content tool for asset production. Their responsibilities differ: Godot, Unity, and Unreal provide engine workflows; Phaser targets browser 2D games; Three.js and React Three Fiber handle rendering; Blender creates and processes assets.
+The engine choice also decides who owns collision, input, animation, saves and export. Godot, Unity and Unreal supply engine workflows; Phaser targets browser 2D games; Three.js and React Three Fiber leave more runtime systems for the team to assemble. Blender produces the assets they consume. Choose against the systems your game needs and the people who will maintain them.
+
+## Qualify the delivery path
+
+Before committing a prototype to an engine or renderer, choose one target platform and a tiny interaction. Carry it through the whole path; editor success leaves exported-player behavior unresolved.
+
+| Check | Concrete output |
+| --- | --- |
+| Match the environment | Engine/binary version, renderer, package lock and matching sample/documentation revision |
+| Import one representative asset | Import log and scene with expected scale, material and animation; retain separate asset terms |
+| Exercise one interaction | Normal input triggers the intended collision/state change, with readable logs and a matching capture |
+| Export and reopen | Target build starts outside the editor; saved source reopens with the same required settings |
+
+For Godot automation, retain the selected binary's `--version` and `--help` output. The [official CLI reference](https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html) warns that unknown arguments, including those unavailable in a build type, can be ignored without warning. A command returning successfully therefore does not establish that the intended check ran.
+
+Before replacing a movement controller, inspect the surface it is failing on. In Jasper Flick's [Surface Contact](https://catlikecoding.com/unity/tutorials/movement/surface-contact/) tutorial, a sphere can leave a ramp with upward momentum while the previous collision result still says grounded; unmerged geometry also produces a ghost collision in the nominally flat lane. This is a Unity 2019.2.14f1 engineering account, useful for its diagnosis rather than as a current API recipe.
+
+For the team's actual fault, give the programmer the affected slope or stair mesh, collision representation, speed, ground-contact observations and physics-update order. Ask whether the desired behavior is physical separation or deliberate ground snapping. The designer owns that choice; the programmer then decides whether the change belongs in geometry, contact classification or controller response. A visually smoother result obtained by changing all three at once is difficult to maintain. For a Three.js project, name the physics/controller component providing these observations before assigning the same task to an agent.
+
+Hand over the minimal project, exact commands, resulting artifacts and unresolved checks. If browser input works but native export is untested, keep that boundary in the project brief. Extend this working path before adding more systems; the [production work orders](../production/work-orders.md) provide deeper acceptance contracts.
 
 ## Source status
 
@@ -32,4 +51,4 @@ A targeted 2026-10-19 check of Unity 2D Tech Demos at 6593d544 separates its [RE
 - **Three.js flexibility leaves system design decisions to the project.** A rendering library can be combined with physics, navigation, ECS, input, audio, and save systems. Identify who provides each system. R3F organizes React scenes; it does not choose the simulation architecture.
 - **Preserve reproduction conditions for community experience.** Author tutorials explain causes and engineering tradeoffs. Record versions, test scenes, hardware, source code, and failure cases; one demo or frame rate is not a capability ranking.
 
-MCP integrations and practical agent skills live in `agents.json`. Game AI entries maintain Unity agent plugin and CLI lifecycle information, avoiding duplicate counts in engine infrastructure.
+Choose the coding loop in [agents and integrations](./agents.md), then inspect the [interface evidence](../evaluation/agent-interfaces.md) for editor and runtime boundaries.

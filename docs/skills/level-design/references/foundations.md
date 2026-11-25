@@ -13,6 +13,7 @@ A useful process can begin with an interesting situation, jump into a prototype,
 ## 2. Minimal pre-production
 
 Answer:
+
 - What does the player currently know, possess, and know how to do?
 - What should they do, understand, or feel here?
 - Which playable spatial relationship expresses that intent?
@@ -23,6 +24,25 @@ Pillars must support decisions. “Large, exciting, immersive” cannot decide w
 
 Write enough to coordinate the next step. Add ownership, dependencies, and acceptance criteria when needed; a short solo exercise does not require a large design document.
 
+### From an experience goal to tomorrow's build
+
+This filled brief is an adaptation example for a small first-person relay station. It specifies a test to run, not a result already obtained.
+
+| Decision                 | Working brief                                                                                                   |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| Existing capability      | Walk, look, and use an object; reuse the project's current controller                                           |
+| Player situation         | Arrive at an unpowered exit, find a battery in a side gallery, then return                                      |
+| Experience goal          | Use the side gallery to solve the power problem while remembering where to return                               |
+| Spatial proposal         | A gallery leads to the battery; a latch near it opens a shorter route back to the exit                          |
+| Fixed for the next build | Controller, objective wording, battery interaction, and start position                                          |
+| Uncertain                | Whether the gallery entrance reads as a passage from the junction                                               |
+| Next build               | Junction, exit socket, gallery entrance, battery, and return latch in cheap geometry                            |
+| Evidence to collect      | First route chosen after seeing the empty socket, attempted interactions, assistance, and completion or timeout |
+
+The level designer owns the connection and first view; the gameplay programmer owns battery and latch state. If one person or an agent handles both, keep those responsibilities separate in the brief. A missing interaction should be fixed before interpreting a failure as poor wayfinding.
+
+Make the scope cut explicit: keep the side route and return relationship, substitute a static battery prop for a bespoke animation, and defer a moving train and voiced announcement. The train would introduce timing, collision, animation, and audio work without answering the current question. After the first walkthrough, decide whether to revise the entrance or proceed to an unfamiliar-player test; adding rooms is not the default next step.
+
 ## 3. Research relationships, not attractive surfaces
 
 ### Real-world reference
@@ -30,6 +50,7 @@ Write enough to coordinate the next step. Add ownership, dependencies, and accep
 Collect plans, structure, dimensions, materials, circulation, purpose, and evidence of use. A photograph often hides how places connect; add plans or multiple viewpoints.
 
 For a station, ask:
+
 - Who arrives, transfers, works, resupplies, and evacuates?
 - How are public, staff, service, and hazardous areas separated?
 - What becomes a landmark, overlook, bottleneck, loop, or alternate approach?
@@ -40,6 +61,7 @@ For a station, ask:
 Where possible, play, map, record, and inspect the level. A video suggests relationships but cannot establish control feel, exploration burden, or combat pressure.
 
 Separate:
+
 1. **Observation:** an enemy occupies a bridge; a side route returns to the entrance.
 2. **Interpretation:** the enemy may attract attention; the return may reinforce spatial memory.
 3. **Enabling rules:** camera, speed, damage, respawn, perception, and resources.
@@ -95,6 +117,7 @@ Pacing is an analytical lens, not a universal dramatic formula. Wandering, awkwa
 ## 6. Scope production cost, not only square footage
 
 Account for:
+
 - Spaces and traversal.
 - Unique mechanics, enemies, scripts, and interactions.
 - Assets, performances, audio, lighting, and optimization.
@@ -103,6 +126,7 @@ Account for:
 A **vertical slice** carries a representative portion through the necessary production disciplines. It exposes dependencies and costs; it is neither the first graybox by definition nor a promise of linear cost extrapolation.
 
 Distinguish:
+
 - **Must preserve:** the smallest version expressing the core relationship.
 - **Substitutable:** content that can use an existing system or asset.
 - **Optional/cuttable:** expensive novelty that does not support the goal.

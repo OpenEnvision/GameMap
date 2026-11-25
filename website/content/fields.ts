@@ -7,13 +7,19 @@ import type {
   ContentSection,
 } from "./models";
 import type { ResourceAccess } from "../src/types";
-import { categories, stageLabels, typeLabels } from "../src/types";
+import {
+  categories,
+  resourceCollections,
+  stageLabels,
+  typeLabels,
+} from "../src/types";
 import { url } from "./site";
 import { docLocale, docMessages } from "./doc-language";
 import taxonomy from "./taxonomy.json";
 import documentGenerators from "./generators.config.json";
 import type { ContentSources } from "./source-data";
-import { agentLabels, agentResourceKinds } from "../src/data/agentGameTypes";
+import { agentResourceKinds } from "../src/data/agentGameTypes";
+import { agentClientIds, agentClientLabels } from "./agent-presentation";
 import {
   testingKinds,
   testingUses,
@@ -137,6 +143,9 @@ const dimensions = taxonomy.dimensions;
 const categoryLabels = Object.fromEntries(
   categories.map((category) => [category.id, category.label]),
 );
+const collectionLabels = Object.fromEntries(
+  resourceCollections.map((collection) => [collection.id, collection.label]),
+);
 const linkKeys = { label: true, url: true };
 function linkedObjects(
   label: string,
@@ -222,6 +231,7 @@ export const resourceFields: FieldRules<ContentModels["resource"]> = {
   name: title,
   summary: lead,
   category: mapped("Category", categoryLabels),
+  collection: mapped("Collection", collectionLabels),
   type: mapped("Resource type", typeLabels),
   detail: text("Why it belongs here"),
   url: link("Project source"),
@@ -382,7 +392,12 @@ export const agentFields: FieldRules<ContentModels["agent"]> = {
   title,
   summary: lead,
   kind: mapped("Toolkit category", agentResourceKinds, "guidance"),
-  agents: labeledList("Attributed clients / models", agentLabels),
+  agents: {
+    present: (_value, record) =>
+      labeledList("Attributed clients / models", agentClientLabels).present(
+        agentClientIds(record),
+      ),
+  },
   engine: text("Engine / runtime"),
   sourceUrl: link("Primary source"),
   codeUrl: link("Code / instructions"),
@@ -399,10 +414,10 @@ export const agentFields: FieldRules<ContentModels["agent"]> = {
     present: (value) => [
       {
         type: "text",
-        label: "Source classification",
+        label: "Project provenance",
         value: value
-          ? "Publisher / maintainer source"
-          : "Third-party / community source",
+          ? "First-party project"
+          : "Independent / community project",
       },
     ],
   },
@@ -446,11 +461,16 @@ export const testingPackFields: FieldRules<ContentModels["testing-pack"]> = {
   check: text("Checkpoint"),
   testingIds: {
     section: "resources",
-    present: (ids) => [
+    present: (ids, _record, sources) => [
       {
         type: "links",
         label: "Testing resources",
-        items: (ids ?? []).map((id) => ({ label: id, url: url.testing(id) })),
+        items: (ids ?? []).map((id) => ({
+          label:
+            sources?.testingResources.find((resource) => resource.id === id)
+              ?.title || id,
+          url: url.testing(id),
+        })),
       },
     ],
   },
@@ -679,6 +699,19 @@ function factArray(
     },
   ];
 }
+/** Historical ledgers can retain free-form review scopes as well as codes. */
+const researchStatusText = (label: string, labels: Record<string, string>) => ({
+  section: "guidance" as const,
+  present: (value: unknown): BlockValue[] => {
+    const raw = scalar(value);
+    const readable = /^[a-z][a-z0-9]*(?:[_-][a-z0-9]+)+$/.test(raw)
+      ? raw
+          .replace(/[_-]/g, " ")
+          .replace(/^./, (character) => character.toUpperCase())
+      : raw;
+    return [{ type: "text", label, value: labels[raw] || readable }];
+  },
+});
 export const repositoryResearchFields: FieldRules<
   ContentModels["repository-research"]
 > = {
@@ -694,7 +727,36 @@ export const repositoryResearchFields: FieldRules<
     },
     "provenance",
   ),
-  inspection_scope: text("Inspection performed"),
+  inspection_scope: researchStatusText("Inspection performed", {
+    metadata_readme_reviewed: "Repository metadata and README inspected",
+    metadata_and_readme_reviewed: "Repository metadata and README inspected",
+    metadata_and_project_guide_reviewed:
+      "Repository metadata and project guide inspected",
+    nested_html_guidance_and_bounded_static_source_reviewed:
+      "Nested HTML guidance and selected source files inspected",
+    manifest_credits_html_guidance_and_bounded_static_source_reviewed:
+      "Manifest, credits, HTML guidance and selected source files inspected",
+    nested_manifests_and_bounded_static_source_reviewed:
+      "Nested manifests and selected source files inspected",
+    nested_manifest_html_guidance_and_bounded_static_source_reviewed:
+      "Nested manifest, HTML guidance and selected source files inspected",
+    manifest_in_app_guidance_and_bounded_static_source_reviewed:
+      "Manifest, in-app guidance and selected source files inspected",
+    html_controls_and_bounded_static_source_reviewed:
+      "HTML controls and selected source files inspected",
+    manifest_and_bounded_static_source_reviewed:
+      "Manifest and selected source files inspected",
+    html_guidance_requirements_and_bounded_static_source_reviewed:
+      "HTML guidance, requirements and selected source files inspected",
+    requested_unavailable_alternative_reviewed:
+      "Requested repository unavailable; a separate alternative was inspected",
+    unavailable_preserved:
+      "Requested repository unavailable; audit record retained",
+    unavailable_retained:
+      "Requested repository unavailable; audit record retained",
+    unavailable: "Requested repository unavailable; audit record retained",
+    placeholder_reviewed: "Placeholder repository inspected",
+  }),
   execution_validation: mapped(
     "Execution validation",
     {
@@ -702,8 +764,19 @@ export const repositoryResearchFields: FieldRules<
     },
     "provenance",
   ),
-  disposition: text("Research disposition"),
-  availability: text("Recorded availability"),
+  disposition: researchStatusText("Research disposition", {
+    "new-research": "New research record",
+    qualified: "Included with qualifications",
+    unavailable: "Requested repository unavailable",
+    existing: "Already covered in GameMap",
+  }),
+  availability: researchStatusText("Recorded availability", {
+    available: "Public repository available",
+    public_available: "Public repository available",
+    unavailable_404: "Repository not found during review (404)",
+    not_found_or_inaccessible:
+      "Repository not found or inaccessible during review",
+  }),
   canonical_repo: nullableText(
     "Current identity recorded in the ledger",
     "provenance",
@@ -735,7 +808,7 @@ export const repositoryResearchFields: FieldRules<
   license_note: text("License and rights boundary"),
   ai_note: text("AI attribution boundary"),
   limitations: list("Qualifications and limitations"),
-  checked_at: text("Source checked", "metadata"),
+  checked_at: text("Source checked", "provenance"),
   source_urls: {
     present: (
       value: ContentModels["repository-research"]["source_urls"],

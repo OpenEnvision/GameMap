@@ -138,7 +138,8 @@ export function loader({ request }: LoaderFunctionArgs) {
   const tool = (id: string): MarqueeTool | null => {
     const entry = resources.get(id);
     const identity = sources.identities[id as keyof typeof sources.identities];
-    if (!entry || !identity?.asset) return null;
+    if (!entry || entry.data.collection !== "tools" || !identity?.asset)
+      return null;
     return {
       id,
       name: entry.title,
@@ -181,7 +182,14 @@ export function loader({ request }: LoaderFunctionArgs) {
       { path: "/research/", label: "Repository research" },
       { path: "/agents/", label: "Agent toolkit" },
     ]
-      .map((stat) => ({ ...stat, count: counts[stat.path] }))
+      .map((stat) => ({
+        ...stat,
+        count: counts[stat.path],
+        path:
+          stat.path === "/resources/"
+            ? "/resources/?collection=all"
+            : stat.path,
+      }))
       .filter((stat) => stat.count > 0)
       .slice(0, 4),
     categoryCounts: Object.fromEntries(
@@ -347,7 +355,7 @@ export default function Home() {
       {/* 3. The wall of worlds: the whole collection behind one number. */}
       <GameWall games={data.wall} stats={data.wallStats} />
 
-      {/* 4. The map: four pillars and six directions. */}
+      {/* 4. Collection directories and resource tasks. */}
       <AtlasBento
         pillarCounts={data.pillarCounts}
         counts={data.counts}
@@ -364,7 +372,7 @@ export default function Home() {
               <em>{t("Start making.")}</em>
             </h2>
           </div>
-          <Link className="inline-link" to="/resources/">
+          <Link className="inline-link" to="/resources/?collection=all">
             {data.counts["/resources/"]
               ? t("Browse all {count} resources", {
                   count: data.counts["/resources/"],

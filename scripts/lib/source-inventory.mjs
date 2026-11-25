@@ -3,16 +3,21 @@ import { resolve, relative } from "node:path";
 import { root, walk, slash } from "./documents.mjs";
 
 export function assertKnownSourceFiles(files, contracts) {
-  const unknown = files.filter(
-    (file) =>
-      !Object.hasOwn(contracts, file) &&
-      !/^data\/segments\/[^/]+\.json$/.test(file),
-  );
+  const unknown = files.filter((file) => !Object.hasOwn(contracts, file));
   assert.deepEqual(
     unknown,
     [],
     `Unclassified data source. Declare its owner and exposure in website/content/sources.config.json: ${unknown.join(", ")}`,
   );
+  for (const file of files.filter((path) =>
+    path.startsWith("data/segments/"),
+  )) {
+    const kind = contracts[file]?.exports?.default?.kind;
+    assert.ok(
+      typeof kind === "string" && kind.trim(),
+      `${file}: declare exports.default.kind in website/content/sources.config.json`,
+    );
+  }
 }
 export async function sourceFiles() {
   return (

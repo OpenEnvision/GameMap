@@ -200,10 +200,19 @@ export async function readDocuments() {
 }
 
 /** One link policy for rendered documents and their independent HTML checks. */
+const appRoutePath =
+  /^\/(?:(?:docs|resources|examples|agents|testing|papers|research|paths|showcase|explore|threejs-games|account|submit|zh)(?:\/|$)|$)/;
+
 export function documentLinkResolver(documents, assetBase = "/") {
   return (url, sourceFile, image = false) => {
     if (!url || /^(?:[a-z][a-z\d+.-]*:|\/\/|#)/i.test(url)) return url;
     const [, path, suffix] = url.match(/^([^?#]*)(.*)$/);
+    if (
+      !image &&
+      extname(path).toLowerCase() !== ".md" &&
+      appRoutePath.test(path)
+    )
+      return path + suffix;
     const absolute = path.startsWith("/")
       ? resolve(root, "website/public", decodeURI(path).slice(1))
       : resolve(dirname(sourceFile), decodeURI(path));

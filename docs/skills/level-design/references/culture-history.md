@@ -7,6 +7,7 @@ Sources: [Level design as culture](https://book.leveldesignbook.com/culture/over
 The book does not treat level design only as a neutral bag of production tricks. Tools, labor, institutions, technology, communities, authorship, and access influence what counts as good work.
 
 Before applying an industrial convention, ask:
+
 - Who is the work for: an employer, a competitive community, friends, a classroom, or an exhibition?
 - What counts as success in that context?
 - Which tools and assets are actually accessible?
@@ -44,6 +45,7 @@ General-purpose engines expanded some opportunities while making the old game-sp
 ### Multiple futures, not one profession
 
 The source considers:
+
 - **Postlevel design:** systemic worlds, services, seasons, and large-scale coordination.
 - **Local level design:** context-specific community and social spaces.
 - **Retro renaissance:** renewed tools, craft, archives, and noncommercial communities.
@@ -57,6 +59,7 @@ Evaluate a workflow together with its production conditions. “Every designer s
 ## 3. Encounter history as changing assumptions
 
 The draft traces a broad sequence:
+
 - **Monster placement:** fast movement as defense, simple repeated enemy behaviors, composition and spatial arrangement.
 - **Early encounter design:** authored patrols, territories, knowledge models, battle lines, and explicit markup.
 - **Dynamic/systemic encounters:** coordinators, roles, local objectives, directors, and shifting battle relationships.
@@ -67,6 +70,7 @@ Examples include Doom, Quake, Half-Life, Thief, Halo, Gears of War, Hitman, BioS
 Do not treat this as progress from primitive to objectively superior design. Different systems support different experiences and production costs.
 
 Important distinctions:
+
 - An AI talk may explain behavior without explaining spatial encounter craft.
 - Enemy animation and audio help communicate intelligence; programming alone does not.
 - More health may let behavior unfold, but can also produce an unrewarding bullet sponge.
@@ -76,11 +80,13 @@ Important distinctions:
 ## 4. Zero-player and local level design
 
 The zero-player essay studies spaces that perform through the character with minimal or no player input:
+
 - TrackMania **Press Forward** and **Press Nothing** tracks.
 - Super Mario Maker **Auto-Mario** and held-input “Keep” courses.
 - Related automatic music and movement constructions.
 
 These works relocate skill:
+
 - From execution to construction and rehearsal.
 - From the player's choice to the designer's choreography.
 - From conventional challenge to anticipation, spectacle, surprise, and virtuosity.
@@ -92,6 +98,7 @@ Communities also debate labels, legitimacy, discoverability, cheating, and what 
 Do not reject a level merely because it violates “always offer meaningful choices.” First determine whether choice is its purpose.
 
 For an automatic level, investigate:
+
 - Required input contract and how it is communicated.
 - Initial conditions, physics/version sensitivity, and reset behavior.
 - Whether the intended choreography remains reliable.
@@ -100,9 +107,28 @@ For an automatic level, investigate:
 
 Use these questions to match the evaluation to an automatic level’s design goals. The source also discusses chance-based automatic courses.
 
+### The same completion event can mean different things
+
+Consider these two hypothetical briefs. This comparison is a GameMap evaluation exercise, extending the essay's distinction between execution and construction.
+
+| Decision                          | Exploration exercise                                                              | Held-input performance                                                            |
+| --------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Intended activity                 | Find a route, learn a landmark, return with new knowledge                         | Hold the declared input and watch the authored sequence unfold                    |
+| Record before testing             | Objective, available actions, starting knowledge, assistance allowed              | Exact input contract, start/reset state, game and physics version                 |
+| Useful evidence                   | Where the player searches, which route they choose, how they recognize the return | Whether the intended sequence occurs; where its rhythm, camera, or motion breaks  |
+| A relevant problem                | The required exit cannot be distinguished from sealed decoration                  | The advertised held input fails because a reset leaves a different starting state |
+| What completion alone cannot show | Whether navigation was understood rather than supplied by a guide                 | Whether the player demonstrated planning or reactive control                      |
+
+For an intended repeatable performance, begin with several resets under the same conditions and record every outcome, including interruptions. If chance is part of the work, describe the range of intended outcomes instead of forcing every run into one “correct” ending. Reliability and uncertainty are different design intentions, not higher and lower grades of legitimacy.
+
+**Example judgment:** if a held-input sequence completes but its finale happens outside the spectator's view, examine camera framing and timing. Adding more player decisions would change the brief rather than fix that presentation problem. Conversely, calling an exploration exercise successful because an evaluator supplied the entire route would avoid its central task.
+
+An AI player completing an automatic course is not, by that result alone, evidence of game-playing reasoning. An AI-authored automatic course can still be evaluated for construction, communication, and choreography. Record who supplied the layout, scripts, assets, and final edits, then judge the work against its stated audience and purpose.
+
 ## 5. Architecture is more than drafting
 
 Borrowing architecture should include:
+
 - Use, occupation, public/private access, and social relationships.
 - Labor, maintenance, infrastructure, economics, and power.
 - Representation, style, memory, and material culture.

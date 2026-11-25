@@ -26,7 +26,12 @@ export function blockText(block: ContentBlock): string {
   }
 }
 export function searchableBlocks(entry: ContentEntry) {
-  return entry.blocks.filter((block) => block.section !== "metadata");
+  return entry.blocks.filter(
+    (block) =>
+      block.section !== "metadata" ||
+      (entry.kind === "resource" &&
+        ["category", "type", "collection"].includes(block.field)),
+  );
 }
 export function searchFields(entry: ContentEntry) {
   return [

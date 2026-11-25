@@ -16,7 +16,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import type { ContentEntry } from "../../content/models";
-import type { AccessKind } from "../../src/types";
+import { resourceRequirements } from "../../content/resource-requirements";
+import { resourceCollections, type AccessKind } from "../../src/types";
 import {
   dimensionGlyphs,
   shortStageLabels,
@@ -58,16 +59,24 @@ const accessLabels: Record<AccessKind, string> = {
   service: "Hosted service",
   unavailable: "Unavailable",
 };
+const requirementLabels = {
+  engine: "Engine / version",
+  environment: "Runtime / platform",
+  terms: "Access & license",
+} as const;
 
 export function ResourceCardInfo({
   entry,
   onTopic,
+  showCollection = false,
 }: {
   entry: ContentEntry<"resource">;
   onTopic: (topic: string) => void;
+  showCollection?: boolean;
 }) {
   const { t } = useSiteI18n();
   const resource = entry.data;
+  const requirements = resourceRequirements[resource.id];
   const TypeGlyph = typeGlyphs[resource.type];
   const TrackGlyph =
     resource.dimensions.length === 1
@@ -87,6 +96,14 @@ export function ResourceCardInfo({
   return (
     <div className="resource-tags resource-card-info">
       <div className="resource-facets">
+        {showCollection && (
+          <span className="resource-collection-badge">
+            {t(
+              resourceCollections.find(({ id }) => id === resource.collection)!
+                .label,
+            )}
+          </span>
+        )}
         <span>
           <TypeGlyph size={12} aria-hidden="true" />
           {t(typeLabels[resource.type])}
@@ -102,6 +119,21 @@ export function ResourceCardInfo({
                 .join(" / ")}
         </span>
       </div>
+      {requirements && (
+        <dl className="resource-requirements">
+          {Object.entries(requirementLabels).map(([key, label]) => {
+            const value = requirements[key as keyof typeof requirementLabels];
+            return (
+              value && (
+                <div key={key}>
+                  <dt>{t(label)}</dt>
+                  <dd>{t(value)}</dd>
+                </div>
+              )
+            );
+          })}
+        </dl>
+      )}
       <ul className="resource-stage-list" aria-label={t("Development stages")}>
         {resource.stages.map((stage) => {
           const Glyph = stageGlyphs[stage];
@@ -154,6 +186,7 @@ export function ResourceCardInfo({
             <dl className="resource-access-list">
               {access.map((item) => {
                 const Glyph = accessGlyphs[item.kind];
+                const note = t(item.note);
                 return (
                   <div key={item.section}>
                     <dt>
@@ -170,8 +203,8 @@ export function ResourceCardInfo({
                       ) : (
                         <strong>{t(item.label)}</strong>
                       )}
-                      <SourceLanguage english />
-                      <p lang="en">{item.note}</p>
+                      <SourceLanguage english={note === item.note} />
+                      <p lang={note === item.note ? "en" : undefined}>{note}</p>
                     </dd>
                   </div>
                 );

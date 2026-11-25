@@ -28,6 +28,7 @@
 - [编码智能体](ecosystem/agents.md)：模型、运行框架、技能包、MCP 与引擎桥接。
 - [引擎](ecosystem/engines.md)：游戏引擎、渲染库与内容工具。
 - [2D 与 3D 开发中的 AI](ecosystem/2d-3d-development.md)：规则生成、项目构建、场景编辑与评估。
+- [运行时 AI 与 NPC](ecosystem/runtime-npcs.md)：手工与模型驱动的行为、状态边界和对照测试。
 - [世界模型](ecosystem/world-models.md)：可执行、视频与引擎驱动的世界模型。
 
 **制作与工程**
@@ -36,10 +37,10 @@
 - [制作工具](production/tools.md)：动画、程序化内容、音频、渲染与验证工具。
 - [引擎操作](production/engine-operations.md)：完成信号、产物与恢复方法。
 - [生产工单](production/work-orders.md)：从资产创建到交付的任务模板。
+- [候选发布构建验收](production/release-readiness.md)：全新安装、平台检查、存档、性能和签收。
 - [工作室案例](production/studio-case-studies.md)：来自已发表工程记录的经验。
 - [原生工具操作](production/native-operations.md)：原生命令、文件与生命周期事件。
 - [调试](production/debugging.md)：与具体游戏状态关联的性能分析与诊断。
-- [覆盖与待解决问题](production/coverage-gaps.md)：各生产阶段已覆盖的内容与剩余工作。
 
 **资产与生成工具**
 
@@ -51,12 +52,15 @@
 - [视觉证据](assets/visual-evidence.md)：用截图、视频与操作记录证明改动。
 - [视觉反馈](assets/visual-feedback.md)：智能体应检查什么、何时再次检查。
 
-**验证与评估**
+**评估与复现**
 
 - [开发评估](evaluation/development-evaluation.md)：根据智能体的产出选择评估方法。
 - [基准复现](evaluation/benchmarks.md)：复现研究所需的代码、数据与运行框架。
 - [游戏状态](evaluation/gameplay-state.md)：存档、检查点、回放与持久效果。
-- [代理接口](evaluation/agent-interfaces.md)：智能体与游戏接口的权限、重置与验证。
+**GameMap 证据台账**
+
+- [代理接口来源核查](evaluation/agent-interfaces.md)：权限、重置和验证的来源证据。
+- [覆盖与待解决问题](production/coverage-gaps.md)：各生产阶段已覆盖的内容与剩余工作。
 - [核查记录](evaluation/review-coverage.md)：对目录描述与条款的更正。
 - [来源版本](evaluation/source-revisions.md)：文档所述行为背后的固定版本源文件。
 - [社区案例](evaluation/community-cases.md)：追溯到制作记录与源代码的社区游戏。
@@ -81,7 +85,7 @@
 
 - `reference/catalog.md`，来自 `data/segments/*.json`
 - `reference/testing-library.md` 和 `reference/logo-sources.md`，来自 `website/src/data/` 中的目录模块
-- `tutorials-and-demos.md`、`coding-agent-game-code.md` 和 `cadle-repositories.md`，是已迁移到网站“游戏案例”页面的目录留下的简短说明
+- `tutorials-and-demos.md`、`coding-agent-game-code.md` 和 `cadle-repositories.md`，是指向游戏案例或仓库研究的迁移说明
 
 ## 写作规范
 

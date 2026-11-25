@@ -1,3 +1,3 @@
-# How to use this resource library
+# Find the right reference for your game
 
-This document has moved to [How to use this resource library](./docs/guides/reading-guide.md).
+This document has moved to [Find the right reference for your game](./docs/guides/reading-guide.md).

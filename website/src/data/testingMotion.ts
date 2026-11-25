@@ -30,7 +30,7 @@ export const testingMotion: TestingResource[] = [
     limitations: 'The current creator page notes Unreal GLB imports require a version above 5. No local playback or retargeting was performed.', reviewed: '2026-10-18',
   },
   {
-    id: '100style', title: '100STYLE', kind: 'motion', uses: ['playing', 'pipeline'], dimensions: ['3d'],
+    id: '100style', title: '100STYLE', kind: 'motion', uses: ['pipeline'], dimensions: ['3d'],
     stack: 'BVH motion capture, 28-bone skeleton, 60 fps',
     summary: 'Styled locomotion data for motion matching, gait diversity and cross-skeleton retargeting.',
     sourceUrl: 'https://www.ianxmason.com/100style/',
@@ -44,7 +44,7 @@ export const testingMotion: TestingResource[] = [
     limitations: 'All 100 styles were captured from the same actor, so held-out styles do not test generalization to unseen performers. BVH motion is not a ready-skinned game character. The Geno mesh is not included in the open recommendation; no local retargeting was performed.', reviewed: '2026-10-18',
   },
   {
-    id: 'cmu-mocap', title: 'CMU Motion Capture Database', kind: 'motion', uses: ['playing', 'pipeline'], dimensions: ['3d'],
+    id: 'cmu-mocap', title: 'CMU Motion Capture Database', kind: 'motion', uses: ['pipeline'], dimensions: ['3d'],
     stack: 'ASF skeletons and AMC motion files with subject-specific calibration',
     summary: 'A broad motion source for skeleton parsing, coordinate conversion and control or retargeting research.',
     sourceUrl: 'https://mocap.cs.cmu.edu/',
@@ -72,7 +72,7 @@ export const testingMotion: TestingResource[] = [
     limitations: 'Not a generally redistributable commercial animation pack. No dataset download, baseline run or local import was performed.', reviewed: '2026-10-18',
   },
   {
-    id: 'amass', title: 'AMASS', kind: 'motion', uses: ['playing', 'pipeline'], dimensions: ['3d'],
+    id: 'amass', title: 'AMASS', kind: 'motion', uses: ['pipeline'], dimensions: ['3d'],
     stack: 'Multiple mocap collections unified as parametric human motion',
     summary: 'Research-scale human motion for pose pipelines and motion models in a common parameter space.',
     sourceUrl: 'https://amass.is.tue.mpg.de/',

@@ -1,6 +1,12 @@
 # Production work orders: artifacts, recovery, and acceptance
 
-Use these work-order templates to connect asset creation, import, build, testing, and delivery. Each template defines the inputs, expected artifacts, completion checks, failure handling, and evidence to collect when implementing it.
+Use a work order when a change crosses an ownership boundary: a published prop reaches a level, an animation reaches a controller, or a patch reaches an installed game. Name what the receiver needs to change and what must survive. The templates below connect those decisions to inputs, artifacts, completion checks, recovery and delivery evidence.
+
+Before issuing an asset update, ask what “update” means in this project. Importing a new FBX, changing the mesh used by placed actors and rebuilding a complete layout are different jobs. A designer's hand-placed encounter must not become disposable merely because a pipeline tool owns the imported files.
+
+The inspected AYON Unreal snapshot shows why this distinction matters: its [static-mesh loader](https://github.com/ynput/ayon-unreal/blob/43b4a800a52289dd0bae19b1345889a835766bb7/client/ayon_unreal/plugins/load/load_staticmesh_fbx.py#L206-L251) updates imported asset/container information without retargeting placed actors, while its separate [layout update](https://github.com/ynput/ayon-unreal/blob/43b4a800a52289dd0bae19b1345889a835766bb7/client/ayon_unreal/plugins/load/load_layout.py#L369-L447) enumerates and destroys actors before rebuilding. These are the two source paths examined here; choose the intended ownership policy before adapting either one.
+
+For the actual ticket, have the technical artist list the published version/representation and files; have the level owner identify consuming actors, transforms and manual overrides that must survive. The integrator should state whether the job imports a candidate asset, replaces specific references or regenerates a pipeline-owned layout. Save the previous consuming scene and attach the intended membership/reference change. If nobody can identify which placed objects are owned by the layout, return that mapping to the pipeline owner before running the update. A new version record alone cannot close a ticket whose requested encounter is still using the previous mesh.
 
 ## Common execution contract
 

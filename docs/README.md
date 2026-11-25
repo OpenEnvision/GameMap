@@ -29,6 +29,7 @@ Guides, research dossiers, and reference pages for building games with AI. The w
 - [Coding agents](ecosystem/agents.md): models, harnesses, skills, MCP, and engine bridges.
 - [Engines](ecosystem/engines.md): game engines, rendering libraries, and content tools.
 - [AI for 2D and 3D](ecosystem/2d-3d-development.md): rule generation, project construction, scene editing, and evaluation.
+- [Runtime AI and NPCs](ecosystem/runtime-npcs.md): authored and model-driven behavior, game-state boundaries, and fair comparisons.
 - [World models](ecosystem/world-models.md): executable, video, and engine-driven world models.
 
 **Production**
@@ -37,10 +38,10 @@ Guides, research dossiers, and reference pages for building games with AI. The w
 - [Tools](production/tools.md): animation, procedural content, audio, rendering, and validation tools.
 - [Engine operations](production/engine-operations.md): completion signals, artifacts, and recovery.
 - [Work orders](production/work-orders.md): templates from asset creation to delivery.
+- [Release candidate checks](production/release-readiness.md): clean install, platform checks, saves, performance, and sign-off.
 - [Studio case studies](production/studio-case-studies.md): lessons from published engineering accounts.
 - [Native operations](production/native-operations.md): native commands, files, and lifecycle events.
 - [Debugging](production/debugging.md): profilers and diagnostics tied to a game state.
-- [Coverage gaps](production/coverage-gaps.md): what each production stage covers and what remains.
 
 **Assets**
 
@@ -52,12 +53,15 @@ Guides, research dossiers, and reference pages for building games with AI. The w
 - [Visual evidence](assets/visual-evidence.md): screenshots, video, and traces as evidence of change.
 - [Visual feedback](assets/visual-feedback.md): what an agent should inspect and when to check again.
 
-**Evaluation**
+**Evaluation and reproducibility**
 
 - [Development evaluation](evaluation/development-evaluation.md): choose an evaluation for what the agent produces.
 - [Benchmarks](evaluation/benchmarks.md): code, data, and harnesses needed to reproduce studies.
 - [Gameplay state](evaluation/gameplay-state.md): saves, checkpoints, replays, and durable effects.
-- [Agent interfaces](evaluation/agent-interfaces.md): permissions, resets, and verification for agent-game interfaces.
+**GameMap evidence records**
+
+- [Agent interface source checks](evaluation/agent-interfaces.md): source evidence on permissions, resets, and verification.
+- [Coverage gaps](production/coverage-gaps.md): what each production stage covers and what remains.
 - [Review coverage](evaluation/review-coverage.md): corrections to catalog descriptions and terms.
 - [Source revisions](evaluation/source-revisions.md): pinned source files behind documented behavior.
 - [Community cases](evaluation/community-cases.md): community games traced to build notes and source.
@@ -82,7 +86,7 @@ Do not edit these files by hand. They are rendered from structured data by the g
 
 - `reference/catalog.md`, from `data/segments/*.json`
 - `reference/testing-library.md` and `reference/logo-sources.md`, from the catalog modules in `website/src/data/`
-- `tutorials-and-demos.md`, `coding-agent-game-code.md`, and `cadle-repositories.md`, short notices for catalogs that moved to the website's Game examples page
+- `tutorials-and-demos.md`, `coding-agent-game-code.md`, and `cadle-repositories.md`, short notices pointing to Game examples or Repository research
 
 ## Writing conventions
 

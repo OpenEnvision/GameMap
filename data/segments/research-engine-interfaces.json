@@ -4,6 +4,7 @@
     "name": "Unreal Engine · Remote Control API",
     "category": "engines",
     "type": "docs",
+    "collection": "reference",
     "summary": "Exposes reflected editor properties and functions over HTTP for external tooling.",
     "detail": "Remote Control provides a native engine integration surface distinct from a community MCP bridge. Property writes can request editor transactions and change notifications, but an acknowledged mutation does not establish package-save completion. The rolling Epic guide labels this feature Beta and disables it by default in packaged builds and -game. Enable the appropriate plugin, restrict network exposure, and qualify editor versus packaged-runtime access separately.",
     "url": "https://dev.epicgames.com/documentation/unreal-engine/remote-control-for-unreal-engine",
@@ -32,8 +33,9 @@
   {
     "id": "unreal-gauntlet",
     "name": "Unreal Engine · Gauntlet",
-    "category": "production",
+    "category": "testing",
     "type": "docs",
+    "collection": "learning",
     "summary": "Orchestrates game test sessions with multiple processes, roles, devices, and collected logs.",
     "detail": "Gauntlet consumes prepared cooked builds and launches configured game roles through AutomationTool. Game-specific test nodes define assertions and terminal outcomes; launching a client and server alone does not establish scenario success. Build production, device availability, process cleanup, and parallel-session port allocation remain separate responsibilities.",
     "url": "https://dev.epicgames.com/documentation/unreal-engine/gauntlet-automation-framework-overview-in-unreal-engine?lang=en-US",
@@ -58,6 +60,7 @@
     "name": "Unity · Addressables Build and Loading APIs",
     "category": "engines",
     "type": "docs",
+    "collection": "reference",
     "summary": "Builds addressable content from explicit profiles and loads assets through asynchronous handles.",
     "detail": "The checked Addressables 1.21 documentation separates content builds from executable builds. Build settings, active profile, builder, and content-state file affect outputs. Runtime loading returns a handle whose status and result must be checked and later released. A key matching several assets can select only the first; preserve dependency and cache provenance.",
     "url": "https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/build-scripting-start-build.html",
@@ -77,8 +80,7 @@
     "stages": [
       "assets",
       "code",
-      "ship",
-      "runtime"
+      "ship"
     ],
     "dimensions": [
       "2d",
@@ -89,8 +91,9 @@
   {
     "id": "windows-ui-automation",
     "name": "Windows · UI Automation and Input Semantics",
-    "category": "production",
+    "category": "agents",
     "type": "docs",
+    "collection": "reference",
     "summary": "Exposes provider-supported accessibility control patterns for inspecting and manipulating desktop editor controls.",
     "detail": "Provider support must be probed per control; no specific game editor is assumed accessible. UIA coordinates are physical pixels, while absolute mouse input uses normalized desktop coordinates. Bounding rectangles may contain occluded points, foreground activation can be refused, and input insertion does not prove application completion. Integrity restrictions must be respected.",
     "url": "https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview",

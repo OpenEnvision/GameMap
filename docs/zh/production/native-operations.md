@@ -1,6 +1,10 @@
 # 原生操作细节与生命周期边界
 
-查阅生产操作背后的原生命令、文件、生命周期事件和失败信号。实施工作单时，将这些细节与[引擎操作参考](engine-operations.md#animation-rendering-and-interchange)结合使用。
+自动化脚本报告按下了 Interact，游戏却可能根本没收到交互。同样的问题也会出现在烘焙与保存光照图之间，或停止音频事件与听完尾音之间。应按原生操作的真实生命周期决定等什么、收什么，以及失败交给谁；同时参照[引擎操作参考](engine-operations.md#animation-rendering-and-interchange)。
+
+Godot 菜单能响应、玩家交互却没反应时，先看控制器怎样读取输入，再决定改不改它。[Godot 4.5 Input 参考](https://docs.godotengine.org/en/4.5/classes/class_input.html#class-input-method-action-press)说明，`action_press()` 改变轮询状态，却不调用 `Node._input()`；`parse_input_event()` 则进入事件路径。两条路径覆盖的控制器实现不同，测试端选错路径时，还不能证明玩法有缺陷。
+
+让自动化负责人提供注入动作和目标视口，玩法程序员说明应由哪个处理函数接收，以及 GUI 能否消费事件。沿原始送达、目标处理函数、世界状态变化逐步核对，再决定修注入、焦点/路由还是玩法。没有响应不能直接变成连续重发交互：第一条命令可能仍在排队，重复购买或拾取可能再产生一次效果。下方输入章节说明了消除这种不确定性所需的缓冲、更新和重置边界。
 
 ## 如何理解生命周期限制
 

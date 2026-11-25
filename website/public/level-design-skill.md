@@ -1,3 +1,3 @@
-# Level design skill
+# Graybox a route and watch someone play it
 
-This document has moved to [Level design skill](./docs/guides/level-design.md).
+This document has moved to [Graybox a route and watch someone play it](./docs/guides/level-design.md).

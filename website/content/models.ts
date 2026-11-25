@@ -36,7 +36,7 @@ export const contentKinds = {
     plural: "Resources",
     page: "resources",
     owner: "database",
-    schemaVersion: 1,
+    schemaVersion: 2,
     validatorKey: "gamemap.resource",
   },
   example: {
@@ -143,7 +143,12 @@ type ListBlock = {
 type LinkBlock = {
   type: "links";
   label: string;
-  items: { label: string; url: string; note?: string }[];
+  items: {
+    label: string;
+    url: string;
+    note?: string;
+    noteLanguage?: "en" | "zh";
+  }[];
 };
 type ImageBlock = {
   type: "image";

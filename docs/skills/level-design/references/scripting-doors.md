@@ -7,6 +7,7 @@ Sources: [Scripting](https://book.leveldesignbook.com/process/scripting), [(stub
 **Level scripting** coordinates local events, interactions, objectives, enemies, and world changes. It may use code, visual graphs, entity connections, timelines, or editor properties.
 
 Begin with a readable behavior:
+
 - **Condition:** what makes something eligible?
 - **Event:** what causes an attempt?
 - **Action:** what changes?
@@ -34,16 +35,17 @@ Inspect available trigger types, interaction events, entity targeting, state sto
 
 This table is an adaptation for robust implementation:
 
-| State | Entry condition | Behavior | Exit condition | Re-entry/save behavior |
-| --- | --- | --- | --- | --- |
-| Available | Preconditions satisfied | Advertise interaction | Player activates | Restore availability |
-| Active | Activation accepted | Run encounter/event | Completion or failure | Restore or intentionally restart |
-| Completed | Required condition true | Open route / grant result | Usually persistent | Do not duplicate rewards/events |
-| Failed/interrupted | Defined exceptional condition | Recover, reset, or report | Recovery rule | Avoid progress loss or softlock |
+| State              | Entry condition               | Behavior                  | Exit condition        | Re-entry/save behavior           |
+| ------------------ | ----------------------------- | ------------------------- | --------------------- | -------------------------------- |
+| Available          | Preconditions satisfied       | Advertise interaction     | Player activates      | Restore availability             |
+| Active             | Activation accepted           | Run encounter/event       | Completion or failure | Restore or intentionally restart |
+| Completed          | Required condition true       | Open route / grant result | Usually persistent    | Do not duplicate rewards/events  |
+| Failed/interrupted | Defined exceptional condition | Recover, reset, or report | Recovery rule         | Avoid progress loss or softlock  |
 
 Use only the states the behavior needs. A decorative light switch does not require an encounter framework.
 
 Distinguish:
+
 - A trigger firing from an action completing.
 - An event occurring once from a state remaining true.
 - A delay from a condition that might never become true.
@@ -53,6 +55,7 @@ Distinguish:
 ## 4. Triggers and encounter sequencing
 
 Test:
+
 - Entering, leaving, and re-entering.
 - Crossing at high speed or from an unexpected direction.
 - Activating twice, including during transitions.
@@ -77,6 +80,7 @@ A visible route can be mechanically blocked. A valid navigation mesh can still l
 Because the book's navigation page is incomplete, use the target engine's documentation for actual APIs, agent settings, dynamic updates, links, and debugging.
 
 Practical checks:
+
 - Correct agent dimensions and clearance.
 - Stairs, slopes, narrow gaps, drops, and special traversal.
 - Door transitions and dynamically blocked routes.
@@ -92,16 +96,19 @@ A door intersects geometry, collision, animation, audio, input, AI, navigation, 
 ### Door brief
 
 **Purpose**
+
 - Gate progression, partition visibility, support stealth, punctuate pacing, or provide ordinary circulation?
 - Is a working door necessary, or would an opening serve better?
 
 **Interaction**
+
 - Automatic, proximity, button, use action, key, or scripted?
 - From either side?
 - What tells the player it is usable, locked, or permanently decorative?
 - What happens if interaction repeats during motion?
 
 **Movement and collision**
+
 - Swing, slide, rotate, break, or disappear?
 - Which way does it open?
 - Can it push, trap, obstruct, or injure actors?
@@ -109,11 +116,13 @@ A door intersects geometry, collision, animation, audio, input, AI, navigation, 
 - Does the camera or carried object collide?
 
 **Other actors**
+
 - Can enemies open, close, block, break, or follow through?
 - What happens to their navigation during motion?
 - Can a companion become stranded?
 
 **State**
+
 - Separate locked/unlocked from open/closed and moving/stopped.
 - Define destroyed, jammed, or disabled states only if supported.
 - Specify respawn, save/load, and global quest changes.
@@ -121,13 +130,48 @@ A door intersects geometry, collision, animation, audio, input, AI, navigation, 
 
 ### Concrete failure trace
 
-A quest locks all doors, then unlocks them all at completion. Previously locked doors are now unintentionally open because the script restored a blanket condition rather than each door's prior state.
+A quest locks all doors, then unlocks them all at completion. Previously locked doors are now unintentionally unlocked because the script applied a blanket condition rather than preserving each door's underlying lock state. Unlocking permits an opening action; it does not necessarily move the door or make the route traversable.
 
 The source uses a Witcher 3 incident to illustrate this dependency. The general lesson is to distinguish a temporary override from the underlying state, and test restoration rather than assuming it.
+
+### Keep a temporary quest lock separate
+
+This adapted state example uses one temporary quest override. It is pseudocode for a behavior specification, not an engine API.
+
+```text
+is_locked():
+  return base_locked or quest_lock
+
+begin_quest():
+  quest_lock = true
+
+finish_quest():
+  quest_lock = false
+
+on_valid_key():
+  base_locked = false
+
+use():
+  if is_locked(): show_locked_feedback(); return
+  request_open()
+```
+
+Do not copy the effective lock back into the base state. A legitimate key interaction can change the base state while the quest override remains active; removing that override should reveal the current base state, not restore an outdated snapshot. If several systems can override a door, track their ownership separately before allowing one completion event to remove another system's lock.
+
+| Door fixture            | Base lock before quest | Aperture before quest | After removing only the quest lock                    |
+| ----------------------- | ---------------------- | --------------------- | ----------------------------------------------------- |
+| A: ordinary passage     | Unlocked               | Closed                | Unlocked, still closed until an opening action        |
+| B: key-required room    | Locked                 | Closed                | Still locked; quest completion did not supply its key |
+| C: already-open passage | Unlocked               | Open                  | Still open; locking alone did not close it            |
+
+Door C exposes a separate design requirement: if the quest must seal the route, request closure and define obstruction handling as well as locking. Confirm collision and, where used, AI navigation after the transition; a lock flag or completed animation is insufficient.
+
+Save while the override is active, reload, and finish the quest. Check A, B, and C against the table. Repeat B with a valid key applied during the quest: it should remain locked by the override until quest completion, then be unlocked. Reload again after completion and verify that interaction does not repeat a reward or replay the quest. Record lock, aperture/motion, collision, and route availability separately so the failure identifies the layer that broke.
 
 ## 7. Validation matrix
 
 For any consequential scripted object, cover relevant combinations:
+
 - Initial state and after completion.
 - Normal interaction and repeated interaction.
 - Approaches from every legal side.

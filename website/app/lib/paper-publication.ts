@@ -133,7 +133,7 @@ const bibliography = [
   /\bpages?\s+\d+(?::\d+)?(?:\s*[–—-]\s*\d+(?::\d+)?)?/gi,
   /\b\d+\(\d+\):\d+\s*[–—-]\s*\d+/g,
   /\bvolume\s+\d+(?:\s+of\s+(?:Proceedings of Machine Learning Research|Lecture Notes in Computer Science))?/gi,
-  /\bFirst posted in\s+\d{4}\b/gi,
+  /\b(?:First posted|First preprint published) in\s+\d{4}\b/gi,
   /\barXiv:\s*\d{4}\.\d{4,5}(?:v\d+)?/gi,
 ];
 const global = (pattern: RegExp) => new RegExp(pattern.source, "gi");

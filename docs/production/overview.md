@@ -1,6 +1,21 @@
 # Production research dossiers
 
-Find the interface contracts, asset checks, debugging methods, and service terms needed for a production task. Start with a stage below, then follow the relevant source notes and work-order templates.
+An asset can look right in the DCC application, pass the download check and still break the encounter that uses it. A replacement door may animate open while its obstacle still blocks the player. Start by finding which handoff failed; the pages below connect that failure to the relevant engine behavior, production account and work order.
+
+## Start with one asset handoff
+
+Take one door replacement on a copy of the receiving project. Keep the accepted scene as the baseline. The brief is small: change the door's appearance, preserve its intended size and orientation, and keep the existing switch-to-door interaction. Name the required mesh and material maps before anyone exports or generates a candidate. For a first prototype without an existing project, use the [small playable-game exercise](../guides/practical-guide.md).
+
+Unity's official Boss Room sample makes the integration problem concrete: [SwitchedDoor](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/1299ba4fc97d83b634e7d32a86c438ba668d7f9c/Assets/Scripts/Gameplay/GameplayObjects/SwitchedDoor.cs) keeps switch references, an Animator and a physics/navigation obstacle object; its server decides IsOpen, while the animation and obstacle have separate update paths. The Editor/Development ForceOpen override can bypass the switches. Use that separation to write the handoff brief below, then collect results in your receiving project. Riot's [May 2021 Runeterra production account](https://www.riotgames.com/en/news/legends-runeterra-cicd-pipeline) supplies a second useful practice: an Iteration build and a Merge Readiness build have different jobs. Label a candidate preview accordingly, so it cannot be mistaken for integration approval.
+
+| Owner and input | What must arrive with the handoff | Who decides, or takes the failure |
+| --- | --- | --- |
+| Artist or technical artist: source door, target dimensions/orientation and required maps | Editable source, candidate export and maps, export or generation-task identity, and the rights record for the intended use. Use an asymmetric feature to expose a flipped or rotated import. | The art owner approves the appearance and source export. Missing maps, unresolved use permissions or an incorrect source export go back here; retain the original candidate rather than quietly substituting another asset. |
+| Pipeline engineer: finished candidate archive and declared output-role profile | [Local archive-gate report](../assets/generation-delivery.md#run-a-local-archive-gate-before-engine-import), file hashes and a frozen manifest connecting those bytes to the task and project revision. | Missing roles, empty files or hash mismatches stop the handoff before import. The pipeline owner reconciles the copy against the retained task/export; a successful byte check says nothing yet about the door in the scene. |
+| Gameplay or engine programmer: copied target project, baseline prefab and import settings | Candidate instance with the original switch, animation and obstacle references accounted for; dependency mapping, effective import settings, native diagnostics, saved project and fresh-process reopen result. Follow the [export/import work order](work-orders.md#1-export-an-authored-asset-import-it-and-audit-dependencies). | This owner decides how the mesh enters the existing prefab. A scene-only scale error, missing reference, stale imported file or failed reopen stays with integration. Do not overwrite the accepted prefab while these are unresolved. |
+| Designer and QA: reopened scene, baseline interaction and the intended appearance | One recorded approach, switch activation, passage and release, with expected and observed state changes. For a Boss Room-style networked test, keep ForceOpen off and observe a host plus a separate client: door state, visible movement and blocking must each be checked. | The designer accepts the intended interaction; QA records the discrepancy against the same revision. An open-looking but blocked door returns to the gameplay owner. A changed design requirement returns to the designer, rather than becoming an untracked asset fix. |
+
+Put the handoff in one ticket with a linked directory containing source/export files, acquisition manifest, import settings, logs, recording, reopen result and the named decision owner. Give each retry its own candidate identity and keep the previous report. If only the engine instance is wrong, compare its import and prefab settings with the baseline before asking for another export; if the local bytes are wrong, resolve acquisition before opening the editor. Stop the handoff when a required file is missing, a reference cannot be resolved or the saved scene cannot be reopened. Send that exact failure and its artifacts to the owner above. The archive-gate page includes its local byte-check results; add your own scene and host/client results to the ticket before accepting the replacement or moving on to the next prop.
 
 ## Find the relevant evidence
 
@@ -28,7 +43,7 @@ For a concrete task, start with the [production-stage routes](coverage-gaps.md#p
 
 For first-hand studio production accounts and related research explanations, use the [studio-case reading routes](studio-case-studies.md#find-a-production-lesson): authored-world revisions, requested environmental direction cues, readable player construction and authored destruction, playable iteration and handoffs, streaming readiness, rendering budgets, creature development and character/traversal behavior, place histories, optional mission guidance and narrative/dialogue revisions, accessibility, test verdicts, contextual audio, failure reconstruction, authored behavior, combat readability and player experience. Each case retains its historical source context and failure/acceptance boundaries; proposed recipes are not runnable integrations.
 
-- [Cadle-like repository import](../cadle-repositories.md): the complete requested 212-candidate corpus plus its reference, with current repository identity, source scope, reuse limits and existing coverage
+- [Cadle-like repository import](../cadle-repositories.md): the imported candidate collection and its reference, with repository identity, source scope, reuse limits and existing coverage; follow the collection's current records rather than treating a historical count as its size
 
 - [Agent interface evidence](../evaluation/agent-interfaces.md): source-pinned execution permissions, write/undo boundaries and test-verdict limitations for selected existing bridges
 
@@ -58,7 +73,7 @@ For first-hand studio production accounts and related research explanations, use
 
 ## Maintenance review
 
-[Catalog review coverage](../evaluation/review-coverage.md) records this pass over all 109 existing cards, material corrections, source-read limits, and the remaining dossier audit scope.
+[Catalog review coverage](../evaluation/review-coverage.md) records a historical catalog-review snapshot, material corrections, source-read limits, and its remaining dossier audit scope. Its reviewed-card count is not the size of the current catalog.
 
 ## From a source to an acceptance test
 

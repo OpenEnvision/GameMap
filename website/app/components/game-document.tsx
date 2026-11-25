@@ -168,6 +168,7 @@ function GameDestination({
           {linkBlocks.flatMap((block, blockIndex) =>
             block.items.map((item, itemIndex) => {
               const host = hostLabel(item.url);
+              const note = item.note && t(item.note);
               return (
                 <li key={`${blockIndex}-${itemIndex}-${item.url}`}>
                   <div className="game-dest-link-row">
@@ -183,9 +184,16 @@ function GameDestination({
                       </span>
                     )}
                   </div>
-                  {item.note && (
-                    <p className="game-dest-note" lang="en">
-                      {item.note}
+                  {note && (
+                    <p
+                      className="game-dest-note"
+                      lang={
+                        item.noteLanguage === "zh" || note !== item.note
+                          ? undefined
+                          : "en"
+                      }
+                    >
+                      {note}
                     </p>
                   )}
                 </li>
@@ -387,24 +395,24 @@ export function GameDocument({
     entry.kind === "threejs-game"
       ? "play"
       : gameAccessIcons[entry.data.demo.kind];
-  const actions = [
-    ...(primaryVideo
-      ? [
-          {
-            href: "#record-media-stage",
-            label: t("Watch the recording"),
-            icon: "play" as const,
-          },
-        ]
-      : []),
-    ...heroActions(entry, t).map((action) =>
-      entry.kind !== "threejs-game" && action.href === entry.data.demo.url
-        ? { ...action, icon: demoIcon }
-        : action,
-    ),
-  ].slice(0, 3);
+  const actions = heroActions(entry, t).map((action) =>
+    entry.kind !== "threejs-game" && action.href === entry.data.demo.url
+      ? { ...action, icon: demoIcon }
+      : action,
+  );
+  if (primaryVideo) {
+    const playFirst =
+      entry.kind !== "threejs-game" &&
+      entry.data.demo.kind === "playable" &&
+      actions[0]?.href === entry.data.demo.url;
+    actions.splice(playFirst ? 1 : 0, 0, {
+      href: "#record-media-stage",
+      label: t("Watch the recording"),
+      icon: "play",
+    });
+  }
   const primaryAction = actions[0];
-  const secondaryActions = actions.slice(1);
+  const secondaryActions = actions.slice(1, 3);
 
   // Access summary; canonical data-content-field values live in destinations.
   const demoKindBadge = destinations
@@ -985,7 +993,7 @@ export function GameDocument({
                           <span className="game-resource-tile">
                             {info?.identity?.asset ? (
                               <ResourceIcon
-                                resource={info.resource}
+                                resourceId={info.resource.id}
                                 identity={info.identity}
                                 size={36}
                               />

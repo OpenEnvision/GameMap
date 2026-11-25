@@ -1,3 +1,3 @@
-# From resource map to runnable game
+# Make a one-room Godot prototype
 
-This document has moved to [From resource map to runnable game](./docs/guides/practical-guide.md).
+This document has moved to [Make a one-room Godot prototype](./docs/guides/practical-guide.md).

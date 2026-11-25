@@ -10,7 +10,6 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
-  BookOpen,
   Compass,
   Code2,
   Gamepad2,
@@ -22,6 +21,17 @@ import {
 import type { ContentEntry } from "../../content/models";
 import { searchableText } from "../../content/search";
 import { paperConferencePublication } from "../lib/paper-publication";
+import {
+  paperBrowserOptions,
+  normalizePaperFilters,
+  selectPaperEntries,
+  paperDiscoveryDescription,
+  paperResearchTypes,
+  paperTypeLabels,
+  paperScopeLabels,
+  paperReviewLabels,
+  type PaperBrowserOptions,
+} from "../../content/paper-browser";
 import { Link, SourceLanguage, useSiteI18n } from "../lib/i18n";
 import { pillars, type Pillar } from "../lib/pillars";
 import { seeded, useReducedMotion } from "../lib/motion";
@@ -51,20 +61,7 @@ const statusLabels: Record<string, string> = {
   "legacy-prototype": "Legacy prototype",
   "archived-prototype": "Archived prototype",
 };
-const referenceLabels: Record<string, string> = {
-  "conference-paper": "Conference paper",
-  "journal-paper": "Journal paper",
-  preprint: "Preprint",
-  survey: "Survey",
-  "technical-report": "Technical report",
-  blog: "Blog",
-  book: "Book",
-  "book-chapter": "Book chapter",
-  "benchmark-page": "Benchmark page",
-  documentation: "Documentation",
-  "product-page": "Product page",
-  repository: "Repository",
-};
+const referenceLabels = paperTypeLabels;
 /* ==========================================================================
    The index template family. Every collection index (tools, research, learn)
    opens with the same header band — pillar tabs, a display title, a lede and a
@@ -434,6 +431,7 @@ function OutsideLink({
 function PaperRow({ entry }: { entry: ContentEntry<"paper"> }) {
   const { t } = useSiteI18n();
   const paper = entry.data;
+  const description = paperDiscoveryDescription(entry.description);
   const conference = paperConferencePublication(paper);
   const repository =
     paper.access.repositories.find(
@@ -454,25 +452,29 @@ function PaperRow({ entry }: { entry: ContentEntry<"paper"> }) {
         )}
         {conference && conference.year !== paper.year && (
           <span className="catalog-publication-year">
-            {t("Publication year")}: {paper.year}
+            {t("Year")}: {paper.year}
           </span>
         )}
         <span>{t(referenceLabels[paper.referenceType])}</span>
+        <span className="catalog-artifact-review">
+          {t(paperReviewLabels[paper.access.reviewStatus])}
+        </span>
         <SourceLanguage english={entry.descriptionLanguage === "en"} />
       </div>
       <h2>
-        <Link to={entry.url}>
-          {entry.title}
-          <ArrowRight size={17} aria-hidden="true" />
-        </Link>
+        <Link to={entry.url}>{entry.title}</Link>
       </h2>
-      <p className="catalog-authors">{paper.authors}</p>
-      <p
-        className="catalog-record-summary"
-        lang={entry.descriptionLanguage === "en" ? "en" : undefined}
-      >
-        {entry.description}
+      <p className="catalog-authors" title={paper.authors}>
+        {paper.authors}
       </p>
+      {description && (
+        <p
+          className="catalog-record-summary"
+          lang={entry.descriptionLanguage === "en" ? "en" : undefined}
+        >
+          {description}
+        </p>
+      )}
       <div className="catalog-record-tags">
         <span className="catalog-topic">
           {t(
@@ -480,16 +482,21 @@ function PaperRow({ entry }: { entry: ContentEntry<"paper"> }) {
               paper.primaryRole,
           )}
         </span>
-        {paper.topics.slice(0, 2).map((topic) => (
-          <span key={topic}>{topic}</span>
-        ))}
+        {paper.topics
+          .filter((topic) => !/^Role:/i.test(topic))
+          .slice(0, 2)
+          .map((topic) => (
+            <span key={topic}>{topic}</span>
+          ))}
       </div>
       <div className="catalog-record-bottom">
         <span
           className={`catalog-source-status ${["open-source", "source-available"].includes(paper.access.codeStatus) ? "has-source" : ""}`}
         >
           <Code2 size={13} aria-hidden="true" />
-          {t(statusLabels[paper.access.codeStatus])}
+          {t("Code: {status}", {
+            status: t(statusLabels[paper.access.codeStatus]),
+          })}
         </span>
         <div className="catalog-record-actions">
           {repository && (
@@ -521,7 +528,13 @@ function PaperRow({ entry }: { entry: ContentEntry<"paper"> }) {
             </OutsideLink>
           )}
           <OutsideLink href={paper.pdfUrl || paper.url}>
-            {paper.pdfUrl ? "PDF" : t("Paper")}
+            {paper.pdfUrl
+              ? "PDF"
+              : t(
+                  paperResearchTypes.includes(paper.referenceType)
+                    ? "Paper"
+                    : "Source",
+                )}
           </OutsideLink>
         </div>
       </div>
@@ -588,38 +601,85 @@ export function TypedCollection({
   title,
   description,
   kind,
+  paperOptions,
+  paperSearch,
 }: {
   entries: CollectionEntry[];
   title: string;
   description: string;
   kind: "paper" | "threejs-game";
+  paperOptions?: PaperBrowserOptions;
+  paperSearch?: Record<string, string>;
 }) {
   const { t } = useSiteI18n();
   const [params, setParams, hydrated] = useClientQuery();
   const isPaper = kind === "paper";
-  const facets = useMemo(() => collectionFacets(entries), [entries]);
+  const paperEntries = useMemo(
+    () =>
+      entries.filter(
+        (entry): entry is ContentEntry<"paper"> => entry.kind === "paper",
+      ),
+    [entries],
+  );
+  const allPaperOptions = useMemo(
+    () =>
+      isPaper ? paperOptions || paperBrowserOptions(paperEntries) : undefined,
+    [isPaper, paperOptions, paperEntries],
+  );
+  const paperFilters = useMemo(
+    () =>
+      allPaperOptions
+        ? normalizePaperFilters(params, allPaperOptions)
+        : undefined,
+    [params, allPaperOptions],
+  );
+  const paperFacets = useMemo(
+    () =>
+      paperFilters
+        ? paperBrowserOptions(
+            paperEntries.filter(
+              (entry) =>
+                paperFilters.scope === "all" ||
+                paperResearchTypes.includes(entry.data.referenceType) ===
+                  (paperFilters.scope === "research"),
+            ),
+          )
+        : undefined,
+    [paperEntries, paperFilters?.scope],
+  );
+  const facets = useMemo(() => {
+    const base = collectionFacets(entries);
+    return allPaperOptions
+      ? {
+          ...base,
+          years: allPaperOptions.years.map(({ id }) => id),
+          statuses: allPaperOptions.statuses.map(({ id }) => id),
+        }
+      : base;
+  }, [entries, allPaperOptions]);
   const filters = useMemo(
-    () => collectionFilters(params, entries, kind),
-    [params, entries, kind],
+    () => ({ ...collectionFilters(params, entries, kind), ...paperFilters }),
+    [params, entries, kind, paperFilters],
   );
   const search = useMemo(
     () => new Map(entries.map((entry) => [entry.key, searchableText(entry)])),
     [entries],
   );
   const filtered = useMemo(
-    () => selectCollection(entries, filters, search),
-    [entries, filters, search],
+    () =>
+      paperFilters
+        ? selectPaperEntries(paperEntries, paperFilters, paperSearch)
+        : selectCollection(entries, filters, search),
+    [entries, filters, search, paperEntries, paperFilters, paperSearch],
   );
   const pagination = collectionPage(params.get("page"), filtered.length);
   // Keep every canonical record discoverable in static HTML and without JS.
   // After hydration, bound the visible collection to a readable 24-record page.
   const visible = hydrated
     ? filtered.slice(pagination.start - 1, pagination.end)
-    : filtered;
-  const survey = entries.find(
-    (entry): entry is ContentEntry<"paper"> =>
-      entry.kind === "paper" && entry.id === "paper-arxiv-2609-16679",
-  );
+    : isPaper
+      ? entries
+      : filtered;
   const genres = useMemo(
     () =>
       facets.genres
@@ -639,11 +699,7 @@ export function TypedCollection({
     ? paperAreas.map(([value, label]) => ({
         value,
         label,
-        count: entries.filter(
-          (entry) =>
-            entry.kind === "paper" &&
-            entry.data.roles.some((role) => role === value),
-        ).length,
+        count: paperFacets?.areas.find(({ id }) => id === value)?.count || 0,
       }))
     : genres.map((genre) => ({
         ...genre,
@@ -684,24 +740,100 @@ export function TypedCollection({
       ),
     ],
     ["project", filters.project ? "1" : "", t("Project page listed")],
+    ...(paperFilters
+      ? [
+          [
+            "scope",
+            paperFilters.scope === "research" ? "" : paperFilters.scope,
+            t(paperScopeLabels[paperFilters.scope]),
+          ],
+          [
+            "type",
+            paperFilters.type,
+            t(
+              paperTypeLabels[
+                paperFilters.type as keyof typeof paperTypeLabels
+              ] || paperFilters.type,
+            ),
+          ],
+          [
+            "review",
+            paperFilters.review,
+            t(
+              paperReviewLabels[
+                paperFilters.review as keyof typeof paperReviewLabels
+              ] || paperFilters.review,
+            ),
+          ],
+        ]
+      : []),
   ].filter(
     ([key, value]) =>
       value &&
-      value !== "all" &&
+      (value !== "all" || key === "scope") &&
       !(isPaper ? ["genre", "license"] : ["area", "year", "project"]).includes(
         key,
       ),
   );
+  const invalidPaperFilters = paperFilters
+    ? [
+        "scope",
+        "type",
+        "referenceType",
+        "area",
+        "year",
+        "status",
+        "review",
+        "demo",
+        "sort",
+      ].filter(
+        (key) =>
+          params.has(key) &&
+          params.get(key) !==
+            paperFilters[
+              (key === "referenceType"
+                ? "type"
+                : key) as keyof typeof paperFilters
+            ],
+      )
+    : [];
   const update = (key: string, value: string) =>
-    setParams((previous) => updateCollectionQuery(previous, { [key]: value }), {
-      replace: key !== "page",
-      preventScrollReset: true,
-    });
+    setParams(
+      (previous) => {
+        const next = updateCollectionQuery(previous, { [key]: value });
+        if (paperFilters) {
+          for (const invalid of invalidPaperFilters) next.delete(invalid);
+          if (key === "scope") {
+            next.set("scope", value);
+            next.delete("type");
+            next.delete("referenceType");
+          } else {
+            if (!next.has("scope")) next.set("scope", paperFilters.scope);
+            if (key === "type") next.delete("referenceType");
+            if (value && value !== "all") next.set(key, value);
+          }
+        }
+        return next;
+      },
+      {
+        replace: key !== "page",
+        preventScrollReset: true,
+      },
+    );
   const clear = () =>
-    setParams(clearCollectionQuery, {
-      replace: true,
-      preventScrollReset: true,
-    });
+    setParams(
+      (previous) => {
+        const next = clearCollectionQuery(previous);
+        if (isPaper)
+          for (const key of ["scope", "type", "referenceType", "review"])
+            next.delete(key);
+        return next;
+      },
+      {
+        replace: true,
+        preventScrollReset: true,
+      },
+    );
   const turnPage = (page: number) => {
     update("page", String(page));
     const summary = document.getElementById("collection-results");
@@ -725,7 +857,7 @@ export function TypedCollection({
       title={title}
       lede={description}
       count={entries.length}
-      countLabel={isPaper ? "research records" : "game records"}
+      countLabel={isPaper ? "indexed records" : "game records"}
     />
   );
   // An unpublished collection is not a search result: no toolbar, facets or
@@ -777,26 +909,24 @@ export function TypedCollection({
       <meta name="description" content={t(description)} />
       {hero}
       <div className="ix-wrap ix-catalog">
-        {survey && (
-          <Link className="catalog-survey" to={survey.url}>
-            <span className="catalog-survey-icon">
-              <BookOpen size={23} strokeWidth={1.5} aria-hidden="true" />
-            </span>
-            <div>
-              <span className="small-label">{t("Start with the survey")}</span>
-              <strong>{survey.title}</strong>
-              <span
-                className="catalog-survey-authors"
-                title={survey.data.authors}
+        {paperFilters && allPaperOptions && (
+          <div
+            className="paper-scope-tabs"
+            role="group"
+            aria-label={t("Content collection")}
+          >
+            {allPaperOptions.scopes.map(({ id, label, count }) => (
+              <button
+                type="button"
+                key={id}
+                aria-pressed={paperFilters.scope === id}
+                onClick={() => update("scope", id)}
               >
-                {survey.data.authors} · {survey.data.year}
-              </span>
-            </div>
-            <span className="catalog-survey-action">
-              {t("Read the overview")}
-              <ArrowUpRight size={16} aria-hidden="true" />
-            </span>
-          </Link>
+                <span>{t(label)}</span>
+                <span>{count}</span>
+              </button>
+            ))}
+          </div>
         )}
         <div className="catalog-browser">
           <aside
@@ -814,11 +944,25 @@ export function TypedCollection({
                 aria-pressed={selected === "all"}
                 onClick={() => update(isPaper ? "area" : "genre", "all")}
               >
-                <span>{t(isPaper ? "All papers" : "All games")}</span>
-                <span>{entries.length}</span>
+                <span>
+                  {t(
+                    paperFilters
+                      ? paperScopeLabels[paperFilters.scope]
+                      : "All games",
+                  )}
+                </span>
+                <span>
+                  {isPaper
+                    ? paperFacets?.scopes.find(({ id }) => id === "all")
+                        ?.count || 0
+                    : entries.length}
+                </span>
               </button>
               {categories
-                .filter((category) => category.count > 0)
+                .filter(
+                  (category) =>
+                    category.count > 0 || category.value === selected,
+                )
                 .map((category, index) => (
                   <button
                     key={category.value}
@@ -849,7 +993,7 @@ export function TypedCollection({
                 }
               >
                 <option value="all">
-                  {t(isPaper ? "All papers" : "All games")}
+                  {t(isPaper ? "All research areas" : "All games")}
                 </option>
                 {(isPaper
                   ? categories
@@ -881,9 +1025,12 @@ export function TypedCollection({
               </label>
               {isPaper ? (
                 <label className="collection-select">
-                  <span className="sr-only">{t("Publication year")}</span>
+                  <span className="sr-only">{t("Year")}</span>
                   <select
                     value={filters.year}
+                    title={t(
+                      "Year recorded for this entry; preprint and formal publication dates may differ.",
+                    )}
                     onChange={(event) => update("year", event.target.value)}
                   >
                     <option value="all">{t("All years")}</option>
@@ -917,8 +1064,8 @@ export function TypedCollection({
                 >
                   {isPaper && (
                     <>
-                      <option value="recent">{t("Newest first")}</option>
-                      <option value="oldest">{t("Oldest first")}</option>
+                      <option value="recent">{t("Newest year first")}</option>
+                      <option value="oldest">{t("Oldest year first")}</option>
                       <option value="practical">
                         {t("Demo & source links first")}
                       </option>
@@ -933,6 +1080,25 @@ export function TypedCollection({
                 </select>
               </label>
             </div>
+            {paperFilters && paperFacets && (
+              <div className="paper-type-filter">
+                <label htmlFor="paper-reference-type">
+                  {t("Reference type")}
+                </label>
+                <select
+                  id="paper-reference-type"
+                  value={paperFilters.type}
+                  onChange={(event) => update("type", event.target.value)}
+                >
+                  <option value="all">{t("All reference types")}</option>
+                  {paperFacets.types.map(({ id, label, count }) => (
+                    <option key={id} value={id}>
+                      {t(label)} · {count}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
             <details className="catalog-refinements">
               <summary>
                 <SlidersHorizontal size={14} aria-hidden="true" />
@@ -984,16 +1150,36 @@ export function TypedCollection({
                   </select>
                 </label>
                 {isPaper ? (
-                  <label className="catalog-checkbox">
-                    <input
-                      type="checkbox"
-                      checked={filters.project}
-                      onChange={(event) =>
-                        update("project", event.target.checked ? "1" : "")
-                      }
-                    />
-                    <span>{t("Project page listed")}</span>
-                  </label>
+                  <>
+                    <label>
+                      <span>{t("Artifact review")}</span>
+                      <select
+                        value={paperFilters?.review || "all"}
+                        onChange={(event) =>
+                          update("review", event.target.value)
+                        }
+                      >
+                        <option value="all">{t("All review states")}</option>
+                        {allPaperOptions?.reviews.map(
+                          ({ id, label, count }) => (
+                            <option key={id} value={id}>
+                              {t(label)} · {count}
+                            </option>
+                          ),
+                        )}
+                      </select>
+                    </label>
+                    <label className="catalog-checkbox">
+                      <input
+                        type="checkbox"
+                        checked={filters.project}
+                        onChange={(event) =>
+                          update("project", event.target.checked ? "1" : "")
+                        }
+                      />
+                      <span>{t("Project page listed")}</span>
+                    </label>
+                  </>
                 ) : (
                   <label>
                     <span>{t("License")}</span>
@@ -1023,7 +1209,14 @@ export function TypedCollection({
                 )}
               </p>
             </noscript>
-            {active.length > 0 && (
+            {invalidPaperFilters.length > 0 && (
+              <p className="paper-filter-notice" role="status">
+                {t("Unknown filters were ignored.")}
+              </p>
+            )}
+            {(active.length > 0 ||
+              invalidPaperFilters.length > 0 ||
+              (paperFilters && paperFilters.scope !== "research")) && (
               <div
                 className="catalog-active-filters"
                 aria-label={t("Active filters")}
@@ -1031,7 +1224,9 @@ export function TypedCollection({
                 {active.map(([key, , label]) => (
                   <button
                     key={key}
-                    onClick={() => update(key, "all")}
+                    onClick={() =>
+                      update(key, key === "scope" ? "research" : "all")
+                    }
                     aria-label={t("Remove filter: {filter}", { filter: label })}
                   >
                     {label}
@@ -1052,7 +1247,8 @@ export function TypedCollection({
                       count: filtered.length,
                     })
                   : t("{count} of {total} records", {
-                      count: filtered.length,
+                      count:
+                        !hydrated && isPaper ? entries.length : filtered.length,
                       total: entries.length,
                     })}
               </p>

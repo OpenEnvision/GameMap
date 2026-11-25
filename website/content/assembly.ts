@@ -1,4 +1,5 @@
 import { gameplayMediaSchema } from "./contracts";
+import { resourceForReading } from "./resource-compatibility";
 import type { ContentSources } from "./source-data";
 import type {
   ContentKind,
@@ -129,7 +130,7 @@ export function assembleSources(
         );
         break;
       case "resource":
-        sources.resources.push(data as ContentSources["resources"][number]);
+        sources.resources.push(resourceForReading(data));
         if (attachments.identity)
           sources.identities[id as keyof typeof sources.identities] =
             attachments.identity as never;

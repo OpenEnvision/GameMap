@@ -29,6 +29,8 @@ export default {
       "/404",
       "/search-index.json",
       "/zh/search-index.json",
+      "/docs-search-index.json",
+      "/zh/docs-search-index.json",
     ];
   },
 } satisfies Config;

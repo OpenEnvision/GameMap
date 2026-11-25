@@ -1,6 +1,8 @@
 # Source revision and implementation boundaries
 
-Use these pinned source files and model cards to locate the implementation behind a documented behavior. Follow the relevant dossier for additional references and version-specific integration requirements.
+When a Bevy headless example behaves differently from your build, open its pinned file below and compare that revision with the Bevy version in your dependency lockfile. Then look for the first changed prerequisite, such as the renderer setup or image readback path. The evidence column tells you whether the record came from reading a file or running an example.
+
+To cite the file you actually used, open it on GitHub, press `y`, and copy the resulting commit URL. Save the package version or build identifier separately when it differs from the source revision. [GitHub's permalink instructions](https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files)
 
 ## Revision index
 

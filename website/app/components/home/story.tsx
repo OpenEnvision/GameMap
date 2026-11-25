@@ -35,7 +35,7 @@ const chapters: readonly Chapter[] = [
     pillar: "learn",
     step: "Idea",
     title: "Find the smallest thing worth playing.",
-    body: "Field-tested guides and step-by-step paths turn a vague idea into a first playable loop, before you write a line of code.",
+    body: "Choose a starting point, wire a small playable loop, and test a level with worked exercises and concrete checks.",
   },
   {
     pillar: "tools",

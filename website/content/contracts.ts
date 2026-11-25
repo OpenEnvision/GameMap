@@ -68,8 +68,18 @@ const access = z.strictObject({
 const resourceV1 = z.strictObject({
   id: identifier,
   name: text,
-  category: z.enum(keys(taxonomy.categories)),
-  type: z.enum(keys(taxonomy.types)),
+  category: z.enum(["agents", "engines", "2d", "3d", "production", "world"]),
+  type: z.enum([
+    "agent",
+    "framework",
+    "skill",
+    "benchmark",
+    "paper",
+    "docs",
+    "tool",
+    "community",
+    "dataset",
+  ]),
   summary: text,
   detail: text,
   url: url.refine(
@@ -85,6 +95,11 @@ const resourceV1 = z.strictObject({
   access: z
     .strictObject({ tutorial: access, demo: access, source: access })
     .optional(),
+});
+const resourceV2 = resourceV1.extend({
+  category: z.enum(keys(taxonomy.categories)),
+  type: z.enum(keys(taxonomy.types)),
+  collection: z.enum(keys(taxonomy.collections)),
 });
 const exampleV1 = z.strictObject({
   id: identifier,
@@ -468,7 +483,7 @@ const testingPackV2 = testingPackV1.extend({
 export const payloadSchemas = {
   paper: paperV1,
   "threejs-game": threejsGameV1,
-  resource: resourceV1,
+  resource: resourceV2,
   example: exampleV5,
   foundation: exampleV1,
   agent: agentV1,
@@ -795,6 +810,7 @@ export const versionedContracts: Record<
   },
   resource: {
     1: handler("gamemap.resource", resourceV1, attachmentSchemasV1.resource),
+    2: handler("gamemap.resource", resourceV2, attachmentSchemasV1.resource),
   },
   example: {
     1: handler("gamemap.example", exampleV1, attachmentSchemasV1.example),

@@ -1,6 +1,6 @@
 # 网站开发与部署
 
-GameMap 使用 **Fumadocs、React Router、React、TypeScript 和 Vite** 。发布目标为 [GitHub Pages](https://openenvision.org/GameMap/)。生产环境仅包含静态 HTML、CSS、JavaScript、媒体及浏览器端搜索索引，并可选开启零服务器 Supabase 直连社区功能。
+指南在开发服务器的根路径能打开，发到子路径后仍可能丢截图或切错语言。编辑时用开发服务器，交付前按 Pages 的子路径构建，再打开静态预览。发布目标是 [GitHub Pages](https://openenvision.org/GameMap/)，提供 HTML、CSS、JavaScript、媒体和浏览器端搜索索引。部署时还可以开启 Supabase 直连社区功能。
 
 ## 本地开发
 
@@ -55,11 +55,13 @@ npm run preview
 
 预览命令从构建后的网站读取基础路径，并输出正确的 URL。它只提供静态文件，不带 SPA 回退，比开发服务器更接近 GitHub Pages。
 
+在预览里直接打开改过的文章地址，刷新一次，切换语言，再点正文里的本地资源或章节链接。如果只在静态预览出错，先查链接是否从站点根路径开始，或重复拼了 `/GameMap/`。如果从首页能点进去、直接刷新却打不开，到 `dist/` 查对应的文章目录和索引文件是否生成。
+
 ## Supabase 直连社区模式
 
 GameMap 支持通过 Supabase Cloud 在静态站点中直接启用零服务器社区互动（邮箱/GitHub 登录、评分、评论、举报、截图投稿与浏览器端审核）。
 
-- 运行 `npm run community:direct-sql -- --with-games --out .build/setup.sql`，基于 `supabase/direct-mode/enable-supabase-direct.sql` 生成可直接执行的 SQL。
+- 仓库中的 `supabase/direct-mode/enable-supabase-direct.sql` 用于扩展已有的 Supabase 模式。它需要先应用 `0001` 至 `0031` 号迁移，而当前工作副本没有这些迁移。对于已迁移的实例，运行 `npm run community:direct-sql -- --with-games --out .build/setup.sql` 生成扩展 SQL 和对现有游戏同步函数的调用。缺少前置迁移时，请使用默认静态构建。
 - 构建时设置 `VITE_GAMEMAP_COMMUNITY=1`、`VITE_GAMEMAP_COMMUNITY_MODE=supabase-direct`、`VITE_SUPABASE_URL` 与 `VITE_SUPABASE_PUBLISHABLE_KEY`，或在 GitHub Actions 仓库变量中配置 `GAMEMAP_SUPABASE_URL` 和 `GAMEMAP_SUPABASE_PUBLISHABLE_KEY`。
 
 ## GitHub Pages 设置

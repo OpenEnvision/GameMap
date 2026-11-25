@@ -229,7 +229,7 @@ ${link("Code / instructions", resource.codeUrl)} · ${link("Review evidence", re
 - **Material:** ${codeTypes[resource.codeType]}.
 - **Scope:** ${inline(resource.codeScope)}
 - **Limitations:** ${inline(resource.limitations)}
-- **Publisher:** ${inline(resource.publisher)} · ${resource.official ? "Official publisher source" : "Community / independent source"}.
+- **Publisher:** ${inline(resource.publisher)} · ${resource.official ? "First-party project" : "Independent / community project"}.
 
 `;
   }

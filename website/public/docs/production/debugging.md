@@ -1,6 +1,6 @@
 # Production debugging and evidence contracts
 
-Choose a profiler or diagnostic surface for the failure you need to isolate. Connect each measurement to a specific game state, capture, and repeatable comparison.
+A profiler capture is most useful when it answers a decision: which allocation should have been released, which shader invocation drew the wrong pixel, or which simulation step first diverged? Start from the failing gameplay route and choose the diagnostic surface that can identify its owner. Collecting every profiler at once adds noise and changes the workload.
 
 ## Choose the diagnostic evidence
 
@@ -12,6 +12,10 @@ Choose a profiler or diagnostic surface for the failure you need to isolate. Con
 | Contact or rollback failure | CVD recorded solver stages; Jolt contact/state APIs | Whole-game reset, animation semantics and cross-engine equivalence |
 | Unexpected build size or blurred streamed assets | UnityDataTool content analysis; Addressables reports; UE streaming counters | Runtime memory, project quality targets and complete-world readiness |
 | Memory grows across repeated edit/playtest cycles | [Allocation windows, snapshots and retained references](#memory-lifetime-across-repeated-production-cycles) | Intended cache lifetime, complete native/GPU ownership and an actual leak verdict |
+
+When memory grows after several level visits, keep the failing session alive long enough to identify what survives. Record which scene objects and asset handles the game intended to release on exit, and which caches are deliberately retained. A fresh process may clear the symptom while removing the evidence of the lifetime error.
+
+In Unity's [Memory Profiler References panel](https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.1/manual/references-component.html), follow Referenced By toward roots to investigate why an object is retained; References To only lists its direct outgoing references. Take that ownership chain to the code that acquired the handle or subscribed the event. If the retained data is an intended shared cache, discuss its budget and eviction policy instead of filing every positive delta as a leak. If ownership was meant to end at scene exit, the programmer should fix that release path and verify the same route, not force a collection merely to lower the chart. Use the memory-lifetime section below for capture conditions and comparison limits.
 
 ## Capture, shader and GPU diagnosis
 

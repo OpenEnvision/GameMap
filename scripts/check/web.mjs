@@ -38,6 +38,49 @@ function elements(node, out = []) {
   for (const child of node.childNodes || []) elements(child, out);
   return out;
 }
+function assertGameGallery(tree, path) {
+  const attribute = (node, name) =>
+    node.attrs?.find((item) => item.name === name)?.value;
+  const hasClass = (node, name) =>
+    attribute(node, "class")?.split(/\s+/).includes(name);
+  const grid = tree.find((node) => attribute(node, "id") === "game-examples");
+  assert.ok(grid, `${path} must render the game gallery`);
+  const cards = grid.childNodes.filter((node) =>
+    hasClass(node, "example-card"),
+  );
+  assert.ok(cards.length, `${path} must render game cards`);
+  assert.equal(
+    attribute(cards[0], "data-cover-kind"),
+    "gameplay",
+    `${path} must open with gameplay screenshots`,
+  );
+  let reachedTextCard = false;
+  for (const card of cards) {
+    const key = `${path} ${attribute(card, "data-content-ref")}`;
+    const parts = elements(card);
+    const poster = parts.find((node) => hasClass(node, "example-image"));
+    const cover = attribute(card, "data-cover-kind");
+    assert.ok(
+      !parts.some((node) => hasClass(node, "game-preview-unavailable")),
+      `${key} must not show a placeholder cover`,
+    );
+    if (cover) {
+      assert.equal(cover, "gameplay", `${key} must use a gameplay cover`);
+      assert.ok(!reachedTextCard, `${key} must appear before text-only cards`);
+      assert.ok(
+        poster?.childNodes.some((node) => node.tagName === "img"),
+        `${key} must show a real image`,
+      );
+    } else {
+      reachedTextCard = true;
+      assert.ok(!poster, `${key} must not reserve a cover area`);
+      assert.ok(
+        parts.some((node) => hasClass(node, "example-access-link")),
+        `${key} must still link to the game or project`,
+      );
+    }
+  }
+}
 
 for (const path of site.pages) {
   const file = resolve(root, path, "index.html");
@@ -49,6 +92,8 @@ for (const path of site.pages) {
     `One clear page title: ${path || "/"}`,
   );
   assertHistoricalDocumentEvidence(html, path);
+  if (path === "examples/" || path === "zh/examples/")
+    assertGameGallery(tree, path);
   if (site.docs.some((document) => path === `docs/${document.slug}/`)) {
     const body = tree.find((node) =>
       node.attrs.some(
@@ -102,6 +147,22 @@ assert.ok(
   JSON.stringify(search).includes("/docs/guides/practical-guide"),
   "Search must index the document content",
 );
+for (const locale of ["", "zh/"]) {
+  const full = locale
+    ? JSON.parse(
+        await readFile(resolve(root, locale, "search-index.json"), "utf8"),
+      )
+    : search;
+  const docs = JSON.parse(
+    await readFile(resolve(root, locale, "docs-search-index.json"), "utf8"),
+  );
+  assert.equal(docs.version, full.version);
+  assert.deepEqual(
+    docs.documents,
+    full.documents.filter((entry) => entry.kind === "document"),
+    `${locale || "en"}: documentation search must export the full set of indexed documents`,
+  );
+}
 await access(resolve(root, "404.html"));
 await access(resolve(root, ".nojekyll"));
 const notices = await readFile(

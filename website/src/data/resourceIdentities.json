@@ -1,4 +1,35 @@
 {
+  "game-ci": {
+    "organization": "GameCI contributors",
+    "kind": "creator",
+    "asset": "logos/gameci-a81a25dbfbf6.svg",
+    "sourceUrl": "https://github.com/game-ci/unity-builder",
+    "logoSourceUrl": "https://raw.githubusercontent.com/game-ci/documentation/main/static/assets/images/game-ci-brand-logo-wordmark-light.svg",
+    "notes": "GameCI is a community-maintained project. The Unity Builder repository credits its contributors and documents its independence from Unity Technologies. The artwork is the wordmark used in the GameCI documentation navigation.",
+    "sha256": "a81a25dbfbf621e2dc2eb9a7cdf07f0227658838678a803df030ef40248f294a",
+    "background": "light"
+  },
+  "gdunit4": {
+    "organization": "Godot GdUnit Labs / Mike Schulze",
+    "kind": "creator",
+    "asset": "logos/gdunit4-ed176306a061.png",
+    "sourceUrl": "https://github.com/godot-gdunit-labs/gdUnit4",
+    "logoSourceUrl": "https://raw.githubusercontent.com/godot-gdunit-labs/gdUnit4/v6.2.3/icon.png",
+    "notes": "The GdUnit4 repository and versioned MIT license credit Mike Schulze and the contributors to this independent Godot testing framework. The icon from release v6.2.3 matches the one published in the Godot Asset Library.",
+    "sha256": "ed176306a061dff6c2a97c76e572bbbdee50cb7f5a496ba10d6898721f198351",
+    "background": "light"
+  },
+  "unreal-insights": {
+    "organization": "Epic Games / Unreal Engine",
+    "kind": "brand",
+    "sourceUrl": "https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-insights-in-unreal-engine",
+    "logoSourceUrl": "https://github.com/EpicGames.png?size=256",
+    "notes": "Epic's Unreal Engine documentation describes Unreal Insights, the bundled executable, and the source build target. The reviewed Epic Games mark identifies the publisher. The product record links the applicable engine terms.",
+    "asset": "logos/epic-games-unreal-engine-e0295cf4837c.png",
+    "sha256": "22a06f67ab790bcef639f5618ae7396b7f0f7a943817ef01efc9c9cb15a0e056",
+    "background": "light",
+    "wide": false
+  },
   "level-design-book-skill": {
     "organization": "The Level Design Book · unofficial adaptation",
     "kind": "creator",
@@ -198,11 +229,11 @@
     "organization": "Siddharth Ahuja / ahujasid",
     "kind": "creator",
     "sourceUrl": "https://github.com/ahujasid/mcp-for-blender",
-    "logoSourceUrl": null,
-    "notes": "repository and linked project site confirm an independent community integration, explicitly not affiliated with Blender Foundation. No separate project or organization logo has been confirmed; do not replace it with the official Blender logo or a personal portrait.",
-    "asset": null,
-    "sha256": null,
-    "background": "light"
+    "logoSourceUrl": "https://www.mcp-for-blender.com/favicons/apple-touch-icon.png",
+    "notes": "The repository credits Siddharth Ahuja and states the community project is independent of the Blender Foundation. The project site's square mark matches the branding in the repository banner and identifies MCP for Blender.",
+    "asset": "logos/mcp-for-blender-b5ad1a118cfb.png",
+    "sha256": "b5ad1a118cfbf2051d6f44b347eb58ae2e9413b0597485d4fba5965b9db892a8",
+    "background": "dark"
   },
   "unreal-mcp": {
     "organization": "Chong-U / AI Oriented Dev",
@@ -732,7 +763,7 @@
     "kind": "institution",
     "sourceUrl": "https://enderfga.cn/SolarRenderer/",
     "logoSourceUrl": "https://www.comp.nus.edu.sg/wp-content/uploads/2023/09/cropped-favicon-180x180.png",
-    "notes": "First author Guian Fang is affiliation 1 (NUS). The author page also lists LIGHTSPEED, CUHK(SZ), SLAI, and HKUST(GZ). Use the complete vertical logo from the official NUS identity page, not an isolated shield: https://www.nus.edu.sg/identity/elements-of-the-nus-logo. The displayed shield is the official NUS website icon supplied by the School of Computing website; this does not assign the paper to that school.",
+    "notes": "First author Guian Fang is affiliation 1 (NUS). The author page also lists LIGHTSPEED, CUHK(SZ), SLAI, and HKUST(GZ). The bundled mark is the NUS website shield icon supplied by the School of Computing website. See https://www.nus.edu.sg/identity/elements-of-the-nus-logo for the complete institutional logo. The icon source does not assign the paper to that school.",
     "asset": "logos/national-university-of-singapore-208339f730ed.png",
     "sha256": "48642dfe9bd2f4488b4aa987c06358bcc54150846b341473d2aa4b47f79bfc51",
     "background": "light",
@@ -1251,6 +1282,39 @@
     "organization": "Valve / Steam",
     "sha256": "ec1098f56177d06dfbac75f8da5cc9b6249e789e42fc79992b48bfcbebf94851",
     "sourceUrl": "https://partner.steamgames.com/",
+    "wide": true
+  },
+  "gdevelop-ai-mcp": {
+    "organization": "GDevelop",
+    "kind": "brand",
+    "asset": "logos/gdevelop-e35f00ddab8e.svg",
+    "sourceUrl": "https://gdevelop.io/features",
+    "logoSourceUrl": "https://gdevelop.io/download/GDevelop_press_kit.zip",
+    "notes": "Original GDevelop G logo (purple background).svg from GDevelop_press_kit/GDevelop - Press Kit/Logos/ in the official media archive linked by the GDevelop website. The archive identifies GDevelop Ltd as the trademark holder. Original paths, colors and aspect ratio are retained.",
+    "sha256": "e35f00ddab8efab50ca0ede52841d6a6045d02a8ee0444431112030fe46f2e69",
+    "background": "dark",
+    "wide": false
+  },
+  "inworld-agent-runtime": {
+    "organization": "Inworld AI",
+    "kind": "brand",
+    "asset": "logos/inworld-ae122592c46b.svg",
+    "sourceUrl": "https://docs.inworld.ai/character-studio-deprecation",
+    "logoSourceUrl": "https://inworld.ai/",
+    "notes": "Original inline SVG from the official Inworld homepage header link labelled Inworld home, extracted without redrawing paths or changing colors or proportions. This is the Inworld corporate wordmark; the official migration guide identifies its Agent Runtime and engine SDKs.",
+    "sha256": "ae122592c46ba8d591bb1364f057ccfeadbfa250a40eebd0baef8578d612848a",
+    "background": "light",
+    "wide": true
+  },
+  "mixamo": {
+    "organization": "Adobe / Mixamo",
+    "kind": "brand",
+    "asset": "logos/adobe-20180a27b278.svg",
+    "sourceUrl": "https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html",
+    "logoSourceUrl": "https://helpx.adobe.com/content/dam/helpx/icons/adobe-logo.svg",
+    "notes": "Original Adobe wordmark displayed in the official Mixamo FAQ footer. It identifies Adobe as the service maintainer, rather than authorship of characters or animation assets. Original SVG paths, red color and aspect ratio are retained; only the XML declaration was removed.",
+    "sha256": "20180a27b278ae72e9c164904572e850d4feb438a3557012eff1e190b4d2420d",
+    "background": "light",
     "wide": true
   }
 }

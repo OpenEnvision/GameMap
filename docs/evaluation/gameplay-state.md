@@ -1,6 +1,12 @@
 # Gameplay state, narrative checkpoints, and durable effects
 
-Decide what must survive a save, checkpoint, replay, or retry. The interfaces below separate interpreter state, game-world state, database transactions, physics, and client observations so you can design recovery checks for each.
+The player hands a herb to an NPC, receives coins and opens a gate. Where can you save or interrupt that exchange without losing the herb or paying twice? Start with this small quest before adding generated dialogue or an agent that retries failed actions.
+
+Ink's [runtime guide](https://github.com/inkle/ink/blob/35c63e52f1d36060930dc7ed3cfba38ea224b528/Documentation/RunningYourInk.md#saving-and-loading) provides story-state save/load calls. Inventory, currency and gate changes belong to your game integration. Write down the before and committed outcomes for those three systems, and keep an identity for the reward operation so a resumed command can be recognized.
+
+For a recovery test, interrupt before item removal, between item removal and payment, and after payment but before the visible gate update. Reload each saved checkpoint twice. Require the declared before or committed outcome, with matching quest text, inventory, coins and gate state; reject partial exchanges and duplicate rewards. Reopening the dialogue alone is not enough to decide this result. If storage cannot commit the systems together, make the recovery policy explicit and test its replay path.
+
+The sections below show which state each runtime actually owns and where the game must coordinate saving, cancellation or retries. Use their version-specific limits when implementing the quest test; the scenario above defines the intended behavior, rather than promising that any library provides the whole transaction.
 
 ## Narrative checkpoints, cancellation and world-effect transactions
 

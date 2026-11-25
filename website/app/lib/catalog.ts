@@ -3,9 +3,11 @@ import {
   Bot,
   Box,
   Boxes,
+  Cable,
   ChartNoAxesCombined,
   ClipboardList,
   Code2,
+  CodeXml,
   Database,
   FileText,
   FlaskConical,
@@ -13,6 +15,7 @@ import {
   Joystick,
   Layers3,
   LayoutGrid,
+  ListChecks,
   Orbit,
   PackageCheck,
   Palette,
@@ -24,10 +27,13 @@ import {
   Users,
   Workflow,
   Wrench,
+  AudioLines,
+  Store,
   type LucideIcon,
 } from "lucide-react";
 import type { Category, Dimension, ResourceType, Stage } from "../../src/types";
 import type { TestingResource } from "../../src/data/testingTypes";
+import type { AgentGameResource } from "../../src/data/agentGameTypes";
 
 // Presentation helpers only. Source collections belong in route loaders, never client bundles.
 export { categories, stageLabels, typeLabels } from "../../src/types";
@@ -41,6 +47,10 @@ export const categoryGlyphs: Record<Category, LucideIcon> = {
   "3d": Layers3,
   production: Sparkles,
   world: Orbit,
+  audio: AudioLines,
+  runtime: Bot,
+  testing: FlaskConical,
+  publishing: Store,
 };
 
 export const typeGlyphs: Record<ResourceType, LucideIcon> = {
@@ -53,6 +63,8 @@ export const typeGlyphs: Record<ResourceType, LucideIcon> = {
   tool: Wrench,
   community: Users,
   dataset: Database,
+  tutorial: BookOpen,
+  platform: Store,
 };
 
 export const stageGlyphs: Record<Stage, LucideIcon> = {
@@ -78,6 +90,18 @@ export const testingKindGlyphs: Record<TestingResource["kind"], LucideIcon> = {
   asset: Boxes,
   motion: PersonStanding,
   fixture: Joystick,
+};
+
+export const agentKindGlyphs: Record<AgentGameResource["kind"], LucideIcon> = {
+  skill: BookOpen,
+  bridge: Cable,
+  framework: Boxes,
+  evaluation: ChartNoAxesCombined,
+  "gameplay-evaluation": Gamepad2,
+  workflow: Workflow,
+  "code-example": CodeXml,
+  client: Bot,
+  standard: ListChecks,
 };
 
 export const shortStageLabels: Record<Stage, string> = {

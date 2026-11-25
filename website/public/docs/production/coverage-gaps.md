@@ -1,6 +1,12 @@
 # Production coverage and remaining work
 
-Use this map to move from a production stage to its interface documentation, expected artifacts, and acceptance checks. The final column identifies the next problem to solve.
+Choose the next coverage task from the failure blocking the team's current delivery. This map points from that production stage to the interface, artifacts and acceptance work already documented, then names what is still missing. Use the unresolved column to assign work with an owner and a receiving milestone.
+
+At planning time, choose the first unresolved transition in the current job. If an exported build will not start, the release owner needs the target package, startup log and missing dependency before the team invests in a more sophisticated playtest agent. If the build starts but nobody can tell whether an interaction happened, the gameplay owner needs an observable state/event and a reproducible route before QA can rely on an automated verdict. These are different backlog items with different receivers.
+
+A check that passes locally and flakes on the build machine needs its waiting/reset conditions examined. Riot's [historical League testing account](https://www.riotgames.com/en/news/automated-testing-league-legends) explains its use of conditional game-state waits and a staging period before tests became trusted blockers. Apply the ordering to your own backlog: repair the observation or lifecycle condition, establish reliability in the real workflow, then decide whether the check should block a delivery. Increasing a fixed sleep can hide the symptom while leaving the same readiness gap.
+
+Close each item with something the next discipline can use: a resolved dependency list, a state observation tied to a game action, a saved/reopened asset or a dependable report. An additional source link is useful research progress; it does not finish an implementation item that still has no consuming project or responsible owner.
 
 ## Production-stage coverage
 

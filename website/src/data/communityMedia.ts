@@ -2,6 +2,37 @@ import type { LearningMedia } from './learningMedia'
 
 // Primary screenshot sources are recorded in docs/reference/media-sources.md.
 export const communityMedia: Record<string, LearningMedia> = {
+  "fable52-papertrails": {
+    src: "media/learning/fable52-papertrails.webp",
+    alt: "A paper-cut traveler stands in an autumn village of red-roof cottages, folded trees, and signposts.",
+    caption: "The creator’s village screenshot shows the traveler among folded trees and paper cottages.",
+    sourceUrl: "https://github.com/xikhar/papertrails/blob/5a284f71164ea3bd54ee788553e21f7f21a1b7b7/screenshots/village.png",
+    originalImageUrl: "https://raw.githubusercontent.com/xikhar/papertrails/5a284f71164ea3bd54ee788553e21f7f21a1b7b7/screenshots/village.png",
+    origin: "creator-screenshot",
+    reviewedAt: "2026-11-25",
+    width: 1280,
+    height: 720,
+  },
+  "fable52-mothlight": {
+    src: "media/learning/fable52-mothlight.webp",
+    alt: "The player's car on a rain-slick street in Halcyon Core, with a light gate ahead, a minimap, and a speedometer.",
+    caption: "A run in MOTHLIGHT's driving build, captured on the Halcyon Core route.",
+    sourceUrl: "https://aiarcade.games/play/mothlight",
+    origin: "browser-capture",
+    capturedAt: "2026-11-25",
+    width: 1280,
+    height: 720,
+  },
+  "fable52-tidebell": {
+    src: "media/learning/fable52-tidebell.webp",
+    alt: "The player's submersible above a sunlit seabed, with coral, an eight-metre depth reading, and seven bell indicators.",
+    caption: "A dive in Tidebell's Sunlit Shallows, with the depth and bell indicators visible.",
+    sourceUrl: "https://aiarcade.games/play/tidebell",
+    origin: "browser-capture",
+    capturedAt: "2026-11-25",
+    width: 1280,
+    height: 720,
+  },
   'cloud-crush-gemini-cli': {
     src: 'media/learning/cloud-crush-gemini-cli.webp',
     alt: 'Cloud Crush gameplay with an eight-by-eight match-3 board, score, countdown, mobile QR code, and the original browser automation status bar.',

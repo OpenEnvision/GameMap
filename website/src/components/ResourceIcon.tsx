@@ -1,18 +1,19 @@
 import { publicAsset } from "../publicAsset";
-import type { Resource } from "../types";
 import type { ResourceIdentity } from "../data/resourceIdentities";
 
 interface ResourceIconProps {
-  resource: Resource;
+  resourceId: string;
   identity: ResourceIdentity;
   size?: number;
+  decorative?: boolean;
 }
 
 /** Original organization or project artwork, verified per resource. */
 export function ResourceIcon({
-  resource,
+  resourceId,
   identity,
   size = 44,
+  decorative = false,
 }: ResourceIconProps) {
   const description = `${identity.organization} — ${identity.kind === "institution" ? "verified affiliation" : identity.kind === "creator" ? "project maintainer" : "official organization or project"}`;
   if (!identity.asset) return null;
@@ -24,10 +25,11 @@ export function ResourceIcon({
         height: size,
         flexShrink: 0,
       }}
-      role="img"
-      aria-label={`${identity.organization} logo`}
+      role={decorative ? undefined : "img"}
+      aria-hidden={decorative || undefined}
+      aria-label={decorative ? undefined : `${identity.organization} logo`}
       title={description}
-      data-resource-id={resource.id}
+      data-resource-id={resourceId}
       data-logo-kind={identity.kind}
       data-logo-organization={identity.organization}
     >

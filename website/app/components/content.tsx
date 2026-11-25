@@ -24,6 +24,10 @@ import { pages } from "../../content/site";
 import { publicAsset } from "../../src/publicAsset";
 import { pillars } from "../lib/pillars";
 import { seeded } from "../lib/motion";
+import {
+  researchReadiness,
+  researchSnapshot,
+} from "../../content/research-browser";
 export function ContentLink({
   href,
   children,
@@ -166,7 +170,17 @@ export function ContentBlockView({
                   {t(item.label)}
                   <ArrowUpRight size={13} />
                 </ContentLink>
-                {item.note && <p lang="en">{item.note}</p>}
+                {item.note && (
+                  <p
+                    lang={
+                      item.noteLanguage === "zh" || t(item.note) !== item.note
+                        ? "zh-CN"
+                        : "en"
+                    }
+                  >
+                    {t(item.note)}
+                  </p>
+                )}
               </li>
             ))}
           </ul>
@@ -245,10 +259,14 @@ export function englishSource(entry: ContentEntry) {
     entry.blocks.some(
       (block) =>
         block.section !== "metadata" &&
-        block.language === "en" &&
-        ((block.type === "text" && block.value.length > 60) ||
-          (block.type === "list" &&
-            block.items.some((item) => item.length > 60))),
+        ((block.type === "links" &&
+          block.items.some(
+            (item) => item.note && item.noteLanguage === "en",
+          )) ||
+          (block.language === "en" &&
+            ((block.type === "text" && block.value.length > 60) ||
+              (block.type === "list" &&
+                block.items.some((item) => item.length > 60))))),
     )
   );
 }
@@ -421,7 +439,6 @@ const actionFields: Partial<Record<ContentKind, readonly string[]>> = {
   resource: ["url", "links"],
   agent: ["sourceUrl", "codeUrl", "evidenceUrl"],
   testing: ["access", "sourceUrl"],
-  "repository-research": ["game_access", "source_urls"],
   demo: ["originalUrl", "sourceUrl", "resourceId"],
   path: ["previewSelection"],
 };
@@ -452,6 +469,24 @@ export function heroActions(
   entry: ContentEntry,
   t: (key: string) => string,
 ): HeroAction[] {
+  if (entry.kind === "repository-research") {
+    const repository = entry.data.canonical_repo || entry.data.requested_repo;
+    const actions: HeroAction[] = [
+      {
+        href: `https://github.com/${repository.split("/").map(encodeURIComponent).join("/")}`,
+        label: t("Open repository"),
+        icon: "code",
+      },
+    ];
+    const access = entry.data.game_access;
+    if (access)
+      actions.push({
+        href: access.url,
+        label: t(access.kind === "download" ? "Download game" : "Play game"),
+        icon: access.kind === "download" ? "download" : "play",
+      });
+    return actions;
+  }
   const actions: HeroAction[] = [];
   for (const field of actionFields[entry.kind] || []) {
     const block = entry.blocks.find(
@@ -1051,6 +1086,18 @@ export function RecordDocument({
                 {t("At a glance")}
               </h2>
               <dl>
+                {entry.kind === "repository-research" && (
+                  <>
+                    <div>
+                      <dt>{t("Review depth")}</dt>
+                      <dd>{t(researchReadiness(entry).label)}</dd>
+                    </div>
+                    <div>
+                      <dt>{t("Evidence snapshot")}</dt>
+                      <dd>{t(researchSnapshot(entry).label)}</dd>
+                    </div>
+                  </>
+                )}
                 {spec.map((block, index) => (
                   <SpecItem key={`${block.field}-${index}`} block={block} />
                 ))}

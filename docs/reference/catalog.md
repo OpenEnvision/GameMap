@@ -1,8 +1,8 @@
 # Awesome AI Game Development
 
-> A planning map for AI game development — from an idea to a playable world.
+> Pick a tool after checking what it can hand back to your game project.
 
-**115 curated primary sources** connecting coding agents, game engines, AI for 2D and 3D development, production tools, and code world models. Main source review date: **October 18, 2026**. This is a research snapshot: reviewing a source does not imply reproducing its results or continuously monitoring it.
+This catalog lists **121 resources** across engines, assets, coding agents, production, and research. Review dates appear with each entry. Check the source and released version before acting on an integration note.
 
 - [Interactive GameMap website — GitHub Pages](https://openenvision.github.io/GameMap/)
 - [A practical guide from resources to a working project](../guides/practical-guide.md)
@@ -22,31 +22,35 @@
 | Benchmark | Repeatable development evaluation | Tasks, scoring scripts, environments, and versions |
 | Paper / world model | Executable state, neural simulation, or hybrid rendering | World representation, action interface, long-term consistency, and public availability |
 
-**Tool roles.** DeepSeek is listed through its model integration documentation, rather than as an official standalone harness. Blender is a DCC application and Three.js is a 3D library; their roles differ from those of full game engines. Development, gameplay, and modeling evaluations are considered separately. SolarRenderer and StreamRender-H3 belong to the structure- or engine-driven hybrid rendering track; pure video world models are labeled separately.
+**Example.** If you need to replace one rigged character, check the source format, the included textures and animation, and whether your engine can open the exported asset. Use the detail section of a candidate to find its deliverables before trying the demo. For a study of game agents, start from the action interface and the available evaluation artifacts. A world-model recording can show what the renderer produced from a specific input; it leaves scene editing and game-state access to be checked separately.
 
 ## Contents
 
-- [1. Coding agents and game development bridges](#agents) — 20 resources
-- [2. Game engines, DCC tools, and ecosystems](#engines) — 24 resources
-- [3. AI for 2D game development](#2d) — 13 resources
-- [4. AI for 3D game development](#3d) — 15 resources
-- [5. Game production: art, animation, audio, testing, and runtime AI](#production) — 23 resources
-- [6. Code world models and interactive worlds](#world) — 20 resources
+- [1. Agents & engine bridges](#agents) — 21 resources
+- [2. Engines & rendering](#engines) — 15 resources
+- [3. 2D art & sprites](#2d) — 5 resources
+- [4. 3D assets & animation](#3d) — 16 resources
+- [5. Audio & voice](#audio) — 4 resources
+- [6. Game creation & design](#production) — 18 resources
+- [7. Runtime AI & NPCs](#runtime) — 2 resources
+- [8. Testing & QA](#testing) — 16 resources
+- [9. Publishing](#publishing) — 5 resources
+- [10. World models](#world) — 19 resources
 
 <a id="agents"></a>
 
-## Coding agents and game development bridges
+## Agents & engine bridges
 
 ### Agent
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [OpenAI Codex](https://learn.chatgpt.com/docs/codex/cli) | A general-purpose coding agent for reading, editing, running commands, and reviewing code in a local repository. | Planning / Coding / Testing / Shipping |
-| [Claude Code](https://code.claude.com/docs/en/overview) | A coding agent that reads and edits projects, runs tools, and supports skills, hooks, and MCP through terminal and IDE interfaces. | Planning / Coding / Testing / Shipping |
-| [Gemini CLI](https://github.com/google-gemini/gemini-cli) | Google's open-source terminal coding agent with file access, shell tools, extensions, and MCP support. | Planning / Coding / Testing |
-| [OpenCode](https://opencode.ai/docs/) | An open-source coding agent with multiple model providers, Plan / Build modes, and project instructions. | Planning / Coding / Testing |
-| [Cline](https://github.com/cline/cline) | An open-source coding agent with multiple models, Plan / Act modes, project rules, and MCP support. | Planning / Coding / Testing |
-| [Aider](https://github.com/Aider-AI/aider) | A terminal AI pair-programming tool built around repository maps, Git changes, and lint and test feedback. | Coding / Testing |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [OpenAI Codex](https://learn.chatgpt.com/docs/codex/cli) | A general-purpose coding agent for reading, editing, running commands, and reviewing code in a local repository. | Tools & platforms | Planning / Coding / Testing / Shipping |
+| [Claude Code](https://code.claude.com/docs/en/overview) | A coding agent that reads and edits projects, runs tools, and supports skills, hooks, and MCP through terminal and IDE interfaces. | Tools & platforms | Planning / Coding / Testing / Shipping |
+| [Gemini CLI](https://github.com/google-gemini/gemini-cli) | Google's open-source terminal coding agent with file access, shell tools, extensions, and MCP support. | Tools & platforms | Planning / Coding / Testing |
+| [OpenCode](https://opencode.ai/docs/) | An open-source coding agent with multiple model providers, Plan / Build modes, and project instructions. | Tools & platforms | Planning / Coding / Testing |
+| [Cline](https://github.com/cline/cline) | An open-source coding agent with multiple models, Plan / Act modes, project rules, and MCP support. | Tools & platforms | Planning / Coding / Testing |
+| [Aider](https://github.com/Aider-AI/aider) | A terminal AI pair-programming tool built around repository maps, Git changes, and lint and test feedback. | Tools & platforms | Coding / Testing |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
@@ -91,21 +95,14 @@ Tags: `CLI` · `Git` · `Repository map` · `Multiple models` · `Refactoring`. 
 
 ### Framework
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [OpenHands · Agent Canvas](https://github.com/OpenHands/OpenHands) | An open-source development console for managing local, remote, and cloud agent environments. | Planning / Coding / Testing / Shipping |
-| [OpenHands Software Agent SDK](https://github.com/OpenHands/software-agent-sdk) | A programmable development framework for agents, tools, conversations, workspaces, and server interfaces. | Planning / Coding / Testing |
-| [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) | Embed Claude Code's tool loop, permissions, sessions, and extensions in Python or TypeScript applications. | Planning / Coding / Testing |
-| [mini-swe-agent](https://github.com/SWE-agent/mini-swe-agent) | A minimal shell-based coding-agent research baseline designed for modification and trace inspection. | Coding / Testing |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [OpenHands Software Agent SDK](https://github.com/OpenHands/software-agent-sdk) | A programmable development framework for agents, tools, conversations, workspaces, and server interfaces. | Tools & platforms | Planning / Coding / Testing |
+| [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) | Embed Claude Code's tool loop, permissions, sessions, and extensions in Python or TypeScript applications. | Tools & platforms | Planning / Coding / Testing |
+| [mini-swe-agent](https://github.com/SWE-agent/mini-swe-agent) | A minimal shell-based coding-agent research baseline designed for modification and trace inspection. | Research & benchmarks | Coding / Testing |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
-
-**[OpenHands · Agent Canvas](https://github.com/OpenHands/OpenHands)**
-
-Can centralize multi-agent tasks, environments, and execution records for game projects. The repository provides the Agent Canvas frontend and orchestration entry point; the core tool loop and Agent Server live in a separate SDK repository. Game automation still requires engine tools.
-
-Tags: `Agent Canvas` · `Environments` · `Multi-agent` · `Open source` · `Orchestration`. Source reviewed: 2026-10-18. Further reading: [Core SDK](https://github.com/OpenHands/software-agent-sdk)
 
 **[OpenHands Software Agent SDK](https://github.com/OpenHands/software-agent-sdk)**
 
@@ -129,9 +126,10 @@ Tags: `Research baseline` · `Shell` · `Harness` · `Traces` · `Open source`. 
 
 ### Skill
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [Unity-MCP Operator Guide](https://github.com/CoplayDev/unity-mcp/blob/main/unity-mcp-skill/SKILL.md) | A practical MCP for Unity skill: inspect editor state, act, wait for compilation and domain reload, then verify results. | Coding / Scenes / Testing |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Unity-MCP Operator Guide](https://github.com/CoplayDev/unity-mcp/blob/main/unity-mcp-skill/SKILL.md) | A practical MCP for Unity skill: inspect editor state, act, wait for compilation and domain reload, then verify results. | Tools & platforms | Coding / Scenes / Testing |
+| [Unity Agent Plugin](https://docs.unity.com/en-us/ai/unity-plugin/about-unity-plugin) | Unity-maintained project skills give general coding agents engine-specific context. | Tools & platforms | Planning / Coding / Scenes / Testing / Shipping |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
@@ -142,16 +140,22 @@ Defines resource-first scene operations and requires checking compilation, domai
 
 Tags: `Unity` · `Skills` · `MCP` · `Compilation feedback` · `Skill source`. Source reviewed: 2026-10-18.
 
+**[Unity Agent Plugin](https://docs.unity.com/en-us/ai/unity-plugin/about-unity-plugin)**
+
+Provides Claude Code, Codex, and Grok with skills for 2D, UI, rendering, navigation, physics, multiplayer, and other tasks, connected to Unity CLI and MCP controls. Unity requires version 6.0 or later. The current CLI MCP mode replaces MCP in the older assistant package; follow the documentation for the version in use.
+
+Tags: `Official` · `Agent Skills` · `Unity` · `CLI` · `MCP`. Source reviewed: 2026-10-18. Further reading: [Skill source](https://github.com/Unity-Technologies/unity-agent-plugin/tree/main/skills) · [CLI / MCP migration](https://docs.unity.com/en-us/unity-cli/replace-mcp-server-unity-cli)
+
 </details>
 
 ### Documentation
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [DeepSeek · Agent Integrations](https://api-docs.deepseek.com/guides/anthropic_api/) | Official guidance for using DeepSeek as a model backend within agent harnesses such as Claude Code. | Planning / Coding / Testing |
-| [AGENTS.md](https://agents.md/) | An open Markdown format for giving coding agents build commands, test rules, and project conventions. | Planning / Coding / Testing / Shipping |
-| [Agent Skills](https://agentskills.io/home) | An open format that packages domain workflows as SKILL.md instructions, scripts, and reference materials. | Planning / Coding / Assets / Scenes / Testing / Shipping |
-| [Codex · Create Browser-based Games](https://learn.chatgpt.com/use-cases/browser-games) | OpenAI's browser game workflow covering planning, project instructions, asset generation, and browser iteration. | Planning / Coding / Assets / Testing / Shipping |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [DeepSeek · Agent Integrations](https://api-docs.deepseek.com/guides/anthropic_api/) | Official guidance for using DeepSeek as a model backend within agent harnesses such as Claude Code. | Technical references | Planning / Coding / Testing |
+| [AGENTS.md](https://agents.md/) | An open Markdown format for giving coding agents build commands, test rules, and project conventions. | Guides & examples | Planning / Coding / Testing / Shipping |
+| [Agent Skills](https://agentskills.io/home) | An open format that packages domain workflows as SKILL.md instructions, scripts, and reference materials. | Guides & examples | Planning / Coding / Assets / Scenes / Testing / Shipping |
+| [Windows · UI Automation and Input Semantics](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview) | Exposes provider-supported accessibility control patterns for inspecting and manipulating desktop editor controls. | Technical references | Coding / Scenes / Testing |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
@@ -174,26 +178,33 @@ Useful for repeatable game tasks such as sprite normalization, GLB export, scene
 
 Tags: `Skills` · `Open format` · `Workflows` · `Progressive loading`. Source reviewed: 2026-10-18.
 
-**[Codex · Create Browser-based Games](https://learn.chatgpt.com/use-cases/browser-games)**
+**[Windows · UI Automation and Input Semantics](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview)**
 
-Define the player goal, core loop, inputs, and win and loss conditions, then implement with PLAN.md and AGENTS.md. Combine image skills and Playwright for visual and interaction feedback. This is a practical guide, not a performance guarantee for every game genre or a research benchmark.
+Provider support must be probed per control; no specific game editor is assumed accessible. UIA coordinates are physical pixels, while absolute mouse input uses normalized desktop coordinates. Bounding rectangles may contain occluded points, foreground activation can be refused, and input insertion does not prove application completion. Integrity restrictions must be respected.
 
-Tags: `Official workflow` · `Browser games` · `Planning` · `Playwright` · `Asset consistency`. Source reviewed: 2026-10-18.
+Tags: `Windows` · `Accessibility` · `Native GUI` · `CUA` · `DPI`. Source reviewed: 2026-10-19. Further reading: [Properties and occlusion](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-automation-element-propids) · [Input and integrity limits](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendinput) · [DPI coordinates](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-screenscaling) · [Window/display capture and frame lifetime](https://learn.microsoft.com/en-us/windows/apps/develop/media-authoring-processing/screen-capture) · [GameMap: native UI evidence boundaries](https://github.com/OpenEnvision/GameMap/blob/main/docs/production/engine-operations.md#native-gui-automation-is-a-separate-evidence-surface)
 
 </details>
 
 ### Tool
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [MCP for Unity](https://github.com/CoplayDev/unity-mcp) | A community MCP bridge connecting general-purpose coding agents to the Unity Editor. | Coding / Assets / Scenes / Testing / Shipping |
-| [Godot MCP · Coding-Solo](https://github.com/Coding-Solo/godot-mcp) | A community MCP server for launching Godot, running projects, reading logs, and performing basic scene operations. | Coding / Scenes / Testing |
-| [MCP for Blender](https://github.com/ahujasid/mcp-for-blender) | A Blender add-on and MCP server for agent-driven modeling, materials, Python execution, and visual feedback. | Coding / Assets / Scenes / Testing |
-| [Unreal MCP · chongdashu](https://github.com/chongdashu/unreal-mcp) | A Python MCP server and UE C++ plugin connecting agents to Actors, Blueprints, and viewport controls. | Coding / Scenes / Testing |
-| [Playwright MCP](https://github.com/microsoft/playwright-mcp) | Microsoft's browser automation MCP server for exposing page structure, interactions, and browser feedback to agents. | Testing / Shipping |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [OpenHands · Agent Canvas](https://github.com/OpenHands/OpenHands) | An open-source development console for managing local, remote, and cloud agent environments. | Tools & platforms | Planning / Coding / Testing / Shipping |
+| [MCP for Unity](https://github.com/CoplayDev/unity-mcp) | A community MCP bridge connecting general-purpose coding agents to the Unity Editor. | Tools & platforms | Coding / Assets / Scenes / Testing / Shipping |
+| [Godot MCP · Coding-Solo](https://github.com/Coding-Solo/godot-mcp) | A community MCP server for launching Godot, running projects, reading logs, and performing basic scene operations. | Tools & platforms | Coding / Scenes / Testing |
+| [MCP for Blender](https://github.com/ahujasid/mcp-for-blender) | A Blender add-on and MCP server for agent-driven modeling, materials, Python execution, and visual feedback. | Tools & platforms | Coding / Assets / Scenes / Testing |
+| [Unreal MCP · chongdashu](https://github.com/chongdashu/unreal-mcp) | A Python MCP server and UE C++ plugin connecting agents to Actors, Blueprints, and viewport controls. | Tools & platforms | Coding / Scenes / Testing |
+| [MCP Unity Editor](https://github.com/CoderGamester/mcp-unity) | A community MCP bridge for querying, editing, and testing Unity projects. | Tools & platforms | Coding / Scenes / Testing |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[OpenHands · Agent Canvas](https://github.com/OpenHands/OpenHands)**
+
+Can centralize multi-agent tasks, environments, and execution records for game projects. The repository provides the Agent Canvas frontend and orchestration entry point; the core tool loop and Agent Server live in a separate SDK repository. Game automation still requires engine tools.
+
+Tags: `Agent Canvas` · `Environments` · `Multi-agent` · `Open source` · `Orchestration`. Source reviewed: 2026-10-18. Further reading: [Core SDK](https://github.com/OpenHands/software-agent-sdk)
 
 **[MCP for Unity](https://github.com/CoplayDev/unity-mcp)**
 
@@ -219,23 +230,23 @@ Covers Actor transforms, Blueprint classes and components, some node graphs, and
 
 Tags: `Unreal Engine` · `MCP` · `Blueprint` · `Experimental` · `Editor bridge`. Source reviewed: 2026-10-18. Further reading: [Tool documentation](https://github.com/chongdashu/unreal-mcp/tree/main/Docs)
 
-**[Playwright MCP](https://github.com/microsoft/playwright-mcp)**
+**[MCP Unity Editor](https://github.com/CoderGamester/mcp-unity)**
 
-Useful for browser game menus, HUDs, launch flows, keyboard input, and screenshots. The default interface uses accessibility trees; coordinate-based mouse tools require the optional vision capability. Neither interface automatically exposes internal Canvas or WebGL state, so game debug instrumentation may be needed. The checked README warns that the server is not a security boundary and documents browser_run_code_unsafe as arbitrary JavaScript execution in the Playwright server process. The separate Playwright CLI repository provides a CLI + Skills workflow.
+Exposes scenes, GameObjects, components, Prefabs, logs, Unity Test Runner, and other editor operations to MCP clients. This community tool is separate from Unity's official plugin. Its README warns that entering Play Mode with domain reload can disconnect the bridge; check the installed version, test configuration, and actual results. Editor automation alone does not establish correct gameplay.
 
-Tags: `Playwright` · `MCP` · `Browser testing` · `HUD` · `Canvas limitations`. Source reviewed: 2026-10-19. Further reading: [Pinned tools and security boundaries](https://github.com/microsoft/playwright-mcp/blob/b8b4183e099f136cbec0388a6088d4aa2f6b9685/README.md#security) · [Companion CLI + Skills](https://github.com/microsoft/playwright-cli)
+Tags: `Unity` · `MCP` · `Editor automation` · `Community tool`. Source reviewed: 2026-10-18.
 
 </details>
 
 <a id="engines"></a>
 
-## Game engines, DCC tools, and ecosystems
+## Engines & rendering
 
 ### Framework
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [React Three Fiber](https://r3f.docs.pmnd.rs/getting-started/introduction) | A React renderer for Three.js that brings component-based, declarative scenes into the React ecosystem. | Planning / Coding / Scenes / Testing |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [React Three Fiber](https://r3f.docs.pmnd.rs/getting-started/introduction) | A React renderer for Three.js that brings component-based, declarative scenes into the React ecosystem. | Tools & platforms | Planning / Coding / Scenes / Testing |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
@@ -250,17 +261,12 @@ Tags: `Three.js` · `React` · `R3F` · `pmndrs` · `Declarative scenes`. Source
 
 ### Documentation
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [Godot · Command Line Tutorial](https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html) | Godot's official CLI reference for headless operation, script checks, asset import, execution, and export. | Coding / Testing / Shipping |
-| [Godot Demo Projects](https://github.com/godotengine/godot-demo-projects) | Official runnable Godot examples covering 2D, 3D, GUI, audio, networking, and rendering. | Planning / Coding / Scenes / Testing |
-| [Unity · 2D Tech Demos](https://github.com/Unity-Technologies/2d-techdemos) | Official Unity 2D example source for Tilemaps, Scripted Tiles, brushes, and runtime map changes. | Coding / Assets / Scenes / Testing |
-| [Lyra Sample Game](https://dev.epicgames.com/documentation/en-us/unreal-engine/lyra-sample-game-in-unreal-engine) | Epic's modular UE5 sample game, with gameplay plugins, abilities, animation, input, and UI. | Planning / Coding / Scenes / Testing |
-| [Three.js · Examples](https://threejs.org/examples/) | Official runnable Three.js graphics examples with their HTML and JavaScript source. | Coding / Assets / Scenes / Testing |
-| [Blender Python · API Quickstart](https://github.com/blender/blender/blob/main/doc/python_api/rst/info_quickstart.rst) | Official Blender API tutorial source covering bpy data, context, operators, and Python operations. | Coding / Assets / Scenes / Testing |
-| [Phaser · Examples](https://github.com/phaserjs/examples) | Official Phaser example source with runnable references for specific APIs and gameplay components. | Coding / Scenes / Testing |
-| [Unreal Engine · Remote Control API](https://dev.epicgames.com/documentation/unreal-engine/remote-control-for-unreal-engine) | Exposes reflected editor properties and functions over HTTP for external tooling. | Coding / Scenes / Testing |
-| [Unity · Addressables Build and Loading APIs](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/build-scripting-start-build.html) | Builds addressable content from explicit profiles and loads assets through asynchronous handles. | Assets / Coding / Shipping / Runtime AI |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Godot · Command Line Tutorial](https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html) | Godot's official CLI reference for headless operation, script checks, asset import, execution, and export. | Technical references | Coding / Testing / Shipping |
+| [Three.js · Examples](https://threejs.org/examples/) | Official runnable Three.js graphics examples with their HTML and JavaScript source. | Guides & examples | Coding / Assets / Scenes / Testing |
+| [Unreal Engine · Remote Control API](https://dev.epicgames.com/documentation/unreal-engine/remote-control-for-unreal-engine) | Exposes reflected editor properties and functions over HTTP for external tooling. | Technical references | Coding / Scenes / Testing |
+| [Unity · Addressables Build and Loading APIs](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/build-scripting-start-build.html) | Builds addressable content from explicit profiles and loads assets through asynchronous handles. | Technical references | Assets / Coding / Shipping |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
@@ -271,41 +277,11 @@ Lets coding agents launch projects, read logs, parse scripts, and export builds 
 
 Tags: `Godot` · `CLI` · `Headless` · `Builds` · `Reproducibility`. Source reviewed: 2026-10-19.
 
-**[Godot Demo Projects](https://github.com/godotengine/godot-demo-projects)**
-
-Useful as minimal reference projects and regression tasks for agents, with concrete examples of scenes, scripts, and resources. The repository states that master targets the development engine; choose a matching branch for a stable release to avoid mistaking version conflicts for generation failures.
-
-Tags: `Godot` · `Official examples` · `Runnable source` · `Version branches` · `Reference projects`. Source reviewed: 2026-10-18.
-
-**[Unity · 2D Tech Demos](https://github.com/Unity-Technologies/2d-techdemos)**
-
-Offers source scenes for tile collision lookup, destructible maps, and palette switching. The inspected project records Unity 6000.3.3f1, URP 17.3.0, and Input System 1.17.0, while the README says 2021.1 onward. Its manifest selects 2d-extras' package_6000.3 Git branch but the committed lockfile records registry 6.0.1; resolve and pin dependencies before testing. Source review did not establish import, playback, or compatibility across Editor versions.
-
-Tags: `Unity` · `2D` · `Tilemap` · `Official examples` · `Runnable source`. Source reviewed: 2026-10-19. Further reading: [Pinned editor baseline](https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/ProjectSettings/ProjectVersion.txt#L1-L2) · [Pinned package manifest](https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/Packages/manifest.json#L2-L14) · [Pinned package lock](https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/Packages/packages-lock.json#L27-L36)
-
-**[Lyra Sample Game](https://dev.epicgames.com/documentation/en-us/unreal-engine/lyra-sample-game-in-unreal-engine)**
-
-Useful for learning how Game Feature Plugins, Experiences, and the Gameplay Ability System work together in a real project. Source and content are distributed through Fab / Epic Launcher and require a matching engine version. Lyra is more complex than a minimal prototype, so study it by module. The official Fab listing marks its content for use only with Unreal Engine-based products.
-
-Tags: `Unreal Engine` · `Official sample` · `GAS` · `Modular design` · `Runnable project`. Source reviewed: 2026-10-19. Further reading: [Official Fab listing](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0?lang=en)
-
 **[Three.js · Examples](https://threejs.org/examples/)**
 
 Provides minimal references for loaders, lighting, materials, animation, and rendering techniques to adapt into game scenes. The website and dev branch change continuously; keep source, addons, and runtime on the same release rather than mixing example versions.
 
 Tags: `Three.js` · `Official examples` · `Materials` · `Loaders` · `Runnable source`. Source reviewed: 2026-10-18. Further reading: [Example source](https://github.com/mrdoob/three.js/tree/dev/examples)
-
-**[Blender Python · API Quickstart](https://github.com/blender/blender/blob/main/doc/python_api/rst/info_quickstart.rst)**
-
-Provides authoritative guidance for asset scripts, especially the distinction between direct data access and operations that depend on the current mode, selection, or viewport. bpy.ops poll checks can fail because of context; scripts should inspect actual state and verify outputs, beyond syntax checks.
-
-Tags: `Blender` · `Python` · `bpy` · `Context` · `Automation`. Source reviewed: 2026-10-18. Further reading: [API documentation](https://docs.blender.org/api/current/)
-
-**[Phaser · Examples](https://github.com/phaserjs/examples)**
-
-Official examples for animation, cameras, input, physics, and scene transitions. The current README targets Phaser 4, and the labs site defaults to its latest development build; select and pin the version matching your project. The MIT license covers example code, not bundled art assets. Review asset permissions before reuse and test in a real browser.
-
-Tags: `Phaser` · `Official examples` · `Runnable source` · `2D` · `Version scope`. Source reviewed: 2026-10-18.
 
 **[Unreal Engine · Remote Control API](https://dev.epicgames.com/documentation/unreal-engine/remote-control-for-unreal-engine)**
 
@@ -323,63 +299,259 @@ Tags: `Unity` · `Addressables` · `Asset dependencies` · `Async loading` · `C
 
 ### Tool
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [Godot Engine · Official Documentation](https://docs.godotengine.org/en/stable/) | An open-source 2D and 3D game engine that organizes runnable projects through scenes, nodes, resources, and scripts. | Planning / Coding / Assets / Scenes / Testing / Shipping |
-| [GUT · Godot Unit Test](https://github.com/bitwes/Gut) | A community Godot testing framework for GDScript assertions, test doubles, and parameterized cases. | Coding / Testing |
-| [Unity · Manual](https://docs.unity3d.com/Manual/index.html) | Official Unity documentation for projects, the editor, scripting, rendering, physics, asset import, and publishing. | Planning / Coding / Assets / Scenes / Testing / Shipping |
-| [Unity Test Framework](https://docs.unity3d.com/6000.2/Documentation/Manual/test-framework/test-framework-introduction.html) | Unity's official testing framework, with Edit mode, Play mode, and command-line execution. | Coding / Testing / Shipping |
-| [Unreal Engine · Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine) | Official Epic documentation for UE C++, Blueprints, rendering, animation, physics, and packaging. | Planning / Coding / Assets / Scenes / Testing / Shipping |
-| [Unreal · Automation Test Framework](https://dev.epicgames.com/documentation/en-us/unreal-engine/automation-test-framework-in-unreal-engine) | UE's official infrastructure for unit, functional, content stress, and screenshot comparison tests. | Coding / Scenes / Testing / Shipping |
-| [Three.js](https://github.com/mrdoob/three.js) | A JavaScript 3D rendering library for browsers, with scenes, cameras, materials, and loaders. | Planning / Coding / Assets / Scenes / Testing / Shipping |
-| [Blender](https://github.com/blender/blender) | An open-source 3D creation suite for modeling, materials, rigging, animation, simulation, and rendering. | Assets / Scenes / Testing |
-| [Khronos · glTF-Blender-IO](https://github.com/KhronosGroup/glTF-Blender-IO) | Khronos's official Blender glTF 2.0 importer and exporter source, including validation and roundtrip tests. | Assets / Scenes / Testing / Shipping |
-| [Phaser · First Game Guide](https://docs.phaser.io/phaser/getting-started/making-your-first-phaser-game) | A browser 2D game framework whose official tutorial covers assets, scenes, animation, input, and collisions. | Planning / Coding / Assets / Scenes / Testing / Shipping |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Godot Engine](https://docs.godotengine.org/en/stable/) | An open-source 2D and 3D game engine for creating scenes, gameplay scripts, interfaces, and runnable projects. | Tools & platforms | Planning / Coding / Assets / Scenes / Testing / Shipping |
+| [Unity](https://docs.unity3d.com/Manual/index.html) | A game engine for building 2D and 3D projects with an editor, C# scripting, rendering, physics, and asset workflows. | Tools & platforms | Planning / Coding / Assets / Scenes / Testing / Shipping |
+| [Unreal Engine](https://dev.epicgames.com/documentation/en-us/unreal-engine) | A game engine for creating interactive projects with C++, Blueprints, rendering, animation, physics, and packaging workflows. | Tools & platforms | Planning / Coding / Assets / Scenes / Testing / Shipping |
+| [Three.js](https://github.com/mrdoob/three.js) | A JavaScript 3D rendering library for browsers, with scenes, cameras, materials, and loaders. | Tools & platforms | Planning / Coding / Assets / Scenes / Testing / Shipping |
+| [Phaser](https://docs.phaser.io/phaser/getting-started/making-your-first-phaser-game) | A JavaScript framework for building 2D browser games with scenes, animation, input, and collision systems. | Tools & platforms | Planning / Coding / Assets / Scenes / Testing / Shipping |
+| [FastNoise Lite](https://github.com/Auburn/FastNoiseLite) | A portable noise library for procedural terrain and material inputs. | Tools & platforms | Coding / Assets |
+| [DirectX Shader Compiler](https://github.com/microsoft/DirectXShaderCompiler) | HLSL compilation through the dxc command line and compiler APIs. | Technical references | Coding / Testing / Shipping |
+| [GDevelop AI & MCP](https://gdevelop.io/features) | A visual 2D and 3D game engine with an integrated AI helper and an official MCP connection for coding agents. | Tools & platforms | Coding / Scenes / Testing / Shipping |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
 
-**[Godot Engine · Official Documentation](https://docs.godotengine.org/en/stable/)**
+**[Godot Engine](https://docs.godotengine.org/en/stable/)**
 
 Provides authoritative context for GDScript, C#, scene, and resource APIs, helping agents connect script changes to running scenes. Pin the engine version and use matching documentation; stable and development branches are not interchangeable.
 
 Tags: `Godot` · `GDScript` · `Scenes and nodes` · `Official documentation` · `Open source`. Source reviewed: 2026-10-18. Further reading: [Engine source](https://github.com/godotengine/godot) · [Official examples](https://github.com/godotengine/godot-demo-projects)
 
-**[GUT · Godot Unit Test](https://github.com/bitwes/Gut)**
-
-Provides a CLI and JUnit XML output for automated regression checks on generated game state, damage, inventory, and other logic. GUT and Godot versions have explicit compatibility requirements; passing logic tests still leaves visuals, controls, and scene integration to check.
-
-Tags: `Godot` · `Unit testing` · `GDScript` · `CLI` · `JUnit`. Source reviewed: 2026-10-18. Further reading: [Author documentation](https://gut.readthedocs.io/)
-
-**[Unity · Manual](https://docs.unity3d.com/Manual/index.html)**
+**[Unity](https://docs.unity3d.com/Manual/index.html)**
 
 Provides agents with concrete C# and editor project constraints, plus 2D and 3D workflows and versioned package references. Pin the Editor, render pipeline, and Package Manager versions together; the Unity name alone does not establish API or material compatibility.
 
 Tags: `Unity` · `C#` · `Official documentation` · `Editor` · `Package Manager`. Source reviewed: 2026-10-18. Further reading: [Official example source](https://github.com/Unity-Technologies/2d-techdemos)
 
-**[Unity Test Framework](https://docs.unity3d.com/6000.2/Documentation/Manual/test-framework/test-framework-introduction.html)**
-
-Enables ongoing regression checks for generated scripts and scene behavior, using UnityTest across frames to check lifecycles, coroutines, and state changes. Edit mode and Play mode have different execution loops; tests should wait for real frames or conditions rather than only confirming script creation. The separately checked Test Framework 1.4.6 API returns a job GUID and documents multi-frame cancellation cleanup. Active tests become Canceled and remaining tests NotRun; do not equate cancellation with passing or assume compatibility with every Editor package version.
-
-Tags: `Unity` · `Testing` · `Edit mode` · `Play mode` · `CLI`. Source reviewed: 2026-10-18. Further reading: [Package and API documentation](https://docs.unity3d.com/Packages/com.unity.test-framework@latest/) · [Versioned test-job and cancellation API](https://docs.unity3d.com/Packages/com.unity.test-framework@1.4/api/UnityEditor.TestTools.TestRunner.Api.TestRunnerApi.html)
-
-**[Unreal Engine · Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine)**
+**[Unreal Engine](https://dev.epicgames.com/documentation/en-us/unreal-engine)**
 
 Provides authoritative context for UE projects and asset systems, with official samples illustrating complex gameplay architecture. GitHub source access requires linked Epic and GitHub accounts and the relevant authorization steps; Epic also documents a Perforce route for licensees. Source availability does not imply an open-source license.
 
 Tags: `Unreal Engine` · `C++` · `Blueprint` · `Official documentation` · `Authorized source access`. Source reviewed: 2026-10-18. Further reading: [Source access instructions](https://dev.epicgames.com/documentation/en-us/unreal-engine/downloading-source-code-in-unreal-engine) · [Engine source (authorization required)](https://github.com/EpicGames/UnrealEngine)
-
-**[Unreal · Automation Test Framework](https://dev.epicgames.com/documentation/en-us/unreal-engine/automation-test-framework-in-unreal-engine)**
-
-Can bring Blueprint compilation, level loading, simulated input, and visual regression checks into an agent feedback loop, alongside interfaces such as Functional Testing. Tests require the appropriate plugins and state cleanup; the framework runs within the engine. ResumeRunTest reads an existing JSON report, resumes NotRun tests, and marks interrupted in-progress tests as failures. Preserve the report and distinguish compatible editor and client test contexts.
-
-Tags: `Unreal Engine` · `Automated testing` · `Blueprint` · `Visual regression` · `Content validation`. Source reviewed: 2026-10-18. Further reading: [Command-line reports and interrupted-run resumption](https://dev.epicgames.com/documentation/en-us/unreal-engine/run-automation-tests-in-unreal-engine)
 
 **[Three.js](https://github.com/mrdoob/three.js)**
 
 Lets agents build browser-testable 3D prototypes directly in TypeScript or JavaScript and inspect APIs through source and examples. Game loops, physics, navigation, saves, and other systems need separate design or integration. Validate WebGL and WebGPU paths individually.
 
 Tags: `Three.js` · `JavaScript` · `WebGL` · `WebGPU` · `Rendering library`. Source reviewed: 2026-10-18. Further reading: [Official manual](https://threejs.org/manual/) · [Official examples](https://threejs.org/examples/)
+
+**[Phaser](https://docs.phaser.io/phaser/getting-started/making-your-first-phaser-game)**
+
+Useful for quickly building browser-testable 2D core loops organized around preload / create / update. In the tutorial, scaled static Arcade Physics objects need their collision bodies refreshed. A visible scene alone does not verify input, restart behavior, or lifecycle handling.
+
+Tags: `Phaser` · `2D` · `JavaScript` · `Browser games` · `Arcade Physics`. Source reviewed: 2026-10-18. Further reading: [Framework source](https://github.com/phaserjs/phaser) · [Official documentation](https://docs.phaser.io/)
+
+**[FastNoise Lite](https://github.com/Auburn/FastNoiseLite)**
+
+Provides 2D/3D sampling, fractals and domain warping across multiple languages under MIT. These are generation primitives: meshing, erosion, persistent world state and meaningful level design require additional systems.
+
+Tags: `Procedural generation` · `Noise` · `Terrain`. Source reviewed: 2026-10-18.
+
+**[DirectX Shader Compiler](https://github.com/microsoft/DirectXShaderCompiler)**
+
+Compiler-call success and shader compilation success are separate: inspect the result status, diagnostics and requested outputs. Target profiles, include dependencies and build configuration matter. A compiled shader does not establish rendering correctness or target-device compatibility.
+
+Tags: `Shaders` · `HLSL` · `Build validation`. Source reviewed: 2026-10-18. Further reading: [Compiler API guide](https://github.com/microsoft/DirectXShaderCompiler/wiki/Using-dxc.exe-and-dxcompiler.dll)
+
+**[GDevelop AI & MCP](https://gdevelop.io/features)**
+
+Turn a feature request into editable scenes, objects, behaviors and event logic, then preview the game or ask an agent to run gameplay tests. GDevelop also exports games for web, mobile and desktop. The MCP connection requires the desktop editor to remain open on the same computer; event generation and asset searches use online services and require sign-in. Review and save the changes in the editor before exporting.
+
+Tags: `GDevelop` · `Visual game editor` · `AI-assisted development` · `MCP`. Source reviewed: 2026-11-24. Further reading: [Official MCP setup and workflow](https://wiki.gdevelop.io/gdevelop5/interface/ai/mcp/) · [Engine source](https://github.com/4ian/GDevelop)
+
+</details>
+
+### Community
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Epic Developer Community · UE](https://dev.epicgames.com/community/unreal-engine) | Epic's UE community hub for author tutorials, learning materials, and version-specific discussions. | Guides & examples | Planning / Coding / Assets / Scenes / Testing |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[Epic Developer Community · UE](https://dev.epicgames.com/community/unreal-engine)**
+
+Useful for practical material, animation, Blueprint, and performance troubleshooting beyond official references. Check each contribution's author, date, engine version, and reproducible project; access to the hub does not establish that every post has been verified.
+
+Tags: `Unreal Engine` · `Community` · `Tutorials` · `Practical experience` · `Per-source verification`. Source reviewed: 2026-10-18.
+
+</details>
+
+### Tutorial
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Three.js · Instanced Crowd Engineering](https://discourse.threejs.org/t/one-draw-call-massive-crowd-performance-engineering-in-three-js/89928) · 2026 | A game author's Three.js forum write-up on a single-draw-call crowd system, instance data, LOD, and staggered updates. | Guides & examples | Coding / Scenes / Testing |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[Three.js · Instanced Crowd Engineering](https://discourse.threejs.org/t/one-draw-call-massive-crowd-performance-engineering-in-three-js/89928)**
+
+Offers explainable performance techniques, with the author's playable demo showing technical and visual tradeoffs. Frame rates are self-reported on the author's hardware, not a benchmark across devices. Measure GPU, CPU, bandwidth, and visual quality after optimization.
+
+Tags: `Three.js` · `Community experience` · `Instancing` · `LOD` · `Performance`. Source reviewed: 2026-10-18. Further reading: [Community forum](https://discourse.threejs.org/)
+
+</details>
+
+<a id="2d"></a>
+
+## 2D art & sprites
+
+### Skill
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Agent Sprite Forge](https://github.com/0x0funky/agent-sprite-forge) | Combines reference art, generated animation, and deterministic processing into exportable sprites. | Tools & platforms | Assets / Testing |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[Agent Sprite Forge](https://github.com/0x0funky/agent-sprite-forge)**
+
+Generates motion clips from an approved reference image, then performs background removal, alignment, loop selection, timing correction, and atlas packaging. It offers Godot, Aseprite, and web exports. For 0.4.0, the README reports parse-level round trips but no Godot, LDtk, or Aseprite editor-import verification. Import and visual acceptance checks remain necessary.
+
+Tags: `Agent Skill` · `Sprite pipeline` · `Animation` · `Asset QA`. Source reviewed: 2026-10-18.
+
+</details>
+
+### Tool
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [PixelLab AI Agent Toolkit](https://www.pixellab.ai/mcp) | Generates pixel characters, animation, and seamless tilesets through API and MCP tools. | Tools & platforms | Assets / Scenes |
+| [Scenario](https://www.scenario.com/) | Builds consistent game art pipelines with custom style models and batch generation. | Tools & platforms | Assets / Scenes |
+| [OpenAI Image Generation](https://developers.openai.com/api/docs/guides/image-generation) | Generate and edit raster art using image endpoints or a conversational image-generation tool. | Tools & platforms | Assets |
+| [MSDF Atlas Generator](https://github.com/Chlumsky/msdf-atlas-gen) | A command-line and library tool for generating distance-field font atlases. | Technical references | Assets / Shipping |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[PixelLab AI Agent Toolkit](https://www.pixellab.ai/mcp)**
+
+Accepts character descriptions, directions, actions, and terrain conditions to produce pixel assets, including four- or eight-direction characters and side-view or top-down tilesets. This is a commercial asset service. MCP connects its asset tools to coding agents; game rules, collision, and asset import still require a project workflow.
+
+Tags: `Pixel art` · `Sprite` · `Tileset` · `MCP` · `Commercial service`. Source reviewed: 2026-10-18. Further reading: [Documentation](https://www.pixellab.ai/docs)
+
+**[Scenario](https://www.scenario.com/)**
+
+Scenario provides hosted image, video, 3D and audio workflows, custom-model training, a REST API and an official beta MCP interface. Inspect each model schema before submission; MCP model_run can return an unfinished job rather than output assets. The documented job_cancel cannot cancel jobs created by model_run or workflow_run. Integration examples do not include the full hosted service or a complete game project.
+
+Tags: `Art direction` · `Style consistency` · `Character consistency` · `Batch assets` · `Commercial service`. Source reviewed: 2026-10-18. Further reading: [API documentation](https://docs.scenario.com/) · [Official beta MCP operations](https://mcp.scenario.com/docs/tools/model-run) · [Job cancellation scope](https://mcp.scenario.com/docs/tools/job-cancel)
+
+- **Demo · interactive:** [Asset generation app](https://app.scenario.com/). Hosted creative tool requiring an account; this is an asset workspace, not a playable game.
+- **Source · sdk:** [Unity integration source](https://github.com/scenario-labs/Scenario-Unity). Public Unity integration plugin; hosted model source and a complete game project are not included.
+- **Tutorial · tutorial:** [Consistent game asset pipeline](https://docs.scenario.com/get-started/documentation/integrating-with-applications-real-world-scenarios#1-game-asset-pipeline--batch-generation-with-style-consistency). Official walkthrough for custom style training, batch generation, and asset delivery.
+
+**[OpenAI Image Generation](https://developers.openai.com/api/docs/guides/image-generation)**
+
+Generate or edit raster images through the Images API or multi-turn Responses workflows. Save output bytes and request settings; masks guide edits rather than guaranteeing exact boundaries. Sprite consistency and seamless textures need separate checks. The technical guide does not establish output rights or retry billing.
+
+Tags: `asset-generation`. Source reviewed: 2026-10-18.
+
+**[MSDF Atlas Generator](https://github.com/Chlumsky/msdf-atlas-gen)**
+
+Produces glyph textures and layout metadata from fonts. The default character set is ASCII unless overridden, so multilingual coverage must be explicit. Sample atlas color channels as linear data rather than sRGB; font licensing remains independent.
+
+Tags: `Fonts` · `MSDF` · `UI`. Source reviewed: 2026-10-18.
+
+</details>
+
+<a id="3d"></a>
+
+## 3D assets & animation
+
+### Framework
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Infinigen](https://github.com/princeton-vl/infinigen) · 2023 | Procedurally generates natural and indoor Blender scenes and synthetic data. | Tools & platforms | Assets / Scenes / Testing |
+| [Holodeck](https://github.com/allenai/Holodeck) · 2023 | Lays out and furnishes interactive 3D indoor environments from text. | Research & benchmarks | Planning / Scenes |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[Infinigen](https://github.com/princeton-vl/infinigen)**
+
+Random seeds, parameters, and asset generators produce geometry, materials, scenes, and annotations, with export documentation for OBJ, OpenUSD, and other formats. This is a procedural system rather than a language model. It can provide controllable scenes and data for AI development workflows; real-time games still need optimization, collision, and gameplay integration.
+
+Tags: `Procedural generation` · `Blender` · `Synthetic data` · `Scenes`. Source reviewed: 2026-10-18. Further reading: [Project and paper](https://infinigen.org/)
+
+**[Holodeck](https://github.com/allenai/Holodeck)**
+
+Combines language planning, asset retrieval, and spatial constraints to turn room requirements into AI2-THOR scenes, with instructions for loading them in Unity. Evaluation primarily targets embodied AI environment generation. It offers ideas for scene layout and semantic interaction, but does not establish complete game level design or commercial release readiness.
+
+Tags: `Text-to-scene` · `AI2-THOR` · `Spatial constraints` · `Embodied environments`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2312.09067)
+
+</details>
+
+### Skill
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Godot MCP 3D Asset Builder](https://github.com/LuigiDeFacci/godot-create-3d-assets) | Builds reusable stylized 3D assets with Godot geometry and validation workflows. | Tools & platforms | Assets / Scenes / Testing |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[Godot MCP 3D Asset Builder](https://github.com/LuigiDeFacci/godot-create-3d-assets)**
+
+Takes project style and asset requirements, then uses Godot MCP and deterministic builders to produce PackedScene assets and check grounding, collision, navigation, and screenshots. Designed for Codex and Claude Code, it can reuse existing project resources. It requires compatible MCP capabilities and is not an image-to-mesh generative model.
+
+Tags: `Godot` · `Agent Skill` · `PackedScene` · `Asset QA`. Source reviewed: 2026-10-18.
+
+</details>
+
+### Paper
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Video2Game](https://github.com/video2game/video2game) · 2024 | Reconstructs real-world video into interactive 3D environments for the browser. | Research & benchmarks | Assets / Scenes / World models |
+| [BlenderLLM / BlendNet / CADBench](https://github.com/FreedomIntelligence/BlenderLLM) · 2024 | Studies text-to-Blender scripting with a training dataset and modeling benchmark. | Research & benchmarks | Assets / Testing |
+| [WonderWorld](https://arxiv.org/abs/2406.09394) · 2024 | Builds an explorable, expandable explicit 3D scene from a single image. | Research & benchmarks | Assets / Scenes / World models |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[Video2Game](https://github.com/video2game/video2game)**
+
+Video and camera information pass through reconstruction, mesh extraction, appearance baking, and collision generation into a three.js game environment. The documented UE route recommends fully diffuse baked meshes, with the baking specular dimension set to zero. This is an explicit environment reconstruction approach with remaining manual scene setup and physics integration. It should be distinguished from interactive video world models that predict the next frame.
+
+Tags: `Video-to-3D` · `Reconstruction` · `Three.js` · `Collision`. Source reviewed: 2026-10-19. Further reading: [Paper](https://arxiv.org/abs/2404.09833) · [Pinned engine-handoff recommendations](https://github.com/video2game/video2game/blob/7bcf8ae754240b9fd2de75a154eb73c75a146b79/readme.md#L256-L273)
+
+**[BlenderLLM / BlendNet / CADBench](https://github.com/FreedomIntelligence/BlenderLLM)**
+
+BlenderLLM generates bpy modeling scripts from user instructions. The repository and released dataset documentation report about 12K BlendNet pairs, and CADBench includes synthetic and forum-sourced tasks. Evaluation focuses on basic CAD-style modeling and instruction following. The README identifies limitations in advanced materials, multimodal input, and multi-turn collaboration; this is not a game creation benchmark.
+
+Tags: `Text-to-bpy` · `CADBench` · `Dataset` · `Modeling benchmark`. Source reviewed: 2026-10-19. Further reading: [Paper](https://arxiv.org/abs/2412.14203) · [BlendNet dataset](https://huggingface.co/datasets/FreedomIntelligence/BlendNet) · [CADBench](https://huggingface.co/datasets/FreedomIntelligence/CADBench) · [Pinned release dataset description](https://github.com/FreedomIntelligence/BlenderLLM/blob/f778bfd6992ddd675f7615d0eaf965a8576f2879/README.md#L44-L50)
+
+**[WonderWorld](https://arxiv.org/abs/2406.09394)**
+
+Interactive 3D Scene Generation from a Single Image uses Fast Layered Gaussian Surfels and guided depth diffusion to connect new scenes as the camera moves and prompts change. It provides explicit spatial representation and real-time rendering, primarily addressing geometry and appearance. Interactive gameplay, physics, and persistent dynamic state still require separate implementation.
+
+Tags: `scene-generation` · `explicit-3d` · `Gaussian-surfels` · `camera-control` · `CVPR-2025`. Source reviewed: 2026-10-18. Further reading: [Project](https://kovenyu.com/WonderWorld/)
+
+</details>
+
+### Tool
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Blender](https://github.com/blender/blender) | An open-source 3D creation suite for modeling, materials, rigging, animation, simulation, and rendering. | Tools & platforms | Assets / Scenes / Testing |
+| [Khronos · glTF-Blender-IO](https://github.com/KhronosGroup/glTF-Blender-IO) | Khronos's official Blender glTF 2.0 importer and exporter source, including validation and roundtrip tests. | Tools & platforms | Assets / Scenes / Testing / Shipping |
+| [Hunyuan3D 2.0](https://github.com/Tencent-Hunyuan/Hunyuan3D-2) · 2025 | Turns reference images into geometry and textures for 3D asset pipelines. | Tools & platforms | Assets |
+| [TRELLIS](https://github.com/microsoft/TRELLIS) · 2024 | Generates meshes, Gaussians, and radiance fields from structured latent representations. | Tools & platforms | Assets |
+| [TripoSR](https://github.com/VAST-AI-Research/TripoSR) · 2024 | Quickly reconstructs a 3D object from one image for asset prototyping. | Tools & platforms | Assets |
+| [Meshy API](https://docs.meshy.ai/en) | Connects AI model generation, humanoid rigging, and animation export for game asset workflows. | Tools & platforms | Assets / Scenes |
+| [HY-Motion 1.0](https://github.com/Tencent-Hunyuan/HY-Motion-1.0) · 2025 | Generates skeletal humanoid motion from text with public inference code and model weights. | Tools & platforms | Assets |
+| [Tripo Model Generation API](https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html) | Versioned text-to-model generation with separate geometry and texture seeds. | Tools & platforms | Assets |
+| [Adobe Mixamo](https://www.mixamo.com/) | Automatically rigs humanoid characters and transfers motion-library animations to models for game asset workflows. | Tools & platforms | Assets |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
 
 **[Blender](https://github.com/blender/blender)**
 
@@ -393,61 +565,134 @@ Connects Blender asset production to game runtimes and helps diagnose material, 
 
 Tags: `Blender` · `glTF` · `GLB` · `Asset pipeline` · `Roundtrip validation`. Source reviewed: 2026-10-19. Further reading: [Technical notes](https://github.com/KhronosGroup/glTF-Blender-IO/blob/main/Technical.md) · [GameMap: asset validity and runtime fidelity](https://github.com/OpenEnvision/GameMap/blob/main/docs/assets/validation.md#1-validate-a-portable-asset-without-confusing-format-validity-with-fidelity)
 
-**[Phaser · First Game Guide](https://docs.phaser.io/phaser/getting-started/making-your-first-phaser-game)**
+**[Hunyuan3D 2.0](https://github.com/Tencent-Hunyuan/Hunyuan3D-2)**
 
-Useful for quickly building browser-testable 2D core loops organized around preload / create / update. In the tutorial, scaled static Arcade Physics objects need their collision bodies refreshed. A visible scene alone does not verify input, restart behavior, or lifecycle handling.
+The 2.0 pipeline generates shape with Hunyuan3D-DiT and textures the mesh with Hunyuan3D-Paint. It supports GLB and OBJ export and a Blender addon under a dedicated Tencent Hunyuan 3D 2.0 community license. The separate 2.1 release adds a PBR texture pipeline and training code. Topology, LOD, rigging, collision, runtime performance, and each version's terms still need game-pipeline checks.
 
-Tags: `Phaser` · `2D` · `JavaScript` · `Browser games` · `Arcade Physics`. Source reviewed: 2026-10-18. Further reading: [Framework source](https://github.com/phaserjs/phaser) · [Official documentation](https://docs.phaser.io/)
+Tags: `Image-to-3D` · `Mesh` · `Textures` · `Blender`. Source reviewed: 2026-10-18. Further reading: [2.0 paper](https://arxiv.org/abs/2501.12202) · [2.1 repository](https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1) · [2.0 license](https://github.com/Tencent-Hunyuan/Hunyuan3D-2/blob/main/LICENSE)
+
+**[TRELLIS](https://github.com/microsoft/TRELLIS)**
+
+Decodes image or text inputs into several 3D representations. Official examples support textured GLB export and simplification. Conventional game asset pipelines mainly use its mesh branch; Gaussian and radiance field outputs do not themselves include usable collision, animation, or gameplay logic.
+
+Tags: `Image-to-3D` · `Text-to-3D` · `GLB` · `Structured Latents`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2412.01506)
+
+**[TripoSR](https://github.com/VAST-AI-Research/TripoSR)**
+
+Uses LRM-style feed-forward reconstruction, with public code, pretrained models, and a demo. An input image becomes an exportable object mesh. It focuses on individual objects; hidden surfaces, topology, and game performance need additional work. It is not a complete scene or playable game generator.
+
+Tags: `Image-to-3D` · `Reconstruction` · `Mesh` · `Prototype assets`. Source reviewed: 2026-10-18.
+
+**[Meshy API](https://docs.meshy.ai/en)**
+
+The official animated-character recipe turns a reference image into a textured, rigged character with idle, jump, and attack clips in GLB and FBX. The animation step applies motions from Meshy's library. API rigging works best with standard textured bipeds with clearly separated limbs. Generated assets still need engine import, collision, controls, and performance checks; the public cookbook supplies asset examples rather than complete gameplay.
+
+Tags: `Image-to-3D` · `Rigging` · `Character animation` · `GLB` · `FBX` · `Commercial service`. Source reviewed: 2026-10-18. Further reading: [Rigging requirements](https://docs.meshy.ai/en/api/rigging)
+
+- **Demo · interactive:** [3D asset workspace](https://www.meshy.ai/workspace). Hosted generation and animation workspace; account access is required to generate assets. This is not a playable game.
+- **Source · examples:** [Cookbook example source](https://github.com/meshy-dev/meshy-cookbook). Public asset-generation recipes, not Meshy's model source or a complete game project.
+- **Tutorial · tutorial:** [Image to animated character](https://www.meshy.ai/developers/cookbook/recipes/animate-3d-character/). Official guide with reference files, Python and TypeScript examples, and GLB/FBX outputs. API access uses credits.
+
+**[HY-Motion 1.0](https://github.com/Tencent-Hunyuan/HY-Motion-1.0)**
+
+Tencent's text-to-motion models produce human character animation, with CLI inference, local Gradio visualization, and a hosted model demo. Use the generated motion as an animation-pipeline input and retarget it to the target character. The documented limitations include non-humanoid motion, multi-person interaction, seamless loops, and in-place animation. The release provides a motion implementation, not a controllable game character or full game project. Its custom license excludes the EU, UK and South Korea and restricts using the works or outputs to improve other AI models, except HY-Motion and its derivatives. Review the exact license and commercial threshold before adoption.
+
+Tags: `Text-to-motion` · `Skeletal animation` · `Humanoid` · `Model weights` · `Local inference`. Source reviewed: 2026-10-18. Further reading: [Official project](https://hunyuan.tencent.com/motion) · [Model weights](https://huggingface.co/tencent/HY-Motion-1.0) · [HY-Motion community license](https://github.com/Tencent-Hunyuan/HY-Motion-1.0/blob/master/License.txt)
+
+- **Demo · interactive:** [Interactive motion demo](https://huggingface.co/spaces/tencent/HY-Motion-1.0). Official text-to-motion model interface; a motion preview rather than playable gameplay. Hosted availability may vary.
+- **Source · model:** [Motion implementation source](https://github.com/Tencent-Hunyuan/HY-Motion-1.0). Public inference and visualization implementation with separately linked weights; no complete game project.
+- **Tutorial · tutorial:** [Installation and motion workflow](https://github.com/Tencent-Hunyuan/HY-Motion-1.0/blob/master/README.md). Official setup, CLI inference, local UI, and prompting guidance. Local execution requires the documented GPU resources.
+
+**[Tripo Model Generation API](https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html)**
+
+H3 text-to-model requests (v3.1-20260211 and v3.0-20250812) expose separate geometry and texture seeds plus PBR controls. Persist model_version and task ID, query with the submitting API key, and download successful output files promptly: their URLs expire after five minutes by default. Low-poly generation can fail on complex inputs. Cross-version reproducibility, output rights, cancellation endpoints and retry charges remain unverified.
+
+Tags: `asset-generation`. Source reviewed: 2026-10-19. Further reading: [Tripo task results](https://docs.tripo3d.ai/task-query/get-your-task-result.html)
+
+**[Adobe Mixamo](https://www.mixamo.com/)**
+
+Upload a clean character mesh, fit a humanoid skeleton and choose motion clips, then download the rigged character and animations for your engine pipeline. The auto-rigger and animation library support bipedal humanoids; unusual proportions or extra limbs can fail. An Adobe ID is required, and the official FAQ excludes accounts with a China country code. Save results locally because Mixamo retains only the last used character.
+
+Tags: `Character rigging` · `Skeletal animation` · `Humanoid` · `Animation library`. Source reviewed: 2026-11-24. Further reading: [Official requirements and account restrictions](https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html)
 
 </details>
 
-### Community
+### Tutorial
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [GDQuest · First 2D Game](https://www.gdquest.com/library/first_2d_game_godot4_vampire_survivor/) | A GDQuest tutorial for a Godot 2D survival game, with complete scripts, a project, and troubleshooting notes. | Planning / Coding / Scenes / Testing |
-| [Catlike Coding · Surface Contact](https://catlikecoding.com/unity/tutorials/movement/surface-contact/) | Jasper Flick's Unity movement tutorial explains character control through slopes, steps, and contact timing. | Coding / Scenes / Testing |
-| [Epic Developer Community · UE](https://dev.epicgames.com/community/unreal-engine) | Epic's UE community hub for author tutorials, learning materials, and version-specific discussions. | Planning / Coding / Assets / Scenes / Testing |
-| [Three.js · Instanced Crowd Engineering](https://discourse.threejs.org/t/one-draw-call-massive-crowd-performance-engineering-in-three-js/89928) · 2026 | A game author's Three.js forum write-up on a single-draw-call crowd system, instance data, LOD, and staggered updates. | Coding / Scenes / Testing |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Blender Python · API Quickstart](https://github.com/blender/blender/blob/main/doc/python_api/rst/info_quickstart.rst) | Official Blender API tutorial source covering bpy data, context, operators, and Python operations. | Guides & examples | Coding / Assets / Scenes / Testing |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
 
-**[GDQuest · First 2D Game](https://www.gdquest.com/library/first_2d_game_godot4_vampire_survivor/)**
+**[Blender Python · API Quickstart](https://github.com/blender/blender/blob/main/doc/python_api/rst/info_quickstart.rst)**
 
-Covers movement, aiming, projectiles, enemy spawning, and failure states as a reference for a complete core loop. The tutorial was made with Godot 4.1 and updated to 4.6. Its troubleshooting explains grounded / floating modes and an enemy count limit. Code uses MIT while art assets use CC BY-NC-SA 4.0; check reuse conditions separately.
+Provides authoritative guidance for asset scripts, especially the distinction between direct data access and operations that depend on the current mode, selection, or viewport. bpy.ops poll checks can fail because of context; scripts should inspect actual state and verify outputs, beyond syntax checks.
 
-Tags: `Godot` · `Community experience` · `Complete core loop` · `Collision debugging` · `2D`. Source reviewed: 2026-10-18. Further reading: [Project source](https://github.com/gdquest-demos/getting-started-with-godot-4) · [Tutorial library](https://www.gdquest.com/library/)
-
-**[Catlike Coding · Surface Contact](https://catlikecoding.com/unity/tutorials/movement/surface-contact/)**
-
-The author uses test scenes to reproduce loss of ground contact, ghost collisions, raycasts, and ground snapping, giving agents causal explanations of physics behavior. The tutorial uses Unity 2019.2.14f1 and ProBuilder; adapt its algorithms, APIs, input, and project configuration to the target version.
-
-Tags: `Unity` · `Community experience` · `Physics` · `Character control` · `Debugging`. Source reviewed: 2026-10-18. Further reading: [Complete movement series](https://catlikecoding.com/unity/tutorials/movement/) · [Shader and project tutorials](https://catlikecoding.com/unity/tutorials/)
-
-**[Epic Developer Community · UE](https://dev.epicgames.com/community/unreal-engine)**
-
-Useful for practical material, animation, Blueprint, and performance troubleshooting beyond official references. Check each contribution's author, date, engine version, and reproducible project; access to the hub does not establish that every post has been verified.
-
-Tags: `Unreal Engine` · `Community` · `Tutorials` · `Practical experience` · `Per-source verification`. Source reviewed: 2026-10-18.
-
-**[Three.js · Instanced Crowd Engineering](https://discourse.threejs.org/t/one-draw-call-massive-crowd-performance-engineering-in-three-js/89928)**
-
-Offers explainable performance techniques, with the author's playable demo showing technical and visual tradeoffs. Frame rates are self-reported on the author's hardware, not a benchmark across devices. Measure GPU, CPU, bandwidth, and visual quality after optimization.
-
-Tags: `Three.js` · `Community experience` · `Instancing` · `LOD` · `Performance`. Source reviewed: 2026-10-18. Further reading: [Community forum](https://discourse.threejs.org/)
+Tags: `Blender` · `Python` · `bpy` · `Context` · `Automation`. Source reviewed: 2026-10-18. Further reading: [API documentation](https://docs.blender.org/api/current/)
 
 </details>
 
-<a id="2d"></a>
+<a id="audio"></a>
 
-## AI for 2D game development
+## Audio & voice
+
+### Tool
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [ElevenLabs Sound Effects](https://elevenlabs.io/docs/overview/capabilities/sound-effects) | Generates game sound effects, Foley, and looping ambience from text through a web app or API. | Tools & platforms | Assets |
+| [Stable Audio Open 1.0](https://huggingface.co/stabilityai/stable-audio-open-1.0) · 2024 | Provides downloadable text-to-audio weights and local tools for sound effects and field recordings. | Tools & platforms | Assets |
+| [ElevenLabs Music](https://elevenlabs.io/docs/overview/capabilities/music) | Prompted music generation with composition plans, references and section editing. | Tools & platforms | Assets |
+| [ElevenLabs Speech Generation](https://elevenlabs.io/docs/api-reference/text-to-speech/convert) | Voice-conditioned speech synthesis with pronunciation dictionaries and neighboring-request continuity controls. | Tools & platforms | Assets |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[ElevenLabs Sound Effects](https://elevenlabs.io/docs/overview/capabilities/sound-effects)**
+
+Describe footsteps, impacts, UI feedback, or environmental sounds, control duration, and export audio for a game engine. The documentation describes loop-enabled generation for seamless repeat playback and a 30-second maximum per clip. Its overview lists MP3 for all effects and 48 kHz WAV for non-looping effects; API format support and plan requirements should be checked separately. Loop quality still needs validation in the target game. This is a hosted audio service. The public SDK connects to its API and does not release the generation model or a complete game project.
+
+Tags: `Sound effects` · `Foley` · `Ambience` · `Audio loops` · `API` · `Commercial service`. Source reviewed: 2026-10-19. Further reading: [Product walkthrough](https://elevenlabs.io/docs/eleven-creative/playground/sound-effects) · [Sound Effects API reference](https://elevenlabs.io/docs/api-reference/text-to-sound-effects/convert)
+
+- **Demo · interactive:** [Sound effects generator](https://elevenlabs.io/sound-effects). Official text-to-audio generator and sound examples; this is an audio tool, not a playable game.
+- **Source · sdk:** [Official Python SDK](https://github.com/elevenlabs/elevenlabs-python). API client source only; generation model and complete game source are not included.
+- **Tutorial · tutorial:** [Sound Effects quickstart](https://elevenlabs.io/docs/eleven-api/guides/cookbooks/sound-effects). Official API walkthrough with SDK examples; an account and API key are needed for generation.
+
+**[Stable Audio Open 1.0](https://huggingface.co/stabilityai/stable-audio-open-1.0)**
+
+Generates up to 47 seconds of stereo audio at 44.1 kHz, with examples for local inference and WAV export. The official audio-tools repository includes a local Gradio interface. The model works best with English descriptions, is stronger at sound effects and field recordings than music, and cannot produce realistic vocals. Model access requires accepting its terms and sharing contact information with the publisher; this resource is an audio pipeline rather than a complete soundtrack or game generator.
+
+Tags: `Text-to-audio` · `Sound effects` · `Field recordings` · `Model weights` · `Local inference`. Source reviewed: 2026-10-19. Further reading: [Local demo setup](https://github.com/Stability-AI/stable-audio-tools#interface) · [Research paper](https://arxiv.org/abs/2407.14358) · [Stable Audio Open model license](https://huggingface.co/stabilityai/stable-audio-open-1.0/blob/main/LICENSE.md)
+
+- **Demo · local-tool:** [Local audio demo setup](https://github.com/Stability-AI/stable-audio-tools#interface). Download and run the official Gradio audio interface locally; this link is setup guidance, not a hosted playable game.
+- **Source · pipeline-source:** [Audio tools source](https://github.com/Stability-AI/stable-audio-tools). MIT-licensed training and inference code; Stable Audio Open 1.0 weights are separately gated and governed by the model's Community License. No complete game project.
+- **Tutorial · tutorial:** [Local inference and WAV export](https://huggingface.co/stabilityai/stable-audio-open-1.0#usage). Official model usage examples for stable-audio-tools and Diffusers.
+
+**[ElevenLabs Music](https://elevenlabs.io/docs/overview/capabilities/music)**
+
+Generate music with composition plans, references and section editing. Music-specific terms distinguish Indie and Studio game uses, so paid API access alone does not clear every game release. The October 2026 use policy restricts AI-development/training datasets unless expressly permitted. Reference audio rights and plan eligibility require review.
+
+Tags: `audio-generation`. Source reviewed: 2026-10-18. Further reading: [ElevenLabs Music terms](https://elevenlabs.io/music-terms) · [Prohibited Use Policy (October 2026)](https://elevenlabs.io/use-policy)
+
+**[ElevenLabs Speech Generation](https://elevenlabs.io/docs/api-reference/text-to-speech/convert)**
+
+The speech endpoint accepts versioned pronunciation dictionaries and previous/next text or request context. Zero-retention mode is enterprise-only and disables history-based continuity features; verify model compatibility. October 2026 policy restricts AI-development/training datasets and requires approval for under-18-directed products. These constraints are distinct from ordinary output-commercial rights and free-plan restrictions.
+
+Tags: `speech-generation` · `audio-generation`. Source reviewed: 2026-10-18. Further reading: [Prohibited Use Policy (October 2026)](https://elevenlabs.io/use-policy) · [Non-EEA general terms (October 2026)](https://elevenlabs.io/terms-of-use)
+
+</details>
+
+<a id="production"></a>
+
+## Game creation & design
 
 ### Agent
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [OpenGame](https://github.com/leigest519/OpenGame) · 2026 | Generates browser game projects with reusable templates and debugging skills. | Planning / Coding / Assets / Testing |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [OpenGame](https://github.com/leigest519/OpenGame) · 2026 | Generates browser game projects with reusable templates and debugging skills. | Tools & platforms | Planning / Coding / Assets / Testing |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
@@ -462,20 +707,16 @@ Tags: `Browser games` · `Game Skill` · `Browser feedback` · `GameCoder-27B`. 
 
 ### Framework
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [GameGen-Verifier](https://github.com/NetX-lab/GameGen-Verifier) · 2026 | Verifies generated game behavior through runtime state hooks and focused checks. | Coding / Testing |
-| [GAVEL](https://github.com/gdrtodd/gavel) · 2024 | Combines language models and quality-diversity search to create board game rules. | Planning / Coding / Testing |
-| [Cardiverse](https://github.com/danruili/Cardiverse) · 2025 | Connects card game design, Python rule code, and playtesting in a prototype pipeline. | Planning / Coding / Testing |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [GAVEL](https://github.com/gdrtodd/gavel) · 2024 | Combines language models and quality-diversity search to create board game rules. | Research & benchmarks | Planning / Coding / Testing |
+| [Cardiverse](https://github.com/danruili/Cardiverse) · 2025 | Connects card game design, Python rule code, and playtesting in a prototype pipeline. | Research & benchmarks | Planning / Coding / Testing |
+| [3AGameFactory](https://github.com/OpenDCAI/GameFactory-3A) · 2026 | Coordinates game assets, gameplay, and UI through skills, model pipelines, and engine adapters. | Tools & platforms | Planning / Coding / Assets / Scenes / Testing |
+| [AutoUE](https://github.com/Pluto156/AutoUE) · 2026 | Coordinates agents to build Unreal scenes, gameplay code, interactions, and playtests. | Research & benchmarks | Planning / Coding / Assets / Scenes / Testing |
+| [UniGen](https://github.com/yxwan123/UniGen) · 2025 | Plans Unity prototypes, generates scripts, assembles scenes, and supports iterative debugging. | Research & benchmarks | Planning / Coding / Scenes / Testing |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
-
-**[GameGen-Verifier](https://github.com/NetX-lab/GameGen-Verifier)**
-
-Breaks game requirements into independently testable checkpoints and checks functionality through browser and runtime adapters. The repository provides GGV-Harness and verifier skills for Codex and Claude. Public code does not include all generated games, run outputs, or private configurations. State hooks also provide observability beyond a purely black-box playtest.
-
-Tags: `Functional verification` · `Playwright` · `Runtime state` · `Verifier Skill`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2605.07442)
 
 **[GAVEL](https://github.com/gdrtodd/gavel)**
 
@@ -489,145 +730,11 @@ Uses mechanism graphs and retrieval to generate variants and code from card game
 
 Tags: `Card games` · `Mechanism graphs` · `Code generation` · `Self-play validation`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2502.07128)
 
-</details>
-
-### Skill
-
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [Agent Sprite Forge](https://github.com/0x0funky/agent-sprite-forge) | Combines reference art, generated animation, and deterministic processing into exportable sprites. | Assets / Testing |
-
-<details>
-<summary>Inputs, outputs, limitations, and further reading</summary>
-
-**[Agent Sprite Forge](https://github.com/0x0funky/agent-sprite-forge)**
-
-Generates motion clips from an approved reference image, then performs background removal, alignment, loop selection, timing correction, and atlas packaging. It offers Godot, Aseprite, and web exports. For 0.4.0, the README reports parse-level round trips but no Godot, LDtk, or Aseprite editor-import verification. Import and visual acceptance checks remain necessary.
-
-Tags: `Agent Skill` · `Sprite pipeline` · `Animation` · `Asset QA`. Source reviewed: 2026-10-18.
-
-</details>
-
-### Benchmark
-
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [GameDevBench](https://github.com/waynchi/gamedevbench) · 2026 | Evaluates coding agents on development tasks in existing Godot projects. | Coding / Scenes / Testing |
-| [GameXpert-Bench](https://arxiv.org/abs/2608.21833) · 2026 | Benchmarks game creation, bug fixing, and iterative improvement in three tracks. | Planning / Coding / Testing |
-
-<details>
-<summary>Inputs, outputs, limitations, and further reading</summary>
-
-**[GameDevBench](https://github.com/waynchi/gamedevbench)**
-
-The repository contains 333 tasks across 2D, 3D, UI, and gameplay logic. Agents receive an existing project and a task, then produce changes that can be checked in the engine. Comparable official runs require Godot 4.4.1 and provide image or video feedback. This measures bounded development tasks, not the quality of commercial games created from scratch.
-
-Tags: `Development benchmark` · `Godot` · `Multimodal` · `Visual feedback`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2602.11103)
-
-**[GameXpert-Bench](https://arxiv.org/abs/2608.21833)**
-
-The paper introduces GameGen, GameFix, and GameOpt using complete development trajectories to study the lifecycle beyond a single generation. At review, the official repository still said data and evaluation code were being prepared for release. Treat it as a paper and protocol reference, not a ready-to-run benchmark.
-
-Tags: `Development benchmark` · `Bug fixing` · `Iterative improvement` · `Full release pending`. Source reviewed: 2026-10-18. Further reading: [Repository and release status](https://github.com/Kwen-Chen/GameXpert-Bench)
-
-</details>
-
-### Paper
-
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [GameGPT](https://arxiv.org/abs/2310.08067) · 2023 | Studies automated game development through multi-agent planning and code generation. | Planning / Coding / Testing |
-| [MarioGPT](https://github.com/shyamsn97/mario-gpt) · 2023 | Generates playable Mario-style level layouts from text with a GPT model. | Planning / Scenes / Testing |
-
-<details>
-<summary>Inputs, outputs, limitations, and further reading</summary>
-
-**[GameGPT](https://arxiv.org/abs/2310.08067)**
-
-Planning, review, and implementation agents break down game requirements and generate code, with a focus on hallucination and redundancy. This is an early research framework for game development agents. The linked repository contains only the paper and README; it is not a verified, ready-to-deploy product.
-
-Tags: `Multi-agent` · `Task planning` · `Research prototype`. Source reviewed: 2026-10-18. Further reading: [Paper and README repository](https://github.com/leyiwo/GameGPT)
-
-**[MarioGPT](https://github.com/shyamsn97/mario-gpt)**
-
-Descriptions of enemies, pipes, and elevation become character-grid levels and previews, with an interactive simulator or A* checks available. It generates level content within existing rules and supports research on controllable procedural content generation. Its scope does not include game engines, character art, or complete gameplay code.
-
-Tags: `PCG` · `Level generation` · `Text-to-level` · `GPT-2`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2302.05981)
-
-</details>
-
-### Tool
-
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [Agent Game Forge](https://github.com/0x0funky/agent-game-forge) | A local 2D game IDE with a scene editor for Codex and Claude Code. | Planning / Coding / Assets / Scenes / Testing / Shipping |
-| [Text2Game](https://github.com/boltomli/t2g) | Turns long-form text into world, character, and event data for narrative prototypes. | Planning / Coding / Scenes |
-| [PixelLab AI Agent Toolkit](https://www.pixellab.ai/mcp) | Generates pixel characters, animation, and seamless tilesets through API and MCP tools. | Assets / Scenes |
-| [OpenAI Image Generation](https://developers.openai.com/api/docs/guides/image-generation) | Generate and edit raster art using image endpoints or a conversational image-generation tool. | Assets |
-
-<details>
-<summary>Inputs, outputs, limitations, and further reading</summary>
-
-**[Agent Game Forge](https://github.com/0x0funky/agent-game-forge)**
-
-Agents, asset workflows, and JSON scene data turn natural-language requests into JS + Canvas games. Users can adjust layout and collision in a visual editor. The README lists web output as the current default, with full Godot and Unity support still on the roadmap. The project describes itself as pre-launch.
-
-Tags: `2D IDE` · `Canvas` · `Scene editing` · `Prototyping`. Source reviewed: 2026-10-18.
-
-**[Text2Game](https://github.com/boltomli/t2g)**
-
-Analyzes text in chunks, merges the results, and generates Twine/Chapbook HTML or Godot visual novel projects. The repository provides a Python pipeline and examples for research on turning narratives into playable prototypes. It offers no general guarantee of generating arbitrary action games.
-
-Tags: `Interactive narrative` · `Twine` · `Godot` · `Visual novels`. Source reviewed: 2026-10-18.
-
-**[PixelLab AI Agent Toolkit](https://www.pixellab.ai/mcp)**
-
-Accepts character descriptions, directions, actions, and terrain conditions to produce pixel assets, including four- or eight-direction characters and side-view or top-down tilesets. This is a commercial asset service. MCP connects its asset tools to coding agents; game rules, collision, and asset import still require a project workflow.
-
-Tags: `Pixel art` · `Sprite` · `Tileset` · `MCP` · `Commercial service`. Source reviewed: 2026-10-18. Further reading: [Documentation](https://www.pixellab.ai/docs)
-
-**[OpenAI Image Generation](https://developers.openai.com/api/docs/guides/image-generation)**
-
-Generate or edit raster images through the Images API or multi-turn Responses workflows. Save output bytes and request settings; masks guide edits rather than guaranteeing exact boundaries. Sprite consistency and seamless textures need separate checks. The technical guide does not establish output rights or retry billing.
-
-Tags: `asset-generation`. Source reviewed: 2026-10-18.
-
-</details>
-
-<a id="3d"></a>
-
-## AI for 3D game development
-
-### Framework
-
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [3AGameFactory](https://github.com/OpenDCAI/GameFactory-3A) · 2026 | Coordinates game assets, gameplay, and UI through skills, model pipelines, and engine adapters. | Planning / Coding / Assets / Scenes / Testing |
-| [Infinigen](https://github.com/princeton-vl/infinigen) · 2023 | Procedurally generates natural and indoor Blender scenes and synthetic data. | Assets / Scenes / Testing |
-| [Holodeck](https://github.com/allenai/Holodeck) · 2023 | Lays out and furnishes interactive 3D indoor environments from text. | Planning / Scenes |
-| [AutoUE](https://github.com/Pluto156/AutoUE) · 2026 | Coordinates agents to build Unreal scenes, gameplay code, interactions, and playtests. | Planning / Coding / Assets / Scenes / Testing |
-| [UniGen](https://github.com/yxwan123/UniGen) · 2025 | Plans Unity prototypes, generates scripts, assembles scenes, and supports iterative debugging. | Planning / Coding / Scenes / Testing |
-
-<details>
-<summary>Inputs, outputs, limitations, and further reading</summary>
-
 **[3AGameFactory](https://github.com/OpenDCAI/GameFactory-3A)**
 
 A coding agent routes requirements through image, 3D, motion, audio, and other pipelines to produce assets and engine-native code, with context for UE5, Unity, Godot, Blender, and three.js. Demos mix generated and existing resources. The 3A name is not a verified commercial quality rating. This is a separate project from Kling's GameFactory video world model.
 
 Tags: `Agent Skills` · `Asset pipelines` · `Multiple engines` · `Game generation`. Source reviewed: 2026-10-18. Further reading: [Chinese documentation](https://github.com/OpenDCAI/GameFactory-3A/blob/main/README_zh.md)
-
-**[Infinigen](https://github.com/princeton-vl/infinigen)**
-
-Random seeds, parameters, and asset generators produce geometry, materials, scenes, and annotations, with export documentation for OBJ, OpenUSD, and other formats. This is a procedural system rather than a language model. It can provide controllable scenes and data for AI development workflows; real-time games still need optimization, collision, and gameplay integration.
-
-Tags: `Procedural generation` · `Blender` · `Synthetic data` · `Scenes`. Source reviewed: 2026-10-18. Further reading: [Project and paper](https://infinigen.org/)
-
-**[Holodeck](https://github.com/allenai/Holodeck)**
-
-Combines language planning, asset retrieval, and spatial constraints to turn room requirements into AI2-THOR scenes, with instructions for loading them in Unity. Evaluation primarily targets embodied AI environment generation. It offers ideas for scene layout and semantic interaction, but does not establish complete game level design or commercial release readiness.
-
-Tags: `Text-to-scene` · `AI2-THOR` · `Spatial constraints` · `Embodied environments`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2312.09067)
 
 **[AutoUE](https://github.com/Pluto156/AutoUE)**
 
@@ -653,140 +760,9 @@ Tags: `Unity` · `Game generation` · `Scene assembly` · `Research prototype`. 
 
 ### Skill
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [Unity Agent Plugin](https://docs.unity.com/en-us/ai/unity-plugin/about-unity-plugin) | Unity-maintained project skills give general coding agents engine-specific context. | Planning / Coding / Scenes / Testing / Shipping |
-| [Godot MCP 3D Asset Builder](https://github.com/LuigiDeFacci/godot-create-3d-assets) | Builds reusable stylized 3D assets with Godot geometry and validation workflows. | Assets / Scenes / Testing |
-
-<details>
-<summary>Inputs, outputs, limitations, and further reading</summary>
-
-**[Unity Agent Plugin](https://docs.unity.com/en-us/ai/unity-plugin/about-unity-plugin)**
-
-Provides Claude Code, Codex, and Grok with skills for 2D, UI, rendering, navigation, physics, multiplayer, and other tasks, connected to Unity CLI and MCP controls. Unity requires version 6.0 or later. The current CLI MCP mode replaces MCP in the older assistant package; follow the documentation for the version in use.
-
-Tags: `Official` · `Agent Skills` · `Unity` · `CLI` · `MCP`. Source reviewed: 2026-10-18. Further reading: [Skill source](https://github.com/Unity-Technologies/unity-agent-plugin/tree/main/skills) · [CLI / MCP migration](https://docs.unity.com/en-us/unity-cli/replace-mcp-server-unity-cli)
-
-**[Godot MCP 3D Asset Builder](https://github.com/LuigiDeFacci/godot-create-3d-assets)**
-
-Takes project style and asset requirements, then uses Godot MCP and deterministic builders to produce PackedScene assets and check grounding, collision, navigation, and screenshots. Designed for Codex and Claude Code, it can reuse existing project resources. It requires compatible MCP capabilities and is not an image-to-mesh generative model.
-
-Tags: `Godot` · `Agent Skill` · `PackedScene` · `Asset QA`. Source reviewed: 2026-10-18.
-
-</details>
-
-### Benchmark
-
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [GameEngineBench](https://arxiv.org/abs/2607.03525) · 2026 | Tests agent-written C++ runtime changes in real Unreal Engine projects. | Coding / Testing |
-
-<details>
-<summary>Inputs, outputs, limitations, and further reading</summary>
-
-**[GameEngineBench](https://arxiv.org/abs/2607.03525)**
-
-Paper v2 describes 110 scoped C++ tasks from nine Unreal projects. Agents receive a buildable start, allowed files, and behavioral requirements. After compilation and Play-in-Editor listen-server tests, an LLM judge reviews the specification, test evidence, edits, and reference solution to determine success. The paper-linked repository could not be retrieved during review, so runnable-code availability remains unverified. The scope is local C++ implementation, not complete 3D game generation.
-
-Tags: `Development benchmark` · `Unreal Engine` · `C++` · `Behavior tests`. Source reviewed: 2026-10-18. Further reading: [Paper-linked repository (availability unverified)](https://github.com/Nitrode-Research/GameEngineBench) · [Versioned evaluation protocol](https://arxiv.org/html/2607.03525v2)
-
-</details>
-
-### Paper
-
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [Video2Game](https://github.com/video2game/video2game) · 2024 | Reconstructs real-world video into interactive 3D environments for the browser. | Assets / Scenes / World models |
-| [BlenderLLM / BlendNet / CADBench](https://github.com/FreedomIntelligence/BlenderLLM) · 2024 | Studies text-to-Blender scripting with a training dataset and modeling benchmark. | Assets / Testing |
-
-<details>
-<summary>Inputs, outputs, limitations, and further reading</summary>
-
-**[Video2Game](https://github.com/video2game/video2game)**
-
-Video and camera information pass through reconstruction, mesh extraction, appearance baking, and collision generation into a three.js game environment. The documented UE route recommends fully diffuse baked meshes, with the baking specular dimension set to zero. This is an explicit environment reconstruction approach with remaining manual scene setup and physics integration. It should be distinguished from interactive video world models that predict the next frame.
-
-Tags: `Video-to-3D` · `Reconstruction` · `Three.js` · `Collision`. Source reviewed: 2026-10-19. Further reading: [Paper](https://arxiv.org/abs/2404.09833) · [Pinned engine-handoff recommendations](https://github.com/video2game/video2game/blob/7bcf8ae754240b9fd2de75a154eb73c75a146b79/readme.md#L256-L273)
-
-**[BlenderLLM / BlendNet / CADBench](https://github.com/FreedomIntelligence/BlenderLLM)**
-
-BlenderLLM generates bpy modeling scripts from user instructions. The repository and released dataset documentation report about 12K BlendNet pairs, and CADBench includes synthetic and forum-sourced tasks. Evaluation focuses on basic CAD-style modeling and instruction following. The README identifies limitations in advanced materials, multimodal input, and multi-turn collaboration; this is not a game creation benchmark.
-
-Tags: `Text-to-bpy` · `CADBench` · `Dataset` · `Modeling benchmark`. Source reviewed: 2026-10-19. Further reading: [Paper](https://arxiv.org/abs/2412.14203) · [BlendNet dataset](https://huggingface.co/datasets/FreedomIntelligence/BlendNet) · [CADBench](https://huggingface.co/datasets/FreedomIntelligence/CADBench) · [Pinned release dataset description](https://github.com/FreedomIntelligence/BlenderLLM/blob/f778bfd6992ddd675f7615d0eaf965a8576f2879/README.md#L44-L50)
-
-</details>
-
-### Tool
-
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [MCP Unity Editor](https://github.com/CoderGamester/mcp-unity) | A community MCP bridge for querying, editing, and testing Unity projects. | Coding / Scenes / Testing |
-| [Hunyuan3D 2.0](https://github.com/Tencent-Hunyuan/Hunyuan3D-2) · 2025 | Turns reference images into geometry and textures for 3D asset pipelines. | Assets |
-| [TRELLIS](https://github.com/microsoft/TRELLIS) · 2024 | Generates meshes, Gaussians, and radiance fields from structured latent representations. | Assets |
-| [TripoSR](https://github.com/VAST-AI-Research/TripoSR) · 2024 | Quickly reconstructs a 3D object from one image for asset prototyping. | Assets |
-| [Tripo Model Generation API](https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html) | Versioned text-to-model generation with separate geometry and texture seeds. | Assets |
-
-<details>
-<summary>Inputs, outputs, limitations, and further reading</summary>
-
-**[MCP Unity Editor](https://github.com/CoderGamester/mcp-unity)**
-
-Exposes scenes, GameObjects, components, Prefabs, logs, Unity Test Runner, and other editor operations to MCP clients. This community tool is separate from Unity's official plugin. Its README warns that entering Play Mode with domain reload can disconnect the bridge; check the installed version, test configuration, and actual results. Editor automation alone does not establish correct gameplay.
-
-Tags: `Unity` · `MCP` · `Editor automation` · `Community tool`. Source reviewed: 2026-10-18.
-
-**[Hunyuan3D 2.0](https://github.com/Tencent-Hunyuan/Hunyuan3D-2)**
-
-The 2.0 pipeline generates shape with Hunyuan3D-DiT and textures the mesh with Hunyuan3D-Paint. It supports GLB and OBJ export and a Blender addon under a dedicated Tencent Hunyuan 3D 2.0 community license. The separate 2.1 release adds a PBR texture pipeline and training code. Topology, LOD, rigging, collision, runtime performance, and each version's terms still need game-pipeline checks.
-
-Tags: `Image-to-3D` · `Mesh` · `Textures` · `Blender`. Source reviewed: 2026-10-18. Further reading: [2.0 paper](https://arxiv.org/abs/2501.12202) · [2.1 repository](https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1) · [2.0 license](https://github.com/Tencent-Hunyuan/Hunyuan3D-2/blob/main/LICENSE)
-
-**[TRELLIS](https://github.com/microsoft/TRELLIS)**
-
-Decodes image or text inputs into several 3D representations. Official examples support textured GLB export and simplification. Conventional game asset pipelines mainly use its mesh branch; Gaussian and radiance field outputs do not themselves include usable collision, animation, or gameplay logic.
-
-Tags: `Image-to-3D` · `Text-to-3D` · `GLB` · `Structured Latents`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2412.01506)
-
-**[TripoSR](https://github.com/VAST-AI-Research/TripoSR)**
-
-Uses LRM-style feed-forward reconstruction, with public code, pretrained models, and a demo. An input image becomes an exportable object mesh. It focuses on individual objects; hidden surfaces, topology, and game performance need additional work. It is not a complete scene or playable game generator.
-
-Tags: `Image-to-3D` · `Reconstruction` · `Mesh` · `Prototype assets`. Source reviewed: 2026-10-18.
-
-**[Tripo Model Generation API](https://docs.tripo3d.ai/model-generation/text-to-model-v3-0-v3-1.html)**
-
-H3 text-to-model requests (v3.1-20260211 and v3.0-20250812) expose separate geometry and texture seeds plus PBR controls. Persist model_version and task ID, query with the submitting API key, and download successful output files promptly: their URLs expire after five minutes by default. Low-poly generation can fail on complex inputs. Cross-version reproducibility, output rights, cancellation endpoints and retry charges remain unverified.
-
-Tags: `asset-generation`. Source reviewed: 2026-10-19. Further reading: [Tripo task results](https://docs.tripo3d.ai/task-query/get-your-task-result.html)
-
-</details>
-
-<a id="production"></a>
-
-## Game production: art, animation, audio, testing, and runtime AI
-
-### Framework
-
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [FastNoise Lite](https://github.com/Auburn/FastNoiseLite) | A portable noise library for procedural terrain and material inputs. | Coding / Assets / World models |
-
-<details>
-<summary>Inputs, outputs, limitations, and further reading</summary>
-
-**[FastNoise Lite](https://github.com/Auburn/FastNoiseLite)**
-
-Provides 2D/3D sampling, fractals and domain warping across multiple languages under MIT. These are generation primitives: meshing, erosion, persistent world state and meaningful level design require additional systems.
-
-Tags: `Procedural generation` · `Noise` · `Terrain`. Source reviewed: 2026-10-18.
-
-</details>
-
-### Skill
-
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [Level Design Book · unofficial design skill](https://github.com/OpenEnvision/GameMap/tree/main/docs/skills/level-design) · 2026 | An unofficial, agent-neutral adaptation of The Level Design Book for level briefs, blockouts, encounters, wayfinding, and evidence-based playtest reviews. | Planning / Scenes / Testing / Shipping |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Level Design Book · unofficial design skill](https://github.com/OpenEnvision/GameMap/tree/main/docs/skills/level-design) · 2026 | An unofficial, agent-neutral adaptation of The Level Design Book for level briefs, blockouts, encounters, wayfinding, and evidence-based playtest reviews. | Tools & platforms | Planning / Scenes / Testing / Shipping |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
@@ -803,13 +779,258 @@ Tags: `level-design` · `skill` · `blockout` · `playtesting` · `agent-neutral
 
 </details>
 
+### Paper
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [GameGPT](https://arxiv.org/abs/2310.08067) · 2023 | Studies automated game development through multi-agent planning and code generation. | Research & benchmarks | Planning / Coding / Testing |
+| [MarioGPT](https://github.com/shyamsn97/mario-gpt) · 2023 | Generates playable Mario-style level layouts from text with a GPT model. | Research & benchmarks | Planning / Scenes / Testing |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[GameGPT](https://arxiv.org/abs/2310.08067)**
+
+Planning, review, and implementation agents break down game requirements and generate code, with a focus on hallucination and redundancy. This is an early research framework for game development agents. The linked repository contains only the paper and README; it is not a verified, ready-to-deploy product.
+
+Tags: `Multi-agent` · `Task planning` · `Research prototype`. Source reviewed: 2026-10-18. Further reading: [Paper and README repository](https://github.com/leyiwo/GameGPT)
+
+**[MarioGPT](https://github.com/shyamsn97/mario-gpt)**
+
+Descriptions of enemies, pipes, and elevation become character-grid levels and previews, with an interactive simulator or A* checks available. It generates level content within existing rules and supports research on controllable procedural content generation. Its scope does not include game engines, character art, or complete gameplay code.
+
+Tags: `PCG` · `Level generation` · `Text-to-level` · `GPT-2`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2302.05981)
+
+</details>
+
 ### Documentation
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [Unreal Engine · Gauntlet](https://dev.epicgames.com/documentation/unreal-engine/gauntlet-automation-framework-overview-in-unreal-engine?lang=en-US) | Orchestrates game test sessions with multiple processes, roles, devices, and collected logs. | Testing / Shipping |
-| [Windows · UI Automation and Input Semantics](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview) | Exposes provider-supported accessibility control patterns for inspecting and manipulating desktop editor controls. | Coding / Scenes / Testing |
-| [Xbox Accessibility Guidelines](https://learn.microsoft.com/en-us/xbox/accessibility/guidelines) | Game-specific accessibility guidance for designers, developers and test teams. | Planning / Testing |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Godot Demo Projects](https://github.com/godotengine/godot-demo-projects) | Official runnable Godot examples covering 2D, 3D, GUI, audio, networking, and rendering. | Guides & examples | Planning / Coding / Scenes / Testing |
+| [Unity · 2D Tech Demos](https://github.com/Unity-Technologies/2d-techdemos) | Official Unity 2D example source for Tilemaps, Scripted Tiles, brushes, and runtime map changes. | Guides & examples | Coding / Assets / Scenes / Testing |
+| [Lyra Sample Game](https://dev.epicgames.com/documentation/en-us/unreal-engine/lyra-sample-game-in-unreal-engine) | Epic's modular UE5 sample game, with gameplay plugins, abilities, animation, input, and UI. | Guides & examples | Planning / Coding / Scenes / Testing |
+| [Phaser · Examples](https://github.com/phaserjs/examples) | Official Phaser example source with runnable references for specific APIs and gameplay components. | Guides & examples | Coding / Scenes / Testing |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[Godot Demo Projects](https://github.com/godotengine/godot-demo-projects)**
+
+Useful as minimal reference projects and regression tasks for agents, with concrete examples of scenes, scripts, and resources. The repository states that master targets the development engine; choose a matching branch for a stable release to avoid mistaking version conflicts for generation failures.
+
+Tags: `Godot` · `Official examples` · `Runnable source` · `Version branches` · `Reference projects`. Source reviewed: 2026-10-18.
+
+**[Unity · 2D Tech Demos](https://github.com/Unity-Technologies/2d-techdemos)**
+
+Offers source scenes for tile collision lookup, destructible maps, and palette switching. The inspected project records Unity 6000.3.3f1, URP 17.3.0, and Input System 1.17.0, while the README says 2021.1 onward. Its manifest selects 2d-extras' package_6000.3 Git branch but the committed lockfile records registry 6.0.1; resolve and pin dependencies before testing. Source review did not establish import, playback, or compatibility across Editor versions.
+
+Tags: `Unity` · `2D` · `Tilemap` · `Official examples` · `Runnable source`. Source reviewed: 2026-10-19. Further reading: [Pinned editor baseline](https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/ProjectSettings/ProjectVersion.txt#L1-L2) · [Pinned package manifest](https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/Packages/manifest.json#L2-L14) · [Pinned package lock](https://github.com/Unity-Technologies/2d-techdemos/blob/6593d544df2ea598e51f5cf1d7165d5ed42ceba7/Packages/packages-lock.json#L27-L36)
+
+**[Lyra Sample Game](https://dev.epicgames.com/documentation/en-us/unreal-engine/lyra-sample-game-in-unreal-engine)**
+
+Useful for learning how Game Feature Plugins, Experiences, and the Gameplay Ability System work together in a real project. Source and content are distributed through Fab / Epic Launcher and require a matching engine version. Lyra is more complex than a minimal prototype, so study it by module. The official Fab listing marks its content for use only with Unreal Engine-based products.
+
+Tags: `Unreal Engine` · `Official sample` · `GAS` · `Modular design` · `Runnable project`. Source reviewed: 2026-10-19. Further reading: [Official Fab listing](https://www.fab.com/listings/93faede1-4434-47c0-85f1-bf27c0820ad0?lang=en)
+
+**[Phaser · Examples](https://github.com/phaserjs/examples)**
+
+Official examples for animation, cameras, input, physics, and scene transitions. The current README targets Phaser 4, and the labs site defaults to its latest development build; select and pin the version matching your project. The MIT license covers example code, not bundled art assets. Review asset permissions before reuse and test in a real browser.
+
+Tags: `Phaser` · `Official examples` · `Runnable source` · `2D` · `Version scope`. Source reviewed: 2026-10-18.
+
+</details>
+
+### Tool
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Agent Game Forge](https://github.com/0x0funky/agent-game-forge) | A local 2D game IDE with a scene editor for Codex and Claude Code. | Tools & platforms | Planning / Coding / Assets / Scenes / Testing / Shipping |
+| [Text2Game](https://github.com/boltomli/t2g) | Turns long-form text into world, character, and event data for narrative prototypes. | Research & benchmarks | Planning / Coding / Scenes |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[Agent Game Forge](https://github.com/0x0funky/agent-game-forge)**
+
+Agents, asset workflows, and JSON scene data turn natural-language requests into JS + Canvas games. Users can adjust layout and collision in a visual editor. The README lists web output as the current default, with full Godot and Unity support still on the roadmap. The project describes itself as pre-launch.
+
+Tags: `2D IDE` · `Canvas` · `Scene editing` · `Prototyping`. Source reviewed: 2026-10-18.
+
+**[Text2Game](https://github.com/boltomli/t2g)**
+
+Analyzes text in chunks, merges the results, and generates Twine/Chapbook HTML or Godot visual novel projects. The repository provides a Python pipeline and examples for research on turning narratives into playable prototypes. It offers no general guarantee of generating arbitrary action games.
+
+Tags: `Interactive narrative` · `Twine` · `Godot` · `Visual novels`. Source reviewed: 2026-10-18.
+
+</details>
+
+### Tutorial
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Codex · Create Browser-based Games](https://learn.chatgpt.com/use-cases/browser-games) | OpenAI's browser game workflow covering planning, project instructions, asset generation, and browser iteration. | Guides & examples | Planning / Coding / Assets / Testing / Shipping |
+| [GDQuest · First 2D Game](https://www.gdquest.com/library/first_2d_game_godot4_vampire_survivor/) | A GDQuest tutorial for a Godot 2D survival game, with complete scripts, a project, and troubleshooting notes. | Guides & examples | Planning / Coding / Scenes / Testing |
+| [Catlike Coding · Surface Contact](https://catlikecoding.com/unity/tutorials/movement/surface-contact/) | Jasper Flick's Unity movement tutorial explains character control through slopes, steps, and contact timing. | Guides & examples | Coding / Scenes / Testing |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[Codex · Create Browser-based Games](https://learn.chatgpt.com/use-cases/browser-games)**
+
+Define the player goal, core loop, inputs, and win and loss conditions, then implement with PLAN.md and AGENTS.md. Combine image skills and Playwright for visual and interaction feedback. This is a practical guide, not a performance guarantee for every game genre or a research benchmark.
+
+Tags: `Official workflow` · `Browser games` · `Planning` · `Playwright` · `Asset consistency`. Source reviewed: 2026-10-18.
+
+**[GDQuest · First 2D Game](https://www.gdquest.com/library/first_2d_game_godot4_vampire_survivor/)**
+
+Covers movement, aiming, projectiles, enemy spawning, and failure states as a reference for a complete core loop. The tutorial was made with Godot 4.1 and updated to 4.6. Its troubleshooting explains grounded / floating modes and an enemy count limit. Code uses MIT while art assets use CC BY-NC-SA 4.0; check reuse conditions separately.
+
+Tags: `Godot` · `Community experience` · `Complete core loop` · `Collision debugging` · `2D`. Source reviewed: 2026-10-18. Further reading: [Project source](https://github.com/gdquest-demos/getting-started-with-godot-4) · [Tutorial library](https://www.gdquest.com/library/)
+
+**[Catlike Coding · Surface Contact](https://catlikecoding.com/unity/tutorials/movement/surface-contact/)**
+
+The author uses test scenes to reproduce loss of ground contact, ghost collisions, raycasts, and ground snapping, giving agents causal explanations of physics behavior. The tutorial uses Unity 2019.2.14f1 and ProBuilder; adapt its algorithms, APIs, input, and project configuration to the target version.
+
+Tags: `Unity` · `Community experience` · `Physics` · `Character control` · `Debugging`. Source reviewed: 2026-10-18. Further reading: [Complete movement series](https://catlikecoding.com/unity/tutorials/movement/) · [Shader and project tutorials](https://catlikecoding.com/unity/tutorials/)
+
+</details>
+
+<a id="runtime"></a>
+
+## Runtime AI & NPCs
+
+### Framework
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Inworld Agent Runtime](https://docs.inworld.ai/character-studio-deprecation) | An AI orchestration toolkit with Unity and Unreal SDKs for voice-driven characters, memory and conversational NPCs. | Tools & platforms | Coding / Scenes / Runtime AI |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[Inworld Agent Runtime](https://docs.inworld.ai/character-studio-deprecation)**
+
+Compose speech recognition, language models, voice synthesis and character knowledge in a runtime graph, then connect character templates to a Unity or Unreal scene. The legacy Character Studio has retired; its workflows now use the Portal and Runtime SDKs. Detailed SDK guides currently require sign-in. Configure the model services and character logic for your project, and measure dialogue latency and behavior in the target game.
+
+Tags: `NPC` · `Dialogue` · `Voice` · `Unity` · `Unreal Engine`. Source reviewed: 2026-11-24. Further reading: [Unity AI Runtime SDK guide (sign-in required)](https://docs.inworld.ai/Unity/runtime/get-started) · [Unreal Agent Runtime SDK guide (sign-in required)](https://docs.inworld.ai/unreal-engine/runtime/overview) · [Official game-development examples](https://inworld.ai/blog/introducing-unreal-ai-runtime-sdk)
+
+</details>
+
+### Tool
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Convai](https://convai.com/) | Adds conversational NPCs with speech, memory, emotion, and in-scene actions. | Tools & platforms | Coding / Scenes / Runtime AI |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[Convai](https://convai.com/)**
+
+Convai connects game characters to runtime conversation and behavior services through engine integrations. Its Unity guides cover installation, sample scenes, and character setup; public Unreal SDK source is also available. Browser experiences require an account. This provides AI behavior inside an existing game, rather than generating a complete game. Public SDKs do not include the full hosted AI service.
+
+Tags: `Runtime AI` · `NPC dialogue` · `Character actions` · `Unity / Unreal`. Source reviewed: 2026-10-18. Further reading: [Unity SDK documentation](https://docs.convai.com/api-docs/plugins-and-integrations/convai-unity-sdk) · [Unreal SDK source](https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4) · [Projects and experiences](https://convai.com/gallery)
+
+- **Demo · interactive:** [Try character experiences](https://x.convai.com/). Account-required browser character experiences; these are conversations and role-play, not complete game-generation demos.
+- **Source · sdk:** [Unreal engine SDK source](https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4). Public engine integration source; the complete cloud conversation service is not included.
+- **Tutorial · tutorial:** [Build your first AI character](https://docs.convai.com/api-docs/plugins-and-integrations/convai-unity-sdk/getting-started). Official Unity installation, service setup, sample-scene, and custom-character walkthrough.
+
+</details>
+
+<a id="testing"></a>
+
+## Testing & QA
+
+### Framework
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [GUT · Godot Unit Test](https://github.com/bitwes/Gut) | A community Godot testing framework for GDScript assertions, test doubles, and parameterized cases. | Tools & platforms | Coding / Testing |
+| [Unity Test Framework](https://docs.unity3d.com/6000.2/Documentation/Manual/test-framework/test-framework-introduction.html) | Unity's official testing framework, with Edit mode, Play mode, and command-line execution. | Tools & platforms | Coding / Testing / Shipping |
+| [Unreal · Automation Test Framework](https://dev.epicgames.com/documentation/en-us/unreal-engine/automation-test-framework-in-unreal-engine) | UE's official infrastructure for unit, functional, content stress, and screenshot comparison tests. | Tools & platforms | Coding / Scenes / Testing / Shipping |
+| [GameGen-Verifier](https://github.com/NetX-lab/GameGen-Verifier) · 2026 | Verifies generated game behavior through runtime state hooks and focused checks. | Research & benchmarks | Coding / Testing |
+| [GameCI](https://game.ci/docs/) | Community-maintained Unity build and test automation for CI, with reusable GitHub Actions and container workflows. | Tools & platforms | Coding / Testing / Shipping |
+| [GdUnit4](https://github.com/godot-gdunit-labs/gdUnit4) | A Godot testing framework for GDScript, C# and scenes, with assertions, test doubles, scene inputs and CI reports. | Tools & platforms | Coding / Scenes / Testing |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[GUT · Godot Unit Test](https://github.com/bitwes/Gut)**
+
+Provides a CLI and JUnit XML output for automated regression checks on generated game state, damage, inventory, and other logic. GUT and Godot versions have explicit compatibility requirements; passing logic tests still leaves visuals, controls, and scene integration to check.
+
+Tags: `Godot` · `Unit testing` · `GDScript` · `CLI` · `JUnit`. Source reviewed: 2026-10-18. Further reading: [Author documentation](https://gut.readthedocs.io/)
+
+**[Unity Test Framework](https://docs.unity3d.com/6000.2/Documentation/Manual/test-framework/test-framework-introduction.html)**
+
+Enables ongoing regression checks for generated scripts and scene behavior, using UnityTest across frames to check lifecycles, coroutines, and state changes. Edit mode and Play mode have different execution loops; tests should wait for real frames or conditions rather than only confirming script creation. The separately checked Test Framework 1.4.6 API returns a job GUID and documents multi-frame cancellation cleanup. Active tests become Canceled and remaining tests NotRun; do not equate cancellation with passing or assume compatibility with every Editor package version.
+
+Tags: `Unity` · `Testing` · `Edit mode` · `Play mode` · `CLI`. Source reviewed: 2026-10-18. Further reading: [Package and API documentation](https://docs.unity3d.com/Packages/com.unity.test-framework@latest/) · [Versioned test-job and cancellation API](https://docs.unity3d.com/Packages/com.unity.test-framework@1.4/api/UnityEditor.TestTools.TestRunner.Api.TestRunnerApi.html)
+
+**[Unreal · Automation Test Framework](https://dev.epicgames.com/documentation/en-us/unreal-engine/automation-test-framework-in-unreal-engine)**
+
+Can bring Blueprint compilation, level loading, simulated input, and visual regression checks into an agent feedback loop, alongside interfaces such as Functional Testing. Tests require the appropriate plugins and state cleanup; the framework runs within the engine. ResumeRunTest reads an existing JSON report, resumes NotRun tests, and marks interrupted in-progress tests as failures. Preserve the report and distinguish compatible editor and client test contexts.
+
+Tags: `Unreal Engine` · `Automated testing` · `Blueprint` · `Visual regression` · `Content validation`. Source reviewed: 2026-10-18. Further reading: [Command-line reports and interrupted-run resumption](https://dev.epicgames.com/documentation/en-us/unreal-engine/run-automation-tests-in-unreal-engine)
+
+**[GameGen-Verifier](https://github.com/NetX-lab/GameGen-Verifier)**
+
+Breaks game requirements into independently testable checkpoints and checks functionality through browser and runtime adapters. The repository provides GGV-Harness and verifier skills for Codex and Claude. Public code does not include all generated games, run outputs, or private configurations. State hooks also provide observability beyond a purely black-box playtest.
+
+Tags: `Functional verification` · `Playwright` · `Runtime state` · `Verifier Skill`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2605.07442)
+
+**[GameCI](https://game.ci/docs/)**
+
+Run Unity Edit mode and Play mode tests, archive their reports, and build selected player targets from a repository. Pin the action, exact Editor version, runner OS and target toolchain; Unity activation and CI credentials must be configured separately. The reviewed unity-builder 6.0.0 and unity-test-runner 4.4.0 releases delegate to game-ci/cli, while the documentation still labels its examples v4. Check the release notes before copying an older workflow. Both action repositories declare MIT. That license does not include Unity Editor rights or hosted runner capacity. This community project is not affiliated with Unity Technologies.
+
+Tags: `Unity` · `CI` · `GitHub Actions` · `Build automation` · `Test reports`. Source reviewed: 2026-11-25. Further reading: [Unity build workflow and Editor selection](https://game.ci/docs/github/builder/) · [Unity test reports and activation](https://game.ci/docs/github/test-runner/) · [Builder 6.0.0 release and CLI migration](https://github.com/game-ci/unity-builder/releases/tag/v6.0.0) · [Test runner 4.4.0 release](https://github.com/game-ci/unity-test-runner/releases/tag/v4.4.0) · [Builder source and MIT license](https://github.com/game-ci/unity-builder#licence) · [Test runner source and MIT license](https://github.com/game-ci/unity-test-runner#license)
+
+**[GdUnit4](https://github.com/godot-gdunit-labs/gdUnit4)**
+
+Create a test suite for a gameplay rule or scene, drive its inputs with Scene Runner, and retain assertions and reports from editor or command-line runs. The reviewed 6.2.3 release is MIT-licensed. Its 6.2.x compatibility table lists Godot 4.5 through 4.7.1, while Godot 4.3/4.4 projects use the older 5.x line. Match the framework to the exact Godot version before installing. C# tests require the separately documented .NET setup. Scene assertions cover the conditions you write. They do not replace checking rendered appearance, controls and game feel in the target build.
+
+Tags: `Godot` · `GDScript` · `C#` · `Scene testing` · `CLI` · `JUnit`. Source reviewed: 2026-11-25. Further reading: [GdUnit4 installation and first test](https://godot-gdunit-labs.github.io/gdUnit4/latest/) · [GdUnit4 6.2.3 release](https://github.com/godot-gdunit-labs/gdUnit4/releases/tag/v6.2.3) · [Versioned Godot compatibility table](https://github.com/godot-gdunit-labs/gdUnit4/blob/v6.2.3/README.md#compatibility-overview) · [GdUnit4 6.2.3 MIT license](https://github.com/godot-gdunit-labs/gdUnit4/blob/v6.2.3/LICENSE)
+
+</details>
+
+### Benchmark
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [GameDevBench](https://github.com/waynchi/gamedevbench) · 2026 | Evaluates coding agents on development tasks in existing Godot projects. | Research & benchmarks | Coding / Scenes / Testing |
+| [GameXpert-Bench](https://arxiv.org/abs/2608.21833) · 2026 | Benchmarks game creation, bug fixing, and iterative improvement in three tracks. | Research & benchmarks | Planning / Coding / Testing |
+| [GameEngineBench](https://arxiv.org/abs/2607.03525) · 2026 | Tests agent-written C++ runtime changes in real Unreal Engine projects. | Research & benchmarks | Coding / Testing |
+
+<details>
+<summary>Inputs, outputs, limitations, and further reading</summary>
+
+**[GameDevBench](https://github.com/waynchi/gamedevbench)**
+
+The repository contains 333 tasks across 2D, 3D, UI, and gameplay logic. Agents receive an existing project and a task, then produce changes that can be checked in the engine. Comparable official runs require Godot 4.4.1 and provide image or video feedback. This measures bounded development tasks, not the quality of commercial games created from scratch.
+
+Tags: `Development benchmark` · `Godot` · `Multimodal` · `Visual feedback`. Source reviewed: 2026-10-18. Further reading: [Paper](https://arxiv.org/abs/2602.11103)
+
+**[GameXpert-Bench](https://arxiv.org/abs/2608.21833)**
+
+The paper introduces GameGen, GameFix, and GameOpt using complete development trajectories to study the lifecycle beyond a single generation. At review, the official repository still said data and evaluation code were being prepared for release. Treat it as a paper and protocol reference, not a ready-to-run benchmark.
+
+Tags: `Development benchmark` · `Bug fixing` · `Iterative improvement` · `Full release pending`. Source reviewed: 2026-10-18. Further reading: [Repository and release status](https://github.com/Kwen-Chen/GameXpert-Bench)
+
+**[GameEngineBench](https://arxiv.org/abs/2607.03525)**
+
+Paper v2 describes 110 scoped C++ tasks from nine Unreal projects. Agents receive a buildable start, allowed files, and behavioral requirements. After compilation and Play-in-Editor listen-server tests, an LLM judge reviews the specification, test evidence, edits, and reference solution to determine success. The paper-linked repository could not be retrieved during review, so runnable-code availability remains unverified. The scope is local C++ implementation, not complete 3D game generation.
+
+Tags: `Development benchmark` · `Unreal Engine` · `C++` · `Behavior tests`. Source reviewed: 2026-10-18. Further reading: [Paper-linked repository (availability unverified)](https://github.com/Nitrode-Research/GameEngineBench) · [Versioned evaluation protocol](https://arxiv.org/html/2607.03525v2)
+
+</details>
+
+### Documentation
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Unreal Engine · Gauntlet](https://dev.epicgames.com/documentation/unreal-engine/gauntlet-automation-framework-overview-in-unreal-engine?lang=en-US) | Orchestrates game test sessions with multiple processes, roles, devices, and collected logs. | Guides & examples | Testing / Shipping |
+| [Xbox Accessibility Guidelines](https://learn.microsoft.com/en-us/xbox/accessibility/guidelines) | Game-specific accessibility guidance for designers, developers and test teams. | Guides & examples | Planning / Testing |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
@@ -819,12 +1040,6 @@ Tags: `level-design` · `skill` · `blockout` · `playtesting` · `agent-neutral
 Gauntlet consumes prepared cooked builds and launches configured game roles through AutomationTool. Game-specific test nodes define assertions and terminal outcomes; launching a client and server alone does not establish scenario success. Build production, device availability, process cleanup, and parallel-session port allocation remain separate responsibilities.
 
 Tags: `Unreal Engine` · `AutomationTool` · `Multi-process testing` · `Cooked builds`. Source reviewed: 2026-10-18.
-
-**[Windows · UI Automation and Input Semantics](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-controlpatternsoverview)**
-
-Provider support must be probed per control; no specific game editor is assumed accessible. UIA coordinates are physical pixels, while absolute mouse input uses normalized desktop coordinates. Bounding rectangles may contain occluded points, foreground activation can be refused, and input insertion does not prove application completion. Integrity restrictions must be respected.
-
-Tags: `Windows` · `Accessibility` · `Native GUI` · `CUA` · `DPI`. Source reviewed: 2026-10-19. Further reading: [Properties and occlusion](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-automation-element-propids) · [Input and integrity limits](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendinput) · [DPI coordinates](https://learn.microsoft.com/en-us/windows/win32/winauto/uiauto-screenscaling) · [Window/display capture and frame lifetime](https://learn.microsoft.com/en-us/windows/apps/develop/media-authoring-processing/screen-capture) · [GameMap: native UI evidence boundaries](https://github.com/OpenEnvision/GameMap/blob/main/docs/production/engine-operations.md#native-gui-automation-is-a-separate-evidence-surface)
 
 **[Xbox Accessibility Guidelines](https://learn.microsoft.com/en-us/xbox/accessibility/guidelines)**
 
@@ -836,74 +1051,22 @@ Tags: `Accessibility` · `QA` · `Guidelines`. Source reviewed: 2026-10-18.
 
 ### Tool
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [Scenario](https://www.scenario.com/) | Builds consistent game art pipelines with custom style models and batch generation. | Assets / Scenes |
-| [Meshy API](https://docs.meshy.ai/en) | Connects AI model generation, humanoid rigging, and animation export for game asset workflows. | Assets / Scenes |
-| [HY-Motion 1.0](https://github.com/Tencent-Hunyuan/HY-Motion-1.0) · 2025 | Generates skeletal humanoid motion from text with public inference code and model weights. | Assets |
-| [ElevenLabs Sound Effects](https://elevenlabs.io/docs/overview/capabilities/sound-effects) | Generates game sound effects, Foley, and looping ambience from text through a web app or API. | Assets |
-| [Stable Audio Open 1.0](https://huggingface.co/stabilityai/stable-audio-open-1.0) · 2024 | Provides downloadable text-to-audio weights and local tools for sound effects and field recordings. | Assets |
-| [Regression Games](https://github.com/Regression-Games/RGUnityBots) | Provides a public Unity SDK for gameplay recording, input replay, and regression-test reference workflows. | Testing / Shipping |
-| [modl.ai](https://modl.ai/) | Uses visual agents and natural-language tasks to test uploaded game builds. | Testing / Shipping |
-| [Convai](https://convai.com/) | Adds conversational NPCs with speech, memory, emotion, and in-scene actions. | Coding / Scenes / Runtime AI |
-| [ElevenLabs Music](https://elevenlabs.io/docs/overview/capabilities/music) | Prompted music generation with composition plans, references and section editing. | Assets |
-| [ElevenLabs Speech Generation](https://elevenlabs.io/docs/api-reference/text-to-speech/convert) | Voice-conditioned speech synthesis with pronunciation dictionaries and neighboring-request continuity controls. | Assets |
-| [MSDF Atlas Generator](https://github.com/Chlumsky/msdf-atlas-gen) | A command-line and library tool for generating distance-field font atlases. | Assets / Shipping |
-| [DirectX Shader Compiler](https://github.com/microsoft/DirectXShaderCompiler) | HLSL compilation through the dxc command line and compiler APIs. | Coding / Testing / Shipping |
-| [Playwright Test](https://playwright.dev/docs/test-snapshots) | Browser testing with DOM actions, assertions and screenshot comparisons. | Coding / Testing |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Playwright MCP](https://github.com/microsoft/playwright-mcp) | Microsoft's browser automation MCP server for exposing page structure, interactions, and browser feedback to agents. | Tools & platforms | Testing / Shipping |
+| [Regression Games](https://github.com/Regression-Games/RGUnityBots) | Provides a public Unity SDK for gameplay recording, input replay, and regression-test reference workflows. | Tools & platforms | Testing / Shipping |
+| [modl.ai](https://modl.ai/) | Uses visual agents and natural-language tasks to test uploaded game builds. | Tools & platforms | Testing / Shipping |
+| [Playwright Test](https://playwright.dev/docs/test-snapshots) | Browser testing with DOM actions, assertions and screenshot comparisons. | Tools & platforms | Coding / Testing |
+| [Unreal Insights](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-insights-in-unreal-engine) | Epic's Unreal Engine trace capture and analysis suite for investigating frame time, memory, networking and asset loading. | Tools & platforms | Coding / Testing / Shipping |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
 
-**[Scenario](https://www.scenario.com/)**
+**[Playwright MCP](https://github.com/microsoft/playwright-mcp)**
 
-Scenario provides hosted image, video, 3D and audio workflows, custom-model training, a REST API and an official beta MCP interface. Inspect each model schema before submission; MCP model_run can return an unfinished job rather than output assets. The documented job_cancel cannot cancel jobs created by model_run or workflow_run. Integration examples do not include the full hosted service or a complete game project.
+Useful for browser game menus, HUDs, launch flows, keyboard input, and screenshots. The default interface uses accessibility trees; coordinate-based mouse tools require the optional vision capability. Neither interface automatically exposes internal Canvas or WebGL state, so game debug instrumentation may be needed. The checked README warns that the server is not a security boundary and documents browser_run_code_unsafe as arbitrary JavaScript execution in the Playwright server process. The separate Playwright CLI repository provides a CLI + Skills workflow.
 
-Tags: `Art direction` · `Style consistency` · `Character consistency` · `Batch assets` · `Commercial service`. Source reviewed: 2026-10-18. Further reading: [API documentation](https://docs.scenario.com/) · [Official beta MCP operations](https://mcp.scenario.com/docs/tools/model-run) · [Job cancellation scope](https://mcp.scenario.com/docs/tools/job-cancel)
-
-- **Demo · interactive:** [Asset generation app](https://app.scenario.com/). Hosted creative tool requiring an account; this is an asset workspace, not a playable game.
-- **Source · sdk:** [Unity integration source](https://github.com/scenario-labs/Scenario-Unity). Public Unity integration plugin; hosted model source and a complete game project are not included.
-- **Tutorial · tutorial:** [Consistent game asset pipeline](https://docs.scenario.com/get-started/documentation/integrating-with-applications-real-world-scenarios#1-game-asset-pipeline--batch-generation-with-style-consistency). Official walkthrough for custom style training, batch generation, and asset delivery.
-
-**[Meshy API](https://docs.meshy.ai/en)**
-
-The official animated-character recipe turns a reference image into a textured, rigged character with idle, jump, and attack clips in GLB and FBX. The animation step applies motions from Meshy's library. API rigging works best with standard textured bipeds with clearly separated limbs. Generated assets still need engine import, collision, controls, and performance checks; the public cookbook supplies asset examples rather than complete gameplay.
-
-Tags: `Image-to-3D` · `Rigging` · `Character animation` · `GLB` · `FBX` · `Commercial service`. Source reviewed: 2026-10-18. Further reading: [Rigging requirements](https://docs.meshy.ai/en/api/rigging)
-
-- **Demo · interactive:** [3D asset workspace](https://www.meshy.ai/workspace). Hosted generation and animation workspace; account access is required to generate assets. This is not a playable game.
-- **Source · examples:** [Cookbook example source](https://github.com/meshy-dev/meshy-cookbook). Public asset-generation recipes, not Meshy's model source or a complete game project.
-- **Tutorial · tutorial:** [Image to animated character](https://www.meshy.ai/developers/cookbook/recipes/animate-3d-character/). Official guide with reference files, Python and TypeScript examples, and GLB/FBX outputs. API access uses credits.
-
-**[HY-Motion 1.0](https://github.com/Tencent-Hunyuan/HY-Motion-1.0)**
-
-Tencent's text-to-motion models produce human character animation, with CLI inference, local Gradio visualization, and a hosted model demo. Use the generated motion as an animation-pipeline input and retarget it to the target character. The documented limitations include non-humanoid motion, multi-person interaction, seamless loops, and in-place animation. The release provides a motion implementation, not a controllable game character or full game project. Its custom license excludes the EU, UK and South Korea and restricts using the works or outputs to improve other AI models, except HY-Motion and its derivatives. Review the exact license and commercial threshold before adoption.
-
-Tags: `Text-to-motion` · `Skeletal animation` · `Humanoid` · `Model weights` · `Local inference`. Source reviewed: 2026-10-18. Further reading: [Official project](https://hunyuan.tencent.com/motion) · [Model weights](https://huggingface.co/tencent/HY-Motion-1.0) · [HY-Motion community license](https://github.com/Tencent-Hunyuan/HY-Motion-1.0/blob/master/License.txt)
-
-- **Demo · interactive:** [Interactive motion demo](https://huggingface.co/spaces/tencent/HY-Motion-1.0). Official text-to-motion model interface; a motion preview rather than playable gameplay. Hosted availability may vary.
-- **Source · model:** [Motion implementation source](https://github.com/Tencent-Hunyuan/HY-Motion-1.0). Public inference and visualization implementation with separately linked weights; no complete game project.
-- **Tutorial · tutorial:** [Installation and motion workflow](https://github.com/Tencent-Hunyuan/HY-Motion-1.0/blob/master/README.md). Official setup, CLI inference, local UI, and prompting guidance. Local execution requires the documented GPU resources.
-
-**[ElevenLabs Sound Effects](https://elevenlabs.io/docs/overview/capabilities/sound-effects)**
-
-Describe footsteps, impacts, UI feedback, or environmental sounds, control duration, and export audio for a game engine. The documentation describes loop-enabled generation for seamless repeat playback and a 30-second maximum per clip. Its overview lists MP3 for all effects and 48 kHz WAV for non-looping effects; API format support and plan requirements should be checked separately. Loop quality still needs validation in the target game. This is a hosted audio service. The public SDK connects to its API and does not release the generation model or a complete game project.
-
-Tags: `Sound effects` · `Foley` · `Ambience` · `Audio loops` · `API` · `Commercial service`. Source reviewed: 2026-10-19. Further reading: [Product walkthrough](https://elevenlabs.io/docs/eleven-creative/playground/sound-effects) · [Sound Effects API reference](https://elevenlabs.io/docs/api-reference/text-to-sound-effects/convert)
-
-- **Demo · interactive:** [Sound effects generator](https://elevenlabs.io/sound-effects). Official text-to-audio generator and sound examples; this is an audio tool, not a playable game.
-- **Source · sdk:** [Official Python SDK](https://github.com/elevenlabs/elevenlabs-python). API client source only; generation model and complete game source are not included.
-- **Tutorial · tutorial:** [Sound Effects quickstart](https://elevenlabs.io/docs/eleven-api/guides/cookbooks/sound-effects). Official API walkthrough with SDK examples; an account and API key are needed for generation.
-
-**[Stable Audio Open 1.0](https://huggingface.co/stabilityai/stable-audio-open-1.0)**
-
-Generates up to 47 seconds of stereo audio at 44.1 kHz, with examples for local inference and WAV export. The official audio-tools repository includes a local Gradio interface. The model works best with English descriptions, is stronger at sound effects and field recordings than music, and cannot produce realistic vocals. Model access requires accepting its terms and sharing contact information with the publisher; this resource is an audio pipeline rather than a complete soundtrack or game generator.
-
-Tags: `Text-to-audio` · `Sound effects` · `Field recordings` · `Model weights` · `Local inference`. Source reviewed: 2026-10-19. Further reading: [Local demo setup](https://github.com/Stability-AI/stable-audio-tools#interface) · [Research paper](https://arxiv.org/abs/2407.14358) · [Stable Audio Open model license](https://huggingface.co/stabilityai/stable-audio-open-1.0/blob/main/LICENSE.md)
-
-- **Demo · local-tool:** [Local audio demo setup](https://github.com/Stability-AI/stable-audio-tools#interface). Download and run the official Gradio audio interface locally; this link is setup guidance, not a hosted playable game.
-- **Source · pipeline-source:** [Audio tools source](https://github.com/Stability-AI/stable-audio-tools). MIT-licensed training and inference code; Stable Audio Open 1.0 weights are separately gated and governed by the model's Community License. No complete game project.
-- **Tutorial · tutorial:** [Local inference and WAV export](https://huggingface.co/stabilityai/stable-audio-open-1.0#usage). Official model usage examples for stable-audio-tools and Diffusers.
+Tags: `Playwright` · `MCP` · `Browser testing` · `HUD` · `Canvas limitations`. Source reviewed: 2026-10-19. Further reading: [Pinned tools and security boundaries](https://github.com/microsoft/playwright-mcp/blob/b8b4183e099f136cbec0388a6088d4aa2f6b9685/README.md#security) · [Companion CLI + Skills](https://github.com/microsoft/playwright-cli)
 
 **[Regression Games](https://github.com/Regression-Games/RGUnityBots)**
 
@@ -925,57 +1088,33 @@ Tags: `Automated playtesting` · `Visual agents` · `Commercial service` · `Gam
 - **Source · unavailable:** Full product source unavailable. No complete source release for the current hosted testing product was verified; older public samples are not its backend.
 - **Tutorial · service:** [Workflow overview](https://modl.ai/). Official upload, task-definition, and reporting overview; detailed onboarding is provided through the service.
 
-**[Convai](https://convai.com/)**
-
-Convai connects game characters to runtime conversation and behavior services through engine integrations. Its Unity guides cover installation, sample scenes, and character setup; public Unreal SDK source is also available. Browser experiences require an account. This provides AI behavior inside an existing game, rather than generating a complete game. Public SDKs do not include the full hosted AI service.
-
-Tags: `Runtime AI` · `NPC dialogue` · `Character actions` · `Unity / Unreal`. Source reviewed: 2026-10-18. Further reading: [Unity SDK documentation](https://docs.convai.com/api-docs/plugins-and-integrations/convai-unity-sdk) · [Unreal SDK source](https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4) · [Projects and experiences](https://convai.com/gallery)
-
-- **Demo · interactive:** [Try character experiences](https://x.convai.com/). Account-required browser character experiences; these are conversations and role-play, not complete game-generation demos.
-- **Source · sdk:** [Unreal engine SDK source](https://github.com/Conv-AI/Convai-UnrealEngine-SDK-V4). Public engine integration source; the complete cloud conversation service is not included.
-- **Tutorial · tutorial:** [Build your first AI character](https://docs.convai.com/api-docs/plugins-and-integrations/convai-unity-sdk/getting-started). Official Unity installation, service setup, sample-scene, and custom-character walkthrough.
-
-**[ElevenLabs Music](https://elevenlabs.io/docs/overview/capabilities/music)**
-
-Generate music with composition plans, references and section editing. Music-specific terms distinguish Indie and Studio game uses, so paid API access alone does not clear every game release. The October 2026 use policy restricts AI-development/training datasets unless expressly permitted. Reference audio rights and plan eligibility require review.
-
-Tags: `audio-generation`. Source reviewed: 2026-10-18. Further reading: [ElevenLabs Music terms](https://elevenlabs.io/music-terms) · [Prohibited Use Policy (October 2026)](https://elevenlabs.io/use-policy)
-
-**[ElevenLabs Speech Generation](https://elevenlabs.io/docs/api-reference/text-to-speech/convert)**
-
-The speech endpoint accepts versioned pronunciation dictionaries and previous/next text or request context. Zero-retention mode is enterprise-only and disables history-based continuity features; verify model compatibility. October 2026 policy restricts AI-development/training datasets and requires approval for under-18-directed products. These constraints are distinct from ordinary output-commercial rights and free-plan restrictions.
-
-Tags: `speech-generation` · `audio-generation`. Source reviewed: 2026-10-18. Further reading: [Prohibited Use Policy (October 2026)](https://elevenlabs.io/use-policy) · [Non-EEA general terms (October 2026)](https://elevenlabs.io/terms-of-use)
-
-**[MSDF Atlas Generator](https://github.com/Chlumsky/msdf-atlas-gen)**
-
-Produces glyph textures and layout metadata from fonts. The default character set is ASCII unless overridden, so multilingual coverage must be explicit. Sample atlas color channels as linear data rather than sRGB; font licensing remains independent.
-
-Tags: `Fonts` · `MSDF` · `UI`. Source reviewed: 2026-10-18.
-
-**[DirectX Shader Compiler](https://github.com/microsoft/DirectXShaderCompiler)**
-
-Compiler-call success and shader compilation success are separate: inspect the result status, diagnostics and requested outputs. Target profiles, include dependencies and build configuration matter. A compiled shader does not establish rendering correctness or target-device compatibility.
-
-Tags: `Shaders` · `HLSL` · `Build validation`. Source reviewed: 2026-10-18. Further reading: [Compiler API guide](https://github.com/microsoft/DirectXShaderCompiler/wiki/Using-dxc.exe-and-dxcompiler.dll)
-
 **[Playwright Test](https://playwright.dev/docs/test-snapshots)**
 
 Screenshot assertions wait for two matching captures before comparison, but stable pixels do not prove application readiness. Record browser, fonts, viewport and capture options: animation disabling, masks and styles can alter evidence. DOM access is a different observation surface from screenshot-only control or Playwright MCP.
 
 Tags: `Browser testing` · `Visual regression` · `DOM`. Source reviewed: 2026-10-18. Further reading: [Actionability](https://playwright.dev/docs/actionability) · [Screenshot assertion API](https://playwright.dev/docs/api/class-pageassertions)
 
+**[Unreal Insights](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-insights-in-unreal-engine)**
+
+Record a representative game or editor session, preserve its .utrace file with the engine version, build configuration and enabled trace channels, then inspect the relevant timing, memory or loading tracks. The reviewed Epic documentation is labeled Unreal Engine 5.9. Insights ships with binary engine installations or can be built as the UnrealInsights target. Tracing setup and available workflows depend on the engine build and operating system. Engine use and source access follow the Unreal Engine EULA, not a permissive open-source license. A trace identifies measured work in that session. Compare equivalent workloads and hardware before treating a timing change as a regression.
+
+Tags: `Unreal Engine` · `Performance profiling` · `Trace capture` · `Memory` · `Asset loading`. Source reviewed: 2026-11-25. Further reading: [Epic testing and performance tool directory](https://dev.epicgames.com/documentation/en-us/unreal-engine/testing-and-optimizing-your-content) · [Unreal Engine license and source-access terms](https://www.unrealengine.com/eula/unreal)
+
 </details>
 
-### Community
+<a id="publishing"></a>
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [CrazyGames](https://developer.crazygames.com/) | Play browser games and prepare web builds for CrazyGames submission, testing, and launch. | Shipping |
-| [Epic Games Store](https://store.epicgames.com/en-US/distribution) | Browse game releases and prepare store distribution through Epic's self-service developer tools. | Shipping |
-| [GOG](https://www.gog.com/submit-your-game) | Discover DRM-free desktop releases and submit a game to GOG's curated catalog. | Shipping |
-| [itch.io](https://itch.io/developers) | Discover independent games and publish project pages with browser builds or downloadable releases. | Shipping |
-| [Steam](https://partner.steamgames.com/) | Discover desktop games and use Steamworks to prepare store pages, builds, testing, and release. | Shipping |
+## Publishing
+
+### Publishing platform
+
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [CrazyGames](https://developer.crazygames.com/) | Play browser games and prepare web builds for CrazyGames submission, testing, and launch. | Tools & platforms | Shipping |
+| [Epic Games Store](https://store.epicgames.com/en-US/distribution) | Browse game releases and prepare store distribution through Epic's self-service developer tools. | Tools & platforms | Shipping |
+| [GOG](https://www.gog.com/submit-your-game) | Discover DRM-free desktop releases and submit a game to GOG's curated catalog. | Tools & platforms | Shipping |
+| [itch.io](https://itch.io/developers) | Discover independent games and publish project pages with browser builds or downloadable releases. | Tools & platforms | Shipping |
+| [Steam](https://partner.steamgames.com/) | Discover desktop games and use Steamworks to prepare store pages, builds, testing, and release. | Tools & platforms | Shipping |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
@@ -1034,14 +1173,14 @@ Tags: `Publishing` · `Game discovery` · `Desktop games`. Source reviewed: 2026
 
 <a id="world"></a>
 
-## Code world models and interactive worlds
+## World models
 
 ### Framework
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [StreamRender-H3](https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/) · 2026 | A code engine maintains the world while streaming diffusion renders its semantic maps. | Coding / Scenes / World models |
-| [Oasis: A Universe in a Transformer](https://oasis-model.github.io/) · 2024 | A neural game research release that predicts Minecraft-style frames from prior frames and actions. | Coding / World models |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [StreamRender-H3](https://nvlabs.github.io/Sana/Sol-Engine/StreamRender-H3/) · 2026 | A code engine maintains the world while streaming diffusion renders its semantic maps. | Research & benchmarks | Coding / Scenes / World models |
+| [Oasis: A Universe in a Transformer](https://oasis-model.github.io/) · 2024 | A neural game research release that predicts Minecraft-style frames from prior frames and actions. | Research & benchmarks | Coding / World models |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
@@ -1062,24 +1201,23 @@ Tags: `neural-simulator` · `interactive-video` · `transformer` · `Minecraft` 
 
 ### Paper
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [SolarRenderer](https://enderfga.cn/SolarRenderer/) · 2026 | Turns engine- or agent-generated structure videos into styled final visuals. | Coding / Scenes / World models |
-| [Code World Model: Coding Agent as World Brain](https://arxiv.org/abs/2608.25927) · 2026 | A coding agent writes executable rules and persistent state to drive a video world. | Planning / Coding / World models |
-| [Programmable World Model](https://arxiv.org/abs/2609.10540) · 2026 | Explicit global state and programmable rules preserve entities outside the camera view. | Coding / Testing / World models |
-| [CoDeR — Code Plans, Diffusion Renders](https://arxiv.org/abs/2609.26458) · 2026 | Collaborating agents build executable worlds, with diffusion models rendering observations. | Planning / Coding / World models |
-| [Magpie: Real-Time World Renderer for Interactive Games](https://arxiv.org/abs/2608.27168) · 2026 | A game engine runs gameplay while a separate Render Server generates final visuals. | Coding / Scenes / World models |
-| [SolarWM](https://arxiv.org/abs/2609.02886) · 2026 | An interactive video world model framework for open data, training, and long-horizon inference. | Coding / Scenes / World models |
-| [WorldCoder](https://arxiv.org/abs/2402.12275) · 2024 | Induces Python world models from environment interactions, then plans within them. | Planning / Coding / World models |
-| [GIF-MCTS / Code World Models Benchmark](https://arxiv.org/abs/2405.15383) · 2024 | Synthesizes runnable environment models through generate, improve, and fix tree search. | Planning / Coding / Testing / World models |
-| [Code World Models for General Game Playing](https://arxiv.org/abs/2510.04542) · 2025 | Compiles natural-language game rules into verifiable simulators for MCTS planning. | Planning / Coding / Testing / World models |
-| [PoE-World](https://arxiv.org/abs/2505.10819) · 2025 | Combines small programmatic experts to model stochastic world dynamics. | Planning / Coding / World models |
-| [FactorSim](https://arxiv.org/abs/2409.17652) · 2024 | Generates simulation and task code from language using factorized state representations. | Planning / Coding / Testing / World models |
-| [Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391) · 2024 | Learns latent-action-controlled 2D worlds from videos without action labels. | World models |
-| [GameNGen — Diffusion Models Are Real-Time Game Engines](https://arxiv.org/abs/2408.14837) · 2024 | Trains an interactive diffusion simulator from DOOM gameplay trajectories. | Testing / World models |
-| [DIAMOND — Diffusion for World Modeling](https://arxiv.org/abs/2405.12399) · 2024 | Trains reinforcement learning agents inside diffusion world models that preserve visual detail. | Testing / World models |
-| [GameFactory](https://arxiv.org/abs/2501.08325) · 2025 | Combines open-domain video generation with keyboard and mouse action control. | World models |
-| [WonderWorld](https://arxiv.org/abs/2406.09394) · 2024 | Builds an explorable, expandable explicit 3D scene from a single image. | Assets / Scenes / World models |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [SolarRenderer](https://enderfga.cn/SolarRenderer/) · 2026 | Turns engine- or agent-generated structure videos into styled final visuals. | Research & benchmarks | Coding / Scenes / World models |
+| [Code World Model: Coding Agent as World Brain](https://arxiv.org/abs/2608.25927) · 2026 | A coding agent writes executable rules and persistent state to drive a video world. | Research & benchmarks | Planning / Coding / World models |
+| [Programmable World Model](https://arxiv.org/abs/2609.10540) · 2026 | Explicit global state and programmable rules preserve entities outside the camera view. | Research & benchmarks | Coding / Testing / World models |
+| [CoDeR — Code Plans, Diffusion Renders](https://arxiv.org/abs/2609.26458) · 2026 | Collaborating agents build executable worlds, with diffusion models rendering observations. | Research & benchmarks | Planning / Coding / World models |
+| [Magpie: Real-Time World Renderer for Interactive Games](https://arxiv.org/abs/2608.27168) · 2026 | A game engine runs gameplay while a separate Render Server generates final visuals. | Research & benchmarks | Coding / Scenes / World models |
+| [SolarWM](https://arxiv.org/abs/2609.02886) · 2026 | An interactive video world model framework for open data, training, and long-horizon inference. | Research & benchmarks | Coding / Scenes / World models |
+| [WorldCoder](https://arxiv.org/abs/2402.12275) · 2024 | Induces Python world models from environment interactions, then plans within them. | Research & benchmarks | Planning / Coding / World models |
+| [GIF-MCTS / Code World Models Benchmark](https://arxiv.org/abs/2405.15383) · 2024 | Synthesizes runnable environment models through generate, improve, and fix tree search. | Research & benchmarks | Planning / Coding / Testing / World models |
+| [Code World Models for General Game Playing](https://arxiv.org/abs/2510.04542) · 2025 | Compiles natural-language game rules into verifiable simulators for MCTS planning. | Research & benchmarks | Planning / Coding / Testing / World models |
+| [PoE-World](https://arxiv.org/abs/2505.10819) · 2025 | Combines small programmatic experts to model stochastic world dynamics. | Research & benchmarks | Planning / Coding / World models |
+| [FactorSim](https://arxiv.org/abs/2409.17652) · 2024 | Generates simulation and task code from language using factorized state representations. | Research & benchmarks | Planning / Coding / Testing / World models |
+| [Genie: Generative Interactive Environments](https://arxiv.org/abs/2402.15391) · 2024 | Learns latent-action-controlled 2D worlds from videos without action labels. | Research & benchmarks | World models |
+| [GameNGen — Diffusion Models Are Real-Time Game Engines](https://arxiv.org/abs/2408.14837) · 2024 | Trains an interactive diffusion simulator from DOOM gameplay trajectories. | Research & benchmarks | Testing / World models |
+| [DIAMOND — Diffusion for World Modeling](https://arxiv.org/abs/2405.12399) · 2024 | Trains reinforcement learning agents inside diffusion world models that preserve visual detail. | Research & benchmarks | Testing / World models |
+| [GameFactory](https://arxiv.org/abs/2501.08325) · 2025 | Combines open-domain video generation with keyboard and mouse action control. | Research & benchmarks | World models |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>
@@ -1174,20 +1312,14 @@ Creating New Games with Generative Interactive Videos proposes domain adapters a
 
 Tags: `interactive-video` · `neural-simulator` · `action-control` · `Minecraft` · `dataset` · `ICCV-2025`. Source reviewed: 2026-10-18. Further reading: [Dataset tools and documentation](https://github.com/KlingAIResearch/GameFactory) · [GF-Minecraft dataset](https://huggingface.co/datasets/KlingTeam/GameFactory-Dataset)
 
-**[WonderWorld](https://arxiv.org/abs/2406.09394)**
-
-Interactive 3D Scene Generation from a Single Image uses Fast Layered Gaussian Surfels and guided depth diffusion to connect new scenes as the camera moves and prompts change. It provides explicit spatial representation and real-time rendering, primarily addressing geometry and appearance. Interactive gameplay, physics, and persistent dynamic state still require separate implementation.
-
-Tags: `scene-generation` · `explicit-3d` · `Gaussian-surfels` · `camera-control` · `CVPR-2025`. Source reviewed: 2026-10-18. Further reading: [Project](https://kovenyu.com/WonderWorld/)
-
 </details>
 
 ### Tool
 
-| Resource | Purpose and scope | Stages |
-| --- | --- | --- |
-| [Genie 3 / Project Genie](https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/) · 2025 | Generates interactive video worlds from prompts for real-time exploration. | Planning / World models |
-| [World Labs Marble](https://www.worldlabs.ai/blog/marble-world-model) · 2025 | Generates persistent, navigable 3D scenes with splat and mesh exports. | Assets / Scenes / World models |
+| Resource | Purpose and scope | Collection | Stages |
+| --- | --- | --- | --- |
+| [Genie 3 / Project Genie](https://deepmind.google/blog/genie-3-a-new-frontier-for-world-models/) · 2025 | Generates interactive video worlds from prompts for real-time exploration. | Tools & platforms | Planning / World models |
+| [World Labs Marble](https://www.worldlabs.ai/blog/marble-world-model) · 2025 | Generates persistent, navigable 3D scenes with splat and mesh exports. | Tools & platforms | Assets / Scenes / World models |
 
 <details>
 <summary>Inputs, outputs, limitations, and further reading</summary>

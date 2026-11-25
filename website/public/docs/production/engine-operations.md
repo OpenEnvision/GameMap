@@ -1,10 +1,14 @@
 # Engine operations: completion, recovery, and evidence
 
-Identify when an engine operation has completed, which artifacts to inspect, and how to recover from failure. Each reference links the relevant API, command, or implementation.
+When an NPC stops at a newly widened doorway, “navigation finished” is not enough to decide whether to rebake, change the controller or adjust the level. This reference follows operations from request through their actual outputs, so the person fixing the scene can choose the next action from evidence rather than rerunning everything.
 
 ## How to read an operation
 
 Record the exact tool/engine version, execution mode, project/world identity, requested operation, native result, output artifacts, and acceptance condition. Keep request acceptance, operation completion, persisted output, and fresh-session reopen separate. A tool name or successful process launch does not prove gameplay correctness.
+
+For that doorway fault, work from the query outward. First identify the requested start/goal and where the navigation system actually projected them. Detour's [pinned query header](https://github.com/recastnavigation/recastnavigation/blob/9f4ce64458dfae86e1239c525ddc219c4e9e06f1/Detour/Include/DetourNavMeshQuery.h#L315-L340) allows the nearest polygon reference to be zero when no match exists. Do not pass that unresolved endpoint down the chain or conceal a wrong-floor projection by enlarging tolerances.
+
+Next inspect the complete path status, endpoint and capacities using the navigation section below. If the route ends short, resolve partial search, filters, mesh freshness or buffer limits before tuning locomotion. If the intended route is complete but the character cannot cross, inspect its real collider, clearance and movement owner; another path query will not explain a blocking body. The level designer decides whether the opening should accommodate this character, the navigation owner fixes query/bake data, and the gameplay programmer owns actual traversal. Keep those decisions separate in the bug rather than assigning every failure to “AI.”
 
 ### Execution and recovery
 

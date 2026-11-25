@@ -30,7 +30,7 @@ export const testingAssets: TestingResource[] = [
     limitations: 'Pack formats and included rigs vary; Standard is not necessarily the complete collection. The cited Universal Animation Library changelog records Unreal FBX-to-GLB export and rig-name changes in v2.0, a 24-to-30 fps correction in v2.1, and root-motion plus step-phase changes in v3.0; pin the release and root-motion variant for comparable tests. No local import was performed.', reviewed: '2026-10-18',
   },
   {
-    id: 'poly-haven', title: 'Poly Haven', kind: 'asset', uses: ['playing', 'pipeline'], dimensions: ['3d'],
+    id: 'poly-haven', title: 'Poly Haven', kind: 'asset', uses: ['pipeline'], dimensions: ['3d'],
     stack: 'PBR textures, HDRIs, 3D models and a public download API',
     summary: 'CC0 realistic assets for material, lighting, dependency and visual-domain regression tests.',
     sourceUrl: 'https://polyhaven.com/',
@@ -44,7 +44,7 @@ export const testingAssets: TestingResource[] = [
     limitations: 'Website copy and example renders are outside the CC0 asset grant. API availability is best effort; no local import was performed.', reviewed: '2026-10-18',
   },
   {
-    id: 'ambientcg', title: 'ambientCG', kind: 'asset', uses: ['playing', 'pipeline'], dimensions: ['3d'],
+    id: 'ambientcg', title: 'ambientCG', kind: 'asset', uses: ['pipeline'], dimensions: ['3d'],
     stack: 'PBR materials, decals, atlases, HDRIs, terrain and models',
     summary: 'A CC0 source for texture-channel, terrain, lighting and material-resolution test fixtures.',
     sourceUrl: 'https://ambientcg.com/',
@@ -181,20 +181,28 @@ export const testingAssets: TestingResource[] = [
         "url": "https://github.com/KhronosGroup/glTF-Asset-Generator/tree/main/Output/Negative"
       },
       {
+        "label": "Mesh_NoPosition cases and attribute table",
+        "url": "https://github.com/KhronosGroup/glTF-Asset-Generator/blob/main/Output/Negative/Mesh_NoPosition/README.md"
+      },
+      {
+        "label": "glTF specification: using primitive data",
+        "url": "https://github.com/KhronosGroup/glTF/blob/main/specification/2.0/Specification.adoc#using-primitive-data"
+      },
+      {
         "label": "MIT license text",
         "url": "https://github.com/KhronosGroup/glTF-Asset-Generator/blob/main/LICENSE"
       }
     ],
-    "aiUseNote": "Use the generated pairs as labelled pass/fail fixtures for an importer: Positive files must load, Negative files must be rejected with a specific diagnostic. A passing import does not prove full glTF conformance.",
+    "aiUseNote": "Define an expected result for each case from its documented properties, validator report and the glTF specification. The Negative directory is not a blanket instruction to reject an entire asset: without POSITION data, a client should skip rendering the affected primitive unless another mechanism supplies positions. Keep validator findings separate from importer diagnostics and rendering behavior; a passing case does not prove full glTF conformance.",
     "testTasks": [
-      "Load every Positive case in one importer and record unsupported features without treating a warning as a crash.",
-      "Check that Negative cases fail with an actionable error rather than silently producing a broken scene."
+      "Load selected Positive cases and compare supported geometry, materials and animation with their documented expectations; record unsupported features and diagnostics separately.",
+      "For each Negative case, compare the observed result with its documented expected handling, including a skipped primitive where appropriate, and check that malformed input does not crash the importer."
     ],
     "setup": [
       "Pin a repository commit and copy the Output/Positive and Output/Negative directories into a versioned fixture.",
-      "Record the importer version, expected outcome for each case and the exact error text for negative cases."
+      "Record the importer and validator versions, supported extensions and a per-case expectation; capture the validation report, importer diagnostics and rendered result rather than requiring every Negative asset to fail."
     ],
     "limitations": "Coverage is a work in progress and the README states more requirements are coming. The C# project targets a Visual Studio / .NET workflow; no generator was built or run locally in this review.",
-    "reviewed": "2026-11-22"
+    "reviewed": "2026-11-24"
   },
 ];

@@ -13,6 +13,7 @@ Optimization diagnoses performance problems and improves resource use. It involv
 **Response:** establish target platform and feasible scope early, prototype expensive relationships, and profile before selecting an intervention.
 
 Record:
+
 - Target hardware, resolution, quality settings, and frame-time goal.
 - Level size, density, openness, camera, and streaming assumptions.
 - Representative worst-case views and activities.
@@ -41,6 +42,24 @@ Use the engine's current profiling tools. The book gives Unity and Unreal exampl
 
 Do not fabricate profiler captures or claim an improvement from an unmeasured edit.
 
+### A capture card for one suspected slowdown
+
+For a GameMap practice comparison, choose a short route such as start → enter the encounter → turn toward the exit → retry. Mark the troublesome event on that route. Decide the warm-up and capture duration before comparing builds; for a small exercise, 10 seconds of warm-up and a 60-second capture are starting points to adjust, not a performance standard. Test cold loading separately from a warmed-up traversal.
+
+| Record                                                       | Baseline              | Candidate change      |
+| ------------------------------------------------------------ | --------------------- | --------------------- |
+| Build, engine version, capture file                          | ___                   | ___                   |
+| Hardware, power mode, resolution, quality, frame cap / VSync | ___                   | Same, or explain: ___ |
+| Start state, route, input sequence, seed if supported        | ___                   | Same, or explain: ___ |
+| Warm-up, capture duration, repeat count                      | ___                   | ___                   |
+| Frame time: median, 95th percentile, largest spike and event | ___ ms / ___ ms / ___ | ___ ms / ___ ms / ___ |
+| Dominant CPU / GPU work and peak memory, when available      | ___                   | ___                   |
+| Gameplay, image, and loading regressions checked             | ___                   | ___                   |
+
+The 95th percentile is the frame time at or below which 95% of the sampled frames fall. It still needs the event trace: a single long stall can matter even when most frames are quick. Keep individual captures rather than reporting only the best run. A missing measurement stays blank, not zero.
+
+If suspending NPC updates removes the encounter spike, use the capture to locate the expensive work. A candidate might reduce unnecessary path recalculations while retaining the enemies. Recheck pursuit, attack timing, and route completion after the change; an empty arena is not an equivalent faster encounter. If a coding agent proposes the edit, preserve its change and the measured outcome separately from its prediction.
+
 ## 4. Match the intervention to the bottleneck
 
 ### CPU candidates
@@ -62,6 +81,7 @@ Potential responses include activating only relevant content, simplifying work, 
 - Insufficient visibility management.
 
 Potential responses:
+
 - Batching compatible geometry.
 - Instancing repeated mesh/material combinations.
 - Appropriate distance/detail reduction.
@@ -98,6 +118,7 @@ Use the actual profiler and engine documentation. Treat numbers in old examples 
 A level can be released as an alpha, beta, demo, mod, or finished project. Label its condition honestly instead of waiting for an undefined perfect state.
 
 Before packaging:
+
 - Identify the supported game/engine version and dependencies.
 - Include required files and folder structure.
 - Include installation, launch, controls, credits, licenses, and known issues.
@@ -110,6 +131,7 @@ Quake-specific structure is covered in [Tools and Quake](tools-quake.md).
 ### Clean-install test
 
 Test from a clean or separately staged location:
+
 1. Follow only the supplied instructions.
 2. Confirm dependencies are genuinely available.
 3. Launch and complete the relevant path.
@@ -119,9 +141,12 @@ Test from a clean or separately staged location:
 
 Do not use success on the author's asset-rich development setup as proof of a complete package.
 
+Keep a short installation receipt with the package: archive name and checksum; required game/mod and version; destination directory; exact launch instruction; tested system; and launch, completion, and retry outcomes. Ask someone to follow it without the editor or your development folders. If a texture is missing, record the path that failed and add the permitted dependency or correct the path before repackaging. Do not quietly fix the test machine and mark the original archive as passed.
+
 ## 7. Present the level, not just its prettiest wall
 
 A useful release page includes:
+
 - A concise name and description of genre, mechanics, scope, and intended experience.
 - In-game screenshots of major spaces and relationships.
 - A short representative gameplay video.
@@ -135,6 +160,7 @@ For gameplay documentation, show ordinary play and the level's actual behavior. 
 ## 8. Portfolio evidence
 
 Add only material that makes authorship and reasoning clear:
+
 - Labeled overview showing routes, objectives, spawns, encounters, or puzzle dependencies.
 - A few legible process images.
 - A short retrospective: intended goal, main change, test evidence, strength, and weakness.

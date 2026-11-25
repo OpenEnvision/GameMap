@@ -11,7 +11,12 @@ import {
   recordingOrder,
   type RecordOutlineItem,
 } from "../components/content";
-import ResourceIcon from "../../src/components/ResourceIcon";
+import { CatalogIcon } from "../components/catalog-icon";
+import {
+  agentKindGlyphs,
+  categoryGlyphs,
+  testingKindGlyphs,
+} from "../lib/catalog";
 import { PaperDocument } from "../components/paper-document";
 import {
   GameDocument,
@@ -128,10 +133,6 @@ export function loader({ params, request }: LoaderFunctionArgs) {
       : entry.kind === "repository-research" && entry.data.game_access
         ? content.collectionDiscoveryFor(entry).key
         : null,
-    identity:
-      entry.kind === "resource"
-        ? sources.identities[entry.id as keyof typeof sources.identities]
-        : null,
     linkedResources,
     relatedGames: isGameEntry(entry) ? pickRelatedGames(content, entry) : [],
     cases:
@@ -143,15 +144,8 @@ export function loader({ params, request }: LoaderFunctionArgs) {
 }
 export default function ContentPage() {
   const { t } = useSiteI18n();
-  const {
-    entry,
-    identity,
-    linkedResources,
-    relatedGames,
-    cases,
-    demos,
-    communityKey,
-  } = useLoaderData<typeof loader>();
+  const { entry, linkedResources, relatedGames, cases, demos, communityKey } =
+    useLoaderData<typeof loader>();
   // Static builds have no community server: no panel, so no outline link to it.
   const discussionKey = communityEnabled ? communityKey : null;
   const collection = pages[contentKinds[entry.kind].page];
@@ -194,6 +188,14 @@ export default function ContentPage() {
       </main>
     );
   const recordings = recordingOrder(demos);
+  const Mark =
+    entry.kind === "resource"
+      ? categoryGlyphs[entry.data.category]
+      : entry.kind === "testing"
+        ? testingKindGlyphs[entry.data.kind]
+        : entry.kind === "agent"
+          ? agentKindGlyphs[entry.data.kind]
+          : undefined;
   const extras: RecordOutlineItem[] = [
     ...(recordings.length
       ? [{ id: "record-recordings", label: t("All project recordings") }]
@@ -218,11 +220,7 @@ export default function ContentPage() {
       <RecordDocument
         entry={entry}
         extras={extras}
-        mark={
-          entry.kind === "resource" && identity ? (
-            <ResourceIcon resource={entry.data} identity={identity} size={64} />
-          ) : undefined
-        }
+        mark={Mark && <CatalogIcon icon={Mark} />}
       >
         <RecordShelf
           id="record-recordings"

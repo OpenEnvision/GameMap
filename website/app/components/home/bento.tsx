@@ -26,7 +26,13 @@ function PillarRow({
           const count = counts[link.path];
           return (
             <li key={link.path}>
-              <Link to={link.path}>
+              <Link
+                to={
+                  link.path === "/resources/"
+                    ? "/resources/?collection=all"
+                    : link.path
+                }
+              >
                 <span>{t(link.title)}</span>
                 {/* A lone destination already carries the pillar total. */}
                 {count && count !== total ? <b>{count}</b> : null}
@@ -40,7 +46,7 @@ function PillarRow({
   );
 }
 
-/** Four collection directories as one ruled index, then six resource directions. */
+/** Four collection directories and the resource categories. */
 export function AtlasBento({
   pillarCounts,
   counts,
@@ -61,7 +67,7 @@ export function AtlasBento({
             <em>{t("mapped out.")}</em>
           </h2>
         </div>
-        <Link className="inline-link" to="/resources/">
+        <Link className="inline-link" to="/resources/?collection=all">
           {t("Browse everything")}
           <ArrowRight size={16} />
         </Link>
@@ -77,12 +83,12 @@ export function AtlasBento({
         ))}
       </ul>
       <div className="hm-dirs">
-        <h3>{t("Six directions, one map.")}</h3>
+        <h3>{t("Find resources by task.")}</h3>
         <ul className="hm-directions">
           {categories.map((category) => (
             <li key={category.id}>
               <Link
-                to={"/resources/?category=" + category.id}
+                to={"/resources/?collection=all&category=" + category.id}
                 data-category={category.id}
                 style={
                   {

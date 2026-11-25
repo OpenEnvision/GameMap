@@ -5,6 +5,7 @@ Sources: [Tools](https://book.leveldesignbook.com/appendix/tools), [TrenchBroom]
 ## 1. Select a workflow, not a fashionable logo
 
 Ask:
+
 - Does the game already provide the mechanics the exercise needs?
 - Can the tools represent the required space and entities?
 - How quickly can the designer build, run, observe, and revise?
@@ -22,6 +23,7 @@ Treat pricing, maintenance, plugin compatibility, and “best tool” claims as 
 TrenchBroom is a cross-platform brush-based editor with a 3D-centered workflow, convex brush validation, clipping, resizing, and texture tools.
 
 For a non-Quake project, validate three separate integrations:
+
 1. **Geometry:** can the target import MAP, compile BSP, or consume an export?
 2. **Assets:** can textures, materials, and model references resolve correctly?
 3. **Entities:** can placed objects and key/value properties become actual game objects?
@@ -35,6 +37,7 @@ Use TrenchBroom for construction and markup if that is its strength; complex cho
 ## 3. Prove the smallest end-to-end pipeline
 
 Before building a large map:
+
 1. Configure the target game, paths, map format, and entity definitions.
 2. Make a sealed test room with a start and simple light.
 3. Add one texture and one representative entity/interaction.
@@ -48,6 +51,7 @@ Do not auto-install executables or plugins merely because the book links them. F
 ## 4. Quake mapping pipeline
 
 A typical classic pipeline uses:
+
 - Editable MAP source.
 - Appropriate game/mod FGD definitions and texture sources.
 - A compiler toolchain.
@@ -55,6 +59,7 @@ A typical classic pipeline uses:
 - The required legally obtained base-game data.
 
 The source recommends EricW tools for Quake:
+
 - **qbsp:** constructs compiled geometry and reports relevant errors such as leaks.
 - **vis:** computes potentially visible sets used for visibility management.
 - **light:** builds lighting information.
@@ -63,20 +68,43 @@ Use the actual tool versions' documentation for flags and limits. Fast iteration
 
 ### Diagnose by stage
 
-| Symptom | First checks |
-| --- | --- |
-| Map cannot compile | Format, invalid geometry, paths, error log |
-| Leak report | Sealing, entity placement, pointfile/debug output |
-| Missing textures | Source WAD/material references and compile/import configuration |
-| Entity missing or inert | FGD/runtime mismatch, classname, keys, target links |
-| Unexpected darkness | Lights, compile stage, supported settings, engine compatibility |
-| Works only on author's setup | Missing dependencies, asset paths, package layout |
+| Symptom                      | First checks                                                    |
+| ---------------------------- | --------------------------------------------------------------- |
+| Map cannot compile           | Format, invalid geometry, paths, error log                      |
+| Leak report                  | Sealing, entity placement, pointfile/debug output               |
+| Missing textures             | Source WAD/material references and compile/import configuration |
+| Entity missing or inert      | FGD/runtime mismatch, classname, keys, target links             |
+| Unexpected darkness          | Lights, compile stage, supported settings, engine compatibility |
+| Works only on author's setup | Missing dependencies, asset paths, package layout               |
 
 A Quake texture WAD is not a Doom WAD. In the classic Quake workflow, used textures are normally embedded into the compiled BSP; verify custom pipelines and external-asset requirements rather than inferring packaging from a file extension.
+
+### A room that tests the whole chain
+
+This GameMap practice supplement uses the maintainers' [TrenchBroom reference manual](https://trenchbroom.github.io/manual/latest/) and ericw-tools references for [QBSP](https://ericwa.github.io/ericw-tools/doc/qbsp.html), [VIS](https://ericwa.github.io/ericw-tools/doc/vis.html), and [LIGHT](https://ericwa.github.io/ericw-tools/doc/light.html). It gives a test procedure, not a claim that a particular installation has passed it.
+
+Write down the installed editor and compiler releases, source-port version, selected game/mod, MAP format, texture WAD paths, and runtime maps directory. Keep all three compiler executables from the same tool release. The editor finding a texture does not by itself prove that the compiler can resolve its WAD.
+
+1. Save a small sealed room as `practice_room.map`. Use the selected game's definitions to place `info_player_start` clear of solid brushes, one `light`, and a reachable `weapon_nailgun` for a base-Quake test. Apply a known texture from the configured WAD. A mod with different entity classes needs its own representative pickup.
+2. In the map's working directory, run each command below only after the previous one succeeds. Use the recorded executable paths if the tools are not on the command search path.
+
+```sh
+qbsp -leaktest practice_room.map
+vis practice_room.bsp
+light practice_room.bsp
+```
+
+QBSP builds the BSP; VIS reads the matching PRT portal file and updates visibility in the BSP; LIGHT updates its lighting. Keep the command output. If QBSP reports a leak, load its point file in TrenchBroom and follow the line from the interior toward the void to find the opening. Repair the seal rather than adding `-nofill` to conceal the failed test.
+
+3. Copy the newly built `practice_room.bsp`, and any required lighting sidecar, to the recorded runtime directory. Launch that map through the engine profile. Check the starting position, wall collision, texture, visible light/shadow response, and pickup's inventory or HUD effect. An editor screenshot cannot establish these runtime results.
+4. Move the pickup and alter one recognizable wall feature. Rebuild all three stages and verify both changes in the engine. If the old positions remain, check the source file, output timestamps, copy destination, and launched game directory before editing gameplay code.
+
+For a useful negative check, work in a copy: open a hole in an outer structural wall and confirm that `-leaktest` fails. Restore the wall and rebuild before packaging. Finish by using the simple map-package procedure below and installing it into a separate setup; keep commercial base-game data outside the archive.
 
 ## 5. Quake mods and assets
 
 The source describes:
+
 - **Arcane Dimensions:** an expanded single-player toolkit.
 - **Alkaline:** science-fiction/base-oriented content and systems.
 - **Copper:** a comparatively restrained refinement of vanilla Quake.
@@ -84,6 +112,7 @@ The source describes:
 - **2021 re-release Horde:** mode-specific entity setup and manager.
 
 For any mod:
+
 1. Identify exact version and supported engine.
 2. Use matching FGD and mapping documentation.
 3. Study included example/test maps.
@@ -101,6 +130,7 @@ Use lowercase names without spaces. Prefer a broadly supported ZIP.
 ### Simple map package
 
 For map-related files only, the source accepts the files at the ZIP root:
+
 - mymap.bsp
 - mymap.lit, if required
 - mymap_readme.txt
@@ -111,6 +141,7 @@ Explain which maps directory to extract into and how to launch.
 ### Full mod package
 
 Put a mod directory inside the ZIP:
+
 - mymod/maps/mymap.bsp
 - mymod/maps/mymap.lit
 - mymod/gfx/env/skybox-face.tga
@@ -146,6 +177,7 @@ Keep definitions synchronized with the actual mod. Use small test entities befor
 ### MAP: editable text geometry and entities
 
 Quake-family MAP files generally combine:
+
 - Entities expressed through key/value properties.
 - World geometry in worldspawn.
 - Convex brushes defined by planes.
@@ -160,6 +192,7 @@ When implementing a parser, validate syntax, brush orientation, texture axes, pr
 The linked MDL article is a David Henry archival technical specification, marked **GNU Free Documentation License**, with separately licensed sample code.
 
 An independently phrased orientation:
+
 - Binary header and counts describe skins, texture coordinates, triangles, and animation frames.
 - Vertex data is quantized and reconstructed using scale/translation.
 - Texture data uses a palette.

@@ -86,6 +86,17 @@ assert.equal(
   awesome,
   "Regenerate docs/reference/catalog.md",
 );
+assert.equal(
+  await readFile(
+    new URL("../../docs/zh/reference/catalog.md", import.meta.url),
+    "utf8",
+  ),
+  renderAwesome(records, {
+    source: "docs/zh/reference/catalog.md",
+    locale: "zh",
+  }),
+  "Regenerate docs/zh/reference/catalog.md",
+);
 for (const r of records)
   assert.ok(
     awesome.includes(`](${r.url})`),

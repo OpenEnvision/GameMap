@@ -1,40 +1,64 @@
 {
   "categories": {
     "agents": {
-      "label": "Coding agents",
-      "documentLabel": "Coding agents and game development bridges",
+      "label": "Agents & engine bridges",
+      "documentLabel": "Agents & engine bridges",
       "color": "#6e9d51",
-      "description": "Turn ideas into code with agents, skills, and engine integrations."
+      "description": "Connect coding agents, skills, and automation bridges to game projects."
     },
     "engines": {
-      "label": "Game engines",
-      "documentLabel": "Game engines, DCC tools, and ecosystems",
+      "label": "Engines & rendering",
+      "documentLabel": "Engines & rendering",
       "color": "#9780d5",
-      "description": "Official documentation, working examples, and practical engine knowledge."
+      "description": "Build with game engines, rendering libraries, and engine integration tools."
     },
     "2d": {
-      "label": "2D development",
-      "documentLabel": "AI for 2D game development",
+      "label": "2D art & sprites",
+      "documentLabel": "2D art & sprites",
       "color": "#ec965b",
-      "description": "Explore game generation, sprites, levels, and development benchmarks."
+      "description": "Create images, sprites, tilesets, fonts, and other 2D game assets."
     },
     "3d": {
-      "label": "3D development",
-      "documentLabel": "AI for 3D game development",
+      "label": "3D assets & animation",
+      "documentLabel": "3D assets & animation",
       "color": "#6b91d0",
-      "description": "Connect 3D assets and scene building with playable engine projects."
+      "description": "Generate models, build scenes, rig characters, and create 3D animation."
+    },
+    "audio": {
+      "label": "Audio & voice",
+      "documentLabel": "Audio & voice",
+      "color": "#bc82ba",
+      "description": "Create game music, sound effects, dialogue, and voice assets."
     },
     "production": {
-      "label": "Game production",
-      "documentLabel": "Game production: art, animation, audio, testing, and runtime AI",
+      "label": "Game creation & design",
+      "documentLabel": "Game creation & design",
       "color": "#64b8a3",
-      "description": "Create consistent art, animate characters, add sound, and test real gameplay."
+      "description": "Design rules and levels, generate game projects, and develop gameplay."
+    },
+    "runtime": {
+      "label": "Runtime AI & NPCs",
+      "documentLabel": "Runtime AI & NPCs",
+      "color": "#cc8c66",
+      "description": "Add conversational characters and AI behavior to running games."
+    },
+    "testing": {
+      "label": "Testing & QA",
+      "documentLabel": "Testing & QA",
+      "color": "#8ca75c",
+      "description": "Check game logic, gameplay, accessibility, and visual behavior."
+    },
+    "publishing": {
+      "label": "Publishing",
+      "documentLabel": "Publishing",
+      "color": "#7894af",
+      "description": "Prepare game builds, store pages, distribution, and release workflows."
     },
     "world": {
       "label": "World models",
-      "documentLabel": "Code world models and interactive worlds",
+      "documentLabel": "World models",
       "color": "#cd85ad",
-      "description": "Explore code-driven state, neural rendering, and interactive worlds."
+      "description": "Explore learned simulation, code-based world state, and interactive worlds."
     }
   },
   "types": {
@@ -46,7 +70,9 @@
     "docs": "Documentation",
     "tool": "Tool",
     "community": "Community",
-    "dataset": "Dataset"
+    "dataset": "Dataset",
+    "tutorial": "Tutorial",
+    "platform": "Publishing platform"
   },
   "stages": {
     "plan": {
@@ -101,5 +127,23 @@
     "pipeline-source": "pipeline source",
     "service": "service",
     "unavailable": "unavailable"
+  },
+  "collections": {
+    "tools": {
+      "label": "Tools & platforms",
+      "description": "Use development tools, asset services, engine bridges, skills, and publishing platforms."
+    },
+    "learning": {
+      "label": "Guides & examples",
+      "description": "Learn from practical guides, official documentation, tutorials, and example projects."
+    },
+    "research": {
+      "label": "Research & benchmarks",
+      "description": "Explore papers, evaluation benchmarks, and research prototypes with their release limits."
+    },
+    "reference": {
+      "label": "Technical references",
+      "description": "Consult specialized APIs, formats, and low-level integration references."
+    }
   }
 }

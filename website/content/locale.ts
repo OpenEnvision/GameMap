@@ -48,7 +48,8 @@ export function localizedPath(
     /^\/404\/?$/.test(path) ||
     Object.values(pages).some((page) => page.path.split("/")[1] === root) ||
     detailRoutes.some((page) => page.path.split("/")[1] === root) ||
-    path === "/search-index.json";
+    path === "/search-index.json" ||
+    path === "/docs-search-index.json";
   if (!isApp) return value;
   if (/^\/docs(?:\/|$)/.test(path)) {
     const slug = path.replace(/^\/docs\/?/, "").replace(/\/$/, "");

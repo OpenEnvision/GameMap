@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import { Link, useSiteI18n } from "../../lib/i18n";
-import { publicAsset } from "../../lib/catalog";
+import { categories, publicAsset } from "../../lib/catalog";
 
 export type MarqueeTool = {
   id: string;
@@ -44,14 +44,9 @@ function ToolChip({ tool }: { tool: MarqueeTool }) {
     </>
   );
 }
-const categoryLabel: Record<string, string> = {
-  agents: "Coding agents",
-  engines: "Game engines",
-  "2d": "2D development",
-  "3d": "3D development",
-  production: "Game production",
-  world: "World models",
-};
+const categoryLabel: Record<string, string> = Object.fromEntries(
+  categories.map(({ id, label }) => [id, label]),
+);
 
 /**
  * Two rows of real tools drifting in opposite directions. The first copy of

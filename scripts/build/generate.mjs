@@ -98,6 +98,26 @@ const generated = renderGeneratedDocuments({
 // Historical source aliases remain readable, but must never be regenerated at old paths.
 for (const { source } of Object.values(documentGenerators))
   outputs[source] = generated[source];
+// Catalog and testing guides derive both languages from reviewed field translations.
+// Other document fingerprints remain individually reviewed and unchanged.
+const documentTranslationsPath = "website/content/i18n/docs.zh.sources.json";
+const documentTranslations = JSON.parse(
+  await readFile(
+    new URL("../../" + documentTranslationsPath, import.meta.url),
+    "utf8",
+  ),
+);
+for (const slug of ["reference/catalog", "reference/testing-library"])
+  documentTranslations.documents[slug] = {
+    sourceHash: createHash("sha256")
+      .update(generated[`docs/${slug}.md`])
+      .digest("hex"),
+    translationHash: createHash("sha256")
+      .update(generated[`docs/zh/${slug}.md`])
+      .digest("hex"),
+  };
+outputs[documentTranslationsPath] =
+  JSON.stringify(documentTranslations, null, 2) + "\n";
 // Raw Markdown downloads, including notices at moved or retired download names.
 const documents = await readDocuments();
 const bodies = {
